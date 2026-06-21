@@ -3270,6 +3270,1426 @@ SELECT t.id, cr.id, 8, E'1 Corinthians 16:13 — *Watch ye, stand fast in the fa
  WHERE t.slug='2-samuel-10-be-of-good-courage-and-yahuah-do-what-seemeth-good'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_2-samuel_11.sql (2 Samuel 11) -----
+--
+-- 2 Samuel 11 — David, Bath-sheba, and the murder of Uriah the Hittite
+-- Tag: 2sa11   View: _s341_2sa11_lookup   Sort band: base 37500, step 3
+-- Frame: the seed-king under the very Torah whose commandments he breaks — coveting
+--   (Exod 20:17/Deut 5:21) ripening into adultery (Exod 20:14/Deut 5:18), deceit, and the
+--   shedding of innocent blood (Exod 20:13/Deut 5:17). The Torah is never the curse here;
+--   it is the standard by which David's sin is exposed AS sin even in the anointed
+--   (1 Kings 15:5 "save only in the matter of Uriah"; cf. Nathan, 2 Sam 12:9). The lust-to-
+--   death progression is named forward in James 1:14-15. Uriah the Hittite — the loyal
+--   foreign sojourner whose integrity over the ark and Yashar'el in tents shames the king.
+--   The chapter closes: *But the thing that David had done displeased Yahuah* (11:27);
+--   David's own confession is Psalm 51:4. Bath-sheba enters the Messianic line, Matthew 1:6.
+--   Victims, not enemies: Uriah and Bath-sheba are wronged, never blamed.
+--
+-- 2 Samuel 11 coverage:
+--   v.1   NT:     none warranted   Extras: none warranted   Tanakh: none warranted (frame verse for thread setup)
+--   v.2   NT:     none warranted   Extras: none warranted   Tanakh: Exod 20:17 / Deut 5:21 (the eye that covets)
+--   v.3   NT:     none warranted   Extras: none warranted   Tanakh: Matt 1:6 (the wife of Uriah named)
+--   v.4   NT:     none warranted   Extras: none warranted   Tanakh: Exod 20:14 / Deut 5:18 (adultery committed)
+--   v.5-13 NT:    James 1:14-15 (lust conceives → sin → death)
+--          Extras: none warranted   Tanakh: Exod 20:13 / Deut 5:17 (the murder being set up)
+--   v.11  NT:     none warranted   Extras: none warranted   Tanakh: (Uriah's integrity — anchored in thread prose)
+--   v.14-17 NT:   James 1:14-15    Extras: none warranted   Tanakh: Exod 20:13 / Deut 5:17 (innocent blood)
+--   v.27  NT:     Matt 1:6 (Bathsheba in the line)
+--          Extras: none warranted
+--          Tanakh: 2 Sam 12:9 (Nathan's charge) / 1 Kings 15:5 (save only Uriah) / Psalm 51:4 (David's confession)
+--
+-- Threads (4):
+--   2-samuel-11-the-eye-that-coveted-his-neighbours-wife  [Tanakh] — 11:2,4 → Exod20:14,17 / Deut5:18,21
+--   2-samuel-11-uriah-the-hittites-integrity-shames-the-king [Tanakh+NT] — 11:11 → Matt1:6 (and 11:3)
+--   2-samuel-11-lust-conceived-bringeth-forth-death       [Tanakh+NT] — 11:14-17 → Exod20:13 / Deut5:17 / James1:14-15
+--   2-samuel-11-but-the-thing-displeased-yahuah           [Tanakh+NT] — 11:27 → 2Sam12:9 / 1Kgs15:5 / Ps51:4 / Matt1:6
+
+CREATE TEMP VIEW _s341_2sa11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the eye that coveted his neighbour's wife
+    ('canon','2-samuel',11,2,'canon','exodus',20,17,'free',
+      E'*Thou shalt not covet thy neighbour''s house, thou shalt not covet thy neighbour''s wife, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is thy neighbour''s* (Exodus 20:17). David *saw a woman washing herself; and the woman was very beautiful to look upon* (2 Samuel 11:2) — the tenth word broken at the eye. The Torah he was anointed to keep names the sin before the act, and names it AS sin: the neighbour''s wife is the very thing forbidden.'),
+    ('canon','2-samuel',11,2,'canon','deuteronomy',5,21,'free',
+      E'*Neither shalt thou desire thy neighbour''s wife, neither shalt thou covet thy neighbour''s house, his field, or his manservant, or his maidservant, his ox, or his ass, or any thing that is thy neighbour''s* (Deuteronomy 5:21). David *from the roof he saw a woman... very beautiful to look upon* (2 Samuel 11:2) — the desire of the eye, the covenant word still binding on the king as on all Yashar''el (Israel).'),
+    ('canon','2-samuel',11,4,'canon','exodus',20,14,'free',
+      E'*Thou shalt not commit adultery* (Exodus 20:14). *And David sent messengers, and took her; and she came in unto him, and he lay with her... and she returned unto her house* (2 Samuel 11:4) — Bath-sheba is *the wife of Uriah the Hittite* (11:3). The coveting of v.2 ripens into the seventh word broken; the Torah does not bend for the anointed.'),
+    ('canon','2-samuel',11,4,'canon','deuteronomy',5,18,'free',
+      E'*Neither shalt thou commit adultery* (Deuteronomy 5:18). *And David sent messengers, and took her; and... he lay with her* (2 Samuel 11:4) — the man after Yahuah''s (the LORD''s) own heart breaks the same word given to all the people; the standard that condemns him is the standard he was raised to teach.'),
+
+    -- Thread 2: Uriah the Hittite's integrity shames the king
+    ('canon','2-samuel',11,11,'canon','matthew',1,6,'free',
+      E'*And Jesse begat David the king; and David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6). The Messianic genealogy will not erase the wound: it names Bath-sheba not by her own name but as *the wife of Urias* — Uriah the Hittite, the loyal foreigner who said *the ark, and Yashar''el (Israel), and Yahudah (Judah), abide in tents... shall I then go into mine house...?* (2 Samuel 11:11). The upright sojourner''s integrity is written forever into the line of Messiah, his death never excused.'),
+
+    -- Thread 3: lust conceived bringeth forth death
+    ('canon','2-samuel',11,15,'canon','exodus',20,13,'free',
+      E'*Thou shalt not kill* (Exodus 20:13). *Set ye Uriah in the forefront of the hottest battle, and retire ye from him, that he may be smitten, and die* (2 Samuel 11:15) — the sixth word broken by the king''s own hand, the murder ordered by letter and carried by the victim himself (11:14). Coveting bore adultery, adultery bore deceit, deceit bore blood; the Torah names each stage.'),
+    ('canon','2-samuel',11,15,'canon','deuteronomy',5,17,'free',
+      E'*Thou shalt not kill* (Deuteronomy 5:17). David''s letter — *that he may be smitten, and die* (2 Samuel 11:15) — sheds innocent blood to bury the adultery. The same word stood at Horeb for all Yashar''el (Israel); the anointed is not above it.'),
+    ('canon','2-samuel',11,17,'canon','james',1,15,'free',
+      E'*Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death* (James 1:15). *And the men of the city went out... and Uriah the Hittite died also* (2 Samuel 11:17) — the chapter is James'' verse made history: the lust of 11:2, the sin of 11:4, the finished sin bringing forth death at the wall. Yaaqob (James) reads David''s house exactly.'),
+    ('canon','2-samuel',11,14,'canon','james',1,14,'free',
+      E'*But every man is tempted, when he is drawn away of his own lust, and enticed* (James 1:14). *And it came to pass in the morning, that David wrote a letter to Joab, and sent it by the hand of Uriah* (2 Samuel 11:14) — drawn away and enticed, the king now drafts the cover-up in cold ink; the temptation that began at the eye is now an instrument of murder.'),
+
+    -- Thread 4: but the thing displeased Yahuah
+    ('canon','2-samuel',11,27,'canon','2-samuel',12,9,'free',
+      E'*Wherefore hast thou despised the commandment of Yahuah (LORD), to do evil in his sight? thou hast killed Uriah the Hittite with the sword, and hast taken his wife to be thy wife, and hast slain him with the sword of the children of Ammon* (2 Samuel 12:9). The chapter ends *the thing that David had done displeased Yahuah (LORD)* (11:27); Nathan in the next breath names it *despised the commandment of Yahuah* — the Torah is the measure, the sin is sin, the king is summoned to account.'),
+    ('canon','2-samuel',11,27,'canon','1-kings',15,5,'free',
+      E'*Because David did that which was right in the eyes of Yahuah (LORD), and turned not aside from any thing that he commanded him all the days of his life, save only in the matter of Uriah the Hittite* (1 Kings 15:5). Centuries later the record still carves out this one wound — *save only in the matter of Uriah* — proof that the displeasure of *the thing that David had done displeased Yahuah (LORD)* (2 Samuel 11:27) was never papered over; the Torah-standard stands permanent.'),
+    ('canon','2-samuel',11,27,'canon','psalms',51,4,'free',
+      E'*Against thee, thee only, have I sinned, and done this evil in thy sight: that thou mightest be justified when thou speakest, and be clear when thou judgest* (Psalm 51:4). When *the thing that David had done displeased Yahuah (LORD)* (2 Samuel 11:27), the king does not defend himself but confesses Yahuah''s judgment just — he justifies the verdict against his own throne, the broken and contrite heart of Psalm 51:17.'),
+    ('canon','2-samuel',11,27,'canon','matthew',1,6,'free',
+      E'*And David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6). *She became his wife, and bare him a son* (2 Samuel 11:27) — yet the displeasure of Yahuah (the LORD) is not the end of the line but a turn within it; the seed of promise runs on through Bath-sheba to Solomon and to Messiah, mercy not erasing the sin but bearing the repentant king forward.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-11-the-eye-that-coveted-his-neighbours-wife',
+  E'The eye that coveted his neighbour''s wife',
+  E'David tarries from battle, and *from the roof he saw a woman washing herself; and the woman was very beautiful to look upon* (2 Samuel 11:2). The sin is born at the eye, and the Torah he was anointed to keep had already named it: *Thou shalt not covet thy neighbour''s house... thou shalt not covet thy neighbour''s wife* (Exodus 20:17); *Neither shalt thou desire thy neighbour''s wife* (Deuteronomy 5:21). The woman is *the wife of Uriah the Hittite* (11:3) — the very neighbour''s wife forbidden. Then *David sent messengers, and took her... and he lay with her* (11:4), and the coveting ripens into the broken seventh word: *Thou shalt not commit adultery* (Exodus 20:14); *Neither shalt thou commit adultery* (Deuteronomy 5:18). The Torah does not bend for the man after Yahuah''s (the LORD''s) own heart; it is the unmoving standard by which his sin is exposed AS sin even on the throne — affirmed, never abolished.',
+  sv.verse_id, ev.verse_id, 'free', 37500
+  FROM _s341_2sa11_lookup sv, _s341_2sa11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=11 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-11-uriah-the-hittites-integrity-shames-the-king',
+  E'Uriah the Hittite''s integrity shames the king',
+  E'David summons Uriah and urges him *Go down to thy house, and wash thy feet* (2 Samuel 11:8) — but the loyal foreigner will not. *And Uriah said unto David, The ark, and Yashar''el (Israel), and Yahudah (Judah), abide in tents; and my lord Joab, and the servants of my lord, are encamped in the open fields; shall I then go into mine house, to eat and to drink, and to lie with my wife? as thou livest, and as thy soul liveth, I will not do this thing* (11:11). The upright Gentile-sojourner''s reverence for the ark and for Yashar''el at war is the standing rebuke of the king who lay with the man''s wife while staying home from the battle. The Messianic genealogy will not let the wound be forgotten: *And David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6) — Bath-sheba named only as *the wife of Urias*, the Hittite''s integrity written forever into the line of Messiah, his death never excused. Victims, not enemies: the foreigner is the faithful one here.',
+  sv.verse_id, ev.verse_id, 'free', 37503
+  FROM _s341_2sa11_lookup sv, _s341_2sa11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=11 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-11-lust-conceived-bringeth-forth-death',
+  E'Lust conceived bringeth forth death',
+  E'When Uriah will not give the adultery a cover, David turns to murder: *And it came to pass in the morning, that David wrote a letter to Joab, and sent it by the hand of Uriah* (2 Samuel 11:14), the order reading *Set ye Uriah in the forefront of the hottest battle, and retire ye from him, that he may be smitten, and die* (11:15). The sixth word is broken: *Thou shalt not kill* (Exodus 20:13; Deuteronomy 5:17). *And the men of the city went out... and Uriah the Hittite died also* (11:17). This is Yaaqob''s (James''s) law of sin made history: *But every man is tempted, when he is drawn away of his own lust, and enticed* (James 1:14); *Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death* (James 1:15). The eye of 11:2, the adultery of 11:4, the deceit, and now the finished sin bringing forth death at the wall — coveting ripened to blood, the broken commandments stacking exactly as James warns.',
+  sv.verse_id, ev.verse_id, 'free', 37506
+  FROM _s341_2sa11_lookup sv, _s341_2sa11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=11 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-11-but-the-thing-displeased-yahuah',
+  E'But the thing displeased Yahuah',
+  E'The chapter''s last line is its verdict: *But the thing that David had done displeased Yahuah (LORD)* (2 Samuel 11:27). The seed-king stands under the same Torah as all his people, and sin is sin even in the anointed. Nathan speaks the charge plainly: *Wherefore hast thou despised the commandment of Yahuah (LORD), to do evil in his sight? thou hast killed Uriah the Hittite with the sword, and hast taken his wife to be thy wife* (2 Samuel 12:9). Centuries on, the record still carves out the one wound: *save only in the matter of Uriah the Hittite* (1 Kings 15:5). David does not defend himself but confesses the verdict just: *Against thee, thee only, have I sinned, and done this evil in thy sight: that thou mightest be justified when thou speakest, and be clear when thou judgest* (Psalm 51:4) — the broken and contrite heart that justifies Yahuah''s (the LORD''s) judgment against his own throne. And yet mercy bears the repentant king forward: *And David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6) — the seed of promise running on through Bath-sheba to Messiah, the sin never erased, the Torah-standard never abolished.',
+  sv.verse_id, ev.verse_id, 'free', 37509
+  FROM _s341_2sa11_lookup sv, _s341_2sa11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=11 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not covet thy neighbour''s... wife* (Exodus 20:17) — the tenth word, broken at the eye on the roof (11:2).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-the-eye-that-coveted-his-neighbours-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Neither shalt thou desire thy neighbour''s wife* (Deuteronomy 5:21) — the same word at Horeb, binding on the king as on all the people.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-the-eye-that-coveted-his-neighbours-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt not commit adultery* (Exodus 20:14) — coveting ripens into the act, *he lay with her* (11:4).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-the-eye-that-coveted-his-neighbours-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Neither shalt thou commit adultery* (Deuteronomy 5:18) — the standard David was raised to teach now condemns him.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-the-eye-that-coveted-his-neighbours-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6) — the Hittite''s integrity (11:11) written into the line of Messiah, his death never excused.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=11
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-uriah-the-hittites-integrity-shames-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*But every man is tempted, when he is drawn away of his own lust, and enticed* (James 1:14) — the king drafts the cover-up letter (11:14).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=14
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-lust-conceived-bringeth-forth-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thou shalt not kill* (Exodus 20:13) — the murder ordered by the king''s own hand, *that he may be smitten, and die* (11:15).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=15
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-lust-conceived-bringeth-forth-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt not kill* (Deuteronomy 5:17) — the same Horeb word, innocent blood shed to bury the adultery.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=15
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-lust-conceived-bringeth-forth-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death* (James 1:15) — *Uriah the Hittite died also* (11:17), the chapter is the verse made history.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=17
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-lust-conceived-bringeth-forth-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Wherefore hast thou despised the commandment of Yahuah (LORD)... thou hast killed Uriah the Hittite with the sword* (2 Samuel 12:9) — Nathan names the displeasure of 11:27 as despised Torah.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=27
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-but-the-thing-displeased-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*save only in the matter of Uriah the Hittite* (1 Kings 15:5) — the record carves out the one wound forever; the Torah-standard stands permanent.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=27
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-but-the-thing-displeased-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Against thee, thee only, have I sinned... that thou mightest be justified when thou speakest* (Psalm 51:4) — David confesses the verdict of 11:27 just.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=27
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-but-the-thing-displeased-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6) — mercy bears the repentant king forward; the seed of promise runs on to Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=11 AND sv.verse_number=27
+  JOIN _s341_2sa11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-11-but-the-thing-displeased-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_12.sql (2 Samuel 12) -----
+--
+-- Chapter: 2 Samuel 12 (Nathan's parable; David's repentance; Psalm 51; the line preserved)
+-- Tag: 2sa12   View: _s341_2sa12_lookup   Sort band: 37525, step 3 (37525..37540)
+-- Session prefix: s341
+--
+-- 2 Samuel 12 coverage:
+--   v.1-7 (parable / Thou art the man):
+--        NT:     Galatians 6:1 (restore the overtaken in meekness) — warranted
+--        Extras: none warranted
+--        Tanakh: 2 Samuel 7:1-3 (Nathan the same prophet) — warranted
+--   v.9-14 (despised the commandment / sword never departs / consequence remains):
+--        NT:     Galatians 6:7 (whatsoever a man soweth, that shall he reap) — warranted
+--        Extras: none warranted
+--        Tanakh: 2 Samuel 7:14 (rod of men); Numbers 14:18-20 (pardoned yet carcases fall) — warranted
+--   v.13a (I have sinned against Yahuah / instant grace on confession):
+--        NT:     1 John 1:9 (if we confess our sins he is faithful and just to forgive) — warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 32:5 (I acknowledged my sin and thou forgavest); Proverbs 28:13 (whoso confesseth shall have mercy) — warranted
+--   v.13 (David's response = Psalm 51, the clean heart / new heart):
+--        NT:     none warranted (Psalm 51 IS the response; Ezekiel carries the new heart)
+--        Extras: none warranted
+--        Tanakh: Psalm 51:1,2,3,4,10,17 (David's miserere); Ezekiel 36:25-27 (new heart, Torah within) — warranted
+--   v.23 (I shall go to him but he shall not return — hope beyond death):
+--        NT:     none warranted (kept Tanakh-internal; resurrection hope unfolded in prose)
+--        Extras: none warranted
+--        Tanakh: none warranted (self-standing within chapter; anchored verse stands alone in prose)
+--   v.24-25 (Solomon / Jedidiah, beloved of Yah / the line to Messiah):
+--        NT:     Matthew 1:6 (David begat Solomon — the royal line to Messiah) — warranted
+--        Extras: none warranted
+--        Tanakh: none warranted (NT carries the genealogical fulfillment)
+--
+-- THREADS (6):
+--   2-samuel-12-the-poor-mans-one-ewe-lamb-thou-art-the-man      free   [canon: 2 Samuel 7, Galatians 6]
+--   2-samuel-12-the-sword-shall-never-depart-the-consequence-remains  free   [canon: 2 Samuel 7, Numbers 14, Galatians 6]
+--   2-samuel-12-i-have-sinned-against-yahuah-instant-grace-on-confession  free   [canon: Psalm 32, Proverbs 28, 1 John 1]
+--   2-samuel-12-create-in-me-a-clean-heart-the-fifty-first-psalm  free   [canon: Psalm 51, Ezekiel 36]
+--   2-samuel-12-i-shall-go-to-him-but-he-shall-not-return-to-me   free   [self-standing, prose only — no member]
+--   2-samuel-12-solomon-jedidiah-beloved-of-yah-the-line-preserved  free   [canon: Matthew 1]
+--
+-- NOTE: thread "i-shall-go-to-him" carries no member (no warranted target — hope-beyond-death
+--   unfolded in summary prose; anchor verse 23 stands on its own). All other threads fully membered.
+-- Framework framing: the prophet's word that convicts the king by his own mouth (12:5-7); repentance
+--   and INSTANT grace on true confession (12:13) — yet NOT cheap grace, for the consequence-sword
+--   remains (12:10-12), the Deuteronomy/Numbers covenant-reality that pardon does not erase all
+--   consequence; Psalm 51 is the clean heart / new heart of Ezekiel 36 — the Torah written within,
+--   NOT antinomian licence; the Davidic line preserved through Solomon (Jedidiah, beloved of Yah)
+--   on to the Messiah (Matthew 1:6). Torah is never the curse; the sword is the covenant consequence.
+
+CREATE TEMP VIEW _s341_2sa12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the poor man's one ewe lamb / Thou art the man
+    ('canon','2-samuel',12,7,'canon','2-samuel',7,3,'free',
+     E'The same prophet who once told David *Go, do all that is in thine heart; for Yahuah (LORD) is with thee* (2 Samuel 7:3) now stands to convict him. When Nathan says *Thou art the man* (2 Samuel 12:7), it is the word of the prophet that turns the king''s own verdict back on his own head — the man who blessed the house of David is the man who arraigns it.'),
+    ('canon','2-samuel',12,1,'canon','2-samuel',7,3,'free',
+     E'*And Nathan said to the king, Go, do all that is in thine heart; for Yahuah (LORD) is with thee* (2 Samuel 7:3). The prophet who carried the covenant-promise to David — *Yahuah also hath put away thy sin; thou shalt not die* will come from the same mouth — first comes with a parable, *There were two men in one city; the one rich, and the other poor* (2 Samuel 12:1), to make the king pronounce sentence on himself.'),
+    ('canon','2-samuel',12,5,'canon','galatians',6,1,'free',
+     E'*Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted* (Galatians 6:1). David''s anger flares hot at the rich man''s crime — *the man that hath done this thing shall surely die* (2 Samuel 12:5) — quick to judge another, blind to himself; Nathan restores rather than destroys, the meekness that convicts and then says *thou shalt not die*.'),
+
+    -- Thread 2: the sword shall never depart / the consequence remains
+    ('canon','2-samuel',12,10,'canon','2-samuel',7,14,'free',
+     E'*I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men* (2 Samuel 7:14). The covenant to David already named the rod; now *the sword shall never depart from thine house* (2 Samuel 12:10) is that very rod falling — mercy keeps the throne, but the chastening of a covenant Father is real, never the cancellation of all consequence.'),
+    ('canon','2-samuel',12,13,'canon','numbers',14,20,'free',
+     E'*And Yahuah (LORD) said, I have pardoned according to thy word* (Numbers 14:20) — yet in the same breath, *your carcases shall fall in this wilderness* (Numbers 14:29). The wilderness pattern is David''s: *Yahuah also hath put away thy sin; thou shalt not die* (2 Samuel 12:13), full pardon — and still the sword and the child''s death follow. Pardon lifts the guilt; it does not erase every consequence the deed has set loose.'),
+    ('canon','2-samuel',12,9,'canon','galatians',6,7,'free',
+     E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). David *despised the commandment of Yahuah (LORD)* (2 Samuel 12:9) — took the wife, slew by the sword — and the reaping is measured back: *the sword shall never depart from thine house.* The Torah is not the curse; despising it is, and the harvest is sure.'),
+
+    -- Thread 3: I have sinned against Yahuah / instant grace on confession
+    ('canon','2-samuel',12,13,'canon','psalms',32,5,'free',
+     E'*I acknowledged my sin unto thee, and mine iniquity have I not hid. I said, I will confess my transgressions unto Yahuah (LORD); and thou forgavest the iniquity of my sin. Selah* (Psalm 32:5). This is the very rhythm of 2 Samuel 12:13 — the instant *I have sinned against Yahuah (LORD)* met by the instant *Yahuah (LORD) also hath put away thy sin.* The moment guilt is owned and not hidden, the forgiveness is already given.'),
+    ('canon','2-samuel',12,13,'canon','proverbs',28,13,'free',
+     E'*He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy* (Proverbs 28:13). For a year David covered the matter of Uriah and his bones waxed old; the instant he uncovers it — *I have sinned against Yahuah (LORD)* (2 Samuel 12:13) — mercy answers: *thou shalt not die.* The proverb is the king''s own story in a single line.'),
+    ('canon','2-samuel',12,13,'canon','1-john',1,9,'free',
+     E'*If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness* (1 John 1:9). David''s bare confession — five words, *I have sinned against Yahuah (LORD)* (2 Samuel 12:13) — draws the immediate *Yahuah (LORD) also hath put away thy sin*: the faithful and just One forgiving the one who hides nothing, the Tanakh pattern the apostle simply repeats.'),
+
+    -- Thread 4: create in me a clean heart / the fifty-first Psalm
+    ('canon','2-samuel',12,13,'canon','psalms',51,1,'free',
+     E'*Have mercy upon me, O Elohim (God), according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions* (Psalm 51:1). The fifty-first Psalm is David''s answer to this very hour — when Nathan came; his confession *I have sinned against Yahuah (LORD)* (2 Samuel 12:13) breaks open into the whole cry of the miserere.'),
+    ('canon','2-samuel',12,13,'canon','psalms',51,3,'free',
+     E'*For I acknowledge my transgressions: and my sin is ever before me* (Psalm 51:3). What in the narrative is the bare *I have sinned against Yahuah (LORD)* (2 Samuel 12:13) is, in the Psalm, the heart laid wholly bare — the sin not hidden but held ever in view, exactly the uncovering that Proverbs 28:13 says draws mercy.'),
+    ('canon','2-samuel',12,13,'canon','psalms',51,4,'free',
+     E'*Against thee, thee only, have I sinned, and done this evil in thy sight: that thou mightest be justified when thou speakest, and be clear when thou judgest* (Psalm 51:4). David''s *I have sinned against Yahuah (LORD)* (2 Samuel 12:13) names the One first sinned against; Uriah and Bath-sheba were wronged, but the covenant breach is against Yahuah, who judges rightly.'),
+    ('canon','2-samuel',12,13,'canon','psalms',51,10,'free',
+     E'*Create in me a clean heart, O Elohim (God); and renew a right spirit within me* (Psalm 51:10). This is the heart of the matter: forgiveness — *thou shalt not die* (2 Samuel 12:13) — is not the end; David begs to be re-made within, the clean heart that is the new covenant''s whole hope.'),
+    ('canon','2-samuel',12,13,'canon','psalms',51,17,'free',
+     E'*The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise* (Psalm 51:17). No burnt offering atones for blood-guilt under the Torah; what Yahuah will not despise is the broken heart — and that contrition is what stands behind the bare *I have sinned against Yahuah (LORD)* (2 Samuel 12:13).'),
+    ('canon','2-samuel',12,13,'canon','ezekiel',36,26,'free',
+     E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26). David''s *create in me a clean heart* foreshadows the covenant promise: *And I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27). The clean heart is no licence to sin on — it is the Torah written within, the very statutes David despised now put inside the heart that asks for it after *I have sinned against Yahuah (LORD)* (2 Samuel 12:13).'),
+
+    -- Thread 6: Solomon / Jedidiah, beloved of Yah / the line preserved
+    ('canon','2-samuel',12,24,'canon','matthew',1,6,'free',
+     E'*And Jesse begat David the king; and David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6). Out of the very breach — Bath-sheba, *the wife of Urias* — the royal line runs on: *she bare a son, and he called his name Solomon: and Yahuah (LORD) loved him* (2 Samuel 12:24). The genealogy of Messiah does not hide the sin; mercy carries the promise straight through it.'),
+    ('canon','2-samuel',12,25,'canon','matthew',1,6,'free',
+     E'*And David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6). Yahuah names the child Himself — *he called his name Jedidiah, because of Yahuah (LORD)* (2 Samuel 12:25), Jedidiah, beloved of Yah — and that beloved son stands first in the line that runs down to the Messiah, the seed of David preserved through pardoned sin.'),
+    ('canon','2-samuel',12,23,'canon','1-thessalonians',4,13,'free',
+     E'*But I would not have you to be ignorant, brethren, concerning them which are asleep, that ye sorrow not, even as others which have no hope* (1 Thessalonians 4:13). David rises, washes, and worships, and answers the servants'' bewilderment — *I shall go to him, but he shall not return to me* (2 Samuel 12:23). The child is not perished but gone ahead, and the grieving father will follow into the same keeping: the very hope Paul names, that the ones asleep are not lost and the covenant mourner sorrows not as the hopeless do.'),
+    ('canon','2-samuel',12,23,'canon','john',11,25,'free',
+     E'*Yahusha (Jesus) said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live* (John 11:25). David''s quiet certainty — *I shall go to him, but he shall not return to me* (2 Samuel 12:23) — leans forward onto the One who is Himself the resurrection and the life; the road runs one way now, toward reunion in Him who raises the sleeping.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-12-the-poor-mans-one-ewe-lamb-thou-art-the-man',
+  E'The poor man''s one ewe lamb — Thou art the man',
+  E'Yahuah sends Nathan, the same prophet who carried the everlasting covenant to David — *Go, do all that is in thine heart; for Yahuah (LORD) is with thee* (2 Samuel 7:3) — but now with a parable: *There were two men in one city; the one rich, and the other poor* (2 Samuel 12:1), the rich man with many flocks, the poor man with *one little ewe lamb* that *lay in his bosom, and was unto him as a daughter* (2 Samuel 12:3), seized to feed a traveller. David''s anger is greatly kindled — *the man that hath done this thing shall surely die* (2 Samuel 12:5) — and the king has sentenced himself. Then the prophet''s word turns: *Thou art the man* (2 Samuel 12:7). This is the office of the prophet, to convict the king by his own mouth where no other voice could reach him. And the spirit of it is restoration, not destruction — *if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted* (Galatians 6:1) — for Nathan convicts and then says *thou shalt not die.*',
+  sv.verse_id, ev.verse_id, 'free', 37525
+  FROM _s341_2sa12_lookup sv, _s341_2sa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=12 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-12-the-sword-shall-never-depart-the-consequence-remains',
+  E'The sword shall never depart — the consequence remains',
+  E'The lawsuit is named: *Wherefore hast thou despised the commandment of Yahuah (LORD), to do evil in his sight?* (2 Samuel 12:9), and the sentence falls — *Now therefore the sword shall never depart from thine house* (2 Samuel 12:10). This is the rod the covenant itself foretold: *If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men* (2 Samuel 7:14). Even after the pardon of the next verse, the chastening is real — grace is not the cancellation of all consequence. It is the wilderness pattern exactly: *I have pardoned according to thy word* (Numbers 14:20), Yahuah says, and still *your carcases shall fall in this wilderness* (Numbers 14:29). Forgiveness lifts the guilt; it does not unmake every harvest the deed has sown — *whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The Torah is never the curse; to despise it is, and the reaping is sure.',
+  sv.verse_id, ev.verse_id, 'free', 37528
+  FROM _s341_2sa12_lookup sv, _s341_2sa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=12 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-12-i-have-sinned-against-yahuah-instant-grace-on-confession',
+  E'I have sinned against Yahuah — instant grace on confession',
+  E'Five words break a year of covering: *And David said unto Nathan, I have sinned against Yahuah (LORD)* (2 Samuel 12:13). And the answer is just as immediate — *And Nathan said unto David, Yahuah (LORD) also hath put away thy sin; thou shalt not die.* This is the whole rhythm of true repentance, sung in David''s own Psalm: *I acknowledged my sin unto thee, and mine iniquity have I not hid... and thou forgavest the iniquity of my sin* (Psalm 32:5). The proverb is his story in one line: *He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy* (Proverbs 28:13). The moment the sin is owned and not hidden, mercy is already given — the same faithfulness the apostle names: *If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness* (1 John 1:9). This is not cheap grace; it is the grace that meets honesty.',
+  sv.verse_id, ev.verse_id, 'free', 37531
+  FROM _s341_2sa12_lookup sv, _s341_2sa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=12 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-12-create-in-me-a-clean-heart-the-fifty-first-psalm',
+  E'Create in me a clean heart — the fifty-first Psalm',
+  E'David''s bare *I have sinned against Yahuah (LORD)* (2 Samuel 12:13) opens, in the fifty-first Psalm — his answer to this very hour when Nathan came — into the whole cry of the miserere: *Have mercy upon me, O Elohim (God), according to thy lovingkindness... blot out my transgressions* (Psalm 51:1); *For I acknowledge my transgressions: and my sin is ever before me* (Psalm 51:3); *Against thee, thee only, have I sinned, and done this evil in thy sight* (Psalm 51:4). And forgiveness is not the end of it — the king begs to be re-made within: *Create in me a clean heart, O Elohim (God); and renew a right spirit within me* (Psalm 51:10), for *the sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise* (Psalm 51:17). This clean heart is the new covenant''s whole hope: *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26) — and it is no licence to sin on, for the very next word is *I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27). The clean heart is the Torah written within.',
+  sv.verse_id, ev.verse_id, 'free', 37534
+  FROM _s341_2sa12_lookup sv, _s341_2sa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=12 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-12-i-shall-go-to-him-but-he-shall-not-return-to-me',
+  E'I shall go to him, but he shall not return to me',
+  E'While the child lives, David fasts and weeps and lies all night upon the earth, pleading — *Who can tell whether GOD will be gracious to me, that the child may live?* (2 Samuel 12:22). When the child dies, the servants fear to tell him, but David rises, washes, worships in the house of Yahuah, and eats. To their bewilderment he answers: *But now he is dead, wherefore should I fast? can I bring him back again? I shall go to him, but he shall not return to me* (2 Samuel 12:23). Here is a hope that reaches past the grave — not that the dead return to the living, but that the living go to the dead and are gathered to them. David does not say the child is simply gone; he says *I shall go to him.* The covenant Father who chastens is the same who keeps His own beyond death, the seed of the resurrection-hope that runs through the whole canon.',
+  sv.verse_id, ev.verse_id, 'free', 37537
+  FROM _s341_2sa12_lookup sv, _s341_2sa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=12 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-12-solomon-jedidiah-beloved-of-yah-the-line-preserved',
+  E'Solomon, Jedidiah — beloved of Yah, the line preserved',
+  E'Out of the very breach the promise runs on. David comforts Bath-sheba, *and she bare a son, and he called his name Solomon: and Yahuah (LORD) loved him* (2 Samuel 12:24); and Yahuah Himself names the child through the prophet — *he called his name Jedidiah, because of Yahuah (LORD)* (2 Samuel 12:25), Jedidiah, beloved of Yah. The same Nathan who came in judgment comes now in blessing. And the genealogy of the Messiah does not hide where this son came from: *And David the king begat Solomon of her that had been the wife of Urias* (Matthew 1:6). Mercy carries the seed-promise straight through pardoned sin — the beloved son standing first in the line that runs down to the Beloved Son, the seed of David preserved.',
+  sv.verse_id, ev.verse_id, 'free', 37540
+  FROM _s341_2sa12_lookup sv, _s341_2sa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=12 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- Thread 1: the poor man's one ewe lamb / Thou art the man
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Samuel 7:3 — the same prophet Nathan who once blessed the house of David: *Go, do all that is in thine heart; for Yahuah (LORD) is with thee.*'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-the-poor-mans-one-ewe-lamb-thou-art-the-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Samuel 7:2 — Nathan the prophet, who carried the everlasting covenant, now returns to arraign the king he once blessed: *Thou art the man.*'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-the-poor-mans-one-ewe-lamb-thou-art-the-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Galatians 6:1 — restore the overtaken in the spirit of meekness; David, quick to judge another (*shall surely die*), is restored, not destroyed.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=5
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-the-poor-mans-one-ewe-lamb-thou-art-the-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the sword shall never depart / the consequence remains
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Samuel 7:14 — the covenant already named the rod: *If he commit iniquity, I will chasten him with the rod of men*; the sword falling is that very chastening.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-the-sword-shall-never-depart-the-consequence-remains'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 14:20 — *I have pardoned according to thy word* — yet the carcases still fall in the wilderness; pardon lifts guilt, not every consequence.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-the-sword-shall-never-depart-the-consequence-remains'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Galatians 6:7 — *whatsoever a man soweth, that shall he also reap*; David despised the commandment, and the sword is the harvest reaped back.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=9
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-the-sword-shall-never-depart-the-consequence-remains'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: I have sinned against Yahuah / instant grace on confession
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 32:5 — *I acknowledged my sin... and thou forgavest the iniquity of my sin*; the very rhythm of confession met instantly by pardon.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=32 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-i-have-sinned-against-yahuah-instant-grace-on-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Proverbs 28:13 — *whoso confesseth and forsaketh them shall have mercy*; the king''s own story compressed into a single line of wisdom.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=28 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-i-have-sinned-against-yahuah-instant-grace-on-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 John 1:9 — *if we confess our sins, he is faithful and just to forgive*; the apostle simply repeats the Tanakh pattern David lived.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-i-have-sinned-against-yahuah-instant-grace-on-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: create in me a clean heart / the fifty-first Psalm
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 51:1 — *Have mercy upon me, O Elohim (God)... blot out my transgressions*; the opening of David''s answer to the hour Nathan came.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-create-in-me-a-clean-heart-the-fifty-first-psalm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 51:3 — *my sin is ever before me*; the bare confession laid wholly bare, the sin not hidden but held in view.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-create-in-me-a-clean-heart-the-fifty-first-psalm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 51:4 — *Against thee, thee only, have I sinned*; David names the One first sinned against, the covenant breach against Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-create-in-me-a-clean-heart-the-fifty-first-psalm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 51:10 — *Create in me a clean heart, O Elohim (God)*; forgiveness is not the end — David begs to be re-made within.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-create-in-me-a-clean-heart-the-fifty-first-psalm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Psalm 51:17 — *a broken and a contrite heart, O Elohim (God), thou wilt not despise*; what stands behind the bare confession.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-create-in-me-a-clean-heart-the-fifty-first-psalm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Ezekiel 36:26 — *A new heart also will I give you... an heart of flesh*; the clean heart is the new covenant — and v.27 makes it walking in the statutes, the Torah within, NOT antinomian.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-create-in-me-a-clean-heart-the-fifty-first-psalm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6: Solomon / Jedidiah, beloved of Yah / the line preserved
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Matthew 1:6 — *David the king begat Solomon of her that had been the wife of Urias*; the royal line runs on out of the very breach.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=24
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-solomon-jedidiah-beloved-of-yah-the-line-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Matthew 1:6 — Jedidiah, beloved of Yah, stands first in the line that runs down to the Messiah, the seed of David preserved through pardoned sin.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=25
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-solomon-jedidiah-beloved-of-yah-the-line-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread "i-shall-go-to-him" members (resurrection-hope weave, repair)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*that ye sorrow not, even as others which have no hope* (1 Thessalonians 4:13) — David''s *I shall go to him, but he shall not return to me* (2 Samuel 12:23) is the covenant mourner''s grief, not the hopeless despair; the child is asleep, gone ahead, not lost.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=23
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-i-shall-go-to-him-but-he-shall-not-return-to-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live* (John 11:25) — the One who raises the sleeping is the ground of David''s certainty that he will *go to him* (2 Samuel 12:23); the road runs one way, toward reunion.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=12 AND sv.verse_number=23
+  JOIN _s341_2sa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-12-i-shall-go-to-him-but-he-shall-not-return-to-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_13.sql (2 Samuel 13) -----
+-- 2 Samuel 13 — The sword in David's own house (12:10-11 fulfilled): Amnon, by Jonadab's
+-- crafty counsel, feigns sickness and forces his half-sister Tamar — the very abominations
+-- the Torah forbids; Tamar the violated, desolate victim; David wroth but does nothing;
+-- Absalom nurses hatred two years and murders Amnon at the sheepshearing — blood for the
+-- unavenged sister, the seed of the rebellion to come. Handled gravely, no sensation.
+-- TAG: 2sa13   VIEW: _s341_2sa13_lookup   SORT BAND: 37550 step 3 (37550, 37553, 37556)
+--
+-- ===== PER-CHAPTER COVERAGE CHECKLIST =====
+-- v.1-7   NT:     none warranted (the feigned-sickness plot; narrative setup)
+--         Extras: none warranted
+--         Tanakh: none warranted (set up under thread 1)
+-- v.12    NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Genesis 34:7 (folly wrought in Yashar'el) [thread 1]
+-- v.13    NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Leviticus 18:9, Leviticus 18:11, Leviticus 20:17 (sister's nakedness) [thread 1]
+-- v.14    NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Deuteronomy 22:25, Deuteronomy 22:26, Deuteronomy 22:27 (he forced her;
+--                 the victim guiltless) [thread 1]
+-- v.15-20 NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Genesis 34:31 (dealt with as a harlot — the violated daughter) [thread 2];
+--                 Leviticus 18:5 (the statutes a man lives in — the covenant standard) [thread 2 frame]
+-- v.21    NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: 2 Samuel 12:10 (the sword shall never depart) [thread 3]
+-- v.22-29 NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: 2 Samuel 12:10, 2 Samuel 12:11 (evil raised up out of thine own house) [thread 3];
+--                 Genesis 34:25, Genesis 34:26 (brothers take the sword for the violated sister) [thread 3]
+-- v.30-39 NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: gathered under thread 3 (Absalom flees; David mourns)
+--
+-- ===== THREADS =====
+-- 1. 2-samuel-13-no-such-thing-ought-to-be-done-in-yashar'el
+--      target libs: Tanakh (Leviticus 18:9/18:11/20:17 incest forbidden; Deuteronomy
+--      22:25/26/27 the forced victim guiltless; Genesis 34:7 folly in Yashar'el). tier free.
+--      FRAME: Tamar pleads by the covenant standard the Torah itself sets; the Torah forbids
+--      exactly this abomination (Torah affirmed, never the curse).
+-- 2. 2-samuel-13-tamar-remained-desolate
+--      target libs: Tanakh (Genesis 34:31 dealt-with-as-a-harlot; Leviticus 18:5 the statutes
+--      a man lives in). tier free. FRAME: victims-not-enemies — Tamar the violated, desolate
+--      one, cast out; the love that was lust turns to hatred.
+-- 3. 2-samuel-13-the-sword-departed-not-from-davids-house
+--      target libs: Tanakh (2 Samuel 12:10 the sword shall never depart; 2 Samuel 12:11 evil
+--      raised up out of thine own house; Genesis 34:25/34:26 the brothers' sword for the
+--      sister). tier free. FRAME: the unfolding of the 12:10 judgment — the unavenged
+--      abomination breeds the murder, the seed of the rebellion to come.
+
+CREATE TEMP VIEW _s341_2sa13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Torah standard exposes the abomination
+    ('canon','2-samuel',13,12,'canon','genesis',34,7,'free',
+      E'*And the sons of Jacob came out of the field when they heard it: and the men were grieved, and they were very wroth, because he had wrought folly in Yashar''el (Israel) in lying with Jacob''s daughter; which thing ought not to be done* (Genesis 34:7). Tamar pleads in the exact covenant words: *no such thing ought to be done in Yashar''el (Israel): do not thou this folly* (2 Samuel 13:12). The defiling of a daughter of the covenant is *folly in Yashar''el* — a fixed standard older than David''s house, which Amnon knew and trampled.'),
+    ('canon','2-samuel',13,13,'canon','leviticus',18,9,'free',
+      E'*The nakedness of thy sister, the daughter of thy father, or daughter of thy mother, whether she be born at home, or born abroad, even their nakedness thou shalt not uncover* (Leviticus 18:9). Tamar is Amnon''s half-sister, *the daughter of thy father* — the very kinship the Torah names first. Her cry *whither shall I cause my shame to go?* (2 Samuel 13:13) is the shame the statute was given to prevent.'),
+    ('canon','2-samuel',13,13,'canon','leviticus',18,11,'free',
+      E'*The nakedness of thy father''s wife''s daughter, begotten of thy father, she is thy sister, thou shalt not uncover her nakedness* (Leviticus 18:11). The Torah spells out the half-sister case precisely — *she is thy sister*. Amnon and Tamar share David their father; the bar Tamar names by saying *as for thee, thou shalt be as one of the fools in Yashar''el* (2 Samuel 13:13) is this written word, not her invention.'),
+    ('canon','2-samuel',13,13,'canon','leviticus',20,17,'free',
+      E'*And if a man shall take his sister, his father''s daughter, or his mother''s daughter, and see her nakedness... it is a wicked thing... he hath uncovered his sister''s nakedness; he shall bear his iniquity* (Leviticus 20:17). The same Torah that forbids the act fixes the guilt on the man — *he shall bear his iniquity*. Tamar offers the lawful path, *speak unto the king; for he will not withhold me from thee* (2 Samuel 13:13); Amnon refuses the covenant and chooses the abomination.'),
+    ('canon','2-samuel',13,14,'canon','deuteronomy',22,25,'free',
+      E'*But if a man find a betrothed damsel in the field, and the man force her, and lie with her: then the man only that lay with her shall die* (Deuteronomy 22:25). The text names Amnon''s deed by the Torah''s own word: *being stronger than she, forced her, and lay with her* (2 Samuel 13:14). The guilt is the forcer''s alone — *the man only*.'),
+    ('canon','2-samuel',13,14,'canon','deuteronomy',22,26,'free',
+      E'*But unto the damsel thou shalt do nothing; there is in the damsel no sin worthy of death: for as when a man riseth against his neighbour, and slayeth him, even so is this matter* (Deuteronomy 22:26). The Torah measures the forcing of a woman as a man rising to slay his neighbour — a violence done TO her. Tamar, *being stronger than she, forced her* (2 Samuel 13:14), is *the damsel* who has done nothing: the victim, never the offender.'),
+    ('canon','2-samuel',13,14,'canon','deuteronomy',22,27,'free',
+      E'*For he found her in the field, and the betrothed damsel cried, and there was none to save her* (Deuteronomy 22:27). Amnon had emptied the room — *Have out all men from me. And they went out every man from him* (2 Samuel 13:9) — so that, like the damsel in the field, *there was none to save her*. The Torah''s tenderness toward the cornered, unheard victim reads Tamar exactly.'),
+    -- THREAD 2: Tamar the desolate violated one
+    ('canon','2-samuel',13,15,'canon','genesis',34,31,'free',
+      E'*And they said, Should he deal with our sister as with an harlot?* (Genesis 34:31). Amnon''s lust spent, *Amnon hated her exceedingly; so that the hatred wherewith he hated her was greater than the love wherewith he had loved her* (2 Samuel 13:15), and casts her out — dealing with a daughter of Yashar''el as a thing to be used and discarded, the very contempt Dinah''s brothers named.'),
+    ('canon','2-samuel',13,20,'canon','leviticus',18,5,'free',
+      E'*Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD)* (Leviticus 18:5). The statutes are the path of life; Amnon broke them and left *Tamar... desolate in her brother Absalom''s house* (2 Samuel 13:20) — desolation is what the abandoned commandment leaves in its wake. The Torah keeper lives; the covenant-breaker scatters death and desolation through the house.'),
+    -- THREAD 3: the sword unfolds the 12:10 judgment
+    ('canon','2-samuel',13,21,'canon','2-samuel',12,10,'free',
+      E'*Now therefore the sword shall never depart from thine house; because thou hast despised me, and hast taken the wife of Uriah the Hittite to be thy wife* (2 Samuel 12:10). David hears of the rape and *was very wroth* (2 Samuel 13:21) — yet does nothing, the passive father. The word Nathan spoke over David''s own sin against a wife now bears its first bitter fruit inside his own house.'),
+    ('canon','2-samuel',13,22,'canon','2-samuel',12,11,'free',
+      E'*Thus saith Yahuah (LORD), Behold, I will raise up evil against thee out of thine own house...* (2 Samuel 12:11). The evil is raised up *out of thine own house*: *Absalom hated Amnon, because he had forced his sister Tamar* (2 Samuel 13:22). The unavenged abomination festers into a brother''s murderous hatred — the judgment unfolding from within.'),
+    ('canon','2-samuel',13,28,'canon','2-samuel',12,10,'free',
+      E'*Now therefore the sword shall never depart from thine house* (2 Samuel 12:10). Two years of silent hatred end in blood: *when I say unto you, Smite Amnon; then kill him* (2 Samuel 13:28). The literal sword now strikes inside David''s house, son slaying son, exactly as Nathan foretold.'),
+    ('canon','2-samuel',13,28,'canon','genesis',34,25,'free',
+      E'*And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah''s brethren, took each man his sword, and came upon the city boldly, and slew all the males* (Genesis 34:25). As Dinah''s brothers took the sword for their violated sister, so Absalom''s servants *did unto Amnon as Absalom had commanded* (2 Samuel 13:29) — the brother''s vengeance for the unavenged sister, the same grievous pattern of blood answering the defilement of a daughter of Yashar''el.'),
+    ('canon','2-samuel',13,29,'canon','genesis',34,26,'free',
+      E'*And they slew Hamor and Shechem his son with the edge of the sword, and took Dinah out of Shechem''s house, and went out* (Genesis 34:26). *And the servants of Absalom did unto Amnon as Absalom had commanded* (2 Samuel 13:29). In both houses the violation of a sister goes unjudged by the father and is answered by the brothers'' sword — vengeance where covenant justice was withheld, the seed of greater sorrow to come.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT E'2-samuel-13-no-such-thing-ought-to-be-done-in-yashar''el',
+       E'No Such Thing Ought to Be Done in Yashar''el — the Torah''s Standard Exposes the Abomination',
+       E'When Amnon seizes his half-sister, Tamar does not reason from feeling but from the covenant: *Nay, my brother, do not force me; for no such thing ought to be done in Yashar''el (Israel): do not thou this folly* (2 Samuel 13:12). Her words are the Torah''s own. The defiling of a daughter of the covenant is named *folly in Yashar''el* already in Dinah''s day — *because he had wrought folly in Yashar''el... which thing ought not to be done* (Genesis 34:7). The kinship she names is the first the statute forbids: *The nakedness of thy sister, the daughter of thy father... thou shalt not uncover* (Leviticus 18:9), spelled out for the half-sister, *she is thy sister, thou shalt not uncover her nakedness* (Leviticus 18:11), with the guilt fixed on the man — *he hath uncovered his sister''s nakedness; he shall bear his iniquity* (Leviticus 20:17). And the forcing itself the Torah judges as violence done TO her: *the man only that lay with her shall die* (Deuteronomy 22:25); *unto the damsel thou shalt do nothing; there is in the damsel no sin worthy of death: for as when a man riseth against his neighbour, and slayeth him, even so is this matter* (Deuteronomy 22:26); *he found her in the field, and the betrothed damsel cried, and there was none to save her* (Deuteronomy 22:27). Amnon had cleared the room — *Have out all men from me* (2 Samuel 13:9) — so that *there was none to save her*. The Torah is not the curse here; it is the very wall Amnon broke through, the standard that names his deed for what it is and lays the whole weight of guilt on him alone.',
+       sv.verse_id, ev.verse_id, 'free', 37550
+  FROM _s341_2sa13_lookup sv, _s341_2sa13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=13 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT E'2-samuel-13-tamar-remained-desolate',
+       E'Tamar Remained Desolate — the Violated, Cast-Out Victim',
+       E'The same lust that drove Amnon turns instantly to loathing: *Then Amnon hated her exceedingly; so that the hatred wherewith he hated her was greater than the love wherewith he had loved her. And Amnon said unto her, Arise, be gone* (2 Samuel 13:15). What he called love was never love; and Tamar names the second cruelty — *this evil in sending me away is greater than the other that thou didst unto me* (2 Samuel 13:16). She is bolted out, ashes on her head, her royal virgin''s robe rent, crying aloud, and left *desolate in her brother Absalom''s house* (2 Samuel 13:20). She is the victim, never the offender — a daughter of Yashar''el *dealt with... as with an harlot*, the very contempt Dinah''s brothers refused to abide: *Should he deal with our sister as with an harlot?* (Genesis 34:31). And her desolation testifies against the broken statute, for the covenant was the path of life — *Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them* (Leviticus 18:5). Where the commandment is trampled, the innocent are left desolate. The text holds Tamar gently and lays no blame on her; the blame is Amnon''s, and the father''s who did not act.',
+       sv.verse_id, ev.verse_id, 'free', 37553
+  FROM _s341_2sa13_lookup sv, _s341_2sa13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=13 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT E'2-samuel-13-the-sword-departed-not-from-davids-house',
+       E'The Sword Departed Not From David''s House — the 12:10 Judgment Unfolds',
+       E'Nathan''s word over David''s own sin against a wife now bears its first fruit inside David''s house: *Now therefore the sword shall never depart from thine house; because thou hast despised me, and hast taken the wife of Uriah the Hittite to be thy wife* (2 Samuel 12:10); *Behold, I will raise up evil against thee out of thine own house* (2 Samuel 12:11). David hears of the rape and *was very wroth* (2 Samuel 13:21) — but does nothing, the passive father who will not correct his son, and the unjudged abomination festers. *Absalom hated Amnon, because he had forced his sister Tamar* (2 Samuel 13:22). Two silent years later the hatred ripens at the sheepshearing: *when I say unto you, Smite Amnon; then kill him, fear not* (2 Samuel 13:28), and *the servants of Absalom did unto Amnon as Absalom had commanded* (2 Samuel 13:29). The sword has struck inside the house, son slaying son — the *evil... out of thine own house* exactly as foretold. It is the old pattern of Dinah, where the brothers took the sword for the violated sister the father failed to defend: *two of the sons of Jacob, Simeon and Levi, Dinah''s brethren, took each man his sword... and slew all the males* (Genesis 34:25); *and they slew Hamor and Shechem his son with the edge of the sword* (Genesis 34:26). Vengeance fills the place where covenant justice was withheld — and Absalom''s blood for his sister is the very seed of the rebellion that will yet rise against David.',
+       sv.verse_id, ev.verse_id, 'free', 37556
+  FROM _s341_2sa13_lookup sv, _s341_2sa13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=13 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*because he had wrought folly in Yashar''el (Israel)... which thing ought not to be done* (Genesis 34:7) — Tamar pleads the same fixed standard: *no such thing ought to be done in Yashar''el* (2 Samuel 13:12).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=12
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug=E'2-samuel-13-no-such-thing-ought-to-be-done-in-yashar''el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The nakedness of thy sister, the daughter of thy father... thou shalt not uncover* (Leviticus 18:9) — the half-sister case the Torah names first; Tamar is David''s daughter as Amnon is.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=13
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug=E'2-samuel-13-no-such-thing-ought-to-be-done-in-yashar''el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*she is thy sister, thou shalt not uncover her nakedness* (Leviticus 18:11) — the written bar Tamar invokes by *thou shalt be as one of the fools in Yashar''el* (2 Samuel 13:13).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=13
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug=E'2-samuel-13-no-such-thing-ought-to-be-done-in-yashar''el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he hath uncovered his sister''s nakedness; he shall bear his iniquity* (Leviticus 20:17) — the Torah lays the whole guilt on the man, the same Torah Amnon refused.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=13
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug=E'2-samuel-13-no-such-thing-ought-to-be-done-in-yashar''el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the man only that lay with her shall die* (Deuteronomy 22:25) — the forcer alone bears the death; *being stronger than she, forced her* (2 Samuel 13:14).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug=E'2-samuel-13-no-such-thing-ought-to-be-done-in-yashar''el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*unto the damsel thou shalt do nothing; there is in the damsel no sin worthy of death... even so is this matter* (Deuteronomy 22:26) — the Torah weighs forcing as a man slaying his neighbour; Tamar has done nothing.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug=E'2-samuel-13-no-such-thing-ought-to-be-done-in-yashar''el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the betrothed damsel cried, and there was none to save her* (Deuteronomy 22:27) — Amnon cleared the room, *Have out all men from me* (2 Samuel 13:9), so there was none to save her.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug=E'2-samuel-13-no-such-thing-ought-to-be-done-in-yashar''el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Should he deal with our sister as with an harlot?* (Genesis 34:31) — the contempt of a daughter of Yashar''el used and cast off; Amnon''s love turns to hatred and *Arise, be gone* (2 Samuel 13:15).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-13-tamar-remained-desolate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*which if a man do, he shall live in them* (Leviticus 18:5) — the statutes are the path of life; the broken commandment leaves Tamar *desolate* (2 Samuel 13:20).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=20
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-13-tamar-remained-desolate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the sword shall never depart from thine house* (2 Samuel 12:10) — David *was very wroth* (2 Samuel 13:21) but does nothing; the word bears its first fruit in his own house.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=21
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-13-the-sword-departed-not-from-davids-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will raise up evil against thee out of thine own house* (2 Samuel 12:11) — *Absalom hated Amnon, because he had forced his sister Tamar* (2 Samuel 13:22); the evil rises from within.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=22
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-13-the-sword-departed-not-from-davids-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the sword shall never depart from thine house* (2 Samuel 12:10) — the literal sword strikes: *Smite Amnon; then kill him* (2 Samuel 13:28), son slaying son as foretold.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=28
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-13-the-sword-departed-not-from-davids-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Simeon and Levi, Dinah''s brethren, took each man his sword... and slew all the males* (Genesis 34:25) — the brothers'' sword for the violated sister; Absalom''s servants do likewise to Amnon (2 Samuel 13:29).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=28
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-13-the-sword-departed-not-from-davids-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*they slew Hamor and Shechem his son with the edge of the sword* (Genesis 34:26) — *the servants of Absalom did unto Amnon as Absalom had commanded* (2 Samuel 13:29); vengeance where the father withheld justice.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=13 AND sv.verse_number=29
+  JOIN _s341_2sa13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-13-the-sword-departed-not-from-davids-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_14.sql (2 Samuel 14) -----
+--
+-- Book/chapter: 2 Samuel 14    Tag: 2sa14    View: _s341_2sa14_lookup
+-- Sort band: base 37575, step 3  ->  37575, 37578, 37581
+--
+-- 2 Samuel 14 coverage:
+--   v.1-3  (Joab sends the wise woman of Tekoah with feigned mourning) -> THREAD 2 (the parable that moves the king)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 12:1-4 (Nathan's parable — the self-condemning story) -> THREAD 2
+--   v.5-7  (the widow's parable: two sons strove, one slew the other, the family would destroy the heir / quench the coal) -> THREAD 2 source
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Numbers 35:12,19,24-25 (the avenger of blood, the congregation delivers the slayer, the city of refuge) -> THREAD 2
+--   v.11   (let the king remember Yahuah, that the revengers of blood destroy no more) -> THREAD 2 source
+--          Tanakh: Numbers 35:25 (the congregation shall deliver the slayer out of the hand of the revenger of blood) -> THREAD 2
+--   v.13   (the king doth not fetch home again his banished) -> THREAD 1 source
+--   v.14   ★★★ KEYSTONE (we must needs die, as water spilt; yet doth he devise means, that his banished be not expelled from him) -> THREAD 1 source / anchor-start
+--          NT:     Luke 15:4,20,24 (the lost sought and found; the father runs); John 6:37 (him that cometh I will in no wise cast out) -> THREAD 1
+--          Extras: none warranted (Micah/Isaiah/Psalm carry the Tanakh weight cleanly)
+--          Tanakh: Micah 7:18-19 (who pardoneth iniquity; casts all their sins into the depths of the sea);
+--                  Isaiah 59:16 (his arm brought salvation; no intercessor); Psalm 103:10-13 (removed our transgressions;
+--                  pitieth them that fear him) -> THREAD 1
+--   v.16   (deliver his handmaid... out of the inheritance of Elohim) -> THREAD 1 (the banished kept in the inheritance)
+--   v.21-23 (the king: bring the young man Absalom again; Joab brings him to Jerusalem) -> THREAD 3 source
+--   v.24,28 (let him not see my face; Absalom dwelt two full years and saw not the king's face) -> THREAD 3 source
+--          NT:     Luke 15:20 (the father saw him, ran, fell on his neck, kissed him) -> THREAD 3 (the contrast: full embrace)
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 12:13 (Yahuah hath put away thy sin) -> THREAD 3 (David forgiven full, forgives by halves)
+--   v.25-27 (Absalom's beauty, the weight of his hair, his children) -> narrative; none warranted (sets up ch.15-18)
+--   v.30-32 (Absalom fires Joab's field to force an audience) -> THREAD 3 (the half-reconciliation festers)
+--   v.33   (the king kissed Absalom) -> THREAD 3 anchor-end (the kiss two years late; the breach never truly healed)
+--
+-- THREADS:
+--   2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him  (free)
+--       -> Tanakh (Micah, Isaiah, Psalm) + NT (Luke, John) — THE KEYSTONE: Yahuah finds a just means to bring the outcast home
+--   2-samuel-14-the-wise-woman-of-tekoah-and-the-avenger-of-blood-stayed   (free)
+--       -> Tanakh (2 Samuel 12 Nathan's parable; Numbers 35 cities of refuge / the avenger / the congregation delivers)
+--   2-samuel-14-brought-again-but-not-received-the-half-hearted-reconciliation (free)
+--       -> Tanakh (2 Samuel 12:13) + NT (Luke 15:20) — the human reconciliation by halves vs the Father's full embrace
+--
+-- Framework-load-bearing framing:
+--   * 14:14 KEYSTONE — *yet doth he devise means, that his banished be not expelled from him*. The wise woman, prompted
+--     by Joab, presses David toward Absalom by naming what Yahuah Himself does: He DEVISES MEANS that the banished be
+--     not finally cast out. This is the gospel of the gathering — the outcast brought home — but framed as Yahuah's JUST
+--     means (Isaiah 59:16 His own arm and righteousness brought salvation; Micah 7:18-19 He pardons AND casts sin into
+--     the deep; Psalm 103 He removes transgressions yet still pities them that fear Him and keep His covenant). NOT cheap
+--     inclusion, NOT banished-by-confession-alone. The two-house outcast (Yashar'el divorced and scattered) is the larger
+--     banished one Yahuah devises means to regather. Forward to Luke 15 (the lost found) and John 6:37 (in no wise cast out).
+--   * 14:5-11 — the wise woman's parable mirrors Nathan's (2 Sam 12): the prophetic self-condemning story that moves the
+--     king to judge his own case. Her plea to stay "the revengers of blood" rests on the Torah of Numbers 35 — the avenger
+--     of blood, the city of refuge, the congregation that delivers the slayer. Torah is the very ground she stands on.
+--   * 14:24,33 — David brings Absalom back but will NOT see his face two years; the eventual kiss is reconciliation by
+--     halves, and it festers into rebellion (ch.15). The contrast is deliberate: the half-hearted human restoring against
+--     Yahuah's full restoring of the banished (Luke 15:20 the father runs and kisses; 2 Sam 12:13 David himself was put
+--     away his sin in full, yet forgives his son by halves).
+
+CREATE TEMP VIEW _s341_2sa14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: he devise means, that his banished be not expelled from him (KEYSTONE)
+    ('canon','2-samuel',14,14,'canon','micah',7,18,'free',
+      E'*Who is a Elohim (God) like unto thee, that pardoneth iniquity, and passeth by the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in mercy* (Micah 7:18). The wise woman''s creed — *yet doth he devise means, that his banished be not expelled from him* (2 Samuel 14:14) — is Micah''s very wonder: the Elohim who pardons the remnant''s transgression and does not keep His anger for ever is the One who finds a way to bring the outcast home. He delights in mercy, and so He devises means.'),
+    ('canon','2-samuel',14,14,'canon','micah',7,19,'free',
+      E'*He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19). The banished are not brought home by overlooking the wrong — the sin is subdued and drowned. *Yet doth he devise means, that his banished be not expelled from him* (2 Samuel 14:14): the means is just, not cheap. He casts the sin into the deep and keeps the sinner.'),
+    ('canon','2-samuel',14,14,'canon','isaiah',59,16,'free',
+      E'*And he saw that there was no man, and wondered that there was no intercessor: therefore his arm brought salvation unto him; and his righteousness, it sustained him* (Isaiah 59:16). When no man could devise the means, Yahuah''s own arm and His own righteousness brought the salvation. The wise woman says Yahuah *devise means, that his banished be not expelled* (2 Samuel 14:14); Isaiah names whose arm devises it — His own, sustained by His own righteousness, so the bringing-home wrongs no justice.'),
+    ('canon','2-samuel',14,14,'canon','psalms',103,12,'free',
+      E'*As far as the east is from the west, so far hath he removed our transgressions from us* (Psalm 103:12). To devise means that the banished be not expelled, Yahuah first removes what banished them. The wise woman knows *we are as water spilt on the ground, which cannot be gathered up again* (2 Samuel 14:14) — man cannot un-spill himself; but Yahuah can carry the transgression an infinite distance away and gather the outcast home.'),
+    ('canon','2-samuel',14,14,'canon','psalms',103,13,'free',
+      E'*Like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him* (Psalm 103:13). The wise woman pleads to a king who is also a father, that a banished son be brought home. The Psalm reaches past David to the true Father whose pity moves Him to devise the means the human father only half-managed: *that his banished be not expelled from him* (2 Samuel 14:14).'),
+    ('canon','2-samuel',14,14,'canon','luke',15,4,'free',
+      E'*What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?* (Luke 15:4). The means Yahuah devises is a seeking — He goes after the banished one *until he find it*. The wise woman''s word, *that his banished be not expelled from him* (2 Samuel 14:14), is the parable of the lost sheep before it was spoken: the Shepherd will not let the outcast stay lost.'),
+    ('canon','2-samuel',14,14,'canon','luke',15,20,'free',
+      E'*And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20). The far country is the place of the banished; the means Yahuah devises is a Father who runs to meet the returning outcast. *Yet doth he devise means, that his banished be not expelled from him* (2 Samuel 14:14) — and here is the means embodied, the Father running while the son is yet a great way off.'),
+    ('canon','2-samuel',14,14,'canon','luke',15,24,'free',
+      E'*For this my son was dead, and is alive again; he was lost, and is found. And they began to be merry* (Luke 15:24). The banished son counted as dead is restored to the house and to life. The wise woman speaks of one *expelled* who is yet not expelled for ever (2 Samuel 14:14); the Father''s verdict over the returned is *was lost, and is found* — the banished gathered home and the house made merry.'),
+    ('canon','2-samuel',14,14,'canon','john',6,37,'free',
+      E'*All that the Father giveth me shall come to me; and him that cometh to me I will in no wise cast out* (John 6:37). This is the keystone answered in full. The wise woman could only hope a king would devise means that his banished *be not expelled from him* (2 Samuel 14:14); the Formed Son speaks it as covenant promise — *him that cometh to me I will in no wise cast out*. The banished who comes is never expelled again.'),
+
+    -- THREAD 2: the wise woman of Tekoah and the avenger of blood stayed
+    ('canon','2-samuel',14,3,'canon','2-samuel',12,1,'free',
+      E'*And Yahuah (LORD) sent Nathan unto David. And he came unto him, and said unto him, There were two men in one city; the one rich, and the other poor* (2 Samuel 12:1). Joab *put the words in her mouth* (2 Samuel 14:3) exactly as Yahuah had put words in Nathan''s: the king is moved to judge his own case by a parable. The wise woman''s feigned suit is Nathan''s device a second time — a story that catches the king before he knows he is the man.'),
+    ('canon','2-samuel',14,6,'canon','2-samuel',12,3,'free',
+      E'*But the poor man had nothing, save one little ewe lamb... and it grew up together with him, and with his children... and was unto him as a daughter* (2 Samuel 12:3). The wise woman frames her loss as Nathan framed his: *thy handmaid had two sons, and they two strove together in the field... but the one smote the other, and slew him* (2 Samuel 14:6). The pathos of the single precious thing about to be taken is the same hook — the king pities the tale before he sees the mirror.'),
+    ('canon','2-samuel',14,7,'canon','numbers',35,19,'free',
+      E'*The revenger of blood himself shall slay the murderer: when he meeteth him, he shall slay him* (Numbers 35:19). The whole family pressing the widow — *Deliver him that smote his brother, that we may kill him, for the life of his brother whom he slew* (2 Samuel 14:7) — invokes precisely the Torah avenger of blood. Her parable lives inside Numbers 35: the blood of the slain demands the slayer, and the family claims that right.'),
+    ('canon','2-samuel',14,7,'canon','numbers',35,12,'free',
+      E'*And they shall be unto you cities for refuge from the avenger; that the manslayer die not, until he stand before the congregation in judgment* (Numbers 35:12). Torah does not leave the slayer to the avenger''s hand alone — there is refuge, and a congregation that judges first. The widow''s plea that her one remaining son not be slain (2 Samuel 14:7) appeals to that mercy built into the Torah: not every slayer is a murderer, and the heir must not be quenched without judgment.'),
+    ('canon','2-samuel',14,11,'canon','numbers',35,25,'free',
+      E'*And the congregation shall deliver the slayer out of the hand of the revenger of blood, and the congregation shall restore him to the city of his refuge* (Numbers 35:25). When David swears *there shall not one hair of thy son fall to the earth* (2 Samuel 14:11), he acts as the congregation Numbers commands — delivering the slayer out of the avenger''s hand. The king does for the parable-son exactly what Torah does for the manslayer: stays the blood and grants refuge.'),
+
+    -- THREAD 3: brought again but not received — the half-hearted reconciliation
+    ('canon','2-samuel',14,24,'canon','2-samuel',12,13,'free',
+      E'*And David said unto Nathan, I have sinned against Yahuah (LORD). And Nathan said unto David, Yahuah (LORD) also hath put away thy sin; thou shalt not die* (2 Samuel 12:13). David was forgiven in full, his sin put away, his life spared. Yet to his own banished son he grants only half: *let him not see my face* (2 Samuel 14:24). The man who received whole pardon from Yahuah deals out a measured, faceless reconciliation — the human restoring by halves against the divine restoring entire.'),
+    ('canon','2-samuel',14,33,'canon','luke',15,20,'free',
+      E'*But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20). David''s reconciliation comes two years late and cold: *the king kissed Absalom* (2 Samuel 14:33) only after refusing his face. The father of the parable runs while the son is yet far off and kisses him at once. The contrast is the whole point — Yahuah''s full embrace of the banished against the king''s grudging, delayed kiss that left the breach to fester into rebellion.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him', E'He devise means, that his banished be not expelled from him', E'The wise woman of Tekoah, sent by Joab to move the king toward his exiled son, rises to a word far larger than Absalom: *For we must needs die, and are as water spilt on the ground, which cannot be gathered up again; neither doth Elohim (God) respect any person: yet doth he devise means, that his banished be not expelled from him* (2 Samuel 14:14). Man cannot ungather spilt water or undo his own banishment; but Yahuah DEVISES MEANS that the outcast be not finally cast out. This is the heart of restoration — and the framing matters: it is Yahuah''s JUST means, never cheap inclusion.\n\nMicah marvels at the same Elohim: *Who is a Elohim (God) like unto thee, that pardoneth iniquity... he retaineth not his anger for ever, because he delighteth in mercy* (Micah 7:18) — and the means is just, for *thou wilt cast all their sins into the depths of the sea* (Micah 7:19). The sin is drowned; the sinner is kept. Isaiah names whose arm devises it: *he saw that there was no man, and wondered that there was no intercessor: therefore his arm brought salvation unto him; and his righteousness, it sustained him* (Isaiah 59:16). The Psalm measures the distance the means must carry the transgression: *As far as the east is from the west, so far hath he removed our transgressions from us* (Psalm 103:12), for *like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him* (Psalm 103:13).\n\nThen the Formed Son embodies the means. He seeks the banished *until he find it* (Luke 15:4); the Father *saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20), and the verdict is *was lost, and is found* (Luke 15:24). And the keystone is answered as covenant promise: *him that cometh to me I will in no wise cast out* (John 6:37). The water spilt cannot gather itself — but Yahuah devises the means, and the banished one who comes is never expelled again. This is the gathering of the outcast, the regathering of the scattered house, accomplished by His own just arm.',
+       sv.verse_id, ev.verse_id, 'free', 37575
+  FROM _s341_2sa14_lookup sv, _s341_2sa14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=14 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-14-the-wise-woman-of-tekoah-and-the-avenger-of-blood-stayed', E'The wise woman of Tekoah, and the avenger of blood stayed', E'Joab fetches a wise woman of Tekoah and *put the words in her mouth* (2 Samuel 14:3) — the very method Yahuah used with Nathan: *And Yahuah (LORD) sent Nathan unto David... There were two men in one city; the one rich, and the other poor* (2 Samuel 12:1). A parable catches the king before he knows he is the man. The widow''s tale of *two sons* who *strove together in the field... but the one smote the other, and slew him* (2 Samuel 14:6) mirrors Nathan''s single precious *ewe lamb... as a daughter* (2 Samuel 12:3): pathos first, mirror after.\n\nHer suit runs straight through the Torah. The family demanding *Deliver him that smote his brother, that we may kill him, for the life of his brother whom he slew* (2 Samuel 14:7) is the avenger of blood of Numbers 35: *The revenger of blood himself shall slay the murderer* (Numbers 35:19). But Torah is no bare vengeance — it builds in refuge and judgment: *cities for refuge from the avenger; that the manslayer die not, until he stand before the congregation in judgment* (Numbers 35:12), and *the congregation shall deliver the slayer out of the hand of the revenger of blood* (Numbers 35:25). When David swears *there shall not one hair of thy son fall to the earth* (2 Samuel 14:11), he does for the parable-son exactly what Torah commands the congregation to do for the manslayer — stay the blood, grant the refuge. The wise woman wins her case on the ground of Yahuah''s own instruction, and from this the larger plea is sprung: bring home the banished.',
+       sv.verse_id, ev.verse_id, 'free', 37578
+  FROM _s341_2sa14_lookup sv, _s341_2sa14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=14 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-14-brought-again-but-not-received-the-half-hearted-reconciliation', E'Brought again, but not received — the half-hearted reconciliation', E'The king relents and Absalom is brought back — *So Joab arose and went to Geshur, and brought Absalom to Jerusalem* (2 Samuel 14:23) — but the homecoming is a homecoming by halves: *Let him turn to his own house, and let him not see my face* (2 Samuel 14:24). Two full years the son dwells in the city and *saw not the king''s face* (2 Samuel 14:28). When the audience finally comes, the kiss is cold and late: *the king kissed Absalom* (2 Samuel 14:33). The breach is patched, not healed — and out of that unhealed wound the rebellion of the next chapters grows.\n\nThe contrast is deliberate and damning. David himself had received whole pardon: *Yahuah (LORD) also hath put away thy sin; thou shalt not die* (2 Samuel 12:13) — full, free, his life spared. Yet the man forgiven entire forgives his own banished son by halves. And the true Father, when His outcast returns, runs: *when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20). No two-year wait, no withheld face — the Father meets the banished while he is still far off. The human reconciliation, measured and grudging, throws into relief the full restoring of Yahuah, who devises means that His banished be not expelled at all.',
+       sv.verse_id, ev.verse_id, 'free', 37581
+  FROM _s341_2sa14_lookup sv, _s341_2sa14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=14 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1: he devise means, that his banished be not expelled from him
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Who is a Elohim (God) like unto thee, that pardoneth iniquity... because he delighteth in mercy* (Micah 7:18) — the Elohim who devises means is the One who delights in mercy.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou wilt cast all their sins into the depths of the sea* (Micah 7:19) — the means is just: the sin drowned, the sinner kept.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*therefore his arm brought salvation unto him; and his righteousness, it sustained him* (Isaiah 59:16) — when no man could devise it, His own arm did, by His own righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=59 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*As far as the east is from the west, so far hath he removed our transgressions from us* (Psalm 103:12) — the means carries the transgression an infinite distance, and gathers the outcast.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him* (Psalm 103:13) — the true Father''s pity moves the means the human father only half-managed.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*go after that which is lost, until he find it* (Luke 15:4) — the means Yahuah devises is a seeking that does not quit until the banished is found.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20) — the means embodied: the Father runs while the banished is yet a great way off.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*he was lost, and is found* (Luke 15:24) — the banished counted as dead is restored to the house and to life.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*him that cometh to me I will in no wise cast out* (John 6:37) — the keystone answered as covenant promise: the banished who comes is never expelled again.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-he-devise-means-that-his-banished-be-not-expelled-from-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: the wise woman of Tekoah and the avenger of blood stayed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And Yahuah (LORD) sent Nathan unto David... There were two men in one city; the one rich, and the other poor* (2 Samuel 12:1) — the parable-device a second time: a story that judges the king before he knows it.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-the-wise-woman-of-tekoah-and-the-avenger-of-blood-stayed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the poor man had nothing, save one little ewe lamb... and was unto him as a daughter* (2 Samuel 12:3) — the single precious thing about to be taken; the same hook as the widow''s two sons.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-the-wise-woman-of-tekoah-and-the-avenger-of-blood-stayed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The revenger of blood himself shall slay the murderer: when he meeteth him, he shall slay him* (Numbers 35:19) — the family''s demand is the Torah avenger of blood claiming the slayer.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=7
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-the-wise-woman-of-tekoah-and-the-avenger-of-blood-stayed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*cities for refuge from the avenger; that the manslayer die not, until he stand before the congregation in judgment* (Numbers 35:12) — Torah builds refuge and judgment in; not every slayer is a murderer.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=7
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-the-wise-woman-of-tekoah-and-the-avenger-of-blood-stayed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the congregation shall deliver the slayer out of the hand of the revenger of blood... and restore him to the city of his refuge* (Numbers 35:25) — David''s oath that not a hair fall does for the parable-son what Torah commands the congregation to do.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=11
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-the-wise-woman-of-tekoah-and-the-avenger-of-blood-stayed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: brought again but not received — the half-hearted reconciliation
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) also hath put away thy sin; thou shalt not die* (2 Samuel 12:13) — David, forgiven in full, deals out to his son a measured, faceless reconciliation.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=24
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-brought-again-but-not-received-the-half-hearted-reconciliation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*when he was yet a great way off, his father saw him... and ran, and fell on his neck, and kissed him* (Luke 15:20) — the Father''s instant full embrace against David''s two-years-late, withheld-face kiss.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=14 AND sv.verse_number=33
+  JOIN _s341_2sa14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-14-brought-again-but-not-received-the-half-hearted-reconciliation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_15.sql (2 Samuel 15) -----
+-- 2 Samuel 15 — Absalom steals the hearts; the rejected anointed king flees Jerusalem,
+--   crosses the brook Kidron, goes up the ascent of Olivet weeping, head covered, barefoot;
+--   sends the ark BACK with Zadok in submission to Yahuah's will; the familiar friend
+--   Ahithophel turns conspirator and David prays his counsel be turned to foolishness.
+-- Tag: 2sa15   View: _s341_2sa15_lookup   Sort band: 37600, step 3 (37600, 37603, 37606, 37609)
+--
+-- THREADS (4):
+--   2-samuel-15-absalom-stole-the-hearts-the-flatterer-and-the-kiss   [canon: Luke, Matthew]
+--   2-samuel-15-the-rejected-king-crossing-kidron-weeping-on-olivet   [canon: John, Luke, Matthew]
+--   2-samuel-15-the-familiar-friend-who-lifted-up-his-heel            [canon: Psalms, John]
+--   2-samuel-15-carry-back-the-ark-let-him-do-as-seemeth-good         [canon: Luke, Matthew]
+--
+-- COVERAGE CHECKLIST:
+--   v.1-6 (Absalom steals hearts, kiss/obeisance, usurper):
+--        NT:     Luke 22:47-48, Matthew 26:48-49 (the betraying kiss of the false king) — USED
+--        Extras: none warranted
+--        Tanakh: kept within thread (the flatterer who stole the kingdom by the mouth) — none separate warranted
+--   v.7-12 (conspiracy at Hebron; Ahithophel summoned, David's counsellor turns):
+--        NT:     John 13:18 (he that eateth bread... lifted up his heel) — USED in heel thread
+--        Extras: none warranted
+--        Tanakh: Psalm 41:9, Psalm 55:12-14 (familiar friend / equal who betrayed) — USED
+--   v.13-22 (David flees, the people, Ittai's loyalty):
+--        NT:     subsumed in Kidron/Olivet flight thread (the weeping exodus of the rejected king)
+--        Extras: none warranted
+--        Tanakh: none separate warranted (Ittai the loyal stranger — none warranted as own thread)
+--   v.23,30 (crossing Kidron, ascent of Olivet weeping, head covered, barefoot):
+--        NT:     John 18:1, Luke 22:39 / 22:41-44, Matthew 26:36 (Son of David over the same Kidron to Olivet/Gethsemane, weeping) — USED
+--        Extras: none warranted
+--        Tanakh: Psalm 3:1-3 (superscription when he fled from Absalom — the shield, lifter of the head) — USED
+--   v.24-29 (Zadok, the ark sent back, find favour in the eyes of Yahuah):
+--        NT:     Luke 22:42, Matthew 26:39 (not my will but thine — submission over clutching the symbol) — USED
+--        Extras: none warranted
+--        Tanakh: kept within thread
+--   v.31-37 (turn Ahithophel's counsel into foolishness; Hushai sent back):
+--        NT:     John 13:18 (heel) carried in heel thread; Ahithophel's end (17:23 hanged) lies beyond this ch — none warranted here
+--        Extras: none warranted
+--        Tanakh: Psalm 55:12-14 carried in heel thread
+--
+-- No verse-block silently skipped; every meaningful unit weighed across all three libraries.
+
+CREATE TEMP VIEW _s341_2sa15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Absalom stole the hearts — the flatterer and the kiss
+    ('canon','2-samuel',15,5,'canon','luke',22,47,'free',
+      E'*And while he yet spake, behold a multitude, and he that was called Judas, one of the twelve, went before them, and drew near unto Yahusha (Jesus) to kiss him* (Luke 22:47). Absalom''s craft was the same instrument: *when any man came nigh to him to do him obeisance, he put forth his hand, and took him, and kissed him* (2 Samuel 15:5). The kiss that should seal loyalty is turned into the tool of the usurper who steals a kingdom that is not his — Absalom against the anointed father, Judas against the anointed Son of David.'),
+    ('canon','2-samuel',15,5,'canon','matthew',26,49,'free',
+      E'*And forthwith he came to Yahusha (Jesus), and said, Hail, master; and kissed him* (Matthew 26:49) — the sign agreed beforehand, *Whomsoever I shall kiss, that same is he: hold him fast* (Matthew 26:48). David''s son Absalom *kissed* the men of Yashar''el (Israel) to steal their hearts (2 Samuel 15:5); the betrayer kisses the true King to deliver him up. The false affection that captures the throne in Hebron is fulfilled in the false affection that betrays it in Gethsemane.'),
+    ('canon','2-samuel',15,6,'canon','matthew',26,48,'free',
+      E'*Now he that betrayed him gave them a sign, saying, Whomsoever I shall kiss, that same is he: hold him fast* (Matthew 26:48). *So Absalom stole the hearts of the men of Yashar''el (Israel)* (2 Samuel 15:6) — the conspirator works by stolen affection and a contrived sign, the same pattern by which the King would be handed over to those that *hold him fast*.'),
+
+    -- Thread 2: The rejected king crossing Kidron, weeping on Olivet
+    ('canon','2-samuel',15,23,'canon','john',18,1,'free',
+      E'*When Yahusha (Jesus) had spoken these words, he went forth with his disciples over the brook Cedron, where was a garden, into the which he entered, and his disciples* (John 18:1). The rejected king first crossed it: *the king also himself passed over the brook Kidron... toward the way of the wilderness* (2 Samuel 15:23). The Son of David, driven out by His own, crosses the very same brook Kidron on the night He is betrayed — the type of the suffering anointed walks the same ground.'),
+    ('canon','2-samuel',15,30,'canon','luke',22,39,'free',
+      E'*And he came out, and went, as he was wont, to the mount of Olives; and his disciples also followed him* (Luke 22:39). David went the same road in his grief: *And David went up by the ascent of mount Olivet, and wept as he went up, and had his head covered, and he went barefoot* (2 Samuel 15:30). Both anointed kings go up Olivet under rejection; the people that followed David *went up, weeping as they went up*, as the disciples follow the greater Son of David to the same mount.'),
+    ('canon','2-samuel',15,30,'canon','luke',22,44,'free',
+      E'*And being in an agony he prayed more earnestly: and his sweat was as it were great drops of blood falling down to the ground* (Luke 22:44). David''s weeping ascent — *wept as he went up, and had his head covered, and he went barefoot* (2 Samuel 15:30) — foreshadows the deeper agony of the Son of David on that same Olivet, the rejected anointed pouring out grief where David poured out tears.'),
+    ('canon','2-samuel',15,30,'canon','matthew',26,36,'free',
+      E'*Then cometh Yahusha (Jesus) with them unto a place called Gethsemane, and saith unto the disciples, Sit ye here, while I go and pray yonder* (Matthew 26:36) — Gethsemane on the mount of Olives, reached after crossing the Kidron. David, *weeping as he went up* the ascent of Olivet (2 Samuel 15:30), prefigures the King who comes to that garden to weep and pray.'),
+    ('canon','2-samuel',15,23,'canon','psalms',3,3,'free',
+      E'Psalm 3 carries the superscription *A Psalm of David, when he fled from Absalom his son* — its cry answers David''s crossing of Kidron *toward the way of the wilderness* (2 Samuel 15:23): *But thou, O Yahuah (LORD), art a shield for me; my glory, and the lifter up of mine head* (Psalm 3:3). The fleeing king whose *head covered* in grief on Olivet trusts Yahuah to be the lifter up of that bowed head.'),
+
+    -- Thread 3: The familiar friend who lifted up his heel (Ahithophel -> Judas)
+    ('canon','2-samuel',15,12,'canon','psalms',41,9,'free',
+      E'*Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9). Ahithophel was that friend: *And Absalom sent for Ahithophel the Gilonite, David''s counsellor, from his city, even from Giloh... And the conspiracy was strong* (2 Samuel 15:12). The king''s most trusted counsellor turns to the conspiracy — the wound is not from an enemy but from the bread-companion.'),
+    ('canon','2-samuel',15,31,'canon','psalms',55,12,'free',
+      E'*For it was not an enemy that reproached me; then I could have borne it... But it was thou, a man mine equal, my guide, and mine acquaintance* (Psalm 55:12-13). When David hears *Ahithophel is among the conspirators with Absalom* (2 Samuel 15:31), it is the betrayal of the trusted equal that cuts — *We took sweet counsel together, and walked unto the house of Elohim (God) in company* (Psalm 55:14).'),
+    ('canon','2-samuel',15,31,'canon','psalms',55,14,'free',
+      E'*We took sweet counsel together, and walked unto the house of Elohim (God) in company* (Psalm 55:14). This is Ahithophel exactly — the counsellor whose word *was as if a man had enquired at the oracle of Elohim (God)* — now turned, so that David must pray *O Yahuah (LORD), I pray thee, turn the counsel of Ahithophel into foolishness* (2 Samuel 15:31).'),
+    ('canon','2-samuel',15,31,'canon','john',13,18,'free',
+      E'*I speak not of you all: I know whom I have chosen: but that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me* (John 13:18). The Son of David quotes the very psalm written over Ahithophel''s treason. As David grieved that *Ahithophel is among the conspirators* (2 Samuel 15:31), so the greater King names the table-companion who would betray Him — Ahithophel''s pattern fulfilled in Judas.'),
+
+    -- Thread 4: Carry back the ark — let him do as seemeth good unto him
+    ('canon','2-samuel',15,26,'canon','luke',22,42,'free',
+      E'*Saying, Father, if thou be willing, remove this cup from me: nevertheless not my will, but thine, be done* (Luke 22:42). David at his fleeing surrenders the same way: *But if he thus say, I have no delight in thee; behold, here am I, let him do to me as seemeth good unto him* (2 Samuel 15:26). The anointed king will not clutch the ark as a charm to save himself but yields wholly to Yahuah''s will — the posture perfected by the Son of David in the garden.'),
+    ('canon','2-samuel',15,26,'canon','matthew',26,39,'free',
+      E'*And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt* (Matthew 26:39). David''s words in flight are the seed of this prayer: *here am I, let him do to me as seemeth good unto him* (2 Samuel 15:26). Not my will but thine — the rejected king refuses to seize his own deliverance and rests it on the Father.'),
+    ('canon','2-samuel',15,25,'canon','luke',22,42,'free',
+      E'*If I shall find favour in the eyes of Yahuah (LORD), he will bring me again, and shew me both it, and his habitation* (2 Samuel 15:25). David sends the ark of Elohim (God) back into the city rather than carry the symbol as a guarantee — trusting Yahuah to restore him if He wills. The Son of David prays the same trust: *not my will, but thine, be done* (Luke 22:42).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-15-absalom-stole-the-hearts-the-flatterer-and-the-kiss',
+       E'Absalom stole the hearts — the flatterer and the kiss',
+       E'Absalom usurps not by valour but by stolen affection. He rises early at the gate, tells every man his cause is *good and right* with no one to hear him, and then *when any man came nigh to him to do him obeisance, he put forth his hand, and took him, and kissed him* (2 Samuel 15:5). The verdict is plain: *So Absalom stole the hearts of the men of Yashar''el (Israel)* (2 Samuel 15:6). The kiss — the sign of loyalty and love — becomes the instrument of the usurper against the anointed king.\n\nThat pattern is fulfilled against the true Son of David. The betrayer agrees a sign of affection: *Whomsoever I shall kiss, that same is he: hold him fast* (Matthew 26:48), *And forthwith he came to Yahusha (Jesus), and said, Hail, master; and kissed him* (Matthew 26:49). Luke shows the same drawn near to *kiss him* (Luke 22:47). The false king and the false friend both seize a throne that is not theirs through a counterfeit of love — Absalom against David, Judas against David''s greater Son.',
+       sv.verse_id, ev.verse_id, 'free', 37600
+  FROM _s341_2sa15_lookup sv, _s341_2sa15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=15 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-15-the-rejected-king-crossing-kidron-weeping-on-olivet',
+       E'The rejected king crossing Kidron, weeping on Olivet',
+       E'The anointed king is driven from his own city by his own son. *And all the country wept with a loud voice, and all the people passed over: the king also himself passed over the brook Kidron, and all the people passed over, toward the way of the wilderness* (2 Samuel 15:23). Then *David went up by the ascent of mount Olivet, and wept as he went up, and had his head covered, and he went barefoot: and all the people that was with him covered every man his head, and they went up, weeping as they went up* (2 Samuel 15:30). A barefoot, bowed-headed, weeping king crosses Kidron and climbs Olivet under rejection. Psalm 3, headed *when he fled from Absalom*, answers: *But thou, O Yahuah (LORD), art a shield for me; my glory, and the lifter up of mine head* (Psalm 3:3).\n\nThe greater Son of David walks the same ground on the night He is handed over. *He went forth with his disciples over the brook Cedron, where was a garden* (John 18:1); He goes *as he was wont, to the mount of Olives* (Luke 22:39), to *a place called Gethsemane* (Matthew 26:36), and there *being in an agony he prayed more earnestly: and his sweat was as it were great drops of blood falling down to the ground* (Luke 22:44). The suffering anointed, rejected by His own, crosses David''s Kidron and weeps on David''s Olivet — the type fulfilled to the very stones of the road.',
+       sv.verse_id, ev.verse_id, 'free', 37603
+  FROM _s341_2sa15_lookup sv, _s341_2sa15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=15 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-15-the-familiar-friend-who-lifted-up-his-heel',
+       E'The familiar friend who lifted up his heel',
+       E'The sharpest grief in David''s flight is not Absalom''s army but Ahithophel''s defection. *And Absalom sent for Ahithophel the Gilonite, David''s counsellor, from his city, even from Giloh... And the conspiracy was strong* (2 Samuel 15:12) — a man whose counsel *was as if a man had enquired at the oracle of Elohim (God)* (2 Samuel 16:23). When the word reaches him, David prays, *O Yahuah (LORD), I pray thee, turn the counsel of Ahithophel into foolishness* (2 Samuel 15:31). David''s own psalms put words to the wound: *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9); *For it was not an enemy that reproached me... But it was thou, a man mine equal, my guide, and mine acquaintance. We took sweet counsel together, and walked unto the house of Elohim (God) in company* (Psalm 55:12-14).\n\nThe Son of David takes that very psalm onto His own lips at the table: *He that eateth bread with me hath lifted up his heel against me* (John 13:18). Ahithophel the trusted counsellor who ate David''s bread and turned is the shadow whose fulfilment is Judas, the one of the twelve who dipped in the dish and went out to betray. The trusted equal becomes the betrayer — in David, and in great David''s greater Son.',
+       sv.verse_id, ev.verse_id, 'free', 37606
+  FROM _s341_2sa15_lookup sv, _s341_2sa15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=15 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-15-carry-back-the-ark-let-him-do-as-seemeth-good',
+       E'Carry back the ark — let him do to me as seemeth good',
+       E'In flight David refuses to wield the ark of Elohim (God) as a charm to compel his own rescue. He commands Zadok, *Carry back the ark of Elohim (God) into the city: if I shall find favour in the eyes of Yahuah (LORD), he will bring me again, and shew me both it, and his habitation* (2 Samuel 15:25). And then the full surrender: *But if he thus say, I have no delight in thee; behold, here am I, let him do to me as seemeth good unto him* (2 Samuel 15:26). The anointed king will not clutch the symbol; he yields his throne, his city, and his life to Yahuah''s will.\n\nThis is the very posture perfected by the Son of David in the garden across that same Kidron: *Father, if thou be willing, remove this cup from me: nevertheless not my will, but thine, be done* (Luke 22:42); *O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt* (Matthew 26:39). *Here am I, let him do to me as seemeth good unto him* — the rejected king does not seize his own deliverance but rests it wholly on the Father, and so foreshadows the obedience that bought it.',
+       sv.verse_id, ev.verse_id, 'free', 37609
+  FROM _s341_2sa15_lookup sv, _s341_2sa15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=15 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he put forth his hand, and took him, and kissed him* (2 Samuel 15:5) — the usurper''s kiss answered by Judas drawing near to *kiss him* (Luke 22:47).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-absalom-stole-the-hearts-the-flatterer-and-the-kiss'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Hail, master; and kissed him* (Matthew 26:49) — the betrayer''s contrived sign of affection, the kiss turned into the tool that seizes the King.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-absalom-stole-the-hearts-the-flatterer-and-the-kiss'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Whomsoever I shall kiss, that same is he: hold him fast* (Matthew 26:48) — the stolen-affection pattern of him who *stole the hearts of the men of Yashar''el (Israel)* (2 Samuel 15:6).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-absalom-stole-the-hearts-the-flatterer-and-the-kiss'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*went forth with his disciples over the brook Cedron* (John 18:1) — the Son of David crosses the same brook Kidron David *passed over* fleeing (2 Samuel 15:23).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=23
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-rejected-king-crossing-kidron-weeping-on-olivet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*as he was wont, to the mount of Olives* (Luke 22:39) — both anointed kings go up Olivet, David *weeping as he went up* (2 Samuel 15:30).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=30
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-rejected-king-crossing-kidron-weeping-on-olivet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*his sweat was as it were great drops of blood* (Luke 22:44) — the deeper agony on the same Olivet where David *wept as he went up* (2 Samuel 15:30).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=30
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-rejected-king-crossing-kidron-weeping-on-olivet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a place called Gethsemane* (Matthew 26:36) — the garden on Olivet reached across Kidron, where David''s weeping ascent (2 Samuel 15:30) is fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=30
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-rejected-king-crossing-kidron-weeping-on-olivet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the lifter up of mine head* (Psalm 3:3) — Psalm headed *when he fled from Absalom*, answering the king whose *head covered* in grief crossed Kidron (2 Samuel 15:23,30).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=23
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-rejected-king-crossing-kidron-weeping-on-olivet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*mine own familiar friend... which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9) — the counsellor Ahithophel summoned to the conspiracy (2 Samuel 15:12).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=12
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=41 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-familiar-friend-who-lifted-up-his-heel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*it was thou, a man mine equal, my guide, and mine acquaintance* (Psalm 55:12-13) — the trusted counsellor''s betrayal that drives David to pray (2 Samuel 15:31).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=55 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-familiar-friend-who-lifted-up-his-heel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*We took sweet counsel together, and walked unto the house of Elohim (God) in company* (Psalm 55:14) — Ahithophel exactly, whose counsel David must ask Yahuah to *turn... into foolishness* (2 Samuel 15:31).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=55 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-familiar-friend-who-lifted-up-his-heel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He that eateth bread with me hath lifted up his heel against me* (John 13:18) — the Son of David quotes the psalm of Ahithophel''s treason over Judas, fulfilling the pattern of 2 Samuel 15:31.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=13 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-the-familiar-friend-who-lifted-up-his-heel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Carry back the ark of Elohim (God) into the city: if I shall find favour in the eyes of Yahuah (LORD)* (2 Samuel 15:25) — David will not clutch the symbol but rests on Yahuah''s will, the seed of *not my will, but thine, be done* (Luke 22:42).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-carry-back-the-ark-let-him-do-as-seemeth-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*not my will, but thine, be done* (Luke 22:42) — the Son of David''s surrender, perfecting David''s *let him do to me as seemeth good unto him* (2 Samuel 15:26).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=26
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-carry-back-the-ark-let-him-do-as-seemeth-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*nevertheless not as I will, but as thou wilt* (Matthew 26:39) — the garden prayer that fulfils *here am I, let him do to me as seemeth good unto him* (2 Samuel 15:26).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=15 AND sv.verse_number=26
+  JOIN _s341_2sa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-15-carry-back-the-ark-let-him-do-as-seemeth-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session341 — 2 Samuel cross-references complete.'
