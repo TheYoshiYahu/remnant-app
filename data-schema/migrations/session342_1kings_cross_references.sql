@@ -6131,6 +6131,873 @@ SELECT t.id, cr.id, 4, E'*he took the mantle of Elijah... and said, Where is Yah
  WHERE t.slug='1-kings-19-the-mantle-cast-upon-elisha-the-call-and-succession'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1-kings_20.sql (1 Kings 20) -----
+-- 1 Kings 20 — Ben-hadad besieges Samaria; Yahuah delivers the great multitude
+-- into Ahab's hand "that ye may know that I am Yahuah"; the few against the many;
+-- Yahuah Elohim of all the earth, not a god of the hills only; Ahab's misplaced
+-- mercy sparing Ben-hadad, the man appointed to destruction (echo of Saul/Agag).
+-- TAG: 1ki20   |   session s342   |   sort band base 38375 step 3 (38375, 38378, 38381)
+--
+-- COVERAGE CHECKLIST:
+--   v.13/14  ("Hast thou seen all this great multitude? ... thou shalt know that I am Yahuah";
+--             victory by the young men, the few, not by numbers)
+--        NT:     1 Corinthians 1:27-29 (God chose weak/base things, no flesh glory) -> thread A
+--        Extras: none warranted
+--        Tanakh: Zechariah 4:6 (not by might nor by power but by my spirit);
+--                Psalm 20:7 (some trust in chariots and horses; we remember the Name);
+--                Deuteronomy 20:1 (be not afraid of horses and chariots, Yahuah is with thee);
+--                Ezekiel 36:23 (I sanctify my great name; ye shall know that I am Yahuah) -> thread A
+--   v.15-22  (numbered young men 232; seven thousand; Israel pursues; slaughter)
+--        NT/Extras/Tanakh: carried under thread A (v.13/14 anchor); none additional warranted
+--   v.23/25  ("Their gods are gods of the hills; let us fight in the plain")
+--        NT:     1 Corinthians 1:25 (foolishness of God wiser than men) -> thread B
+--        Extras: none warranted
+--        Tanakh: Zechariah 4:14 (the two anointed ones that stand by the Lord of the whole earth) -> thread B
+--   v.28     ("Because the Syrians have said, Yahuah is Elohim of the hills but not of the valleys ...
+--             ye shall know that I am Yahuah" — Yahuah Elohim of all the earth)
+--        NT:     1 Corinthians 1:25 -> thread B
+--        Extras: none warranted
+--        Tanakh: Zechariah 4:14 (Lord of the whole earth) -> thread B; (also threaded in A for "know that I am Yahuah")
+--   v.29-33  (hundred thousand slain; wall falls on 27,000; Ben-hadad pleads, "he is my brother")
+--        NT/Extras/Tanakh: carried under thread C; none additional warranted
+--   v.34     (Ahab makes a covenant with Ben-hadad and sends him away)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 15:9 (Saul/people spared Agag) -> thread C
+--   v.35-41  (sons-of-the-prophets parable; the smitten prophet; "thyself hast decided it")
+--        NT/Extras/Tanakh: carried under thread C (Nathan-style self-sentencing parable); none additional warranted
+--   v.42     ("Because thou hast let go ... a man whom I appointed to utter destruction,
+--             therefore thy life shall go for his life")
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 15:23 (rebellion is as witchcraft; rejected from being king);
+--                1 Samuel 15:28 (Yahuah hath rent the kingdom from thee);
+--                1 Kings 22:34-35 / 22:38 (Ahab slain, blood licked, per the word of Yahuah) -> thread C
+--   v.43     (Ahab goes home heavy and displeased)
+--        NT/Extras/Tanakh: none warranted (mirrors 1 Ki 21:4; left for that chapter)
+--
+-- THREADS:
+--   A 1-kings-20-thou-shalt-know-that-i-am-yahuah-the-few-against-the-many
+--       targets: Zechariah (canon), Psalm (canon), Deuteronomy (canon), 1 Corinthians (canon NT), Ezekiel (canon) -> tier free
+--   B 1-kings-20-yahuah-is-not-a-god-of-the-hills-only-but-of-all-the-earth
+--       targets: Zechariah (canon), 1 Corinthians (canon NT) -> tier free
+--   C 1-kings-20-ahab-spared-the-man-appointed-to-destruction-like-saul-and-agag
+--       targets: 1 Samuel (canon), 1 Kings 22 (canon) -> tier free
+
+CREATE TEMP VIEW _s342_1ki20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- ===== Thread A: thou shalt know that I am Yahuah — the few against the many =====
+    ('canon','1-kings',20,13,'canon','zechariah',4,6,'free',
+      E'*Then he answered and spake unto me, saying, This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts).* (Zechariah 4:6) The prophet tells wicked Ahab, *behold, I will deliver it into thine hand this day; and thou shalt know that I am Yahuah (LORD)* (1 Kings 20:13) — and the deliverance comes not by Israel''s seven thousand against a multitude that *filled the country*, but by Yahuah Himself, that the Name be known. The same word Zechariah hears over Zerubbabel: the work is done *not by might, nor by power, but by my spirit*.'),
+    ('canon','1-kings',20,13,'canon','psalms',20,7,'free',
+      E'*Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God).* (Psalm 20:7) Ben-hadad came up with *horses, and chariots* and thirty and two kings (1 Kings 20:1); Yahuah answers *behold, I will deliver it into thine hand this day; and thou shalt know that I am Yahuah* (1 Kings 20:13). The Psalm sings the lesson the battle teaches — the victory is in the Name, never in the host.'),
+    ('canon','1-kings',20,13,'canon','deuteronomy',20,1,'free',
+      E'*When thou goest out to battle against thine enemies, and seest horses, and chariots, and a people more than thou, be not afraid of them: for Yahuah Elohayka (the LORD thy God) is with thee, which brought thee up out of the land of Egypt.* (Deuteronomy 20:1) The Torah''s law of war stands behind Ahab''s deliverance: *thou shalt know that I am Yahuah* (1 Kings 20:13). Even over a faithless king, the covenant promise holds — the *people more than thou* is no terror when Yahuah goes out to fight.'),
+    ('canon','1-kings',20,13,'canon','1-corinthians',1,27,'free',
+      E'*But Elohim (God) hath chosen the foolish things of the world to confound the wise; and Elohim (God) hath chosen the weak things of the world to confound the things which are mighty;* (1 Corinthians 1:27) Yahuah orders the rout *by the young men of the princes of the provinces* — two hundred and thirty two against a *great multitude* (1 Kings 20:14-15) — *that thou shalt know that I am Yahuah* (1 Kings 20:13). The pattern is the apostle''s: the weak chosen to confound the mighty, so that no flesh glory.'),
+    ('canon','1-kings',20,13,'canon','1-corinthians',1,29,'free',
+      E'*That no flesh should glory in his presence.* (1 Corinthians 1:29) When the few are sent against the many and win — *that thou shalt know that I am Yahuah* (1 Kings 20:13) — the design is exactly this: the glory cannot be claimed by Israel''s number or by Ahab''s arm, but by Yahuah alone, *that no flesh should glory in his presence*.'),
+    ('canon','1-kings',20,28,'canon','ezekiel',36,23,'free',
+      E'*And I will sanctify my great name, which was profaned among the heathen, which ye have profaned in the midst of them; and the heathen shall know that I am Yahuah (LORD), saith Adonai Yahuah (the Lord GOD), when I shall be sanctified in you before their eyes.* (Ezekiel 36:23) The Syrians blasphemed, *Yahuah (LORD) is Elohim (God) of the hills, but he is not Elohim (God) of the valleys* (1 Kings 20:28); Yahuah answers their slander against His Name by delivering the multitude, *and ye shall know that I am Yahuah*. It is the same vindication Ezekiel proclaims — Yahuah acting *for mine holy name''s sake* that the heathen may know Him.'),
+    -- ===== Thread B: Yahuah is not a god of the hills only, but of all the earth =====
+    ('canon','1-kings',20,28,'canon','zechariah',4,14,'free',
+      E'*Then said he, These are the two anointed ones, that stand by Yahuah (Lord) of the whole earth.* (Zechariah 4:14) The Syrian counsellors reasoned, *Their gods are gods of the hills; therefore they were stronger than we; but let us fight against them in the plain* (1 Kings 20:23), and Yahuah rebukes the lie in the valley — *he is not Elohim (God) of the valleys, therefore will I deliver all this great multitude into thine hand* (1 Kings 20:28). He is no local mountain-deity but *Yahuah of the whole earth*, hills and plains alike His.'),
+    ('canon','1-kings',20,23,'canon','1-corinthians',1,25,'free',
+      E'*Because the foolishness of Elohim (God) is wiser than men; and the weakness of Elohim (God) is stronger than men.* (1 Corinthians 1:25) The Syrians thought they had found a wisdom to beat Yahuah — *let us fight against them in the plain, and surely we shall be stronger than they* (1 Kings 20:23). Their reckoning of hills and valleys is the world''s wisdom undone: the very ground they chose became the place a hundred thousand fell, for *the weakness of Elohim is stronger than men*.'),
+    -- ===== Thread C: Ahab spared the man appointed to destruction — like Saul and Agag =====
+    ('canon','1-kings',20,34,'canon','1-samuel',15,9,'free',
+      E'*But Saul and the people spared Agag, and the best of the sheep, and of the oxen, and of the fatlings, and the lambs, and all that was good, and would not utterly destroy them: but every thing that was vile and refuse, that they destroyed utterly.* (1 Samuel 15:9) Ahab *made a covenant with him, and sent him away* (1 Kings 20:34), letting go the king Yahuah had given into his hand — the very sin of Saul, who *spared Agag* whom Yahuah had marked for destruction. Misplaced mercy that overturns the word of Yahuah.'),
+    ('canon','1-kings',20,42,'canon','1-samuel',15,23,'free',
+      E'*For rebellion is as the sin of witchcraft, and stubbornness is as iniquity and idolatry. Because thou hast rejected the word of Yahuah (LORD), he hath also rejected thee from being king.* (1 Samuel 15:23) The prophet sentences Ahab, *Because thou hast let go out of thy hand a man whom I appointed to utter destruction, therefore thy life shall go for his life* (1 Kings 20:42) — the identical verdict on Saul, whose sparing of Agag was rebellion *as the sin of witchcraft*. To override Yahuah''s appointed judgment, even by mercy, is to reject His word.'),
+    ('canon','1-kings',20,42,'canon','1-samuel',15,28,'free',
+      E'*And Samuel said unto him, Yahuah (LORD) hath rent the kingdom of Yashar''el (Israel) from thee this day, and hath given it to a neighbour of thine, that is better than thou.* (1 Samuel 15:28) As Saul lost the kingdom for sparing Agag, so Ahab hears *thy life shall go for his life, and thy people for his people* (1 Kings 20:42) for sparing Ben-hadad. The forfeit answers the disobedience measure for measure — the throne and the life are Yahuah''s to give and to rend.'),
+    ('canon','1-kings',20,42,'canon','1-kings',22,34,'free',
+      E'*And a certain man drew a bow at a venture, and smote the king of Yashar''el (Israel) between the joints of the harness: wherefore he said unto the driver of his chariot, Turn thine hand, and carry me out of the host; for I am wounded.* (1 Kings 22:34) The sentence *thy life shall go for his life* (1 Kings 20:42) is paid two chapters on: at Ramoth-gilead an arrow shot at a venture finds Ahab between the joints of his armour. The misplaced mercy that spared Ben-hadad costs Ahab his own life, exactly as the word foretold.'),
+    ('canon','1-kings',20,42,'canon','1-kings',22,38,'free',
+      E'*And one washed the chariot in the pool of Samaria; and the dogs licked up his blood; and they washed his armour; according unto the word of Yahuah (LORD) which he spake.* (1 Kings 22:38) The closing word — *according unto the word of Yahuah which he spake* — seals the prophet''s sentence in this chapter, *thy life shall go for his life* (1 Kings 20:42). Ahab let go the man Yahuah appointed to destruction, and in the end his own blood is poured out in Samaria as Yahuah had said.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== THREAD A =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-20-thou-shalt-know-that-i-am-yahuah-the-few-against-the-many',
+       E'Thou shalt know that I am Yahuah — the few against the many',
+       E'Ben-hadad of Syria came up with *horses, and chariots* and *thirty and two kings* and besieged Samaria, demanding Ahab''s silver, gold, wives, and children (1 Kings 20:1-6). Into that hopeless arithmetic the word comes to a faithless king: *behold, I will deliver it into thine hand this day; and thou shalt know that I am Yahuah (LORD)* (1 Kings 20:13). And the means is deliberately small — *the young men of the princes of the provinces*, two hundred and thirty two, with all Israel only *seven thousand* (1 Kings 20:14-15), against a *great multitude* that *filled the country*.\n\nThe lesson is the heartbeat of the whole canon. Zechariah hears it over Zerubbabel''s impossible task: *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The Psalmist sings it: *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7). The Torah''s law of war already commanded it: *When thou goest out to battle ... and seest horses, and chariots, and a people more than thou, be not afraid of them: for Yahuah Elohayka (the LORD thy God) is with thee* (Deuteronomy 20:1). And the apostle names the design: *Elohim (God) hath chosen the weak things of the world to confound the things which are mighty ... That no flesh should glory in his presence* (1 Corinthians 1:27,29).\n\nWhen the Syrians blaspheme that *Yahuah is Elohim of the hills, but he is not Elohim of the valleys*, He answers the slander against His Name by delivering them again, *and ye shall know that I am Yahuah* (1 Kings 20:28) — the very vindication Ezekiel proclaims: *I will sanctify my great name ... and the heathen shall know that I am Yahuah ... when I shall be sanctified in you before their eyes* (Ezekiel 36:23). The victory was never about Ahab''s worth or Israel''s number. It was Yahuah making His Name known.',
+       sv.verse_id, ev.verse_id, 'free', 38375
+  FROM _s342_1ki20_lookup sv, _s342_1ki20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=20 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD B =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-20-yahuah-is-not-a-god-of-the-hills-only-but-of-all-the-earth',
+       E'Yahuah is not a god of the hills only, but Elohim of all the earth',
+       E'After their first defeat the Syrian counsellors reach for a theology of geography: *Their gods are gods of the hills; therefore they were stronger than we; but let us fight against them in the plain, and surely we shall be stronger than they* (1 Kings 20:23). They imagine Yahuah a local mountain-deity who can be outflanked by changing terrain — the world''s wisdom against the Most High.\n\nYahuah answers the blasphemy precisely where they staked it: *Because the Syrians have said, Yahuah (LORD) is Elohim (God) of the hills, but he is not Elohim (God) of the valleys, therefore will I deliver all this great multitude into thine hand, and ye shall know that I am Yahuah* (1 Kings 20:28). In the valley a hundred thousand footmen fall in one day. He is no god of one ridge but *Yahuah of the whole earth* — the same title Zechariah gives Him: *These are the two anointed ones, that stand by Yahuah (Lord) of the whole earth* (Zechariah 4:14). The Syrians'' clever reckoning is the cleverness the apostle names undone: *the foolishness of Elohim (God) is wiser than men; and the weakness of Elohim (God) is stronger than men* (1 Corinthians 1:25).',
+       sv.verse_id, ev.verse_id, 'free', 38378
+  FROM _s342_1ki20_lookup sv, _s342_1ki20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=20 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD C =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-20-ahab-spared-the-man-appointed-to-destruction-like-saul-and-agag',
+       E'Ahab spared the man Yahuah appointed to destruction — the sin of Saul and Agag',
+       E'Yahuah gave Ben-hadad into Ahab''s hand, but when the beaten king pleaded, Ahab called him *my brother*, took him up into his chariot, and *made a covenant with him, and sent him away* (1 Kings 20:32-34). It is the very sin of the first king: *Saul and the people spared Agag ... and would not utterly destroy them* (1 Samuel 15:9) — letting go the one Yahuah had marked for destruction.\n\nThe rebuke comes by a parable, as Nathan once trapped David: a prophet disguised with ashes draws Ahab into pronouncing his own sentence — *So shall thy judgment be; thyself hast decided it* (1 Kings 20:40) — then strips the ashes and speaks: *Because thou hast let go out of thy hand a man whom I appointed to utter destruction, therefore thy life shall go for his life, and thy people for his people* (1 Kings 20:42). This is Samuel''s word to Saul made fresh: *rebellion is as the sin of witchcraft ... Because thou hast rejected the word of Yahuah (LORD), he hath also rejected thee from being king* (1 Samuel 15:23); *Yahuah (LORD) hath rent the kingdom of Yashar''el (Israel) from thee this day* (1 Samuel 15:28). Misplaced mercy that overrides Yahuah''s appointed judgment is not kindness but disobedience.\n\nThe forfeit is paid in full two chapters on. At Ramoth-gilead *a certain man drew a bow at a venture, and smote the king of Yashar''el (Israel) between the joints of the harness* (1 Kings 22:34), and in Samaria *the dogs licked up his blood ... according unto the word of Yahuah (LORD) which he spake* (1 Kings 22:38). *Thy life shall go for his life* — the life Ahab spared was bought with his own.',
+       sv.verse_id, ev.verse_id, 'free', 38381
+  FROM _s342_1ki20_lookup sv, _s342_1ki20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=20 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== MEMBERS: THREAD A =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Not by might, nor by power, but by my spirit* (Zechariah 4:6) — the deliverance of the multitude into Ahab''s hand is by Yahuah, never by Israel''s number.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-thou-shalt-know-that-i-am-yahuah-the-few-against-the-many'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Some trust in chariots ... but we will remember the name of Yahuah* (Psalm 20:7) — Ben-hadad''s horses and chariots are nothing before the Name.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-thou-shalt-know-that-i-am-yahuah-the-few-against-the-many'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Be not afraid of them ... a people more than thou ... for Yahuah Elohayka is with thee* (Deuteronomy 20:1) — the Torah''s law of war stands behind the deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=20 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-thou-shalt-know-that-i-am-yahuah-the-few-against-the-many'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*God hath chosen the weak things ... to confound ... the mighty* (1 Corinthians 1:27) — 232 young men against a great multitude, the weak chosen to confound the strong.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-thou-shalt-know-that-i-am-yahuah-the-few-against-the-many'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*That no flesh should glory in his presence* (1 Corinthians 1:29) — the few sent against the many so that the glory is Yahuah''s alone.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-thou-shalt-know-that-i-am-yahuah-the-few-against-the-many'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I will sanctify my great name ... the heathen shall know that I am Yahuah* (Ezekiel 36:23) — Yahuah vindicates His Name against the Syrians'' blasphemy in the valley.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=28
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-thou-shalt-know-that-i-am-yahuah-the-few-against-the-many'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== MEMBERS: THREAD B =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the two anointed ones, that stand by Yahuah of the whole earth* (Zechariah 4:14) — Yahuah is no hill-deity but Lord of the whole earth, hills and valleys alike.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=28
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-yahuah-is-not-a-god-of-the-hills-only-but-of-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the weakness of Elohim is stronger than men* (1 Corinthians 1:25) — the Syrians'' clever plan to fight in the plain is the world''s wisdom undone.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=23
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-yahuah-is-not-a-god-of-the-hills-only-but-of-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== MEMBERS: THREAD C =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Saul and the people spared Agag ... and would not utterly destroy them* (1 Samuel 15:9) — Ahab''s covenant with Ben-hadad repeats Saul''s sparing of the appointed enemy.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=34
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-ahab-spared-the-man-appointed-to-destruction-like-saul-and-agag'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*rebellion is as the sin of witchcraft ... thou hast rejected the word of Yahuah* (1 Samuel 15:23) — to override Yahuah''s appointed judgment is rebellion, the sentence on Ahab as on Saul.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=42
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-ahab-spared-the-man-appointed-to-destruction-like-saul-and-agag'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah hath rent the kingdom of Yashar''el from thee this day* (1 Samuel 15:28) — Saul lost the kingdom, Ahab his life and people, for the same misplaced mercy.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=42
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-ahab-spared-the-man-appointed-to-destruction-like-saul-and-agag'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a certain man drew a bow at a venture, and smote the king of Yashar''el between the joints of the harness* (1 Kings 22:34) — the sentence *thy life shall go for his life* is paid at Ramoth-gilead.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=42
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=22 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-ahab-spared-the-man-appointed-to-destruction-like-saul-and-agag'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the dogs licked up his blood ... according unto the word of Yahuah which he spake* (1 Kings 22:38) — Ahab''s own blood poured out, sealing the verdict of this chapter.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=20 AND sv.verse_number=42
+  JOIN _s342_1ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=22 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-20-ahab-spared-the-man-appointed-to-destruction-like-saul-and-agag'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_21.sql (1 Kings 21) -----
+-- 1 Kings 21 — KEYSTONE: Naboth's vineyard; the inalienable inheritance; the shattered commandments; the prophet against the king; mercy on Ahab's humbling.
+-- TAG: 1ki21   VIEW: _s342_1ki21_lookup   SORT BAND: 38400, step 3 (38400, 38403, 38406, 38409)
+-- SOURCE rows all 'canon','1-kings',21,v.
+--
+-- 1 Kings 21 coverage:
+--   v.3 (Yahuah forbid it me, that I should give the inheritance of my fathers unto thee) / v.4 (the inheritance of my fathers)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Leviticus 25:23 (the land shall not be sold for ever: for the land is mine); Numbers 36:7 (the inheritance of the children of Yashar'el shall not remove from tribe to tribe); Leviticus 25:10 (proclaim liberty... ye shall return every man unto his possession); Micah 2:1-2 (they covet fields, and take them by violence); Isaiah 5:8 (woe unto them that join house to house, lay field to field) [thread 1]
+--   v.8-14 (Jezebel's letters; the fast; sons of Belial bear false witness; Naboth stoned)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 20:17 (thou shalt not covet thy neighbour's house); Exodus 20:16 (thou shalt not bear false witness); Exodus 20:13 (thou shalt not kill); Deuteronomy 19:15 (at the mouth of two witnesses... established); Deuteronomy 19:18-19 (a false witness... do unto him as he had thought to do) [thread 2]
+--   v.19-24 (Hast thou killed, and also taken possession?; dogs lick thy blood; the dogs shall eat Jezebel; the doom of Ahab's house)
+--          NT:     James 5:4 (the hire kept back by fraud crieth); James 5:6 (ye have condemned and killed the just) [thread 3]
+--          Extras: none warranted
+--          Tanakh: 2 Kings 9:25-26 (the blood of Naboth and the blood of his sons... I will requite thee in this plat); 2 Kings 9:36-37 (in the portion of Jezreel shall dogs eat the flesh of Jezebel) [thread 3]
+--   v.27-29 (Ahab rends his clothes, sackcloth, fasts; Yahuah defers the evil to his son's days)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Kings 9:25-26 (the burden laid on Ahab brought on the son Joram in the plat of Naboth — the deferred evil falling) [thread 4]
+--
+-- THREADS:
+--   1-kings-21-the-inheritance-of-my-fathers-the-land-shall-not-be-sold (free) — Tanakh: Lev25, Num36, Mic2, Isa5
+--   1-kings-21-thou-didst-blaspheme-the-shattered-commandments-and-the-false-witness (free) — Tanakh: Exod20, Deut19
+--   1-kings-21-in-the-place-where-dogs-licked-the-blood-the-prophet-against-the-king (free) — Tanakh: 2Kings9; NT: James5
+--   1-kings-21-ahab-humbleth-himself-the-evil-deferred-to-his-sons-days (free) — Tanakh: 2Kings9
+-- Framework-load-bearing framing:
+--   ★★ THE INALIENABLE INHERITANCE (thread 1): Naboth is the Torah-KEEPER, not a stubborn holdout. The land-law STANDS:
+--   the inheritance of the fathers cannot be sold off (Lev 25:23 *the land shall not be sold for ever: for the land is mine*),
+--   cannot pass from tribe to tribe (Num 36:7), returns at jubile (Lev 25:10). Naboth keeps the covenant; Ahab covets what
+--   Torah forbids selling — the very sin the prophets name (Mic 2:2 *they covet fields, and take them by violence*; Isa 5:8).
+--   Torah is the inheritance, never the curse; the victim is the law-keeper, the king the covenant-breaker.
+--   ★★ THE SHATTERED COMMANDMENTS (thread 2): Ahab's coveting (Exod 20:17) drives Jezebel to false witness (Exod 20:16),
+--   judicial murder (Exod 20:13), and seizure (Exod 20:15) — the Decalogue broken in sequence. Worse, the very Torah-court
+--   meant to protect the innocent (Deut 19:15 two witnesses; Deut 19:18-19 the false witness punished) is weaponized AGAINST
+--   the innocent, sons of Belial suborned. The Torah is not the instrument of evil; the perversion of it is.
+--   ★★ THE PROPHET AGAINST THE KING (thread 3): Elijah meets Ahab in the stolen vineyard — *Hast thou killed, and also
+--   taken possession?* (21:19) — the prophet confronts the powerful for the murdered poor. The doom is fulfilled to the letter
+--   in 2 Kings 9 (Joram's body cast into Naboth's plot 9:25-26; the dogs eat Jezebel 9:36-37). James gives the same cry of the
+--   defrauded: *the cries of them which have reaped are entered into the ears of Yahuah* (Jas 5:4); *ye have... killed the just* (5:6).
+--   ★ MERCY ON THE HUMBLING (thread 4): even Ahab's partial repentance — sackcloth, fasting, going softly (21:27) — is met
+--   with mercy and delay: the evil is deferred to his son's days (21:29), and so it falls on Joram in the very plat of Naboth
+--   (2 Kings 9:25-26). Yahuah is *very pitiful, and of tender mercy* even toward a covenant-breaker who humbles himself.
+
+CREATE TEMP VIEW _s342_1ki21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the inheritance of my fathers, the land shall not be sold (21:3,4)
+    ('canon','1-kings',21,3,'canon','leviticus',25,23,'free',E'*The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me* (Leviticus 25:23). Naboth''s answer — *Yahuah (LORD) forbid it me, that I should give the inheritance of my fathers unto thee* (1 Kings 21:3) — is not stubbornness but Torah-obedience: the land belongs to Yahuah, held in trust by the family it was apportioned to, and cannot be sold away in perpetuity. The man Ahab destroys is the man keeping the covenant.'),
+    ('canon','1-kings',21,3,'canon','numbers',36,7,'free',E'*So shall not the inheritance of the children of Yashar''el (Israel) remove from tribe to tribe: for every one of the children of Yashar''el (Israel) shall keep himself to the inheritance of the tribe of his fathers* (Numbers 36:7). Naboth does exactly what Torah commands — *keep himself to the inheritance of the tribe of his fathers* — refusing to let the vineyard *remove* into the crown''s hand; *the inheritance of my fathers* (1 Kings 21:3) is the very phrase Numbers guards.'),
+    ('canon','1-kings',21,4,'canon','leviticus',25,10,'free',E'*And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof... and ye shall return every man unto his possession, and ye shall return every man unto his family* (Leviticus 25:10). The jubile law makes every sale temporary and every family''s possession inalienable — so even if Naboth had sold, it would return; his refusal honours the deeper intent. Ahab lies *heavy and displeased* over *the inheritance of my fathers* (1 Kings 21:4) precisely because Torah will not let him keep what he covets.'),
+    ('canon','1-kings',21,3,'canon','micah',2,2,'free',E'*And they covet fields, and take them by violence; and houses, and take them away: so they oppress a man and his house, even a man and his heritage* (Micah 2:2). Micah names Ahab''s sin generations before and after — the powerful coveting the heritage of the poor and seizing it *by violence*. Naboth''s *inheritance of my fathers* (1 Kings 21:3) is the very *heritage* Micah says they wrench away; the vineyard is the textbook case of the woe.'),
+    ('canon','1-kings',21,3,'canon','isaiah',5,8,'free',E'*Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* (Isaiah 5:8). Isaiah pronounces the woe on the land-grabber who swallows up his neighbour''s ground — and Ahab, wanting Naboth''s vineyard *for a garden of herbs, because it is near unto my house* (1 Kings 21:2), is laying field to field against the man who answers *Yahuah (LORD) forbid it me* (1 Kings 21:3). The king covets; the prophet curses the coveting.'),
+
+    -- THREAD 2: thou didst blaspheme, the shattered commandments and the false witness (21:10,13)
+    ('canon','1-kings',21,7,'canon','exodus',20,17,'free',E'*Thou shalt not covet thy neighbour''s house... nor any thing that is thy neighbour''s* (Exodus 20:17). The whole crime begins in coveting: Ahab desires the vineyard, and Jezebel — *I will give thee the vineyard of Naboth the Jezreelite* (1 Kings 21:7) — turns the king''s coveting into action. The tenth commandment broken in the heart becomes the spring of every commandment broken in the deed.'),
+    ('canon','1-kings',21,10,'canon','exodus',20,16,'free',E'*Thou shalt not bear false witness against thy neighbour* (Exodus 20:16). Jezebel''s plot is the deliberate manufacture of false witness: *set two men, sons of Belial, before him, to bear witness against him, saying, Thou didst blaspheme Elohim (God) and the king* (1 Kings 21:10). The ninth commandment is not merely broken but engineered as a weapon — perjury dressed as justice to murder an innocent man.'),
+    ('canon','1-kings',21,13,'canon','exodus',20,13,'free',E'*Thou shalt not kill* (Exodus 20:13). The false witness does its work: *they carried him forth out of the city, and stoned him with stones, that he died* (1 Kings 21:13). Judicial form cannot launder murder — the sixth commandment is shattered by a stoning that wears the robes of law, the innocent Naboth dead so the king may have his garden of herbs.'),
+    ('canon','1-kings',21,13,'canon','deuteronomy',19,15,'free',E'*One witness shall not rise up against a man for any iniquity... at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established* (Deuteronomy 19:15). The two-witness rule was given to PROTECT the innocent — and Jezebel weaponizes its very form, suborning *two men, children of Belial* (1 Kings 21:13) to satisfy the letter while murdering the truth. The Torah-court meant as a shield is turned into the instrument of the killing.'),
+    ('canon','1-kings',21,13,'canon','deuteronomy',19,18,'free',E'*And the judges shall make diligent inquisition: and, behold, if the witness be a false witness, and hath testified falsely against his brother; Then shall ye do unto him, as he had thought to have done unto his brother* (Deuteronomy 19:18-19). Torah demands that false witnesses bear the doom they devised — and that sentence rebounds upon Ahab and Jezebel: the death they plotted by *children of Belial* (1 Kings 21:13) returns on their own house and blood (1 Kings 21:19,23). The law of the false witness is fulfilled against the ones who perverted it.'),
+
+    -- THREAD 3: in the place where dogs licked the blood, the prophet against the king (21:19,23)
+    ('canon','1-kings',21,19,'canon','2-kings',9,26,'free',E'*Surely I have seen yesterday the blood of Naboth, and the blood of his sons, saith Yahuah (LORD); and I will requite thee in this plat, saith Yahuah (LORD)* (2 Kings 9:26). Elijah''s word in the stolen vineyard — *In the place where dogs licked the blood of Naboth shall dogs lick thy blood, even thine* (1 Kings 21:19) — is fulfilled to the letter when Jehu casts Joram''s body into *the portion of the field of Naboth the Jezreelite* (2 Kings 9:25); the murdered man''s blood is requited in his own ground.'),
+    ('canon','1-kings',21,23,'canon','2-kings',9,36,'free',E'*This is the word of Yahuah (LORD), which he spake by his servant Elijah the Tishbite, saying, In the portion of Jezreel shall dogs eat the flesh of Jezebel* (2 Kings 9:36). The doom on Jezebel — *The dogs shall eat Jezebel by the wall of Jezreel* (1 Kings 21:23) — comes to pass exactly: thrown from the window, trodden under Jehu''s horses, and *they found no more of her than the skull, and the feet, and the palms of her hands* (2 Kings 9:35). The word against the murderess does not fall to the ground.'),
+    ('canon','1-kings',21,19,'canon','james',5,4,'free',E'*Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4). The blood of Naboth cries from the ground that Elijah names — *Hast thou killed, and also taken possession?* (1 Kings 21:19) — the same cry of the defrauded poor that James says enters Yahuah''s ears; the rich man''s seizure of the field does not go unheard.'),
+    ('canon','1-kings',21,19,'canon','james',5,6,'free',E'*Ye have condemned and killed the just; and he doth not resist you* (James 5:6). Naboth is *the just* — the righteous man who kept Torah and would not sell his fathers'' land — *condemned and killed* by a rigged court that he did not resist; *Hast thou killed, and also taken possession?* (1 Kings 21:19) is the same indictment James lays on the rich who murder the innocent to enlarge their estates.'),
+
+    -- THREAD 4: Ahab humbleth himself, the evil deferred to his son's days (21:27,29)
+    ('canon','1-kings',21,29,'canon','2-kings',9,25,'free',E'*Take up, and cast him in the portion of the field of Naboth the Jezreelite: for remember how that, when I and thou rode together after Ahab his father, Yahuah (LORD) laid this burden upon him* (2 Kings 9:25). Because Ahab humbled himself, Yahuah said *in his son''s days will I bring the evil upon his house* (1 Kings 21:29) — and so the burden laid on Ahab falls on his son Joram, whose corpse is flung into Naboth''s own field; the deferred judgment lands exactly where the crime was done.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-21-the-inheritance-of-my-fathers-the-land-shall-not-be-sold',
+       E'The inheritance of my fathers — the land shall not be sold',
+       E'Ahab, king of Samaria, covets the vineyard of Naboth the Jezreelite that lies *hard by the palace* and offers to buy it or trade for a better one (1 Kings 21:1-2). Naboth refuses with a single covenant sentence: *Yahuah (LORD) forbid it me, that I should give the inheritance of my fathers unto thee* (1 Kings 21:3). Read through the world''s eyes Naboth looks like a stubborn man turning down a fair price; read through Torah he is the faithful one. The land of Yashar''el (Israel) is not a commodity — *The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me* (Leviticus 25:23). Yahuah owns the land; each family holds its allotted portion in trust, and the law forbids its permanent sale. The inheritance cannot even pass between tribes: *So shall not the inheritance of the children of Yashar''el (Israel) remove from tribe to tribe: for every one of the children of Yashar''el (Israel) shall keep himself to the inheritance of the tribe of his fathers* (Numbers 36:7) — and *the inheritance of my fathers* is the very phrase Naboth speaks. Even a sale made in poverty reverts at the jubile: *ye shall return every man unto his possession, and ye shall return every man unto his family* (Leviticus 25:10). So Naboth keeps the covenant, and Ahab covets exactly what Torah will not let a man sell. This is the sin the prophets name without mercy: *they covet fields, and take them by violence; and houses, and take them away: so they oppress a man and his house, even a man and his heritage* (Micah 2:2), and *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* (Isaiah 5:8). Torah is the inheritance, never the curse; here the law-keeper is the victim and the covenant-breaker wears the crown.',
+       sv.verse_id, ev.verse_id, 'free', 38400
+  FROM _s342_1ki21_lookup sv, _s342_1ki21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=21 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-21-thou-didst-blaspheme-the-shattered-commandments-and-the-false-witness',
+       E'Thou didst blaspheme — the shattered commandments and the false witness',
+       E'When Ahab sulks on his bed, Jezebel takes the kingdom''s machinery into her hands: *So she wrote letters in Ahab''s name, and sealed them with his seal* (1 Kings 21:8), commanding the elders to *Proclaim a fast, and set Naboth on high among the people: And set two men, sons of Belial, before him, to bear witness against him, saying, Thou didst blaspheme Elohim (God) and the king. And then carry him out, and stone him, that he may die* (1 Kings 21:9-10). It is done precisely as written, and Naboth is stoned (1 Kings 21:13). Watch the Decalogue shatter in sequence. It begins in the heart with the tenth word — *Thou shalt not covet thy neighbour''s house... nor any thing that is thy neighbour''s* (Exodus 20:17) — for Jezebel''s whole scheme is to satisfy Ahab''s coveting, *I will give thee the vineyard of Naboth* (1 Kings 21:7). The coveting becomes false witness, the ninth word broken and weaponized — *Thou shalt not bear false witness against thy neighbour* (Exodus 20:16) — manufactured by suborned *sons of Belial*. The false witness becomes murder, the sixth word — *Thou shalt not kill* (Exodus 20:13) — judicial form laundering a killing. And the killing serves theft, the eighth word, so the king may seize the field. The bitterest stroke is that the Torah-court built to shield the innocent is turned into the knife. The two-witness rule was given for protection — *at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established* (Deuteronomy 19:15) — and Jezebel honours its letter with two perjurers to murder a man under colour of law. But the same law turns: *if the witness be a false witness... Then shall ye do unto him, as he had thought to have done unto his brother* (Deuteronomy 19:18-19) — and that sentence rebounds, for the doom the false witnesses devised falls on the house of Ahab and Jezebel themselves (1 Kings 21:19,23). The Torah is never the instrument of evil; the perversion of it is the evil, and the Torah outlives the perverter to avenge the innocent.',
+       sv.verse_id, ev.verse_id, 'free', 38403
+  FROM _s342_1ki21_lookup sv, _s342_1ki21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=21 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-21-in-the-place-where-dogs-licked-the-blood-the-prophet-against-the-king',
+       E'In the place where dogs licked the blood — the prophet against the king',
+       E'Ahab goes down to take possession of the dead man''s vineyard, and there the word of Yahuah sends Elijah to meet him: *Hast thou killed, and also taken possession?... In the place where dogs licked the blood of Naboth shall dogs lick thy blood, even thine* (1 Kings 21:19). This is the prophet confronting the most powerful man in the land for the murdered poor — naming the crime to the king''s face in the very vineyard he stole. The sentence falls on the whole house: *I will... cut off from Ahab him that pisseth against the wall* (1 Kings 21:21), and *of Jezebel also spake Yahuah (LORD), saying, The dogs shall eat Jezebel by the wall of Jezreel* (1 Kings 21:23). And it is fulfilled to the letter a generation on. Jehu, anointed to avenge *the blood of my servants the prophets, and the blood of all the servants of Yahuah (LORD), at the hand of Jezebel* (2 Kings 9:7), cuts down Joram and remembers the burden Yahuah laid on Ahab: *Surely I have seen yesterday the blood of Naboth, and the blood of his sons, saith Yahuah (LORD); and I will requite thee in this plat* (2 Kings 9:26) — and casts the body into *the portion of the field of Naboth the Jezreelite* (2 Kings 9:25). Jezebel is flung from her window and trodden underfoot, *and they found no more of her than the skull, and the feet, and the palms of her hands* (2 Kings 9:35), Jehu declaring *This is the word of Yahuah (LORD), which he spake by his servant Elijah the Tishbite... In the portion of Jezreel shall dogs eat the flesh of Jezebel* (2 Kings 9:36). The cry of the murdered innocent is heard. James names the same cry over every age: *the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4) — *Ye have condemned and killed the just; and he doth not resist you* (James 5:6). Naboth is the just; his blood, and his sons'' blood, cries to a God who answers.',
+       sv.verse_id, ev.verse_id, 'free', 38406
+  FROM _s342_1ki21_lookup sv, _s342_1ki21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=21 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-21-ahab-humbleth-himself-the-evil-deferred-to-his-sons-days',
+       E'Ahab humbleth himself — the evil deferred to his son''s days',
+       E'The doom is pronounced in full, and then something unexpected happens: *when Ahab heard those words, that he rent his clothes, and put sackcloth upon his flesh, and fasted, and lay in sackcloth, and went softly* (1 Kings 21:27). This is the man with no equal in selling himself to wickedness (1 Kings 21:25) — yet his humbling is real enough that Yahuah takes notice of it: *Seest thou how Ahab humbleth himself before me? because he humbleth himself before me, I will not bring the evil in his days: but in his son''s days will I bring the evil upon his house* (1 Kings 21:29). Even a covenant-breaker who bows is met with mercy and delay — the judgment is not cancelled but deferred, the patience of a God who does not strike the moment he is provoked. And the deferral lands exactly where justice requires. When the evil comes in the son''s days, it falls on Joram, and Jehu remembers: *when I and thou rode together after Ahab his father, Yahuah (LORD) laid this burden upon him; Surely I have seen yesterday the blood of Naboth, and the blood of his sons... I will requite thee in this plat* (2 Kings 9:25-26). Joram''s body is cast into the very field of Naboth — the deferred sentence falling in the place of the crime, the mercy to the father not erasing the requital owed to the murdered man. Yahuah is, as James says of the same prophet''s God, *very pitiful, and of tender mercy* — slow even toward Ahab — yet the blood of the innocent is still answered in its own ground.',
+       sv.verse_id, ev.verse_id, 'free', 38409
+  FROM _s342_1ki21_lookup sv, _s342_1ki21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=21 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: the inheritance of my fathers, the land shall not be sold
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The land shall not be sold for ever: for the land is mine* (Leviticus 25:23) — the land belongs to Yahuah, held in trust; Naboth''s refusal keeps the covenant, not stubbornness.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=3
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-the-inheritance-of-my-fathers-the-land-shall-not-be-sold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the inheritance of the children of Yashar''el (Israel) shall not remove from tribe to tribe* (Numbers 36:7) — Naboth keeps to the inheritance of the tribe of his fathers, the very phrase he speaks.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=3
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=36 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-the-inheritance-of-my-fathers-the-land-shall-not-be-sold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ye shall return every man unto his possession* (Leviticus 25:10) — the jubile makes every sale temporary and the family''s possession inalienable; Ahab covets what Torah will not let a man keep.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=4
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-the-inheritance-of-my-fathers-the-land-shall-not-be-sold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they covet fields, and take them by violence... even a man and his heritage* (Micah 2:2) — the prophet names Ahab''s exact sin: the powerful seizing the heritage of the poor.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=3
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-the-inheritance-of-my-fathers-the-land-shall-not-be-sold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Woe unto them that join house to house, that lay field to field* (Isaiah 5:8) — Isaiah''s woe on the land-grabber who swallows his neighbour''s ground, exactly Ahab''s field-to-field greed.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=3
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-the-inheritance-of-my-fathers-the-land-shall-not-be-sold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: thou didst blaspheme, the shattered commandments and the false witness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not covet thy neighbour''s house... nor any thing that is thy neighbour''s* (Exodus 20:17) — the tenth word, the coveting in which the whole crime is born.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=7
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-thou-didst-blaspheme-the-shattered-commandments-and-the-false-witness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thou shalt not bear false witness against thy neighbour* (Exodus 20:16) — the ninth word, manufactured as a weapon by the suborned sons of Belial.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=10
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-thou-didst-blaspheme-the-shattered-commandments-and-the-false-witness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt not kill* (Exodus 20:13) — the sixth word, judicial form laundering the stoning of an innocent man.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=13
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-thou-didst-blaspheme-the-shattered-commandments-and-the-false-witness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*at the mouth of two witnesses... shall the matter be established* (Deuteronomy 19:15) — the protective rule perverted, its letter honoured by two perjurers to murder under colour of law.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=13
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-thou-didst-blaspheme-the-shattered-commandments-and-the-false-witness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*if the witness be a false witness... Then shall ye do unto him, as he had thought to have done unto his brother* (Deuteronomy 19:18-19) — the false-witness doom rebounds on Ahab''s and Jezebel''s own house.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=13
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-thou-didst-blaspheme-the-shattered-commandments-and-the-false-witness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: in the place where dogs licked the blood, the prophet against the king
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the blood of Naboth, and the blood of his sons... I will requite thee in this plat* (2 Kings 9:26) — Elijah''s word fulfilled: Joram''s body cast into Naboth''s own field.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=19
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=9 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-in-the-place-where-dogs-licked-the-blood-the-prophet-against-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*In the portion of Jezreel shall dogs eat the flesh of Jezebel* (2 Kings 9:36) — the doom on Jezebel come to pass exactly as Elijah spoke it.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=23
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=9 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-in-the-place-where-dogs-licked-the-blood-the-prophet-against-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4) — the same cry of the defrauded poor that Naboth''s blood raises from the seized field.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=19
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-in-the-place-where-dogs-licked-the-blood-the-prophet-against-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Ye have condemned and killed the just; and he doth not resist you* (James 5:6) — Naboth is the just, killed by a rigged court he did not resist.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=19
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-in-the-place-where-dogs-licked-the-blood-the-prophet-against-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: Ahab humbleth himself, the evil deferred to his son's days
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*cast him in the portion of the field of Naboth the Jezreelite... Yahuah laid this burden upon him* (2 Kings 9:25) — the deferred evil falling on the son Joram, in the very plat of Naboth.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=21 AND sv.verse_number=29
+  JOIN _s342_1ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=9 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-21-ahab-humbleth-himself-the-evil-deferred-to-his-sons-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_22.sql (1 Kings 22) -----
+-- 1 Kings 22 — Jehoshaphat of Yahudah joins Ahab to retake Ramoth-gilead; Ahab's four hundred
+-- prophets all promise success, but Jehoshaphat asks for a prophet of Yahuah; MICAIAH son of Imlah
+-- — the lone true prophet, hated for never prophesying good of Ahab — speaks *what Yahuah saith
+-- unto me, that will I speak*; his throne-vision of the heavenly court — *I saw Yahuah sitting on
+-- his throne, and all the host of heaven standing by him on his right hand and on his left* — and
+-- the lying spirit Yahuah sends into the mouth of the false prophets as JUDGMENT; Micaiah smitten
+-- and imprisoned on bread and water of affliction *until I come in peace*; Ahab disguises himself
+-- but a man draws a bow *at a venture* and smites him; the dogs lick his blood *according unto the
+-- word of Yahuah which he spake*; the doom of 21:19 sealed; Jehoshaphat's reign; end of 1 Kings.
+-- TAG: 1ki22   VIEW: _s342_1ki22_lookup   SORT BAND: 38425, step 3 (38425,38428,38431,38434)
+-- SOURCE rows all 'canon','1-kings',22,v.
+--
+-- 1 Kings 22 coverage:
+--   v.7-8,13-14 (Jehoshaphat asks for a prophet of Yahuah besides; *I hate him; for he doth not
+--          prophesy good concerning me, but evil*; the messenger urges Micaiah to agree with the
+--          400; *what Yahuah saith unto me, that will I speak*)
+--          NT:     Matthew 9:36 (*scattered abroad, as sheep having no shepherd*) [thread 1]
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 18:7 (the parallel — *I hate him; for he never prophesied good unto
+--                  me, but always evil*); 2 Chronicles 18:13 (*what my Elohim saith, that will I
+--                  speak*); Numbers 27:17 (*as sheep which have no shepherd*); Deuteronomy 18:22
+--                  (the test of the prophet's word) [thread 1]
+--   v.17 (*I saw all Yashar'el scattered upon the hills, as sheep that have not a shepherd*) —
+--          NT: Matthew 9:36; Tanakh: Numbers 27:17 [thread 1]
+--   v.28 (*If thou return at all in peace, Yahuah hath not spoken by me*) — the test of the word;
+--          Tanakh: Deuteronomy 18:22 [thread 1]
+--   v.19-23 (*I saw Yahuah sitting on his throne, and all the host of heaven standing by him on his
+--          right hand and on his left*; the divine council deliberates over Ahab)
+--          NT:     Revelation 5:11 (*ten thousand times ten thousand, and thousands of thousands*
+--                  round about the throne) [thread 2]
+--          Extras: 1 Enoch 14:15 (the throne of Yahuah reaching to heaven) [thread 2]
+--          Tanakh: Job 1:6 (*the sons of Elohim came to present themselves before Yahuah*); Daniel
+--                  7:9 (the Ancient of days on the fiery throne); Daniel 7:10 (*thousand thousands
+--                  ministered unto him*); Isaiah 6:1 (*I saw also Yahuah sitting upon a throne*)
+--                  [thread 2]
+--   v.21-23 (the spirit volunteers; *I will go forth, and I will be a lying spirit in the mouth of
+--          all his prophets*; *Yahuah hath put a lying spirit in the mouth of all these thy
+--          prophets*)
+--          NT:     2 Thessalonians 2:11 (*Elohim shall send them strong delusion, that they should
+--                  believe a lie*) [thread 3]
+--          Extras: none warranted
+--          Tanakh: Jeremiah 23:16 (*Hearken not unto the words of the prophets... they speak a
+--                  vision of their own heart*); Jeremiah 23:21 (*I have not sent these prophets, yet
+--                  they ran*); Deuteronomy 13:3 (Yahuah *proveth you, to know whether ye love*)
+--                  [thread 3]
+--   v.34-38 (Ahab disguises himself; a man draws a bow *at a venture*; smitten between the joints;
+--          dies; *the dogs licked up his blood... according unto the word of Yahuah which he spake*)
+--          NT:     none warranted (the sure-word judgment held by the 1 Kings 21 weave)
+--          Extras: none warranted
+--          Tanakh: 1 Kings 21:19 (*In the place where dogs licked the blood of Naboth shall dogs
+--                  lick thy blood*); 1 Kings 21:23 (the doom on Jezebel by the wall of Jezreel);
+--                  Numbers 32:23 (*be sure your sin will find you out*) [thread 4]
+--   v.1-6 (the three years' truce; Jehoshaphat goes down; the 400 prophets' chorus) — narrative
+--          setup; the false-chorus framed in threads 1 and 3; no separate target pulled.
+--   v.9-12,15-16 (Zedekiah's iron horns; *Go up... and prosper*) — the lying-prophet performance;
+--          carried in threads 1 and 3.
+--   v.24-27 (Zedekiah smites Micaiah; the prison; bread and water of affliction) — the true word
+--          persecuted; framed in thread 1's prose; no separate verified target pulled this pass.
+--   v.29-33 (the captains turn on Jehoshaphat, then perceive he is not the king) — narrative of the
+--          battle leading to thread 4; none warranted separately.
+--   v.39-53 (the rest of Ahab's acts; Jehoshaphat's reign; Ahaziah does evil; serves Baal) —
+--          royal-summary frame closing 1 Kings; none warranted (regnal formulae).
+--
+-- THREADS:
+--   1-kings-22-micaiah-the-lone-true-prophet-against-the-flattering-majority (free) — Tanakh+NT: 2 Chron 18, Numbers 27, Deut 18, Matthew 9
+--   1-kings-22-i-saw-yahuah-on-his-throne-and-all-the-host-of-heaven (extras) — Tanakh+NT+Extras: Job 1, Daniel 7, Isaiah 6, Revelation 5, 1 Enoch 14
+--   1-kings-22-the-lying-spirit-as-judgment-strong-delusion-on-the-prophets (free) — Tanakh+NT: 2 Thess 2, Jeremiah 23, Deut 13
+--   1-kings-22-the-word-of-yahuah-fulfilled-no-disguise-escapes-the-sure-word (free) — Tanakh: 1 Kings 21, Numbers 32
+-- Framework-load-bearing framing:
+--   22:14 — Micaiah is the lone faithful prophet against four hundred flatterers: *what Yahuah saith
+--   unto me, that will I speak*. The true word is hated precisely because it does not flatter
+--   (*I hate him; for he doth not prophesy good concerning me, but evil*, 22:8). His vision of
+--   *all Yashar'el scattered upon the hills, as sheep that have not a shepherd* (22:17) is the
+--   two-house shepherdless people — the lament Numbers 27:17 sought to remedy and the Formed Son
+--   answers in compassion when he sees the multitudes *scattered abroad, as sheep having no
+--   shepherd* (Matthew 9:36). The test of every prophet is fulfilment (Deuteronomy 18:22), and
+--   Micaiah stakes his word on it: *If thou return at all in peace, Yahuah hath not spoken by me*.
+--   22:19-23 — THE THRONE-VISION. *I saw Yahuah sitting on his throne, and all the host of heaven
+--   standing by him on his right hand and on his left.* This is Yahuah ENTHRONED amid the divine
+--   council — the Most High on his throne with the host of heaven as ministers and witnesses, the
+--   same court Job 1:6 (*the sons of Elohim came to present themselves before Yahuah*), Daniel 7:9-10
+--   (the Ancient of days, *thousand thousands ministered unto him*), Isaiah 6:1, Revelation 5:11, and
+--   1 Enoch 14:15 all behold. NOT a co-equal trinity, NOT an Arian counterfeit: the Father is the
+--   enthroned Most High, the host stand before him as servants. The lying spirit that *came forth*
+--   and *stood before Yahuah* is one of that host given a commission of judgment.
+--   22:22-23 — THE STRONG-DELUSION PRINCIPLE. Yahuah does not author falsehood, but he GIVES OVER
+--   those who will not love the truth to the lie they prefer: *Yahuah hath put a lying spirit in the
+--   mouth of all these thy prophets*. This is the very principle Paul names: *for this cause Elohim
+--   shall send them strong delusion, that they should believe a lie; that they all might be damned
+--   who believed not the truth* (2 Thessalonians 2:11-12). Ahab loved the four hundred who said
+--   *peace* (cf. Jeremiah 23:16-17), so the deceiving spirit is loosed as his judgment — the prophets
+--   Yahuah never sent (Jeremiah 23:21), the test Deuteronomy 13:3 names: Yahuah *proveth you, to know
+--   whether ye love Yahuah*. The deception is the sentence on a heart already set against the word.
+--   22:38 — THE SURE WORD FULFILLED. Ahab disguises himself, but *a certain man drew a bow at a
+--   venture* and the arrow finds the joint of his harness; the dogs lick his blood at the pool of
+--   Samaria *according unto the word of Yahuah which he spake* — the doom sealed in 1 Kings 21:19
+--   (*In the place where dogs licked the blood of Naboth shall dogs lick thy blood*). No disguise
+--   escapes the spoken word; *be sure your sin will find you out* (Numbers 32:23). Yahuah's word
+--   stands, and the false prophets' *peace* is undone the moment the king does not return in peace.
+
+CREATE TEMP VIEW _s342_1ki22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Micaiah the lone true prophet against the flattering majority (22:8,14,17,28)
+    ('canon','1-kings',22,8,'canon','2-chronicles',18,7,'free',E'*And the king of Yashar''el (Israel) said unto Jehoshaphat, There is yet one man, by whom we may enquire of Yahuah (LORD): but I hate him; for he never prophesied good unto me, but always evil: the same is Micaiah the son of Imla* (2 Chronicles 18:7). The chronicler records the same hatred word for word: in Kings Ahab says *I hate him; for he doth not prophesy good concerning me, but evil* (1 Kings 22:8). The lone prophet of Yahuah is despised precisely because the true word will not flatter — the one faithful voice against the four hundred.'),
+    ('canon','1-kings',22,14,'canon','2-chronicles',18,13,'free',E'*And Micaiah said, As Yahuah (LORD) liveth, even what my Elohim (God) saith, that will I speak* (2 Chronicles 18:13). This is Micaiah''s oath verbatim: *As Yahuah (LORD) liveth, what Yahuah (LORD) saith unto me, that will I speak* (1 Kings 22:14). Pressed to make his word *like the word of one of them* (22:13), the true prophet binds himself to the word of Yahuah alone — the mark of the faithful messenger over against the chorus of flatterers.'),
+    ('canon','1-kings',22,17,'canon','numbers',27,17,'free',E'*Which may go out before them, and which may go in before them, and which may lead them out, and which may bring them in; that the congregation of Yahuah (LORD) be not as sheep which have no shepherd* (Numbers 27:17). Micaiah''s true vision is exactly this dread: *I saw all Yashar''el (Israel) scattered upon the hills, as sheep that have not a shepherd* (1 Kings 22:17). Where Moses prayed Yahuah to set a shepherd over the congregation, Micaiah sees the shepherdless flock that Ahab''s doomed war will scatter — the two-house people leaderless on the hills.'),
+    ('canon','1-kings',22,17,'canon','matthew',9,36,'free',E'*But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd* (Matthew 9:36). The prophet''s grievous sight — *all Yashar''el (Israel) scattered upon the hills, as sheep that have not a shepherd* (1 Kings 22:17) — is the very condition the Formed Son beholds with compassion: the shepherdless flock of Yashar''el. What Ahab''s false prophets and his doomed war produce, the true Shepherd comes to gather.'),
+    ('canon','1-kings',22,28,'canon','deuteronomy',18,22,'free',E'*When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the prophet hath spoken it presumptuously: thou shalt not be afraid of him* (Deuteronomy 18:22). Micaiah stakes his word on this very test: *If thou return at all in peace, Yahuah (LORD) hath not spoken by me* (1 Kings 22:28). The fulfilment is the proof; the four hundred who promised victory are exposed the moment Ahab does not come home in peace, and the lone true prophet is vindicated by the word that comes to pass.'),
+
+    -- THREAD 2: I saw Yahuah on his throne, and all the host of heaven — the divine council (22:19)
+    ('canon','1-kings',22,19,'canon','job',1,6,'free',E'*Now there was a day when the sons of Elohim (God) came to present themselves before Yahuah (LORD), and Satan came also among them* (Job 1:6). Micaiah''s vision opens the same heavenly court: *I saw Yahuah (LORD) sitting on his throne, and all the host of heaven standing by him on his right hand and on his left* (1 Kings 22:19). Yahuah is enthroned amid the divine council — the sons of Elohim, the host of heaven, presenting themselves before him; the deliberation over Ahab unfolds before the assembled court exactly as the deliberation over Job does.'),
+    ('canon','1-kings',22,19,'canon','daniel',7,9,'free',E'*I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9). The throne Micaiah saw — *Yahuah (LORD) sitting on his throne* (1 Kings 22:19) — is the same throne Daniel beholds: the Ancient of days, the Most High enthroned in fire. The court of heaven is one court; the Father reigns from it, and the host stand before him.'),
+    ('canon','1-kings',22,19,'canon','daniel',7,10,'free',E'*A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened* (Daniel 7:10). Micaiah''s *all the host of heaven standing by him on his right hand and on his left* (1 Kings 22:19) is this innumerable court — *thousand thousands ministered unto him* — and as there *the judgment was set*, so here Yahuah sets the judgment of Ahab among the standing host.'),
+    ('canon','1-kings',22,19,'canon','isaiah',6,1,'free',E'*In the year that king Uzziah died I saw also Yahuah (Lord) sitting upon a throne, high and lifted up, and his train filled the temple* (Isaiah 6:1). Isaiah''s call-vision is the prophet''s sight Micaiah shared: *I saw also Yahuah (Lord) sitting upon a throne*, word for word *I saw Yahuah (LORD) sitting on his throne* (1 Kings 22:19). The seers of Yahuah are shown the same enthroned Glory surrounded by his ministering host — the Most High in his sanctuary, attended by the heavenly council.'),
+    ('canon','1-kings',22,19,'canon','revelation',5,11,'free',E'*And I beheld, and I heard the voice of many angels round about the throne and the beasts and the elders: and the number of them was ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11). The host Micaiah saw *standing by him on his right hand and on his left* (1 Kings 22:19) is the same numberless company John hears round about the throne. From the prophet of Imlah to the seer of Patmos it is one throne, one Most High, one host of heaven encircling him in worship and in counsel.'),
+    ('canon','1-kings',22,19,'enoch','1-enoch',14,15,'extras',E'*But the middle one reached to heaven, like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire* (1 Enoch 14:15). Enoch is carried up and shown the throne of Yahuah reaching to heaven — the same enthroned Most High Micaiah beheld, *Yahuah (LORD) sitting on his throne, and all the host of heaven standing by him* (1 Kings 22:19). The restored witness joins the prophets: Yahuah is enthroned in the heights, the heavenly council standing before the sapphire throne.'),
+
+    -- THREAD 3: the lying spirit as judgment — strong delusion on the prophets (22:22,23)
+    ('canon','1-kings',22,22,'canon','2-thessalonians',2,11,'free',E'*And for this cause Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11). The spirit volunteers, *I will go forth, and I will be a lying spirit in the mouth of all his prophets* (1 Kings 22:22), and Yahuah commissions it. This is Paul''s very principle: Yahuah gives over those who will not love the truth to the lie they prefer — *strong delusion, that they should believe a lie* — the deceiving voice loosed as the sentence on a heart already set against the word.'),
+    ('canon','1-kings',22,23,'canon','jeremiah',23,16,'free',E'*Thus saith Yahuah Tseva''ot (LORD of hosts), Hearken not unto the words of the prophets that prophesy unto you: they make you vain: they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* (Jeremiah 23:16). The four hundred who cried *Go up, and prosper* are these very prophets — *Yahuah (LORD) hath put a lying spirit in the mouth of all these thy prophets* (1 Kings 22:23). They speak a vision of their own heart, the flattering *peace* the people love; their word is not from the mouth of Yahuah but the delusion he gave them over to.'),
+    ('canon','1-kings',22,23,'canon','jeremiah',23,21,'free',E'*I have not sent these prophets, yet they ran: I have not spoken to them, yet they prophesied* (Jeremiah 23:21). Ahab''s four hundred are the unsent prophets to the letter — Yahuah *hath put a lying spirit in the mouth of all these thy prophets* (1 Kings 22:23). They prophesy without commission, running where Yahuah never sent them; the lying spirit is the judicial loosing of exactly the kind of prophet Jeremiah names, the deceiver of a king who would not hear the truth.'),
+    ('canon','1-kings',22,23,'canon','deuteronomy',13,3,'free',E'*Thou shalt not hearken unto the words of that prophet, or that dreamer of dreams: for Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God) with all your heart and with all your soul* (Deuteronomy 13:3). The lying spirit in the prophets'' mouths — *Yahuah (LORD) hath put a lying spirit in the mouth of all these thy prophets* (1 Kings 22:23) — is the proving Torah foretold: Yahuah *proveth you, to know whether ye love* him. The false word tests the heart; Ahab, who loved flattery over truth, is given the lie he chose.'),
+
+    -- THREAD 4: the word of Yahuah fulfilled — no disguise escapes the sure word (22:34,38)
+    ('canon','1-kings',22,38,'canon','1-kings',21,19,'free',E'*And thou shalt speak unto him, saying, Thus saith Yahuah (LORD), In the place where dogs licked the blood of Naboth shall dogs lick thy blood, even thine* (1 Kings 21:19). The doom Elijah spoke over the murder of Naboth is now sealed: *one washed the chariot in the pool of Samaria; and the dogs licked up his blood... according unto the word of Yahuah (LORD) which he spake* (1 Kings 22:38). No disguise turned the arrow aside; the spoken word of Yahuah finds Ahab exactly as it was uttered, the sure word fulfilled to the letter.'),
+    ('canon','1-kings',22,38,'canon','1-kings',21,23,'free',E'*And of Jezebel also spake Yahuah (LORD), saying, The dogs shall eat Jezebel by the wall of Jezreel* (1 Kings 21:23). The same sentence of the dogs that here overtakes Ahab — *the dogs licked up his blood... according unto the word of Yahuah (LORD) which he spake* (1 Kings 22:38) — was spoken over his house entire. The word Yahuah declared against Ahab and Jezebel comes to pass piece by piece; what he has said, he performs.'),
+    ('canon','1-kings',22,34,'canon','numbers',32,23,'free',E'*But if ye will not do so, behold, ye have sinned against Yahuah (LORD): and be sure your sin will find you out* (Numbers 32:23). Ahab disguises himself to escape the doom, yet *a certain man drew a bow at a venture, and smote the king of Yashar''el (Israel) between the joints of the harness* (1 Kings 22:34). The arrow loosed without aim finds the one joint in the armour — *be sure your sin will find you out*. No disguise, no chance, no harness shields the man from the word Yahuah has spoken against his blood-guilt.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-22-micaiah-the-lone-true-prophet-against-the-flattering-majority',
+       E'Micaiah the lone true prophet against the flattering majority',
+       E'Ahab gathers four hundred prophets and they prophesy as one mouth: *Go up; for Yahuah (Lord) shall deliver it into the hand of the king* (1 Kings 22:6). But Jehoshaphat is uneasy — *Is there not here a prophet of Yahuah (LORD) besides, that we might enquire of him?* (22:7) — and Ahab answers with the king''s hatred of the true word: *There is yet one man, Micaiah the son of Imlah, by whom we may enquire of Yahuah (LORD): but I hate him; for he doth not prophesy good concerning me, but evil* (22:8); the chronicler records it the same — *I hate him; for he never prophesied good unto me, but always evil* (2 Chronicles 18:7). The lone prophet is despised precisely because his word does not flatter. Pressed by the messenger to make his word *like the word of one of them, and speak that which is good* (22:13), Micaiah binds himself to Yahuah alone: *As Yahuah (LORD) liveth, what Yahuah (LORD) saith unto me, that will I speak* (22:14); *even what my Elohim (God) saith, that will I speak* (2 Chronicles 18:13). And his true vision is grief, not victory: *I saw all Yashar''el (Israel) scattered upon the hills, as sheep that have not a shepherd* (22:17) — the very dread Moses prayed against, *that the congregation of Yahuah (LORD) be not as sheep which have no shepherd* (Numbers 27:17), and the very condition the Formed Son beholds with compassion, the multitudes *scattered abroad, as sheep having no shepherd* (Matthew 9:36). The four hundred are tested by one thing only: fulfilment. *When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not... that is the thing which Yahuah (LORD) hath not spoken* (Deuteronomy 18:22). Micaiah, smitten and dragged to prison on the bread and water of affliction, stakes his life on it: *If thou return at all in peace, Yahuah (LORD) hath not spoken by me* (22:28). The flattering majority is exposed the moment the king does not come home in peace; the lone true prophet is vindicated by the word that comes to pass.',
+       sv.verse_id, ev.verse_id, 'free', 38425
+  FROM _s342_1ki22_lookup sv, _s342_1ki22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=22 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-22-i-saw-yahuah-on-his-throne-and-all-the-host-of-heaven',
+       E'I saw Yahuah on his throne, and all the host of heaven',
+       E'Micaiah lifts the veil on the heavenly court: *Hear thou therefore the word of Yahuah (LORD): I saw Yahuah (LORD) sitting on his throne, and all the host of heaven standing by him on his right hand and on his left* (1 Kings 22:19). This is Yahuah ENTHRONED amid the divine council — the Most High on his throne, the host of heaven His ministers and witnesses, deliberating over the fall of Ahab. It is the same court the other seers of Yahuah are shown. Job sees it: *Now there was a day when the sons of Elohim (God) came to present themselves before Yahuah (LORD)* (Job 1:6). Daniel beholds the enthroned Most High in fire: *the Ancient of days did sit, whose garment was white as snow... his throne was like the fiery flame* (Daniel 7:9), attended by the innumerable host — *thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set* (Daniel 7:10). Isaiah''s call is word for word Micaiah''s sight: *I saw also Yahuah (Lord) sitting upon a throne, high and lifted up, and his train filled the temple* (Isaiah 6:1). And John on Patmos hears the same numberless company — *the number of them was ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11) — round about the throne. The restored witness joins them: Enoch is carried up and shown *the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire* (1 Enoch 14:15). One throne, one Most High, one host of heaven encircling Him in counsel and in worship. This is not a co-equal trinity nor an Arian counterfeit: the Father is the enthroned Most High, and the host — including the spirit who comes forth and *stood before Yahuah* (22:21) — stand before Him as servants who do His bidding.',
+       sv.verse_id, ev.verse_id, 'extras', 38428
+  FROM _s342_1ki22_lookup sv, _s342_1ki22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=22 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-22-the-lying-spirit-as-judgment-strong-delusion-on-the-prophets',
+       E'The lying spirit as judgment — strong delusion on the prophets',
+       E'In the council a spirit volunteers and Yahuah commissions it: *I will go forth, and I will be a lying spirit in the mouth of all his prophets. And he said, Thou shalt persuade him, and prevail also: go forth, and do so* (1 Kings 22:22); *Now therefore, behold, Yahuah (LORD) hath put a lying spirit in the mouth of all these thy prophets, and Yahuah (LORD) hath spoken evil concerning thee* (22:23). Yahuah does not author falsehood, but He GIVES OVER to the lie those who will not love the truth. This is exactly the principle Paul names: because men *received not the love of the truth*, *for this cause Elohim (God) shall send them strong delusion, that they should believe a lie; that they all might be damned who believed not the truth, but had pleasure in unrighteousness* (2 Thessalonians 2:11-12). Ahab loved the four hundred who said *prosper* and hated the one who told him the truth; so the deceiving spirit is loosed upon him as judgment. These prophets are the very kind Jeremiah indicts: *Hearken not unto the words of the prophets that prophesy unto you: they make you vain: they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* (Jeremiah 23:16); *I have not sent these prophets, yet they ran: I have not spoken to them, yet they prophesied* (Jeremiah 23:21). And the whole episode is the proving Torah foretold: *Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God) with all your heart and with all your soul* (Deuteronomy 13:3). The false word is the test of the heart — Yahuah gives the king who chose flattery the very delusion he preferred, and the sentence falls on a heart already set against the word.',
+       sv.verse_id, ev.verse_id, 'free', 38431
+  FROM _s342_1ki22_lookup sv, _s342_1ki22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=22 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-22-the-word-of-yahuah-fulfilled-no-disguise-escapes-the-sure-word',
+       E'The word of Yahuah fulfilled — no disguise escapes the sure word',
+       E'Ahab thinks to outwit the word of Yahuah: *I will disguise myself, and enter into the battle; but put thou on thy robes* (1 Kings 22:30). But the king of Syria''s captains break off, and then *a certain man drew a bow at a venture, and smote the king of Yashar''el (Israel) between the joints of the harness* (22:34) — an aimless arrow that finds the single joint in the armour. *Be sure your sin will find you out* (Numbers 32:23): no disguise, no chance, no harness shields the man from the sentence on his blood-guilt. He dies at even, and *one washed the chariot in the pool of Samaria; and the dogs licked up his blood... according unto the word of Yahuah (LORD) which he spake* (22:38). That word was Elijah''s, spoken over the murder of Naboth: *In the place where dogs licked the blood of Naboth shall dogs lick thy blood, even thine* (1 Kings 21:19); and Yahuah had sealed the doom of the whole house — *The dogs shall eat Jezebel by the wall of Jezreel* (1 Kings 21:23). What Yahuah declares, He performs, to the letter and in its time. The four hundred prophets'' *peace* is undone the instant the king does not come home; the lone true word stands. No disguise escapes the sure word of Yahuah — the close of 1 Kings is the proof that His spoken judgment cannot be turned aside.',
+       sv.verse_id, ev.verse_id, 'free', 38434
+  FROM _s342_1ki22_lookup sv, _s342_1ki22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=22 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: Micaiah the lone true prophet against the flattering majority
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I hate him; for he never prophesied good unto me, but always evil* (2 Chronicles 18:7) — the parallel records the king''s hatred verbatim; the true word despised for not flattering.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=18 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-micaiah-the-lone-true-prophet-against-the-flattering-majority'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*what my Elohim saith, that will I speak* (2 Chronicles 18:13) — Micaiah''s oath verbatim; the faithful messenger bound to Yahuah''s word alone against the chorus.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=14
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=18 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-micaiah-the-lone-true-prophet-against-the-flattering-majority'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*that the congregation of Yahuah be not as sheep which have no shepherd* (Numbers 27:17) — Moses'' prayer against the shepherdless flock Micaiah now sees scattered on the hills.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=17
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-micaiah-the-lone-true-prophet-against-the-flattering-majority'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*scattered abroad, as sheep having no shepherd* (Matthew 9:36) — the Formed Son beholds with compassion the very shepherdless flock of Yashar''el that Micaiah saw scattered.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=17
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-micaiah-the-lone-true-prophet-against-the-flattering-majority'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*if the thing follow not, nor come to pass... the prophet hath spoken it presumptuously* (Deuteronomy 18:22) — the Torah test Micaiah stakes his life on: *If thou return at all in peace, Yahuah hath not spoken by me* (22:28).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=28
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-micaiah-the-lone-true-prophet-against-the-flattering-majority'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: I saw Yahuah on his throne, and all the host of heaven
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the sons of Elohim came to present themselves before Yahuah* (Job 1:6) — the same heavenly court; the host present themselves and the deliberation unfolds before the enthroned Most High.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-i-saw-yahuah-on-his-throne-and-all-the-host-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the Ancient of days did sit... his throne was like the fiery flame* (Daniel 7:9) — the same enthroned Most High Micaiah saw; one throne, the Father reigning over the court of heaven.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-i-saw-yahuah-on-his-throne-and-all-the-host-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thousand thousands ministered unto him... the judgment was set* (Daniel 7:10) — the innumerable host *standing by him* (22:19); as there the judgment was set, so here Yahuah sets Ahab''s judgment.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-i-saw-yahuah-on-his-throne-and-all-the-host-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I saw also Yahuah sitting upon a throne, high and lifted up* (Isaiah 6:1) — Isaiah''s call-vision word for word Micaiah''s sight; the same enthroned Glory and ministering host.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-i-saw-yahuah-on-his-throne-and-all-the-host-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11) — the same numberless host round about the throne; from Imlah''s son to Patmos, one Most High and one host of heaven.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-i-saw-yahuah-on-his-throne-and-all-the-host-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*reached to heaven, like the throne of Yahuah... the top of the throne was of sapphire* (1 Enoch 14:15) — the restored witness shown the same enthroned Most High Micaiah beheld in the council.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-i-saw-yahuah-on-his-throne-and-all-the-host-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the lying spirit as judgment — strong delusion on the prophets
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Elohim shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11) — Paul''s principle exactly: those who love not the truth are given over to the lie they prefer.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-the-lying-spirit-as-judgment-strong-delusion-on-the-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they speak a vision of their own heart, and not out of the mouth of Yahuah* (Jeremiah 23:16) — the flattering *peace* the people love; the four hundred to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=23
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-the-lying-spirit-as-judgment-strong-delusion-on-the-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I have not sent these prophets, yet they ran* (Jeremiah 23:21) — the unsent prophets; the lying spirit is the judicial loosing of exactly this kind of deceiver.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=23
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-the-lying-spirit-as-judgment-strong-delusion-on-the-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah Elohaychem proveth you, to know whether ye love* him (Deuteronomy 13:3) — the false word is the proving of the heart; Ahab, who chose flattery, is given the lie he loved.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=23
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-the-lying-spirit-as-judgment-strong-delusion-on-the-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the word of Yahuah fulfilled — no disguise escapes the sure word
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*In the place where dogs licked the blood of Naboth shall dogs lick thy blood, even thine* (1 Kings 21:19) — Elijah''s doom over Naboth''s murder, now sealed *according unto the word of Yahuah* (22:38).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=38
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=21 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-the-word-of-yahuah-fulfilled-no-disguise-escapes-the-sure-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The dogs shall eat Jezebel by the wall of Jezreel* (1 Kings 21:23) — the same sentence of the dogs spoken over the whole house; what Yahuah declares against Ahab and Jezebel comes to pass piece by piece.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=38
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=21 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-the-word-of-yahuah-fulfilled-no-disguise-escapes-the-sure-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*be sure your sin will find you out* (Numbers 32:23) — the aimless arrow at a venture finds the one joint in Ahab''s harness; no disguise or chance shields the man from the spoken word.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=22 AND sv.verse_number=34
+  JOIN _s342_1ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=32 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-22-the-word-of-yahuah-fulfilled-no-disguise-escapes-the-sure-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session342 — 1 Kings cross-references complete.'
