@@ -4499,6 +4499,2020 @@ SELECT t.id, cr.id, 4, E'*Know ye not that your body is the temple of the Ruach 
  WHERE t.slug='leviticus-15-separate-them-lest-they-defile-my-tabernacle'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_leviticus_16.sql (Leviticus 16) -----
+-- Book: Leviticus | Chapter: 16 — THE DAY OF ATONEMENT (Yom Kippur), the supreme keystone.
+-- Session prefix: s311 | Tag: lev16 | Temp view: _s311_lev16_lookup
+-- Sort band: base 23075, step 3 (23075, 23078, 23081, 23084, 23087, 23090, 23093)
+--
+-- FRAMING (lens applied): the appointed-time atonement is the SHADOW the Formed Son fills once
+-- for all. The high priest entering within the veil with blood upon the mercy seat = the Formed
+-- Son entered once into the holy place by his own blood (Heb 9). The two goats = the dual aspect
+-- of the one atonement: the slain (blood within the veil) + the live sin-bearer carried away.
+-- "Once a year" repeated forever = the shadow that could never take away sins, contrasted with the
+-- ONE offering once for all (Heb 10) — the feast STANDING, fulfilled NOT abolished (still an
+-- everlasting statute, still afflict-your-souls, still a sabbath of rest, still reckoned the Fast
+-- by the apostolic-era believers, Acts 27:9).
+--
+-- Leviticus 16 coverage:
+--   v.1-2  NT:     Hebrews 9:7-8 (high priest alone once a year, way into holiest not yet manifest)
+--          Extras: none warranted
+--          Tanakh: Exodus 25:22 (I will commune from above the mercy seat); Exodus 30:10 (atonement once a year)
+--   v.3-6  NT:     (covered with blood thread, Heb 9:11-12)
+--          Extras: none warranted
+--          Tanakh: (Exodus 25:17 mercy seat)
+--   v.7-10 NT:     (two-goats thread — the dual atonement)
+--          Extras: none warranted (Azazel/1En10 belongs on the scapegoat send-away thread)
+--          Tanakh: Leviticus 14:4-7 (two birds, one killed/one let go); Isaiah 53:6 (laid on him the iniquity of us all)
+--   v.11-14 NT:    Hebrews 9:11-12, 9:24-25 (by his own blood entered once); Romans 3:25 (a propitiation/mercy seat)
+--          Extras: none warranted
+--          Tanakh: Exodus 25:17 (the mercy seat of pure gold)
+--   v.15-19 NT:    (blood thread)
+--          Extras: none warranted
+--          Tanakh: (within the blood/two-goats threads)
+--   v.20-22 NT:    John 1:29 (Lamb that taketh away the sin of the world); Isaiah 53:11-12 (he bare the sin of many); Hebrews 13:11-12 (suffered without the gate)
+--          Extras: 1 Enoch 10:4 (bind Azazel, cast into the desert) — clean witness, scapegoat/Azazel sent to the wilderness
+--          Tanakh: Micah 7:19 (cast all their sins into the depths of the sea); Psalm 103:12 (as far as the east from the west)
+--   v.23-28 NT:    Hebrews 13:11-12 (bodies burned without the camp; Yahusha suffered without the gate)
+--          Extras: none warranted
+--          Tanakh: Leviticus 4:12 (the whole bullock carried forth without the camp and burnt)
+--   v.29-31 NT:    Acts 27:9 (the Fast — Yom Kippur — still reckoned by apostolic-era believers)
+--          Extras: none warranted
+--          Tanakh: Leviticus 23:27-32 (the day of atonement, afflict your souls, a sabbath of rest); Numbers 29:7 (tenth day seventh month, afflict your souls)
+--   v.32-34 NT:    Hebrews 9:25-28 (offer himself once); Hebrews 10:1-4 (year by year can never take away sins); Hebrews 10:11-14 (one offering perfected for ever); Hebrews 10:19-22 (boldness to enter the holiest by the blood)
+--          Extras: none warranted
+--          Tanakh: (within once-a-year thread)
+--
+-- Threads (7):
+--   lev16-the-veil-the-cloud-and-the-mercy-seat          [free]  Tanakh(Ex25:22, Ex30:10) + NT(Heb9:7-8)
+--   lev16-the-blood-sprinkled-upon-the-mercy-seat        [free]  Tanakh(Ex25:17) + NT(Heb9:11-12, Heb9:24-25, Rom3:25)
+--   lev16-the-two-goats-and-the-casting-of-lots          [free]  Tanakh(Lev14:4-7, Isa53:6)
+--   lev16-the-scapegoat-bears-away-all-their-iniquities  [extras] NT(John1:29, Isa53:11-12, Heb13:11-12) + Tanakh(Micah7:19, Ps103:12) + Extras(1En10:4)
+--   lev16-the-sin-offering-burned-without-the-camp       [free]  Tanakh(Lev4:12) + NT(Heb13:11-12)
+--   lev16-afflict-your-souls-a-sabbath-of-rest-for-ever  [free]  Tanakh(Lev23:27-32, Num29:7) + NT(Acts27:9)
+--   lev16-once-a-year-the-shadow-once-for-all-the-substance [free] NT(Heb9:25-28, Heb10:1-4, Heb10:11-14, Heb10:19-22)
+
+-- =========================================================================================
+-- A. Temp view
+-- =========================================================================================
+CREATE TEMP VIEW _s311_lev16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =========================================================================================
+-- B. cross_references INSERT
+-- =========================================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the veil, the cloud, the mercy seat
+    ('canon','leviticus',16,2,'canon','exodus',25,22,'free',
+     E'*And there I will meet with thee, and I will commune with thee from above the mercy seat, from between the two cherubims which are upon the ark of the testimony* (Exodus 25:22). The mercy seat is the appointed meeting-place of Yahuah (LORD) with His people; here in Leviticus 16:2 the priest is warned *that he come not at all times into the holy place within the vail before the mercy seat... that he die not: for I will appear in the cloud upon the mercy seat* — the cloud-Glory above the blood-covered seat is the Formed Son''s presence.'),
+    ('canon','leviticus',16,2,'canon','exodus',30,10,'free',
+     E'*And Aaron shall make an atonement upon the horns of it once in a year with the blood of the sin offering of atonements: once in the year shall he make atonement upon it throughout your generations* (Exodus 30:10). The "once in the year" of the incense altar binds to the single annual approach of Leviticus 16, the rhythm of the Day of Atonement set into the standing service.'),
+    ('canon','leviticus',16,2,'canon','hebrews',9,7,'free',
+     E'*But into the second went the high priest alone once every year, not without blood, which he offered for himself, and for the errors of the people* (Hebrews 9:7). The apostle reads Leviticus 16 exactly: Aaron alone, once a year, never *without blood*. He continues — *the Ruach HaKodesh (Holy Spirit) this signifying, that the way into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing* (Hebrews 9:8) — the once-a-year barring of the veil testifies that the full way in awaited the Formed Son.'),
+    ('canon','leviticus',16,2,'canon','hebrews',9,8,'free',
+     E'*The Ruach HaKodesh (Holy Spirit) this signifying, that the way into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing* (Hebrews 9:8). The very restriction of Leviticus 16:2 — *that he come not at all times into the holy place within the vail* — is the Spirit''s sign that the open way was reserved for the once-for-all entry of Messiah (Christ).'),
+
+    -- Thread 2: the blood sprinkled upon the mercy seat
+    ('canon','leviticus',16,14,'canon','exodus',25,17,'free',
+     E'*And thou shalt make a mercy seat of pure gold: two cubits and a half shall be the length thereof, and a cubit and a half the breadth thereof* (Exodus 25:17). The mercy seat upon which Aaron sprinkles the blood *seven times* (Leviticus 16:14) is the pure-gold lid of the ark — the place where blood meets the testimony of the Torah, atonement covering the broken covenant.'),
+    ('canon','leviticus',16,14,'canon','hebrews',9,12,'free',
+     E'*Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us* (Hebrews 9:12). What Aaron does with bullock-blood sprinkled before the mercy seat, the Formed Son fulfils with *his own blood*, entering *once* — the eternal redemption the annual sprinkling only foreshadowed.'),
+    ('canon','leviticus',16,15,'canon','hebrews',9,11,'free',
+     E'*But Messiah (Christ) being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands, that is to say, not of this building* (Hebrews 9:11). The goat slain *for the people* whose blood is brought *within the vail* (Leviticus 16:15) is the type; the Formed Son is the great High Priest entering the greater tabernacle.'),
+    ('canon','leviticus',16,15,'canon','hebrews',9,25,'free',
+     E'*Nor yet that he should offer himself often, as the high priest entereth into the holy place every year with blood of others* (Hebrews 9:25). The blood *of others* — the goat''s — brought yearly *within the vail* (Leviticus 16:15) is precisely the repetition the Formed Son breaks by offering himself once.'),
+    ('canon','leviticus',16,15,'canon','romans',3,25,'free',
+     E'*Whom Elohim (God) hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past* (Romans 3:25). The word rendered "propitiation" is the mercy-seat itself: the blood sprinkled *upon the mercy seat, and before the mercy seat* (Leviticus 16:15) is the very pattern of the Formed Son set forth in his blood.'),
+
+    -- Thread 3: the two goats and the casting of lots
+    ('canon','leviticus',16,8,'canon','leviticus',14,4,'free',
+     E'*Then shall the priest command to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop* (Leviticus 14:4). The cleansing of the leper rehearses the same two-fold pattern as the Day of Atonement: of the *two birds*, one is killed and one *let loose into the open field* (Leviticus 14:7), as here *Aaron shall cast lots upon the two goats; one lot for Yahuah (LORD), and the other lot for the scapegoat* (Leviticus 16:8) — death and release as one act of atonement.'),
+    ('canon','leviticus',16,8,'canon','leviticus',14,7,'free',
+     E'*And he shall sprinkle upon him that is to be cleansed from the leprosy seven times, and shall pronounce him clean, and shall let the living bird loose into the open field* (Leviticus 14:7). The living bird *let loose* mirrors the live goat sent away; both witness that the one atonement has two aspects — the slain and the bearer carried off.'),
+    ('canon','leviticus',16,10,'canon','isaiah',53,6,'free',
+     E'*All we like sheep have gone astray; we have turned every one to his own way; and Yahuah (LORD) hath laid on him the iniquity of us all* (Isaiah 53:6). The scapegoat *presented alive before Yahuah (LORD), to make an atonement with him, and to let him go for a scapegoat into the wilderness* (Leviticus 16:10) is the living picture of the Servant on whom *Yahuah (LORD) hath laid... the iniquity of us all*.'),
+
+    -- Thread 4: the scapegoat bears away all their iniquities  [extras]
+    ('canon','leviticus',16,21,'canon','john',1,29,'free',
+     E'*The next day John seeth Yahusha (Jesus) coming unto him, and saith, Behold the Lamb of Elohim (God), which taketh away the sin of the world* (John 1:29). Aaron lays *both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Yashar''el (Israel)... putting them upon the head of the goat* (Leviticus 16:21); the Formed Son is the one who *taketh away the sin* — the sin laid on and carried off.'),
+    ('canon','leviticus',16,22,'canon','isaiah',53,11,'free',
+     E'*He shall see of the travail of his soul, and shall be satisfied: by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11). *And the goat shall bear upon him all their iniquities unto a land not inhabited* (Leviticus 16:22) — the sin-bearing Servant who *shall bear their iniquities* is the scapegoat carrying the people''s guilt away.'),
+    ('canon','leviticus',16,22,'canon','isaiah',53,12,'free',
+     E'*...he hath poured out his soul unto death: and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors* (Isaiah 53:12). The goat *bear upon him all their iniquities* (Leviticus 16:22) is the figure of him who *bare the sin of many*.'),
+    ('canon','leviticus',16,22,'canon','hebrews',13,12,'free',
+     E'*Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). As the goat is sent *unto a land not inhabited* (Leviticus 16:22), the Formed Son bears the sin outside, *without the gate* — the sin-bearer carried away from the camp.'),
+    ('canon','leviticus',16,22,'canon','micah',7,19,'free',
+     E'*He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19). The goat carrying *all their iniquities unto a land not inhabited* (Leviticus 16:22) is the same mercy that *cast all their sins into the depths of the sea* — removed, irretrievable.'),
+    ('canon','leviticus',16,22,'canon','psalms',103,12,'free',
+     E'*As far as the east is from the west, so far hath he removed our transgressions from us* (Psalm 103:12). The scapegoat sent away *into the wilderness* (Leviticus 16:22) enacts the distance of Psalm 103: the iniquity borne off and removed beyond return.'),
+    ('canon','leviticus',16,21,'enoch','1-enoch',10,4,'extras',
+     E'*And again Yahuah (God) said to Raphael: ''Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein* (1 Enoch 10:4). The live goat is the goat *for the scapegoat* (Hebrew Azazel), sent *by the hand of a fit man into the wilderness* (Leviticus 16:21); 1 Enoch names Azazel bound and cast into the desert to bear the corruption — the wilderness as the place where defilement is removed from the camp of Yahuah.'),
+
+    -- Thread 5: the sin offering burned without the camp
+    ('canon','leviticus',16,27,'canon','leviticus',4,12,'free',
+     E'*Even the whole bullock shall he carry forth without the camp unto a clean place, where the ashes are poured out, and burn him on the wood with fire* (Leviticus 4:12). The Day-of-Atonement command that *the bullock for the sin offering, and the goat for the sin offering... shall one carry forth without the camp; and they shall burn in the fire* (Leviticus 16:27) follows the sin-offering pattern already set in Leviticus 4: the body bearing sin consumed outside.'),
+    ('canon','leviticus',16,27,'canon','hebrews',13,11,'free',
+     E'*For the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp* (Hebrews 13:11). The apostle quotes Leviticus 16:27 directly — *the bodies... burned without the camp* — and draws the fulfilment: *Wherefore Yahusha (Jesus) also... suffered without the gate* (Hebrews 13:12). The sin-offering burned outside is the Formed Son crucified outside the city.'),
+
+    -- Thread 6: afflict your souls, a sabbath of rest, a statute for ever
+    ('canon','leviticus',16,29,'canon','leviticus',23,27,'free',
+     E'*Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls, and offer an offering made by fire unto Yahuah (LORD)* (Leviticus 23:27). The appointed time of Leviticus 16:29 — *in the seventh month, on the tenth day of the month, ye shall afflict your souls* — is enrolled in the calendar of feasts of Leviticus 23 as the Day of Atonement, an appointed time of Yahuah, not abolished but standing.'),
+    ('canon','leviticus',16,31,'canon','leviticus',23,32,'free',
+     E'*It shall be unto you a sabbath of rest, and ye shall afflict your souls: in the ninth day of the month at even, from even unto even, shall ye celebrate your sabbath* (Leviticus 23:32). *It shall be a sabbath of rest unto you, and ye shall afflict your souls, by a statute for ever* (Leviticus 16:31) — the Day of Atonement is a high sabbath, kept from even unto even.'),
+    ('canon','leviticus',16,29,'canon','numbers',29,7,'free',
+     E'*And ye shall have on the tenth day of this seventh month an holy convocation; and ye shall afflict your souls: ye shall not do any work therein* (Numbers 29:7). The same tenth-day affliction and rest of Leviticus 16:29 is repeated in the order of offerings — the Day of Atonement woven through the Torah as one standing appointment.'),
+    ('canon','leviticus',16,29,'canon','acts',27,9,'free',
+     E'*Now when much time was spent, and when sailing was now dangerous, because the fast was now already past, Paul admonished them* (Acts 27:9). "The fast" is the Day of Atonement; the apostolic-era believers still reckoned the sailing season by Yom Kippur — Leviticus 16:29''s *ye shall afflict your souls* kept and counted, the feast standing in the assembly of the Way.'),
+
+    -- Thread 7: once a year the shadow, once for all the substance
+    ('canon','leviticus',16,34,'canon','hebrews',9,28,'free',
+     E'*So Messiah (Christ) was once offered to bear the sins of many; and unto them that look for him shall he appear the second time without sin unto salvation* (Hebrews 9:28). *To make an atonement for the children of Yashar''el (Israel) for all their sins once a year* (Leviticus 16:34); against the yearly repetition the apostle sets the Formed Son *once offered to bear the sins of many* — the once-a-year shadow filled by the once-for-all substance.'),
+    ('canon','leviticus',16,34,'canon','hebrews',10,4,'free',
+     E'*For it is not possible that the blood of bulls and of goats should take away sins* (Hebrews 10:4). The atonement *once a year* (Leviticus 16:34) was *a shadow of good things to come... can never with those sacrifices which they offered year by year continually make the comers thereunto perfect* (Hebrews 10:1) — the shadow pointing beyond itself, fulfilled not voided.'),
+    ('canon','leviticus',16,34,'canon','hebrews',10,12,'free',
+     E'*But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of Elohim (God)* (Hebrews 10:12). Where the priest of Leviticus 16:34 must atone *once a year* again and again, the Formed Son offered *one sacrifice for sins for ever* — *for by one offering he hath perfected for ever them that are sanctified* (Hebrews 10:14).'),
+    ('canon','leviticus',16,34,'canon','hebrews',10,19,'free',
+     E'*Having therefore, brethren, boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19). The veil that once barred all but the high priest *once a year* (Leviticus 16:34) is opened: *a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh* (Hebrews 10:20) — the substance the Day of Atonement foreshadowed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =========================================================================================
+-- C. threads INSERT
+-- =========================================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-16-the-veil-the-cloud-and-the-mercy-seat',
+       E'The veil, the cloud, and the mercy seat',
+       E'Aaron is warned *that he come not at all times into the holy place within the vail before the mercy seat, which is upon the ark; that he die not: for I will appear in the cloud upon the mercy seat* (Leviticus 16:2). The mercy seat is where Yahuah (LORD) had said *there I will meet with thee, and I will commune with thee from above the mercy seat, from between the two cherubims* (Exodus 25:22); the incense cloud rises *that the cloud of the incense may cover the mercy seat... that he die not* (Leviticus 16:13). This single guarded approach is reckoned *once in the year* in the service of the altar (Exodus 30:10). The apostle reads the restriction as a prophecy: *into the second went the high priest alone once every year, not without blood* (Hebrews 9:7), *the Ruach HaKodesh (Holy Spirit) this signifying, that the way into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing* (Hebrews 9:8). The closed veil testifies that the open way awaited the Formed Son.',
+       sv.verse_id, ev.verse_id, 'free', 23075
+  FROM _s311_lev16_lookup sv, _s311_lev16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=16 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-16-the-blood-sprinkled-upon-the-mercy-seat',
+       E'The blood sprinkled upon the mercy seat',
+       E'Aaron *shall take of the blood of the bullock, and sprinkle it with his finger upon the mercy seat eastward; and before the mercy seat shall he sprinkle of the blood with his finger seven times* (Leviticus 16:14), then *shall he kill the goat of the sin offering, that is for the people, and bring his blood within the vail... and sprinkle it upon the mercy seat, and before the mercy seat* (Leviticus 16:15). The seat itself is the pure-gold lid over the testimony (Exodus 25:17) — blood meeting the Torah, atonement covering the broken covenant. The Formed Son fills it: *Messiah (Christ) being come an high priest of good things to come, by a greater and more perfect tabernacle* (Hebrews 9:11), *by his own blood he entered in once into the holy place, having obtained eternal redemption for us* (Hebrews 9:12) — not yearly *with blood of others* (Hebrews 9:25). And Romans names the mercy seat outright: *whom Elohim (God) hath set forth to be a propitiation through faith in his blood* (Romans 3:25). The blood on the mercy seat is the pattern of the once-for-all blood of the Formed Son.',
+       sv.verse_id, ev.verse_id, 'free', 23078
+  FROM _s311_lev16_lookup sv, _s311_lev16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=16 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-16-the-two-goats-and-the-casting-of-lots',
+       E'The two goats and the casting of lots',
+       E'*And Aaron shall cast lots upon the two goats; one lot for Yahuah (LORD), and the other lot for the scapegoat* (Leviticus 16:8). The goat *upon which the LORD''S lot fell* is offered *for a sin offering* (Leviticus 16:9); the other *shall be presented alive before Yahuah (LORD), to make an atonement with him, and to let him go for a scapegoat into the wilderness* (Leviticus 16:10). Two goats, one atonement with two aspects — the slain and the bearer let go. The same pattern cleanses the leper: of *two birds alive and clean* (Leviticus 14:4) one is killed and the other *let loose into the open field* (Leviticus 14:7). And the living picture stands in the Servant: *all we like sheep have gone astray... and Yahuah (LORD) hath laid on him the iniquity of us all* (Isaiah 53:6) — the slain offering and the iniquity-bearer are one Lamb.',
+       sv.verse_id, ev.verse_id, 'free', 23081
+  FROM _s311_lev16_lookup sv, _s311_lev16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=16 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-16-the-scapegoat-bears-away-all-their-iniquities',
+       E'The scapegoat bears away all their iniquities',
+       E'*And Aaron shall lay both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Yashar''el (Israel), and all their transgressions in all their sins, putting them upon the head of the goat, and shall send him away by the hand of a fit man into the wilderness: and the goat shall bear upon him all their iniquities unto a land not inhabited* (Leviticus 16:21-22). This is the sin-bearer carried away. The Formed Son fills it: *Behold the Lamb of Elohim (God), which taketh away the sin of the world* (John 1:29); *he bare the sin of many, and made intercession for the transgressors* (Isaiah 53:12); *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11). As the goat is sent to *a land not inhabited*, the Formed Son *suffered without the gate* (Hebrews 13:12). The removal is total: *thou wilt cast all their sins into the depths of the sea* (Micah 7:19); *as far as the east is from the west, so far hath he removed our transgressions from us* (Psalm 103:12). And the restored witness names the goat *for the scapegoat* — Azazel: *Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert... and cast him therein* (1 Enoch 10:4), the wilderness as the place where the defilement is borne away from the camp of Yahuah.',
+       sv.verse_id, ev.verse_id, 'extras', 23084
+  FROM _s311_lev16_lookup sv, _s311_lev16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=16 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-16-the-sin-offering-burned-without-the-camp',
+       E'The sin offering burned without the camp',
+       E'*And the bullock for the sin offering, and the goat for the sin offering, whose blood was brought in to make atonement in the holy place, shall one carry forth without the camp; and they shall burn in the fire their skins, and their flesh, and their dung* (Leviticus 16:27). The pattern was set already in the law of the sin offering: *the whole bullock shall he carry forth without the camp unto a clean place... and burn him on the wood with fire* (Leviticus 4:12). The apostle quotes the Day-of-Atonement command and draws the fulfilment: *for the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp. Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:11-12). The body bearing sin consumed outside the camp is the Formed Son crucified outside the city.',
+       sv.verse_id, ev.verse_id, 'free', 23087
+  FROM _s311_lev16_lookup sv, _s311_lev16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=16 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-16-afflict-your-souls-a-sabbath-of-rest-for-ever',
+       E'Afflict your souls — a sabbath of rest for ever',
+       E'*And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all* (Leviticus 16:29); *it shall be a sabbath of rest unto you, and ye shall afflict your souls, by a statute for ever* (Leviticus 16:31). This is an appointed time of Yahuah, enrolled in the feast-calendar — *the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation... and ye shall afflict your souls* (Leviticus 23:27), *a sabbath of rest... from even unto even, shall ye celebrate your sabbath* (Leviticus 23:32) — and repeated in the order of offerings (Numbers 29:7). It is not abolished: the apostolic-era believers still reckoned time by it, *because the fast was now already past* (Acts 27:9). "The fast" is the Day of Atonement, kept and counted — the appointed time standing.',
+       sv.verse_id, ev.verse_id, 'free', 23090
+  FROM _s311_lev16_lookup sv, _s311_lev16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=16 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-16-once-a-year-the-shadow-once-for-all-the-substance',
+       E'Once a year the shadow, once for all the substance',
+       E'*And this shall be an everlasting statute unto you, to make an atonement for the children of Yashar''el (Israel) for all their sins once a year* (Leviticus 16:34). The "once a year," endlessly repeated, is the shadow that points beyond itself. Hebrews holds the two together without voiding the first: *for the law having a shadow of good things to come... can never with those sacrifices which they offered year by year continually make the comers thereunto perfect* (Hebrews 10:1), *for it is not possible that the blood of bulls and of goats should take away sins* (Hebrews 10:4). Against the yearly repetition stands the Formed Son: *Messiah (Christ) was once offered to bear the sins of many* (Hebrews 9:28); *this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of Elohim (God)* (Hebrews 10:12), *for by one offering he hath perfected for ever them that are sanctified* (Hebrews 10:14). And the veil that barred all but the priest once a year is now opened: *having therefore, brethren, boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19). The once-a-year shadow is fulfilled in the once-for-all substance.',
+       sv.verse_id, ev.verse_id, 'free', 23093
+  FROM _s311_lev16_lookup sv, _s311_lev16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=16 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- =========================================================================================
+-- D. thread_members INSERT (one block per member)
+-- =========================================================================================
+
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 25:22 — *there I will meet with thee... from above the mercy seat* — the appointed meeting-place guarded in Leviticus 16:2.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=2
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-veil-the-cloud-and-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 30:10 — *once in the year shall he make atonement* — the single annual approach set into the standing service.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=2
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-veil-the-cloud-and-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 9:7 — *the high priest alone once every year, not without blood* — the apostle reads Leviticus 16 exactly.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=2
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-veil-the-cloud-and-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 9:8 — *the way into the holiest of all was not yet made manifest* — the closed veil as the Spirit''s sign.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=2
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-veil-the-cloud-and-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 25:17 — *a mercy seat of pure gold* — the seat sprinkled seven times, blood over the testimony.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=14
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-blood-sprinkled-upon-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 9:12 — *by his own blood he entered in once* — the eternal redemption the yearly sprinkling foreshadowed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=14
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-blood-sprinkled-upon-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 9:11 — *an high priest of good things to come, by a greater and more perfect tabernacle* — the goat-blood within the veil is the type.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-blood-sprinkled-upon-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 9:25 — *with blood of others... every year* — the very repetition the Formed Son breaks.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-blood-sprinkled-upon-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Romans 3:25 — *a propitiation through faith in his blood* — the word is the mercy-seat itself.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-blood-sprinkled-upon-the-mercy-seat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 14:4 — *two birds alive and clean* — the same two-fold cleansing pattern as the two goats.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=8
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=14 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-two-goats-and-the-casting-of-lots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 14:7 — *let the living bird loose into the open field* — the living bird mirrors the live goat sent away.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=8
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=14 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-two-goats-and-the-casting-of-lots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 53:6 — *Yahuah (LORD) hath laid on him the iniquity of us all* — the living picture of both goats in one Lamb.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=10
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-two-goats-and-the-casting-of-lots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'John 1:29 — *the Lamb of Elohim (God), which taketh away the sin of the world* — the Formed Son who carries off the sin laid on.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=21
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-scapegoat-bears-away-all-their-iniquities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 53:11 — *he shall bear their iniquities* — the sin-bearing Servant who is the scapegoat.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=22
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-scapegoat-bears-away-all-their-iniquities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 53:12 — *he bare the sin of many, and made intercession for the transgressors* — the goat bearing all their iniquities.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=22
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-scapegoat-bears-away-all-their-iniquities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 13:12 — *suffered without the gate* — as the goat is sent unto a land not inhabited, the Formed Son bears the sin outside.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=22
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-scapegoat-bears-away-all-their-iniquities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Micah 7:19 — *thou wilt cast all their sins into the depths of the sea* — the iniquity removed, irretrievable.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=22
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-scapegoat-bears-away-all-their-iniquities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Psalm 103:12 — *as far as the east is from the west, so far hath he removed our transgressions* — the distance the scapegoat enacts.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=22
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-scapegoat-bears-away-all-their-iniquities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'1 Enoch 10:4 — *Bind Azâzêl... and make an opening in the desert... and cast him therein* — the goat for Azazel, the wilderness where defilement is borne away.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=21
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-scapegoat-bears-away-all-their-iniquities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 4:12 — *the whole bullock shall he carry forth without the camp... and burn him on the wood with fire* — the sin-offering pattern already set.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=27
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-sin-offering-burned-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 13:11 — *the bodies... are burned without the camp* — the apostle quotes Leviticus 16:27, the Formed Son crucified outside the city.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=27
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-the-sin-offering-burned-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 23:27 — *a day of atonement... ye shall afflict your souls* — the appointed time enrolled in the feast-calendar.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=29
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-afflict-your-souls-a-sabbath-of-rest-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 23:32 — *a sabbath of rest... from even unto even* — the Day of Atonement is a high sabbath.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=31
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-afflict-your-souls-a-sabbath-of-rest-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 29:7 — *the tenth day of this seventh month... ye shall afflict your souls* — the same appointment repeated in the order of offerings.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=29
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=29 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-afflict-your-souls-a-sabbath-of-rest-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 27:9 — *because the fast was now already past* — the apostolic-era believers still reckoned time by Yom Kippur; the feast standing.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=29
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=27 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-afflict-your-souls-a-sabbath-of-rest-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Hebrews 9:28 — *Messiah (Christ) was once offered to bear the sins of many* — the once-for-all against the once-a-year.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=34
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-once-a-year-the-shadow-once-for-all-the-substance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 10:4 — *not possible that the blood of bulls and of goats should take away sins* — the shadow pointing beyond itself.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=34
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-once-a-year-the-shadow-once-for-all-the-substance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 10:12 — *one sacrifice for sins for ever* — the priest of Leviticus 16 must atone yearly; the Formed Son offered once.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=34
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-once-a-year-the-shadow-once-for-all-the-substance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 10:19 — *boldness to enter into the holiest by the blood of Yahusha (Jesus)* — the veil opened, the substance the Day foreshadowed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=16 AND sv.verse_number=34
+  JOIN _s311_lev16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-16-once-a-year-the-shadow-once-for-all-the-substance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_17.sql (Leviticus 17) -----
+-- Book: Leviticus  Chapter: 17  | tag: lev17 | session prefix: s311
+-- Sort band base 23100 step 3 -> 23100, 23103, 23106, 23109
+-- Temp view: _s311_lev17_lookup
+--
+-- FRAMING: Leviticus 17 is the blood chapter — slaughter centralized at the door of the
+-- tabernacle (not the open field, not to devils), the central blood-atonement declaration
+-- (the life is in the blood, given upon the altar to make atonement), the universal blood
+-- prohibition, and the law of that which died of itself. All four threads are Torah-affirmed,
+-- never abolished: the NT (Hebrews, Matthew, the apostolic decree of Acts 15) fills and
+-- confirms these statutes, it does not cancel them. The blood-atonement verse (17:11) is the
+-- root the whole sacrificial system — and the Formed Son's own blood — grows from.
+--
+-- Leviticus 17 coverage:
+--   v.1-9   NT:     1 Corinthians 10:20-21 (Gentiles sacrifice to devils; cannot share
+--                   Yahuah's table and the table of devils) — WARRANTED
+--           Extras: none warranted (Tanakh + NT carry the devils/centralization weave fully)
+--           Tanakh: Deuteronomy 12:5,13-14 (the one place He chooses); Deuteronomy 32:17
+--                   (sacrificed unto devils); Psalm 106:37 (sacrificed unto devils) — WARRANTED
+--   v.10-12 NT:     Hebrews 9:22 (without shedding of blood no remission); Matthew 26:28
+--                   (my blood of the new testament for remission); Hebrews 9:14 (blood of
+--                   Messiah); 1 Peter 1:18-19 (precious blood of Messiah); Acts 15:20 and
+--                   Acts 15:29 (abstain from blood) — WARRANTED
+--           Extras: none warranted
+--           Tanakh: Genesis 9:4 (flesh with the blood ye shall not eat); Deuteronomy 12:23
+--                   (the blood is the life) — WARRANTED
+--   v.13-14 NT:     none warranted (the apostolic decree already carried under v.10-12)
+--           Extras: none warranted
+--           Tanakh: Genesis 9:4; Deuteronomy 12:16; Deuteronomy 12:24 (pour the blood as
+--                   water) — WARRANTED
+--   v.15-16 NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Leviticus 11:39-40; Exodus 22:31; Ezekiel 44:31 (the priests shall not
+--                   eat of any thing dead of itself or torn) — WARRANTED
+--
+-- THREADS (4):
+--   leviticus-17-bring-them-unto-the-door-and-offer-no-more-unto-devils  [free]
+--       targets: canon NT (1-corinthians), canon Tanakh (deuteronomy, psalms)
+--   leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement  [free]
+--       targets: canon NT (hebrews, matthew, 1-peter, acts), canon Tanakh (genesis, deuteronomy)
+--   leviticus-17-the-blood-of-it-is-for-the-life-thereof-eat-no-blood  [free]
+--       targets: canon Tanakh (genesis, deuteronomy)
+--   leviticus-17-that-which-died-of-itself-or-was-torn  [free]
+--       targets: canon Tanakh (leviticus, exodus, ezekiel)
+--
+-- CONTESTED/LOAD-BEARING: 17:11 framed as the live root of blood-atonement — the same statute
+-- the Formed Son's blood fulfills (Matt 26:28, Heb 9:14), and Acts 15 keeps the blood
+-- prohibition binding on the Gentiles turned to Yahuah — Torah affirmed, not abolished.
+
+CREATE TEMP VIEW _s311_lev17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: bring them unto the door — offer no more unto devils (v.1-9)
+    ('canon','leviticus',17,7,'canon','1-corinthians',10,20, 'free',
+      E'*But I say, that the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God): and I would not that ye should have fellowship with devils.* (1 Corinthians 10:20). Leviticus warns *they shall no more offer their sacrifices unto devils, after whom they have gone a whoring* (Leviticus 17:7); Sha''ul (Paul) names the same enemy — sacrifice in the open field, outside the door of the tabernacle, is sacrifice to demons, and the redeemed may have no fellowship with them.'),
+    ('canon','leviticus',17,7,'canon','1-corinthians',10,21, 'free',
+      E'*Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils.* (1 Corinthians 10:21). The whole point of bringing every slaughter *unto the door of the tabernacle of the congregation* (Leviticus 17:5) is that worship is Yahuah''s table alone — *they shall no more offer their sacrifices unto devils* (Leviticus 17:7). One table or the other; never both.'),
+    ('canon','leviticus',17,5,'canon','deuteronomy',12,5, 'free',
+      E'*But unto the place which Yahuah Elohaychem (the LORD your God) shall choose out of all your tribes to put his name there, even unto his habitation shall ye seek, and thither thou shalt come* (Deuteronomy 12:5). Leviticus commands the same centralization — *that they may bring them unto Yahuah (LORD), unto the door of the tabernacle of the congregation* (Leviticus 17:5). Worship is not wherever a man pleases; it is the one place where the Name dwells.'),
+    ('canon','leviticus',17,3,'canon','deuteronomy',12,13, 'free',
+      E'*Take heed to thyself that thou offer not thy burnt offerings in every place that thou seest: But in the place which Yahuah (LORD) shall choose in one of thy tribes, there thou shalt offer thy burnt offerings* (Deuteronomy 12:13-14). This is the very statute Leviticus 17:3-4 enforces — the man who *killeth it out of the camp* and *bringeth it not unto the door of the tabernacle* has shed blood and is cut off. The open field is forbidden; the chosen place is required.'),
+    ('canon','leviticus',17,7,'canon','deuteronomy',32,17, 'free',
+      E'*They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* (Deuteronomy 32:17). The Song of Moses names exactly what Leviticus 17:7 forbids — *they shall no more offer their sacrifices unto devils* — the open-field sacrifice is not neutral; it is the worship of demons that provokes Yahuah to jealousy.'),
+    ('canon','leviticus',17,7,'canon','psalms',106,37, 'free',
+      E'*Yea, they sacrificed their sons and their daughters unto devils* (Psalm 106:37). The Psalmist sings the history of the very apostasy Leviticus 17:7 was given to prevent — *after whom they have gone a whoring* — sacrifice that leaves the door of the tabernacle descends into the worship of devils and the blood of children.'),
+
+    -- THREAD 2: the life of the flesh is in the blood — it maketh atonement (v.10-12)
+    ('canon','leviticus',17,11,'canon','hebrews',9,22, 'free',
+      E'*And almost all things are by the law purged with blood; and without shedding of blood is no remission.* (Hebrews 9:22). This is the New-Testament echo of Leviticus 17:11 — *it is the blood that maketh an atonement for the soul* — Hebrews does not abolish the principle, it confirms it as the law''s own rule: atonement runs on blood, and only blood.'),
+    ('canon','leviticus',17,11,'canon','matthew',26,28, 'free',
+      E'*For this is my blood of the new testament, which is shed for many for the remission of sins.* (Matthew 26:28). Leviticus declares *the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls* (Leviticus 17:11). At the table the Formed Son names His own blood as the atoning blood — the life poured out, the statute fulfilled, not cancelled.'),
+    ('canon','leviticus',17,11,'canon','hebrews',9,14, 'free',
+      E'*How much more shall the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works to serve the living Elohim (God)?* (Hebrews 9:14). Because *the life of the flesh is in the blood* (Leviticus 17:11), the blood of the Formed Son — His own life laid upon the altar — is the atonement the chapter was always pointing toward.'),
+    ('canon','leviticus',17,11,'canon','1-peter',1,19, 'free',
+      E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19). Leviticus grounds atonement in the life carried by the blood — *it is the blood that maketh an atonement for the soul* (Leviticus 17:11). Kepha (Peter) names the lamb whose blood pays the price, the unblemished life given upon the altar of Yahuah.'),
+    ('canon','leviticus',17,12,'canon','acts',15,20, 'free',
+      E'*But that we write unto them, that they abstain from pollutions of idols, and from fornication, and from things strangled, and from blood.* (Acts 15:20). The apostolic decree keeps the Leviticus 17 statute binding on the Gentiles turned to Yahuah — *No soul of you shall eat blood, neither shall any stranger that sojourneth among you eat blood* (Leviticus 17:12); the stranger''s blood prohibition is carried straight into the assembly, Torah affirmed.'),
+    ('canon','leviticus',17,12,'canon','acts',15,29, 'free',
+      E'*That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well.* (Acts 15:29). The council names the blood-of-the-stranger command of Leviticus 17:12 — *neither shall any stranger that sojourneth among you eat blood* — as a present, living obligation, not an abolished shadow.'),
+    ('canon','leviticus',17,11,'canon','genesis',9,4, 'free',
+      E'*But flesh with the life thereof, which is the blood thereof, shall ye not eat.* (Genesis 9:4). The blood prohibition is older than Sinai — given to Noah for all flesh — and Leviticus 17:11 gives the reason: *the life of the flesh is in the blood*. The life belongs to Yahuah upon the altar; man may not consume it.'),
+    ('canon','leviticus',17,11,'canon','deuteronomy',12,23, 'free',
+      E'*Only be sure that thou eat not the blood: for the blood is the life; and thou mayest not eat the life with the flesh.* (Deuteronomy 12:23). Moses repeats the very ground of Leviticus 17:11 — *the life of the flesh is in the blood* — the blood is the life, reserved for atonement upon the altar, never to be eaten with the flesh.'),
+
+    -- THREAD 3: the blood of it is for the life thereof — eat no blood (v.13-14)
+    ('canon','leviticus',17,14,'canon','genesis',9,4, 'free',
+      E'*But flesh with the life thereof, which is the blood thereof, shall ye not eat.* (Genesis 9:4). Leviticus 17:14 restates the Noahic law for every beast and fowl that is hunted — *the life of all flesh is the blood thereof... Ye shall eat the blood of no manner of flesh* — the universal prohibition given to all mankind in Noah.'),
+    ('canon','leviticus',17,13,'canon','deuteronomy',12,16, 'free',
+      E'*Only ye shall not eat the blood; ye shall pour it upon the earth as water.* (Deuteronomy 12:16). Leviticus 17:13 gives the same command for the hunted beast — *he shall even pour out the blood thereof, and cover it with dust* — the life-bearing blood is returned to the ground, never eaten.'),
+    ('canon','leviticus',17,14,'canon','deuteronomy',12,24, 'free',
+      E'*Thou shalt not eat it; thou shalt pour it upon the earth as water.* (Deuteronomy 12:24). The Deuteronomy renewal seals the Leviticus 17:14 statute — *whosoever eateth it shall be cut off* — the blood, being the life of all flesh, is poured out as water, not consumed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 4: that which died of itself or was torn (v.15-16)
+    ('canon','leviticus',17,15,'canon','leviticus',11,39, 'free',
+      E'*And if any beast, of which ye may eat, die; he that toucheth the carcase thereof shall be unclean until the even.* (Leviticus 11:39). The dietary chapter already set the rule that Leviticus 17:15 applies to eating — *every soul that eateth that which died of itself, or that which was torn with beasts... shall be unclean until the even* — death-of-itself defiles, and the law of cleansing follows.'),
+    ('canon','leviticus',17,15,'canon','leviticus',11,40, 'free',
+      E'*And he that eateth of the carcase of it shall wash his clothes, and be unclean until the even: he also that beareth the carcase of it shall wash his clothes, and be unclean until the even.* (Leviticus 11:40). This is the cleansing Leviticus 17:15 prescribes — *he shall both wash his clothes, and bathe himself in water, and be unclean until the even: then shall he be clean* — washing and waiting for the carcase that died of itself.'),
+    ('canon','leviticus',17,15,'canon','exodus',22,31, 'free',
+      E'*And ye shall be holy men unto me: neither shall ye eat any flesh that is torn of beasts in the field; ye shall cast it to the dogs.* (Exodus 22:31). The same statute against flesh *torn with beasts* (Leviticus 17:15) is rooted in holiness — torn flesh is for the dogs, not the holy people of Yahuah.'),
+    ('canon','leviticus',17,15,'canon','ezekiel',44,31, 'free',
+      E'*The priests shall not eat of any thing that is dead of itself, or torn, whether it be fowl or beast.* (Ezekiel 44:31). The prophet of the restored temple binds the Leviticus 17:15 law upon the priesthood especially — *that which died of itself, or that which was torn with beasts* — the standard endures into the age to come.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-17-bring-them-unto-the-door-and-offer-no-more-unto-devils',
+       E'Bring Them Unto the Door — Offer No More Unto Devils',
+       E'Leviticus 17 opens by drawing every slaughter to one place. *What man soever there be of the house of Yashar''el (Israel), that killeth an ox, or lamb, or goat... And bringeth it not unto the door of the tabernacle of the congregation... blood shall be imputed unto that man; he hath shed blood; and that man shall be cut off* (Leviticus 17:3-4). The reason is named plainly: *And they shall no more offer their sacrifices unto devils, after whom they have gone a whoring* (Leviticus 17:7). Open-field sacrifice is not private piety; it is the worship of demons. Moses had already sung it — *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not* (Deuteronomy 32:17) — and the Psalmist mourns its end: *Yea, they sacrificed their sons and their daughters unto devils* (Psalm 106:37). Worship must come *unto the place which Yahuah Elohaychem (the LORD your God) shall choose... to put his name there* (Deuteronomy 12:5; cf. 12:13-14). Sha''ul (Paul) carries the same line into the assembly: *the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God)* and *Ye cannot drink the cup of Yahuah (Lord), and the cup of devils* (1 Corinthians 10:20-21). One table, or the table of devils — never both.',
+       sv.verse_id, ev.verse_id, 'free', 23100
+  FROM _s311_lev17_lookup sv, _s311_lev17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=17 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement',
+       E'The Life of the Flesh Is in the Blood — It Maketh Atonement',
+       E'Here is the central declaration of the whole sacrificial system: *For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul* (Leviticus 17:11). The life belongs to Yahuah; therefore *No soul of you shall eat blood, neither shall any stranger that sojourneth among you eat blood* (Leviticus 17:12). The prohibition is older than Sinai — *flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4) — and repeated at the renewal: *the blood is the life; and thou mayest not eat the life with the flesh* (Deuteronomy 12:23). The New Testament does not cancel this; it fulfills it. *Without shedding of blood is no remission* (Hebrews 9:22); the Formed Son names His own blood at the table — *this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28) — *the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot* (Hebrews 9:14), *the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19). And the apostolic council keeps the statute binding on the strangers turned to Yahuah: *abstain... from blood* (Acts 15:20,29). The life-in-the-blood that makes atonement is the root the Lamb''s own blood grows from.',
+       sv.verse_id, ev.verse_id, 'free', 23103
+  FROM _s311_lev17_lookup sv, _s311_lev17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=17 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-17-the-blood-of-it-is-for-the-life-thereof-eat-no-blood',
+       E'The Blood of It Is for the Life Thereof — Eat No Blood',
+       E'The blood prohibition is not for altar-beasts only; it reaches every creature that is hunted. *Whatsoever man... which hunteth and catcheth any beast or fowl that may be eaten; he shall even pour out the blood thereof, and cover it with dust* (Leviticus 17:13), *For it is the life of all flesh; the blood of it is for the life thereof... Ye shall eat the blood of no manner of flesh: for the life of all flesh is the blood thereof: whosoever eateth it shall be cut off* (Leviticus 17:14). This is the universal law given to all mankind in Noah — *flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4) — and pressed again in Deuteronomy: *ye shall not eat the blood; ye shall pour it upon the earth as water* (Deuteronomy 12:16), *Thou shalt not eat it; thou shalt pour it upon the earth as water* (Deuteronomy 12:24). The life-bearing blood is returned to the ground, never consumed; the life belongs to Yahuah alone.',
+       sv.verse_id, ev.verse_id, 'free', 23106
+  FROM _s311_lev17_lookup sv, _s311_lev17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=17 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-17-that-which-died-of-itself-or-was-torn',
+       E'That Which Died of Itself or Was Torn',
+       E'The chapter closes with the carcase that was not slaughtered for the altar — its blood not drained, its death defiling. *And every soul that eateth that which died of itself, or that which was torn with beasts... he shall both wash his clothes, and bathe himself in water, and be unclean until the even: then shall he be clean. But if he wash them not, nor bathe his flesh; then he shall bear his iniquity* (Leviticus 17:15-16). The dietary law had already set the standard — *if any beast, of which ye may eat, die; he that toucheth the carcase thereof shall be unclean until the even* (Leviticus 11:39), with washing and waiting (Leviticus 11:40). Holiness is the ground: *ye shall be holy men unto me: neither shall ye eat any flesh that is torn of beasts in the field; ye shall cast it to the dogs* (Exodus 22:31). And the prophet of the restored temple binds it upon the priesthood for the age to come: *The priests shall not eat of any thing that is dead of itself, or torn, whether it be fowl or beast* (Ezekiel 44:31). The standard endures.',
+       sv.verse_id, ev.verse_id, 'free', 23109
+  FROM _s311_lev17_lookup sv, _s311_lev17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=17 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Sha''ul (Paul) names the open-field sacrifice for what it is: *the things which the Gentiles sacrifice, they sacrifice to devils* (1 Corinthians 10:20) — the same devils of Leviticus 17:7.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=7
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-bring-them-unto-the-door-and-offer-no-more-unto-devils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye cannot... be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Corinthians 10:21) — one table or the other, the principle of the door of the tabernacle.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=7
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-bring-them-unto-the-door-and-offer-no-more-unto-devils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'The one place where the Name dwells: *the place which Yahuah Elohaychem (the LORD your God) shall choose... to put his name there* (Deuteronomy 12:5).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=5
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-bring-them-unto-the-door-and-offer-no-more-unto-devils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*offer not thy burnt offerings in every place... But in the place which Yahuah (LORD) shall choose* (Deuteronomy 12:13-14) — the very statute Leviticus 17:3-4 enforces against the open field.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=3
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-bring-them-unto-the-door-and-offer-no-more-unto-devils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'The Song of Moses names the same demons: *They sacrificed unto devils, not to Elohim (God)* (Deuteronomy 32:17).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=7
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-bring-them-unto-the-door-and-offer-no-more-unto-devils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Where leaving the door leads: *they sacrificed their sons and their daughters unto devils* (Psalm 106:37).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=7
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-bring-them-unto-the-door-and-offer-no-more-unto-devils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'The law''s own rule, confirmed: *without shedding of blood is no remission* (Hebrews 9:22).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'The Formed Son names His own atoning blood: *this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the blood of Messiah (Christ)... offered himself without spot to Elohim (God)* (Hebrews 9:14) — the life laid upon the altar, fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'The unblemished Lamb whose blood pays: *the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'The apostolic decree keeps the blood prohibition binding: *abstain... from blood* (Acts 15:20) — Leviticus 17:12''s stranger-command carried into the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=12
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'The council seals it: *abstain... from blood, and from things strangled* (Acts 15:29) — a living obligation, Torah affirmed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=12
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=15 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Older than Sinai, given to Noah: *flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'The renewal repeats the ground: *the blood is the life; and thou mayest not eat the life with the flesh* (Deuteronomy 12:23).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-life-of-the-flesh-is-in-the-blood-it-maketh-atonement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'The Noahic universal law: *flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-blood-of-it-is-for-the-life-thereof-eat-no-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Pour it out, do not eat it: *ye shall not eat the blood; ye shall pour it upon the earth as water* (Deuteronomy 12:16) — the hunted beast of Leviticus 17:13.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-blood-of-it-is-for-the-life-thereof-eat-no-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'The renewal seals it: *Thou shalt not eat it; thou shalt pour it upon the earth as water* (Deuteronomy 12:24).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-the-blood-of-it-is-for-the-life-thereof-eat-no-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'The dietary law''s standard: *if any beast, of which ye may eat, die; he that toucheth the carcase thereof shall be unclean until the even* (Leviticus 11:39).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=15
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-that-which-died-of-itself-or-was-torn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'The cleansing prescribed: *he that eateth of the carcase of it shall wash his clothes, and be unclean until the even* (Leviticus 11:40) — the washing of Leviticus 17:15.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=15
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-that-which-died-of-itself-or-was-torn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Holiness is the ground: *ye shall be holy men unto me: neither shall ye eat any flesh that is torn of beasts in the field* (Exodus 22:31).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=15
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=22 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-that-which-died-of-itself-or-was-torn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Bound on the restored priesthood for the age to come: *The priests shall not eat of any thing that is dead of itself, or torn* (Ezekiel 44:31).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=17 AND sv.verse_number=15
+  JOIN _s311_lev17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=44 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-17-that-which-died-of-itself-or-was-torn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_18.sql (Leviticus 18) -----
+-- Book: Leviticus  Chapter: 18  (the forbidden unions / the sexual holiness code)
+-- Tag: lev18   Session prefix: s311   Temp view: _s311_lev18_lookup
+-- Sort band base: 23125  step 3  ->  23125, 23128, 23131, 23134, 23137
+-- All slugs prefixed leviticus-18- (checked against EXISTING_SLUGS.txt: 0 present)
+--
+-- Leviticus 18 coverage:
+--   v.1-4  be unlike the nations / do my judgments
+--          NT:     none warranted (the call is laterally answered in Torah/prophets)
+--          Extras: Jubilees 30:11 (command not to walk after the nations)
+--          Tanakh: Deuteronomy 18:9 (learn not the abominations of the nations), Ezekiel 20:18-19 (walk not in the statutes of your fathers; walk in my statutes)
+--   v.5    ★★ keep my statutes... which if a man do, he shall LIVE in them
+--          NT:     Romans 10:5, Galatians 3:12, Luke 10:28 (this do, and thou shalt live)
+--          Extras: none warranted (the canon carries the life-in-Torah chain fully)
+--          Tanakh: Ezekiel 20:11, Nehemiah 9:29, Deuteronomy 30:15-16 (life set before them)
+--   v.6-18 the forbidden incestuous unions (near of kin)
+--          NT:     none warranted (capital boundaries are restated in Torah, not the NT)
+--          Extras: Jubilees 33:10 (Reuben/Bilhah; father's wife/skirt = death, on the heavenly tables)
+--          Tanakh: Leviticus 20:11 (lieth with father's wife = death — the penalty pair)
+--   v.19-23 ★ menstruous woman, adultery, seed to Molech, mankind/abomination, beast/confusion
+--          NT:     Romans 1:26-27 (against nature), 1 Corinthians 6:9 (shall not inherit), Matthew 19:4-6 (male and female from the beginning),
+--          Extras: Jubilees 30:10 (given of his seed to Moloch — defilement, rooted out)
+--          Tanakh: Jeremiah 32:35 (sons through fire to Molech in Hinnom), Leviticus 20:13 (lie with mankind = death)
+--   v.24-30 ★ the land defiled VOMITETH out her inhabitants / cut off
+--          NT:     none warranted (the land-holiness principle is Torah/prophet ground)
+--          Extras: Jubilees 30:15 (plague, curse; defile the sanctuary -> whole nation judged)
+--          Tanakh: Leviticus 20:22-23 (the land spue you not out), Deuteronomy 9:5 (cast out for wickedness of the nations), Ezra 9:11 (an unclean land filled with abominations)
+--
+-- Threads (5):
+--   leviticus-18-after-the-doings-of-egypt-and-canaan-shall-ye-not-do  (free; Tanakh + extras Jub) -> NO, has Jub member => extras
+--   leviticus-18-keep-my-statutes-which-if-a-man-do-he-shall-live-in-them  (free; all canon NT+Tanakh)
+--   leviticus-18-none-shall-approach-to-any-near-of-kin-to-uncover-nakedness  (extras; Tanakh + Jub)
+--   leviticus-18-thy-seed-to-molech-and-the-abomination-it-is-confusion  (extras; NT + Tanakh + Jub)
+--   leviticus-18-the-land-itself-vomiteth-out-her-inhabitants  (extras; Tanakh + Jub)
+
+CREATE TEMP VIEW _s311_lev18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: after the doings of Egypt and Canaan, shall ye not do (v.3-4)
+    ('canon','leviticus',18,3,'canon','deuteronomy',18,9,'free',
+      E'*When thou art come into the land which Yahuah Elohayka (the LORD thy God) giveth thee, thou shalt not learn to do after the abominations of those nations* (Deuteronomy 18:9). Moses restates the very fence Leviticus draws: *after the doings of the land of Egypt... and after the doings of the land of Canaan, whither I bring you, shall ye not do* (Leviticus 18:3) — the covenant people are formed to be unlike the nations they came out of and the nations they enter.'),
+    ('canon','leviticus',18,4,'canon','ezekiel',20,18,'free',
+      E'*But I said unto their children in the wilderness, Walk ye not in the statutes of your fathers, neither observe their judgments, nor defile yourselves with their idols* (Ezekiel 20:18). Ezekiel sets the two walks side by side, exactly as Leviticus does — *neither shall ye walk in their ordinances. Ye shall do my judgments, and keep mine ordinances, to walk therein* (Leviticus 18:3-4): the nations'' ordinances renounced, Yahuah''s judgments walked in.'),
+    ('canon','leviticus',18,4,'canon','ezekiel',20,19,'free',
+      E'*I am Yahuah Elohaychem (the LORD your God); walk in my statutes, and keep my judgments, and do them* (Ezekiel 20:19). The prophet answers Leviticus word for word — *Ye shall do my judgments, and keep mine ordinances, to walk therein: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 18:4): the same Name seals the same command across the centuries.'),
+    ('canon','leviticus',18,3,'jubilees','jubilees',30,11,'extras',
+      E'*And do you, Moses, command the children of Yashar''el (Israel) and exhort them not to give their daughters to the nations, and not to take for their sons any of the daughters of the nations, for this is abominable before Yahuah (God)* (Jubilees 30:11). The restored witness presses the same wall Leviticus builds — *after the doings of the land of Canaan, whither I bring you, shall ye not do* (Leviticus 18:3): the holy seed is not to be mingled into the abominations of the nations.'),
+
+    -- THREAD 2: keep my statutes, which if a man do, he shall LIVE in them (v.5)
+    ('canon','leviticus',18,5,'canon','romans',10,5,'free',
+      E'*For Moses describeth the righteousness which is of the law, That the man which doeth those things shall live by them* (Romans 10:5). Paul quotes this very verse — *Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD)* (Leviticus 18:5): the Torah was given for LIFE, not death, and the apostle names Moses as its author and means no abolishing of it.'),
+    ('canon','leviticus',18,5,'canon','galatians',3,12,'free',
+      E'*And the law is not of faith: but, The man that doeth them shall live in them* (Galatians 3:12). Paul cites Leviticus again — *which if a man do, he shall live in them* (Leviticus 18:5) — distinguishing the way of faith from the bare doing for self-justification, never denying that the statutes themselves are statutes given unto life.'),
+    ('canon','leviticus',18,5,'canon','luke',10,28,'free',
+      E'*And he said unto him, Thou hast answered right: this do, and thou shalt live* (Luke 10:28). Yahusha (Jesus) speaks Leviticus 18:5 straight to the lawyer — *which if a man do, he shall live in them* (Leviticus 18:5): love of Yahuah and neighbour kept is the doing that is life.'),
+    ('canon','leviticus',18,5,'canon','ezekiel',20,11,'free',
+      E'*And I gave them my statutes, and shewed them my judgments, which if a man do, he shall even live in them* (Ezekiel 20:11). Ezekiel echoes Leviticus to the letter — *which if a man do, he shall live in them* (Leviticus 18:5): the wilderness gift of statutes was a gift of life, and the prophet mourns Israel''s refusal of it.'),
+    ('canon','leviticus',18,5,'canon','nehemiah',9,29,'free',
+      E'*And testifiedst against them, that thou mightest bring them again unto thy law: yet they dealt proudly, and hearkened not unto thy commandments, but sinned against thy judgments, (which if a man do, he shall live in them;)* (Nehemiah 9:29). The Levites'' confession folds Leviticus 18:5 into Israel''s whole story — *which if a man do, he shall live in them* (Leviticus 18:5): the judgments were unto life, and forsaking them was the wound.'),
+    ('canon','leviticus',18,5,'canon','deuteronomy',30,16,'free',
+      E'*In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply* (Deuteronomy 30:16). Moses sets life before Israel through the keeping of the same statutes — *which if a man do, he shall live in them* (Leviticus 18:5): the Torah is the path of life and good, not death and evil.'),
+
+    -- THREAD 3: none shall approach to near of kin to uncover nakedness (v.6-8)
+    ('canon','leviticus',18,8,'canon','leviticus',20,11,'free',
+      E'*And the man that lieth with his father''s wife hath uncovered his father''s nakedness: both of them shall surely be put to death; their blood shall be upon them* (Leviticus 20:11). Chapter 20 supplies the penalty for the boundary set here — *The nakedness of thy father''s wife shalt thou not uncover: it is thy father''s nakedness* (Leviticus 18:8): the prohibition of chapter 18 and its capital weight in chapter 20 are one law of family holiness.'),
+    ('canon','leviticus',18,8,'jubilees','jubilees',33,10,'extras',
+      E'*For this reason it is written and ordained on the heavenly tables that a man should not lie with his father''s wife, and should not uncover his father''s skirt, for this is unclean: they shall surely die together, the man who lies with his father''s wife and the woman also, for they have wrought uncleanness on the earth* (Jubilees 33:10). The restored witness traces this very statute to Reuben and Bilhah and writes it on the heavenly tables — *The nakedness of thy father''s wife shalt thou not uncover: it is thy father''s nakedness* (Leviticus 18:8): the near-of-kin fence is ancient, ordained, and unatonable when broken.'),
+
+    -- THREAD 4: thy seed to Molech, lie with mankind = abomination, beast = confusion (v.21-23)
+    ('canon','leviticus',18,21,'canon','jeremiah',32,35,'free',
+      E'*And they built the high places of Baal, which are in the valley of the son of Hinnom, to cause their sons and their daughters to pass through the fire unto Molech; which I commanded them not, neither came it into my mind, that they should do this abomination, to cause Yahudah (Judah) to sin* (Jeremiah 32:35). Jeremiah names the very crime Leviticus forbade — *And thou shalt not let any of thy seed pass through the fire to Molech* (Leviticus 18:21): child sacrifice is the abomination that never entered Yahuah''s mind to command.'),
+    ('canon','leviticus',18,22,'canon','leviticus',20,13,'free',
+      E'*If a man also lie with mankind, as he lieth with a woman, both of them have committed an abomination: they shall surely be put to death; their blood shall be upon them* (Leviticus 20:13). Chapter 20 carries the penalty of the word spoken here — *Thou shalt not lie with mankind, as with womankind: it is abomination* (Leviticus 18:22): the same creation-order holiness named twice, that those caught in it might be turned, not hated.'),
+    ('canon','leviticus',18,22,'canon','romans',1,27,'free',
+      E'*And likewise also the men, leaving the natural use of the woman, burned in their lust one toward another; men with men working that which is unseemly, and receiving in themselves that recompence of their error which was meet* (Romans 1:27). Paul reads the same created order Leviticus guards — *Thou shalt not lie with mankind, as with womankind: it is abomination* (Leviticus 18:22): a leaving of the natural use, named soberly as error to be recovered from.'),
+    ('canon','leviticus',18,22,'canon','1-corinthians',6,9,'free',
+      E'*Know ye not that the unrighteous shall not inherit the kingdom of Elohim (God)? Be not deceived: neither fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind* (1 Corinthians 6:9). Paul lists the abominations Leviticus catalogues — *Thou shalt not lie with mankind, as with womankind: it is abomination* (Leviticus 18:22) — yet the next breath, *and such were some of you: but ye are washed* (1 Corinthians 6:11), holds out cleansing, not condemnation only.'),
+    ('canon','leviticus',18,23,'canon','matthew',19,4,'free',
+      E'*And he answered and said unto them, Have ye not read, that he which made them at the beginning made them male and female* (Matthew 19:4). Yahusha (Jesus) grounds the whole sexual order in creation, the same order Leviticus defends against confusion — *Neither shalt thou lie with any beast to defile thyself therewith: neither shall any woman stand before a beast to lie down thereto: it is confusion* (Leviticus 18:23): what was made male and female is not to be confounded.'),
+    ('canon','leviticus',18,21,'jubilees','jubilees',30,10,'extras',
+      E'*And to this law there is no limit of days, and no remission, nor any atonement: but the man who has defiled his daughter shall be rooted out in the midst of all Yashar''el (Israel), because he has given of his seed to Moloch, and wrought impiously so as to defile it* (Jubilees 30:10). The restored witness binds the giving of seed to Moloch to defilement and rooting-out — *And thou shalt not let any of thy seed pass through the fire to Molech, neither shalt thou profane the name of thy Elohim (God)* (Leviticus 18:21): to give seed to Molech is to profane the Name and defile the holy nation.'),
+
+    -- THREAD 5: the land itself vomiteth out her inhabitants (v.25,28)
+    ('canon','leviticus',18,25,'canon','leviticus',20,22,'free',
+      E'*Ye shall therefore keep all my statutes, and all my judgments, and do them: that the land, whither I bring you to dwell therein, spue you not out* (Leviticus 20:22). Chapter 20 repeats the land-warning of chapter 18 — *And the land is defiled... and the land itself vomiteth out her inhabitants* (Leviticus 18:25): the land is holy, and defilement makes it cast out whoever defiles it, Israelite or nation alike.'),
+    ('canon','leviticus',18,25,'canon','deuteronomy',9,5,'free',
+      E'*Not for thy righteousness, or for the uprightness of thine heart, dost thou go to possess their land: but for the wickedness of these nations Yahuah Elohayka (the LORD thy God) doth drive them out from before thee* (Deuteronomy 9:5). Moses gives the reason the land emptied — *therefore I do visit the iniquity thereof upon it, and the land itself vomiteth out her inhabitants* (Leviticus 18:25): the nations were cast out for their abominations, a warning Israel inherits, not an exemption it owns.'),
+    ('canon','leviticus',18,25,'canon','ezra',9,11,'free',
+      E'*Which thou hast commanded by thy servants the prophets, saying, The land, unto which ye go to possess it, is an unclean land with the filthiness of the people of the lands, with their abominations, which have filled it from one end to another with their uncleanness* (Ezra 9:11). Ezra confesses the very defilement Leviticus warned of — *for in all these the nations are defiled which I cast out before you: And the land is defiled* (Leviticus 18:24-25): the abominations of the peoples filled and fouled the land.'),
+    ('canon','leviticus',18,28,'jubilees','jubilees',30,15,'extras',
+      E'*For there will be plague upon plague, and curse upon curse, and every judgment and plague and curse will come (upon him): if he do this thing, or hide his eyes from those who commit uncleanness, or those who defile the sanctuary of Yahuah (God), or those who profane His holy name, (then) will the whole nation together be judged* (Jubilees 30:15). The restored witness names the corporate reckoning Leviticus warns of — *That the land spue not you out also, when ye defile it, as it spued out the nations that were before you* (Leviticus 18:28): defilement unjudged draws the curse on the whole people and the land.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== THREADS =====
+
+-- Thread 1: after the doings of Egypt and Canaan, shall ye not do (extras: has Jub member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-18-after-the-doings-of-egypt-and-canaan-shall-ye-not-do',
+  E'After the doings of Egypt and Canaan, shall ye not do',
+  E'Leviticus 18 opens by setting the covenant people apart from the two worlds that bracket them: *After the doings of the land of Egypt, wherein ye dwelt, shall ye not do: and after the doings of the land of Canaan, whither I bring you, shall ye not do: neither shall ye walk in their ordinances* (Leviticus 18:3). The fence is not arbitrary; it is the shape of a holy people — *Ye shall do my judgments, and keep mine ordinances, to walk therein: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 18:4). Moses presses the same wall: *thou shalt not learn to do after the abominations of those nations* (Deuteronomy 18:9). Ezekiel sets the two walks side by side — *Walk ye not in the statutes of your fathers... I am Yahuah Elohaychem (the LORD your God); walk in my statutes, and keep my judgments, and do them* (Ezekiel 20:18-19). And the restored witness exhorts the same separation of the holy seed: *not to give their daughters to the nations, and not to take for their sons any of the daughters of the nations, for this is abominable before Yahuah (God)* (Jubilees 30:11). The nations'' ordinances renounced; Yahuah''s judgments walked in.',
+  sv.verse_id, ev.verse_id, 'extras', 23125
+  FROM _s311_lev18_lookup sv, _s311_lev18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=18 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2: keep my statutes, which if a man do, he shall live in them (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-18-keep-my-statutes-which-if-a-man-do-he-shall-live-in-them',
+  E'Keep my statutes — which if a man do, he shall live in them',
+  E'At the head of the holiness code stands the verse that names the Torah''s purpose: *Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD)* (Leviticus 18:5). The statutes are given unto LIFE, never as a sentence of death. Ezekiel preserves the words exactly — *I gave them my statutes... which if a man do, he shall even live in them* (Ezekiel 20:11) — and the Levites'' confession folds them into Israel''s whole story: *thy judgments, (which if a man do, he shall live in them;)* (Nehemiah 9:29). Moses sets the choice plainly: *to keep his commandments and his statutes and his judgments, that thou mayest live and multiply* (Deuteronomy 30:16). The New Testament reaches back to this very line. Paul names its author: *For Moses describeth the righteousness which is of the law, That the man which doeth those things shall live by them* (Romans 10:5), and again, *The man that doeth them shall live in them* (Galatians 3:12) — distinguishing the way of faith from bare self-justification, never denying that the statutes are statutes of life. And Yahusha (Jesus) speaks Leviticus 18:5 straight to the lawyer who summed the Torah in love of Yahuah and neighbour: *Thou hast answered right: this do, and thou shalt live* (Luke 10:28). The Torah is the path of life and good.',
+  sv.verse_id, ev.verse_id, 'free', 23128
+  FROM _s311_lev18_lookup sv, _s311_lev18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=18 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3: none shall approach to near of kin to uncover nakedness (extras: Jub member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-18-none-shall-approach-to-any-near-of-kin-to-uncover-nakedness',
+  E'None shall approach to any near of kin to uncover nakedness',
+  E'The heart of the chapter draws the family fence: *None of you shall approach to any that is near of kin to him, to uncover their nakedness: I am Yahuah (LORD)* (Leviticus 18:6), and among the first named, *The nakedness of thy father''s wife shalt thou not uncover: it is thy father''s nakedness* (Leviticus 18:8). Chapter 20 supplies the capital weight of the same boundary: *And the man that lieth with his father''s wife hath uncovered his father''s nakedness: both of them shall surely be put to death* (Leviticus 20:11) — prohibition and penalty are one law of family holiness. The restored witness traces this very statute back to Reuben and Bilhah and writes it on the heavenly tables: *a man should not lie with his father''s wife, and should not uncover his father''s skirt, for this is unclean: they shall surely die together... for they have wrought uncleanness on the earth* (Jubilees 33:10). The near-of-kin fence is ancient, ordained, and grave.',
+  sv.verse_id, ev.verse_id, 'extras', 23131
+  FROM _s311_lev18_lookup sv, _s311_lev18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=18 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4: thy seed to Molech and the abomination, it is confusion (extras: Jub member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-18-thy-seed-to-molech-and-the-abomination-it-is-confusion',
+  E'Thy seed to Molech, the abomination, and the confusion',
+  E'Past the family boundaries the chapter names the gravest defilements: *thou shalt not let any of thy seed pass through the fire to Molech, neither shalt thou profane the name of thy Elohim (God)* (Leviticus 18:21); *Thou shalt not lie with mankind, as with womankind: it is abomination* (Leviticus 18:22); and *Neither shalt thou lie with any beast... it is confusion* (Leviticus 18:23). Each is restated in Torah and prophet. Jeremiah names the very crime: *to cause their sons and their daughters to pass through the fire unto Molech; which I commanded them not, neither came it into my mind* (Jeremiah 32:35). Chapter 20 carries the penalty: *If a man also lie with mankind, as he lieth with a woman, both of them have committed an abomination* (Leviticus 20:13). The New Testament reads the same created order: Paul writes of *leaving the natural use* (Romans 1:27) and lists *abusers of themselves with mankind* among the unrighteous — yet adds *and such were some of you: but ye are washed* (1 Corinthians 6:9, 6:11), holding out cleansing. Yahusha (Jesus) grounds the whole order in creation: *he which made them at the beginning made them male and female* (Matthew 19:4) — what was made male and female is not to be confounded. The restored witness binds the seed given to Moloch to defilement and rooting-out: *because he has given of his seed to Moloch, and wrought impiously so as to defile it* (Jubilees 30:10). These are standing creation-order statutes, named soberly, that those caught in sin might be turned, not hated.',
+  sv.verse_id, ev.verse_id, 'extras', 23134
+  FROM _s311_lev18_lookup sv, _s311_lev18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=18 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 5: the land itself vomiteth out her inhabitants (extras: Jub member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-18-the-land-itself-vomiteth-out-her-inhabitants',
+  E'The land itself vomiteth out her inhabitants',
+  E'The chapter closes on the land''s own holiness: *Defile not ye yourselves in any of these things: for in all these the nations are defiled which I cast out before you: And the land is defiled... and the land itself vomiteth out her inhabitants* (Leviticus 18:24-25), and the warning turns on Israel too — *That the land spue not you out also, when ye defile it, as it spued out the nations that were before you* (Leviticus 18:28); *whosoever shall commit any of these abominations... shall be cut off from among their people* (Leviticus 18:29). Chapter 20 repeats it: *that the land... spue you not out* (Leviticus 20:22). Moses gives the reason the land emptied: *for the wickedness of these nations Yahuah Elohayka (the LORD thy God) doth drive them out* (Deuteronomy 9:5) — a warning Israel inherits, never an exemption it owns. Ezra confesses the very defilement: *an unclean land with the filthiness of the people of the lands, with their abominations, which have filled it from one end to another* (Ezra 9:11). And the restored witness names the corporate reckoning: *plague upon plague, and curse upon curse... if he do this thing, or hide his eyes from those who commit uncleanness... then will the whole nation together be judged* (Jubilees 30:15). The land is holy; defilement unjudged draws the curse on the whole people and the land.',
+  sv.verse_id, ev.verse_id, 'extras', 23137
+  FROM _s311_lev18_lookup sv, _s311_lev18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=18 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 18:9 — *thou shalt not learn to do after the abominations of those nations*: the same fence against the nations.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-after-the-doings-of-egypt-and-canaan-shall-ye-not-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Ezekiel 20:18 — *Walk ye not in the statutes of your fathers... nor defile yourselves with their idols*: the nations'' walk renounced.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=20 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-after-the-doings-of-egypt-and-canaan-shall-ye-not-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ezekiel 20:19 — *walk in my statutes, and keep my judgments, and do them*: Yahuah''s judgments walked in, the same Name sealing both.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=20 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-after-the-doings-of-egypt-and-canaan-shall-ye-not-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jubilees 30:11 (extras) — *not to give their daughters to the nations... for this is abominable before Yahuah (God)*: the holy seed not mingled into the abominations of the nations.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-after-the-doings-of-egypt-and-canaan-shall-ye-not-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Romans 10:5 — *Moses describeth the righteousness which is of the law, That the man which doeth those things shall live by them*: Paul names Moses, no abolishing.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-keep-my-statutes-which-if-a-man-do-he-shall-live-in-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Galatians 3:12 — *The man that doeth them shall live in them*: Leviticus 18:5 cited; the statutes are statutes given unto life.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-keep-my-statutes-which-if-a-man-do-he-shall-live-in-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Luke 10:28 — *this do, and thou shalt live*: Yahusha speaks Leviticus 18:5 to the lawyer; love kept is life.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=10 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-keep-my-statutes-which-if-a-man-do-he-shall-live-in-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ezekiel 20:11 — *which if a man do, he shall even live in them*: the wilderness gift of statutes was a gift of life.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=20 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-keep-my-statutes-which-if-a-man-do-he-shall-live-in-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Nehemiah 9:29 — *thy judgments, (which if a man do, he shall live in them;)*: the Levites'' confession folds Leviticus 18:5 into Israel''s story.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-keep-my-statutes-which-if-a-man-do-he-shall-live-in-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Deuteronomy 30:16 — *to keep his commandments and his statutes and his judgments, that thou mayest live and multiply*: life set before Israel through the statutes.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-keep-my-statutes-which-if-a-man-do-he-shall-live-in-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 20:11 — *the man that lieth with his father''s wife... both of them shall surely be put to death*: the penalty pair for the boundary set in 18:8.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-none-shall-approach-to-any-near-of-kin-to-uncover-nakedness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Jubilees 33:10 (extras) — *a man should not lie with his father''s wife... ordained on the heavenly tables*: the near-of-kin fence traced to Reuben and Bilhah, ancient and grave.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=33 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-none-shall-approach-to-any-near-of-kin-to-uncover-nakedness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jeremiah 32:35 — *to cause their sons and their daughters to pass through the fire unto Molech; which I commanded them not*: the child-sacrifice abomination named.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=32 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-thy-seed-to-molech-and-the-abomination-it-is-confusion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 20:13 — *both of them have committed an abomination: they shall surely be put to death*: the penalty for the word of 18:22.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=22
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-thy-seed-to-molech-and-the-abomination-it-is-confusion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Romans 1:27 — *leaving the natural use of the woman*: Paul reads the same created order, named soberly as error to recover from.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=22
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-thy-seed-to-molech-and-the-abomination-it-is-confusion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 6:9 — *abusers of themselves with mankind*: the abominations listed, with cleansing held out in 6:11 (*but ye are washed*).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=22
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-thy-seed-to-molech-and-the-abomination-it-is-confusion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Matthew 19:4 — *made them male and female*: Yahusha grounds the order in creation; what was made male and female is not to be confounded (18:23 confusion).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=23
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=19 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-thy-seed-to-molech-and-the-abomination-it-is-confusion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Jubilees 30:10 (extras) — *because he has given of his seed to Moloch... shall be rooted out*: seed to Moloch binds to defilement and rooting-out; profaning the Name.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-thy-seed-to-molech-and-the-abomination-it-is-confusion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 20:22 — *that the land... spue you not out*: chapter 20 repeats the land-warning of 18:25,28.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=25
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-the-land-itself-vomiteth-out-her-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 9:5 — *for the wickedness of these nations Yahuah doth drive them out*: the reason the land emptied; a warning Israel inherits, not an exemption.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=25
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=9 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-the-land-itself-vomiteth-out-her-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ezra 9:11 — *an unclean land with the filthiness of the people of the lands, with their abominations*: the very defilement Leviticus warned of, confessed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=25
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezra' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-the-land-itself-vomiteth-out-her-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jubilees 30:15 (extras) — *plague upon plague, and curse upon curse... the whole nation together be judged*: defilement unjudged draws the curse on the whole people and land.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=18 AND sv.verse_number=28
+  JOIN _s311_lev18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-18-the-land-itself-vomiteth-out-her-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_19.sql (Leviticus 19) -----
+-- Chapter: Leviticus 19 — THE HOLINESS CHAPTER (the moral heart of Leviticus; love thy neighbour)
+-- Tag: lev19 | Session prefix: s311 | Temp view: _s311_lev19_lookup
+-- Sort band base 23150 step 3 → 23150,23153,23156,23159,23162,23165,23168,23171
+-- All targets are CANON (Tanakh + NT) → every thread tier_required='free'; all member rows tier='free'.
+--
+-- Leviticus 19 coverage:
+--   v.1-2  ★ "Ye shall be holy: for I Yahuah Elohaychem am holy"
+--          NT:     1 Peter 1:15-16 (be ye holy... Be ye holy; for I am holy)
+--          Extras: none warranted
+--          Tanakh: Leviticus 11:44-45; Leviticus 20:7,26 (the holiness call repeated)
+--   v.3-4  fear mother/father, keep my sabbaths, turn not to idols
+--          NT:     none warranted (lateral Decalogue is the weave)
+--          Extras: none warranted
+--          Tanakh: Exodus 20:8-12; Deuteronomy 5:16 (the Decalogue echoed)
+--   v.5-8  peace offering / eaten by third day / cut off — folded into the holiness summary; no separate thread (procedural)
+--          NT/Extras/Tanakh: none warranted
+--   v.9-13 ★ corners of the field / gleanings for poor & stranger; not steal/lie/defraud; hired wage not abide all night
+--          NT:     James 1:27 (pure religion: visit fatherless & widows); James 2:5 (chosen the poor rich in faith);
+--                  James 5:4 (hire of the labourers kept back by fraud crieth); Ephesians 4:28 (let him labour... to give to him that needeth)
+--          Extras: none warranted
+--          Tanakh: Leviticus 23:22; Deuteronomy 24:14-15,19-21; Ruth 2:2-3
+--   v.14-16 curse not deaf / stumblingblock before blind / fear thy Elohim; just judgment, no respect of persons; no talebearer
+--          NT:     Romans 14:13 (no stumblingblock); James 2:1,9 (respect of persons = sin, transgressors of the law)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 16:19; Deuteronomy 27:18
+--   v.17-18 ★★★ hate not thy brother, rebuke, not avenge nor grudge, LOVE THY NEIGHBOUR AS THYSELF
+--          NT:     Matthew 22:39 / Mark 12:31 (second great commandment); Romans 13:9 (briefly comprehended);
+--                  Galatians 5:14 (all the law fulfilled in one word); James 2:8 (the royal law); Matthew 5:43-44 (extended, not abolished)
+--          Extras: none warranted
+--          Tanakh: Leviticus 19:34 (love the stranger — same word, own thread below)
+--   v.19 / v.26-31 keep distinctions: cattle/seed/garment not mingled; eat not with blood, no enchantment/observing times,
+--          round not head/beard, no cuttings/marks for dead, no whoredom, keep sabbaths, no familiar spirits/wizards
+--          NT:     none warranted (Torah-distinction statutes; framed against pagan syncretism)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 22:9-11 (the mingling triad); Deuteronomy 18:10-11; Leviticus 20:6 (familiar spirits)
+--   v.20-25 bondmaid trespass / trespass offering / uncircumcised fruit three years, fourth year holy — folded; firstfruits patience
+--          NT:     none warranted | Extras: none warranted | Tanakh: Leviticus 23 (firstfruits) — light, folded into separation note context, no own thread
+--   v.32-34 ★ rise before the hoary head; LOVE THE STRANGER as thyself; ye were strangers in Egypt
+--          NT:     Ephesians 2:12,19 (no more strangers, fellowcitizens of the commonwealth of Israel); Galatians 3:28 (all one)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 10:19; Exodus 22:21
+--   v.35-37 ★ just balances, just weights, a just ephah and a just hin
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 25:13-16; Proverbs 11:1; Micah 6:10-11; Amos 8:4-6
+--
+-- Threads (8):
+--   23150 leviticus-19-ye-shall-be-holy-for-i-yahuah-am-holy                         [free] NT(1-peter) + Tanakh(leviticus)
+--   23153 leviticus-19-fear-mother-and-father-keep-my-sabbaths-the-ten-words-echoed  [free] Tanakh(exodus,deuteronomy)
+--   23156 leviticus-19-leave-the-corners-for-the-poor-and-the-labourers-wage         [free] NT(james,ephesians) + Tanakh(leviticus,deuteronomy,ruth)
+--   23159 leviticus-19-no-stumblingblock-no-respect-of-persons-righteous-judgment    [free] NT(romans,james) + Tanakh(deuteronomy)
+--   23162 leviticus-19-thou-shalt-love-thy-neighbour-as-thyself-the-royal-law        [free] NT(matthew,mark,romans,galatians,james) + Tanakh(leviticus)
+--   23165 leviticus-19-keep-my-statutes-no-mingling-no-pagan-practice-separation     [free] Tanakh(deuteronomy,leviticus)
+--   23168 leviticus-19-love-the-stranger-as-one-born-among-you                       [free] NT(ephesians,galatians) + Tanakh(deuteronomy,exodus)
+--   23171 leviticus-19-just-balances-just-weights-a-just-ephah-and-a-just-hin        [free] Tanakh(deuteronomy,proverbs,micah,amos)
+
+CREATE TEMP VIEW _s311_lev19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =========================================================================
+-- B. cross_references
+-- =========================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+  -- ---- Thread 1: holiness call (19:2) ----
+  ('canon','leviticus',19,2,'canon','1-peter',1,15,'free',
+   E'*But as he which hath called you is holy, so be ye holy in all manner of conversation* (1 Peter 1:15). Kepha (Peter) does not announce a new standard; he reaches straight back to Leviticus, where the source is the call itself — *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2). Holiness is grounded in the holiness of Yahuah, the same root in both Testaments.'),
+  ('canon','leviticus',19,2,'canon','1-peter',1,16,'free',
+   E'*Because it is written, Be ye holy; for I am holy* (1 Peter 1:16). Kepha (Peter) quotes Leviticus by name as binding Scripture — *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2). The apostolic command IS the Torah command carried forward, not replaced.'),
+  ('canon','leviticus',19,2,'canon','leviticus',11,44,'free',
+   E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44). The dietary chapter rests on the same ground as the moral chapter — *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2). One holiness binds the whole Torah, table and neighbour alike.'),
+  ('canon','leviticus',19,2,'canon','leviticus',20,7,'free',
+   E'*Sanctify yourselves therefore, and be ye holy: for I am Yahuah Elohaychem (the LORD your God)* (Leviticus 20:7). The chapter that follows repeats the command of *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2), framing the whole Holiness Code with the same refrain.'),
+  ('canon','leviticus',19,2,'canon','leviticus',20,26,'free',
+   E'*And ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine* (Leviticus 20:26). Holiness is severance unto Yahuah — the seal on the command *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2); the set-apart people belongs to a set-apart Elohim.'),
+
+  -- ---- Thread 2: the Ten Words echoed (19:3-4) ----
+  ('canon','leviticus',19,3,'canon','exodus',20,12,'free',
+   E'*Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). The Holiness Code re-voices the fifth word — *Ye shall fear every man his mother, and his father* (Leviticus 19:3) — the Decalogue woven into daily statute.'),
+  ('canon','leviticus',19,3,'canon','exodus',20,8,'free',
+   E'*Remember the sabbath day, to keep it holy* (Exodus 20:8). The fourth word stands beside the fifth in the chapter — *and keep my sabbaths: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 19:3). The Sabbath is the appointed sign carried from Sinai into the Holiness Code unchanged.'),
+  ('canon','leviticus',19,4,'canon','exodus',20,4,'free',
+   E'*Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above* (Exodus 20:4). The second word answers *Turn ye not unto idols, nor make to yourselves molten gods* (Leviticus 19:4); the Ten Words are the spine the Holiness chapter is built upon.'),
+  ('canon','leviticus',19,3,'canon','deuteronomy',5,16,'free',
+   E'*Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee* (Deuteronomy 5:16). Moshe (Moses) repeats the same word in Deuteronomy that Leviticus restates — *Ye shall fear every man his mother, and his father, and keep my sabbaths* (Leviticus 19:3); one covenant, one commandment, spoken three times.'),
+
+  -- ---- Thread 3: leave the corners / the labourer's wage (19:9-13) ----
+  ('canon','leviticus',19,10,'canon','leviticus',23,22,'free',
+   E'*And when ye reap the harvest of your land, thou shalt not make clean riddance of the corners of thy field when thou reapest, neither shalt thou gather any gleaning of thy harvest: thou shalt leave them unto the poor, and to the stranger* (Leviticus 23:22). The very statute of *thou shalt leave them for the poor and stranger* (Leviticus 19:10) is set among the feasts — harvest welfare woven into the appointed times.'),
+  ('canon','leviticus',19,10,'canon','deuteronomy',24,19,'free',
+   E'*When thou cuttest down thine harvest in thy field, and hast forgot a sheaf in the field, thou shalt not go again to fetch it: it shall be for the stranger, for the fatherless, and for the widow* (Deuteronomy 24:19). Deuteronomy spells out the gleaning law of *thou shalt leave them for the poor and stranger* (Leviticus 19:10); the forgotten sheaf belongs to the needy by covenant right.'),
+  ('canon','leviticus',19,10,'canon','ruth',2,2,'free',
+   E'*And Ruth the Moabitess said unto Naomi, Let me now go to the field, and glean ears of corn after him in whose sight I shall find grace. And she said unto her, Go, my daughter* (Ruth 2:2). The Torah statute *thou shalt leave them for the poor and stranger* (Leviticus 19:10) becomes flesh in Ruth — a stranger fed by the gleaning law, grafted into the line of David and Messiah.'),
+  ('canon','leviticus',19,10,'canon','ruth',2,3,'free',
+   E'*And she went, and came, and gleaned in the field after the reapers: and her hap was to light on a part of the field belonging unto Boaz* (Ruth 2:3). The gleaning of *thou shalt leave them for the poor and stranger* (Leviticus 19:10) is the providence that brings Ruth to Boaz the kinsman-redeemer; the welfare statute carries the seed of promise.'),
+  ('canon','leviticus',19,13,'canon','deuteronomy',24,15,'free',
+   E'*At his day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it: lest he cry against thee unto Yahuah (LORD), and it be sin unto thee* (Deuteronomy 24:15). Deuteronomy expounds *the wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:13) — the labourer''s cry rises to Yahuah Himself.'),
+  ('canon','leviticus',19,13,'canon','james',5,4,'free',
+   E'*Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4). Ya''aqov (James) prosecutes the exact sin Torah forbids in *the wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:13); the withheld wage still cries to Yahuah in the last days.'),
+  ('canon','leviticus',19,13,'canon','ephesians',4,28,'free',
+   E'*Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth* (Ephesians 4:28). Sha''ul (Paul) turns *Ye shall not steal* and *Thou shalt not defraud thy neighbour* (Leviticus 19:11,13) into honest labour overflowing to the poor — the same Torah ethic, fulfilled in giving.'),
+  ('canon','leviticus',19,10,'canon','james',1,27,'free',
+   E'*Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world* (James 1:27). Ya''aqov (James) names the heart of *thou shalt leave them for the poor and stranger* (Leviticus 19:10) — care for the helpless is the religion Yahuah calls pure.'),
+  ('canon','leviticus',19,10,'canon','james',2,5,'free',
+   E'*Hath not Elohim (God) chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him?* (James 2:5). The gleaning law''s regard for the poor in *thou shalt leave them for the poor and stranger* (Leviticus 19:10) is Yahuah''s own posture — He elects the poor as heirs of the kingdom.'),
+
+  -- ---- Thread 4: no stumblingblock / no respect of persons (19:14-16) ----
+  ('canon','leviticus',19,14,'canon','romans',14,13,'free',
+   E'*Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock or an occasion to fall in his brother''s way* (Romans 14:13). Sha''ul (Paul) carries forward *nor put a stumblingblock before the blind, but shalt fear thy Elohim* (Leviticus 19:14); the Torah law against tripping the helpless becomes the law of love among brethren.'),
+  ('canon','leviticus',19,14,'canon','deuteronomy',27,18,'free',
+   E'*Cursed be he that maketh the blind to wander out of the way. And all the people shall say, Amen* (Deuteronomy 27:18). The covenant curse of Ebal seals the statute *nor put a stumblingblock before the blind* (Leviticus 19:14); to exploit the helpless is to stand under the curse of the covenant.'),
+  ('canon','leviticus',19,15,'canon','james',2,9,'free',
+   E'*But if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors* (James 2:9). Ya''aqov (James) judges partiality by the Torah itself — *thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour* (Leviticus 19:15); respect of persons is transgression of the law, not freedom from it.'),
+  ('canon','leviticus',19,15,'canon','deuteronomy',16,19,'free',
+   E'*Thou shalt not wrest judgment; thou shalt not respect persons, neither take a gift: for a gift doth blind the eyes of the wise, and pervert the words of the righteous* (Deuteronomy 16:19). Deuteronomy''s charge to judges echoes *Ye shall do no unrighteousness in judgment* (Leviticus 19:15); impartial justice is the one standard for poor and mighty alike.'),
+
+  -- ---- Thread 5: love thy neighbour as thyself — the royal law (19:17-18) ----
+  ('canon','leviticus',19,18,'canon','matthew',22,39,'free',
+   E'*And the second is like unto it, Thou shalt love thy neighbour as thyself* (Matthew 22:39). Yahusha (Jesus) names this verse — *thou shalt love thy neighbour as thyself: I am Yahuah* (Leviticus 19:18) — as the second of the two commandments on which *hang all the law and the prophets* (Matthew 22:40). The whole Torah is summed here, not abolished.'),
+  ('canon','leviticus',19,18,'canon','mark',12,31,'free',
+   E'*And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these* (Mark 12:31). Yahusha (Jesus) sets *thou shalt love thy neighbour as thyself* (Leviticus 19:18) beside the Shema as the greatest commandments — Leviticus and Deuteronomy together as the heart of the Law.'),
+  ('canon','leviticus',19,18,'canon','romans',13,9,'free',
+   E'*and if there be any other commandment, it is briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself* (Romans 13:9). Sha''ul (Paul) gathers the commandments into *thou shalt love thy neighbour as thyself* (Leviticus 19:18) and concludes *love is the fulfilling of the law* (Romans 13:10) — love fulfils Torah, it does not cancel it.'),
+  ('canon','leviticus',19,18,'canon','galatians',5,14,'free',
+   E'*For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14). Sha''ul (Paul) makes *thou shalt love thy neighbour as thyself* (Leviticus 19:18) the single word that fulfils the whole law — the Torah summed in love, the Spirit and the commandment inseparable.'),
+  ('canon','leviticus',19,18,'canon','james',2,8,'free',
+   E'*If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well* (James 2:8). Ya''aqov (James) calls *thou shalt love thy neighbour as thyself* (Leviticus 19:18) the royal law of Scripture — the king''s own law, binding and good, to be fulfilled and not merely admired.'),
+  ('canon','leviticus',19,18,'canon','matthew',5,44,'free',
+   E'*But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you* (Matthew 5:44). Yahusha (Jesus) extends *Thou shalt not avenge, nor bear any grudge... but thou shalt love thy neighbour as thyself* (Leviticus 19:18) to the enemy — drawing out the fullness of the Torah, not loosing it; the men of old had paired it with a hatred Torah never commanded (Matthew 5:43).'),
+  ('canon','leviticus',19,18,'canon','leviticus',19,34,'free',
+   E'*the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt* (Leviticus 19:34). The same chapter widens *thou shalt love thy neighbour as thyself* (Leviticus 19:18) to the sojourner — the love-command was never tribal; it reaches the stranger by the same word.'),
+
+  -- ---- Thread 6: keep my statutes — no mingling, no pagan practice (19:19,26-31) ----
+  ('canon','leviticus',19,19,'canon','deuteronomy',22,9,'free',
+   E'*Thou shalt not sow thy vineyard with divers seeds: lest the fruit of thy seed which thou hast sown, and the fruit of thy vineyard, be defiled* (Deuteronomy 22:9). Deuteronomy repeats the mingling-statute of *thou shalt not sow thy field with mingled seed* (Leviticus 19:19); the people of distinction must not blur the kinds Yahuah set apart.'),
+  ('canon','leviticus',19,19,'canon','deuteronomy',22,11,'free',
+   E'*Thou shalt not wear a garment of divers sorts, as of woollen and linen together* (Deuteronomy 22:11). The garment statute of *neither shall a garment mingled of linen and woollen come upon thee* (Leviticus 19:19) is restated in Deuteronomy — the unmingling worn on the body as a sign of a separated people.'),
+  ('canon','leviticus',19,31,'canon','deuteronomy',18,11,'free',
+   E'*Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:11). Deuteronomy lists the very abominations forbidden in *Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them* (Leviticus 19:31); the holy people does not traffic with the dead or the spirits.'),
+  ('canon','leviticus',19,26,'canon','deuteronomy',18,10,'free',
+   E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10). Deuteronomy forbids the same pagan arts as *neither shall ye use enchantment, nor observe times* (Leviticus 19:26); the nations'' practices are cut off from the covenant people.'),
+  ('canon','leviticus',19,31,'canon','leviticus',20,6,'free',
+   E'*And the soul that turneth after such as have familiar spirits, and after wizards, to go a whoring after them, I will even set my face against that soul, and will cut him off from among his people* (Leviticus 20:6). The next chapter attaches the penalty to *Regard not them that have familiar spirits, neither seek after wizards* (Leviticus 19:31); spirit-seeking is spiritual whoredom, judged by being cut off.'),
+
+  -- ---- Thread 7: love the stranger as one born among you (19:32-34) ----
+  ('canon','leviticus',19,34,'canon','deuteronomy',10,19,'free',
+   E'*Love ye therefore the stranger: for ye were strangers in the land of Egypt* (Deuteronomy 10:19). Deuteronomy gives the same command and the same reason as *thou shalt love him as thyself; for ye were strangers in the land of Egypt* (Leviticus 19:34); Yahuah''s people, once aliens, must love the alien.'),
+  ('canon','leviticus',19,33,'canon','exodus',22,21,'free',
+   E'*Thou shalt neither vex a stranger, nor oppress him: for ye were strangers in the land of Egypt* (Exodus 22:21). The earlier word in Exodus founds *if a stranger sojourn with thee in your land, ye shall not vex him* (Leviticus 19:33); the memory of Egypt is the ground of mercy to the sojourner.'),
+  ('canon','leviticus',19,34,'canon','ephesians',2,19,'free',
+   E'*Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of Elohim (God)* (Ephesians 2:19). Sha''ul (Paul) shows the sojourner brought fully in — the very promise of *the stranger that dwelleth with you shall be unto you as one born among you* (Leviticus 19:34); those once far off are made fellowcitizens of the commonwealth of Yashar''el (Israel).'),
+  ('canon','leviticus',19,34,'canon','ephesians',2,12,'free',
+   E'*That at that time ye were without Messiah (Christ), being aliens from the commonwealth of Yashar''el (Israel), and strangers from the covenants of promise* (Ephesians 2:12). Sha''ul (Paul) names the former estate of the stranger that Torah commanded Yashar''el to love — *the stranger... shall be unto you as one born among you* (Leviticus 19:34); the alien is brought near, not a new people, but the wild branch grown back into Yashar''el.'),
+  ('canon','leviticus',19,34,'canon','galatians',3,28,'free',
+   E'*There is neither Yahudi (Jew) nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in HaMashiach Yahusha (Christ Jesus)* (Galatians 3:28). The one-law equality of *the stranger... as one born among you, and thou shalt love him as thyself* (Leviticus 19:34) finds its end in Messiah — the grafted-in made one with the natural seed of Abraham (Galatians 3:29).'),
+
+  -- ---- Thread 8: just balances, just weights (19:35-36) ----
+  ('canon','leviticus',19,36,'canon','deuteronomy',25,15,'free',
+   E'*But thou shalt have a perfect and just weight, a perfect and just measure shalt thou have: that thy days may be lengthened in the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Deuteronomy 25:15). Deuteronomy restates *Just balances, just weights, a just ephah, and a just hin, shall ye have* (Leviticus 19:36); honest measure is bound to long life in the land.'),
+  ('canon','leviticus',19,36,'canon','deuteronomy',25,13,'free',
+   E'*Thou shalt not have in thy bag divers weights, a great and a small* (Deuteronomy 25:13). The negative of *Just balances, just weights* (Leviticus 19:36) — the double weight, one to buy and one to sell, is the merchant''s fraud Torah forbids on both sides of the trade.'),
+  ('canon','leviticus',19,36,'canon','proverbs',11,1,'free',
+   E'*A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1). Wisdom seals the statute *Just balances, just weights, a just ephah, and a just hin, shall ye have* (Leviticus 19:36); the just weight is Yahuah''s delight, the false one His abomination.'),
+  ('canon','leviticus',19,36,'canon','micah',6,11,'free',
+   E'*Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11). The prophet prosecutes the broken statute of *Just balances, just weights* (Leviticus 19:36); deceitful weights are covenant-breaking, and Yahuah will not count the cheat pure.'),
+  ('canon','leviticus',19,36,'canon','amos',8,5,'free',
+   E'*Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* (Amos 8:5). Amos exposes the sin of those who despise both Sabbath and *a just ephah* (Leviticus 19:36); cheating the poor with a small measure is the very oppression that brings the judgment of Yahuah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =========================================================================
+-- C. cross_reference_threads
+-- =========================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-19-ye-shall-be-holy-for-i-yahuah-am-holy',
+  E'Ye shall be holy: for I Yahuah am holy',
+  E'The Holiness chapter opens with the ground of all its commands: *Speak unto all the congregation of the children of Yashar''el (Israel), and say unto them, Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2). Holiness is not first a list of rules but a derivation — the people are to be holy because Yahuah is holy. The same refrain frames the dietary chapter (*ye shall be holy; for I am holy*, Leviticus 11:44) and the chapter that follows (*be ye holy: for I am Yahuah Elohaychem*, Leviticus 20:7; *ye shall be holy unto me: for I Yahuah am holy, and have severed you from other people*, Leviticus 20:26). When Kepha (Peter) writes to the scattered, he does not invent a standard; he quotes this very verse: *as he which hath called you is holy, so be ye holy in all manner of conversation; because it is written, Be ye holy; for I am holy* (1 Peter 1:15-16). The Torah''s holiness call is the apostolic holiness call — one God, one holiness, carried whole into the assembly of the set-apart.',
+  sv.verse_id, ev.verse_id, 'free', 23150
+  FROM _s311_lev19_lookup sv, _s311_lev19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=19 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-19-fear-mother-and-father-keep-my-sabbaths-the-ten-words-echoed',
+  E'Fear mother and father, keep my sabbaths — the Ten Words echoed',
+  E'The chapter immediately re-voices the Decalogue in daily statute: *Ye shall fear every man his mother, and his father, and keep my sabbaths: I am Yahuah Elohaychem (the LORD your God). Turn ye not unto idols, nor make to yourselves molten gods* (Leviticus 19:3-4). Each clause is a word from Sinai. *Honour thy father and thy mother* (Exodus 20:12) is the fifth word; *Remember the sabbath day, to keep it holy* (Exodus 20:8) is the fourth; *Thou shalt not make unto thee any graven image* (Exodus 20:4) is the second. Moshe (Moses) speaks the same commands again in Deuteronomy — *Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee* (Deuteronomy 5:16). The Ten Words are not a separate code from the Holiness chapter; they are its spine, repeated in Exodus, Leviticus, and Deuteronomy as one unchanging covenant.',
+  sv.verse_id, ev.verse_id, 'free', 23153
+  FROM _s311_lev19_lookup sv, _s311_lev19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=19 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-19-leave-the-corners-for-the-poor-and-the-labourers-wage',
+  E'Leave the corners for the poor, and the labourer''s wage',
+  E'Torah writes welfare into the harvest itself: *thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest... thou shalt leave them for the poor and stranger* (Leviticus 19:9-10). The same statute stands among the feasts (*thou shalt leave them unto the poor, and to the stranger*, Leviticus 23:22) and is spelled out in Deuteronomy — the forgotten sheaf left *for the stranger, for the fatherless, and for the widow* (Deuteronomy 24:19). It becomes living narrative in Ruth, who *gleaned in the field after the reapers* (Ruth 2:2-3) and so is brought to Boaz the redeemer, carrying the seed of David and Messiah. The chapter joins to it the laws of honesty — *Ye shall not steal, neither deal falsely, neither lie* — and the labourer''s due: *the wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:11-13). Deuteronomy warns the unpaid hireling will *cry against thee unto Yahuah* (Deuteronomy 24:15), and Ya''aqov (James) prosecutes the same crime in the last days: *the hire of the labourers... kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4). Sha''ul (Paul) turns the prohibition into generosity — *let him labour, working with his hands the thing which is good, that he may have to give to him that needeth* (Ephesians 4:28). And Ya''aqov names the whole impulse pure religion: *To visit the fatherless and widows in their affliction* (James 1:27), for Yahuah has *chosen the poor of this world rich in faith* (James 2:5).',
+  sv.verse_id, ev.verse_id, 'free', 23156
+  FROM _s311_lev19_lookup sv, _s311_lev19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=19 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-19-no-stumblingblock-no-respect-of-persons-righteous-judgment',
+  E'No stumblingblock, no respect of persons — righteous judgment',
+  E'The chapter guards the vulnerable and the courtroom alike: *Thou shalt not curse the deaf, nor put a stumblingblock before the blind, but shalt fear thy Elohim (God)... thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour* (Leviticus 19:14-15). To exploit the helpless is to provoke Yahuah, and the Ebal curse seals it: *Cursed be he that maketh the blind to wander out of the way* (Deuteronomy 27:18). Sha''ul (Paul) lifts the same principle into the law of love among brethren — *judge this rather, that no man put a stumblingblock or an occasion to fall in his brother''s way* (Romans 14:13). Deuteronomy''s charge to judges matches the impartial standard — *Thou shalt not wrest judgment; thou shalt not respect persons* (Deuteronomy 16:19) — and Ya''aqov (James) measures partiality by the Torah itself: *if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors* (James 2:9). Justice that bends to wealth or pity alike is transgression, not freedom from the law.',
+  sv.verse_id, ev.verse_id, 'free', 23159
+  FROM _s311_lev19_lookup sv, _s311_lev19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=19 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-19-thou-shalt-love-thy-neighbour-as-thyself-the-royal-law',
+  E'Thou shalt love thy neighbour as thyself — the royal law',
+  E'Here is the moral heart of Leviticus, the verse the whole Torah leans toward: *Thou shalt not hate thy brother in thine heart: thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him. Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah* (Leviticus 19:17-18). Yahusha (Jesus) names this very verse the second great commandment — *Thou shalt love thy neighbour as thyself* — and declares *On these two commandments hang all the law and the prophets* (Matthew 22:39-40; Mark 12:31). Sha''ul (Paul) gathers all the commandments into it: it is *briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself... love is the fulfilling of the law* (Romans 13:9-10), and *all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14). Ya''aqov (James) crowns it: *If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well* (James 2:8). And Yahusha extends it without loosing it — the men of old had wrongly paired it with *hate thine enemy*, but He commands *Love your enemies, bless them that curse you* (Matthew 5:43-44), drawing out the fullness the Torah already held. The same chapter widens the command to the alien: *thou shalt love him as thyself; for ye were strangers in the land of Egypt* (Leviticus 19:34). Love is the summing of the Law, never its abolition.',
+  sv.verse_id, ev.verse_id, 'free', 23162
+  FROM _s311_lev19_lookup sv, _s311_lev19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=19 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-19-keep-my-statutes-no-mingling-no-pagan-practice-separation',
+  E'Keep my statutes — no mingling, no pagan practice',
+  E'A people set apart must keep the distinctions Yahuah set: *Ye shall keep my statutes. Thou shalt not let thy cattle gender with a diverse kind: thou shalt not sow thy field with mingled seed: neither shall a garment mingled of linen and woollen come upon thee* (Leviticus 19:19). Deuteronomy restates the triad — *Thou shalt not sow thy vineyard with divers seeds* and *Thou shalt not wear a garment of divers sorts, as of woollen and linen together* (Deuteronomy 22:9,11). The same chapter then severs the people from the practices of the nations: *neither shall ye use enchantment, nor observe times... Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them* (Leviticus 19:26,31). Deuteronomy''s great prohibition matches it word for word — no *observer of times, or an enchanter... a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:10-11) — and the next chapter attaches the penalty: the soul that *turneth after such as have familiar spirits... I will even set my face against that soul, and will cut him off* (Leviticus 20:6). To keep the statutes is to refuse the mingling and the magic of the heathen and remain a distinct, holy people unto Yahuah.',
+  sv.verse_id, ev.verse_id, 'free', 23165
+  FROM _s311_lev19_lookup sv, _s311_lev19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=19 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-19-love-the-stranger-as-one-born-among-you',
+  E'Love the stranger as one born among you',
+  E'The love-command is not tribal; the chapter turns it outward to the sojourner: *if a stranger sojourn with thee in your land, ye shall not vex him. But the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 19:33-34). The same word and the same reason run through the Torah — *Thou shalt neither vex a stranger, nor oppress him: for ye were strangers in the land of Egypt* (Exodus 22:21), and *Love ye therefore the stranger: for ye were strangers in the land of Egypt* (Deuteronomy 10:19). This one-law inclusion finds its fulfillment in Messiah, where the one once *aliens from the commonwealth of Yashar''el (Israel), and strangers from the covenants of promise* (Ephesians 2:12) is made *no more strangers and foreigners, but fellowcitizens with the saints, and of the household of Elohim* (Ephesians 2:19) — and *neither Yahudi (Jew) nor Greek... ye are all one in HaMashiach Yahusha (Christ Jesus)* (Galatians 3:28). The grafted-in are not a new people but the wild branch grown back into Yashar''el, loved as one born among the natural seed.',
+  sv.verse_id, ev.verse_id, 'free', 23168
+  FROM _s311_lev19_lookup sv, _s311_lev19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=19 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-19-just-balances-just-weights-a-just-ephah-and-a-just-hin',
+  E'Just balances, just weights, a just ephah and a just hin',
+  E'The Holiness chapter closes its ethics in the marketplace: *Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure. Just balances, just weights, a just ephah, and a just hin, shall ye have: I am Yahuah Elohaychem (the LORD your God), which brought you out of the land of Egypt* (Leviticus 19:35-36). Holiness reaches the scale and the measuring-cup. Deuteronomy forbids the merchant''s double weight — *Thou shalt not have in thy bag divers weights, a great and a small* — and binds honest measure to long life: *thou shalt have a perfect and just weight... that thy days may be lengthened in the land* (Deuteronomy 25:13,15). Wisdom seals it: *A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1). And the prophets prosecute its breach — Micah asks *Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11), and Amos exposes those who despise the Sabbath and the new moon while *making the ephah small, and the shekel great, and falsifying the balances by deceit* (Amos 8:5). To cheat the poor with a short measure is covenant-breaking that calls down the judgment of Yahuah.',
+  sv.verse_id, ev.verse_id, 'free', 23171
+  FROM _s311_lev19_lookup sv, _s311_lev19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=19 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- =========================================================================
+-- D. cross_reference_thread_members
+-- =========================================================================
+-- Thread 1: holiness call
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   ('canon','1-peter',1,15,1,E'Kepha (Peter): *so be ye holy in all manner of conversation* (1 Peter 1:15) — holiness grounded, like Leviticus 19:2, in the One who called.'),
+   ('canon','1-peter',1,16,2,E'Kepha (Peter): *Be ye holy; for I am holy* (1 Peter 1:16) — Leviticus 19:2 quoted as binding Scripture in the assembly.'),
+   ('canon','leviticus',11,44,3,E'Leviticus 11:44 — the dietary chapter rests on the same holiness ground, *be ye holy; for I am holy*.'),
+   ('canon','leviticus',20,7,4,E'Leviticus 20:7 — *be ye holy: for I am Yahuah Elohaychem*, the refrain that frames the Holiness Code.'),
+   ('canon','leviticus',20,26,5,E'Leviticus 20:26 — holiness as severance: *I Yahuah am holy, and have severed you from other people*.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=2
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='leviticus-19-ye-shall-be-holy-for-i-yahuah-am-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Ten Words echoed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   ('canon',19,3,'canon','exodus',20,12,1,E'Exodus 20:12 — the fifth word, *Honour thy father and thy mother*, behind Leviticus 19:3.'),
+   ('canon',19,3,'canon','exodus',20,8,2,E'Exodus 20:8 — the fourth word, *Remember the sabbath day*, behind *keep my sabbaths* (Leviticus 19:3).'),
+   ('canon',19,4,'canon','exodus',20,4,3,E'Exodus 20:4 — the second word against graven images, behind *Turn ye not unto idols* (Leviticus 19:4).'),
+   ('canon',19,3,'canon','deuteronomy',5,16,4,E'Deuteronomy 5:16 — Moshe (Moses) repeats *Honour thy father and thy mother* in the second giving of the Law.')
+  ) AS m(src_ed,src_v,xsrc,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=m.xsrc
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='leviticus-19-fear-mother-and-father-keep-my-sabbaths-the-ten-words-echoed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: corners for the poor / labourer's wage
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   (19,10,'canon','leviticus',23,22,1,E'Leviticus 23:22 — the gleaning law set among the feasts: *leave them unto the poor, and to the stranger*.'),
+   (19,10,'canon','deuteronomy',24,19,2,E'Deuteronomy 24:19 — the forgotten sheaf left *for the stranger, for the fatherless, and for the widow*.'),
+   (19,10,'canon','ruth',2,2,3,E'Ruth 2:2 — the gleaning law lived out: Ruth goes to *glean ears of corn after* the reapers.'),
+   (19,10,'canon','ruth',2,3,4,E'Ruth 2:3 — the providence of the gleaning law brings Ruth to the field of Boaz the redeemer.'),
+   (19,13,'canon','deuteronomy',24,15,5,E'Deuteronomy 24:15 — the hireling''s wage given the same day, *lest he cry against thee unto Yahuah*.'),
+   (19,13,'canon','james',5,4,6,E'Ya''aqov (James) 5:4 — *the hire of the labourers... kept back by fraud, crieth* unto Yahuah of sabaoth.'),
+   (19,13,'canon','ephesians',4,28,7,E'Ephesians 4:28 — Sha''ul (Paul) turns the law into honest labour *to give to him that needeth*.'),
+   (19,10,'canon','james',1,27,8,E'Ya''aqov (James) 1:27 — *pure religion*: to visit the fatherless and widows in affliction.'),
+   (19,10,'canon','james',2,5,9,E'Ya''aqov (James) 2:5 — Yahuah hath *chosen the poor of this world rich in faith*, heirs of the kingdom.')
+  ) AS m(src_v,xsrc,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=m.xsrc
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='leviticus-19-leave-the-corners-for-the-poor-and-the-labourers-wage'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: no stumblingblock / no respect of persons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   (19,14,'canon','romans',14,13,1,E'Romans 14:13 — Sha''ul (Paul): *no man put a stumblingblock... in his brother''s way*, carrying Leviticus 19:14 into love.'),
+   (19,14,'canon','deuteronomy',27,18,2,E'Deuteronomy 27:18 — the Ebal curse on him *that maketh the blind to wander out of the way*.'),
+   (19,15,'canon','james',2,9,3,E'Ya''aqov (James) 2:9 — respect of persons makes one *convinced of the law as transgressors*.'),
+   (19,15,'canon','deuteronomy',16,19,4,E'Deuteronomy 16:19 — the judge''s charge: *thou shalt not respect persons, neither take a gift*.')
+  ) AS m(src_v,xsrc,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=m.xsrc
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='leviticus-19-no-stumblingblock-no-respect-of-persons-righteous-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: love thy neighbour
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   ('canon','matthew',22,39,1,E'Matthew 22:39 — Yahusha (Jesus): *Thou shalt love thy neighbour as thyself*, the second great commandment.'),
+   ('canon','mark',12,31,2,E'Mark 12:31 — *There is none other commandment greater than these* — the love-command beside the Shema.'),
+   ('canon','romans',13,9,3,E'Romans 13:9 — Sha''ul (Paul): all commandments *briefly comprehended* in love of neighbour.'),
+   ('canon','galatians',5,14,4,E'Galatians 5:14 — *all the law is fulfilled in one word*, love of neighbour.'),
+   ('canon','james',2,8,5,E'Ya''aqov (James) 2:8 — *the royal law according to the scripture, Thou shalt love thy neighbour as thyself*.'),
+   ('canon','matthew',5,44,6,E'Matthew 5:43-44 — Yahusha (Jesus) extends the love-command to *Love your enemies*, drawing out the Torah, not loosing it.'),
+   ('canon','leviticus',19,34,7,E'Leviticus 19:34 — the same chapter widens the love-command to the stranger, *thou shalt love him as thyself*.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='leviticus-19-thou-shalt-love-thy-neighbour-as-thyself-the-royal-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6: keep my statutes — no mingling, no pagan practice
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   (19,19,'canon','deuteronomy',22,9,1,E'Deuteronomy 22:9 — *Thou shalt not sow thy vineyard with divers seeds*, the mingling statute restated.'),
+   (19,19,'canon','deuteronomy',22,11,2,E'Deuteronomy 22:11 — *Thou shalt not wear a garment of divers sorts, as of woollen and linen together*.'),
+   (19,31,'canon','deuteronomy',18,11,3,E'Deuteronomy 18:11 — *a consulter with familiar spirits, or a wizard, or a necromancer* forbidden.'),
+   (19,26,'canon','deuteronomy',18,10,4,E'Deuteronomy 18:10 — *divination... an observer of times, or an enchanter* cut off from the people.'),
+   (19,31,'canon','leviticus',20,6,5,E'Leviticus 20:6 — the penalty: the soul that turns to familiar spirits is cut off from his people.')
+  ) AS m(src_v,xsrc,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=m.xsrc
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='leviticus-19-keep-my-statutes-no-mingling-no-pagan-practice-separation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 7: love the stranger
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   (19,34,'canon','deuteronomy',10,19,1,E'Deuteronomy 10:19 — *Love ye therefore the stranger: for ye were strangers in the land of Egypt*.'),
+   (19,33,'canon','exodus',22,21,2,E'Exodus 22:21 — *Thou shalt neither vex a stranger, nor oppress him*, the founding word.'),
+   (19,34,'canon','ephesians',2,19,3,E'Ephesians 2:19 — the sojourner made *fellowcitizens with the saints*, no more a stranger.'),
+   (19,34,'canon','ephesians',2,12,4,E'Ephesians 2:12 — the former estate, *aliens from the commonwealth of Yashar''el*, now brought near.'),
+   (19,34,'canon','galatians',3,28,5,E'Galatians 3:28 — *ye are all one in HaMashiach Yahusha*, the grafted-in made one with the seed of Abraham.')
+  ) AS m(src_v,xsrc,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=m.xsrc
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='leviticus-19-love-the-stranger-as-one-born-among-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 8: just balances, just weights
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   ('canon','deuteronomy',25,15,1,E'Deuteronomy 25:15 — *a perfect and just weight... that thy days may be lengthened in the land*.'),
+   ('canon','deuteronomy',25,13,2,E'Deuteronomy 25:13 — *Thou shalt not have in thy bag divers weights*, the merchant''s fraud forbidden.'),
+   ('canon','proverbs',11,1,3,E'Proverbs 11:1 — *A false balance is abomination to Yahuah: but a just weight is his delight*.'),
+   ('canon','micah',6,11,4,E'Micah 6:11 — the prophet prosecutes *the bag of deceitful weights* as covenant-breaking.'),
+   ('canon','amos',8,5,5,E'Amos 8:5 — *making the ephah small, and the shekel great, and falsifying the balances by deceit* against the poor.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s311_lev19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=19 AND sv.verse_number=36
+  JOIN _s311_lev19_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='leviticus-19-just-balances-just-weights-a-just-ephah-and-a-just-hin'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_20.sql (Leviticus 20) -----
+-- Book: Leviticus  Chapter: 20  Tag: lev20  Session prefix: s311
+-- Sort band base: 23175, step 3  (threads at 23175, 23178, 23181, 23184, 23187)
+-- Temp view: _s311_lev20_lookup
+--
+-- FRAMING: Leviticus 20 is the penalty-restated companion to ch.18's holiness code,
+--   sealed by the great SEPARATION charge (v.22-26). The chapter is the anti-Molech,
+--   anti-necromancy, anti-abomination wall around the covenant people, and it closes by
+--   naming WHY: Yahuah has SEPARATED and SEVERED Yashar'el from the nations to be His own,
+--   and the clean/unclean difference (Lev 11) is the everyday sign of that severance.
+--   Lens: victims-not-enemies toward people; the SYSTEMS of child-sacrifice, sorcery,
+--   and abomination are dismantled, never a people attacked. The NT does NOT abolish this
+--   wall — it carries it forward (a peculiar people, come out and be separate, be ye holy).
+--
+-- Leviticus 20 coverage:
+--   v.1-5 give seed to Molech:
+--        NT:     none warranted (the child-sacrifice abomination is condemned in the Tanakh witnesses)
+--        Extras: none warranted (clean witness chosen from canon)
+--        Tanakh: Leviticus 18:21, Jeremiah 32:35, 2 Kings 23:10, Deuteronomy 18:10  -> thread 1
+--   v.6-8 familiar spirits / wizards / sanctify yourselves / be holy:
+--        NT:     1 Peter 1:16, 1 Thessalonians 4:3, 4:7  -> thread 2
+--        Extras: none warranted
+--        Tanakh: Leviticus 19:31, Deuteronomy 18:11  -> thread 2
+--   v.9 curseth father or mother put to death:
+--        NT:     Matthew 15:4, Mark 7:10  -> thread 3
+--        Extras: none warranted
+--        Tanakh: Exodus 21:17  -> thread 3
+--   v.10-21 adultery/incest/sodomy/bestiality penalties (the ch.18 sins judged):
+--        NT:     1 Corinthians 6:9, Hebrews 13:4  -> thread 4
+--        Extras: none warranted
+--        Tanakh: Leviticus 18:6, 18:22, 18:23  -> thread 4
+--   v.22-26 keep my statutes / land spue you not out / SEPARATED / SEVERED / clean-unclean difference:
+--        NT:     1 Peter 2:9, Titus 2:14, 2 Corinthians 6:17, Acts 10:28  -> thread 5
+--        Extras: none warranted
+--        Tanakh: Leviticus 11:44, 11:47, Exodus 19:5, 19:6  -> thread 5
+--
+-- THREADS (slug -> target libraries):
+--   1. leviticus-20-give-not-thy-seed-to-molech            (Tanakh)              free
+--   2. leviticus-20-sanctify-yourselves-and-be-ye-holy     (Tanakh + NT)         free
+--   3. leviticus-20-he-that-curseth-father-or-mother       (Tanakh + NT)         free
+--   4. leviticus-20-the-penalties-of-the-holiness-code     (Tanakh + NT)         free
+--   5. leviticus-20-separated-and-severed-unto-me          (Tanakh + NT)         free
+--
+-- All members canon (Tanakh + NT) -> every thread tier_required = 'free'.
+
+CREATE TEMP VIEW _s311_lev20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: give not thy seed to Molech (v.2-5)
+    ('canon','leviticus',20,2,'canon','leviticus',18,21,'free',
+      E'*And thou shalt not let any of thy seed pass through the fire to Molech, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD).* (Leviticus 18:21) — the prohibition ch.20 now arms with the death penalty. Where ch.18 forbids, *that giveth any of his seed unto Molech; he shall surely be put to death* (Leviticus 20:2): child-sacrifice is the abomination Yahuah hates above all, defiling His sanctuary and profaning His holy name.'),
+    ('canon','leviticus',20,3,'canon','jeremiah',32,35,'free',
+      E'*And they built the high places of Baal, which are in the valley of the son of Hinnom, to cause their sons and their daughters to pass through the fire unto Molech; which I commanded them not, neither came it into my mind, that they should do this abomination, to cause Yahudah (Judah) to sin.* (Jeremiah 32:35) — the prophet names the very sin Leviticus 20 outlawed, done centuries later by both houses. *I will set my face against that man... because he hath given of his seed unto Molech, to defile my sanctuary* (Leviticus 20:3): the warning was scorned and the exile-judgment fell.'),
+    ('canon','leviticus',20,2,'canon','2-kings',23,10,'free',
+      E'*And he defiled Topheth, which is in the valley of the children of Hinnom, that no man might make his son or his daughter to pass through the fire to Molech.* (2 Kings 23:10) — Josiah''s reform tearing down the Molech altar enforces Leviticus 20 generations on. *Whosoever... giveth any of his seed unto Molech; he shall surely be put to death* (Leviticus 20:2): the king at last makes the abomination impossible in the land.'),
+    ('canon','leviticus',20,2,'canon','deuteronomy',18,10,'free',
+      E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10) — Moses binds child-sacrifice and sorcery together as the abominations of the nations, exactly as Leviticus 20 does (Molech in v.2, familiar spirits in v.6). *He shall surely be put to death: the people of the land shall stone him with stones* (Leviticus 20:2).'),
+
+    -- THREAD 2: sanctify yourselves and be ye holy (v.6-8)
+    ('canon','leviticus',20,6,'canon','leviticus',19,31,'free',
+      E'*Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them: I am Yahuah Elohaychem (the LORD your God).* (Leviticus 19:31) — the twin command to ch.20''s *the soul that turneth after such as have familiar spirits, and after wizards, to go a whoring after them, I will even set my face against that soul* (Leviticus 20:6). Seeking the dead and the spirits is spiritual adultery against the living Yahuah.'),
+    ('canon','leviticus',20,6,'canon','deuteronomy',18,11,'free',
+      E'*Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer.* (Deuteronomy 18:11) — Moses lists the same forbidden arts Leviticus 20:6 sets Yahuah''s face against, *the soul that turneth after such as have familiar spirits, and after wizards*. The covenant people inquire of Yahuah alone, never of the dead.'),
+    ('canon','leviticus',20,7,'canon','1-peter',1,16,'free',
+      E'*Because it is written, Be ye holy; for I am holy.* (1 Peter 1:16) — the apostle quotes this very holiness charge straight out of the Torah and lays it on the scattered covenant people. *Sanctify yourselves therefore, and be ye holy: for I am Yahuah Elohaychem (the LORD your God)* (Leviticus 20:7): the call to holiness is not abolished but carried forward unchanged.'),
+    ('canon','leviticus',20,7,'canon','1-thessalonians',4,3,'free',
+      E'*For this is the will of Elohim (God), even your sanctification, that ye should abstain from fornication* (1 Thessalonians 4:3) — Paul names sanctification, separation from the nations'' lusts, as the will of Elohim, the same will Leviticus declares: *Sanctify yourselves therefore, and be ye holy* (Leviticus 20:7). The set-apart walk runs unbroken from Torah to apostle.'),
+    ('canon','leviticus',20,8,'canon','1-thessalonians',4,7,'free',
+      E'*For Elohim (God) hath not called us unto uncleanness, but unto holiness.* (1 Thessalonians 4:7) — the apostolic echo of *I am Yahuah (LORD) which sanctify you* (Leviticus 20:8). It is Yahuah who sanctifies, and the people answer by keeping His statutes: *And ye shall keep my statutes, and do them* (Leviticus 20:8) — the anti-antinomian seam, holiness and obedience inseparable.'),
+
+    -- THREAD 3: he that curseth father or mother (v.9)
+    ('canon','leviticus',20,9,'canon','matthew',15,4,'free',
+      E'*For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death.* (Matthew 15:4) — Yahusha (Jesus) quotes Leviticus 20:9 word for word to rebuke the Pharisees for voiding it by tradition. *For every one that curseth his father or his mother shall be surely put to death* (Leviticus 20:9): the Messiah upholds the Torah penalty as the binding command of Elohim.'),
+    ('canon','leviticus',20,9,'canon','mark',7,10,'free',
+      E'*For Moses said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death* (Mark 7:10) — Yahusha attributes this commandment to Moses and sets it over the Corban loophole, *Making the word of Elohim (God) of none effect through your tradition* (Mark 7:13). *He hath cursed his father or his mother; his blood shall be upon him* (Leviticus 20:9): the word of Elohim, not the tradition of men, stands.'),
+    ('canon','leviticus',20,9,'canon','exodus',21,17,'free',
+      E'*And he that curseth his father, or his mother, shall surely be put to death.* (Exodus 21:17) — the same judgment given at Sinai, restated here in the holiness code. *For every one that curseth his father or his mother shall be surely put to death* (Leviticus 20:9): honour of father and mother is so weighty that its open cursing is a capital breach of the covenant.'),
+
+    -- THREAD 4: the penalties of the holiness code (v.10-21)
+    ('canon','leviticus',20,11,'canon','leviticus',18,6,'free',
+      E'*None of you shall approach to any that is near of kin to him, to uncover their nakedness: I am Yahuah (LORD).* (Leviticus 18:6) — ch.18 forbids the incest that ch.20 now sentences. *And the man that lieth with his father''s wife hath uncovered his father''s nakedness: both of them shall surely be put to death* (Leviticus 20:11): the same near-kin prohibitions, now armed with the penalty that guards the holiness of the household.'),
+    ('canon','leviticus',20,13,'canon','leviticus',18,22,'free',
+      E'*Thou shalt not lie with mankind, as with womankind: it is abomination.* (Leviticus 18:22) — the prohibition ch.20 restates with its judgment: *If a man also lie with mankind, as he lieth with a woman, both of them have committed an abomination* (Leviticus 20:13). The same act, the same word *abomination* — the holiness code is one continuous law against the defilements of the nations.'),
+    ('canon','leviticus',20,15,'canon','leviticus',18,23,'free',
+      E'*Neither shalt thou lie with any beast to defile thyself therewith: neither shall any woman stand before a beast to lie down thereto: it is confusion.* (Leviticus 18:23) — ch.18 names bestiality *confusion*; ch.20 names the penalty: *And if a man lie with a beast, he shall surely be put to death: and ye shall slay the beast* (Leviticus 20:15). The order Yahuah set in creation is not to be unmade.'),
+    ('canon','leviticus',20,10,'canon','1-corinthians',6,9,'free',
+      E'*Know ye not that the unrighteous shall not inherit the kingdom of Elohim (God)? Be not deceived: neither fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind* (1 Corinthians 6:9) — Paul''s vice-list is the holiness code carried forward: adultery (Leviticus 20:10), abomination with mankind (Leviticus 20:13). *The adulterer and the adulteress shall surely be put to death* (Leviticus 20:10): the same conduct still bars from the kingdom, though Messiah washes the repentant (1 Corinthians 6:11).'),
+    ('canon','leviticus',20,10,'canon','hebrews',13,4,'free',
+      E'*Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge.* (Hebrews 13:4) — the apostolic affirmation that the marriage-bed laws still stand under judgment. *And the man that committeth adultery with another man''s wife... the adulterer and the adulteress shall surely be put to death* (Leviticus 20:10): the holiness of marriage that Leviticus guards, the New Testament still guards.'),
+
+    -- THREAD 5: separated and severed unto me (v.22-26)
+    ('canon','leviticus',20,24,'canon','1-peter',2,9,'free',
+      E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light* (1 Peter 2:9) — the apostle gathers the very language of the separation: *I am Yahuah Elohaychem (the LORD your God), which have separated you from other people* (Leviticus 20:24). The peculiar, set-apart people of Torah is the same peculiar people Peter writes to — Yashar''el restored, never a people replacing her.'),
+    ('canon','leviticus',20,26,'canon','titus',2,14,'free',
+      E'*Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works.* (Titus 2:14) — the Messiah''s redemption produces exactly what Leviticus declares: *And ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine* (Leviticus 20:26). A severed, holy, His-own people — zealous to obey, not freed from obedience.'),
+    ('canon','leviticus',20,26,'canon','2-corinthians',6,17,'free',
+      E'*Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17) — Paul presses the Leviticus severance on the assembly. *Have severed you from other people, that ye should be mine* (Leviticus 20:26): the call to come out and be separate, and not touch the unclean, is the same wall of holiness, now spoken to the scattered covenant people.'),
+    ('canon','leviticus',20,23,'canon','acts',10,28,'free',
+      E'*And he said unto them, Ye know how that it is an unlawful thing for a man that is a Yahudi (Jew) to keep company, or come unto one of another nation; but Elohim (God) hath shewed me that I should not call any man common or unclean.* (Acts 10:28) — Peter testifies that the separation Leviticus commanded, *ye shall not walk in the manners of the nation, which I cast out before you* (Leviticus 20:23), was never about counting persons unclean but about not walking in the nations'' abominations; the lost sheep among the nations are to be gathered, not despised.'),
+    ('canon','leviticus',20,25,'canon','leviticus',11,44,'free',
+      E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy: neither shall ye defile yourselves with any manner of creeping thing that creepeth upon the earth.* (Leviticus 11:44) — the dietary holiness chapter is the ground ch.20 builds on. *Ye shall therefore put difference between clean beasts and unclean* (Leviticus 20:25): the clean/unclean difference is the daily, edible sign of the severed and holy people.'),
+    ('canon','leviticus',20,25,'canon','leviticus',11,47,'free',
+      E'*To make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten.* (Leviticus 11:47) — the closing charge of the dietary law, reaffirmed here. *Ye shall therefore put difference between clean beasts and unclean, and between unclean fowls and clean* (Leviticus 20:25): the same difference, tied directly to being a separated people unto Yahuah.'),
+    ('canon','leviticus',20,24,'canon','exodus',19,5,'free',
+      E'*Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine* (Exodus 19:5) — the Sinai election Leviticus 20 enforces in the land. *Which have separated you from other people* (Leviticus 20:24): the peculiar treasure of Exodus and the separated people of Leviticus are one and the same covenant people.'),
+    ('canon','leviticus',20,26,'canon','exodus',19,6,'free',
+      E'*And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel).* (Exodus 19:6) — the holy nation of Sinai is the holy people Leviticus seals: *And ye shall be holy unto me: for I Yahuah (LORD) am holy* (Leviticus 20:26). This is the very wording 1 Peter 2:9 will gather up — *an holy nation, a peculiar people* — Yashar''el''s unbroken vocation.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-20-give-not-thy-seed-to-molech',
+       E'Give Not Thy Seed to Molech',
+       E'Leviticus 20 opens with the most violent abomination of the nations: *Whosoever... giveth any of his seed unto Molech; he shall surely be put to death: the people of the land shall stone him with stones* (Leviticus 20:2). Yahuah names why it is so grievous: *I will set my face against that man, and will cut him off from among his people; because he hath given of his seed unto Molech, to defile my sanctuary, and to profane my holy name* (Leviticus 20:3). This is the death-law arming the plain command of the holiness code, *And thou shalt not let any of thy seed pass through the fire to Molech* (Leviticus 18:21), and Moses sets child-sacrifice at the head of the nations'' abominations alongside sorcery: *There shall not be found among you any one that maketh his son or his daughter to pass through the fire* (Deuteronomy 18:10). The terror of it is that Yashar''el and Yahudah did it anyway — *they built the high places of Baal, which are in the valley of the son of Hinnom, to cause their sons and their daughters to pass through the fire unto Molech* (Jeremiah 32:35) — and the exile fell. Only Josiah''s reform tore the altar down: *he defiled Topheth, which is in the valley of the children of Hinnom, that no man might make his son or his daughter to pass through the fire to Molech* (2 Kings 23:10). The system of child-sacrifice is dismantled root and branch; the lost are to be reclaimed, never the children burned.',
+       sv.verse_id, ev.verse_id, 'free', 23175
+  FROM _s311_lev20_lookup sv, _s311_lev20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=20 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-20-sanctify-yourselves-and-be-ye-holy',
+       E'Sanctify Yourselves and Be Ye Holy',
+       E'Against the dead and the spirits Yahuah sets His face: *And the soul that turneth after such as have familiar spirits, and after wizards, to go a whoring after them, I will even set my face against that soul* (Leviticus 20:6) — necromancy is spiritual adultery, the same arts Moses forbids, *a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:11), and the holiness code repeats, *Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them* (Leviticus 19:31). The remedy is the great charge: *Sanctify yourselves therefore, and be ye holy: for I am Yahuah Elohaychem (the LORD your God). And ye shall keep my statutes, and do them: I am Yahuah (LORD) which sanctify you* (Leviticus 20:7-8) — holiness and statute-keeping inseparable, and it is Yahuah Himself who sanctifies. The apostles carry this forward unchanged: *Be ye holy; for I am holy* (1 Peter 1:16) quoting the Torah straight; *For this is the will of Elohim (God), even your sanctification* (1 Thessalonians 4:3); *For Elohim (God) hath not called us unto uncleanness, but unto holiness* (1 Thessalonians 4:7). The set-apart walk runs in one line from Sinai to the scattered covenant people.',
+       sv.verse_id, ev.verse_id, 'free', 23178
+  FROM _s311_lev20_lookup sv, _s311_lev20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=20 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-20-he-that-curseth-father-or-mother',
+       E'He That Curseth Father or Mother',
+       E'*For every one that curseth his father or his mother shall be surely put to death: he hath cursed his father or his mother; his blood shall be upon him* (Leviticus 20:9). The honour of father and mother is so weighty that its open cursing is a capital breach of the covenant — the same judgment first given at Sinai, *And he that curseth his father, or his mother, shall surely be put to death* (Exodus 21:17). Yahusha (Jesus) Himself takes up this exact command to expose the Pharisees who void it by tradition: *For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death* (Matthew 15:4); *For Moses said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death* (Mark 7:10). The Messiah sets the word of Elohim over the Corban loophole — *Making the word of Elohim (God) of none effect through your tradition* (Mark 7:13) — upholding the Torah, never abolishing it.',
+       sv.verse_id, ev.verse_id, 'free', 23181
+  FROM _s311_lev20_lookup sv, _s311_lev20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=20 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-20-the-penalties-of-the-holiness-code',
+       E'The Penalties of the Holiness Code',
+       E'Leviticus 20:10-21 is the judgment-bearing companion to chapter 18: the same sins, now sentenced. Adultery — *And the man that committeth adultery with another man''s wife... the adulterer and the adulteress shall surely be put to death* (Leviticus 20:10); incest — *And the man that lieth with his father''s wife hath uncovered his father''s nakedness: both of them shall surely be put to death* (Leviticus 20:11), enforcing *None of you shall approach to any that is near of kin to him, to uncover their nakedness* (Leviticus 18:6); the abomination with mankind — *If a man also lie with mankind, as he lieth with a woman, both of them have committed an abomination* (Leviticus 20:13), the very word of *Thou shalt not lie with mankind, as with womankind: it is abomination* (Leviticus 18:22); and bestiality — *And if a man lie with a beast, he shall surely be put to death* (Leviticus 20:15), the *confusion* of *Neither shalt thou lie with any beast to defile thyself therewith* (Leviticus 18:23). The New Testament carries the same holiness forward: *neither fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind... shall inherit the kingdom of Elohim (God)* (1 Corinthians 6:9), yet the repentant are washed (1 Corinthians 6:11); and *Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4). The order Yahuah set in creation is guarded, the sinner called to repentance, never hated.',
+       sv.verse_id, ev.verse_id, 'free', 23184
+  FROM _s311_lev20_lookup sv, _s311_lev20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=20 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-20-separated-and-severed-unto-me',
+       E'Separated and Severed Unto Me',
+       E'The chapter closes with the reason behind every law in it: separation. *Ye shall therefore keep all my statutes, and all my judgments, and do them: that the land, whither I bring you to dwell therein, spue you not out* (Leviticus 20:22); *I am Yahuah Elohaychem (the LORD your God), which have separated you from other people* (Leviticus 20:24); *And ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine* (Leviticus 20:26). The everyday sign of that severance is the table: *Ye shall therefore put difference between clean beasts and unclean* (Leviticus 20:25), the closing charge of the dietary law — *To make a difference between the unclean and the clean* (Leviticus 11:47), *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44). This is the Sinai election enforced in the land: *ye shall be a peculiar treasure unto me above all people* (Exodus 19:5), *a kingdom of priests, and an holy nation* (Exodus 19:6). The New Testament does not dissolve this wall — it gathers its very words for the scattered covenant people: *ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9); *purify unto himself a peculiar people, zealous of good works* (Titus 2:14); *come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing* (2 Corinthians 6:17). And Peter''s vision corrects only the abuse, never the law — *ye shall not walk in the manners of the nation, which I cast out before you* (Leviticus 20:23) was never license to count persons unclean: *Elohim (God) hath shewed me that I should not call any man common or unclean* (Acts 10:28) — the lost sheep among the nations are to be gathered, the holy people severed unto Yahuah and made one.',
+       sv.verse_id, ev.verse_id, 'free', 23187
+  FROM _s311_lev20_lookup sv, _s311_lev20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=20 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 18:21 — the plain prohibition ch.20 now arms with death: *let any of thy seed pass through the fire to Molech*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-give-not-thy-seed-to-molech'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Jeremiah 32:35 — both houses did the abomination anyway, in the valley of Hinnom; the warning scorned, the exile fell.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=32 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-give-not-thy-seed-to-molech'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Kings 23:10 — Josiah defiles Topheth to enforce Leviticus 20 generations later, making the abomination impossible.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-give-not-thy-seed-to-molech'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 18:10 — Moses heads the nations'' abominations with child-sacrifice, bound to sorcery exactly as ch.20 binds Molech to familiar spirits.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-give-not-thy-seed-to-molech'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 19:31 — the twin command: regard not familiar spirits nor wizards; necromancy is spiritual adultery.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-sanctify-yourselves-and-be-ye-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 18:11 — the same forbidden arts: familiar spirits, wizard, necromancer; inquire of Yahuah alone, never the dead.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-sanctify-yourselves-and-be-ye-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Peter 1:16 — quotes the Torah holiness charge straight onto the scattered covenant people: *Be ye holy; for I am holy*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=7
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-sanctify-yourselves-and-be-ye-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Thessalonians 4:3 — sanctification is the will of Elohim, abstaining from the nations'' lusts; the set-apart walk continued.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=7
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-sanctify-yourselves-and-be-ye-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Thessalonians 4:7 — called unto holiness, not uncleanness; the apostolic echo of *I am Yahuah which sanctify you* (Lev 20:8).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=8
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-sanctify-yourselves-and-be-ye-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Matthew 15:4 — Yahusha quotes Leviticus 20:9 verbatim to rebuke the Pharisees who void it by tradition.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-he-that-curseth-father-or-mother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Mark 7:10 — Yahusha attributes the command to Moses and sets it over the Corban loophole; the word of Elohim stands.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-he-that-curseth-father-or-mother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 21:17 — the same death-judgment given at Sinai; cursing father or mother is a capital covenant breach.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-he-that-curseth-father-or-mother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 18:6 — the near-kin prohibition ch.20:11 now sentences; guarding the holiness of the household.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-the-penalties-of-the-holiness-code'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 18:22 — the same act, the same word *abomination*; ch.20:13 adds the penalty.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-the-penalties-of-the-holiness-code'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 18:23 — bestiality named *confusion*; ch.20:15 names the death-penalty. The creation order is not unmade.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=15
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-the-penalties-of-the-holiness-code'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 6:9 — Paul''s vice-list carries the holiness code forward; the same conduct bars the kingdom, the repentant washed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-the-penalties-of-the-holiness-code'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Hebrews 13:4 — the marriage-bed still honourable and under judgment; the holiness Leviticus guards, the NT still guards.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-the-penalties-of-the-holiness-code'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Peter 2:9 — *a peculiar people*, the very language of *separated you from other people* (Lev 20:24); Yashar''el restored, not replaced.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=24
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Titus 2:14 — redemption purifies *a peculiar people, zealous of good works*; the severed people of Lev 20:26, zealous to obey.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=26
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Corinthians 6:17 — *come out... and be ye separate... touch not the unclean thing*; the Leviticus wall pressed on the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=26
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 10:28 — the separation was never license to call persons unclean; the lost sheep among the nations are gathered, not despised.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=23
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Leviticus 11:44 — the dietary holiness ground: sanctify yourselves and be holy, for I am holy.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=25
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Leviticus 11:47 — the closing dietary charge, the clean/unclean difference; the daily, edible sign of the severed people.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=25
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Exodus 19:5 — the Sinai election: *a peculiar treasure unto me above all people*; the separated people of Lev 20 enforced in the land.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=24
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Exodus 19:6 — *a kingdom of priests, and an holy nation*; the exact wording 1 Peter 2:9 gathers up — Yashar''el''s unbroken vocation.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=20 AND sv.verse_number=26
+  JOIN _s311_lev20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session311 — Leviticus cross-references complete.'
