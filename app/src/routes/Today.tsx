@@ -550,7 +550,7 @@ function SupportBar() {
         <span>Support this work</span>
       </button>
       <span className="today-support-note">
-        keep the study Bible free &amp; growing
+        support our non-profit ministry &amp; community outreach
       </span>
     </div>
   );
