@@ -7030,6 +7030,1515 @@ SELECT t.id, cr.id, 4, E'*the grace of a wife delighteth her husband, and her di
  WHERE t.slug='1-samuel-25-abigail-a-woman-of-good-understanding-the-wise-wife'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1-samuel_26.sql (1 Samuel 26) -----
+-- 1 Samuel 26 — the THIRD witness of the restrained hand. The Ziphites betray David
+--   again; David and Abishai slip into Saul''s camp under a deep sleep from Yahuah;
+--   Abishai would pin Saul with the spear, but David forbids — Who can stretch forth his
+--   hand against Yahuah''s anointed, and be guiltless? (26:9). David takes the spear and
+--   cruse as proof, then leaves judgment with Yahuah: Yahuah render to every man his
+--   righteousness and his faithfulness (26:23), and let him deliver me out of all
+--   tribulation (26:24). The same lesson as ch24 (the cave) and ch25 (Abigail stays his
+--   hand against Nabal) — vengeance is Yahuah''s, not David''s.
+-- TAG: 1sa26    VIEW: _s340_1sa26_lookup    SORT BAND: 37025, step 3
+--
+-- 1 Samuel 26 coverage:
+--   v.9   "who can stretch forth his hand against the LORD'S anointed, and be guiltless"
+--         NT:     Matthew 5:39 (resist not evil); 1 Peter 2:23 (committed himself to him that judgeth righteously)
+--         Extras: none warranted
+--         Tanakh: 1 Samuel 24:6 (Yahuah forbid... to stretch forth mine hand)
+--   v.10  "Yahuah shall smite him; or his day shall come to die"
+--         NT:     Romans 12:19 (Vengeance is mine; I will repay)
+--         Extras: none warranted
+--         Tanakh: Deuteronomy 32:35 (To me belongeth vengeance, and recompence)
+--   v.11  "forbid that I should stretch forth mine hand against the LORD'S anointed"
+--         NT:     Matthew 5:39 (turn the other cheek) — threaded at v.9
+--         Extras: none warranted
+--         Tanakh: 1 Samuel 24:6 — threaded at v.9
+--   v.12  "a deep sleep from Yahuah was fallen upon them"
+--         NT/Extras/Tanakh: none warranted (narrative; deliverance carried by v.24 thread)
+--   v.19  "they have driven me out... from abiding in the inheritance of Yahuah"
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: 1 Samuel 24:15 (Yahuah be judge, plead my cause); Psalm 7:8 (judge me according to my righteousness)
+--   v.20  "let not my blood fall to the earth before the face of Yahuah"
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Psalm 18:48 (delivereth me from the violent man); 1 Samuel 25:26 (withholden thee from shedding blood)
+--   v.23  "Yahuah render to every man his righteousness and his faithfulness"
+--         NT:     Romans 12:17 (recompense to no man evil for evil); Proverbs 24:12 -> render to every man according to his works
+--         Extras: none warranted
+--         Tanakh: Psalm 18:20 (rewarded me according to my righteousness); Deuteronomy 32:35
+--   v.24  "let him deliver me out of all tribulation"
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Psalm 18:48; Psalm 7:8; 1 Samuel 25:26
+--
+-- THREADS (3):
+--   1-samuel-26-who-can-stretch-forth-his-hand-against-yahuahs-anointed  [free]
+--       targets: 1 Samuel 24 (canon), Matthew (canon), 1 Peter (canon)
+--   1-samuel-26-yahuah-render-to-every-man-his-righteousness-and-faithfulness  [free]
+--       targets: Deuteronomy (canon), Romans (canon), Proverbs (canon), Psalm (canon)
+--   1-samuel-26-yahuah-judge-and-deliver-me-out-of-all-tribulation  [free]
+--       targets: Psalm (canon), 1 Samuel 24 & 25 (canon)
+--
+-- All members canon -> every thread tier_required 'free'. No verse left silently uncovered;
+--   v.12 (deep sleep) and the narrative spine (vv.1-8,13-18,21-22,25) carry no add by design.
+
+CREATE TEMP VIEW _s340_1sa26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the restrained hand against the anointed
+    ('canon','1-samuel',26,9,'canon','1-samuel',24,6,'free',
+     E'In the cave at En-gedi David had said the same thing: *And he said unto his men, Yahuah (LORD) forbid that I should do this thing unto my master, the LORD''S anointed, to stretch forth mine hand against him, seeing he is the anointed of Yahuah (LORD)* (1 Samuel 24:6). Here at Hachilah, spear in reach, the conviction holds — *who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (26:9). Two camps, one law written on his heart: the office of Yahuah''s anointing is not for a rival hand to undo.'),
+    ('canon','1-samuel',26,9,'canon','matthew',5,39,'free',
+     E'The Formed Son draws the same line out of David''s mouth: *But I say unto you, That ye resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also* (Matthew 5:39). David will not return Saul''s pursuit with the spear — *who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (26:9). Not weakness but Torah-trust: the wronged man does not seize the sword of vengeance.'),
+    ('canon','1-samuel',26,9,'canon','1-peter',2,23,'free',
+     E'David in the camp is the pattern Kepha (Peter) names of the Messiah: *Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). Pursued without cause, with his persecutor asleep at his feet, David commits the matter upward rather than strike — *who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (26:9). The anointed-one restrains his hand and waits on the One who judges righteously.'),
+    -- THREAD 2: Yahuah render to every man his righteousness
+    ('canon','1-samuel',26,10,'canon','deuteronomy',32,35,'free',
+     E'David refuses to be Yahuah''s executioner because the sentence is Yahuah''s to pass: *To me belongeth vengeance, and recompence; their foot shall slide in due time: for the day of their calamity is at hand, and the things that shall come upon them make haste* (Deuteronomy 32:35). So David says, *As Yahuah (LORD) liveth, Yahuah (LORD) shall smite him; or his day shall come to die; or he shall descend into battle, and perish* (26:10) — he names three ways Yahuah may recompense, and takes none of them into his own hand.'),
+    ('canon','1-samuel',26,10,'canon','romans',12,19,'free',
+     E'Sha''ul (Paul) gathers the Song of Moses into one charge: *Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). David lives it generations before it is written down — *Yahuah (LORD) shall smite him; or his day shall come to die; or he shall descend into battle, and perish* (26:10). He gives place to wrath and lets Yahuah repay.'),
+    ('canon','1-samuel',26,23,'canon','psalms',18,20,'free',
+     E'David''s thanksgiving psalm answers his own confession in the camp: *Yahuah (LORD) rewarded me according to my righteousness; according to the cleanness of my hands hath he recompensed me* (Psalm 18:20). At Hachilah he keeps his hands clean precisely so that Yahuah may reward them — *Yahuah (LORD) render to every man his righteousness and his faithfulness: for Yahuah (LORD) delivered thee into my hand to day, but I would not stretch forth mine hand against the LORD''S anointed* (26:23).'),
+    ('canon','1-samuel',26,23,'canon','proverbs',24,12,'free',
+     E'The wisdom of Yahuah weighs the heart and pays accordingly: *doth not he that pondereth the heart consider it? and he that keepeth thy soul, doth not he know it? and shall not he render to every man according to his works?* (Proverbs 24:12). David leaves Saul to that reckoning — *Yahuah (LORD) render to every man his righteousness and his faithfulness* (26:23) — confident the Judge who searches hearts will not miscount.'),
+    ('canon','1-samuel',26,23,'canon','romans',12,17,'free',
+     E'David will not repay Saul''s evil with the spear: *Yahuah (LORD) render to every man his righteousness and his faithfulness... but I would not stretch forth mine hand against the LORD''S anointed* (26:23). Sha''ul (Paul) makes it the rule of the assembly: *Recompense to no man evil for evil. Provide things honest in the sight of all men* (Romans 12:17). The wronged man entrusts the rendering to Yahuah and keeps his own hands honest.'),
+    -- THREAD 3: Yahuah judge and deliver me
+    ('canon','1-samuel',26,19,'canon','1-samuel',24,15,'free',
+     E'David''s plea is the same in both wildernesses — let Yahuah, not the spear, settle it: *Yahuah (LORD) therefore be judge, and judge between me and thee, and see, and plead my cause, and deliver me out of thine hand* (1 Samuel 24:15). Here he begs Saul to hear his servant, grieved that *they have driven me out this day from abiding in the inheritance of Yahuah (LORD)* (26:19). He appeals to the Judge above the king who hunts him.'),
+    ('canon','1-samuel',26,19,'canon','psalms',7,8,'free',
+     E'David hands the verdict to Yahuah: *Yahuah (LORD) shall judge the people: judge me, O Yahuah (LORD), according to my righteousness, and according to mine integrity that is in me* (Psalm 7:8). Driven from the inheritance of Yahuah and told to *Go, serve other gods* (26:19), he answers the slander not with violence but with the cry of an upright man before the righteous Judge.'),
+    ('canon','1-samuel',26,24,'canon','psalms',18,48,'free',
+     E'David asks that the mercy he showed Saul be measured back to him by Yahuah: *and let him deliver me out of all tribulation* (26:24). His psalm of deliverance answers the prayer: *He delivereth me from mine enemies: yea, thou liftest me up above those that rise up against me: thou hast delivered me from the violent man* (Psalm 18:48). The hand he would not raise against Saul, Yahuah raises on his behalf.'),
+    ('canon','1-samuel',26,24,'canon','1-samuel',25,26,'free',
+     E'Abigail had blessed David for the very restraint he shows here: *seeing Yahuah (LORD) hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand* (1 Samuel 25:26). Between Nabal and Saul the lesson is one — David keeps his hands clean and asks Yahuah to keep his life: *so let my life be much set by in the eyes of Yahuah (LORD), and let him deliver me out of all tribulation* (26:24).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-26-who-can-stretch-forth-his-hand-against-yahuahs-anointed',
+       E'Who can stretch forth his hand against Yahuah''s anointed?',
+       E'A third time the spear is in reach, and a third time David''s hand stays. Abishai pleads, *Elohim (God) hath delivered thine enemy into thine hand this day: now therefore let me smite him* (26:8), but David answers, *Destroy him not: for who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (26:9), and again, *Yahuah (LORD) forbid that I should stretch forth mine hand against the LORD''S anointed* (26:11). It is the same vow he made in the cave: *Yahuah (LORD) forbid that I should do this thing unto my master, the LORD''S anointed, to stretch forth mine hand against him* (1 Samuel 24:6). The Formed Son will draw the same line: *whosoever shall smite thee on thy right cheek, turn to him the other also* (Matthew 5:39); and Kepha (Peter) names it the very pattern of the Messiah, *who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). The anointed-one does not vindicate himself by the sword — he restrains his hand and leaves the office of Yahuah''s anointing untouched.',
+       sv.verse_id, ev.verse_id, 'free', 37025
+  FROM _s340_1sa26_lookup sv, _s340_1sa26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=26 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-26-yahuah-render-to-every-man-his-righteousness-and-faithfulness',
+       E'Yahuah render to every man his righteousness and his faithfulness',
+       E'David will not be Yahuah''s executioner, because the recompense is Yahuah''s to give. *As Yahuah (LORD) liveth, Yahuah (LORD) shall smite him; or his day shall come to die; or he shall descend into battle, and perish* (26:10) — he names the ways Yahuah may repay and seizes none of them. He has read the Song of Moses: *To me belongeth vengeance, and recompence; their foot shall slide in due time* (Deuteronomy 32:35), which Sha''ul (Paul) will press on the assembly — *avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — alongside *Recompense to no man evil for evil* (Romans 12:17). So David hands Saul over to the Judge: *Yahuah (LORD) render to every man his righteousness and his faithfulness: for Yahuah (LORD) delivered thee into my hand to day, but I would not stretch forth mine hand against the LORD''S anointed* (26:23). The wisdom of Yahuah weighs hearts and pays accordingly — *shall not he render to every man according to his works?* (Proverbs 24:12) — and David''s own psalm receives back what his clean hands earned: *Yahuah (LORD) rewarded me according to my righteousness; according to the cleanness of my hands hath he recompensed me* (Psalm 18:20).',
+       sv.verse_id, ev.verse_id, 'free', 37028
+  FROM _s340_1sa26_lookup sv, _s340_1sa26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=26 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-26-yahuah-judge-and-deliver-me-out-of-all-tribulation',
+       E'Yahuah judge, and deliver me out of all tribulation',
+       E'Pursued from the inheritance of Yahuah and told *Go, serve other gods* (26:19), David does not strike back — he appeals to the Judge over the king. It is the same plea he made in the cave: *Yahuah (LORD) therefore be judge, and judge between me and thee, and see, and plead my cause, and deliver me out of thine hand* (1 Samuel 24:15), and the same cry of his psalm: *Yahuah (LORD) shall judge the people: judge me, O Yahuah (LORD), according to my righteousness, and according to mine integrity that is in me* (Psalm 7:8). He asks that the mercy he showed be measured back to his own life — *so let my life be much set by in the eyes of Yahuah (LORD), and let him deliver me out of all tribulation* (26:24) — and the psalm of deliverance answers him, *He delivereth me from mine enemies... thou hast delivered me from the violent man* (Psalm 18:48). Abigail had already blessed this very restraint: *seeing Yahuah (LORD) hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand* (1 Samuel 25:26). The hand David would not raise against Saul, Yahuah raises on his behalf.',
+       sv.verse_id, ev.verse_id, 'free', 37031
+  FROM _s340_1sa26_lookup sv, _s340_1sa26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=26 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 24:6 — the same vow in the cave: *Yahuah (LORD) forbid that I should do this thing unto my master, the LORD''S anointed* — the anointing is not for a rival hand to undo.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=9
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=24 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-who-can-stretch-forth-his-hand-against-yahuahs-anointed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Matthew 5:39 — the Formed Son draws David''s line forward: *resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also* — not weakness but Torah-trust.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=9
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-who-can-stretch-forth-his-hand-against-yahuahs-anointed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Peter 2:23 — David is the Messiah''s pattern: *when he was reviled, reviled not again... but committed himself to him that judgeth righteously*.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=9
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-who-can-stretch-forth-his-hand-against-yahuahs-anointed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 32:35 — David has read the Song of Moses: *To me belongeth vengeance, and recompence* — the sentence is Yahuah''s to pass, not his.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=10
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-render-to-every-man-his-righteousness-and-faithfulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Romans 12:19 — Sha''ul (Paul) presses the same: *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* — David gives place to wrath.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=10
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-render-to-every-man-his-righteousness-and-faithfulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Samuel 26:23 / Psalm 18:20 — the clean hands David keeps are the hands Yahuah rewards: *according to the cleanness of my hands hath he recompensed me*.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=23
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-render-to-every-man-his-righteousness-and-faithfulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Proverbs 24:12 — the Judge who weighs hearts: *shall not he render to every man according to his works?* — David leaves Saul to that reckoning.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=23
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=24 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-render-to-every-man-his-righteousness-and-faithfulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Romans 12:17 — *Recompense to no man evil for evil* — David repays Saul''s pursuit not with the spear but with a clean hand.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=23
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-render-to-every-man-his-righteousness-and-faithfulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 24:15 — the same plea in the cave: *Yahuah (LORD) therefore be judge... plead my cause, and deliver me out of thine hand* — appeal to the Judge over the king.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=24 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-judge-and-deliver-me-out-of-all-tribulation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 7:8 — David hands the verdict upward: *judge me, O Yahuah (LORD), according to my righteousness, and according to mine integrity that is in me*.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-judge-and-deliver-me-out-of-all-tribulation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 18:48 — the deliverance David asks for is answered: *thou hast delivered me from the violent man* — the hand he stayed, Yahuah raises for him.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=24
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-judge-and-deliver-me-out-of-all-tribulation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Samuel 25:26 — Abigail blessed this very restraint: *Yahuah (LORD) hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand*.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=26 AND sv.verse_number=24
+  JOIN _s340_1sa26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=25 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-26-yahuah-judge-and-deliver-me-out-of-all-tribulation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_27.sql (1 Samuel 27) -----
+-- Chapter: 1 Samuel 27 — the dip of faith and the survival-deception. Weary David says in his
+--   heart, "I shall now perish one day by the hand of Saul: there is nothing better for me than
+--   that I should speedily escape into the land of the Philistines" (27:1), and crosses to Achish
+--   king of Gath with six hundred men (27:2-4). Achish gives him Ziklag — "wherefore Ziklag
+--   pertaineth unto the kings of Yahudah unto this day" (27:6). David raids the Geshurites,
+--   Gezrites, and Amalekites, the old devoted enemies of the seed (27:8-9), but deceives Achish
+--   into believing he has struck the south of Yahudah, killing all so none can tell (27:10-12).
+-- Tag: 1sa27   View: _s340_1sa27_lookup   Sort band: base 37050, step 3 → 37050,37053,37056
+--
+-- 1 Samuel 27 coverage:
+--   v.1   (David said in his heart, I shall now perish one day by the hand of Saul... escape)
+--          NT:     none warranted (the dip of faith; trust-weave is to Ps 56 / Prov 29 — THREAD 1)
+--          Extras: none warranted
+--          Tanakh: Proverbs 29:25 (the fear of man bringeth a snare: but whoso putteth his trust
+--                  in Yahuah shall be safe); Psalm 56:3-4 (what time I am afraid, I will trust in
+--                  thee... I will not fear what flesh can do); Psalm 56:11 (I will not be afraid
+--                  what man can do unto me) — THREAD 1
+--   v.6   (Then Achish gave him Ziklag... wherefore Ziklag pertaineth unto the kings of Yahudah)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Joshua 13:2-3 (the land that yet remaineth: all the borders of the
+--                  Philistines... the Gittites); Genesis 15:18 (Unto thy seed have I given this
+--                  land) — THREAD 2
+--   v.8-9 (invaded the Geshurites, and the Gezrites, and the Amalekites... of old the inhabitants;
+--          smote the land, left neither man nor woman alive)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Genesis 15:18-21 (the nations devoted to the seed: Kenites... Amorites...);
+--                  Exodus 17:14,16 (I will utterly put out the remembrance of Amalek; Yahuah will
+--                  have war with Amalek from generation to generation); 1 Samuel 15:3 (Now go and
+--                  smite Amalek, and utterly destroy all that they have) — THREAD 3
+--   v.10-12 (the survival-deception: against the south of Yahudah... Achish believed David)
+--          NT:     none warranted (morally ambiguous survival-craft; not threaded — see note below)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.2-5,7 (the crossing to Achish, the two wives, Ziklag granted, the full year and four months)
+--          NT/Extras/Tanakh: none warranted (narrative setting; carried inside THREADS 1-2)
+--
+-- THREADS:
+--   1-samuel-27-the-fear-of-man-bringeth-a-snare (1-samuel; proverbs; psalms) — free
+--        David's "I shall now perish one day by the hand of Saul" (27:1) is the dip of faith —
+--        the fear of man that bringeth a snare (Prov 29:25), against which the man after Yahuah's
+--        own heart had himself sung "what time I am afraid, I will trust in thee" (Ps 56:3).
+--   1-samuel-27-ziklag-pertaineth-unto-the-kings-of-yahudah (1-samuel; joshua; genesis) — free
+--        The Philistine town Ziklag passes permanently to the house of Yahudah (27:6) — a piece
+--        of the land "that yet remaineth" of the Philistines (Josh 13:2-3) given to the seed
+--        (Gen 15:18), the promise quietly advancing even through David's exile.
+--   1-samuel-27-the-raids-on-the-old-devoted-enemies (1-samuel; genesis; exodus) — free
+--        David smites the Amalekites and the old inhabitants of the land (27:8-9) — the nations
+--        Yahuah devoted to the seed (Gen 15:18-21) and the Amalek against whom Yahuah swore
+--        perpetual war (Exod 17:14,16; the charge Saul failed, 1 Sam 15:3).
+--
+-- Verse with no add: v.10-12 (the survival-deception). David's lie to Achish — claiming he raided
+--   the south of Yahudah while sparing none who could expose him — is morally ambiguous survival-
+--   craft inside enemy territory, recorded without endorsement. No library verse warrants a thread
+--   on the deception itself; the chapter's framework weight sits on the snare (THREAD 1), the
+--   land-promise (THREAD 2), and the devoted enemies (THREAD 3). Per guidance, no extras forced.
+
+CREATE TEMP VIEW _s340_1sa27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+  -- THREAD 1: the fear of man bringeth a snare
+  ('canon','1-samuel',27,1,'canon','proverbs',29,25,'free',
+   E'*The fear of man bringeth a snare: but whoso putteth his trust in Yahuah (LORD) shall be safe.* (Proverbs 29:25). David''s *I shall now perish one day by the hand of Saul: there is nothing better for me than that I should speedily escape into the land of the Philistines* (1 Samuel 27:1) is the proverb made flesh — the fear of Saul, not the word of Yahuah who had twice spared and promised him the throne, drives him into the snare of the enemy''s land. The trust that keeps a man safe has, for a moment, given way to the dread of the man who pursues.'),
+  ('canon','1-samuel',27,1,'canon','psalms',56,3,'free',
+   E'*What time I am afraid, I will trust in thee.* (Psalm 56:3). This is David''s own song — written, the title tells, when the Philistines took him in Gath, the very Gath he now flees to. His settled confession *what time I am afraid, I will trust in thee* stands over against the heart that now reasons *I shall now perish one day by the hand of Saul* (1 Samuel 27:1); the dip of faith is measured against the faith he himself had sung.'),
+  ('canon','1-samuel',27,1,'canon','psalms',56,4,'free',
+   E'*In Elohim (God) I will praise his word, in Elohim (God) I have put my trust; I will not fear what flesh can do unto me.* (Psalm 56:4). Against David''s fear of *the hand of Saul* (1 Samuel 27:1) stands his own resolve, *I will not fear what flesh can do unto me* — Saul is flesh, and the man who would not fear what flesh can do has, in weariness, let the fear of a fleshly hand decide his steps. The Psalm is the medicine the chapter forgets to take.'),
+  ('canon','1-samuel',27,1,'canon','psalms',56,11,'free',
+   E'*In Elohim (God) have I put my trust: I will not be afraid what man can do unto me.* (Psalm 56:11). The refrain returns — *I will not be afraid what man can do unto me* — and exposes the lapse in *speedily escape into the land of the Philistines... so shall I escape out of his hand* (1 Samuel 27:1). The man who twice refused to stretch his hand against Yahuah''s anointed now escapes by his own hand into Gath, fearing the man rather than resting in the One who keeps him safe.'),
+  -- THREAD 2: Ziklag pertaineth unto the kings of Yahudah
+  ('canon','1-samuel',27,6,'canon','joshua',13,2,'free',
+   E'*This is the land that yet remaineth: all the borders of the Philistines, and all Geshuri,* (Joshua 13:2). Yahuah had named the Philistine country as land *that yet remaineth* to be possessed by the seed. When *Achish gave him Ziklag that day: wherefore Ziklag pertaineth unto the kings of Yahudah (Judah) unto this day* (1 Samuel 27:6), a piece of that very Philistine land passes permanently into the house of Yahudah — the promise quietly advancing even through David''s exile.'),
+  ('canon','1-samuel',27,6,'canon','joshua',13,3,'free',
+   E'*From Sihor, which is before Egypt, even unto the borders of Ekron northward, which is counted to the Canaanite: five lords of the Philistines; the Gazathites, and the Ashdothites, the Eshkalonites, the Gittites, and the Ekronites; also the Avites:* (Joshua 13:3). The Gittites — the men of Gath, Achish''s own city — are reckoned among the unpossessed Philistine lords. Yet from Gath''s gift David receives Ziklag, and *Ziklag pertaineth unto the kings of Yahudah (Judah) unto this day* (1 Samuel 27:6): the land Yashar''el (Israel) had not yet taken begins to be taken back through the hand of the coming king.'),
+  ('canon','1-samuel',27,6,'canon','genesis',15,18,'free',
+   E'*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* (Genesis 15:18). The land-grant to the seed of Abram is the deed behind *Ziklag pertaineth unto the kings of Yahudah (Judah) unto this day* (1 Samuel 27:6). What Yahuah swore *unto thy seed have I given this land* takes ground here — a Philistine town becoming the inheritance of Yahudah, the promise pressing forward through the exile of the anointed.'),
+  -- THREAD 3: the raids on the old devoted enemies
+  ('canon','1-samuel',27,8,'canon','genesis',15,18,'free',
+   E'*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* (Genesis 15:18). David''s raids reach *as thou goest to Shur, even unto the land of Egypt* (1 Samuel 27:8) — the very southern bound, *the river of Egypt*, of the land Yahuah gave to the seed. He is striking within the inheritance promised to Abram, clearing the *of old the inhabitants of the land* whom the covenant had marked for dispossession.'),
+  ('canon','1-samuel',27,8,'canon','genesis',15,19,'free',
+   E'*The Kenites, and the Kenizzites, and the Kadmonites,* (Genesis 15:19). The covenant with Abram names the nations to be cleared from the seed''s inheritance — and David''s sword falls on *the Geshurites, and the Gezrites, and the Amalekites: for those nations were of old the inhabitants of the land* (1 Samuel 27:8). These are the old devoted peoples; the dispossession Yahuah foretold to Abram is being worked out, however roughly, by the exiled anointed.'),
+  ('canon','1-samuel',27,8,'canon','exodus',17,16,'free',
+   E'*For he said, Because Yahuah (LORD) hath sworn that Yahuah (LORD) will have war with Amalek from generation to generation.* (Exodus 17:16). Among David''s targets are *the Amalekites* (1 Samuel 27:8) — the sworn enemy of the seed since Rephidim, against whom Yahuah pledged perpetual war. David''s blows in the south continue the generation-to-generation war Yahuah declared, a war Saul had refused to finish.'),
+  ('canon','1-samuel',27,9,'canon','exodus',17,14,'free',
+   E'*And Yahuah (LORD) said unto Moses, Write this for a memorial in a book, and rehearse it in the ears of Joshua: for I will utterly put out the remembrance of Amalek from under heaven.* (Exodus 17:14). When David *smote the land, and left neither man nor woman alive* (1 Samuel 27:9) among the Amalekites, he advances the sentence Yahuah wrote in the book — *I will utterly put out the remembrance of Amalek from under heaven* — the very devotion-to-destruction that the throne''s previous holder had spared and so lost his kingdom.'),
+  ('canon','1-samuel',27,9,'canon','1-samuel',15,3,'free',
+   E'*Now go and smite Amalek, and utterly destroy all that they have, and spare them not; but slay both man and woman, infant and suckling, ox and sheep, camel and ass.* (1 Samuel 15:3). The charge Saul received and broke — to *utterly destroy* Amalek and *spare them not* — is the standard against which David''s raid is read: *smote the land, and left neither man nor woman alive, and took away the sheep, and the oxen* (1 Samuel 27:9). Where Saul *spared Agag, and the best of the sheep* and forfeited the throne, the coming king leaves none of the devoted enemy alive.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-27-the-fear-of-man-bringeth-a-snare',
+  E'The fear of man bringeth a snare — the dip of faith',
+  E'The chapter opens inside David''s head, and it is not faith speaking: *And David said in his heart, I shall now perish one day by the hand of Saul: there is nothing better for me than that I should speedily escape into the land of the Philistines; and Saul shall despair of me... so shall I escape out of his hand* (1 Samuel 27:1). This is the dip of faith. Twice David had held Saul''s life in his hand and refused to touch Yahuah''s anointed, trusting Yahuah to keep the throne for him; now weariness reasons him down into the enemy''s land. It is the proverb made flesh — *The fear of man bringeth a snare: but whoso putteth his trust in Yahuah (LORD) shall be safe* (Proverbs 29:25). The sharpest witness against the lapse is David himself: the psalm titled for the day the Philistines took him in this same Gath sings *What time I am afraid, I will trust in thee* (Psalm 56:3) and *In Elohim (God) I have put my trust; I will not fear what flesh can do unto me* (Psalm 56:4), and again *In Elohim (God) have I put my trust: I will not be afraid what man can do unto me* (Psalm 56:11). Saul is flesh; Saul is a man. The one who would not fear what flesh can do has, for a season, let the fear of a fleshly hand decide his steps. Yahuah does not abandon him in Ziklag — the promise still advances — but the chapter quietly marks the cost of trading the trust that keeps a man safe for the dread of the man who pursues.',
+  sv.verse_id, ev.verse_id, 'free', 37050
+  FROM _s340_1sa27_lookup sv, _s340_1sa27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=27 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-27-ziklag-pertaineth-unto-the-kings-of-yahudah',
+  E'Ziklag pertaineth unto the kings of Yahudah — the promise advancing in exile',
+  E'Even in flight the promise moves. David asks Achish for a town of his own, and *Then Achish gave him Ziklag that day: wherefore Ziklag pertaineth unto the kings of Yahudah (Judah) unto this day* (1 Samuel 27:6). A Philistine king, unwitting, deeds a Philistine town into the permanent inheritance of the house of Yahudah. This is no accident of politics: Yahuah had named the Philistine country as land *that yet remaineth* to be possessed — *This is the land that yet remaineth: all the borders of the Philistines, and all Geshuri* (Joshua 13:2), reckoning even *the Gittites* (Joshua 13:3), the men of Gath, Achish''s own city, among the lords not yet driven out. From Gath''s gift the unpossessed begins to be possessed. And behind it all stands the deed to the seed: *Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). What Yahuah swore to Abram takes ground here, a Philistine town becoming Yahudah''s — the kingdom quietly enlarging through the exile of the anointed, the One who scatters working His promise forward even where His servant''s faith had dipped.',
+  sv.verse_id, ev.verse_id, 'free', 37053
+  FROM _s340_1sa27_lookup sv, _s340_1sa27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=27 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-27-the-raids-on-the-old-devoted-enemies',
+  E'The raids on the old devoted enemies — Amalek and the inhabitants of the land',
+  E'From Ziklag David strikes south: *And David and his men went up, and invaded the Geshurites, and the Gezrites, and the Amalekites: for those nations were of old the inhabitants of the land, as thou goest to Shur, even unto the land of Egypt* (1 Samuel 27:8), and *David smote the land, and left neither man nor woman alive* (1 Samuel 27:9). These are the old devoted peoples, and his blows fall within the very bounds Yahuah deeded to the seed — *Unto thy seed have I given this land, from the river of Egypt unto the great river* (Genesis 15:18), the covenant that named *The Kenites, and the Kenizzites, and the Kadmonites* (Genesis 15:19) and the rest as nations to be cleared from the inheritance. Chief among David''s targets is the sworn enemy of the seed: Amalek, against whom Yahuah pledged perpetual war at Rephidim — *Because Yahuah (LORD) hath sworn that Yahuah (LORD) will have war with Amalek from generation to generation* (Exodus 17:16) — and whose remembrance He vowed to blot: *I will utterly put out the remembrance of Amalek from under heaven* (Exodus 17:14). This is the very devotion Saul refused, sparing *Agag, and the best of the sheep* against the plain charge *Now go and smite Amalek, and utterly destroy all that they have, and spare them not* (1 Samuel 15:3) — and so lost the kingdom. Where Saul spared, the coming king leaves none of the devoted enemy alive; the generation-to-generation war Yahuah declared advances by the hand of His anointed even in his exile.',
+  sv.verse_id, ev.verse_id, 'free', 37056
+  FROM _s340_1sa27_lookup sv, _s340_1sa27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=27 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1: the fear of man bringeth a snare
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The fear of man bringeth a snare: but whoso putteth his trust in Yahuah (LORD) shall be safe* (Proverbs 29:25) — the proverb David''s dread of Saul makes flesh.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=29 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-fear-of-man-bringeth-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*What time I am afraid, I will trust in thee* (Psalm 56:3) — David''s own song from the day the Philistines took him in this same Gath.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=56 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-fear-of-man-bringeth-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*In Elohim (God) I have put my trust; I will not fear what flesh can do unto me* (Psalm 56:4) — Saul is flesh, the fear David here forgets to refuse.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=56 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-fear-of-man-bringeth-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*In Elohim (God) have I put my trust: I will not be afraid what man can do unto me* (Psalm 56:11) — the refrain that exposes "escape out of his hand."'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=56 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-fear-of-man-bringeth-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: Ziklag pertaineth unto the kings of Yahudah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*This is the land that yet remaineth: all the borders of the Philistines, and all Geshuri* (Joshua 13:2) — the unpossessed Philistine country David begins to take from.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-ziklag-pertaineth-unto-the-kings-of-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...the Gittites, and the Ekronites* (Joshua 13:3) — Gath''s own men reckoned unconquered, yet Gath''s gift becomes Yahudah''s.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=13 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-ziklag-pertaineth-unto-the-kings-of-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Unto thy seed have I given this land, from the river of Egypt unto the great river* (Genesis 15:18) — the deed to the seed behind Ziklag passing to Yahudah.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-ziklag-pertaineth-unto-the-kings-of-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: the raids on the old devoted enemies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Unto thy seed have I given this land, from the river of Egypt unto the great river* (Genesis 15:18) — the bound (the river of Egypt) within which David''s raids fall.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=8
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-raids-on-the-old-devoted-enemies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The Kenites, and the Kenizzites, and the Kadmonites* (Genesis 15:19) — the nations the covenant marked for dispossession from the seed''s inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=8
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-raids-on-the-old-devoted-enemies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) will have war with Amalek from generation to generation* (Exodus 17:16) — the perpetual war David''s blows on Amalek continue.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=8
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-raids-on-the-old-devoted-enemies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will utterly put out the remembrance of Amalek from under heaven* (Exodus 17:14) — the sentence David advances by leaving none alive.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=9
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-raids-on-the-old-devoted-enemies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Now go and smite Amalek, and utterly destroy all that they have, and spare them not* (1 Samuel 15:3) — the charge Saul broke, against which David''s "left neither man nor woman alive" is measured.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=27 AND sv.verse_number=9
+  JOIN _s340_1sa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-27-the-raids-on-the-old-devoted-enemies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_28.sql (1 Samuel 28) -----
+--
+-- Chapter: 1 Samuel 28 — Saul at Endor: heaven shut, the forbidden necromancy, the doom of the king
+-- Tag: 1sa28   View: _s340_1sa28_lookup
+-- Sort band: base 37075, step 3  (37075, 37078, 37081, 37084)
+--
+-- 1 Samuel 28 coverage:
+--   v.1-2   (Philistines gather; Achish and David)
+--           NT: none warranted  Extras: none warranted  Tanakh: none warranted (narrative setup)
+--   v.3     (Samuel dead; Saul had put away them that had familiar spirits and the wizards)
+--           -> folded into the necromancy thread (Saul purged the very thing he now seeks)
+--   v.4-5   (armies pitch at Shunem/Gilboa; Saul afraid)  -> narrative setup, none warranted
+--   v.6     (★ Saul enquired of Yahuah, answered not by dreams, Urim, prophets) -> KEYSTONE heaven-shut thread
+--           NT: none warranted
+--           Extras: none warranted
+--           Tanakh: 1 Samuel 14:37 (answered him not that day); Proverbs 1:28 (call but will not answer)
+--   v.7-9   (★★ seek a woman with a familiar spirit at Endor; she names the purge Saul made)
+--           -> KEYSTONE necromancy thread
+--           NT: none warranted (NT forbids sorcery in vice-lists but no clean necromancy-ban verse)
+--           Extras: none warranted (clean Torah witnesses carry the full weight)
+--           Tanakh: Deuteronomy 18:10-11; Leviticus 19:31; Leviticus 20:6; Leviticus 20:27; Exodus 22:18; Isaiah 8:19
+--   v.10-14 (Saul disguised; the woman brings up Samuel; Saul bows) -> within necromancy thread
+--   v.15-16 (Elohim departed; Yahuah is become thine enemy) -> within heaven-shut + verdict threads
+--   v.17-19 (★ Yahuah hath rent the kingdom to David; to morrow shalt thou and thy sons be with me)
+--           -> KEYSTONE kingdom-rent/doom thread
+--           NT: none warranted
+--           Extras: none warranted
+--           Tanakh: 1 Samuel 15:28 (the kingdom rent, this day); 1 Samuel 15:23 (rejected from being king)
+--   v.6,7   (★★★ the whole-reign verdict: asked the familiar spirit, enquired not of Yahuah)
+--           -> KEYSTONE 1 Chronicles 10 verdict thread
+--           NT: none warranted
+--           Extras: none warranted
+--           Tanakh: 1 Chronicles 10:13; 1 Chronicles 10:14
+--   v.20-25 (Saul falls; the woman feeds him unleavened bread) -> narrative close, none warranted
+--
+-- Threads (4):
+--   1-samuel-28-yahuah-answered-him-not-heaven-shut-to-the-rebel-king   [Tanakh] free
+--   1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor   [Tanakh] free
+--   1-samuel-28-saul-died-for-asking-counsel-of-a-familiar-spirit       [Tanakh] free
+--   1-samuel-28-yahuah-hath-rent-the-kingdom-the-doom-pronounced        [Tanakh] free
+--
+-- Contested/load-bearing framing:
+--   * The necromancy ban (28:7-9) is STILL binding Torah, never abolished: Deut 18:10-12, Lev 19:31,
+--     Lev 20:6,27, Exod 22:18, Isa 8:19 all forbid consulting the dead. Saul HIMSELF had purged it
+--     (28:3,9) — his return to it is apostasy against a standing command, the very abomination Yahuah
+--     drove the nations out for. Torah is the covenant inheritance; the ban is the lens, not the curse.
+--   * 28:6 the heaven shut is judgment on the unrepentant king, not the silence of a capricious god:
+--     Yahuah answers the seeking heart (Prov 1:28 is the inverse — they who hated knowledge call and
+--     are not answered). Saul had already met this silence at 14:37.
+--   * The apparition: whether Samuel was truly raised or a permitted shewing, the text's weight is the
+--     DOOM pronounced — *to morrow shalt thou and thy sons be with me* (28:19) — and the seal of the
+--     verdict already given (15:28). No member treats necromancy as a valid road to the dead; the
+--     chapter and 1 Chr 10:13-14 condemn the act itself.
+
+CREATE TEMP VIEW _s340_1sa28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Yahuah answered him not — heaven shut to the rebel
+    ('canon','1-samuel',28,6,'canon','1-samuel',14,37,'free',
+     E'*And Saul asked counsel of Elohim (God), Shall I go down after the Philistines? wilt thou deliver them into the hand of Yashar''el (Israel)? But he answered him not that day* (1 Samuel 14:37). The silence at Endor is not new. Once before, Saul *asked counsel of Elohim (God)* and heaven was shut. Now *when Saul enquired of Yahuah (LORD), Yahuah (LORD) answered him not, neither by dreams, nor by Urim, nor by prophets* (1 Samuel 28:6) — the same closed heaven, deepened to its final silence over the king who would not obey.'),
+    ('canon','1-samuel',28,6,'canon','proverbs',1,28,'free',
+     E'*Then shall they call upon me, but I will not answer; they shall seek me early, but they shall not find me* (Proverbs 1:28). Wisdom names the exact shape of Saul''s judgment: those who *hated knowledge, and did not choose the fear of Yahuah (LORD)* (Proverbs 1:29) cry out only when *fear cometh* and are met with silence. So Saul, who feared the people over Yahuah, *enquired of Yahuah (LORD)* in his terror and *Yahuah (LORD) answered him not* (1 Samuel 28:6) — the seeking comes too late, after the word was long despised.'),
+
+    -- THREAD 2 (KEYSTONE): the forbidden necromancy — Saul seeks the dead at Endor
+    ('canon','1-samuel',28,7,'canon','deuteronomy',18,10,'free',
+     E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10). Saul''s order *Seek me a woman that hath a familiar spirit, that I may go to her, and enquire of her* (1 Samuel 28:7) reaches for the very thing Torah bars from the camp. The king seeks the abomination Yahuah named as the reason He *doth drive them out from before thee* (Deut 18:12).'),
+    ('canon','1-samuel',28,7,'canon','deuteronomy',18,11,'free',
+     E'*Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:11). This is the precise sin: *a consulter with familiar spirits.* When Saul says *Seek me a woman that hath a familiar spirit* (1 Samuel 28:7), he becomes the necromancer Torah forbids — *for all that do these things are an abomination unto Yahuah (LORD)* (Deut 18:12). The ban is not abolished; the king tramples a standing command.'),
+    ('canon','1-samuel',28,8,'canon','leviticus',19,31,'free',
+     E'*Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 19:31). Saul does the forbidden thing by night: *I pray thee, divine unto me by the familiar spirit, and bring me him up* (1 Samuel 28:8). To *seek after wizards* is to *be defiled* — the king who should guard the holiness of Yashar''el (Israel) defiles himself at Endor.'),
+    ('canon','1-samuel',28,7,'canon','leviticus',20,6,'free',
+     E'*And the soul that turneth after such as have familiar spirits, and after wizards, to go a whoring after them, I will even set my face against that soul, and will cut him off from among his people* (Leviticus 20:6). Saul, turning *after such as have familiar spirits* (1 Samuel 28:7), brings upon himself the sentence Yahuah pronounced — *I will even set my face against that soul* — which the next day is executed on Gilboa.'),
+    ('canon','1-samuel',28,9,'canon','leviticus',20,27,'free',
+     E'*A man also or woman that hath a familiar spirit, or that is a wizard, shall surely be put to death: they shall stone them with stones: their blood shall be upon them* (Leviticus 20:27). The woman herself knows the law: *thou knowest what Saul hath done, how he hath cut off those that have familiar spirits, and the wizards, out of the land* (1 Samuel 28:9). Saul had once enforced the very death-penalty of Leviticus 20:27 against necromancers — and now creeps in disguise to use one.'),
+    ('canon','1-samuel',28,9,'canon','exodus',22,18,'free',
+     E'*Thou shalt not suffer a witch to live* (Exodus 22:18). This is the older form of the same command the woman fears: *wherefore then layest thou a snare for my life, to cause me to die?* (1 Samuel 28:9). Saul, who had purged the land in obedience to *thou shalt not suffer a witch to live,* now sets that very Torah at nought by *the woman that hath a familiar spirit at Endor* (28:7).'),
+    ('canon','1-samuel',28,8,'canon','isaiah',8,19,'free',
+     E'*And when they shall say unto you, Seek unto them that have familiar spirits, and unto wizards that peep, and that mutter: should not a people seek unto their Elohim (God)? for the living to the dead?* (Isaiah 8:19). Isaiah''s rebuke is Saul''s indictment in a sentence. He sought *the familiar spirit* (1 Samuel 28:8) and the dead Samuel instead of the living Yahuah — *for the living to the dead?* The next verse seals the standard: *To the law and to the testimony: if they speak not according to this word, it is because there is no light in them* (Isaiah 8:20).'),
+
+    -- THREAD 3 (KEYSTONE): Saul died for asking counsel of a familiar spirit
+    ('canon','1-samuel',28,7,'canon','1-chronicles',10,13,'free',
+     E'*So Saul died for his transgression which he committed against Yahuah (LORD), even against the word of Yahuah (LORD), which he kept not, and also for asking counsel of one that had a familiar spirit, to enquire of it* (1 Chronicles 10:13). The Chronicler names Endor as the capstone of Saul''s ruin. His *Seek me a woman that hath a familiar spirit... and enquire of her* (1 Samuel 28:7) is not a desperate footnote but the very transgression for which *Saul died* — the king who consulted the dead instead of the living word.'),
+    ('canon','1-samuel',28,6,'canon','1-chronicles',10,14,'free',
+     E'*And enquired not of Yahuah (LORD): therefore he slew him, and turned the kingdom unto David the son of Jesse* (1 Chronicles 10:14). Here is the verdict on 28:6. Saul *enquired of Yahuah (LORD)* in form, but the Chronicler''s judgment is that he *enquired not of Yahuah (LORD)* in truth — a rebel''s hollow asking that turned to the dead when heaven stayed shut. *Therefore he slew him, and turned the kingdom unto David* — the doom of 28:19 and the throne of 28:17 in a single line.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 (KEYSTONE): Yahuah hath rent the kingdom — the doom pronounced
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','1-samuel',28,17,'canon','1-samuel',15,28,'free',
+     E'*And Samuel said unto him, Yahuah (LORD) hath rent the kingdom of Yashar''el (Israel) from thee this day, and hath given it to a neighbour of thine, that is better than thou* (1 Samuel 15:28). The shade of Samuel pronounces no new sentence but the sealing of the old: *Yahuah (LORD) hath done to him, as he spake by me: for Yahuah (LORD) hath rent the kingdom out of thine hand, and given it to thy neighbour, even to David* (1 Samuel 28:17). The word spoken when Saul tore Samuel''s mantle at Gilgal now stands fulfilled.'),
+    ('canon','1-samuel',28,18,'canon','1-samuel',15,23,'free',
+     E'*For rebellion is as the sin of witchcraft, and stubbornness is as iniquity and idolatry. Because thou hast rejected the word of Yahuah (LORD), he hath also rejected thee from being king* (1 Samuel 15:23). Samuel names the root again at Endor: *Because thou obeyedst not the voice of Yahuah (LORD), nor executedst his fierce wrath upon Amalek, therefore hath Yahuah (LORD) done this thing unto thee this day* (1 Samuel 28:18). The Amalek disobedience of chapter 15 is the very wound now closing — and the irony bites: Saul who would not slay the witch-king Agag now seeks a witch at Endor.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-28-yahuah-answered-him-not-heaven-shut-to-the-rebel-king',
+  E'Yahuah answered him not — heaven shut to the rebel king',
+  E'On the eve of Gilboa, Saul reaches for the word of Yahuah he had long despised: *when Saul enquired of Yahuah (LORD), Yahuah (LORD) answered him not, neither by dreams, nor by Urim, nor by prophets* (1 Samuel 28:6). Every channel is closed. This is not the silence of a capricious god but the judgment that ripens over the unrepentant. Saul had already tasted it once: *And Saul asked counsel of Elohim (God), Shall I go down after the Philistines?... But he answered him not that day* (1 Samuel 14:37). And Wisdom had foretold its shape long before — for those who *hated knowledge, and did not choose the fear of Yahuah (LORD)* (Proverbs 1:29), the day comes when *they shall call upon me, but I will not answer; they shall seek me early, but they shall not find me* (Proverbs 1:28). Saul feared the people over the voice of Yahuah, spared what he was charged to destroy, and pursued David instead of obedience; now in terror he enquires, and heaven is shut. The seeking comes too late — and when the living word will not answer, Saul turns, fatally, to the dead.',
+  sv.verse_id, ev.verse_id, 'free', 37075
+  FROM _s340_1sa28_lookup sv, _s340_1sa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=28 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2 (KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor',
+  E'The forbidden necromancy — Saul seeks the dead at Endor',
+  E'When heaven will not answer, Saul reaches for the one road Torah expressly forbids: *Seek me a woman that hath a familiar spirit, that I may go to her, and enquire of her* (1 Samuel 28:7). The horror is that Saul knew better — *Saul had put away those that had familiar spirits, and the wizards, out of the land* (28:3), and the woman herself names his purge: *thou knowest what Saul hath done, how he hath cut off those that have familiar spirits, and the wizards, out of the land* (28:9). He had once enforced the very law he now tramples. And the law is plain and standing. Torah bars *a consulter with familiar spirits, or a wizard, or a necromancer* from the camp, *for all that do these things are an abomination unto Yahuah (LORD)* (Deuteronomy 18:11-12). The holiness code commands, *Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them* (Leviticus 19:31), and warns, *the soul that turneth after such as have familiar spirits... I will even set my face against that soul, and will cut him off from among his people* (Leviticus 20:6). The penalty Saul once carried out is named: *A man also or woman that hath a familiar spirit... shall surely be put to death* (Leviticus 20:27) — older still, *Thou shalt not suffer a witch to live* (Exodus 22:18). This is why the woman cries, *wherefore then layest thou a snare for my life, to cause me to die?* (28:9). Isaiah binds the whole indictment into one rebuke: *when they shall say unto you, Seek unto them that have familiar spirits, and unto wizards that peep, and that mutter: should not a people seek unto their Elohim (God)? for the living to the dead?* (Isaiah 8:19) — and sets the unchanging standard against it: *To the law and to the testimony: if they speak not according to this word, it is because there is no light in them* (Isaiah 8:20). Saul sought the dead and forsook the living; the ban he broke was never abolished, and the breaking of it is the measure of his fall.',
+  sv.verse_id, ev.verse_id, 'free', 37078
+  FROM _s340_1sa28_lookup sv, _s340_1sa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=28 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3 (KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-28-saul-died-for-asking-counsel-of-a-familiar-spirit',
+  E'Saul died for asking counsel of a familiar spirit',
+  E'The Chronicler reads Endor as the verdict on Saul''s whole reign. His desperate *Seek me a woman that hath a familiar spirit... and enquire of her* (1 Samuel 28:7) and his hollow enquiry that *Yahuah (LORD) answered him not* (28:6) are gathered into one summary judgment: *So Saul died for his transgression which he committed against Yahuah (LORD), even against the word of Yahuah (LORD), which he kept not, and also for asking counsel of one that had a familiar spirit, to enquire of it; And enquired not of Yahuah (LORD): therefore he slew him, and turned the kingdom unto David the son of Jesse* (1 Chronicles 10:13-14). The two indictments are set side by side — he turned TO the dead and away FROM the living. Though Saul went through the motion of *enquiring of Yahuah,* the Spirit''s verdict is that he *enquired not of Yahuah (LORD)* at all: a rebel''s asking is no seeking. The familiar spirit at Endor and the closed heaven of 28:6 are one sin, and they end the same way — death on Gilboa, and the throne *turned... unto David,* the line that will carry the seed of promise toward the Branch.',
+  sv.verse_id, ev.verse_id, 'free', 37081
+  FROM _s340_1sa28_lookup sv, _s340_1sa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=28 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4 (KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-28-yahuah-hath-rent-the-kingdom-the-doom-pronounced',
+  E'Yahuah hath rent the kingdom — the doom pronounced',
+  E'The figure called up at Endor speaks no new sentence; it seals the old. *Yahuah (LORD) hath done to him, as he spake by me: for Yahuah (LORD) hath rent the kingdom out of thine hand, and given it to thy neighbour, even to David* (1 Samuel 28:17). This is word-for-word the doom pronounced at Gilgal: *Yahuah (LORD) hath rent the kingdom of Yashar''el (Israel) from thee this day, and hath given it to a neighbour of thine, that is better than thou* (1 Samuel 15:28). And the cause is named again: *Because thou obeyedst not the voice of Yahuah (LORD), nor executedst his fierce wrath upon Amalek, therefore hath Yahuah (LORD) done this thing unto thee this day* (1 Samuel 28:18) — the same Amalek disobedience for which Samuel had said, *rebellion is as the sin of witchcraft... Because thou hast rejected the word of Yahuah (LORD), he hath also rejected thee from being king* (1 Samuel 15:23). The irony is total: Saul who would not slay Agag the Amalekite king now consults a witch, the very sin to which his rebellion was likened. The pronouncement falls in full — *to morrow shalt thou and thy sons be with me* (28:19) — and the kingdom passes, by Yahuah''s unbending word, to David and the promise that runs through him.',
+  sv.verse_id, ev.verse_id, 'free', 37084
+  FROM _s340_1sa28_lookup sv, _s340_1sa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=28 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 14:37 — *But he answered him not that day:* the same closed heaven Saul had met once before, now final.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=6
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=14 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-yahuah-answered-him-not-heaven-shut-to-the-rebel-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Proverbs 1:28 — *they shall call upon me, but I will not answer... they shall not find me:* the judgment-silence on those who despised the fear of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=6
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-yahuah-answered-him-not-heaven-shut-to-the-rebel-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members (KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 18:10 — *There shall not be found among you... that useth divination... or a witch:* the abomination barred from the camp.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=7
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 18:11 — *a consulter with familiar spirits, or a wizard, or a necromancer:* the precise sin Saul commits at Endor.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=7
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 19:31 — *Regard not them that have familiar spirits... to be defiled by them:* to seek the wizard is to be defiled.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=8
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Leviticus 20:6 — *the soul that turneth after such as have familiar spirits... I will even set my face against that soul:* the sentence Saul calls down on himself.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=7
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Leviticus 20:27 — *A man also or woman that hath a familiar spirit... shall surely be put to death:* the death-penalty Saul once enforced and now defies.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Exodus 22:18 — *Thou shalt not suffer a witch to live:* the older form of the law behind the woman''s fear for her life.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=22 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Isaiah 8:19 — *should not a people seek unto their Elohim (God)? for the living to the dead?* — the whole indictment in one rebuke; v.20 sets the law and the testimony as the standard.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=8
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-the-forbidden-necromancy-saul-seeks-the-dead-at-endor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members (KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Chronicles 10:13 — *Saul died... also for asking counsel of one that had a familiar spirit, to enquire of it:* Endor named as the capstone of his ruin.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=7
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=10 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-saul-died-for-asking-counsel-of-a-familiar-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Chronicles 10:14 — *And enquired not of Yahuah (LORD): therefore he slew him, and turned the kingdom unto David:* the verdict on the hollow enquiry of 28:6.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=6
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-saul-died-for-asking-counsel-of-a-familiar-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members (KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 15:28 — *Yahuah (LORD) hath rent the kingdom of Yashar''el (Israel) from thee this day... given it to a neighbour... better than thou:* the Gilgal doom now sealed.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-yahuah-hath-rent-the-kingdom-the-doom-pronounced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Samuel 15:23 — *rebellion is as the sin of witchcraft... thou hast rejected the word of Yahuah (LORD):* the Amalek disobedience that the Endor witch-seeking so bitterly mirrors.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=28 AND sv.verse_number=18
+  JOIN _s340_1sa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-28-yahuah-hath-rent-the-kingdom-the-doom-pronounced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_29.sql (1 Samuel 29) -----
+--
+-- 1 Samuel 29 — the Philistine princes refuse to let David go up to battle against
+-- Yashar'el; Yahuah's hidden providence sparing the anointed and freeing him for Ziklag.
+-- Tag: 1sa29   View: _s340_1sa29_lookup   Sort band: 37100, step 3 (37100, 37103, 37106)
+--
+-- THE LENS: this is a providence chapter. The unseen hand of Yahuah orders the
+-- distrust of pagan lords for David's good — sparing the anointed from the impossible
+-- position of fighting against his own people, and freeing him to rescue Ziklag in ch30.
+-- The Formed Son's covenant care over the seed of David runs under every verse.
+--
+-- 1 Samuel 29 coverage:
+--   v.1-2  NT:     none warranted (scene-setting muster at Aphek/Jezreel)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.3-7  NT:     Romans 8:28 (all things work together for good) — thread A
+--          Extras: none warranted
+--          Tanakh: Genesis 50:20 (ye thought evil... Elohim meant it unto good),
+--                  Proverbs 16:9 (man deviseth his way; Yahuah directeth his steps) — thread A
+--   v.8-9  NT:     none warranted directly
+--          Extras: none warranted
+--          Tanakh: Psalm 34:7 (angel of Yahuah encampeth round about them that fear him),
+--                  Psalm 37:23 (steps of a good man ordered by Yahuah) — thread B (Achish: 'as an angel of Elohim')
+--   v.10-11 NT:    none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 30:18 (David recovered all — the deliverance the discharge made room for),
+--                  Proverbs 16:33 (the lot... the whole disposing thereof is of Yahuah) — thread C
+--
+-- THREADS:
+--   1-samuel-29-they-thought-evil-but-yahuah-meant-it-unto-good   (Tanakh + NT) — thread A, providence spine
+--   1-samuel-29-as-an-angel-of-elohim-the-anointeds-going-out-and-coming-in  (Tanakh) — thread B
+--   1-samuel-29-sent-home-in-peace-the-hidden-hand-orders-the-deliverance    (Tanakh) — thread C
+--
+-- CONTESTED/LOAD-BEARING: 29:9 'as an angel of Elohim' framed as Achish's HUMAN testimony to
+--   David's uprightness (not a theophany) — woven to the angel of Yahuah who guards the fearers
+--   (Ps 34:7) and the steps Yahuah orders (Ps 37:23). No Christological over-read of Achish's words.
+
+CREATE TEMP VIEW _s340_1sa29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD A: providence spine — the hidden hand spares the anointed (29:3-7)
+    ('canon','1-samuel',29,3,'canon','genesis',50,20,'free',
+      E'*But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* (Genesis 50:20) When the princes of the Philistines challenge Achish, *What do these Hebrews here?* (1 Samuel 29:3), the very suspicion that turns David away is the working of the same hidden hand that turned Yosef''s (Joseph''s) brothers'' evil unto good. What the Philistine lords intend as exclusion, Yahuah means unto good — sparing His anointed from raising his sword against his own people.'),
+    ('canon','1-samuel',29,4,'canon','genesis',50,20,'free',
+      E'*But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* (Genesis 50:20) The princes were *wroth* and demanded, *Make this fellow return... lest in the battle he be an adversary to us* (1 Samuel 29:4). Their hostile counsel becomes Yahuah''s mercy: the same providence that wove Yosef''s pit and prison into the saving of *much people alive* now weaves Philistine distrust into the rescue of David from an impossible loyalty.'),
+    ('canon','1-samuel',29,6,'canon','proverbs',16,9,'free',
+      E'*A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps.* (Proverbs 16:9) Achish has devised his own way — *Surely, as Yahuah (LORD) liveth, thou hast been upright... nevertheless the lords favour thee not* (1 Samuel 29:6) — yet the lords'' refusal is no accident of court politics. The man deviseth, but Yahuah directeth the steps of His anointed away from the battle line of Gilboa.'),
+    ('canon','1-samuel',29,7,'canon','romans',8,28,'free',
+      E'*And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose.* (Romans 8:28) *Wherefore now return, and go in peace, that thou displease not the lords of the Philistines* (1 Samuel 29:7) — a dismissal that looks like rejection works together for David''s good. David is *the called according to his purpose*, the anointed seed of the Davidic line; the closed door at Aphek is the open road back to Ziklag.'),
+    -- THREAD B: as an angel of Elohim — the anointed's going out and coming in (29:8-9)
+    ('canon','1-samuel',29,9,'canon','psalms',34,7,'free',
+      E'*The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them.* (Psalm 34:7) Achish testifies, *I know that thou art good in my sight, as an angel of Elohim (God)* (1 Samuel 29:9) — a pagan king''s witness to David''s uprightness. Behind that human praise stands the truer guard: the angel of Yahuah encamps round the one who fears Him, and that encampment is delivering David out of the snare even now.'),
+    ('canon','1-samuel',29,8,'canon','psalms',37,23,'free',
+      E'*The steps of a good man are ordered by Yahuah (LORD): and he delighteth in his way.* (Psalm 37:23) David protests, *But what have I done?... that I may not go fight against the enemies of my lord the king?* (1 Samuel 29:8). His steps are ordered better than his own asking: the *good man''s* path is closed to this battle precisely because Yahuah delighteth in his way and will not let him stumble against Yashar''el.'),
+    -- THREAD C: sent home in peace — the hidden hand orders the deliverance (29:10-11)
+    ('canon','1-samuel',29,10,'canon','1-samuel',30,18,'free',
+      E'*And David recovered all that the Amalekites had carried away: and David rescued his two wives.* (1 Samuel 30:18) The order to *rise up early in the morning... and have light, depart* (1 Samuel 29:10) is the very discharge that frees David for the next day''s rescue. Sent home from a war he could not righteously fight, he arrives in time to recover all at Ziklag — the providence of the dismissal flowering into deliverance.'),
+    ('canon','1-samuel',29,11,'canon','proverbs',16,33,'free',
+      E'*The lot is cast into the lap; but the whole disposing thereof is of Yahuah (LORD).* (Proverbs 16:33) *So David and his men rose up early to depart in the morning, to return into the land of the Philistines* (1 Samuel 29:11). Every cast of the lot — the princes'' vote, the early march south — falls as it falls, but the whole disposing is of Yahuah, ordering the anointed homeward to his people and his deliverance.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD A
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-29-they-thought-evil-but-yahuah-meant-it-unto-good',
+  E'They thought evil, but Yahuah meant it unto good',
+  E'The Philistine princes distrust David and demand his removal — *What do these Hebrews here?* (1 Samuel 29:3); *Make this fellow return... lest in the battle he be an adversary to us* (1 Samuel 29:4). What looks like rejection is the hidden hand of Yahuah ordering events for His anointed''s good, sparing David from the impossible position of fighting against his own people. It is the same providence that ran through Yosef (Joseph): *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). The man deviseth, but the steps are not his to direct — *A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps* (Proverbs 16:9) — so when Achish says *go in peace* (1 Samuel 29:7), the dismissal is Yahuah''s mercy. The whole pattern is gathered up forward: *And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* (Romans 8:28). David, the called seed of the Davidic line, is led home by the very hostility that seemed to cast him out.',
+  sv.verse_id, ev.verse_id, 'free', 37100
+  FROM _s340_1sa29_lookup sv, _s340_1sa29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=29 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD B
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-29-as-an-angel-of-elohim-the-anointeds-going-out-and-coming-in',
+  E'As an angel of Elohim — the anointed''s going out and coming in',
+  E'David asks in good conscience, *But what have I done?... that I may not go fight against the enemies of my lord the king?* (1 Samuel 29:8), and Achish answers with a pagan king''s testimony to his uprightness: *I know that thou art good in my sight, as an angel of Elohim (God)* (1 Samuel 29:9). The praise is human, but it points to a truer keeping. The angel of Yahuah Himself guards the one who fears Him: *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7). And David''s very steps — closed to this battle against Yashar''el — are not his own to choose: *The steps of a good man are ordered by Yahuah (LORD): and he delighteth in his way* (Psalm 37:23). Where David asks to go up, the ordered step turns him back; the Formed Son''s covenant care over the seed of David keeps his going out and his coming in.',
+  sv.verse_id, ev.verse_id, 'free', 37103
+  FROM _s340_1sa29_lookup sv, _s340_1sa29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=29 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD C
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-29-sent-home-in-peace-the-hidden-hand-orders-the-deliverance',
+  E'Sent home in peace — the hidden hand orders the deliverance',
+  E'David is discharged at dawn: *Wherefore now rise up early in the morning... and as soon as ye be up early in the morning, and have light, depart* (1 Samuel 29:10); *So David and his men rose up early to depart in the morning, to return into the land of the Philistines* (1 Samuel 29:11). The dismissal that looked like disgrace is the road to deliverance — for it sends David south in time to overtake the Amalekites who had burned Ziklag, so that *David recovered all that the Amalekites had carried away: and David rescued his two wives* (1 Samuel 30:18). Every casting of the lot — the princes'' vote, the early march — falls under one hand: *The lot is cast into the lap; but the whole disposing thereof is of Yahuah (LORD)* (Proverbs 16:33). The closed door at Aphek is the open door at Ziklag; the hidden hand orders the whole.',
+  sv.verse_id, ev.verse_id, 'free', 37106
+  FROM _s340_1sa29_lookup sv, _s340_1sa29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=29 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD A members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 50:20 — *Elohim (God) meant it unto good... to save much people alive*: the suspicion at 29:3 is the same providence that turned Yosef''s evil unto good.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=3
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-29-they-thought-evil-but-yahuah-meant-it-unto-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 50:20 again — the princes'' wrath at 29:4 (*lest he be an adversary to us*) becomes Yahuah''s mercy, as the brothers'' evil became the saving of much people alive.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=4
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-29-they-thought-evil-but-yahuah-meant-it-unto-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Proverbs 16:9 — *a man''s heart deviseth his way: but Yahuah directeth his steps*: Achish''s court devising at 29:6 is overruled to turn David from Gilboa.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=6
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-29-they-thought-evil-but-yahuah-meant-it-unto-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 8:28 — *all things work together for good... the called according to his purpose*: the dismissal of 29:7 (*go in peace*) is the open road back to Ziklag for the called anointed.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-29-they-thought-evil-but-yahuah-meant-it-unto-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD B members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 37:23 — *the steps of a good man are ordered by Yahuah*: David''s plea to go up at 29:8 is overruled; the ordered step turns him back from his own people.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=8
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-29-as-an-angel-of-elohim-the-anointeds-going-out-and-coming-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 34:7 — *the angel of Yahuah encampeth round about them that fear him*: behind Achish''s human praise (*as an angel of Elohim*, 29:9) stands the true guard delivering David out of the snare.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=9
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-29-as-an-angel-of-elohim-the-anointeds-going-out-and-coming-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD C members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 30:18 — *David recovered all... and rescued his two wives*: the dawn discharge of 29:10 frees David in time for the Ziklag rescue.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=10
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=30 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-29-sent-home-in-peace-the-hidden-hand-orders-the-deliverance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Proverbs 16:33 — *the lot is cast into the lap; but the whole disposing thereof is of Yahuah*: the early march of 29:11 falls as it falls, but the whole disposing orders the anointed homeward.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=29 AND sv.verse_number=11
+  JOIN _s340_1sa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-29-sent-home-in-peace-the-hidden-hand-orders-the-deliverance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_30.sql (1 Samuel 30) -----
+--
+-- Chapter: 1 Samuel 30   Tag: 1sa30   View: _s340_1sa30_lookup
+-- Sort band: base 37125, step 3 -> 37125, 37128, 37131, 37134, 37137
+-- Session prefix: s340 (Tanakh full-library xref)
+--
+-- FRAME: David returns to find Ziklag burned and the wives and children taken; the people
+--   speak of stoning him, and in the lowest moment *David encouraged himself in Yahuah
+--   Elohav (the LORD his God)* (30:6) -- he strengthens himself in the Name, not in his own
+--   arm. He ENQUIRES of Yahuah by the ephod (the Formed Son answering his servant, NOT
+--   co-equal-trinity, NOT Arian) and is told *Pursue: for thou shalt surely overtake them,
+--   and without fail recover all* (30:8) -- and he recovers ALL, nothing lacking (30:18-19).
+--   Then the equal-portion grace-statute: the 200 too faint to cross Besor share alike with
+--   the 400 who fought, against the sons of Belial who would deny them -- *as his part is
+--   that goeth down to the battle, so shall his part be that tarrieth by the stuff: they
+--   shall part alike* (30:24), *a statute and an ordinance for Yashar'el unto this day*
+--   (30:25) -- the Torah law of shared spoil (Numbers 31:27; Joshua 22:8), every member of
+--   the body sharing the one victory.
+--
+-- 1 Samuel 30 coverage:
+--   v.6   David encouraged himself in Yahuah his Elohim (the lowest moment):
+--         NT:     philippians 4:13 (I can do all things through Messiah which strengtheneth me);
+--                 2-corinthians 12:9 (my strength is made perfect in weakness)
+--         Extras: none warranted
+--         Tanakh: psalms 27:13 (had fainted unless I had believed); psalms 27:14 (wait on Yahuah,
+--                 be of good courage); psalms 56:3 (what time I am afraid I will trust in thee);
+--                 habakkuk 3:17 (although the fig tree...); habakkuk 3:18 (yet I will rejoice);
+--                 1-samuel 23:16 (Jonathan strengthened his hand in Elohim) -> THREAD 1
+--   v.7-8 brought the ephod / enquired at Yahuah / Pursue, recover all:
+--         NT:     none warranted (Tanakh David-enquiring pattern is the weight)
+--         Extras: none warranted
+--         Tanakh: 1-samuel 23:9 (bring hither the ephod); 1-samuel 23:11 (enquire, Yahuah
+--                 answers); psalms 27:4 (enquire in his temple) -> THREAD 2
+--   v.18-19 recovered all, nothing lacking, neither small nor great:
+--         NT:     philippians 4:19 (my Elohim shall supply all your need)
+--         Extras: none warranted
+--         Tanakh: psalms 27:13 (goodness of Yahuah in the land of the living) -> THREAD 3
+--   v.21-25 the equal portion: faint at Besor share alike with those that fought; statute:
+--         NT:     philippians 4:14 (ye did communicate with my affliction); philippians 4:15
+--                 (giving and receiving)
+--         Extras: none warranted
+--         Tanakh: numbers 31:27 (divide the prey... between them that went to battle and all
+--                 the congregation); joshua 22:8 (divide the spoil of your enemies with your
+--                 brethren) -> THREAD 4
+--   v.26  David sent of the spoil unto the elders of Yahudah:
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: joshua 22:8 (divide the spoil with your brethren) -> folded into THREAD 5
+--   v.22-23 sons of Belial / Yahuah hath given us / preserved us:
+--         NT: none warranted  Extras: none warranted
+--         Tanakh: handled in prose THREAD 4 (victims-not-enemies; the spoil is Yahuah's gift)
+--   v.1-5 Ziklag burned, wives taken, wept till no power: narrative setup -> framed in THREAD 1 prose
+--   v.9-17 the Egyptian / the smiting of the Amalekites: narrative; no separate add (the
+--         enquiry-answer of THREAD 2 carries the recovery), Egyptian-mercy noted in prose
+--
+-- THREADS:
+--   1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim   [Tanakh + NT]  free
+--   1-samuel-30-he-enquired-at-yahuah-pursue-and-recover-all        [Tanakh]       free
+--   1-samuel-30-and-david-recovered-all-nothing-lacking            [Tanakh + NT]  free
+--   1-samuel-30-they-shall-part-alike-the-equal-portion            [Tanakh + NT]  free
+--   1-samuel-30-a-present-of-the-spoil-unto-the-elders-of-yahudah  [Tanakh]       free
+--
+
+CREATE TEMP VIEW _s340_1sa30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: but David encouraged himself in Yahuah his Elohim (v.6)
+    ('canon','1-samuel',30,6,'canon','psalms',27,13,'free',
+     E'*I had fainted, unless I had believed to see the goodness of Yahuah (LORD) in the land of the living.* (Psalm 27:13). This is the inner ground of *David encouraged himself in Yahuah Elohav (the LORD his God)* (1 Samuel 30:6). With Ziklag burned, the wives and children gone, and the people speaking of stoning him, David has every reason to faint -- and would have, *unless I had believed*. He does not deny the grief; he sets faith against it and strengthens himself in the Name.'),
+    ('canon','1-samuel',30,6,'canon','psalms',27,14,'free',
+     E'*Wait on Yahuah (LORD): be of good courage, and he shall strengthen thine heart: wait, I say, on Yahuah (LORD).* (Psalm 27:14). What David does in the field, his psalm commands: *be of good courage, and he shall strengthen thine heart*. To *encourage himself in Yahuah* (1 Samuel 30:6) is exactly this -- the man does not manufacture courage from himself; he waits on Yahuah, and Yahuah strengthens the heart.'),
+    ('canon','1-samuel',30,6,'canon','psalms',56,3,'free',
+     E'*What time I am afraid, I will trust in thee.* (Psalm 56:3). David sang this when the Philistines took him in Gath; it is the same trust he reaches for at Ziklag. *David encouraged himself in Yahuah Elohav (the LORD his God)* (1 Samuel 30:6) is the doing of *what time I am afraid, I will trust in thee* -- fear answered not with denial but with the deliberate turning of the soul to Yahuah.'),
+    ('canon','1-samuel',30,6,'canon','habakkuk',3,17,'free',
+     E'*Although the fig tree shall not blossom, neither shall fruit be in the vines; the labour of the olive shall fail, and the fields shall yield no meat; the flock shall be cut off from the fold, and there shall be no herd in the stalls:* (Habakkuk 3:17). The prophet names the very moment of total loss -- nothing left in field or fold -- which is Ziklag burned to the ground. It is in exactly this place, with everything stripped away, that the heart must *encourage itself in Yahuah* (1 Samuel 30:6).'),
+    ('canon','1-samuel',30,6,'canon','habakkuk',3,18,'free',
+     E'*Yet I will rejoice in Yahuah (LORD), I will joy in the Elohim (God) of my salvation.* (Habakkuk 3:18). The *yet* of Habakkuk is the *but* of David: *but David encouraged himself in Yahuah Elohav (the LORD his God)* (1 Samuel 30:6). When the harvest fails and the fold is empty, the faithful do not rejoice in the gift but in the Giver -- *the Elohim (God) of my salvation*. David''s strengthening and Habakkuk''s joy are the same act of faith.'),
+    ('canon','1-samuel',30,6,'canon','1-samuel',23,16,'free',
+     E'*And Jonathan Saul''s son arose, and went to David into the wood, and strengthened his hand in Elohim (God).* (1 Samuel 23:16). Earlier a friend strengthened David''s hand in Elohim; now, with no friend at hand and the people turned against him, *David encouraged himself in Yahuah Elohav (the LORD his God)* (1 Samuel 30:6). The strength that came through Jonathan is the same strength David now draws directly -- the man who has learned to be strengthened in Elohim can strengthen himself in Elohim when he stands alone.'),
+    ('canon','1-samuel',30,6,'canon','philippians',4,13,'free',
+     E'*I can do all things through Messiah (Christ) which strengtheneth me.* (Philippians 4:13). This is the New-Covenant voice of *David encouraged himself in Yahuah Elohav (the LORD his God)* (1 Samuel 30:6). The strength is never the man''s own; it is *through* the One who strengthens -- the Formed Son, the expressed Word of the Father. David at Ziklag and Paul in prison stand in the same grip.'),
+    ('canon','1-samuel',30,6,'canon','2-corinthians',12,9,'free',
+     E'*And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness.* (2 Corinthians 12:9). The lowest place is the appointed place for this strength. David is *greatly distressed*, the people speak of stoning him, and there -- in the weakness -- *David encouraged himself in Yahuah Elohav (the LORD his God)* (1 Samuel 30:6). Yahuah''s strength is *made perfect in weakness*; the emptied man who turns to the Name is filled.'),
+
+    -- THREAD 2: he enquired at Yahuah -- Pursue, and recover all (vv.7,8)
+    ('canon','1-samuel',30,7,'canon','1-samuel',23,9,'free',
+     E'*And David knew that Saul secretly practised mischief against him; and he said to Abiathar the priest, Bring hither the ephod.* (1 Samuel 23:9). The same priest, the same instrument, the same posture: *And David said to Abiathar the priest, Ahimelech''s son, I pray thee, bring me hither the ephod* (1 Samuel 30:7). David''s settled habit in every crisis is to call for the ephod and enquire -- he will not move until Yahuah has spoken.'),
+    ('canon','1-samuel',30,8,'canon','1-samuel',23,11,'free',
+     E'*O Yahuah Elohim (LORD God) of Yashar''el (Israel), I beseech thee, tell thy servant. And Yahuah (LORD) said, He will come down.* (1 Samuel 23:11). As at Keilah, so at Ziklag: *And David enquired at Yahuah (LORD), saying, Shall I pursue after this troop?... And he answered him, Pursue: for thou shalt surely overtake them, and without fail recover all* (1 Samuel 30:8). The One who answers the servant by the ephod is the Formed Son, the expressed Word of the Father -- Yahuah who has a Father, not a co-equal second person and not a created angel.'),
+    ('canon','1-samuel',30,8,'canon','psalms',27,4,'free',
+     E'*One thing have I desired of Yahuah (LORD), that will I seek after... to behold the beauty of Yahuah (LORD), and to enquire in his temple.* (Psalm 27:4). David sings the very posture he lives at Ziklag: *And David enquired at Yahuah (LORD)* (1 Samuel 30:8). To *enquire* of Yahuah is the heartbeat of the anointed -- he seeks the Voice and waits for the answer before he draws the sword.'),
+
+    -- THREAD 3: and David recovered all, nothing lacking (vv.18,19)
+    ('canon','1-samuel',30,19,'canon','psalms',27,13,'free',
+     E'*I had fainted, unless I had believed to see the goodness of Yahuah (LORD) in the land of the living.* (Psalm 27:13). The word given -- *without fail recover all* (30:8) -- is kept to the letter: *And there was nothing lacking to them, neither small nor great, neither sons nor daughters, neither spoil... David recovered all* (1 Samuel 30:19). This is the *goodness of Yahuah in the land of the living* that David believed he would see; the faith of verse 6 is answered by the recovery of verse 19.'),
+    ('canon','1-samuel',30,19,'canon','philippians',4,19,'free',
+     E'*But my Elohim (God) shall supply all your need according to his riches in glory by HaMashiach Yahusha (Christ Jesus).* (Philippians 4:19). The total recovery -- *nothing lacking... neither sons nor daughters, neither spoil* (1 Samuel 30:19) -- is the same promise Paul names: *my Elohim shall supply all your need*. The Yahuah who restored every soul and every thing at Ziklag is the One who fills the need of his own to the full.'),
+
+    -- THREAD 4: they shall part alike -- the equal portion (vv.21-25)
+    ('canon','1-samuel',30,24,'canon','numbers',31,27,'free',
+     E'*And divide the prey into two parts; between them that took the war upon them, who went out to battle, and between all the congregation:* (Numbers 31:27). David''s ruling is not a novelty but the Torah law of the spoil: as Moses divided the prey between the warriors and the whole congregation, so David rules *as his part is that goeth down to the battle, so shall his part be that tarrieth by the stuff: they shall part alike* (1 Samuel 30:24). The man after Yahuah''s heart governs by the statute already given.'),
+    ('canon','1-samuel',30,24,'canon','joshua',22,8,'free',
+     E'*Return with much riches unto your tents... divide the spoil of your enemies with your brethren.* (Joshua 22:8). Joshua had already commanded the same grace: the tribes who went home were to share the spoil with their brethren. David''s statute -- *they shall part alike* (1 Samuel 30:24) -- stands in this same line: the victory belongs to the whole people, and the spoil is divided with the brethren, not hoarded by the strong.'),
+    ('canon','1-samuel',30,24,'canon','philippians',4,14,'free',
+     E'*Notwithstanding ye have well done, that ye did communicate with my affliction.* (Philippians 4:14). The Philippians who could not be on the battlefield with Paul yet *communicated with his affliction* -- and so shared in the labour and the reward. This is David''s statute made plain: the two hundred who *tarried by the stuff* are no less partakers than the four hundred who fought; *they shall part alike* (1 Samuel 30:24). Every member of the body shares in the one victory.'),
+    ('canon','1-samuel',30,24,'canon','philippians',4,15,'free',
+     E'*Now ye Philippians know also, that in the beginning of the gospel... no church communicated with me as concerning giving and receiving, but ye only.* (Philippians 4:15). The fellowship of *giving and receiving* is the same grace as David''s equal portion: those who supply and those who go are joined in one work and one reward. The statute *they shall part alike* (1 Samuel 30:24) is the kingdom-pattern -- the body shares the spoil because it shared the burden.'),
+
+    -- THREAD 5: a present of the spoil unto the elders of Yahudah (v.26)
+    ('canon','1-samuel',30,26,'canon','joshua',22,8,'free',
+     E'*Return with much riches unto your tents... divide the spoil of your enemies with your brethren.* (Joshua 22:8). David does for the elders what Joshua charged the tribes to do: *he sent of the spoil unto the elders of Yahudah (Judah), even to his friends, saying, Behold a present for you of the spoil of the enemies of Yahuah (LORD)* (1 Samuel 30:26). The spoil is shared down the whole house of Yahudah -- the king-in-waiting binding the elders to himself by grace, dividing with his brethren the spoil of *the enemies of Yahuah*.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim',
+       E'But David Encouraged Himself in Yahuah His Elohim',
+       E'David returns to Ziklag to find it burned with fire, the women and children carried off, and the men he had led now turned against him: *And David was greatly distressed; for the people spake of stoning him, because the soul of all the people was grieved, every man for his sons and for his daughters* (1 Samuel 30:6). It is the lowest moment of his life -- everything lost, and his own men ready to kill him. And in that exact place stands the hinge of the whole chapter: *but David encouraged himself in Yahuah Elohav (the LORD his God)* (1 Samuel 30:6). He does not deny the grief -- he and the people had wept *until they had no more power to weep* (30:4) -- but he sets faith against despair and strengthens himself in the Name.\n\nThis is the discipline David sings in his own psalms: *I had fainted, unless I had believed to see the goodness of Yahuah (LORD) in the land of the living* (Psalm 27:13); *Wait on Yahuah (LORD): be of good courage, and he shall strengthen thine heart* (Psalm 27:14); *What time I am afraid, I will trust in thee* (Psalm 56:3) -- a psalm born when the Philistines took him in Gath. The strength is never manufactured from the man; it is drawn from Yahuah. Earlier a friend had done it for him -- *Jonathan... strengthened his hand in Elohim (God)* (1 Samuel 23:16) -- and now, standing alone, David strengthens himself in the same Elohim.\n\nHabakkuk names the very condition: *Although the fig tree shall not blossom... the flock shall be cut off from the fold, and there shall be no herd in the stalls* (Habakkuk 3:17) -- which is Ziklag stripped bare -- *Yet I will rejoice in Yahuah (LORD), I will joy in the Elohim (God) of my salvation* (Habakkuk 3:18). The *yet* of the prophet is the *but* of David. And the New-Covenant voice is the same: *I can do all things through Messiah (Christ) which strengtheneth me* (Philippians 4:13); *My grace is sufficient for thee: for my strength is made perfect in weakness* (2 Corinthians 12:9). The emptied man who turns to the Name is filled -- the strength is the Formed Son''s, the expressed Word of the Father, never the man''s own.',
+       sv.verse_id, ev.verse_id, 'free', 37125
+  FROM _s340_1sa30_lookup sv, _s340_1sa30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=30 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-30-he-enquired-at-yahuah-pursue-and-recover-all',
+       E'He Enquired at Yahuah -- Pursue, and Recover All',
+       E'Strengthened in Yahuah, David does not charge off in vengeance; he calls for the ephod and asks: *And David said to Abiathar the priest, Ahimelech''s son, I pray thee, bring me hither the ephod* (1 Samuel 30:7). *And David enquired at Yahuah (LORD), saying, Shall I pursue after this troop? shall I overtake them? And he answered him, Pursue: for thou shalt surely overtake them, and without fail recover all* (1 Samuel 30:8). This is the settled habit of the anointed -- in every crisis he calls for the ephod and waits for the Voice before he moves.\n\nIt is the very pattern of Keilah: *he said to Abiathar the priest, Bring hither the ephod* (1 Samuel 23:9), and *O Yahuah Elohim (LORD God) of Yashar''el (Israel), I beseech thee, tell thy servant. And Yahuah (LORD) said, He will come down* (1 Samuel 23:11). It is the posture David sings: *One thing have I desired of Yahuah (LORD)... to enquire in his temple* (Psalm 27:4). The One who answers the servant by the ephod is the Formed Son, the expressed Word of the Father -- Yahuah who has a Father, who speaks and leads his anointed, not a co-equal second person and not a created angel. The promise *without fail recover all* is a sworn thing; David goes out under a word, and the word does not fail.',
+       sv.verse_id, ev.verse_id, 'free', 37128
+  FROM _s340_1sa30_lookup sv, _s340_1sa30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=30 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-30-and-david-recovered-all-nothing-lacking',
+       E'And David Recovered All -- Nothing Lacking',
+       E'The word given by the ephod -- *without fail recover all* (1 Samuel 30:8) -- is kept to the letter. After David smote the Amalekites from the twilight to the evening of the next day, *David recovered all that the Amalekites had carried away: and David rescued his two wives* (1 Samuel 30:18). And the verse that follows refuses to leave a single thing out: *And there was nothing lacking to them, neither small nor great, neither sons nor daughters, neither spoil, nor any thing that they had taken to them: David recovered all* (1 Samuel 30:19).\n\nThis is the *goodness of Yahuah (LORD) in the land of the living* that David said he believed he would see: *I had fainted, unless I had believed to see the goodness of Yahuah (LORD) in the land of the living* (Psalm 27:13). The faith of verse 6 -- the man who encouraged himself in Yahuah -- is answered by the recovery of verse 19: not one child, not one wife, not one thing left behind. And the promise reaches forward into the New Covenant: *But my Elohim (God) shall supply all your need according to his riches in glory by HaMashiach Yahusha (Christ Jesus)* (Philippians 4:19). The Yahuah who restored every soul and every thing at Ziklag is the One who fills the need of his own to the full.',
+       sv.verse_id, ev.verse_id, 'free', 37131
+  FROM _s340_1sa30_lookup sv, _s340_1sa30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=30 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-30-they-shall-part-alike-the-equal-portion',
+       E'They Shall Part Alike -- the Equal Portion',
+       E'Two hundred of David''s six hundred were *so faint that they could not go over the brook Besor* (1 Samuel 30:10), and stayed to keep the stuff while the four hundred pursued. When the victors return, *all the wicked men and men of Belial, of those that went with David* would deny the faint their share: *Because they went not with us, we will not give them ought of the spoil that we have recovered* (1 Samuel 30:22). David refuses -- and frames the whole thing as grace, not earnings: *Ye shall not do so, my brethren, with that which Yahuah (LORD) hath given us, who hath preserved us, and delivered the company that came against us into our hand* (1 Samuel 30:23). The spoil is Yahuah''s gift, not the strong men''s wage; the sons of Belial are answered, but the faint two hundred are *my brethren*, victims of their own weariness, not enemies to be cut off.\n\nThen the ruling: *For who will hearken unto you in this matter? but as his part is that goeth down to the battle, so shall his part be that tarrieth by the stuff: they shall part alike* (1 Samuel 30:24). *And it was so from that day forward, that he made it a statute and an ordinance for Yashar''el (Israel) unto this day* (1 Samuel 30:25). This is no novelty -- it is the Torah law of the spoil: *divide the prey into two parts; between them that took the war upon them, who went out to battle, and between all the congregation* (Numbers 31:27); *divide the spoil of your enemies with your brethren* (Joshua 22:8). The man after Yahuah''s heart governs by the statute already given.\n\nIt is the kingdom-pattern, and the New Covenant lives by it. The Philippians who could not stand on the field with Paul yet shared his labour and reward: *ye have well done, that ye did communicate with my affliction* (Philippians 4:14); the fellowship *as concerning giving and receiving* (Philippians 4:15) is the same grace. Those who tarry by the stuff and those who go down to battle are one body; *they shall part alike*, because every member shares the one victory.',
+       sv.verse_id, ev.verse_id, 'free', 37134
+  FROM _s340_1sa30_lookup sv, _s340_1sa30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=30 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-30-a-present-of-the-spoil-unto-the-elders-of-yahudah',
+       E'A Present of the Spoil Unto the Elders of Yahudah',
+       E'The equal portion does not stop at David''s own men; it reaches out to the whole house of Yahudah. *And when David came to Ziklag, he sent of the spoil unto the elders of Yahudah (Judah), even to his friends, saying, Behold a present for you of the spoil of the enemies of Yahuah (LORD)* (1 Samuel 30:26). The list that follows -- Beth-el, Ramoth, Jattir, Aroer, Hebron, and the rest (30:27-31) -- is the king-in-waiting binding the elders to himself by grace, sending the spoil down through every city where he had been.\n\nThis is the same charge Joshua laid on the tribes returning home: *Return with much riches unto your tents... divide the spoil of your enemies with your brethren* (Joshua 22:8). David calls the spoil *a present... of the spoil of the enemies of Yahuah (LORD)* -- the victory was Yahuah''s, the enemies were Yahuah''s enemies, and so the spoil is shared, not hoarded. The one who will shepherd both houses already governs Yahudah by the open hand, dividing with his brethren what Yahuah gave.',
+       sv.verse_id, ev.verse_id, 'free', 37137
+  FROM _s340_1sa30_lookup sv, _s340_1sa30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=30 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- THREAD 1: but-david-encouraged-himself-in-yahuah-his-elohim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I had fainted, unless I had believed to see the goodness of Yahuah (LORD) in the land of the living* (Psalm 27:13) -- the faith underneath the strengthening; David would have fainted but for belief.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=27 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Wait on Yahuah (LORD): be of good courage, and he shall strengthen thine heart* (Psalm 27:14) -- David''s own psalm commands the very act: Yahuah strengthens the heart, not the man himself.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=27 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*What time I am afraid, I will trust in thee* (Psalm 56:3) -- the psalm born when the Philistines took him in Gath; fear answered by the deliberate turning of the soul to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=56 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Although the fig tree shall not blossom... there shall be no herd in the stalls* (Habakkuk 3:17) -- the prophet names the moment of total loss; Ziklag burned to the ground.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Yet I will rejoice in Yahuah (LORD), I will joy in the Elohim (God) of my salvation* (Habakkuk 3:18) -- the *yet* of Habakkuk is the *but* of David: joy in the Giver when the gift is gone.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Jonathan... strengthened his hand in Elohim (God)* (1 Samuel 23:16) -- once a friend did it for him; now, standing alone, David strengthens himself in the same Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=23 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*I can do all things through Messiah (Christ) which strengtheneth me* (Philippians 4:13) -- the New-Covenant voice of the same act; strength *through* the Formed Son, never the man''s own.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*My grace is sufficient for thee: for my strength is made perfect in weakness* (2 Corinthians 12:9) -- the lowest place is the appointed place for this strength; the emptied man is filled.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-but-david-encouraged-himself-in-yahuah-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: he-enquired-at-yahuah-pursue-and-recover-all
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he said to Abiathar the priest, Bring hither the ephod* (1 Samuel 23:9) -- the same priest, the same instrument, the same settled habit of the anointed in every crisis.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=7
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=23 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-he-enquired-at-yahuah-pursue-and-recover-all'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*tell thy servant. And Yahuah (LORD) said, He will come down* (1 Samuel 23:11) -- as at Keilah, so at Ziklag; the Formed Son answers his servant by the ephod.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=8
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=23 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-he-enquired-at-yahuah-pursue-and-recover-all'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*One thing have I desired of Yahuah (LORD)... to enquire in his temple* (Psalm 27:4) -- David sings the posture he lives: the anointed who seeks the Voice before the sword.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=8
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=27 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-he-enquired-at-yahuah-pursue-and-recover-all'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: and-david-recovered-all-nothing-lacking
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I had fainted, unless I had believed to see the goodness of Yahuah (LORD) in the land of the living* (Psalm 27:13) -- the goodness David believed he would see is the total recovery of verse 19.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=19
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=27 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-and-david-recovered-all-nothing-lacking'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*But my Elohim (God) shall supply all your need* (Philippians 4:19) -- the Yahuah who restored every soul and thing at Ziklag fills the need of his own to the full.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=19
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=4 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-and-david-recovered-all-nothing-lacking'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: they-shall-part-alike-the-equal-portion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*divide the prey into two parts; between them that... went out to battle, and between all the congregation* (Numbers 31:27) -- the Torah law of the spoil; David rules by the statute already given.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-they-shall-part-alike-the-equal-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*divide the spoil of your enemies with your brethren* (Joshua 22:8) -- Joshua had already commanded the same grace; the victory belongs to the whole people.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=22 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-they-shall-part-alike-the-equal-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ye did communicate with my affliction* (Philippians 4:14) -- those who could not stand on the field yet shared the labour and reward; the equal portion made plain.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-they-shall-part-alike-the-equal-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*as concerning giving and receiving, but ye only* (Philippians 4:15) -- the fellowship of giving and going joined in one work and one reward; the kingdom-pattern of the shared spoil.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=4 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-they-shall-part-alike-the-equal-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5: a-present-of-the-spoil-unto-the-elders-of-yahudah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*divide the spoil of your enemies with your brethren* (Joshua 22:8) -- David does for the elders of Yahudah what Joshua charged the tribes; the spoil shared, not hoarded.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=30 AND sv.verse_number=26
+  JOIN _s340_1sa30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=22 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-30-a-present-of-the-spoil-unto-the-elders-of-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_31.sql (1 Samuel 31) -----
+--
+-- Chapter: 1 Samuel 31 — the death of Saul on mount Gilboa (the final chapter)
+-- Tag: 1sa31   View: _s340_1sa31_lookup
+-- Sort band: base 37150, step 3  (37150, 37153, 37156, 37159, 37162)
+--
+-- 1 Samuel 31 coverage:
+--   v.1-6  (Yashar'el routed; Jonathan/Abinadab/Malchi-shua slain; Saul falls on his sword; "So Saul died")
+--          NT:     none warranted
+--          Extras: none warranted (Jasher's Saul-death material is mis-numbered/run-together in this parse)
+--          Tanakh: 1 Chronicles 10:1-6 (the parallel account, word for word); 1 Samuel 28:19 (Samuel's
+--                  word at Endor fulfilled: "to morrow shalt thou and thy sons be with me"); 1 Samuel 15:28
+--                  / 28:17 (the kingdom rent, given to David); Hosea 13:11 (I gave thee a king in mine anger,
+--                  and took him away in my wrath)
+--   v.4    (the uncircumcised; the suicide on his own sword) -> folded into the death threads
+--   v.7-10 (cities forsaken; head cut off; armour in house of Ashtaroth; body fastened to Beth-shan)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Chronicles 10:8-10 (parallel: head in temple of Dagon); 2 Samuel 1:19-20 (the
+--                  lamentation — tell it not in Gath, lest the daughters of the Philistines rejoice)
+--   v.11-13 (the valiant men of Jabesh-gilead recover the bodies, burn/bury, fast seven days)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 11:1-11 (Saul's deliverance of Jabesh-gilead — the kindness now repaid);
+--                  2 Samuel 2:4-7 (David blesses the men of Jabesh for this kindness shewed to Saul);
+--                  2 Samuel 21:12-14 (David takes the bones from Jabesh to the sepulchre of Kish)
+--   The throne passing:
+--          Tanakh: 2 Samuel 1:1-17 (David hears of the death and laments); 2 Samuel 2:4 (men of Yahudah
+--                  anoint David king) — the kingdom moves to the line of promise
+--
+-- The DIVINE VERDICT on Saul's reign (1 Chr 10:13-14) is the interpretive spine — the Chronicler's
+-- inspired commentary: Saul died for his transgression and for asking counsel of a familiar spirit.
+--
+-- Threads (4):
+--   1-samuel-31-so-saul-died-the-parallel-and-the-verdict-of-the-chronicler   [Tanakh] free
+--   1-samuel-31-the-rejected-king-the-kingdom-passes-from-saul-to-david       [Tanakh] free
+--   1-samuel-31-the-word-at-endor-fulfilled-tomorrow-with-me                  [Tanakh] free
+--   1-samuel-31-the-valiant-men-of-jabesh-gilead-the-kindness-repaid          [Tanakh] free
+--
+-- Contested/load-bearing framing:
+--   * Saul's death is NOT victims-not-enemies for the system of rebellion he embodied: 1 Chr 10:13-14
+--     is the inspired verdict — he died "for his transgression... and for asking counsel of one that had
+--     a familiar spirit," the Torah-named capital sin (Lev 20:6; Deut 18:10-12). The kingdom is taken
+--     away (Hosea 13:11) and turned to David — the line that carries the seed of promise toward the Branch.
+--   * The men of Jabesh-gilead are the loyal-love counter-melody: covenant kindness (chesed) repaid for
+--     Saul's old deliverance of them (ch 11). David himself names it kindness and truth (2 Sam 2:5-6).
+--   * No theophany/Christology hook in the chapter itself; the Formed/Formless lens does not force here.
+
+CREATE TEMP VIEW _s340_1sa31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: so Saul died — the parallel and the verdict of the Chronicler
+    ('canon','1-samuel',31,1,'canon','1-chronicles',10,1,'free',
+     E'*Now the Philistines fought against Yashar''el (Israel); and the men of Yashar''el (Israel) fled from before the Philistines, and fell down slain in mount Gilboa* (1 Chronicles 10:1). The Chronicler retells the rout word for word, that *the men of Yashar''el (Israel) fled from before the Philistines, and fell down slain in mount Gilboa* (1 Samuel 31:1) — the same battle, the same mountain, set down twice so the verdict that follows in Chronicles cannot be missed.'),
+    ('canon','1-samuel',31,2,'canon','1-chronicles',10,2,'free',
+     E'*And the Philistines followed hard after Saul, and after his sons; and the Philistines slew Jonathan, and Abinadab, and Malchi-shua, the sons of Saul* (1 Chronicles 10:2). The house of Saul falls together: *the Philistines slew Jonathan, and Abinadab, and Malchi-shua, Saul''s sons* (1 Samuel 31:2). Jonathan, who loved David as his own soul, dies with his father — the throne will not pass through Saul''s line.'),
+    ('canon','1-samuel',31,4,'canon','1-chronicles',10,4,'free',
+     E'*Then said Saul to his armourbearer, Draw thy sword, and thrust me through therewith; lest these uncircumcised come and abuse me. But his armourbearer would not; for he was sore afraid. So Saul took a sword, and fell upon it* (1 Chronicles 10:4). The same dreadful end: *Therefore Saul took a sword, and fell upon it* (1 Samuel 31:4). The king who once stood head and shoulders above the people falls by his own hand, fearing the uncircumcised more than he had feared Yahuah (LORD).'),
+    ('canon','1-samuel',31,6,'canon','1-chronicles',10,6,'free',
+     E'*So Saul died, and his three sons, and all his house died together* (1 Chronicles 10:6). The dynasty is cut off in a single day: *So Saul died, and his three sons, and his armourbearer, and all his men, that same day together* (1 Samuel 31:6). The Chronicler then unfolds why.'),
+    ('canon','1-samuel',31,6,'canon','1-chronicles',10,13,'free',
+     E'*So Saul died for his transgression which he committed against Yahuah (LORD), even against the word of Yahuah (LORD), which he kept not, and also for asking counsel of one that had a familiar spirit, to enquire of it* (1 Chronicles 10:13). Here is the inspired verdict on the bare report *So Saul died... that same day together* (1 Samuel 31:6): not the chance of war but the harvest of rebellion — the word of Yahuah unkept (1 Samuel 15:23) and the familiar spirit sought at Endor (1 Samuel 28:7), the Torah-named capital sin.'),
+    ('canon','1-samuel',31,6,'canon','1-chronicles',10,14,'free',
+     E'*And enquired not of Yahuah (LORD): therefore he slew him, and turned the kingdom unto David the son of Jesse* (1 Chronicles 10:14). The death of Saul is also the turning of the throne: the same hand that *slew him* for not enquiring of Yahuah *turned the kingdom unto David the son of Jesse.* The fall of the rejected king (1 Samuel 31:6) is the rising of the man after Yahuah''s own heart.'),
+    ('canon','1-samuel',31,9,'canon','1-chronicles',10,9,'free',
+     E'*And when they had stripped him, they took his head, and his armour, and sent into the land of the Philistines round about, to carry tidings unto their idols, and to the people* (1 Chronicles 10:9). The parallel of the desecration: *they cut off his head, and stripped off his armour, and sent into the land of the Philistines round about, to publish it in the house of their idols* (1 Samuel 31:9) — the king of Yahuah''s people made a trophy proclaimed in the temples of dead gods.'),
+    ('canon','1-samuel',31,10,'canon','1-chronicles',10,10,'free',
+     E'*And they put his armour in the house of their gods, and fastened his head in the temple of Dagon* (1 Chronicles 10:10). The armour hung as an offering to idols: *they put his armour in the house of Ashtaroth: and they fastened his body to the wall of Beth-shan* (1 Samuel 31:10). The two accounts together — head in the temple of Dagon, body on the wall of Beth-shan — show the full shame from which Jabesh-gilead will rescue him.'),
+
+    -- THREAD 2: the rejected king — the kingdom passes from Saul to David
+    ('canon','1-samuel',31,6,'canon','1-samuel',15,28,'free',
+     E'*And Samuel said unto him, Yahuah (LORD) hath rent the kingdom of Yashar''el (Israel) from thee this day, and hath given it to a neighbour of thine, that is better than thou* (1 Samuel 15:28). The torn mantle is now the torn dynasty: *So Saul died, and his three sons... that same day together* (1 Samuel 31:6). What Samuel pronounced over the spared Amalekite spoil comes to its end on Gilboa — the kingdom rent and given to the better neighbour, David.'),
+    ('canon','1-samuel',31,6,'canon','1-samuel',28,19,'free',
+     E'*Moreover Yahuah (LORD) will also deliver Yashar''el (Israel) with thee into the hand of the Philistines: and to morrow shalt thou and thy sons be with me* (1 Samuel 28:19). The word spoken the night before is now the day''s history: *So Saul died, and his three sons... that same day together* (1 Samuel 31:6). The morrow came exactly as Samuel said — Saul and his sons fallen, Yashar''el delivered into the hand of the Philistines.'),
+    ('canon','1-samuel',31,6,'canon','hosea',13,11,'free',
+     E'*I gave thee a king in mine anger, and took him away in my wrath* (Hosea 13:11). Hosea names the meaning of Gilboa from the height of prophecy: the king the people demanded *Give me a king and princes?* (Hosea 13:10) was given in anger and taken away in wrath. *So Saul died... that same day together* (1 Samuel 31:6) is that taking-away — the rejected king removed so the throne of promise might pass to David.'),
+    ('canon','1-samuel',31,7,'canon','2-samuel',1,20,'free',
+     E'*Tell it not in Gath, publish it not in the streets of Askelon; lest the daughters of the Philistines rejoice, lest the daughters of the uncircumcised triumph* (2 Samuel 1:20). The very thing David dreads in his lament has already happened — *the Philistines came and dwelt in them* (1 Samuel 31:7), the cities of Yashar''el forsaken and the daughters of the Philistines triumphing over the fallen king.'),
+
+    -- THREAD 3: the word at Endor fulfilled — to morrow with me
+    ('canon','1-samuel',31,2,'canon','1-samuel',28,19,'free',
+     E'*to morrow shalt thou and thy sons be with me: Yahuah (LORD) also shall deliver the host of Yashar''el (Israel) into the hand of the Philistines* (1 Samuel 28:19). Samuel''s word from beyond the grave names the sons by their fate before the battle: *the Philistines slew Jonathan, and Abinadab, and Malchi-shua, Saul''s sons* (1 Samuel 31:2). The sons fell with the father on the morrow, exactly as foretold at Endor.'),
+    ('canon','1-samuel',31,3,'canon','1-samuel',28,6,'free',
+     E'*And when Saul enquired of Yahuah (LORD), Yahuah (LORD) answered him not, neither by dreams, nor by Urim, nor by prophets* (1 Samuel 28:6). The silence of heaven before the battle is answered now by the arrows of the enemy: *the battle went sore against Saul, and the archers hit him; and he was sore wounded* (1 Samuel 31:3). The king who could get no word from Yahuah is hemmed in with no deliverance.'),
+    ('canon','1-samuel',31,4,'canon','1-chronicles',10,13,'free',
+     E'*So Saul died for his transgression which he committed against Yahuah (LORD)... and also for asking counsel of one that had a familiar spirit, to enquire of it* (1 Chronicles 10:13). Saul''s last act — *Saul took a sword, and fell upon it* (1 Samuel 31:4) — is sealed by the Chronicler''s charge: the same king who *disguised himself* to seek the woman at Endor (1 Samuel 28:8) now falls on his own sword, the familiar-spirit sin and the self-slaughter the bitter end of one road.'),
+
+    -- THREAD 4: the valiant men of Jabesh-gilead — the kindness repaid
+    ('canon','1-samuel',31,11,'canon','1-samuel',11,1,'free',
+     E'*Then Nahash the Ammonite came up, and encamped against Jabesh-gilead: and all the men of Jabesh said unto Nahash, Make a covenant with us, and we will serve thee* (1 Samuel 11:1). The men who now risk all for Saul''s body are the men he once saved: *when the inhabitants of Jabesh-gilead heard of that which the Philistines had done to Saul* (1 Samuel 31:11), they remember the day Nahash threatened to thrust out their right eyes and Saul delivered them.'),
+    ('canon','1-samuel',31,11,'canon','1-samuel',11,11,'free',
+     E'*And it was so on the morrow, that Saul put the people in three companies; and they came into the midst of the host in the morning watch, and slew the Ammonites until the heat of the day* (1 Samuel 11:11). This was Saul''s first deliverance, when the Spirit of Elohim (God) came upon him for Jabesh-gilead. Now the debt of that rescue is paid: *the inhabitants of Jabesh-gilead heard of that which the Philistines had done to Saul* (1 Samuel 31:11) and rose to bring him home.'),
+    ('canon','1-samuel',31,12,'canon','2-samuel',2,5,'free',
+     E'*And David sent messengers unto the men of Jabesh-gilead, and said unto them, Blessed be ye of Yahuah (LORD), that ye have shewed this kindness unto your lord, even unto Saul, and have buried him* (2 Samuel 2:5). David himself names the night-march of the valiant men as covenant kindness: *the valiant men arose, and went all night, and took the body of Saul and the bodies of his sons from the wall of Beth-shan* (1 Samuel 31:12). What looked like loss is honoured as chesed by the king who succeeds Saul.'),
+    ('canon','1-samuel',31,12,'canon','2-samuel',2,6,'free',
+     E'*And now Yahuah (LORD) shew kindness and truth unto you: and I also will requite you this kindness, because ye have done this thing* (2 Samuel 2:6). David promises to repay the very kindness the men of Jabesh shewed: their burning of the bodies *there* and their loyalty to the fallen king (1 Samuel 31:12) is met by the new king''s blessing — kindness answering kindness across the turning of the throne.'),
+    ('canon','1-samuel',31,13,'canon','2-samuel',21,12,'free',
+     E'*And David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh-gilead, which had stolen them from the street of Beth-shan, where the Philistines had hanged them* (2 Samuel 21:12). The bones buried *under a tree at Jabesh* (1 Samuel 31:13) are not the end of the story: David will gather them with reverence and lay them at last in the sepulchre of Kish, Saul''s father — the rejected king given an honourable rest.'),
+    ('canon','1-samuel',31,13,'canon','2-samuel',21,14,'free',
+     E'*And the bones of Saul and Jonathan his son buried they in the country of Benjamin in Zelah, in the sepulchre of Kish his father: and they performed all that the king commanded. And after that Elohim (God) was intreated for the land* (2 Samuel 21:14). The seven-day fast at Jabesh (*buried them under a tree at Jabesh, and fasted seven days*, 1 Samuel 31:13) finds its completion when David brings the bones to their fathers'' tomb and the land is at peace.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-31-so-saul-died-the-parallel-and-the-verdict-of-the-chronicler',
+  E'So Saul died — the parallel and the verdict of the Chronicler',
+  E'The last chapter of 1 Samuel is reported again almost word for word in 1 Chronicles 10, and the Chronicler adds the inspired verdict the narrator here withholds. The rout is the same: *Now the Philistines fought against Yashar''el (Israel); and the men of Yashar''el (Israel) fled from before the Philistines, and fell down slain in mount Gilboa* (1 Chronicles 10:1; cf. 1 Samuel 31:1). The house falls the same: *the Philistines slew Jonathan, and Abinadab, and Malchi-shua, the sons of Saul* (1 Chronicles 10:2; cf. 31:2) — Jonathan, who loved David as his own soul, dying with his father so the throne cannot pass through Saul''s line. The death is the same: *Saul took a sword, and fell upon it* (1 Chronicles 10:4; cf. 31:4), and *So Saul died, and his three sons, and all his house died together* (1 Chronicles 10:6; cf. 31:6, *and his armourbearer, and all his men, that same day together*). Then comes the word that interprets all of it: *So Saul died for his transgression which he committed against Yahuah (LORD), even against the word of Yahuah (LORD), which he kept not, and also for asking counsel of one that had a familiar spirit, to enquire of it; And enquired not of Yahuah (LORD): therefore he slew him, and turned the kingdom unto David the son of Jesse* (1 Chronicles 10:13-14). This is not the chance of battle but the harvest of rebellion — the word of Yahuah unkept (1 Samuel 15:23) and the familiar spirit sought at Endor (1 Samuel 28:7), the Torah-named capital sin. The desecration the Chronicler records — *they took his head, and his armour... they put his armour in the house of their gods, and fastened his head in the temple of Dagon* (1 Chronicles 10:9-10; cf. 31:9-10, *the house of Ashtaroth... the wall of Beth-shan*) — is the full shame from which Jabesh-gilead will rescue the body. The two accounts read together give both the fact and its meaning: the rejected king dies, and the kingdom is turned to David.',
+  sv.verse_id, ev.verse_id, 'free', 37150
+  FROM _s340_1sa31_lookup sv, _s340_1sa31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=31 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-31-the-rejected-king-the-kingdom-passes-from-saul-to-david',
+  E'The rejected king — the kingdom passes from Saul to David',
+  E'The death on Gilboa is the long-foretold end of the rejected king. When Saul spared Agag and the Amalekite spoil, Samuel pronounced the sentence: *Yahuah (LORD) hath rent the kingdom of Yashar''el (Israel) from thee this day, and hath given it to a neighbour of thine, that is better than thou* (1 Samuel 15:28). The torn mantle becomes the torn dynasty when *So Saul died, and his three sons... that same day together* (1 Samuel 31:6). The night before the battle the word was made specific from beyond the grave: *Yahuah (LORD) will also deliver Yashar''el (Israel) with thee into the hand of the Philistines: and to morrow shalt thou and thy sons be with me* (1 Samuel 28:19) — and the morrow came exactly so. Hosea names the meaning from the height of prophecy: the king the people had demanded, *Give me a king and princes?* (Hosea 13:10), was *given... in mine anger, and took him away in my wrath* (Hosea 13:11). The taking-away is Gilboa. Even the shame David dreads in his lament has already fallen: *the Philistines came and dwelt in them* (1 Samuel 31:7), the cities forsaken and *the daughters of the Philistines* given cause to *rejoice* (2 Samuel 1:20). Yet the kingdom is not lost to Yashar''el — it is moved. The same Chronicler''s word that records the death adds, *therefore he slew him, and turned the kingdom unto David the son of Jesse* (1 Chronicles 10:14). The throne passes to the man after Yahuah''s own heart, the line that will carry the seed of promise toward the Branch and great David''s greater Son.',
+  sv.verse_id, ev.verse_id, 'free', 37153
+  FROM _s340_1sa31_lookup sv, _s340_1sa31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=31 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=31 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-31-the-word-at-endor-fulfilled-tomorrow-with-me',
+  E'The word at Endor fulfilled — to morrow with me',
+  E'Everything that happens on Gilboa was spoken the night before at Endor, and the chapter is its fulfilment. Saul had gone to a woman with a familiar spirit because heaven had fallen silent: *when Saul enquired of Yahuah (LORD), Yahuah (LORD) answered him not, neither by dreams, nor by Urim, nor by prophets* (1 Samuel 28:6) — and that same silence becomes the arrows that find him: *the battle went sore against Saul, and the archers hit him; and he was sore wounded* (1 Samuel 31:3). Samuel''s word from beyond the grave had named the sons by their fate: *to morrow shalt thou and thy sons be with me: Yahuah (LORD) also shall deliver the host of Yashar''el (Israel) into the hand of the Philistines* (1 Samuel 28:19) — and so *the Philistines slew Jonathan, and Abinadab, and Malchi-shua, Saul''s sons* (1 Samuel 31:2). The end of Saul''s own hand, *Saul took a sword, and fell upon it* (1 Samuel 31:4), is sealed by the Chronicler''s charge: *So Saul died for his transgression... and also for asking counsel of one that had a familiar spirit, to enquire of it* (1 Chronicles 10:13). The king who *disguised himself* to seek the dead at Endor (1 Samuel 28:8) falls on his own sword the next day — the familiar-spirit sin (forbidden in Torah, Leviticus 20:6; Deuteronomy 18:10-12) and the self-slaughter the bitter end of one road. The word stood; the morrow came.',
+  sv.verse_id, ev.verse_id, 'free', 37156
+  FROM _s340_1sa31_lookup sv, _s340_1sa31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=31 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=31 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-31-the-valiant-men-of-jabesh-gilead-the-kindness-repaid',
+  E'The valiant men of Jabesh-gilead — the kindness repaid',
+  E'Against the dark verdict on Saul''s reign runs a counter-melody of loyal love. When the body of the king hangs in shame on the wall of Beth-shan, it is not David''s mighty men but the men of Jabesh-gilead who come: *when the inhabitants of Jabesh-gilead heard of that which the Philistines had done to Saul; All the valiant men arose, and went all night, and took the body of Saul and the bodies of his sons from the wall of Beth-shan... and buried them under a tree at Jabesh, and fasted seven days* (1 Samuel 31:11-13). These are the very men Saul once saved. In his first act as king, when *Nahash the Ammonite came up, and encamped against Jabesh-gilead* (1 Samuel 11:1) and threatened to thrust out every right eye, the Spirit of Elohim (God) came upon Saul and *they came into the midst of the host in the morning watch, and slew the Ammonites until the heat of the day* (1 Samuel 11:11). Now the debt of that rescue is paid — covenant kindness (chesed) returned to the deliverer in his death. David himself names it so: *Blessed be ye of Yahuah (LORD), that ye have shewed this kindness unto your lord, even unto Saul, and have buried him... I also will requite you this kindness, because ye have done this thing* (2 Samuel 2:5-6). And the seven-day fast under the tree is not the last word over those bones: *David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh-gilead* (2 Samuel 21:12) and laid them at last *in the sepulchre of Kish his father... And after that Elohim (God) was intreated for the land* (2 Samuel 21:14). Loyalty answers deliverance, and the rejected king is given an honourable rest.',
+  sv.verse_id, ev.verse_id, 'free', 37159
+  FROM _s340_1sa31_lookup sv, _s340_1sa31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=31 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=31 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (31,1,'canon','1-chronicles',10,1,1,E'1 Chronicles 10:1 — *the men of Yashar''el (Israel) fled from before the Philistines, and fell down slain in mount Gilboa:* the parallel rout, word for word.'),
+    (31,2,'canon','1-chronicles',10,2,2,E'1 Chronicles 10:2 — *the Philistines slew Jonathan, and Abinadab, and Malchi-shua, the sons of Saul:* the house of Saul falls together.'),
+    (31,4,'canon','1-chronicles',10,4,3,E'1 Chronicles 10:4 — *Saul took a sword, and fell upon it:* the same suicide on the field of Gilboa.'),
+    (31,6,'canon','1-chronicles',10,6,4,E'1 Chronicles 10:6 — *So Saul died, and his three sons, and all his house died together:* the dynasty cut off in a day.'),
+    (31,6,'canon','1-chronicles',10,13,5,E'1 Chronicles 10:13 — *So Saul died for his transgression... and also for asking counsel of one that had a familiar spirit:* the inspired verdict on the death.'),
+    (31,6,'canon','1-chronicles',10,14,6,E'1 Chronicles 10:14 — *therefore he slew him, and turned the kingdom unto David the son of Jesse:* the fall of Saul is the turning of the throne.'),
+    (31,9,'canon','1-chronicles',10,9,7,E'1 Chronicles 10:9 — *they took his head, and his armour... to carry tidings unto their idols:* the parallel desecration.'),
+    (31,10,'canon','1-chronicles',10,10,8,E'1 Chronicles 10:10 — *they put his armour in the house of their gods, and fastened his head in the temple of Dagon:* head in Dagon''s temple, body on Beth-shan''s wall.')
+  ) AS m(srcv_n,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='1-samuel-31-so-saul-died-the-parallel-and-the-verdict-of-the-chronicler'
+  JOIN _s340_1sa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=31 AND sv.verse_number=m.srcv
+  JOIN _s340_1sa31_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (31,6,'canon','1-samuel',15,28,1,E'1 Samuel 15:28 — *Yahuah (LORD) hath rent the kingdom of Yashar''el (Israel) from thee this day, and hath given it to a neighbour... better than thou:* the sentence now ended on Gilboa.'),
+    (31,6,'canon','1-samuel',28,19,2,E'1 Samuel 28:19 — *to morrow shalt thou and thy sons be with me:* the night-before word made the day''s history.'),
+    (31,6,'canon','hosea',13,11,3,E'Hosea 13:11 — *I gave thee a king in mine anger, and took him away in my wrath:* the prophet names Gilboa as the taking-away of the demanded king.'),
+    (31,7,'canon','2-samuel',1,20,4,E'2 Samuel 1:20 — *lest the daughters of the Philistines rejoice:* the shame David dreads has already fallen as the Philistines dwell in the forsaken cities.')
+  ) AS m(srcv_n,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='1-samuel-31-the-rejected-king-the-kingdom-passes-from-saul-to-david'
+  JOIN _s340_1sa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=31 AND sv.verse_number=m.srcv
+  JOIN _s340_1sa31_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (31,2,'canon','1-samuel',28,19,1,E'1 Samuel 28:19 — *to morrow shalt thou and thy sons be with me:* the sons named by their fate before the battle, fulfilled in 31:2.'),
+    (31,3,'canon','1-samuel',28,6,2,E'1 Samuel 28:6 — *Yahuah (LORD) answered him not, neither by dreams, nor by Urim, nor by prophets:* the silence of heaven becomes the arrows that wound him.'),
+    (31,4,'canon','1-chronicles',10,13,3,E'1 Chronicles 10:13 — *for asking counsel of one that had a familiar spirit:* the Endor sin and the self-slaughter the bitter end of one road.')
+  ) AS m(srcv_n,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='1-samuel-31-the-word-at-endor-fulfilled-tomorrow-with-me'
+  JOIN _s340_1sa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=31 AND sv.verse_number=m.srcv
+  JOIN _s340_1sa31_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (31,11,'canon','1-samuel',11,1,1,E'1 Samuel 11:1 — *Nahash the Ammonite came up, and encamped against Jabesh-gilead:* the men Saul once saved are the men who now recover his body.'),
+    (31,11,'canon','1-samuel',11,11,2,E'1 Samuel 11:11 — *they... slew the Ammonites until the heat of the day:* Saul''s first deliverance, the debt now repaid.'),
+    (31,12,'canon','2-samuel',2,5,3,E'2 Samuel 2:5 — *Blessed be ye of Yahuah (LORD), that ye have shewed this kindness unto your lord, even unto Saul:* David names the night-march as covenant chesed.'),
+    (31,12,'canon','2-samuel',2,6,4,E'2 Samuel 2:6 — *I also will requite you this kindness:* the new king answers kindness with kindness.'),
+    (31,13,'canon','2-samuel',21,12,5,E'2 Samuel 21:12 — *David went and took the bones of Saul... from the men of Jabesh-gilead:* the bones gathered with reverence.'),
+    (31,13,'canon','2-samuel',21,14,6,E'2 Samuel 21:14 — *buried they in... the sepulchre of Kish his father... And after that Elohim (God) was intreated for the land:* the rejected king given an honourable rest.')
+  ) AS m(srcv_n,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='1-samuel-31-the-valiant-men-of-jabesh-gilead-the-kindness-repaid'
+  JOIN _s340_1sa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=31 AND sv.verse_number=m.srcv
+  JOIN _s340_1sa31_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session340 — 1 Samuel cross-references complete.'
