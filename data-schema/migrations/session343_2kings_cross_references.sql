@@ -4063,6 +4063,1601 @@ SELECT t.id, cr.id, 6, E'2 Kings 15:29 -> Matthew 4:16 — *The people which sat
  WHERE t.slug='2-kings-15-the-first-assyrian-deportation-of-the-northern-tribes'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_2-kings_16.sql (2 Kings 16) -----
+-- Book: 2 Kings  Chapter: 16  Tag: 2ki16  View: _s343_2ki16_lookup
+-- Sort band: base 38875, step 3 -> 38875, 38878, 38881
+-- Source rows all: 'canon','2-kings',16,v
+--
+-- 2 Kings 16 coverage:
+--   v.3  (made his son pass through the fire / abominations of the heathen)
+--        NT:     none warranted (the Torah anchors carry it)
+--        Extras: none warranted
+--        Tanakh: Lev 18:21 (seed pass through fire to Molech); Deut 18:10 (none that maketh his son pass through fire);
+--                Ps 106:37,38 (sacrificed sons/daughters unto devils, innocent blood); Jer 7:31 (Tophet, burn sons in fire);
+--                2 Chron 28:3 (burnt his children in the fire) -> THREAD 1
+--   v.4  (high places, hills, every green tree) -> folded into thread 1 framing (Deut 12 idolatry pattern), members in thread 3 setting
+--   v.5  (Rezin + Pekah besiege Jerusalem) -> Isa 7:1 (the Syro-Ephraimite war, setting of the Immanuel sign);
+--                2 Chron 28:5,6 parallel -> THREAD 2
+--   v.7  (Ahaz hires Tiglath-pileser, I am thy servant) -> Isa 7:9 (if ye will not believe, ye shall not be established);
+--                Isa 8:6 (refuseth the waters of Shiloah, rejoice in Rezin); 2 Chron 28:16 (sent to Assyria for help) -> THREAD 2
+--   v.8  (stripped temple silver/gold for Assyria) -> Isa 7:14 (the sign of Immanuel Ahaz refused); Matt 1:23 (Emmanuel fulfilled);
+--                Isa 8:7,8 (the king of Assyria, the river overflowing) -> THREAD 2
+--   v.10-11 (saw altar at Damascus, Urijah builds a copy) -> Deut 12:30,31 (enquire not after their gods, foreign pattern) -> THREAD 3
+--   v.14 (removed the brasen altar of Yahuah) -> 2 Chron 28:23,24 (sacrificed to gods of Damascus, shut house of Yahuah) -> THREAD 3
+--   v.15 (king commands Urijah, the brasen altar for me to enquire by) -> Deut 18:10-11 enquiry/divination tie + 2 Chron 28:24 -> THREAD 3
+--   v.1,2,6,9,12,13,16,17,18,19,20  NT/Extras/Tanakh: none warranted (regnal frame, war detail, burial formula)
+--
+-- THREADS:
+--   2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination   (Tanakh: Lev/Deut/Ps/Jer/2Chron)  tier free
+--   2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused      (Tanakh: Isa/2Chron + NT: Matt)   tier free
+--   2-kings-16-the-altar-of-damascus-worship-corrupted-by-the-foreign-pattern    (Tanakh: Deut/2Chron)            tier free
+--
+-- Contested/load-bearing framing: 16:3 is read as Torah TRANSGRESSED, not Torah as burden — Lev 18:21 and Deut 18:10
+-- forbid the Molech fire outright; the king stands UNDER the Torah, not above it. 16:14 Immanuel context: the Formed
+-- Son's sign (Isa 7:14 / Matt 1:23, Elohim with us) is given exactly when Ahaz will not trust — the alliance with
+-- Assyria is the unbelief the prophet names, not a neutral policy. 16:10-18 the Damascus altar = the heathen pattern
+-- (Deut 12:30-31) entering the very house of Yahuah, the worship Yahuah hates done in his own name.
+
+CREATE TEMP VIEW _s343_2ki16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Molech fire (16:3 / 16:4)
+    ('canon','2-kings',16,3,'canon','leviticus',18,21,'free',
+      E'*And thou shalt not let any of thy seed pass through the fire to Molech, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 18:21). The Torah named this abomination by name centuries before Ahaz committed it. When 16:3 says he *made his son to pass through the fire, according to the abominations of the heathen*, it is reporting the breaking of a standing command — the king under the Torah, not above it; the same chapter warns *the land itself vomiteth out her inhabitants* (Lev 18:25).'),
+    ('canon','2-kings',16,3,'canon','deuteronomy',18,10,'free',
+      E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10). The exact phrase of 16:3, *made his son to pass through the fire*, is the very thing Moses forbade and bound to the abominations *of those nations* (Deut 18:9). Ahaz does after the heathen what Yahuah drove the heathen out for doing.'),
+    ('canon','2-kings',16,3,'canon','psalms',106,37,'free',
+      E'*Yea, they sacrificed their sons and their daughters unto devils* (Psalm 106:37). The Psalm sings the indictment as covenant history: the next verse, *And shed innocent blood, even the blood of their sons and of their daughters, whom they sacrificed unto the idols of Canaan: and the land was polluted with blood* (Ps 106:38), is what 16:3 enacts in Jerusalem — innocent blood the abomination of the heathen demands.'),
+    ('canon','2-kings',16,3,'canon','psalms',106,38,'free',
+      E'*And shed innocent blood, even the blood of their sons and of their daughters, whom they sacrificed unto the idols of Canaan: and the land was polluted with blood* (Psalm 106:38). Ahaz *made his son to pass through the fire* and so polluted the land with the innocent blood this Psalm names — the wrath that follows (Ps 106:40, *Therefore was the wrath of Yahuah (LORD) kindled against his people*) is the judgment hanging over 16:3.'),
+    ('canon','2-kings',16,3,'canon','jeremiah',7,31,'free',
+      E'*And they have built the high places of Tophet, which is in the valley of the son of Hinnom, to burn their sons and their daughters in the fire; which I commanded them not, neither came it into my heart* (Jeremiah 7:31). Jeremiah names the place where the fire of 16:3 burned and the verdict on it: Yahuah *commanded them not* — it was never his worship, only the heathen abomination dressed in his name.'),
+    ('canon','2-kings',16,3,'canon','2-chronicles',28,3,'free',
+      E'*Moreover he burnt incense in the valley of the son of Hinnom, and burnt his children in the fire, after the abominations of the heathen whom Yahuah (LORD) had cast out before the children of Yashar''el (Israel)* (2 Chronicles 28:3). The Chronicler''s parallel makes 16:3 worse — not *his son* only but *his children* — and locates it in the valley of Hinnom, the Tophet Jeremiah condemns.'),
+    ('canon','2-kings',16,4,'canon','deuteronomy',12,31,'free',
+      E'*Thou shalt not do so unto Yahuah Elohayka (the LORD thy God): for every abomination to Yahuah (LORD), which he hateth, have they done unto their gods; for even their sons and their daughters they have burnt in the fire to their gods* (Deuteronomy 12:31). Ahaz *sacrificed and burnt incense in the high places, and on the hills, and under every green tree* (16:4) — the very imitation of the nations'' worship Moses forbade, the abomination crowned by burning children in the fire.'),
+
+    -- THREAD 2: the faithless alliance and the Immanuel sign (16:5 / 16:7 / 16:8)
+    ('canon','2-kings',16,5,'canon','isaiah',7,1,'free',
+      E'*And it came to pass in the days of Ahaz the son of Jotham, the son of Uzziah, king of Yahudah (Judah), that Rezin the king of Syria, and Pekah the son of Remaliah, king of Yashar''el (Israel), went up toward Jerusalem to war against it, but could not prevail against it* (Isaiah 7:1). This is the same siege as 16:5 — *Then Rezin king of Syria and Pekah son of Remaliah king of Yashar''el (Israel) came up to Jerusalem to war* — the Syro-Ephraimite war that is the whole setting of the sign of Immanuel.'),
+    ('canon','2-kings',16,5,'canon','2-chronicles',28,5,'free',
+      E'*Wherefore Yahuah Elohav (the LORD his God) delivered him into the hand of the king of Syria; and they smote him, and carried away a great multitude of them captives, and brought them to Damascus. And he was also delivered into the hand of the king of Yashar''el (Israel), who smote him with a great slaughter* (2 Chronicles 28:5). The Chronicler reads the siege of 16:5 as Yahuah''s hand — the war is covenant judgment on Ahaz, two houses set against one another, north against south.'),
+    ('canon','2-kings',16,7,'canon','isaiah',7,9,'free',
+      E'*And the head of Ephraim is Samaria, and the head of Samaria is Remaliah''s son. If ye will not believe, surely ye shall not be established* (Isaiah 7:9). Yahuah offers Ahaz the very deliverance he buys from Assyria in 16:7. *If ye will not believe* is the word against the alliance: instead of trusting, Ahaz sends *I am thy servant and thy son* to Tiglath-pileser — establishing himself by Assyria rather than by faith.'),
+    ('canon','2-kings',16,7,'canon','isaiah',8,6,'free',
+      E'*Forasmuch as this people refuseth the waters of Shiloah that go softly, and rejoice in Rezin and Remaliah''s son* (Isaiah 8:6). The faithless alliance of 16:7 is the prophet''s charge of refusing the quiet waters of Yahuah for the flood of empire; the next verses bring *the king of Assyria, and all his glory* (Isa 8:7) — the very ally Ahaz hired overflowing into Judah itself.'),
+    ('canon','2-kings',16,7,'canon','2-chronicles',28,16,'free',
+      E'*At that time did king Ahaz send unto the kings of Assyria to help him* (2 Chronicles 28:16). The Chronicler''s flat verdict on the move of 16:7: in his distress Ahaz *trespass yet more against Yahuah (LORD)* (2 Chron 28:22), seeking the arm of empire instead of his Elohim.'),
+    ('canon','2-kings',16,8,'canon','isaiah',7,14,'free',
+      E'*Therefore Yahuah (Lord) himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel* (Isaiah 7:14). When Ahaz would not ask, Yahuah gave the sign anyway — *Elohim with us* — the Formed Son promised in the teeth of the king''s unbelief. Stripping the temple silver and gold for Assyria (16:8) is the unbelief; the sign of Immanuel is the answer Ahaz refused.'),
+    ('canon','2-kings',16,8,'canon','isaiah',8,7,'free',
+      E'*Now therefore, behold, Yahuah (Lord) bringeth up upon them the waters of the river, strong and many, even the king of Assyria, and all his glory: and he shall come up over all his channels, and go over all his banks* (Isaiah 8:7). The Assyria Ahaz paid in 16:8 with the gold of Yahuah''s house becomes the flood that overflows Judah to the neck (Isa 8:8, *O Immanuel*) — the hired deliverer turned into the rod of judgment.'),
+    ('canon','2-kings',16,8,'canon','matthew',1,23,'free',
+      E'*Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us* (Matthew 1:23). The sign Ahaz refused in his faithless hour is the sign the Formed Son fulfilled — *Elohim with us* in flesh. Where Ahaz trusted Assyria''s silver, the promise stood until the One who is himself the deliverance came.'),
+
+    -- THREAD 3: the altar of Damascus, foreign pattern in the house of Yahuah (16:10 / 16:14 / 16:15)
+    ('canon','2-kings',16,10,'canon','deuteronomy',12,30,'free',
+      E'*Take heed to thyself that thou be not snared by following them, after that they be destroyed from before thee; and that thou enquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise* (Deuteronomy 12:30). This is precisely Ahaz''s sin in 16:10 — he *saw an altar that was at Damascus* and sent its *fashion* and *pattern* to be copied into the temple, enquiring after the nations'' worship to do likewise.'),
+    ('canon','2-kings',16,14,'canon','2-chronicles',28,24,'free',
+      E'*And Ahaz gathered together the vessels of the house of Elohim (God), and cut in pieces the vessels of the house of Elohim (God), and shut up the doors of the house of Yahuah (LORD), and he made him altars in every corner of Jerusalem* (2 Chronicles 28:24). The Chronicler shows the full reach of removing *the brasen altar, which was before Yahuah (LORD)* (16:14): the worship of Yahuah displaced and shut up, pagan altars in its place.'),
+    ('canon','2-kings',16,15,'canon','2-chronicles',28,23,'free',
+      E'*For he sacrificed unto the gods of Damascus, which smote him: and he said, Because the gods of the kings of Syria help them, therefore will I sacrifice to them, that they may help me. But they were the ruin of him, and of all Yashar''el (Israel)* (2 Chronicles 28:23). The Damascus altar Ahaz commands Urijah to serve in 16:15 — *the brasen altar shall be for me to enquire by* — is no neutral copy: it is the altar of the gods of Damascus, the foreign pattern enthroned in Yahuah''s house, the ruin of the king.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination',
+       E'He made his son to pass through the fire — the Molech abomination the Torah forbids',
+       E'Of Ahaz it is written that he *made his son to pass through the fire, according to the abominations of the heathen, whom Yahuah (LORD) cast out from before the children of Yashar''el (Israel)* (2 Kings 16:3). This is not a king inventing a new sin; it is a king breaking a command Yahuah had already nailed down by name. *And thou shalt not let any of thy seed pass through the fire to Molech, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 18:21) — and *There shall not be found among you any one that maketh his son or his daughter to pass through the fire* (Deuteronomy 18:10). The Torah is not the burden here; the Torah is the line Ahaz crossed. The king stands under the instruction, not above it.\n\nThe Psalmist sings the same crime as covenant history: *Yea, they sacrificed their sons and their daughters unto devils, And shed innocent blood, even the blood of their sons and of their daughters, whom they sacrificed unto the idols of Canaan: and the land was polluted with blood* (Psalm 106:37,38) — and the wrath that follows (Ps 106:40) is the judgment 16:3 invites. Jeremiah names the place: *they have built the high places of Tophet, which is in the valley of the son of Hinnom, to burn their sons and their daughters in the fire; which I commanded them not, neither came it into my heart* (Jeremiah 7:31). Yahuah *commanded them not* — the fire was never his worship. The Chronicler''s parallel widens it to *burnt his children in the fire, after the abominations of the heathen* (2 Chronicles 28:3), and 16:4''s *high places, and on the hills, and under every green tree* is the very imitation Moses forbade: *for even their sons and their daughters they have burnt in the fire to their gods* (Deuteronomy 12:31). The abomination the nations were cast out for, the king of Yahudah now does.',
+       sv.verse_id, ev.verse_id, 'free', 38875
+  FROM _s343_2ki16_lookup sv, _s343_2ki16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=16 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused',
+       E'The faithless alliance — and the sign of Immanuel Ahaz refused',
+       E'*Then Rezin king of Syria and Pekah son of Remaliah king of Yashar''el (Israel) came up to Jerusalem to war: and they besieged Ahaz* (2 Kings 16:5). This siege is the whole setting of Isaiah 7: *that Rezin the king of Syria, and Pekah the son of Remaliah, king of Yashar''el (Israel), went up toward Jerusalem to war against it* (Isaiah 7:1). It is the Syro-Ephraimite war — the two houses turned against one another, north against south, which the Chronicler reads as Yahuah''s own hand of judgment: *Yahuah Elohav (the LORD his God) delivered him into the hand of the king of Syria* (2 Chronicles 28:5).\n\nInto that fear Yahuah speaks one word: *If ye will not believe, surely ye shall not be established* (Isaiah 7:9). And he presses a sign on Ahaz — but Ahaz will not ask, will not trust. So in 16:7 he sends to Assyria instead: *I am thy servant and thy son: come up, and save me*, and in 16:8 he strips *the silver and gold that was found in the house of Yahuah (LORD)* to buy the empire''s help. This is the refusal the prophet names: *this people refuseth the waters of Shiloah that go softly, and rejoice in Rezin and Remaliah''s son* (Isaiah 8:6); *At that time did king Ahaz send unto the kings of Assyria to help him* (2 Chronicles 28:16). The hired deliverer becomes the flood: *the king of Assyria... shall come up over all his channels, and go over all his banks* (Isaiah 8:7), overflowing Judah to the neck, *O Immanuel* (Isa 8:8).\n\nYet Yahuah gives the sign whether Ahaz asks or not: *Therefore Yahuah (Lord) himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel* (Isaiah 7:14) — *Elohim with us*, the Formed Son promised in the teeth of the king''s unbelief. Where Ahaz trusted Assyria''s silver, the promise stood, and it stood until the One who is himself the deliverance came: *they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us* (Matthew 1:23). The sign a faithless king refused is the sign the Formed Son fulfilled.',
+       sv.verse_id, ev.verse_id, 'free', 38878
+  FROM _s343_2ki16_lookup sv, _s343_2ki16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=16 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-16-the-altar-of-damascus-worship-corrupted-by-the-foreign-pattern',
+       E'The altar of Damascus — worship corrupted by the foreign pattern',
+       E'King Ahaz *went to Damascus to meet Tiglath-pileser king of Assyria, and saw an altar that was at Damascus: and king Ahaz sent to Urijah the priest the fashion of the altar, and the pattern of it* (2 Kings 16:10), and Urijah built the copy. This is the exact snare Moses warned against: *that thou enquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise* (Deuteronomy 12:30). Ahaz saw how the nations served their gods and did likewise — the heathen pattern carried into the very house of Yahuah.\n\nThen he displaced the true worship: he *brought also the brasen altar, which was before Yahuah (LORD), from the forefront of the house... and put it on the north side of the altar* (16:14), and commanded Urijah, *the brasen altar shall be for me to enquire by* (16:15). The Chronicler shows what this enquiring really was: *For he sacrificed unto the gods of Damascus, which smote him... that they may help me. But they were the ruin of him, and of all Yashar''el (Israel)* (2 Chronicles 28:23). The Damascus altar was no neutral copy — it was the altar of the gods of Damascus enthroned in Yahuah''s house. And so the doors of true worship were shut: *Ahaz gathered together the vessels of the house of Elohim (God), and cut in pieces the vessels of the house of Elohim (God), and shut up the doors of the house of Yahuah (LORD), and he made him altars in every corner of Jerusalem* (2 Chronicles 28:24). The king set himself above the appointed worship, and the foreign pattern in the holy place became his ruin.',
+       sv.verse_id, ev.verse_id, 'free', 38881
+  FROM _s343_2ki16_lookup sv, _s343_2ki16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=16 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- MEMBERS: THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 18:21 — *thou shalt not let any of thy seed pass through the fire to Molech*: the command Ahaz broke, named centuries before.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 18:10 — *any one that maketh his son or his daughter to pass through the fire*: the exact phrase of 16:3, bound to the abominations of the nations.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 106:37 — *they sacrificed their sons and their daughters unto devils*: the covenant history sings the crime Ahaz repeats.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 106:38 — *shed innocent blood... and the land was polluted with blood*: what passing through the fire does to the land.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Jeremiah 7:31 — *the high places of Tophet... to burn their sons and their daughters in the fire; which I commanded them not*: it was never Yahuah''s worship.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=7 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'2 Chronicles 28:3 — *burnt his children in the fire, after the abominations of the heathen*: the Chronicler''s parallel, in the valley of Hinnom.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=28 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Deuteronomy 12:31 — *their sons and their daughters they have burnt in the fire to their gods*: the high-place imitation of 16:4 Moses forbade.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=4
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-he-made-his-son-to-pass-through-the-fire-the-molech-abomination'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- MEMBERS: THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 7:1 — *Rezin the king of Syria, and Pekah... went up toward Jerusalem to war*: the same siege as 16:5, the setting of the Immanuel sign.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 28:5 — *Yahuah Elohav (the LORD his God) delivered him into the hand of the king of Syria*: the siege as covenant judgment, two houses at war.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=28 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 7:9 — *If ye will not believe, surely ye shall not be established*: the word against the alliance Ahaz makes in 16:7.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Isaiah 8:6 — *this people refuseth the waters of Shiloah that go softly, and rejoice in Rezin*: the refusal to trust that the Assyrian alliance enacts.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'2 Chronicles 28:16 — *did king Ahaz send unto the kings of Assyria to help him*: the flat verdict on the move of 16:7.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=28 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Isaiah 7:14 — *a virgin shall conceive, and bear a son, and shall call his name Immanuel*: the sign given in the teeth of the king''s unbelief.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=8
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Isaiah 8:7 — *the king of Assyria, and all his glory... shall come up over all his channels*: the hired deliverer turned into the flood over Judah.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=8
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Matthew 1:23 — *they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us*: the sign Ahaz refused, fulfilled in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=8
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-faithless-alliance-and-the-sign-of-immanuel-ahaz-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- MEMBERS: THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 12:30 — *enquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise*: exactly Ahaz copying the Damascus altar.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=10
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-altar-of-damascus-worship-corrupted-by-the-foreign-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 28:24 — *shut up the doors of the house of Yahuah (LORD), and he made him altars in every corner*: the true worship displaced by 16:14.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=14
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=28 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-altar-of-damascus-worship-corrupted-by-the-foreign-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Chronicles 28:23 — *he sacrificed unto the gods of Damascus... they were the ruin of him*: the altar of 16:15 was the altar of Damascus'' gods, his ruin.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s343_2ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=28 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-16-the-altar-of-damascus-worship-corrupted-by-the-foreign-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-kings_17.sql (2 Kings 17) -----
+-- Chapter: 2 Kings 17 — THE FALL OF SAMARIA, the deportation and scattering of the
+--   ten northern tribes (the house of Yashar'el / Ephraim / Joseph). The single
+--   keystone backstory of the whole two-house framework.
+-- Tag: 2ki17   View: _s343_2ki17_lookup
+-- Source edition/book: 'canon','2-kings',17,v   |  Sort band: 38900 step 3 (38900..38921)
+--
+-- 2 Kings 17 coverage:
+--   v.6 (deportation)        NT: none warranted   Extras: none warranted (no extra-canon witness narrates Samaria's fall)   Tanakh: 2Ki18:11 (recap); Deut28:64/Lev26:33 (the scattering-sanction); Hosea1:10-11/Ezek37:21/Jer31:10 (the regathering)
+--   v.7-12 (idolatry)        NT: none warranted   Extras: none warranted   Tanakh: Deut18:9-12 (abominations of the nations); Deut28:36; Amos5:26
+--   v.13 (prophets testify)  NT: none warranted   Extras: none warranted   Tanakh: Amos5:4-6 (seek me and live); Jer3:12-14 (return backsliding Yashar'el)
+--   v.14-15 (rejected covenant) NT: none warranted Extras: none warranted   Tanakh: Lev26:14-15; Deut29:25-26; Jer31:32 (covenant they brake)
+--   v.16 (two calves)        NT: none warranted   Extras: none warranted   Tanakh: 1Ki12:28,30 (Jeroboam's calves); 1Ki14:15-16 (scatter beyond the river)
+--   v.17 (pass through fire/divination) NT: none warranted Extras: none warranted Tanakh: Deut18:10,12
+--   v.18,20,23 (removed/rejected) NT: Rom11:1-2,25-26 (cast away? Elohim forbid); Rom9:25-26 (not-my-people) Extras: none warranted Tanakh: Hosea1:10/Ezek37:22 (regather, one nation)
+--   v.18,23 (divorce of the north) NT: none warranted Extras: none warranted Tanakh: Jer3:8 (bill of divorce); Hosea2:23 (betroth again); Jer31:9 (Ephraim my firstborn)
+--   v.24-33,41 (Samaritan syncretism) NT: John4:22 (ye worship ye know not what) Extras: none warranted Tanakh: Deut18:9 (after the abominations)
+--
+-- Threads (8):
+--   2-kings-17-the-king-of-assyria-carried-yashar-el-away   [canon/Tanakh + Tanakh] free
+--   2-kings-17-removed-out-of-his-sight-yet-elohim-cast-not-away-his-people  [canon NT + Tanakh] free
+--   2-kings-17-they-rejected-his-statutes-and-his-covenant  [canon Tanakh] free
+--   2-kings-17-the-two-calves-of-jeroboam-the-root-of-the-scattering  [canon Tanakh] free
+--   2-kings-17-they-feared-other-gods-the-statutes-of-the-heathen  [canon Tanakh] free
+--   2-kings-17-yet-yahuah-testified-by-all-the-prophets-turn-ye  [canon Tanakh] free
+--   2-kings-17-the-divorced-house-of-yashar-el-to-be-betrothed-again  [canon Tanakh] free
+--   2-kings-17-they-feared-yahuah-and-served-their-own-gods-the-samaritan-half-worship  [canon NT + Tanakh] free
+--
+-- Framing note: This is the chapter where Claude's default replacement reading is most
+--   dangerous. Every scattering verse (17:6,18,20,23) is bound FORWARD to the regathering
+--   (Hosea1:10-11, Ezek37:21-22, Jer31:9-10) with the Romans 11:1-2 anti-replacement guard
+--   made EXPLICIT: removed-from-the-land is NOT cast-off-for-ever. The curse is the Deut28/
+--   Lev26 exile-sanction for breaking the covenant, NEVER the Torah itself — the Torah is the
+--   covenant they REJECTED (17:13-15). Jeroboam's two calves (1Ki12:28) the root. The
+--   Samaritans' fear-Yahuah-and-serve-idols (17:33,41) the half-worship Yahusha names at the
+--   well (John4:22). Both olive branches are Yashar'el.
+
+CREATE TEMP VIEW _s343_2ki17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the deportation / scattering of the northern house
+    ('canon','2-kings',17,6,  'canon','2-kings',18,11, 'free', E'*And the king of Assyria did carry away Yashar''el (Israel) unto Assyria, and put them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 18:11). The narrator repeats the deportation verbatim: when *the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor* (2 Kings 17:6), the ten northern tribes are lost among the nations — the scattering of the lost sheep begins.'),
+    ('canon','2-kings',17,6,  'canon','deuteronomy',28,64, 'free', E'*And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (Deuteronomy 28:64). The Assyrian who *carried Yashar''el (Israel) away into Assyria* (2 Kings 17:6) is the rod of the covenant-sanction Moses foretold — the scattering is the Deut 28 exile-judgment for breaking the covenant, never the Torah itself made a curse.'),
+    ('canon','2-kings',17,6,  'canon','leviticus',26,33, 'free', E'*And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste* (Leviticus 26:33). The deportation — *placed them in Halah and in Habor by the river of Gozan* (2 Kings 17:6) — is the Sinai covenant-curse falling exactly as written, the discipline of a covenant kept, not abolished.'),
+    ('canon','2-kings',17,6,  'canon','hosea',1,10, 'free', E'*Yet the number of the children of Yashar''el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10). The same scattered house that the Assyrian *carried Yashar''el (Israel) away* (2 Kings 17:6) is the seed promised to multiply among the nations and be reclaimed — scattered to be gathered, never replaced.'),
+    ('canon','2-kings',17,6,  'canon','ezekiel',37,21, 'free', E'*Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). The very people Assyria *placed... in the cities of the Medes* (2 Kings 17:6) are the ones Yahuah pledges to regather — the deportation is the front half of the two-sticks prophecy.'),
+    -- THREAD 2: removed out of his sight, yet not cast away for ever (anti-replacement)
+    ('canon','2-kings',17,18, 'canon','romans',11,1, 'free', E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). When the text says Yahuah *removed them out of his sight* (2 Kings 17:18), it does NOT mean cast-off-for-ever: Paul forbids that very reading — the removed are still his people, the natural branches still beloved for the fathers'' sakes.'),
+    ('canon','2-kings',17,18, 'canon','romans',11,2, 'free', E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The removal of the northern house — *there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18) — is exile, not abandonment; the foreknown seed is disciplined, scattered, and kept, never replaced by another people.'),
+    ('canon','2-kings',17,20, 'canon','romans',9,25, 'free', E'*As he saith also in Osee, I will call them my people, which were not my people; and her beloved, which was not beloved* (Romans 9:25). Though Yahuah *rejected all the seed of Yashar''el (Israel)* (2 Kings 17:20), Paul quotes Hosea to show the not-my-people sentence is reversible — the rejected seed is reclaimed, the scattered house called my-people again.'),
+    ('canon','2-kings',17,23, 'canon','romans',11,25, 'free', E'*That blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in. And so all Yashar''el (Israel) shall be saved* (Romans 11:25-26). The carrying-away — *So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day* (2 Kings 17:23) — has a terminus: *until*, then *all Yashar''el shall be saved*. The scattering runs toward ingathering, not toward a new people grafted in by confession.'),
+    ('canon','2-kings',17,23, 'canon','ezekiel',37,22, 'free', E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel)... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The house *carried away out of their own land to Assyria* (2 Kings 17:23) is the stick of Joseph that will be joined again to the stick of Yahudah — the division ends in reunion, never in replacement.'),
+    -- THREAD 3: they rejected his statutes and his covenant (the broken Torah, not a curse)
+    ('canon','2-kings',17,15, 'canon','leviticus',26,15, 'free', E'*And if ye shall despise my statutes, or if your soul abhor my judgments, so that ye will not do all my commandments, but that ye break my covenant* (Leviticus 26:15). To *reject his statutes, and his covenant* (2 Kings 17:15) is to trip the exact clause Sinai named — the covenant-curse answers covenant-breaking; the Torah is the inheritance they spurned, not the thing condemning them.'),
+    ('canon','2-kings',17,14, 'canon','deuteronomy',29,25, 'free', E'*Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers, which he made with them when he brought them forth out of the land of Egypt* (Deuteronomy 29:25). They *hardened their necks... that did not believe in Yahuah their Elohim* (2 Kings 17:14); the answer of the exile — *Yahuah rooted them out of their land... and cast them into another land* (Deut 29:28) — is the covenant-lawsuit verdict for forsaking, not the Torah turned enemy.'),
+    ('canon','2-kings',17,13, 'canon','deuteronomy',28,15, 'free', E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes... that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). Yahuah testified, *keep my commandments and my statutes, according to all the law* (2 Kings 17:13); refusing the keeping, not the law, is what brought the listed curses down.'),
+    ('canon','2-kings',17,15, 'canon','jeremiah',31,32, 'free', E'*Not according to the covenant that I made with their fathers... which my covenant they brake, although I was an husband unto them, saith Yahuah (LORD)* (Jeremiah 31:32). The covenant *that he made with their fathers* which they *rejected* (2 Kings 17:15) is the one Jeremiah says they brake — yet the cure is the same Torah *put... in their inward parts* (Jer 31:33), written on the heart, never replaced.'),
+    -- THREAD 4: the two calves of Jeroboam, the root of the scattering
+    ('canon','2-kings',17,16, 'canon','1-kings',12,28, 'free', E'*Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). The *two calves* the northern house *made* (2 Kings 17:16) are Jeroboam''s founding calves — the root apostasy that set the whole house on the road to Assyria.'),
+    ('canon','2-kings',17,21, 'canon','1-kings',12,30, 'free', E'*And this thing became a sin: for the people went to worship before the one, even unto Dan* (1 Kings 12:30). *Jeroboam drave Yashar''el (Israel) from following Yahuah, and made them sin a great sin* (2 Kings 17:21); the calf-cult at Beth-el and Dan is the great sin named, the wedge driven between the north and the house of David.'),
+    ('canon','2-kings',17,22, 'canon','1-kings',14,15, 'free', E'*For Yahuah (LORD) shall smite Yashar''el (Israel)... and shall scatter them beyond the river, because they have made their groves, provoking Yahuah to anger* (1 Kings 14:15). Because *the children of Yashar''el walked in all the sins of Jeroboam* (2 Kings 17:22), the scattering-beyond-the-river that Ahijah foretold is fulfilled — the calf-sin and the grove draw down the exile.'),
+    -- THREAD 5: they feared other gods, the statutes of the heathen
+    ('canon','2-kings',17,8,  'canon','deuteronomy',18,9, 'free', E'*When thou art come into the land which Yahuah Elohayka (the LORD thy God) giveth thee, thou shalt not learn to do after the abominations of those nations* (Deuteronomy 18:9). To *walk in the statutes of the heathen* (2 Kings 17:8) is to do the very thing the Torah forbade — they learned the abominations of the nations Yahuah had cast out before them.'),
+    ('canon','2-kings',17,17, 'canon','deuteronomy',18,10, 'free', E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10). They *caused their sons and their daughters to pass through the fire, and used divination and enchantments* (2 Kings 17:17) — the exact catalogue of forbidden abominations, the heathen worship the Torah named for destruction.'),
+    ('canon','2-kings',17,12, 'canon','deuteronomy',18,12, 'free', E'*For all that do these things are an abomination unto Yahuah (LORD): and because of these abominations Yahuah Elohayka (the LORD thy God) doth drive them out from before thee* (Deuteronomy 18:12). *They served idols, whereof Yahuah had said unto them, Ye shall not do this thing* (2 Kings 17:12); the abominations that drove the nations out now drive Yashar''el out — the land vomits the same sin from a different mouth.'),
+    ('canon','2-kings',17,16, 'canon','amos',5,26, 'free', E'*But ye have borne the tabernacle of your Moloch and Chiun your images, the star of your god, which ye made to yourselves* (Amos 5:26). The northern house *worshipped all the host of heaven, and served Baal* (2 Kings 17:16); Amos names the same astral idolatry — *the star of your god* — for which *I cause you to go into captivity beyond Damascus* (Amos 5:27).'),
+    -- THREAD 6: yet Yahuah testified by all the prophets, turn ye
+    ('canon','2-kings',17,13, 'canon','amos',5,4, 'free', E'*For thus saith Yahuah (LORD) unto the house of Yashar''el (Israel), Seek ye me, and ye shall live* (Amos 5:4). The testimony *by all the prophets... Turn ye from your evil ways* (2 Kings 17:13) is Amos''s very plea to the northern house — *seek me and live*, the offered mercy they would not hear.'),
+    ('canon','2-kings',17,13, 'canon','amos',5,6, 'free', E'*Seek Yahuah (LORD), and ye shall live; lest he break out like fire in the house of Joseph, and devour it, and there be none to quench it in Beth-el* (Amos 5:6). The prophets warned *keep my commandments and my statutes* (2 Kings 17:13); Amos warns the house of Joseph that the unheeded call ends in a fire none can quench at Beth-el — the calf-shrine itself.'),
+    ('canon','2-kings',17,23, 'canon','jeremiah',3,12, 'free', E'*Go and proclaim these words toward the north, and say, Return, thou backsliding Yashar''el (Israel), saith Yahuah; and I will not cause mine anger to fall upon you: for I am merciful* (Jeremiah 3:12). After Yahuah *removed Yashar''el out of his sight, as he had said by all his servants the prophets* (2 Kings 17:23), the same prophetic voice still calls toward the north — *return, thou backsliding Yashar''el* — the scattered house invited home.'),
+    -- THREAD 7: the divorced house of Yashar'el, to be betrothed again
+    ('canon','2-kings',17,18, 'canon','jeremiah',3,8, 'free', E'*And I saw, when for all the causes whereby backsliding Yashar''el (Israel) committed adultery I had put her away, and given her a bill of divorce* (Jeremiah 3:8). The removal — *Yahuah was very angry with Yashar''el, and removed them out of his sight* (2 Kings 17:18) — is the bill of divorce against the northern house, the adulterous wife put away yet not cast off for ever.'),
+    ('canon','2-kings',17,23, 'canon','hosea',2,23, 'free', E'*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). The house *carried away... unto this day* (2 Kings 17:23) is the divorced wife Hosea promises to betroth again — *I will sow her unto me in the earth*, Lo-ammi reversed to Ammi.'),
+    ('canon','2-kings',17,23, 'canon','hosea',1,11, 'free', E'*Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel* (Hosea 1:11). The scattering *out of their own land to Assyria* (2 Kings 17:23) is reversed in the reunion of both houses under one head — the two sticks, the same regathered seed.'),
+    ('canon','2-kings',17,18, 'canon','jeremiah',31,9, 'free', E'*They shall come with weeping... for I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9). Though the north is *removed out of his sight* (2 Kings 17:18), Yahuah still calls Ephraim his firstborn — the divorced son is led home weeping, *He that scattered Yashar''el will gather him* (Jer 31:10).'),
+    -- THREAD 8: they feared Yahuah and served their own gods (Samaritan half-worship)
+    ('canon','2-kings',17,33, 'canon','john',4,22, 'free', E'*Ye worship ye know not what: we know what we worship: for salvation is of the Yahudim (Jews)* (John 4:22). To the Samaritan woman at Jacob''s well Yahusha names the very half-worship planted here: *They feared Yahuah, and served their own gods* (2 Kings 17:33) — a divided heart that fears Yahuah and serves idols is no covenant-fidelity at all.'),
+    ('canon','2-kings',17,41, 'canon','john',4,22, 'free', E'*Ye worship ye know not what: we know what we worship* (John 4:22). *So these nations feared Yahuah, and served their graven images... as did their fathers, so do they unto this day* (2 Kings 17:41); the syncretism handed down through the generations is the mixed worship Yahusha confronts at Sychar — worship that does not know what it worships.'),
+    ('canon','2-kings',17,29, 'canon','deuteronomy',18,9, 'free', E'*Thou shalt not learn to do after the abominations of those nations* (Deuteronomy 18:9). *Howbeit every nation made gods of their own, and put them in the houses of the high places which the Samaritans had made* (2 Kings 17:29); the colonists do exactly what the Torah forbade — each nation importing its own abominations into the land Yahuah claims for himself.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== THREADS =====
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-17-the-king-of-assyria-carried-yashar-el-away', E'The king of Assyria carried Yashar''el away — the scattering of the northern house', E'In the ninth year of Hoshea the deportation falls: *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 17:6). The narrator says it twice, lest we miss it: *And the king of Assyria did carry away Yashar''el (Israel) unto Assyria, and put them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 18:11). Here the ten northern tribes are lost among the nations — the scattering of the lost sheep begins. This is no random catastrophe. Moses had named it: *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (Deuteronomy 28:64), and at Sinai: *And I will scatter you among the heathen, and will draw out a sword after you* (Leviticus 26:33). The Assyrian is the rod of the covenant-sanction — the discipline of a covenant kept, never the Torah turned into a curse. And the scattering already carries its own reversal: *Yet the number of the children of Yashar''el (Israel) shall be as the sand of the sea... and... in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10), for *Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). Scattered to be gathered — the seed multiplied in the nations, never a people replaced.',
+       sv.verse_id, ev.verse_id, 'free', 38900
+  FROM _s343_2ki17_lookup sv, _s343_2ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=17 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-17-removed-out-of-his-sight-yet-elohim-cast-not-away-his-people', E'Removed out of his sight — yet Elohim cast not away his people', E'*Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18); *And Yahuah rejected all the seed of Yashar''el* (17:20); *So was Yashar''el carried away out of their own land to Assyria unto this day* (17:23). Read with the default Christianized eye, this is the verse that "casts Israel off for ever." It is not — and Paul forbids that reading in the strongest terms: *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham* (Romans 11:1); *Elohim hath not cast away his people which he foreknew* (Romans 11:2). Removed-from-the-land is exile, not abandonment. The not-my-people sentence is reversible by design: *I will call them my people, which were not my people; and her beloved, which was not beloved* (Romans 9:25). And the carrying-away has a terminus written into it: *blindness in part is happened to Yashar''el, until the fulness of the Gentiles be come in. And so all Yashar''el shall be saved* (Romans 11:25-26). The scattering runs toward ingathering: *I will make them one nation in the land... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). Both olive branches are Yashar''el — the natural and the wild, the same seed, never another people grafted in by confession.',
+       sv.verse_id, ev.verse_id, 'free', 38903
+  FROM _s343_2ki17_lookup sv, _s343_2ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=17 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-17-they-rejected-his-statutes-and-his-covenant', E'They rejected his statutes and his covenant — the Torah broken, never the curse', E'The indictment is precise: *Yet Yahuah (LORD) testified against Yashar''el... saying, Turn ye from your evil ways, and keep my commandments and my statutes, according to all the law which I commanded your fathers* (2 Kings 17:13); but *they hardened their necks... that did not believe in Yahuah their Elohim* (17:14), and *they rejected his statutes, and his covenant that he made with their fathers, and his testimonies* (17:15). The Torah is not what condemns them — the Torah is the inheritance they spurned. To reject the statutes is to trip the exact clause Sinai named: *if ye shall despise my statutes... but that ye break my covenant* (Leviticus 26:15), and Moab named: *Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers* (Deuteronomy 29:25). The curse is the covenant-sanction for breaking the covenant — *if thou wilt not hearken... that all these curses shall come upon thee* (Deuteronomy 28:15) — answering the refusal-to-keep, not the keeping. And even the broken covenant is not the end of the Torah: *which my covenant they brake, although I was an husband unto them* (Jeremiah 31:32), yet the cure is that same Torah *put... in their inward parts, and write it in their hearts* (Jer 31:33). The law written on the heart is the covenant renewed, never replaced.',
+       sv.verse_id, ev.verse_id, 'free', 38906
+  FROM _s343_2ki17_lookup sv, _s343_2ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=17 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-17-the-two-calves-of-jeroboam-the-root-of-the-scattering', E'The two calves of Jeroboam — the root of the scattering', E'At the head of the indictment stand the calves: *And they left all the commandments of Yahuah (LORD) their Elohim (God), and made them molten images, even two calves, and made a grove, and worshipped all the host of heaven, and served Baal* (2 Kings 17:16). These are not new idols — they are Jeroboam''s founding apostasy come to full harvest: *the king took counsel, and made two calves of gold, and said unto them... behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). *And this thing became a sin: for the people went to worship before the one, even unto Dan* (1 Kings 12:30). The chapter names this very wedge as the cause: *Jeroboam drave Yashar''el (Israel) from following Yahuah, and made them sin a great sin* (2 Kings 17:21), and *the children of Yashar''el walked in all the sins of Jeroboam which he did; they departed not from them* (17:22). Ahijah had already pronounced the end of that road: *For Yahuah shall smite Yashar''el... and shall scatter them beyond the river, because they have made their groves, provoking Yahuah to anger* (1 Kings 14:15). The golden calves at Beth-el and Dan are the root, and the scattering-beyond-the-river is the fruit.',
+       sv.verse_id, ev.verse_id, 'free', 38909
+  FROM _s343_2ki17_lookup sv, _s343_2ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=17 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-17-they-feared-other-gods-the-statutes-of-the-heathen', E'They feared other gods — walking in the statutes of the heathen', E'The why of the exile is told without flinching: *the children of Yashar''el (Israel) had sinned against Yahuah their Elohim... and had feared other gods, And walked in the statutes of the heathen* (2 Kings 17:7-8); *they built them high places... set them up images and groves in every high hill... burnt incense in all the high places* (17:9-11); *they served idols, whereof Yahuah had said unto them, Ye shall not do this thing* (17:12); *they caused their sons and their daughters to pass through the fire, and used divination and enchantments* (17:17). Every line is the Torah''s own forbidden catalogue thrown back: *thou shalt not learn to do after the abominations of those nations* (Deuteronomy 18:9), *There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deut 18:10), *for all that do these things are an abomination unto Yahuah: and because of these abominations Yahuah doth drive them out from before thee* (Deut 18:12). The abominations that drove the nations out now drive Yashar''el out — the land vomits the same sin from a different mouth. Amos names the astral idol exactly: *ye have borne the tabernacle of your Moloch and Chiun your images, the star of your god, which ye made to yourselves* (Amos 5:26) — and so *I will cause you to go into captivity beyond Damascus* (Amos 5:27).',
+       sv.verse_id, ev.verse_id, 'free', 38912
+  FROM _s343_2ki17_lookup sv, _s343_2ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=17 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-17-yet-yahuah-testified-by-all-the-prophets-turn-ye', E'Yet Yahuah testified by all the prophets — Turn ye, and ye shall live', E'Before the sentence falls, the mercy is offered and offered again: *Yet Yahuah (LORD) testified against Yashar''el (Israel), and against Yahudah (Judah), by all the prophets, and by all the seers, saying, Turn ye from your evil ways, and keep my commandments and my statutes, according to all the law which I commanded your fathers* (2 Kings 17:13). The prophets named here are not abstractions — this is Amos''s very plea to the northern house: *Seek ye me, and ye shall live* (Amos 5:4), *Seek Yahuah (LORD), and ye shall live; lest he break out like fire in the house of Joseph, and devour it, and there be none to quench it in Beth-el* (Amos 5:6) — the fire aimed at the calf-shrine itself. They would not hear; the exile came: *Until Yahuah removed Yashar''el out of his sight, as he had said by all his servants the prophets* (2 Kings 17:23). And still the prophetic voice does not fall silent toward the scattered house: *Go and proclaim these words toward the north, and say, Return, thou backsliding Yashar''el (Israel), saith Yahuah; and I will not cause mine anger to fall upon you: for I am merciful* (Jeremiah 3:12). The same God who removed them keeps calling them home — the warning unheeded becomes the invitation that outlasts the judgment.',
+       sv.verse_id, ev.verse_id, 'free', 38915
+  FROM _s343_2ki17_lookup sv, _s343_2ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=17 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-17-the-divorced-house-of-yashar-el-to-be-betrothed-again', E'The divorced house of Yashar''el — to be betrothed again', E'*Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight* (2 Kings 17:18); *So was Yashar''el carried away out of their own land to Assyria unto this day* (17:23). Read through the prophets, the removal is a bill of divorce against an adulterous wife: *And I saw, when for all the causes whereby backsliding Yashar''el (Israel) committed adultery I had put her away, and given her a bill of divorce* (Jeremiah 3:8). The northern house is put away — but not cast off for ever. The whole of Hosea answers this exile: *I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23) — Lo-ammi reversed to Ammi. *Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land* (Hosea 1:11), the two houses one again. And the divorced son is still beloved: *They shall come with weeping... for I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9). The divorce is real; so is the betrothal that answers it — *He that scattered Yashar''el will gather him.*',
+       sv.verse_id, ev.verse_id, 'free', 38918
+  FROM _s343_2ki17_lookup sv, _s343_2ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=17 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-17-they-feared-yahuah-and-served-their-own-gods-the-samaritan-half-worship', E'They feared Yahuah and served their own gods — the Samaritan half-worship', E'Into the emptied cities of the north the king of Assyria pours foreign colonists — *from Babylon, and from Cuthah, and from Ava, and from Hamath, and from Sepharvaim* (2 Kings 17:24) — and a deported priest is sent back to teach them *how they should fear Yahuah (LORD)* (17:28). The result is a divided heart: *Howbeit every nation made gods of their own, and put them in the houses of the high places which the Samaritans had made* (17:29); *So they feared Yahuah, and made unto themselves of the lowest of them priests of the high places* (17:32); *They feared Yahuah, and served their own gods, after the manner of the nations* (17:33); *So these nations feared Yahuah, and served their graven images... as did their fathers, so do they unto this day* (17:41). This is the half-worship the rest of the canon condemns — fearing Yahuah while serving idols is no covenant-fidelity at all, only the Torah''s forbidden mixture: *Thou shalt not learn to do after the abominations of those nations* (Deuteronomy 18:9). And this is the very ground Yahusha names at Jacob''s well, to the Samaritan woman: *Ye worship ye know not what: we know what we worship: for salvation is of the Yahudim (Jews)* (John 4:22). The divided worship planted here in Samaria is the worship that does not know what it worships — answered only when the true worshippers worship the Father in spirit and in truth.',
+       sv.verse_id, ev.verse_id, 'free', 38921
+  FROM _s343_2ki17_lookup sv, _s343_2ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=17 AND ev.verse_number=41
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Kings 18:11 — the narrator repeats the deportation verbatim: *did carry away Yashar''el (Israel) unto Assyria, and put them in Halah and in Habor*.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-king-of-assyria-carried-yashar-el-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 28:64 — *Yahuah shall scatter thee among all people, from the one end of the earth even unto the other*: the Assyrian is the Deut 28 exile-sanction, not the Torah as curse.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-king-of-assyria-carried-yashar-el-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 26:33 — *I will scatter you among the heathen, and will draw out a sword after you*: the Sinai covenant-curse falling exactly as written.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-king-of-assyria-carried-yashar-el-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hosea 1:10 — *the children of Yashar''el shall be as the sand of the sea... Ye are the sons of the living Elohim*: scattered to be reclaimed, not replaced.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-king-of-assyria-carried-yashar-el-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Ezekiel 37:21 — *I will take the children of Yashar''el from among the heathen... and bring them into their own land*: the deportation is the front half of the two-sticks prophecy.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-king-of-assyria-carried-yashar-el-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Romans 11:1 — *Hath Elohim cast away his people? Elohim forbid*: Paul forbids the very replacement reading of 17:18.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=18
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-removed-out-of-his-sight-yet-elohim-cast-not-away-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Romans 11:2 — *Elohim hath not cast away his people which he foreknew*: removal is exile, not abandonment.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=18
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-removed-out-of-his-sight-yet-elohim-cast-not-away-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Romans 9:25 — *I will call them my people, which were not my people*: the not-my-people sentence of 17:20 is reversible by design.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=20
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-removed-out-of-his-sight-yet-elohim-cast-not-away-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 11:25-26 — *blindness in part... until the fulness of the Gentiles be come in. And so all Yashar''el shall be saved*: the carrying-away of 17:23 has a terminus.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-removed-out-of-his-sight-yet-elohim-cast-not-away-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Ezekiel 37:22 — *one nation... no more two nations*: the scattering runs toward reunion, never replacement.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-removed-out-of-his-sight-yet-elohim-cast-not-away-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 26:15 — *if ye shall despise my statutes... but that ye break my covenant*: rejecting the statutes (17:15) trips the exact Sinai clause.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=15
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-rejected-his-statutes-and-his-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 29:25 — *Because they have forsaken the covenant of Yahuah Elohim of their fathers*: the hardened necks of 17:14 are the forsaking the Moab covenant named.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-rejected-his-statutes-and-his-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 28:15 — *if thou wilt not hearken... that all these curses shall come upon thee*: the curse answers refusing-to-keep (17:13), not the law itself.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-rejected-his-statutes-and-his-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jeremiah 31:32 — *which my covenant they brake, although I was an husband unto them*: the broken covenant is renewed (31:33 Torah on the heart), never replaced.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=15
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-rejected-his-statutes-and-his-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 12:28 — *made two calves of gold... behold thy gods, O Yashar''el*: the two calves of 17:16 are Jeroboam''s founding apostasy.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-two-calves-of-jeroboam-the-root-of-the-scattering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Kings 12:30 — *this thing became a sin... even unto Dan*: the great sin of 17:21, the wedge between north and the house of David.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=21
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-two-calves-of-jeroboam-the-root-of-the-scattering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Kings 14:15 — *shall scatter them beyond the river, because they have made their groves*: Ahijah foretold the scattering that 17:22 fulfils.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-two-calves-of-jeroboam-the-root-of-the-scattering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 18:9 — *thou shalt not learn to do after the abominations of those nations*: walking in the statutes of the heathen (17:8) is the forbidden thing.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=8
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-feared-other-gods-the-statutes-of-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 18:10 — *maketh his son or his daughter to pass through the fire... divination*: the exact catalogue 17:17 enacts.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=17
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-feared-other-gods-the-statutes-of-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 18:12 — *because of these abominations Yahuah doth drive them out*: the abominations that drove the nations out now drive Yashar''el out (17:12).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=12
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-feared-other-gods-the-statutes-of-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Amos 5:26 — *the tabernacle of your Moloch and Chiun your images, the star of your god*: the host-of-heaven worship of 17:16 named, ending in captivity beyond Damascus.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-feared-other-gods-the-statutes-of-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Amos 5:4 — *Seek ye me, and ye shall live*: the prophets'' testimony of 17:13 is Amos''s plea to the northern house.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-yet-yahuah-testified-by-all-the-prophets-turn-ye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Amos 5:6 — *lest he break out like fire in the house of Joseph... none to quench it in Beth-el*: the unheeded call ends in fire at the calf-shrine.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-yet-yahuah-testified-by-all-the-prophets-turn-ye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Jeremiah 3:12 — *Return, thou backsliding Yashar''el... for I am merciful*: after the removal of 17:23, the prophetic voice still calls the north home.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-yet-yahuah-testified-by-all-the-prophets-turn-ye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jeremiah 3:8 — *I had put her away, and given her a bill of divorce*: the removal of 17:18 is the divorce of the adulterous northern house.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=18
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-divorced-house-of-yashar-el-to-be-betrothed-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hosea 2:23 — *I will say to them which were not my people, Thou art my people*: the carried-away house (17:23) betrothed again, Lo-ammi reversed to Ammi.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-divorced-house-of-yashar-el-to-be-betrothed-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hosea 1:11 — *the children of Yahudah and the children of Yashar''el be gathered together... one head*: the scattering of 17:23 reversed in the reunion of both houses.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-divorced-house-of-yashar-el-to-be-betrothed-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jeremiah 31:9 — *I am a father to Yashar''el, and Ephraim is my firstborn*: the removed house (17:18) still the beloved firstborn son, led home weeping.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=18
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-the-divorced-house-of-yashar-el-to-be-betrothed-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 8
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'John 4:22 — *Ye worship ye know not what*: Yahusha names the divided worship of 17:33 to the Samaritan woman at Jacob''s well.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=33
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-feared-yahuah-and-served-their-own-gods-the-samaritan-half-worship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'John 4:22 — *we know what we worship*: the syncretism handed down (17:41, *so do they unto this day*) is the half-worship Yahusha confronts at Sychar.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=41
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-feared-yahuah-and-served-their-own-gods-the-samaritan-half-worship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 18:9 — *Thou shalt not learn to do after the abominations of those nations*: the colonists (17:29) import each nation''s abominations into Yahuah''s land.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=17 AND sv.verse_number=29
+  JOIN _s343_2ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-17-they-feared-yahuah-and-served-their-own-gods-the-samaritan-half-worship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-kings_18.sql (2 Kings 18) -----
+-- 2 Kings 18 — Hezekiah the reformer; Nehushtan; trust + Torah; Rabshakeh's blasphemy
+-- TAG: 2ki18   VIEW: _s343_2ki18_lookup   SORT BAND: base 38925, step 3
+-- SOURCE rows all: 'canon','2-kings',18,v
+--
+-- 2 Kings 18 coverage:
+--   v.3-6  NT:     none warranted (Torah-king mark; NT echo of Deut6 carried in thread 2 prose)
+--          Extras: none warranted
+--          Tanakh: Deut 6:4-5 (love/one Yahuah), Deut 6:17 (diligently keep), 2 Kings 17:18-19 (contrast)
+--   v.4    NT:     John 3:14-15 (serpent lifted up = Son of Adam lifted up)  ★ thread 1
+--          Extras: none warranted (avoid editorial-noisy parses)
+--          Tanakh: Numbers 21:8-9 (the brasen serpent Moses made)  ★ thread 1
+--   v.9-12 NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Kings 17:6,18,23 (the scattering of the northern house), Deut 6:14-15 (jealous Elohim)  ★ thread 3
+--   v.13-16 NT:    none warranted (tribute narrative; folded into thread 4 setting)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.29-35 NT:    none warranted (the answer is Tanakh-internal Isa37)
+--          Extras: none warranted
+--          Tanakh: Isaiah 36:14,18-20 (the parallel taunt), Psalm 46:6,10 (heathen rage / be still), Isaiah 37:16-17 (the living Elohim reproached → ch19 deliverance)  ★ thread 4
+--
+-- THREADS:
+--   1 2-kings-18-the-brasen-serpent-broken-nehushtan-the-good-type-lifted-up   [Tanakh + NT]  free
+--   2 2-kings-18-he-trusted-and-clave-and-kept-his-commandments-the-true-king  [Tanakh]       free
+--   3 2-kings-18-samaria-carried-away-the-northern-house-scattered             [Tanakh]       free
+--   4 2-kings-18-let-not-hezekiah-deceive-you-blasphemy-against-the-living-el  [Tanakh]       free
+--
+-- CONTESTED/LOAD-BEARING: 18:4 brasen serpent — the serpent itself was a Yahuah-GIVEN type
+--   (Num 21:8-9) and the very figure Yahusha applies to himself lifted up (John 3:14-15); the
+--   people made it an IDOL (Nehushtan), so the reformer breaks the idol-relic while the true
+--   type stands and is fulfilled in the cross. The breaking is not against the type but against
+--   the idolatry of the relic.
+
+CREATE TEMP VIEW _s343_2ki18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Nehushtan — the good type turned idol, lifted up
+    ('canon','2-kings',18,4,'canon','numbers',21,8,'free',E'*And Yahuah (LORD) said unto Moses, Make thee a fiery serpent, and set it upon a pole: and it shall come to pass, that every one that is bitten, when he looketh upon it, shall live* (Numbers 21:8). The brasen serpent Hezekiah *brake in pieces* (2 Kings 18:4) was no pagan thing — it was the Yahuah-given sign of life Moses made at His own word, that the bitten of Yashar''el (Israel) might look and live.'),
+    ('canon','2-kings',18,4,'canon','numbers',21,9,'free',E'*And Moses made a serpent of brass, and put it upon a pole, and it came to pass, that if a serpent had bitten any man, when he beheld the serpent of brass, he lived* (Numbers 21:9). This is *the brasen serpent that Moses had made* (2 Kings 18:4). The relic was holy in its purpose; the sin was that *the children of Yashar''el (Israel) did burn incense to it* — they made the sign into an idol, so the reformer destroys the idol while the sign''s meaning stands.'),
+    ('canon','2-kings',18,4,'canon','john',3,14,'free',E'*And as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be lifted up* (John 3:14). Yahusha (Jesus) reads the very serpent Hezekiah broke as a type of himself lifted up on the tree. The bronze figure looked-upon-and-living foreshadowed the Formed Son raised up; Hezekiah breaks the idol-relic *Nehushtan* (2 Kings 18:4) precisely because the true type is not a relic but the One it pointed to.'),
+    ('canon','2-kings',18,4,'canon','john',3,15,'free',E'*That whosoever believeth in him should not perish, but have eternal life* (John 3:15). The look that healed the serpent-bitten (Numbers 21) becomes the believing look unto the lifted-up Son of Adam. Hezekiah''s shattering of *the brasen serpent* turned idol (2 Kings 18:4) clears the type so it can be fulfilled, not in a worshipped relic, but in the cross.'),
+    -- THREAD 2: trust + clave + kept his commandments
+    ('canon','2-kings',18,5,'canon','deuteronomy',6,4,'free',E'*Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* (Deuteronomy 6:4). Hezekiah *trusted in Yahuah Elohim (the LORD God) of Yashar''el (Israel); so that after him was none like him among all the kings of Yahudah (Judah)* (2 Kings 18:5). His undivided trust is the Shema lived out — the one Yahuah leaned on alone, no Egypt, no idol beside Him.'),
+    ('canon','2-kings',18,5,'canon','deuteronomy',6,5,'free',E'*And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5). The whole-hearted love commanded in the Shema is what Scripture credits to Hezekiah: he *trusted in Yahuah Elohim... so that after him was none like him* (2 Kings 18:5). Trust with all the might is the mark of the true king of Yahudah (Judah).'),
+    ('canon','2-kings',18,6,'canon','deuteronomy',6,17,'free',E'*Ye shall diligently keep the commandments of Yahuah Elohaychem (the LORD your God), and his testimonies, and his statutes, which he hath commanded thee* (Deuteronomy 6:17). Of Hezekiah it is written that *he clave to Yahuah (LORD), and departed not from following him, but kept his commandments, which Yahuah (LORD) commanded Moses* (2 Kings 18:6). Trust and Torah-keeping are one thing — the Torah is never the curse but the cleaving itself.'),
+    ('canon','2-kings',18,6,'canon','2-kings',17,19,'free',E'*Also Yahudah (Judah) kept not the commandments of Yahuah (LORD) their Elohim (God), but walked in the statutes of Yashar''el (Israel) which they made* (2 Kings 17:19). The chapter before indicts even Yahudah for forsaking Torah; against that dark backdrop Hezekiah *kept his commandments, which Yahuah (LORD) commanded Moses* (2 Kings 18:6) — the one king who reverses the drift that scattered the north.'),
+    -- THREAD 3: Samaria carried away — the northern house scattered
+    ('canon','2-kings',18,11,'canon','2-kings',17,6,'free',E'*In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 17:6). 2 Kings 18:11 records the same scattering verbatim — *the king of Assyria did carry away Yashar''el (Israel) unto Assyria, and put them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* — the divorce and exile of the northern house of Yosef (Joseph)/Ephraim, the *Lo-Ammi* people awaiting regathering.'),
+    ('canon','2-kings',18,12,'canon','2-kings',17,18,'free',E'*Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18). The cause Hezekiah''s reign names — *because they obeyed not the voice of Yahuah (LORD) their Elohim (God), but transgressed his covenant* (2 Kings 18:12) — is the very covenant-breaking that severed the two houses, leaving Yahudah alone in the land.'),
+    ('canon','2-kings',18,12,'canon','deuteronomy',6,15,'free',E'*(For Yahuah Elohayka (the LORD thy God) is a jealous Elohim (God) among you) lest the anger of Yahuah Elohayka (the LORD thy God) be kindled against thee, and destroy thee from off the face of the earth* (Deuteronomy 6:15). The exile of the north was not arbitrary: they *transgressed his covenant, and all that Moses the servant of Yahuah (LORD) commanded* (2 Kings 18:12) — the curse of Deuteronomy 28 falling for forsaking the covenant, never the covenant itself the curse.'),
+    -- THREAD 4: Let not Hezekiah deceive you — blasphemy against the living Elohim
+    ('canon','2-kings',18,30,'canon','isaiah',36,15,'free',E'*Neither let Hezekiah make you trust in Yahuah (LORD), saying, Yahuah (LORD) will surely deliver us: this city shall not be delivered into the hand of the king of Assyria* (Isaiah 36:15). Isaiah preserves Rabshakeh''s same taunt word for word — *Neither let Hezekiah make you trust in Yahuah (LORD)* (2 Kings 18:30) — the enemy laboring to pry the people off the trust that is the very mark of the true king.'),
+    ('canon','2-kings',18,33,'canon','isaiah',36,18,'free',E'*Beware lest Hezekiah persuade you, saying, Yahuah (LORD) will deliver us. Hath any of the gods of the nations delivered his land out of the hand of the king of Assyria?* (Isaiah 36:18). The Assyrian sets Yahuah on the shelf of the dead idols of the nations — *Hath any of the gods of the nations delivered at all his land out of the hand of the king of Assyria?* (2 Kings 18:33) — the blasphemy of reckoning the living Elohim no better than wood and stone.'),
+    ('canon','2-kings',18,35,'canon','isaiah',37,16,'free',E'*O Yahuah Tseva''ot (LORD of hosts), Elohim (God) of Yashar''el (Israel), that dwellest between the cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast made heaven and earth* (Isaiah 37:16). To the Rabshakeh''s sneer *that Yahuah (LORD) should deliver Jerusalem out of mine hand* (2 Kings 18:35), Hezekiah answers in prayer by confessing the very thing the enemy denied — Yahuah alone is Elohim of all kingdoms, Maker of heaven and earth.'),
+    ('canon','2-kings',18,35,'canon','isaiah',37,17,'free',E'*Incline thine ear, O Yahuah (LORD), and hear; open thine eyes, O Yahuah (LORD), and see: and hear all the words of Sennacherib, which hath sent to reproach the living Elohim (God)* (Isaiah 37:17). The taunt *that Yahuah (LORD) should deliver Jerusalem out of mine hand* (2 Kings 18:35) is named for what it is — a reproach against *the living Elohim* — and Jerusalem''s deliverance in the next chapter answers it.'),
+    ('canon','2-kings',18,35,'canon','psalms',46,6,'free',E'*The heathen raged, the kingdoms were moved: he uttered his voice, the earth melted* (Psalm 46:6). Rabshakeh''s boast *that Yahuah (LORD) should deliver Jerusalem out of mine hand* (2 Kings 18:35) is the heathen raging of the psalm — and the answer is not Jerusalem''s strength but Yahuah uttering His voice till the earth melts.'),
+    ('canon','2-kings',18,35,'canon','psalms',46,10,'free',E'*Be still, and know that I am Elohim (God): I will be exalted among the heathen, I will be exalted in the earth* (Psalm 46:10). The Assyrian asks *that Yahuah (LORD) should deliver Jerusalem out of mine hand* (2 Kings 18:35); the psalm replies that the same Yahuah whose name he mocks *will be exalted among the heathen* — the very nations he boasts of conquering.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-18-the-brasen-serpent-broken-nehushtan-the-good-type-lifted-up', E'The brasen serpent broken — Nehushtan, the good type lifted up', E'Hezekiah *brake in pieces the brasen serpent that Moses had made: for unto those days the children of Yashar''el (Israel) did burn incense to it: and he called it Nehushtan* (2 Kings 18:4). The relic was no pagan thing — *And Yahuah (LORD) said unto Moses, Make thee a fiery serpent, and set it upon a pole: and it shall come to pass, that every one that is bitten, when he looketh upon it, shall live* (Numbers 21:8), and *if a serpent had bitten any man, when he beheld the serpent of brass, he lived* (Numbers 21:9). The figure was Yahuah''s own gift of life-by-looking. The sin was that the people made the sign into an idol and burned incense to it, so the reformer destroys the relic. He does not destroy the type, for Yahusha (Jesus) reads it of himself: *And as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be lifted up: That whosoever believeth in him should not perish, but have eternal life* (John 3:14-15). The look that healed the serpent-bitten foreshadows the believing look unto the lifted-up Formed Son. Hezekiah shatters *Nehushtan* precisely because the true type is not a worshipped relic but the One it pointed to — fulfilled, not in brass, but on the tree.',
+       sv.verse_id, ev.verse_id, 'free', 38925
+  FROM _s343_2ki18_lookup sv, _s343_2ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=18 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-18-he-trusted-and-clave-and-kept-his-commandments-the-true-king', E'He trusted and clave and kept His commandments — the true king', E'*He trusted in Yahuah Elohim (the LORD God) of Yashar''el (Israel); so that after him was none like him among all the kings of Yahudah (Judah), nor any that were before him. For he clave to Yahuah (LORD), and departed not from following him, but kept his commandments, which Yahuah (LORD) commanded Moses* (2 Kings 18:5-6). This is the Shema lived out: *Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD): And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:4-5), and *Ye shall diligently keep the commandments of Yahuah Elohaychem (the LORD your God), and his testimonies, and his statutes* (Deuteronomy 6:17). Trust and Torah-keeping are not two things but one — to cleave is to keep. And the marvel is sharpened by the chapter before: *Also Yahudah (Judah) kept not the commandments of Yahuah (LORD) their Elohim (God), but walked in the statutes of Yashar''el (Israel) which they made* (2 Kings 17:19). Where even Yahudah had drifted into the sin that scattered the north, Hezekiah reverses it — the one king who clave. The Torah he kept is the inheritance, never the curse.',
+       sv.verse_id, ev.verse_id, 'free', 38928
+  FROM _s343_2ki18_lookup sv, _s343_2ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=18 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-18-samaria-carried-away-the-northern-house-scattered', E'Samaria carried away — the northern house scattered', E'In Hezekiah''s days the northern kingdom falls: *the king of Assyria did carry away Yashar''el (Israel) unto Assyria, and put them in Halah and in Habor by the river of Gozan, and in the cities of the Medes: Because they obeyed not the voice of Yahuah (LORD) their Elohim (God), but transgressed his covenant* (2 Kings 18:11-12). The chapter before records the same scattering word for word — *the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 17:6) — and names the result: *Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18). This is the divorce and exile of the northern house of Yosef (Joseph)/Ephraim, the *Lo-Ammi* people. The cause is covenant-breaking, the jealous love warned of long before: *lest the anger of Yahuah Elohayka (the LORD thy God) be kindled against thee, and destroy thee from off the face of the earth* (Deuteronomy 6:15). The Deuteronomy 28 curse falls for forsaking the covenant — never the covenant itself the curse — and the scattered house waits to be gathered and made one stick again.',
+       sv.verse_id, ev.verse_id, 'free', 38931
+  FROM _s343_2ki18_lookup sv, _s343_2ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=18 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-18-let-not-hezekiah-deceive-you-blasphemy-against-the-living-el', E'Let not Hezekiah deceive you — blasphemy against the living Elohim', E'The Rabshakeh comes up to Jerusalem with a great host and a taunt aimed straight at the trust that marks the true king: *Neither let Hezekiah make you trust in Yahuah (LORD), saying, Yahuah (LORD) will surely deliver us* (2 Kings 18:30). Then the blasphemy proper — *Hath any of the gods of the nations delivered at all his land out of the hand of the king of Assyria?... that Yahuah (LORD) should deliver Jerusalem out of mine hand?* (2 Kings 18:33,35) — reckoning the living Elohim no better than the dead idols of wood and stone. Isaiah preserves the same taunt word for word (*Beware lest Hezekiah persuade you, saying, Yahuah (LORD) will deliver us. Hath any of the gods of the nations delivered his land...* — Isaiah 36:15,18). The Psalm names the scene: *The heathen raged, the kingdoms were moved: he uttered his voice, the earth melted... Be still, and know that I am Elohim (God): I will be exalted among the heathen* (Psalm 46:6,10). And Hezekiah''s answer in prayer confesses the very thing the enemy denied: *thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast made heaven and earth... hear all the words of Sennacherib, which hath sent to reproach the living Elohim (God)* (Isaiah 37:16-17). The reproach against the living Elohim sets the stage for the deliverance of the next chapter, where the angel of Yahuah answers the blasphemy in one night.',
+       sv.verse_id, ev.verse_id, 'free', 38934
+  FROM _s343_2ki18_lookup sv, _s343_2ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=18 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 21:8 — *Make thee a fiery serpent... every one that is bitten, when he looketh upon it, shall live*: the sign was Yahuah''s own gift of life.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-the-brasen-serpent-broken-nehushtan-the-good-type-lifted-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 21:9 — *the brasen serpent that Moses had made* (2 Ki 18:4); holy in purpose, the sin was the incense burned to it.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-the-brasen-serpent-broken-nehushtan-the-good-type-lifted-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'John 3:14 — *even so must the Son of Adam be lifted up*: Yahusha reads the broken serpent as a type of himself on the tree.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-the-brasen-serpent-broken-nehushtan-the-good-type-lifted-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'John 3:15 — *whosoever believeth in him should not perish, but have eternal life*: the healing look fulfilled in the believing look.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-the-brasen-serpent-broken-nehushtan-the-good-type-lifted-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 6:4 — *Yahuah Eloheinu (The LORD our God) is one Yahuah*: Hezekiah''s undivided trust is the Shema lived.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-he-trusted-and-clave-and-kept-his-commandments-the-true-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 6:5 — *love Yahuah Elohayka with all thine heart... soul... might*: trust with all the might marks the true king.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-he-trusted-and-clave-and-kept-his-commandments-the-true-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 6:17 — *diligently keep the commandments... testimonies... statutes*: Hezekiah *kept his commandments which Yahuah commanded Moses* (2 Ki 18:6).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=6
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-he-trusted-and-clave-and-kept-his-commandments-the-true-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'2 Kings 17:19 — *Yahudah kept not the commandments... but walked in the statutes of Yashar''el*: the dark backdrop Hezekiah reverses.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=6
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-he-trusted-and-clave-and-kept-his-commandments-the-true-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Kings 17:6 — the same scattering verbatim: Yashar''el carried to Halah, Habor, Gozan, the cities of the Medes — the northern house exiled.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-samaria-carried-away-the-northern-house-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Kings 17:18 — *removed them out of his sight: there was none left but the tribe of Yahudah only*: the two houses severed by covenant-breaking (2 Ki 18:12).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=12
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-samaria-carried-away-the-northern-house-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 6:15 — *a jealous Elohim... lest the anger... be kindled*: the Deut 28 curse falls for forsaking the covenant, never the covenant the curse.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=12
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-samaria-carried-away-the-northern-house-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 36:15 — *Neither let Hezekiah make you trust in Yahuah*: the same taunt preserved, prying the people off the king''s trust.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=30
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=36 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-let-not-hezekiah-deceive-you-blasphemy-against-the-living-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 36:18 — *Hath any of the gods of the nations delivered his land...*: Yahuah set among the dead idols of wood and stone (2 Ki 18:33).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=33
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=36 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-let-not-hezekiah-deceive-you-blasphemy-against-the-living-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 37:16 — *thou art the Elohim, even thou alone, of all the kingdoms... thou hast made heaven and earth*: Hezekiah confesses what the enemy denied (2 Ki 18:35).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=35
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-let-not-hezekiah-deceive-you-blasphemy-against-the-living-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Isaiah 37:17 — *Sennacherib, which hath sent to reproach the living Elohim*: the taunt named, and answered in ch 19''s deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=35
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-let-not-hezekiah-deceive-you-blasphemy-against-the-living-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Psalm 46:6 — *The heathen raged... he uttered his voice, the earth melted*: Rabshakeh''s boast is the raging the psalm answers.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=35
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-let-not-hezekiah-deceive-you-blasphemy-against-the-living-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Psalm 46:10 — *Be still, and know that I am Elohim... I will be exalted among the heathen*: the answer the Assyrian cannot conceive.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=18 AND sv.verse_number=35
+  JOIN _s343_2ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-18-let-not-hezekiah-deceive-you-blasphemy-against-the-living-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-kings_19.sql (2 Kings 19) -----
+-- 2 Kings 19 — Hezekiah, Sennacherib, Isaiah's oracle, the remnant, the angel that smote 185,000
+-- TAG: 2ki19   VIEW: _s343_2ki19_lookup   SORT BAND: 38950 step 3 (38950,38953,38956,38959,38962)
+--
+-- 2 Kings 19 coverage:
+--   v.6-7  (Be not afraid / I will send a blast)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Isaiah 37:6-7 (the twin oracle); Psalms 46:1-2 (refuge, will not fear); 2 Chron 32:7-8 (be strong, more with us)
+--   v.14-19 (Hezekiah spreads the letter, prays Yahuah's Name be known among the nations, thou only)
+--        NT:     none warranted (the bare prayer; covenant-monotheism, left to Tanakh)
+--        Extras: none warranted
+--        Tanakh: Isaiah 37:14-20 (the twin prayer); Psalms 46:10 (be still, I will be exalted among the heathen); 2 Chron 32:19-20 (railing on the God of Jerusalem, the king prays); Exodus 12:12 (against all the gods of Egypt I execute judgment)
+--   v.22-28 (the proud rod judged: the boasting axe, I will put my hook in thy nose)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Isaiah 37:23-29 (twin oracle); Isaiah 10:5 (Assyrian the rod of mine anger); Isaiah 10:15 (shall the axe boast itself against him that heweth)
+--   v.30-31 (the remnant escaped of the house of Yahudah takes root downward; the escaped of Zion)
+--        NT:     Romans 11:5 (a remnant according to the election of grace — two-house guard)
+--        Extras: none warranted
+--        Tanakh: Isaiah 37:31-32 (twin); Isaiah 1:9 (except Yahuah had left a very small remnant); Isaiah 10:20-21 (the remnant of Yashar'el shall return)
+--   v.32-34 (he shall not come into this city; I will defend it for David's sake)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: folded into thread #1 (be-not-afraid) via Ps 46 / 2 Chron 32:7-8; v.34 David's-sake noted in prose
+--   v.35  (the angel of Yahuah smote 185,000 — they were all dead corpses)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Isaiah 37:36 (twin); 2 Chron 32:21 (Yahuah sent an angel which cut off the mighty men); Exodus 12:29 (the Passover-night smiting of all the firstborn at midnight); Psalms 76:5-6 (the stouthearted spoiled, chariot and horse cast into a dead sleep)
+--   v.36-37 (Sennacherib returns, slain by his own sons in the house of Nisroch his god)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: covered in thread #2 prose (the idol cannot save him; Isaiah 37:37-38 the twin); no separate thread warranted
+--
+-- THREADS (5):
+--   2-kings-19-hezekiah-spreads-the-letter-that-all-kingdoms-may-know-thou-art-yahuah-alone  [free]  (Tanakh + Tanakh)
+--   2-kings-19-the-proud-rod-judged-the-axe-shall-not-boast-against-him-that-heweth           [free]  (Tanakh)
+--   2-kings-19-the-remnant-that-is-escaped-shall-take-root-downward                            [free]  (Tanakh + NT)
+--   2-kings-19-the-angel-of-yahuah-smote-the-camp-of-the-assyrians                             [free]  (Tanakh)
+--   2-kings-19-be-not-afraid-i-will-defend-this-city                                           [free]  (Tanakh)
+-- Christology note: v.35 "the angel of Yahuah" framed in prose as the Formed Son who bears the Name and executes Yahuah's deliverance — Yahuah-and-yet-sent-out, not co-equal-trinity, not a created Arian agent.
+
+-- A. Temp view
+CREATE TEMP VIEW _s343_2ki19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- B. cross_references
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Hezekiah spreads the letter, prays the Name be vindicated among the nations
+    ('canon','2-kings',19,14,'canon','isaiah',37,14,'free',E'*And Hezekiah received the letter from the hand of the messengers, and read it: and Hezekiah went up unto the house of Yahuah (LORD), and spread it before Yahuah (LORD)* (Isaiah 37:14). Isaiah''s parallel record matches the Kings account word for word — Hezekiah does not answer Sennacherib''s blasphemy with his own arm, but *spread it before Yahuah (LORD)*, laying the reproach of the living Elohim (God) at the throne of the One who dwells between the cherubims.'),
+    ('canon','2-kings',19,15,'canon','isaiah',37,16,'free',E'*O Yahuah Tseva''ot (LORD of hosts), Elohim (God) of Yashar''el (Israel), that dwellest between the cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast made heaven and earth* (Isaiah 37:16). The twin of Hezekiah''s confession *thou art the Elohim (God), even thou alone, of all the kingdoms of the earth; thou hast made heaven and earth* — covenant-monotheism: Yahuah enthroned over the cherubim of His own ark is the sole Maker, and the idols of Assyria are nothing.'),
+    ('canon','2-kings',19,18,'canon','exodus',12,12,'free',E'*For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12). Hezekiah pleads that Assyria''s gods *were no gods, but the work of men''s hands, wood and stone*; the same Yahuah who *against all the gods of Egypt... execute[d] judgment* on the Passover night is the One who alone can save Jerusalem.'),
+    ('canon','2-kings',19,19,'canon','psalms',46,10,'free',E'*Be still, and know that I am Elohim (God): I will be exalted among the heathen, I will be exalted in the earth* (Psalms 46:10). Hezekiah''s plea — *save thou us out of his hand, that all the kingdoms of the earth may know that thou art Yahuah Elohim (the LORD God), even thou only* — is the very prayer the psalm answers: the deliverance is not for Judah''s comfort first but that Yahuah be *exalted among the heathen*, His Name vindicated before the nations.'),
+    ('canon','2-kings',19,19,'canon','2-chronicles',32,20,'free',E'*And for this cause Hezekiah the king, and the prophet Isaiah the son of Amoz, prayed and cried to heaven* (2 Chronicles 32:20). The Chronicler records the same crisis: against the railing of Sennacherib who *spake against the Elohim (God) of Jerusalem, as against the gods of the people of the earth* (32:19), the king and the prophet together cry to heaven — matching Hezekiah''s *I beseech thee, save thou us out of his hand*.'),
+
+    -- THREAD 2: the proud rod judged — the axe shall not boast against him that heweth
+    ('canon','2-kings',19,22,'canon','isaiah',37,23,'free',E'*Whom hast thou reproached and blasphemed? and against whom hast thou exalted thy voice, and lifted up thine eyes on high? even against the Holy One of Yashar''el (Israel)* (Isaiah 37:23). The twin of the oracle: Sennacherib''s reproach was never against a man or a city but *against the Holy One of Yashar''el (Israel)* — the same charge Yahuah lays in 2 Kings, that the proud king lifted his voice against the LORD Himself.'),
+    ('canon','2-kings',19,23,'canon','isaiah',10,5,'free',E'*O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation* (Isaiah 10:5). Sennacherib boasts *With the multitude of my chariots I am come up to the height of the mountains*, not knowing he was only ever *the rod of mine anger* in Yahuah''s hand — an instrument of judgment that mistook itself for the judge.'),
+    ('canon','2-kings',19,25,'canon','isaiah',10,15,'free',E'*Shall the axe boast itself against him that heweth therewith? or shall the saw magnify itself against him that shaketh it? as if the rod should shake itself against them that lift it up, or as if the staff should lift up itself, as if it were no wood* (Isaiah 10:15). This is the heart of Yahuah''s answer to the boast — *Hast thou not heard long ago how I have done it... that I have formed it? now have I brought it to pass*: the cities Assyria laid waste, Yahuah had formed long before; the axe magnified itself against the Hand that wielded it.'),
+    ('canon','2-kings',19,28,'canon','isaiah',37,29,'free',E'*Because thy rage against me, and thy tumult, is come up into mine ears, therefore will I put my hook in thy nose, and my bridle in thy lips, and I will turn thee back by the way by which thou camest* (Isaiah 37:29). The twin oracle: the proud rod is led home like a beast on a hook and bridle — the boasting axe turned back by the very Hand it defied.'),
+
+    -- THREAD 3: the remnant that is escaped shall take root downward
+    ('canon','2-kings',19,30,'canon','isaiah',37,31,'free',E'*And the remnant that is escaped of the house of Yahudah (Judah) shall again take root downward, and bear fruit upward* (Isaiah 37:31). The twin word of promise: the surviving remnant is not a leftover but a planting — it *take[s] root downward* before it *bear[s] fruit upward*, the hidden covenant-life going deep before it shows above ground.'),
+    ('canon','2-kings',19,31,'canon','isaiah',1,9,'free',E'*Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). The same prophet who promised *out of Jerusalem shall go forth a remnant* names what the remnant means: not Judah''s worthiness but Yahuah''s mercy preserving a seed — *the zeal of Yahuah Tseva''ot (LORD of hosts) shall do this*, lest the covenant-line perish utterly.'),
+    ('canon','2-kings',19,31,'canon','isaiah',10,20,'free',E'*And it shall come to pass in that day, that the remnant of Yashar''el (Israel), and such as are escaped of the house of Jacob, shall no more again stay upon him that smote them; but shall stay upon Yahuah (LORD), the Holy One of Yashar''el (Israel), in truth* (Isaiah 10:20). The remnant doctrine runs through both houses: *they that escape out of mount Zion* are the southern witness of the same promise that *the remnant of Yashar''el... shall return* and lean on Yahuah alone.'),
+    ('canon','2-kings',19,31,'canon','romans',11,5,'free',E'*Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). Sha''ul (Paul) reaches back to this very deliverance-pattern — *Hath Elohim (God) cast away his people? Elohim (God) forbid... I have reserved to myself seven thousand* — to insist the remnant is never replacement but the preserved covenant-seed: *the root be holy, so are the branches* (Romans 11:16). The escaped of Zion *take root downward* into the same root.'),
+
+    -- THREAD 4: the angel of Yahuah smote the camp of the Assyrians
+    ('canon','2-kings',19,35,'canon','isaiah',37,36,'free',E'*Then the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses* (Isaiah 37:36). The twin record of the impossible victory: no army of Judah marched out — *the angel of Yahuah (LORD)* alone went forth in the night, and 185,000 were *dead corpses* by morning. The Formed One who bears the Name does the LORD''s deliverance.'),
+    ('canon','2-kings',19,35,'canon','2-chronicles',32,21,'free',E'*And Yahuah (LORD) sent an angel, which cut off all the mighty men of valour, and the leaders and captains in the camp of the king of Assyria. So he returned with shame of face to his own land* (2 Chronicles 32:21). The Chronicler names the agent plainly — *Yahuah (LORD) sent an angel* — the visible Hand of the LORD, sent out and yet bearing His Name, who cut off the host that mocked the living Elohim (God).'),
+    ('canon','2-kings',19,35,'canon','exodus',12,29,'free',E'*And it came to pass, that at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon* (Exodus 12:29). The deliverance follows the Passover-night pattern: a smiting in the dark by Yahuah''s own going-forth, and at dawn the proud oppressor finds *they were all dead corpses* — *there was not a house where there was not one dead* (Exodus 12:30). Assyria''s camp becomes a second Egypt.'),
+    ('canon','2-kings',19,35,'canon','psalms',76,5,'free',E'*The stouthearted are spoiled, they have slept their sleep: and none of the men of might have found their hands* (Psalms 76:5). The psalm sings the very scene — *At thy rebuke, O Elohim (God) of Jacob, both the chariot and horse are cast into a dead sleep* (76:6): the mighty men of Assyria lie down to a sleep they do not wake from, *In Salem also is his tabernacle, and his dwelling place in Zion* (76:2), where He *brake... the arrows of the bow, the shield, and the sword, and the battle*.'),
+
+    -- THREAD 5: be not afraid — I will defend this city
+    ('canon','2-kings',19,6,'canon','isaiah',37,6,'free',E'*And Isaiah said unto them, Thus shall ye say unto your master, Thus saith Yahuah (LORD), Be not afraid of the words that thou hast heard, wherewith the servants of the king of Assyria have blasphemed me* (Isaiah 37:6). The twin oracle: the prophet''s word turns the trembling king from the blasphemer''s threat to the LORD''s promise — *Be not afraid... I will send a blast upon him*.'),
+    ('canon','2-kings',19,7,'canon','2-chronicles',32,8,'free',E'*With him is an arm of flesh; but with us is Yahuah Eloheinu (the LORD our God) to help us, and to fight our battles. And the people rested themselves upon the words of Hezekiah king of Yahudah (Judah)* (2 Chronicles 32:8). The Chronicler frames the same confidence Isaiah''s oracle gives: Sennacherib has only *an arm of flesh*, and Yahuah will *cause him to fall by the sword in his own land* — the people rest on the LORD who fights for them.'),
+    ('canon','2-kings',19,32,'canon','psalms',46,1,'free',E'*Elohim (God) is our refuge and strength, a very present help in trouble* (Psalms 46:1). Yahuah''s pledge *He shall not come into this city... For I will defend this city, to save it, for mine own sake, and for my servant David''s sake* is the psalm made history — *Therefore will not we fear, though the earth be removed* (46:2): Zion stands because Elohim (God) is in the midst of her, not because of her walls.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- C. threads
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-19-hezekiah-spreads-the-letter-that-all-kingdoms-may-know-thou-art-yahuah-alone', E'Hezekiah spreads the letter — that all kingdoms may know thou art Yahuah alone', E'When Sennacherib''s blasphemy reaches the king, Hezekiah answers not with his own arm but at the throne: *Hezekiah went up into the house of Yahuah (LORD), and spread it before Yahuah (LORD)* (2 Kings 19:14). His prayer is the covenant-monotheist confession — *O Yahuah Elohim (LORD God) of Yashar''el (Israel), which dwellest between the cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth; thou hast made heaven and earth* (19:15). Isaiah''s twin record matches it: *thou art the Elohim (God), even thou alone... thou hast made heaven and earth* (Isaiah 37:16). Hezekiah pleads that Assyria''s gods *were no gods, but the work of men''s hands, wood and stone* (19:18) — the same Yahuah who *against all the gods of Egypt... execute[d] judgment* (Exodus 12:12) on the Passover night. And the prayer''s aim is not survival alone but the vindication of the Name: *save thou us out of his hand, that all the kingdoms of the earth may know that thou art Yahuah Elohim (the LORD God), even thou only* (19:19). The psalm answers it exactly — *Be still, and know that I am Elohim (God): I will be exalted among the heathen* (Psalms 46:10); the Chronicler records the same crisis, *Hezekiah the king, and the prophet Isaiah... prayed and cried to heaven* (2 Chronicles 32:20).',
+       sv.verse_id, ev.verse_id, 'free', 38950
+  FROM _s343_2ki19_lookup sv, _s343_2ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=19 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-19-the-proud-rod-judged-the-axe-shall-not-boast-against-him-that-heweth', E'The proud rod judged — the axe shall not boast against him that heweth', E'Yahuah''s oracle turns on Sennacherib the very boast he made. He had bragged *With the multitude of my chariots I am come up to the height of the mountains* (2 Kings 19:23) and *I have digged and drunk strange waters* — but his reproach was never against a city: *against whom hast thou exalted thy voice... even against the Holy One of Yashar''el (Israel)* (19:22; Isaiah 37:23). The LORD answers that the king was only ever the instrument: *O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation* (Isaiah 10:5). The fenced cities Assyria razed, Yahuah had *formed... long ago* and *brought it to pass* (19:25) — so the boast is the absurdity Isaiah named: *Shall the axe boast itself against him that heweth therewith?... as if the rod should shake itself against them that lift it up* (Isaiah 10:15). Therefore the proud rod is led home like a beast: *I will put my hook in thy nose, and my bridle in thy lips, and I will turn thee back by the way by which thou camest* (19:28; Isaiah 37:29). And so he returns and is slain in *the house of Nisroch his god* (19:37) — the idol that could not save him.',
+       sv.verse_id, ev.verse_id, 'free', 38953
+  FROM _s343_2ki19_lookup sv, _s343_2ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=19 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-19-the-remnant-that-is-escaped-shall-take-root-downward', E'The remnant that is escaped shall take root downward', E'The sign Yahuah gives is a planting: *the remnant that is escaped of the house of Yahudah (Judah) shall yet again take root downward, and bear fruit upward* (2 Kings 19:30). The covenant-life goes deep in the dark before it shows above ground — *For out of Jerusalem shall go forth a remnant, and they that escape out of mount Zion: the zeal of Yahuah Tseva''ot (LORD of hosts) shall do this* (19:31; Isaiah 37:31-32). The remnant is never Judah''s worthiness but Yahuah''s mercy preserving a seed: *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* (Isaiah 1:9). And it runs through both houses — *the remnant of Yashar''el (Israel), and such as are escaped of the house of Jacob... shall stay upon Yahuah (LORD), the Holy One of Yashar''el (Israel), in truth* (Isaiah 10:20). Sha''ul (Paul) reaches back to exactly this preserved-seed pattern: *at this present time also there is a remnant according to the election of grace* (Romans 11:5) — never a replacement people, for *if the root be holy, so are the branches* (Romans 11:16). The escaped of Zion take root downward into that same holy root.',
+       sv.verse_id, ev.verse_id, 'free', 38956
+  FROM _s343_2ki19_lookup sv, _s343_2ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=19 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-19-the-angel-of-yahuah-smote-the-camp-of-the-assyrians', E'The angel of Yahuah smote the camp of the Assyrians — deliverance by Yahuah alone', E'No army of Judah marched out. *And it came to pass that night, that the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses* (2 Kings 19:35; Isaiah 37:36). The Chronicler names the agent plainly — *Yahuah (LORD) sent an angel, which cut off all the mighty men of valour... in the camp of the king of Assyria* (2 Chronicles 32:21): the visible Hand of the LORD, the Formed One who bears the Name, sent out and yet Himself the deliverance of Yahuah, not a co-equal second God nor a mere created messenger. The pattern is the Passover night written again — *at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt* (Exodus 12:29), and at dawn the proud oppressor finds *there was not a house where there was not one dead* (12:30). The psalm sings the scene: *The stouthearted are spoiled, they have slept their sleep... At thy rebuke, O Elohim (God) of Jacob, both the chariot and horse are cast into a dead sleep* (Psalms 76:5-6). The impossible victory belongs to Yahuah alone.',
+       sv.verse_id, ev.verse_id, 'free', 38959
+  FROM _s343_2ki19_lookup sv, _s343_2ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=19 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-19-be-not-afraid-i-will-defend-this-city', E'Be not afraid — I will defend this city for mine own sake', E'Against the blasphemy that *the children are come to the birth, and there is not strength to bring forth* (2 Kings 19:3), Isaiah sends the LORD''s word: *Be not afraid of the words which thou hast heard, with which the servants of the king of Assyria have blasphemed me. Behold, I will send a blast upon him... and I will cause him to fall by the sword in his own land* (19:6-7; Isaiah 37:6). The same confidence the Chronicler records: *With him is an arm of flesh; but with us is Yahuah Eloheinu (the LORD our God) to help us, and to fight our battles* (2 Chronicles 32:8). And the LORD''s pledge over the city is the psalm made history — *He shall not come into this city... For I will defend this city, to save it, for mine own sake, and for my servant David''s sake* (19:32-34): *Elohim (God) is our refuge and strength, a very present help in trouble. Therefore will not we fear, though the earth be removed* (Psalms 46:1-2). Zion stands not by her walls but because Yahuah is in the midst of her, and the deliverance is *for mine own sake* — the Name and the covenant with David held fast.',
+       sv.verse_id, ev.verse_id, 'free', 38962
+  FROM _s343_2ki19_lookup sv, _s343_2ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=19 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- D. thread_members
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 37:14 — the twin record: Hezekiah spreads the letter before Yahuah rather than answering the blasphemy himself.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=14
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-hezekiah-spreads-the-letter-that-all-kingdoms-may-know-thou-art-yahuah-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 37:16 — thou art the Elohim alone, Maker of heaven and earth: the covenant-monotheist confession, twin of 2 Kings 19:15.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=15
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-hezekiah-spreads-the-letter-that-all-kingdoms-may-know-thou-art-yahuah-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 12:12 — against all the gods of Egypt I execute judgment: the same Yahuah judges Assyria''s wood-and-stone gods.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-hezekiah-spreads-the-letter-that-all-kingdoms-may-know-thou-art-yahuah-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalms 46:10 — be still and know I am Elohim; I will be exalted among the heathen: the aim of Hezekiah''s prayer, the Name vindicated.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=19
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-hezekiah-spreads-the-letter-that-all-kingdoms-may-know-thou-art-yahuah-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'2 Chronicles 32:20 — the king and the prophet prayed and cried to heaven: the same crisis, the same answer at the throne.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=19
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-hezekiah-spreads-the-letter-that-all-kingdoms-may-know-thou-art-yahuah-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 37:23 — the reproach was against the Holy One of Yashar''el: twin of 2 Kings 19:22.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=22
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-proud-rod-judged-the-axe-shall-not-boast-against-him-that-heweth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 10:5 — O Assyrian, the rod of mine anger: the boasting king was only ever an instrument in Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-proud-rod-judged-the-axe-shall-not-boast-against-him-that-heweth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 10:15 — shall the axe boast against him that heweth: the heart of Yahuah''s answer to the boast (2 Kings 19:25 — I have formed it).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-proud-rod-judged-the-axe-shall-not-boast-against-him-that-heweth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Isaiah 37:29 — hook in thy nose, bridle in thy lips, turned back: twin of 2 Kings 19:28, the proud rod led home.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=28
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-proud-rod-judged-the-axe-shall-not-boast-against-him-that-heweth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 37:31 — take root downward and bear fruit upward: twin of 2 Kings 19:30, the remnant as a planting.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=30
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-remnant-that-is-escaped-shall-take-root-downward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 1:9 — except Yahuah had left a very small remnant: the remnant is mercy, not Judah''s worthiness.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=31
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-remnant-that-is-escaped-shall-take-root-downward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 10:20-21 — the remnant of Yashar''el shall stay upon Yahuah: the same remnant doctrine through the northern house too.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=31
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-remnant-that-is-escaped-shall-take-root-downward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 11:5 — a remnant according to the election of grace: never replacement, the preserved covenant-seed; root holy, branches holy.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=31
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-remnant-that-is-escaped-shall-take-root-downward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 37:36 — the angel of Yahuah smote 185,000: the twin record of the impossible victory by Yahuah alone.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=35
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 32:21 — Yahuah sent an angel which cut off the mighty men: the visible Hand of the LORD, the Formed One bearing the Name.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=35
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 12:29 — at midnight Yahuah smote all the firstborn: the Passover-night smiting pattern, dead corpses by morning.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=35
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalms 76:5-6 — the stouthearted slept their sleep; chariot and horse cast into a dead sleep: the psalm sings the very scene at Salem/Zion.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=35
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=76 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 37:6 — be not afraid, the LORD''s word against the blasphemy: twin of 2 Kings 19:6.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=6
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-be-not-afraid-i-will-defend-this-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 32:8 — with him an arm of flesh, but with us Yahuah our God to fight our battles: the same confidence Isaiah''s oracle gives.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=7
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-be-not-afraid-i-will-defend-this-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalms 46:1-2 — Elohim is our refuge and strength; we will not fear: Yahuah''s pledge to defend this city made song, Zion stands by Him not her walls.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=19 AND sv.verse_number=32
+  JOIN _s343_2ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-19-be-not-afraid-i-will-defend-this-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-kings_20.sql (2 Kings 20) -----
+-- 2 Kings 20 — Hezekiah's sickness, the heard prayer + fifteen added years, the sign
+--   of the sun gone backward, and the FIRST naming of the Babylonian exile of the
+--   southern house (Yahudah).
+-- Tag: 2ki20   View: _s343_2ki20_lookup   Sort band: 38975 step 3 (38975,38978,38981,38984)
+--
+-- 2 Kings 20 coverage:
+--   v.1-3  (sick unto death; turns face to wall and prays / perfect heart / weeps)
+--          NT:     James 5:15-16 (prayer of faith / fervent prayer availeth) — THREAD 1
+--          Extras: none warranted
+--          Tanakh: Isaiah 38:1-3 (the parallel) ; Psalm 102:24 (take me not away in midst of days) — THREAD 1
+--   v.5-6  (I have heard thy prayer, I have seen thy tears; add fifteen years; deliver this city)
+--          NT:     James 5:15 (Yahuah shall raise him up) — THREAD 1
+--          Extras: none warranted
+--          Tanakh: Isaiah 38:5 (parallel) ; 2 Chronicles 32:24 (prayed, he gave him a sign) — THREAD 1
+--   v.7    (lump of figs on the boil) — Tanakh: Isaiah 38:21 (the parallel plaister) — THREAD 1 (member)
+--   v.8-11 (the sign — shadow on dial of Ahaz goes BACKWARD ten degrees)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Isaiah 38:8 (sun returned ten degrees, parallel) ; Joshua 10:13 (sun stood still — Creator over sun/time) — THREAD 2
+--   v.12-15 (Babylon envoys of Berodach-baladan; Hezekiah shews them ALL his treasures)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Isaiah 39:1-4 (the parallel) ; 2 Chronicles 32:31 (Elohim left him, to try him) — THREAD 3
+--   v.16-18 (all shall be carried into BABYLON; thy sons eunuchs in the palace of the king of Babylon)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Isaiah 39:6-7 (parallel) ; 2 Kings 24:13 + 25:21 (fulfilment) ; 2 Kings 17:18,23 (northern house already scattered — two-house pairing) — THREAD 3 + THREAD 4
+--   v.19   (Good is the word... is it not good if peace and truth be in my days?) — folded into THREAD 3 prose
+--   v.20-21 (pool/conduit; slept with fathers; Manasseh reigns) — NT/Extras/Tanakh: none warranted
+--
+-- Threads:
+--   2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added   [canon: Isaiah, 2 Chronicles, Psalms, James] tier free
+--   2-kings-20-the-sign-of-the-sun-gone-backward-ten-degrees             [canon: Isaiah, Joshua] tier free
+--   2-kings-20-the-babylonian-exile-of-the-southern-house-foretold       [canon: Isaiah, 2 Chronicles, 2 Kings] tier free
+--   2-kings-20-the-northern-stick-scattered-now-the-southern-foretold    [canon: 2 Kings 17] tier free
+
+CREATE TEMP VIEW _s343_2ki20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the heard prayer / fifteen years added
+    ('canon','2-kings',20,2,'canon','isaiah',38,2,'free',E'*Then Hezekiah turned his face toward the wall, and prayed unto Yahuah (LORD),* (Isaiah 38:2). Isaiah''s own record of the same hour: where 2 Kings says *he turned his face to the wall, and prayed unto Yahuah (LORD)* (2 Kings 20:2), the prophet of the southern house preserves the king''s turning aside to seek Yahuah alone, not the physicians.'),
+    ('canon','2-kings',20,3,'canon','isaiah',38,3,'free',E'*And said, Remember now, O Yahuah (LORD), I beseech thee, how I have walked before thee in truth and with a perfect heart, and have done that which is good in thy sight. And Hezekiah wept sore.* (Isaiah 38:3). The very prayer of 2 Kings 20:3 — *I beseech thee, O Yahuah (LORD), remember now how I have walked before thee in truth and with a perfect heart* — pleaded not flesh-merit but covenant-faithfulness, a walk in Yahuah''s Torah, and the tears were not despised.'),
+    ('canon','2-kings',20,3,'canon','psalms',102,24,'free',E'*I said, O my Elohim (God), take me not away in the midst of my days: thy years are throughout all generations.* (Psalm 102:24). The afflicted one''s cry not to be cut off in the midst of his days sings the same plea Hezekiah wept at the wall, *Set thine house in order; for thou shalt die, and not live* (2 Kings 20:1) answered by the One whose *years are throughout all generations.*'),
+    ('canon','2-kings',20,5,'canon','isaiah',38,5,'free',E'*Go, and say to Hezekiah, Thus saith Yahuah (LORD), the Elohim (God) of David thy father, I have heard thy prayer, I have seen thy tears: behold, I will add unto thy days fifteen years.* (Isaiah 38:5). Isaiah''s parallel of the turned sentence: the same word that came back before the prophet had left the middle court — *I have heard thy prayer, I have seen thy tears... I will add unto thy days fifteen years* (2 Kings 20:5-6) — the heard prayer that lengthened a life by Yahuah''s word.'),
+    ('canon','2-kings',20,5,'canon','2-chronicles',32,24,'free',E'*In those days Hezekiah was sick to the death, and prayed unto Yahuah (LORD): and he spake unto him, and he gave him a sign.* (2 Chronicles 32:24). The Chronicler''s seal on the same deliverance — *he prayed unto Yahuah... and he gave him a sign* — confirms that the added years of 2 Kings 20:5-6 came by prayer answered, not by the figs.'),
+    ('canon','2-kings',20,5,'canon','james',5,15,'free',E'*And the prayer of faith shall save the sick, and Yahuah (Lord) shall raise him up; and if he have committed sins, they shall be forgiven him.* (James 5:15). The apostolic word draws the line forward: the king sick unto death whom Yahuah *heard... and raised up* with *I will heal thee* (2 Kings 20:5) is the very pattern of *the prayer of faith* that *shall save the sick.*'),
+    ('canon','2-kings',20,3,'canon','james',5,16,'free',E'*Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.* (James 5:16). Hezekiah''s weeping plea *how I have walked before thee in truth and with a perfect heart* (2 Kings 20:3) is the *effectual fervent prayer of a righteous man* that *availeth much* — a sentence of death reversed because Yahuah heard.'),
+    ('canon','2-kings',20,7,'canon','isaiah',38,21,'free',E'*For Isaiah had said, Let them take a lump of figs, and lay it for a plaister upon the boil, and he shall recover.* (Isaiah 38:21). The same remedy in Isaiah''s record matches *Take a lump of figs. And they took and laid it on the boil, and he recovered* (2 Kings 20:7) — the means in Yahuah''s hand, the healing already promised by his word.'),
+    -- THREAD 2 — the sign of the sun gone backward
+    ('canon','2-kings',20,11,'canon','isaiah',38,8,'free',E'*Behold, I will bring again the shadow of the degrees, which is gone down in the sun dial of Ahaz, ten degrees backward. So the sun returned ten degrees, by which degrees it was gone down.* (Isaiah 38:8). Isaiah''s parallel names what 2 Kings 20:11 records — *he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* — the Creator reversing the very sun on the dial, that the heard prayer might be sealed by a sign.'),
+    ('canon','2-kings',20,11,'canon','joshua',10,13,'free',E'*And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* (Joshua 10:13). As Yahuah held the sun still for Joshua, so he drew its shadow backward for Hezekiah — *let the shadow return backward ten degrees* (2 Kings 20:10) — the same hand of the Formed Son over sun and time, the Creator commanding his own creation.'),
+    -- THREAD 3 — the Babylonian exile of the southern house foretold
+    ('canon','2-kings',20,13,'canon','isaiah',39,2,'free',E'*And Hezekiah was glad of them, and shewed them the house of his precious things, the silver, and the gold, and the spices, and the precious ointment, and all the house of his armour, and all that was found in his treasures: there was nothing in his house, nor in all his dominion, that Hezekiah shewed them not.* (Isaiah 39:2). Isaiah''s parallel records the same display of pride that 2 Kings 20:13 sets down — the treasure paraded before Babylon''s envoys was the very treasure Babylon would one day carry away.'),
+    ('canon','2-kings',20,13,'canon','2-chronicles',32,31,'free',E'*Howbeit in the business of the ambassadors of the princes of Babylon, who sent unto him to enquire of the wonder that was done in the land, Elohim (God) left him, to try him, that he might know all that was in his heart.* (2 Chronicles 32:31). The Chronicler reveals the inward trial behind 2 Kings 20:13 — the showing of *all the house of his precious things* to Babylon was the moment *Elohim (God) left him, to try him*, and the lifted-up heart was exposed.'),
+    ('canon','2-kings',20,17,'canon','isaiah',39,6,'free',E'*Behold, the days come, that all that is in thine house, and that which thy fathers have laid up in store until this day, shall be carried to Babylon: nothing shall be left, saith Yahuah (LORD).* (Isaiah 39:6). Isaiah''s parallel word matches 2 Kings 20:17 verbatim in burden — the treasure displayed in pride shall be *carried into Babylon: nothing shall be left* — the southern house''s exile named long before it came.'),
+    ('canon','2-kings',20,18,'canon','isaiah',39,7,'free',E'*And of thy sons that shall issue from thee, which thou shalt beget, shall they take away; and they shall be eunuchs in the palace of the king of Babylon.* (Isaiah 39:7). The same doom upon the royal seed as 2 Kings 20:18 — *thy sons... they shall be eunuchs in the palace of the king of Babylon* — the captivity of Yahudah''s princes foretold, fulfilled when Daniel and his companions stood in that palace.'),
+    ('canon','2-kings',20,17,'canon','2-kings',24,13,'free',E'*And he carried out thence all the treasures of the house of Yahuah (LORD), and the treasures of the king''s house, and cut in pieces all the vessels of gold which Solomon king of Yashar''el (Israel) had made in the temple of Yahuah (LORD), as Yahuah (LORD) had said.* (2 Kings 24:13). The word of 2 Kings 20:17 — *all that is in thine house... shall be carried into Babylon* — comes to pass to the letter, *as Yahuah (LORD) had said*: the treasure shewn to the envoys is the treasure Nebuchadnezzar bears away.'),
+    ('canon','2-kings',20,18,'canon','2-kings',25,21,'free',E'*And the king of Babylon smote them, and slew them at Riblah in the land of Hamath. So Yahudah (Judah) was carried away out of their land.* (2 Kings 25:21). The eunuch-prophecy of 2 Kings 20:18 ends here — *So Yahudah (Judah) was carried away out of their land* — the southern house gone into the Babylon that the pride of the treasure-house invited.'),
+    -- THREAD 4 — two-house pairing: the northern stick already scattered, now the southern foretold
+    ('canon','2-kings',20,18,'canon','2-kings',17,18,'free',E'*Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only.* (2 Kings 17:18). The northern stick — Yashar''el / Ephraim — was already scattered into Assyria, *there was none left but the tribe of Yahudah (Judah) only*; now in 2 Kings 20:18 the southern stick, Yahudah, hears its own captivity named: both houses go out, both to be gathered again.'),
+    ('canon','2-kings',20,17,'canon','2-kings',17,23,'free',E'*Until Yahuah (LORD) removed Yashar''el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day.* (2 Kings 17:23). As the north was *carried away out of their own land to Assyria*, so the word of 2 Kings 20:17 carries the south *into Babylon* — the two-house scattering completed, Yashar''el to Assyria and Yahudah to Babylon, awaiting the day the two sticks are made one.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added',
+       E'The Prayer That Turned the Sentence — Fifteen Years Added',
+       E'Isaiah comes with a death-sentence: *Set thine house in order; for thou shalt die, and not live* (2 Kings 20:1). Hezekiah does not argue or summon physicians — *he turned his face to the wall, and prayed unto Yahuah (LORD)* (20:2), pleading not flesh-merit but a covenant walk: *Remember now, O Yahuah (LORD), I beseech thee, how I have walked before thee in truth and with a perfect heart* (Isaiah 38:3), *And Hezekiah wept sore.* Before the prophet had crossed the middle court the word came back: *I have heard thy prayer, I have seen thy tears: behold, I will heal thee... I will add unto thy days fifteen years* (20:5-6; Isaiah 38:5). The Chronicler seals it — *he prayed unto Yahuah (LORD): and he spake unto him, and he gave him a sign* (2 Chronicles 32:24). His was the cry of Psalm 102:24, *take me not away in the midst of my days*, answered by the One whose *years are throughout all generations*. The apostle draws the pattern forward: *the prayer of faith shall save the sick, and Yahuah (Lord) shall raise him up* (James 5:15), for *the effectual fervent prayer of a righteous man availeth much* (5:16). The figs on the boil (20:7; Isaiah 38:21) were the means in Yahuah''s hand; the healing was the heard prayer.',
+       sv.verse_id, ev.verse_id, 'free', 38975
+  FROM _s343_2ki20_lookup sv, _s343_2ki20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=20 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-20-the-sign-of-the-sun-gone-backward-ten-degrees',
+       E'The Sign of the Sun Gone Backward Ten Degrees',
+       E'Hezekiah asks a sign — *What shall be the sign that Yahuah (LORD) will heal me* (2 Kings 20:8) — and Isaiah offers a choice: *shall the shadow go forward ten degrees, or go back ten degrees?* (20:9). The king answers that forward is *a light thing*; *nay, but let the shadow return backward ten degrees* (20:10). So *Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* (20:11). Isaiah''s own record names the wonder: *So the sun returned ten degrees, by which degrees it was gone down* (Isaiah 38:8). This is the Creator over his own creation — the same hand of the Formed Son that once held the sun still over Gibeon for Joshua: *And the sun stood still, and the moon stayed... So the sun stood still in the midst of heaven, and hasted not to go down about a whole day* (Joshua 10:13). The One who fixed the lights of heaven (Genesis 1:14) can stay them and turn them back; time itself bends to seal a heard prayer.',
+       sv.verse_id, ev.verse_id, 'free', 38978
+  FROM _s343_2ki20_lookup sv, _s343_2ki20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=20 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-20-the-babylonian-exile-of-the-southern-house-foretold',
+       E'The Babylonian Exile of the Southern House Foretold',
+       E'The envoys of Berodach-baladan of Babylon come with letters and a present, and the healed king, his heart lifted up, *shewed them all the house of his precious things, the silver, and the gold... and all the house of his armour... there was nothing in his house, nor in all his dominion, that Hezekiah shewed them not* (2 Kings 20:13; Isaiah 39:2). The Chronicler exposes the trial: *Elohim (God) left him, to try him, that he might know all that was in his heart* (2 Chronicles 32:31). The pride that displays the treasure invites the spoiler. Isaiah pronounces the doom — and this is the FIRST naming of Yahudah''s Babylonian exile: *all that is in thine house... shall be carried into Babylon: nothing shall be left, saith Yahuah (LORD)* (20:17; Isaiah 39:6), *And of thy sons that shall issue from thee... shall they take away; and they shall be eunuchs in the palace of the king of Babylon* (20:18; Isaiah 39:7) — fulfilled when Daniel stood in that palace. It came to the letter: *he carried out thence all the treasures of the house of Yahuah (LORD)... as Yahuah (LORD) had said* (2 Kings 24:13), and *So Yahudah (Judah) was carried away out of their land* (25:21). Hezekiah''s complacent answer — *Is it not good, if peace and truth be in my days?* (20:19) — left the reckoning to his sons.',
+       sv.verse_id, ev.verse_id, 'free', 38981
+  FROM _s343_2ki20_lookup sv, _s343_2ki20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=20 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-20-the-northern-stick-scattered-now-the-southern-foretold',
+       E'The Northern Stick Scattered, Now the Southern Foretold',
+       E'The word over Yahudah in this chapter is the second half of a two-house judgment. The northern house — Yashar''el, Ephraim, the stick of Joseph — was already gone: *Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18), *So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day* (17:23). Now in 2 Kings 20:17-18 the southern stick, Yahudah, hears its own captivity named — *all that is in thine house... shall be carried into Babylon... and they shall be eunuchs in the palace of the king of Babylon*. Both houses are sent out of the land: the north to Assyria, the south to Babylon. Yet the scattering is never the last word — *He that scattered Yashar''el (Israel) will gather him* (Jeremiah 31:10), and the two sticks become one in his hand (Ezekiel 37:19). The exile foretold here is the dark side of the promise that the divided people will one day be made whole.',
+       sv.verse_id, ev.verse_id, 'free', 38984
+  FROM _s343_2ki20_lookup sv, _s343_2ki20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=20 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 38:2 — *prayed unto Yahuah (LORD)*; the king turns to the wall, not the physicians.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=38 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 38:3 — *how I have walked before thee in truth and with a perfect heart*; the covenant plea, not flesh-merit.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=38 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 102:24 — *take me not away in the midst of my days*; the afflicted one''s same cry.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=102 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Isaiah 38:5 — *I have heard thy prayer... I will add unto thy days fifteen years*; the turned sentence.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=38 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'2 Chronicles 32:24 — *prayed unto Yahuah... and he gave him a sign*; the Chronicler''s seal on the answer.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'James 5:15 — *the prayer of faith shall save the sick, and Yahuah (Lord) shall raise him up*; the pattern forward.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'James 5:16 — *the effectual fervent prayer of a righteous man availeth much*; Hezekiah''s tears availed.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Isaiah 38:21 — *a lump of figs... a plaister upon the boil*; the means in Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=7
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=38 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-prayer-that-turned-the-sentence-fifteen-years-added'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 38:8 — *So the sun returned ten degrees*; Isaiah names the wonder of the dial of Ahaz.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=38 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-sign-of-the-sun-gone-backward-ten-degrees'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joshua 10:13 — *the sun stood still in the midst of heaven*; the Creator over sun and time, the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-sign-of-the-sun-gone-backward-ten-degrees'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 39:2 — *shewed them the house of his precious things*; the parallel display of pride before Babylon.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=39 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-babylonian-exile-of-the-southern-house-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 32:31 — *Elohim (God) left him, to try him*; the inward trial behind the display.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-babylonian-exile-of-the-southern-house-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 39:6 — *shall be carried to Babylon: nothing shall be left*; the southern exile named.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=17
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=39 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-babylonian-exile-of-the-southern-house-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Isaiah 39:7 — *they shall be eunuchs in the palace of the king of Babylon*; the royal seed taken (Daniel).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=39 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-babylonian-exile-of-the-southern-house-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'2 Kings 24:13 — *carried out... all the treasures... as Yahuah (LORD) had said*; the word fulfilled to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=17
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=24 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-babylonian-exile-of-the-southern-house-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'2 Kings 25:21 — *So Yahudah (Judah) was carried away out of their land*; the prophecy''s end.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-babylonian-exile-of-the-southern-house-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Kings 17:18 — *removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only*; the northern stick gone to Assyria.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-northern-stick-scattered-now-the-southern-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Kings 17:23 — *Yashar''el (Israel) carried away out of their own land to Assyria*; the north, as the south will go to Babylon.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=20 AND sv.verse_number=17
+  JOIN _s343_2ki20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-20-the-northern-stick-scattered-now-the-southern-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session343 — 2 Kings cross-references complete.'
