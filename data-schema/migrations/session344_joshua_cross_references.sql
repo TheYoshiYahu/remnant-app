@@ -5165,6 +5165,1189 @@ SELECT t.id, cr.id, 3, E'Numbers 35:15 — *a refuge... for the stranger, and fo
  WHERE t.slug='joshua-20-a-refuge-from-the-avenger-yahuah-himself-the-refuge'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_joshua_21.sql (Joshua 21) -----
+-- Chapter: Joshua 21 — THE FORTY-EIGHT LEVITICAL CITIES, then THE GREAT SUMMARY (the rest given, not one good word failed)
+-- Tag: jos21   View: _s344_jos21_lookup   Sort band: 35500, 35503, 35506, 35509
+--
+-- Joshua 21 coverage:
+--   v.1-8  (the heads of the Levites come; cities to dwell in with suburbs; the lot out of EVERY tribe — Kohath,
+--           Gershon, Merari; as Yahuah commanded by the hand of Moses)
+--          NT:     none warranted at the verse (the scattered-priesthood weave is Tanakh-lateral)
+--          Extras: none warranted
+--          Tanakh: Numbers 35:1-8 (the original command — cities + suburbs for the Levites out of the possession of
+--                  Israel, the few give few and the many give many), Genesis 49:7 (Levi divided in Jacob, scattered
+--                  in Israel — the curse turned to ministry), Deuteronomy 18:1-2 (Levi hath no part nor inheritance,
+--                  Yahuah is their inheritance) — Levi has no land-block but is planted among ALL the people
+--   v.9-42 (the 48 cities named tribe by tribe, the cities of refuge — Hebron, Shechem, Golan, Kedesh, Bezer,
+--           Ramoth — among them)
+--          NT:     none warranted (city-list)
+--          Extras: none warranted
+--          Tanakh: Numbers 35:6 (among the cities six for refuge for the manslayer), Joshua 20:7-8 (the six cities
+--                  of refuge appointed) — the cities of refuge are Levitical cities, mercy planted among the priests
+--   v.43   (Yahuah gave Yashar'el ALL the land which he sware to give unto their fathers; they possessed it, dwelt)
+--          NT:     none warranted at the verse (the rest/promise weave carried by v.44-45)
+--          Extras: none warranted
+--          Tanakh: Genesis 15:18 (the covenant: unto thy seed have I given this land), Deuteronomy 7:8 (he keep the
+--                  oath sworn unto your fathers) — the Abrahamic land-oath FULFILLED
+--   v.44   (Yahuah gave them REST round about, according to all he sware; no enemy stood)
+--          NT:     Hebrews 4:8-9 (if Yahusha had given them rest... there remaineth therefore a rest to the people
+--                  of Elohim) — Joshua's rest a shadow of the greater rest that yet remains
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 7:1-2 (cast out many nations, deliver them before thee) — the rest as the gift of the
+--                  One who fought for them
+--   v.45   (THERE FAILED NOT OUGHT of any good thing which Yahuah had spoken; ALL CAME TO PASS)
+--          NT:     2 Corinthians 1:20 (all the promises of Elohim in him are yea, and Amen) — the faithful word
+--          Extras: none warranted
+--          Tanakh: 1 Kings 8:56 (there hath not failed one word of all his good promise), Joshua 23:14 (not one thing
+--                  hath failed of all the good things... all are come to pass) — the faithful word of Yahuah
+--
+-- Threads:
+--   joshua-21-the-forty-eight-levitical-cities-levi-scattered-among-all-the-tribes  [Tanakh: Numbers, Genesis, Deuteronomy]  (free)
+--   joshua-21-the-cities-of-refuge-among-the-levites                                [Tanakh: Numbers, Joshua]                (free)
+--   joshua-21-the-rest-given-the-land-sworn-to-the-fathers-fulfilled                [Tanakh: Genesis, Deuteronomy | NT: Hebrews]  (free)
+--   joshua-21-there-failed-not-one-good-word-all-came-to-pass                       [Tanakh: 1 Kings, Joshua | NT: 2 Corinthians] (free)
+--
+-- Framework notes: ★★ Levi has NO land-block — the curse of Genesis 49:7 (*I will divide them in Jacob, and scatter
+-- them in Israel*) is turned to ministry: the priests planted in 48 cities through EVERY tribe so the people of
+-- Yahuah dwell among His servants (Num 35:1-8; Deut 18:1-2 — *Yahuah is their inheritance*). The cities of refuge
+-- (21:13,21,27,32,38) are Levitical cities — mercy housed among the priests (Num 35:6; Joshua 20). ★★★ THE GREAT
+-- SUMMARY: the Abrahamic land-oath (Gen 15:18) FULFILLED (21:43), the REST GIVEN (21:44) read forward as a shadow of
+-- the greater rest that yet remains (Heb 4:8-9 — Joshua's rest was not the final rest), and NOT ONE GOOD WORD FAILED
+-- (21:45), the faithful word echoed at the temple (1 Kings 8:56) and in Joshua's own farewell (23:14), filled in the
+-- Yea-and-Amen of all Yahuah's promises (2 Cor 1:20). The faithfulness is the Father's; the Formed Son who fought
+-- for Israel (Deut 7) is Yahuah and has a Father — no co-equal-person grammar.
+
+CREATE TEMP VIEW _s344_jos21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the 48 Levitical cities — Levi scattered among all the tribes (Numbers / Genesis / Deuteronomy)
+    ('canon','joshua',21,2,'canon','numbers',35,2,'free',E'*Command the children of Yashar''el (Israel), that they give unto the Levites of the inheritance of their possession cities to dwell in; and ye shall give also unto the Levites suburbs for the cities round about them* (Numbers 35:2). The heads of the Levites come pleading the very word of Moses — *Yahuah (LORD) commanded by the hand of Moses to give us cities to dwell in, with the suburbs thereof for our cattle* (21:2). Joshua does not invent; he obeys the Torah''s own provision for the tribe with no land.'),
+    ('canon','joshua',21,3,'canon','numbers',35,8,'free',E'*And the cities which ye shall give shall be of the possession of the children of Yashar''el (Israel): from them that have many ye shall give many; but from them that have few ye shall give few: every one shall give of his cities unto the Levites according to his inheritance which he inheriteth* (Numbers 35:8). So *the children of Yashar''el (Israel) gave unto the Levites out of their inheritance... these cities and their suburbs* (21:3) — every tribe gives of its own, the priests planted among the whole people, not gathered into one corner.'),
+    ('canon','joshua',21,4,'canon','genesis',49,7,'free',E'*Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7). Jacob''s word over Levi was a scattering — and here the scattering is fulfilled, yet turned to ministry: *the children of Aaron... had by lot out of the tribe of Yahudah (Judah), and out of the tribe of Simeon, and out of the tribe of Benjamin, thirteen cities* (21:4), the lot reaching into tribe after tribe. The curse becomes the priesthood dwelling among all the people.'),
+    ('canon','joshua',21,8,'canon','deuteronomy',18,2,'free',E'*Therefore shall they have no inheritance among their brethren: Yahuah (LORD) is their inheritance, as he hath said unto them* (Deuteronomy 18:2). The Levites receive cities but no land-block — *the children of Yashar''el (Israel) gave by lot unto the Levites these cities with their suburbs, as Yahuah (LORD) commanded by the hand of Moses* (21:8). Their portion is not a territory but Yahuah Himself; they live scattered so the people may dwell beside the servants of the Name.'),
+    -- THREAD 2: the cities of refuge are among the Levitical cities (Numbers 35:6 / Joshua 20)
+    ('canon','joshua',21,13,'canon','numbers',35,6,'free',E'*And among the cities which ye shall give unto the Levites there shall be six cities for refuge, which ye shall appoint for the manslayer, that he may flee thither: and to them ye shall add forty and two cities* (Numbers 35:6). Just as Moses said, the cities of refuge are Levitical cities: *they gave to the children of Aaron the priest Hebron with her suburbs, to be a city of refuge for the slayer* (21:13). The mercy for the slayer-unawares is housed among the priests — refuge and priesthood in one place.'),
+    ('canon','joshua',21,21,'canon','joshua',20,7,'free',E'*And they appointed Kedesh in Galilee in mount Naphtali, and Shechem in mount Ephraim, and Kirjath-arba, which is Hebron, in the mountain of Yahudah (Judah)* (Joshua 20:7). The cities of refuge appointed the chapter before reappear here as Levitical cities — *Shechem with her suburbs in mount Ephraim, to be a city of refuge for the slayer* (21:21). The refuge-city and the priest-city are the same city; the Torah''s mercy and the Torah''s ministry stand together.'),
+    ('canon','joshua',21,27,'canon','joshua',20,8,'free',E'*And on the other side Jordan by Jericho eastward, they assigned Bezer in the wilderness upon the plain out of the tribe of Reuben, and Ramoth in Gilead out of the tribe of Gad, and Golan in Bashan out of the tribe of Manasseh* (Joshua 20:8). The eastern cities of refuge are likewise given to the Levites — *Golan in Bashan with her suburbs, to be a city of refuge for the slayer* (21:27). The slayer flees to a city where the priests dwell; mercy and the service of Yahuah share one wall.'),
+    -- THREAD 3: the rest given, the land sworn to the fathers fulfilled (Genesis 15 / Deuteronomy 7 / Hebrews 4)
+    ('canon','joshua',21,43,'canon','genesis',15,18,'free',E'*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). The oath cut between the pieces is now made good: *Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein* (21:43). The land-promise to Abraham, carried by the seed, is FULFILLED — not a word of it forgotten across four hundred years.'),
+    ('canon','joshua',21,43,'canon','deuteronomy',7,8,'free',E'*But because Yahuah (LORD) loved you, and because he would keep the oath which he had sworn unto your fathers, hath Yahuah (LORD) brought you out with a mighty hand* (Deuteronomy 7:8). The possession of the land is the keeping of the oath sworn to the fathers — *all the land which he sware to give unto their fathers* (21:43). It rests on Yahuah''s love and faithfulness, *not because ye were more in number* (Deut 7:7), the covenant-mercy reaching from Abraham to the conquest.'),
+    ('canon','joshua',21,44,'canon','deuteronomy',7,2,'free',E'*And when Yahuah Elohayka (the LORD thy God) shall deliver them before thee; thou shalt smite them, and utterly destroy them; thou shalt make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2). The promise to deliver the nations is kept: *there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand* (21:44). The rest is not won by Israel''s sword but given by the One who fought for them, exactly as Moses foretold.'),
+    ('canon','joshua',21,44,'canon','hebrews',4,8,'free',E'*For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Hebrews 4:8). *Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers* (21:44) — yet that rest in the land was not the final rest; Hebrews reads it forward: *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). Joshua''s rest is a true gift and a shadow of the greater Sabbath-rest that yet remains for the people of Yahuah.'),
+    ('canon','joshua',21,44,'canon','hebrews',4,9,'free',E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The rest given by Joshua — *Yahuah (LORD) gave them rest round about* (21:44) — pointed past itself: *if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Heb 4:8). The land-rest is the type; the keeping of the Sabbath-rest of Yahuah, entered by faith and not abolished, is the substance still to come.'),
+    -- THREAD 4: there failed not one good word — all came to pass (1 Kings 8:56 / Joshua 23:14 / 2 Corinthians 1:20)
+    ('canon','joshua',21,45,'canon','1-kings',8,56,'free',E'*Blessed be Yahuah (LORD), that hath given rest unto his people Yashar''el (Israel), according to all that he promised: there hath not failed one word of all his good promise, which he promised by the hand of Moses his servant* (1 Kings 8:56). Solomon at the temple sings the very word of Joshua: *There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass* (21:45). From conquest to temple the testimony is one — Yahuah''s good word does not fall to the ground.'),
+    ('canon','joshua',21,45,'canon','joshua',23,14,'free',E'*Ye know in all your hearts and in all your souls, that not one thing hath failed of all the good things which Yahuah Elohaychem (the LORD your God) spake concerning you; all are come to pass unto you, and not one thing hath failed thereof* (Joshua 23:14). Joshua''s own farewell repeats the summary of 21:45 — *There failed not ought of any good thing... all came to pass*. The covenant faithfulness is set as a witness twice over, so the house of Yashar''el cannot doubt the faithful word.'),
+    ('canon','joshua',21,45,'canon','2-corinthians',1,20,'free',E'*For all the promises of Elohim (God) in him are yea, and in him Amen, unto the glory of Elohim (God) by us* (2 Corinthians 1:20). What Joshua witnessed in the land — *There failed not ought of any good thing which Yahuah (LORD) had spoken... all came to pass* (21:45) — is the standing character of Yahuah: every promise is *yea, and... Amen*. The faithfulness shown to the fathers is the same faithfulness gathered up in the Formed Son, who is Yahuah and has a Father.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-21-the-forty-eight-levitical-cities-levi-scattered-among-all-the-tribes',
+       E'The Forty-Eight Levitical Cities — Levi Scattered Among All the Tribes',
+       E'The tribe of Levi receives no land-block. Instead the heads of the Levites come pleading the word of Moses — *Yahuah (LORD) commanded by the hand of Moses to give us cities to dwell in, with the suburbs thereof for our cattle* (Joshua 21:2) — and Israel obeys: *the children of Yashar''el (Israel) gave unto the Levites out of their inheritance, at the commandment of Yahuah (LORD), these cities and their suburbs* (21:3), forty and eight in all (21:41). This is the Torah''s own provision: *Command the children of Yashar''el (Israel), that they give unto the Levites of the inheritance of their possession cities to dwell in* (Numbers 35:2), *from them that have many ye shall give many; but from them that have few ye shall give few... according to his inheritance* (Numbers 35:8). Every tribe gives of its own — Kohath out of Judah, Simeon, Benjamin, Ephraim, Dan, Manasseh; Gershon out of Issachar, Asher, Naphtali; Merari out of Reuben, Gad, Zebulun — so the priests dwell among the whole people, not gathered into one corner. And the scattering is no accident: Jacob had said over Levi, *I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7) — a word of judgment now turned to ministry, the levitical anger of Shechem transfigured into a priesthood planted in every tribe. Their portion is not a territory: *Therefore shall they have no inheritance among their brethren: Yahuah (LORD) is their inheritance, as he hath said unto them* (Deuteronomy 18:2). Levi is scattered so that the people of Yahuah may dwell beside the servants of the Name, and so that the One whose inheritance the Levites are may be near to all.',
+       sv.verse_id, ev.verse_id, 'free', 35500
+  FROM _s344_jos21_lookup sv, _s344_jos21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=21 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-21-the-cities-of-refuge-among-the-levites',
+       E'The Cities of Refuge Among the Levites',
+       E'Six of the forty-eight Levitical cities are cities of refuge — mercy housed among the priests. Moses had joined the two: *And among the cities which ye shall give unto the Levites there shall be six cities for refuge, which ye shall appoint for the manslayer, that he may flee thither: and to them ye shall add forty and two cities* (Numbers 35:6). So in Joshua the refuge-city and the priest-city are one and the same: *they gave to the children of Aaron the priest Hebron with her suburbs, to be a city of refuge for the slayer* (21:13); *Shechem with her suburbs in mount Ephraim, to be a city of refuge for the slayer* (21:21); *Golan in Bashan with her suburbs, to be a city of refuge for the slayer* (21:27) — and Kedesh, Bezer, and Ramoth likewise (21:32,36,38). These are the very cities Joshua had appointed the chapter before: *Kedesh in Galilee in mount Naphtali, and Shechem in mount Ephraim, and Kirjath-arba, which is Hebron* (Joshua 20:7), and across Jordan *Bezer... and Ramoth in Gilead... and Golan in Bashan* (Joshua 20:8). The slayer-unawares flees to a city where the priests dwell; the Torah''s mercy for the innocent-of-intent and the Torah''s ministry of the Name share one wall. The curse is never the Torah — here the Torah shelters the slayer and houses the priesthood in the very same gates.',
+       sv.verse_id, ev.verse_id, 'free', 35503
+  FROM _s344_jos21_lookup sv, _s344_jos21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=21 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-21-the-rest-given-the-land-sworn-to-the-fathers-fulfilled',
+       E'The Rest Given — the Land Sworn to the Fathers Fulfilled',
+       E'The great summary of the conquest: *And Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein. And Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand* (Joshua 21:43-44). This is the Abrahamic land-oath made good — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18) — the promise carried by the seed across four hundred years and not one word of it forgotten. It rests on Yahuah''s love and faithfulness, not Israel''s strength: *because Yahuah (LORD) loved you, and because he would keep the oath which he had sworn unto your fathers, hath Yahuah (LORD) brought you out with a mighty hand* (Deuteronomy 7:8), and it was He who *deliver them before thee* (Deuteronomy 7:2), so that *there stood not a man of all their enemies before them*. Yet the rest in the land was not the final rest. Hebrews reads it forward: *For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Hebrews 4:8) — *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). Joshua''s rest is a true gift and a shadow: the land-Sabbath is the type, and the keeping of the greater Sabbath-rest of Yahuah, entered by faith and never abolished, is the substance that yet remains.',
+       sv.verse_id, ev.verse_id, 'free', 35506
+  FROM _s344_jos21_lookup sv, _s344_jos21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=43
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=21 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-21-there-failed-not-one-good-word-all-came-to-pass',
+       E'There Failed Not One Good Word — All Came to Pass',
+       E'The chapter ends on the faithfulness of Yahuah itself: *There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass* (Joshua 21:45). This becomes the standing testimony of the whole canon. Solomon sings it word for word at the dedication of the temple: *Blessed be Yahuah (LORD), that hath given rest unto his people Yashar''el (Israel), according to all that he promised: there hath not failed one word of all his good promise, which he promised by the hand of Moses his servant* (1 Kings 8:56). Joshua himself sets it as a double witness in his farewell: *not one thing hath failed of all the good things which Yahuah Elohaychem (the LORD your God) spake concerning you; all are come to pass unto you, and not one thing hath failed thereof* (Joshua 23:14). From conquest to temple to farewell, the word of Yahuah does not fall to the ground. And this is no past-tense faithfulness only; it is the very character of Yahuah, gathered up in the Formed Son: *For all the promises of Elohim (God) in him are yea, and in him Amen, unto the glory of Elohim (God) by us* (2 Corinthians 1:20). The same faithfulness that gave the land to the fathers is the Yea-and-Amen of every promise — the Son who is Yahuah and has a Father, the seal upon the good word that cannot fail.',
+       sv.verse_id, ev.verse_id, 'free', 35509
+  FROM _s344_jos21_lookup sv, _s344_jos21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=45
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=21 AND ev.verse_number=45
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 35:2 — *give unto the Levites... cities to dwell in; and... suburbs for the cities round about them*: the heads of the Levites plead the very word of Moses (Joshua 21:2).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=2
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-forty-eight-levitical-cities-levi-scattered-among-all-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 35:8 — *from them that have many ye shall give many; but from them that have few ye shall give few*: every tribe gives of its own, the priests planted among the whole people (Joshua 21:3).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=3
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-forty-eight-levitical-cities-levi-scattered-among-all-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 49:7 — *I will divide them in Jacob, and scatter them in Yashar''el (Israel)*: Jacob''s word over Levi fulfilled here, the curse turned to ministry (Joshua 21:4).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=4
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-forty-eight-levitical-cities-levi-scattered-among-all-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 18:2 — *Yahuah (LORD) is their inheritance, as he hath said unto them*: Levi receives cities but no land-block; their portion is Yahuah Himself (Joshua 21:8).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-forty-eight-levitical-cities-levi-scattered-among-all-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 35:6 — *among the cities... six cities for refuge... for the manslayer*: the cities of refuge are Levitical cities, mercy housed among the priests (Joshua 21:13).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=13
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-cities-of-refuge-among-the-levites'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joshua 20:7 — *Kedesh... Shechem... Kirjath-arba, which is Hebron*: the refuge-cities appointed the chapter before are the same priest-cities (Joshua 21:21).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=21
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-cities-of-refuge-among-the-levites'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Joshua 20:8 — *Bezer... and Ramoth in Gilead... and Golan in Bashan*: the eastern refuge-cities likewise given to the Levites (Joshua 21:27).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=27
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=20 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-cities-of-refuge-among-the-levites'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 15:18 — *Unto thy seed have I given this land*: the Abrahamic land-oath fulfilled, the promise carried by the seed (Joshua 21:43).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=43
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-rest-given-the-land-sworn-to-the-fathers-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 7:8 — *he would keep the oath which he had sworn unto your fathers*: the possession rests on Yahuah''s love and faithfulness (Joshua 21:43).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=43
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-rest-given-the-land-sworn-to-the-fathers-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 7:2 — *Yahuah Elohayka shall deliver them before thee*: the rest is given by the One who fought for them, not won by Israel''s sword (Joshua 21:44).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=44
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-rest-given-the-land-sworn-to-the-fathers-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 4:8 — *if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day*: Joshua''s rest was not the final rest (Joshua 21:44).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=44
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-rest-given-the-land-sworn-to-the-fathers-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Hebrews 4:9 — *There remaineth therefore a rest to the people of Elohim (God)*: the land-rest a shadow of the greater Sabbath-rest that yet remains (Joshua 21:44).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=44
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-the-rest-given-the-land-sworn-to-the-fathers-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 8:56 — *there hath not failed one word of all his good promise, which he promised by the hand of Moses*: Solomon at the temple sings the word of Joshua 21:45.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=45
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=56
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-there-failed-not-one-good-word-all-came-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joshua 23:14 — *not one thing hath failed of all the good things... all are come to pass*: Joshua''s farewell repeats the summary as a double witness (Joshua 21:45).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=45
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-there-failed-not-one-good-word-all-came-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Corinthians 1:20 — *all the promises of Elohim (God) in him are yea, and in him Amen*: the faithfulness shown to the fathers gathered up in the Formed Son (Joshua 21:45).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=21 AND sv.verse_number=45
+  JOIN _s344_jos21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-21-there-failed-not-one-good-word-all-came-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_22.sql (Joshua 22) -----
+-- Chapter: Joshua 22 — THE EASTERN TRIBES SENT HOME; THE ALTAR OF WITNESS (ED) & THE NEAR-WAR AVERTED
+-- Tag: jos22   View: _s344_jos22_lookup   Sort band: 35525, 35528, 35531, 35534
+--
+-- Joshua 22 coverage:
+--   v.1-6  (Reuben, Gad, half-Manasseh sent home with a blessing; v.5 the Torah-love charge —
+--          love Yahuah, walk in all his ways, keep his commandments, cleave unto him, serve with
+--          all your heart and soul)
+--          NT:     none warranted at the verse (the love-command weave is Tanakh-lateral here;
+--                  the Shema-greatest-command is treated more directly at Deut 6)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 6:5 (love Yahuah with all thine heart/soul/might), Deuteronomy 10:12
+--                  (fear/walk/love/serve with all heart and soul), Deuteronomy 11:13 (love & serve
+--                  with all your heart and soul), Deuteronomy 13:4 (walk after, fear, keep
+--                  commandments, obey, serve, cleave) — Joshua hands the departing tribes the very
+--                  Torah-love charge of Moses
+--   v.10-20 (the great altar by Jordan; the congregation gathers to WAR, fearing rival/apostate
+--          worship against the ONE place Yahuah chose; Peor and Achan remembered)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 12:5,13-14 (the ONE place Yahuah shall choose; offer not burnt
+--                  offerings in every place), Leviticus 17:8-9 (offer only at the door of the
+--                  tabernacle, else cut off), Numbers 25:3-4 (Baal-peor, the plague, Yahuah's
+--                  anger), Joshua 7:1 (Achan's trespass, wrath on all the congregation) — zeal for
+--                  the one altar against apostasy
+--   v.21-34 (the eastern tribes answer: the altar is NOT for sacrifice but a WITNESS — ED — that
+--          they share in Yahuah; Phinehas & the princes INQUIRE first; the war averted; "he knoweth")
+--          NT:     Matthew 18:15-16 (go and tell him his fault... in the mouth of two or three
+--                  witnesses — the pattern of inquiry before judgment), Romans 14:4,13 (who art
+--                  thou that judgest another?... judge this rather, put no stumblingblock — not
+--                  judging a brother rashly)
+--          Extras: none warranted
+--          Tanakh: Joshua 24:27 (the great stone a witness — "it hath heard all the words") — the
+--                  same memorial-witness pattern; the unity of the tribes preserved
+--
+-- Threads:
+--   joshua-22-take-diligent-heed-to-love-yahuah-the-torah-charge-to-the-departing-tribes  [Tanakh: Deuteronomy] (free)
+--   joshua-22-the-zeal-for-the-one-altar-the-congregation-gathers-against-apostasy        [Tanakh: Deuteronomy, Leviticus, Numbers, Joshua] (free)
+--   joshua-22-the-altar-of-witness-ed-the-war-averted-by-inquiry-not-assumption           [Tanakh: Joshua | NT: Matthew, Romans] (free)
+--
+-- Framework notes: ★ Joshua sends the EASTERN tribes (Reuben/Gad/half-Manasseh) home with the
+-- Torah-LOVE charge of Moses (22:5 = Deut 6:5/10:12/11:13/13:4) — the covenant inheritance, never
+-- the curse; love and obedience held together, *cleave unto him*. ★ The near-civil-war turns on the
+-- ONE place Yahuah chose (Deut 12) and the one altar (Lev 17:8-9): the western tribes rightly fear
+-- rival/apostate worship, remembering Peor (Num 25) and Achan (Josh 7) — zeal FOR holiness, not
+-- ethnic hatred. ★★ But the altar is *ED* — a WITNESS, *not for burnt offering, nor for sacrifice;
+-- but it is a witness between us and you* (22:26-28) — built to TESTIFY that the eastern tribes have
+-- part in Yahuah, lest their children be told *ye have no part in Yahuah* (22:25,27). The unity of
+-- the tribes preserved. ★ The war is averted because Phinehas and the princes GO AND ASK rather than
+-- assume the worst — the very pattern of *go and tell him his fault between thee and him alone*
+-- (Matt 18:15) and *who art thou that judgest another?* (Rom 14:4) — inquiry before judgment, not
+-- judging a brother rashly. *Yahuah Elohim of gods... HE KNOWETH* (22:22). No verse left without an
+-- add except the narrative-detail verses (v.7-9 logistics of return, v.30-33 the resolution
+-- narrative) whose load is carried within the threads' anchor spans.
+
+CREATE TEMP VIEW _s344_jos22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Torah-love charge to the departing tribes (Deuteronomy)
+    ('canon','joshua',22,5,'canon','deuteronomy',6,5,'free',E'*And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5). Joshua hands the eastern tribes the heart of the Shema as their parting charge — *to love Yahuah Elohaychem (the LORD your God), and to walk in all his ways, and to keep his commandments, and to cleave unto him, and to serve him with all your heart and with all your soul* (22:5). The same all-the-heart love Moses commanded follows the tribes home across Jordan; the Torah is the covenant inheritance carried with them, never left behind.'),
+    ('canon','joshua',22,5,'canon','deuteronomy',10,12,'free',E'*And now, Yashar''el (Israel), what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him, and to serve Yahuah Elohayka (the LORD thy God) with all thy heart and with all thy soul* (Deuteronomy 10:12). Joshua''s charge is Moses'' charge nearly word for word — *to walk in all his ways... and to serve him with all your heart and with all your soul* (22:5). Fear, walk, love, serve, cleave: one undivided covenant-love, the whole duty of the people Yahuah is sending home.'),
+    ('canon','joshua',22,5,'canon','deuteronomy',11,13,'free',E'*And it shall come to pass, if ye shall hearken diligently unto my commandments which I command you this day, to love Yahuah Elohaychem (the LORD your God), and to serve him with all your heart and with all your soul* (Deuteronomy 11:13). The very pairing of Joshua 22:5 — *take diligent heed to do the commandment and the law... to love Yahuah... and to serve him with all your heart and with all your soul* — Moses joined love and obedience and whole-hearted service into one charge, and Joshua lays that same yoke of love on Reuben, Gad, and half-Manasseh.'),
+    ('canon','joshua',22,5,'canon','deuteronomy',13,4,'free',E'*Ye shall walk after Yahuah Elohaychem (the LORD your God), and fear him, and keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4). Joshua''s closing word — *and to cleave unto him* (22:5) — echoes Moses'' charge to *cleave unto him*. The very chapter where the tribes will be tested over a suspected altar opens by binding them to cling to Yahuah alone; the cleaving Moses commanded is exactly what the eastern tribes will prove they have kept.'),
+    -- THREAD 2: the zeal for the ONE altar; the congregation gathers against apostasy (Deuteronomy / Leviticus / Numbers / Joshua)
+    ('canon','joshua',22,19,'canon','deuteronomy',12,5,'free',E'*But unto the place which Yahuah Elohaychem (the LORD your God) shall choose out of all your tribes to put his name there, even unto his habitation shall ye seek, and thither thou shalt come* (Deuteronomy 12:5). The whole alarm of Joshua 22 rests on this command: there is ONE place, ONE altar. So the western tribes cry, *rebel not against Yahuah (LORD)... in building you an altar beside the altar of Yahuah Eloheinu (the LORD our God)* (22:19). Their zeal is for the place Yahuah chose to put His name — a rival altar would be apostasy.'),
+    ('canon','joshua',22,16,'canon','deuteronomy',12,13,'free',E'*Take heed to thyself that thou offer not thy burnt offerings in every place that thou seest: But in the place which Yahuah (LORD) shall choose in one of thy tribes, there thou shalt offer thy burnt offerings* (Deuteronomy 12:13-14). This is the law the congregation believes has been broken: *ye have builded you an altar, that ye might rebel this day against Yahuah (LORD)* (22:16). To raise a second altar for sacrifice would be to *offer thy burnt offerings in every place* — the very thing Moses forbade. Their accusation is grounded in Torah, even before the truth is known.'),
+    ('canon','joshua',22,16,'canon','leviticus',17,8,'free',E'*Whatsoever man there be of the house of Yashar''el (Israel), or of the strangers which sojourn among you, that offereth a burnt offering or sacrifice, And bringeth it not unto the door of the tabernacle of the congregation, to offer it unto Yahuah (LORD); even that man shall be cut off from among his people* (Leviticus 17:8-9). The one-altar law carries the penalty of being CUT OFF. So when the eastern tribes seem to have built an altar of their own, the congregation reads it as a soul-imperiling rebellion — *what trespass is this... to turn away this day from following Yahuah (LORD)* (22:16). The stakes are the very life of the people.'),
+    ('canon','joshua',22,17,'canon','numbers',25,3,'free',E'*And Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel)* (Numbers 25:3). The congregation names Peor by name: *Is the iniquity of Peor too little for us, from which we are not cleansed until this day, although there was a plague in the congregation of Yahuah (LORD)* (22:17). They remember how apostasy brought wrath on the whole people — and it was Phinehas himself who turned that wrath away (Num 25:7-8,11). Now that same Phinehas leads the inquiry; the memory of Peor is why they fear and why they ask.'),
+    ('canon','joshua',22,18,'canon','numbers',25,4,'free',E'*And Yahuah (LORD) said unto Moses, Take all the heads of the people, and hang them up before Yahuah (LORD) against the sun, that the fierce anger of Yahuah (LORD) may be turned away from Yashar''el (Israel)* (Numbers 25:4). The dread of corporate judgment drives the warning: *seeing ye rebel to day against Yahuah (LORD), that to morrow he will be wroth with the whole congregation of Yashar''el (Israel)* (22:18). One tribe''s sin can kindle Yahuah''s anger against all — the lesson of Peor burned into the congregation''s memory.'),
+    ('canon','joshua',22,20,'canon','joshua',7,1,'free',E'*But the children of Yashar''el (Israel) committed a trespass in the accursed thing: for Achan, the son of Carmi... took of the accursed thing: and the anger of Yahuah (LORD) was kindled against the children of Yashar''el (Israel)* (Joshua 7:1). The congregation names Achan too: *Did not Achan the son of Zerah commit a trespass in the accursed thing, and wrath fell on all the congregation of Yashar''el (Israel)? and that man perished not alone in his iniquity* (22:20). One man''s sin felled all Yashar''el before Ai — the zeal against the altar is zeal lest the whole people perish again for the trespass of a few.'),
+    -- THREAD 3: the altar of WITNESS (ED) & the war averted by inquiry (Joshua / Matthew / Romans)
+    ('canon','joshua',22,27,'canon','joshua',24,27,'free',E'*And Joshua said unto all the people, Behold, this stone shall be a witness unto us; for it hath heard all the words of Yahuah (LORD) which he spake unto us: it shall be therefore a witness unto you, lest ye deny your Elohim (God)* (Joshua 24:27). The eastern tribes build their altar for the same purpose: *that it may be a witness between us, and you, and our generations after us... that your children may not say to our children in time to come, Ye have no part in Yahuah (LORD)* (22:27). Two memorials, one purpose — a standing witness that binds the generations to Yahuah and to one another, lest the covenant-bond be denied.'),
+    ('canon','joshua',22,16,'canon','matthew',18,15,'free',E'*Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother* (Matthew 18:15). The whole tragedy is averted because the congregation, though it first *gathered themselves together... to go up to war* (22:12), does not strike — it sends Phinehas and the princes to ASK: *What trespass is this...?* (22:16). They go and tell the fault to their brethren''s face, and gain their brethren back. This is the very pattern Messiah commands — inquiry before judgment, the brother confronted, not condemned unheard.'),
+    ('canon','joshua',22,14,'canon','matthew',18,16,'free',E'*But if he will not hear thee, then take with thee one or two more, that in the mouth of two or three witnesses every word may be established* (Matthew 18:16). The congregation does not send one hot-headed accuser but *Phinehas the son of Eleazar the priest, And with him ten princes, of each chief house a prince throughout all the tribes of Yashar''el (Israel)* (22:13-14) — a sober embassy of many witnesses to establish the truth. The Torah''s witness-rule and Messiah''s pattern alike: weigh every word in the mouth of many before judging a brother.'),
+    ('canon','joshua',22,22,'canon','romans',14,4,'free',E'*Who art thou that judgest another man''s servant? to his own master he standeth or falleth. Yea, he shall be holden up: for Elohim (God) is able to make him stand* (Romans 14:4). The eastern tribes appeal past their accusers to the One who truly knows: *Yahuah Elohim (The LORD God) of gods, Yahuah Elohim (the LORD God) of gods, he knoweth, and Yashar''el (Israel) he shall know; if it be in rebellion, or if in transgression against Yahuah (LORD)* (22:22). To rashly judge a brother is to usurp the place of the Master who alone reads the heart — *HE KNOWETH*.'),
+    ('canon','joshua',22,26,'canon','romans',14,13,'free',E'*Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock or an occasion to fall in his brother''s way* (Romans 14:13). The altar was raised for the opposite of a stumblingblock — *not for burnt offering, nor for sacrifice* (22:26), but to keep the eastern children from ever being made to *cease from fearing Yahuah (LORD)* (22:25). What looked like rebellion was love guarding the bond; and the western tribes, by asking rather than assuming, refuse to make their brethren a stumblingblock. Both houses choose the way that *make[s] for peace* (Rom 14:19).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-22-take-diligent-heed-to-love-yahuah-the-torah-charge-to-the-departing-tribes',
+       E'Take Diligent Heed to Love Yahuah — the Torah-Charge to the Departing Tribes',
+       E'When the long war is ended and the eastern tribes are sent home, Joshua does not loose them from the covenant — he binds them to its heart: *But take diligent heed to do the commandment and the law, which Moses the servant of Yahuah (LORD) charged you, to love Yahuah Elohaychem (the LORD your God), and to walk in all his ways, and to keep his commandments, and to cleave unto him, and to serve him with all your heart and with all your soul* (Joshua 22:5). This is the Shema itself sent across Jordan: *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5). It is the whole duty Moses named: *what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him, and to serve Yahuah Elohayka (the LORD thy God) with all thy heart and with all thy soul* (Deuteronomy 10:12); *to love Yahuah Elohaychem (the LORD your God), and to serve him with all your heart and with all your soul* (Deuteronomy 11:13). And it ends where Moses ended — *Ye shall walk after Yahuah Elohaychem (the LORD your God), and fear him, and keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4): the same *cleave unto him* Joshua sets last in his charge. Love and obedience are never split apart — the Torah is the covenant inheritance carried home, never the curse left behind. The very tribes who will, in this same chapter, be suspected of rebellion go home charged to cleave to Yahuah alone — and they will prove they have kept exactly this.',
+       sv.verse_id, ev.verse_id, 'free', 35525
+  FROM _s344_jos22_lookup sv, _s344_jos22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=22 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-22-the-zeal-for-the-one-altar-the-congregation-gathers-against-apostasy',
+       E'The Zeal for the One Altar — the Congregation Gathers Against Apostasy',
+       E'When word comes that the eastern tribes *built there an altar by Jordan, a great altar to see to* (Joshua 22:10), *the whole congregation of the children of Yashar''el (Israel) gathered themselves together at Shiloh, to go up to war against them* (22:12). The alarm is no overreaction in their eyes — it is zeal for the one altar and the one place Yahuah chose. Moses had commanded: *unto the place which Yahuah Elohaychem (the LORD your God) shall choose out of all your tribes to put his name there... thither thou shalt come* (Deuteronomy 12:5), and *Take heed to thyself that thou offer not thy burnt offerings in every place that thou seest: But in the place which Yahuah (LORD) shall choose... there thou shalt offer thy burnt offerings* (Deuteronomy 12:13-14). The penalty for a rival altar was to be cut off: *that offereth a burnt offering or sacrifice, And bringeth it not unto the door of the tabernacle of the congregation... even that man shall be cut off from among his people* (Leviticus 17:8-9). So they cry, *rebel not against Yahuah (LORD)... in building you an altar beside the altar of Yahuah Eloheinu (the LORD our God)* (22:19). And their fear is fed by memory — *Is the iniquity of Peor too little for us...* (22:17): *Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel)* (Numbers 25:3), so that Yahuah said, *Take all the heads of the people, and hang them up... that the fierce anger of Yahuah (LORD) may be turned away* (Numbers 25:4). And Achan: *Did not Achan the son of Zerah commit a trespass in the accursed thing, and wrath fell on all the congregation* (22:20) — *the anger of Yahuah (LORD) was kindled against the children of Yashar''el (Israel)* (Joshua 7:1), and one man''s sin felled all the host before Ai. *To morrow he will be wroth with the whole congregation* (22:18): one tribe''s apostasy can kindle wrath on all. The zeal is FOR holiness, FOR the one altar — never ethnic hatred, but dread of the trespass that perishes more than the one.',
+       sv.verse_id, ev.verse_id, 'free', 35528
+  FROM _s344_jos22_lookup sv, _s344_jos22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=22 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-22-the-altar-of-witness-ed-the-war-averted-by-inquiry-not-assumption',
+       E'The Altar of Witness — ED — the War Averted by Inquiry, Not Assumption',
+       E'The near-civil-war is undone not by the sword but by a question. Though the congregation had gathered *to go up to war* (22:12), it first sends *Phinehas the son of Eleazar the priest, And with him ten princes, of each chief house a prince throughout all the tribes of Yashar''el (Israel)* (22:13-14) — a sober embassy of many witnesses — to ASK: *What trespass is this that ye have committed...?* (22:16). And the answer reveals the truth: the altar was never for sacrifice. *Yahuah Elohim (The LORD God) of gods, Yahuah Elohim (the LORD God) of gods, he knoweth, and Yashar''el (Israel) he shall know; if it be in rebellion, or if in transgression against Yahuah (LORD), (save us not this day,)* (22:22). They built it *not for burnt offering, nor for sacrifice* (22:26) — *But that it may be a witness between us, and you, and our generations after us... that your children may not say to our children in time to come, Ye have no part in Yahuah (LORD)* (22:27). It is *ED* — a witness — raised so that the unity of the tribes, severed by Jordan, would never be denied: *that Yahuah (LORD) is Elohim (God)* (22:34). It is the same memorial Joshua himself will raise: *Behold, this stone shall be a witness unto us; for it hath heard all the words of Yahuah (LORD)... lest ye deny your Elohim (God)* (Joshua 24:27). The whole disaster is averted because the brethren go and ask — the very pattern Messiah commands: *if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother* (Matthew 18:15), with *one or two more, that in the mouth of two or three witnesses every word may be established* (Matthew 18:16). And it rebukes the rash judging Paul forbids: *Who art thou that judgest another man''s servant? to his own master he standeth or falleth... Elohim (God) is able to make him stand* (Romans 14:4); *Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock... in his brother''s way* (Romans 14:13). The eastern tribes were guarding the bond, not breaking it; the western tribes, by asking rather than assuming the worst, choose *the things which make for peace* (Romans 14:19). HE KNOWETH — and the people, having inquired, blessed Elohim and did not go up to battle.',
+       sv.verse_id, ev.verse_id, 'free', 35531
+  FROM _s344_jos22_lookup sv, _s344_jos22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=22 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 6:5 — *thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might*: the Shema sent home with the eastern tribes (Joshua 22:5).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=5
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-take-diligent-heed-to-love-yahuah-the-torah-charge-to-the-departing-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 10:12 — *to walk in all his ways, and to love him, and to serve Yahuah Elohayka with all thy heart and with all thy soul*: Joshua''s charge nearly word for word.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=5
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-take-diligent-heed-to-love-yahuah-the-torah-charge-to-the-departing-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 11:13 — *to love Yahuah Elohaychem, and to serve him with all your heart and with all your soul*: love and whole-hearted service joined as one, as in Joshua 22:5.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=5
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-take-diligent-heed-to-love-yahuah-the-torah-charge-to-the-departing-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 13:4 — *keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him*: Joshua''s closing *cleave unto him* echoes Moses exactly.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=5
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-take-diligent-heed-to-love-yahuah-the-torah-charge-to-the-departing-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 12:5 — *the place which Yahuah Elohaychem shall choose... to put his name there*: the ONE place behind the whole alarm (Joshua 22:19).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-zeal-for-the-one-altar-the-congregation-gathers-against-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 12:13 — *offer not thy burnt offerings in every place... But in the place which Yahuah shall choose*: the law the congregation believes is broken (Joshua 22:16).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-zeal-for-the-one-altar-the-congregation-gathers-against-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 17:8 — *bringeth it not unto the door of the tabernacle... even that man shall be cut off*: a rival altar carries the penalty of being cut off (Joshua 22:16).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-zeal-for-the-one-altar-the-congregation-gathers-against-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Numbers 25:3 — *Yashar''el joined himself unto Baal-peor: and the anger of Yahuah was kindled*: the Peor the congregation names (Joshua 22:17).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=17
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-zeal-for-the-one-altar-the-congregation-gathers-against-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Numbers 25:4 — *Take all the heads of the people, and hang them up... that the fierce anger of Yahuah may be turned away*: the corporate judgment Joshua 22:18 dreads.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-zeal-for-the-one-altar-the-congregation-gathers-against-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Joshua 7:1 — *Achan... took of the accursed thing: and the anger of Yahuah was kindled against the children of Yashar''el*: one man''s sin felled all, as the congregation recalls (Joshua 22:20).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=20
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-zeal-for-the-one-altar-the-congregation-gathers-against-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joshua 24:27 — *this stone shall be a witness unto us; for it hath heard all the words of Yahuah... lest ye deny your Elohim*: the same memorial-witness purpose as the altar ED (Joshua 22:27).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=27
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-altar-of-witness-ed-the-war-averted-by-inquiry-not-assumption'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Matthew 18:15 — *go and tell him his fault between thee and him alone... thou hast gained thy brother*: the pattern of inquiry the congregation follows instead of striking (Joshua 22:16).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-altar-of-witness-ed-the-war-averted-by-inquiry-not-assumption'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 18:16 — *in the mouth of two or three witnesses every word may be established*: Phinehas and ten princes, a sober embassy of many witnesses (Joshua 22:14).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=14
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-altar-of-witness-ed-the-war-averted-by-inquiry-not-assumption'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 14:4 — *Who art thou that judgest another man''s servant?... Elohim is able to make him stand*: to rashly judge usurps the Master who alone knows — *HE KNOWETH* (Joshua 22:22).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=14 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-altar-of-witness-ed-the-war-averted-by-inquiry-not-assumption'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Romans 14:13 — *judge this rather, that no man put a stumblingblock... in his brother''s way*: the altar raised to keep the children from stumbling, not to divide (Joshua 22:26).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=22 AND sv.verse_number=26
+  JOIN _s344_jos22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-22-the-altar-of-witness-ed-the-war-averted-by-inquiry-not-assumption'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_23.sql (Joshua 23) -----
+-- Book: Joshua  Chapter: 23   Tag: jos23   View: _s344_jos23_lookup
+-- Sort band: 35550, 35553, 35556, 35559
+--
+-- Joshua's FIRST farewell — old, he gathers Yashar'el and charges them to keep the
+-- whole Torah, cleave to Yahuah, not mix with the nations' gods, lest they perish from
+-- the land. The blessing-and-curse of Deut 28 / Lev 26 set as the standing covenant
+-- warning that foretells the very exile of 2 Kings 17.
+--
+-- Joshua 23 coverage:
+--   v.3/10 (Yahuah fought / one chases a thousand)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Joshua 21:43-45 (rest given, not a man stood); Joshua 1:5 (none shall stand before thee) — THREAD 4
+--   v.6 (be very courageous to keep and do all the Torah, turn not aside)
+--        NT:     none warranted (charge is Torah-internal)
+--        Extras: none warranted
+--        Tanakh: Joshua 1:7 + 1:8 (the same charge to Joshua himself); Deut 28:14 (turn not aside to right/left) — THREAD 1
+--   v.7-8,12 (cleave to Yahuah, make no mention of their gods, make no marriages)
+--        NT:     2 Corinthians 6:14, 6:17, 6:18 (unequally yoked / come out and be separate) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: Deut 7:2, 7:3, 7:4 (no covenant/no marriages); Exodus 23:32, 23:33 (no covenant, snare); Deut 13:4 (cleave unto him) — THREAD 2
+--   v.14-16 (all good things came; so all evil things, ye shall perish from the land when ye transgress)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Lev 26:14, 26:15, 26:33 (curse for covenant-breaking, scattered); Deut 28:15, 28:63, 28:64 (curses, plucked off / scattered); Deut 7:9 (faithful Elohim keeps covenant w/ them that love+keep); 2 Kings 17:23 (the exile fulfilled) — THREAD 3
+--   v.14 (not one thing hath failed of all the good things)
+--        Tanakh: Joshua 21:45 (there failed not ought of any good thing) — THREAD 4
+--
+-- Threads (slug + target libraries):
+--   joshua-23-be-very-courageous-to-keep-and-do-all-the-torah-turn-not-aside  [canon Tanakh]  free
+--   joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods  [canon Tanakh + NT]  free
+--   joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant  [canon Tanakh]  free
+--   joshua-23-not-one-thing-hath-failed-yahuah-hath-fought-for-you  [canon Tanakh]  free
+--
+-- Framework-load-bearing framing:
+--   23:6 the courage-charge is to KEEP and DO all the Torah and turn not aside — the IDENTICAL
+--     charge laid on Joshua himself at 1:7-8; Torah is the covenant inheritance, affirmed, never the curse.
+--   23:15-16 the "all evil things / perish from the land" is the Deut 28 / Lev 26 covenant-curse =
+--     the CONSEQUENCE of covenant-breaking (turning to mix and serve other gods), NEVER the Torah
+--     itself. It foretells the exile of 2 Kings 17 (the northern house carried to Assyria).
+--   23:12 marriages with the remnant nations = the un-equal-yoke; 2 Cor 6 "come out and be separate"
+--     is the SAME separation-unto-Yahuah, not a new people — the holy people kept distinct from the
+--     nations' gods (Deut 7 / Exod 23).
+
+CREATE TEMP VIEW _s344_jos23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: 23:6 keep and do all the Torah, turn not aside (the 1:7 charge)
+    ('canon','joshua',23,6,'canon','joshua',1,7,'free',E'*Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left, that thou mayest prosper whithersoever thou goest* (Joshua 1:7). At the start of the conquest Yahuah laid this very charge on Joshua himself; now, old, Joshua hands the IDENTICAL charge to all Yashar''el — *be ye therefore very courageous to keep and to do all that is written in the book of the law of Moses, that ye turn not aside therefrom to the right hand or to the left* (Joshua 23:6). The Torah is the covenant inheritance, kept and done, never set aside.'),
+    ('canon','joshua',23,6,'canon','joshua',1,8,'free',E'*This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success* (Joshua 1:8). The book of the Torah is to be kept *day and night* — the very book Joshua now commands the nation to *keep and to do* (Joshua 23:6); to do all that is written is the way of life, not a yoke to be broken.'),
+    ('canon','joshua',23,6,'canon','deuteronomy',28,14,'free',E'*And thou shalt not go aside from any of the words which I command thee this day, to the right hand, or to the left, to go after other gods to serve them* (Deuteronomy 28:14). Moses framed turning aside *to the right hand or to the left* as the road to other gods; Joshua repeats the exact bound — *that ye turn not aside therefrom to the right hand or to the left* (Joshua 23:6) — the single straight path of the Torah.'),
+    -- THREAD 2: 23:7-8,12 cleave to Yahuah, mix not with the nations and their gods
+    ('canon','joshua',23,8,'canon','deuteronomy',13,4,'free',E'*Ye shall walk after Yahuah Elohaychem (the LORD your God), and fear him, and keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4). Moses bound cleaving to Yahuah to keeping his commandments; Joshua charges the same — *But cleave unto Yahuah Elohaychem (the LORD your God), as ye have done unto this day* (Joshua 23:8) — to cleave is to keep, and to keep is to cleave.'),
+    ('canon','joshua',23,7,'canon','deuteronomy',7,2,'free',E'*And when Yahuah Elohayka (the LORD thy God) shall deliver them before thee; thou shalt smite them, and utterly destroy them; thou shalt make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2). The standing command was no covenant with the nations of the land; Joshua holds the people to it — *That ye come not among these nations... neither make mention of the name of their gods... neither serve them, nor bow yourselves unto them* (Joshua 23:7).'),
+    ('canon','joshua',23,12,'canon','deuteronomy',7,3,'free',E'*Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son* (Deuteronomy 7:3). Joshua names the precise danger Moses forbade — *and shall make marriages with them, and go in unto them, and they to you* (Joshua 23:12) — the un-equal yoke that drags the holy people back among the nations.'),
+    ('canon','joshua',23,12,'canon','deuteronomy',7,4,'free',E'*For they will turn away thy son from following me, that they may serve other gods: so will the anger of Yahuah (LORD) be kindled against you, and destroy thee suddenly* (Deuteronomy 7:4). Moses gave the reason behind the ban on marriages — they turn the heart to other gods; Joshua warns the same outcome if they *go back, and cleave unto the remnant of these nations* (Joshua 23:12).'),
+    ('canon','joshua',23,7,'canon','exodus',23,32,'free',E'*Thou shalt make no covenant with them, nor with their gods* (Exodus 23:32). From Sinai onward the line was drawn — no league with the nations or their gods; Joshua presses it on the threshold of his death — *neither make mention of the name of their gods, nor cause to swear by them* (Joshua 23:7).'),
+    ('canon','joshua',23,13,'canon','exodus',23,33,'free',E'*They shall not dwell in thy land, lest they make thee sin against me: for if thou serve their gods, it will surely be a snare unto thee* (Exodus 23:33). The warned-of *snare* of Exodus returns in Joshua''s mouth as the consequence of mixing — *they shall be snares and traps unto you, and scourges in your sides, and thorns in your eyes, until ye perish from off this good land* (Joshua 23:13).'),
+    ('canon','joshua',23,12,'canon','2-corinthians',6,14,'free',E'*Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?* (2 Corinthians 6:14). The apostolic un-equal-yoke is Joshua''s warning carried forward — do not *make marriages with them, and go in unto them* (Joshua 23:12); the people set apart unto Yahuah are not to be bound to what serves other gods.'),
+    ('canon','joshua',23,8,'canon','2-corinthians',6,17,'free',E'*Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). To *cleave unto Yahuah Elohaychem (the LORD your God)* (Joshua 23:8) is to *come out... and be separate* — the same separation unto Yahuah, the holy people kept distinct, not a new people but Yashar''el set apart.'),
+    ('canon','joshua',23,8,'canon','2-corinthians',6,18,'free',E'*And will be a Father unto you, and ye shall be my sons and daughters, saith Yahuah (Lord) Almighty* (2 Corinthians 6:18). The promise to those who cleave and come out is sonship to the Father; cleaving unto Yahuah — *as ye have done unto this day* (Joshua 23:8) — is the covenant nearness that the separation guards.'),
+    -- THREAD 3: 23:14-16 as all good things came, so all evil; ye shall perish from the land
+    ('canon','joshua',23,16,'canon','leviticus',26,14,'free',E'*But if ye will not hearken unto me, and will not do all these commandments* (Leviticus 26:14). Joshua''s covenant warning is the Lev 26 sanction set before the nation — the evil things come *when ye have transgressed the covenant of Yahuah Elohaychem (the LORD your God), which he commanded you, and have gone and served other gods* (Joshua 23:16); the curse follows covenant-breaking, not the keeping of it.'),
+    ('canon','joshua',23,16,'canon','leviticus',26,15,'free',E'*And if ye shall despise my statutes, or if your soul abhor my judgments, so that ye will not do all my commandments, but that ye break my covenant* (Leviticus 26:15). To *break my covenant* is exactly what Joshua names — *when ye have transgressed the covenant* (Joshua 23:16); the evil is the consequence of forsaking the statutes, never the statutes themselves.'),
+    ('canon','joshua',23,15,'canon','leviticus',26,33,'free',E'*And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste* (Leviticus 26:33). The threatened scattering is the *all evil things, until he have destroyed you from off this good land* (Joshua 23:15) — the very removal from the land that Joshua holds before the people as the wage of covenant-breaking.'),
+    ('canon','joshua',23,15,'canon','deuteronomy',28,15,'free',E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). The Deut 28 curse-clause is the mirror of Joshua''s — *so shall Yahuah (LORD) bring upon you all evil things* (Joshua 23:15); the curses overtake the one who will not hearken, the consequence of disobedience.'),
+    ('canon','joshua',23,15,'canon','deuteronomy',28,63,'free',E'*And it shall come to pass, that as Yahuah (LORD) rejoiced over you to do you good, and to multiply you; so Yahuah (LORD) will rejoice over you to destroy you, and to bring you to nought; and ye shall be plucked from off the land whither thou goest to possess it* (Deuteronomy 28:63). Joshua quotes the very pattern — *as all good things are come upon you... so shall Yahuah (LORD) bring upon you all evil things... until he have destroyed you from off this good land* (Joshua 23:15); the good and the plucking-off are the two faces of the one covenant.'),
+    ('canon','joshua',23,16,'canon','deuteronomy',28,64,'free',E'*And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other; and there thou shalt serve other gods, which neither thou nor thy fathers have known, even wood and stone* (Deuteronomy 28:64). The end of going and serving *other gods* (Joshua 23:16) is to be scattered and there to serve the very gods one ran after — the curse loops back on covenant-breaking.'),
+    ('canon','joshua',23,11,'canon','deuteronomy',7,9,'free',E'*Know therefore that Yahuah Elohayka (the LORD thy God), he is Elohim (God), the faithful Elohim (God), which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations* (Deuteronomy 7:9). Joshua''s charge — *Take good heed therefore unto yourselves, that ye love Yahuah Elohaychem (the LORD your God)* (Joshua 23:11) — rests on the faithful Elohim who keeps covenant with *them that love him and keep his commandments*; love and keeping are bound as one.'),
+    ('canon','joshua',23,15,'canon','2-kings',17,23,'free',E'*Until Yahuah (LORD) removed Yashar''el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day* (2 Kings 17:23). Joshua''s warning was no idle word: the northern house was in time *removed... out of his sight* and carried to Assyria — the exact *destroyed you from off this good land* (Joshua 23:15) come to pass, the two-house scattering set in motion by covenant-breaking.'),
+    -- THREAD 4: 23:14 not one thing hath failed; Yahuah hath fought for you
+    ('canon','joshua',23,14,'canon','joshua',21,45,'free',E'*There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass* (Joshua 21:45). Two chapters before, the narrator''s verdict on the conquest; now Joshua sets it as the seal of his farewell — *not one thing hath failed of all the good things which Yahuah Elohaychem (the LORD your God) spake concerning you; all are come to pass* (Joshua 23:14). The faithful word is the witness that the warning too will surely stand.'),
+    ('canon','joshua',23,3,'canon','joshua',21,43,'free',E'*And Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein* (Joshua 21:43). The land given as Yahuah swore is the proof of *all that Yahuah Elohaychem (the LORD your God) hath done unto all these nations because of you; for Yahuah Elohaychem (the LORD your God) is he that hath fought for you* (Joshua 23:3).'),
+    ('canon','joshua',23,10,'canon','joshua',21,44,'free',E'*And Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand* (Joshua 21:44). That *there stood not a man* is exactly why *one man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you* (Joshua 23:10) — the victory was his, not theirs.'),
+    ('canon','joshua',23,10,'canon','joshua',1,5,'free',E'*There shall not any man be able to stand before thee all the days of thy life: as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee* (Joshua 1:5). The promise at the outset — none shall stand before thee — is the ground of Joshua''s testimony — *no man hath been able to stand before you unto this day* (Joshua 23:9), *one man of you shall chase a thousand* (Joshua 23:10), for it is Yahuah who fights.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-23-be-very-courageous-to-keep-and-do-all-the-torah-turn-not-aside',
+       E'Be very courageous to keep and do all the Torah — turn not aside (the 1:7 charge)',
+       E'Old and going *the way of all the earth*, Joshua hands the nation the very charge Yahuah once laid on him: *be ye therefore very courageous to keep and to do all that is written in the book of the law of Moses, that ye turn not aside therefrom to the right hand or to the left* (Joshua 23:6). It is word for word the commission of his own youth — *Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left* (Joshua 1:7) — the book that must *not depart out of thy mouth; but thou shalt meditate therein day and night* (Joshua 1:8). Moses had drawn the same straight line: *thou shalt not go aside from any of the words which I command thee this day, to the right hand, or to the left, to go after other gods* (Deuteronomy 28:14). The Torah is the covenant inheritance, to be kept and done, never the thing turned aside from.',
+       sv.verse_id, ev.verse_id, 'free', 35550
+  FROM _s344_jos23_lookup sv, _s344_jos23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=23 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods',
+       E'Cleave unto Yahuah — make no mention of their gods, make no marriages (come out and be separate)',
+       E'The second half of the charge is separation: *That ye come not among these nations... neither make mention of the name of their gods, nor cause to swear by them, neither serve them, nor bow yourselves unto them: But cleave unto Yahuah Elohaychem (the LORD your God), as ye have done unto this day* (Joshua 23:7-8). To cleave is to keep — Moses had said *ye shall serve him, and cleave unto him* in the same breath as *keep his commandments* (Deuteronomy 13:4). The danger is the un-equal yoke: *if ye do in any wise go back... and shall make marriages with them* (Joshua 23:12), the very thing forbidden — *Neither shalt thou make marriages with them... For they will turn away thy son from following me, that they may serve other gods* (Deuteronomy 7:3-4) — for the nations and their gods are *a snare unto thee* (Exodus 23:33), and so *they shall be snares and traps unto you... until ye perish* (Joshua 23:13). The apostle carries the same line forward unbroken: *Be ye not unequally yoked together with unbelievers* (2 Corinthians 6:14); *Wherefore come out from among them, and be ye separate, saith Yahuah (Lord)... and I will receive you, And will be a Father unto you, and ye shall be my sons and daughters* (2 Corinthians 6:17-18). It is not a new people grafted in by confession but the holy people kept distinct unto Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 35553
+  FROM _s344_jos23_lookup sv, _s344_jos23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=23 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant',
+       E'As all good things came, so all evil things — perish from the land if ye transgress the covenant (the curse = covenant-breaking)',
+       E'Joshua sets the blessing-and-curse of the Torah before the nation as a standing warning: *as all good things are come upon you, which Yahuah Elohaychem (the LORD your God) promised you; so shall Yahuah (LORD) bring upon you all evil things, until he have destroyed you from off this good land... When ye have transgressed the covenant of Yahuah Elohaychem (the LORD your God), which he commanded you, and have gone and served other gods... then shall the anger of Yahuah (LORD) be kindled against you, and ye shall perish quickly from off the good land* (Joshua 23:15-16). This is the Lev 26 / Deut 28 sanction, and it hinges on one thing — covenant-breaking, never the covenant itself: *if ye shall despise my statutes... but that ye break my covenant* (Leviticus 26:15), *I will scatter you among the heathen* (Leviticus 26:33); *if thou wilt not hearken unto the voice of Yahuah... that all these curses shall come upon thee* (Deuteronomy 28:15), *ye shall be plucked from off the land* (Deuteronomy 28:63), *and Yahuah (LORD) shall scatter thee among all people* (Deuteronomy 28:64). The other side stands just as firm: *the faithful Elohim (God), which keepeth covenant and mercy with them that love him and keep his commandments* (Deuteronomy 7:9) — hence *that ye love Yahuah Elohaychem (the LORD your God)* (Joshua 23:11). And the warning was no idle word: in time *Yahuah (LORD) removed Yashar''el (Israel) out of his sight... So was Yashar''el (Israel) carried away out of their own land to Assyria* (2 Kings 17:23) — the northern house scattered, the two-house exile that began exactly where Joshua said it would, in the mixing he forbade.',
+       sv.verse_id, ev.verse_id, 'free', 35556
+  FROM _s344_jos23_lookup sv, _s344_jos23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=23 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-23-not-one-thing-hath-failed-yahuah-hath-fought-for-you',
+       E'Not one thing hath failed — Yahuah he it is that hath fought for you',
+       E'Joshua grounds both promise and warning in the proven faithfulness of Yahuah: *ye know in all your hearts and in all your souls, that not one thing hath failed of all the good things which Yahuah Elohaychem (the LORD your God) spake concerning you; all are come to pass unto you* (Joshua 23:14). The narrator had already sealed it: *There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass* (Joshua 21:45); *Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware* (Joshua 21:43); *there stood not a man of all their enemies before them* (Joshua 21:44). That is why Joshua can say *Yahuah Elohaychem (the LORD your God) is he that hath fought for you* (Joshua 23:3) and *one man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you* (Joshua 23:10) — the very promise of the outset, *There shall not any man be able to stand before thee all the days of thy life... I will not fail thee, nor forsake thee* (Joshua 1:5). The good word stood to the letter; therefore the warning word will stand too.',
+       sv.verse_id, ev.verse_id, 'free', 35559
+  FROM _s344_jos23_lookup sv, _s344_jos23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=23 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*turn not from it to the right hand or to the left* (Joshua 1:7) — the identical charge first laid on Joshua himself.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=6
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-be-very-courageous-to-keep-and-do-all-the-torah-turn-not-aside'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*This book of the law shall not depart out of thy mouth... day and night* (Joshua 1:8) — the book to be kept, the same Torah now charged on the nation.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=6
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-be-very-courageous-to-keep-and-do-all-the-torah-turn-not-aside'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou shalt not go aside... to the right hand, or to the left, to go after other gods* (Deuteronomy 28:14) — Moses'' straight bound of the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=6
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-be-very-courageous-to-keep-and-do-all-the-torah-turn-not-aside'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye shall serve him, and cleave unto him* (Deuteronomy 13:4) — to cleave is to keep his commandments.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou shalt make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2) — no league with the nations.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=7
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Neither shalt thou make marriages with them* (Deuteronomy 7:3) — the exact danger Joshua names at 23:12.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=12
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they will turn away thy son from following me, that they may serve other gods* (Deuteronomy 7:4) — why marriages are forbidden.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=12
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Thou shalt make no covenant with them, nor with their gods* (Exodus 23:32) — the line drawn from Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=7
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*if thou serve their gods, it will surely be a snare unto thee* (Exodus 23:33) — the snare Joshua warns of at 23:13.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=13
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Be ye not unequally yoked together with unbelievers* (2 Corinthians 6:14) — Joshua''s un-equal-yoke carried forward.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=12
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*come out from among them, and be ye separate, saith Yahuah (Lord)* (2 Corinthians 6:17) — cleaving = separation unto Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*ye shall be my sons and daughters, saith Yahuah (Lord) Almighty* (2 Corinthians 6:18) — the sonship guarded by the separation.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-cleave-unto-yahuah-and-mix-not-with-the-nations-and-their-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*if ye will not hearken... and will not do all these commandments* (Leviticus 26:14) — the curse opens with covenant-breaking.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*if ye shall despise my statutes... but that ye break my covenant* (Leviticus 26:15) — exactly what Joshua names: *transgressed the covenant*.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will scatter you among the heathen... your land shall be desolate* (Leviticus 26:33) — the destroying-from-the-land of 23:15.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=15
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*if thou wilt not hearken... all these curses shall come upon thee* (Deuteronomy 28:15) — the mirror of Joshua''s *all evil things*.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=15
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*ye shall be plucked from off the land* (Deuteronomy 28:63) — the two faces of the one covenant, good and plucking-off.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=15
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=63
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Yahuah (LORD) shall scatter thee among all people... there thou shalt serve other gods* (Deuteronomy 28:64) — the end of going after other gods.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the faithful Elohim (God), which keepeth covenant and mercy with them that love him and keep his commandments* (Deuteronomy 7:9) — the ground of *that ye love Yahuah* (23:11).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*So was Yashar''el (Israel) carried away out of their own land to Assyria* (2 Kings 17:23) — the warning fulfilled, the northern house scattered.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=15
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-as-all-good-things-came-so-all-evil-things-if-ye-transgress-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*There failed not ought of any good thing which Yahuah (LORD) had spoken* (Joshua 21:45) — the narrator''s verdict Joshua now seals.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-not-one-thing-hath-failed-yahuah-hath-fought-for-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware* (Joshua 21:43) — proof he *hath fought for you* (23:3).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-not-one-thing-hath-failed-yahuah-hath-fought-for-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*there stood not a man of all their enemies before them* (Joshua 21:44) — why *one man of you shall chase a thousand* (23:10).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=10
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-not-one-thing-hath-failed-yahuah-hath-fought-for-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*There shall not any man be able to stand before thee... I will not fail thee, nor forsake thee* (Joshua 1:5) — the promise at the outset, the ground of 23:9-10.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=23 AND sv.verse_number=10
+  JOIN _s344_jos23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-23-not-one-thing-hath-failed-yahuah-hath-fought-for-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_24.sql (Joshua 24) -----
+-- Chapter: Joshua 24 — THE COVENANT AT SHECHEM (the recital of grace from Abraham; "choose you this
+--          day"; as-for-me-and-my-house; the stone-witness; Joseph's bones buried in the land) — the
+--          FINAL chapter of Joshua
+-- Tag: jos24   View: _s344_jos24_lookup   Sort band: 35575, 35578, 35581, 35584, 35587, 35590
+--
+-- Joshua 24 coverage:
+--   v.2-13 (Joshua rehearses Yahuah's mighty acts: Abraham called from beyond the river, Isaac, Jacob,
+--           Egypt, the Red sea, the wilderness, the conquest; *a land for which ye did not labour*)
+--          NT:     Acts 7:2-5 (Stephen's recital — the Elohim of glory appeared unto Abraham, get thee out)
+--          Extras: none warranted (the recital is a canon-lateral genre)
+--          Tanakh: Genesis 12:1 (the call — get thee out of thy country), Deuteronomy 26:5-9 (the
+--                  firstfruits creed — a Syrian ready to perish), Nehemiah 9:7-8,24-25 (the Levites'
+--                  confession — thou didst choose Abram... a fat land, vineyards, oliveyards)
+--   v.14-15 (the decisive call: fear Yahuah, put away the strange gods, choose you this day whom ye will
+--            serve; BUT AS FOR ME AND MY HOUSE, WE WILL SERVE Yahuah) — THE KEYSTONE
+--          NT:     Matthew 6:24 (no man can serve two masters... ye cannot serve Elohim and mammon)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 30:19 (I have set before you life and death... therefore choose life),
+--                  1 Kings 18:21 (Elijah: how long halt ye between two opinions?)
+--   v.22-27 (the people: Yahuah our Elohim will we serve; Joshua makes a covenant, writes in the book of
+--            the law, sets up the GREAT STONE as a witness that hath heard all the words of Yahuah)
+--          NT:     none warranted at the verse
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 26:17-18 (thou hast avouched Yahuah... and Yahuah hath avouched thee his
+--                  peculiar people), Genesis 31:48 (the heap a witness — this stone shall be a witness)
+--   v.32   (the BONES OF JOSEPH brought up out of Egypt buried at Shechem, in the parcel Jacob bought —
+--           the Genesis 50:25 oath fulfilled) — the seed who trusted the promise laid in the land
+--          NT:     Hebrews 11:22 (by faith Joseph... gave commandment concerning his bones)
+--          Extras: none warranted
+--          Tanakh: Genesis 50:25 (Joseph took an oath... ye shall carry up my bones), Exodus 13:19
+--                  (Moses took the bones of Joseph with him)
+--   v.1,28-31,33 (gathered to Shechem; the people depart to their inheritance; Joshua dies at 110;
+--                 Yashar'el served Yahuah all his days; Eleazar buried in mount Ephraim)
+--          NT/Extras/Tanakh: none warranted as standalone threads — woven into the recital & covenant
+--                  threads (Shechem the place, the inheritance, the generation that knew the works)
+--
+-- Threads:
+--   joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance  [Tanakh: Genesis, Deuteronomy, Nehemiah | NT: Acts]  (free)
+--   joshua-24-choose-you-this-day-but-as-for-me-and-my-house-we-will-serve-yahuah [Tanakh: Deuteronomy, 1 Kings | NT: Matthew]        (free)
+--   joshua-24-the-covenant-and-the-stone-witness-lest-ye-deny-your-elohim         [Tanakh: Deuteronomy, Genesis]                        (free)
+--   joshua-24-the-bones-of-joseph-buried-in-the-land-the-oath-of-the-seed-fulfilled [Tanakh: Genesis, Exodus | NT: Hebrews]            (free)
+--
+-- Framework notes: the recital (24:2-13) is the seed-history rehearsed — Yahuah *took your father Abraham
+-- from the other side of the flood... and multiplied his seed* (24:3), the unearned inheritance *a land for
+-- which ye did not labour* (24:13), the same grace-recital genre as the firstfruits creed (Deut 26:5-9), the
+-- Levites' confession (Neh 9), and Stephen's defense (Acts 7) — grace first, then covenant obedience, never
+-- merit. ★★★ The keystone is *choose you this day whom ye will serve... but as for me and my house, we will
+-- serve Yahuah* (24:15) — undivided allegiance, the household pledged; Deut 30:19 *therefore choose life*,
+-- Elijah's *how long halt ye between two opinions* (1 Kgs 18:21), and Yahusha's *ye cannot serve Elohim and
+-- mammon* (Matt 6:24). The covenant is ratified and written *in the book of the law of Elohim* — Torah is the
+-- inheritance, not the curse; the great stone a witness *lest ye deny your Elohim* (24:27), echoing the
+-- avouching of Deut 26:17-18 (his peculiar people) and the witness-heap of Gen 31:48. ★ Joseph's bones buried
+-- at Shechem (24:32) close the book of the conquest by fulfilling the Genesis 50:25 oath of the seed who
+-- trusted the promise of the land (Exod 13:19, Heb 11:22) — and Joseph, father of Ephraim, the northern house,
+-- is laid to rest in his inheritance (the two-house note). All members canon → every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s344_jos24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the recital of Yahuah's grace from Abraham — the unearned inheritance (Genesis / Deuteronomy / Nehemiah / Acts)
+    ('canon','joshua',24,3,'canon','genesis',12,1,'free',E'*Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee* (Genesis 12:1). Joshua opens the recital with the very call: *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac* (24:3). The whole history hangs on Yahuah''s sovereign taking — *I took* — the seed of promise carried by paternal bloodline AND covenant-word from the first calling.'),
+    ('canon','joshua',24,2,'canon','nehemiah',9,7,'free',E'*Thou art Yahuah (LORD) the Elohim (God), who didst choose Abram, and broughtest him forth out of Ur of the Chaldees, and gavest him the name of Abraham* (Nehemiah 9:7). Joshua names the same beginning — *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham... and they served other gods* (24:2). Out of an idolatrous house Yahuah chose Abram by grace; the Levites'' confession sings the identical recital of the seed called from the nations.'),
+    ('canon','joshua',24,13,'canon','nehemiah',9,25,'free',E'*And they took strong cities, and a fat land, and possessed houses full of all goods, wells digged, vineyards, and oliveyards, and fruit trees in abundance: so they did eat, and were filled* (Nehemiah 9:25). Joshua''s word is the same unearned gift: *And I have given you a land for which ye did not labour, and cities which ye built not, and ye dwell in them; of the vineyards and oliveyards which ye planted not do ye eat* (24:13). The inheritance is grace — vineyards they planted not, cities they built not — never wages earned.'),
+    ('canon','joshua',24,5,'canon','deuteronomy',26,8,'free',E'*And Yahuah (LORD) brought us forth out of Egypt with a mighty hand, and with an outstretched arm, and with great terribleness, and with signs, and with wonders* (Deuteronomy 26:8). Joshua rehearses it: *I sent Moses also and Aaron, and I plagued Egypt... and afterward I brought you out* (24:5). The firstfruits creed and the Shechem recital are one confession — the bringing-out is Yahuah''s mighty act, the ground of all the covenant that follows.'),
+    ('canon','joshua',24,13,'canon','deuteronomy',26,9,'free',E'*And he hath brought us into this place, and hath given us this land, even a land that floweth with milk and honey* (Deuteronomy 26:9). The basket of firstfruits is brought precisely because the land was given, not earned — exactly Joshua''s *I have given you a land for which ye did not labour* (24:13). Grace receives the gift, then renders the firstfruits back; the recital always runs grace-first.'),
+    ('canon','joshua',24,3,'canon','acts',7,2,'free',E'*The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2). Stephen begins his defense exactly where Joshua begins his recital — Abraham *on the other side of the flood* (24:2-3), in Mesopotamia, taken by the Elohim of glory. The Formed Son who appeared to Abraham is the One the whole seed-history testifies of.'),
+    ('canon','joshua',24,3,'canon','acts',7,5,'free',E'*And he gave him none inheritance in it, no, not so much as to set his foot on: yet he promised that he would give it to him for a possession, and to his seed after him, when as yet he had no child* (Acts 7:5). Joshua''s recital is the promise come true — *multiplied his seed, and gave him Isaac* (24:3) — the land Abraham never set foot to possess now stands given to the tribes at Shechem; the unearned inheritance of the seed.'),
+    -- THREAD 2: choose you this day — but as for me and my house, we will serve Yahuah (Deuteronomy / 1 Kings / Matthew)
+    ('canon','joshua',24,15,'canon','deuteronomy',30,19,'free',E'*I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). Joshua sets the same choice before the tribes: *choose you this day whom ye will serve... but as for me and my house, we will serve Yahuah (LORD)* (24:15). The covenant always lays the undivided decision before the people — life is choosing Yahuah, and the household chooses with the man.'),
+    ('canon','joshua',24,15,'canon','1-kings',18,21,'free',E'*And Elijah came unto all the people, and said, How long halt ye between two opinions? if Yahuah (LORD) be Elohim (God), follow him: but if Baal, then follow him* (1 Kings 18:21). Elijah on Carmel presses the very demand Joshua presses at Shechem — no limping between two masters; *if it seem evil unto you to serve Yahuah (LORD), choose you this day* (24:15). Undivided allegiance: serve Yahuah, or serve the gods, but not both.'),
+    ('canon','joshua',24,15,'canon','matthew',6,24,'free',E'*No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon* (Matthew 6:24). Yahusha (Jesus) states the law Joshua enacts: the heart cannot be divided. *Put away the gods which your fathers served... and serve ye Yahuah (LORD)* (24:14); *as for me and my house, we will serve Yahuah* (24:15) — one Master, the whole household pledged.'),
+    ('canon','joshua',24,14,'canon','deuteronomy',30,20,'free',E'*That thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days* (Deuteronomy 30:20). Joshua''s call to *fear Yahuah (LORD), and serve him in sincerity and in truth* (24:14) is Moses'' call to love, obey, and cleave — to serve Yahuah is to choose life itself, the undivided heart given wholly to Him.'),
+    -- THREAD 3: the covenant and the stone-witness — lest ye deny your Elohim (Deuteronomy / Genesis)
+    ('canon','joshua',24,22,'canon','deuteronomy',26,17,'free',E'*Thou hast avouched Yahuah (LORD) this day to be thy Elohim (God), and to walk in his ways, and to keep his statutes, and his commandments, and his judgments, and to hearken unto his voice* (Deuteronomy 26:17). At Shechem the people avouch the same: *Ye are witnesses against yourselves that ye have chosen you Yahuah (LORD), to serve him. And they said, We are witnesses* (24:22). The covenant is sworn aloud — the people themselves the witnesses to their own choosing.'),
+    ('canon','joshua',24,24,'canon','deuteronomy',26,18,'free',E'*And Yahuah (LORD) hath avouched thee this day to be his peculiar people, as he hath promised thee, and that thou shouldest keep all his commandments* (Deuteronomy 26:18). The people answer Joshua, *Yahuah Eloheinu (The LORD our God) will we serve, and his voice will we obey* (24:24) — the mutual avouching of Deuteronomy renewed: Yahuah''s peculiar people pledged to keep His commandments, the Torah the very inheritance, never the curse.'),
+    ('canon','joshua',24,26,'canon','deuteronomy',26,16,'free',E'*This day Yahuah Elohayka (the LORD thy God) hath commanded thee to do these statutes and judgments: thou shalt therefore keep and do them with all thine heart, and with all thy soul* (Deuteronomy 26:16). Joshua *wrote these words in the book of the law of Elohim (God)* (24:26) — the covenant set down in the very Torah Moses commanded them to keep with all the heart. The written law is the bond of the renewed covenant, not its abolishing.'),
+    ('canon','joshua',24,27,'canon','genesis',31,48,'free',E'*And Laban said, This heap is a witness between me and thee this day. Therefore was the name of it called Galeed* (Genesis 31:48). As Jacob raised a heap of stones to witness a covenant, Joshua *took a great stone, and set it up... Behold, this stone shall be a witness unto us; for it hath heard all the words of Yahuah (LORD)... lest ye deny your Elohim (God)* (24:26-27). The standing stone is the silent witness of the sworn covenant — a testimony against any future denial.'),
+    -- THREAD 4: the bones of Joseph buried in the land — the oath of the seed fulfilled (Genesis / Exodus / Hebrews)
+    ('canon','joshua',24,32,'canon','genesis',50,25,'free',E'*And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). At the last verse of the conquest the oath is kept: *And the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem* (24:32). The seed who trusted the promise of the land — who would not be buried in Egypt — is laid at last in the inheritance he believed Yahuah would give.'),
+    ('canon','joshua',24,32,'canon','exodus',13,19,'free',E'*And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19). The bones carried out of Egypt at the Exodus are carried all the wilderness journey until this burial — *buried they in Shechem, in a parcel of ground which Jacob bought* (24:32). The oath spans the whole deliverance: out of Egypt, through the wilderness, into the land, into Joseph''s own inheritance.'),
+    ('canon','joshua',24,32,'canon','hebrews',11,22,'free',E'*By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). Hebrews names the burial of Joshua 24:32 as faith itself — Joseph, sure of the promised departing, *gave commandment concerning his bones*. The seed who believed the inheritance was real is buried where he believed; and Joseph, father of Ephraim, the northern house, is laid in *the inheritance of the children of Joseph* (24:32) — the two-house seed at rest in the land.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance',
+       E'The Recital of Yahuah''s Grace from Abraham — the Unearned Inheritance',
+       E'Gathered at Shechem, Joshua does not begin with a command but with a history of grace: *Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham... and they served other gods. And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac* (Joshua 24:2-3). Out of an idolatrous house Yahuah chose Abram by sovereign grace — *I took* — exactly as the Levites confess: *Thou art Yahuah (LORD) the Elohim (God), who didst choose Abram, and broughtest him forth out of Ur of the Chaldees, and gavest him the name of Abraham* (Nehemiah 9:7). Stephen begins his defense at the same place: *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia* (Acts 7:2) — and that land Abraham never set foot to possess (Acts 7:5) is now given to the tribes. The recital runs through Egypt and the Red sea — *I sent Moses also and Aaron, and I plagued Egypt... and afterward I brought you out* (24:5), which is the firstfruits creed word for word: *And Yahuah (LORD) brought us forth out of Egypt with a mighty hand, and with an outstretched arm* (Deuteronomy 26:8). And it ends in the gift no man earned: *I have given you a land for which ye did not labour, and cities which ye built not, and ye dwell in them; of the vineyards and oliveyards which ye planted not do ye eat* (24:13) — the same unearned plenty Nehemiah names, *a fat land, possessed houses full of all goods, wells digged, vineyards, and oliveyards* (Nehemiah 9:25), and the same given land of the creed, *he hath brought us into this place, and hath given us this land* (Deuteronomy 26:9). Grace first, always — the seed called, the people delivered, the inheritance given — and only then the covenant choice that follows.',
+       sv.verse_id, ev.verse_id, 'free', 35575
+  FROM _s344_jos24_lookup sv, _s344_jos24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=24 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-24-choose-you-this-day-but-as-for-me-and-my-house-we-will-serve-yahuah',
+       E'Choose You This Day — But As For Me and My House, We Will Serve Yahuah',
+       E'The recital of grace lands on a demand for undivided allegiance: *Now therefore fear Yahuah (LORD), and serve him in sincerity and in truth: and put away the gods which your fathers served on the other side of the flood, and in Egypt; and serve ye Yahuah (LORD). And if it seem evil unto you to serve Yahuah (LORD), choose you this day whom ye will serve... but as for me and my house, we will serve Yahuah (LORD)* (Joshua 24:14-15). This is the covenant''s own grammar: Moses had set it the same way — *I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19), for to serve Yahuah is *that thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life* (Deuteronomy 30:20). Elijah pressed the identical choice on Carmel: *How long halt ye between two opinions? if Yahuah (LORD) be Elohim (God), follow him: but if Baal, then follow him* (1 Kings 18:21) — no limping between two masters. And Yahusha (Jesus) states the law beneath it all: *No man can serve two masters... Ye cannot serve Elohim (God) and mammon* (Matthew 6:24). The heart will not be split. Joshua pledges not himself only but his household — *me and my house* — the covenant gathering the whole family under one undivided Lord.',
+       sv.verse_id, ev.verse_id, 'free', 35578
+  FROM _s344_jos24_lookup sv, _s344_jos24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=24 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-24-the-covenant-and-the-stone-witness-lest-ye-deny-your-elohim',
+       E'The Covenant and the Stone-Witness — Lest Ye Deny Your Elohim',
+       E'The people answer the call, *Yahuah Eloheinu (The LORD our God) will we serve, and his voice will we obey* (Joshua 24:24), and Joshua binds the moment into covenant. First the people are made witnesses against themselves: *Ye are witnesses against yourselves that ye have chosen you Yahuah (LORD), to serve him. And they said, We are witnesses* (24:22) — the very avouching Moses set down, *Thou hast avouched Yahuah (LORD) this day to be thy Elohim (God), and to walk in his ways, and to keep his statutes, and his commandments* (Deuteronomy 26:17), to which Yahuah answers, *Yahuah (LORD) hath avouched thee this day to be his peculiar people... and that thou shouldest keep all his commandments* (Deuteronomy 26:18). Then Joshua *made a covenant with the people that day... And Joshua wrote these words in the book of the law of Elohim (God)* (24:25-26) — the covenant set down in the very Torah commanded to be kept *with all thine heart, and with all thy soul* (Deuteronomy 26:16); the written law is the bond of the renewed covenant, never its abolishing. Finally he *took a great stone, and set it up there under an oak, that was by the sanctuary of Yahuah (LORD). And Joshua said... Behold, this stone shall be a witness unto us; for it hath heard all the words of Yahuah (LORD) which he spake unto us: it shall be therefore a witness unto you, lest ye deny your Elohim (God)* (24:26-27) — a standing stone like the heap Jacob raised, *This heap is a witness between me and thee this day* (Genesis 31:48); the silent stone a testimony against any future denial of the covenant sworn at Shechem.',
+       sv.verse_id, ev.verse_id, 'free', 35581
+  FROM _s344_jos24_lookup sv, _s344_jos24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=24 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-24-the-bones-of-joseph-buried-in-the-land-the-oath-of-the-seed-fulfilled',
+       E'The Bones of Joseph Buried in the Land — the Oath of the Seed Fulfilled',
+       E'The book of the conquest closes on a grave that fulfills a centuries-old oath: *And the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor the father of Shechem for an hundred pieces of silver: and it became the inheritance of the children of Joseph* (Joshua 24:32). Long before, dying in Egypt, Joseph had made the sons of Yashar''el swear: *Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). He would not be buried in Egypt — he believed the promise of the land was real, and bound the seed to carry him into it. At the Exodus the oath was honored: *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19) — out of Egypt, through all the wilderness, into the land, and now at last into the ground Jacob bought. Hebrews names this very thing faith: *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). The seed who trusted the inheritance is buried in the inheritance — and Joseph, the father of Ephraim, the head of the northern house, is laid to rest in *the inheritance of the children of Joseph* (24:32): the two-house seed home in the land Yahuah swore to the fathers.',
+       sv.verse_id, ev.verse_id, 'free', 35584
+  FROM _s344_jos24_lookup sv, _s344_jos24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=24 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 12:1 — *Get thee out of thy country... unto a land that I will shew thee*: Joshua''s *I took your father Abraham from the other side of the flood* (24:3) is the call itself.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Nehemiah 9:7 — *who didst choose Abram, and broughtest him forth out of Ur of the Chaldees*: out of an idolatrous house (24:2) Yahuah chose Abram by grace.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 26:8 — *Yahuah brought us forth out of Egypt with a mighty hand*: Joshua''s *I plagued Egypt... and brought you out* (24:5), the firstfruits creed.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=5
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 26:9 — *he hath brought us into this place, and hath given us this land*: the land is given (24:13), grace receives it then renders firstfruits back.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Nehemiah 9:25 — *a fat land... vineyards, and oliveyards*: the unearned plenty of Joshua''s *vineyards and oliveyards which ye planted not* (24:13).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Acts 7:2 — *The Elohim of glory appeared unto our father Abraham... in Mesopotamia*: Stephen begins where Joshua begins, the Formed Son who appeared to Abraham.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Acts 7:5 — *he gave him none inheritance... yet he promised... to his seed after him*: the promise come true, the land now given to the tribes (24:3).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-recital-of-yahuahs-grace-from-abraham-the-unearned-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 30:19 — *I have set before you life and death... therefore choose life*: Moses sets the same choice Joshua sets, *choose you this day* (24:15).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-choose-you-this-day-but-as-for-me-and-my-house-we-will-serve-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 30:20 — *love Yahuah... obey his voice... cleave unto him: for he is thy life*: to serve Yahuah (24:14) is to choose life itself.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-choose-you-this-day-but-as-for-me-and-my-house-we-will-serve-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Kings 18:21 — *How long halt ye between two opinions?*: Elijah presses on Carmel the undivided demand Joshua presses at Shechem (24:15).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-choose-you-this-day-but-as-for-me-and-my-house-we-will-serve-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Matthew 6:24 — *Ye cannot serve Elohim and mammon*: Yahusha states the law beneath Joshua''s call — the heart cannot be divided, one Master only (24:15).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-choose-you-this-day-but-as-for-me-and-my-house-we-will-serve-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 26:17 — *Thou hast avouched Yahuah this day to be thy Elohim*: the people avouch the same at Shechem, witnesses against themselves (24:22).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=22
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-covenant-and-the-stone-witness-lest-ye-deny-your-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 26:18 — *Yahuah hath avouched thee to be his peculiar people... keep all his commandments*: the people pledge *his voice will we obey* (24:24).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=24
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-covenant-and-the-stone-witness-lest-ye-deny-your-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 26:16 — *keep and do them with all thine heart*: Joshua *wrote these words in the book of the law of Elohim* (24:26), the Torah the bond of the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=26
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-covenant-and-the-stone-witness-lest-ye-deny-your-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Genesis 31:48 — *This heap is a witness between me and thee this day*: as Jacob raised a witness-heap, Joshua sets the great stone *lest ye deny your Elohim* (24:27).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=27
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=31 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-covenant-and-the-stone-witness-lest-ye-deny-your-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 50:25 — *ye shall carry up my bones from hence*: the oath of the dying Joseph, kept at last in Joshua 24:32 — the seed who trusted the land.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=32
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-bones-of-joseph-buried-in-the-land-the-oath-of-the-seed-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 13:19 — *Moses took the bones of Joseph with him*: the bones carried out at the Exodus, through the wilderness, now buried in the land (24:32).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=32
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-bones-of-joseph-buried-in-the-land-the-oath-of-the-seed-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 11:22 — *By faith Joseph... gave commandment concerning his bones*: the burial named as faith; Joseph, father of Ephraim, laid in the northern house''s inheritance (24:32).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=24 AND sv.verse_number=32
+  JOIN _s344_jos24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-24-the-bones-of-joseph-buried-in-the-land-the-oath-of-the-seed-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session344 — Joshua cross-references complete.'
