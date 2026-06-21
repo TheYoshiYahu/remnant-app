@@ -15236,6 +15236,1367 @@ SELECT t.id, cr.id, 5, E'★ *it may be that Yahuah Elohim (the LORD God) of hos
  WHERE t.slug='jeremiah-44-a-small-number-that-escape-shall-return'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jeremiah_45.sql (Jeremiah 45) -----
+-- Chapter: Jeremiah 45 — ★★ THE PERSONAL WORD TO BARUCH: a short, intimate oracle to Jeremiah's scribe.
+-- Baruch cries *Woe is me now! for Yahuah (LORD) hath added grief to my sorrow; I fainted in my sighing,
+-- and I find no rest* (45:3). Yahuah answers: in a day when *that which I have built will I break down, and
+-- that which I have planted I will pluck up, even this whole land* (45:4), and *I will bring evil upon all
+-- flesh* (45:5) — *seekest thou great things for thyself? seek them not*. The reward is not greatness but
+-- bare life preserved: *thy life will I give unto thee for a prey in all places whither thou goest* (45:5).
+-- The chapter is the framework's call to renounce self-seeking ambition and be content with the life God
+-- spares — the antidote to grasping, in the very hour the whole land is being undone.
+-- Tag: jer45   Temp view: _s309_jer45_lookup
+-- Sort band: base 35100, step 3 -> threads at 35100, 35103 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',45,v
+--
+-- Jeremiah 45 coverage:
+--   v.1-2 (The word that Jeremiah spake unto Baruch... in the fourth year of Jehoiakim... Thus saith
+--          Yahuah, the Elohim of Yashar'el, unto thee, O Baruch)
+--        NT:     none warranted (the superscription naming Baruch and the date; woven in prose of THREAD 2)
+--        Extras: none warranted
+--        Tanakh: none separate (the historical setting of the oracle; preface to v.3-5)
+--   ★★ v.3 (Thou didst say, Woe is me now! for Yahuah hath added grief to my sorrow; I fainted in my
+--          sighing, and I find no rest)
+--        NT:     held in THREAD 1 (the weariness the contentment-word answers)
+--        Extras: none warranted
+--        Tanakh: ★ Ecclesiastes 1:2 (vanity of vanities; all is vanity — the grasping that finds no rest) — THREAD 1
+--   ★ v.4 (Behold, that which I have built will I break down, and that which I have planted I will pluck
+--          up, even this whole land)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 1:10 (I have set thee... to root out, and to pull down... to build, and to
+--                plant — the prophet's own commission, the SAME break-down/pluck-up/build/plant verbs) — THREAD 2
+--   ★★ v.5 (And seekest thou great things for thyself? seek them not: for, behold, I will bring evil upon
+--          all flesh, saith Yahuah: but thy life will I give unto thee for a prey in all places whither
+--          thou goest)
+--        NT:     ★★ Matthew 6:33 (seek ye first the kingdom of Elohim... and all these things shall be
+--                added), ★★ Matthew 16:25 (whosoever will save his life shall lose it), ★ Philippians 4:11
+--                (I have learned, in whatsoever state I am, therewith to be content), ★ 1 Timothy 6:6
+--                (godliness with contentment is great gain) + 6:8 (having food and raiment... therewith
+--                content), ★ Luke 12:15 (a man's life consisteth not in the abundance of... possessions) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Job 1:21 (Yahuah gave, and Yahuah hath taken away; blessed be the name of Yahuah —
+--                the bare life received with blessing, not grasping) — THREAD 1
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-45-seek-not-great-things-for-thyself — NT (Matthew 6, Matthew 16, Philippians 4, 1 Timothy 6, Luke 12) + Tanakh (Job 1, Ecclesiastes 1) [free]
+--      (★★ renounce self-seeking ambition; be content with bare life preserved; seek first the kingdom)
+--   2. jeremiah-45-that-which-i-have-built-will-i-break-down — Tanakh (Jeremiah 1) [free]
+--      (★ Yahuah breaks down what he built and plucks up what he planted, even this whole land — the prophet's
+--       own root-out/pull-down/build/plant commission turned on the land itself, in the day of evil on all flesh)
+--
+-- Framing notes:
+--   ★★ SEEK NOT GREAT THINGS FOR THYSELF (THREAD 1): Baruch is worn out and grieved — *Woe is me now! for
+--      Yahuah (LORD) hath added grief to my sorrow; I fainted in my sighing, and I find no rest* (45:3). The
+--      answer is not comfort by promotion but the call to let go of ambition in a collapsing world: *And
+--      seekest thou great things for thyself? seek them not: for, behold, I will bring evil upon all flesh...
+--      but thy life will I give unto thee for a prey in all places whither thou goest* (45:5). The reward is
+--      bare life spared — nothing more, and it is enough. The Messiah teaches the same reordering: *But seek
+--      ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto
+--      you* (Matt 6:33) — seek the kingdom, not great things for self; *For whosoever will save his life
+--      shall lose it; and whosoever will lose his life for my sake shall find it* (Matt 16:25) — the life
+--      grasped is lost, the life surrendered is found, as Baruch's is given him *for a prey*. Paul learned
+--      the contentment Baruch is taught: *I have learned, in whatsoever state I am, therewith to be content*
+--      (Phil 4:11); *godliness with contentment is great gain* (1 Tim 6:6), *And having food and raiment let
+--      us be therewith content* (1 Tim 6:8). And the Messiah's warning: *a man's life consisteth not in the
+--      abundance of the things which he possesseth* (Luke 12:15). The Tanakh anchors it: Job receives the
+--      bare gift and loss with blessing, not grasping — *Yahuah (LORD) gave, and Yahuah (LORD) hath taken
+--      away; blessed be the name of Yahuah (LORD)* (Job 1:21); and the Preacher names the grasping that finds
+--      no rest — *Vanity of vanities... all is vanity* (Eccl 1:2). Seek not great things for thyself.
+--   ★ THAT WHICH I HAVE BUILT WILL I BREAK DOWN (THREAD 2): the reason ambition is folly here is that the
+--      whole land is being undone: *Behold, that which I have built will I break down, and that which I have
+--      planted I will pluck up, even this whole land* (45:4). These are the very verbs of Jeremiah's own
+--      commission — *I have this day set thee over the nations and over the kingdoms, to root out, and to
+--      pull down, and to destroy, and to throw down, to build, and to plant* (Jer 1:10). The word that
+--      appointed the prophet to pluck up and to plant is now turned on Yahudah (Judah) itself: it is no time
+--      to build a private greatness when Yahuah is breaking down what HE built. *I will bring evil upon all
+--      flesh* (45:5) — and in that day the one mercy is life preserved.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the superscription — the word to Baruch the son of Neriah in the
+--      fourth year of Jehoiakim, naming the scribe and the date; woven into the prose of THREAD 2 as the
+--      setting of the oracle). All meaningful verses recorded above; every section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer45_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): seek not great things for thyself — be content with bare life preserved
+    ('canon','jeremiah',45,5,'canon','matthew',6,33,'free',
+      E'*But seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33). The Messiah reorders desire exactly as Yahuah reorders Baruch''s — *And seekest thou great things for thyself? seek them not* (Jeremiah 45:5). Seek not great things for self, but the kingdom and his righteousness; what is needful is added, while the grasping after greatness is laid down.'),
+    ('canon','jeremiah',45,5,'canon','matthew',16,25,'free',
+      E'*For whosoever will save his life shall lose it: and whosoever will lose his life for my sake shall find it* (Matthew 16:25). Baruch is given his life *for a prey* — snatched bare from the ruin — not as a possession to be grasped (Jeremiah 45:5). The Messiah names the law of it: the life clutched is lost, the life surrendered is found. He who seeks not great things for himself receives his life as a gift, not a prize.'),
+    ('canon','jeremiah',45,5,'canon','philippians',4,11,'free',
+      E'*Not that I speak in respect of want: for I have learned, in whatsoever state I am, therewith to be content* (Philippians 4:11). Paul learned the contentment Baruch is taught — to seek not great things for himself (Jeremiah 45:5) but to be content in whatsoever state. Abased or abounding, the heart that has let go of grasping rests in what Yahuah gives, even when it is only bare life preserved.'),
+    ('canon','jeremiah',45,5,'canon','1-timothy',6,6,'free',
+      E'*But godliness with contentment is great gain* (1 Timothy 6:6). The great thing Baruch is told NOT to seek (Jeremiah 45:5) is answered by the great gain Paul names: not riches nor station, but godliness with contentment. To seek not great things for self is not loss but the true gain — the heart that needs nothing beyond what Yahuah grants.'),
+    ('canon','jeremiah',45,5,'canon','1-timothy',6,8,'free',
+      E'*And having food and raiment let us be therewith content* (1 Timothy 6:8). Baruch''s reward is his life *for a prey in all places whither thou goest* (Jeremiah 45:5) — the bare necessity spared, and it is enough. Paul draws the same line: food and raiment, and therewith content. The one who seeks not great things for himself is satisfied with the little that sustains life.'),
+    ('canon','jeremiah',45,5,'canon','luke',12,15,'free',
+      E'*And he said unto them, Take heed, and beware of covetousness: for a man’s life consisteth not in the abundance of the things which he possesseth* (Luke 12:15). The Messiah strikes at the very thing Baruch is warned against — *seekest thou great things for thyself? seek them not* (Jeremiah 45:5). Life is not measured by abundance of possessions; the soul that grasps after great things has mistaken what life is. The life given *for a prey* is life indeed.'),
+    ('canon','jeremiah',45,3,'canon','ecclesiastes',1,2,'free',
+      E'*Vanity of vanities, saith the Preacher, vanity of vanities; all is vanity* (Ecclesiastes 1:2). Baruch faints and finds no rest — *Woe is me now!... I fainted in my sighing, and I find no rest* (Jeremiah 45:3). The Preacher names the reason the grasping after great things finds no rest: all of it is vanity, a chasing after wind. The cure is not more of what cannot satisfy, but contentment with the bare life Yahuah preserves.'),
+    ('canon','jeremiah',45,5,'canon','job',1,21,'free',
+      E'*And said, Naked came I out of my mother’s womb, and naked shall I return thither: Yahuah (LORD) gave, and Yahuah (LORD) hath taken away; blessed be the name of Yahuah (LORD)* (Job 1:21). Job receives both the gift and the stripping with blessing, grasping at nothing — the very posture Baruch is called to when told *seek them not* and given only his life *for a prey* (Jeremiah 45:5). What Yahuah gives is enough; what he takes was never ours to clutch.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★): that which I have built will I break down — even this whole land
+    ('canon','jeremiah',45,4,'canon','jeremiah',1,10,'free',
+      E'*See, I have this day set thee over the nations and over the kingdoms, to root out, and to pull down, and to destroy, and to throw down, to build, and to plant* (Jeremiah 1:10). These are the very verbs now turned on Yahudah (Judah) itself — *Behold, that which I have built will I break down, and that which I have planted I will pluck up, even this whole land* (Jeremiah 45:4). The commission that appointed the prophet to pluck up and to plant is being executed on the land; it is no hour to build a private greatness when Yahuah is breaking down what he himself built.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-45-seek-not-great-things-for-thyself',
+       E'Seekest thou great things for thyself? seek them not — thy life for a prey',
+       E'This whole short chapter is a personal word to Baruch, Jeremiah''s scribe, and it is one of the tenderest rebukes in the prophets. Baruch is worn down by the burden of the word he has had to write: *Thou didst say, Woe is me now! for Yahuah (LORD) hath added grief to my sorrow; I fainted in my sighing, and I find no rest* (45:3). Yahuah''s answer does not promise comfort by advancement. In a day when *that which I have built will I break down, and that which I have planted I will pluck up, even this whole land* (45:4), the word comes: *And seekest thou great things for thyself? seek them not: for, behold, I will bring evil upon all flesh, saith Yahuah (LORD): but thy life will I give unto thee for a prey in all places whither thou goest* (45:5). The reward is not greatness but bare life spared — snatched like spoil out of the fire — and it is enough. The Messiah teaches the very same reordering of desire: *But seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33) — seek the kingdom, not great things for self; *For whosoever will save his life shall lose it: and whosoever will lose his life for my sake shall find it* (Matthew 16:25) — the life clutched is forfeited, the life surrendered is given back, as Baruch''s is given him for a prey. Paul learned this contentment in prison: *I have learned, in whatsoever state I am, therewith to be content* (Philippians 4:11); *godliness with contentment is great gain* (1 Timothy 6:6); *And having food and raiment let us be therewith content* (1 Timothy 6:8). And the Messiah warns against the very abundance Baruch is told not to seek: *a man’s life consisteth not in the abundance of the things which he possesseth* (Luke 12:15). The Tanakh holds the same posture: Job receives both the giving and the taking with worship, grasping at nothing — *Yahuah (LORD) gave, and Yahuah (LORD) hath taken away; blessed be the name of Yahuah (LORD)* (Job 1:21); and the Preacher names the chase that finds no rest — *Vanity of vanities... all is vanity* (Ecclesiastes 1:2). The grieving scribe who finds no rest is taught where rest is: not in great things sought for self, but in the bare life Yahuah preserves. Seek them not.',
+       sv.verse_id, ev.verse_id, 'free', 35100
+  FROM _s309_jer45_lookup sv, _s309_jer45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=45 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-45-that-which-i-have-built-will-i-break-down',
+       E'That which I have built will I break down — even this whole land',
+       E'Why is it folly for Baruch to seek great things for himself? Because the whole land is being undone, and by Yahuah''s own hand: *Thus shalt thou say unto him, Yahuah (LORD) saith thus; Behold, that which I have built will I break down, and that which I have planted I will pluck up, even this whole land* (45:4). The verbs are not new to the book — they are the very words of Jeremiah''s commission at his call: *See, I have this day set thee over the nations and over the kingdoms, to root out, and to pull down, and to destroy, and to throw down, to build, and to plant* (Jeremiah 1:10). The prophet was appointed to pluck up and to plant; now the plucking-up falls on Yahudah (Judah) itself, the land Yahuah had built and planted. It is no hour to raise a private greatness when the Builder is breaking down what he built. And the verdict reaches wider still: *for, behold, I will bring evil upon all flesh, saith Yahuah (LORD)* (45:5). In such a day the single mercy granted to the faithful scribe is his life *for a prey in all places whither thou goest* — life spared in the midst of the wreck, which is why the word to him is to seek nothing more.',
+       sv.verse_id, ev.verse_id, 'free', 35103
+  FROM _s309_jer45_lookup sv, _s309_jer45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=45 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added* (Matthew 6:33) — the Messiah reorders desire as Yahuah does Baruch''s: seek not great things for self, but the kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-seek-not-great-things-for-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *whosoever will save his life shall lose it; and whosoever will lose his life for my sake shall find it* (Matthew 16:25) — the life grasped is lost, the life surrendered found, as Baruch''s is given him for a prey.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=16 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-seek-not-great-things-for-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I have learned, in whatsoever state I am, therewith to be content* (Philippians 4:11) — Paul learned the contentment Baruch is taught: rest in what Yahuah gives, even bare life preserved.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-seek-not-great-things-for-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *godliness with contentment is great gain* (1 Timothy 6:6) — the great thing Baruch is told NOT to seek is answered by the true great gain: godliness with contentment.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-seek-not-great-things-for-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *And having food and raiment let us be therewith content* (1 Timothy 6:8) — Baruch''s reward is bare necessity spared, his life for a prey; food and raiment, and therewith content.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-seek-not-great-things-for-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *a man’s life consisteth not in the abundance of the things which he possesseth* (Luke 12:15) — the Messiah strikes at the grasping after great things; life is not measured by abundance.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-seek-not-great-things-for-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Yahuah (LORD) gave, and Yahuah (LORD) hath taken away; blessed be the name of Yahuah (LORD)* (Job 1:21) — Job grasps at nothing, receiving gift and loss with worship; the posture Baruch is called to.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=1 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-seek-not-great-things-for-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *Vanity of vanities... all is vanity* (Ecclesiastes 1:2) — the Preacher names the chase that finds no rest; the cure for Baruch''s restlessness is contentment, not more grasping.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=3
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-seek-not-great-things-for-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *to root out, and to pull down... to build, and to plant* (Jeremiah 1:10) — the prophet''s own commission-verbs, now turned on Yahudah (Judah) itself; Yahuah breaks down what he built.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=45 AND sv.verse_number=4
+  JOIN _s309_jer45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-45-that-which-i-have-built-will-i-break-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_46.sql (Jeremiah 46) -----
+-- Chapter: Jeremiah 46 — the FIRST of the oracles against the nations; against Egypt. Pharaoh-necho
+-- routed at Carchemish by Nebuchadrezzar by the river Euphrates; the buckler and shield; the swift
+-- cannot flee, the mighty cannot escape; Egypt rising like a flood to cover the earth, broken. At the
+-- heart: ★ v.10 *the day of Adonai Yahuah (the Lord GOD) of hosts, a day of vengeance... the sword
+-- shall devour... made drunk with their blood: for Adonai Yahuah (the Lord GOD) of hosts hath a
+-- sacrifice in the north country by the river Euphrates* — the day of vengeance and the sword''s
+-- sacrifice on the nations. Then the second oracle (v.13-26): Nebuchadrezzar comes to smite the land
+-- of Egypt; the daughter of Egypt into captivity; Yahuah punishes No, Pharaoh, and their gods. And the
+-- ★★★ close (v.27-28): *fear not thou, O my servant Jacob... I will make a full end of all the nations
+-- whither I have driven thee: but I will not make a full end of thee, but correct thee in measure* — the
+-- preservation of Jacob, the two-house people kept through the very judgment that ends the nations.
+-- Tag: jer46   Temp view: _s309_jer46_lookup
+-- Sort band: base 35125, step 3 -> threads at 35125, 35128 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',46,v
+--
+-- Jeremiah 46 coverage:
+--   v.1-2 (the word against the Gentiles; against Egypt, Pharaoh-necho at Carchemish by Euphrates,
+--          smitten by Nebuchadrezzar) — historical superscription
+--        NT:     none warranted     Extras: none warranted     Tanakh: none separate (preface)
+--   v.3-6 (Order ye the buckler and shield; harness the horses; the mighty beaten down, fled apace;
+--          stumble and fall toward the north by the river Euphrates) — the muster and the rout
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — the northward fall by Euphrates is the place of the sacrifice (v.10),
+--                bound to THREAD 1
+--   v.7-9 (Who is this that cometh up as a flood? Egypt riseth up like a flood... I will cover the
+--          earth; come up, ye horses; the Ethiopians, Libyans, Lydians) — Egypt''s proud flood
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the proud overflow brought to nothing; woven into THREAD 1 prose)
+--   ★ v.10 (For this is the day of Adonai Yahuah (the Lord GOD) of hosts, a day of vengeance... the
+--          sword shall devour... made drunk with their blood: for Adonai Yahuah of hosts hath a
+--          sacrifice in the north country by the river Euphrates)
+--        NT:     ★ Revelation 19:17-18 (the supper of the great Elohim... eat the flesh of kings) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh weave; no extra forced)
+--        Tanakh: ★★ Isaiah 34:6 (the sword of Yahuah is filled with blood... Yahuah hath a sacrifice),
+--                ★ Isaiah 63:4 (the day of vengeance is in mine heart), ★ Zephaniah 1:7 (Yahuah hath
+--                prepared a sacrifice, he hath bid his guests) — THREAD 1
+--   v.11-12 (Go up into Gilead, take balm, O virgin daughter of Egypt; in vain... thou shalt not be
+--          cured; the nations have heard of thy shame) — Egypt''s incurable wound
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the balm-of-Gilead irony; woven into THREAD 1 prose)
+--   v.13-26 (the word how Nebuchadrezzar should smite Egypt; Migdol, Noph, Tahpanhes; the valiant swept
+--          away because Yahuah drove them; the daughter of Egypt into captivity; I will punish No,
+--          Pharaoh, Egypt, with their gods, and all that trust in him; afterward it shall be inhabited)
+--        NT:     none warranted distinct (the second Egypt-oracle; the idols/gods judged, woven in prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the judgment of Egypt and her gods (v.25) is the full-end of a nation
+--                that THREAD 2 sets against the not-full-end of Jacob; mercy at the last (v.26 *afterward
+--                it shall be inhabited*) noted in prose
+--   ★★★ v.27-28 (But fear not thou, O my servant Jacob... I will save thee from afar off, and thy seed
+--          from the land of their captivity; Jacob shall return... Fear thou not, O Jacob my servant...
+--          for I am with thee; for I will make a full end of all the nations whither I have driven thee:
+--          but I will not make a full end of thee, but correct thee in measure)
+--        NT:     ★★ Romans 11:1-2 (Hath Elohim cast away his people? Elohim forbid... Elohim hath not
+--                cast away his people which he foreknew), ★★ Romans 11:29 (the gifts and calling of
+--                Elohim are without repentance) — THREAD 2
+--        Extras: none warranted (clean canon weave; the preservation-of-Jacob is the library''s spine)
+--        Tanakh: ★★★ Jeremiah 30:11 (lateral — the IDENTICAL promise: I will make a full end of all
+--                nations... but I will not make a full end of thee), ★★ Isaiah 41:10 (fear thou not;
+--                for I am with thee), ★ Isaiah 41:13 (I will hold thy right hand... Fear not; I will
+--                help thee), ★ Isaiah 41:14 (Fear not, thou worm Jacob... I will help thee), ★★ Isaiah
+--                43:1 (Fear not: for I have redeemed thee... thou art mine), ★ Isaiah 43:2 (when thou
+--                passest through the waters, I will be with thee), ★★ Malachi 3:6 (I am Yahuah, I change
+--                not; therefore ye sons of Jacob are not consumed) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-46-the-day-of-vengeance-the-swords-sacrifice-in-the-north — NT (Revelation 19) + Tanakh (Isaiah 34, Isaiah 63, Zephaniah 1) [free]
+--      (★ the day of Yahuah''s vengeance; the sword''s sacrifice on the proud nations by the Euphrates)
+--   2. jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee — NT (Romans 11) + Tanakh (Jeremiah 30, Isaiah 41, Isaiah 43, Malachi 3) [free]
+--      (★★★ the preservation of Jacob — the nations get a full end, Jacob is corrected in measure, never
+--       consumed; the two-house people kept through judgment)
+--
+-- Framing notes:
+--   ★ THE DAY OF VENGEANCE / THE SWORD''S SACRIFICE (THREAD 1): at the climax of Egypt''s rout the prophet
+--      names what the day truly is — *For this is the day of Adonai Yahuah (the Lord GOD) of hosts, a day
+--      of vengeance, that he may avenge him of his adversaries: and the sword shall devour, and it shall
+--      be satiate and made drunk with their blood: for Adonai Yahuah (the Lord GOD) of hosts hath a
+--      sacrifice in the north country by the river Euphrates* (46:10). It is not Nebuchadrezzar''s day but
+--      Yahuah''s; the slaughter of the proud nation is a SACRIFICE Yahuah prepares. Isaiah names the same
+--      sword and the same sacrifice — *The sword of Yahuah (LORD) is filled with blood... for Yahuah
+--      (LORD) hath a sacrifice in Bozrah, and a great slaughter in the land of Idumea* (Isaiah 34:6), *For
+--      it is the day of the LORD''S vengeance* (34:8) — and again, the winepress trodden alone: *For the
+--      day of vengeance is in mine heart, and the year of my redeemed is come* (Isaiah 63:4). Zephaniah
+--      sets the same sacrificial table — *Yahuah (LORD) hath prepared a sacrifice, he hath bid his guests*
+--      (Zephaniah 1:7). And the apocalypse consummates it: the angel cries to the fowls, *Come and gather
+--      yourselves together unto the supper of the great Elohim (God); That ye may eat the flesh of kings,
+--      and the flesh of captains, and the flesh of mighty men* (Revelation 19:17-18). The day of vengeance
+--      is the sword''s sacrifice on the proud, from the Euphrates to the last battle.
+--   ★★★ THE PRESERVATION OF JACOB (THREAD 2, the load-bearing close): the oracles against the nations end,
+--      and the word turns to Yahuah''s own people with the opposite verdict — *But fear not thou, O my
+--      servant Jacob, and be not dismayed, O Yashar''el (Israel): for, behold, I will save thee from afar
+--      off, and thy seed from the land of their captivity; and Jacob shall return, and be in rest and at
+--      ease, and none shall make him afraid* (46:27). And the heart of it: *Fear thou not, O Jacob my
+--      servant, saith Yahuah (LORD): for I am with thee; for I will make a full end of all the nations
+--      whither I have driven thee: but I will not make a full end of thee, but correct thee in measure;
+--      yet will I not leave thee wholly unpunished* (46:28). The nations — Egypt, all of them — get a FULL
+--      END; Jacob is corrected IN MEASURE and never made an end of. This is the same word verbatim at
+--      Jeremiah 30:11. Isaiah sings it: *Fear thou not; for I am with thee... I will help thee* (Isaiah
+--      41:10,13), *Fear not, thou worm Jacob... I will help thee* (41:14), *Fear not: for I have redeemed
+--      thee... thou art mine* (43:1), *when thou passest through the waters, I will be with thee* (43:2).
+--      Malachi grounds it in the unchanging Elohim: *I am Yahuah (LORD), I change not; therefore ye sons
+--      of Jacob are not consumed* (Malachi 3:6). Paul seals it: *Hath Elohim (God) cast away his people?
+--      Elohim (God) forbid... Elohim (God) hath not cast away his people which he foreknew* (Romans
+--      11:1-2), *for the gifts and calling of Elohim (God) are without repentance* (Romans 11:29). Jacob
+--      corrected in measure, never made a full end — the two-house people kept through the judgment that
+--      ends the nations.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the historical superscription — Carchemish, Pharaoh-necho,
+--      Nebuchadrezzar), v.3-6 (the muster and the rout — the northward fall by Euphrates, bound to THREAD
+--      1''s place of sacrifice), v.7-9 (Egypt''s proud flood brought to nothing — woven into THREAD 1),
+--      v.11-12 (the balm of Gilead in vain, Egypt''s incurable shame — woven into THREAD 1), v.13-26 (the
+--      second Egypt-oracle; the gods of Egypt judged, the daughter into captivity — the full-end of a
+--      nation that THREAD 2 sets against the not-full-end of Jacob; the mercy of v.26 *afterward it shall
+--      be inhabited* noted in prose). All blocks recorded; every meaningful section carries or is bound
+--      to a thread.
+
+CREATE TEMP VIEW _s309_jer46_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the day of Yahuah's vengeance — the sword's sacrifice in the north country
+    ('canon','jeremiah',46,10,'canon','isaiah',34,6,'free',
+      E'*The sword of Yahuah (LORD) is filled with blood, it is made fat with fatness, and with the blood of lambs and goats, with the fat of the kidneys of rams: for Yahuah (LORD) hath a sacrifice in Bozrah, and a great slaughter in the land of Idumea* (Isaiah 34:6). Isaiah names the very sword and the very sacrifice Jeremiah names — *the sword shall devour, and it shall be satiate and made drunk with their blood: for Adonai Yahuah (the Lord GOD) of hosts hath a sacrifice in the north country by the river Euphrates* (Jeremiah 46:10). The slaughter of the proud nation is not mere war but a SACRIFICE Yahuah prepares; *for it is the day of the LORD''S vengeance* (Isaiah 34:8).'),
+    ('canon','jeremiah',46,10,'canon','isaiah',63,4,'free',
+      E'*For the day of vengeance is in mine heart, and the year of my redeemed is come* (Isaiah 63:4). The treader of the winepress speaks Jeremiah''s own word — *this is the day of Adonai Yahuah (the Lord GOD) of hosts, a day of vengeance, that he may avenge him of his adversaries* (Jeremiah 46:10). The day of vengeance on the nations is the same day that redeems Yahuah''s people; the sword that devours the proud is the deliverance of the redeemed.'),
+    ('canon','jeremiah',46,10,'canon','zephaniah',1,7,'free',
+      E'*Hold thy peace at the presence of Adonai Yahuah (the Lord GOD): for the day of Yahuah (LORD) is at hand: for Yahuah (LORD) hath prepared a sacrifice, he hath bid his guests* (Zephaniah 1:7). Zephaniah sets the same sacrificial table Jeremiah names — *Adonai Yahuah (the Lord GOD) of hosts hath a sacrifice in the north country by the river Euphrates* (Jeremiah 46:10). The day of Yahuah is a sacrifice prepared, the guests bidden to it; the proud are the offering, and Yahuah himself the host.'),
+    ('canon','jeremiah',46,10,'canon','revelation',19,17,'free',
+      E'*And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God)* (Revelation 19:17). The sacrifice Jeremiah named — *Adonai Yahuah (the Lord GOD) of hosts hath a sacrifice in the north country by the river Euphrates* (Jeremiah 46:10) — reaches its consummation in the great supper of the last battle, where the fowls are bidden to the slain. The day of vengeance and the sword''s sacrifice runs from the Euphrates to the end.'),
+    ('canon','jeremiah',46,10,'canon','revelation',19,18,'free',
+      E'*That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men, and the flesh of horses, and of them that sit on them, and the flesh of all men, both free and bond, both small and great* (Revelation 19:18). The sword that is *satiate and made drunk with their blood* (Jeremiah 46:10) is the sword whose slaughter the fowls devour at the end — kings, captains, mighty men, horses and riders. The proud army of Egypt, the horses and chariots of v.9, foreshadow the last harvest of the sword''s sacrifice.'),
+
+    -- THREAD 2 (★★★): fear not, O my servant Jacob — I will not make a full end of thee
+    ('canon','jeremiah',46,28,'canon','jeremiah',30,11,'free',
+      E'*For I am with thee, saith Yahuah (LORD), to save thee: though I make a full end of all nations whither I have scattered thee, yet will I not make a full end of thee: but I will correct thee in measure, and will not leave thee altogether unpunished* (Jeremiah 30:11). This is the IDENTICAL promise, word for word — *I will make a full end of all the nations whither I have driven thee: but I will not make a full end of thee, but correct thee in measure* (Jeremiah 46:28). The nations get a full end; Jacob is corrected in measure and never made an end of. The book of comfort and the oracle against Egypt speak one preserving word over the two-house people.'),
+    ('canon','jeremiah',46,27,'canon','isaiah',41,10,'free',
+      E'*Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God): I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness* (Isaiah 41:10). Isaiah speaks the very comfort Jeremiah brings — *fear not thou, O my servant Jacob, and be not dismayed, O Yashar''el (Israel)* (Jeremiah 46:27). The same fear-not, the same be-not-dismayed: Yahuah is with his servant Jacob to strengthen and uphold him while the nations fall.'),
+    ('canon','jeremiah',46,28,'canon','isaiah',41,13,'free',
+      E'*For I Yahuah Elohayka (the LORD thy God) will hold thy right hand, saying unto thee, Fear not; I will help thee* (Isaiah 41:13). Jeremiah''s ground for the fear-not is Yahuah''s presence — *Fear thou not, O Jacob my servant, saith Yahuah (LORD): for I am with thee* (Jeremiah 46:28); Isaiah names the same hand-holding nearness: Yahuah holds the right hand of Jacob and says *Fear not; I will help thee*. The presence of Yahuah is the whole reason fear is forbidden.'),
+    ('canon','jeremiah',46,28,'canon','isaiah',41,14,'free',
+      E'*Fear not, thou worm Jacob, and ye men of Yashar''el (Israel); I will help thee, saith Yahuah (LORD), and thy redeemer, the Holy One of Yashar''el (Israel)* (Isaiah 41:14). Isaiah names Jacob exactly as Jeremiah does — *Fear thou not, O Jacob my servant* (Jeremiah 46:28) — and the lowly worm Jacob, helpless among the nations, is helped and redeemed by the Holy One of Yashar''el (Israel). The corrected-in-measure servant is the redeemed worm Jacob.'),
+    ('canon','jeremiah',46,27,'canon','isaiah',43,1,'free',
+      E'*But now thus saith Yahuah (LORD) that created thee, O Jacob, and he that formed thee, O Yashar''el (Israel), Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine* (Isaiah 43:1). The fear-not over Jacob and Yashar''el (Israel) that Jeremiah speaks — *fear not thou, O my servant Jacob... O Yashar''el (Israel)* (Jeremiah 46:27) — is Isaiah''s own: the One who formed Jacob redeems him and calls him by name. The servant saved from afar off (46:27) is the redeemed who is Yahuah''s very own.'),
+    ('canon','jeremiah',46,27,'canon','isaiah',43,2,'free',
+      E'*When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee* (Isaiah 43:2). Jeremiah promises Jacob saved *from afar off, and thy seed from the land of their captivity* (Jeremiah 46:27); Isaiah promises the same kept presence through the worst — the waters that do not overflow, the fire that does not burn. The captivity does not consume the servant: Yahuah is with him through the flood.'),
+    ('canon','jeremiah',46,28,'canon','malachi',3,6,'free',
+      E'*For I am Yahuah (LORD), I change not; therefore ye sons of Jacob are not consumed* (Malachi 3:6). Malachi gives the bedrock of Jeremiah''s pledge — *I will not make a full end of thee, but correct thee in measure* (Jeremiah 46:28): because Yahuah does not change, the sons of Jacob are not consumed. The nations are made a full end of; the unchanging Elohim keeps the sons of Jacob from being consumed.'),
+    ('canon','jeremiah',46,27,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). Paul asks and answers the question Jeremiah''s promise settles — *fear not thou, O my servant Jacob... I will save thee* (Jeremiah 46:27): Yahuah has not cast away his people. The servant Jacob, corrected in measure, is not cast off; *Elohim (God) forbid*.'),
+    ('canon','jeremiah',46,28,'canon','romans',11,2,'free',
+      E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). Paul states the principle of Jeremiah''s word — *I will not make a full end of thee* (Jeremiah 46:28): the foreknown people are not cast away. The nations whither Jacob was driven get a full end; the foreknown servant does not.'),
+    ('canon','jeremiah',46,28,'canon','romans',11,29,'free',
+      E'*For the gifts and calling of Elohim (God) are without repentance* (Romans 11:29). The pledge *I will not make a full end of thee, but correct thee in measure* (Jeremiah 46:28) rests on a calling Yahuah does not revoke — *without repentance*. Jacob is corrected, not cast off; the calling that names him *my servant* (46:28) is never taken back.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-46-the-day-of-vengeance-the-swords-sacrifice-in-the-north',
+       E'The day of vengeance — Adonai Yahuah hath a sacrifice in the north country',
+       E'Egypt comes up like a flood to cover the earth — *Egypt riseth up like a flood, and his waters are moved like the rivers; and he saith, I will go up, and will cover the earth; I will destroy the city and the inhabitants thereof* (46:8) — the horses raging, the chariots, the Ethiopians and Libyans and Lydians mustered (46:9). And at the height of the proud array the prophet names what the day truly is: *For this is the day of Adonai Yahuah (the Lord GOD) of hosts, a day of vengeance, that he may avenge him of his adversaries: and the sword shall devour, and it shall be satiate and made drunk with their blood: for Adonai Yahuah (the Lord GOD) of hosts hath a sacrifice in the north country by the river Euphrates* (46:10). It is not Nebuchadrezzar''s day but Yahuah''s; the slaughter of the proud nation is a SACRIFICE Yahuah prepares, the sword satiate with blood. Isaiah names the same sword and the same sacrifice: *The sword of Yahuah (LORD) is filled with blood... for Yahuah (LORD) hath a sacrifice in Bozrah, and a great slaughter in the land of Idumea* (Isaiah 34:6), *For it is the day of the LORD''S vengeance, and the year of recompences for the controversy of Zion* (Isaiah 34:8); and the winepress trodden alone — *For the day of vengeance is in mine heart, and the year of my redeemed is come* (Isaiah 63:4). Zephaniah sets the same table: *for Yahuah (LORD) hath prepared a sacrifice, he hath bid his guests* (Zephaniah 1:7). And the apocalypse consummates it — the angel cries to the fowls of heaven, *Come and gather yourselves together unto the supper of the great Elohim (God); That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men, and the flesh of horses, and of them that sit on them* (Revelation 19:17-18). The balm of Gilead cannot heal what the day of vengeance has struck — *in vain shalt thou use many medicines; for thou shalt not be cured* (46:11). The day of Yahuah''s vengeance is the sword''s sacrifice on the proud, from the Euphrates to the last battle.',
+       sv.verse_id, ev.verse_id, 'free', 35125
+  FROM _s309_jer46_lookup sv, _s309_jer46_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=46 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee',
+       E'Fear not, O my servant Jacob — I will not make a full end of thee',
+       E'The oracles against the nations have run their course; Egypt and her gods are given over to a full end — *Behold, I will punish the multitude of No, and Pharaoh, and Egypt, with their gods, and their kings; even Pharaoh, and all them that trust in him* (46:25). Then, in the very same breath, the word turns to Yahuah''s own people with the opposite verdict: *But fear not thou, O my servant Jacob, and be not dismayed, O Yashar''el (Israel): for, behold, I will save thee from afar off, and thy seed from the land of their captivity; and Jacob shall return, and be in rest and at ease, and none shall make him afraid* (46:27). And the heart of it is the distinction that runs the whole framework: *Fear thou not, O Jacob my servant, saith Yahuah (LORD): for I am with thee; for I will make a full end of all the nations whither I have driven thee: but I will not make a full end of thee, but correct thee in measure; yet will I not leave thee wholly unpunished* (46:28). The nations — Egypt, all of them — get a FULL END; Jacob is corrected IN MEASURE and never made an end of. This is the identical promise spoken in the book of comfort: *though I make a full end of all nations whither I have scattered thee, yet will I not make a full end of thee: but I will correct thee in measure* (Jeremiah 30:11). Isaiah sings the same fear-not over Jacob: *Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God)... I will uphold thee with the right hand of my righteousness* (Isaiah 41:10), *I Yahuah Elohayka (the LORD thy God) will hold thy right hand, saying unto thee, Fear not; I will help thee* (41:13), *Fear not, thou worm Jacob... I will help thee, saith Yahuah (LORD), and thy redeemer, the Holy One of Yashar''el (Israel)* (41:14); and the One who formed Jacob redeems him — *Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine* (Isaiah 43:1), *When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee* (43:2). Malachi gives the bedrock: *For I am Yahuah (LORD), I change not; therefore ye sons of Jacob are not consumed* (Malachi 3:6). And Paul seals it for the two-house people: *Hath Elohim (God) cast away his people? Elohim (God) forbid... Elohim (God) hath not cast away his people which he foreknew* (Romans 11:1-2), *for the gifts and calling of Elohim (God) are without repentance* (Romans 11:29). Jacob corrected in measure, never made a full end — the servant kept through the very judgment that ends the nations.',
+       sv.verse_id, ev.verse_id, 'free', 35128
+  FROM _s309_jer46_lookup sv, _s309_jer46_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=46 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *The sword of Yahuah (LORD) is filled with blood... for Yahuah (LORD) hath a sacrifice in Bozrah* (Isaiah 34:6) — Isaiah names the same sword and sacrifice as Jeremiah 46:10; the slaughter of the proud is Yahuah''s offering.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-the-day-of-vengeance-the-swords-sacrifice-in-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *For the day of vengeance is in mine heart, and the year of my redeemed is come* (Isaiah 63:4) — the winepress trodden alone; Jeremiah 46:10''s day of vengeance is the same day that redeems Yahuah''s people.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=63 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-the-day-of-vengeance-the-swords-sacrifice-in-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahuah (LORD) hath prepared a sacrifice, he hath bid his guests* (Zephaniah 1:7) — the day of Yahuah set as a sacrificial table, as in Jeremiah 46:10; the proud are the offering, Yahuah the host.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-the-day-of-vengeance-the-swords-sacrifice-in-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Come and gather yourselves together unto the supper of the great Elohim (God)* (Revelation 19:17) — the sacrifice of Jeremiah 46:10 consummated; the fowls bidden to the slain at the last battle.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-the-day-of-vengeance-the-swords-sacrifice-in-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men* (Revelation 19:18) — the sword satiate with blood (Jeremiah 46:10) harvested at the end; kings, captains, horses and riders, the proud of Egypt foreshadowed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-the-day-of-vengeance-the-swords-sacrifice-in-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *though I make a full end of all nations whither I have scattered thee, yet will I not make a full end of thee: but I will correct thee in measure* (Jeremiah 30:11) — the IDENTICAL promise word for word; the nations ended, Jacob corrected in measure.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=28
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=30 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God)* (Isaiah 41:10) — the same fear-not, be-not-dismayed over the servant as Jeremiah 46:27; Yahuah with Jacob to uphold him.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=27
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I Yahuah Elohayka (the LORD thy God) will hold thy right hand, saying unto thee, Fear not; I will help thee* (Isaiah 41:13) — the presence of Yahuah is the ground of the fear-not in Jeremiah 46:28; he holds Jacob''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=28
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Fear not, thou worm Jacob... I will help thee, saith Yahuah (LORD), and thy redeemer, the Holy One of Yashar''el (Israel)* (Isaiah 41:14) — the lowly servant Jacob of Jeremiah 46:28 helped and redeemed by the Holy One.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=28
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine* (Isaiah 43:1) — the One who formed Jacob redeems him; the servant saved from afar off (Jeremiah 46:27) is Yahuah''s very own.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=27
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee* (Isaiah 43:2) — the captivity does not consume the servant of Jeremiah 46:27; Yahuah is with him through the flood.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=27
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *For I am Yahuah (LORD), I change not; therefore ye sons of Jacob are not consumed* (Malachi 3:6) — the bedrock of the not-full-end pledge of Jeremiah 46:28; the unchanging Elohim keeps Jacob from being consumed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=28
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — Paul answers what Jeremiah 46:27 settles; the servant Jacob is not cast off.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=27
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★ *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2) — the principle of Jeremiah 46:28''s not-full-end; the foreknown people are not cast away.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=28
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'★★ *For the gifts and calling of Elohim (God) are without repentance* (Romans 11:29) — the calling that names Jacob *my servant* (Jeremiah 46:28) is never revoked; corrected, not cast off.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=46 AND sv.verse_number=28
+  JOIN _s309_jer46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-46-fear-not-o-my-servant-jacob-i-will-not-make-a-full-end-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_47.sql (Jeremiah 47) -----
+-- Chapter: Jeremiah 47 — the oracle AGAINST THE PHILISTINES: the overflowing flood out of the north
+-- (the invading army as a flood that overwhelms the land), and the SWORD of Yahuah on its appointed
+-- commission, which cannot rest until its charge is done. A short chapter (7 verses), two strong images,
+-- two threads — both clean all-canon weaves (free tier). NO two-house material, no Messianic foreshadow
+-- forced; the framing is the prophetic shape of judgment itself: the flood-army and the commissioned sword.
+-- Tag: jer47   Temp view: _s309_jer47_lookup   Session: s309
+-- Sort band: base 35150, step 3 -> threads at 35150, 35153 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',47,v
+--
+-- Jeremiah 47 coverage:
+--   v.1 (The word of Yahuah... against the Philistines, before that Pharaoh smote Gaza) — the superscription
+--        NT:     none warranted     Extras: none warranted     Tanakh: none separate (historical heading; preface to v.2)
+--   ★ v.2-4 (Behold, waters rise up out of the north, and shall be an overflowing flood, and shall overflow
+--          the land... the men shall cry, and all the inhabitants of the land shall howl... because of the
+--          day that cometh to spoil all the Philistines... for Yahuah will spoil the Philistines)
+--        NT:     none warranted (the OT flood-of-judgment image is fully carried by its Tanakh kin; Revelation''s
+--                "waters = peoples" is a different figure, not forced here)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 8:7-8 (the waters of the river, strong and many... he shall overflow and go over),
+--                ★ Isaiah 28:17 (the waters shall overflow the hiding place), ★ Daniel 9:26 (the end thereof
+--                shall be with a flood), ★ Nahum 1:8 (with an overrunning flood he will make an utter end) — THREAD 1
+--   v.5 (Baldness is come upon Gaza; Ashkelon is cut off... how long wilt thou cut thyself?) — the mourning rite
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the heathen mourning-cutting; woven into THREAD 1''s howling/THREAD 2''s charge prose)
+--   ★ v.6-7 (O thou sword of Yahuah (LORD), how long will it be ere thou be quiet? put up thyself into thy
+--          scabbard, rest, and be still. How can it be quiet, seeing Yahuah hath given it a charge against
+--          Ashkelon, and against the sea shore? there hath he appointed it)
+--        NT:     none warranted (the sword-of-Yahuah commission is an OT covenant-lawsuit figure; its NT
+--                fulfilment-weave belongs to the eschatological sword passages, not forced onto this oracle)
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 32:41-42 (if I whet my glittering sword... I will make mine arrows drunk with
+--                blood; my sword shall devour flesh) — the Song''s commissioned sword, the root; ★ Ezekiel 21:3-5
+--                (I will draw forth my sword out of his sheath... it shall not return any more — lateral),
+--                ★ Isaiah 34:5-6 (the sword of Yahuah is filled with blood... a sacrifice in Bozrah), ★ Jeremiah
+--                12:12 (the sword of Yahuah shall devour from the one end of the land even to the other) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-47-an-overflowing-flood-out-of-the-north — Tanakh (Isaiah 8, Isaiah 28, Daniel 9, Nahum 1) [free]
+--      (★ the invading army as an overflowing flood; the day that comes to spoil; the flood-figure of judgment)
+--   2. jeremiah-47-o-thou-sword-of-yahuah-how-long-ere-thou-be-quiet — Tanakh (Deuteronomy 32, Ezekiel 21, Isaiah 34, Jeremiah 12) [free]
+--      (★ the sword of Yahuah on its appointed commission; it cannot rest until its charge is done)
+--
+-- Framing notes:
+--   ★ THE OVERFLOWING FLOOD OUT OF THE NORTH (THREAD 1): *Thus saith Yahuah (LORD); Behold, waters rise up out
+--      of the north, and shall be an overflowing flood, and shall overflow the land, and all that is therein...
+--      then the men shall cry, and all the inhabitants of the land shall howl* (47:2). The invading army —
+--      Babylon out of the north (or Pharaoh''s host) — is figured as a flood that breaks every bank and drowns
+--      the land of the Philistines: *Because of the day that cometh to spoil all the Philistines... for Yahuah
+--      (LORD) will spoil the Philistines* (47:4). It is the recurring prophetic figure for an overwhelming
+--      judgment-army. Isaiah named the SAME flood over Yahudah: *behold, Yahuah (Lord) bringeth up upon them
+--      the waters of the river, strong and many, even the king of Assyria... and he shall overflow and go over*
+--      (Isa 8:7-8). The overflowing scourge sweeps away every false refuge: *the waters shall overflow the
+--      hiding place* (Isa 28:17). Daniel sets the same image over the doomed city: *the end thereof shall be
+--      with a flood* (Dan 9:26). And Nahum over Nineveh: *with an overrunning flood he will make an utter end*
+--      (Nahum 1:8). The flood out of the north is Yahuah''s judgment-army, irresistible, leaving nothing standing.
+--   ★ THE SWORD OF YAHUAH ON ITS COMMISSION (THREAD 2): *O thou sword of Yahuah (LORD), how long will it be ere
+--      thou be quiet? put up thyself into thy scabbard, rest, and be still. How can it be quiet, seeing Yahuah
+--      (LORD) hath given it a charge against Ashkelon, and against the sea shore? there hath he appointed it*
+--      (47:6-7). The sword is personified, pleaded with to sheathe itself — but it cannot rest, for it is no
+--      rogue blade: Yahuah has GIVEN IT A CHARGE and APPOINTED it. The commissioned sword is the Song of Moses''
+--      own: *If I whet my glittering sword, and mine hand take hold on judgment... I will make mine arrows drunk
+--      with blood, and my sword shall devour flesh* (Deut 32:41-42) — the sword in Yahuah''s own hand. Ezekiel
+--      hears it too, and it will not return till its work is done: *I... will draw forth my sword out of his
+--      sheath... it shall not return any more* (Ezek 21:3,5). Isaiah''s sword is blood-sated on its appointed
+--      slaughter: *the sword of Yahuah (LORD) is filled with blood... for Yahuah (LORD) hath a sacrifice in
+--      Bozrah* (Isa 34:6). And Jeremiah''s own word, of the same devouring blade: *the sword of Yahuah (LORD)
+--      shall devour from the one end of the land even to the other end of the land* (Jer 12:12). The sword
+--      cannot be quiet while its charge stands — it is Yahuah''s appointed instrument, and it does only what
+--      he has commissioned.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the superscription — the historical heading naming Pharaoh and Gaza,
+--      preface to the oracle), v.5 (Baldness upon Gaza, Ashkelon cut off, the self-cutting mourning rite — the
+--      heathen grief, woven into the howling of THREAD 1 and the charge-against-Ashkelon of THREAD 2). Every
+--      meaningful image carries or is bound to a thread; all three libraries weighed at every block.
+
+CREATE TEMP VIEW _s309_jer47_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): an overflowing flood out of the north — the invading army that overwhelms the land
+    ('canon','jeremiah',47,2,'canon','isaiah',8,7,'free',
+      E'*Now therefore, behold, Yahuah (Lord) bringeth up upon them the waters of the river, strong and many, even the king of Assyria, and all his glory: and he shall come up over all his channels, and go over all his banks* (Isaiah 8:7). Isaiah names the same flood-figure Jeremiah uses against the Philistines — *Behold, waters rise up out of the north, and shall be an overflowing flood, and shall overflow the land* (Jeremiah 47:2). The invading army is the river breaking every bank: in Isaiah it is Assyria over Yahudah (Judah), in Jeremiah the host out of the north over Philistia — one and the same image of an overwhelming judgment.'),
+    ('canon','jeremiah',47,2,'canon','isaiah',8,8,'free',
+      E'*And he shall pass through Yahudah (Judah); he shall overflow and go over, he shall reach even to the neck; and the stretching out of his wings shall fill the breadth of thy land, O Immanuel* (Isaiah 8:8). The flood that *shall overflow the land, and all that is therein* (Jeremiah 47:2) is Isaiah''s very figure — the army that *shall overflow and go over*, reaching to the neck, filling the whole breadth of the land. The overflowing flood is the irresistible advance of the judgment-host that leaves nothing untouched.'),
+    ('canon','jeremiah',47,2,'canon','isaiah',28,17,'free',
+      E'*Judgment also will I lay to the line, and righteousness to the plummet: and the hail shall sweep away the refuge of lies, and the waters shall overflow the hiding place* (Isaiah 28:17). Jeremiah''s flood that *shall overflow the land* (Jeremiah 47:2) is Isaiah''s overflowing scourge that *shall overflow the hiding place* — the waters of judgment that sweep away every false refuge. There is no covenant-with-death (Isaiah 28:15) that the flood does not break; the overflowing waters reach into every hiding place.'),
+    ('canon','jeremiah',47,4,'canon','daniel',9,26,'free',
+      E'*And after threescore and two weeks shall Messiah be cut off, but not for himself: and the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof shall be with a flood, and unto the end of the war desolations are determined* (Daniel 9:26). Daniel uses the same figure Jeremiah sets over the Philistines — *Because of the day that cometh to spoil all the Philistines* (Jeremiah 47:4): the appointed *day that cometh* and the *end... with a flood* are the one prophetic image of a determined, overwhelming judgment that spends itself to the full.'),
+    ('canon','jeremiah',47,4,'canon','nahum',1,8,'free',
+      E'*But with an overrunning flood he will make an utter end of the place thereof, and darkness shall pursue his enemies* (Nahum 1:8). Nahum sets over Nineveh the very flood Jeremiah sets over Philistia — *for Yahuah (LORD) will spoil the Philistines, the remnant of the country of Caphtor* (Jeremiah 47:4). The *overrunning flood* makes *an utter end*: the judgment-waters do not merely afflict but consume the place to the remnant, as Yahuah spoils the Philistines to the last.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★): O thou sword of Yahuah — the commissioned blade that cannot rest till its charge is done
+    ('canon','jeremiah',47,6,'canon','deuteronomy',32,41,'free',
+      E'*If I whet my glittering sword, and mine hand take hold on judgment; I will render vengeance to mine enemies, and will reward them that hate me* (Deuteronomy 32:41). The sword Jeremiah pleads with — *O thou sword of Yahuah (LORD), how long will it be ere thou be quiet?* (Jeremiah 47:6) — is the Song of Moses'' own blade, whetted in Yahuah''s hand and taking hold on judgment. It is no rogue weapon: it is the sword of Yahuah himself, drawn for vengeance upon his enemies.'),
+    ('canon','jeremiah',47,6,'canon','deuteronomy',32,42,'free',
+      E'*I will make mine arrows drunk with blood, and my sword shall devour flesh; and that with the blood of the slain and of the captives, from the beginning of revenges upon the enemy* (Deuteronomy 32:42). Jeremiah''s sword that cannot *rest, and be still* (Jeremiah 47:6) is the Song''s devouring blade — *my sword shall devour flesh*. The sword of Yahuah does not sheathe until it has done its appointed work upon the slain and the captives; its commission is to devour, and it cannot be quiet till it is finished.'),
+    ('canon','jeremiah',47,7,'canon','ezekiel',21,5,'free',
+      E'*That all flesh may know that I Yahuah (LORD) have drawn forth my sword out of his sheath: it shall not return any more* (Ezekiel 21:5). Jeremiah asks the sword why it will not *put up thyself into thy scabbard* (Jeremiah 47:6) — and Ezekiel answers with the same drawn sword that *shall not return any more* until its charge is done. *Seeing Yahuah (LORD) hath given it a charge... there hath he appointed it* (Jeremiah 47:7): the appointed sword cannot be re-sheathed while its commission stands.'),
+    ('canon','jeremiah',47,7,'canon','ezekiel',21,3,'free',
+      E'*And say to the land of Yashar''el (Israel), Thus saith Yahuah (LORD); Behold, I am against thee, and will draw forth my sword out of his sheath, and will cut off from thee the righteous and the wicked* (Ezekiel 21:3). The sword Jeremiah cannot quiet — *Yahuah (LORD) hath given it a charge* (Jeremiah 47:7) — is the sword Yahuah himself draws out of its sheath in Ezekiel. It is Yahuah''s own blade, drawn by his own hand on his own commission; the personified sword of Jeremiah 47 is Yahuah''s appointed instrument of judgment.'),
+    ('canon','jeremiah',47,7,'canon','isaiah',34,6,'free',
+      E'*The sword of Yahuah (LORD) is filled with blood, it is made fat with fatness, and with the blood of lambs and goats, with the fat of the kidneys of rams: for Yahuah (LORD) hath a sacrifice in Bozrah, and a great slaughter in the land of Idumea* (Isaiah 34:6). Isaiah names the same *sword of Yahuah (LORD)* (Jeremiah 47:6) on its appointed slaughter — blood-sated, with *a sacrifice in Bozrah*. The sword cannot be quiet because Yahuah *hath given it a charge* (Jeremiah 47:7): there is an appointed slaughter it must accomplish before it rests.'),
+    ('canon','jeremiah',47,7,'canon','jeremiah',12,12,'free',
+      E'*The spoilers are come upon all high places through the wilderness: for the sword of Yahuah (LORD) shall devour from the one end of the land even to the other end of the land: no flesh shall have peace* (Jeremiah 12:12). Jeremiah''s own earlier word names the same devouring *sword of Yahuah (LORD)* (Jeremiah 47:6) — the blade that reaches *from the one end of the land even to the other*. Its charge is total; while it stands appointed, *no flesh shall have peace*, and so it cannot *rest, and be still* (Jeremiah 47:6) until its commission is done.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-47-an-overflowing-flood-out-of-the-north',
+       E'Behold, waters rise up out of the north — an overflowing flood',
+       E'The oracle against the Philistines opens not with armies named but with WATER: *Thus saith Yahuah (LORD); Behold, waters rise up out of the north, and shall be an overflowing flood, and shall overflow the land, and all that is therein; the city, and them that dwell therein: then the men shall cry, and all the inhabitants of the land shall howl* (47:2). The invading host — Babylon (or Pharaoh''s army) out of the north — is figured as a flood that breaks every bank and drowns everything: *Because of the day that cometh to spoil all the Philistines... for Yahuah (LORD) will spoil the Philistines, the remnant of the country of Caphtor* (47:4). This is the prophets'' recurring figure for an overwhelming judgment-army, and the canon speaks it with one voice. Isaiah set the very same flood over Yahudah (Judah): *behold, Yahuah (Lord) bringeth up upon them the waters of the river, strong and many, even the king of Assyria, and all his glory: and he shall come up over all his channels, and go over all his banks: And he shall pass through Yahudah (Judah); he shall overflow and go over, he shall reach even to the neck* (Isaiah 8:7-8). The overflowing scourge sweeps away every false shelter: *the hail shall sweep away the refuge of lies, and the waters shall overflow the hiding place* (Isaiah 28:17). Daniel sets it over the doomed city: *the end thereof shall be with a flood* (Daniel 9:26). And Nahum over Nineveh: *with an overrunning flood he will make an utter end of the place thereof* (Nahum 1:8). The flood out of the north is Yahuah''s judgment-army — irresistible, reaching every hiding place, making an utter end. When the prophets would name a nation overwhelmed, they reach for the overflowing waters; here the Philistine is swept away in the flood Yahuah brings.',
+       sv.verse_id, ev.verse_id, 'free', 35150
+  FROM _s309_jer47_lookup sv, _s309_jer47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=47 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-47-o-thou-sword-of-yahuah-how-long-ere-thou-be-quiet',
+       E'O thou sword of Yahuah, how long ere thou be quiet — the commissioned blade',
+       E'The chapter ends on one of Scripture''s most arresting figures: the sword pleaded with as a living thing that will not be stilled. *O thou sword of Yahuah (LORD), how long will it be ere thou be quiet? put up thyself into thy scabbard, rest, and be still. How can it be quiet, seeing Yahuah (LORD) hath given it a charge against Ashkelon, and against the sea shore? there hath he appointed it* (47:6-7). The sword cannot sheathe itself because it is no rogue blade: Yahuah has GIVEN IT A CHARGE and APPOINTED it — it does only what he has commissioned, and it cannot rest while that charge stands. This is the sword of the Song of Moses, whetted in Yahuah''s own hand: *If I whet my glittering sword, and mine hand take hold on judgment; I will render vengeance to mine enemies... I will make mine arrows drunk with blood, and my sword shall devour flesh* (Deuteronomy 32:41-42). Ezekiel hears the same blade drawn, and it will not return till its work is done: *Behold, I am against thee, and will draw forth my sword out of his sheath* (Ezekiel 21:3); *that all flesh may know that I Yahuah (LORD) have drawn forth my sword out of his sheath: it shall not return any more* (Ezekiel 21:5). Isaiah''s sword is blood-sated on its appointed slaughter: *The sword of Yahuah (LORD) is filled with blood... for Yahuah (LORD) hath a sacrifice in Bozrah* (Isaiah 34:6). And Jeremiah''s own earlier word names the same devouring blade reaching the whole land: *the sword of Yahuah (LORD) shall devour from the one end of the land even to the other end of the land: no flesh shall have peace* (Jeremiah 12:12). The sword cannot be quiet because its charge is not yet finished — it is Yahuah''s appointed instrument, and it rests only when his commission is done.',
+       sv.verse_id, ev.verse_id, 'free', 35153
+  FROM _s309_jer47_lookup sv, _s309_jer47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=47 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the waters of the river, strong and many, even the king of Assyria... he shall come up over all his channels, and go over all his banks* (Isaiah 8:7) — the same flood-army figure: the invading host as a river breaking every bank.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=2
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-an-overflowing-flood-out-of-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he shall overflow and go over, he shall reach even to the neck... shall fill the breadth of thy land* (Isaiah 8:8) — Jeremiah 47:2''s overflowing flood word for word: the army that overflows and fills the whole land.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=2
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-an-overflowing-flood-out-of-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the waters shall overflow the hiding place* (Isaiah 28:17) — the overflowing scourge sweeps away every false refuge; the same flood-of-judgment Jeremiah 47:2 brings over Philistia.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=2
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-an-overflowing-flood-out-of-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the end thereof shall be with a flood* (Daniel 9:26) — the appointed *day that cometh* (Jeremiah 47:4) and the determined end-with-a-flood: the one image of an overwhelming, determined judgment.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=4
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-an-overflowing-flood-out-of-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *with an overrunning flood he will make an utter end of the place thereof* (Nahum 1:8) — the flood makes an UTTER end; Yahuah spoils the Philistines to the remnant (Jeremiah 47:4) as the overrunning flood consumes the place.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=4
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nahum' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-an-overflowing-flood-out-of-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *If I whet my glittering sword, and mine hand take hold on judgment; I will render vengeance to mine enemies* (Deuteronomy 32:41) — the Song''s sword in Yahuah''s own hand; the root of the commissioned blade Jeremiah 47:6 pleads with.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=6
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-o-thou-sword-of-yahuah-how-long-ere-thou-be-quiet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *my sword shall devour flesh; and that with the blood of the slain and of the captives* (Deuteronomy 32:42) — the devouring blade cannot *rest, and be still* (Jeremiah 47:6) until its appointed work is done.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=6
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-o-thou-sword-of-yahuah-how-long-ere-thou-be-quiet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I Yahuah (LORD) have drawn forth my sword out of his sheath: it shall not return any more* (Ezekiel 21:5) — answers why the sword will not *put up thyself into thy scabbard* (Jeremiah 47:6): the drawn sword does not return till its charge is done.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=7
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=21 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-o-thou-sword-of-yahuah-how-long-ere-thou-be-quiet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Behold, I am against thee, and will draw forth my sword out of his sheath* (Ezekiel 21:3) — the sword Yahuah draws by his own hand; the personified blade of Jeremiah 47 is Yahuah''s own appointed instrument.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=7
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-o-thou-sword-of-yahuah-how-long-ere-thou-be-quiet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *The sword of Yahuah (LORD) is filled with blood... for Yahuah (LORD) hath a sacrifice in Bozrah* (Isaiah 34:6) — the sword on its appointed slaughter; it cannot be quiet because Yahuah *hath given it a charge* (Jeremiah 47:7).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=7
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-o-thou-sword-of-yahuah-how-long-ere-thou-be-quiet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the sword of Yahuah (LORD) shall devour from the one end of the land even to the other... no flesh shall have peace* (Jeremiah 12:12) — Jeremiah''s own word of the same devouring blade; its charge is total, so it cannot rest.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=47 AND sv.verse_number=7
+  JOIN _s309_jer47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-47-o-thou-sword-of-yahuah-how-long-ere-thou-be-quiet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_48.sql (Jeremiah 48) -----
+-- Chapter: Jeremiah 48 — the ORACLE AGAINST MOAB. The long lament-judgment over Moab: Nebo spoiled,
+-- Chemosh into captivity, the horn cut off, the strong staff broken. Two framework weaves rise out of
+-- it: (1) ★★ the COMPLACENCY and PRIDE of Moab abased — *Moab hath been at ease from his youth, and he
+-- hath settled on his lees... neither hath he gone into captivity* (48:11); *We have heard the pride of
+-- Moab, (he is exceeding proud)* (48:29); *And Moab shall be destroyed from being a people, because he
+-- hath magnified himself against Yahuah (LORD)* (48:42) — the proud and undisturbed brought low; and
+-- (2) ★ the LATTER-DAY MERCY even on judged Moab — *Yet will I bring again the captivity of Moab in the
+-- latter days, saith Yahuah (LORD)* (48:47) — mercy reaching even to Moab, the Moabitess Ruth grafted
+-- into the line of David and the Messiah.
+-- Tag: jer48   Temp view: _s309_jer48_lookup
+-- Sort band: base 35175, step 3 -> threads at 35175, 35178 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',48,v
+--
+-- Jeremiah 48 coverage:
+--   v.1-10 (Against Moab; Nebo spoiled; Chemosh into captivity with his priests and princes; the spoiler
+--          upon every city; trusted in thy works and treasures)
+--        NT:     none warranted (the historical Assyrian/Babylonian judgment-oracle opening; v.7
+--                trusted-in-works/treasures woven into THREAD 1 prose as the root of the complacency)
+--        Extras: none warranted
+--        Tanakh: held in prose — the Moab-judgment scene; the pride that is abased gathers at v.11/29/42
+--   ★★ v.11 (Moab hath been at ease from his youth, and he hath settled on his lees... neither hath he
+--          gone into captivity: therefore his taste remained in him, and his scent is not changed)
+--        NT:     ★★ Luke 12:19-20 (Soul, thou hast much goods laid up... Thou fool, this night thy soul
+--                shall be required of thee — the complacent at ease) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 16:6 (we have heard of the pride of Moab; he is very proud — the parallel
+--                oracle), ★ Zephaniah 2:8-10 (this shall they have for their pride) — THREAD 1
+--   v.12-28 (I will send wanderers that shall empty his vessels; ashamed of Chemosh; the horn of Moab cut
+--          off; make ye him drunken, for he magnified himself against Yahuah)
+--        NT:     none warranted (the emptying/breaking of the settled vessel; v.26 magnified-himself bound
+--                to THREAD 1 with v.42; woven in prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the vessel emptied at last; v.27 Moab's derision of Yashar'el answered
+--   ★★ v.29-30 (We have heard the pride of Moab, (he is exceeding proud) his loftiness, and his arrogancy,
+--          and his pride, and the haughtiness of his heart. I know his wrath, saith Yahuah; but it shall
+--          not be so)
+--        NT:     ★★ James 4:6 (Elohim resisteth the proud, but giveth grace unto the humble) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 16:6 (verbatim parallel — we have heard of the pride of Moab; he is very
+--                proud), ★★ Proverbs 16:18 (pride goeth before destruction, an haughty spirit before a
+--                fall) — THREAD 1
+--   v.31-45 (Therefore will I howl for Moab; the vine of Sibmah; joy and gladness taken from the field;
+--          the year of their visitation; a fire come forth out of Heshbon)
+--        NT:     none warranted (the lament over the desolated land; woven in prose)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 16:9-10 (I will bewail with the weeping of Jazer the vine of Sibmah; gladness is
+--                taken away — the parallel lament; noted in THREAD 1 prose, not threaded separately)
+--   ★★ v.42 (And Moab shall be destroyed from being a people, because he hath magnified himself against
+--          Yahuah (LORD))
+--        NT:     held in THREAD 1 (James 4:6, the proud resisted)
+--        Extras: none warranted
+--        Tanakh: ★★ Zephaniah 2:8-10 (this shall they have for their pride, because they have... magnified
+--                themselves against the people of Yahuah Tseva'ot), ★ Proverbs 16:5 (every one that is
+--                proud in heart is an abomination to Yahuah) — THREAD 1
+--   ★ v.46-47 (Woe be unto thee, O Moab! the people of Chemosh perisheth: for thy sons are taken captives...
+--          Yet will I bring again the captivity of Moab in the latter days, saith Yahuah (LORD). Thus far
+--          is the judgment of Moab)
+--        NT:     ★★ Matthew 1:5 (Booz begat Obed of Ruth — Ruth the Moabitess in the line of David and the
+--                Messiah) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 49:6 (I will bring again the captivity of the children of Ammon — lateral),
+--                ★ Jeremiah 49:39 (the captivity of Elam brought again in the latter days), ★★ Isaiah
+--                19:24-25 (Egypt and Assyria blessed with Yashar'el), ★★ Ruth 1:4 (Ruth the Moabitess) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased — NT (Luke 12, James 4) + Tanakh (Isaiah 16, Zephaniah 2, Proverbs 16) [free]
+--      (★★ the complacency and pride of Moab abased — at ease from his youth, settled on his lees, magnified
+--       himself against Yahuah; the proud and undisturbed brought low)
+--   2. jeremiah-48-yet-will-i-bring-again-the-captivity-of-moab-in-the-latter-days — NT (Matthew 1) + Tanakh (Jeremiah 49, Isaiah 19, Ruth 1) [free]
+--      (★ even on judged Moab, a latter-day mercy — the captivity brought again; Ruth the Moabitess grafted
+--       into the line of David and the Messiah; mercy reaching even to Moab)
+--
+-- Framing notes:
+--   ★★ THE COMPLACENCY AND PRIDE OF MOAB ABASED (THREAD 1): Moab's sin is named as settled, undisturbed
+--      self-trust — *Moab hath been at ease from his youth, and he hath settled on his lees, and hath not
+--      been emptied from vessel to vessel, neither hath he gone into captivity: therefore his taste
+--      remained in him, and his scent is not changed* (48:11). The wine left on its dregs, never decanted;
+--      the nation never shaken, *because thou hast trusted in thy works and in thy treasures* (48:7). Out of
+--      that ease grows the pride: *We have heard the pride of Moab, (he is exceeding proud) his loftiness,
+--      and his arrogancy, and his pride, and the haughtiness of his heart* (48:29), and the verdict: *Moab
+--      shall be destroyed from being a people, because he hath magnified himself against Yahuah (LORD)*
+--      (48:42). Isaiah's parallel oracle says it almost word for word — *We have heard of the pride of
+--      Moab; he is very proud* (Isaiah 16:6). Zephaniah pronounces the same on Moab's haughty reproach —
+--      *This shall they have for their pride, because they have reproached and magnified themselves against
+--      the people of Yahuah Tseva'ot (LORD of hosts)* (Zephaniah 2:10). The proverb is the law of it —
+--      *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18); *Every one
+--      that is proud in heart is an abomination to Yahuah (LORD)* (Proverbs 16:5). The Messiah draws the
+--      complacent-at-ease as a fool: *Soul, thou hast much goods laid up for many years; take thine ease,
+--      eat, drink, and be merry. But Elohim (God) said unto him, Thou fool, this night thy soul shall be
+--      required of thee* (Luke 12:19-20). And the apostolic word names the principle: *Elohim (God)
+--      resisteth the proud, but giveth grace unto the humble* (James 4:6). Moab settled on his lees is the
+--      soul at ease, the proud heart magnified against Yahuah — and brought low.
+--   ★ THE LATTER-DAY MERCY EVEN ON MOAB (THREAD 2): the long judgment ends not in annihilation but in a
+--      startling word of return — *Woe be unto thee, O Moab! the people of Chemosh perisheth: for thy sons
+--      are taken captives, and thy daughters captives. Yet will I bring again the captivity of Moab in the
+--      latter days, saith Yahuah (LORD). Thus far is the judgment of Moab* (48:46-47). Even on judged Moab,
+--      a latter-day mercy. The same *bring again the captivity* is spoken laterally over Ammon — *afterward
+--      I will bring again the captivity of the children of Ammon* (Jeremiah 49:6) — and over Elam in the
+--      same latter-day frame — *it shall come to pass in the latter days, that I will bring again the
+--      captivity of Elam* (Jeremiah 49:39). Isaiah reaches the same astonishing breadth: *Blessed be Egypt
+--      my people, and Assyria the work of my hands, and Yashar'el (Israel) mine inheritance* (Isaiah
+--      19:25) — the nations once judged drawn into blessing. And the mercy to Moab is not abstract: Ruth
+--      the Moabitess — *they took them wives of the women of Moab... the name of the other Ruth* (Ruth 1:4)
+--      — is grafted into the very line of David and the Messiah: *Booz begat Obed of Ruth; and Obed begat
+--      Jesse* (Matthew 1:5). Mercy reaching even to Moab, the latter-day captivity brought again.
+--   VERSES WITH NO SEPARATE ADD: v.1-10 (the opening judgment-oracle; v.7 trusted-in-works/treasures woven
+--      into THREAD 1), v.12-28 (the vessel emptied, the horn cut off, Moab's derision of Yashar'el — woven
+--      in prose; v.26 magnified-himself held with v.42 in THREAD 1), v.31-45 (the lament over the desolated
+--      vine and land — Isaiah 16:9-10 parallel noted in THREAD 1 prose, not threaded separately). All
+--      meaningful blocks recorded; every section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer48_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Moab at ease, settled on his lees — the pride abased
+    ('canon','jeremiah',48,11,'canon','isaiah',16,6,'free',
+      E'*We have heard of the pride of Moab; he is very proud: even of his haughtiness, and his pride, and his wrath: but his lies shall not be so* (Isaiah 16:6). Isaiah''s oracle against Moab runs alongside Jeremiah''s almost word for word: where Jeremiah says *Moab hath been at ease from his youth, and he hath settled on his lees... neither hath he gone into captivity* (Jeremiah 48:11), Isaiah names the fruit of that ease — pride, haughtiness, and arrogancy. The undisturbed nation grew proud on its dregs, and the proud lies *shall not be so*.'),
+    ('canon','jeremiah',48,29,'canon','isaiah',16,6,'free',
+      E'*We have heard of the pride of Moab; he is very proud: even of his haughtiness, and his pride, and his wrath: but his lies shall not be so* (Isaiah 16:6). Jeremiah''s indictment — *We have heard the pride of Moab, (he is exceeding proud) his loftiness, and his arrogancy, and his pride, and the haughtiness of his heart* (Jeremiah 48:29) — echoes Isaiah''s earlier word almost verbatim: the two prophets stand as twin witnesses to the same haughty heart. The loftiness Moab boasted is the very thing that brings him down.'),
+    ('canon','jeremiah',48,29,'canon','proverbs',16,18,'free',
+      E'*Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). The proverb names the law at work in Moab: *We have heard the pride of Moab, (he is exceeding proud)... and the haughtiness of his heart* (Jeremiah 48:29) — and the haughty spirit goes before the fall. Moab''s loftiness is not merely his sin but the very engine of his destruction; the proud heart marches ahead of the ruin.'),
+    ('canon','jeremiah',48,42,'canon','proverbs',16,5,'free',
+      E'*Every one that is proud in heart is an abomination to Yahuah (LORD): though hand join in hand, he shall not be unpunished* (Proverbs 16:5). Jeremiah''s verdict — *Moab shall be destroyed from being a people, because he hath magnified himself against Yahuah (LORD)* (Jeremiah 48:42) — is the proverb made history: the heart proud against Yahuah is an abomination, and *he shall not be unpunished*. Moab magnified himself against Yahuah, and so is destroyed from being a people.'),
+    ('canon','jeremiah',48,42,'canon','zephaniah',2,10,'free',
+      E'*This shall they have for their pride, because they have reproached and magnified themselves against the people of Yahuah Tseva''ot (LORD of hosts)* (Zephaniah 2:10). Zephaniah pronounces over Moab and Ammon the very charge Jeremiah names — *because he hath magnified himself against Yahuah (LORD)* (Jeremiah 48:42): the desolation is *for their pride*, for magnifying themselves against Yahuah and his people. *Surely Moab shall be as Sodom* (Zephaniah 2:9) — the proud reproach answered with overthrow.'),
+    ('canon','jeremiah',48,11,'canon','luke',12,19,'free',
+      E'*And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry* (Luke 12:19). The rich fool is Moab in a single soul: *at ease from his youth... settled on his lees... neither hath he gone into captivity* (Jeremiah 48:11). The man who trusts his stored treasure and tells his soul to take its ease is the nation undisturbed on its dregs — secure, complacent, and unshaken, right up to the reckoning.'),
+    ('canon','jeremiah',48,11,'canon','luke',12,20,'free',
+      E'*But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). The word that breaks in upon the man at ease is the word that breaks upon Moab settled on his lees (Jeremiah 48:11): *the days come, saith Yahuah (LORD), that I will send unto him wanderers... and shall empty his vessels* (48:12). The complacent are emptied at last; the goods laid up for many years are required in a night.'),
+    ('canon','jeremiah',48,29,'canon','james',4,6,'free',
+      E'*But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). The principle behind Moab''s fall is named plainly: Yahuah *resisteth the proud*. *We have heard the pride of Moab, (he is exceeding proud)... and the haughtiness of his heart* (Jeremiah 48:29) — and the proud find Yahuah set against them. The same heart that magnifies itself against Yahuah (48:42) is the heart he resists; grace is for the humble, not the lofty.'),
+
+    -- THREAD 2 (★): Yet will I bring again the captivity of Moab in the latter days
+    ('canon','jeremiah',48,47,'canon','jeremiah',49,6,'free',
+      E'*And afterward I will bring again the captivity of the children of Ammon, saith Yahuah (LORD)* (Jeremiah 49:6). The same startling mercy spoken over Moab — *Yet will I bring again the captivity of Moab in the latter days* (Jeremiah 48:47) — is spoken over Moab''s brother-nation Ammon in the very next oracle. The judgments against the nations do not end in annihilation: after the wrath, *afterward I will bring again the captivity*.'),
+    ('canon','jeremiah',48,47,'canon','jeremiah',49,39,'free',
+      E'*But it shall come to pass in the latter days, that I will bring again the captivity of Elam, saith Yahuah (LORD)* (Jeremiah 49:39). Elam too is gathered into the latter-day mercy in the same words as Moab — *Yet will I bring again the captivity of Moab in the latter days* (Jeremiah 48:47). The phrase *in the latter days... bring again the captivity* binds Moab, Ammon, and Elam into one pattern: judgment now, restoration in the latter days.'),
+    ('canon','jeremiah',48,47,'canon','isaiah',19,25,'free',
+      E'*Whom Yahuah Tseva''ot (LORD of hosts) shall bless, saying, Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25). Isaiah reaches the same astonishing breadth as the mercy on Moab — *Yet will I bring again the captivity of Moab in the latter days* (Jeremiah 48:47): the nations once judged are drawn into blessing, Egypt called *my people* and Assyria *the work of my hands* alongside Yashar''el (Israel). The latter-day mercy is wider than Yashar''el alone; it reaches the judged nations.'),
+    ('canon','jeremiah',48,46,'canon','ruth',1,4,'free',
+      E'*And they took them wives of the women of Moab; the name of the one was Orpah, and the name of the other Ruth: and they dwelled there about ten years* (Ruth 1:4). The mercy promised to judged Moab — *for thy sons are taken captives, and thy daughters captives. Yet will I bring again the captivity of Moab* (Jeremiah 48:46-47) — has a face: Ruth the Moabitess, a daughter of the very people under this oracle, brought into the household of Yashar''el (Israel) and into the covenant. Out of doomed Moab Yahuah draws a daughter for himself.'),
+    ('canon','jeremiah',48,47,'canon','matthew',1,5,'free',
+      E'*And Salmon begat Booz of Rachab; and Booz begat Obed of Ruth; and Obed begat Jesse* (Matthew 1:5). The latter-day mercy on Moab — *Yet will I bring again the captivity of Moab in the latter days* (Jeremiah 48:47) — is sealed in the genealogy of the Messiah: Ruth the Moabitess is the great-grandmother of David and stands in the line of Yahusha (Jesus). Even Moab, judged and destroyed from being a people, is grafted into the seed of promise; mercy reaches the daughter of Moab and through her the King.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased',
+       E'Moab at ease, settled on his lees — the pride of the undisturbed abased',
+       E'The charge against Moab is not first cruelty but complacency: an ease so long unbroken that it curdled into pride. *Moab hath been at ease from his youth, and he hath settled on his lees, and hath not been emptied from vessel to vessel, neither hath he gone into captivity: therefore his taste remained in him, and his scent is not changed* (48:11) — the picture is wine left to stand on its own dregs, never decanted, never shaken; a nation never carried into exile, and so grown thick and self-assured. The root of it is named: *because thou hast trusted in thy works and in thy treasures, thou shalt also be taken* (48:7). And out of the untroubled ease grows the swelling of the heart: *We have heard the pride of Moab, (he is exceeding proud) his loftiness, and his arrogancy, and his pride, and the haughtiness of his heart* (48:29). The verdict follows the pride exactly: *Moab shall be destroyed from being a people, because he hath magnified himself against Yahuah (LORD)* (48:42). Isaiah''s parallel oracle bears the same witness almost word for word — *We have heard of the pride of Moab; he is very proud: even of his haughtiness, and his pride, and his wrath: but his lies shall not be so* (Isaiah 16:6). Zephaniah pronounces the same sentence on Moab''s haughty reproach: *This shall they have for their pride, because they have reproached and magnified themselves against the people of Yahuah Tseva''ot (LORD of hosts)* (Zephaniah 2:10). The proverb is the law of it: *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18), and *Every one that is proud in heart is an abomination to Yahuah (LORD): though hand join in hand, he shall not be unpunished* (Proverbs 16:5). The Messiah paints the complacent-at-ease as a single fool: *Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry. But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee* (Luke 12:19-20) — the rich man secure on his stored treasure is Moab settled on his lees. And the apostolic word names the principle that runs through the whole oracle: *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). Moab at ease, magnified against Yahuah, is the proud heart he resists — emptied at last from vessel to vessel, and brought low.',
+       sv.verse_id, ev.verse_id, 'free', 35175
+  FROM _s309_jer48_lookup sv, _s309_jer48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=48 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-48-yet-will-i-bring-again-the-captivity-of-moab-in-the-latter-days',
+       E'Yet will I bring again the captivity of Moab in the latter days — mercy even to Moab',
+       E'After all the woe, the oracle ends with a turn no one expects. The last cry of doom — *Woe be unto thee, O Moab! the people of Chemosh perisheth: for thy sons are taken captives, and thy daughters captives* (48:46) — is followed not by silence but by mercy: *Yet will I bring again the captivity of Moab in the latter days, saith Yahuah (LORD). Thus far is the judgment of Moab* (48:47). Even on Moab — judged, destroyed from being a people for his pride — Yahuah holds out a latter-day restoration. And it is not Moab alone: the same word is spoken over his brother-nation in the next oracle — *afterward I will bring again the captivity of the children of Ammon, saith Yahuah (LORD)* (Jeremiah 49:6) — and over Elam in the same latter-day frame — *it shall come to pass in the latter days, that I will bring again the captivity of Elam, saith Yahuah (LORD)* (Jeremiah 49:39). Isaiah reaches the same astonishing breadth: *Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25) — the nations once judged drawn into blessing beside Yashar''el. And the mercy to Moab is not abstract; it has a face and a name. Ruth the Moabitess — *they took them wives of the women of Moab... the name of the other Ruth* (Ruth 1:4) — a daughter of this very people under judgment, is brought into the household of Yashar''el and into the covenant, and grafted into the very line of David and the Messiah: *Booz begat Obed of Ruth; and Obed begat Jesse* (Matthew 1:5). Out of doomed Moab Yahuah draws a daughter, and through her the King. The judgment of Moab is real and *thus far* it runs — but it is not the last word; mercy reaches even to Moab in the latter days.',
+       sv.verse_id, ev.verse_id, 'free', 35178
+  FROM _s309_jer48_lookup sv, _s309_jer48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=46
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=48 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *We have heard of the pride of Moab; he is very proud* (Isaiah 16:6) — Isaiah''s parallel oracle, almost word for word; the ease of 48:11 curdled into pride.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=11
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=16 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry* (Luke 12:19) — the rich fool is Moab in a single soul: secure, complacent, at ease.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=11
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Thou fool, this night thy soul shall be required of thee* (Luke 12:20) — the word that breaks in upon the man at ease is the word that empties Moab''s vessels (48:12).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=11
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *We have heard of the pride of Moab; he is very proud* (Isaiah 16:6) — the twin witness to 48:29''s loftiness, arrogancy, and haughtiness of heart.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=29
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=16 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18) — the law at work in 48:29: the haughty heart goes before the ruin.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=29
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6) — the principle behind the fall: Yahuah set against Moab''s magnified heart (48:42).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=29
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *This shall they have for their pride, because they have... magnified themselves against the people of Yahuah Tseva''ot (LORD of hosts)* (Zephaniah 2:10) — the same charge as 48:42: magnified against Yahuah, brought to desolation.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=42
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *Every one that is proud in heart is an abomination to Yahuah (LORD)... he shall not be unpunished* (Proverbs 16:5) — the proverb fulfilled in 48:42: Moab magnified himself against Yahuah and is destroyed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=42
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-moab-at-ease-settled-on-his-lees-the-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *afterward I will bring again the captivity of the children of Ammon* (Jeremiah 49:6) — the same latter-day mercy of 48:47 spoken over Moab''s brother-nation in the next oracle.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=47
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=49 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-yet-will-i-bring-again-the-captivity-of-moab-in-the-latter-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *in the latter days, that I will bring again the captivity of Elam* (Jeremiah 49:39) — Elam gathered into the same latter-day mercy in the same words as Moab.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=47
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=49 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-yet-will-i-bring-again-the-captivity-of-moab-in-the-latter-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25) — the nations once judged drawn into blessing, the breadth of the mercy that reaches Moab.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=47
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=19 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-yet-will-i-bring-again-the-captivity-of-moab-in-the-latter-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *they took them wives of the women of Moab... the name of the other Ruth* (Ruth 1:4) — a daughter of judged Moab brought into the household of Yashar''el (Israel) and the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=46
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-yet-will-i-bring-again-the-captivity-of-moab-in-the-latter-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Booz begat Obed of Ruth; and Obed begat Jesse* (Matthew 1:5) — Ruth the Moabitess grafted into the line of David and the Messiah; mercy reaching even to Moab through the seed of promise.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=48 AND sv.verse_number=47
+  JOIN _s309_jer48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-48-yet-will-i-bring-again-the-captivity-of-moab-in-the-latter-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_49.sql (Jeremiah 49) -----
+-- Chapter: Jeremiah 49 — the oracles against the nations: Ammon, Edom, Damascus, Kedar/Hazor, and
+-- Elam. The heart of the chapter is the pride of EDOM (Esau) — *O thou that dwellest in the clefts
+-- of the rock, that holdest the height of the hill: though thou shouldest make thy nest as high as
+-- the eagle, I will bring thee down from thence* (49:16) — the seed-war brother (Esau against Jacob)
+-- perched in his fastness, brought down. Around it: the latter-day MERCY that reaches even the judged
+-- nations — *I will bring again the captivity of the children of Ammon* (49:6), *Leave thy fatherless
+-- children, I will preserve them alive; and let thy widows trust in me* (49:11), *in the latter days...
+-- I will bring again the captivity of Elam* (49:39). Judgment is not the last word for the nations.
+-- Tag: jer49   Temp view: _s309_jer49_lookup
+-- Sort band: base 35200, step 3 -> threads at 35200, 35203 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',49,v
+--
+-- Jeremiah 49 coverage:
+--   v.1-2 (Concerning the Ammonites... Hath Yashar'el (Israel) no sons?... Yashar'el shall be heir)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — Ammon's encroachment on Gad; the inheritance restored to Yashar'el
+--   v.3-5 (Howl, O Heshbon... O backsliding daughter, that trusted in her treasures)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the false trust in treasures; preface to the latter-day mercy of v.6)
+--   ★ v.6 (And afterward I will bring again the captivity of the children of Ammon)
+--        NT:     ★ Romans 11:32 (concluded them all in unbelief, that he might have mercy upon all) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 48:47 (I will bring again the captivity of Moab in the latter days — lateral),
+--                ★ Isaiah 19:24-25 (Egypt my people, Assyria the work of my hands) — THREAD 2
+--   v.7-10 (Concerning Edom... I will bring the calamity of Esau upon him... I have made Esau bare)
+--        NT:     none warranted (the seed-war brother judged; woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: Esau/Edom = the seed-war brother (Genesis 27/Malachi 1) — held in THREAD 1 prose
+--   ★ v.11 (Leave thy fatherless children, I will preserve them alive; and let thy widows trust in me)
+--        NT:     none warranted distinct (the Father-of-the-fatherless held in THREAD 2)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 68:5 (A father of the fatherless, and a judge of the widows, is Elohim (God)) — THREAD 2
+--   v.12-15 (the cup they must drink; Bozrah a desolation; I will make thee small among the heathen)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose — the cup of wrath; *small among the heathen* prefaces the pride of v.16
+--   ★★ v.16 (Thy terribleness hath deceived thee, and the pride of thine heart, O thou that dwellest in
+--          the clefts of the rock... though thou shouldest make thy nest as high as the eagle, I will
+--          bring thee down from thence)
+--        NT:     ★ Luke 14:11 (whosoever exalteth himself shall be abased) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Obadiah 1:3-4 (the pride of thine heart hath deceived thee, thou that dwellest in
+--                the clefts of the rock... though thou exalt thyself as the eagle... thence will I bring
+--                thee down — the near-identical Edom oracle), ★★ Isaiah 14:13-15 (I will exalt my
+--                throne... yet thou shalt be brought down to hell), ★ Proverbs 16:18 (pride goeth before
+--                destruction) — THREAD 1
+--   v.17-22 (Edom a desolation, as the overthrow of Sodom; he shall fly as the eagle over Bozrah)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — the desolation of Edom; the eagle-image bound to THREAD 1
+--   v.23-27 (Concerning Damascus... I will kindle a fire in the wall of Damascus)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the fall of Damascus; woven in prose, no thread forced)
+--   v.28-33 (Concerning Kedar and Hazor... Hazor shall be a dwelling for dragons, a desolation for ever)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the desert nomad-nations scattered to all winds; no thread forced)
+--   v.34-38 (Concerning Elam... I will break the bow of Elam... I will set my throne in Elam)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — the scattering of Elam to the four winds; preface to the mercy of v.39
+--   ★ v.39 (But it shall come to pass in the latter days, that I will bring again the captivity of Elam)
+--        NT:     held in THREAD 2 (the latter-day mercy reaching the nations)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 48:47 (the same latter-day formula over Moab — lateral) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-49-the-pride-of-edom-in-the-clefts-of-the-rock-brought-down — NT (Luke 14) + Tanakh (Obadiah 1, Isaiah 14, Proverbs 16) [free]
+--      (★★ the pride of Esau/Edom perched in the rock, the high nest of the eagle, brought down — the
+--       seed-war brother humbled; near-identical to Obadiah, joined to Lucifer's fall and the pride-before-destruction proverb)
+--   2. jeremiah-49-the-latter-day-mercy-reaching-the-nations — NT (Romans 11) + Tanakh (Jeremiah 48, Psalm 68, Isaiah 19) [free]
+--      (★ the captivity brought again even for Ammon and Elam; the fatherless preserved and the widow's trust —
+--       mercy reaching the judged nations in the latter days)
+--
+-- Framing notes:
+--   ★★ THE PRIDE OF EDOM BROUGHT DOWN (THREAD 1): *Thy terribleness hath deceived thee, and the pride
+--      of thine heart, O thou that dwellest in the clefts of the rock, that holdest the height of the
+--      hill: though thou shouldest make thy nest as high as the eagle, I will bring thee down from
+--      thence, saith Yahuah (LORD)* (49:16). Edom is Esau — the seed-war brother, the twin who sold the
+--      birthright and hated Jacob; perched impregnable in the red-rock fastness, he trusts his height.
+--      Obadiah speaks almost the same words: *The pride of thine heart hath deceived thee, thou that
+--      dwellest in the clefts of the rock... Though thou exalt thyself as the eagle, and though thou set
+--      thy nest among the stars, thence will I bring thee down, saith Yahuah (LORD)* (Obadiah 1:3-4).
+--      The same self-exalting pride is Lucifer's: *I will exalt my throne above the stars of Elohim
+--      (God)... Yet thou shalt be brought down to hell* (Isaiah 14:13-15); and the proverb names the
+--      law of it: *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs
+--      16:18). The Messiah seals it: *whosoever exalteth himself shall be abased* (Luke 14:11). The high
+--      nest is brought down from thence.
+--   ★ THE LATTER-DAY MERCY REACHING THE NATIONS (THREAD 2): even in these oracles of doom, mercy reaches
+--      forward. *And afterward I will bring again the captivity of the children of Ammon, saith Yahuah
+--      (LORD)* (49:6); *Leave thy fatherless children, I will preserve them alive; and let thy widows
+--      trust in me* (49:11); *But it shall come to pass in the latter days, that I will bring again the
+--      captivity of Elam, saith Yahuah (LORD)* (49:39). The same latter-day formula stands over Moab —
+--      *Yet will I bring again the captivity of Moab in the latter days* (Jeremiah 48:47). The God who
+--      preserves the fatherless of the judged nation is the *father of the fatherless, and a judge of
+--      the widows... in his holy habitation* (Psalm 68:5). And the reach of mercy ends with the once-
+--      enemy nations named the people of Yahuah: *Blessed be Egypt my people, and Assyria the work of my
+--      hands, and Yashar'el (Israel) mine inheritance* (Isaiah 19:25) — for *Elohim (God) hath concluded
+--      them all in unbelief, that he might have mercy upon all* (Romans 11:32).
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (Ammon's encroachment on Gad; the inheritance restored — woven in
+--      prose), v.3-5 (Heshbon's howl, the false trust in treasures — preface to v.6), v.7-10 (Esau made
+--      bare — the seed-war brother, held in THREAD 1 prose), v.12-15 (the cup of wrath, Bozrah desolate
+--      — prefaces the pride of v.16), v.17-22 (Edom's desolation, the eagle over Bozrah — bound to THREAD
+--      1), v.23-27 (the fall of Damascus — no thread forced), v.28-33 (Kedar and Hazor scattered — no
+--      thread forced), v.34-38 (Elam's bow broken, scattered to the four winds — prefaces the mercy of
+--      v.39). All blocks recorded above; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer49_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the pride of Edom in the clefts of the rock, the high nest brought down
+    ('canon','jeremiah',49,16,'canon','obadiah',1,3,'free',
+      E'*The pride of thine heart hath deceived thee, thou that dwellest in the clefts of the rock, whose habitation is high; that saith in his heart, Who shall bring me down to the ground?* (Obadiah 1:3). Obadiah speaks the near-identical oracle against Edom that Jeremiah does — *the pride of thine heart, O thou that dwellest in the clefts of the rock, that holdest the height of the hill* (Jeremiah 49:16). The same proud Esau, perched in the red-rock fastness, says in his heart that none can bring him down — the very pride that has deceived him.'),
+    ('canon','jeremiah',49,16,'canon','obadiah',1,4,'free',
+      E'*Though thou exalt thyself as the eagle, and though thou set thy nest among the stars, thence will I bring thee down, saith Yahuah (LORD)* (Obadiah 1:4). Obadiah''s words are Jeremiah''s almost letter for letter — *though thou shouldest make thy nest as high as the eagle, I will bring thee down from thence, saith Yahuah (LORD)* (Jeremiah 49:16). However high Edom builds his nest, even among the stars, Yahuah brings him down from thence: the seed-war brother''s height is no refuge.'),
+    ('canon','jeremiah',49,16,'canon','isaiah',14,13,'free',
+      E'*For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation, in the sides of the north* (Isaiah 14:13). The self-exalting heart Jeremiah names in Edom — *the pride of thine heart... though thou shouldest make thy nest as high as the eagle* (Jeremiah 49:16) — is the heart of the fallen one of Isaiah 14, who would climb above the stars to set his throne. The same ascending pride; the same coming fall.'),
+    ('canon','jeremiah',49,16,'canon','isaiah',14,15,'free',
+      E'*Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The proud climber who would exalt his throne above the stars meets the same end Yahuah decrees for Edom — *I will bring thee down from thence* (Jeremiah 49:16). The higher the nest, the deeper the fall: *brought down to hell, to the sides of the pit*. Pride lifts itself only to be cast down.'),
+    ('canon','jeremiah',49,16,'canon','proverbs',16,18,'free',
+      E'*Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). The proverb names the law that Edom''s oracle enacts — *Thy terribleness hath deceived thee, and the pride of thine heart... I will bring thee down from thence* (Jeremiah 49:16). The haughty spirit that holds the height of the hill goes before the fall; the pride that deceived Edom is the herald of his destruction.'),
+    ('canon','jeremiah',49,16,'canon','luke',14,11,'free',
+      E'*For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11). The Messiah names the same rule that brings Edom down — *the pride of thine heart, O thou that dwellest in the clefts of the rock... I will bring thee down from thence* (Jeremiah 49:16). Edom exalted himself as the eagle and is abased; the one who exalts himself shall be brought down, and only the humble are lifted up.'),
+
+    -- THREAD 2 (★): the latter-day mercy reaching even the judged nations
+    ('canon','jeremiah',49,6,'canon','jeremiah',48,47,'free',
+      E'*Yet will I bring again the captivity of Moab in the latter days, saith Yahuah (LORD). Thus far is the judgment of Moab* (Jeremiah 48:47). The very promise spoken over Ammon — *And afterward I will bring again the captivity of the children of Ammon, saith Yahuah (LORD)* (Jeremiah 49:6) — is spoken word for word over Moab in the verse just before. The same latter-day mercy reaches the judged neighbour-nations: the captivity brought again, even after the oracle of doom.'),
+    ('canon','jeremiah',49,39,'canon','jeremiah',48,47,'free',
+      E'*Yet will I bring again the captivity of Moab in the latter days, saith Yahuah (LORD). Thus far is the judgment of Moab* (Jeremiah 48:47). Jeremiah closes the oracle against Elam with the same latter-day formula — *But it shall come to pass in the latter days, that I will bring again the captivity of Elam, saith Yahuah (LORD)* (Jeremiah 49:39). Moab, Ammon, Elam: over each judged nation Yahuah sets the same hope of a restored captivity in the latter days.'),
+    ('canon','jeremiah',49,11,'canon','psalms',68,5,'free',
+      E'*A father of the fatherless, and a judge of the widows, is Elohim (God) in his holy habitation* (Psalm 68:5). Even over judged Edom, Yahuah''s word turns to mercy on the helpless — *Leave thy fatherless children, I will preserve them alive; and let thy widows trust in me* (Jeremiah 49:11). The God who bids the widows of Esau trust in him is the *father of the fatherless, and a judge of the widows*: his care for the weak reaches across the judgment.'),
+    ('canon','jeremiah',49,6,'canon','isaiah',19,25,'free',
+      E'*Whom Yahuah Tseva''ot (LORD of hosts) shall bless, saying, Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25). The latter-day mercy that brings again the captivity of Ammon (Jeremiah 49:6) reaches its full horizon in Isaiah: the once-enemy nations — Egypt, Assyria — named *my people* and *the work of my hands* alongside *Yashar''el (Israel) mine inheritance*. Judgment on the nations is not the last word; mercy is.'),
+    ('canon','jeremiah',49,6,'canon','romans',11,32,'free',
+      E'*For Elohim (God) hath concluded them all in unbelief, that he might have mercy upon all* (Romans 11:32). The afterward-mercy on Ammon — *And afterward I will bring again the captivity of the children of Ammon* (Jeremiah 49:6) — is the pattern Paul names: judgment shutting all up, that mercy might reach all. Yahuah brings down to bring again; the captivity of the nations is restored in the latter days.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-49-the-pride-of-edom-in-the-clefts-of-the-rock-brought-down',
+       E'The pride of Edom in the clefts of the rock — though thou make thy nest as the eagle, I will bring thee down',
+       E'The longest oracle of the chapter is against EDOM — that is Esau, the seed-war brother, the twin who despised the birthright and hated Jacob, whose mountain-fortress of red rock seemed beyond reach. Yahuah names the sin and the sentence in one breath: *Thy terribleness hath deceived thee, and the pride of thine heart, O thou that dwellest in the clefts of the rock, that holdest the height of the hill: though thou shouldest make thy nest as high as the eagle, I will bring thee down from thence, saith Yahuah (LORD)* (49:16). It is PRIDE — the heart that trusts its own height — that has deceived Edom. Obadiah, prophesying against the same Esau, speaks almost the identical words: *The pride of thine heart hath deceived thee, thou that dwellest in the clefts of the rock, whose habitation is high; that saith in his heart, Who shall bring me down to the ground?* (Obadiah 1:3), *Though thou exalt thyself as the eagle, and though thou set thy nest among the stars, thence will I bring thee down, saith Yahuah (LORD)* (Obadiah 1:4). The two prophets sing one judgment over the proud brother: however high the nest, Yahuah brings it down from thence. And this is the same self-exalting heart Isaiah heard in the fallen one: *I will exalt my throne above the stars of Elohim (God)... I will be like the El Elyon (most High)* (Isaiah 14:13-14) — answered, *Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The proverb states the law of it plainly: *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). And the Messiah seals it for every age: *whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11). The eagle that built his nest among the stars is brought down from thence — pride lifts itself only to be cast down.',
+       sv.verse_id, ev.verse_id, 'free', 35200
+  FROM _s309_jer49_lookup sv, _s309_jer49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=49 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-49-the-latter-day-mercy-reaching-the-nations',
+       E'I will bring again the captivity — the latter-day mercy reaching even the judged nations',
+       E'Even in these oracles of doom against the nations, mercy reaches forward. Over Ammon: *And afterward I will bring again the captivity of the children of Ammon, saith Yahuah (LORD)* (49:6). Over judged Edom, a word for the helpless left behind: *Leave thy fatherless children, I will preserve them alive; and let thy widows trust in me* (49:11). And over Elam, the chapter''s last word: *But it shall come to pass in the latter days, that I will bring again the captivity of Elam, saith Yahuah (LORD)* (49:39). This is not an isolated kindness — the very same latter-day formula stands over Moab in the verse just before this chapter: *Yet will I bring again the captivity of Moab in the latter days, saith Yahuah (LORD)* (Jeremiah 48:47). The God who bids the orphaned children and widows of a judged nation trust in him is by his very nature *a father of the fatherless, and a judge of the widows... in his holy habitation* (Psalm 68:5). And the reach of this mercy ends at a horizon where the once-enemy nations are named the people of Yahuah: *Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25). Paul gathers the whole pattern into one sentence: *For Elohim (God) hath concluded them all in unbelief, that he might have mercy upon all* (Romans 11:32). Yahuah brings down to bring again; the captivity of the nations is restored in the latter days.',
+       sv.verse_id, ev.verse_id, 'free', 35203
+  FROM _s309_jer49_lookup sv, _s309_jer49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=49 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *The pride of thine heart hath deceived thee, thou that dwellest in the clefts of the rock* (Obadiah 1:3) — Obadiah''s near-identical Edom oracle; the same proud Esau in the red-rock fastness.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=16
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-pride-of-edom-in-the-clefts-of-the-rock-brought-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Though thou exalt thyself as the eagle... thence will I bring thee down* (Obadiah 1:4) — Obadiah''s words are Jeremiah 49:16 almost letter for letter; the high nest is no refuge.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=16
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-pride-of-edom-in-the-clefts-of-the-rock-brought-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will exalt my throne above the stars of Elohim (God)* (Isaiah 14:13) — the same ascending pride as Edom''s eagle-nest; the heart that would climb above the stars.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=16
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-pride-of-edom-in-the-clefts-of-the-rock-brought-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15) — the higher the nest, the deeper the fall; the same end Yahuah decrees for Edom.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=16
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-pride-of-edom-in-the-clefts-of-the-rock-brought-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18) — the proverb names the law Edom''s oracle enacts; the pride that deceived him heralds his fall.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=16
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-pride-of-edom-in-the-clefts-of-the-rock-brought-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *whosoever exalteth himself shall be abased* (Luke 14:11) — the Messiah seals the rule that brings Edom down; only the humble are lifted up.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=16
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-pride-of-edom-in-the-clefts-of-the-rock-brought-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yet will I bring again the captivity of Moab in the latter days* (Jeremiah 48:47) — the same latter-day formula spoken over Ammon (49:6) stands word for word over Moab.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=6
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-latter-day-mercy-reaching-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yet will I bring again the captivity of Moab in the latter days* (Jeremiah 48:47) — the same formula closing the Elam oracle (49:39); over Moab, Ammon, Elam alike, captivity brought again.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=39
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-latter-day-mercy-reaching-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *A father of the fatherless, and a judge of the widows, is Elohim (God)* (Psalm 68:5) — the God who bids Edom''s widows trust in him (49:11) is by nature the father of the fatherless.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=11
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-latter-day-mercy-reaching-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Blessed be Egypt my people, and Assyria the work of my hands* (Isaiah 19:25) — the mercy that restores Ammon''s captivity (49:6) reaches the horizon where once-enemy nations are named Yahuah''s people.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=6
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=19 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-latter-day-mercy-reaching-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Elohim (God) hath concluded them all in unbelief, that he might have mercy upon all* (Romans 11:32) — Paul names the pattern of the afterward-mercy on Ammon (49:6): judgment shutting all up, that mercy reach all.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=49 AND sv.verse_number=6
+  JOIN _s309_jer49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-49-the-latter-day-mercy-reaching-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session309 — Jeremiah cross-references complete.'
