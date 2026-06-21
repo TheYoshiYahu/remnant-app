@@ -1495,6 +1495,1339 @@ SELECT t.id, cr.id, 3, E'Revelation 19:11 — *a white horse... Faithful and Tru
  WHERE t.slug='joshua-5-he-received-the-worship-a-created-angel-refuses'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_joshua_6.sql (Joshua 6) -----
+--
+-- Chapter: Joshua 6 (JERICHO — the seven priests, seven trumpets, seven days; the wall
+--   falls flat at the shout; Rahab and her house spared; the devoted city and the curse
+--   on rebuilding Jericho).
+-- Tag: jos06   View: _s344_jos06_lookup   Sort band: 35125, +3 (35125,35128,35131)
+-- Session: s344
+--
+-- Joshua 6 coverage:
+--   v.1-5  (the appointed means: 7 priests / 7 trumpets / 7 days / the shout)
+--          NT:     Hebrews 11:30 (by faith the walls fell, compassed seven days);
+--                  2 Corinthians 10:4 (weapons not carnal but mighty through Elohim)
+--          Extras: none warranted (no clean parallel witness in the restored library)
+--          Tanakh: Numbers 10:9 (blow an alarm and be saved from your enemies);
+--                  also Revelation 8:6 the seven-trumpet pattern fulfilled forward
+--   v.16,20 (the great shout; the wall fell down flat; they took the city)
+--          NT:     Hebrews 11:30; 2 Corinthians 10:4; Revelation 8:6 (seven trumpets sound)
+--          Extras: none warranted
+--          Tanakh: Numbers 10:9
+--   v.17,22-25 (Rahab the harlot and all her house spared; she dwelleth in Yashar'el)
+--          NT:     Matthew 1:5 (Salmon begat Booz of Rachab — into the Messianic line);
+--                  Hebrews 11:31 (by faith Rahab perished not); James 2:25 (Rahab justified by works)
+--          Extras: none warranted
+--          Tanakh: Joshua 2:18 (the scarlet line in the window — the household sign)
+--   v.18-19,26 (the accursed/devoted thing; silver and gold into the treasury;
+--          the curse on whoever rebuilds Jericho)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Kings 16:34 (Hiel the Beth-elite — the curse fulfilled in his sons)
+--
+-- Threads (3):
+--   joshua-6-the-walls-fall-by-yahuahs-means-the-trumpets-and-the-shout
+--       [canon Tanakh + NT] — Heb 11:30, 2 Cor 10:4, Num 10:9, Rev 8:6
+--   joshua-6-rahab-and-her-house-spared-and-brought-into-yasharel
+--       [canon Tanakh + NT] — Josh 2:18, Matt 1:5, Heb 11:31, James 2:25
+--   joshua-6-the-devoted-city-and-the-curse-on-rebuilding-jericho
+--       [canon Tanakh] — 1 Kings 16:34
+--
+-- Framework notes: the victory is by Yahuah's appointed means (the Ark, the priests, the
+--   trumpets, the seventh-day completion, the shout) — NOT by siege-engines / carnal weapons;
+--   read forward to faith (Heb 11:30) and to warfare-not-after-the-flesh (2 Cor 10:4) and the
+--   seventh-trumpet ingathering (Rev 8). Rahab = the faith that delivers a HOUSEHOLD by a sign
+--   (the scarlet line), brought INTO Yashar'el (Israel) and into the paternal Messianic line
+--   (Matt 1:5) — inclusion by the covenant sign + the living faith that hides the messengers
+--   (Heb 11:31 / James 2:25, faith perfected by works), not lineage-alone nor confession-alone.
+--   The herem/devoted city and the curse on rebuilding (1 Kings 16:34) — Yahuah's word stands.
+
+CREATE TEMP VIEW _s344_jos06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the walls fall by Yahuah's means — the trumpets and the shout
+    ('canon','joshua',6,4,'canon','hebrews',11,30,'free',
+      E'*By faith the walls of Jericho fell down, after they were compassed about seven days* (Hebrews 11:30). The chapter''s appointed means — *seven priests shall bear before the ark seven trumpets of rams'' horns: and the seventh day ye shall compass the city seven times* (Joshua 6:4) — is read forward as the victory of FAITH: the wall came down not by the engines of war but by the trust that obeyed Yahuah''s (the LORD''s) strange order to the seventh-day completion.'),
+    ('canon','joshua',6,5,'canon','2-corinthians',10,4,'free',
+      E'*(For the weapons of our warfare are not carnal, but mighty through Elohim (God) to the pulling down of strong holds;)* (2 Corinthians 10:4). When *the wall of the city shall fall down flat* (Joshua 6:5) at the long blast and the great shout, the lesson is named: the stronghold falls by Yahuah''s (the LORD''s) means — the Ark, the trumpets, the shout — not by carnal might.'),
+    ('canon','joshua',6,4,'canon','numbers',10,9,'free',
+      E'*And if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before Yahuah Elohaychem (the LORD your God), and ye shall be saved from your enemies* (Numbers 10:9). The trumpet of Jericho — *the priests shall blow with the trumpets* (Joshua 6:4) — is the very alarm Yahuah (the LORD) commanded through Moses: blow, be remembered, and be saved by His hand.'),
+    ('canon','joshua',6,20,'canon','numbers',10,9,'free',
+      E'*And if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets... and ye shall be saved from your enemies* (Numbers 10:9). *So the people shouted when the priests blew with the trumpets... that the wall fell down flat... and they took the city* (Joshua 6:20) — the alarm of Numbers 10 sounded over Jericho, and Yashar''el (Israel) was saved from her enemy by Yahuah''s (the LORD''s) own appointed signal, not by siege.'),
+    ('canon','joshua',6,4,'canon','revelation',8,6,'free',
+      E'*And the seven angels which had the seven trumpets prepared themselves to sound* (Revelation 8:6). The seventh-day, seven-trumpet pattern of Jericho — *seven priests shall bear before the ark seven trumpets... the seventh day ye shall compass the city seven times* (Joshua 6:4) — reaches its consummation in the seven trumpets of the end, when the kingdoms of this world fall as Jericho''s wall fell, by Yahuah''s (the LORD''s) appointed blast.'),
+    -- THREAD 2: Rahab and her house spared, brought into Yashar'el
+    ('canon','joshua',6,17,'canon','joshua',2,18,'free',
+      E'*Behold, when we come into the land, thou shalt bind this line of scarlet thread in the window which thou didst let us down by: and thou shalt bring thy father, and thy mother, and thy brethren, and all thy father''s household, home unto thee* (Joshua 2:18). The deliverance of *only Rahab the harlot shall live, she and all that are with her in the house, because she hid the messengers* (Joshua 6:17) rests on the scarlet-line sign sworn back in chapter two: the household gathered under the sign is spared.'),
+    ('canon','joshua',6,25,'canon','matthew',1,5,'free',
+      E'*And Salmon begat Booz of Rachab; and Booz begat Obed of Ruth; and Obed begat Jesse* (Matthew 1:5). *And Joshua saved Rahab the harlot alive... and she dwelleth in Yashar''el (Israel) even unto this day* (Joshua 6:25) — and more than dwelt: she is brought into the paternal line of the Messiah, Rachab the mother of Booz, grafted by covenant-sign and living faith into the seed of promise.'),
+    ('canon','joshua',6,25,'canon','hebrews',11,31,'free',
+      E'*By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace* (Hebrews 11:31). That *she hid the messengers, which Joshua sent to spy out Jericho* (Joshua 6:25) is read as the faith that distinguishes her from the perishing city — she believed Yahuah (the LORD) had given the land, and so was not destroyed with them that believed not.'),
+    ('canon','joshua',6,17,'canon','james',2,25,'free',
+      E'*Likewise also was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way?* (James 2:25). *Only Rahab the harlot shall live... because she hid the messengers that we sent* (Joshua 6:17) — her faith was not bare assent but a living deed that risked her life for Yashar''el''s (Israel''s) spies; faith perfected by works, the faith that delivers a household.'),
+    -- THREAD 3: the devoted city and the curse on rebuilding Jericho
+    ('canon','joshua',6,26,'canon','1-kings',16,34,'free',
+      E'*In his days did Hiel the Beth-elite build Jericho: he laid the foundation thereof in Abiram his firstborn, and set up the gates thereof in his youngest son Segub, according to the word of Yahuah (LORD), which he spake by Joshua the son of Nun* (1 Kings 16:34). The oath *Cursed be the man before Yahuah (LORD), that riseth up and buildeth this city Jericho: he shall lay the foundation thereof in his firstborn, and in his youngest son shall he set up the gates of it* (Joshua 6:26) is fulfilled centuries later to the letter — Yahuah''s (the LORD''s) word does not fall to the ground.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-6-the-walls-fall-by-yahuahs-means-the-trumpets-and-the-shout',
+       E'Jericho: the walls fall by Yahuah''s appointed means — the trumpets and the shout',
+       E'Jericho is taken by no siege-engine and no carnal weapon. Yahuah (the LORD) gives the city, and the means are His own: *And seven priests shall bear before the ark seven trumpets of rams'' horns: and the seventh day ye shall compass the city seven times, and the priests shall blow with the trumpets* (Joshua 6:4). Six days they march once around in silence; on the seventh day seven times; and *when ye hear the sound of the trumpet, all the people shall shout with a great shout; and the wall of the city shall fall down flat* (Joshua 6:5). So it comes to pass: *the people shouted when the priests blew with the trumpets... that the wall fell down flat, so that the people went up into the city... and they took the city* (Joshua 6:20).\n\nThe trumpet is no improvisation — it is the very alarm Yahuah (the LORD) ordained through Moses: *if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before Yahuah Elohaychem (the LORD your God), and ye shall be saved from your enemies* (Numbers 10:9). The wall came down by faith in that appointed order: *By faith the walls of Jericho fell down, after they were compassed about seven days* (Hebrews 11:30). The apostle names the principle: *the weapons of our warfare are not carnal, but mighty through Elohim (God) to the pulling down of strong holds* (2 Corinthians 10:4). And the sevenfold trumpet of the seventh day reaches forward to the end, when *the seven angels which had the seven trumpets prepared themselves to sound* (Revelation 8:6) and the strongholds of the nations fall as Jericho''s wall fell — at Yahuah''s (the LORD''s) blast, not man''s might.',
+       sv.verse_id, ev.verse_id, 'free', 35125
+  FROM _s344_jos06_lookup sv, _s344_jos06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=6 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-6-rahab-and-her-house-spared-and-brought-into-yasharel',
+       E'Rahab and her household spared, and brought into Yashar''el',
+       E'When the devoted city is given to destruction, one house is held back: *only Rahab the harlot shall live, she and all that are with her in the house, because she hid the messengers that we sent* (Joshua 6:17). The ground of her deliverance was set in chapter two by a sign sworn to the spies: *thou shalt bind this line of scarlet thread in the window which thou didst let us down by: and thou shalt bring thy father, and thy mother, and thy brethren, and all thy father''s household, home unto thee* (Joshua 2:18). The household gathered under the scarlet line is spared; the spies keep their oath: *Joshua saved Rahab the harlot alive, and her father''s household... and she dwelleth in Yashar''el (Israel) even unto this day* (Joshua 6:25).\n\nHers is no bare confession. *By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace* (Hebrews 11:31) — she believed Yahuah (the LORD) had given the land and acted on it at the risk of her life; and that living faith is justified by its deed: *was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way?* (James 2:25). So she is not merely spared but grafted into the seed of promise — *Salmon begat Booz of Rachab; and Booz begat Obed of Ruth; and Obed begat Jesse* (Matthew 1:5), brought by covenant-sign and living faith into the paternal line of the Messiah.',
+       sv.verse_id, ev.verse_id, 'free', 35128
+  FROM _s344_jos06_lookup sv, _s344_jos06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=6 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-6-the-devoted-city-and-the-curse-on-rebuilding-jericho',
+       E'The devoted city and the curse on rebuilding Jericho',
+       E'Jericho is herem — devoted wholly to Yahuah (the LORD): *the city shall be accursed, even it, and all that are therein, to Yahuah (LORD)* (Joshua 6:17), and Yashar''el (Israel) is warned to *keep yourselves from the accursed thing, lest ye make yourselves accursed... and make the camp of Yashar''el (Israel) a curse* (Joshua 6:18). The metal is not plunder but offering: *all the silver, and gold, and vessels of brass and iron, are consecrated unto Yahuah (LORD): they shall come into the treasury of Yahuah (LORD)* (Joshua 6:19).\n\nOver the ruin Joshua lays an oath: *Cursed be the man before Yahuah (LORD), that riseth up and buildeth this city Jericho: he shall lay the foundation thereof in his firstborn, and in his youngest son shall he set up the gates of it* (Joshua 6:26). Centuries pass, and the word stands: *In his days did Hiel the Beth-elite build Jericho: he laid the foundation thereof in Abiram his firstborn, and set up the gates thereof in his youngest son Segub, according to the word of Yahuah (LORD), which he spake by Joshua the son of Nun* (1 Kings 16:34). Yahuah''s (the LORD''s) word spoken through His servant does not fall to the ground — it waits, and it is fulfilled to the letter.',
+       sv.verse_id, ev.verse_id, 'free', 35131
+  FROM _s344_jos06_lookup sv, _s344_jos06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=6 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*By faith the walls of Jericho fell down, after they were compassed about seven days* (Hebrews 11:30) — the seventh-day completion of Joshua 6:4 read as the victory of faith.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-the-walls-fall-by-yahuahs-means-the-trumpets-and-the-shout'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The weapons of our warfare are not carnal, but mighty through Elohim (God) to the pulling down of strong holds* (2 Corinthians 10:4) — the wall of 6:5 falls flat by Yahuah''s (the LORD''s) means, not carnal might.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=5
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-the-walls-fall-by-yahuahs-means-the-trumpets-and-the-shout'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blow an alarm with the trumpets... and ye shall be saved from your enemies* (Numbers 10:9) — the trumpet of 6:4 is the Mosaic alarm: blow, be remembered, be saved.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-the-walls-fall-by-yahuahs-means-the-trumpets-and-the-shout'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Ye shall be saved from your enemies* (Numbers 10:9) — when the shout and trumpet of 6:20 take the city, the Mosaic promise is kept: Yashar''el (Israel) saved by the appointed signal.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-the-walls-fall-by-yahuahs-means-the-trumpets-and-the-shout'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*The seven angels which had the seven trumpets prepared themselves to sound* (Revelation 8:6) — the sevenfold seventh-day trumpet of 6:4 reaches its consummation; the nations'' strongholds fall as Jericho''s wall fell.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=8 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-the-walls-fall-by-yahuahs-means-the-trumpets-and-the-shout'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt bind this line of scarlet thread in the window... and thou shalt bring thy father, and thy mother, and thy brethren, and all thy father''s household, home unto thee* (Joshua 2:18) — the scarlet-line sign sworn in chapter two grounds the sparing of Rahab''s house in 6:17.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=17
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=2 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-rahab-and-her-house-spared-and-brought-into-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace* (Hebrews 11:31) — that she saved Rahab alive in 6:25 is read as the faith that distinguished her from the perishing city.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=25
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-rahab-and-her-house-spared-and-brought-into-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way?* (James 2:25) — her hiding of the messengers in 6:17 is faith perfected by works, the living faith that delivers a household.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=17
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=2 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-rahab-and-her-house-spared-and-brought-into-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Salmon begat Booz of Rachab; and Booz begat Obed of Ruth; and Obed begat Jesse* (Matthew 1:5) — she dwelleth in Yashar''el (Israel) (6:25), and more: grafted into the paternal line of the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=25
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-rahab-and-her-house-spared-and-brought-into-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*In his days did Hiel the Beth-elite build Jericho: he laid the foundation thereof in Abiram his firstborn, and set up the gates thereof in his youngest son Segub, according to the word of Yahuah (LORD), which he spake by Joshua the son of Nun* (1 Kings 16:34) — Joshua''s oath of 6:26 fulfilled to the letter centuries later; Yahuah''s (the LORD''s) word stands.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=6 AND sv.verse_number=26
+  JOIN _s344_jos06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=16 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-6-the-devoted-city-and-the-curse-on-rebuilding-jericho'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_7.sql (Joshua 7) -----
+-- Chapter: Joshua 7 — ACHAN takes of the accursed/devoted thing, hides it, and the
+--          whole camp is defeated at Ai; the lot narrows to Achan, his confession
+--          (I saw, I coveted, I took), and the valley of Achor.
+-- Tag: jos07   View: _s344_jos07_lookup   Sort band: 35150 step 3 (35150,35153,35156)
+--
+-- Joshua 7 coverage:
+--   v.1,11-12  (Yashar'el sinned in the accursed thing / could not stand before enemies)
+--        NT: 1 Cor 5:6-7 a little leaven leaveneth the whole lump / purge out the old leaven;
+--            Acts 5:1-2,5 Ananias kept back part and hid it, fell down dead (the same hidden-sin-in-the-camp pattern)
+--        Tanakh: Joshua 6:18 the standing warning — keep from the accursed thing lest ye make the camp a curse and trouble it
+--        Extras: none warranted
+--   v.21  (I saw the spoils... then I coveted them, and took them)
+--        NT: James 1:14-15 drawn away of his own lust, lust conceives and bringeth forth sin and death
+--        Tanakh: Genesis 3:6 the woman saw... pleasant to the eyes... and she took (the Eve pattern of the same progression)
+--        Extras: none warranted (clean canon witnesses suffice for the eye-covet-take chain)
+--   v.24-26  (the valley of Achor / Why hast thou troubled us? Yahuah shall trouble thee)
+--        Tanakh: Hosea 2:15 the valley of Achor for a DOOR OF HOPE — judgment turned to mercy in the restoration
+--        NT: none warranted separately (the door-of-hope reach is Tanakh-internal restoration)
+--        Extras: none warranted
+--   v.2-9 (the rout at Ai, Joshua's intercession), v.13-20 (sanctify, the lot, confession demanded),
+--        v.22-23 (the spoil recovered): narrative carriers, framed within the threads above; no separate add warranted.
+--
+-- Threads (3):
+--   1 joshua-7-the-accursed-thing-in-the-camp-the-leaven-that-defeats-the-whole-lump  [free] Tanakh(Joshua) + NT(1Cor,Acts)
+--   2 joshua-7-i-saw-i-coveted-i-took-the-eye-that-conceives-sin-and-death            [free] Tanakh(Genesis) + NT(James)
+--   3 joshua-7-the-valley-of-achor-trouble-turned-to-a-door-of-hope                   [free] Tanakh(Hosea)
+--
+-- Framework note: Achan's one hidden sin is covenant-breaking WITHIN the camp (Victims-not-enemies:
+-- the lawsuit is conduct, never ethnic). The leaven (1 Cor 5) and Ananias (Acts 5) are the forward
+-- pattern of hidden sin and judgment; the eye-covet-take chain (Gen 3:6 / Jas 1:14-15) is the
+-- anatomy of sin from Eve forward; and Achor — the valley of TROUBLE — is turned by Hosea 2:15 into
+-- a DOOR OF HOPE, judgment giving way to mercy in the two-house restoration (Hosea 2:23, Lo-Ammi
+-- become Ammi). Torah here is the covenant kept; the curse is the herem-breaking, never the Torah.
+
+CREATE TEMP VIEW _s344_jos07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the accursed thing in the camp — the leaven that defeats the whole lump
+    ('canon','joshua',7,11,'canon','joshua',6,18,'free',
+      E'*And ye, in any wise keep yourselves from the accursed thing, lest ye make yourselves accursed, when ye take of the accursed thing, and make the camp of Yashar''el (Israel) a curse, and trouble it* (Joshua 6:18). The warning was given before Jericho fell; Achan breaks it, so *Yashar''el (Israel) hath sinned, and they have also transgressed my covenant... for they have even taken of the accursed thing, and have also stolen, and dissembled also* (Joshua 7:11). The very thing Yahuah said would make the camp *a curse, and trouble it* has come to pass through one man''s hidden hand.'),
+    ('canon','joshua',7,1,'canon','1-corinthians',5,6,'free',
+      E'*Your glorying is not good. Know ye not that a little leaven leaveneth the whole lump?* (1 Corinthians 5:6). One man, *Achan... took of the accursed thing: and the anger of Yahuah (LORD) was kindled against the children of Yashar''el (Israel)* (Joshua 7:1) — the whole camp answers for the leaven of one. The single hidden sin works through the whole lump exactly as Paul warns, which is why the camp cannot stand until it is purged out.'),
+    ('canon','joshua',7,12,'canon','1-corinthians',5,7,'free',
+      E'*Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened* (1 Corinthians 5:7). Yahuah''s remedy at Ai is the same: *neither will I be with you any more, except ye destroy the accursed from among you* (Joshua 7:12). The accursed thing must be put out of the midst before the people can stand — the leaven purged, the camp made a new lump, the covenant kept not abolished.'),
+    ('canon','joshua',7,1,'canon','acts',5,1,'free',
+      E'*But a certain man named Ananias, with Sapphira his wife, sold a possession, And kept back part of the price... and brought a certain part, and laid it at the apostles'' feet* (Acts 5:1-2). As Achan *took of the accursed thing* and *put it even among their own stuff* (Joshua 7:1,11), so Ananias kept back and hid part of what was devoted — the same pattern of hidden sin against the set-apart thing carried into the assembly.'),
+    ('canon','joshua',7,25,'canon','acts',5,5,'free',
+      E'*And Ananias hearing these words fell down, and gave up the ghost: and great fear came on all them that heard these things* (Acts 5:5). Achan and his are stoned and burned in the valley — *Why hast thou troubled us? Yahuah (LORD) shall trouble thee this day* (Joshua 7:25) — and Ananias falls dead in the assembly; in both the hidden sin against what is devoted to Yahuah brings sudden judgment, and *great fear* upon the people.'),
+
+    -- Thread 2: I saw, I coveted, I took — the eye that conceives sin and death
+    ('canon','joshua',7,21,'canon','genesis',3,6,'free',
+      E'*And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat* (Genesis 3:6). Achan''s confession runs the same chain step for step: *When I saw among the spoils a goodly Babylonish garment... then I coveted them, and took them* (Joshua 7:21). The eye sees, the heart covets, the hand takes — the anatomy of sin from Eden forward, the same progression that troubled the whole camp.'),
+    ('canon','joshua',7,21,'canon','james',1,14,'free',
+      E'*But every man is tempted, when he is drawn away of his own lust, and enticed* (James 1:14). Achan is not seized from without but *drawn away of his own lust*: *I saw... then I coveted them, and took them* (Joshua 7:21). The spoils did not compel him; his own desire, enticed by the eye, drew him to take what Yahuah had devoted.'),
+    ('canon','joshua',7,25,'canon','james',1,15,'free',
+      E'*Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death* (James 1:15). The full arc is written over Achan: lust conceived at the sight of the spoils, brought forth the theft, and *when it is finished* brought forth death in the valley — *and all Yashar''el (Israel) stoned him with stones, and burned them with fire* (Joshua 7:25). The hidden coveting ends in the heap of stones.'),
+
+    -- Thread 3: the valley of Achor — trouble turned to a door of hope
+    ('canon','joshua',7,26,'canon','hosea',2,15,'free',
+      E'*And I will give her her vineyards from thence, and the valley of Achor for a door of hope: and she shall sing there, as in the days of her youth* (Hosea 2:15). The place where Achan was judged — *the name of that place was called, The valley of Achor, unto this day* (Joshua 7:26), Achor meaning trouble — Yahuah turns into a DOOR OF HOPE. The valley of judgment becomes the threshold of restoration; the same Yahuah who *turned from the fierceness of his anger* (Joshua 7:26) makes the place of trouble the place of singing.'),
+    ('canon','joshua',7,25,'canon','hosea',2,23,'free',
+      E'*And I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). The cry over Achan — *Why hast thou troubled us? Yahuah (LORD) shall trouble thee this day* (Joshua 7:25) — is answered far down the canon in mercy: the trouble of Achor opens upon the regathering of the scattered house, Lo-Ammi (not my people) made Ammi (my people) again. Judgment in the valley gives way to the restoration of Yahuah''s people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-7-the-accursed-thing-in-the-camp-the-leaven-that-defeats-the-whole-lump',
+  E'The Accursed Thing in the Camp — the Leaven That Defeats the Whole Lump',
+  E'One man''s hidden sin defeats the whole camp. *Achan, the son of Carmi... of the tribe of Yahudah (Judah), took of the accursed thing: and the anger of Yahuah (LORD) was kindled against the children of Yashar''el (Israel)* (Joshua 7:1) — and at Ai thirty-six men die, the hearts of the people *melted, and became as water* (Joshua 7:5). The warning had stood from before Jericho fell: *keep yourselves from the accursed thing, lest ye make yourselves accursed... and make the camp of Yashar''el (Israel) a curse, and trouble it* (Joshua 6:18). Now Yahuah names the breach: *Yashar''el (Israel) hath sinned, and they have also transgressed my covenant... for they have even taken of the accursed thing, and have also stolen, and dissembled also, and they have put it even among their own stuff* (Joshua 7:11), so that *the children of Yashar''el (Israel) could not stand before their enemies... neither will I be with you any more, except ye destroy the accursed from among you* (Joshua 7:12). This is the very thing the apostle teaches: *Know ye not that a little leaven leaveneth the whole lump?* (1 Corinthians 5:6) — *Purge out therefore the old leaven, that ye may be a new lump* (1 Corinthians 5:7). The single hidden sin works through the whole body, and the body cannot stand until it is put out. The pattern reaches forward again into the assembly: Ananias *kept back part of the price* and hid it (Acts 5:1-2), and *hearing these words fell down, and gave up the ghost: and great fear came on all them that heard* (Acts 5:5) — the same hidden sin against what is devoted to Yahuah, the same sudden judgment, the same fear falling on the people. This is covenant-breaking within the camp, never an attack on the people; the cure is to purge the leaven so the people may stand.',
+  sv.verse_id, ev.verse_id, 'free', 35150
+  FROM _s344_jos07_lookup sv, _s344_jos07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=7 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-7-i-saw-i-coveted-i-took-the-eye-that-conceives-sin-and-death',
+  E'I Saw, I Coveted, I Took — the Eye That Conceives Sin and Death',
+  E'When the lot has narrowed tribe by family by household down to him, Achan confesses, and his words trace the whole anatomy of sin: *When I saw among the spoils a goodly Babylonish garment, and two hundred shekels of silver, and a wedge of gold of fifty shekels weight, then I coveted them, and took them; and, behold, they are hid in the earth in the midst of my tent* (Joshua 7:21). Saw — coveted — took — hid. It is the same chain run in Eden: *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat* (Genesis 3:6). The eye opens the door, desire walks through it, the hand closes on what Yahuah forbade. James names the sequence and its end: *every man is tempted, when he is drawn away of his own lust, and enticed* (James 1:14) — Achan was not seized from without but drawn by his own coveting — and *then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death* (James 1:15). The arc is written whole over Achan: lust conceived at the sight of the spoils, brought forth the theft, and *when it is finished* brought forth death — *and all Yashar''el (Israel) stoned him with stones, and burned them with fire* (Joshua 7:25). The hidden coveting that began with a glance ends in the heap of stones.',
+  sv.verse_id, ev.verse_id, 'free', 35153
+  FROM _s344_jos07_lookup sv, _s344_jos07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=7 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-7-the-valley-of-achor-trouble-turned-to-a-door-of-hope',
+  E'The Valley of Achor — Trouble Turned to a Door of Hope',
+  E'Achan, his goods, and his household are brought to *the valley of Achor* (Joshua 7:24), and there Joshua says *Why hast thou troubled us? Yahuah (LORD) shall trouble thee this day* (Joshua 7:25). They raise *a great heap of stones unto this day. So Yahuah (LORD) turned from the fierceness of his anger. Wherefore the name of that place was called, The valley of Achor* (Joshua 7:26) — Achor, the valley of trouble, a name of judgment. Yet the prophet Hosea reaches back and takes that very name, that very valley, and makes it the threshold of mercy: *And I will give her her vineyards from thence, and the valley of Achor for a door of hope: and she shall sing there, as in the days of her youth, and as in the day when she came up out of the land of Egypt* (Hosea 2:15). The place of trouble becomes the door of hope; the valley of stoning becomes the place of singing. And the restoration runs to its end — *I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23) — Lo-Ammi (not my people) made Ammi (my people) again, the scattered house regathered. The same Yahuah who *turned from the fierceness of his anger* at Achor turns the whole valley of trouble into a door of hope: judgment gives way to mercy.',
+  sv.verse_id, ev.verse_id, 'free', 35156
+  FROM _s344_jos07_lookup sv, _s344_jos07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=7 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joshua 6:18 — *keep yourselves from the accursed thing... and make the camp of Yashar''el (Israel) a curse, and trouble it*: the standing warning Achan breaks.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=11
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=6 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-the-accursed-thing-in-the-camp-the-leaven-that-defeats-the-whole-lump'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Corinthians 5:6 — *a little leaven leaveneth the whole lump*: one man''s hidden sin works through the whole camp.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=1
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-the-accursed-thing-in-the-camp-the-leaven-that-defeats-the-whole-lump'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Corinthians 5:7 — *Purge out therefore the old leaven*: the remedy is to destroy the accursed from among them so the camp may stand.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=12
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-the-accursed-thing-in-the-camp-the-leaven-that-defeats-the-whole-lump'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 5:1 — Ananias *kept back part of the price* and hid it: the same hidden sin against what is devoted, carried into the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=1
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-the-accursed-thing-in-the-camp-the-leaven-that-defeats-the-whole-lump'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Acts 5:5 — Ananias *fell down, and gave up the ghost: and great fear came on all*: sudden judgment and fear, as at Achan''s valley.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-the-accursed-thing-in-the-camp-the-leaven-that-defeats-the-whole-lump'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 3:6 — the woman *saw... pleasant to the eyes... and she took*: the Eden pattern of saw-coveted-took that Achan repeats.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-i-saw-i-coveted-i-took-the-eye-that-conceives-sin-and-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'James 1:14 — *drawn away of his own lust, and enticed*: Achan was not compelled but drawn by his own coveting.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-i-saw-i-coveted-i-took-the-eye-that-conceives-sin-and-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'James 1:15 — *lust... bringeth forth sin: and sin, when it is finished, bringeth forth death*: the full arc ending in the heap of stones.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-i-saw-i-coveted-i-took-the-eye-that-conceives-sin-and-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Hosea 2:15 — *the valley of Achor for a door of hope... she shall sing there*: the valley of trouble turned into the threshold of mercy.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=26
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-the-valley-of-achor-trouble-turned-to-a-door-of-hope'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hosea 2:23 — *I will say to them which were not my people, Thou art my people*: the trouble of Achor opens upon the regathering, Lo-Ammi made Ammi.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s344_jos07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-7-the-valley-of-achor-trouble-turned-to-a-door-of-hope'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_8.sql (Joshua 8) -----
+-- Chapter: Joshua 8 — Ai taken by the ambush Yahuah directs (Achan's sin purged, victory
+--          restored, 8:1 *Fear not*); the king of Ai hanged on a tree and taken down before
+--          night; then at MOUNT EBAL Joshua builds an ALTAR of UNHEWN STONES (no iron), offers
+--          burnt and peace offerings, writes a COPY OF THE TORAH on the stones, and reads ALL
+--          the words of the Torah — the BLESSINGS and the CURSINGS — before all the congregation
+--          of Yashar''el: men, women, little ones, and the strangers.
+-- Tag: jos08   View: _s344_jos08_lookup   Sort band: 35175 step 3 (35175..35187)
+--
+-- Joshua 8 coverage:
+--   v.1  (Fear not... I have given into thy hand Ai)  Tanakh: Josh 7:12-13 (could not stand because accursed), Josh 7:26 (Yahuah turned from his anger), Deut 31:6,8 (be strong, fear not, He will not fail thee); NT: none warranted (victory-restored-after-sin-purged held in Tanakh); Extras: none warranted
+--   v.18-19,26 (stretch out the spear; the ambush takes the city)  Tanakh: held within thread 1 frame; Extras/NT: none warranted (battle narrative; type not woven separately)
+--   v.29 (king of Ai hanged on a tree, taken down before sundown, buried)  Tanakh: Deut 21:22-23 (he that is hanged is accursed of Elohim; body shall not remain all night); NT: Gal 3:13 (Messiah made a curse for us — cursed is every one that hangeth on a tree); Extras: none warranted
+--   v.30-31 (altar in Ebal, whole/unhewn stones, no iron, burnt + peace offerings)  Tanakh: Exod 20:24-25 (altar of earth/stone not hewn, burnt + peace offerings, I will bless thee), Deut 27:5-6 (altar of whole stones, no iron tool); NT: none warranted; Extras: none warranted
+--   v.32 (wrote a copy of the law of Moses upon the stones)  Tanakh: Deut 27:2-3,8 (set up stones, write upon them all the words of this law); NT/Extras: none warranted (held with the altar/Ebal command)
+--   v.33-35 (half before Gerizim half before Ebal; read all the words, blessings and cursings; men, women, little ones, strangers; not a word omitted)  Tanakh: Deut 11:29 (blessing on Gerizim, curse on Ebal), Deut 27:12-13 (these to bless, these to curse), Deut 27:26 (cursed that confirmeth not all the words of this law), Deut 31:11-12 (read this law before all Yashar''el — men, women, children, stranger), Neh 8:2-3 (Ezra read the book of the law before the congregation, men and women); NT: none warranted (whole-Torah-read-and-affirmed held in Tanakh + the curse-frame answered by Gal 3:13 in thread 2); Extras: none warranted
+--
+-- Threads (5):
+--   1 joshua-8-fear-not-the-victory-restored-when-the-accursed-is-purged   [free] Tanakh(Josh 7, Deut 31)
+--   2 joshua-8-the-king-of-ai-hanged-on-a-tree-taken-down-before-night     [free] Tanakh(Deut 21) + NT(Gal)
+--   3 joshua-8-the-altar-of-unhewn-stones-no-iron-lifted-upon-them         [free] Tanakh(Exod, Deut 27)
+--   4 joshua-8-he-wrote-a-copy-of-the-torah-upon-the-stones                [free] Tanakh(Deut 27)
+--   5 joshua-8-the-whole-torah-read-the-blessings-and-the-cursings         [free] Tanakh(Deut 11, Deut 27, Deut 31, Nehemiah)
+--
+-- Framework note (the curse): Joshua reads *the blessings and cursings* (8:34) exactly as Moses
+-- commanded in Deut 27-28 / 11:29-30 — the whole Torah read and AFFIRMED as Yashar''el enters the
+-- land, the covenant they bind themselves to, NOT a defunct law. The curse is the consequence of
+-- covenant-BREAKING (*Cursed be he that confirmeth not all the words of this law to do them*,
+-- Deut 27:26), never the Torah itself being the curse. The king of Ai *hanged on a tree* and taken
+-- down before night (8:29) keeps Deut 21:22-23 to the letter (*he that is hanged is accursed of
+-- Elohim*), and that curse-on-the-tree is the very text the New Testament names of Messiah, who was
+-- *made a curse for us* (Gal 3:13) — bearing the covenant-breaking-curse, never abolishing the
+-- Torah. The strangers and the little ones are inside the hearing (8:33,35) — the two-house people
+-- and the sojourner together under the one covenant word.
+
+CREATE TEMP VIEW _s344_jos08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Fear not — the victory restored when the accursed is purged
+    ('canon','joshua',8,1,'canon','joshua',7,12,'free',
+      E'*Therefore the children of Yashar''el (Israel) could not stand before their enemies, but turned their backs before their enemies, because they were accursed: neither will I be with you any more, except ye destroy the accursed from among you* (Joshua 7:12). The defeat at Ai was never weakness of arm but the accursed thing in the camp; only after Achan is purged does Yahuah say *Fear not, neither be thou dismayed... see, I have given into thy hand the king of Ai* (Joshua 8:1). The sin removed, the presence and the victory are restored.'),
+    ('canon','joshua',8,1,'canon','joshua',7,26,'free',
+      E'*And they raised over him a great heap of stones unto this day. So Yahuah (LORD) turned from the fierceness of his anger* (Joshua 7:26). The anger kindled by the trespass is turned away when the accursed is judged in the valley of Achor; on the far side of that judgment Yahuah can say *Fear not... I have given into thy hand the king of Ai, and his people, and his city, and his land* (Joshua 8:1) — the same hand that withheld now gives.'),
+    ('canon','joshua',8,1,'canon','deuteronomy',31,8,'free',
+      E'*And Yahuah (LORD), he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not, neither be dismayed* (Deuteronomy 31:8). Yahuah''s word to Joshua at Ai — *Fear not, neither be thou dismayed* (Joshua 8:1) — is the very charge Moses gave him before crossing Jordan; the promise *he will not fail thee* is proven the moment the accursed is purged and the city given into his hand.'),
+    ('canon','joshua',8,1,'canon','deuteronomy',31,6,'free',
+      E'*Be strong and of a good courage, fear not, nor be afraid of them: for Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee* (Deuteronomy 31:6). The command Moses spoke to all Yashar''el (Israel) is now spoken again over Ai: *Fear not... take all the people of war with thee, and arise, go up to Ai* (Joshua 8:1). The fear lifts not by Yashar''el''s strength but because Yahuah goes with them once the camp is clean.'),
+
+    -- Thread 2: The king of Ai hanged on a tree, taken down before night
+    ('canon','joshua',8,29,'canon','deuteronomy',21,23,'free',
+      E'*His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);) that thy land be not defiled* (Deuteronomy 21:23). Joshua keeps this Torah to the letter: *the king of Ai he hanged on a tree until eventide: and as soon as the sun was down, Joshua commanded that they should take his carcase down from the tree* (Joshua 8:29). The hanged king bears the curse of covenant-breaking, and the body is taken down before night so the land is not defiled.'),
+    ('canon','joshua',8,29,'canon','deuteronomy',21,22,'free',
+      E'*And if a man have committed a sin worthy of death, and he be to be put to death, and thou hang him on a tree* (Deuteronomy 21:22). The hanging of the king of Ai *on a tree until eventide* (Joshua 8:29) follows this statute exactly — the sin worthy of death answered, the carcase cast down and a *great heap of stones* raised over it, the covenant-curse executed in the land.'),
+    ('canon','joshua',8,29,'canon','galatians',3,13,'free',
+      E'*Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree* (Galatians 3:13). The very Torah Joshua obeys — *he that is hanged is accursed of Elohim* (Deut 21:23) — is the word the New Testament names of Messiah, who was *hanged on a tree* (Joshua 8:29 is its first enactment in the land) and bore the curse of covenant-BREAKING for His people. The curse is the consequence of breaking the covenant; Messiah carries it, He does not abolish the Torah that names it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- second cross_references block (threads 3-5) appended to same insert intent via a fresh INSERT
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 3: The altar of unhewn stones, no iron lifted upon them
+    ('canon','joshua',8,31,'canon','deuteronomy',27,5,'free',
+      E'*And there shalt thou build an altar unto Yahuah Elohayka (the LORD thy God), an altar of stones: thou shalt not lift up any iron tool upon them* (Deuteronomy 27:5). Joshua builds exactly this altar in mount Ebal — *an altar of whole stones, over which no man hath lift up any iron* (Joshua 8:31). The altar is lawful because it is unhewn, made *as it is written in the book of the law of Moses*, man''s tool kept off what is offered to Yahuah.'),
+    ('canon','joshua',8,31,'canon','deuteronomy',27,6,'free',
+      E'*Thou shalt build the altar of Yahuah Elohayka (the LORD thy God) of whole stones: and thou shalt offer burnt offerings thereon unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 27:6). Joshua''s altar of *whole stones* on which *they offered... burnt offerings unto Yahuah (LORD), and sacrificed peace offerings* (Joshua 8:31) fulfils Moses'' command word for word — the whole-stone altar and the burnt and peace offerings of the covenant ceremony.'),
+    ('canon','joshua',8,31,'canon','exodus',20,25,'free',
+      E'*And if thou wilt make me an altar of stone, thou shalt not build it of hewn stone: for if thou lift up thy tool upon it, thou hast polluted it* (Exodus 20:25). The law of the altar given at Sinai is the law Joshua keeps at Ebal: *an altar of whole stones, over which no man hath lift up any iron* (Joshua 8:31). To shape the stone with a tool is to pollute it; the lawful altar is the unhewn stone, untouched by iron.'),
+    ('canon','joshua',8,31,'canon','exodus',20,24,'free',
+      E'*An altar of earth thou shalt make unto me, and shalt sacrifice thereon thy burnt offerings, and thy peace offerings... in all places where I record my name I will come unto thee, and I will bless thee* (Exodus 20:24). The same Sinai word names the very offerings Joshua brings — *burnt offerings... and... peace offerings* (Joshua 8:31) — and the promise that where Yahuah records His name He comes to bless; the altar at Ebal is that recorded-name place in the land.'),
+
+    -- Thread 4: He wrote a copy of the Torah upon the stones
+    ('canon','joshua',8,32,'canon','deuteronomy',27,8,'free',
+      E'*And thou shalt write upon the stones all the words of this law very plainly* (Deuteronomy 27:8). This is the command Joshua obeys: *he wrote there upon the stones a copy of the law of Moses, which he wrote in the presence of the children of Yashar''el (Israel)* (Joshua 8:32). The Torah is not left in a book alone but cut into stone in the land, plainly, before the whole people — the covenant inheritance written where all may read it.'),
+    ('canon','joshua',8,32,'canon','deuteronomy',27,2,'free',
+      E'*And it shall be on the day when ye shall pass over Jordan unto the land which Yahuah Elohayka (the LORD thy God) giveth thee, that thou shalt set thee up great stones, and plaister them with plaister* (Deuteronomy 27:2). The stones Joshua writes upon — *a copy of the law of Moses* (Joshua 8:32) — are the great stones Moses commanded be set up on the very day of entering; the entrance into the inheritance and the writing of the Torah are bound together.'),
+    ('canon','joshua',8,32,'canon','deuteronomy',27,3,'free',
+      E'*And thou shalt write upon them all the words of this law, when thou art passed over, that thou mayest go in unto the land which Yahuah Elohayka (the LORD thy God) giveth thee, a land that floweth with milk and honey* (Deuteronomy 27:3). The whole Torah written on the stones is the condition of going in to possess the land; Joshua''s *copy of the law of Moses* (Joshua 8:32) is that command kept — the Torah carried into the inheritance, never left behind it.'),
+
+    -- Thread 5: The whole Torah read, the blessings and the cursings
+    ('canon','joshua',8,33,'canon','deuteronomy',11,29,'free',
+      E'*And it shall come to pass, when Yahuah Elohayka (the LORD thy God) hath brought thee in unto the land whither thou goest to possess it, that thou shalt put the blessing upon mount Gerizim, and the curse upon mount Ebal* (Deuteronomy 11:29). Joshua does precisely this: *half of them over against mount Gerizim, and half of them over against mount Ebal* (Joshua 8:33). The covenant ceremony Moses appointed is enacted the moment Yashar''el (Israel) is brought into the land.'),
+    ('canon','joshua',8,33,'canon','deuteronomy',27,12,'free',
+      E'*These shall stand upon mount Gerizim to bless the people, when ye are come over Jordan; Simeon, and Levi, and Yahudah (Judah), and Issachar, and Joseph, and Benjamin* (Deuteronomy 27:12). The tribes set *over against mount Gerizim* and *over against mount Ebal* (Joshua 8:33) take the stations Moses assigned — the blessing-mount and the curse-mount of the one covenant, the two houses gathered to hear the same Torah.'),
+    ('canon','joshua',8,34,'canon','deuteronomy',27,26,'free',
+      E'*Cursed be he that confirmeth not all the words of this law to do them. And all the people shall answer and say, Amen* (Deuteronomy 27:26). When Joshua *read all the words of the law, the blessings and cursings* (Joshua 8:34), this is the final Amen of the curse — and it names plainly that the curse is for him who will NOT confirm the Torah to do it. The curse is the consequence of covenant-breaking, never the Torah itself; the Torah read and affirmed is the blessing they bind themselves to.'),
+    ('canon','joshua',8,35,'canon','deuteronomy',31,12,'free',
+      E'*Gather the people together, men, and women, and children, and thy stranger that is within thy gates, that they may hear, and that they may learn, and fear Yahuah Elohaychem (the LORD your God), and observe to do all the words of this law* (Deuteronomy 31:12). Joshua leaves out no one and no word: *There was not a word of all that Moses commanded, which Joshua read not before all the congregation of Yashar''el (Israel), with the women, and the little ones, and the strangers* (Joshua 8:35). The whole Torah, the whole people — the sojourner and the child inside the hearing, exactly as Moses charged.'),
+    ('canon','joshua',8,35,'canon','nehemiah',8,3,'free',
+      E'*And he read therein before the street that was before the water gate from the morning until midday, before the men and the women, and those that could understand; and the ears of all the people were attentive unto the book of the law* (Nehemiah 8:3). The public reading Joshua holds at Ebal — *not a word... which Joshua read not before all the congregation* (Joshua 8:35) — is the same covenant act Ezra renews after the captivity: the book of the law read in full before men and women, the Torah affirmed by the gathered people, generations apart yet one covenant.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-8-fear-not-the-victory-restored-when-the-accursed-is-purged',
+  E'Fear Not — the Victory Restored When the Accursed Is Purged',
+  E'After the defeat at Ai, Yahuah (LORD) speaks again to Joshua: *Fear not, neither be thou dismayed: take all the people of war with thee, and arise, go up to Ai: see, I have given into thy hand the king of Ai, and his people, and his city, and his land* (Joshua 8:1). The change is not in Yashar''el''s strength but in the camp: the first rout was never weakness of arm — *the children of Yashar''el (Israel) could not stand before their enemies... because they were accursed: neither will I be with you any more, except ye destroy the accursed from among you* (Joshua 7:12). Only when Achan is judged in the valley of Achor does *Yahuah (LORD)... turn from the fierceness of his anger* (Joshua 7:26), and only then is the city given into Joshua''s hand. The *Fear not* itself is Moses'' own charge come true — *Be strong and of a good courage, fear not... for Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee* (Deuteronomy 31:6), *he will be with thee, he will not fail thee, neither forsake thee: fear not, neither be dismayed* (Deuteronomy 31:8). The presence withheld for sin is restored the moment the accursed is purged; the hand that gave them up now gives the enemy up before them.',
+  sv.verse_id, ev.verse_id, 'free', 35175
+  FROM _s344_jos08_lookup sv, _s344_jos08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=8 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-8-the-king-of-ai-hanged-on-a-tree-taken-down-before-night',
+  E'The King of Ai Hanged on a Tree, Taken Down Before Night',
+  E'*And the king of Ai he hanged on a tree until eventide: and as soon as the sun was down, Joshua commanded that they should take his carcase down from the tree, and cast it at the entering of the gate of the city, and raise thereon a great heap of stones* (Joshua 8:29). Every detail keeps the Torah Moses gave: *And if a man have committed a sin worthy of death, and he be to be put to death, and thou hang him on a tree* (Deuteronomy 21:22); *His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);) that thy land be not defiled* (Deuteronomy 21:23). The hanged king bears the curse of covenant-breaking, and the body is taken down before nightfall so the inheritance is not defiled. This is the very text the New Testament reaches back to: *Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree* (Galatians 3:13). The curse is the consequence of breaking the covenant, named by the Torah itself; Messiah is *made a curse* — He bears it for His people, He does not abolish the Torah that defines it. The first enactment of *hanged on a tree* in the land foreshadows the One who would hang and be taken down before the day was out.',
+  sv.verse_id, ev.verse_id, 'free', 35178
+  FROM _s344_jos08_lookup sv, _s344_jos08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=8 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-8-the-altar-of-unhewn-stones-no-iron-lifted-upon-them',
+  E'The Altar of Unhewn Stones, No Iron Lifted Upon Them',
+  E'*Then Joshua built an altar unto Yahuah Elohim (the LORD God) of Yashar''el (Israel) in mount Ebal, As Moses the servant of Yahuah (LORD) commanded the children of Yashar''el (Israel), as it is written in the book of the law of Moses, an altar of whole stones, over which no man hath lift up any iron: and they offered thereon burnt offerings unto Yahuah (LORD), and sacrificed peace offerings* (Joshua 8:30-31). This is the lawful altar to the letter. At Sinai Yahuah said *if thou wilt make me an altar of stone, thou shalt not build it of hewn stone: for if thou lift up thy tool upon it, thou hast polluted it* (Exodus 20:25), and named the very offerings — *thy burnt offerings, and thy peace offerings... in all places where I record my name I will come unto thee, and I will bless thee* (Exodus 20:24). Moses repeated it for the entrance into the land: *there shalt thou build an altar... thou shalt not lift up any iron tool upon them. Thou shalt build the altar... of whole stones: and thou shalt offer burnt offerings thereon* (Deuteronomy 27:5-6). Man''s tool is kept off what is offered to Yahuah; the altar is unhewn stone, the burnt and peace offerings of the covenant brought up in the recorded-name place in the inheritance.',
+  sv.verse_id, ev.verse_id, 'free', 35181
+  FROM _s344_jos08_lookup sv, _s344_jos08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=8 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-8-he-wrote-a-copy-of-the-torah-upon-the-stones',
+  E'He Wrote a Copy of the Torah Upon the Stones',
+  E'*And he wrote there upon the stones a copy of the law of Moses, which he wrote in the presence of the children of Yashar''el (Israel)* (Joshua 8:32). The Torah is not carried into the land in a book alone but cut into stone where all may read it — exactly as Moses commanded for the day of entering: *on the day when ye shall pass over Jordan unto the land... thou shalt set thee up great stones, and plaister them with plaister* (Deuteronomy 27:2); *thou shalt write upon them all the words of this law, when thou art passed over, that thou mayest go in unto the land which Yahuah Elohayka (the LORD thy God) giveth thee, a land that floweth with milk and honey* (Deuteronomy 27:3); *thou shalt write upon the stones all the words of this law very plainly* (Deuteronomy 27:8). The writing of the whole Torah on the stones is bound to the inheritance itself — the covenant word carried IN, plainly, before the whole people, the condition and the joy of going in to possess the land. The Torah is the inheritance, never a thing left behind at the border.',
+  sv.verse_id, ev.verse_id, 'free', 35184
+  FROM _s344_jos08_lookup sv, _s344_jos08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=8 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-8-the-whole-torah-read-the-blessings-and-the-cursings',
+  E'The Whole Torah Read — the Blessings and the Cursings',
+  E'With the altar built and the Torah written on the stones, Joshua holds the covenant ceremony Moses appointed. *All Yashar''el (Israel), and their elders, and officers, and their judges, stood on this side the ark and on that side... as well the stranger, as he that was born among them; half of them over against mount Gerizim, and half of them over against mount Ebal* (Joshua 8:33) — exactly the stations Moses gave: *thou shalt put the blessing upon mount Gerizim, and the curse upon mount Ebal* (Deuteronomy 11:29), *These shall stand upon mount Gerizim to bless the people... Simeon, and Levi, and Yahudah (Judah)... Joseph, and Benjamin* (Deuteronomy 27:12). Then *he read all the words of the law, the blessings and cursings, according to all that is written in the book of the law* (Joshua 8:34). The curse named there is no curse upon the Torah — it is the curse upon him who breaks it: *Cursed be he that confirmeth not all the words of this law to do them. And all the people shall answer and say, Amen* (Deuteronomy 27:26). The Torah is read and AFFIRMED, the covenant they bind themselves to. And no one is left out: *There was not a word of all that Moses commanded, which Joshua read not before all the congregation of Yashar''el (Israel), with the women, and the little ones, and the strangers* (Joshua 8:35) — the whole word before the whole people, just as Moses charged: *Gather the people together, men, and women, and children, and thy stranger that is within thy gates, that they may hear, and that they may learn... and observe to do all the words of this law* (Deuteronomy 31:12). The same act of public reading and binding is renewed after the captivity, *the ears of all the people... attentive unto the book of the law* before *the men and the women* (Nehemiah 8:3) — one covenant Torah, generations apart, read in full and answered Amen.',
+  sv.verse_id, ev.verse_id, 'free', 35187
+  FROM _s344_jos08_lookup sv, _s344_jos08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=8 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joshua 7:12 — *could not stand before their enemies... because they were accursed*: the first defeat was the accursed thing in the camp, not weakness of arm.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=1
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-fear-not-the-victory-restored-when-the-accursed-is-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joshua 7:26 — *So Yahuah (LORD) turned from the fierceness of his anger*: the anger turned away once the accursed is judged in the valley of Achor; only then is Ai given.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=1
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=7 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-fear-not-the-victory-restored-when-the-accursed-is-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 31:6 — *Be strong and of a good courage, fear not... he will not fail thee*: Moses'' charge to all Yashar''el, now spoken again over Ai.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=1
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-fear-not-the-victory-restored-when-the-accursed-is-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 31:8 — *he will be with thee, he will not fail thee... fear not, neither be dismayed*: the promise to Joshua proven the moment the camp is clean.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=1
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-fear-not-the-victory-restored-when-the-accursed-is-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 21:22 — *thou hang him on a tree*: the statute for the sin worthy of death that Joshua enacts on the king of Ai.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=29
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=21 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-king-of-ai-hanged-on-a-tree-taken-down-before-night'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 21:23 — *he that is hanged is accursed of Elohim... his body shall not remain all night*: Joshua keeps it to the letter, taking the carcase down at sundown.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=29
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=21 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-king-of-ai-hanged-on-a-tree-taken-down-before-night'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Galatians 3:13 — *made a curse for us: for it is written, Cursed is every one that hangeth on a tree*: the curse on the tree borne by Messiah, the Torah named not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=29
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-king-of-ai-hanged-on-a-tree-taken-down-before-night'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 20:25 — *thou shalt not build it of hewn stone: for if thou lift up thy tool upon it, thou hast polluted it*: the Sinai law of the unhewn altar Joshua keeps at Ebal.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=31
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-altar-of-unhewn-stones-no-iron-lifted-upon-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 20:24 — *thy burnt offerings, and thy peace offerings... where I record my name I will come unto thee, and I will bless thee*: the very offerings Joshua brings, the recorded-name place in the land.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=31
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-altar-of-unhewn-stones-no-iron-lifted-upon-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 27:5 — *an altar of stones: thou shalt not lift up any iron tool upon them*: Moses'' command for the altar at Ebal, kept word for word.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=31
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-altar-of-unhewn-stones-no-iron-lifted-upon-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 27:6 — *of whole stones: and thou shalt offer burnt offerings thereon*: the whole-stone altar and the offerings Joshua brings up in mount Ebal.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=31
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-altar-of-unhewn-stones-no-iron-lifted-upon-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 27:2 — *thou shalt set thee up great stones, and plaister them*: the great stones for the day of crossing, the very stones Joshua writes upon.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=32
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-he-wrote-a-copy-of-the-torah-upon-the-stones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 27:3 — *write upon them all the words of this law... that thou mayest go in unto the land*: the Torah written on the stones is the condition of going in to possess.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=32
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-he-wrote-a-copy-of-the-torah-upon-the-stones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 27:8 — *write upon the stones all the words of this law very plainly*: the command Joshua obeys, a copy of the Torah cut plainly into stone before the people.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=32
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-he-wrote-a-copy-of-the-torah-upon-the-stones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 11:29 — *the blessing upon mount Gerizim, and the curse upon mount Ebal*: the two-mount ceremony Moses appointed for the entrance into the land.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=33
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-whole-torah-read-the-blessings-and-the-cursings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 27:12 — *These shall stand upon mount Gerizim to bless the people*: the tribes set in the stations Moses assigned, the two houses gathered to one Torah.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=33
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-whole-torah-read-the-blessings-and-the-cursings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 27:26 — *Cursed be he that confirmeth not all the words of this law to do them*: the curse is on covenant-BREAKING, never on the Torah itself.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=34
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-whole-torah-read-the-blessings-and-the-cursings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 31:12 — *Gather the people together, men, and women, and children, and thy stranger... that they may hear*: the whole people in the hearing, exactly as Joshua reads to all.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=35
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-whole-torah-read-the-blessings-and-the-cursings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Nehemiah 8:3 — *the ears of all the people were attentive unto the book of the law*: the same covenant reading renewed after the captivity, the Torah affirmed by the gathered people.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=8 AND sv.verse_number=35
+  JOIN _s344_jos08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-8-the-whole-torah-read-the-blessings-and-the-cursings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_9.sql (Joshua 9) -----
+-- Book: Joshua  Chapter: 9   TAG: jos09   View: _s344_jos09_lookup
+-- Session prefix: s344   Sort band: 35200, step 3 (35200, 35203, 35206, ...)
+-- Slug prefix: joshua-9-   (checked against EXISTING_SLUGS.txt — none present)
+--
+-- Joshua 9 coverage:
+--   v.3-13 (the Gibeonite deception — old sacks, mouldy bread, rent bottles, worn shoes, far-country pretence):
+--        NT:     none warranted (the wiliness itself is narrative; its weight lands in the failure-to-enquire and the oath threads)
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 7:1-2 (make no covenant with the nations) / Deuteronomy 20:10-16 (peace to the FAR cities, utter destruction to the near) — the law the deception exploited
+--   v.14 (the men took of their victuals, and ASKED NOT counsel at the mouth of Yahuah — THREAD 1 anchor):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 2 Samuel 21:1 (David ENQUIRED of Yahuah — the contrast); Deuteronomy 7:2; Deuteronomy 20:15-16
+--   v.15 / v.18-19 / v.20 (the league made, the princes SWARE by Yahuah, the oath kept though obtained by deceit — THREAD 2 anchor):
+--        NT:     Matthew 5:33-37 (perform unto Yahuah thine oaths / let your yea be yea) — the Formed Son raising the bar on the sworn word
+--        Extras: none warranted
+--        Tanakh: Psalm 15:4 (sweareth to his own hurt, and changeth not); Numbers 30:2 (he shall not break his word); Ecclesiastes 5:4-5 (pay that which thou hast vowed); 2 Samuel 21:1-2 (the GRAVITY — Saul's breach of this very oath brings a 3-year famine)
+--   v.21 / v.23 / v.27 (hewers of wood and drawers of water for the congregation and for the ALTAR of Yahuah — THREAD 3 anchor):
+--        NT:     none warranted (the mercy-in-judgment lands cleanly in the Tanakh covenant-frame)
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 29:10-13 (the hewer of thy wood / the drawer of thy water STANDS in the covenant and the oath sworn to the fathers); 2 Samuel 21:2 (the Gibeonites still under the sworn protection generations later)
+--
+-- THREADS (3):
+--   joshua-9-they-asked-not-counsel-at-the-mouth-of-yahuah   [Tanakh only — tier free]
+--       Jos 9:14 -> Deut 7:2, Deut 20:15, Deut 20:16, 2Sam 21:1
+--   joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name   [Tanakh + NT — tier free]
+--       Jos 9:15,18,19,20 -> Ps 15:4, Num 30:2, Eccl 5:4, Eccl 5:5, 2Sam 21:1, 2Sam 21:2, Matt 5:33
+--   joshua-9-hewers-of-wood-and-drawers-of-water-for-the-altar   [Tanakh only — tier free]
+--       Jos 9:21,23,27 -> Deut 29:11, Deut 29:13, 2Sam 21:2
+--
+-- All targets canon -> every member tier 'free', every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s344_jos09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: they asked not counsel at the mouth of Yahuah (9:14)
+    ('canon','joshua',9,14,'canon','deuteronomy',7,2,'free',
+      E'*And when Yahuah Elohayka (the LORD thy God) shall deliver them before thee; thou shalt smite them, and utterly destroy them; thou shalt make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2). The Torah forbade a league with the inhabitants of the land — the very thing the Gibeonites came to extract. When *the men took of their victuals, and asked not counsel at the mouth of Yahuah* (Joshua 9:14), they judged by the mouldy bread and the worn shoes instead of enquiring of the One whose word already governed the matter.'),
+    ('canon','joshua',9,14,'canon','deuteronomy',20,15,'free',
+      E'*Thus shalt thou do unto all the cities which are very far off from thee, which are not of the cities of these nations* (Deuteronomy 20:15). Peace might be offered to a FAR city — and so the Gibeonites built their whole lie on distance: *We be come from a far country* (Joshua 9:6). Because Yashar''el (Israel) *asked not counsel at the mouth of Yahuah* (Joshua 9:14), the appearance of a far journey was taken for the truth of one.'),
+    ('canon','joshua',9,14,'canon','deuteronomy',20,16,'free',
+      E'*But of the cities of these people, which Yahuah Elohayka (the LORD thy God) doth give thee for an inheritance, thou shalt save alive nothing that breatheth* (Deuteronomy 20:16). Gibeon was a NEAR city, of the nations of the land — under this very word. The deception turned entirely on which side of Deuteronomy 20 they fell, and the failure to enquire — *asked not counsel at the mouth of Yahuah* (Joshua 9:14) — left the appearance unchallenged.'),
+    ('canon','joshua',9,14,'canon','2-samuel',21,1,'free',
+      E'*Then there was a famine in the days of David three years, year after year; and David enquired of Yahuah (LORD). And Yahuah (LORD) answered, It is for Saul, and for his bloody house, because he slew the Gibeonites* (2 Samuel 21:1). Here is the contrast that exposes the lapse: David *enquired of Yahuah* and was answered, where the princes *asked not counsel at the mouth of Yahuah* (Joshua 9:14). The same Gibeonite covenant runs through both scenes — and the One who would have warned at Gilgal is the One who answers David generations later.'),
+
+    -- THREAD 2: the princes sware by Yahuah and changed not — the oath in the Name (9:15,18,19,20)
+    ('canon','joshua',9,18,'canon','psalms',15,4,'free',
+      E'*In whose eyes a vile person is contemned; but he honoureth them that fear Yahuah (LORD). He that sweareth to his own hurt, and changeth not* (Psalm 15:4). This is the man who may abide in Yahuah''s tabernacle — and it is exactly what the princes did. Though the oath was wrung from them by a lie, *the princes of the congregation had sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 9:18), and to their own hurt they changed not.'),
+    ('canon','joshua',9,19,'canon','numbers',30,2,'free',
+      E'*If a man vow a vow unto Yahuah (LORD), or swear an oath to bind his soul with a bond; he shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2). The Torah binds the sworn word absolutely — and so the princes answer the murmuring congregation: *We have sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel): now therefore we may not touch them* (Joshua 9:19). The Name invoked over the oath makes it unbreakable, deceit notwithstanding.'),
+    ('canon','joshua',9,15,'canon','ecclesiastes',5,4,'free',
+      E'*When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4). When *the princes of the congregation sware unto them* (Joshua 9:15), heaven held them to it. The preacher names the law the princes obeyed: a vow uttered before Elohim is a debt that must be paid.'),
+    ('canon','joshua',9,15,'canon','ecclesiastes',5,5,'free',
+      E'*Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). The rashness was in the swearing — *the princes of the congregation sware unto them* (Joshua 9:15) before they had enquired — but once sworn in the Name, the vow could not be unpaid. Better never to have sworn; having sworn, they paid it to their hurt.'),
+    ('canon','joshua',9,20,'canon','2-samuel',21,1,'free',
+      E'*Then there was a famine in the days of David three years, year after year; and David enquired of Yahuah (LORD). And Yahuah (LORD) answered, It is for Saul, and for his bloody house, because he slew the Gibeonites* (2 Samuel 21:1). The princes feared this exactly: *we will even let them live, lest wrath be upon us, because of the oath which we sware unto them* (Joshua 9:20). Centuries on, Saul broke that oath and the wrath came — a three-year famine — proving the gravity of a word sworn in the Name of Yahuah.'),
+    ('canon','joshua',9,20,'canon','2-samuel',21,2,'free',
+      E'*And the king called the Gibeonites, and said unto them; (now the Gibeonites were not of the children of Yashar''el (Israel), but of the remnant of the Amorites; and the children of Yashar''el (Israel) had sworn unto them: and Saul sought to slay them in his zeal to the children of Yashar''el (Israel) and Yahudah (Judah).)* (2 Samuel 21:2). The text reaches back and names this very oath — *the children of Yashar''el had sworn unto them* — confirming the princes'' word in Joshua 9:20 was still binding generations later, and that breaking it brought blood-guilt on the land.'),
+    ('canon','joshua',9,19,'canon','matthew',5,33,'free',
+      E'*Again, ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33). The Formed Son names the standard the princes upheld — the sworn word performed unto Yahuah — and in *We have sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel): now therefore we may not touch them* (Joshua 9:19) the oath in the Name is honoured exactly as he requires.'),
+
+    -- THREAD 3: hewers of wood and drawers of water for the altar — mercy within judgment (9:21,23,27)
+    ('canon','joshua',9,21,'canon','deuteronomy',29,11,'free',
+      E'*Your little ones, your wives, and thy stranger that is in thy camp, from the hewer of thy wood unto the drawer of thy water* (Deuteronomy 29:11). Moses had already set the hewer of wood and the drawer of water INSIDE the covenant assembly — and the princes'' sentence, *Let them live; but let them be hewers of wood and drawers of water unto all the congregation* (Joshua 9:21), folds the deceiving stranger into that same standing place.'),
+    ('canon','joshua',9,23,'canon','deuteronomy',29,13,'free',
+      E'*That he may establish thee to day for a people unto himself, and that he may be unto thee a Elohim (God), as he hath said unto thee, and as he hath sworn unto thy fathers, to Abraham, to Isaac, and to Jacob* (Deuteronomy 29:13). The curse Joshua pronounces — *there shall none of you be freed from being bondmen, and hewers of wood and drawers of water for the house of my Elohim (God)* (Joshua 9:23) — binds the Gibeonites not to death but to lifelong service at the house of the very Elohim who swore to the fathers; the judgment lands them next to His altar.'),
+    ('canon','joshua',9,27,'canon','2-samuel',21,2,'free',
+      E'*And the king called the Gibeonites, and said unto them; (now the Gibeonites were not of the children of Yashar''el (Israel), but of the remnant of the Amorites; and the children of Yashar''el (Israel) had sworn unto them...)* (2 Samuel 21:2). The men made *hewers of wood and drawers of water for the congregation, and for the altar of Yahuah (LORD), even unto this day* (Joshua 9:27) were still a remembered, protected people in David''s day — the mercy granted in the judgment outlasting the generation that granted it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-9-they-asked-not-counsel-at-the-mouth-of-yahuah',
+       E'They Asked Not Counsel at the Mouth of Yahuah',
+       E'The kings of the land gather to fight, but the men of Gibeon try another way: *They did work wilily, and went and made as if they had been ambassadors, and took old sacks upon their asses, and wine bottles, old, and rent, and bound up* (Joshua 9:4), with *all the bread of their provision* gone *dry and mouldy* (Joshua 9:5). Their whole case rests on one claim — *We be come from a far country: now therefore make ye a league with us* (Joshua 9:6) — because the Torah drew a line exactly there. To a FAR city peace might be offered: *Thus shalt thou do unto all the cities which are very far off from thee, which are not of the cities of these nations* (Deuteronomy 20:15); but of the cities of the land, *thou shalt save alive nothing that breatheth* (Deuteronomy 20:16), for *thou shalt make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2). The deception turns entirely on which side of that line Gibeon falls. And the failure is named in a single verse: *And the men took of their victuals, and asked not counsel at the mouth of Yahuah (LORD)* (Joshua 9:14). They examined the bread and the bottles — the appearances — and never asked the One whose word already settled the matter. The contrast that exposes the lapse comes generations later, when *David enquired of Yahuah (LORD). And Yahuah (LORD) answered* (2 Samuel 21:1). The Formed Son who would have answered at Gilgal is the One who answers David — and Yashar''el (Israel) need only have asked.',
+       sv.verse_id, ev.verse_id, 'free', 35200
+  FROM _s344_jos09_lookup sv, _s344_jos09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=9 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name',
+       E'The Princes Sware, and Changed Not — the Oath in the Name',
+       E'The league is struck and sealed: *Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them* (Joshua 9:15). Three days later the lie is exposed — these are neighbours, near cities of the land — and the congregation murmurs. But the princes will not break their word, because of WHAT they swore by: *the princes of the congregation had sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 9:18); *We have sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel): now therefore we may not touch them* (Joshua 9:19). This is the man who may abide in Yahuah''s tabernacle: *He that sweareth to his own hurt, and changeth not* (Psalm 15:4). The Torah binds the sworn word absolutely — *he shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2) — and the preacher seals it: *pay that which thou hast vowed* (Ecclesiastes 5:4); *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). The rashness was in the swearing; once sworn in the Name, the vow could not be unpaid. The princes know the cost of breaking it: *lest wrath be upon us, because of the oath which we sware unto them* (Joshua 9:20). And the canon proves them right — centuries on, Saul slew the Gibeonites, and *there was a famine in the days of David three years* (2 Samuel 21:1), for *the children of Yashar''el (Israel) had sworn unto them* (2 Samuel 21:2). The Formed Son names the same standard: *Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33). A word sworn in the Name is honoured even to one''s own hurt — and the land bleeds when it is broken.',
+       sv.verse_id, ev.verse_id, 'free', 35203
+  FROM _s344_jos09_lookup sv, _s344_jos09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=9 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-9-hewers-of-wood-and-drawers-of-water-for-the-altar',
+       E'Hewers of Wood and Drawers of Water for the Altar — Mercy Within the Judgment',
+       E'The deceivers are not destroyed; they are bound to service: *Let them live; but let them be hewers of wood and drawers of water unto all the congregation* (Joshua 9:21). Joshua frames it as a curse — *there shall none of you be freed from being bondmen, and hewers of wood and drawers of water for the house of my Elohim (God)* (Joshua 9:23) — yet the place of that service is the mercy hidden in it. Moses had already set this exact pair INSIDE the covenant assembly: *your captains of your tribes, your elders, and your officers... the stranger that is in thy camp, from the hewer of thy wood unto the drawer of thy water* (Deuteronomy 29:11), all standing to enter *into his oath* (Deuteronomy 29:12), the covenant *he hath sworn unto thy fathers, to Abraham, to Isaac, and to Jacob* (Deuteronomy 29:13). So the curse lands the Gibeonites not in the grave but at the doorpost of the house — and the final verse names where: *hewers of wood and drawers of water for the congregation, and for the altar of Yahuah (LORD), even unto this day, in the place which he should choose* (Joshua 9:27). For the altar. The deceivers are given a station beside the very place of atonement. And the mercy outlasts the generation that granted it: in David''s day they are still a remembered, protected people, *the remnant of the Amorites; and the children of Yashar''el (Israel) had sworn unto them* (2 Samuel 21:2). Judgment fell — but it set them down within reach of the altar of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 35206
+  FROM _s344_jos09_lookup sv, _s344_jos09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=9 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2) — the very league the Torah forbade.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=14
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-they-asked-not-counsel-at-the-mouth-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the cities which are very far off from thee, which are not of the cities of these nations* (Deuteronomy 20:15) — peace to the FAR city, the lie they built upon.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=14
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=20 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-they-asked-not-counsel-at-the-mouth-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou shalt save alive nothing that breatheth* (Deuteronomy 20:16) — Gibeon was a NEAR city, under this word.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=14
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=20 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-they-asked-not-counsel-at-the-mouth-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*David enquired of Yahuah (LORD). And Yahuah (LORD) answered* (2 Samuel 21:1) — the contrast: David asked, the princes did not.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=14
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=21 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-they-asked-not-counsel-at-the-mouth-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He that sweareth to his own hurt, and changeth not* (Psalm 15:4) — the abider in the tabernacle; exactly what the princes did.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=18
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he shall not break his word... according to all that proceedeth out of his mouth* (Numbers 30:2) — the Torah binds the sworn word absolutely.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=19
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*pay that which thou hast vowed* (Ecclesiastes 5:4) — a vow before Elohim is a debt; the princes paid it.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=15
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5) — the rashness was the swearing; once sworn, unbreakable.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=15
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*a famine in the days of David three years... because he slew the Gibeonites* (2 Samuel 21:1) — the wrath the princes feared, fallen when the oath was broken.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=20
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=21 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the children of Yashar''el (Israel) had sworn unto them* (2 Samuel 21:2) — the canon names this very Joshua-9 oath, still binding generations on.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=20
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33) — the Formed Son names the standard the princes upheld.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=19
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-the-princes-sware-and-changed-not-the-oath-in-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*from the hewer of thy wood unto the drawer of thy water* (Deuteronomy 29:11) — Moses set this exact pair inside the covenant assembly.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=21
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-hewers-of-wood-and-drawers-of-water-for-the-altar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*as he hath sworn unto thy fathers, to Abraham, to Isaac, and to Jacob* (Deuteronomy 29:13) — the curse binds them to the house of the Elohim who swore to the fathers.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=23
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-hewers-of-wood-and-drawers-of-water-for-the-altar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the children of Yashar''el (Israel) had sworn unto them* (2 Samuel 21:2) — the servants of the altar still a remembered, protected people in David''s day.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=9 AND sv.verse_number=27
+  JOIN _s344_jos09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-9-hewers-of-wood-and-drawers-of-water-for-the-altar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_10.sql (Joshua 10) -----
+-- Joshua 10 — Yashar'el rescues Gibeon by the oath; Yahuah's heavenly artillery,
+--   the long day, and the conquest of the south. Tag jos10; view _s344_jos10_lookup.
+-- Sort band base 35225, step 3 (35225, 35228, 35231, 35234).
+--
+-- Joshua 10 coverage:
+--   v.8  (Fear them not... I have delivered)
+--        NT:     none warranted (motif carried laterally within the conquest narrative)
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 1:21, Joshua 1:9 (fear-not / be strong) — THREAD 4
+--   v.10 (Yahuah discomfited them)
+--        NT:     none warranted
+--        Extras: Jasher 88:60 (parallel) — carried by hail/long-day threads, not separately threaded
+--        Tanakh: carried by the fought-for-Yashar'el thread (the victory His)
+--   v.11 (great stones from heaven / hailstones — more than the sword)
+--        NT:     none warranted (plague/artillery motif stays Tanakh+extras)
+--        Extras: Jasher 88:61 — THREAD 1
+--        Tanakh: Psalm 18:12, 18:13, 18:14 (hail stones, coals of fire, arrows, discomfited) — THREAD 1
+--   v.12 (Sun stand still upon Gibeon; Moon in Ajalon)
+--        NT:     none warranted
+--        Extras: Jasher 88:63 — THREAD 3
+--        Tanakh: Genesis 1:14, 1:16 (the luminaries for signs/seasons); Habakkuk 3:11 — THREAD 3
+--   v.13 (sun stood still in midst of heaven, book of Jasher)
+--        NT:     none warranted
+--        Extras: Jasher 88:64 (the named book itself) — THREAD 3
+--        Tanakh: 2 Kings 20:11 (shadow ten degrees backward, the Hezekiah sun-sign) — THREAD 3
+--   v.14 (no day like that — Yahuah hearkened unto the voice of a man; fought for Yashar'el)
+--        NT:     none warranted
+--        Extras: Jasher 88:65 — THREAD 3
+--        Tanakh: Exodus 14:14, 14:25; Deuteronomy 1:30; Joshua 23:3 (fought for) — THREAD 2 & 3
+--   v.25 (Fear not, nor be dismayed... thus shall Yahuah do to all your enemies)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Joshua 1:9, Deuteronomy 1:21 — THREAD 4
+--   v.42 (Yahuah Elohim of Yashar'el fought for Yashar'el)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exodus 14:14; Deuteronomy 1:30; Joshua 23:3, 23:10 — THREAD 2
+--
+-- THREADS:
+--   THREAD 1 joshua-10-the-hailstones-from-heaven (free... no, EXTRAS — Jasher member): Tanakh (Psalm) + extras (Jasher)
+--   THREAD 2 joshua-10-yahuah-fought-for-yashar'el (free): Tanakh only (Exodus, Deuteronomy, Joshua)
+--   THREAD 3 joshua-10-the-sun-and-the-moon-stood-still (extras): Tanakh (Genesis, Habakkuk, 2 Kings) + extras (Jasher)
+--   THREAD 4 joshua-10-fear-not-thus-shall-yahuah-do (free): Tanakh only (Deuteronomy, Joshua)
+--
+-- Framework-load-bearing notes:
+--   * 10:11 hailstones = Yahuah's heavenly artillery; Psalm 18 sings the same theophany
+--     (hail stones and coals of fire, arrows, discomfited them); the Creator's weapons, not the sword.
+--   * 10:12-14 the long day = the Creator OVER the sun and moon, the appointed-time luminaries
+--     He set (Gen 1:14) for signs and seasons, answering a man's voice. Same Yahuah who turns the
+--     sun BACK ten degrees for Hezekiah (2 Kings 20:11) and at whose arrows the sun and moon stood
+--     still (Hab 3:11). The Formed Son who led Yashar'el commands His own creation. NOT a co-equal
+--     trinity, NOT Arian — Yahuah hearkening to the voice of a man.
+--   * 10:14, 42 Yahuah fought for Yashar'el = the man of war (Exod 14:14,25; Deut 1:30; Josh 23:3,10).
+--     The victory is His, not their sword — the same hand that drowned Pharaoh's host.
+
+CREATE TEMP VIEW _s344_jos10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the hailstones from heaven (10:11)
+    ('canon','joshua',10,11,'canon','psalms',18,12,'free',E'*At the brightness that was before him his thick clouds passed, hail stones and coals of fire* (Psalm 18:12). When Yahuah *cast down great stones from heaven upon them... they were more which died with hailstones than they whom the children of Yashar''el (Israel) slew with the sword* (Joshua 10:11), it is the theophany Psalm 18 sings: the heavenly artillery of the Creator, hail and fire from His own storehouse, falling on the enemies of His people.'),
+    ('canon','joshua',10,11,'canon','psalms',18,13,'free',E'*Yahuah (LORD) also thundered in the heavens, and the Highest gave his voice; hail stones and coals of fire* (Psalm 18:13). The same *great stones from heaven* (Joshua 10:11) that killed *more... than they whom the children of Yashar''el (Israel) slew with the sword* are Yahuah''s voice in the heavens — the battle is fought from above, the hand of the Most High, not the arm of flesh.'),
+    ('canon','joshua',10,11,'canon','psalms',18,14,'free',E'*Yea, he sent out his arrows, and scattered them; and he shot out lightnings, and discomfited them* (Psalm 18:14). As *Yahuah (LORD) discomfited them before Yashar'' el (Israel)* (Joshua 10:10) and then rained *hailstones* on them (10:11), Psalm 18 names the weapons — arrows, lightnings, hail — by which Yahuah scatters the enemy. The victory is the Creator''s, falling from heaven.'),
+    ('canon','joshua',10,11,'jasher','jasher',88,61,'extras',E'*And whilst they were fleeing, Yahuah (the Lord) sent upon them hailstones from heaven, and more of them died by the hailstones, than by the slaughter of the children of Israel* (Jasher 88:61). The very book to which Joshua 10:13 points (*Is not this written in the book of Jasher?*) tells the same scene as *Yahuah (LORD) cast down great stones from heaven upon them... they were more which died with hailstones than they whom the children of Yashar''el (Israel) slew with the sword* (Joshua 10:11) — the two witnesses agree, the heavenly stones outkilled the sword.'),
+    -- THREAD 2 — Yahuah fought for Yashar'el (10:14, 10:42)
+    ('canon','joshua',10,14,'canon','exodus',14,14,'free',E'*Yahuah (LORD) shall fight for you, and ye shall hold your peace* (Exodus 14:14). *That Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel)* (Joshua 10:14) is the promise of the Red Sea kept again — the same hand that needed no help from Yashar''el at the water now needs none on the field of Gibeon. The victory is His.'),
+    ('canon','joshua',10,14,'canon','exodus',14,25,'free',E'*And took off their chariot wheels, that they drave them heavily: so that the Egyptians said, Let us flee from the face of Yashar''el (Israel); for Yahuah (LORD) fighteth for them against the Egyptians* (Exodus 14:25). Even Pharaoh''s host confessed what the Amorites learned under the hailstones: *Yahuah (LORD) fought for Yashar''el (Israel)* (Joshua 10:14). The man of war is the Formed Son who led them out, fighting their battles still.'),
+    ('canon','joshua',10,14,'canon','deuteronomy',1,30,'free',E'*Yahuah Elohaychem (The LORD your God) which goeth before you, he shall fight for you, according to all that he did for you in Egypt before your eyes* (Deuteronomy 1:30). Moses'' word to the wilderness generation is fulfilled before their children''s eyes: *Yahuah (LORD) fought for Yashar''el (Israel)* (Joshua 10:14), exactly *according to all that he did for you in Egypt* — the long day is the Red Sea''s heir.'),
+    ('canon','joshua',10,42,'canon','exodus',14,14,'free',E'*Yahuah (LORD) shall fight for you, and ye shall hold your peace* (Exodus 14:14). *All these kings and their land did Joshua take at one time, because Yahuah Elohim (the LORD God) of Yashar''el (Israel) fought for Yashar''el (Israel)* (Joshua 10:42). The whole conquest of the south is one act of the man of war — the cause is named: Yahuah fought, the host only followed.'),
+    ('canon','joshua',10,42,'canon','deuteronomy',1,30,'free',E'*Yahuah Elohaychem (The LORD your God) which goeth before you, he shall fight for you, according to all that he did for you in Egypt before your eyes* (Deuteronomy 1:30). *Because Yahuah Elohim (the LORD God) of Yashar''el (Israel) fought for Yashar''el (Israel)* (Joshua 10:42) the kings fell at one time — He went before them as Moses foretold, the same Yahuah of Egypt and the wilderness.'),
+    ('canon','joshua',10,42,'canon','joshua',23,3,'free',E'*And ye have seen all that Yahuah Elohaychem (the LORD your God) hath done unto all these nations because of you; for Yahuah Elohaychem (the LORD your God) is he that hath fought for you* (Joshua 23:3). Joshua''s farewell looks back on this very day: *because Yahuah Elohim (the LORD God) of Yashar''el (Israel) fought for Yashar''el (Israel)* (Joshua 10:42). The conquest belongs to Yahuah, start to finish — never to their sword.'),
+    ('canon','joshua',10,42,'canon','joshua',23,10,'free',E'*One man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you, as he hath promised you* (Joshua 23:10). The closing creed of the book confesses what Gibeon proved: *Yahuah Elohim (the LORD God) of Yashar''el (Israel) fought for Yashar''el (Israel)* (Joshua 10:42). The disproportion — one chasing a thousand, five kings taken at one time — is the signature of His hand.'),
+    -- THREAD 3 — the sun and the moon stood still / the long day (10:12, 10:13, 10:14)
+    ('canon','joshua',10,12,'canon','genesis',1,14,'free',E'*And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14). When Joshua cried *Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon* (Joshua 10:12), he spoke to the very luminaries Elohim set for signs and seasons — and their Maker, the Formed Son who led Yashar''el, bent His own creation to a man''s voice.'),
+    ('canon','joshua',10,12,'canon','genesis',1,16,'free',E'*And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also* (Genesis 1:16). The two great lights — *the sun... and the moon* (Joshua 10:12-13) — stood still at the word of the One who made them. The appointed-time rulers of day and night obey their Creator over Gibeon and Ajalon.'),
+    ('canon','joshua',10,12,'canon','habakkuk',3,11,'free',E'*The sun and moon stood still in their habitation: at the light of thine arrows they went, and at the shining of thy glittering spear* (Habakkuk 3:11). Habakkuk''s prayer remembers Gibeon directly: *Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon* (Joshua 10:12). The Creator marches in salvation for His people, and the luminaries halt at His arrows.'),
+    ('canon','joshua',10,13,'canon','2-kings',20,11,'free',E'*And Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* (2 Kings 20:11). As *the sun stood still in the midst of heaven, and hasted not to go down about a whole day* for Joshua (Joshua 10:13), so Yahuah turned the sun BACK ten degrees as a sign for Hezekiah — twice the Maker over-rules the sun''s course at the prayer of a man, the same hand both times.'),
+    ('canon','joshua',10,13,'jasher','jasher',88,64,'extras',E'*And Yahuah (the Lord) hearkened to the voice of Joshua, and the sun stood still in the midst of the heavens, and it stood still six and thirty moments, and the moon also stood still and hastened not to go down a whole day* (Jasher 88:64). Joshua 10:13 names this very book — *Is not this written in the book of Jasher?* — and Jasher answers, telling the long day in full: the sun *stood still in the midst of heaven, and hasted not to go down about a whole day* (Joshua 10:13). The cited witness speaks.'),
+    ('canon','joshua',10,12,'jasher','jasher',88,63,'extras',E'*And when they were smiting, the day was declining toward evening, and Joshua said in the sight of all the people, Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon, until the nation shall have revenged itself upon its enemies* (Jasher 88:63). The book of Jasher records the very prayer Joshua 10:12 preserves — *Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon* — the two witnesses laid side by side.'),
+    ('canon','joshua',10,14,'jasher','jasher',88,65,'extras',E'*And there was no day like that, before it or after it, that Yahuah (the Lord) hearkened to the voice of a man, for Yahuah (the Lord) fought for Israel* (Jasher 88:65). Word for word the cited book confirms Joshua 10:14 — *there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel)*. The Creator answered a man and warred for His people.'),
+    -- THREAD 4 — fear not, thus shall Yahuah do (10:8, 10:25)
+    ('canon','joshua',10,8,'canon','joshua',1,9,'free',E'*Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* (Joshua 1:9). *And Yahuah (LORD) said unto Joshua, Fear them not: for I have delivered them into thine hand* (Joshua 10:8) keeps the commission word of the book''s opening — the same charge to be unafraid because Yahuah goes with him into every battle.'),
+    ('canon','joshua',10,8,'canon','deuteronomy',1,21,'free',E'*Behold, Yahuah Elohayka (the LORD thy God) hath set the land before thee: go up and possess it, as Yahuah Elohim (the LORD God) of thy fathers hath said unto thee; fear not, neither be discouraged* (Deuteronomy 1:21). Moses'' charge at Kadesh — *fear not, neither be discouraged* — is renewed at Gibeon: *Fear them not: for I have delivered them into thine hand* (Joshua 10:8). The wilderness generation refused; this generation obeys and inherits.'),
+    ('canon','joshua',10,25,'canon','joshua',1,9,'free',E'*Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* (Joshua 1:9). Joshua now passes to all Yashar''el the word Yahuah first gave him: *Fear not, nor be dismayed, be strong and of good courage: for thus shall Yahuah (LORD) do to all your enemies against whom ye fight* (Joshua 10:25). The captain hands down the courage he received.'),
+    ('canon','joshua',10,25,'canon','deuteronomy',1,21,'free',E'*Behold, Yahuah Elohayka (the LORD thy God) hath set the land before thee: go up and possess it, as Yahuah Elohim (the LORD God) of thy fathers hath said unto thee; fear not, neither be discouraged* (Deuteronomy 1:21). *Fear not, nor be dismayed, be strong and of good courage: for thus shall Yahuah (LORD) do to all your enemies* (Joshua 10:25) is the Kadesh charge made good — the land set before them, the enemies given into their hand, fear undone by the One who fights for them.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 — the hailstones from heaven (extras: Jasher member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-10-the-hailstones-from-heaven',
+       E'Joshua 10 — Yahuah''s Heavenly Artillery: the Hailstones from Heaven',
+       E'When the five Amorite kings fled before Yashar''el, the battle was not won by the sword. *And it came to pass, as they fled from before Yashar''el (Israel), and were in the going down to Beth-horon, that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah, and they died: they were more which died with hailstones than they whom the children of Yashar''el (Israel) slew with the sword* (Joshua 10:11). This is the heavenly artillery of the Creator — the same weapons Psalm 18 sings in the great theophany: *At the brightness that was before him his thick clouds passed, hail stones and coals of fire* (Psalm 18:12); *Yahuah (LORD) also thundered in the heavens, and the Highest gave his voice; hail stones and coals of fire* (Psalm 18:13); *he shot out lightnings, and discomfited them* (Psalm 18:14). The hand of the Most High fought from above. The book Joshua 10:13 itself points to confirms it: *And whilst they were fleeing, Yahuah (the Lord) sent upon them hailstones from heaven, and more of them died by the hailstones, than by the slaughter of the children of Israel* (Jasher 88:61). The victory falls from heaven, not from the arm of flesh.',
+       sv.verse_id, ev.verse_id, 'extras', 35225
+  FROM _s344_jos10_lookup sv, _s344_jos10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=10 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 — Yahuah fought for Yashar'el (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-10-yahuah-fought-for-yashar-el',
+       E'Joshua 10 — Yahuah Fought for Yashar''el: the Man of War',
+       E'Twice the chapter names the true cause of the victory. *And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel)* (Joshua 10:14); *And all these kings and their land did Joshua take at one time, because Yahuah Elohim (the LORD God) of Yashar''el (Israel) fought for Yashar''el (Israel)* (Joshua 10:42). This is the man of war of the Red Sea: *Yahuah (LORD) shall fight for you, and ye shall hold your peace* (Exodus 14:14) — and even Pharaoh''s host confessed it, *Let us flee from the face of Yashar''el (Israel); for Yahuah (LORD) fighteth for them against the Egyptians* (Exodus 14:25). Moses promised the wilderness generation, *Yahuah Elohaychem (The LORD your God) which goeth before you, he shall fight for you, according to all that he did for you in Egypt before your eyes* (Deuteronomy 1:30), and their children saw it kept. At the book''s close Joshua confesses the whole conquest the same way: *Yahuah Elohaychem (the LORD your God) is he that hath fought for you* (Joshua 23:3); *One man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you, as he hath promised you* (Joshua 23:10). The Formed Son who led them out leads them in; the land is His gift, never their sword.',
+       sv.verse_id, ev.verse_id, 'free', 35228
+  FROM _s344_jos10_lookup sv, _s344_jos10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=10 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 — the sun and the moon stood still / the long day (extras: Jasher members)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-10-the-sun-and-the-moon-stood-still',
+       E'Joshua 10 — The Long Day: the Creator over Sun and Moon Answers a Man''s Voice',
+       E'*Then spake Joshua to Yahuah (LORD)... and he said in the sight of Yashar''el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon. And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies... So the sun stood still in the midst of heaven, and hasted not to go down about a whole day. And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel)* (Joshua 10:12-14). A man commanded the sun and moon, and they obeyed — because the One who heard him is their Maker. *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14); *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night* (Genesis 1:16). The appointed-time luminaries halt at the word of the Formed Son who led Yashar''el. Habakkuk remembers the day: *The sun and moon stood still in their habitation: at the light of thine arrows they went* (Habakkuk 3:11). And the same Yahuah who held the sun for Joshua turned it BACK for Hezekiah: *And Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* (2 Kings 20:11) — twice the Maker over-rules the sun''s course at a man''s prayer. The book Joshua itself cites bears witness: *Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon* (Jasher 88:63); *the sun stood still in the midst of the heavens... and the moon also stood still and hastened not to go down a whole day* (Jasher 88:64); *there was no day like that, before it or after it, that Yahuah (the Lord) hearkened to the voice of a man, for Yahuah (the Lord) fought for Israel* (Jasher 88:65). This is no co-equal counterfeit and no created angel — it is Yahuah, the Creator over His own creation, hearkening to the voice of a man and fighting for His people.',
+       sv.verse_id, ev.verse_id, 'extras', 35231
+  FROM _s344_jos10_lookup sv, _s344_jos10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=10 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 — fear not, thus shall Yahuah do (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-10-fear-not-thus-shall-yahuah-do',
+       E'Joshua 10 — Fear Not, Nor Be Dismayed: Thus Shall Yahuah Do',
+       E'The courage of the conquest is a gift handed down. Yahuah first gives it to Joshua: *And Yahuah (LORD) said unto Joshua, Fear them not: for I have delivered them into thine hand; there shall not a man of them stand before thee* (Joshua 10:8). Then Joshua passes it to all Yashar''el over the necks of the five kings: *Fear not, nor be dismayed, be strong and of good courage: for thus shall Yahuah (LORD) do to all your enemies against whom ye fight* (Joshua 10:25). This is the commission word of the whole book: *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* (Joshua 1:9). And it answers the failure at Kadesh, where Moses charged them in vain: *Behold, Yahuah Elohayka (the LORD thy God) hath set the land before thee: go up and possess it... fear not, neither be discouraged* (Deuteronomy 1:21). The generation that feared perished in the wilderness; the generation that believes Yahuah''s word inherits — for He is with them, and He fights their battles.',
+       sv.verse_id, ev.verse_id, 'free', 35234
+  FROM _s344_jos10_lookup sv, _s344_jos10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=10 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD 1 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 18:12 — *hail stones and coals of fire*; the theophany weapons that fell on the Amorites (Joshua 10:11).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-hailstones-from-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 18:13 — *the Highest gave his voice; hail stones and coals of fire*; the hail is Yahuah''s voice in the heavens.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-hailstones-from-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 18:14 — *he shot out lightnings, and discomfited them*; the same word, Yahuah *discomfited* them at Gibeon (Joshua 10:10).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-hailstones-from-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jasher 88:61 — *Yahuah (the Lord) sent upon them hailstones from heaven, and more of them died by the hailstones*; the book Joshua 10:13 cites, agreeing.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=88 AND tv.verse_number=61
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-hailstones-from-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 2 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 14:14 — *Yahuah (LORD) shall fight for you, and ye shall hold your peace*; the Red Sea promise kept at Gibeon (Joshua 10:14).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-yahuah-fought-for-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 14:25 — even Egypt confessed *Yahuah (LORD) fighteth for them*; the same confession the Amorites learn.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-yahuah-fought-for-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 1:30 — *he shall fight for you, according to all that he did for you in Egypt*; Moses'' word fulfilled before their children''s eyes.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-yahuah-fought-for-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Exodus 14:14 (to 10:42) — the man of war takes all the southern kings at one time, holding their peace.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=42
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-yahuah-fought-for-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Deuteronomy 1:30 (to 10:42) — *he shall fight for you*; the cause of taking the kings at one time.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=42
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-yahuah-fought-for-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Joshua 23:3 — the farewell confession: *Yahuah Elohaychem (the LORD your God) is he that hath fought for you*.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=42
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-yahuah-fought-for-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Joshua 23:10 — *One man of you shall chase a thousand: for... he it is that fighteth for you*; the disproportion is His signature.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=42
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-yahuah-fought-for-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 3 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 1:14 — the luminaries set *for signs, and for seasons*; Joshua speaks to the very lights Elohim made.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-sun-and-the-moon-stood-still'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 1:16 — *two great lights*; the sun and moon halt at their Maker''s word over Gibeon and Ajalon.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-sun-and-the-moon-stood-still'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Habakkuk 3:11 — *The sun and moon stood still in their habitation*; the prophet remembers the long day.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-sun-and-the-moon-stood-still'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'2 Kings 20:11 — Yahuah brings the shadow *ten degrees backward* for Hezekiah; twice He over-rules the sun at a man''s prayer.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=13
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-sun-and-the-moon-stood-still'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Jasher 88:63 — the cited book records the very prayer: *Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon*.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=88 AND tv.verse_number=63
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-sun-and-the-moon-stood-still'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Jasher 88:64 — *the sun stood still in the midst of the heavens... and the moon also stood still*; the book Joshua 10:13 names, speaking.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=13
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=88 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-sun-and-the-moon-stood-still'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Jasher 88:65 — *there was no day like that... that Yahuah (the Lord) hearkened to the voice of a man, for Yahuah (the Lord) fought for Israel*; word for word with 10:14.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=88 AND tv.verse_number=65
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-the-sun-and-the-moon-stood-still'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 4 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joshua 1:9 — *Be strong and of a good courage; be not afraid*; the commission word echoed in *Fear them not* (10:8).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=8
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-fear-not-thus-shall-yahuah-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 1:21 — *fear not, neither be discouraged*; the Kadesh charge the wilderness refused, now obeyed.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=8
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-fear-not-thus-shall-yahuah-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Joshua 1:9 (to 10:25) — Joshua hands down to all Yashar''el the courage Yahuah first gave him.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-fear-not-thus-shall-yahuah-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 1:21 (to 10:25) — the Kadesh charge made good: the enemies given into their hand, fear undone.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s344_jos10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-10-fear-not-thus-shall-yahuah-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session344 — Joshua cross-references complete.'
