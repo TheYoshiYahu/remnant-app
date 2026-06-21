@@ -4085,6 +4085,1489 @@ SELECT t.id, cr.id, m.sort_order, m.member_note
   JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1-samuel_16.sql (1 Samuel 16) -----
+--
+-- 1 Samuel 16 — Samuel sent to Beth-lehem; David anointed; the Spirit of Yahuah comes upon him;
+--   the Spirit departs from Saul. KEYSTONE chapter. Tag 1sa16. Sort band base 36775, step 3.
+--
+-- FRAMEWORK: Yahuah refuses Eliab''s stature and weighs the heart — *Yahuah seeth not as man
+--   seeth; for man looketh on the outward appearance, but Yahuah looketh on the heart* (16:7) —
+--   the direct rebuke of the flesh-credential that crowned Saul (9:2, head and shoulders above
+--   the people) and the standard by which the living-stone is chosen, *disallowed indeed of men,
+--   but chosen of Elohim* (1 Pet 2:4). The youngest, *he keepeth the sheep* (16:11), is fetched
+--   from the flock — the shepherd-king taken *from the sheepfolds* (Ps 78:70), the ruler out of
+--   *Beth-lehem Ephratah* (Micah 5:2). The horn of oil is poured and *the Spirit of Yahuah came
+--   upon David from that day forward* (16:13): the anointed (Mashiach) shepherd-king on whom the
+--   Spirit rests — *the spirit of Yahuah shall rest upon him* (Isa 11:1-2), the Branch out of
+--   Jesse''s root, the seed of David through whom the Saviour comes (Acts 13:22-23), the Formed
+--   Son who took flesh as David''s seed (NOT co-equal-trinity, NOT Arian — the Spirit OF Yahuah
+--   rests upon the chosen one). And the Spirit *departed from Saul* (16:14), Yahuah''s withdrawal
+--   from the king who rejected the word — the opposite of David''s plea *take not thy holy spirit
+--   from me* (Ps 51:11).
+--
+-- 1 Samuel 16 coverage:
+--   v.6-7   NT:     1 Peter 2:4 (living stone, disallowed of men but chosen of Elohim);
+--                   2 Corinthians 10:7 (do ye look on things after the outward appearance)
+--           Extras: none warranted
+--           Tanakh: 1 Samuel 9:2 (Saul higher than any of the people — the stature refused);
+--                   Psalm 89:20 (I have found David my servant — the heart-chosen king)
+--   v.11-12 NT:     none warranted (shepherd-from-the-flock weaves Tanakh-laterally + to Micah)
+--           Extras: none warranted
+--           Tanakh: Psalm 78:70 (took him from the sheepfolds); Psalm 78:71 (from following the
+--                   ewes... to feed Jacob his people); Micah 5:2 (out of Beth-lehem Ephratah the ruler)
+--   v.13    NT:     Acts 13:22 (David... a man after mine own heart); Acts 13:23 (of this man''s
+--                   seed... a Saviour, Yahusha)
+--           Extras: none warranted
+--           Tanakh: Isaiah 11:1 (rod out of the stem of Jesse, a Branch); Isaiah 11:2 (the spirit
+--                   of Yahuah shall rest upon him); Psalm 89:20 (with my holy oil have I anointed him)
+--   v.14    NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: 1 Samuel 18:12 (Yahuah was departed from Saul); 1 Samuel 28:15 (Elohim is
+--                   departed from me, answereth me no more); Psalm 51:11 (take not thy holy spirit from me)
+--   v.15-23 NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: none warranted (David the harper soothing Saul — narrative bridge; the evil-spirit
+--                   theme carried in the v.14 withdrawal thread; no external add warranted)
+--
+-- THREADS (4):
+--   1-samuel-16-yahuah-looketh-on-the-heart-not-the-outward-appearance      [Tanakh+NT] election by heart not flesh/stature
+--        members: 1sa9:2 (Saul higher than any), ps89:20 (found David my servant), 1pet2:4 (chosen of Elohim, disallowed of men), 2cor10:7 (look on outward appearance)
+--   1-samuel-16-he-keepeth-the-sheep-the-shepherd-taken-from-the-flock      [Tanakh] David from the sheepfolds, the Beth-lehem shepherd-ruler
+--        members: ps78:70 (took him from the sheepfolds), ps78:71 (from following the ewes to feed Jacob), micah5:2 (out of Beth-lehem Ephratah the ruler)
+--   1-samuel-16-the-horn-of-oil-and-the-spirit-of-yahuah-came-upon-david    [Tanakh+NT] the anointed shepherd-king/the Branch with the Spirit
+--        members: isa11:1 (rod/Branch out of Jesse), isa11:2 (spirit of Yahuah rests upon him), ps89:20 (with my holy oil anointed him), acts13:22 (David a man after mine own heart), acts13:23 (of his seed a Saviour, Yahusha)
+--   1-samuel-16-the-spirit-of-yahuah-departed-from-saul                     [Tanakh] Yahuah's withdrawal from the rejected king
+--        members: 1sa18:12 (Yahuah departed from Saul), 1sa28:15 (Elohim departed, answereth no more), ps51:11 (take not thy holy spirit from me)
+
+CREATE TEMP VIEW _s340_1sa16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Yahuah looketh on the heart, not the outward appearance
+    ('canon','1-samuel',16,7,'canon','1-samuel',9,2,'free',
+      E'*And he had a son, whose name was Saul, a choice young man, and a goodly: and there was not among the children of Yashar''el (Israel) a goodlier person than he: from his shoulders and upward he was higher than any of the people* (1 Samuel 9:2). This is the very stature Yahuah now refuses in Eliab — ''*Look not on his countenance, or on the height of his stature... for Yahuah seeth not as man seeth; for man looketh on the outward appearance, but Yahuah looketh on the heart*'' (1 Samuel 16:7). Saul was chosen for the frame man sees and failed; the next king is weighed by the heart Yahuah sees.'),
+    ('canon','1-samuel',16,7,'canon','psalms',89,20,'free',
+      E'*I have found David my servant; with my holy oil have I anointed him* (Psalm 89:20). What the heart-standard finds is named outright in the covenant-psalm: the king Yahuah sees and chooses is David, the servant anointed with the holy oil. ''*Yahuah looketh on the heart*'' (1 Samuel 16:7) is the searching that lands on the man after his own heart, not on the goodliest stature.'),
+    ('canon','1-samuel',16,7,'canon','1-peter',2,4,'free',
+      E'*To whom coming, as unto a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious* (1 Peter 2:4). The pattern of election is one: ''*man looketh on the outward appearance, but Yahuah looketh on the heart*'' (1 Samuel 16:7). The stone men disallow, Yahuah chooses; the son passed over by his own household is the one Yahuah anoints — David''s election by the heart is the shape of the chosen, precious One disallowed of men.'),
+    ('canon','1-samuel',16,7,'canon','2-corinthians',10,7,'free',
+      E'*Do ye look on things after the outward appearance?* (2 Corinthians 10:7). Paul presses the very question Samuel had to unlearn at Beth-lehem: the eye that judges by the visible frame judges wrongly. ''*Man looketh on the outward appearance, but Yahuah looketh on the heart*'' (1 Samuel 16:7) — the same correction, that Yahuah''s reckoning is not man''s sight.'),
+    -- Thread 2: He keepeth the sheep — the shepherd taken from the flock
+    ('canon','1-samuel',16,11,'canon','psalms',78,70,'free',
+      E'*He chose David also his servant, and took him from the sheepfolds* (Psalm 78:70). The youngest, who ''*keepeth the sheep*'' (1 Samuel 16:11) and is fetched from the flock to be anointed, is the very David the psalm sings of — chosen and taken from the sheepfolds. The shepherd of the flock is made shepherd of the people.'),
+    ('canon','1-samuel',16,11,'canon','psalms',78,71,'free',
+      E'*From following the ewes great with young he brought him to feed Jacob his people, and Yashar''el (Israel) his inheritance* (Psalm 78:71). David ''*keepeth the sheep*'' (1 Samuel 16:11) and is brought in from the flock — and that flock-keeping is the apprenticeship of the throne: the one who followed the ewes is set to feed Jacob, Yahuah''s own inheritance, the shepherd-king pattern.'),
+    ('canon','1-samuel',16,12,'canon','micah',5,2,'free',
+      E'*But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar''el (Israel); whose goings forth have been from of old, from everlasting* (Micah 5:2). Samuel comes to Beth-lehem and Yahuah says of the shepherd-boy, ''*Arise, anoint him: for this is he*'' (1 Samuel 16:12). The town of David''s anointing is the town from which the ruler over Yashar''el comes forth — the Beth-lehem shepherd-king whose goings forth are from everlasting, the seed of David who takes flesh.'),
+    -- Thread 3: The horn of oil, and the Spirit of Yahuah came upon David
+    ('canon','1-samuel',16,13,'canon','isaiah',11,1,'free',
+      E'*And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1). David, the son of Jesse anointed at Beth-lehem (1 Samuel 16:13), is the stem from which the Branch grows: the Davidic seed-line planted here flowers in the Messiah, the rod out of Jesse — the throne established in the root the oil now touches.'),
+    ('canon','1-samuel',16,13,'canon','isaiah',11,2,'free',
+      E'*And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD)* (Isaiah 11:2). What comes upon David when ''*the Spirit of Yahuah (LORD) came upon David from that day forward*'' (1 Samuel 16:13) is the same Spirit prophesied to rest on the Branch out of Jesse — the anointed shepherd-king bearing the Spirit OF Yahuah, the Formed Son drawn from the Formless who took flesh as David''s seed, on whom the fulness of the Spirit rests.'),
+    ('canon','1-samuel',16,13,'canon','psalms',89,20,'free',
+      E'*I have found David my servant; with my holy oil have I anointed him* (Psalm 89:20). The horn of oil Samuel pours (1 Samuel 16:13) is the holy oil of the covenant-psalm: David anointed is Yahuah''s found servant, the king sworn the everlasting throne. The oil that runs over the shepherd-boy is the seal of the Davidic covenant.'),
+    ('canon','1-samuel',16,13,'canon','acts',13,22,'free',
+      E'*And when he had removed him, he raised up unto them David to be their king; to whom also he gave testimony, and said, I have found David the son of Jesse, a man after mine own heart, which shall fulfil all my will* (Acts 13:22). Paul preaches the Beth-lehem anointing forward: the David on whom ''*the Spirit of Yahuah came... from that day forward*'' (1 Samuel 16:13) is the man after Yahuah''s own heart, raised up to be king — the heart-chosen shepherd Samuel anointed with the horn of oil.'),
+    ('canon','1-samuel',16,13,'canon','acts',13,23,'free',
+      E'*Of this man''s seed hath Elohim (God) according to his promise raised unto Yashar''el (Israel) a Saviour, Yahusha (Jesus)* (Acts 13:23). The Spirit-anointed David of 1 Samuel 16:13 is the head of the seed-line through which the Saviour comes: the oil poured on the shepherd at Beth-lehem opens onto the promise that out of David''s seed Yahuah raises Yahusha — the Branch, the Formed Son who took flesh as David''s offspring.'),
+    -- Thread 4: The Spirit of Yahuah departed from Saul
+    ('canon','1-samuel',16,14,'canon','1-samuel',18,12,'free',
+      E'*And Saul was afraid of David, because Yahuah (LORD) was with him, and was departed from Saul* (1 Samuel 18:12). The withdrawal first stated here — ''*the Spirit of Yahuah (LORD) departed from Saul*'' (1 Samuel 16:14) — is the shadow that grows over the rest of his reign: the Spirit that rests on David is the very presence gone from Saul, and the rejected king dreads the man Yahuah is with.'),
+    ('canon','1-samuel',16,14,'canon','1-samuel',28,15,'free',
+      E'*And Saul answered, I am sore distressed; for the Philistines make war against me, and Elohim (God) is departed from me, and answereth me no more, neither by prophets, nor by dreams* (1 Samuel 28:15). Saul''s end confesses what began at the anointing of David: ''*the Spirit of Yahuah departed from Saul, and an evil spirit from Yahuah troubled him*'' (1 Samuel 16:14). The king who rejected the word of Yahuah is left without answer — the silence is the ripened withdrawal.'),
+    ('canon','1-samuel',16,14,'canon','psalms',51,11,'free',
+      E'*Cast me not away from thy presence; and take not thy holy spirit from me* (Psalm 51:11). David''s plea is the mirror of Saul''s loss: he has seen ''*the Spirit of Yahuah departed from Saul*'' (1 Samuel 16:14) and prays the contrary for himself, that the Spirit which came upon him at Beth-lehem not be taken away. To lose Yahuah''s presence is the one ruin the anointed king fears above all.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-16-yahuah-looketh-on-the-heart-not-the-outward-appearance',
+       E'Yahuah looketh on the heart, not the outward appearance',
+       E'When the eldest is brought near, Samuel''s eye does what man''s eye always does: *Surely the LORD''S anointed is before him* (1 Samuel 16:6). But Yahuah refuses him — *Look not on his countenance, or on the height of his stature; because I have refused him: for Yahuah (LORD) seeth not as man seeth; for man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart* (1 Samuel 16:7). This is the undoing of the flesh-credential that crowned Saul: *there was not among the children of Yashar''el (Israel) a goodlier person than he: from his shoulders and upward he was higher than any of the people* (1 Samuel 9:2) — chosen for the frame man sees, and failed. The heart-search lands instead on David: *I have found David my servant; with my holy oil have I anointed him* (Psalm 89:20). And the pattern runs the whole library: the chosen one is *a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious* (1 Peter 2:4), so that Paul can press the very correction Samuel had to learn — *Do ye look on things after the outward appearance?* (2 Corinthians 10:7). Election is by the heart Yahuah sees, never the stature man admires.',
+       sv.verse_id, ev.verse_id, 'free', 36775
+  FROM _s340_1sa16_lookup sv, _s340_1sa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=16 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-16-he-keepeth-the-sheep-the-shepherd-taken-from-the-flock',
+       E'He keepeth the sheep — the shepherd taken from the flock',
+       E'The chosen king is not in the house when Samuel arrives: *There remaineth yet the youngest, and, behold, he keepeth the sheep* (1 Samuel 16:11); he must be sent for and fetched from the flock, and when he comes Yahuah says, *Arise, anoint him: for this is he* (1 Samuel 16:12). This flock-keeping is the throne''s apprenticeship sung in the psalm: *He chose David also his servant, and took him from the sheepfolds: from following the ewes great with young he brought him to feed Jacob his people, and Yashar''el (Israel) his inheritance* (Psalm 78:70-71) — the one who guarded sheep is set to shepherd the people. And the town of his anointing is the town the prophet names for the everlasting ruler: *But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar''el (Israel); whose goings forth have been from of old, from everlasting* (Micah 5:2). The shepherd-boy of Beth-lehem is the shepherd-king, and his town the well-spring of the Ruler whose seed takes flesh.',
+       sv.verse_id, ev.verse_id, 'free', 36778
+  FROM _s340_1sa16_lookup sv, _s340_1sa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=16 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-16-the-horn-of-oil-and-the-spirit-of-yahuah-came-upon-david',
+       E'The horn of oil, and the Spirit of Yahuah came upon David',
+       E'The keystone of the chapter: *Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of Yahuah (LORD) came upon David from that day forward* (1 Samuel 16:13). The oil is the holy oil of the covenant — *I have found David my servant; with my holy oil have I anointed him* (Psalm 89:20) — and the Spirit that comes upon the shepherd-king is the very Spirit prophesied to rest on the Branch out of David''s line: *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1), *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD)* (Isaiah 11:2). David anointed is the head of the seed-line, the man after Yahuah''s own heart: *I have found David the son of Jesse, a man after mine own heart, which shall fulfil all my will* (Acts 13:22), and *Of this man''s seed hath Elohim (God) according to his promise raised unto Yashar''el (Israel) a Saviour, Yahusha (Jesus)* (Acts 13:23). The horn of oil over the shepherd at Beth-lehem opens onto the Messiah — the anointed One on whom the Spirit OF Yahuah rests, the Formed Son drawn from the Formless Father, who took flesh as David''s seed; not a co-equal person and not a creature, but Yahuah''s Anointed bearing his Father''s Spirit.',
+       sv.verse_id, ev.verse_id, 'free', 36781
+  FROM _s340_1sa16_lookup sv, _s340_1sa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=16 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-16-the-spirit-of-yahuah-departed-from-saul',
+       E'The Spirit of Yahuah departed from Saul',
+       E'In the same breath that the Spirit rests on David, it is withdrawn from the rejected king: *But the Spirit of Yahuah (LORD) departed from Saul, and an evil spirit from Yahuah (LORD) troubled him* (1 Samuel 16:14). This withdrawal is the shadow that lengthens over the rest of his reign — *And Saul was afraid of David, because Yahuah (LORD) was with him, and was departed from Saul* (1 Samuel 18:12) — and it ripens into the silence of his end: *Elohim (God) is departed from me, and answereth me no more, neither by prophets, nor by dreams* (1 Samuel 28:15). The king who rejected the word of Yahuah is left without his presence. It is precisely this loss that David, fallen and repentant, prays never to suffer: *Cast me not away from thy presence; and take not thy holy spirit from me* (Psalm 51:11). The presence that came upon David and departed from Saul is the one treasure the anointed king fears to lose.',
+       sv.verse_id, ev.verse_id, 'free', 36784
+  FROM _s340_1sa16_lookup sv, _s340_1sa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=16 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- Members thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 9:2 — *from his shoulders and upward he was higher than any of the people*: the stature that crowned Saul, the flesh-credential Yahuah now refuses in Eliab.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=9 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-yahuah-looketh-on-the-heart-not-the-outward-appearance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 89:20 — *I have found David my servant; with my holy oil have I anointed him*: the heart-search lands on the chosen king, not the goodliest stature.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-yahuah-looketh-on-the-heart-not-the-outward-appearance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Peter 2:4 — *a living stone, disallowed indeed of men, but chosen of Elohim*: the chosen-by-Yahuah / disallowed-by-men pattern David''s election sets.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-yahuah-looketh-on-the-heart-not-the-outward-appearance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'2 Corinthians 10:7 — *Do ye look on things after the outward appearance?*: Paul presses the very correction Samuel had to learn at Beth-lehem.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=10 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-yahuah-looketh-on-the-heart-not-the-outward-appearance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 78:70 — *He chose David also his servant, and took him from the sheepfolds*: the shepherd-boy who keepeth the sheep, fetched from the flock to be anointed.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=11
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=70
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-he-keepeth-the-sheep-the-shepherd-taken-from-the-flock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 78:71 — *he brought him to feed Jacob his people, and Yashar''el his inheritance*: flock-keeping is the apprenticeship of the shepherd-king.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=11
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=71
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-he-keepeth-the-sheep-the-shepherd-taken-from-the-flock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Micah 5:2 — *out of thee shall he come forth... that is to be ruler in Yashar''el; whose goings forth have been... from everlasting*: the Beth-lehem of David''s anointing is the town of the everlasting Ruler.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=12
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-he-keepeth-the-sheep-the-shepherd-taken-from-the-flock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 11:1 — *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots*: David the son of Jesse is the stem from which the Branch grows.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-the-horn-of-oil-and-the-spirit-of-yahuah-came-upon-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 11:2 — *the spirit of Yahuah shall rest upon him*: the same Spirit that came upon David, resting in fulness on the Branch — the Formed Son bearing the Father''s Spirit.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-the-horn-of-oil-and-the-spirit-of-yahuah-came-upon-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 89:20 — *with my holy oil have I anointed him*: the horn of oil Samuel pours is the holy oil of the Davidic covenant.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-the-horn-of-oil-and-the-spirit-of-yahuah-came-upon-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 13:22 — *I have found David the son of Jesse, a man after mine own heart*: Paul preaches the Beth-lehem anointing forward — the heart-chosen Spirit-anointed king.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-the-horn-of-oil-and-the-spirit-of-yahuah-came-upon-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Acts 13:23 — *Of this man''s seed... a Saviour, Yahusha*: the Spirit-anointed David is head of the seed-line through which the Saviour comes.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-the-horn-of-oil-and-the-spirit-of-yahuah-came-upon-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 18:12 — *Yahuah was with him, and was departed from Saul*: the withdrawal of v.14 lengthening into Saul''s dread of the man Yahuah is with.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=14
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=18 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-the-spirit-of-yahuah-departed-from-saul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Samuel 28:15 — *Elohim is departed from me, and answereth me no more*: the ripened silence of the king from whom the Spirit departed.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=14
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-the-spirit-of-yahuah-departed-from-saul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 51:11 — *take not thy holy spirit from me*: David''s plea is the mirror of Saul''s loss — the one ruin the anointed king fears above all.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=16 AND sv.verse_number=14
+  JOIN _s340_1sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-16-the-spirit-of-yahuah-departed-from-saul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_17.sql (1 Samuel 17) -----
+--
+-- Book/chapter: 1 Samuel 17    Tag: 1sa17    View: _s340_1sa17_lookup
+-- Sort band: base 36800, step 3  ->  36800, 36803, 36806, 36809, 36812, 36815
+--
+-- KEYSTONE CHAPTER: David and Goliath. The shepherd-champion who stands for his people,
+-- slays the defier of the living Elohim with a stone, and confesses the battle is Yahuah's.
+--
+-- 1 Samuel 17 coverage:
+--   v.8-10  (Goliath: choose you a man... let him come down to me; I defy the armies of Yashar'el)
+--        NT:     Hebrews 11:33-34 (through faith subdued kingdoms... turned to flight the armies of the aliens) -> THREAD 6
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 17:51-52 (one man's victory becomes the people's rout) -> THREAD 6
+--   v.15,34-37 (David from the sheep; the lion and the bear; Yahuah will deliver me)
+--        NT:     Hebrews 11:32-34 (David also... subdued kingdoms, stopped the mouths of lions) -> THREAD 3
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 16:11-13 (the youngest, who keepeth the sheep, anointed); Psalm 144:1
+--                (teacheth my hands to war) -> THREAD 3
+--   v.26,36 (who is this uncircumcised Philistine, that he should defy the armies of the living Elohim)
+--        NT:     1 John 4:4 (greater is he that is in you, than he that is in the world) -> THREAD 2
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 20:1-4 (be not afraid... Yahuah Elohaychem goeth with you, to fight for you);
+--                1 Samuel 14:6 (no restraint to Yahuah to save by many or by few) -> THREAD 2
+--   v.45-47 (I come to thee in the name of Yahuah Tseva'ot... Yahuah saveth not with sword and spear;
+--            the battle is Yahuah's)  -- ★★★ keystone confession
+--        NT:     none warranted directly (Heb 11 carried on THREAD 3/6)
+--        Extras: 1 Maccabees 3:18-19 (the victory of battle stands not in the multitude of an host;
+--                but strength comes from heaven) -> THREAD 1
+--        Tanakh: Zechariah 4:6 (not by might, nor by power, but by my spirit); 2 Chronicles 20:15
+--                (the battle is not yours, but Elohim's); 2 Chronicles 20:17 (stand ye still, and see
+--                the salvation of Yahuah); 1 Samuel 14:6 -> THREAD 1
+--   v.40,49-51 (five smooth stones; the stone sunk into his forehead; he fell upon his face; cut off his head)
+--        NT:     Romans 16:20 (the Elohim of peace shall bruise Satan under your feet shortly) -> THREAD 4
+--        Extras: none warranted
+--        Tanakh: Genesis 3:15 (it shall bruise thy head, and thou shalt bruise his heel) -> THREAD 4
+--   v.32-33,38-40 (David refuses Saul's armour; takes staff, sling, five stones — the weak made the deliverer)
+--        NT:     none warranted directly
+--        Extras: none warranted
+--        Tanakh: handled within THREAD 5 (the youth, the despised, the chosen vessel)
+--   v.42-44 (the Philistine disdained him; cursed David by his gods) -> THREAD 5 source (the despised deliverer)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 16:7 (Yahuah seeth not as man seeth; man looketh on the outward appearance,
+--                but Yahuah looketh on the heart) -> THREAD 5
+--   v.1-7,11-14,16-25,27-31,52-58 (setting, ranks, forty days, Eliab's rebuke, the rout, Saul's enquiry)
+--        narrative scaffolding; framework weight carried by the threads above; none warranted standalone
+--
+-- THREADS:
+--   1-samuel-17-the-battle-is-yahuahs-he-saveth-not-with-sword-and-spear (extras)
+--        -> Tanakh (Zechariah, 2 Chronicles x2, 1 Samuel 14) + Extras (1 Maccabees)
+--   1-samuel-17-who-is-this-uncircumcised-that-defieth-the-armies-of-the-living-elohim (free)
+--        -> Tanakh (Deuteronomy, 1 Samuel 14) + NT (1 John)
+--   1-samuel-17-the-shepherd-from-the-sheep-who-slew-the-lion-and-the-bear (free)
+--        -> Tanakh (1 Samuel 16, Psalm 144) + NT (Hebrews)
+--   1-samuel-17-the-stone-that-smote-the-defiers-head-the-seed-bruises-the-serpent (free)
+--        -> Tanakh (Genesis) + NT (Romans)
+--   1-samuel-17-the-despised-youth-yahuah-looketh-on-the-heart (free)
+--        -> Tanakh (1 Samuel 16)
+--   1-samuel-17-one-champion-stands-and-the-whole-people-prevail (free)
+--        -> Tanakh (1 Samuel 17) + NT (Hebrews)
+--
+-- Framework-load-bearing framing:
+--   * 17:45-47 ★★★ keystone — David frames the duel as Yahuah's own war: the deliverance belongs to
+--     Yahuah Tseva'ot, won by His Spirit and not the arm of flesh. Bound to Zechariah's "not by might",
+--     Jehoshaphat's "the battle is not yours, but Elohim's", Jonathan's "many or few", and the
+--     extra-canonical witness of 1 Maccabees ("strength comes from heaven"). Forward/lateral weave, the
+--     canon's recurring grammar of deliverance — NEVER human triumphalism.
+--   * 17:26,36 — the uncircumcised defier of the LIVING Elohim is the serpent-seed posture (Gen 3:15
+--     enmity); David's indignation is covenant zeal, and Deut 20 is the Torah ground for fearlessness in
+--     Yahuah's battle. 1 John 4:4 (greater is he that is in you) reads forward, the overcomer's confidence.
+--   * 17:49-51 ★★ — the unlikely deliverer crushes the giant's head with a stone: the seed of the woman
+--     bruising the serpent's head (Gen 3:15), which Romans 16:20 carries to its consummation. The Formed-
+--     Son type: David the anointed shepherd-champion (one man's victory = the people's salvation).
+--   * 17:15,34-37 — David comes FROM THE SHEEP; the shepherd who fought lion and bear is the anointed of
+--     1 Sam 16 and the warrior-king of Psalm 144 ("teacheth my hands to war"). Hebrews 11 reads David and
+--     the prophets as faith. A type of the Anointed Shepherd, NOT mere heroism.
+--   * 17:42 — the Philistine DISDAINED him "for he was but a youth"; man looks on the outward appearance,
+--     Yahuah on the heart (1 Sam 16:7). The despised chosen vessel is the canon's pattern.
+
+CREATE TEMP VIEW _s340_1sa17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the battle is Yahuah's; he saveth not with sword and spear
+    ('canon','1-samuel',17,47,'canon','zechariah',4,6,'free',
+      E'*Then he answered and spake unto me, saying, This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). David''s confession in the valley — *Yahuah (LORD) saveth not with sword and spear: for the battle is the LORD''S* (1 Samuel 17:47) — is the same word Zechariah hears over the rebuilding: deliverance is won by Yahuah''s Spirit, never the arm of flesh.'),
+    ('canon','1-samuel',17,47,'canon','2-chronicles',20,15,'free',
+      E'*Be not afraid nor dismayed by reason of this great multitude; for the battle is not yours, but Elohim''s (God''s)* (2 Chronicles 20:15). Jehoshaphat hears in Yahudah (Judah) exactly what David proclaims in the valley of Elah — *the battle is the LORD''S, and he will give you into our hands* (1 Samuel 17:47); the war belongs to Yahuah, and so does the victory.'),
+    ('canon','1-samuel',17,47,'canon','2-chronicles',20,17,'free',
+      E'*Ye shall not need to fight in this battle: set yourselves, stand ye still, and see the salvation of Yahuah (LORD) with you, O Yahudah (Judah) and Jerusalem* (2 Chronicles 20:17). The same trust David carries against Goliath — *Yahuah (LORD) saveth not with sword and spear* (1 Samuel 17:47) — Yahuah speaks back to Yahudah: stand still, and watch Me save.'),
+    ('canon','1-samuel',17,47,'canon','1-samuel',14,6,'free',
+      E'*Come, and let us go over unto the garrison of these uncircumcised: it may be that Yahuah (LORD) will work for us: for there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). Jonathan ventured against the garrison on this creed, and David preaches it whole in the valley — *Yahuah (LORD) saveth not with sword and spear* (1 Samuel 17:47): the number and the weapon are nothing to Yahuah.'),
+    ('canon','1-samuel',17,47,'apocrypha','1-maccabees',3,18,'extras',
+      E'*To whom Judas answered, It is no hard matter for many to be shut up in the hands of a few; and with Yahuah (God) of heaven it is all one, to deliver with a great multitude, or a small company* (1 Maccabees 3:18). Generations later Yahudah Maccabee, facing a mighty host with a small company, confesses David''s very creed — *Yahuah (LORD) saveth not with sword and spear: for the battle is the LORD''S* (1 Samuel 17:47); the deliverance is reckoned to Yahuah, not to numbers.'),
+    ('canon','1-samuel',17,47,'apocrypha','1-maccabees',3,19,'extras',
+      E'*For the victory of battle stands not in the multitude of an host; but strength comes from heaven* (1 Maccabees 3:19). This is the marrow of David''s word to the assembly — *all this assembly shall know that Yahuah (LORD) saveth not with sword and spear* (1 Samuel 17:47); the strength that wins the field comes down from Yahuah, and the host learns it.'),
+
+    -- THREAD 2: who is this uncircumcised, that he should defy the living Elohim
+    ('canon','1-samuel',17,26,'canon','deuteronomy',20,1,'free',
+      E'*When thou goest out to battle against thine enemies, and seest horses, and chariots, and a people more than thou, be not afraid of them: for Yahuah Elohayka (the LORD thy God) is with thee, which brought thee up out of the land of Egypt* (Deuteronomy 20:1). David''s indignation — *who is this uncircumcised Philistine, that he should defy the armies of the living Elohim (God)?* (1 Samuel 17:26) — is the Torah''s own posture: the size of the champion is nothing where Yahuah goes out with His people.'),
+    ('canon','1-samuel',17,26,'canon','deuteronomy',20,4,'free',
+      E'*For Yahuah Elohaychem (the LORD your God) is he that goeth with you, to fight for you against your enemies, to save you* (Deuteronomy 20:4). While the host is dismayed, David alone speaks Torah''s confidence — *who is this uncircumcised Philistine, that he should defy the armies of the living Elohim (God)?* (1 Samuel 17:26); Yahuah Himself goes out to fight for His people, so the defier defies the living Elohim, not merely men.'),
+    ('canon','1-samuel',17,36,'canon','1-samuel',14,6,'free',
+      E'*for there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). David counts the giant as one more lion or bear — *this uncircumcised Philistine shall be as one of them, seeing he hath defied the armies of the living Elohim (God)* (1 Samuel 17:36) — the same fearless reckoning Jonathan made: against the living Elohim no Philistine, great or small, can stand.'),
+    ('canon','1-samuel',17,36,'canon','1-john',4,4,'free',
+      E'*Ye are of Elohim (God), little children, and have overcome them: because greater is he that is in you, than he that is in the world* (1 John 4:4). David''s certainty that the defier of *the armies of the living Elohim (God)* (1 Samuel 17:36) is already overcome is the overcomer''s confidence carried forward: the One who is in His own is greater than every champion of the world.'),
+
+    -- THREAD 3: the shepherd from the sheep who slew the lion and the bear
+    ('canon','1-samuel',17,34,'canon','1-samuel',16,11,'free',
+      E'*And he said, There remaineth yet the youngest, and, behold, he keepeth the sheep. And Samuel said unto Jesse, Send and fetch him: for we will not sit down till he come hither* (1 Samuel 16:11). The shepherd who tells Saul *Thy servant kept his father''s sheep, and there came a lion, and a bear* (1 Samuel 17:34) is the same youngest son fetched from the flock and anointed; the keeper of the sheep is Yahuah''s chosen deliverer.'),
+    ('canon','1-samuel',17,37,'canon','1-samuel',16,13,'free',
+      E'*Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of Yahuah (LORD) came upon David from that day forward* (1 Samuel 16:13). David''s confidence — *Yahuah (LORD) that delivered me out of the paw of the lion, and out of the paw of the bear, he will deliver me out of the hand of this Philistine* (1 Samuel 17:37) — rests on this: the Spirit of Yahuah came upon the anointed shepherd, and the same Yahuah who guarded the flock will guard His people.'),
+    ('canon','1-samuel',17,37,'canon','psalms',144,1,'free',
+      E'*Blessed be Yahuah (LORD) my strength, which teacheth my hands to war, and my fingers to fight* (Psalm 144:1). The shepherd who slew lion and bear and trusts Yahuah to deliver him from the Philistine — *he will deliver me out of the hand of this Philistine* (1 Samuel 17:37) — sings later as king the source of that skill: it was Yahuah who taught his hands to war.'),
+    ('canon','1-samuel',17,37,'canon','hebrews',11,32,'free',
+      E'*And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets* (Hebrews 11:32). The roll of faith names David among the deliverers; his word to Saul — *Yahuah (LORD)... will deliver me out of the hand of this Philistine* (1 Samuel 17:37) — is the very faith Hebrews remembers, the trust that subdued kingdoms.'),
+    ('canon','1-samuel',17,34,'canon','hebrews',11,33,'free',
+      E'*Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions* (Hebrews 11:33). David''s shepherd-testimony — *there came a lion, and a bear, and took a lamb out of the flock... and slew him* (1 Samuel 17:34-35) — is read by Hebrews as faith that *stopped the mouths of lions*; the hand that guarded the flock is the hand of faith.'),
+
+    -- THREAD 4: the stone that smote the defier's head; the seed bruises the serpent
+    ('canon','1-samuel',17,49,'canon','genesis',3,15,'free',
+      E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). The first promise sets the seed of the woman against the serpent''s seed, head against heel — and here the unlikely deliverer''s stone *sunk into his forehead* (1 Samuel 17:49) and the defier *fell upon his face to the earth*; the enmity runs the whole canon, and the head of the proud is brought down.'),
+    ('canon','1-samuel',17,51,'canon','genesis',3,15,'free',
+      E'*it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). David *cut off his head therewith* (1 Samuel 17:51) — the champion who defied the living Elohim is undone head-first, a figure of the serpent''s head bruised by the woman''s seed; the anointed shepherd is the type of the Seed who crushes the enemy.'),
+    ('canon','1-samuel',17,51,'canon','romans',16,20,'free',
+      E'*And the Elohim (God) of peace shall bruise Satan under your feet shortly. The grace of our Lord Yahusha HaMashiach (Lord Jesus Christ) be with you. Amen* (Romans 16:20). The promise of Genesis 3:15 that David''s victory foreshadows — the defier''s head taken off, *and slew him, and cut off his head therewith* (1 Samuel 17:51) — Romans carries to its end: the serpent crushed under the feet of Yahuah''s people through the anointed Deliverer.'),
+
+    -- THREAD 5: the despised youth; Yahuah looketh on the heart
+    ('canon','1-samuel',17,42,'canon','1-samuel',16,7,'free',
+      E'*But Yahuah (LORD) said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him... for Yahuah (LORD) seeth not as man seeth; for man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart* (1 Samuel 16:7). The Philistine judges by the eye — *he disdained him: for he was but a youth, and ruddy, and of a fair countenance* (1 Samuel 17:42) — exactly the error Yahuah warned against; the deliverer the world disdains is the one Yahuah chose by the heart.'),
+
+    -- THREAD 6: one champion stands, and the whole people prevail
+    ('canon','1-samuel',17,8,'canon','1-samuel',17,51,'free',
+      E'*Therefore David ran, and stood upon the Philistine, and took his sword... and slew him, and cut off his head therewith. And when the Philistines saw their champion was dead, they fled* (1 Samuel 17:51). Goliath set the terms of single combat — *choose you a man for you, and let him come down to me* (1 Samuel 17:8) — one champion for all; and the terms hold in reverse: when the one champion of Yashar''el (Israel) prevails, the enemy is broken for the whole people.'),
+    ('canon','1-samuel',17,9,'canon','1-samuel',17,52,'free',
+      E'*And the men of Yashar''el (Israel) and of Yahudah (Judah) arose, and shouted, and pursued the Philistines... And the wounded of the Philistines fell down by the way to Shaaraim, even unto Gath, and unto Ekron* (1 Samuel 17:52). The wager was that one man''s fight would settle a whole nation''s fate — *if he be able to fight with me... then will we be your servants* (1 Samuel 17:9) — and so David''s lone victory becomes the rout of both houses; one champion''s triumph is the people''s deliverance.'),
+    ('canon','1-samuel',17,9,'canon','hebrews',11,34,'free',
+      E'*out of weakness were made strong, waxed valiant in fight, turned to flight the armies of the aliens* (Hebrews 11:34). The single-combat wager — *if I prevail against him, and kill him, then shall ye be our servants* (1 Samuel 17:9) — turns on the deliverer Hebrews remembers by faith: out of a youth''s weakness Yahuah made strength, and *turned to flight the armies of the aliens*.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-17-the-battle-is-yahuahs-he-saveth-not-with-sword-and-spear', E'The battle is Yahuah''s: he saveth not with sword and spear', E'When Goliath comes with sword and spear and shield, David answers with the Name: *Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of the armies of Yashar''el (Israel), whom thou hast defied* (1 Samuel 17:45). He tells the whole assembly why the giant will fall — *all this assembly shall know that Yahuah (LORD) saveth not with sword and spear: for the battle is the LORD''S, and he will give you into our hands* (1 Samuel 17:47). The deliverance is Yahuah''s, and so is the glory.\n\nThis is the canon''s recurring grammar of deliverance, woven through both houses and beyond. Zechariah hears it over the rebuilding of the house: *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). Jehoshaphat hears it in Yahudah (Judah) when a great multitude comes up: *Be not afraid nor dismayed by reason of this great multitude; for the battle is not yours, but Elohim''s (God''s)* (2 Chronicles 20:15) — *set yourselves, stand ye still, and see the salvation of Yahuah (LORD)* (2 Chronicles 20:17). Jonathan ventured against the garrison on it: *there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). And generations later Yahudah Maccabee confesses the same creed against a mighty host: *It is no hard matter for many to be shut up in the hands of a few; and with Yahuah (God) of heaven it is all one, to deliver with a great multitude, or a small company* (1 Maccabees 3:18) — *for the victory of battle stands not in the multitude of an host; but strength comes from heaven* (1 Maccabees 3:19). The sword and the spear are nothing; the battle is Yahuah''s.',
+       sv.verse_id, ev.verse_id, 'extras', 36800
+  FROM _s340_1sa17_lookup sv, _s340_1sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=45
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=17 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-17-who-is-this-uncircumcised-that-defieth-the-armies-of-the-living-elohim', E'Who is this uncircumcised, that he should defy the armies of the living Elohim', E'While all Yashar''el (Israel) is *dismayed, and greatly afraid* (1 Samuel 17:11), one shepherd is indignant. David hears the giant''s daily taunt and asks the question no one else will: *who is this uncircumcised Philistine, that he should defy the armies of the living Elohim (God)?* (1 Samuel 17:26). To Saul he says it again, counting the giant as one more beast: *this uncircumcised Philistine shall be as one of them, seeing he hath defied the armies of the living Elohim (God)* (1 Samuel 17:36). The defier is not merely insulting men — he is defying the LIVING Elohim, and that is a thing already lost.\n\nThis is Torah''s own posture for Yahuah''s battles: *When thou goest out to battle against thine enemies, and seest horses, and chariots, and a people more than thou, be not afraid of them: for Yahuah Elohayka (the LORD thy God) is with thee* (Deuteronomy 20:1), *for Yahuah Elohaychem (the LORD your God) is he that goeth with you, to fight for you against your enemies, to save you* (Deuteronomy 20:4). It is the same fearless reckoning Jonathan made — *there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). And it carries forward to the overcomer''s confidence: *Ye are of Elohim (God), little children, and have overcome them: because greater is he that is in you, than he that is in the world* (1 John 4:4). The uncircumcised defier of the living Elohim is the serpent-seed posture, and against the living Elohim it cannot stand.',
+       sv.verse_id, ev.verse_id, 'free', 36803
+  FROM _s340_1sa17_lookup sv, _s340_1sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=17 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-17-the-shepherd-from-the-sheep-who-slew-the-lion-and-the-bear', E'The shepherd from the sheep who slew the lion and the bear', E'David is not a man of war but a keeper of sheep: *But David went and returned from Saul to feed his father''s sheep at Beth-lehem* (1 Samuel 17:15). When Saul says he is but a youth, David answers from the pasture: *Thy servant kept his father''s sheep, and there came a lion, and a bear, and took a lamb out of the flock: and I went out after him, and smote him, and delivered it out of his mouth* (1 Samuel 17:34-35). His whole confidence rests on the Yahuah who guarded the flock: *Yahuah (LORD) that delivered me out of the paw of the lion, and out of the paw of the bear, he will deliver me out of the hand of this Philistine* (1 Samuel 17:37).\n\nThis is the anointed shepherd, a type of the Anointed Shepherd-Champion. He is the youngest, fetched from the flock and anointed: *There remaineth yet the youngest, and, behold, he keepeth the sheep* (1 Samuel 16:11); *Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of Yahuah (LORD) came upon David from that day forward* (1 Samuel 16:13). The skill of his hand was never his own — as king he sings, *Blessed be Yahuah (LORD) my strength, which teacheth my hands to war, and my fingers to fight* (Psalm 144:1). And the roll of faith remembers him among the deliverers: *of David also, and Samuel, and of the prophets* (Hebrews 11:32), *who through faith subdued kingdoms... stopped the mouths of lions* (Hebrews 11:33). The hand that guarded the lamb is the hand of faith.',
+       sv.verse_id, ev.verse_id, 'free', 36806
+  FROM _s340_1sa17_lookup sv, _s340_1sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=17 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-17-the-stone-that-smote-the-defiers-head-the-seed-bruises-the-serpent', E'The stone that smote the defier''s head: the seed bruises the serpent', E'David refuses Saul''s armour and goes down as a shepherd: *he took his staff in his hand, and chose him five smooth stones out of the brook... and his sling was in his hand* (1 Samuel 17:40). One stone is enough: *And David put his hand in his bag, and took thence a stone, and slang it, and smote the Philistine in his forehead, that the stone sunk into his forehead; and he fell upon his face to the earth* (1 Samuel 17:49). The champion who defied the living Elohim is undone head-first: *David ran, and stood upon the Philistine... and slew him, and cut off his head therewith* (1 Samuel 17:51).\n\nThe head of the proud brought down by the unlikely deliverer is the first promise of the whole canon: *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). The enmity between the serpent''s seed and the woman''s seed runs from Eden onward, and the anointed shepherd who smites the defier in the forehead is a figure of the Seed who crushes the serpent''s head. Romans carries the promise to its consummation: *And the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20). David''s stone foreshadows the Deliverer under whose feet the enemy is finally crushed.',
+       sv.verse_id, ev.verse_id, 'free', 36809
+  FROM _s340_1sa17_lookup sv, _s340_1sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=49
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=17 AND ev.verse_number=51
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-17-the-despised-youth-yahuah-looketh-on-the-heart', E'The despised youth: Yahuah looketh on the heart', E'The giant measures David by the eye and finds him beneath contempt: *And when the Philistine looked about, and saw David, he disdained him: for he was but a youth, and ruddy, and of a fair countenance* (1 Samuel 17:42). The world''s champion judges by stature and appearance — the very error Yahuah had already named when He chose this same youth over his taller brothers.\n\nWhen Samuel looked on Eliab the firstborn and thought him surely the LORD''s anointed, Yahuah corrected him: *Look not on his countenance, or on the height of his stature; because I have refused him... for Yahuah (LORD) seeth not as man seeth; for man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart* (1 Samuel 16:7). Goliath disdains exactly what Yahuah disregards — the outward — and is blind to exactly what Yahuah chose: the heart. The deliverer the world despises is the one Yahuah anointed; the stone the builders refuse becomes the head of the corner.',
+       sv.verse_id, ev.verse_id, 'free', 36812
+  FROM _s340_1sa17_lookup sv, _s340_1sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=42
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=17 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-17-one-champion-stands-and-the-whole-people-prevail', E'One champion stands, and the whole people prevail', E'Goliath sets the terms of single combat: *choose you a man for you, and let him come down to me. If he be able to fight with me, and to kill me, then will we be your servants: but if I prevail against him, and kill him, then shall ye be our servants* (1 Samuel 17:8-9). One man''s fight is to settle the fate of two whole nations — the champion stands for his people, and his victory or defeat is theirs.\n\nThe wager holds, but in Yashar''el''s (Israel''s) favour. When David''s lone victory is won — *and slew him, and cut off his head therewith. And when the Philistines saw their champion was dead, they fled* (1 Samuel 17:51) — the deliverance flows to the whole people: *And the men of Yashar''el (Israel) and of Yahudah (Judah) arose, and shouted, and pursued the Philistines... even unto Gath, and unto Ekron* (1 Samuel 17:52). One champion''s triumph is the rout of the enemy for both houses. This is the David/Messiah pattern — the single representative whose victory is reckoned to all his people; the roll of faith remembers it as the strength Yahuah brought *out of weakness... turned to flight the armies of the aliens* (Hebrews 11:34).',
+       sv.verse_id, ev.verse_id, 'free', 36815
+  FROM _s340_1sa17_lookup sv, _s340_1sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=17 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1: the battle is Yahuah's
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Not by might, nor by power, but by my spirit* (Zechariah 4:6) — the same word over the work as over the war.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=47
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-battle-is-yahuahs-he-saveth-not-with-sword-and-spear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the battle is not yours, but Elohim''s (God''s)* (2 Chronicles 20:15) — Jehoshaphat hears in Yahudah what David proclaims in the valley.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=47
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=20 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-battle-is-yahuahs-he-saveth-not-with-sword-and-spear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*stand ye still, and see the salvation of Yahuah (LORD)* (2 Chronicles 20:17) — Yahuah speaks back to Yahudah the trust David carries.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=47
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=20 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-battle-is-yahuahs-he-saveth-not-with-sword-and-spear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6) — Jonathan ventured it; David preaches it whole.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=47
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-battle-is-yahuahs-he-saveth-not-with-sword-and-spear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*to deliver with a great multitude, or a small company* (1 Maccabees 3:18) — Yahudah Maccabee confesses David''s creed against a mighty host.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=47
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-battle-is-yahuahs-he-saveth-not-with-sword-and-spear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the victory of battle stands not in the multitude of an host; but strength comes from heaven* (1 Maccabees 3:19) — the marrow of David''s word to the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=47
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-battle-is-yahuahs-he-saveth-not-with-sword-and-spear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: who is this uncircumcised
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*be not afraid of them: for Yahuah Elohayka (the LORD thy God) is with thee* (Deuteronomy 20:1) — Torah''s posture for Yahuah''s battles, the size of the foe nothing.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=26
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=20 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-who-is-this-uncircumcised-that-defieth-the-armies-of-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah Elohaychem (the LORD your God) is he that goeth with you, to fight for you* (Deuteronomy 20:4) — so the defier defies the living Elohim, not merely men.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=26
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=20 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-who-is-this-uncircumcised-that-defieth-the-armies-of-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6) — the giant counted as one more lion or bear before the living Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=36
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-who-is-this-uncircumcised-that-defieth-the-armies-of-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*greater is he that is in you, than he that is in the world* (1 John 4:4) — the overcomer''s confidence carried forward.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=36
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-who-is-this-uncircumcised-that-defieth-the-armies-of-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: the shepherd from the sheep
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*There remaineth yet the youngest, and, behold, he keepeth the sheep* (1 Samuel 16:11) — the keeper of the flock fetched and anointed.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=34
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-shepherd-from-the-sheep-who-slew-the-lion-and-the-bear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the Spirit of Yahuah (LORD) came upon David from that day forward* (1 Samuel 16:13) — the anointed shepherd''s confidence rests here.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=37
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-shepherd-from-the-sheep-who-slew-the-lion-and-the-bear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed be Yahuah (LORD) my strength, which teacheth my hands to war* (Psalm 144:1) — the king sings the source of the shepherd''s skill.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=37
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=144 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-shepherd-from-the-sheep-who-slew-the-lion-and-the-bear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*of David also, and Samuel, and of the prophets* (Hebrews 11:32) — the roll of faith names David among the deliverers.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=37
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-shepherd-from-the-sheep-who-slew-the-lion-and-the-bear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Who through faith subdued kingdoms... stopped the mouths of lions* (Hebrews 11:33) — faith reads David''s shepherd-testimony of lion and bear.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=34
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-shepherd-from-the-sheep-who-slew-the-lion-and-the-bear'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: the stone that smote the head; the seed bruises the serpent
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15) — the stone sunk into the defier''s forehead, the head of the proud brought down.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=49
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-stone-that-smote-the-defiers-head-the-seed-bruises-the-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*it shall bruise thy head* (Genesis 3:15) — *cut off his head therewith*: the defier undone head-first, a figure of the serpent''s head bruised.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=51
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-stone-that-smote-the-defiers-head-the-seed-bruises-the-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20) — the promise of Genesis 3:15 carried to its consummation.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=51
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=16 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-stone-that-smote-the-defiers-head-the-seed-bruises-the-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5: the despised youth; Yahuah looketh on the heart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart* (1 Samuel 16:7) — Goliath disdains exactly what Yahuah disregards, blind to what Yahuah chose.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=42
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-the-despised-youth-yahuah-looketh-on-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6: one champion stands, the whole people prevail
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*when the Philistines saw their champion was dead, they fled* (1 Samuel 17:51) — one champion''s defeat is the breaking of the whole host.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=8
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=17 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-one-champion-stands-and-the-whole-people-prevail'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the men of Yashar''el (Israel) and of Yahudah (Judah) arose, and shouted, and pursued* (1 Samuel 17:52) — David''s lone victory becomes the rout of both houses.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=9
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=17 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-one-champion-stands-and-the-whole-people-prevail'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*out of weakness were made strong... turned to flight the armies of the aliens* (Hebrews 11:34) — the David/Messiah pattern, faith''s strength out of a youth''s weakness.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=17 AND sv.verse_number=9
+  JOIN _s340_1sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-17-one-champion-stands-and-the-whole-people-prevail'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_18.sql (1 Samuel 18) -----
+--
+-- Chapter: 1 Samuel 18 — Jonathan's covenant-love, the women's song, and Yahuah with David
+-- Tag: 1sa18   View: _s340_1sa18_lookup
+-- Sort band: base 36825, step 3  (36825, 36828, 36831)
+--
+-- 1 Samuel 18 coverage:
+--   v.1-4  (the soul of Jonathan knit to David's soul; covenant; the robe, sword, bow, girdle stripped to David)
+--          NT:     John 15:13 (greater love — lay down life for friends); 1 John 3:16 (he laid down his life... we ought to lay down our lives for the brethren)
+--          Extras: none warranted (no clean covenant-friendship witness)
+--          Tanakh: Proverbs 18:24 (a friend that sticketh closer than a brother)
+--   v.5,13-16,30 (David behaved himself wisely; set over the men of war; accepted; all Israel and Judah loved him) -> folded into the "Yahuah with David" thread
+--   v.6-9  (the women sing Saul his thousands, David his ten thousands; Saul wroth, envious, eyed David)
+--          NT:     1 John 3:12 (Cain... slew his brother... because his own works were evil, and his brother's righteous)
+--          Extras: none warranted
+--          Tanakh: Genesis 37:11 (his brethren envied him); Psalm 37:12-13 (the wicked plotteth against the just, and gnasheth upon him)
+--   v.10-11 (evil spirit; Saul casts the javelin to smite David to the wall) -> framed within the envy thread (envy ripening to murder)
+--   v.12,14,28 (★ Yahuah was with David; Saul afraid because Yahuah was with him and departed from Saul)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 16:13,14,18 (Spirit of Yahuah came upon David / departed from Saul / Yahuah is with him); Psalm 37:1-2,7,32-33 (fret not... the wicked watcheth the righteous... Yahuah will not leave him in his hand)
+--   v.17-27 (Merab, Michal, the snare, the hundred/two-hundred foreskins dowry)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: none warranted (Saul's snare-marriage scheme is folded into the envy/fear-of-the-chosen frame, not separately threaded)
+--   v.29 (Saul became David's enemy continually) -> folded into the "Yahuah with David" thread (the rejected raging against the favoured)
+--
+-- Threads (3):
+--   1-samuel-18-the-soul-of-jonathan-knit-to-davids-soul-covenant-love     [Tanakh+NT] free
+--   1-samuel-18-saul-hath-slain-his-thousands-the-envy-of-the-elder        [Tanakh+NT] free
+--   1-samuel-18-yahuah-was-with-david-the-chosen-prospered                 [Tanakh] free
+--
+-- Contested/load-bearing framing:
+--   * Jonathan's covenant-love (18:1-4) is the king's son honouring Yahuah's anointed, laying down his
+--     own right of succession — the love that lays down its life (John 15:13; 1 John 3:16), conduct not
+--     ethnicity, the friend closer than a brother (Prov 18:24).
+--   * Saul's envy (18:7-11) is the seed-war pattern: the elder/rejected raging at the chosen younger,
+--     as Joseph's brethren envied him (Gen 37:11), as Cain slew Abel because his brother's works were
+--     righteous (1 John 3:12). Envy ripening to attempted murder (the javelin). Conduct-within-covenant,
+--     never ethnic hatred — Saul is a victim of his own jealousy, the lost king.
+--   * "Yahuah was with David" (18:12,14,28) is the favoured one prospered by the Presence — the Spirit
+--     that came upon David and departed from Saul (1 Sam 16:13-14) — while the rejected rages. Psalm 37
+--     sings the very pattern: the righteous watched and hunted by the wicked, yet not left in his hand.
+
+CREATE TEMP VIEW _s340_1sa18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the soul of Jonathan knit to David's soul — covenant-love
+    ('canon','1-samuel',18,1,'canon','proverbs',18,24,'free',
+     E'*A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother* (Proverbs 18:24). When *the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul* (1 Samuel 18:1), the proverb is made flesh: the king''s own son cleaves to the anointed shepherd nearer than blood, a covenant-love that holds against his own father''s house and his own claim to the throne.'),
+    ('canon','1-samuel',18,3,'canon','proverbs',18,24,'free',
+     E'*A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother* (Proverbs 18:24). *Then Jonathan and David made a covenant, because he loved him as his own soul* (1 Samuel 18:3) — the friend closer than a brother is sealed by covenant, not mere affection; Jonathan binds himself to David before Yahuah while David is yet a captain, not a king.'),
+    ('canon','1-samuel',18,3,'canon','john',15,13,'free',
+     E'*Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). Jonathan''s covenant *because he loved him as his own soul* (1 Samuel 18:3) is exactly this greater love spoken forward: the king''s heir lays down his own right of succession for the friend Yahuah has chosen, the very love the Formed Son names as the highest a man can give.'),
+    ('canon','1-samuel',18,4,'canon','john',15,13,'free',
+     E'*Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). *Jonathan stripped himself of the robe that was upon him, and gave it to David, and his garments, even to his sword, and to his bow, and to his girdle* (1 Samuel 18:4) — he hands over the very insignia of the prince, an enacted laying-down of his own life and throne for his friend, the love Yahusha (Jesus) calls greater than any other.'),
+    ('canon','1-samuel',18,4,'canon','1-john',3,16,'free',
+     E'*Hereby perceive we the love of Elohim (God), because he laid down his life for us: and we ought to lay down our lives for the brethren* (1 John 3:16). Jonathan stripping off *the robe that was upon him... even to his sword, and to his bow, and to his girdle* (1 Samuel 18:4) is the covenant-love that yields its own right for the brother — the same self-giving 1 John makes the measure of love among the brethren.'),
+
+    -- THREAD 2: Saul hath slain his thousands — the envy of the elder/rejected against the chosen
+    ('canon','1-samuel',18,8,'canon','genesis',37,11,'free',
+     E'*And his brethren envied him; but his father observed the saying* (Genesis 37:11). Saul *was very wroth, and the saying displeased him; and he said... what can he have more but the kingdom?* (1 Samuel 18:8) is the same root that turned Joseph''s brethren against him — the envy of the established against the one Yahuah is lifting up, conduct-within-covenant, the seed-war jealousy that runs from Genesis.'),
+    ('canon','1-samuel',18,9,'canon','genesis',37,11,'free',
+     E'*And his brethren envied him; but his father observed the saying* (Genesis 37:11). *And Saul eyed David from that day and forward* (1 Samuel 18:9): as Joseph''s brothers came to hate the favoured younger, so Saul''s envy fastens its eye on the chosen one — the elder/rejected watching the younger Yahuah has set above him.'),
+    ('canon','1-samuel',18,11,'canon','1-john',3,12,'free',
+     E'*Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother''s righteous* (1 John 3:12). When *Saul cast the javelin; for he said, I will smite David even to the wall with it* (1 Samuel 18:11), the envy of verse 8 ripens to the murder of Cain — the wicked rising against the righteous precisely because the righteous prospers, the seed-war pattern named outright.'),
+    ('canon','1-samuel',18,9,'canon','psalms',37,12,'free',
+     E'*The wicked plotteth against the just, and gnasheth upon him with his teeth* (Psalm 37:12). Saul eyeing David *from that day and forward* (1 Samuel 18:9) is the plotting Psalm 37 sings — the wicked fixed against the just; yet the next line answers it: *Yahuah (Lord) shall laugh at him: for he seeth that his day is coming* (Psalm 37:13).'),
+
+    -- THREAD 3: Yahuah was with David — the chosen prospered, the rejected raging
+    ('canon','1-samuel',18,12,'canon','1-samuel',16,13,'free',
+     E'*Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of Yahuah (LORD) came upon David from that day forward* (1 Samuel 16:13). *Saul was afraid of David, because Yahuah (LORD) was with him* (1 Samuel 18:12) traces straight back to the anointing: the Spirit that came upon David at Beth-lehem is the very Presence Saul now dreads.'),
+    ('canon','1-samuel',18,12,'canon','1-samuel',16,14,'free',
+     E'*But the Spirit of Yahuah (LORD) departed from Saul, and an evil spirit from Yahuah (LORD) troubled him* (1 Samuel 16:14). The double clause *because Yahuah (LORD) was with him, and was departed from Saul* (1 Samuel 18:12) is the two halves of chapter 16 met in one verse — the Presence resting on the chosen and lifted from the rejected, and the rejected raging in his emptiness.'),
+    ('canon','1-samuel',18,14,'canon','1-samuel',16,18,'free',
+     E'*Behold, I have seen a son of Jesse the Beth-lehemite, that is cunning in playing, and a mighty valiant man, and a man of war, and prudent in matters, and a comely person, and Yahuah (LORD) is with him* (1 Samuel 16:18). The servant''s testimony is now plain history: *David behaved himself wisely in all his ways; and Yahuah (LORD) was with him* (1 Samuel 18:14) — the favour foreseen at his summons proven in every step.'),
+    ('canon','1-samuel',18,14,'canon','psalms',37,1,'free',
+     E'*Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity* (Psalm 37:1). David, prospered while Saul rages, walks the very counsel of the Psalm: *David behaved himself wisely in all his ways; and Yahuah (LORD) was with him* (1 Samuel 18:14), not avenging himself on the king but trusting the Presence — for *the workers of iniquity... shall soon be cut down like the grass* (Psalm 37:1-2).'),
+    ('canon','1-samuel',18,28,'canon','psalms',37,32,'free',
+     E'*The wicked watcheth the righteous, and seeketh to slay him. Yahuah (LORD) will not leave him in his hand, nor condemn him when he is judged* (Psalm 37:32-33). *And Saul saw and knew that Yahuah (LORD) was with David... And Saul was yet the more afraid of David; and Saul became David''s enemy continually* (1 Samuel 18:28-29) is that scene exactly — the wicked king watching to slay, the righteous kept because Yahuah will not leave him in his enemy''s hand.'),
+    ('canon','1-samuel',18,29,'canon','psalms',37,32,'free',
+     E'*The wicked watcheth the righteous, and seeketh to slay him. Yahuah (LORD) will not leave him in his hand* (Psalm 37:32-33). *Saul became David''s enemy continually* (1 Samuel 18:29): the continual enmity is the watching wickedness of the Psalm, and David''s safety is not his own arm but the promise that Yahuah will not abandon the righteous to the hand that hunts him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-18-the-soul-of-jonathan-knit-to-davids-soul-covenant-love',
+  E'The soul of Jonathan knit to David''s soul — covenant-love that lays down its right',
+  E'No sooner has David answered Saul than the deepest bond in the book is forged: *the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul* (1 Samuel 18:1), *and Jonathan and David made a covenant, because he loved him as his own soul* (1 Samuel 18:3). This is the friend the proverb names: *there is a friend that sticketh closer than a brother* (Proverbs 18:24). And it is no mere affection — Jonathan enacts it: *Jonathan stripped himself of the robe that was upon him, and gave it to David, and his garments, even to his sword, and to his bow, and to his girdle* (1 Samuel 18:4). The king''s own son and heir hands over the insignia of the prince to the shepherd Yahuah has anointed, laying down his own right of succession. It is the love the Formed Son names as the highest: *Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). And it is the very measure 1 John sets among the brethren: *he laid down his life for us: and we ought to lay down our lives for the brethren* (1 John 3:16). Jonathan honours the anointed of Yahuah over his own throne — covenant-love that yields its right, conduct and not blood, the brother nearer than a brother.',
+  sv.verse_id, ev.verse_id, 'free', 36825
+  FROM _s340_1sa18_lookup sv, _s340_1sa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=18 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-18-saul-hath-slain-his-thousands-the-envy-of-the-elder',
+  E'Saul hath slain his thousands — the envy of the elder against the chosen younger',
+  E'The women come out singing, *Saul hath slain his thousands, and David his ten thousands* (1 Samuel 18:7), and the song lights the fuse: *Saul was very wroth, and the saying displeased him; and he said... what can he have more but the kingdom? And Saul eyed David from that day and forward* (1 Samuel 18:8-9). This is an old enmity. It is the same envy that turned a household against the chosen son: *his brethren envied him; but his father observed the saying* (Genesis 37:11) — Joseph hated for the favour upon him, as David is now eyed for the favour upon him. And it is the enmity 1 John traces to its first murder: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother''s righteous* (1 John 3:12). Envy does not stay in the eye; it reaches for the spear: *Saul cast the javelin; for he said, I will smite David even to the wall with it* (1 Samuel 18:11). The wicked rises against the righteous precisely because the righteous prospers — the seed-war pattern (Genesis 3:15) run through conduct, never ethnicity. Psalm 37 sees the whole scene and answers it: *The wicked plotteth against the just, and gnasheth upon him with his teeth. Yahuah (Lord) shall laugh at him: for he seeth that his day is coming* (Psalm 37:12-13). Saul is the rejected king consumed by his own jealousy — a victim of the lie he will not let go, not an enemy to be despised but a soul that has lost the Presence.',
+  sv.verse_id, ev.verse_id, 'free', 36828
+  FROM _s340_1sa18_lookup sv, _s340_1sa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=18 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-18-yahuah-was-with-david-the-chosen-prospered',
+  E'Yahuah was with David — the chosen prospered while the rejected rages',
+  E'Three times the chapter names the secret of David''s rise: *Saul was afraid of David, because Yahuah (LORD) was with him, and was departed from Saul* (1 Samuel 18:12); *David behaved himself wisely in all his ways; and Yahuah (LORD) was with him* (1 Samuel 18:14); *And Saul saw and knew that Yahuah (LORD) was with David* (1 Samuel 18:28). It is the harvest of the anointing two chapters back: *Samuel took the horn of oil, and anointed him... and the Spirit of Yahuah (LORD) came upon David from that day forward. But the Spirit of Yahuah (LORD) departed from Saul, and an evil spirit from Yahuah (LORD) troubled him* (1 Samuel 16:13-14). What the servant foresaw at David''s summons — *a mighty valiant man, and a man of war... and Yahuah (LORD) is with him* (1 Samuel 16:18) — is now the plain record of his every step. And so the chapter is the living portrait of Psalm 37: *Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity... for they shall soon be cut down like the grass* (Psalm 37:1-2). David does not raise his hand against the king; he behaves wisely and trusts the Presence, while *Saul became David''s enemy continually* (1 Samuel 18:29). The Psalm names the very danger and the very safety: *The wicked watcheth the righteous, and seeketh to slay him. Yahuah (LORD) will not leave him in his hand, nor condemn him when he is judged* (Psalm 37:32-33). The chosen one prospers not by his own arm but because Yahuah is with him; the rejected one rages because the Presence has departed.',
+  sv.verse_id, ev.verse_id, 'free', 36831
+  FROM _s340_1sa18_lookup sv, _s340_1sa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=18 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- Thread 1 members (verbose per-row form)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Proverbs 18:24 — *there is a friend that sticketh closer than a brother:* the soul of Jonathan knit to David, nearer than blood.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-the-soul-of-jonathan-knit-to-davids-soul-covenant-love'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Proverbs 18:24 — *a friend that sticketh closer than a brother:* the covenant of verse 3 seals the closer-than-a-brother bond before Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-the-soul-of-jonathan-knit-to-davids-soul-covenant-love'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'John 15:13 — *Greater love hath no man than this, that a man lay down his life for his friends:* Jonathan''s covenant lays down his right of succession.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-the-soul-of-jonathan-knit-to-davids-soul-covenant-love'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'John 15:13 — *lay down his life for his friends:* the stripped robe, sword, bow and girdle (18:4) are the prince''s life enacted toward his friend.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-the-soul-of-jonathan-knit-to-davids-soul-covenant-love'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 John 3:16 — *he laid down his life for us: and we ought to lay down our lives for the brethren:* the measure of love Jonathan''s self-giving foreshadows.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-the-soul-of-jonathan-knit-to-davids-soul-covenant-love'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members (verbose per-row form)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 37:11 — *his brethren envied him:* Saul wroth at the song (18:8) is the envy that turned Joseph''s house against the favoured.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-saul-hath-slain-his-thousands-the-envy-of-the-elder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 37:11 — *his brethren envied him:* Saul eyeing David from that day forward (18:9) is the same fixed jealousy upon the chosen younger.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-saul-hath-slain-his-thousands-the-envy-of-the-elder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 37:12 — *The wicked plotteth against the just, and gnasheth upon him with his teeth:* Saul''s eyeing answered by Yahuah laughing at his coming day (37:13).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-saul-hath-slain-his-thousands-the-envy-of-the-elder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 John 3:12 — *Cain... slew his brother... because his own works were evil, and his brother''s righteous:* the javelin (18:11) is envy ripened to Cain''s murder.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-saul-hath-slain-his-thousands-the-envy-of-the-elder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members (verbose per-row form)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 16:13 — *the Spirit of Yahuah (LORD) came upon David from that day forward:* the Presence Saul now dreads (18:12) is the anointing-Spirit.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=12
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-yahuah-was-with-david-the-chosen-prospered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Samuel 16:14 — *the Spirit of Yahuah (LORD) departed from Saul:* the other half of 18:12 — the Presence lifted from the rejected king.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=12
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-yahuah-was-with-david-the-chosen-prospered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Samuel 16:18 — *a mighty valiant man, and a man of war... and Yahuah (LORD) is with him:* the servant''s foresight now plain history (18:14).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=14
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-yahuah-was-with-david-the-chosen-prospered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 37:1 — *Fret not thyself because of evildoers, neither be thou envious:* David behaving wisely (18:14) walks the Psalm''s counsel, not avenging himself.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=14
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-yahuah-was-with-david-the-chosen-prospered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Psalm 37:32 — *The wicked watcheth the righteous, and seeketh to slay him. Yahuah (LORD) will not leave him in his hand:* Saul knowing Yahuah is with David (18:28).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=28
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-yahuah-was-with-david-the-chosen-prospered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Psalm 37:32 — *the wicked watcheth the righteous, and seeketh to slay him:* Saul David''s enemy continually (18:29), yet the righteous not left in his hand.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=18 AND sv.verse_number=29
+  JOIN _s340_1sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-18-yahuah-was-with-david-the-chosen-prospered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_19.sql (1 Samuel 19) -----
+-- Chapter: 1 Samuel 19  | Tag: 1sa19 | View: _s340_1sa19_lookup
+-- Sort band: base 36850, step 3 -> 36850, 36853, 36856, 36859
+--
+-- FRAME: the hated-without-a-cause innocent (David, the anointed-but-not-yet-throned)
+-- preserved by Yahuah's hand; the innocent advocate (Jonathan) pleading for the persecuted;
+-- Yahuah Himself restraining the persecutor by His own Spirit. David is the Davidic-king type
+-- of the Formed Son hated without a cause (Ps 69:4 / John 15:25). The Spirit of Elohim coming
+-- on Saul's messengers and on Saul is the Father's Ruach restraining the murderer's hand —
+-- NOT a co-equal trinitarian person, NOT a created Arian agent: the Spirit of Elohim of the
+-- Most High overruling the persecutor's intent.
+--
+-- 1 Samuel 19 coverage:
+--   v.1-7 (Saul commands David's death; Jonathan intercedes, the advocate's plea):
+--        NT:     John 15:13 (greater love, lay down life for friends); 1 John 3:11-12 (Cain
+--                slew brother whose works were righteous — the innocent-blood war)
+--        Extras: none warranted
+--        Tanakh: Proverbs 21:1 (king's heart in Yahuah's hand); Proverbs 21:3 (justice more
+--                acceptable than sacrifice — Jonathan's plea over Saul's vow)
+--   v.8-10 (war again; evil spirit; javelin at the wall; David escapes):
+--        NT:     Matthew 5:11 (reviled and persecuted falsely for righteousness)
+--        Extras: none warranted
+--        Tanakh: woven into the without-a-cause thread (slay David without a cause, v.5)
+--   v.11-17 (messengers watch the house; Michal lets David down the window, the image in bed):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 59:2-3 (deliver me from bloody men; they lie in wait for my soul; not
+--                for my transgression) — the psalm of this very night
+--   v.18-24 (David flees to Samuel at Naioth; the Spirit of Elohim on the messengers and on
+--            Saul; Is Saul also among the prophets — the second time):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 10:6,10-11 (the FIRST time the Spirit came on Saul / the proverb);
+--                Psalm 59:11 (slay them not, lest my people forget — restraint over the enemy)
+--
+-- THREADS (slug -> target libraries):
+--   1-samuel-19-let-not-the-king-sin-against-innocent-blood   [canon NT + canon Tanakh] — free
+--   1-samuel-19-they-hated-david-without-a-cause              [canon NT + canon Tanakh] — free
+--   1-samuel-19-they-watched-the-house-to-kill-him            [canon Tanakh] — free
+--   1-samuel-19-is-saul-also-among-the-prophets              [canon Tanakh] — free
+--
+-- CONTESTED/LOAD-BEARING: 19:20,23 "the Spirit of Elohim was upon" Saul's messengers and Saul
+-- framed as the FATHER'S Ruach restraining the persecutor (NOT trinity, NOT Arian agent) —
+-- Yahuah overruling the murderer's intent. Ps 59 (superscription "when Saul sent, and they
+-- watched the house to kill him") has NO superscription verse in this parse (v.1 = "Deliver me");
+-- anchored to vv.2-3,11 which carry the same lie-in-wait / not-for-my-transgression weight.
+
+CREATE TEMP VIEW _s340_1sa19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the advocate's plea for innocent blood (19:4-6)
+    ('canon','1-samuel',19,4,'canon','john',15,13,'free',
+      E'*Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). Jonathan, the king''s own son and heir, stands beside his father in the field to plead for the hunted David — *Let not the king sin against his servant, against David; because he hath not sinned against thee, and because his works have been to thee-ward very good* (1 Samuel 19:4). The innocent advocate who risks himself for the persecuted is the very love the Formed Son names as greatest, and which he himself fulfilled.'),
+    ('canon','1-samuel',19,4,'canon','proverbs',21,3,'free',
+      E'*To do justice and judgment is more acceptable to Yahuah (LORD) than sacrifice* (Proverbs 21:3). Jonathan''s plea — *because he hath not sinned against thee* (1 Samuel 19:4) — sets the right judgment of innocent blood above the king''s murderous vow; what Yahuah requires is the justice Jonathan speaks, not the sin Saul intends.'),
+    ('canon','1-samuel',19,5,'canon','1-john',3,12,'free',
+      E'*Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother''s righteous* (1 John 3:12). Jonathan names the same seed-war exactly: *wherefore then wilt thou sin against innocent blood, to slay David without a cause?* (1 Samuel 19:5). The murderer hates the righteous because his own works are evil — Saul seeking innocent blood is Cain''s line; David, whose *works have been to thee-ward very good*, is Abel''s.'),
+    ('canon','1-samuel',19,6,'canon','proverbs',21,1,'free',
+      E'*The king''s heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will* (Proverbs 21:1). When *Saul hearkened unto the voice of Jonathan: and Saul sware, As Yahuah (LORD) liveth, he shall not be slain* (1 Samuel 19:6), the murderer''s heart is turned aside by the advocate''s word — Yahuah''s hand on the king''s heart, restraining for a season the death he had decreed.'),
+    -- THREAD 2: they hated David without a cause (19:5, 9-10)
+    ('canon','1-samuel',19,5,'canon','psalms',69,4,'free',
+      E'*They that hate me without a cause are more than the hairs of mine head: they that would destroy me, being mine enemies wrongfully, are mighty: then I restored that which I took not away* (Psalm 69:4). Jonathan''s very charge — *to slay David without a cause* (1 Samuel 19:5) — is the cry of the hated-without-a-cause righteous one, the Davidic sufferer whose persecution runs forward to the Formed Son.'),
+    ('canon','1-samuel',19,5,'canon','john',15,25,'free',
+      E'*But this cometh to pass, that the word might be fulfilled that is written in their law, They hated me without a cause* (John 15:25). The Formed Son names the persecution David first bore: David is hunted *without a cause* (1 Samuel 19:5) though *his works have been to thee-ward very good*, just as the Son is hated though *I had not done among them the works which none other man did* — the innocent-righteous hated for his very righteousness.'),
+    ('canon','1-samuel',19,10,'canon','matthew',5,11,'free',
+      E'*Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake* (Matthew 5:11). When *Saul sought to smite David even to the wall with the javelin... and David fled, and escaped that night* (1 Samuel 19:10), the anointed one is persecuted falsely — the blessing of the persecuted-for-righteousness rests on the man hunted without a cause.'),
+    -- THREAD 3: they watched the house to kill him (19:11-12)
+    ('canon','1-samuel',19,11,'canon','psalms',59,2,'free',
+      E'*Deliver me from the workers of iniquity, and save me from bloody men* (Psalm 59:2). This is the very psalm of this night, *when Saul sent, and they watched the house to kill him*: *Saul also sent messengers unto David''s house, to watch him, and to slay him in the morning* (1 Samuel 19:11). David''s cry against the bloody men set round the house is preserved here as a song.'),
+    ('canon','1-samuel',19,11,'canon','psalms',59,3,'free',
+      E'*For, lo, they lie in wait for my soul: the mighty are gathered against me; not for my transgression, nor for my sin, O Yahuah (LORD)* (Psalm 59:3). The watchers *to slay him in the morning* (1 Samuel 19:11) lie in wait against a man who has done no wrong — *not for my transgression, nor for my sin* — the same innocent-without-a-cause that Jonathan declared.'),
+    ('canon','1-samuel',19,12,'canon','psalms',34,19,'free',
+      E'*Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19). *So Michal let David down through a window: and he went, and fled, and escaped* (1 Samuel 19:12) — the righteous one ringed by killers is delivered out of the affliction, Yahuah''s hand bringing him through the window into the night.'),
+    -- THREAD 4: is Saul also among the prophets — the Spirit restrains the persecutor (19:20-24)
+    ('canon','1-samuel',19,20,'canon','psalms',59,11,'free',
+      E'*Slay them not, lest my people forget: scatter them by thy power; and bring them down, O Yahuah (Lord) our shield* (Psalm 59:11). When *the Spirit of Elohim (God) was upon the messengers of Saul, and they also prophesied* (1 Samuel 19:20), Yahuah does not slay the persecutors but disarms them — the very mercy David sings, the enemy''s hand stayed and scattered rather than struck down.'),
+    ('canon','1-samuel',19,23,'canon','1-samuel',10,6,'free',
+      E'*And the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy with them, and shalt be turned into another man* (1 Samuel 10:6). The Spirit that once made Saul a prophet at his anointing now comes upon him a second time — *the Spirit of Elohim (God) was upon him also, and he went on, and prophesied* (1 Samuel 19:23) — the Father''s Ruach overruling even the murderer, that he cannot reach David that day.'),
+    ('canon','1-samuel',19,24,'canon','1-samuel',10,11,'free',
+      E'*And it came to pass, when all that knew him beforetime saw that, behold, he prophesied among the prophets, then the people said one to another, What is this that is come unto the son of Kish? Is Saul also among the prophets?* (1 Samuel 10:11). The proverb first born at the beginning of Saul''s reign returns at its unravelling — *Wherefore they say, Is Saul also among the prophets?* (1 Samuel 19:24) — the same wonder, now the Spirit restraining the persecutor rather than commissioning the king.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-19-let-not-the-king-sin-against-innocent-blood',
+  E'Let not the king sin against innocent blood — the advocate''s plea',
+  E'Saul *spake to Jonathan his son, and to all his servants, that they should kill David* (1 Samuel 19:1) — the king openly decrees the death of the man who served him. But the king''s own son and heir stands between: *Jonathan spake good of David unto Saul his father, and said unto him, Let not the king sin against his servant, against David; because he hath not sinned against thee, and because his works have been to thee-ward very good* (19:4). This is the innocent advocate pleading for the persecuted — *To do justice and judgment is more acceptable to Yahuah (LORD) than sacrifice* (Proverbs 21:3) — and the love the Formed Son named as greatest: *Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). Jonathan names the war exactly: *wherefore then wilt thou sin against innocent blood, to slay David without a cause?* (1 Samuel 19:5) — and the apostle traces it back to the first murder: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother''s righteous* (1 John 3:12). For a season the plea prevails: *Saul hearkened unto the voice of Jonathan: and Saul sware, As Yahuah (LORD) liveth, he shall not be slain* (19:6), for *The king''s heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will* (Proverbs 21:1).',
+  sv.verse_id, ev.verse_id, 'free', 36850
+  FROM _s340_1sa19_lookup sv, _s340_1sa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=19 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-19-they-hated-david-without-a-cause',
+  E'They hated David without a cause',
+  E'Jonathan''s charge against his father is the hinge of the whole chapter: *wherefore then wilt thou sin against innocent blood, to slay David without a cause?* (1 Samuel 19:5). David had *put his life in his hand, and slew the Philistine, and Yahuah (LORD) wrought a great salvation for all Yashar''el (Israel)* — yet for that very deliverance Saul hunts him. This is the cry of the hated-without-a-cause righteous one: *They that hate me without a cause are more than the hairs of mine head: they that would destroy me, being mine enemies wrongfully, are mighty: then I restored that which I took not away* (Psalm 69:4). The Formed Son took that same word on his own lips: *this cometh to pass, that the word might be fulfilled that is written in their law, They hated me without a cause* (John 15:25) — hated though *I had not done among them the works which none other man did*, just as David is hunted though *his works have been to thee-ward very good*. So when *Saul sought to smite David even to the wall with the javelin... and David fled, and escaped that night* (19:10), the blessing of the persecuted rests on him: *Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake* (Matthew 5:11).',
+  sv.verse_id, ev.verse_id, 'free', 36853
+  FROM _s340_1sa19_lookup sv, _s340_1sa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=19 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-19-they-watched-the-house-to-kill-him',
+  E'They watched the house to kill him',
+  E'*Saul also sent messengers unto David''s house, to watch him, and to slay him in the morning: and Michal David''s wife told him, saying, If thou save not thy life to night, to morrow thou shalt be slain* (1 Samuel 19:11). This is the night the fifty-ninth psalm remembers — *when Saul sent, and they watched the house to kill him* — and David''s cry against the killers ringed about him is preserved there: *Deliver me from the workers of iniquity, and save me from bloody men* (Psalm 59:2). They lie in wait against a man who has done no wrong: *For, lo, they lie in wait for my soul: the mighty are gathered against me; not for my transgression, nor for my sin, O Yahuah (LORD)* (Psalm 59:3) — the same innocence Jonathan declared. And Yahuah delivers him: *So Michal let David down through a window: and he went, and fled, and escaped* (19:12), for *Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19) — the hand of Yahuah bringing the hunted one through the window into the night, past the watchers at the door.',
+  sv.verse_id, ev.verse_id, 'free', 36856
+  FROM _s340_1sa19_lookup sv, _s340_1sa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=19 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-19-is-saul-also-among-the-prophets',
+  E'Is Saul also among the prophets — Yahuah restrains the persecutor',
+  E'David flees to Samuel at Naioth, and Saul sends killers after him — but the hunters cannot do the deed: *when they saw the company of the prophets prophesying, and Samuel standing as appointed over them, the Spirit of Elohim (God) was upon the messengers of Saul, and they also prophesied* (1 Samuel 19:20). Three waves of messengers, then the king himself, and the same Ruach overrules them all: *the Spirit of Elohim (God) was upon him also, and he went on, and prophesied, until he came to Naioth in Ramah* (19:23). This is the Father''s own Spirit restraining the persecutor''s hand — not slaying the bloody men but disarming them, the very mercy David sang: *Slay them not, lest my people forget: scatter them by thy power; and bring them down, O Yahuah (Lord) our shield* (Psalm 59:11). The Spirit that first made Saul a prophet at his anointing returns to overrule him at his unravelling: *the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy with them, and shalt be turned into another man* (1 Samuel 10:6), and the old proverb is born again — *behold, he prophesied among the prophets... Is Saul also among the prophets?* (1 Samuel 10:11) — now spoken in wonder that the murderer himself lies stripped and prophesying before Samuel while David escapes unharmed (19:24).',
+  sv.verse_id, ev.verse_id, 'free', 36859
+  FROM _s340_1sa19_lookup sv, _s340_1sa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=19 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13) — Jonathan the advocate risking himself for the hunted David.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-let-not-the-king-sin-against-innocent-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*To do justice and judgment is more acceptable to Yahuah (LORD) than sacrifice* (Proverbs 21:3) — the right judgment of innocent blood above the king''s murderous vow.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-let-not-the-king-sin-against-innocent-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Not as Cain, who was of that wicked one, and slew his brother... Because his own works were evil, and his brother''s righteous* (1 John 3:12) — Saul seeking innocent blood is Cain''s line.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-let-not-the-king-sin-against-innocent-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The king''s heart is in the hand of Yahuah (LORD)... he turneth it whithersoever he will* (Proverbs 21:1) — Saul''s heart turned by the advocate''s word to swear David shall not be slain.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=6
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-let-not-the-king-sin-against-innocent-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*They that hate me without a cause are more than the hairs of mine head... mine enemies wrongfully* (Psalm 69:4) — the cry of the hated-without-a-cause righteous one.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-they-hated-david-without-a-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*They hated me without a cause* (John 15:25) — the Formed Son takes David''s persecution on his own lips: hated though his works were only good.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-they-hated-david-without-a-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed are ye, when men shall revile you, and persecute you... falsely, for my sake* (Matthew 5:11) — the javelin at the wall, the anointed one persecuted falsely.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-they-hated-david-without-a-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Deliver me from the workers of iniquity, and save me from bloody men* (Psalm 59:2) — the psalm of this very night, when they watched the house to kill him.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=59 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-they-watched-the-house-to-kill-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they lie in wait for my soul... not for my transgression, nor for my sin, O Yahuah (LORD)* (Psalm 59:3) — the watchers set against an innocent man, the same innocence Jonathan declared.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=59 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-they-watched-the-house-to-kill-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19) — Michal lets David down the window; the righteous one delivered through the night.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=12
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-they-watched-the-house-to-kill-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Slay them not, lest my people forget: scatter them by thy power* (Psalm 59:11) — Yahuah disarms the killers rather than slaying them; the Spirit upon Saul''s messengers.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=20
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=59 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-is-saul-also-among-the-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy... and shalt be turned into another man* (1 Samuel 10:6) — the Spirit that first made Saul a prophet now overrules him a second time.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=10 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-is-saul-also-among-the-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*then the people said one to another... Is Saul also among the prophets?* (1 Samuel 10:11) — the proverb born at the start of Saul''s reign returns at its unravelling.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s340_1sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-19-is-saul-also-among-the-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_20.sql (1 Samuel 20) -----
+--
+-- Book/chapter: 1 Samuel 20    Tag: 1sa20    View: _s340_1sa20_lookup
+-- Sort band: base 36875, step 3  ->  36875, 36878, 36881
+--
+-- 1 Samuel 20 coverage:
+--   v.5  (To morrow is the new moon; I should not fail to sit with the king at meat) -> THREAD 1 source
+--        NT:     none warranted (the appointed-time itself stands; no NT abrogation)
+--        Extras: none warranted
+--        Tanakh: Numbers 10:10 (in the beginnings of your months ye shall blow with the trumpets... for a memorial);
+--                Numbers 28:11 (in the beginnings of your months ye shall offer a burnt offering unto Yahuah) -> THREAD 1
+--   v.18 (To morrow is the new moon: thou shalt be missed, thy seat will be empty) -> THREAD 1 source
+--   v.24 (when the new moon was come, the king sat him down to eat meat) -> THREAD 1 source
+--   v.27 (on the morrow, which was the second day of the month) -> THREAD 1 (the two-day feast kept)
+--   v.4  (Whatsoever thy soul desireth, I will even do it for thee) -> THREAD 3 source
+--   v.8  (thou hast brought thy servant into a covenant of Yahuah with thee) -> THREAD 2 source
+--   v.14-15 (shew me the kindness of Yahuah... thou shalt not cut off thy kindness from my house for ever) -> THREAD 2 source
+--   v.16 (So Jonathan made a covenant with the house of David) -> THREAD 2 source
+--   v.17 (he loved him as he loved his own soul) -> THREAD 3 source
+--   v.23 (Yahuah be between thee and me for ever) -> THREAD 2 source
+--   v.30-33 (Saul's anger kindled against Jonathan; cast a javelin at him to smite him) -> THREAD 3 source
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 18:11 (Saul cast the javelin at David — same murderous rage); narrative, framed in prose
+--   v.42 (Yahuah be between me and thee, and between my seed and thy seed for ever) -> THREAD 2 source anchor-end
+--        NT:     none warranted (the everlasting covenant-loyalty kept LATERALLY in 2 Samuel)
+--        Extras: none warranted
+--        Tanakh: 2 Samuel 9:1 (Is there yet any left of the house of Saul, that I may shew him kindness for Jonathan's sake?);
+--                2 Samuel 9:7 (I will surely shew thee kindness for Jonathan thy father's sake... eat bread at my table);
+--                2 Samuel 21:7 (the king spared Mephibosheth... because of the LORD'S oath between David and Jonathan);
+--                1 Samuel 18:3 (Jonathan and David made a covenant); 1 Samuel 23:18 (they two made a covenant before Yahuah) -> THREAD 2
+--   THREAD 3 costly love: John 15:13 (greater love hath no man... lay down his life for his friends);
+--                Proverbs 18:24 (a friend that sticketh closer than a brother);
+--                1 Samuel 23:16-17 (Jonathan strengthened David's hand in Elohim: thou shalt be king, and I shall be next unto thee)
+--
+-- THREADS:
+--   1-samuel-20-to-morrow-is-the-new-moon-the-appointed-time-kept (free) -> Tanakh (Numbers 10, Numbers 28)
+--   1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever (free) -> Tanakh (1 Samuel 18, 1 Samuel 23, 2 Samuel 9 x2, 2 Samuel 21)
+--   1-samuel-20-jonathan-loved-him-and-laid-down-his-own-crown (free) -> Tanakh (1 Samuel 23 x2) + NT (John, Proverbs)
+--
+-- Framework-load-bearing framing:
+--   * 20:5,18,24,27 — the new moon (Rosh Chodesh) is observed here as a settled feast of Yahuah's calendar, with its
+--     appointed meal and even a second day; it is NOT abolished but commanded in Torah (Numbers 10:10 the memorial-blast,
+--     Numbers 28:11 the burnt offering at the beginning of every month). The appointed times stand; David and Jonathan
+--     simply keep the calendar of Yahuah. Surfaced as a kept appointed-time, never a defunct ceremony.
+--   * 20:14-15,23,42 — the covenant of loyal love (chesed) sworn in the Name, reaching FORWARD to *my seed and thy seed
+--     for ever*; the everlasting covenant-loyalty is then kept LATERALLY to Jonathan's lame son Mephibosheth (2 Samuel 9,
+--     21:7) — bread at the king's table for the sake of the oath. Seed-and-seed faithfulness, the covenant-word honoured
+--     to the next generation.
+--   * 20:4,17,30-33,42 — Jonathan loves the anointed though it costs him the throne (*thou shalt be king, and I shall be
+--     next unto thee*, 1 Samuel 23:17); the friend who lays down his own right for his beloved, the type John 15:13 fills
+--     (*a man lay down his life for his friends*) and Proverbs 18:24 names (*a friend that sticketh closer than a brother*).
+--     Saul's javelin even at his own son (20:33) frames the cost in prose.
+
+CREATE TEMP VIEW _s340_1sa20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: to morrow is the new moon — the appointed time kept
+    ('canon','1-samuel',20,5,'canon','numbers',10,10,'free',
+      E'*Also in the day of your gladness, and in your solemn days, and in the beginnings of your months, ye shall blow with the trumpets over your burnt offerings, and over the sacrifices of your peace offerings; that they may be to you for a memorial before your Elohim (God): I am Yahuah Elohaychem (the LORD your God)* (Numbers 10:10). When David says *to morrow is the new moon, and I should not fail to sit with the king at meat* (1 Samuel 20:5), he is keeping the very appointed-time Torah commands — *the beginnings of your months*, marked with the trumpet-memorial; the new moon is no afterthought but a feast of Yahuah''s own calendar.'),
+    ('canon','1-samuel',20,5,'canon','numbers',28,11,'free',
+      E'*And in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD); two young bullocks, and one ram, seven lambs of the first year without spot* (Numbers 28:11). The new moon David must not miss — *to morrow is the new moon* (1 Samuel 20:5) — carries its own commanded offering at *the beginnings of your months*; Rosh Chodesh stands appointed in the Torah, observed and unbroken in David''s day.'),
+    ('canon','1-samuel',20,18,'canon','numbers',10,10,'free',
+      E'*in the beginnings of your months, ye shall blow with the trumpets... that they may be to you for a memorial before your Elohim (God)* (Numbers 10:10). Jonathan repeats the day-marker — *To morrow is the new moon: and thou shalt be missed, because thy seat will be empty* (1 Samuel 20:18) — the new-moon table is a fixed assembly, the empty seat conspicuous because the feast is a kept appointment.'),
+    ('canon','1-samuel',20,24,'canon','numbers',28,11,'free',
+      E'*And in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)* (Numbers 28:11). The narrative shows the appointed-time arriving and observed — *and when the new moon was come, the king sat him down to eat meat* (1 Samuel 20:24); the feast at *the beginnings of your months* is kept in fact, the king at his table on the day Torah set.'),
+    ('canon','1-samuel',20,27,'canon','numbers',28,11,'free',
+      E'*And in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)* (Numbers 28:11). The feast runs on into a second day — *it came to pass on the morrow, which was the second day of the month* (1 Samuel 20:27) — the new moon kept with care across its days, the appointed-time of Yahuah honoured, never treated as abolished.'),
+
+    -- THREAD 2: Yahuah between my seed and thy seed for ever — the covenant of loyal love
+    ('canon','1-samuel',20,8,'canon','1-samuel',18,3,'free',
+      E'*Then Jonathan and David made a covenant, because he loved him as his own soul* (1 Samuel 18:3). David appeals to that earlier bond — *thou hast brought thy servant into a covenant of Yahuah (LORD) with thee* (1 Samuel 20:8); the love of one soul for another has already been sealed as a covenant in the Name, and David pleads it as binding.'),
+    ('canon','1-samuel',20,14,'canon','2-samuel',9,1,'free',
+      E'*And David said, Is there yet any that is left of the house of Saul, that I may shew him kindness for Jonathan''s sake?* (2 Samuel 9:1). Jonathan asks the covenant forward — *thou shalt... shew me the kindness of Yahuah (LORD), that I die not* (1 Samuel 20:14) — and years later, with Jonathan dead, David seeks out his house to keep it: *for Jonathan''s sake*, the loyal love (chesed) reaches past the grave to the next generation.'),
+    ('canon','1-samuel',20,15,'canon','2-samuel',9,7,'free',
+      E'*And David said unto him, Fear not: for I will surely shew thee kindness for Jonathan thy father''s sake, and will restore thee all the land of Saul thy father; and thou shalt eat bread at my table continually* (2 Samuel 9:7). Jonathan''s plea — *thou shalt not cut off thy kindness from my house for ever* (1 Samuel 20:15) — is answered to the letter: lame Mephibosheth eats at the king''s table for ever, the covenant-kindness uncut to the house.'),
+    ('canon','1-samuel',20,16,'canon','2-samuel',21,7,'free',
+      E'*But the king spared Mephibosheth, the son of Jonathan the son of Saul, because of the LORD''S oath that was between them, between David and Jonathan the son of Saul* (2 Samuel 21:7). When seven of Saul''s house are given to the Gibeonites, the oath *Jonathan made... with the house of David* (1 Samuel 20:16) shields Jonathan''s son alone; the covenant sworn in the Name holds even amid judgment on the rest of the house.'),
+    ('canon','1-samuel',20,23,'canon','1-samuel',23,18,'free',
+      E'*And they two made a covenant before Yahuah (LORD): and David abode in the wood, and Jonathan went to his house* (1 Samuel 23:18). The matter sealed here — *Yahuah (LORD) be between thee and me for ever* (1 Samuel 20:23) — is renewed once more in the wilderness wood; twice and again the two bind themselves *before Yahuah*, the bond made in His presence, not in private sentiment.'),
+    ('canon','1-samuel',20,42,'canon','2-samuel',9,7,'free',
+      E'*I will surely shew thee kindness for Jonathan thy father''s sake... and thou shalt eat bread at my table continually* (2 Samuel 9:7). The parting oath — *Yahuah (LORD) be between me and thee, and between my seed and thy seed for ever* (1 Samuel 20:42) — names the seed of both men; David keeps it to Jonathan''s seed, seating the dead friend''s son at his own table, the covenant-word honoured to the generation that follows.'),
+    ('canon','1-samuel',20,42,'canon','2-samuel',21,7,'free',
+      E'*But the king spared Mephibosheth... because of the LORD''S oath that was between them, between David and Jonathan* (2 Samuel 21:7). *Between my seed and thy seed for ever* (1 Samuel 20:42) is the very oath remembered when judgment falls; David''s loyalty to Jonathan''s seed is the reason one son of the house is spared — the everlasting covenant kept across the years.'),
+
+    -- THREAD 3: Jonathan loved him, and laid down his own crown
+    ('canon','1-samuel',20,4,'canon','john',15,13,'free',
+      E'*Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). Jonathan''s open pledge — *Whatsoever thy soul desireth, I will even do it for thee* (1 Samuel 20:4) — is love that withholds nothing for the beloved; he spends himself, and his own crown, for David, the friend-love the Formed Son names as the greatest, the laying-down of one''s own for another.'),
+    ('canon','1-samuel',20,17,'canon','proverbs',18,24,'free',
+      E'*A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother* (Proverbs 18:24). The text twice says it — *for he loved him as he loved his own soul* (1 Samuel 20:17); Jonathan is the proverb made flesh, a friend who cleaves nearer than blood, loyal to David against his own father and his own throne.'),
+    ('canon','1-samuel',20,17,'canon','1-samuel',23,17,'free',
+      E'*And he said unto him, Fear not: for the hand of Saul my father shall not find thee; and thou shalt be king over Yashar''el (Israel), and I shall be next unto thee; and that also Saul my father knoweth* (1 Samuel 23:17). The love that loves *as he loved his own soul* (1 Samuel 20:17) costs Jonathan the very kingdom — he gladly takes second place to the anointed: *thou shalt be king... and I shall be next unto thee*; the heir lays down his own right for love of the one Yahuah chose.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-20-to-morrow-is-the-new-moon-the-appointed-time-kept', E'To morrow is the new moon — the appointed time kept', E'The whole stratagem of this chapter turns on a feast of Yahuah''s calendar. *And David said unto Jonathan, Behold, to morrow is the new moon, and I should not fail to sit with the king at meat* (1 Samuel 20:5). The new moon — Rosh Chodesh, the head of the month — is a fixed assembly with an appointed table; David''s absence will be conspicuous precisely because the day is kept. Jonathan says it again: *To morrow is the new moon: and thou shalt be missed, because thy seat will be empty* (1 Samuel 20:18). And it comes: *when the new moon was come, the king sat him down to eat meat* (1 Samuel 20:24), and the feast runs on — *it came to pass on the morrow, which was the second day of the month* (1 Samuel 20:27).\n\nThis is no human custom but a commanded appointed-time. Torah sets the new moon among Yahuah''s solemn days: *in the beginnings of your months, ye shall blow with the trumpets over your burnt offerings... that they may be to you for a memorial before your Elohim (God): I am Yahuah Elohaychem (the LORD your God)* (Numbers 10:10). It carries its own offering: *And in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD); two young bullocks, and one ram, seven lambs of the first year without spot* (Numbers 28:11). The calendar of Yahuah is not a defunct ceremony to be left behind — it is kept here in fact, the king at his table, the feast observed across its days. Where the appointed times appear, they stand.',
+       sv.verse_id, ev.verse_id, 'free', 36875
+  FROM _s340_1sa20_lookup sv, _s340_1sa20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=20 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever', E'Yahuah between my seed and thy seed for ever', E'In the field Jonathan and David bind themselves in loyal love sworn in the Name. David pleads the bond already made: *thou hast brought thy servant into a covenant of Yahuah (LORD) with thee* (1 Samuel 20:8) — the covenant first cut when *Jonathan and David made a covenant, because he loved him as his own soul* (1 Samuel 18:3), and renewed again in the wood: *they two made a covenant before Yahuah (LORD)* (1 Samuel 23:18). Jonathan reaches it forward past his own life: *thou shalt not cut off thy kindness from my house for ever* (1 Samuel 20:15), *Yahuah (LORD) be between thee and me for ever* (1 Samuel 20:23). And at the parting the oath names the seed of both men: *Yahuah (LORD) be between me and thee, and between my seed and thy seed for ever* (1 Samuel 20:42).\n\nThe covenant-word is honoured to the next generation. Years later, with Jonathan slain, David seeks out his house: *Is there yet any that is left of the house of Saul, that I may shew him kindness for Jonathan''s sake?* (2 Samuel 9:1), and to lame Mephibosheth he says, *I will surely shew thee kindness for Jonathan thy father''s sake... and thou shalt eat bread at my table continually* (2 Samuel 9:7) — the kindness *not cut off from my house for ever* made good to the letter. Even under judgment the oath holds: *the king spared Mephibosheth... because of the LORD''S oath that was between them, between David and Jonathan* (2 Samuel 21:7). This is chesed, loyal covenant-love sworn before Yahuah and kept to the seed — the covenant-word, not sentiment, binding one house to another across the generations.',
+       sv.verse_id, ev.verse_id, 'free', 36878
+  FROM _s340_1sa20_lookup sv, _s340_1sa20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=20 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-20-jonathan-loved-him-and-laid-down-his-own-crown', E'Jonathan loved him, and laid down his own crown', E'Jonathan''s love for David is the love that withholds nothing, even the throne. He opens himself entirely: *Whatsoever thy soul desireth, I will even do it for thee* (1 Samuel 20:4). The text says twice why — *because he loved him: for he loved him as he loved his own soul* (1 Samuel 20:17). And the cost is plain: Saul, raging that *thou hast chosen the son of Jesse to thine own confusion* (1 Samuel 20:30), *cast a javelin at him to smite him* (1 Samuel 20:33) — the murderous spear thrown even at his own son. Jonathan stands with the anointed against his father and against his own crown.\n\nHe says so without a trace of grasping: *thou shalt be king over Yashar''el (Israel), and I shall be next unto thee* (1 Samuel 23:17) — the heir gladly steps down for the one Yahuah chose. This is the friend Proverbs names: *there is a friend that sticketh closer than a brother* (Proverbs 18:24) — nearer than blood, for Jonathan cleaves to David against his own kin. And it is the very love the Formed Son names as the greatest: *Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). Jonathan lays down his right, his throne, and at last his safety, for love of David — the friend who spends himself, and his own crown, for his beloved.',
+       sv.verse_id, ev.verse_id, 'free', 36881
+  FROM _s340_1sa20_lookup sv, _s340_1sa20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=20 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1: the new moon kept
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*in the beginnings of your months, ye shall blow with the trumpets... for a memorial before your Elohim (God)* (Numbers 10:10) — the new moon a commanded memorial-feast, kept at *to morrow is the new moon*.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-to-morrow-is-the-new-moon-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)* (Numbers 28:11) — Rosh Chodesh carries its own commanded offering; the feast David must not miss.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=28 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-to-morrow-is-the-new-moon-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*in the beginnings of your months, ye shall blow with the trumpets... for a memorial* (Numbers 10:10) — the new-moon table a fixed assembly; the empty seat conspicuous because the feast is kept.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-to-morrow-is-the-new-moon-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)* (Numbers 28:11) — the appointed-time arrives and is observed: *when the new moon was come, the king sat him down to eat meat*.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=24
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=28 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-to-morrow-is-the-new-moon-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)* (Numbers 28:11) — the feast kept into *the second day of the month*; the appointed-time of Yahuah honoured across its days.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=27
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=28 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-to-morrow-is-the-new-moon-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: between my seed and thy seed for ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Then Jonathan and David made a covenant, because he loved him as his own soul* (1 Samuel 18:3) — the bond David now pleads as *a covenant of Yahuah*, first sealed in love.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=8
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=18 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Is there yet any that is left of the house of Saul, that I may shew him kindness for Jonathan''s sake?* (2 Samuel 9:1) — the kindness Jonathan asked forward, sought out years later for his sake.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=14
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=9 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou shalt eat bread at my table continually* (2 Samuel 9:7) — *thou shalt not cut off thy kindness from my house for ever* answered to the letter for lame Mephibosheth.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=15
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the king spared Mephibosheth... because of the LORD''S oath that was between them, between David and Jonathan* (2 Samuel 21:7) — the covenant *with the house of David* shielding Jonathan''s son amid judgment.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=16
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=21 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*And they two made a covenant before Yahuah (LORD)* (1 Samuel 23:18) — *Yahuah be between thee and me for ever* renewed in the wood; the bond made in His presence.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=23
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=23 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*thou shalt eat bread at my table continually* (2 Samuel 9:7) — *between my seed and thy seed for ever* kept: Jonathan''s son seated at David''s own table.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=42
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the king spared Mephibosheth... because of the LORD''S oath* (2 Samuel 21:7) — *between my seed and thy seed for ever* is the very oath remembered when judgment falls on the house.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=42
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=21 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-yahuah-between-my-seed-and-thy-seed-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: Jonathan loved him, and laid down his own crown
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13) — *Whatsoever thy soul desireth, I will even do it for thee*: love that withholds nothing, the friend-love the Formed Son names greatest.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=4
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-jonathan-loved-him-and-laid-down-his-own-crown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there is a friend that sticketh closer than a brother* (Proverbs 18:24) — *he loved him as he loved his own soul*: Jonathan the proverb made flesh, cleaving nearer than blood.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=17
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-jonathan-loved-him-and-laid-down-his-own-crown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou shalt be king over Yashar''el (Israel), and I shall be next unto thee* (1 Samuel 23:17) — the love that loves as his own soul costs Jonathan the throne; the heir gladly takes second place.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=20 AND sv.verse_number=17
+  JOIN _s340_1sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=23 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-20-jonathan-loved-him-and-laid-down-his-own-crown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session340 — 1 Samuel cross-references complete.'
