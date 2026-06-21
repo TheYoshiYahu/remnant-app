@@ -10963,6 +10963,2177 @@ SELECT t.id, cr.id, 6, E'Esther 3:1 — *Haman the son of Hammedatha the Agagite
  WHERE t.slug='deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_deuteronomy_26.sql (Deuteronomy 26) -----
+-- Chapter: Deuteronomy 26  | tag: deu26 | session prefix: s310
+-- Sort band: base 25125, step 3  (25125, 25128, 25131, 25134)
+-- Temp view: _s310_deu26_lookup
+--
+-- FRAMING (the lens — Torah is the living covenant inheritance, never the curse):
+--   Deuteronomy 26 closes the statute body of Moses with two liturgies and the mutual
+--   avouching. (1) The basket of firstfruits brought to the chosen place, recited over
+--   the credo of redemption-history — *A Syrian ready to perish was my father* — the
+--   thankful recital that rehearses Genesis-through-Conquest and presents the firstfruit
+--   type (Messiah the firstfruits, the holy lump). (2) The third-year tithe to the
+--   Levite, stranger, fatherless, widow — the welfare-tithe affirmed and declared kept.
+--   (3) The wholehearted covenant commitment: keep and do with all heart and soul.
+--   (4) The mutual avouching — Israel avouches Yahuah; Yahuah avouches Israel his
+--   PECULIAR, HOLY people set high above all nations — the two-house election that runs
+--   forward to the peculiar people of 1 Peter and Titus (restoration, NOT replacement).
+--
+-- PER-CHAPTER COVERAGE CHECKLIST:
+--   v.1-11 (basket of firstfruits at the chosen place + the redemption-credo):
+--          NT:     Romans 11:16 (firstfruit holy, lump holy), 1 Corinthians 15:20
+--                  (Messiah the firstfruits) — BUILT (thread 1)
+--          Extras: none warranted (the credo is summarized canon history; the canon
+--                  witnesses carry it cleanly)
+--          Tanakh: Genesis 46:3-4 (go down into Egypt / great nation / bring up again),
+--                  Joshua 24:2-13 (the parallel covenant-renewal recital) — BUILT (thread 1)
+--   v.12-15 (third-year tithe to Levite/stranger/fatherless/widow + the declaration):
+--          NT:     none warranted (the welfare-tithe ethic is Torah-internal here)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 14:28-29 (the same third-year tithe within thy gates) —
+--                  BUILT (thread 2)
+--   v.16-17 (keep and do with all heart and soul / Israel avouches Yahuah, walk in his ways):
+--          NT:     none warranted (the wholehearted clause is gathered into the avouching
+--                  thread; the peculiar-people FORWARD weave sits at v.18-19)
+--          Extras: none warranted
+--          Tanakh: woven into thread 3 with the mutual avouching (v.16-17 the human side)
+--   v.18-19 (Yahuah avouches Israel his peculiar people, holy, set high above all nations):
+--          NT:     1 Peter 2:9 (a peculiar people, an holy nation), Titus 2:14 (purify
+--                  unto himself a peculiar people) — BUILT (thread 3)
+--          Extras: none warranted
+--          Tanakh: Exodus 19:5-6 (a peculiar treasure, a kingdom of priests, an holy
+--                  nation), Deuteronomy 7:6 (an holy people, a special people) — BUILT (thread 3)
+--
+-- THREADS (slug -> target libraries):
+--   1. deuteronomy-26-the-basket-of-firstfruits-and-the-credo-a-syrian-ready-to-perish-was-my-father  [NT+Tanakh]  free
+--   2. deuteronomy-26-the-third-year-tithe-to-the-levite-the-stranger-the-fatherless-and-the-widow     [Tanakh]     free
+--   3. deuteronomy-26-the-mutual-avouching-his-peculiar-and-holy-people-set-high-above-all-nations     [NT+Tanakh]  free
+--
+-- All members canon (NT + Tanakh) => every thread tier_required='free'.
+
+CREATE TEMP VIEW _s310_deu26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: basket of firstfruits + the redemption-credo
+    ('canon','deuteronomy',26,10,'canon','romans',11,16,'free',
+     E'*For if the firstfruit be holy, the lump is also holy: and if the root be holy, so are the branches* (Romans 11:16). The worshipper of Deuteronomy 26:10 brings *the firstfruits of the land, which thou, O Yahuah (LORD), hast given me* and sets it before Yahuah — the first of the harvest consecrating the whole. Paul reads the same type: the holy firstfruit makes the lump holy, the holy root carries the branches; the offered first of Yashar''el (Israel) sanctifies the ingathering to come, the two-house people held in their root.'),
+    ('canon','deuteronomy',26,10,'canon','1-corinthians',15,20,'free',
+     E'*But now is Messiah (Christ) risen from the dead, and become the firstfruits of them that slept* (1 Corinthians 15:20). The basket of *the firstfruits of the land* presented at the chosen place (Deuteronomy 26:10) is the figure the Formed Son fills — risen as the firstfruits, the first sheaf of the resurrection-harvest that guarantees the full ingathering of his people raised after him.'),
+    ('canon','deuteronomy',26,5,'canon','genesis',46,3,'free',
+     E'*And he said, I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation* (Genesis 46:3). The credo of Deuteronomy 26:5 rehearses this very descent — *A Syrian ready to perish was my father, and he went down into Egypt, and sojourned there with a few, and became there a nation, great, mighty, and populous* — Jacob the wandering father carried down by the word of promise, the seventy made into a nation.'),
+    ('canon','deuteronomy',26,8,'canon','genesis',46,4,'free',
+     E'*I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes* (Genesis 46:4). The promise *I will also surely bring thee up again* is exactly what the worshipper confesses fulfilled in Deuteronomy 26:8 — *And Yahuah (LORD) brought us forth out of Egypt with a mighty hand, and with an outstretched arm* — the word spoken to Jacob honoured generations later in the Exodus.'),
+    ('canon','deuteronomy',26,3,'canon','joshua',24,3,'free',
+     E'*And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac* (Joshua 24:3). Joshua''s covenant-renewal recital is the twin of the Deuteronomy 26 confession — *I am come unto the country which Yahuah (LORD) sware unto our fathers for to give us* (Deuteronomy 26:3) — both rehearse the fathers, the seed multiplied, the sworn land, the people reciting redemption-history back to Yahuah.'),
+    ('canon','deuteronomy',26,9,'canon','joshua',24,13,'free',
+     E'*And I have given you a land for which ye did not labour, and cities which ye built not, and ye dwell in them; of the vineyards and oliveyards which ye planted not do ye eat* (Joshua 24:13). The gift confessed in Deuteronomy 26:9 — *he hath brought us into this place, and hath given us this land, even a land that floweth with milk and honey* — is the same unearned inheritance Joshua names; the firstfruits go back to the Giver of a land Israel did not make.'),
+    -- Thread 2: the third-year tithe to the Levite, stranger, fatherless, widow
+    ('canon','deuteronomy',26,12,'canon','deuteronomy',14,28,'free',
+     E'*At the end of three years thou shalt bring forth all the tithe of thine increase the same year, and shalt lay it up within thy gates* (Deuteronomy 14:28). This is the statute Deuteronomy 26:12 puts into liturgy — *When thou hast made an end of tithing all the tithes of thine increase the third year, which is the year of tithing, and hast given it unto the Levite, the stranger, the fatherless, and the widow, that they may eat within thy gates, and be filled* — the same third-year welfare-tithe, gathered within the gates for the landless and the vulnerable.'),
+    ('canon','deuteronomy',26,12,'canon','deuteronomy',14,29,'free',
+     E'*And the Levite, (because he hath no part nor inheritance with thee,) and the stranger, and the fatherless, and the widow, which are within thy gates, shall come, and shall eat and be satisfied; that Yahuah Elohayka (the LORD thy God) may bless thee in all the work of thine hand which thou doest* (Deuteronomy 14:29). The four recipients named in Deuteronomy 26:12 — Levite, stranger, fatherless, widow — are exactly these, and the blessing tied to the giving in Deuteronomy 14:29 is what the worshipper claims in Deuteronomy 26:15: *Look down from thy holy habitation... and bless thy people Yashar''el (Israel)*.'),
+    -- Thread 3: the mutual avouching / peculiar and holy people
+    ('canon','deuteronomy',26,18,'canon','exodus',19,5,'free',
+     E'*Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine* (Exodus 19:5). The avouching of Deuteronomy 26:18 — *And Yahuah (LORD) hath avouched thee this day to be his peculiar people... and that thou shouldest keep all his commandments* — is the formal seal of the Sinai offer; peculiar treasure and peculiar people are one election, bound to the keeping of the covenant, never apart from it.'),
+    ('canon','deuteronomy',26,19,'canon','exodus',19,6,'free',
+     E'*And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel)* (Exodus 19:6). The holy people set high in Deuteronomy 26:19 — *to make thee high above all nations which he hath made, in praise, and in name, and in honour; and that thou mayest be an holy people unto Yahuah Elohayka (the LORD thy God)* — is the kingdom of priests and holy nation of Sinai, the same calling renewed on the plains of Moab.'),
+    ('canon','deuteronomy',26,19,'canon','deuteronomy',7,6,'free',
+     E'*For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth* (Deuteronomy 7:6). The very phrasing of Deuteronomy 26:19 — *an holy people unto Yahuah Elohayka (the LORD thy God)*, set *high above all nations* — is the refrain of the same book; the holy, special, chosen people is the fixed identity of Yashar''el (Israel), not a status passed to another.'),
+    ('canon','deuteronomy',26,18,'canon','1-peter',2,9,'free',
+     E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light* (1 Peter 2:9). Peter gathers the whole avouching of Deuteronomy 26:18-19 — *his peculiar people... an holy people unto Yahuah Elohayka (the LORD thy God)* — and lays it on the scattered two-house people being regathered; not a new nation replacing Israel, but the chosen, peculiar, holy people of the covenant restored and called into the light.'),
+    ('canon','deuteronomy',26,18,'canon','titus',2,14,'free',
+     E'*Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works* (Titus 2:14). The peculiar people Yahuah avouched in Deuteronomy 26:18 — bound *that thou shouldest keep all his commandments* — is the peculiar people the Formed Son redeems and purifies, *zealous of good works*; the election and the obedience belong together, grace UNTO the keeping of Torah, never instead of it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-26-the-basket-of-firstfruits-and-the-credo-a-syrian-ready-to-perish-was-my-father',
+       E'The basket of firstfruits and the credo: A Syrian ready to perish was my father',
+       E'When Israel comes into the land, the firstfruits are carried in a basket to the chosen place and presented with a confession of redemption-history: *thou shalt take of the first of all the fruit of the earth... and shalt go unto the place which Yahuah Elohayka (the LORD thy God) shall choose to place his name there* (Deuteronomy 26:2); *A Syrian ready to perish was my father, and he went down into Egypt, and sojourned there with a few, and became there a nation, great, mighty, and populous: And the Egyptians evil entreated us... And Yahuah (LORD) brought us forth out of Egypt with a mighty hand, and with an outstretched arm... And he hath brought us into this place, and hath given us this land, even a land that floweth with milk and honey. And now, behold, I have brought the firstfruits of the land* (Deuteronomy 26:5-10). This is the thankful recital — the whole story from the wandering father to the Exodus to the gift of the land, rehearsed back to Yahuah over the first of the harvest. It echoes the word spoken to Jacob: *fear not to go down into Egypt; for I will there make of thee a great nation* (Genesis 46:3), *I will also surely bring thee up again* (Genesis 46:4). And Joshua recites the same credo at the covenant renewal: *I took your father Abraham... and multiplied his seed* (Joshua 24:3), *I have given you a land for which ye did not labour* (Joshua 24:13). The firstfruit is also a type: *if the firstfruit be holy, the lump is also holy* (Romans 11:16) — the consecrated first sanctifying the whole, the holy root carrying the branches; and *Messiah (Christ) risen from the dead, and become the firstfruits of them that slept* (1 Corinthians 15:20) — the first sheaf of the resurrection-harvest that guarantees the ingathering of his people.',
+       sv.verse_id, ev.verse_id, 'free', 25125
+  FROM _s310_deu26_lookup sv, _s310_deu26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=26 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-26-the-third-year-tithe-to-the-levite-the-stranger-the-fatherless-and-the-widow',
+       E'The third-year tithe to the Levite, the stranger, the fatherless, and the widow',
+       E'The second liturgy of the chapter is the declaration over the third-year tithe: *When thou hast made an end of tithing all the tithes of thine increase the third year, which is the year of tithing, and hast given it unto the Levite, the stranger, the fatherless, and the widow, that they may eat within thy gates, and be filled* (Deuteronomy 26:12). The worshipper affirms full obedience — *I have not transgressed thy commandments, neither have I forgotten them... I have hearkened to the voice of Yahuah Elohai (the LORD my God)* (Deuteronomy 26:13-14) — and pleads the covenant blessing: *Look down from thy holy habitation, from heaven, and bless thy people Yashar''el (Israel), and the land which thou hast given us* (Deuteronomy 26:15). This is the welfare-tithe already commanded earlier in the book: *At the end of three years thou shalt bring forth all the tithe of thine increase the same year, and shalt lay it up within thy gates* (Deuteronomy 14:28); *And the Levite... and the stranger, and the fatherless, and the widow, which are within thy gates, shall come, and shall eat and be satisfied; that Yahuah Elohayka (the LORD thy God) may bless thee in all the work of thine hand* (Deuteronomy 14:29). The same four landless ones, the same gates, the same blessing tied to the giving — Torah''s provision for the vulnerable, kept and confessed.',
+       sv.verse_id, ev.verse_id, 'free', 25128
+  FROM _s310_deu26_lookup sv, _s310_deu26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=26 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-26-the-mutual-avouching-his-peculiar-and-holy-people-set-high-above-all-nations',
+       E'The mutual avouching: his peculiar and holy people set high above all nations',
+       E'The statute body closes with a mutual covenant pledge. Israel''s side: *thou shalt therefore keep and do them with all thine heart, and with all thy soul. Thou hast avouched Yahuah (LORD) this day to be thy Elohim (God), and to walk in his ways, and to keep his statutes, and his commandments, and his judgments, and to hearken unto his voice* (Deuteronomy 26:16-17). And Yahuah''s side: *And Yahuah (LORD) hath avouched thee this day to be his peculiar people, as he hath promised thee, and that thou shouldest keep all his commandments; And to make thee high above all nations which he hath made, in praise, and in name, and in honour; and that thou mayest be an holy people unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 26:18-19). This avouching seals the Sinai offer: *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people* (Exodus 19:5), *ye shall be unto me a kingdom of priests, and an holy nation* (Exodus 19:6); and the refrain of the same book: *thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people* (Deuteronomy 7:6). It is this very calling the apostles lay on the regathered two-house people — never a new nation replacing Israel, but Israel restored: *ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9), the people the Formed Son *purify unto himself a peculiar people, zealous of good works* (Titus 2:14). The election and the commandment-keeping are one bond — grace UNTO obedience, the peculiar people set high to keep all his commandments.',
+       sv.verse_id, ev.verse_id, 'free', 25131
+  FROM _s310_deu26_lookup sv, _s310_deu26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=26 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 46:3 — *fear not to go down into Egypt; for I will there make of thee a great nation*: the descent the credo rehearses (Deuteronomy 26:5).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=5
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-basket-of-firstfruits-and-the-credo-a-syrian-ready-to-perish-was-my-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 46:4 — *I will also surely bring thee up again*: the promise the worshipper confesses fulfilled in *Yahuah brought us forth out of Egypt* (Deuteronomy 26:8).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=8
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-basket-of-firstfruits-and-the-credo-a-syrian-ready-to-perish-was-my-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Joshua 24:3 — *I took your father Abraham... and multiplied his seed, and gave him Isaac*: the twin covenant-renewal recital (Deuteronomy 26:3).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=3
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-basket-of-firstfruits-and-the-credo-a-syrian-ready-to-perish-was-my-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Joshua 24:13 — *I have given you a land for which ye did not labour*: the same unearned inheritance Deuteronomy 26:9 confesses.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=9
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-basket-of-firstfruits-and-the-credo-a-syrian-ready-to-perish-was-my-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Romans 11:16 — *if the firstfruit be holy, the lump is also holy*: the firstfruit type, the holy root carrying the branches (Deuteronomy 26:10).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=10
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-basket-of-firstfruits-and-the-credo-a-syrian-ready-to-perish-was-my-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'1 Corinthians 15:20 — *Messiah risen from the dead, and become the firstfruits of them that slept*: the Formed Son fills the firstfruits figure (Deuteronomy 26:10).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=10
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-basket-of-firstfruits-and-the-credo-a-syrian-ready-to-perish-was-my-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 14:28 — *At the end of three years thou shalt bring forth all the tithe... within thy gates*: the statute Deuteronomy 26:12 puts into liturgy.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=12
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-third-year-tithe-to-the-levite-the-stranger-the-fatherless-and-the-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 14:29 — *the Levite... the stranger... the fatherless... the widow... shall eat and be satisfied; that Yahuah may bless thee*: the same four recipients and the blessing tied to the giving (Deuteronomy 26:12,15).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=12
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-third-year-tithe-to-the-levite-the-stranger-the-fatherless-and-the-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 19:5 — *ye shall be a peculiar treasure unto me above all people*: the Sinai offer the avouching of Deuteronomy 26:18 seals.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=18
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-mutual-avouching-his-peculiar-and-holy-people-set-high-above-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 19:6 — *a kingdom of priests, and an holy nation*: the holy-people calling renewed in Deuteronomy 26:19.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-mutual-avouching-his-peculiar-and-holy-people-set-high-above-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 7:6 — *an holy people... a special people... above all people*: the fixed identity of Yashar''el (Israel) echoed in Deuteronomy 26:19.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-mutual-avouching-his-peculiar-and-holy-people-set-high-above-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Peter 2:9 — *a chosen generation, a royal priesthood, an holy nation, a peculiar people*: the avouching laid on the regathered two-house people, Israel restored not replaced (Deuteronomy 26:18-19).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=18
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-mutual-avouching-his-peculiar-and-holy-people-set-high-above-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Titus 2:14 — *purify unto himself a peculiar people, zealous of good works*: the peculiar people redeemed UNTO obedience, election and commandment-keeping one bond (Deuteronomy 26:18).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=26 AND sv.verse_number=18
+  JOIN _s310_deu26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-26-the-mutual-avouching-his-peculiar-and-holy-people-set-high-above-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_27.sql (Deuteronomy 27) -----
+-- Chapter: Deuteronomy 27  | tag: deu27  | session prefix: s310
+-- Sort band base: 25150, step 3  (25150, 25153, 25156, 25159, 25162)
+-- Temp view: _s310_deu27_lookup
+--
+-- FRAMING (the lens, per MINION_BRIEF_TANAKH.md):
+--   Deuteronomy 27 is the covenant-ratification liturgy at Gerizim/Ebal: the Torah
+--   inscribed in the land on plaistered stones, the altar of UNHEWN stones, the
+--   blessing-and-curse tribes, the twelve Levitical curses, and the climactic
+--   27:26 "Cursed be he that confirmeth not all the words of this law to do them."
+--   The curse falls on the one who BREAKS / does not confirm the Torah, never on
+--   the Torah itself (Torah is the covenant inheritance, framework point 6). Paul
+--   quotes 27:26 at Galatians 3:10 — and supplies the remedy at 3:13: the Formed
+--   Son hanged on a tree (Deut 21:23) bears the curse of the breaker, so the Torah
+--   stands and the broken-covenant are redeemed. NOT abolition of the Torah. The
+--   "Amen" of all the people = the whole congregation owning the covenant sanctions.
+--
+-- Deuteronomy 27 coverage:
+--   v.1-8  the great plaistered stones with all the words of this Torah + the altar
+--          of unhewn stones (no iron tool), burnt+peace offerings, rejoicing
+--          NT:     none warranted (the lateral land/altar witnesses carry it)
+--          Extras: none warranted
+--          Tanakh: Exodus 20:25 (altar not of hewn stone) + Joshua 8:30-32 (Joshua
+--                  built the altar of whole stones on Ebal and wrote the Torah on them)
+--   v.9-10 "this day thou art become the people of Yahuah... thou shalt obey his voice"
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 26:17-18 (mutual avouchment, peculiar people)
+--   v.11-13 six tribes on Gerizim to bless, six on Ebal to curse
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 11:29 (blessing on Gerizim, curse on Ebal) +
+--                  Joshua 8:33-34 (the liturgy performed, half toward each mount)
+--   v.14-25 the twelve Levitical curses, all the people answer Amen (idolater,
+--          dishonourer of parents, remover of the landmark, misleader of the blind,
+--          perverter of judgment, incest list, secret smiter, hired slayer)
+--          NT:     none warranted (the climax v.26 carries the NT weave)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 19:14 (thou shalt not remove thy neighbour's landmark)
+--   v.26  "Cursed be he that confirmeth not all the words of this law to do them. Amen."
+--          NT:     Galatians 3:10 (Paul quotes 27:26 verbatim) + Galatians 3:13
+--                  (Messiah made a curse, hanged on a tree, bears the breaker's curse)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 21:23 (he that is hanged is accursed) + Deuteronomy
+--                  28:15 (the curses of covenant-breaking) + Jeremiah 11:3-5 (Cursed
+--                  be the man that obeyeth not... and I said, Amen / So be it)
+--
+-- Threads (5):
+--   1. deuteronomy-27-the-words-of-this-torah-on-the-stones-and-the-altar-of-unhewn-stones
+--        members: Exodus 20:25 (canon/free), Joshua 8:30 (canon/free),
+--                 Joshua 8:31 (canon/free), Joshua 8:32 (canon/free)   -> tier free
+--   2. deuteronomy-27-this-day-thou-art-become-the-people-of-yahuah
+--        members: Deuteronomy 26:17 (canon/free), Deuteronomy 26:18 (canon/free) -> free
+--   3. deuteronomy-27-six-tribes-on-gerizim-to-bless-six-on-ebal-to-curse
+--        members: Deuteronomy 11:29 (canon/free), Joshua 8:33 (canon/free),
+--                 Joshua 8:34 (canon/free)   -> tier free
+--   4. deuteronomy-27-the-twelve-curses-and-the-removed-landmark
+--        members: Deuteronomy 19:14 (canon/free)   -> tier free
+--   5. deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah
+--        members: Galatians 3:10 (canon/free), Galatians 3:13 (canon/free),
+--                 Deuteronomy 21:23 (canon/free), Deuteronomy 28:15 (canon/free),
+--                 Jeremiah 11:3 (canon/free), Jeremiah 11:4 (canon/free),
+--                 Jeremiah 11:5 (canon/free)   -> tier free
+--
+-- All members are canon (Tanakh + NT) => every thread tier_required = 'free'.
+-- =====================================================================
+
+CREATE TEMP VIEW _s310_deu27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the words of this Torah on the stones + the altar of unhewn stones
+    ('canon','deuteronomy',27,5,'canon','exodus',20,25,'free',
+     E'*And if thou wilt make me an altar of stone, thou shalt not build it of hewn stone: for if thou lift up thy tool upon it, thou hast polluted it.* (Exodus 20:25). The Ebal altar law repeats Sinai exactly: *thou shalt not lift up any iron tool upon them* (Deuteronomy 27:5). No human craft may improve Yahuah''s altar; the unhewn stone keeps the worship His, not the work of man''s hands.'),
+    ('canon','deuteronomy',27,8,'canon','joshua',8,30,'free',
+     E'*Then Joshua built an altar unto Yahuah Elohim (the LORD God) of Yashar''el (Israel) in mount Ebal,* (Joshua 8:30). Moses commands *thou shalt write upon the stones all the words of this law very plainly* (Deuteronomy 27:8); Joshua carries it out to the letter on the very mount named, the Torah inscribed in the land at the moment of entering it.'),
+    ('canon','deuteronomy',27,5,'canon','joshua',8,31,'free',
+     E'*As Moses the servant of Yahuah (LORD) commanded the children of Yashar''el (Israel), as it is written in the book of the law of Moses, an altar of whole stones, over which no man hath lift up any iron: and they offered thereon burnt offerings unto Yahuah (LORD), and sacrificed peace offerings.* (Joshua 8:31). This is *an altar of stones: thou shalt not lift up any iron tool upon them* (Deuteronomy 27:5) obeyed exactly — whole stones, burnt and peace offerings, as commanded.'),
+    ('canon','deuteronomy',27,8,'canon','joshua',8,32,'free',
+     E'*And he wrote there upon the stones a copy of the law of Moses, which he wrote in the presence of the children of Yashar''el (Israel).* (Joshua 8:32). The command *thou shalt write upon the stones all the words of this law very plainly* (Deuteronomy 27:8) is fulfilled: the Torah copied onto stone before the whole congregation, the covenant set in the land in plain sight.'),
+    -- THREAD 2: this day thou art become the people of Yahuah
+    ('canon','deuteronomy',27,9,'canon','deuteronomy',26,17,'free',
+     E'*Thou hast avouched Yahuah (LORD) this day to be thy Elohim (God), and to walk in his ways, and to keep his statutes, and his commandments, and his judgments, and to hearken unto his voice:* (Deuteronomy 26:17). The same *this day* of mutual avouchment stands behind *this day thou art become the people of Yahuah Elohayka (the LORD thy God)* (Deuteronomy 27:9) — covenant identity is the people walking in His statutes, not lineage alone.'),
+    ('canon','deuteronomy',27,10,'canon','deuteronomy',26,18,'free',
+     E'*And Yahuah (LORD) hath avouched thee this day to be his peculiar people, as he hath promised thee, and that thou shouldest keep all his commandments;* (Deuteronomy 26:18). Yahuah''s avouchment of His *peculiar people* is the other half of *thou shalt therefore obey the voice of Yahuah Elohayka (the LORD thy God), and do his commandments and his statutes* (Deuteronomy 27:10): becoming His people and keeping His commandments are one act, never severed.'),
+    -- THREAD 3: six tribes on Gerizim to bless, six on Ebal to curse
+    ('canon','deuteronomy',27,12,'canon','deuteronomy',11,29,'free',
+     E'*And it shall come to pass, when Yahuah Elohayka (the LORD thy God) hath brought thee in unto the land whither thou goest to possess it, that thou shalt put the blessing upon mount Gerizim, and the curse upon mount Ebal.* (Deuteronomy 11:29). The earlier word is now staged tribe by tribe: *These shall stand upon mount Gerizim to bless the people... And these shall stand upon mount Ebal to curse* (Deuteronomy 27:12-13).'),
+    ('canon','deuteronomy',27,12,'canon','joshua',8,33,'free',
+     E'*And all Yashar''el (Israel), and their elders, and officers, and their judges, stood on this side the ark and on that side before the priests the Levites... half of them over against mount Gerizim, and half of them over against mount Ebal; as Moses the servant of Yahuah (LORD) had commanded before, that they should bless the people of Yashar''el (Israel).* (Joshua 8:33). The blessing-and-cursing assembly of Deuteronomy 27:12-13 is set up exactly, *as well the stranger, as he that was born among them* — the whole covenant congregation.'),
+    ('canon','deuteronomy',27,13,'canon','joshua',8,34,'free',
+     E'*And afterward he read all the words of the law, the blessings and cursings, according to all that is written in the book of the law.* (Joshua 8:34). The curse-mount of Deuteronomy 27:13 is answered as Joshua reads *the blessings and cursings* over the gathered tribes — the liturgy of Ebal performed to the letter.'),
+    -- THREAD 4: the twelve curses and the removed landmark
+    ('canon','deuteronomy',27,17,'canon','deuteronomy',19,14,'free',
+     E'*Thou shalt not remove thy neighbour''s landmark, which they of old time have set in thine inheritance, which thou shalt inherit in the land that Yahuah Elohayka (the LORD thy God) giveth thee to possess it.* (Deuteronomy 19:14). The Levites'' curse *Cursed be he that removeth his neighbour''s landmark* (Deuteronomy 27:17) puts the covenant sanction behind the statute: to move the boundary stone is to steal a brother''s inheritance in the land Yahuah gave.'),
+    -- THREAD 5: cursed be he that confirmeth not all the words of this Torah
+    ('canon','deuteronomy',27,26,'canon','galatians',3,10,'free',
+     E'*For as many as are of the works of the law are under the curse: for it is written, Cursed is every one that continueth not in all things which are written in the book of the law to do them.* (Galatians 3:10). Paul quotes *Cursed be he that confirmeth not all the words of this law to do them* (Deuteronomy 27:26) word for word: the curse falls on the breaker who does NOT continue in the Torah — those leaning on flesh-merit (*works of the law* as boast) are exposed as breakers, not the Torah condemned.'),
+    ('canon','deuteronomy',27,26,'canon','galatians',3,13,'free',
+     E'*Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree:* (Galatians 3:13). Here is the remedy of Deuteronomy 27:26: the Formed Son bears the breaker''s curse by hanging on a tree (Deuteronomy 21:23), so the *all the words of this law* stand confirmed and the covenant-broken are redeemed — the Torah upheld, not abolished.'),
+    ('canon','deuteronomy',27,26,'canon','deuteronomy',21,23,'free',
+     E'*His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim;) that thy land be not defiled, which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance.* (Deuteronomy 21:23). This is the *Cursed is every one that hangeth on a tree* Paul cites — the curse of Deuteronomy 27:26 borne on the tree, the very text that lets the Formed Son take the breaker''s sentence.'),
+    ('canon','deuteronomy',27,26,'canon','deuteronomy',28,15,'free',
+     E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee:* (Deuteronomy 28:15). The single curse of Deuteronomy 27:26 opens immediately into the full covenant-breaking judgment of chapter 28 — the curse is the exile-penalty for disobedience, never the Torah itself.'),
+    ('canon','deuteronomy',27,26,'canon','jeremiah',11,3,'free',
+     E'*And say thou unto them, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel); Cursed be the man that obeyeth not the words of this covenant,* (Jeremiah 11:3). Centuries later Jeremiah re-pronounces the very curse of Deuteronomy 27:26 — *Cursed be the man that obeyeth not* — the broken covenant catching up with the people exactly as the Ebal liturgy warned.'),
+    ('canon','deuteronomy',27,26,'canon','jeremiah',11,4,'free',
+     E'*Which I commanded your fathers in the day that I brought them forth out of the land of Egypt, from the iron furnace, saying, Obey my voice, and do them, according to all which I command you: so shall ye be my people, and I will be your Elohim (God):* (Jeremiah 11:4). The covenant whose curse Deuteronomy 27:26 seals is *Obey my voice, and do them* — the same condition of *this day thou art become the people of Yahuah* (Deuteronomy 27:9-10): obedience and belonging are one.'),
+    ('canon','deuteronomy',27,26,'canon','jeremiah',11,5,'free',
+     E'*That I may perform the oath which I have sworn unto your fathers, to give them a land flowing with milk and honey, as it is this day. Then answered I, and said, So be it, O Yahuah (LORD).* (Jeremiah 11:5). Jeremiah''s *So be it, O Yahuah* is the prophet''s own Amen — the same *all the people shall say, Amen* (Deuteronomy 27:26) — the covenant sanctions owned afresh, the land-oath the very inheritance the curse guards.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-27-the-words-of-this-torah-on-the-stones-and-the-altar-of-unhewn-stones',
+       E'The Words of This Torah on the Plaistered Stones and the Altar of Unhewn Stones',
+       E'Crossing Jordan, Yashar''el (Israel) is to inscribe the covenant into the land itself: *thou shalt set thee up great stones, and plaister them with plaister... And thou shalt write upon them all the words of this law* (Deuteronomy 27:2-3), and *thou shalt write upon the stones all the words of this law very plainly* (Deuteronomy 27:8). Beside them rises an altar Yahuah will not let man''s craft touch: *an altar of stones: thou shalt not lift up any iron tool upon them* (Deuteronomy 27:5). This is Sinai repeated — *if thou wilt make me an altar of stone, thou shalt not build it of hewn stone: for if thou lift up thy tool upon it, thou hast polluted it* (Exodus 20:25): the worship stays Yahuah''s, never improved by human hands. And it is all done to the letter under Joshua: *Then Joshua built an altar unto Yahuah Elohim (the LORD God) of Yashar''el (Israel) in mount Ebal* (Joshua 8:30), *an altar of whole stones, over which no man hath lift up any iron* (Joshua 8:31), and *he wrote there upon the stones a copy of the law of Moses, which he wrote in the presence of the children of Yashar''el (Israel)* (Joshua 8:32). The Torah set in stone in the land at the very threshold of inheriting it.',
+       sv.verse_id, ev.verse_id, 'free', 25150
+  FROM _s310_deu27_lookup sv, _s310_deu27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=27 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-27-this-day-thou-art-become-the-people-of-yahuah',
+       E'This Day Thou Art Become the People of Yahuah',
+       E'At the heart of the Ebal liturgy stands the covenant identity: *Take heed, and hearken, O Yashar''el (Israel); this day thou art become the people of Yahuah Elohayka (the LORD thy God). Thou shalt therefore obey the voice of Yahuah Elohayka (the LORD thy God), and do his commandments and his statutes* (Deuteronomy 27:9-10). Becoming His people and obeying His voice are spoken in a single breath — never one without the other. This is the mutual avouchment of the chapter before: *Thou hast avouched Yahuah (LORD) this day to be thy Elohim (God), and to walk in his ways, and to keep his statutes, and his commandments* (Deuteronomy 26:17), answered by *And Yahuah (LORD) hath avouched thee this day to be his peculiar people... and that thou shouldest keep all his commandments* (Deuteronomy 26:18). The covenant people are the people who walk in the Torah — the framework''s root, never lineage alone and never word-confession alone, but the covenant-keeping people of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 25153
+  FROM _s310_deu27_lookup sv, _s310_deu27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=27 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-27-six-tribes-on-gerizim-to-bless-six-on-ebal-to-curse',
+       E'Six Tribes on Gerizim to Bless, Six on Ebal to Curse',
+       E'The covenant is dramatized across two mountains: *These shall stand upon mount Gerizim to bless the people... Simeon, and Levi, and Yahudah (Judah), and Issachar, and Joseph, and Benjamin: And these shall stand upon mount Ebal to curse; Reuben, Gad, and Asher, and Zebulun, Dan, and Naphtali* (Deuteronomy 27:12-13). This stages the earlier word: *thou shalt put the blessing upon mount Gerizim, and the curse upon mount Ebal* (Deuteronomy 11:29). And it is carried out exactly under Joshua, the whole congregation gathered, *half of them over against mount Gerizim, and half of them over against mount Ebal; as Moses the servant of Yahuah (LORD) had commanded* (Joshua 8:33), where *he read all the words of the law, the blessings and cursings, according to all that is written in the book of the law* (Joshua 8:34). Blessing and curse are set before the people as one choice — the covenant sanctions the whole congregation will own with their Amen.',
+       sv.verse_id, ev.verse_id, 'free', 25156
+  FROM _s310_deu27_lookup sv, _s310_deu27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=27 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-27-the-twelve-curses-and-the-removed-landmark',
+       E'The Twelve Curses and the Removed Landmark',
+       E'The Levites pronounce twelve curses and the whole congregation answers Amen to each — against the idolater, the dishonourer of parents, the perverter of the judgment of *the stranger, fatherless, and widow* (Deuteronomy 27:19), the incestuous, the secret smiter, and the one who *taketh reward to slay an innocent person* (Deuteronomy 27:25). Among them: *Cursed be he that removeth his neighbour''s landmark. And all the people shall say, Amen* (Deuteronomy 27:17). The curse puts the covenant''s weight behind the statute already given: *Thou shalt not remove thy neighbour''s landmark, which they of old time have set in thine inheritance, which thou shalt inherit in the land that Yahuah Elohayka (the LORD thy God) giveth thee to possess it* (Deuteronomy 19:14). To slide a boundary stone is to rob a brother of the inheritance Yahuah apportioned — a hidden sin, like most in this list, done where no court sees; so the congregation itself, with its Amen, becomes the witness and owns the sanction.',
+       sv.verse_id, ev.verse_id, 'free', 25159
+  FROM _s310_deu27_lookup sv, _s310_deu27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=27 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah',
+       E'Cursed Be He That Confirmeth Not All the Words of This Torah',
+       E'The twelve curses climax in the comprehensive one: *Cursed be he that confirmeth not all the words of this law to do them. And all the people shall say, Amen* (Deuteronomy 27:26). Read it carefully: the curse falls on the one who does NOT confirm and keep the Torah — the breaker — never on the Torah itself, which is the covenant inheritance. Paul quotes this verse exactly: *Cursed is every one that continueth not in all things which are written in the book of the law to do them* (Galatians 3:10) — exposing flesh-merit boasting (*works of the law* as a credential) as the very thing that leaves a man a breaker under the curse. And Paul names the remedy in the same breath: *Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree* (Galatians 3:13) — the Formed Son bearing the breaker''s sentence through *he that is hanged is accursed of Elohim* (Deuteronomy 21:23), so that *all the words of this law* stand confirmed and the broken-covenant are redeemed. This single curse opens at once into the full covenant-breaking judgment: *if thou wilt not hearken... that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15) — the exile-penalty for disobedience, not the Torah condemned. Centuries on, Jeremiah re-pronounces it: *Cursed be the man that obeyeth not the words of this covenant* (Jeremiah 11:3), the covenant of *Obey my voice, and do them... so shall ye be my people* (Jeremiah 11:4), to which the prophet answers with the congregation''s own Amen: *Then answered I, and said, So be it, O Yahuah (LORD)* (Jeremiah 11:5) — the covenant sanctions owned again, the land-oath the very inheritance the curse guards.',
+       sv.verse_id, ev.verse_id, 'free', 25162
+  FROM _s310_deu27_lookup sv, _s310_deu27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=27 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt not build it of hewn stone: for if thou lift up thy tool upon it, thou hast polluted it* (Exodus 20:25) — the Sinai altar-law the Ebal altar repeats: no iron, no human craft on Yahuah''s altar.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-the-words-of-this-torah-on-the-stones-and-the-altar-of-unhewn-stones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Then Joshua built an altar unto Yahuah Elohim (the LORD God) of Yashar''el (Israel) in mount Ebal* (Joshua 8:30) — the command obeyed on the very mount named.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=8
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=8 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-the-words-of-this-torah-on-the-stones-and-the-altar-of-unhewn-stones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*an altar of whole stones, over which no man hath lift up any iron* (Joshua 8:31) — Deuteronomy 27:5 obeyed exactly, with burnt and peace offerings.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=8 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-the-words-of-this-torah-on-the-stones-and-the-altar-of-unhewn-stones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he wrote there upon the stones a copy of the law of Moses... in the presence of the children of Yashar''el (Israel)* (Joshua 8:32) — Deuteronomy 27:8 fulfilled, the Torah set in stone before all.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=8
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=8 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-the-words-of-this-torah-on-the-stones-and-the-altar-of-unhewn-stones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou hast avouched Yahuah (LORD) this day to be thy Elohim (God), and to walk in his ways, and to keep his statutes* (Deuteronomy 26:17) — the people''s half of the mutual avouchment behind Deuteronomy 27:9.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=9
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-this-day-thou-art-become-the-people-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) hath avouched thee this day to be his peculiar people... and that thou shouldest keep all his commandments* (Deuteronomy 26:18) — becoming His people and keeping His commandments as one act, the lens of Deuteronomy 27:10.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=10
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-this-day-thou-art-become-the-people-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt put the blessing upon mount Gerizim, and the curse upon mount Ebal* (Deuteronomy 11:29) — the earlier word now staged tribe by tribe in Deuteronomy 27:12-13.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=12
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-six-tribes-on-gerizim-to-bless-six-on-ebal-to-curse'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*half of them over against mount Gerizim, and half of them over against mount Ebal; as Moses the servant of Yahuah (LORD) had commanded* (Joshua 8:33) — the assembly of Deuteronomy 27:12-13 set up exactly, stranger and native alike.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=12
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=8 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-six-tribes-on-gerizim-to-bless-six-on-ebal-to-curse'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he read all the words of the law, the blessings and cursings, according to all that is written in the book of the law* (Joshua 8:34) — the curse-mount of Deuteronomy 27:13 answered as the liturgy is performed.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=13
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=8 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-six-tribes-on-gerizim-to-bless-six-on-ebal-to-curse'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not remove thy neighbour''s landmark... in the land that Yahuah Elohayka (the LORD thy God) giveth thee* (Deuteronomy 19:14) — the statute the curse of Deuteronomy 27:17 seals; moving the stone steals a brother''s inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-the-twelve-curses-and-the-removed-landmark'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Cursed is every one that continueth not in all things which are written in the book of the law to do them* (Galatians 3:10) — Paul quotes Deuteronomy 27:26 verbatim: the curse on the breaker, not the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us... Cursed is every one that hangeth on a tree* (Galatians 3:13) — the Formed Son bears the breaker''s curse so the Torah stands, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he that is hanged is accursed of Elohim* (Deuteronomy 21:23) — the text Paul cites; the curse of Deuteronomy 27:26 borne on the tree.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=21 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*if thou wilt not hearken... that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15) — the single curse of 27:26 opening into the full covenant-breaking judgment; the curse is the exile-penalty, not the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Cursed be the man that obeyeth not the words of this covenant* (Jeremiah 11:3) — Jeremiah re-pronounces the very curse of Deuteronomy 27:26 as the broken covenant overtakes the people.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Obey my voice, and do them... so shall ye be my people, and I will be your Elohim (God)* (Jeremiah 11:4) — the covenant of obedience-and-belonging the curse guards, echoing Deuteronomy 27:9-10.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Then answered I, and said, So be it, O Yahuah (LORD)* (Jeremiah 11:5) — the prophet''s own Amen, the same *all the people shall say, Amen* of Deuteronomy 27:26; the land-oath the inheritance the curse protects.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s310_deu27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-27-cursed-be-he-that-confirmeth-not-all-the-words-of-this-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_28.sql (Deuteronomy 28) -----
+-- Chapter: Deuteronomy 28 — THE BLESSINGS AND THE CURSES, the covenant-lawsuit of the Torah, 68
+-- verses. *If thou shalt hearken diligently unto the voice of Yahuah Elohayka (the LORD thy God)...
+-- that Yahuah Elohayka (the LORD thy God) will set thee on high above all nations of the earth* (28:1);
+-- *But it shall come to pass, if thou wilt not hearken... that all these curses shall come upon thee*
+-- (28:15). FRAME (the whole chapter): the CURSE is the covenant-BREAKING judgment — the exile, the
+-- scattering of the two houses — NEVER the Torah itself a curse. *All these curses shall come upon thee,
+-- and shall pursue thee... BECAUSE thou hearkenedst not unto the voice of Yahuah Elohayka (the LORD thy
+-- God), to keep his commandments and his statutes* (28:45). The Torah is the inheritance; the curse is
+-- the sanction on forsaking it (Genesis 3:15 lens point 6: Torah is the covenant inheritance, never the
+-- curse). The dispersion of 28:64 (*Yahuah (LORD) shall scatter thee among all people, from the one end
+-- of the earth even unto the other*) is the scattering of Yashar'el (Israel) and Yahudah (Judah) — the
+-- very dispersion the Messiah comes to regather (Deuteronomy 30:1-5; the two-house frame, lens point 2;
+-- Romans 11 the partial blindness until the fulness).
+-- Tag: deu28   Temp view: _s310_deu28_lookup
+-- Sort band: base 25175, step 3 -> threads at 25175, 25178, 25181, 25184, 25187, 25190, 25193, 25196 (8 threads)
+-- Source of EVERY row: 'canon','deuteronomy',28,v
+--
+-- Deuteronomy 28 coverage:
+--   ★ v.1-6 (set thee on high above all nations... Blessed shalt thou be in the city... in the field...
+--          thy basket and thy store... when thou comest in... when thou goest out)
+--        NT:     none warranted distinct (the blessing-of-obedience weave is the OT covenant promise;
+--                forward-fulfillment held in prose, no single NT verse forced) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 26:3-5 (If ye walk in my statutes... rain in due season), Leviticus 26:11-12
+--                (I will set my tabernacle among you... ye shall be my people), ★ Psalm 1:1-3 (his delight
+--                is in the law of Yahuah... like a tree planted by the rivers of water) — THREAD 1
+--   ★ v.7-14 (enemies smitten before thy face... the rain... the head, and not the tail... above only...
+--          if that thou hearken)
+--        NT:     none warranted distinct (woven in prose) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 26:6-8 (peace in the land... five of you shall chase an hundred),
+--                ★ Deuteronomy 26:18-19 (his peculiar people... high above all nations... an holy people) — THREAD 2
+--   ★ v.15-19 (if thou wilt not hearken... all these curses shall come upon thee... Cursed shalt thou be
+--          in the city... in the field... thy basket and thy store... comest in... goest out)
+--        NT:     none warranted distinct — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 26:14-17 (if ye will not hearken... I will set my face against you) — THREAD 3
+--   v.20-24 (cursing, vexation, and rebuke... pestilence... consumption... thy heaven... brass... the
+--          earth... iron... the rain of thy land powder and dust)
+--        NT:     none warranted — THREAD 4
+--        Extras: none warranted
+--        Tanakh: Leviticus 26:16 (terror, consumption, the burning ague), Leviticus 26:19 (your heaven
+--                as iron, and your earth as brass), Leviticus 26:25 (I will send the pestilence among you) — THREAD 4
+--   ★ v.25-37 (smitten before enemies... removed into all the kingdoms of the earth... madness... blindness
+--          ... oppressed... a proverb, and a byword, among all nations)
+--        NT:     ★ Luke 21:24 (shall be led away captive into all nations) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 26:17 (slain before your enemies; they that hate you shall reign over you),
+--                ★ Leviticus 26:33 (I will scatter you among the heathen), ★ Jeremiah 24:9 (a reproach and
+--                a proverb, a taunt and a curse), ★ 1 Kings 9:7 (Yashar'el shall be a proverb and a byword) — THREAD 5
+--   ★ v.38-48 (the locust consume... the worms... the stranger... above thee very high... he shall be the
+--          head, and thou shalt be the tail... because thou servedst not Yahuah... a yoke of iron)
+--        NT:     none warranted distinct — THREAD 6
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 26:16 (ye shall sow your seed in vain, for your enemies shall eat it),
+--                Leviticus 26:20 (your strength shall be spent in vain... land shall not yield),
+--                ★ Leviticus 26:38-39 (ye shall perish among the heathen... pine away in their iniquity) — THREAD 6
+--   ★★ v.49-57 (a nation from far... as swift as the eagle flieth... besiege thee... thou shalt eat the
+--          fruit of thine own body, the flesh of thy sons and of thy daughters... the tender and delicate)
+--        NT:     ★ Luke 19:43-44 (thine enemies shall cast a trench about thee... lay thee even with the
+--                ground) — THREAD 7
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 26:29 (ye shall eat the flesh of your sons), ★ Jeremiah 19:9 (cause them to
+--                eat the flesh of their sons), ★★ Lamentations 2:20 (Shall the women eat their fruit?),
+--                ★★ Lamentations 4:10 (the pitiful women have sodden their own children), Lamentations 4:19
+--                (Our persecutors are swifter than the eagles) — THREAD 7
+--   ★★ v.58-68 (if thou wilt not observe to do all the words of this law... thy plagues wonderful...
+--          scattered among all people, from the one end of the earth even unto the other... no ease... a
+--          trembling heart, and failing of eyes... into Egypt again... sold unto your enemies)
+--        NT:     ★ Romans 11:8 (the spirit of slumber, eyes that they should not see), ★★ Romans 11:25
+--                (blindness in part is happened to Yashar'el, until the fulness of the Gentiles be come in) — THREAD 8
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 26:33 (I will scatter you among the heathen), ★ Deuteronomy 4:27 (Yahuah
+--                shall scatter you among the nations... few in number), ★ Nehemiah 1:8 (If ye transgress,
+--                I will scatter you abroad among the nations), ★★★ Deuteronomy 30:1-3 (return... gather
+--                thee from all the nations), Deuteronomy 30:4 (driven out unto the outmost parts of
+--                heaven... will he fetch thee) — THREAD 8
+--
+-- Threads (slug — target libraries):
+--   1. deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field — Tanakh (Leviticus 26, Psalm 1) [free]
+--      (★ the blessings for hearkening; the covenant promise of obedience)
+--   2. deuteronomy-28-the-head-and-not-the-tail-if-thou-hearken — Tanakh (Leviticus 26, Deuteronomy 26) [free]
+--      (★ blessed against enemies, the rain in season, the head-not-tail elevation; the peculiar people)
+--   3. deuteronomy-28-the-turn-cursed-shalt-thou-be-in-the-city — Tanakh (Leviticus 26) [free]
+--      (★ the turn to the curses, the inverse of the blessings; the covenant sanction)
+--   4. deuteronomy-28-thy-heaven-brass-and-the-earth-iron — Tanakh (Leviticus 26) [free]
+--      (cursing, vexation, pestilence, the shut heaven and barren earth)
+--   5. deuteronomy-28-a-proverb-and-a-byword-among-all-nations — NT (Luke 21) + Tanakh (Leviticus 26, Jeremiah 24, 1 Kings 9) [free]
+--      (★ smitten before enemies, scattered into all the kingdoms, a proverb and a byword; the scattering)
+--   6. deuteronomy-28-the-stranger-the-head-and-thou-the-tail — Tanakh (Leviticus 26) [free]
+--      (★ the reversal: the locust, the stranger rising high, the yoke of iron; serving not with joyfulness)
+--   7. deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body — NT (Luke 19) + Tanakh (Leviticus 26, Jeremiah 19, Lamentations 2, Lamentations 4) [free]
+--      (★★ the nation as the eagle, the siege so terrible the tender and delicate eat their own children)
+--   8. deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other — NT (Romans 11) + Tanakh (Leviticus 26, Deuteronomy 4, Nehemiah 1, Deuteronomy 30) [free]
+--      (★★ the long dispersion of the two houses, sold into Egypt again — the curse-for-breaking the Messiah regathers)
+--
+-- Framing notes:
+--   ★ THE BLESSINGS (THREADS 1-2): the blessing is for HEARKENING — *if thou shalt hearken diligently unto
+--      the voice of Yahuah Elohayka (the LORD thy God), to observe and to do all his commandments* (28:1).
+--      Deuteronomy 28 is the twin of Leviticus 26: *If ye walk in my statutes, and keep my commandments,
+--      and do them; Then I will give you rain in due season* (Leviticus 26:3-4). The head-not-tail elevation
+--      (28:13) is the same peculiar-people exaltation as Deuteronomy 26:18-19 — *to make thee high above all
+--      nations which he hath made... that thou mayest be an holy people*. Psalm 1 sings the same blessing
+--      personally: *his delight is in the law of Yahuah (LORD)... And he shall be like a tree planted by the
+--      rivers of water* (Psalm 1:2-3). The Torah is the inheritance the blessing flows through, never a curse.
+--   ★ THE COVENANT SANCTION (THREADS 3-4): *But it shall come to pass, if thou wilt not hearken... that all
+--      these curses shall come upon thee, and overtake thee* (28:15) — the exact inverse of the blessings,
+--      mirroring Leviticus 26:14-17. The shut heaven of brass (28:23) is Leviticus 26:19. This is the
+--      covenant-BREAKING judgment, conduct-within-the-covenant (lens point 7: victims, not enemies; the
+--      lawsuit is on Israel's sin, never ethnic hatred), NEVER the Torah being a curse.
+--   ★ THE SCATTERING (THREAD 5): *shalt be removed into all the kingdoms of the earth* (28:25); *thou shalt
+--      become an astonishment, a proverb, and a byword, among all nations* (28:37) — the dispersion the
+--      prophets reach back to (Jeremiah 24:9; 1 Kings 9:7) and the Messiah names: *they shall... be led away
+--      captive into all nations* (Luke 21:24). The scattering of the two-house people.
+--   ★ THE REVERSAL (THREAD 6): the locust consumes, the stranger rises *the head, and thou shalt be the tail*
+--      (28:44) — the exact undoing of the head-not-tail blessing (28:13) — *because thou servedst not Yahuah
+--      Elohayka (the LORD thy God) with joyfulness* (28:47). Leviticus 26:38-39 the parallel.
+--   ★★ THE SIEGE (THREAD 7): *a nation... from far... as swift as the eagle flieth* (28:49); the siege so
+--      terrible that *thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters*
+--      (28:53). This is the horror Leviticus 26:29 warned (*ye shall eat the flesh of your sons*), that
+--      Jeremiah pronounced over Jerusalem (19:9), and that Lamentations records as fulfilled in the siege —
+--      *Shall the women eat their fruit?* (2:20); *The hands of the pitiful women have sodden their own
+--      children* (4:10). The Messiah foretells the same coming siege of Jerusalem: *thine enemies shall cast
+--      a trench about thee... and lay thee even with the ground* (Luke 19:43-44). Historical sieges of the
+--      city; covenant-lawsuit, never ethnic.
+--   ★★ THE LONG DISPERSION (THREAD 8): *if thou wilt not observe to do all the words of this law... then
+--      Yahuah (LORD) will make thy plagues wonderful* (28:58-59); *Yahuah (LORD) shall scatter thee among all
+--      people, from the one end of the earth even unto the other* (28:64); *into Egypt again... and there ye
+--      shall be sold unto your enemies* (28:68). The scattering of Israel and Judah (Leviticus 26:33;
+--      Deuteronomy 4:27; Nehemiah 1:8). But the very next chapter promises the regathering: *Yahuah Elohayka
+--      (the LORD thy God) will turn thy captivity... and will return and gather thee from all the nations,
+--      whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3) — the two-house
+--      ingathering. Romans confirms the blindness is PARTIAL and has an end: *the spirit of slumber* (11:8),
+--      *blindness in part is happened to Yashar'el (Israel), until the fulness of the Gentiles be come in*
+--      (11:25). The curse-for-breaking that scattered the people is the very dispersion the Messiah regathers
+--      — NOT the Torah being a curse.
+--   VERSES WITH NO SEPARATE ADD: all 68 verses fall within the eight movement-threads; the long curse
+--      section is grouped by movement (turn / sanction / scattering / reversal / siege / dispersion), NOT
+--      verse-dumped. All libraries weighed; extras = none warranted across the chapter (the covenant-lawsuit
+--      material is canon-rooted; no clean extras witness improves on Leviticus 26 / the prophets).
+
+CREATE TEMP VIEW _s310_deu28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The blessings for hearkening — blessed in the city and in the field
+    ('canon','deuteronomy',28,2,'canon','leviticus',26,3,'free',
+      E'*If ye walk in my statutes, and keep my commandments, and do them* (Leviticus 26:3). Deuteronomy 28 is the twin of Leviticus 26: the blessings of 28:2 — *all these blessings shall come on thee, and overtake thee, if thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God)* — are the same covenant promise that opens *If ye walk in my statutes... and do them*. The blessing flows through walking in the Torah, never apart from it.'),
+    ('canon','deuteronomy',28,4,'canon','leviticus',26,4,'free',
+      E'*Then I will give you rain in due season, and the land shall yield her increase, and the trees of the field shall yield their fruit* (Leviticus 26:4). The blessing on *the fruit of thy body, and the fruit of thy ground, and the fruit of thy cattle* (Deuteronomy 28:4) is the same harvest-blessing — *the land shall yield her increase, and the trees of the field shall yield their fruit*. Obedience opens the fruitfulness of the land.'),
+    ('canon','deuteronomy',28,3,'canon','leviticus',26,5,'free',
+      E'*And your threshing shall reach unto the vintage, and the vintage shall reach unto the sowing time: and ye shall eat your bread to the full, and dwell in your land safely* (Leviticus 26:5). To be *blessed in the city, and blessed in the field* (Deuteronomy 28:3) is to *eat your bread to the full, and dwell in your land safely* — the plenty of the city and the field is the covenant peace of Leviticus 26.'),
+    ('canon','deuteronomy',28,2,'canon','leviticus',26,11,'free',
+      E'*And I will set my tabernacle among you: and my soul shall not abhor you* (Leviticus 26:11). The crown of the blessings is not merely goods but Yahuah''s presence: *if thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God)* (Deuteronomy 28:2) — and *I will set my tabernacle among you*. The blessing of obedience is dwelling with Yahuah.'),
+    ('canon','deuteronomy',28,2,'canon','leviticus',26,12,'free',
+      E'*And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12). The blessings overtake a people who hearken (Deuteronomy 28:2) so that the covenant bond stands: *I will... be your Elohim (God), and ye shall be my people*. The blessing is the relationship, the two-house people kept as His own.'),
+    ('canon','deuteronomy',28,2,'canon','psalms',1,2,'free',
+      E'*But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:2). What Deuteronomy 28 commands of the nation — *if thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God)* (28:2) — Psalm 1 sings of the man: his *delight is in the law of Yahuah (LORD)*. The blessed life is the Torah-delighting life.'),
+    ('canon','deuteronomy',28,3,'canon','psalms',1,3,'free',
+      E'*And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper* (Psalm 1:3). The blessing *in the city... in the field* and on *the fruit of thy ground* (Deuteronomy 28:3-4) is the fruitful, watered tree of Psalm 1 — *whatsoever he doeth shall prosper*. The Torah-keeper flourishes; the blessing is fruitfulness in season.'),
+
+    -- THREAD 2 (★): The head and not the tail — blessed against enemies, if thou hearken
+    ('canon','deuteronomy',28,7,'canon','leviticus',26,6,'free',
+      E'*And I will give peace in the land, and ye shall lie down, and none shall make you afraid... neither shall the sword go through your land* (Leviticus 26:6). The promise that *Yahuah (LORD) shall cause thine enemies that rise up against thee to be smitten before thy face* (Deuteronomy 28:7) is the covenant peace of Leviticus 26:6 — *none shall make you afraid*. Obedience puts the enemy to flight.'),
+    ('canon','deuteronomy',28,7,'canon','leviticus',26,8,'free',
+      E'*And five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight: and your enemies shall fall before you by the sword* (Leviticus 26:8). The enemies who *come out against thee one way, and flee before thee seven ways* (Deuteronomy 28:7) are the routed foes of Leviticus 26:8 — *five of you shall chase an hundred*. The blessed people prevail because Yahuah fights for them.'),
+    ('canon','deuteronomy',28,9,'canon','deuteronomy',26,18,'free',
+      E'*And Yahuah (LORD) hath avouched thee this day to be his peculiar people, as he hath promised thee, and that thou shouldest keep all his commandments* (Deuteronomy 26:18). To be established *an holy people unto himself... if thou shalt keep the commandments* (Deuteronomy 28:9) is to be the *peculiar people* avouched in 26:18 — and the condition is the same, *that thou shouldest keep all his commandments*. The holy, peculiar people is the Torah-keeping people.'),
+    ('canon','deuteronomy',28,13,'canon','deuteronomy',26,19,'free',
+      E'*And to make thee high above all nations which he hath made, in praise, and in name, and in honour; and that thou mayest be an holy people unto Yahuah Elohayka (the LORD thy God), as he hath spoken* (Deuteronomy 26:19). To be *the head, and not the tail... above only* (Deuteronomy 28:13) is to be made *high above all nations... in praise, and in name, and in honour* (26:19). The head-not-tail elevation is the calling to be Yahuah''s holy people set on high.'),
+
+    -- THREAD 3 (★): The turn — cursed shalt thou be in the city (the covenant sanction)
+    ('canon','deuteronomy',28,15,'canon','leviticus',26,14,'free',
+      E'*But if ye will not hearken unto me, and will not do all these commandments* (Leviticus 26:14). The turn of Deuteronomy 28:15 — *But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments... that all these curses shall come upon thee* — is the very turn of Leviticus 26:14. The curse is the sanction on NOT doing the commandments; the Torah itself is never the curse.'),
+    ('canon','deuteronomy',28,15,'canon','leviticus',26,15,'free',
+      E'*And if ye shall despise my statutes, or if your soul abhor my judgments, so that ye will not do all my commandments, but that ye break my covenant* (Leviticus 26:15). The condition of the curse in Deuteronomy 28:15 — *if thou wilt not hearken... to observe to do all his commandments and his statutes* — is covenant-breaking: despising the statutes, breaking the covenant. The judgment falls for forsaking the Torah, not for keeping it.'),
+    ('canon','deuteronomy',28,16,'canon','leviticus',26,16,'free',
+      E'*I also will do this unto you; I will even appoint over you terror, consumption, and the burning ague, that shall consume the eyes, and cause sorrow of heart: and ye shall sow your seed in vain, for your enemies shall eat it* (Leviticus 26:16). *Cursed shalt thou be in the city, and cursed shalt thou be in the field* (Deuteronomy 28:16) opens the same catalogue of sanctions Leviticus 26:16 begins — the exact inverse of the blessings, the covenant-lawsuit verdict.'),
+    ('canon','deuteronomy',28,15,'canon','leviticus',26,17,'free',
+      E'*And I will set my face against you, and ye shall be slain before your enemies: they that hate you shall reign over you; and ye shall flee when none pursueth* (Leviticus 26:17). When *all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15), Yahuah sets His face against the covenant-breaker (Leviticus 26:17). This is conduct-within-the-covenant judgment, the righteous sanction on forsaking Him.'),
+
+    -- THREAD 4: Thy heaven brass and the earth iron (cursing, vexation, pestilence)
+    ('canon','deuteronomy',28,21,'canon','leviticus',26,25,'free',
+      E'*And I will bring a sword upon you, that shall avenge the quarrel of my covenant... I will send the pestilence among you; and ye shall be delivered into the hand of the enemy* (Leviticus 26:25). The pestilence made to *cleave unto thee, until he have consumed thee from off the land* (Deuteronomy 28:21) is the covenant-avenging pestilence of Leviticus 26:25 — *the quarrel of my covenant*. The plague is the lawsuit''s sword.'),
+    ('canon','deuteronomy',28,22,'canon','leviticus',26,16,'free',
+      E'*I will even appoint over you terror, consumption, and the burning ague, that shall consume the eyes, and cause sorrow of heart* (Leviticus 26:16). The smiting *with a consumption, and with a fever, and with an inflammation, and with an extreme burning* (Deuteronomy 28:22) is the *consumption, and the burning ague* of Leviticus 26:16 — the wasting sicknesses of the covenant curse.'),
+    ('canon','deuteronomy',28,23,'canon','leviticus',26,19,'free',
+      E'*And I will break the pride of your power; and I will make your heaven as iron, and your earth as brass* (Leviticus 26:19). *Thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron* (Deuteronomy 28:23) is the same shut-heaven curse as Leviticus 26:19 (the metals reversed) — no rain from above, no increase from below; the land itself withholds because the people forsook the covenant.'),
+
+    -- THREAD 5 (★): A proverb and a byword among all nations (the scattering)
+    ('canon','deuteronomy',28,25,'canon','leviticus',26,17,'free',
+      E'*And I will set my face against you, and ye shall be slain before your enemies: they that hate you shall reign over you; and ye shall flee when none pursueth* (Leviticus 26:17). To be *smitten before thine enemies... and shalt be removed into all the kingdoms of the earth* (Deuteronomy 28:25) is the defeat of Leviticus 26:17 — *slain before your enemies*. The blessing of routing the foe (28:7) is reversed into being routed.'),
+    ('canon','deuteronomy',28,25,'canon','leviticus',26,33,'free',
+      E'*And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste* (Leviticus 26:33). To be *removed into all the kingdoms of the earth* (Deuteronomy 28:25) is to be *scatter[ed]... among the heathen* (Leviticus 26:33) — the dispersion of the people, the very scattering of the two houses the Torah foretells.'),
+    ('canon','deuteronomy',28,37,'canon','jeremiah',24,9,'free',
+      E'*And I will deliver them to be removed into all the kingdoms of the earth for their hurt, to be a reproach and a proverb, a taunt and a curse, in all places whither I shall drive them* (Jeremiah 24:9). The curse that thou shalt *become an astonishment, a proverb, and a byword, among all nations* (Deuteronomy 28:37) is exactly what Jeremiah pronounces over Yahudah (Judah): *a reproach and a proverb, a taunt and a curse... whither I shall drive them*. The prophet reaches back to Deuteronomy 28; the curse comes upon the people as written.'),
+    ('canon','deuteronomy',28,37,'canon','1-kings',9,7,'free',
+      E'*Then will I cut off Yashar''el (Israel) out of the land which I have given them... and Yashar''el (Israel) shall be a proverb and a byword among all people* (1 Kings 9:7). To Solomon at the temple''s height, Yahuah holds out the Deuteronomy 28:37 curse: turn away, and *Yashar''el (Israel) shall be a proverb and a byword among all people*. The byword-among-nations is the named sanction for forsaking the covenant.'),
+    ('canon','deuteronomy',28,36,'canon','luke',21,24,'free',
+      E'*And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled* (Luke 21:24). To be brought *unto a nation which neither thou nor thy fathers have known* (Deuteronomy 28:36) is the captivity the Messiah names — *led away captive into all nations*. The scattering of Deuteronomy 28 is the dispersion Yahusha (Jesus) foretells, *until the times of the Gentiles be fulfilled* — a curse with an appointed end, not a casting-off.'),
+
+    -- THREAD 6 (★): The stranger the head, and thou the tail (the reversal)
+    ('canon','deuteronomy',28,38,'canon','leviticus',26,16,'free',
+      E'*...and ye shall sow your seed in vain, for your enemies shall eat it* (Leviticus 26:16). To *carry much seed out into the field, and shalt gather but little in; for the locust shall consume it* (Deuteronomy 28:38) is to *sow your seed in vain* (Leviticus 26:16) — the labour of the field swallowed up, the curse undoing the harvest-blessing.'),
+    ('canon','deuteronomy',28,40,'canon','leviticus',26,20,'free',
+      E'*And your strength shall be spent in vain: for your land shall not yield her increase, neither shall the trees of the land yield their fruits* (Leviticus 26:20). The olive trees that cast their fruit so *thou shalt not anoint thyself with the oil* (Deuteronomy 28:40) are the trees that *shall [not] yield their fruits* of Leviticus 26:20 — toil without harvest, strength *spent in vain*.'),
+    ('canon','deuteronomy',28,47,'canon','leviticus',26,38,'free',
+      E'*And ye shall perish among the heathen, and the land of your enemies shall eat you up* (Leviticus 26:38). Because *thou servedst not Yahuah Elohayka (the LORD thy God) with joyfulness, and with gladness of heart* (Deuteronomy 28:47), the people are given to perish among the nations (Leviticus 26:38). The joyless service Yahuah refused becomes service to enemies in want.'),
+    ('canon','deuteronomy',28,48,'canon','leviticus',26,39,'free',
+      E'*And they that are left of you shall pine away in their iniquity in your enemies'' lands; and also in the iniquities of their fathers shall they pine away with them* (Leviticus 26:39). To *serve thine enemies... in hunger, and in thirst, and in nakedness... a yoke of iron upon thy neck* (Deuteronomy 28:48) is to *pine away... in your enemies'' lands* (Leviticus 26:39) — the bondage and wasting of the exile, the reversal of the head-not-tail blessing.'),
+
+    -- THREAD 7 (★★): The siege and the flesh of thine own body
+    ('canon','deuteronomy',28,53,'canon','leviticus',26,29,'free',
+      E'*And ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29). The most terrible of the curses — *thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters... in the siege* (Deuteronomy 28:53) — is named verbatim in Leviticus 26:29. The covenant-lawsuit foretold the horror of the siege; this is the depth to which forsaking the covenant brings a people.'),
+    ('canon','deuteronomy',28,53,'canon','jeremiah',19,9,'free',
+      E'*And I will cause them to eat the flesh of their sons and the flesh of their daughters... in the siege and straitness, wherewith their enemies, and they that seek their lives, shall straiten them* (Jeremiah 19:9). Over Jerusalem Jeremiah pronounces the Deuteronomy 28:53 curse as imminent — *eat the flesh of their sons and the flesh of their daughters... in the siege*. The prophet reaches back to the Torah''s warning; the curse falls as written.'),
+    ('canon','deuteronomy',28,53,'canon','lamentations',2,20,'free',
+      E'*Behold, O Yahuah (LORD), and consider to whom thou hast done this. Shall the women eat their fruit, and children of a span long? shall the priest and the prophet be slain in the sanctuary of Yahuah (Lord)?* (Lamentations 2:20). Lamentations records the Deuteronomy 28:53 curse as accomplished in the fallen city — the women eating *their fruit, and children of a span long*. What the Torah foretold for covenant-breaking, the lament weeps as fulfilled.'),
+    ('canon','deuteronomy',28,57,'canon','lamentations',4,10,'free',
+      E'*The hands of the pitiful women have sodden their own children: they were their meat in the destruction of the daughter of my people* (Lamentations 4:10). The tender and delicate woman who would *eat them for want of all things secretly in the siege* (Deuteronomy 28:57) is the pitiful woman of Lamentations 4:10 who *sodden [her] own children*. The siege-horror of the curse came to pass in the destruction of the city.'),
+    ('canon','deuteronomy',28,49,'canon','lamentations',4,19,'free',
+      E'*Our persecutors are swifter than the eagles of the heaven: they pursued us upon the mountains, they laid wait for us in the wilderness* (Lamentations 4:19). The nation that comes *from far... as swift as the eagle flieth* (Deuteronomy 28:49) is the eagle-swift persecutor Lamentations 4:19 remembers — *swifter than the eagles of the heaven*. The far, fierce nation of the curse is the besieger the lament records.'),
+    ('canon','deuteronomy',28,52,'canon','luke',19,43,'free',
+      E'*For the days shall come upon thee, that thine enemies shall cast a trench about thee, and compass thee round, and keep thee in on every side* (Luke 19:43). The enemy who *shall besiege thee in all thy gates, until thy high and fenced walls come down* (Deuteronomy 28:52) is the besieger Yahusha (Jesus) weeps over coming upon Jerusalem — *cast a trench about thee, and compass thee round*. The siege-curse of Deuteronomy 28 is the very judgment the Messiah foresees over the city.'),
+    ('canon','deuteronomy',28,52,'canon','luke',19,44,'free',
+      E'*And shall lay thee even with the ground, and thy children within thee; and they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:44). The walls *wherein thou trustedst* brought down (Deuteronomy 28:52) is the city laid *even with the ground... not... one stone upon another* (Luke 19:44). The covenant-breaking siege of the Torah is fulfilled again in the fall of Jerusalem — covenant-lawsuit, never ethnic judgment.'),
+
+    -- THREAD 8 (★★): Scattered from one end of the earth to the other (the long dispersion)
+    ('canon','deuteronomy',28,64,'canon','leviticus',26,33,'free',
+      E'*And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste* (Leviticus 26:33). The climactic curse — *Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (Deuteronomy 28:64) — is the scattering Leviticus 26:33 decreed. The dispersion of Yashar''el (Israel) and Yahudah (Judah) is the named sanction for covenant-breaking.'),
+    ('canon','deuteronomy',28,64,'canon','deuteronomy',4,27,'free',
+      E'*And Yahuah (LORD) shall scatter you among the nations, and ye shall be left few in number among the heathen, whither Yahuah (LORD) shall lead you* (Deuteronomy 4:27). The same Moses who warned in 4:27 — *scatter you among the nations... few in number* — pronounces it in full in 28:64: *scatter thee among all people, from the one end of the earth even unto the other*. The two-house dispersion is the consistent warning of the Torah.'),
+    ('canon','deuteronomy',28,62,'canon','nehemiah',1,8,'free',
+      E'*Remember, I beseech thee, the word that thou commandedst thy servant Moses, saying, If ye transgress, I will scatter you abroad among the nations* (Nehemiah 1:8). That ye should be *left few in number, whereas ye were as the stars of heaven for multitude* (Deuteronomy 28:62) is the very *word... commandedst thy servant Moses* Nehemiah pleads — *If ye transgress, I will scatter you abroad among the nations*. The scattering came because they transgressed; Nehemiah names Deuteronomy 28 by its author.'),
+    ('canon','deuteronomy',28,64,'canon','deuteronomy',30,3,'free',
+      E'*That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3). The scattering *from the one end of the earth even unto the other* (Deuteronomy 28:64) is not the last word: the very next chapter promises the regathering — *will return and gather thee from all the nations, whither... hath scattered thee* (30:3). The curse-for-breaking is the dispersion the Messiah comes to regather; the two houses gathered home.'),
+    ('canon','deuteronomy',28,64,'canon','deuteronomy',30,4,'free',
+      E'*If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee* (Deuteronomy 30:4). However far the scattering *unto the other* end of the earth (Deuteronomy 28:64), the gathering reaches as far: *driven out unto the outmost parts of heaven, from thence will... he fetch thee* (30:4). No exile of Yashar''el (Israel) is beyond the regathering arm.'),
+    ('canon','deuteronomy',28,65,'canon','romans',11,8,'free',
+      E'*Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear; unto this day* (Romans 11:8). The exile-curse of *a trembling heart, and failing of eyes, and sorrow of mind* (Deuteronomy 28:65) shades into the partial hardening Paul names — *the spirit of slumber, eyes that they should not see*. The judicial dulling on the scattered people is real, but Paul declares it PARTIAL, not a casting-off (Romans 11:1).'),
+    ('canon','deuteronomy',28,64,'canon','romans',11,25,'free',
+      E'*...that blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25). The scattering *among all people* (Deuteronomy 28:64) and the blindness of the curse are PARTIAL and time-bound — *blindness in part... until the fulness of the Gentiles be come in*, and then *all Yashar''el (Israel) shall be saved* (11:26). The Deuteronomy 28 curse-for-breaking scattered the people; it is the very dispersion the Messiah regathers — never the Torah being a curse.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field',
+       E'Blessed shalt thou be in the city and in the field — the blessings for hearkening',
+       E'The covenant opens with blessing, and the blessing is for hearkening: *And it shall come to pass, if thou shalt hearken diligently unto the voice of Yahuah Elohayka (the LORD thy God), to observe and to do all his commandments which I command thee this day, that Yahuah Elohayka (the LORD thy God) will set thee on high above all nations of the earth* (Deuteronomy 28:1). The blessings overtake the obedient: *Blessed shalt thou be in the city, and blessed shalt thou be in the field. Blessed shall be the fruit of thy body, and the fruit of thy ground... Blessed shall be thy basket and thy store. Blessed shalt thou be when thou comest in, and blessed shalt thou be when thou goest out* (28:3-6). This is the twin of Leviticus 26: *If ye walk in my statutes, and keep my commandments, and do them; Then I will give you rain in due season, and the land shall yield her increase* (Leviticus 26:3-4), *and ye shall eat your bread to the full, and dwell in your land safely* (26:5) — and the crown of it is His presence: *And I will set my tabernacle among you... And I will walk among you, and will be your Elohim (God), and ye shall be my people* (26:11-12). What the Torah commands of the nation, Psalm 1 sings of the man: *his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night. And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season... and whatsoever he doeth shall prosper* (Psalm 1:2-3). The blessing flows through walking in the Torah — the inheritance, never the curse.',
+       sv.verse_id, ev.verse_id, 'free', 25175
+  FROM _s310_deu28_lookup sv, _s310_deu28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=28 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-28-the-head-and-not-the-tail-if-thou-hearken',
+       E'The head, and not the tail — blessed against enemies if thou hearken',
+       E'The blessing carries the people above all nations: *Yahuah (LORD) shall cause thine enemies that rise up against thee to be smitten before thy face: they shall come out against thee one way, and flee before thee seven ways* (Deuteronomy 28:7); *Yahuah (LORD) shall open unto thee his good treasure, the heaven to give the rain unto thy land in his season... and thou shalt lend unto many nations, and thou shalt not borrow* (28:12). The summit of it: *And Yahuah (LORD) shall make thee the head, and not the tail; and thou shalt be above only, and thou shalt not be beneath; if that thou hearken unto the commandments of Yahuah Elohayka (the LORD thy God)* (28:13). The routed enemy is the covenant peace of Leviticus 26: *I will give peace in the land... none shall make you afraid... five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight* (Leviticus 26:6, 26:8). And the elevation is the calling itself: *And Yahuah (LORD) hath avouched thee this day to be his peculiar people... and that thou shouldest keep all his commandments... And to make thee high above all nations which he hath made, in praise, and in name, and in honour; and that thou mayest be an holy people unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 26:18-19). The head-not-tail blessing is the peculiar people, set on high — and the condition is always the same: *if that thou hearken*.',
+       sv.verse_id, ev.verse_id, 'free', 25178
+  FROM _s310_deu28_lookup sv, _s310_deu28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=28 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-28-the-turn-cursed-shalt-thou-be-in-the-city',
+       E'The turn — cursed shalt thou be in the city (the covenant sanction)',
+       E'Then the chapter turns, and every blessing is set into its inverse: *But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). The cursing mirrors the blessing word for word: *Cursed shalt thou be in the city, and cursed shalt thou be in the field. Cursed shall be thy basket and thy store. Cursed shall be the fruit of thy body... Cursed shalt thou be when thou comest in, and cursed shalt thou be when thou goest out* (28:16-19). This is the very turn of Leviticus 26: *But if ye will not hearken unto me, and will not do all these commandments* (Leviticus 26:14); *And if ye shall despise my statutes, or if your soul abhor my judgments... but that ye break my covenant* (26:15) — *I also will do this unto you; I will even appoint over you terror, consumption, and the burning ague* (26:16); *And I will set my face against you, and ye shall be slain before your enemies* (26:17). Mark the frame: the curse is the sanction on covenant-BREAKING — on NOT hearkening, on despising the statutes — and never on the Torah itself. This is conduct-within-the-covenant judgment, the righteous verdict on forsaking Yahuah, not ethnic hatred and not the Law made a curse.',
+       sv.verse_id, ev.verse_id, 'free', 25181
+  FROM _s310_deu28_lookup sv, _s310_deu28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=28 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-28-thy-heaven-brass-and-the-earth-iron',
+       E'Thy heaven shall be brass, and the earth iron — cursing, vexation, and pestilence',
+       E'The first movement of the curse falls on body and land: *Yahuah (LORD) shall send upon thee cursing, vexation, and rebuke, in all that thou settest thine hand unto for to do, until thou be destroyed... because of the wickedness of thy doings, whereby thou hast forsaken me* (Deuteronomy 28:20); *Yahuah (LORD) shall make the pestilence cleave unto thee* (28:21); *Yahuah (LORD) shall smite thee with a consumption, and with a fever, and with an inflammation, and with an extreme burning* (28:22); *And thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron* (28:23). Leviticus 26 named these same sanctions: the pestilence is covenant-vengeance — *I will bring a sword upon you, that shall avenge the quarrel of my covenant... I will send the pestilence among you* (Leviticus 26:25); the wasting sicknesses — *terror, consumption, and the burning ague, that shall consume the eyes* (26:16); and the shut heaven — *I will make your heaven as iron, and your earth as brass* (26:19). No rain from above, no increase from below: the land itself withholds because the people *hast forsaken me*. The reason is named plainly in the source — *because of the wickedness of thy doings* — the curse is the sanction on forsaking the covenant, not the covenant itself.',
+       sv.verse_id, ev.verse_id, 'free', 25184
+  FROM _s310_deu28_lookup sv, _s310_deu28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=28 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-28-a-proverb-and-a-byword-among-all-nations',
+       E'A proverb and a byword among all nations — the scattering of the people',
+       E'The curse widens from the land to the people themselves, scattered out of it: *Yahuah (LORD) shall cause thee to be smitten before thine enemies... and shalt be removed into all the kingdoms of the earth* (Deuteronomy 28:25); *Yahuah (LORD) shall bring thee, and thy king... unto a nation which neither thou nor thy fathers have known* (28:36); *And thou shalt become an astonishment, a proverb, and a byword, among all nations whither Yahuah (LORD) shall lead thee* (28:37). This is the defeat of Leviticus 26 — *ye shall be slain before your enemies: they that hate you shall reign over you* (Leviticus 26:17) — and the scattering it decreed: *I will scatter you among the heathen, and will draw out a sword after you* (26:33). The prophets reach back to this very curse: Jeremiah pronounces over Yahudah (Judah), *I will deliver them to be removed into all the kingdoms of the earth... to be a reproach and a proverb, a taunt and a curse* (Jeremiah 24:9); and to Solomon at the temple''s height Yahuah holds it out, *Yashar''el (Israel) shall be a proverb and a byword among all people* (1 Kings 9:7). The Messiah names the captivity as still to come: *they shall... be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled* (Luke 21:24). The scattering of the two-house people is the curse for forsaking the covenant — and it has an appointed end (*until the times of the Gentiles be fulfilled*), not a casting-off.',
+       sv.verse_id, ev.verse_id, 'free', 25187
+  FROM _s310_deu28_lookup sv, _s310_deu28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=28 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-28-the-stranger-the-head-and-thou-the-tail',
+       E'He shall be the head, and thou the tail — the reversal of the blessing',
+       E'The blessing is now turned inside out, point for point. The locust and worm consume the labour of the field: *Thou shalt carry much seed out into the field, and shalt gather but little in; for the locust shall consume it... Thou shalt plant vineyards... but shalt neither drink of the wine... Thou shalt have olive trees... but thou shalt not anoint thyself with the oil* (Deuteronomy 28:38-40). And the head-not-tail blessing of 28:13 is reversed onto the stranger: *The stranger that is within thee shall get up above thee very high; and thou shalt come down very low. He shall lend to thee, and thou shalt not lend to him: he shall be the head, and thou shalt be the tail* (28:43-44). The reason is named: *Because thou servedst not Yahuah Elohayka (the LORD thy God) with joyfulness, and with gladness of heart, for the abundance of all things; Therefore shalt thou serve thine enemies... and he shall put a yoke of iron upon thy neck* (28:47-48). Leviticus 26 is the same reversal: *ye shall sow your seed in vain, for your enemies shall eat it* (Leviticus 26:16); *your strength shall be spent in vain: for your land shall not yield her increase* (26:20); *ye shall perish among the heathen... and they that are left of you shall pine away in their iniquity in your enemies'' lands* (26:38-39). The joyless service Yahuah refused becomes service to enemies in want — the exact undoing of the blessing of obedience.',
+       sv.verse_id, ev.verse_id, 'free', 25190
+  FROM _s310_deu28_lookup sv, _s310_deu28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=38
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=28 AND ev.verse_number=48
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body',
+       E'The nation as the eagle and the horror of the siege — the flesh of thine own body',
+       E'The curse reaches its most terrible depth in the siege. A nation comes from far: *Yahuah (LORD) shall bring a nation against thee from far, from the end of the earth, as swift as the eagle flieth; a nation whose tongue thou shalt not understand* (Deuteronomy 28:49); *And he shall besiege thee in all thy gates, until thy high and fenced walls come down, wherein thou trustedst* (28:52). And within the siege, the unspeakable: *And thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters... in the siege, and in the straitness, wherewith thine enemies shall distress thee* (28:53); even *the tender and delicate woman among you*, *she shall eat them for want of all things secretly in the siege* (28:56-57). This horror was named in Leviticus 26:29 — *ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* — pronounced over Jerusalem by Jeremiah, *I will cause them to eat the flesh of their sons and the flesh of their daughters... in the siege* (Jeremiah 19:9), and wept as fulfilled in Lamentations: *Shall the women eat their fruit, and children of a span long?* (Lamentations 2:20); *The hands of the pitiful women have sodden their own children: they were their meat in the destruction of the daughter of my people* (4:10); the eagle-swift besieger remembered — *Our persecutors are swifter than the eagles of the heaven* (4:19). The Messiah foretells the siege over Jerusalem again: *thine enemies shall cast a trench about thee, and compass thee round, and keep thee in on every side, And shall lay thee even with the ground... they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:43-44). The historical sieges of the city are the curse-for-breaking come to pass — covenant-lawsuit, never ethnic judgment; the lost sheep, not the cast-off.',
+       sv.verse_id, ev.verse_id, 'free', 25193
+  FROM _s310_deu28_lookup sv, _s310_deu28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=49
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=28 AND ev.verse_number=57
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 8 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other',
+       E'Scattered from one end of the earth to the other — the long dispersion and the regathering',
+       E'The chapter closes in the long exile of the two houses. The condition is once more the Torah forsaken: *If thou wilt not observe to do all the words of this law that are written in this book... Then Yahuah (LORD) will make thy plagues wonderful* (Deuteronomy 28:58-59). The people are thinned and scattered: *And ye shall be left few in number, whereas ye were as the stars of heaven for multitude; because thou wouldest not obey the voice of Yahuah Elohayka (the LORD thy God)* (28:62); *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (28:64); *among these nations shalt thou find no ease... but Yahuah (LORD) shall give thee there a trembling heart, and failing of eyes, and sorrow of mind* (28:65); *And Yahuah (LORD) shall bring thee into Egypt again with ships... and there ye shall be sold unto your enemies for bondmen and bondwomen, and no man shall buy you* (28:68). This is the scattering Leviticus 26:33 decreed — *I will scatter you among the heathen* — and that Moses warned in Deuteronomy 4:27, and that Nehemiah names by its author as fulfilled: *the word that thou commandedst thy servant Moses, saying, If ye transgress, I will scatter you abroad among the nations* (Nehemiah 1:8). But the dispersion is not the last word. The very next chapter promises the regathering: *That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3); *If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee* (30:4). And Paul declares the blindness on the scattered people PARTIAL and time-bound: *Elohim (God) hath given them the spirit of slumber, eyes that they should not see* (Romans 11:8), *blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (11:25), *And so all Yashar''el (Israel) shall be saved* (11:26). The Deuteronomy 28 curse-for-breaking is the very dispersion of Yashar''el (Israel) and Yahudah (Judah) the Messiah comes to regather — never, ever the Torah being a curse.',
+       sv.verse_id, ev.verse_id, 'free', 25196
+  FROM _s310_deu28_lookup sv, _s310_deu28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=58
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=28 AND ev.verse_number=68
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *If ye walk in my statutes, and keep my commandments, and do them* (Leviticus 26:3) — the twin covenant: the blessings *come on thee... if thou shalt hearken* (Deuteronomy 28:2) flow through walking in the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the land shall yield her increase, and the trees of the field shall yield their fruit* (Leviticus 26:4) — the same harvest-blessing on *the fruit of thy ground* (Deuteronomy 28:4).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=4
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ye shall eat your bread to the full, and dwell in your land safely* (Leviticus 26:5) — to be *blessed in the city, and... in the field* (Deuteronomy 28:3) is the plenty and safety of the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=3
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will set my tabernacle among you: and my soul shall not abhor you* (Leviticus 26:11) — the crown of the blessings is His presence among the obedient.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will... be your Elohim (God), and ye shall be my people* (Leviticus 26:12) — the blessing is the covenant bond, the two-house people kept as His own.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:2) — the blessed life is the Torah-delighting life of the hearkening of Deuteronomy 28:2.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *like a tree planted by the rivers of water... and whatsoever he doeth shall prosper* (Psalm 1:3) — the blessing on *the fruit of thy ground* (Deuteronomy 28:3-4) is the fruitful, flourishing Torah-keeper.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=3
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-blessed-shalt-thou-be-in-the-city-and-in-the-field'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I will give peace in the land... none shall make you afraid... neither shall the sword go through your land* (Leviticus 26:6) — the enemies *smitten before thy face* (Deuteronomy 28:7) is the covenant peace.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=7
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-head-and-not-the-tail-if-thou-hearken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight* (Leviticus 26:8) — the enemy who *flee before thee seven ways* (Deuteronomy 28:7) is the routed foe of the covenant blessing.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=7
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-head-and-not-the-tail-if-thou-hearken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *to be his peculiar people... that thou shouldest keep all his commandments* (Deuteronomy 26:18) — the holy people established *if thou shalt keep the commandments* (Deuteronomy 28:9).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-head-and-not-the-tail-if-thou-hearken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *to make thee high above all nations... in praise, and in name, and in honour... an holy people* (Deuteronomy 26:19) — the head-not-tail elevation of Deuteronomy 28:13 is the calling to be Yahuah''s holy people set on high.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=13
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-head-and-not-the-tail-if-thou-hearken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *But if ye will not hearken unto me, and will not do all these commandments* (Leviticus 26:14) — the same turn: the curse is the sanction on NOT doing the commandments (Deuteronomy 28:15).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=15
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-turn-cursed-shalt-thou-be-in-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*if ye shall despise my statutes... but that ye break my covenant* (Leviticus 26:15) — the condition of the curse is covenant-breaking, never Torah-keeping.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=15
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-turn-cursed-shalt-thou-be-in-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will even appoint over you terror, consumption, and the burning ague* (Leviticus 26:16) — *Cursed shalt thou be in the city, and... in the field* (Deuteronomy 28:16) opens the same catalogue of sanctions.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-turn-cursed-shalt-thou-be-in-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will set my face against you, and ye shall be slain before your enemies* (Leviticus 26:17) — when *all these curses shall come upon thee* (Deuteronomy 28:15), Yahuah sets His face against the covenant-breaker.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=15
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-turn-cursed-shalt-thou-be-in-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will bring a sword upon you, that shall avenge the quarrel of my covenant... I will send the pestilence* (Leviticus 26:25) — the pestilence made to *cleave unto thee* (Deuteronomy 28:21) is the covenant-avenging plague.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=21
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-thy-heaven-brass-and-the-earth-iron'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*terror, consumption, and the burning ague, that shall consume the eyes* (Leviticus 26:16) — the *consumption, and... fever, and... extreme burning* (Deuteronomy 28:22) are the wasting sicknesses of the curse.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=22
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-thy-heaven-brass-and-the-earth-iron'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will make your heaven as iron, and your earth as brass* (Leviticus 26:19) — the same shut-heaven curse (metals reversed) as *thy heaven... brass, and the earth... iron* (Deuteronomy 28:23).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=23
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-thy-heaven-brass-and-the-earth-iron'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye shall be slain before your enemies: they that hate you shall reign over you* (Leviticus 26:17) — to be *smitten before thine enemies... removed into all the kingdoms* (Deuteronomy 28:25) reverses the routing-blessing.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=25
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-a-proverb-and-a-byword-among-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will scatter you among the heathen, and will draw out a sword after you* (Leviticus 26:33) — *removed into all the kingdoms of the earth* (Deuteronomy 28:25) is the scattering of the two houses.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=25
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-a-proverb-and-a-byword-among-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *to be a reproach and a proverb, a taunt and a curse, in all places whither I shall drive them* (Jeremiah 24:9) — Jeremiah pronounces over Yahudah (Judah) the very *proverb, and... byword* curse of Deuteronomy 28:37.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=37
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=24 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-a-proverb-and-a-byword-among-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yashar''el (Israel) shall be a proverb and a byword among all people* (1 Kings 9:7) — to Solomon at the temple''s height, the named sanction of Deuteronomy 28:37 for forsaking the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=37
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-a-proverb-and-a-byword-among-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled* (Luke 21:24) — the Messiah names the captivity of Deuteronomy 28:36, a curse with an appointed end, not a casting-off.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=36
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-a-proverb-and-a-byword-among-all-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye shall sow your seed in vain, for your enemies shall eat it* (Leviticus 26:16) — to *gather but little in; for the locust shall consume it* (Deuteronomy 28:38) is the harvest swallowed up.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=38
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-stranger-the-head-and-thou-the-tail'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*your strength shall be spent in vain: for your land shall not yield her increase* (Leviticus 26:20) — the olive that casts its fruit so *thou shalt not anoint thyself with the oil* (Deuteronomy 28:40) is toil without harvest.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=40
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-stranger-the-head-and-thou-the-tail'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ye shall perish among the heathen, and the land of your enemies shall eat you up* (Leviticus 26:38) — because thou *servedst not Yahuah... with joyfulness* (Deuteronomy 28:47), given to perish among the nations.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=47
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-stranger-the-head-and-thou-the-tail'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they that are left of you shall pine away in their iniquity in your enemies'' lands* (Leviticus 26:39) — to *serve thine enemies... a yoke of iron upon thy neck* (Deuteronomy 28:48) is the wasting bondage of exile.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=48
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-stranger-the-head-and-thou-the-tail'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29) — the siege-horror of Deuteronomy 28:53 named verbatim in the twin covenant-lawsuit.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=53
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will cause them to eat the flesh of their sons and the flesh of their daughters... in the siege* (Jeremiah 19:9) — Jeremiah pronounces the Deuteronomy 28:53 curse as imminent over Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=53
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=19 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Shall the women eat their fruit, and children of a span long?* (Lamentations 2:20) — the Deuteronomy 28:53 curse wept as accomplished in the fallen city.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=53
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *The hands of the pitiful women have sodden their own children* (Lamentations 4:10) — the tender woman of Deuteronomy 28:57 who *shall eat them for want* in the destruction of the city.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=57
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Our persecutors are swifter than the eagles of the heaven* (Lamentations 4:19) — the nation *as swift as the eagle flieth* (Deuteronomy 28:49) remembered as the eagle-swift besieger.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=49
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=4 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *thine enemies shall cast a trench about thee, and compass thee round* (Luke 19:43) — the besieger of *all thy gates, until thy high and fenced walls come down* (Deuteronomy 28:52) is the judgment Yahusha (Jesus) weeps over coming on Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=52
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *shall lay thee even with the ground... not... one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:44) — the walls *wherein thou trustedst* brought down (Deuteronomy 28:52); covenant-lawsuit, never ethnic.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=52
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-the-siege-and-the-flesh-of-thine-own-body'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 8 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will scatter you among the heathen... and your land shall be desolate* (Leviticus 26:33) — the climactic scattering *from the one end of the earth even unto the other* (Deuteronomy 28:64) decreed in the twin covenant.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=64
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD) shall scatter you among the nations... few in number among the heathen* (Deuteronomy 4:27) — the same Moses warns it earlier; the two-house dispersion is the consistent Torah word.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=64
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the word that thou commandedst thy servant Moses... If ye transgress, I will scatter you abroad among the nations* (Nehemiah 1:8) — Nehemiah names Deuteronomy 28:62 by its author; the scattering came because they transgressed.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=62
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★★ *will return and gather thee from all the nations, whither... hath scattered thee* (Deuteronomy 30:3) — the very next chapter answers the scattering of 28:64 with the two-house regathering.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=64
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*driven out unto the outmost parts of heaven, from thence will... he fetch thee* (Deuteronomy 30:4) — however far the scattering *unto the other* end (Deuteronomy 28:64), the gathering reaches as far.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=64
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the spirit of slumber, eyes that they should not see* (Romans 11:8) — the exile-curse of *a trembling heart, and failing of eyes* (Deuteronomy 28:65) shades into the partial hardening, not a casting-off.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=65
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25) — the scattering of 28:64 is PARTIAL and time-bound; *all Yashar''el (Israel) shall be saved* (11:26). The curse-for-breaking the Messiah regathers, NEVER the Torah a curse.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=28 AND sv.verse_number=64
+  JOIN _s310_deu28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-28-scattered-from-one-end-of-the-earth-to-the-other'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_29.sql (Deuteronomy 29) -----
+-- Chapter: Deuteronomy 29  | tag: deu29 | session prefix: s310
+-- Temp view: _s310_deu29_lookup
+-- Sort band base: 25200, step 3  (25200, 25203, 25206, 25209, 25212, 25215)
+-- Source edition/book always: 'canon','deuteronomy',29,v
+--
+-- Deuteronomy 29 coverage:
+--   v.1     NT:     none warranted     Extras: none warranted     Tanakh: none warranted (covenant-of-Moab header; carried in v.10-15 thread)
+--   v.2-4   NT:     Romans 11:8 (Paul quotes the veiled-heart-eyes-ears verse + Isa 29:10)  [THREAD 1]
+--           Extras: none warranted
+--           Tanakh: Isaiah 6:9-10, Isaiah 29:10 (the judicial blinding until the appointed time)  [THREAD 1]
+--   v.5-9   NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Deuteronomy 8:3-4, Nehemiah 9:21 (the forty-year provision; clothes/shoes not worn)  [THREAD 2]
+--   v.10-15 NT:     Acts 2:39, Hebrews 8:8-10 (the promise to children and those afar off; the covenant of both houses)  [THREAD 3]
+--           Extras: none warranted
+--           Tanakh: none warranted (covenant scope held FORWARD)
+--   v.18-21 NT:     Hebrews 12:15, Acts 8:23 (the root of bitterness/gall; the secret apostate)  [THREAD 4]
+--           Extras: none warranted
+--           Tanakh: none warranted
+--   v.22-28 NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: 1 Kings 9:8-9, Jeremiah 22:8-9 (the nations ask "Wherefore?"; answered "they forsook the covenant")  [THREAD 5]
+--   v.29    NT:     Acts 1:7 (the secret times kept with the Father)  [THREAD 6]
+--           Extras: none warranted
+--           Tanakh: Daniel 2:22, Psalm 25:14 (the secret things; the secret of Yahuah with them that fear him)  [THREAD 6]
+--
+-- Threads (6):
+--   deuteronomy-29-eyes-that-they-should-not-see-unto-this-day          [free; canon+NT]  Rom 11:8, Isa 6:9-10, Isa 29:10
+--   deuteronomy-29-forty-years-your-clothes-waxen-not-old              [free; Tanakh]    Deut 8:3-4, Neh 9:21
+--   deuteronomy-29-the-covenant-with-him-that-is-not-here-this-day     [free; canon+NT]  Acts 2:39, Heb 8:8-10
+--   deuteronomy-29-a-root-that-beareth-gall-and-wormwood              [free; canon+NT]  Heb 12:15, Acts 8:23
+--   deuteronomy-29-wherefore-hath-yahuah-done-thus-unto-this-land     [free; Tanakh]    1 Kings 9:8-9, Jer 22:8-9
+--   deuteronomy-29-the-secret-things-belong-unto-yahuah              [free; canon+NT]  Acts 1:7, Dan 2:22, Ps 25:14
+
+-- ===================================================================
+-- A. TEMP VIEW
+-- ===================================================================
+CREATE TEMP VIEW _s310_deu29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================================================================
+-- B. cross_references
+-- ===================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: eyes that they should not see, unto this day (v.2-4)
+    ('canon','deuteronomy',29,4,'canon','romans',11,8,'free',
+     E'*(According as it is written, Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear;) unto this day.* (Romans 11:8). Paul reaches back and quotes this very verse — *Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:4) — fused with Isaiah 29:10, to name the judicial slumber that veils Yashar''el (Israel) until the appointed time of ingathering, not a casting-away.'),
+    ('canon','deuteronomy',29,4,'canon','isaiah',6,9,'free',
+     E'*And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.* (Isaiah 6:9). The same veiling Moses named in *Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:4) is laid on the prophet''s commission — eyes and ears stopped until the time appointed.'),
+    ('canon','deuteronomy',29,4,'canon','isaiah',6,10,'free',
+     E'*Make the heart of this people fat, and make their ears heavy, and shut their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and convert, and be healed.* (Isaiah 6:10). Heart, eyes, and ears shut as the means of judgment — the very faculties Moses said Yahuah *hath not given you ... unto this day* (Deuteronomy 29:4): the veil that holds until the gathering is ripe.'),
+    ('canon','deuteronomy',29,4,'canon','isaiah',29,10,'free',
+     E'*For Yahuah (LORD) hath poured out upon you the spirit of deep sleep, and hath closed your eyes: the prophets and your rulers, the seers hath he covered.* (Isaiah 29:10). This is the spirit-of-slumber text Paul welds to Deuteronomy 29:4 in Romans 11:8; the people who *Yahuah (LORD) hath not given ... an heart to perceive* (Deuteronomy 29:4) stagger blind until the day of seeing comes.'),
+
+    -- THREAD 2: forty years, your clothes waxen not old (v.5-9)
+    ('canon','deuteronomy',29,5,'canon','deuteronomy',8,4,'free',
+     E'*Thy raiment waxed not old upon thee, neither did thy foot swell, these forty years.* (Deuteronomy 8:4). The same wilderness wonder Moses recalls in *I have led you forty years in the wilderness: your clothes are not waxen old upon you, and thy shoe is not waxen old upon thy foot* (Deuteronomy 29:5) — the daily provision that taught them *that man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah (LORD)* (Deuteronomy 8:3).'),
+    ('canon','deuteronomy',29,5,'canon','deuteronomy',8,3,'free',
+     E'*And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah (LORD) doth man live.* (Deuteronomy 8:3). The forty-year sustaining of Deuteronomy 29:5-6 — *Ye have not eaten bread, neither have ye drunk wine or strong drink: that ye might know that I am Yahuah Elohaychem (the LORD your God)* — was schooling in dependence on Yahuah''s word, not on the loaf.'),
+    ('canon','deuteronomy',29,5,'canon','nehemiah',9,21,'free',
+     E'*Yea, forty years didst thou sustain them in the wilderness, so that they lacked nothing; their clothes waxed not old, and their feet swelled not.* (Nehemiah 9:21). Centuries later the returned remnant rehearses the same provision Moses set as the witness in *your clothes are not waxen old upon you, and thy shoe is not waxen old upon thy foot* (Deuteronomy 29:5) — the kept-covenant Elohim who lets His people lack nothing.'),
+
+    -- THREAD 3: the covenant with him that is not here this day (v.10-15)
+    ('canon','deuteronomy',29,15,'canon','acts',2,39,'free',
+     E'*For the promise is unto you, and to your children, and to all that are afar off, even as many as Yahuah Eloheinu (the Lord our God) shall call.* (Acts 2:39). Peter at Shavuot stretches the covenant exactly as Moses did — *Neither with you only do I make this covenant and this oath; But with him that standeth here with us this day ... and also with him that is not here with us this day* (Deuteronomy 29:14-15): the children and the far-off (the scattered house) bound in, those Yahuah shall call.'),
+    ('canon','deuteronomy',29,15,'canon','hebrews',8,8,'free',
+     E'*For finding fault with them, he saith, Behold, the days come, saith Yahuah (Lord), when I will make a new covenant with the house of Yashar''el (Israel) and with the house of Yahudah (Judah):* (Hebrews 8:8). The covenant Moses made *also with him that is not here with us this day* (Deuteronomy 29:15) is renewed forward to BOTH houses — Yashar''el and Yahudah named, the two-house people the oath always reached.'),
+    ('canon','deuteronomy',29,15,'canon','hebrews',8,10,'free',
+     E'*For this is the covenant that I will make with the house of Yashar''el (Israel) after those days, saith Yahuah (Lord); I will put my laws into their mind, and write them in their hearts: and I will be to them a Elohim (God), and they shall be to me a people:* (Hebrews 8:10). The very promise of Deuteronomy 29:13 — *that he may establish thee to day for a people unto himself, and that he may be unto thee a Elohim (God)* — carried to its consummation: the Torah not abolished but written on the heart of the gathered people.'),
+
+    -- THREAD 4: a root that beareth gall and wormwood (v.18-21)
+    ('canon','deuteronomy',29,18,'canon','hebrews',12,15,'free',
+     E'*Looking diligently lest any man fail of the grace of Elohim (God); lest any root of bitterness springing up trouble you, and thereby many be defiled;* (Hebrews 12:15). The writer takes Moses'' warning directly — *lest there should be among you a root that beareth gall and wormwood* (Deuteronomy 29:18) — the secret apostate whose hidden turning, once sprung up, defiles the whole assembly.'),
+    ('canon','deuteronomy',29,19,'canon','acts',8,23,'free',
+     E'*For I perceive that thou art in the gall of bitterness, and in the bond of iniquity.* (Acts 8:23). Peter''s verdict on Simon is Moses'' very phrase — the man who *bless himself in his heart, saying, I shall have peace, though I walk in the imagination of mine heart* (Deuteronomy 29:19) is the root of *gall and wormwood* now standing in the gall of bitterness, presuming on grace while the heart turns away.'),
+
+    -- THREAD 5: Wherefore hath Yahuah done thus unto this land? (v.22-28)
+    ('canon','deuteronomy',29,24,'canon','1-kings',9,8,'free',
+     E'*And at this house, which is high, every one that passeth by it shall be astonished, and shall hiss; and they shall say, Why hath Yahuah (LORD) done thus unto this land, and to this house?* (1 Kings 9:8). Solomon is warned with Moses'' own scene — *Even all nations shall say, Wherefore hath Yahuah (LORD) done thus unto this land? what meaneth the heat of this great anger?* (Deuteronomy 29:24): the desolation that itself becomes a witness, the passers-by asking the appointed question.'),
+    ('canon','deuteronomy',29,25,'canon','1-kings',9,9,'free',
+     E'*And they shall answer, Because they forsook Yahuah (LORD) their Elohim (God), who brought forth their fathers out of the land of Egypt, and have taken hold upon other gods, and have worshipped them, and served them: therefore hath Yahuah (LORD) brought upon them all this evil.* (1 Kings 9:9). The set answer Moses gave — *Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers* (Deuteronomy 29:25) — the exile read aright: covenant-breaking, never Yahuah''s caprice.'),
+    ('canon','deuteronomy',29,24,'canon','jeremiah',22,8,'free',
+     E'*And many nations shall pass by this city, and they shall say every man to his neighbour, Wherefore hath Yahuah (LORD) done thus unto this great city?* (Jeremiah 22:8). The prophet echoes Moses'' very question — *Wherefore hath Yahuah (LORD) done thus unto this land?* (Deuteronomy 29:24) — Jerusalem now the witness-ruin the nations interrogate.'),
+    ('canon','deuteronomy',29,25,'canon','jeremiah',22,9,'free',
+     E'*Then they shall answer, Because they have forsaken the covenant of Yahuah (LORD) their Elohim (God), and worshipped other gods, and served them.* (Jeremiah 22:9). Word for word the answer Moses appointed in *Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers* (Deuteronomy 29:25): the curse is for forsaking the covenant, never the Torah itself.'),
+
+    -- THREAD 6: the secret things belong unto Yahuah (v.29)
+    ('canon','deuteronomy',29,29,'canon','acts',1,7,'free',
+     E'*And he said unto them, It is not for you to know the times or the seasons, which the Father hath put in his own power.* (Acts 1:7). The Formed Son holds the same line Moses drew — *The secret things belong unto Yahuah Eloheinu (the LORD our God)* (Deuteronomy 29:29): the hidden times are kept with the Father, while what is revealed is given that His people may walk in it.'),
+    ('canon','deuteronomy',29,29,'canon','daniel',2,22,'free',
+     E'*He revealeth the deep and secret things: he knoweth what is in the darkness, and the light dwelleth with him.* (Daniel 2:22). Daniel confesses the very keeping of the *secret things* that *belong unto Yahuah Eloheinu (the LORD our God)* (Deuteronomy 29:29) — the deep things are His to reveal in His season, never to be wrested by man.'),
+    ('canon','deuteronomy',29,29,'canon','psalms',25,14,'free',
+     E'*The secret of Yahuah (LORD) is with them that fear him; and he will shew them his covenant.* (Psalm 25:14). The flip side of Deuteronomy 29:29 — *those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law*: to those who fear Him the secret is opened as covenant, given that they may DO it, not merely know it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================================================================
+-- C. threads
+-- ===================================================================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-29-eyes-that-they-should-not-see-unto-this-day',
+       E'Eyes That They Should Not See, Unto This Day',
+       E'Moses says of the wilderness generation, *Ye have seen all that Yahuah (LORD) did before your eyes ... The great temptations which thine eyes have seen, the signs, and those great miracles: Yet Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:2-4). The veil is not the people''s native dullness but a withholding from Yahuah''s hand, for a season. Isaiah is sent into the same judgment — *Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9), *Make the heart of this people fat, and make their ears heavy, and shut their eyes* (Isaiah 6:10) — and names it again as a poured-out stupor: *Yahuah (LORD) hath poured out upon you the spirit of deep sleep, and hath closed your eyes* (Isaiah 29:10). Paul gathers Deuteronomy and Isaiah into one verse: *Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear; unto this day* (Romans 11:8), insisting in the same chapter that *Elohim (God) hath not cast away his people* (Romans 11:2) — the slumber holds *until the fulness* and the gathering, never as a final rejection.',
+       sv.verse_id, ev.verse_id, 'free', 25200
+  FROM _s310_deu29_lookup sv, _s310_deu29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=29 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-29-forty-years-your-clothes-waxen-not-old',
+       E'Forty Years — Your Clothes Waxen Not Old',
+       E'*And I have led you forty years in the wilderness: your clothes are not waxen old upon you, and thy shoe is not waxen old upon thy foot. Ye have not eaten bread, neither have ye drunk wine or strong drink: that ye might know that I am Yahuah Elohaychem (the LORD your God)* (Deuteronomy 29:5-6). The provision was itself instruction. The earlier sermon names the lesson — *he humbled thee ... and fed thee with manna ... that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah (LORD)* (Deuteronomy 8:3) — and seals the same wonder: *Thy raiment waxed not old upon thee, neither did thy foot swell, these forty years* (Deuteronomy 8:4). The remnant of the return still sings it back: *forty years didst thou sustain them in the wilderness, so that they lacked nothing; their clothes waxed not old, and their feet swelled not* (Nehemiah 9:21). The kept covenant of Yahuah lets His people lack nothing, teaching dependence on His word over the loaf.',
+       sv.verse_id, ev.verse_id, 'free', 25203
+  FROM _s310_deu29_lookup sv, _s310_deu29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=29 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-29-the-covenant-with-him-that-is-not-here-this-day',
+       E'The Covenant With Him That Is Not Here This Day',
+       E'The covenant of Moab is cut with the whole people — *your captains of your tribes, your elders, and your officers ... Your little ones, your wives, and thy stranger that is in thy camp, from the hewer of thy wood unto the drawer of thy water* (Deuteronomy 29:10-11), the stranger bound under one law with the native. And it reaches past the living: *Neither with you only do I make this covenant and this oath; But with him that standeth here with us this day before Yahuah Eloheinu (the LORD our God), and also with him that is not here with us this day* (Deuteronomy 29:14-15) — every generation yet unborn, and the scattered house yet to be gathered. Peter at Shavuot opens the door with the same reach: *the promise is unto you, and to your children, and to all that are afar off* (Acts 2:39). And the renewal names both houses by name: *I will make a new covenant with the house of Yashar''el (Israel) and with the house of Yahudah (Judah)* (Hebrews 8:8), *I will put my laws into their mind, and write them in their hearts* (Hebrews 8:10) — the very purpose of Deuteronomy 29:13, *that he may establish thee to day for a people unto himself*, carried to its end: the Torah not abolished but inscribed on the heart of the gathered people.',
+       sv.verse_id, ev.verse_id, 'free', 25206
+  FROM _s310_deu29_lookup sv, _s310_deu29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=29 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-29-a-root-that-beareth-gall-and-wormwood',
+       E'A Root That Beareth Gall and Wormwood',
+       E'Moses warns against the hidden defector — *Lest there should be among you man, or woman, or family, or tribe, whose heart turneth away this day ... lest there should be among you a root that beareth gall and wormwood* (Deuteronomy 29:18) — the one who, hearing the curse, *bless himself in his heart, saying, I shall have peace, though I walk in the imagination of mine heart, to add drunkenness to thirst* (Deuteronomy 29:19). Presuming on peace while the heart turns, *Yahuah (LORD) will not spare him* (Deuteronomy 29:20). The letter to the Hebrews takes the figure straight into the assembly: *lest any root of bitterness springing up trouble you, and thereby many be defiled* (Hebrews 12:15) — the secret turning that poisons the whole body once it sprouts. And Peter pronounces it on Simon, who would buy the Spirit while his heart is unright: *thou art in the gall of bitterness, and in the bond of iniquity* (Acts 8:23). The covenant has no room for a private apostasy that hides behind a confession of peace.',
+       sv.verse_id, ev.verse_id, 'free', 25209
+  FROM _s310_deu29_lookup sv, _s310_deu29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=29 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-29-wherefore-hath-yahuah-done-thus-unto-this-land',
+       E'Wherefore Hath Yahuah Done Thus Unto This Land?',
+       E'The desolation itself becomes a witness. The land laid waste — *brimstone, and salt, and burning ... like the overthrow of Sodom, and Gomorrah* (Deuteronomy 29:23) — drives the nations to ask, *Wherefore hath Yahuah (LORD) done thus unto this land? what meaneth the heat of this great anger?* (Deuteronomy 29:24). And the answer is fixed in advance: *Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers* (Deuteronomy 29:25). Solomon hears the same scene set against the temple: *they shall say, Why hath Yahuah (LORD) done thus unto this land, and to this house? And they shall answer, Because they forsook Yahuah (LORD) their Elohim (God)* (1 Kings 9:8-9). Jeremiah hears it over Jerusalem: *Wherefore hath Yahuah (LORD) done thus unto this great city? Then they shall answer, Because they have forsaken the covenant of Yahuah (LORD) their Elohim (God)* (Jeremiah 22:8-9). The exile is never Yahuah''s caprice and never the Torah''s fault — it is the appointed verdict on covenant-breaking, read aloud by the watching nations.',
+       sv.verse_id, ev.verse_id, 'free', 25212
+  FROM _s310_deu29_lookup sv, _s310_deu29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=29 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-29-the-secret-things-belong-unto-yahuah',
+       E'The Secret Things Belong Unto Yahuah',
+       E'The chapter closes on the dividing line between the hidden and the given: *The secret things belong unto Yahuah Eloheinu (the LORD our God): but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law* (Deuteronomy 29:29). The hidden times are kept with Yahuah; the revealed Torah is handed down to be DONE. The Formed Son holds the same line when pressed about the end: *It is not for you to know the times or the seasons, which the Father hath put in his own power* (Acts 1:7). Daniel confesses the keeping of the secret to Yahuah alone: *He revealeth the deep and secret things ... and the light dwelleth with him* (Daniel 2:22) — revealed in His season, never wrested by man. And the Psalm shows the revealed side given to the faithful as covenant itself: *The secret of Yahuah (LORD) is with them that fear him; and he will shew them his covenant* (Psalm 25:14). The verse is the anti-antinomian close — what is revealed is given precisely *that we may do all the words of this law*.',
+       sv.verse_id, ev.verse_id, 'free', 25215
+  FROM _s310_deu29_lookup sv, _s310_deu29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=29 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================================================================
+-- D. thread_members
+-- ===================================================================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Romans 11:8 — Paul quotes Deuteronomy 29:4 with Isaiah 29:10: *eyes that they should not see, and ears that they should not hear; unto this day*, the slumber that is not a casting-away.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=4
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-eyes-that-they-should-not-see-unto-this-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 6:9 — the prophet sent into the same judgment: *Hear ye indeed, but understand not; and see ye indeed, but perceive not*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=4
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-eyes-that-they-should-not-see-unto-this-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 6:10 — heart, ears, eyes shut as the means of judgment: *lest they see with their eyes, and hear with their ears, and understand with their heart*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=4
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-eyes-that-they-should-not-see-unto-this-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Isaiah 29:10 — the spirit-of-slumber text Paul welds to Deuteronomy 29:4: *Yahuah (LORD) hath poured out upon you the spirit of deep sleep, and hath closed your eyes*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=4
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-eyes-that-they-should-not-see-unto-this-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 8:4 — the same wonder: *Thy raiment waxed not old upon thee, neither did thy foot swell, these forty years*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=5
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=8 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-forty-years-your-clothes-waxen-not-old'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 8:3 — the lesson of the manna: *man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah (LORD)*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=5
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=8 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-forty-years-your-clothes-waxen-not-old'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Nehemiah 9:21 — the returned remnant rehearses it: *forty years didst thou sustain them ... their clothes waxed not old, and their feet swelled not*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=5
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-forty-years-your-clothes-waxen-not-old'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Acts 2:39 — Peter stretches the oath as Moses did: *the promise is unto you, and to your children, and to all that are afar off* — the scattered house bound in.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=15
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-the-covenant-with-him-that-is-not-here-this-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 8:8 — the renewal names both houses: *a new covenant with the house of Yashar''el (Israel) and with the house of Yahudah (Judah)*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=15
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-the-covenant-with-him-that-is-not-here-this-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 8:10 — the Torah written on the heart, fulfilling Deuteronomy 29:13: *I will put my laws into their mind, and write them in their hearts ... they shall be to me a people*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=15
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-the-covenant-with-him-that-is-not-here-this-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Hebrews 12:15 — Moses'' warning taken into the assembly: *lest any root of bitterness springing up trouble you, and thereby many be defiled*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-a-root-that-beareth-gall-and-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Acts 8:23 — Peter''s verdict on Simon, the secret apostate of Deuteronomy 29:19: *thou art in the gall of bitterness, and in the bond of iniquity*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=19
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-a-root-that-beareth-gall-and-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 9:8 — the temple-warning scene: *they shall say, Why hath Yahuah (LORD) done thus unto this land, and to this house?*'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=24
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-wherefore-hath-yahuah-done-thus-unto-this-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Kings 9:9 — the set answer: *Because they forsook Yahuah (LORD) their Elohim (God) ... therefore hath Yahuah brought upon them all this evil*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-wherefore-hath-yahuah-done-thus-unto-this-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Jeremiah 22:8 — the same question over Jerusalem: *Wherefore hath Yahuah (LORD) done thus unto this great city?*'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=24
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-wherefore-hath-yahuah-done-thus-unto-this-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jeremiah 22:9 — word for word Moses'' answer: *Because they have forsaken the covenant of Yahuah (LORD) their Elohim (God)* — the curse for covenant-breaking, never the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-wherefore-hath-yahuah-done-thus-unto-this-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Acts 1:7 — the Formed Son keeps the same line: *It is not for you to know the times or the seasons, which the Father hath put in his own power*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=29
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-the-secret-things-belong-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Daniel 2:22 — the secret kept with Yahuah, revealed in His season: *He revealeth the deep and secret things ... and the light dwelleth with him*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=29
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-the-secret-things-belong-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 25:14 — the revealed side given to the faithful as covenant: *The secret of Yahuah (LORD) is with them that fear him; and he will shew them his covenant*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=29 AND sv.verse_number=29
+  JOIN _s310_deu29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=25 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-29-the-secret-things-belong-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_30.sql (Deuteronomy 30) -----
+--
+-- Book/chapter : Deuteronomy 30 — the return from exile, the circumcised heart,
+--                the word very nigh, choose life. SUPREME KEYSTONE of the covenant:
+--                the answer to the Deut 28 scattering = the two-house regathering,
+--                Torah internalized by the Spirit (NOT abolished), the doable near-word,
+--                and the choosing of life by love-obey-cleave.
+-- Tag          : deu30
+-- Session      : s310
+-- Temp view    : _s310_deu30_lookup
+-- Sort band    : base 25225, step 3  (25225, 25228, 25231, 25234, 25237, 25240)
+--
+-- FRAMING LENS (binding):
+--   * 30:1-6 the regathering — the deliberate covenant ANSWER to the Deut 28 curse-exile.
+--     The scattered covenant people (BOTH houses — Yahudah south, Ephraim/Yosef north)
+--     are gathered from all the nations. NOT replacement, NOT a new people grafted in by
+--     confession: the same seed driven out is the same seed fetched home (Jer 31:8-10
+--     "He that scattered Yashar'el will gather him"; Isa 11:12 "the outcasts of Yashar'el
+--     ... the dispersed of Yahudah"). FORWARD the ingathering at the trump (Matt 24:31),
+--     gather-in-one the scattered children (John 11:52), all Israel saved (Rom 11:25-26).
+--   * 30:6 the circumcised heart = the new-covenant heart that LOVES and KEEPS — Torah
+--     written within by the Spirit (Jer 31:33; Ezek 36:26-27), NOT Torah replaced. FORWARD
+--     Rom 2:28-29 / Col 2:11. Lateral Deut 10:16. OUT Jubilees 1:23 (verbatim parallel:
+--     "I shall circumcise the foreskin of their heart").
+--   * 30:11-14 the near-word — the commandment is NOT unreachable nor impossible; it is
+--     near and DOABLE ("that thou mayest do it"). Paul applies the very words to the word
+--     of faith preached (Rom 10:6-8) — the same near-word now written on the heart. The
+--     anti-antinomian verse: Torah is doable, internalized, kept.
+--   * 30:15-20 the two ways / choose life — life = love-obey-cleave (NOT a bare credo).
+--     FORWARD the narrow gate (Matt 7:13-14); the life that is in his Son (1 John 5:11-12;
+--     John 14:6 only as it fits "he is thy life"). Lateral Deut 4:26 heaven-and-earth witness.
+--
+-- ── Deuteronomy 30 coverage ──
+--   v.1-5  NT:     Matt 24:31, John 11:51-52, Rom 11:25-26 (the ingathering)
+--          Extras: Jubilees 1:15, Baruch 2:34-35 (regathering / everlasting covenant)
+--          Tanakh: Jer 29:13-14, Jer 31:8-10, Ezek 36:24, Isa 11:11-12, Neh 1:8-9
+--   v.6    NT:     Rom 2:28-29, Col 2:11 (circumcision of the heart)
+--          Extras: Jubilees 1:23 (circumcise the foreskin of their heart — verbatim)
+--          Tanakh: Deut 10:16, Jer 31:33, Ezek 36:26-27 (new heart / Torah within)
+--   v.7    NT:     none warranted   Extras: none warranted   Tanakh: (folded into v.1-6 thread)
+--   v.8-10 NT:     none warranted (return-and-rejoice)
+--          Extras: none warranted
+--          Tanakh: Zeph 3:17, Jer 32:41 (Yahuah rejoices over the returned)
+--   v.11-14 NT:    Rom 10:6-8 (the word is nigh — word of faith)
+--          Extras: none warranted
+--          Tanakh: none warranted (self-contained near-word)
+--   v.15-18 NT:    Matt 7:13-14 (the two ways / narrow gate)
+--          Extras: none warranted
+--          Tanakh: Deut 11:26-28, Jer 21:8 (blessing-and-curse / way of life and death)
+--   v.19-20 NT:    John 14:6, 1 John 5:11-12 (he is thy life / life in his Son)
+--          Extras: none warranted
+--          Tanakh: Deut 4:26 (heaven and earth to witness)
+--
+-- ── Threads (6) ──
+--   deuteronomy-30-i-will-gather-thee-from-all-the-nations   [free+extras] regathering (v.1-5)
+--       members: Tanakh Jer29:14, Jer31:8/31:10, Ezek36:24, Isa11:11/11:12, Neh1:9
+--                NT Matt24:31, John11:52, Rom11:25/11:26 ; Extras Jubilees1:15, Baruch2:34
+--   deuteronomy-30-circumcise-thine-heart-to-love-and-live   [free+extras] new heart (v.6)
+--       members: Tanakh Deut10:16, Jer31:33, Ezek36:26/36:27 ; NT Rom2:29, Col2:11 ; Extras Jubilees1:23
+--   deuteronomy-30-thou-shalt-return-and-he-will-rejoice     [free] return/rejoice (v.8-10)
+--       members: Tanakh Zeph3:17, Jer32:41
+--   deuteronomy-30-the-word-is-very-nigh-that-thou-mayest-do-it  [free] near-word (v.11-14)
+--       members: NT Rom10:6, Rom10:8
+--   deuteronomy-30-life-and-good-death-and-evil-the-two-ways [free] two ways (v.15-18)
+--       members: Tanakh Deut11:26, Jer21:8 ; NT Matt7:13, Matt7:14
+--   deuteronomy-30-therefore-choose-life-love-obey-cleave    [free] choose life (v.19-20)
+--       members: Tanakh Deut4:26 ; NT John14:6, 1John5:11
+--
+-- All slugs prefixed deuteronomy-30- and checked against EXISTING_SLUGS.txt (0 hits).
+-- ───────────────────────────────────────────────────────────────────────────
+
+CREATE TEMP VIEW _s310_deu30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- ── 30:1-5 the regathering (LATERAL Tanakh) ──
+    ('canon','deuteronomy',30,3,'canon','jeremiah',29,14,'free',
+      E'*And I will be found of you, saith Yahuah (LORD): and I will turn away your captivity, and I will gather you from all the nations, and from all the places whither I have driven you, saith Yahuah (LORD); and I will bring you again into the place whence I caused you to be carried away captive.* (Jeremiah 29:14). Moses'' promise — *Yahuah Elohayka (the LORD thy God) will turn thy captivity ... and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3) — is the very word Jeremiah hands the exiles: the same gathering, the same all-the-nations, the same bringing-again. The Torah promise and the prophet are one mouth.'),
+    ('canon','deuteronomy',30,4,'canon','jeremiah',31,8,'free',
+      E'*Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither.* (Jeremiah 31:8). Where Moses says *If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee* (Deuteronomy 30:4), Jeremiah names the company fetched — the north country (Ephraim''s exile), the coasts of the earth, none too far, none too broken to be brought home.'),
+    ('canon','deuteronomy',30,3,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock.* (Jeremiah 31:10). The hinge of the whole chapter: the One who scattered is the One who gathers. The same covenant hand that drove the people out for breaking covenant (the Deut 28 curse) returns and gathers them (Deuteronomy 30:3) — the two houses regathered, never replaced.'),
+    ('canon','deuteronomy',30,5,'canon','ezekiel',36,24,'free',
+      E'*For I will take you from among the heathen, and gather you out of all countries, and will bring you into your own land.* (Ezekiel 36:24). Moses'' *Yahuah Elohayka (the LORD thy God) will bring thee into the land which thy fathers possessed* (Deuteronomy 30:5) is Ezekiel''s word verbatim in substance — taken from the heathen, gathered from all countries, brought into the land — and Ezekiel binds it (next verses) to the new heart of Deut 30:6.'),
+    ('canon','deuteronomy',30,3,'canon','isaiah',11,11,'free',
+      E'*And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt, and from Pathros, and from Cush, and from Elam, and from Shinar, and from Hamath, and from the islands of the sea.* (Isaiah 11:11). The gathering *from all the nations* (Deuteronomy 30:3) is Isaiah''s second-time recovery of the remnant from the named lands of dispersion — the Branch of Jesse standing as the ensign to which the scattered return.'),
+    ('canon','deuteronomy',30,4,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* (Isaiah 11:12). This names the two houses by name within the one ingathering: *the outcasts of Yashar''el* (the northern exile) and *the dispersed of Yahudah* — the very fetching from *the outmost parts of heaven* Moses promised (Deuteronomy 30:4). One ensign, both sticks, four corners.'),
+    ('canon','deuteronomy',30,2,'canon','nehemiah',1,9,'free',
+      E'*But if ye turn unto me, and keep my commandments, and do them; though there were of you cast out unto the uttermost part of the heaven, yet will I gather them from thence, and will bring them unto the place that I have chosen to set my name there.* (Nehemiah 1:9). Nehemiah prays the Deut 30 promise back to Yahuah almost word for word — *if ye turn ... keep my commandments ... cast out unto the uttermost part of the heaven ... gather them from thence* — proving the returned remnant already read *shalt return unto Yahuah Elohayka ... and shalt obey his voice* (Deuteronomy 30:2) as their living charter.'),
+    -- ── 30:1-5 the regathering (FORWARD NT ingathering) ──
+    ('canon','deuteronomy',30,4,'canon','matthew',24,31,'free',
+      E'*And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31). The same fetching *from the outmost parts of heaven* (Deuteronomy 30:4) is consummated at the trump: the elect gathered from the four winds, from one end of heaven to the other — the final ingathering of the covenant people, not the abandoning of them.'),
+    ('canon','deuteronomy',30,3,'canon','john',11,52,'free',
+      E'*And not for that nation only, but that also he should gather together in one the children of Elohim (God) that were scattered abroad.* (John 11:52). The purpose of the Formed Son''s death is stated in Deut 30''s own grammar — *gather together in one* the scattered. The scattered children of Elohim are the same dispersed covenant seed Moses said Yahuah would *return and gather ... from all the nations* (Deuteronomy 30:3); the cross serves the regathering.'),
+    ('canon','deuteronomy',30,5,'canon','romans',11,25,'free',
+      E'*For I would not, brethren, that ye should be ignorant of this mystery, lest ye should be wise in your own conceits; that blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in.* (Romans 11:25). Paul keeps the regathering open: a partial, temporary blindness — not a casting-off. The promise that Yahuah *will bring thee into the land ... and he will do thee good, and multiply thee* (Deuteronomy 30:5) still stands over Yashar''el, awaiting the fulness.'),
+    ('canon','deuteronomy',30,5,'canon','romans',11,26,'free',
+      E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob:* (Romans 11:26). Paul''s conclusion is Moses'' promise in apostolic words — *all Yashar''el shall be saved* — the whole regathered people Yahuah swore to *bring ... into the land ... and do thee good, and multiply thee above thy fathers* (Deuteronomy 30:5). Not replacement; the covenant kept to the end.'),
+    -- ── 30:1-5 the regathering (OUT extras) ──
+    ('canon','deuteronomy',30,2,'jubilees','jubilees',1,15,'extras',
+      E'*And after this they will turn to Me from amongst the nations with all their heart and with all their soul and with all their strength, and I shall gather them from amongst all the nations, and they will seek Me, so that I shall be found of them, when they seek Me with all their heart and with all their soul.* (Jubilees 1:15). Jubilees retells the Sinai disclosure as Deut 30 itself — *turn ... with all their heart ... I shall gather them from amongst all the nations* — the same turning-and-gathering Moses spoke: *shalt return unto Yahuah Elohayka ... with all thine heart, and with all thy soul* (Deuteronomy 30:2).'),
+    ('canon','deuteronomy',30,5,'apocrypha','baruch-with-the-letter-of-jeremiah',2,34,'extras',
+      E'*And I will bring them again into the land which I promised with an oath to their fathers, Abraham, Isaac, and Jacob, and they shall be lords of it: and I will increase them, and they shall not be diminished.* (Baruch 2:34). Baruch confesses the exile and then pleads the Deut 30 promise — bringing again *into the land which I promised with an oath to their fathers* and increasing them — exactly Moses'' *bring thee into the land which thy fathers possessed ... and multiply thee above thy fathers* (Deuteronomy 30:5).'),
+    -- ── 30:6 the circumcised heart (FORWARD NT) ──
+    ('canon','deuteronomy',30,6,'canon','romans',2,29,'free',
+      E'*But he is a Yahudi (Jew), which is one inwardly; and circumcision is that of the heart, in the spirit, and not in the letter; whose praise is not of men, but of Elohim (God).* (Romans 2:29). Paul is quoting Moses'' own promise: *Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God)* (Deuteronomy 30:6). Heart-circumcision is no Pauline novelty — it is the Torah''s own goal, the heart made to love and keep, in the spirit.'),
+    ('canon','deuteronomy',30,6,'canon','colossians',2,11,'free',
+      E'*In whom also ye are circumcised with the circumcision made without hands, in putting off the body of the sins of the flesh by the circumcision of Messiah (Christ):* (Colossians 2:11). The *circumcision made without hands* is the heart Yahuah Himself circumcises — *Yahuah Elohayka ... will circumcise thine heart* (Deuteronomy 30:6) — the inward cutting away of the flesh so the heart may *love Yahuah Elohayka with all thine heart*. Fulfilment, not abolition.'),
+    -- ── 30:6 the circumcised heart (LATERAL Tanakh) ──
+    ('canon','deuteronomy',30,6,'canon','deuteronomy',10,16,'free',
+      E'*Circumcise therefore the foreskin of your heart, and be no more stiffnecked.* (Deuteronomy 10:16). What chapter 10 commands the people to do, chapter 30 promises Yahuah will do for them: the command *circumcise ... the foreskin of your heart* becomes the gift *Yahuah Elohayka ... will circumcise thine heart, and the heart of thy seed* (Deuteronomy 30:6). The same Torah held up as duty is granted as grace.'),
+    ('canon','deuteronomy',30,6,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33). The new covenant is precisely the circumcised heart of Deut 30:6 — the Torah *in their inward parts ... written in their hearts*, the heart made to *love Yahuah Elohayka with all thine heart* (Deuteronomy 30:6). Torah internalized, never replaced.'),
+    ('canon','deuteronomy',30,6,'canon','ezekiel',36,26,'free',
+      E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.* (Ezekiel 36:26). The stony heart cut away and the heart of flesh given is the circumcised heart Moses promised — *Yahuah Elohayka ... will circumcise thine heart* (Deuteronomy 30:6) — set in the same regathering frame (Ezek 36:24 above) Moses set in Deut 30:3-5.'),
+    ('canon','deuteronomy',30,6,'canon','ezekiel',36,27,'free',
+      E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:27). The end of the circumcised heart is named: the Spirit causes the walk in the statutes, the keeping and DOING of the judgments. Heart-circumcision exists *to love Yahuah Elohayka ... that thou mayest live* (Deuteronomy 30:6) — and to love is to keep (the Spirit and the Torah inseparable).'),
+    -- ── 30:6 the circumcised heart (OUT extras — verbatim parallel) ──
+    ('canon','deuteronomy',30,6,'jubilees','jubilees',1,23,'extras',
+      E'*And after this they will turn to Me in all uprightness and with all (their) heart and with all (their) soul, and I shall circumcise the foreskin of their heart and the foreskin of the heart of their seed, and I shall create in them a holy spirit, and I shall cleanse them so that they shall not turn away from Me from that day to eternity.* (Jubilees 1:23). Jubilees quotes Deut 30:6 almost word for word — *circumcise the foreskin of their heart and ... of their seed* — and adds the Spirit (Ezek 36:27): the heart cut, the Ruach given, the people made to cleave for ever, exactly *to love Yahuah Elohayka ... with all thy soul, that thou mayest live* (Deuteronomy 30:6).'),
+    -- ── 30:8-10 return and he will rejoice (LATERAL Tanakh) ──
+    ('canon','deuteronomy',30,9,'canon','zephaniah',3,17,'free',
+      E'*Yahuah Elohayka (The LORD thy God) in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing.* (Zephaniah 3:17). Moses promised *Yahuah (LORD) will again rejoice over thee for good, as he rejoiced over thy fathers* (Deuteronomy 30:9); Zephaniah sings it over the regathered remnant — Yahuah Himself rejoicing over His returned people with singing.'),
+    ('canon','deuteronomy',30,9,'canon','jeremiah',32,41,'free',
+      E'*Yea, I will rejoice over them to do them good, and I will plant them in this land assuredly with my whole heart and with my whole soul.* (Jeremiah 32:41). The same divine gladness: *I will rejoice over them to do them good* answers Moses'' *Yahuah (LORD) will again rejoice over thee for good* (Deuteronomy 30:9), and the planting in the land with Yahuah''s whole heart and soul matches Moses'' *make thee plenteous in every work of thine hand ... for good.*'),
+    -- ── 30:11-14 the word is very nigh (FORWARD NT — Paul quotes it) ──
+    ('canon','deuteronomy',30,12,'canon','romans',10,6,'free',
+      E'*But the righteousness which is of faith speaketh on this wise, Say not in thine heart, Who shall ascend into heaven? (that is, to bring Messiah (Christ) down from above:)* (Romans 10:6). Paul takes Moses'' very words — *It is not in heaven, that thou shouldest say, Who shall go up for us to heaven, and bring it unto us* (Deuteronomy 30:12) — and reads them of the near-word now embodied in Messiah. The commandment was never unreachable; the same near-word stands.'),
+    ('canon','deuteronomy',30,14,'canon','romans',10,8,'free',
+      E'*But what saith it? The word is nigh thee, even in thy mouth, and in thy heart: that is, the word of faith, which we preach;* (Romans 10:8). Paul quotes Deut 30:14 outright — *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:14). The doable, internalized Torah is the word of faith preached: near, in the mouth, in the heart — and *that thou mayest do it*, never that thou mayest dispense with doing.'),
+    -- ── 30:15-18 the two ways (LATERAL + FORWARD) ──
+    ('canon','deuteronomy',30,15,'canon','deuteronomy',11,26,'free',
+      E'*Behold, I set before you this day a blessing and a curse;* (Deuteronomy 11:26). The same setting-before opens chapter 11 and closes the book — *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15). The two ways frame the whole covenant: blessing for obedience, curse for turning aside (Deut 11:27-28), pressed now to the final choice.'),
+    ('canon','deuteronomy',30,15,'canon','jeremiah',21,8,'free',
+      E'*And unto this people thou shalt say, Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death.* (Jeremiah 21:8). Jeremiah preaches Deut 30 to the dying city in its own words — *I set before you the way of life, and the way of death* — the same two ways Moses set: *life and good, and death and evil* (Deuteronomy 30:15). The covenant choice never expires.'),
+    ('canon','deuteronomy',30,15,'canon','matthew',7,13,'free',
+      E'*Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* (Matthew 7:13). The Formed Son preaches Moses'' two ways — the broad road to destruction set against *life and good* (Deuteronomy 30:15) — calling the hearer to choose at the gate.'),
+    ('canon','deuteronomy',30,16,'canon','matthew',7,14,'free',
+      E'*Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* (Matthew 7:14). The narrow way *unto life* is Moses'' way: *to love Yahuah Elohayka ... to walk in his ways, and to keep his commandments ... that thou mayest live* (Deuteronomy 30:16). The gate is strait because the way is the keeping way, not the broad road of other gods.'),
+    -- ── 30:19-20 choose life (LATERAL + FORWARD) ──
+    ('canon','deuteronomy',30,19,'canon','deuteronomy',4,26,'free',
+      E'*I call heaven and earth to witness against you this day, that ye shall soon utterly perish from off the land whereunto ye go over Jordan to possess it; ye shall not prolong your days upon it, but shall utterly be destroyed.* (Deuteronomy 4:26). The same two witnesses are summoned: *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing* (Deuteronomy 30:19). Heaven and earth, the unbribable witnesses, bracket the covenant from chapter 4 to chapter 30.'),
+    ('canon','deuteronomy',30,20,'canon','john',14,6,'free',
+      E'*Yahusha (Jesus) saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.* (John 14:6). Moses said of Yahuah *he is thy life, and the length of thy days* (Deuteronomy 30:20); the Formed Son says *I am ... the life* — the same life the covenant set before the people to choose. To cleave unto Him is to choose life.'),
+    ('canon','deuteronomy',30,20,'canon','1-john',5,11,'free',
+      E'*And this is the record, that Elohim (God) hath given to us eternal life, and this life is in his Son.* (1 John 5:11). The life Moses set before Yashar''el to choose — *for he is thy life, and the length of thy days* (Deuteronomy 30:20) — is the life Elohim has given in His Son. Choosing life and loving-obeying-cleaving meet here: the life is in the Son, and *he that hath the Son hath life* (next verse).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+-- Thread 1: the regathering (v.1-5)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-30-i-will-gather-thee-from-all-the-nations',
+       E'Deuteronomy 30 — I will gather thee from all the nations: the return from exile',
+       E'This is the deliberate covenant ANSWER to the Deut 28 scattering. *And it shall come to pass, when all these things are come upon thee, the blessing and the curse ... and thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the LORD thy God) hath driven thee, And shalt return unto Yahuah Elohayka ... That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:1-3). The same hand that drove the people out gathers them home — *If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah ... gather thee, and from thence will he fetch thee* (Deuteronomy 30:4). The prophets carry the identical word: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10); and they name the TWO houses within the one ingathering — *shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). Nehemiah prays it back almost verbatim (Nehemiah 1:9); Ezekiel sets it as the frame of the new heart (Ezekiel 36:24). Forward it reaches the final trump — *they shall gather together his elect from the four winds* (Matthew 24:31) — the cross''s purpose to *gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52), and Paul''s seal *And so all Yashar''el (Israel) shall be saved* (Romans 11:26). The restored library witnesses with one voice: *I shall gather them from amongst all the nations* (Jubilees 1:15) and *I will bring them again into the land which I promised with an oath to their fathers* (Baruch 2:34). Not replacement, not a new people grafted in by confession — the same scattered covenant seed fetched home.',
+       sv.verse_id, ev.verse_id, 'extras', 25225
+  FROM _s310_deu30_lookup sv, _s310_deu30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=30 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2: circumcise thine heart (v.6)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-30-circumcise-thine-heart-to-love-and-live',
+       E'Deuteronomy 30 — circumcise thine heart: the new-covenant heart that loves and keeps',
+       E'*And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live* (Deuteronomy 30:6). This is the Torah''s own goal — not Torah replaced but Torah written within. What chapter 10 commands the people to do — *Circumcise therefore the foreskin of your heart, and be no more stiffnecked* (Deuteronomy 10:16) — chapter 30 promises Yahuah Himself will do for them. The prophets call it the new covenant: *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33); *A new heart also will I give you ... and I will take away the stony heart out of your flesh* (Ezekiel 36:26), with its purpose named — *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). Paul quotes the promise outright — *circumcision is that of the heart, in the spirit, and not in the letter* (Romans 2:29) — and Colossians names it *the circumcision made without hands ... by the circumcision of Messiah (Christ)* (Colossians 2:11). Jubilees preserves it almost verbatim: *I shall circumcise the foreskin of their heart and the foreskin of the heart of their seed, and I shall create in them a holy spirit* (Jubilees 1:23). The circumcised heart is given to ONE end — to love, and to love is to keep. The Spirit and the Torah are inseparable; the heart is cut so it may obey, not so obedience may cease.',
+       sv.verse_id, ev.verse_id, 'extras', 25228
+  FROM _s310_deu30_lookup sv, _s310_deu30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=30 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3: thou shalt return and he will rejoice (v.8-10)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-30-thou-shalt-return-and-he-will-rejoice',
+       E'Deuteronomy 30 — thou shalt return and obey, and Yahuah will rejoice over thee for good',
+       E'The return is not bare survival but Yahuah''s own gladness restored. *And thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments which I command thee this day ... for Yahuah (LORD) will again rejoice over thee for good, as he rejoiced over thy fathers: If thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God), to keep his commandments and his statutes ... and if thou turn unto Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul* (Deuteronomy 30:8-10). The prophets sing this divine joy over the regathered remnant: *Yahuah Elohayka (The LORD thy God) in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing* (Zephaniah 3:17); and *I will rejoice over them to do them good, and I will plant them in this land assuredly with my whole heart and with my whole soul* (Jeremiah 32:41). The returning that pleases Yahuah is the returning that obeys — turning with the whole heart AND keeping the commandments, the two never severed.',
+       sv.verse_id, ev.verse_id, 'free', 25231
+  FROM _s310_deu30_lookup sv, _s310_deu30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=30 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4: the word is very nigh (v.11-14)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-30-the-word-is-very-nigh-that-thou-mayest-do-it',
+       E'Deuteronomy 30 — the word is very nigh: the doable, internalized Torah',
+       E'The commandment is not unreachable and not impossible — it is near and DOABLE. *For this commandment which I command thee this day, it is not hidden from thee, neither is it far off. It is not in heaven, that thou shouldest say, Who shall go up for us to heaven, and bring it unto us, that we may hear it, and do it? Neither is it beyond the sea ... But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:11-14). The closing words are the hinge — *that thou mayest do it.* Paul takes these very lines and reads them of the near-word now embodied: *Say not in thine heart, Who shall ascend into heaven? (that is, to bring Messiah (Christ) down from above:)* (Romans 10:6), and *The word is nigh thee, even in thy mouth, and in thy heart: that is, the word of faith, which we preach* (Romans 10:8). The word of faith is not the abolition of doing but the near-word written on the heart by the Spirit (the circumcised heart of v.6) — Torah brought so close it lives in the mouth and the heart, precisely so that the covenant people may keep it. This is the anti-antinomian verse: never far off, never impossible, always *that thou mayest do it.*',
+       sv.verse_id, ev.verse_id, 'free', 25234
+  FROM _s310_deu30_lookup sv, _s310_deu30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=30 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 5: life and good, death and evil (v.15-18)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-30-life-and-good-death-and-evil-the-two-ways',
+       E'Deuteronomy 30 — life and good, death and evil: the two ways set before thee',
+       E'*See, I have set before thee this day life and good, and death and evil; In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply ... But if thine heart turn away ... and worship other gods, and serve them; I denounce unto you this day, that ye shall surely perish* (Deuteronomy 30:15-18). The two ways frame the whole covenant. Chapter 11 opened with the same setting-before: *Behold, I set before you this day a blessing and a curse* (Deuteronomy 11:26); Jeremiah preaches it to the dying city verbatim: *Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8). Forward, the Formed Son stands at the same fork: *wide is the gate, and broad is the way, that leadeth to destruction* (Matthew 7:13) set against *narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14). The way unto life is Moses'' way — to love, to walk, to keep — and the gate is strait because it is the keeping way, not the broad road of other gods.',
+       sv.verse_id, ev.verse_id, 'free', 25237
+  FROM _s310_deu30_lookup sv, _s310_deu30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=30 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 6: therefore choose life (v.19-20)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-30-therefore-choose-life-love-obey-cleave',
+       E'Deuteronomy 30 — therefore choose life: love, obey, cleave, for he is thy life',
+       E'The book''s great summons: *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live: That thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days* (Deuteronomy 30:19-20). Choosing life is unfolded into three inseparable verbs — love, obey, cleave — never a bare credo. The two unbribable witnesses, heaven and earth, are summoned exactly as in chapter 4: *I call heaven and earth to witness against you this day* (Deuteronomy 4:26). Forward, the One who is life speaks: *I am the way, the truth, and the life* (John 14:6) — Moses had already said *he is thy life, and the length of thy days* — and the apostle seals it: *Elohim (God) hath given to us eternal life, and this life is in his Son* (1 John 5:11). To cleave unto Him is to choose life; the life set before Yashar''el to choose is the life given in the Son.',
+       sv.verse_id, ev.verse_id, 'free', 25240
+  FROM _s310_deu30_lookup sv, _s310_deu30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=30 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He that scattered Yashar''el (Israel) will gather him* (Jeremiah 31:10) — the hinge: the One who scattered is the One who gathers.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will gather you from all the nations ... and I will bring you again* (Jeremiah 29:14) — Jeremiah hands the exiles the Deut 30 promise.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will bring them from the north country, and gather them from the coasts of the earth* (Jeremiah 31:8) — the company fetched, none too far or too broken.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=4
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will take you from among the heathen, and gather you out of all countries* (Ezekiel 36:24) — the gathering set as the frame of the new heart.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=5
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*recover the remnant of his people ... the second time* (Isaiah 11:11) — the remnant gathered from the named lands of dispersion.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the outcasts of Yashar''el ... the dispersed of Yahudah* (Isaiah 11:12) — the TWO houses named within the one ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=4
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*will I gather them from thence, and will bring them unto the place* (Nehemiah 1:9) — the returned remnant prays Deut 30 back as its charter.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*gather together his elect from the four winds* (Matthew 24:31) — the same fetching from the parts of heaven consummated at the trump.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=4
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52) — the cross serves the regathering.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=11 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*blindness in part is happened to Yashar''el ... until the fulness* (Romans 11:25) — partial, temporary, not a casting-off.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=5
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*And so all Yashar''el (Israel) shall be saved* (Romans 11:26) — Moses'' promise in apostolic words, the covenant kept to the end.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=5
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 12, E'*I shall gather them from amongst all the nations* (Jubilees 1:15) — the Sinai disclosure retold as Deut 30 itself.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 13, E'*I will bring them again into the land which I promised with an oath to their fathers* (Baruch 2:34) — the exile-confession pleads the Deut 30 promise.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=5
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=2 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-i-will-gather-thee-from-all-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Circumcise therefore the foreskin of your heart* (Deuteronomy 10:16) — the command of ch.10 becomes the gift of ch.30.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-circumcise-thine-heart-to-love-and-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the new covenant IS the circumcised heart; Torah internalized.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-circumcise-thine-heart-to-love-and-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*A new heart also will I give you ... I will take away the stony heart* (Ezekiel 36:26) — the stony heart cut, the heart of flesh given.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-circumcise-thine-heart-to-love-and-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27) — the end of heart-circumcision: the Spirit-wrought walk in the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-circumcise-thine-heart-to-love-and-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*circumcision is that of the heart, in the spirit* (Romans 2:29) — Paul quotes Moses'' promise; heart-circumcision is the Torah''s own goal.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-circumcise-thine-heart-to-love-and-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the circumcision made without hands ... by the circumcision of Messiah (Christ)* (Colossians 2:11) — the inward cutting away of the flesh.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-circumcise-thine-heart-to-love-and-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*I shall circumcise the foreskin of their heart and ... of their seed* (Jubilees 1:23) — almost verbatim Deut 30:6, with the holy spirit added.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-circumcise-thine-heart-to-love-and-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he will rejoice over thee with joy ... he will joy over thee with singing* (Zephaniah 3:17) — Yahuah''s gladness over the regathered remnant.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-thou-shalt-return-and-he-will-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will rejoice over them to do them good ... with my whole heart and with my whole soul* (Jeremiah 32:41) — the same divine joy, planting the returned.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=32 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-thou-shalt-return-and-he-will-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Say not in thine heart, Who shall ascend into heaven?* (Romans 10:6) — Paul takes Deut 30:12 of the near-word embodied in Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=12
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-the-word-is-very-nigh-that-thou-mayest-do-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The word is nigh thee, even in thy mouth, and in thy heart* (Romans 10:8) — Deut 30:14 quoted outright; the word of faith is the doable near-word.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=14
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-the-word-is-very-nigh-that-thou-mayest-do-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I set before you this day a blessing and a curse* (Deuteronomy 11:26) — the same setting-before opens ch.11 and closes the book.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=15
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-life-and-good-death-and-evil-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I set before you the way of life, and the way of death* (Jeremiah 21:8) — Jeremiah preaches Deut 30 to the dying city verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=15
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=21 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-life-and-good-death-and-evil-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*wide is the gate ... that leadeth to destruction* (Matthew 7:13) — the Formed Son preaches the broad road against life and good.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=15
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-life-and-good-death-and-evil-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*narrow is the way, which leadeth unto life* (Matthew 7:14) — the way unto life is Moses'' keeping way: love, walk, keep.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=16
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-life-and-good-death-and-evil-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I call heaven and earth to witness against you this day* (Deuteronomy 4:26) — the same two unbribable witnesses bracket the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=19
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-therefore-choose-life-love-obey-cleave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I am the way, the truth, and the life* (John 14:6) — Moses said *he is thy life*; the Formed Son is the life set before the people to choose.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=20
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-therefore-choose-life-love-obey-cleave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Elohim (God) hath given to us eternal life, and this life is in his Son* (1 John 5:11) — the life set before Yashar''el is the life given in the Son.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=30 AND sv.verse_number=20
+  JOIN _s310_deu30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-30-therefore-choose-life-love-obey-cleave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session310 — Deuteronomy cross-references complete.'
