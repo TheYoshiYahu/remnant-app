@@ -4936,6 +4936,1201 @@ SELECT t.id, cr.id, 3, E'*and will give ten tribes to thee* (1 Kings 11:31) — 
  WHERE t.slug='1-kings-15-the-northern-cycle-of-the-calf-sin-of-jeroboam'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1-kings_16.sql (1 Kings 16) -----
+-- Chapter: 1 Kings 16 — the violent succession of northern dynasties (Baasha, Elah,
+--   Zimri, Omri) all judged by the prophetic word for walking in the calf-sin of Jeroboam;
+--   AHAB son of Omri the deepest apostasy (married Jezebel, served Baal, reared altar+grove);
+--   Hiel rebuilds Jericho — Joshua's curse fulfilled centuries later (the sure word).
+-- Tag: 1ki16    View: _s342_1ki16_lookup    Sort band: 38275, 38278, 38281 (base 38275, step 3)
+--
+-- 1 Kings 16 coverage:
+--   v.1-4  (word of Jehu b. Hanani against Baasha — dogs/fowls fate)
+--          NT:     none warranted (lateral/Tanakh weave carries it)
+--          Extras: none warranted
+--          Tanakh: 1 Kings 14:10-11 (same dooming-word against Jeroboam's house) — THREAD 1
+--   v.7    (word against Baasha for being like the house of Jeroboam)
+--          NT/Extras: none warranted ; Tanakh: 1 Kings 14:10 (THREAD 1, the pattern)
+--   v.12-13 (Zimri destroyed Baasha's house "according to the word of Yahuah")
+--          NT/Extras: none warranted ; Tanakh: 1 Kings 14:10 — THREAD 1 (the word stands/fulfilled)
+--   v.30-33 (Ahab did evil above all; married Jezebel; served Baal; altar+grove)
+--          NT:     Revelation 2:20 (that woman Jezebel — the Jezebel-type) — THREAD 2
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 13:6-8 (enticing to serve other gods) ; 1 Kings 21:25 (Jezebel stirred Ahab) — THREAD 2
+--   v.34   (Hiel rebuilds Jericho; foundation in firstborn, gates in youngest, per word by Joshua)
+--          NT/Extras: none warranted
+--          Tanakh: Joshua 6:26 (Joshua's curse on the rebuilder) — THREAD 3
+--   v.5-6,8-29 (regnal-formula / chronicle frames) — none warranted (annalistic notice)
+--
+-- THREAD 1  1-kings-16-the-word-of-yahuah-against-baasha-stands       tier free   (canon only)
+-- THREAD 2  1-kings-16-ahab-and-jezebel-the-deepest-apostasy          tier free   (canon only, incl. Rev 2:20)
+-- THREAD 3  1-kings-16-jericho-rebuilt-joshuas-curse-fulfilled         tier free   (canon only)
+--
+
+CREATE TEMP VIEW _s342_1ki16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =====================================================================
+-- B. cross_references
+-- =====================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the dooming word against Baasha's house stands (like Jeroboam's)
+    ('canon','1-kings',16,3,'canon','1-kings',14,10,'free',
+     E'*Therefore, behold, I will bring evil upon the house of Jeroboam, and will cut off from Jeroboam him that pisseth against the wall, and him that is shut up and left in Yashar''el (Israel), and will take away the remnant of the house of Jeroboam, as a man taketh away dung, till it be all gone* (1 Kings 14:10). When Jehu the son of Hanani comes against Baasha — *I will take away the posterity of Baasha, and the posterity of his house; and will make thy house like the house of Jeroboam the son of Nebat* (16:3) — the word measures Baasha by the very sentence already spoken over the house he was raised to judge. The calf-sin breeds the same doom every dynasty.'),
+    ('canon','1-kings',16,4,'canon','1-kings',14,11,'free',
+     E'*Him that dieth of Jeroboam in the city shall the dogs eat; and him that dieth in the field shall the fowls of the air eat: for Yahuah (LORD) hath spoken it* (1 Kings 14:11). The sentence on Baasha is word-for-word the sentence on Jeroboam: *Him that dieth of Baasha in the city shall the dogs eat; and him that dieth of his in the fields shall the fowls of the air eat* (16:4). The prophetic word does not soften from house to house — *for Yahuah hath spoken it*.'),
+    ('canon','1-kings',16,7,'canon','1-kings',14,16,'free',
+     E'*And he shall give Yashar''el (Israel) up because of the sins of Jeroboam, who did sin, and who made Yashar''el (Israel) to sin* (1 Kings 14:16). The charge laid on Baasha is the same root cause: the word came against his house *for all the evil that he did in the sight of Yahuah (LORD), in provoking him to anger with the work of his hands, in being like the house of Jeroboam* (16:7). To be *like the house of Jeroboam* is to share its judgment.'),
+    ('canon','1-kings',16,12,'canon','1-kings',14,18,'free',
+     E'*And they buried him; and all Yashar''el (Israel) mourned for him, according to the word of Yahuah (LORD), which he spake by the hand of his servant Ahijah the prophet* (1 Kings 14:18). As Ahijah''s word over Jeroboam came to pass to the letter, so Zimri''s slaughter fulfils Jehu''s word over Baasha — *Thus did Zimri destroy all the house of Baasha, according to the word of Yahuah (LORD), which he spake against Baasha by Jehu the prophet* (16:12). The spoken word and its fulfilment frame the whole chapter: Yahuah''s word stands.'),
+    -- THREAD 2 — Ahab + Jezebel: the deepest northern apostasy / the Jezebel-type
+    ('canon','1-kings',16,31,'canon','revelation',2,20,'free',
+     E'*Notwithstanding I have a few things against thee, because thou sufferest that woman Jezebel, which calleth herself a prophetess, to teach and to seduce my servants to commit fornication, and to eat things sacrificed unto idols* (Revelation 2:20). The name that the risen Formed Son lays on Thyatira reaches all the way back to this verse: *he took to wife Jezebel the daughter of Ethbaal king of the Zidonians, and went and served Baal, and worshipped him* (16:31). Jezebel becomes the type of every seducing teacher who drags the covenant people into Baal''s table.'),
+    ('canon','1-kings',16,31,'canon','deuteronomy',13,6,'free',
+     E'*If thy brother, the son of thy mother, or thy son, or thy daughter, or the wife of thy bosom, or thy friend, which is as thine own soul, entice thee secretly, saying, Let us go and serve other gods, which thou hast not known, thou, nor thy fathers* (Deuteronomy 13:6). The Torah names *the wife of thy bosom* as the very mouth that may entice to other gods — and Ahab is the king who marries that enticement: *he took to wife Jezebel the daughter of Ethbaal... and went and served Baal* (16:31). Torah named the danger; Ahab embraced it.'),
+    ('canon','1-kings',16,33,'canon','1-kings',21,25,'free',
+     E'*But there was none like unto Ahab, which did sell himself to work wickedness in the sight of Yahuah (LORD), whom Jezebel his wife stirred up* (1 Kings 21:25). The verdict here — *Ahab did more to provoke Yahuah Elohim (the LORD God) of Yashar''el (Israel) to anger than all the kings of Yashar''el (Israel) that were before him* (16:33) — is sealed five chapters later, naming Jezebel as the hand that stirred him. The two stand together as the deepest apostasy of the northern house.'),
+    -- THREAD 3 — Jericho rebuilt: Joshua's curse fulfilled centuries later (the sure word)
+    ('canon','1-kings',16,34,'canon','joshua',6,26,'free',
+     E'*And Joshua adjured them at that time, saying, Cursed be the man before Yahuah (LORD), that riseth up and buildeth this city Jericho: he shall lay the foundation thereof in his firstborn, and in his youngest son shall he set up the gates of it* (Joshua 6:26). Generations later the curse lands to the letter: *In his days did Hiel the Beth-elite build Jericho: he laid the foundation thereof in Abiram his firstborn, and set up the gates thereof in his youngest son Segub, according to the word of Yahuah (LORD), which he spake by Joshua the son of Nun* (16:34). The word spoken by Joshua waited centuries and did not fall — the sure word of Yahuah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =====================================================================
+-- C. threads
+-- =====================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-16-the-word-of-yahuah-against-baasha-stands',
+       E'The word of Yahuah against Baasha stands',
+       E'The chapter opens with prophecy and ends with prophecy fulfilled. *Then the word of Yahuah (LORD) came to Jehu the son of Hanani against Baasha* (16:1), and the sentence is the very one already spoken over the house Baasha himself was raised to destroy: *Behold, I will take away the posterity of Baasha, and the posterity of his house; and will make thy house like the house of Jeroboam the son of Nebat* (16:3). The Torah-fed pattern repeats word-for-word — *Therefore, behold, I will bring evil upon the house of Jeroboam, and will cut off from Jeroboam him that pisseth against the wall... till it be all gone* (1 Kings 14:10) — and the dogs-and-fowls doom is identical: *Him that dieth of Baasha in the city shall the dogs eat; and him that dieth of his in the fields shall the fowls of the air eat* (16:4), echoing *Him that dieth of Jeroboam in the city shall the dogs eat... for Yahuah (LORD) hath spoken it* (1 Kings 14:11). The charge is the calf-sin itself: the word came *in being like the house of Jeroboam* (16:7), the same root for which Yahuah *shall give Yashar''el (Israel) up because of the sins of Jeroboam, who did sin, and who made Yashar''el (Israel) to sin* (1 Kings 14:16). And it comes to pass — *Thus did Zimri destroy all the house of Baasha, according to the word of Yahuah (LORD), which he spake against Baasha by Jehu the prophet* (16:12), just as Ahijah''s word over Jeroboam came to pass *according to the word of Yahuah (LORD), which he spake by the hand of his servant Ahijah the prophet* (1 Kings 14:18). The northern dynasties rise and fall, but the spoken word of Yahuah does not.',
+       sv.verse_id, ev.verse_id, 'free', 38275
+  FROM _s342_1ki16_lookup sv, _s342_1ki16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=16 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-16-ahab-and-jezebel-the-deepest-apostasy',
+       E'Ahab and Jezebel — the deepest apostasy',
+       E'With Ahab the northern apostasy reaches its floor: *And Ahab the son of Omri did evil in the sight of Yahuah (LORD) above all that were before him* (16:30). What had been the calf-worship of Jeroboam now becomes naked Baal-worship through a foreign marriage — *as if it had been a light thing for him to walk in the sins of Jeroboam the son of Nebat, that he took to wife Jezebel the daughter of Ethbaal king of the Zidonians, and went and served Baal, and worshipped him* (16:31). The Torah had already named *the wife of thy bosom* as a mouth that may *entice thee secretly, saying, Let us go and serve other gods, which thou hast not known* (Deuteronomy 13:6); Ahab marries that enticement and builds it a house: *he reared up an altar for Baal in the house of Baal, which he had built in Samaria. And Ahab made a grove* (16:32-33). The verdict — *Ahab did more to provoke Yahuah Elohim (the LORD God) of Yashar''el (Israel) to anger than all the kings of Yashar''el (Israel) that were before him* (16:33) — is sealed when Yahuah names Jezebel the hand behind him: *whom Jezebel his wife stirred up* (1 Kings 21:25). And the name does not die with her. Centuries later the risen Formed Son lays it on a compromised assembly: *thou sufferest that woman Jezebel, which calleth herself a prophetess, to teach and to seduce my servants to commit fornication, and to eat things sacrificed unto idols* (Revelation 2:20). Jezebel becomes the type of every seducing teacher who drags the covenant people to Baal''s table — and Yahuah''s charge against her, then and at the end, is the same.',
+       sv.verse_id, ev.verse_id, 'free', 38278
+  FROM _s342_1ki16_lookup sv, _s342_1ki16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=16 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-16-jericho-rebuilt-joshuas-curse-fulfilled',
+       E'Jericho rebuilt — Joshua''s curse fulfilled',
+       E'The chapter closes on a single verse that proves the long memory of Yahuah''s word: *In his days did Hiel the Beth-elite build Jericho: he laid the foundation thereof in Abiram his firstborn, and set up the gates thereof in his youngest son Segub, according to the word of Yahuah (LORD), which he spake by Joshua the son of Nun* (16:34). The curse it fulfils was spoken at the fall of the city generations before: *And Joshua adjured them at that time, saying, Cursed be the man before Yahuah (LORD), that riseth up and buildeth this city Jericho: he shall lay the foundation thereof in his firstborn, and in his youngest son shall he set up the gates of it* (Joshua 6:26). Hiel rebuilds Jericho in the days of Ahab''s apostasy and pays the exact, terrible price named — firstborn at the foundation, youngest at the gates — *according to the word of Yahuah, which he spake by Joshua*. The sure word waited centuries and did not fall. The same Yahuah whose prophetic sentence overtook Baasha and Ahab keeps every word spoken by his servants, down to the last detail.',
+       sv.verse_id, ev.verse_id, 'free', 38281
+  FROM _s342_1ki16_lookup sv, _s342_1ki16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=16 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- =====================================================================
+-- D. thread_members
+-- =====================================================================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 14:10 — the doom on Jeroboam''s house, now measured out on Baasha (16:3): *as a man taketh away dung, till it be all gone*.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-16-the-word-of-yahuah-against-baasha-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Kings 14:11 — *the dogs eat... the fowls of the air eat*, word-for-word the sentence on Baasha (16:4): *for Yahuah hath spoken it*.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=4
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-16-the-word-of-yahuah-against-baasha-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Kings 14:16 — Yashar''el given up *because of the sins of Jeroboam*, the very charge laid on Baasha for *being like the house of Jeroboam* (16:7).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-16-the-word-of-yahuah-against-baasha-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Kings 14:18 — Ahijah''s word over Jeroboam *came to pass according to the word of Yahuah*, just as Zimri fulfils Jehu''s word over Baasha (16:12).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=12
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-16-the-word-of-yahuah-against-baasha-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Revelation 2:20 — *that woman Jezebel, which calleth herself a prophetess*, the type born here when Ahab takes Jezebel and serves Baal (16:31).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=31
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-16-ahab-and-jezebel-the-deepest-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 13:6 — Torah names *the wife of thy bosom* who may *entice thee... to serve other gods*; Ahab marries exactly that (16:31).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=31
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-16-ahab-and-jezebel-the-deepest-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Kings 21:25 — *none like unto Ahab... whom Jezebel his wife stirred up*, sealing the verdict that he provoked Yahuah *more... than all the kings* before him (16:33).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=33
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=21 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-16-ahab-and-jezebel-the-deepest-apostasy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joshua 6:26 — *Cursed be the man... that... buildeth this city Jericho: he shall lay the foundation thereof in his firstborn*, fulfilled to the letter in Hiel (16:34).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=16 AND sv.verse_number=34
+  JOIN _s342_1ki16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=6 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-16-jericho-rebuilt-joshuas-curse-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_17.sql (1 Kings 17) -----
+-- Chapter: 1 Kings 17 (Elijah the Tishbite; the drought; ravens at Cherith; the widow of
+--   Zarephath; the barrel of meal and cruse of oil; the FIRST raising of the dead in scripture)
+-- Tag: 1ki17   View: _s342_1ki17_lookup   Sort band: 38300 step 3 (38300,38303,38306,38309)
+-- Source rows ALL 'canon','1-kings',17,v.  Canon target tier 'free'; extras tier 'extras'.
+-- Thread tier_required 'free' unless ANY member extras (threads 1 & 4 carry Sirach -> 'extras').
+--
+-- 1 Kings 17 coverage:
+--   v.1  (Elijah declares the drought by his word)
+--        NT:     James 5:17-18 (Elias prayed it might not rain / heaven gave rain); Rev 11:6 (two
+--                witnesses power to shut heaven) -> THREAD 1
+--        Extras: Sirach/Ecclesiasticus 48:1-3 (Elias as fire; by his word shut up the heaven) -> THREAD 1
+--        Tanakh: Deuteronomy 11:16-17 (serve other gods -> he shut up the heaven, no rain) -> THREAD 1
+--   v.2-7 (ravens feed Elijah at Cherith; the brook dries up)
+--        NT:     Matthew 6:26 (your heavenly Father feedeth the fowls) -> THREAD 3 (provision)
+--        Extras: none warranted
+--        Tanakh: none warranted (Yahuah's direct provision; covered laterally by daily-bread thread)
+--   v.8-16 (the widow of Zarephath of Zidon; the meal and oil that fail not)
+--        NT:     Luke 4:25-26 (none of Israel's widows but Sarepta of Sidon) -> THREAD 2;
+--                Matthew 6:11 / 6:31-33 (daily bread / seek first the kingdom) -> THREAD 3
+--        Extras: none warranted (the individual-mercy framing carried by Luke 4)
+--        Tanakh: none warranted
+--   v.17-24 (the widow's son dies and is raised; the first raising of the dead)
+--        NT:     John 11:43-44 (Lazarus, come forth); Hebrews 11:35 (women received their dead
+--                raised) -> THREAD 4
+--        Extras: Sirach/Ecclesiasticus 48:5 (who did raise up a dead man from death... by the word
+--                of the Most High) -> THREAD 4
+--        Tanakh: 2 Kings 4:34-35 (Elisha stretched himself upon the child; the child revived) -> THREAD 4
+--
+-- THREADS (4):
+--   1-kings-17-the-prophets-word-shut-up-the-heaven        [canon + extras]  v.1  -> Deut11, Jas5, Rev11, Sirach48
+--   1-kings-17-mercy-to-the-widow-of-zarephath-of-sidon    [canon]           v.9-16 -> Luke4 (individual mercy to a Sidonian sojourner, NOT false inclusion)
+--   1-kings-17-the-barrel-of-meal-that-failed-not          [canon]           v.6-16 -> Matt6 (daily bread / fowls fed / seek first the kingdom)
+--   1-kings-17-the-first-raising-of-the-dead               [canon + extras]  v.17-24 -> 2Kings4, John11, Heb11, Sirach48
+--
+-- FRAMING NOTES: v.1 the prophet's word shutting heaven = the covenant-drought against Baal (Deut
+--   11), the two witnesses' authority (Rev 11) -- Yahuah's word in the prophet's mouth, the Formed
+--   working through his servant, NOT the prophet as a god. v.9-16 the widow of Zarephath is a
+--   SOJOURNER OF THE NATIONS receiving Yahuah's mercy WITHOUT becoming seed-of-promise -- an
+--   individual-mercy case (like Naaman the Syrian, Luke 4:27), framed as Yahuah's sovereign mercy
+--   reaching a Sidonian widow, NOT as Israel replaced nor a people grafted in by confession.
+--   v.21-22 the first raising of the dead -> the resurrection pattern fulfilled in Messiah (John 11).
+
+CREATE TEMP VIEW _s342_1ki17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM ( VALUES
+    -- THREAD 1: the prophet's word shut up the heaven (v.1)
+    ('canon','1-kings',17,1,'canon','deuteronomy',11,16,'free',
+      E'*Take heed to yourselves, that your heart be not deceived, and ye turn aside, and serve other gods, and worship them* (Deuteronomy 11:16). Elijah''s *there shall not be dew nor rain these years, but according to my word* (1 Kings 17:1) is not arbitrary: Ahab''s Yashar''el (Israel) had turned to Baal, the storm-god, and the Torah named the consequence in advance -- idolatry shuts the heaven.'),
+    ('canon','1-kings',17,1,'canon','deuteronomy',11,17,'free',
+      E'*And then the LORD''S wrath be kindled against you, and he shut up the heaven, that there be no rain, and that the land yield not her fruit* (Deuteronomy 11:17). This is the covenant-drought made flesh in Elijah''s word -- *there shall not be dew nor rain these years* (1 Kings 17:1) -- Yahuah withholding the rain the Baal-worshippers begged of their false god, that they might know whose word governs the heaven. The curse is the covenant-judgment for breaking it, never the Torah itself.'),
+    ('canon','1-kings',17,1,'canon','james',5,17,'free',
+      E'*Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months* (James 5:17). James reads 1 Kings 17:1 exactly as it stands -- *As Yahuah Elohim (the LORD God) of Yashar''el (Israel) liveth, before whom I stand* -- the prophet a man like us, yet his earnest prayer in Yahuah''s name shut the heaven; the power is Yahuah''s, the petition the servant''s.'),
+    ('canon','1-kings',17,1,'canon','james',5,18,'free',
+      E'*And he prayed again, and the heaven gave rain, and the earth brought forth her fruit* (James 5:18). The same word that shut the heaven (1 Kings 17:1) later opened it (1 Kings 18:45) -- Elijah''s *according to my word* is the prophet standing as Yahuah''s mouth over the rain, the pattern James holds up to teach the assembly that *the effectual fervent prayer of a righteous man availeth much* (James 5:16).'),
+    ('canon','1-kings',17,1,'canon','revelation',11,6,'free',
+      E'*These have power to shut heaven, that it rain not in the days of their prophecy: and have power over waters to turn them to blood, and to smite the earth with all plagues* (Revelation 11:6). The two witnesses wield the very authority Elijah bore in 1 Kings 17:1 -- to shut the heaven by the word of Yahuah -- the prophetic sign-power of the latter days drawn straight from the Tishbite and from Moses (the plagues), set before the nations.'),
+    ('canon','1-kings',17,1,'apocrypha','ecclesiasticus',48,1,'extras',
+      E'*Then stood up Elias the prophet as fire, and his word burned like a lamp* (Sirach/Ecclesiasticus 48:1). Ben Sira''s hymn to the fathers opens its Elijah praise on the very man of 1 Kings 17:1 -- the prophet who *stood* before Yahuah, whose *word* is the engine of the whole chapter, fire and lamp against the Baal of Ahab''s house.'),
+    ('canon','1-kings',17,1,'apocrypha','ecclesiasticus',48,3,'extras',
+      E'*By the word of Yahuah (God) he shut up the heaven, and also three times brought down fire* (Sirach/Ecclesiasticus 48:3). Second-Temple memory reads 1 Kings 17:1 with the right grammar: it was *by the word of Yahuah* that the heaven was shut -- Elijah''s *according to my word* is Yahuah''s word in the prophet''s mouth, never the prophet exalting himself.'),
+
+    -- THREAD 2: mercy to the widow of Zarephath of Sidon (v.9-16)
+    ('canon','1-kings',17,9,'canon','luke',4,25,'free',
+      E'*But I tell you of a truth, many widows were in Yashar''el (Israel) in the days of Elias, when the heaven was shut up three years and six months, when great famine was throughout all the land* (Luke 4:25). Messiah Himself reaches back to 1 Kings 17:9 -- *get thee to Zarephath, which belongeth to Zidon... I have commanded a widow woman there to sustain thee* -- to teach that Yahuah''s mercy is sovereign: there were widows enough in Israel, yet He sent the prophet outside the land.'),
+    ('canon','1-kings',17,9,'canon','luke',4,26,'free',
+      E'*But unto none of them was Elias sent, save unto Sarepta, a city of Sidon, unto a woman that was a widow* (Luke 4:26). This is Yahuah''s mercy reaching a Sidonian widow -- an individual case of grace to a sojourner of the nations, like Naaman the Syrian in the next breath (Luke 4:27), NOT the replacement of Yashar''el (Israel) nor a people grafted in by confession. She is shown mercy; she does not become the seed of promise. The synagogue raged (Luke 4:28) precisely because Messiah named Yahuah free to be merciful where He wills.'),
+    ('canon','1-kings',17,16,'canon','luke',4,26,'free',
+      E'*But unto none of them was Elias sent, save unto Sarepta, a city of Sidon, unto a woman that was a widow* (Luke 4:26). The barrel of meal that *wasted not, neither did the cruse of oil fail* (1 Kings 17:16) is the very sustaining Messiah points to -- Yahuah feeding a Sidonian widow through the famine, mercy to one outside the covenant household without dissolving the covenant.'),
+
+    -- THREAD 3: the barrel of meal that failed not / daily bread trust (v.6, v.13-16)
+    ('canon','1-kings',17,6,'canon','matthew',6,26,'free',
+      E'*Behold the fowls of the air: for they sow not, neither do they reap, nor gather into barns; yet your heavenly Father feedeth them* (Matthew 6:26). The ravens that *brought him bread and flesh in the morning, and bread and flesh in the evening* (1 Kings 17:6) are the living proof of Messiah''s word -- the Father who commands the birds to feed His prophet feeds His children; *are ye not much better than they?*'),
+    ('canon','1-kings',17,13,'canon','matthew',6,11,'free',
+      E'*Give us this day our daily bread* (Matthew 6:11). Elijah''s charge -- *make me thereof a little cake first, and bring it unto me, and after make for thee and for thy son* (1 Kings 17:13) -- is the daily-bread prayer enacted: trust Yahuah for today''s portion and tomorrow''s will not fail, the manna-pattern of one day''s provision at a time.'),
+    ('canon','1-kings',17,14,'canon','matthew',6,33,'free',
+      E'*But seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33). *The barrel of meal shall not waste, neither shall the cruse of oil fail, until the day that Yahuah (LORD) sendeth rain upon the earth* (1 Kings 17:14): the widow who put the prophet''s word -- and Yahuah''s -- first found her household sustained, the very promise Messiah seals to those who seek the kingdom first.'),
+    ('canon','1-kings',17,16,'canon','matthew',6,31,'free',
+      E'*Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed?* (Matthew 6:31). *And the barrel of meal wasted not, neither did the cruse of oil fail, according to the word of Yahuah (LORD)* (1 Kings 17:16) -- the widow ate *many days* (17:15) and never saw the bottom of the jar; the answer to anxious thought is the God who sustains the trusting through the famine.'),
+
+    -- THREAD 4: the first raising of the dead (v.17-24)
+    ('canon','1-kings',17,21,'canon','2-kings',4,34,'free',
+      E'*And he went up, and lay upon the child, and put his mouth upon his mouth, and his eyes upon his eyes, and his hands upon his hands: and he stretched himself upon the child; and the flesh of the child waxed warm* (2 Kings 4:34). Elisha repeats his master''s very act -- Elijah *stretched himself upon the child three times, and cried unto Yahuah* (1 Kings 17:21) -- the prophet pressing himself upon the dead, the life of Yahuah given through the servant who intercedes.'),
+    ('canon','1-kings',17,22,'canon','2-kings',4,35,'free',
+      E'*Then he returned... and the child sneezed seven times, and the child opened his eyes* (2 Kings 4:35). The Shunammite''s son revived as the widow''s son did -- *the soul of the child came into him again, and he revived* (1 Kings 17:22) -- two raisings by the two prophets of the northern house, the resurrection-sign multiplying that Yahuah is the God who restores the dead.'),
+    ('canon','1-kings',17,22,'canon','john',11,43,'free',
+      E'*And when he thus had spoken, he cried with a loud voice, Lazarus, come forth* (John 11:43). The first raising in scripture -- *the soul of the child came into him again, and he revived* (1 Kings 17:22), Elijah crying unto Yahuah -- finds its fulness in the Formed Son, who does not merely cry unto Yahuah but commands the dead Himself, the resurrection and the life standing at the grave.'),
+    ('canon','1-kings',17,22,'canon','john',11,44,'free',
+      E'*And he that was dead came forth, bound hand and foot with graveclothes... Yahusha (Jesus) saith unto them, Loose him, and let him go* (John 11:44). What began at Zarephath -- a soul returning into a child (1 Kings 17:22) -- runs to Bethany, where the One Elijah served gives the dead their lives; the prophet''s sign was the first morning-star of the resurrection Messiah is.'),
+    ('canon','1-kings',17,22,'canon','hebrews',11,35,'free',
+      E'*Women received their dead raised to life again* (Hebrews 11:35). The roll of faith names this very mercy -- the widow of Zarephath receiving back her son, *the soul of the child came into him again, and he revived* (1 Kings 17:22), and the Shunammite after her -- mothers who received their dead raised, the down-payment of *a better resurrection*.'),
+    ('canon','1-kings',17,24,'apocrypha','ecclesiasticus',48,5,'extras',
+      E'*Who did raise up a dead man from death, and his soul from the place of the dead, by the word of the Most High* (Sirach/Ecclesiasticus 48:5). Ben Sira remembers Zarephath: it was *by the word of the Most High* that Elijah raised the dead, the very confession the widow makes -- *the word of Yahuah (LORD) in thy mouth is truth* (1 Kings 17:24). The raising was Yahuah''s, wrought through His prophet''s word.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-17-the-prophets-word-shut-up-the-heaven',
+       E'The prophet''s word shut up the heaven',
+       E'Elijah the Tishbite walks out of nowhere and speaks the most audacious word in the prophets: *As Yahuah Elohim (the LORD God) of Yashar''el (Israel) liveth, before whom I stand, there shall not be dew nor rain these years, but according to my word* (1 Kings 17:1). This is no magic; it is the covenant. Ahab''s house had turned the northern kingdom to Baal, the storm-god -- so Yahuah, who long before warned *take heed to yourselves, that your heart be not deceived, and ye turn aside, and serve other gods... and then the LORD''S wrath be kindled against you, and he shut up the heaven, that there be no rain* (Deuteronomy 11:16-17), withholds the rain the Baal-worshippers begged of their false god. The curse is the covenant-judgment for breaking it, never the Torah itself. Note the grammar Elijah uses -- *before whom I stand* -- and the way Second-Temple Israel remembered it: *then stood up Elias the prophet as fire, and his word burned like a lamp... by the word of Yahuah (God) he shut up the heaven* (Sirach/Ecclesiasticus 48:1,3). The power is Yahuah''s; the word is His, set in the prophet''s mouth. James reads it the same way for the assembly: *Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months. And he prayed again, and the heaven gave rain* (James 5:17-18) -- a man like us, yet his earnest prayer in Yahuah''s name governed the heaven. And at the end of the age the same sign-power stands before the nations: the two witnesses *have power to shut heaven, that it rain not in the days of their prophecy* (Revelation 11:6). From Horeb to the last days, the heaven answers the word of Yahuah carried by His servants.',
+       sv.verse_id, ev.verse_id, 'extras', 38300
+  FROM _s342_1ki17_lookup sv, _s342_1ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=17 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-17-mercy-to-the-widow-of-zarephath-of-sidon',
+       E'Mercy to the widow of Zarephath of Sidon',
+       E'When the brook dried, the word of Yahuah sent Elijah outside the land: *arise, get thee to Zarephath, which belongeth to Zidon, and dwell there: behold, I have commanded a widow woman there to sustain thee* (1 Kings 17:9). A Sidonian widow gathering sticks to cook her last handful of meal -- *that we may eat it, and die* (17:12) -- becomes the one Yahuah feeds through the famine: *the barrel of meal wasted not, neither did the cruse of oil fail, according to the word of Yahuah (LORD)* (17:16). Messiah Himself unfolds the meaning of this scene in the synagogue at Nazareth: *many widows were in Yashar''el (Israel) in the days of Elias, when the heaven was shut up three years and six months, when great famine was throughout all the land; but unto none of them was Elias sent, save unto Sarepta, a city of Sidon, unto a woman that was a widow* (Luke 4:25-26). This is Yahuah''s sovereign mercy reaching a sojourner of the nations -- an individual case of grace, set right beside Naaman the Syrian the leper (Luke 4:27). She is shown mercy; she does not become the seed of promise, and Israel is not replaced. The Sidonian widow is fed because Yahuah is free to be merciful where He wills -- which is exactly why the synagogue *were filled with wrath* (Luke 4:28). Mercy to one outside the covenant household never dissolves the covenant; it magnifies the God who keeps it.',
+       sv.verse_id, ev.verse_id, 'free', 38303
+  FROM _s342_1ki17_lookup sv, _s342_1ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=17 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-17-the-barrel-of-meal-that-failed-not',
+       E'The barrel of meal that failed not -- daily bread',
+       E'Yahuah feeds His prophet in two impossible ways, and both teach the same trust. First the ravens: *and the ravens brought him bread and flesh in the morning, and bread and flesh in the evening* (1 Kings 17:6) -- the unclean scavenger-bird made Yahuah''s caterer, the living proof of Messiah''s word, *behold the fowls of the air: for they sow not, neither do they reap, nor gather into barns; yet your heavenly Father feedeth them. Are ye not much better than they?* (Matthew 6:26). Then the widow''s jar. Elijah''s charge sounds harsh -- *make me thereof a little cake first, and bring it unto me, and after make for thee and for thy son* (1 Kings 17:13) -- but it is the daily-bread prayer enacted: *give us this day our daily bread* (Matthew 6:11), the manna-pattern of one day''s portion trusted at a time. And the promise held: *the barrel of meal shall not waste, neither shall the cruse of oil fail, until the day that Yahuah (LORD) sendeth rain upon the earth* (1 Kings 17:14), and *the barrel of meal wasted not, neither did the cruse of oil fail* (17:16) -- she ate *many days* and never saw the bottom of the jar. This is the answer to anxious thought: *take no thought, saying, What shall we eat?... But seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:31,33). The widow who put the prophet''s word -- and Yahuah''s -- first was sustained through the famine.',
+       sv.verse_id, ev.verse_id, 'free', 38306
+  FROM _s342_1ki17_lookup sv, _s342_1ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=17 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-17-the-first-raising-of-the-dead',
+       E'The first raising of the dead',
+       E'The widow''s son falls sick *and his sickness was so sore, that there was no breath left in him* (1 Kings 17:17), and Elijah carries the dead boy up to his own bed: *he stretched himself upon the child three times, and cried unto Yahuah (LORD), and said, O Yahuah (LORD) my Elohim (God), I pray thee, let this child''s soul come into him again. And Yahuah (LORD) heard the voice of Elijah; and the soul of the child came into him again, and he revived* (1 Kings 17:21-22). This is the first raising of the dead in all of scripture, and it sets the pattern. Elisha repeats his master''s very act over the Shunammite''s son -- *he stretched himself upon the child... and the child sneezed seven times, and the child opened his eyes* (2 Kings 4:34-35) -- two raisings by the two prophets of the northern house. Second-Temple Israel kept the right grammar of it: *who did raise up a dead man from death, and his soul from the place of the dead, by the word of the Most High* (Sirach/Ecclesiasticus 48:5) -- the raising was Yahuah''s, wrought through His prophet, which is the widow''s own confession: *the word of Yahuah (LORD) in thy mouth is truth* (1 Kings 17:24). The prophets cried unto Yahuah; the Formed Son commands the grave Himself. *Lazarus, come forth... And he that was dead came forth* (John 11:43-44), and the roll of faith gathers the mothers of Zarephath and Shunem into one line: *women received their dead raised to life again* (Hebrews 11:35) -- the down-payment of *a better resurrection*. The first morning-star at Zarephath rises into the full day of Him who is the resurrection and the life.',
+       sv.verse_id, ev.verse_id, 'extras', 38309
+  FROM _s342_1ki17_lookup sv, _s342_1ki17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=17 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- THREAD 1: the prophet's word shut up the heaven
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Take heed to yourselves... and ye turn aside, and serve other gods, and worship them* (Deuteronomy 11:16) -- the Torah names idolatry as the cause Elijah''s drought answers.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-prophets-word-shut-up-the-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He shut up the heaven, that there be no rain, and that the land yield not her fruit* (Deuteronomy 11:17) -- the covenant-drought made flesh in *there shall not be dew nor rain* (1 Kings 17:1); the curse is the judgment, never the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-prophets-word-shut-up-the-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Elias... prayed earnestly that it might not rain: and it rained not... by the space of three years and six months* (James 5:17) -- a man like us, the power Yahuah''s, the prayer the servant''s.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-prophets-word-shut-up-the-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And he prayed again, and the heaven gave rain* (James 5:18) -- the same word that shut the heaven later opened it; *according to my word* is Yahuah''s mouth over the rain.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-prophets-word-shut-up-the-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*These have power to shut heaven, that it rain not in the days of their prophecy* (Revelation 11:6) -- the two witnesses bear the Tishbite''s very sign-authority before the nations.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-prophets-word-shut-up-the-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Then stood up Elias the prophet as fire, and his word burned like a lamp* (Sirach/Ecclesiasticus 48:1) -- Second-Temple praise of the prophet who *stood* before Yahuah (1 Kings 17:1).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=48 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-prophets-word-shut-up-the-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*By the word of Yahuah (God) he shut up the heaven* (Sirach/Ecclesiasticus 48:3) -- the right grammar of *according to my word*: it was Yahuah''s word in the prophet''s mouth.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=48 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-prophets-word-shut-up-the-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: mercy to the widow of Zarephath of Sidon
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Many widows were in Yashar''el (Israel) in the days of Elias... when great famine was throughout all the land* (Luke 4:25) -- Messiah names that Yahuah sent the prophet to none of them.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=9
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-mercy-to-the-widow-of-zarephath-of-sidon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*But unto none of them was Elias sent, save unto Sarepta, a city of Sidon, unto a woman that was a widow* (Luke 4:26) -- Yahuah''s sovereign mercy to a Sidonian sojourner, an individual case like Naaman, NOT Israel replaced.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=9
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-mercy-to-the-widow-of-zarephath-of-sidon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Save unto Sarepta, a city of Sidon, unto a woman that was a widow* (Luke 4:26) -- the barrel that *wasted not* (1 Kings 17:16) is the sustaining Messiah points to: mercy to one outside the household without dissolving the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-mercy-to-the-widow-of-zarephath-of-sidon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: the barrel of meal that failed not -- daily bread
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yet your heavenly Father feedeth them. Are ye not much better than they?* (Matthew 6:26) -- the ravens of 1 Kings 17:6 are the living proof of the Father who feeds His own.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-barrel-of-meal-that-failed-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Give us this day our daily bread* (Matthew 6:11) -- Elijah''s *make me... a little cake first* (1 Kings 17:13) is the daily-bread trust enacted, the manna-pattern of one day''s portion.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-barrel-of-meal-that-failed-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Seek ye first the kingdom of Elohim (God)... and all these things shall be added unto you* (Matthew 6:33) -- the widow who put the word first found the meal *shall not waste* (1 Kings 17:14).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-barrel-of-meal-that-failed-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Take no thought, saying, What shall we eat?* (Matthew 6:31) -- *the barrel of meal wasted not* (1 Kings 17:16); she ate many days and never saw the bottom of the jar.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-barrel-of-meal-that-failed-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: the first raising of the dead
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He stretched himself upon the child... and the flesh of the child waxed warm* (2 Kings 4:34) -- Elisha repeats Elijah''s very act (1 Kings 17:21), the second prophet of the northern house raising a child.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=21
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=4 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-first-raising-of-the-dead'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The child sneezed seven times, and the child opened his eyes* (2 Kings 4:35) -- the Shunammite''s son revived as the widow''s did, *the soul of the child came into him again* (1 Kings 17:22).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=4 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-first-raising-of-the-dead'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Lazarus, come forth* (John 11:43) -- the prophets cried unto Yahuah; the Formed Son commands the grave Himself, the resurrection and the life.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=11 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-first-raising-of-the-dead'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And he that was dead came forth... Loose him, and let him go* (John 11:44) -- what began at Zarephath (1 Kings 17:22) runs to Bethany; the prophet''s sign the first morning-star of the resurrection Messiah is.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=11 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-first-raising-of-the-dead'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Women received their dead raised to life again* (Hebrews 11:35) -- the roll of faith gathers the mothers of Zarephath and Shunem, the down-payment of *a better resurrection*.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-first-raising-of-the-dead'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Who did raise up a dead man from death... by the word of the Most High* (Sirach/Ecclesiasticus 48:5) -- the raising was Yahuah''s, the widow''s own confession: *the word of Yahuah in thy mouth is truth* (1 Kings 17:24).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=17 AND sv.verse_number=24
+  JOIN _s342_1ki17_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=48 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-17-the-first-raising-of-the-dead'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_18.sql (1 Kings 18) -----
+-- 1 Kings 18 — THE KEYSTONE: Mount Carmel; *Yahuah, he is the Elohim*; the fire that falls; the twelve-stone altar.
+-- TAG: 1ki18   VIEW: _s342_1ki18_lookup   SORT BAND: 38325, step 3 (38325,38328,38331,38334,38337,38340)
+-- SOURCE rows all 'canon','1-kings',18,v.
+--
+-- 1 Kings 18 coverage:
+--   v.17-18 (Art thou he that troubleth Yashar'el? — I have not troubled, but thou, in that ye have forsaken the commandments and followed Baalim)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 20:3 (no other gods before me); Deuteronomy 6:14-15 (go not after other gods; a jealous Elohim); Joshua 24:14 (put away the gods, serve Yahuah) [thread 1]
+--   v.21    (How long halt ye between two opinions? if Yahuah be Elohim, follow him; but if Baal, then follow him)
+--          NT:     Matthew 6:24 (no man can serve two masters; ye cannot serve God and mammon) [thread 2]
+--          Extras: none warranted
+--          Tanakh: Joshua 24:15 (choose you this day whom ye will serve); Deuteronomy 6:4-5 (Yahuah our Elohim is one; love him with all thine heart) [thread 2]
+--   v.26-29 (the prophets of Baal cry from morning to noon, leap and cut themselves; no voice, nor any to answer)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Psalms 115:4-8 (their idols... mouths but speak not; they that make them are like unto them); Isaiah 44:9-17 (he maketh a god and worshippeth it) [thread 3]
+--   v.30-32 (Elijah repairs the altar; twelve stones according to the number of the tribes of the sons of Jacob)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Genesis 35:10 (Yashar'el shall be thy name — the name on the twelve-tribe altar); Exodus 20:24-25 (an altar of earth/unhewn stone where I record my name) [thread 4]
+--   v.38-39 (the fire of Yahuah fell and consumed the sacrifice... Yahuah, he is the Elohim; Yahuah, he is the Elohim)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Leviticus 9:24 (there came a fire out from before Yahuah, and consumed... they fell on their faces); 1 Chronicles 21:26 (he answered him from heaven by fire); 2 Kings 1:10 (let fire come down from heaven — the same prophet); Deuteronomy 6:4 (Yahuah our Elohim is one Yahuah) [thread 5]
+--   v.41-45 (Elijah prays; the little cloud like a man's hand; the great rain returns)
+--          NT:     James 5:17-18 (Elias prayed... and the heaven gave rain) [thread 6]
+--          Extras: none warranted
+--          Tanakh: 1 Kings 18:1 (Go, shew thyself unto Ahab; and I will send rain — the word fulfilled) [thread 6]
+--
+-- THREADS:
+--   1-kings-18-art-thou-he-that-troubleth-israel-the-commandments-forsaken (free) — Tanakh: Exod20, Deut6, Josh24
+--   1-kings-18-how-long-halt-ye-between-two-opinions-undivided-allegiance (free) — Tanakh: Josh24, Deut6; NT: Matt6
+--   1-kings-18-no-voice-nor-any-to-answer-the-dead-idols (free) — Tanakh: Ps115, Isa44
+--   1-kings-18-twelve-stones-according-to-the-tribes-the-altar-for-all-israel (free) — Tanakh: Gen35, Exod20
+--   1-kings-18-the-fire-of-yahuah-fell-he-is-the-elohim (free) — Tanakh: Lev9, 1Chr21, 2Kings1, Deut6
+--   1-kings-18-the-little-cloud-and-the-rain-the-answered-prayer (free) — Tanakh: 1Kings18; NT: James5
+-- Framework-load-bearing framing:
+--   ★ THE COMMANDMENTS, NOT THE PROPHET, ARE THE TROUBLE (thread 1): Ahab calls Elijah the troubler;
+--   Elijah turns it back — *thou, and thy father's house, in that ye have forsaken the commandments of Yahuah*
+--   (18:18). The covenant instruction is the standard; abandoning it (Exod 20:3, Deut 6:14-15) is what
+--   troubles Yashar'el. Torah is never the curse — forsaking it is.
+--   ★★★ UNDIVIDED ALLEGIANCE (thread 2): *How long halt ye between two opinions?* (18:21) = Joshua's
+--   *choose you this day whom ye will serve* (Josh 24:15) and the Shema's *Yahuah our Elohim is one Yahuah...
+--   love him with all thine heart* (Deut 6:4-5). The Formed Son makes it the master-filter: *No man can serve
+--   two masters... ye cannot serve Elohim and mammon* (Matt 6:24). No double-mindedness.
+--   ★ THE DEAD IDOLS (thread 3): the silence of Baal (18:26,29 *no voice, nor any to answer*) is the Psalmist's
+--   and Isaiah's verdict on all idols — *mouths, but they speak not... they that make them are like unto them*
+--   (Ps 115:5,8); the carpenter's god that cannot answer (Isa 44:17). The living Elohim answers by fire.
+--   ★★ THE TWELVE-STONE ALTAR (thread 4): even in the divided kingdom Elijah builds for ALL Yashar'el —
+--   *twelve stones, according to the number of the tribes of the sons of Jacob* (18:31), naming Genesis 35:10
+--   *Yashar'el shall be thy name*. The two houses are still ONE before Yahuah; the altar in the name of Yahuah
+--   (cf. Exod 20:24-25, the unhewn-stone altar where he records his name) is built for the whole undivided people.
+--   ★★★ THE FIRE THAT FALLS (thread 5): *the fire of Yahuah fell... Yahuah, he is the Elohim* (18:38-39) — the
+--   decisive vindication of the one true Elohim. The same fire-from-before-Yahuah consumed Aaron's offering
+--   (Lev 9:24) and answered David (1 Chr 21:26). The confession is the Shema confessed — *Yahuah, HE is the
+--   Elohim* (Deut 6:4). Yahuah is the Elohim; not two gods, the LIVING One against the dead.
+--   ★ THE ANSWERED PRAYER (thread 6): the little cloud and the great rain (18:44-45) fulfill the word *I will
+--   send rain upon the earth* (18:1) and become James' picture of the righteous man's effectual prayer —
+--   *Elias... prayed again, and the heaven gave rain* (Jas 5:17-18).
+
+CREATE TEMP VIEW _s342_1ki18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: art thou he that troubleth Israel, the commandments forsaken (18:17,18)
+    ('canon','1-kings',18,18,'canon','exodus',20,3,'free',E'*Thou shalt have no other gods before me* (Exodus 20:3). When Elijah answers *I have not troubled Yashar''el (Israel); but thou, and thy father''s house, in that ye have forsaken the commandments of Yahuah (LORD), and thou hast followed Baalim* (1 Kings 18:18), he names the first word of the covenant broken — the prophet is not the troubler; the breaking of *no other gods* is.'),
+    ('canon','1-kings',18,18,'canon','deuteronomy',6,14,'free',E'*Ye shall not go after other gods, of the gods of the people which are round about you; (For Yahuah Elohayka (the LORD thy God) is a jealous Elohim (God) among you) lest the anger of Yahuah Elohayka be kindled against thee* (Deuteronomy 6:14-15). To *follow Baalim* (1 Kings 18:18) is precisely the going after other gods Moses warned would kindle the LORD''s anger — the famine on the land is that kindled anger, and the trouble is the apostasy, not the man who names it.'),
+    ('canon','1-kings',18,18,'canon','joshua',24,14,'free',E'*Now therefore fear Yahuah (LORD), and serve him in sincerity and in truth: and put away the gods which your fathers served on the other side of the flood, and in Egypt; and serve ye Yahuah (LORD)* (Joshua 24:14). Joshua''s charge is the cure Ahab''s house refused: where they should have put away the strange gods and served Yahuah, they *forsaken the commandments of Yahuah (LORD), and... followed Baalim* (1 Kings 18:18) — covenant kept is the remedy; covenant forsaken is the disease.'),
+
+    -- THREAD 2: how long halt ye between two opinions, undivided allegiance (18:21)
+    ('canon','1-kings',18,21,'canon','joshua',24,15,'free',E'*And if it seem evil unto you to serve Yahuah (LORD), choose you this day whom ye will serve... but as for me and my house, we will serve Yahuah (LORD)* (Joshua 24:15). Elijah''s *How long halt ye between two opinions? if Yahuah (LORD) be Elohim (God), follow him: but if Baal, then follow him* (1 Kings 18:21) is Joshua''s choose-this-day pressed onto a people who *answered him not a word* — the same demand for one undivided allegiance, no middle ground between Yahuah and Baal.'),
+    ('canon','1-kings',18,21,'canon','deuteronomy',6,4,'free',E'*Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD): And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:4-5). The Shema is why one cannot halt between two opinions: Yahuah is ONE, and the love owed him is whole — *all thine heart* leaves no half-heart for Baal. To limp between two gods (1 Kings 18:21) is to break the first and great commandment.'),
+    ('canon','1-kings',18,21,'canon','matthew',6,24,'free',E'*No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon* (Matthew 6:24). The Formed Son makes Elijah''s question a law of the heart: divided service is impossible. *How long halt ye between two opinions?* (1 Kings 18:21) — you cannot; the two masters cancel, and the heart must choose the living Elohim or the idol, never both.'),
+
+    -- THREAD 3: no voice, nor any to answer, the dead idols (18:26,29)
+    ('canon','1-kings',18,26,'canon','psalms',115,4,'free',E'*Their idols are silver and gold, the work of men''s hands. They have mouths, but they speak not: eyes have they, but they see not* (Psalms 115:4-5). When the prophets of Baal *called on the name of Baal from morning even until noon... But there was no voice, nor any that answered* (1 Kings 18:26), they are crying to the Psalmist''s work of men''s hands — a thing with a mouth that cannot speak, and so cannot answer.'),
+    ('canon','1-kings',18,29,'canon','psalms',115,8,'free',E'*They that make them are like unto them; so is every one that trusteth in them* (Psalms 115:8). After all the leaping and the gashing, *there was neither voice, nor any to answer, nor any that regarded* (1 Kings 18:29) — the idol is dead, and the dead idol makes its worshippers like itself: senseless, unanswered, bleeding before a god that is not there.'),
+    ('canon','1-kings',18,29,'canon','isaiah',44,17,'free',E'*And the residue thereof he maketh a god, even his graven image: he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god* (Isaiah 44:17). Isaiah''s carpenter prays *Deliver me* to a block of his own firewood; the prophets of Baal cry *O Baal, hear us* (1 Kings 18:26) to the same nothing — *no voice, nor any to answer* (1 Kings 18:29), the exact silence Isaiah mocks.'),
+
+    -- THREAD 4: twelve stones according to the tribes, the altar for all Israel (18:30,31,32)
+    ('canon','1-kings',18,31,'canon','genesis',35,10,'free',E'*Thy name is Jacob: thy name shall not be called any more Jacob, but Yashar''el (Israel) shall be thy name: and he called his name Yashar''el (Israel)* (Genesis 35:10). The twelve stones Elijah takes are *according to the number of the tribes of the sons of Jacob, unto whom the word of Yahuah (LORD) came, saying, Yashar''el (Israel) shall be thy name* (1 Kings 18:31) — he reaches past the divided kingdom to the man renamed at Beth-el, building for the whole twelve-tribe people that still bears the one name.'),
+    ('canon','1-kings',18,32,'canon','exodus',20,24,'free',E'*An altar of earth thou shalt make unto me... in all places where I record my name I will come unto thee, and I will bless thee. And if thou wilt make me an altar of stone, thou shalt not build it of hewn stone* (Exodus 20:24-25). Elijah *with the stones... built an altar in the name of Yahuah (LORD)* (1 Kings 18:32) — exactly the altar Torah ordains, of unhewn stones, in the place where Yahuah records his name; the lawful altar against Baal''s, raised for all Yashar''el.'),
+
+    -- THREAD 5: the fire of Yahuah fell, he is the Elohim (18:38,39)
+    ('canon','1-kings',18,38,'canon','leviticus',9,24,'free',E'*And there came a fire out from before Yahuah (LORD), and consumed upon the altar the burnt offering and the fat: which when all the people saw, they shouted, and fell on their faces* (Leviticus 9:24). The fire of Carmel is the fire of the tabernacle returned: *Then the fire of Yahuah (LORD) fell, and consumed the burnt sacrifice* (1 Kings 18:38), and as at the dedication *all the people... fell on their faces* (1 Kings 18:39) — the same living Elohim answering by the same fire.'),
+    ('canon','1-kings',18,38,'canon','1-chronicles',21,26,'free',E'*And David built there an altar unto Yahuah (LORD), and offered burnt offerings and peace offerings, and called upon Yahuah (LORD); and he answered him from heaven by fire upon the altar of burnt offering* (1 Chronicles 21:26). David''s altar at the threshingfloor and Elijah''s on Carmel are answered the same way — *the fire of Yahuah (LORD) fell, and consumed the burnt sacrifice* (1 Kings 18:38); the God who answers by fire is the God indeed.'),
+    ('canon','1-kings',18,38,'canon','2-kings',1,10,'free',E'*And Elijah answered and said to the captain of fifty, If I be a man of Elohim (God), then let fire come down from heaven, and consume thee and thy fifty. And there came down fire from heaven, and consumed him and his fifty* (2 Kings 1:10). The same prophet, the same heaven-fire: at Carmel it consumes the sacrifice and vindicates Yahuah against Baal (1 Kings 18:38); against Ahaziah''s captains it consumes the men who would silence him — both answer the question whether *there is not a Elohim (God) in Yashar''el (Israel)*.'),
+    ('canon','1-kings',18,39,'canon','deuteronomy',6,4,'free',E'*Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* (Deuteronomy 6:4). The people''s cry *Yahuah (LORD), he is the Elohim (God); Yahuah (LORD), he is the Elohim (God)* (1 Kings 18:39) is the Shema confessed on their faces — not two gods, not Baal beside him, but the one Yahuah, HE is the Elohim, the living One who answered by fire while Baal lay silent.'),
+
+    -- THREAD 6: the little cloud and the rain, the answered prayer (18:41,42,43,44,45)
+    ('canon','1-kings',18,45,'canon','james',5,18,'free',E'*And he prayed again, and the heaven gave rain, and the earth brought forth her fruit* (James 5:18). The great rain that ends the famine — *the heaven was black with clouds and wind, and there was a great rain* (1 Kings 18:45) — is James'' very example of the righteous man''s prayer that *availeth much*: Elijah shut the heaven and Elijah opened it, a man *subject to like passions as we are* whose earnest prayer moved the sky.'),
+    ('canon','1-kings',18,45,'canon','1-kings',18,1,'free',E'*And it came to pass after many days, that the word of Yahuah (LORD) came to Elijah in the third year, saying, Go, shew thyself unto Ahab; and I will send rain upon the earth* (1 Kings 18:1). The rain that falls in v.45 is the word of v.1 come true — Yahuah said *I will send rain upon the earth*, and after the fire vindicates him on Carmel, *there was a great rain* (1 Kings 18:45); the God who answers by fire keeps his word by water.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-18-art-thou-he-that-troubleth-israel-the-commandments-forsaken',
+       E'Art thou he that troubleth Yashar''el? — the commandments forsaken',
+       E'Three years of drought have ground Samaria to famine, and when Ahab finally meets the prophet he blames him: *Art thou he that troubleth Yashar''el (Israel)?* (1 Kings 18:17). Elijah throws the charge straight back and names the real trouble: *I have not troubled Yashar''el (Israel); but thou, and thy father''s house, in that ye have forsaken the commandments of Yahuah (LORD), and thou hast followed Baalim* (1 Kings 18:18). This is the whole moral logic of the covenant in one sentence. The prophet who calls Israel back to Yahuah is not the troubler; the king who abandoned the commandments and chased Baal is. The standard is the Torah itself — the first word of Sinai, *Thou shalt have no other gods before me* (Exodus 20:3), and Moses'' warning against exactly Ahab''s sin: *Ye shall not go after other gods... (For Yahuah Elohayka (the LORD thy God) is a jealous Elohim (God) among you) lest the anger of Yahuah Elohayka be kindled against thee* (Deuteronomy 6:14-15). The famine is that kindled anger; the drought is covenant judgment, the Deuteronomy-curse for breaking faith. And the cure was always near at hand — Joshua had charged the fathers, *fear Yahuah (LORD), and serve him in sincerity and in truth: and put away the gods... and serve ye Yahuah (LORD)* (Joshua 24:14). Note carefully where the trouble lies: never in the commandments, never in the prophet who keeps them, but in their forsaking. The Torah is the inheritance, not the curse; the curse is what falls when the inheritance is thrown away.',
+       sv.verse_id, ev.verse_id, 'free', 38325
+  FROM _s342_1ki18_lookup sv, _s342_1ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=18 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-18-how-long-halt-ye-between-two-opinions-undivided-allegiance',
+       E'How long halt ye between two opinions? — undivided allegiance',
+       E'On the mountain before all the people Elijah asks the question the whole canon presses: *How long halt ye between two opinions? if Yahuah (LORD) be Elohim (God), follow him: but if Baal, then follow him. And the people answered him not a word* (1 Kings 18:21). The Hebrew pictures a man limping on two unequal legs — staggering between Yahuah and Baal, committing to neither. Their silence is the indictment: a divided heart has nothing to say. This is Joshua''s ultimatum spoken again: *choose you this day whom ye will serve... but as for me and my house, we will serve Yahuah (LORD)* (Joshua 24:15). And it is the Shema''s own demand — *Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD): And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:4-5). Because Yahuah is ONE, the love owed him is whole; *all thine heart* leaves no chamber for Baal. There is no lawful halting place between the living Elohim and an idol. The Formed Son later seals Elijah''s question into a law of the heart: *No man can serve two masters... Ye cannot serve Elohim (God) and mammon* (Matthew 6:24). You cannot — the two cancel; the divided servant is no servant at all. Carmel forces the choice the heart was already required to make: follow Yahuah, undivided, or do not pretend to follow him.',
+       sv.verse_id, ev.verse_id, 'free', 38328
+  FROM _s342_1ki18_lookup sv, _s342_1ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=18 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-18-no-voice-nor-any-to-answer-the-dead-idols',
+       E'No voice, nor any to answer — the dead idols',
+       E'The contest is built to expose what Baal is. From morning the four hundred and fifty cry: *they took the bullock... and called on the name of Baal from morning even until noon, saying, O Baal, hear us. But there was no voice, nor any that answered. And they leaped upon the altar* (1 Kings 18:26). At noon Elijah mocks — *Cry aloud: for he is a god; either he is talking, or he is pursuing, or he is in a journey, or peradventure he sleepeth, and must be awaked* (1 Kings 18:27) — and they answer with their own blood: *they cried aloud, and cut themselves after their manner with knives and lancets, till the blood gushed out upon them* (1 Kings 18:28). And still: *there was neither voice, nor any to answer, nor any that regarded* (1 Kings 18:29). This is exactly the Psalmist''s verdict on every idol: *Their idols are silver and gold, the work of men''s hands. They have mouths, but they speak not: eyes have they, but they see not* (Psalms 115:4-5) — and the chilling consequence, *They that make them are like unto them; so is every one that trusteth in them* (Psalms 115:8). The dead idol deadens its worshippers; men gash themselves before a god that is not there. Isaiah draws the same picture of the man who burns half a log to warm himself and bows to the rest: *he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god* (Isaiah 44:17). Baal cannot speak, cannot see, cannot answer — because Baal is not. The silence is the whole point: set beside the dead idol, the living Elohim is about to answer by fire.',
+       sv.verse_id, ev.verse_id, 'free', 38331
+  FROM _s342_1ki18_lookup sv, _s342_1ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=18 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-18-twelve-stones-according-to-the-tribes-the-altar-for-all-israel',
+       E'Twelve stones according to the tribes — the altar for all Yashar''el',
+       E'Before the fire, Elijah rebuilds. *He repaired the altar of Yahuah (LORD) that was broken down* (1 Kings 18:30) — and the way he rebuilds it preaches the unity of a torn people. *And Elijah took twelve stones, according to the number of the tribes of the sons of Jacob, unto whom the word of Yahuah (LORD) came, saying, Yashar''el (Israel) shall be thy name: And with the stones he built an altar in the name of Yahuah (LORD)* (1 Kings 18:31-32). This is a northern prophet, in the breakaway northern kingdom, generations after the split — and he lays not ten stones for his own ten tribes but TWELVE, for all the sons of Jacob. He reaches behind the division to the night the man was renamed: *Thy name shall not be called any more Jacob, but Yashar''el (Israel) shall be thy name* (Genesis 35:10). Before Yahuah the two houses are still one people; the wound of the divided kingdom does not erase the twelve-tribe covenant, and the altar is built for the whole of it. And it is built lawfully — *with the stones... an altar in the name of Yahuah (LORD)*, exactly the altar Torah ordains: *An altar of earth thou shalt make unto me... in all places where I record my name I will come unto thee... And if thou wilt make me an altar of stone, thou shalt not build it of hewn stone* (Exodus 20:24-25), unhewn stones in the place where Yahuah sets his name, raised against Baal''s altar. The twelve stones are a quiet sermon: scattered, divided, drought-stricken — still one Yashar''el, still claimed by the one Name.',
+       sv.verse_id, ev.verse_id, 'free', 38334
+  FROM _s342_1ki18_lookup sv, _s342_1ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=18 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-18-the-fire-of-yahuah-fell-he-is-the-elohim',
+       E'The fire of Yahuah fell — he is the Elohim',
+       E'Elijah drenches the sacrifice and the wood and the trench with water — three times, until *the water ran round about the altar* (1 Kings 18:35) — and then prays the plainest prayer: *let it be known this day that thou art Elohim (God) in Yashar''el (Israel)... that this people may know that thou art Yahuah Elohim (the LORD God), and that thou hast turned their heart back again* (1 Kings 18:36-37). The answer is immediate and total: *Then the fire of Yahuah (LORD) fell, and consumed the burnt sacrifice, and the wood, and the stones, and the dust, and licked up the water that was in the trench* (1 Kings 18:38). It consumes not just the offering but the stones, the dust, the very water — leaving no doubt this is Yahuah and not lightning. This is the covenant fire returned. At the dedication of the tabernacle *there came a fire out from before Yahuah (LORD), and consumed upon the altar the burnt offering... which when all the people saw, they shouted, and fell on their faces* (Leviticus 9:24); at David''s altar Yahuah *answered him from heaven by fire upon the altar of burnt offering* (1 Chronicles 21:26). The God who answers by fire is the God indeed — and the same prophet would call that heaven-fire down again upon the captains sent to silence him (2 Kings 1:10), each time settling whether *there is... a Elohim (God) in Yashar''el (Israel)*. And the people give the only possible verdict, twice over, flat on their faces: *Yahuah (LORD), he is the Elohim (God); Yahuah (LORD), he is the Elohim (God)* (1 Kings 18:39). That cry is the Shema confessed — *Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* (Deuteronomy 6:4). Not two gods, not Baal beside him: the one living Yahuah, HE is the Elohim, vindicated by the fire while Baal lay dead and silent.',
+       sv.verse_id, ev.verse_id, 'free', 38337
+  FROM _s342_1ki18_lookup sv, _s342_1ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=38
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=18 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-18-the-little-cloud-and-the-rain-the-answered-prayer',
+       E'The little cloud and the rain — the answered prayer',
+       E'The fire has vindicated Yahuah; now the water comes to keep his word. Elijah tells Ahab to eat and drink, *for there is a sound of abundance of rain* (1 Kings 18:41) — heard by faith before a cloud is in the sky — then climbs Carmel, *cast himself down upon the earth, and put his face between his knees* (1 Kings 18:42), and prays. Seven times he sends his servant to look toward the sea, and on the seventh: *Behold, there ariseth a little cloud out of the sea, like a man''s hand* (1 Kings 18:44). From that hand-sized cloud comes the deluge: *the heaven was black with clouds and wind, and there was a great rain* (1 Kings 18:45). This is the word of the chapter''s opening fulfilled — Yahuah had said *Go, shew thyself unto Ahab; and I will send rain upon the earth* (1 Kings 18:1); the God who answered by fire now answers by water, every promise kept. And the New Testament holds up this very scene as the picture of effectual prayer: *Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain... And he prayed again, and the heaven gave rain, and the earth brought forth her fruit* (James 5:17-18). The same prophet shut heaven and opened it — not by his own power but by earnest prayer to the living Elohim — so that the famine of judgment gives way to the rain of mercy, and the turned-back heart of the people is met by a turned-back sky.',
+       sv.verse_id, ev.verse_id, 'free', 38340
+  FROM _s342_1ki18_lookup sv, _s342_1ki18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=41
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=18 AND ev.verse_number=45
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: art thou he that troubleth Israel, the commandments forsaken
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt have no other gods before me* (Exodus 20:3) — the first word of Sinai, the commandment Ahab broke by following Baalim.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=18
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-art-thou-he-that-troubleth-israel-the-commandments-forsaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye shall not go after other gods... lest the anger of Yahuah Elohayka be kindled against thee* (Deuteronomy 6:14-15) — the famine is that kindled anger; following Baal is the covenant breach Moses warned of.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=18
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-art-thou-he-that-troubleth-israel-the-commandments-forsaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*put away the gods which your fathers served... and serve ye Yahuah (LORD)* (Joshua 24:14) — the covenant cure Ahab''s house refused; keeping it is the remedy, forsaking it the disease.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=18
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-art-thou-he-that-troubleth-israel-the-commandments-forsaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: how long halt ye between two opinions, undivided allegiance
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*choose you this day whom ye will serve... but as for me and my house, we will serve Yahuah (LORD)* (Joshua 24:15) — the choose-this-day ultimatum Elijah presses onto a silent people.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-how-long-halt-ye-between-two-opinions-undivided-allegiance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)... love him with all thine heart* (Deuteronomy 6:4-5) — the Shema is why one cannot halt: the one Yahuah is owed the whole heart.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-how-long-halt-ye-between-two-opinions-undivided-allegiance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*No man can serve two masters... Ye cannot serve Elohim (God) and mammon* (Matthew 6:24) — the Formed Son makes Elijah''s question a law of the heart: divided service is impossible.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-how-long-halt-ye-between-two-opinions-undivided-allegiance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: no voice, nor any to answer, the dead idols
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Their idols are silver and gold... They have mouths, but they speak not* (Psalms 115:4-5) — Baal called from morning to noon is the Psalmist''s work of men''s hands, a mouth that cannot answer.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=26
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-no-voice-nor-any-to-answer-the-dead-idols'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*They that make them are like unto them; so is every one that trusteth in them* (Psalms 115:8) — the dead idol deadens its worshippers, who gash themselves before a god that is not there.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=29
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-no-voice-nor-any-to-answer-the-dead-idols'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god* (Isaiah 44:17) — Isaiah''s carpenter prays to firewood; the same nothing the prophets of Baal cry to.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=29
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-no-voice-nor-any-to-answer-the-dead-idols'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: twelve stones according to the tribes, the altar for all Israel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thy name shall not be called any more Jacob, but Yashar''el (Israel) shall be thy name* (Genesis 35:10) — the twelve stones reach past the divided kingdom to the man renamed at Beth-el, the one name on all twelve tribes.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=31
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-twelve-stones-according-to-the-tribes-the-altar-for-all-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*An altar of earth thou shalt make unto me... if thou wilt make me an altar of stone, thou shalt not build it of hewn stone* (Exodus 20:24-25) — the lawful altar of unhewn stones where Yahuah records his name, built for all Yashar''el against Baal''s.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=32
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-twelve-stones-according-to-the-tribes-the-altar-for-all-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: the fire of Yahuah fell, he is the Elohim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there came a fire out from before Yahuah (LORD), and consumed... they shouted, and fell on their faces* (Leviticus 9:24) — the tabernacle fire returned; the same living Elohim answering by the same fire.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=38
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=9 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-the-fire-of-yahuah-fell-he-is-the-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he answered him from heaven by fire upon the altar of burnt offering* (1 Chronicles 21:26) — David''s altar answered as Elijah''s is; the God who answers by fire is the God indeed.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=38
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-the-fire-of-yahuah-fell-he-is-the-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*let fire come down from heaven... And there came down fire from heaven* (2 Kings 1:10) — the same prophet, the same heaven-fire, again settling whether there is an Elohim in Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=38
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-the-fire-of-yahuah-fell-he-is-the-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* (Deuteronomy 6:4) — the people''s twofold cry *Yahuah, he is the Elohim* is the Shema confessed: not two gods, the one living Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=39
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-the-fire-of-yahuah-fell-he-is-the-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6: the little cloud and the rain, the answered prayer
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he prayed again, and the heaven gave rain, and the earth brought forth her fruit* (James 5:18) — Carmel''s great rain is the NT''s very picture of the righteous man''s effectual prayer.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=45
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-the-little-cloud-and-the-rain-the-answered-prayer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Go, shew thyself unto Ahab; and I will send rain upon the earth* (1 Kings 18:1) — the rain of v.45 is the word of v.1 come true; the God who answered by fire keeps his word by water.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=18 AND sv.verse_number=45
+  JOIN _s342_1ki18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-18-the-little-cloud-and-the-rain-the-answered-prayer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_19.sql (1 Kings 19) -----
+-- 1 Kings 19 — Jezebel threatens Elijah; the prophet flees into the wilderness, sits under a
+-- juniper tree and asks to die; the angel feeds him cake and water and in that strength he goes
+-- forty days to Horeb; Yahuah passes by — not in the wind, the earthquake, or the fire, but in a
+-- still small voice; Yahuah's answer to the despairing prophet: I have left me SEVEN THOUSAND who
+-- have not bowed to Baal; Elijah commissioned to anoint Hazael, Jehu, and Elisha, and casts his
+-- mantle on Elisha plowing.
+-- TAG: 1ki19   VIEW: _s342_1ki19_lookup   SORT BAND: 38350, step 3 (38350,38353,38356,38359)
+-- SOURCE rows all 'canon','1-kings',19,v.
+--
+-- 1 Kings 19 coverage:
+--   v.3-4  (Elijah flees for his life; sits under a juniper tree; requests to die — *It is enough;
+--          now, O Yahuah, take away my life; for I am not better than my fathers*)
+--          NT:     James 5:17 (*Elias was a man subject to like passions as we are*) [thread 1]
+--          Extras: none warranted
+--          Tanakh: Jonah 4:3 (*take, I beseech thee, my life from me; for it is better for me to
+--                  die than to live*); Psalm 42:5,6 (*Why art thou cast down, O my soul?... my soul
+--                  is cast down within me*) [thread 1]
+--   v.5-8  (the angel feeds him a cake baken on the coals and a cruse of water; in the strength of
+--          that meat he goes forty days to Horeb)
+--          NT:     John 6:35 (*I am the bread of life: he that cometh to me shall never hunger*)
+--                  [thread 1]
+--          Extras: none warranted
+--          Tanakh: none additional warranted (forty-days motif carried in prose)
+--   v.11-13 (Yahuah passes by — not in the wind, earthquake, or fire, but a still small voice;
+--          Elijah wraps his face in his mantle)
+--          NT:     none warranted (the Formed theophany held by the Exodus 33-34 weave)
+--          Extras: none warranted
+--          Tanakh: Exodus 33:19 (*I will make all my goodness pass before thee, and I will proclaim
+--                  the name of Yahuah before thee*); Exodus 33:21,22 (*there is a place by me, and
+--                  thou shalt stand upon a rock... while my glory passeth by*); Exodus 33:23
+--                  (*thou shalt see my back parts: but my face shall not be seen*); Exodus 34:6
+--                  (*And Yahuah passed by before him, and proclaimed, Yahuah, Yahuah Elohim,
+--                  merciful and gracious*) [thread 2]
+--   v.10,14,18 (*I, even I only, am left; and they seek my life* answered by *Yet I have left me
+--          seven thousand in Yashar'el, all the knees which have not bowed unto Baal*)
+--          NT:     Romans 11:3 (*Yahuah, they have killed thy prophets... and I am left alone*);
+--                  Romans 11:4 (*I have reserved to myself seven thousand men, who have not bowed
+--                  the knee to the image of Baal*); Romans 11:5 (*there is a remnant according to
+--                  the election of grace*) [thread 3]
+--          Extras: none warranted
+--          Tanakh: none additional warranted (Romans carries the remnant weave forward)
+--   v.16,19,21 (anoint Elisha to be prophet in thy room; cast his mantle upon Elisha plowing;
+--          Elisha leaves the oxen, follows, and ministers unto him)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Kings 2:8 (*Elijah took his mantle... and smote the waters, and they were
+--                  divided*); 2 Kings 2:13 (*He took up also the mantle of Elijah that fell from
+--                  him*); 2 Kings 2:14 (*he took the mantle of Elijah... and smote the waters*)
+--                  [thread 4]
+--   v.1-2  (Ahab tells Jezebel; Jezebel's death-threat) — narrative setup, none warranted; the
+--          threat motivates the flight named in thread 1.
+--   v.9,15-17 (the cave; the commission to anoint Hazael and Jehu) — narrative/commission frame;
+--          Hazael/Jehu carried in prose; no separate verified target pulled this pass.
+--
+-- THREADS:
+--   1-kings-19-the-prophets-despair-met-by-the-sustaining-bread (free) — Tanakh+NT: Jonah4, Ps42, James5, John6
+--   1-kings-19-yahuah-passed-by-not-in-the-wind-but-a-still-small-voice (free) — Tanakh: Exodus33, Exodus34
+--   1-kings-19-yet-i-have-left-me-seven-thousand-the-remnant (free) — NT: Romans11
+--   1-kings-19-the-mantle-cast-upon-elisha-the-call-and-succession (free) — Tanakh: 2 Kings 2
+-- Framework-load-bearing framing:
+--   19:11-12 — Yahuah *passed by* at Horeb, the mount of the Torah, exactly as he *passed by* before
+--   Moses in the cleft of the rock (Exodus 33:21-23; 34:6). This is the FORMED Son — the visible
+--   Glory who appeared, spoke, and led Yashar'el — revealed not in the spectacular wind/quake/fire
+--   but in *a still small voice*; the quiet covenant word over the dramatic sign. He is Yahuah and
+--   has a Father; no co-equal-persons grammar, no modalist collapse — the One who passed by Moses
+--   passes by Elijah at the same mountain.
+--   19:18 — *Yet I have left me seven thousand in Yashar'el* is the anti-despair truth of the
+--   remnant Yahuah always preserves; Paul names it the *remnant according to the election of grace*
+--   (Romans 11:5) — the two-house remnant kept, never the people cast off. The election is of grace
+--   AND of those who *have not bowed unto Baal* (covenant fidelity), the paternal-line-plus-covenant
+--   remnant, not lineage alone nor confession alone.
+--   19:4 — the prophet's despair *take away my life; for I am not better than my fathers* is the
+--   human frailty of the man (James 5:17 *a man subject to like passions as we are*), the same
+--   death-wish Jonah prayed (Jonah 4:3) and the soul cast down of Psalm 42 — met not with rebuke
+--   but with bread, the sustaining provision pointing to the Bread of Life (John 6:35).
+
+CREATE TEMP VIEW _s342_1ki19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the prophet's despair met by the sustaining bread (19:4,5,6,8)
+    ('canon','1-kings',19,4,'canon','jonah',4,3,'free',E'*Therefore now, O Yahuah (LORD), take, I beseech thee, my life from me; for it is better for me to die than to live* (Jonah 4:3). Elijah''s plea under the juniper tree is word for word the prophet''s despair: *It is enough; now, O Yahuah (LORD), take away my life; for I am not better than my fathers* (1 Kings 19:4). Two prophets after a great work of Yahuah sink into the same wish to die — the human frailty that follows the mountaintop, met by Yahuah not with wrath but with a question and a provision.'),
+    ('canon','1-kings',19,4,'canon','psalms',42,5,'free',E'*Why art thou cast down, O my soul? and why art thou disquieted in me? hope thou in Elohim (God): for I shall yet praise him for the help of his countenance* (Psalm 42:5). The despairing prophet sitting down to die — *he requested for himself that he might die* (1 Kings 19:4) — is the cast-down soul of the psalm, the same darkness of spirit; and the psalm''s answer, *hope thou in Elohim*, is what the angel''s bread and the still small voice will work in him.'),
+    ('canon','1-kings',19,4,'canon','psalms',42,6,'free',E'*O my Elohim (God), my soul is cast down within me: therefore will I remember thee from the land of Jordan, and of the Hermonites, from the hill Mizar* (Psalm 42:6). Elijah''s soul too is cast down in the wilderness — *I am not better than my fathers* (1 Kings 19:4) — yet the cast-down soul does not perish: it remembers Yahuah, as the prophet is drawn on toward the mount of Elohim where Yahuah will meet him.'),
+    ('canon','1-kings',19,4,'canon','james',5,17,'free',E'*Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months* (James 5:17). The apostle names exactly what this chapter shows: the great prophet of fire is *a man subject to like passions as we are*. His death-wish *take away my life; for I am not better than my fathers* (1 Kings 19:4) is the frailty of a man — and that frailty is the comfort, for if such a man''s earnest prayer availed, so may ours.'),
+    ('canon','1-kings',19,5,'canon','john',6,35,'free',E'*And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst* (John 6:35). The angel comes to the despairing prophet with bread and water — *Arise and eat* (1 Kings 19:5) — the sustaining provision that points to the Bread of Life himself; Yahuah does not rebuke the frail man but feeds him, the bread that carries him to the mountain a figure of the bread that never fails.'),
+    ('canon','1-kings',19,6,'canon','john',6,35,'free',E'*I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst* (John 6:35). The cake baken on the coals and the cruse of water at his head — *he did eat and drink, and laid him down again* (1 Kings 19:6) — are the wilderness-bread that strengthens the fainting prophet; the Formed Son who is the true bread feeds his weary servant, that he who hungered never hunger again.'),
+    ('canon','1-kings',19,8,'canon','john',6,35,'free',E'*I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst* (John 6:35). *And he arose, and did eat and drink, and went in the strength of that meat forty days and forty nights unto Horeb the mount of Elohim (God)* (1 Kings 19:8). The bread that carries Elijah forty days to the mountain of Yahuah is the figure filled by the Bread of Life — the meat that endures, on whose strength the servant journeys to meet his Elohim.'),
+
+    -- THREAD 2: Yahuah passed by, not in the wind, but a still small voice (19:11,12,13)
+    ('canon','1-kings',19,11,'canon','exodus',33,19,'free',E'*And he said, I will make all my goodness pass before thee, and I will proclaim the name of Yahuah (LORD) before thee; and will be gracious to whom I will be gracious, and will shew mercy on whom I will shew mercy* (Exodus 33:19). At the very mountain where Yahuah told Moses he would make his goodness *pass before thee*, Elijah is told *stand upon the mount before Yahuah (LORD). And, behold, Yahuah (LORD) passed by* (1 Kings 19:11). The Formed One who passed by Moses passes by Elijah at the same Horeb — revealed in goodness and the proclaimed Name, not in the spectacle.'),
+    ('canon','1-kings',19,11,'canon','exodus',33,21,'free',E'*And Yahuah (LORD) said, Behold, there is a place by me, and thou shalt stand upon a rock* (Exodus 33:21). As Moses was set in a place by Yahuah to *stand upon a rock* while the Glory passed, so Elijah is sent *Go forth, and stand upon the mount before Yahuah (LORD)* (1 Kings 19:11). The same Formed Glory, the same mount of Elohim, the same standing to behold the passing-by — Horeb is where Yahuah meets his prophets.'),
+    ('canon','1-kings',19,11,'canon','exodus',33,22,'free',E'*And it shall come to pass, while my glory passeth by, that I will put thee in a clift of the rock, and will cover thee with my hand while I pass by* (Exodus 33:22). The Glory that *passeth by* in the cleft of the rock is the Glory that now *passed by* on the mount — *and a great and strong wind rent the mountains... but Yahuah (LORD) was not in the wind* (1 Kings 19:11). The wind, the quake, the fire are the heralds; the passing-by itself is the Formed Son drawn near, as in the clift of the rock.'),
+    ('canon','1-kings',19,12,'canon','exodus',33,23,'free',E'*And I will take away mine hand, and thou shalt see my back parts: but my face shall not be seen* (Exodus 33:23). No man sees the face and lives; Moses saw only the back parts. So at Horeb the revealing is *a still small voice* (1 Kings 19:12) — not the consuming fire but the quiet word; the Formed One makes himself known to the prophet in the gentle whisper, the same veiled nearness that covered Moses with the hand.'),
+    ('canon','1-kings',19,12,'canon','exodus',34,6,'free',E'*And Yahuah (LORD) passed by before him, and proclaimed, Yahuah (LORD), Yahuah (LORD) Elohim (God), merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6). When Yahuah *passed by* before Moses he proclaimed himself merciful and gracious — a voice, not a cataclysm. At Horeb again *Yahuah (LORD) was not in the fire: and after the fire a still small voice* (1 Kings 19:12). The God who passes by reveals himself by the proclaimed Name and the quiet word, the gentle voice over the spectacle.'),
+    ('canon','1-kings',19,13,'canon','exodus',33,20,'free',E'*And he said, Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20). Because no man may see the face and live, Elijah *wrapped his face in his mantle, and went out, and stood in the entering in of the cave* (1 Kings 19:13). As Moses was shielded from the unbearable face, the prophet veils his own face before the passing-by — reverence before the Formed Glory whose face is not seen.'),
+
+    -- THREAD 3: yet I have left me seven thousand, the remnant (19:10,14,18)
+    ('canon','1-kings',19,10,'canon','romans',11,3,'free',E'*Yahuah (Lord), they have killed thy prophets, and digged down thine altars; and I am left alone, and they seek my life* (Romans 11:3). Paul quotes Elijah''s very complaint: *the children of Yashar''el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword; and I, even I only, am left; and they seek my life* (1 Kings 19:10). The despairing cry *I only am left* is named by the apostle as the prophet making intercession against Yashar''el — the lament Yahuah is about to overturn.'),
+    ('canon','1-kings',19,14,'canon','romans',11,4,'free',E'*But what saith the answer of Elohim (God) unto him? I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal* (Romans 11:4). Elijah''s repeated *I, even I only, am left* (1 Kings 19:14) is answered exactly as Paul records it — Yahuah has *reserved to myself seven thousand*. The prophet who thought himself the last is corrected: the faithful are far more than he can see, kept by Yahuah''s own hand.'),
+    ('canon','1-kings',19,18,'canon','romans',11,4,'free',E'*I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal* (Romans 11:4). This is Paul''s citation of the chapter''s keystone: *Yet I have left me seven thousand in Yashar''el (Israel), all the knees which have not bowed unto Baal* (1 Kings 19:18). The number is the anti-despair truth — Yahuah always keeps a remnant; the prophet''s *I only* is never the whole account, for the LORD has reserved his own.'),
+    ('canon','1-kings',19,18,'canon','romans',11,5,'free',E'*Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The seven thousand who *have not bowed unto Baal* (1 Kings 19:18) are, says Paul, the pattern of *a remnant according to the election of grace* — the faithful of Yashar''el Yahuah preserves in every age, never the people cast off. The remnant is of grace AND of those who have not bowed the knee: kept by mercy, marked by covenant fidelity.'),
+
+    -- THREAD 4: the mantle cast upon Elisha, the call and succession (19:16,19,21)
+    ('canon','1-kings',19,16,'canon','2-kings',2,9,'free',E'*And it came to pass, when they were gone over, that Elijah said unto Elisha, Ask what I shall do for thee, before I be taken away from thee. And Elisha said, I pray thee, let a double portion of thy spirit be upon me* (2 Kings 2:9). The commission *Elisha the son of Shaphat of Abel-meholah shalt thou anoint to be prophet in thy room* (1 Kings 19:16) is fulfilled when the successor asks the double portion — the prophet anointed to stand in Elijah''s room receives his spirit, the office handed on unbroken.'),
+    ('canon','1-kings',19,19,'canon','2-kings',2,8,'free',E'*And Elijah took his mantle, and wrapped it together, and smote the waters, and they were divided hither and thither, so that they two went over on dry ground* (2 Kings 2:8). The mantle Elijah *cast upon him* (1 Kings 19:19) is the same mantle that here parts the Jordan — the sign of the prophetic power that will pass from master to servant; the call begins with the mantle thrown over the plowman.'),
+    ('canon','1-kings',19,19,'canon','2-kings',2,13,'free',E'*He took up also the mantle of Elijah that fell from him, and went back, and stood by the bank of Jordan* (2 Kings 2:13). The mantle first *cast upon* Elisha at the plow (1 Kings 19:19) is the mantle that *fell from* Elijah at his taking-up and is *taken up* by his successor — the succession sealed; what was thrown over him in the field he now wears as his own.'),
+    ('canon','1-kings',19,21,'canon','2-kings',2,14,'free',E'*And he took the mantle of Elijah that fell from him, and smote the waters, and said, Where is Yahuah Elohim (the LORD God) of Elijah? and when he also had smitten the waters, they parted hither and thither: and Elisha went over* (2 Kings 2:14). The man who *arose, and went after Elijah, and ministered unto him* (1 Kings 19:21) at last wields the mantle himself, calling on *Yahuah Elohim of Elijah* — the servant who left the oxen to follow now stands in the master''s power, the call come full circle.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-19-the-prophets-despair-met-by-the-sustaining-bread',
+       E'The prophet''s despair met by the sustaining bread',
+       E'After the fire on Carmel comes the collapse. Jezebel''s death-threat sends Elijah running for his life, and in the wilderness the great prophet sits down to die: *But he himself went a day''s journey into the wilderness, and came and sat down under a juniper tree: and he requested for himself that he might die; and said, It is enough; now, O Yahuah (LORD), take away my life; for I am not better than my fathers* (1 Kings 19:4). This is the human frailty of the man — the same death-wish Jonah prayed: *Therefore now, O Yahuah (LORD), take, I beseech thee, my life from me; for it is better for me to die than to live* (Jonah 4:3); the same soul cast down the psalmist sang: *Why art thou cast down, O my soul? and why art thou disquieted in me? hope thou in Elohim (God)* (Psalm 42:5), *O my Elohim (God), my soul is cast down within me* (Psalm 42:6). The apostle names it plainly: *Elias was a man subject to like passions as we are* (James 5:17) — and that very frailty is the comfort, for the prayers of such a man availed much. Yahuah does not answer the despair with rebuke but with bread. An angel touches him: *Arise and eat* (1 Kings 19:5); *there was a cake baken on the coals, and a cruse of water at his head. And he did eat and drink* (1 Kings 19:6); *and he arose, and did eat and drink, and went in the strength of that meat forty days and forty nights unto Horeb the mount of Elohim (God)* (1 Kings 19:8). The wilderness-bread that carries the fainting prophet to the mountain of Yahuah is the figure filled by the Bread of Life himself: *I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst* (John 6:35). The frail man is not cast off; he is fed, and on the strength of that meat he goes to meet his Elohim.',
+       sv.verse_id, ev.verse_id, 'free', 38350
+  FROM _s342_1ki19_lookup sv, _s342_1ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=19 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-19-yahuah-passed-by-not-in-the-wind-but-a-still-small-voice',
+       E'Yahuah passed by — not in the wind, but a still small voice',
+       E'At Horeb, the mount of the Torah, Yahuah meets Elijah exactly as he met Moses. *Go forth, and stand upon the mount before Yahuah (LORD). And, behold, Yahuah (LORD) passed by, and a great and strong wind rent the mountains, and brake in pieces the rocks before Yahuah (LORD); but Yahuah (LORD) was not in the wind: and after the wind an earthquake; but Yahuah (LORD) was not in the earthquake: And after the earthquake a fire; but Yahuah (LORD) was not in the fire: and after the fire a still small voice* (1 Kings 19:11-12). This is the Formed Son — the visible Glory who appeared, spoke, and led Yashar''el — passing by at the same mountain where he passed by before Moses: *I will make all my goodness pass before thee, and I will proclaim the name of Yahuah (LORD) before thee* (Exodus 33:19); *Behold, there is a place by me, and thou shalt stand upon a rock* (Exodus 33:21); *while my glory passeth by... I will cover thee with my hand while I pass by* (Exodus 33:22). And when Yahuah passed by before Moses, the revelation was a voice — *Yahuah (LORD) passed by before him, and proclaimed, Yahuah (LORD), Yahuah (LORD) Elohim (God), merciful and gracious* (Exodus 34:6) — not a cataclysm but the proclaimed Name. So the wind, the quake, and the fire are only the heralds; Yahuah himself is in the still small voice, the quiet covenant word over the dramatic sign. And as no man may see the face and live — *Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20), *thou shalt see my back parts: but my face shall not be seen* (Exodus 33:23) — Elijah *wrapped his face in his mantle, and went out, and stood in the entering in of the cave* (1 Kings 19:13). The One who passed by Moses passes by Elijah; he is Yahuah and has a Father, made known not in the spectacle but in the gentle whisper.',
+       sv.verse_id, ev.verse_id, 'free', 38353
+  FROM _s342_1ki19_lookup sv, _s342_1ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=19 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-19-yet-i-have-left-me-seven-thousand-the-remnant',
+       E'Yet I have left me seven thousand — the remnant',
+       E'Twice the despairing prophet cries that he stands alone: *the children of Yashar''el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword; and I, even I only, am left; and they seek my life* (1 Kings 19:10,14). Paul quotes it as Elijah making intercession against Yashar''el: *Yahuah (Lord), they have killed thy prophets, and digged down thine altars; and I am left alone, and they seek my life* (Romans 11:3). But Yahuah overturns the lament. The answer is the chapter''s keystone and the great anti-despair truth: *Yet I have left me seven thousand in Yashar''el (Israel), all the knees which have not bowed unto Baal, and every mouth which hath not kissed him* (1 Kings 19:18) — which Paul records as *I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal* (Romans 11:4). The prophet who thought himself the last is corrected: the faithful are far more than he can see, kept by Yahuah''s own hand. And this, says the apostle, is the abiding pattern: *Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). Yahuah always preserves a remnant of his people — never the two houses cast off, but a faithful seed reserved. The election is of grace AND of those who *have not bowed unto Baal*: kept by mercy, marked by covenant fidelity, the paternal-line-plus-covenant remnant the LORD will not let perish.',
+       sv.verse_id, ev.verse_id, 'free', 38356
+  FROM _s342_1ki19_lookup sv, _s342_1ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=19 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-19-the-mantle-cast-upon-elisha-the-call-and-succession',
+       E'The mantle cast upon Elisha — the call and succession',
+       E'The despairing prophet is sent back with work to do, and the last of his commissions is his successor: *Elisha the son of Shaphat of Abel-meholah shalt thou anoint to be prophet in thy room* (1 Kings 19:16). He finds him at the plow: *So he departed thence, and found Elisha the son of Shaphat, who was plowing with twelve yoke of oxen before him, and he with the twelfth: and Elijah passed by him, and cast his mantle upon him* (1 Kings 19:19). The mantle thrown over the plowman is the call; Elisha *left the oxen, and ran after Elijah* (1 Kings 19:20), then *took a yoke of oxen, and slew them... and went after Elijah, and ministered unto him* (1 Kings 19:21) — the old life burned behind him, the servant following the master. That mantle is the very sign of the prophetic power that will pass between them. With it Elijah parts the Jordan: *Elijah took his mantle, and wrapped it together, and smote the waters, and they were divided* (2 Kings 2:8); and at the asking *let a double portion of thy spirit be upon me* (2 Kings 2:9), the office is handed on. When Elijah is taken up, the mantle falls and the successor takes it: *He took up also the mantle of Elijah that fell from him, and went back, and stood by the bank of Jordan* (2 Kings 2:13); *and he took the mantle of Elijah that fell from him, and smote the waters, and said, Where is Yahuah Elohim (the LORD God) of Elijah?* (2 Kings 2:14). What was cast over him in the field he now wields as his own — the call come full circle, the prophetic word carried on unbroken.',
+       sv.verse_id, ev.verse_id, 'free', 38359
+  FROM _s342_1ki19_lookup sv, _s342_1ki19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=19 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: the prophet's despair met by the sustaining bread
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*take, I beseech thee, my life from me; for it is better for me to die than to live* (Jonah 4:3) — the same prophet''s death-wish after a great work, met not with rebuke but provision.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-prophets-despair-met-by-the-sustaining-bread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Why art thou cast down, O my soul?... hope thou in Elohim* (Psalm 42:5) — the cast-down soul the angel''s bread and the still small voice will lift.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=42 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-prophets-despair-met-by-the-sustaining-bread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*O my Elohim, my soul is cast down within me: therefore will I remember thee* (Psalm 42:6) — the cast-down soul does not perish but remembers Yahuah, drawn on toward the mount.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=42 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-prophets-despair-met-by-the-sustaining-bread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Elias was a man subject to like passions as we are* (James 5:17) — the apostle names the frailty this chapter shows; that very frailty is the comfort.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-prophets-despair-met-by-the-sustaining-bread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I am the bread of life: he that cometh to me shall never hunger* (John 6:35) — the angel''s *Arise and eat* (19:5) feeds the frail man; the Bread of Life figured in the wilderness provision.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-prophets-despair-met-by-the-sustaining-bread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I am the bread of life... he that believeth on me shall never thirst* (John 6:35) — the cake and cruse of water (19:6) strengthen the fainting prophet; the true bread that never fails.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=6
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-prophets-despair-met-by-the-sustaining-bread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*I am the bread of life* (John 6:35) — *in the strength of that meat forty days* (19:8) to Horeb; the meat that endures carries the servant to meet his Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=8
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-prophets-despair-met-by-the-sustaining-bread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Yahuah passed by, not in the wind, but a still small voice
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will make all my goodness pass before thee, and I will proclaim the name of Yahuah* (Exodus 33:19) — the same passing-by at the same Horeb; the Formed One revealed in goodness and the Name.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yahuah-passed-by-not-in-the-wind-but-a-still-small-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there is a place by me, and thou shalt stand upon a rock* (Exodus 33:21) — as Moses stood, so Elijah is sent to stand on the mount before Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yahuah-passed-by-not-in-the-wind-but-a-still-small-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*while my glory passeth by... I will cover thee with my hand while I pass by* (Exodus 33:22) — the Glory that passed by in the cleft now passes by on the mount; the wind/quake/fire are heralds.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yahuah-passed-by-not-in-the-wind-but-a-still-small-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thou shalt see my back parts: but my face shall not be seen* (Exodus 33:23) — the veiled nearness; at Horeb the revealing is *a still small voice* (19:12), not the consuming fire.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=12
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yahuah-passed-by-not-in-the-wind-but-a-still-small-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Yahuah passed by before him, and proclaimed, Yahuah, Yahuah Elohim, merciful and gracious* (Exodus 34:6) — when Yahuah passes by he reveals himself by a voice; the gentle word over the spectacle.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=12
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yahuah-passed-by-not-in-the-wind-but-a-still-small-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*there shall no man see me, and live* (Exodus 33:20) — so Elijah *wrapped his face in his mantle* (19:13); reverence before the Formed Glory whose face is not seen.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=13
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yahuah-passed-by-not-in-the-wind-but-a-still-small-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: yet I have left me seven thousand, the remnant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*they have killed thy prophets... and I am left alone, and they seek my life* (Romans 11:3) — Paul quotes Elijah''s very complaint, the lament Yahuah is about to overturn.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yet-i-have-left-me-seven-thousand-the-remnant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal* (Romans 11:4) — the answer to the prophet''s repeated *I only am left*; the faithful far more than he can see.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=14
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yet-i-have-left-me-seven-thousand-the-remnant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I have reserved to myself seven thousand men* (Romans 11:4) — Paul''s citation of the chapter''s keystone *Yet I have left me seven thousand in Yashar''el* (19:18); the anti-despair truth.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yet-i-have-left-me-seven-thousand-the-remnant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*there is a remnant according to the election of grace* (Romans 11:5) — the seven thousand *who have not bowed unto Baal* are the abiding pattern; kept by grace, marked by covenant fidelity, never the people cast off.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-yet-i-have-left-me-seven-thousand-the-remnant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the mantle cast upon Elisha, the call and succession
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*let a double portion of thy spirit be upon me* (2 Kings 2:9) — the prophet anointed *in thy room* (19:16) receives the spirit; the office handed on unbroken.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=16
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-mantle-cast-upon-elisha-the-call-and-succession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elijah took his mantle... and smote the waters, and they were divided* (2 Kings 2:8) — the mantle *cast upon him* (19:19) is the sign of prophetic power that parts the Jordan.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=19
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-mantle-cast-upon-elisha-the-call-and-succession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He took up also the mantle of Elijah that fell from him* (2 Kings 2:13) — the mantle first cast over Elisha at the plow (19:19) falls to him at the taking-up; the succession sealed.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=19
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-mantle-cast-upon-elisha-the-call-and-succession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he took the mantle of Elijah... and said, Where is Yahuah Elohim of Elijah?* (2 Kings 2:14) — the servant who *ministered unto him* (19:21) now wields the mantle himself; the call come full circle.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=19 AND sv.verse_number=21
+  JOIN _s342_1ki19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-19-the-mantle-cast-upon-elisha-the-call-and-succession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session342 — 1 Kings cross-references complete.'
