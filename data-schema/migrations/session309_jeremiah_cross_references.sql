@@ -9244,6 +9244,1543 @@ SELECT t.id, cr.id, 6, E'★★ *I will raise unto David a righteous Branch, and
  WHERE t.slug='jeremiah-22-write-ye-this-man-childless-the-cut-royal-line'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jeremiah_24.sql (Jeremiah 24) -----
+-- Chapter: Jeremiah 24 — THE TWO BASKETS OF FIGS. The good figs = them that are carried away captive of
+-- Yahudah (Judah) to Babylon FOR THEIR GOOD — to whom Yahuah promises *I will give them an heart to know
+-- me... and they shall return unto me with their whole heart* (the new-covenant heart, the regathering).
+-- The naughty figs = Zedekiah and the residue who trust their staying, given over to dispersion *into all
+-- the kingdoms of the earth for their hurt*. The exile that looked like the curse is the discipline that
+-- saves; the heart to know Yahuah is the new-covenant gift.
+-- Tag: jer24   Temp view: _s309_jer24_lookup
+-- Sort band: base 34575, step 3 -> threads at 34575, 34578 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',24,v
+--
+-- Jeremiah 24 coverage:
+--   v.1-3 (two baskets of figs set before the temple, after Jeconiah carried captive to Babylon; one
+--          basket very good figs, the other very naughty figs that cannot be eaten; the good very good,
+--          the evil very evil)
+--        NT:     none warranted (the sign-vision frame; the meaning is unfolded in v.5-7 and v.8-10)
+--        Extras: none warranted
+--        Tanakh: none separate (the preface; the good/evil split is interpreted by Yahuah himself below)
+--   ★★★ v.5-7 (Like these good figs, so will I acknowledge them that are carried away captive of Yahudah
+--          (Judah)... for their good; I will set mine eyes upon them for good, and I will bring them again
+--          to this land; I will build them, and plant them; AND I WILL GIVE THEM AN HEART TO KNOW ME, that
+--          I am Yahuah; and they shall be my people, and I will be their Elohim; for they shall return unto
+--          me with their whole heart)
+--        NT:     ★ John 17:3 (this is life eternal, that they might know thee the only true Elohim) — THREAD 1
+--        Extras: none warranted (clean canon new-covenant weave; no extra forced)
+--        Tanakh: ★★★ Jeremiah 31:33-34 (I will put my law in their inward parts... they shall all know me —
+--                lateral, the new covenant), ★★ Ezekiel 11:19-20 (I will give them one heart... that they
+--                may walk in my statutes — lateral), ★★ Ezekiel 36:26-27 (a new heart... my spirit within
+--                you), ★★ Deuteronomy 30:6 (Yahuah will circumcise thine heart... to love Yahuah) — THREAD 1
+--   ★ v.8-10 (as the evil figs... so will I give Zedekiah the king of Yahudah, and his princes, and the
+--          residue of Jerusalem that remain in this land, and them that dwell in Egypt; I will deliver
+--          them to be removed into all the kingdoms of the earth for their hurt, a reproach and a proverb;
+--          the sword, the famine, and the pestilence, till they be consumed)
+--        NT:     ★ Luke 13:6-9 (the barren fig tree — cut it down; why cumbereth it the ground?) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 28:25,37 (thou shalt be removed into all the kingdoms of the earth... a
+--                proverb and a byword), ★★ Jeremiah 29:17-18 (lateral — I will make them like vile figs...
+--                deliver them to be removed to all the kingdoms of the earth) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs — NT (John 17) + Tanakh (Jeremiah 31,
+--      Ezekiel 11, Ezekiel 36, Deuteronomy 30) [free]
+--      (★★★ the captives given a new heart to know Yahuah — the new-covenant promise, the regathering; the
+--      exile FOR THEIR GOOD, the heart enabled to know him and return with the whole heart)
+--   2. jeremiah-24-the-evil-figs-removed-into-all-the-kingdoms-of-the-earth — NT (Luke 13) + Tanakh
+--      (Deuteronomy 28, Jeremiah 29) [free]
+--      (★ the bad figs — those trusting their staying, not Yahuah''s discipline — given to dispersion; the
+--      Deuteronomy 28 curse-language, the vile figs of Jeremiah 29, the barren fig tree cut down)
+--
+-- Framing notes:
+--   ★★★ THE HEART TO KNOW ME (THREAD 1): the captives carried to Babylon — who looked cursed — are the GOOD
+--      figs: *Like these good figs, so will I acknowledge them that are carried away captive of Yahudah
+--      (Judah), whom I have sent out of this place into the land of the Chaldeans for their good* (24:5).
+--      The exile is FOR THEIR GOOD — the discipline that saves, not the curse that ends. *For I will set
+--      mine eyes upon them for good, and I will bring them again to this land: and I will build them, and
+--      not pull them down; and I will plant them, and not pluck them up* (24:6) — the regathering. And the
+--      heart of it: *And I will give them an heart to know me, that I am Yahuah (LORD): and they shall be my
+--      people, and I will be their Elohim (God): for they shall return unto me with their whole heart*
+--      (24:7). This is the new-covenant promise in seed: the heart GIVEN to know Yahuah. Jeremiah unfolds
+--      it fully later — *I will put my law in their inward parts, and write it in their hearts... they shall
+--      all know me, from the least of them unto the greatest of them* (Jeremiah 31:33-34). Ezekiel speaks
+--      the twin — *I will give them one heart, and I will put a new spirit within you... that they may walk
+--      in my statutes* (Ezekiel 11:19-20); *A new heart also will I give you... I will put my spirit within
+--      you, and cause you to walk in my statutes* (Ezekiel 36:26-27). Moses promised the circumcised heart —
+--      *Yahuah Elohayka (the LORD thy God) will circumcise thine heart... to love Yahuah Elohayka (the LORD
+--      thy God) with all thine heart* (Deuteronomy 30:6). And the Messiah names knowing Yahuah as life
+--      itself — *this is life eternal, that they might know thee the only true Elohim (God)* (John 17:3).
+--      The heart to know Yahuah is the gift, not the achievement; the return with the whole heart is its
+--      fruit.
+--   ★ THE EVIL FIGS REMOVED (THREAD 2): the residue who trusted their staying — Zedekiah and Jerusalem and
+--      those fled to Egypt — are the naughty figs: *And as the evil figs, which cannot be eaten, they are
+--      so evil... So will I give Zedekiah the king of Yahudah (Judah), and his princes, and the residue of
+--      Jerusalem, that remain in this land, and them that dwell in the land of Egypt* (24:8). They are given
+--      to dispersion: *And I will deliver them to be removed into all the kingdoms of the earth for their
+--      hurt, to be a reproach and a proverb, a taunt and a curse, in all places whither I shall drive them*
+--      (24:9). This is the very Deuteronomy 28 covenant-judgment — *shalt be removed into all the kingdoms
+--      of the earth* (Deut 28:25), *thou shalt become an astonishment, a proverb, and a byword* (Deut
+--      28:37). Jeremiah speaks the same vile-figs word over them in the prior chapter — *I will... make
+--      them like vile figs, that cannot be eaten... and will deliver them to be removed to all the kingdoms
+--      of the earth* (Jeremiah 29:17-18). And the Messiah''s barren fig tree presses it forward: *Behold,
+--      these three years I come seeking fruit on this fig tree, and find none: cut it down; why cumbereth
+--      it the ground?* (Luke 13:7). The curse is the Deuteronomy 28 judgment for unbelief, never the Torah
+--      itself — and even here the Husbandman pleads one more year of grace (Luke 13:8-9).
+--   VERSES WITH NO SEPARATE ADD: v.1-3 (the two-baskets sign-vision and the temple frame — the meaning is
+--      Yahuah''s own interpretation in v.5-7 and v.8-10, where it is threaded), v.4 (the word-formula
+--      *Again the word of Yahuah came unto me, saying* — a hinge, woven in prose). Every meaningful block
+--      recorded; both halves of the vision carry a thread.
+
+CREATE TEMP VIEW _s309_jer24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): I will give them an heart to know me — the good figs, the new-covenant heart
+    ('canon','jeremiah',24,7,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The heart promised the good figs — *I will give them an heart to know me, that I am Yahuah (LORD): and they shall be my people, and I will be their Elohim (God)* (Jeremiah 24:7) — is unfolded fully in the new covenant of chapter 31: the same Torah written on the inward heart, the same *they shall be my people, and I will be their Elohim*. The heart to know Yahuah is the heart with the law written on it.'),
+    ('canon','jeremiah',24,7,'canon','jeremiah',31,34,'free',
+      E'*And they shall teach no more every man his neighbour, and every man his brother, saying, Know Yahuah (LORD): for they shall all know me, from the least of them unto the greatest of them, saith Yahuah (LORD): for I will forgive their iniquity, and I will remember their sin no more* (Jeremiah 31:34). Jeremiah''s own later word names the very knowing promised the good figs — *I will give them an heart to know me, that I am Yahuah (LORD)* (Jeremiah 24:7): in the new covenant *they shall all know me*. The heart given in exile is the heart that knows Yahuah, every one, sins forgiven and remembered no more.'),
+    ('canon','jeremiah',24,7,'canon','ezekiel',11,19,'free',
+      E'*And I will give them one heart, and I will put a new spirit within you; and I will take the stony heart out of their flesh, and will give them an heart of flesh* (Ezekiel 11:19). Ezekiel speaks the twin of Jeremiah''s promise to the captives — *I will give them an heart to know me* (Jeremiah 24:7): the scattered are given ONE heart and a new spirit, the stony heart taken away, a heart of flesh given. The heart to know Yahuah is the new heart, remade to receive him.'),
+    ('canon','jeremiah',24,7,'canon','ezekiel',11,20,'free',
+      E'*That they may walk in my statutes, and keep mine ordinances, and do them: and they shall be my people, and I will be their Elohim (God)* (Ezekiel 11:20). Ezekiel names the PURPOSE of the new heart, and the same covenant-formula Jeremiah uses of the good figs — *they shall be my people, and I will be their Elohim (God)* (Jeremiah 24:7): the heart to know Yahuah is the heart that walks in his statutes and keeps his ordinances. The new heart is given so the people may DO the Torah, not be free of it.'),
+    ('canon','jeremiah',24,7,'canon','ezekiel',36,26,'free',
+      E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26). The heart Yahuah promises the captives — *I will give them an heart to know me* (Jeremiah 24:7) — is Ezekiel''s new heart of flesh, the stony heart taken away. The exiles cannot know Yahuah with the old hard heart; he gives them a new one fit to know him.'),
+    ('canon','jeremiah',24,7,'canon','ezekiel',36,27,'free',
+      E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The heart given to know Yahuah (Jeremiah 24:7) is matched by the Spirit put within — the Spirit that *cause[s] you to walk in my statutes*. To know Yahuah and to walk in his statutes are one gift: the new heart and the indwelling Spirit make the people keep the Torah, the covenant they had broken.'),
+    ('canon','jeremiah',24,7,'canon','deuteronomy',30,6,'free',
+      E'*And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live* (Deuteronomy 30:6). Moses promised in the Torah itself the heart Jeremiah promises the captives — *I will give them an heart to know me... for they shall return unto me with their whole heart* (Jeremiah 24:7). The circumcised heart to LOVE Yahuah with all the heart is the heart to KNOW him and return with the whole heart; the promise was in Moses before Babylon.'),
+    ('canon','jeremiah',24,7,'canon','john',17,3,'free',
+      E'*And this is life eternal, that they might know thee the only true Elohim (God), and Yahusha HaMashiach (Jesus Christ), whom thou hast sent* (John 17:3). The Messiah names knowing Yahuah as life itself — and that is the gift promised the good figs: *I will give them an heart to know me, that I am Yahuah (LORD)* (Jeremiah 24:7). The heart to know Yahuah is no small mercy; to know him is life eternal, and it is given, not earned.'),
+
+    -- THREAD 2 (★): the evil figs removed into all the kingdoms of the earth
+    ('canon','jeremiah',24,9,'canon','deuteronomy',28,25,'free',
+      E'*Yahuah (LORD) shall cause thee to be smitten before thine enemies: thou shalt go out one way against them, and flee seven ways before them: and shalt be removed into all the kingdoms of the earth* (Deuteronomy 28:25). The doom of the evil figs is the Deuteronomy 28 covenant-judgment word for word — *I will deliver them to be removed into all the kingdoms of the earth for their hurt* (Jeremiah 24:9). What befalls the naughty figs is the curse Moses named for covenant-breaking — never the Torah itself, but the judgment for refusing it.'),
+    ('canon','jeremiah',24,9,'canon','deuteronomy',28,37,'free',
+      E'*And thou shalt become an astonishment, a proverb, and a byword, among all nations whither Yahuah (LORD) shall lead thee* (Deuteronomy 28:37). The evil figs are given *to be a reproach and a proverb, a taunt and a curse, in all places whither I shall drive them* (Jeremiah 24:9) — the very *proverb* and *byword* of the Deuteronomy 28 curse. The exile that disgraces them is the covenant-judgment Moses foretold for those who would not keep the covenant.'),
+    ('canon','jeremiah',24,8,'canon','jeremiah',29,17,'free',
+      E'*Thus saith Yahuah Tseva''ot (LORD of hosts); Behold, I will send upon them the sword, the famine, and the pestilence, and will make them like vile figs, that cannot be eaten, they are so evil* (Jeremiah 29:17). Jeremiah speaks the same vile-figs word in the prior chapter over the same residue — *the evil figs, which cannot be eaten, they are so evil* (Jeremiah 24:8). Those who trusted their staying in the land, not Yahuah''s discipline in Babylon, are made *like vile figs* — the figs that cannot be eaten.'),
+    ('canon','jeremiah',24,9,'canon','jeremiah',29,18,'free',
+      E'*And I will persecute them with the sword, with the famine, and with the pestilence, and will deliver them to be removed to all the kingdoms of the earth, to be a curse, and an astonishment, and an hissing, and a reproach, among all the nations whither I have driven them* (Jeremiah 29:18). The sentence on the vile figs of chapter 29 is the sentence on the evil figs of chapter 24 — *I will deliver them to be removed into all the kingdoms of the earth for their hurt, to be a reproach and a proverb* (Jeremiah 24:9). The dispersion and the reproach are one judgment, spoken twice over the same unfruitful residue.'),
+    ('canon','jeremiah',24,8,'canon','luke',13,6,'free',
+      E'*He spake also this parable; A certain man had a fig tree planted in his vineyard; and he came and sought fruit thereon, and found none* (Luke 13:6). The Messiah''s barren fig tree presses Jeremiah''s evil figs forward — the figs *which cannot be eaten, they are so evil* (Jeremiah 24:8) are the fig tree that bears no fruit. The owner comes seeking fruit and finds none: the unfruitful tree is under the same verdict as the figs that cannot be eaten.'),
+    ('canon','jeremiah',24,8,'canon','luke',13,7,'free',
+      E'*Then said he unto the dresser of his vineyard, Behold, these three years I come seeking fruit on this fig tree, and find none: cut it down; why cumbereth it the ground?* (Luke 13:7). The barren fig tree faces the axe as Jeremiah''s evil figs face the sword — *cut it down; why cumbereth it the ground?* answers *the evil figs, which cannot be eaten, they are so evil* (Jeremiah 24:8). Yet the Husbandman pleads one more year of grace (Luke 13:8-9): even over the unfruitful, mercy lingers before the judgment falls.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs',
+       E'I will give them an heart to know me — the good figs carried away for their good',
+       E'Yahuah shows Jeremiah two baskets of figs before the temple, after Jeconiah and the princes of Yahudah (Judah) have been carried to Babylon — *One basket had very good figs, even like the figs that are first ripe: and the other basket had very naughty figs, which could not be eaten* (24:2). Then comes the reversal that overturns every appearance: the captives in Babylon, who look cursed, are the GOOD figs. *Thus saith Yahuah (LORD), the Elohim (God) of Yashar''el (Israel); Like these good figs, so will I acknowledge them that are carried away captive of Yahudah (Judah), whom I have sent out of this place into the land of the Chaldeans for their good* (24:5). The exile is FOR THEIR GOOD — the discipline that saves, not the curse that ends. *For I will set mine eyes upon them for good, and I will bring them again to this land: and I will build them, and not pull them down; and I will plant them, and not pluck them up* (24:6) — the regathering, build and plant, never uproot. And then the heart of it: *And I will give them an heart to know me, that I am Yahuah (LORD): and they shall be my people, and I will be their Elohim (God): for they shall return unto me with their whole heart* (24:7). This is the new covenant in seed — the heart GIVEN, not achieved. Jeremiah unfolds it fully in chapter 31: *I will put my law in their inward parts, and write it in their hearts... they shall all know me, from the least of them unto the greatest of them... I will forgive their iniquity, and I will remember their sin no more* (31:33-34). Ezekiel speaks the twin promise to the same scattered people: *I will give them one heart, and I will put a new spirit within you... that they may walk in my statutes, and keep mine ordinances, and do them: and they shall be my people, and I will be their Elohim (God)* (Ezekiel 11:19-20); *A new heart also will I give you... I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:26-27). The new heart is given so the people may DO the Torah — the covenant they had broken — not be free of it. And the promise was in the Torah from the first: *Yahuah Elohayka (the LORD thy God) will circumcise thine heart... to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul* (Deuteronomy 30:6). The circumcised heart to love Yahuah is the heart to know him and return with the whole heart. And the Messiah names what such a heart is for: *this is life eternal, that they might know thee the only true Elohim (God)* (John 17:3). To know Yahuah is life eternal — and it is given, a heart from his own hand, to the very ones the world counted cast off.',
+       sv.verse_id, ev.verse_id, 'free', 34575
+  FROM _s309_jer24_lookup sv, _s309_jer24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=24 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-24-the-evil-figs-removed-into-all-the-kingdoms-of-the-earth',
+       E'The evil figs — removed into all the kingdoms of the earth for their hurt',
+       E'The other basket interprets the other half of the people. The residue who trusted their staying in the land — Zedekiah and Jerusalem and those who fled to Egypt — are the naughty figs: *And as the evil figs, which cannot be eaten, they are so evil; surely thus saith Yahuah (LORD), So will I give Zedekiah the king of Yahudah (Judah), and his princes, and the residue of Jerusalem, that remain in this land, and them that dwell in the land of Egypt* (24:8). They presumed they were safe because they had not been carried off; but the sentence falls on them: *And I will deliver them to be removed into all the kingdoms of the earth for their hurt, to be a reproach and a proverb, a taunt and a curse, in all places whither I shall drive them. And I will send the sword, the famine, and the pestilence, among them, till they be consumed* (24:9-10). This is the Deuteronomy 28 covenant-judgment word for word — *shalt be removed into all the kingdoms of the earth* (Deut 28:25), *thou shalt become an astonishment, a proverb, and a byword, among all nations* (Deut 28:37). It is the curse Moses named for covenant-breaking — never the Torah itself, always the judgment for refusing it. Jeremiah had already spoken the vile-figs word over the same residue: *Behold, I will send upon them the sword, the famine, and the pestilence, and will make them like vile figs, that cannot be eaten, they are so evil... and will deliver them to be removed to all the kingdoms of the earth, to be a curse, and an astonishment, and an hissing, and a reproach* (Jeremiah 29:17-18). And the Messiah presses it forward in the parable of the barren fig tree: *A certain man had a fig tree planted in his vineyard; and he came and sought fruit thereon, and found none... cut it down; why cumbereth it the ground?* (Luke 13:6-7). The unfruitful tree faces the axe as the evil figs face the sword. Yet even here mercy lingers: the dresser pleads, *let it alone this year also, till I shall dig about it, and dung it: and if it bear fruit, well* (Luke 13:8-9). The curse is the judgment for unbelief, never the end of Yahuah''s patience — but the figs that bear no fruit, that cannot be eaten, are removed.',
+       sv.verse_id, ev.verse_id, 'free', 34578
+  FROM _s309_jer24_lookup sv, _s309_jer24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=24 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will put my law in their inward parts, and write it in their hearts... they shall be my people* (Jeremiah 31:33) — the new covenant unfolds the heart promised the good figs; the heart to know Yahuah is the heart with the Torah written on it.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *they shall all know me, from the least of them unto the greatest of them... I will remember their sin no more* (Jeremiah 31:34) — the very knowing promised the good figs; all shall know Yahuah, sins forgiven.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I will give them one heart, and I will put a new spirit within you... a heart of flesh* (Ezekiel 11:19) — the twin promise to the scattered; the heart to know Yahuah is the new heart, the stony heart taken away.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=11 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *that they may walk in my statutes, and keep mine ordinances, and do them: and they shall be my people* (Ezekiel 11:20) — the same covenant-formula as Jeremiah 24:7; the new heart is given to KEEP the Torah, not be free of it.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=11 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *A new heart also will I give you, and a new spirit will I put within you... an heart of flesh* (Ezekiel 36:26) — the captives cannot know Yahuah with the old hard heart; he gives a new one fit to know him.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27) — the Spirit matched to the new heart; to know Yahuah and to walk in his statutes are one gift.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *Yahuah Elohayka (the LORD thy God) will circumcise thine heart... to love Yahuah Elohayka (the LORD thy God) with all thine heart* (Deuteronomy 30:6) — the circumcised heart of the Torah itself; the heart to love and to know Yahuah, promised before Babylon.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *this is life eternal, that they might know thee the only true Elohim (God)* (John 17:3) — the Messiah names knowing Yahuah as life itself; the heart to know him (Jeremiah 24:7) is the gift of life eternal.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=17 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-i-will-give-them-an-heart-to-know-me-the-good-figs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *shalt be removed into all the kingdoms of the earth* (Deuteronomy 28:25) — the doom of the evil figs is the Deuteronomy 28 covenant-judgment word for word; the curse for covenant-breaking, never the Torah itself.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-the-evil-figs-removed-into-all-the-kingdoms-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *thou shalt become an astonishment, a proverb, and a byword, among all nations* (Deuteronomy 28:37) — the evil figs made *a reproach and a proverb* (Jeremiah 24:9); the very proverb and byword of the curse.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-the-evil-figs-removed-into-all-the-kingdoms-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *will make them like vile figs, that cannot be eaten, they are so evil* (Jeremiah 29:17) — the same vile-figs word over the same residue; those trusting their staying made like figs that cannot be eaten.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-the-evil-figs-removed-into-all-the-kingdoms-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *deliver them to be removed to all the kingdoms of the earth, to be a curse... and a reproach* (Jeremiah 29:18) — the sentence on the vile figs is the sentence on the evil figs of 24:9; one judgment, spoken twice.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-the-evil-figs-removed-into-all-the-kingdoms-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *A certain man had a fig tree planted in his vineyard; and he came and sought fruit thereon, and found none* (Luke 13:6) — the Messiah''s barren fig tree presses Jeremiah''s evil figs forward; the unfruitful tree under the same verdict.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=13 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-the-evil-figs-removed-into-all-the-kingdoms-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *cut it down; why cumbereth it the ground?* (Luke 13:7) — the barren tree faces the axe as the evil figs face the sword; yet the Husbandman pleads one more year of grace (Luke 13:8-9).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s309_jer24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=13 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-24-the-evil-figs-removed-into-all-the-kingdoms-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_25.sql (Jeremiah 25) -----
+-- Chapter: Jeremiah 25 — the SEVENTY YEARS of the captivity (the appointed measure of the land''s
+-- sabbath-rest, the verse Daniel reads to count the years); the CUP of the wine of fury given to ALL
+-- the nations to drink — Jerusalem first, then Babylon-Sheshach last; and Yahuah (LORD) ROARING from on
+-- high, treading the grapes, his controversy with the nations, the slain from one end of the earth to
+-- the other (the great winepress, the day of his fierce anger). The appointed seventy years, the cup of
+-- wrath the nations must drink, and the roar of the Judge of all the earth.
+-- Tag: jer25   Temp view: _s309_jer25_lookup
+-- Sort band: base 34600, step 3 -> threads at 34600, 34603, 34606 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',25,v
+--
+-- Jeremiah 25 coverage:
+--   v.1-7 (the word in the fourth year of Jehoiakim; three and twenty years of unheeded prophets; turn ye
+--          again every one from his evil way; ye have not hearkened)
+--        NT:     none warranted (the historical preface, the long-refused call to repentance; woven in prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the unheeded-prophets indictment; grounds the judgment of v.8-11)
+--   v.8-10 (Behold, I will send and take all the families of the north... Nebuchadrezzar... my servant...
+--          make them an astonishment, an hissing, perpetual desolations; the voice of mirth taken away)
+--        NT:     none warranted distinct (the Babylonian agent of judgment; held in THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — Nebuchadrezzar "my servant" the rod; the desolation that the seventy years measures
+--   ★★ v.11-12 (this whole land shall be a desolation... these nations shall serve the king of Babylon
+--          SEVENTY YEARS; and when seventy years are accomplished, I will punish the king of Babylon...
+--          and make it perpetual desolations)
+--        NT:     none warranted (the seventy-year reckoning is a Tanakh-internal measure; no NT quote — woven)
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 9:2 (I Daniel understood by books the number of the years... seventy years in the
+--                desolations of Jerusalem — Daniel READS this verse), ★★ 2 Chronicles 36:21 (to fulfil the
+--                word of Yahuah by the mouth of Jeremiah, until the land had enjoyed her sabbaths... seventy
+--                years), ★ Jeremiah 29:10 (after seventy years... I will visit you — lateral), ★★ Leviticus
+--                26:34 + 26:35 (then shall the land enjoy her sabbaths... because it did not rest) — THREAD 1
+--   v.13-14 (I will bring upon that land all my words... which Jeremiah hath prophesied against all the
+--          nations; many nations and great kings shall serve themselves of them; I will recompense them)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — Babylon herself recompensed; the hinge into the cup of v.15ff
+--   ★★★ v.15-17 (Take the wine cup of this fury at my hand, and cause all the nations... to drink it...
+--          they shall drink, and be moved, and be mad, because of the sword; then took I the cup... and
+--          made all the nations to drink)
+--        NT:     ★★★ Revelation 14:10 (he shall drink of the wine of the wrath of Elohim (God), which is
+--                poured out without mixture into the cup of his indignation), ★★ Revelation 16:19 (to give
+--                unto her the cup of the wine of the fierceness of his wrath) — THREAD 2
+--        Extras: none warranted (clean canon weave; the cup is the library''s wrath-image, no extra forced)
+--        Tanakh: ★★ Psalm 75:8 (in the hand of Yahuah there is a cup... all the wicked of the earth shall...
+--                drink them), ★★ Isaiah 51:17 (the cup of his fury... the dregs of the cup of trembling) — THREAD 2
+--   v.18-26 (the roll of nations made to drink — Jerusalem, Yahudah, Pharaoh, the mingled people, Uz, the
+--          Philistines, Edom, Moab, Ammon, Tyrus, Zidon, Dedan, Arabia, Zimri, Elam, the Medes, all the
+--          kingdoms of the world... and the king of Sheshach shall drink after them)
+--        NT:     none warranted (the catalogue of the nations; bound into THREAD 2)
+--        Extras: none warranted
+--        Tanakh: held in prose — the universal draught; Sheshach (Babylon) drinks LAST, judged after the seventy years
+--   ★★★ v.27-29 (Drink ye, and be drunken, and spue, and fall, and rise no more... Ye shall certainly
+--          drink... For, lo, I begin to bring evil on the city which is called by my name, and should ye
+--          be utterly unpunished?... I will call for a sword upon all the inhabitants of the earth)
+--        NT:     held in THREAD 2 (Revelation''s cup of wrath answers the certainty of the draught)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 49:12 (they whose judgment was not to drink of the cup have assuredly drunken;
+--                and art thou he that shall altogether go unpunished?... thou shalt surely drink) — THREAD 2
+--   ★ v.30-33 (Yahuah (LORD) shall ROAR from on high... he shall give a shout, as they that tread the
+--          grapes; a noise shall come even to the ends of the earth; Yahuah hath a controversy with the
+--          nations... the slain of Yahuah shall be at that day from one end of the earth even unto the other)
+--        NT:     ★ Revelation 14:19 (gathered the vine of the earth, and cast it into the great winepress of
+--                the wrath of Elohim (God)), ★ Revelation 14:18 (gather the clusters of the vine of the
+--                earth; for her grapes are fully ripe), ★ Revelation 19:15 (he treadeth the winepress of the
+--                fierceness and wrath of El Shaddai (Almighty God)) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Joel 3:13 (put ye in the sickle, for the harvest is ripe... the press is full — lateral),
+--                ★★ Joel 3:16 (Yahuah also shall roar out of Zion, and utter his voice from Jerusalem),
+--                ★★ Amos 1:2 (Yahuah will roar from Zion, and utter his voice from Jerusalem) — THREAD 3
+--   v.34-38 (Howl, ye shepherds... the days of your slaughter are accomplished; the shepherds shall have
+--          no way to flee; Yahuah hath spoiled their pasture; the peaceable habitations are cut down... he
+--          hath forsaken his covert, as the lion... because of his fierce anger)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in THREAD 3 prose — the lion-roar and the fierce anger consummate the roar of v.30-33;
+--                v.38 (forsaken his covert, as the lion) closes the roar-thread as its end-anchor
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-25-the-seventy-years-the-land-shall-enjoy-her-sabbaths — Tanakh (Daniel 9, 2 Chronicles 36, Jeremiah 29, Leviticus 26) [free]
+--      (★★ the appointed seventy years — the land''s sabbath-rest measured out; the verse Daniel reads to count the time)
+--   2. jeremiah-25-the-cup-of-the-wine-of-fury-all-nations-shall-drink — NT (Revelation 14, Revelation 16) + Tanakh (Psalm 75, Isaiah 51, Jeremiah 49) [free]
+--      (★★★ the cup of wrath ALL nations must drink — Jerusalem first, Babylon last; forward to Revelation''s cup of indignation)
+--   3. jeremiah-25-yahuah-shall-roar-from-on-high-the-winepress-of-his-wrath — NT (Revelation 14, Revelation 19) + Tanakh (Joel 3, Amos 1) [free]
+--      (★ Yahuah roaring from on high, treading the grapes, his controversy with the nations — the great winepress and the roar)
+--
+-- Framing notes:
+--   ★★ THE SEVENTY YEARS (THREAD 1): *And this whole land shall be a desolation, and an astonishment; and
+--      these nations shall serve the king of Babylon seventy years. And it shall come to pass, when seventy
+--      years are accomplished, that I will punish the king of Babylon, and that nation... and will make it
+--      perpetual desolations* (25:11-12). The captivity is not open-ended: it is an APPOINTED measure, seventy
+--      years, and then Babylon herself is judged. Daniel reads THIS very verse to reckon the time: *I Daniel
+--      understood by books the number of the years, whereof the word of Yahuah (LORD) came to Jeremiah the
+--      prophet, that he would accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2). The
+--      Chronicler names the meaning of the seventy: the land''s unkept sabbaths paid back — *to fulfil the
+--      word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths... to fulfil
+--      threescore and ten years* (2 Chronicles 36:21), which is the Torah''s own warning come true: *Then shall
+--      the land enjoy her sabbaths, as long as it lieth desolate... because it did not rest in your sabbaths*
+--      (Leviticus 26:34-35). And the same seventy carries a promise of return — *after seventy years be
+--      accomplished at Babylon I will visit you, and perform my good word toward you* (Jeremiah 29:10). The
+--      appointed seventy years is the sabbath-rest of the land, measured, paid, and ended in mercy.
+--   ★★★ THE CUP OF FURY (THREAD 2): *Take the wine cup of this fury at my hand, and cause all the nations, to
+--      whom I send thee, to drink it. And they shall drink, and be moved, and be mad, because of the sword
+--      that I will send among them* (25:15-16). The cup is universal and it is certain — *Drink ye, and be
+--      drunken, and spue, and fall, and rise no more* (25:27); *Ye shall certainly drink* (25:28); and it
+--      begins at the house of Yahuah: *For, lo, I begin to bring evil on the city which is called by my name,
+--      and should ye be utterly unpunished?* (25:29). Babylon-Sheshach drinks LAST (25:26). The psalm sings
+--      the same cup: *in the hand of Yahuah (LORD) there is a cup, and the wine is red... the dregs thereof,
+--      all the wicked of the earth shall wring them out, and drink them* (Psalm 75:8). Isaiah names Jerusalem
+--      drinking it first — *thou hast drunken the dregs of the cup of trembling* (Isaiah 51:17) — and the cup
+--      then passed to her oppressors (51:22-23). Jeremiah''s own Edom-oracle seals the certainty: *they whose
+--      judgment was not to drink of the cup have assuredly drunken; and art thou he that shall altogether go
+--      unpunished? thou shalt surely drink* (Jeremiah 49:12). And it reaches its end in Revelation: *The same
+--      shall drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the cup
+--      of his indignation* (Revelation 14:10), *to give unto her the cup of the wine of the fierceness of his
+--      wrath* (Revelation 16:19) — great Babylon, last to drink, drinks the dregs.
+--   ★ THE ROAR AND THE WINEPRESS (THREAD 3): *Yahuah (LORD) shall roar from on high, and utter his voice from
+--      his holy habitation... he shall give a shout, as they that tread the grapes, against all the inhabitants
+--      of the earth. A noise shall come even to the ends of the earth; for Yahuah (LORD) hath a controversy
+--      with the nations* (25:30-31); *the slain of Yahuah (LORD) shall be at that day from one end of the earth
+--      even unto the other end of the earth* (25:33). The Judge of all the earth roars like a lion (25:38) and
+--      treads the grapes of his wrath. Joel hears the same roar and calls the same harvest: *Put ye in the
+--      sickle, for the harvest is ripe... the press is full, the fats overflow* (Joel 3:13); *Yahuah (LORD)
+--      also shall roar out of Zion, and utter his voice from Jerusalem* (Joel 3:16). Amos opens with it: *Yahuah
+--      (LORD) will roar from Zion, and utter his voice from Jerusalem* (Amos 1:2). And John sees the winepress
+--      trodden: *gather the clusters of the vine of the earth; for her grapes are fully ripe* (Revelation 14:18);
+--      *and gathered the vine of the earth, and cast it into the great winepress of the wrath of Elohim (God)*
+--      (Revelation 14:19); *he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God)*
+--      (Revelation 19:15). The roar from on high and the treading of the grapes are the one great day of his anger.
+--   VERSES WITH NO SEPARATE ADD: v.1-7 (the fourth-year preface and the long-refused call to repentance —
+--      grounds the judgment, woven in prose), v.8-10 (Nebuchadrezzar "my servant" the rod of the north — held
+--      in THREAD 1 prose), v.13-14 (Babylon herself recompensed — the hinge into the cup), v.18-26 (the roll of
+--      nations made to drink, Sheshach last — bound into THREAD 2), v.34-38 (the howling shepherds, the spoiled
+--      pasture, the lion forsaking his covert — consummate the roar of THREAD 3, v.38 its end-anchor). All
+--      recorded; every meaningful block carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the seventy years — the land shall enjoy her sabbaths
+    ('canon','jeremiah',25,11,'canon','daniel',9,2,'free',
+      E'*In the first year of his reign I Daniel understood by books the number of the years, whereof the word of Yahuah (LORD) came to Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2). Daniel reads THIS very oracle — *these nations shall serve the king of Babylon seventy years* (Jeremiah 25:11) — counting the appointed measure by the books. The seventy years are not a vague span but a fixed reckoning the prophets and the saints could number; Daniel takes Jeremiah''s word as the calendar of the captivity.'),
+    ('canon','jeremiah',25,11,'canon','2-chronicles',36,21,'free',
+      E'*To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21). The Chronicler names what the seventy years MEAN — *this whole land shall be a desolation... seventy years* (Jeremiah 25:11): the land''s unkept sabbaths repaid in rest. The desolation is the land at last keeping the sabbath-years that Yashar''el (Israel) withheld; the seventy is the measure of that owed rest.'),
+    ('canon','jeremiah',25,11,'canon','leviticus',26,34,'free',
+      E'*Then shall the land enjoy her sabbaths, as long as it lieth desolate, and ye be in your enemies'' land; even then shall the land rest, and enjoy her sabbaths* (Leviticus 26:34). The Torah warned of exactly the desolation Jeremiah now decrees — *this whole land shall be a desolation* (Jeremiah 25:11): the land emptied so that it may keep the sabbath-rest the people denied it. The seventy years of Babylon are the land''s long-owed sabbaths, the covenant warning of Sinai come true.'),
+    ('canon','jeremiah',25,11,'canon','leviticus',26,35,'free',
+      E'*As long as it lieth desolate it shall rest; because it did not rest in your sabbaths, when ye dwelt upon it* (Leviticus 26:35). The reason for the seventy years is here in the Torah — *these nations shall serve the king of Babylon seventy years* (Jeremiah 25:11): the land rests now *because it did not rest* before. The desolation is not arbitrary wrath but the sabbath-debt of the land called in; the appointed measure repays the rest that was stolen.'),
+    ('canon','jeremiah',25,12,'canon','jeremiah',29,10,'free',
+      E'*For thus saith Yahuah (LORD), That after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place* (Jeremiah 29:10). The same seventy that brings desolation brings, at its end, a visitation of mercy — *when seventy years are accomplished, that I will punish the king of Babylon* (Jeremiah 25:12). The measure that empties the land is the measure that fills it again: when Babylon''s seventy are full, Yahuah punishes the punisher and returns his people home.'),
+
+    -- THREAD 2 (★★★): the wine cup of fury — all the nations shall drink
+    ('canon','jeremiah',25,15,'canon','revelation',14,10,'free',
+      E'*The same shall drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the cup of his indignation; and he shall be tormented with fire and brimstone in the presence of the holy angels, and in the presence of the Lamb* (Revelation 14:10). The cup Jeremiah was given — *Take the wine cup of this fury at my hand, and cause all the nations... to drink it* (Jeremiah 25:15) — is the cup of indignation in John''s hand, the wine of wrath poured out *without mixture*. The same draught the prophet made the nations drink is the cup the worshippers of the beast must drink to the dregs.'),
+    ('canon','jeremiah',25,15,'canon','revelation',16,19,'free',
+      E'*And the great city was divided into three parts, and the cities of the nations fell: and great Babylon came in remembrance before Elohim (God), to give unto her the cup of the wine of the fierceness of his wrath* (Revelation 16:19). Jeremiah''s cup of fury, which Babylon-Sheshach drank LAST (25:26), is the very cup John names given to *great Babylon* at the end — *the wine cup of this fury* (Jeremiah 25:15) become *the cup of the wine of the fierceness of his wrath*. The last to drink in Jeremiah is the last to drink in Revelation: Babylon remembered and made to drain the cup.'),
+    ('canon','jeremiah',25,15,'canon','psalms',75,8,'free',
+      E'*For in the hand of Yahuah (LORD) there is a cup, and the wine is red; it is full of mixture; and he poureth out of the same: but the dregs thereof, all the wicked of the earth shall wring them out, and drink them* (Psalm 75:8). The psalm sings the same cup in the same hand — *Take the wine cup of this fury at my hand, and cause all the nations... to drink it* (Jeremiah 25:15): the red wine of judgment poured out, and *all the wicked of the earth* made to drink even the dregs. The cup Jeremiah carries to the nations is the cup the Judge of all the earth holds for the wicked.'),
+    ('canon','jeremiah',25,15,'canon','isaiah',51,17,'free',
+      E'*Awake, awake, stand up, O Jerusalem, which hast drunk at the hand of Yahuah (LORD) the cup of his fury; thou hast drunken the dregs of the cup of trembling, and wrung them out* (Isaiah 51:17). Jerusalem drinks the cup FIRST, as Jeremiah said — *I begin to bring evil on the city which is called by my name* (Jeremiah 25:29), *the wine cup of this fury* (Jeremiah 25:15) drained by his own people before the nations. Yet Isaiah promises the cup then passed on: *I have taken out of thine hand the cup of trembling... I will put it into the hand of them that afflict thee* (Isaiah 51:22-23).'),
+    ('canon','jeremiah',25,29,'canon','jeremiah',49,12,'free',
+      E'*Behold, they whose judgment was not to drink of the cup have assuredly drunken; and art thou he that shall altogether go unpunished? thou shalt not go unpunished, but thou shalt surely drink of it* (Jeremiah 49:12). Jeremiah''s Edom-oracle echoes the cup of chapter 25 word for word — *should ye be utterly unpunished? Ye shall not be unpunished* (Jeremiah 25:29). If judgment begins at the house called by Yahuah''s name, no nation escapes: the cup that the undeserving must drink the guilty shall *surely drink* to the full.'),
+
+    -- THREAD 3 (★): Yahuah shall roar from on high — the winepress of his wrath
+    ('canon','jeremiah',25,30,'canon','joel',3,16,'free',
+      E'*Yahuah (LORD) also shall roar out of Zion, and utter his voice from Jerusalem; and the heavens and the earth shall shake: but Yahuah (LORD) will be the hope of his people, and the strength of the children of Yashar''el (Israel)* (Joel 3:16). Joel hears the same roar Jeremiah heard — *Yahuah (LORD) shall roar from on high, and utter his voice from his holy habitation* (Jeremiah 25:30): the Judge roars from his place over the nations, yet the roar that terrifies the wicked is the hope and strength of his own people. One voice, two hearings.'),
+    ('canon','jeremiah',25,30,'canon','amos',1,2,'free',
+      E'*And he said, Yahuah (LORD) will roar from Zion, and utter his voice from Jerusalem; and the habitations of the shepherds shall mourn, and the top of Carmel shall wither* (Amos 1:2). Amos opens his oracles against the nations with the very roar Jeremiah names — *Yahuah (LORD) shall roar from on high... he shall mightily roar upon his habitation* (Jeremiah 25:30). The Lion''s roar from Zion is the herald of his controversy with the nations; where Yahuah roars, the proud pastures wither and the day of reckoning is come.'),
+    ('canon','jeremiah',25,30,'canon','joel',3,13,'free',
+      E'*Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great* (Joel 3:13). Jeremiah''s roar comes *as they that tread the grapes* (Jeremiah 25:30); Joel names the same vintage of wrath — the press full to overflowing, the harvest of the nations ripe for judgment. The treading of the grapes is the harvest of the wicked; the shout of the winepress is the shout of the Judge.'),
+    ('canon','jeremiah',25,30,'canon','revelation',14,19,'free',
+      E'*And the angel thrust in his sickle into the earth, and gathered the vine of the earth, and cast it into the great winepress of the wrath of Elohim (God)* (Revelation 14:19). The shout *as they that tread the grapes, against all the inhabitants of the earth* (Jeremiah 25:30) reaches its end in John''s great winepress — the vine of the earth gathered and trodden in the wrath of Elohim (God). The grapes Jeremiah saw the Judge treading are the nations cast into the winepress at the last.'),
+    ('canon','jeremiah',25,30,'canon','revelation',14,18,'free',
+      E'*And another angel came out from the altar, which had power over fire; and cried with a loud cry to him that had the sharp sickle, saying, Thrust in thy sharp sickle, and gather the clusters of the vine of the earth; for her grapes are fully ripe* (Revelation 14:18). Jeremiah''s shout of the grape-treaders (Jeremiah 25:30) is the cry of the harvest in Revelation — *her grapes are fully ripe*, ready for the winepress. The roar from on high and the ripening clusters are the same approaching vintage of wrath upon the inhabitants of the earth.'),
+    ('canon','jeremiah',25,30,'canon','revelation',19,15,'free',
+      E'*And out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron: and he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God)* (Revelation 19:15). The One who *shall give a shout, as they that tread the grapes* (Jeremiah 25:30) is the rider Faithful and True, who *treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God)*. The roar from on high and the controversy with the nations is fulfilled in the King who treads the winepress alone and smites the nations with the sword of his mouth.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-25-the-seventy-years-the-land-shall-enjoy-her-sabbaths',
+       E'The seventy years — the land shall enjoy her sabbaths',
+       E'The captivity is not an open-ended ruin but an APPOINTED measure: *And this whole land shall be a desolation, and an astonishment; and these nations shall serve the king of Babylon seventy years. And it shall come to pass, when seventy years are accomplished, that I will punish the king of Babylon, and that nation, saith Yahuah (LORD), for their iniquity, and the land of the Chaldeans, and will make it perpetual desolations* (25:11-12). Seventy years — counted, fixed, and ended in the judgment of Babylon herself. Daniel reads this very oracle to reckon the time: *In the first year of his reign I Daniel understood by books the number of the years, whereof the word of Yahuah (LORD) came to Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2). The Chronicler names what the seventy MEAN — the land''s unkept sabbaths repaid: *To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21). And this is the Torah''s own warning come to pass, spoken at Sinai long before: *Then shall the land enjoy her sabbaths, as long as it lieth desolate... even then shall the land rest, and enjoy her sabbaths. As long as it lieth desolate it shall rest; because it did not rest in your sabbaths, when ye dwelt upon it* (Leviticus 26:34-35). The desolation is the land at last keeping the sabbath-years that Yashar''el (Israel) withheld — not arbitrary wrath but a debt of rest called in. Yet the same seventy that empties the land carries a promise of return: *after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place* (Jeremiah 29:10). The appointed measure is the sabbath-rest of the land, paid in full and ended in mercy.',
+       sv.verse_id, ev.verse_id, 'free', 34600
+  FROM _s309_jer25_lookup sv, _s309_jer25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=25 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-25-the-cup-of-the-wine-of-fury-all-nations-shall-drink',
+       E'The wine cup of fury — all the nations shall drink',
+       E'Into the prophet''s hand is put a cup, and a commission to make the nations drink it: *For thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel) unto me; Take the wine cup of this fury at my hand, and cause all the nations, to whom I send thee, to drink it. And they shall drink, and be moved, and be mad, because of the sword that I will send among them* (25:15-16). The draught is certain and it spares none: *Drink ye, and be drunken, and spue, and fall, and rise no more, because of the sword* (25:27); *if they refuse to take the cup at thine hand to drink... Ye shall certainly drink* (25:28). And it begins at the house of Yahuah himself: *For, lo, I begin to bring evil on the city which is called by my name, and should ye be utterly unpunished? Ye shall not be unpunished: for I will call for a sword upon all the inhabitants of the earth* (25:29). The whole roll of nations is made to drink — Jerusalem, Egypt, Edom, Moab, Tyre, Arabia, Elam, the Medes, *all the kingdoms of the world* — and Babylon-Sheshach drinks LAST: *the king of Sheshach shall drink after them* (25:26). The Tanakh sings this same cup. The psalm: *For in the hand of Yahuah (LORD) there is a cup, and the wine is red; it is full of mixture... but the dregs thereof, all the wicked of the earth shall wring them out, and drink them* (Psalm 75:8). Isaiah names Jerusalem drinking it first — *which hast drunk at the hand of Yahuah (LORD) the cup of his fury; thou hast drunken the dregs of the cup of trembling* (Isaiah 51:17) — then passed to her oppressors. And Jeremiah''s own Edom-word seals its certainty: *they whose judgment was not to drink of the cup have assuredly drunken; and art thou he that shall altogether go unpunished?... thou shalt surely drink* (Jeremiah 49:12). The cup reaches its end in Revelation: *The same shall drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the cup of his indignation* (Revelation 14:10); and great Babylon, last to drink, drains the dregs — *great Babylon came in remembrance before Elohim (God), to give unto her the cup of the wine of the fierceness of his wrath* (Revelation 16:19). The cup of fury the nations must drink is one cup from Jeremiah to John.',
+       sv.verse_id, ev.verse_id, 'free', 34603
+  FROM _s309_jer25_lookup sv, _s309_jer25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=25 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-25-yahuah-shall-roar-from-on-high-the-winepress-of-his-wrath',
+       E'Yahuah shall roar from on high — the winepress of his wrath',
+       E'The chapter ends in a roar that fills the whole earth: *Yahuah (LORD) shall roar from on high, and utter his voice from his holy habitation; he shall mightily roar upon his habitation; he shall give a shout, as they that tread the grapes, against all the inhabitants of the earth. A noise shall come even to the ends of the earth; for Yahuah (LORD) hath a controversy with the nations, he will plead with all flesh; he will give them that are wicked to the sword* (25:30-31). The Judge roars like a lion and shouts like a grape-treader, and *the slain of Yahuah (LORD) shall be at that day from one end of the earth even unto the other end of the earth* (25:33); at the last *he hath forsaken his covert, as the lion: for their land is desolate because of... his fierce anger* (25:38). Amos opens his oracles against the nations with this very roar: *Yahuah (LORD) will roar from Zion, and utter his voice from Jerusalem; and the habitations of the shepherds shall mourn* (Amos 1:2). Joel hears it too — *Yahuah (LORD) also shall roar out of Zion, and utter his voice from Jerusalem; and the heavens and the earth shall shake: but Yahuah (LORD) will be the hope of his people* (Joel 3:16) — and Joel names the vintage that the roar announces: *Put ye in the sickle, for the harvest is ripe... the press is full, the fats overflow; for their wickedness is great* (Joel 3:13). The shout *as they that tread the grapes* is the treading of the winepress of wrath, and John sees it trodden: *gather the clusters of the vine of the earth; for her grapes are fully ripe* (Revelation 14:18); *and gathered the vine of the earth, and cast it into the great winepress of the wrath of Elohim (God)* (Revelation 14:19); *he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God)* (Revelation 19:15). The roar from on high and the treading of the grapes are the one great day when Yahuah pleads his controversy with all flesh.',
+       sv.verse_id, ev.verse_id, 'free', 34606
+  FROM _s309_jer25_lookup sv, _s309_jer25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=25 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I Daniel understood by books the number of the years... that he would accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2) — Daniel READS Jeremiah 25:11 to count the appointed seventy.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-seventy-years-the-land-shall-enjoy-her-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *until the land had enjoyed her sabbaths... to fulfil threescore and ten years* (2 Chronicles 36:21) — the seventy years are the land''s unkept sabbaths repaid, to fulfil Jeremiah''s word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-seventy-years-the-land-shall-enjoy-her-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Then shall the land enjoy her sabbaths, as long as it lieth desolate* (Leviticus 26:34) — the Torah''s Sinai warning come true: the desolation is the land keeping its owed rest.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-seventy-years-the-land-shall-enjoy-her-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *because it did not rest in your sabbaths, when ye dwelt upon it* (Leviticus 26:35) — the reason for the seventy: the sabbath-debt of the land called in, not arbitrary wrath.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-seventy-years-the-land-shall-enjoy-her-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *after seventy years be accomplished at Babylon I will visit you* (Jeremiah 29:10) — the same measure that empties the land ends in mercy: when Babylon''s seventy are full, the return.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-seventy-years-the-land-shall-enjoy-her-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *he shall drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the cup of his indignation* (Revelation 14:10) — Jeremiah 25:15''s cup of fury is the cup of indignation in John''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=15
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-cup-of-the-wine-of-fury-all-nations-shall-drink'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *great Babylon came in remembrance before Elohim (God), to give unto her the cup of the wine of the fierceness of his wrath* (Revelation 16:19) — Babylon-Sheshach, last to drink in Jeremiah 25:26, drains the cup at the end.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=15
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=16 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-cup-of-the-wine-of-fury-all-nations-shall-drink'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *in the hand of Yahuah (LORD) there is a cup... all the wicked of the earth shall... drink them* (Psalm 75:8) — the same red cup in the same hand; the wicked drink even the dregs.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=15
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=75 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-cup-of-the-wine-of-fury-all-nations-shall-drink'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *thou hast drunken the dregs of the cup of trembling* (Isaiah 51:17) — Jerusalem drinks the cup FIRST (Jeremiah 25:29), then it is passed to her oppressors.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=15
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-cup-of-the-wine-of-fury-all-nations-shall-drink'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *art thou he that shall altogether go unpunished?... thou shalt surely drink of it* (Jeremiah 49:12) — the Edom-oracle echoes Jeremiah 25:29: judgment begins at Yahuah''s house, and no nation escapes the cup.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=29
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=49 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-the-cup-of-the-wine-of-fury-all-nations-shall-drink'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Yahuah (LORD) also shall roar out of Zion, and utter his voice from Jerusalem* (Joel 3:16) — the same roar as Jeremiah 25:30, terror to the wicked but the hope of his people.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=30
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-yahuah-shall-roar-from-on-high-the-winepress-of-his-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Yahuah (LORD) will roar from Zion, and utter his voice from Jerusalem* (Amos 1:2) — Amos opens his oracles against the nations with the roar of Jeremiah 25:30; the Lion heralds his controversy.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=30
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-yahuah-shall-roar-from-on-high-the-winepress-of-his-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Put ye in the sickle, for the harvest is ripe... the press is full* (Joel 3:13) — the vintage of wrath the roar announces; the treading of the grapes is the harvest of the wicked.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=30
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-yahuah-shall-roar-from-on-high-the-winepress-of-his-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *gathered the vine of the earth, and cast it into the great winepress of the wrath of Elohim (God)* (Revelation 14:19) — the shout of the grape-treaders (Jeremiah 25:30) consummated in John''s great winepress.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=30
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-yahuah-shall-roar-from-on-high-the-winepress-of-his-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *gather the clusters of the vine of the earth; for her grapes are fully ripe* (Revelation 14:18) — the ripening harvest the roar of Jeremiah 25:30 announces, ready for the winepress.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=30
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-yahuah-shall-roar-from-on-high-the-winepress-of-his-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God)* (Revelation 19:15) — the One who shouts as the grape-treaders (Jeremiah 25:30) is the rider Faithful and True who treads the winepress alone.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=25 AND sv.verse_number=30
+  JOIN _s309_jer25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-25-yahuah-shall-roar-from-on-high-the-winepress-of-his-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_26.sql (Jeremiah 26) -----
+-- Chapter: Jeremiah 26 — THE TEMPLE-SERMON TRIAL. Jeremiah is sent to the court of the LORD'S house to
+-- speak ALL the words, diminish not a word: IF ye will not hearken to walk in my law, THEN will I make
+-- this house like Shiloh (the temple is no protection if the Torah is forsaken — Shiloh the warning).
+-- For the word the priests and prophets and all the people seize him: *Thou shalt surely die... This man
+-- is worthy to die; for he hath prophesied against this city* — the true prophet threatened with death
+-- for the unwelcome word, a TYPE of the Messiah's own trial. The princes and people answer: *This man is
+-- not worthy to die: for he hath spoken to us in the name of Yahuah (LORD)*. The elders cite precedent:
+-- Micah the Morasthite prophesied *Zion shall be plowed like a field*, and Hezekiah did not slay him but
+-- feared Yahuah and was heard — prophecy is conditional, repentance averts the evil. The chapter closes
+-- on Urijah the prophet, who spoke the same word, fled, was fetched from Egypt and slain (the cost of
+-- faithfulness) — Jeremiah delivered only by the hand of Ahikam.
+-- Tag: jer26   Temp view: _s309_jer26_lookup
+-- Sort band: base 34625, step 3 -> threads at 34625, 34628, 34631 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',26,v
+--
+-- Jeremiah 26 coverage:
+--   v.1-3 (Stand in the court of the LORD'S house... speak all the words... diminish not a word; if so be
+--          they will hearken, and turn every man from his evil way, that I may repent me of the evil)
+--        NT:     none warranted (the commission + conditional-repentance preface; held in prose, answered
+--                in the Micah/Hezekiah precedent of THREAD 3)
+--        Extras: none warranted
+--        Tanakh: none separate (preface to THREAD 1; the repentance-averts theme carried by THREAD 3)
+--   ★★ v.4-6 (If ye will not hearken to me, to walk in my law, which I have set before you... Then will I
+--          make this house like Shiloh, and will make this city a curse to all the nations)
+--        NT:     ★★ Matthew 23:38 (Behold, your house is left unto you desolate) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 7:14 (will I do unto this house... as I have done to Shiloh — lateral, the
+--                same Shiloh-sermon), ★★ 1 Samuel 4:11 (the ark of Elohim was taken — Shiloh fallen),
+--                ★ Psalm 78:60 (he forsook the tabernacle of Shiloh) — THREAD 1
+--   v.7 (the priests and the prophets and all the people heard Jeremiah speaking these words)
+--        NT/Extras/Tanakh: none warranted (narrative hinge into the seizure of THREAD 2)
+--   ★★ v.8-11,16 (they took him, Thou shalt surely die... This man is worthy to die; for he hath
+--          prophesied against this city... the princes and all the people: This man is not worthy to die:
+--          for he hath spoken to us in the name of Yahuah (LORD))
+--        NT:     ★★ Matthew 23:37 (O Jerusalem... thou that killest the prophets), ★★ Acts 7:52 (which of
+--                the prophets have not your fathers persecuted?), ★ Luke 13:33 (it cannot be that a prophet
+--                perish out of Jerusalem), ★★ Matthew 26:61 (this fellow said, I am able to destroy the
+--                temple — the temple-charge against the Messiah), ★★ Matthew 26:66 (He is guilty of death)
+--                — THREAD 2
+--        Extras: none warranted
+--        Tanakh: held in prose — the persecuted true prophet, a type of the Messiah's trial
+--   v.12-15 (Yahuah sent me to prophesy against this house... amend your ways... I am in your hand... if ye
+--          put me to death, ye shall surely bring innocent blood upon yourselves)
+--        NT:     none warranted distinct (the innocent-blood warning + amend-your-ways held in THREAD 2
+--                prose; the conditional-repentance answered in THREAD 3)
+--        Extras: none warranted
+--        Tanakh: held in prose — the prophet's defence and the innocent-blood warning bound to THREAD 2
+--   v.17 (then rose up certain of the elders of the land, and spake to all the assembly)
+--        NT/Extras/Tanakh: none warranted (narrative hinge into the Micah precedent of THREAD 3)
+--   ★ v.18-19 (Micah the Morasthite prophesied... Zion shall be plowed like a field, and Jerusalem shall
+--          become heaps... Did Hezekiah... not fear Yahuah, and besought Yahuah, and Yahuah repented him of
+--          the evil?)
+--        NT:     none warranted (the Tanakh-internal precedent of conditional prophecy + repentance; clean
+--                Tanakh weave)
+--        Extras: none warranted
+--        Tanakh: ★★ Micah 3:12 (therefore shall Zion for your sake be plowed as a field — the verse quoted
+--                word for word), ★ 2 Kings 19:15 (Hezekiah prayed before Yahuah), ★ 2 Chronicles 32:26
+--                (Hezekiah humbled himself... so that the wrath of Yahuah came not), ★ Jonah 3:10 (Elohim
+--                repented of the evil), ★ Jeremiah 18:8 (if that nation turn from their evil, I will repent
+--                — lateral, the conditional-prophecy principle) — THREAD 3
+--   v.20-24 (Urijah the son of Shemaiah prophesied... the king sought to put him to death... they fetched
+--          him out of Egypt... who slew him with the sword; nevertheless the hand of Ahikam was with
+--          Jeremiah, that they should not give him into the hand of the people)
+--        NT:     none warranted (the cost of faithfulness — Urijah martyred, Jeremiah delivered; woven into
+--                THREAD 2 prose, the persecuted-prophet motif)
+--        Extras: none warranted
+--        Tanakh: none separate (the contrasting fates; Urijah slain, Jeremiah spared — woven in prose)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-26-this-house-like-shiloh-the-temple-no-protection-if-the-torah-is-forsaken — NT (Matthew 23) + Tanakh (Jeremiah 7, 1 Samuel 4, Psalm 78) [free]
+--      (★★ the forsaken house: walk in my law OR the house becomes like Shiloh; the temple is no shield for a Torah-forsaking people)
+--   2. jeremiah-26-the-prophet-threatened-with-death-for-the-word-a-type-of-the-messiahs-trial — NT (Matthew 23, Acts 7, Luke 13, Matthew 26) [free]
+--      (★★ the true prophet seized and condemned for the unwelcome word — Jerusalem that kills the prophets, fulfilled in the Messiah's own temple-trial)
+--   3. jeremiah-26-micah-cited-and-hezekiahs-repentance-prophecy-is-conditional — Tanakh (Micah 3, 2 Kings 19, 2 Chronicles 32, Jonah 3, Jeremiah 18) [free]
+--      (★ the elders cite Micah and Hezekiah: prophecy is conditional, repentance averts the evil — Micah 3:12 quoted word for word)
+--
+-- Framing notes:
+--   ★★ THE HOUSE LIKE SHILOH (THREAD 1): *If ye will not hearken to me, to walk in my law, which I have set
+--      before you... Then will I make this house like Shiloh, and will make this city a curse to all the
+--      nations of the earth* (26:4-6). The condition is the Torah: the temple is NO protection for a people
+--      who forsake the instruction. Shiloh is the warning — the first place Yahuah set his name, where the
+--      ark stood, yet *the ark of Elohim (God) was taken* (1 Sam 4:11) and *he forsook the tabernacle of
+--      Shiloh* (Ps 78:60). Jeremiah preached the same in ch.7: *Therefore will I do unto this house, which
+--      is called by my name, wherein ye trust... as I have done to Shiloh* (Jer 7:14). And the Messiah
+--      speaks the verdict over the same house: *Behold, your house is left unto you desolate* (Matt 23:38).
+--      The sanctuary does not shield a covenant-forsaking people; only walking in the Torah does.
+--   ★★ THE PERSECUTED PROPHET, A TYPE OF THE MESSIAH'S TRIAL (THREAD 2): for speaking the word *the priests
+--      and the prophets and all the people took him, saying, Thou shalt surely die* (26:8); *This man is
+--      worthy to die; for he hath prophesied against this city* (26:11) — yet the princes and people answer,
+--      *This man is not worthy to die: for he hath spoken to us in the name of Yahuah (LORD)* (26:16). This
+--      is the pattern the Messiah names — *O Jerusalem, Jerusalem, thou that killest the prophets, and
+--      stonest them which are sent unto thee* (Matt 23:37); *which of the prophets have not your fathers
+--      persecuted?* (Acts 7:52); *it cannot be that a prophet perish out of Jerusalem* (Luke 13:33). And the
+--      type lands on the Messiah's own temple-trial: false witnesses say *This fellow said, I am able to
+--      destroy the temple of Elohim (God)* (Matt 26:61), and the council renders the very verdict Jeremiah
+--      escaped — *He is guilty of death* (Matt 26:66). Jeremiah threatened for prophesying against the
+--      house prefigures the Messiah condemned for a word about the temple; Urijah, who spoke the same word,
+--      WAS slain (26:20-23) — the cost of faithfulness, and Jeremiah delivered only by Ahikam's hand (26:24).
+--   ★ MICAH CITED, HEZEKIAH'S REPENTANCE (THREAD 3): the elders plead precedent — *Micah the Morasthite
+--      prophesied in the days of Hezekiah... Zion shall be plowed like a field, and Jerusalem shall become
+--      heaps* (26:18), quoting Micah word for word: *Therefore shall Zion for your sake be plowed as a
+--      field, and Jerusalem shall become heaps* (Micah 3:12). Yet *Did Hezekiah... not fear Yahuah (LORD),
+--      and besought Yahuah (LORD), and Yahuah (LORD) repented him of the evil?* (26:19). The point: prophecy
+--      is CONDITIONAL — *if so be they will hearken, and turn every man from his evil way, that I may repent
+--      me of the evil* (26:3). Hezekiah prayed (2 Kgs 19:15) and humbled himself (2 Chr 32:26), and the
+--      wrath came not; Nineveh turned and *Elohim (God) repented of the evil* (Jonah 3:10); and Yahuah's own
+--      rule is stated in Jeremiah 18: *If that nation... turn from their evil, I will repent of the evil*
+--      (Jer 18:8). The threatened judgment is a summons to repent, not a sealed doom; to slay the prophet is
+--      to *procure great evil against our souls* (26:19).
+--   VERSES WITH NO SEPARATE ADD: v.1-3 (the commission + conditional-repentance preface — answered by THREAD
+--      3), v.7 (the hearing — narrative hinge into THREAD 2), v.12-15 (the prophet's defence + innocent-blood
+--      warning — woven into THREAD 2 prose), v.17 (the elders rise — hinge into THREAD 3), v.20-24 (Urijah
+--      martyred / Jeremiah spared by Ahikam — the cost of faithfulness, woven into THREAD 2 prose). All
+--      blocks recorded above; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): this house like Shiloh — the temple no protection if the Torah is forsaken
+    ('canon','jeremiah',26,6,'canon','jeremiah',7,14,'free',
+      E'*Therefore will I do unto this house, which is called by my name, wherein ye trust, and unto the place which I gave to you and to your fathers, as I have done to Shiloh* (Jeremiah 7:14). This is Jeremiah''s own earlier temple-sermon, the lateral twin of *Then will I make this house like Shiloh, and will make this city a curse to all the nations of the earth* (Jeremiah 26:6). In both the house *wherein ye trust* is no shield: the One who set his name in Shiloh and abandoned it will do the same to this house if the people forsake his law.'),
+    ('canon','jeremiah',26,6,'canon','1-samuel',4,11,'free',
+      E'*And the ark of Elohim (God) was taken; and the two sons of Eli, Hophni and Phinehas, were slain* (1 Samuel 4:11). This is what *like Shiloh* (Jeremiah 26:6) means in history: at Shiloh the ark itself was taken and the sanctuary fell, for the house had become corrupt. The warning to the temple is concrete — Yahuah (LORD) has forsaken his own dwelling-place once already; the holy house is no protection for a people who will not walk in his law.'),
+    ('canon','jeremiah',26,6,'canon','psalms',78,60,'free',
+      E'*So that he forsook the tabernacle of Shiloh, the tent which he placed among men* (Psalm 78:60). The psalm names the very precedent Jeremiah invokes — *Then will I make this house like Shiloh* (Jeremiah 26:6): Yahuah (LORD) once *forsook the tabernacle of Shiloh*, the tent he himself had placed among men, when Yashar''el (Israel) provoked him. The sanctuary stands or falls with the covenant; the building cannot save a Torah-forsaking people.'),
+    ('canon','jeremiah',26,6,'canon','matthew',23,38,'free',
+      E'*Behold, your house is left unto you desolate* (Matthew 23:38). The Messiah pronounces over the second temple the verdict Jeremiah pronounced over the first — *Then will I make this house like Shiloh, and will make this city a curse to all the nations* (Jeremiah 26:6). The house is *left desolate* for the same reason: a people who would not hearken, who killed the prophets sent to them. The temple is no protection where the covenant is forsaken.'),
+
+    -- THREAD 2 (★★): the prophet threatened with death for the word — a type of the Messiah's trial
+    ('canon','jeremiah',26,8,'canon','matthew',23,37,'free',
+      E'*O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!* (Matthew 23:37). Jeremiah seized by *the priests and the prophets and all the people... saying, Thou shalt surely die* (Jeremiah 26:8) is one instance of the pattern the Messiah names: Jerusalem kills the very prophets Yahuah (LORD) sends to gather her. The unwelcome word is answered with a death-sentence.'),
+    ('canon','jeremiah',26,8,'canon','acts',7,52,'free',
+      E'*Which of the prophets have not your fathers persecuted? and they have slain them which shewed before of the coming of the Just One; of whom ye have been now the betrayers and murderers* (Acts 7:52). Stephen names the whole history of which Jeremiah''s trial — *Thou shalt surely die* (Jeremiah 26:8) — is part: there is scarcely a prophet the fathers did not persecute. The seizure of Jeremiah for prophesying against the house is the same persecution that runs from the prophets to the Just One himself.'),
+    ('canon','jeremiah',26,11,'canon','luke',13,33,'free',
+      E'*Nevertheless I must walk to day, and to morrow, and the day following: for it cannot be that a prophet perish out of Jerusalem* (Luke 13:33). The charge against Jeremiah — *This man is worthy to die; for he hath prophesied against this city* (Jeremiah 26:11) — is the very thing the Messiah names as Jerusalem''s settled way: the city where the prophets perish. Jeremiah tried for a word against the city prefigures the Greater Prophet who set his face to the same city.'),
+    ('canon','jeremiah',26,11,'canon','matthew',26,61,'free',
+      E'*And said, This fellow said, I am able to destroy the temple of Elohim (God), and to build it in three days* (Matthew 26:61). The temple-charge laid against Jeremiah — *he hath prophesied against this city* (Jeremiah 26:11) — is laid again against the Messiah at his trial: a word about the temple turned into a capital accusation. The true prophet condemned for speaking against the house is the type; the Messiah arraigned on the temple-charge is the fulfilment.'),
+    ('canon','jeremiah',26,8,'canon','matthew',26,66,'free',
+      E'*What think ye? They answered and said, He is guilty of death* (Matthew 26:66). The council renders against the Messiah the very verdict the priests and prophets sought against Jeremiah — *Thou shalt surely die* (Jeremiah 26:8). Jeremiah was delivered (26:24); the Messiah was not — he is *guilty of death* in their mouths, the true prophet condemned, fulfilling the pattern of Jerusalem that kills the ones Yahuah (LORD) sends.'),
+
+    -- THREAD 3 (★): Micah cited and Hezekiah's repentance — prophecy is conditional
+    ('canon','jeremiah',26,18,'canon','micah',3,12,'free',
+      E'*Therefore shall Zion for your sake be plowed as a field, and Jerusalem shall become heaps, and the mountain of the house as the high places of the forest* (Micah 3:12). The elders quote Micah word for word — *Zion shall be plowed like a field, and Jerusalem shall become heaps* (Jeremiah 26:18) — as the precedent that a prophet may pronounce ruin on the holy city and not be slain for it. Micah said the same in Hezekiah''s day, and the king feared Yahuah (LORD) instead of killing the prophet.'),
+    ('canon','jeremiah',26,19,'canon','2-kings',19,15,'free',
+      E'*And Hezekiah prayed before Yahuah (LORD), and said, O Yahuah Elohim (LORD God) of Yashar''el (Israel), which dwellest between the cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth; thou hast made heaven and earth* (2 Kings 19:15). The elders ask *did he not fear Yahuah (LORD), and besought Yahuah (LORD)* (Jeremiah 26:19) — and here is Hezekiah doing exactly that, going up to the house of Yahuah and praying. Because the king sought Yahuah, the threatened evil was turned away; the prophet''s word is a summons to repent.'),
+    ('canon','jeremiah',26,19,'canon','2-chronicles',32,26,'free',
+      E'*Notwithstanding Hezekiah humbled himself for the pride of his heart, both he and the inhabitants of Jerusalem, so that the wrath of Yahuah (LORD) came not upon them in the days of Hezekiah* (2 Chronicles 32:26). The elders'' point is sealed here — *Yahuah (LORD) repented him of the evil which he had pronounced against them* (Jeremiah 26:19): when Hezekiah humbled himself, *the wrath of Yahuah (LORD) came not*. The pronounced judgment was averted by repentance, exactly as Jeremiah''s own commission promised (26:3).'),
+    ('canon','jeremiah',26,3,'canon','jonah',3,10,'free',
+      E'*And Elohim (God) saw their works, that they turned from their evil way; and Elohim (God) repented of the evil, that he had said that he would do unto them; and he did it not* (Jonah 3:10). Jeremiah''s commission carries the same conditional hope — *If so be they will hearken, and turn every man from his evil way, that I may repent me of the evil* (Jeremiah 26:3). Nineveh turned, and the threatened doom was lifted; the prophecy of ruin is a call to repentance, and repentance averts the evil.'),
+    ('canon','jeremiah',26,3,'canon','jeremiah',18,8,'free',
+      E'*If that nation, against whom I have pronounced, turn from their evil, I will repent of the evil that I thought to do unto them* (Jeremiah 18:8). This is the rule behind the whole trial — *that I may repent me of the evil, which I purpose to do unto them* (Jeremiah 26:3): the pronounced judgment is conditional, withdrawn when the nation turns. The elders rightly read Micah and Hezekiah by this principle; the threat is a summons, not a sealed doom.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-26-this-house-like-shiloh-the-temple-no-protection-if-the-torah-is-forsaken',
+       E'This house like Shiloh — the temple is no protection if the Torah is forsaken',
+       E'Jeremiah is sent to the very court of the temple to lay down the condition plainly: *Thus saith Yahuah (LORD); If ye will not hearken to me, to walk in my law, which I have set before you, To hearken to the words of my servants the prophets, whom I sent unto you, both rising up early, and sending them, but ye have not hearkened; Then will I make this house like Shiloh, and will make this city a curse to all the nations of the earth* (26:4-6). The holy house is no charm and no shield: the one thing that keeps it standing is a people who *walk in my law*. And the warning is not abstract — Shiloh was the first place Yahuah (LORD) set his name, where the ark dwelt, and it fell. *And the ark of Elohim (God) was taken; and the two sons of Eli, Hophni and Phinehas, were slain* (1 Samuel 4:11); the psalm remembers it — *So that he forsook the tabernacle of Shiloh, the tent which he placed among men* (Psalm 78:60). Jeremiah had preached this same sermon already: *Therefore will I do unto this house, which is called by my name, wherein ye trust, and unto the place which I gave to you and to your fathers, as I have done to Shiloh* (Jeremiah 7:14) — the people trusted the building and forsook the covenant, and so the building could not save them. The pattern reaches forward to the Messiah, who pronounces the identical verdict over the second temple: *Behold, your house is left unto you desolate* (Matthew 23:38). In every age the lesson is one: the sanctuary stands with the covenant and falls with it. The temple is no protection for a people who will not walk in the Torah of Yahuah (LORD).',
+       sv.verse_id, ev.verse_id, 'free', 34625
+  FROM _s309_jer26_lookup sv, _s309_jer26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=26 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-26-the-prophet-threatened-with-death-for-the-word-a-type-of-the-messiahs-trial',
+       E'The prophet threatened with death for the word — a type of the Messiah''s trial',
+       E'No sooner had Jeremiah finished the word than the leaders of the worship turned on the messenger: *the priests and the prophets and all the people took him, saying, Thou shalt surely die* (26:8); *Why hast thou prophesied in the name of Yahuah (LORD), saying, This house shall be like Shiloh, and this city shall be desolate without an inhabitant?* (26:9). Before the princes they press the charge: *This man is worthy to die; for he hath prophesied against this city* (26:11). Jeremiah answers without flinching — *Yahuah (LORD) sent me to prophesy against this house and against this city... As for me, behold, I am in your hand: do with me as seemeth good and meet unto you. But know ye for certain, that if ye put me to death, ye shall surely bring innocent blood upon yourselves* (26:12-15) — and the princes and people relent: *This man is not worthy to die: for he hath spoken to us in the name of Yahuah Eloheinu (the LORD our God)* (26:16). This is the recurring pattern of the holy city: *O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee... and ye would not!* (Matthew 23:37); *Which of the prophets have not your fathers persecuted?* (Acts 7:52); *it cannot be that a prophet perish out of Jerusalem* (Luke 13:33). And the type lands squarely on the Messiah''s own trial, for he too was arraigned on a temple-word: *This fellow said, I am able to destroy the temple of Elohim (God), and to build it in three days* (Matthew 26:61), and the council rendered the very sentence Jeremiah escaped — *He is guilty of death* (Matthew 26:66). Jeremiah condemned for prophesying against the house, then delivered, prefigures the Greater Prophet condemned for a word about the temple and not delivered. And the cost was real even in Jeremiah''s day: *there was also a man that prophesied in the name of Yahuah (LORD), Urijah the son of Shemaiah... who prophesied against this city... the king sought to put him to death... who slew him with the sword* (26:20-23). Urijah, who spoke the same word, paid with his life; Jeremiah was spared only because *the hand of Ahikam the son of Shaphan was with Jeremiah* (26:24). The faithful word is costly, and the One who spoke it perfectly bore the full cost.',
+       sv.verse_id, ev.verse_id, 'free', 34628
+  FROM _s309_jer26_lookup sv, _s309_jer26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=26 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-26-micah-cited-and-hezekiahs-repentance-prophecy-is-conditional',
+       E'Micah cited and Hezekiah''s repentance — the threatened judgment is averted by turning',
+       E'When the death-charge is pressed, certain of the elders of the land rise to plead precedent — and the precedent is a prophet and a king: *Micah the Morasthite prophesied in the days of Hezekiah king of Yahudah (Judah), and spake to all the people of Yahudah (Judah), saying, Thus saith Yahuah Tseva''ot (LORD of hosts); Zion shall be plowed like a field, and Jerusalem shall become heaps, and the mountain of the house as the high places of a forest* (26:18). They quote Micah word for word: *Therefore shall Zion for your sake be plowed as a field, and Jerusalem shall become heaps* (Micah 3:12) — a prophecy of ruin on the holy city as harsh as anything Jeremiah said. Yet *Did Hezekiah king of Yahudah (Judah) and all Yahudah (Judah) put him at all to death? did he not fear Yahuah (LORD), and besought Yahuah (LORD), and Yahuah (LORD) repented him of the evil which he had pronounced against them?* (26:19). The king did not kill the prophet; he feared Yahuah (LORD) and prayed — *And Hezekiah prayed before Yahuah (LORD), and said, O Yahuah Elohim (LORD God) of Yashar''el (Israel)... thou art the Elohim (God), even thou alone* (2 Kings 19:15) — and *Hezekiah humbled himself for the pride of his heart... so that the wrath of Yahuah (LORD) came not upon them in the days of Hezekiah* (2 Chronicles 32:26). Here is the heart of it: prophecy of judgment is CONDITIONAL, a summons to repent. Jeremiah''s own commission said as much — *If so be they will hearken, and turn every man from his evil way, that I may repent me of the evil* (26:3) — and Yahuah (LORD) states the rule plainly in the next chapters: *If that nation, against whom I have pronounced, turn from their evil, I will repent of the evil that I thought to do unto them* (Jeremiah 18:8). Even Nineveh proves it: *Elohim (God) saw their works, that they turned from their evil way; and Elohim (God) repented of the evil... and he did it not* (Jonah 3:10). So the elders conclude that to slay the prophet for the word would only *procure great evil against our souls* (26:19). The faithful response to the threatened doom is not to silence the prophet but to turn — and the turning averts the evil.',
+       sv.verse_id, ev.verse_id, 'free', 34631
+  FROM _s309_jer26_lookup sv, _s309_jer26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=26 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Therefore will I do unto this house, which is called by my name, wherein ye trust... as I have done to Shiloh* (Jeremiah 7:14) — Jeremiah''s own earlier temple-sermon; the house wherein ye trust is no shield.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=6
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-this-house-like-shiloh-the-temple-no-protection-if-the-torah-is-forsaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *And the ark of Elohim (God) was taken... Hophni and Phinehas, were slain* (1 Samuel 4:11) — what *like Shiloh* means in history: at Shiloh the ark was taken and the sanctuary fell.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=6
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-this-house-like-shiloh-the-temple-no-protection-if-the-torah-is-forsaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *So that he forsook the tabernacle of Shiloh, the tent which he placed among men* (Psalm 78:60) — the psalm names the precedent: Yahuah (LORD) once forsook his own dwelling at Shiloh.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=6
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=60
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-this-house-like-shiloh-the-temple-no-protection-if-the-torah-is-forsaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Behold, your house is left unto you desolate* (Matthew 23:38) — the Messiah pronounces over the second temple the verdict Jeremiah pronounced over the first; the house no protection.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=6
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-this-house-like-shiloh-the-temple-no-protection-if-the-torah-is-forsaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee* (Matthew 23:37) — Jeremiah''s seizure is one instance of Jerusalem''s settled way with the prophets.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=8
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-the-prophet-threatened-with-death-for-the-word-a-type-of-the-messiahs-trial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Which of the prophets have not your fathers persecuted?* (Acts 7:52) — Stephen names the whole history of which Jeremiah''s *Thou shalt surely die* is part; it runs to the Just One.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=8
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-the-prophet-threatened-with-death-for-the-word-a-type-of-the-messiahs-trial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *it cannot be that a prophet perish out of Jerusalem* (Luke 13:33) — the charge *he hath prophesied against this city* is the city''s way: the place where prophets perish.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=13 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-the-prophet-threatened-with-death-for-the-word-a-type-of-the-messiahs-trial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *This fellow said, I am able to destroy the temple of Elohim (God)* (Matthew 26:61) — the temple-charge against Jeremiah is laid again against the Messiah at his trial.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=61
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-the-prophet-threatened-with-death-for-the-word-a-type-of-the-messiahs-trial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *He is guilty of death* (Matthew 26:66) — the council renders against the Messiah the very verdict sought against Jeremiah; Jeremiah delivered, the Messiah not.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=8
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=66
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-the-prophet-threatened-with-death-for-the-word-a-type-of-the-messiahs-trial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Therefore shall Zion for your sake be plowed as a field, and Jerusalem shall become heaps* (Micah 3:12) — the verse the elders quote word for word; Micah said it and was not slain.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=18
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-micah-cited-and-hezekiahs-repentance-prophecy-is-conditional'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *And Hezekiah prayed before Yahuah (LORD)... thou art the Elohim (God), even thou alone* (2 Kings 19:15) — the king *besought Yahuah* exactly as the elders recall; he prayed instead of killing the prophet.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-micah-cited-and-hezekiahs-repentance-prophecy-is-conditional'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Hezekiah humbled himself... so that the wrath of Yahuah (LORD) came not upon them* (2 Chronicles 32:26) — the threatened evil averted by repentance; Yahuah repented him of the evil he had pronounced.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-micah-cited-and-hezekiahs-repentance-prophecy-is-conditional'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Elohim (God) saw their works, that they turned from their evil way; and Elohim (God) repented of the evil* (Jonah 3:10) — Nineveh turned and the doom was lifted; the prophecy of ruin is a call to repent.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=3
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-micah-cited-and-hezekiahs-repentance-prophecy-is-conditional'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *If that nation... turn from their evil, I will repent of the evil that I thought to do unto them* (Jeremiah 18:8) — the rule behind the trial: pronounced judgment is conditional, withdrawn when the nation turns.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=26 AND sv.verse_number=3
+  JOIN _s309_jer26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=18 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-26-micah-cited-and-hezekiahs-repentance-prophecy-is-conditional'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_27.sql (Jeremiah 27) -----
+-- Chapter: Jeremiah 27 — THE YOKES AND BONDS. Jeremiah is told to make bonds and yokes and wear them:
+-- serve the king of Babylon and LIVE. Yahuah the MAKER of earth, man, and beast gives the kingdoms to
+-- whom he wills, and now has given all these lands into the hand of Nebuchadnezzar, my servant; all
+-- nations shall serve him. The nation that will not bring its neck under the yoke is punished by sword,
+-- famine, and pestilence; the nations that submit are let remain still in their own land. Against this,
+-- the false prophets cry "Ye shall not serve the king of Babylon" and "the vessels of Yahuah''s house
+-- shall now shortly be brought again" — a LIE; Yahuah did not send them. Two framework-bearing threads:
+-- (1) the Maker who disposes the kingdoms — submit to his appointed discipline and live; (2) the lying
+-- prophets of false hope, measured and exposed.
+-- Tag: jer27   Temp view: _s309_jer27_lookup   Session: s309
+-- Sort band: base 34650, step 3 -> threads at 34650, 34653 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',27,v
+--
+-- Jeremiah 27 coverage:
+--   v.1-4 (Make thee bonds and yokes... send them to the king of Edom, Moab, Ammon, Tyrus, Zidon...
+--          Thus saith Yahuah Tseva''ot, the Elohim of Yashar''el)
+--        NT:     none warranted (the sign-act preface — the yoke-message to the nations; woven in prose)
+--        Extras: none warranted
+--        Tanakh: none separate (preface to the Maker-disposes oracle of v.5-8)
+--   ★★ v.5-8 (I have made the earth, the man and the beast... by my great power... and have given it
+--          unto whom it seemed meet... I have given all these lands into the hand of Nebuchadnezzar...
+--          my servant... all nations shall serve him... the nation that will not serve him I will punish)
+--        NT:     ★★ Romans 13:1 (there is no power but of Elohim: the powers that be are ordained of
+--                Elohim) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 2:21 (he removeth kings, and setteth up kings), ★★ Daniel 2:37-38 (the Elohim
+--                of heaven hath given thee a kingdom... made thee ruler over them all), ★★ Daniel 4:17
+--                (the most High ruleth in the kingdom of men, and giveth it to whomsoever he will),
+--                ★ Jeremiah 25:9 (Nebuchadrezzar... my servant) — THREAD 1
+--   ★★ v.9-10 (hearken not ye to your prophets, nor diviners, nor dreamers... saying, Ye shall not serve
+--          the king of Babylon: for they prophesy a lie unto you, to remove you far from your land)
+--        NT:     held in THREAD 2 (the false-hope prophets)
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 23:21 (I have not sent these prophets, yet they ran), ★ Jeremiah 14:14
+--                (the prophets prophesy lies in my name: I sent them not) — THREAD 2
+--   ★ v.11 (the nations that bring their neck under the yoke... those will I let remain still in their
+--          own land... and they shall till it, and dwell therein)
+--        NT:     held in THREAD 1 (submit and live)
+--        Extras: none warranted
+--        Tanakh: held in THREAD 1 prose (the mercy on those who submit to the appointed discipline)
+--   v.12-13 (Bring your necks under the yoke of the king of Babylon, and serve him... and live. Why will
+--          ye die... by the sword, by the famine, and by the pestilence?)
+--        NT:     none warranted distinct (the "serve and live" repeated to Zedekiah; woven in THREAD 1)
+--        Extras: none warranted
+--        Tanakh: held in prose (the same yoke-and-live word turned to the king of Yahudah)
+--   ★★ v.14-16 (hearken not unto the words of the prophets... they prophesy a lie... I have not sent
+--          them, saith Yahuah, yet they prophesy a lie in my name... Hearken not... saying, the vessels
+--          of Yahuah''s house shall now shortly be brought again from Babylon: for they prophesy a lie)
+--        NT:     ★★ 2 Timothy 4:3-4 (they will not endure sound doctrine... having itching ears... turned
+--                unto fables) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 13:6 (they have made others to hope that they would confirm the word),
+--                ★ Lamentations 2:14 (thy prophets have seen vain and foolish things... false burdens) — THREAD 2
+--   v.17 (Hearken not unto them; serve the king of Babylon, and live: wherefore should this city be laid
+--          waste?)
+--        NT:     none warranted (the "serve and live" plea; held in THREAD 1 / THREAD 2 prose)
+--        Extras: none warranted     Tanakh: none separate
+--   v.18-22 (if they be prophets... let them make intercession that the vessels go not to Babylon... the
+--          pillars, the sea, the bases... They shall be carried to Babylon... until the day that I visit
+--          them... then will I bring them up, and restore them to this place)
+--        NT:     none warranted (the TRUE timetable — carried away, then restored in Yahuah''s time, NOT
+--                "now shortly"; the corrective to the lie; woven in THREAD 2 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the true word about the vessels answers the lie of v.16; held in THREAD 2)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-27-i-have-made-the-earth-and-give-it-to-whom-i-will — NT (Romans 13) + Tanakh (Daniel 2, Daniel 4, Jeremiah 25) [free]
+--      (★★ the Maker who disposes the kingdoms; Nebuchadnezzar my servant; submit to the appointed discipline and live)
+--   2. jeremiah-27-they-prophesy-a-lie-the-vessels-shall-not-shortly-return — NT (2 Timothy 4) + Tanakh (Jeremiah 23, Jeremiah 14, Ezekiel 13, Lamentations 2) [free]
+--      (★★ the lying prophets of false hope; I have not sent them; the vessels will NOT shortly return; the false-hope exposed)
+--
+-- Framing notes:
+--   ★★ THE MAKER WHO DISPOSES THE KINGDOMS (THREAD 1): the ground of the yoke-command is creation
+--      itself — *I have made the earth, the man and the beast that are upon the ground, by my great
+--      power and by my outstretched arm, and have given it unto whom it seemed meet unto me* (27:5).
+--      Because Yahuah MADE it, he disposes it: *And now have I given all these lands into the hand of
+--      Nebuchadnezzar the king of Babylon, my servant* (27:6); *And all nations shall serve him* (27:7).
+--      The Babylonian empire is not a triumph over Yahuah but an instrument IN his hand — Nebuchadnezzar
+--      is named *my servant* (27:6), the same title as Jeremiah 25:9. To resist the yoke is to resist
+--      the appointed discipline: *the nation... which will not serve the same Nebuchadnezzar... that
+--      nation will I punish* (27:8); to submit is to live: *the nations that bring their neck under the
+--      yoke of the king of Babylon, and serve him, those will I let remain still in their own land*
+--      (27:11). Daniel sings the same sovereignty: *he removeth kings, and setteth up kings* (Dan 2:21),
+--      *the Elohim (God) of heaven hath given thee a kingdom* (Dan 2:37), *the most High ruleth in the
+--      kingdom of men, and giveth it to whomsoever he will* (Dan 4:17). Paul names it as the order of
+--      every age: *there is no power but of Elohim (God): the powers that be are ordained of Elohim
+--      (God)* (Rom 13:1). The Maker disposes the kingdoms; the wise bring their neck under the yoke and
+--      live.
+--   ★★ THE LYING PROPHETS OF FALSE HOPE (THREAD 2): against the yoke-word the false prophets cry the
+--      opposite — *hearken not ye to your prophets... which speak unto you, saying, Ye shall not serve
+--      the king of Babylon: For they prophesy a lie unto you* (27:9-10). Yahuah disowns them flatly:
+--      *I have not sent them, saith Yahuah (LORD), yet they prophesy a lie in my name* (27:15) — the
+--      same disavowal as Jeremiah 23:21 (*I have not sent these prophets, yet they ran*) and 14:14 (*the
+--      prophets prophesy lies in my name: I sent them not*). Their specific lie is a false timetable of
+--      DELIVERANCE: *the vessels of the LORD''S house shall now shortly be brought again from Babylon:
+--      for they prophesy a lie unto you* (27:16). Ezekiel names the sin exactly — *they have made others
+--      to hope that they would confirm the word* (Ezek 13:6); Lamentations mourns it — *thy prophets
+--      have seen vain and foolish things for thee... false burdens* (Lam 2:14). The true word is the
+--      opposite of "now shortly": the vessels *shall be carried to Babylon, and there shall they be
+--      until the day that I visit them... then will I bring them up* (27:22) — restoration in Yahuah''s
+--      time, not the prophets''. Paul names the perennial appetite for such soothing lies: *the time
+--      will come when they will not endure sound doctrine; but after their own lusts shall they heap to
+--      themselves teachers, having itching ears; And they shall turn away their ears from the truth, and
+--      shall be turned unto fables* (2 Tim 4:3-4). The false-hope prophets tickle the ear and remove the
+--      people far from their land; the unwelcome true word saves it.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 (the sign-act of the bonds and yokes sent to the five nations —
+--      preface to the Maker-oracle, woven in THREAD 1 prose), v.12-13 (the same "serve and live" word
+--      turned to Zedekiah — THREAD 1), v.17 (the "serve and live" plea — THREADs 1/2 prose), v.18-22
+--      (the TRUE word about the vessels: carried away, then restored in Yahuah''s time — the corrective
+--      to the lie of v.16, woven in THREAD 2 prose). All meaningful blocks recorded; every section
+--      carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): I have made the earth and give it to whom I will — Nebuchadnezzar my servant
+    ('canon','jeremiah',27,5,'canon','daniel',2,21,'free',
+      E'*And he changeth the times and the seasons: he removeth kings, and setteth up kings: he giveth wisdom unto the wise, and knowledge to them that know understanding* (Daniel 2:21). Jeremiah grounds the yoke-command in the Maker''s right — *I have made the earth, the man and the beast that are upon the ground, by my great power and by my outstretched arm, and have given it unto whom it seemed meet unto me* (Jeremiah 27:5). Daniel says it of the very empire Jeremiah names: the One who made all things *removeth kings, and setteth up kings* — Nebuchadnezzar himself is raised and will be brought down at Yahuah (LORD)''s word, not his own.'),
+    ('canon','jeremiah',27,6,'canon','daniel',2,37,'free',
+      E'*Thou, O king, art a king of kings: for the Elohim (God) of heaven hath given thee a kingdom, power, and strength, and glory* (Daniel 2:37). Daniel tells Nebuchadnezzar to his face what Jeremiah declared — *And now have I given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant* (Jeremiah 27:6): the king of Babylon holds his kingdom only because *the Elohim (God) of heaven hath given* it him. The empire is a gift in the Maker''s hand, not a power that overcame him.'),
+    ('canon','jeremiah',27,6,'canon','daniel',2,38,'free',
+      E'*And wheresoever the children of men dwell, the beasts of the field and the fowls of the heaven hath he given into thine hand, and hath made thee ruler over them all. Thou art this head of gold* (Daniel 2:38). Daniel echoes Jeremiah''s grant down to the beasts — *the beasts of the field have I given him also to serve him* (Jeremiah 27:6): the Maker who owns *the man and the beast* (27:5) hands them into Nebuchadnezzar''s hand. The head of gold rules only what the Elohim (God) of heaven gave him to rule.'),
+    ('canon','jeremiah',27,5,'canon','daniel',4,17,'free',
+      E'*This matter is by the decree of the watchers, and the demand by the word of the holy ones: to the intent that the living may know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will, and setteth up over it the basest of men* (Daniel 4:17). This is the very principle of Jeremiah''s oracle — *I have... given it unto whom it seemed meet unto me* (Jeremiah 27:5): the El Elyon (most High) *ruleth in the kingdom of men, and giveth it to whomsoever he will*. The Maker disposes the kingdoms; even Babylon is held and handed by his will.'),
+    ('canon','jeremiah',27,5,'canon','romans',13,1,'free',
+      E'*Let every soul be subject unto the higher powers. For there is no power but of Elohim (God): the powers that be are ordained of Elohim (God)* (Romans 13:1). Paul names as the order of every age what Jeremiah declared of Babylon — *I have made the earth... and have given it unto whom it seemed meet unto me* (Jeremiah 27:5): *there is no power but of Elohim (God)*. The governing powers stand only as Yahuah (LORD) ordains them; to bring the neck under the appointed yoke is to bow to the One who set it.'),
+    ('canon','jeremiah',27,6,'canon','jeremiah',25,9,'free',
+      E'*Behold, I will send and take all the families of the north, saith Yahuah (LORD), and Nebuchadrezzar the king of Babylon, my servant, and will bring them against this land... and will utterly destroy them, and make them an astonishment* (Jeremiah 25:9). Two chapters apart Jeremiah gives Nebuchadnezzar the same astonishing title — *my servant* — that he gives here: *I have given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant* (Jeremiah 27:6). The pagan conqueror is Yahuah (LORD)''s instrument of discipline; the rod is in the Maker''s hand, and serves his purpose.'),
+
+    -- THREAD 2 (★★): they prophesy a lie — the vessels shall NOT shortly return; I have not sent them
+    ('canon','jeremiah',27,9,'canon','jeremiah',23,21,'free',
+      E'*I have not sent these prophets, yet they ran: I have not spoken to them, yet they prophesied* (Jeremiah 23:21). Jeremiah''s warning here — *hearken not ye to your prophets... which speak unto you, saying, Ye shall not serve the king of Babylon: For they prophesy a lie unto you* (Jeremiah 27:9-10) — is the same disavowal he speaks in chapter 23: Yahuah (LORD) *I have not sent these prophets, yet they ran*. They run unsent and speak unbidden; their commission is their own, not Yahuah (LORD)''s.'),
+    ('canon','jeremiah',27,15,'canon','jeremiah',14,14,'free',
+      E'*Then Yahuah (LORD) said unto me, The prophets prophesy lies in my name: I sent them not, neither have I commanded them, neither spake unto them: they prophesy unto you a false vision and divination, and a thing of nought, and the deceit of their heart* (Jeremiah 14:14). Yahuah (LORD)''s verdict in chapter 14 is word for word the verdict here — *I have not sent them, saith Yahuah (LORD), yet they prophesy a lie in my name* (Jeremiah 27:15). The lie is dressed in the Name but spoken from the deceit of their own heart; the borrowed Name does not make it true.'),
+    ('canon','jeremiah',27,16,'canon','ezekiel',13,6,'free',
+      E'*They have seen vanity and lying divination, saying, Yahuah (LORD) saith: and Yahuah (LORD) hath not sent them: and they have made others to hope that they would confirm the word* (Ezekiel 13:6). Ezekiel names the exact sin of the prophets Jeremiah rebukes — *the vessels of the LORD''S house shall now shortly be brought again from Babylon: for they prophesy a lie unto you* (Jeremiah 27:16): they *made others to hope* on a word Yahuah (LORD) never sent. False hope is no kindness; it removes the people far from their land (27:10) by a comfort that is a lie.'),
+    ('canon','jeremiah',27,16,'canon','lamentations',2,14,'free',
+      E'*Thy prophets have seen vain and foolish things for thee: and they have not discovered thine iniquity, to turn away thy captivity; but have seen for thee false burdens and causes of banishment* (Lamentations 2:14). The fall Jeremiah warned of is mourned in the Lamentations: the prophets who cried *the vessels... shall now shortly be brought again* (Jeremiah 27:16) saw *false burdens and causes of banishment*. Their flattering visions did not uncover the people''s sin nor turn away the captivity; the soothing lie ended in exile.'),
+    ('canon','jeremiah',27,16,'canon','2-timothy',4,3,'free',
+      E'*For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears* (2 Timothy 4:3). Paul names the perennial appetite that the false prophets of Jeremiah 27 fed — those who would rather hear *the vessels... shall now shortly be brought again from Babylon* (Jeremiah 27:16) than the hard true word of the yoke. People with *itching ears* heap up teachers who tell them what they wish; the comfortable lie is always the better-attended sermon.'),
+    ('canon','jeremiah',27,16,'canon','2-timothy',4,4,'free',
+      E'*And they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4). This is the very turning Jeremiah confronted: the people turned their ears from the true word — *serve the king of Babylon, and live* (Jeremiah 27:17) — to the fable that *the vessels... shall now shortly be brought again from Babylon* (Jeremiah 27:16). The truth was unwelcome and the fable was sweet; turning from the one to the other is the road to ruin Jeremiah names.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-27-i-have-made-the-earth-and-give-it-to-whom-i-will',
+       E'I have made the earth and give it to whom I will — Nebuchadnezzar my servant, serve and live',
+       E'Jeremiah is told to make bonds and yokes, wear them on his neck, and send the message to the five nations (27:2-3) — a sign-act commanding submission to Babylon. The ground of the command is creation itself: *I have made the earth, the man and the beast that are upon the ground, by my great power and by my outstretched arm, and have given it unto whom it seemed meet unto me* (27:5). Because Yahuah (LORD) MADE it, he disposes it as he wills — and now he wills the discipline of Babylon: *And now have I given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant; and the beasts of the field have I given him also to serve him. And all nations shall serve him* (27:6-7). Mark the title: Nebuchadnezzar, the pagan conqueror, is *my servant* — the same astonishing name Jeremiah gives him in *Nebuchadrezzar the king of Babylon, my servant* (Jeremiah 25:9). Babylon is not a power that overcame Yahuah (LORD); it is a rod in his hand. So to resist the yoke is to resist the appointed discipline — *the nation and kingdom which will not serve the same Nebuchadnezzar... that nation will I punish... with the sword, and with the famine, and with the pestilence* (27:8) — and to submit is to live: *the nations that bring their neck under the yoke of the king of Babylon, and serve him, those will I let remain still in their own land... and they shall till it, and dwell therein* (27:11). Daniel sings the same sovereignty over this very empire: *he removeth kings, and setteth up kings* (Daniel 2:21); *the Elohim (God) of heaven hath given thee a kingdom, power, and strength, and glory* (Daniel 2:37); *the beasts of the field... hath he given into thine hand, and hath made thee ruler over them all* (Daniel 2:38); *the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will* (Daniel 4:17). And Paul names it as the order of every age: *there is no power but of Elohim (God): the powers that be are ordained of Elohim (God)* (Romans 13:1). The Maker disposes the kingdoms; the wise bring their neck under the yoke and live.',
+       sv.verse_id, ev.verse_id, 'free', 34650
+  FROM _s309_jer27_lookup sv, _s309_jer27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=27 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-27-they-prophesy-a-lie-the-vessels-shall-not-shortly-return',
+       E'They prophesy a lie — I have not sent them; the vessels shall not shortly return',
+       E'Against the hard true word of the yoke, the false prophets cry the opposite, and Jeremiah warns the people off them: *Therefore hearken not ye to your prophets, nor to your diviners, nor to your dreamers, nor to your enchanters, nor to your sorcerers, which speak unto you, saying, Ye shall not serve the king of Babylon: For they prophesy a lie unto you, to remove you far from your land; and that I should drive you out, and ye should perish* (27:9-10). Yahuah (LORD) disowns them flatly: *I have not sent them, saith Yahuah (LORD), yet they prophesy a lie in my name; that I might drive you out, and that ye might perish* (27:15) — the same disavowal he speaks elsewhere: *I have not sent these prophets, yet they ran: I have not spoken to them, yet they prophesied* (Jeremiah 23:21); *The prophets prophesy lies in my name: I sent them not... they prophesy unto you a false vision and divination... and the deceit of their heart* (Jeremiah 14:14). Their particular lie is a false timetable of deliverance: *Hearken not to the words of your prophets that prophesy unto you, saying, Behold, the vessels of the LORD''S house shall now shortly be brought again from Babylon: for they prophesy a lie unto you* (27:16). Ezekiel names the exact sin — *they have made others to hope that they would confirm the word* (Ezekiel 13:6); Lamentations mourns its end — *Thy prophets have seen vain and foolish things for thee... but have seen for thee false burdens and causes of banishment* (Lamentations 2:14). And the true word is the opposite of "now shortly": the vessels *shall be carried to Babylon, and there shall they be until the day that I visit them, saith Yahuah (LORD); then will I bring them up, and restore them to this place* (27:22) — restoration in Yahuah (LORD)''s time, not the prophets''. Paul names the perennial appetite that feeds such lies: *the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears; And they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:3-4). The soothing lie is always the better-attended sermon; the unwelcome true word — *serve the king of Babylon, and live* (27:17) — is the one that saves the city.',
+       sv.verse_id, ev.verse_id, 'free', 34653
+  FROM _s309_jer27_lookup sv, _s309_jer27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=27 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he removeth kings, and setteth up kings* (Daniel 2:21) — the Maker''s right Jeremiah 27:5 names; the One who made all things raises and removes Babylon at his word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-i-have-made-the-earth-and-give-it-to-whom-i-will'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the Elohim (God) of heaven hath given thee a kingdom, power, and strength, and glory* (Daniel 2:37) — Daniel tells Nebuchadnezzar to his face what Jeremiah 27:6 declares: the king holds his kingdom only as a gift.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-i-have-made-the-earth-and-give-it-to-whom-i-will'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the beasts of the field... hath he given into thine hand, and hath made thee ruler over them all* (Daniel 2:38) — Daniel echoes Jeremiah 27:6 down to the beasts; the head of gold rules only what was given him.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-i-have-made-the-earth-and-give-it-to-whom-i-will'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will* (Daniel 4:17) — the very principle of Jeremiah 27:5; the Maker disposes the kingdoms, even Babylon.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-i-have-made-the-earth-and-give-it-to-whom-i-will'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *there is no power but of Elohim (God): the powers that be are ordained of Elohim (God)* (Romans 13:1) — Paul makes the order of every age what Jeremiah 27:5 declared of Babylon; bow to the One who set the yoke.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=13 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-i-have-made-the-earth-and-give-it-to-whom-i-will'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Nebuchadrezzar the king of Babylon, my servant* (Jeremiah 25:9) — the same astonishing title as Jeremiah 27:6; the pagan conqueror is Yahuah (LORD)''s instrument of discipline, the rod in his hand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-i-have-made-the-earth-and-give-it-to-whom-i-will'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I have not sent these prophets, yet they ran* (Jeremiah 23:21) — the same disavowal as Jeremiah 27:9-10; they run unsent and speak unbidden, their commission their own.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=9
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-they-prophesy-a-lie-the-vessels-shall-not-shortly-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The prophets prophesy lies in my name: I sent them not... the deceit of their heart* (Jeremiah 14:14) — Yahuah (LORD)''s verdict word for word with Jeremiah 27:15; the lie is dressed in the Name but spoken from their own heart.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=15
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-they-prophesy-a-lie-the-vessels-shall-not-shortly-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *they have made others to hope that they would confirm the word* (Ezekiel 13:6) — Ezekiel names the exact sin of Jeremiah 27:16; false hope removes the people far from their land by a comfort that is a lie.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=16
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=13 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-they-prophesy-a-lie-the-vessels-shall-not-shortly-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *thy prophets have seen vain and foolish things... false burdens and causes of banishment* (Lamentations 2:14) — the fall Jeremiah 27:16 warned of, mourned; the flattering visions ended in exile.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=16
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-they-prophesy-a-lie-the-vessels-shall-not-shortly-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *they will not endure sound doctrine... having itching ears* (2 Timothy 4:3) — Paul names the appetite the false prophets of Jeremiah 27:16 fed; the comfortable lie is the better-attended sermon.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=16
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-they-prophesy-a-lie-the-vessels-shall-not-shortly-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4) — the very turning Jeremiah 27 confronted: from *serve and live* to the fable that the vessels return shortly.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=27 AND sv.verse_number=16
+  JOIN _s309_jer27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-27-they-prophesy-a-lie-the-vessels-shall-not-shortly-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_28.sql (Jeremiah 28) -----
+-- Chapter: Jeremiah 28 — Hananiah the false prophet breaks Jeremiah''s wooden yoke and prophesies that
+-- within two full years Babylon''s yoke will be broken and the captives and temple vessels returned. Jeremiah
+-- answers Amen — but lays down the TEST of a true prophet: the prophets of old prophesied war and evil and
+-- pestilence; the prophet who prophesieth PEACE is known to be truly sent only WHEN his word comes to pass.
+-- The word of Yahuah then comes: Hananiah has broken yokes of wood, but shall make yokes of iron — Yahuah has
+-- set an iron yoke on the nations to serve Nebuchadnezzar. Jeremiah declares: *Yahuah hath not sent thee; but
+-- thou makest this people to trust in a lie*; *this year thou shalt die*. And Hananiah died the same year, in
+-- the seventh month. The chapter is the Torah''s test of prophecy enacted in history: fulfillment proves the
+-- true word, and the lying prophet who turns the people to a comforting lie is exposed and judged.
+-- Tag: jer28   Temp view: _s309_jer28_lookup   Session: s309
+-- Sort band: base 34675, step 3 -> 34675, 34678 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',28,v
+--
+-- Jeremiah 28 coverage:
+--   v.1-7 (Hananiah son of Azur prophesies the yoke broken, vessels and Jeconiah returned within two years;
+--          Jeremiah answers Amen, Yahuah perform thy words — then turns: Nevertheless hear this word)
+--        NT:     none warranted (the Amen-then-test is the setup; the test itself lands at v.8-9, THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none separate (the false comfort answered by the test of v.8-9; woven in prose)
+--   ★★ v.8-9 (The prophets before me prophesied of war, and of evil, and of pestilence. The prophet which
+--          prophesieth of peace, when the word come to pass, then shall the prophet be known, that Yahuah
+--          hath truly sent him) — THE TEST OF THE TRUE PROPHET (fulfillment, especially of a peace-word)
+--        NT:     ★ 1 John 4:1 (try the spirits whether they are of Elohim), ★ Matthew 7:16 (by their fruits
+--                ye shall know them) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 18:21-22 (How shall we know the word which Yahuah hath not spoken?... if the
+--                thing follow not, nor come to pass... the prophet hath spoken it presumptuously),
+--                ★ Jeremiah 14:13-14 (lateral, the lying prophets of assured peace) — THREAD 1
+--   v.10-12 (Hananiah took the yoke from Jeremiah''s neck and brake it; spake, Even so will Yahuah break the
+--          yoke of Nebuchadnezzar within two years; Jeremiah went his way; the word of Yahuah came)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the broken wooden yoke answered by the iron yoke of v.13-14, THREAD 2)
+--   ★★ v.13-17 (Thou hast broken the yokes of wood; but thou shalt make yokes of iron... I have put a yoke of
+--          iron upon the neck of all these nations, that they may serve Nebuchadnezzar... Yahuah hath not sent
+--          thee; but thou makest this people to trust in a lie... this year thou shalt die... So Hananiah the
+--          prophet died the same year in the seventh month) — THE FALSE PROPHET EXPOSED AND JUDGED
+--        NT:     ★★ Acts 5:5,10 (Ananias and Sapphira fell down dead — the lie judged), ★ Acts 13:11 (Elymas
+--                struck blind for perverting the right ways of Yahuah) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 13:5 (that prophet shall be put to death; because he hath spoken to turn you
+--                away from Yahuah), ★ Jeremiah 29:21-22,31-32 (lateral, the false prophets of Babylon
+--                punished; Shemaiah caused you to trust in a lie) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-28-the-prophet-known-when-the-word-comes-to-pass — NT (1 John 4, Matthew 7) + Tanakh
+--      (Deuteronomy 18, Jeremiah 14) [free]
+--      (★★ the fulfillment-test of prophecy — the peace-word proven only when it comes to pass; the Torah''s test)
+--   2. jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke — NT (Acts 5, Acts 13) + Tanakh
+--      (Deuteronomy 13, Jeremiah 29) [free]
+--      (★★ the lying prophet exposed and judged — yokes of iron, this year thou shalt die; the comforting lie
+--       overruled by Yahuah''s standing word)
+--
+-- Framing notes:
+--   ★★ THE TEST OF THE TRUE PROPHET (THREAD 1): Jeremiah answers Hananiah''s glad word with Amen — *Yahuah
+--      (LORD) perform thy words which thou hast prophesied* (28:6) — and then lays down the test: *The prophets
+--      that have been before me and before thee of old prophesied both against many countries, and against
+--      great kingdoms, of war, and of evil, and of pestilence. The prophet which prophesieth of peace, when the
+--      word of the prophet shall come to pass, then shall the prophet be known, that Yahuah (LORD) hath truly
+--      sent him* (28:8-9). The burden of proof is on the man who prophesies PEACE: fulfillment, not eloquence,
+--      proves the sending. This is the Torah''s own test — *And if thou say in thine heart, How shall we know
+--      the word which Yahuah (LORD) hath not spoken? When a prophet speaketh in the name of Yahuah (LORD), if
+--      the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the
+--      prophet hath spoken it presumptuously* (Deuteronomy 18:21-22). Jeremiah has already exposed the lying
+--      prophets of assured peace — *the prophets say unto them, Ye shall not see the sword... but I will give
+--      you assured peace... The prophets prophesy lies in my name: I sent them not* (Jeremiah 14:13-14). And
+--      the apostolic word keeps the same test: *try the spirits whether they are of Elohim (God): because many
+--      false prophets are gone out into the world* (1 John 4:1); *Ye shall know them by their fruits* (Matthew
+--      7:16). The word that comes to pass is the word truly sent.
+--   ★★ THE LYING PROPHET EXPOSED AND JUDGED (THREAD 2): Hananiah broke a yoke of wood; Yahuah answers with a
+--      yoke of iron — *Thou hast broken the yokes of wood; but thou shalt make for them yokes of iron... I have
+--      put a yoke of iron upon the neck of all these nations, that they may serve Nebuchadnezzar* (28:13-14).
+--      Then the sentence: *Yahuah (LORD) hath not sent thee; but thou makest this people to trust in a lie...
+--      this year thou shalt die, because thou hast taught rebellion against Yahuah (LORD)* (28:15-16) — *So
+--      Hananiah the prophet died the same year in the seventh month* (28:17). The false prophet''s end is the
+--      Torah''s verdict made history — *that prophet... shall be put to death; because he hath spoken to turn
+--      you away from Yahuah Elohaychem (the LORD your God)* (Deuteronomy 13:5). Jeremiah''s own letter pronounces
+--      the same on the Babylon liars — *Shemaiah hath prophesied unto you, and I sent him not, and he caused you
+--      to trust in a lie... I will punish Shemaiah* (Jeremiah 29:31-32), and Ahab and Zedekiah *which prophesy a
+--      lie unto you in my name... the king of Babylon roasted in the fire* (Jeremiah 29:21-22). The apostolic
+--      age sees the same lie judged on the spot: Ananias and Sapphira *fell down, and gave up the ghost* for
+--      lying to the Ruach HaKodesh (Holy Spirit) (Acts 5:5,10); and Elymas, *seeking to turn away the deputy
+--      from the faith*, is struck blind (Acts 13:11). Yahuah''s word stands against the comforting lie; the
+--      prophet who makes the people trust a lie does not stand.
+--   VERSES WITH NO SEPARATE ADD: v.1-7 (Hananiah''s false comfort and Jeremiah''s Amen — the setup the test of
+--      v.8-9 answers; woven in THREAD 1 prose), v.10-12 (the broken wooden yoke and Jeremiah going his way —
+--      answered by the iron yoke of v.13-14; woven in THREAD 2 prose). Every meaningful block recorded above;
+--      both threads carry the chapter''s two movements (the test, then the judgment).
+
+CREATE TEMP VIEW _s309_jer28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the prophet known when the word comes to pass — the fulfillment-test
+    ('canon','jeremiah',28,9,'canon','deuteronomy',18,22,'free',
+      E'*When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the prophet hath spoken it presumptuously: thou shalt not be afraid of him* (Deuteronomy 18:22). This is the very test Jeremiah lays on Hananiah — *when the word of the prophet shall come to pass, then shall the prophet be known, that Yahuah (LORD) hath truly sent him* (Jeremiah 28:9). The Torah makes fulfillment the proof of sending; the word that does not come to pass was never spoken by Yahuah.'),
+    ('canon','jeremiah',28,9,'canon','deuteronomy',18,21,'free',
+      E'*And if thou say in thine heart, How shall we know the word which Yahuah (LORD) hath not spoken?* (Deuteronomy 18:21). Hananiah''s glad word of peace raises exactly this question, and Jeremiah answers it with the Torah''s own test — *then shall the prophet be known, that Yahuah (LORD) hath truly sent him* (Jeremiah 28:9). How shall we know? By whether the thing comes to pass; the burden of proof rests on the man who prophesies peace.'),
+    ('canon','jeremiah',28,8,'canon','jeremiah',14,13,'free',
+      E'*Then said I, Ah, Yahuah (Lord) GOD! behold, the prophets say unto them, Ye shall not see the sword, neither shall ye have famine; but I will give you assured peace in this place* (Jeremiah 14:13). The smooth promise of *assured peace* is the very kind Jeremiah weighs in the balance — *The prophets that have been before me... prophesied... of war, and of evil, and of pestilence* (Jeremiah 28:8). The true prophets spoke the hard word; the lying prophets promised peace where there was none.'),
+    ('canon','jeremiah',28,9,'canon','jeremiah',14,14,'free',
+      E'*Then Yahuah (LORD) said unto me, The prophets prophesy lies in my name: I sent them not, neither have I commanded them, neither spake unto them: they prophesy unto you a false vision and divination, and a thing of nought, and the deceit of their heart* (Jeremiah 14:14). Yahuah''s verdict on the peace-prophets — *I sent them not* — is the dark side of Jeremiah''s test: only when the word comes to pass *shall the prophet be known, that Yahuah (LORD) hath truly sent him* (Jeremiah 28:9). The unsent prophet speaks the deceit of his own heart.'),
+    ('canon','jeremiah',28,9,'canon','1-john',4,1,'free',
+      E'*Beloved, believe not every spirit, but try the spirits whether they are of Elohim (God): because many false prophets are gone out into the world* (1 John 4:1). The apostolic word keeps Jeremiah''s discipline — the prophet is *known* only by the test (Jeremiah 28:9). Not every voice claiming the Name is sent; the spirits must be tried, for many false prophets are gone out into the world.'),
+    ('canon','jeremiah',28,9,'canon','matthew',7,16,'free',
+      E'*Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?* (Matthew 7:16). The Messiah names the same test of fulfillment Jeremiah applied — *then shall the prophet be known* (Jeremiah 28:9): not by the claim but by what follows. The true and the false prophet are known the same way, by their fruit, by whether the word comes to pass.'),
+
+    -- THREAD 2 (★★): thou makest this people to trust in a lie — the iron yoke and the prophet''s death
+    ('canon','jeremiah',28,16,'canon','deuteronomy',13,5,'free',
+      E'*And that prophet, or that dreamer of dreams, shall be put to death; because he hath spoken to turn you away from Yahuah Elohaychem (the LORD your God), which brought you out of the land of Egypt... So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5). Jeremiah''s sentence on Hananiah is the Torah''s verdict made history — *this year thou shalt die, because thou hast taught rebellion against Yahuah (LORD)* (Jeremiah 28:16). The prophet who turns the people from Yahuah does not stand; the evil is put away from the midst.'),
+    ('canon','jeremiah',28,15,'canon','jeremiah',29,31,'free',
+      E'*Thus saith Yahuah (LORD) concerning Shemaiah the Nehelamite; Because that Shemaiah hath prophesied unto you, and I sent him not, and he caused you to trust in a lie* (Jeremiah 29:31). The very charge Jeremiah brings against Hananiah — *Yahuah (LORD) hath not sent thee; but thou makest this people to trust in a lie* (Jeremiah 28:15) — he brings again against Shemaiah in Babylon. The unsent prophet''s crime is the same: he makes the people trust a lie.'),
+    ('canon','jeremiah',28,17,'canon','jeremiah',29,32,'free',
+      E'*Therefore thus saith Yahuah (LORD); Behold, I will punish Shemaiah the Nehelamite, and his seed... neither shall he behold the good that I will do for my people, saith Yahuah (LORD); because he hath taught rebellion against Yahuah (LORD)* (Jeremiah 29:32). As Hananiah *died the same year in the seventh month* (Jeremiah 28:17), so Shemaiah is cut off from beholding the good — the same judgment, *because he hath taught rebellion against Yahuah*, the very words spoken over Hananiah (Jeremiah 28:16).'),
+    ('canon','jeremiah',28,15,'canon','jeremiah',29,21,'free',
+      E'*Thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel), of Ahab the son of Kolaiah, and of Zedekiah the son of Maaseiah, which prophesy a lie unto you in my name; Behold, I will deliver them into the hand of Nebuchadrezzar king of Babylon; and he shall slay them before your eyes* (Jeremiah 29:21). The lying prophets *which prophesy a lie unto you in my name* meet the end Hananiah met — for Hananiah too *makest this people to trust in a lie* (Jeremiah 28:15), and died that same year. The lie spoken in the Name is answered by Yahuah''s judgment.'),
+    ('canon','jeremiah',28,17,'canon','acts',5,5,'free',
+      E'*And Ananias hearing these words fell down, and gave up the ghost: and great fear came on all them that heard these things* (Acts 5:5). As Hananiah, exposed in his lie, *died the same year in the seventh month* (Jeremiah 28:17), so Ananias falls dead the moment his lie to the Ruach HaKodesh (Holy Spirit) is named. The lie before Yahuah is judged on the spot; great fear comes on all.'),
+    ('canon','jeremiah',28,17,'canon','acts',5,10,'free',
+      E'*Then fell she down straightway at his feet, and yielded up the ghost: and the young men came in, and found her dead, and, carrying her forth, buried her by her husband* (Acts 5:10). Sapphira falls as her husband fell — the lie *to tempt the Spirit of Yahuah (Lord)* (Acts 5:9) judged at once, as Hananiah''s lie was judged with his death the same year (Jeremiah 28:17). Yahuah''s word stands against the lie, and the liar does not stand.'),
+    ('canon','jeremiah',28,16,'canon','acts',13,11,'free',
+      E'*And now, behold, the hand of Yahuah (Lord) is upon thee, and thou shalt be blind, not seeing the sun for a season. And immediately there fell on him a mist and a darkness* (Acts 13:11). Elymas the sorcerer, *seeking to turn away the deputy from the faith* (Acts 13:8), is struck blind — as Hananiah, who turned the people to a lie, fell under the hand of Yahuah: *I will cast thee from off the face of the earth: this year thou shalt die* (Jeremiah 28:16). The one who perverts the right ways of Yahuah meets his hand.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-28-the-prophet-known-when-the-word-comes-to-pass',
+       E'The prophet known when the word comes to pass — the test of the true prophet',
+       E'Hananiah has prophesied a glad and quick deliverance — Babylon''s yoke broken, the temple vessels and the captives home *within two full years* (28:3-4). Jeremiah does not scoff; he answers *Amen: Yahuah (LORD) do so: Yahuah (LORD) perform thy words which thou hast prophesied* (28:6). But then he turns to the test that separates the sent from the unsent: *The prophets that have been before me and before thee of old prophesied both against many countries, and against great kingdoms, of war, and of evil, and of pestilence. The prophet which prophesieth of peace, when the word of the prophet shall come to pass, then shall the prophet be known, that Yahuah (LORD) hath truly sent him* (28:8-9). The burden of proof falls on the man who prophesies PEACE: the true prophets before him spoke the hard word of judgment, and the smooth promise of peace is proven only by its fulfillment. This is the Torah''s own test, given for exactly this case: *And if thou say in thine heart, How shall we know the word which Yahuah (LORD) hath not spoken? When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the prophet hath spoken it presumptuously* (Deuteronomy 18:21-22). Jeremiah has met this lie before — the prophets of *assured peace in this place* whom Yahuah disowns: *The prophets prophesy lies in my name: I sent them not* (Jeremiah 14:13-14). And the apostolic word holds the same discipline: *believe not every spirit, but try the spirits whether they are of Elohim (God): because many false prophets are gone out into the world* (1 John 4:1); *Ye shall know them by their fruits* (Matthew 7:16). The word that comes to pass is the word truly sent — fulfillment, not eloquence, is the proof.',
+       sv.verse_id, ev.verse_id, 'free', 34675
+  FROM _s309_jer28_lookup sv, _s309_jer28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=28 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke',
+       E'Thou makest this people to trust in a lie — the iron yoke and the false prophet''s death',
+       E'Hananiah takes the wooden yoke from Jeremiah''s neck and breaks it, declaring *Even so will I break the yoke of Nebuchadnezzar king of Babylon from the neck of all nations within the space of two full years* (28:11). But the word of Yahuah answers the broken wood with iron: *Thou hast broken the yokes of wood; but thou shalt make for them yokes of iron... I have put a yoke of iron upon the neck of all these nations, that they may serve Nebuchadnezzar king of Babylon; and they shall serve him* (28:13-14). The comforting lie cannot overrule the standing word. Then Jeremiah pronounces the sentence: *Hear now, Hananiah; Yahuah (LORD) hath not sent thee; but thou makest this people to trust in a lie* (28:15); *Behold, I will cast thee from off the face of the earth: this year thou shalt die, because thou hast taught rebellion against Yahuah (LORD)* (28:16) — and the chapter closes with the proof: *So Hananiah the prophet died the same year in the seventh month* (28:17). This is the Torah''s verdict enacted: *that prophet, or that dreamer of dreams, shall be put to death; because he hath spoken to turn you away from Yahuah Elohaychem (the LORD your God)... So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5). Jeremiah''s own letter brings the same charge and the same end on the Babylon liars — Shemaiah *caused you to trust in a lie... because he hath taught rebellion against Yahuah (LORD)* (Jeremiah 29:31-32), and Ahab and Zedekiah *which prophesy a lie unto you in my name* are delivered to the king of Babylon (Jeremiah 29:21-22). The apostolic age sees the lie judged as swiftly: Ananias and Sapphira *fell down, and gave up the ghost* for lying to the Ruach HaKodesh (Holy Spirit) (Acts 5:5,10); and Elymas, *seeking to turn away the deputy from the faith*, is struck blind by the hand of Yahuah (Acts 13:11). Yahuah''s word stands against the comforting lie; the prophet who makes the people trust a lie does not stand.',
+       sv.verse_id, ev.verse_id, 'free', 34678
+  FROM _s309_jer28_lookup sv, _s309_jer28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=28 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *if the thing follow not, nor come to pass... the prophet hath spoken it presumptuously* (Deuteronomy 18:22) — the Torah''s test Jeremiah lays on Hananiah; fulfillment proves the sending.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-the-prophet-known-when-the-word-comes-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *How shall we know the word which Yahuah (LORD) hath not spoken?* (Deuteronomy 18:21) — the very question Hananiah''s peace-word raises; answered by whether it comes to pass (Jeremiah 28:9).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-the-prophet-known-when-the-word-comes-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will give you assured peace in this place* (Jeremiah 14:13) — the smooth peace-word Jeremiah weighs; the true prophets spoke war and evil, not assured peace (Jeremiah 28:8).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=8
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-the-prophet-known-when-the-word-comes-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The prophets prophesy lies in my name: I sent them not* (Jeremiah 14:14) — Yahuah''s verdict on the peace-prophets; the dark side of the test, the prophet known only when truly sent (Jeremiah 28:9).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-the-prophet-known-when-the-word-comes-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *try the spirits whether they are of Elohim (God): because many false prophets are gone out into the world* (1 John 4:1) — the apostolic word keeps Jeremiah''s test (Jeremiah 28:9); not every voice in the Name is sent.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-the-prophet-known-when-the-word-comes-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Ye shall know them by their fruits* (Matthew 7:16) — the Messiah names the same fulfillment-test; the prophet known by what follows, not by the claim (Jeremiah 28:9).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-the-prophet-known-when-the-word-comes-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *that prophet... shall be put to death; because he hath spoken to turn you away from Yahuah Elohaychem (the LORD your God)* (Deuteronomy 13:5) — the Torah''s verdict made history in Hananiah''s death (Jeremiah 28:16-17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Shemaiah hath prophesied unto you, and I sent him not, and he caused you to trust in a lie* (Jeremiah 29:31) — the same charge Jeremiah brings against Hananiah (Jeremiah 28:15); the unsent prophet makes the people trust a lie.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=15
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will punish Shemaiah the Nehelamite... because he hath taught rebellion against Yahuah (LORD)* (Jeremiah 29:32) — the very words spoken over Hananiah (Jeremiah 28:16); the same judgment on the lying prophet.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Ahab... and... Zedekiah... which prophesy a lie unto you in my name; Behold, I will deliver them into the hand of Nebuchadrezzar* (Jeremiah 29:21) — the lie in the Name answered by judgment, as Hananiah''s was (Jeremiah 28:15-17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=15
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *And Ananias hearing these words fell down, and gave up the ghost* (Acts 5:5) — the lie to the Ruach HaKodesh (Holy Spirit) judged on the spot, as Hananiah died the same year (Jeremiah 28:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Then fell she down straightway at his feet, and yielded up the ghost* (Acts 5:10) — Sapphira falls as her husband fell; the lie before Yahuah does not stand, as Hananiah''s did not (Jeremiah 28:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *behold, the hand of Yahuah (Lord) is upon thee, and thou shalt be blind* (Acts 13:11) — Elymas, turning the deputy from the faith, struck blind; the hand of Yahuah on the one who perverts his ways, as on Hananiah (Jeremiah 28:16).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s309_jer28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session309 — Jeremiah cross-references complete.'
