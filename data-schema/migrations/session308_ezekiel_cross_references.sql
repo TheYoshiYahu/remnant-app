@@ -4667,6 +4667,1399 @@ SELECT t.id, cr.id, 4, E'★ *the seers be ashamed, and the diviners confounded.
  WHERE t.slug='ezekiel-7-the-law-shall-perish-from-the-priest-a-famine-of-the-word'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_8.sql (Ezekiel 8) -----
+-- Chapter: Ezekiel 8 — the prophet carried in vision to Jerusalem; the IMAGE OF JEALOUSY in the gate
+-- that provoketh to jealousy and drives the Glory far off from the sanctuary; the SEVENTY ANCIENTS of
+-- the house of Yashar''el (Israel) each with his censer in the dark chambers of imagery, saying *Yahuah
+-- (LORD) seeth us not; Yahuah hath forsaken the earth*; the WOMEN WEEPING FOR TAMMUZ; the five-and-twenty
+-- men with their BACKS toward the temple of Yahuah and their faces toward the east, WORSHIPPING THE SUN.
+-- The escalating abominations IN Yahuah''s own house that drive the Glory of the Elohim of Yashar''el out
+-- (the departure consummated in ch10-11). The lens: idolatry inside the covenant house is covenant-breach,
+-- not the Torah''s failure — the jealous El of Exodus 20 and Deuteronomy 32 against the strange gods, the
+-- lie that Yahuah does not see answered by the One who planted the ear and formed the eye.
+-- Tag: ezek08   Temp view: _s308_ezek08_lookup
+-- Sort band: base 32175, step 3 -> threads at 32175, 32178, 32181 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',8,v
+--
+-- Ezekiel 8 coverage:
+--   v.1-2 (the sixth year; the elders of Yahudah sat before me; the hand of Adonai Yahuah fell; a likeness
+--          as the appearance of fire... amber)
+--        NT:     none warranted (the throne-fire theophany; held — the same likeness as Ezek 1, the FORMED
+--                One; woven in prose of THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none separate (the amber/fire vision = the Glory-form of ch1; preface to v.3-6)
+--   ★ v.3-6 (brought to Jerusalem, the door of the inner gate; the SEAT OF THE IMAGE OF JEALOUSY, WHICH
+--          PROVOKETH TO JEALOUSY; the glory of the Elohim of Yashar''el was there; the great abominations
+--          that the house of Yashar''el committeth here, that I should go far off from my sanctuary)
+--        NT:     ★ 1 Corinthians 10:22 (Do we provoke Yahuah (Lord) to jealousy? are we stronger than he?),
+--                ★ 1 Corinthians 10:21 (ye cannot be partakers of Yahuah''s table, and of the table of
+--                devils) — THREAD 1
+--        Extras: none warranted (clean Torah-canon-NT jealousy weave; no extras forced)
+--        Tanakh: ★★ Exodus 20:5 (I Yahuah Elohayka am a jealous Elohim), ★ Exodus 20:4 (thou shalt not make
+--                unto thee any graven image), ★★ Deuteronomy 32:16 (they provoked him to jealousy with
+--                strange gods... provoked they him to anger), ★ Deuteronomy 32:21 (they have moved me to
+--                jealousy with that which is not Elohim) — THREAD 1
+--   ★★ v.7-12 (the hole in the wall, the door, the chambers of imagery; every form of creeping things and
+--          all the idols of the house of Yashar''el pourtrayed; the SEVENTY ANCIENTS with censers in the
+--          dark; FOR THEY SAY, YAHUAH SEETH US NOT; YAHUAH HATH FORSAKEN THE EARTH)
+--        NT:     ★★ Romans 1:23 (changed the glory of the uncorruptible Elohim into an image made like to...
+--                creeping things), ★★ Romans 1:25 (worshipped and served the creature more than the
+--                Creator), ★★ Hebrews 4:13 (all things are naked and opened unto the eyes of him with whom
+--                we have to do) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 94:7 (Yahuah shall not see, neither shall the Elohim of Jacob regard it), ★★ Psalm
+--                94:9 (he that planted the ear, shall he not hear? he that formed the eye, shall he not see?),
+--                ★ Psalm 10:11 (Elohim hath forgotten: he hideth his face; he will never see it) — THREAD 2
+--   ★ v.13-16 (the WOMEN WEEPING FOR TAMMUZ; the five and twenty men with their BACKS toward the temple of
+--          Yahuah and their faces toward the east; and they WORSHIPPED THE SUN toward the east)
+--        NT:     ★ Romans 1:25 (worshipped and served the creature more than the Creator — the sun-cult, the
+--                creature worshipped) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 4:19 (lest thou... seest the sun, and the moon... shouldest be driven to
+--                worship them... which Yahuah hath divided unto all nations), ★ Deuteronomy 17:3 (served...
+--                either the sun, or moon, or any of the host of heaven, which I have not commanded), ★★ 2
+--                Kings 23:11 (he took away the horses that the kings of Yahudah had given to the sun), ★ 2
+--                Kings 23:5 (them also that burned incense... to the sun, and to the moon) — THREAD 3
+--   v.17-18 (the violence; they put the branch to their nose; therefore will I deal in fury; mine eye shall
+--          not spare, neither will I have pity)
+--        NT:     none warranted (the verdict of fury on the abominations; the not-hearing answers their
+--                "seeth us not"; woven in THREAD 2/3 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the judgment-sentence; the Glory''s departure consummated in Ezek 10-11 —
+--                noted in prose, not forced as a row)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-8-the-image-of-jealousy-that-provoketh-to-jealousy — Tanakh (Exodus 20, Deuteronomy 32) + NT (1 Corinthians 10) [free]
+--      (★ the idol set up in Yahuah''s own house provoking the jealous El; drives the Glory far off from the sanctuary)
+--   2. ezekiel-8-they-say-yahuah-seeth-us-not — Tanakh (Psalm 94, Psalm 10) + NT (Romans 1, Hebrews 4) [free]
+--      (★★ the hidden idolatry in the dark; the lie that Yahuah does not see; answered by him who planted the ear and formed the eye)
+--   3. ezekiel-8-their-backs-to-the-temple-worshipping-the-sun — Tanakh (Deuteronomy 4, Deuteronomy 17, 2 Kings 23) + NT (Romans 1) [free]
+--      (★ the pagan cults in the temple courts — Tammuz mourning, sun-worship — backs to Yahuah, the creature worshipped, the Torah ban)
+--
+-- Framing notes:
+--   ★ THE IMAGE OF JEALOUSY (THREAD 1): the prophet is set down *to the door of the inner gate that looketh
+--      toward the north; where was the seat of the image of jealousy, which provoketh to jealousy* (8:3),
+--      and *the glory of the Elohim (God) of Yashar''el (Israel) was there* (8:4) — the visible Glory (the
+--      FORMED One of ch1) confronting the idol in his own gate. Yahuah names the breach: *the great
+--      abominations that the house of Yashar''el (Israel) committeth here, that I should go far off from my
+--      sanctuary* (8:6) — the idol drives the Glory away (consummated in ch10-11). This is the jealous El of
+--      Sinai: *I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exod 20:5), against *any
+--      graven image* (Exod 20:4); the song of Moses already named the wound — *They provoked him to jealousy
+--      with strange gods, with abominations provoked they him to anger* (Deut 32:16), *they have moved me to
+--      jealousy with that which is not Elohim (God)* (Deut 32:21). Paul presses the same question on the
+--      Lord''s table: *Do we provoke Yahuah (Lord) to jealousy? are we stronger than he?* (1 Cor 10:22),
+--      *ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Cor 10:21). The
+--      image of jealousy IN the sanctuary is the same affront the whole Torah forbids — covenant-breach,
+--      never the Torah''s failure.
+--   ★★ YAHUAH SEETH US NOT (THREAD 2): through a hole in the wall the prophet digs to a door, and inside,
+--      *every form of creeping things, and abominable beasts, and all the idols of the house of Yashar''el
+--      (Israel), pourtrayed upon the wall* (8:10), with *seventy men of the ancients of the house of
+--      Yashar''el (Israel)... with every man his censer in his hand* (8:11) — the elders themselves leading
+--      the secret idolatry, *for they say, Yahuah (LORD) seeth us not; Yahuah (LORD) hath forsaken the
+--      earth* (8:12). That is the lie the Psalms answer head-on: *Yet they say, Yahuah (LORD) shall not see,
+--      neither shall the Elohim (God) of Jacob regard it* (Ps 94:7), met by *He that planted the ear, shall
+--      he not hear? he that formed the eye, shall he not see?* (Ps 94:9); and the wicked''s heart-word, *Elohim
+--      (God) hath forgotten: he hideth his face; he will never see it* (Ps 10:11). The creeping-things-on-the-
+--      wall idolatry is exactly Paul''s indictment: men *changed the glory of the uncorruptible Elohim (God)
+--      into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things*
+--      (Rom 1:23), and *worshipped and served the creature more than the Creator* (Rom 1:25). And the
+--      seeth-us-not lie is undone forever: *all things are naked and opened unto the eyes of him with whom we
+--      have to do* (Heb 4:13). The dark chamber is fully lit to the eyes of Yahuah.
+--   ★ BACKS TO THE TEMPLE, WORSHIPPING THE SUN (THREAD 3): the greater abominations are the imported pagan
+--      cults in the temple courts — *there sat women weeping for Tammuz* (8:14), the fertility-god mourning
+--      at the very gate; and *between the porch and the altar, were about five and twenty men, with their
+--      backs toward the temple of Yahuah (LORD), and their faces toward the east; and they worshipped the
+--      sun toward the east* (8:16) — backs turned on Yahuah to bow to the sun. The Torah expressly forbade
+--      it: *lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the
+--      stars... shouldest be driven to worship them... which Yahuah Elohayka (the LORD thy God) hath divided
+--      unto all nations* (Deut 4:19); the man who *hath gone and served other gods, and worshipped them,
+--      either the sun, or moon, or any of the host of heaven, which I have not commanded* is put away (Deut
+--      17:3). Josiah had purged exactly this: he *took away the horses that the kings of Yahudah (Judah) had
+--      given to the sun, at the entering in of the house of Yahuah (LORD)... and burned the chariots of the
+--      sun with fire* (2 Kings 23:11), and put down those *that burned incense... to the sun, and to the
+--      moon* (2 Kings 23:5) — yet here it returns. Paul names the root: *worshipped and served the creature
+--      more than the Creator, who is blessed for ever* (Rom 1:25). The sun is a creature; Yahuah who made it
+--      is the One to whom the back must never be turned.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the date-stamp and the amber/fire likeness = the throne-Glory of
+--      ch1, the FORMED One; woven into THREAD 1 prose), v.17-18 (the violence, the branch to the nose, the
+--      verdict of fury — *mine eye shall not spare* answering their "seeth us not"; the Glory''s full
+--      departure held to Ezek 10-11; woven into THREAD 2/3 prose). All verses recorded in the checklist above.
+
+CREATE TEMP VIEW _s308_ezek08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the image of jealousy that provoketh to jealousy
+    ('canon','ezekiel',8,3,'canon','exodus',20,5,'free',
+      E'*Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God), visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me* (Exodus 20:5). The *seat of the image of jealousy, which provoketh to jealousy* (Ezekiel 8:3) set up in Yahuah''s own gate is the direct affront to the jealous El of Sinai: the idol provokes the very jealousy the second word names. Idolatry inside the covenant house is covenant-breach against a jealous Elohim, not a failure of the Torah.'),
+    ('canon','ezekiel',8,3,'canon','exodus',20,4,'free',
+      E'*Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth* (Exodus 20:4). The *image of jealousy* in the gate (Ezekiel 8:3) is precisely the graven image the second word forbids — and set, of all places, in the sanctuary of Yahuah. The carved likeness the Torah bans is enthroned where the Glory dwells.'),
+    ('canon','ezekiel',8,3,'canon','deuteronomy',32,16,'free',
+      E'*They provoked him to jealousy with strange gods, with abominations provoked they him to anger* (Deuteronomy 32:16). The song of Moses had already named the wound the *image of jealousy, which provoketh to jealousy* (Ezekiel 8:3) re-opens: strange gods and abominations provoking Yahuah to jealousy and to anger. Ezekiel sees the song''s indictment enacted in the temple itself.'),
+    ('canon','ezekiel',8,3,'canon','deuteronomy',32,21,'free',
+      E'*They have moved me to jealousy with that which is not Elohim (God); they have provoked me to anger with their vanities: and I will move them to jealousy with those which are not a people; I will provoke them to anger with a foolish nation* (Deuteronomy 32:21). The provoking *to jealousy* in the gate (Ezekiel 8:3) is the *not-Elohim* and *vanities* of the song of Moses — and the answering jealousy of Yahuah, the scattering among a foolish nation, is the very exile Ezekiel writes from. The image that provokes the jealous El draws the jealous judgment.'),
+    ('canon','ezekiel',8,6,'canon','1-corinthians',10,22,'free',
+      E'*Do we provoke Yahuah (Lord) to jealousy? are we stronger than he?* (1 Corinthians 10:22). Paul presses on the Lord''s table the very question Ezekiel''s vision forces: *the great abominations that the house of Yashar''el (Israel) committeth here, that I should go far off from my sanctuary* (Ezekiel 8:6) — to set an idol before Yahuah is to provoke him to jealousy, and we are not stronger than he. The Glory goes far off; the jealous El is not mocked.'),
+    ('canon','ezekiel',8,6,'canon','1-corinthians',10,21,'free',
+      E'*Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Corinthians 10:21). The *great abominations* the house commits *here* — in the sanctuary — that drive Yahuah *far off from my sanctuary* (Ezekiel 8:6) are the impossible double-allegiance Paul forbids: the table of Yahuah and the table of devils cannot stand together. The idol in the holy place makes the sanctuary forsaken.'),
+
+    -- THREAD 2 (★★): they say, Yahuah seeth us not
+    ('canon','ezekiel',8,12,'canon','psalms',94,7,'free',
+      E'*Yet they say, Yahuah (LORD) shall not see, neither shall the Elohim (God) of Jacob regard it* (Psalm 94:7). The Psalm speaks the very lie of the ancients in the dark chambers — *for they say, Yahuah (LORD) seeth us not; Yahuah (LORD) hath forsaken the earth* (Ezekiel 8:12). The secret idolaters tell themselves the Elohim of Jacob does not see; the Psalm exposes it as the boast of brutish men.'),
+    ('canon','ezekiel',8,12,'canon','psalms',94,9,'free',
+      E'*He that planted the ear, shall he not hear? he that formed the eye, shall he not see?* (Psalm 94:9). Against the seventy elders'' lie *Yahuah (LORD) seeth us not* (Ezekiel 8:12), the Psalm gives the unanswerable rebuke: the One who formed the eye is not blind, the One who planted the ear is not deaf. The hidden chambers of imagery are wide open to the Maker of sight itself.'),
+    ('canon','ezekiel',8,12,'canon','psalms',10,11,'free',
+      E'*He hath said in his heart, Elohim (God) hath forgotten: he hideth his face; he will never see it* (Psalm 10:11). The wicked''s heart-word is the elders'' word in the dark — *Yahuah (LORD) seeth us not; Yahuah (LORD) hath forsaken the earth* (Ezekiel 8:12). The lie that Yahuah has forgotten and hidden his face is the same self-deception that emboldens the secret abomination.'),
+    ('canon','ezekiel',8,10,'canon','romans',1,23,'free',
+      E'*And changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things* (Romans 1:23). The walls of the dark chamber — *every form of creeping things, and abominable beasts, and all the idols of the house of Yashar''el (Israel), pourtrayed upon the wall* (Ezekiel 8:10) — are exactly the exchange Paul names: the glory of the incorruptible Elohim traded for images of beasts and creeping things. Ezekiel sees the apostasy Romans diagnoses, painted on the temple wall.'),
+    ('canon','ezekiel',8,11,'canon','romans',1,25,'free',
+      E'*Who changed the truth of Elohim (God) into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen* (Romans 1:25). The seventy ancients with their censers — *with every man his censer in his hand; and a thick cloud of incense went up* (Ezekiel 8:11) — burn incense to the creature, serving the made thing over the Maker. The thick cloud of false worship is the creature exalted above the Creator.'),
+    ('canon','ezekiel',8,12,'canon','hebrews',4,13,'free',
+      E'*Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do* (Hebrews 4:13). The lie *Yahuah (LORD) seeth us not* (Ezekiel 8:12) is undone forever: nothing the ancients do *in the dark, every man in the chambers of his imagery* is hidden — all things are naked and opened to the eyes of Yahuah. The darkest chamber is fully lit before him.'),
+
+    -- THREAD 3 (★): their backs to the temple, worshipping the sun
+    ('canon','ezekiel',8,16,'canon','deuteronomy',4,19,'free',
+      E'*And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven* (Deuteronomy 4:19). The five and twenty men *with their backs toward the temple of Yahuah (LORD)... and they worshipped the sun toward the east* (Ezekiel 8:16) do the very thing the Torah warned against — bowing to the sun, a creature Yahuah divided to the nations, never to be the worship of his own house.'),
+    ('canon','ezekiel',8,16,'canon','deuteronomy',17,3,'free',
+      E'*And hath gone and served other gods, and worshipped them, either the sun, or moon, or any of the host of heaven, which I have not commanded* (Deuteronomy 17:3). The sun-worship in the inner court — *they worshipped the sun toward the east* (Ezekiel 8:16) — is the capital abomination of the Torah: serving the host of heaven *which I have not commanded*. What Deuteronomy condemns at the gate is found between the porch and the altar.'),
+    ('canon','ezekiel',8,16,'canon','2-kings',23,11,'free',
+      E'*And he took away the horses that the kings of Yahudah (Judah) had given to the sun, at the entering in of the house of Yahuah (LORD), by the chamber of Nathan-melech the chamberlain... and burned the chariots of the sun with fire* (2 Kings 23:11). Josiah had purged the very cult Ezekiel now sees returned — sun-worship *at the entering in of the house of Yahuah*, answering *they worshipped the sun toward the east* (Ezekiel 8:16). The abomination Josiah burned with fire creeps back into the temple courts.'),
+    ('canon','ezekiel',8,16,'canon','2-kings',23,5,'free',
+      E'*And he put down the idolatrous priests, whom the kings of Yahudah (Judah) had ordained to burn incense in the high places... them also that burned incense unto Baal, to the sun, and to the moon, and to the planets, and to all the host of heaven* (2 Kings 23:5). The reforming king put down those who *burned incense... to the sun, and to the moon*; yet here are men in the inner court who *worshipped the sun toward the east* (Ezekiel 8:16). The host-of-heaven worship Josiah abolished is the abomination that drives the Glory out.'),
+    ('canon','ezekiel',8,16,'canon','romans',1,25,'free',
+      E'*Who changed the truth of Elohim (God) into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen* (Romans 1:25). To turn *their backs toward the temple of Yahuah (LORD)* and bow to the rising sun (Ezekiel 8:16) is precisely to worship and serve the creature above the Creator. The sun is a made thing; Yahuah who made it is the One to whom the back must never be turned.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-8-the-image-of-jealousy-that-provoketh-to-jealousy',
+       E'The image of jealousy in the gate — that I should go far off from my sanctuary',
+       E'Carried in vision to Jerusalem, the prophet is set down *to the door of the inner gate that looketh toward the north; where was the seat of the image of jealousy, which provoketh to jealousy* (8:3) — and *the glory of the Elohim (God) of Yashar''el (Israel) was there* (8:4), the visible Glory of his throne-vision facing the idol in his own house. Yahuah names the breach: *Son of Adam, seest thou what they do? even the great abominations that the house of Yashar''el (Israel) committeth here, that I should go far off from my sanctuary?* (8:6). The idol set up in the holy place drives the Glory away — the departure this chapter begins and chapters 10 and 11 consummate. This is an affront to the jealous El of Sinai himself: *Thou shalt not make unto thee any graven image* (Exodus 20:4), *for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5). The song of Moses had already foreseen the wound — *They provoked him to jealousy with strange gods, with abominations provoked they him to anger* (Deuteronomy 32:16); *they have moved me to jealousy with that which is not Elohim (God)... and I will move them to jealousy with those which are not a people* (Deuteronomy 32:21) — the provoking jealousy that draws the answering jealousy of exile. Paul presses the same on the Lord''s table: *Ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Corinthians 10:21); *Do we provoke Yahuah (Lord) to jealousy? are we stronger than he?* (1 Corinthians 10:22). The image in the sanctuary is not the Torah''s failure but covenant-breach against a jealous Elohim — and the jealous El is not mocked: the Glory goes far off.',
+       sv.verse_id, ev.verse_id, 'free', 32175
+  FROM _s308_ezek08_lookup sv, _s308_ezek08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=8 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-8-they-say-yahuah-seeth-us-not',
+       E'The ancients in the dark — for they say, Yahuah seeth us not',
+       E'The prophet is shown a hole in the wall, digs through it to a door, and inside is the hidden idolatry of the leaders: *every form of creeping things, and abominable beasts, and all the idols of the house of Yashar''el (Israel), pourtrayed upon the wall round about* (8:10), with *seventy men of the ancients of the house of Yashar''el (Israel)... with every man his censer in his hand; and a thick cloud of incense went up* (8:11). The elders themselves lead the secret worship, and Yahuah gives their reason: *hast thou seen what the ancients of the house of Yashar''el (Israel) do in the dark, every man in the chambers of his imagery? for they say, Yahuah (LORD) seeth us not; Yahuah (LORD) hath forsaken the earth* (8:12). That lie is the one the Psalms answer head-on: *Yet they say, Yahuah (LORD) shall not see, neither shall the Elohim (God) of Jacob regard it* (Psalm 94:7), met by the unanswerable rebuke *He that planted the ear, shall he not hear? he that formed the eye, shall he not see?* (Psalm 94:9); and the wicked''s heart-word, *Elohim (God) hath forgotten: he hideth his face; he will never see it* (Psalm 10:11). The creeping-things-on-the-wall idolatry is exactly Paul''s indictment of the apostate mind: men *changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things* (Romans 1:23), and *worshipped and served the creature more than the Creator, who is blessed for ever* (Romans 1:25). And the seeth-us-not lie is overturned forever: *all things are naked and opened unto the eyes of him with whom we have to do* (Hebrews 4:13). The darkest chamber of imagery is fully lit before the eyes of Yahuah; and to that pretended blindness he answers in fury — *mine eye shall not spare, neither will I have pity... yet will I not hear them* (8:18).',
+       sv.verse_id, ev.verse_id, 'free', 32178
+  FROM _s308_ezek08_lookup sv, _s308_ezek08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=8 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-8-their-backs-to-the-temple-worshipping-the-sun',
+       E'Women weeping for Tammuz, their backs to the temple, worshipping the sun toward the east',
+       E'The greater abominations are the imported pagan cults brought into the temple courts themselves. First, *behold, there sat women weeping for Tammuz* (8:14) — the fertility-god mourning rite at the very gate of the house of Yahuah. Then, the worst: *he brought me into the inner court of the LORD''S house, and, behold, at the door of the temple of Yahuah (LORD), between the porch and the altar, were about five and twenty men, with their backs toward the temple of Yahuah (LORD), and their faces toward the east; and they worshipped the sun toward the east* (8:16) — turning their backs on Yahuah to bow to the rising sun in his own sanctuary. The Torah had expressly forbidden it: *lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations* (Deuteronomy 4:19); the one who *hath gone and served other gods, and worshipped them, either the sun, or moon, or any of the host of heaven, which I have not commanded* is the capital apostate (Deuteronomy 17:3). Faithful Josiah had purged exactly this — he *took away the horses that the kings of Yahudah (Judah) had given to the sun, at the entering in of the house of Yahuah (LORD)... and burned the chariots of the sun with fire* (2 Kings 23:11), and put down those who *burned incense... to the sun, and to the moon* (2 Kings 23:5) — yet here the cult returns to the inner court. Paul names the root of all of it: men *worshipped and served the creature more than the Creator, who is blessed for ever* (Romans 1:25). The sun is a made thing, divided to the nations; Yahuah who formed it is the One to whom the back must never be turned. For this the verdict falls: *Therefore will I also deal in fury: mine eye shall not spare, neither will I have pity* (8:18) — and the Glory departs.',
+       sv.verse_id, ev.verse_id, 'free', 32181
+  FROM _s308_ezek08_lookup sv, _s308_ezek08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=8 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5) — the image of jealousy (Ezekiel 8:3) directly provokes the jealous El of the second word.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=3
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-the-image-of-jealousy-that-provoketh-to-jealousy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Thou shalt not make unto thee any graven image* (Exodus 20:4) — the image of jealousy (Ezekiel 8:3) is the graven image the Torah bans, set in the sanctuary itself.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=3
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-the-image-of-jealousy-that-provoketh-to-jealousy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *They provoked him to jealousy with strange gods, with abominations* (Deuteronomy 32:16) — the song of Moses foresaw the very provoking the image of jealousy re-opens (Ezekiel 8:3).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=3
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-the-image-of-jealousy-that-provoketh-to-jealousy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *They have moved me to jealousy with that which is not Elohim (God)* (Deuteronomy 32:21) — the not-Elohim of the song provokes the jealousy that draws the exile Ezekiel writes from.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=3
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-the-image-of-jealousy-that-provoketh-to-jealousy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Do we provoke Yahuah (Lord) to jealousy? are we stronger than he?* (1 Corinthians 10:22) — Paul presses the question Ezekiel 8:6 forces; the abomination drives the Glory far off.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=6
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-the-image-of-jealousy-that-provoketh-to-jealousy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Corinthians 10:21) — the idol in the holy place is the impossible double-allegiance that makes the sanctuary forsaken (Ezekiel 8:6).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=6
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-the-image-of-jealousy-that-provoketh-to-jealousy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Yet they say, Yahuah (LORD) shall not see, neither shall the Elohim (God) of Jacob regard it* (Psalm 94:7) — the very lie of the ancients in the dark (Ezekiel 8:12).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=12
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=94 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-they-say-yahuah-seeth-us-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *He that planted the ear, shall he not hear? he that formed the eye, shall he not see?* (Psalm 94:9) — the unanswerable rebuke to *Yahuah seeth us not* (Ezekiel 8:12); the Maker of sight is not blind.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=12
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=94 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-they-say-yahuah-seeth-us-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Elohim (God) hath forgotten: he hideth his face; he will never see it* (Psalm 10:11) — the wicked''s heart-word, the same self-deception as the elders'' *Yahuah hath forsaken the earth* (Ezekiel 8:12).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=12
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-they-say-yahuah-seeth-us-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *changed the glory of the uncorruptible Elohim (God) into an image made like to... creeping things* (Romans 1:23) — the creeping-things idols on the chamber wall (Ezekiel 8:10) are the exchange Paul names.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=10
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-they-say-yahuah-seeth-us-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *worshipped and served the creature more than the Creator* (Romans 1:25) — the seventy ancients with their censers (Ezekiel 8:11) burn incense to the made thing over its Maker.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-they-say-yahuah-seeth-us-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *all things are naked and opened unto the eyes of him with whom we have to do* (Hebrews 4:13) — the seeth-us-not lie (Ezekiel 8:12) undone; the darkest chamber is fully lit before Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=12
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-they-say-yahuah-seeth-us-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *when thou seest the sun... shouldest be driven to worship them... which Yahuah hath divided unto all nations* (Deuteronomy 4:19) — the Torah''s warning against the very sun-worship of Ezekiel 8:16.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=16
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-their-backs-to-the-temple-worshipping-the-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *served other gods, and worshipped them, either the sun, or moon, or any of the host of heaven, which I have not commanded* (Deuteronomy 17:3) — the capital abomination found between the porch and the altar (Ezekiel 8:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=16
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-their-backs-to-the-temple-worshipping-the-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *he took away the horses that the kings of Yahudah had given to the sun... and burned the chariots of the sun with fire* (2 Kings 23:11) — Josiah purged the very cult Ezekiel 8:16 sees returned to the temple.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=16
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-their-backs-to-the-temple-worshipping-the-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *them also that burned incense... to the sun, and to the moon, and to the planets, and to all the host of heaven* (2 Kings 23:5) — the host-of-heaven worship Josiah abolished, the abomination that drives the Glory out (Ezekiel 8:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=16
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-their-backs-to-the-temple-worshipping-the-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *worshipped and served the creature more than the Creator* (Romans 1:25) — to turn the back on the temple and bow to the sun (Ezekiel 8:16) is the creature exalted above its Maker.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=8 AND sv.verse_number=16
+  JOIN _s308_ezek08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-8-their-backs-to-the-temple-worshipping-the-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_9.sql (Ezekiel 9) -----
+-- Chapter: Ezekiel 9 — ★★ THE SEALING-MARK keystone. The six men with slaughter weapons; the man clothed
+-- in linen with the writer's inkhorn who SETS A MARK upon the foreheads of the men that sigh and that cry
+-- for all the abominations done in the midst of the city; the destroyers told to come not near any man upon
+-- whom is the mark; judgment BEGINS at the sanctuary; the prophet's intercession (wilt thou destroy all the
+-- residue of Yashar'el?) and Yahuah's verdict (mine eye shall not spare). The marked-and-spared remnant of
+-- Ezekiel 9 is the sealed 144,000 of Revelation 7 — the Father's name in their foreheads.
+-- Tag: ezek09   Temp view: _s308_ezek09_lookup
+-- Sort band: base 32200, step 3 -> threads at 32200, 32203, 32206 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',9,v
+--
+-- Ezekiel 9 coverage:
+--   v.1-2 (six men with slaughter weapons from the higher gate toward the north; one man clothed with linen
+--          with a writer's inkhorn by his side; they stood beside the brasen altar)
+--        NT:     none warranted (the agents of judgment set in place; the linen-clothed scribe carried
+--                forward through his MARK-act in v.4 — held to THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none separate (the scene-setting of the executioners and the recording scribe)
+--   ★★★ v.3-6 (set a mark upon the foreheads of the men that SIGH and that CRY for all the abominations...
+--          but come not near any man upon whom is the mark; and begin at my sanctuary)
+--        NT:     ★★★ Revelation 7:3 (till we have sealed the servants of our Elohim in their foreheads),
+--                ★★★ Revelation 9:4 (only those men which have not the seal of Elohim in their foreheads),
+--                ★★ Revelation 14:1 (the 144,000 having his Father's name written in their foreheads) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Torah seal weave)
+--        Tanakh: ★★ Exodus 12:13 (the blood a token; when I see the blood, I will pass over you), ★★ Malachi
+--                3:16-18 (a book of remembrance for them that feared Yahuah; I will spare them as a man
+--                spareth his own son) — THREAD 1
+--   ★★ v.6-7 (begin at my sanctuary; then they began at the ancient men which were before the house; defile
+--          the house, and fill the courts with the slain)
+--        NT:     ★★ 1 Peter 4:17 (the time is come that judgment must begin at the house of Elohim) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 25:29 (lo, I begin to bring evil on the city which is called by my name),
+--                ★ Amos 3:2 (you only have I known... therefore I will punish you for all your iniquities) — THREAD 2
+--   ★ v.8-10 (Ah Adonai Yahuah! wilt thou destroy all the residue of Yashar'el?... mine eye shall not spare,
+--          neither will I have pity, but I will recompense their way upon their head)
+--        NT:     none warranted (the prophet's intercession + Yahuah's verdict; canon-internal weave)
+--        Extras: none warranted
+--        Tanakh: ★★ Genesis 18:23-25 (Abraham: wilt thou also destroy the righteous with the wicked?...
+--                Shall not the Judge of all the earth do right?), ★ Ezekiel 14:14 (Noah, Daniel, and Job...
+--                they should deliver but their own souls by their righteousness) — THREAD 3
+--   v.11 (the man clothed with linen reported the matter: I have done as thou hast commanded me)
+--        NT:     none warranted (the recording scribe's report; the marking is finished — woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the closing report; the sealing accomplished)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-9-set-a-mark-upon-the-foreheads-of-them-that-sigh-and-cry — NT (Revelation 7, Revelation 9,
+--      Revelation 14) + Tanakh (Exodus 12, Malachi 3) [free]
+--      (★★★ THE sealing-mark; the linen scribe marks the sighing-and-crying remnant; the destroyer comes not
+--       near the marked; forward to the sealed 144,000 with the Father's name in their foreheads)
+--   2. ezekiel-9-begin-at-my-sanctuary-judgment-at-the-house-of-elohim — NT (1 Peter 4) + Tanakh (Jeremiah 25,
+--      Amos 3) [free]
+--      (★★ judgment begins at the sanctuary, at the house of Elohim — the greater the light, the heavier the
+--       reckoning; the ancient men before the house first)
+--   3. ezekiel-9-wilt-thou-destroy-all-the-residue-of-yasharel — Tanakh (Genesis 18, Ezekiel 14) [free]
+--      (★ the prophet's intercession and Yahuah's verdict; Abraham's plea for Sodom; Noah, Daniel, Job deliver
+--       but their own souls)
+--
+-- Framing notes:
+--   ★★★ THE MARK ON THE FOREHEADS (THREAD 1): *Go through the midst of the city... and set a mark upon the
+--      foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof*
+--      (9:4), *but come not near any man upon whom is the mark* (9:6). The man clothed with linen with the
+--      writer's inkhorn marks the grieving remnant, and the destroyers pass them by. John fills it: *Hurt not
+--      the earth, neither the sea, nor the trees, till we have sealed the servants of our Elohim (God) in
+--      their foreheads* (Revelation 7:3); the locust-judgment may touch *only those men which have not the
+--      seal of Elohim (God) in their foreheads* (Revelation 9:4); and the sealed are *an hundred forty and
+--      four thousand, having his Father's name written in their foreheads* (Revelation 14:1) — the
+--      two-house tribes of v.5-8 numbered and kept. The token-of-blood at Passover is the same mercy:
+--      *when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you*
+--      (Exodus 12:13); and Malachi names the marked ones a written remembrance: *a book of remembrance was
+--      written before him for them that feared Yahuah (LORD)... and I will spare them, as a man spareth his
+--      own son that serveth him* (Malachi 3:16-17). The sighing-and-crying remnant marked and spared.
+--   ★★ BEGIN AT MY SANCTUARY (THREAD 2): *and begin at my sanctuary. Then they began at the ancient men
+--      which were before the house* (9:6). Judgment falls first on the house of Elohim — Peter says it plainly:
+--      *the time is come that judgment must begin at the house of Elohim (God): and if it first begin at us,
+--      what shall the end be of them that obey not the gospel of Elohim (God)?* (1 Peter 4:17). Jeremiah:
+--      *lo, I begin to bring evil on the city which is called by my name, and should ye be utterly
+--      unpunished?* (Jeremiah 25:29). Amos: *You only have I known of all the families of the earth: therefore
+--      I will punish you for all your iniquities* (Amos 3:2). The nearer the Name, the heavier the reckoning.
+--   ★ WILT THOU DESTROY ALL THE RESIDUE (THREAD 3): *Ah Yahuah (Lord) GOD! wilt thou destroy all the residue
+--      of Yashar'el (Israel)?* (9:8) — the prophet falls on his face and pleads, as Abraham pled for Sodom:
+--      *Wilt thou also destroy the righteous with the wicked?... Shall not the Judge of all the earth do
+--      right?* (Genesis 18:23,25). Yahuah's verdict: *mine eye shall not spare, neither will I have pity, but
+--      I will recompense their way upon their head* (9:10) — and Ezekiel's own later word seals it: in a land
+--      ripe for judgment, *Noah, Daniel, and Job... they should deliver but their own souls by their
+--      righteousness* (Ezekiel 14:14). Each is answerable for his own way; the marked remnant alone is spared.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the six men and the linen scribe set in place — the marking carried
+--      into THREAD 1), v.11 (the scribe reports the marking done — woven into THREAD 1 prose). All recorded.
+
+CREATE TEMP VIEW _s308_ezek09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): set a mark upon the foreheads of them that sigh and cry — the sealing-mark
+    ('canon','ezekiel',9,4,'canon','revelation',7,3,'free',
+      E'*Saying, Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3). John fills Ezekiel''s vision: as the man clothed in linen is sent to *set a mark upon the foreheads of the men that sigh and that cry for all the abominations* (Ezekiel 9:4), so the angel seals *the servants of our Elohim (God) in their foreheads* before the judgment may fall. The mark on the brow of the grieving remnant is the seal of the living Elohim.'),
+    ('canon','ezekiel',9,6,'canon','revelation',9,4,'free',
+      E'*And it was commanded them that they should not hurt the grass of the earth, neither any green thing, neither any tree; but only those men which have not the seal of Elohim (God) in their foreheads* (Revelation 9:4). The command to the destroyers — *come not near any man upon whom is the mark* (Ezekiel 9:6) — is the same boundary John sees: the plague touches *only those men which have not the seal of Elohim (God) in their foreheads*. The marked are passed by; the unmarked alone are smitten.'),
+    ('canon','ezekiel',9,4,'canon','revelation',14,1,'free',
+      E'*And I looked, and, lo, a Lamb stood on the mount Sion, and with him an hundred forty and four thousand, having his Father''s name written in their foreheads* (Revelation 14:1). The mark Ezekiel''s scribe sets *upon the foreheads* of the faithful (Ezekiel 9:4) is filled out in the sealed company who bear *his Father''s name written in their foreheads* — the two-house tribes of Yashar''el (Israel) numbered and kept. The mark is the Name; the sealed are the Father''s own.'),
+    ('canon','ezekiel',9,6,'canon','exodus',12,13,'free',
+      E'*And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt* (Exodus 12:13). The mark that makes the destroyer *come not near any man upon whom is the mark* (Ezekiel 9:6) is the Passover token answered forward: the blood on the door is the sign at which the destroyer passes over. The marked house in Egypt and the marked brow in Jerusalem are one mercy — the token that turns away the plague.'),
+    ('canon','ezekiel',9,4,'canon','malachi',3,16,'free',
+      E'*Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16). The men *that sigh and that cry for all the abominations* (Ezekiel 9:4) are the very ones Malachi names — *them that feared Yahuah (LORD)*, written in a *book of remembrance*. To grieve over the abominations is to fear his name; the mark on the brow and the entry in the book are the same record of the faithful remnant.'),
+    ('canon','ezekiel',9,6,'canon','malachi',3,17,'free',
+      E'*And they shall be mine, saith Yahuah Tseva''ot (LORD of hosts), in that day when I make up my jewels; and I will spare them, as a man spareth his own son that serveth him* (Malachi 3:17). The promise that the destroyer shall *come not near any man upon whom is the mark* (Ezekiel 9:6) is Malachi''s sparing of the remembered remnant — *I will spare them, as a man spareth his own son that serveth him*. The marked are not destroyed but claimed: in the day of judgment they are his jewels, his sons, spared.'),
+
+    -- THREAD 2 (★★): begin at my sanctuary — judgment at the house of Elohim
+    ('canon','ezekiel',9,6,'canon','1-peter',4,17,'free',
+      E'*For the time is come that judgment must begin at the house of Elohim (God): and if it first begin at us, what shall the end be of them that obey not the gospel of Elohim (God)?* (1 Peter 4:17). Peter names the very order of Ezekiel''s judgment — *begin at my sanctuary* (Ezekiel 9:6), and *they began at the ancient men which were before the house*. Judgment falls first on the house of Elohim; if it begins there, *what shall the end be of them that obey not*? The nearer the Name, the heavier the reckoning.'),
+    ('canon','ezekiel',9,6,'canon','jeremiah',25,29,'free',
+      E'*For, lo, I begin to bring evil on the city which is called by my name, and should ye be utterly unpunished? Ye shall not be unpunished: for I will call for a sword upon all the inhabitants of the earth, saith Yahuah Tseva''ot (LORD of hosts)* (Jeremiah 25:29). Jeremiah speaks the same beginning-at-the-sanctuary principle: Yahuah begins the evil *on the city which is called by my name*. As the slaughter in Ezekiel starts *at my sanctuary* (Ezekiel 9:6), so judgment starts where the Name is set — and from there reaches the nations.'),
+    ('canon','ezekiel',9,7,'canon','amos',3,2,'free',
+      E'*You only have I known of all the families of the earth: therefore I will punish you for all your iniquities* (Amos 3:2). The command to *Defile the house, and fill the courts with the slain* (Ezekiel 9:7) rests on the logic Amos names: election is not exemption but accountability — *you only have I known... therefore I will punish you*. The house that bore the glory is judged first, for it knew the most and abandoned it.'),
+
+    -- THREAD 3 (★): wilt thou destroy all the residue of Yashar'el — intercession and verdict
+    ('canon','ezekiel',9,8,'canon','genesis',18,23,'free',
+      E'*And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23). Ezekiel falls on his face and pleads as Abraham pled for Sodom — *Ah Yahuah (Lord) GOD! wilt thou destroy all the residue of Yashar''el (Israel)?* (Ezekiel 9:8). The same intercessor''s cry: will the Judge sweep away the righteous with the wicked? The marked remnant is the answer to the plea — the faithful are not destroyed with the rebellious.'),
+    ('canon','ezekiel',9,8,'canon','genesis',18,25,'free',
+      E'*That be far from thee to do after this manner, to slay the righteous with the wicked: and that the righteous should be as the wicked, that be far from thee: Shall not the Judge of all the earth do right?* (Genesis 18:25). Behind Ezekiel''s plea *wilt thou destroy all the residue of Yashar''el (Israel)?* (Ezekiel 9:8) stands Abraham''s confidence in the justice of the Judge — *Shall not the Judge of all the earth do right?* He does: the man clothed in linen marks the sighing remnant first, that the righteous not perish as the wicked.'),
+    ('canon','ezekiel',9,10,'canon','ezekiel',14,14,'free',
+      E'*Though these three men, Noah, Daniel, and Job, were in it, they should deliver but their own souls by their righteousness, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 14:14). Yahuah''s verdict — *mine eye shall not spare, neither will I have pity, but I will recompense their way upon their head* (Ezekiel 9:10) — is the same answered a few chapters on: in a land ripe for judgment even the most righteous *deliver but their own souls*. Each is recompensed his own way; no man''s righteousness shelters the guilty, but the marked remnant is spared.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-9-set-a-mark-upon-the-foreheads-of-them-that-sigh-and-cry',
+       E'Set a mark upon the foreheads of them that sigh and cry — the sealing of the remnant',
+       E'As the glory of Elohim rises from the cherub to the threshold of the house, Yahuah singles out a man for mercy before the slaughter. *And he called to the man clothed with linen, which had the writer''s inkhorn by his side* (9:3), *And Yahuah (LORD) said unto him, Go through the midst of the city, through the midst of Jerusalem, and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof* (9:4). To the destroyers with their slaughter weapons the word is: *smite: let not your eye spare, neither have ye pity... but come not near any man upon whom is the mark* (9:5-6). The grieving remnant — those who sigh and cry over the abominations — are marked on the brow and passed over. John fills the vision word for word: *Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3); the locust-judgment may touch *only those men which have not the seal of Elohim (God) in their foreheads* (Revelation 9:4); and the sealed company stands with *his Father''s name written in their foreheads* (Revelation 14:1) — the hundred forty and four thousand of all the tribes of the children of Yashar''el (Israel), the two-house people numbered and kept. The mercy is the Passover''s own: *when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you* (Exodus 12:13) — the token that turns the destroyer aside. And Malachi names the marked a written remembrance: *a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16), *and I will spare them, as a man spareth his own son that serveth him* (Malachi 3:17). To sigh and cry over the abominations is to fear his name; the mark on the brow, the blood on the door, and the entry in the book are one — the faithful remnant sealed and spared while judgment falls. *And, behold, the man clothed with linen, which had the inkhorn by his side, reported the matter, saying, I have done as thou hast commanded me* (9:11): the sealing is finished before the sword does its work.',
+       sv.verse_id, ev.verse_id, 'free', 32200
+  FROM _s308_ezek09_lookup sv, _s308_ezek09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=9 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-9-begin-at-my-sanctuary-judgment-at-the-house-of-elohim',
+       E'Begin at my sanctuary — judgment begins at the house of Elohim',
+       E'When the destroyers are loosed, the order is exact: *Slay utterly old and young, both maids, and little children, and women: but come not near any man upon whom is the mark; and begin at my sanctuary. Then they began at the ancient men which were before the house* (9:6), *And he said unto them, Defile the house, and fill the courts with the slain: go ye forth* (9:7). Judgment does not start with the heathen or the streets — it begins at the sanctuary, with the ancient men before the house. Peter names the principle plainly: *For the time is come that judgment must begin at the house of Elohim (God): and if it first begin at us, what shall the end be of them that obey not the gospel of Elohim (God)?* (1 Peter 4:17). Jeremiah hears the same: *lo, I begin to bring evil on the city which is called by my name, and should ye be utterly unpunished? Ye shall not be unpunished* (Jeremiah 25:29) — the reckoning starts where the Name is set. And Amos names the logic underneath: *You only have I known of all the families of the earth: therefore I will punish you for all your iniquities* (Amos 3:2). Election is not exemption but accountability; the house that bore the glory — the glory now risen from the cherub to the threshold (9:3) and departing — is judged first, for it knew the most and abandoned it. The nearer the Name, the heavier the reckoning.',
+       sv.verse_id, ev.verse_id, 'free', 32203
+  FROM _s308_ezek09_lookup sv, _s308_ezek09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=9 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-9-wilt-thou-destroy-all-the-residue-of-yasharel',
+       E'Wilt thou destroy all the residue of Yashar''el — the prophet''s plea and Yahuah''s verdict',
+       E'While the slaughter goes on, the prophet is left alone and falls on his face to intercede: *And it came to pass, while they were slaying them, and I was left, that I fell upon my face, and cried, and said, Ah Yahuah (Lord) GOD! wilt thou destroy all the residue of Yashar''el (Israel) in thy pouring out of thy fury upon Jerusalem?* (9:8). It is Abraham''s cry over Sodom: *And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23), *Shall not the Judge of all the earth do right?* (Genesis 18:25). The answer is heavy: *The iniquity of the house of Yashar''el (Israel) and Yahudah (Judah) is exceeding great... for they say, Yahuah (LORD) hath forsaken the earth, and Yahuah (LORD) seeth not* (9:9), *And as for me also, mine eye shall not spare, neither will I have pity, but I will recompense their way upon their head* (9:10). Yet the plea is not refused — it is already answered in the mark of v.4: the Judge of all the earth does right, sparing the sighing remnant while recompensing the guilty their own way. Ezekiel''s own later word settles it: *Though these three men, Noah, Daniel, and Job, were in it, they should deliver but their own souls by their righteousness* (Ezekiel 14:14) — in a land ripe for judgment no man''s righteousness shelters the guilty; each bears his own way upon his own head, and the marked alone are spared.',
+       sv.verse_id, ev.verse_id, 'free', 32206
+  FROM _s308_ezek09_lookup sv, _s308_ezek09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=9 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3) — John fills Ezekiel 9:4; the mark on the brow of the grieving remnant is the seal of the living Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-set-a-mark-upon-the-foreheads-of-them-that-sigh-and-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *only those men which have not the seal of Elohim (God) in their foreheads* (Revelation 9:4) — the destroyers *come not near any man upon whom is the mark* (Ezekiel 9:6); the unmarked alone are smitten.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-set-a-mark-upon-the-foreheads-of-them-that-sigh-and-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *having his Father''s name written in their foreheads* (Revelation 14:1) — the mark of Ezekiel 9:4 is the Name; the sealed 144,000 of the tribes of Yashar''el (Israel) are the Father''s own.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-set-a-mark-upon-the-foreheads-of-them-that-sigh-and-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you* (Exodus 12:13) — the Passover token; the marked door and the marked brow (Ezekiel 9:6) are one mercy that turns the destroyer aside.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-set-a-mark-upon-the-foreheads-of-them-that-sigh-and-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *a book of remembrance was written before him for them that feared Yahuah (LORD)* (Malachi 3:16) — the men that sigh and cry (Ezekiel 9:4) are they that fear his name, written in the book of remembrance.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-set-a-mark-upon-the-foreheads-of-them-that-sigh-and-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *I will spare them, as a man spareth his own son that serveth him* (Malachi 3:17) — the marked are not destroyed but claimed; the destroyer *come not near* them (Ezekiel 9:6), for they are his jewels.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-set-a-mark-upon-the-foreheads-of-them-that-sigh-and-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *judgment must begin at the house of Elohim (God): and if it first begin at us, what shall the end be of them that obey not* (1 Peter 4:17) — Peter names the order of Ezekiel 9:6: begin at the sanctuary.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=4 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-begin-at-my-sanctuary-judgment-at-the-house-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *lo, I begin to bring evil on the city which is called by my name* (Jeremiah 25:29) — judgment starts where the Name is set, as the slaughter starts *at my sanctuary* (Ezekiel 9:6).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=25 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-begin-at-my-sanctuary-judgment-at-the-house-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *You only have I known of all the families of the earth: therefore I will punish you for all your iniquities* (Amos 3:2) — election is accountability, not exemption; the house judged first (Ezekiel 9:7) knew the most.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-begin-at-my-sanctuary-judgment-at-the-house-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23) — Ezekiel''s plea *wilt thou destroy all the residue of Yashar''el (Israel)?* (Ezekiel 9:8) is Abraham''s cry over Sodom.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=8
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-wilt-thou-destroy-all-the-residue-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Shall not the Judge of all the earth do right?* (Genesis 18:25) — the confidence behind Ezekiel''s plea (9:8); the Judge spares the marked remnant while recompensing the guilty.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=8
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-wilt-thou-destroy-all-the-residue-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Noah, Daniel, and Job... should deliver but their own souls by their righteousness* (Ezekiel 14:14) — Yahuah''s verdict *I will recompense their way upon their head* (Ezekiel 9:10); each bears his own way, the marked alone spared.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=9 AND sv.verse_number=10
+  JOIN _s308_ezek09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-9-wilt-thou-destroy-all-the-residue-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_11.sql (Ezekiel 11) -----
+-- Chapter: Ezekiel 11 — the wicked counsellors at the east gate (*this city is the caldron, and we
+-- be the flesh*); the false-security counsel of the twenty-five princes judged; Pelatiah the son of
+-- Benaiah dies as the prophet speaks; ★★★ THE FIRST STATEMENT OF THE NEW-HEART PROMISE to the
+-- scattered exiles — *I will give them one heart, and I will put a new spirit within you... an heart
+-- of flesh: That they may walk in my statutes, and keep mine ordinances, and do them* (the seed of
+-- Ezekiel 36:26-27); Yahuah a *little sanctuary* to the scattered; and the Glory of Yahuah departing
+-- eastward, up from the city to the mountain on the east side (continuing ch10's withdrawal).
+-- Tag: ezek11   Temp view: _s308_ezek11_lookup
+-- Sort band: base 32250, step 3 -> threads at 32250, 32253, 32256, 32259 (4 threads)
+-- Source of EVERY row: 'canon','ezekiel',11,v
+--
+-- Ezekiel 11 coverage:
+--   v.1 (the spirit lifted me to the east gate... five and twenty men; Jaazaniah and Pelatiah, princes)
+--        NT:     none warranted (the scene-setting; the east-gate location belongs to the Glory-departs
+--                thread, THREAD 4; woven in prose there)
+--        Extras: none warranted
+--        Tanakh: none separate (preface to the wicked-counsel oracle of v.2-12)
+--   ★ v.2-12 (the men that devise mischief... *this city is the caldron, and we be the flesh*... ye have
+--          feared the sword; and I will bring a sword upon you; ye have not walked in my statutes)
+--        NT:     none warranted (the covenant-lawsuit against the false-secure princes; OT-internal)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 1:13-16 (the seething pot toward the north; out of the north an evil shall
+--                break forth), ★ Micah 3:1-3 (the heads of Jacob who eat the flesh of my people... as
+--                flesh within the caldron), ★ Amos 6:1 (woe to them that are at ease in Zion) — THREAD 2
+--   v.13 (Pelatiah the son of Benaiah died... wilt thou make a full end of the remnant of Yashar''el?)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose (the death-as-sign + the prophet's intercession for the remnant; the
+--                remnant-question answered by the regathering promise of THREAD 1)
+--   ★ v.15-16 (thy brethren... all the house of Yashar''el wholly... yet will I be to them as a little
+--          sanctuary in the countries where they shall come)
+--        NT:     none warranted distinct (the Sanctuary-to-the-scattered held canon/Tanakh)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 8:14 (he shall be for a sanctuary), ★ Psalm 90:1 (Yahuah, thou hast been our
+--                dwelling place in all generations) — THREAD 3
+--   ★★★ v.17-20 (I will gather you from the people... and I will give you the land of Yashar''el... and
+--          I will give them one heart, and I will put a new spirit within you; and I will take the stony
+--          heart out of their flesh, and will give them an heart of flesh: That they may walk in my
+--          statutes, and keep mine ordinances, and do them: and they shall be my people)
+--        NT:     ★★★ Jeremiah 31:33 [Tanakh, lateral] + ★★★ Hebrews 8:10 (I will put my laws into their
+--                mind, and write them in their hearts), ★★ 2 Corinthians 3:3 (written... with the Spirit
+--                of the living Elohim... in fleshy tables of the heart) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★★ Ezekiel 36:26-27 (a new heart... a new spirit... I will put my spirit within you,
+--                and cause you to walk in my statutes — the FULLER promise), ★★ Ezekiel 37:23-24 (so
+--                shall they be my people... they shall walk in my judgments), ★★★ Jeremiah 31:33 (I will
+--                put my law in their inward parts, and write it in their hearts) — THREAD 1
+--   v.21 (whose heart walketh after... their detestable things... I will recompense their way) — woven
+--        into THREAD 1 prose (the obverse of the new heart); no separate add.
+--   ★ v.22-23 (the cherubims lift up their wings... the glory of Yahuah went up from the midst of the
+--          city, and stood upon the mountain which is on the east side of the city)
+--        NT:     ★ Matthew 24:3 (as he sat upon the mount of Olives), ★ Matthew 24:30 (the sign of the
+--                Son of Adam... coming in the clouds) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 10:18-19 (the glory of Yahuah departed from off the threshold... stood at
+--                the door of the east gate), ★★★ Ezekiel 43:1-4 (the glory came from the way of the
+--                east... came into the house by the way of the gate toward the east — the RETURN),
+--                ★ Zechariah 14:4 (his feet shall stand... upon the mount of Olives... on the east) — THREAD 4
+--   v.24-25 (the spirit took me up... into Chaldea, to them of the captivity... I spake all the things)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none separate (the vision ends; the prophet reports to the captivity)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes
+--        — NT (Hebrews 8, 2 Corinthians 3) + Tanakh (Ezekiel 36, Ezekiel 37, Jeremiah 31) [free]
+--      (★★★ THE FIRST new-heart promise: the two-house regathering + the Spirit-given heart that WALKS
+--       IN THE STATUTES; Torah on the heart, never abolished; the seed of Ezekiel 36:26-27)
+--   2. ezekiel-11-this-city-is-the-caldron-and-we-be-the-flesh — Tanakh (Jeremiah 1, Micah 3, Amos 6) [free]
+--      (★ the false-security counsel of the wicked princes judged; the caldron turned against them)
+--   3. ezekiel-11-a-little-sanctuary-in-the-countries-where-they-shall-come — Tanakh (Isaiah 8, Psalm 90) [free]
+--      (★ Yahuah himself a sanctuary/dwelling-place to the scattered, even far off among the heathen)
+--   4. ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east — NT (Matthew 24) + Tanakh (Ezekiel 10, Ezekiel 43, Zechariah 14) [free]
+--      (★ the Formed Glory withdrawing eastward to the mount on the east — to RETURN by the east gate;
+--       the mount of Olives on the east)
+--
+-- Framing notes:
+--   ★★★ ONE HEART, A NEW SPIRIT (THREAD 1): to the very exiles the inhabitants of Jerusalem despised
+--      (*Get you far from Yahuah... unto us is this land given*, 11:15), Yahuah makes the FIRST statement
+--      of the new-heart promise — *I will even gather you from the people, and assemble you out of the
+--      countries where ye have been scattered, and I will give you the land of Yashar''el (Israel)*
+--      (11:17), *And I will give them one heart, and I will put a new spirit within you; and I will take
+--      the stony heart out of their flesh, and will give them an heart of flesh: That they may walk in my
+--      statutes, and keep mine ordinances, and do them: and they shall be my people, and I will be their
+--      Elohim (God)* (11:19-20). The new heart is FOR Torah-obedience — *that they may walk in my
+--      statutes*. This is the seed of the fuller promise a chapter on: *A new heart also will I give you,
+--      and a new spirit will I put within you... And I will put my spirit within you, and cause you to
+--      walk in my statutes* (Ezekiel 36:26-27); and of Ezekiel 37:23-24 — *so shall they be my people...
+--      they shall also walk in my judgments, and observe my statutes, and do them*. Jeremiah names the
+--      same new covenant: *I will put my law in their inward parts, and write it in their hearts; and
+--      will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). Hebrews quotes it as the
+--      new covenant — *I will put my laws into their mind, and write them in their hearts* (Hebrews 8:10);
+--      and Paul names the writing — *written not with ink, but with the Spirit of the living Elohim (God);
+--      not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3). The same Torah,
+--      moved from stone to heart — never abolished, now WALKED in by the Spirit-given heart.
+--   ★ THE CALDRON (THREAD 2): the wicked princes' false security — *It is not near; let us build houses:
+--      this city is the caldron, and we be the flesh* (11:3) — is turned back on them: *Your slain... they
+--      are the flesh, and this city is the caldron: but I will bring you forth out of the midst of it*
+--      (11:7), *Ye have feared the sword; and I will bring a sword upon you* (11:8). Jeremiah saw the same
+--      pot of judgment boiling from the north — *I see a seething pot; and the face thereof is toward the
+--      north... Out of the north an evil shall break forth* (Jeremiah 1:13-14); Micah indicts the same
+--      flesh-devouring heads — *Who also eat the flesh of my people... and chop them in pieces, as for the
+--      pot, and as flesh within the caldron* (Micah 3:3); Amos names their ease — *Woe to them that are at
+--      ease in Zion* (Amos 6:1). The judgment falls because *ye have not walked in my statutes* (11:12).
+--   ★ A LITTLE SANCTUARY (THREAD 3): to the scattered house, far off among the heathen, Yahuah himself is
+--      refuge — *Although I have cast them far off among the heathen... yet will I be to them as a little
+--      sanctuary in the countries where they shall come* (11:16). The same One who is *for a sanctuary*
+--      to those who fear him (Isaiah 8:14) is the dwelling-place of the dispersed — *Yahuah (Lord), thou
+--      hast been our dwelling place in all generations* (Psalm 90:1). No temple in exile, yet Yahuah a
+--      sanctuary in the very countries of their scattering.
+--   ★ THE GLORY DEPARTS EASTWARD (THREAD 4): *the glory of Yahuah (LORD) went up from the midst of the
+--      city, and stood upon the mountain which is on the east side of the city* (11:23) — the Formed
+--      Glory withdrawing, continuing the departure of ch10: *the glory of Yahuah (LORD) departed from off
+--      the threshold of the house... at the door of the east gate* (Ezekiel 10:18-19). But the eastward
+--      withdrawal is not the end — the same Glory returns by the same gate: *the glory of the Elohim (God)
+--      of Yashar''el (Israel) came from the way of the east... And the glory of Yahuah (LORD) came into the
+--      house by the way of the gate whose prospect is toward the east* (Ezekiel 43:2,4). The mountain on
+--      the east is the mount of Olives, where the Formed Son sat (Matthew 24:3) and shall stand again —
+--      *his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east*
+--      (Zechariah 14:4); *they shall see the Son of Adam coming in the clouds of heaven* (Matthew 24:30).
+--      The Formed Glory departs to the east — to return.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the east-gate scene; woven into THREAD 4), v.13 (Pelatiah's death
+--      and the remnant-intercession; woven in THREAD 1 prose — the remnant the regathering answers), v.21
+--      (the obverse of the new heart; woven in THREAD 1), v.24-25 (the vision ends; the report to the
+--      captivity). All verses recorded in the coverage checklist above; every block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): I will give them one heart, and a new spirit — to walk in my statutes
+    ('canon','ezekiel',11,19,'canon','ezekiel',36,26,'free',
+      E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26). The new-heart promise here in Ezekiel 11 is its first and seed-statement — *I will give them one heart, and I will put a new spirit within you; and I will take the stony heart out of their flesh, and will give them an heart of flesh* (Ezekiel 11:19) — and a chapter on it is unfolded fully. The same gift, the same stony heart removed: not a new law, but a new heart for the old commandment.'),
+    ('canon','ezekiel',11,20,'canon','ezekiel',36,27,'free',
+      E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The purpose of the new heart is named identically in both chapters — *That they may walk in my statutes, and keep mine ordinances, and do them* (Ezekiel 11:20). The Spirit-given heart is given FOR Torah-obedience; the statutes are walked in, never abolished. The Ruach (Spirit) and the Torah are one gift.'),
+    ('canon','ezekiel',11,20,'canon','ezekiel',37,24,'free',
+      E'*And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24). The reunited two-house people under the one Shepherd-King keep the very statutes promised here — *That they may walk in my statutes, and keep mine ordinances, and do them: and they shall be my people, and I will be their Elohim (God)* (Ezekiel 11:20). The regathered, new-hearted house is the Torah-walking house.'),
+    ('canon','ezekiel',11,20,'canon','ezekiel',37,23,'free',
+      E'*...so shall they be my people, and I will be their Elohim (God)* (Ezekiel 37:23). The covenant-formula sealed of a cleansed, regathered people answers the close of the new-heart promise — *and they shall be my people, and I will be their Elohim (God)* (Ezekiel 11:20). The one heart and new spirit make a people who are his, and an Elohim who is theirs.'),
+    ('canon','ezekiel',11,19,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The new heart of Ezekiel 11:19 IS the new covenant Jeremiah names — the Torah moved from tablet to the inward parts. *I will give them one heart, and I will put a new spirit within you* and *I will put my law in their inward parts, and write it in their hearts* are one promise: the law internalized, the heart of flesh that loves it.'),
+    ('canon','ezekiel',11,19,'canon','hebrews',8,10,'free',
+      E'*For this is the covenant that I will make with the house of Yashar''el (Israel) after those days, saith Yahuah (Lord); I will put my laws into their mind, and write them in their hearts: and I will be to them a Elohim (God), and they shall be to me a people* (Hebrews 8:10). The new covenant is the Torah written on the heart — exactly the heart of flesh given in *I will take the stony heart out of their flesh, and will give them an heart of flesh* (Ezekiel 11:19). The covenant is not the law abolished but the law inscribed within; the people are still *his people*, the Elohim still *their Elohim*.'),
+    ('canon','ezekiel',11,19,'canon','2-corinthians',3,3,'free',
+      E'*Forasmuch as ye are manifestly declared to be the epistle of Messiah (Christ) ministered by us, written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3). Paul names the very writing Ezekiel promised — *an heart of flesh* (Ezekiel 11:19), *fleshy tables of the heart*. The Spirit of the living Elohim writes the same Torah on the heart of flesh; stone gives way to flesh, but the words written are the words of the covenant.'),
+
+    -- THREAD 2 (★): this city is the caldron, and we be the flesh — the wicked counsel judged
+    ('canon','ezekiel',11,3,'canon','jeremiah',1,13,'free',
+      E'*And the word of Yahuah (LORD) came unto me the second time, saying, What seest thou? And I said, I see a seething pot; and the face thereof is toward the north* (Jeremiah 1:13). The wicked princes call the city a safe caldron — *this city is the caldron, and we be the flesh* (Ezekiel 11:3) — but Jeremiah sees the true pot, the seething pot of judgment whose face is toward the north, *Out of the north an evil shall break forth* (Jeremiah 1:14). The pot they trust in is the pot of their own undoing.'),
+    ('canon','ezekiel',11,7,'canon','micah',3,3,'free',
+      E'*Who also eat the flesh of my people, and flay their skin from off them; and they break their bones, and chop them in pieces, as for the pot, and as flesh within the caldron* (Micah 3:3). The princes who said *we be the flesh* (Ezekiel 11:3) are the very heads who made the people the flesh in the pot — and Yahuah answers them in their own figure: *Your slain whom ye have laid in the midst of it, they are the flesh, and this city is the caldron* (Ezekiel 11:7). The flesh in the caldron is the people they devoured; the judgment turns the caldron against them.'),
+    ('canon','ezekiel',11,3,'canon','amos',6,1,'free',
+      E'*Woe to them that are at ease in Zion, and trust in the mountain of Samaria, which are named chief of the nations, to whom the house of Yashar''el (Israel) came!* (Amos 6:1). The false ease of *let us build houses: this city is the caldron, and we be the flesh* (Ezekiel 11:3) is the same complacent security Amos curses — the princes at ease, trusting the city as a refuge, sure no judgment is near. The woe of Amos rests on the careless counsel of Ezekiel''s twenty-five.'),
+
+    -- THREAD 3 (★): a little sanctuary in the countries where they shall come
+    ('canon','ezekiel',11,16,'canon','isaiah',8,14,'free',
+      E'*And he shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Yashar''el (Israel), for a gin and for a snare to the inhabitants of Jerusalem* (Isaiah 8:14). The same One who *shall be for a sanctuary* to those who fear him is the *little sanctuary in the countries where they shall come* (Ezekiel 11:16) for the scattered. Yahuah himself — refuge to the trusting remnant, in the temple or far from it — is the sanctuary; the inhabitants of Jerusalem who cast the exiles off meet him as a stone of stumbling instead.'),
+    ('canon','ezekiel',11,16,'canon','psalms',90,1,'free',
+      E'*Yahuah (Lord), thou hast been our dwelling place in all generations* (Psalm 90:1). Though cast far off among the heathen with no temple, the scattered have Yahuah himself as their sanctuary — *yet will I be to them as a little sanctuary in the countries where they shall come* (Ezekiel 11:16). Moses sang it before the exile: Yahuah is the dwelling place in every generation, the sanctuary that needs no walls, present in the very countries of their scattering.'),
+
+    -- THREAD 4 (★): the glory of Yahuah went up to the mountain on the east — to return
+    ('canon','ezekiel',11,23,'canon','ezekiel',10,18,'free',
+      E'*Then the glory of Yahuah (LORD) departed from off the threshold of the house, and stood over the cherubims* (Ezekiel 10:18). The departure begun in ch10 is completed here — *the glory of Yahuah (LORD) went up from the midst of the city, and stood upon the mountain which is on the east side of the city* (Ezekiel 11:23). Step by step the Glory withdraws: from the threshold, to the cherubim, to the east gate, and now up out of the city to the eastern mount. The Presence leaves the defiled house.'),
+    ('canon','ezekiel',11,23,'canon','ezekiel',10,19,'free',
+      E'*And the cherubims lifted up their wings, and mounted up from the earth in my sight... and every one stood at the door of the east gate of the LORD''S house; and the glory of the Elohim (God) of Yashar''el (Israel) was over them above* (Ezekiel 10:19). The cherubim that bore the Glory to the east gate now carry it up and out — *Then did the cherubims lift up their wings, and the wheels beside them; and the glory of the Elohim (God) of Yashar''el (Israel) was over them above* (Ezekiel 11:22), *and stood upon the mountain which is on the east side of the city* (11:23). The same Glory, the same cherubim, moving ever eastward.'),
+    ('canon','ezekiel',11,23,'canon','ezekiel',43,2,'free',
+      E'*And, behold, the glory of the Elohim (God) of Yashar''el (Israel) came from the way of the east: and his voice was like a noise of many waters: and the earth shined with his glory* (Ezekiel 43:2). The Glory that *went up from the midst of the city, and stood upon the mountain which is on the east side* (Ezekiel 11:23) is the same Glory that returns — by the very way it left, *from the way of the east*. The eastward departure is not abandonment but the promise of a return: the Formed Glory withdraws to the east to come back from the east.'),
+    ('canon','ezekiel',11,23,'canon','ezekiel',43,4,'free',
+      E'*And the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:4). What departed eastward in 11:23 re-enters by the eastern gate: the Glory comes *into the house by the way of the gate whose prospect is toward the east*. The mountain on the east where the Glory paused becomes the road of its homecoming; the Presence that left will dwell again.'),
+    ('canon','ezekiel',11,23,'canon','zechariah',14,4,'free',
+      E'*And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east, and the mount of Olives shall cleave in the midst thereof toward the east and toward the west* (Zechariah 14:4). The mountain on the east where the Glory stood (Ezekiel 11:23) is the mount of Olives, before Jerusalem on the east — and there the feet of Yahuah, the Formed Son, shall stand in the day of his coming. The eastern mount of the departed Glory is the eastern mount of his return.'),
+    ('canon','ezekiel',11,23,'canon','matthew',24,3,'free',
+      E'*And as he sat upon the mount of Olives, the disciples came unto him privately, saying, Tell us, when shall these things be? and what shall be the sign of thy coming, and of the end of the world?* (Matthew 24:3). The Glory that stood *upon the mountain which is on the east side of the city* (Ezekiel 11:23) — the mount of Olives — is where the Formed Son, the Glory made flesh, sat and foretold his coming. The eastern mount of the departing Glory is the very place from which the returning Glory speaks.'),
+    ('canon','ezekiel',11,23,'canon','matthew',24,30,'free',
+      E'*And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30). The Glory that went up from the city (Ezekiel 11:23) returns in the open coming of the Son of Adam — *in the clouds of heaven with power and great glory*. The Formed Glory that departed eastward is the Son of Adam whom all the tribes shall see return.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes',
+       E'I will give them one heart, and a new spirit — that they may walk in my statutes',
+       E'To the very exiles the inhabitants of Jerusalem had despised — *Get you far from Yahuah (LORD): unto us is this land given in possession* (11:15) — Yahuah speaks the FIRST statement of the new-heart promise. First the regathering of the scattered house: *I will even gather you from the people, and assemble you out of the countries where ye have been scattered, and I will give you the land of Yashar''el (Israel)* (11:17). Then the heart that makes them his: *And I will give them one heart, and I will put a new spirit within you; and I will take the stony heart out of their flesh, and will give them an heart of flesh: That they may walk in my statutes, and keep mine ordinances, and do them: and they shall be my people, and I will be their Elohim (God)* (11:19-20). Mark the PURPOSE of the new heart — *that they may walk in my statutes*. It is given FOR Torah-obedience, not instead of it. This is the seed of the fuller promise a chapter on: *A new heart also will I give you, and a new spirit will I put within you... And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:26-27); and of the reunited house under the one Shepherd-King — *they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24), *so shall they be my people, and I will be their Elohim (God)* (Ezekiel 37:23). Jeremiah names the same new covenant: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). Hebrews quotes it as the covenant itself — *I will put my laws into their mind, and write them in their hearts: and I will be to them a Elohim (God), and they shall be to me a people* (Hebrews 8:10); and Paul names the writing — *written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3). The same Torah, moved from stone to heart of flesh, the stony heart taken away — never abolished, now WALKED in by the Spirit-given heart. (The obverse stands too: *as for them whose heart walketh after the heart of their detestable things... I will recompense their way upon their own heads*, 11:21 — the new heart is gift and choice both.)',
+       sv.verse_id, ev.verse_id, 'free', 32250
+  FROM _s308_ezek11_lookup sv, _s308_ezek11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=11 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-11-this-city-is-the-caldron-and-we-be-the-flesh',
+       E'This city is the caldron, and we be the flesh — the wicked counsel judged',
+       E'At the east gate stand twenty-five men, *the men that devise mischief, and give wicked counsel in this city* (11:2), and their counsel is a false security: *It is not near; let us build houses: this city is the caldron, and we be the flesh* (11:3) — the city, they say, is a strong pot that keeps its flesh safe; no judgment is near. Yahuah turns the figure against them: *Your slain whom ye have laid in the midst of it, they are the flesh, and this city is the caldron: but I will bring you forth out of the midst of it* (11:7); *Ye have feared the sword; and I will bring a sword upon you* (11:8). The caldron will not shelter them — *This city shall not be your caldron, neither shall ye be the flesh in the midst thereof* (11:11) — *for ye have not walked in my statutes* (11:12). The prophets see the same false-secure judgment. Jeremiah is shown the true pot: *I see a seething pot; and the face thereof is toward the north... Out of the north an evil shall break forth upon all the inhabitants of the land* (Jeremiah 1:13-14). Micah indicts the very flesh-devouring heads who made the people the meat: *Who also eat the flesh of my people... and chop them in pieces, as for the pot, and as flesh within the caldron* (Micah 3:3). And Amos curses their ease: *Woe to them that are at ease in Zion... which are named chief of the nations* (Amos 6:1). The princes who said *we be the flesh* are the cooks who filled the pot with their own people''s blood — and the sword they did not fear comes upon them.',
+       sv.verse_id, ev.verse_id, 'free', 32253
+  FROM _s308_ezek11_lookup sv, _s308_ezek11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=11 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-11-a-little-sanctuary-in-the-countries-where-they-shall-come',
+       E'Yet will I be to them as a little sanctuary in the countries where they shall come',
+       E'When the prophet cries out at Pelatiah''s death — *wilt thou make a full end of the remnant of Yashar''el (Israel)?* (11:13) — Yahuah answers by turning to the scattered, the very exiles the men of Jerusalem despised: *thy brethren, even thy brethren, the men of thy kindred, and all the house of Yashar''el (Israel) wholly, are they unto whom the inhabitants of Jerusalem have said, Get you far from Yahuah (LORD): unto us is this land given in possession* (11:15). To those cast far off Yahuah gives himself as their refuge: *Although I have cast them far off among the heathen, and although I have scattered them among the countries, yet will I be to them as a little sanctuary in the countries where they shall come* (11:16). No temple in exile, yet a sanctuary — Yahuah himself. The same One is named *for a sanctuary* to those who fear him: *And he shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Yashar''el (Israel)* (Isaiah 8:14) — refuge to the trusting remnant, offence to the proud inhabitants who cast the exiles off. And Moses sang it before ever the exile came: *Yahuah (Lord), thou hast been our dwelling place in all generations* (Psalm 90:1) — the dwelling-place that needs no walls, the sanctuary present in the very countries of the scattering.',
+       sv.verse_id, ev.verse_id, 'free', 32256
+  FROM _s308_ezek11_lookup sv, _s308_ezek11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=11 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east',
+       E'The glory of Yahuah went up to the mountain on the east side — to return',
+       E'The vision closes on the most grievous sight of all: *Then did the cherubims lift up their wings, and the wheels beside them; and the glory of the Elohim (God) of Yashar''el (Israel) was over them above. And the glory of Yahuah (LORD) went up from the midst of the city, and stood upon the mountain which is on the east side of the city* (11:22-23). The Presence leaves the defiled house. This completes the departure begun a chapter before, step by step: *Then the glory of Yahuah (LORD) departed from off the threshold of the house, and stood over the cherubims* (Ezekiel 10:18), then *every one stood at the door of the east gate of the LORD''S house* (Ezekiel 10:19), and now up out of the city to the eastern mount. Yet the eastward withdrawal is not abandonment — it is the road of the return. By the very way it left, the Glory comes home: *behold, the glory of the Elohim (God) of Yashar''el (Israel) came from the way of the east: and his voice was like a noise of many waters: and the earth shined with his glory* (Ezekiel 43:2), *And the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:4). The mountain on the east is the mount of Olives, before Jerusalem on the east — where the Formed Son, the Glory made flesh, sat and foretold his coming (*as he sat upon the mount of Olives*, Matthew 24:3), and where his feet shall stand again: *his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east* (Zechariah 14:4); *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30). The Formed Glory departs eastward — to return from the east.',
+       sv.verse_id, ev.verse_id, 'free', 32259
+  FROM _s308_ezek11_lookup sv, _s308_ezek11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=11 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *A new heart also will I give you, and a new spirit will I put within you... I will give you an heart of flesh* (Ezekiel 36:26) — the fuller form of the same promise; Ezekiel 11:19 is its seed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=19
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27) — the Spirit-given heart is FOR Torah-obedience; the same purpose-clause as 11:20.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=20
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24) — the reunited house under the one Shepherd-King keeps the very statutes 11:20 promised.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=20
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *so shall they be my people, and I will be their Elohim (God)* (Ezekiel 37:23) — the covenant-formula that closes the new-heart promise (11:20); a cleansed people made his.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=20
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★★ *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the new covenant is the Torah internalized; the new heart of 11:19 is the same promise.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=19
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★★ *I will put my laws into their mind, and write them in their hearts* (Hebrews 8:10) — the new covenant quoted: the law inscribed within, not abolished; the heart of flesh of 11:19.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=19
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3) — the Spirit writes the Torah on the *heart of flesh* (11:19); stone gives way to flesh.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=19
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-i-will-give-them-one-heart-and-a-new-spirit-to-walk-in-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I see a seething pot; and the face thereof is toward the north* (Jeremiah 1:13) — the true pot of judgment; the safe-caldron of 11:3 is the pot of their own undoing.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=3
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-this-city-is-the-caldron-and-we-be-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they break their bones, and chop them in pieces, as for the pot, and as flesh within the caldron* (Micah 3:3) — the princes who said *we be the flesh* (11:3) made the people the flesh in the pot; 11:7 turns it on them.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=7
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-this-city-is-the-caldron-and-we-be-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Woe to them that are at ease in Zion* (Amos 6:1) — the same complacent security as *let us build houses... we be the flesh* (11:3); the careless counsel cursed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=3
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-this-city-is-the-caldron-and-we-be-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *And he shall be for a sanctuary* (Isaiah 8:14) — the same One who is sanctuary to those who fear him is the *little sanctuary* to the scattered (11:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=16
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-a-little-sanctuary-in-the-countries-where-they-shall-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (Lord), thou hast been our dwelling place in all generations* (Psalm 90:1) — the sanctuary that needs no walls; Yahuah a dwelling-place in the very countries of scattering (11:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=16
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=90 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-a-little-sanctuary-in-the-countries-where-they-shall-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the glory of Yahuah (LORD) departed from off the threshold of the house* (Ezekiel 10:18) — the departure begun a chapter before; 11:23 completes it up out of the city.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *every one stood at the door of the east gate of the LORD''S house; and the glory of the Elohim (God) of Yashar''el (Israel) was over them above* (Ezekiel 10:19) — the same cherubim and Glory, moving ever eastward (11:22-23).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *the glory of the Elohim (God) of Yashar''el (Israel) came from the way of the east* (Ezekiel 43:2) — what departed eastward (11:23) returns by the same way; the answer to the departure.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=43 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:4) — the Glory re-enters by the eastern gate; the homecoming of 11:23.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=43 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east* (Zechariah 14:4) — the eastern mount of 11:23 is the mount of Olives where Yahuah''s feet shall stand.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *as he sat upon the mount of Olives* (Matthew 24:3) — the Glory made flesh sat on the very eastern mount where the Glory had stood (11:23), foretelling his coming.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30) — the Glory that went up from the city (11:23) returns in the open coming of the Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s308_ezek11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-11-the-glory-of-yahuah-went-up-to-the-mountain-on-the-east'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_12.sql (Ezekiel 12) -----
+-- Chapter: Ezekiel 12 — the prophet's SIGN of the exile baggage: digging through the wall, carrying out
+-- by night, the face covered. The rebellious house that have eyes to see, and see not; ears to hear, and
+-- hear not. The PRINCE (Zedekiah) shall bear upon his shoulder in the twilight, his net spread upon him,
+-- carried to Babylon — yet shall he not SEE it, though he shall die there (the precise prophecy: blinded
+-- before Babylon). And against the scoffers: *the days are at hand, and the effect of every vision* —
+-- *there shall none of my words be deferred any more* — no more deferring, the word WILL come to pass.
+-- Tag: ezek12   Temp view: _s308_ezek12_lookup
+-- Sort band: base 32275, step 3 -> threads at 32275, 32278, 32281 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',12,v
+--
+-- Ezekiel 12 coverage:
+--   ★ v.1-6 (Son of Adam, thou dwellest in the midst of a rebellious house, which have eyes to see, and
+--          see not; they have ears to hear, and hear not; prepare thee stuff for removing; go forth at
+--          even as they that go forth into captivity; dig through the wall; cover thy face; a sign)
+--        NT:     ★ Matthew 13:13-15 (because they seeing see not; and hearing they hear not... in them is
+--                fulfilled the prophecy of Esaias — the Messiah names the SAME hardness) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh blindness weave)
+--        Tanakh: ★ Isaiah 6:9-10 (Hear ye indeed, but understand not; and see ye indeed, but perceive
+--                not... shut their eyes; lest they see), ★ Jeremiah 5:21 (O foolish people, and without
+--                understanding; which have eyes, and see not; which have ears, and hear not),
+--                ★ Deuteronomy 29:4 (Yahuah hath not given you an heart to perceive, and eyes to see, and
+--                ears to hear, unto this day) — THREAD 1
+--   v.7-11 (And I did so as I was commanded... This burden concerneth the prince in Jerusalem... I am your
+--          sign; they shall remove and go into captivity)
+--        NT:     none warranted (the sign-act obeyed and interpreted; woven into THREAD 1/2 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the prince-burden flows into THREAD 2)
+--   ★ v.12-13 (the prince that is among them shall bear upon his shoulder in the twilight... cover his
+--          face, that he see not the ground with his eyes; My net also will I spread upon him... and I
+--          will bring him to Babylon... yet shall he not see it, though he shall die there)
+--        NT:     none warranted (a specific historical fulfillment — the captivity of Zedekiah — answered
+--                IN the Tanakh's own record, not forward in the NT)
+--        Extras: none warranted
+--        Tanakh: ★ 2 Kings 25:7 (they slew the sons of Zedekiah before his eyes, and put out the eyes of
+--                Zedekiah, and bound him... and carried him to Babylon — blinded, so he saw it NOT),
+--                ★ 2 Kings 25:4 (the city was broken up, and all the men of war fled by night... the king
+--                went the way toward the plain — the flight), ★ Jeremiah 52:11 (he put out the eyes of
+--                Zedekiah... carried him to Babylon, and put him in prison till the day of his death — yet
+--                he should DIE there), ★ Jeremiah 39:7 (he put out Zedekiah's eyes, and bound him with
+--                chains, to carry him to Babylon) — THREAD 2
+--   v.14-20 (I will scatter toward every wind all that are about him... they shall know that I am Yahuah;
+--          eat thy bread with quaking; the land made desolate)
+--        NT:     none warranted (the scattering/desolation; recognition-formula; woven into THREAD 2 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the dispersion of v.15 woven into THREAD 2)
+--   ★★ v.21-28 (what is that proverb... The days are prolonged, and every vision faileth? I will make this
+--          proverb to cease... The days are at hand, and the effect of every vision... the word that I
+--          shall speak shall come to pass; it shall be no more prolonged... the vision that he seeth is
+--          for many days to come... There shall none of my words be prolonged any more, but the word
+--          which I have spoken shall be done)
+--        NT:     ★★ 2 Peter 3:4 (Where is the promise of his coming? for since the fathers fell asleep, all
+--                things continue as they were — the END-DAYS scoffers, the same deferring spirit), ★★ 2
+--                Peter 3:9 (Yahuah is not slack concerning his promise... not willing that any should
+--                perish), ★ 2 Peter 3:3 (there shall come in the last days scoffers, walking after their
+--                own lusts), ★ Matthew 24:48 (the evil servant: My lord delayeth his coming) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Habakkuk 2:3 (the vision is yet for an appointed time, but at the end it shall speak,
+--                and not lie: though it tarry, wait for it; because it will surely come) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house — NT (Matthew 13) + Tanakh (Isaiah 6, Jeremiah 5, Deuteronomy 29) [free]
+--      (★ the rebellious house with eyes-that-see-not; the Messiah quotes Isaiah of the SAME hardness)
+--   2. ezekiel-12-the-prince-carried-to-babylon-yet-shall-he-not-see-it — Tanakh (2 Kings 25, Jeremiah 52, Jeremiah 39) [free]
+--      (★ Zedekiah's flight, blinding, captivity, and death in Babylon — the word fulfilled to the letter)
+--   3. ezekiel-12-the-days-are-at-hand-none-of-my-words-deferred — NT (2 Peter 3, Matthew 24) + Tanakh (Habakkuk 2) [free]
+--      (★★ against the scoffers; the vision shall NOT be deferred; the word will surely come to pass)
+--
+-- Framing notes:
+--   ★ THE REBELLIOUS HOUSE — EYES TO SEE, AND SEE NOT (THREAD 1): *Son of Adam, thou dwellest in the
+--      midst of a rebellious house, which have eyes to see, and see not; they have ears to hear, and hear
+--      not: for they are a rebellious house* (12:2). The very hardness Isaiah was sent into — *Hear ye
+--      indeed, but understand not; and see ye indeed, but perceive not* (Isa 6:9), *shut their eyes; lest
+--      they see with their eyes* (Isa 6:10); the same Jeremiah named — *which have eyes, and see not;
+--      which have ears, and hear not* (Jer 5:21); the same Moses named at the covenant in Moab — *Yahuah
+--      (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day*
+--      (Deut 29:4). And the Formed Son names the SAME hardness as the reason he speaks in parables — *they
+--      seeing see not; and hearing they hear not, neither do they understand. And in them is fulfilled the
+--      prophecy of Esaias* (Matt 13:13-14). The blindness is moral rebellion, not mere ignorance; the
+--      eyes-that-see-not is a covenant verdict running from Moses to the Messiah.
+--   ★ THE PRINCE CARRIED TO BABYLON — YET SHALL HE NOT SEE IT (THREAD 2): *the prince that is among them
+--      shall bear upon his shoulder in the twilight, and shall go forth... he shall cover his face, that
+--      he see not the ground with his eyes. My net also will I spread upon him, and he shall be taken in
+--      my snare: and I will bring him to Babylon to the land of the Chaldeans; yet shall he not see it,
+--      though he shall die there* (12:12-13). The riddle solved to the letter in the Tanakh's own record:
+--      Zedekiah *fled by night* (2 Kgs 25:4); taken, *they... put out the eyes of Zedekiah, and bound him
+--      with fetters of brass, and carried him to Babylon* (2 Kgs 25:7) — brought to Babylon yet, being
+--      BLINDED, never SEEING it; *carried him to Babylon, and put him in prison till the day of his death*
+--      (Jer 52:11) — yet he should DIE there. Jeremiah seals it: *he put out Zedekiah's eyes, and bound
+--      him with chains, to carry him to Babylon* (Jer 39:7). Every clause of the sign — shoulder, twilight,
+--      net, Babylon, not-see, death — came to pass exactly.
+--   ★★ THE DAYS ARE AT HAND — NONE OF MY WORDS DEFERRED (THREAD 3): against the scoffers' proverb — *The
+--      days are prolonged, and every vision faileth?* (12:22) — Yahuah swears: *The days are at hand, and
+--      the effect of every vision* (12:23); *I will speak, and the word that I shall speak shall come to
+--      pass; it shall be no more prolonged* (12:25); against those who say *The vision that he seeth is for
+--      many days to come, and he prophesieth of the times that are far off* (12:27), *There shall none of
+--      my words be prolonged any more, but the word which I have spoken shall be done* (12:28). Habakkuk
+--      gives the same answer to the same impatience — *the vision is yet for an appointed time... though it
+--      tarry, wait for it; because it will surely come, it will not tarry* (Hab 2:3). And Peter names the
+--      SAME deferring spirit in the last days — *there shall come in the last days scoffers... saying,
+--      Where is the promise of his coming? for since the fathers fell asleep, all things continue as they
+--      were* (2 Pet 3:3-4); *Yahuah (Lord) is not slack concerning his promise* (2 Pet 3:9). The Messiah
+--      names it in the evil servant — *My lord delayeth his coming* (Matt 24:48). The deferring-scoffer of
+--      Ezekiel's day is the deferring-scoffer of the last days; the word is not slack — it shall be done.
+--   VERSES WITH NO SEPARATE ADD: v.7-11 (the sign-act obeyed and the prince-burden declared — woven into
+--      THREAD 1/2 prose), v.14-20 (the scattering toward every wind, the recognition-formula *they shall
+--      know that I am Yahuah*, the bread eaten with quaking, the desolation — woven into THREAD 2 prose).
+--      All verses recorded in the coverage checklist; every block carries at least one thread.
+
+CREATE TEMP VIEW _s308_ezek12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): eyes to see, and see not — the rebellious house
+    ('canon','ezekiel',12,2,'canon','isaiah',6,9,'free',
+      E'*And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9). The rebellious house *which have eyes to see, and see not; they have ears to hear, and hear not* (Ezekiel 12:2) is the very people Isaiah was sent into — eyes that look and perceive not, ears that hear and understand not. The same covenant blindness Ezekiel preaches to, Isaiah was commissioned against; it is moral rebellion, not mere ignorance.'),
+    ('canon','ezekiel',12,2,'canon','isaiah',6,10,'free',
+      E'*Make the heart of this people fat, and make their ears heavy, and shut their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and convert, and be healed* (Isaiah 6:10). The house that has *eyes to see, and see not... ears to hear, and hear not* (Ezekiel 12:2) is the people whose eyes are shut and ears made heavy — lest they see, and turn, and be healed. The shut eye is the rebellious heart; the sign-act of the exile baggage is given to a house that will not look.'),
+    ('canon','ezekiel',12,2,'canon','jeremiah',5,21,'free',
+      E'*Hear now this, O foolish people, and without understanding; which have eyes, and see not; which have ears, and hear not* (Jeremiah 5:21). Jeremiah names the same indictment in the same words Ezekiel uses — *which have eyes to see, and see not; they have ears to hear, and hear not* (Ezekiel 12:2). Two prophets, one verdict on the rebellious house: senses given by Yahuah (LORD) and refused, eyes and ears turned away from his word.'),
+    ('canon','ezekiel',12,2,'canon','deuteronomy',29,4,'free',
+      E'*Yet Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:4). At the covenant in Moab Moses already named the hardness Ezekiel preaches to — *eyes to see, and see not; ... ears to hear, and hear not* (Ezekiel 12:2). The eyes-that-see-not is a verdict reaching back to the wilderness generation: the heart that will not perceive, even after all Yahuah''s signs.'),
+    ('canon','ezekiel',12,2,'canon','matthew',13,13,'free',
+      E'*Therefore speak I to them in parables: because they seeing see not; and hearing they hear not, neither do they understand* (Matthew 13:13). The Formed Son names the SAME hardness Ezekiel was sent into — a house *which have eyes to see, and see not; they have ears to hear, and hear not* (Ezekiel 12:2). The eyes-that-see-not runs from Ezekiel''s rebellious house to the crowds who would not receive the kingdom; the Messiah speaks in parables because the eyes are shut.'),
+    ('canon','ezekiel',12,2,'canon','matthew',13,14,'free',
+      E'*And in them is fulfilled the prophecy of Esaias, which saith, By hearing ye shall hear, and shall not understand; and seeing ye shall see, and shall not perceive* (Matthew 13:14). The Messiah quotes Isaiah 6:9 of his own generation — the same seeing-that-perceives-not that Ezekiel''s house carried: *eyes to see, and see not* (Ezekiel 12:2). One unbroken hardness from the prophets to the Messiah, fulfilled in those who would not see.'),
+    ('canon','ezekiel',12,2,'canon','matthew',13,15,'free',
+      E'*For this people''s heart is waxed gross, and their ears are dull of hearing, and their eyes they have closed; lest at any time they should see with their eyes, and hear with their ears, and should understand with their heart, and should be converted, and I should heal them* (Matthew 13:15). The closed eye and dull ear of the rebellious house — *eyes to see, and see not; ... ears to hear, and hear not* (Ezekiel 12:2) — is the gross heart the Messiah names, lest they see and turn and be healed. The verdict of Isaiah 6 and Ezekiel 12 is one and the same in the Messiah''s mouth.'),
+
+    -- THREAD 2 (★): the prince carried to Babylon — yet shall he not see it
+    ('canon','ezekiel',12,13,'canon','2-kings',25,7,'free',
+      E'*And they slew the sons of Zedekiah before his eyes, and put out the eyes of Zedekiah, and bound him with fetters of brass, and carried him to Babylon* (2 Kings 25:7). Here the riddle is solved to the letter: *I will bring him to Babylon to the land of the Chaldeans; yet shall he not see it, though he shall die there* (Ezekiel 12:13). Zedekiah was carried to Babylon, but his eyes were put out first — so he came to it yet never SAW it. The covering of the face in the sign (12:12) is the blinding fulfilled.'),
+    ('canon','ezekiel',12,12,'canon','2-kings',25,4,'free',
+      E'*And the city was broken up, and all the men of war fled by night by the way of the gate between two walls, which is by the king''s garden... and the king went the way toward the plain* (2 Kings 25:4). The sign of the prince who *shall bear upon his shoulder in the twilight, and shall go forth* (Ezekiel 12:12) is enacted in Zedekiah''s flight by night through the broken wall. The exile baggage carried out by twilight is the king''s own escape from the breached city.'),
+    ('canon','ezekiel',12,13,'canon','jeremiah',52,11,'free',
+      E'*Then he put out the eyes of Zedekiah; and the king of Babylon bound him in chains, and carried him to Babylon, and put him in prison till the day of his death* (Jeremiah 52:11). Every clause of Ezekiel''s word lands: *I will bring him to Babylon... yet shall he not see it, though he shall die there* (Ezekiel 12:13). Blinded, so he never saw Babylon; imprisoned there until death, so he died there. The prophecy fulfilled to the letter.'),
+    ('canon','ezekiel',12,13,'canon','jeremiah',39,7,'free',
+      E'*Moreover he put out Zedekiah''s eyes, and bound him with chains, to carry him to Babylon* (Jeremiah 39:7). Jeremiah seals the same fulfillment of the snare-and-net of Ezekiel — *My net also will I spread upon him, and he shall be taken in my snare: and I will bring him to Babylon... yet shall he not see it* (Ezekiel 12:13). The prince was taken, blinded, and carried to a Babylon his eyes would never behold.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★★): the days are at hand — none of my words deferred
+    ('canon','ezekiel',12,22,'canon','habakkuk',2,3,'free',
+      E'*For the vision is yet for an appointed time, but at the end it shall speak, and not lie: though it tarry, wait for it; because it will surely come, it will not tarry* (Habakkuk 2:3). Against the scoffers'' proverb — *The days are prolonged, and every vision faileth?* (Ezekiel 12:22) — Habakkuk gives the same answer: the vision has an appointed time; though it seem to tarry, it will surely come. The word does not fail; it waits for its hour, then speaks and does not lie.'),
+    ('canon','ezekiel',12,27,'canon','2-peter',3,4,'free',
+      E'*And saying, Where is the promise of his coming? for since the fathers fell asleep, all things continue as they were from the beginning of the creation* (2 Peter 3:4). The very spirit Ezekiel rebukes — *The vision that he seeth is for many days to come, and he prophesieth of the times that are far off* (Ezekiel 12:27) — is the last-days scoffer who mocks the deferred promise. The same deferring unbelief, then and at the end: pushing the word off to far-off days because it has not yet come.'),
+    ('canon','ezekiel',12,27,'canon','2-peter',3,3,'free',
+      E'*Knowing this first, that there shall come in the last days scoffers, walking after their own lusts* (2 Peter 3:3). Those who say *The vision... is for many days to come, and he prophesieth of the times that are far off* (Ezekiel 12:27) are the same kind Peter foretells — scoffers who defer the word to distance their own lusts from its reckoning. The far-off-times mockery of Ezekiel''s house is the scoffing of the last days.'),
+    ('canon','ezekiel',12,28,'canon','2-peter',3,9,'free',
+      E'*Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). Ezekiel''s oath answers the same charge of slackness — *There shall none of my words be prolonged any more, but the word which I have spoken shall be done* (Ezekiel 12:28). What looks like delay is longsuffering, not failure; the word is not slack — it shall be done.'),
+    ('canon','ezekiel',12,22,'canon','matthew',24,48,'free',
+      E'*But and if that evil servant shall say in his heart, My lord delayeth his coming* (Matthew 24:48). The proverb *The days are prolonged, and every vision faileth?* (Ezekiel 12:22) is the heart of the evil servant — counting on delay, presuming the word will not come. The Messiah names the same deferring presumption Ezekiel rebukes, and the lord comes *in a day when he looketh not for him* (Matt 24:50).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house',
+       E'Eyes to see, and see not — the rebellious house, and the sign of the exile baggage',
+       E'The word of Yahuah (LORD) sets the prophet against a house that will not look: *Son of Adam, thou dwellest in the midst of a rebellious house, which have eyes to see, and see not; they have ears to hear, and hear not: for they are a rebellious house* (12:2). To this blind house Yahuah gives a SIGN they cannot miss — the prophet packs his exile baggage by day, digs through the wall at even, bears it on his shoulder in the twilight, and covers his face: *prepare thee stuff for removing... thou shalt go forth at even in their sight, as they that go forth into captivity. Dig thou through the wall in their sight, and carry out thereby... thou shalt cover thy face, that thou see not the ground: for I have set thee for a sign unto the house of Yashar''el (Israel)* (12:3-6). The eyes-that-see-not is no new verdict. Moses named it at the covenant in Moab: *Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:4). Isaiah was commissioned into it: *Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9), *shut their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and convert, and be healed* (Isaiah 6:10). Jeremiah indicts the same people in the same words: *O foolish people, and without understanding; which have eyes, and see not; which have ears, and hear not* (Jeremiah 5:21). And the Formed Son names the SAME hardness as the reason he speaks in parables: *they seeing see not; and hearing they hear not, neither do they understand. And in them is fulfilled the prophecy of Esaias... this people''s heart is waxed gross, and their ears are dull of hearing, and their eyes they have closed; lest at any time they should see with their eyes... and should be converted, and I should heal them* (Matthew 13:13-15). One unbroken verdict from the wilderness to the Messiah: the blindness of the rebellious house is moral, a refusal to see — not the failure of the sign, but the hardness of the eye.',
+       sv.verse_id, ev.verse_id, 'free', 32275
+  FROM _s308_ezek12_lookup sv, _s308_ezek12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=12 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-12-the-prince-carried-to-babylon-yet-shall-he-not-see-it',
+       E'The prince carried to Babylon — yet shall he not see it, though he shall die there',
+       E'The sign is interpreted: *This burden concerneth the prince in Jerusalem, and all the house of Yashar''el (Israel) that are among them* (12:10). The prophecy is exact, and it lands on Zedekiah to the letter: *And the prince that is among them shall bear upon his shoulder in the twilight, and shall go forth: they shall dig through the wall to carry out thereby: he shall cover his face, that he see not the ground with his eyes. My net also will I spread upon him, and he shall be taken in my snare: and I will bring him to Babylon to the land of the Chaldeans; yet shall he not see it, though he shall die there* (12:12-13). Every clause came to pass. The flight by night through the breached wall: *the city was broken up, and all the men of war fled by night by the way of the gate between two walls... and the king went the way toward the plain* (2 Kings 25:4). The net and the snare, the capture, the blinding: *they slew the sons of Zedekiah before his eyes, and put out the eyes of Zedekiah, and bound him with fetters of brass, and carried him to Babylon* (2 Kings 25:7). Brought to Babylon, yet — being blinded first — he never SAW it. Jeremiah records the same: *he put out Zedekiah''s eyes, and bound him with chains, to carry him to Babylon* (Jeremiah 39:7); *and carried him to Babylon, and put him in prison till the day of his death* (Jeremiah 52:11) — so he died there, exactly as the word said. And after the prince, the scattering: *I will scatter toward every wind all that are about him... and they shall know that I am Yahuah (LORD), when I shall scatter them among the nations* (12:14-15). Not a vague oracle but a riddle answered down to the eyes and the grave — the word of Yahuah fulfilled to the letter.',
+       sv.verse_id, ev.verse_id, 'free', 32278
+  FROM _s308_ezek12_lookup sv, _s308_ezek12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=12 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-12-the-days-are-at-hand-none-of-my-words-deferred',
+       E'The days are at hand — there shall none of my words be deferred any more',
+       E'The chapter closes against the scoffers who treat prophecy as forever postponed. Yahuah (LORD) takes up their saying: *Son of Adam, what is that proverb that ye have in the land of Yashar''el (Israel), saying, The days are prolonged, and every vision faileth?* (12:22). He swears to end it: *I will make this proverb to cease... but say unto them, The days are at hand, and the effect of every vision* (12:23); *For I am Yahuah (LORD): I will speak, and the word that I shall speak shall come to pass; it shall be no more prolonged* (12:25). And against those who push the word off to distant days — *The vision that he seeth is for many days to come, and he prophesieth of the times that are far off* (12:27) — the final oath: *There shall none of my words be prolonged any more, but the word which I have spoken shall be done, saith Adonai Yahuah (the Lord GOD)* (12:28). Habakkuk gives the same answer to the same impatience: *the vision is yet for an appointed time, but at the end it shall speak, and not lie: though it tarry, wait for it; because it will surely come, it will not tarry* (Habakkuk 2:3). And the deferring scoffer of Ezekiel''s day is the deferring scoffer of the last days. Peter foretells them word for word: *there shall come in the last days scoffers, walking after their own lusts, And saying, Where is the promise of his coming? for since the fathers fell asleep, all things continue as they were from the beginning of the creation* (2 Peter 3:3-4) — yet *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish* (2 Peter 3:9). The Messiah names the same presumption in the evil servant: *My lord delayeth his coming* (Matthew 24:48) — and the lord comes in an hour he is not aware of. What looks like delay is longsuffering, never failure; the word is not deferred — it shall be done.',
+       sv.verse_id, ev.verse_id, 'free', 32281
+  FROM _s308_ezek12_lookup sv, _s308_ezek12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=12 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9) — the rebellious house of Ezekiel 12:2 is the people Isaiah was sent into; eyes that look and perceive not.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *shut their eyes; lest they see with their eyes... and convert, and be healed* (Isaiah 6:10) — the shut eye is the rebellious heart of Ezekiel 12:2; the sign is given to a house that will not look.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *which have eyes, and see not; which have ears, and hear not* (Jeremiah 5:21) — Jeremiah names the same indictment in the same words as Ezekiel 12:2; one verdict on the rebellious house.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=5 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:4) — Moses named the eyes-that-see-not at the covenant in Moab; the verdict reaches back to the wilderness.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *they seeing see not; and hearing they hear not, neither do they understand* (Matthew 13:13) — the Formed Son names the SAME hardness of Ezekiel 12:2 as why he speaks in parables.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*By hearing ye shall hear, and shall not understand; and seeing ye shall see, and shall not perceive* (Matthew 13:14) — the Messiah quotes Isaiah 6:9 of his own generation, the same seeing-that-perceives-not Ezekiel''s house carried.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*their eyes they have closed; lest at any time they should see... and should be converted, and I should heal them* (Matthew 13:15) — the closed eye of Ezekiel 12:2 is the gross heart the Messiah names; the verdict of Isaiah 6 and Ezekiel 12 made one.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-eyes-to-see-and-see-not-the-rebellious-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *put out the eyes of Zedekiah, and bound him with fetters of brass, and carried him to Babylon* (2 Kings 25:7) — solved to the letter: brought to Babylon yet, being blinded, he never SAW it (Ezekiel 12:13).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-prince-carried-to-babylon-yet-shall-he-not-see-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *all the men of war fled by night by the way of the gate between two walls* (2 Kings 25:4) — the prince who *shall bear upon his shoulder in the twilight, and shall go forth* (Ezekiel 12:12) is Zedekiah''s flight by night through the breach.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=12
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-prince-carried-to-babylon-yet-shall-he-not-see-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *carried him to Babylon, and put him in prison till the day of his death* (Jeremiah 52:11) — *yet shall he not see it, though he shall die there* (Ezekiel 12:13): blinded, so unseeing; imprisoned, so he died there.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-prince-carried-to-babylon-yet-shall-he-not-see-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he put out Zedekiah''s eyes, and bound him with chains, to carry him to Babylon* (Jeremiah 39:7) — Jeremiah seals the snare-and-net of Ezekiel 12:13; the prince taken, blinded, carried to a Babylon his eyes would never behold.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=39 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-prince-carried-to-babylon-yet-shall-he-not-see-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the vision is yet for an appointed time... though it tarry, wait for it; because it will surely come* (Habakkuk 2:3) — the same answer to the same impatience as Ezekiel 12:22; the word does not fail, it waits for its hour.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=22
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-days-are-at-hand-none-of-my-words-deferred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Where is the promise of his coming? for since the fathers fell asleep, all things continue as they were* (2 Peter 3:4) — the last-days scoffer is the far-off-times mocker of Ezekiel 12:27; the same deferring unbelief.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=27
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-days-are-at-hand-none-of-my-words-deferred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *there shall come in the last days scoffers, walking after their own lusts* (2 Peter 3:3) — those who say the vision is *for the times that are far off* (Ezekiel 12:27) are the same scoffers Peter foretells.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=27
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-days-are-at-hand-none-of-my-words-deferred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Yahuah (Lord) is not slack concerning his promise... but is longsuffering* (2 Peter 3:9) — answers the same charge as Ezekiel 12:28: what looks like delay is longsuffering, not failure; the word shall be done.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-days-are-at-hand-none-of-my-words-deferred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *that evil servant shall say in his heart, My lord delayeth his coming* (Matthew 24:48) — the proverb of Ezekiel 12:22 is the heart of the evil servant, counting on delay; the lord comes in an hour he is not aware of.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=12 AND sv.verse_number=22
+  JOIN _s308_ezek12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-12-the-days-are-at-hand-none-of-my-words-deferred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
