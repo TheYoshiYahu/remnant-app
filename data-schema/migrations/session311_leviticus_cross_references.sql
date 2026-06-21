@@ -3139,6 +3139,1366 @@ SELECT t.id, cr.id, 3, E'1 Corinthians 9:13 — *they which wait at the altar ar
  WHERE t.slug='leviticus-10-the-priests-due-eaten-in-the-holy-place'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_leviticus_11.sql (Leviticus 11) -----
+--
+-- BOOK: Leviticus  CHAPTER: 11  TAG: lev11  SESSION: s311
+-- SORT BAND: base 22950 step 3  (22950, 22953, 22956, 22959, 22962, 22965)
+-- VIEW: _s311_lev11_lookup
+--
+-- FRAMING: Leviticus 11 is THE clean/unclean dietary law — STANDING Torah, the ground of
+-- holiness, never abolished. It is read in its own dietary context: the distinction between
+-- clean and unclean is what it MEANS to be set apart unto Yahuah. The prophets carry it
+-- forward to the consummation (Isaiah 65/66 — eaters of swine's flesh judged at the end), and
+-- the apostles KEEP it after the resurrection (1 Peter quotes "be ye holy" FROM this chapter;
+-- Acts 10 is Peter's OWN interpretation — "I should not call any MAN common or unclean,"
+-- about the two-house ingathering of men, NOT a repeal of the menu). No license; no abolition.
+--
+-- Curated thematically (5–7 threads), NOT animal-by-animal.
+--
+-- COVERAGE CHECKLIST:
+--   v.1-8  (clean/unclean BEASTS — part the hoof AND chew the cud; camel/coney/hare/swine unclean)
+--        NT:     Isaiah carried fwd to NT not directly; framed via 11:44-47 thread — 'none warranted' here
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 14:3-8 (same law restated); Genesis 7:2 (clean/unclean before Sinai);
+--                Isaiah 65:4 + Isaiah 66:17 (swine-eaters judged at the end)  [thread 1]
+--   v.9-12 (clean/unclean WATER creatures — fins and scales clean, else abomination)
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: Deuteronomy 14:9-10  [thread 2]
+--   v.13-23 (unclean BIRDS + winged creeping things)
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: Deuteronomy 14:11-20  [thread 3]
+--   v.24-40 (uncleanness from touching/bearing carcases — the contagion of the unclean)
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: Leviticus 11:43-44 self (holiness motive); kept within the be-holy thread — bound to v.44  [thread 4]
+--   v.41-43 (creeping/swarming things forbidden — make not yourselves abominable / defiled)
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: bound forward to 11:44 (holiness motive)  [thread 5]
+--   v.44-47 (★★ I am Yahuah... be ye holy for I am holy; make a DIFFERENCE between unclean/clean)
+--        NT:     1 Peter 1:15-16 (Peter quotes THIS verse); Acts 10:14-15,28 (Peter keeps it,
+--                interprets the vision as about MEN not food); 2 Corinthians 6:17 (touch not the unclean)
+--        Extras: none warranted
+--        Tanakh: Leviticus 20:25-26 (put difference / severed you); Ezekiel 44:23 (teach the difference)  [thread 6]
+--
+-- THREADS (6):
+--   leviticus-11-the-clean-and-the-unclean-beasts-of-the-earth          [Tanakh: Deut, Gen, Isaiah]  free
+--   leviticus-11-fins-and-scales-the-clean-of-the-waters               [Tanakh: Deut]               free
+--   leviticus-11-the-unclean-fowls-and-the-winged-creeping-things      [Tanakh: Deut]               free
+--   leviticus-11-the-contagion-of-the-carcase                          [Tanakh: Leviticus self]     free
+--   leviticus-11-defile-not-yourselves-with-the-creeping-things        [Tanakh: Leviticus self]     free
+--   leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands   [NT + Tanakh]                free
+--
+-- All slugs start leviticus-11- ; none in EXISTING_SLUGS.txt.
+
+CREATE TEMP VIEW _s311_lev11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: clean/unclean beasts (11:3, 11:7, 11:8)
+    ('canon','leviticus',11,3,'canon','deuteronomy',14,6,'free',
+      E'*And every beast that parteth the hoof, and cleaveth the cleft into two claws, and cheweth the cud among the beasts, that ye shall eat* (Deuteronomy 14:6). The same Torah restated to the second generation: *Whatsoever parteth the hoof, and is clovenfooted, and cheweth the cud, among the beasts, that shall ye eat* (Leviticus 11:3). One law, twice given — the standing rule of what may be eaten among Yahuah''s set-apart people.'),
+    ('canon','leviticus',11,7,'canon','deuteronomy',14,8,'free',
+      E'*And the swine, because it divideth the hoof, yet cheweth not the cud, it is unclean unto you: ye shall not eat of their flesh, nor touch their dead carcase* (Deuteronomy 14:8). Moses restates the swine''s exclusion verbatim with Leviticus: *the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you* (Leviticus 11:7). The pig is the type-case of the unclean throughout the canon.'),
+    ('canon','leviticus',11,4,'canon','deuteronomy',14,7,'free',
+      E'*Nevertheless these ye shall not eat of them that chew the cud, or of them that divide the cloven hoof; as the camel, and the hare, and the coney: for they chew the cud, but divide not the hoof; therefore they are unclean unto you* (Deuteronomy 14:7). The same camel, hare, and coney that Leviticus names — *the camel, because he cheweth the cud, but divideth not the hoof; he is unclean unto you* (Leviticus 11:4) — the half-mark is not enough; both signs together, or it is unclean.'),
+    ('canon','leviticus',11,2,'canon','genesis',7,2,'free',
+      E'*Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two, the male and his female* (Genesis 7:2). The clean/unclean distinction is older than Sinai — Noah already knew it at the ark, generations before *These are the beasts which ye shall eat* (Leviticus 11:2) was spoken to Yashar''el (Israel). Leviticus 11 codifies a difference Yahuah had drawn from the foundation of the world.'),
+    ('canon','leviticus',11,8,'canon','isaiah',65,4,'free',
+      E'*Which remain among the graves, and lodge in the monuments, which eat swine''s flesh, and broth of abominable things is in their vessels* (Isaiah 65:4). Centuries after Leviticus said *Of their flesh shall ye not eat, and their carcase shall ye not touch; they are unclean to you* (Leviticus 11:8), Isaiah indicts a people for eating that very swine''s flesh — the law still binding, the violation still provoking Yahuah to His face.'),
+    ('canon','leviticus',11,8,'canon','isaiah',66,17,'free',
+      E'*They that sanctify themselves, and purify themselves in the gardens behind one tree in the midst, eating swine''s flesh, and the abomination, and the mouse, shall be consumed together, saith Yahuah (LORD)* (Isaiah 66:17). At the consummation, in the very last chapter of Isaiah, the eaters of swine''s flesh and the mouse are consumed together — proof the dietary law of *they are unclean to you* (Leviticus 11:8) stands to the end of the age, never abolished.'),
+
+    -- THREAD 2: water creatures (11:9, 11:10)
+    ('canon','leviticus',11,9,'canon','deuteronomy',14,9,'free',
+      E'*These ye shall eat of all that are in the waters: all that have fins and scales shall ye eat* (Deuteronomy 14:9). The water-rule restated for the second generation, word for word with *These shall ye eat of all that are in the waters: whatsoever hath fins and scales in the waters, in the seas, and in the rivers, them shall ye eat* (Leviticus 11:9).'),
+    ('canon','leviticus',11,10,'canon','deuteronomy',14,10,'free',
+      E'*And whatsoever hath not fins and scales ye may not eat; it is unclean unto you* (Deuteronomy 14:10). Moses repeats the exclusion of Leviticus — *all that have not fins and scales in the seas, and in the rivers... they shall be an abomination unto you* (Leviticus 11:10) — the one test, fins and scales, settling clean from unclean in the waters.'),
+
+    -- THREAD 3: fowls + winged creeping (11:13, 11:20)
+    ('canon','leviticus',11,13,'canon','deuteronomy',14,12,'free',
+      E'*But these are they of which ye shall not eat: the eagle, and the ossifrage, and the ospray* (Deuteronomy 14:12). The forbidden-fowl list of Leviticus restated — *these are they which ye shall have in abomination among the fowls; they shall not be eaten, they are an abomination: the eagle, and the ossifrage, and the ospray* (Leviticus 11:13) — the birds of prey and carrion the same in both tellings of the Torah.'),
+    ('canon','leviticus',11,20,'canon','deuteronomy',14,19,'free',
+      E'*And every creeping thing that flieth is unclean unto you: they shall not be eaten* (Deuteronomy 14:19). The winged swarmers forbidden in Leviticus — *All fowls that creep, going upon all four, shall be an abomination unto you* (Leviticus 11:20) — are excluded again in Deuteronomy, save the leaping locust kinds Leviticus permits.'),
+
+    -- THREAD 4: contagion of the carcase (11:24, 11:32, 11:39)
+    ('canon','leviticus',11,24,'canon','leviticus',11,44,'free',
+      E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy: neither shall ye defile yourselves with any manner of creeping thing that creepeth upon the earth* (Leviticus 11:44). The carcase-uncleanness — *whosoever toucheth the carcase of them shall be unclean until the even* (Leviticus 11:24) — is not arbitrary ritual: it is the outworking of the holiness Yahuah names as its ground. The contagion teaches that uncleanness spreads, and holiness must be guarded.'),
+    ('canon','leviticus',11,32,'canon','leviticus',11,47,'free',
+      E'*To make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten* (Leviticus 11:47). The vessel that the dead unclean thing falls upon — *it shall be unclean... it must be put into water, and it shall be unclean until the even; so it shall be cleansed* (Leviticus 11:32) — enacts in everyday objects the very difference the chapter exists to draw.'),
+
+    -- THREAD 5: defile not yourselves with creeping things (11:41, 11:43)
+    ('canon','leviticus',11,43,'canon','leviticus',11,44,'free',
+      E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44). The warning *Ye shall not make yourselves abominable with any creeping thing that creepeth, neither shall ye make yourselves unclean with them, that ye should be defiled thereby* (Leviticus 11:43) flows straight into its reason: because Yahuah Himself is holy, His people are not to defile themselves. The dietary command is grounded in the character of Yahuah.'),
+    ('canon','leviticus',11,41,'canon','leviticus',11,42,'free',
+      E'*Whatsoever goeth upon the belly, and whatsoever goeth upon all four, or whatsoever hath more feet among all creeping things that creep upon the earth, them ye shall not eat; for they are an abomination* (Leviticus 11:42). The blanket ban — *every creeping thing that creepeth upon the earth shall be an abomination; it shall not be eaten* (Leviticus 11:41) — is spelled out by the mode of their going, the serpent-belly-crawler chief among the abominable.'),
+
+    -- THREAD 6: be ye holy / the difference that stands (11:44, 11:45, 11:47)
+    ('canon','leviticus',11,44,'canon','1-peter',1,16,'free',
+      E'*Because it is written, Be ye holy; for I am holy* (1 Peter 1:16). Peter cites THIS verse by name — *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44) — long after the resurrection, binding the holiness call of Leviticus on the scattered believers. The dietary holiness law is quoted as living Scripture, not a defunct ordinance.'),
+    ('canon','leviticus',11,45,'canon','1-peter',1,15,'free',
+      E'*But as he which hath called you is holy, so be ye holy in all manner of conversation* (1 Peter 1:15). The redemption-ground of Leviticus — *For I am Yahuah (LORD) that bringeth you up out of the land of Egypt, to be your Elohim (God): ye shall therefore be holy, for I am holy* (Leviticus 11:45) — becomes Peter''s ground: the Yahuah who called and redeemed His people calls them to be holy as He is holy.'),
+    ('canon','leviticus',11,47,'canon','acts',10,14,'free',
+      E'*But Peter said, Not so, Yahuah (Lord); for I have never eaten any thing that is common or unclean* (Acts 10:14). Years after the resurrection Peter STILL keeps the difference Leviticus draws — *to make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten* (Leviticus 11:47) — refusing to eat the unclean. The vision does not change his diet; he never does eat.'),
+    ('canon','leviticus',11,47,'canon','acts',10,15,'free',
+      E'*And the voice spake unto him again the second time, What Elohim (God) hath cleansed, that call not thou common* (Acts 10:15). The cleansing in view is not a repeal of *the difference between the unclean and the clean* (Leviticus 11:47); Peter himself supplies the meaning — the sheet of beasts is a parable about people, the Gentile (two-house) ingathering Yahuah is cleansing.'),
+    ('canon','leviticus',11,47,'canon','acts',10,28,'free',
+      E'*And he said unto them, Ye know how that it is an unlawful thing for a man that is a Yahudi (Jew) to keep company, or come unto one of another nation; but Elohim (God) hath shewed me that I should not call any man common or unclean* (Acts 10:28). Peter interprets his OWN vision: it is about MEN, not menu. The difference of Leviticus 11:47 stands; what was abolished was the man-made wall barring the nations from the household — the two houses gathered, not the dietary law repealed.'),
+    ('canon','leviticus',11,44,'canon','2-corinthians',6,17,'free',
+      E'*Wherefore come out from among them, and be ye separate, saith Yahuah (LORD), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17, with v.17 here quoted in part). Paul echoes the Leviticus call — *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy: neither shall ye defile yourselves* (Leviticus 11:44) — *touch not the unclean thing* drawn straight from the language of separation unto Yahuah.'),
+    ('canon','leviticus',11,47,'canon','leviticus',20,25,'free',
+      E'*Ye shall therefore put difference between clean beasts and unclean, and between unclean fowls and clean: and ye shall not make your souls abominable by beast, or by fowl, or by any manner of living thing that creepeth on the ground, which I have separated from you as unclean* (Leviticus 20:25). The very charge of Leviticus 11:47 — *to make a difference between the unclean and the clean* — is repeated as the seal of holiness, the dietary line drawn because Yahuah has separated His people unto Himself.'),
+    ('canon','leviticus',11,45,'canon','leviticus',20,26,'free',
+      E'*And ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine* (Leviticus 20:26). The refrain of Leviticus 11 — *ye shall therefore be holy, for I am holy* (Leviticus 11:45) — is restated as election: the dietary difference is the everyday badge of a people severed unto Yahuah.'),
+    ('canon','leviticus',11,47,'canon','ezekiel',44,23,'free',
+      E'*And they shall teach my people the difference between the holy and profane, and cause them to discern between the unclean and the clean* (Ezekiel 44:23). The priestly task in the restored temple is precisely to keep teaching the difference of Leviticus 11:47 — *to make a difference between the unclean and the clean* — proof the discernment between clean and unclean endures into the prophesied age of restoration.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-11-the-clean-and-the-unclean-beasts-of-the-earth',
+  E'The Clean and the Unclean Beasts of the Earth',
+  E'The land-animal rule opens the dietary law: *Whatsoever parteth the hoof, and is clovenfooted, and cheweth the cud, among the beasts, that shall ye eat* (Leviticus 11:3) — both signs together, or unclean. The camel, coney, hare, and chief of all the swine fail the test: *the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you* (Leviticus 11:7), and *Of their flesh shall ye not eat, and their carcase shall ye not touch; they are unclean to you* (Leviticus 11:8). This is not a fleeting ceremonial whim. The same law is restated to the second generation — *And every beast that parteth the hoof, and cleaveth the cleft into two claws, and cheweth the cud among the beasts, that ye shall eat* (Deuteronomy 14:6) — and the distinction is older than Sinai: *Of every clean beast thou shalt take to thee by sevens... and of beasts that are not clean by two* (Genesis 7:2), Noah keeping it at the ark. It stands to the very end of the age: Isaiah indicts a people *which eat swine''s flesh, and broth of abominable things is in their vessels* (Isaiah 65:4), and in his last chapter declares that they that purify themselves *eating swine''s flesh, and the abomination, and the mouse, shall be consumed together, saith Yahuah (LORD)* (Isaiah 66:17). The clean/unclean line is standing Torah from the flood to the consummation.',
+  sv.verse_id, ev.verse_id, 'free', 22950
+  FROM _s311_lev11_lookup sv, _s311_lev11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=11 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-11-fins-and-scales-the-clean-of-the-waters',
+  E'Fins and Scales — The Clean of the Waters',
+  E'One simple test settles the waters: *These shall ye eat of all that are in the waters: whatsoever hath fins and scales in the waters, in the seas, and in the rivers, them shall ye eat* (Leviticus 11:9). All else is barred — *all that have not fins and scales in the seas, and in the rivers... they shall be an abomination unto you* (Leviticus 11:10). The same rule is given again to the second generation: *These ye shall eat of all that are in the waters: all that have fins and scales shall ye eat* (Deuteronomy 14:9), and *whatsoever hath not fins and scales ye may not eat; it is unclean unto you* (Deuteronomy 14:10). The Torah speaks with one voice across both tellings.',
+  sv.verse_id, ev.verse_id, 'free', 22953
+  FROM _s311_lev11_lookup sv, _s311_lev11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=11 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-11-the-unclean-fowls-and-the-winged-creeping-things',
+  E'The Unclean Fowls and the Winged Creeping Things',
+  E'The birds of prey and carrion are named and barred: *these are they which ye shall have in abomination among the fowls; they shall not be eaten, they are an abomination: the eagle, and the ossifrage, and the ospray* (Leviticus 11:13), through the owl, raven, stork, and bat. The winged swarmers too — *All fowls that creep, going upon all four, shall be an abomination unto you* (Leviticus 11:20) — save the leaping locust kinds that may be eaten. The list is restated to the second generation almost word for word: *these are they of which ye shall not eat: the eagle, and the ossifrage, and the ospray* (Deuteronomy 14:12), and *every creeping thing that flieth is unclean unto you: they shall not be eaten* (Deuteronomy 14:19). One Torah, twice spoken.',
+  sv.verse_id, ev.verse_id, 'free', 22956
+  FROM _s311_lev11_lookup sv, _s311_lev11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=11 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-11-the-contagion-of-the-carcase',
+  E'The Contagion of the Carcase',
+  E'Uncleanness is not abstract — it spreads, and the chapter shows how. *Whosoever toucheth the carcase of them shall be unclean until the even* (Leviticus 11:24); the dead thing defiles the one who bears it, the vessel it falls into, the oven, the food and the drink. *Upon whatsoever any of them, when they are dead, doth fall, it shall be unclean... it must be put into water, and it shall be unclean until the even; so it shall be cleansed* (Leviticus 11:32). This is the everyday enactment of the chapter''s whole purpose — *to make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten* (Leviticus 11:47) — and it is grounded in the holiness Yahuah names directly: *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44). The contagion teaches that holiness must be guarded, for defilement does not stay still.',
+  sv.verse_id, ev.verse_id, 'free', 22959
+  FROM _s311_lev11_lookup sv, _s311_lev11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=11 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-11-defile-not-yourselves-with-the-creeping-things',
+  E'Defile Not Yourselves with the Creeping Things',
+  E'The swarming, crawling things are wholly forbidden: *every creeping thing that creepeth upon the earth shall be an abomination; it shall not be eaten* (Leviticus 11:41), and the law marks them by their very mode of going — *Whatsoever goeth upon the belly, and whatsoever goeth upon all four, or whatsoever hath more feet among all creeping things that creep upon the earth, them ye shall not eat; for they are an abomination* (Leviticus 11:42), the serpent-belly-crawler the chief of the abominable. Then comes the heart of it: *Ye shall not make yourselves abominable with any creeping thing that creepeth, neither shall ye make yourselves unclean with them, that ye should be defiled thereby* (Leviticus 11:43). The command is not arbitrary; it flows straight into its reason — *For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44). The diet is grounded in the character of Yahuah.',
+  sv.verse_id, ev.verse_id, 'free', 22962
+  FROM _s311_lev11_lookup sv, _s311_lev11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=41
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=11 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands',
+  E'Be Ye Holy, for I Am Holy — the Difference That Stands',
+  E'Here is the ground of the whole chapter and the verse the apostles carry forward: *For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44), with the redemption-ground added — *For I am Yahuah (LORD) that bringeth you up out of the land of Egypt, to be your Elohim (God): ye shall therefore be holy, for I am holy* (Leviticus 11:45). The chapter closes naming its own purpose: *To make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten* (Leviticus 11:47). Peter quotes THIS verse by name after the resurrection — *Because it is written, Be ye holy; for I am holy* (1 Peter 1:16), *as he which hath called you is holy, so be ye holy in all manner of conversation* (1 Peter 1:15) — citing the dietary holiness law as living Scripture. And in Acts 10 Peter STILL keeps the difference: *Not so, Yahuah (Lord); for I have never eaten any thing that is common or unclean* (Acts 10:14). The vision does not change his menu; he interprets it himself — *Elohim (God) hath shewed me that I should not call any man common or unclean* (Acts 10:28). What was cleansed was MEN, not meat: the two-house ingathering of the nations Yahuah is gathering, *What Elohim (God) hath cleansed, that call not thou common* (Acts 10:15). Paul echoes the same separation — *touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). And the Torah itself seals the charge twice over — *Ye shall therefore put difference between clean beasts and unclean* (Leviticus 20:25); *And ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine* (Leviticus 20:26) — and the restored-temple priests will keep teaching it: *they shall teach my people the difference between the holy and profane, and cause them to discern between the unclean and the clean* (Ezekiel 44:23). The dietary distinction is standing Torah, the ground of holiness, never repealed.',
+  sv.verse_id, ev.verse_id, 'free', 22965
+  FROM _s311_lev11_lookup sv, _s311_lev11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=44
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=11 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 14:6 — *every beast that parteth the hoof... and cheweth the cud, that ye shall eat*: the same eating-rule restated to the second generation.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=3
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-clean-and-the-unclean-beasts-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 14:7 — *the camel, and the hare, and the coney... they chew the cud, but divide not the hoof; therefore they are unclean*: the half-sign animals barred again.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-clean-and-the-unclean-beasts-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 14:8 — *the swine... it is unclean unto you: ye shall not eat of their flesh, nor touch their dead carcase*: the pig''s exclusion restated verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=7
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-clean-and-the-unclean-beasts-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Genesis 7:2 — *Of every clean beast... by sevens... and of beasts that are not clean by two*: the distinction known to Noah before Sinai, older than the giving of the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-clean-and-the-unclean-beasts-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Isaiah 65:4 — *which eat swine''s flesh, and broth of abominable things is in their vessels*: the swine-law still binding, the violation still provoking Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=8
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-clean-and-the-unclean-beasts-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Isaiah 66:17 — eaters of *swine''s flesh, and the abomination, and the mouse, shall be consumed together*: the dietary law standing to the consummation, the last chapter of Isaiah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=8
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-clean-and-the-unclean-beasts-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 14:9 — *all that have fins and scales shall ye eat*: the water-rule restated for the second generation.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=9
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-fins-and-scales-the-clean-of-the-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 14:10 — *whatsoever hath not fins and scales ye may not eat; it is unclean unto you*: the same exclusion, the one test repeated.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=10
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-fins-and-scales-the-clean-of-the-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 14:12 — *the eagle, and the ossifrage, and the ospray*: the forbidden-fowl list restated nearly word for word.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=13
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-unclean-fowls-and-the-winged-creeping-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 14:19 — *every creeping thing that flieth is unclean unto you*: the winged swarmers barred again, save the leaping locust kinds.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=20
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-unclean-fowls-and-the-winged-creeping-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 11:44 — *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy*: the holiness that grounds the carcase-contagion rule.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=24
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-contagion-of-the-carcase'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 11:47 — *to make a difference between the unclean and the clean*: the chapter''s stated purpose, enacted in the defiled vessel.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=32
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-the-contagion-of-the-carcase'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 11:42 — *whatsoever goeth upon the belly... them ye shall not eat; for they are an abomination*: the crawling things marked by their mode of going.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=41
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-defile-not-yourselves-with-the-creeping-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 11:44 — *For I am Yahuah Elohaychem... be holy; for I am holy*: the reason the defiling crawlers are forbidden, the diet grounded in Yahuah''s holiness.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=43
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-defile-not-yourselves-with-the-creeping-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Peter 1:16 — *Because it is written, Be ye holy; for I am holy*: Peter cites Leviticus 11:44 by name, the dietary holiness law quoted as living Scripture after the resurrection.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=44
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Peter 1:15 — *as he which hath called you is holy, so be ye holy in all manner of conversation*: the redemption-ground of Leviticus 11:45 made Peter''s ground for holy living.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=45
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Acts 10:14 — *I have never eaten any thing that is common or unclean*: Peter STILL keeps the difference years after the resurrection; the vision never changes his diet.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=47
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 10:15 — *What Elohim (God) hath cleansed, that call not thou common*: the cleansing is of MEN, the two-house ingathering — not a repeal of the clean/unclean menu.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=47
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Acts 10:28 — *Elohim (God) hath shewed me that I should not call any man common or unclean*: Peter''s OWN interpretation — the vision is about MEN, not menu; the dietary difference stands.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=47
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'2 Corinthians 6:17 — *touch not the unclean thing; and I will receive you*: Paul draws straight from the Leviticus 11:44 language of separation unto Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=44
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Leviticus 20:25 — *Ye shall therefore put difference between clean beasts and unclean*: the charge of 11:47 sealed again as the badge of holiness.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=47
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Leviticus 20:26 — *ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people*: the be-holy refrain of 11:45 restated as election.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=45
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'Ezekiel 44:23 — *cause them to discern between the unclean and the clean*: the restored-temple priests still teaching the difference of 11:47, the discernment enduring into the prophesied age.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=11 AND sv.verse_number=47
+  JOIN _s311_lev11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=44 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-11-be-ye-holy-for-i-am-holy-the-difference-that-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_12.sql (Leviticus 12) -----
+-- Book: Leviticus  Chapter: 12  Tag: lev12  Session: s311
+-- Sort band base: 22975, step 3  (22975, 22978)
+-- Temp view: _s311_lev12_lookup
+--
+-- FRAMING: The purification of the woman after childbirth. Two framework-bearing
+-- weaves: (1) the eighth-day circumcision of the man child (v.3), the sign of the
+-- everlasting covenant cut into the flesh of Abraham's seed (Gen 17:12), kept exactly
+-- on Yahusha himself (Luke 1:59 / 2:21) and defended by him as a Torah ordinance
+-- (John 7:22-23), Paul's own credential (Phil 3:5) — Torah affirmed, never abolished.
+-- (2) The graded offering (v.6-8): a lamb for the well-off, but two turtledoves /
+-- two young pigeons for the poor — atonement scaled so none is shut out; the law of
+-- the poor that Miriam (Mary) fulfilled when she presented Yahusha (Luke 2:22-24),
+-- the Most High born into a poor household. Lateral to the same poor-provision in
+-- the sin/trespass offering (Lev 5:7) and the bird burnt-offering (Lev 1:14).
+--
+-- Leviticus 12 coverage:
+--   v.1-2  NT:     none warranted (purification frame; fulfilled in the offering weave at v.6-8)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.3    NT:     Luke 1:59, Luke 2:21, John 7:22, John 7:23, Philippians 3:5  -> THREAD 1
+--          Extras: none warranted (Jub 15 circumcision-covenant noted but bird/eighth-day handled by canon witnesses)
+--          Tanakh: Genesis 17:12  -> THREAD 1
+--   v.4-5  NT:     none warranted (continues purification reckoning; covered by v.6-8 offering)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.6    NT:     Luke 2:22, Luke 2:24  -> THREAD 2
+--          Extras: none warranted
+--          Tanakh: Leviticus 1:14  -> THREAD 2
+--   v.7    NT:     none warranted (atonement summary; carried by v.6/v.8 weave)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.8    NT:     Luke 2:24  -> THREAD 2
+--          Extras: none warranted
+--          Tanakh: Leviticus 5:7  -> THREAD 2
+--
+-- THREADS:
+--   T1 leviticus-12-the-eighth-day-the-flesh-of-his-foreskin-circumcised
+--      members: Genesis 17:12 (canon/Tanakh), Luke 1:59 (canon/NT), Luke 2:21 (canon/NT),
+--               John 7:22 (canon/NT), John 7:23 (canon/NT), Philippians 3:5 (canon/NT)
+--      tier free (all canon)
+--   T2 leviticus-12-two-turtledoves-the-offering-of-the-poor
+--      members: Luke 2:24 (canon/NT), Luke 2:22 (canon/NT), Leviticus 5:7 (canon/Tanakh),
+--               Leviticus 1:14 (canon/Tanakh)
+--      tier free (all canon)
+--
+-- CONTESTED/LOAD-BEARING: v.3 + John 7:22-23 framed as Torah AFFIRMED — Yahusha holds
+-- circumcision (a Torah/fathers ordinance) above even a Sabbath scruple, never as a
+-- thing abolished; Phil 3:5 is Paul keeping the same eighth-day ordinance, his credential
+-- in the flesh, not a relic discarded. v.8 + Luke 2:24 framed as atonement graded to the
+-- poor (the Most High born poor), never the Torah as burden.
+
+CREATE TEMP VIEW _s311_lev12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the eighth-day circumcision (v.3)
+    ('canon','leviticus',12,3,'canon','genesis',17,12,'free',
+     E'*And he that is eight days old shall be circumcised among you, every man child in your generations, he that is born in the house, or bought with money of any stranger, which is not of thy seed.* (Genesis 17:12). Leviticus'' law of the eighth day — *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3) — is the standing ordinance of the everlasting covenant Yahuah cut with Abraham''s seed. The day is fixed; the sign is in the flesh of the paternal bloodline.'),
+    ('canon','leviticus',12,3,'canon','luke',1,59,'free',
+     E'*And it came to pass, that on the eighth day they came to circumcise the child; and they called him Zacharias, after the name of his father.* (Luke 1:59). The eighth-day ordinance of *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3) is kept exactly in the household of Zacharias the priest — the Torah is not a defunct relic but the living custom of the covenant-faithful at John''s birth.'),
+    ('canon','leviticus',12,3,'canon','luke',2,21,'free',
+     E'*And when eight days were accomplished for the circumcising of the child, his name was called Yahusha (JESUS), which was so named of the angel before he was conceived in the womb.* (Luke 2:21). The Most High''s own Son is brought under *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3) — the Formed Son enters the covenant in the flesh on the appointed eighth day, the very ordinance he gave.'),
+    ('canon','leviticus',12,3,'canon','john',7,22,'free',
+     E'*Moses therefore gave unto you circumcision; (not because it is of Moses, but of the fathers;) and ye on the sabbath day circumcise a man.* (John 7:22). Yahusha himself names *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3) as an ordinance reaching back through Moses to the fathers — so binding that it is performed even on the Sabbath day. Torah affirmed, traced to Abraham, never abolished.'),
+    ('canon','leviticus',12,3,'canon','john',7,23,'free',
+     E'*If a man on the sabbath day receive circumcision, that the law of Moses should not be broken; are ye angry at me, because I have made a man every whit whole on the sabbath day?* (John 7:23). The eighth-day cut of *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3) overrides even a Sabbath scruple — Yahusha reasons from the law''s own weight, *that the law of Moses should not be broken*, defending the Torah rather than discarding it.'),
+    ('canon','leviticus',12,3,'canon','philippians',3,5,'free',
+     E'*Circumcised the eighth day, of the stock of Yashar''el (Israel), of the tribe of Benjamin, an Hebrew of the Hebrews; as touching the law, a Pharisee;* (Philippians 3:5). Paul names his own keeping of *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3) as the first of his covenant credentials in the flesh — the ordinance was kept on him too; what he later counts loss is flesh-confidence, not the Torah itself.'),
+    -- THREAD 2: two turtledoves, the offering of the poor (v.6-8)
+    ('canon','leviticus',12,6,'canon','luke',2,22,'free',
+     E'*And when the days of her purification according to the law of Moses were accomplished, they brought him to Jerusalem, to present him to Yahuah (Lord);* (Luke 2:22). Miriam (Mary) fulfils to the letter *And when the days of her purifying are fulfilled... she shall bring a lamb of the first year for a burnt offering, and a young pigeon, or a turtledove, for a sin offering* (Leviticus 12:6) — the days reckoned, the child brought up to the tabernacle, the law of Moses obeyed at the presentation of the Most High''s Son.'),
+    ('canon','leviticus',12,6,'canon','leviticus',1,14,'free',
+     E'*And if the burnt sacrifice for his offering to Yahuah (LORD) be of fowls, then he shall bring his offering of turtledoves, or of young pigeons.* (Leviticus 1:14). The same bird-offering provided in *a young pigeon, or a turtledove, for a sin offering* (Leviticus 12:6) — the burnt-offering law already makes room for the turtledove and the pigeon, the offering within reach of the poor.'),
+    ('canon','leviticus',12,8,'canon','luke',2,24,'free',
+     E'*And to offer a sacrifice according to that which is said in the law of Yahuah (Lord), A pair of turtledoves, or two young pigeons.* (Luke 2:24). This is the very provision of the poor — *And if she be not able to bring a lamb, then she shall bring two turtles, or two young pigeons* (Leviticus 12:8). Miriam brings not the lamb but the two birds: the Most High''s Son is born into a poor household, atonement graded so that poverty shuts no one out.'),
+    ('canon','leviticus',12,8,'canon','leviticus',5,7,'free',
+     E'*And if he be not able to bring a lamb, then he shall bring for his trespass, which he hath committed, two turtledoves, or two young pigeons, unto Yahuah (LORD); one for a sin offering, and the other for a burnt offering.* (Leviticus 5:7). The same mercy runs through the sin offering as through childbirth purification — *And if she be not able to bring a lamb, then she shall bring two turtles, or two young pigeons* (Leviticus 12:8). Throughout the Torah atonement is scaled to the means of the poor, never beyond their reach.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-12-the-eighth-day-the-flesh-of-his-foreskin-circumcised',
+       E'The eighth day: the flesh of his foreskin circumcised',
+       E'In the midst of the law of purification after childbirth stands the sign of the covenant: *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3). This is no new commandment but the standing ordinance Yahuah cut with Abraham — *And he that is eight days old shall be circumcised among you, every man child in your generations, he that is born in the house, or bought with money of any stranger, which is not of thy seed* (Genesis 17:12) — the token of the everlasting covenant in the flesh of the paternal bloodline.\n\nThe covenant-faithful keep it exactly. At John''s birth: *And it came to pass, that on the eighth day they came to circumcise the child* (Luke 1:59). And the Formed Son himself is brought under it: *And when eight days were accomplished for the circumcising of the child, his name was called Yahusha (JESUS)* (Luke 2:21). The One who gave the ordinance enters the covenant in the flesh on the appointed day.\n\nYahusha defends the ordinance to the very teachers of Israel, tracing it past Moses to the fathers and showing it so weighty it is done even on the Sabbath: *Moses therefore gave unto you circumcision; (not because it is of Moses, but of the fathers;) and ye on the sabbath day circumcise a man* (John 7:22); *If a man on the sabbath day receive circumcision, that the law of Moses should not be broken... are ye angry at me, because I have made a man every whit whole on the sabbath day?* (John 7:23). He reasons FROM the law''s authority, *that the law of Moses should not be broken* — Torah affirmed, not abolished.\n\nAnd Paul names his own keeping of it as the first of his fleshly credentials: *Circumcised the eighth day, of the stock of Yashar''el (Israel)... as touching the law, a Pharisee* (Philippians 3:5). What he later counts loss is confidence in the flesh, never the Torah itself. The eighth day stands from Abraham to the Messiah.',
+       sv.verse_id, ev.verse_id, 'free', 22975
+  FROM _s311_lev12_lookup sv, _s311_lev12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=12 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-12-two-turtledoves-the-offering-of-the-poor',
+       E'Two turtledoves: the offering of the poor',
+       E'When the days of purifying are fulfilled the woman brings her offering — *she shall bring a lamb of the first year for a burnt offering, and a young pigeon, or a turtledove, for a sin offering, unto the door of the tabernacle of the congregation, unto the priest* (Leviticus 12:6). But the Torah does not leave the poor outside: *And if she be not able to bring a lamb, then she shall bring two turtles, or two young pigeons; the one for the burnt offering, and the other for a sin offering: and the priest shall make an atonement for her, and she shall be clean* (Leviticus 12:8). Atonement is graded to the means of the worshipper, so that poverty shuts no one out.\n\nThis same mercy runs throughout the offerings. The bird is provided for the burnt sacrifice — *And if the burnt sacrifice for his offering to Yahuah (LORD) be of fowls, then he shall bring his offering of turtledoves, or of young pigeons* (Leviticus 1:14) — and for the sin and trespass offering of the one who cannot afford a lamb: *And if he be not able to bring a lamb, then he shall bring for his trespass... two turtledoves, or two young pigeons, unto Yahuah (LORD); one for a sin offering, and the other for a burnt offering* (Leviticus 5:7).\n\nMiriam (Mary) keeps this law to the letter at the presentation of the Most High''s Son: *And when the days of her purification according to the law of Moses were accomplished, they brought him to Jerusalem, to present him to Yahuah (Lord)* (Luke 2:22). And the offering she brings is the offering of the poor — *And to offer a sacrifice according to that which is said in the law of Yahuah (Lord), A pair of turtledoves, or two young pigeons* (Luke 2:24). Not the lamb of the well-off but the two birds: the King of glory is born into a poor household, and the graded mercy of the Torah receives him.',
+       sv.verse_id, ev.verse_id, 'free', 22978
+  FROM _s311_lev12_lookup sv, _s311_lev12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=12 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 MEMBERS
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 17:12 — *he that is eight days old shall be circumcised* : the eighth-day ordinance is the token of the everlasting covenant cut with Abraham''s seed, the root of Leviticus 12:3.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-the-eighth-day-the-flesh-of-his-foreskin-circumcised'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Luke 1:59 — *on the eighth day they came to circumcise the child* : the priest Zacharias'' household keeps the Torah ordinance exactly at John''s birth.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=59
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-the-eighth-day-the-flesh-of-his-foreskin-circumcised'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Luke 2:21 — *when eight days were accomplished for the circumcising of the child* : the Formed Son enters the covenant in the flesh on the appointed eighth day.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-the-eighth-day-the-flesh-of-his-foreskin-circumcised'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'John 7:22 — *Moses therefore gave unto you circumcision; (not because it is of Moses, but of the fathers)* : Yahusha traces the ordinance past Moses to Abraham, so binding it is done on the Sabbath.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-the-eighth-day-the-flesh-of-his-foreskin-circumcised'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'John 7:23 — *that the law of Moses should not be broken* : Yahusha reasons from the law''s own authority, defending the Torah rather than discarding it.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-the-eighth-day-the-flesh-of-his-foreskin-circumcised'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Philippians 3:5 — *Circumcised the eighth day, of the stock of Yashar''el (Israel)* : Paul kept the same ordinance; what he counts loss is flesh-confidence, not the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-the-eighth-day-the-flesh-of-his-foreskin-circumcised'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 MEMBERS
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Luke 2:24 — *A pair of turtledoves, or two young pigeons* : Miriam brings the offering of the poor of Leviticus 12:8, not the lamb — the Most High''s Son born into a poor household.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-two-turtledoves-the-offering-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Luke 2:22 — *when the days of her purification according to the law of Moses were accomplished* : Miriam fulfils the purifying-and-offering law of Leviticus 12:6 to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-two-turtledoves-the-offering-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 5:7 — *if he be not able to bring a lamb... two turtledoves, or two young pigeons* : the same poor-provision in the sin/trespass offering — atonement scaled to the means throughout the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-two-turtledoves-the-offering-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Leviticus 1:14 — *turtledoves, or... young pigeons* : the burnt-offering law already provides the bird within reach of the poor, the offering of Leviticus 12:6.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s311_lev12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-12-two-turtledoves-the-offering-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_13.sql (Leviticus 13) -----
+-- Book: Leviticus  Chapter: 13  (the law of the plague of leprosy / tzaraat)
+-- Tag: lev13   Session prefix: s311   Temp view: _s311_lev13_lookup
+-- Sort band base 23000, step 3  ->  23000, 23003, 23006
+--
+-- Framing: the long law of leprosy is a curated chapter. Three framework-bearing threads:
+-- (1) the PRIEST (not a physician) examines the plague, shuts up the suspect seven days,
+--     and PRONOUNCES clean or unclean -> Yahusha sends the cleansed leper to the priest
+--     to offer the gift Moses commanded "for a testimony" (Matt8:4/Mark1:44/Luke5:14/Luke17:14):
+--     the Torah's priestly discernment of sin stands; Messiah affirms it, does not abolish it.
+-- (2) 13:45-46 the leper rent, bare, crying Unclean, dwelling alone WITHOUT THE CAMP ->
+--     the reproach of the unclean; lateral Num5:2-3 / Num12:14-15 (Miriam shut out seven days);
+--     forward Luke17:12 (lepers stood afar off) and Heb13:12-13 (Yahusha suffered WITHOUT THE
+--     GATE; let us go forth unto him WITHOUT THE CAMP, bearing his reproach) -- He took the
+--     leper's place of reproach.
+-- (3) 13:47-59 the leprosy in a GARMENT, washed or burned -> the defilement purged from what
+--     is worn; lateral Jude1:23 (hating even the garment spotted by the flesh).
+--
+-- Leviticus 13 coverage:
+--   v.1-3   (the priest looks and pronounces unclean)
+--           NT:     Matt8:4, Mark1:44, Luke5:14, Luke17:14 (shew thyself to the priest)  [thread 1]
+--           Extras: none warranted
+--           Tanakh: none warranted (priestly office est. Lev/Exod already)
+--   v.4-44  (procedure: shut up seven days, raw flesh, scall, bald, examination details)
+--           NT:     none warranted (covered by the priest-examination thread anchor)
+--           Extras: none warranted
+--           Tanakh: none warranted
+--   v.13    (all turned white = clean) folded into thread 1 anchor-end
+--   v.45    (clothes rent, head bare, cry Unclean, unclean)
+--           NT:     Luke17:12 (stood afar off), Heb13:12-13 (without the gate/camp, reproach)  [thread 2]
+--           Extras: none warranted
+--           Tanakh: Num5:2-3 (put out of the camp), Num12:14-15 (Miriam shut out seven days)  [thread 2]
+--   v.46    (dwell alone; without the camp) folded into thread 2 anchor-end
+--   v.47-59 (leprosy in a garment: woollen/linen, washed or burnt)
+--           NT:     Jude1:23 (hating even the garment spotted by the flesh)  [thread 3]
+--           Extras: none warranted
+--           Tanakh: none warranted
+--
+-- Threads:
+--   leviticus-13-shew-thyself-unto-the-priest-the-plague-examined-and-pronounced  (free; NT)
+--   leviticus-13-without-the-camp-the-reproach-of-the-unclean                     (free; NT + Tanakh)
+--   leviticus-13-the-garment-spotted-by-the-flesh                                 (free; NT)
+
+CREATE TEMP VIEW _s311_lev13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the priest examines and pronounces -> shew thyself to the priest
+    ('canon','leviticus',13,3,'canon','matthew',8,4,'free',
+      E'*And Yahusha (Jesus) saith unto him, See thou tell no man; but go thy way, shew thyself to the priest, and offer the gift that Moses commanded, for a testimony unto them.* (Matthew 8:4). The Torah gives the priest the office of discernment: *the priest shall look on the plague... and pronounce him unclean* (Leviticus 13:3). When Yahusha (Jesus) cleanses the leper he does not bypass that office — he sends the man straight to it, to *offer the gift that Moses commanded*. The law of Leviticus 13 stands as the witness; Messiah upholds it.'),
+    ('canon','leviticus',13,3,'canon','mark',1,44,'free',
+      E'*And saith unto him, See thou say nothing to any man: but go thy way, shew thyself to the priest, and offer for thy cleansing those things which Moses commanded, for a testimony unto them.* (Mark 1:44). The priest is the appointed discerner — *the priest shall look on the plague in the skin of the flesh... and pronounce him unclean* (Leviticus 13:3) — and Yahusha (Jesus) returns the cleansed man to that exact priestly verdict, commanding *those things which Moses commanded*. The Torah is affirmed, not set aside.'),
+    ('canon','leviticus',13,3,'canon','luke',5,14,'free',
+      E'*And he charged him to tell no man: but go, and shew thyself to the priest, and offer for thy cleansing, according as Moses commanded, for a testimony unto them.* (Luke 5:14). The chapter places the verdict in the priest''s mouth — *and the priest shall look on him, and pronounce him unclean* (Leviticus 13:3) — and the cleansed leper is sent back to confirm it *according as Moses commanded*. The priestly examination of Leviticus 13 is the standing testimony Messiah honours.'),
+    ('canon','leviticus',13,3,'canon','luke',17,14,'free',
+      E'*And when he saw them, he said unto them, Go shew yourselves unto the priests. And it came to pass, that, as they went, they were cleansed.* (Luke 17:14). Ten lepers are sent to the very office Leviticus 13 ordains — *he shall be brought unto Aaron the priest, or unto one of his sons the priests... and the priest shall look on the plague... and pronounce him unclean* (Leviticus 13:2-3). Yahusha (Jesus) cleanses them on the road to the priest, fulfilling the Torah''s pattern rather than nullifying it.'),
+    -- THREAD 2: without the camp, the reproach of the unclean
+    ('canon','leviticus',13,46,'canon','numbers',5,2,'free',
+      E'*Command the children of Yashar''el (Israel), that they put out of the camp every leper, and every one that hath an issue, and whosoever is defiled by the dead:* (Numbers 5:2). This is the same removal Leviticus 13 commands of the leper — *he shall dwell alone; without the camp shall his habitation be* (Leviticus 13:46). The unclean is set outside the dwelling of Yahuah (LORD) so the camp where He dwells is not defiled.'),
+    ('canon','leviticus',13,46,'canon','numbers',12,14,'free',
+      E'*And Yahuah (LORD) said unto Moses, If her father had but spit in her face, should she not be ashamed seven days? let her be shut out from the camp seven days, and after that let her be received in again.* (Numbers 12:14). When Miriam becomes leprous, the law of Leviticus 13 falls on her — *without the camp shall his habitation be* (Leviticus 13:46) — she is *shut out from the camp seven days* (Numbers 12:15), the seven-day shutting-up of the chapter enacted, then received in again upon cleansing.'),
+    ('canon','leviticus',13,45,'canon','luke',17,12,'free',
+      E'*And as he entered into a certain village, there met him ten men that were lepers, which stood afar off:* (Luke 17:12). The lepers keep the distance Leviticus 13 imposes — the leper *shall cry, Unclean, unclean* (Leviticus 13:45) and dwell apart — so they *stood afar off* and lifted their voices instead of drawing near. Messiah meets them across that gulf of reproach and cleanses it.'),
+    ('canon','leviticus',13,46,'canon','hebrews',13,12,'free',
+      E'*Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate.* (Hebrews 13:12). The leper''s sentence — *he shall dwell alone; without the camp shall his habitation be* (Leviticus 13:46) — becomes the place Messiah takes for himself: he *suffered without the gate*, bearing the reproach of the unclean to sanctify the people.'),
+    ('canon','leviticus',13,46,'canon','hebrews',13,13,'free',
+      E'*Let us go forth therefore unto him without the camp, bearing his reproach.* (Hebrews 13:13). Leviticus 13 banishes the unclean to the outside — *without the camp shall his habitation be* (Leviticus 13:46); Yahusha (Jesus) goes to that outside place and calls his people to follow him there, *bearing his reproach*. He stands where the leper stood, and the place of defilement is turned into the place of communion with him.'),
+    -- THREAD 3: the garment spotted by the flesh
+    ('canon','leviticus',13,47,'canon','jude',1,23,'free',
+      E'*And others save with fear, pulling them out of the fire; hating even the garment spotted by the flesh.* (Jude 1:23). The law of the leprous garment — *the garment also that the plague of leprosy is in... it is a plague of leprosy, and shall be shewed unto the priest* (Leviticus 13:47-49), washed or else burnt in the fire — gives Jude his figure: the defilement that clings to what is worn must be purged, *hating even the garment spotted by the flesh*.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-13-shew-thyself-unto-the-priest-the-plague-examined-and-pronounced',
+       E'Shew Thyself unto the Priest: the Plague Examined and Pronounced',
+       E'The law of leprosy hands the verdict not to a physician but to a priest. *He shall be brought unto Aaron the priest, or unto one of his sons the priests: and the priest shall look on the plague in the skin of the flesh... and the priest shall look on him, and pronounce him unclean* (Leviticus 13:2-3). The priest shuts the suspect up seven days, looks again, and either pronounces clean — *he shall pronounce him clean that hath the plague: it is all turned white: he is clean* (Leviticus 13:13) — or unclean. Sin is examined and judged by the appointed office.\n\nWhen Yahusha (Jesus) cleanses lepers he does not abolish that office; he sends them to it. *Go thy way, shew thyself to the priest, and offer the gift that Moses commanded, for a testimony unto them* (Matthew 8:4); *shew thyself to the priest, and offer for thy cleansing those things which Moses commanded* (Mark 1:44); *according as Moses commanded* (Luke 5:14); and to the ten, *Go shew yourselves unto the priests. And it came to pass, that, as they went, they were cleansed* (Luke 17:14). The Torah of Leviticus 13 is the standing testimony Messiah upholds — the law that discerns sin is affirmed, not set aside.',
+       sv.verse_id, ev.verse_id, 'free', 23000
+  FROM _s311_lev13_lookup sv, _s311_lev13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=13 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-13-without-the-camp-the-reproach-of-the-unclean',
+       E'Without the Camp: the Reproach of the Unclean',
+       E'The leper carries his sentence in his own body and voice. *And the leper in whom the plague is, his clothes shall be rent, and his head bare, and he shall put a covering upon his upper lip, and shall cry, Unclean, unclean* (Leviticus 13:45); *he shall dwell alone; without the camp shall his habitation be* (Leviticus 13:46). The defiled is set outside the dwelling of Yahuah (LORD).\n\nThe Torah keeps this rule across the camp: *put out of the camp every leper... without the camp shall ye put them; that they defile not their camps, in the midst whereof I dwell* (Numbers 5:2-3); and when Miriam is struck leprous she is *shut out from the camp seven days, and after that let her be received in again* (Numbers 12:14-15) — the seven-day shutting-up of Leviticus 13 enacted.\n\nThen Messiah comes to the outside place. The ten lepers *stood afar off* (Luke 17:12), keeping the distance the law imposed, and he cleansed them across that gulf. And he took the leper''s station as his own: *Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). *Let us go forth therefore unto him without the camp, bearing his reproach* (Hebrews 13:13). The place of the unclean becomes the place where his people meet him.',
+       sv.verse_id, ev.verse_id, 'free', 23003
+  FROM _s311_lev13_lookup sv, _s311_lev13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=45
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=13 AND ev.verse_number=46
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-13-the-garment-spotted-by-the-flesh',
+       E'The Garment Spotted by the Flesh',
+       E'The plague of leprosy reaches even to what is worn. *The garment also that the plague of leprosy is in, whether it be a woollen garment, or a linen garment* (Leviticus 13:47) is shewed unto the priest, shut up seven days, washed — and if the plague abides, *He shall therefore burn that garment... for it is a fretting leprosy; it shall be burnt in the fire* (Leviticus 13:52). The defilement that clings must be purged from the cloth itself, by washing or by fire.\n\nJude takes up this very figure of the contaminated garment: *And others save with fear, pulling them out of the fire; hating even the garment spotted by the flesh* (Jude 1:23). The thing touched by the plague of the flesh is to be hated and cleansed, not embraced — the law of the leprous garment read forward into the rescue of the defiled.',
+       sv.verse_id, ev.verse_id, 'free', 23006
+  FROM _s311_lev13_lookup sv, _s311_lev13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=47
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=13 AND ev.verse_number=59
+ON CONFLICT (slug) DO NOTHING;
+
+-- MEMBERS: THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*shew thyself to the priest, and offer the gift that Moses commanded, for a testimony unto them* (Matthew 8:4) — Yahusha (Jesus) sends the cleansed leper to the priestly office of Leviticus 13.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=8 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-shew-thyself-unto-the-priest-the-plague-examined-and-pronounced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*shew thyself to the priest, and offer for thy cleansing those things which Moses commanded* (Mark 1:44) — the Torah''s verdict honoured, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=1 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-shew-thyself-unto-the-priest-the-plague-examined-and-pronounced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*shew thyself to the priest, and offer for thy cleansing, according as Moses commanded* (Luke 5:14) — the priestly examination is the standing testimony.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=5 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-shew-thyself-unto-the-priest-the-plague-examined-and-pronounced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Go shew yourselves unto the priests. And it came to pass, that, as they went, they were cleansed* (Luke 17:14) — ten lepers sent to the office Leviticus 13 ordains.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-shew-thyself-unto-the-priest-the-plague-examined-and-pronounced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- MEMBERS: THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*put out of the camp every leper... without the camp shall ye put them; that they defile not their camps, in the midst whereof I dwell* (Numbers 5:2-3) — the same removal of the unclean from Yahuah (LORD)''s dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=46
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-without-the-camp-the-reproach-of-the-unclean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*let her be shut out from the camp seven days, and after that let her be received in again* (Numbers 12:14) — Miriam under the very law of Leviticus 13, the seven-day shutting-up enacted.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=46
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=12 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-without-the-camp-the-reproach-of-the-unclean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*there met him ten men that were lepers, which stood afar off* (Luke 17:12) — the distance Leviticus 13 imposes, crossed by Messiah''s mercy.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=45
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-without-the-camp-the-reproach-of-the-unclean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12) — Messiah takes the leper''s place outside the camp.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=46
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-without-the-camp-the-reproach-of-the-unclean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Let us go forth therefore unto him without the camp, bearing his reproach* (Hebrews 13:13) — the place of the unclean turned into communion with him.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=46
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-without-the-camp-the-reproach-of-the-unclean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- MEMBERS: THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*hating even the garment spotted by the flesh* (Jude 1:23) — Jude''s figure drawn from the leprous garment washed or burnt in Leviticus 13:47-59.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=13 AND sv.verse_number=47
+  JOIN _s311_lev13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-13-the-garment-spotted-by-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_14.sql (Leviticus 14) -----
+-- Book: Leviticus  Chapter: 14  (the law of the leper in the day of his cleansing)
+-- Session prefix: s311   Tag: lev14   Temp view: _s311_lev14_lookup
+-- Sort band: base 23025, step 3  (23025, 23028, 23031, 23034, 23037)
+--
+-- Leviticus 14 coverage checklist:
+--   v.1-9  (two birds: one slain over running water, the living bird dipped in the blood with
+--           cedar/scarlet/hyssop and let loose into the open field) — the death-and-life type
+--     NT:     Romans 4:25 (delivered for offences, raised for justification); Hebrews 9:19
+--             (Moses took blood with water, scarlet wool, hyssop); 1 Peter 1:18-19 (precious blood)
+--     Extras: none warranted
+--     Tanakh: Leviticus 16:7-10,21-22 (the two goats — one slain, one released alive)
+--   v.10-20 (eighth-day trespass/sin/burnt/meat offerings; the priest makes an atonement, he is clean)
+--     NT:     none warranted (the consecration-of-priest weave is carried by thread 3)
+--     Extras: none warranted
+--     Tanakh: Leviticus 8:1-13 (Aaron and his sons washed, robed, atoned, consecrated)
+--   v.14-18 (blood of the trespass offering + oil on the right ear, thumb, great toe — exactly the
+--            priest-consecration rite of Lev 8:23-24; the cleansed man set apart like a priest)
+--     NT:     1 Peter 2:9 (a royal priesthood, an holy nation, a peculiar people)
+--     Extras: none warranted
+--     Tanakh: Leviticus 8:23-24 (blood on Aaron's and his sons' right ear, thumb, toe)
+--   v.21-32 (the provision for the poor leper — two turtledoves/pigeons and less flour; atonement
+--            graded to ability)
+--     NT:     none warranted
+--     Extras: none warranted
+--     Tanakh: Leviticus 5:7,11 (if not able to bring a lamb — two turtledoves, or fine flour);
+--             Leviticus 12:8 (if she be not able to bring a lamb — two turtles or two young pigeons)
+--   v.33-57 (the leprosy in a house — stones removed, house scraped/broken down, then cleansed
+--            with the SAME two-bird rite, the living bird let go into the open fields)
+--     NT:     none warranted
+--     Extras: none warranted
+--     Tanakh: Leviticus 16:21-22 (the live goat let go — the defilement carried away from the dwelling)
+--
+-- Threads (5):
+--   1. leviticus-14-the-two-birds-one-slain-one-set-free-alive-in-the-blood   [free+NT, tier free]
+--        members: Romans 4:25, Hebrews 9:19, 1 Peter 1:19, Leviticus 16:10  -> the death-and-life atonement
+--   2. leviticus-14-the-eighth-day-offerings-and-he-shall-be-clean            [free, Tanakh-only]
+--        members: Leviticus 8:6, Leviticus 8:12                              -> full restoration / consecration pattern
+--   3. leviticus-14-the-blood-and-the-oil-on-the-ear-the-thumb-and-the-toe    [free+NT, tier free]
+--        members: Leviticus 8:23, Leviticus 8:24, 1 Peter 2:9               -> cleansed leper consecrated like a priest
+--   4. leviticus-14-atonement-graded-to-the-hand-of-the-poor                  [free, Tanakh-only]
+--        members: Leviticus 5:7, Leviticus 5:11, Leviticus 12:8             -> the grace graded to ability
+--   5. leviticus-14-the-leprosy-purged-even-from-the-house                    [free, Tanakh-only]
+--        members: Leviticus 16:22                                           -> the defilement carried away from the dwelling
+--
+-- All targets are canon (Tanakh + NT) -> every cross_reference tier is 'free'; no extras in this chapter.
+
+CREATE TEMP VIEW _s311_lev14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the two birds — one slain, one set free alive in the blood (the death-and-life type)
+    ('canon','leviticus',14,7,'canon','romans',4,25,'free',
+     E'*Who was delivered for our offences, and was raised again for our justification.* (Romans 4:25) The two-bird rite holds both halves of the atonement in one picture: *the priest shall command that one of the birds be killed in an earthen vessel over running water* (Leviticus 14:5), and *as for the living bird... he shall let the living bird loose into the open field* (Leviticus 14:7). One bird dies; the other, dipped in the blood of the slain, goes free alive — delivered for the offence, raised for the justification.'),
+    ('canon','leviticus',14,6,'canon','hebrews',9,19,'free',
+     E'*For when Moses had spoken every precept to all the people according to the law, he took the blood of calves and of goats, with water, and scarlet wool, and hyssop, and sprinkled both the book, and all the people* (Hebrews 9:19). The very materials of the leper''s cleansing — *the cedar wood, and the scarlet, and the hyssop... dip them and the living bird in the blood of the bird that was killed over the running water* (Leviticus 14:6) — are the same blood-with-water-scarlet-hyssop the writer names as the pattern of the better blood. The Torah''s rite is the figure he reads forward.'),
+    ('canon','leviticus',14,5,'canon','1-peter',1,19,'free',
+     E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19). The slain bird, *killed in an earthen vessel over running water* (Leviticus 14:5), pours out the blood that cleanses — the figure of the precious blood not of *corruptible things, as silver and gold* (1 Peter 1:18) but of the spotless one. The clean bird must die before the leper can be pronounced clean.'),
+    ('canon','leviticus',14,7,'canon','leviticus',16,10,'free',
+     E'*But the goat, on which the lot fell to be the scapegoat, shall be presented alive before Yahuah (LORD), to make an atonement with him, and to let him go for a scapegoat into the wilderness.* (Leviticus 16:10) The two goats of the Day of Atonement repeat the two birds exactly: one slain for the blood, *the living bird... let loose into the open field* (Leviticus 14:7) answered by the live goat *let go... into the wilderness* (Leviticus 16:22). One death, one release — the single atonement told twice in the Torah.'),
+    -- Thread 2: the eighth-day offerings — and he shall be clean (full restoration / consecration pattern)
+    ('canon','leviticus',14,8,'canon','leviticus',8,6,'free',
+     E'*And Moses brought Aaron and his sons, and washed them with water.* (Leviticus 8:6) The cleansed leper is brought through the same threshold as the priest at his consecration: *he that is to be cleansed shall wash his clothes... and wash himself in water, that he may be clean* (Leviticus 14:8). The washing that begins the priesthood is the washing that restores the leper — both made ready to draw near.'),
+    ('canon','leviticus',14,18,'canon','leviticus',8,12,'free',
+     E'*And he poured of the anointing oil upon Aaron''s head, and anointed him, to sanctify him.* (Leviticus 8:12) The eighth-day rite ends as the consecration of Aaron ended — oil poured on the head: *the remnant of the oil that is in the priest''s hand he shall pour upon the head of him that is to be cleansed: and the priest shall make an atonement for him* (Leviticus 14:18). The leper, atoned for, is anointed on the head as a priest is anointed — wholly restored before Yahuah (LORD).'),
+    -- Thread 3: the blood and the oil on the ear, the thumb, and the toe (cleansed leper consecrated like a priest)
+    ('canon','leviticus',14,14,'canon','leviticus',8,23,'free',
+     E'*And he slew it; and Moses took of the blood of it, and put it upon the tip of Aaron''s right ear, and upon the thumb of his right hand, and upon the great toe of his right foot.* (Leviticus 8:23) The cleansed leper receives precisely the priest''s consecration: *the priest shall take some of the blood of the trespass offering, and the priest shall put it upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot* (Leviticus 14:14). Ear, hand, foot — hearing, doing, walking — the same blood that set Aaron apart now sets apart the man brought back from the dead-flesh of leprosy.'),
+    ('canon','leviticus',14,17,'canon','leviticus',8,24,'free',
+     E'*And he brought Aaron''s sons, and Moses put of the blood upon the tip of their right ear, and upon the thumbs of their right hands, and upon the great toes of their right feet* (Leviticus 8:24). What was done to the priests is done to the cleansed leper, and the oil is laid upon the very same places: *of the rest of the oil... shall the priest put upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot, upon the blood of the trespass offering* (Leviticus 14:17). Blood then oil — the consecration of a priest worked upon a restored man.'),
+    ('canon','leviticus',14,14,'canon','1-peter',2,9,'free',
+     E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light* (1 Peter 2:9). The leper marked with blood and oil on ear, thumb, and toe — *upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot* (Leviticus 14:14) — is the unclean made into a priest. So Yashar''el (Israel), called out of the leprous darkness, is consecrated a royal priesthood.'),
+    -- Thread 4: atonement graded to the hand of the poor
+    ('canon','leviticus',14,22,'canon','leviticus',5,7,'free',
+     E'*And if he be not able to bring a lamb, then he shall bring for his trespass, which he hath committed, two turtledoves, or two young pigeons, unto Yahuah (LORD); one for a sin offering, and the other for a burnt offering.* (Leviticus 5:7) The poor leper is met by the same mercy: *if he be poor, and cannot get so much... two turtledoves, or two young pigeons, such as he is able to get* (Leviticus 14:21-22). The atonement is graded to the hand of the bringer — none too poor to be made clean.'),
+    ('canon','leviticus',14,21,'canon','leviticus',5,11,'free',
+     E'*But if he be not able to bring two turtledoves, or two young pigeons, then he that sinned shall bring for his offering the tenth part of an ephah of fine flour for a sin offering* (Leviticus 5:11). The Torah steps the offering down for the poorest, just as the leper''s law lowers the flour: *one tenth deal of fine flour mingled with oil for a meat offering* (Leviticus 14:21) for him *whose hand is not able to get that which pertaineth to his cleansing* (Leviticus 14:32). The way of cleansing reaches all the way down to the empty-handed.'),
+    ('canon','leviticus',14,22,'canon','leviticus',12,8,'free',
+     E'*And if she be not able to bring a lamb, then she shall bring two turtles, or two young pigeons; the one for the burnt offering, and the other for a sin offering: and the priest shall make an atonement for her, and she shall be clean.* (Leviticus 12:8) The same graded provision given the new mother is given the cleansed leper — *two turtledoves, or two young pigeons, such as he is able to get* (Leviticus 14:22). The poor are not shut out of cleanness; the priest makes an atonement and they shall be clean.'),
+    -- Thread 5: the leprosy purged even from the house
+    ('canon','leviticus',14,53,'canon','leviticus',16,22,'free',
+     E'*And the goat shall bear upon him all their iniquities unto a land not inhabited: and he shall let go the goat in the wilderness.* (Leviticus 16:22) The defilement is carried away even from the dwelling: *he shall let go the living bird out of the city into the open fields, and make an atonement for the house: and it shall be clean* (Leviticus 14:53). As the scapegoat bears the iniquity away to an uninhabited land, the living bird carries the house''s plague out of the city — the uncleanness purged from the very stones and timber of the home.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-14-the-two-birds-one-slain-one-set-free-alive-in-the-blood',
+       E'The two birds — one slain, one set free alive in the blood',
+       E'The cleansing of the leper opens with a sign that holds the whole atonement in one frame. *Then shall the priest command to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop* (Leviticus 14:4). One bird is *killed in an earthen vessel over running water* (Leviticus 14:5); the other, *the living bird... and the cedar wood, and the scarlet, and the hyssop... dip them and the living bird in the blood of the bird that was killed over the running water* (Leviticus 14:6), and then *he shall let the living bird loose into the open field* (Leviticus 14:7). One dies; the other goes free alive in the blood of the slain — *delivered for our offences, and... raised again for our justification* (Romans 4:25). Hebrews reads the very materials as the pattern: *the blood of calves and of goats, with water, and scarlet wool, and hyssop* (Hebrews 9:19); 1 Peter names the blood the slain bird foreshadows: *the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19). And the Torah tells the same death-and-release twice — the two goats of the Day of Atonement: *the living... let him go for a scapegoat into the wilderness* (Leviticus 16:10). One death, one release; the single atonement of the Formed Son set in the law of the leper.',
+       sv.verse_id, ev.verse_id, 'free', 23025
+  FROM _s311_lev14_lookup sv, _s311_lev14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=14 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-14-the-eighth-day-offerings-and-he-shall-be-clean',
+       E'The eighth-day offerings — and he shall be clean',
+       E'On the eighth day the restored leper is brought through the full round of offerings — *two he lambs without blemish, and one ewe lamb... three tenth deals of fine flour for a meat offering* (Leviticus 14:10) — the trespass, the sin, the burnt, and the meat offering, until *the priest shall make an atonement for him, and he shall be clean* (Leviticus 14:20). The pattern is the consecration of the priesthood itself. As Aaron and his sons were first *washed... with water* (Leviticus 8:6), so the leper must wash; and as Moses *poured of the anointing oil upon Aaron''s head, and anointed him, to sanctify him* (Leviticus 8:12), so *the remnant of the oil... he shall pour upon the head of him that is to be cleansed* (Leviticus 14:18). The man brought back from the living death of leprosy is not merely readmitted — he is washed, atoned, and anointed in the very pattern by which Yahuah (LORD) sets apart His priests.',
+       sv.verse_id, ev.verse_id, 'free', 23028
+  FROM _s311_lev14_lookup sv, _s311_lev14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=14 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-14-the-blood-and-the-oil-on-the-ear-the-thumb-and-the-toe',
+       E'The blood and the oil on the ear, the thumb, and the toe',
+       E'At the heart of the cleansing comes a startling honour: *the priest shall take some of the blood of the trespass offering, and the priest shall put it upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot* (Leviticus 14:14), and then the oil upon the same places (Leviticus 14:17), and the rest *upon the head of him that is to be cleansed* (Leviticus 14:18). This is exactly the consecration of the priesthood: *Moses took of the blood of it, and put it upon the tip of Aaron''s right ear, and upon the thumb of his right hand, and upon the great toe of his right foot* (Leviticus 8:23), and likewise upon his sons (Leviticus 8:24). Ear, hand, foot — hearing, doing, walking — the cleansed leper is set apart with the priest''s own rite, the unclean made wholly restored and consecrated. So Yashar''el (Israel), called out of leprous darkness, is made *a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9).',
+       sv.verse_id, ev.verse_id, 'free', 23031
+  FROM _s311_lev14_lookup sv, _s311_lev14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=14 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-14-atonement-graded-to-the-hand-of-the-poor',
+       E'Atonement graded to the hand of the poor',
+       E'The cleansing is not shut to the poor. *And if he be poor, and cannot get so much; then he shall take one lamb for a trespass offering... and two turtledoves, or two young pigeons, such as he is able to get* (Leviticus 14:21-22), *whose hand is not able to get that which pertaineth to his cleansing* (Leviticus 14:32). This grading runs all through the Torah''s mercy: for the trespass offering, *if he be not able to bring a lamb, then he shall bring... two turtledoves, or two young pigeons* (Leviticus 5:7), and lower still, *the tenth part of an ephah of fine flour* (Leviticus 5:11); for the new mother, *if she be not able to bring a lamb, then she shall bring two turtles, or two young pigeons... and the priest shall make an atonement for her, and she shall be clean* (Leviticus 12:8). The way back to cleanness reaches all the way down to the empty-handed — atonement measured to ability, never to wealth.',
+       sv.verse_id, ev.verse_id, 'free', 23034
+  FROM _s311_lev14_lookup sv, _s311_lev14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=14 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-14-the-leprosy-purged-even-from-the-house',
+       E'The leprosy purged even from the house',
+       E'The same rite that cleanses the man cleanses his dwelling. When the plague is in a house, *the priest shall command that they take away the stones in which the plague is* (Leviticus 14:40), the house *scraped within round about* (Leviticus 14:41), and if it spreads, *he shall break down the house, the stones of it, and the timber thereof* (Leviticus 14:45). Then it is cleansed with the very rite of the leper — *two birds, and cedar wood, and scarlet, and hyssop* (Leviticus 14:49), one slain over running water, *and he shall let go the living bird out of the city into the open fields, and make an atonement for the house: and it shall be clean* (Leviticus 14:53). As the scapegoat *shall bear upon him all their iniquities unto a land not inhabited... and he shall let go the goat in the wilderness* (Leviticus 16:22), so the living bird carries the house''s plague away out of the city. The defilement is purged even from the stones and timber of the home — nothing of the dwelling left under the plague.',
+       sv.verse_id, ev.verse_id, 'free', 23037
+  FROM _s311_lev14_lookup sv, _s311_lev14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=14 AND ev.verse_number=57
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Who was delivered for our offences, and was raised again for our justification.* (Romans 4:25) — one bird slain, the living bird set free: the two halves of the atonement in one rite.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=7
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-two-birds-one-slain-one-set-free-alive-in-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...with water, and scarlet wool, and hyssop...* (Hebrews 9:19) — the same blood-with-water-scarlet-hyssop named as the pattern of the better blood.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-two-birds-one-slain-one-set-free-alive-in-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19) — the slain bird pours out the figure of the precious blood.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=5
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-two-birds-one-slain-one-set-free-alive-in-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*...shall be presented alive... to let him go for a scapegoat into the wilderness.* (Leviticus 16:10) — the two goats repeat the two birds: one slain, one released alive.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=7
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=16 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-two-birds-one-slain-one-set-free-alive-in-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And Moses brought Aaron and his sons, and washed them with water.* (Leviticus 8:6) — the washing that begins the priesthood restores the leper.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-eighth-day-offerings-and-he-shall-be-clean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And he poured of the anointing oil upon Aaron''s head, and anointed him, to sanctify him.* (Leviticus 8:12) — oil poured on the head, as upon the cleansed leper.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-eighth-day-offerings-and-he-shall-be-clean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...put it upon the tip of Aaron''s right ear, and upon the thumb of his right hand, and upon the great toe of his right foot.* (Leviticus 8:23) — the priest''s consecration rite worked upon the cleansed leper.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-blood-and-the-oil-on-the-ear-the-thumb-and-the-toe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...the blood upon the tip of their right ear, and upon the thumbs of their right hands, and upon the great toes of their right feet* (Leviticus 8:24) — done to the priests, now to the restored man; blood then oil.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=17
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-blood-and-the-oil-on-the-ear-the-thumb-and-the-toe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...a royal priesthood, an holy nation, a peculiar people...* (1 Peter 2:9) — the unclean marked with blood and oil made into a priest; Yashar''el (Israel) consecrated.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-blood-and-the-oil-on-the-ear-the-thumb-and-the-toe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...if he be not able to bring a lamb... two turtledoves, or two young pigeons...* (Leviticus 5:7) — the same mercy for the poor leper.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=22
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-atonement-graded-to-the-hand-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...the tenth part of an ephah of fine flour for a sin offering...* (Leviticus 5:11) — the offering stepped down to the poorest hand.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-atonement-graded-to-the-hand-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...two turtles, or two young pigeons... and the priest shall make an atonement for her, and she shall be clean.* (Leviticus 12:8) — the same graded provision; the poor not shut out of cleanness.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=22
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=12 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-atonement-graded-to-the-hand-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...the goat shall bear upon him all their iniquities unto a land not inhabited... he shall let go the goat in the wilderness.* (Leviticus 16:22) — the living bird carries the house''s plague away out of the city, the defilement purged from the dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=14 AND sv.verse_number=53
+  JOIN _s311_lev14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=16 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-14-the-leprosy-purged-even-from-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_15.sql (Leviticus 15) -----
+-- Leviticus 15 — the law of bodily issues / running discharges (the man's issue,
+--   the uncleanness of seed, the woman's separation and her issue of blood, and the
+--   charge to separate Yashar'el from their uncleanness lest they defile the tabernacle).
+-- Tag: lev15  |  session prefix: s311  |  temp view: _s311_lev15_lookup
+-- Sort band: base 23050 step 3  ->  23050, 23053, 23056, 23059
+--
+-- Leviticus 15 coverage:
+--   v.1-15 (the man's running issue; touch/lie/sit defiles; seven-day cleansing,
+--           washing in running water, two birds = sin + burnt offering, atonement):
+--        NT:     none warranted (the issue-of-blood healing belongs to v.19-30 thread)
+--        Extras: none warranted
+--        Tanakh: Leviticus 11:24-25 (lateral — to touch the unclean defiles, must wash,
+--                unclean until even); Leviticus 11:44 (lateral — be holy)
+--                -> threaded in the running-issue thread.
+--   v.16-18 (seed of copulation, intercourse — wash, unclean until even):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exodus 19:15 (lateral ★ — "come not at your wives" before Sinai,
+--                sanctification through abstinence) -> seed-of-copulation thread.
+--   v.19-30 (★ the woman in her separation; the issue of blood beyond her time;
+--            what she touches unclean; seven-day cleansing, two birds, atonement):
+--        NT:     ★ Mark 5:25-34, Matthew 9:20-22, Luke 8:43-48 (the woman with the
+--                issue of blood twelve years who touched the hem and was healed —
+--                the uncleanness reversed, his cleanness flowing out to make her whole)
+--        Extras: none warranted
+--        Tanakh: Leviticus 15:25-27 (the source-block itself; quoted in prose, not a member)
+--                -> woman-issue-of-blood thread.
+--   v.31 (★ "Thus shall ye separate the children of Yashar'el from their uncleanness;
+--          that they die not... when they defile my tabernacle that is among them"):
+--        NT:     ★ 2 Corinthians 6:16-17 (ye are the temple... come out... be separate...
+--                touch not the unclean thing); 1 Corinthians 6:19 (your body is the temple)
+--        Extras: none warranted
+--        Tanakh: Leviticus 11:44 (lateral — sanctify yourselves and be holy, for I am holy)
+--                -> separation-unto-holiness thread.
+--   v.32-33 (the summary subscription "this is the law of him that hath an issue"):
+--        NT/Extras/Tanakh: none warranted (legal colophon).
+--
+-- Threads (4):
+--   leviticus-15-the-running-issue-made-clean-by-water-and-the-two-birds  [free; Tanakh]
+--   leviticus-15-the-seed-of-copulation-washed-and-sanctified            [free; Tanakh]
+--   leviticus-15-the-woman-with-the-issue-of-blood-made-whole            [free; Tanakh + NT]
+--   leviticus-15-separate-them-lest-they-defile-my-tabernacle            [free; Tanakh + NT]
+
+CREATE TEMP VIEW _s311_lev15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the running issue made clean (lateral to Leviticus 11)
+    ('canon','leviticus',15,7,  'canon','leviticus',11,24,
+      'free', E'*And for these ye shall be unclean: whosoever toucheth the carcase of them shall be unclean until the even* (Leviticus 11:24). The same law of contagion governs the man with the issue — *And he that toucheth the flesh of him that hath the issue shall wash his clothes, and bathe himself in water, and be unclean until the even* (Leviticus 15:7). Uncleanness spreads outward by touch in both chapters, and water carries it away.'),
+    ('canon','leviticus',15,7,  'canon','leviticus',11,25,
+      'free', E'*And whosoever beareth ought of the carcase of them shall wash his clothes, and be unclean until the even* (Leviticus 11:25). As bearing the dead defiles and is purged by washing, so *he that toucheth the flesh of him that hath the issue shall wash his clothes, and bathe himself in water, and be unclean until the even* (Leviticus 15:7) — one consistent statute of defilement and cleansing through Torah.'),
+
+    -- Thread 2: the seed of copulation washed and sanctified (lateral Exodus 19:15)
+    ('canon','leviticus',15,18, 'canon','exodus',19,15,
+      'free', E'*And he said unto the people, Be ready against the third day: come not at your wives* (Exodus 19:15). Before Yashar''el (Israel) stood at Sinai to meet Yahuah (LORD) they were sanctified by abstaining — the very act that Leviticus 15 marks as a temporary uncleanness: *The woman also with whom man shall lie with seed of copulation, they shall both bathe themselves in water, and be unclean until the even* (Leviticus 15:18). Drawing near to the holy required first washing and a setting-apart from the ordinary flesh.'),
+
+    -- Thread 3: the woman with the issue of blood made whole (forward to the Gospels)
+    ('canon','leviticus',15,25, 'canon','mark',5,25,
+      'free', E'*And a certain woman, which had an issue of blood twelve years* (Mark 5:25). Hers was exactly the case Torah names — *And if a woman have an issue of her blood many days out of the time of her separation... all the days of the issue of her uncleanness shall be as the days of her separation: she shall be unclean* (Leviticus 15:25). Twelve years she had borne the very uncleanness this chapter legislates.'),
+    ('canon','leviticus',15,25, 'canon','mark',5,28,
+      'free', E'*For she said, If I may touch but his clothes, I shall be whole* (Mark 5:28). Under Leviticus 15 her touch would have defiled — *whosoever toucheth her shall be unclean until the even* (Leviticus 15:19); *whosoever toucheth those things shall be unclean* (Leviticus 15:27). Yet instead of her uncleanness passing to him, his cleanness passed to her.'),
+    ('canon','leviticus',15,25, 'canon','mark',5,29,
+      'free', E'*And straightway the fountain of her blood was dried up; and she felt in her body that she was healed of that plague* (Mark 5:29). The flow that made her unclean *many days out of the time of her separation* (Leviticus 15:25) is staunched at the source — the uncleanness of Leviticus 15 reversed in the Formed Son, the contagion running backward from him to her.'),
+    ('canon','leviticus',15,25, 'canon','mark',5,34,
+      'free', E'*And he said unto her, Daughter, thy faith hath made thee whole; go in peace, and be whole of thy plague* (Mark 5:34). The woman who under Torah was *unclean* and put apart is named *Daughter* and sent in shalom — the separation of Leviticus 15 answered by restoration, the unclean made whole instead of the clean made unclean.'),
+    ('canon','leviticus',15,25, 'canon','matthew',9,20,
+      'free', E'*And, behold, a woman, which was diseased with an issue of blood twelve years, came behind him, and touched the hem of his garment* (Matthew 9:20). The fringe she grasped is the border that under Leviticus 15 her touch would have rendered unclean — *every thing that she lieth upon in her separation shall be unclean* (Leviticus 15:20) — yet the hem of the Formed Son carries cleansing, not defilement.'),
+    ('canon','leviticus',15,25, 'canon','matthew',9,22,
+      'free', E'*But Yahusha (Jesus) turned him about, and when he saw her, he said, Daughter, be of good comfort; thy faith hath made thee whole. And the woman was made whole from that hour* (Matthew 9:22). The years of uncleanness named in *all the days of the issue of her uncleanness* (Leviticus 15:25) end in a moment — Torah''s separation closed by the One greater than the offering of two birds.'),
+    ('canon','leviticus',15,25, 'canon','luke',8,43,
+      'free', E'*And a woman having an issue of blood twelve years, which had spent all her living upon physicians, neither could be healed of any* (Luke 8:43). No priest''s seven days and no two turtledoves (Leviticus 15:28-30) had availed her — *all the days of the issue of her uncleanness... she shall be unclean* (Leviticus 15:25) — until she came to him whose cleanness is the true cleansing.'),
+    ('canon','leviticus',15,25, 'canon','luke',8,44,
+      'free', E'*Came behind him, and touched the border of his garment: and immediately her issue of blood stanched* (Luke 8:44). The issue that Leviticus 15 declared *unclean* and unending in her flesh is stopped at his border — *if a woman have an issue of her blood many days* (Leviticus 15:25) finds its end at the hem of the Formed Son.'),
+
+    -- Thread 4: separate them lest they defile my tabernacle (forward to the temple of the body)
+    ('canon','leviticus',15,31, 'canon','leviticus',11,44,
+      'free', E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy: neither shall ye defile yourselves with any manner of creeping thing* (Leviticus 11:44). The dietary law and the law of issues share one purpose — separation unto holiness: *Thus shall ye separate the children of Yashar''el (Israel) from their uncleanness; that they die not in their uncleanness, when they defile my tabernacle that is among them* (Leviticus 15:31).'),
+    ('canon','leviticus',15,31, 'canon','2-corinthians',6,16,
+      'free', E'*And what agreement hath the temple of Elohim (God) with idols? for ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). The dwelling that may not be defiled has become the very people in whom Yahuah (LORD) dwells — *when they defile my tabernacle that is among them* (Leviticus 15:31) carried forward to the indwelt body.'),
+    ('canon','leviticus',15,31, 'canon','2-corinthians',6,17,
+      'free', E'*Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). *Touch not the unclean thing* is the whole burden of Leviticus 15, and *be ye separate* is its charge — *Thus shall ye separate the children of Yashar''el (Israel) from their uncleanness* (Leviticus 15:31) — the same holiness, never abolished, kept by the same separated people.'),
+    ('canon','leviticus',15,31, 'canon','1-corinthians',6,19,
+      'free', E'*What? know ye not that your body is the temple of the Ruach HaKodesh (Holy Spirit) which is in you, which ye have of Elohim (God), and ye are not your own?* (1 Corinthians 6:19). The tabernacle that uncleanness might defile (Leviticus 15:31) is now the body itself — the reason the children of Yashar''el (Israel) were separated from their uncleanness, *that they die not in their uncleanness*, stands when the dwelling-place is the body of the redeemed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== threads =====================
+-- Thread 1: the running issue made clean
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-15-the-running-issue-made-clean-by-water-and-the-two-birds',
+       E'The Running Issue Made Clean by Water and the Two Birds',
+       E'The man with a running issue out of his flesh is unclean, and the uncleanness spreads outward by contact — *Every bed, whereon he lieth that hath the issue, is unclean: and every thing, whereon he sitteth, shall be unclean* (Leviticus 15:4); *And he that toucheth the flesh of him that hath the issue shall wash his clothes, and bathe himself in water, and be unclean until the even* (Leviticus 15:7). This is the same law of contagion that runs through the dietary chapter — *And for these ye shall be unclean: whosoever toucheth the carcase of them shall be unclean until the even* (Leviticus 11:24); *And whosoever beareth ought of the carcase of them shall wash his clothes, and be unclean until the even* (Leviticus 11:25). One consistent Torah of defilement and washing.\n\nThe cleansing is not by mere time but by water, days numbered, and atoning blood: *And when he that hath an issue is cleansed of his issue; then he shall number to himself seven days for his cleansing, and wash his clothes, and bathe his flesh in running water, and shall be clean* (Leviticus 15:13). On the eighth day he brings *two turtledoves, or two young pigeons* (Leviticus 15:14), and *the priest shall offer them, the one for a sin offering, and the other for a burnt offering; and the priest shall make an atonement for him before Yahuah (LORD) for his issue* (Leviticus 15:15). The bodily flow that defiles is answered by running water and a blood-offering — the pattern of all true cleansing in the covenant.',
+       sv.verse_id, ev.verse_id, 'free', 23050
+  FROM _s311_lev15_lookup sv, _s311_lev15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=15 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2: the seed of copulation washed and sanctified
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-15-the-seed-of-copulation-washed-and-sanctified',
+       E'The Seed of Copulation Washed and Sanctified',
+       E'The discharge of seed and the act of intercourse carry a temporary uncleanness, washed away in water: *And if any man''s seed of copulation go out from him, then he shall wash all his flesh in water, and be unclean until the even* (Leviticus 15:16); *The woman also with whom man shall lie with seed of copulation, they shall both bathe themselves in water, and be unclean until the even* (Leviticus 15:18). This is not sin but a marking-off — the ordinary flesh set apart from the holy until evening and water restore.\n\nThe same setting-apart precedes the nearest approach to Yahuah (LORD) in all the Torah. At the foot of Sinai, before the people met their Elohim (God), Moses charged them: *And he said unto the people, Be ready against the third day: come not at your wives* (Exodus 19:15). To draw near the mountain of fire required the very abstinence and sanctification that Leviticus 15 frames — the flesh consecrated, the body washed, before standing in the presence of the Holy One.',
+       sv.verse_id, ev.verse_id, 'free', 23053
+  FROM _s311_lev15_lookup sv, _s311_lev15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=15 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3: the woman with the issue of blood made whole
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-15-the-woman-with-the-issue-of-blood-made-whole',
+       E'The Woman with the Issue of Blood Made Whole',
+       E'The woman in her separation is unclean, and so is everything she touches: *And if a woman have an issue, and her issue in her flesh be blood, she shall be put apart seven days: and whosoever toucheth her shall be unclean until the even* (Leviticus 15:19); *And every thing that she lieth upon in her separation shall be unclean: every thing also that she sitteth upon shall be unclean* (Leviticus 15:20). And if the flow runs beyond its time, the uncleanness becomes long and unrelenting: *And if a woman have an issue of her blood many days out of the time of her separation, or if it run beyond the time of her separation; all the days of the issue of her uncleanness shall be as the days of her separation: she shall be unclean* (Leviticus 15:25); *whosoever toucheth those things shall be unclean* (Leviticus 15:27).\n\nThis is the very woman the Gospels bring before us: *And a certain woman, which had an issue of blood twelve years* (Mark 5:25) — twelve years bearing exactly the uncleanness Torah names. *For she said, If I may touch but his clothes, I shall be whole* (Mark 5:28), and *And, behold, a woman... came behind him, and touched the hem of his garment* (Matthew 9:20). Under Leviticus 15 her touch would have defiled him; instead his cleanness flowed the other way — *And straightway the fountain of her blood was dried up; and she felt in her body that she was healed of that plague* (Mark 5:29); *immediately her issue of blood stanched* (Luke 8:44). The flow that made her unclean *many days* is dried up at the source. And the One she feared to defile names her *Daughter, thy faith hath made thee whole; go in peace, and be whole of thy plague* (Mark 5:34). In the Formed Son the uncleanness of Leviticus 15 is reversed — not the clean made unclean, but the unclean made whole.',
+       sv.verse_id, ev.verse_id, 'free', 23056
+  FROM _s311_lev15_lookup sv, _s311_lev15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=15 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4: separate them lest they defile my tabernacle
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-15-separate-them-lest-they-defile-my-tabernacle',
+       E'Separate Them Lest They Defile My Tabernacle',
+       E'The whole law of issues comes to its purpose in one verse: *Thus shall ye separate the children of Yashar''el (Israel) from their uncleanness; that they die not in their uncleanness, when they defile my tabernacle that is among them* (Leviticus 15:31). The point of the seven days, the washing, and the two birds is holiness — that the dwelling of Yahuah (LORD) in the midst of his people not be defiled. This is the same charge the dietary law carries: *For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy: neither shall ye defile yourselves with any manner of creeping thing* (Leviticus 11:44). One holiness, guarding one dwelling.\n\nThe New Testament does not abolish this separation; it deepens it, because the tabernacle is now the people and the body. *For ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16) — and therefore *come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). *Touch not the unclean thing* is the very burden of Leviticus 15; *be ye separate* is its very charge. *What? know ye not that your body is the temple of the Ruach HaKodesh (Holy Spirit) which is in you... and ye are not your own?* (1 Corinthians 6:19). The reason Yashar''el (Israel) was separated from its uncleanness, *that they die not... when they defile my tabernacle*, stands fast when the dwelling-place is the redeemed body itself — the separation unto holiness, the root the whole library grows from.',
+       sv.verse_id, ev.verse_id, 'free', 23059
+  FROM _s311_lev15_lookup sv, _s311_lev15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=15 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== thread_members =====================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And for these ye shall be unclean: whosoever toucheth the carcase of them shall be unclean until the even* (Leviticus 11:24) — the same law of contagion by touch that governs the man with the issue.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=7
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-running-issue-made-clean-by-water-and-the-two-birds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And whosoever beareth ought of the carcase of them shall wash his clothes, and be unclean until the even* (Leviticus 11:25) — washing purges the uncleanness, the same remedy as Leviticus 15:7.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=7
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-running-issue-made-clean-by-water-and-the-two-birds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Be ready against the third day: come not at your wives* (Exodus 19:15) — the Sinai abstinence and sanctification that Leviticus 15:18 marks as a setting-apart of the flesh before drawing near the Holy One.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=18
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-seed-of-copulation-washed-and-sanctified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And a certain woman, which had an issue of blood twelve years* (Mark 5:25) — exactly the case of Leviticus 15:25, the issue running beyond the time of her separation.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=5 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-woman-with-the-issue-of-blood-made-whole'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*If I may touch but his clothes, I shall be whole* (Mark 5:28) — under Leviticus 15:19,27 her touch would defile; instead his cleanness flows to her.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=5 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-woman-with-the-issue-of-blood-made-whole'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And straightway the fountain of her blood was dried up... she was healed of that plague* (Mark 5:29) — the flow of Leviticus 15:25 staunched at its source in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=5 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-woman-with-the-issue-of-blood-made-whole'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Daughter, thy faith hath made thee whole; go in peace, and be whole of thy plague* (Mark 5:34) — the unclean of Leviticus 15 named Daughter and made whole, the separation reversed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=5 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-woman-with-the-issue-of-blood-made-whole'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*A woman, which was diseased with an issue of blood twelve years... touched the hem of his garment* (Matthew 9:20) — the fringe that under Leviticus 15:20 her touch would defile carries cleansing instead.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-woman-with-the-issue-of-blood-made-whole'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Daughter, be of good comfort; thy faith hath made thee whole. And the woman was made whole from that hour* (Matthew 9:22) — the days of uncleanness of Leviticus 15:25 ended in a moment.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-woman-with-the-issue-of-blood-made-whole'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*A woman having an issue of blood twelve years... neither could be healed of any* (Luke 8:43) — no seven days nor two turtledoves of Leviticus 15:28-30 had availed her.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=8 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-woman-with-the-issue-of-blood-made-whole'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Touched the border of his garment: and immediately her issue of blood stanched* (Luke 8:44) — the issue Leviticus 15:25 declared unending is stopped at his border.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=8 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-the-woman-with-the-issue-of-blood-made-whole'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44) — the dietary law and the law of issues share one purpose, separation unto holiness (Leviticus 15:31).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-separate-them-lest-they-defile-my-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye are the temple of the living Elohim (God)... I will dwell in them, and walk in them* (2 Corinthians 6:16) — the dwelling that may not be defiled becomes the indwelt people of Leviticus 15:31.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-separate-them-lest-they-defile-my-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Come out from among them, and be ye separate... and touch not the unclean thing* (2 Corinthians 6:17) — the very burden and charge of Leviticus 15:31, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-separate-them-lest-they-defile-my-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Know ye not that your body is the temple of the Ruach HaKodesh (Holy Spirit) which is in you* (1 Corinthians 6:19) — the tabernacle of Leviticus 15:31 is now the body itself.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s311_lev15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=6 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-15-separate-them-lest-they-defile-my-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session311 — Leviticus cross-references complete.'
