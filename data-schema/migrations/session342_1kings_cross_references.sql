@@ -3230,6 +3230,1712 @@ SELECT t.id, cr.id, 4, E'*and his wives turned away his heart* (1 Kings 11:3) �
  WHERE t.slug='1-kings-10-the-quiet-warning-of-accumulation-the-kings-law'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1-kings_11.sql (1 Kings 11) -----
+-- 1 Kings 11 — the wisest man's heart turned by forbidden alliance; the first commandment and the
+-- king-law broken; the kingdom SENTENCED to be rent, yet the lamp/one-tribe kept for David; Ahijah
+-- rends the garment into twelve and gives Jeroboam ten — the two houses about to be born.
+-- TAG: 1ki11   VIEW: _s342_1ki11_lookup   SORT BAND: 38150, step 3 (38150,38153,38156,38159,38162)
+-- SOURCE rows all 'canon','1-kings',11,v.
+--
+-- 1 Kings 11 coverage:
+--   v.1-2  (Solomon loved many strange women of the nations Yahuah forbade; they will turn away your heart)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 7:3-4 (make no marriages; they will turn away thy son to other gods); Nehemiah 13:26 (did not Solomon sin by these things?) [thread 1]
+--   v.3    (seven hundred wives, three hundred concubines; his wives turned away his heart)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 17:17 (the king shall not multiply wives, that his heart turn not away); Nehemiah 13:26 (outlandish women caused him to sin) [thread 1]
+--   v.4-8  (his heart not perfect; went after Ashtoreth, Milcom, Chemosh, Molech; built high places)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 20:3,5 (no other gods before me; a jealous Elohim); Deuteronomy 7:4 (they will turn away thy son to serve other gods); 2 Kings 17:7-8 (the same idolatry that scattered the north) [thread 2]
+--   v.9-13 (Yahuah angry; thou hast not kept my covenant; I will rend the kingdom; yet one tribe for David's sake)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 7:15 (my mercy shall not depart from him); 1 Kings 9:6-7 (if ye turn, I will cut off Yashar'el) [thread 3]
+--   v.30-33 (Ahijah rends the new garment into twelve; ten tribes to Jeroboam; one tribe for David)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Kings 12:15,19-20 (the rending performed, Yashar'el rebels against the house of David); 2 Kings 17:21 (he rent Yashar'el from the house of David); Ezekiel 37:22 (they shall be no more two nations) [thread 4]
+--   v.34-39 (one tribe that David may have a light alway; I will afflict the seed of David, but not for ever)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 7:16 (thy throne shall be established for ever); 1 Kings 9:5 (the throne established as I promised David); Ezekiel 37:24 (David my servant king over the gathered houses) [thread 5]
+--
+-- THREADS:
+--   1-kings-11-the-forbidden-alliances-that-turn-the-heart (free) — Tanakh: Deut7, Deut17, Neh13
+--   1-kings-11-the-first-commandment-broken-the-high-places (free) — Tanakh: Exod20, Deut7, 2Kings17
+--   1-kings-11-the-kingdom-rent-yet-the-lamp-kept-for-david (free) — Tanakh: 2Sam7, 1Kings9
+--   1-kings-11-ahijah-rends-the-garment-the-two-houses-born (free) — Tanakh: 1Kings12, 2Kings17, Ezek37
+--   1-kings-11-the-seed-of-david-afflicted-but-not-for-ever (free) — Tanakh: 2Sam7, 1Kings9, Ezek37
+-- Framework-load-bearing framing: this is the hinge chapter of the whole two-house framework. The
+-- wisest man's heart is turned by forbidden alliance (Deut 7:3-4) — NOT lineage failing but the
+-- covenant-word broken; he breaks the first commandment (Exod 20:3) and the king-law (Deut 17:17),
+-- and Nehemiah names it directly (*did not Solomon king of Yashar'el sin by these things?* Neh 13:26).
+-- The kingdom is rent as covenant-judgment (Torah the broken covenant, NEVER the curse), YET the lamp
+-- is kept for David's sake — the seed-line mercy of 2 Samuel 7:15-16 preserved even in judgment.
+-- Ahijah's torn garment (ten to Jeroboam, one to David) is the literal birth of the two houses that
+-- Ezekiel 37 will one day make one stick again — the division sentenced here is the division healed
+-- there. The affliction of the seed of David is *but not for ever* (11:39) — the everlasting throne
+-- of 2 Samuel 7 and the one David/one shepherd of Ezekiel 37:24 stand over the whole judgment.
+
+CREATE TEMP VIEW _s342_1ki11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the forbidden alliances that turn the heart (11:1,2,3)
+    ('canon','1-kings',11,2,'canon','deuteronomy',7,3,'free',E'*Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son* (Deuteronomy 7:3). This is the very command the chapter says Solomon trampled — *the nations concerning which Yahuah (LORD) said unto the children of Yashar''el (Israel), Ye shall not go in to them, neither shall they come in unto you* (1 Kings 11:2). The covenant-word was plain; the wisest man broke it.'),
+    ('canon','1-kings',11,2,'canon','deuteronomy',7,4,'free',E'*For they will turn away thy son from following me, that they may serve other gods: so will the anger of Yahuah (LORD) be kindled against you, and destroy thee suddenly* (Deuteronomy 7:4). Torah named the exact danger in advance, and the chapter echoes it word for word — *for surely they will turn away your heart after their gods* (1 Kings 11:2). The marriage-ban was never about blood-purity but about the heart kept whole for Yahuah; the seed of promise is carried by bloodline AND covenant-word together, and here the word is cast off.'),
+    ('canon','1-kings',11,1,'canon','nehemiah',13,26,'free',E'*Did not Solomon king of Yashar''el (Israel) sin by these things? yet among many nations was there no king like him, who was beloved of his Elohim (God), and Elohim (God) made him king over all Yashar''el (Israel): nevertheless even him did outlandish women cause to sin* (Nehemiah 13:26). Centuries later Nehemiah reaches back to this very chapter — *king Solomon loved many strange women* (1 Kings 11:1) — as the standing warning against the forbidden alliance: if the wisest king was turned, no man is too strong for it.'),
+    ('canon','1-kings',11,3,'canon','deuteronomy',17,17,'free',E'*Neither shall he multiply wives to himself, that his heart turn not away* (Deuteronomy 17:17). The king-law spoke the outcome before it happened, and the chapter records the law and its breaking in one stroke — *he had seven hundred wives, princesses, and three hundred concubines: and his wives turned away his heart* (1 Kings 11:3). The very turning Torah foresaw is the turning that befalls him.'),
+    ('canon','1-kings',11,3,'canon','nehemiah',13,26,'free',E'*nevertheless even him did outlandish women cause to sin* (Nehemiah 13:26). The multiplied wives whose end was that they *turned away his heart* (1 Kings 11:3) are the outlandish women Nehemiah names — the inspired verdict on the chapter, that the alliance, not the lineage, undid him.'),
+
+    -- THREAD 2: the first commandment broken, the high places (11:4,5,6,7,8)
+    ('canon','1-kings',11,4,'canon','exodus',20,3,'free',E'*Thou shalt have no other gods before me* (Exodus 20:3). The first word of the ten is the word Solomon''s old age overturns — *his wives turned away his heart after other gods: and his heart was not perfect with Yahuah Elohav (the LORD his God)* (1 Kings 11:4). The heart that is not perfect with Yahuah is the heart that has set up other gods before him.'),
+    ('canon','1-kings',11,4,'canon','deuteronomy',7,4,'free',E'*For they will turn away thy son from following me, that they may serve other gods* (Deuteronomy 7:4). What Torah warned the strange wives would do, they have now done to the wisest son of all — *when Solomon was old, that his wives turned away his heart after other gods* (1 Kings 11:4). The warning of the marriage-ban is fulfilled in the very king who should have known it best.'),
+    ('canon','1-kings',11,5,'canon','exodus',20,5,'free',E'*Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5). When *Solomon went after Ashtoreth the goddess of the Zidonians, and after Milcom the abomination of the Ammonites* (1 Kings 11:5), he served the gods the jealous Elohim forbade — and the anger of 11:9 is the jealousy of the second word answered.'),
+    ('canon','1-kings',11,7,'canon','exodus',20,3,'free',E'*Thou shalt have no other gods before me* (Exodus 20:3). The high place Solomon built *for Chemosh, the abomination of Moab... and for Molech, the abomination of the children of Ammon* (1 Kings 11:7) raises the very rival altars the first commandment forbids — built, of all places, *in the hill that is before Jerusalem*, in sight of the house of Yahuah.'),
+    ('canon','1-kings',11,8,'canon','2-kings',17,8,'free',E'*And walked in the statutes of the heathen, whom Yahuah (LORD) cast out from before the children of Yashar''el (Israel)* (2 Kings 17:8). The strange wives'' altars where they *burnt incense and sacrificed unto their gods* (1 Kings 11:8) are the first stones of the road that ends with the northern house scattered for walking in the statutes of the heathen — the sin sown here is the sin that empties the land.'),
+    ('canon','1-kings',11,6,'canon','2-kings',17,7,'free',E'*For so it was, that the children of Yashar''el (Israel) had sinned against Yahuah (LORD) their Elohim (God)... and had feared other gods* (2 Kings 17:7). That *Solomon did evil in the sight of Yahuah (LORD), and went not fully after Yahuah (LORD)* (1 Kings 11:6) is the headwater of the indictment 2 Kings will lay against the whole northern house — the fearing of other gods that began in the king''s own bed.'),
+
+    -- THREAD 3: the kingdom rent yet the lamp kept for David (11:11,12,13)
+    ('canon','1-kings',11,11,'canon','1-kings',9,6,'free',E'*But if ye shall at all turn from following me, ye or your children, and will not keep my commandments and my statutes which I have set before you, but go and serve other gods, and worship them* (1 Kings 9:6). At the second appearing Yahuah set the condition, and now the sentence falls on the breach of it — *thou hast not kept my covenant and my statutes, which I have commanded thee, I will surely rend the kingdom from thee* (1 Kings 11:11). The judgment is the covenant''s own word coming true; the Torah is the broken covenant here, never the curse.'),
+    ('canon','1-kings',11,11,'canon','1-kings',9,7,'free',E'*Then will I cut off Yashar''el (Israel) out of the land which I have given them; and this house, which I have hallowed for my name, will I cast out of my sight* (1 Kings 9:7). The threatened cutting-off begins its slow work in the rending — *I will surely rend the kingdom from thee, and will give it to thy servant* (1 Kings 11:11). What was warned at the temple''s dedication is now spoken over the king''s house.'),
+    ('canon','1-kings',11,12,'canon','2-samuel',7,15,'free',E'*But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee* (2 Samuel 7:15). The judgment is real, yet it bends to the Davidic promise — *Notwithstanding in thy days I will not do it for David thy father''s sake: but I will rend it out of the hand of thy son* (1 Kings 11:12). The mercy that would not depart from David''s house stays the hand of the sentence; the seed-line is spared even as the kingdom is rent.'),
+    ('canon','1-kings',11,13,'canon','2-samuel',7,16,'free',E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). This is why one tribe is kept — *I will not rend away all the kingdom; but will give one tribe to thy son for David my servant''s sake, and for Jerusalem''s sake which I have chosen* (1 Kings 11:13). The everlasting throne sworn to David is the reason the lamp is not put out; the covenant mercy preserves the seed even in the day of judgment.'),
+
+    -- THREAD 4: Ahijah rends the garment, the two houses born (11:30,31,32,33)
+    ('canon','1-kings',11,31,'canon','1-kings',12,15,'free',E'*Wherefore the king hearkened not unto the people; for the cause was from Yahuah (LORD), that he might perform his saying, which Yahuah (LORD) spake by Ahijah the Shilonite unto Jeroboam the son of Nebat* (1 Kings 12:15). The torn garment is no mere sign; the next chapter records its performing — *Take thee ten pieces: for thus saith Yahuah (LORD)... I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). The prophet''s word and its fulfilment frame the birth of the division.'),
+    ('canon','1-kings',11,31,'canon','1-kings',12,20,'free',E'*there was none that followed the house of David, but the tribe of Yahudah (Judah) only* (1 Kings 12:20). The ten pieces given to Jeroboam become the ten tribes that follow him, and the one tribe kept for David becomes Yahudah standing alone — *will give ten tribes to thee* (1 Kings 11:31) is the very shape of the kingdom that splits in two.'),
+    ('canon','1-kings',11,30,'canon','2-kings',17,21,'free',E'*For he rent Yashar''el (Israel) from the house of David; and they made Jeroboam the son of Nebat king* (2 Kings 17:21). The rending Ahijah enacted with a garment — *Ahijah caught the new garment that was on him, and rent it in twelve pieces* (1 Kings 11:30) — is named again as the founding wound of the northern house, the tearing-away that 2 Kings traces to the very exile of Israel.'),
+    ('canon','1-kings',11,33,'canon','2-kings',17,21,'free',E'*and Jeroboam drave Yashar''el (Israel) from following Yahuah (LORD), and made them sin a great sin* (2 Kings 17:21). The reason given for the rending — *because that they have forsaken me, and have worshipped Ashtoreth... Chemosh... and Milcom* (1 Kings 11:33) — is the same idolatry that, deepened under Jeroboam, carries the northern house all the way to Assyria.'),
+    ('canon','1-kings',11,31,'canon','ezekiel',37,22,'free',E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The two kingdoms Ezekiel promises to undo are the two born here — *I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). The division sentenced by Ahijah''s torn garment is the very division Ezekiel''s two sticks will one day heal into one.'),
+
+    -- THREAD 5: the seed of David afflicted but not for ever (11:34,36,38,39)
+    ('canon','1-kings',11,36,'canon','2-samuel',7,16,'free',E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). The one tribe is kept so the lamp never goes out — *that David my servant may have a light alway before me in Jerusalem, the city which I have chosen me to put my name there* (1 Kings 11:36). The light kept burning in Jerusalem is the everlasting throne of the Davidic covenant guarded through the night of judgment.'),
+    ('canon','1-kings',11,34,'canon','1-kings',9,5,'free',E'*Then I will establish the throne of thy kingdom upon Yashar''el (Israel) for ever, as I promised to David thy father, saying, There shall not fail thee a man upon the throne of Yashar''el (Israel)* (1 Kings 9:5). The reason Solomon is left prince all his days — *for David my servant''s sake, whom I chose, because he kept my commandments and my statutes* (1 Kings 11:34) — is the promise of the second appearing held fast: the throne is upheld for David''s faithfulness, not Solomon''s.'),
+    ('canon','1-kings',11,39,'canon','2-samuel',7,15,'free',E'*But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee* (2 Samuel 7:15). The affliction is bounded by a promise — *And I will for this afflict the seed of David, but not for ever* (1 Kings 11:39). The mercy that will not depart sets the limit on the chastening; the seed of David is afflicted, never abandoned.'),
+    ('canon','1-kings',11,39,'canon','ezekiel',37,24,'free',E'*And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24). The *not for ever* of the affliction (1 Kings 11:39) opens toward the day the seed of David rules the regathered houses as one shepherd — the kingdom rent here is restored in the one David Ezekiel sees, the two houses made one under him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-11-the-forbidden-alliances-that-turn-the-heart',
+       E'The forbidden alliances that turn the heart',
+       E'The wisest man Yahuah ever made is undone not by a foreign army but by a forbidden alliance. *But king Solomon loved many strange women, together with the daughter of Pharaoh, women of the Moabites, Ammonites, Edomites, Zidonians, and Hittites; of the nations concerning which Yahuah (LORD) said unto the children of Yashar''el (Israel), Ye shall not go in to them, neither shall they come in unto you: for surely they will turn away your heart after their gods: Solomon clave unto these in love* (1 Kings 11:1-2). The marriage-ban was Torah''s, word for word: *Neither shalt thou make marriages with them... For they will turn away thy son from following me, that they may serve other gods* (Deuteronomy 7:3-4). It was never blood-purity Torah guarded but the heart kept whole for Yahuah — the seed of promise carried by bloodline AND covenant-word together, and here the word is thrown away. The king-law had named the very outcome: *Neither shall he multiply wives to himself, that his heart turn not away* (Deuteronomy 17:17). And it turned: *he had seven hundred wives, princesses, and three hundred concubines: and his wives turned away his heart* (1 Kings 11:3). Centuries on, Nehemiah reaches back to this chapter as the standing warning: *Did not Solomon king of Yashar''el (Israel) sin by these things? yet among many nations was there no king like him... nevertheless even him did outlandish women cause to sin* (Nehemiah 13:26). If the wisest was turned, none is too strong for the snare.',
+       sv.verse_id, ev.verse_id, 'free', 38150
+  FROM _s342_1ki11_lookup sv, _s342_1ki11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=11 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-11-the-first-commandment-broken-the-high-places',
+       E'The first commandment broken — the high places',
+       E'The turned heart bears its fruit in stone and fire. *For it came to pass, when Solomon was old, that his wives turned away his heart after other gods: and his heart was not perfect with Yahuah Elohav (the LORD his God), as was the heart of David his father* (1 Kings 11:4) — the heart not perfect with Yahuah is the heart that has set up rivals, and the very first word of the ten is overturned: *Thou shalt have no other gods before me* (Exodus 20:3). He went after the gods of the second word too: *For Solomon went after Ashtoreth the goddess of the Zidonians, and after Milcom the abomination of the Ammonites* (1 Kings 11:5), and the jealous Elohim had said *Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5). Then he built the rival altars in sight of the house: *Then did Solomon build an high place for Chemosh, the abomination of Moab, in the hill that is before Jerusalem, and for Molech, the abomination of the children of Ammon* (1 Kings 11:7). What the strange wives would do, Torah had foretold: *they will turn away thy son from following me, that they may serve other gods* (Deuteronomy 7:4). And this idolatry begun in the king''s own bed is the headwater of the great scattering: *the children of Yashar''el (Israel) had sinned against Yahuah (LORD) their Elohim (God)... and had feared other gods, and walked in the statutes of the heathen* (2 Kings 17:7-8). The sin sown here is the sin that one day empties the northern land.',
+       sv.verse_id, ev.verse_id, 'free', 38153
+  FROM _s342_1ki11_lookup sv, _s342_1ki11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=11 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-11-the-kingdom-rent-yet-the-lamp-kept-for-david',
+       E'The kingdom rent — yet the lamp kept for David',
+       E'The sentence falls, and it is the covenant''s own word coming true — never the Torah as a curse, but the broken covenant answering. *Wherefore Yahuah (LORD) said unto Solomon, Forasmuch as this is done of thee, and thou hast not kept my covenant and my statutes, which I have commanded thee, I will surely rend the kingdom from thee, and will give it to thy servant* (1 Kings 11:11). The condition had been set at the second appearing: *But if ye shall at all turn from following me... but go and serve other gods, and worship them* (1 Kings 9:6), with the threat *then will I cut off Yashar''el (Israel) out of the land which I have given them* (1 Kings 9:7). Yet the judgment bends to the Davidic promise and will not break it. *Notwithstanding in thy days I will not do it for David thy father''s sake: but I will rend it out of the hand of thy son. Howbeit I will not rend away all the kingdom; but will give one tribe to thy son for David my servant''s sake, and for Jerusalem''s sake which I have chosen* (1 Kings 11:12-13). This is the mercy of 2 Samuel 7 holding the seed-line fast: *But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee* (2 Samuel 7:15); *thy throne shall be established for ever* (2 Samuel 7:16). The kingdom is torn for covenant-breaking, yet one tribe — one lamp — is kept burning, because the everlasting throne sworn to David cannot fail.',
+       sv.verse_id, ev.verse_id, 'free', 38156
+  FROM _s342_1ki11_lookup sv, _s342_1ki11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=11 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-11-ahijah-rends-the-garment-the-two-houses-born',
+       E'Ahijah rends the garment — the two houses born',
+       E'Here, in a field outside Jerusalem, the two houses of the framework are born. *And Ahijah caught the new garment that was on him, and rent it in twelve pieces: and he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:30-31) — but *he shall have one tribe for my servant David''s sake* (1 Kings 11:32). The reason is the idolatry the chapter has traced: *because that they have forsaken me, and have worshipped Ashtoreth the goddess of the Zidonians, Chemosh the god of the Moabites, and Milcom the god of the children of Ammon* (1 Kings 11:33). The torn garment is no empty sign; the next chapter performs it — *the cause was from Yahuah (LORD), that he might perform his saying, which Yahuah (LORD) spake by Ahijah the Shilonite* (1 Kings 12:15) — and Yashar''el follows Jeroboam while *there was none that followed the house of David, but the tribe of Yahudah (Judah) only* (1 Kings 12:20). Long after, the founding wound is named again: *For he rent Yashar''el (Israel) from the house of David; and they made Jeroboam the son of Nebat king; and Jeroboam drave Yashar''el (Israel) from following Yahuah (LORD)* (2 Kings 17:21). Two kingdoms are made this day — and the very tearing is what Ezekiel is sent to undo: *I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The torn garment of Ahijah is the two sticks Ezekiel will join into one.',
+       sv.verse_id, ev.verse_id, 'free', 38159
+  FROM _s342_1ki11_lookup sv, _s342_1ki11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=11 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-11-the-seed-of-david-afflicted-but-not-for-ever',
+       E'The seed of David afflicted — but not for ever',
+       E'Even in the sentence of division, the Davidic covenant sets the bounds of the judgment. Solomon is left prince all his days for one reason: *I will make him prince all the days of his life for David my servant''s sake, whom I chose, because he kept my commandments and my statutes* (1 Kings 11:34) — the promise of the second appearing held fast, *Then I will establish the throne of thy kingdom upon Yashar''el (Israel) for ever, as I promised to David thy father, saying, There shall not fail thee a man upon the throne of Yashar''el (Israel)* (1 Kings 9:5). The one tribe is kept so the lamp never goes out: *that David my servant may have a light alway before me in Jerusalem, the city which I have chosen me to put my name there* (1 Kings 11:36) — the throne *established for ever* of *thine house and thy kingdom shall be established for ever before thee* (2 Samuel 7:16). And the chastening itself is bounded by mercy: *And I will for this afflict the seed of David, but not for ever* (1 Kings 11:39), the *my mercy shall not depart away from him* of 2 Samuel 7:15 setting the limit. That *not for ever* opens all the way to the day the seed of David rules the regathered houses as one shepherd: *And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24). The kingdom rent in this chapter is the kingdom restored under the one David — the affliction was never the end of the seed-line, only its night.',
+       sv.verse_id, ev.verse_id, 'free', 38162
+  FROM _s342_1ki11_lookup sv, _s342_1ki11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=11 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: the forbidden alliances that turn the heart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son* (Deuteronomy 7:3) — the marriage-ban Solomon trampled, word for word.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-forbidden-alliances-that-turn-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For they will turn away thy son from following me, that they may serve other gods* (Deuteronomy 7:4) — Torah named the exact danger; 1 Kings 11:2 echoes it verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-forbidden-alliances-that-turn-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Did not Solomon king of Yashar''el (Israel) sin by these things?... even him did outlandish women cause to sin* (Nehemiah 13:26) — the inspired verdict reaching back to this chapter.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=13 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-forbidden-alliances-that-turn-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Neither shall he multiply wives to himself, that his heart turn not away* (Deuteronomy 17:17) — the king-law spoke the outcome before it happened.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=3
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-forbidden-alliances-that-turn-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*nevertheless even him did outlandish women cause to sin* (Nehemiah 13:26) — the multiplied wives of 11:3 named as the outlandish women who undid him.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=3
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=13 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-forbidden-alliances-that-turn-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the first commandment broken, the high places
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt have no other gods before me* (Exodus 20:3) — the first word of the ten, overturned by the heart not perfect with Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-first-commandment-broken-the-high-places'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For they will turn away thy son from following me, that they may serve other gods* (Deuteronomy 7:4) — the marriage-ban''s warning fulfilled in the wisest son of all.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-first-commandment-broken-the-high-places'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5) — the jealousy answered by the anger of 11:9.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=5
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-first-commandment-broken-the-high-places'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou shalt have no other gods before me* (Exodus 20:3) — the high place for Chemosh and Molech raised in sight of Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=7
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-first-commandment-broken-the-high-places'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*And walked in the statutes of the heathen, whom Yahuah (LORD) cast out from before the children of Yashar''el (Israel)* (2 Kings 17:8) — the strange wives'' altars are the first stones of the road to the northern exile.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=8
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-first-commandment-broken-the-high-places'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the children of Yashar''el (Israel) had sinned against Yahuah (LORD)... and had feared other gods* (2 Kings 17:7) — Solomon doing evil is the headwater of the indictment against the whole northern house.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-first-commandment-broken-the-high-places'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the kingdom rent yet the lamp kept for david
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*But if ye shall at all turn from following me... but go and serve other gods, and worship them* (1 Kings 9:6) — the condition set at the second appearing, now breached.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=11
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-kingdom-rent-yet-the-lamp-kept-for-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Then will I cut off Yashar''el (Israel) out of the land which I have given them* (1 Kings 9:7) — the threatened cutting-off begins its work in the rending.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=11
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-kingdom-rent-yet-the-lamp-kept-for-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*But my mercy shall not depart away from him, as I took it from Saul* (2 Samuel 7:15) — the Davidic mercy stays the hand: not in thy days, but thy son''s.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=12
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-kingdom-rent-yet-the-lamp-kept-for-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thy throne shall be established for ever* (2 Samuel 7:16) — the everlasting throne is why one tribe is kept for David''s sake.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=13
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-kingdom-rent-yet-the-lamp-kept-for-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: ahijah rends the garment, the two houses born
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the cause was from Yahuah (LORD), that he might perform his saying, which Yahuah (LORD) spake by Ahijah the Shilonite* (1 Kings 12:15) — the torn garment performed in the next chapter.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-ahijah-rends-the-garment-the-two-houses-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there was none that followed the house of David, but the tribe of Yahudah (Judah) only* (1 Kings 12:20) — the ten pieces become the ten tribes, the one tribe becomes Yahudah alone.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-ahijah-rends-the-garment-the-two-houses-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*For he rent Yashar''el (Israel) from the house of David; and they made Jeroboam the son of Nebat king* (2 Kings 17:21) — the founding wound of the northern house named again.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-ahijah-rends-the-garment-the-two-houses-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*and Jeroboam drave Yashar''el (Israel) from following Yahuah (LORD), and made them sin a great sin* (2 Kings 17:21) — the idolatry of 11:33, deepened, carries the north to Assyria.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=33
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-ahijah-rends-the-garment-the-two-houses-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22) — the two kingdoms born here are the two Ezekiel''s sticks will join into one.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-ahijah-rends-the-garment-the-two-houses-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: the seed of david afflicted but not for ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thy throne shall be established for ever* (2 Samuel 7:16) — the one tribe kept so David has a light alway in Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=36
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-seed-of-david-afflicted-but-not-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Then I will establish the throne of thy kingdom upon Yashar''el (Israel) for ever, as I promised to David thy father* (1 Kings 9:5) — Solomon left prince for David''s sake, the second-appearing promise held fast.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=34
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-seed-of-david-afflicted-but-not-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*But my mercy shall not depart away from him, as I took it from Saul* (2 Samuel 7:15) — the mercy sets the limit: afflicted, *but not for ever*.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=39
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-seed-of-david-afflicted-but-not-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And David my servant shall be king over them; and they all shall have one shepherd* (Ezekiel 37:24) — the *not for ever* opens to the one David ruling the regathered houses.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=11 AND sv.verse_number=39
+  JOIN _s342_1ki11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-11-the-seed-of-david-afflicted-but-not-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_12.sql (1 Kings 12) -----
+-- 1 Kings 12 — THE KEYSTONE: the kingdom splits at Shechem; the two houses are born; Jeroboam's golden calves.
+-- TAG: 1ki12   VIEW: _s342_1ki12_lookup   SORT BAND: 38175, step 3 (38175,38178,38181,38184,38187,38190)
+-- SOURCE rows all 'canon','1-kings',12,v.
+--
+-- 1 Kings 12 coverage:
+--   v.10-11,14 (Rehoboam forsakes the old men; the heavy yoke; whips and scorpions)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 10:10-11,14 (parallel telling); 1 Kings 11:11 (the sentence to be performed) [thread 1]
+--   v.15   (the king hearkened not; the cause was from Yahuah, that he might perform his saying by Ahijah)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Kings 11:11,31 (the rending decreed; the ten tribes); 2 Chronicles 10:15 (parallel) [thread 1]
+--   v.16,19,20 (THE SPLIT — what portion in David; to your tents; Yashar'el rebels; none but Yahudah)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 20:1 (the SAME cry — Sheba: no part in David); 1 Kings 11:31 (ten tribes torn);
+--                  Ezekiel 37:16,19,22 (the two sticks made one; no more two nations); Hosea 1:11 (one head) [thread 2]
+--   v.21,24 (Rehoboam musters to fight; Yahuah forbids — ye shall not fight against your brethren; this is from me)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 11:1,4 (parallel); Ezekiel 37:22 (one nation, no more divided — the brethren reunited) [thread 3]
+--   v.26-28 (Jeroboam's fear; the two calves of gold; behold thy gods which brought thee out of Egypt)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 32:4,8 (Aaron's calf — the EXACT words); 1 Kings 11:31 (the ten tribes he now corrupts) [thread 4]
+--   v.28,30 (the calves; this thing became a sin — the founding sin of the north)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Hosea 8:5-6 (calf of Samaria broken in pieces); Hosea 13:2 (kiss the calves); 2 Kings 17:21-23 (Jeroboam drave Yashar'el from Yahuah; the scattering) [thread 5]
+--   v.31-33 (priests of the lowest, not Levi; a feast in the eighth month, devised of his own heart)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Leviticus 23:34,39 (the feast of tabernacles — the SEVENTH month, the appointed time counterfeited);
+--                  2 Chronicles 11:14-15 (the Levites cast off; priests for the calves); Amos 7:13 (Beth-el the king's chapel) [thread 6]
+--
+-- THREADS:
+--   1-kings-12-the-heavy-yoke-and-the-scorpions-the-sentence-performed (free) — Tanakh: 2Chr10, 1Kings11
+--   1-kings-12-what-portion-in-david-the-two-houses-are-born (free) — Tanakh: 2Sam20, 1Kings11, Ezek37, Hosea1
+--   1-kings-12-ye-shall-not-fight-against-your-brethren (free) — Tanakh: 2Chr11, Ezek37
+--   1-kings-12-the-two-calves-of-gold-aarons-sin-recapitulated (free) — Tanakh: Exod32, 1Kings11
+--   1-kings-12-the-sin-of-jeroboam-that-scattered-the-north (free) — Tanakh: Hosea8, Hosea13, 2Kings17
+--   1-kings-12-the-counterfeit-feast-and-priesthood-the-moedim-displaced (free) — Tanakh: Lev23, 2Chr11, Amos7
+-- Framework-load-bearing framing:
+--   ★★★ THE TWO HOUSES (thread 2): 12:16's cry *What portion have we in David?* is verbatim the rebel
+--   cry of Sheba (2 Sam 20:1); here it succeeds, and *there was none that followed the house of David, but
+--   the tribe of Yahudah (Judah) only* (12:20) — Yahudah/south vs Yashar'el-Ephraim/north, the wound the
+--   rest of the canon labors to heal (Ezek 37:16-22 the two sticks made one, no more two nations; Hosea 1:11
+--   one head). Framed NOT as God's rejection of the north but as the division the prophets promise to heal.
+--   ★ Brethren not enemies (thread 3): 12:24 *your brethren the children of Yashar'el (Israel)* — victims of
+--   a covenant breach, never enemies; the war is forbidden because they are one people torn.
+--   ★★★ THE CALVES (thread 4): 12:28's *behold thy gods, O Yashar'el (Israel), which brought thee up out of
+--   the land of Egypt* is word-for-word Aaron's calf (Exod 32:4,8) — Jeroboam's founding sin recapitulates
+--   the wilderness apostasy, and it scatters the north (thread 5; 2 Kings 17:21-23, Hosea 8/13).
+--   ★ The moedim counterfeited (thread 6): the feast moved from the SEVENTH month (Lev 23:34,39, the feast of
+--   tabernacles, *a statute for ever*) to the eighth, *which he had devised of his own heart* (12:33) — man's
+--   calendar against Yahuah's appointed times; the Levitical order displaced by *priests of the lowest of the
+--   people, which were not of the sons of Levi* (12:31).
+
+CREATE TEMP VIEW _s342_1ki12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the heavy yoke and the scorpions, the sentence performed (12:11,14,15)
+    ('canon','1-kings',12,11,'canon','2-chronicles',10,11,'free',E'*For whereas my father put a heavy yoke upon you, I will put more to your yoke: my father chastised you with whips, but I will chastise you with scorpions* (2 Chronicles 10:11). The Chronicler tells the folly word for word; Rehoboam takes the young men''s counsel and threatens to crush the very people who begged him to *make thou it lighter unto us* (1 Kings 12:11).'),
+    ('canon','1-kings',12,14,'canon','2-chronicles',10,14,'free',E'*And answered them after the advice of the young men, saying, My father made your yoke heavy, but I will add thereto: my father chastised you with whips, but I will chastise you with scorpions* (2 Chronicles 10:14). The same hardness in both tellings — *My father made your yoke heavy, and I will add to your yoke... I will chastise you with scorpions* (1 Kings 12:14) — the king forsakes the old men''s servant-counsel and seals the breach.'),
+    ('canon','1-kings',12,15,'canon','1-kings',11,11,'free',E'*Wherefore Yahuah (LORD) said unto Solomon... I will surely rend the kingdom from thee, and will give it to thy servant* (1 Kings 11:11). The narrator names the deeper cause: *the cause was from Yahuah (LORD), that he might perform his saying* (1 Kings 12:15) — Rehoboam''s folly is the instrument by which the sentence already spoken upon Solomon''s idolatry comes to pass.'),
+    ('canon','1-kings',12,15,'canon','1-kings',11,31,'free',E'*and will give ten tribes to thee* (1 Kings 11:31). The saying Yahuah *spake by Ahijah the Shilonite unto Jeroboam the son of Nebat* (1 Kings 12:15) is the prophet''s torn garment of the chapter before — ten pieces given to Jeroboam — now coming true through a king who would not listen.'),
+    ('canon','1-kings',12,15,'canon','2-chronicles',10,15,'free',E'*for the cause was of Elohim (God), that Yahuah (LORD) might perform his word, which he spake by the hand of Ahijah the Shilonite to Jeroboam the son of Nebat* (2 Chronicles 10:15). The parallel confirms the hidden hand: the breach is judgment for the covenant Solomon broke, not blind politics.'),
+
+    -- THREAD 2: what portion in David, the two houses are born (12:16,19,20)
+    ('canon','1-kings',12,16,'canon','2-samuel',20,1,'free',E'*We have no part in David, neither have we inheritance in the son of Jesse: every man to his tents, O Yashar''el (Israel)* (2 Samuel 20:1). This is the very cry of Sheba the man of Belial — and now, at Shechem, it succeeds: *What portion have we in David? neither have we inheritance in the son of Jesse: to your tents, O Yashar''el (Israel)* (1 Kings 12:16). The rebel slogan once put down becomes the founding word of the northern kingdom.'),
+    ('canon','1-kings',12,16,'canon','1-kings',11,31,'free',E'*Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). The departure of the ten tribes — *So Yashar''el (Israel) departed unto their tents* (1 Kings 12:16) — is the tearing Ahijah enacted with the new garment; the word becomes a nation walking away from the house of David.'),
+    ('canon','1-kings',12,19,'canon','ezekiel',37,22,'free',E'*and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). 1 Kings 12:19 names the wound — *So Yashar''el (Israel) rebelled against the house of David unto this day* — and Ezekiel names its healing: the two kingdoms born here will be divided no more.'),
+    ('canon','1-kings',12,20,'canon','ezekiel',37,16,'free',E'*take thee one stick, and write upon it, For Yahudah (Judah)... then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16). The two sticks are the two houses born in this verse: *there was none that followed the house of David, but the tribe of Yahudah (Judah) only* (1 Kings 12:20) — Yahudah in one hand, Joseph-Ephraim in the other, waiting to be joined.'),
+    ('canon','1-kings',12,20,'canon','ezekiel',37,19,'free',E'*Behold, I will take the stick of Joseph, which is in the hand of Ephraim... and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The division of 1 Kings 12:20 — Yahudah alone following David — is exactly what the LORD promises to undo, making the two one in his hand.'),
+    ('canon','1-kings',12,20,'canon','hosea',1,11,'free',E'*Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel* (Hosea 1:11). When *none... followed the house of David, but the tribe of Yahudah (Judah) only* (1 Kings 12:20), two heads were set up where there had been one; Hosea promises the day the two houses appoint themselves one head again.'),
+
+    -- THREAD 3: ye shall not fight against your brethren (12:21,24)
+    ('canon','1-kings',12,21,'canon','2-chronicles',11,1,'free',E'*And when Rehoboam was come to Jerusalem, he gathered of the house of Yahudah (Judah) and Benjamin an hundred and fourscore thousand chosen men, which were warriors, to fight against Yashar''el (Israel)* (2 Chronicles 11:1). The parallel of the muster: Rehoboam assembles Yahudah and Benjamin *to fight against the house of Yashar''el (Israel), to bring the kingdom again* (1 Kings 12:21) — a civil war against his own people, halted before it begins.'),
+    ('canon','1-kings',12,24,'canon','2-chronicles',11,4,'free',E'*Thus saith Yahuah (LORD), Ye shall not go up, nor fight against your brethren: return every man to his house: for this thing is done of me* (2 Chronicles 11:4). The word through Shemaiah, told twice, forbids the war and names the reason: they are *brethren*, and *this thing is from me* (1 Kings 12:24) — the split is Yahuah''s judgment, not a quarrel to be settled by the sword.'),
+    ('canon','1-kings',12,24,'canon','ezekiel',37,22,'free',E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all* (Ezekiel 37:22). Yahuah will not let Yahudah destroy *your brethren the children of Yashar''el (Israel)* (1 Kings 12:24) because the torn houses are still one people — the very people he promises to make one nation again under one king.'),
+
+    -- THREAD 4: the two calves of gold, Aaron's sin recapitulated (12:28)
+    ('canon','1-kings',12,28,'canon','exodus',32,4,'free',E'*and they said, These be thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (Exodus 32:4). Jeroboam speaks Aaron''s words almost letter for letter: *behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). The founding sin of the northern kingdom is the wilderness golden calf raised up again.'),
+    ('canon','1-kings',12,28,'canon','exodus',32,8,'free',E'*They have turned aside quickly out of the way which I commanded them: they have made them a molten calf, and have worshipped it... and said, These be thy gods, O Yashar''el (Israel), which have brought thee up out of the land of Egypt* (Exodus 32:8). Yahuah''s own indictment of the calf is the template; Jeroboam''s two calves of gold (1 Kings 12:28) repeat the turning-aside the LORD condemned at Sinai.'),
+    ('canon','1-kings',12,28,'canon','1-kings',11,31,'free',E'*Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). The ten tribes Yahuah gave into Jeroboam''s hand he now leads into sin: fearing they will *go up to Jerusalem* (1 Kings 12:28), he gives them gods of gold instead — the gift of a kingdom turned into the founding of an apostasy.'),
+
+    -- THREAD 5: the sin of Jeroboam that scattered the north (12:28,30)
+    ('canon','1-kings',12,28,'canon','hosea',8,5,'free',E'*Thy calf, O Samaria, hath cast thee off; mine anger is kindled against them: how long will it be ere they attain to innocency? For from Yashar''el (Israel) was it also: the workman made it; therefore it is not Elohim (God): but the calf of Samaria shall be broken in pieces* (Hosea 8:5-6). The two calves Jeroboam *made* (1 Kings 12:28) become *the calf of Samaria* the prophet condemns — a workman''s thing, no god at all, doomed to be broken.'),
+    ('canon','1-kings',12,30,'canon','hosea',13,2,'free',E'*And now they sin more and more, and have made them molten images of their silver, and idols according to their own understanding, all of it the work of the craftsmen: they say of them, Let the men that sacrifice kiss the calves* (Hosea 13:2). *And this thing became a sin* (1 Kings 12:30) — the kissing of the calves Hosea names is the long fruit of the sin Jeroboam planted at Beth-el and Dan.'),
+    ('canon','1-kings',12,30,'canon','2-kings',17,21,'free',E'*For he rent Yashar''el (Israel) from the house of David; and they made Jeroboam the son of Nebat king: and Jeroboam drave Yashar''el (Israel) from following Yahuah (LORD), and made them sin a great sin* (2 Kings 17:21). The narrator of the exile reads 1 Kings 12 back from the end: *this thing became a sin* (1 Kings 12:30), and that sin, never repented, *drave Yashar''el from following Yahuah* — the road to the Assyrian scattering.'),
+    ('canon','1-kings',12,28,'canon','2-kings',17,16,'free',E'*And they left all the commandments of Yahuah (LORD) their Elohim (God), and made them molten images, even two calves, and made a grove, and worshipped all the host of heaven, and served Baal* (2 Kings 17:16). *Two calves of gold* (1 Kings 12:28) is named at the end as the very sin that emptied the land — the two calves of Jeroboam still standing in the indictment that explains the exile.'),
+
+    -- THREAD 6: the counterfeit feast and priesthood, the moedim displaced (12:31,32,33)
+    ('canon','1-kings',12,31,'canon','2-chronicles',11,14,'free',E'*For the Levites left their suburbs and their possession, and came to Yahudah (Judah) and Jerusalem: for Jeroboam and his sons had cast them off from executing the priest''s office unto Yahuah (LORD)* (2 Chronicles 11:14). Jeroboam *made priests of the lowest of the people, which were not of the sons of Levi* (1 Kings 12:31); the Chronicler shows the other side — the true Levites driven out, the ordained order overthrown.'),
+    ('canon','1-kings',12,31,'canon','2-chronicles',11,15,'free',E'*And he ordained him priests for the high places, and for the devils, and for the calves which he had made* (2 Chronicles 11:15). The non-Levite priesthood of 1 Kings 12:31 is named for what it served — the high places, the devils, the calves; a counterfeit clergy for a counterfeit cult.'),
+    ('canon','1-kings',12,32,'canon','leviticus',23,34,'free',E'*Speak unto the children of Yashar''el (Israel), saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34). Yahuah set his feast in the SEVENTH month; Jeroboam *ordained a feast in the eighth month, on the fifteenth day of the month, like unto the feast that is in Yahudah (Judah)* (1 Kings 12:32) — the appointed time copied, but moved a month off Yahuah''s calendar.'),
+    ('canon','1-kings',12,33,'canon','leviticus',23,39,'free',E'*Also in the fifteenth day of the seventh month, when ye have gathered in the fruit of the land, ye shall keep a feast unto Yahuah (LORD) seven days... It shall be a statute for ever in your generations: ye shall celebrate it in the seventh month* (Leviticus 23:39,41). The feast was *a statute for ever* in the seventh month; Jeroboam kept it *in the month which he had devised of his own heart* (1 Kings 12:33) — man''s invented worship set against Yahuah''s standing appointment.'),
+    ('canon','1-kings',12,32,'canon','amos',7,13,'free',E'*But prophesy not again any more at Beth-el: for it is the king''s chapel, and it is the king''s court* (Amos 7:13). The altar Jeroboam built and the feast he kept *in Beth-el* (1 Kings 12:32) become, generations later, *the king''s chapel* from which the prophet is expelled — the devised worship hardened into a royal sanctuary that cannot bear the word of Yahuah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-12-the-heavy-yoke-and-the-scorpions-the-sentence-performed',
+       E'The heavy yoke and the scorpions — the sentence performed',
+       E'A whole kingdom hangs on a young king''s answer. The people ask only relief: *Thy father made our yoke grievous: now therefore make thou the grievous service of thy father, and his heavy yoke which he put upon us, lighter, and we will serve thee* (1 Kings 12:4). The old men counsel mercy — *if thou wilt be a servant unto this people this day... then they will be thy servants for ever* (1 Kings 12:7) — but Rehoboam forsakes them for the young men and threatens to crush: *My father made your yoke heavy, and I will add to your yoke: my father also chastised you with whips, but I will chastise you with scorpions* (1 Kings 12:14), word for word as the Chronicler tells it (2 Chronicles 10:11,14). Yet the narrator lifts the curtain on a deeper cause: *Wherefore the king hearkened not unto the people; for the cause was from Yahuah (LORD), that he might perform his saying, which Yahuah (LORD) spake by Ahijah the Shilonite unto Jeroboam the son of Nebat* (1 Kings 12:15). The folly is real, and the man is accountable — but it is also the instrument of the sentence already spoken: *I will surely rend the kingdom from thee, and will give it to thy servant* (1 Kings 11:11), the *ten tribes* (1 Kings 11:31) torn from the house of David for the covenant Solomon broke. The scorpions are not the cause of the split; they are the occasion through which a long-decreed judgment arrives.',
+       sv.verse_id, ev.verse_id, 'free', 38175
+  FROM _s342_1ki12_lookup sv, _s342_1ki12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=12 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-12-what-portion-in-david-the-two-houses-are-born',
+       E'What portion have we in David? — the two houses are born',
+       E'This is the wound the rest of the canon labors to heal. When the king will not relent, the ten tribes raise an old, dangerous cry: *What portion have we in David? neither have we inheritance in the son of Jesse: to your tents, O Yashar''el (Israel): now see to thine own house, David. So Yashar''el (Israel) departed unto their tents* (1 Kings 12:16). It is verbatim the slogan of Sheba the man of Belial, *We have no part in David, neither have we inheritance in the son of Jesse: every man to his tents, O Yashar''el (Israel)* (2 Samuel 20:1) — once a rebellion put down, now the founding word of a nation. The breach is permanent: *So Yashar''el (Israel) rebelled against the house of David unto this day* (1 Kings 12:19), and *there was none that followed the house of David, but the tribe of Yahudah (Judah) only* (1 Kings 12:20). The torn garment of Ahijah has come true — *I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). From this day there are TWO houses: Yahudah in the south, Yashar''el-Ephraim-Joseph in the north. But the same canon that records the wound promises its healing. Ezekiel takes two sticks, *For Yahudah (Judah)... For Joseph, the stick of Ephraim* (Ezekiel 37:16), and joins them: *I will take the stick of Joseph, which is in the hand of Ephraim... and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19), *and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). Hosea sings the same hope: *Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head* (Hosea 1:11). Two heads were set up at Shechem; one Head is promised at the end. The division is never God''s final word over his people — it is the wound the Shepherd comes to bind.',
+       sv.verse_id, ev.verse_id, 'free', 38178
+  FROM _s342_1ki12_lookup sv, _s342_1ki12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=12 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-12-ye-shall-not-fight-against-your-brethren',
+       E'Ye shall not fight against your brethren',
+       E'The split could have become a slaughter. Rehoboam musters for civil war: *he assembled all the house of Yahudah (Judah), with the tribe of Benjamin, an hundred and fourscore thousand chosen men, which were warriors, to fight against the house of Yashar''el (Israel), to bring the kingdom again to Rehoboam* (1 Kings 12:21; so too 2 Chronicles 11:1). But the word of Elohim through Shemaiah stops the sword and names the bond that forbids it: *Thus saith Yahuah (LORD), Ye shall not go up, nor fight against your brethren the children of Yashar''el (Israel): return every man to his house; for this thing is from me* (1 Kings 12:24; 2 Chronicles 11:4). Two things hold here at once. They are *brethren* — the northern tribes are not enemies to be destroyed but kin torn away, victims of a covenant breach. And *this thing is from me* — the division is Yahuah''s own judgment for Solomon''s sin, not a quarrel for armies to undo. So the very God who tore the kingdom forbids Yahudah to make the tearing into a bloodbath, because the torn houses are still one people. That is why the war is unlawful: they are the same flock he will one day gather — *I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all* (Ezekiel 37:22). You do not slaughter the brother you are destined to be made one with.',
+       sv.verse_id, ev.verse_id, 'free', 38181
+  FROM _s342_1ki12_lookup sv, _s342_1ki12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=12 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-12-the-two-calves-of-gold-aarons-sin-recapitulated',
+       E'The two calves of gold — Aaron''s sin recapitulated',
+       E'Fearing the people will return to David if they keep going up to the temple, Jeroboam invents a religion. *And Jeroboam said in his heart, Now shall the kingdom return to the house of David: if this people go up to do sacrifice in the house of Yahuah (LORD) at Jerusalem, then shall the heart of this people turn again unto their lord* (1 Kings 12:26-27). So he reaches back for the oldest apostasy of all: *the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). The words are not new — they are Aaron''s. At Sinai the people made a molten calf and cried *These be thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (Exodus 32:4), and Yahuah himself indicted them: *they have made them a molten calf, and have worshipped it... and said, These be thy gods, O Yashar''el (Israel), which have brought thee up out of the land of Egypt* (Exodus 32:8). Jeroboam recapitulates the wilderness sin and builds a kingdom on it. The cruelest irony: the ten tribes were Yahuah''s gift to him — *I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31) — and he turns the gift into a golden calf at Beth-el and Dan. What Israel did once in a moment of panic, Jeroboam makes the permanent state religion of the north.',
+       sv.verse_id, ev.verse_id, 'free', 38184
+  FROM _s342_1ki12_lookup sv, _s342_1ki12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=12 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-12-the-sin-of-jeroboam-that-scattered-the-north',
+       E'The sin of Jeroboam that scattered the north',
+       E'*And this thing became a sin: for the people went to worship before the one, even unto Dan* (1 Kings 12:30). That single sentence is the seed of the exile. The phrase becomes the refrain of 1 and 2 Kings — the sin of Jeroboam who made Yashar''el to sin — and the prophets of the north spend their breath on it. Hosea names the calf and pronounces its doom: *Thy calf, O Samaria, hath cast thee off... the workman made it; therefore it is not Elohim (God): but the calf of Samaria shall be broken in pieces* (Hosea 8:5-6); and he watches the apostasy deepen until *they say of them, Let the men that sacrifice kiss the calves* (Hosea 13:2). The historian of the captivity reads it all back from the end: *For he rent Yashar''el (Israel) from the house of David; and they made Jeroboam the son of Nebat king: and Jeroboam drave Yashar''el (Israel) from following Yahuah (LORD), and made them sin a great sin* (2 Kings 17:21), and among the sins that emptied the land he lists *molten images, even two calves* (2 Kings 17:16). The two calves Jeroboam *made* (1 Kings 12:28) are still standing in the indictment that explains why the northern kingdom was carried into Assyria. The founding sin and the scattering are one long line. And this is exactly why the two-house promise matters: the north was not cast off forever for its calf — it was scattered to be gathered, *He that scattered Yashar''el (Israel) will gather him*, the lost sheep sought and found.',
+       sv.verse_id, ev.verse_id, 'free', 38187
+  FROM _s342_1ki12_lookup sv, _s342_1ki12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=12 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-12-the-counterfeit-feast-and-priesthood-the-moedim-displaced',
+       E'The counterfeit feast and priesthood — the moedim displaced',
+       E'Having made the gods, Jeroboam makes the clergy and the calendar to match — a whole counterfeit of Yahuah''s appointed worship. First the priesthood: *he made an house of high places, and made priests of the lowest of the people, which were not of the sons of Levi* (1 Kings 12:31). The ordained Levitical order is simply discarded; the Chronicler shows the cost from the other side — *Jeroboam and his sons had cast them off from executing the priest''s office unto Yahuah (LORD)* (2 Chronicles 11:14), so that he *ordained him priests for the high places, and for the devils, and for the calves which he had made* (2 Chronicles 11:15). Then the calendar: *Jeroboam ordained a feast in the eighth month, on the fifteenth day of the month, like unto the feast that is in Yahudah (Judah)* (1 Kings 12:32). The feast he copies is the feast of tabernacles, which Yahuah fixed in the SEVENTH month: *The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34), *a statute for ever in your generations: ye shall celebrate it in the seventh month* (Leviticus 23:41). Jeroboam keeps the shape but moves the time one month — *even in the month which he had devised of his own heart* (1 Kings 12:33). That phrase is the whole indictment: Yahuah''s appointed times are not man''s to redesign. The moedim are his calendar, creation-rooted and prophetic; to shift the feast off its day is to set man''s devising against Yahuah''s standing word. And the place of this invented worship hardens over the generations into a royal shrine that cannot bear correction: *prophesy not again any more at Beth-el: for it is the king''s chapel, and it is the king''s court* (Amos 7:13). The counterfeit feast becomes the king''s religion, and the king''s religion silences the prophet.',
+       sv.verse_id, ev.verse_id, 'free', 38190
+  FROM _s342_1ki12_lookup sv, _s342_1ki12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=12 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: the heavy yoke and the scorpions, the sentence performed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will chastise you with scorpions* (2 Chronicles 10:11) — the parallel telling of Rehoboam''s threatened crushing.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=11
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-heavy-yoke-and-the-scorpions-the-sentence-performed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*My father made your yoke heavy, but I will add thereto... I will chastise you with scorpions* (2 Chronicles 10:14) — the same hardness in both tellings as the king answers roughly.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=14
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-heavy-yoke-and-the-scorpions-the-sentence-performed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will surely rend the kingdom from thee, and will give it to thy servant* (1 Kings 11:11) — the sentence on Solomon''s idolatry the folly now performs.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-heavy-yoke-and-the-scorpions-the-sentence-performed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*and will give ten tribes to thee* (1 Kings 11:31) — the saying spoken by Ahijah to Jeroboam, the ten pieces of the torn garment now coming true.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-heavy-yoke-and-the-scorpions-the-sentence-performed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*for the cause was of Elohim (God), that Yahuah (LORD) might perform his word, which he spake by the hand of Ahijah* (2 Chronicles 10:15) — the hidden hand named in the parallel: judgment, not blind politics.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-heavy-yoke-and-the-scorpions-the-sentence-performed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: what portion in David, the two houses are born
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*We have no part in David, neither have we inheritance in the son of Jesse: every man to his tents, O Yashar''el (Israel)* (2 Samuel 20:1) — Sheba''s rebel cry, now the founding word of the northern kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=16
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=20 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-what-portion-in-david-the-two-houses-are-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31) — the tearing Ahijah enacted; the word becomes a nation walking away.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=16
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-what-portion-in-david-the-two-houses-are-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22) — the healing of the rebellion 1 Kings 12:19 records.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=19
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-what-portion-in-david-the-two-houses-are-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*take thee one stick... For Yahudah (Judah)... another stick... For Joseph, the stick of Ephraim* (Ezekiel 37:16) — the two sticks are the two houses born when Yahudah alone follows David.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=20
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-what-portion-in-david-the-two-houses-are-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will take the stick of Joseph... and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19) — the division of v.20 is exactly what the LORD promises to undo.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=20
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-what-portion-in-david-the-two-houses-are-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the children of Yahudah (Judah) and the children of Yashar''el (Israel)... shall appoint themselves one head* (Hosea 1:11) — two heads set up at Shechem; one Head promised at the end.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=20
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-what-portion-in-david-the-two-houses-are-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: ye shall not fight against your brethren
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he gathered of the house of Yahudah (Judah) and Benjamin an hundred and fourscore thousand chosen men... to fight against Yashar''el (Israel)* (2 Chronicles 11:1) — the parallel of the muster for civil war.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=21
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-ye-shall-not-fight-against-your-brethren'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye shall not go up, nor fight against your brethren: return every man to his house: for this thing is done of me* (2 Chronicles 11:4) — the word that forbids the war and names them brethren.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=24
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-ye-shall-not-fight-against-your-brethren'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will make them one nation... and one king shall be king to them all* (Ezekiel 37:22) — you do not slaughter the brother you are destined to be made one with.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=24
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-ye-shall-not-fight-against-your-brethren'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the two calves of gold, Aaron's sin recapitulated
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*These be thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (Exodus 32:4) — Aaron''s words at Sinai, spoken almost letter for letter by Jeroboam.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-two-calves-of-gold-aarons-sin-recapitulated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they have made them a molten calf, and have worshipped it... These be thy gods, O Yashar''el (Israel)* (Exodus 32:8) — Yahuah''s own indictment of the calf, the template Jeroboam repeats.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-two-calves-of-gold-aarons-sin-recapitulated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31) — the gift of a kingdom turned into a golden calf at Beth-el and Dan.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-two-calves-of-gold-aarons-sin-recapitulated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: the sin of Jeroboam that scattered the north
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thy calf, O Samaria, hath cast thee off... the calf of Samaria shall be broken in pieces* (Hosea 8:5-6) — the prophet pronounces doom on the calf Jeroboam made.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-sin-of-jeroboam-that-scattered-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they say of them, Let the men that sacrifice kiss the calves* (Hosea 13:2) — the long fruit of the sin Jeroboam planted, the calf-worship deepened.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=30
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-sin-of-jeroboam-that-scattered-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Jeroboam drave Yashar''el (Israel) from following Yahuah (LORD), and made them sin a great sin* (2 Kings 17:21) — the historian of the exile reads this sin back from the scattering.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=30
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-sin-of-jeroboam-that-scattered-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*made them molten images, even two calves... and served Baal* (2 Kings 17:16) — the two calves still standing in the indictment that explains the Assyrian exile.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-sin-of-jeroboam-that-scattered-the-north'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6: the counterfeit feast and priesthood, the moedim displaced
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Jeroboam and his sons had cast them off from executing the priest''s office unto Yahuah (LORD)* (2 Chronicles 11:14) — the true Levites driven out, the ordained order overthrown.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=31
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=11 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-counterfeit-feast-and-priesthood-the-moedim-displaced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he ordained him priests for the high places, and for the devils, and for the calves which he had made* (2 Chronicles 11:15) — the non-Levite priesthood named for what it served.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=31
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-counterfeit-feast-and-priesthood-the-moedim-displaced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The fifteenth day of this seventh month shall be the feast of tabernacles... unto Yahuah (LORD)* (Leviticus 23:34) — Yahuah''s feast in the SEVENTH month, copied but moved to the eighth.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=32
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-counterfeit-feast-and-priesthood-the-moedim-displaced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a statute for ever in your generations: ye shall celebrate it in the seventh month* (Leviticus 23:39,41) — the appointed time Jeroboam kept in the month he devised of his own heart.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=33
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-counterfeit-feast-and-priesthood-the-moedim-displaced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*prophesy not again any more at Beth-el: for it is the king''s chapel, and it is the king''s court* (Amos 7:13) — the devised worship hardened into a royal shrine that silences the prophet.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=12 AND sv.verse_number=32
+  JOIN _s342_1ki12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-12-the-counterfeit-feast-and-priesthood-the-moedim-displaced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_13.sql (1 Kings 13) -----
+-- 1 Kings 13 — the man of Elohim out of Yahudah cries against the altar at Beth-el; Josiah named
+-- three hundred years before; the withered hand and the rent altar; the lying old prophet and the
+-- angel's word; the man of Elohim slain by the lion for turning from the plain word of Yahuah.
+-- TAG: 1ki13   VIEW: _s342_1ki13_lookup   SORT BAND: 38200, step 3 (38200,38203,38206,38209)
+-- SOURCE rows all 'canon','1-kings',13,v.
+--
+-- 1 Kings 13 coverage:
+--   v.2    (O altar, altar... a child shall be born unto the house of David, JOSIAH by name; upon thee shall he offer the priests of the high places)
+--          NT:     none warranted (the named-prophecy weave is Tanakh-internal, fulfilled 2 Kings 23)
+--          Extras: none warranted
+--          Tanakh: 2 Kings 23:15,16,17,20 (Josiah breaks down the Beth-el altar, burns men's bones, slays the priests of the high places — the prophecy fulfilled to the letter) [thread 1]; 1 Kings 12:28,29,33 (Jeroboam's calf-altar at Beth-el that the man of Elohim cries against) [thread 1 prose/member]
+--   v.3    (he gave a sign: the altar shall be rent, and the ashes poured out)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 18:22 (the test of the true prophet: if the thing follow not, Yahuah hath not spoken it) [thread 2]
+--   v.4-6  (Jeroboam's hand dried up; the altar rent; the king intreats, the hand restored)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 18:22 (the sign that came to pass marks the true word) [thread 2]
+--   v.9,17 (charged by the word of Yahuah: eat no bread, drink no water, nor turn again the same way)
+--          NT:     none warranted (the obedience weave anchors thread 4)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 13:3,4 (walk after Yahuah, keep his commandments, obey his voice) [thread 4]
+--   v.18   (the old prophet lies: I am a prophet also; an angel spake unto me by the word of Yahuah — bring him back)
+--          NT:     Galatians 1:8 (though an angel from heaven preach any other gospel... let him be accursed) [thread 4]
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 13:1,3,5 (the prophet who turns you aside, even with a sign, shall be put to death); Deuteronomy 18:20 (the prophet who presumes to speak a word I have not commanded shall die) [thread 4]
+--   v.21-22 (thou hast disobeyed the mouth of Yahuah, and hast not kept the commandment... thy carcase shall not come unto the sepulchre of thy fathers)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Numbers 20:12 (Moses believed me not... therefore ye shall not bring this congregation into the land — the prophet judged for turning from the plain word) [thread 4]
+--   v.24,26 (a lion met him and slew him; the lion stood by the carcase, not eating it; Yahuah delivered him unto the lion)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 13:5 / 18:20 (carried in thread 4 prose — the judgment on disobedience)
+--   v.32   (the saying against the altar in Beth-el... shall surely come to pass)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Kings 23:15-20 (the saying came surely to pass); Deuteronomy 18:22 (the word that comes to pass is the word Yahuah hath spoken) [threads 1/2]
+--
+-- THREADS:
+--   1-kings-13-the-altar-named-josiah-three-hundred-years-before (free) — Tanakh: 2 Kings 23, 1 Kings 12 — the sure word fulfilled to the letter
+--   1-kings-13-the-rent-altar-and-the-withered-hand-the-sign-confirmed (free) — Tanakh: Deuteronomy 18 — the true prophet's sign comes to pass
+--   1-kings-13-the-saying-against-bethel-shall-surely-come-to-pass (free) — Tanakh: 2 Kings 23, Deuteronomy 18 — the certainty of the prophetic word
+--   1-kings-13-obey-the-plain-word-over-an-angels-claim (free) — Tanakh+NT: Deuteronomy 13, Deuteronomy 18, Numbers 20, Galatians 1 — the plain word of Yahuah over a claimed new/angelic word
+-- Framework-load-bearing framing: 13:2's prophecy NAMES Josiah by name ~300 years before he is born
+-- and 2 Kings 23:15-20 records the fulfilment to the letter — the certainty of Yahuah's word, the
+-- sure word that does not fail. Thread 4 is the anti-antinomian core of the chapter: the man of
+-- Elohim is slain not for a moral crime but for TURNING FROM THE PLAIN WORD OF YAHUAH he had
+-- received (13:9) on the strength of a claimed NEW revelation — *an angel spake unto me* (13:18).
+-- Galatians 1:8 reads it forward exactly: *though we, or an angel from heaven, preach any other
+-- gospel... let him be accursed*. Deut 13 and Deut 18:20 are the Torah-root: no sign, no dream, no
+-- claimed angel overturns the word already given. Obedience to Yahuah's word — not a new
+-- revelation — is the issue (the lens, not Torah-as-curse). Numbers 20:12 is the lateral pattern:
+-- even a true prophet is judged when he turns from the plain word. The lion standing by the carcase
+-- unfeeding (13:24,28) marks it as Yahuah's deliberate judgment, not a wild accident.
+
+CREATE TEMP VIEW _s342_1ki13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the altar named Josiah three hundred years before (13:2,3,32)
+    ('canon','1-kings',13,2,'canon','2-kings',23,15,'free',E'*Moreover the altar that was at Beth-el, and the high place which Jeroboam the son of Nebat, who made Yashar''el (Israel) to sin, had made, both that altar and the high place he brake down, and burned the high place, and stamped it small to powder, and burned the grove* (2 Kings 23:15). The man of Elohim cried *O altar, altar, thus saith Yahuah (LORD)... a child shall be born unto the house of David, Josiah by name* (1 Kings 13:2); some three hundred years later the very altar he stood before is broken down by the very king he named — the sure word of Yahuah fulfilled to the letter.'),
+    ('canon','1-kings',13,2,'canon','2-kings',23,16,'free',E'*And as Josiah turned himself, he spied the sepulchres that were there in the mount, and sent, and took the bones out of the sepulchres, and burned them upon the altar, and polluted it, according to the word of Yahuah (LORD) which the man of Elohim (God) proclaimed, who proclaimed these words* (2 Kings 23:16). The prophecy was exact: *upon thee shall he offer the priests of the high places that burn incense upon thee, and men''s bones shall be burnt upon thee* (1 Kings 13:2). The Chronicler of Kings names the fulfilment as *according to the word of Yahuah (LORD) which the man of Elohim (God) proclaimed* — the word did not fall to the ground.'),
+    ('canon','1-kings',13,2,'canon','2-kings',23,17,'free',E'*Then he said, What title is that that I see? And the men of the city told him, It is the sepulchre of the man of Elohim (God), which came from Yahudah (Judah), and proclaimed these things that thou hast done against the altar of Beth-el* (2 Kings 23:17). Standing at the broken altar, Josiah finds the grave of the very man who named him centuries before — the prophecy of 1 Kings 13:2 and its fulfilment meet over one tomb. *Let him alone; let no man move his bones* (2 Kings 23:18): the king honours the sure word and the one who carried it.'),
+    ('canon','1-kings',13,2,'canon','2-kings',23,20,'free',E'*And he slew all the priests of the high places that were there upon the altars, and burned men''s bones upon them, and returned to Jerusalem* (2 Kings 23:20). The word named the act before there was a Josiah to do it — *upon thee shall he offer the priests of the high places* (1 Kings 13:2). Three centuries did not blunt the certainty of Yahuah''s word; what was cried at Beth-el was done at Beth-el.'),
+    ('canon','1-kings',13,2,'canon','1-kings',12,28,'free',E'*Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). This is the altar the man of Elohim cried against: Jeroboam''s calf-shrine that *became a sin* (1 Kings 12:30). The word against *the altar* (1 Kings 13:2) is the word against the whole counterfeit worship that tore the north from the house of David.'),
+
+    -- THREAD 2: the rent altar and the withered hand — the sign confirmed (13:3,4,5,6)
+    ('canon','1-kings',13,3,'canon','deuteronomy',18,22,'free',E'*When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the prophet hath spoken it presumptuously: thou shalt not be afraid of him* (Deuteronomy 18:22). Torah set the test, and the man of Elohim gives it openly: *This is the sign which Yahuah (LORD) hath spoken; Behold, the altar shall be rent, and the ashes that are upon it shall be poured out* (1 Kings 13:3). The sign that comes to pass marks the true word; the false prophet''s word falls.'),
+    ('canon','1-kings',13,5,'canon','deuteronomy',18,22,'free',E'*if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken* (Deuteronomy 18:22). The thing followed at once: *The altar also was rent, and the ashes poured out from the altar, according to the sign which the man of Elohim (God) had given by the word of Yahuah (LORD)* (1 Kings 13:5). By Torah''s own measure the word stands proven — what was spoken came to pass before the king''s eyes.'),
+
+    -- THREAD 3: the saying against Beth-el shall surely come to pass (13:32)
+    ('canon','1-kings',13,32,'canon','2-kings',23,19,'free',E'*And all the houses also of the high places that were in the cities of Samaria, which the kings of Yashar''el (Israel) had made to provoke Yahuah (LORD) to anger, Josiah took away, and did to them according to all the acts that he had done in Beth-el* (2 Kings 23:19). The old prophet declared *the saying which he cried by the word of Yahuah (LORD) against the altar in Beth-el, and against all the houses of the high places which are in the cities of Samaria, shall surely come to pass* (1 Kings 13:32) — and Josiah did to all the houses of the high places in Samaria exactly that. The word reached every detail it named.'),
+    ('canon','1-kings',13,32,'canon','deuteronomy',18,22,'free',E'*When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken* (Deuteronomy 18:22). The old prophet''s certainty rests on Torah''s test read the right way round: because this word IS the word of Yahuah, *it shall surely come to pass* (1 Kings 13:32). The true word is not merely vindicated after the fact — it is sure before the fact.'),
+
+    -- THREAD 4: obey the plain word over an angel's claim (13:9,17,18,21,22,24,26)
+    ('canon','1-kings',13,9,'canon','deuteronomy',13,4,'free',E'*Ye shall walk after Yahuah Elohaychem (the LORD your God), and fear him, and keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4). The man of Elohim had one plain charge: *Eat no bread, nor drink water, nor turn again by the same way that thou camest* (1 Kings 13:9). To keep his commandment and obey his voice was the whole of his task — Torah''s very definition of cleaving to Yahuah.'),
+    ('canon','1-kings',13,18,'canon','galatians',1,8,'free',E'*But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed* (Galatians 1:8). The old prophet''s lie wore the form of a new revelation: *I am a prophet also as thou art; and an angel spake unto me by the word of Yahuah (LORD)... But he lied unto him* (1 Kings 13:18). Paul names the exact danger this chapter dramatises — no angel, no new voice, overturns the plain word already given; let it be accursed.'),
+    ('canon','1-kings',13,18,'canon','deuteronomy',13,1,'free',E'*If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder* (Deuteronomy 13:1) — *Thou shalt not hearken unto the words of that prophet* (Deuteronomy 13:3). The old prophet claimed the credential of prophecy and an angelic word to draw the man of Elohim aside; Torah had already armed him against exactly this — the claim of revelation does not loose a man from the word of Yahuah he has heard.'),
+    ('canon','1-kings',13,18,'canon','deuteronomy',13,3,'free',E'*Thou shalt not hearken unto the words of that prophet, or that dreamer of dreams: for Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God) with all your heart and with all your soul* (Deuteronomy 13:3). The lying angel-word was the proving: would the man of Elohim love Yahuah enough to hold the plain charge of 13:9, or be turned by a fairer-sounding new word? He was turned, and the proving exposed it.'),
+    ('canon','1-kings',13,18,'canon','deuteronomy',18,20,'free',E'*But the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak... even that prophet shall die* (Deuteronomy 18:20). The old prophet spoke in Yahuah''s name a word Yahuah never gave — *an angel spake unto me by the word of Yahuah (LORD)... But he lied* (1 Kings 13:18). Torah marks the presumptuous prophet-word for what it is; the deceiver clothed his lie in the holiest Name.'),
+    ('canon','1-kings',13,21,'canon','numbers',20,12,'free',E'*And Yahuah (LORD) spake unto Moses and Aaron, Because ye believed me not, to sanctify me in the eyes of the children of Yashar''el (Israel), therefore ye shall not bring this congregation into the land which I have given them* (Numbers 20:12). Even a true prophet is judged when he turns from the plain word: *Forasmuch as thou hast disobeyed the mouth of Yahuah (LORD), and hast not kept the commandment which Yahuah Elohayka (the LORD thy God) commanded thee* (1 Kings 13:21). As Moses was barred from the land for one departure, the man of Elohim is barred from his fathers'' sepulchre — the word of Yahuah does not bend to status.'),
+    ('canon','1-kings',13,26,'canon','deuteronomy',13,5,'free',E'*And that prophet, or that dreamer of dreams, shall be put to death; because he hath spoken to turn you away from Yahuah Elohaychem (the LORD your God)... So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5). The old prophet himself confesses the verdict: *It is the man of Elohim (God), who was disobedient unto the word of Yahuah (LORD): therefore Yahuah (LORD) hath delivered him unto the lion* (1 Kings 13:26). The turning-aside Torah marks for death is here executed by a lion that stood by and did not feed — Yahuah''s deliberate judgment, not a wild accident.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-13-the-altar-named-josiah-three-hundred-years-before',
+       E'The altar named Josiah three hundred years before',
+       E'A man of Elohim out of Yahudah (Judah) stands before Jeroboam''s counterfeit altar and speaks a name no one yet bears: *O altar, altar, thus saith Yahuah (LORD); Behold, a child shall be born unto the house of David, Josiah by name; and upon thee shall he offer the priests of the high places that burn incense upon thee, and men''s bones shall be burnt upon thee* (1 Kings 13:2). The altar he names is Jeroboam''s calf-shrine — *behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28), the sin that tore the north from the house of David. Some three hundred years pass. Then a king named Josiah comes to Beth-el, and the word is done to the letter: *Moreover the altar that was at Beth-el... both that altar and the high place he brake down* (2 Kings 23:15); *and took the bones out of the sepulchres, and burned them upon the altar, and polluted it, according to the word of Yahuah (LORD) which the man of Elohim (God) proclaimed* (2 Kings 23:16); *and he slew all the priests of the high places that were there upon the altars, and burned men''s bones upon them* (2 Kings 23:20). Standing at the rubble Josiah finds the prophet''s own grave — *It is the sepulchre of the man of Elohim (God), which came from Yahudah (Judah), and proclaimed these things that thou hast done against the altar of Beth-el* (2 Kings 23:17) — prophecy and fulfilment meeting over one tomb. Three centuries did not blunt the certainty of Yahuah''s word: what was cried at Beth-el was done at Beth-el, by the very king named before he was born.',
+       sv.verse_id, ev.verse_id, 'free', 38200
+  FROM _s342_1ki13_lookup sv, _s342_1ki13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=13 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-13-the-rent-altar-and-the-withered-hand-the-sign-confirmed',
+       E'The rent altar and the withered hand — the sign confirmed',
+       E'The man of Elohim does not ask to be believed on bare claim; he gives a sign that Torah''s own test can weigh. *And he gave a sign the same day, saying, This is the sign which Yahuah (LORD) hath spoken; Behold, the altar shall be rent, and the ashes that are upon it shall be poured out* (1 Kings 13:3). Torah''s measure is plain: *When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the prophet hath spoken it presumptuously* (Deuteronomy 18:22). The thing followed at once — and not the sign only: when Jeroboam stretched out his hand to seize the prophet, *his hand, which he put forth against him, dried up, so that he could not pull it in again to him* (1 Kings 13:4), *and the altar also was rent, and the ashes poured out from the altar, according to the sign which the man of Elohim (God) had given by the word of Yahuah (LORD)* (1 Kings 13:5). The king who would arrest the word can only beg for mercy from it — *Intreat now the face of Yahuah Elohayka (the LORD thy God)... that my hand may be restored* (1 Kings 13:6). By Torah''s own measure the word stands proven, the sign come to pass before the king''s eyes.',
+       sv.verse_id, ev.verse_id, 'free', 38203
+  FROM _s342_1ki13_lookup sv, _s342_1ki13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=13 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-13-the-saying-against-bethel-shall-surely-come-to-pass',
+       E'The saying against Beth-el shall surely come to pass',
+       E'Even the lying old prophet, having buried the man he deceived, knows one thing for certain — the word cried against the altar will not fail. *For the saying which he cried by the word of Yahuah (LORD) against the altar in Beth-el, and against all the houses of the high places which are in the cities of Samaria, shall surely come to pass* (1 Kings 13:32). His certainty is Torah''s test read the right way round: *if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken* (Deuteronomy 18:22) — therefore the word that IS Yahuah''s is sure before ever it comes to pass. And the fulfilment swept up the very breadth the saying named: not Beth-el only but Samaria too — *And all the houses also of the high places that were in the cities of Samaria, which the kings of Yashar''el (Israel) had made to provoke Yahuah (LORD) to anger, Josiah took away, and did to them according to all the acts that he had done in Beth-el* (2 Kings 23:19). The word reached every detail it named; the prophetic word of Yahuah is sure.',
+       sv.verse_id, ev.verse_id, 'free', 38206
+  FROM _s342_1ki13_lookup sv, _s342_1ki13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=13 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-13-obey-the-plain-word-over-an-angels-claim',
+       E'Obey the plain word over an angel''s claim',
+       E'The most sobering thread in the chapter is the death of a true prophet. He had cried down a king''s altar and seen his sign confirmed — yet he is slain on the road home. Why? Not for a moral crime, but for turning from the plain word of Yahuah he had already received: *For so was it charged me by the word of Yahuah (LORD), saying, Eat no bread, nor drink water, nor turn again by the same way that thou camest* (1 Kings 13:9) — the very thing Torah calls cleaving to Yahuah: *keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4). An old prophet of Beth-el overturns the charge with a counterfeit revelation: *I am a prophet also as thou art; and an angel spake unto me by the word of Yahuah (LORD), saying, Bring him back with thee into thine house, that he may eat bread and drink water. But he lied unto him* (1 Kings 13:18). Here is the whole peril named in Torah and named again by Paul: *If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder... Thou shalt not hearken unto the words of that prophet* (Deuteronomy 13:1,3); *the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak... even that prophet shall die* (Deuteronomy 18:20); and read forward, *But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed* (Galatians 1:8). No angel, no new voice, no fairer-sounding word looses a man from the plain word of Yahuah he has heard. The verdict falls: *Forasmuch as thou hast disobeyed the mouth of Yahuah (LORD), and hast not kept the commandment which Yahuah Elohayka (the LORD thy God) commanded thee... thy carcase shall not come unto the sepulchre of thy fathers* (1 Kings 13:21,22) — the same pattern by which even Moses was barred from the land for one departure: *Because ye believed me not... therefore ye shall not bring this congregation into the land* (Numbers 20:12). And the judgment is unmistakably Yahuah''s and not chance: a lion meets him and slays him, yet *the lion had not eaten the carcase, nor torn the ass* (1 Kings 13:28), standing by as the old prophet confesses, *It is the man of Elohim (God), who was disobedient unto the word of Yahuah (LORD): therefore Yahuah (LORD) hath delivered him unto the lion* (1 Kings 13:26). Obedience to the plain word of Yahuah — not a new revelation, not an angel''s claim — is the whole issue this chapter sets before the reader.',
+       sv.verse_id, ev.verse_id, 'free', 38209
+  FROM _s342_1ki13_lookup sv, _s342_1ki13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=13 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: the altar named Josiah three hundred years before
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*both that altar and the high place he brake down, and burned the high place, and stamped it small to powder* (2 Kings 23:15) — Josiah breaks down the very Beth-el altar the man of Elohim cried against, ~300 years on.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-altar-named-josiah-three-hundred-years-before'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*took the bones out of the sepulchres, and burned them upon the altar... according to the word of Yahuah (LORD) which the man of Elohim (God) proclaimed* (2 Kings 23:16) — the men''s bones burnt on the altar, exactly as 13:2 foretold.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-altar-named-josiah-three-hundred-years-before'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*It is the sepulchre of the man of Elohim (God), which came from Yahudah (Judah), and proclaimed these things* (2 Kings 23:17) — Josiah finds the grave of the prophet who named him; prophecy and fulfilment meet over one tomb.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-altar-named-josiah-three-hundred-years-before'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And he slew all the priests of the high places that were there upon the altars, and burned men''s bones upon them* (2 Kings 23:20) — the priests of the high places offered upon the altar, the word named before there was a Josiah to do it.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-altar-named-josiah-three-hundred-years-before'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*made two calves of gold... behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28) — the calf-altar at Beth-el the man of Elohim was sent to cry against.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-altar-named-josiah-three-hundred-years-before'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the rent altar and the withered hand — the sign confirmed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken* (Deuteronomy 18:22) — Torah''s test; the man of Elohim openly gives the sign of the altar rent.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-rent-altar-and-the-withered-hand-the-sign-confirmed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*if the thing follow not, nor come to pass... Yahuah (LORD) hath not spoken* (Deuteronomy 18:22) — the thing followed at once: the altar rent and the ashes poured out, the word proven by Torah''s own measure.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-rent-altar-and-the-withered-hand-the-sign-confirmed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the saying against Beth-el shall surely come to pass
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And all the houses also of the high places that were in the cities of Samaria... Josiah took away, and did to them according to all the acts that he had done in Beth-el* (2 Kings 23:19) — the word reached the whole breadth it named, not Beth-el only but Samaria too.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=32
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-saying-against-bethel-shall-surely-come-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not... Yahuah (LORD) hath not spoken* (Deuteronomy 18:22) — read the right way round: the word that IS Yahuah''s is sure before ever it comes to pass.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=32
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-the-saying-against-bethel-shall-surely-come-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: obey the plain word over an angel's claim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4) — to keep the plain charge of 13:9 was Torah''s very definition of cleaving to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=9
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-obey-the-plain-word-over-an-angels-claim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*though we, or an angel from heaven, preach any other gospel... let him be accursed* (Galatians 1:8) — Paul names the exact peril: the old prophet''s *an angel spake unto me... But he lied* (13:18) does not overturn the word already given.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-obey-the-plain-word-over-an-angels-claim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder* (Deuteronomy 13:1) — Torah arms against exactly the credential the old prophet wielded.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-obey-the-plain-word-over-an-angels-claim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou shalt not hearken unto the words of that prophet... for Yahuah Elohaychem (the LORD your God) proveth you* (Deuteronomy 13:3) — the lying angel-word was the proving of whether he loved Yahuah enough to hold the plain charge.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-obey-the-plain-word-over-an-angels-claim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak... even that prophet shall die* (Deuteronomy 18:20) — the old prophet clothed a lie in the holiest Name.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-obey-the-plain-word-over-an-angels-claim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Because ye believed me not... therefore ye shall not bring this congregation into the land* (Numbers 20:12) — even a true prophet is judged when he turns from the plain word; as Moses was barred from the land, the man of Elohim from his fathers'' sepulchre.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=21
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=20 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-obey-the-plain-word-over-an-angels-claim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*that prophet... shall be put to death; because he hath spoken to turn you away from Yahuah* (Deuteronomy 13:5) — the turning-aside Torah marks for death, executed by a lion that stood by and did not feed: Yahuah''s deliberate judgment.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=13 AND sv.verse_number=26
+  JOIN _s342_1ki13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-13-obey-the-plain-word-over-an-angels-claim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_14.sql (1 Kings 14) -----
+--
+-- Book: 1 Kings, chapter 14   TAG: 1ki14   session prefix: s342
+-- View: _s342_1ki14_lookup
+-- Sort band: base 38225, step 3  ->  38225, 38228, 38231
+--
+-- 1 Kings 14 coverage checklist (NT / Extras / Tanakh weighed per block):
+--   v.7-9 (Ahijah's word: I exalted thee, rent the kingdom from David, thou hast done evil)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1-kings 11:31-33 (the rending first given to Jeroboam) -> THREAD 1
+--   v.10-11,14 (cut off him that pisseth against the wall; raise a king to cut off the house)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1-kings 15:29-30 (Baasha smites all the house of Jeroboam, per Ahijah);
+--                1-kings 12:28-30 (the two calves — the root sin named) -> THREAD 1
+--   v.13 (the child the one good thing in Jeroboam's house, mourned by all Yashar'el)
+--        NT/Extras/Tanakh: none warranted (narrative; folded in summary prose)
+--   v.15-16 (KEYSTONE: smite Yashar'el as a reed, root up, scatter beyond the river,
+--            give Yashar'el up for the sins of Jeroboam who made Yashar'el to sin)
+--        NT:     none warranted (the regathering FORWARD belongs to the Ezek37/Hos1 anchors)
+--        Extras: none warranted
+--        Tanakh: 2-kings 17:6 + 17:23 (the Assyrian exile — this prophecy fulfilled);
+--                deuteronomy 28:64 + 28:36 (the Torah curse: scatter, serve other gods);
+--                hosea 1:6 + 1:9 (Lo-ruhamah / Lo-ammi — the northern house divorced) -> THREAD 2
+--   v.21-24 (Rehoboam of Yahudah does evil: high places, images, groves, sodomites)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1-kings 11:5-7 (the high places' origin — Solomon built them) -> THREAD 3
+--   v.25-26 (Shishak takes the treasures of the house of Yahuah, the golden shields)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 2-chronicles 12:2 + 12:9 (the parallel account — they had transgressed) -> THREAD 3
+--   v.1-6,12,17-20,27-31 (narrative frame: the disguise, the blind prophet, the child dies,
+--            brasen shields, the chronicles, the deaths) — none warranted; carried in prose.
+--
+-- THREADS:
+--   1. 1-kings-14-the-doom-of-the-house-of-jeroboam-cut-off-as-dung   [Tanakh only; free]
+--        members: 1-kings 11:31, 11:33, 12:28, 12:30, 15:29, 15:30
+--   2. 1-kings-14-yashar-el-scattered-beyond-the-river-the-northern-house-uprooted   [Tanakh only; free]
+--        members: 2-kings 17:6, 17:23, deuteronomy 28:64, 28:36, hosea 1:6, 1:9
+--   3. 1-kings-14-both-houses-decline-rehoboams-evil-and-the-temple-plundered   [Tanakh only; free]
+--        members: 1-kings 11:5, 11:7, 2-chronicles 12:2, 12:9
+--
+-- Framework-load-bearing notes:
+--   * THREAD 2 is the two-house keystone backstory: the EXILE of the northern house is FORETOLD
+--     here (14:15-16, "scatter them beyond the river" = Assyria) and FULFILLED at 2 Kings 17:6,23.
+--     Deut 28 is the Torah curse foretold — the curse is the exile-judgment for covenant-breaking,
+--     NEVER the Torah itself. Hosea 1 names the divorce (Lo-ruhamah / Lo-ammi) that this scattering
+--     enacts; the regathering of BOTH sticks (Ezek 37 / Hos 1:10-11) answers it forward.
+--   * THREAD 1: the doom is covenant-lawsuit conduct (Jeroboam measured against David who kept the
+--     commandments, 14:8) — victims-not-enemies; the calves (12:28) are the root sin named.
+
+CREATE TEMP VIEW _s342_1ki14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================== CROSS_REFERENCES ==============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (
+    VALUES
+    -- THREAD 1: the doom of the house of Jeroboam
+    ('canon','1-kings',14,7,'canon','1-kings',11,31,'free',
+      E'Ahijah''s word to Jeroboam''s wife reaches back to Ahijah''s own first oracle to Jeroboam in the field: *And he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). The same prophet who first told him *that I should be king over this people* (14:2) now turns to indict him — *Forasmuch as I exalted thee from among the people, and made thee prince over my people Yashar''el (Israel)* (14:7). The kingdom was a gift; the throne came with covenant terms.'),
+    ('canon','1-kings',14,8,'canon','1-kings',11,33,'free',
+      E'The charge against Jeroboam matches the charge that first rent the kingdom from Solomon: *Because that they have forsaken me, and have worshipped Ashtoreth the goddess of the Zidonians... and have not walked in my ways, to do that which is right in mine eyes, and to keep my statutes and my judgments, as did David his father* (1 Kings 11:33). The measure is the same in both verses — David, *who kept my commandments, and who followed me with all his heart, to do that only which was right in mine eyes* (14:8). The Torah is the standard the kings are weighed by; David is the pattern, not the contrast.'),
+    ('canon','1-kings',14,9,'canon','1-kings',12,28,'free',
+      E'The *molten images* Jeroboam *made... to provoke me to anger* (14:9) are named earlier: *Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). The calves are the root sin the whole chapter turns on — the false worship that diverts the northern house from Jerusalem and seeds the scattering to come.'),
+    ('canon','1-kings',14,10,'canon','1-kings',15,29,'free',
+      E'*I will bring evil upon the house of Jeroboam, and will cut off from Jeroboam him that pisseth against the wall... and will take away the remnant of the house of Jeroboam, as a man taketh away dung, till it be all gone* (14:10) — and it came to pass exactly: *when he reigned, that he smote all the house of Jeroboam; he left not to Jeroboam any that breathed, until he had destroyed him, according unto the saying of Yahuah (LORD), which he spake by his servant Ahijah the Shilonite* (1 Kings 15:29). The word of Yahuah by the blind prophet runs to the letter.'),
+    ('canon','1-kings',14,16,'canon','1-kings',15,30,'free',
+      E'The reason given for the doom of Jeroboam''s house, *because of the sins of Jeroboam, who did sin, and who made Yashar''el (Israel) to sin* (14:16), is repeated as the ground of its destruction by Baasha: *Because of the sins of Jeroboam which he sinned, and which he made Yashar''el (Israel) sin, by his provocation wherewith he provoked Yahuah Elohim (the LORD God) of Yashar''el (Israel) to anger* (1 Kings 15:30). The same indictment seals the house and, in the next thread, scatters the nation.'),
+    ('canon','1-kings',14,14,'canon','1-kings',12,30,'free',
+      E'*Moreover Yahuah (LORD) shall raise him up a king over Yashar''el (Israel), who shall cut off the house of Jeroboam that day* (14:14) — the king Yahuah would raise (Baasha) executes the sentence on the very thing that *became a sin*: *And this thing became a sin: for the people went to worship before the one, even unto Dan* (1 Kings 12:30). The calf-worship that built the house is what topples it.'),
+
+    -- THREAD 2: Yashar'el scattered beyond the river (the northern exile foretold)
+    ('canon','1-kings',14,15,'canon','2-kings',17,6,'free',
+      E'*For Yahuah (LORD) shall smite Yashar''el (Israel), as a reed is shaken in the water, and he shall root up Yashar''el (Israel) out of this good land, which he gave to their fathers, and shall scatter them beyond the river* (14:15) — *beyond the river* is Assyria, and here is the fulfilment: *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 17:6). The uprooting of the northern house is foretold in this chapter and enacted there.'),
+    ('canon','1-kings',14,16,'canon','2-kings',17,23,'free',
+      E'*And he shall give Yashar''el (Israel) up because of the sins of Jeroboam, who did sin, and who made Yashar''el (Israel) to sin* (14:16) is named again as the cause of the exile: *Until Yahuah (LORD) removed Yashar''el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day* (2 Kings 17:23). The scattering of the northern house — the divorced house of Yosef / Ephraim — traces straight back to Jeroboam''s calves.'),
+    ('canon','1-kings',14,15,'canon','deuteronomy',28,64,'free',
+      E'The scattering Ahijah pronounces is the Torah curse for covenant-breaking, foretold by Moses: *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other; and there thou shalt serve other gods, which neither thou nor thy fathers have known, even wood and stone* (Deuteronomy 28:64). The curse is the exile-judgment that falls when the covenant is forsaken — never the Torah itself; the *groves* of 14:15 are the *other gods* of Deuteronomy 28:64.'),
+    ('canon','1-kings',14,15,'canon','deuteronomy',28,36,'free',
+      E'Moses had already named the uprooting and the going *beyond the river*: *Yahuah (LORD) shall bring thee, and thy king which thou shalt set over thee, unto a nation which neither thou nor thy fathers have known; and there shalt thou serve other gods, wood and stone* (Deuteronomy 28:36). Ahijah''s *he shall... scatter them beyond the river* (14:15) is the covenant-sanction of Deuteronomy 28 coming due upon the northern house.'),
+    ('canon','1-kings',14,16,'canon','hosea',1,6,'free',
+      E'The giving-up of the northern house is the divorce Hosea is sent to enact: *And she conceived again, and bare a daughter. And Elohim (God) said unto him, Call her name Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel); but I will utterly take them away* (Hosea 1:6). *He shall give Yashar''el (Israel) up* (14:16) and *I will utterly take them away* are the one sentence on the same house — Ephraim put away for the sin of the calves.'),
+    ('canon','1-kings',14,16,'canon','hosea',1,9,'free',
+      E'The end of the matter is the un-naming of the people: *Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God)* (Hosea 1:9). The house given up in 14:16 becomes *not my people* — yet the same prophecy turns: *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10), and *the children of Yahudah (Judah) and the children of Yashar''el (Israel)* are gathered as one (Hosea 1:11). The scattering of this chapter is one half of the two-house story whose other half is the regathering.'),
+
+    -- THREAD 3: both houses decline — Rehoboam's evil and the temple plundered
+    ('canon','1-kings',14,23,'canon','1-kings',11,5,'free',
+      E'The *high places, and images, and groves, on every high hill, and under every green tree* (14:23) that defile Yahudah under Rehoboam were first raised by his grandfather: *For Solomon went after Ashtoreth the goddess of the Zidonians, and after Milcom the abomination of the Ammonites* (1 Kings 11:5). The rot in the southern house did not begin with Rehoboam; it was inherited from Solomon''s strange wives.'),
+    ('canon','1-kings',14,24,'canon','1-kings',11,7,'free',
+      E'The *abominations of the nations* of 14:24 are the very shrines Solomon built: *Then did Solomon build an high place for Chemosh, the abomination of Moab, in the hill that is before Jerusalem, and for Molech, the abomination of the children of Ammon* (1 Kings 11:7). Both houses are declining together — the north into calf-worship and exile, the south into the high places Solomon planted before Jerusalem itself.'),
+    ('canon','1-kings',14,25,'canon','2-chronicles',12,2,'free',
+      E'The Chronicler gives the reason behind Shishak''s coming up: *And it came to pass, that in the fifth year of king Rehoboam Shishak king of Egypt came up against Jerusalem, because they had transgressed against Yahuah (LORD)* (2 Chronicles 12:2). The bare report of 14:25, *in the fifth year of king Rehoboam, that Shishak king of Egypt came up against Jerusalem*, is covenant-judgment: Yahudah''s sin (14:22-24) brings Egypt back up against the city.'),
+    ('canon','1-kings',14,26,'canon','2-chronicles',12,9,'free',
+      E'The plundering of the temple is told twice: *And he took away the treasures of the house of Yahuah (LORD), and the treasures of the king''s house; he even took away all: and he took away all the shields of gold which Solomon had made* (14:26); *So Shishak king of Egypt came up against Jerusalem, and took away the treasures of the house of Yahuah (LORD)... he carried away also the shields of gold which Solomon had made* (2 Chronicles 12:9). The golden age fades — Solomon''s gold carried off, replaced with brass; the glory already departing from the divided kingdom.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================== THREADS ==============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-14-the-doom-of-the-house-of-jeroboam-cut-off-as-dung',
+       E'The doom of the house of Jeroboam — cut off as dung',
+       E'Jeroboam''s son lies sick, and the king sends his disguised wife to the blind old prophet Ahijah at Shiloh — the same prophet who first told him *that I should be king over this people* (14:2). The disguise fails before a man who cannot see: *Come in, thou wife of Jeroboam; why feignest thou thyself to be another? for I am sent to thee with heavy tidings* (14:6). The word that made Jeroboam king now unmakes his house. Ahijah''s first oracle had given him the kingdom — *Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31) — on covenant terms, measured against David *who kept my commandments, and who followed me with all his heart* (14:8). But Jeroboam *made thee other gods, and molten images, to provoke me to anger* (14:9): the *two calves of gold* of 1 Kings 12:28, the worship that *became a sin* and drew the people to Dan (1 Kings 12:30). So the sentence falls: *I will bring evil upon the house of Jeroboam, and will cut off from Jeroboam him that pisseth against the wall... and will take away the remnant of the house of Jeroboam, as a man taketh away dung, till it be all gone* (14:10). Yahuah will *raise him up a king over Yashar''el (Israel), who shall cut off the house of Jeroboam that day* (14:14) — fulfilled when Baasha *smote all the house of Jeroboam; he left not to Jeroboam any that breathed, according unto the saying of Yahuah (LORD), which he spake by his servant Ahijah the Shilonite* (1 Kings 15:29), *because of the sins of Jeroboam which he sinned, and which he made Yashar''el (Israel) sin* (1 Kings 15:30; cf. 14:16). This is covenant-lawsuit, not vengeance on a people: the king who made the nation sin is measured against David and found to have *cast me behind thy back* (14:9). Only the sick child is spared the dogs and the fowls, *because in him there is found some good thing toward Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (14:13) — and all Yashar''el mourns him, the one good thing in a doomed house.',
+       sv.verse_id, ev.verse_id, 'free', 38225
+  FROM _s342_1ki14_lookup sv, _s342_1ki14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=14 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-14-yashar-el-scattered-beyond-the-river-the-northern-house-uprooted',
+       E'Yashar''el scattered beyond the river — the northern house uprooted',
+       E'In the middle of the doom on one house, Ahijah lifts the lens to the whole northern nation and foretells the exile that will not come for two hundred years: *For Yahuah (LORD) shall smite Yashar''el (Israel), as a reed is shaken in the water, and he shall root up Yashar''el (Israel) out of this good land, which he gave to their fathers, and shall scatter them beyond the river, because they have made their groves, provoking Yahuah (LORD) to anger. And he shall give Yashar''el (Israel) up because of the sins of Jeroboam, who did sin, and who made Yashar''el (Israel) to sin* (14:15-16). *Beyond the river* is Assyria. This is the 2 Kings 17 exile prophesied here at its root — fulfilled when *the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 17:6), *until Yahuah (LORD) removed Yashar''el (Israel) out of his sight... So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day* (2 Kings 17:23). The scattering is the Torah curse falling due, exactly as Moses warned: *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other; and there thou shalt serve other gods... even wood and stone* (Deuteronomy 28:64), *unto a nation which neither thou nor thy fathers have known* (Deuteronomy 28:36). The curse is the exile-judgment for breaking the covenant — never the Torah itself, which is the inheritance Yashar''el forsook. And it is the divorce Hosea is sent to dramatize over this same northern house: *Call her name Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel); but I will utterly take them away* (Hosea 1:6), *Call his name Lo-ammi: for ye are not my people* (Hosea 1:9). This is the two-house backstory — Yahudah in the south, Ephraim / Yosef in the north divorced and scattered. Yet the sentence is never the last word: *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10), when *the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head* (Hosea 1:11). The reed shaken in the water in 14:15 will be gathered and made one stick again.',
+       sv.verse_id, ev.verse_id, 'free', 38228
+  FROM _s342_1ki14_lookup sv, _s342_1ki14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=14 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-14-both-houses-decline-rehoboams-evil-and-the-temple-plundered',
+       E'Both houses decline — Rehoboam''s evil and the temple plundered',
+       E'The chapter turns south to Yahudah, and the verdict is no kinder: *And Yahudah (Judah) did evil in the sight of Yahuah (LORD), and they provoked him to jealousy with their sins which they had committed, above all that their fathers had done. For they also built them high places, and images, and groves, on every high hill, and under every green tree. And there were also sodomites in the land* (14:22-24). This rot was inherited, not invented — Solomon himself had *built an high place for Chemosh, the abomination of Moab, in the hill that is before Jerusalem, and for Molech, the abomination of the children of Ammon* (1 Kings 11:7), going *after Ashtoreth the goddess of the Zidonians, and after Milcom the abomination of the Ammonites* (1 Kings 11:5). Both houses are sliding together: the north into the calves and the coming exile, the south into the very shrines Solomon planted before Jerusalem. And the judgment is swift: *in the fifth year of king Rehoboam, that Shishak king of Egypt came up against Jerusalem* (14:25) — which the Chronicler reads as covenant-sanction: *Shishak king of Egypt came up against Jerusalem, because they had transgressed against Yahuah (LORD)* (2 Chronicles 12:2). The glory of the golden age is carried off: *he took away the treasures of the house of Yahuah (LORD), and the treasures of the king''s house; he even took away all: and he took away all the shields of gold which Solomon had made* (14:26; cf. *he carried away also the shields of gold which Solomon had made*, 2 Chronicles 12:9). Rehoboam *made in their stead brasen shields* (14:27) — gold for brass, the fading of Solomon''s splendour. The divided kingdom is impoverished and plundered, both crowns declining, the temple stripped of its glory within a generation of the schism.',
+       sv.verse_id, ev.verse_id, 'free', 38231
+  FROM _s342_1ki14_lookup sv, _s342_1ki14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=14 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================== THREAD MEMBERS ==============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 11:31 — Ahijah''s first oracle: *I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee*; the same prophet who gave Jeroboam the throne now indicts him.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=7
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-the-doom-of-the-house-of-jeroboam-cut-off-as-dung'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Kings 11:33 — the charge that first rent the kingdom (*have not walked in my ways... to keep my statutes and my judgments, as did David*) is the same charge against Jeroboam in 14:8; David is the standard.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-the-doom-of-the-house-of-jeroboam-cut-off-as-dung'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Kings 12:28 — the *two calves of gold* are the *molten images* of 14:9; the root sin that drew the north from Jerusalem and seeds the scattering.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=9
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-the-doom-of-the-house-of-jeroboam-cut-off-as-dung'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Kings 15:29 — the sentence of 14:10 fulfilled: Baasha *smote all the house of Jeroboam... according unto the saying of Yahuah (LORD)... by his servant Ahijah the Shilonite*.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=10
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=15 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-the-doom-of-the-house-of-jeroboam-cut-off-as-dung'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Kings 15:30 — the ground of the doom repeated: *because of the sins of Jeroboam which he sinned, and which he made Yashar''el (Israel) sin* — the same indictment as 14:16.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=16
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=15 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-the-doom-of-the-house-of-jeroboam-cut-off-as-dung'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'1 Kings 12:30 — the calf-worship that *became a sin* (the people going to worship even unto Dan) is the very thing the raised-up king of 14:14 cuts off.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-the-doom-of-the-house-of-jeroboam-cut-off-as-dung'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Kings 17:6 — the fulfilment: *the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria... by the river of Gozan* — Ahijah''s *scatter them beyond the river* (14:15) come to pass.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=15
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-yashar-el-scattered-beyond-the-river-the-northern-house-uprooted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Kings 17:23 — *So was Yashar''el (Israel) carried away out of their own land to Assyria* — the giving-up of 14:16 traced back to the sins of Jeroboam by the historian himself.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=16
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-yashar-el-scattered-beyond-the-river-the-northern-house-uprooted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 28:64 — the Torah curse foretold: *Yahuah (LORD) shall scatter thee among all people... and there thou shalt serve other gods*; the scattering of 14:15 is the covenant-sanction falling due, never the Torah itself.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=15
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-yashar-el-scattered-beyond-the-river-the-northern-house-uprooted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 28:36 — *Yahuah (LORD) shall bring thee, and thy king... unto a nation which neither thou nor thy fathers have known* — Moses already names the uprooting beyond the river that Ahijah pronounces in 14:15.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=15
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-yashar-el-scattered-beyond-the-river-the-northern-house-uprooted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Hosea 1:6 — *Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel); but I will utterly take them away* — the giving-up of the northern house in 14:16 dramatized as divorce.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=16
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-yashar-el-scattered-beyond-the-river-the-northern-house-uprooted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Hosea 1:9 — *Lo-ammi: for ye are not my people* — the northern house un-named; yet the same chapter turns to regathering (1:10-11), the two-house promise answering this scattering.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=16
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-yashar-el-scattered-beyond-the-river-the-northern-house-uprooted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 11:5 — Solomon *went after Ashtoreth the goddess of the Zidonians, and after Milcom the abomination of the Ammonites* — the high-place idolatry of 14:23 inherited from the grandfather.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=23
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-both-houses-decline-rehoboams-evil-and-the-temple-plundered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Kings 11:7 — Solomon *build an high place for Chemosh... and for Molech... in the hill that is before Jerusalem* — the very *abominations of the nations* that defile Yahudah in 14:24.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=24
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-both-houses-decline-rehoboams-evil-and-the-temple-plundered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Chronicles 12:2 — the cause behind Shishak''s coming up: *because they had transgressed against Yahuah (LORD)* — 14:25 read as covenant-judgment on Yahudah''s sin.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=25
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=12 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-both-houses-decline-rehoboams-evil-and-the-temple-plundered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'2 Chronicles 12:9 — the parallel plundering: Shishak *carried away also the shields of gold which Solomon had made* — confirming 14:26, the golden age stripped and replaced with brass.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=14 AND sv.verse_number=26
+  JOIN _s342_1ki14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-14-both-houses-decline-rehoboams-evil-and-the-temple-plundered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_15.sql (1 Kings 15) -----
+-- 1 Kings 15 — the kings of Yahudah and Yashar'el: Abijam walks in his father's sins yet the
+-- lamp is kept for David's sake; Asa the reforming king whose heart was perfect; Nadab and
+-- Baasha in the north; the doom of Jeroboam's house fulfilled by the word of Yahuah.
+-- TAG: 1ki15   VIEW: _s342_1ki15_lookup   SORT BAND: 38250, step 3 (38250,38253,38256,38259)
+-- SOURCE rows all 'canon','1-kings',15,v.
+--
+-- 1 Kings 15 coverage:
+--   v.3-5  (Abijam's heart not perfect; NEVERTHELESS for David's sake a LAMP in Jerusalem; David
+--          did right save only in the matter of Uriah)
+--          NT:     Luke 1:32-33 (the throne of his father David; reign over the house of Jacob for ever);
+--                  Luke 1:69 (an horn of salvation in the house of his servant David) [thread 1]
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 7:15-16 (my mercy shall not depart; thine house established for ever);
+--                  Psalm 132:17 (the horn of David to bud; I have ordained a lamp for mine anointed);
+--                  1 Kings 11:36 (a light alway before me in Jerusalem); 2 Kings 8:19 (give him alway a light) [thread 1]
+--   v.11-15 (Asa did right as David; took away sodomites and idols; deposed Maachah; heart perfect)
+--          NT:     none warranted (Tanakh chronicle-parallel carries the reform weave)
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 14:2-4 (Asa did good and right; took away strange gods; commanded
+--                  Yahudah to do the law and the commandment); 2 Chronicles 15:8,16,17 (put away
+--                  abominable idols; removed Maachah; heart perfect) [thread 2]
+--   v.16-22 (Asa's league with Ben-hadad of Syria against Baasha — the faith-compromise)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 16 (the seer's rebuke — relied on Syria not on Yahuah) -- WEIGHED,
+--                  NOT ADDED: 2 Chronicles 16 not pulled/verified this pass; the league named in
+--                  thread 2 prose, member not added without a verified target verse.
+--   v.25-26,33-34 (Nadab did evil, walked in the way of his father; Baasha walked in the way of
+--          Jeroboam — the calf-sin continuing in the north)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Kings 11:31 (rend the kingdom; ten tribes); 1 Kings 14:16 (he shall give
+--                  Yashar'el up because of the sins of Jeroboam, who made Yashar'el to sin) [thread 4]
+--   v.29-30 (Baasha smote ALL the house of Jeroboam, left none that breathed, ACCORDING UNTO the
+--          saying of Yahuah by his servant Ahijah; because of the sins of Jeroboam)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Kings 14:10 (I will cut off from Jeroboam... take away the remnant as dung);
+--                  1 Kings 14:11 (him that dieth in the city shall the dogs eat); 1 Kings 14:14
+--                  (a king who shall cut off the house of Jeroboam) [thread 3]
+--
+-- THREADS:
+--   1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake (free) — Tanakh+NT: 2Sam7, Ps132, 1Kings11, 2Kings8, Luke1
+--   1-kings-15-asa-the-reforming-king-whose-heart-was-perfect (free) — Tanakh: 2Chr14, 2Chr15
+--   1-kings-15-the-doom-of-jeroboams-house-fulfilled-by-the-word (free) — Tanakh: 1Kings14
+--   1-kings-15-the-northern-cycle-of-the-calf-sin-of-jeroboam (free) — Tanakh: 1Kings11, 1Kings14
+-- Framework-load-bearing framing: 15:4 *Nevertheless for David's sake did Yahuah Elohav give him
+-- a lamp in Jerusalem, to set up his son after him* — the Davidic-covenant LAMP, the seed-line
+-- mercy preserved THROUGH judgment even under a wicked king. This is the paternal-bloodline-plus-
+-- covenant-word promise of 2 Sam 7 carried unbroken (*my mercy shall not depart away from him*),
+-- the lamp Yahuah *ordained for mine anointed* (Ps 132:17), the *light alway* repeated through the
+-- dynasty (1 Kings 11:36; 2 Kings 8:19), and fulfilled when the Formed Son receives *the throne of
+-- his father David* (Luke 1:32) — the *horn of salvation in the house of his servant David* (Luke
+-- 1:69). NOT the throne abolished or transferred to another people; the lamp burns down to Messiah.
+-- 15:5 names David's one fault *save only in the matter of Uriah* — the chronicle is honest, not
+-- whitewashing; the mercy is grace upon a covenant-keeper, not lineage alone. The doom of
+-- Jeroboam's house (15:29 *according unto the saying of Yahuah... by his servant Ahijah*) is the
+-- 14:10-14 word coming exactly to pass — Yahuah's word stands. Baasha, the rod of judgment, then
+-- *walked in the way of Jeroboam* himself (15:34): the northern dynasties revolve in the same
+-- calf-sin, victims of an inherited lie, never enemies. The high places *were not removed* (15:14)
+-- yet Asa's *heart was perfect* — covenant faithfulness measured by the heart turned to Yahuah.
+
+CREATE TEMP VIEW _s342_1ki15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the lamp kept in Jerusalem for David's sake (15:4,5)
+    ('canon','1-kings',15,4,'canon','2-samuel',7,15,'free',E'*But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee* (2 Samuel 7:15). The lamp kept under a wicked king is this mercy holding: *Nevertheless for David''s sake did Yahuah Elohav (the LORD his God) give him a lamp in Jerusalem, to set up his son after him* (1 Kings 15:4). Abijam''s heart was not perfect, yet the covenant mercy did not depart — the seed-line is carried through judgment, not by the son''s merit but by the oath to David.'),
+    ('canon','1-kings',15,4,'canon','2-samuel',7,16,'free',E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). The everlasting throne is exactly what the lamp guards: *to set up his son after him, and to establish Jerusalem* (1 Kings 15:4). Even when the reigning son walks in his father''s sins, the house and the throne stand — the promise is *for ever*, anchored in Yahuah''s word, not the worth of any one king.'),
+    ('canon','1-kings',15,4,'canon','psalms',132,17,'free',E'*There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17). The narrative''s *lamp in Jerusalem* (1 Kings 15:4) is the very lamp the psalm says Yahuah *ordained for mine anointed* — the Davidic light that cannot be put out, budding down the generations toward the Anointed it was ordained for.'),
+    ('canon','1-kings',15,4,'canon','1-kings',11,36,'free',E'*And unto his son will I give one tribe, that David my servant may have a light alway before me in Jerusalem, the city which I have chosen me to put my name there* (1 Kings 11:36). The word spoken at the kingdom''s tearing is the word kept now: the *light alway* promised when ten tribes were rent away is the *lamp in Jerusalem* (1 Kings 15:4) still burning for David''s sake a generation later.'),
+    ('canon','1-kings',15,4,'canon','2-kings',8,19,'free',E'*Yet Yahuah (LORD) would not destroy Yahudah (Judah) for David his servant''s sake, as he promised him to give him alway a light, and to his children* (2 Kings 8:19). The same word echoes forward in the same history: the *lamp in Jerusalem* (1 Kings 15:4) is the *light* Yahuah promised *alway... and to his children* — the dynasty preserved through king after wicked king for the oath''s sake.'),
+    ('canon','1-kings',15,4,'canon','luke',1,32,'free',E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33). The lamp *to set up his son after him* (1 Kings 15:4) burns down the whole dynasty to this Son — the Formed One who at last receives *the throne of his father David* and reigns over the house of Jacob for ever; the lamp was kept for him.'),
+    ('canon','1-kings',15,4,'canon','luke',1,69,'free',E'*And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69). Zacharias names the end of the lamp: the *horn of salvation... in the house of his servant David* is what the *lamp in Jerusalem* (1 Kings 15:4) was preserved to bring forth — the seed-line kept through judgment until the horn of David buds into the One who saves his people.'),
+    ('canon','1-kings',15,5,'canon','2-samuel',7,15,'free',E'*But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee* (2 Samuel 7:15). The chronicle is honest about David — *David did that which was right in the eyes of Yahuah (LORD)... save only in the matter of Uriah the Hittite* (1 Kings 15:5) — naming his one great fault, yet the mercy held; the covenant rests on Yahuah''s word, not a flawless man.'),
+
+    -- THREAD 2: Asa the reforming king whose heart was perfect (15:11,12,13,14)
+    ('canon','1-kings',15,11,'canon','2-chronicles',14,2,'free',E'*And Asa did that which was good and right in the eyes of Yahuah Elohav (the LORD his God)* (2 Chronicles 14:2). The Chronicler tells it the same way: *And Asa did that which was right in the eyes of Yahuah (LORD), as did David his father* (1 Kings 15:11) — the good reforming king measured by the father David, the seed-line standard of the heart turned wholly to Yahuah.'),
+    ('canon','1-kings',15,12,'canon','2-chronicles',14,3,'free',E'*For he took away the altars of the strange gods, and the high places, and brake down the images, and cut down the groves* (2 Chronicles 14:3). The reform of *he took away the sodomites out of the land, and removed all the idols that his fathers had made* (1 Kings 15:12) is the same purge — the inherited idolatry of the fathers torn down, the land cleansed for Yahuah.'),
+    ('canon','1-kings',15,12,'canon','2-chronicles',14,4,'free',E'*And commanded Yahudah (Judah) to seek Yahuah Elohim (the LORD God) of their fathers, and to do the law and the commandment* (2 Chronicles 14:4). Asa''s removing of idols (1 Kings 15:12) was no bare reform but a turning to Torah: he *commanded Yahudah... to do the law and the commandment* — the covenant instruction kept, not abolished, the very heart of the good king''s work.'),
+    ('canon','1-kings',15,13,'canon','2-chronicles',15,16,'free',E'*And also concerning Maachah the mother of Asa the king, he removed her from being queen, because she had made an idol in a grove: and Asa cut down her idol, and stamped it, and burnt it at the brook Kidron* (2 Chronicles 15:16). The Chronicler doubles the account word for word: *And also Maachah his mother, even her he removed from being queen... and Asa destroyed her idol, and burnt it by the brook Kidron* (1 Kings 15:13). The grandmother who inherited the lie is deposed and her idol burned — the system dismantled, the truth set above kin.'),
+    ('canon','1-kings',15,14,'canon','2-chronicles',15,17,'free',E'*But the high places were not taken away out of Yashar''el (Israel): nevertheless the heart of Asa was perfect all his days* (2 Chronicles 15:17). The same honest verdict stands in both: *the high places were not removed: nevertheless Asa''s heart was perfect with Yahuah (LORD) all his days* (1 Kings 15:14). The reform was incomplete, yet the measure is the heart — Asa''s perfect, turned to Yahuah, even where the work was unfinished.'),
+    ('canon','1-kings',15,15,'canon','2-chronicles',15,18,'free',E'*And he brought into the house of Elohim (God) the things that his father had dedicated, and that he himself had dedicated, silver, and gold, and vessels* (2 Chronicles 15:18). The Chronicler records the same offering: *he brought in the things which his father had dedicated, and the things which himself had dedicated, into the house of Yahuah (LORD), silver, and gold, and vessels* (1 Kings 15:15) — the dedicated treasure carried into the house of Yahuah, the worship restored.'),
+
+    -- THREAD 3: the doom of Jeroboam's house fulfilled by the word (15:29,30)
+    ('canon','1-kings',15,29,'canon','1-kings',14,10,'free',E'*Therefore, behold, I will bring evil upon the house of Jeroboam, and will cut off from Jeroboam him that pisseth against the wall, and him that is shut up and left in Yashar''el (Israel), and will take away the remnant of the house of Jeroboam, as a man taketh away dung, till it be all gone* (1 Kings 14:10). The word Ahijah spoke comes exactly to pass: *he smote all the house of Jeroboam; he left not to Jeroboam any that breathed, until he had destroyed him, according unto the saying of Yahuah (LORD), which he spake by his servant Ahijah the Shilonite* (1 Kings 15:29). What was prophesied as judgment is fulfilled to the letter — Yahuah''s word stands.'),
+    ('canon','1-kings',15,29,'canon','1-kings',14,11,'free',E'*Him that dieth of Jeroboam in the city shall the dogs eat; and him that dieth in the field shall the fowls of the air eat: for Yahuah (LORD) hath spoken it* (1 Kings 14:11). The doom sealed with *for Yahuah hath spoken it* is the doom now executed: Baasha *left not to Jeroboam any that breathed... according unto the saying of Yahuah* (1 Kings 15:29). The prophetic word and its fulfilment frame the whole house of Jeroboam — spoken, then done.'),
+    ('canon','1-kings',15,29,'canon','1-kings',14,14,'free',E'*Moreover Yahuah (LORD) shall raise him up a king over Yashar''el (Israel), who shall cut off the house of Jeroboam that day: but what? even now* (1 Kings 14:14). Ahijah foretold the very instrument: a king Yahuah would *raise up... who shall cut off the house of Jeroboam* — and Baasha is that king, who *smote all the house of Jeroboam* (1 Kings 15:29). The doom names its own executioner before he rises.'),
+    ('canon','1-kings',15,30,'canon','1-kings',14,16,'free',E'*And he shall give Yashar''el (Israel) up because of the sins of Jeroboam, who did sin, and who made Yashar''el (Israel) to sin* (1 Kings 14:16). The reason given for the fall of the house is the reason Ahijah named: *Because of the sins of Jeroboam which he sinned, and which he made Yashar''el (Israel) sin, by his provocation wherewith he provoked Yahuah Elohim (the LORD God) of Yashar''el (Israel) to anger* (1 Kings 15:30) — the calf-sin that made the whole north to sin brings the dynasty down.'),
+
+    -- THREAD 4: the northern cycle of the calf-sin of Jeroboam (15:26,34)
+    ('canon','1-kings',15,26,'canon','1-kings',14,16,'free',E'*And he shall give Yashar''el (Israel) up because of the sins of Jeroboam, who did sin, and who made Yashar''el (Israel) to sin* (1 Kings 14:16). Nadab the son inherits the father''s sin unbroken: *he did evil in the sight of Yahuah (LORD), and walked in the way of his father, and in his sin wherewith he made Yashar''el (Israel) to sin* (1 Kings 15:26). The made-to-sin spreads down the dynasty — the north walking the inherited lie, victims of it before they are judged for it.'),
+    ('canon','1-kings',15,34,'canon','1-kings',14,16,'free',E'*who did sin, and who made Yashar''el (Israel) to sin* (1 Kings 14:16). Baasha, the very rod that cut off Jeroboam''s house, then takes up Jeroboam''s sin: *he did evil in the sight of Yahuah (LORD), and walked in the way of Jeroboam, and in his sin wherewith he made Yashar''el (Israel) to sin* (1 Kings 15:34). The instrument of judgment becomes the next to be judged — the northern dynasties revolve in the same calf-sin.'),
+    ('canon','1-kings',15,34,'canon','1-kings',11,31,'free',E'*and will give ten tribes to thee* (1 Kings 11:31). The ten tribes Yahuah gave Jeroboam *the Elohim (God) of Yashar''el (Israel)* are the very people now bound in the calf-sin: Baasha *walked in the way of Jeroboam, and in his sin wherewith he made Yashar''el (Israel) to sin* (1 Kings 15:34). The house given to be ruled is the house led astray — the northern stick of Yashar''el scattered toward the divorce Hosea will name.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake',
+       E'The lamp kept in Jerusalem for David''s sake',
+       E'A wicked king reigns, and still the lamp does not go out. *And he walked in all the sins of his father... and his heart was not perfect with Yahuah Elohav (the LORD his God), as the heart of David his father* (1 Kings 15:3) — yet *Nevertheless for David''s sake did Yahuah Elohav (the LORD his God) give him a lamp in Jerusalem, to set up his son after him, and to establish Jerusalem* (1 Kings 15:4). The lamp is the Davidic-covenant mercy preserved THROUGH judgment, not earned by the son. It is the oath of 2 Samuel 7 holding fast: *But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee* (2 Samuel 7:15), *And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). It is the very lamp the psalm sings: *There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17). The word was spoken when the kingdom was torn — *that David my servant may have a light alway before me in Jerusalem* (1 Kings 11:36) — and echoes on through the same history — *Yet Yahuah (LORD) would not destroy Yahudah (Judah) for David his servant''s sake, as he promised him to give him alway a light, and to his children* (2 Kings 8:19). The chronicle is honest about the man it rests on: David did right *save only in the matter of Uriah the Hittite* (1 Kings 15:5) — the mercy is grace upon a covenant-keeper, not lineage alone, and not whitewash. And the lamp burns down the whole line to its end: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever* (Luke 1:32-33); *And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69). The lamp was never abolished and never handed to another people; it was kept in Jerusalem for David''s sake until the Formed Son received the throne it guarded.',
+       sv.verse_id, ev.verse_id, 'free', 38250
+  FROM _s342_1ki15_lookup sv, _s342_1ki15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=15 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-15-asa-the-reforming-king-whose-heart-was-perfect',
+       E'Asa the reforming king whose heart was perfect',
+       E'After the wicked Abijam a good king rises in Yahudah. *And Asa did that which was right in the eyes of Yahuah (LORD), as did David his father* (1 Kings 15:11) — measured, like every king of the line, by the father David and the heart turned wholly to Yahuah. The Chronicler tells it the same: *And Asa did that which was good and right in the eyes of Yahuah Elohav (the LORD his God)* (2 Chronicles 14:2), *For he took away the altars of the strange gods, and the high places, and brake down the images, and cut down the groves* (2 Chronicles 14:3). And his reform was a turning back to the covenant instruction, not a reform apart from it: he *commanded Yahudah (Judah) to seek Yahuah Elohim (the LORD God) of their fathers, and to do the law and the commandment* (2 Chronicles 14:4). So in our chapter: *And he took away the sodomites out of the land, and removed all the idols that his fathers had made* (1 Kings 15:12). He would not spare even his own house — *And also Maachah his mother, even her he removed from being queen, because she had made an idol in a grove; and Asa destroyed her idol, and burnt it by the brook Kidron* (1 Kings 15:13), word for word with *Asa cut down her idol, and stamped it, and burnt it at the brook Kidron* (2 Chronicles 15:16). The grandmother who inherited the lie is deposed and her idol burned; the system is dismantled, the truth set above kin. The verdict is honest about what was left undone — *But the high places were not removed* — yet final about the man: *nevertheless Asa''s heart was perfect with Yahuah (LORD) all his days* (1 Kings 15:14), echoing *the heart of Asa was perfect all his days* (2 Chronicles 15:17). And he restored the worship, bringing the dedicated *silver, and gold, and vessels* into the house of Yahuah (1 Kings 15:15; 2 Chronicles 15:18). Covenant faithfulness is the heart turned to Yahuah, even where the hand''s work is unfinished.',
+       sv.verse_id, ev.verse_id, 'free', 38253
+  FROM _s342_1ki15_lookup sv, _s342_1ki15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=15 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-15-the-doom-of-jeroboams-house-fulfilled-by-the-word',
+       E'The doom of Jeroboam''s house fulfilled by the word',
+       E'In the north, the word of Yahuah spoken against Jeroboam comes exactly to pass. Ahijah had foretold it: *Therefore, behold, I will bring evil upon the house of Jeroboam, and will cut off from Jeroboam him that pisseth against the wall... and will take away the remnant of the house of Jeroboam, as a man taketh away dung, till it be all gone* (1 Kings 14:10); *Him that dieth of Jeroboam in the city shall the dogs eat; and him that dieth in the field shall the fowls of the air eat: for Yahuah (LORD) hath spoken it* (1 Kings 14:11); and even the instrument was named — *Yahuah (LORD) shall raise him up a king over Yashar''el (Israel), who shall cut off the house of Jeroboam that day* (1 Kings 14:14). Now Baasha is that king: *And it came to pass, when he reigned, that he smote all the house of Jeroboam; he left not to Jeroboam any that breathed, until he had destroyed him, according unto the saying of Yahuah (LORD), which he spake by his servant Ahijah the Shilonite* (1 Kings 15:29). The cause is exactly the cause Ahijah gave — *because of the sins of Jeroboam which he sinned, and which he made Yashar''el (Israel) sin* (1 Kings 15:30), which is *because of the sins of Jeroboam, who did sin, and who made Yashar''el (Israel) to sin* (1 Kings 14:16). The prophetic word and its fulfilment frame the whole house: spoken, then done. Yahuah''s word does not fall to the ground.',
+       sv.verse_id, ev.verse_id, 'free', 38256
+  FROM _s342_1ki15_lookup sv, _s342_1ki15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=15 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-15-the-northern-cycle-of-the-calf-sin-of-jeroboam',
+       E'The northern cycle of the calf-sin of Jeroboam',
+       E'The northern kingdom revolves in a single inherited sin. Nadab the son takes up the father''s way unbroken: *And he did evil in the sight of Yahuah (LORD), and walked in the way of his father, and in his sin wherewith he made Yashar''el (Israel) to sin* (1 Kings 15:26). And Baasha — the very rod Yahuah used to cut off Jeroboam''s house — then becomes the next to walk that same way: *he did evil in the sight of Yahuah (LORD), and walked in the way of Jeroboam, and in his sin wherewith he made Yashar''el (Israel) to sin* (1 Kings 15:34). The phrase that haunts the whole book first sounded in Ahijah''s doom — *who did sin, and who made Yashar''el (Israel) to sin* (1 Kings 14:16) — and now it stamps king after king. These are the ten tribes Yahuah himself gave Jeroboam to rule — *and will give ten tribes to thee* (1 Kings 11:31) — the northern stick of Yashar''el, led by their shepherds into the calf-sin and so scattered toward the divorce Hosea will name *Lo-Ammi*, not my people. They are victims of an inherited lie before they are judged for it; the system of the calves, set up to keep them from going up to Jerusalem, is the thing that condemns the dynasty — never the people themselves cast off, for the One who scattered Yashar''el will gather him again.',
+       sv.verse_id, ev.verse_id, 'free', 38259
+  FROM _s342_1ki15_lookup sv, _s342_1ki15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=15 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: the lamp kept in Jerusalem for David's sake
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*But my mercy shall not depart away from him, as I took it from Saul* (2 Samuel 7:15) — the covenant mercy holding; the lamp kept though the son''s heart was not perfect.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thy throne shall be established for ever* (2 Samuel 7:16) — the everlasting throne the lamp guards; the house stands though the reigning son sins.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I have ordained a lamp for mine anointed* (Psalm 132:17) — the very lamp the psalm names, the Davidic light that cannot be put out.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a light alway before me in Jerusalem* (1 Kings 11:36) — the word spoken when the kingdom was torn, kept now a generation later.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*to give him alway a light, and to his children* (2 Kings 8:19) — the same promise echoing on through the same history.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=8 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — the lamp burns down the whole dynasty to the Formed Son who receives the throne.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*an horn of salvation for us in the house of his servant David* (Luke 1:69) — the end the lamp was preserved to bring forth.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=69
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*my mercy shall not depart away from him* (2 Samuel 7:15) — read against *save only in the matter of Uriah* (1 Kings 15:5): the chronicle honest about David, the mercy resting on Yahuah''s word.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-lamp-kept-in-jerusalem-for-davids-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Asa the reforming king whose heart was perfect
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And Asa did that which was good and right in the eyes of Yahuah Elohav* (2 Chronicles 14:2) — the Chronicler''s same verdict, the king measured by the father David.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=11
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=14 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-asa-the-reforming-king-whose-heart-was-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he took away the altars of the strange gods, and the high places... and cut down the groves* (2 Chronicles 14:3) — the same purge as the removed idols and sodomites.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=12
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=14 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-asa-the-reforming-king-whose-heart-was-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*commanded Yahudah... to do the law and the commandment* (2 Chronicles 14:4) — the reform was a turning to Torah, the covenant kept not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=12
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=14 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-asa-the-reforming-king-whose-heart-was-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*concerning Maachah the mother of Asa... he removed her from being queen... burnt it at the brook Kidron* (2 Chronicles 15:16) — the grandmother who inherited the lie deposed, the idol burned, word for word.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=13
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=15 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-asa-the-reforming-king-whose-heart-was-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the high places were not taken away... nevertheless the heart of Asa was perfect all his days* (2 Chronicles 15:17) — the same honest verdict; the measure is the heart turned to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=15 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-asa-the-reforming-king-whose-heart-was-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*he brought into the house of Elohim... the things that his father had dedicated... silver, and gold, and vessels* (2 Chronicles 15:18) — the dedicated treasure carried into the house of Yahuah, the worship restored.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=15
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-asa-the-reforming-king-whose-heart-was-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the doom of Jeroboam's house fulfilled by the word
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will bring evil upon the house of Jeroboam... take away the remnant... as a man taketh away dung* (1 Kings 14:10) — the word Ahijah spoke, now fulfilled to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=29
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-doom-of-jeroboams-house-fulfilled-by-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Him that dieth of Jeroboam in the city shall the dogs eat... for Yahuah hath spoken it* (1 Kings 14:11) — the doom sealed by Yahuah''s word, now executed.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=29
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-doom-of-jeroboams-house-fulfilled-by-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah shall raise him up a king... who shall cut off the house of Jeroboam* (1 Kings 14:14) — the doom named its own executioner; Baasha is that king.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=29
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-doom-of-jeroboams-house-fulfilled-by-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*because of the sins of Jeroboam... who made Yashar''el to sin* (1 Kings 14:16) — the cause Ahijah named is the cause given for the fall.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=30
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-doom-of-jeroboams-house-fulfilled-by-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the northern cycle of the calf-sin of Jeroboam
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*who did sin, and who made Yashar''el to sin* (1 Kings 14:16) — Nadab inherits the father''s made-to-sin unbroken.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=26
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-northern-cycle-of-the-calf-sin-of-jeroboam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*who did sin, and who made Yashar''el to sin* (1 Kings 14:16) — Baasha, the rod of judgment, becomes the next to walk the way of Jeroboam.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=34
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-northern-cycle-of-the-calf-sin-of-jeroboam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*and will give ten tribes to thee* (1 Kings 11:31) — the northern stick of Yashar''el given Jeroboam to rule, now led astray into the calf-sin, scattered toward the divorce Hosea names.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=15 AND sv.verse_number=34
+  JOIN _s342_1ki15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-15-the-northern-cycle-of-the-calf-sin-of-jeroboam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session342 — 1 Kings cross-references complete.'
