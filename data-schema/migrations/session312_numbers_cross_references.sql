@@ -8614,6 +8614,1053 @@ SELECT t.id, cr.id, 1, E'*Yashar''el (Israel) joined himself unto Baal-peor: and
  WHERE t.slug='numbers-31-the-war-of-vengeance-for-peor'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_numbers_32.sql (Numbers 32) -----
+-- Book: Numbers | Chapter: 32 | tag: num32 | prefix: s312
+-- View: _s312_num32_lookup | Sort band base 24275 step 3 -> 24275, 24278, 24281
+--
+-- Reuben & Gad ask the land east of Jordan; Moses fears another Kadesh, binds them
+-- to cross armed before their brethren, and warns: be sure your sin will find you out.
+--
+-- Numbers 32 coverage:
+--   v.1-15  NT:     Hebrews 3:12 (an evil heart of unbelief, departing from the living Elohim)
+--           Extras: none warranted (the spies'-unbelief material is squarely canon Torah)
+--           Tanakh: Numbers 14:9 (rebel not, fear not the people); Deuteronomy 1:21,26,28 (the same Kadesh refusal)
+--   v.16-27 NT:     Romans 15:1 (the strong bear the infirmities of the weak, not please themselves)
+--           Extras: none warranted
+--           Tanakh: Joshua 1:14-15 (pass armed before your brethren until rest); Joshua 22:3-4 (ye have not left your brethren, now return)
+--   v.20-24 NT:     Galatians 6:7 (whatsoever a man soweth, that shall he also reap); Luke 12:2 (nothing covered that shall not be revealed)
+--           Extras: none warranted
+--           Tanakh: Proverbs 28:13 (he that covereth his sins shall not prosper)
+--   v.28-42 NT/Extras/Tanakh: none warranted (allotment register & city-building; covered by the three threads above)
+--
+-- Threads (all FREE — every member canon):
+--   numbers-32-discourage-not-the-heart-repeating-the-spies-unbelief   [Tanakh + NT]  (anchors 7..15)
+--   numbers-32-armed-before-their-brethren-until-all-have-rest         [Tanakh + NT]  (anchors 17..27)
+--   numbers-32-be-sure-your-sin-will-find-you-out                      [NT + Tanakh]  (anchors 20..24)
+
+-- A. Temp view
+CREATE TEMP VIEW _s312_num32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- B. cross_references
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: discourage not the heart / repeating the spies' unbelief
+    ('canon','numbers',32,7,  'canon','numbers',14,9,  'free',
+     E'*Only rebel not ye against Yahuah (LORD), neither fear ye the people of the land; for they are bread for us: their defence is departed from them, and Yahuah (LORD) is with us: fear them not.* (Numbers 14:9). Moses charges Reuben and Gad with the very sin of the first generation — *wherefore discourage ye the heart of the children of Yashar''el (Israel) from going over into the land which Yahuah (LORD) hath given them?* (Numbers 32:7). At Kadesh the call was the same: do not rebel, do not fear, for Yahuah is with you to bring you in.'),
+    ('canon','numbers',32,8,  'canon','deuteronomy',1,28,  'free',
+     E'*Whither shall we go up? our brethren have discouraged our heart, saying, The people is greater and taller than we; the cities are great and walled up to heaven; and moreover we have seen the sons of the Anakims there.* (Deuteronomy 1:28). This is Moses'' own retelling of the day he now invokes — *Thus did your fathers, when I sent them from Kadesh-barnea to see the land* (Numbers 32:8). The discouraged heart that turned a forty-day errand into a forty-year wandering is the precise pattern he fears two and a half tribes are about to repeat.'),
+    ('canon','numbers',32,15, 'canon','hebrews',3,12,  'free',
+     E'*Take heed, brethren, lest there be in any of you an evil heart of unbelief, in departing from the living Elohim (God).* (Hebrews 3:12). Moses warns *if ye turn away from after him, he will yet again leave them in the wilderness; and ye shall destroy all this people* (Numbers 32:15) — and the writer to the Hebrews makes that same wilderness generation the standing warning to all who would turn back: the issue then and now is the heart of unbelief that departs from the living Elohim.'),
+    -- Thread 2: armed before their brethren until all have rest
+    ('canon','numbers',32,17, 'canon','joshua',1,14,  'free',
+     E'*Your wives, your little ones, and your cattle, shall remain in the land which Moses gave you on this side Jordan; but ye shall pass before your brethren armed, all the mighty men of valour, and help them.* (Joshua 1:14). Reuben and Gad''s pledge — *we ourselves will go ready armed before the children of Yashar''el (Israel), until we have brought them unto their place* (Numbers 32:17) — is held to the letter by Joshua a generation later: the eastern tribes cross armed at the head of the host, refusing rest while their brethren have none.'),
+    ('canon','numbers',32,18, 'canon','joshua',22,4,  'free',
+     E'*And now Yahuah Elohaychem (the LORD your God) hath given rest unto your brethren, as he promised them: therefore now return ye, and get you unto your tents, and unto the land of your possession.* (Joshua 22:4). Their vow was *we will not return unto our houses, until the children of Yashar''el (Israel) have inherited every man his inheritance* (Numbers 32:18). Only when every man''s inheritance is secured does Joshua release them home — the burden carried with the brethren until all have rest.'),
+    ('canon','numbers',32,27, 'canon','romans',15,1,  'free',
+     E'*We then that are strong ought to bear the infirmities of the weak, and not to please ourselves.* (Romans 15:1). The eastern tribes had their possession secured first, yet pledged *thy servants will pass over, every man armed for war, before Yahuah (LORD) to battle* (Numbers 32:27) — the strong going before the weak, not sitting in their own ease. The same principle Sha''ul (Paul) presses on the strong: not to please ourselves while a brother still struggles.'),
+    -- Thread 3: be sure your sin will find you out
+    ('canon','numbers',32,23, 'canon','galatians',6,7,  'free',
+     E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap.* (Galatians 6:7). Moses'' law of the broken vow — *if ye will not do so, behold, ye have sinned against Yahuah (LORD): and be sure your sin will find you out* (Numbers 32:23) — is the same harvest law: the deed sown returns to its doer; Yahuah is not mocked.'),
+    ('canon','numbers',32,23, 'canon','luke',12,2,  'free',
+     E'*For there is nothing covered, that shall not be revealed; neither hid, that shall not be known.* (Luke 12:2). The warning *be sure your sin will find you out* (Numbers 32:23) is no idle threat: nothing stays hidden. What a man thinks buried, Yahusha (Jesus) says, will be uncovered — the sin pursues the sinner until it finds him.'),
+    ('canon','numbers',32,23, 'canon','proverbs',28,13,  'free',
+     E'*He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy.* (Proverbs 28:13). Against *be sure your sin will find you out* (Numbers 32:23) the proverb sets the only escape — not concealment, which never prospers, but confession and forsaking, which finds mercy. The sin that finds you out is met by the man who first turns and lets it be found.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- C. threads
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-32-discourage-not-the-heart-repeating-the-spies-unbelief',
+       E'Discourage Not the Heart — Lest Ye Repeat the Spies'' Unbelief',
+       E'When Reuben and Gad ask to settle east of Jordan, Moses hears the echo of Kadesh-barnea and answers with alarm: *Shall your brethren go to war, and shall ye sit here? And wherefore discourage ye the heart of the children of Yashar''el (Israel) from going over into the land which Yahuah (LORD) hath given them?* (Numbers 32:6-7). He names the precedent — *Thus did your fathers, when I sent them from Kadesh-barnea to see the land* (Numbers 32:8) — when ten spies *discouraged the heart of the children of Yashar''el (Israel), that they should not go into the land* and the LORD''S anger kindled forty years of wandering (Numbers 32:9-13).\n\nThat first refusal had been met with the plain charge: *Only rebel not ye against Yahuah (LORD), neither fear ye the people of the land... and Yahuah (LORD) is with us: fear them not* (Numbers 14:9). Moses'' own retelling preserves the failure — *our brethren have discouraged our heart, saying, The people is greater and taller than we; the cities are great and walled up to heaven* (Deuteronomy 1:28). The sin was never the size of the giants; it was the heart that would not believe the One who had already given the land.\n\nMoses warns that to turn away now would *yet again leave them in the wilderness* (Numbers 32:15), and the writer to the Hebrews makes this exact generation the standing alarm to all who follow: *Take heed, brethren, lest there be in any of you an evil heart of unbelief, in departing from the living Elohim (God)* (Hebrews 3:12). The wilderness is the monument to unbelief — and the warning carries forward unbroken.',
+       sv.verse_id, ev.verse_id, 'free', 24275
+  FROM _s312_num32_lookup sv, _s312_num32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=32 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-32-armed-before-their-brethren-until-all-have-rest',
+       E'Armed Before Their Brethren — Until All Have Rest',
+       E'Reuben and Gad answer Moses'' rebuke not by withdrawing their request but by binding themselves to the whole house of Yashar''el (Israel): *we ourselves will go ready armed before the children of Yashar''el (Israel), until we have brought them unto their place... We will not return unto our houses, until the children of Yashar''el (Israel) have inherited every man his inheritance* (Numbers 32:17-18). Their inheritance is secured first, yet they will not enjoy it while their brethren still fight — *thy servants will pass over, every man armed for war, before Yahuah (LORD) to battle* (Numbers 32:27).\n\nA generation later Joshua holds them to it word for word: *ye shall pass before your brethren armed, all the mighty men of valour, and help them; until Yahuah (LORD) have given your brethren rest, as he hath given you* (Joshua 1:14-15). And when the war is won he commends them and releases them home: *Ye have not left your brethren these many days unto this day... And now Yahuah Elohaychem (the LORD your God) hath given rest unto your brethren... therefore now return ye* (Joshua 22:3-4). The vow was kept; rest for all came before rest for self.\n\nThe principle reaches forward into the body of Messiah: *We then that are strong ought to bear the infirmities of the weak, and not to please ourselves* (Romans 15:1). The tribe with its possession already in hand does not sit at ease — it takes up arms at the head of the host and carries the burden until every brother has his inheritance and his rest.',
+       sv.verse_id, ev.verse_id, 'free', 24278
+  FROM _s312_num32_lookup sv, _s312_num32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=32 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-32-be-sure-your-sin-will-find-you-out',
+       E'Be Sure Your Sin Will Find You Out',
+       E'Moses seals the agreement with a conditional that cuts both ways. If they keep the vow — *if ye will go armed before Yahuah (LORD) to war... and the land be subdued before Yahuah (LORD): then afterward ye shall return, and be guiltless before Yahuah (LORD), and before Yashar''el (Israel)* (Numbers 32:20-22). But if they break it: *behold, ye have sinned against Yahuah (LORD): and be sure your sin will find you out* (Numbers 32:23). The sin is not merely recorded against them — it hunts them down. The deed becomes the pursuer.\n\nThis is the harvest law spoken plain: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). What is sown returns to its sower; the broken vow does not vanish. And nothing stays buried — *there is nothing covered, that shall not be revealed; neither hid, that shall not be known* (Luke 12:2). The sin that finds you out is the sin that will not stay concealed.\n\nThe only escape is not better hiding but its opposite: *He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy* (Proverbs 28:13). The man who lets his sin be found — by confessing and forsaking it — is the man who finds mercy before it finds him out.',
+       sv.verse_id, ev.verse_id, 'free', 24281
+  FROM _s312_num32_lookup sv, _s312_num32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=32 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- D. thread_members
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Only rebel not ye against Yahuah (LORD), neither fear ye the people of the land... and Yahuah (LORD) is with us: fear them not* (Numbers 14:9) — the charge at Kadesh that Reuben and Gad now risk reversing.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=7
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-discourage-not-the-heart-repeating-the-spies-unbelief'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Whither shall we go up? our brethren have discouraged our heart... the cities are great and walled up to heaven* (Deuteronomy 1:28) — Moses'' retelling of the very Kadesh refusal he now invokes.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=8
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-discourage-not-the-heart-repeating-the-spies-unbelief'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Take heed, brethren, lest there be in any of you an evil heart of unbelief, in departing from the living Elohim (God)* (Hebrews 3:12) — the wilderness generation made the standing warning forward.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=15
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-discourage-not-the-heart-repeating-the-spies-unbelief'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye shall pass before your brethren armed, all the mighty men of valour, and help them* (Joshua 1:14) — Joshua holds the eastern tribes to their pledge to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=17
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-armed-before-their-brethren-until-all-have-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah Elohaychem (the LORD your God) hath given rest unto your brethren... therefore now return ye* (Joshua 22:4) — only when every inheritance is secured are they released home.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=18
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=22 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-armed-before-their-brethren-until-all-have-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*We then that are strong ought to bear the infirmities of the weak, and not to please ourselves* (Romans 15:1) — the not-resting-while-brethren-fight principle carried into the body of Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=27
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-armed-before-their-brethren-until-all-have-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*whatsoever a man soweth, that shall he also reap* (Galatians 6:7) — the harvest law beneath *be sure your sin will find you out*; Elohim is not mocked.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=23
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-be-sure-your-sin-will-find-you-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there is nothing covered, that shall not be revealed; neither hid, that shall not be known* (Luke 12:2) — the sin that will not stay concealed; it finds the sinner out.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=23
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-be-sure-your-sin-will-find-you-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy* (Proverbs 28:13) — the only escape: not concealment but confession and forsaking.'
+  FROM cross_reference_threads t
+  JOIN _s312_num32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=32 AND sv.verse_number=23
+  JOIN _s312_num32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=28 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-32-be-sure-your-sin-will-find-you-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_33.sql (Numbers 33) -----
+-- Book: numbers | Chapter: 33 | Tag: num33 | Prefix: s312
+-- Sort band: base 24300 step 3 -> 24300, 24303, 24306, 24309
+-- View: _s312_num33_lookup
+--
+-- FRAME: The journeys of Yashar'el (Israel). Moses WROTE their goings out by the
+-- commandment of Yahuah — the redeemed people's pilgrimage is Yahuah's own
+-- travel-record, the right way by which he led them forth. The chapter opens
+-- with the going out of Egypt with an high hand the morrow after the passover,
+-- while Egypt buried its firstborn and Yahuah executed judgments upon their gods.
+-- It closes in the plains of Moab with the command to DRIVE OUT the inhabitants,
+-- destroy their idols and high places, and divide the land by lot — and the
+-- solemn warning that whatever is LET REMAIN becomes pricks in the eyes and
+-- thorns in the sides: the half-obedience that becomes a snare, fulfilled in
+-- Judges and recalled by Joshua. Victims, not enemies: the idol-system and its
+-- high places are dismantled, never a people hated; the danger is the unfinished
+-- obedience that lets the snare back in.
+--
+-- THREADS (4):
+--   1. numbers-33-the-recorded-pilgrimage (33:1-2) — Moses wrote their goings
+--      out by the commandment of Yahuah -> lateral Exodus 17:14 write-for-a-
+--      memorial (free), Psalm 107:7 he led them forth by the right way (free). [free]
+--   2. numbers-33-out-of-egypt-with-an-high-hand (33:3-4) — the morrow after the
+--      passover, Egypt burying its firstborn, judgment on their gods -> lateral
+--      Exodus 12:12 (free), Exodus 14:8 (free). [free]
+--   3. numbers-33-drive-out-the-inhabitants (33:50-54) — drive out, destroy the
+--      idols and high places, divide the land by lot -> lateral Deuteronomy 7:2
+--      (free), Deuteronomy 7:5 (free), Exodus 34:13 (free). [free]
+--   4. numbers-33-pricks-and-thorns (33:55-56) — what is let remain becomes
+--      pricks in the eyes and thorns in the sides; I shall do unto you as I
+--      thought to do unto them -> forward Judges 2:3 (free), Joshua 23:13 (free),
+--      lateral Judges 1:27 (free). [free]
+--
+-- Numbers 33 coverage:
+--   v.1-2 (Moses wrote the journeys by the commandment of Yahuah):
+--        NT:     none warranted (the remembered-journey weight carried lateral)
+--        Extras: Jubilees/Jasher itinerary parallels weighed — apparatus-noisy /
+--                redundant; none warranted as a clean member
+--        Tanakh: Exodus 17:14 (write for a memorial), Psalm 107:7 (led forth by
+--                the right way) -> thread 1
+--   v.3-4 (out with an high hand the morrow after passover; judgment on the gods):
+--        NT:     none warranted (Exodus-deliverance kept in the Torah witnesses)
+--        Extras: none warranted
+--        Tanakh: Exodus 12:12 (smite firstborn, judgment on the gods of Egypt),
+--                Exodus 14:8 (went out with an high hand) -> thread 2
+--   v.5-49 (the station-list itinerary; Aaron's death 33:38-39): framed in thread 1;
+--        NT: none warranted  Extras: none warranted  Tanakh: none warranted as add
+--   v.50-54 (drive out, destroy idols/high places, divide by lot):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 7:2 (make no covenant, utterly destroy), Deuteronomy
+--                7:5 (destroy altars, break images, cut down groves), Exodus 34:13
+--                (destroy their altars, break their images) -> thread 3
+--   v.55-56 (pricks and thorns; I shall do unto you as I thought to do unto them):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Judges 2:3 (thorns in your sides, their gods a snare), Joshua
+--                23:13 (snares, traps, scourges, thorns), Judges 1:27 (Manasseh
+--                did not drive out) -> thread 4
+
+-- ===== A. Temp view =====
+CREATE TEMP VIEW _s312_num33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references INSERT =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the recorded pilgrimage (33:1-2)
+    ('canon','numbers',33,2,'canon','exodus',17,14,'free',
+      E'*And Yahuah (LORD) said unto Moses, Write this for a memorial in a book, and rehearse it in the ears of Joshua: for I will utterly put out the remembrance of Amalek from under heaven* (Exodus 17:14). The same hand that was told to *Write this for a memorial in a book* now sets down the whole pilgrimage — *And Moses wrote their goings out according to their journeys by the commandment of Yahuah (LORD)* (Numbers 33:2). The journey of the redeemed is not left to memory but commanded into writing; Yahuah keeps his own travel-record of the people he led, that the remembrance be never lost.'),
+    ('canon','numbers',33,2,'canon','psalms',107,7,'free',
+      E'*And he led them forth by the right way, that they might go to a city of habitation* (Psalm 107:7). The Psalm sings back over the station-list of Numbers 33 — every removing and pitching was Yahuah leading them *forth by the right way*. What Moses wrote down *by the commandment of Yahuah (LORD)* (Numbers 33:2), the worshipper later reads as the testimony of a faithful Shepherd guiding the redeemed step by step toward the place of habitation.'),
+    -- Thread 2: out of Egypt with an high hand (33:3-4)
+    ('canon','numbers',33,4,'canon','exodus',12,12,'free',
+      E'*For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12). Numbers recalls the night it was done — *the Egyptians buried all their firstborn, which Yahuah (LORD) had smitten among them: upon their gods also Yahuah (LORD) executed judgments* (Numbers 33:4). The threat of the passover night is the very judgment Numbers looks back on; the going out is framed not as escape but as Yahuah''s verdict carried out, *I am Yahuah (LORD)*, against Egypt and every god of Egypt.'),
+    ('canon','numbers',33,3,'canon','exodus',14,8,'free',
+      E'*And Yahuah (LORD) hardened the heart of Pharaoh king of Egypt, and he pursued after the children of Yashar''el (Israel): and the children of Yashar''el (Israel) went out with an high hand* (Exodus 14:8). The phrase Numbers stamps on the departure — *the children of Yashar''el (Israel) went out with an high hand in the sight of all the Egyptians* (Numbers 33:3) — is the very phrase of the sea-account. Not slaves slinking away but a delivered nation marching out in open triumph, *in the sight of all the Egyptians*, the high hand of Yahuah over them.'),
+    -- Thread 3: drive out the inhabitants (33:50-54)
+    ('canon','numbers',33,52,'canon','deuteronomy',7,2,'free',
+      E'*And when Yahuah Elohayka (the LORD thy God) shall deliver them before thee; thou shalt smite them, and utterly destroy them; thou shalt make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2). The command in the plains of Moab — *ye shall drive out all the inhabitants of the land from before you* (Numbers 33:52) — is the same charge Deuteronomy presses: *make no covenant with them*. The danger is the league, the treaty that leaves the idol-system standing; the dismantling is total because half-measures invite the snare back.'),
+    ('canon','numbers',33,52,'canon','deuteronomy',7,5,'free',
+      E'*But thus shall ye deal with them; ye shall destroy their altars, and break down their images, and cut down their groves, and burn their graven images with fire* (Deuteronomy 7:5). Numbers names the same demolition — *destroy all their pictures, and destroy all their molten images, and quite pluck down all their high places* (Numbers 33:52). It is the apparatus of false worship that must fall: altars, images, groves, high places. The war is on the idol-system, never on a people for their blood; the molten images and high places are pulled down so they cannot draw the redeemed away.'),
+    ('canon','numbers',33,52,'canon','exodus',34,13,'free',
+      E'*But ye shall destroy their altars, break their images, and cut down their groves* (Exodus 34:13). The charge given at Sinai is repeated here at the threshold of the land — *destroy all their pictures, and destroy all their molten images, and quite pluck down all their high places* (Numbers 33:52). The same three blows fall: altars, images, groves. From the mountain to the plains of Moab the instruction has not changed; the high places of the land must be plucked down lest Yashar''el (Israel) be ensnared.')
+    ,
+    -- Thread 4: pricks and thorns (33:55-56)
+    ('canon','numbers',33,55,'canon','judges',2,3,'free',
+      E'*Wherefore I also said, I will not drive them out from before you; but they shall be as thorns in your sides, and their gods shall be a snare unto you* (Judges 2:3). The warning of Numbers comes true word for word — *those which ye let remain of them shall be pricks in your eyes, and thorns in your sides, and shall vex you in the land* (Numbers 33:55). The Angel of Yahuah pronounces the consequence of the unfinished obedience at Bochim: what was let remain is now *thorns in your sides*, and *their gods* the very *snare* the command was meant to prevent.'),
+    ('canon','numbers',33,55,'canon','joshua',23,13,'free',
+      E'*Know for a certainty that Yahuah Elohaychem (the LORD your God) will no more drive out any of these nations from before you; but they shall be snares and traps unto you, and scourges in your sides, and thorns in your eyes, until ye perish from off this good land* (Joshua 23:13). Joshua''s farewell echoes the threat of Numbers 33:55 with its own piling of images — *snares and traps... scourges in your sides, and thorns in your eyes*. The remnant let remain is no neutral thing; cleave to it and it becomes the instrument of perishing *from off this good land which Yahuah Elohaychem (the LORD your God) hath given you*.'),
+    ('canon','numbers',33,55,'canon','judges',1,27,'free',
+      E'*Neither did Manasseh drive out the inhabitants of Beth-shean and her towns, nor Taanach and her towns... but the Canaanites would dwell in that land* (Judges 1:27). Here is the half-obedience itself, tribe by tribe — Manasseh, like Ephraim and the rest, *did not utterly drive them out*. This is the *let remain* of Numbers 33:55 enacted; what the command forbade, the next generation did, and the thorns and snare followed exactly as warned.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads INSERT =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-33-the-recorded-pilgrimage',
+       E'The Recorded Pilgrimage',
+       E'*These are the journeys of the children of Yashar''el (Israel), which went forth out of the land of Egypt with their armies under the hand of Moses and Aaron. And Moses wrote their goings out according to their journeys by the commandment of Yahuah (LORD): and these are their journeys according to their goings out* (Numbers 33:1-2). The chapter is a travel-record, station by station — *they removed... and pitched...* — but the second verse lifts it out of mere geography: the itinerary was set down *by the commandment of Yahuah (LORD)*. The same hand had been told once before, *Write this for a memorial in a book, and rehearse it in the ears of Joshua* (Exodus 17:14); now the whole pilgrimage of the redeemed is commanded into writing, that the remembrance be never lost. And the Psalm reads it back as testimony — *he led them forth by the right way, that they might go to a city of habitation* (Psalm 107:7). Every removing and pitching, even the wanderings, was Yahuah leading; the journey of the delivered people is his own kept record of a faithful Shepherd guiding them step by step toward the place of rest.',
+       sv.verse_id, ev.verse_id, 'free', 24300
+  FROM _s312_num33_lookup sv, _s312_num33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=33 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-33-out-of-egypt-with-an-high-hand',
+       E'Out of Egypt With an High Hand',
+       E'*And they departed from Rameses in the first month, on the fifteenth day of the first month; on the morrow after the passover the children of Yashar''el (Israel) went out with an high hand in the sight of all the Egyptians. For the Egyptians buried all their firstborn, which Yahuah (LORD) had smitten among them: upon their gods also Yahuah (LORD) executed judgments* (Numbers 33:3-4). The going out is dated to the morrow after the passover and stamped with two phrases that carry the whole Exodus. The first is *with an high hand* — the very words of the sea-account, *the children of Yashar''el (Israel) went out with an high hand* (Exodus 14:8): not slaves slinking away but a delivered nation marching out in open triumph in the sight of all Egypt. The second is the judgment on the gods — *upon their gods also Yahuah (LORD) executed judgments* — the fulfillment of the passover-night verdict, *against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12). While Egypt buried its firstborn, Yahuah was vindicating his Name against every false god; the deliverance is at once redemption for Yashar''el (Israel) and judgment on the powers that held them.',
+       sv.verse_id, ev.verse_id, 'free', 24303
+  FROM _s312_num33_lookup sv, _s312_num33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=33 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-33-drive-out-the-inhabitants',
+       E'Drive Out the Inhabitants',
+       E'*When ye are passed over Jordan into the land of Canaan; Then ye shall drive out all the inhabitants of the land from before you, and destroy all their pictures, and destroy all their molten images, and quite pluck down all their high places: And ye shall dispossess the inhabitants of the land, and dwell therein: for I have given you the land to possess it* (Numbers 33:51-53). On the threshold of the land the command is total — drive out, destroy the images, pluck down the high places, then divide the land *by lot for an inheritance among your families* (Numbers 33:54). The charge is the same Yahuah pressed from Sinai and through Deuteronomy: *make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2), for *ye shall destroy their altars, and break down their images, and cut down their groves, and burn their graven images with fire* (Deuteronomy 7:5) — the very words of Sinai, *ye shall destroy their altars, break their images, and cut down their groves* (Exodus 34:13). The war is on the idol-system, never on a people for their blood: altars, molten images, groves, high places — the whole apparatus that would draw the redeemed away — must fall, and the land received by lot as the gift of Yahuah, every family in its appointed place according to the tribes of the fathers.',
+       sv.verse_id, ev.verse_id, 'free', 24306
+  FROM _s312_num33_lookup sv, _s312_num33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=50
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=33 AND ev.verse_number=54
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-33-pricks-and-thorns',
+       E'Pricks in Your Eyes and Thorns in Your Sides',
+       E'*But if ye will not drive out the inhabitants of the land from before you; then it shall come to pass, that those which ye let remain of them shall be pricks in your eyes, and thorns in your sides, and shall vex you in the land wherein ye dwell. Moreover it shall come to pass, that I shall do unto you, as I thought to do unto them* (Numbers 33:55-56). The command came with its warning attached: half-obedience does not leave the land half-clean, it plants a snare. What is *let remain* becomes *pricks in your eyes, and thorns in your sides* — and the judgment Yahuah purposed against the idol-system would fall on Yashar''el (Israel) instead. The history proves it word for word. The next generation *did not utterly drive them out* — *Neither did Manasseh drive out the inhabitants of Beth-shean and her towns... but the Canaanites would dwell in that land* (Judges 1:27). So the Angel of Yahuah pronounced the consequence at Bochim: *they shall be as thorns in your sides, and their gods shall be a snare unto you* (Judges 2:3). And Joshua''s farewell sealed it — cleave to the remnant let remain and *they shall be snares and traps unto you, and scourges in your sides, and thorns in your eyes, until ye perish from off this good land which Yahuah Elohaychem (the LORD your God) hath given you* (Joshua 23:13). The lesson is the cost of incomplete obedience: the unfinished work does not stay neutral; it becomes the very thorn and snare the command was meant to spare them.',
+       sv.verse_id, ev.verse_id, 'free', 24309
+  FROM _s312_num33_lookup sv, _s312_num33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=55
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=33 AND ev.verse_number=56
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members INSERT (SAFE VERBOSE — one INSERT per member) =====
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Write this for a memorial in a book, and rehearse it in the ears of Joshua* (Exodus 17:14) — the same Moses, commanded to write, sets down the whole pilgrimage.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-the-recorded-pilgrimage'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He led them forth by the right way, that they might go to a city of habitation* (Psalm 107:7) — the Psalm reads the station-list back as the Shepherd''s faithful leading.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=107 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-the-recorded-pilgrimage'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12) — the passover-night verdict Numbers looks back on as done.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=4
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-out-of-egypt-with-an-high-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The children of Yashar''el (Israel) went out with an high hand* (Exodus 14:8) — the very phrase of the sea-account stamped on the departure.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=3
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-out-of-egypt-with-an-high-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt make no covenant with them, nor shew mercy unto them* (Deuteronomy 7:2) — the same charge: no league that leaves the idol-system standing.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=52
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-drive-out-the-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye shall destroy their altars, and break down their images, and cut down their groves, and burn their graven images with fire* (Deuteronomy 7:5) — the apparatus of false worship to be demolished.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=52
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-drive-out-the-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Ye shall destroy their altars, break their images, and cut down their groves* (Exodus 34:13) — the Sinai charge repeated at the threshold of the land.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=52
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-drive-out-the-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*They shall be as thorns in your sides, and their gods shall be a snare unto you* (Judges 2:3) — the Angel of Yahuah at Bochim: the warning come true word for word.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=55
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-pricks-and-thorns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Snares and traps unto you, and scourges in your sides, and thorns in your eyes, until ye perish from off this good land* (Joshua 23:13) — Joshua''s farewell seals the same threat.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=55
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-pricks-and-thorns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Neither did Manasseh drive out the inhabitants of Beth-shean and her towns... but the Canaanites would dwell in that land* (Judges 1:27) — the half-obedience itself, the *let remain* enacted.'
+  FROM cross_reference_threads t
+  JOIN _s312_num33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=33 AND sv.verse_number=55
+  JOIN _s312_num33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-33-pricks-and-thorns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_34.sql (Numbers 34) -----
+-- Book: Numbers  Chapter: 34  (the borders of the land; the inheritance by lot; the dividers named)
+-- Tag: num34   Prefix: s312   Band base: 24325 step 3  (24325, 24328, 24331)
+-- View: _s312_num34_lookup
+--
+-- Numbers 34 coverage:
+--   v.1-12 (the borders of Canaan "with the coasts thereof"):
+--        NT:     Acts 17:26 (he hath determined the times before appointed, and the bounds of their habitation) — APPOINTED-BORDERS forward
+--        Extras: none warranted (a survey of geographic bounds; no extra-canonical witness adds framework weight)
+--        Tanakh: Genesis 15:18 (Unto thy seed have I given this land, from the river of Egypt unto the great river) — the promise-grant LATERAL;
+--                Joshua 1:4 (the going-down-of-the-sun... shall be your coast) — the entering-in LATERAL;
+--                Ezekiel 47:13-20 (the future borders of the restored land, twelve tribes, Joseph two portions) — RESTORATION forward-Tanakh
+--   v.13-15 (the inheritance by lot to nine-and-a-half tribes; Reuben/Gad/half-Manasseh already east of Jordan):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Numbers 32 (the two-and-a-half tribes' request and grant east of Jordan) — the back-reference LATERAL
+--   v.16-29 (the men NAMED to divide the inheritance: Eleazar, Joshua, one prince per tribe):
+--        NT:     none warranted (an appointment-list)
+--        Extras: none warranted
+--        Tanakh: Joshua 14:1 (Eleazar the priest, and Joshua the son of Nun... distributed for inheritance);
+--                Joshua 19:51 (these are the inheritances which Eleazar... and Joshua... divided by lot in Shiloh) — the COMMISSION FULFILLED LATERAL
+--
+-- Threads (3):
+--   numbers-34-the-borders-of-the-land-with-the-coasts-thereof      [free]  Tanakh(Gen,Josh,Ezek)+NT(Acts)
+--   numbers-34-the-inheritance-by-lot-to-the-nine-and-a-half-tribes [free]  Tanakh(Num32)
+--   numbers-34-the-men-named-to-divide-the-inheritance              [free]  Tanakh(Josh14,Josh19)
+--
+-- Framework framing: the appointed, bounded inheritance is the seed-promise to Abraham made surveyable (Gen 15:18);
+-- the LORD who fixes the borders of Canaan is the same who fixed the bounds of every nation's habitation (Acts 17:26);
+-- and the restored land of Ezekiel 47 re-draws those very borders for the twelve tribes regathered (two-house), Joseph two portions.
+
+CREATE TEMP VIEW _s312_num34_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the borders of the land
+    ('canon','numbers',34,2,'canon','genesis',15,18,'free',
+     E'*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). The land that *shall fall unto you for an inheritance, even the land of Canaan with the coasts thereof* (Numbers 34:2) is not new territory — it is the very grant cut to Abram''s seed by covenant. Numbers 34 simply surveys the borders of what was already given.'),
+    ('canon','numbers',34,6,'canon','joshua',1,4,'free',
+     E'*From the wilderness and this Lebanon even unto the great river, the river Euphrates, all the land of the Hittites, and unto the great sea toward the going down of the sun, shall be your coast* (Joshua 1:4). The *western border* that Numbers names — *ye shall even have the great sea for a border* (Numbers 34:6) — is the same coast Yahuah re-confirms to Joshua at the entering-in. The appointed border becomes the inherited border.'),
+    ('canon','numbers',34,12,'canon','ezekiel',47,13,'free',
+     E'*Thus saith Adonai Yahuah (the Lord GOD); This shall be the border, whereby ye shall inherit the land according to the twelve tribes of Yashar''el (Israel): Joseph shall have two portions* (Ezekiel 47:13). The borders surveyed *with the coasts thereof round about* (Numbers 34:12) are re-drawn by the prophet for the restored land — the twelve tribes regathered, Joseph (the northern house) given a double portion. The same appointed inheritance, re-bounded for the two-house ingathering.'),
+    ('canon','numbers',34,2,'canon','acts',17,26,'free',
+     E'*And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). The Yahuah who fixes Yashar''el''s borders — *the land of Canaan with the coasts thereof* (Numbers 34:2) — is the same who appoints the bounds of every nation''s habitation. The borders of the inheritance are not accident of conquest but the decree of the One who portions the earth.'),
+    -- Thread 2: the inheritance by lot to nine-and-a-half tribes
+    ('canon','numbers',34,14,'canon','numbers',32,33,'free',
+     E'*And Moses gave unto them, even to the children of Gad, and to the children of Reuben, and unto half the tribe of Manasseh the son of Joseph, the kingdom of Sihon king of the Amorites, and the kingdom of Og king of Bashan* (Numbers 32:33). When Numbers 34 reckons that *the tribe of the children of Reuben... and the tribe of the children of Gad... and half the tribe of Manasseh have received their inheritance* (Numbers 34:14) east of Jordan, it points back to this grant — the two-and-a-half tribes already settled, so the borders of Canaan fall by lot to the nine-and-a-half.'),
+    -- Thread 3: the men named to divide the inheritance
+    ('canon','numbers',34,17,'canon','joshua',14,1,'free',
+     E'*And these are the countries which the children of Yashar''el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar''el (Israel), distributed for inheritance to them* (Joshua 14:1). The very men appointed in Numbers — *Eleazar the priest, and Joshua the son of Nun* (Numbers 34:17) — are the men who carry out the division. The commission named here is the commission fulfilled there.'),
+    ('canon','numbers',34,29,'canon','joshua',19,51,'free',
+     E'*These are the inheritances, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar''el (Israel), divided for an inheritance by lot in Shiloh before Yahuah (LORD), at the door of the tabernacle of the congregation. So they made an end of dividing the country* (Joshua 19:51). They whom *Yahuah (LORD) commanded to divide the inheritance unto the children of Yashar''el (Israel) in the land of Canaan* (Numbers 34:29) finish the work at Shiloh — the appointed stewards complete the appointed division.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num34_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num34_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-34-the-borders-of-the-land-with-the-coasts-thereof',
+       E'The Borders of the Land, With the Coasts Thereof',
+       E'*When ye come into the land of Canaan; (this is the land that shall fall unto you for an inheritance, even the land of Canaan with the coasts thereof:)* (Numbers 34:2). The chapter walks the four borders — south from the wilderness of Zin to Kadesh-barnea and the river of Egypt (34:3-5), *the great sea* for the *west border* (34:6), the north from the great sea to the entrance of Hamath (34:7-9), and the east down to Jordan and *the salt sea* (34:10-12). This bounded inheritance is no new gift: *Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18) — the borders surveyed here are the promise cut to Abram''s seed made surveyable. At the entering-in Yahuah re-confirms the same west coast to Joshua: *unto the great sea toward the going down of the sun, shall be your coast* (Joshua 1:4). And the One who fixes these borders is the One who *hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26) — the borders of the inheritance are the decree of the One who portions the whole earth. The prophet then re-draws these very borders for the restored land: *This shall be the border, whereby ye shall inherit the land according to the twelve tribes of Yashar''el (Israel): Joseph shall have two portions* (Ezekiel 47:13) — the twelve tribes regathered, the northern house (Joseph) given a double portion, the same appointed inheritance re-bounded for the two-house ingathering.',
+       sv.verse_id, ev.verse_id, 'free', 24325
+  FROM _s312_num34_lookup sv, _s312_num34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=34 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-34-the-inheritance-by-lot-to-the-nine-and-a-half-tribes',
+       E'The Inheritance by Lot to the Nine-and-a-Half Tribes',
+       E'*This is the land which ye shall inherit by lot, which Yahuah (LORD) commanded to give unto the nine tribes, and to the half tribe* (Numbers 34:13). The bounded land of Canaan falls to nine-and-a-half tribes only, *for the tribe of the children of Reuben... and the tribe of the children of Gad... and half the tribe of Manasseh have received their inheritance... on this side Jordan near Jericho eastward, toward the sunrising* (Numbers 34:14-15). This reckoning points back to the grant Moses made when the cattle-rich tribes asked for the trans-Jordan land: *And Moses gave unto them, even to the children of Gad, and to the children of Reuben, and unto half the tribe of Manasseh the son of Joseph, the kingdom of Sihon king of the Amorites, and the kingdom of Og king of Bashan* (Numbers 32:33). Their portion settled east of Jordan, the borders of Canaan are divided by lot among the rest.',
+       sv.verse_id, ev.verse_id, 'free', 24328
+  FROM _s312_num34_lookup sv, _s312_num34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=34 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-34-the-men-named-to-divide-the-inheritance',
+       E'The Men Named to Divide the Inheritance',
+       E'*These are the names of the men which shall divide the land unto you: Eleazar the priest, and Joshua the son of Nun* (Numbers 34:17), with *one prince of every tribe, to divide the land by inheritance* (Numbers 34:18) — Caleb for Yahudah (Judah), and a prince named for Simeon, Benjamin, Dan, Manasseh, Ephraim, Zebulun, Issachar, Asher, and Naphtali (34:19-28). *These are they whom Yahuah (LORD) commanded to divide the inheritance unto the children of Yashar''el (Israel) in the land of Canaan* (Numbers 34:29). The appointment is no idle list — it is fulfilled in Joshua: *these are the countries which the children of Yashar''el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes... distributed for inheritance to them* (Joshua 14:1). And the work is finished at Shiloh by the same hands: *These are the inheritances, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes... divided for an inheritance by lot in Shiloh before Yahuah (LORD)... So they made an end of dividing the country* (Joshua 19:51). The stewards named here are the stewards who complete the division.',
+       sv.verse_id, ev.verse_id, 'free', 24331
+  FROM _s312_num34_lookup sv, _s312_num34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=34 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18) — the bounded inheritance of Numbers 34 is the covenant-grant to Abram''s seed made surveyable.'
+  FROM cross_reference_threads t
+  JOIN _s312_num34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=2
+  JOIN _s312_num34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-34-the-borders-of-the-land-with-the-coasts-thereof'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*unto the great sea toward the going down of the sun, shall be your coast* (Joshua 1:4) — the west border Numbers names is the coast Yahuah re-confirms to Joshua at the entering-in.'
+  FROM cross_reference_threads t
+  JOIN _s312_num34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s312_num34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-34-the-borders-of-the-land-with-the-coasts-thereof'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*This shall be the border... according to the twelve tribes of Yashar''el (Israel): Joseph shall have two portions* (Ezekiel 47:13) — the borders re-drawn for the restored land, the two-house ingathering, Joseph given a double portion.'
+  FROM cross_reference_threads t
+  JOIN _s312_num34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=12
+  JOIN _s312_num34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-34-the-borders-of-the-land-with-the-coasts-thereof'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26) — the Yahuah who fixes Yashar''el''s borders fixes the bounds of every nation; the inheritance is His decree, not the chance of conquest.'
+  FROM cross_reference_threads t
+  JOIN _s312_num34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=2
+  JOIN _s312_num34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-34-the-borders-of-the-land-with-the-coasts-thereof'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And Moses gave unto them, even to the children of Gad, and to the children of Reuben, and unto half the tribe of Manasseh... the kingdom of Sihon... and the kingdom of Og* (Numbers 32:33) — the back-reference for why nine-and-a-half tribes, not twelve, divide Canaan by lot.'
+  FROM cross_reference_threads t
+  JOIN _s312_num34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=14
+  JOIN _s312_num34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=32 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-34-the-inheritance-by-lot-to-the-nine-and-a-half-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes... distributed for inheritance to them* (Joshua 14:1) — the men appointed in Numbers 34 are the men who carry out the division.'
+  FROM cross_reference_threads t
+  JOIN _s312_num34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=17
+  JOIN _s312_num34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-34-the-men-named-to-divide-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*These are the inheritances, which Eleazar the priest, and Joshua the son of Nun... divided for an inheritance by lot in Shiloh... So they made an end of dividing the country* (Joshua 19:51) — the commission named here, finished at Shiloh by the same hands.'
+  FROM cross_reference_threads t
+  JOIN _s312_num34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=34 AND sv.verse_number=29
+  JOIN _s312_num34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=19 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-34-the-men-named-to-divide-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_35.sql (Numbers 35) -----
+-- Chapter: Numbers 35 — the forty-eight Levite cities + the six cities of refuge
+-- Tag: num35   Session prefix: s312   View: _s312_num35_lookup
+-- Sort band: base 24350, step 3 (24350, 24353, 24356, 24359, 24362)
+--
+-- Numbers 35 coverage:
+--   v.1-8  (the 48 Levite cities, no land-block, scattered among the tribes)
+--          NT:     none warranted (Levite-allotment is Tanakh-internal; priesthood-fulfillment carried elsewhere)
+--          Extras: none warranted
+--          Tanakh: Joshua 21:41 (the 48 cities actually given); Genesis 49:7 (divided/scattered — curse turned to priestly portion)
+--   v.9-15 (the six cities of refuge for the manslayer, until he stand in judgment; for Israel, stranger, sojourner)
+--          NT:     Hebrews 6:18 (fled for refuge to lay hold upon the hope set before us)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 19:1-10 (use 19:2 — separate three cities); Joshua 20:1-9 (use 20:2 — appoint cities of refuge)
+--   v.16-30 (murder w/ hatred/lying-in-wait → death by the revenger; vs unawares → refuge; at the mouth of witnesses, not one)
+--          NT:     none warranted (witness-rule carried forward via Deut citations elsewhere)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 17:6 (two or three witnesses, not one); Genesis 9:6 (whoso sheddeth man's blood)
+--   v.25,28 (the manslayer abides until the DEATH OF THE HIGH PRIEST; after his death the slayer returns/is freed)
+--          NT:     Hebrews 9:15 (mediator of the new covenant by means of death); Hebrews 9:16 (death of the testator); Romans 6:9 (raised, dieth no more)
+--          Extras: none warranted
+--          Tanakh: none warranted (the type itself is the source)
+--   v.33-34 (blood defiles the land; cannot be cleansed but by the blood of him that shed it; for I Yahuah dwell among Israel)
+--          NT:     Hebrews 9:22 (without shedding of blood is no remission); Matthew 23:35 (all the righteous blood... from Abel)
+--          Extras: none warranted
+--          Tanakh: Genesis 4:10 (the voice of thy brother's blood crieth from the ground); Genesis 4:11 (cursed from the earth); Genesis 9:6 (image of Elohim); Deuteronomy 21:8 (lay not innocent blood — the land cleansed)
+--
+-- Threads (5):
+--   numbers-35-the-forty-eight-levite-cities            (free)  Tanakh: Joshua 21:41, Genesis 49:7
+--   numbers-35-the-six-cities-of-refuge                 (free)  NT: Hebrews 6:18 | Tanakh: Deuteronomy 19:2, Joshua 20:2
+--   numbers-35-murder-and-the-mouth-of-witnesses        (free)  Tanakh: Deuteronomy 17:6, Genesis 9:6
+--   numbers-35-until-the-death-of-the-high-priest       (free)  NT: Hebrews 9:15, Hebrews 9:16, Romans 6:9
+--   numbers-35-blood-defiles-the-land                   (free)  NT: Hebrews 9:22, Matthew 23:35 | Tanakh: Genesis 4:10, Genesis 4:11, Genesis 9:6, Deuteronomy 21:8
+--
+-- Framework-load-bearing notes:
+--   * Gen 49:7 — Levi's scattering is a CURSE in Jacob's mouth turned to priestly portion: the tribe with no land-block
+--     becomes the tribe present in every tribe's cities — the curse of dispersion redeemed into service among all Yashar'el.
+--   * The death of the high priest that FREES the manslayer (35:25,28) is read forward as the death of the Mediator/testator
+--     (Heb 9:15-16) and the death that releases (Rom 6:9) — type, not allegory; the source verse carries it.
+--   * 35:33-34 blood-defiles-the-land is the floor under Heb 9:22 (no remission without blood) and Matt 23:35 (Abel's blood);
+--     grounded back in Gen 4:10-11 (blood crying from the ground) and Gen 9:6 (image of Elohim) — Torah affirmed, not abolished.
+
+CREATE TEMP VIEW _s312_num35_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the forty-eight Levite cities (35:1-8)
+    ('canon','numbers',35,7,'canon','joshua',21,41,'free',
+      E'*All the cities of the Levites within the possession of the children of Yashar''el (Israel) were forty and eight cities with their suburbs.* (Joshua 21:41) What Yahuah commands here — *So all the cities which ye shall give to the Levites shall be forty and eight cities; them shall ye give with their suburbs* (Numbers 35:7) — Joshua records done: the forty-eight cities scattered among the tribes, the priestly tribe present in every inheritance, holding no land-block of its own.'),
+    ('canon','numbers',35,8,'canon','genesis',49,7,'free',
+      E'*Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* (Genesis 49:7) Jacob''s word over Levi was a curse of dispersion — yet here it is turned to blessing: *every one shall give of his cities unto the Levites according to his inheritance which he inheriteth* (Numbers 35:8). The tribe with no land-portion becomes the tribe dwelling in every tribe''s cities; the scattering becomes priestly presence among all Yashar''el (Israel).'),
+
+    -- Thread 2: the six cities of refuge (35:9-15)
+    ('canon','numbers',35,12,'canon','hebrews',6,18,'free',
+      E'*That by two immutable things, in which it was impossible for Elohim (God) to lie, we might have a strong consolation, who have fled for refuge to lay hold upon the hope set before us:* (Hebrews 6:18) The manslayer who *die not, until he stand before the congregation in judgment* (Numbers 35:12) flees to the appointed city; the writer to the Hebrews reads our hope through that very picture — those who *have fled for refuge* to lay hold of the promise sworn by oath. The city of refuge is the type; the hope set before us is the fulfilment.'),
+    ('canon','numbers',35,11,'canon','deuteronomy',19,2,'free',
+      E'*Thou shalt separate three cities for thee in the midst of thy land, which Yahuah Elohayka (the LORD thy God) giveth thee to possess it.* (Deuteronomy 19:2) The statute commanded in the plains of Moab — *ye shall appoint you cities to be cities of refuge for you; that the slayer may flee thither, which killeth any person at unawares* (Numbers 35:11) — Moses repeats and presses home before the crossing: the same merciful provision, the slayer who hated not in time past given a place to live.'),
+    ('canon','numbers',35,15,'canon','joshua',20,2,'free',
+      E'*Speak to the children of Yashar''el (Israel), saying, Appoint out for you cities of refuge, whereof I spake unto you by the hand of Moses:* (Joshua 20:2) The refuge commanded here — *These six cities shall be a refuge, both for the children of Yashar''el (Israel), and for the stranger, and for the sojourner among them* (Numbers 35:15) — Joshua executes in the land, naming Kedesh, Shechem, Hebron, Bezer, Ramoth, and Golan: refuge for the covenant people and the sojourner alike, the word by the hand of Moses now planted in the cities.'),
+
+    -- Thread 3: murder and the mouth of witnesses (35:16-30)
+    ('canon','numbers',35,30,'canon','deuteronomy',17,6,'free',
+      E'*At the mouth of two witnesses, or three witnesses, shall he that is worthy of death be put to death; but at the mouth of one witness he shall not be put to death.* (Deuteronomy 17:6) The capital safeguard set here — *Whoso killeth any person, the murderer shall be put to death by the mouth of witnesses: but one witness shall not testify against any person to cause him to die* (Numbers 35:30) — is the same Torah evidentiary rule Deuteronomy fixes for every death sentence: never one accuser, the life of a man guarded behind two or three witnesses.'),
+    ('canon','numbers',35,16,'canon','genesis',9,6,'free',
+      E'*Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* (Genesis 9:6) The verdict on the murderer — *he is a murderer: the murderer shall surely be put to death* (Numbers 35:16) — stands on the oldest covenant ground, the law given to Noah after the flood: deliberate bloodshed answers with the life of the shedder, because the man slain was made in the image of Elohim (God).'),
+
+    -- Thread 4: until the death of the high priest (35:25,28)
+    ('canon','numbers',35,25,'canon','hebrews',9,15,'free',
+      E'*And for this cause he is the mediator of the new testament, that by means of death, for the redemption of the transgressions that were under the first testament, they which are called might receive the promise of eternal inheritance.* (Hebrews 9:15) The slayer *shall abide in it unto the death of the high priest, which was anointed with the holy oil* (Numbers 35:25): it is the high priest''s death that liberates. The writer to the Hebrews carries the type forward — the Mediator''s death is *the cause* by which the called receive their inheritance and return home free.'),
+    ('canon','numbers',35,25,'canon','hebrews',9,16,'free',
+      E'*For where a testament is, there must also of necessity be the death of the testator.* (Hebrews 9:16) That a death must intervene before the inheritance is entered is written into this very statute: the manslayer waits *unto the death of the high priest* (Numbers 35:25), bound until that death, then free. The Torah''s refuge-law already teaches that the death of the anointed one is what opens the way home.'),
+    ('canon','numbers',35,28,'canon','romans',6,9,'free',
+      E'*Knowing that Messiah (Christ) being raised from the dead dieth no more; death hath no more dominion over him.* (Romans 6:9) *After the death of the high priest the slayer shall return into the land of his possession* (Numbers 35:28): the death frees, and there is no return to bondage. So the death that releases is not repeated — the risen High Priest *dieth no more*, and the one set free walks back into his possession without fear of the avenger.'),
+
+    -- Thread 5: blood defiles the land (35:33-34)
+    ('canon','numbers',35,33,'canon','hebrews',9,22,'free',
+      E'*And almost all things are by the law purged with blood; and without shedding of blood is no remission.* (Hebrews 9:22) The land *cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33): blood demands blood. The whole sacrificial economy stands on this floor — there is no purging, no remission, apart from shed blood. The Torah''s cleansing principle is affirmed, not abolished.'),
+    ('canon','numbers',35,33,'canon','genesis',4,10,'free',
+      E'*And he said, What hast thou done? the voice of thy brother''s blood crieth unto me from the ground.* (Genesis 4:10) That *blood it defileth the land* (Numbers 35:33) is no new doctrine — from the first murder, Abel''s blood cries out of the ground to Yahuah (LORD). Shed innocent blood does not lie silent; it accuses the very earth that drank it until it is answered.'),
+    ('canon','numbers',35,33,'canon','genesis',4,11,'free',
+      E'*And now art thou cursed from the earth, which hath opened her mouth to receive thy brother''s blood from thy hand;* (Genesis 4:11) The land defiled by blood and unable to be *cleansed... but by the blood of him that shed it* (Numbers 35:33) is the land of Cain''s curse: the ground that opened to receive the blood turns against the shedder. Bloodguilt binds the man to the earth he polluted.'),
+    ('canon','numbers',35,33,'canon','matthew',23,35,'free',
+      E'*That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar.* (Matthew 23:35) The reckoning Numbers fixes — the land *cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33) — Messiah (Christ) gathers into one indictment: all the righteous blood from Abel onward comes upon the shedders. Innocent blood is never forgotten; it accumulates until it is required.'),
+    ('canon','numbers',35,34,'canon','genesis',9,6,'free',
+      E'*Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* (Genesis 9:6) Why the land must not be defiled — *Defile not therefore the land which ye shall inhabit, wherein I dwell: for I Yahuah (LORD) dwell among the children of Yashar''el (Israel)* (Numbers 35:34) — reaches back to the Noahic charge: man bears the image of Elohim (God), and Yahuah (LORD) dwelling in the midst will not abide blood spilled in his image-bearers'' land.'),
+    ('canon','numbers',35,34,'canon','deuteronomy',21,8,'free',
+      E'*Be merciful, O Yahuah (LORD), unto thy people Yashar''el (Israel), whom thou hast redeemed, and lay not innocent blood unto thy people of Yashar''el''s (Israel''s) charge. And the blood shall be forgiven them.* (Deuteronomy 21:8) Because Yahuah (LORD) *dwell[s] among the children of Yashar''el (Israel)* (Numbers 35:34), unsolved bloodshed must be lifted off the land by appointed rite — the elders cry for mercy that innocent blood not be charged to the people, *and the blood shall be forgiven them*: the same care to keep the land undefiled where Yahuah dwells.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num35_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num35_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-35-the-forty-eight-levite-cities',
+  E'The Forty-Eight Levite Cities — Scattered to Serve',
+  E'Yahuah (LORD) commands that the priestly tribe receive no land-block but cities scattered through every tribe''s inheritance: *Command the children of Yashar''el (Israel), that they give unto the Levites of the inheritance of their possession cities to dwell in* (Numbers 35:2), *So all the cities which ye shall give to the Levites shall be forty and eight cities* (Numbers 35:7). Joshua records the command fulfilled: *All the cities of the Levites within the possession of the children of Yashar''el (Israel) were forty and eight cities with their suburbs* (Joshua 21:41). And the dispersion itself fulfils Jacob''s old word over Levi — *Cursed be their anger... I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7). The curse of scattering is turned to priestly portion: the tribe with no territory of its own becomes the tribe present in every territory, dwelling among all Yashar''el (Israel).',
+  sv.verse_id, ev.verse_id, 'free', 24350
+  FROM _s312_num35_lookup sv, _s312_num35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=35 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-35-the-six-cities-of-refuge',
+  E'The Six Cities of Refuge — Fled for Refuge to Lay Hold on Hope',
+  E'Among the Levite cities, six are set apart as refuge for the manslayer who *killeth any person at unawares* (Numbers 35:11): *they shall be unto you cities for refuge from the avenger; that the manslayer die not, until he stand before the congregation in judgment* (Numbers 35:12). The refuge is wide — *both for the children of Yashar''el (Israel), and for the stranger, and for the sojourner among them* (Numbers 35:15). Moses presses the same statute home before the crossing — *Thou shalt separate three cities for thee in the midst of thy land* (Deuteronomy 19:2) — and Joshua executes it in the land, *Appoint out for you cities of refuge, whereof I spake unto you by the hand of Moses* (Joshua 20:2). The writer to the Hebrews reads our hope through this very picture: *we might have a strong consolation, who have fled for refuge to lay hold upon the hope set before us* (Hebrews 6:18). The appointed city is the type; the hope set before us is the fulfilment.',
+  sv.verse_id, ev.verse_id, 'free', 24353
+  FROM _s312_num35_lookup sv, _s312_num35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=35 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-35-murder-and-the-mouth-of-witnesses',
+  E'Murder and the Mouth of Witnesses — The Distinction Yahuah Draws',
+  E'The Torah sharply distinguishes the murderer from the manslayer. He who smites *with an instrument of iron... a stone... an hand weapon of wood* (Numbers 35:16-18), or *thrust him of hatred, or hurl at him by laying of wait* (Numbers 35:20), *is a murderer: the murderer shall surely be put to death* (Numbers 35:16), and *the revenger of blood himself shall slay the murderer* (Numbers 35:19). But he who *thrust him suddenly without enmity... seeing him not... and was not his enemy, neither sought his harm* (Numbers 35:22-23) the congregation delivers to the refuge. And the conviction is guarded: *the murderer shall be put to death by the mouth of witnesses: but one witness shall not testify against any person to cause him to die* (Numbers 35:30) — the same evidentiary safeguard Deuteronomy fixes, *At the mouth of two witnesses, or three witnesses... but at the mouth of one witness he shall not be put to death* (Deuteronomy 17:6). The verdict on deliberate bloodshed rests on the oldest covenant ground: *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:6).',
+  sv.verse_id, ev.verse_id, 'free', 24356
+  FROM _s312_num35_lookup sv, _s312_num35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=35 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-35-until-the-death-of-the-high-priest',
+  E'Until the Death of the High Priest — The Death That Sets Free',
+  E'The manslayer in the refuge is not loosed by a fine, nor by the passing of years, but by one death: *he shall abide in it unto the death of the high priest, which was anointed with the holy oil* (Numbers 35:25), and *after the death of the high priest the slayer shall return into the land of his possession* (Numbers 35:28). It is the death of the anointed one that liberates and restores the inheritance. The writer to the Hebrews carries the type forward: *he is the mediator of the new testament, that by means of death... they which are called might receive the promise of eternal inheritance* (Hebrews 9:15), for *where a testament is, there must also of necessity be the death of the testator* (Hebrews 9:16). And the death that frees is not repeated: *Messiah (Christ) being raised from the dead dieth no more; death hath no more dominion over him* (Romans 6:9). The risen High Priest dies no more, and the one set free walks home without fear of the avenger.',
+  sv.verse_id, ev.verse_id, 'free', 24359
+  FROM _s312_num35_lookup sv, _s312_num35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=35 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-35-blood-defiles-the-land',
+  E'Blood Defiles the Land — Cleansed Only by Blood',
+  E'The chapter closes on the gravest principle: *ye shall not pollute the land wherein ye are: for blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). The reason is the dwelling of Yahuah (LORD) himself: *Defile not therefore the land which ye shall inhabit, wherein I dwell: for I Yahuah (LORD) dwell among the children of Yashar''el (Israel)* (Numbers 35:34). Blood demands blood — this is the floor under the whole sacrificial order: *without shedding of blood is no remission* (Hebrews 9:22). It reaches back to the first murder, *the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10), and the curse that followed, *cursed from the earth, which hath opened her mouth to receive thy brother''s blood* (Genesis 4:11); and it stands on the Noahic charge, *for in the image of Elohim (God) made he man* (Genesis 9:6). Messiah (Christ) gathers the reckoning into one indictment — *all the righteous blood shed upon the earth, from the blood of righteous Abel* (Matthew 23:35) — and the land where Yahuah dwells is purged of unsolved blood only by appointed rite, *lay not innocent blood unto thy people of Yashar''el''s (Israel''s) charge. And the blood shall be forgiven them* (Deuteronomy 21:8). Innocent blood is never forgotten; it accumulates until it is required.',
+  sv.verse_id, ev.verse_id, 'free', 24362
+  FROM _s312_num35_lookup sv, _s312_num35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=35 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: the forty-eight Levite cities
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*All the cities of the Levites... were forty and eight cities with their suburbs* (Joshua 21:41) — the command of Numbers 35:7 recorded as done.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=7
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-the-forty-eight-levite-cities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7) — Levi''s curse of scattering turned to priestly presence in every tribe''s cities.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=8
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-the-forty-eight-levite-cities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the six cities of refuge
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*who have fled for refuge to lay hold upon the hope set before us* (Hebrews 6:18) — the city-of-refuge type read forward to our hope in the promise sworn by oath.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=12
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-the-six-cities-of-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thou shalt separate three cities for thee in the midst of thy land* (Deuteronomy 19:2) — Moses repeats the refuge statute before the crossing.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=11
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-the-six-cities-of-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Appoint out for you cities of refuge, whereof I spake unto you by the hand of Moses* (Joshua 20:2) — Joshua plants the refuge cities in the land for Israel and sojourner alike.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=15
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=20 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-the-six-cities-of-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: murder and the mouth of witnesses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*At the mouth of two witnesses, or three witnesses... but at the mouth of one witness he shall not be put to death* (Deuteronomy 17:6) — the same Torah safeguard against a single accuser in a capital case.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=30
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-murder-and-the-mouth-of-witnesses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:6) — the Noahic ground for putting the murderer to death.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=16
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-murder-and-the-mouth-of-witnesses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: until the death of the high priest
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he is the mediator of the new testament, that by means of death... they which are called might receive the promise of eternal inheritance* (Hebrews 9:15) — the high priest''s liberating death read forward to the Mediator.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=25
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-until-the-death-of-the-high-priest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*where a testament is, there must also of necessity be the death of the testator* (Hebrews 9:16) — a death must intervene before the inheritance is entered, as the manslayer waits.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=25
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-until-the-death-of-the-high-priest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Messiah (Christ) being raised from the dead dieth no more; death hath no more dominion over him* (Romans 6:9) — the death that frees is not repeated; the freed slayer returns to his possession.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=28
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-until-the-death-of-the-high-priest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: blood defiles the land
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*without shedding of blood is no remission* (Hebrews 9:22) — the floor under the whole sacrificial order: blood demands blood, the land cleansed only by blood.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=33
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-blood-defiles-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10) — from the first murder, shed innocent blood cries out and accuses the earth.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=33
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-blood-defiles-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*cursed from the earth, which hath opened her mouth to receive thy brother''s blood* (Genesis 4:11) — the ground that drank the blood turns against the shedder.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=33
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-blood-defiles-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*all the righteous blood shed upon the earth, from the blood of righteous Abel* (Matthew 23:35) — Messiah gathers the reckoning of innocent blood into one indictment.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=33
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-blood-defiles-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*for in the image of Elohim (God) made he man* (Genesis 9:6) — why the land where Yahuah dwells must not be defiled with image-bearers'' blood.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=34
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-blood-defiles-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*lay not innocent blood unto thy people of Yashar''el''s (Israel''s) charge. And the blood shall be forgiven them* (Deuteronomy 21:8) — unsolved bloodshed lifted off the land by appointed rite where Yahuah dwells.'
+  FROM cross_reference_threads t
+  JOIN _s312_num35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=35 AND sv.verse_number=34
+  JOIN _s312_num35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=21 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-35-blood-defiles-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_36.sql (Numbers 36) -----
+-- Book: Numbers   Chapter: 36   Tag: num36   Prefix: s312
+-- Sort band base 24375 step 3 -> 24375, 24378, 24381
+-- View: _s312_num36_lookup
+--
+-- The close of Numbers: the inheritance of Zelophehad's daughters must not pass
+-- from tribe to tribe; they marry within their father's tribe; the daughters
+-- obey; the closing colophon seals the book at Jordan near Jericho.
+--
+-- Numbers 36 coverage:
+--   v.1-9  (inheritance kept within the tribe)
+--          NT:     1 Peter 1:4 (an inheritance incorruptible, reserved) -- forward
+--          Extras: none warranted
+--          Tanakh: Numbers 27:7 (the original statute for the daughters), Leviticus 25:23
+--                  (the land is mine; not sold for ever), 1 Kings 21:3 (Naboth: the
+--                  inheritance of my fathers I will not give) -- lateral
+--   v.10-12 (the daughters obeyed, marrying into Manasseh)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Numbers 27:7 (the word they obeyed) -- lateral
+--   v.13   (the closing colophon -- the book sealed at Jordan near Jericho)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Leviticus 27:34 (the twin colophon at Sinai), Deuteronomy 1:5
+--                  (Moses begins to expound the Torah in the same place) -- lateral
+--
+-- Threads (3):
+--   numbers-36-the-inheritance-kept-within-the-tribe (free) -- 36:1-9
+--       members: Numbers 27:7 (canon), Leviticus 25:23 (canon), 1 Kings 21:3 (canon), 1 Peter 1:4 (canon)
+--   numbers-36-the-daughters-obeyed-the-word (free) -- 36:10-12
+--       members: Numbers 27:7 (canon)
+--   numbers-36-the-book-sealed-at-jordan (free) -- 36:13
+--       members: Leviticus 27:34 (canon), Deuteronomy 1:5 (canon)
+--
+-- Framework-load-bearing: 36:7 "every one of the children of Yashar'el shall keep
+--   himself to the inheritance of the tribe of his fathers" -- the land-inheritance is
+--   covenant trust, undiminished within the tribe (Lev 25:23 "the land is mine"). The
+--   completion of the Numbers 27 statute. Forward, this is the incorruptible inheritance
+--   reserved (1 Pet 1:4). 36:13 is the seal of the book at the threshold of the land,
+--   the twin of the Sinai colophon (Lev 27:34), handing off to Deuteronomy's exposition.
+
+CREATE TEMP VIEW _s312_num36_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','numbers',36,7,'canon','numbers',27,7,'free',
+      E'*The daughters of Zelophehad speak right: thou shalt surely give them a possession of an inheritance among their father''s brethren; and thou shalt cause the inheritance of their father to pass unto them.* (Numbers 27:7) The statute that granted the daughters their father''s inheritance is here completed: *every one of the children of Yashar''el (Israel) shall keep himself to the inheritance of the tribe of his fathers* (Numbers 36:7) — the gift of chapter 27 guarded so it cannot drain away from its tribe.'),
+    ('canon','numbers',36,7,'canon','leviticus',25,23,'free',
+      E'*The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me.* (Leviticus 25:23) The reason the inheritance must *not... remove from tribe to tribe* (Numbers 36:7) is that the land is Yahuah''s (the LORD''s) — held in covenant trust, never alienable property, the tribal portion kept undiminished.'),
+    ('canon','numbers',36,7,'canon','1-kings',21,3,'free',
+      E'*And Naboth said to Ahab, Yahuah (LORD) forbid it me, that I should give the inheritance of my fathers unto thee.* (1 Kings 21:3) Naboth keeps the very statute of Numbers 36 — that *every one of the children of Yashar''el (Israel) shall keep himself to the inheritance of the tribe of his fathers* (Numbers 36:7); he will not let his fathers'' portion pass away, and dies a martyr to it.'),
+    ('canon','numbers',36,9,'canon','1-peter',1,4,'free',
+      E'*To an inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you,* (1 Peter 1:4) The earthly portion that must *not remove from one tribe to another tribe* (Numbers 36:9) foreshadows the inheritance kept whole and unfading — the same covenant logic carried forward: the inheritance of Yahuah''s (the LORD''s) people is reserved and cannot be lost.'),
+    ('canon','numbers',36,12,'canon','numbers',27,7,'free',
+      E'*The daughters of Zelophehad speak right: thou shalt surely give them a possession of an inheritance among their father''s brethren; and thou shalt cause the inheritance of their father to pass unto them.* (Numbers 27:7) The word first spoken in chapter 27 is now obeyed to the letter: *their inheritance remained in the tribe of the family of their father* (Numbers 36:12) — the daughters keep the commandment, and the inheritance stays where Yahuah (the LORD) set it.'),
+    ('canon','numbers',36,13,'canon','leviticus',27,34,'free',
+      E'*These are the commandments, which Yahuah (LORD) commanded Moses for the children of Yashar''el (Israel) in mount Sinai.* (Leviticus 27:34) The twin colophon: Leviticus seals at Sinai, Numbers seals at the threshold of the land — *These are the commandments and the judgments, which Yahuah (LORD) commanded by the hand of Moses... in the plains of Moab by Jordan near Jericho* (Numbers 36:13); one continuous Torah, given through the one mediator.'),
+    ('canon','numbers',36,13,'canon','deuteronomy',1,5,'free',
+      E'*On this side Jordan, in the land of Moab, began Moses to declare this law, saying,* (Deuteronomy 1:5) Numbers closes *in the plains of Moab by Jordan near Jericho* (Numbers 36:13), and Deuteronomy opens in the same place — the book sealed at Jordan hands off directly to Moses'' exposition of the Torah at the edge of the inheritance.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num36_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num36_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-36-the-inheritance-kept-within-the-tribe',
+       E'The Inheritance Kept Within the Tribe',
+       E'The close of Numbers completes the statute it began nine chapters earlier. The chief fathers of Gilead come with a real worry: if Zelophehad''s daughters marry outside their tribe, *then shall their inheritance be taken from the inheritance of our fathers, and shall be put to the inheritance of the tribe whereunto they are received* (Numbers 36:3). Yahuah''s (the LORD''s) answer guards the gift: *only to the family of the tribe of their father shall they marry. So shall not the inheritance of the children of Yashar''el (Israel) remove from tribe to tribe: for every one of the children of Yashar''el (Israel) shall keep himself to the inheritance of the tribe of his fathers* (Numbers 36:6-7).\n\nThis is the completion of the Numbers 27 statute — *The daughters of Zelophehad speak right... thou shalt cause the inheritance of their father to pass unto them* (Numbers 27:7) — now sealed so the gift cannot bleed away. And the reason runs deeper than property: *The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me* (Leviticus 25:23). The tribal portion is covenant trust, held of Yahuah (the LORD), kept whole and undiminished. So Naboth, generations later, keeps this very law unto death: *Yahuah (LORD) forbid it me, that I should give the inheritance of my fathers unto thee* (1 Kings 21:3). And the apostle carries the same logic forward to the inheritance that can never be lost — *an inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you* (1 Peter 1:4). The portion of Yahuah''s people is kept.',
+       sv.verse_id, ev.verse_id, 'free', 24375
+  FROM _s312_num36_lookup sv, _s312_num36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=36 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-36-the-daughters-obeyed-the-word',
+       E'The Daughters Obeyed the Word',
+       E'The statute is not left as theory. *Even as Yahuah (LORD) commanded Moses, so did the daughters of Zelophehad* (Numbers 36:10). Mahlah, Tirzah, Hoglah, Milcah, and Noah marry their father''s brothers'' sons, *into the families of the sons of Manasseh the son of Joseph, and their inheritance remained in the tribe of the family of their father* (Numbers 36:11-12).\n\nThe word first spoken to them in chapter 27 — *thou shalt cause the inheritance of their father to pass unto them* (Numbers 27:7) — is now obeyed to the letter. The same women who once stood and asked rightly for their portion now keep the commandment that guards it; the obedient keeping of the word holds the inheritance exactly where Yahuah (the LORD) set it.',
+       sv.verse_id, ev.verse_id, 'free', 24378
+  FROM _s312_num36_lookup sv, _s312_num36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=36 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-36-the-book-sealed-at-jordan',
+       E'The Book Sealed at Jordan',
+       E'Numbers ends with its colophon — the seal of the book at the very threshold of the land: *These are the commandments and the judgments, which Yahuah (LORD) commanded by the hand of Moses unto the children of Yashar''el (Israel) in the plains of Moab by Jordan near Jericho* (Numbers 36:13). It is the twin of the seal that closed Leviticus — *These are the commandments, which Yahuah (LORD) commanded Moses for the children of Yashar''el (Israel) in mount Sinai* (Leviticus 27:34). One continuous Torah, given by the hand of the one mediator, sealed first at the mountain and now at the river.\n\nAnd the place is not incidental. Where Numbers seals, Deuteronomy opens: *On this side Jordan, in the land of Moab, began Moses to declare this law, saying* (Deuteronomy 1:5). The book is sealed at Jordan and the exposition begins on the same ground — the people stand at the edge of the inheritance, the commandments and judgments gathered and confirmed, ready to cross over.',
+       sv.verse_id, ev.verse_id, 'free', 24381
+  FROM _s312_num36_lookup sv, _s312_num36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=36 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- thread 1: numbers-36-the-inheritance-kept-within-the-tribe
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt cause the inheritance of their father to pass unto them* (Numbers 27:7) — the statute now completed and guarded.'
+  FROM cross_reference_threads t
+  JOIN _s312_num36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=7
+  JOIN _s312_num36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-36-the-inheritance-kept-within-the-tribe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the land is mine; for ye are strangers and sojourners with me* (Leviticus 25:23) — why the tribal portion is covenant trust, never alienable.'
+  FROM cross_reference_threads t
+  JOIN _s312_num36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=7
+  JOIN _s312_num36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-36-the-inheritance-kept-within-the-tribe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the inheritance of my fathers... I should give... unto thee* — Naboth keeps this statute unto death (1 Kings 21:3).'
+  FROM cross_reference_threads t
+  JOIN _s312_num36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=7
+  JOIN _s312_num36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-36-the-inheritance-kept-within-the-tribe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*an inheritance incorruptible... reserved in heaven for you* (1 Peter 1:4) — the portion carried forward to the inheritance that cannot be lost.'
+  FROM cross_reference_threads t
+  JOIN _s312_num36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=9
+  JOIN _s312_num36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-36-the-inheritance-kept-within-the-tribe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- thread 2: numbers-36-the-daughters-obeyed-the-word
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt cause the inheritance of their father to pass unto them* (Numbers 27:7) — the word the daughters now obey to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s312_num36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=12
+  JOIN _s312_num36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-36-the-daughters-obeyed-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- thread 3: numbers-36-the-book-sealed-at-jordan
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*These are the commandments, which Yahuah (LORD) commanded Moses... in mount Sinai* (Leviticus 27:34) — the twin colophon sealing Leviticus at the mountain.'
+  FROM cross_reference_threads t
+  JOIN _s312_num36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=13
+  JOIN _s312_num36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=27 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-36-the-book-sealed-at-jordan'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*began Moses to declare this law* (Deuteronomy 1:5) — the exposition opens on the same ground where Numbers is sealed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=36 AND sv.verse_number=13
+  JOIN _s312_num36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-36-the-book-sealed-at-jordan'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session312 — Numbers cross-references complete.'
