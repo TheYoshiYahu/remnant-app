@@ -7085,6 +7085,1535 @@ SELECT t.id, cr.id, 1, E'*these caused the children of Yashar''el (Israel), thro
  WHERE t.slug='numbers-25-the-midianites-vexed-for-the-wiles-at-peor'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_numbers_26.sql (Numbers 26) -----
+-- Book: numbers  Chapter: 26  (the SECOND census — the new generation re-mustered in the plains of Moab)
+-- Tag: num26   Session prefix: s312   View: _s312_num26_lookup
+-- Sort band base 24125, step 3  →  24125, 24128, 24131
+--
+-- THREADS (3):
+--   numbers-26-the-second-census-of-the-new-generation       [Tanakh]  free  (26:1-4 → Num 1:2-3)
+--   numbers-26-the-land-divided-by-lot-and-by-number          [Tanakh]  free  (26:52-56 → Num 33:54, Josh 14:2)
+--   numbers-26-the-first-generation-fell-save-caleb-and-joshua [Tanakh+NT] free (26:63-65 → Num 14:29-30; Heb 3:17, 1 Cor 10:5)
+--
+-- Numbers 26 coverage:
+--   v.1-4 (the second census, twenty years old and upward)
+--        NT:     none warranted (the muster-of-the-army type is carried best laterally to the first census)
+--        Extras: none warranted
+--        Tanakh: Numbers 1:2-3 (the first census of the army) — threaded
+--   v.5-51 (the tribal rolls / family lists)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted (the muster spine is carried by v.1-4; v.9-11 Korah/Dathan/Abiram belongs to Num 16's thread, not re-opened here)
+--   v.52-56 (the land divided by lot and by number)
+--        NT:     none warranted (inheritance-by-lot is an OT-land motif; its NT fulfilment sits at Eph 1 / Acts 26:18, not warranted to pull here)
+--        Extras: none warranted
+--        Tanakh: Numbers 33:54 (divide the land by lot), Joshua 14:2 (by lot was their inheritance) — threaded
+--   v.57-62 (the Levites numbered separately, no inheritance among the tribes)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted here (the Levite no-inheritance theme is carried at Num 18 / Deut 18)
+--   v.63-65 (the old generation all dead, save Caleb and Joshua — the Num 14 sentence fulfilled)
+--        NT:     Hebrews 3:17 (whose carcases fell in the wilderness), 1 Corinthians 10:5 (overthrown in the wilderness) — threaded FORWARD
+--        Extras: none warranted
+--        Tanakh: Numbers 14:29-30 (your carcases shall fall... save Caleb... and Joshua) — threaded LATERALLY
+--   v.33 (the daughters of Zelophehad) — noted only; sets up ch27, lateral only, no thread here.
+
+CREATE TEMP VIEW _s312_num26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================
+-- B. cross_references
+-- ============================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the second census of the new generation → the first census (Num 1)
+    ('canon','numbers',26,2,  'canon','numbers',1,2, 'free',
+      E'*Take ye the sum of all the congregation of the children of Yashar''el (Israel), after their families, by the house of their fathers, with the number of their names, every male by their polls* (Numbers 1:2). At Sinai the army was mustered the first time; now *Take the sum of all the congregation of the children of Yashar''el (Israel), from twenty years old and upward... all that are able to go to war* (Numbers 26:2) re-musters the new generation in the plains of Moab — the same command spoken over a wholly different host.'),
+    ('canon','numbers',26,2,  'canon','numbers',1,3, 'free',
+      E'*From twenty years old and upward, all that are able to go forth to war in Yashar''el (Israel): thou and Aaron shall number them by their armies* (Numbers 1:3). The very measure of the first census — *from twenty years old and upward* — is repeated for the second (Numbers 26:2,4), but the men counted at Sinai are dead; this is the army of the sons who will cross over.'),
+
+    -- Thread 2: the land divided by lot AND by number → Num 33:54, Josh 14:2
+    ('canon','numbers',26,55, 'canon','numbers',33,54, 'free',
+      E'*And ye shall divide the land by lot for an inheritance among your families: and to the more ye shall give the more inheritance, and to the fewer ye shall give the less inheritance: every man''s inheritance shall be in the place where his lot falleth* (Numbers 33:54). This is the same double rule given to the census itself — *to many thou shalt give the more inheritance, and to few thou shalt give the less* (Numbers 26:54) and *the land shall be divided by lot* (Numbers 26:55): the lot fixes WHERE, the number fixes HOW MUCH.'),
+    ('canon','numbers',26,55, 'canon','joshua',14,2, 'free',
+      E'*By lot was their inheritance, as Yahuah (LORD) commanded by the hand of Moses, for the nine tribes, and for the half tribe* (Joshua 14:2). What Numbers 26:55 commanded — *the land shall be divided by lot: according to the names of the tribes of their fathers they shall inherit* — Joshua carries out: the census of the plains of Moab becomes the title-deed of the conquest.'),
+
+    -- Thread 3: the first generation fell, save Caleb and Joshua → Num 14:29-30; Heb 3:17, 1 Cor 10:5
+    ('canon','numbers',26,64, 'canon','numbers',14,29, 'free',
+      E'*Your carcases shall fall in this wilderness; and all that were numbered of you, according to your whole number, from twenty years old and upward, which have murmured against me* (Numbers 14:29). The sentence pronounced at Kadesh is exactly the roll now closed: *among these there was not a man of them whom Moses and Aaron the priest numbered* (Numbers 26:64) — the murmuring generation is gone to the last man.'),
+    ('canon','numbers',26,65, 'canon','numbers',14,30, 'free',
+      E'*Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein, save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 14:30). The two who believed are the two who remain: *there was not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 26:65) — the promise and the threat both kept to the letter.'),
+    ('canon','numbers',26,65, 'canon','hebrews',3,17, 'free',
+      E'*But with whom was he grieved forty years? was it not with them that had sinned, whose carcases fell in the wilderness?* (Hebrews 3:17). The writer reads the closed census of Numbers 26 as a warning to the gathered: the generation that *shall surely die in the wilderness* (Numbers 26:65) fell through unbelief, and the rest of Yahuah (LORD) stands open still for the believing.'),
+    ('canon','numbers',26,65, 'canon','1-corinthians',10,5, 'free',
+      E'*But with many of them Elohim (God) was not well pleased: for they were overthrown in the wilderness* (1 Corinthians 10:5). Paul names the same dead host — *there was not left a man of them, save Caleb... and Joshua* (Numbers 26:65) — and calls them *our examples* (1 Corinthians 10:6): the second census is the ledger of who entered and who did not.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================
+-- C. threads
+-- ============================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-26-the-second-census-of-the-new-generation',
+       E'The Second Census: the New Generation Re-Mustered for War',
+       E'*And it came to pass after the plague, that Yahuah (LORD) spake unto Moses and unto Eleazar the son of Aaron the priest... Take the sum of all the congregation of the children of Yashar''el (Israel), from twenty years old and upward... all that are able to go to war* (Numbers 26:1-2). This is the second numbering of the host — taken *in the plains of Moab by Jordan near Jericho* (Numbers 26:3), on the threshold of the land — and it is measured by the very same rule as the first: *from twenty years old and upward* (Numbers 26:4). At Sinai the command had gone out the first time, *Take ye the sum of all the congregation of the children of Yashar''el (Israel), after their families, by the house of their fathers* (Numbers 1:2), *all that are able to go forth to war... thou and Aaron shall number them by their armies* (Numbers 1:3). The words match; the men do not. The fighting men counted at Sinai have all died in the wilderness, and this is the army of their sons, the new generation that will inherit. The census is not bookkeeping — it is the muster of the covenant people on the edge of the promise.',
+       sv.verse_id, ev.verse_id, 'free', 24125
+  FROM _s312_num26_lookup sv, _s312_num26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=26 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-26-the-land-divided-by-lot-and-by-number',
+       E'The Inheritance Divided by Lot and by Number',
+       E'The census is taken for one purpose: the dividing of the land. *Unto these the land shall be divided for an inheritance according to the number of names* (Numbers 26:53). Two rules govern the portion — size by the count, place by the lot: *To many thou shalt give the more inheritance, and to few thou shalt give the less inheritance* (Numbers 26:54), *Notwithstanding the land shall be divided by lot: according to the names of the tribes of their fathers they shall inherit* (Numbers 26:55). The same double rule is repeated in the journey-summary: *ye shall divide the land by lot for an inheritance among your families: and to the more ye shall give the more inheritance, and to the fewer ye shall give the less* (Numbers 33:54). And it is fulfilled to the letter under Joshua: *By lot was their inheritance, as Yahuah (LORD) commanded by the hand of Moses* (Joshua 14:2). The number fixes how much, the lot fixes where — the inheritance is the gift of Yahuah (LORD), apportioned by His hand and not by man''s choosing.',
+       sv.verse_id, ev.verse_id, 'free', 24128
+  FROM _s312_num26_lookup sv, _s312_num26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=52
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=26 AND ev.verse_number=56
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-26-the-first-generation-fell-save-caleb-and-joshua',
+       E'Not a Man Left Save Caleb and Joshua: the Wilderness Sentence Fulfilled',
+       E'The closing of the census is the closing of a generation: *among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar''el (Israel) in the wilderness of Sinai. For Yahuah (LORD) had said of them, They shall surely die in the wilderness. And there was not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 26:64-65). This is the exact discharge of the sentence sworn at Kadesh: *Your carcases shall fall in this wilderness; and all that were numbered of you... from twenty years old and upward, which have murmured against me* (Numbers 14:29), *save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 14:30). The two who believed are the two who stand; every murmurer is gone. The apostolic writers read this ledger forward as the warning to all who are gathered: *was it not with them that had sinned, whose carcases fell in the wilderness?* (Hebrews 3:17), and *with many of them Elohim (God) was not well pleased: for they were overthrown in the wilderness* (1 Corinthians 10:5) — *our examples* (1 Corinthians 10:6). The old generation is gone; the two faithful remain; the rest of Yahuah (LORD) is entered only by belief that walks.',
+       sv.verse_id, ev.verse_id, 'free', 24131
+  FROM _s312_num26_lookup sv, _s312_num26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=63
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=26 AND ev.verse_number=65
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================
+-- D. thread_members  (verbose form — one INSERT per member)
+-- ============================================================
+-- Thread 1: the second census of the new generation
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Take ye the sum of all the congregation of the children of Yashar''el (Israel), after their families, by the house of their fathers* (Numbers 1:2) — the first census at Sinai; the second census of Numbers 26 repeats the command over the new generation.'
+  FROM cross_reference_threads t
+  JOIN _s312_num26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=2
+  JOIN _s312_num26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-26-the-second-census-of-the-new-generation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*From twenty years old and upward, all that are able to go forth to war in Yashar''el (Israel)* (Numbers 1:3) — the same measure as Numbers 26:2,4, but the Sinai host is dead; this re-muster is the army of their sons.'
+  FROM cross_reference_threads t
+  JOIN _s312_num26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=2
+  JOIN _s312_num26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-26-the-second-census-of-the-new-generation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the land divided by lot and by number
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And ye shall divide the land by lot for an inheritance among your families: and to the more ye shall give the more inheritance, and to the fewer ye shall give the less* (Numbers 33:54) — the same double rule (lot + number) as Numbers 26:54-55.'
+  FROM cross_reference_threads t
+  JOIN _s312_num26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=55
+  JOIN _s312_num26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=33 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-26-the-land-divided-by-lot-and-by-number'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*By lot was their inheritance, as Yahuah (LORD) commanded by the hand of Moses* (Joshua 14:2) — Numbers 26:55''s command carried out in the conquest; the census becomes the title-deed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=55
+  JOIN _s312_num26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-26-the-land-divided-by-lot-and-by-number'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the first generation fell, save Caleb and Joshua
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Your carcases shall fall in this wilderness; and all that were numbered of you... from twenty years old and upward, which have murmured against me* (Numbers 14:29) — the sentence at Kadesh that Numbers 26:64 reports fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s312_num26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=64
+  JOIN _s312_num26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-26-the-first-generation-fell-save-caleb-and-joshua'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Doubtless ye shall not come into the land... save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 14:30) — the two believers spared, exactly the two left in Numbers 26:65.'
+  FROM cross_reference_threads t
+  JOIN _s312_num26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=65
+  JOIN _s312_num26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-26-the-first-generation-fell-save-caleb-and-joshua'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*was it not with them that had sinned, whose carcases fell in the wilderness?* (Hebrews 3:17) — the closed census read FORWARD as a warning: the generation that *shall surely die in the wilderness* (Numbers 26:65) fell through unbelief.'
+  FROM cross_reference_threads t
+  JOIN _s312_num26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=65
+  JOIN _s312_num26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-26-the-first-generation-fell-save-caleb-and-joshua'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*for they were overthrown in the wilderness* (1 Corinthians 10:5) — Paul names the same dead host of Numbers 26:65 *our examples* (1 Corinthians 10:6); the census is the ledger of who entered and who did not.'
+  FROM cross_reference_threads t
+  JOIN _s312_num26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=26 AND sv.verse_number=65
+  JOIN _s312_num26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-26-the-first-generation-fell-save-caleb-and-joshua'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_27.sql (Numbers 27) -----
+-- Book: numbers  Chapter: 27   Tag: num27   Prefix: s312
+-- Sort band: base 24150 step 3  -> 24150, 24153, 24156, 24159
+-- View: _s312_num27_lookup
+--
+-- Numbers 27 coverage:
+--   v.1-11 (daughters of Zelophehad; statute of inheritance)
+--        NT:     Galatians 3:28-29 (neither male nor female; heirs according to the promise) [USED]
+--        Extras: none warranted (no clean witness adds weight beyond canon)
+--        Tanakh: Numbers 36:6 (completion of the statute) [USED]; Joshua 17:3-4 (the daughters receive the inheritance) [USED]
+--   v.12-14 (Meribah sentence; Moses gathered unto his people, shall not enter)
+--        NT:     none warranted (handled forward through the shepherd-succession threads)
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 34:4-6 (Moses sees the land, dies in Moab) [USED in death/succession thread]
+--   v.15-17 (Moses prays; Elohim of the spirits of all flesh; sheep which have no shepherd)
+--        NT:     Matthew 9:36, Mark 6:34 (moved with compassion, as sheep having no shepherd) [USED]; John 10:11 (the good shepherd) [USED]
+--        Extras: none warranted
+--        Tanakh: Numbers 16:22 (the Elohim of the spirits of all flesh) [USED]; Ezekiel 34:5 (scattered because no shepherd) [USED]
+--   v.18-23 (Joshua chosen; a man in whom is the spirit; Moses lays his hands on him; charge before Eleazar)
+--        NT:     Acts 6:6, 1 Timothy 4:14 (laying on of hands) [USED]; John 10:16 (other sheep, one fold one shepherd) [USED]
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 34:9 (Joshua full of the spirit of wisdom, for Moses had laid his hands upon him) [USED]
+--
+-- Threads (4):
+--   numbers-27-the-daughters-of-zelophehad-love-the-land            [free] Tanakh(Num36,Josh17) + NT(Gal3)
+--   numbers-27-thou-shalt-be-gathered-unto-thy-people               [free] Tanakh(Deut34)
+--   numbers-27-sheep-which-have-no-shepherd                          [free] Tanakh(Num16,Ezek34) + NT(Matt9,Mark6,John10)
+--   numbers-27-joshua-a-man-in-whom-is-the-spirit                    [free] Tanakh(Deut34) + NT(John10,Acts6,1Tim4)
+--
+-- Framework notes:
+--   * The daughters of Zelophehad love the land enough to claim it (Num 27:1-11) and Yahuah
+--     vindicates them — the inheritance is justice, and it passes by the covenant lineage even
+--     through daughters. Gal 3:28-29 does NOT dissolve the inheritance into a confession-church;
+--     it confirms that in Messiah the heirs are still *Abraham''s seed, and heirs according to
+--     the promise* — male and female alike within the one covenant people, exactly as the
+--     daughters were heirs within Yashar''el. The statute is completed at Num 36 (the inheritance
+--     must not pass out of the tribe) and fulfilled at Josh 17 (the daughters receive the land).
+--   * Sheep which have no shepherd: Moses prays to *the Elohim of the spirits of all flesh*
+--     (the same title used at Num 16:22) for a shepherd; Ezek 34 indicts the false shepherds and
+--     Yahuah Himself comes to shepherd; Yahusha is *the good shepherd* (John 10:11) moved with
+--     compassion (Matt 9:36 / Mark 6:34) — the Formed Son who gathers the two houses
+--     (John 10:16, *one fold, one shepherd*).
+--   * Joshua (Yahusha) is *a man in whom is the spirit*; the spirit passes by the laying on of
+--     Moses'' hands (Deut 34:9), the pattern the apostles keep (Acts 6:6; 1 Tim 4:14). The name
+--     of the Spirit-filled successor who brings Yashar''el INTO the inheritance is the Name of
+--     salvation.
+
+CREATE TEMP VIEW _s312_num27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the daughters of Zelophehad love the land (v.1-11)
+    ('canon','numbers',27,4,  'canon','numbers',36,6, 'free',
+     E'*This is the thing which Yahuah (LORD) doth command concerning the daughters of Zelophehad, saying, Let them marry to whom they think best; only to the family of the tribe of their father shall they marry.* (Numbers 36:6) The daughters'' plea — *Give unto us therefore a possession among the brethren of our father* (Numbers 27:4) — opens a statute that Yahuah completes here: the inheritance is granted, and guarded so it cannot pass out of the tribe. Justice for the daughters AND the integrity of the covenant land, held together.'),
+    ('canon','numbers',27,7,  'canon','joshua',17,3, 'free',
+     E'*But Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, had no sons, but daughters: and these are the names of his daughters, Mahlah, and Noah, Hoglah, Milcah, and Tirzah.* (Joshua 17:3) What Yahuah promised — *thou shalt surely give them a possession of an inheritance among their father''s brethren* (Numbers 27:7) — is paid out when Yashar''el enters the land: the daughters who loved the land are remembered by name and receive it.'),
+    ('canon','numbers',27,7,  'canon','joshua',17,4, 'free',
+     E'*And they came near before Eleazar the priest, and before Joshua the son of Nun, and before the princes, saying, Yahuah (LORD) commanded Moses to give us an inheritance among our brethren. Therefore according to the commandment of Yahuah (LORD) he gave them an inheritance among the brethren of their father.* (Joshua 17:4) The exact word of Numbers 27:7 — *thou shalt cause the inheritance of their father to pass unto them* — is performed before Joshua; the statute spoken in the wilderness is honoured in the inheritance.'),
+    ('canon','numbers',27,7,  'canon','galatians',3,28, 'free',
+     E'*There is neither Yahudi (Jew) nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in HaMashiach Yahusha (Christ Jesus).* (Galatians 3:28) The daughters of Zelophehad are the Torah''s own proof that *male nor female* never barred a covenant heir: Yahuah declared they *speak right* and made the inheritance *pass unto them* (Numbers 27:7). Sonship in Messiah confirms, it does not abolish, the inheritance within the one people.'),
+    ('canon','numbers',27,8,  'canon','galatians',3,29, 'free',
+     E'*And if ye be Messiah''s (Christ''s), then are ye Abraham''s seed, and heirs according to the promise.* (Galatians 3:29) The statute *If a man die, and have no son, then ye shall cause his inheritance to pass unto his daughter* (Numbers 27:8) keeps the name and the land in the line of promise. The inheritance is always reckoned by the seed of promise — *Abraham''s seed, and heirs according to the promise* — never lost, only carried forward.'),
+
+    -- Thread 2: thou shalt be gathered unto thy people (v.12-14)
+    ('canon','numbers',27,13, 'canon','deuteronomy',34,5, 'free',
+     E'*So Moses the servant of Yahuah (LORD) died there in the land of Moab, according to the word of Yahuah (LORD).* (Deuteronomy 34:5) The sentence given here — *when thou hast seen it, thou also shalt be gathered unto thy people* (Numbers 27:13) — is carried out on Nebo: Moses sees the land, and dies *according to the word of Yahuah*, the servant who could not himself bring Yashar''el in.'),
+    ('canon','numbers',27,12, 'canon','deuteronomy',34,4, 'free',
+     E'*And Yahuah (LORD) said unto him, This is the land which I sware unto Abraham, unto Isaac, and unto Jacob, saying, I will give it unto thy seed: I have caused thee to see it with thine eyes, but thou shalt not go over thither.* (Deuteronomy 34:4) Yahuah''s command *Get thee up into this mount Abarim, and see the land which I have given unto the children of Yashar''el* (Numbers 27:12) is the seeing-only; the land sworn to the fathers is given to the *seed*, but Moses may not cross.'),
+
+    -- Thread 3: sheep which have no shepherd (v.15-17)
+    ('canon','numbers',27,16, 'canon','numbers',16,22, 'free',
+     E'*And they fell upon their faces, and said, O Elohim (God), the Elohim (God) of the spirits of all flesh, shall one man sin, and wilt thou be wroth with all the congregation?* (Numbers 16:22) Moses prays to the very title he had cried in the rebellion of Korah — *Let Yahuah, the Elohim of the spirits of all flesh, set a man over the congregation* (Numbers 27:16). The Maker of every living breath is asked to give the flock one shepherd.'),
+    ('canon','numbers',27,17, 'canon','ezekiel',34,5, 'free',
+     E'*And they were scattered, because there is no shepherd: and they became meat to all the beasts of the field, when they were scattered.* (Ezekiel 34:5) Moses'' fear — *that the congregation of Yahuah be not as sheep which have no shepherd* (Numbers 27:17) — becomes Ezekiel''s indictment of the shepherds who fed themselves; the scattered two-house flock waits for the one Shepherd Yahuah will set over them.'),
+    ('canon','numbers',27,17, 'canon','matthew',9,36, 'free',
+     E'*But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd.* (Matthew 9:36) Moses'' prayer is answered in the Formed Son: the multitudes are exactly what Moses feared — *as sheep which have no shepherd* (Numbers 27:17) — and Yahusha is moved with compassion for them.'),
+    ('canon','numbers',27,17, 'canon','mark',6,34, 'free',
+     E'*And Yahusha (Jesus), when he came out, saw much people, and was moved with compassion toward them, because they were as sheep not having a shepherd: and he began to teach them many things.* (Mark 6:34) The shepherd Moses begged Yahuah to set over the congregation (Numbers 27:16-17) comes and shepherds with His own hand — teaching the flock that had none.'),
+    ('canon','numbers',27,17, 'canon','john',10,11, 'free',
+     E'*I am the good shepherd: the good shepherd giveth his life for the sheep.* (John 10:11) The *man* who would *go out before them* and *bring them in* (Numbers 27:17) is the Formed Son: the good shepherd who does not merely lead the flock but lays down his life for the sheep.'),
+
+    -- Thread 4: Joshua a man in whom is the spirit (v.18-23)
+    ('canon','numbers',27,18, 'canon','deuteronomy',34,9, 'free',
+     E'*And Joshua the son of Nun was full of the spirit of wisdom; for Moses had laid his hands upon him: and the children of Yashar''el (Israel) hearkened unto him, and did as Yahuah (LORD) commanded Moses.* (Deuteronomy 34:9) The charge given here — *Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him* (Numbers 27:18) — bears its fruit: the spirit passes by Moses'' hands, and Yashar''el follows the Spirit-filled successor.'),
+    ('canon','numbers',27,18, 'canon','acts',6,6, 'free',
+     E'*Whom they set before the apostles: and when they had prayed, they laid their hands on them.* (Acts 6:6) The pattern Moses sets — *lay thine hand upon him... and set him before Eleazar the priest, and before all the congregation* (Numbers 27:18-19) — is the same pattern the apostles keep: the charge and the gift conferred by prayer and the laying on of hands.'),
+    ('canon','numbers',27,18, 'canon','1-timothy',4,14, 'free',
+     E'*Neglect not the gift that is in thee, which was given thee by prophecy, with the laying on of the hands of the presbytery.* (1 Timothy 4:14) The succession of the spirit *by laying on of hands* begun with Joshua — *a man in whom is the spirit* (Numbers 27:18) — continues in the assembly: the gift conferred by the elders'' hands.'),
+    ('canon','numbers',27,17, 'canon','john',10,16, 'free',
+     E'*And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* (John 10:16) The shepherd who *may lead them out, and which may bring them in* (Numbers 27:17) gathers the scattered house with the fold of Yahudah into *one fold, and one shepherd* — the two sticks made one in the hand of the Formed Son.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-27-the-daughters-of-zelophehad-love-the-land',
+       E'The Daughters of Zelophehad Love the Land',
+       E'Five sisters with no brother stand at the door of the tabernacle and ask for what a man would have been given without question: *Give unto us therefore a possession among the brethren of our father* (Numbers 27:4). Their father *died in his own sin, and had no sons* — yet they refuse to let his *name be done away from among his family*. Moses *brought their cause before Yahuah*, and Yahuah''s answer is unambiguous: *The daughters of Zelophehad speak right: thou shalt surely give them a possession of an inheritance among their father''s brethren; and thou shalt cause the inheritance of their father to pass unto them* (Numbers 27:7). It becomes *a statute of judgment* in Yashar''el. The statute is sealed at the end of the wilderness — *only to the family of the tribe of their father shall they marry* (Numbers 36:6) — so the inheritance never passes out of the tribe; and it is paid out in the land, when the daughters *came near before Eleazar the priest, and before Joshua... saying, Yahuah commanded Moses to give us an inheritance among our brethren* (Joshua 17:3-4). The daughters of Zelophehad are the Torah''s own witness that *male nor female* was never a bar to a covenant heir. So when Galatians says *There is neither Yahudi (Jew) nor Greek... neither male nor female: for ye are all one in HaMashiach Yahusha* (Galatians 3:28), it does not dissolve the inheritance into a confession-church; it confirms the daughters'' right — *if ye be Messiah''s, then are ye Abraham''s seed, and heirs according to the promise* (Galatians 3:29). The inheritance is always reckoned by the seed of promise, carried forward, never lost.',
+       sv.verse_id, ev.verse_id, 'free', 24150
+  FROM _s312_num27_lookup sv, _s312_num27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=27 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-27-thou-shalt-be-gathered-unto-thy-people',
+       E'Thou Shalt Be Gathered unto Thy People',
+       E'Yahuah tells Moses to climb: *Get thee up into this mount Abarim, and see the land which I have given unto the children of Yashar''el. And when thou hast seen it, thou also shalt be gathered unto thy people, as Aaron thy brother was gathered* (Numbers 27:12-13). The reason is named — the strife at the water of Meribah, *ye rebelled against my commandment in the desert of Zin... to sanctify me at the water before their eyes* (Numbers 27:14). Moses may see the land but not enter it. The sentence is carried out on Nebo: *And Yahuah said unto him, This is the land which I sware unto Abraham, unto Isaac, and unto Jacob, saying, I will give it unto thy seed: I have caused thee to see it with thine eyes, but thou shalt not go over thither* (Deuteronomy 34:4), and *So Moses the servant of Yahuah died there in the land of Moab, according to the word of Yahuah* (Deuteronomy 34:5). The faithful servant who led Yashar''el to the edge of the inheritance is not the one who brings them in — that charge falls to another. Moses'' first thought, having heard his own death, is not for himself but for the flock left behind.',
+       sv.verse_id, ev.verse_id, 'free', 24153
+  FROM _s312_num27_lookup sv, _s312_num27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=27 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-27-sheep-which-have-no-shepherd',
+       E'Sheep Which Have No Shepherd',
+       E'Told he will die, Moses prays for the flock: *Let Yahuah, the Elohim of the spirits of all flesh, set a man over the congregation, Which may go out before them, and which may go in before them, and which may lead them out, and which may bring them in; that the congregation of Yahuah be not as sheep which have no shepherd* (Numbers 27:16-17). He addresses Yahuah by the title he had cried in the rebellion of Korah — *O Elohim, the Elohim of the spirits of all flesh* (Numbers 16:22) — the Maker of every living breath, asked to give the flock a shepherd. That fear becomes Ezekiel''s lawsuit against the false shepherds: *And they were scattered, because there is no shepherd: and they became meat to all the beasts of the field* (Ezekiel 34:5) — the scattered two-house flock waiting for the Shepherd Yahuah will set over them with His own hand. The prayer is answered in the Formed Son. *But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd* (Matthew 9:36); *he was moved with compassion toward them, because they were as sheep not having a shepherd: and he began to teach them many things* (Mark 6:34). The *man* who would *go out before them* and *bring them in* declares: *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11). Moses asked for a shepherd; Yahuah gave the Good Shepherd.',
+       sv.verse_id, ev.verse_id, 'free', 24156
+  FROM _s312_num27_lookup sv, _s312_num27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=27 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-27-joshua-a-man-in-whom-is-the-spirit',
+       E'Joshua, a Man in Whom Is the Spirit',
+       E'Yahuah names the shepherd: *Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him; And set him before Eleazar the priest, and before all the congregation; and give him a charge in their sight* (Numbers 27:18-19). The spirit is conferred by the laying on of hands — *And Moses did as Yahuah commanded him... And he laid his hands upon him, and gave him a charge* (Numbers 27:22-23) — and the fruit is recorded: *And Joshua the son of Nun was full of the spirit of wisdom; for Moses had laid his hands upon him: and the children of Yashar''el hearkened unto him* (Deuteronomy 34:9). This is the pattern the assembly keeps: the seven are set before the apostles, *and when they had prayed, they laid their hands on them* (Acts 6:6), and the gift in Timothy was *given thee by prophecy, with the laying on of the hands of the presbytery* (1 Timothy 4:14). And the name of the Spirit-filled successor who brings Yashar''el INTO the inheritance is the Name of salvation — Joshua is Yahusha. The shepherd who *may lead them out, and which may bring them in* gathers the other house with the fold of Yahudah: *other sheep I have, which are not of this fold: them also I must bring... and there shall be one fold, and one shepherd* (John 10:16) — the two sticks made one in the hand of the Formed Son.',
+       sv.verse_id, ev.verse_id, 'free', 24159
+  FROM _s312_num27_lookup sv, _s312_num27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=27 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== thread_members =====================
+-- Thread 1: the daughters of Zelophehad love the land
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Let them marry to whom they think best; only to the family of the tribe of their father shall they marry* (Numbers 36:6) — the statute completed so the inheritance stays in the tribe.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=4
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=36 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-the-daughters-of-zelophehad-love-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Zelophehad... had no sons, but daughters: and these are the names of his daughters* (Joshua 17:3) — the daughters remembered by name in the land.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=7
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=17 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-the-daughters-of-zelophehad-love-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*According to the commandment of Yahuah he gave them an inheritance among the brethren of their father* (Joshua 17:4) — the word of Numbers 27:7 performed before Joshua.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=7
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=17 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-the-daughters-of-zelophehad-love-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Neither male nor female: for ye are all one in HaMashiach Yahusha* (Galatians 3:28) — the daughters were the Torah''s own proof no covenant heir was barred.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=7
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-the-daughters-of-zelophehad-love-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*If ye be Messiah''s, then are ye Abraham''s seed, and heirs according to the promise* (Galatians 3:29) — the inheritance always reckoned by the seed of promise.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=8
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-the-daughters-of-zelophehad-love-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: thou shalt be gathered unto thy people
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I have caused thee to see it with thine eyes, but thou shalt not go over thither* (Deuteronomy 34:4) — the seeing-only; the land given to the seed, not to be crossed by Moses.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=12
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=34 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-thou-shalt-be-gathered-unto-thy-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*So Moses the servant of Yahuah died there in the land of Moab, according to the word of Yahuah* (Deuteronomy 34:5) — the sentence of Numbers 27:13 carried out on Nebo.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=13
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=34 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-thou-shalt-be-gathered-unto-thy-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: sheep which have no shepherd
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*O Elohim, the Elohim of the spirits of all flesh* (Numbers 16:22) — the same title Moses cried in Korah''s rebellion, now invoked to give the flock a shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=16
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-sheep-which-have-no-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*They were scattered, because there is no shepherd* (Ezekiel 34:5) — Moses'' fear becomes the lawsuit against the false shepherds of the scattered flock.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-sheep-which-have-no-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Moved with compassion on them... as sheep having no shepherd* (Matthew 9:36) — Moses'' prayer answered in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-sheep-which-have-no-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*As sheep not having a shepherd: and he began to teach them many things* (Mark 6:34) — the Shepherd shepherds the flock that had none.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=6 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-sheep-which-have-no-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11) — the man who goes out before them and brings them in, who lays down his life.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-sheep-which-have-no-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: Joshua a man in whom is the spirit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Joshua... was full of the spirit of wisdom; for Moses had laid his hands upon him* (Deuteronomy 34:9) — the spirit conferred by the laying on of hands bears its fruit.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=18
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=34 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-joshua-a-man-in-whom-is-the-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*When they had prayed, they laid their hands on them* (Acts 6:6) — the apostles keep the charge-and-hands pattern Moses set over Joshua.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=18
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-joshua-a-man-in-whom-is-the-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The gift... given thee by prophecy, with the laying on of the hands of the presbytery* (1 Timothy 4:14) — the succession of the spirit continues in the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=18
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-joshua-a-man-in-whom-is-the-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Other sheep I have... there shall be one fold, and one shepherd* (John 10:16) — the two sticks made one in the hand of the Formed Son, Yahusha the name of salvation.'
+  FROM cross_reference_threads t
+  JOIN _s312_num27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s312_num27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-27-joshua-a-man-in-whom-is-the-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_28.sql (Numbers 28) -----
+-- Book: numbers | Chapter: 28 | Tag: num28 | Prefix: s312
+-- Sort band: base 24175 step 3 -> 24175, 24178, 24181, 24184
+-- View: _s312_num28_lookup
+--
+-- FRAME: Numbers 28 lays out Yahuah's STANDING worship calendar — the continual
+-- (daily) burnt offering, the Sabbath offering, the new-moon (Rosh Chodesh) offering,
+-- and the appointed-feast offerings (Passover, Unleavened Bread, Firstfruits/Weeks).
+-- These appointed times are Yahuah's creation-rooted calendar (Lev 23), a SHADOW whose
+-- BODY is Messiah (Col 2:16-17) — NOT abolished. The daily/Sabbath/new-moon/feast
+-- offerings are the architecture the Formed Son fills: the perpetual worship, the one
+-- offering, our Passover, the Spirit poured at Weeks.
+--
+-- Numbers 28 coverage:
+--   v.1-8  (continual burnt offering)  NT:     Hebrews 7:27, Hebrews 10:11-12, Revelation 8:3-4
+--                                      Extras: none warranted (kept to NT fulfillment + Tanakh witness)
+--                                      Tanakh: Exodus 29:38-42, Psalm 141:2
+--   v.9-10 (Sabbath offering)          NT:     none warranted (Sabbath-as-standing covered by Col 2:16 in new-moon thread)
+--                                      Extras: none warranted
+--                                      Tanakh: Leviticus 23:3, Ezekiel 46:4
+--   v.11-15 (new moon / Rosh Chodesh)  NT:     Colossians 2:16-17 (shadow STANDING, body is Messiah)
+--                                      Extras: none warranted
+--                                      Tanakh: Psalm 81:3, Isaiah 66:23
+--   v.16-31 (Passover/Unleavened/Weeks) NT:    1 Corinthians 5:7-8, Acts 2:1
+--                                      Extras: none warranted (clean NT + Lev 23 calendar witness)
+--                                      Tanakh: Leviticus 23:5, 23:6, 23:10, 23:16-17
+--
+-- THREADS (4):
+--   numbers-28-the-continual-burnt-offering-morning-and-evening   [free]  Tanakh + NT
+--   numbers-28-the-sabbath-burnt-offering                         [free]  Tanakh
+--   numbers-28-the-new-moon-offering-a-shadow-still-standing       [free]  Tanakh + NT
+--   numbers-28-the-appointed-feast-offerings-passover-weeks        [free]  Tanakh + NT
+--
+-- Contested framing: Col 2:16-17 (new-moon thread) is read AS Lev-23/Numbers-28 STANDING —
+-- the appointed times are a shadow whose body is Messiah, kept not abolished (Isa 66:23 has
+-- ALL flesh worshipping new-moon to new-moon in the age to come). Heb 7:27 / 10:11-12 contrast
+-- the DAILY repeated sacrifices with the ONE offering — the continual offering pointed to and
+-- is fulfilled (not annulled-as-error) in the Formed Son's once-for-all self-offering.
+
+CREATE TEMP VIEW _s312_num28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the continual burnt offering, morning and evening
+    ('canon','numbers',28,6, 'canon','exodus',29,38,
+      'free',
+      E'*Now this is that which thou shalt offer upon the altar; two lambs of the first year day by day continually.* (Exodus 29:38) — Numbers'' charge *It is a continual burnt offering, which was ordained in mount Sinai for a sweet savour* (Numbers 28:6) re-issues the very ordinance Yahuah gave at the altar of the tabernacle: the unbroken morning-and-evening lamb that frames every day of Yashar''el (Israel) in worship.'),
+    ('canon','numbers',28,4, 'canon','exodus',29,39,
+      'free',
+      E'*The one lamb thou shalt offer in the morning; and the other lamb thou shalt offer at even:* (Exodus 29:39) — exactly Numbers'' *The one lamb shalt thou offer in the morning, and the other lamb shalt thou offer at even* (Numbers 28:4). Two appointments, dawn and dusk, bracketing the day; the same rhythm Exodus set at Sinai.'),
+    ('canon','numbers',28,3, 'canon','exodus',29,42,
+      'free',
+      E'*This shall be a continual burnt offering throughout your generations at the door of the tabernacle of the congregation before Yahuah (LORD): where I will meet you, to speak there unto thee.* (Exodus 29:42) — the *continual burnt offering* of Numbers 28:3 is the appointed place of MEETING: the daily lamb is where Yahuah promises to speak with His people.'),
+    ('canon','numbers',28,7, 'canon','psalms',141,2,
+      'free',
+      E'*Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice.* (Psalm 141:2) — David reads the continual offering, with its *drink offering* poured *in the holy place* (Numbers 28:7), as the pattern of worship: the evening sacrifice becomes prayer lifted to Yahuah, the daily altar internalized.'),
+    ('canon','numbers',28,8, 'canon','hebrews',7,27,
+      'free',
+      E'*Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people''s: for this he did once, when he offered up himself.* (Hebrews 7:27) — the *daily* repetition of Numbers 28 (*the other lamb shalt thou offer at even*, Numbers 28:8) is what the Formed Son fills and fulfills: the continual offering pointed forward to the one self-offering that needs no repeating.'),
+    ('canon','numbers',28,6, 'canon','hebrews',10,11,
+      'free',
+      E'*And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins:* (Hebrews 10:11) — the *continual burnt offering... a sacrifice made by fire unto Yahuah (LORD)* (Numbers 28:6) is the daily ministry Hebrews names; the standing daily lambs were the shadow that the once-for-all offering answers.'),
+    ('canon','numbers',28,6, 'canon','hebrews',10,12,
+      'free',
+      E'*But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of Elohim (God);* (Hebrews 10:12) — over against the *continual burnt offering* offered without end (Numbers 28:6), the Formed Son offers ONE sacrifice and SITS — the perpetual daily worship gathered up into the finished work.'),
+    ('canon','numbers',28,7, 'canon','revelation',8,3,
+      'free',
+      E'*And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.* (Revelation 8:3) — the daily altar and *drink offering... poured unto Yahuah (LORD)* of Numbers 28:7 ascends in the throne-room as the prayers of the saints, the continual worship perpetuated in heaven.'),
+    ('canon','numbers',28,8, 'canon','revelation',8,4,
+      'free',
+      E'*And the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand.* (Revelation 8:4) — the *sweet savour unto Yahuah (LORD)* of the evening sacrifice (Numbers 28:8) is the rising smoke John sees: the continual offering perfected as the prayers of the saints before the throne.'),
+
+    -- THREAD 2: the Sabbath burnt offering
+    ('canon','numbers',28,9, 'canon','leviticus',23,3,
+      'free',
+      E'*Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of Yahuah (LORD) in all your dwellings.* (Leviticus 23:3) — the doubled Sabbath lambs of Numbers 28:9 (*on the sabbath day two lambs of the first year without spot*) belong to the day Leviticus heads its whole feast-calendar with: the seventh-day Sabbath, holy convocation and rest of Yahuah.'),
+    ('canon','numbers',28,10, 'canon','ezekiel',46,4,
+      'free',
+      E'*And the burnt offering that the prince shall offer unto Yahuah (LORD) in the sabbath day shall be six lambs without blemish, and a ram without blemish.* (Ezekiel 46:4) — *This is the burnt offering of every sabbath, beside the continual burnt offering* (Numbers 28:10); Ezekiel''s restored-temple vision still keeps a Sabbath burnt offering, the standing day enduring into the age to come.'),
+
+    -- THREAD 3: the new moon offering, a shadow still standing
+    ('canon','numbers',28,11, 'canon','psalms',81,3,
+      'free',
+      E'*Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day.* (Psalm 81:3) — Asaph sings the very appointment of Numbers 28:11 (*in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)*): the new moon is *the time appointed*, a fixed station in Yahuah''s calendar marked by the trumpet.'),
+    ('canon','numbers',28,11, 'canon','isaiah',66,23,
+      'free',
+      E'*And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD).* (Isaiah 66:23) — the monthly *burnt offering unto Yahuah (LORD)* of Numbers 28:11 is no abolished relic: Isaiah sets ALL flesh worshipping *from one new moon to another* in the age to come — the new moon stands forever.'),
+    ('canon','numbers',28,14, 'canon','colossians',2,16,
+      'free',
+      E'*Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days:* (Colossians 2:16) — *the burnt offering of every month throughout the months of the year* (Numbers 28:14) is the new moon Paul defends; the warning is against MEN judging the keepers, not against the appointed times themselves.'),
+    ('canon','numbers',28,11, 'canon','colossians',2,17,
+      'free',
+      E'*Which are a shadow of things to come; but the body is of Messiah (Christ).* (Colossians 2:17) — the new-moon offering of Numbers 28:11 is a *shadow of things to come* whose substance is Messiah; a shadow cast by a standing body still belongs to the body — the appointed time is kept, fulfilled, not annulled.'),
+
+    -- THREAD 4: the appointed feast offerings — Passover, Unleavened Bread, Firstfruits/Weeks
+    ('canon','numbers',28,16, 'canon','leviticus',23,5,
+      'free',
+      E'*In the fourteenth day of the first month at even is the LORD''S passover.* (Leviticus 23:5) — Numbers 28:16 (*in the fourteenth day of the first month is the passover of Yahuah (LORD)*) re-states the head of the feast-calendar Leviticus 23 ordains: the same fixed day, the Passover of Yahuah.'),
+    ('canon','numbers',28,17, 'canon','leviticus',23,6,
+      'free',
+      E'*And on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread.* (Leviticus 23:6) — *in the fifteenth day of this month is the feast: seven days shall unleavened bread be eaten* (Numbers 28:17); the Numbers offering-list fills out the seven-day feast Leviticus appoints.'),
+    ('canon','numbers',28,26, 'canon','leviticus',23,16,
+      'free',
+      E'*Even unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering unto Yahuah (LORD).* (Leviticus 23:16) — the *day of the firstfruits... after your weeks be out* with its *new meat offering* (Numbers 28:26) is the Feast of Weeks Leviticus counts: fifty days from Firstfruits, the new grain offered.'),
+    ('canon','numbers',28,26, 'canon','leviticus',23,17,
+      'free',
+      E'*Ye shall bring out of your habitations two wave loaves of two tenth deals: they shall be of fine flour; they shall be baken with leaven; they are the firstfruits unto Yahuah (LORD).* (Leviticus 23:17) — the *new meat offering* of the day of firstfruits (Numbers 28:26) is the two wave loaves of Weeks, the firstfruits of the wheat harvest brought to Yahuah.'),
+    ('canon','numbers',28,16, 'canon','1-corinthians',5,7,
+      'free',
+      E'*Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us:* (1 Corinthians 5:7) — *the passover of Yahuah (LORD)* of Numbers 28:16 is filled by the Formed Son: Messiah is OUR Passover, the appointed lamb the feast always pointed to.'),
+    ('canon','numbers',28,17, 'canon','1-corinthians',5,8,
+      'free',
+      E'*Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.* (1 Corinthians 5:8) — *seven days shall unleavened bread be eaten* (Numbers 28:17); Paul does not abolish the feast but bids the people KEEP it, the unleavened bread now sincerity and truth.'),
+    ('canon','numbers',28,26, 'canon','acts',2,1,
+      'free',
+      E'*And when the day of Pentecost was fully come, they were all with one accord in one place.* (Acts 2:1) — *the day of the firstfruits... after your weeks be out* (Numbers 28:26) is the Feast of Weeks (Pentecost); on the very appointed day the Ruach HaKodesh (Holy Spirit) is poured out, the harvest-feast filled with its firstfruits of the gathered people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-28-the-continual-burnt-offering-morning-and-evening',
+       E'The Continual Burnt Offering — Morning and Evening',
+       E'Numbers 28 opens with the unbroken daily worship of Yashar''el (Israel): *two lambs of the first year without spot day by day, for a continual burnt offering* — *the one lamb... in the morning, and the other lamb... at even* (Numbers 28:3-4), *a continual burnt offering, which was ordained in mount Sinai for a sweet savour* (Numbers 28:6). This is the very altar-ordinance of Exodus: *Now this is that which thou shalt offer upon the altar; two lambs of the first year day by day continually* (Exodus 29:38), the place where Yahuah promised *I will meet you, to speak there unto thee* (Exodus 29:42). David turns the daily lamb into a posture of prayer: *Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* (Psalm 141:2). The Formed Son fills it: against the priests who *standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins* (Hebrews 10:11), *this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of Elohim (God)* (Hebrews 10:12) — *for this he did once, when he offered up himself* (Hebrews 7:27). And the continual worship is perpetuated before the throne: *much incense, that he should offer it with the prayers of all saints upon the golden altar* (Revelation 8:3), *and the smoke of the incense... ascended up before Elohim (God)* (Revelation 8:4). The daily lamb was never a defunct ritual — it is the architecture of unending worship the Son both fulfills and carries on.',
+       sv.verse_id, ev.verse_id, 'free', 24175
+  FROM _s312_num28_lookup sv, _s312_num28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=28 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-28-the-sabbath-burnt-offering',
+       E'The Sabbath Burnt Offering',
+       E'On the seventh day the daily worship is doubled: *on the sabbath day two lambs of the first year without spot... This is the burnt offering of every sabbath, beside the continual burnt offering* (Numbers 28:9-10). The Sabbath is the head of Yahuah''s whole feast-calendar: *the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of Yahuah (LORD) in all your dwellings* (Leviticus 23:3). And the Sabbath offering is no relic of a vanished age — Ezekiel''s restored-temple vision still keeps it: *the burnt offering that the prince shall offer unto Yahuah (LORD) in the sabbath day shall be six lambs without blemish, and a ram without blemish* (Ezekiel 46:4). The seventh-day worship stands at Sinai, in the prophets, and in the age to come.',
+       sv.verse_id, ev.verse_id, 'free', 24178
+  FROM _s312_num28_lookup sv, _s312_num28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=28 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-28-the-new-moon-offering-a-shadow-still-standing',
+       E'The New Moon Offering — A Shadow Still Standing',
+       E'The monthly appointment: *in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)* (Numbers 28:11), *this is the burnt offering of every month throughout the months of the year* (Numbers 28:14). Asaph sings the same fixed station: *Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day* (Psalm 81:3) — the new moon is *the time appointed*. And it is no expired ordinance: Isaiah sets ALL flesh keeping it in the age to come — *from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). So when Paul writes *Let no man therefore judge you... in respect of an holyday, or of the new moon, or of the sabbath days* (Colossians 2:16), the warning is against MEN judging the keepers — for these *are a shadow of things to come; but the body is of Messiah (Christ)* (Colossians 2:17). A shadow cast by a standing body still belongs to the body: the new moon is kept and fulfilled, not abolished.',
+       sv.verse_id, ev.verse_id, 'free', 24181
+  FROM _s312_num28_lookup sv, _s312_num28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=28 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-28-the-appointed-feast-offerings-passover-weeks',
+       E'The Appointed Feast Offerings — Passover, Unleavened Bread, and Weeks',
+       E'Numbers 28 closes with the great pilgrim feasts: *in the fourteenth day of the first month is the passover of Yahuah (LORD)* (Numbers 28:16), *in the fifteenth day of this month is the feast: seven days shall unleavened bread be eaten* (Numbers 28:17), and *the day of the firstfruits, when ye bring a new meat offering... after your weeks be out* (Numbers 28:26). These are the appointed times Leviticus 23 ordains — *the fourteenth day of the first month at even is the LORD''S passover* (Leviticus 23:5), *the fifteenth day of the same month is the feast of unleavened bread* (Leviticus 23:6), and the count of *fifty days* to *a new meat offering* with *two wave loaves... the firstfruits unto Yahuah (LORD)* (Leviticus 23:16-17). The Formed Son fills the calendar: *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7), and rather than abolish the feast Paul commands it — *let us keep the feast... with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). And on the very Feast of Weeks the harvest is reaped: *when the day of Pentecost was fully come, they were all with one accord in one place* (Acts 2:1), the firstfruits of the gathered people poured out by the Ruach HaKodesh (Holy Spirit). The feast-offerings are the appointed-time architecture the Son steps into and fills.',
+       sv.verse_id, ev.verse_id, 'free', 24184
+  FROM _s312_num28_lookup sv, _s312_num28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=28 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1: the continual burnt offering
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*two lambs of the first year day by day continually* (Exodus 29:38) — the continual offering of Numbers 28:6 re-issues the Sinai altar-ordinance.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=6
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=29 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The one lamb thou shalt offer in the morning; and the other lamb... at even* (Exodus 29:39) — the same dawn-and-dusk rhythm as Numbers 28:4.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=4
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=29 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*where I will meet you, to speak there unto thee* (Exodus 29:42) — the continual offering is the appointed place of meeting with Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=3
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=29 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the lifting up of my hands as the evening sacrifice* (Psalm 141:2) — David internalizes the daily offering as prayer.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=7
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=141 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*for this he did once, when he offered up himself* (Hebrews 7:27) — the daily lamb fulfilled in the one self-offering of the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=8
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*every priest standeth daily ministering and offering oftentimes the same sacrifices* (Hebrews 10:11) — the standing daily lambs of Numbers 28:6.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=6
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*after he had offered one sacrifice for sins for ever, sat down* (Hebrews 10:12) — the continual offering gathered into the finished work.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=6
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*much incense... with the prayers of all saints upon the golden altar* (Revelation 8:3) — the daily altar perpetuated before the throne.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=7
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=8 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*the smoke of the incense... ascended up before Elohim (God)* (Revelation 8:4) — the sweet savour of Numbers 28:8 as the prayers of the saints.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=8
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=8 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-continual-burnt-offering-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: the Sabbath burnt offering
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the seventh day is the sabbath of rest, an holy convocation* (Leviticus 23:3) — the doubled Sabbath lambs of Numbers 28:9 belong to the seventh-day Sabbath.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-sabbath-burnt-offering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the prince shall offer unto Yahuah (LORD) in the sabbath day... six lambs* (Ezekiel 46:4) — the Sabbath offering kept in the restored-temple age.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=10
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=46 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-sabbath-burnt-offering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: the new moon offering
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Blow up the trumpet in the new moon, in the time appointed* (Psalm 81:3) — the new moon of Numbers 28:11 is a fixed appointed time.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=11
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=81 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-new-moon-offering-a-shadow-still-standing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*from one new moon to another... shall all flesh come to worship* (Isaiah 66:23) — the new moon stands forever, into the age to come.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=11
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-new-moon-offering-a-shadow-still-standing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Let no man therefore judge you... in respect of... the new moon* (Colossians 2:16) — the warning is against men judging the keepers, not the appointed time.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=14
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-new-moon-offering-a-shadow-still-standing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a shadow of things to come; but the body is of Messiah (Christ)* (Colossians 2:17) — a shadow cast by a standing body still belongs to the body; kept, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=11
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-new-moon-offering-a-shadow-still-standing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: the appointed feast offerings
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the fourteenth day of the first month at even is the LORD''S passover* (Leviticus 23:5) — the same fixed Passover day as Numbers 28:16.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-appointed-feast-offerings-passover-weeks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the fifteenth day... is the feast of unleavened bread... seven days* (Leviticus 23:6) — the seven-day feast of Numbers 28:17.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-appointed-feast-offerings-passover-weeks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*number fifty days; and ye shall offer a new meat offering* (Leviticus 23:16) — the Feast of Weeks counted from Firstfruits, the day of Numbers 28:26.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=26
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-appointed-feast-offerings-passover-weeks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*two wave loaves... they are the firstfruits unto Yahuah (LORD)* (Leviticus 23:17) — the new meat offering of the day of firstfruits in Numbers 28:26.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=26
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-appointed-feast-offerings-passover-weeks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7) — the Passover of Numbers 28:16 filled by the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-appointed-feast-offerings-passover-weeks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*let us keep the feast... with the unleavened bread of sincerity and truth* (1 Corinthians 5:8) — Paul commands the feast kept, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-appointed-feast-offerings-passover-weeks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*when the day of Pentecost was fully come* (Acts 2:1) — the Feast of Weeks (Numbers 28:26) filled with the Spirit poured out.'
+  FROM cross_reference_threads t
+  JOIN _s312_num28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=28 AND sv.verse_number=26
+  JOIN _s312_num28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-28-the-appointed-feast-offerings-passover-weeks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_29.sql (Numbers 29) -----
+-- Chapter: Numbers 29 — the offerings of the seventh-month appointed times (Trumpets, Atonement, Tabernacles)
+-- Tag: num29   |   Session prefix: s312   |   View: _s312_num29_lookup
+-- Sort band: base 24200, step 3 -> 24200, 24203, 24206
+--
+-- FRAME: The seventh-month feasts of Yahuah's calendar (Leviticus 23) — the AUTUMN ingathering:
+--   Trumpets (the blowing/regathering), Atonement (afflicting souls/cleansing), Tabernacles
+--   (Elohim dwelling with men). These are appointed times STANDING, a shadow whose body is
+--   Messiah (Colossians 2:16-17), NOT abolished. Curated to 3 threads; the repeating bullock/
+--   ram/lamb lists (vv.13-38) are NOT verse-dumped — they are gathered into the Tabernacles thread.
+--
+-- Numbers 29 coverage:
+--   v.1-6  (Feast of Trumpets, "a day of blowing the trumpets")
+--        NT:     1 Thessalonians 4:16 (trump of God), 1 Corinthians 15:52 (the last trump),
+--                Matthew 24:31 (gather his elect with a great sound of a trumpet) — all bound
+--        Extras: none warranted (kept canon trumpet-ingathering chain)
+--        Tanakh: Leviticus 23:24 (memorial of blowing of trumpets), Psalm 81:3 (blow the trumpet) — bound
+--   v.7-11 (Day of Atonement, "ye shall afflict your souls")
+--        NT:     Hebrews 9:11-12 (Messiah entered once by his own blood),
+--                Hebrews 10:3 (a remembrance again made of sins every year) — bound
+--        Extras: none warranted
+--        Tanakh: Leviticus 16:30 (atonement to cleanse you), Leviticus 23:27 (day of atonement, afflict souls) — bound
+--   v.12-38 (Feast of Tabernacles, seven days + eighth-day solemn assembly; bullocks decreasing 13->7)
+--        NT:     John 7:2 (feast of tabernacles at hand), John 7:37 (last great day of the feast),
+--                Revelation 21:3 (tabernacle of Elohim is with men) — bound
+--        Extras: none warranted
+--        Tanakh: Zechariah 14:16 (all nations keep the feast of tabernacles),
+--                Leviticus 23:34 (the feast of tabernacles seven days) — bound
+--   v.39-40 (set feasts / Moses told the children of Yashar'el): summary verses, none warranted
+--
+-- Threads:
+--   numbers-29-the-day-of-blowing-the-trumpets-the-last-trump-and-the-ingathering   [canon: NT+Tanakh] sort 24200
+--   numbers-29-the-day-of-atonement-afflict-your-souls-and-the-once-for-all-blood    [canon: NT+Tanakh] sort 24203
+--   numbers-29-the-feast-of-tabernacles-elohim-shall-tabernacle-with-men             [canon: NT+Tanakh] sort 24206
+
+-- A. Temp view
+CREATE TEMP VIEW _s312_num29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- B. cross_references
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Trumpets (29:1-6)
+    ('canon','numbers',29,1,'canon','leviticus',23,24,'free',
+      E'*And Yahuah (LORD) spake unto Moses, saying, Speak unto the children of Yashar''el (Israel), saying, In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation.* (Leviticus 23:24-25). The appointed-time decree that Numbers 29 supplies the offerings for: *In the seventh month, on the first day of the month, ye shall have an holy convocation... it is a day of blowing the trumpets unto you* (Numbers 29:1). The same Feast of Trumpets, the same Yahuah (LORD) commanding.'),
+    ('canon','numbers',29,1,'canon','psalms',81,3,'free',
+      E'*Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day. For this was a statute for Yashar''el (Israel), and a law of the Elohim (God) of Jacob.* (Psalm 81:3-4). The psalm sings the trumpet-blast Numbers 29:1 ordains — *a day of blowing the trumpets* — as *a statute for Yashar''el (Israel)*, the appointed-time calendar of Yahuah, not an arbitrary custom.'),
+    ('canon','numbers',29,1,'canon','1-thessalonians',4,16,'free',
+      E'*For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first.* (1 Thessalonians 4:16). The shadow of *a day of blowing the trumpets* (Numbers 29:1) reaches forward to the trump of Elohim — the one ingathering when the dead are raised and the scattered are gathered.'),
+    ('canon','numbers',29,1,'canon','1-corinthians',15,52,'free',
+      E'*In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed.* (1 Corinthians 15:52). The Feast of Trumpets — *a day of blowing the trumpets unto you* (Numbers 29:1) — prefigures the last trump, the appointed sound at which the resurrection-ingathering is accomplished.'),
+    ('canon','numbers',29,1,'canon','matthew',24,31,'free',
+      E'*And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31). The trumpet of the seventh-month feast — *a day of blowing the trumpets* (Numbers 29:1) — is the same great sound at which the elect of both houses are gathered from the four winds, the prophetic regathering of scattered Yashar''el.'),
+    -- Thread 2: Atonement (29:7-11)
+    ('canon','numbers',29,7,'canon','leviticus',23,27,'free',
+      E'*Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls, and offer an offering made by fire unto Yahuah (LORD).* (Leviticus 23:27). The very feast Numbers 29:7 supplies offerings for: *ye shall have on the tenth day of this seventh month an holy convocation; and ye shall afflict your souls* — the Day of Atonement, same day, same affliction of soul.'),
+    ('canon','numbers',29,7,'canon','leviticus',16,30,'free',
+      E'*For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before Yahuah (LORD).* (Leviticus 16:30). The atonement-ritual behind the Numbers 29:7-11 offerings, where the high priest enters within the vail with blood once a year — *beside the sin offering of atonement* (Numbers 29:11) points back to this annual cleansing.'),
+    ('canon','numbers',29,7,'canon','hebrews',9,11,'free',
+      E'*But Messiah (Christ) being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands... Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.* (Hebrews 9:11-12). The Day of Atonement — *to make an atonement for you... beside the sin offering of atonement* (Numbers 29:5,11) — finds its body in the Formed Son, who entered the true holy place once with his own blood.'),
+    ('canon','numbers',29,7,'canon','hebrews',10,3,'free',
+      E'*But in those sacrifices there is a remembrance again made of sins every year.* (Hebrews 10:3). The yearly Day of Atonement offerings of Numbers 29:7-11 were a shadow that could not perfect — each year *a remembrance again made of sins* — pointing forward to the one offering that takes them away; the feast still teaches the pattern even as its body is Messiah.'),
+    -- Thread 3: Tabernacles (29:12-38)
+    ('canon','numbers',29,12,'canon','leviticus',23,34,'free',
+      E'*Speak unto the children of Yashar''el (Israel), saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD).* (Leviticus 23:34). The feast Numbers 29:12 opens: *on the fifteenth day of the seventh month... ye shall keep a feast unto Yahuah (LORD) seven days* — the same Sukkot, the seven days whose decreasing bullocks (thirteen down to seven) Numbers 29:13-34 enumerates, with the eighth-day solemn assembly.'),
+    ('canon','numbers',29,12,'canon','john',7,2,'free',
+      E'*Now the Yahudim''s (Jews'') feast of tabernacles was at hand.* (John 7:2). The feast Numbers 29:12-38 ordains is the very feast the Formed Son keeps: he goes up to the feast of tabernacles, the autumn appointed time still observed, the architecture into which he steps.'),
+    ('canon','numbers',29,12,'canon','john',7,37,'free',
+      E'*In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink.* (John 7:37). The eighth-day solemn assembly closing the feast of tabernacles — *On the eighth day ye shall have a solemn assembly* (Numbers 29:35) — is the great day of the feast on which the Formed Son offers the living water of the indwelling Spirit.'),
+    ('canon','numbers',29,12,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* (Revelation 21:3). The Feast of Tabernacles — the dwelling in booths — reaches its consummation here: the ingathered are kept, and Elohim tabernacles with men, the body of the seven-day feast Numbers 29:12-38 keeps.'),
+    ('canon','numbers',29,12,'canon','zechariah',14,16,'free',
+      E'*And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles.* (Zechariah 14:16). The feast Numbers 29:12-38 commands is not abolished but kept in the restored kingdom — *to keep the feast of tabernacles* — every nation going up year to year, the appointed time standing into the age to come.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- C. threads
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-29-the-day-of-blowing-the-trumpets-the-last-trump-and-the-ingathering',
+       E'The day of blowing the trumpets — the last trump and the ingathering',
+       E'The seventh month opens with the trumpet. *In the seventh month, on the first day of the month, ye shall have an holy convocation; ye shall do no servile work: it is a day of blowing the trumpets unto you* (Numbers 29:1), and the offerings follow — *one young bullock, one ram, and seven lambs... and one kid of the goats for a sin offering, to make an atonement for you* (Numbers 29:2,5). Leviticus names it the same: *a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24), and the psalmist sings it as covenant law — *Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day. For this was a statute for Yashar''el (Israel), and a law of the Elohim (God) of Jacob* (Psalm 81:3-4). This is no defunct custom; it is Yahuah''s calendar, and the trumpet is the appointed sound of regathering. It reaches forward: *Yahuah (Lord) himself shall descend from heaven with a shout... and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16); *at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible* (1 Corinthians 15:52); *he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds* (Matthew 24:31). The Feast of Trumpets is the shadow whose body is the one ingathering — the scattered houses of Yashar''el gathered, the dead raised, at the appointed blast.',
+       sv.verse_id, ev.verse_id, 'free', 24200
+  FROM _s312_num29_lookup sv, _s312_num29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=29 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-29-the-day-of-atonement-afflict-your-souls-and-the-once-for-all-blood',
+       E'The day of atonement — afflict your souls and the once-for-all blood',
+       E'On the tenth day comes the most solemn of the appointed times. *And ye shall have on the tenth day of this seventh month an holy convocation; and ye shall afflict your souls: ye shall not do any work therein* (Numbers 29:7), with the burnt offering and *one kid of the goats for a sin offering; beside the sin offering of atonement* (Numbers 29:11). This is the Day of Atonement of Leviticus 23 — *ye shall afflict your souls, and offer an offering made by fire unto Yahuah (LORD)* (Leviticus 23:27) — and the great ritual of Leviticus 16, where the high priest enters within the vail with blood: *For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before Yahuah (LORD)* (Leviticus 16:30). The shadow finds its body in the Formed Son, the true high priest: *by his own blood he entered in once into the holy place, having obtained eternal redemption for us* (Hebrews 9:12). The yearly repetition itself testified that the blood of bulls and goats could not finish the work — *in those sacrifices there is a remembrance again made of sins every year* (Hebrews 10:3) — pointing past itself to the one offering. The feast is not abolished; it is fulfilled in him while still teaching the pattern: affliction of soul, atonement, cleansing.',
+       sv.verse_id, ev.verse_id, 'free', 24203
+  FROM _s312_num29_lookup sv, _s312_num29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=29 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-29-the-feast-of-tabernacles-elohim-shall-tabernacle-with-men',
+       E'The feast of tabernacles — Elohim shall tabernacle with men',
+       E'The seventh month closes with the great ingathering feast. *And on the fifteenth day of the seventh month ye shall have an holy convocation; ye shall do no servile work, and ye shall keep a feast unto Yahuah (LORD) seven days* (Numbers 29:12). Across the seven days the bullocks descend — *thirteen young bullocks* (Numbers 29:13), then twelve, eleven, ten, nine, eight, down to *seven bullocks* (Numbers 29:32) — and the feast crowns in the eighth day: *On the eighth day ye shall have a solemn assembly: ye shall do no servile work therein* (Numbers 29:35). This is Sukkot, *the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34), the dwelling in booths that recalls the wilderness and foreshadows Elohim dwelling with his people. The Formed Son keeps it — *the Yahudim''s (Jews'') feast of tabernacles was at hand* (John 7:2) — and on its last great day cries, *If any man thirst, let him come unto me, and drink* (John 7:37). The prophet sets it standing in the restored kingdom: *every one that is left of all the nations... shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles* (Zechariah 14:16). And its consummation: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3). The autumn ingathering feast is the prophetic picture of Elohim tabernacling with the gathered — a shadow whose body is Messiah, never abolished.',
+       sv.verse_id, ev.verse_id, 'free', 24206
+  FROM _s312_num29_lookup sv, _s312_num29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=29 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- D. thread_members
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24) — the appointed-time decree behind the offerings.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-blowing-the-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Blow up the trumpet in the new moon... a statute for Yashar''el (Israel)* (Psalm 81:3-4) — the feast sung as covenant law.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=81 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-blowing-the-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16) — the trumpet-feast reaching forward to the resurrection-ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-blowing-the-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible* (1 Corinthians 15:52) — the last trump of the appointed feast.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-blowing-the-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*a great sound of a trumpet, and they shall gather together his elect from the four winds* (Matthew 24:31) — the regathering of the scattered houses.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-blowing-the-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a day of atonement... and ye shall afflict your souls* (Leviticus 23:27) — the same tenth-day feast, same affliction of soul.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-atonement-afflict-your-souls-and-the-once-for-all-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the priest make an atonement for you, to cleanse you... clean from all your sins* (Leviticus 16:30) — the atonement-ritual behind the offerings.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=16 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-atonement-afflict-your-souls-and-the-once-for-all-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*by his own blood he entered in once into the holy place* (Hebrews 9:11-12) — the Formed Son, the true high priest, the body of the Atonement shadow.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-atonement-afflict-your-souls-and-the-once-for-all-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a remembrance again made of sins every year* (Hebrews 10:3) — the yearly repetition testifying it pointed past itself.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-day-of-atonement-afflict-your-souls-and-the-once-for-all-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34) — the same Sukkot the decreasing bullocks count out.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=12
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-feast-of-tabernacles-elohim-shall-tabernacle-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the Yahudim''s (Jews'') feast of tabernacles was at hand* (John 7:2) — the Formed Son keeps the appointed feast.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=12
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-feast-of-tabernacles-elohim-shall-tabernacle-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*In the last day, that great day of the feast... If any man thirst, let him come unto me, and drink* (John 7:37) — the eighth-day solemn assembly and the living water.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=12
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-feast-of-tabernacles-elohim-shall-tabernacle-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — the consummation of the dwelling-feast.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=12
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-feast-of-tabernacles-elohim-shall-tabernacle-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*shall even go up from year to year... to keep the feast of tabernacles* (Zechariah 14:16) — the feast standing into the restored kingdom, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s312_num29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=29 AND sv.verse_number=12
+  JOIN _s312_num29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-29-the-feast-of-tabernacles-elohim-shall-tabernacle-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_30.sql (Numbers 30) -----
+-- Book: Numbers   Chapter: 30   (the law of vows)
+-- Tag: num30      Prefix: s312      View: _s312_num30_lookup
+-- Sort band: base 24225 step 3  ->  24225, 24228
+--
+-- Numbers 30 coverage:
+--   v.1-2  (the binding word / the vow that must be kept)
+--          NT:     Matthew 5:33-37 (swear not at all; let yea be yea), James 5:12 (above all swear not; let your yea be yea)
+--          Extras: none warranted (canon vow-law fully witnessed in Tanakh + NT)
+--          Tanakh: Deuteronomy 23:21-23 (slack not to pay it; that which is gone out of thy lips thou shalt keep),
+--                  Ecclesiastes 5:4-5 (when thou vowest a vow defer not to pay it), Psalm 15:4 (sweareth to his own hurt and changeth not)
+--   v.3-16 (the household covering / the released vow — father or husband may confirm or annul)
+--          NT:     1 Corinthians 11:3 (the head of the woman is the man — the headship order, framed protectively)
+--          Extras: none warranted
+--          Tanakh: Genesis 3:16 (thy desire shall be to thy husband, and he shall rule over thee — the headship the covering operates within, NOT enmity)
+--
+-- Threads (2):
+--   numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word (free) — NT Matthew/James; Tanakh Deuteronomy/Ecclesiastes/Psalm
+--   numbers-30-the-father-or-husband-may-confirm-or-disallow-her-vow (free) — Tanakh Genesis 3:16; NT 1 Corinthians 11:3
+--
+-- Framework framing notes:
+--   * v.1-2 the binding word: the mouth's vow is covenant — Yahuah requires it kept (Deut 23 / Eccl 5 / Ps 15). Matthew 5:33-37
+--     and James 5:12 do NOT abolish Torah-vow-law; they intensify it — let the yea-itself be so binding that the oath becomes
+--     unnecessary. The man of integrity sweareth to his own hurt and changeth not (Ps 15:4). Torah-affirmed, not Torah-replaced.
+--   * v.3-16 the covering: framed PROTECTIVELY per the lens (victims, not enemies). The one who annuls BEARS it — "he shall bear
+--     her iniquity" (v.15); the released woman Yahuah FORGIVES (v.5,8,12). Headship is the covering that takes the weight, not
+--     domination. Genesis 3:16 names the order the covering operates within; 1 Cor 11:3 names the same head-order — both quoted
+--     plainly, NOT forced into a co-equal-persons or a woman-diminished gloss.
+
+CREATE TEMP VIEW _s312_num30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================
+-- B. cross_references
+-- ============================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the binding word (Numbers 30:2)
+    ('canon','numbers',30,2,'canon','matthew',5,37,'free',
+     E'*But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil.* (Matthew 5:37). The vow-law of Numbers 30 — *he shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2) — is not abolished here but intensified: the yea is to be so binding that the oath becomes needless. Torah-affirmed, never Torah-replaced.'),
+    ('canon','numbers',30,2,'canon','matthew',5,33,'free',
+     E'*Again, ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33). Yahusha quotes the very Torah principle of Numbers 30:2 — *he shall not break his word* — as standing ground, then deepens it.'),
+    ('canon','numbers',30,2,'canon','james',5,12,'free',
+     E'*But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation.* (James 5:12). James echoes the vow-integrity of Numbers 30:2, that the word *that proceedeth out of his mouth* must hold.'),
+    ('canon','numbers',30,2,'canon','deuteronomy',23,21,'free',
+     E'*When thou shalt vow a vow unto Yahuah Elohayka (the LORD thy God), thou shalt not slack to pay it: for Yahuah Elohayka (the LORD thy God) will surely require it of thee; and it would be sin in thee.* (Deuteronomy 23:21). The Torah twin of Numbers 30:2 — the vow once made binds the soul; *he shall not break his word.*'),
+    ('canon','numbers',30,2,'canon','deuteronomy',23,23,'free',
+     E'*That which is gone out of thy lips thou shalt keep and perform; even a freewill offering, according as thou hast vowed unto Yahuah Elohayka (the LORD thy God), which thou hast promised with thy mouth.* (Deuteronomy 23:23). The exact measure of Numbers 30:2: he shall *do according to all that proceedeth out of his mouth.*'),
+    ('canon','numbers',30,2,'canon','ecclesiastes',5,4,'free',
+     E'*When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed.* (Ecclesiastes 5:4). The wisdom restatement of the vow-law of Numbers 30:2 — the word once vowed is owed.'),
+    ('canon','numbers',30,2,'canon','ecclesiastes',5,5,'free',
+     E'*Better is it that thou shouldest not vow, than that thou shouldest vow and not pay.* (Ecclesiastes 5:5). The weight of Numbers 30:2 — *he shall not break his word* — is so heavy that the unkept vow is worse than no vow at all.'),
+    ('canon','numbers',30,2,'canon','psalms',15,4,'free',
+     E'*In whose eyes a vile person is contemned; but he honoureth them that fear Yahuah (LORD). He that sweareth to his own hurt, and changeth not.* (Psalm 15:4). The man who may abide in the tabernacle is the man of Numbers 30:2 — the one whose word stands even to his own cost.'),
+    -- Thread 2: the household covering (Numbers 30:5)
+    ('canon','numbers',30,5,'canon','genesis',3,16,'free',
+     E'*Unto the woman he said, I will greatly multiply thy sorrow and thy conception; in sorrow thou shalt bring forth children; and thy desire shall be to thy husband, and he shall rule over thee.* (Genesis 3:16). The headship order of Numbers 30 — the father or husband who may confirm or disallow the vow — operates within this same order; in the law of vows that headship becomes protective, the covering that bears the weight when it annuls (Numbers 30:15).'),
+    ('canon','numbers',30,5,'canon','1-corinthians',11,3,'free',
+     E'*But I would have you know, that the head of every man is the Messiah (Christ); and the head of the woman is the man; and the head of the Messiah (Christ) is Elohim (God).* (1 Corinthians 11:3). The same head-order that lets the father or husband of Numbers 30 confirm or release the woman''s vow — and *Yahuah (LORD) shall forgive her, because her father disallowed her* (Numbers 30:5), the covering taking the weight, not the woman condemned.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================
+-- C. threads
+-- ============================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word',
+       E'If a man vow a vow — he shall not break his word',
+       E'The law of vows opens with the binding mouth: *If a man vow a vow unto Yahuah (LORD), or swear an oath to bind his soul with a bond; he shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2). The word once spoken to Yahuah is covenant; it owns the soul. The Torah says it twice more: *When thou shalt vow a vow unto Yahuah Elohayka (the LORD thy God), thou shalt not slack to pay it: for Yahuah Elohayka (the LORD thy God) will surely require it of thee; and it would be sin in thee* (Deuteronomy 23:21), and *That which is gone out of thy lips thou shalt keep and perform... which thou hast promised with thy mouth* (Deuteronomy 23:23). The wisdom writings press the same yoke: *When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4); *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). The man fit to dwell in the tabernacle is named by it: *He that sweareth to his own hurt, and changeth not* (Psalm 15:4) — his word holds even when it costs him. And the Messiah does not loose this; he tightens it. *Again, ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33) — the very vow-law stands — *But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil* (Matthew 5:37). James seals it: *above all things, my brethren, swear not... but let your yea be yea; and your nay, nay; lest ye fall into condemnation* (James 5:12). The Torah''s demand that the word be kept is not abolished but fulfilled — let the yea itself be so binding that the oath is no longer needed.',
+       sv.verse_id, ev.verse_id, 'free', 24225
+  FROM _s312_num30_lookup sv, _s312_num30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=30 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-30-the-father-or-husband-may-confirm-or-disallow-her-vow',
+       E'The father or husband may confirm or disallow her vow',
+       E'After the binding word comes the covering of the word. The woman in her youth in her father''s house, or under a husband, vows — and the head of the house may let it stand or release it: *if her father disallow her in the day that he heareth; not any of her vows... shall stand: and Yahuah (LORD) shall forgive her, because her father disallowed her* (Numbers 30:5). The same for the wife: *if her husband disallowed her on the day that he heard it; then he shall make her vow... of none effect: and Yahuah (LORD) shall forgive her* (Numbers 30:8). Read with the lens, this is protection, not diminishment. If the one with covering holds his peace, the vow stands; he cannot revisit it later without cost — *But if he shall any ways make them void after that he hath heard them; then he shall bear her iniquity* (Numbers 30:15). The covering takes the weight; the released woman is forgiven. This headship runs in the order spoken at the gate of Eden: *thy desire shall be to thy husband, and he shall rule over thee* (Genesis 3:16) — and Sha''ul names the same order plainly, *the head of every man is the Messiah (Christ); and the head of the woman is the man; and the head of the Messiah (Christ) is Elohim (God)* (1 Corinthians 11:3). It is a chain of covering, each head answering upward to his own head — the husband who annuls bears her iniquity exactly as the Messiah, head of the man, bore his. The widow and the divorced, having no covering, stand alone: *every vow of a widow, and of her that is divorced... shall stand against her* (Numbers 30:9) — which only shows the covering was never a leash but a shelter that took the burden.',
+       sv.verse_id, ev.verse_id, 'free', 24228
+  FROM _s312_num30_lookup sv, _s312_num30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=30 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================
+-- D. thread_members
+-- ============================================================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Again, ye have heard that it hath been said... Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33) — the vow-law of Numbers 30:2 named as standing ground.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*But let your communication be, Yea, yea; Nay, nay* (Matthew 5:37) — the binding mouth of Numbers 30:2 tightened, not loosed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*above all things... swear not... but let your yea be yea; and your nay, nay* (James 5:12) — the vow-integrity of Numbers 30:2.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thou shalt not slack to pay it: for Yahuah Elohayka (the LORD thy God) will surely require it of thee* (Deuteronomy 23:21) — the Torah twin of the kept vow.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*That which is gone out of thy lips thou shalt keep and perform... which thou hast promised with thy mouth* (Deuteronomy 23:23) — the exact measure of Numbers 30:2.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*When thou vowest a vow unto Elohim (God), defer not to pay it... pay that which thou hast vowed* (Ecclesiastes 5:4) — wisdom''s restatement of the owed word.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5) — the weight of the unkept vow.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*He that sweareth to his own hurt, and changeth not* (Psalm 15:4) — the tabernacle-dweller is the man whose word stands at cost.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=2
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-if-a-man-vow-a-vow-he-shall-not-break-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thy desire shall be to thy husband, and he shall rule over thee* (Genesis 3:16) — the headship order the protective covering of Numbers 30 operates within.'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=5
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-the-father-or-husband-may-confirm-or-disallow-her-vow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the head of the woman is the man; and the head of the Messiah (Christ) is Elohim (God)* (1 Corinthians 11:3) — the chain of covering, each head bearing for the one beneath, as the husband bears her iniquity (Numbers 30:15).'
+  FROM cross_reference_threads t
+  JOIN _s312_num30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=30 AND sv.verse_number=5
+  JOIN _s312_num30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-30-the-father-or-husband-may-confirm-or-disallow-her-vow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_31.sql (Numbers 31) -----
+-- Book: numbers | Chapter: 31 | Tag: num31 | Prefix: s312
+-- Sort band: base 24250 step 3 -> 24250, 24253, 24256, 24259
+-- View: _s312_num31_lookup
+--
+-- FRAME: The war on Midian is judgment on the seduction-system of Peor — the
+-- counsel of Balaam that taught Balak to cast a stumblingblock before
+-- Yashar'el (Israel). Victims, not enemies: the SYSTEM of fornication-unto-
+-- idolatry is dismantled, and its architect Balaam is slain with the sword.
+-- The purification after battle ties straight back to the red-heifer water of
+-- separation (ch.19) — cleansing from death-defilement — and forward to the
+-- blood that purges the conscience and the trial-by-fire that refines.
+--
+-- THREADS (4):
+--   1. numbers-31-the-counsel-of-balaam-judged (31:8,16) — Balaam slain; the
+--      doctrine of Balaam exposed -> Rev 2:14 (free), 2 Pet 2:15 (free),
+--      Jude 1:11 (free), lateral Num 25:1-3 (free), Josh 13:22 (free). [free]
+--   2. numbers-31-the-purification-after-the-battle (31:19-24) — water of
+--      separation, third & seventh day, the fire and the water -> lateral
+--      Num 19:11-19 red-heifer (free); forward Heb 9:13-14 (free),
+--      1 Pet 1:7 trial by fire (free), Mal 3:3 refine as gold (free). [free]
+--   3. numbers-31-an-atonement-for-our-souls (31:48-54) — not one man missing;
+--      the officers' freewill gold to make atonement -> lateral Lev 27:28-29
+--      devoted-thing (free). [free]
+--   4. numbers-31-the-war-of-vengeance-for-peor (31:1-12) — the LORD's avenging
+--      on Midian for the seduction at Peor -> lateral Num 25:1-3 (free). [free]
+--
+-- Numbers 31 coverage:
+--   v.1-12 (war of vengeance):
+--        NT:     none warranted (judgment-on-system framed in thread 4; NT
+--                Balaam-doctrine carried by thread 1 at v.8,16)
+--        Extras: Jasher 79 Balaam-as-Pharaoh's-magician weighed — different
+--                episode (Egypt), weaker than the canon Peor/death chain; none warranted
+--        Tanakh: Num 25:1-3 (Peor seduction) -> thread 4
+--   v.8,16 (Balaam slain / counsel of Balaam):
+--        NT:     Rev 2:14, 2 Pet 2:15, Jude 1:11 -> thread 1
+--        Extras: Jasher 79 weighed (Egypt context) — none warranted as member
+--        Tanakh: Num 25:1-3, Josh 13:22 -> thread 1
+--   v.13-18 (sparing of the women / the snare): folded into thread 1 frame; no add
+--   v.19-24 (purification of warriors and spoil):
+--        NT:     Heb 9:13-14, 1 Pet 1:7, Mal 3:3 -> thread 2
+--        Extras: none warranted
+--        Tanakh: Num 19:11-19 (red-heifer water of separation) -> thread 2
+--   v.25-47 (division of spoil / tribute to Yahuah & Levites):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: heave-offering principle folded into thread 3 frame
+--   v.48-54 (officers' offering / atonement / not one missing):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Lev 27:28-29 (devoted thing most holy) -> thread 3
+
+-- ===== A. Temp view =====
+CREATE TEMP VIEW _s312_num31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references INSERT =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the counsel of Balaam judged (31:8,16)
+    ('canon','numbers',31,8,'canon','joshua',13,22,'free',
+      E'*Balaam also the son of Beor, the soothsayer, did the children of Yashar''el (Israel) slay with the sword among them that were slain by them* (Joshua 13:22). The later record names what Numbers states plainly — *Balaam also the son of Beor they slew with the sword* (Numbers 31:8). He is the *soothsayer*, the hired diviner of Numbers 22–24 whose curse Yahuah turned to blessing; here the man who could not curse Yashar''el (Israel) outright, and so taught the snare instead, falls by the very people he tried to ruin.'),
+    ('canon','numbers',31,16,'canon','numbers',25,1,'free',
+      E'*And Yashar''el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab* (Numbers 25:1). This is *the matter of Peor* Moses names — *Behold, these caused the children of Yashar''el (Israel), through the counsel of Balaam, to commit trespass against Yahuah (LORD) in the matter of Peor* (Numbers 31:16). The seduction at Shittim was no accident of lust; it was Balaam''s engineered counsel, fornication wielded as a weapon to draw Yashar''el (Israel) into idolatry and so onto Yahuah''s judgment.'),
+    ('canon','numbers',31,16,'canon','revelation',2,14,'free',
+      E'*But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication* (Revelation 2:14). The Messiah names *the doctrine of Balaam* as a living danger in the assemblies — the very *counsel of Balaam* of Numbers 31:16, the teaching that mixes the table of idols with the body, fornication with worship. What Numbers slew with the sword, Revelation exposes again in Pergamos: the stumblingblock is recurring, and judged.'),
+    ('canon','numbers',31,16,'canon','2-peter',2,15,'free',
+      E'*Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15). Peter brands the false teachers by Balaam''s name — they walk *the way of Balaam*, the diviner who *loved the wages of unrighteousness*. It is the same greed-driven counsel that drove Yashar''el (Israel) into trespass *through the counsel of Balaam* (Numbers 31:16): doctrine sold for reward, leading the people into the snare.'),
+    ('canon','numbers',31,16,'canon','jude',1,11,'free',
+      E'*Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 1:11). Jude pronounces the *Woe* on those who *ran greedily after the error of Balaam for reward* — the hireling diviner whose *counsel* (Numbers 31:16) led Yashar''el (Israel) into the plague at Peor. The error is named alongside Cain and Korah as a way that *perished*; Balaam''s own fall by the sword (Numbers 31:8) is the seal upon it.'),
+    -- Thread 2: the purification after the battle (31:19-24)
+    ('canon','numbers',31,19,'canon','numbers',19,11,'free',
+      E'*He that toucheth the dead body of any man shall be unclean seven days* (Numbers 19:11). The law of the warriors'' purification — *whosoever hath touched any slain... purify both yourselves... on the third day, and on the seventh day* (Numbers 31:19) — is the red-heifer ordinance of the preceding chapter applied to the camp returning from battle. Death-defilement clings for seven days; the *water of separation* alone can cleanse it.'),
+    ('canon','numbers',31,23,'canon','numbers',19,17,'free',
+      E'*And for an unclean person they shall take of the ashes of the burnt heifer of purification for sin, and running water shall be put thereto in a vessel* (Numbers 19:17). The *water of separation* with which the spoil and the men are purified (Numbers 31:23) is precisely this — the ashes of the red heifer mixed with running water. The metal that endures the fire still must pass through the water; nothing touched by death enters the camp uncleansed.'),
+    ('canon','numbers',31,23,'canon','hebrews',9,13,'free',
+      E'*For if the blood of bulls and of goats, and the ashes of an heifer sprinkling the unclean, sanctifieth to the purifying of the flesh: How much more shall the blood of Messiah (Christ)... purge your conscience from dead works* (Hebrews 9:13-14). The fire-and-water cleansing of Numbers 31:23 *purified... the flesh*; the writer reaches past the *ashes of an heifer* to the blood that *purge[s] your conscience from dead works* — the same cleansing-from-death-defilement carried to its end in the Formed Son who offered himself.'),
+    ('canon','numbers',31,23,'canon','1-peter',1,7,'free',
+      E'*That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). The gold of the spoil is made to *go through the fire* and so *be clean* (Numbers 31:23); Peter reads the same furnace forward — faith *tried with fire*, the dross consumed, the precious thing proven *at the appearing* of the Messiah.'),
+    ('canon','numbers',31,23,'canon','malachi',3,3,'free',
+      E'*And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). The spoil passed through the fire *and it shall be clean* (Numbers 31:23) is the same purging Malachi prophesies of the day of his coming — the Refiner who *purge[s] them as gold and silver* until the offering is pure. Fire that cleanses, not merely destroys.'),
+    -- Thread 3: an atonement for our souls (31:48-54)
+    ('canon','numbers',31,50,'canon','leviticus',27,28,'free',
+      E'*Notwithstanding no devoted thing, that a man shall devote unto Yahuah (LORD) of all that he hath, both of man and beast... is most holy unto Yahuah (LORD)* (Leviticus 27:28). The officers bring *an oblation for Yahuah (LORD)... to make an atonement for our souls* (Numbers 31:50) — the spoil set apart unto Yahuah. The devoted thing is *most holy*; their freewill gold, given because *there lacketh not one man of us* (Numbers 31:49), is the thank-offering of a people preserved whole.'),
+    -- Thread 4: the war of vengeance for Peor (31:1-12)
+    ('canon','numbers',31,2,'canon','numbers',25,3,'free',
+      E'*And Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel)* (Numbers 25:3). The command *Avenge the children of Yashar''el (Israel) of the Midianites* (Numbers 31:2) reaches back to Baal-peor — the seduction-system that *kindled* Yahuah''s anger and brought the plague. The war is not ethnic conquest but the dismantling of the apparatus that drew Yashar''el (Israel) into idolatry; the victims of the snare are avenged, the system judged.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads INSERT =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-31-the-counsel-of-balaam-judged',
+       E'The Counsel of Balaam Judged',
+       E'*Balaam also the son of Beor they slew with the sword* (Numbers 31:8). The diviner who could not curse Yashar''el (Israel) outright (Numbers 22–24) had taught a deadlier thing — the snare. Moses names it: *Behold, these caused the children of Yashar''el (Israel), through the counsel of Balaam, to commit trespass against Yahuah (LORD) in the matter of Peor, and there was a plague among the congregation of Yahuah (LORD)* (Numbers 31:16). That matter was Shittim — *the people began to commit whoredom with the daughters of Moab... and Yashar''el (Israel) joined himself unto Baal-peor* (Numbers 25:1,3): fornication engineered as a doorway into idolatry. Joshua remembers the man and his end — *Balaam also the son of Beor, the soothsayer, did the children of Yashar''el (Israel) slay with the sword* (Joshua 13:22). The New Testament names the counsel itself as a recurring danger. The Messiah rebukes those who *hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication* (Revelation 2:14). Peter brands the greedy false teachers as *gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15). Jude pronounces the woe: they *ran greedily after the error of Balaam for reward, and perished* (Jude 1:11). The sword that fell on Balaam is the judgment on a system — fornication-unto-idolatry sold for hire — never on a people; the lost sheep caught in the snare are avenged, the architect of it cut off.',
+       sv.verse_id, ev.verse_id, 'free', 24250
+  FROM _s312_num31_lookup sv, _s312_num31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=31 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-31-the-purification-after-the-battle',
+       E'The Purification After the Battle',
+       E'Returning from war, the men who *killed any person* or *touched any slain* must *abide without the camp seven days... purify both yourselves and your captives on the third day, and on the seventh day* (Numbers 31:19). This is the red-heifer ordinance of the chapter before applied to the camp: *He that toucheth the dead body of any man shall be unclean seven days* (Numbers 19:11), cleansed only by *the ashes of the burnt heifer of purification for sin, and running water* (Numbers 19:17) — the *water of separation*. The spoil is cleansed two ways: *Every thing that may abide the fire, ye shall make it go through the fire, and it shall be clean: nevertheless it shall be purified with the water of separation: and all that abideth not the fire ye shall make go through the water* (Numbers 31:23). Death-defilement cannot simply be washed off; it is purged by fire and by the heifer-water together. Hebrews carries it to its end: if *the ashes of an heifer sprinkling the unclean, sanctifieth to the purifying of the flesh*, how much more *the blood of Messiah (Christ)... purge your conscience from dead works* (Hebrews 9:13-14). The fire that cleanses the gold is the same furnace Peter sees — faith *tried with fire... found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7) — and the same Refiner Malachi foretells, who *shall sit as a refiner and purifier of silver... and purge them as gold and silver* (Malachi 3:3). Fire that purifies, not merely destroys.',
+       sv.verse_id, ev.verse_id, 'free', 24253
+  FROM _s312_num31_lookup sv, _s312_num31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=31 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-31-an-atonement-for-our-souls',
+       E'An Atonement for Our Souls',
+       E'When the captains number the men of war, the report is astonishing — *Thy servants have taken the sum of the men of war which are under our charge, and there lacketh not one man of us* (Numbers 31:49). Not one warrior fell. In thanksgiving they bring the gold of the spoil: *We have therefore brought an oblation for Yahuah (LORD), what every man hath gotten, of jewels of gold, chains, and bracelets, rings, earrings, and tablets, to make an atonement for our souls before Yahuah (LORD)* (Numbers 31:50). The spoil is not kept; it is devoted, set apart and brought *into the tabernacle of the congregation, for a memorial* (Numbers 31:54). This is the Torah principle of the devoted thing: *no devoted thing, that a man shall devote unto Yahuah (LORD) of all that he hath, both of man and beast... is most holy unto Yahuah (LORD)* (Leviticus 27:28). What is given back to Yahuah in gratitude for preservation is *most holy* — a freewill memorial of a people kept whole through judgment, every soul accounted for before him.',
+       sv.verse_id, ev.verse_id, 'free', 24256
+  FROM _s312_num31_lookup sv, _s312_num31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=48
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=31 AND ev.verse_number=54
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-31-the-war-of-vengeance-for-peor',
+       E'The War of Vengeance for Peor',
+       E'*Avenge the children of Yashar''el (Israel) of the Midianites: afterward shalt thou be gathered unto thy people* (Numbers 31:2). The command is framed as vengeance for a wrong already done — the seduction at Peor. *And Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel)* (Numbers 25:3), the climax of the whoredom with the daughters of Moab that Balaam''s counsel had engineered. So when Moses calls *a thousand of every tribe, twelve thousand armed for war* (Numbers 31:5), sending Phinehas *with the holy instruments, and the trumpets to blow* (Numbers 31:6), this is no land-grab. It is the dismantling of the seduction-system that drew Yashar''el (Israel) into idolatry and onto the plague — the snare and its keepers judged. The harsh measure falls on the apparatus of fornication-unto-idolatry, not on a people hated; the children of Yashar''el (Israel) themselves were its victims, and the war answers the wrong done to them.',
+       sv.verse_id, ev.verse_id, 'free', 24259
+  FROM _s312_num31_lookup sv, _s312_num31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=31 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members INSERT (SAFE VERBOSE — one INSERT per member) =====
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Balaam also the son of Beor, the soothsayer, did the children of Yashar''el (Israel) slay with the sword* (Joshua 13:22) — the later record names the diviner and his end.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=8
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=13 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-counsel-of-balaam-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yashar''el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab* (Numbers 25:1) — the matter of Peor itself, the snare Balaam engineered.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=16
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-counsel-of-balaam-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock... to commit fornication* (Revelation 2:14) — the same counsel, judged again in Pergamos.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=16
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-counsel-of-balaam-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15) — doctrine sold for reward, Balaam''s greed named.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=16
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-counsel-of-balaam-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Ran greedily after the error of Balaam for reward, and perished* (Jude 1:11) — the woe, Balaam''s error sealed alongside Cain and Korah.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=16
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-counsel-of-balaam-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He that toucheth the dead body of any man shall be unclean seven days* (Numbers 19:11) — the red-heifer law the warriors'' purification rests upon.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=19
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=19 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-purification-after-the-battle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The ashes of the burnt heifer of purification for sin, and running water* (Numbers 19:17) — the very water of separation the spoil is cleansed with.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=23
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=19 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-purification-after-the-battle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The blood of Messiah (Christ)... purge your conscience from dead works* (Hebrews 9:13-14) — the heifer-ashes carried to their end in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=23
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-purification-after-the-battle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7) — the gold-through-fire read forward to tried faith.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=23
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-purification-after-the-battle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He shall sit as a refiner and purifier of silver... and purge them as gold and silver* (Malachi 3:3) — fire that purifies, the Refiner of the day of his coming.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=23
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-purification-after-the-battle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*No devoted thing, that a man shall devote unto Yahuah (LORD)... is most holy unto Yahuah (LORD)* (Leviticus 27:28) — the Torah principle behind the officers'' atonement-offering.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=50
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=27 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-an-atonement-for-our-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled* (Numbers 25:3) — the wrong the war on Midian avenges, the seduction-system judged.'
+  FROM cross_reference_threads t
+  JOIN _s312_num31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=31 AND sv.verse_number=2
+  JOIN _s312_num31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-31-the-war-of-vengeance-for-peor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session312 — Numbers cross-references complete.'
