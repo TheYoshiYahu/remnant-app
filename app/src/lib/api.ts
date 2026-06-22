@@ -928,7 +928,10 @@ export function putReadingPosition(
 
 export type SacredNameMaskValue = "yahuah" | "yhwh";
 export type ReaderThemeValue = "light" | "dark";
-export type ReaderFontSizeValue = "small" | "medium" | "large";
+// S356 — `xlarge` added as a fourth step (S / M / L / XL). Backward-
+// compatible: existing stored "small"/"medium"/"large" values stay valid,
+// and the server `ReaderFontSize` Literal in api/models.py mirrors this.
+export type ReaderFontSizeValue = "small" | "medium" | "large" | "xlarge";
 
 export interface DisplayPrefs {
   sacred_name_mask: SacredNameMaskValue | null;

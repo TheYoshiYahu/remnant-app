@@ -542,7 +542,7 @@ class UpsertReadingPositionRequest(BaseModel):
 
 SacredNameMask = Literal["yahuah", "yhwh"]
 ReaderTheme = Literal["light", "dark"]
-ReaderFontSize = Literal["small", "medium", "large"]
+ReaderFontSize = Literal["small", "medium", "large", "xlarge"]  # S356 — XL step added (backward-compatible)
 
 
 class DisplayPrefs(BaseModel):

@@ -12,8 +12,20 @@
           if (stored === "light") {
             document.documentElement.setAttribute("data-theme", "light");
           }
+          /* S356 — reader font-size preference, applied pre-paint so a
+             partner who picked a larger size never sees a flash of the
+             default register. Owned at runtime by lib/useFontSize.ts. */
+          var fontSize = window.localStorage.getItem("rop_font_size_v1");
+          if (
+            fontSize === "small" ||
+            fontSize === "medium" ||
+            fontSize === "large" ||
+            fontSize === "xlarge"
+          ) {
+            document.documentElement.setAttribute("data-reader-font", fontSize);
+          }
         } catch (e) {
-          /* localStorage unavailable (private mode, etc.) — stays dark */
+          /* localStorage unavailable (private mode, etc.) — defaults stand */
         }
       })();
     </script>

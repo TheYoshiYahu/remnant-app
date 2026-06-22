@@ -30,18 +30,18 @@
  *   - localStorage unavailable (private window): the writeLocalSnapshot
  *     no-ops per the same SSR-safe guard the hooks use.
  *
- * The two preferences wired this session are sacred_name_mask and
- * hide_parentheticals — the two render-affecting prefs with active
- * S172 hooks. The other four keys in the DisplayPrefs shape
- * (theme/font_size/interlinear_default/tts_voice) round-trip through
- * the sync layer untouched and are forward-compatible for whenever
- * their Settings controls land.
+ * The wired preferences are sacred_name_mask, hide_parentheticals
+ * (S172/S173) and font_size (S356 — driven by lib/useFontSize.ts). The
+ * remaining keys in the DisplayPrefs shape (theme/interlinear_default/
+ * tts_voice) round-trip through the sync layer untouched and are
+ * forward-compatible for whenever their Settings controls land.
  */
 
 import {
   getDisplayPrefs,
   putDisplayPrefs,
   type DisplayPrefs,
+  type ReaderFontSizeValue,
   type SacredNameMaskValue,
 } from "./api";
 import { getCachedNativeToken } from "./native-auth";
@@ -50,13 +50,14 @@ import { getCachedNativeToken } from "./native-auth";
 
 const KEY_SACRED_NAME_MASK = "rop_sacred_name_mask_v1";
 const KEY_HIDE_PARENTHETICALS = "rop_hide_parentheticals_v1";
-// Theme / font-size / interlinear-default / TTS voice keys are not yet
-// owned by S172/S173 hooks; the entries below are commented out until
-// those settings controls land. Adding them later is a one-line change
-// in `readLocalSnapshot` / `writeLocalSnapshot` plus the corresponding
+// S356 — font-size wired (rop_font_size_v1, owned by lib/useFontSize.ts).
+const KEY_FONT_SIZE = "rop_font_size_v1";
+// Theme / interlinear-default / TTS voice keys are not yet owned by
+// S172/S173 hooks; the entries below are commented out until those
+// settings controls land. Adding them later is a one-line change in
+// `readLocalSnapshot` / `writeLocalSnapshot` plus the corresponding
 // hook update.
 // const KEY_THEME              = "rop_theme_v1";
-// const KEY_FONT_SIZE          = "rop_font_size_v1";
 // const KEY_INTERLINEAR        = "rop_interlinear_default_v1";
 // const KEY_TTS_VOICE          = "rop_tts_voice_v1";
 
@@ -149,11 +150,20 @@ export function readLocalSnapshot(): DisplayPrefs {
   const hide_parentheticals: boolean | null =
     parensRaw === "true" ? true : parensRaw === "false" ? false : null;
 
+  const fontRaw = safeRead(KEY_FONT_SIZE);
+  const font_size: ReaderFontSizeValue | null =
+    fontRaw === "small" ||
+    fontRaw === "medium" ||
+    fontRaw === "large" ||
+    fontRaw === "xlarge"
+      ? fontRaw
+      : null;
+
   return {
     sacred_name_mask,
     hide_parentheticals,
     theme: null,
-    font_size: null,
+    font_size,
     interlinear_default: null,
     tts_voice: null,
   };
@@ -189,6 +199,15 @@ export function writeLocalSnapshot(prefs: DisplayPrefs): boolean {
     const current = safeRead(KEY_HIDE_PARENTHETICALS);
     if (current !== next) {
       if (safeWrite(KEY_HIDE_PARENTHETICALS, next)) {
+        changed = true;
+      }
+    }
+  }
+
+  if (prefs.font_size !== null) {
+    const current = safeRead(KEY_FONT_SIZE);
+    if (current !== prefs.font_size) {
+      if (safeWrite(KEY_FONT_SIZE, prefs.font_size)) {
         changed = true;
       }
     }

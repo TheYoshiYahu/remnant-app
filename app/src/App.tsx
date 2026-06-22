@@ -127,6 +127,7 @@ import {
   preloadInterlinearFonts,
 } from "./components/InterlinearLayer";
 import { useTheme } from "./lib/theme";
+import { useFontSize } from "./lib/useFontSize";
 import {
   cancelPendingSave,
   loadInitialPosition,
@@ -346,6 +347,14 @@ export default function App() {
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
+
+  // S356 — mount the reader font-size hook app-wide so the
+  // `data-reader-font` attribute is applied on mount (reconciling with
+  // the index.html boot script) and re-applied when the S173 display-
+  // prefs sync pulls a server-canonical value into localStorage. The
+  // boot script handles the pre-paint default; this keeps the attribute
+  // live across cross-device reconciliation without a reload.
+  useFontSize();
 
   // S172 + S174 — first-launch welcome modal.
   //
@@ -2916,6 +2925,7 @@ function Reader() {
 
       {chapterDetail && (
         <article
+          className="reader-article"
           onPointerDown={onArticlePointerDown}
           onPointerMove={onArticlePointerMove}
           onPointerUp={onArticlePointerUp}
@@ -3278,7 +3288,7 @@ function Reader() {
             AI image gen). The botanical chapter→apparatus divider is
             unaffected.
           */}
-          <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)] flex items-center gap-2 flex-wrap">
+          <h2 className="reader-chapter-title mb-1 font-semibold text-[var(--reader-text)] flex items-center gap-2 flex-wrap">
             <span className={bookPillClassName(chapterDetail.book.slug)}>
               {chapterDetail.book.title}
             </span>
@@ -3289,7 +3299,7 @@ function Reader() {
           {chapterDetail.chapter.chapter_title &&
             chapterDetail.chapter.chapter_title !==
               `Chapter ${chapterDetail.chapter.chapter_number}` && (
-              <p className="mb-3 text-base italic text-[var(--reader-muted)]">
+              <p className="reader-chapter-subtitle mb-3 italic text-[var(--reader-muted)]">
                 {chapterDetail.chapter.chapter_title}
               </p>
             )}
@@ -3301,7 +3311,7 @@ function Reader() {
             paragraph whenever a verse number appears in the paragraph_starts
             list for that book + chapter.
           */}
-          <div className="mt-4 leading-relaxed text-[1.05rem] text-[var(--reader-text)]">
+          <div className="reader-prose mt-4 leading-relaxed text-[var(--reader-text)]">
             {(() => {
               // S232 — paragraph_starts.json is now keyed `edition::slug`
               // (so two same-slug books in different editions — e.g. the KJV

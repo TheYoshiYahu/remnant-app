@@ -1,4 +1,5 @@
 import DownloadsSettings from "../components/DownloadsSettings";
+import { useFontSize } from "../lib/useFontSize";
 import { useTheme } from "../lib/theme";
 import { useParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import { useSacredNameMask } from "../lib/useSacredNameMask";
@@ -45,6 +46,7 @@ export default function Settings() {
   const { hide: hideParentheticals, set: setHideParentheticals } =
     useParentheticalsToggle();
   const { theme, set: setTheme } = useTheme();
+  const { fontSize, set: setFontSize } = useFontSize();
 
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-8 sm:px-6">
@@ -125,18 +127,52 @@ export default function Settings() {
           />
         </SettingsCard>
 
-        {/* 4. Downloads — Phase 2 offline. Its own self-contained card
+        {/* 4. Font size — S356. Scales the whole reading column (verse
+            text, verse numbers, chapter heading, cross-reference cards,
+            and end-of-chapter commentary) via the --reader-font-scale
+            multiplier driven by data-reader-font on <html>. Medium is the
+            shipped default register. */}
+        <SettingsCard
+          title="Font size"
+          description="Size of the scripture reading text. Scales the whole reading column together — verse text, verse numbers, headings, cross-reference cards, and commentary. Medium is the default."
+        >
+          <SegmentedControl
+            value={fontSize}
+            onChange={setFontSize}
+            options={[
+              { value: "small", label: "S" },
+              { value: "medium", label: "M" },
+              { value: "large", label: "L" },
+              { value: "xlarge", label: "XL" },
+            ]}
+            ariaLabel="Reader font size"
+          />
+          {/* Live preview line — scaled with the same variable so the
+              partner sees the chosen step before scrolling back into the
+              reader. */}
+          <p
+            className="mt-3 italic text-[var(--reader-text)]"
+            style={{ fontSize: "calc(1.05rem * var(--reader-font-scale))" }}
+          >
+            For Yahuah is great, and greatly to be praised.
+          </p>
+          <p className="mt-2 font-sans text-xs italic text-[var(--reader-muted)]">
+            Synced across devices when signed in.
+          </p>
+        </SettingsCard>
+
+        {/* 5. Downloads — Phase 2 offline. Its own self-contained card
             (resolves the partner tier + content-cache scope internally,
             since Settings renders outside the Reader). */}
         <DownloadsSettings />
 
         {/* Scaffolded for follow-up wheels — surfaced as Coming soon
             so partners know the preferences will land here.
-            Font-size + interlinear-default + TTS voice land when
-            their respective hooks get lifted into Settings. */}
+            Interlinear-default + TTS voice land when their respective
+            hooks get lifted into Settings. (Font size shipped in S356.) */}
         <SettingsCard
           title="More coming"
-          description="Font size, interlinear default, and TTS voice preferences land in upcoming releases."
+          description="Interlinear default and TTS voice preferences land in upcoming releases."
         >
           <p className="font-sans text-xs italic text-[var(--reader-muted)]">
             Coming soon.

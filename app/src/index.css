@@ -73,6 +73,65 @@
   --reader-accent: #0084ff;
 }
 
+/* S356 — reader font-size preference. A single multiplier
+   (--reader-font-scale) set by [data-reader-font] on <html>, applied
+   pre-paint by the boot script in index.html and owned at runtime by
+   lib/useFontSize.ts (synced cross-device via display-prefs `font_size`).
+
+   The reader's text already cascades from a small set of em-relative
+   roots: the verse text, the chapter heading + subtitle, the pill-card
+   cross-reference apparatus, and the commentary prose that inherits the
+   reader column's base size. Each of those roots multiplies its size by
+   this variable, so verse text, verse numbers, Strong's superscripts,
+   witness/kingdom marks, cross-reference cards and end-of-chapter
+   commentary all scale together from one lever. Line-heights are unitless
+   ratios, so they scale proportionally and stay readable.
+
+   medium == 1.0 == the shipped S116 register, so the default is a visual
+   no-op. Chrome (top-bar, menus, study-bar controls) is intentionally
+   untouched — this scales reading text, not the whole app. */
+:root {
+  --reader-font-scale: 1;
+}
+[data-reader-font="small"] {
+  --reader-font-scale: 0.875;
+}
+[data-reader-font="medium"] {
+  --reader-font-scale: 1;
+}
+[data-reader-font="large"] {
+  --reader-font-scale: 1.15;
+}
+[data-reader-font="xlarge"] {
+  --reader-font-scale: 1.32;
+}
+
+/* Reader column base — the commentary prose (free chapter_intro + the
+   paid deeper-dive body) carries no explicit size class and inherits
+   this. 18px == the shipped body register, so medium is a no-op. The
+   reader's own rem/em-classed text (verse prose, headings, pill-cards)
+   is scaled independently below, so nothing double-scales. */
+.reader-article {
+  font-size: calc(18px * var(--reader-font-scale));
+}
+
+/* Verse text — root of the verse subtree. verse-number (0.7em),
+   verse-bookmark-glyph (0.8em), strongs-superscript (0.72em) and the
+   witness/kingdom inline quotes (em) all ride along. Replaces the inline
+   `text-[1.05rem]` Tailwind utility on the verse paragraph wrapper. */
+.reader-prose {
+  font-size: calc(1.05rem * var(--reader-font-scale));
+}
+
+/* Chapter heading + its optional subtitle. Replace the `text-xl` /
+   `text-base` Tailwind utilities on the <h2>/<p>. */
+.reader-chapter-title {
+  font-size: calc(1.25rem * var(--reader-font-scale));
+}
+.reader-chapter-subtitle {
+  font-size: calc(1rem * var(--reader-font-scale));
+}
+
 html, body, #root {
   height: 100%;
   margin: 0;
@@ -188,9 +247,11 @@ body {
 .mark-underline {
   text-decoration-line: underline;
   text-decoration-color: var(--mark-color);
-  text-decoration-thickness: 3px;
+  /* S356 — em so the highlight underline stays proportional as the
+     reader font-size preference scales the verse text. */
+  text-decoration-thickness: 0.17em;
   text-decoration-skip-ink: none;
-  text-underline-offset: 2px;
+  text-underline-offset: 0.11em;
 }
 
 .mark-outline {
@@ -279,8 +340,9 @@ body {
 }
 @media (hover: hover) {
   .word-tappable:hover {
-    text-decoration: underline dotted var(--reader-accent) 1px;
-    text-underline-offset: 3px;
+    /* S356 — em-relative so the hover underline tracks the scaled text. */
+    text-decoration: underline dotted var(--reader-accent) 0.06em;
+    text-underline-offset: 0.17em;
   }
 }
 
@@ -347,8 +409,9 @@ body {
   color: #15A86A;
   font-size: 0.72em;
   font-weight: 600;
-  margin-left: 2px;
-  margin-right: 1px;
+  /* S356 — em so the gap tracks the scaled verse text. */
+  margin-left: 0.11em;
+  margin-right: 0.06em;
   cursor: pointer;
   font-variant-numeric: tabular-nums;
   text-decoration: none;
@@ -653,14 +716,17 @@ body {
 }
 .pill-card-title {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05rem;
+  /* S356 — scales with the reader font-size preference (the cross-
+     reference / commentary apparatus is reading text too). */
+  font-size: calc(1.05rem * var(--reader-font-scale));
   font-weight: 700;
   color: var(--reader-text);
   margin: 0 0 0.9rem;
 }
 .pill-card-body {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.97rem;
+  /* S356 — scales with the reader font-size preference. */
+  font-size: calc(0.97rem * var(--reader-font-scale));
   line-height: 1.75;
   color: var(--reader-text);
 }
