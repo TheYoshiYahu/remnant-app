@@ -2573,6 +2573,1752 @@ SELECT t.id, cr.id, 3, E'*They took up the ark of the covenant, and went before 
  WHERE t.slug='numbers-10-the-ark-goes-before-rise-up-yahuah-and-let-thine-enemies-be-scattered'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_numbers_11.sql (Numbers 11) -----
+-- Chapter: Numbers 11  |  tag: num11  |  session prefix: s312
+-- Sort band base 23750, step 3 (23750, 23753, 23756, 23759, 23762, 23765)
+-- Temp view: _s312_num11_lookup
+--
+-- Numbers 11 coverage:
+--   v.1-3  (Taberah, the fire of Yahuah, Moses prays, the fire quenched)
+--          NT:     1 Corinthians 10:10 (murmuring judged — the destroyer)
+--          Extras: none warranted
+--          Tanakh: Psalm 78:21 (a fire was kindled against Jacob)
+--   v.4-9  (the mixt multitude lust for flesh, despise the manna, the manna described)
+--          NT:     1 Corinthians 10:6 (examples — lust not after evil things); John 6:31-33,49-51 (the true bread from heaven)
+--          Extras: none warranted
+--          Tanakh: Psalm 78:18-25 (tempted Elohim by asking meat for their lust; angels' food); Exodus 16:31 (manna like coriander seed)
+--   v.10-15 (Moses overwhelmed — I am not able to bear all this people alone)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 18:18 (thou art not able to perform it thyself alone); Deuteronomy 1:9 (I am not able to bear you myself alone)
+--   v.16-17,24-25 (the seventy elders — Yahuah takes of the spirit and puts it on them; they prophesy)
+--          NT:     Luke 10:1 (the seventy sent); Acts 6:3,6 (seven chosen, hands laid, to share the burden)
+--          Extras: none warranted
+--          Tanakh: Exodus 24:1,9 (the seventy of the elders went up)
+--   v.26-29 (Eldad and Medad prophesy in the camp; would Elohim that all Yahuah's people were prophets)
+--          NT:     Joel 2:28-29 — wait, Joel is Tanakh; NT: Acts 2:16-18 (this is that spoken by Joel); Mark 9:38-40 (forbid him not)
+--          Extras: none warranted
+--          Tanakh: Joel 2:28-29 (I will pour out my spirit upon all flesh); 1 Samuel 10:6 (the Spirit of Yahuah will come upon thee)
+--   v.31-35 (the quail, the plague, Kibroth-hattaavah — the graves of lust)
+--          NT:     1 Corinthians 10:6 (examples — lust not after evil things)
+--          Extras: none warranted
+--          Tanakh: Psalm 78:26-31 (while their meat was yet in their mouths, the wrath came); Psalm 106:14-15 (he gave them their request, but sent leanness)
+--
+-- Threads (all slugs prefixed numbers-11-, none in EXISTING_SLUGS.txt):
+--   numbers-11-the-fire-at-taberah-and-moses-prayer-quenched-it    [free]  Tanakh(Ps78) + NT(1Cor10)
+--   numbers-11-the-mixt-multitude-despised-the-bread-of-heaven      [free]  Tanakh(Ps78,Exo16) + NT(1Cor10,John6)
+--   numbers-11-i-am-not-able-to-bear-this-people-alone             [free]  Tanakh(Exo18,Deut1)
+--   numbers-11-the-spirit-shared-upon-the-seventy-elders           [free]  Tanakh(Exo24) + NT(Luke10,Acts6)
+--   numbers-11-would-that-all-yahuahs-people-were-prophets          [free]  Tanakh(Joel2,1Sam10) + NT(Acts2,Mark9)
+--   numbers-11-the-graves-of-lust-at-kibroth-hattaavah             [free]  Tanakh(Ps78,Ps106) + NT(1Cor10)
+-- Contested framing: the manna despised (v.6 "our soul loatheth this light bread"/"there is nothing
+--   at all, beside this manna") is read as despising the bread of heaven — the very type John 6 fills
+--   with the true bread, the Formed Son's flesh given for the life of the world. The seventy + Eldad/Medad
+--   is read straight to Joel 2 / Acts 2: the Spirit on ALL Yahuah's people, the longing Moses voiced fulfilled.
+
+CREATE TEMP VIEW _s312_num11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ================= cross_references =================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the fire at Taberah
+    ('canon','numbers',11,1, 'canon','psalms',78,21,
+      E'*Therefore Yahuah (LORD) heard this, and was wroth: so a fire was kindled against Jacob, and anger also came up against Yashar''el (Israel)* (Psalm 78:21). The psalmist sings the very judgment of Numbers 11: when *the people complained, it displeased Yahuah (LORD)... and the fire of Yahuah (LORD) burnt among them* (Numbers 11:1). The wilderness murmuring kindles the covenant Father''s anger.',
+      'free'),
+    ('canon','numbers',11,1, 'canon','1-corinthians',10,10,
+      E'*Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer* (1 Corinthians 10:10). Paul reads the wilderness murmuring — the fire that *consumed them that were in the uttermost parts of the camp* (Numbers 11:1) — as a written warning to the two-house assembly: the murmurer is judged still.',
+      'free'),
+    ('canon','numbers',11,2, 'canon','1-corinthians',10,11,
+      E'*Now all these things happened unto them for ensamples: and they are written for our admonition, upon whom the ends of the world are come* (1 Corinthians 10:11). The mercy of Numbers 11:2 — *when Moses prayed unto Yahuah (LORD), the fire was quenched* — stands written as admonition; the intercessor turns away the wrath.',
+      'free'),
+    -- Thread 2: the mixt multitude despised the bread of heaven
+    ('canon','numbers',11,4, 'canon','1-corinthians',10,6,
+      E'*Now these things were our examples, to the intent we should not lust after evil things, as they also lusted* (1 Corinthians 10:6). The *mixt multitude that was among them fell a lusting* (Numbers 11:4) is Paul''s named pattern of evil craving — the lust that despises Yahuah''s provision.',
+      'free'),
+    ('canon','numbers',11,6, 'canon','psalms',78,18,
+      E'*And they tempted Elohim (God) in their heart by asking meat for their lust* (Psalm 78:18). The cry *there is nothing at all, beside this manna, before our eyes* (Numbers 11:6) is the heart-tempting the psalm names: the bread of heaven counted as nothing.',
+      'free'),
+    ('canon','numbers',11,6, 'canon','psalms',78,25,
+      E'*Man did eat angels'' food: he sent them meat to the full* (Psalm 78:25). The manna the people loathed as *light bread* the psalmist calls *angels'' food* — the despising of Numbers 11:6 is the despising of heaven''s own table.',
+      'free'),
+    ('canon','numbers',11,7, 'canon','exodus',16,31,
+      E'*And the house of Yashar''el (Israel) called the name thereof Manna: and it was like coriander seed, white; and the taste of it was like wafers made with honey* (Exodus 16:31). Numbers 11:7 echoes the first description — *the manna was as coriander seed* — the same bread of heaven now scorned that was first received as wonder.',
+      'free'),
+    ('canon','numbers',11,6, 'canon','john',6,49,
+      E'*Your fathers did eat manna in the wilderness, and are dead* (John 6:49). Yahusha (Jesus) takes up the very manna the people despised in Numbers 11:6 and contrasts it with himself: the wilderness bread sustained mortal flesh but could not give life.',
+      'free'),
+    ('canon','numbers',11,6, 'canon','john',6,32,
+      E'*Moses gave you not that bread from heaven; but my Father giveth you the true bread from heaven* (John 6:32). The manna the people loathed (*this light bread*, Numbers 11:6) was the shadow; the Formed Son is the substance — the true bread the Father gives.',
+      'free'),
+    ('canon','numbers',11,6, 'canon','john',6,51,
+      E'*I am the living bread which came down from heaven: if any man eat of this bread, he shall live for ever: and the bread that I will give is my flesh, which I will give for the life of the world* (John 6:51). The despised manna of Numbers 11:6 finds its fulfillment in the Formed Son, the bread of heaven given for the life of the world.',
+      'free'),
+    -- Thread 3: I am not able to bear this people alone
+    ('canon','numbers',11,14, 'canon','exodus',18,18,
+      E'*Thou wilt surely wear away, both thou, and this people that is with thee: for this thing is too heavy for thee; thou art not able to perform it thyself alone* (Exodus 18:18). Jethro''s word at Sinai foretells Moses'' cry in Numbers 11:14 — *I am not able to bear all this people alone, because it is too heavy for me* — the burden no single man can carry.',
+      'free'),
+    ('canon','numbers',11,14, 'canon','deuteronomy',1,9,
+      E'*And I spake unto you at that time, saying, I am not able to bear you myself alone* (Deuteronomy 1:9). Moses himself recalls the very confession of Numbers 11:14, woven into the covenant retelling: the shared burden of governing Yahuah''s multiplied people.',
+      'free'),
+    -- Thread 4: the Spirit shared upon the seventy elders
+    ('canon','numbers',11,16, 'canon','exodus',24,1,
+      E'*And he said unto Moses, Come up unto Yahuah (LORD), thou, and Aaron, Nadab, and Abihu, and seventy of the elders of Yashar''el (Israel); and worship ye afar off* (Exodus 24:1). The seventy gathered in Numbers 11:16 echo the seventy who ascended at Sinai — the appointed elders set apart to stand before Yahuah with Moses.',
+      'free'),
+    ('canon','numbers',11,17, 'canon','luke',10,1,
+      E'*After these things Yahuah (Lord) appointed other seventy also, and sent them two and two before his face into every city and place, whither he himself would come* (Luke 10:1). As Yahuah took of the spirit on Moses and put it on the seventy (Numbers 11:17), so the Formed Son appoints seventy and sends them in his authority — the pattern of the shared commission.',
+      'free'),
+    ('canon','numbers',11,17, 'canon','acts',6,3,
+      E'*Wherefore, brethren, look ye out among you seven men of honest report, full of the Ruach HaKodesh (Holy Spirit) and wisdom, whom we may appoint over this business* (Acts 6:3). The apostles repeat Numbers 11:17 — men *full of the Ruach HaKodesh* set apart so the leaders *bear it not... alone*; the Spirit distributed for the shared burden.',
+      'free'),
+    ('canon','numbers',11,25, 'canon','acts',6,6,
+      E'*Whom they set before the apostles: and when they had prayed, they laid their hands on them* (Acts 6:6). As Yahuah *came down in a cloud... and took of the spirit that was upon him, and gave it unto the seventy elders* (Numbers 11:25), so the appointed seven receive the laying on of hands — the Spirit conferred for ministry.',
+      'free'),
+    -- Thread 5: would that all Yahuah's people were prophets
+    ('canon','numbers',11,29, 'canon','joel',2,28,
+      E'*And it shall come to pass afterward, that I will pour out my spirit upon all flesh; and your sons and your daughters shall prophesy, your old men shall dream dreams, your young men shall see visions* (Joel 2:28). Moses'' longing — *would Elohim (God) that all the LORD''S people were prophets, and that Yahuah (LORD) would put his spirit upon them!* (Numbers 11:29) — is the prophecy Joel records: the Spirit poured on all.',
+      'free'),
+    ('canon','numbers',11,29, 'canon','joel',2,29,
+      E'*And also upon the servants and upon the handmaids in those days will I pour out my spirit* (Joel 2:29). The Spirit Moses wished upon all Yahuah''s people (Numbers 11:29) is poured even on servants and handmaids — none excluded from the prophetic Spirit.',
+      'free'),
+    ('canon','numbers',11,29, 'canon','acts',2,17,
+      E'*And it shall come to pass in the last days, saith Elohim (God), I will pour out of my Spirit upon all flesh: and your sons and your daughters shall prophesy, and your young men shall see visions, and your old men shall dream dreams* (Acts 2:17). At Shavuot Peter declares Numbers 11:29 answered — the Spirit poured on all flesh, the longing of Moses fulfilled in the ingathering.',
+      'free'),
+    ('canon','numbers',11,29, 'canon','acts',2,18,
+      E'*And on my servants and on my handmaidens I will pour out in those days of my Spirit; and they shall prophesy* (Acts 2:18). The Spirit Moses wished on every one of Yahuah''s people (Numbers 11:29) falls at Pentecost on servant and handmaid alike — all prophesying.',
+      'free'),
+    ('canon','numbers',11,28, 'canon','mark',9,38,
+      E'*And John answered him, saying, Master, we saw one casting out devils in thy name, and he followeth not us: and we forbad him, because he followeth not us* (Mark 9:38). Joshua''s zeal — *My lord Moses, forbid them* (Numbers 11:28) — is the same envy John shows: the disciple would bar the one who works outside the inner circle.',
+      'free'),
+    ('canon','numbers',11,29, 'canon','mark',9,39,
+      E'*But Yahusha (Jesus) said, Forbid him not: for there is no man which shall do a miracle in my name, that can lightly speak evil of me* (Mark 9:39). The Formed Son rebukes the envy exactly as Moses did — *Enviest thou for my sake?* (Numbers 11:29) — for the Spirit is not the property of the few.',
+      'free'),
+    ('canon','numbers',11,26, 'canon','1-samuel',10,6,
+      E'*And the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy with them, and shalt be turned into another man* (1 Samuel 10:6). As the spirit rested on Eldad and Medad and *they prophesied in the camp* (Numbers 11:26), so the Spirit comes upon Saul to prophesy — the Spirit of Yahuah falling where he wills.',
+      'free'),
+    -- Thread 6: the graves of lust at Kibroth-hattaavah
+    ('canon','numbers',11,33, 'canon','psalms',78,30,
+      E'*They were not estranged from their lust. But while their meat was yet in their mouths* (Psalm 78:30). The psalm renders Numbers 11:33 word for word — *while the flesh was yet between their teeth, ere it was chewed, the wrath of Yahuah (LORD) was kindled* — the craving cut short by judgment.',
+      'free'),
+    ('canon','numbers',11,33, 'canon','psalms',78,31,
+      E'*The wrath of Elohim (God) came upon them, and slew the fattest of them, and smote down the chosen men of Yashar''el (Israel)* (Psalm 78:31). This is the *very great plague* of Numbers 11:33 — the granted desire turned to death.',
+      'free'),
+    ('canon','numbers',11,34, 'canon','psalms',106,15,
+      E'*And he gave them their request; but sent leanness into their soul* (Psalm 106:15). Kibroth-hattaavah, *the graves of lust* where *they buried the people that lusted* (Numbers 11:34), is the psalm''s warning embodied: the request granted, but leanness sent into the soul.',
+      'free'),
+    ('canon','numbers',11,34, 'canon','1-corinthians',10,6,
+      E'*Now these things were our examples, to the intent we should not lust after evil things, as they also lusted* (1 Corinthians 10:6). The graves of lust in Numbers 11:34 are the very example Paul holds up — the craving that buries; the warning written for the assembly upon whom the ends of the world are come.',
+      'free')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,note,tier)
+  JOIN _s312_num11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ================= threads =================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-11-the-fire-at-taberah-and-moses-prayer-quenched-it',
+       E'The fire at Taberah, and Moses'' prayer quenched it',
+       E'Numbers 11 opens in judgment: *And when the people complained, it displeased Yahuah (LORD): and Yahuah (LORD) heard it; and his anger was kindled; and the fire of Yahuah (LORD) burnt among them, and consumed them that were in the uttermost parts of the camp* (Numbers 11:1). The murmuring of the covenant people kindles the Father''s anger — and the psalmist sings the same fire: *Therefore Yahuah (LORD) heard this, and was wroth: so a fire was kindled against Jacob, and anger also came up against Yashar''el (Israel)* (Psalm 78:21). Yet mercy answers the intercessor: *And the people cried unto Moses; and when Moses prayed unto Yahuah (LORD), the fire was quenched* (Numbers 11:2). Paul reads this wilderness murmuring as a standing warning to the two-house assembly: *Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer* (1 Corinthians 10:10), for *all these things happened unto them for ensamples... written for our admonition* (1 Corinthians 10:11).',
+       sv.verse_id, ev.verse_id, 'free', 23750
+  FROM _s312_num11_lookup sv, _s312_num11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=11 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-11-the-mixt-multitude-despised-the-bread-of-heaven',
+       E'The mixt multitude despised the bread of heaven',
+       E'*And the mixt multitude that was among them fell a lusting: and the children of Yashar''el (Israel) also wept again, and said, Who shall give us flesh to eat?* (Numbers 11:4). They despise the manna outright — *there is nothing at all, beside this manna, before our eyes* (Numbers 11:6) — even as the text testifies to its wonder: *the manna was as coriander seed* (Numbers 11:7; cf. *like coriander seed, white; and the taste of it was like wafers made with honey*, Exodus 16:31). The psalm names the sin precisely: *they tempted Elohim (God) in their heart by asking meat for their lust* (Psalm 78:18), scorning what was in truth *angels'' food* (Psalm 78:25). Paul makes them our pattern: *these things were our examples, to the intent we should not lust after evil things, as they also lusted* (1 Corinthians 10:6). And the bread they loathed is the very type the Formed Son fills: *Your fathers did eat manna in the wilderness, and are dead* (John 6:49); *Moses gave you not that bread from heaven; but my Father giveth you the true bread from heaven* (John 6:32); *I am the living bread which came down from heaven... and the bread that I will give is my flesh, which I will give for the life of the world* (John 6:51). To despise the manna is to despise the bread of heaven.',
+       sv.verse_id, ev.verse_id, 'free', 23753
+  FROM _s312_num11_lookup sv, _s312_num11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=11 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-11-i-am-not-able-to-bear-this-people-alone',
+       E'I am not able to bear all this people alone',
+       E'Under the weight of the murmuring people Moses pours out his anguish: *I am not able to bear all this people alone, because it is too heavy for me* (Numbers 11:14). This is no new cry — Jethro had foretold it at Sinai: *Thou wilt surely wear away, both thou, and this people that is with thee: for this thing is too heavy for thee; thou art not able to perform it thyself alone* (Exodus 18:18). And Moses himself recalls it in the covenant retelling: *I am not able to bear you myself alone* (Deuteronomy 1:9). The burden of shepherding Yahuah''s multiplied people is more than one man can carry — which is precisely why Yahuah will distribute the Spirit upon the seventy.',
+       sv.verse_id, ev.verse_id, 'free', 23756
+  FROM _s312_num11_lookup sv, _s312_num11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=11 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-11-the-spirit-shared-upon-the-seventy-elders',
+       E'The Spirit shared upon the seventy elders',
+       E'Yahuah answers Moses'' overwhelmed cry by distributing the Spirit: *Gather unto me seventy men of the elders of Yashar''el (Israel)... that they may stand there with thee* (Numbers 11:16); *I will take of the spirit which is upon thee, and will put it upon them; and they shall bear the burden of the people with thee, that thou bear it not thyself alone* (Numbers 11:17). And it is done: *And Yahuah (LORD) came down in a cloud, and spake unto him, and took of the spirit that was upon him, and gave it unto the seventy elders: and it came to pass, that, when the spirit rested upon them, they prophesied* (Numbers 11:25). The seventy echo the seventy who ascended at Sinai — *Come up unto Yahuah (LORD), thou, and Aaron, Nadab, and Abihu, and seventy of the elders of Yashar''el (Israel)* (Exodus 24:1). The pattern carries forward: the Formed Son *appointed other seventy also, and sent them two and two before his face* (Luke 10:1); and the apostles, unwilling to *leave the word of Elohim (God), and serve tables*, set apart *seven men of honest report, full of the Ruach HaKodesh (Holy Spirit) and wisdom* (Acts 6:3), *and when they had prayed, they laid their hands on them* (Acts 6:6). The Spirit is shared for the shared burden.',
+       sv.verse_id, ev.verse_id, 'free', 23759
+  FROM _s312_num11_lookup sv, _s312_num11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=11 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-11-would-that-all-yahuahs-people-were-prophets',
+       E'Would that all Yahuah''s people were prophets',
+       E'Two of the seventy — *Eldad... and Medad* — receive the Spirit but remain in the camp: *the spirit rested upon them... and they prophesied in the camp* (Numbers 11:26). When Joshua would forbid them — *My lord Moses, forbid them* (Numbers 11:28) — Moses answers with a longing that runs to the heart of the whole framework: *Enviest thou for my sake? would Elohim (God) that all the LORD''S people were prophets, and that Yahuah (LORD) would put his spirit upon them!* (Numbers 11:29). That longing is the very word Joel records: *I will pour out my spirit upon all flesh; and your sons and your daughters shall prophesy* (Joel 2:28), *and also upon the servants and upon the handmaids* (Joel 2:29). At Shavuot Peter declares it answered — *I will pour out of my Spirit upon all flesh: and your sons and your daughters shall prophesy* (Acts 2:17), *and on my servants and on my handmaidens... and they shall prophesy* (Acts 2:18). The same envy Joshua showed, the Formed Son rebukes in his own disciples — *we forbad him, because he followeth not us* (Mark 9:38); *Forbid him not* (Mark 9:39) — for the Spirit of Yahuah falls where he wills, even *upon thee, and thou shalt prophesy... and shalt be turned into another man* (1 Samuel 10:6). The Spirit is not the property of the few but the promised inheritance of all Yahuah''s people.',
+       sv.verse_id, ev.verse_id, 'free', 23762
+  FROM _s312_num11_lookup sv, _s312_num11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=11 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-11-the-graves-of-lust-at-kibroth-hattaavah',
+       E'The graves of lust at Kibroth-hattaavah',
+       E'The flesh they craved is granted — and becomes their grave. The quail fall (Numbers 11:31), the people gather greedily (Numbers 11:32), and then: *while the flesh was yet between their teeth, ere it was chewed, the wrath of Yahuah (LORD) was kindled against the people, and Yahuah (LORD) smote the people with a very great plague* (Numbers 11:33). The place is named for the judgment: *Kibroth-hattaavah: because there they buried the people that lusted* (Numbers 11:34) — the graves of lust. The psalm renders the scene word for word: *while their meat was yet in their mouths, the wrath of Elohim (God) came upon them, and slew the fattest of them, and smote down the chosen men of Yashar''el (Israel)* (Psalm 78:30-31). And it sounds the deeper warning: *he gave them their request; but sent leanness into their soul* (Psalm 106:15). Paul holds the whole episode up as our example — *that we should not lust after evil things, as they also lusted* (1 Corinthians 10:6). The granted craving buries the soul.',
+       sv.verse_id, ev.verse_id, 'free', 23765
+  FROM _s312_num11_lookup sv, _s312_num11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=11 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- ================= thread_members =================
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 78:21 — *a fire was kindled against Jacob*: the psalm sings the Taberah fire, the murmuring that kindles the Father''s anger.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-fire-at-taberah-and-moses-prayer-quenched-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Corinthians 10:10 — *neither murmur ye... destroyed of the destroyer*: the wilderness murmuring as standing warning to the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-fire-at-taberah-and-moses-prayer-quenched-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Corinthians 10:11 — *written for our admonition*: the mercy of Moses'' intercession stands written as warning and grace.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-fire-at-taberah-and-moses-prayer-quenched-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Corinthians 10:6 — *our examples... not lust after evil things*: the mixt multitude''s craving made our warning.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-mixt-multitude-despised-the-bread-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 78:18 — *tempted Elohim... by asking meat for their lust*: counting the bread of heaven as nothing.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-mixt-multitude-despised-the-bread-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 78:25 — *man did eat angels'' food*: the loathed manna was heaven''s own table.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-mixt-multitude-despised-the-bread-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Exodus 16:31 — *like coriander seed, white... like wafers made with honey*: the first wonder, now scorned.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=7
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=16 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-mixt-multitude-despised-the-bread-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'John 6:49 — *your fathers did eat manna... and are dead*: the despised wilderness bread could not give life.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-mixt-multitude-despised-the-bread-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'John 6:32 — *my Father giveth you the true bread from heaven*: the manna was the shadow, the Formed Son the substance.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-mixt-multitude-despised-the-bread-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'John 6:51 — *I am the living bread... my flesh, which I will give for the life of the world*: the manna fulfilled in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-mixt-multitude-despised-the-bread-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 18:18 — *thou art not able to perform it thyself alone*: Jethro foretold the burden no single man can bear.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=14
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=18 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-i-am-not-able-to-bear-this-people-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 1:9 — *I am not able to bear you myself alone*: Moses recalls the very cry in the covenant retelling.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=14
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-i-am-not-able-to-bear-this-people-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 24:1 — *seventy of the elders of Yashar''el... worship ye afar off*: the seventy who ascended at Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=16
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=24 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-spirit-shared-upon-the-seventy-elders'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Luke 10:1 — *Yahuah appointed other seventy also, and sent them*: the Formed Son repeats the pattern of the shared commission.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=17
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-spirit-shared-upon-the-seventy-elders'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Acts 6:3 — *seven men... full of the Ruach HaKodesh*: men set apart so the leaders bear it not alone.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=17
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-spirit-shared-upon-the-seventy-elders'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 6:6 — *when they had prayed, they laid their hands on them*: the Spirit conferred for ministry, as upon the seventy.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=25
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-spirit-shared-upon-the-seventy-elders'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joel 2:28 — *I will pour out my spirit upon all flesh... shall prophesy*: Moses'' longing recorded as prophecy.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-would-that-all-yahuahs-people-were-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joel 2:29 — *upon the servants and upon the handmaids... I pour out my spirit*: none excluded from the prophetic Spirit.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-would-that-all-yahuahs-people-were-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Acts 2:17 — *in the last days... I will pour out of my Spirit upon all flesh*: Peter declares Moses'' wish fulfilled at Shavuot.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-would-that-all-yahuahs-people-were-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 2:18 — *on my servants and on my handmaidens... they shall prophesy*: the Spirit on every one of Yahuah''s people.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-would-that-all-yahuahs-people-were-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Mark 9:38 — *we forbad him, because he followeth not us*: Joshua''s envy mirrored in the disciple.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=28
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=9 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-would-that-all-yahuahs-people-were-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Mark 9:39 — *Forbid him not*: the Formed Son rebukes the envy as Moses did — the Spirit is not the property of the few.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=9 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-would-that-all-yahuahs-people-were-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'1 Samuel 10:6 — *the Spirit of Yahuah will come upon thee, and thou shalt prophesy*: the Spirit falling where he wills, as on Eldad and Medad.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=26
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=10 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-would-that-all-yahuahs-people-were-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 78:30 — *while their meat was yet in their mouths*: the psalm renders the quail-plague word for word.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=33
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-graves-of-lust-at-kibroth-hattaavah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 78:31 — *the wrath of Elohim came upon them, and slew the fattest of them*: the very great plague of Numbers 11:33.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=33
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-graves-of-lust-at-kibroth-hattaavah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 106:15 — *he gave them their request; but sent leanness into their soul*: the granted craving that buries the soul.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=34
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-graves-of-lust-at-kibroth-hattaavah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 10:6 — *our examples... not lust after evil things*: the graves of lust held up as warning to the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s312_num11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=11 AND sv.verse_number=34
+  JOIN _s312_num11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-11-the-graves-of-lust-at-kibroth-hattaavah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_12.sql (Numbers 12) -----
+-- Book: Numbers   Chapter: 12   Tag: num12   Session: s312
+-- Sort band base 23775, step 3  ->  23775, 23778, 23781
+-- Source rows ALWAYS 'canon','numbers',12,v
+--
+-- Numbers 12 coverage:
+--   v.1-3  (Miriam/Aaron speak against Moses; the man Moses very meek)
+--          NT:     Matthew 11:29 (I am meek and lowly in heart), Matthew 5:5 (blessed are the meek) -> THREAD 1
+--          Extras: none warranted (no clean meekness-of-Moses witness; Jasher/Jub material noisy)
+--          Tanakh: handled in-thread (the meek leader who does not defend himself)
+--   v.4-8  (Yahuah distinguishes Moses; mouth to mouth, similitude of Yahuah; faithful in all mine house)
+--          NT:     Hebrews 3:5-6 (Moses faithful as a servant / Messiah as a Son over his house), John 1:17-18 (the only begotten declared the unseen Father) -> THREAD 2
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 34:10 (no prophet like Moses, face to face), Exodus 33:11 (Yahuah spake face to face), Deuteronomy 18:15/18 (a Prophet like unto me) -> THREAD 2
+--   v.9-15 (Miriam leprous; Moses cries Heal her now; shut out seven days)
+--          NT:     Romans 12:14 (bless them which persecute you), Romans 12:21 (overcome evil with good) -> THREAD 3
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 24:9 (remember what Yahuah did unto Miriam), Leviticus 13:46 (the leper shall dwell without the camp) -> THREAD 3
+--   v.16   (removed to wilderness of Paran) NT none / Extras none / Tanakh none warranted (itinerary)
+--
+-- THREADS (all members canon -> tier free):
+--   numbers-12-the-man-moses-was-very-meek            (NT canon)              band 23775
+--   numbers-12-with-him-will-i-speak-mouth-to-mouth   (NT + Tanakh canon)     band 23778
+--   numbers-12-moses-cried-heal-her-now-for-his-accuser (NT + Tanakh canon)   band 23781
+
+CREATE TEMP VIEW _s312_num12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the man Moses was very meek
+    ('canon','numbers',12,3,'canon','matthew',11,29,'free',
+      E'*Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls* (Matthew 11:29). The chapter pauses to testify, *Now the man Moses was very meek, above all the men which were upon the face of the earth* (Numbers 12:3) — and when Miriam and Aaron speak against him, Moses does not defend himself; Yahuah (LORD) vindicates him. The Prophet like unto Moses takes up that same meekness as the very mark by which his yoke is learned.'),
+    ('canon','numbers',12,3,'canon','matthew',5,5,'free',
+      E'*Blessed are the meek: for they shall inherit the earth* (Matthew 5:5). The man who was *very meek, above all the men which were upon the face of the earth* (Numbers 12:3) is the living first-instance of the blessing — the meek leader who leaves his cause with Yahuah (LORD) inherits the land and the people he led.'),
+    -- THREAD 2: with him will I speak mouth to mouth (the face-to-face servant -> the Son)
+    ('canon','numbers',12,7,'canon','hebrews',3,5,'free',
+      E'*And Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after* (Hebrews 3:5). Yahuah (LORD) names Moses *my servant Moses... who is faithful in all mine house* (Numbers 12:7); the apostle quotes the very words and reads Moses as the faithful servant whose faithfulness was a testimony pointing forward to what would be spoken after.'),
+    ('canon','numbers',12,7,'canon','hebrews',3,6,'free',
+      E'*But Messiah (Christ) as a son over his own house; whose house are we, if we hold fast the confidence and the rejoicing of the hope firm unto the end* (Hebrews 3:6). Moses is *faithful in all mine house* (Numbers 12:7) as the servant within the house; the Formed Son is faithful as a Son OVER the house — the type and its fulfillment held in one frame, the servant pointing to the Son.'),
+    ('canon','numbers',12,8,'canon','exodus',33,11,'free',
+      E'*And Yahuah (LORD) spake unto Moses face to face, as a man speaketh unto his friend* (Exodus 33:11). This is the nearness Numbers describes: *With him will I speak mouth to mouth, even apparently, and not in dark speeches; and the similitude of Yahuah (LORD) shall he behold* (Numbers 12:8). The same friend-nearness — and the *similitude of Yahuah* that Moses beholds is the Formed Son, the visible expression of the unseen Father.'),
+    ('canon','numbers',12,8,'canon','deuteronomy',34,10,'free',
+      E'*And there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10). Numbers sets Moses apart from every other prophet — to them a vision or a dream, but to Moses, *mouth to mouth... and the similitude of Yahuah (LORD) shall he behold* (Numbers 12:8); Deuteronomy seals it as the standing word: no prophet ever rose like him, until the Prophet like unto him should come.'),
+    ('canon','numbers',12,8,'canon','deuteronomy',18,15,'free',
+      E'*Yahuah Elohayka (The LORD thy God) will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken* (Deuteronomy 18:15). The unique mouth-to-mouth nearness of Numbers 12:8 is exactly what makes Moses the pattern — the promised Prophet is one *like unto* this servant who beheld *the similitude of Yahuah (LORD)*.'),
+    ('canon','numbers',12,8,'canon','deuteronomy',18,18,'free',
+      E'*I will raise them up a Prophet from among their brethren, like unto thee, and will put my words in his mouth; and he shall speak unto them all that I shall command him* (Deuteronomy 18:18). The servant to whom Yahuah (LORD) spoke *mouth to mouth* (Numbers 12:8) is the very measure of the coming Prophet — the words put in his mouth, the same direct speech, fulfilled in the Formed Son.'),
+    ('canon','numbers',12,8,'canon','john',1,18,'free',
+      E'*No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him* (John 1:18). Moses beheld *the similitude of Yahuah (LORD)* (Numbers 12:8) — the visible likeness, the Formed Son who declares the formless Father; not the unseen Most High himself, but the only begotten who makes him known.'),
+    ('canon','numbers',12,7,'canon','john',1,17,'free',
+      E'*For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17). The faithful servant of *all mine house* (Numbers 12:7) is named as the one through whom the Torah was given; the Son over the house brings grace and truth — the servant and the Son set side by side, the same covenant household.'),
+    -- THREAD 3: Moses cried, Heal her now -- intercession for his accuser
+    ('canon','numbers',12,13,'canon','romans',12,14,'free',
+      E'*Bless them which persecute you: bless, and curse not* (Romans 12:14). Miriam had spoken against Moses, yet when she is struck leprous he does not gloat — *And Moses cried unto Yahuah (LORD), saying, Heal her now, O Elohim (God), I beseech thee* (Numbers 12:13). The meek servant blesses the one who wronged him; the apostle gives the rule Moses already lived.'),
+    ('canon','numbers',12,13,'canon','romans',12,21,'free',
+      E'*Be not overcome of evil, but overcome evil with good* (Romans 12:21). Miriam''s evil words against Moses are answered not with vengeance but with intercession — *Heal her now, O Elohim (God), I beseech thee* (Numbers 12:13). Moses overcomes his accuser''s evil with good, the very pattern the apostle commands.'),
+    ('canon','numbers',12,14,'canon','deuteronomy',24,9,'free',
+      E'*Remember what Yahuah Elohayka (the LORD thy God) did unto Miriam by the way, after that ye were come forth out of Egypt* (Deuteronomy 24:9). Numbers records the sentence — *let her be shut out from the camp seven days* (Numbers 12:14) — and the Torah later sets it as a standing memorial: remember Miriam, that the tongue against the anointed servant brings the leper''s exile.'),
+    ('canon','numbers',12,14,'canon','leviticus',13,46,'free',
+      E'*All the days wherein the plague shall be in him he shall be defiled; he is unclean: he shall dwell alone; without the camp shall his habitation be* (Leviticus 13:46). Miriam''s leprosy puts her under the very law of the leper — *let her be shut out from the camp seven days* (Numbers 12:14); the priestly statute is enacted upon Aaron''s own sister, no respecter of persons.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== threads =====================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-12-the-man-moses-was-very-meek',
+       E'The man Moses was very meek',
+       E'When Miriam and Aaron speak against Moses — *Hath Yahuah (LORD) indeed spoken only by Moses? hath he not spoken also by us?* (Numbers 12:2) — the narrator sets down the key to the whole chapter in a parenthesis: *Now the man Moses was very meek, above all the men which were upon the face of the earth* (Numbers 12:3). The meek leader does not answer the accusation or defend his own authority; he leaves his cause with Yahuah (LORD), who hears and vindicates him. That meekness is no weakness — it is the mark of the one Yahuah trusts with his whole house. The Prophet like unto Moses takes up the very same yoke: *Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls* (Matthew 11:29), and he names it as a blessing inherited — *Blessed are the meek: for they shall inherit the earth* (Matthew 5:5). Moses, very meek above all men, is the living first-fruit of that beatitude.',
+       sv.verse_id, ev.verse_id, 'free', 23775
+  FROM _s312_num12_lookup sv, _s312_num12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=12 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-12-with-him-will-i-speak-mouth-to-mouth',
+       E'With him will I speak mouth to mouth — the faithful servant and the Son',
+       E'Yahuah (LORD) comes down in the pillar of the cloud to settle the rebellion, and in doing so distinguishes Moses from every other prophet: *If there be a prophet among you, I Yahuah (LORD) will make myself known unto him in a vision, and will speak unto him in a dream. My servant Moses is not so, who is faithful in all mine house. With him will I speak mouth to mouth, even apparently, and not in dark speeches; and the similitude of Yahuah (LORD) shall he behold* (Numbers 12:6-8). This is the Torah''s own seal — *there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10) — and the friend-nearness shown earlier: *Yahuah (LORD) spake unto Moses face to face, as a man speaketh unto his friend* (Exodus 33:11). The *similitude of Yahuah (LORD)* that Moses beholds is the Formed Son, the visible likeness of the unseen Father — *No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him* (John 1:18); *the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17). Because Moses is *faithful in all mine house* as a servant, he is the very pattern of the coming Prophet — *a Prophet from among their brethren, like unto thee* (Deuteronomy 18:18; cf. 18:15). The apostle holds the type and its fulfillment in one frame: *Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after; But Messiah (Christ) as a son over his own house* (Hebrews 3:5-6). The servant within the house points to the Son over it.',
+       sv.verse_id, ev.verse_id, 'free', 23778
+  FROM _s312_num12_lookup sv, _s312_num12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=12 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-12-moses-cried-heal-her-now-for-his-accuser',
+       E'Heal her now — Moses intercedes for his accuser',
+       E'The anger of Yahuah (LORD) is kindled, the cloud departs, and *behold, Miriam became leprous, white as snow* (Numbers 12:10). She is brought under the very law of the leper — *he shall dwell alone; without the camp shall his habitation be* (Leviticus 13:46) — and Aaron pleads with Moses. But the meek servant does not repay the one who spoke against him with silence or vengeance; *Moses cried unto Yahuah (LORD), saying, Heal her now, O Elohim (God), I beseech thee* (Numbers 12:13). He intercedes for his accuser. This is the Moses-pattern the apostle later commands: *Bless them which persecute you: bless, and curse not* (Romans 12:14), and *Be not overcome of evil, but overcome evil with good* (Romans 12:21). The sentence still stands — *let her be shut out from the camp seven days* (Numbers 12:14) — and the Torah keeps the memory as a standing warning against the tongue lifted up against Yahuah''s anointed servant: *Remember what Yahuah Elohayka (the LORD thy God) did unto Miriam by the way, after that ye were come forth out of Egypt* (Deuteronomy 24:9).',
+       sv.verse_id, ev.verse_id, 'free', 23781
+  FROM _s312_num12_lookup sv, _s312_num12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=12 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== thread_members =====================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Take my yoke upon you, and learn of me; for I am meek and lowly in heart* (Matthew 11:29) — the Prophet like unto Moses takes up the meekness of *the man Moses... very meek, above all the men* (Numbers 12:3).'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-the-man-moses-was-very-meek'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Blessed are the meek: for they shall inherit the earth* (Matthew 5:5) — Moses, *very meek, above all the men which were upon the face of the earth* (Numbers 12:3), is the living first-instance of the blessing.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-the-man-moses-was-very-meek'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) spake unto Moses face to face, as a man speaketh unto his friend* (Exodus 33:11) — the same friend-nearness of *mouth to mouth... and the similitude of Yahuah (LORD) shall he behold* (Numbers 12:8).'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-with-him-will-i-speak-mouth-to-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10) — the standing seal of Moses'' unique nearness in Numbers 12:8.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=34 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-with-him-will-i-speak-mouth-to-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a Prophet from the midst of thee, of thy brethren, like unto me* (Deuteronomy 18:15) — the mouth-to-mouth servant of Numbers 12:8 is the measure of the coming Prophet.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-with-him-will-i-speak-mouth-to-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a Prophet from among their brethren, like unto thee, and will put my words in his mouth* (Deuteronomy 18:18) — the same direct speech Moses received *mouth to mouth* (Numbers 12:8), fulfilled in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-with-him-will-i-speak-mouth-to-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17) — the faithful servant of *all mine house* (Numbers 12:7) named beside the Son.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-with-him-will-i-speak-mouth-to-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*No man hath seen Elohim (God) at any time; the only begotten Son... he hath declared him* (John 1:18) — *the similitude of Yahuah (LORD)* Moses beheld (Numbers 12:8) is the Formed Son who declares the unseen Father.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-with-him-will-i-speak-mouth-to-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after* (Hebrews 3:5) — the apostle quotes *faithful in all mine house* (Numbers 12:7) of the servant.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-with-him-will-i-speak-mouth-to-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*But Messiah (Christ) as a son over his own house* (Hebrews 3:6) — Moses faithful as servant within the house (Numbers 12:7), the Son faithful over it.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-with-him-will-i-speak-mouth-to-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Bless them which persecute you: bless, and curse not* (Romans 12:14) — Moses cries *Heal her now, O Elohim (God), I beseech thee* (Numbers 12:13) for the one who spoke against him.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-moses-cried-heal-her-now-for-his-accuser'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Be not overcome of evil, but overcome evil with good* (Romans 12:21) — Miriam''s evil words answered by intercession, not vengeance (Numbers 12:13).'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-moses-cried-heal-her-now-for-his-accuser'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Remember what Yahuah Elohayka (the LORD thy God) did unto Miriam by the way* (Deuteronomy 24:9) — the Torah keeps the seven-day exile (Numbers 12:14) as a standing memorial against the tongue lifted up.'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=14
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=24 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-moses-cried-heal-her-now-for-his-accuser'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he shall dwell alone; without the camp shall his habitation be* (Leviticus 13:46) — Miriam falls under the very law of the leper, *shut out from the camp seven days* (Numbers 12:14).'
+  FROM cross_reference_threads t
+  JOIN _s312_num12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=12 AND sv.verse_number=14
+  JOIN _s312_num12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=13 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-12-moses-cried-heal-her-now-for-his-accuser'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_13.sql (Numbers 13) -----
+-- Book: Numbers  Chapter: 13  (the twelve spies search the land of Canaan)
+-- Tag: num13   Session prefix: s312   Temp view: _s312_num13_lookup
+-- Sort band: base 23800 step 3  ->  23800, 23803, 23806, 23809
+-- Source rows ALL 'canon','numbers',13,v
+--
+-- Numbers 13 coverage:
+--   v.1-3   (the send / one ruler per tribe)
+--           NT:     none warranted  Extras: none warranted  Tanakh: none warranted (administrative roll)
+--   v.4-15  (the named spies, one per tribe)
+--           NT:     none warranted  Extras: none warranted  Tanakh: none warranted (the roll of names)
+--   v.8,16  (Oshea the son of Nun renamed Jehoshua by Moses)
+--           NT:     Matthew 1:21 (call his name Yahusha, for he shall save) -> THREAD 1 forward
+--           Extras: none warranted
+--           Tanakh: lateral self Numbers 13:8 (Oshea named) -> 13:16 (renamed Jehoshua) -> THREAD 1
+--   v.17-22 (sent up southward; Hebron, the children of Anak)
+--           NT:     none warranted  Extras: weighed 1 Enoch 7 (giants) -> deferred to evil-report thread (v.33)
+--           Tanakh: none warranted standalone
+--   v.23-27 (the cluster of Eshcol borne on a staff; floweth with milk and honey)
+--           NT:     none warranted (the fruit-foretaste of the good land)
+--           Extras: none warranted
+--           Tanakh: Deuteronomy 1:24, 1:25 (the valley of Eshcol, the good land's fruit) -> THREAD 2 lateral
+--   v.28-29 (NEVERTHELESS the people be strong, the children of Anak)
+--           NT:     none warranted  Extras: none warranted  Tanakh: folds into the evil-report thread
+--   v.30    (Caleb: let us go up at once, we are WELL ABLE)
+--           NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Numbers 14:24 (my servant Caleb followed me fully), Joshua 14:8 (I wholly followed Yahuah) -> THREAD 3
+--   v.31-33 (the ten's evil report; we be not able; the giants; as grasshoppers)
+--           NT:     Hebrews 3:19 (could not enter in because of unbelief) -> THREAD 4 forward
+--           Extras: 1 Enoch 7:2 (the giants, three thousand ells) -> THREAD 4 (the sons of Anak = the Nephilim's brood)
+--           Tanakh: Deuteronomy 1:28 (the sons of the Anakims), Numbers 14:37 (the evil-report bringers die by plague) -> THREAD 4
+--
+-- THREADS (4):
+--   1 numbers-13-oshea-renamed-jehoshua-the-name-of-salvation   [free]  canon NT (Matthew) + canon lateral (Numbers self)
+--   2 numbers-13-the-cluster-of-eshcol-the-fruit-of-the-good-land [free] canon lateral (Deuteronomy)
+--   3 numbers-13-caleb-we-are-well-able-takes-yahuah-at-his-word  [free] canon lateral (Numbers, Joshua)
+--   4 numbers-13-the-evil-report-of-unbelief                      [extras] canon NT (Hebrews) + canon lateral (Deut, Num) + 1 Enoch
+--
+-- Framework-load-bearing framing:
+--   * 13:16 Jehoshua = "Yahuah is salvation"; the name of Joshua IS the name of Yahusha (Matthew 1:21,
+--     for he shall save) -- the Formed-Son's own name carried by the man who leads Yashar'el into the land.
+--   * 13:33 the giants/sons of Anak read through 1 Enoch 7 (the Nephilim) -- the seed-war flesh that
+--     swallows the unbelieving eye; the evil report measures by the flesh, not by Yahuah.
+
+CREATE TEMP VIEW _s312_num13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================== CROSS_REFERENCES ==============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Oshea renamed Jehoshua = the name of salvation
+    ('canon','numbers',13,16,'canon','numbers',13,8,'free',
+     E'*Of the tribe of Ephraim, Oshea the son of Nun.* (Numbers 13:8) The spy of Ephraim is enrolled under his birth-name Oshea; then the chapter''s closing roll declares the change: *And Moses called Oshea the son of Nun Jehoshua* (Numbers 13:16). The one man among the twelve who would lead Yashar''el (Israel) into the land is given the name that means *Yahuah is salvation* before he ever sets foot in it.'),
+    ('canon','numbers',13,16,'canon','matthew',1,21,'free',
+     E'*And she shall bring forth a son, and thou shalt call his name Yahusha (JESUS): for he shall save his people from their sins.* (Matthew 1:21) The name Moses gives in *Moses called Oshea the son of Nun Jehoshua* (Numbers 13:16) is the very name of the Formed Son -- Jehoshua / Yahusha, *Yahuah is salvation*. The man who leads the people into the inheritance bears the salvation-name; the One who saves his people from their sins fills it.'),
+    -- THREAD 2: the cluster of Eshcol, the fruit of the good land
+    ('canon','numbers',13,23,'canon','deuteronomy',1,24,'free',
+     E'*And they turned and went up into the mountain, and came unto the valley of Eshcol, and searched it out.* (Deuteronomy 1:24) Moses, recounting the same mission forty years on, names the place the spies reached -- the very brook where *they came unto the brook of Eshcol, and cut down from thence a branch with one cluster of grapes, and they bare it between two upon a staff* (Numbers 13:23). The cluster of Eshcol is the foretaste of the promised inheritance.'),
+    ('canon','numbers',13,27,'canon','deuteronomy',1,25,'free',
+     E'*And they took of the fruit of the land in their hands, and brought it down unto us, and brought us word again, and said, It is a good land which Yahuah Eloheinu (the LORD our God) doth give us.* (Deuteronomy 1:25) The spies'' true verdict in Numbers -- *surely it floweth with milk and honey; and this is the fruit of it* (Numbers 13:27) -- is the same verdict Moses preserves: a GOOD land that Yahuah is giving. The fruit in their hands testifies to the goodness of the gift.'),
+    -- THREAD 3: Caleb -- we are well able -- the faith that takes Yahuah at his word
+    ('canon','numbers',13,30,'canon','numbers',14,24,'free',
+     E'*But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it.* (Numbers 14:24) When Caleb stills the people -- *Let us go up at once, and possess it; for we are well able to overcome it* (Numbers 13:30) -- Yahuah names it *another spirit*: faith that follows fully and takes Yahuah at his word. Caleb alone of that generation is promised the land and the seed-inheritance.'),
+    ('canon','numbers',13,30,'canon','joshua',14,8,'free',
+     E'*Nevertheless my brethren that went up with me made the heart of the people melt: but I wholly followed Yahuah Elohai (the LORD my God).* (Joshua 14:8) Forty-five years later Caleb claims the very land he believed in, recalling his lone stand: where the ten melted the people''s heart, he *wholly followed Yahuah*. The *we are well able* of Numbers 13:30 is the faith that, in the end, inherits.'),
+    -- THREAD 4: the evil report of unbelief
+    ('canon','numbers',13,31,'canon','hebrews',3,19,'free',
+     E'*So we see that they could not enter in because of unbelief.* (Hebrews 3:19) The ten''s answer to Caleb -- *We be not able to go up against the people; for they are stronger than we* (Numbers 13:31) -- is named by the apostle as the unbelief that barred a whole generation from the rest. Not the giants, but the failure to take Yahuah at his word, shut the door.'),
+    ('canon','numbers',13,32,'canon','numbers',14,37,'free',
+     E'*Even those men that did bring up the evil report upon the land, died by the plague before Yahuah (LORD).* (Numbers 14:37) The very men of *they brought up an evil report of the land which they had searched* (Numbers 13:32) are sentenced: the slander against Yahuah''s good gift draws Yahuah''s judgment. The evil report of unbelief is no light thing.'),
+    ('canon','numbers',13,33,'canon','deuteronomy',1,28,'free',
+     E'*Whither shall we go up? our brethren have discouraged our heart, saying, The people is greater and taller than we; the cities are great and walled up to heaven; and moreover we have seen the sons of the Anakims there.* (Deuteronomy 1:28) Moses repeats the same fear that Numbers records -- *there we saw the giants, the sons of Anak... and we were in our own sight as grasshoppers* (Numbers 13:33). The flesh measured against the flesh always concludes defeat.'),
+    ('canon','numbers',13,33,'enoch','1-enoch',7,2,'extras',
+     E'*And they became pregnant, and they bare great giants, whose height was three thousand ells:* (1 Enoch 7:2) The *giants, the sons of Anak, which come of the giants* of Numbers 13:33 are the brood the Watchers'' rebellion loosed upon the earth -- the Nephilim whose monstrous stature 1 Enoch records. They are the seed-war flesh that swallowed the unbelieving eye, so that *we were in our own sight as grasshoppers, and so we were in their sight* (Numbers 13:33).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================== THREADS ==============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-13-oshea-renamed-jehoshua-the-name-of-salvation',
+       E'Oshea Renamed Jehoshua: The Name of Salvation',
+       E'Among the twelve rulers sent to search the land, the spy of Ephraim is enrolled as *Of the tribe of Ephraim, Oshea the son of Nun* (Numbers 13:8). But the closing roll records a change Moses made: *And Moses called Oshea the son of Nun Jehoshua* (Numbers 13:16). Jehoshua means *Yahuah is salvation* -- and it is the very name of the Formed Son: *And she shall bring forth a son, and thou shalt call his name Yahusha (JESUS): for he shall save his people from their sins* (Matthew 1:21). The man who alone among his generation would lead Yashar''el (Israel) into the inheritance is given the salvation-name before the journey; the One who saves his people from their sins fills it.',
+       sv.verse_id, ev.verse_id, 'free', 23800
+  FROM _s312_num13_lookup sv, _s312_num13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=13 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-13-the-cluster-of-eshcol-the-fruit-of-the-good-land',
+       E'The Cluster of Eshcol: The Fruit of the Good Land',
+       E'The spies bring back a foretaste of the inheritance: *And they came unto the brook of Eshcol, and cut down from thence a branch with one cluster of grapes, and they bare it between two upon a staff; and they brought of the pomegranates, and of the figs* (Numbers 13:23). Their true verdict was the good one: *surely it floweth with milk and honey; and this is the fruit of it* (Numbers 13:27). Forty years on Moses preserves the same place and the same goodness: *they... came unto the valley of Eshcol, and searched it out* (Deuteronomy 1:24), *and... said, It is a good land which Yahuah Eloheinu (the LORD our God) doth give us* (Deuteronomy 1:25). The cluster borne between two is the firstfruit-witness that Yahuah''s gift is good.',
+       sv.verse_id, ev.verse_id, 'free', 23803
+  FROM _s312_num13_lookup sv, _s312_num13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=13 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-13-caleb-we-are-well-able-takes-yahuah-at-his-word',
+       E'Caleb: We Are Well Able -- The Faith That Takes Yahuah at His Word',
+       E'Against the rising murmur Caleb stands alone: *And Caleb stilled the people before Moses, and said, Let us go up at once, and possess it; for we are well able to overcome it* (Numbers 13:30). He does not deny the giants or the walls; he simply takes Yahuah at his word. Yahuah names that posture *another spirit*: *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it* (Numbers 14:24). And forty-five years later Caleb claims the very ground he believed in: *Nevertheless my brethren that went up with me made the heart of the people melt: but I wholly followed Yahuah Elohai (the LORD my God)* (Joshua 14:8). The faith that says *we are well able* is the faith that, in the end, inherits.',
+       sv.verse_id, ev.verse_id, 'free', 23806
+  FROM _s312_num13_lookup sv, _s312_num13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=13 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-13-the-evil-report-of-unbelief',
+       E'The Evil Report of Unbelief',
+       E'The ten answer Caleb by measuring the flesh against the flesh: *We be not able to go up against the people; for they are stronger than we* (Numbers 13:31). Their report is named for what it is: *And they brought up an evil report of the land which they had searched* (Numbers 13:32), capped by *there we saw the giants, the sons of Anak... and we were in our own sight as grasshoppers, and so we were in their sight* (Numbers 13:33). Those giants are the seed-war brood the Watchers'' fall loosed -- *they... bare great giants, whose height was three thousand ells* (1 Enoch 7:2) -- and the unbelieving eye is swallowed by them. Moses recalls the same melting fear: *the cities are great and walled up to heaven; and moreover we have seen the sons of the Anakims there* (Deuteronomy 1:28). The verdict is Yahuah''s: *those men that did bring up the evil report upon the land, died by the plague before Yahuah (LORD)* (Numbers 14:37), and the apostle seals the lesson: *So we see that they could not enter in because of unbelief* (Hebrews 3:19). Not the giants, but the failure to take Yahuah at his word, shut the door of the rest.',
+       sv.verse_id, ev.verse_id, 'extras', 23809
+  FROM _s312_num13_lookup sv, _s312_num13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=13 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================== THREAD MEMBERS ==============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And Moses called Oshea the son of Nun Jehoshua* (Numbers 13:16) -- the spy of Ephraim, enrolled as Oshea in 13:8, is renamed to the salvation-name before the land is entered.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-oshea-renamed-jehoshua-the-name-of-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou shalt call his name Yahusha (JESUS): for he shall save his people from their sins* (Matthew 1:21) -- Jehoshua / Yahusha, *Yahuah is salvation*: the man who leads the people in bears the very name of the One who saves.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-oshea-renamed-jehoshua-the-name-of-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*they... came unto the valley of Eshcol, and searched it out* (Deuteronomy 1:24) -- Moses names the same brook of Eshcol where the cluster of 13:23 was cut down.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=23
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-the-cluster-of-eshcol-the-fruit-of-the-good-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*It is a good land which Yahuah Eloheinu (the LORD our God) doth give us* (Deuteronomy 1:25) -- the same good verdict as 13:27''s *surely it floweth with milk and honey*: the fruit testifies the gift is good.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=27
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-the-cluster-of-eshcol-the-fruit-of-the-good-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*my servant Caleb, because he had another spirit with him, and hath followed me fully... his seed shall possess it* (Numbers 14:24) -- Yahuah names Caleb''s *we are well able* as the spirit that follows fully and inherits.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=30
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-caleb-we-are-well-able-takes-yahuah-at-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*but I wholly followed Yahuah Elohai (the LORD my God)* (Joshua 14:8) -- Caleb, claiming the land forty-five years later, recalls the lone stand of 13:30; the faith that took Yahuah at his word inherits.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=30
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-caleb-we-are-well-able-takes-yahuah-at-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*So we see that they could not enter in because of unbelief* (Hebrews 3:19) -- the apostle names the ten''s *We be not able* (13:31): not the giants, but unbelief, barred the rest.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=31
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-the-evil-report-of-unbelief'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*those men that did bring up the evil report upon the land, died by the plague before Yahuah (LORD)* (Numbers 14:37) -- the bringers of the evil report of 13:32 are sentenced; the slander against the good gift draws judgment.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=32
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-the-evil-report-of-unbelief'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The people is greater and taller than we; the cities are great and walled up to heaven; and moreover we have seen the sons of the Anakims there* (Deuteronomy 1:28) -- Moses repeats the melting fear of 13:33; the flesh measured against the flesh always concludes defeat.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=33
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-the-evil-report-of-unbelief'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they... bare great giants, whose height was three thousand ells* (1 Enoch 7:2) -- the *giants, the sons of Anak* of 13:33 are the Watcher-loosed Nephilim brood; the seed-war flesh that swallows the unbelieving eye into *as grasshoppers*.'
+  FROM cross_reference_threads t
+  JOIN _s312_num13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=13 AND sv.verse_number=33
+  JOIN _s312_num13_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-13-the-evil-report-of-unbelief'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_14.sql (Numbers 14) -----
+-- Chapter: Numbers 14  |  tag: num14  |  session prefix: s312
+-- Sort band base 23825, step 3  (23825, 23828, 23831, 23834, 23837, 23840)
+--
+-- Numbers 14 coverage:
+--   v.1-4   (the congregation weeps and rebels — would Elohim we had died in Egypt / let us return)
+--        NT:     Acts 7:39 (in their hearts turned back again into Egypt)
+--        Extras: none warranted
+--        Tanakh: Psalm 106:24-25 (they despised the pleasant land, murmured in their tents)
+--   v.5-10  (Joshua and Caleb rend their clothes — only rebel not / their defence is departed)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Numbers 13:30 (Caleb stilled the people — let us go up at once)
+--   v.11-19 (★★ MOSES' GREAT INTERCESSION — plead the Name, the reputation, the self-revelation)
+--        NT:     Romans 9:3 (Paul's Moses-like wish), Hebrews 7:25 (he ever liveth to make
+--                intercession), 1 John 2:1 (an advocate with the Father)
+--        Extras: none warranted
+--        Tanakh: Exodus 32:11-14 (the same Moses-intercession at the calf), Exodus 34:6-7 (the
+--                self-revelation Moses quotes), Psalm 106:23 (Moses stood before him in the breach)
+--   v.20-25 (★ I have pardoned according to thy word — yet the earth filled with the glory; Caleb)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Habakkuk 2:14 (the earth filled with the knowledge of the glory),
+--                Deuteronomy 1:36 (Caleb — he hath wholly followed Yahuah)
+--   v.26-35 (★★ THE SENTENCE — carcases fall, forty years for forty days, the rest barred)
+--        NT:     Hebrews 3:16-19 (carcases fell / could not enter in because of unbelief),
+--                Hebrews 4:1-2 (the rest; the word did not profit, not mixed with faith),
+--                1 Corinthians 10:5 (overthrown in the wilderness), Jude 1:5 (destroyed them
+--                that believed not)
+--        Extras: none warranted
+--        Tanakh: Psalm 95:10-11 (forty years grieved / sware they should not enter my rest)
+--   v.36-38 (the ten spies of the evil report die by the plague — Joshua and Caleb live)
+--        NT:     none warranted  (folded into Thread 5 sentence / Thread 2 witnesses)
+--        Extras: none warranted
+--        Tanakh: none warranted  (the report-bringers judged — handled in coverage prose)
+--   v.39-45 (★ the PRESUMPTUOUS attempt — go up without Him, smitten unto Hormah)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 1:41-44 (ye rebelled, went presumptuously up, chased as bees, Hormah)
+--
+-- THREADS (6):
+--   numbers-14-would-elohim-we-had-died-in-egypt-the-heart-that-turns-backward
+--        members: Ps106:24-25 (Tanakh/free); Acts7:39 (NT/free) -> tier free
+--   numbers-14-joshua-and-caleb-rend-their-clothes-the-two-faithful-witnesses
+--        members: Num13:30 (Tanakh/free) -> tier free
+--   numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession
+--        members: Exod32:11 (Tanakh), Exod32:13 (Tanakh), Exod34:6 (Tanakh), Exod34:7 (Tanakh),
+--                 Ps106:23 (Tanakh); Rom9:3, Heb7:25, 1John2:1 (NT) -> tier free
+--   numbers-14-i-have-pardoned-according-to-thy-word-yet-the-earth-filled-with-the-glory
+--        members: Hab2:14 (Tanakh), Deut1:36 (Tanakh) -> tier free
+--   numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest
+--        members: Ps95:10 (Tanakh), Ps95:11 (Tanakh); Heb3:16, Heb3:17, Heb3:18, Heb3:19,
+--                 Heb4:1, Heb4:2, 1Cor10:5, Jude1:5 (NT) -> tier free
+--   numbers-14-they-presumed-to-go-up-without-him-the-door-already-shut
+--        members: Deut1:41 (Tanakh), Deut1:42 (Tanakh), Deut1:43 (Tanakh), Deut1:44 (Tanakh) -> tier free
+--
+-- Framework notes: Chapter 14 is the hinge of the wilderness — the unbelief at Kadesh that bars
+-- the rest. (1) The longing backward to Egypt is the heart Psalm 106 sings and Acts 7 names: they
+-- *in their hearts turned back again into Egypt*. (2) Joshua and Caleb are the two faithful
+-- witnesses who say their defence is departed and Yahuah is with us — the same Caleb of Numbers
+-- 13:30. (3) MOSES' GREAT INTERCESSION is the keystone: he refuses to be made a greater nation,
+-- stands in the breach (Ps 106:23), pleads the Name and the reputation of Yahuah among the nations,
+-- and quotes Yahuah's own self-revelation (Exod 34:6-7) back to Him — the same mediation he made at
+-- the calf (Exod 32:11-14). This is the Moses-pattern of the Mediator: Paul's Moses-like wish to be
+-- accursed for his kinsmen (Rom 9:3), the Formed Son who *ever liveth to make intercession* (Heb
+-- 7:25), the *advocate with the Father* (1 John 2:1). (4) Pardon WITH consequence — *I have pardoned
+-- according to thy word* yet the rebels do not see the land, and the earth shall yet be filled with
+-- His glory (Hab 2:14); Caleb, of another spirit, follows fully (Deut 1:36). (5) THE SENTENCE: the
+-- carcases fall, forty years for forty days, the generation barred from the rest for unbelief — the
+-- NT's most quoted wilderness-warning (Heb 3-4, 1 Cor 10:5, Jude 1:5) reaching back to Psalm 95's
+-- *they should not enter into my rest*. The new-covenant rest is the SAME rest forfeited here, entered
+-- by faith mixed with the word, NOT a different promise. (6) Presumption: after the door is shut they
+-- go up without the ark and without Moses and are smitten unto Hormah — self-willed obedience is no
+-- obedience (Deut 1:41-44). All members canon -> every thread tier free.
+
+CREATE TEMP VIEW _s312_num14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: would Elohim we had died in Egypt — the heart that turns backward
+    ('canon','numbers',14,3,'canon','psalms',106,24,'free',
+      E'*Yea, they despised the pleasant land, they believed not his word* (Psalm 106:24). The wilderness psalm sings the very rebellion of this chapter: *And wherefore hath Yahuah (LORD) brought us unto this land, to fall by the sword... were it not better for us to return into Egypt?* (Numbers 14:3). To prefer Egypt to the land of promise is to despise the pleasant land and disbelieve the word of Yahuah.'),
+    ('canon','numbers',14,2,'canon','psalms',106,25,'free',
+      E'*But murmured in their tents, and hearkened not unto the voice of Yahuah (LORD)* (Psalm 106:25). Psalm 106 names the sin by its name — murmuring — exactly as the chapter opens: *And all the children of Yashar''el (Israel) murmured against Moses and against Aaron... Would Elohim (God) that we had died in the land of Egypt!* (Numbers 14:2). The murmur in the tent is unbelief made audible.'),
+    ('canon','numbers',14,4,'canon','acts',7,39,'free',
+      E'*To whom our fathers would not obey, but thrust him from them, and in their hearts turned back again into Egypt* (Acts 7:39). Stephen reads the heart behind the words *Let us make a captain, and let us return into Egypt* (Numbers 14:4): they did not merely speak of Egypt — in their hearts they had already turned back, refusing the Mediator Yahuah had set over them.'),
+    -- Thread 2: Joshua and Caleb rend their clothes — the two faithful witnesses
+    ('canon','numbers',14,9,'canon','numbers',13,30,'free',
+      E'*And Caleb stilled the people before Moses, and said, Let us go up at once, and possess it; for we are well able to overcome it* (Numbers 13:30). Caleb''s first cry of faith becomes the joint plea of the two witnesses: *Only rebel not ye against Yahuah (LORD), neither fear ye the people of the land; for they are bread for us: their defence is departed from them, and Yahuah (LORD) is with us: fear them not* (Numbers 14:9). The same confidence — not in their own strength but in the presence of Yahuah — against the evil report of the ten.'),
+    -- Thread 3: ★★ Moses stands in the breach pleading the Name — the great intercession
+    ('canon','numbers',14,13,'canon','exodus',32,11,'free',
+      E'*And Moses besought Yahuah Elohav (the LORD his God), and said, Yahuah (LORD), why doth thy wrath wax hot against thy people, which thou hast brought forth out of the land of Egypt with great power, and with a mighty hand?* (Exodus 32:11). At the golden calf Moses made the same intercession he now makes here: when Yahuah would consume and start over from him, Moses pleads the people back as Yahuah''s OWN, the people He brought up — *Then the Egyptians shall hear it, (for thou broughtest up this people in thy might from among them;)* (Numbers 14:13).'),
+    ('canon','numbers',14,16,'canon','exodus',32,13,'free',
+      E'*Remember Abraham, Isaac, and Yashar''el (Israel), thy servants, to whom thou swarest by thine own self... I will multiply your seed as the stars of heaven... and they shall inherit it for ever* (Exodus 32:13). At the calf Moses pleaded the sworn promise to the fathers; here he pleads its reputation among the nations, *lest* they say *Because Yahuah (LORD) was not able to bring this people into the land which he sware unto them, therefore he hath slain them in the wilderness* (Numbers 14:16). The intercessor binds Yahuah''s honour to His oath to the seed.'),
+    ('canon','numbers',14,18,'canon','exodus',34,6,'free',
+      E'*And Yahuah (LORD) passed by before him, and proclaimed, Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6). Moses does not invent his plea — he quotes back to Yahuah the very self-revelation Yahuah proclaimed at Sinai: *Yahuah (LORD) is longsuffering, and of great mercy, forgiving iniquity and transgression* (Numbers 14:18). The mediator prays the character of Yahuah back to Him.'),
+    ('canon','numbers',14,18,'canon','exodus',34,7,'free',
+      E'*Keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty; visiting the iniquity of the fathers upon the children... unto the third and to the fourth generation* (Exodus 34:7). Moses quotes this clause word for word — *and by no means clearing the guilty, visiting the iniquity of the fathers upon the children unto the third and fourth generation* (Numbers 14:18) — holding together mercy and justice in the same breath he holds out for pardon.'),
+    ('canon','numbers',14,13,'canon','psalms',106,23,'free',
+      E'*Therefore he said that he would destroy them, had not Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23). The psalm names exactly what Moses does in this chapter: he stands in the breach. When Yahuah says *I will smite them... and will make of thee a greater nation* (Numbers 14:12), Moses steps into the gap between the wrath and the people and pleads, *Then the Egyptians shall hear it* (Numbers 14:13).'),
+    ('canon','numbers',14,12,'canon','romans',9,3,'free',
+      E'*For I could wish that myself were accursed from Messiah (Christ) for my brethren, my kinsmen according to the flesh* (Romans 9:3). Offered a greater nation in his own name — *I will... make of thee a greater nation and mightier than they* (Numbers 14:12) — Moses refuses and intercedes for the people instead. Paul shows the same Moses-heart: he would rather be cut off himself than gain at his kinsmen''s loss.'),
+    ('canon','numbers',14,19,'canon','hebrews',7,25,'free',
+      E'*Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). Moses'' plea — *Pardon, I beseech thee, the iniquity of this people according unto the greatness of thy mercy* (Numbers 14:19) — is the shadow of the abiding intercession of the Formed Son, who does not plead once and depart but ever liveth to make intercession, saving to the uttermost.'),
+    ('canon','numbers',14,19,'canon','1-john',2,1,'free',
+      E'*My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Yahusha HaMashiach (Jesus Christ) the righteous* (1 John 2:1). Moses standing before Yahuah to plead *Pardon, I beseech thee, the iniquity of this people* (Numbers 14:19) is the type of the Advocate — the One who stands with the Father on behalf of those who have sinned, pleading not their merit but His mercy.'),
+    -- Thread 4: ★ I have pardoned according to thy word — yet the earth filled with the glory
+    ('canon','numbers',14,21,'canon','habakkuk',2,14,'free',
+      E'*For the earth shall be filled with the knowledge of the glory of Yahuah (LORD), as the waters cover the sea* (Habakkuk 2:14). Even in the act of pardoning the rebels who shall not see the land, Yahuah swears His unstoppable purpose: *But as truly as I live, all the earth shall be filled with the glory of Yahuah (LORD)* (Numbers 14:21). A generation may perish in unbelief, yet the glory will fill the whole earth — Habakkuk lifts the same oath into prophecy.'),
+    ('canon','numbers',14,24,'canon','deuteronomy',1,36,'free',
+      E'*Save Caleb the son of Jephunneh; he shall see it, and to him will I give the land that he hath trodden upon, and to his children, because he hath wholly followed Yahuah (LORD)* (Deuteronomy 1:36). Moses'' later retelling fixes the reason for Caleb''s exemption exactly as it stands here: *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land* (Numbers 14:24). The one of another spirit, who follows fully, inherits where the rebels fall.'),
+    -- Thread 5: ★★ your carcases shall fall — the unbelief that bars the rest
+    ('canon','numbers',14,29,'canon','psalms',95,10,'free',
+      E'*Forty years long was I grieved with this generation, and said, It is a people that do err in their heart, and they have not known my ways* (Psalm 95:10). The forty-year sentence — *your carcases shall fall in this wilderness* (Numbers 14:29), *forty days, each day for a year... even forty years* (Numbers 14:34) — is the very grief Psalm 95 names: a generation erring in heart, not knowing His ways.'),
+    ('canon','numbers',14,30,'canon','psalms',95,11,'free',
+      E'*Unto whom I sware in my wrath that they should not enter into my rest* (Psalm 95:11). The oath of exclusion is sworn here: *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein* (Numbers 14:30). Psalm 95 turns that oath into a standing warning — the rest forfeited at Kadesh is the rest the living are still called to enter.'),
+    ('canon','numbers',14,29,'canon','hebrews',3,16,'free',
+      E'*For some, when they had heard, did provoke: howbeit not all that came out of Egypt by Moses* (Hebrews 3:16). Hebrews opens its great wilderness-warning on this generation — the ones who heard the signs yet provoked, *which have murmured against me* (Numbers 14:29). Not all (Joshua and Caleb), but the great number, fell under the oath.'),
+    ('canon','numbers',14,32,'canon','hebrews',3,17,'free',
+      E'*But with whom was he grieved forty years? was it not with them that had sinned, whose carcases fell in the wilderness?* (Hebrews 3:17). Hebrews quotes the sentence of this chapter almost verbatim: *But as for you, your carcases, they shall fall in this wilderness* (Numbers 14:32). The forty years of grief and the fallen carcases are the warning the new-covenant people are not to repeat.'),
+    ('canon','numbers',14,23,'canon','hebrews',3,18,'free',
+      E'*And to whom sware he that they should not enter into his rest, but to them that believed not?* (Hebrews 3:18). The oath of exclusion — *Surely they shall not see the land which I sware unto their fathers, neither shall any of them that provoked me see it* (Numbers 14:23) — is read by Hebrews as the oath barring them from REST: the land is the figure, the rest is the substance.'),
+    ('canon','numbers',14,11,'canon','hebrews',3,19,'free',
+      E'*So we see that they could not enter in because of unbelief* (Hebrews 3:19). Hebrews names the single root Yahuah named first: *how long will it be ere they believe me, for all the signs which I have shewed among them?* (Numbers 14:11). Not weakness, not the giants, not the walled cities — unbelief alone barred them from entering.'),
+    ('canon','numbers',14,30,'canon','hebrews',4,1,'free',
+      E'*Let us therefore fear, lest, a promise being left us of entering into his rest, any of you should seem to come short of it* (Hebrews 4:1). Because *ye shall not come into the land* (Numbers 14:30) was spoken to that generation, the promise of rest yet stands open — and the warning stands with it: take heed lest any come short as they did.'),
+    ('canon','numbers',14,11,'canon','hebrews',4,2,'free',
+      E'*For unto us was the gospel preached, as well as unto them: but the word preached did not profit them, not being mixed with faith in them that heard it* (Hebrews 4:2). They heard the same good word of the good land and the same signs — yet *how long will it be ere they believe me?* (Numbers 14:11). The word does not profit unless it is mixed with faith; the report of the land was true, but unbelief made it of no profit.'),
+    ('canon','numbers',14,35,'canon','1-corinthians',10,5,'free',
+      E'*But with many of them Elohim (God) was not well pleased: for they were overthrown in the wilderness* (1 Corinthians 10:5). Paul gathers the whole sentence into one line — *in this wilderness they shall be consumed, and there they shall die* (Numbers 14:35) — and sets it before the assembly as an example written for our admonition: do not presume on signs and deliverance and then fall as they fell.'),
+    ('canon','numbers',14,29,'canon','jude',1,5,'free',
+      E'*I will therefore put you in remembrance, though ye once knew this, how that Yahuah (Lord), having saved the people out of the land of Egypt, afterward destroyed them that believed not* (Jude 1:5). Jude makes this chapter a permanent remembrance: the SAME people Yahuah saved out of Egypt are the ones whose *carcases shall fall in this wilderness* (Numbers 14:29). Being redeemed out of Egypt did not exempt the unbelieving from judgment.'),
+    -- Thread 6: ★ they presumed to go up without Him — the door already shut
+    ('canon','numbers',14,40,'canon','deuteronomy',1,41,'free',
+      E'*Then ye answered and said unto me, We have sinned against Yahuah (LORD), we will go up and fight, according to all that Yahuah Eloheinu (the LORD our God) commanded us... ye were ready to go up into the hill* (Deuteronomy 1:41). Moses'' retelling matches the chapter: after the sentence the people mourn and reverse course — *Lo, we be here, and will go up unto the place which Yahuah (LORD) hath promised: for we have sinned* (Numbers 14:40) — too late, and on their own will.'),
+    ('canon','numbers',14,42,'canon','deuteronomy',1,42,'free',
+      E'*And Yahuah (LORD) said unto me, Say unto them, Go not up, neither fight; for I am not among you; lest ye be smitten before your enemies* (Deuteronomy 1:42). The warning is identical: *Go not up, for Yahuah (LORD) is not among you; that ye be not smitten before your enemies* (Numbers 14:42). Obedience after the door is shut is not obedience — to go up without His presence is to go up to defeat.'),
+    ('canon','numbers',14,44,'canon','deuteronomy',1,43,'free',
+      E'*So I spake unto you; and ye would not hear, but rebelled against the commandment of Yahuah (LORD), and went presumptuously up into the hill* (Deuteronomy 1:43). The presumption is named the same in both books: *But they presumed to go up unto the hill top: nevertheless the ark of the covenant of Yahuah (LORD), and Moses, departed not out of the camp* (Numbers 14:44). They went up without the ark, without the mediator — self-willed, against the word.'),
+    ('canon','numbers',14,45,'canon','deuteronomy',1,44,'free',
+      E'*And the Amorites, which dwelt in that mountain, came out against you, and chased you, as bees do, and destroyed you in Seir, even unto Hormah* (Deuteronomy 1:44). The outcome is one: *Then the Amalekites came down, and the Canaanites which dwelt in that hill, and smote them, and discomfited them, even unto Hormah* (Numbers 14:45). The presumptuous ascent ends at Hormah — the place of the ban — because they turned away from Yahuah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-14-would-elohim-we-had-died-in-egypt-the-heart-that-turns-backward',
+       E'Would Elohim we had died in Egypt — the heart that turns backward',
+       E'The chapter opens in tears that are really treason: *And all the congregation lifted up their voice, and cried; and the people wept that night* (Numbers 14:1), and the weeping becomes a wish for death and a plan to go back — *Would Elohim (God) that we had died in the land of Egypt!* (Numbers 14:2), *Let us make a captain, and let us return into Egypt* (Numbers 14:4). Psalm 106 sings the same rebellion as the sin it is: *Yea, they despised the pleasant land, they believed not his word* (Psalm 106:24); *But murmured in their tents, and hearkened not unto the voice of Yahuah (LORD)* (Psalm 106:25). Stephen reaches past the words to the heart: *To whom our fathers would not obey, but thrust him from them, and in their hearts turned back again into Egypt* (Acts 7:39). To prefer the house of bondage to the land of promise is to disbelieve the word of Yahuah — the murmur in the tent is unbelief made audible.',
+       sv.verse_id, ev.verse_id, 'free', 23825
+  FROM _s312_num14_lookup sv, _s312_num14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=14 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-14-joshua-and-caleb-rend-their-clothes-the-two-faithful-witnesses',
+       E'Joshua and Caleb rend their clothes — the two faithful witnesses',
+       E'Against the evil report of the ten, two men stand: *And Joshua the son of Nun, and Caleb the son of Jephunneh, which were of them that searched the land, rent their clothes* (Numbers 14:6). Their confidence is not in themselves but in the presence of Yahuah: *If Yahuah (LORD) delight in us, then he will bring us into this land* (Numbers 14:8), *Only rebel not ye against Yahuah (LORD), neither fear ye the people of the land; for they are bread for us: their defence is departed from them, and Yahuah (LORD) is with us: fear them not* (Numbers 14:9). It is the same cry Caleb raised first: *And Caleb stilled the people before Moses, and said, Let us go up at once, and possess it; for we are well able to overcome it* (Numbers 13:30). The congregation answers faith with stones — *But all the congregation bade stone them with stones* (Numbers 14:10) — and only then does the glory of Yahuah appear. The two faithful witnesses are spared the sentence and live to enter the land.',
+       sv.verse_id, ev.verse_id, 'free', 23828
+  FROM _s312_num14_lookup sv, _s312_num14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=14 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession',
+       E'Moses stands in the breach, pleading the Name — the great intercession',
+       E'This is the keystone of the chapter and one of the great intercessions of the Tanakh. Yahuah offers Moses what He once offered at the calf: *I will smite them with the pestilence, and disinherit them, and will make of thee a greater nation and mightier than they* (Numbers 14:12). Moses refuses the offer and steps into the gap. He pleads the reputation of Yahuah among the nations — *Then the Egyptians shall hear it* (Numbers 14:13) — *lest* they say *Because Yahuah (LORD) was not able to bring this people into the land which he sware unto them, therefore he hath slain them in the wilderness* (Numbers 14:16). Then he prays Yahuah''s own self-revelation back to Him: *Yahuah (LORD) is longsuffering, and of great mercy, forgiving iniquity and transgression* (Numbers 14:18) — the very words proclaimed at Sinai, *merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6), *forgiving iniquity and transgression and sin, and that will by no means clear the guilty* (Exodus 34:7). It is the same mediation he made at the golden calf — *And Moses besought Yahuah Elohav (the LORD his God)* (Exodus 32:11), *Remember Abraham, Isaac, and Yashar''el (Israel)... I will multiply your seed as the stars of heaven* (Exodus 32:13). Psalm 106 names the act exactly: *had not Moses his chosen stood before him in the breach, to turn away his wrath* (Psalm 106:23). This is the Moses-pattern of the Mediator. Paul carries the same heart: *For I could wish that myself were accursed from Messiah (Christ) for my brethren, my kinsmen according to the flesh* (Romans 9:3). And the Formed Son fills it forever — He does not plead once and depart but *ever liveth to make intercession for them* (Hebrews 7:25), the *advocate with the Father, Yahusha HaMashiach (Jesus Christ) the righteous* (1 John 2:1). *Pardon, I beseech thee, the iniquity of this people according unto the greatness of thy mercy* (Numbers 14:19) is the prayer of the breach-stander, pleading not their merit but His mercy and His Name.',
+       sv.verse_id, ev.verse_id, 'free', 23831
+  FROM _s312_num14_lookup sv, _s312_num14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=14 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-14-i-have-pardoned-according-to-thy-word-yet-the-earth-filled-with-the-glory',
+       E'I have pardoned according to thy word — yet the earth filled with the glory',
+       E'Yahuah answers the intercession with mercy and with judgment in the same breath. The pardon is real: *And Yahuah (LORD) said, I have pardoned according to thy word* (Numbers 14:20). Yet pardon does not erase consequence — the men who *have tempted me now these ten times* (Numbers 14:22) *shall not see the land which I sware unto their fathers* (Numbers 14:23). And over the whole scene Yahuah swears His unstoppable purpose: *But as truly as I live, all the earth shall be filled with the glory of Yahuah (LORD)* (Numbers 14:21). A generation may forfeit the land, but the glory will fill the whole earth — Habakkuk lifts the same oath into prophecy: *For the earth shall be filled with the knowledge of the glory of Yahuah (LORD), as the waters cover the sea* (Habakkuk 2:14). One man is excepted from the sentence: *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land* (Numbers 14:24) — and Moses'' later retelling fixes the reason, *because he hath wholly followed Yahuah (LORD)* (Deuteronomy 1:36). The one of another spirit, who follows fully, inherits where the rebels fall.',
+       sv.verse_id, ev.verse_id, 'free', 23834
+  FROM _s312_num14_lookup sv, _s312_num14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=14 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest',
+       E'Your carcases shall fall in the wilderness — the unbelief that bars the rest',
+       E'The sentence falls measure for measure. *Your carcases shall fall in this wilderness* (Numbers 14:29); *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein* (Numbers 14:30); *After the number of the days in which ye searched the land, even forty days, each day for a year... even forty years, and ye shall know my breach of promise* (Numbers 14:34) — forty years for forty days. Yahuah named the root at the very first: *how long will it be ere they believe me, for all the signs which I have shewed among them?* (Numbers 14:11). Psalm 95 turns the whole episode into a standing warning: *Forty years long was I grieved with this generation... they have not known my ways* (Psalm 95:10); *Unto whom I sware in my wrath that they should not enter into my rest* (Psalm 95:11). Hebrews builds its great exhortation on it — *whose carcases fell in the wilderness?* (Hebrews 3:17), *they could not enter in because of unbelief* (Hebrews 3:19) — and reads the barred land as the still-open rest: *Let us therefore fear, lest, a promise being left us of entering into his rest, any of you should seem to come short of it* (Hebrews 4:1), for *the word preached did not profit them, not being mixed with faith in them that heard it* (Hebrews 4:2). Paul sets it before the assembly as an example — *they were overthrown in the wilderness* (1 Corinthians 10:5) — and Jude makes it a permanent remembrance: *Yahuah (Lord), having saved the people out of the land of Egypt, afterward destroyed them that believed not* (Jude 1:5). Redemption out of Egypt did not exempt the unbelieving; the rest forfeited at Kadesh is the same rest entered only by faith mixed with the word.',
+       sv.verse_id, ev.verse_id, 'free', 23837
+  FROM _s312_num14_lookup sv, _s312_num14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=14 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-14-they-presumed-to-go-up-without-him-the-door-already-shut',
+       E'They presumed to go up without Him — the door already shut',
+       E'When the sentence is spoken the people mourn and then reverse course — but too late and on their own will: *And they rose up early in the morning, and gat them up into the top of the mountain, saying, Lo, we be here, and will go up unto the place which Yahuah (LORD) hath promised: for we have sinned* (Numbers 14:40). Moses warns them plainly: *Go not up, for Yahuah (LORD) is not among you; that ye be not smitten before your enemies* (Numbers 14:42). They will not hear: *But they presumed to go up unto the hill top: nevertheless the ark of the covenant of Yahuah (LORD), and Moses, departed not out of the camp* (Numbers 14:44) — they went up without the ark and without the mediator, and were smitten *even unto Hormah* (Numbers 14:45). Deuteronomy tells it the same way: *ye would not hear, but rebelled against the commandment of Yahuah (LORD), and went presumptuously up into the hill* (Deuteronomy 1:43), and *the Amorites... chased you, as bees do, and destroyed you in Seir, even unto Hormah* (Deuteronomy 1:44). Self-willed obedience after the door is shut is not obedience. To go up without His presence — refusing first when He called, then presuming when He forbade — is to go up to defeat.',
+       sv.verse_id, ev.verse_id, 'free', 23840
+  FROM _s312_num14_lookup sv, _s312_num14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=39
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=14 AND ev.verse_number=45
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: would Elohim we had died in Egypt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yea, they despised the pleasant land, they believed not his word* (Psalm 106:24) — to prefer Egypt to the promise is to despise the pleasant land and disbelieve the word.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-would-elohim-we-had-died-in-egypt-the-heart-that-turns-backward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*But murmured in their tents, and hearkened not unto the voice of Yahuah (LORD)* (Psalm 106:25) — the murmur of Numbers 14:2 is unbelief made audible.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-would-elohim-we-had-died-in-egypt-the-heart-that-turns-backward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*in their hearts turned back again into Egypt* (Acts 7:39) — Stephen reads the heart behind ''Let us... return into Egypt'' (Numbers 14:4).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=4
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-would-elohim-we-had-died-in-egypt-the-heart-that-turns-backward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Joshua and Caleb the two faithful witnesses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Let us go up at once, and possess it; for we are well able to overcome it* (Numbers 13:30) — Caleb''s first cry of faith becomes the joint plea of the two witnesses.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=9
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-joshua-and-caleb-rend-their-clothes-the-two-faithful-witnesses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: Moses stands in the breach
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And Moses besought Yahuah Elohav (the LORD his God)* (Exodus 32:11) — the same intercession Moses made at the golden calf.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=13
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Remember Abraham, Isaac, and Yashar''el (Israel)... I will multiply your seed as the stars of heaven* (Exodus 32:13) — at the calf Moses pleaded the sworn promise; here he pleads its reputation among the nations (Numbers 14:16).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=16
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6) — Moses quotes Yahuah''s own self-revelation back to Him (Numbers 14:18).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*forgiving iniquity and transgression and sin, and that will by no means clear the guilty* (Exodus 34:7) — Moses quotes this clause word for word in Numbers 14:18, holding mercy and justice together.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*had not Moses his chosen stood before him in the breach, to turn away his wrath* (Psalm 106:23) — the psalm names exactly what Moses does (Numbers 14:13).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=13
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I could wish that myself were accursed from Messiah (Christ) for my brethren* (Romans 9:3) — Paul refuses gain at his kinsmen''s loss, the same Moses-heart that refused the greater nation (Numbers 14:12).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=12
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*he ever liveth to make intercession for them* (Hebrews 7:25) — Moses'' plea for pardon (Numbers 14:19) is the shadow of the Formed Son''s abiding intercession.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=19
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*we have an advocate with the Father, Yahusha HaMashiach (Jesus Christ) the righteous* (1 John 2:1) — Moses pleading ''Pardon, I beseech thee'' (Numbers 14:19) is the type of the Advocate.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=19
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-moses-stands-in-the-breach-pleading-the-name-the-great-intercession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: I have pardoned according to thy word
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the earth shall be filled with the knowledge of the glory of Yahuah (LORD), as the waters cover the sea* (Habakkuk 2:14) — Habakkuk lifts the oath of Numbers 14:21 into prophecy.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-i-have-pardoned-according-to-thy-word-yet-the-earth-filled-with-the-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*because he hath wholly followed Yahuah (LORD)* (Deuteronomy 1:36) — Moses'' retelling fixes the reason for Caleb''s exemption (Numbers 14:24).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=24
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-i-have-pardoned-according-to-thy-word-yet-the-earth-filled-with-the-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: your carcases shall fall — the unbelief that bars the rest
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Forty years long was I grieved with this generation... they have not known my ways* (Psalm 95:10) — the forty-year sentence (Numbers 14:29,34) is the grief Psalm 95 names.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=29
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=95 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I sware in my wrath that they should not enter into my rest* (Psalm 95:11) — the oath of Numbers 14:30 becomes the standing rest-warning.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=30
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=95 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*not all that came out of Egypt by Moses* (Hebrews 3:16) — those who heard yet provoked (Numbers 14:29).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=29
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*whose carcases fell in the wilderness?* (Hebrews 3:17) — quotes the sentence of Numbers 14:32 almost verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=32
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*to whom sware he that they should not enter into his rest, but to them that believed not?* (Hebrews 3:18) — the oath of exclusion (Numbers 14:23) read as the oath barring them from rest.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=23
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*they could not enter in because of unbelief* (Hebrews 3:19) — names the single root Yahuah named first (Numbers 14:11).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=11
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*a promise being left us of entering into his rest... lest any of you should seem to come short* (Hebrews 4:1) — because the land was barred (Numbers 14:30) the rest stands open.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=30
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*the word preached did not profit them, not being mixed with faith* (Hebrews 4:2) — they heard the same word but unbelief (Numbers 14:11) made it of no profit.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=11
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*they were overthrown in the wilderness* (1 Corinthians 10:5) — Paul gathers the sentence of Numbers 14:35 into an example written for our admonition.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=35
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*afterward destroyed them that believed not* (Jude 1:5) — being redeemed out of Egypt did not exempt the unbelieving whose carcases fell (Numbers 14:29).'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=29
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-your-carcases-shall-fall-in-the-wilderness-the-unbelief-that-bars-the-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6: they presumed to go up without Him
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*We have sinned against Yahuah (LORD), we will go up and fight* (Deuteronomy 1:41) — the same too-late reversal of Numbers 14:40.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=40
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-they-presumed-to-go-up-without-him-the-door-already-shut'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Go not up, neither fight; for I am not among you* (Deuteronomy 1:42) — identical to the warning of Numbers 14:42.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=42
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-they-presumed-to-go-up-without-him-the-door-already-shut'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*went presumptuously up into the hill* (Deuteronomy 1:43) — the presumption named the same as in Numbers 14:44.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=44
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-they-presumed-to-go-up-without-him-the-door-already-shut'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*chased you, as bees do, and destroyed you in Seir, even unto Hormah* (Deuteronomy 1:44) — the same outcome as Numbers 14:45.'
+  FROM cross_reference_threads t
+  JOIN _s312_num14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=14 AND sv.verse_number=45
+  JOIN _s312_num14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-14-they-presumed-to-go-up-without-him-the-door-already-shut'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_15.sql (Numbers 15) -----
+-- Book: Numbers  Chapter: 15  Tag: num15  Session prefix: s312
+-- Temp view: _s312_num15_lookup
+-- Sort band base: 23850  step 3  (23850, 23853, 23856, 23859, 23862)
+-- Member form: SAFE VERBOSE (one INSERT per member; literal int source verse_number; NO FROM (VALUES...) AS m)
+--
+-- Numbers 15 coverage checklist:
+--   v.1-13 (meat/drink offerings accompanying sacrifices in the land):
+--        NT:     none warranted (sub-typed by the broader sacrifice/Heb framing elsewhere)
+--        Extras: none warranted
+--        Tanakh: Leviticus 2 (the meat offering of flour/oil), Numbers 18:12 (firstfruits oil/wine/wheat) -> THREAD 1
+--   v.14-16 (one ordinance / one law for the stranger):
+--        NT:     Galatians 3:28, Ephesians 2:19 (no more strangers) -> THREAD 2
+--        Extras: none warranted
+--        Tanakh: Exodus 12:49, Leviticus 24:22, Numbers 9:14 (one law homeborn+stranger) -> THREAD 2
+--   v.17-21 (heave offering of the first of the dough):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Numbers 18:12 (firstfruits) -> folded into THREAD 1
+--   v.22-29 (sin of ignorance atoned, congregation + individual; one law v.29):
+--        NT:     Hebrews 9:7 (errors of the people) -> THREAD 3
+--        Extras: none warranted
+--        Tanakh: Leviticus 4:27-28 (the soul that sins through ignorance) -> THREAD 3
+--   v.30-31 (the sin done presumptuously, with a high hand; despised the word, cut off):
+--        NT:     Hebrews 10:26-29 (sin wilfully), 2 Peter 2:21 (turn from the holy commandment) -> THREAD 3
+--        Extras: none warranted
+--        Tanakh: (contrast within v.22-31, held in THREAD 3)
+--   v.32-36 (the man gathering sticks on the sabbath stoned):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exodus 31:14-15, Exodus 35:2 (sabbath kept on pain of death) -> THREAD 4
+--   v.37-41 (the fringes / tzitzit with a ribband of blue to remember the commandments):
+--        NT:     Matthew 23:5 (enlarge the borders), Matthew 9:20, Matthew 14:36, Luke 8:44 (hem of his garment) -> THREAD 5
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 22:12 (fringes on four quarters) -> THREAD 5
+--
+-- Threads (slug -> target libraries):
+--   numbers-15-the-meat-and-drink-offerings-of-the-land               (Tanakh; free)
+--   numbers-15-one-law-and-one-manner-for-you-and-for-the-stranger    (Tanakh + NT; free)
+--   numbers-15-the-sin-of-ignorance-and-the-sin-done-presumptuously   (Tanakh + NT; free)
+--   numbers-15-the-man-that-gathered-sticks-upon-the-sabbath-stoned   (Tanakh; free)
+--   numbers-15-the-fringes-that-remember-all-the-commandments         (Tanakh + NT; free)
+--
+-- Framework notes: v.14-16 one-law inclusion of the sojourner is held as covenant-incorporation
+--   into the ONE people (Gal 3:28 / Eph 2:19 read as no-more-strangers, NOT Torah abolished:
+--   the stranger is brought UNDER the one ordinance, not freed from it). v.30-31 high-handed sin
+--   framed by Heb 10:26-29 as despising the same word, NOT the gospel abolishing the law.
+--   v.37-41 fringes = the worn reminder of the WHOLE Torah; Matt 23:5 rebukes the abuse-for-show,
+--   the fringe itself assumed/affirmed; the hem touched for healing (Matt 9:20/14:36/Luke 8:44).
+
+CREATE TEMP VIEW _s312_num15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: meat and drink offerings of the land
+    ('canon','numbers',15,4,'canon','leviticus',2,1,'free',
+      E'*And when any will offer a meat offering unto Yahuah (LORD), his offering shall be of fine flour; and he shall pour oil upon it, and put frankincense thereon* (Leviticus 2:1). The land-offering of Numbers 15:4 — *a meat offering of a tenth deal of flour mingled with the fourth part of an hin of oil* — is the same flour-and-oil oblation Leviticus 2 ordained; the wilderness law and the land law are one.'),
+    ('canon','numbers',15,19,'canon','numbers',18,12,'free',
+      E'*All the best of the oil, and all the best of the wine, and of the wheat, the firstfruits of them which they shall offer unto Yahuah (LORD), them have I given thee* (Numbers 18:12). Numbers 15:19''s *heave offering* of the bread of the land — *a cake of the first of your dough* (v.20) — is the same firstfruits portion given to the priesthood in Numbers 18:12: the first of the land lifted up to Yahuah (LORD).'),
+    -- THREAD 2: one law for you and for the stranger
+    ('canon','numbers',15,16,'canon','exodus',12,49,'free',
+      E'*One law shall be to him that is homeborn, and unto the stranger that sojourneth among you* (Exodus 12:49). Numbers 15:16 — *One law and one manner shall be for you, and for the stranger that sojourneth with you* — repeats verbatim the Passover statute of Exodus 12:49: the sojourner who joins himself to Yahuah (LORD) comes under the one Torah, not beside it.'),
+    ('canon','numbers',15,16,'canon','leviticus',24,22,'free',
+      E'*Ye shall have one manner of law, as well for the stranger, as for one of your own country: for I am Yahuah Elohaychem (the LORD your God)* (Leviticus 24:22). The *one law and one manner* of Numbers 15:16 is the same single standard of Leviticus 24:22 — the stranger incorporated into Yashar''el (Israel) is held to the identical instruction, sealed by the Name.'),
+    ('canon','numbers',15,15,'canon','numbers',9,14,'free',
+      E'*And if a stranger shall sojourn among you, and will keep the passover unto Yahuah (LORD); according to the ordinance of the passover, and according to the manner thereof, so shall he do: ye shall have one ordinance, both for the stranger, and for him that was born in the land* (Numbers 9:14). Numbers 15:15 — *as ye are, so shall the stranger be before Yahuah (LORD)* — is the same one-ordinance inclusion already spoken over the Passover six chapters earlier.'),
+    ('canon','numbers',15,16,'canon','galatians',3,28,'free',
+      E'*There is neither Yahudi (Jew) nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in HaMashiach Yahusha (Christ Jesus)* (Galatians 3:28). The *one law and one manner* for homeborn and stranger (Numbers 15:16) is the root of the one body Paul names: not a new people, but the sojourner grafted under the one ordinance of the one covenant.'),
+    ('canon','numbers',15,15,'canon','ephesians',2,19,'free',
+      E'*Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of Elohim (God)* (Ephesians 2:19). The *stranger that sojourneth with you* of Numbers 15:15, set on equal footing — *as ye are, so shall the stranger be before Yahuah (LORD)* — is the same sojourner Ephesians declares brought near as a fellowcitizen of the commonwealth of Yashar''el (Israel).'),
+    -- THREAD 3: sin of ignorance vs sin done presumptuously
+    ('canon','numbers',15,27,'canon','leviticus',4,27,'free',
+      E'*And if any one of the common people sin through ignorance, while he doeth somewhat against any of the commandments of Yahuah (LORD) concerning things which ought not to be done, and be guilty* (Leviticus 4:27). Numbers 15:27''s *if any soul sin through ignorance* is the same unwitting transgression Leviticus 4 provided for: the law makes a way back for the one who erred not knowing.'),
+    ('canon','numbers',15,28,'canon','leviticus',4,28,'free',
+      E'*Or if his sin, which he hath sinned, come to his knowledge: then he shall bring his offering, a kid of the goats, a female without blemish, for his sin which he hath sinned* (Leviticus 4:28). The *she goat of the first year for a sin offering* by which the priest atones in Numbers 15:27-28 is the very provision of Leviticus 4:28 — the same female kid for the soul that sinned ignorantly.'),
+    ('canon','numbers',15,25,'canon','hebrews',9,7,'free',
+      E'*But into the second went the high priest alone once every year, not without blood, which he offered for himself, and for the errors of the people* (Hebrews 9:7). The priest who *make[s] an atonement for all the congregation* for their *ignorance* (Numbers 15:25) prefigures the blood offered for the *errors of the people* — the unwitting sin covered by atonement, fulfilled in the greater priesthood.'),
+    ('canon','numbers',15,30,'canon','hebrews',10,26,'free',
+      E'*For if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins* (Hebrews 10:26). The sin *presumptuously* — *with a high hand* — of Numbers 15:30, for which no offering is named, is exactly the wilful sin after knowledge of Hebrews 10:26: not the soul that erred, but the soul that defies.'),
+    ('canon','numbers',15,31,'canon','hebrews',10,29,'free',
+      E'*Of how much sorer punishment, suppose ye, shall he be thought worthy, who hath trodden under foot the Son of Elohim (God), and hath counted the blood of the covenant, wherewith he was sanctified, an unholy thing, and hath done despite unto the Spirit of grace?* (Hebrews 10:29). Numbers 15:31 — *he hath despised the word of Yahuah (LORD), and hath broken his commandment, that soul shall utterly be cut off* — is the same despising; Hebrews magnifies the cutting-off for treading under foot the same word made flesh.'),
+    ('canon','numbers',15,31,'canon','2-peter',2,21,'free',
+      E'*For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them* (2 Peter 2:21). The high-handed despiser who *hath despised the word of Yahuah (LORD)* (Numbers 15:31) is the one who, having known, turns from the holy commandment — the defiant sin, not the ignorant.'),
+    -- THREAD 4: the sabbath sticks-gatherer stoned
+    ('canon','numbers',15,35,'canon','exodus',31,14,'free',
+      E'*Ye shall keep the sabbath therefore; for it is holy unto you: every one that defileth it shall surely be put to death: for whosoever doeth any work therein, that soul shall be cut off from among his people* (Exodus 31:14). The death sentence on the man who *gathered sticks upon the sabbath day* (Numbers 15:32-35) executes the very statute of Exodus 31:14 — the sign-Sabbath defiled is death.'),
+    ('canon','numbers',15,35,'canon','exodus',31,15,'free',
+      E'*Six days may work be done; but in the seventh is the sabbath of rest, holy to Yahuah (LORD): whosoever doeth any work in the sabbath day, he shall surely be put to death* (Exodus 31:15). Numbers 15:35 — *The man shall be surely put to death* — is the case-law fulfilment of Exodus 31:15: the gathering of sticks was work in the seventh-day rest, and the penalty stood.'),
+    ('canon','numbers',15,32,'canon','exodus',35,2,'free',
+      E'*Six days shall work be done, but on the seventh day there shall be to you an holy day, a sabbath of rest to Yahuah (LORD): whosoever doeth work therein shall be put to death* (Exodus 35:2). The man *that gathered sticks upon the sabbath day* (Numbers 15:32) violated the very gravity Exodus 35:2 set on the seventh-day rest — the sign of the covenant guarded on pain of death.'),
+    -- THREAD 5: the fringes that remember all the commandments
+    ('canon','numbers',15,38,'canon','deuteronomy',22,12,'free',
+      E'*Thou shalt make thee fringes upon the four quarters of thy vesture, wherewith thou coverest thyself* (Deuteronomy 22:12). The command to *make them fringes in the borders of their garments* (Numbers 15:38) is repeated in Deuteronomy 22:12 — the worn tzitzit on the four corners, the law twice given.'),
+    ('canon','numbers',15,38,'canon','matthew',23,5,'free',
+      E'*But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments* (Matthew 23:5). Yahusha (Jesus) rebukes not the fringe of Numbers 15:38 but its abuse-for-show — *they enlarge the borders of their garments* — the very fringe assumed and worn, the reminder turned into a display.'),
+    ('canon','numbers',15,38,'canon','matthew',9,20,'free',
+      E'*And, behold, a woman, which was diseased with an issue of blood twelve years, came behind him, and touched the hem of his garment* (Matthew 9:20). The *hem of his garment* the woman touched is the fringe of Numbers 15:38 — Yahusha (Jesus) wore the tzitzit of the commandment, and healing flowed from its border.'),
+    ('canon','numbers',15,38,'canon','matthew',14,36,'free',
+      E'*And besought him that they might only touch the hem of his garment: and as many as touched were made perfectly whole* (Matthew 14:36). The crowds reached for *the hem of his garment* — the commanded fringe of Numbers 15:38 worn by the Formed Son — and were made whole, the remembrance-fringe become a place of power.'),
+    ('canon','numbers',15,39,'canon','luke',8,44,'free',
+      E'*Came behind him, and touched the border of his garment: and immediately her issue of blood stanched* (Luke 8:44). The *border of his garment* is the fringe Numbers 15:39 said is *that ye may look upon it, and remember all the commandments of Yahuah (LORD)* — the worn reminder of the whole Torah, on the very garment that healed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-15-the-meat-and-drink-offerings-of-the-land',
+       E'The meat and drink offerings of the land',
+       E'When Yashar''el (Israel) is *come into the land of your habitations* (Numbers 15:2), every burnt offering and sacrifice is to be brought with its appointed meat offering and drink offering: *a meat offering of a tenth deal of flour mingled with the fourth part of an hin of oil* and *the fourth part of an hin of wine for a drink offering* (Numbers 15:4-5). This is no new law but the land-form of the wilderness Torah: *And when any will offer a meat offering unto Yahuah (LORD), his offering shall be of fine flour; and he shall pour oil upon it* (Leviticus 2:1). And the bread of the land carries its own lifting-up: *Ye shall offer up a cake of the first of your dough for an heave offering* (Numbers 15:20) — the firstfruits portion Yahuah (LORD) gave to the priesthood, *All the best of the oil, and all the best of the wine, and of the wheat, the firstfruits of them which they shall offer unto Yahuah (LORD), them have I given thee* (Numbers 18:12). The first of the land lifted to Yahuah (LORD), the flour and oil and wine of the covenant.',
+       sv.verse_id, ev.verse_id, 'free', 23850
+  FROM _s312_num15_lookup sv, _s312_num15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=15 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-15-one-law-and-one-manner-for-you-and-for-the-stranger',
+       E'One law and one manner for you and for the stranger',
+       E'*And if a stranger sojourn with you... and will offer an offering made by fire... as ye do, so he shall do* (Numbers 15:14). Then the binding word: *One ordinance shall be both for you of the congregation, and also for the stranger that sojourneth with you, an ordinance for ever in your generations: as ye are, so shall the stranger be before Yahuah (LORD). One law and one manner shall be for you, and for the stranger* (Numbers 15:15-16). The sojourner who joins himself to Yahuah (LORD) is brought UNDER the one Torah, not set free from it. This is the standing word of the covenant: *One law shall be to him that is homeborn, and unto the stranger that sojourneth among you* (Exodus 12:49); *Ye shall have one manner of law, as well for the stranger, as for one of your own country: for I am Yahuah Elohaychem (the LORD your God)* (Leviticus 24:22); and over the Passover, *ye shall have one ordinance, both for the stranger, and for him that was born in the land* (Numbers 9:14). This one-law inclusion is the root of the one body — *ye are all one in HaMashiach Yahusha (Christ Jesus)* (Galatians 3:28) — and of the sojourner brought near: *ye are no more strangers and foreigners, but fellowcitizens with the saints* (Ephesians 2:19). Not a new people grafted in by confession, but the stranger incorporated into the one ordinance of the one covenant people.',
+       sv.verse_id, ev.verse_id, 'free', 23853
+  FROM _s312_num15_lookup sv, _s312_num15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=15 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-15-the-sin-of-ignorance-and-the-sin-done-presumptuously',
+       E'The sin of ignorance and the sin done presumptuously',
+       E'The chapter draws the line that runs the whole Torah and the whole gospel: the sin not known, and the sin defied. For the first there is atonement — *if any soul sin through ignorance, then he shall bring a she goat of the first year for a sin offering... and it shall be forgiven him* (Numbers 15:27-28); the same provision Leviticus made, *if any one of the common people sin through ignorance... and be guilty* (Leviticus 4:27), bringing *a kid of the goats, a female without blemish, for his sin* (Leviticus 4:28). The priest atones for the whole congregation''s *ignorance* (Numbers 15:25), as the high priest went *not without blood, which he offered for himself, and for the errors of the people* (Hebrews 9:7). But for *the soul that doeth ought presumptuously* — with a high hand — there is no offering named, only the cutting-off: *the same reproacheth Yahuah (LORD)... Because he hath despised the word of Yahuah (LORD), and hath broken his commandment, that soul shall utterly be cut off* (Numbers 15:30-31). This is the wilful sin of Hebrews: *if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins* (Hebrews 10:26), and *how much sorer punishment... shall he be thought worthy, who hath trodden under foot the Son of Elohim (God)* (Hebrews 10:29) — the same despising of the same word made flesh. As Kepha (Peter) warns, *it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them* (2 Peter 2:21). The unwitting is covered; the defiant despiser of the word is cut off.',
+       sv.verse_id, ev.verse_id, 'free', 23856
+  FROM _s312_num15_lookup sv, _s312_num15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=15 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-15-the-man-that-gathered-sticks-upon-the-sabbath-stoned',
+       E'The man that gathered sticks upon the sabbath stoned',
+       E'Immediately after the word on the high-handed sin, the chapter gives a case of it: *while the children of Yashar''el (Israel) were in the wilderness, they found a man that gathered sticks upon the sabbath day* (Numbers 15:32). They held him in ward, *because it was not declared what should be done to him* (Numbers 15:34), and Yahuah (LORD) answered: *The man shall be surely put to death: all the congregation shall stone him with stones without the camp* (Numbers 15:35). This is no harsh novelty but the execution of the standing Sabbath statute, the sign of the covenant guarded on pain of death: *every one that defileth it shall surely be put to death: for whosoever doeth any work therein, that soul shall be cut off* (Exodus 31:14); *whosoever doeth any work in the sabbath day, he shall surely be put to death* (Exodus 31:15); *whosoever doeth work therein shall be put to death* (Exodus 35:2). The gravity of the death sentence measures the weight of the seventh-day rest — the sign between Yahuah (LORD) and his people, kept holy.',
+       sv.verse_id, ev.verse_id, 'free', 23859
+  FROM _s312_num15_lookup sv, _s312_num15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=15 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-15-the-fringes-that-remember-all-the-commandments',
+       E'The fringes that remember all the commandments',
+       E'The chapter closes with the worn reminder of the whole Torah: *make them fringes in the borders of their garments throughout their generations, and that they put upon the fringe of the borders a ribband of blue* (Numbers 15:38). Its purpose is stated plainly: *that ye may look upon it, and remember all the commandments of Yahuah (LORD), and do them; and that ye seek not after your own heart and your own eyes... That ye may remember, and do all my commandments, and be holy unto your Elohim (God)* (Numbers 15:39-40). The command is twice given: *Thou shalt make thee fringes upon the four quarters of thy vesture, wherewith thou coverest thyself* (Deuteronomy 22:12). Yahusha (Jesus) himself wore the commanded tzitzit; he rebuked not the fringe but its abuse-for-show — *they make broad their phylacteries, and enlarge the borders of their garments* (Matthew 23:5) — the reminder turned into a display. And from the very border of his garment power flowed: *a woman... came behind him, and touched the hem of his garment* (Matthew 9:20); *as many as touched were made perfectly whole* (Matthew 14:36); *touched the border of his garment: and immediately her issue of blood stanched* (Luke 8:44). The fringe that remembers all the commandments, worn by the Formed Son, became a place of healing.',
+       sv.verse_id, ev.verse_id, 'free', 23862
+  FROM _s312_num15_lookup sv, _s312_num15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=37
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=15 AND ev.verse_number=41
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And when any will offer a meat offering unto Yahuah (LORD), his offering shall be of fine flour; and he shall pour oil upon it* (Leviticus 2:1) — the same flour-and-oil oblation as Numbers 15:4.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-meat-and-drink-offerings-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*All the best of the oil, and all the best of the wine, and of the wheat, the firstfruits of them... them have I given thee* (Numbers 18:12) — the firstfruits portion behind the heave offering of the dough in Numbers 15:19-20.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-meat-and-drink-offerings-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*One law shall be to him that is homeborn, and unto the stranger that sojourneth among you* (Exodus 12:49) — verbatim with the *one law and one manner* of Numbers 15:16.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=16
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-one-law-and-one-manner-for-you-and-for-the-stranger'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye shall have one manner of law, as well for the stranger, as for one of your own country* (Leviticus 24:22) — the single standard sealed by the Name, as Numbers 15:16.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=16
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=24 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-one-law-and-one-manner-for-you-and-for-the-stranger'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ye shall have one ordinance, both for the stranger, and for him that was born in the land* (Numbers 9:14) — the same one-ordinance inclusion over the Passover, as Numbers 15:15.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=15
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=9 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-one-law-and-one-manner-for-you-and-for-the-stranger'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*ye are all one in HaMashiach Yahusha (Christ Jesus)* (Galatians 3:28) — the one body rooted in the one law for homeborn and stranger of Numbers 15:16.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=16
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-one-law-and-one-manner-for-you-and-for-the-stranger'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*ye are no more strangers and foreigners, but fellowcitizens with the saints* (Ephesians 2:19) — the sojourner of Numbers 15:15 brought near as a fellowcitizen of Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=15
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-one-law-and-one-manner-for-you-and-for-the-stranger'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*if any one of the common people sin through ignorance... and be guilty* (Leviticus 4:27) — the same unwitting transgression provided for in Numbers 15:27.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=27
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=4 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-sin-of-ignorance-and-the-sin-done-presumptuously'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he shall bring his offering, a kid of the goats, a female without blemish, for his sin* (Leviticus 4:28) — the same she-goat sin offering as Numbers 15:27-28.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=28
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=4 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-sin-of-ignorance-and-the-sin-done-presumptuously'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*not without blood, which he offered for himself, and for the errors of the people* (Hebrews 9:7) — the atonement for the congregation''s ignorance of Numbers 15:25 fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=25
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-sin-of-ignorance-and-the-sin-done-presumptuously'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins* (Hebrews 10:26) — the high-handed sin of Numbers 15:30 magnified.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=30
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-sin-of-ignorance-and-the-sin-done-presumptuously'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*who hath trodden under foot the Son of Elohim (God)... and hath done despite unto the Spirit of grace* (Hebrews 10:29) — the same despising of the word as Numbers 15:31.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-sin-of-ignorance-and-the-sin-done-presumptuously'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*after they have known it, to turn from the holy commandment delivered unto them* (2 Peter 2:21) — the defiant despiser of Numbers 15:31, not the ignorant.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=31
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-sin-of-ignorance-and-the-sin-done-presumptuously'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*every one that defileth it shall surely be put to death... that soul shall be cut off* (Exodus 31:14) — the standing Sabbath statute executed in Numbers 15:35.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=35
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-man-that-gathered-sticks-upon-the-sabbath-stoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*whosoever doeth any work in the sabbath day, he shall surely be put to death* (Exodus 31:15) — the penalty Numbers 15:35 carried out for gathering sticks.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=35
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-man-that-gathered-sticks-upon-the-sabbath-stoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*whosoever doeth work therein shall be put to death* (Exodus 35:2) — the gravity of the seventh-day rest the sticks-gatherer of Numbers 15:32 violated.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=32
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=35 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-man-that-gathered-sticks-upon-the-sabbath-stoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt make thee fringes upon the four quarters of thy vesture* (Deuteronomy 22:12) — the same tzitzit command twice given, as Numbers 15:38.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=38
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-fringes-that-remember-all-the-commandments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they make broad their phylacteries, and enlarge the borders of their garments* (Matthew 23:5) — the fringe of Numbers 15:38 assumed, its abuse-for-show rebuked.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=38
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-fringes-that-remember-all-the-commandments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*came behind him, and touched the hem of his garment* (Matthew 9:20) — the commanded fringe of Numbers 15:38, worn by the Formed Son, a place of healing.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=38
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-fringes-that-remember-all-the-commandments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*that they might only touch the hem of his garment... were made perfectly whole* (Matthew 14:36) — the remembrance-fringe of Numbers 15:38 become a place of power.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=38
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=14 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-fringes-that-remember-all-the-commandments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*touched the border of his garment: and immediately her issue of blood stanched* (Luke 8:44) — the fringe that remembers all the commandments (Numbers 15:39), on the garment that healed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=15 AND sv.verse_number=39
+  JOIN _s312_num15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=8 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-15-the-fringes-that-remember-all-the-commandments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session312 — Numbers cross-references complete.'
