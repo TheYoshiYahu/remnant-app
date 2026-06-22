@@ -4319,6 +4319,1479 @@ SELECT t.id, cr.id, 5, E'*touched the border of his garment: and immediately her
  WHERE t.slug='numbers-15-the-fringes-that-remember-all-the-commandments'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_numbers_16.sql (Numbers 16) -----
+-- Chapter: Numbers 16 — Korah's rebellion (KEYSTONE)
+-- Tag: num16 | session prefix: s312 | temp view: _s312_num16_lookup
+-- Sort band base: 23875, step 3
+--
+-- Numbers 16 coverage:
+--   v.1-3  NT:     Jude 1:11 (the gainsaying of Core), 2 Peter 2:10 (despise government)
+--          Extras: none warranted
+--          Tanakh: none warranted (rebellion-judgment laterals carried on the swallowing thread)
+--   v.5    NT:     2 Timothy 2:19 (Paul quotes this verse: the Lord knoweth them that are his)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.4-7  NT:     none warranted (test-of-the-chosen carried with v.5 seal thread / censer-sign)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.22   NT:     Hebrews 12:9 (the Father of spirits)
+--          Extras: none warranted
+--          Tanakh: Numbers 27:16 (Yahuah, the Elohim of the spirits of all flesh)
+--   v.30-35 NT:    Jude 1:11 (perished in the gainsaying of Core — shared with rebellion thread)
+--          Extras: none warranted (Jasher/Jubilees carry no clean Korah witness)
+--          Tanakh: Psalm 106:16-18, Deuteronomy 11:6 (the earth swallowed Dathan and Abiram)
+--   v.40   NT:     none warranted (the censer-sign / no-stranger-near memorial recorded, kept on rebellion thread)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.46-48 NT:    Hebrews 7:25 (ever liveth to make intercession), Romans 5:9-10, 1 Timothy 2:5 (one mediator)
+--          Extras: none warranted
+--          Tanakh: Psalm 106:30 (Phinehas — and so the plague was stayed)
+--
+-- Threads (7):
+--   numbers-16-the-gainsaying-of-korah-against-the-appointed-order [free]
+--        → Jude 1:11, 2 Peter 2:10 (NT)
+--   numbers-16-yahuah-will-shew-who-are-his-and-who-is-holy [free]
+--        → 2 Timothy 2:19 (NT)
+--   numbers-16-the-test-of-the-censers-the-man-whom-yahuah-doth-choose [free]
+--        → self-anchored within Numbers 16 (no warranted out-of-chapter member)
+--   numbers-16-the-elohim-of-the-spirits-of-all-flesh [free]
+--        → Numbers 27:16 (Tanakh), Hebrews 12:9 (NT)
+--   numbers-16-the-earth-opened-her-mouth-and-swallowed-the-rebels [free]
+--        → Psalm 106:16-18, Deuteronomy 11:6 (Tanakh), Jude 1:11 (NT)
+--   numbers-16-the-censers-a-sign-no-stranger-come-near [free]
+--        → self-anchored within Numbers 16 (memorial recorded)
+--   numbers-16-aaron-stood-between-the-dead-and-the-living [free]
+--        → Psalm 106:30 (Tanakh), Hebrews 7:25, Romans 5:9-10, 1 Timothy 2:5 (NT)
+--
+-- NOTE: two threads (test-of-the-censers, censers-a-sign) are self-anchored within the chapter —
+--   the test and the memorial-sign are framework-load-bearing beats with no out-of-chapter
+--   member warranted; they are carried with summary_md prose and bound to the chapter anchors.
+--   These two have NO cross_reference rows and NO member rows by design (anchor-only threads).
+
+CREATE TEMP VIEW _s312_num16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the gainsaying of Korah
+    ('canon','numbers',16,3,'canon','jude',1,11,'free',
+     E'*Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 1:11). Korah''s charge — *Ye take too much upon you, seeing all the congregation are holy, every one of them, and Yahuah (LORD) is among them: wherefore then lift ye up yourselves above the congregation of Yahuah (LORD)?* (Numbers 16:3) — is named in the NT as a fixed pattern of apostasy: "the gainsaying of Core" is the false-equality lie that despises Yahuah''s appointed order and dies in the despising.'),
+    ('canon','numbers',16,3,'canon','2-peter',2,10,'free',
+     E'*But chiefly them that walk after the flesh in the lust of uncleanness, and despise government. Presumptuous are they, selfwilled, they are not afraid to speak evil of dignities* (2 Peter 2:10). Korah and the two hundred and fifty princes who *gathered themselves together against Moses and against Aaron* (Numbers 16:3) are the very type Peter warns of — the presumptuous and selfwilled who despise the government Yahuah set in place.'),
+    -- Thread 2: Yahuah will shew who are his
+    ('canon','numbers',16,5,'canon','2-timothy',2,19,'free',
+     E'*Nevertheless the foundation of Elohim (God) standeth sure, having this seal, Yahuah (Lord) knoweth them that are his. And, Let every one that nameth the name of Messiah (Christ) depart from iniquity* (2 Timothy 2:19). Paul quotes this very verse: *Even to morrow Yahuah (LORD) will shew who are his, and who is holy; and will cause him to come near unto him: even him whom he hath chosen will he cause to come near unto him* (Numbers 16:5). The seal on Yahuah''s foundation is Korah''s test made permanent — Yahuah knows his own, and the known depart from iniquity.'),
+    -- Thread 4: the Elohim of the spirits of all flesh
+    ('canon','numbers',16,22,'canon','numbers',27,16,'free',
+     E'*Let Yahuah (LORD), the Elohim (God) of the spirits of all flesh, set a man over the congregation* (Numbers 27:16). Moses prays the same title at the end of his life that he and Aaron cried in the intercession here — *O Elohim (God), the Elohim (God) of the spirits of all flesh, shall one man sin, and wilt thou be wroth with all the congregation?* (Numbers 16:22). The One who holds every breath is appealed to both to spare the congregation and to shepherd it.'),
+    ('canon','numbers',16,22,'canon','hebrews',12,9,'free',
+     E'*Furthermore we have had fathers of our flesh which corrected us, and we gave them reverence: shall we not much rather be in subjection unto the Father of spirits, and live?* (Hebrews 12:9). The intercessors'' name for Yahuah — *the Elohim (God) of the spirits of all flesh* (Numbers 16:22) — is the same Father of spirits to whom the NT calls the congregation back into subjection that they may live, not be consumed.'),
+    -- Thread 5: the earth opened her mouth
+    ('canon','numbers',16,32,'canon','psalms',106,17,'free',
+     E'*The earth opened and swallowed up Dathan, and covered the company of Abiram* (Psalm 106:17). The Psalm sings the judgment of this chapter: *And the earth opened her mouth, and swallowed them up, and their houses, and all the men that appertained unto Korah, and all their goods* (Numbers 16:32) — the new thing Yahuah made when the rebels went down quick into the pit.'),
+    ('canon','numbers',16,30,'canon','psalms',106,16,'free',
+     E'*They envied Moses also in the camp, and Aaron the saint of Yahuah (LORD)* (Psalm 106:16). The Psalm names the root that Moses tested by *a new thing... the earth open her mouth, and swallow them up... and they go down quick into the pit* (Numbers 16:30) — envy of Yahuah''s appointed Moses and Aaron, which the opened ground answered.'),
+    ('canon','numbers',16,35,'canon','psalms',106,18,'free',
+     E'*And a fire was kindled in their company; the flame burned up the wicked* (Psalm 106:18). The Psalm joins the second stroke to the first: *And there came out a fire from Yahuah (LORD), and consumed the two hundred and fifty men that offered incense* (Numbers 16:35) — the censer-bearers devoured where they stood.'),
+    ('canon','numbers',16,32,'canon','deuteronomy',11,6,'free',
+     E'*And what he did unto Dathan and Abiram, the sons of Eliab, the son of Reuben: how the earth opened her mouth, and swallowed them up, and their households, and their tents, and all the substance that was in their possession, in the midst of all Yashar''el (Israel)* (Deuteronomy 11:6). Moses sets this very judgment before the next generation as a witness to fear Yahuah — the earth that *swallowed them up, and their houses* (Numbers 16:32).'),
+    ('canon','numbers',16,33,'canon','jude',1,11,'free',
+     E'*Woe unto them!... and perished in the gainsaying of Core* (Jude 1:11). The end of the rebels — *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation* (Numbers 16:33) — is sealed in the NT as "the gainsaying of Core," the appointed end of those who rise against Yahuah''s order.'),
+    -- Thread 7: Aaron between the dead and the living
+    ('canon','numbers',16,48,'canon','psalms',106,30,'free',
+     E'*Then stood up Phinehas, and executed judgment: and so the plague was stayed* (Psalm 106:30). The same staying word is sung of Aaron''s grandson: as Aaron *stood between the dead and the living; and the plague was stayed* (Numbers 16:48), so Phinehas stood and the plague was stayed — the priest interposing between wrath and the people.'),
+    ('canon','numbers',16,48,'canon','hebrews',7,25,'free',
+     E'*Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). Aaron with the censer who *stood between the dead and the living; and the plague was stayed* (Numbers 16:48) is the running figure of the priest who ever liveth to intercede — the wrath stayed by a living mediator.'),
+    ('canon','numbers',16,46,'canon','romans',5,9,'free',
+     E'*Much more then, being now justified by his blood, we shall be saved from wrath through him* (Romans 5:9). Moses sends Aaron because *there is wrath gone out from Yahuah (LORD); the plague is begun* (Numbers 16:46) — the atonement of the priest turning back the wrath is the type Paul names: saved from wrath through the appointed One.'),
+    ('canon','numbers',16,46,'canon','romans',5,10,'free',
+     E'*For if, when we were enemies, we were reconciled to Elohim (God) by the death of his Son, much more, being reconciled, we shall be saved by his life* (Romans 5:10). The murmuring congregation under judgment is reconciled by Aaron''s atonement — *go quickly unto the congregation, and make an atonement for them: for there is wrath gone out from Yahuah (LORD); the plague is begun* (Numbers 16:46) — the figure of reconciliation while still enemies.'),
+    ('canon','numbers',16,48,'canon','1-timothy',2,5,'free',
+     E'*For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5). Aaron who *stood between the dead and the living* (Numbers 16:48) is the standing picture of the one mediator — the man who steps into the breach between Elohim and men and stays the wrath.'),
+    -- Thread 3: the test of the censers — the man whom Yahuah doth choose
+    ('canon','numbers',16,7,'canon','leviticus',10,3,'free',
+     E'*Then Moses said unto Aaron, This is it that Yahuah (LORD) spake, saying, I will be sanctified in them that come nigh me, and before all the people I will be glorified. And Aaron held his peace* (Leviticus 10:3). The censer-test puts the very question Leviticus answers: *it shall be that the man whom Yahuah (LORD) doth choose, he shall be holy* (Numbers 16:7). Who may draw near and be holy is not for man to seize — Yahuah is sanctified in them that come nigh, and the drawing-near is his to grant to whom he chooses.'),
+    -- Thread 6: the censers made a sign — let no stranger come near
+    ('canon','numbers',16,40,'canon','2-chronicles',26,18,'free',
+     E'*And they withstood Uzziah the king, and said unto him, It appertaineth not unto thee, Uzziah, to burn incense unto Yahuah (LORD), but to the priests the sons of Aaron, that are consecrated to burn incense: go out of the sanctuary; for thou hast trespassed* (2 Chronicles 26:18). The censer-plates were beaten into a standing sign *that no stranger, which is not of the seed of Aaron, come near to offer incense before Yahuah (LORD)* (Numbers 16:40) — the very memorial king Uzziah later defied when he pressed into the temple to burn incense, and was struck with leprosy for the trespass.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-16-the-gainsaying-of-korah-against-the-appointed-order',
+       E'The gainsaying of Korah against the appointed order',
+       E'Korah the Levite, with Dathan and Abiram and *two hundred and fifty princes of the assembly, famous in the congregation, men of renown* (Numbers 16:2), rise against the men Yahuah set in place: *Ye take too much upon you, seeing all the congregation are holy, every one of them, and Yahuah (LORD) is among them: wherefore then lift ye up yourselves above the congregation of Yahuah (LORD)?* (Numbers 16:3). It sounds like humility — all are holy — but it is the false-equality lie that levels Yahuah''s appointed order. The NT fixes this as a permanent pattern: *Woe unto them!... and perished in the gainsaying of Core* (Jude 1:11), and these are *them that walk after the flesh in the lust of uncleanness, and despise government. Presumptuous are they, selfwilled, they are not afraid to speak evil of dignities* (2 Peter 2:10). The gainsaying of Korah is the spirit that despises the government Yahuah ordained and dies in the despising.',
+       sv.verse_id, ev.verse_id, 'free', 23875
+  FROM _s312_num16_lookup sv, _s312_num16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=16 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-16-yahuah-will-shew-who-are-his-and-who-is-holy',
+       E'Yahuah will shew who are his, and who is holy',
+       E'Moses answers the rebellion not with argument but with a test that hands the verdict to Yahuah: *Even to morrow Yahuah (LORD) will shew who are his, and who is holy; and will cause him to come near unto him: even him whom he hath chosen will he cause to come near unto him* (Numbers 16:5). The drawing-near is Yahuah''s to give, not man''s to seize. Paul makes this verse the seal on Yahuah''s unshakeable foundation: *Nevertheless the foundation of Elohim (God) standeth sure, having this seal, Yahuah (Lord) knoweth them that are his. And, Let every one that nameth the name of Messiah (Christ) depart from iniquity* (2 Timothy 2:19). Korah''s test becomes the church''s seal — Yahuah knows his own, and the known are marked by departing from iniquity, not by self-promotion.',
+       sv.verse_id, ev.verse_id, 'free', 23878
+  FROM _s312_num16_lookup sv, _s312_num16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=16 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3 (anchor-only)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-16-the-test-of-the-censers-the-man-whom-yahuah-doth-choose',
+       E'The test of the censers — the man whom Yahuah doth choose',
+       E'Hearing the charge, *Moses heard it, he fell upon his face* (Numbers 16:4) — not in defeat but in appeal, refusing to defend himself and laying the matter before Yahuah. He sets the test of the censers: *Take you censers, Korah, and all his company; And put fire therein, and put incense in them before Yahuah (LORD) to morrow: and it shall be that the man whom Yahuah (LORD) doth choose, he shall be holy: ye take too much upon you, ye sons of Levi* (Numbers 16:6-7). The censer was the priest''s alone; to take it up uninvited was to claim the priesthood Yahuah had not given. *And he hath brought thee near to him, and all thy brethren the sons of Levi with thee: and seek ye the priesthood also?* (Numbers 16:10). The whole question of the chapter is settled not by counting heads but by whom Yahuah chooses to come near — the holiness is conferred, never grasped.',
+       sv.verse_id, ev.verse_id, 'free', 23881
+  FROM _s312_num16_lookup sv, _s312_num16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=16 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-16-the-elohim-of-the-spirits-of-all-flesh',
+       E'O Elohim, the Elohim of the spirits of all flesh',
+       E'When Yahuah threatens to *consume them in a moment* (Numbers 16:21), Moses and Aaron *fell upon their faces, and said, O Elohim (God), the Elohim (God) of the spirits of all flesh, shall one man sin, and wilt thou be wroth with all the congregation?* (Numbers 16:22). They plead the very nature of Yahuah — the One who holds every breath — against indiscriminate wrath, distinguishing the guilty from the whole body. Moses prays the identical title at the end of his life, this time for a shepherd: *Let Yahuah (LORD), the Elohim (God) of the spirits of all flesh, set a man over the congregation* (Numbers 27:16). And the NT calls the congregation home to the same: *shall we not much rather be in subjection unto the Father of spirits, and live?* (Hebrews 12:9). The One who owns the spirits of all flesh is appealed to both to spare and to shepherd — and to him the redeemed are subject, that they may live.',
+       sv.verse_id, ev.verse_id, 'free', 23884
+  FROM _s312_num16_lookup sv, _s312_num16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=16 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-16-the-earth-opened-her-mouth-and-swallowed-the-rebels',
+       E'The earth opened her mouth and swallowed the rebels',
+       E'Moses stakes Yahuah''s vindication on a sign no man could counterfeit: *But if Yahuah (LORD) make a new thing, and the earth open her mouth, and swallow them up, with all that appertain unto them, and they go down quick into the pit; then ye shall understand that these men have provoked Yahuah (LORD)* (Numbers 16:30). And so it came: *the earth opened her mouth, and swallowed them up, and their houses... They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation* (Numbers 16:32-33), and *there came out a fire from Yahuah (LORD), and consumed the two hundred and fifty men that offered incense* (Numbers 16:35). The Psalm sings it back — *They envied Moses also in the camp, and Aaron the saint of Yahuah (LORD). The earth opened and swallowed up Dathan, and covered the company of Abiram. And a fire was kindled in their company; the flame burned up the wicked* (Psalm 106:16-18) — and Moses sets it before the next generation: *how the earth opened her mouth, and swallowed them up, and their households, and their tents* (Deuteronomy 11:6). The NT seals the rebels'' end: *and perished in the gainsaying of Core* (Jude 1:11).',
+       sv.verse_id, ev.verse_id, 'free', 23887
+  FROM _s312_num16_lookup sv, _s312_num16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=16 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 6 (anchor-only)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-16-the-censers-a-sign-no-stranger-come-near',
+       E'The censers made a sign — let no stranger come near',
+       E'The very censers the rebels seized are not destroyed but hammered into a covering for the altar, a standing witness: *The censers of these sinners against their own souls, let them make them broad plates for a covering of the altar... and they shall be a sign unto the children of Yashar''el (Israel)* (Numbers 16:38). The judgment is fixed into the worship itself as a memorial: *that no stranger, which is not of the seed of Aaron, come near to offer incense before Yahuah (LORD); that he be not as Korah, and as his company* (Numbers 16:40). The lesson of the swallowed and the burned is bolted to the altar where Yashar''el (Israel) cannot forget it — the priesthood is Yahuah''s gift to whom he chooses, and the uninvited who press in are warned in beaten brass.',
+       sv.verse_id, ev.verse_id, 'free', 23890
+  FROM _s312_num16_lookup sv, _s312_num16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=36
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=16 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 7
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-16-aaron-stood-between-the-dead-and-the-living',
+       E'Aaron stood between the dead and the living',
+       E'On the very next day the congregation murmurs again — *Ye have killed the people of Yahuah (LORD)* (Numbers 16:41) — and the wrath breaks out as plague. Moses sends the priest into the breach: *Take a censer, and put fire therein from off the altar, and put on incense, and go quickly unto the congregation, and make an atonement for them: for there is wrath gone out from Yahuah (LORD); the plague is begun* (Numbers 16:46). The same censer that condemned the rebels now carries atonement. *And he stood between the dead and the living; and the plague was stayed* (Numbers 16:48). This is the running figure of the priest who turns back wrath by interposing himself. The Psalm sings the same staying: *Then stood up Phinehas, and executed judgment: and so the plague was stayed* (Psalm 106:30). And the NT fills the type — *seeing he ever liveth to make intercession for them* (Hebrews 7:25); *being now justified by his blood, we shall be saved from wrath through him... reconciled to Elohim (God) by the death of his Son* (Romans 5:9-10); *one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5). The wrath is stayed by one who stands between the dead and the living.',
+       sv.verse_id, ev.verse_id, 'free', 23893
+  FROM _s312_num16_lookup sv, _s312_num16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=41
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=16 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jude 1:11 — *perished in the gainsaying of Core*: Korah''s false-equality charge (Numbers 16:3) named as a fixed apostasy pattern.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-gainsaying-of-korah-against-the-appointed-order'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Peter 2:10 — *despise government... speak evil of dignities*: the presumptuous, selfwilled type Korah and the 250 princes embody.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-gainsaying-of-korah-against-the-appointed-order'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Timothy 2:19 — *Yahuah knoweth them that are his*: Paul quotes Numbers 16:5; Korah''s test becomes the seal on Elohim''s sure foundation.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-yahuah-will-shew-who-are-his-and-who-is-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 10:3 — *I will be sanctified in them that come nigh me*: the censer-test of Numbers 16:7 is the very question of who may draw near and be holy — Yahuah''s to grant, not man''s to seize.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=10 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-test-of-the-censers-the-man-whom-yahuah-doth-choose'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 27:16 — *the Elohim of the spirits of all flesh, set a man over the congregation*: Moses prays the same title at life''s end, now for a shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=22
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-elohim-of-the-spirits-of-all-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 12:9 — *the Father of spirits... and live*: the intercessors'' name for Yahuah is the One the congregation is called back to in subjection.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=22
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-elohim-of-the-spirits-of-all-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 106:16 — *They envied Moses also in the camp, and Aaron the saint of Yahuah*: the Psalm names envy as the root the opened ground answered.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=30
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-earth-opened-her-mouth-and-swallowed-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 106:17 — *The earth opened and swallowed up Dathan, and covered the company of Abiram*: the Psalm sings the new thing of Numbers 16:32.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=32
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-earth-opened-her-mouth-and-swallowed-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 106:18 — *a fire was kindled in their company; the flame burned up the wicked*: the second stroke, the 250 censer-bearers of Numbers 16:35.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=35
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-earth-opened-her-mouth-and-swallowed-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 11:6 — *how the earth opened her mouth, and swallowed them up*: Moses sets the judgment before the next generation as a witness.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=32
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-earth-opened-her-mouth-and-swallowed-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Jude 1:11 — *perished in the gainsaying of Core*: the NT seals the rebels'' end (Numbers 16:33), down alive into the pit.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=33
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-earth-opened-her-mouth-and-swallowed-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Chronicles 26:18 — *It appertaineth not unto thee, Uzziah, to burn incense... but to the priests the sons of Aaron*: the censer-plate sign of Numbers 16:40 that no stranger come near is the standing memorial king Uzziah later defied.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=40
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=26 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-the-censers-a-sign-no-stranger-come-near'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 106:30 — *Then stood up Phinehas... and so the plague was stayed*: the same staying word sung of Aaron''s grandson.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=48
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-aaron-stood-between-the-dead-and-the-living'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 7:25 — *he ever liveth to make intercession for them*: Aaron between the dead and the living is the figure of the living priest.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=48
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-aaron-stood-between-the-dead-and-the-living'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Romans 5:9 — *saved from wrath through him*: Aaron sent because wrath is gone out (Numbers 16:46); the atonement turns it back.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=46
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-aaron-stood-between-the-dead-and-the-living'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 5:10 — *reconciled to Elohim by the death of his Son*: the murmuring congregation reconciled while still enemies, the figure of Numbers 16:46.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=46
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-aaron-stood-between-the-dead-and-the-living'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Timothy 2:5 — *one mediator between Elohim and men, the man HaMashiach Yahusha*: Aaron standing in the breach is the picture of the one mediator.'
+  FROM cross_reference_threads t
+  JOIN _s312_num16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=16 AND sv.verse_number=48
+  JOIN _s312_num16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-16-aaron-stood-between-the-dead-and-the-living'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_17.sql (Numbers 17) -----
+-- Book: Numbers   Chapter: 17   Tag: num17   Session prefix: s312
+-- Sort band base: 23900  step: 3   (23900, 23903, 23906)
+-- Temp view: _s312_num17_lookup
+--
+-- Numbers 17 coverage:
+--   v.1-9  AARON'S ROD THAT BUDDED — twelve rods, one per tribe, before the testimony;
+--          "the man's rod, whom I shall choose, shall blossom"; Aaron's rod for Levi
+--          "budded, and brought forth buds, and bloomed blossoms, and yielded almonds."
+--          NT:     Hebrews 9:4 (the golden pot of manna, AARON'S ROD THAT BUDDED, and the
+--                  tables of the covenant — kept in the ark) — the chosen priesthood
+--                  enshrined; type of the risen Priest after Melek Tsadiq (life from a dead stick).
+--          Extras: none warranted (the budding-rod motif has no clean witness in the restored
+--                  library; Hebrews is the decisive forward fill).
+--          Tanakh: Numbers 16:5 (Yahuah will shew who are his... even him whom he hath chosen),
+--                  Numbers 16:35 (the fire that consumed the 250 — the rebellion answered).
+--   v.10   THE ROD KEPT FOR A TOKEN AGAINST THE REBELS — memorial against rebellion, that
+--          their murmurings cease, that they die not.
+--          NT:     none warranted (Hebrews 9:4 already carries the rod forward in thread 1).
+--          Extras: none warranted.
+--          Tanakh: Numbers 16:38 (the censers made broad plates, a SIGN/memorial unto the
+--                  children of Yashar'el — the twin memorial-against-rebellion of ch16).
+--   v.12-13 THE TERROR OF APPROACH — "Behold, we die, we perish... Whosoever cometh any thing
+--          near unto the tabernacle of Yahuah shall die" — the fear of drawing near without a
+--          mediator; sets up ch18 the priesthood as the guard.
+--          NT:     Hebrews 10:19 (boldness to enter into the holiest by the blood of Yahusha),
+--                  Hebrews 10:22 (Let us draw near with a true heart) — the answer to the terror.
+--          Extras: none warranted.
+--          Tanakh: Numbers 18:5 (keep the charge of the sanctuary... no wrath any more),
+--                  Numbers 18:7 (the stranger that cometh nigh shall be put to death) — the
+--                  priesthood given AS the guard that answers the people's terror.
+--
+-- Threads (3):
+--   numbers-17-aarons-rod-that-budded-the-chosen-living-priesthood  [free]  -> canon (Hebrews, Numbers)
+--   numbers-17-the-rod-kept-for-a-token-against-the-rebels          [free]  -> canon (Numbers)
+--   numbers-17-whosoever-cometh-near-shall-die-the-terror-of-approach [free] -> canon (Hebrews, Numbers)
+
+CREATE TEMP VIEW _s312_num17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Aaron's rod that budded
+    ('canon','numbers',17,8,'canon','hebrews',9,4,'free',
+     E'*Which had the golden censer, and the ark of the covenant overlaid round about with gold, wherein was the golden pot that had manna, and Aaron''s rod that budded, and the tables of the covenant* (Hebrews 9:4). The rod that overnight *budded, and brought forth buds, and bloomed blossoms, and yielded almonds* (Numbers 17:8) is laid up in the very ark, beside the manna and the covenant tables — the chosen priesthood enshrined forever. Life out of a dead almond branch is the sign of the true Priest, the resurrection-life of the One after the order of Melek Tsadiq (Melchizedek).'),
+    ('canon','numbers',17,5,'canon','numbers',16,5,'free',
+     E'*Even to morrow Yahuah (LORD) will shew who are his, and who is holy; and will cause him to come near unto him: even him whom he hath chosen will he cause to come near unto him* (Numbers 16:5). The question of Korah''s rebellion — who is chosen to draw near — is answered by the budding rod: *the man''s rod, whom I shall choose, shall blossom* (Numbers 17:5). Yahuah names the chosen by life from a dead stick, not by man''s claim.'),
+    ('canon','numbers',17,5,'canon','numbers',16,35,'free',
+     E'*And there came out a fire from Yahuah (LORD), and consumed the two hundred and fifty men that offered incense* (Numbers 16:35). The rebels who seized the priesthood were devoured by fire; the chosen priest is vindicated by blossom. Judgment fell on the presumptuous in ch16; *the man''s rod, whom I shall choose, shall blossom* (Numbers 17:5) shows whom Yahuah Himself sets apart.'),
+    -- Thread 2: the rod kept for a token against the rebels
+    ('canon','numbers',17,10,'canon','numbers',16,38,'free',
+     E'*The censers of these sinners against their own souls, let them make them broad plates for a covering of the altar... and they shall be a sign unto the children of Yashar''el (Israel)* (Numbers 16:38). The plated censers and the budded rod are twin memorials of the same rebellion: *Bring Aaron''s rod again before the testimony, to be kept for a token against the rebels* (Numbers 17:10). Both are kept as standing witnesses that none may seize what Yahuah did not give.'),
+    -- Thread 3: the terror of approach
+    ('canon','numbers',17,13,'canon','hebrews',10,19,'free',
+     E'*Having therefore, brethren, boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19). The terror — *Whosoever cometh any thing near unto the tabernacle of Yahuah (LORD) shall die* (Numbers 17:13) — is answered not by abolishing the guard but by the blood of the true Priest, who opens the way the trembling people could not enter.'),
+    ('canon','numbers',17,13,'canon','hebrews',10,22,'free',
+     E'*Let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water* (Hebrews 10:22). The people cried *Behold, we die, we perish, we all perish* (Numbers 17:12), fearing to come near; the answer is to *draw near* through the consecrated way, the dread of approach swallowed up by the Priest who entered first.'),
+    ('canon','numbers',17,13,'canon','numbers',18,5,'free',
+     E'*And ye shall keep the charge of the sanctuary, and the charge of the altar: that there be no wrath any more upon the children of Yashar''el (Israel)* (Numbers 18:5). The people''s terror — *shall we be consumed with dying?* (Numbers 17:13) — is met immediately by the priesthood ordained as the guard, so that wrath fall no more. The mediating priest stands between the holy and the people.'),
+    ('canon','numbers',17,13,'canon','numbers',18,7,'free',
+     E'*and the stranger that cometh nigh shall be put to death* (Numbers 18:7). The dread that *whosoever cometh any thing near unto the tabernacle of Yahuah (LORD) shall die* (Numbers 17:13) is exactly why the priest''s office is given — the consecrated draw near in the people''s stead, the unconsecrated stranger may not. The guard is mercy, not cruelty: it keeps the congregation alive.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-17-aarons-rod-that-budded-the-chosen-living-priesthood',
+       E'Aaron''s Rod That Budded — the Chosen, Living Priesthood',
+       E'Twelve rods, one per tribe, are laid up before the testimony, and Yahuah (LORD) declares the test: *the man''s rod, whom I shall choose, shall blossom: and I will make to cease from me the murmurings of the children of Yashar''el (Israel)* (Numbers 17:5). On the morrow only one is alive — *the rod of Aaron for the house of Levi was budded, and brought forth buds, and bloomed blossoms, and yielded almonds* (Numbers 17:8). The chosen priest is named not by man''s claim but by LIFE out of a dead stick. This answers the very question of Korah''s rebellion: *even him whom he hath chosen will he cause to come near unto him* (Numbers 16:5), while the presumptuous who seized the censer were devoured — *there came out a fire from Yahuah (LORD), and consumed the two hundred and fifty men that offered incense* (Numbers 16:35). The budded rod is then enshrined in the ark itself: *wherein was the golden pot that had manna, and Aaron''s rod that budded, and the tables of the covenant* (Hebrews 9:4). The branch that lived from death is the sign of the true and risen Priest after the order of Melek Tsadiq (Melchizedek).',
+       sv.verse_id, ev.verse_id, 'free', 23900
+  FROM _s312_num17_lookup sv, _s312_num17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=17 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-17-the-rod-kept-for-a-token-against-the-rebels',
+       E'The Rod Kept for a Token Against the Rebels',
+       E'The budded rod is not buried away but enshrined as a standing memorial: *Bring Aaron''s rod again before the testimony, to be kept for a token against the rebels; and thou shalt quite take away their murmurings from me, that they die not* (Numbers 17:10). It is the twin of the other memorial drawn from the same rebellion — the censers of Korah''s company, *let them make them broad plates for a covering of the altar... and they shall be a sign unto the children of Yashar''el (Israel)* (Numbers 16:38). Plated censers and a living branch, kept together before the ark, declare the one verdict: none may seize what Yahuah (LORD) has not given, and the chosen priesthood stands.',
+       sv.verse_id, ev.verse_id, 'free', 23903
+  FROM _s312_num17_lookup sv, _s312_num17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=17 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-17-whosoever-cometh-near-shall-die-the-terror-of-approach',
+       E'Whosoever Cometh Near Shall Die — the Terror of Approach',
+       E'The chapter closes in dread. The people cry, *Behold, we die, we perish, we all perish. Whosoever cometh any thing near unto the tabernacle of Yahuah (LORD) shall die: shall we be consumed with dying?* (Numbers 17:12-13). This is the fear of drawing near to the Holy without a mediator. The answer comes at once in the priesthood ordained as a guard: *ye shall keep the charge of the sanctuary, and the charge of the altar: that there be no wrath any more upon the children of Yashar''el (Israel)* (Numbers 18:5), while *the stranger that cometh nigh shall be put to death* (Numbers 18:7) — the boundary is mercy, keeping the congregation alive. And the terror finds its full answer in the true Priest: *Having therefore, brethren, boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19), so that those who once cried *we perish* may *draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience* (Hebrews 10:22). The way is opened, not the guard abolished.',
+       sv.verse_id, ev.verse_id, 'free', 23906
+  FROM _s312_num17_lookup sv, _s312_num17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=17 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Aaron''s rod that budded* enshrined in the ark beside the manna and the tables (Hebrews 9:4) — the chosen priesthood kept forever, life from a dead branch, the sign of the risen Priest.'
+  FROM cross_reference_threads t
+  JOIN _s312_num17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=8
+  JOIN _s312_num17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-17-aarons-rod-that-budded-the-chosen-living-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Even him whom he hath chosen will he cause to come near unto him* (Numbers 16:5) — the rebellion''s own question, who is chosen to draw near, answered by the blossoming rod.'
+  FROM cross_reference_threads t
+  JOIN _s312_num17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=5
+  JOIN _s312_num17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-17-aarons-rod-that-budded-the-chosen-living-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Fire from Yahuah (LORD)... consumed the two hundred and fifty men* (Numbers 16:35) — the presumptuous devoured; the chosen priest vindicated by blossom, not seizure.'
+  FROM cross_reference_threads t
+  JOIN _s312_num17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=5
+  JOIN _s312_num17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-17-aarons-rod-that-budded-the-chosen-living-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*They shall be a sign unto the children of Yashar''el (Israel)* (Numbers 16:38) — the plated censers, twin memorial to the kept rod (Numbers 17:10), both standing witnesses against rebellion.'
+  FROM cross_reference_threads t
+  JOIN _s312_num17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=10
+  JOIN _s312_num17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-17-the-rod-kept-for-a-token-against-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19) — the answer to the terror, the way opened by the true Priest the trembling people could not enter.'
+  FROM cross_reference_threads t
+  JOIN _s312_num17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s312_num17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-17-whosoever-cometh-near-shall-die-the-terror-of-approach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Let us draw near with a true heart in full assurance of faith* (Hebrews 10:22) — the cry *we die, we perish* (Numbers 17:12) turned into drawing near through the consecrated way.'
+  FROM cross_reference_threads t
+  JOIN _s312_num17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s312_num17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-17-whosoever-cometh-near-shall-die-the-terror-of-approach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*That there be no wrath any more upon the children of Yashar''el (Israel)* (Numbers 18:5) — the priesthood ordained immediately as the guard that answers the people''s dread.'
+  FROM cross_reference_threads t
+  JOIN _s312_num17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s312_num17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-17-whosoever-cometh-near-shall-die-the-terror-of-approach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The stranger that cometh nigh shall be put to death* (Numbers 18:7) — the boundary the people feared is mercy: the consecrated draw near in their stead, keeping the congregation alive.'
+  FROM cross_reference_threads t
+  JOIN _s312_num17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s312_num17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-17-whosoever-cometh-near-shall-die-the-terror-of-approach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_18.sql (Numbers 18) -----
+-- Chapter: Numbers 18 — the charge and the portion of the priesthood
+-- Tag: num18 | session prefix: s312 | sort band base 23925 step 3 (23925, 23928, 23931, 23934)
+-- Temp view: _s312_num18_lookup
+--
+-- Numbers 18 coverage:
+--   v.1-7  (the guarded, gifted priesthood; the stranger that cometh nigh shall be put to death; priest's office a service of GIFT)
+--          NT:     Hebrews 5:4 (no man taketh this honour unto himself, but he that is called of Elohim, as was Aaron); Hebrews 7:11-14 (priesthood changed)
+--          Extras: none warranted
+--          Tanakh: Numbers 3:10 (lateral, the stranger that cometh nigh shall be put to death)
+--   v.8-19 (the priests' PORTION; the heave offerings, firstfruits, firstborn; covenant of salt for ever)
+--          NT:     1 Corinthians 9:13-14 (they which minister about holy things live of the things of the temple)
+--          Extras: none warranted
+--          Tanakh: Leviticus 2:13 (salt of the covenant); 2 Chronicles 13:5 (covenant of salt)
+--   v.20   (Thou shalt have no inheritance... I am thy part and thine inheritance)  ★★
+--          NT:     none warranted (the portion-is-Yahuah theme is sung forward through the Psalms, woven below)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 10:9; Psalm 16:5; Psalm 73:26; Psalm 119:57; Lamentations 3:24
+--   v.21-32 (the tithe given the Levites for their service; the Levites give a tithe OF the tithe to the priest)
+--          NT:     Hebrews 7:5 (sons of Levi take tithes); Hebrews 7:9 (Levi paid tithes in Abraham)
+--          Extras: none warranted
+--          Tanakh: Leviticus 27:30, 27:32 (the tithe is the LORD'S); Nehemiah 10:38 (the tithe of the tithes)
+--
+-- Threads (4):
+--   numbers-18-the-charge-of-the-priesthood-a-service-of-gift  (free; Heb5, Heb7, Num3)
+--   numbers-18-the-priests-portion-a-covenant-of-salt          (free; 1Cor9, Lev2, 2Chron13)
+--   numbers-18-i-am-thy-part-and-thine-inheritance             (free; Deut10, Ps16, Ps73, Ps119, Lam3)
+--   numbers-18-the-tithe-for-the-ministry                      (free; Lev27 x2, Neh10, Heb7 x2)
+-- All members canon → every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s312_num18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================
+-- B. cross_references
+-- ============================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the charge of the priesthood — a service of GIFT
+    ('canon','numbers',18,7,'canon','hebrews',5,4,'free',
+      E'*And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron.* (Hebrews 5:4) — Aaron is the New Testament''s very pattern of the un-self-taken honour. Numbers 18:7 fixes the priesthood as exactly that: *I have given your priest''s office unto you as a service of gift: and the stranger that cometh nigh shall be put to death* — the office is conferred, never seized, and the boundary is guarded with death.'),
+    ('canon','numbers',18,7,'canon','hebrews',7,11,'free',
+      E'*If therefore perfection were by the Levitical priesthood, (for under it the people received the law,) what further need was there that another priest should rise after the order of Melek Tsadiq (Melchizedek), and not be called after the order of Aaron?* (Hebrews 7:11) — Hebrews reads this guarded Aaronic office, *your priest''s office... as a service of gift* (Numbers 18:7), as the type whose limits point on to the Formed Son''s priesthood after the order of Melek Tsadiq (Melchizedek); the gift given Aaron foreshadows a greater gift.'),
+    ('canon','numbers',18,7,'canon','numbers',3,10,'free',
+      E'*And thou shalt appoint Aaron and his sons, and they shall wait on their priest''s office: and the stranger that cometh nigh shall be put to death.* (Numbers 3:10) — the same boundary, word for word, set at the first ordering of the Levites: the priesthood is fenced. Numbers 18:7 repeats *the stranger that cometh nigh shall be put to death*, binding chapter 18''s charge back to the original guard around the gift.'),
+
+    -- Thread 2: the priests' portion — a covenant of salt
+    ('canon','numbers',18,8,'canon','1-corinthians',9,13,'free',
+      E'*Do ye not know that they which minister about holy things live of the things of the temple? and they which wait at the altar are partakers with the altar?* (1 Corinthians 9:13) — Paul reaches straight back to this ordinance. Numbers 18:8 gives Aaron *the charge of mine heave offerings of all the hallowed things of the children of Yashar''el (Israel)... by an ordinance for ever*: the ministers are fed from the altar they serve, a principle Yahuah laid down in Torah and Paul will not let be despised.'),
+    ('canon','numbers',18,8,'canon','1-corinthians',9,14,'free',
+      E'*Even so hath Yahuah (Lord) ordained that they which preach the gospel should live of the gospel.* (1 Corinthians 9:14) — Paul makes the Torah ordinance the standing rule for the messengers of the kingdom. The priests'' portion of Numbers 18:8, *the charge of mine heave offerings... by an ordinance for ever*, is not abolished but extended: those who labour in the holy things still live of them, *even so hath Yahuah ordained*.'),
+    ('canon','numbers',18,19,'canon','leviticus',2,13,'free',
+      E'*And every oblation of thy meat offering shalt thou season with salt; neither shalt thou suffer the salt of the covenant of thy Elohim (God) to be lacking from thy meat offering: with all thine offerings thou shalt offer salt.* (Leviticus 2:13) — the salt of the covenant on every offering. Numbers 18:19 gathers that salt into the priests'' portion itself: *it is a covenant of salt for ever before Yahuah (LORD) unto thee and to thy seed with thee* — an unbreakable, preserved bond between Yahuah and his ministering line.'),
+    ('canon','numbers',18,19,'canon','2-chronicles',13,5,'free',
+      E'*Ought ye not to know that Yahuah Elohim (the LORD God) of Yashar''el (Israel) gave the kingdom over Yashar''el (Israel) to David for ever, even to him and to his sons by a covenant of salt?* (2 Chronicles 13:5) — the same enduring formula binds the Davidic throne as binds the priests'' portion. Numbers 18:19, *it is a covenant of salt for ever before Yahuah unto thee and to thy seed with thee*, and the salt-covenant of David''s kingdom are the two everlasting grants — priesthood and throne — that the Formed Son will gather in himself.'),
+
+    -- Thread 3: I am thy part and thine inheritance
+    ('canon','numbers',18,20,'canon','deuteronomy',10,9,'free',
+      E'*Wherefore Levi hath no part nor inheritance with his brethren; Yahuah (LORD) is his inheritance, according as Yahuah Elohayka (the LORD thy God) promised him.* (Deuteronomy 10:9) — Moses restates the grant exactly. Numbers 18:20 declares it first: *Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Yashar''el (Israel)* — the tribe forfeits land and is given Yahuah himself.'),
+    ('canon','numbers',18,20,'canon','psalms',16,5,'free',
+      E'*Yahuah (LORD) is the portion of mine inheritance and of my cup: thou maintainest my lot.* (Psalm 16:5) — what was the Levite''s peculiar grant becomes the worshipper''s song. The priestly word of Numbers 18:20, *I am thy part and thine inheritance*, is taken up by the singer who claims Yahuah himself, not land, as his portion and cup.'),
+    ('canon','numbers',18,20,'canon','psalms',73,26,'free',
+      E'*My flesh and my heart faileth: but Elohim (God) is the strength of my heart, and my portion for ever.* (Psalm 73:26) — Asaph rests where the Levite is set: in the moment flesh fails, Elohim himself is the portion that does not. Numbers 18:20''s *I am thy part and thine inheritance* is the very confession the psalmist makes his own — Yahuah, not the wealth of the wicked, is the lasting inheritance.'),
+    ('canon','numbers',18,20,'canon','psalms',119,57,'free',
+      E'*Thou art my portion, O Yahuah (LORD): I have said that I would keep thy words.* (Psalm 119:57) — the portion-in-Yahuah is joined to the keeping of the word, never severed from it. Numbers 18:20, *I am thy part and thine inheritance*, sings on in the psalmist who answers his inheritance with obedience: *I have said that I would keep thy words*.'),
+    ('canon','numbers',18,20,'canon','lamentations',3,24,'free',
+      E'*Yahuah (LORD) is my portion, saith my soul; therefore will I hope in him.* (Lamentations 3:24) — even amid the ruin of the land, the inheritance stands, because the inheritance was never the land. Numbers 18:20''s *I am thy part and thine inheritance* is the ground of hope when all else is lost: *Yahuah is my portion, saith my soul; therefore will I hope in him*.'),
+
+    -- Thread 4: the tithe for the ministry
+    ('canon','numbers',18,21,'canon','leviticus',27,30,'free',
+      E'*And all the tithe of the land, whether of the seed of the land, or of the fruit of the tree, is the LORD''S: it is holy unto Yahuah (LORD).* (Leviticus 27:30) — the tithe belongs to Yahuah; here Yahuah assigns his own holy tenth to his servants. Numbers 18:21, *I have given the children of Levi all the tenth in Yashar''el (Israel) for an inheritance, for their service which they serve*, channels that LORD''S tithe to sustain the ministry.'),
+    ('canon','numbers',18,21,'canon','leviticus',27,32,'free',
+      E'*And concerning the tithe of the herd, or of the flock, even of whatsoever passeth under the rod, the tenth shall be holy unto Yahuah (LORD).* (Leviticus 27:32) — the tithe of the flock, like the tithe of the land, is holy. Numbers 18:21 takes that whole holy tenth and gives it as the Levites'' inheritance in place of land: *all the tenth in Yashar''el for an inheritance, for their service which they serve*.'),
+    ('canon','numbers',18,26,'canon','nehemiah',10,38,'free',
+      E'*And the priest the son of Aaron shall be with the Levites, when the Levites take tithes: and the Levites shall bring up the tithe of the tithes unto the house of our Elohim (God), to the chambers, into the treasure house.* (Nehemiah 10:38) — the returned remnant binds itself to do exactly what Numbers commands. Numbers 18:26 lays the rule: *when ye take of the children of Yashar''el (Israel) the tithes which I have given you... then ye shall offer up an heave offering of it for Yahuah (LORD), even a tenth part of the tithe* — the Levites'' own tithe of the tithe to the priest, kept in Nehemiah''s day.'),
+    ('canon','numbers',18,21,'canon','hebrews',7,5,'free',
+      E'*And verily they that are of the sons of Levi, who receive the office of the priesthood, have a commandment to take tithes of the people according to the law, that is, of their brethren, though they come out of the loins of Abraham.* (Hebrews 7:5) — Hebrews names this very commandment. Numbers 18:21 is the law it points to: *I have given the children of Levi all the tenth in Yashar''el (Israel) for an inheritance, for their service* — the sons of Levi take tithes by Yahuah''s own grant.'),
+    ('canon','numbers',18,21,'canon','hebrews',7,9,'free',
+      E'*And as I may so say, Levi also, who receiveth tithes, payed tithes in Abraham.* (Hebrews 7:9) — the tithe-receiving Levite is himself shown a tithe-payer to a greater priest. Numbers 18:21 establishes Levi as the receiver, *all the tenth in Yashar''el for an inheritance*, and Hebrews lifts that very office to show even Levi, in Abraham''s loins, bowed to Melek Tsadiq (Melchizedek) — the priesthood that out-ranks the tithe it once gathered.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================
+-- C. threads
+-- ============================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-18-the-charge-of-the-priesthood-a-service-of-gift',
+  E'The charge of the priesthood — a service of gift',
+  E'Numbers 18 opens with the weight of the office laid on Aaron: *Thou and thy sons and thy father''s house with thee shall bear the iniquity of the sanctuary* (Numbers 18:1). The Levites are *joined unto thee, and minister unto thee* (Numbers 18:2), but the line is fenced with death: *a stranger shall not come nigh unto you* (Numbers 18:4), and again, *I have given your priest''s office unto you as a service of gift: and the stranger that cometh nigh shall be put to death* (Numbers 18:7). The priesthood is a gift, and the gift is guarded. This same guard was set at the first ordering of the Levites — *and the stranger that cometh nigh shall be put to death* (Numbers 3:10) — so chapter 18 only re-seals the boundary. The New Testament makes Aaron the very type of the un-self-taken honour: *no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron* (Hebrews 5:4). And the same letter reads the limits of *the Levitical priesthood* as the shadow that points beyond itself: *what further need was there that another priest should rise after the order of Melek Tsadiq (Melchizedek), and not be called after the order of Aaron?* (Hebrews 7:11) — the Formed Son, priest by the Father''s gift and oath, fills what Aaron only foreshadowed.',
+  sv.verse_id, ev.verse_id, 'free', 23925
+  FROM _s312_num18_lookup sv, _s312_num18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=18 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-18-the-priests-portion-a-covenant-of-salt',
+  E'The priests'' portion — a covenant of salt',
+  E'Having no land, the priests are fed from the altar. Yahuah gives Aaron *the charge of mine heave offerings of all the hallowed things of the children of Yashar''el (Israel)... by an ordinance for ever* (Numbers 18:8) — the most holy things, the firstfruits of *the best of the oil, and all the best of the wine, and of the wheat* (Numbers 18:12), the firstborn, *every thing devoted in Yashar''el (Israel)* (Numbers 18:14). The whole grant is then sealed: *it is a covenant of salt for ever before Yahuah (LORD) unto thee and to thy seed with thee* (Numbers 18:19). Salt was the sign of the unbreakable bond already commanded on every offering — *neither shalt thou suffer the salt of the covenant of thy Elohim (God) to be lacking from thy meat offering* (Leviticus 2:13) — and the same everlasting formula seals the Davidic throne: Yahuah *gave the kingdom over Yashar''el (Israel) to David for ever... by a covenant of salt* (2 Chronicles 13:5). Priesthood and throne, both granted in salt, both gathered at last in the Formed Son. And the principle abides under the gospel: *they which minister about holy things live of the things of the temple... even so hath Yahuah (Lord) ordained that they which preach the gospel should live of the gospel* (1 Corinthians 9:13-14). The ministers still live of the altar they serve.',
+  sv.verse_id, ev.verse_id, 'free', 23928
+  FROM _s312_num18_lookup sv, _s312_num18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=18 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-18-i-am-thy-part-and-thine-inheritance',
+  E'I am thy part and thine inheritance',
+  E'At the heart of the chapter is the grant that costs and gives everything: *Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Yashar''el (Israel)* (Numbers 18:20). The Levite forfeits land and is given Yahuah himself. Moses restates it plainly — *Levi hath no part nor inheritance with his brethren; Yahuah (LORD) is his inheritance* (Deuteronomy 10:9) — and what was the priestly tribe''s peculiar lot becomes the song of every worshipper who learns to want Yahuah more than land. The singer claims it: *Yahuah (LORD) is the portion of mine inheritance and of my cup* (Psalm 16:5); Asaph claims it when flesh fails: *Elohim (God) is the strength of my heart, and my portion for ever* (Psalm 73:26); the psalmist of the law joins it to obedience: *Thou art my portion, O Yahuah (LORD): I have said that I would keep thy words* (Psalm 119:57); and the mourner over the ruined land holds it when all else is lost: *Yahuah (LORD) is my portion, saith my soul; therefore will I hope in him* (Lamentations 3:24). The inheritance was never the land — it was Yahuah.',
+  sv.verse_id, ev.verse_id, 'free', 23931
+  FROM _s312_num18_lookup sv, _s312_num18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=18 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-18-the-tithe-for-the-ministry',
+  E'The tithe for the ministry',
+  E'Because the Levites have no land, Yahuah assigns them the tithe as their portion: *I have given the children of Levi all the tenth in Yashar''el (Israel) for an inheritance, for their service which they serve* (Numbers 18:21). The tithe was already declared holy to Yahuah — *all the tithe of the land... is the LORD''S: it is holy unto Yahuah (LORD)* (Leviticus 27:30), and *the tithe of the herd, or of the flock... the tenth shall be holy unto Yahuah* (Leviticus 27:32) — so Yahuah gives his own holy tenth to sustain the ministry. The Levites in turn render a tithe of the tithe to the priest: *ye shall offer up an heave offering of it for Yahuah (LORD), even a tenth part of the tithe* (Numbers 18:26). The returned remnant under Nehemiah bound themselves to keep exactly this: *the Levites shall bring up the tithe of the tithes unto the house of our Elohim (God)* (Nehemiah 10:38). And Hebrews names this very commandment — *the sons of Levi... have a commandment to take tithes of the people according to the law* (Hebrews 7:5) — only to show that even tithe-receiving Levi *payed tithes in Abraham* (Hebrews 7:9) to a higher priest: Melek Tsadiq (Melchizedek), whose order the Formed Son fills.',
+  sv.verse_id, ev.verse_id, 'free', 23934
+  FROM _s312_num18_lookup sv, _s312_num18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=18 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================
+-- D. thread_members
+-- ============================================================
+-- Thread 1: the charge of the priesthood
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*No man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron* (Hebrews 5:4) — Aaron is the NT''s pattern of the conferred, un-seized office of Numbers 18:7.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-charge-of-the-priesthood-a-service-of-gift'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*What further need was there that another priest should rise after the order of Melek Tsadiq (Melchizedek)?* (Hebrews 7:11) — the limits of the gifted Aaronic office point on to the Formed Son''s priesthood.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-charge-of-the-priesthood-a-service-of-gift'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And the stranger that cometh nigh shall be put to death* (Numbers 3:10) — the same guard, word for word, set at the first ordering of the Levites.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-charge-of-the-priesthood-a-service-of-gift'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the priests' portion — a covenant of salt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*They which minister about holy things live of the things of the temple* (1 Corinthians 9:13) — Paul grounds the gospel-minister''s support in this Torah ordinance.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-priests-portion-a-covenant-of-salt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Even so hath Yahuah (Lord) ordained that they which preach the gospel should live of the gospel* (1 Corinthians 9:14) — the ordinance extended, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-priests-portion-a-covenant-of-salt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The salt of the covenant of thy Elohim (God)* on every offering (Leviticus 2:13) — the salt-bond that Numbers 18:19 gathers into the priests'' portion itself.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=19
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-priests-portion-a-covenant-of-salt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The kingdom over Yashar''el (Israel) to David for ever... by a covenant of salt* (2 Chronicles 13:5) — the same everlasting formula seals the Davidic throne as seals the priests'' portion.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=19
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-priests-portion-a-covenant-of-salt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: I am thy part and thine inheritance
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Levi hath no part nor inheritance with his brethren; Yahuah (LORD) is his inheritance* (Deuteronomy 10:9) — Moses restates the grant word for word.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-i-am-thy-part-and-thine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) is the portion of mine inheritance and of my cup* (Psalm 16:5) — the Levite''s grant becomes the worshipper''s song.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-i-am-thy-part-and-thine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Elohim (God) is the strength of my heart, and my portion for ever* (Psalm 73:26) — Asaph rests in the portion that does not fail when flesh fails.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=73 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-i-am-thy-part-and-thine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou art my portion, O Yahuah (LORD): I have said that I would keep thy words* (Psalm 119:57) — the inheritance in Yahuah joined to the keeping of the word.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=57
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-i-am-thy-part-and-thine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Yahuah (LORD) is my portion, saith my soul; therefore will I hope in him* (Lamentations 3:24) — the inheritance stands even when the land is ruined.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=3 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-i-am-thy-part-and-thine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the tithe for the ministry
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*All the tithe of the land... is the LORD''S: it is holy unto Yahuah (LORD)* (Leviticus 27:30) — the holy tenth Yahuah gives to sustain the Levites.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=27 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-tithe-for-the-ministry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The tithe of the herd, or of the flock... the tenth shall be holy unto Yahuah* (Leviticus 27:32) — the tithe of the flock, likewise given as the Levites'' inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=27 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-tithe-for-the-ministry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The Levites shall bring up the tithe of the tithes unto the house of our Elohim (God)* (Nehemiah 10:38) — the returned remnant keeping Numbers 18:26''s tithe of the tithe.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=26
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=10 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-tithe-for-the-ministry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The sons of Levi... have a commandment to take tithes of the people according to the law* (Hebrews 7:5) — Hebrews names the very commandment of Numbers 18:21.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-tithe-for-the-ministry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Levi also, who receiveth tithes, payed tithes in Abraham* (Hebrews 7:9) — even the tithe-receiving Levite bowed to Melek Tsadiq (Melchizedek), the order the Formed Son fills.'
+  FROM cross_reference_threads t
+  JOIN _s312_num18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s312_num18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-18-the-tithe-for-the-ministry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_19.sql (Numbers 19) -----
+-- Chapter: Numbers 19 — KEYSTONE: the RED HEIFER and the water of separation. The unblemished
+-- heifer, never yoked, brought WITHOUT THE CAMP and slain, her blood sprinkled toward the
+-- tabernacle seven times, the whole beast burned with cedar wood, hyssop, and scarlet cast in;
+-- the ashes laid up *for a water of separation: it is a purification for sin* (19:9). Death defiles
+-- (19:11-13), and only the sprinkled water of separation cleanses (19:14-19); the man who will not
+-- purify is cut off *because he hath defiled the sanctuary of Yahuah* (19:20). The unique
+-- sin-purification by ashes-and-water — read forward to Messiah's blood and the sprinkling of the
+-- heart, and laterally to the cleansing rite of Leviticus and the prophets' clean water.
+-- Tag: num19   Temp view: _s312_num19_lookup
+-- Sort band: base 23950, step 3 -> threads at 23950, 23953, 23956, 23959 (4 threads)
+-- Source of EVERY row: 'canon','numbers',19,v
+--
+-- Numbers 19 coverage:
+--   ★★ v.1-10 (the red heifer without spot, never yoked, slain WITHOUT THE CAMP; blood sprinkled
+--          toward the tabernacle seven times; whole heifer burned, cedar/hyssop/scarlet cast in;
+--          ashes laid up for a water of separation: it is a purification for sin)
+--        NT:     ★★ Hebrews 9:13 (the ashes of an heifer sprinkling the unclean, sanctifieth to the
+--                purifying of the flesh), ★★★ Hebrews 9:14 (how much more shall the blood of Messiah...
+--                purge your conscience from dead works), ★★ Hebrews 13:11 (the bodies of those beasts...
+--                are burned without the camp), ★★★ Hebrews 13:12 (Yahusha... suffered without the
+--                gate) — THREAD 1
+--        Extras: none warranted (the heifer rite is the canon's own; no clean witness in the restored
+--                library reads it without apparatus noise)
+--        Tanakh: ★ Leviticus 14:4 (cedar wood, and scarlet, and hyssop), ★ Leviticus 14:6 (the cedar
+--                wood, and the scarlet, and the hyssop... over the running water) — THREAD 1
+--   ★ v.11-13 (he that toucheth the dead body of any man shall be unclean seven days... because the
+--          water of separation was not sprinkled upon him, his uncleanness is yet upon him)
+--        NT:     none warranted distinct (the death-defilement that the blood answers is carried in
+--                THREAD 1's Hebrews 9:14 'dead works'; held there)
+--        Extras: none warranted
+--        Tanakh: ★ Numbers 5:2 (put out of the camp... whosoever is defiled by the dead), ★ Haggai 2:13
+--                (if one that is unclean by a dead body touch any of these... It shall be unclean) — THREAD 2
+--   ★ v.14-19 (the clean person takes HYSSOP, dips in the water of separation, and sprinkles the
+--          unclean on the third day and the seventh day... and shall be clean)
+--        NT:     ★★ Hebrews 10:22 (having our hearts sprinkled from an evil conscience, and our bodies
+--                washed with pure water), ★★ Hebrews 12:24 (the blood of sprinkling, that speaketh
+--                better things than that of Abel) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 51:7 (Purge me with hyssop, and I shall be clean), ★★ Ezekiel 36:25 (then will
+--                I sprinkle clean water upon you, and ye shall be clean) — THREAD 3
+--   v.20-22 (the man who will not purify is cut off because he hath defiled the sanctuary of Yahuah)
+--        NT:     none warranted distinct (the cut-off-for-defiling-the-sanctuary is Torah's holiness
+--                guard; the Hebrews fulfillment is in THREADS 1 and 3)
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 15:31 (separate the children of Yashar'el from their uncleanness; that they
+--                die not... when they defile my tabernacle that is among them) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. numbers-19-the-red-heifer-the-cleansing-without-the-camp — NT (Hebrews 9, Hebrews 13) + Tanakh (Leviticus 14) [free]
+--      (★★ the unblemished heifer burned WITHOUT THE CAMP, her ashes a purification for sin → Messiah's
+--       blood, who suffered without the gate; cedar/hyssop/scarlet shared with the leper-cleansing rite)
+--   2. numbers-19-death-defileth-the-water-of-separation — Tanakh (Numbers 5, Haggai 2) [free]
+--      (★ death defiles seven days; the dead-body uncleanness that only the sprinkled water answers)
+--   3. numbers-19-purge-me-with-hyssop-the-water-of-sprinkling — NT (Hebrews 10, Hebrews 12) + Tanakh (Psalm 51, Ezekiel 36) [free]
+--      (★ the hyssop dipped and the water sprinkled on third and seventh days → the heart sprinkled
+--       from an evil conscience, the clean water of the new covenant)
+--   4. numbers-19-defiled-the-sanctuary-cut-off — Tanakh (Leviticus 15) [free]
+--      (the unpurified cut off for defiling the sanctuary of Yahuah — the holiness guarded)
+
+CREATE TEMP VIEW _s312_num19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the red heifer, the cleansing without the camp
+    ('canon','numbers',19,9,'canon','hebrews',9,13,'free',
+      E'*For if the blood of bulls and of goats, and the ashes of an heifer sprinkling the unclean, sanctifieth to the purifying of the flesh* (Hebrews 9:13). The ashes laid up *for a water of separation: it is a purification for sin* (Numbers 19:9) are named directly: *the ashes of an heifer sprinkling the unclean*. Hebrews grants the rite its real power — it truly *sanctifieth to the purifying of the flesh* — and sets it up as the lesser figure of a greater cleansing yet to come.'),
+    ('canon','numbers',19,9,'canon','hebrews',9,14,'free',
+      E'*How much more shall the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works to serve the living Elohim (God)?* (Hebrews 9:14). The heifer *without spot, wherein is no blemish* (Numbers 19:2), whose ashes are *a purification for sin* (19:9), foreshadows the One who *offered himself without spot* — and as the heifer''s water cleansed the man defiled by death, the Messiah''s blood purges the conscience *from dead works*. The death-defilement of the chapter (19:11) finds its answer here.'),
+    ('canon','numbers',19,3,'canon','hebrews',13,11,'free',
+      E'*For the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp* (Hebrews 13:11). Eleazar brings the heifer *forth without the camp* to be slain and *burn the heifer in his sight* (Numbers 19:3-5), her blood *directly before the tabernacle* (19:4). Hebrews reads the pattern exactly: the sin-offering body *burned without the camp* — the place of the heifer''s burning is the place the fulfillment will be enacted.'),
+    ('canon','numbers',19,3,'canon','hebrews',13,12,'free',
+      E'*Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). The heifer brought *forth without the camp* and slain there (Numbers 19:3) is the type drawn out plainly: Yahusha *suffered without the gate*, sanctifying the people *with his own blood* as the heifer''s ashes-and-blood sanctified Yashar''el (Israel). The Formed Son fulfills the rite outside the camp.'),
+    ('canon','numbers',19,6,'canon','leviticus',14,4,'free',
+      E'*Then shall the priest command to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop* (Leviticus 14:4). The priest casts *cedar wood, and hyssop, and scarlet* into the burning of the heifer (Numbers 19:6) — the same three elements the leper-cleansing rite uses: *cedar wood, and scarlet, and hyssop*. One purification grammar of blood, cedar, scarlet, and hyssop runs through the Torah''s cleansings.'),
+    ('canon','numbers',19,6,'canon','leviticus',14,6,'free',
+      E'*As for the living bird, he shall take it, and the cedar wood, and the scarlet, and the hyssop, and shall dip them and the living bird in the blood of the bird that was killed over the running water* (Leviticus 14:6). The *cedar wood, and hyssop, and scarlet* cast into the heifer''s burning (Numbers 19:6), with *running water* added to her ashes (19:17), match the leper''s cleansing where the cedar, scarlet, and hyssop are dipped *in the blood... over the running water*. The shared rite binds the heifer to the whole sanctifying system.'),
+
+    -- THREAD 2 (★): death defileth — the water of separation
+    ('canon','numbers',19,11,'canon','numbers',5,2,'free',
+      E'*Command the children of Yashar''el (Israel), that they put out of the camp every leper, and every one that hath an issue, and whosoever is defiled by the dead* (Numbers 5:2). *He that toucheth the dead body of any man shall be unclean seven days* (Numbers 19:11) is the very defilement that puts a man *out of the camp* — *whosoever is defiled by the dead*. Death is the deepest uncleanness, barred from the dwelling of Yahuah (LORD) until purification is made.'),
+    ('canon','numbers',19,13,'canon','haggai',2,13,'free',
+      E'*Then said Haggai, If one that is unclean by a dead body touch any of these, shall it be unclean? And the priests answered and said, It shall be unclean* (Haggai 2:13). The law that *whosoever toucheth the dead body of any man... defileth the tabernacle of Yahuah (LORD)* (Numbers 19:13) is the very principle Haggai presses on the priests: the man *unclean by a dead body* spreads his defilement to whatever he touches. Death''s uncleanness is contagious — only the water of separation breaks it.'),
+
+    -- THREAD 3 (★): purge me with hyssop — the water of sprinkling
+    ('canon','numbers',19,18,'canon','psalms',51,7,'free',
+      E'*Purge me with hyssop, and I shall be clean: wash me, and I shall be whiter than snow* (Psalm 51:7). The clean person *take[s] hyssop, and dip[s] it in the water, and sprinkle[s] it upon... the persons that were there* (Numbers 19:18) — and David prays the rite inward: *Purge me with hyssop, and I shall be clean*. The hyssop that cleansed the body of death''s defilement becomes the cry for the soul to be purged whiter than snow.'),
+    ('canon','numbers',19,18,'canon','ezekiel',36,25,'free',
+      E'*Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you* (Ezekiel 36:25). The *water of separation* sprinkled on the unclean *and shall be clean* (Numbers 19:18-19) is the figure Ezekiel lifts to the new covenant: *I will sprinkle clean water upon you, and ye shall be clean*. The sprinkled water that cleansed the flesh becomes the Spirit-cleansing of the heart — the same Torah-rite written inward.'),
+    ('canon','numbers',19,18,'canon','hebrews',10,22,'free',
+      E'*Let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water* (Hebrews 10:22). The sprinkling of the *water of separation* with *hyssop* (Numbers 19:18) is fulfilled where the worshipper draws near *having our hearts sprinkled from an evil conscience, and our bodies washed with pure water*. The outward sprinkling and washing of Numbers 19 become the inward cleansing that lets the people draw near.'),
+    ('canon','numbers',19,19,'canon','hebrews',12,24,'free',
+      E'*And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). The chapter''s sprinkling that makes the unclean *clean* (Numbers 19:19) reaches its end in *the blood of sprinkling* — the Messiah''s own, which *speaketh better things*. The water of separation sprinkled with hyssop is the shadow; the blood of sprinkling is the substance.'),
+
+    -- THREAD 4: defiled the sanctuary — cut off
+    ('canon','numbers',19,20,'canon','leviticus',15,31,'free',
+      E'*Thus shall ye separate the children of Yashar''el (Israel) from their uncleanness; that they die not in their uncleanness, when they defile my tabernacle that is among them* (Leviticus 15:31). The man who *shall not purify himself... shall be cut off from among the congregation, because he hath defiled the sanctuary of Yahuah (LORD)* (Numbers 19:20) stands under the same guard: uncleanness left unpurged *defile[s] my tabernacle*, and the holy dwelling among them must be kept undefiled. The purification is no ritual nicety — it shields the sanctuary and the life of the people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-19-the-red-heifer-the-cleansing-without-the-camp', E'The red heifer — the cleansing without the camp', E'The ordinance of the red heifer is one of the strangest and weightiest in the Torah, and the New Testament reads it as a direct foreshadow. The heifer must be *without spot, wherein is no blemish, and upon which never came yoke* (Numbers 19:2); she is brought *forth without the camp* and slain there, her blood sprinkled *directly before the tabernacle of the congregation seven times* (19:3-4); then the whole beast is burned, and the priest casts *cedar wood, and hyssop, and scarlet* into the burning (19:5-6). Her ashes are laid up *for a water of separation: it is a purification for sin* (19:9). Hebrews names the rite outright — *the ashes of an heifer sprinkling the unclean, sanctifieth to the purifying of the flesh* (Hebrews 9:13) — and then lifts it: *how much more shall the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works* (Hebrews 9:14). The heifer *without spot* is the type of the One who *offered himself without spot*. And the place is not incidental: *the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp* (Hebrews 13:11) — *wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). The heifer slain outside the camp is the Formed Son who would suffer outside the gate. The cedar, scarlet, and hyssop are not unique to this rite either — the leper''s cleansing takes *cedar wood, and scarlet, and hyssop* and dips them *in the blood... over the running water* (Leviticus 14:4-6), one purification grammar running through the whole Torah. This is no defunct ceremony; it is the living shadow of the blood that purges the conscience.', sv.verse_id, ev.verse_id, 'free', 23950
+  FROM _s312_num19_lookup sv, _s312_num19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=19 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-19-death-defileth-the-water-of-separation', E'Death defileth — the water of separation', E'Why was a water of purification needed at all? Because death is the deepest defilement in the Torah. *He that toucheth the dead body of any man shall be unclean seven days* (Numbers 19:11), and *whosoever toucheth the dead body of any man that is dead, and purifieth not himself, defileth the tabernacle of Yahuah (LORD); and that soul shall be cut off from Yashar''el (Israel): because the water of separation was not sprinkled upon him* (19:13). This is the same uncleanness that puts a man outside the dwelling of Yahuah: *put out of the camp every leper, and every one that hath an issue, and whosoever is defiled by the dead* (Numbers 5:2). And death''s defilement is contagious — when Haggai presses the priests, *If one that is unclean by a dead body touch any of these, shall it be unclean? And the priests answered and said, It shall be unclean* (Haggai 2:13). Death spreads; what the dead touch becomes unclean, and what touches that is unclean in turn. The whole rite of the heifer exists because the wages of sin is death, and death corrupts everything it reaches — only the appointed water of separation, sprinkled, can break its hold.', sv.verse_id, ev.verse_id, 'free', 23953
+  FROM _s312_num19_lookup sv, _s312_num19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=19 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-19-purge-me-with-hyssop-the-water-of-sprinkling', E'Purge me with hyssop — the water of sprinkling', E'The cleansing of Numbers 19 is enacted by sprinkling: *a clean person shall take hyssop, and dip it in the water, and sprinkle it upon... the persons that were there* (Numbers 19:18), *on the third day, and on the seventh day: and on the seventh day he shall purify himself... and shall be clean* (19:19). The whole canon takes up this hyssop and this sprinkling. David, confessing his sin, prays the rite into the inner man: *Purge me with hyssop, and I shall be clean: wash me, and I shall be whiter than snow* (Psalm 51:7). Ezekiel lifts it to the new covenant — *then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you* (Ezekiel 36:25) — the same sprinkled water, now written on the heart by the Spirit, never the Torah replaced but fulfilled inward. And Hebrews names the end of it: *let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water* (Hebrews 10:22), come *to the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). The water of separation sprinkled with hyssop is the shadow; the blood of sprinkling and the heart cleansed from an evil conscience is the substance — one continuous cleansing from the camp to the new covenant.', sv.verse_id, ev.verse_id, 'free', 23956
+  FROM _s312_num19_lookup sv, _s312_num19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=19 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-19-defiled-the-sanctuary-cut-off', E'Defiled the sanctuary — cut off', E'The chapter closes with a solemn guard: *the man that shall be unclean, and shall not purify himself, that soul shall be cut off from among the congregation, because he hath defiled the sanctuary of Yahuah (LORD): the water of separation hath not been sprinkled upon him; he is unclean* (Numbers 19:20). The purification is no ritual nicety — to refuse it is to defile the holy dwelling itself, and *whatsoever the unclean person toucheth shall be unclean* (19:22). This is the same holiness-guard that runs through Leviticus: *thus shall ye separate the children of Yashar''el (Israel) from their uncleanness; that they die not in their uncleanness, when they defile my tabernacle that is among them* (Leviticus 15:31). Yahuah dwells in the midst of his people, and his sanctuary must be kept undefiled; uncleanness left unpurged threatens both the dwelling and the life of the one who carries it. The water of separation shields the tabernacle — and the people who live in its presence.', sv.verse_id, ev.verse_id, 'free', 23959
+  FROM _s312_num19_lookup sv, _s312_num19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=19 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Hebrews 9:13 — *the ashes of an heifer sprinkling the unclean, sanctifieth to the purifying of the flesh*: the rite named outright as a true purifying of the flesh.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=9
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-the-red-heifer-the-cleansing-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 9:14 — *how much more shall the blood of Messiah... purge your conscience from dead works*: the heifer without spot fulfilled in the One who offered himself without spot.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=9
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-the-red-heifer-the-cleansing-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 13:11 — *the bodies of those beasts... are burned without the camp*: the place of the heifer''s burning read as the pattern of the fulfillment.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=3
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-the-red-heifer-the-cleansing-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 13:12 — *Yahusha... suffered without the gate*: the Formed Son fulfilling the heifer slain outside the camp.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=3
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-the-red-heifer-the-cleansing-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Leviticus 14:4 — *cedar wood, and scarlet, and hyssop*: the same three elements the heifer-burning uses, in the leper-cleansing rite.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=6
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=14 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-the-red-heifer-the-cleansing-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Leviticus 14:6 — *the cedar wood, and the scarlet, and the hyssop... over the running water*: cedar, scarlet, hyssop dipped in blood over running water, binding the heifer to the whole sanctifying system.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=6
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-the-red-heifer-the-cleansing-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 5:2 — *whosoever is defiled by the dead*: death-defilement is the very thing that puts a man out of the camp.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-death-defileth-the-water-of-separation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Haggai 2:13 — *if one that is unclean by a dead body touch any of these... It shall be unclean*: death''s defilement is contagious, spreading to whatever it touches.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=13
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='haggai' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-death-defileth-the-water-of-separation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 51:7 — *Purge me with hyssop, and I shall be clean*: David prays the hyssop-sprinkling rite into the inner man.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-purge-me-with-hyssop-the-water-of-sprinkling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Ezekiel 36:25 — *then will I sprinkle clean water upon you, and ye shall be clean*: the sprinkled water lifted to the new-covenant cleansing of the heart.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-purge-me-with-hyssop-the-water-of-sprinkling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 10:22 — *having our hearts sprinkled from an evil conscience, and our bodies washed with pure water*: the outward sprinkling become the inward cleansing that lets the people draw near.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-purge-me-with-hyssop-the-water-of-sprinkling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 12:24 — *the blood of sprinkling, that speaketh better things than that of Abel*: the water of separation''s shadow fulfilled in the Messiah''s blood of sprinkling.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=19
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-purge-me-with-hyssop-the-water-of-sprinkling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 15:31 — *that they die not in their uncleanness, when they defile my tabernacle that is among them*: the same holiness-guard — uncleanness left unpurged defiles the dwelling of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s312_num19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=19 AND sv.verse_number=20
+  JOIN _s312_num19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=15 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-19-defiled-the-sanctuary-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_20.sql (Numbers 20) -----
+-- Chapter: Numbers 20  |  tag: num20  |  session prefix: s312
+-- Sort band base 23975, step 3  (23975, 23978, 23981, 23984, 23987)
+--
+-- Numbers 20 coverage:
+--   v.1     (Miriam dies and is buried in Kadesh — the wilderness generation's leaders pass)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exodus 15:20 (Miriam the prophetess, the sister of Aaron),
+--                Numbers 26:59 (Jochebed bare Aaron and Moses, and Miriam their sister)
+--   v.2-11  (★★ THE WATER FROM THE ROCK at Meribah — speak to the rock / Moses smites it twice)
+--        NT:     1 Corinthians 10:4 (that Rock was Messiah), John 7:37-38 (rivers of living water)
+--        Extras: none warranted
+--        Tanakh: Exodus 17:6 (the first rock smitten at Horeb), Psalm 78:15-16 (he clave the rocks),
+--                Psalm 78:20 (he smote the rock, the waters gushed out), Psalm 105:41 (he opened the rock)
+--   v.12-13 (★ because ye believed me not, to sanctify me — Moses and Aaron barred; waters of strife)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 106:32-33 (it went ill with Moses, he spake unadvisedly with his lips),
+--                Deuteronomy 32:51 (ye sanctified me not at the waters of Meribah-Kadesh),
+--                Numbers 27:14 (ye rebelled... to sanctify me at the water before their eyes)
+--   v.14-21 (EDOM refuses the brother passage, though appealed as 'thy brother Yashar'el')
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 2:4-5 (your brethren the children of Esau — meddle not with them),
+--                Obadiah 1:10-12 (for thy violence against thy brother Jacob)
+--   v.22-29 (★ AARON dies on Hor, garments stripped onto Eleazar — the priesthood passes by death)
+--        NT:     Hebrews 7:23-24 (many priests, because not suffered to continue by reason of death /
+--                this man continueth ever, hath an unchangeable priesthood)
+--        Extras: none warranted
+--        Tanakh: Numbers 33:38 (Aaron went up into mount Hor and died there),
+--                Deuteronomy 10:6 (there Aaron died, and Eleazar ministered in his stead)
+--
+-- THREADS (5):
+--   numbers-20-miriam-died-there-the-wilderness-generations-leaders-pass
+--        members: Exod15:20 (Tanakh), Num26:59 (Tanakh) -> tier free
+--   numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah
+--        members: Exod17:6 (Tanakh), Ps78:15 (Tanakh), Ps78:16 (Tanakh), Ps78:20 (Tanakh),
+--                 Ps105:41 (Tanakh); 1Cor10:4, John7:37, John7:38 (NT) -> tier free
+--   numbers-20-because-ye-believed-me-not-to-sanctify-me-moses-barred
+--        members: Ps106:32 (Tanakh), Ps106:33 (Tanakh), Deut32:51 (Tanakh), Num27:14 (Tanakh) -> tier free
+--   numbers-20-edom-refused-his-brother-passage-the-brother-denied
+--        members: Deut2:4 (Tanakh), Deut2:5 (Tanakh), Obad1:10 (Tanakh), Obad1:11 (Tanakh),
+--                 Obad1:12 (Tanakh) -> tier free
+--   numbers-20-aaron-died-on-mount-hor-the-priesthood-that-passes-by-death
+--        members: Num33:38 (Tanakh), Deut10:6 (Tanakh); Heb7:23, Heb7:24 (NT) -> tier free
+--
+-- Framework notes: Chapter 20 is the chapter of passings and of the Rock. (1) Miriam dies at Kadesh —
+-- the prophetess of the Red-sea song (Exod 15:20), one of the three siblings Jochebed bare (Num 26:59);
+-- the generation's leaders begin to be gathered. (2) THE KEYSTONE — the water from the rock. Yahuah
+-- says TAKE THE ROD but SPEAK to the rock; Moses says *must we fetch you water out of this rock?* and
+-- SMITES it twice. The water comes abundantly. The smitten/spoken Rock that gives living water is the
+-- Formed Son: *that spiritual Rock that followed them: and that Rock was Messiah* (1 Cor 10:4); *out of
+-- his belly shall flow rivers of living water* (John 7:38). The first rock at Horeb (Exod 17:6) WAS to be
+-- smitten; this one only spoken to — the type of the One smitten once, thereafter to be called upon. The
+-- psalms sing it (Ps 78:15-16,20; 105:41). (3) The cost: *because ye believed me not, to sanctify me*
+-- Moses and Aaron are barred from the land — the gravity of hallowing Yahuah before the people; Ps 106
+-- weighs Moses' part (*he spake unadvisedly with his lips*), Deut 32:51 and Num 27:14 fix the charge.
+-- This is conduct WITHIN the covenant, the leader held to the higher standard, NOT Torah-as-curse. (4) Edom
+-- denies the brother — Yashar'el appeals *thy brother Yashar'el* and Esau answers with the sword; Deut 2
+-- and Obadiah carry the brother-against-brother seed-war (Esau's violence against his brother Jacob). (5)
+-- Aaron dies on Hor, his garments stripped onto Eleazar — the mortal priests who pass by death, the type
+-- broken by *this man, because he continueth ever, hath an unchangeable priesthood* (Heb 7:24). All members
+-- canon -> every thread tier free.
+
+CREATE TEMP VIEW _s312_num20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Miriam died there — the wilderness generation's leaders pass
+    ('canon','numbers',20,1,'canon','exodus',15,20,'free',
+      E'*And Miriam the prophetess, the sister of Aaron, took a timbrel in her hand; and all the women went out after her with timbrels and with dances* (Exodus 15:20). The Miriam who led the women in the song at the Red sea is the Miriam now buried: *and the people abode in Kadesh; and Miriam died there, and was buried there* (Numbers 20:1). The prophetess of the deliverance does not enter the land — the leaders of the wilderness generation begin to be gathered.'),
+    ('canon','numbers',20,1,'canon','numbers',26,59,'free',
+      E'*And the name of Amram''s wife was Jochebed, the daughter of Levi... and she bare unto Amram Aaron and Moses, and Miriam their sister* (Numbers 26:59). The three siblings Jochebed bare — Aaron, Moses, and Miriam — are the leaders of the Exodus; in this one chapter the first two of the three (Miriam, then Aaron) are gathered to their people. *Miriam died there, and was buried there* (Numbers 20:1).'),
+    -- Thread 2: ★★ the water from the rock at Meribah — that Rock was Messiah
+    ('canon','numbers',20,8,'canon','exodus',17,6,'free',
+      E'*Behold, I will stand before thee there upon the rock in Horeb; and thou shalt smite the rock, and there shall come water out of it, that the people may drink* (Exodus 17:6). At the FIRST rock, at Horeb, Yahuah commanded Moses to SMITE it. Here at the second, near the end of the forty years, the command is changed — *speak ye unto the rock before their eyes; and it shall give forth his water* (Numbers 20:8). The first rock smitten, the second only to be spoken to: the type of the One smitten once, thereafter to be called upon.'),
+    ('canon','numbers',20,11,'canon','1-corinthians',10,4,'free',
+      E'*And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). Paul reads the rock that gave Yashar''el (Israel) water — *the water came out abundantly, and the congregation drank, and their beasts also* (Numbers 20:11) — as the Formed Son Himself: the Rock that followed them through the wilderness, the One from whom the living water flowed, was Messiah.'),
+    ('canon','numbers',20,11,'canon','john',7,37,'free',
+      E'*In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink* (John 7:37). The water that *came out abundantly* from the rock (Numbers 20:11) finds its fulfillment in the One who stands at the feast and offers Himself as the source: let the thirsty come to Him and drink. The smitten Rock of the wilderness is the One now crying in the temple.'),
+    ('canon','numbers',20,11,'canon','john',7,38,'free',
+      E'*He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:38). The rock yielded *water... abundantly* (Numbers 20:11); the Formed Son yields *rivers of living water* — and not from a rock in the desert only but from within those who believe. The wilderness sign becomes the indwelling reality: the Rock that gave water is Messiah, and from Him the rivers flow.'),
+    ('canon','numbers',20,11,'canon','psalms',78,15,'free',
+      E'*He clave the rocks in the wilderness, and gave them drink as out of the great depths* (Psalm 78:15). The wilderness psalm sings the wonder of the rock that gave water: He clave the rock and brought drink as from the great deep — the same marvel of Numbers 20:11, *with his rod he smote the rock twice: and the water came out abundantly*.'),
+    ('canon','numbers',20,11,'canon','psalms',78,16,'free',
+      E'*He brought streams also out of the rock, and caused waters to run down like rivers* (Psalm 78:16). The streams running down like rivers are the abundant water of Numbers 20:11 — *the water came out abundantly, and the congregation drank, and their beasts also*. Psalm 78 makes the rock-water a standing testimony of Yahuah''s provision in the waste.'),
+    ('canon','numbers',20,11,'canon','psalms',78,20,'free',
+      E'*Behold, he smote the rock, that the waters gushed out, and the streams overflowed* (Psalm 78:20). Psalm 78 names the very act — He smote the rock and the waters gushed out — that fills Numbers 20:11: *he smote the rock twice: and the water came out abundantly*. The provision was real and overflowing, even where the people doubted.'),
+    ('canon','numbers',20,11,'canon','psalms',105,41,'free',
+      E'*He opened the rock, and the waters gushed out; they ran in the dry places like a river* (Psalm 105:41). Psalm 105 remembers the rock-water as covenant faithfulness: He opened the rock and the waters ran in the dry places like a river — the same gushing abundance of Numbers 20:11, given to the covenant people in the wilderness.'),
+    -- Thread 3: ★ because ye believed me not, to sanctify me — Moses barred
+    ('canon','numbers',20,12,'canon','psalms',106,32,'free',
+      E'*They angered him also at the waters of strife, so that it went ill with Moses for their sakes* (Psalm 106:32). The psalm names the waters of strife — Meribah — and the cost to Moses: *it went ill with Moses for their sakes*. So the sentence of Numbers 20:12: *because ye believed me not, to sanctify me in the eyes of the children of Yashar''el (Israel), therefore ye shall not bring this congregation into the land*.'),
+    ('canon','numbers',20,12,'canon','psalms',106,33,'free',
+      E'*Because they provoked his spirit, so that he spake unadvisedly with his lips* (Psalm 106:33). Psalm 106 weighs Moses'' own part: the people provoked his spirit until he spake unadvisedly — *Hear now, ye rebels; must we fetch you water out of this rock?* (Numbers 20:10). The leader, held to the higher standard, did not sanctify Yahuah before their eyes, and was barred.'),
+    ('canon','numbers',20,12,'canon','deuteronomy',32,51,'free',
+      E'*Because ye trespassed against me among the children of Yashar''el (Israel) at the waters of Meribah-Kadesh, in the wilderness of Zin; because ye sanctified me not in the midst of the children of Yashar''el (Israel)* (Deuteronomy 32:51). Yahuah''s own later word fixes the charge exactly as it stands here — *because ye believed me not, to sanctify me* (Numbers 20:12). The failure was not magnitude of sin but the failure to hallow Yahuah before the people who watched.'),
+    ('canon','numbers',20,12,'canon','numbers',27,14,'free',
+      E'*For ye rebelled against my commandment in the desert of Zin, in the strife of the congregation, to sanctify me at the water before their eyes: that is the water of Meribah in Kadesh in the wilderness of Zin* (Numbers 27:14). When Yahuah later appoints Joshua, He repeats the reason Moses cannot enter — *to sanctify me at the water before their eyes* — the same sentence first spoken in Numbers 20:12.'),
+    -- Thread 4: Edom refused his brother passage — the brother denied
+    ('canon','numbers',20,21,'canon','deuteronomy',2,4,'free',
+      E'*And command thou the people, saying, Ye are to pass through the coast of your brethren the children of Esau, which dwell in Seir; and they shall be afraid of you: take ye good heed unto yourselves therefore* (Deuteronomy 2:4). Deuteronomy frames Edom as *your brethren the children of Esau* — the very kinship Moses pleads here, *Thus saith thy brother Yashar''el (Israel)* (Numbers 20:14). Yet the brother refused: *Thus Edom refused to give Yashar''el (Israel) passage through his border* (Numbers 20:21).'),
+    ('canon','numbers',20,21,'canon','deuteronomy',2,5,'free',
+      E'*Meddle not with them; for I will not give you of their land, no, not so much as a foot breadth; because I have given mount Seir unto Esau for a possession* (Deuteronomy 2:5). Yahuah forbade Yashar''el (Israel) to seize Edom''s land — Esau had his given possession. So when Edom refused the brother, *Yashar''el (Israel) turned away from him* (Numbers 20:21) rather than force the passage. The brother is spared even in his refusal.'),
+    ('canon','numbers',20,18,'canon','obadiah',1,10,'free',
+      E'*For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10). Edom''s refusal here — *Thou shalt not pass by me, lest I come out against thee with the sword* (Numbers 20:18) — is the early seed of the violence Obadiah indicts: the brother who answers his own kin with the sword. The denial of passage grows into the violence against Jacob that shame shall cover.'),
+    ('canon','numbers',20,18,'canon','obadiah',1,11,'free',
+      E'*In the day that thou stoodest on the other side, in the day that the strangers carried away captive his forces... even thou wast as one of them* (Obadiah 1:11). The brother who *came out against him... with a strong hand* (Numbers 20:20) and barred the way is the same Edom who would later stand on the other side against Jacob in his calamity — kin made enemy, the seed-war of Esau against Yashar''el (Israel).'),
+    ('canon','numbers',20,18,'canon','obadiah',1,12,'free',
+      E'*But thou shouldest not have looked on the day of thy brother in the day that he became a stranger; neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction* (Obadiah 1:12). The brotherly bond Moses invoked — *thy brother Yashar''el (Israel)* (Numbers 20:14) — is the bond Obadiah says Edom betrayed. The refusal of the sword-threat (Numbers 20:18) is the beginning of the brother who gloated over his brother''s day.'),
+    -- Thread 5: ★ Aaron died on mount Hor — the priesthood that passes by death
+    ('canon','numbers',20,28,'canon','numbers',33,38,'free',
+      E'*And Aaron the priest went up into mount Hor at the commandment of Yahuah (LORD), and died there, in the fortieth year after the children of Yashar''el (Israel) were come out of the land of Egypt, in the first day of the fifth month* (Numbers 33:38). The travel-record fixes Aaron''s death exactly where this chapter places it — on mount Hor, by Yahuah''s word: *and Aaron died there in the top of the mount* (Numbers 20:28). The first high priest dies short of the land.'),
+    ('canon','numbers',20,28,'canon','deuteronomy',10,6,'free',
+      E'*And the children of Yashar''el (Israel) took their journey... there Aaron died, and there he was buried; and Eleazar his son ministered in the priest''s office in his stead* (Deuteronomy 10:6). Deuteronomy records the succession this chapter enacts: Aaron dies and Eleazar ministers in his stead — *And Moses stripped Aaron of his garments, and put them upon Eleazar his son* (Numbers 20:28). The office passes from father to son because the priest himself must die.'),
+    ('canon','numbers',20,28,'canon','hebrews',7,23,'free',
+      E'*And they truly were many priests, because they were not suffered to continue by reason of death* (Hebrews 7:23). The stripping of Aaron''s garments onto Eleazar — *Aaron died there in the top of the mount* (Numbers 20:28) — is the very thing Hebrews names: the Aaronic priests were MANY because each was cut short by death, the office handed on grave by grave.'),
+    ('canon','numbers',20,28,'canon','hebrews',7,24,'free',
+      E'*But this man, because he continueth ever, hath an unchangeable priesthood* (Hebrews 7:24). Against the priesthood that passes by death — Aaron stripped of his garments and gathered to his people (Numbers 20:28) — stands the abiding Priest who never dies and never hands on the office: He continueth ever, His priesthood unchangeable. The mortal type is broken by the One who lives forever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-20-miriam-died-there-the-wilderness-generations-leaders-pass',
+       E'Miriam died there — the wilderness generation''s leaders pass',
+       E'The chapter opens with a death and a burial: *Then came the children of Yashar''el (Israel), even the whole congregation, into the desert of Zin in the first month: and the people abode in Kadesh; and Miriam died there, and was buried there* (Numbers 20:1). The Miriam who is buried is the prophetess of the Red-sea deliverance — *And Miriam the prophetess, the sister of Aaron, took a timbrel in her hand; and all the women went out after her with timbrels and with dances* (Exodus 15:20) — and one of the three children Jochebed bare: *and she bare unto Amram Aaron and Moses, and Miriam their sister* (Numbers 26:59). The leaders of the Exodus generation now begin to be gathered to their people; before this one chapter is done, Aaron too will die. The generation that came out of Egypt does not enter the land — even its prophetess, even its priest.',
+       sv.verse_id, ev.verse_id, 'free', 23975
+  FROM _s312_num20_lookup sv, _s312_num20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=20 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah',
+       E'The water from the rock at Meribah — that Rock was Messiah',
+       E'This is the keystone of the chapter and one of the great types of the Tanakh. The congregation has no water and chides; the glory of Yahuah appears, and the command comes: *Take the rod, and gather thou the assembly together... and speak ye unto the rock before their eyes; and it shall give forth his water* (Numbers 20:8). At the FIRST rock, years before at Horeb, Yahuah had said *thou shalt smite the rock* (Exodus 17:6) — but this second rock is only to be SPOKEN to. Moses, provoked, claims the work as his own and strikes instead: *Hear now, ye rebels; must we fetch you water out of this rock? And Moses lifted up his hand, and with his rod he smote the rock twice: and the water came out abundantly* (Numbers 20:10-11). The provision is real and overflowing — the psalms sing it as the wonder it is: *He clave the rocks in the wilderness, and gave them drink as out of the great depths* (Psalm 78:15); *He brought streams also out of the rock, and caused waters to run down like rivers* (Psalm 78:16); *Behold, he smote the rock, that the waters gushed out* (Psalm 78:20); *He opened the rock, and the waters gushed out; they ran in the dry places like a river* (Psalm 105:41). And the Rock that gave the water is named at last: *that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). The Formed Son was the source in the wilderness; He stands at the feast and cries, *If any man thirst, let him come unto me, and drink* (John 7:37), *out of his belly shall flow rivers of living water* (John 7:38). The first rock was smitten; the second was to be spoken to — the type of the One smitten once at the cross, thereafter only to be called upon. Moses'' striking of what should have been addressed defaces the type, and it costs him the land.',
+       sv.verse_id, ev.verse_id, 'free', 23978
+  FROM _s312_num20_lookup sv, _s312_num20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=20 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-20-because-ye-believed-me-not-to-sanctify-me-moses-barred',
+       E'Because ye believed me not, to sanctify me — Moses barred',
+       E'The cost is spoken at once: *And Yahuah (LORD) spake unto Moses and Aaron, Because ye believed me not, to sanctify me in the eyes of the children of Yashar''el (Israel), therefore ye shall not bring this congregation into the land which I have given them* (Numbers 20:12). The place is named for the strife: *This is the water of Meribah; because the children of Yashar''el (Israel) strove with Yahuah (LORD), and he was sanctified in them* (Numbers 20:13). The failure was not the magnitude of a sin but the failure to hallow Yahuah before the watching people — to take the glory of the gift, *must we fetch you water* (Numbers 20:10), as though the water were Moses'' and Aaron''s to give. Psalm 106 weighs both sides: the people''s provoking and Moses'' answer — *They angered him also at the waters of strife, so that it went ill with Moses for their sakes* (Psalm 106:32); *Because they provoked his spirit, so that he spake unadvisedly with his lips* (Psalm 106:33). Yahuah''s own later words fix the charge unchanged: *because ye sanctified me not in the midst of the children of Yashar''el (Israel)* (Deuteronomy 32:51); *to sanctify me at the water before their eyes: that is the water of Meribah* (Numbers 27:14). This is conduct held to account WITHIN the covenant — the leader bound to the higher standard, the holiness of Yahuah upheld even in His own servant''s discipline — never Torah made a curse.',
+       sv.verse_id, ev.verse_id, 'free', 23981
+  FROM _s312_num20_lookup sv, _s312_num20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=20 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-20-edom-refused-his-brother-passage-the-brother-denied',
+       E'Edom refused his brother passage — the brother denied',
+       E'Moses appeals to Edom on the ground of kinship: *Thus saith thy brother Yashar''el (Israel), Thou knowest all the travail that hath befallen us* (Numbers 20:14), and asks only safe passage by the king''s high way, offering even to pay for water. Edom answers with the sword: *Thou shalt not pass by me, lest I come out against thee with the sword* (Numbers 20:18), and *Edom came out against him with much people, and with a strong hand* (Numbers 20:20). So *Edom refused to give Yashar''el (Israel) passage through his border: wherefore Yashar''el (Israel) turned away from him* (Numbers 20:21). Yashar''el (Israel) did not force the brother''s land, for Yahuah had given Seir to Esau and forbidden the seizure: *Ye are to pass through the coast of your brethren the children of Esau* (Deuteronomy 2:4); *Meddle not with them... because I have given mount Seir unto Esau for a possession* (Deuteronomy 2:5). But the refusal of the brother is the early seed of a long enmity — the seed-war of Esau against Jacob that Obadiah indicts: *For thy violence against thy brother Jacob shame shall cover thee* (Obadiah 1:10); *In the day that thou stoodest on the other side... even thou wast as one of them* (Obadiah 1:11); *thou shouldest not have looked on the day of thy brother in the day that he became a stranger* (Obadiah 1:12). The kinship Moses invoked is the kinship Edom betrayed.',
+       sv.verse_id, ev.verse_id, 'free', 23984
+  FROM _s312_num20_lookup sv, _s312_num20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=20 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-20-aaron-died-on-mount-hor-the-priesthood-that-passes-by-death',
+       E'Aaron died on mount Hor — the priesthood that passes by death',
+       E'The chapter closes with the death of the first high priest. Yahuah commands the succession plainly: *Take Aaron and Eleazar his son, and bring them up unto mount Hor: And strip Aaron of his garments, and put them upon Eleazar his son: and Aaron shall be gathered unto his people, and shall die there* (Numbers 20:25-26). And so it is done: *And Moses stripped Aaron of his garments, and put them upon Eleazar his son; and Aaron died there in the top of the mount* (Numbers 20:28), and *all the congregation... mourned for Aaron thirty days* (Numbers 20:29). The travel-record fixes it — *Aaron the priest went up into mount Hor at the commandment of Yahuah (LORD), and died there, in the fortieth year* (Numbers 33:38) — and Deuteronomy records the handing-on: *there Aaron died, and there he was buried; and Eleazar his son ministered in the priest''s office in his stead* (Deuteronomy 10:6). The garments pass from father to son because the priest himself must die. Hebrews names exactly this as the weakness of the Aaronic line: *they truly were many priests, because they were not suffered to continue by reason of death* (Hebrews 7:23) — a priesthood handed on grave by grave. Against it stands the abiding Priest: *But this man, because he continueth ever, hath an unchangeable priesthood* (Hebrews 7:24). The mortal type, stripped of its garments on the mountain, is broken by the One who never dies.',
+       sv.verse_id, ev.verse_id, 'free', 23987
+  FROM _s312_num20_lookup sv, _s312_num20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=20 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: Miriam died there
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Miriam the prophetess, the sister of Aaron* (Exodus 15:20) — the prophetess of the Red-sea song is the Miriam now buried at Kadesh (Numbers 20:1).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=1
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-miriam-died-there-the-wilderness-generations-leaders-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*she bare unto Amram Aaron and Moses, and Miriam their sister* (Numbers 26:59) — the three siblings of the Exodus; the first two are gathered in this one chapter.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=1
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=59
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-miriam-died-there-the-wilderness-generations-leaders-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the water from the rock — that Rock was Messiah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt smite the rock, and there shall come water out of it* (Exodus 17:6) — the FIRST rock was to be smitten; this second one only spoken to (Numbers 20:8).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=8
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4) — Paul names the Rock that gave the water (Numbers 20:11) as the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*If any man thirst, let him come unto me, and drink* (John 7:37) — the One who gave water from the rock now offers Himself as the source.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*out of his belly shall flow rivers of living water* (John 7:38) — the rock''s abundant water (Numbers 20:11) becomes the indwelling rivers from Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He clave the rocks in the wilderness, and gave them drink as out of the great depths* (Psalm 78:15) — the psalm sings the rock-water of Numbers 20:11.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*He brought streams also out of the rock, and caused waters to run down like rivers* (Psalm 78:16) — the abundant water of Numbers 20:11.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*he smote the rock, that the waters gushed out, and the streams overflowed* (Psalm 78:20) — names the very act of Numbers 20:11.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*He opened the rock, and the waters gushed out; they ran in the dry places like a river* (Psalm 105:41) — the gushing abundance of Numbers 20:11 as covenant faithfulness.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-the-water-from-the-rock-at-meribah-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: because ye believed me not, to sanctify me
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*it went ill with Moses for their sakes* (Psalm 106:32) — the psalm names the waters of strife and the cost to Moses (Numbers 20:12).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-because-ye-believed-me-not-to-sanctify-me-moses-barred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*so that he spake unadvisedly with his lips* (Psalm 106:33) — weighs Moses'' part: ''Hear now, ye rebels'' (Numbers 20:10).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-because-ye-believed-me-not-to-sanctify-me-moses-barred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*because ye sanctified me not in the midst of the children of Yashar''el (Israel)* (Deuteronomy 32:51) — Yahuah''s later word fixes the charge of Numbers 20:12.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-because-ye-believed-me-not-to-sanctify-me-moses-barred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*to sanctify me at the water before their eyes: that is the water of Meribah* (Numbers 27:14) — the same sentence repeated when Joshua is appointed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-because-ye-believed-me-not-to-sanctify-me-moses-barred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: Edom refused his brother passage
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*your brethren the children of Esau, which dwell in Seir* (Deuteronomy 2:4) — the kinship Moses pleaded, ''thy brother Yashar''el'' (Numbers 20:14).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=21
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-edom-refused-his-brother-passage-the-brother-denied'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I have given mount Seir unto Esau for a possession* (Deuteronomy 2:5) — why Yashar''el turned away rather than seize the brother''s land (Numbers 20:21).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=21
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-edom-refused-his-brother-passage-the-brother-denied'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*For thy violence against thy brother Jacob shame shall cover thee* (Obadiah 1:10) — the sword-threat of Numbers 20:18 grows into Edom''s violence against the brother.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-edom-refused-his-brother-passage-the-brother-denied'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*even thou wast as one of them* (Obadiah 1:11) — Edom who came against Jacob with a strong hand (Numbers 20:20) stands against him again in his calamity.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-edom-refused-his-brother-passage-the-brother-denied'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*thou shouldest not have looked on the day of thy brother* (Obadiah 1:12) — the bond Moses invoked (Numbers 20:14) is the bond Edom betrayed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-edom-refused-his-brother-passage-the-brother-denied'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: Aaron died on mount Hor — the priesthood that passes by death
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Aaron the priest went up into mount Hor at the commandment of Yahuah (LORD), and died there, in the fortieth year* (Numbers 33:38) — the travel-record fixes Aaron''s death (Numbers 20:28).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=28
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=33 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-aaron-died-on-mount-hor-the-priesthood-that-passes-by-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there Aaron died... and Eleazar his son ministered in the priest''s office in his stead* (Deuteronomy 10:6) — the succession this chapter enacts (Numbers 20:28).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=28
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-aaron-died-on-mount-hor-the-priesthood-that-passes-by-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they truly were many priests, because they were not suffered to continue by reason of death* (Hebrews 7:23) — the Aaronic line handed on grave by grave (Numbers 20:28).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=28
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-aaron-died-on-mount-hor-the-priesthood-that-passes-by-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*this man, because he continueth ever, hath an unchangeable priesthood* (Hebrews 7:24) — the abiding Priest who breaks the mortal type stripped on the mountain (Numbers 20:28).'
+  FROM cross_reference_threads t
+  JOIN _s312_num20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=20 AND sv.verse_number=28
+  JOIN _s312_num20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-20-aaron-died-on-mount-hor-the-priesthood-that-passes-by-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session312 — Numbers cross-references complete.'
