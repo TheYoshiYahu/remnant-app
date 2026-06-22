@@ -89,6 +89,7 @@ Run: uvicorn main:app --reload
 
 from __future__ import annotations
 
+import os
 import re
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
@@ -125,6 +126,7 @@ from models import (
     ChapterEndThread,
     ChapterHighlightsResponse,
     ChapterSummary,
+    ContentVersionResponse,
     CreateHighlightRequest,
     CreateNoteRequest,
     CreateOrReplaceBookmarkRequest,
@@ -251,29 +253,30 @@ def _book_summary_from_row(row) -> BookSummary:
 #
 # The static reading content — verse text, the chapters list, the books
 # list, and the four chapter apparatus layers (cross-references, witness,
-# kingdom, words, commentary) — carried NO Cache-Control until this
-# session, so every chapter navigation (including back-button revisits)
-# re-fetched everything from the origin. These payloads are static and
-# versioned, so a browser-cache max-age is a free speed win for every
-# caller, online or off.
+# kingdom, words, commentary) — is served with `no-cache` so a browser
+# ALWAYS revalidates with the origin before reuse. It MAY keep a copy on
+# disk, but it must check freshness on every read.
 #
-# This matches the existing convention already on the public-domain tool
-# routes (lexicon / TSK / Naves / maps, all "public, max-age=86400").
-# The reading apparatus is actively curated under the publish-then-edit
-# posture, so it gets a shorter 6-hour window — long enough to collapse
-# the round-trips on a reading session, short enough that an apparatus
-# edit propagates the same day. The client's IndexedDB read-through cache
-# (app/src/lib/contentCache.ts) is the instant-paint layer on top of this
-# and revalidates in the background; this header is the origin-offload
-# backstop underneath it.
+# Why not a max-age window (this used to be "public, max-age=21600" / 6h):
+# the apparatus is actively curated under the publish-then-edit posture
+# AND the book list itself changes when books are published/suppressed.
+# A multi-hour max-age meant a deploy (or a curated edit, or a newly
+# visible book) could be invisible to a partner for hours — they were
+# stuck on a stale cached menu until they manually cleared the browser
+# cache. That is exactly the failure this session fixes. `no-cache` makes
+# every reading payload self-heal on next open with no manual clear.
 #
-# `public` is consistent with the tier-gated tool routes above it: there
-# is no shared CDN in front of the API (Render direct service), so the
-# only cache is each browser's private store. Tier gating stays enforced
-# at the application layer on every request — the header only governs how
-# long a browser may reuse the exact payload the origin already returned
-# to that same client.
-READING_CACHE_CONTROL = "public, max-age=21600"  # 6 hours
+# Offline is unaffected: HTTP `no-cache` only governs the browser's own
+# disk cache. The instant-paint + offline layer is the client's IndexedDB
+# read-through cache (app/src/lib/contentCache.ts), which serves stored
+# content with zero network and is refreshed by the content-version sweep
+# (see /v1/content-version below), not by this header.
+#
+# `public` is dropped (it implied a shared cache could store the payload);
+# tier gating stays enforced at the application layer on every request
+# regardless. There is no shared CDN in front of the API (Render direct
+# service), so the only cache was ever each browser's private store.
+READING_CACHE_CONTROL = "no-cache"
 
 
 # ----- Health -------------------------------------------------------------
@@ -304,6 +307,48 @@ async def health() -> HealthResponse:
         db_reachable=db_reachable,
         checked_at=datetime.now(timezone.utc),
     )
+
+
+# ----- Content version (client cache self-heal) ---------------------------
+#
+# A tiny, always-fresh token the PWA reads on every cold open to decide
+# whether its local caches are stale. The client stores the last value it
+# saw; when the token changes it purges its IndexedDB read-through cache +
+# any service-worker caches and refetches, so a deploy reaches every user
+# on next open with NO manual "clear cache" / reinstall (the failure mode
+# that bit us when a newly published book list stayed invisible behind a
+# stale cache). See app/src/lib/contentVersion.ts.
+#
+# Source of the token: Render injects RENDER_GIT_COMMIT into every service
+# at build/deploy time, and this repo's PWA + API both autoDeploy on each
+# push to main — so the commit SHA bumps on every deploy (a frontend
+# change, a curated-content edit, a new migration), which is exactly the
+# granularity we want. We fold in the DB schema_version as a secondary
+# signal so an out-of-band data reseed (which need not redeploy the
+# service) still invalidates. Falls back to the FastAPI app version when
+# the env var is absent (local dev), so the endpoint is never empty.
+#
+# Cache-Control: no-store — the token must never itself be cached, or the
+# whole self-heal mechanism would be defeated by a stale token.
+CONTENT_VERSION_BASE = os.environ.get("RENDER_GIT_COMMIT") or app.version
+
+
+@app.get("/v1/content-version", response_model=ContentVersionResponse)
+async def content_version(response: Response) -> ContentVersionResponse:
+    """Opaque token the client compares against its last-seen value to
+    decide whether to purge + refetch its local content caches."""
+    schema_version: Optional[str] = None
+    try:
+        pool = get_pool()
+        async with pool.acquire() as conn:
+            schema_version = await conn.fetchval(
+                "SELECT version FROM schema_version WHERE id = 1"
+            )
+    except Exception:
+        schema_version = None
+    token = f"{CONTENT_VERSION_BASE}:{schema_version or 'na'}"
+    response.headers["Cache-Control"] = "no-store"
+    return ContentVersionResponse(version=token)
 
 
 # ----- Books --------------------------------------------------------------

@@ -36,15 +36,21 @@ import {
   clearArea,
   clearManifest,
   DOWNLOAD_AREAS,
-  DownloadPausedError,
   isAreaUnlocked,
-  readManifest,
-  runDownload,
   type DownloadArea,
   type DownloadAreaId,
   type DownloadProgress,
   type DownloadState,
 } from "../lib/offlineDownload";
+import {
+  abortDownload,
+  configureDownloadManager,
+  forgetAll,
+  forgetArea,
+  pauseDownload,
+  startDownload,
+  subscribeDownloadManager,
+} from "../lib/downloadManager";
 
 // ----- formatting ---------------------------------------------------------
 
@@ -93,15 +99,18 @@ export default function DownloadsSettings() {
   const [tierChecked, setTierChecked] = useState(false);
   const [stats, setStats] = useState<CacheStats | null>(null);
   const [areas, setAreas] = useState<Record<string, AreaUi>>({});
-  // One AbortController per in-flight download, so Pause can target it.
-  const controllers = useRef<Record<string, AbortController>>({});
+  // Track the active download across snapshots so we can refresh the storage
+  // tally exactly when a run finishes (rather than polling).
+  const prevActive = useRef<DownloadAreaId | null>(null);
 
   const refreshStats = useCallback(async () => {
     setStats(await getCacheStats());
   }, []);
 
-  // Resolve the partner tier, activate the cache scope under it, then seed the
-  // UI from the persisted manifest + measure what's already stored.
+  // Resolve the partner tier, activate the cache scope under it, hand the tier
+  // to the background download manager, then measure what's already stored.
+  // Downloads now run in the module-level manager (lib/downloadManager.ts), not
+  // this component — so leaving this screen never stops or hides a download.
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -116,24 +125,9 @@ export default function DownloadsSettings() {
       setTier(resolved);
       setTierChecked(true);
       setContentCacheScope(resolved ?? "free");
-
-      const manifest = readManifest();
-      const seeded: Record<string, AreaUi> = {};
-      for (const [id, entry] of Object.entries(manifest)) {
-        if (!entry) continue;
-        // A tier change invalidates a prior tier's download badge.
-        if (entry.tier !== resolved) continue;
-        seeded[id] = {
-          // A run interrupted by a reload (left "running") reads as paused.
-          state: entry.state === "running" ? "paused" : entry.state,
-          chaptersTotal: entry.chaptersTotal,
-          chaptersDone: entry.chaptersDone,
-          booksTotal: entry.booksTotal,
-          booksDone: entry.booksDone,
-          bytes: entry.bytes,
-        };
-      }
-      setAreas(seeded);
+      // Idempotent — App.tsx also configures the manager on boot; this covers
+      // the case where Settings is the first surface to resolve the tier.
+      configureDownloadManager(resolved);
       await refreshStats();
     })();
     return () => {
@@ -141,63 +135,58 @@ export default function DownloadsSettings() {
     };
   }, [refreshStats]);
 
+  // Subscribe to the background manager: its live progress (seeded from the
+  // persisted manifest, then updated as the loop runs) drives every area row.
+  useEffect(() => {
+    const unsub = subscribeDownloadManager((snap) => {
+      setAreas(() => {
+        const next: Record<string, AreaUi> = {};
+        for (const [id, p] of Object.entries(snap.progress)) {
+          if (p) next[id] = uiFromProgress(p);
+        }
+        return next;
+      });
+      // A download just finished/paused (active → idle) — re-measure storage.
+      const nowActive = snap.activeAreaId;
+      if (prevActive.current && prevActive.current !== nowActive) {
+        void refreshStats();
+      }
+      prevActive.current = nowActive;
+    });
+    return unsub;
+  }, [refreshStats]);
+
   const start = useCallback(
     (id: DownloadAreaId) => {
-      const ac = new AbortController();
-      controllers.current[id] = ac;
-      setAreas((prev) => ({
-        ...prev,
-        [id]: { ...(prev[id] ?? blankUi()), state: "running", error: undefined },
-      }));
-      runDownload(id, tier, {
-        signal: ac.signal,
-        onProgress: (p) =>
-          setAreas((prev) => ({ ...prev, [id]: uiFromProgress(p) })),
-      })
-        .then(() => {
-          void refreshStats();
-        })
-        .catch((err) => {
-          if (err instanceof DownloadPausedError) return; // manifest already paused
-          setAreas((prev) => ({
-            ...prev,
-            [id]: {
-              ...(prev[id] ?? blankUi()),
-              state: "error",
-              error: err instanceof Error ? err.message : String(err),
-            },
-          }));
-        })
-        .finally(() => {
-          delete controllers.current[id];
-        });
+      // "Re-download" (the area is already fully downloaded) forces a fresh
+      // refetch of every layer — otherwise runDownload would skip everything
+      // already cached and the tap would be a no-op. A fresh/resumed download
+      // skips cached layers as before so it picks up where it left off.
+      const force = areas[id]?.state === "done";
+      startDownload(id, { force });
     },
-    [tier, refreshStats],
+    [areas],
   );
 
   const pause = useCallback((id: DownloadAreaId) => {
-    controllers.current[id]?.abort();
+    pauseDownload(id);
   }, []);
 
   const clearOne = useCallback(
     async (id: DownloadAreaId) => {
-      controllers.current[id]?.abort();
+      abortDownload(id);
       await clearArea(id);
-      setAreas((prev) => {
-        const next = { ...prev };
-        delete next[id];
-        return next;
-      });
+      forgetArea(id);
       await refreshStats();
     },
     [refreshStats],
   );
 
   const clearEverything = useCallback(async () => {
-    for (const ac of Object.values(controllers.current)) ac.abort();
+    for (const area of DOWNLOAD_AREAS) abortDownload(area.id);
     await clearAllCache();
     clearManifest();
-    setAreas({});
+    forgetAll();
     await refreshStats();
   }, [refreshStats]);
 
@@ -274,17 +263,6 @@ export default function DownloadsSettings() {
       </p>
     </section>
   );
-}
-
-function blankUi(): AreaUi {
-  return {
-    state: "idle",
-    chaptersTotal: 0,
-    chaptersDone: 0,
-    booksTotal: 0,
-    booksDone: 0,
-    bytes: 0,
-  };
 }
 
 // ----- one area row --------------------------------------------------------

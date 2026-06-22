@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   type BookChaptersResponse,
   type Bookmark,
@@ -43,6 +43,11 @@ import { loadStoredNativeToken } from "./lib/native-auth";
 import { openGiving } from "./lib/giving.ts";
 import OfflineDownloadPrompt from "./components/OfflineDownloadPrompt";
 import { readThrough, setContentCacheScope } from "./lib/contentCache";
+import {
+  configureDownloadManager,
+  resumeInterruptedDownloads,
+} from "./lib/downloadManager";
+import { checkContentVersionAndHeal } from "./lib/contentVersion";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ReaderDivider from "./components/ReaderDivider";
 import WitnessCard from "./components/WitnessCard";
@@ -258,6 +263,15 @@ function isExcludedUnbuiltBook(b: BookSummary): boolean {
     b.edition_slug === "lightfoot-apostolic-fathers" && b.slug === "barnabas"
   );
 }
+
+// S353 — last-good book list, mirrored to localStorage. /v1/books is now
+// `no-cache` (so a newly published / suppressed book reaches the picker on
+// next open instead of hiding behind a multi-hour HTTP cache), which means
+// the HTTP layer no longer serves the menu offline. This mirror is the
+// offline fallback: when the live fetch fails (no connection) the picker
+// falls back to the last list it successfully loaded, so downloaded readers
+// can still navigate the library offline.
+const BOOKS_CACHE_KEY = "rop_books_cache_v1";
 
 // S204b — the four partner-choosable Witness verse treatments.
 type WitnessStyle = "text" | "quotes" | "highlight" | "capsule";
@@ -835,6 +849,9 @@ function Reader() {
   // partner never sees a "Sign in" flicker before their real CTA paints.
   const [me, setMe] = useState<SubscriptionMe | null>(null);
   const [meChecked, setMeChecked] = useState<boolean>(false);
+  // S353 — guards the once-per-load content-version self-heal (the scope
+  // effect re-runs on tier changes; the heal must run only once).
+  const contentHealedRef = useRef(false);
   // S168 — §28 Companion-gate flag, depends on `me`. Computed once per
   // render; cheap literal-string compare. Drives the Interlinear pill's
   // live-vs-locked render + the InterlinearWordColumn mount branch.
@@ -1593,29 +1610,50 @@ function Reader() {
   // extras chapter). Awaiting the token attaches the Bearer header so the full
   // 153-book corpus returns. On web loadStoredNativeToken() resolves immediately
   // with null (no-op), so the cookie/credentials path is unaffected.
+  // Load (or reload) the book list. Mirrors a successful fetch to
+  // localStorage and, on failure (offline — /v1/books is now no-cache so the
+  // HTTP layer won't serve it offline), falls back to that mirror so the
+  // picker still works without a connection. Re-callable: the content-version
+  // sweep calls it again after a deploy so the menu refreshes immediately.
+  const loadBooks = useCallback(async () => {
+    const filterVisible = (bs: BookSummary[]) =>
+      bs.filter((b) => !isSuppressedDuplicate(b) && !isExcludedUnbuiltBook(b));
+    try {
+      const bs = await listBooks();
+      setBooks(filterVisible(bs));
+      setBooksError(null);
+      try {
+        localStorage.setItem(BOOKS_CACHE_KEY, JSON.stringify(bs));
+      } catch {
+        /* storage full / disabled — offline fallback just won't be available */
+      }
+    } catch (e) {
+      // Offline fallback: serve the last good list so the library is still
+      // navigable without a connection.
+      try {
+        const raw = localStorage.getItem(BOOKS_CACHE_KEY);
+        if (raw) {
+          setBooks(filterVisible(JSON.parse(raw) as BookSummary[]));
+          setBooksError(null);
+          return;
+        }
+      } catch {
+        /* corrupt mirror — fall through to surfacing the error */
+      }
+      setBooksError(String(e));
+    }
+  }, []);
+
   useEffect(() => {
     let cancelled = false;
     void loadStoredNativeToken().then(() => {
       if (cancelled) return;
-      listBooks()
-        .then((bs) => {
-          if (cancelled) return;
-          setBooks(
-            bs.filter(
-              (b) => !isSuppressedDuplicate(b) && !isExcludedUnbuiltBook(b),
-            ),
-          );
-          setBooksError(null);
-        })
-        .catch((e) => {
-          if (cancelled) return;
-          setBooksError(String(e));
-        });
+      void loadBooks();
     });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [loadBooks]);
 
   // /v1/subscriptions/me once on mount. Failure is silent — anonymous
   // reader still works as before; the chrome just hides the partner
@@ -1665,8 +1703,26 @@ function Reader() {
   // once the entitlement is settled.
   useEffect(() => {
     if (!meChecked) return;
-    setContentCacheScope(me?.tier ?? "free");
-  }, [meChecked, me?.tier]);
+    const resolvedTier = me?.tier ?? "free";
+    setContentCacheScope(resolvedTier);
+    // S353 — hand the resolved tier to the background download manager and
+    // resume any download interrupted by a prior reload / background-kill, so
+    // a download the partner started keeps going across launches without them
+    // having to revisit the Downloads screen.
+    configureDownloadManager(resolvedTier);
+    resumeInterruptedDownloads();
+    // S353 — content-version self-heal: once per app load, after the scope +
+    // manager are set, compare the server token to the last-seen value and
+    // purge/refresh stale local caches if a deploy changed it. When something
+    // was purged, refetch the book list so the picker is immediately fresh
+    // (the actual menu-staleness Yoshi had to hand-clear). Never throws.
+    if (!contentHealedRef.current) {
+      contentHealedRef.current = true;
+      void checkContentVersionAndHeal().then((res) => {
+        if (res.changed) void loadBooks();
+      });
+    }
+  }, [meChecked, me?.tier, loadBooks]);
 
   // S116 — hydrate saved reading position on mount. Resolution order
   // (handled inside loadInitialPosition): API row → localStorage row

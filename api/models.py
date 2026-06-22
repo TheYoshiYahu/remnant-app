@@ -169,6 +169,14 @@ class HealthResponse(BaseModel):
     checked_at: datetime
 
 
+class ContentVersionResponse(BaseModel):
+    """Opaque cache-busting token (see /v1/content-version). The client
+    treats `version` as opaque — it only checks whether it CHANGED, never
+    parses it — so the server is free to compose it however it likes."""
+
+    version: str
+
+
 # ----- Chapter-end cross-reference card (Session 73 schema, S74 endpoint) -
 
 

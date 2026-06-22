@@ -643,6 +643,31 @@ export function getHealth(): Promise<HealthResponse> {
   return get<HealthResponse>("/health");
 }
 
+export interface ContentVersionResponse {
+  version: string;
+}
+
+/**
+ * Fetch the server's opaque content-version token (see lib/contentVersion.ts).
+ *
+ * Bypasses BOTH the HTTP cache (`cache: "no-store"`) and the shared get()
+ * helper, because the whole point of the token is to be always-fresh: a
+ * cached token would defeat the stale-content self-heal it gates. No auth
+ * header is needed — the token is the same for every caller. A network
+ * failure (offline) rejects, and the caller treats that as "can't check,
+ * leave the local caches alone" so offline reading is never disturbed.
+ */
+export async function getContentVersion(): Promise<ContentVersionResponse> {
+  const res = await fetch(`${API_BASE}/content-version`, {
+    headers: { Accept: "application/json" },
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error(`API /content-version → ${res.status} ${res.statusText}`);
+  }
+  return (await res.json()) as ContentVersionResponse;
+}
+
 /**
  * Fetch the requester's most-recent subscription row.
  *

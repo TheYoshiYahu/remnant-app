@@ -292,6 +292,15 @@ async function ownedBooks(partnerTier: PartnerTier | null): Promise<BookSummary[
 export interface RunDownloadOptions {
   onProgress?: (p: DownloadProgress) => void;
   signal?: AbortSignal;
+  /**
+   * Re-fetch and overwrite every layer even if it's already cached
+   * (default false skips cached layers for fast resume). Used by the
+   * content-version sweep to REFRESH a downloaded library in place to the
+   * new content version: because each layer is overwritten only after its
+   * fresh payload arrives, the offline copy is never emptied — a partner
+   * who goes offline mid-refresh still has the prior content, not a hole.
+   */
+  force?: boolean;
 }
 
 /**
@@ -308,7 +317,7 @@ export async function runDownload(
   opts: RunDownloadOptions = {},
 ): Promise<DownloadProgress> {
   const area = getArea(areaId);
-  const { onProgress, signal } = opts;
+  const { onProgress, signal, force = false } = opts;
 
   if (area.kind !== "reading") {
     throw new Error(`area "${areaId}" is not downloadable yet`);
@@ -363,7 +372,7 @@ export async function runDownload(
       const chaptersResp = await listChapters(book.slug);
       if (seedChaptersList) {
         const spec: ContentSpec = { layer: "chapters", book: book.slug, chapter: 0 };
-        if (!(await has(spec))) {
+        if (force || !(await has(spec))) {
           await put(spec, chaptersResp);
           progress.bytes += approxBytes(chaptersResp);
         }
@@ -382,7 +391,7 @@ export async function runDownload(
             book: book.slug,
             chapter: ch.chapter_number,
           };
-          if (await has(spec)) continue; // resume / dedupe across areas
+          if (!force && (await has(spec))) continue; // resume / dedupe across areas
           try {
             const data = await fetcher(book.slug, ch.chapter_number);
             await put(spec, data);
@@ -422,4 +431,48 @@ export async function clearArea(areaId: DownloadAreaId): Promise<void> {
   const area = getArea(areaId);
   if (area.layers.length > 0) await clearByLayers(area.layers);
   clearManifestEntry(areaId);
+}
+
+/**
+ * Area ids the partner has FULLY downloaded for offline use (manifest
+ * state "done"), optionally filtered to a tier. The content-version sweep
+ * uses this to know which downloaded libraries to refresh-in-place after a
+ * deploy, and to skip the refresh entirely when nothing was downloaded.
+ */
+export function listDownloadedAreas(
+  partnerTier?: PartnerTier | null,
+): DownloadAreaId[] {
+  const manifest = readManifest();
+  const ids: DownloadAreaId[] = [];
+  for (const [id, entry] of Object.entries(manifest)) {
+    if (!entry || entry.state !== "done") continue;
+    if (partnerTier !== undefined && entry.tier !== partnerTier) continue;
+    ids.push(id as DownloadAreaId);
+  }
+  return ids;
+}
+
+/** True when ANY area is recorded in the manifest (downloaded, partial, or
+ *  interrupted) — i.e. the partner has begun building an offline library. */
+export function hasAnyDownload(): boolean {
+  return Object.keys(readManifest()).length > 0;
+}
+
+/**
+ * Area ids that were mid-download when the app last stopped — manifest
+ * state "running" means a run was interrupted (reload / backgrounding /
+ * navigation) before it reached "done" or was explicitly paused. The
+ * download manager auto-resumes exactly these on next launch.
+ */
+export function listInterruptedAreas(
+  partnerTier?: PartnerTier | null,
+): DownloadAreaId[] {
+  const manifest = readManifest();
+  const ids: DownloadAreaId[] = [];
+  for (const [id, entry] of Object.entries(manifest)) {
+    if (!entry || entry.state !== "running") continue;
+    if (partnerTier !== undefined && entry.tier !== partnerTier) continue;
+    ids.push(id as DownloadAreaId);
+  }
+  return ids;
 }

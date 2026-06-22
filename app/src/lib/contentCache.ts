@@ -431,3 +431,30 @@ export async function clearByLayers(layers: ContentLayer[]): Promise<void> {
 export async function clearAll(): Promise<void> {
   await deleteWhere(() => true);
 }
+
+/**
+ * Delete EVERY record regardless of scope — used by the content-version
+ * sweep (lib/contentVersion.ts) to purge stale cached content after a
+ * deploy. Unlike clearAll/deleteWhere this ignores the active scope so it
+ * also clears entries left by a different tier on a shared device. Works
+ * even in pass-through mode (scope === null), since it doesn't filter by
+ * scope. Degrades to the in-memory store when IndexedDB is unavailable.
+ */
+export async function clearAllScopes(): Promise<void> {
+  const db = await openDb();
+  if (!db) {
+    memoryStore.clear();
+    return;
+  }
+  return new Promise<void>((resolve) => {
+    try {
+      const tx = db.transaction(STORE, "readwrite");
+      tx.objectStore(STORE).clear();
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => resolve();
+      tx.onabort = () => resolve();
+    } catch {
+      resolve();
+    }
+  });
+}
