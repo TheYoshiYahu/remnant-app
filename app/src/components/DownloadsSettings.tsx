@@ -51,6 +51,15 @@ import {
   startDownload,
   subscribeDownloadManager,
 } from "../lib/downloadManager";
+import {
+  getKeepStatus,
+  initOfflineKeep,
+  setAllowCellular,
+  setKeepOffline,
+  subscribeKeep,
+  syncNow,
+  type KeepStatus,
+} from "../lib/offlineKeep";
 
 // ----- formatting ---------------------------------------------------------
 
@@ -61,6 +70,25 @@ function formatSize(bytes: number): string {
   if (mb < 10) return `${mb.toFixed(1)} MB`;
   return `${Math.round(mb)} MB`;
 }
+
+/** Compact "x ago" for the last-synced stamp. */
+function formatAgo(ts: number | null): string {
+  if (!ts) return "never";
+  const secs = Math.max(0, Math.round((Date.now() - ts) / 1000));
+  if (secs < 60) return "just now";
+  const mins = Math.round(secs / 60);
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.round(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.round(hrs / 24);
+  return `${days}d ago`;
+}
+
+const CONNECTION_LABEL: Record<string, string> = {
+  wifi: "Wi-Fi",
+  cellular: "cellular",
+  unknown: "this connection",
+};
 
 const TIER_LABEL: Record<string, string> = {
   free: "Free",
@@ -99,6 +127,9 @@ export default function DownloadsSettings() {
   const [tierChecked, setTierChecked] = useState(false);
   const [stats, setStats] = useState<CacheStats | null>(null);
   const [areas, setAreas] = useState<Record<string, AreaUi>>({});
+  const [keep, setKeep] = useState<KeepStatus>(() => getKeepStatus());
+  // True while any area is actively downloading (drives the "Updating…" status).
+  const [downloading, setDownloading] = useState(false);
   // Track the active download across snapshots so we can refresh the storage
   // tally exactly when a run finishes (rather than polling).
   const prevActive = useRef<DownloadAreaId | null>(null);
@@ -128,6 +159,7 @@ export default function DownloadsSettings() {
       // Idempotent — App.tsx also configures the manager on boot; this covers
       // the case where Settings is the first surface to resolve the tier.
       configureDownloadManager(resolved);
+      initOfflineKeep(resolved);
       await refreshStats();
     })();
     return () => {
@@ -146,15 +178,23 @@ export default function DownloadsSettings() {
         }
         return next;
       });
-      // A download just finished/paused (active → idle) — re-measure storage.
+      setDownloading(snap.activeAreaId !== null);
+      // A download just finished/paused (active → idle) — re-measure storage
+      // and re-read the keep status (last-synced / pending may have changed).
       const nowActive = snap.activeAreaId;
       if (prevActive.current && prevActive.current !== nowActive) {
         void refreshStats();
+        setKeep(getKeepStatus());
       }
       prevActive.current = nowActive;
     });
     return unsub;
   }, [refreshStats]);
+
+  // Re-read the keep status whenever the preference or network changes.
+  useEffect(() => {
+    return subscribeKeep(() => setKeep(getKeepStatus()));
+  }, []);
 
   const start = useCallback(
     (id: DownloadAreaId) => {
@@ -171,6 +211,19 @@ export default function DownloadsSettings() {
   const pause = useCallback((id: DownloadAreaId) => {
     pauseDownload(id);
   }, []);
+
+  const toggleKeep = useCallback(() => {
+    const next = !getKeepStatus().keepOffline;
+    setKeepOffline(next, tier);
+  }, [tier]);
+
+  const toggleCellular = useCallback(() => {
+    setAllowCellular(!getKeepStatus().allowCellular, tier);
+  }, [tier]);
+
+  const doSyncNow = useCallback(() => {
+    syncNow(tier);
+  }, [tier]);
 
   const clearOne = useCallback(
     async (id: DownloadAreaId) => {
@@ -208,6 +261,155 @@ export default function DownloadsSettings() {
         access. Content only — chapters, marks, cross-references, and study
         tools. Your highlights, notes, and bookmarks already sync separately.
       </p>
+
+      {/* Keep available offline — the primary, persistent toggle. */}
+      <div className="mt-3 rounded-md border border-[var(--reader-rule)] bg-[color-mix(in_srgb,var(--reader-accent)_6%,transparent)] px-3.5 py-3">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <span className="text-sm font-semibold text-[var(--reader-text)]">
+              Keep available offline
+            </span>
+            <p className="mt-1 font-sans text-xs leading-relaxed text-[var(--reader-muted)]">
+              Save the whole library to this device and keep it up to date
+              automatically. New books and edits sync in the background over
+              Wi-Fi.
+            </p>
+          </div>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={keep.keepOffline}
+            aria-label="Keep available offline"
+            onClick={toggleKeep}
+            disabled={!tierChecked}
+            className="relative mt-0.5 inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors disabled:opacity-50"
+            style={{
+              backgroundColor: keep.keepOffline
+                ? "var(--reader-accent)"
+                : "color-mix(in srgb, var(--reader-muted) 35%, transparent)",
+            }}
+          >
+            <span
+              className="inline-block h-5 w-5 rounded-full bg-white shadow transition-transform"
+              style={{
+                transform: keep.keepOffline
+                  ? "translateX(1.375rem)"
+                  : "translateX(0.125rem)",
+              }}
+            />
+          </button>
+        </div>
+
+        {/* Live status line. */}
+        <p className="mt-2.5 flex items-center gap-1.5 font-sans text-[12px] text-[var(--reader-text)]">
+          {!keep.online ? (
+            <>
+              <span aria-hidden="true">⦸</span>
+              <span className="text-[var(--reader-muted)]">
+                Offline — reading from your saved copy.
+              </span>
+            </>
+          ) : downloading ? (
+            <>
+              <span className="animate-pulse" aria-hidden="true">
+                ⤓
+              </span>
+              <span>Updating your offline copy…</span>
+            </>
+          ) : keep.syncPending ? (
+            <>
+              <span aria-hidden="true">◷</span>
+              <span>
+                Update ready — will sync over{" "}
+                {CONNECTION_LABEL[keep.connection] ?? "Wi-Fi"}.
+              </span>
+            </>
+          ) : keep.hasDownload ? (
+            <>
+              <span className="text-[var(--reader-accent)]" aria-hidden="true">
+                ✓
+              </span>
+              <span>
+                Up to date
+                <span className="text-[var(--reader-muted)]">
+                  {" "}
+                  · synced {formatAgo(keep.lastSynced)}
+                </span>
+              </span>
+            </>
+          ) : keep.keepOffline ? (
+            <span className="text-[var(--reader-muted)]">Preparing download…</span>
+          ) : (
+            <span className="text-[var(--reader-muted)]">
+              Not saved to this device.
+            </span>
+          )}
+        </p>
+
+        {/* Sync now — surfaced when an update is waiting (e.g. on cellular /
+            an undetectable connection under the Wi-Fi-only default). */}
+        {keep.keepOffline && keep.syncPending && !downloading ? (
+          <button
+            type="button"
+            onClick={doSyncNow}
+            className="chrome-metal chrome-metal-emerald mt-2"
+            style={{ padding: "0.25rem 0.6rem", fontSize: "0.72rem" }}
+          >
+            Sync now
+          </button>
+        ) : null}
+
+        {/* Allow-cellular sub-setting (only meaningful while keeping offline). */}
+        {keep.keepOffline ? (
+          <div className="mt-3 flex items-start justify-between gap-3 border-t border-[var(--reader-rule)] pt-2.5">
+            <div className="min-w-0">
+              <span className="font-sans text-[12px] font-medium text-[var(--reader-text)]">
+                Allow updates over cellular
+              </span>
+              <p className="mt-0.5 font-sans text-[11px] leading-relaxed text-[var(--reader-muted)]">
+                {keep.allowCellular
+                  ? "Automatic updates may use mobile data."
+                  : keep.connection === "unknown"
+                    ? "Off — to protect mobile data, automatic updates only run when Wi-Fi is detected. This device can’t report its connection type, so updates wait for a manual “Sync now” unless you allow cellular."
+                    : "Off — automatic updates only run on Wi-Fi."}
+              </p>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={keep.allowCellular}
+              aria-label="Allow updates over cellular"
+              onClick={toggleCellular}
+              className="relative mt-0.5 inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors"
+              style={{
+                backgroundColor: keep.allowCellular
+                  ? "var(--reader-accent)"
+                  : "color-mix(in srgb, var(--reader-muted) 35%, transparent)",
+              }}
+            >
+              <span
+                className="inline-block h-4 w-4 rounded-full bg-white shadow transition-transform"
+                style={{
+                  transform: keep.allowCellular
+                    ? "translateX(1.125rem)"
+                    : "translateX(0.125rem)",
+                }}
+              />
+            </button>
+          </div>
+        ) : null}
+
+        {/* Reclaim space — explicit, never automatic on toggle-off. */}
+        {keep.hasDownload && stats && stats.bytes > 0 ? (
+          <button
+            type="button"
+            onClick={() => void clearEverything()}
+            className="mt-2.5 font-sans text-[11px] text-[var(--reader-muted)] underline decoration-dotted underline-offset-2 hover:text-[var(--reader-text)]"
+          >
+            Remove downloaded data ({formatSize(stats.bytes)})
+          </button>
+        ) : null}
+      </div>
 
       {/* Storage tally + clear-all. */}
       <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded border border-[var(--reader-rule)] bg-[color-mix(in_srgb,var(--reader-accent)_5%,transparent)] px-3 py-2.5">

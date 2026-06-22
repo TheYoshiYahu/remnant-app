@@ -29,9 +29,14 @@
  * OFFLINE-SAFE PURGE. "Purge" must REFRESH, not empty, a downloaded
  * library:
  *   - if the partner has downloaded an offline library, we DON'T wipe it.
- *     We refresh each downloaded area IN PLACE (force re-fetch, overwriting
- *     each layer only after its fresh payload arrives), so the offline copy
- *     is continuously available even mid-refresh.
+ *     We hand the refresh to offlineKeep.requestBackgroundSync, which
+ *     refreshes each downloaded area IN PLACE (force re-fetch, overwriting
+ *     each layer only after its fresh payload arrives) — but only when the
+ *     "Keep available offline" toggle is on AND the connection policy allows
+ *     it (Wi-Fi-only by default). If it can't sync now (cellular / unknown
+ *     connection under Wi-Fi-only) the refresh is DEFERRED, not skipped: the
+ *     library stays on the prior content until Wi-Fi returns. This is the
+ *     S354 fix for the deploy-token cellular-data trap.
  *   - if the partner has NO downloaded library, the only local content is
  *     incidental read-through cache; we clear it wholesale (cheap, and they
  *     refetch as they read — they're online, since the token fetch worked).
@@ -41,11 +46,8 @@
 
 import { getContentVersion } from "./api";
 import { clearAllScopes } from "./contentCache";
-import {
-  hasAnyDownload,
-  listDownloadedAreas,
-} from "./offlineDownload";
-import { refreshDownloadedAreas } from "./downloadManager";
+import { hasAnyDownload } from "./offlineDownload";
+import { requestBackgroundSync } from "./offlineKeep";
 
 const VERSION_KEY = "rop_content_version_v1";
 
@@ -125,12 +127,12 @@ export async function checkContentVersionAndHeal(): Promise<ContentVersionResult
 
   let refreshedLibrary = false;
   if (hasAnyDownload()) {
-    // Refresh the downloaded library in place — never empty it.
-    const downloaded = listDownloadedAreas();
-    if (downloaded.length > 0) {
-      refreshDownloadedAreas(downloaded);
-      refreshedLibrary = true;
-    }
+    // Refresh the downloaded library in place — never empty it — subject to
+    // the "Keep available offline" toggle + the Wi-Fi-only connection policy.
+    // If the policy defers it, the library stays on the prior content and the
+    // refresh runs later when Wi-Fi returns (offlineKeep marks it pending).
+    const { started } = requestBackgroundSync();
+    refreshedLibrary = started;
   } else {
     // No offline library: drop the incidental read-through cache so the
     // next read pulls fresh content (the partner is online — the token

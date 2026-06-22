@@ -48,6 +48,11 @@ import {
   resumeInterruptedDownloads,
 } from "./lib/downloadManager";
 import { checkContentVersionAndHeal } from "./lib/contentVersion";
+import {
+  ensureKeptOffline,
+  initOfflineKeep,
+  runPendingSyncIfPossible,
+} from "./lib/offlineKeep";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ReaderDivider from "./components/ReaderDivider";
 import WitnessCard from "./components/WitnessCard";
@@ -1711,6 +1716,13 @@ function Reader() {
     // having to revisit the Downloads screen.
     configureDownloadManager(resolvedTier);
     resumeInterruptedDownloads();
+    // S354 — "Keep available offline": wire the keep-offline lifecycle
+    // (records last-synced, retries Wi-Fi-deferred syncs on reconnect /
+    // foreground) and re-attempt any sync that a prior deploy deferred because
+    // the partner wasn't on Wi-Fi.
+    initOfflineKeep(resolvedTier);
+    ensureKeptOffline(resolvedTier);
+    runPendingSyncIfPossible(resolvedTier);
     // S353 — content-version self-heal: once per app load, after the scope +
     // manager are set, compare the server token to the last-seen value and
     // purge/refresh stale local caches if a deploy changed it. When something
