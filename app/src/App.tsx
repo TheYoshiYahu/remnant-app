@@ -235,6 +235,30 @@ function isSuppressedDuplicate(b: BookSummary): boolean {
   );
 }
 
+// S351 — deliberately-excluded extra-canon books. Yoshi's rule: a book that
+// was never actually built into clean, readable scripture must NOT be
+// selectable in the picker (no commentary-only / apparatus-only placeholders).
+// Two sets were excluded by editorial decision and never given a reader build:
+//   • The whole `mrjames-apocryphal-nt` edition (Gospel of Peter, Protevangelium
+//     of James, Gospel of Nicodemus / Acts of Pilate, Apocalypse of Peter,
+//     Apocalypse of Paul). These carry Marian/docetic accretions and were left
+//     as M.R. James's raw scholarly apparatus — editorial introductions,
+//     manuscript-collation notes, tables of contents, and OCR-garbled fragments
+//     rather than verse-clean text. (Yoshi's wife found "Gospel of Peter" showing
+//     commentary with no readable scripture — this is that gap.)
+//   • `barnabas` (in `lightfoot-apostolic-fathers`) — a predominantly
+//     supersessionist / anti-Torah polemic, excluded per Yoshi.
+// Like isSuppressedDuplicate this is a SAFE, reversible display filter: the DB
+// rows (text + any commentary) are untouched, the API still resolves the slugs
+// for direct/deep-link access, and deleting this filter restores them. It only
+// removes them from the selectable book list and reader navigation.
+function isExcludedUnbuiltBook(b: BookSummary): boolean {
+  return (
+    b.edition_slug === "mrjames-apocryphal-nt" ||
+    (b.edition_slug === "lightfoot-apostolic-fathers" && b.slug === "barnabas")
+  );
+}
+
 // S204b — the four partner-choosable Witness verse treatments.
 type WitnessStyle = "text" | "quotes" | "highlight" | "capsule";
 
@@ -1576,7 +1600,11 @@ function Reader() {
       listBooks()
         .then((bs) => {
           if (cancelled) return;
-          setBooks(bs.filter((b) => !isSuppressedDuplicate(b)));
+          setBooks(
+            bs.filter(
+              (b) => !isSuppressedDuplicate(b) && !isExcludedUnbuiltBook(b),
+            ),
+          );
           setBooksError(null);
         })
         .catch((e) => {
