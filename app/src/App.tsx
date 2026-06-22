@@ -235,27 +235,27 @@ function isSuppressedDuplicate(b: BookSummary): boolean {
   );
 }
 
-// S351 — deliberately-excluded extra-canon books. Yoshi's rule: a book that
-// was never actually built into clean, readable scripture must NOT be
-// selectable in the picker (no commentary-only / apparatus-only placeholders).
-// Two sets were excluded by editorial decision and never given a reader build:
-//   • The whole `mrjames-apocryphal-nt` edition (Gospel of Peter, Protevangelium
-//     of James, Gospel of Nicodemus / Acts of Pilate, Apocalypse of Peter,
-//     Apocalypse of Paul). These carry Marian/docetic accretions and were left
-//     as M.R. James's raw scholarly apparatus — editorial introductions,
-//     manuscript-collation notes, tables of contents, and OCR-garbled fragments
-//     rather than verse-clean text. (Yoshi's wife found "Gospel of Peter" showing
-//     commentary with no readable scripture — this is that gap.)
+// S351/S352 — deliberately-excluded extra-canon books. Yoshi's rule: a book
+// that was never built into clean, readable scripture must NOT be selectable in
+// the picker (no commentary-only / apparatus-only placeholders).
+//   • The M.R. James `mrjames-apocryphal-nt` edition (Gospel of Peter,
+//     Protevangelium of James, Gospel of Nicodemus / Acts of Pilate, Apocalypse
+//     of Peter, Apocalypse of Paul) was first hidden here (S351) and then
+//     DELETED from the DB entirely (S352, migration
+//     session352_delete_mrjames_apocryphal_nt.sql) — docetic/Marian accretions
+//     left as raw apparatus with broken verse numbering. No client filter is
+//     needed for it any more (the rows are gone); `git revert` of the S352
+//     migration + a re-import restores it, and we deliberately DON'T re-hide it
+//     here so a future clean re-add shows up.
 //   • `barnabas` (in `lightfoot-apostolic-fathers`) — a predominantly
-//     supersessionist / anti-Torah polemic, excluded per Yoshi.
+//     supersessionist / anti-Torah polemic, excluded per Yoshi. Its rows are
+//     KEPT (separate decision), so it stays hidden via this filter.
 // Like isSuppressedDuplicate this is a SAFE, reversible display filter: the DB
-// rows (text + any commentary) are untouched, the API still resolves the slugs
-// for direct/deep-link access, and deleting this filter restores them. It only
-// removes them from the selectable book list and reader navigation.
+// rows are untouched, the API still resolves the slug for direct/deep-link
+// access, and deleting this filter restores it.
 function isExcludedUnbuiltBook(b: BookSummary): boolean {
   return (
-    b.edition_slug === "mrjames-apocryphal-nt" ||
-    (b.edition_slug === "lightfoot-apostolic-fathers" && b.slug === "barnabas")
+    b.edition_slug === "lightfoot-apostolic-fathers" && b.slug === "barnabas"
   );
 }
 
