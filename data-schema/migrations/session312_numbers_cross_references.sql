@@ -5792,6 +5792,1299 @@ SELECT t.id, cr.id, 4, E'*this man, because he continueth ever, hath an unchange
  WHERE t.slug='numbers-20-aaron-died-on-mount-hor-the-priesthood-that-passes-by-death'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_numbers_21.sql (Numbers 21) -----
+-- Numbers 21 — full-library cross-reference fragment
+-- tag: num21 | prefix: s312 | view: _s312_num21_lookup
+-- sort band: base 24000 step 3 -> 24000, 24003, 24006, 24009
+--
+-- Numbers 21 coverage:
+--   v.1-3   (Arad / Hormah) NT: none warranted | Extras: none warranted | Tanakh: Num33:40 lateral (OPTIONAL, NOT built — narrative travelogue, thin payoff)
+--   v.4-5   (loathe "this light bread") NT: 1Cor10:9-10 (tempt Messiah / destroyed of serpents + the destroyer) | Extras: none warranted | Tanakh: Ps78:19 (spake against Elohim / furnish a table in the wilderness) -> THREAD A
+--   v.6-9   (★★★ serpent of brass on a pole; beheld and LIVED) NT: John3:14-15 (as Moses lifted up the serpent so must the Son of Adam be lifted up) | Extras: none clean warranted | Tanakh: 2Kgs18:4 (Nehushtan broken when worshipped) -> THREAD B
+--   v.16-18 (★ song of the well "Spring up, O well") NT: John4:14 + John7:38 (living water springing up) | Extras: none warranted | Tanakh: Isa12:3 (draw water out of the wells of salvation) -> THREAD C
+--   v.21-35 (★ Sihon & Og defeated) NT: none warranted | Extras: none warranted | Tanakh: Ps135:11 + Ps136:19-20 + Deut2:33 (Yahuah delivered the kings) -> THREAD D
+--   v.10-15,19-20 (travelogue / book of the wars) NT: none warranted | Extras: none warranted | Tanakh: none warranted
+--
+-- THREADS (4):
+--   A numbers-21-they-loathed-this-light-bread-and-tempted-yahuah  [free] -> Ps78 (canon), 1Cor10 (canon/NT)
+--   B numbers-21-the-serpent-of-brass-lifted-up-that-they-might-live  [free] -> John3 (canon/NT), 2Kgs18 (canon)
+--   C numbers-21-spring-up-o-well-the-water-springing-up-to-life  [free] -> Isa12 (canon), John4 + John7 (canon/NT)
+--   D numbers-21-sihon-and-og-delivered-into-the-hand-of-yasharel  [free] -> Ps135 (canon), Ps136 (canon), Deut2 (canon)
+-- All targets canon/NT -> every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s312_num21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD A: loathe this light bread / tempted Yahuah
+    ('canon','numbers',21,5,'canon','psalms',78,19,'free',
+     E'*Yea, they spake against Elohim (God); they said, Can Elohim (God) furnish a table in the wilderness?* (Psalm 78:19). Asaph''s psalm sings back this very rebellion: at Numbers 21:5 *the people spake against Elohim (God), and against Moses... and our soul loatheth this light bread* — the manna Yahuah (LORD) rained from heaven despised as too light a fare. To loathe the bread of heaven is to charge Yahuah (LORD) with not being able to keep His own people in the way He set them.'),
+    ('canon','numbers',21,4,'canon','1-corinthians',10,9,'free',
+     E'*Neither let us tempt Messiah (Christ), as some of them also tempted, and were destroyed of serpents* (1 Corinthians 10:9). Sha''ul names this wilderness scene as the warning written for us, and he names WHO they tempted: Messiah (Christ) — the Formed Son who led Yashar''el (Israel) in the wilderness. The discouraged soul of the people at *the way* (Numbers 21:4) provoked the One who walked before them, and the fiery serpents answered.'),
+    ('canon','numbers',21,5,'canon','1-corinthians',10,10,'free',
+     E'*Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer* (1 Corinthians 10:10). The murmuring of Numbers 21:5 — *Wherefore have ye brought us up out of Egypt to die in the wilderness?* — is the ensample Sha''ul sets before the assembly. The serpents that bit the people were the destroyer''s answer to the despising of heaven''s bread.'),
+    -- THREAD B: serpent of brass lifted up
+    ('canon','numbers',21,8,'canon','john',3,14,'free',
+     E'*And as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be lifted up* (John 3:14). Yahusha (Jesus) Himself reads Numbers 21:8 as the type of His own lifting up: *Make thee a fiery serpent, and set it upon a pole... every one that is bitten, when he looketh upon it, shall live.* The Formed Son draws the figure to His own cross — the bitten who look in faith live.'),
+    ('canon','numbers',21,9,'canon','john',3,15,'free',
+     E'*That whosoever believeth in him should not perish, but have eternal life* (John 3:15). At Numbers 21:9 *if a serpent had bitten any man, when he beheld the serpent of brass, he lived* — the bare look that healed the venom prefigures the believing look that gives life. The bronze serpent was the appointed sign; Yahusha (Jesus) is the substance.'),
+    ('canon','numbers',21,9,'canon','2-kings',18,4,'free',
+     E'*He... brake in pieces the brasen serpent that Moses had made: for unto those days the children of Yashar''el (Israel) did burn incense to it: and he called it Nehushtan* (2 Kings 18:4). The very serpent of brass that Moses *put... upon a pole* (Numbers 21:9) for healing became an idol when the people worshipped the sign instead of the One who appointed it. Hezekiah''s reform guards the type: the lifted-up sign points beyond itself, and to bow to the bronze is to lose the healing it once carried.'),
+    -- THREAD C: spring up O well
+    ('canon','numbers',21,17,'canon','isaiah',12,3,'free',
+     E'*Therefore with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3). The song of Numbers 21:17 — *Spring up, O well; sing ye unto it* — becomes Isaiah''s song of the redeemed: the well Yahuah (LORD) gave at Beer sings forward to the wells of salvation drawn in joy when the two houses are gathered.'),
+    ('canon','numbers',21,17,'canon','john',4,14,'free',
+     E'*But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14). The well of Numbers 21:16-17 that Yahuah (LORD) gave and Yashar''el (Israel) sang over — *Spring up, O well* — finds its fulness in the living water Yahusha (Jesus) gives, the well *springing up* within unto everlasting life.'),
+    ('canon','numbers',21,17,'canon','john',7,38,'free',
+     E'*He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:38). The dug well of Numbers 21:18, *digged... by the direction of the lawgiver, with their staves,* and sung up in 21:17, opens to the rivers of living water Yahusha (Jesus) promised at the feast — the Spirit poured out of the believer.'),
+    -- THREAD D: Sihon and Og delivered
+    ('canon','numbers',21,21,'canon','psalms',135,11,'free',
+     E'*Sihon king of the Amorites, and Og king of Bashan, and all the kingdoms of Canaan* (Psalm 135:11). The defeat of Sihon (Numbers 21:21-31) and Og (21:33-35) is gathered into Yahuah (LORD)''s praise: He *smote great nations, and slew mighty kings.* The victory was not Yashar''el (Israel)''s sword alone but the Formed Son delivering the kings into their hand.'),
+    ('canon','numbers',21,34,'canon','psalms',136,19,'free',
+     E'*Sihon king of the Amorites: for his mercy endureth for ever* (Psalm 136:19). The great Hallel rehearses Numbers 21 as an act of covenant mercy — Sihon, who *would not suffer Yashar''el (Israel) to pass through his border* (21:23), fell because Yahuah (LORD)''s mercy toward His people endures for ever.'),
+    ('canon','numbers',21,34,'canon','psalms',136,20,'free',
+     E'*And Og the king of Bashan: for his mercy endureth for ever* (Psalm 136:20). At Numbers 21:34 *Yahuah (LORD) said unto Moses, Fear him not: for I have delivered him into thy hand* — and the psalm answers that Og the king of Bashan fell by that same enduring mercy.'),
+    ('canon','numbers',21,34,'canon','deuteronomy',2,33,'free',
+     E'*And Yahuah Eloheinu (the LORD our God) delivered him before us; and we smote him, and his sons, and all his people* (Deuteronomy 2:33). Moses'' own retelling confirms the word of Numbers 21:34, *I have delivered him into thy hand* — Sihon and his sons fell because Yahuah (LORD) gave them up, the deliverance His doing.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-21-they-loathed-this-light-bread-and-tempted-yahuah',
+       E'They loathed this light bread — and tempted the Formed Son',
+       E'At the edge of Edom *the soul of the people was much discouraged because of the way* (Numbers 21:4), and they *spake against Elohim (God), and against Moses... our soul loatheth this light bread* (Numbers 21:5) — the manna of heaven despised. Asaph sings the charge back: *they spake against Elohim (God); they said, Can Elohim (God) furnish a table in the wilderness?* (Psalm 78:19). Sha''ul reads the whole scene as written for us, and names whom they provoked: *Neither let us tempt Messiah (Christ), as some of them also tempted, and were destroyed of serpents* (1 Corinthians 10:9), *Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer* (1 Corinthians 10:10). The One they tempted in the wilderness was the Formed Son who led them; the fiery serpents were the destroyer''s answer to the despising of heaven''s bread.',
+       sv.verse_id, ev.verse_id, 'free', 24000
+  FROM _s312_num21_lookup sv, _s312_num21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=21 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-21-the-serpent-of-brass-lifted-up-that-they-might-live',
+       E'The serpent of brass lifted up — beheld, and they lived',
+       E'When the fiery serpents bit the people, Yahuah (LORD) said, *Make thee a fiery serpent, and set it upon a pole: and it shall come to pass, that every one that is bitten, when he looketh upon it, shall live* (Numbers 21:8), and *Moses made a serpent of brass, and put it upon a pole... when he beheld the serpent of brass, he lived* (Numbers 21:9). Yahusha (Jesus) takes this very sign as the figure of His own cross: *And as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be lifted up* (John 3:14), *That whosoever believeth in him should not perish, but have eternal life* (John 3:15). The bare look that healed the venom prefigures the believing look that gives life. Yet the sign was never the Saviour: when Yashar''el (Israel) burned incense to it, Hezekiah *brake in pieces the brasen serpent that Moses had made... and he called it Nehushtan* (2 Kings 18:4) — a piece of bronze. The lifted-up sign points beyond itself to the Formed Son; to worship the bronze is to lose the healing it once carried.',
+       sv.verse_id, ev.verse_id, 'free', 24003
+  FROM _s312_num21_lookup sv, _s312_num21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=21 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-21-spring-up-o-well-the-water-springing-up-to-life',
+       E'Spring up, O well — the water springing up unto everlasting life',
+       E'At Beer Yahuah (LORD) gave water, and *Yashar''el (Israel) sang this song, Spring up, O well; sing ye unto it* (Numbers 21:17), the well *digged... by the direction of the lawgiver, with their staves* (Numbers 21:18). Isaiah makes that song the song of the redeemed: *Therefore with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3). And Yahusha (Jesus) fills the figure to the brim: *the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14), and at the feast, *out of his belly shall flow rivers of living water* (John 7:38) — the Spirit poured out. The well Yahuah (LORD) opened in the wilderness sings forward to the living water that never fails.',
+       sv.verse_id, ev.verse_id, 'free', 24006
+  FROM _s312_num21_lookup sv, _s312_num21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=21 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-21-sihon-and-og-delivered-into-the-hand-of-yasharel',
+       E'Sihon and Og delivered into the hand of Yashar''el (Israel)',
+       E'Sihon king of the Amorites *would not suffer Yashar''el (Israel) to pass through his border* (Numbers 21:23) and fell by the edge of the sword, and when Og king of Bashan came out, *Yahuah (LORD) said unto Moses, Fear him not: for I have delivered him into thy hand* (Numbers 21:34). Moses'' own retelling seals the cause: *Yahuah Eloheinu (the LORD our God) delivered him before us; and we smote him, and his sons, and all his people* (Deuteronomy 2:33) — the deliverance was Yahuah (LORD)''s doing. The psalms gather both kings into His praise: He *smote great nations, and slew mighty kings... Sihon king of the Amorites, and Og king of Bashan, and all the kingdoms of Canaan* (Psalm 135:10-11), and the great Hallel rehearses each by name — *Sihon king of the Amorites: for his mercy endureth for ever* (Psalm 136:19), *And Og the king of Bashan: for his mercy endureth for ever* (Psalm 136:20). The victory was covenant mercy toward His people, not the sword alone.',
+       sv.verse_id, ev.verse_id, 'free', 24009
+  FROM _s312_num21_lookup sv, _s312_num21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=21 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD A
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yea, they spake against Elohim (God); they said, Can Elohim (God) furnish a table in the wilderness?* (Psalm 78:19) — Asaph sings back the loathing of *this light bread* (Numbers 21:5).'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=5
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-they-loathed-this-light-bread-and-tempted-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Neither let us tempt Messiah (Christ), as some of them also tempted, and were destroyed of serpents* (1 Corinthians 10:9) — Sha''ul names the Formed Son as the One provoked at *the way* (Numbers 21:4).'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=4
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-they-loathed-this-light-bread-and-tempted-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer* (1 Corinthians 10:10) — the murmuring of *Wherefore have ye brought us up out of Egypt* (Numbers 21:5) is the ensample for the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=5
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-they-loathed-this-light-bread-and-tempted-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD B
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be lifted up* (John 3:14) — Yahusha (Jesus) reads *set it upon a pole* (Numbers 21:8) as the figure of His cross.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-the-serpent-of-brass-lifted-up-that-they-might-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*That whosoever believeth in him should not perish, but have eternal life* (John 3:15) — the believing look fulfils *when he beheld the serpent of brass, he lived* (Numbers 21:9).'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-the-serpent-of-brass-lifted-up-that-they-might-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He... brake in pieces the brasen serpent that Moses had made... and he called it Nehushtan* (2 Kings 18:4) — the healing sign of Numbers 21:9 became an idol; Hezekiah guards the type by breaking the bronze.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=18 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-the-serpent-of-brass-lifted-up-that-they-might-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD C
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Therefore with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3) — the song *Spring up, O well* (Numbers 21:17) becomes the song of the redeemed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-spring-up-o-well-the-water-springing-up-to-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14) — the given well of Numbers 21:16-17 fulfilled in the living water within.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-spring-up-o-well-the-water-springing-up-to-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*out of his belly shall flow rivers of living water* (John 7:38) — the dug well of Numbers 21:18 opens to the Spirit poured out at the feast.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-spring-up-o-well-the-water-springing-up-to-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD D
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Sihon king of the Amorites, and Og king of Bashan, and all the kingdoms of Canaan* (Psalm 135:11) — both kings of Numbers 21 gathered into Yahuah (LORD)''s praise.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=21
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=135 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-sihon-and-og-delivered-into-the-hand-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Sihon king of the Amorites: for his mercy endureth for ever* (Psalm 136:19) — the great Hallel rehearses the fall of Sihon (Numbers 21:23-31) as covenant mercy.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=34
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-sihon-and-og-delivered-into-the-hand-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And Og the king of Bashan: for his mercy endureth for ever* (Psalm 136:20) — *I have delivered him into thy hand* (Numbers 21:34) answered in the enduring mercy.'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=34
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-sihon-and-og-delivered-into-the-hand-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah Eloheinu (the LORD our God) delivered him before us; and we smote him, and his sons, and all his people* (Deuteronomy 2:33) — Moses'' retelling confirms *I have delivered him into thy hand* (Numbers 21:34).'
+  FROM cross_reference_threads t
+  JOIN _s312_num21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=21 AND sv.verse_number=34
+  JOIN _s312_num21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-21-sihon-and-og-delivered-into-the-hand-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_22.sql (Numbers 22) -----
+-- Book: numbers | Chapter: 22 | Tag: num22 | Prefix: s312
+-- Sort band: base 24025, step 3 -> 24025, 24028, 24031, 24034
+-- Balaam son of Beor, Balak's bid to curse Yashar'el, the Angel of Yahuah with drawn
+-- sword, the speaking ass. FRAME: Balaam is condemned (2 Peter / Jude / Revelation)
+-- yet Yahuah overrules every hired curse into blessing — victims, not enemies; the
+-- prophet for hire cannot go beyond the word of Yahuah. The Angel-of-Yahuah barring the
+-- way with drawn sword is the Formed Son who bears the Name and is heeded even by a beast.
+--
+-- Numbers 22 coverage:
+--   v.1-14 (Balak sends to CURSE; "they are blessed"):
+--        NT:     Romans 8:31, Romans 8:33 (Elohim's elect, none can lay a charge); 'free'
+--        Tanakh: Genesis 12:3 (bless them that bless thee, curse him that curseth thee) 'free'
+--        Extras: none warranted (the Abrahamic-blessing spine is canon-borne)
+--   v.15-21 (Balak sends again, greater honour; Balaam's covetousness):
+--        NT:     2 Peter 2:15 (way of Balaam, loved the wages of unrighteousness);
+--                Jude 1:11 (ran greedily after the error of Balaam for reward) 'free'
+--        Tanakh: none warranted (NT names the sin directly)
+--        Extras: none warranted
+--   v.22-35 (the Angel of Yahuah, drawn sword, the speaking ass):
+--        NT:     2 Peter 2:16 (the dumb ass speaking with man's voice forbad the madness
+--                of the prophet) 'free'
+--        Tanakh: none added here (theophany framed in prose as the Formed Son)
+--        Extras: none warranted (clean canon witness preferred)
+--   v.36-41 (the word Elohim putteth in my mouth, that shall I speak):
+--        NT:     none warranted
+--        Tanakh: Numbers 23:11-12 (must I not speak that which Yahuah hath put in my
+--                mouth) — Balak's complaint that the curse came out blessing 'free'
+--        Extras: none warranted
+--
+-- Threads (4):
+--   numbers-22-thou-shalt-not-curse-for-they-are-blessed  [Tanakh+NT, free]
+--        -> Genesis 12:3, Romans 8:31, Romans 8:33
+--   numbers-22-the-way-of-balaam-loved-the-wages-of-unrighteousness  [NT, free]
+--        -> 2 Peter 2:15, Jude 1:11
+--   numbers-22-the-angel-with-drawn-sword-and-the-mouth-of-the-ass  [NT, free]
+--        -> 2 Peter 2:16
+--   numbers-22-the-word-that-elohim-putteth-in-my-mouth  [Tanakh, free]
+--        -> Numbers 23:11, Numbers 23:12
+
+CREATE TEMP VIEW _s312_num22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Balak hires a curse; Yahuah forbids it — they are blessed
+    ('canon','numbers',22,6,'canon','genesis',12,3,'free',
+     E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed.* (Genesis 12:3) Balak hires Balaam — *curse me this people; for they are too mighty for me... for I wot that he whom thou blessest is blessed, and he whom thou cursest is cursed* (Numbers 22:6) — but the Abrahamic word has already turned the tables: the curse against the seed recoils on the one who hires it. No prophet for sale can reverse what Yahuah swore to the fathers.'),
+    ('canon','numbers',22,12,'canon','genesis',12,3,'free',
+     E'*And I will bless them that bless thee, and curse him that curseth thee* (Genesis 12:3) is the verdict behind *Thou shalt not go with them; thou shalt not curse the people: for they are blessed* (Numbers 22:12). The blessing on Yashar''el (Israel) is not Balaam''s to revoke — it stands on the oath to Abraham, Isaac, and Jacob.'),
+    ('canon','numbers',22,12,'canon','romans',8,31,'free',
+     E'*What shall we then say to these things? If Elohim (God) be for us, who can be against us?* (Romans 8:31) Balak''s whole campaign answers itself: with Elohim declaring *they are blessed* (Numbers 22:12), the hired diviner and the king of Moab are *against* a people Yahuah is *for* — and so they cannot prevail.'),
+    ('canon','numbers',22,12,'canon','romans',8,33,'free',
+     E'*Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth.* (Romans 8:33) Balaam is hired to lay a charge — a curse — against the elect, but the same Elohim who chose them has already said *they are blessed* (Numbers 22:12); no accusation for hire can stick.'),
+    -- Thread 2: the way of Balaam — covetousness, the wages of unrighteousness
+    ('canon','numbers',22,17,'canon','2-peter',2,15,'free',
+     E'*Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* (2 Peter 2:15) names the sin already glittering in Balak''s second offer — *I will promote thee unto very great honour, and I will do whatsoever thou sayest unto me: come therefore, I pray thee, curse me this people* (Numbers 22:17). Balaam tarries to ask again, his heart turned toward the reward.'),
+    ('canon','numbers',22,18,'canon','jude',1,11,'free',
+     E'*Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* (Jude 1:11) Balaam''s pious-sounding *I cannot go beyond the word of Yahuah Elohai (the LORD my God), to do less or more* (Numbers 22:18) is undone by his lingering for the fee — Jude marks him as one who *ran greedily after the error of Balaam for reward*.'),
+    -- Thread 3: the Angel with drawn sword, the speaking ass
+    ('canon','numbers',22,28,'canon','2-peter',2,16,'free',
+     E'*But was rebuked for his iniquity: the dumb ass speaking with man''s voice forbad the madness of the prophet.* (2 Peter 2:16) This is the very moment — *And Yahuah (LORD) opened the mouth of the ass, and she said unto Balaam, What have I done unto thee, that thou hast smitten me these three times?* (Numbers 22:28). A beast sees the Angel the prophet cannot, and Yahuah makes the dumb creature reprove the madness of the seer for hire.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 4 cross_references (Tanakh-internal, Numbers 23) authored separately to keep tier clear
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','numbers',22,38,'canon','numbers',23,12,'free',
+     E'*And he answered and said, Must I not take heed to speak that which Yahuah (LORD) hath put in my mouth?* (Numbers 23:12) confirms what Balaam already conceded at the meeting with Balak — *the word that Elohim (God) putteth in my mouth, that shall I speak* (Numbers 22:38). The hired diviner has no power over his own tongue; Yahuah will speak blessing through him whether Balak likes it or not.'),
+    ('canon','numbers',22,38,'canon','numbers',23,11,'free',
+     E'*And Balak said unto Balaam, What hast thou done unto me? I took thee to curse mine enemies, and, behold, thou hast blessed them altogether.* (Numbers 23:11) is Balak''s outrage when the promise of Numbers 22:38 — *the word that Elohim (God) putteth in my mouth, that shall I speak* — comes out as blessing. The bought curse turns to blessing in the mouth that uttered it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-22-thou-shalt-not-curse-for-they-are-blessed',
+       E'Thou Shalt Not Curse, For They Are Blessed',
+       E'Balak the son of Zippor, terrified of a people *many* and victorious, sends to hire a curse: *Come now therefore, I pray thee, curse me this people; for they are too mighty for me... for I wot that he whom thou blessest is blessed, and he whom thou cursest is cursed* (Numbers 22:6). But the verdict is already sealed in heaven. Elohim answers Balaam plainly: *Thou shalt not go with them; thou shalt not curse the people: for they are blessed* (Numbers 22:12). The blessing on Yashar''el (Israel) is not Balaam''s to revoke — it stands on the oath to the fathers: *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). The very curse Balak hires recoils on the one who hires it. Paul gathers the whole scene into one question: *What shall we then say to these things? If Elohim (God) be for us, who can be against us?* (Romans 8:31) — and answers it: *Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth* (Romans 8:33). Moab and its diviner are *against* a people Yahuah is *for*; the accusation for hire cannot stick. These are victims of a king''s fear, not enemies to be destroyed — and Yahuah turns the whole assault into blessing.',
+       sv.verse_id, ev.verse_id, 'free', 24025
+  FROM _s312_num22_lookup sv, _s312_num22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=22 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-22-the-way-of-balaam-loved-the-wages-of-unrighteousness',
+       E'The Way of Balaam — Who Loved the Wages of Unrighteousness',
+       E'Balak refuses Balaam''s first no and sends again — *princes, more, and more honourable than they* — with a sweeter purse: *For I will promote thee unto very great honour, and I will do whatsoever thou sayest unto me: come therefore, I pray thee, curse me this people* (Numbers 22:17). Balaam''s reply sounds devout — *If Balak would give me his house full of silver and gold, I cannot go beyond the word of Yahuah Elohai (the LORD my God), to do less or more* (Numbers 22:18) — yet he tarries to ask Yahuah again, his eye on the reward. The apostles read his heart exactly. Peter: *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15). Jude: *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 1:11). The sin is named: a prophet who knows the word of Yahuah yet lets covetousness pull him toward a curse he has been forbidden to speak.',
+       sv.verse_id, ev.verse_id, 'free', 24028
+  FROM _s312_num22_lookup sv, _s312_num22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=22 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-22-the-angel-with-drawn-sword-and-the-mouth-of-the-ass',
+       E'The Angel With the Drawn Sword and the Mouth of the Ass',
+       E'On the road, *Elohim''s (God''s) anger was kindled because he went: and the angel of Yahuah (LORD) stood in the way for an adversary against him... and his sword drawn in his hand* (Numbers 22:22-23). This is the Angel of Yahuah who bears the Name — the Formed Son who appeared, spoke, and stood across Yashar''el''s path before — now barring the diviner''s way with a sword drawn. The beast beneath Balaam sees what the seer-for-hire is blind to, turning aside three times and beaten three times, until *Yahuah (LORD) opened the mouth of the ass, and she said unto Balaam, What have I done unto thee, that thou hast smitten me these three times?* (Numbers 22:28). Only then does Yahuah open Balaam''s own eyes, and he falls flat before the Angel who says *thy way is perverse before me* (Numbers 22:32). Peter seals the shame: *But was rebuked for his iniquity: the dumb ass speaking with man''s voice forbad the madness of the prophet* (2 Peter 2:16). A dumb beast saw the Angel and obeyed; the prophet had to be reproved by the creature he rode.',
+       sv.verse_id, ev.verse_id, 'free', 24031
+  FROM _s312_num22_lookup sv, _s312_num22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=22 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-22-the-word-that-elohim-putteth-in-my-mouth',
+       E'The Word That Elohim Putteth In My Mouth, That Shall I Speak',
+       E'Balaam comes at last to Balak, but with a warning that quietly undoes the whole hire: *Lo, I am come unto thee: have I now any power at all to say any thing? the word that Elohim (God) putteth in my mouth, that shall I speak* (Numbers 22:38). The diviner has no command over his own tongue. The next chapter shows the promise kept and the king enraged: *And Balak said unto Balaam, What hast thou done unto me? I took thee to curse mine enemies, and, behold, thou hast blessed them altogether* (Numbers 23:11) — and Balaam can only answer, *Must I not take heed to speak that which Yahuah (LORD) hath put in my mouth?* (Numbers 23:12). The bought curse turns to blessing in the very mouth hired to utter it. Yahuah overrules the hostile prophet and makes him a herald of the blessing on His people.',
+       sv.verse_id, ev.verse_id, 'free', 24034
+  FROM _s312_num22_lookup sv, _s312_num22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=36
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=22 AND ev.verse_number=41
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed.* (Genesis 12:3) — Balak hires a curse against a people Yahuah has sworn to bless; the curse recoils on its buyer.'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=6
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-thou-shalt-not-curse-for-they-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And I will bless them that bless thee, and curse him that curseth thee* (Genesis 12:3) — the oath to Abraham stands behind *Thou shalt not curse the people: for they are blessed* (Numbers 22:12).'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-thou-shalt-not-curse-for-they-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*If Elohim (God) be for us, who can be against us?* (Romans 8:31) — Moab and its diviner are against a people Yahuah is for; the assault cannot prevail.'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-thou-shalt-not-curse-for-they-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth.* (Romans 8:33) — the hired charge against the elect cannot stick when Elohim has called them blessed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-thou-shalt-not-curse-for-they-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15) — Balak''s second, richer offer (Numbers 22:17) exposes the covetousness the apostle names.'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=17
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-the-way-of-balaam-loved-the-wages-of-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ran greedily after the error of Balaam for reward* (Jude 1:11) — Balaam''s pious *I cannot go beyond the word of Yahuah* (Numbers 22:18) is belied by his lingering for the fee.'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-the-way-of-balaam-loved-the-wages-of-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The dumb ass speaking with man''s voice forbad the madness of the prophet.* (2 Peter 2:16) — the very moment *Yahuah opened the mouth of the ass* (Numbers 22:28): a beast saw the Angel and reproved the seer-for-hire.'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=28
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-the-angel-with-drawn-sword-and-the-mouth-of-the-ass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Must I not take heed to speak that which Yahuah (LORD) hath put in my mouth?* (Numbers 23:12) — the promise of *the word that Elohim putteth in my mouth, that shall I speak* (Numbers 22:38) kept; Balaam cannot command his own tongue.'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=38
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=23 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-the-word-that-elohim-putteth-in-my-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I took thee to curse mine enemies, and, behold, thou hast blessed them altogether.* (Numbers 23:11) — Balak''s outrage when the bought curse of Numbers 22:38 comes out as blessing.'
+  FROM cross_reference_threads t
+  JOIN _s312_num22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=22 AND sv.verse_number=38
+  JOIN _s312_num22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=23 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-22-the-word-that-elohim-putteth-in-my-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_23.sql (Numbers 23) -----
+-- Chapter: Numbers 23 — Balaam's first two oracles (the hired curse turned to blessing)
+-- Tag: num23 | Session prefix: s312 | View: _s312_num23_lookup
+-- Sort band: base 24050, step 3 -> 24050, 24053, 24056, 24059
+--
+-- FRAME: Balak hires Balaam to curse the covenant people; Yahuah binds Balaam's
+-- mouth so the hireling can only BLESS. The people "dwell alone," are not reckoned
+-- among the nations, carry no iniquity Yahuah will behold, and stand under a King's
+-- shout — a hired curse cannot touch the blessed. Two-house election (Jacob AND
+-- Yashar'el named together every oracle) + Romans 11 anti-replacement: the gifts and
+-- calling are without repentance; Elohim is not a man that he should lie.
+--
+-- Numbers 23 coverage:
+--   v.7-10  (dwell alone / not reckoned among nations / die the death of the righteous)
+--        NT:     Titus 2:14 (peculiar people), 1 Peter 2:9 (chosen generation, holy nation) — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 33:28 (Yashar'el dwell in safety alone) — WARRANTED
+--   v.11-17 (Balak moves the seer; the bound word — "what hath Yahuah spoken?")
+--        NT:     none warranted (lateral suffices)
+--        Extras: none warranted
+--        Tanakh: Numbers 22:38 (the word Elohim putteth in my mouth, that shall I speak) — WARRANTED (lateral)
+--   v.18-20 (Elohim is not a man that he should lie / he hath blessed; I cannot reverse it)
+--        NT:     Romans 11:29 (gifts and calling without repentance), Titus 1:2 (Elohim that cannot lie),
+--                Hebrews 6:18 (impossible for Elohim to lie) — WARRANTED
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 15:29 (Strength of Yashar'el will not lie nor repent), Malachi 3:6 (I change not) — WARRANTED
+--   v.21-24 (no iniquity beheld in Jacob / no enchantment against Jacob / shout of a King)
+--        NT:     Romans 8:33-34 (who shall lay any thing to the charge of the elect) — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Psalm 32:1-2 (blessed... unto whom Yahuah imputeth not iniquity) — WARRANTED
+--
+-- THREADS (4):
+--   numbers-23-the-people-shall-dwell-alone            (23:7-10)  free  [canon: Deut33, Titus2, 1Pet2]
+--   numbers-23-the-word-balaam-could-not-take-back     (23:11-17) free  [canon: Num22 lateral]
+--   numbers-23-elohim-is-not-a-man-that-he-should-lie  (23:18-20) free  [canon: 1Sam15, Mal3, Rom11, Titus1, Heb6]
+--   numbers-23-he-hath-not-beheld-iniquity-in-jacob    (23:21-24) free  [canon: Rom8, Ps32]
+--
+-- Contested/load-bearing framing: 23:9 "dwell alone... not reckoned among the nations"
+-- is election/separation, NOT isolation — the two-house peculiar people (Titus 2:14 /
+-- 1 Pet 2:9 / Deut 33:28), never replaced. 23:19 "Elohim is not a man" anchors Rom 11:29
+-- (calling without repentance) AGAINST any reading that Yahuah cast off his people.
+
+CREATE TEMP VIEW _s312_num23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =====================================================================
+-- C R O S S _ R E F E R E N C E S
+-- =====================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- thread 1: dwell alone (23:7-10)
+    ('canon','numbers',23,9,'canon','deuteronomy',33,28,'free',
+     E'*Yashar''el (Israel) then shall dwell in safety alone: the fountain of Jacob shall be upon a land of corn and wine; also his heavens shall drop down dew.* (Deuteronomy 33:28) Moses'' deathbed blessing speaks the very word the hired seer is forced to confess — *lo, the people shall dwell alone, and shall not be reckoned among the nations* (Numbers 23:9). The dwelling-alone is election and safety, not abandonment: the same Jacob, the same covenant separation.'),
+    ('canon','numbers',23,10,'canon','titus',2,14,'free',
+     E'*Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works.* (Titus 2:14) Balaam''s longing — *let me die the death of the righteous, and let my last end be like his!* (Numbers 23:10) — reaches for the portion of the *peculiar people* set apart unto Yahuah, a people the hireling can covet but not belong to.'),
+    ('canon','numbers',23,9,'canon','1-peter',2,9,'free',
+     E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light.* (1 Peter 2:9) The *holy nation* not *reckoned among the nations* (Numbers 23:9) is the two-house people set apart — Peter speaks to the scattered who were *not a people* and are now *the people of Elohim (God)*, restored not replaced.'),
+    -- thread 2: the bound word (23:11-17) lateral
+    ('canon','numbers',23,12,'canon','numbers',22,38,'free',
+     E'*And Balaam said unto Balak, Lo, I am come unto thee: have I now any power at all to say any thing? the word that Elohim (God) putteth in my mouth, that shall I speak.* (Numbers 22:38) Balaam said it at the start and now repeats it under Balak''s rebuke — *Must I not take heed to speak that which Yahuah (LORD) hath put in my mouth?* (Numbers 23:12). The seer''s mouth is bound; no fee and no fresh altar can loose it.'),
+    -- thread 3: Elohim is not a man (23:18-20)
+    ('canon','numbers',23,19,'canon','1-samuel',15,29,'free',
+     E'*And also the Strength of Yashar''el (Israel) will not lie nor repent: for he is not a man, that he should repent.* (1 Samuel 15:29) Samuel quotes the oracle back as covenant axiom — *Elohim (God) is not a man, that he should lie; neither the son of Adam, that he should repent* (Numbers 23:19). What Yahuah has spoken stands; the word does not bend to men.'),
+    ('canon','numbers',23,19,'canon','malachi',3,6,'free',
+     E'*For I am Yahuah (LORD), I change not; therefore ye sons of Jacob are not consumed.* (Malachi 3:6) Malachi grounds Jacob''s very survival in the unchanging One who *is not a man, that he should lie* (Numbers 23:19): because Yahuah does not turn, the sons of Jacob are not consumed.'),
+    ('canon','numbers',23,20,'canon','romans',11,29,'free',
+     E'*For the gifts and calling of Elohim (God) are without repentance.* (Romans 11:29) Paul''s anti-replacement charter is Balaam''s confession unfolded — *Behold, I have received commandment to bless: and he hath blessed; and I cannot reverse it* (Numbers 23:20). The blessing on the covenant people is irreversible; Elohim has not cast away his people.'),
+    ('canon','numbers',23,19,'canon','titus',1,2,'free',
+     E'*In hope of eternal life, which Elohim (God), that cannot lie, promised before the world began.* (Titus 1:2) Paul names the same nature the oracle declares — *Elohim (God) is not a man, that he should lie* (Numbers 23:19): the promise rests on the One who cannot lie, so the hope cannot fail.'),
+    ('canon','numbers',23,19,'canon','hebrews',6,18,'free',
+     E'*That by two immutable things, in which it was impossible for Elohim (God) to lie, we might have a strong consolation, who have fled for refuge to lay hold upon the hope set before us.* (Hebrews 6:18) The oath sworn to Abraham rests on the truth Balaam was forced to speak — *hath he said, and shall he not do it? or hath he spoken, and shall he not make it good?* (Numbers 23:19) — *it was impossible for Elohim (God) to lie.*'),
+    -- thread 4: no iniquity beheld (23:21-24)
+    ('canon','numbers',23,21,'canon','psalms',32,1,'free',
+     E'*Blessed is he whose transgression is forgiven, whose sin is covered.* (Psalm 32:1) David sings the blessedness the oracle declares from the mountaintop — *He hath not beheld iniquity in Jacob, neither hath he seen perverseness in Yashar''el (Israel)* (Numbers 23:21): the covered people whose sin Yahuah does not behold.'),
+    ('canon','numbers',23,21,'canon','psalms',32,2,'free',
+     E'*Blessed is the man unto whom Yahuah (LORD) imputeth not iniquity, and in whose spirit there is no guile.* (Psalm 32:2) The man *unto whom Yahuah imputeth not iniquity* is Jacob in the oracle — *He hath not beheld iniquity in Jacob* (Numbers 23:21). Not that the people are sinless, but that the blessed are reckoned clean by the One who covers.'),
+    ('canon','numbers',23,23,'canon','romans',8,33,'free',
+     E'*Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth.* (Romans 8:33) The same defence the oracle raised — *Surely there is no enchantment against Jacob, neither is there any divination against Yashar''el (Israel)* (Numbers 23:23) — Paul carries to its end: no curse, no charge, no accusation can stand against those Yahuah has justified.'),
+    ('canon','numbers',23,23,'canon','romans',8,34,'free',
+     E'*Who is he that condemneth? It is Messiah (Christ) that died, yea rather, that is risen again, who is even at the right hand of Elohim (God), who also maketh intercession for us.* (Romans 8:34) Against Jacob no *enchantment* and no *divination* avails (Numbers 23:23); the Formed Son who *maketh intercession* answers every accuser, and *the shout of a king is among them* (Numbers 23:21).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =====================================================================
+-- T H R E A D S
+-- =====================================================================
+-- Thread 1: the people shall dwell alone (23:7-10)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-23-the-people-shall-dwell-alone',
+  E'The People Shall Dwell Alone — Not Reckoned Among the Nations',
+  E'Balak hired the seer *to curse me Jacob, and come, defy Yashar''el (Israel)* (Numbers 23:7), but from the top of the rocks Balaam can only confess what Yahuah sees: *lo, the people shall dwell alone, and shall not be reckoned among the nations* (Numbers 23:9). This is election, not isolation — the covenant people set apart, the dust of Jacob beyond counting (23:10). Moses had blessed them in these very words: *Yashar''el (Israel) then shall dwell in safety alone* (Deuteronomy 33:28). And the dwelling-apart runs forward to the *peculiar people* redeemed unto Yahuah — *purify unto himself a peculiar people, zealous of good works* (Titus 2:14) — the *chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9), the two-house people who were *not a people* and are now the people of Elohim (God), restored and never replaced. No wonder the hireling cries, *let me die the death of the righteous, and let my last end be like his!* (Numbers 23:10) — he covets a portion he cannot purchase.',
+  sv.verse_id, ev.verse_id, 'free', 24050
+  FROM _s312_num23_lookup sv, _s312_num23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=23 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2: the word Balaam could not take back (23:11-17)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-23-the-word-balaam-could-not-take-back',
+  E'The Bound Word — All That Yahuah Speaketh, That I Must Do',
+  E'When the first oracle blessed instead of cursing, Balak protested: *What hast thou done unto me? I took thee to curse mine enemies, and, behold, thou hast blessed them altogether* (Numbers 23:11). Balaam''s answer is the seal on his whole errand: *Must I not take heed to speak that which Yahuah (LORD) hath put in my mouth?* (Numbers 23:12). He had said the same before he ever climbed the altars — *the word that Elohim (God) putteth in my mouth, that shall I speak* (Numbers 22:38). So Balak drags him to *another place* and builds seven fresh altars (23:13-14), still grasping: *What hath Yahuah (LORD) spoken?* (23:17). But a new vantage and a new sacrifice cannot loose a mouth Yahuah has bound. The hired curse is impossible; the word is not for sale.',
+  sv.verse_id, ev.verse_id, 'free', 24053
+  FROM _s312_num23_lookup sv, _s312_num23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=23 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3: Elohim is not a man that he should lie (23:18-20)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-23-elohim-is-not-a-man-that-he-should-lie',
+  E'Elohim Is Not a Man That He Should Lie — He Hath Blessed, and I Cannot Reverse It',
+  E'The second oracle opens with the axiom that anchors the whole covenant: *Elohim (God) is not a man, that he should lie; neither the son of Adam, that he should repent: hath he said, and shall he not do it? or hath he spoken, and shall he not make it good?* (Numbers 23:19). Therefore the blessing stands fixed: *I have received commandment to bless: and he hath blessed; and I cannot reverse it* (Numbers 23:20). Samuel turned the same word into Yashar''el''s warrant — *the Strength of Yashar''el (Israel) will not lie nor repent: for he is not a man, that he should repent* (1 Samuel 15:29) — and Malachi made it the reason Jacob endures: *For I am Yahuah (LORD), I change not; therefore ye sons of Jacob are not consumed* (Malachi 3:6). The New Testament rests every promise here: *the gifts and calling of Elohim (God) are without repentance* (Romans 11:29) — Paul''s charter that Yahuah has not cast away his people; *eternal life, which Elohim (God), that cannot lie, promised before the world began* (Titus 1:2); and the oath to Abraham, *two immutable things, in which it was impossible for Elohim (God) to lie* (Hebrews 6:18). A hired curse cannot reverse what the unchanging One has spoken to bless.',
+  sv.verse_id, ev.verse_id, 'free', 24056
+  FROM _s312_num23_lookup sv, _s312_num23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=23 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4: he hath not beheld iniquity in Jacob (23:21-24)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-23-he-hath-not-beheld-iniquity-in-jacob',
+  E'He Hath Not Beheld Iniquity in Jacob — The Shout of a King Is Among Them',
+  E'The oracle declares the blessed people uncondemnable: *He hath not beheld iniquity in Jacob, neither hath he seen perverseness in Yashar''el (Israel): Yahuah Elohav (the LORD his God) is with him, and the shout of a king is among them* (Numbers 23:21). Not that the people are sinless, but that their sin is covered — David sings the very blessedness: *Blessed is he whose transgression is forgiven, whose sin is covered* (Psalm 32:1); *Blessed is the man unto whom Yahuah (LORD) imputeth not iniquity* (Psalm 32:2). Because of this, no hostile word can prosper: *Surely there is no enchantment against Jacob, neither is there any divination against Yashar''el (Israel)* (Numbers 23:23). Paul carries the defence to its end — *Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth* (Romans 8:33); *Who is he that condemneth? It is Messiah (Christ) that died... who also maketh intercession for us* (Romans 8:34). The *shout of a king* among the people is answered: the King intercedes, and the hired curse falls to the ground.',
+  sv.verse_id, ev.verse_id, 'free', 24059
+  FROM _s312_num23_lookup sv, _s312_num23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=23 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- =====================================================================
+-- T H R E A D _ M E M B E R S  (verbose: each member its own INSERT)
+-- =====================================================================
+-- thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yashar''el (Israel) then shall dwell in safety alone* (Deuteronomy 33:28) — Moses'' blessing speaks the oracle''s very word: the dwelling-alone is election and safety.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=9
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-the-people-shall-dwell-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*purify unto himself a peculiar people, zealous of good works* (Titus 2:14) — the portion Balaam coveted: the set-apart people redeemed unto Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=10
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-the-people-shall-dwell-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9) — the holy nation not reckoned among the nations: the two-house people restored, not replaced.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=9
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-the-people-shall-dwell-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the word that Elohim (God) putteth in my mouth, that shall I speak* (Numbers 22:38) — Balaam said it before the altars and repeats it now: the seer''s mouth is bound, not for sale.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=12
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-the-word-balaam-could-not-take-back'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the Strength of Yashar''el (Israel) will not lie nor repent: for he is not a man, that he should repent* (1 Samuel 15:29) — Samuel turns the oracle into covenant axiom: what Yahuah speaks stands.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-elohim-is-not-a-man-that-he-should-lie'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For I am Yahuah (LORD), I change not; therefore ye sons of Jacob are not consumed* (Malachi 3:6) — Jacob''s survival rests on the unchanging One who is not a man that he should lie.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-elohim-is-not-a-man-that-he-should-lie'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the gifts and calling of Elohim (God) are without repentance* (Romans 11:29) — Paul''s anti-replacement charter is Balaam''s *I cannot reverse it* unfolded: the blessing is irreversible.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=20
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-elohim-is-not-a-man-that-he-should-lie'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*eternal life, which Elohim (God), that cannot lie, promised before the world began* (Titus 1:2) — the promise rests on the One who cannot lie, so the hope cannot fail.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-elohim-is-not-a-man-that-he-should-lie'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*two immutable things, in which it was impossible for Elohim (God) to lie* (Hebrews 6:18) — the oath to Abraham rests on the truth Balaam was forced to speak: *hath he spoken, and shall he not make it good?*'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-elohim-is-not-a-man-that-he-should-lie'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Blessed is he whose transgression is forgiven, whose sin is covered* (Psalm 32:1) — David sings the blessedness the oracle declares: the covered people whose sin Yahuah does not behold.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=21
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=32 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-he-hath-not-beheld-iniquity-in-jacob'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Blessed is the man unto whom Yahuah (LORD) imputeth not iniquity* (Psalm 32:2) — the man whose iniquity is not imputed is Jacob in the oracle, reckoned clean by the One who covers.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=21
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=32 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-he-hath-not-beheld-iniquity-in-jacob'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth* (Romans 8:33) — no curse and no charge can stand: the same defence the oracle raised, carried to its end.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=23
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-he-hath-not-beheld-iniquity-in-jacob'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Who is he that condemneth?... who also maketh intercession for us* (Romans 8:34) — the King whose shout is among them intercedes, and every accuser is answered.'
+  FROM cross_reference_threads t
+  JOIN _s312_num23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=23 AND sv.verse_number=23
+  JOIN _s312_num23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-23-he-hath-not-beheld-iniquity-in-jacob'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_24.sql (Numbers 24) -----
+-- Chapter: Numbers 24 — BALAAM'S FOURTH ORACLE, a Messianic keystone of the Torah. The hireling
+-- seer, set to curse, is overruled by the Ruach (the spirit of Elohim came upon him, 24:2) and can
+-- only bless: *How goodly are thy tents, O Jacob, and thy tabernacles, O Yashar'el (Israel)!* (24:5),
+-- and he repeats the Abrahamic seed-word verbatim — *Blessed is he that blesseth thee, and cursed is
+-- he that curseth thee* (24:9). Then the keystone: *there shall come a Star out of Jacob, and a
+-- Sceptre shall rise out of Yashar'el (Israel)* (24:17) — the Davidic Messiah-King foreseen by a
+-- PAGAN seer, the bright and morning star the wise men followed (Matthew 2:2; Revelation 22:16), who
+-- inherits the sceptre Jacob laid on Yahudah (Genesis 49:10) and dashes the nations with the rod of
+-- iron (Psalm 2:9; Revelation 2:27-28). He shall have DOMINION (24:19) — sea to sea (Psalm 72:8), the
+-- everlasting kingdom (Daniel 7:14; Revelation 11:15). The Formed Son, the One who HAS a Father,
+-- announced from a hilltop in Moab. The oracles close against Amalek — *his latter end shall be that
+-- he perish for ever* (24:20) — the perpetual war Yahuah swore (Exodus 17:16) and Saul forfeited the
+-- kingdom by sparing (1 Samuel 15).
+-- Tag: num24   Temp view: _s312_num24_lookup
+-- Sort band: base 24075, step 3 -> threads at 24075, 24078, 24081, 24084, 24087 (5 threads)
+-- Source of EVERY row: 'canon','numbers',24,v
+--
+-- Numbers 24 coverage:
+--   ★ v.1-4 (Balaam saw that it pleased Yahuah to bless Yashar'el... the spirit of Elohim came upon
+--          him... He hath said, which heard the words of Elohim, which saw the vision of the Almighty)
+--        NT:     ★ Revelation 2:14 (the doctrine of Balaam, who taught Balac to cast a stumblingblock
+--                before the children of Yashar'el) — THREAD 5 (the seer overruled to bless; his later
+--                counsel to seduce is the warning the NT keeps)
+--        Extras: none warranted clean here (Balaam material in Jasher/Jubilees is diffuse; held in prose)
+--        Tanakh: ★ Numbers 23:8 woven (how shall I curse, whom Elohim hath not cursed) — held in prose;
+--                Deuteronomy 23:5 (Yahuah turned the curse into a blessing) — THREAD 5
+--   ★ v.5-9 (How goodly are thy tents, O Jacob... He couched, he lay down as a lion... Blessed is he
+--          that blesseth thee, and cursed is he that curseth thee)
+--        NT:     none forced (the Abrahamic blessing-formula's NT weight is the seed-promise carried in
+--                prose; no single NT verse quotes 24:9 — held)
+--        Extras: none warranted
+--        Tanakh: ★★ Genesis 12:3 (I will bless them that bless thee, and curse him that curseth thee) —
+--                THREAD 1 (the seed-word the seer is forced to repeat), ★ Genesis 49:9 (Yahudah is a
+--                lion's whelp... he couched as a lion) — THREAD 1 (the couched lion = Yahudah, the
+--                sceptre-tribe)
+--   ★★★ v.17 (there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar'el)
+--        NT:     ★★★ Matthew 2:2 (we have seen his star in the east), ★★★ Revelation 22:16 (I am the
+--                root and the offspring of David, and the bright and morning star), ★★ Revelation 2:28
+--                (I will give him the morning star) — THREAD 2
+--        Extras: none clean (Testaments XII Star-echoes flagged corrupt in this parse — NOT used)
+--        Tanakh: ★★★ Genesis 49:10 (The sceptre shall not depart from Yahudah... until Shiloh come),
+--                ★★ Psalm 2:9 (Thou shalt break them with a rod of iron) — THREAD 2
+--   ★ v.18-19 (Out of Jacob shall come he that shall have dominion, and shall destroy him that remaineth)
+--        NT:     ★★ Revelation 11:15 (The kingdoms of this world are become the kingdoms of our Lord,
+--                and of his Messiah; and he shall reign for ever and ever) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 72:8 (He shall have dominion also from sea to sea), ★★ Daniel 7:14 (there was
+--                given him dominion... an everlasting dominion, which shall not pass away) — THREAD 3
+--   v.20 (Amalek was the first of the nations; but his latter end shall be that he perish for ever)
+--        NT:     none warranted
+--        Extras: none warranted clean
+--        Tanakh: ★★ Exodus 17:16 (Yahuah will have war with Amalek from generation to generation),
+--                ★ 1 Samuel 15:3 (Now go and smite Amalek, and utterly destroy all that they have) — THREAD 4
+--   v.21-25 (the Kenites... Asshur... ships from the coast of Chittim... he also shall perish for ever)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: woven into THREAD 4's prose (the nations-judgment oracle); no separate add forced
+--
+-- Threads (slug — target libraries):
+--   1. numbers-24-how-goodly-are-thy-tents-blessed-is-he-that-blesseth-thee — Tanakh (Genesis 12, Genesis 49) [free]
+--      (★ the hireling forced to bless; the Abrahamic seed-word repeated, the couched lion = Yahudah)
+--   2. numbers-24-a-star-out-of-jacob-a-sceptre-out-of-israel — NT (Matthew 2, Revelation 22, Revelation 2) + Tanakh (Genesis 49, Psalm 2) [free]
+--      (★★★ THE STAR keystone — the Messiah-King announced by a pagan seer; the Formed Son who HAS a Father)
+--   3. numbers-24-out-of-jacob-shall-come-he-that-shall-have-dominion — NT (Revelation 11) + Tanakh (Psalm 72, Daniel 7) [free]
+--      (★ the everlasting dominion sea to sea; the kingdom that shall not pass away)
+--   4. numbers-24-amalek-his-latter-end-shall-be-that-he-perish-for-ever — Tanakh (Exodus 17, 1 Samuel 15) [free]
+--      (the perpetual war Yahuah swore; the kingdom Saul forfeited by sparing Agag)
+--   5. numbers-24-the-spirit-of-elohim-came-upon-him-the-curse-turned-to-blessing — NT (Revelation 2) + Tanakh (Deuteronomy 23) [free]
+--      (★ the seer overruled to bless; the doctrine of Balaam the NT keeps as a warning)
+--
+-- Framing notes:
+--   ★ THE BLESSING THE HIRELING COULD NOT WITHHOLD (THREAD 1): the spirit of Elohim falls on Balaam and
+--      he can only bless — *How goodly are thy tents, O Jacob* (24:5) — and he repeats the Abrahamic
+--      seed-word he never learned: *Blessed is he that blesseth thee, and cursed is he that curseth
+--      thee* (24:9), which is Genesis 12:3 (*I will bless them that bless thee, and curse him that
+--      curseth thee*). The seed promise is so fixed that even a Moabite diviner mouths it. The couched
+--      lion of 24:9 is Yahudah's own emblem (Genesis 49:9), the sceptre-tribe — pointing forward to
+--      THREAD 2.
+--   ★★★ THE STAR OUT OF JACOB (THREAD 2): *there shall come a Star out of Jacob, and a Sceptre shall
+--      rise out of Yashar'el* (24:17). The Star is the Davidic Messiah-King; Yahusha names himself *the
+--      root and the offspring of David, and the bright and morning star* (Revelation 22:16) and *I will
+--      give him the morning star* (Revelation 2:28). The wise men followed it — *we have seen his star
+--      in the east* (Matthew 2:2). The Sceptre is the one Jacob laid on Yahudah — *The sceptre shall
+--      not depart from Yahudah... until Shiloh come* (Genesis 49:10) — and the rod that dashes the
+--      rebels: *Thou shalt break them with a rod of iron* (Psalm 2:9). FRAMING: the Formed Son, the
+--      Messiah-King who HAS a Father — *Yahuah (LORD) hath said unto me, Thou art my Son* (Psalm 2:7),
+--      *even as I received of my Father* (Revelation 2:27) — announced from a hilltop in Moab by a pagan
+--      seer who saw him *but not now... but not nigh* (24:17). Not co-equal trinitarian persons; the
+--      begotten King who receives the kingdom.
+--   ★ THE DOMINION (THREAD 3): *Out of Jacob shall come he that shall have dominion* (24:19) — the same
+--      dominion Psalm 72 sings (*He shall have dominion also from sea to sea*, 72:8), the everlasting
+--      kingdom given to the One like the Son of Adam (*his dominion is an everlasting dominion, which
+--      shall not pass away*, Daniel 7:14), consummated when *the kingdoms of this world are become the
+--      kingdoms of our Lord, and of his Messiah* (Revelation 11:15).
+--   AMALEK (THREAD 4): *his latter end shall be that he perish for ever* (24:20) seals the war Yahuah
+--      swore — *Yahuah (LORD) will have war with Amalek from generation to generation* (Exodus 17:16) —
+--      the command Saul disobeyed by sparing Agag (1 Samuel 15:3), forfeiting the kingdom. Note Balaam
+--      foresees *his king shall be higher than Agag* (24:7): the Yashar'el king who would NOT spare what
+--      Yahuah devoted.
+--   ★ THE CURSE TURNED TO BLESSING (THREAD 5): *the spirit of Elohim came upon him* (24:2) and the man
+--      *which heard the words of Elohim* (24:4) cannot reverse Yahuah's word — *Yahuah Eloheyka (the
+--      LORD thy God) turned the curse into a blessing unto thee* (Deuteronomy 23:5). The NT keeps the
+--      darker memory: when bribed cursing failed, Balaam's COUNSEL seduced Yashar'el to sin — *the
+--      doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar'el*
+--      (Revelation 2:14). The blessing-word stands; the warning against his counsel stands too.
+--   VERSES WITH NO SEPARATE ADD: v.6-8 (the lign aloes, the unicorn strength, the eaten nations — woven
+--      into THREAD 1's blessing prose), v.10-16 (Balak's anger, Balaam's I-cannot-go-beyond-the-word,
+--      the fourth-oracle preface — v.13/v.16 woven into THREAD 5), v.18 first clause (Edom/Seir — woven
+--      into THREAD 3), v.21-25 (Kenites/Asshur/Chittim — woven into THREAD 4's nations-judgment prose).
+--      All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s312_num24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): How goodly are thy tents — the hireling forced to bless; the seed-word repeated
+    ('canon','numbers',24,9,'canon','genesis',12,3,'free',
+      E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). The hireling seer, hired to curse, repeats the Abrahamic seed-word verbatim: *Blessed is he that blesseth thee, and cursed is he that curseth thee* (Numbers 24:9). The promise spoken to Abram is so fixed that even a Moabite diviner is overruled to mouth it — the blessing and the curse cleave to the seed, unmoved by a king''s gold.'),
+    ('canon','numbers',24,9,'canon','genesis',49,9,'free',
+      E'*Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9). Balaam''s image — *He couched, he lay down as a lion, and as a great lion: who shall stir him up?* (Numbers 24:9) — is Yahudah''s own emblem from Jacob''s deathbed blessing, the couched lion none dares rouse. The sceptre-tribe is in view; the seer is already circling the Star and Sceptre of 24:17.'),
+
+    -- THREAD 2 (★★★): A Star out of Jacob — the Messiah-King announced by a pagan seer
+    ('canon','numbers',24,17,'canon','matthew',2,2,'free',
+      E'*Saying, Where is he that is born King of the Yahudim (Jews)? for we have seen his star in the east, and are come to worship him* (Matthew 2:2). The wise men from the east read the sign Balaam from the east foretold — *there shall come a Star out of Jacob* (Numbers 24:17) — and followed it to the new-born King. The pagan seer''s oracle and the magi''s star are one prophecy answered: the Star of Jacob risen, the King come.'),
+    ('canon','numbers',24,17,'canon','revelation',22,16,'free',
+      E'*I Yahusha (Jesus) have sent mine angel to testify unto you these things in the churches. I am the root and the offspring of David, and the bright and morning star* (Revelation 22:16). Yahusha names himself the very thing Balaam saw rising — *a Star out of Jacob* (Numbers 24:17) — *the bright and morning star*, and *the root and the offspring of David*, the Sceptre of Yashar''el. The seer''s distant glimpse (*I shall see him, but not now... but not nigh*) is the King who closes the canon declaring himself the Star.'),
+    ('canon','numbers',24,17,'canon','revelation',2,28,'free',
+      E'*And I will give him the morning star* (Revelation 2:28), spoken to the overcomer who is given *power over the nations... and he shall rule them with a rod of iron... even as I received of my Father* (Revelation 2:26-27). The Star of Jacob and the Sceptre of Yashar''el (Numbers 24:17) are the Messiah''s own inheritance — the morning star and the iron rod — received OF a Father: the Formed Son who reigns, who HAS a Father, not a co-equal person.'),
+    ('canon','numbers',24,17,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The *Sceptre* that *shall rise out of Yashar''el* (Numbers 24:17) is the one Jacob laid on Yahudah — held until Shiloh, the gathering of the people. Two oracles, one King: the sceptre-tribe of Genesis and the Sceptre-Star of Numbers meet in the Messiah of Yahudah.'),
+    ('canon','numbers',24,17,'canon','psalms',2,9,'free',
+      E'*Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9). The Sceptre of Yashar''el that *shall smite the corners of Moab, and destroy all the children of Sheth* (Numbers 24:17) is the iron rod of the begotten King — *Thou art my Son; this day have I begotten thee* (Psalm 2:7). The Star wields the Sceptre against the rebel nations; the Messiah-King, begotten of a Father, rules them with a rod of iron.'),
+
+    -- THREAD 3 (★): Out of Jacob shall come he that shall have dominion
+    ('canon','numbers',24,19,'canon','revelation',11,15,'free',
+      E'*And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The dominion Balaam foresaw — *Out of Jacob shall come he that shall have dominion* (Numbers 24:19) — is consummated when the kingdoms of this world pass to the Messiah forever. The One out of Jacob takes the dominion the seventh trumpet proclaims.'),
+    ('canon','numbers',24,19,'canon','psalms',72,8,'free',
+      E'*He shall have dominion also from sea to sea, and from the river unto the ends of the earth* (Psalm 72:8). Balaam''s *he that shall have dominion* (Numbers 24:19) is the king''s-son of Psalm 72, whose rule reaches *from sea to sea* — *all nations shall serve him* (72:11). The dominion out of Jacob is the universal reign of the righteous King.'),
+    ('canon','numbers',24,19,'canon','daniel',7,14,'free',
+      E'*And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:14). The dominion out of Jacob (Numbers 24:19) is the everlasting dominion given to *one like the Son of Adam* who *came with the clouds* (Daniel 7:13) — a kingdom that *shall not pass away*. The Star and Sceptre of Jacob reign forever.'),
+
+    -- THREAD 4: Amalek — his latter end shall be that he perish for ever
+    ('canon','numbers',24,20,'canon','exodus',17,16,'free',
+      E'*For he said, Because Yahuah (LORD) hath sworn that Yahuah (LORD) will have war with Amalek from generation to generation* (Exodus 17:16). Balaam''s oracle — *Amalek was the first of the nations; but his latter end shall be that he perish for ever* (Numbers 24:20) — seals the war Yahuah swore at Rephidim. The perpetual war and the for-ever perishing are one sentence on Amalek, first to strike Yashar''el coming out of Egypt.'),
+    ('canon','numbers',24,20,'canon','1-samuel',15,3,'free',
+      E'*Now go and smite Amalek, and utterly destroy all that they have, and spare them not; but slay both man and woman, infant and suckling, ox and sheep, camel and ass* (1 Samuel 15:3). The sentence Balaam pronounced — *his latter end shall be that he perish for ever* (Numbers 24:20) — became Saul''s charge. By sparing Agag (whom Balaam foresaw the Yashar''el king would tower over, 24:7), Saul forfeited the kingdom: *thou hast rejected the word of Yahuah (LORD), and Yahuah (LORD) hath rejected thee from being king* (15:23).'),
+
+    -- THREAD 5 (★): The spirit of Elohim came upon him — the curse turned to blessing
+    ('canon','numbers',24,1,'canon','deuteronomy',23,5,'free',
+      E'*Nevertheless Yahuah Eloheyka (the LORD thy God) would not hearken unto Balaam; but Yahuah Eloheyka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Eloheyka (the LORD thy God) loved thee* (Deuteronomy 23:5). When *Balaam saw that it pleased Yahuah (LORD) to bless Yashar''el (Israel)* (Numbers 24:1), he ceased seeking enchantments — Yahuah had *turned the curse into a blessing*. No hireling''s divination can reverse the love-word spoken over the seed.'),
+    ('canon','numbers',24,2,'canon','revelation',2,14,'free',
+      E'*But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication* (Revelation 2:14). When *the spirit of Elohim (God) came upon him* (Numbers 24:2) Balaam could only bless; but the NT keeps the darker memory — when cursing failed, his COUNSEL seduced Yashar''el to sin. The blessing-word stands; the warning against the doctrine of Balaam stands with it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-24-how-goodly-are-thy-tents-blessed-is-he-that-blesseth-thee',
+       E'How goodly are thy tents — blessed is he that blesseth thee',
+       E'The hireling seer, hired by Balak to curse, is overruled by the Ruach: *And when Balaam saw that it pleased Yahuah (LORD) to bless Yashar''el (Israel), he went not, as at other times, to seek for enchantments... and the spirit of Elohim (God) came upon him* (Numbers 24:1-2). He can only bless — and his blessing pours out: *How goodly are thy tents, O Jacob, and thy tabernacles, O Yashar''el (Israel)! As the valleys are they spread forth, as gardens by the river''s side... He couched, he lay down as a lion, and as a great lion: who shall stir him up? Blessed is he that blesseth thee, and cursed is he that curseth thee* (24:5-9). That last line is the Abrahamic seed-word repeated verbatim — *I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). The promise spoken to Abram is so fixed that a Moabite diviner is forced to mouth it; the blessing and the curse cleave to the seed, unmoved by a king''s gold. And the couched lion none dares rouse is Yahudah''s own emblem from Jacob''s deathbed blessing: *Yahudah (Judah) is a lion''s whelp... he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9) — the sceptre-tribe, pointing straight to the Star and Sceptre the seer is about to name.',
+       sv.verse_id, ev.verse_id, 'free', 24075
+  FROM _s312_num24_lookup sv, _s312_num24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=24 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-24-a-star-out-of-jacob-a-sceptre-out-of-israel',
+       E'There shall come a Star out of Jacob — the Messiah-King foreseen by a pagan seer',
+       E'From a hilltop in Moab, a hired pagan diviner sees the Messiah across the centuries: *I shall see him, but not now: I shall behold him, but not nigh: there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel), and shall smite the corners of Moab, and destroy all the children of Sheth* (Numbers 24:17). The STAR is the Davidic Messiah-King — and the wise men from the east read the very sign Balaam from the east foretold: *we have seen his star in the east, and are come to worship him* (Matthew 2:2). Yahusha closes the whole canon naming himself that Star: *I am the root and the offspring of David, and the bright and morning star* (Revelation 22:16), and gives it to the overcomer — *I will give him the morning star* (Revelation 2:28). The SCEPTRE is the one Jacob laid on Yahudah — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come* (Genesis 49:10) — and the rod that dashes the rebel nations: *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9). This is the Formed Son, the Messiah-King who HAS a Father: *Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee* (Psalm 2:7), and *he shall rule them with a rod of iron... even as I received of my Father* (Revelation 2:27). The begotten King who RECEIVES the kingdom — not a co-equal trinitarian person — announced not by a prophet of Yashar''el but by a Moabite seer overruled by the spirit of Elohim, that no tongue might be left to deny the Star of Jacob.',
+       sv.verse_id, ev.verse_id, 'free', 24078
+  FROM _s312_num24_lookup sv, _s312_num24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=24 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-24-out-of-jacob-shall-come-he-that-shall-have-dominion',
+       E'Out of Jacob shall come he that shall have dominion — the everlasting kingdom',
+       E'The fourth oracle moves from the Star to his reign: *And Edom shall be a possession, Seir also shall be a possession for his enemies; and Yashar''el (Israel) shall do valiantly. Out of Jacob shall come he that shall have dominion, and shall destroy him that remaineth of the city* (Numbers 24:18-19). The DOMINION out of Jacob is the universal reign Psalm 72 sings of the king''s son: *He shall have dominion also from sea to sea, and from the river unto the ends of the earth... all kings shall fall down before him: all nations shall serve him* (Psalm 72:8,11). It is the everlasting dominion given to the cloud-coming King: *there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:14). And it is consummated when the seventh trumpet sounds: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The Star and Sceptre of Jacob hold a kingdom that shall not pass away.',
+       sv.verse_id, ev.verse_id, 'free', 24081
+  FROM _s312_num24_lookup sv, _s312_num24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=24 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-24-amalek-his-latter-end-shall-be-that-he-perish-for-ever',
+       E'Amalek — his latter end shall be that he perish for ever',
+       E'The closing oracles turn against the nations, and first against Amalek: *And when he looked on Amalek, he took up his parable, and said, Amalek was the first of the nations; but his latter end shall be that he perish for ever* (Numbers 24:20). This seals the war Yahuah swore at Rephidim, when Amalek struck Yashar''el coming out of Egypt: *Because Yahuah (LORD) hath sworn that Yahuah (LORD) will have war with Amalek from generation to generation* (Exodus 17:16). The perpetual war and the for-ever perishing are one sentence. That sentence became a king''s charge — and his undoing: *Now go and smite Amalek, and utterly destroy all that they have, and spare them not* (1 Samuel 15:3). Balaam had even foreseen the Yashar''el king who would tower over Amalek''s house — *his king shall be higher than Agag* (24:7) — yet Saul spared Agag and the spoil, and forfeited the throne: *thou hast rejected the word of Yahuah (LORD), and Yahuah (LORD) hath rejected thee from being king* (15:23). The oracle runs on through the Kenites, Asshur, and the ships of Chittim (24:21-24), each in its turn — *and he also shall perish for ever* — the seer who came to curse Yashar''el left pronouncing doom on Yashar''el''s enemies.',
+       sv.verse_id, ev.verse_id, 'free', 24084
+  FROM _s312_num24_lookup sv, _s312_num24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=24 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-24-the-spirit-of-elohim-came-upon-him-the-curse-turned-to-blessing',
+       E'The spirit of Elohim came upon him — the curse turned into a blessing',
+       E'No hireling''s divination can reverse the word Yahuah speaks over the seed. *And when Balaam saw that it pleased Yahuah (LORD) to bless Yashar''el (Israel), he went not, as at other times, to seek for enchantments, but he set his face toward the wilderness... and the spirit of Elohim (God) came upon him* (Numbers 24:1-2). Moses names what happened: *Yahuah Eloheyka (the LORD thy God) would not hearken unto Balaam; but Yahuah Eloheyka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Eloheyka (the LORD thy God) loved thee* (Deuteronomy 23:5). The seer himself confessed he could not go beyond it: *what Yahuah (LORD) saith, that will I speak* (24:13). Yet the canon keeps the darker memory. When bribed cursing failed, Balaam''s COUNSEL succeeded where his curses could not — he taught Balak to seduce Yashar''el into idolatry and fornication, the snare of Peor. The risen Messiah names it as a standing warning to his assemblies: *thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication* (Revelation 2:14). The blessing-word over the seed stands forever; the warning against the doctrine of Balaam stands with it.',
+       sv.verse_id, ev.verse_id, 'free', 24087
+  FROM _s312_num24_lookup sv, _s312_num24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=24 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will bless them that bless thee, and curse him that curseth thee* (Genesis 12:3) — the Abrahamic seed-word the hireling seer is forced to repeat verbatim in *Blessed is he that blesseth thee, and cursed is he that curseth thee* (Numbers 24:9).'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-how-goodly-are-thy-tents-blessed-is-he-that-blesseth-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahudah (Judah) is a lion''s whelp... he couched as a lion... who shall rouse him up?* (Genesis 49:9) — Balaam''s *He couched, he lay down as a lion... who shall stir him up?* (Numbers 24:9) is Yahudah''s emblem, the sceptre-tribe.'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-how-goodly-are-thy-tents-blessed-is-he-that-blesseth-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *we have seen his star in the east, and are come to worship him* (Matthew 2:2) — the wise men from the east followed the very Star Balaam from the east foretold (Numbers 24:17).'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-a-star-out-of-jacob-a-sceptre-out-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *I am the root and the offspring of David, and the bright and morning star* (Revelation 22:16) — Yahusha names himself the Star out of Jacob and the Sceptre of Yashar''el (Numbers 24:17).'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-a-star-out-of-jacob-a-sceptre-out-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *And I will give him the morning star* (Revelation 2:28) — the morning star and the iron rod, *even as I received of my Father* (2:27): the Formed Son who HAS a Father holds the Star and Sceptre (Numbers 24:17).'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-a-star-out-of-jacob-a-sceptre-out-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★★ *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come* (Genesis 49:10) — the Sceptre that rises out of Yashar''el (Numbers 24:17) is the one Jacob laid on Yahudah.'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-a-star-out-of-jacob-a-sceptre-out-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Thou shalt break them with a rod of iron* (Psalm 2:9) — the Sceptre that smites the rebel nations (Numbers 24:17) is the iron rod of the begotten King, *Thou art my Son* (Psalm 2:7).'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-a-star-out-of-jacob-a-sceptre-out-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15) — the dominion out of Jacob (Numbers 24:19) consummated at the seventh trumpet.'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-out-of-jacob-shall-come-he-that-shall-have-dominion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *He shall have dominion also from sea to sea, and from the river unto the ends of the earth* (Psalm 72:8) — Balaam''s *he that shall have dominion* (Numbers 24:19) is the king''s-son whose reign reaches the ends of the earth.'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-out-of-jacob-shall-come-he-that-shall-have-dominion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *his dominion is an everlasting dominion, which shall not pass away* (Daniel 7:14) — the dominion out of Jacob (Numbers 24:19) is the everlasting kingdom given to one like the Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-out-of-jacob-shall-come-he-that-shall-have-dominion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Yahuah (LORD) will have war with Amalek from generation to generation* (Exodus 17:16) — the perpetual war Yahuah swore at Rephidim, sealed in Balaam''s *his latter end shall be that he perish for ever* (Numbers 24:20).'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-amalek-his-latter-end-shall-be-that-he-perish-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Now go and smite Amalek, and utterly destroy all that they have, and spare them not* (1 Samuel 15:3) — the sentence Balaam pronounced (Numbers 24:20) became Saul''s charge; sparing Agag cost him the kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-amalek-his-latter-end-shall-be-that-he-perish-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahuah Eloheyka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Eloheyka (the LORD thy God) loved thee* (Deuteronomy 23:5) — when *it pleased Yahuah to bless Yashar''el* (Numbers 24:1), no divination could reverse the love-word over the seed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-the-spirit-of-elohim-came-upon-him-the-curse-turned-to-blessing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel)* (Revelation 2:14) — when *the spirit of Elohim came upon him* (Numbers 24:2) Balaam could only bless; his later COUNSEL to seduce is the warning the Messiah keeps.'
+  FROM cross_reference_threads t
+  JOIN _s312_num24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s312_num24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-24-the-spirit-of-elohim-came-upon-him-the-curse-turned-to-blessing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_numbers_25.sql (Numbers 25) -----
+-- Book: Numbers  | Chapter: 25  | Tag: num25  | Prefix: s312
+-- View: _s312_num25_lookup
+-- Sort band: base 24100, step 3 -> 24100, 24103, 24106, 24109
+-- Theme: Baal-peor (whoredom with Moab joined unto Baal-peor) and Phinehas's javelin
+--        (the plague stayed, zealous for his Elohim, the covenant of an everlasting priesthood).
+--
+-- Numbers 25 coverage:
+--   v.1-3  (whoredom with Moab; "joined himself unto BAAL-PEOR"; anger of Yahuah kindled)
+--          NT:     Revelation 2:14 (doctrine of Balaam — stumblingblock, fornication, idol-meat);
+--                  1 Corinthians 10:8 (committed fornication, fell)
+--          Extras: none warranted (Jasher/Jubilees Peor narrative thin; canon + NT carry it)
+--          Tanakh: Psalm 106:28 (joined themselves unto Baal-peor, ate sacrifices of the dead);
+--                  Hosea 9:10 (went to Baal-peor, separated themselves unto that shame)
+--   v.4-9  (Take the heads / slay; the plague; Phinehas's javelin; the plague stayed; 24,000 died)
+--          NT:     1 Corinthians 10:8 (fell in one day three and twenty thousand — the plague type)
+--          Extras: none warranted
+--          Tanakh: Psalm 106:29-30 (the plague brake in upon them; Phinehas executed judgment, plague stayed)
+--   v.6-13 (Phinehas zealous; turned my wrath away; covenant of peace; everlasting priesthood; atonement)
+--          NT:     none warranted (no NT verse directly carries the Phinehas-priesthood covenant;
+--                  framed in prose, anchored by Psalm 106:30-31 + Malachi 2:4-5)
+--          Extras: none warranted (clean witness preferred)
+--          Tanakh: Psalm 106:30-31 (counted unto him for righteousness unto all generations);
+--                  Malachi 2:4-5 (my covenant with Levi — of life and peace, the fear of the Name)
+--   v.14-18 (Zimri and Cozbi named; Vex the Midianites for the wiles at Peor)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Numbers 31:16 (Balaam's counsel caused the trespass in the matter of Peor)
+--
+-- THREADS (4):
+--   numbers-25-joined-himself-unto-baal-peor (free) -> Rev2:14, 1Cor10:8, Ps106:28, Hos9:10
+--   numbers-25-the-plague-stayed-twenty-four-thousand (free) -> 1Cor10:8, Ps106:29, Ps106:30
+--   numbers-25-phinehas-zealous-covenant-of-an-everlasting-priesthood (free) -> Ps106:30, Ps106:31, Mal2:4, Mal2:5
+--   numbers-25-the-midianites-vexed-for-the-wiles-at-peor (free) -> Num31:16
+--
+-- Framework note: Phinehas's zeal is "counted unto him for righteousness" (Ps106:31) — the same
+--   righteousness-credited formula as Abraham (Gen15:6), here for covenant-zeal against idolatry,
+--   yielding "the covenant of an everlasting priesthood" (the Levitical priesthood Malachi calls
+--   "my covenant with Levi... of life and peace"). Victims-not-enemies: the judgment falls on the
+--   idolatrous union (Zimri/Cozbi) and on Midian's deliberate wiles, never on a people as such.
+
+CREATE TEMP VIEW _s312_num25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: joined himself unto Baal-peor
+    ('canon','numbers',25,3,'canon','revelation',2,14,'free',
+      E'*But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication.* (Revelation 2:14). The Messiah names Peor by its author: it was Balaam''s counsel (Numbers 31:16) that baited Yashar''el to *commit whoredom with the daughters of Moab* and *joined himself unto Baal-peor* (Numbers 25:1,3). The two sins are one — idol-feast and fornication welded together, the same stumblingblock the risen Son still indicts at Pergamos.'),
+    ('canon','numbers',25,1,'canon','1-corinthians',10,8,'free',
+      E'*Neither let us commit fornication, as some of them committed, and fell in one day three and twenty thousand.* (1 Corinthians 10:8). Paul reads Peor as the standing warning: *the people began to commit whoredom with the daughters of Moab* (Numbers 25:1), and the fornication that *bowed down to their gods* (Numbers 25:2) is the very example he sets before the assembly — written for our admonition, not abolished.'),
+    ('canon','numbers',25,3,'canon','psalms',106,28,'free',
+      E'*They joined themselves also unto Baal-peor, and ate the sacrifices of the dead.* (Psalm 106:28). The Psalm sings the history in the same words the Torah uses: *And Yashar''el (Israel) joined himself unto Baal-peor* (Numbers 25:3). The gods of Moab are *the dead* — lifeless idols — and to eat their sacrifices is to be yoked to death.'),
+    ('canon','numbers',25,3,'canon','hosea',9,10,'free',
+      E'*I found Yashar''el (Israel) like grapes in the wilderness; I saw your fathers as the firstripe in the fig tree at her first time: but they went to Baal-peor, and separated themselves unto that shame; and their abominations were according as they loved.* (Hosea 9:10). Hosea makes Peor the archetype of the northern house''s harlotry — the wilderness-bride who *separated themselves unto that shame*, the same turning the Torah records when *Yashar''el (Israel) joined himself unto Baal-peor* (Numbers 25:3).'),
+    -- Thread 2: the plague stayed, twenty-four thousand
+    ('canon','numbers',25,9,'canon','1-corinthians',10,8,'free',
+      E'*Neither let us commit fornication, as some of them committed, and fell in one day three and twenty thousand.* (1 Corinthians 10:8). Numbers records *those that died in the plague were twenty and four thousand* (Numbers 25:9); Paul cites the number that fell to the same Peor judgment, holding the slaughter up as the type — fornication with idols brings death upon the congregation.'),
+    ('canon','numbers',25,9,'canon','psalms',106,29,'free',
+      E'*Thus they provoked him to anger with their inventions: and the plague brake in upon them.* (Psalm 106:29). The Psalm names the wrath the Torah only counts: *those that died in the plague were twenty and four thousand* (Numbers 25:9). The plague *brake in upon them* because they *provoked him to anger* — the fierce anger of Yahuah kindled at Peor (Numbers 25:3).'),
+    ('canon','numbers',25,8,'canon','psalms',106,30,'free',
+      E'*Then stood up Phinehas, and executed judgment: and so the plague was stayed.* (Psalm 106:30). The Psalm echoes the Torah verbatim: Phinehas *thrust both of them through... So the plague was stayed from the children of Yashar''el (Israel)* (Numbers 25:8). One man''s righteous judgment halts the wrath upon the whole house.'),
+    -- Thread 3: Phinehas zealous, covenant of an everlasting priesthood
+    ('canon','numbers',25,11,'canon','psalms',106,30,'free',
+      E'*Then stood up Phinehas, and executed judgment: and so the plague was stayed.* (Psalm 106:30). Yahuah''s own verdict is that *Phinehas... hath turned my wrath away from the children of Yashar''el (Israel), while he was zealous for my sake* (Numbers 25:11); the Psalm names the act that turned it — he *stood up* and *executed judgment* in the gate of the plague.'),
+    ('canon','numbers',25,13,'canon','psalms',106,31,'free',
+      E'*And that was counted unto him for righteousness unto all generations for evermore.* (Psalm 106:31). Here is the same righteousness-credited formula as Abraham (*counted it to him for righteousness*, Genesis 15:6) — Phinehas''s covenant-zeal reckoned as righteousness *unto all generations*, the ground of *the covenant of an everlasting priesthood* (Numbers 25:13) given *because he was zealous for his Elohim (God)*.'),
+    ('canon','numbers',25,13,'canon','malachi',2,4,'free',
+      E'*And ye shall know that I have sent this commandment unto you, that my covenant might be with Levi, saith Yahuah Tseva''ot (LORD of hosts).* (Malachi 2:4). The *covenant of an everlasting priesthood* given to Phinehas and *his seed after him* (Numbers 25:13) is the very *covenant... with Levi* Malachi recalls — the priestly line preserved through the zeal of Aaron''s grandson.'),
+    ('canon','numbers',25,12,'canon','malachi',2,5,'free',
+      E'*My covenant was with him of life and peace; and I gave them to him for the fear wherewith he feared me, and was afraid before my name.* (Malachi 2:5). Yahuah''s word to Phinehas — *Behold, I give unto him my covenant of peace* (Numbers 25:12) — is the same *covenant... of life and peace* Malachi names, granted for the fear of the Name that Phinehas''s jealousy for Yahuah''s honour embodied.'),
+    -- Thread 4: the Midianites vexed for the wiles at Peor
+    ('canon','numbers',25,18,'canon','numbers',31,16,'free',
+      E'*Behold, these caused the children of Yashar''el (Israel), through the counsel of Balaam, to commit trespass against Yahuah (LORD) in the matter of Peor, and there was a plague among the congregation of Yahuah (LORD).* (Numbers 31:16). The wiles for which Yahuah says *Vex the Midianites... For they vex you with their wiles, wherewith they have beguiled you in the matter of Peor* (Numbers 25:17-18) are unmasked in chapter 31: it was *the counsel of Balaam* — the prophet who could not curse, so he taught Moab and Midian to seduce.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s312_num25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s312_num25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-25-joined-himself-unto-baal-peor',
+       E'Joined Himself Unto Baal-peor — Whoredom with Moab',
+       E'At Shittim *the people began to commit whoredom with the daughters of Moab* (Numbers 25:1), who *called the people unto the sacrifices of their gods: and the people did eat, and bowed down to their gods* (Numbers 25:2), until *Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled* (Numbers 25:3). Idol-feast and fornication are one sin. The risen Messiah names its author: *them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication* (Revelation 2:14). Paul holds it up for the assembly — *Neither let us commit fornication, as some of them committed* (1 Corinthians 10:8) — written for admonition, not abolished. The Psalmist sings it back: *They joined themselves also unto Baal-peor, and ate the sacrifices of the dead* (Psalm 106:28); and Hosea makes Peor the archetype of the harlot-house: *they went to Baal-peor, and separated themselves unto that shame* (Hosea 9:10).',
+       sv.verse_id, ev.verse_id, 'free', 24100
+  FROM _s312_num25_lookup sv, _s312_num25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=25 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-25-the-plague-stayed-twenty-four-thousand',
+       E'The Plague Stayed — Twenty-Four Thousand Fell',
+       E'When a man of Yashar''el brought a Midianitish woman before the weeping congregation, *Phinehas... took a javelin in his hand* and *thrust both of them through... So the plague was stayed from the children of Yashar''el (Israel)* (Numbers 25:7-8); yet *those that died in the plague were twenty and four thousand* (Numbers 25:9). Paul cites the toll of the same Peor judgment — *as some of them committed, and fell in one day three and twenty thousand* (1 Corinthians 10:8) — as the standing type: fornication with idols brings death on the congregation. The Psalm names the wrath the Torah only counts: *they provoked him to anger with their inventions: and the plague brake in upon them* (Psalm 106:29), and *Then stood up Phinehas, and executed judgment: and so the plague was stayed* (Psalm 106:30). One man''s righteous judgment halts the wrath upon the whole house.',
+       sv.verse_id, ev.verse_id, 'free', 24103
+  FROM _s312_num25_lookup sv, _s312_num25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=25 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-25-phinehas-zealous-covenant-of-an-everlasting-priesthood',
+       E'Phinehas Zealous — The Covenant of an Everlasting Priesthood',
+       E'Yahuah''s verdict on Phinehas: *hath turned my wrath away from the children of Yashar''el (Israel), while he was zealous for my sake* (Numbers 25:11); *Behold, I give unto him my covenant of peace* (Numbers 25:12); *the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar''el (Israel)* (Numbers 25:13). The Psalm names the act that turned the wrath — *Then stood up Phinehas, and executed judgment* (Psalm 106:30) — and applies the very formula spoken over Abraham: *And that was counted unto him for righteousness unto all generations for evermore* (Psalm 106:31; cf. Genesis 15:6, *counted it to him for righteousness*). Malachi recalls the same grant: *my covenant might be with Levi* (Malachi 2:4), *My covenant was with him of life and peace; and I gave them to him for the fear wherewith he feared me, and was afraid before my name* (Malachi 2:5). The zeal is covenant-faithfulness against idolatry — judgment on the idolatrous union, never hatred of a people.',
+       sv.verse_id, ev.verse_id, 'free', 24106
+  FROM _s312_num25_lookup sv, _s312_num25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=25 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'numbers-25-the-midianites-vexed-for-the-wiles-at-peor',
+       E'The Midianites Vexed — The Wiles at Peor',
+       E'Zimri the Simeonite prince and Cozbi daughter of Zur are named (Numbers 25:14-15), and Yahuah commands, *Vex the Midianites, and smite them: For they vex you with their wiles, wherewith they have beguiled you in the matter of Peor* (Numbers 25:17-18). The seduction was no accident but a calculated snare, unmasked in the next reckoning: *Behold, these caused the children of Yashar''el (Israel), through the counsel of Balaam, to commit trespass against Yahuah (LORD) in the matter of Peor, and there was a plague among the congregation of Yahuah (LORD)* (Numbers 31:16). Balaam, who could not curse Yashar''el, taught Moab and Midian to seduce them instead — the doctrine of Balaam the Messiah still indicts (Revelation 2:14).',
+       sv.verse_id, ev.verse_id, 'free', 24109
+  FROM _s312_num25_lookup sv, _s312_num25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='numbers' AND ev.chapter_number=25 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: joined himself unto Baal-peor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the doctrine of Balaam, who taught Balac to cast a stumblingblock... to eat things sacrificed unto idols, and to commit fornication* (Revelation 2:14) — the risen Messiah names Peor''s author.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-joined-himself-unto-baal-peor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Neither let us commit fornication, as some of them committed* (1 Corinthians 10:8) — Paul holds Peor up for the assembly''s admonition.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=1
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-joined-himself-unto-baal-peor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*They joined themselves also unto Baal-peor, and ate the sacrifices of the dead* (Psalm 106:28) — the Psalm sings the Torah''s words back.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-joined-himself-unto-baal-peor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they went to Baal-peor, and separated themselves unto that shame* (Hosea 9:10) — Peor as the archetype of the harlot-house.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=9 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-joined-himself-unto-baal-peor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the plague stayed, twenty-four thousand
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*as some of them committed, and fell in one day three and twenty thousand* (1 Corinthians 10:8) — the toll of the Peor plague as the standing type.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-the-plague-stayed-twenty-four-thousand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they provoked him to anger with their inventions: and the plague brake in upon them* (Psalm 106:29) — the wrath the Torah counts.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-the-plague-stayed-twenty-four-thousand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Then stood up Phinehas, and executed judgment: and so the plague was stayed* (Psalm 106:30) — the Torah''s verbatim echo.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-the-plague-stayed-twenty-four-thousand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: Phinehas zealous, covenant of an everlasting priesthood
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Then stood up Phinehas, and executed judgment* (Psalm 106:30) — the act that turned away the wrath.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-phinehas-zealous-covenant-of-an-everlasting-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And that was counted unto him for righteousness unto all generations for evermore* (Psalm 106:31) — the Abrahamic formula applied to covenant-zeal.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=13
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-phinehas-zealous-covenant-of-an-everlasting-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*that my covenant might be with Levi, saith Yahuah Tseva''ot (LORD of hosts)* (Malachi 2:4) — the everlasting priesthood preserved through Phinehas.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=13
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-phinehas-zealous-covenant-of-an-everlasting-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*My covenant was with him of life and peace... for the fear wherewith he feared me* (Malachi 2:5) — the covenant of peace echoed.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-phinehas-zealous-covenant-of-an-everlasting-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the Midianites vexed for the wiles at Peor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*these caused the children of Yashar''el (Israel), through the counsel of Balaam, to commit trespass... in the matter of Peor* (Numbers 31:16) — the wiles unmasked as Balaam''s counsel.'
+  FROM cross_reference_threads t
+  JOIN _s312_num25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='numbers' AND sv.chapter_number=25 AND sv.verse_number=18
+  JOIN _s312_num25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='numbers-25-the-midianites-vexed-for-the-wiles-at-peor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session312 — Numbers cross-references complete.'
