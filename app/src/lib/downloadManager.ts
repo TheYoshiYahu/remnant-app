@@ -33,6 +33,7 @@
  */
 
 import { type PartnerTier } from "./api";
+import { setContentCacheScope } from "./contentCache";
 import {
   DownloadPausedError,
   type DownloadAreaId,
@@ -40,6 +41,7 @@ import {
   type DownloadState,
   getArea,
   listInterruptedAreas,
+  migrateManifest,
   readManifest,
   runDownload,
 } from "./offlineDownload";
@@ -133,6 +135,57 @@ export function configureDownloadManager(nextTier: PartnerTier | null): void {
   seedFromManifest();
   wireLifecycle();
   emit();
+}
+
+/**
+ * S355 — the REAL fix for "the download stops when I leave the screen."
+ *
+ * THE BUG. Every in-app navigation in this app is a FULL-PAGE DOCUMENT RELOAD
+ * (window.location.href = ...), which tears down the ENTIRE JavaScript context
+ * — including this "module-level singleton" — and aborts the in-flight fetch
+ * loop. (S353 assumed SPA navigation that keeps the JS context alive; this app
+ * doesn't do that, which is why the device saw the download stop and offer a
+ * manual "Resume.") A page-context download therefore cannot literally run
+ * uninterrupted across navigation; the honest fix is to RESUME it the instant
+ * the next page loads, with NO user action and NO dependency on slow async
+ * boot (the /me round-trip). S353's resume was gated behind App's `meChecked`
+ * effect, so on a slow/native boot the partner reached Settings before resume
+ * fired — and saw "Resume."
+ *
+ * THE FIX. Run this from main.tsx at MODULE LOAD, before React mounts and
+ * independent of /me. It:
+ *   1. migrates any pre-S355 split manifest into the single library entry;
+ *   2. reads the interrupted ("running") entry's OWN recorded tier from the
+ *      manifest — the manifest is the source of truth for what was downloading
+ *      and under which tier, so we don't need /me at all;
+ *   3. sets the content-cache scope to that tier (REQUIRED — without a scope
+ *      the cache is pass-through and a resumed download would store nothing);
+ *   4. configures the manager and resumes the interrupted area.
+ * App.tsx still re-affirms tier/scope once /me settles; this just makes resume
+ * happen in the first frame. Never throws — a bad boot must not break the app.
+ */
+export function bootstrapBackgroundDownloads(): void {
+  try {
+    migrateManifest();
+    const manifest = readManifest();
+    // Find an interrupted entry and adopt its tier (they share one partner).
+    let resumeTier: PartnerTier | null = null;
+    let hasInterrupted = false;
+    for (const entry of Object.values(manifest)) {
+      if (entry && entry.state === "running") {
+        hasInterrupted = true;
+        resumeTier = entry.tier;
+        break;
+      }
+    }
+    if (!hasInterrupted) return; // nothing to resume — initial downloads go via App/me
+    const scopeTier = resumeTier ?? "free";
+    setContentCacheScope(scopeTier);
+    configureDownloadManager(resumeTier);
+    resumeInterruptedDownloads();
+  } catch {
+    /* boot resume is best-effort; App.tsx's meChecked path is the backstop */
+  }
 }
 
 export function subscribeDownloadManager(

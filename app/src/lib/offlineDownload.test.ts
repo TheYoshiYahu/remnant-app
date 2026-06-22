@@ -64,63 +64,49 @@ const checks: Check[] = [
     run: () => eq("complete⊇study_notes", tierOwns("complete_study", "study_notes"), true),
   },
 
-  // ---- area gating -------------------------------------------------------
+  // ---- S355 single all-or-nothing area -----------------------------------
   {
-    label: "Core is unlocked for a free partner",
-    run: () => eq("core@free", isAreaUnlocked(getArea("core"), "free"), true),
-  },
-  {
-    label: "Study tools are LOCKED for a free partner",
-    run: () => eq("study@free", isAreaUnlocked(getArea("study"), "free"), false),
-  },
-  {
-    label: "Study tools are unlocked at Companion (complete_study)",
+    // The download itself is open to EVERY tier — a free partner can keep
+    // their (free) library offline. The server gates the CONTENT, not the
+    // download button, so there is no per-tier "locked" area / upgrade prompt.
+    label: "the library download is unlocked for a free partner",
     run: () =>
-      eq("study@complete", isAreaUnlocked(getArea("study"), "complete_study"), true),
+      eq("library@free", isAreaUnlocked(getArea("library"), "free"), true),
   },
   {
-    label: "Compare is locked for a free partner",
-    run: () => eq("compare@free", isAreaUnlocked(getArea("compare"), "free"), false),
+    label: "the library download is unlocked for an anonymous partner",
+    run: () =>
+      eq("library@null", isAreaUnlocked(getArea("library"), null), true),
   },
 
   // ---- catalogue invariants ----------------------------------------------
   {
-    label: "exactly four download areas are catalogued",
-    run: () => eq("areaCount", DOWNLOAD_AREAS.length, 4),
+    label: "exactly ONE download area is catalogued (all-or-nothing)",
+    run: () => eq("areaCount", DOWNLOAD_AREAS.length, 1),
   },
   {
-    label: "Core is a downloadable reading area; Compare/Maps are staged",
+    label: "the single area is the reading library",
     run: () => {
-      const kinds = Object.fromEntries(
-        DOWNLOAD_AREAS.map((a: DownloadArea) => [a.id, a.kind]),
-      );
-      return (
-        eq("core.kind", kinds.core, "reading") ??
-        eq("study.kind", kinds.study, "reading") ??
-        eq("compare.kind", kinds.compare, "soon") ??
-        eq("maps.kind", kinds.maps, "soon")
-      );
+      const a: DownloadArea = DOWNLOAD_AREAS[0];
+      return eq("id", a.id, "library") ?? eq("kind", a.kind, "reading");
     },
   },
   {
-    label: "reading areas declare layers; staged areas declare none",
+    label:
+      "the library seeds EVERY reading layer (canon + cross-refs + interlinear + commentary)",
     run: () => {
-      for (const a of DOWNLOAD_AREAS) {
-        const hasLayers = a.layers.length > 0;
-        const want = a.kind === "reading";
-        const fail = eq(`${a.id}.layers`, hasLayers, want);
-        if (fail) return fail;
-      }
-      return null;
-    },
-  },
-  {
-    label: "Core seeds the chapters list + the always-on reading layers",
-    run: () => {
-      const core = getArea("core");
-      for (const l of ["chapters", "chapter", "witness", "kingdom", "xrefs"]) {
-        if (!core.layers.includes(l as never))
-          return `FAIL [core layers] missing "${l}"`;
+      const lib = getArea("library");
+      for (const l of [
+        "chapters",
+        "chapter",
+        "witness",
+        "kingdom",
+        "xrefs",
+        "words",
+        "commentary",
+      ]) {
+        if (!lib.layers.includes(l as never))
+          return `FAIL [library layers] missing "${l}"`;
       }
       return null;
     },

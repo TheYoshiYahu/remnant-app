@@ -218,14 +218,14 @@ export function canAutoSyncNow(): boolean {
 // ----- which areas the toggle keeps ---------------------------------------
 
 /**
- * The reading areas the partner's tier owns — these are what "Keep available
- * offline" downloads and maintains. (Compare/Maps are `soon` areas that aren't
- * cache-backed yet, so they're excluded; the per-area rows still surface them.)
+ * S355 — "Keep available offline" downloads ONE thing: the partner's complete
+ * entitled library. There is a single download area now, open to every tier
+ * (the server gates the content), so this is always the library area. (The
+ * `tier`/`isAreaUnlocked` check is retained for forward-compatibility but is
+ * always true today.)
  */
 export function keepAreaIds(tier: PartnerTier | null): DownloadAreaId[] {
-  return DOWNLOAD_AREAS.filter(
-    (a) => a.kind === "reading" && isAreaUnlocked(a, tier),
-  ).map((a) => a.id);
+  return DOWNLOAD_AREAS.filter((a) => isAreaUnlocked(a, tier)).map((a) => a.id);
 }
 
 // ----- status (for the UI) -------------------------------------------------

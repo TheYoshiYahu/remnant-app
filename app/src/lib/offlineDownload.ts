@@ -79,21 +79,30 @@ export function tierOwns(
   return tierRank(partner) >= tierRank(required);
 }
 
-// ----- Download areas (the tiered options the settings screen renders) ----
-
-export type DownloadAreaId = "core" | "study" | "compare" | "maps";
+// ----- The download (ONE all-or-nothing area) -----------------------------
 
 /**
- * `reading` areas walk the book/chapter read path and pre-seed contentCache
- * layers — these work offline TODAY with no changes to any reader code.
+ * S355 — there is now exactly ONE download: the partner's complete entitled
+ * library. The earlier core/study/compare/maps split is gone. The design
+ * principle (Yoshi): nobody elects PARTIAL offline — a partner either wants
+ * the library on their device or they don't. So "Keep available offline" =
+ * download EVERYTHING they're entitled to, in one action: every book they can
+ * read (the 66-book canon PLUS the extra-canonical / keeper books the server
+ * returns for their tier), with the cross-reference threads, the
+ * Hebrew/Greek interlinear, and the commentary stack.
  *
- * `soon` areas (compare versions, maps + reference tools) read through their
- * OWN paths — the comparison lens, the maps / Nave's / Vincent's sheets —
- * which aren't cache-backed yet. Pre-seeding them would fill storage without
- * making anything work offline, so they're surfaced as real, sized, tier-
- * gated rows marked "Available soon" rather than shipped as a no-op button.
+ * Tiering still applies — at the DATA layer, where it belongs. We walk only
+ * the books the partner owns (the /books list is server-filtered AND we
+ * re-check `tier_required`), every layer fetch is entitlement-gated by the
+ * API (a free reader's interlinear comes back without the §28 fields, a
+ * locked commentary 404s — both skipped, never stored), and the cache is
+ * tier-scoped. So "download everything" means everything THEY are entitled
+ * to, grabbed in one go — no separate gated flow, no upgrade prompt.
  */
-export type DownloadAreaKind = "reading" | "soon";
+export type DownloadAreaId = "library";
+
+/** Retained for type-compatibility; only "reading" exists now. */
+export type DownloadAreaKind = "reading";
 
 export interface DownloadArea {
   id: DownloadAreaId;
@@ -101,61 +110,39 @@ export interface DownloadArea {
   blurb: string;
   /** Honest planning estimate (bytes). Actual stored bytes are measured live. */
   estBytes: number;
-  /** Minimum tier whose content this area actually fills. */
+  /** Minimum tier required to start the download at all. Always "free" now:
+   *  the toggle is open to everyone; the DATA each partner receives is gated
+   *  per-tier by the server, not by withholding the download itself. */
   minTier: ContentTier;
   kind: DownloadAreaKind;
-  /**
-   * Reading layers this area seeds. `chapters` is the book-level list; the
-   * rest are per-chapter. Overlapping layers between areas are deduped at
-   * download time via `has`, so a layer is only ever fetched once.
-   */
+  /** Every reading layer. The server returns only the layers/fields a tier
+   *  owns; unentitled layers 404 and are skipped, so this single list is
+   *  correct for free and paid partners alike. */
   layers: ContentLayer[];
 }
 
 const MB = 1024 * 1024;
 
+export const LIBRARY_AREA_ID: DownloadAreaId = "library";
+
 export const DOWNLOAD_AREAS: DownloadArea[] = [
   {
-    id: "core",
-    label: "Core Bible",
+    id: "library",
+    label: "Your library",
     blurb:
-      "Every book you can read, offline — chapter text, the Witness and Kingdom marks, and the cross-reference threads. Recommended.",
-    estBytes: 25 * MB,
+      "Everything you can read, saved to this device — every book (including the extra-canonical witnesses your plan includes), the cross-reference threads, the Hebrew/Greek interlinear, and the study notes.",
+    estBytes: 100 * MB,
     minTier: "free",
     kind: "reading",
-    layers: ["chapters", "chapter", "witness", "kingdom", "xrefs"],
-  },
-  {
-    id: "study",
-    label: "Study tools & interlinear",
-    blurb:
-      "The Hebrew/Greek interlinear (tap-a-word) and the tiered commentary stack, cached for every chapter you own.",
-    estBytes: 75 * MB,
-    minTier: "complete_study",
-    kind: "reading",
-    // chapters/chapter are seeded by Core too; deduped via `has` so the
-    // interlinear still has its text even if downloaded on its own.
-    layers: ["chapters", "chapter", "words", "commentary"],
-  },
-  {
-    id: "compare",
-    label: "Compare versions",
-    blurb:
-      "The nine public-domain comparison translations (KJV, ASV, YLT, Brenton's LXX, and more) for side-by-side study.",
-    estBytes: 30 * MB,
-    minTier: "complete_study",
-    kind: "soon",
-    layers: [],
-  },
-  {
-    id: "maps",
-    label: "Maps & reference tools",
-    blurb:
-      "The atlas of biblical places plus Nave's Topical and Vincent's Word Studies.",
-    estBytes: 35 * MB,
-    minTier: "complete_study",
-    kind: "soon",
-    layers: [],
+    layers: [
+      "chapters",
+      "chapter",
+      "witness",
+      "kingdom",
+      "xrefs",
+      "words",
+      "commentary",
+    ],
   },
 ];
 
@@ -165,7 +152,12 @@ export function getArea(id: DownloadAreaId): DownloadArea {
   return area;
 }
 
-/** Does the partner's tier own enough to fill this area with real content? */
+/**
+ * Whether the partner can START this download. Always true now — the single
+ * library download is open to every tier (anonymous included); the server
+ * gates the CONTENT each partner actually receives. Kept as a function so the
+ * call sites (and a future re-introduction of a gate) stay stable.
+ */
 export function isAreaUnlocked(
   area: DownloadArea,
   partnerTier: PartnerTier | null,
@@ -266,6 +258,59 @@ export function clearManifest(): void {
     localStorage.removeItem(MANIFEST_KEY);
   } catch {
     /* ignore */
+  }
+}
+
+/**
+ * S355 — migrate a pre-S355 manifest (core / study / compare / maps keys) to
+ * the single "library" entry. An existing partner who downloaded under the old
+ * split has real content already in the cache; we don't want to re-fetch it,
+ * nor falsely claim the new full library is complete (the old "core" never
+ * fetched the interlinear/commentary layers). So we fold any legacy entries
+ * into ONE `library` entry left in the "running" state: the resume bootstrap
+ * picks it up and finishes it, `has`-skipping every layer already cached (so
+ * it's mostly local IndexedDB checks, minimal network) and filling only the
+ * gaps. Idempotent: a no-op once no legacy keys remain. Returns true if it
+ * changed anything.
+ */
+export function migrateManifest(): boolean {
+  let raw: Record<string, ManifestEntry>;
+  try {
+    const s = localStorage.getItem(MANIFEST_KEY);
+    if (!s) return false;
+    raw = JSON.parse(s) as Record<string, ManifestEntry>;
+  } catch {
+    return false;
+  }
+  const LEGACY = ["core", "study", "compare", "maps"];
+  const legacyKeys = LEGACY.filter((k) => raw[k]);
+  if (legacyKeys.length === 0) return false;
+
+  // Carry the best-known counts + tier forward from the legacy entries so the
+  // UI shows sensible progress; force state "running" so the bootstrap resumes
+  // and completes the (now larger) library walk.
+  const entries = legacyKeys.map((k) => raw[k]).filter(Boolean);
+  const tier = entries.find((e) => e.tier != null)?.tier ?? null;
+  const merged: ManifestEntry = {
+    state: "running",
+    booksTotal: Math.max(0, ...entries.map((e) => e.booksTotal || 0)),
+    booksDone: Math.max(0, ...entries.map((e) => e.booksDone || 0)),
+    chaptersTotal: Math.max(0, ...entries.map((e) => e.chaptersTotal || 0)),
+    chaptersDone: Math.max(0, ...entries.map((e) => e.chaptersDone || 0)),
+    bytes: entries.reduce((sum, e) => sum + (e.bytes || 0), 0),
+    tier,
+    updatedAt: Math.max(0, ...entries.map((e) => e.updatedAt || 0)),
+  };
+  // Don't clobber an already-migrated library entry's "done" state.
+  const existingLibrary = raw[LIBRARY_AREA_ID];
+  const next: Record<string, ManifestEntry> = {
+    [LIBRARY_AREA_ID]: existingLibrary ?? merged,
+  };
+  try {
+    localStorage.setItem(MANIFEST_KEY, JSON.stringify(next));
+    return true;
+  } catch {
+    return false;
   }
 }
 

@@ -23,10 +23,7 @@ import {
 } from "../lib/downloadManager";
 
 const AREA_LABEL: Record<DownloadAreaId, string> = {
-  core: "Core Bible",
-  study: "Study tools",
-  compare: "Compare versions",
-  maps: "Maps & reference",
+  library: "Your library",
 };
 
 function labelFor(id: DownloadAreaId): string {

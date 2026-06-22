@@ -3,6 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import DownloadStatusIndicator from './components/DownloadStatusIndicator.tsx'
+import { bootstrapBackgroundDownloads } from './lib/downloadManager.ts'
+
+// S355 — resume an interrupted offline download IMMEDIATELY on page load,
+// before React mounts and without waiting for the /me round-trip. Every in-app
+// navigation is a full-page reload that tears down the JS context and stops the
+// download; this restarts it in the first frame so the partner never has to tap
+// "Resume" and the background download keeps making progress across navigation.
+bootstrapBackgroundDownloads()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
