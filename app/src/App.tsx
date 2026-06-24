@@ -3516,9 +3516,40 @@ function Reader() {
                             // parentheticals when the reader has opted
                             // in. When the toggle is OFF, applyParensStrip
                             // returns the input unchanged (no-op).
+                            // S357 — honor intra-verse paragraph breaks
+                            // (\n\n). No canon/extras verse text carried
+                            // newlines (verified 0/53685), so this is a no-op
+                            // for every existing verse; it only takes effect
+                            // where the Josephus historical-witness scrub
+                            // injected paragraph breaks inside a long Whiston
+                            // section, so one cited section (e.g. Wars 2.16.4,
+                            // Agrippa's oration) renders as readable paragraphs
+                            // without splitting the verse / fabricating section
+                            // numbers.
+                            const prepared = applyTextPrefs(seg.text);
+                            if (prepared.includes("\n\n")) {
+                              const paras = prepared.split(/\n\n+/);
+                              return (
+                                <span key={`p-${segIdx}`}>
+                                  {paras.map((para, pi) => (
+                                    <span
+                                      key={pi}
+                                      style={
+                                        pi === 0
+                                          ? undefined
+                                          : { display: "block", marginTop: "0.65em" }
+                                      }
+                                    >
+                                      {para}
+                                      {" "}
+                                    </span>
+                                  ))}
+                                </span>
+                              );
+                            }
                             return (
                               <span key={`p-${segIdx}`}>
-                                {applyTextPrefs(seg.text)}{" "}
+                                {prepared}{" "}
                               </span>
                             );
                           }

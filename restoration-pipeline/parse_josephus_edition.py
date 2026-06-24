@@ -172,6 +172,149 @@ BOOKS_IN_ORDER: list[tuple[str, str, str, bool]] = [
 CHAPTER_HEADING_RE = re.compile(r"^Chapter\s+(\d+)\.\s*(.*)$", re.MULTILINE)
 VERSE_MARKER_RE = re.compile(r"^(\d+)\.\s{2,}(.*)$", re.MULTILINE)
 
+# --- S357 Josephus scrub: recover buried chapters + drop footnote bleed -----
+# Some chapter headings survived the PDF extraction as raw uppercase
+# "CHAPTER <roman|arabic>." — either glued inline to the end of the previous
+# paragraph (e.g. "...we shall speak elsewhere. CHAPTER 9.") or as an
+# un-normalized standalone caps/roman line ("CHAPTER V." / "CHAPTER 3"). The
+# normalizer below didn't fire on these (it only matched mixed-case "Chapter
+# N."), so the chapter's caption + sections were absorbed into the prior
+# chapter's last verse and the chapter went missing from navigation. Recover
+# them by rewriting every raw heading into the canonical "Chapter N. CAPTION"
+# form (caption = the ALL-CAPS lines that follow, up to the first verse marker).
+_ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7,
+          "VIII": 8, "IX": 9, "X": 10}
+_RAW_CHAPTER_RE = re.compile(r"\bCHAPTER\s+([IVXL]+|\d+)\.?")
+_VERSE_LINE_RE = re.compile(r"^\s*\d+\.\s{2,}")
+
+
+def _roman_or_int(tok: str) -> int:
+    return int(tok) if tok.isdigit() else _ROMAN[tok]
+
+
+def normalize_raw_chapter_headings(text: str) -> str:
+    """Rewrite raw uppercase 'CHAPTER <n>.' headings into canonical
+    'Chapter <arabic>. <CAPTION>' lines so the chapter splitter recovers them."""
+    lines = text.split("\n")
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        ln = lines[i]
+        m = _RAW_CHAPTER_RE.search(ln)
+        if m:
+            num = _roman_or_int(m.group(1))
+            before = ln[: m.start()].rstrip()
+            tail = ln[m.end():].strip()
+            cap_parts = [tail] if tail else []
+            j = i + 1
+            while j < len(lines):
+                s = lines[j].strip()
+                if s == "":
+                    j += 1
+                    continue
+                if _VERSE_LINE_RE.match(lines[j]):
+                    break
+                cap_parts.append(s)
+                j += 1
+            caption = re.sub(r"\s+", " ", " ".join(cap_parts)).strip()
+            if before:
+                out.append(before)
+                out.append("")
+            out.append(f"Chapter {num}. {caption}")
+            out.append("")
+            i = j
+            continue
+        out.append(ln)
+        i += 1
+    return "\n".join(out)
+
+
+# Whiston editorial footnotes that leaked as verses (the monotonic verse-number
+# filter let footnotes numbered higher than the preceding verse through as
+# standalone verses, and merged lower-numbered ones into the preceding verse's
+# tail). Decision §5 (session 18): drop Whiston's footnotes entirely. These are
+# the exact surviving cases (verified by editorial-signature sweep, S357).
+_FOOTNOTE_PURE_HEADS = (
+    "The entire buildings seem to have been called the New City",
+    "And although Elohim (God) gave no direction for the lions",
+    "Nor could Josephus well estimate it higher",
+    "Of this Egyptian impostor, and the number of his followers",
+)
+# (genuine-text anchor) — truncate the verse to end at this anchor, dropping the
+# footnote run merged onto its tail.
+_FOOTNOTE_TRUNC_ANCHORS = (
+    "These prisoners were taken on the eighth day of the month Gorpiaeus [Elul].",
+    "having taken a resolution to gather all his other forces together at that place.",
+    "they were blinded by that fate which was already coming upon the city, and upon themselves also.",
+    "and Cyrenius, one that had been consul, was sent by Caesar to take account of people's effects in Syria, and to sell the house of Archelaus.",
+    "Phannias, the son of Samuel.",
+)
+
+
+def strip_footnote_bleed(chapters: list[Chapter]) -> list[Chapter]:
+    """Drop pure-footnote verses and truncate footnote tails merged onto
+    genuine verses. Operates on already-parsed chapters."""
+    for ch in chapters:
+        kept: list[Verse] = []
+        for v in ch.verses:
+            if any(v.text.startswith(h) for h in _FOOTNOTE_PURE_HEADS):
+                continue  # pure footnote — drop
+            for anchor in _FOOTNOTE_TRUNC_ANCHORS:
+                pos = v.text.find(anchor)
+                if pos != -1 and not v.text.rstrip().endswith(anchor):
+                    v.text = v.text[: pos + len(anchor)]
+                    break
+            kept.append(v)
+        ch.verses = kept
+    return chapters
+
+
+# --- S357 paragraph walls -------------------------------------------------
+# Many Josephus verses are a single very long Whiston section (e.g. Wars 2.16.4
+# = Agrippa's whole oration, ~19k chars). Whiston himself didn't break them and
+# they carry no internal section markers, so they render as solid walls. Break
+# them into readable paragraphs by injecting \n\n at sentence-group boundaries.
+# Whiston's section NUMBERING is preserved (the verse stays one cited section);
+# the reader-app renderer splits \n\n into visual paragraphs.
+_WALL_MIN = 1500     # only verses this long get internal paragraphing
+_PARA_TARGET = 700   # aim for ~this many chars per sub-paragraph
+_ABBR_END = re.compile(r"(?:ch|sect|B|c|v|vol|p|Mr|Dr|St|viz|etc|i\.e|e\.g)\.$", re.I)
+_SENT_SPLIT = re.compile(r'(?<=[.?!])\s+(?=[A-Z"“‘(])')
+
+
+def _paragraph_wall(text: str) -> str:
+    if len(text) < _WALL_MIN or "\n" in text:
+        return text
+    parts = _SENT_SPLIT.split(text)
+    sents: list[str] = []
+    for p in parts:
+        if sents and _ABBR_END.search(sents[-1]):
+            sents[-1] = sents[-1] + " " + p
+        else:
+            sents.append(p)
+    if len(sents) < 3:
+        return text
+    paras: list[str] = []
+    cur = ""
+    for s in sents:
+        cur = (cur + " " + s).strip() if cur else s
+        if len(cur) >= _PARA_TARGET:
+            paras.append(cur)
+            cur = ""
+    if cur:
+        if paras and len(cur) < 200:
+            paras[-1] = paras[-1] + " " + cur
+        else:
+            paras.append(cur)
+    return "\n\n".join(paras) if len(paras) > 1 else text
+
+
+def break_walls(chapters: list[Chapter]) -> list[Chapter]:
+    for ch in chapters:
+        for v in ch.verses:
+            v.text = _paragraph_wall(v.text)
+    return chapters
+
 
 def normalize_text(s: str) -> str:
     """Collapse whitespace within a verse to a single space; preserve content."""
@@ -246,23 +389,26 @@ def parse_book(book_id: str, book_body: str, has_chapters: bool) -> list[Chapter
         verses = split_verses(book_body)
         return [Chapter(number=1, title="", verses=verses)]
 
+    # S357+ POSITIONAL chapter numbering. The source carries chapter-number
+    # TYPOS: antiq-5 prints two consecutive "Chapter 8." (the real ch7 + ch8);
+    # antiq-12 mislabels ch4 as "6"; antiq-13 mislabels ch4 as "7". The old
+    # seen_numbers-dedup dropped the duplicate-numbered chapter and mangled its
+    # sections into the prior chapter's tail. Numbering chapters 1..N by their
+    # detection ORDER (every heading begins its own chapter) self-corrects the
+    # typos and recovers those chapters. Whiston body text never starts a line
+    # with "Chapter N." outside a real heading, and normalize_raw_chapter_
+    # headings has already canonicalized every recovered heading, so order-based
+    # numbering is safe. Footnote stripping is text-anchored (coordinate-free),
+    # so the renumber does not disturb it.
     chapters: list[Chapter] = []
-    seen_numbers: set[int] = set()
     for i, m in enumerate(chapter_matches):
-        ch_num = int(m.group(1))
-        if ch_num in seen_numbers:
-            # Duplicate — usually a TOC echo or commentary mention. Skip.
-            continue
-        seen_numbers.add(ch_num)
-
         ch_title = normalize_text(m.group(2) or "")
         body_start = m.end()
         body_end = chapter_matches[i + 1].start() if i + 1 < len(chapter_matches) else len(book_body)
         body = book_body[body_start:body_end]
-
         chapters.append(
             Chapter(
-                number=ch_num,
+                number=i + 1,
                 title=ch_title,
                 verses=split_verses(body),
             )
@@ -273,6 +419,9 @@ def parse_book(book_id: str, book_body: str, has_chapters: bool) -> list[Chapter
 
 def parse_edition(text: str) -> Edition:
     """Parse the full restored Whiston body into an Edition object."""
+    # S357 — recover buried chapters whose raw "CHAPTER N." headings the
+    # mixed-case normalizer missed (inline-glued or un-normalized caps/roman).
+    text = normalize_raw_chapter_headings(text)
     edition = Edition(
         edition_id="josephus",
         title="The Works of Flavius Josephus (Whiston 1737)",
@@ -312,7 +461,8 @@ def parse_edition(text: str) -> Edition:
         body = text[body_start:body_end]
 
         book = Book(book_id=book_id, book_title=display_title)
-        book.chapters = parse_book(book_id, body, has_chapters)
+        chapters = parse_book(book_id, body, has_chapters)
+        book.chapters = break_walls(strip_footnote_bleed(chapters))
         edition.books.append(book)
 
     return edition
