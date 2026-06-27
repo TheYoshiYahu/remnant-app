@@ -68,6 +68,10 @@ export default function KingdomEndCard({
               "apostolic witness — one in his hand."
           )}
         </p>
+        <p className="mt-2 font-sans text-xs text-[var(--reader-muted)]">
+          Tap any verse reference below to expand the deeper dive — both
+          sides quoted in full.
+        </p>
       </div>
       <ul className="mt-3 space-y-2">
         {entries.map((entry) => {
