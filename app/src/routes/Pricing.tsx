@@ -8,6 +8,7 @@ import {
   getSubscriptionMe,
 } from "../lib/api";
 import { loadStoredNativeToken } from "../lib/native-auth";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 
 /**
  * Session 38 — Pricing surface. Tier-name overhaul S140 — display names
@@ -246,6 +247,26 @@ export default function Pricing() {
       setBusy(null);
       alert(`Checkout could not be started: ${String(e)}`);
     }
+  }
+
+  // Native shells (App Store / Play builds) must surface NO purchase or
+  // upgrade path — no prices, no tier cards, no cadence toggle, no
+  // checkout button, not even a tappable "manage on the web" link. The
+  // whole surface collapses to a single plain-text, non-clickable line
+  // pointing the partner to the web account. Web/PWA is untouched below.
+  if (isNativeShell()) {
+    return (
+      <div className="mx-auto max-w-5xl px-6 py-8">
+        <header className="mb-8 border-b border-[var(--reader-rule)] pb-4">
+          <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
+            Become a Partner
+          </h1>
+        </header>
+        <p className="mx-auto max-w-xl text-center text-base text-[var(--reader-text)]">
+          {NATIVE_MANAGE_LINE}
+        </p>
+      </div>
+    );
   }
 
   return (

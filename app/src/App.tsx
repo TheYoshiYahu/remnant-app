@@ -41,6 +41,7 @@ import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
 import { openGiving } from "./lib/giving.ts";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "./lib/native-shell";
 import OfflineDownloadPrompt from "./components/OfflineDownloadPrompt";
 import { readThrough, setContentCacheScope } from "./lib/contentCache";
 import {
@@ -576,15 +577,12 @@ export default function App() {
  * Same runtime-bridge detection used in SignIn.tsx / Pricing.tsx — no
  * Capacitor import, so the web bundle stays slim and the by-URL shell
  * picks it up on the next web deploy with no app rebuild.
+ *
+ * S-native — the detection + the plain-text account-management line now
+ * live in lib/native-shell.ts so every purchase/upgrade surface shares
+ * one source of truth; this module re-exports nothing and just imports
+ * isNativeShell + NATIVE_MANAGE_LINE at the top.
  */
-function isNativeShell(): boolean {
-  return (
-    typeof window !== "undefined" &&
-    (window as unknown as {
-      Capacitor?: { isNativePlatform?: () => boolean };
-    }).Capacitor?.isNativePlatform?.() === true
-  );
-}
 
 /**
  * S235 — read a `?book=<slug>&chapter=<n>` reader deep link (the calendar
@@ -1322,6 +1320,12 @@ function Reader() {
     setInitialScrollVerse(verseNumber);
   }
   function upgradeFromLockedSearchRow() {
+    // Native: no purchase steering — tapping a locked search row does not
+    // navigate to /pricing. The row stays locked (the chip already names
+    // the tier); we simply no-op the navigation so the locked state holds.
+    if (isNativeShell()) {
+      return;
+    }
     if (typeof window !== "undefined") {
       window.location.href = "/pricing";
     }
@@ -3056,7 +3060,9 @@ function Reader() {
               onClick={() => {
                 if (partnerAtCompanion) {
                   toggleShowInterlinear();
-                } else {
+                } else if (!isNativeShell()) {
+                  // Native: no purchase steering — the locked pill stays
+                  // put with a neutral note (no /pricing navigation).
                   if (typeof window !== "undefined") {
                     window.location.href = "/pricing";
                   }
@@ -3066,7 +3072,9 @@ function Reader() {
               title={
                 partnerAtCompanion
                   ? "Show or hide the Hebrew/Greek interlinear layer above each English word — lemma, transliteration, morphology, gloss. Long-press the morphology cell to expand the abbreviation. Persists across chapters and reloads."
-                  : "Hebrew/Greek interlinear layer — upgrade to the Companion tier to enable. Tap to view pricing."
+                  : isNativeShell()
+                    ? `Hebrew/Greek interlinear layer — part of the Companion tier. ${NATIVE_MANAGE_LINE}.`
+                    : "Hebrew/Greek interlinear layer — upgrade to the Companion tier to enable. Tap to view pricing."
               }
               className="relative rounded-md border border-[#FCECAF] bg-gradient-to-r from-[#645028] via-[#B4A078] to-[#645028] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#FFF8E1] shadow-sm hover:opacity-90"
             >
@@ -4083,18 +4091,20 @@ function Reader() {
             chrome button, no color block. Opens the Tithely giving page
             (system browser on native, new tab on web).
           */}
-          <div className="mt-8 text-center font-sans text-xs text-[var(--reader-muted)]">
-            <button
-              type="button"
-              onClick={() => {
-                void openGiving();
-              }}
-              className="underline-offset-4 transition hover:text-[var(--reader-accent)] hover:underline"
-              aria-label="Support this work — opens the giving page"
-            >
-              <span aria-hidden="true">♥</span> Support this work
-            </button>
-          </div>
+          {!isNativeShell() && (
+            <div className="mt-8 text-center font-sans text-xs text-[var(--reader-muted)]">
+              <button
+                type="button"
+                onClick={() => {
+                  void openGiving();
+                }}
+                className="underline-offset-4 transition hover:text-[var(--reader-accent)] hover:underline"
+                aria-label="Support this work — opens the giving page"
+              >
+                <span aria-hidden="true">♥</span> Support this work
+              </button>
+            </div>
+          )}
         </article>
       )}
 

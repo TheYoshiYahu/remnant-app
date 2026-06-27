@@ -5,6 +5,7 @@ import {
   cancelSubscription,
   getSubscriptionMe,
 } from "../lib/api";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 
 /**
  * Session 39 — Manage account surface (renamed at S174 per Yoshi
@@ -177,12 +178,19 @@ export default function Manage() {
         <p className="mb-4 text-base text-[var(--reader-muted)]">
           You don't have an active partnership on this account.
         </p>
-        <a
-          href="/pricing"
-          className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
-        >
-          Become a partner
-        </a>
+        {isNativeShell() ? (
+          // Native: no in-app purchase path — plain text, non-clickable.
+          <p className="text-base text-[var(--reader-text)]">
+            {NATIVE_MANAGE_LINE}
+          </p>
+        ) : (
+          <a
+            href="/pricing"
+            className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+          >
+            Become a partner
+          </a>
+        )}
       </PageShell>
     );
   }
@@ -380,33 +388,51 @@ export default function Manage() {
               ? `. Your ${priceLabel} price stays locked to you.`
               : ". Your forever-locked price stays with you."}
           </p>
-          <div className="mt-3">
-            <a
-              href="/pricing"
-              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
-            >
-              Reactivate
-            </a>
-          </div>
+          {isNativeShell() ? (
+            // Native: no in-app reactivation purchase path — plain text.
+            <p className="mt-3 text-base text-amber-900">{NATIVE_MANAGE_LINE}</p>
+          ) : (
+            <div className="mt-3">
+              <a
+                href="/pricing"
+                className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+              >
+                Reactivate
+              </a>
+            </div>
+          )}
         </div>
       )}
 
       {/* Terminal-state banner */}
       {isTerminal && (
         <div className="mb-4 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-base text-[var(--reader-muted)]">
-          This partnership has ended. You can become a partner again from the{" "}
-          <a href="/pricing" className="underline">
-            partnership page
-          </a>
-          .
-          <div className="mt-3">
-            <a
-              href="/pricing"
-              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
-            >
-              Resubscribe
-            </a>
-          </div>
+          {isNativeShell() ? (
+            // Native: no in-app resubscribe purchase path — plain text.
+            <>
+              This partnership has ended.
+              <p className="mt-3 text-base text-[var(--reader-text)]">
+                {NATIVE_MANAGE_LINE}
+              </p>
+            </>
+          ) : (
+            <>
+              This partnership has ended. You can become a partner again from
+              the{" "}
+              <a href="/pricing" className="underline">
+                partnership page
+              </a>
+              .
+              <div className="mt-3">
+                <a
+                  href="/pricing"
+                  className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+                >
+                  Resubscribe
+                </a>
+              </div>
+            </>
+          )}
         </div>
       )}
 

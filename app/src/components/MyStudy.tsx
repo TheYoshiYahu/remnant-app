@@ -49,6 +49,7 @@ import {
   openStudyPrintView,
 } from "../lib/study-export";
 import { loadStoredNativeToken } from "../lib/native-auth";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 
 interface MyStudyProps {
   /** Books list from App state — drives canonical book ordering in
@@ -413,6 +414,11 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
   // ----- actions -----
 
   function goUpgrade() {
+    // Native: no in-app purchase steering — the locked apparatus stays
+    // locked (chips/labels remain), but tapping must NOT route to
+    // /pricing. The plain-text NATIVE_MANAGE_LINE explains the path
+    // (rendered in the free-tier lever card below). Web is unchanged.
+    if (isNativeShell()) return;
     window.location.href = "/pricing";
   }
 
@@ -1058,13 +1064,21 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
                 you’ve marked, and clean Markdown + PDF export of your whole
                 study.
               </p>
-              <button
-                type="button"
-                onClick={goUpgrade}
-                className={UNLOCK_PILL_CLASSES}
-              >
-                Unlock Study Notes — $1.99
-              </button>
+              {isNativeShell() ? (
+                // Native: plain-text, non-clickable account-management
+                // line — no price, no purchase CTA.
+                <p className="font-serif text-[14px] leading-relaxed text-[var(--reader-text)]">
+                  {NATIVE_MANAGE_LINE}
+                </p>
+              ) : (
+                <button
+                  type="button"
+                  onClick={goUpgrade}
+                  className={UNLOCK_PILL_CLASSES}
+                >
+                  Unlock Study Notes — $1.99
+                </button>
+              )}
             </div>
           )}
         </div>

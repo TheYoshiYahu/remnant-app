@@ -52,6 +52,7 @@ import {
 import { getLocationPref } from "../lib/calendar/location-pref.ts";
 import { LocationBar } from "../components/LocationPicker.tsx";
 import { openGiving } from "../lib/giving.ts";
+import { isNativeShell } from "../lib/native-shell";
 import {
   DEVOTIONAL_IS_SEED,
   biblicalDayOrdinal,
@@ -183,8 +184,10 @@ export default function Today() {
 
         {/* A quiet invitation to support the work — above the doors, but small
             and unobtrusive so it frames rather than interrupts. Opens the
-            Tithely giving page (system browser on native, new tab on web). */}
-        <SupportBar />
+            Tithely giving page (system browser on native, new tab on web).
+            Hidden entirely on the native shells (no donate affordance on
+            App Store / Play builds). */}
+        {!isNativeShell() && <SupportBar />}
 
         {/* S233 — the doors (Read / Appointed Times / My Study) ride at the very
             top, directly under the title, so the partner meets them without

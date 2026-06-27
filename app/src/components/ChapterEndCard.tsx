@@ -53,6 +53,7 @@ import {
   type SacredNameMask,
 } from "../lib/applySacredNameMask";
 import { executeStudyShare } from "../lib/study-share-render";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 
 // S172 — sacred-name mask + parens-toggle composition. Every render
 // site that previously called applyParentheticalsToggle(text, hide)
@@ -540,7 +541,10 @@ function TargetRow({
           type="button"
           onClick={() => {
             if (locked) {
-              if (typeof window !== "undefined") {
+              // Native: no purchase steering — the locked ref stays
+              // locked (tier chip beside it names the tier); do NOT
+              // navigate to /pricing. Web routes to pricing as before.
+              if (!isNativeShell() && typeof window !== "undefined") {
                 window.location.href = "/pricing";
               }
               return;
@@ -829,13 +833,22 @@ function LockedThreadCallout({
         </span>
       </div>
 
-      <button
-        type="button"
-        onClick={goToPricing}
-        className="mt-3 w-full rounded-lg border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-2 font-sans text-sm font-semibold text-[#F5E6FA] hover:opacity-90"
-      >
-        Unlock in {tierName} tier
-      </button>
+      {isNativeShell() ? (
+        // Native: keep the locked thread state (jewel border + tier chip
+        // above) but replace the clickable Unlock CTA with the plain-text,
+        // non-clickable account-management line.
+        <p className="mt-3 text-sm font-medium text-[var(--reader-text)]">
+          {NATIVE_MANAGE_LINE}
+        </p>
+      ) : (
+        <button
+          type="button"
+          onClick={goToPricing}
+          className="mt-3 w-full rounded-lg border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-2 font-sans text-sm font-semibold text-[#F5E6FA] hover:opacity-90"
+        >
+          Unlock in {tierName} tier
+        </button>
+      )}
     </article>
   );
 }

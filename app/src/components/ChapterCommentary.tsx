@@ -65,6 +65,7 @@ import {
   applySacredNameMask,
   type SacredNameMask,
 } from "../lib/applySacredNameMask";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 
 interface ChapterCommentaryProps {
   bookSlug: string;
@@ -207,12 +208,21 @@ function CommentaryBlock({
           <p className="mb-3 text-base text-[var(--reader-text)]">
             {ctaCopyForSurface(entry.surface_kind)}
           </p>
-          <a
-            href="/pricing"
-            className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
-          >
-            Unlock in {prettyTier(entry.tier_required)} tier
-          </a>
+          {isNativeShell() ? (
+            // Native: keep the locked state visible (header + tier badge
+            // above) but replace the clickable /pricing CTA with the
+            // plain-text, non-clickable account-management line.
+            <p className="text-base font-medium text-[var(--reader-text)]">
+              {NATIVE_MANAGE_LINE}
+            </p>
+          ) : (
+            <a
+              href="/pricing"
+              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+            >
+              Unlock in {prettyTier(entry.tier_required)} tier
+            </a>
+          )}
         </div>
       </article>
     );

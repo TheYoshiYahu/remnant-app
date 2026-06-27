@@ -49,6 +49,7 @@ import {
 import { renderItalicSpans } from "../lib/markdown";
 import { executeStudyShare } from "../lib/study-share-render";
 import { useSacredNameMask } from "../lib/useSacredNameMask";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 
 interface LexiconSheetProps {
   strongNumber: string;
@@ -273,12 +274,21 @@ function TierLockedCard({ tierRequired }: { tierRequired: string }) {
         <span className="text-[var(--reader-text)]">{tierLabel}</span> tier. The
         Strong's lookup you came from stays free.
       </p>
-      <a
-        href="/pricing"
-        className="mt-3 inline-block rounded border border-[var(--reader-accent)] px-3 py-1.5 text-sm font-medium text-[var(--reader-accent)] hover:opacity-90"
-      >
-        Unlock with {tierLabel}
-      </a>
+      {isNativeShell() ? (
+        // Native: keep the tier-locked state visible but replace the
+        // clickable /pricing CTA with the plain-text, non-clickable
+        // account-management line.
+        <p className="mt-3 text-sm font-medium text-[var(--reader-text)]">
+          {NATIVE_MANAGE_LINE}
+        </p>
+      ) : (
+        <a
+          href="/pricing"
+          className="mt-3 inline-block rounded border border-[var(--reader-accent)] px-3 py-1.5 text-sm font-medium text-[var(--reader-accent)] hover:opacity-90"
+        >
+          Unlock with {tierLabel}
+        </a>
+      )}
     </div>
   );
 }

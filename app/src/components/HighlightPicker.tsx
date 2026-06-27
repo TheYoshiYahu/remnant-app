@@ -42,6 +42,7 @@ import {
   getHighlightLabels,
   updateHighlightLabels,
 } from "../lib/api";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 
 interface HighlightPickerProps {
   verseId: number;
@@ -504,7 +505,12 @@ export default function HighlightPicker({
                     type="button"
                     onClick={() => {
                       if (locked) {
-                        window.location.href = "/pricing";
+                        // Native: no purchase steering — locked styles
+                        // stay locked (🔒 shown) but do NOT route to
+                        // /pricing. Web routes to pricing as before.
+                        if (!isNativeShell()) {
+                          window.location.href = "/pricing";
+                        }
                         return;
                       }
                       setSelectedStyle(style);
@@ -539,7 +545,12 @@ export default function HighlightPicker({
                     type="button"
                     onClick={() => {
                       if (locked) {
-                        window.location.href = "/pricing";
+                        // Native: no purchase steering — locked colors
+                        // stay locked but do NOT route to /pricing. Web
+                        // routes to pricing as before.
+                        if (!isNativeShell()) {
+                          window.location.href = "/pricing";
+                        }
                         return;
                       }
                       setSelectedColor(color);
@@ -611,15 +622,23 @@ export default function HighlightPicker({
           )}
         </div>
 
-        {!paid && (
-          <p className="mt-3 text-center text-xs text-[var(--reader-muted)]">
-            Unlock 12 more colors + underline + outline styles in the{" "}
-            <a href="/pricing" className="underline">
-              Study Notes tier
-            </a>
-            .
-          </p>
-        )}
+        {!paid &&
+          (isNativeShell() ? (
+            // Native: no in-app purchase path — plain text, non-clickable,
+            // no price; names the tier and points to the web account.
+            <p className="mt-3 text-center text-xs text-[var(--reader-text)]">
+              12 more colors + underline + outline styles are part of the
+              Study Notes tier. {NATIVE_MANAGE_LINE}.
+            </p>
+          ) : (
+            <p className="mt-3 text-center text-xs text-[var(--reader-muted)]">
+              Unlock 12 more colors + underline + outline styles in the{" "}
+              <a href="/pricing" className="underline">
+                Study Notes tier
+              </a>
+              .
+            </p>
+          ))}
       </div>
     </div>
   );
