@@ -1138,6 +1138,52 @@ export function getSkeletonNear(skeleton: string): Promise<SkeletonNearResponse>
   );
 }
 
+// ----- Voice Journal -------------------------------------------------------
+//
+// Private per-user journal. Crisis-safety is on-device only (see
+// lib/crisis-safety.ts) — nothing about emotional state is ever sent here.
+
+export interface JournalEntry {
+  id: string;
+  title: string | null;
+  body: string;
+  section_label: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DevotionalReflection {
+  id: string;
+  topic: string;
+  title: string;
+  passage_ref: string | null;
+  passage_text: string | null;
+  reflection: string;
+}
+
+export function listJournal(): Promise<{ entries: JournalEntry[] }> {
+  return get<{ entries: JournalEntry[] }>("/journal");
+}
+
+export function createJournal(input: {
+  body: string;
+  title?: string | null;
+  section_label?: string | null;
+}): Promise<JournalEntry> {
+  return post<typeof input, JournalEntry>("/journal", input);
+}
+
+export function deleteJournal(entryId: string): Promise<void> {
+  return del(`/journal/${encodeURIComponent(entryId)}`);
+}
+
+export function getDevotional(
+  topic?: string
+): Promise<{ reflections: DevotionalReflection[] }> {
+  const qs = topic ? `?topic=${encodeURIComponent(topic)}` : "";
+  return get<{ reflections: DevotionalReflection[] }>(`/devotional${qs}`);
+}
+
 // ----- Bookmarks (Session 124 — Wheel 5) ----------------------------------
 //
 // Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer
