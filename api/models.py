@@ -828,6 +828,58 @@ class SkeletonNearResponse(BaseModel):
     near: List[SkeletonNearGroup]
 
 
+# ----- Voice Journal -------------------------------------------------------
+#
+# Private per-user journal (mirror of notes). Crisis-safety is ON-DEVICE only —
+# no crisis/mood/risk field is ever sent to or stored on the server.
+
+
+class JournalEntry(BaseModel):
+    """One private journal entry."""
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    title: Optional[str] = None
+    body: str
+    section_label: Optional[str] = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class JournalEntriesResponse(BaseModel):
+    entries: List[JournalEntry]
+
+
+class CreateJournalRequest(BaseModel):
+    body: str = Field(..., min_length=1, description="Entry text (typed or dictated on-device).")
+    title: Optional[str] = None
+    section_label: Optional[str] = None
+
+
+class UpdateJournalRequest(BaseModel):
+    body: Optional[str] = Field(default=None, min_length=1)
+    title: Optional[str] = None
+    section_label: Optional[str] = None
+
+
+class DevotionalReflection(BaseModel):
+    """A curated topic → Scripture + reflection surfaced after an entry."""
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    topic: str
+    title: str
+    passage_ref: Optional[str] = None
+    passage_text: Optional[str] = None
+    reflection: str
+
+
+class DevotionalResponse(BaseModel):
+    reflections: List[DevotionalReflection]
+
+
 # ----- Bookmarks (Session 124 — Wheel 5) ---------------------------------
 #
 # Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer

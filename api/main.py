@@ -165,6 +165,12 @@ from models import (
     SkeletonGroupResponse,
     SkeletonNearGroup,
     SkeletonNearResponse,
+    JournalEntry,
+    JournalEntriesResponse,
+    CreateJournalRequest,
+    UpdateJournalRequest,
+    DevotionalReflection,
+    DevotionalResponse,
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
@@ -3168,6 +3174,137 @@ async def get_skeleton_near(skeleton: str) -> SkeletonNearResponse:
                     )
                 )
     return SkeletonNearResponse(skeleton=skel, near=groups)
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Voice Journal — private per-user journal (mirror of notes).
+#
+# Crisis-safety is ON-DEVICE ONLY. These endpoints never receive, compute, or
+# store any crisis/mood/risk signal — body text + the user's own free labels.
+# ─────────────────────────────────────────────────────────────────────
+
+
+def _journal_entry_from_row(row) -> JournalEntry:
+    return JournalEntry(
+        id=row["id"],
+        title=row["title"],
+        body=row["body"],
+        section_label=row["section_label"],
+        created_at=row["created_at"],
+        updated_at=row["updated_at"],
+    )
+
+
+@app.get("/v1/journal", response_model=JournalEntriesResponse)
+async def list_journal(
+    current_user: User = Depends(get_current_user_required),
+) -> JournalEntriesResponse:
+    """The partner's journal entries, newest first. Private to the caller."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT id::text AS id, title, body, section_label, "
+            "       created_at, updated_at "
+            "  FROM journal_entries "
+            " WHERE user_id = $1::uuid AND is_archived = FALSE "
+            " ORDER BY created_at DESC, id ASC",
+            user_uuid,
+        )
+    return JournalEntriesResponse(entries=[_journal_entry_from_row(r) for r in rows])
+
+
+@app.post("/v1/journal", response_model=JournalEntry, status_code=201)
+async def create_journal(
+    body: CreateJournalRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> JournalEntry:
+    """Save a journal entry (typed or on-device-dictated text)."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        row = await conn.fetchrow(
+            "INSERT INTO journal_entries (user_id, title, body, section_label) "
+            "VALUES ($1::uuid, $2, $3, $4) "
+            "RETURNING id::text AS id, title, body, section_label, "
+            "          created_at, updated_at",
+            user_uuid, body.title, body.body, body.section_label,
+        )
+    return _journal_entry_from_row(row)
+
+
+@app.patch("/v1/journal/{entry_id}", response_model=JournalEntry)
+async def update_journal(
+    entry_id: str,
+    body: UpdateJournalRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> JournalEntry:
+    """Edit a journal entry. Only the owner's row is touched."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        row = await conn.fetchrow(
+            "UPDATE journal_entries SET "
+            "  body = COALESCE($3, body), "
+            "  title = COALESCE($4, title), "
+            "  section_label = COALESCE($5, section_label), "
+            "  updated_at = now() "
+            " WHERE id = $1::uuid AND user_id = $2::uuid AND is_archived = FALSE "
+            "RETURNING id::text AS id, title, body, section_label, "
+            "          created_at, updated_at",
+            entry_id, user_uuid, body.body, body.title, body.section_label,
+        )
+    if row is None:
+        raise HTTPException(status_code=404, detail="Journal entry not found.")
+    return _journal_entry_from_row(row)
+
+
+@app.delete("/v1/journal/{entry_id}", status_code=204)
+async def delete_journal(
+    entry_id: str,
+    current_user: User = Depends(get_current_user_required),
+) -> Response:
+    """Delete (soft-archive) a journal entry the caller owns."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        result = await conn.execute(
+            "UPDATE journal_entries SET is_archived = TRUE, updated_at = now() "
+            " WHERE id = $1::uuid AND user_id = $2::uuid",
+            entry_id, user_uuid,
+        )
+    if result.endswith(" 0"):
+        raise HTTPException(status_code=404, detail="Journal entry not found.")
+    return Response(status_code=204)
+
+
+@app.get("/v1/devotional", response_model=DevotionalResponse)
+async def get_devotional(
+    topic: Optional[str] = Query(default=None, description="Topic/emotion tag."),
+) -> DevotionalResponse:
+    """Curated Scripture + reflection(s) surfaced after a journal entry.
+
+    Public read-only library. Filter by ?topic= (gratitude/fear/grief/hope/…);
+    omit to get the active set. Seed rows are placeholders for Yoshi.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        if topic:
+            rows = await conn.fetch(
+                "SELECT id::text AS id, topic, title, passage_ref, passage_text, "
+                "       reflection FROM devotional_library "
+                " WHERE is_active AND topic = $1 ORDER BY created_at ASC",
+                topic,
+            )
+        else:
+            rows = await conn.fetch(
+                "SELECT id::text AS id, topic, title, passage_ref, passage_text, "
+                "       reflection FROM devotional_library "
+                " WHERE is_active ORDER BY topic ASC, created_at ASC"
+            )
+    return DevotionalResponse(
+        reflections=[DevotionalReflection(**dict(r)) for r in rows]
+    )
 
 
 # ─────────────────────────────────────────────────────────────────────

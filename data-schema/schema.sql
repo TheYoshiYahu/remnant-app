@@ -636,6 +636,38 @@ CREATE INDEX idx_notes_user_chapter  ON study_notes(user_id, chapter_id);
 CREATE INDEX idx_notes_user_created  ON study_notes(user_id, created_at);
 
 
+-- Voice Journal — private per-user journal (mirror of study_notes). Crisis
+-- safety is ON-DEVICE ONLY: there is intentionally NO crisis/mood/risk column
+-- anywhere. See migrations/voice_journal.sql.
+CREATE TABLE journal_entries (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id         UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    title           TEXT,
+    body            TEXT NOT NULL,
+    section_label   TEXT,                    -- the user's own free label; not inference
+    is_archived     BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_journal_entries_user ON journal_entries(user_id, created_at DESC);
+
+-- Curated topic/emotion → Scripture + reflection library surfaced after an
+-- entry is saved. Seed rows (in the migration) are placeholders for Yoshi.
+CREATE TABLE devotional_library (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    topic           TEXT NOT NULL,
+    title           TEXT NOT NULL,
+    passage_ref     TEXT,
+    passage_text    TEXT,
+    reflection      TEXT NOT NULL,
+    is_active       BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_devotional_topic ON devotional_library(topic) WHERE is_active;
+
+
 -- A user-authored bookmark on a single verse. Distinct surface from
 -- both highlights (color-only marking, no descriptive text) and notes
 -- (study content). DESIGN_LANGUAGE.md §22 (locked S124, Wheel 5):
