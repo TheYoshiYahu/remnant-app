@@ -161,6 +161,10 @@ from models import (
     StrongEntry,
     StrongOccurrence,
     StrongOccurrencesResponse,
+    SkeletonEntry,
+    SkeletonGroupResponse,
+    SkeletonNearGroup,
+    SkeletonNearResponse,
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
@@ -3072,6 +3076,98 @@ async def get_strong_entry(strong_number: str) -> StrongEntry:
         definition=row["definition"],
         derivation=row["derivation"],
     )
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Consonantal-skeleton lens ("Without the vowels")
+#
+# Data: strong_entries.consonantal_skeleton + strong_skeleton_near, populated by
+# restoration-pipeline/_build_consonantal_skeleton.py after the
+# migrations/consonantal_skeleton.sql migration. Usage counts come from
+# verse_words (Strong's-tagged tokens). Public data; the UI gates live use to
+# partners and shows a curated free sample.
+# ─────────────────────────────────────────────────────────────────────
+
+# Hebrew points/accents — strip to a consonant skeleton (mirror of the build
+# script so a caller can pass either a pointed lemma or a bare skeleton).
+_HEBREW_POINTS_RE = re.compile(r"[֑-ׇ]")
+
+
+def _to_skeleton(s: str) -> str:
+    return _HEBREW_POINTS_RE.sub("", (s or "")).strip()
+
+
+async def _skeleton_entries(conn, skeleton: str) -> List[SkeletonEntry]:
+    """All Strong's entries whose consonantal_skeleton == skeleton, with usage."""
+    rows = await conn.fetch(
+        "SELECT se.strong_number, se.lemma, se.transliteration, "
+        "       se.short_definition, se.definition, "
+        "       (SELECT count(*) FROM verse_words vw "
+        "          WHERE vw.strong_number = se.strong_number) AS usage_count "
+        "  FROM strong_entries se "
+        " WHERE se.consonantal_skeleton = $1 "
+        " ORDER BY se.strong_number ASC",
+        skeleton,
+    )
+    return [
+        SkeletonEntry(
+            strong_number=r["strong_number"],
+            lemma=r["lemma"],
+            transliteration=r["transliteration"],
+            short_definition=r["short_definition"],
+            definition=r["definition"],
+            usage_count=int(r["usage_count"] or 0),
+        )
+        for r in rows
+    ]
+
+
+@app.get("/v1/skeleton/{skeleton}", response_model=SkeletonGroupResponse)
+async def get_skeleton_group(skeleton: str) -> SkeletonGroupResponse:
+    """Every Hebrew/Aramaic Strong's entry sharing this consonant skeleton.
+
+    The path param may be a bare skeleton (נצר) or a pointed lemma — points are
+    stripped server-side so the tapped word's lemma can be passed straight in.
+    Public data (no auth); the client gates live use to partners.
+    """
+    skel = _to_skeleton(skeleton)
+    if not skel:
+        raise HTTPException(status_code=400, detail="empty skeleton")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        entries = await _skeleton_entries(conn, skel)
+    return SkeletonGroupResponse(skeleton=skel, entries=entries)
+
+
+@app.get("/v1/skeleton/{skeleton}/near", response_model=SkeletonNearResponse)
+async def get_skeleton_near(skeleton: str) -> SkeletonNearResponse:
+    """Single-consonant-swap near matches (the netzer↔nazir deep dive).
+
+    Reads the precomputed strong_skeleton_near map and returns, for each
+    near-by skeleton (one consonant away), the entries under it. Public data.
+    """
+    skel = _to_skeleton(skeleton)
+    if not skel:
+        raise HTTPException(status_code=400, detail="empty skeleton")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        near_rows = await conn.fetch(
+            "SELECT near_skeleton, edit_kind FROM strong_skeleton_near "
+            " WHERE skeleton = $1 ORDER BY near_skeleton ASC",
+            skel,
+        )
+        groups: List[SkeletonNearGroup] = []
+        for nr in near_rows:
+            entries = await _skeleton_entries(conn, nr["near_skeleton"])
+            if entries:
+                groups.append(
+                    SkeletonNearGroup(
+                        near_skeleton=nr["near_skeleton"],
+                        edit_kind=nr["edit_kind"],
+                        entries=entries,
+                    )
+                )
+    return SkeletonNearResponse(skeleton=skel, near=groups)
 
 
 # ─────────────────────────────────────────────────────────────────────

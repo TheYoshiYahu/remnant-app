@@ -1089,6 +1089,55 @@ export function getStrongOccurrences(
   );
 }
 
+// ----- Consonantal-skeleton lens ("Without the vowels") -------------------
+//
+// GET /v1/skeleton/{skeleton}      — entries sharing the bare consonant skeleton
+// GET /v1/skeleton/{skeleton}/near — single-consonant-swap near matches
+// The path param accepts a pointed lemma OR a bare skeleton (the server strips
+// points), so the tapped word's lemma can be passed straight in. Hebrew/Aramaic.
+
+// Strip Hebrew points + accents (U+0591–U+05C7) → bare consonant skeleton.
+// Mirrors the server/build-script logic so the client can show the skeleton
+// immediately and key the request.
+export function toConsonantalSkeleton(lemma: string): string {
+  return (lemma || "").replace(/[֑-ׇ]/g, "").trim();
+}
+
+export interface SkeletonEntry {
+  strong_number: string;
+  lemma: string;
+  transliteration: string;
+  short_definition: string | null;
+  definition: string;
+  usage_count: number;
+}
+
+export interface SkeletonGroupResponse {
+  skeleton: string;
+  entries: SkeletonEntry[];
+}
+
+export interface SkeletonNearGroup {
+  near_skeleton: string;
+  edit_kind: string;
+  entries: SkeletonEntry[];
+}
+
+export interface SkeletonNearResponse {
+  skeleton: string;
+  near: SkeletonNearGroup[];
+}
+
+export function getSkeletonGroup(skeleton: string): Promise<SkeletonGroupResponse> {
+  return get<SkeletonGroupResponse>(`/skeleton/${encodeURIComponent(skeleton)}`);
+}
+
+export function getSkeletonNear(skeleton: string): Promise<SkeletonNearResponse> {
+  return get<SkeletonNearResponse>(
+    `/skeleton/${encodeURIComponent(skeleton)}/near`
+  );
+}
+
 // ----- Bookmarks (Session 124 — Wheel 5) ----------------------------------
 //
 // Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer

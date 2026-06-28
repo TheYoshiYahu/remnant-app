@@ -4252,6 +4252,7 @@ function Reader() {
         <StrongsLookup
           strongNumber={strongsState.strong}
           surface={strongsState.surface}
+          isPartner={partnerAtCompanion}
           onNavigate={(bookSlug, chapterNumber, verseNumber) => {
             // S121 W3 iteration — concordance tap-to-navigate.
             // Mirrors the S121 W2 nav handlers' state-reset

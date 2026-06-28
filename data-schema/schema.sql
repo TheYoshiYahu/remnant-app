@@ -236,10 +236,24 @@ CREATE TABLE strong_entries (
     pronunciation       TEXT,
     short_definition    TEXT,                        -- single-phrase gloss for tooltip use
     definition          TEXT NOT NULL,               -- full Strong's entry text
-    derivation          TEXT
+    derivation          TEXT,
+    consonantal_skeleton TEXT                        -- "Without the vowels" lens: lemma with Hebrew points/accents (U+0591–U+05C7) stripped. NULL for Greek. Populated by _build_consonantal_skeleton.py. See migrations/consonantal_skeleton.sql.
 );
 
 CREATE INDEX idx_strong_lemma ON strong_entries(lemma);
+CREATE INDEX idx_strong_skeleton ON strong_entries(consonantal_skeleton);
+
+-- Single-consonant-swap near-match map between distinct Hebrew consonantal
+-- skeletons (edit distance 1). Precomputed by _build_consonantal_skeleton.py;
+-- powers the netzer↔nazir-style near-match deep dive (GET /v1/skeleton/{s}/near).
+CREATE TABLE strong_skeleton_near (
+    skeleton        TEXT NOT NULL,
+    near_skeleton   TEXT NOT NULL,
+    edit_kind       TEXT NOT NULL CHECK (edit_kind IN ('substitution','insertion','deletion')),
+    PRIMARY KEY (skeleton, near_skeleton)
+);
+
+CREATE INDEX idx_skeleton_near_skeleton ON strong_skeleton_near(skeleton);
 
 
 -- A token (word) inside a verse, with its Strong's tag attached. Built
@@ -462,6 +476,7 @@ CREATE TABLE users (
     display_name        TEXT,
     created_at          TIMESTAMPTZ NOT NULL DEFAULT now(),
     last_seen_at        TIMESTAMPTZ,
+    trial_reminder_sent_at TIMESTAMPTZ,              -- compliance/trial-reminder build: timestamp the day-6/7 trial-ending email was sent to this user. NULL = not yet sent; the daily job (jobs/trial_reminders.py) filters on IS NULL for idempotency and stamps now() after a successful send. See migrations/trial_reminders_add_sent_at.sql.
     display_prefs       JSONB                        -- Session 173: cross-device sync for the partner's reader-display preferences (sacred_name_mask, hide_parentheticals, theme, font_size, interlinear_default, tts_voice). Nullable — NULL means "partner has never synced; client-side localStorage is authoritative." Once any preference is PUT, the column holds a JSON object with only the keys the partner has explicitly set. Server is canonical on sign-in (reconciliation: server wins over localStorage when the two diverge). Adding more preferences over time is a JSON-shape change, not a migration.
 );
 

@@ -782,6 +782,52 @@ class StrongOccurrencesResponse(BaseModel):
     occurrences: List[StrongOccurrence]
 
 
+# ----- Consonantal-skeleton lens ("Without the vowels") --------------------
+#
+# GET /v1/skeleton/{skeleton}        — every Strong's entry sharing the bare
+#                                       consonant skeleton, with gloss + usage.
+# GET /v1/skeleton/{skeleton}/near   — single-consonant-swap near matches
+#                                       (the netzer↔nazir deep dive).
+# Hebrew/Aramaic only. Partner-gated at the UI layer; the data is public.
+
+
+class SkeletonEntry(BaseModel):
+    """One Strong's entry sharing a consonantal skeleton, with usage count."""
+
+    model_config = ConfigDict(from_attributes=True)
+
+    strong_number: str
+    lemma: str = Field(..., description="Pointed original-script lemma (נֵצֶר).")
+    transliteration: str
+    short_definition: Optional[str] = None
+    definition: str
+    usage_count: int = Field(
+        0, description="How many Strong's-tagged tokens carry this number."
+    )
+
+
+class SkeletonGroupResponse(BaseModel):
+    """GET /v1/skeleton/{skeleton} — the exact same-skeleton group."""
+
+    skeleton: str
+    entries: List[SkeletonEntry]
+
+
+class SkeletonNearGroup(BaseModel):
+    """One near-by skeleton (one consonant away) and the entries under it."""
+
+    near_skeleton: str
+    edit_kind: str  # 'substitution' | 'insertion' | 'deletion'
+    entries: List[SkeletonEntry]
+
+
+class SkeletonNearResponse(BaseModel):
+    """GET /v1/skeleton/{skeleton}/near — single-consonant-swap near matches."""
+
+    skeleton: str
+    near: List[SkeletonNearGroup]
+
+
 # ----- Bookmarks (Session 124 — Wheel 5) ---------------------------------
 #
 # Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer
