@@ -36,6 +36,8 @@ import AuthCallback from "./routes/AuthCallback";
 import Calendar from "./routes/Calendar";
 import Today from "./routes/Today";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
+import SigninReminderModal from "./components/SigninReminderModal";
+import LockedPartnerPrompt from "./components/LockedPartnerPrompt";
 import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
@@ -349,6 +351,7 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
+
   // S356 — mount the reader font-size hook app-wide so the
   // `data-reader-font` attribute is applied on mount (reconciling with
   // the index.html boot script) and re-applied when the S173 display-
@@ -492,12 +495,23 @@ export default function App() {
   // mount alongside any route. The modal's z-100 stacks above every
   // route surface; until the partner picks, every render layer
   // underneath is interactable but the modal is the foreground.
-  const welcomeModal = welcomeOpen ? (
-    <SacredNameWelcomeModal
-      onClose={() => setWelcomeOpen(false)}
-      initialStep={welcomeInitialStep}
-    />
-  ) : null;
+  // welcomeModal bundles BOTH the first-run welcome modal (sacred-name mask +
+  // the one-time S174 sign-in ask) AND the SOFT, recurring sign-in reminder.
+  // Bundling here means every route that renders {welcomeModal} also mounts the
+  // recurring reminder — a single mount point. The reminder self-suppresses
+  // when: the welcome modal is up, on the auth surfaces, when signed in, or
+  // when its per-launch cadence says not now (see lib/signin-reminder.ts).
+  const welcomeModal = (
+    <>
+      {welcomeOpen ? (
+        <SacredNameWelcomeModal
+          onClose={() => setWelcomeOpen(false)}
+          initialStep={welcomeInitialStep}
+        />
+      ) : null}
+      <SigninReminderModal pathname={pathname} welcomeOpen={welcomeOpen} />
+    </>
+  );
 
   // Phase 2 offline — the one-time "download for offline" onboarding banner.
   // Self-gates on its localStorage seen-flag, restricts itself to the home
@@ -1637,7 +1651,10 @@ function Reader() {
     const filterVisible = (bs: BookSummary[]) =>
       bs.filter((b) => !isSuppressedDuplicate(b) && !isExcludedUnbuiltBook(b));
     try {
-      const bs = await listBooks();
+      // show-all-gate-access: request EVERY built book with a per-book `locked`
+      // flag, instead of the tier-filtered list. The picker renders the whole
+      // library; locked (paid) books show visible-but-disabled with a lock.
+      const bs = await listBooks({ includeLocked: true });
       setBooks(filterVisible(bs));
       setBooksError(null);
       try {
@@ -2245,6 +2262,26 @@ function Reader() {
       </option>
     );
 
+    // show-all-gate-access: render every book, but a locked (paid-tier) book is
+    // a disabled, valueless option with a lock glyph — visible but not
+    // selectable. Canon books come back locked=false, so this is a no-op for
+    // them. The reusable partner prompt below the picker explains the lock.
+    const bookOption = (b: BookSummary) =>
+      b.locked ? (
+        <option
+          key={b.id}
+          value=""
+          disabled
+          className="book-menu-locked"
+        >
+          {`\u{1F512} ${b.title}`}
+        </option>
+      ) : (
+        <option key={b.id} value={b.slug}>
+          {b.title}
+        </option>
+      );
+
     const nodes: ReactNode[] = [];
     let goldUsed = false;
     for (const cat of order) {
@@ -2260,11 +2297,7 @@ function Reader() {
             items.push(divider("div-ot-nt", "emerald", "New Testament"));
             ntMarked = true;
           }
-          items.push(
-            <option key={b.id} value={b.slug}>
-              {b.title}
-            </option>
-          );
+          items.push(bookOption(b));
         }
         nodes.push(
           <optgroup key={cat} label={prettyCategory(cat)}>
@@ -2287,16 +2320,16 @@ function Reader() {
       }
       nodes.push(
         <optgroup key={cat} label={prettyCategory(cat)}>
-          {list.map((b) => (
-            <option key={b.id} value={b.slug}>
-              {b.title}
-            </option>
-          ))}
+          {list.map((b) => bookOption(b))}
         </optgroup>
       );
     }
     return nodes;
   }, [booksByCategory]);
+
+  // show-all-gate-access: true when the picker is showing at least one locked
+  // (paid-tier) book to this caller — drives the partner prompt under the menu.
+  const hasLockedBooks = useMemo(() => books.some((b) => b.locked), [books]);
 
   const chaptersForBook = chaptersResp?.chapters ?? [];
 
@@ -2796,6 +2829,15 @@ function Reader() {
       {booksError && (
         <div className="mb-4 rounded border border-red-300 bg-red-50 p-3 text-sm text-red-800">
           Books failed to load: {booksError}
+        </div>
+      )}
+
+      {/* show-all-gate-access: when the picker is showing locked (partner) books
+          to a free reader, explain the lock once below the chrome. No checkout
+          link — informational only (consumption-only model). */}
+      {hasLockedBooks && (
+        <div className="mb-4">
+          <LockedPartnerPrompt />
         </div>
       )}
 
@@ -4700,6 +4742,12 @@ function makeTierStub(
     label,
     lockedTier: tier,
     onSelect: () => {
+      // Native: no purchase steering — the locked stub stays put with no
+      // /pricing navigation (consumption-only posture). Web routes to
+      // pricing as before.
+      if (isNativeShell()) {
+        return;
+      }
       // Browser-native navigation per App.tsx routing model (see line
       // 119 comment) — no react-router import needed.
       if (typeof window !== "undefined") {

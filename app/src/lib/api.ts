@@ -103,6 +103,10 @@ export interface BookSummary {
   canonical_order: number;
   witness_category: WitnessCategory;
   tier_required: ContentTier;
+  // show-all-gate-access: present only when listBooks({ includeLocked: true }).
+  // true = the book is in the library but the caller's tier can't open it
+  // (render visible-but-locked). undefined in the default tier-filtered mode.
+  locked?: boolean;
   abstract: string | null;
   // S232 — the owning edition's slug. The API has always returned this
   // (api/models.py BookSummary.edition_slug); the field was simply absent
@@ -715,10 +719,13 @@ export function cancelSubscription(): Promise<CancelResponse> {
 
 export function listBooks(opts?: {
   witnessCategory?: WitnessCategory;
+  /** show-all-gate-access: return EVERY built book with a `locked` flag. */
+  includeLocked?: boolean;
 }): Promise<BookSummary[]> {
-  const qs = opts?.witnessCategory
-    ? `?witness_category=${encodeURIComponent(opts.witnessCategory)}`
-    : "";
+  const params = new URLSearchParams();
+  if (opts?.witnessCategory) params.set("witness_category", opts.witnessCategory);
+  if (opts?.includeLocked) params.set("include_locked", "true");
+  const qs = params.toString() ? `?${params.toString()}` : "";
   return get<BookSummary[]>(`/books${qs}`);
 }
 

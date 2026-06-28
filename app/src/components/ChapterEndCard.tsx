@@ -54,6 +54,7 @@ import {
 } from "../lib/applySacredNameMask";
 import { executeStudyShare } from "../lib/study-share-render";
 import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
+import LockedPartnerPrompt from "./LockedPartnerPrompt";
 
 // S172 — sacred-name mask + parens-toggle composition. Every render
 // site that previously called applyParentheticalsToggle(text, hide)
@@ -534,6 +535,12 @@ function TargetRow({
   const locked = !tierSatisfies(userTier, tgt.tier_required);
   const cls = classifyBookSlug(tgt.book_slug);
   const pillClasses = classNameForSourceClass(cls);
+  // show-all-gate-access: the quoted verse text below is ALWAYS readable (the
+  // come-and-see rule). Only the tap-to-open-the-book navigation is gated for
+  // locked (extra-canonical / paid-tier) targets. Tapping a locked ref reveals
+  // the reusable partner prompt inline — NO /pricing route, no checkout link
+  // (consumption-only). Canon targets and partners navigate as before.
+  const [showLockedPrompt, setShowLockedPrompt] = useState(false);
   return (
     <li>
       <div className="flex flex-wrap items-center gap-2">
@@ -541,19 +548,14 @@ function TargetRow({
           type="button"
           onClick={() => {
             if (locked) {
-              // Native: no purchase steering — the locked ref stays
-              // locked (tier chip beside it names the tier); do NOT
-              // navigate to /pricing. Web routes to pricing as before.
-              if (!isNativeShell() && typeof window !== "undefined") {
-                window.location.href = "/pricing";
-              }
+              setShowLockedPrompt((v) => !v);
               return;
             }
             onNavigate?.(tgt.book_slug, tgt.chapter_number, tgt.verse_number);
           }}
           title={
             locked
-              ? `Unlock in ${prettyTier(tgt.tier_required)} tier`
+              ? `${prettyTier(tgt.tier_required)} — part of the partner library`
               : `Go to ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}`
           }
           className={"font-sans text-xs font-semibold " + pillClasses}
@@ -577,6 +579,20 @@ function TargetRow({
       <blockquote className="mt-1.5 border-l-2 border-[var(--reader-accent)] pl-3 italic leading-relaxed text-[var(--reader-text)]">
         {applyTextPrefs(tgt.preview, hideParentheticals, sacredNameMask)}
       </blockquote>
+      {locked && showLockedPrompt && (
+        <div className="mt-2">
+          <LockedPartnerPrompt
+            tone="inline"
+            message={
+              `Opening ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)} ` +
+              "in full is part of the partner library — the restored library " +
+              "beyond the canon. The verse stays quoted here for everyone. " +
+              "Partnership is managed from your account on the web at " +
+              "remnantofpromise.org."
+            }
+          />
+        </div>
+      )}
     </li>
   );
 }

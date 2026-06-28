@@ -236,6 +236,10 @@ app.include_router(subscriptions_router, prefix="/v1/subscriptions")
 
 
 def _book_summary_from_row(row) -> BookSummary:
+    # `locked` is only present when /v1/books is called with include_locked=true
+    # (the show-all-gate-access mode). asyncpg Record doesn't support .get(), so
+    # probe the key membership before reading it.
+    locked = row["locked"] if "locked" in row.keys() else None
     return BookSummary(
         id=row["id"],
         slug=row["slug"],
@@ -244,6 +248,7 @@ def _book_summary_from_row(row) -> BookSummary:
         canonical_order=row["canonical_order"],
         witness_category=row["witness_category"],
         tier_required=row["tier_required"],
+        locked=locked,
         abstract=row["abstract"],
         edition_slug=row["edition_slug"],
     )
@@ -365,20 +370,55 @@ async def list_books(
             "historical_witness, disputed_witness."
         ),
     ),
+    include_locked: bool = Query(
+        default=False,
+        description=(
+            "show-all-gate-access mode. False (default, unchanged behavior): "
+            "return only books the caller's tier can open. True: return EVERY "
+            "built book and set `locked` per row (True = visible but not "
+            "openable for this tier) so the client can render the full library "
+            "with lock affordances instead of hiding paid books."
+        ),
+    ),
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> List[BookSummary]:
     """
     List books visible to the requester.
 
-    Tier filter (Session 36): the response is filtered by the caller's
-    partner tier against each book's ``tier_required``, using the
-    schema's ``tier_satisfies()`` lattice function. Anonymous callers
-    and the 'free' tier see the 66-book canon; 'extras' and above see
-    the full 153-book corpus. The order is canonical_order so the free
-    canon appears first, then the extras manifest in inventory order.
+    Tier filter (Session 36): in the default mode the response is filtered by
+    the caller's partner tier against each book's ``tier_required``, using the
+    schema's ``tier_satisfies()`` lattice function. Anonymous callers and the
+    'free' tier see the 66-book canon; 'extras' and above see the full corpus.
+
+    show-all-gate-access mode (include_locked=true): the WHERE filter is dropped
+    so EVERY built book is returned, and ``locked`` is computed per row as
+    ``NOT tier_satisfies(tier, b.tier_required)``. Chapter/text access stays
+    gated server-side elsewhere (get_chapter still 404s a locked book), so this
+    is display-only: the client shows the whole library and renders a lock
+    affordance on the books the tier can't open. Order is canonical_order.
     """
     pool = get_pool()
     tier = user_tier(current_user)
+
+    if include_locked:
+        sql = (
+            "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
+            "       b.witness_category::text AS witness_category, "
+            "       b.tier_required::text   AS tier_required, "
+            "       NOT tier_satisfies($1::content_tier, b.tier_required) AS locked, "
+            "       b.abstract, e.slug AS edition_slug "
+            "  FROM books b "
+            "  JOIN editions e ON e.id = b.edition_id "
+        )
+        params: list = [tier]
+        if witness_category is not None:
+            sql += " WHERE b.witness_category = $2::witness_category"
+            params.append(witness_category)
+        sql += " ORDER BY b.canonical_order ASC, b.id ASC"
+        async with pool.acquire() as conn:
+            rows = await conn.fetch(sql, *params)
+        response.headers["Cache-Control"] = READING_CACHE_CONTROL
+        return [_book_summary_from_row(r) for r in rows]
 
     sql = (
         "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
@@ -389,7 +429,7 @@ async def list_books(
         "  JOIN editions e ON e.id = b.edition_id "
         " WHERE tier_satisfies($1::content_tier, b.tier_required) "
     )
-    params: list = [tier]
+    params = [tier]
     if witness_category is not None:
         sql += "   AND b.witness_category = $2::witness_category"
         params.append(witness_category)

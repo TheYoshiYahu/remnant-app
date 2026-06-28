@@ -71,6 +71,12 @@ class BookSummary(BaseModel):
     canonical_order: int
     witness_category: WitnessCategory
     tier_required: ContentTier
+    # show-all-gate-access (compliance/tier build): when GET /v1/books is called
+    # with include_locked=true, the response includes EVERY built book and this
+    # flag says whether the caller's tier can actually open it (True = visible
+    # but locked → the client renders a lock affordance, no chapter access).
+    # None in the default tier-filtered mode (only openable books are returned).
+    locked: Optional[bool] = None
     abstract: Optional[str] = None
     edition_slug: str = Field(
         ..., description="Slug of the source Restored Names edition the book lives in."
