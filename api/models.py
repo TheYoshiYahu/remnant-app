@@ -880,6 +880,59 @@ class DevotionalResponse(BaseModel):
     reflections: List[DevotionalReflection]
 
 
+# ----- Reading Plans -------------------------------------------------------
+
+
+class PlanPassage(BaseModel):
+    label: str
+    book_slug: Optional[str] = None
+    chapter: Optional[int] = None
+
+
+class PlanDay(BaseModel):
+    day_number: int
+    passages: List[PlanPassage]
+
+
+class ReadingPlanSummary(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    slug: str
+    title: str
+    description: Optional[str] = None
+    day_count: int
+
+
+class ReadingPlanDetail(ReadingPlanSummary):
+    days: List[PlanDay]
+
+
+class ReadingPlansResponse(BaseModel):
+    plans: List[ReadingPlanSummary]
+
+
+class PlanProgress(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    plan_id: str
+    plan_slug: str
+    current_day: int
+    completed_days: List[int]
+
+
+class PlanProgressResponse(BaseModel):
+    progress: List[PlanProgress]
+
+
+class UpdatePlanProgressRequest(BaseModel):
+    # Mark a day complete and/or move current_day. Both optional.
+    completed_day: Optional[int] = None
+    current_day: Optional[int] = None
+    # If true, (re)start the plan (resets to day 1, clears completions).
+    start: bool = False
+
+
 # ----- Bookmarks (Session 124 — Wheel 5) ---------------------------------
 #
 # Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer

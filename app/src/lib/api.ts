@@ -1184,6 +1184,53 @@ export function getDevotional(
   return get<{ reflections: DevotionalReflection[] }>(`/devotional${qs}`);
 }
 
+// ----- Reading Plans -------------------------------------------------------
+
+export interface PlanPassage {
+  label: string;
+  book_slug: string | null;
+  chapter: number | null;
+}
+export interface PlanDay {
+  day_number: number;
+  passages: PlanPassage[];
+}
+export interface ReadingPlanSummary {
+  id: string;
+  slug: string;
+  title: string;
+  description: string | null;
+  day_count: number;
+}
+export interface ReadingPlanDetail extends ReadingPlanSummary {
+  days: PlanDay[];
+}
+export interface PlanProgress {
+  plan_id: string;
+  plan_slug: string;
+  current_day: number;
+  completed_days: number[];
+}
+
+export function listPlans(): Promise<{ plans: ReadingPlanSummary[] }> {
+  return get<{ plans: ReadingPlanSummary[] }>("/plans");
+}
+export function getPlan(slug: string): Promise<ReadingPlanDetail> {
+  return get<ReadingPlanDetail>(`/plans/${encodeURIComponent(slug)}`);
+}
+export function getPlanProgress(): Promise<{ progress: PlanProgress[] }> {
+  return get<{ progress: PlanProgress[] }>("/plans/progress");
+}
+export function updatePlanProgress(
+  slug: string,
+  body: { completed_day?: number; current_day?: number; start?: boolean }
+): Promise<PlanProgress> {
+  return put<typeof body, PlanProgress>(
+    `/plans/${encodeURIComponent(slug)}/progress`,
+    body
+  );
+}
+
 // ----- Bookmarks (Session 124 — Wheel 5) ----------------------------------
 //
 // Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer

@@ -39,6 +39,7 @@ import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import SigninReminderModal from "./components/SigninReminderModal";
 import LockedPartnerPrompt from "./components/LockedPartnerPrompt";
 import Journal from "./routes/Journal";
+import Plans from "./routes/Plans";
 import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
@@ -524,6 +525,9 @@ export default function App() {
 
   if (pathname === "/journal" || pathname.startsWith("/journal")) {
     return <>{welcomeModal}<Journal /></>;
+  }
+  if (pathname === "/plans" || pathname.startsWith("/plans")) {
+    return <>{welcomeModal}<Plans /></>;
   }
   if (pathname === "/manage" || pathname.startsWith("/manage")) {
     return <>{welcomeModal}<Manage /></>;

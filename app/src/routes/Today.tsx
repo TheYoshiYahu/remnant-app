@@ -600,6 +600,28 @@ function DoorRow() {
           </span>
         </a>
       </div>
+
+      {/* Reading Plans door — today's reading lives here. */}
+      <div className="today-doors-row">
+        <a href="/plans" className="today-door today-door-study">
+          <span className="today-door-glyph" aria-hidden="true">
+            ✷
+          </span>
+          <span className="today-door-text">
+            <span className="today-door-title">Reading Plans</span>
+            <span className="today-door-sub">today's reading &amp; progress</span>
+          </span>
+        </a>
+        <a href="/journal" className="today-door today-door-study">
+          <span className="today-door-glyph" aria-hidden="true">
+            ✍
+          </span>
+          <span className="today-door-text">
+            <span className="today-door-title">Journal</span>
+            <span className="today-door-sub">speak or write your heart</span>
+          </span>
+        </a>
+      </div>
     </section>
   );
 }

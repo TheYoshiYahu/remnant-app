@@ -90,6 +90,7 @@ Run: uvicorn main:app --reload
 from __future__ import annotations
 
 import os
+import json
 import re
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
@@ -171,6 +172,14 @@ from models import (
     UpdateJournalRequest,
     DevotionalReflection,
     DevotionalResponse,
+    PlanPassage,
+    PlanDay,
+    ReadingPlanSummary,
+    ReadingPlanDetail,
+    ReadingPlansResponse,
+    PlanProgress,
+    PlanProgressResponse,
+    UpdatePlanProgressRequest,
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
@@ -3304,6 +3313,140 @@ async def get_devotional(
             )
     return DevotionalResponse(
         reflections=[DevotionalReflection(**dict(r)) for r in rows]
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Reading Plans — curated multi-day plans + account-synced progress.
+# ─────────────────────────────────────────────────────────────────────
+
+
+def _plan_days_from_rows(rows) -> List[PlanDay]:
+    days: List[PlanDay] = []
+    for r in rows:
+        raw = r["passages"]
+        items = json.loads(raw) if isinstance(raw, str) else (raw or [])
+        days.append(
+            PlanDay(
+                day_number=r["day_number"],
+                passages=[PlanPassage(**p) for p in items],
+            )
+        )
+    return days
+
+
+@app.get("/v1/plans", response_model=ReadingPlansResponse)
+async def list_plans() -> ReadingPlansResponse:
+    """Curated reading plans. Public read-only."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            "SELECT id::text AS id, slug, title, description, day_count "
+            "  FROM reading_plans WHERE is_active "
+            " ORDER BY sort_order ASC, title ASC"
+        )
+    return ReadingPlansResponse(plans=[ReadingPlanSummary(**dict(r)) for r in rows])
+
+
+@app.get("/v1/plans/{slug}", response_model=ReadingPlanDetail)
+async def get_plan(slug: str) -> ReadingPlanDetail:
+    """One plan with its day-by-day passages. Public read-only."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        plan = await conn.fetchrow(
+            "SELECT id::text AS id, slug, title, description, day_count "
+            "  FROM reading_plans WHERE slug = $1 AND is_active",
+            slug,
+        )
+        if plan is None:
+            raise HTTPException(status_code=404, detail="Plan not found.")
+        day_rows = await conn.fetch(
+            "SELECT day_number, passages FROM reading_plan_days "
+            " WHERE plan_id = $1::uuid ORDER BY day_number ASC",
+            plan["id"],
+        )
+    return ReadingPlanDetail(**dict(plan), days=_plan_days_from_rows(day_rows))
+
+
+@app.get("/v1/plans/progress", response_model=PlanProgressResponse)
+async def get_plan_progress(
+    current_user: User = Depends(get_current_user_required),
+) -> PlanProgressResponse:
+    """The caller's progress across all plans they've started."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT p.plan_id::text AS plan_id, rp.slug AS plan_slug, "
+            "       p.current_day, p.completed_days "
+            "  FROM reading_plan_progress p "
+            "  JOIN reading_plans rp ON rp.id = p.plan_id "
+            " WHERE p.user_id = $1::uuid",
+            user_uuid,
+        )
+    return PlanProgressResponse(
+        progress=[
+            PlanProgress(
+                plan_id=r["plan_id"],
+                plan_slug=r["plan_slug"],
+                current_day=r["current_day"],
+                completed_days=list(r["completed_days"]),
+            )
+            for r in rows
+        ]
+    )
+
+
+@app.put("/v1/plans/{slug}/progress", response_model=PlanProgress)
+async def update_plan_progress(
+    slug: str,
+    body: UpdatePlanProgressRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> PlanProgress:
+    """Start a plan and/or mark a day complete / move current_day. Synced."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        plan = await conn.fetchrow(
+            "SELECT id::text AS id FROM reading_plans WHERE slug = $1 AND is_active",
+            slug,
+        )
+        if plan is None:
+            raise HTTPException(status_code=404, detail="Plan not found.")
+        plan_id = plan["id"]
+
+        if body.start:
+            row = await conn.fetchrow(
+                "INSERT INTO reading_plan_progress (user_id, plan_id, current_day, completed_days) "
+                "VALUES ($1::uuid, $2::uuid, 1, '{}') "
+                "ON CONFLICT (user_id, plan_id) DO UPDATE SET "
+                "  current_day = 1, completed_days = '{}', updated_at = now() "
+                "RETURNING current_day, completed_days",
+                user_uuid, plan_id,
+            )
+        else:
+            # Ensure a row exists, then apply the day-complete / current_day update.
+            await conn.execute(
+                "INSERT INTO reading_plan_progress (user_id, plan_id) "
+                "VALUES ($1::uuid, $2::uuid) ON CONFLICT DO NOTHING",
+                user_uuid, plan_id,
+            )
+            row = await conn.fetchrow(
+                "UPDATE reading_plan_progress SET "
+                "  completed_days = CASE WHEN $3::int IS NULL THEN completed_days "
+                "    WHEN $3 = ANY(completed_days) THEN completed_days "
+                "    ELSE array_append(completed_days, $3) END, "
+                "  current_day = COALESCE($4, current_day), "
+                "  updated_at = now() "
+                " WHERE user_id = $1::uuid AND plan_id = $2::uuid "
+                "RETURNING current_day, completed_days",
+                user_uuid, plan_id, body.completed_day, body.current_day,
+            )
+    return PlanProgress(
+        plan_id=plan_id,
+        plan_slug=slug,
+        current_day=row["current_day"],
+        completed_days=list(row["completed_days"]),
     )
 
 

@@ -668,6 +668,41 @@ CREATE TABLE devotional_library (
 CREATE INDEX idx_devotional_topic ON devotional_library(topic) WHERE is_active;
 
 
+-- Reading Plans — curated multi-day plans + account-synced per-user progress.
+-- Distinct from the client-only year-plan pacing layer (lib/reading-plan/*).
+-- See migrations/reading_plans.sql (which also seeds starter plans).
+CREATE TABLE reading_plans (
+    id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    slug          TEXT UNIQUE NOT NULL,
+    title         TEXT NOT NULL,
+    description   TEXT,
+    day_count     INT NOT NULL DEFAULT 0,
+    is_active     BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order    INT NOT NULL DEFAULT 0,
+    created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE reading_plan_days (
+    id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    plan_id       UUID NOT NULL REFERENCES reading_plans(id) ON DELETE CASCADE,
+    day_number    INT NOT NULL,
+    passages      JSONB NOT NULL DEFAULT '[]'::jsonb,   -- [{label, book_slug, chapter}]
+    UNIQUE (plan_id, day_number)
+);
+
+CREATE INDEX idx_plan_days_plan ON reading_plan_days(plan_id, day_number);
+
+CREATE TABLE reading_plan_progress (
+    user_id        UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    plan_id        UUID NOT NULL REFERENCES reading_plans(id) ON DELETE CASCADE,
+    current_day    INT NOT NULL DEFAULT 1,
+    completed_days INT[] NOT NULL DEFAULT '{}',
+    started_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (user_id, plan_id)
+);
+
+
 -- A user-authored bookmark on a single verse. Distinct surface from
 -- both highlights (color-only marking, no descriptive text) and notes
 -- (study content). DESIGN_LANGUAGE.md §22 (locked S124, Wheel 5):
