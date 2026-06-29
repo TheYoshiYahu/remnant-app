@@ -273,7 +273,20 @@ export default function Journal() {
           className="w-full rounded border border-[var(--reader-rule)] p-3 leading-relaxed focus:outline-none"
           style={{ backgroundColor: prefs.bg, color: prefs.fg, fontFamily: prefs.font }}
         />
+
+        {/* Keyboard-dictation hint — the primary "speak" path. Works on every
+            device with NO app permission and NO native plugin: the OS keyboard
+            owns the microphone and types the transcription into the field. */}
+        <p className="mt-2 flex items-center gap-1 text-xs text-[var(--reader-muted)]">
+          <span aria-hidden="true">🎤</span>
+          Want to speak it? Tap the microphone on your keyboard and talk — your
+          phone types it into the journal for you. Or just type.
+        </p>
+
         <div className="mt-2 flex items-center gap-3">
+          {/* Optional progressive enhancement: in-browser dictation where the
+              Web Speech API is available. NOT required — the keyboard mic above
+              covers speaking everywhere. Hidden when unsupported. */}
           {canDictate && (
             <button
               type="button"
@@ -284,7 +297,7 @@ export default function Journal() {
                   : "border-[var(--reader-text)] text-[var(--reader-text)]"
               }`}
             >
-              {listening ? "● Listening… tap to stop" : "🎙 Speak"}
+              {listening ? "● Listening… tap to stop" : "🎙 Dictate in-app (beta)"}
             </button>
           )}
           <button
@@ -296,12 +309,6 @@ export default function Journal() {
             {saving ? "Saving…" : "Save entry"}
           </button>
         </div>
-        {!canDictate && (
-          <p className="mt-2 text-xs text-[var(--reader-muted)]">
-            Voice dictation isn't available here — you can type your entry. On
-            the installed app, on-device dictation is supported.
-          </p>
-        )}
       </div>
 
       {/* Transparency disclosure (standing) */}

@@ -285,16 +285,19 @@ lens returns empty groups (the free sample card is hardcoded and works regardles
 **Devotional library:** the seeded rows are PLACEHOLDERS — Yoshi replaces the
 `reflection`/`passage_text` copy (voice-gated) before relying on it.
 
-**Voice journal — native dictation (binary-dependent, NOT wired):** the web
-path uses the browser Web Speech API and works in the PWA. The NATIVE on-device
-engine is `@capacitor-community/speech-recognition`:
-1. `npm i @capacitor-community/speech-recognition` in `app/`, then `npx cap sync`.
-2. iOS `Info.plist`: add `NSMicrophoneUsageDescription` and
-   `NSSpeechRecognitionUsageDescription` (user-facing reason strings).
-3. Android `AndroidManifest.xml`: add `<uses-permission android:name="android.permission.RECORD_AUDIO" />`.
-4. Rebuild the shells. Until then, native falls back to Web Speech where the
-   webview supports it, and to type-only where it doesn't. All dictation is
-   on-device; no audio leaves the device.
+**Voice journal — dictation (Block 1, NO native change):** the "speak" path is
+the DEVICE KEYBOARD's built-in dictation — the user taps the keyboard mic and
+the OS types into the normal textarea. No app mic permission, no native plugin,
+no Capacitor change. An optional in-app "Dictate (beta)" button uses the browser
+Web Speech API where available (progressive enhancement, auto-hidden otherwise).
+**Nothing here requires a binary update.** No `NSMicrophone*` / `RECORD_AUDIO`
+strings are needed for this release.
+
+> BLOCK 2 (future, optional only): a dedicated in-app record button backed by
+> `@capacitor-community/speech-recognition` — that WOULD need `npm i` + `cap
+> sync`, the iOS `NSMicrophoneUsageDescription` / `NSSpeechRecognitionUsageDescription`
+> strings, and Android `RECORD_AUDIO`. Not required; keyboard dictation already
+> delivers the speak experience.
 
 **Crisis-safety (privacy invariant):** the watchlist match runs entirely
 on-device (`app/src/lib/crisis-safety.ts`); journal text is never sent for that

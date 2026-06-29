@@ -1,22 +1,24 @@
 /**
- * journal-dictation.ts — speech-to-text for the Voice Journal.
+ * journal-dictation.ts — OPTIONAL in-app speech-to-text for the Voice Journal.
  *
- * Two paths:
- *   WEB (implemented here): the browser Web Speech API
- *   (window.SpeechRecognition / webkitSpeechRecognition). On-device in modern
- *   Chrome/Safari; returns interim + final transcripts via callbacks.
+ * IMPORTANT (Block 1 / no native dependency): the journal's PRIMARY "speak"
+ * path is the DEVICE KEYBOARD's built-in dictation — the user taps the mic on
+ * their keyboard and the OS types into the normal textarea. That needs NO app
+ * microphone permission and NO native plugin, so the journal ships web-served
+ * with zero Capacitor change.
  *
- *   NATIVE (binary-dependent — scaffolded, not wired): on iOS/Android the
- *   on-device engine is @capacitor-community/speech-recognition. That plugin is
- *   the NATIVE piece that must be installed + synced into the Capacitor shells,
- *   and it needs platform permission strings:
- *     - iOS  Info.plist: NSMicrophoneUsageDescription,
- *                        NSSpeechRecognitionUsageDescription
- *     - Android AndroidManifest.xml: <uses-permission RECORD_AUDIO>
- *   See the deploy checklist. Until that's added + the app rebuilt, native
- *   falls back to the Web Speech path inside the webview where available, and
- *   to type-only where it isn't. All dictation is on-device; no audio leaves
- *   the device and nothing is sent to our servers.
+ * This module is a PROGRESSIVE ENHANCEMENT only: where the browser Web Speech
+ * API (window.SpeechRecognition / webkitSpeechRecognition) is available, it
+ * offers an extra in-app "Dictate (beta)" button. It is never required — if the
+ * API is absent, the UI simply hides the button and the keyboard-mic path
+ * covers speaking. No audio leaves the device.
+ *
+ * BLOCK 2 (future, optional): a dedicated in-app record button backed by the
+ * native @capacitor-community/speech-recognition plugin. THAT would require a
+ * Capacitor change + mic/speech permission strings (iOS
+ * NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription; Android
+ * RECORD_AUDIO). It is explicitly NOT part of this release and NOT needed —
+ * keyboard dictation already provides the speak experience.
  */
 
 export interface Dictation {
