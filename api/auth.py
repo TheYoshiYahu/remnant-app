@@ -134,6 +134,20 @@ class User(BaseModel):
     login: Optional[str] = None
     display_name: Optional[str] = None
     partner_tier: PartnerTier = "free"
+    # Optional WordPress account email (added to the JWT by rop-sso-bridge).
+    # Older tokens minted before that change won't carry it, so it defaults
+    # to None and every consumer must tolerate its absence. Cached into
+    # users.email by upsert_user so transactional mail (the trial-ending
+    # reminder job) can reach the partner.
+    email: Optional[str] = None
+
+
+# Subscription statuses that count as terminated — no active access. This is
+# the single named definition of "not a live subscription," mirrored from the
+# inline list in _resolve_tier_from_db's SQL below. It is exported so the
+# trial-reminder job (jobs/trial_reminders.py) and any other caller share one
+# source of truth via has_active_paid_subscription() rather than re-deriving it.
+TERMINAL_SUBSCRIPTION_STATUSES = ("canceled", "unpaid", "incomplete_expired")
 
 
 def _jwt_secret() -> Optional[str]:
@@ -194,12 +208,18 @@ def _decode_token(token: str) -> Optional[User]:
         # 500. Belt-and-suspenders next to the Literal type.
         raw_tier = "free"
 
+    # Optional email claim (rop-sso-bridge adds it; older tokens omit it).
+    # Coerce to a clean str or None — never let a malformed claim raise.
+    raw_email = user.get("email")
+    email = raw_email if isinstance(raw_email, str) and raw_email.strip() else None
+
     try:
         return User(
             id=str(raw_id),
             login=user.get("login"),
             display_name=user.get("display_name"),
             partner_tier=raw_tier,  # type: ignore[arg-type]
+            email=email,
         )
     except Exception:
         return None
@@ -302,6 +322,37 @@ async def _resolve_tier_from_db(wp_user_id_str: str) -> Optional[PartnerTier]:
         return TRIAL_TIER
 
     return "free"
+
+
+async def has_active_paid_subscription(wp_user_id: int) -> bool:
+    """True if the WordPress user has a non-terminal (paid) subscription row.
+
+    This is the PAID check, deliberately independent of the no-card trial:
+    a partner inside their trial window has full access via TRIAL_TIER but
+    holds NO subscription row, so this returns False for them. The
+    trial-reminder job uses this to email only trial users who have NOT yet
+    converted to a paid plan — _resolve_tier_from_db can't serve that need
+    because it returns TRIAL_TIER ("everything") for in-trial users, which is
+    indistinguishable from a paid "everything" tier by return value alone.
+
+    Semantics match the newest-non-terminal-row logic in
+    _resolve_tier_from_db, using the shared TERMINAL_SUBSCRIPTION_STATUSES
+    constant so the two never drift. Existence is all that matters here, so
+    no ORDER BY is needed. Raises on DB error (the caller logs + skips).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT 1 "
+            "  FROM subscriptions s "
+            "  JOIN users u ON u.id = s.user_id "
+            " WHERE u.wordpress_user_id = $1 "
+            "   AND s.status <> ALL($2::text[]) "
+            " LIMIT 1",
+            wp_user_id,
+            list(TERMINAL_SUBSCRIPTION_STATUSES),
+        )
+    return row is not None
 
 
 async def get_current_user_optional(

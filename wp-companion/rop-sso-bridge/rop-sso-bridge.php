@@ -217,6 +217,15 @@ function rop_sso_generate_jwt($user) {
                 'login'        => (string) $user->user_login,
                 'display_name' => (string) $user->display_name,
                 'partner_tier' => $partner_tier,
+                // Additive (compliance/trial-reminder build): carry the
+                // WordPress account email so the FastAPI backend can cache it
+                // in users.email and reach the partner for transactional mail
+                // (e.g. the trial-ending reminder). Read-only mirror of the
+                // identity WordPress already owns; the API treats this claim as
+                // optional and tolerates its absence in older tokens. This
+                // single payload feeds BOTH mint paths — the wp_login cookie
+                // and the native-auth-callback — since both call this function.
+                'email'        => (string) $user->user_email,
             ],
         ],
     ];
@@ -514,3 +523,61 @@ function rop_sso_handle_native_callback(WP_REST_Request $request) {
     ]));
     exit;
 }
+
+/**
+ * compliance/trial-reminder build — make the NATIVE credential-login token
+ * carry the account email.
+ *
+ * The native app's credential sign-in (app/src/lib/native-auth.ts ->
+ * loginWithCredentials) authenticates against the THIRD-PARTY JWT plugin at
+ * POST /wp-json/jwt-auth/v1/token — NOT rop_sso_generate_jwt() above. That
+ * plugin builds its own token whose default payload is data.user.id only, with
+ * no email. Without email on the native token the FastAPI backend never caches
+ * users.email for native-only partners, so the trial-reminder job's
+ * `email IS NOT NULL` filter skips exactly the native app users the reminder
+ * most needs to reach.
+ *
+ * Fix: hook the plugin's token-payload filter and inject
+ * data.user.email = user_email, matching the shape api/auth.py reads
+ * (payload.data.user.email) and the rop-sso-bridge cookie token. Additive only
+ * — adds one claim, leaves everything else (signing, expiry, id) untouched.
+ *
+ * Two filter names are registered to cover both common builds of the plugin
+ * that serve the jwt-auth/v1 namespace (they share the REST route, differ in
+ * the filter they expose):
+ *   - jwt_auth_payload            — Useful Team "JWT Auth" (slug: jwt-auth)
+ *   - jwt_auth_token_before_sign  — Tmeister "JWT Authentication for WP REST API"
+ * Both pass ($payload_or_token_array, WP_User) and both default to a
+ * data.user.id payload, so one callback serves both. Whichever plugin is
+ * active fires its matching filter; the other name is simply never called —
+ * harmless. If neither plugin is installed, both add_filter() calls are inert.
+ *
+ * @param array        $token The token payload array, pre-signing.
+ * @param WP_User|object $user The authenticated user.
+ * @return array The payload with data.user.email added when available.
+ */
+function rop_sso_add_email_to_native_jwt($token, $user) {
+    if (!is_array($token)) {
+        return $token;
+    }
+    $email = '';
+    if ($user instanceof WP_User) {
+        $email = (string) $user->user_email;
+    } elseif (is_object($user) && isset($user->data) && isset($user->data->user_email)) {
+        // Some plugin builds pass the raw $user row (->data->user_email).
+        $email = (string) $user->data->user_email;
+    }
+    if ($email === '') {
+        return $token;
+    }
+    if (!isset($token['data']) || !is_array($token['data'])) {
+        $token['data'] = [];
+    }
+    if (!isset($token['data']['user']) || !is_array($token['data']['user'])) {
+        $token['data']['user'] = [];
+    }
+    $token['data']['user']['email'] = $email;
+    return $token;
+}
+add_filter('jwt_auth_payload', 'rop_sso_add_email_to_native_jwt', 10, 2);
+add_filter('jwt_auth_token_before_sign', 'rop_sso_add_email_to_native_jwt', 10, 2);

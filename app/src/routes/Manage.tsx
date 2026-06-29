@@ -138,14 +138,7 @@ export default function Manage() {
     return (
       <PageShell title="Manage account">
         <p className="text-base text-[var(--reader-muted)]">
-          Sign in at{" "}
-          <a
-            href="https://remnantofpromise.org/login?redirect=/manage"
-            className="underline"
-          >
-            remnantofpromise.org
-          </a>{" "}
-          to manage your partnership.
+          Sign in at remnantofpromise.org to manage your partnership.
         </p>
       </PageShell>
     );
@@ -191,6 +184,7 @@ export default function Manage() {
             Become a partner
           </a>
         )}
+        <DeleteAccountSection />
       </PageShell>
     );
   }
@@ -442,7 +436,81 @@ export default function Manage() {
       >
         ← back to the reader
       </a>
+
+      <DeleteAccountSection />
     </PageShell>
+  );
+}
+
+/**
+ * compliance/account-gate build — in-app account-deletion affordance.
+ *
+ * Apple App Store Review Guideline 5.1.1(v): any app offering account creation
+ * MUST offer account deletion initiated from within the app.
+ *
+ * This matches the app's EXISTING, already-approved deletion method as stated
+ * in the privacy policy: email info@remnantofpromise.org with the subject
+ * "Delete my account" from the address on the account; the ministry confirms
+ * and completes deletion within 30 days, canceling any active subscription as
+ * part of it. The button opens a prefilled mail draft via the system mail app
+ * (mailto: works on native and web) — no 404, no placeholder route.
+ */
+const DELETION_EMAIL = "info@remnantofpromise.org";
+// Subject matches the privacy policy verbatim so the ministry's existing
+// handling/filtering keeps working.
+const DELETION_SUBJECT = "Delete my account";
+const DELETION_BODY =
+  "Please delete my Remnant of Promise account and the data stored with it " +
+  "(study notes, highlights, synced preferences, and subscription records). " +
+  "I am sending this from the email address on my account.\n\n" +
+  "If my account uses a different email address, it is: ____\n";
+
+function accountDeletionMailto(): string {
+  return (
+    "mailto:" +
+    DELETION_EMAIL +
+    "?subject=" +
+    encodeURIComponent(DELETION_SUBJECT) +
+    "&body=" +
+    encodeURIComponent(DELETION_BODY)
+  );
+}
+
+function openAccountDeletion() {
+  // mailto: hands off to the system mail app on both native and web — no
+  // browser/route dependency, so nothing to 404. Account management, not
+  // payment — unaffected by the in-app-payment-link compliance work.
+  if (typeof window !== "undefined") {
+    window.location.href = accountDeletionMailto();
+  }
+}
+
+function DeleteAccountSection() {
+  return (
+    <div className="mt-8 border-t border-[var(--reader-rule)] pt-4">
+      <h2 className="text-base font-semibold text-[var(--reader-text)]">
+        Delete account
+      </h2>
+      <p className="mt-2 text-sm text-[var(--reader-muted)]">
+        Deleting your account removes your sign-in and the work tied to it
+        (notes, highlights, bookmarks, reading position) and ends any active
+        partnership. Reading the free canon never requires an account. This
+        can't be undone.
+      </p>
+      <p className="mt-2 text-sm text-[var(--reader-muted)]">
+        Tapping below opens an email to the ministry requesting deletion. We
+        confirm and complete it within 30 days, canceling any active
+        subscription so you aren't billed again. Send it from the email address
+        on your account.
+      </p>
+      <button
+        type="button"
+        onClick={openAccountDeletion}
+        className="mt-3 inline-flex items-center justify-center rounded border border-red-400 bg-transparent px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50"
+      >
+        Email a deletion request
+      </button>
+    </div>
   );
 }
 

@@ -64,18 +64,27 @@ async def upsert_user(
     reading-positions) calls this on the partner's first hit so the
     local row exists for foreign-key references. The schema declares
     ``users.wordpress_user_id`` UNIQUE; we conflict on it. ``display_name``
-    is mirrored from the JWT payload (or left NULL if the WP-side filter
-    hasn't shipped it yet). Returns the ``users.id`` UUID as a str.
+    and ``email`` are mirrored from the JWT payload (or left NULL if an
+    older token omits them). Both use COALESCE on update so a token missing
+    the value never blanks an existing column — ``email`` backfills the
+    first time a token carrying it is presented (the rop-sso-bridge cookie
+    path adds it) and stays put thereafter. Returns the ``users.id`` UUID
+    as a str.
     """
     wp_user_id = int(current_user.id)
+    # email is Optional on the User model; older tokens omit it -> NULL ->
+    # COALESCE keeps any previously-cached value.
+    email = getattr(current_user, "email", None)
     user_uuid = await conn.fetchval(
-        "INSERT INTO users (wordpress_user_id, display_name, last_seen_at) "
-        "VALUES ($1, $2, now()) "
+        "INSERT INTO users (wordpress_user_id, email, display_name, last_seen_at) "
+        "VALUES ($1, $2, $3, now()) "
         "ON CONFLICT (wordpress_user_id) DO UPDATE SET "
+        "  email = COALESCE(EXCLUDED.email, users.email), "
         "  display_name = COALESCE(EXCLUDED.display_name, users.display_name), "
         "  last_seen_at = now() "
         "RETURNING id::text",
         wp_user_id,
+        email,
         current_user.display_name,
     )
     return user_uuid
