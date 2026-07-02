@@ -8,6 +8,33 @@ import {
 import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 
 /**
+ * NATIVE_MANAGE_LINE rendered as GENUINELY non-clickable text.
+ *
+ * iOS WKWebView data detectors auto-linkify a bare domain that appears as
+ * a contiguous run of text, and tapping the resulting link opened a 404.
+ * Splitting the domain across element boundaries (each "." in its own
+ * <span>) means no single text node contains "bible.remnantofpromise.org",
+ * so iOS never recognizes it as a URL — no underline, no tap target, no
+ * 404. pointer-events:none is a secondary guard in case a future OS
+ * detects across nodes. The visible text is identical; web renders it as
+ * ordinary muted text. Compliance: this is the plain, non-clickable
+ * account-management line the reader-app rules require.
+ */
+function ManageLine() {
+  const parts = NATIVE_MANAGE_LINE.split(".");
+  return (
+    <span style={{ pointerEvents: "none" }}>
+      {parts.map((part, i) => (
+        <span key={i}>
+          {i > 0 ? <span aria-hidden="true">.</span> : null}
+          {part}
+        </span>
+      ))}
+    </span>
+  );
+}
+
+/**
  * Session 39 — Manage account surface (renamed at S174 per Yoshi
  * voice-call; prior name "Manage partnership"). Same route /manage,
  * same partnership-state surface for partners with a subscription,
@@ -181,7 +208,7 @@ export default function Manage() {
         {isNativeShell() ? (
           // Native: no in-app purchase path — plain text, non-clickable.
           <p className="text-base text-[var(--reader-text)]">
-            {NATIVE_MANAGE_LINE}
+            <ManageLine />
           </p>
         ) : (
           <a
@@ -390,7 +417,7 @@ export default function Manage() {
           </p>
           {isNativeShell() ? (
             // Native: no in-app reactivation purchase path — plain text.
-            <p className="mt-3 text-base text-amber-900">{NATIVE_MANAGE_LINE}</p>
+            <p className="mt-3 text-base text-amber-900"><ManageLine /></p>
           ) : (
             <div className="mt-3">
               <a
@@ -412,7 +439,7 @@ export default function Manage() {
             <>
               This partnership has ended.
               <p className="mt-3 text-base text-[var(--reader-text)]">
-                {NATIVE_MANAGE_LINE}
+                <ManageLine />
               </p>
             </>
           ) : (
