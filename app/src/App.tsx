@@ -2756,7 +2756,19 @@ function Reader() {
                 Manage account
               </a>
             ) : me && me.status === "none" ? (
-              isNativeShell() ? null : (
+              isNativeShell() ? (
+                // Native (reader-app compliance): no in-app purchase CTA — but
+                // the account slot must NEVER render empty. A native partner
+                // whose /me resolves to a non-active status (signed in with no
+                // subscription, or a stale/partial session) was left with no
+                // account link AND no sign-in doorway when the /pricing CTA was
+                // removed here — the "login button is gone" regression. Point
+                // at the in-app sign-in form instead so there is always a way
+                // back into an account.
+                <a href="/sign-in" className="chrome-metal chrome-metal-emerald">
+                  Sign in
+                </a>
+              ) : (
                 <a href="/pricing" className="chrome-metal chrome-metal-emerald">
                   Become a partner
                 </a>
@@ -2767,7 +2779,14 @@ function Reader() {
                 me.status === "unpaid" ||
                 me.status === "incomplete" ||
                 me.status === "incomplete_expired") ? (
-              isNativeShell() ? null : (
+              isNativeShell() ? (
+                // Native: same rule as the "none" branch — offer the in-app
+                // sign-in doorway rather than the removed /pricing CTA so the
+                // account slot is never empty.
+                <a href="/sign-in" className="chrome-metal chrome-metal-emerald">
+                  Sign in
+                </a>
+              ) : (
                 <a href="/pricing" className="chrome-metal chrome-metal-emerald">
                   Resubscribe
                 </a>
