@@ -3,6 +3,7 @@ import { useFontSize } from "../lib/useFontSize";
 import { useTheme } from "../lib/theme";
 import { useParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import { useSacredNameMask } from "../lib/useSacredNameMask";
+import { clearNativeToken } from "../lib/native-auth";
 
 /**
  * S172 — Settings → Reader preferences page.
@@ -41,6 +42,53 @@ import { useSacredNameMask } from "../lib/useSacredNameMask";
  * affordance as the lead preference where the partner first meets
  * the sync behavior.
  */
+/**
+ * Sign out — clears the session on BOTH web and native, then full-reloads.
+ *
+ * clearNativeToken() removes the native JWT (Capacitor Preferences + the
+ * in-memory cache) on native, and clears the rop_jwt cookie on web. We
+ * additionally clear the cookie for the host-only and the parent-domain
+ * (.remnantofpromise.org — the variant the WP SSO bridge sets) forms so
+ * no stale cookie survives on web. A full navigation to /read then resets
+ * all in-memory auth state and re-renders the signed-out chrome.
+ *
+ * Reader-app compliant: a plain sign-out control carries no purchase,
+ * pricing, or donate affordance, so it is safe on the native shells.
+ */
+async function handleSignOut(): Promise<void> {
+  try {
+    await clearNativeToken();
+  } catch {
+    // best-effort — proceed to cookie-clear + reload regardless
+  }
+  if (typeof document !== "undefined") {
+    const base = "rop_jwt=; path=/; max-age=0; SameSite=Lax; Secure";
+    document.cookie = base;
+    document.cookie = base + "; domain=.remnantofpromise.org";
+    document.cookie = base + "; domain=bible.remnantofpromise.org";
+  }
+  if (typeof window !== "undefined") {
+    window.location.assign("/read");
+  }
+}
+
+function SignOutCard() {
+  return (
+    <SettingsCard
+      title="Account"
+      description="Sign out of this device. Your notes, highlights, and reading position stay saved to your account and return when you sign back in."
+    >
+      <button
+        type="button"
+        onClick={() => void handleSignOut()}
+        className="inline-flex items-center justify-center rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-2 font-sans text-sm font-medium text-[var(--reader-text)] hover:opacity-80"
+      >
+        Sign out
+      </button>
+    </SettingsCard>
+  );
+}
+
 export default function Settings() {
   const { mask: sacredNameMask, set: setSacredNameMask } = useSacredNameMask();
   const { hide: hideParentheticals, set: setHideParentheticals } =
@@ -170,6 +218,8 @@ export default function Settings() {
             so partners know the preferences will land here.
             Interlinear-default + TTS voice land when their respective
             hooks get lifted into Settings. (Font size shipped in S356.) */}
+        <SignOutCard />
+
         <SettingsCard
           title="More coming"
           description="Interlinear default and TTS voice preferences land in upcoming releases."
