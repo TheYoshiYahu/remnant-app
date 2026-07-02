@@ -26,6 +26,7 @@ import {
   loginWithCredentials,
   LoginCredentialsError,
 } from "../lib/native-auth";
+import { isNativeShell } from "../lib/native-shell";
 
 const WP_LOGIN_URL = "https://remnantofpromise.org/goshen/";
 // S188 — append source=bible so the RoP Community Gate (wp-content/mu-plugins/
@@ -85,11 +86,10 @@ function buildWpUrl(base: string, returnTo: string): string {
  * Replaces the S175 "anonymous-only native app" message.
  */
 function isNativePlatform(): boolean {
-  if (typeof window === "undefined") return false;
-  const cap = (window as unknown as {
-    Capacitor?: { isNativePlatform?: () => boolean };
-  }).Capacitor;
-  return cap?.isNativePlatform?.() === true;
+  // Delegate to the shared, durable native-shell detector so /sign-in
+  // resolves as native even when the Capacitor bridge isn't re-injected
+  // after a full-page navigation on the remote server.url origin.
+  return isNativeShell();
 }
 
 /**
