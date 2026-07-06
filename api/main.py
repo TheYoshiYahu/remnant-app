@@ -90,6 +90,7 @@ Run: uvicorn main:app --reload
 from __future__ import annotations
 
 import os
+import json
 import re
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
@@ -161,6 +162,24 @@ from models import (
     StrongEntry,
     StrongOccurrence,
     StrongOccurrencesResponse,
+    SkeletonEntry,
+    SkeletonGroupResponse,
+    SkeletonNearGroup,
+    SkeletonNearResponse,
+    JournalEntry,
+    JournalEntriesResponse,
+    CreateJournalRequest,
+    UpdateJournalRequest,
+    DevotionalReflection,
+    DevotionalResponse,
+    PlanPassage,
+    PlanDay,
+    ReadingPlanSummary,
+    ReadingPlanDetail,
+    ReadingPlansResponse,
+    PlanProgress,
+    PlanProgressResponse,
+    UpdatePlanProgressRequest,
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
@@ -236,6 +255,10 @@ app.include_router(subscriptions_router, prefix="/v1/subscriptions")
 
 
 def _book_summary_from_row(row) -> BookSummary:
+    # `locked` is only present when /v1/books is called with include_locked=true
+    # (the show-all-gate-access mode). asyncpg Record doesn't support .get(), so
+    # probe the key membership before reading it.
+    locked = row["locked"] if "locked" in row.keys() else None
     return BookSummary(
         id=row["id"],
         slug=row["slug"],
@@ -244,6 +267,7 @@ def _book_summary_from_row(row) -> BookSummary:
         canonical_order=row["canonical_order"],
         witness_category=row["witness_category"],
         tier_required=row["tier_required"],
+        locked=locked,
         abstract=row["abstract"],
         edition_slug=row["edition_slug"],
     )
@@ -365,20 +389,55 @@ async def list_books(
             "historical_witness, disputed_witness."
         ),
     ),
+    include_locked: bool = Query(
+        default=False,
+        description=(
+            "show-all-gate-access mode. False (default, unchanged behavior): "
+            "return only books the caller's tier can open. True: return EVERY "
+            "built book and set `locked` per row (True = visible but not "
+            "openable for this tier) so the client can render the full library "
+            "with lock affordances instead of hiding paid books."
+        ),
+    ),
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> List[BookSummary]:
     """
     List books visible to the requester.
 
-    Tier filter (Session 36): the response is filtered by the caller's
-    partner tier against each book's ``tier_required``, using the
-    schema's ``tier_satisfies()`` lattice function. Anonymous callers
-    and the 'free' tier see the 66-book canon; 'extras' and above see
-    the full 153-book corpus. The order is canonical_order so the free
-    canon appears first, then the extras manifest in inventory order.
+    Tier filter (Session 36): in the default mode the response is filtered by
+    the caller's partner tier against each book's ``tier_required``, using the
+    schema's ``tier_satisfies()`` lattice function. Anonymous callers and the
+    'free' tier see the 66-book canon; 'extras' and above see the full corpus.
+
+    show-all-gate-access mode (include_locked=true): the WHERE filter is dropped
+    so EVERY built book is returned, and ``locked`` is computed per row as
+    ``NOT tier_satisfies(tier, b.tier_required)``. Chapter/text access stays
+    gated server-side elsewhere (get_chapter still 404s a locked book), so this
+    is display-only: the client shows the whole library and renders a lock
+    affordance on the books the tier can't open. Order is canonical_order.
     """
     pool = get_pool()
     tier = user_tier(current_user)
+
+    if include_locked:
+        sql = (
+            "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
+            "       b.witness_category::text AS witness_category, "
+            "       b.tier_required::text   AS tier_required, "
+            "       NOT tier_satisfies($1::content_tier, b.tier_required) AS locked, "
+            "       b.abstract, e.slug AS edition_slug "
+            "  FROM books b "
+            "  JOIN editions e ON e.id = b.edition_id "
+        )
+        params: list = [tier]
+        if witness_category is not None:
+            sql += " WHERE b.witness_category = $2::witness_category"
+            params.append(witness_category)
+        sql += " ORDER BY b.canonical_order ASC, b.id ASC"
+        async with pool.acquire() as conn:
+            rows = await conn.fetch(sql, *params)
+        response.headers["Cache-Control"] = READING_CACHE_CONTROL
+        return [_book_summary_from_row(r) for r in rows]
 
     sql = (
         "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
@@ -389,7 +448,7 @@ async def list_books(
         "  JOIN editions e ON e.id = b.edition_id "
         " WHERE tier_satisfies($1::content_tier, b.tier_required) "
     )
-    params: list = [tier]
+    params = [tier]
     if witness_category is not None:
         sql += "   AND b.witness_category = $2::witness_category"
         params.append(witness_category)
@@ -3031,6 +3090,363 @@ async def get_strong_entry(strong_number: str) -> StrongEntry:
         short_definition=row["short_definition"],
         definition=row["definition"],
         derivation=row["derivation"],
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Consonantal-skeleton lens ("Without the vowels")
+#
+# Data: strong_entries.consonantal_skeleton + strong_skeleton_near, populated by
+# restoration-pipeline/_build_consonantal_skeleton.py after the
+# migrations/consonantal_skeleton.sql migration. Usage counts come from
+# verse_words (Strong's-tagged tokens). Public data; the UI gates live use to
+# partners and shows a curated free sample.
+# ─────────────────────────────────────────────────────────────────────
+
+# Hebrew points/accents — strip to a consonant skeleton (mirror of the build
+# script so a caller can pass either a pointed lemma or a bare skeleton).
+_HEBREW_POINTS_RE = re.compile(r"[֑-ׇ]")
+
+
+def _to_skeleton(s: str) -> str:
+    return _HEBREW_POINTS_RE.sub("", (s or "")).strip()
+
+
+async def _skeleton_entries(conn, skeleton: str) -> List[SkeletonEntry]:
+    """All Strong's entries whose consonantal_skeleton == skeleton, with usage."""
+    rows = await conn.fetch(
+        "SELECT se.strong_number, se.lemma, se.transliteration, "
+        "       se.short_definition, se.definition, "
+        "       (SELECT count(*) FROM verse_words vw "
+        "          WHERE vw.strong_number = se.strong_number) AS usage_count "
+        "  FROM strong_entries se "
+        " WHERE se.consonantal_skeleton = $1 "
+        " ORDER BY se.strong_number ASC",
+        skeleton,
+    )
+    return [
+        SkeletonEntry(
+            strong_number=r["strong_number"],
+            lemma=r["lemma"],
+            transliteration=r["transliteration"],
+            short_definition=r["short_definition"],
+            definition=r["definition"],
+            usage_count=int(r["usage_count"] or 0),
+        )
+        for r in rows
+    ]
+
+
+@app.get("/v1/skeleton/{skeleton}", response_model=SkeletonGroupResponse)
+async def get_skeleton_group(skeleton: str) -> SkeletonGroupResponse:
+    """Every Hebrew/Aramaic Strong's entry sharing this consonant skeleton.
+
+    The path param may be a bare skeleton (נצר) or a pointed lemma — points are
+    stripped server-side so the tapped word's lemma can be passed straight in.
+    Public data (no auth); the client gates live use to partners.
+    """
+    skel = _to_skeleton(skeleton)
+    if not skel:
+        raise HTTPException(status_code=400, detail="empty skeleton")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        entries = await _skeleton_entries(conn, skel)
+    return SkeletonGroupResponse(skeleton=skel, entries=entries)
+
+
+@app.get("/v1/skeleton/{skeleton}/near", response_model=SkeletonNearResponse)
+async def get_skeleton_near(skeleton: str) -> SkeletonNearResponse:
+    """Single-consonant-swap near matches (the netzer↔nazir deep dive).
+
+    Reads the precomputed strong_skeleton_near map and returns, for each
+    near-by skeleton (one consonant away), the entries under it. Public data.
+    """
+    skel = _to_skeleton(skeleton)
+    if not skel:
+        raise HTTPException(status_code=400, detail="empty skeleton")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        near_rows = await conn.fetch(
+            "SELECT near_skeleton, edit_kind FROM strong_skeleton_near "
+            " WHERE skeleton = $1 ORDER BY near_skeleton ASC",
+            skel,
+        )
+        groups: List[SkeletonNearGroup] = []
+        for nr in near_rows:
+            entries = await _skeleton_entries(conn, nr["near_skeleton"])
+            if entries:
+                groups.append(
+                    SkeletonNearGroup(
+                        near_skeleton=nr["near_skeleton"],
+                        edit_kind=nr["edit_kind"],
+                        entries=entries,
+                    )
+                )
+    return SkeletonNearResponse(skeleton=skel, near=groups)
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Voice Journal — private per-user journal (mirror of notes).
+#
+# Crisis-safety is ON-DEVICE ONLY. These endpoints never receive, compute, or
+# store any crisis/mood/risk signal — body text + the user's own free labels.
+# ─────────────────────────────────────────────────────────────────────
+
+
+def _journal_entry_from_row(row) -> JournalEntry:
+    return JournalEntry(
+        id=row["id"],
+        title=row["title"],
+        body=row["body"],
+        section_label=row["section_label"],
+        created_at=row["created_at"],
+        updated_at=row["updated_at"],
+    )
+
+
+@app.get("/v1/journal", response_model=JournalEntriesResponse)
+async def list_journal(
+    current_user: User = Depends(get_current_user_required),
+) -> JournalEntriesResponse:
+    """The partner's journal entries, newest first. Private to the caller."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT id::text AS id, title, body, section_label, "
+            "       created_at, updated_at "
+            "  FROM journal_entries "
+            " WHERE user_id = $1::uuid AND is_archived = FALSE "
+            " ORDER BY created_at DESC, id ASC",
+            user_uuid,
+        )
+    return JournalEntriesResponse(entries=[_journal_entry_from_row(r) for r in rows])
+
+
+@app.post("/v1/journal", response_model=JournalEntry, status_code=201)
+async def create_journal(
+    body: CreateJournalRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> JournalEntry:
+    """Save a journal entry (typed or on-device-dictated text)."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        row = await conn.fetchrow(
+            "INSERT INTO journal_entries (user_id, title, body, section_label) "
+            "VALUES ($1::uuid, $2, $3, $4) "
+            "RETURNING id::text AS id, title, body, section_label, "
+            "          created_at, updated_at",
+            user_uuid, body.title, body.body, body.section_label,
+        )
+    return _journal_entry_from_row(row)
+
+
+@app.patch("/v1/journal/{entry_id}", response_model=JournalEntry)
+async def update_journal(
+    entry_id: str,
+    body: UpdateJournalRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> JournalEntry:
+    """Edit a journal entry. Only the owner's row is touched."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        row = await conn.fetchrow(
+            "UPDATE journal_entries SET "
+            "  body = COALESCE($3, body), "
+            "  title = COALESCE($4, title), "
+            "  section_label = COALESCE($5, section_label), "
+            "  updated_at = now() "
+            " WHERE id = $1::uuid AND user_id = $2::uuid AND is_archived = FALSE "
+            "RETURNING id::text AS id, title, body, section_label, "
+            "          created_at, updated_at",
+            entry_id, user_uuid, body.body, body.title, body.section_label,
+        )
+    if row is None:
+        raise HTTPException(status_code=404, detail="Journal entry not found.")
+    return _journal_entry_from_row(row)
+
+
+@app.delete("/v1/journal/{entry_id}", status_code=204)
+async def delete_journal(
+    entry_id: str,
+    current_user: User = Depends(get_current_user_required),
+) -> Response:
+    """Delete (soft-archive) a journal entry the caller owns."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        result = await conn.execute(
+            "UPDATE journal_entries SET is_archived = TRUE, updated_at = now() "
+            " WHERE id = $1::uuid AND user_id = $2::uuid",
+            entry_id, user_uuid,
+        )
+    if result.endswith(" 0"):
+        raise HTTPException(status_code=404, detail="Journal entry not found.")
+    return Response(status_code=204)
+
+
+@app.get("/v1/devotional", response_model=DevotionalResponse)
+async def get_devotional(
+    topic: Optional[str] = Query(default=None, description="Topic/emotion tag."),
+) -> DevotionalResponse:
+    """Curated Scripture + reflection(s) surfaced after a journal entry.
+
+    Public read-only library. Filter by ?topic= (gratitude/fear/grief/hope/…);
+    omit to get the active set. Seed rows are placeholders for Yoshi.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        if topic:
+            rows = await conn.fetch(
+                "SELECT id::text AS id, topic, title, passage_ref, passage_text, "
+                "       reflection FROM devotional_library "
+                " WHERE is_active AND topic = $1 ORDER BY created_at ASC",
+                topic,
+            )
+        else:
+            rows = await conn.fetch(
+                "SELECT id::text AS id, topic, title, passage_ref, passage_text, "
+                "       reflection FROM devotional_library "
+                " WHERE is_active ORDER BY topic ASC, created_at ASC"
+            )
+    return DevotionalResponse(
+        reflections=[DevotionalReflection(**dict(r)) for r in rows]
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Reading Plans — curated multi-day plans + account-synced progress.
+# ─────────────────────────────────────────────────────────────────────
+
+
+def _plan_days_from_rows(rows) -> List[PlanDay]:
+    days: List[PlanDay] = []
+    for r in rows:
+        raw = r["passages"]
+        items = json.loads(raw) if isinstance(raw, str) else (raw or [])
+        days.append(
+            PlanDay(
+                day_number=r["day_number"],
+                passages=[PlanPassage(**p) for p in items],
+            )
+        )
+    return days
+
+
+@app.get("/v1/plans", response_model=ReadingPlansResponse)
+async def list_plans() -> ReadingPlansResponse:
+    """Curated reading plans. Public read-only."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            "SELECT id::text AS id, slug, title, description, day_count "
+            "  FROM reading_plans WHERE is_active "
+            " ORDER BY sort_order ASC, title ASC"
+        )
+    return ReadingPlansResponse(plans=[ReadingPlanSummary(**dict(r)) for r in rows])
+
+
+@app.get("/v1/plans/{slug}", response_model=ReadingPlanDetail)
+async def get_plan(slug: str) -> ReadingPlanDetail:
+    """One plan with its day-by-day passages. Public read-only."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        plan = await conn.fetchrow(
+            "SELECT id::text AS id, slug, title, description, day_count "
+            "  FROM reading_plans WHERE slug = $1 AND is_active",
+            slug,
+        )
+        if plan is None:
+            raise HTTPException(status_code=404, detail="Plan not found.")
+        day_rows = await conn.fetch(
+            "SELECT day_number, passages FROM reading_plan_days "
+            " WHERE plan_id = $1::uuid ORDER BY day_number ASC",
+            plan["id"],
+        )
+    return ReadingPlanDetail(**dict(plan), days=_plan_days_from_rows(day_rows))
+
+
+@app.get("/v1/plans/progress", response_model=PlanProgressResponse)
+async def get_plan_progress(
+    current_user: User = Depends(get_current_user_required),
+) -> PlanProgressResponse:
+    """The caller's progress across all plans they've started."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT p.plan_id::text AS plan_id, rp.slug AS plan_slug, "
+            "       p.current_day, p.completed_days "
+            "  FROM reading_plan_progress p "
+            "  JOIN reading_plans rp ON rp.id = p.plan_id "
+            " WHERE p.user_id = $1::uuid",
+            user_uuid,
+        )
+    return PlanProgressResponse(
+        progress=[
+            PlanProgress(
+                plan_id=r["plan_id"],
+                plan_slug=r["plan_slug"],
+                current_day=r["current_day"],
+                completed_days=list(r["completed_days"]),
+            )
+            for r in rows
+        ]
+    )
+
+
+@app.put("/v1/plans/{slug}/progress", response_model=PlanProgress)
+async def update_plan_progress(
+    slug: str,
+    body: UpdatePlanProgressRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> PlanProgress:
+    """Start a plan and/or mark a day complete / move current_day. Synced."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        plan = await conn.fetchrow(
+            "SELECT id::text AS id FROM reading_plans WHERE slug = $1 AND is_active",
+            slug,
+        )
+        if plan is None:
+            raise HTTPException(status_code=404, detail="Plan not found.")
+        plan_id = plan["id"]
+
+        if body.start:
+            row = await conn.fetchrow(
+                "INSERT INTO reading_plan_progress (user_id, plan_id, current_day, completed_days) "
+                "VALUES ($1::uuid, $2::uuid, 1, '{}') "
+                "ON CONFLICT (user_id, plan_id) DO UPDATE SET "
+                "  current_day = 1, completed_days = '{}', updated_at = now() "
+                "RETURNING current_day, completed_days",
+                user_uuid, plan_id,
+            )
+        else:
+            # Ensure a row exists, then apply the day-complete / current_day update.
+            await conn.execute(
+                "INSERT INTO reading_plan_progress (user_id, plan_id) "
+                "VALUES ($1::uuid, $2::uuid) ON CONFLICT DO NOTHING",
+                user_uuid, plan_id,
+            )
+            row = await conn.fetchrow(
+                "UPDATE reading_plan_progress SET "
+                "  completed_days = CASE WHEN $3::int IS NULL THEN completed_days "
+                "    WHEN $3 = ANY(completed_days) THEN completed_days "
+                "    ELSE array_append(completed_days, $3) END, "
+                "  current_day = COALESCE($4, current_day), "
+                "  updated_at = now() "
+                " WHERE user_id = $1::uuid AND plan_id = $2::uuid "
+                "RETURNING current_day, completed_days",
+                user_uuid, plan_id, body.completed_day, body.current_day,
+            )
+    return PlanProgress(
+        plan_id=plan_id,
+        plan_slug=slug,
+        current_day=row["current_day"],
+        completed_days=list(row["completed_days"]),
     )
 
 

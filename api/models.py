@@ -71,6 +71,12 @@ class BookSummary(BaseModel):
     canonical_order: int
     witness_category: WitnessCategory
     tier_required: ContentTier
+    # show-all-gate-access (compliance/tier build): when GET /v1/books is called
+    # with include_locked=true, the response includes EVERY built book and this
+    # flag says whether the caller's tier can actually open it (True = visible
+    # but locked → the client renders a lock affordance, no chapter access).
+    # None in the default tier-filtered mode (only openable books are returned).
+    locked: Optional[bool] = None
     abstract: Optional[str] = None
     edition_slug: str = Field(
         ..., description="Slug of the source Restored Names edition the book lives in."
@@ -774,6 +780,157 @@ class StrongOccurrencesResponse(BaseModel):
     strong_number: str
     total_count: int
     occurrences: List[StrongOccurrence]
+
+
+# ----- Consonantal-skeleton lens ("Without the vowels") --------------------
+#
+# GET /v1/skeleton/{skeleton}        — every Strong's entry sharing the bare
+#                                       consonant skeleton, with gloss + usage.
+# GET /v1/skeleton/{skeleton}/near   — single-consonant-swap near matches
+#                                       (the netzer↔nazir deep dive).
+# Hebrew/Aramaic only. Partner-gated at the UI layer; the data is public.
+
+
+class SkeletonEntry(BaseModel):
+    """One Strong's entry sharing a consonantal skeleton, with usage count."""
+
+    model_config = ConfigDict(from_attributes=True)
+
+    strong_number: str
+    lemma: str = Field(..., description="Pointed original-script lemma (נֵצֶר).")
+    transliteration: str
+    short_definition: Optional[str] = None
+    definition: str
+    usage_count: int = Field(
+        0, description="How many Strong's-tagged tokens carry this number."
+    )
+
+
+class SkeletonGroupResponse(BaseModel):
+    """GET /v1/skeleton/{skeleton} — the exact same-skeleton group."""
+
+    skeleton: str
+    entries: List[SkeletonEntry]
+
+
+class SkeletonNearGroup(BaseModel):
+    """One near-by skeleton (one consonant away) and the entries under it."""
+
+    near_skeleton: str
+    edit_kind: str  # 'substitution' | 'insertion' | 'deletion'
+    entries: List[SkeletonEntry]
+
+
+class SkeletonNearResponse(BaseModel):
+    """GET /v1/skeleton/{skeleton}/near — single-consonant-swap near matches."""
+
+    skeleton: str
+    near: List[SkeletonNearGroup]
+
+
+# ----- Voice Journal -------------------------------------------------------
+#
+# Private per-user journal (mirror of notes). Crisis-safety is ON-DEVICE only —
+# no crisis/mood/risk field is ever sent to or stored on the server.
+
+
+class JournalEntry(BaseModel):
+    """One private journal entry."""
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    title: Optional[str] = None
+    body: str
+    section_label: Optional[str] = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class JournalEntriesResponse(BaseModel):
+    entries: List[JournalEntry]
+
+
+class CreateJournalRequest(BaseModel):
+    body: str = Field(..., min_length=1, description="Entry text (typed or dictated on-device).")
+    title: Optional[str] = None
+    section_label: Optional[str] = None
+
+
+class UpdateJournalRequest(BaseModel):
+    body: Optional[str] = Field(default=None, min_length=1)
+    title: Optional[str] = None
+    section_label: Optional[str] = None
+
+
+class DevotionalReflection(BaseModel):
+    """A curated topic → Scripture + reflection surfaced after an entry."""
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    topic: str
+    title: str
+    passage_ref: Optional[str] = None
+    passage_text: Optional[str] = None
+    reflection: str
+
+
+class DevotionalResponse(BaseModel):
+    reflections: List[DevotionalReflection]
+
+
+# ----- Reading Plans -------------------------------------------------------
+
+
+class PlanPassage(BaseModel):
+    label: str
+    book_slug: Optional[str] = None
+    chapter: Optional[int] = None
+
+
+class PlanDay(BaseModel):
+    day_number: int
+    passages: List[PlanPassage]
+
+
+class ReadingPlanSummary(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    slug: str
+    title: str
+    description: Optional[str] = None
+    day_count: int
+
+
+class ReadingPlanDetail(ReadingPlanSummary):
+    days: List[PlanDay]
+
+
+class ReadingPlansResponse(BaseModel):
+    plans: List[ReadingPlanSummary]
+
+
+class PlanProgress(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    plan_id: str
+    plan_slug: str
+    current_day: int
+    completed_days: List[int]
+
+
+class PlanProgressResponse(BaseModel):
+    progress: List[PlanProgress]
+
+
+class UpdatePlanProgressRequest(BaseModel):
+    # Mark a day complete and/or move current_day. Both optional.
+    completed_day: Optional[int] = None
+    current_day: Optional[int] = None
+    # If true, (re)start the plan (resets to day 1, clears completions).
+    start: bool = False
 
 
 # ----- Bookmarks (Session 124 — Wheel 5) ---------------------------------

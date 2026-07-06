@@ -161,6 +161,49 @@ services:
       - key: PYTHONUNBUFFERED
         value: "1"
 
+  # ---- compliance/trial-reminder build: daily trial-ending email cron ------
+  #
+  # Sends the day-6/7 "your week of full access is almost up" email to no-card
+  # trial users who haven't converted. Reuses the SAME Docker image as the web
+  # service (same Dockerfile, so jobs/, lib/, auth.py, db.py are all present),
+  # but overrides the command to run the job module instead of uvicorn.
+  #
+  # Module path is `jobs.trial_reminders` (NOT `api.jobs...`): the Dockerfile
+  # does `COPY api/ /app/` with WORKDIR /app, so backend modules are top-level
+  # in the image — matching the web service's `uvicorn main:app`.
+  #
+  # schedule is UTC. "0 16 * * *" = 16:00 UTC = 09:00 America/Los_Angeles during
+  # PDT (08:00 during PST). Adjust if a strict 9am-Pacific year-round is wanted.
+  #
+  # The job is idempotent (users.trial_reminder_sent_at guard), so an occasional
+  # double-run is harmless.
+  - type: cron
+    name: remnant-app-trial-reminders
+    runtime: docker
+    plan: starter
+    region: oregon
+    dockerfilePath: ./api/Dockerfile
+    schedule: "0 16 * * *"
+    dockerCommand: python -m jobs.trial_reminders
+    autoDeploy: true
+    envVars:
+      # Same managed Postgres as the web service — the exact trial clock
+      # (users.created_at) and subscription rows live here.
+      - key: DATABASE_URL
+        fromDatabase:
+          name: remnant-app-db
+          property: connectionString
+      # Resend API key (re_...). Secret — set in the Render dashboard, never in
+      # git. Create at Resend → API Keys.
+      - key: RESEND_API_KEY
+        sync: false
+      # From header. Domain (remnantofpromise.org) must be verified in Resend
+      # (SPF + DKIM DNS) or sends are rejected. Not a secret.
+      - key: RESEND_FROM
+        value: "Remnant of Promise <hello@remnantofpromise.org>"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
   # ---- Session 40: PWA Static Site ----------------------------------------
   #
   # The Vite-built React PWA at `~/Desktop/App/app/` ships here. Render's

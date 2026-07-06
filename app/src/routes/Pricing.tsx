@@ -296,29 +296,18 @@ export default function Pricing() {
         </nav>
       </header>
 
-      {/* S206 — native-shell note: tiers are managed on the web. Native shells
-          cannot run Stripe checkout (App Store / Play Store policy), so instead
-          of a dead end we give partners a clear, tappable path to the web
-          checkout, opened in the system browser (Safari/Chrome). */}
+      {/* Native shells must not surface any tappable path to checkout
+          (App Store / Play Store consumption-only posture). Show plain,
+          NON-clickable informational text only — no button, no window.open,
+          no link out to a pricing/checkout page. */}
       {native && (
         <div className="mb-8 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-base text-[var(--reader-text)]">
           <p>
-            Subscriptions are managed on the web. Tap below to open
-            remnantofpromise.org in your browser, sign in, and choose your tier —
-            then return here and everything it carries unlocks automatically.
+            Subscriptions are managed on the web. Visit
+            bible.remnantofpromise.org in your browser, sign in, and choose your
+            tier — then return here and everything it carries unlocks
+            automatically.
           </p>
-          <button
-            type="button"
-            onClick={() => {
-              // "_system" tells the Capacitor shell to open the OS browser
-              // (not the in-app webview), which keeps this a compliant
-              // account-management link rather than an in-app purchase flow.
-              window.open("https://bible.remnantofpromise.org/pricing", "_system");
-            }}
-            className="mt-3 inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 font-sans text-sm font-semibold text-[var(--reader-bg)]"
-          >
-            Manage subscription on the web →
-          </button>
         </div>
       )}
 

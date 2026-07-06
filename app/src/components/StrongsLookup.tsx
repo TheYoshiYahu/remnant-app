@@ -37,6 +37,7 @@ import {
 import { executeStudyShare } from "../lib/study-share-render";
 import { useSacredNameMask } from "../lib/useSacredNameMask";
 import LexiconSheet from "./LexiconSheet";
+import VowelsLens from "./VowelsLens";
 
 const OCCURRENCES_PAGE_SIZE = 25;
 
@@ -65,6 +66,12 @@ interface StrongsLookupProps {
    * opened from a deep link or from the menu itself — so the tab hides.
    */
   onOpenVerseMenu?: () => void;
+  /**
+   * Whether the caller is a partner (Companion+). Drives the "Without the
+   * vowels" lens: partners run it live on the tapped word; free users see the
+   * prebuilt sample card. Defaults to false (free).
+   */
+  isPartner?: boolean;
   onClose: () => void;
 }
 
@@ -73,6 +80,7 @@ export default function StrongsLookup({
   surface,
   onNavigate,
   onOpenVerseMenu,
+  isPartner = false,
   onClose,
 }: StrongsLookupProps) {
   const [entry, setEntry] = useState<StrongEntry | null>(null);
@@ -329,6 +337,12 @@ export default function StrongsLookup({
                 </span>
               )}
             </div>
+
+            {/* "Without the vowels" consonantal-skeleton lens — Hebrew/Aramaic
+                only. Partners run it live; free users get the prebuilt sample. */}
+            {(entry.language === "hebrew" || entry.language === "aramaic") && (
+              <VowelsLens lemma={entry.lemma} isPartner={isPartner} />
+            )}
 
             {entry.short_definition && (
               <p className="text-[var(--reader-text)]">

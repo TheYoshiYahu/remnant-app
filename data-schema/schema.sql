@@ -236,10 +236,24 @@ CREATE TABLE strong_entries (
     pronunciation       TEXT,
     short_definition    TEXT,                        -- single-phrase gloss for tooltip use
     definition          TEXT NOT NULL,               -- full Strong's entry text
-    derivation          TEXT
+    derivation          TEXT,
+    consonantal_skeleton TEXT                        -- "Without the vowels" lens: lemma with Hebrew points/accents (U+0591–U+05C7) stripped. NULL for Greek. Populated by _build_consonantal_skeleton.py. See migrations/consonantal_skeleton.sql.
 );
 
 CREATE INDEX idx_strong_lemma ON strong_entries(lemma);
+CREATE INDEX idx_strong_skeleton ON strong_entries(consonantal_skeleton);
+
+-- Single-consonant-swap near-match map between distinct Hebrew consonantal
+-- skeletons (edit distance 1). Precomputed by _build_consonantal_skeleton.py;
+-- powers the netzer↔nazir-style near-match deep dive (GET /v1/skeleton/{s}/near).
+CREATE TABLE strong_skeleton_near (
+    skeleton        TEXT NOT NULL,
+    near_skeleton   TEXT NOT NULL,
+    edit_kind       TEXT NOT NULL CHECK (edit_kind IN ('substitution','insertion','deletion')),
+    PRIMARY KEY (skeleton, near_skeleton)
+);
+
+CREATE INDEX idx_skeleton_near_skeleton ON strong_skeleton_near(skeleton);
 
 
 -- A token (word) inside a verse, with its Strong's tag attached. Built
@@ -462,6 +476,7 @@ CREATE TABLE users (
     display_name        TEXT,
     created_at          TIMESTAMPTZ NOT NULL DEFAULT now(),
     last_seen_at        TIMESTAMPTZ,
+    trial_reminder_sent_at TIMESTAMPTZ,              -- compliance/trial-reminder build: timestamp the day-6/7 trial-ending email was sent to this user. NULL = not yet sent; the daily job (jobs/trial_reminders.py) filters on IS NULL for idempotency and stamps now() after a successful send. See migrations/trial_reminders_add_sent_at.sql.
     display_prefs       JSONB                        -- Session 173: cross-device sync for the partner's reader-display preferences (sacred_name_mask, hide_parentheticals, theme, font_size, interlinear_default, tts_voice). Nullable — NULL means "partner has never synced; client-side localStorage is authoritative." Once any preference is PUT, the column holds a JSON object with only the keys the partner has explicitly set. Server is canonical on sign-in (reconciliation: server wins over localStorage when the two diverge). Adding more preferences over time is a JSON-shape change, not a migration.
 );
 
@@ -619,6 +634,73 @@ CREATE INDEX idx_notes_user_chapter  ON study_notes(user_id, chapter_id);
 -- (GET /v1/notes returns rows in created_at ASC; partner's notepad
 -- renders as a chronological study journal per §22).
 CREATE INDEX idx_notes_user_created  ON study_notes(user_id, created_at);
+
+
+-- Voice Journal — private per-user journal (mirror of study_notes). Crisis
+-- safety is ON-DEVICE ONLY: there is intentionally NO crisis/mood/risk column
+-- anywhere. See migrations/voice_journal.sql.
+CREATE TABLE journal_entries (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id         UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    title           TEXT,
+    body            TEXT NOT NULL,
+    section_label   TEXT,                    -- the user's own free label; not inference
+    is_archived     BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_journal_entries_user ON journal_entries(user_id, created_at DESC);
+
+-- Curated topic/emotion → Scripture + reflection library surfaced after an
+-- entry is saved. Seed rows (in the migration) are placeholders for Yoshi.
+CREATE TABLE devotional_library (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    topic           TEXT NOT NULL,
+    title           TEXT NOT NULL,
+    passage_ref     TEXT,
+    passage_text    TEXT,
+    reflection      TEXT NOT NULL,
+    is_active       BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_devotional_topic ON devotional_library(topic) WHERE is_active;
+
+
+-- Reading Plans — curated multi-day plans + account-synced per-user progress.
+-- Distinct from the client-only year-plan pacing layer (lib/reading-plan/*).
+-- See migrations/reading_plans.sql (which also seeds starter plans).
+CREATE TABLE reading_plans (
+    id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    slug          TEXT UNIQUE NOT NULL,
+    title         TEXT NOT NULL,
+    description   TEXT,
+    day_count     INT NOT NULL DEFAULT 0,
+    is_active     BOOLEAN NOT NULL DEFAULT TRUE,
+    sort_order    INT NOT NULL DEFAULT 0,
+    created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE reading_plan_days (
+    id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    plan_id       UUID NOT NULL REFERENCES reading_plans(id) ON DELETE CASCADE,
+    day_number    INT NOT NULL,
+    passages      JSONB NOT NULL DEFAULT '[]'::jsonb,   -- [{label, book_slug, chapter}]
+    UNIQUE (plan_id, day_number)
+);
+
+CREATE INDEX idx_plan_days_plan ON reading_plan_days(plan_id, day_number);
+
+CREATE TABLE reading_plan_progress (
+    user_id        UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    plan_id        UUID NOT NULL REFERENCES reading_plans(id) ON DELETE CASCADE,
+    current_day    INT NOT NULL DEFAULT 1,
+    completed_days INT[] NOT NULL DEFAULT '{}',
+    started_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (user_id, plan_id)
+);
 
 
 -- A user-authored bookmark on a single verse. Distinct surface from

@@ -113,6 +113,76 @@ async function openSystemBrowser(url: string): Promise<void> {
 }
 
 /**
+ * compliance/account-gate build — carry the marketing email opt-in through to
+ * the WordPress registration form as a query param. Account creation is
+ * WP-hosted (/goshen/?action=register), so the in-app checkbox can't write
+ * user-meta directly; it appends rop_email_updates_optin=1|0 to the register
+ * URL, and the WP registration handler reads it and stores the user-meta. See
+ * the deploy checklist for the (required) WP-side change.
+ */
+function withEmailOptin(url: string, optin: boolean): string {
+  try {
+    const u = new URL(url);
+    u.searchParams.set("rop_email_updates_optin", optin ? "1" : "0");
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
+/**
+ * compliance/account-gate build — the warm, benefit-first disclaimer shown on
+ * the gate screen. Explains WHY a free account is asked for: it saves the
+ * partner's work and carries it across devices, platforms, and the web. Also
+ * serves as the App Store justification for requiring an account. Voice:
+ * ministry-appropriate, benefit-first, concise; conventional English per the
+ * S118 marketing-surface register (no restored sacred names on this surface).
+ */
+function AccountBenefits() {
+  return (
+    <div className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3">
+      <p className="text-base text-[var(--reader-text)]">
+        A free account saves your work — your notes, highlights, bookmarks, and
+        the place you left off — and carries it with you across your phone,
+        tablet, and the web. Sign in on any device and everything is right where
+        you left it. Your account is your place; nothing you mark gets lost.
+      </p>
+    </div>
+  );
+}
+
+/**
+ * compliance/account-gate build — the non-essential email consent checkbox,
+ * shown at the create-account step. Unchecked by default (opt-in). Account and
+ * transactional email (trial reminders, security, receipts) is ALWAYS sent and
+ * is NOT governed by this checkbox — only marketing/newsletter sends are.
+ */
+function EmailOptInCheckbox({
+  checked,
+  onChange,
+}: {
+  checked: boolean;
+  onChange: (v: boolean) => void;
+}) {
+  return (
+    <label className="flex items-start gap-2 text-sm text-[var(--reader-muted)]">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="mt-1"
+      />
+      <span>
+        Send me occasional updates and encouragement from Remnant of Promise.
+        <span className="block text-xs">
+          Account and security emails are always sent regardless.
+        </span>
+      </span>
+    </label>
+  );
+}
+
+/**
  * S177 — Native-shell SignIn UI. In-app email/username + password
  * form that exchanges credentials for a JWT via the jwt-auth plugin's
  * /wp-json/jwt-auth/v1/token endpoint. Replaces the S176 Custom Tab
@@ -139,6 +209,9 @@ function NativeSignInBranch() {
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Non-essential email consent (opt-in, unchecked by default). Consumed only
+  // by the Create-account path below, carried to WP as a query param.
+  const [emailOptin, setEmailOptin] = useState(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -174,6 +247,8 @@ function NativeSignInBranch() {
           bookmarks, and partner-tier content.
         </p>
       </header>
+
+      <AccountBenefits />
 
       <form onSubmit={onSubmit} className="flex flex-col gap-4">
         <div>
@@ -247,13 +322,18 @@ function NativeSignInBranch() {
         >
           Forgot password?
         </button>
-        <button
-          type="button"
-          onClick={() => void openSystemBrowser(WP_REGISTER_URL)}
-          className="text-left text-[var(--reader-muted)] hover:underline"
-        >
-          Don't have an account? Create one →
-        </button>
+        <div className="rounded border border-[var(--reader-rule)] p-3">
+          <EmailOptInCheckbox checked={emailOptin} onChange={setEmailOptin} />
+          <button
+            type="button"
+            onClick={() =>
+              void openSystemBrowser(withEmailOptin(WP_REGISTER_URL, emailOptin))
+            }
+            className="mt-3 text-left font-medium text-[var(--reader-text)] hover:underline"
+          >
+            Don't have an account? Create one →
+          </button>
+        </div>
         <a
           href="/read"
           className="text-left text-[var(--reader-muted)] hover:underline"
@@ -269,7 +349,9 @@ export default function SignIn() {
   const native = isNativePlatform();
   const returnTo = parseReturnTo();
   const loginHref = buildWpUrl(WP_LOGIN_URL, returnTo);
-  const registerHref = buildWpUrl(WP_REGISTER_URL, returnTo);
+  const [emailOptin, setEmailOptin] = useState(false);
+  // Carry the opt-in to WordPress as a query param on the register URL.
+  const registerHref = withEmailOptin(buildWpUrl(WP_REGISTER_URL, returnTo), emailOptin);
 
   if (native) {
     return <NativeSignInBranch />;
@@ -293,6 +375,8 @@ export default function SignIn() {
           </a>
         </nav>
       </header>
+
+      <AccountBenefits />
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {/* Log In card */}
@@ -319,6 +403,9 @@ export default function SignIn() {
           <p className="mt-2 flex-1 text-base text-[var(--reader-muted)]">
             New here? Create a free account, then come back to pick a tier.
           </p>
+          <div className="mt-3">
+            <EmailOptInCheckbox checked={emailOptin} onChange={setEmailOptin} />
+          </div>
           <a
             href={registerHref}
             className="mt-4 inline-flex items-center justify-center rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"

@@ -103,6 +103,10 @@ export interface BookSummary {
   canonical_order: number;
   witness_category: WitnessCategory;
   tier_required: ContentTier;
+  // show-all-gate-access: present only when listBooks({ includeLocked: true }).
+  // true = the book is in the library but the caller's tier can't open it
+  // (render visible-but-locked). undefined in the default tier-filtered mode.
+  locked?: boolean;
   abstract: string | null;
   // S232 — the owning edition's slug. The API has always returned this
   // (api/models.py BookSummary.edition_slug); the field was simply absent
@@ -715,10 +719,13 @@ export function cancelSubscription(): Promise<CancelResponse> {
 
 export function listBooks(opts?: {
   witnessCategory?: WitnessCategory;
+  /** show-all-gate-access: return EVERY built book with a `locked` flag. */
+  includeLocked?: boolean;
 }): Promise<BookSummary[]> {
-  const qs = opts?.witnessCategory
-    ? `?witness_category=${encodeURIComponent(opts.witnessCategory)}`
-    : "";
+  const params = new URLSearchParams();
+  if (opts?.witnessCategory) params.set("witness_category", opts.witnessCategory);
+  if (opts?.includeLocked) params.set("include_locked", "true");
+  const qs = params.toString() ? `?${params.toString()}` : "";
   return get<BookSummary[]>(`/books${qs}`);
 }
 
@@ -1079,6 +1086,148 @@ export function getStrongOccurrences(
     `/strongs/${encodeURIComponent(strongNumber)}/occurrences${
       qs ? `?${qs}` : ""
     }`
+  );
+}
+
+// ----- Consonantal-skeleton lens ("Without the vowels") -------------------
+//
+// GET /v1/skeleton/{skeleton}      — entries sharing the bare consonant skeleton
+// GET /v1/skeleton/{skeleton}/near — single-consonant-swap near matches
+// The path param accepts a pointed lemma OR a bare skeleton (the server strips
+// points), so the tapped word's lemma can be passed straight in. Hebrew/Aramaic.
+
+// Strip Hebrew points + accents (U+0591–U+05C7) → bare consonant skeleton.
+// Mirrors the server/build-script logic so the client can show the skeleton
+// immediately and key the request.
+export function toConsonantalSkeleton(lemma: string): string {
+  return (lemma || "").replace(/[֑-ׇ]/g, "").trim();
+}
+
+export interface SkeletonEntry {
+  strong_number: string;
+  lemma: string;
+  transliteration: string;
+  short_definition: string | null;
+  definition: string;
+  usage_count: number;
+}
+
+export interface SkeletonGroupResponse {
+  skeleton: string;
+  entries: SkeletonEntry[];
+}
+
+export interface SkeletonNearGroup {
+  near_skeleton: string;
+  edit_kind: string;
+  entries: SkeletonEntry[];
+}
+
+export interface SkeletonNearResponse {
+  skeleton: string;
+  near: SkeletonNearGroup[];
+}
+
+export function getSkeletonGroup(skeleton: string): Promise<SkeletonGroupResponse> {
+  return get<SkeletonGroupResponse>(`/skeleton/${encodeURIComponent(skeleton)}`);
+}
+
+export function getSkeletonNear(skeleton: string): Promise<SkeletonNearResponse> {
+  return get<SkeletonNearResponse>(
+    `/skeleton/${encodeURIComponent(skeleton)}/near`
+  );
+}
+
+// ----- Voice Journal -------------------------------------------------------
+//
+// Private per-user journal. Crisis-safety is on-device only (see
+// lib/crisis-safety.ts) — nothing about emotional state is ever sent here.
+
+export interface JournalEntry {
+  id: string;
+  title: string | null;
+  body: string;
+  section_label: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DevotionalReflection {
+  id: string;
+  topic: string;
+  title: string;
+  passage_ref: string | null;
+  passage_text: string | null;
+  reflection: string;
+}
+
+export function listJournal(): Promise<{ entries: JournalEntry[] }> {
+  return get<{ entries: JournalEntry[] }>("/journal");
+}
+
+export function createJournal(input: {
+  body: string;
+  title?: string | null;
+  section_label?: string | null;
+}): Promise<JournalEntry> {
+  return post<typeof input, JournalEntry>("/journal", input);
+}
+
+export function deleteJournal(entryId: string): Promise<void> {
+  return del(`/journal/${encodeURIComponent(entryId)}`);
+}
+
+export function getDevotional(
+  topic?: string
+): Promise<{ reflections: DevotionalReflection[] }> {
+  const qs = topic ? `?topic=${encodeURIComponent(topic)}` : "";
+  return get<{ reflections: DevotionalReflection[] }>(`/devotional${qs}`);
+}
+
+// ----- Reading Plans -------------------------------------------------------
+
+export interface PlanPassage {
+  label: string;
+  book_slug: string | null;
+  chapter: number | null;
+}
+export interface PlanDay {
+  day_number: number;
+  passages: PlanPassage[];
+}
+export interface ReadingPlanSummary {
+  id: string;
+  slug: string;
+  title: string;
+  description: string | null;
+  day_count: number;
+}
+export interface ReadingPlanDetail extends ReadingPlanSummary {
+  days: PlanDay[];
+}
+export interface PlanProgress {
+  plan_id: string;
+  plan_slug: string;
+  current_day: number;
+  completed_days: number[];
+}
+
+export function listPlans(): Promise<{ plans: ReadingPlanSummary[] }> {
+  return get<{ plans: ReadingPlanSummary[] }>("/plans");
+}
+export function getPlan(slug: string): Promise<ReadingPlanDetail> {
+  return get<ReadingPlanDetail>(`/plans/${encodeURIComponent(slug)}`);
+}
+export function getPlanProgress(): Promise<{ progress: PlanProgress[] }> {
+  return get<{ progress: PlanProgress[] }>("/plans/progress");
+}
+export function updatePlanProgress(
+  slug: string,
+  body: { completed_day?: number; current_day?: number; start?: boolean }
+): Promise<PlanProgress> {
+  return put<typeof body, PlanProgress>(
+    `/plans/${encodeURIComponent(slug)}/progress`,
+    body
   );
 }
 
