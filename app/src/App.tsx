@@ -35,6 +35,7 @@ import Attributions from "./routes/Attributions";
 import AuthCallback from "./routes/AuthCallback";
 import Calendar from "./routes/Calendar";
 import Today from "./routes/Today";
+import Teachings from "./routes/Teachings";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import SigninReminderModal from "./components/SigninReminderModal";
 import LockedPartnerPrompt from "./components/LockedPartnerPrompt";
@@ -583,6 +584,12 @@ export default function App() {
   // The Reader doesn't carry book/chapter in the URL — saved reading
   // position rehydrates from the API/localStorage on mount, so the
   // path swap doesn't break bookmarked positions.
+  // S353 — Teachings tab. Free-for-all list + gated detail (title +
+  // synopsis for everyone; full body revealed when the reader owns the
+  // teaching's tier_required). Standalone route alongside /calendar.
+  if (pathname === "/teachings" || pathname.startsWith("/teachings")) {
+    return <>{welcomeModal}<Teachings /></>;
+  }
   if (pathname === "/read" || pathname.startsWith("/read")) {
     return <>{welcomeModal}{offlinePrompt}<Reader /></>;
   }

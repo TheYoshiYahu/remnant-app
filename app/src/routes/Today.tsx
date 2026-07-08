@@ -622,6 +622,19 @@ function DoorRow() {
           </span>
         </a>
       </div>
+
+      {/* S353 — Teachings door: the free-for-all teachings hub. */}
+      <div className="today-doors-row">
+        <a href="/teachings" className="today-door today-door-study">
+          <span className="today-door-glyph" aria-hidden="true">
+            ✦
+          </span>
+          <span className="today-door-text">
+            <span className="today-door-title">Teachings</span>
+            <span className="today-door-sub">the Word in arranged order</span>
+          </span>
+        </a>
+      </div>
     </section>
   );
 }
