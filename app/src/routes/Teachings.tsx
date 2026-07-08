@@ -10,9 +10,20 @@
  * sees the reusable LockedPartnerPrompt — which, per the consumption-only
  * compliance posture, carries NO checkout or pricing link (informational only).
  *
+ * S354. A teaching may end with an emphatic `closing` flourish (metallic accent)
+ * and one or more `promos` book covers that link out to the PRINT edition. A
+ * printed book is physical goods, which Apple/Google permit outbound purchase
+ * links for at no commission — so the covers are REAL clickable external links
+ * (openExternal), distinct from the non-clickable digital-subscription lines.
+ *
+ * S355. The LIST closes with "The Library": a shelf of the print series
+ * (LIBRARY_BOOKS). Physical books, so the outbound Amazon links are compliant
+ * and commission-free; free-for-all (visible to everyone, no gating), with no
+ * pricing/buy/cart steering — just tappable covers.
+ *
  * The first teaching ("The Seed of Promise and a Remnant") is tier_required =
- * "free", so every reader gets its full body. The gate is exercised all the
- * same, ready for a future partner-gated teaching.
+ * "free", so every reader gets its full body, closing, and covers. The gate is
+ * exercised all the same, ready for a future partner-gated teaching.
  *
  * Navigation matches the rest of the app: plain <a href> doorways (no client
  * router), so each move is a fresh App render that re-reads window.location.
@@ -24,9 +35,14 @@ import {
   listTeachings,
   prettyTier,
   teachingBySlug,
+  LIBRARY_BOOKS,
   type Teaching,
+  type TeachingClosing,
+  type TeachingPromo,
 } from "../lib/teachings/content";
 import { renderTeachingBody } from "../lib/teachings/render";
+import { renderItalicSpans } from "../lib/markdown";
+import { openExternal } from "../lib/external-link";
 import LockedPartnerPrompt from "../components/LockedPartnerPrompt";
 import {
   getSubscriptionMe,
@@ -107,6 +123,8 @@ function TeachingList() {
           </a>
         ))}
       </div>
+
+      <LibraryShelf />
     </Shell>
   );
 }
@@ -118,6 +136,53 @@ function firstLine(md: string): string {
     .map((l) => l.trim())
     .find((l) => l && !l.startsWith("#") && !l.startsWith("*"));
   return line ?? "";
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// The Library — a shelf of the print series (physical books). Free-for-all:
+// visible to everyone, no gating, no pricing/buy/cart steering. Each cover is
+// a real clickable outbound link to the book's Amazon page (openExternal).
+// ───────────────────────────────────────────────────────────────────────
+
+function LibraryShelf() {
+  return (
+    <section className="mt-14 border-t border-[var(--reader-rule)] pt-8">
+      <h2 className="font-serif text-xl font-semibold text-[var(--reader-text)]">
+        The Library
+      </h2>
+      <p className="mt-2 text-sm leading-relaxed text-[var(--reader-muted)]">
+        Further reading — the series in print, carrying the same message
+        deeper. Tap a cover to open it.
+      </p>
+      <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3">
+        {LIBRARY_BOOKS.map((book) => (
+          <li key={book.href} className="flex flex-col">
+            <a
+              href={book.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                void openExternal(book.href);
+              }}
+              className="group flex flex-col rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--reader-accent)]"
+              aria-label={`${book.title} — opens on Amazon`}
+            >
+              <img
+                src={book.image}
+                alt={`${book.title} — book cover`}
+                loading="lazy"
+                className="aspect-[2/3] w-full rounded-md border border-[var(--reader-rule)] object-cover shadow-md transition-transform duration-200 group-hover:scale-[1.03]"
+              />
+              <span className="mt-2 block text-center text-xs leading-snug text-[var(--reader-muted)] transition-colors group-hover:text-[var(--reader-accent)]">
+                {book.title}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }
 
 // ───────────────────────────────────────────────────────────────────────
@@ -171,9 +236,15 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
       {/* Dive-deeper control → reveals the full body when entitled. */}
       <section className="mt-8">
         {revealed && entitled ? (
-          <article className="border-t border-[var(--reader-rule)] pt-6">
-            {renderTeachingBody(teaching.body)}
-          </article>
+          <>
+            <article className="border-t border-[var(--reader-rule)] pt-6">
+              {renderTeachingBody(teaching.body)}
+            </article>
+            {teaching.closing && <ClosingFlourish closing={teaching.closing} />}
+            {teaching.promos?.map((promo, i) => (
+              <CoverPromo key={i} promo={promo} />
+            ))}
+          </>
         ) : entitled ? (
           <button
             type="button"
@@ -198,6 +269,76 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
         )}
       </section>
     </Shell>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Closing flourish — a distinct metallic block after the body
+// ───────────────────────────────────────────────────────────────────────
+
+function ClosingFlourish({ closing }: { closing: TeachingClosing }) {
+  return (
+    <section
+      className="mt-10 rounded-lg border px-5 py-6 text-center"
+      style={{
+        borderColor: "#FCECAF",
+        backgroundColor:
+          "color-mix(in srgb, #B4A078 12%, var(--reader-surface))",
+      }}
+      aria-label="Closing"
+    >
+      <p className="font-serif text-[15px] italic leading-relaxed text-[var(--reader-text)]">
+        {renderItalicSpans(closing.lead)}
+      </p>
+      <p className="mt-4">
+        <span className="book-pill book-pill-gold text-lg font-semibold">
+          {renderItalicSpans(closing.finish)}
+        </span>
+      </p>
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Cover promo — clickable book cover → external PRINT product page
+// ───────────────────────────────────────────────────────────────────────
+
+function CoverPromo({ promo }: { promo: TeachingPromo }) {
+  return (
+    <div className="mt-8 flex flex-col items-center">
+      <a
+        href={promo.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => {
+          e.preventDefault();
+          void openExternal(promo.href);
+        }}
+        className="group inline-block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--reader-accent)]"
+        aria-label={`${promo.alt} — opens the print edition on Amazon`}
+      >
+        <img
+          src={promo.image}
+          alt={promo.alt}
+          loading="lazy"
+          className="mx-auto w-48 max-w-[70%] rounded-md border border-[var(--reader-rule)] shadow-lg transition-transform duration-200 group-hover:scale-[1.02] sm:w-56"
+        />
+      </a>
+      {promo.caption && (
+        <a
+          href={promo.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            e.preventDefault();
+            void openExternal(promo.href);
+          }}
+          className="mt-3 text-sm font-medium text-[var(--reader-accent)] hover:underline"
+        >
+          {promo.caption} →
+        </a>
+      )}
+    </div>
   );
 }
 

@@ -3,12 +3,19 @@
  *
  * Extends the reader's shared inline markdown (renderItalicSpans handles
  * *italic* / **bold**) with the three block forms the arranged-scripture
- * teachings use that the base renderMarkdownBody does not: single-`#` section
- * headings, `---` horizontal rules, and `> ` blockquoted scripture. Sacred-name
- * parentheticals — e.g. "Yahuah (LORD)" — are plain inline text and render as
- * authored. Styling uses the reader's own CSS variables (var(--reader-*)) so
- * teachings sit in the same visual register as every other reading surface;
- * no new global CSS is introduced.
+ * teachings use that the base renderMarkdownBody does not: `#`/`##`/`###`
+ * section headings, `---` horizontal rules, and `> ` blockquoted scripture.
+ * Sacred-name parentheticals — e.g. "Yahuah (LORD)" — are plain inline text and
+ * render as authored.
+ *
+ * METALLIC SECTION HEADERS (S354): headings reuse the app's existing metallic
+ * register classes (index.css) — no new global CSS. Major `#` sections wear the
+ * gold book-heading pill (`book-pill book-pill-gold`); `##` sub-sections wear
+ * the deep-blue techelet register (`book-pill` box + `chrome-metal-techelet`
+ * gradient); `###` uses the spectral-blue register. The pill classes are
+ * inline-block and wrap, so long section titles ("VI. The seed regathered —
+ * the second exodus") wrap cleanly on mobile. All other styling uses the
+ * reader's var(--reader-*) tokens.
  */
 
 import type { ReactNode } from "react";
@@ -27,7 +34,7 @@ function renderParagraph(paragraph: string): ReactNode {
 /**
  * Render a teaching markdown body (or synopsis) as block elements, splitting on
  * blank lines. Recognizes `---` rules, `> ` blockquoted scripture, `#`/`##`/
- * `###` headings, and paragraphs.
+ * `###` headings (metallic pills), and paragraphs.
  */
 export function renderTeachingBody(body: string): ReactNode {
   if (!body) return null;
@@ -61,37 +68,34 @@ export function renderTeachingBody(body: string): ReactNode {
           );
         }
 
-        // Section headings.
+        // Section headings — metallic pills reusing the app's registers.
         const h = /^(#{1,3})\s+(.*)$/.exec(trimmed);
         if (h) {
           const level = h[1].length;
           const content = renderItalicSpans(h[2]);
           if (level === 1) {
             return (
-              <h2
-                key={i}
-                className="mt-9 mb-3 font-serif text-xl font-semibold leading-snug text-[var(--reader-text)]"
-              >
-                {content}
+              <h2 key={i} className="mt-9 mb-3 leading-snug">
+                <span className="book-pill book-pill-gold text-xl">
+                  {content}
+                </span>
               </h2>
             );
           }
           if (level === 2) {
             return (
-              <h3
-                key={i}
-                className="mt-7 mb-2 font-serif text-lg font-semibold text-[var(--reader-text)]"
-              >
-                {content}
+              <h3 key={i} className="mt-7 mb-2 leading-snug">
+                <span className="book-pill chrome-metal-techelet text-lg">
+                  {content}
+                </span>
               </h3>
             );
           }
           return (
-            <h4
-              key={i}
-              className="mt-6 mb-1.5 font-serif text-base font-semibold text-[var(--reader-text)]"
-            >
-              {content}
+            <h4 key={i} className="mt-6 mb-1.5 leading-snug">
+              <span className="book-pill chrome-metal-spectral text-base">
+                {content}
+              </span>
             </h4>
           );
         }
