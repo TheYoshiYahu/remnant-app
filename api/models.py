@@ -155,14 +155,43 @@ class VerseSearchHit(BaseModel):
             "'free', 'study_notes', 'extras', 'complete_study', 'everything'."
         ),
     )
+    match_tier: int = Field(
+        default=0,
+        description=(
+            "S352 relevance tier for this hit: 1 exact phrase, 2 exact "
+            "token(s), 3 synonym, 4 trigram/fuzzy, 5 concept. Lower = "
+            "stronger match. The server already returns hits in tier "
+            "order; the field lets the PWA badge or group by match "
+            "quality without re-deriving it."
+        ),
+    )
 
 
 class VerseSearchResponse(BaseModel):
     """GET /v1/verses/search?q=..."""
 
     query: str
-    total: int
+    total: int = Field(
+        ...,
+        description=(
+            "S352 — TRUE total number of matching verses across the whole "
+            "result set (count(*) OVER()), NOT the count of the returned "
+            "page. Combined with limit/offset the PWA shows 'N of M' and "
+            "pages through the remainder."
+        ),
+    )
     hits: List[VerseSearchHit]
+    limit: int = Field(
+        default=50, description="S352 — page size echoed back for the pager."
+    )
+    offset: int = Field(
+        default=0, description="S352 — page offset echoed back for the pager."
+    )
+    mode: str = Field(
+        default="related",
+        description="S352 — 'exact' or 'related', echoed back so the UI "
+        "can keep the toggle in sync with the served results.",
+    )
 
 
 # ----- Health -------------------------------------------------------------

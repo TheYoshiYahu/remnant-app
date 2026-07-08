@@ -1311,9 +1311,12 @@ function Reader() {
   //   state-reset contract (book / chapter / currentVerse) PLUS
   //   initialScrollVerse so the S116 post-chapter-load effect scrolls
   //   the destination into view. Closes the modal.
-  // upgradeFromLockedSearchRow: tap on a tier-locked result's upgrade
-  //   card. Routes to /pricing via the existing browser-native pattern
-  //   (same as §20 stubs) and closes the modal.
+  //
+  // S352 — the old upgradeFromLockedSearchRow (route-to-/pricing on a
+  // locked search row) is gone. The result-gate is now the extra-canon
+  // click-gate handled entirely inside SearchModal: canon rows are
+  // always clickable, extra-canon rows show an inline no-link "trial or
+  // partner to open" prompt with NO checkout navigation.
   function openSearchModal() {
     setSearchOpen(true);
   }
@@ -1340,18 +1343,6 @@ function Reader() {
     setSelectedChapter(chapterNumber);
     setCurrentVerse(verseNumber);
     setInitialScrollVerse(verseNumber);
-  }
-  function upgradeFromLockedSearchRow() {
-    // Native: no purchase steering — tapping a locked search row does not
-    // navigate to /pricing. The row stays locked (the chip already names
-    // the tier); we simply no-op the navigation so the locked state holds.
-    if (isNativeShell()) {
-      return;
-    }
-    if (typeof window !== "undefined") {
-      window.location.href = "/pricing";
-    }
-    setSearchOpen(false);
   }
 
   // S157 — Native-OS TTS handlers per DESIGN_LANGUAGE.md §25.
@@ -4625,9 +4616,13 @@ function Reader() {
       */}
       {searchOpen && (
         <SearchModal
-          partnerTier={me?.tier ?? null}
+          canOpenExtraCanon={
+            me?.status === "trialing" ||
+            me?.tier === "complete_study" ||
+            me?.tier === "everything"
+          }
+          books={books}
           onSelectResult={jumpToSearchResult}
-          onUpgradeFromLockedRow={upgradeFromLockedSearchRow}
           onClose={closeSearchModal}
         />
       )}

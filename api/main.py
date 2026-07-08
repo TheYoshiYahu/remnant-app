@@ -2657,9 +2657,72 @@ def _build_tsquery(
 @app.get("/v1/verses/search", response_model=VerseSearchResponse)
 async def search_verses(
     q: str = Query(..., min_length=2, description="Phrase to search for."),
-    limit: int = Query(default=25, ge=1, le=200),
+    limit: int = Query(default=50, ge=1, le=200),
+    offset: int = Query(
+        default=0,
+        ge=0,
+        description="S352 — pagination offset. Combined with the "
+        "count(*) OVER() window total the UI shows 'N of M'.",
+    ),
+    mode: str = Query(
+        default="related",
+        pattern="^(exact|related)$",
+        description="S352 — 'exact' = phrase / exact-token FTS only; "
+        "'related' = full expansion (synonym + fuzzy + concept). "
+        "Search itself is free for all in either mode.",
+    ),
+    book: Optional[str] = Query(
+        default=None,
+        description="S352 — restrict the search to a single book slug "
+        "(convenience alias for books=<slug>).",
+    ),
+    books: Optional[List[str]] = Query(
+        default=None,
+        description="S352 — restrict the search to these book slugs "
+        "(repeatable: books=genesis&books=exodus). Empty = whole canon "
+        "+ extras.",
+    ),
 ) -> VerseSearchResponse:
     """
+    Verse search v3 (S352) — relevance-ranked, phrase/boolean-aware,
+    paginated, book-scoped, mode-toggled. Built on the S150 search
+    engine + S151 vocabulary fuzzy + concept layer.
+
+    S352 rebuild, five changes over the S151 v2.1 shape:
+
+      1. **Relevance ranking.** The v2.1 endpoint ordered every hit by
+         ``canonical_order, chapter, verse`` then truncated at LIMIT 25,
+         so a strong later-book match fell off the bottom and read as
+         "missing". v3 ranks with a tiered ``match_tier`` (1 exact
+         phrase → 2 exact token(s) → 3 synonym → 4 trigram/fuzzy →
+         5 concept), then ``ts_rank`` DESC, then ``similarity`` DESC,
+         with canonical order only as the final tiebreak.
+
+      2. **Phrase + boolean.** ``websearch_to_tsquery('english', q)``
+         parses quotes (adjacency), ``-word`` exclusion, and ``OR`` the
+         way a reader expects from a search box. A raw contiguous
+         ``ILIKE '%q%'`` sits above it as the exact-phrase tier so a
+         literal phrase always outranks a scattered-token match even
+         when the english stemmer would have split them.
+
+      3. **No 25-cap.** ``limit``/``offset`` paginate; ``count(*)
+         OVER()`` returns the true pre-limit total so the PWA can show
+         "N of M" and page through the rest.
+
+      4. **Book scope.** ``book`` / ``books[]`` → ``b.slug = ANY(...)``
+         so a reader can search within one book (or a chosen set).
+
+      5. **Mode toggle.** ``exact`` restricts matching to the phrase /
+         exact-token FTS tiers (tiers 1–2); ``related`` adds the full
+         expansion (synonym tier 3, trigram/fuzzy tier 4, concept
+         tier 5). Search is FREE FOR ALL in both modes — no tier gate
+         on searching or on seeing results. Result-row click-gating
+         (extra-canonical rows) is a PWA concern, rendered client-side
+         from ``tier_required``; the endpoint stays public and returns
+         every hit.
+
+    Legacy engine detail (unchanged from v2.1) —
+
     Verse search v2.1 — S150 search engine + S151 vocabulary fuzzy +
     concept layer.
 
@@ -2715,74 +2778,108 @@ async def search_verses(
     trip. The endpoint stays public (no auth) — search itself does not
     tier-gate; tier-aware rendering happens in the PWA.
     """
+    related = mode == "related"
+
+    # S352 — merge the single-book convenience alias into the books[] set.
+    book_slugs: list[str] = []
+    if books:
+        book_slugs.extend(s for s in books if s)
+    if book:
+        book_slugs.append(book)
+    # De-dupe, preserve nothing about order (only membership matters).
+    book_slugs = sorted(set(book_slugs))
+
     pool = get_pool()
     async with pool.acquire() as conn:
         raw_tokens = [t.lower() for t in _SEARCH_TOKEN_RE.findall(q)]
-        synonym_map = await _expand_synonyms(conn, raw_tokens) if raw_tokens else {}
-        # S151 — fuzzy expansion for tokens not covered by any synonym group.
-        unexpanded = [t for t in raw_tokens if t not in synonym_map]
-        fuzzy_map = await _expand_fuzzy(conn, unexpanded) if unexpanded else {}
-        tsquery_str = _build_tsquery(raw_tokens, synonym_map, fuzzy_map)
-        # S151 — concept layer. Concept patterns surface verses that
-        # carry the linked phrases the framework reads as one diagnostic.
-        concept_patterns = await _expand_concepts(conn, q)
 
-        if tsquery_str:
-            # S151 — single SELECT, tsquery OR concept-pattern ILIKE-ANY.
-            # Concept clause short-circuits when concept_patterns is empty
-            # (cardinality check). Round-3 perf shape preserved: no CTEs,
-            # no GROUP BY, GIN-backed both sides of the OR.
-            rows = await conn.fetch(
-                """
-                SELECT v.id AS verse_id,
-                       b.slug AS book_slug, b.title AS book_title,
-                       c.chapter_number, v.verse_number, v.text,
-                       b.tier_required AS tier_required,
-                       similarity(v.text, $1) AS sim
-                  FROM verses v
-                  JOIN chapters c ON c.id = v.chapter_id
-                  JOIN books    b ON b.id = c.book_id
-                 WHERE v.text_tsv @@ to_tsquery('english', $2)
-                    OR (cardinality($4::text[]) > 0
-                        AND v.text ILIKE ANY($4::text[]))
-                 ORDER BY b.canonical_order ASC,
-                          c.chapter_number ASC,
-                          v.verse_number ASC
-                 LIMIT $3
-                """,
-                q,
-                tsquery_str,
-                limit,
-                concept_patterns,
-            )
+        # S352 — expansion runs only in 'related' mode. 'exact' restricts
+        # matching to the phrase / exact-token FTS tiers so a reader who
+        # wants precision isn't handed synonym / fuzzy / concept widening.
+        if related and raw_tokens:
+            synonym_map = await _expand_synonyms(conn, raw_tokens)
+            unexpanded = [t for t in raw_tokens if t not in synonym_map]
+            fuzzy_map = await _expand_fuzzy(conn, unexpanded) if unexpanded else {}
+            concept_patterns = await _expand_concepts(conn, q)
         else:
-            # No tsquery-usable tokens (e.g., all punctuation or stopwords).
-            # Fall back to the S148b ILIKE substring path — fast and
-            # predictable for edge-case queries. Concept patterns get
-            # OR-ed in for free; same ILIKE machinery.
-            rows = await conn.fetch(
-                """
-                SELECT v.id AS verse_id,
-                       b.slug AS book_slug, b.title AS book_title,
-                       c.chapter_number, v.verse_number, v.text,
-                       b.tier_required AS tier_required,
-                       similarity(v.text, $1) AS sim
-                  FROM verses v
-                  JOIN chapters c ON c.id = v.chapter_id
-                  JOIN books    b ON b.id = c.book_id
-                 WHERE v.text ILIKE '%' || $1 || '%'
-                    OR (cardinality($3::text[]) > 0
-                        AND v.text ILIKE ANY($3::text[]))
-                 ORDER BY b.canonical_order ASC,
-                          c.chapter_number ASC,
-                          v.verse_number ASC
-                 LIMIT $2
-                """,
-                q,
-                limit,
-                concept_patterns,
-            )
+            synonym_map = {}
+            fuzzy_map = {}
+            concept_patterns = []
 
+        # S352 — tiers 3 and 4 use SEPARATE tsqueries so match_tier can
+        # tell a synonym hit (Jehovah→Yahuah) apart from a fuzzy/typo hit
+        # (synagauge→synagogue). Each includes the original tokens, but
+        # the CASE ranks the literal-token tier (2, websearch) above both,
+        # so these tiers only capture rows the literal query missed.
+        synonym_tsquery = (
+            _build_tsquery(raw_tokens, synonym_map, None)
+            if (related and synonym_map)
+            else ""
+        )
+        fuzzy_tsquery = (
+            _build_tsquery(raw_tokens, {}, fuzzy_map)
+            if (related and fuzzy_map)
+            else ""
+        )
+
+        # Single SELECT. websearch_to_tsquery on the raw string handles
+        # quotes (phrase adjacency), -exclusion, and OR. The exact-phrase
+        # ILIKE sits above it as tier 1. count(*) OVER() is the true
+        # pre-LIMIT total for the PWA "N of M" pager. GIN-backed:
+        # idx_verses_text_tsv for the tsquery tiers, idx_verses_text_trgm
+        # for the ILIKE / similarity tiers.
+        rows = await conn.fetch(
+            """
+            SELECT v.id AS verse_id,
+                   b.slug AS book_slug, b.title AS book_title,
+                   c.chapter_number, v.verse_number, v.text,
+                   b.tier_required AS tier_required,
+                   similarity(v.text, $1) AS sim,
+                   CASE
+                     WHEN v.text ILIKE '%' || $1 || '%' THEN 1
+                     WHEN v.text_tsv @@ websearch_to_tsquery('english', $1)
+                          THEN 2
+                     WHEN $7 AND length($2) > 0
+                          AND v.text_tsv @@ to_tsquery('english', $2) THEN 3
+                     WHEN $7 AND length($8) > 0
+                          AND v.text_tsv @@ to_tsquery('english', $8) THEN 4
+                     ELSE 5
+                   END AS match_tier,
+                   count(*) OVER() AS total_count
+              FROM verses v
+              JOIN chapters c ON c.id = v.chapter_id
+              JOIN books    b ON b.id = c.book_id
+             WHERE (cardinality($6::text[]) = 0 OR b.slug = ANY($6::text[]))
+               AND (
+                    v.text ILIKE '%' || $1 || '%'
+                 OR v.text_tsv @@ websearch_to_tsquery('english', $1)
+                 OR ($7 AND length($2) > 0
+                     AND v.text_tsv @@ to_tsquery('english', $2))
+                 OR ($7 AND length($8) > 0
+                     AND v.text_tsv @@ to_tsquery('english', $8))
+                 OR ($7 AND cardinality($3::text[]) > 0
+                     AND v.text ILIKE ANY($3::text[]))
+               )
+             ORDER BY match_tier ASC,
+                      ts_rank(v.text_tsv,
+                              websearch_to_tsquery('english', $1)) DESC,
+                      similarity(v.text, $1) DESC,
+                      b.canonical_order ASC,
+                      c.chapter_number ASC,
+                      v.verse_number ASC
+             LIMIT $4 OFFSET $5
+            """,
+            q,
+            synonym_tsquery,
+            concept_patterns,
+            limit,
+            offset,
+            book_slugs,
+            related,
+            fuzzy_tsquery,
+        )
+
+    total = int(rows[0]["total_count"]) if rows else 0
     hits = [
         VerseSearchHit(
             verse_id=r["verse_id"],
@@ -2793,10 +2890,18 @@ async def search_verses(
             text=r["text"],
             similarity=float(r["sim"] or 0.0),
             tier_required=r["tier_required"],
+            match_tier=int(r["match_tier"]),
         )
         for r in rows
     ]
-    return VerseSearchResponse(query=q, total=len(hits), hits=hits)
+    return VerseSearchResponse(
+        query=q,
+        total=total,
+        hits=hits,
+        limit=limit,
+        offset=offset,
+        mode=mode,
+    )
 
 
 # ----- Strong's tap-on-word (Session 120 — Wheel 1) -----------------------

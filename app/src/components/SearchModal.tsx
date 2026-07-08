@@ -1,46 +1,48 @@
 /**
- * SearchModal — Session 125 wheel, Wheel 6 of the pre-launch sweep.
+ * SearchModal — Session 125 wheel (Wheel 6), rebuilt at S352.
  *
- * Pop-up search per DESIGN_LANGUAGE.md §23 (locked S125). Three gates
- * settled at wheel-open:
+ * Pop-up search per DESIGN_LANGUAGE.md §23. The S352 rebuild lands the
+ * major search upgrade on top of the original three gates:
  *
  *   (a) Pop-up modal entry surface (not expanding chrome bar, not a
  *       separate /search page) — reader stays mounted behind.
  *   (b) Results grouped by book, collapsible. Within each group hits
- *       stay in the server's similarity-first order; the client does
- *       NOT re-sort.
- *   (c) Tier-aware snippet — locked-book hits swap the snippet half
- *       for a small "Read this book — {Tier} tier" upgrade card that
- *       routes to /pricing. At V1 ship verses.text rows are all 'free'
- *       so this card is dormant; lights up when the W10 reference
- *       library lands BDB/Thayer's/Vine's at tier_required = 'extras'.
- *       Inline divergence justification per the S124 forward standard.
+ *       stay in the server's relevance order; the client does NOT
+ *       re-sort. (S352: the server now ranks by relevance tier — exact
+ *       phrase → exact token → synonym → trigram → concept — instead of
+ *       canonical order, so the strongest match leads.)
+ *   (c) Tier-aware snippet. S352 REPLACES the old tier-ladder lock with
+ *       the extra-canon click-gate: search is free for all and EVERY
+ *       hit is shown (canon and extra-canon alike), but extra-canonical
+ *       rows are only *clickable* for partners in trial or at the
+ *       Companion tier. Canon rows are always clickable. Tapping a
+ *       locked extra-canon row shows an inline no-link "start a trial or
+ *       partner to open" prompt — NO checkout link (web-first commerce;
+ *       native reader apps carry no purchase steering).
+ *
+ * S352 also adds: an Exact/Related mode toggle, a book-scope filter
+ * (search within one book), and real pagination (page size 50 with a
+ * "Load more" pager and a true "N of M" total from the server's
+ * count(*) OVER()).
  *
  * Same modal register as HighlightPicker / BookmarkSheet / NotesPanel /
  * RangeActionPicker / VerseActionMenu / StrongsLookup — bg-black/40
  * backdrop, items-end on mobile (slide-up from bottom), centered on
- * desktop (sm:items-center). max-w-6xl matches NotesPanel since the
- * results region needs room. max-h-85vh + overflow-y-auto handles the
- * common-word search that returns 100+ hits.
- *
- * Search is chrome-scope, not verse-scope — opens from the App.tsx
- * chrome cluster (new Search button + Cmd-K/Ctrl-K shortcut), not from
- * the §20 VerseActionMenu. The catalog at §20 is deliberately
- * untouched by W6.
+ * desktop (sm:items-center). max-w-6xl matches NotesPanel.
  */
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   searchVerses,
-  type PartnerTier,
+  type BookSummary,
+  type SearchMode,
   type VerseSearchHit,
 } from "../lib/api";
 import {
   formatHitCount,
-  formatTotalSummary,
   groupResultsByBook,
   highlightQueryMatches,
-  isResultLocked,
+  isExtraCanonLocked,
   teaserOfVerse,
   tierBadgeLabel,
 } from "../lib/search-helpers";
@@ -48,44 +50,59 @@ import { useSacredNameMask } from "../lib/useSacredNameMask";
 
 const MIN_QUERY_LENGTH = 2;
 const DEBOUNCE_MS = 250;
+const PAGE_SIZE = 50;
 
 interface SearchModalProps {
-  partnerTier: PartnerTier | null;
-  /** Invoked when partner taps a Live (non-locked) result row. Parent
-   *  handles the W2 navigation handlers' state-reset contract — sets
-   *  selectedBookSlug + selectedChapter + currentVerse and closes the
-   *  modal. */
+  /** Whether the partner may OPEN extra-canonical result rows — true
+   *  when in trial or at the Companion tier. Canon rows ignore this and
+   *  are always clickable. Resolved by the parent from the /me
+   *  subscription status + tier. */
+  canOpenExtraCanon: boolean;
+  /** Book list for the search-within-a-book scope filter. The parent
+   *  passes its already-visible-filtered book set. */
+  books: BookSummary[];
+  /** Invoked when partner taps a clickable (canon, or unlocked
+   *  extra-canon) result row. Parent handles the W2 navigation
+   *  state-reset contract and closes the modal. */
   onSelectResult: (hit: VerseSearchHit) => void;
-  /** Invoked when the partner taps a tier-locked result's upgrade
-   *  card — parent routes to /pricing via window.location.href (same
-   *  pattern as §20 stubs) and closes the modal. */
-  onUpgradeFromLockedRow: () => void;
   /** Modal close callback (✕ button, tap-outside, Escape). */
   onClose: () => void;
 }
 
 export default function SearchModal({
-  partnerTier,
+  canOpenExtraCanon,
+  books,
   onSelectResult,
-  onUpgradeFromLockedRow,
   onClose,
 }: SearchModalProps) {
   const [query, setQuery] = useState<string>("");
+  const [mode, setMode] = useState<SearchMode>("related");
+  const [bookFilter, setBookFilter] = useState<string>(""); // "" = all books
   const [hits, setHits] = useState<VerseSearchHit[] | null>(null);
+  const [total, setTotal] = useState<number>(0);
+  const [offset, setOffset] = useState<number>(0);
   const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [collapsedBooks, setCollapsedBooks] = useState<Set<string>>(new Set());
-  // S172 — sacred-name mask. Search results render verse text, so the
-  // partner's mask preference flows through here too. Parens-strip
-  // intentionally NOT applied to search hits (the highlightQueryMatches
-  // path expects raw verse text and the search index queries against
-  // the database form, so stripping parens would risk misaligning the
-  // highlight spans). Mask alone — applied before highlightQueryMatches.
+  // S352 — inline no-link prompt target. When the partner taps a locked
+  // extra-canon row, its verse_id lands here and an inline prompt renders
+  // beneath the row. No navigation, no checkout link.
+  const [promptedVerseId, setPromptedVerseId] = useState<number | null>(null);
+  // S172 — sacred-name mask flows through search results (they render
+  // verse text). Mask alone — applied before highlightQueryMatches.
   const { applyToText: applySacredMask } = useSacredNameMask();
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   const debounceRef = useRef<number | null>(null);
   const abortRef = useRef<AbortController | null>(null);
+
+  // Book-filter dropdown options, canonical order.
+  const bookOptions = useMemo(
+    () =>
+      [...books].sort((a, b) => a.canonical_order - b.canonical_order),
+    [books],
+  );
 
   // Auto-focus the input on mount.
   useEffect(() => {
@@ -104,51 +121,72 @@ export default function SearchModal({
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  // Debounced search effect — fires DEBOUNCE_MS after the last keystroke
-  // when query is at least MIN_QUERY_LENGTH chars. Aborts any in-flight
-  // request before issuing the next one so a late-arriving response
-  // from a stale query can't overwrite the current results.
+  // Core fetch. `append` = pagination "Load more" (keep prior hits and
+  // append this page); otherwise a fresh query (replace). Aborts any
+  // in-flight request first so a stale response can't overwrite the
+  // current results.
+  function runQuery(nextOffset: number, append: boolean) {
+    abortRef.current?.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
+    if (append) {
+      setLoadingMore(true);
+    } else {
+      setLoading(true);
+      setCollapsedBooks(new Set());
+      setPromptedVerseId(null);
+    }
+    setError(null);
+    searchVerses(query.trim(), {
+      limit: PAGE_SIZE,
+      offset: nextOffset,
+      mode,
+      books: bookFilter ? [bookFilter] : undefined,
+      signal: controller.signal,
+    })
+      .then((res) => {
+        if (controller.signal.aborted) return;
+        setTotal(res.total);
+        setOffset(nextOffset);
+        setHits((prev) =>
+          append && prev ? [...prev, ...res.hits] : res.hits,
+        );
+        setLoading(false);
+        setLoadingMore(false);
+      })
+      .catch((err: unknown) => {
+        if (err instanceof DOMException && err.name === "AbortError") {
+          return; // superseded by a newer query
+        }
+        if (controller.signal.aborted) return;
+        setError("Search is temporarily unavailable. Try again in a moment.");
+        setLoading(false);
+        setLoadingMore(false);
+      });
+  }
+
+  // Debounced new-search effect. Re-fires DEBOUNCE_MS after the last
+  // change to the query, mode, or book filter (each resets to page 0).
   useEffect(() => {
     if (debounceRef.current !== null) {
       window.clearTimeout(debounceRef.current);
       debounceRef.current = null;
     }
     if (query.trim().length < MIN_QUERY_LENGTH) {
-      // Cancel anything in-flight + reset to idle state.
       abortRef.current?.abort();
       abortRef.current = null;
       setLoading(false);
+      setLoadingMore(false);
       setHits(null);
+      setTotal(0);
+      setOffset(0);
       setError(null);
-      // Each new query re-expands every group (per §23 — collapsed state
-      // does NOT persist across new queries).
       setCollapsedBooks(new Set());
+      setPromptedVerseId(null);
       return;
     }
     debounceRef.current = window.setTimeout(() => {
-      // Cancel any prior in-flight request.
-      abortRef.current?.abort();
-      const controller = new AbortController();
-      abortRef.current = controller;
-      setLoading(true);
-      setError(null);
-      // Re-expand groups on each new fetch (see comment above).
-      setCollapsedBooks(new Set());
-      searchVerses(query.trim(), 25, controller.signal)
-        .then((res) => {
-          if (controller.signal.aborted) return;
-          setHits(res.hits);
-          setLoading(false);
-        })
-        .catch((err: unknown) => {
-          if (err instanceof DOMException && err.name === "AbortError") {
-            // Silent — a newer query already fired.
-            return;
-          }
-          if (controller.signal.aborted) return;
-          setError("Search is temporarily unavailable. Try again in a moment.");
-          setLoading(false);
-        });
+      runQuery(0, false);
     }, DEBOUNCE_MS);
     return () => {
       if (debounceRef.current !== null) {
@@ -156,7 +194,9 @@ export default function SearchModal({
         debounceRef.current = null;
       }
     };
-  }, [query]);
+    // runQuery reads query/mode/bookFilter from the same render's closure.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query, mode, bookFilter]);
 
   // Cleanup any in-flight fetch on unmount.
   useEffect(() => {
@@ -172,18 +212,15 @@ export default function SearchModal({
 
   const trimmedQuery = query.trim();
   const showResults = hits !== null && trimmedQuery.length >= MIN_QUERY_LENGTH;
-  // Session 148 — when the partner has typed a partial query (1 char,
-  // below MIN_QUERY_LENGTH), the original implementation silently kept
-  // the idle hint visible, which read as "nothing is happening" (Yoshi
-  // S148 dialog). The short-query hint surfaces immediately so the
-  // partner sees the threshold and knows to keep typing.
   const showShortQueryHint =
     trimmedQuery.length > 0 &&
     trimmedQuery.length < MIN_QUERY_LENGTH &&
     !loading;
   const showIdleHint =
     !showResults && !showShortQueryHint && !loading && !error;
-  const showZero = showResults && groups.length === 0 && !error;
+  const showZero = showResults && groups.length === 0 && !error && !loading;
+  const loadedCount = hits?.length ?? 0;
+  const hasMore = loadedCount < total;
 
   function toggleBookCollapse(slug: string) {
     setCollapsedBooks((prev) => {
@@ -198,8 +235,9 @@ export default function SearchModal({
   }
 
   function handleRowTap(hit: VerseSearchHit) {
-    if (isResultLocked(hit, partnerTier)) {
-      onUpgradeFromLockedRow();
+    if (isExtraCanonLocked(hit, canOpenExtraCanon)) {
+      // Toggle the inline no-link prompt for this row. No navigation.
+      setPromptedVerseId((cur) => (cur === hit.verse_id ? null : hit.verse_id));
       return;
     }
     onSelectResult(hit);
@@ -277,6 +315,65 @@ export default function SearchModal({
               </button>
             ) : null}
           </div>
+
+          {/* S352 — controls row: Exact/Related mode toggle + book scope */}
+          <div className="mt-3 flex flex-wrap items-center gap-3">
+            <div
+              className="inline-flex overflow-hidden rounded border border-[var(--reader-rule)] text-sm"
+              role="group"
+              aria-label="Search mode"
+            >
+              <button
+                type="button"
+                onClick={() => setMode("exact")}
+                aria-pressed={mode === "exact"}
+                className={
+                  "px-3 py-1 " +
+                  (mode === "exact"
+                    ? "bg-[var(--reader-accent)] text-[var(--reader-surface)] font-semibold"
+                    : "text-[var(--reader-muted)] hover:text-[var(--reader-text)]")
+                }
+              >
+                Exact
+              </button>
+              <button
+                type="button"
+                onClick={() => setMode("related")}
+                aria-pressed={mode === "related"}
+                className={
+                  "px-3 py-1 " +
+                  (mode === "related"
+                    ? "bg-[var(--reader-accent)] text-[var(--reader-surface)] font-semibold"
+                    : "text-[var(--reader-muted)] hover:text-[var(--reader-text)]")
+                }
+              >
+                Related
+              </button>
+            </div>
+
+            <label className="flex items-center gap-2 text-sm text-[var(--reader-muted)]">
+              <span className="sr-only sm:not-sr-only">in</span>
+              <select
+                value={bookFilter}
+                onChange={(e) => setBookFilter(e.target.value)}
+                aria-label="Limit search to a book"
+                className="max-w-[16rem] rounded border border-[var(--reader-rule)] bg-[var(--reader-bg)] px-2 py-1 text-[var(--reader-text)] outline-none"
+              >
+                <option value="">All books</option>
+                {bookOptions.map((b) => (
+                  <option key={b.slug} value={b.slug}>
+                    {b.title}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <p className="mt-2 text-xs italic text-[var(--reader-muted)]">
+            {mode === "exact"
+              ? "Exact — phrases and the words you typed. Use \"quotes\" for an exact phrase, -word to exclude, OR between words."
+              : "Related — also finds synonyms, restored names, and linked concepts."}
+          </p>
         </div>
 
         {/* Results region */}
@@ -348,23 +445,23 @@ export default function SearchModal({
                     {!collapsed && (
                       <ul className="mt-2 space-y-2">
                         {group.hits.map((hit) => {
-                          const locked = isResultLocked(hit, partnerTier);
+                          const locked = isExtraCanonLocked(
+                            hit,
+                            canOpenExtraCanon,
+                          );
                           const badge = locked
                             ? tierBadgeLabel(hit.tier_required)
                             : null;
                           const ariaLabel = locked
-                            ? `${group.bookTitle} ${hit.chapter_number}:${hit.verse_number} — unlock in ${badge ?? "paid"} tier to read in full`
+                            ? `${group.bookTitle} ${hit.chapter_number}:${hit.verse_number} — start a trial or partner to open`
                             : `${group.bookTitle} ${hit.chapter_number}:${hit.verse_number}`;
-                          // S140 — locked hits now render a teaser of the
-                          // verse text with the matched word highlighted,
-                          // followed by a tier-lock chip. The free reader
-                          // who searches "Watchers" sees canon hits open
-                          // AND a teaser-with-Library-chip on every 1 Enoch
-                          // / Jubilees / Apocrypha hit, learning by reading
-                          // the result list that the framework reaches
-                          // further than the canon. Curiosity does the
-                          // selling. See DESIGN_LANGUAGE.md §9 reconciliation
-                          // note #4.
+                          // Locked extra-canon rows render a teaser of the
+                          // verse (matched word highlighted) + a lock chip.
+                          // The free reader who searches "Watchers" sees
+                          // canon hits open AND teasers of every extra-canon
+                          // hit, learning by reading that the framework
+                          // reaches past the canon. Curiosity does the
+                          // selling; there is no checkout link.
                           const maskedText = applySacredMask(hit.text);
                           const segments = highlightQueryMatches(
                             locked
@@ -372,6 +469,7 @@ export default function SearchModal({
                               : maskedText,
                             trimmedQuery,
                           );
+                          const prompted = promptedVerseId === hit.verse_id;
                           return (
                             <li key={hit.verse_id}>
                               <button
@@ -414,11 +512,24 @@ export default function SearchModal({
                                       >
                                         <path d="M10 2a4 4 0 00-4 4v2H5a1 1 0 00-1 1v8a1 1 0 001 1h10a1 1 0 001-1V9a1 1 0 00-1-1h-1V6a4 4 0 00-4-4zm-2 6V6a2 2 0 114 0v2H8z" />
                                       </svg>
-                                      Unlock in {badge ?? "paid"} tier
+                                      {badge ? `${badge} · ` : ""}Trial or
+                                      partner to open
                                     </span>
                                   )}
                                 </span>
                               </button>
+                              {/* Inline no-link prompt (S352) — shown when a
+                                  locked row is tapped. No checkout link. */}
+                              {locked && prompted && (
+                                <p
+                                  role="note"
+                                  className="mt-1 rounded border border-[var(--reader-rule)] bg-[var(--reader-bg)]/60 px-3 py-2 text-sm not-italic text-[var(--reader-muted)]"
+                                >
+                                  This reading is in the extras. Start a free
+                                  trial or become a partner to open it — search
+                                  and result previews stay free for everyone.
+                                </p>
+                              )}
                             </li>
                           );
                         })}
@@ -427,14 +538,29 @@ export default function SearchModal({
                   </li>
                 );
               })}
+
+              {/* S352 — pagination pager */}
+              {hasMore && (
+                <li className="pt-2 text-center">
+                  <button
+                    type="button"
+                    onClick={() => runQuery(offset + PAGE_SIZE, true)}
+                    disabled={loadingMore}
+                    className="rounded border border-[var(--reader-rule)] px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:bg-[var(--reader-bg)]/50 disabled:opacity-60"
+                  >
+                    {loadingMore ? "Loading…" : "Load more results"}
+                  </button>
+                </li>
+              )}
             </ul>
           )}
         </div>
 
-        {/* Footer hint — only when results visible */}
+        {/* Footer — "N of M" total when results visible */}
         {showResults && groups.length > 0 && (
           <div className="border-t border-[var(--reader-rule)] px-4 py-2 text-right text-sm text-[var(--reader-muted)]">
-            {formatTotalSummary(groups)}
+            Showing {loadedCount} of {total}{" "}
+            {total === 1 ? "result" : "results"}
           </div>
         )}
       </div>

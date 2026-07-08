@@ -185,6 +185,39 @@ export function isResultLocked(
 }
 
 /**
+ * S352 — is this hit an EXTRA-CANONICAL row?
+ *
+ * The result-gating model changed at S352: search is free for everyone
+ * and every hit (canon AND extra-canon) is shown, but extra-canonical
+ * rows are only *clickable* for partners in trial or at the Companion
+ * tier. "Extra-canonical" = the source book sits at or above the
+ * `extras` (Library) tier on the content ladder; canon books are `free`
+ * or `study_notes` and stay clickable for everyone.
+ */
+export function isExtraCanonical(
+  hit: Pick<VerseSearchHit, "tier_required">,
+): boolean {
+  return tierRank(hit.tier_required as ContentTier) >= tierRank("extras");
+}
+
+/**
+ * S352 — should this hit's row be LOCKED (rendered but not clickable)?
+ *
+ * Canon rows are never locked. Extra-canonical rows are locked unless
+ * `canOpenExtraCanon` is true (the partner is in trial or at the
+ * Companion tier — resolved by the caller). Tapping a locked row shows
+ * the no-link "start a trial or partner to open" prompt inline; there
+ * is NO checkout link (web-first commerce lives on the site, and native
+ * reader apps carry no purchase steering).
+ */
+export function isExtraCanonLocked(
+  hit: Pick<VerseSearchHit, "tier_required">,
+  canOpenExtraCanon: boolean,
+): boolean {
+  return isExtraCanonical(hit) && !canOpenExtraCanon;
+}
+
+/**
  * Map a content_tier value to the partner-facing tier badge label. Per
  * §23 the tier name register matches §20 — Study Notes for study_notes
  * content, Library for extras content. Higher tiers (Companion / Scribe)

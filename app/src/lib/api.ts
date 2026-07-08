@@ -1463,16 +1463,45 @@ export interface VerseSearchHit {
    *  content_tier enum: 'free' | 'study_notes' | 'extras' |
    *  'complete_study' | 'everything'. */
   tier_required: string;
+  /** S352 — relevance tier: 1 exact phrase, 2 exact token(s),
+   *  3 synonym, 4 trigram/fuzzy, 5 concept. Lower = stronger. Hits
+   *  arrive in tier order; optional for back-compat. */
+  match_tier?: number;
 }
 
 export interface VerseSearchResponse {
   query: string;
+  /** S352 — TRUE total across the whole match set (count(*) OVER()),
+   *  NOT the length of `hits`. Drives the "N of M" pager. */
   total: number;
   hits: VerseSearchHit[];
+  /** S352 — page size / offset / mode echoed back by the server. */
+  limit?: number;
+  offset?: number;
+  mode?: SearchMode;
+}
+
+/** S352 — search-mode toggle. 'exact' = phrase / exact-token FTS only;
+ *  'related' = full expansion (synonyms + concept + fuzzy). */
+export type SearchMode = "exact" | "related";
+
+export interface SearchVersesOptions {
+  /** Page size. Defaults to 50 (S352 killed the old 25-cap). */
+  limit?: number;
+  /** Pagination offset. Defaults to 0. */
+  offset?: number;
+  /** 'exact' | 'related'. Defaults to 'related'. */
+  mode?: SearchMode;
+  /** Restrict to these book slugs (search-within-a-book). Empty/omitted
+   *  = whole canon + extras. */
+  books?: string[];
+  /** AbortController signal — cancels stale in-flight queries. */
+  signal?: AbortSignal;
 }
 
 /**
- * Run a verse-text search. Pass `signal` from an AbortController so a
+ * Run a verse-text search (S352 v3 — relevance-ranked, paginated,
+ * book-scoped, mode-toggled). Pass `signal` from an AbortController so a
  * fast-typing partner's old queries are cancelled before their late-
  * arriving responses can overwrite the current results render.
  *
@@ -1481,10 +1510,20 @@ export interface VerseSearchResponse {
  */
 export function searchVerses(
   q: string,
-  limit = 25,
-  signal?: AbortSignal,
+  opts: SearchVersesOptions = {},
 ): Promise<VerseSearchResponse> {
-  const qs = new URLSearchParams({ q, limit: String(limit) });
+  const { limit = 50, offset = 0, mode = "related", books, signal } = opts;
+  const qs = new URLSearchParams({
+    q,
+    limit: String(limit),
+    offset: String(offset),
+    mode,
+  });
+  if (books) {
+    for (const slug of books) {
+      if (slug) qs.append("books", slug);
+    }
+  }
   return get<VerseSearchResponse>(`/verses/search?${qs.toString()}`, { signal });
 }
 
