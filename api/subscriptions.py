@@ -619,6 +619,7 @@ async def create_checkout_session(
             # total_details.amount_discount / discounts fields on the
             # completed checkout session.
             allow_promotion_codes=True,
+            payment_method_collection="if_required",
             metadata={
                 "tier": body.tier,
                 "cadence": body.cadence,
