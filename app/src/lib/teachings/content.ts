@@ -27,7 +27,7 @@ import {
   SEED_OF_PROMISE_BODY,
   SEED_OF_PROMISE_SYNOPSIS,
 } from "./seed-of-promise";
-import { KINGDOM_GOSPEL_SYNOPSIS } from "./kingdom-gospel";
+import { KINGDOM_GOSPEL_SYNOPSIS, KINGDOM_GOSPEL_BODY } from "./kingdom-gospel";
 import ephraimRisingCover from "../../assets/ephraim-rising-cover.jpg";
 
 /**
@@ -99,29 +99,20 @@ export const TEACHINGS: Teaching[] = [
     },
   },
   {
-    // S421 — a SERVER-FETCHED teaching: `body` stays empty here and is fetched
-    // from GET /v1/teachings/{slug}/body, NOT inlined in the client bundle.
-    //
-    // S423 (launch hotfix) — tier_required lowered from "everything" to "extras"
-    // so this teaching gates EXACTLY like the extra-canonical (apocrypha) books,
-    // which sit at tier_required = 'extras'. Free is blocked; the 7-day
-    // everything-trial passes (trialing → effective 'everything' owns 'extras');
-    // paid members at 'extras' and above are recognized. It was gated at the top
-    // of the strict chain ('everything'), which — with member-tier recognition
-    // currently unreliable — was stricter than the apocrypha and blocked
-    // members it should admit. "extras" makes canReadBody true for exactly the
-    // apocrypha audience so the "Dive deeper" reveal shows for them. The body is
-    // STILL server-fetched (body:"" — never inlined), and the endpoint still
-    // requires a valid JWT. The matching server row is lowered in the same step
-    // by data-schema/migrations/session423_kingdom_gospel_open.sql
-    // (UPDATE teaching_bodies SET tier_required='extras' WHERE slug='kingdom-gospel')
-    // so client reveal and server gate agree. See kingdom-gospel.ts +
-    // api.getTeachingBody.
+    // 2026-07-11 — FREE FOR ALL, body INLINED. History: shipped server-gated at
+    // 'everything' (S421), lowered to 'extras' (S423). Both kept the body
+    // server-fetched (body:""), so reading it depended on a live authed call —
+    // which raced the native shell's async token load and locked entitled
+    // partners. Making it 'free' with the body INLINED (KINGDOM_GOSPEL_BODY,
+    // like Seed of Promise) removes every runtime dependency: canReadBody is
+    // always true at 'free', hasInlineBody short-circuits the fetch, so no gate,
+    // no /me, no token, no server round-trip. It renders for everyone. (The
+    // server row + endpoint still exist for future PAID teachings.)
     slug: "kingdom-gospel",
     title: "The True Kingdom Gospel — Not Taught in the Churches of Any Denomination",
     synopsis: KINGDOM_GOSPEL_SYNOPSIS,
-    body: "",
-    tier_required: "extras",
+    body: KINGDOM_GOSPEL_BODY,
+    tier_required: "free",
     order: 2,
   },
 ];
