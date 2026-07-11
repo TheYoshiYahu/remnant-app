@@ -15,7 +15,7 @@
  * exactly as authored.
  */
 
-export const KINGDOM_GOSPEL_SYNOPSIS = String.raw`# The Gospel of the Kingdom
+export const KINGDOM_GOSPEL_SYNOPSIS = String.raw`# The True Kingdom Gospel — Not Taught in the Churches of Any Denomination
 
 *A free teaching — the Word in arranged order.*
 

@@ -107,7 +107,7 @@ export const TEACHINGS: Teaching[] = [
     // confirms entitlement. A non-entitled reader sees LockedPartnerPrompt and
     // the body never reaches them. See kingdom-gospel.ts + api.getTeachingBody.
     slug: "kingdom-gospel",
-    title: "The Gospel of the Kingdom",
+    title: "The True Kingdom Gospel — Not Taught in the Churches of Any Denomination",
     synopsis: KINGDOM_GOSPEL_SYNOPSIS,
     body: "",
     tier_required: "everything",

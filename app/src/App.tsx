@@ -2739,7 +2739,7 @@ function Reader() {
               href="/teachings"
               aria-label="Open Teachings"
               title="Teachings"
-              className="chrome-metal chrome-metal-gold"
+              className="chrome-metal chrome-metal-argaman"
             >
               <span aria-hidden="true">✦</span>
               <span>Teachings</span>

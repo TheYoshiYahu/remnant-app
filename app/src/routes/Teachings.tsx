@@ -305,7 +305,7 @@ function ClosingFlourish({ closing }: { closing: TeachingClosing }) {
         {renderItalicSpans(closing.lead)}
       </p>
       <p className="mt-4">
-        <span className="book-pill book-pill-gold text-lg font-semibold">
+        <span className="book-pill book-pill-argaman text-lg font-semibold">
           {renderItalicSpans(closing.finish)}
         </span>
       </p>
