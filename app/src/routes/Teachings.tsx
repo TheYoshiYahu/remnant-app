@@ -40,8 +40,10 @@ import { openExternal } from "../lib/external-link";
 import LockedPartnerPrompt from "../components/LockedPartnerPrompt";
 import {
   getSubscriptionMe,
+  getTeachingBody,
   type PartnerTier,
   type SubscriptionStatus,
+  type TeachingBodyResponse,
 } from "../lib/api";
 
 function currentSlug(): string {
@@ -142,6 +144,19 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
   const [meChecked, setMeChecked] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
+  // S421 — a teaching either ships its body INLINE (free teachings, e.g. Seed
+  // of Promise) or serves it from the SERVER-GATED endpoint (paid teachings,
+  // whose body is never in the client bundle — `teaching.body` is empty). When
+  // the body isn't inline we fetch it on reveal, and only after entitlement is
+  // confirmed both client-side (/me) and server-side (the endpoint re-checks
+  // and withholds the body from any non-entitled caller). Inline teachings
+  // never touch the network — Seed of Promise behaves exactly as before.
+  const hasInlineBody = teaching.body.trim().length > 0;
+  const [gatedBody, setGatedBody] = useState<TeachingBodyResponse | null>(null);
+  const [gatedState, setGatedState] = useState<"idle" | "loading" | "error">(
+    "idle",
+  );
+
   useEffect(() => {
     let cancelled = false;
     getSubscriptionMe()
@@ -164,6 +179,49 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
 
   const entitled = canReadBody(teaching, tier, status);
 
+  // Fetch the gated body once, when an entitled reader reveals a teaching whose
+  // body isn't inline. Guarded so it fires exactly once per detail view.
+  useEffect(() => {
+    if (!revealed || !entitled || hasInlineBody) return;
+    if (gatedBody || gatedState === "loading") return;
+    let cancelled = false;
+    setGatedState("loading");
+    getTeachingBody(teaching.slug)
+      .then((data) => {
+        if (cancelled) return;
+        setGatedBody(data);
+        setGatedState("idle");
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setGatedState("error");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [revealed, entitled, hasInlineBody, gatedBody, gatedState, teaching.slug]);
+
+  // The resolved body + flourishes come from the inline source (free) or the
+  // fetched gated payload (paid). Normalize a gated promo's caption null →
+  // undefined so it matches the TeachingPromo shape CoverPromo expects.
+  const resolvedBody = hasInlineBody ? teaching.body : gatedBody?.body ?? "";
+  const resolvedClosing: TeachingClosing | undefined = hasInlineBody
+    ? teaching.closing
+    : gatedBody?.closing ?? undefined;
+  const resolvedPromos: TeachingPromo[] = hasInlineBody
+    ? teaching.promo
+      ? [teaching.promo]
+      : []
+    : (gatedBody?.promos ?? []).map((p) => ({
+        image: p.image,
+        alt: p.alt,
+        href: p.href,
+        caption: p.caption ?? undefined,
+      }));
+
+  // Inline bodies are always ready; gated bodies are ready once fetched.
+  const bodyReady = hasInlineBody || gatedBody !== null;
+
   return (
     <Shell>
       <a
@@ -181,13 +239,26 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
       {/* Dive-deeper control → reveals the full body when entitled. */}
       <section className="mt-8">
         {revealed && entitled ? (
-          <>
-            <article className="border-t border-[var(--reader-rule)] pt-6">
-              {renderTeachingBody(teaching.body)}
-            </article>
-            {teaching.closing && <ClosingFlourish closing={teaching.closing} />}
-            {teaching.promo && <CoverPromo promo={teaching.promo} />}
-          </>
+          bodyReady ? (
+            <>
+              <article className="border-t border-[var(--reader-rule)] pt-6">
+                {renderTeachingBody(resolvedBody)}
+              </article>
+              {resolvedClosing && <ClosingFlourish closing={resolvedClosing} />}
+              {resolvedPromos.map((promo, i) => (
+                <CoverPromo key={i} promo={promo} />
+              ))}
+            </>
+          ) : gatedState === "error" ? (
+            <p className="text-center text-sm text-[var(--reader-muted)]">
+              The full teaching couldn’t be loaded just now. Please check your
+              connection and try again.
+            </p>
+          ) : (
+            <p className="text-center text-sm text-[var(--reader-muted)]">
+              Opening the full teaching…
+            </p>
+          )
         ) : entitled ? (
           <button
             type="button"

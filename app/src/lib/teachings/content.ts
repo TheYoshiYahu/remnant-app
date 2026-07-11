@@ -27,6 +27,7 @@ import {
   SEED_OF_PROMISE_BODY,
   SEED_OF_PROMISE_SYNOPSIS,
 } from "./seed-of-promise";
+import { KINGDOM_GOSPEL_SYNOPSIS } from "./kingdom-gospel";
 import ephraimRisingCover from "../../assets/ephraim-rising-cover.jpg";
 
 /**
@@ -96,6 +97,21 @@ export const TEACHINGS: Teaching[] = [
       href: EPHRAIM_RISING_AMAZON_URL,
       caption: "Read the book — Ephraim Rising",
     },
+  },
+  {
+    // S421 — the first SERVER-GATED teaching. tier_required = "everything" (the
+    // paid top / partner tier), so the full body is NEVER shipped in the client
+    // bundle: `body` is intentionally empty here. The synopsis (free) ships
+    // inline as the hook; the detail view fetches the body from the server-
+    // gated endpoint GET /v1/teachings/{slug}/body only after the server
+    // confirms entitlement. A non-entitled reader sees LockedPartnerPrompt and
+    // the body never reaches them. See kingdom-gospel.ts + api.getTeachingBody.
+    slug: "kingdom-gospel",
+    title: "The Gospel of the Kingdom",
+    synopsis: KINGDOM_GOSPEL_SYNOPSIS,
+    body: "",
+    tier_required: "everything",
+    order: 2,
   },
 ];
 

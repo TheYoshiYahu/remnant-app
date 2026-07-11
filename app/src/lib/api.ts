@@ -1527,6 +1527,54 @@ export function searchVerses(
   return get<VerseSearchResponse>(`/verses/search?${qs.toString()}`, { signal });
 }
 
+// ----- Teachings — server-gated bodies (Session 421) ---------------------
+//
+// The Teachings tab lists every teaching's title + synopsis client-side (see
+// lib/teachings/content.ts). A FREE teaching (Seed of Promise) also ships its
+// body inline — no paywall to leak. A PAID teaching's body is NEVER in the
+// bundle: it lives in the server-gated `teaching_bodies` table and is served
+// ONLY to an entitled, authenticated caller by this endpoint. The detail view
+// fetches it after the reader taps "Dive deeper", and only when the /me tier
+// check has already shown the reveal control. The server re-checks entitlement
+// (JWT + the same tier ladder every paid route uses): 401 anonymous, 403
+// authed-but-not-entitled (body withheld), 404 unknown slug, 200 with the body.
+
+/** Optional emphatic closing flourish — mirrors TeachingClosing (content.ts). */
+export interface TeachingBodyClosing {
+  lead: string;
+  finish: string;
+}
+
+/** Optional book-cover promo — mirrors TeachingPromo (content.ts). */
+export interface TeachingBodyPromo {
+  image: string;
+  alt: string;
+  href: string;
+  caption?: string | null;
+}
+
+export interface TeachingBodyResponse {
+  slug: string;
+  tier_required: ContentTier;
+  /** The full teaching markdown — server-gated, never in the client bundle. */
+  body: string;
+  closing: TeachingBodyClosing | null;
+  promos: TeachingBodyPromo[] | null;
+}
+
+/**
+ * Fetch a server-gated teaching body. JWT-required; the server enforces the
+ * teaching's tier_required against the caller's effective tier. Throws on
+ * 401/403/404 (the get() helper surfaces the status). The detail view only
+ * calls this once the reader is known-entitled, so a 403 here means the tier
+ * drifted and the caller shows a gentle error rather than the body.
+ */
+export function getTeachingBody(slug: string): Promise<TeachingBodyResponse> {
+  return get<TeachingBodyResponse>(
+    `/teachings/${encodeURIComponent(slug)}/body`,
+  );
+}
+
 // ----- Phase 9.3 — Lexicon (Session 163) -------------------------------
 //
 // Combined endpoint per S163 Q3 decision (single round-trip per word-tap).

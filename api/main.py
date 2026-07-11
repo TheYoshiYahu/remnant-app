@@ -202,6 +202,7 @@ from models import (
     VerseSearchResponse,
     VerseWord,
     VerseWordsResponse,
+    TeachingBodyResponse,
 )
 from subscriptions import router as subscriptions_router
 
@@ -4630,6 +4631,80 @@ async def get_compare_chapter(
             )
             for r in verse_rows
         ],
+    )
+
+
+# ----- Teachings — server-gated bodies (Session 421) ---------------------
+#
+# GET /v1/teachings/{slug}/body — JWT-required. A teaching's title + synopsis
+# stay client-side and free; the BODY of a PAID teaching is never shipped in
+# the client bundle. It lives in the `teaching_bodies` table and is served
+# ONLY to an entitled caller here. Entitlement is enforced SERVER-SIDE with the
+# exact machinery every paid route uses: user_tier(current_user) — which the
+# auth layer has already resolved DB-wins from the subscriptions table
+# (active/trialing only) — checked against the row's tier_required through the
+# schema's tier_satisfies() ladder (same as _require_tooling_tier / the label
+# PUT). 401 anonymous, 404 unknown slug, 403 authed-but-not-entitled (body
+# withheld), 200 with the body only when the tier is satisfied.
+
+
+@app.get("/v1/teachings/{slug}/body", response_model=TeachingBodyResponse)
+async def get_teaching_body(
+    slug: str,
+    current_user: User = Depends(get_current_user_required),
+) -> TeachingBodyResponse:
+    """Return a server-gated teaching body to an entitled, authenticated caller.
+
+    The body of a paid teaching never ships in the client bundle; this is the
+    only path that serves it, and it withholds the body from any caller whose
+    effective tier does not satisfy the teaching's ``tier_required``.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT slug, tier_required::text AS tier_required, body, "
+            "       closing, promos "
+            "  FROM teaching_bodies "
+            " WHERE slug = $1",
+            slug,
+        )
+        if row is None:
+            raise HTTPException(status_code=404, detail="Teaching not found.")
+
+        tier = user_tier(current_user)
+        tier_ok = await conn.fetchval(
+            "SELECT tier_satisfies($1::content_tier, $2::content_tier)",
+            tier,
+            row["tier_required"],
+        )
+        if not tier_ok:
+            # Authenticated but not entitled — the body is NEVER returned.
+            # Detail shape mirrors the other paid gates the PWA already parses.
+            raise HTTPException(
+                status_code=403,
+                detail={
+                    "tier_required": row["tier_required"],
+                    "feature": "teaching",
+                },
+            )
+
+    # closing / promos are JSONB. No jsonb codec is registered on the pool, so
+    # asyncpg returns them as JSON text — parse when present; null stays null.
+    closing_raw = row["closing"]
+    promos_raw = row["promos"]
+    closing = (
+        json.loads(closing_raw) if isinstance(closing_raw, str) else closing_raw
+    )
+    promos = (
+        json.loads(promos_raw) if isinstance(promos_raw, str) else promos_raw
+    )
+
+    return TeachingBodyResponse(
+        slug=row["slug"],
+        tier_required=row["tier_required"],
+        body=row["body"],
+        closing=closing,
+        promos=promos,
     )
 
 

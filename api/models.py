@@ -1634,3 +1634,43 @@ class CompareChapterResponse(BaseModel):
     chapter_count: int
     scope: Literal["verse", "chapter"]
     verses: List[CompareVerseRow]
+
+
+# ----- Teachings — server-gated bodies (Session 421) ---------------------
+#
+# The Teachings tab lists every teaching's title + synopsis client-side. A FREE
+# teaching ships its body inline; a PAID teaching's body is NEVER in the client
+# bundle — it lives in the `teaching_bodies` table and is served only to an
+# entitled, authenticated caller by GET /v1/teachings/{slug}/body. These models
+# mirror the client TeachingClosing / TeachingPromo shapes (content.ts).
+
+
+class TeachingClosingModel(BaseModel):
+    """An emphatic closing flourish appended after a teaching body."""
+
+    lead: str
+    finish: str
+
+
+class TeachingPromoModel(BaseModel):
+    """A book-cover promo linking out to a physical-goods product page."""
+
+    image: str
+    alt: str
+    href: str
+    caption: Optional[str] = None
+
+
+class TeachingBodyResponse(BaseModel):
+    """GET /v1/teachings/{slug}/body — the server-gated full teaching.
+
+    Returned only after the API confirms the caller's effective tier satisfies
+    the teaching's ``tier_required`` (same tier ladder every paid route uses).
+    A non-entitled caller receives 403 and never sees ``body``.
+    """
+
+    slug: str
+    tier_required: ContentTier
+    body: str
+    closing: Optional[TeachingClosingModel] = None
+    promos: Optional[List[TeachingPromoModel]] = None
