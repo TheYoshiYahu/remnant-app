@@ -141,6 +141,10 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
   // Anonymous / no JWT / error → free entitlement (the safe default).
   const [tier, setTier] = useState<PartnerTier | null>(null);
   const [status, setStatus] = useState<SubscriptionStatus>("none");
+  // current_period_end lets the gate honor a canceled-but-paid-through-period
+  // partner (annual cancel of auto-renew keeps the tier until the year ends),
+  // mirroring the server's _resolve_tier_from_db.
+  const [periodEnd, setPeriodEnd] = useState<string | null>(null);
   const [meChecked, setMeChecked] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
@@ -164,12 +168,14 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
         if (cancelled) return;
         setTier(me.tier ?? "free");
         setStatus(me.status);
+        setPeriodEnd(me.current_period_end ?? null);
         setMeChecked(true);
       })
       .catch(() => {
         if (cancelled) return;
         setTier("free");
         setStatus("none");
+        setPeriodEnd(null);
         setMeChecked(true);
       });
     return () => {
@@ -177,7 +183,7 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
     };
   }, []);
 
-  const entitled = canReadBody(teaching, tier, status);
+  const entitled = canReadBody(teaching, tier, status, periodEnd);
 
   // Fetch the gated body once, when an entitled reader reveals a teaching whose
   // body isn't inline. Guarded so it fires exactly once per detail view.

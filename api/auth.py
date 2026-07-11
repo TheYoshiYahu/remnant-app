@@ -271,7 +271,21 @@ async def _resolve_tier_from_db(wp_user_id_str: str) -> Optional[PartnerTier]:
                 "      SELECT s.tier::text "
                 "        FROM subscriptions s "
                 "       WHERE s.user_id = u.id "
-                "         AND s.status NOT IN ('canceled', 'unpaid', 'incomplete_expired') "
+                # A row grants its tier while it is a LIVE subscription
+                # (anything but the terminal statuses) OR — for a partner
+                # who canceled auto-renew — while the period they already
+                # PAID FOR has not yet ended. An annual partner who cancels
+                # keeps access until current_period_end; only then do they
+                # drop to free. 'unpaid'/'incomplete_expired' never get this
+                # window (no paid period to honor).
+                "         AND ( "
+                "               s.status NOT IN ('canceled', 'unpaid', 'incomplete_expired') "
+                "               OR ( "
+                "                    s.status = 'canceled' "
+                "                    AND s.current_period_end IS NOT NULL "
+                "                    AND s.current_period_end > now() "
+                "               ) "
+                "             ) "
                 "       ORDER BY s.started_at DESC "
                 "       LIMIT 1 "
                 "    ) AS tier "

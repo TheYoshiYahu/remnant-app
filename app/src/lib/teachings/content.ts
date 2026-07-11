@@ -150,16 +150,53 @@ export function prettyTier(tier: ContentTier): string {
 }
 
 /**
- * Effective content tier for a subscription snapshot: the partner's tier
- * counts only while the subscription is active or trialing; any other status
- * (none / past_due / canceled / …) falls back to free. Mirrors the reader
- * chrome's active-or-trialing check.
+ * The statuses the SERVER treats as "not a live subscription" — mirrors
+ * api/auth.py TERMINAL_SUBSCRIPTION_STATUSES, plus `none` (no row at all).
+ * Every OTHER status (active, trialing, past_due, incomplete) is a live row
+ * that keeps the partner on their tier. This is the exact set
+ * `_resolve_tier_from_db` excludes when it resolves the caller's tier, so the
+ * client reveal admits precisely who the server (and the extra-canonical books,
+ * which gate through the same `tier_satisfies` machinery) admits — no stricter.
+ *
+ * `canceled` is terminal for AUTO-RENEW but NOT for access: a partner who
+ * cancels an annual plan keeps the tier they PAID FOR until the paid period
+ * actually ends (`current_period_end`). `effectiveTier` restores that window;
+ * the server's `_resolve_tier_from_db` honors the same rule so the two agree.
+ */
+const TERMINAL_SUBSCRIPTION_STATUSES: SubscriptionStatus[] = [
+  "none",
+  "canceled",
+  "unpaid",
+  "incomplete_expired",
+];
+
+/**
+ * Effective content tier for a subscription snapshot. A partner on any LIVE
+ * (non-terminal) subscription keeps their tier; a terminal status or no row
+ * falls back to free. This mirrors the server's `_resolve_tier_from_db` exactly
+ * — the single tier-resolution the extra-canonical books, highlights, and
+ * reader chrome all gate on — so the teaching gate is neither looser nor
+ * stricter than every other gated surface. The server endpoint remains the
+ * final authority and still withholds the body from any non-entitled caller.
+ *
+ * The one nuance: a `canceled` subscription still owns its tier until the paid
+ * period ends. An annual partner who cancels auto-renew has already paid for
+ * the remainder of the year, so `currentPeriodEnd` (from /me) — while it is
+ * still in the future — keeps them on their tier. `unpaid` / `incomplete_expired`
+ * never get this window: there is no paid period to honor.
  */
 export function effectiveTier(
   tier: PartnerTier | null,
   status: SubscriptionStatus,
+  currentPeriodEnd?: string | null,
 ): PartnerTier {
-  if (status === "active" || status === "trialing") return tier ?? "free";
+  if (!TERMINAL_SUBSCRIPTION_STATUSES.includes(status)) return tier ?? "free";
+  // Canceled but still inside the paid period → the partner keeps what they
+  // paid for. Parse defensively: a missing/unparseable date fails closed.
+  if (status === "canceled" && currentPeriodEnd) {
+    const endMs = new Date(currentPeriodEnd).getTime();
+    if (!Number.isNaN(endMs) && endMs > Date.now()) return tier ?? "free";
+  }
   return "free";
 }
 
@@ -168,6 +205,7 @@ export function canReadBody(
   t: Teaching,
   tier: PartnerTier | null,
   status: SubscriptionStatus,
+  currentPeriodEnd?: string | null,
 ): boolean {
-  return tierOwns(effectiveTier(tier, status), t.tier_required);
+  return tierOwns(effectiveTier(tier, status, currentPeriodEnd), t.tier_required);
 }
