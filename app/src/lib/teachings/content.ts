@@ -99,18 +99,26 @@ export const TEACHINGS: Teaching[] = [
     },
   },
   {
-    // S421 — the first SERVER-GATED teaching. tier_required = "everything" (the
-    // paid top / partner tier), so the full body is NEVER shipped in the client
-    // bundle: `body` is intentionally empty here. The synopsis (free) ships
-    // inline as the hook; the detail view fetches the body from the server-
-    // gated endpoint GET /v1/teachings/{slug}/body only after the server
-    // confirms entitlement. A non-entitled reader sees LockedPartnerPrompt and
-    // the body never reaches them. See kingdom-gospel.ts + api.getTeachingBody.
+    // S421 — a SERVER-FETCHED teaching: `body` stays empty here and is fetched
+    // from GET /v1/teachings/{slug}/body, NOT inlined in the client bundle.
+    //
+    // S423 (launch hotfix) — tier_required lowered from "everything" to "free"
+    // so ANY signed-in account can open the full teaching, independent of tier.
+    // Member-tier recognition is currently broken, and gating this at the top
+    // of the strict chain locked existing members out; "free" makes canReadBody
+    // true for every reader so the "Dive deeper" reveal shows for everyone
+    // signed in. The body is STILL server-fetched (body:"" — never inlined),
+    // and the endpoint still requires a valid JWT, so this is "any signed-in
+    // ACCOUNT," not anonymous. The matching server row is opened in the same
+    // step by data-schema/migrations/session423_kingdom_gospel_open.sql
+    // (UPDATE teaching_bodies SET tier_required='free' WHERE slug='kingdom-gospel')
+    // so client reveal and server gate agree. See kingdom-gospel.ts +
+    // api.getTeachingBody.
     slug: "kingdom-gospel",
     title: "The True Kingdom Gospel — Not Taught in the Churches of Any Denomination",
     synopsis: KINGDOM_GOSPEL_SYNOPSIS,
     body: "",
-    tier_required: "everything",
+    tier_required: "free",
     order: 2,
   },
 ];
