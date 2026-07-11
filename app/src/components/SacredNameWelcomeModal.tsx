@@ -232,6 +232,19 @@ function SigninStep({
         >
           Create my free account
         </button>
+        {/* Landing log-in doorway -- a RETURNING partner should see a
+            direct sign-in path on this first screen instead of having to
+            enter the create-account flow to find it. Same /sign-in
+            destination as the primary CTA (that route surfaces both the
+            Log-In and Create-Account cards); reuses the existing
+            goToSignIn handler -- no new auth path. */}
+        <button
+          type="button"
+          onClick={onSignIn}
+          className="block w-full rounded-md border border-[var(--reader-text)] bg-transparent px-4 py-2.5 text-center text-sm font-medium text-[var(--reader-text)] hover:bg-[var(--reader-surface-elev)]"
+        >
+          Log in
+        </button>
         <button
           type="button"
           onClick={onSkip}
