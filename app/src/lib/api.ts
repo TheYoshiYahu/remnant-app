@@ -505,32 +505,77 @@ export interface CancelResponse {
 
 // ----- Fetch helpers -----------------------------------------------------
 
+/**
+ * Combine multiple AbortSignals into one that aborts as soon as any input
+ * does. Lets us layer a request timeout on top of a caller-supplied cancel
+ * signal without relying on AbortSignal.any (absent in older WebViews).
+ */
+function anySignal(signals: AbortSignal[]): AbortSignal {
+  const ctl = new AbortController();
+  const onAbort = () => {
+    ctl.abort();
+    for (const s of signals) s.removeEventListener("abort", onAbort);
+  };
+  for (const s of signals) {
+    if (s.aborted) {
+      onAbort();
+      break;
+    }
+    s.addEventListener("abort", onAbort);
+  }
+  return ctl.signal;
+}
+
 async function get<T>(
   path: string,
-  options?: { signal?: AbortSignal },
+  options?: { signal?: AbortSignal; timeoutMs?: number },
 ): Promise<T> {
   const headers: Record<string, string> = { Accept: "application/json" };
   const token = readAccessToken();
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
-  const res = await fetch(`${API_BASE}${path}`, {
-    headers,
-    // Include the rop_jwt cookie on cross-subdomain requests. The API
-    // accepts the cookie directly when no Authorization header is
-    // present; sending both is the belt-and-suspenders default so
-    // SSR/incognito/cookie-block edge cases still resolve cleanly.
-    credentials: "include",
-    // Session 125 (W6 Search V1 UI) — optional AbortSignal so the
-    // SearchModal can cancel in-flight requests when the partner types
-    // faster than the debounce window resolves. AbortError must be
-    // swallowed by the caller (not surfaced as a real error).
-    signal: options?.signal,
-  });
-  if (!res.ok) {
-    throw new Error(`API ${path} → ${res.status} ${res.statusText}`);
+  // Optional client-side timeout. A slow or hung server (e.g. one holding the
+  // connection open while its DB pool is starved) would otherwise leave the
+  // fetch promise PENDING forever, spinning a loader with no way out. When
+  // timeoutMs is set we abort after it elapses so the promise REJECTS and the
+  // caller's .catch surfaces the existing error state. Composed with any
+  // caller signal so SearchModal's debounce-cancel still works.
+  const timeoutMs = options?.timeoutMs;
+  const timeoutCtl =
+    timeoutMs != null && typeof AbortController !== "undefined"
+      ? new AbortController()
+      : null;
+  const timer =
+    timeoutCtl != null
+      ? setTimeout(() => timeoutCtl?.abort(), timeoutMs)
+      : null;
+  const signal = timeoutCtl
+    ? options?.signal
+      ? anySignal([options.signal, timeoutCtl.signal])
+      : timeoutCtl.signal
+    : options?.signal;
+  try {
+    const res = await fetch(`${API_BASE}${path}`, {
+      headers,
+      // Include the rop_jwt cookie on cross-subdomain requests. The API
+      // accepts the cookie directly when no Authorization header is
+      // present; sending both is the belt-and-suspenders default so
+      // SSR/incognito/cookie-block edge cases still resolve cleanly.
+      credentials: "include",
+      // Session 125 (W6 Search V1 UI) — optional AbortSignal so the
+      // SearchModal can cancel in-flight requests when the partner types
+      // faster than the debounce window resolves. AbortError must be
+      // swallowed by the caller (not surfaced as a real error).
+      signal,
+    });
+    if (!res.ok) {
+      throw new Error(`API ${path} → ${res.status} ${res.statusText}`);
+    }
+    return (await res.json()) as T;
+  } finally {
+    if (timer != null) clearTimeout(timer);
   }
-  return (await res.json()) as T;
 }
 
 async function post<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
@@ -1572,6 +1617,9 @@ export interface TeachingBodyResponse {
 export function getTeachingBody(slug: string): Promise<TeachingBodyResponse> {
   return get<TeachingBodyResponse>(
     `/teachings/${encodeURIComponent(slug)}/body`,
+    // 15s guard so a stalled server degrades to the "couldn't be loaded…"
+    // retry state instead of spinning "Opening the full teaching…" forever.
+    { timeoutMs: 15000 },
   );
 }
 

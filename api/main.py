@@ -4660,7 +4660,13 @@ async def get_teaching_body(
     effective tier does not satisfy the teaching's ``tier_required``.
     """
     pool = get_pool()
-    async with pool.acquire() as conn:
+    # Bound connection acquisition. asyncpg's command_timeout caps a query
+    # once a connection is HELD, but pool.acquire() itself waits forever by
+    # default — if every pooled connection is checked out (pool starvation),
+    # the caller hangs indefinitely and the reader sees "Opening the full
+    # teaching…" spin forever. A bounded acquire turns starvation into a fast
+    # 500 the client's error path can surface instead of an unbounded hang.
+    async with pool.acquire(timeout=10) as conn:
         row = await conn.fetchrow(
             "SELECT slug, tier_required::text AS tier_required, body, "
             "       closing, promos "
