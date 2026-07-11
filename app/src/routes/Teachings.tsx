@@ -37,6 +37,7 @@ import {
 import { renderTeachingBody } from "../lib/teachings/render";
 import { renderItalicSpans } from "../lib/markdown";
 import { openExternal } from "../lib/external-link";
+import { loadStoredNativeToken } from "../lib/native-auth";
 import LockedPartnerPrompt from "../components/LockedPartnerPrompt";
 import {
   getSubscriptionMe,
@@ -163,21 +164,35 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
 
   useEffect(() => {
     let cancelled = false;
-    getSubscriptionMe()
-      .then((me) => {
-        if (cancelled) return;
-        setTier(me.tier ?? "free");
-        setStatus(me.status);
-        setPeriodEnd(me.current_period_end ?? null);
-        setMeChecked(true);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setTier("free");
-        setStatus("none");
-        setPeriodEnd(null);
-        setMeChecked(true);
-      });
+    // S178 pattern (the bug that locked entitled partners on native): on the
+    // native shell the JWT lives in Capacitor Preferences and is loaded
+    // ASYNCHRONOUSLY into the in-memory cache at app init. If the /me
+    // entitlement check fires before that load completes, it goes out
+    // ANONYMOUS → the API returns free → canReadBody is false → the teaching
+    // shows the paywall lock even for an "everything" partner. Awaiting
+    // loadStoredNativeToken() first hydrates the Bearer token, exactly as the
+    // reader chrome (App.tsx S178) and the book list (S200) already do. On web
+    // it resolves immediately with null (the cookie path is synchronous and
+    // unaffected). loadStoredNativeToken is idempotent — this awaits the same
+    // Preferences read App mount already kicked off, not a second one.
+    void loadStoredNativeToken().then(() => {
+      if (cancelled) return;
+      getSubscriptionMe()
+        .then((me) => {
+          if (cancelled) return;
+          setTier(me.tier ?? "free");
+          setStatus(me.status);
+          setPeriodEnd(me.current_period_end ?? null);
+          setMeChecked(true);
+        })
+        .catch(() => {
+          if (cancelled) return;
+          setTier("free");
+          setStatus("none");
+          setPeriodEnd(null);
+          setMeChecked(true);
+        });
+    });
     return () => {
       cancelled = true;
     };
