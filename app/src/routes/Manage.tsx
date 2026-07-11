@@ -255,6 +255,42 @@ export default function Manage() {
     );
   }
 
+  // ---- Render: website-managed membership --------------------------------
+  // A partner recognized as a paid member via the WordPress SSO source but
+  // holding NO app Stripe subscription. The API surfaces this as status
+  // "active" with a null locked_price_cents (a real Stripe row is NOT NULL
+  // there — see /v1/subscriptions/me). There is nothing to cancel in-app;
+  // their membership is managed on the website. Show a read-only summary and
+  // the manage-on-website line instead of the Stripe cancel surface (which
+  // would hit a 404 with no row to modify).
+  if (view.sub.status === "active" && view.sub.locked_price_cents == null) {
+    const membershipLabel = view.sub.tier
+      ? TIER_LABELS[view.sub.tier] ?? view.sub.tier
+      : "Partner";
+    return (
+      <PageShell title="Manage account">
+        <div className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
+          <div className="flex items-baseline justify-between">
+            <h2 className="text-lg font-semibold text-[var(--reader-text)]">
+              {membershipLabel}
+            </h2>
+            <span className="text-xs text-[var(--reader-muted)]">Active</span>
+          </div>
+          <p className="mt-3 text-base text-[var(--reader-muted)]">
+            Your membership is active — full access is unlocked on this
+            account.
+          </p>
+        </div>
+        <p className="mb-4 text-base text-[var(--reader-text)]">
+          {isNativeShell()
+            ? NATIVE_MANAGE_LINE
+            : "Your membership is managed on the website. Visit remnantofpromise.org to make changes."}
+        </p>
+        <DeleteAccountSection />
+      </PageShell>
+    );
+  }
+
   // ---- Render: active partnership (the main surface) ---------------------
   const sub = view.sub;
   const tierLabel = sub.tier ? TIER_LABELS[sub.tier] ?? sub.tier : "—";

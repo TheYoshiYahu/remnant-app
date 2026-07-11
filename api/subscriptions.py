@@ -1020,6 +1020,27 @@ async def get_my_subscription(
                         tier=TRIAL_TIER,
                         current_period_end=trial["trial_end"].isoformat(),
                     )
+            # Website-managed membership. No app Stripe subscription row and
+            # not inside the trial window — but the trusted WP SSO source
+            # asserts a paid membership tier, which auth.get_current_user_*
+            # has already folded into current_user.partner_tier via the
+            # membership floor (auth._reconcile_membership_tier). Surface it
+            # as an active membership so the WHOLE client (App-boot tier,
+            # offline downloads, content-cache scoping, Teachings gate) reads
+            # the same entitlement the server actually grants, instead of
+            # reporting a real member as 'free' and nagging them to subscribe.
+            #
+            # locked_price_cents and cadence stay NULL: this membership is
+            # managed on the website (Stripe rows are NOT NULL on
+            # locked_price_cents), which is the signal the Manage surface uses
+            # to route to website management rather than an in-app cancel that
+            # has no Stripe row to act on. Genuine free users carry
+            # partner_tier='free', so they fall through to status='none'.
+            if current_user.partner_tier != "free":
+                return SubscriptionMeResponse(
+                    status="active",
+                    tier=current_user.partner_tier,
+                )
             return SubscriptionMeResponse(status="none")
 
     return SubscriptionMeResponse(

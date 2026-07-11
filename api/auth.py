@@ -355,6 +355,55 @@ async def has_active_paid_subscription(wp_user_id: int) -> bool:
     return row is not None
 
 
+def _reconcile_membership_tier(
+    jwt_tier: PartnerTier, db_tier: PartnerTier
+) -> PartnerTier:
+    """Fold the request-validated WP/JWT membership claim into the DB tier.
+
+    Background — the S114 "DB-wins-over-JWT" rule was introduced to stop a
+    *stale, over-claiming JWT* from beating the ``subscriptions`` table: a
+    partner whose Stripe sub was canceled/downgraded still carried an old
+    ``partner_tier`` in their week-long cookie, and we must serve the DB's
+    canonical (lower) tier for them. That protection matters precisely when
+    the DB *asserts* something about the partner — an active/trialing row.
+
+    But there is a second population the original rule silently harmed:
+    people who are **already members on the WordPress side** (many predate
+    this app) and have **no ``subscriptions`` row at all** because they never
+    ran the app's own Stripe checkout. For them ``_resolve_tier_from_db``
+    finds no active row and, once their no-card trial window lapses, returns
+    ``'free'`` — locking them out of the paid content their membership
+    entitles them to, even though the trusted WP SSO source asserted their
+    tier in the JWT this very request.
+
+    The fix distinguishes "DB asserts a tier" from "DB is silent":
+
+      * ``db_tier`` is a PAID tier (an active subscription OR the in-window
+        no-card trial, which ``_resolve_tier_from_db`` returns as
+        ``TRIAL_TIER``) → the DB/trial wins outright and the JWT is ignored.
+        A stale over-claiming JWT can NEVER beat a live DB row — S114's
+        anti-drift guarantee is preserved exactly.
+
+      * ``db_tier`` is ``'free'`` → the DB is SILENT: no active row and not
+        inside the trial window (also the brief pre-seed window). Here the
+        request-time-validated JWT ``partner_tier`` is the best available
+        truth for whether this WordPress user is a member and at what tier,
+        so we honor it. Genuine free users carry ``partner_tier='free'`` in
+        their token, so this grants them nothing — no over-grant.
+
+    The one residual trade-off is bounded and acceptable: a member whose WP
+    membership is revoked keeps access until their ``rop_jwt`` cookie
+    refreshes with the lower tier (≤ the 7-day cookie lifetime, sooner on
+    any WP login / admin visit — see rop-sso-bridge.php). This is the
+    standard token-freshness window and only applies to WP-native
+    memberships; Stripe cancellations still flip instantly because they
+    write a DB row that takes the DB-wins branch above.
+    """
+    if db_tier == "free":
+        return jwt_tier
+    return db_tier
+
+
 async def get_current_user_optional(
     rop_jwt: Optional[str] = Cookie(default=None, alias=SSO_COOKIE_NAME),
     authorization: Optional[str] = Header(default=None),
@@ -407,13 +456,20 @@ async def get_current_user_optional(
             "[auth] user-seed upsert failed id=%s err=%s", user.id, exc
         )
 
-    # DB-wins tier resolution. On lookup success, the DB value
-    # overrides the JWT claim. On transient failure (None return),
-    # the JWT claim stays — partner keeps whatever access the cookie
-    # bought them rather than getting kicked to free.
+    # Tier resolution. On lookup success, reconcile the DB result with the
+    # JWT membership claim via _reconcile_membership_tier: an active/trialing
+    # DB tier wins outright (DB-wins / anti-stale preserved), but when the DB
+    # is silent (no active row, not in trial → 'free') the request-validated
+    # WP/JWT membership tier is honored so WordPress-side members who never
+    # ran the app's Stripe checkout are recognized instead of dropped to
+    # free. On transient DB failure (None return) the JWT claim stays —
+    # partner keeps whatever access the cookie bought them rather than
+    # getting kicked to free.
     db_tier = await _resolve_tier_from_db(user.id)
-    if db_tier is not None and db_tier != user.partner_tier:
-        user = user.model_copy(update={"partner_tier": db_tier})
+    if db_tier is not None:
+        effective_tier = _reconcile_membership_tier(user.partner_tier, db_tier)
+        if effective_tier != user.partner_tier:
+            user = user.model_copy(update={"partner_tier": effective_tier})
 
     return user
 
