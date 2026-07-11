@@ -417,7 +417,13 @@ export interface CreateHighlightRequest {
 
 export interface HighlightLabel {
   color: HighlightColor;
+  /** S422 — labels are keyed by (color, style); each style of a color
+   *  carries its own independent meaning. */
+  style: MarkStyle;
   label: string;
+  /** Tier needed to APPLY this (color, style) mark — the higher of the
+   *  color's and the style's unlock tier (free only for neon_yellow ·
+   *  fill). */
   tier_required: ContentTier;
 }
 
@@ -427,6 +433,8 @@ export interface HighlightLabelsResponse {
 
 export interface UpdateHighlightLabelEntry {
   color: HighlightColor;
+  /** S422 — the mark style this label applies to. */
+  style: MarkStyle;
   label: string;
 }
 

@@ -101,6 +101,12 @@ const STYLE_DISPLAY: Record<MarkStyle, string> = {
   outline: "Outline",
 };
 
+/** S422 — composite key for a per-(color × style) label lookup. Must
+ *  match the key HighlightPicker and study-export use. */
+function markKey(color: HighlightColor, style: MarkStyle): string {
+  return `${color}::${style}`;
+}
+
 // ----- unified row model ----------------------------------------------------
 
 type StudyItem =
@@ -220,10 +226,13 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
     return m;
   }, [books]);
 
-  const colorLabels = useMemo(() => {
+  // S422 — labels are keyed by (color, style); a color no longer has a
+  // single meaning. markKey joins the two into the map key used
+  // everywhere the marking vocabulary surfaces a label.
+  const markLabels = useMemo(() => {
     const m: Record<string, string> = {};
     for (const l of data?.labels ?? []) {
-      if (l.label) m[l.color] = l.label;
+      if (l.label) m[markKey(l.color, l.style)] = l.label;
     }
     return m;
   }, [data]);
@@ -288,14 +297,14 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
         }
         if (i.kind === "highlight") {
           hay.push(COLOR_DISPLAY[i.entry.color], i.entry.style);
-          const label = colorLabels[i.entry.color];
+          const label = markLabels[markKey(i.entry.color, i.entry.style)];
           if (label) hay.push(label);
         }
         return hay.some((s) => s.toLowerCase().includes(q));
       });
     }
     return items;
-  }, [allItems, tab, activeCollection, colorFilter, query, colorLabels]);
+  }, [allItems, tab, activeCollection, colorFilter, query, markLabels]);
 
   // ----- grouping -----
 
@@ -321,7 +330,9 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
         (c) => ({
           key: `color-${c}`,
           heading: COLOR_DISPLAY[c],
-          headingMeta: colorLabels[c] ? `“${colorLabels[c]}”` : undefined,
+          // S422 — a color no longer has ONE label; the per-style label
+          // is surfaced at the style sub-group header and on each card.
+          headingMeta: undefined,
           items: byColor.get(c) as StudyItem[],
         }),
       );
@@ -409,7 +420,7 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
       });
     }
     return out;
-  }, [visibleItems, tab, groupMode, colorLabels, bookOrder]);
+  }, [visibleItems, tab, groupMode, bookOrder]);
 
   // ----- actions -----
 
@@ -496,7 +507,7 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
     const md = buildStudyMarkdown(data, {
       collection: activeCollection,
       bookOrder,
-      colorLabels,
+      markLabels,
     });
     const stamp = new Date().toISOString().slice(0, 10);
     downloadMarkdown(md, `my-study-${stamp}.md`);
@@ -508,7 +519,7 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
     openStudyPrintView(data, {
       collection: activeCollection,
       bookOrder,
-      colorLabels,
+      markLabels,
     });
     setExportOpen(false);
   }
@@ -639,8 +650,8 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
             <span>
               {COLOR_DISPLAY[it.entry.color].toLowerCase()} ·{" "}
               {it.entry.style}
-              {colorLabels[it.entry.color]
-                ? ` — “${colorLabels[it.entry.color]}”`
+              {markLabels[markKey(it.entry.color, it.entry.style)]
+                ? ` — “${markLabels[markKey(it.entry.color, it.entry.style)]}”`
                 : ""}
             </span>
           </div>
@@ -762,6 +773,13 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
               <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-[var(--reader-muted)]">
                 {STYLE_DISPLAY[s]}
               </span>
+              {/* S422 — the per-(color × style) label sits on the style
+                  sub-group header, since a color no longer has one label. */}
+              {markLabels[markKey(color, s)] && (
+                <span className="font-sans text-[10px] font-semibold text-[var(--reader-accent)]">
+                  “{markLabels[markKey(color, s)]}”
+                </span>
+              )}
               <span className="font-sans text-[10px] text-[var(--reader-muted)]">
                 {(byStyle.get(s) as StudyItem[]).length}
               </span>
@@ -889,10 +907,7 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
                 onClick={() => setColorFilter(null)}
                 className="shrink-0 font-sans text-[11px] font-semibold text-[var(--reader-accent)]"
               >
-                {COLOR_DISPLAY[colorFilter].toLowerCase()}
-                {colorLabels[colorFilter]
-                  ? ` — “${colorLabels[colorFilter]}”`
-                  : ""}{" "}
+                {COLOR_DISPLAY[colorFilter].toLowerCase()}{" "}
                 ✕
               </button>
             )}

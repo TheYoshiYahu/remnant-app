@@ -45,8 +45,9 @@ export interface ExportOptions {
   /** slug → canonical_order, for canonical book ordering. Books
    *  missing from the map sort after mapped ones, alphabetically. */
   bookOrder?: Record<string, number>;
-  /** Partner's color labels (color → label) for highlight captions. */
-  colorLabels?: Record<string, string>;
+  /** Partner's mark labels for highlight captions, keyed by
+   *  `${color}::${style}` (S422 — a label is per color AND mark style). */
+  markLabels?: Record<string, string>;
 }
 
 function itemTags(it: ExportItem): string[] {
@@ -161,10 +162,11 @@ const COLOR_DISPLAY: Record<string, string> = {
 
 function highlightCaption(
   h: StudyHighlightEntry,
-  colorLabels?: Record<string, string>,
+  markLabels?: Record<string, string>,
 ): string {
   const color = COLOR_DISPLAY[h.color] ?? h.color;
-  const label = colorLabels?.[h.color];
+  // S422 — the label is per (color, style); look it up by the composite key.
+  const label = markLabels?.[`${h.color}::${h.style}`];
   return label
     ? `Highlighted ${color} (${h.style}) — “${label}”`
     : `Highlighted ${color} (${h.style})`;
@@ -233,7 +235,7 @@ export function buildStudyMarkdown(
       } else {
         const h = it.entry;
         lines.push(
-          `### ${refStr} — ${highlightCaption(h, opts.colorLabels)} (${fmtDate(h.created_at)})`,
+          `### ${refStr} — ${highlightCaption(h, opts.markLabels)} (${fmtDate(h.created_at)})`,
         );
         lines.push("");
         lines.push(`> *${h.verse_text}* (${refStr})`);
@@ -331,7 +333,7 @@ export function buildStudyPrintHtml(
       } else {
         const h = it.entry;
         parts.push(
-          `<h3>${esc(refStr)} — ${esc(highlightCaption(h, opts.colorLabels))} <span class="when">${esc(fmtDate(h.created_at))}</span></h3>`,
+          `<h3>${esc(refStr)} — ${esc(highlightCaption(h, opts.markLabels))} <span class="when">${esc(fmtDate(h.created_at))}</span></h3>`,
         );
         parts.push(verseBlock(h.verse_text, refStr));
       }

@@ -470,16 +470,23 @@ class CreateHighlightRequest(BaseModel):
 
 
 class HighlightLabel(BaseModel):
-    """One color's partner-assigned label.
+    """One (color, style) mark configuration's partner-assigned label.
 
-    ``label`` is empty string when the partner has not assigned a
-    meaning to this color yet. ``tier_required`` is the tier needed
-    to APPLY this color to a verse — separate from the tier needed
-    to label it ($1.99-and-above for label writes; reads work at
-    every tier so the PWA can render the dictionary surface).
+    Since S422 a label is keyed by (color, style), not color alone: the
+    same color carries an independent meaning per mark style (yellow fill
+    vs yellow underline vs yellow outline). ``label`` is empty string
+    when the partner has not assigned a meaning to this slot yet.
+
+    ``tier_required`` is the tier needed to APPLY this (color, style)
+    combination to a verse — the higher of the color's and the style's
+    unlock tier (free only for neon_yellow · fill; study_notes for every
+    other slot). Separate from the tier needed to LABEL it
+    ($1.99-and-above for label writes; reads work at every tier so the
+    PWA can render the dictionary surface).
     """
 
     color: HighlightColor
+    style: MarkStyle
     label: str
     tier_required: ContentTier
 
@@ -497,13 +504,18 @@ class HighlightLabelsResponse(BaseModel):
 
 
 class UpdateHighlightLabelEntry(BaseModel):
-    """One (color, label) pair in the PUT /v1/highlights/labels body.
+    """One (color, style, label) triple in the PUT /v1/highlights/labels
+    body.
 
-    Empty / whitespace ``label`` clears the partner's label for that
-    color (deletes the row); non-empty ``label`` upserts.
+    Since S422 an entry targets a specific (color, style) slot. ``style``
+    is validated to the three mark styles by the ``MarkStyle`` literal
+    (an invalid style yields a 422 before the handler runs). Empty /
+    whitespace ``label`` clears the partner's label for that (color,
+    style) slot (deletes the row); non-empty ``label`` upserts.
     """
 
     color: HighlightColor
+    style: MarkStyle
     label: str
 
 

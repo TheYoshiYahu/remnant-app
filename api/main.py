@@ -1347,6 +1347,25 @@ _PALETTE_TIER_REQUIRED: dict[str, str] = {
 _FREE_STYLES: frozenset[str] = frozenset({"fill"})
 _PAID_STYLES: frozenset[str] = frozenset({"fill", "underline", "outline"})
 
+# Canonical style render order for the labels dictionary (S422). The
+# /v1/highlights/labels response expands each palette color across these
+# three styles in this order, so every color yields a fill / underline /
+# outline slot.
+_MARK_STYLE_ORDER: tuple[str, ...] = ("fill", "underline", "outline")
+
+
+def _label_tier_required(color: str, style: str) -> str:
+    """Tier needed to APPLY a (color, style) mark to a verse (S422).
+
+    The effective unlock is the higher of the color's and the style's
+    required tier on the strict lattice (free < study_notes < …). Only
+    neon_yellow · fill is free; every other (color, style) slot needs
+    study_notes-and-above.
+    """
+    if _PALETTE_TIER_REQUIRED[color] == "free" and style in _FREE_STYLES:
+        return "free"
+    return "study_notes"
+
 
 def _allowed_colors_for_tier(tier: str) -> frozenset[str]:
     """Return the colors a caller at ``tier`` may apply to a verse.
@@ -1373,26 +1392,33 @@ def _allowed_styles_for_tier(tier: str) -> frozenset[str]:
 async def _build_labels_response(
     conn, user_uuid: str
 ) -> HighlightLabelsResponse:
-    """Build the labels response — one entry per palette color, with the
-    partner's assigned label (empty string when unset, per the V1 design:
-    no framework defaults are preloaded; tribe + gemstone symbolic mapping
-    is open as a V2 enrichment per DESIGN_LANGUAGE.md §6)."""
+    """Build the labels response — one entry per (color, style) slot
+    (S422), with the partner's assigned label (empty string when unset,
+    per the V1 design: no framework defaults are preloaded; tribe +
+    gemstone symbolic mapping is open as a V2 enrichment per
+    DESIGN_LANGUAGE.md §6).
+
+    Every palette color is expanded across the three mark styles in
+    PALETTE_ORDER × _MARK_STYLE_ORDER, so the partner sees a labelable
+    slot for each (color, style) combination the tier gate exposes."""
     rows = await conn.fetch(
-        "SELECT color, label "
+        "SELECT color, style, label "
         "  FROM user_highlight_labels "
         " WHERE user_id = $1::uuid",
         user_uuid,
     )
-    custom = {r["color"]: r["label"] for r in rows}
+    custom = {(r["color"], r["style"]): r["label"] for r in rows}
     labels: list[HighlightLabel] = []
     for color in PALETTE_ORDER:
-        labels.append(
-            HighlightLabel(
-                color=color,  # type: ignore[arg-type]
-                label=custom.get(color, ""),
-                tier_required=_PALETTE_TIER_REQUIRED[color],  # type: ignore[arg-type]
+        for style in _MARK_STYLE_ORDER:
+            labels.append(
+                HighlightLabel(
+                    color=color,  # type: ignore[arg-type]
+                    style=style,  # type: ignore[arg-type]
+                    label=custom.get((color, style), ""),
+                    tier_required=_label_tier_required(color, style),  # type: ignore[arg-type]
+                )
             )
-        )
     return HighlightLabelsResponse(labels=labels)
 
 
@@ -1531,12 +1557,13 @@ async def create_or_replace_highlight(
 async def get_highlight_labels(
     current_user: User = Depends(get_current_user_required),
 ) -> HighlightLabelsResponse:
-    """Return the partner's effective labels for the six palette colors.
+    """Return the partner's effective labels for every (color, style)
+    slot (S422).
 
-    Order matches ``PALETTE_ORDER``. Every color appears exactly once
-    in the response; ``is_custom=False`` means the label is the
-    framework default, ``is_custom=True`` means the partner has
-    overridden it.
+    Order matches ``PALETTE_ORDER`` × ``_MARK_STYLE_ORDER`` — each
+    palette color expanded across fill / underline / outline. Every
+    (color, style) slot appears exactly once; ``label`` is the partner's
+    assigned meaning, empty string when unset.
     """
     pool = get_pool()
     async with pool.acquire() as conn:
@@ -1585,18 +1612,22 @@ async def update_highlight_labels(
                 if not trimmed:
                     await conn.execute(
                         "DELETE FROM user_highlight_labels "
-                        " WHERE user_id = $1::uuid AND color = $2",
+                        " WHERE user_id = $1::uuid AND color = $2 "
+                        "   AND style = $3",
                         user_uuid,
                         entry.color,
+                        entry.style,
                     )
                 else:
                     await conn.execute(
-                        "INSERT INTO user_highlight_labels (user_id, color, label) "
-                        "VALUES ($1::uuid, $2, $3) "
-                        "ON CONFLICT (user_id, color) DO UPDATE "
+                        "INSERT INTO user_highlight_labels "
+                        "    (user_id, color, style, label) "
+                        "VALUES ($1::uuid, $2, $3, $4) "
+                        "ON CONFLICT (user_id, color, style) DO UPDATE "
                         "  SET label = EXCLUDED.label, updated_at = now()",
                         user_uuid,
                         entry.color,
+                        entry.style,
                         trimmed,
                     )
         return await _build_labels_response(conn, user_uuid)

@@ -107,6 +107,23 @@ function prettyStyle(style: MarkStyle): string {
   return style; // 'fill' | 'underline' | 'outline' — already reader-friendly
 }
 
+/** Title-case style name for the label editor ("Fill" / "Underline"). */
+function styleTitle(style: MarkStyle): string {
+  return style.charAt(0).toUpperCase() + style.slice(1);
+}
+
+/** Friendly color name for the label editor: 'sky_blue' → 'Sky blue'. */
+function prettyColor(color: HighlightColor): string {
+  const spaced = color.replace(/_/g, " ");
+  return spaced.charAt(0).toUpperCase() + spaced.slice(1);
+}
+
+/** S422 — labels are keyed by (color, style). This composite key is the
+ *  key into the label-draft map and the lookup into the labels array. */
+function markKey(color: HighlightColor, style: MarkStyle): string {
+  return `${color}::${style}`;
+}
+
 export default function HighlightPicker({
   verseId,
   current,
@@ -135,9 +152,9 @@ export default function HighlightPicker({
   const [selectedStyle, setSelectedStyle] = useState<MarkStyle>("fill");
   const [labels, setLabels] = useState<HighlightLabel[]>([]);
   const [editingLabels, setEditingLabels] = useState<boolean>(false);
-  const [labelDraft, setLabelDraft] = useState<Record<HighlightColor, string>>(
-    {} as Record<HighlightColor, string>
-  );
+  // S422 — draft keyed by markKey(color, style); each (color, style) slot
+  // carries its own label.
+  const [labelDraft, setLabelDraft] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState<boolean>(false);
 
@@ -159,11 +176,12 @@ export default function HighlightPicker({
     };
   }, []);
 
-  // When entering edit mode, seed the draft from current labels.
+  // When entering edit mode, seed the draft from current labels, keyed
+  // by (color, style) per S422.
   useEffect(() => {
     if (!editingLabels) return;
-    const draft = {} as Record<HighlightColor, string>;
-    for (const l of labels) draft[l.color] = l.label;
+    const draft: Record<string, string> = {};
+    for (const l of labels) draft[markKey(l.color, l.style)] = l.label;
     setLabelDraft(draft);
   }, [editingLabels, labels]);
 
@@ -178,8 +196,9 @@ export default function HighlightPicker({
     return !paid;
   }
 
-  function labelFor(color: HighlightColor): string {
-    const found = labels.find((l) => l.color === color);
+  /** S422 — the partner's label for a specific (color, style) slot. */
+  function labelFor(color: HighlightColor, style: MarkStyle): string {
+    const found = labels.find((l) => l.color === color && l.style === style);
     return found?.label ?? "";
   }
 
@@ -288,10 +307,16 @@ export default function HighlightPicker({
     setError(null);
     setSaving(true);
     try {
-      const entries = Object.entries(labelDraft).map(([color, label]) => ({
-        color: color as HighlightColor,
-        label,
-      }));
+      // S422 — each draft key is markKey(color, style); split it back
+      // into the (color, style, label) triple the API expects.
+      const entries = Object.entries(labelDraft).map(([key, label]) => {
+        const [color, style] = key.split("::");
+        return {
+          color: color as HighlightColor,
+          style: style as MarkStyle,
+          label,
+        };
+      });
       const r = await updateHighlightLabels({ labels: entries });
       setLabels(r.labels);
       setEditingLabels(false);
@@ -325,24 +350,66 @@ export default function HighlightPicker({
             </button>
           </div>
           <p className="mb-3 text-base text-[var(--reader-muted)]">
-            Assign your own meaning to each color. Leave blank to clear.
+            Assign your own meaning to each color <em>and</em> mark style.
+            Yellow underline can mean something different from yellow
+            outline. Leave a field blank to clear it.
           </p>
-          <div className="space-y-2">
+          {/* S422 — grouped by color; the three mark styles (fill /
+              underline / outline) sit under each color as separate label
+              slots. Locked (color × style) slots render disabled with the
+              unlock hint (a caller only reaches this editor when paid, so
+              in practice nothing is locked here, but the gate is honored
+              so the surface can never edit a slot the tier can't apply). */}
+          <div className="space-y-4">
             {HIGHLIGHT_PALETTE_ORDER.map((color) => (
-              <div key={color} className="flex items-center gap-2">
-                <span
-                  className="swatch"
-                  style={{ backgroundColor: HIGHLIGHT_HEX[color] }}
-                />
-                <input
-                  type="text"
-                  value={labelDraft[color] ?? ""}
-                  onChange={(e) =>
-                    setLabelDraft({ ...labelDraft, [color]: e.target.value })
-                  }
-                  placeholder="Add a meaning…"
-                  className="flex-1 rounded border border-[var(--reader-rule)] px-2 py-1 text-sm"
-                />
+              <div key={color}>
+                <div className="mb-1.5 flex items-center gap-2">
+                  <span
+                    className="swatch"
+                    style={{ backgroundColor: HIGHLIGHT_HEX[color] }}
+                  />
+                  <span className="text-sm font-semibold text-[var(--reader-text)]">
+                    {prettyColor(color)}
+                  </span>
+                </div>
+                <div className="ml-6 space-y-1.5">
+                  {MARK_STYLES.map((style) => {
+                    const locked =
+                      colorIsLocked(color) || styleIsLocked(style);
+                    const key = markKey(color, style);
+                    return (
+                      <div key={style} className="flex items-center gap-2">
+                        <label
+                          htmlFor={`lbl-${key}`}
+                          className="w-20 shrink-0 text-xs font-medium text-[var(--reader-muted)]"
+                        >
+                          {styleTitle(style)}
+                          {locked && " 🔒"}
+                        </label>
+                        <input
+                          id={`lbl-${key}`}
+                          type="text"
+                          disabled={locked}
+                          value={labelDraft[key] ?? ""}
+                          onChange={(e) =>
+                            setLabelDraft({
+                              ...labelDraft,
+                              [key]: e.target.value,
+                            })
+                          }
+                          placeholder={
+                            locked
+                              ? "Unlock in Study Notes tier"
+                              : `Meaning for ${prettyColor(
+                                  color
+                                ).toLowerCase()} ${style}…`
+                          }
+                          className="flex-1 rounded border border-[var(--reader-rule)] px-2 py-1 text-sm disabled:opacity-50"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             ))}
           </div>
@@ -459,7 +526,11 @@ export default function HighlightPicker({
               <span
                 key={mark.id}
                 className="inline-flex items-center gap-1.5 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-xs"
-                title={`${mark.color} — ${prettyStyle(mark.style)}`}
+                title={
+                  labelFor(mark.color, mark.style)
+                    ? `${prettyColor(mark.color)} · ${styleTitle(mark.style)} — ${labelFor(mark.color, mark.style)}`
+                    : `${prettyColor(mark.color)} · ${styleTitle(mark.style)}`
+                }
               >
                 <span
                   className="inline-block h-3 w-3 rounded-full border border-[var(--reader-rule)]"
@@ -538,7 +609,9 @@ export default function HighlightPicker({
               {HIGHLIGHT_PALETTE_ORDER.map((color) => {
                 const locked = colorIsLocked(color);
                 const selected = color === selectedColor;
-                const labelText = labelFor(color);
+                // S422 — surface the label for THIS color at the currently
+                // selected style (the mark about to be applied).
+                const labelText = labelFor(color, selectedStyle);
                 return (
                   <button
                     key={color}
@@ -576,10 +649,11 @@ export default function HighlightPicker({
               })}
             </div>
 
-            {/* Label for the currently selected color, if set */}
-            {labelFor(selectedColor) && (
+            {/* Label for the currently selected (color, style) slot, if set */}
+            {labelFor(selectedColor, selectedStyle) && (
               <p className="mb-3 text-xs italic text-[var(--reader-muted)]">
-                {labelFor(selectedColor)}
+                {prettyColor(selectedColor)} · {styleTitle(selectedStyle)} —{" "}
+                {labelFor(selectedColor, selectedStyle)}
               </p>
             )}
           </>
