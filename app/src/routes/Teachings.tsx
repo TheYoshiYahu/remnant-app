@@ -11,18 +11,13 @@
  * compliance posture, carries NO checkout or pricing link (informational only).
  *
  * S354. A teaching may end with an emphatic `closing` flourish (metallic accent)
- * and one or more `promos` book covers that link out to the PRINT edition. A
- * printed book is physical goods, which Apple/Google permit outbound purchase
- * links for at no commission — so the covers are REAL clickable external links
- * (openExternal), distinct from the non-clickable digital-subscription lines.
- *
- * S355. The LIST closes with "The Library": a shelf of the print series
- * (LIBRARY_BOOKS). Physical books, so the outbound Amazon links are compliant
- * and commission-free; free-for-all (visible to everyone, no gating), with no
- * pricing/buy/cart steering — just tappable covers.
+ * and a `promo` book cover that links out to the PRINT edition. A printed book
+ * is physical goods, which Apple/Google permit outbound purchase links for at
+ * no commission — so the cover is a REAL clickable external link (openExternal),
+ * distinct from the non-clickable digital-subscription lines.
  *
  * The first teaching ("The Seed of Promise and a Remnant") is tier_required =
- * "free", so every reader gets its full body, closing, and covers. The gate is
+ * "free", so every reader gets its full body, closing, and cover. The gate is
  * exercised all the same, ready for a future partner-gated teaching.
  *
  * Navigation matches the rest of the app: plain <a href> doorways (no client
@@ -35,7 +30,6 @@ import {
   listTeachings,
   prettyTier,
   teachingBySlug,
-  LIBRARY_BOOKS,
   type Teaching,
   type TeachingClosing,
   type TeachingPromo,
@@ -123,8 +117,6 @@ function TeachingList() {
           </a>
         ))}
       </div>
-
-      <LibraryShelf />
     </Shell>
   );
 }
@@ -136,53 +128,6 @@ function firstLine(md: string): string {
     .map((l) => l.trim())
     .find((l) => l && !l.startsWith("#") && !l.startsWith("*"));
   return line ?? "";
-}
-
-// ───────────────────────────────────────────────────────────────────────
-// The Library — a shelf of the print series (physical books). Free-for-all:
-// visible to everyone, no gating, no pricing/buy/cart steering. Each cover is
-// a real clickable outbound link to the book's Amazon page (openExternal).
-// ───────────────────────────────────────────────────────────────────────
-
-function LibraryShelf() {
-  return (
-    <section className="mt-14 border-t border-[var(--reader-rule)] pt-8">
-      <h2 className="font-serif text-xl font-semibold text-[var(--reader-text)]">
-        The Library
-      </h2>
-      <p className="mt-2 text-sm leading-relaxed text-[var(--reader-muted)]">
-        Further reading — the series in print, carrying the same message
-        deeper. Tap a cover to open it.
-      </p>
-      <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3">
-        {LIBRARY_BOOKS.map((book) => (
-          <li key={book.href} className="flex flex-col">
-            <a
-              href={book.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                void openExternal(book.href);
-              }}
-              className="group flex flex-col rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--reader-accent)]"
-              aria-label={`${book.title} — opens on Amazon`}
-            >
-              <img
-                src={book.image}
-                alt={`${book.title} — book cover`}
-                loading="lazy"
-                className="aspect-[2/3] w-full rounded-md border border-[var(--reader-rule)] object-cover shadow-md transition-transform duration-200 group-hover:scale-[1.03]"
-              />
-              <span className="mt-2 block text-center text-xs leading-snug text-[var(--reader-muted)] transition-colors group-hover:text-[var(--reader-accent)]">
-                {book.title}
-              </span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
 }
 
 // ───────────────────────────────────────────────────────────────────────
@@ -241,9 +186,7 @@ function TeachingDetail({ teaching }: { teaching: Teaching }) {
               {renderTeachingBody(teaching.body)}
             </article>
             {teaching.closing && <ClosingFlourish closing={teaching.closing} />}
-            {teaching.promos?.map((promo, i) => (
-              <CoverPromo key={i} promo={promo} />
-            ))}
+            {teaching.promo && <CoverPromo promo={teaching.promo} />}
           </>
         ) : entitled ? (
           <button
