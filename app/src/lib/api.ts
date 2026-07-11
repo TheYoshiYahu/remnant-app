@@ -891,11 +891,13 @@ export function getChapterCommentary(
  */
 export function listChapterHighlights(
   bookSlug: string,
-  chapterNumber: number
+  chapterNumber: number,
+  editionSlug = "canon"
 ): Promise<ChapterHighlightsResponse> {
   const qs = new URLSearchParams({
     book_slug: bookSlug,
     chapter_number: String(chapterNumber),
+    edition_slug: editionSlug,
   });
   return get<ChapterHighlightsResponse>(`/highlights?${qs.toString()}`);
 }

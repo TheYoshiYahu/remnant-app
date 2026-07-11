@@ -1426,13 +1426,17 @@ async def _build_labels_response(
 async def list_chapter_highlights(
     book_slug: str = Query(...),
     chapter_number: int = Query(..., ge=1),
+    edition_slug: str = Query("canon"),
     current_user: User = Depends(get_current_user_required),
 ) -> ChapterHighlightsResponse:
     """Return the requesting partner's highlights for one chapter.
 
-    Scoped to the canon edition (mirrors the commentary endpoint's
-    edition-resolution discipline). Returns 404 when the book or
-    chapter doesn't resolve. The endpoint does NOT tier-filter rows —
+    Scoped to the caller's ``edition_slug`` (defaults to ``canon`` for
+    backward compatibility), mirroring the chapter-text endpoint's
+    edition-resolution discipline — slugs are unique only per edition,
+    so extra-canonical chapters MUST be resolved within their own
+    edition or the highlight never reloads. Returns 404 when the book
+    or chapter doesn't resolve. The endpoint does NOT tier-filter rows —
     partners always see their own existing highlights even if they
     later downgrade tiers (no silent data deletion on downgrade).
     """
@@ -1445,15 +1449,24 @@ async def list_chapter_highlights(
             "  FROM chapters c "
             "  JOIN books    b ON c.book_id    = b.id "
             "  JOIN editions e ON b.edition_id = e.id "
-            " WHERE b.slug = $1 AND e.slug = 'canon' "
-            "   AND c.chapter_number = $2",
+            " WHERE b.slug = $1 AND e.slug = $3 "
+            "   AND c.chapter_number = $2 "
+            # S232 — slugs are unique only per edition (composite UNIQUE
+            # on books.(edition_id, slug)), so colliding apocrypha slugs
+            # deterministically resolve to the kept KJV edition (lowest
+            # book id) instead of whatever heap order fetchrow returns.
+            " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             chapter_number,
+            edition_slug,
         )
         if chapter_row is None:
             raise HTTPException(
                 status_code=404,
-                detail=f"Chapter {chapter_number} of '{book_slug}' not found in canon.",
+                detail=(
+                    f"Chapter {chapter_number} of '{book_slug}' "
+                    f"not found in edition '{edition_slug}'."
+                ),
             )
 
         rows = await conn.fetch(

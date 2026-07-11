@@ -1908,7 +1908,18 @@ function Reader() {
     setPickerVerseId(null);
     setMenuState(null);
     setStrongsState(null);
-    listChapterHighlights(selectedBookSlug, selectedChapter)
+    // S232 — slugs aren't unique across editions, so highlights on
+    // extra-canonical books MUST be reloaded within their own edition
+    // or the server resolves the wrong/absent chapter and returns
+    // nothing. Wait for the loaded book (same source the text loader
+    // uses) so we pass its edition_slug; fall back to 'canon' only
+    // when the book hasn't resolved yet (that pass re-fires once
+    // chaptersResp arrives via the deps below).
+    const editionSlug =
+      chaptersResp && chaptersResp.book.slug === selectedBookSlug
+        ? chaptersResp.book.edition_slug
+        : "canon";
+    listChapterHighlights(selectedBookSlug, selectedChapter, editionSlug)
       .then((r) => {
         // S117 multi-mark — bucket marks by verse_id into arrays.
         // Order preserved from the API response; the verse-render
@@ -1924,7 +1935,7 @@ function Reader() {
       .catch(() => {
         // Anonymous or transient failure — leave the map empty.
       });
-  }, [selectedBookSlug, selectedChapter]);
+  }, [selectedBookSlug, selectedChapter, chaptersResp]);
 
   // S204 — Witness marks reload alongside the chapter, but only while
   // the toggle is ON (the surface costs nothing when off). Best-effort:
