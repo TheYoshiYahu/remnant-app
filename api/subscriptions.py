@@ -976,6 +976,17 @@ async def get_my_subscription(
     pool = get_pool()
     wp_user_id = int(current_user.id)
     async with pool.acquire() as conn:
+        # S423 — resolve the reporting row the SAME way auth._resolve_tier_from_db
+        # does: the newest NON-TERMINAL subscription. This endpoint is the tier
+        # source for the WHOLE client (App boot tier, offline downloads, content-
+        # cache scoping, and the Teachings gate). It previously took the newest
+        # row of ANY status, so a leftover canceled/expired row shadowed an
+        # active trial or an older active row, and /me reported a partner the
+        # server itself treats as entitled (books + every paid feature) as
+        # 'free' — locking server-gated surfaces like Teachings while books
+        # still worked. Excluding the terminal statuses aligns /me with the
+        # resolver; when no entitling row exists the `row is None` branch below
+        # still grants the no-card trial (identical rule to the resolver).
         row = await conn.fetchrow(
             "SELECT s.status::text, s.tier::text, s.cadence::text, "
             "       s.is_founder_pricing, s.is_promo_subscriber, "
@@ -984,6 +995,7 @@ async def get_my_subscription(
             "  FROM subscriptions s "
             "  JOIN users u ON u.id = s.user_id "
             " WHERE u.wordpress_user_id = $1 "
+            "   AND s.status NOT IN ('canceled', 'unpaid', 'incomplete_expired') "
             " ORDER BY s.started_at DESC "
             " LIMIT 1",
             wp_user_id,
