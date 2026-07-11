@@ -2729,6 +2729,21 @@ function Reader() {
               <span aria-hidden="true">☼</span>
               <span>Today</span>
             </a>
+            {/* S356 - Teachings entry in the main chrome cluster, so the
+                door sits above the scriptures for readers who never open
+                the Today hub. Peer to Today / The Appointed Times - same
+                full-page <a href> navigation. Gold teaching register (ties
+                to the teaching's own gold section headers). Free at all
+                tiers. */}
+            <a
+              href="/teachings"
+              aria-label="Open Teachings"
+              title="Teachings"
+              className="chrome-metal chrome-metal-gold"
+            >
+              <span aria-hidden="true">✦</span>
+              <span>Teachings</span>
+            </a>
             {/* S227 — chrome entry point to The Appointed Times (the
                 biblical-calendar surface at /calendar). The calendar was
                 built as a standalone, auth-free route (it doubles as the
