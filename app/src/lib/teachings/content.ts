@@ -102,23 +102,26 @@ export const TEACHINGS: Teaching[] = [
     // S421 — a SERVER-FETCHED teaching: `body` stays empty here and is fetched
     // from GET /v1/teachings/{slug}/body, NOT inlined in the client bundle.
     //
-    // S423 (launch hotfix) — tier_required lowered from "everything" to "free"
-    // so ANY signed-in account can open the full teaching, independent of tier.
-    // Member-tier recognition is currently broken, and gating this at the top
-    // of the strict chain locked existing members out; "free" makes canReadBody
-    // true for every reader so the "Dive deeper" reveal shows for everyone
-    // signed in. The body is STILL server-fetched (body:"" — never inlined),
-    // and the endpoint still requires a valid JWT, so this is "any signed-in
-    // ACCOUNT," not anonymous. The matching server row is opened in the same
-    // step by data-schema/migrations/session423_kingdom_gospel_open.sql
-    // (UPDATE teaching_bodies SET tier_required='free' WHERE slug='kingdom-gospel')
+    // S423 (launch hotfix) — tier_required lowered from "everything" to "extras"
+    // so this teaching gates EXACTLY like the extra-canonical (apocrypha) books,
+    // which sit at tier_required = 'extras'. Free is blocked; the 7-day
+    // everything-trial passes (trialing → effective 'everything' owns 'extras');
+    // paid members at 'extras' and above are recognized. It was gated at the top
+    // of the strict chain ('everything'), which — with member-tier recognition
+    // currently unreliable — was stricter than the apocrypha and blocked
+    // members it should admit. "extras" makes canReadBody true for exactly the
+    // apocrypha audience so the "Dive deeper" reveal shows for them. The body is
+    // STILL server-fetched (body:"" — never inlined), and the endpoint still
+    // requires a valid JWT. The matching server row is lowered in the same step
+    // by data-schema/migrations/session423_kingdom_gospel_open.sql
+    // (UPDATE teaching_bodies SET tier_required='extras' WHERE slug='kingdom-gospel')
     // so client reveal and server gate agree. See kingdom-gospel.ts +
     // api.getTeachingBody.
     slug: "kingdom-gospel",
     title: "The True Kingdom Gospel — Not Taught in the Churches of Any Denomination",
     synopsis: KINGDOM_GOSPEL_SYNOPSIS,
     body: "",
-    tier_required: "free",
+    tier_required: "extras",
     order: 2,
   },
 ];
