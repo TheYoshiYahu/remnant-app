@@ -242,7 +242,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origin_list,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -1526,30 +1526,6 @@ async def create_or_replace_highlight(
     return Highlight(**dict(row))
 
 
-@app.delete("/v1/highlights/{highlight_id}", status_code=204)
-async def delete_highlight(
-    highlight_id: str,
-    current_user: User = Depends(get_current_user_required),
-) -> Response:
-    """Remove one highlight. Idempotent — deleting a missing or
-    already-deleted row returns 204 (not 404). The partner's PWA may
-    have raced; the user-facing result is the same either way.
-
-    Scoped to the requesting user — passing another user's highlight_id
-    silently no-ops (the WHERE user_id = ... clause never matches).
-    """
-    pool = get_pool()
-    async with pool.acquire() as conn:
-        user_uuid = await upsert_user(conn, current_user)
-        await conn.execute(
-            "DELETE FROM verse_highlights "
-            " WHERE id = $1::uuid AND user_id = $2::uuid",
-            highlight_id,
-            user_uuid,
-        )
-    return Response(status_code=204)
-
-
 @app.get("/v1/highlights/labels", response_model=HighlightLabelsResponse)
 async def get_highlight_labels(
     current_user: User = Depends(get_current_user_required),
@@ -1623,6 +1599,30 @@ async def update_highlight_labels(
                         trimmed,
                     )
         return await _build_labels_response(conn, user_uuid)
+
+
+@app.delete("/v1/highlights/{highlight_id}", status_code=204)
+async def delete_highlight(
+    highlight_id: str,
+    current_user: User = Depends(get_current_user_required),
+) -> Response:
+    """Remove one highlight. Idempotent — deleting a missing or
+    already-deleted row returns 204 (not 404). The partner's PWA may
+    have raced; the user-facing result is the same either way.
+
+    Scoped to the requesting user — passing another user's highlight_id
+    silently no-ops (the WHERE user_id = ... clause never matches).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        await conn.execute(
+            "DELETE FROM verse_highlights "
+            " WHERE id = $1::uuid AND user_id = $2::uuid",
+            highlight_id,
+            user_uuid,
+        )
+    return Response(status_code=204)
 
 
 # ----- Reading position (Session 116) -------------------------------------
