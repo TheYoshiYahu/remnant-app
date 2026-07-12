@@ -74,6 +74,16 @@ interface HighlightPickerProps {
    * Single-verse mode falls back to the S117 chips + cap UX unchanged.
    */
   targetVerseIds?: number[];
+  /**
+   * S424 sub-verse mode. When set, the mark being created targets a word
+   * (wordStart === wordEnd) or a phrase (wordStart < wordEnd) inside the
+   * verse, and the create POST carries word_start / word_end. The chips
+   * row + 3-mark cap are skipped (they're a whole-verse concern); the
+   * title reads "Mark word" / "Mark phrase". Absent → whole-verse mode,
+   * unchanged.
+   */
+  wordStart?: number;
+  wordEnd?: number;
 }
 
 const PRO_TIERS: ContentTier[] = [
@@ -145,15 +155,22 @@ export default function HighlightPicker({
   onDeleted,
   onClose,
   targetVerseIds,
+  wordStart,
+  wordEnd,
 }: HighlightPickerProps) {
   const paid = isPaid(userTier);
   // S123 — multi-target mode is active when targetVerseIds carries >1 ids.
   // Single-verse mode (existing behavior) when undefined OR length <= 1.
   const multiTarget = !!targetVerseIds && targetVerseIds.length > 1;
   const targetCount = multiTarget ? targetVerseIds!.length : 1;
-  // S117 chips + cap apply to single-verse mode only. Multi-target hides
-  // both because the apply is a fresh stroke against N verses.
-  const capReached = !multiTarget && current.length >= MAX_MARKS_PER_VERSE;
+  // S424 — sub-verse (word / phrase) mode. Like multi-target, the chips
+  // row + 3-mark cap are suppressed (they're whole-verse concerns); this
+  // is a fresh stroke against a word span.
+  const subVerse = wordStart != null && wordEnd != null;
+  const subVerseIsPhrase = subVerse && wordEnd! > wordStart!;
+  // S117 chips + cap apply to single-verse WHOLE-verse mode only.
+  const capReached =
+    !multiTarget && !subVerse && current.length >= MAX_MARKS_PER_VERSE;
 
   // S117 — initial picker state defaults to neon_yellow + fill. Earlier
   // versions seeded from `current` (the single existing mark) because
@@ -293,11 +310,15 @@ export default function HighlightPicker({
         onClose();
         return;
       }
-      // Single-verse mode (existing behavior).
+      // Single-verse mode. S424 — carry the sub-verse anchor when set;
+      // omitted for a whole-verse mark (existing behavior unchanged).
       const saved = await createOrReplaceHighlight({
         verse_id: verseId,
         color: selectedColor,
         style: selectedStyle,
+        ...(subVerse
+          ? { word_start: wordStart, word_end: wordEnd }
+          : {}),
       });
       onSaved(saved);
       onClose();
@@ -478,7 +499,13 @@ export default function HighlightPicker({
             individually-priced (S140 tier-name overhaul + price removal). */}
         <div className="mb-3 flex items-baseline justify-between">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
-            {multiTarget ? `Mark ${targetCount} verses` : "Mark verse"}
+            {multiTarget
+              ? `Mark ${targetCount} verses`
+              : subVerse
+                ? subVerseIsPhrase
+                  ? "Mark phrase"
+                  : "Mark word"
+                : "Mark verse"}
           </h3>
           {paid && (
             <button
@@ -710,11 +737,15 @@ export default function HighlightPicker({
                 ? "Saving…"
                 : multiTarget
                   ? `Mark ${targetCount} verses`
-                  : selectedTupleAlreadyMarked()
-                    ? "Already marked"
-                    : current.length > 0
-                      ? "Add mark"
-                      : "Mark verse"}
+                  : subVerse
+                    ? subVerseIsPhrase
+                      ? "Mark phrase"
+                      : "Mark word"
+                    : selectedTupleAlreadyMarked()
+                      ? "Already marked"
+                      : current.length > 0
+                        ? "Add mark"
+                        : "Mark verse"}
             </button>
           )}
         </div>

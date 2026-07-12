@@ -444,6 +444,12 @@ class Highlight(BaseModel):
     verse_id: int
     color: HighlightColor
     style: MarkStyle
+    # S424 — sub-verse anchor over verse_words.position. Both NULL = a
+    # whole-verse mark (every pre-S424 row); word_start == word_end = a
+    # single word; word_start < word_end = a phrase. Returned so the
+    # client knows which word spans to paint.
+    word_start: Optional[int] = None
+    word_end: Optional[int] = None
     created_at: datetime
 
 
@@ -467,6 +473,12 @@ class CreateHighlightRequest(BaseModel):
     verse_id: int
     color: HighlightColor
     style: MarkStyle = "fill"
+    # S424 — optional sub-verse anchor. Omit (or send NULL/NULL) for a
+    # whole-verse mark. When set, both must be present, 1 <= word_start
+    # <= word_end, and both must be real verse_words.position values on
+    # this verse (validated in the route handler).
+    word_start: Optional[int] = None
+    word_end: Optional[int] = None
 
 
 class HighlightLabel(BaseModel):

@@ -85,6 +85,7 @@ import VerseActionMenu, {
   type MenuSection,
 } from "./components/VerseActionMenu";
 import RangeActionPicker from "./components/RangeActionPicker";
+import HighlightScopePicker from "./components/HighlightScopePicker";
 import {
   executeCopy,
   executeShare,
@@ -106,7 +107,12 @@ import {
   pickBestVoice,
   type TTSPrefs,
 } from "./lib/tts-helpers";
-import { alignVerse, type Segment } from "./lib/verse-align";
+import {
+  alignVerse,
+  indexSegmentPositions,
+  segmentInRange,
+  type Segment,
+} from "./lib/verse-align";
 import {
   IDLE_STATE as RANGE_IDLE,
   type RangeSelectionState,
@@ -934,6 +940,47 @@ function Reader() {
   // routed through the menu). strongsState opens StrongsLookup
   // (routed either via menu OR quick-tap fast path).
   const [pickerVerseId, setPickerVerseId] = useState<number | null>(null);
+  // S424 — sub-verse (word / phrase) highlighting.
+  //   highlightScopeVerseId → the four-choice scope picker (Word / Phrase /
+  //     Whole verse / Start a range) shown when a highlight is initiated.
+  //   subverseSelect → active word/phrase selection: partner is tapping
+  //     word span(s) in the reader. firstPos holds the phrase's first pick.
+  //   pickerSubverse → the captured word span; opens HighlightPicker in
+  //     sub-verse mode to choose color/style and commit.
+  const [highlightScopeVerseId, setHighlightScopeVerseId] = useState<
+    number | null
+  >(null);
+  const [subverseSelect, setSubverseSelect] = useState<{
+    verseId: number;
+    mode: "word" | "phrase";
+    firstPos: number | null;
+  } | null>(null);
+  const [pickerSubverse, setPickerSubverse] = useState<{
+    verseId: number;
+    wordStart: number;
+    wordEnd: number;
+  } | null>(null);
+  // S424 — append a saved mark to the per-verse map, dedup'ing on the
+  // FULL identity (color, style, word_start, word_end) so a whole-verse
+  // mark and a word/phrase mark of the same color+style coexist (they're
+  // distinct rows server-side under the widened unique constraint) and an
+  // exact-duplicate insert-or-no-op just replaces its own row.
+  function upsertHighlight(
+    prev: Record<number, Highlight[]>,
+    h: Highlight
+  ): Record<number, Highlight[]> {
+    const existing = prev[h.verse_id] ?? [];
+    const filtered = existing.filter(
+      (m) =>
+        !(
+          m.color === h.color &&
+          m.style === h.style &&
+          m.word_start === h.word_start &&
+          m.word_end === h.word_end
+        )
+    );
+    return { ...prev, [h.verse_id]: [...filtered, h] };
+  }
   const [menuState, setMenuState] = useState<
     | {
         verseId: number;
@@ -1177,10 +1224,39 @@ function Reader() {
   // §21 interaction-conflict resolution.
   function handleWordQuickTap(
     word: { strong: string; surface: string },
-    verseId: number
+    verseId: number,
+    // S424 — the verse_words.position of the tapped span, when known.
+    // Present on the inline reader tappable + interlinear column paths;
+    // undefined callers can't drive sub-verse selection (they fall
+    // through to the normal Strong's path, or stay inert mid-selection).
+    position?: number
   ) {
     if (longPressFiredRef.current) {
       longPressFiredRef.current = false;
+      return;
+    }
+    // S424 — sub-verse selection intercepts word taps. Only words in the
+    // verse the selection started on count; a positioned tap on that
+    // verse captures the word/phrase, and any other tap is inert (so we
+    // never open the Strong's sheet mid-selection — the hint bar's Cancel
+    // is the exit).
+    if (subverseSelect) {
+      if (
+        position != null &&
+        subverseSelect.verseId === verseId
+      ) {
+        if (subverseSelect.mode === "word") {
+          setPickerSubverse({ verseId, wordStart: position, wordEnd: position });
+          setSubverseSelect(null);
+        } else if (subverseSelect.firstPos == null) {
+          setSubverseSelect({ ...subverseSelect, firstPos: position });
+        } else {
+          const a = Math.min(subverseSelect.firstPos, position);
+          const b = Math.max(subverseSelect.firstPos, position);
+          setPickerSubverse({ verseId, wordStart: a, wordEnd: b });
+          setSubverseSelect(null);
+        }
+      }
       return;
     }
     if (rangeState.status === "selecting") {
@@ -2542,6 +2618,17 @@ function Reader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rangeState.status]);
 
+  // S424 — Escape cancels an in-progress word/phrase selection (the
+  // banner's Cancel does the same). Only active while selecting.
+  useEffect(() => {
+    if (!subverseSelect) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setSubverseSelect(null);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [subverseSelect]);
+
   // S121 — touch-swipe state. pointerdown records the start position
   // and pointer type; pointermove cancels the long-press timer if the
   // user is swiping (so a swipe over a verse doesn't open the picker
@@ -3356,6 +3443,39 @@ function Reader() {
               </button>
             </div>
           )}
+          {/* S424 — word/phrase selection banner. Mirrors the range banner:
+              tells the partner what to tap, with a Cancel to exit. */}
+          {subverseSelect && (
+            <div
+              role="status"
+              aria-live="polite"
+              className="mb-3 flex items-center justify-between gap-3 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-2"
+            >
+              <span className="text-base text-[var(--reader-text)]">
+                <span className="text-[var(--reader-accent)]">
+                  {subverseSelect.mode === "word"
+                    ? "Highlight a word"
+                    : "Highlight a phrase"}
+                </span>
+                <span className="text-[var(--reader-muted)]">
+                  {" "}—{" "}
+                  {subverseSelect.mode === "word"
+                    ? "tap the word"
+                    : subverseSelect.firstPos == null
+                      ? "tap the first word"
+                      : "tap the last word"}
+                </span>
+              </span>
+              <button
+                type="button"
+                onClick={() => setSubverseSelect(null)}
+                className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1 font-sans text-xs text-[var(--reader-text)] hover:bg-[var(--reader-bg)]"
+                aria-label="Cancel word selection"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
           {/*
             S130 — chapter number recolored to bright bracket-emerald
             highlight #2EFFA1 per Yoshi's call: the "metallic green from
@@ -3469,6 +3589,16 @@ function Reader() {
                     // 12px) so multiple colored underlines render as
                     // distinct stacked lines instead of overlapping.
                     const marks = highlightsByVerse[v.id] || [];
+                    // S424 — split whole-verse marks (word_start == null,
+                    // rendered by wrapping the entire verse content, exactly
+                    // as before) from sub-verse marks (word/phrase, painted
+                    // onto individual word spans below).
+                    const wholeVerseMarks = marks.filter(
+                      (m) => m.word_start == null
+                    );
+                    const subMarks = marks.filter(
+                      (m) => m.word_start != null && m.word_end != null
+                    );
                     // S121 W3 — align verse text against the chapter
                     // verse_words so individual Strong's-tagged words
                     // render as tappable spans. Falls back to a single
@@ -3479,6 +3609,55 @@ function Reader() {
                       verseWords.length > 0
                         ? alignVerse(v.text, verseWords, String(v.id))
                         : [{ kind: "plain", text: v.text }];
+                    // S424 — position index for sub-verse paint coverage
+                    // (only computed when this verse actually carries
+                    // word/phrase marks).
+                    const segPosIndex =
+                      subMarks.length > 0
+                        ? indexSegmentPositions(segments)
+                        : null;
+                    // S424 — wrap a rendered segment node with any sub-verse
+                    // marks that cover it (mirrors the whole-verse nesting +
+                    // multi-underline offset stacking, but per word span).
+                    const paintSubverse = (
+                      segIdx: number,
+                      node: React.ReactNode
+                    ): React.ReactNode => {
+                      if (!segPosIndex || subMarks.length === 0) return node;
+                      const covering = subMarks.filter((m) =>
+                        segmentInRange(
+                          segPosIndex,
+                          segIdx,
+                          m.word_start as number,
+                          m.word_end as number
+                        )
+                      );
+                      if (covering.length === 0) return node;
+                      let wrapped: React.ReactNode = node;
+                      let uIdx = 0;
+                      for (const m of covering) {
+                        const st: React.CSSProperties = {
+                          ...markCssVarsFor(m.color),
+                        };
+                        if (m.style === "underline") {
+                          st.textUnderlineOffset = `${2 + uIdx * 5}px`;
+                          uIdx++;
+                        }
+                        wrapped = (
+                          <span className={markClassFor(m.style)} style={st}>
+                            {wrapped}
+                          </span>
+                        );
+                      }
+                      return (
+                        <span key={`sub-${segIdx}`}>{wrapped}</span>
+                      );
+                    };
+                    // S424 — is this verse the active word/phrase selection
+                    // target? Used to give word spans a selectable affordance
+                    // and mark the pending first-word pick.
+                    const selectingHere =
+                      subverseSelect?.verseId === v.id;
                     // S124 W5 — bookmark glyph after the verse number
                     // for any verse with a bookmark on it. Per §22, the
                     // glyph renders in §5 spectral-blue accent at 0.85
@@ -3630,7 +3809,8 @@ function Reader() {
                             const prepared = applyTextPrefs(seg.text);
                             if (prepared.includes("\n\n")) {
                               const paras = prepared.split(/\n\n+/);
-                              return (
+                              return paintSubverse(
+                                segIdx,
                                 <span key={`p-${segIdx}`}>
                                   {paras.map((para, pi) => (
                                     <span
@@ -3648,7 +3828,8 @@ function Reader() {
                                 </span>
                               );
                             }
-                            return (
+                            return paintSubverse(
+                              segIdx,
                               <span key={`p-${segIdx}`}>
                                 {prepared}{" "}
                               </span>
@@ -3680,7 +3861,8 @@ function Reader() {
                                 matched.transliteration ||
                                 matched.morphology)
                             ) {
-                              return (
+                              return paintSubverse(
+                                segIdx,
                                 <InterlinearWordColumn
                                   key={seg.key}
                                   verseWord={matched}
@@ -3696,7 +3878,10 @@ function Reader() {
                                   // mask being set to "yhwh".
                                   surfaceOverride={applySacredMask(seg.text)}
                                   handlers={{
-                                    onWordTap: handleWordQuickTap,
+                                    // S424 — thread the position so word/phrase
+                                    // selection works in interlinear mode too.
+                                    onWordTap: (w, vid) =>
+                                      handleWordQuickTap(w, vid, matched.position),
                                     onWordPointerDown: handlePointerDown,
                                     onWordPointerCancel: handlePointerCancel,
                                     onWordContextMenu: handleContextMenu,
@@ -3710,10 +3895,35 @@ function Reader() {
                             // word (defensive — the surface still
                             // renders cleanly without the column).
                           }
-                          return (
+                          // S424 — during a word/phrase selection on this
+                          // verse, give every word span a selectable
+                          // affordance and ring the pending first-word pick.
+                          const isPendingFirst =
+                            selectingHere &&
+                            subverseSelect?.firstPos === seg.position;
+                          const selectableStyle: React.CSSProperties | undefined =
+                            selectingHere
+                              ? {
+                                  cursor: "pointer",
+                                  borderRadius: "3px",
+                                  ...(isPendingFirst
+                                    ? {
+                                        outline:
+                                          "2px solid var(--reader-accent)",
+                                        outlineOffset: "1px",
+                                      }
+                                    : {
+                                        boxShadow:
+                                          "inset 0 -2px 0 var(--reader-accent)",
+                                      }),
+                                }
+                              : undefined;
+                          return paintSubverse(
+                            segIdx,
                             <span key={seg.key}>
                               <span
                                 className="word-tappable"
+                                style={selectableStyle}
                                 onPointerDown={(e) => {
                                   e.stopPropagation();
                                   handlePointerDown(v.id, word);
@@ -3733,7 +3943,7 @@ function Reader() {
                                 }}
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  handleWordQuickTap(word, v.id);
+                                  handleWordQuickTap(word, v.id, seg.position);
                                 }}
                               >
                                 {seg.text}
@@ -3757,7 +3967,7 @@ function Reader() {
                                   className="strongs-superscript"
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    handleWordQuickTap(word, v.id);
+                                    handleWordQuickTap(word, v.id, seg.position);
                                   }}
                                   aria-label={`Strong's ${seg.strong} — open lexicon entry`}
                                   title={`Strong's ${seg.strong} — tap to open the lexicon entry`}
@@ -3850,7 +4060,7 @@ function Reader() {
                       );
                     }
                     let underlineIdx = 0;
-                    for (const mark of marks) {
+                    for (const mark of wholeVerseMarks) {
                       const inlineStyle: React.CSSProperties = {
                         ...markCssVarsFor(mark.color),
                       };
@@ -4236,7 +4446,10 @@ function Reader() {
                   language: w.strong.startsWith("G") ? "greek" : "hebrew",
                 });
               },
-              onHighlight: (vid) => setPickerVerseId(vid),
+              // S424 — "Highlight" now opens the four-choice scope picker
+              // (Word / Phrase / Whole verse / Start a range) instead of
+              // going straight to the whole-verse picker.
+              onHighlight: (vid) => setHighlightScopeVerseId(vid),
               onStartRange: (vid) => startRangeFromVerse(vid),
               onBookmark: (vid) => openBookmarkSheet(vid),
               onAddNote: (vid) => openNotesPanelWithAnchor(vid),
@@ -4498,14 +4711,8 @@ function Reader() {
           targetVerseIds={pickerRangeVerseIds}
           onSaved={(h) =>
             // Each successful per-verse commit calls back here once.
-            // Reuse the S117 multi-mark reducer: append + dedup-on-tuple.
-            setHighlightsByVerse((prev) => {
-              const existing = prev[h.verse_id] ?? [];
-              const filtered = existing.filter(
-                (m) => !(m.color === h.color && m.style === h.style)
-              );
-              return { ...prev, [h.verse_id]: [...filtered, h] };
-            })
+            // S424 — dedup on the full mark identity.
+            setHighlightsByVerse((prev) => upsertHighlight(prev, h))
           }
           // onDeleted is unused in multi-target mode (chips row hidden)
           // but the prop is required by the component.
@@ -4521,20 +4728,18 @@ function Reader() {
       {pickerVerseId !== null && (
         <HighlightPicker
           verseId={pickerVerseId}
-          current={highlightsByVerse[pickerVerseId] ?? []}
+          // S424 — whole-verse picker manages whole-verse marks only; the
+          // chips + 3-mark cap reflect those. Sub-verse (word/phrase) marks
+          // on the same verse are managed via re-selection + Remove
+          // highlight, so they're excluded from this picker's `current`.
+          current={(highlightsByVerse[pickerVerseId] ?? []).filter(
+            (m) => m.word_start == null
+          )}
           userTier={(me?.tier ?? "free") as ContentTier}
           onSaved={(h) =>
-            // S117 multi-mark — append the new mark, dedup'ing on the
-            // (color, style) tuple in case the API returned an existing
-            // row for an exact-duplicate insert (insert-or-no-op
-            // semantics).
-            setHighlightsByVerse((prev) => {
-              const existing = prev[h.verse_id] ?? [];
-              const filtered = existing.filter(
-                (m) => !(m.color === h.color && m.style === h.style)
-              );
-              return { ...prev, [h.verse_id]: [...filtered, h] };
-            })
+            // S117/S424 — append the new mark, dedup'ing on the full
+            // (color, style, word_start, word_end) identity.
+            setHighlightsByVerse((prev) => upsertHighlight(prev, h))
           }
           onDeleted={(highlightId) =>
             // S117 multi-mark — delete by mark id (not by verse id).
@@ -4553,6 +4758,54 @@ function Reader() {
             })
           }
           onClose={() => setPickerVerseId(null)}
+        />
+      )}
+
+      {/*
+        S424 — the four-choice scope picker shown when a highlight is
+        initiated. Whole verse + Start a range route to the existing
+        paths; Word + Phrase enter sub-verse selection.
+      */}
+      {highlightScopeVerseId !== null && (
+        <HighlightScopePicker
+          onWord={() =>
+            setSubverseSelect({
+              verseId: highlightScopeVerseId,
+              mode: "word",
+              firstPos: null,
+            })
+          }
+          onPhrase={() =>
+            setSubverseSelect({
+              verseId: highlightScopeVerseId,
+              mode: "phrase",
+              firstPos: null,
+            })
+          }
+          onWholeVerse={() => setPickerVerseId(highlightScopeVerseId)}
+          onStartRange={() => startRangeFromVerse(highlightScopeVerseId)}
+          onClose={() => setHighlightScopeVerseId(null)}
+        />
+      )}
+
+      {/*
+        S424 — sub-verse HighlightPicker. Opens once a word or phrase span
+        has been captured (pickerSubverse). Single verse, create-only,
+        carries word_start / word_end through to the POST. Same per-tier
+        color/style gating as whole-verse.
+      */}
+      {pickerSubverse !== null && (
+        <HighlightPicker
+          verseId={pickerSubverse.verseId}
+          current={[]}
+          userTier={(me?.tier ?? "free") as ContentTier}
+          wordStart={pickerSubverse.wordStart}
+          wordEnd={pickerSubverse.wordEnd}
+          onSaved={(h) =>
+            setHighlightsByVerse((prev) => upsertHighlight(prev, h))
+          }
+          onDeleted={() => {}}
+          onClose={() => setPickerSubverse(null)}
         />
       )}
 

@@ -764,6 +764,13 @@ CREATE INDEX idx_bookmarks_tags_gin   ON bookmarks USING GIN (tags);
 -- simultaneously; multiple underlines in different colors stack via
 -- nested PWA spans with text-underline-offset increments. Cap of 3
 -- marks per verse enforced at the PWA picker layer.
+--
+-- S424 added the sub-verse (word / phrase) anchor. word_start / word_end
+-- reference verse_words.position (1-based per-word ordinals): equal =
+-- one word, start < end = a phrase, NULL/NULL = a whole-verse mark
+-- (every pre-S424 row). The unique tuple gained word_start, word_end
+-- with NULLS NOT DISTINCT so whole-verse marks still dedup on
+-- (user, verse, color, style) while word/phrase ranges stay distinct.
 CREATE TABLE verse_highlights (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id         UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -771,9 +778,18 @@ CREATE TABLE verse_highlights (
     color           TEXT NOT NULL DEFAULT 'yellow',
     style           TEXT NOT NULL DEFAULT 'fill'
                         CHECK (style IN ('fill', 'underline', 'outline')),
+    word_start      INT,
+    word_end        INT,
     created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
-    CONSTRAINT verse_highlights_user_verse_color_style_unique
-        UNIQUE (user_id, verse_id, color, style)
+    CONSTRAINT verse_highlights_subverse_range_check
+        CHECK (
+            (word_start IS NULL AND word_end IS NULL)
+            OR (word_start IS NOT NULL AND word_end IS NOT NULL
+                AND word_start >= 1 AND word_start <= word_end)
+        ),
+    CONSTRAINT verse_highlights_user_verse_color_style_word_unique
+        UNIQUE NULLS NOT DISTINCT
+        (user_id, verse_id, color, style, word_start, word_end)
 );
 
 CREATE INDEX idx_highlights_user ON verse_highlights(user_id);

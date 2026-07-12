@@ -1471,7 +1471,7 @@ async def list_chapter_highlights(
 
         rows = await conn.fetch(
             "SELECT vh.id::text AS id, vh.verse_id, vh.color, vh.style, "
-            "       vh.created_at "
+            "       vh.word_start, vh.word_end, vh.created_at "
             "  FROM verse_highlights vh "
             "  JOIN verses v ON vh.verse_id = v.id "
             " WHERE vh.user_id = $1::uuid "
@@ -1511,6 +1511,24 @@ async def create_or_replace_highlight(
     allowed_colors = _allowed_colors_for_tier(tier)
     allowed_styles = _allowed_styles_for_tier(tier)
 
+    # S424 — sub-verse anchor validation. Whole-verse (both NULL) is the
+    # default and needs no check. When either is provided, BOTH must be
+    # present, ordered (1 <= start <= end), and reference real
+    # verse_words.position values on this verse (checked below against the
+    # DB). Tier gating is unchanged — a word/phrase mark obeys the exact
+    # same per-tier color/style allowance as a whole-verse mark.
+    if (body.word_start is None) != (body.word_end is None):
+        raise HTTPException(
+            status_code=400,
+            detail="word_start and word_end must both be set or both omitted.",
+        )
+    if body.word_start is not None:
+        if body.word_start < 1 or body.word_start > body.word_end:  # type: ignore[operator]
+            raise HTTPException(
+                status_code=400,
+                detail="Require 1 <= word_start <= word_end.",
+            )
+
     if body.color not in allowed_colors:
         raise HTTPException(
             status_code=403,
@@ -1542,6 +1560,29 @@ async def create_or_replace_highlight(
                 detail=f"Verse id={body.verse_id} not found.",
             )
 
+        # S424 — for a sub-verse mark, both anchor positions must exist in
+        # verse_words for THIS verse. A verse that hasn't been tokenized
+        # (no verse_words rows) therefore can't carry word/phrase marks —
+        # the client only offers Word/Phrase once the alignment spans are
+        # present, so this is a defense-in-depth guard against a stale or
+        # forged anchor.
+        if body.word_start is not None:
+            wanted = {body.word_start, body.word_end}
+            present = await conn.fetchval(
+                "SELECT count(DISTINCT position) FROM verse_words "
+                " WHERE verse_id = $1 AND position = ANY($2::int[])",
+                body.verse_id,
+                list(wanted),
+            )
+            if present != len(wanted):
+                raise HTTPException(
+                    status_code=400,
+                    detail=(
+                        "word_start/word_end must be real word positions on "
+                        f"verse id={body.verse_id}."
+                    ),
+                )
+
         # S117 multi-mark: insert on the (user_id, verse_id, color,
         # style) unique tuple. DO UPDATE is effectively a no-op
         # (EXCLUDED.color = existing.color and EXCLUDED.style =
@@ -1552,15 +1593,19 @@ async def create_or_replace_highlight(
         # (color, style) tuples on the same verse INSERT new rows
         # alongside existing marks — coexistence is the whole point.
         row = await conn.fetchrow(
-            "INSERT INTO verse_highlights (user_id, verse_id, color, style) "
-            "VALUES ($1::uuid, $2, $3, $4) "
-            "ON CONFLICT ON CONSTRAINT verse_highlights_user_verse_color_style_unique "
+            "INSERT INTO verse_highlights "
+            "  (user_id, verse_id, color, style, word_start, word_end) "
+            "VALUES ($1::uuid, $2, $3, $4, $5, $6) "
+            "ON CONFLICT ON CONSTRAINT verse_highlights_user_verse_color_style_word_unique "
             "DO UPDATE SET color = EXCLUDED.color, style = EXCLUDED.style "
-            "RETURNING id::text, verse_id, color, style, created_at",
+            "RETURNING id::text, verse_id, color, style, "
+            "          word_start, word_end, created_at",
             user_uuid,
             body.verse_id,
             body.color,
             body.style,
+            body.word_start,
+            body.word_end,
         )
 
     return Highlight(**dict(row))

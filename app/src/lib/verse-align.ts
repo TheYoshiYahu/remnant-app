@@ -60,6 +60,11 @@ export type Segment =
       text: string;
       strong: string;
       surface: string;
+      /** S424 — the verse_words.position this span renders. Sub-verse
+       *  (word / phrase) highlights anchor on these positions, and the
+       *  reader paints a span iff its position falls inside a mark's
+       *  [word_start, word_end]. */
+      position: number;
       /** Stable key suffix for React reconciliation across re-renders. */
       key: string;
     };
@@ -359,6 +364,7 @@ export function alignVerse(
             text: iTok,
             strong: words[w].strong_number as string,
             surface: words[w].surface,
+            position: words[w].position,
             key: `${keyPrefix}:${words[w].position}`,
           });
           w++;
@@ -376,6 +382,7 @@ export function alignVerse(
           text: hTok,
           strong: pw.strong_number as string,
           surface: pw.surface,
+          position: pw.position,
           key: `${keyPrefix}:${pw.position}`,
         });
         w++;
@@ -444,6 +451,7 @@ export function alignVerse(
             text: combined,
             strong: words[w].strong_number as string,
             surface: words[w].surface,
+            position: words[w].position,
             key: `${keyPrefix}:${words[w].position}`,
           });
           w++;
@@ -464,6 +472,7 @@ export function alignVerse(
         text: tok,
         strong: words[w].strong_number as string,
         surface: words[w].surface,
+        position: words[w].position,
         key: `${keyPrefix}:${words[w].position}`,
       });
       w++;
@@ -483,6 +492,7 @@ export function alignVerse(
         text: tok,
         strong: words[w].strong_number as string,
         surface: words[w].surface,
+        position: words[w].position,
         key: `${keyPrefix}:${words[w].position}`,
       });
       w++;
@@ -496,4 +506,74 @@ export function alignVerse(
   }
 
   return segments;
+}
+
+/**
+ * S424 — sub-verse highlight coverage.
+ *
+ * A sub-verse mark anchors on a [start, end] span of verse_words.position
+ * (see alignVerse's `position` on tappable segments). This decides, for a
+ * given segment, whether it falls inside a mark's range so the reader can
+ * paint just those spans:
+ *
+ *   - A TAPPABLE segment is covered iff start <= its position <= end.
+ *   - A PLAIN segment (punctuation, connectives like "the"/"of" with no
+ *     Strong's tag, restored-name parentheticals) is "interior" — covered
+ *     iff the nearest tappable BEFORE it and the nearest tappable AFTER it
+ *     are BOTH inside the range. That paints the connective tissue of a
+ *     phrase continuously ("the LORD of hosts") while leaving a single-word
+ *     mark to just its one span and never bleeding onto trailing text.
+ *
+ * `prev` / `next` are the nearest tappable positions on each side of a
+ * segment index (null at the ends). Precomputed once per verse render.
+ */
+export interface SegmentPositionIndex {
+  /** position for a tappable segment; null for a plain segment. */
+  pos: (number | null)[];
+  /** nearest tappable position at or before index i (null if none). */
+  prev: (number | null)[];
+  /** nearest tappable position at or after index i (null if none). */
+  next: (number | null)[];
+}
+
+export function indexSegmentPositions(
+  segments: Segment[]
+): SegmentPositionIndex {
+  const n = segments.length;
+  const pos: (number | null)[] = segments.map((s) =>
+    s.kind === "tappable" ? s.position : null
+  );
+  const prev: (number | null)[] = new Array(n).fill(null);
+  const next: (number | null)[] = new Array(n).fill(null);
+  let last: number | null = null;
+  for (let i = 0; i < n; i++) {
+    if (pos[i] !== null) last = pos[i];
+    prev[i] = last;
+  }
+  let ahead: number | null = null;
+  for (let i = n - 1; i >= 0; i--) {
+    if (pos[i] !== null) ahead = pos[i];
+    next[i] = ahead;
+  }
+  return { pos, prev, next };
+}
+
+/** True when segment index `i` falls inside the sub-verse range
+ *  [start, end], per the tappable/plain rules above. */
+export function segmentInRange(
+  idx: SegmentPositionIndex,
+  i: number,
+  start: number,
+  end: number
+): boolean {
+  const p = idx.pos[i];
+  if (p !== null) return p >= start && p <= end;
+  const before = idx.prev[i];
+  const after = idx.next[i];
+  return (
+    before !== null &&
+    after !== null &&
+    before >= start &&
+    after <= end
+  );
 }

@@ -402,6 +402,12 @@ export interface Highlight {
   verse_id: number;
   color: HighlightColor;
   style: MarkStyle;
+  /** S424 — sub-verse anchor over verse_words.position. null/null = a
+   *  whole-verse mark (every pre-S424 highlight); word_start === word_end
+   *  = one word; word_start < word_end = a phrase. The reader paints only
+   *  the covered word spans when these are set. */
+  word_start: number | null;
+  word_end: number | null;
   created_at: string;
 }
 
@@ -412,6 +418,11 @@ export interface ChapterHighlightsResponse {
 export interface CreateHighlightRequest {
   verse_id: number;
   color: HighlightColor;
+  /** S424 — optional sub-verse anchor. Omit for a whole-verse mark. When
+   *  set, both are required, 1 <= word_start <= word_end, and both must be
+   *  real verse_words.position values on the verse. */
+  word_start?: number | null;
+  word_end?: number | null;
   style: MarkStyle;
 }
 
