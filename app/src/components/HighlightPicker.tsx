@@ -124,6 +124,19 @@ function markKey(color: HighlightColor, style: MarkStyle): string {
   return `${color}::${style}`;
 }
 
+/** Map a save failure to partner-friendly copy. A 401 means there's no
+ *  live session (not signed in, or a lapsed cookie) — the raw
+ *  "API /highlights → 401 Authentication required" string is meaningless
+ *  to a reader, so point them at signing in instead. Any other failure
+ *  keeps its original message. */
+function friendlyHighlightError(e: unknown): string {
+  const msg = String(e);
+  if (/\b401\b/.test(msg) || /Authentication required/i.test(msg)) {
+    return "Sign in to save your highlight.";
+  }
+  return msg;
+}
+
 export default function HighlightPicker({
   verseId,
   current,
@@ -244,17 +257,27 @@ export default function HighlightPicker({
           )
         );
         let failures = 0;
+        let authFailure = false;
         for (const r of results) {
           if (r.status === "fulfilled") {
             onSaved(r.value);
           } else {
             failures++;
+            const reason = String(r.reason);
+            if (/\b401\b/.test(reason) || /Authentication required/i.test(reason)) {
+              authFailure = true;
+            }
           }
         }
         if (failures > 0 && failures === results.length) {
           // Total failure — show an error and keep the picker open so
-          // the partner can retry.
-          setError(`Failed to mark ${failures} verses.`);
+          // the partner can retry. A 401 means no live session, so give
+          // the friendly sign-in prompt instead of the raw API string.
+          setError(
+            authFailure
+              ? "Sign in to save your highlights."
+              : `Failed to mark ${failures} verses.`
+          );
           return;
         }
         if (failures > 0) {
@@ -279,7 +302,7 @@ export default function HighlightPicker({
       onSaved(saved);
       onClose();
     } catch (e) {
-      setError(String(e));
+      setError(friendlyHighlightError(e));
     } finally {
       setSaving(false);
     }
