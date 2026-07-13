@@ -4130,6 +4130,15 @@ function Reader() {
                             longPressFiredRef.current = false;
                             return;
                           }
+                          // S425 — during a word/phrase selection, plain-
+                          // text / gap taps are inert. The word-tappable
+                          // spans drive the pick (handleWordQuickTap's
+                          // subverse branch); the hint bar's Cancel is the
+                          // exit. Without this guard the tap-to-open-menu
+                          // path below would fire mid-selection.
+                          if (subverseSelect) {
+                            return;
+                          }
                           // S123 W4 — in range-selecting mode, any verse
                           // click is the end-verse commit. The
                           // word-tappable spans' own onClick handles the
@@ -4154,6 +4163,24 @@ function Reader() {
                             toggleWitnessCard();
                           } else if (kingdomEntry) {
                             toggleKingdomCard();
+                          } else {
+                            // S425 — a plain tap ANYWHERE on the verse opens
+                            // the verse action menu. Root-cause fix for the
+                            // iPhone "hard to tap a verse" bug: iOS hijacks
+                            // press-and-hold (fires pointercancel, killing
+                            // our 500ms long-press timer — see .verse-
+                            // interactive in index.css), so long-press was
+                            // never a reliable way to reach the menu on
+                            // device. And only Strong's-tagged word spans had
+                            // a tap target, so untagged words and the gaps
+                            // between words were dead. A short tap (onClick)
+                            // is the one reliable touch primitive, so the
+                            // whole verse line now opens the menu on tap.
+                            // Tagged-word taps stopPropagation before reaching
+                            // here, so they still open Strong's directly (and
+                            // Strong's carries the verse-menu tab); sub-verse
+                            // selection and range mode are handled above.
+                            setMenuState({ verseId: v.id, word: null });
                           }
                         }}
                       >
