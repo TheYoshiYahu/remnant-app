@@ -4224,6 +4224,76 @@ function Reader() {
           <ReaderDivider variant="botanical" />
 
           {/*
+            S358 — scripture-end continuation row. A prev/next pair placed
+            directly after the last verse (right below the "end of scripture"
+            divider, BEFORE the Kingdom / Witness / cross-reference /
+            commentary apparatus), so a reader who finishes the scripture can
+            advance without scrolling past the study cards to reach the
+            bottom-of-page row. Same handlers (navigatePrev / navigateNext),
+            same prevTarget / nextTarget disabled + book-boundary logic, same
+            styling and destination labels as the footer row below.
+          */}
+          <nav
+            aria-label="Chapter navigation"
+            className="mt-8 flex items-stretch justify-between gap-3 font-sans"
+          >
+            <button
+              type="button"
+              onClick={navigatePrev}
+              aria-label="Previous chapter"
+              aria-disabled={prevTarget === null}
+              disabled={prevTarget === null}
+              className={`flex flex-1 items-center justify-start gap-3 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-left text-base text-[var(--reader-text)] hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed ${
+                bouncePrev ? "nav-bounce" : ""
+              }`}
+            >
+              <span
+                aria-hidden="true"
+                className="text-lg font-semibold text-[var(--reader-accent)]"
+              >
+                ←
+              </span>
+              <span className="flex flex-col">
+                <span className="text-xs uppercase tracking-wide text-[var(--reader-muted)]">
+                  Previous
+                </span>
+                <span className="font-medium">
+                  {prevTarget
+                    ? targetLabel(books, prevTarget)
+                    : "—"}
+                </span>
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={navigateNext}
+              aria-label="Next chapter"
+              aria-disabled={nextTarget === null}
+              disabled={nextTarget === null}
+              className={`flex flex-1 items-center justify-end gap-3 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-right text-base text-[var(--reader-text)] hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed ${
+                bounceNext ? "nav-bounce" : ""
+              }`}
+            >
+              <span className="flex flex-col">
+                <span className="text-xs uppercase tracking-wide text-[var(--reader-muted)]">
+                  Next
+                </span>
+                <span className="font-medium">
+                  {nextTarget
+                    ? targetLabel(books, nextTarget)
+                    : "—"}
+                </span>
+              </span>
+              <span
+                aria-hidden="true"
+                className="text-lg font-semibold text-[var(--reader-accent)]"
+              >
+                →
+              </span>
+            </button>
+          </nav>
+
+          {/*
             S202 — the tiered Basic / Deeper-Dive commentary stack
             (ChapterCommentary) is no longer rendered. Per Yoshi: "take away
             all the deeper dives and just have the commentary." The reader now
