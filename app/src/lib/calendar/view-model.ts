@@ -29,6 +29,7 @@ import {
   type YearReckoning,
 } from "./index.ts";
 import { moonIllumination } from "./astro.ts";
+import { cepherAvivFeed } from "./cepher-aviv.ts";
 
 const DAY_MS = 86_400_000;
 
@@ -220,8 +221,16 @@ export function buildConfig(s: ReckoningState): CalendarConfig {
 }
 
 export function buildDeps(s: ReckoningState): CalendarDeps {
-  if (s.confirmedSightings.length === 0) return {};
-  return { sightingFeed: manualSightingFeed(s.confirmedSightings) };
+  const deps: CalendarDeps = {};
+  if (s.confirmedSightings.length > 0) {
+    deps.sightingFeed = manualSightingFeed(s.confirmedSightings);
+  }
+  // Interim: the Aviv (barley) toggle uses the Cepher-style equinox-nearest
+  // dark moon until a real barley-report feed is wired (see cepher-aviv.ts).
+  if (s.year === "aviv") {
+    deps.avivFeed = cepherAvivFeed();
+  }
+  return deps;
 }
 
 export function compute(s: ReckoningState, at: Date): EngineResult {
