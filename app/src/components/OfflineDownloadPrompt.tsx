@@ -12,7 +12,10 @@
  *
  * Placement rules (all enforced here so callers can mount it unconditionally
  * on the home surfaces):
- *   - shown only on the daily/home/reader surfaces (/today, /read, /),
+ *   - shown only on the Reader surface (/read and the bare `/`),
+ *   - only once the caller says the partner has settled in (`ready` — the
+ *     Reader flips it after 60s of reading OR the first chapter change;
+ *     S430 — scripture-first),
  *   - never while the first-launch welcome modal is up (one ask at a time),
  *   - never once the seen-flag is set.
  *
@@ -48,21 +51,21 @@ interface Props {
   /** True while the sacred-name welcome modal is open — suppress until it's
    *  gone so the partner only faces one ask at a time. */
   welcomeOpen: boolean;
+  /** S430 — scripture-first: true once the Reader has been open ~60s or the
+   *  partner has changed chapter at least once. Until then, stay hidden. */
+  ready: boolean;
 }
 
-export default function OfflineDownloadPrompt({ pathname, welcomeOpen }: Props) {
+export default function OfflineDownloadPrompt({ pathname, welcomeOpen, ready }: Props) {
   const [open, setOpen] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
     if (hasSeenOfflinePrompt()) return false;
     return true;
   });
 
-  const onHome =
-    pathname === "/" ||
-    pathname.startsWith("/today") ||
-    pathname.startsWith("/read");
+  const onReader = pathname === "/" || pathname.startsWith("/read");
 
-  if (!open || welcomeOpen || !onHome) return null;
+  if (!open || !ready || welcomeOpen || !onReader) return null;
 
   const dismiss = () => {
     markSeen();

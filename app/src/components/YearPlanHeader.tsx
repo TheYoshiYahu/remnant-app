@@ -73,10 +73,42 @@ function refList(items: DayReadingItem[]): string {
 const GHOST_BTN =
   "rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90";
 
+/**
+ * S430 — scripture-first: the strip is collapsed by default into one compact
+ * line (date + "Read in a year ›"). The partner's expand/collapse choice
+ * persists per device under this key so it stays the way they left it.
+ */
+const EXPANDED_KEY = "rop.yearplan.expanded";
+
+function readExpanded(): boolean {
+  try {
+    return window.localStorage.getItem(EXPANDED_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function writeExpanded(next: boolean): void {
+  try {
+    window.localStorage.setItem(EXPANDED_KEY, next ? "1" : "0");
+  } catch {
+    /* private mode — the choice just doesn't persist */
+  }
+}
+
 export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
   const [plan, setPlan] = useState(() => getYearPlanState());
   const [pickerOpen, setPickerOpen] = useState(false);
   const [torahOpen, setTorahOpen] = useState(false);
+  // S430 — collapsed by default; one tap on the line/button expands.
+  const [expanded, setExpanded] = useState<boolean>(() =>
+    typeof window === "undefined" ? false : readExpanded(),
+  );
+  const toggleExpanded = () => {
+    const next = !expanded;
+    setExpanded(next);
+    writeExpanded(next);
+  };
 
   const today = new Date();
   const dateLabel = new Intl.DateTimeFormat(undefined, {
@@ -116,13 +148,63 @@ export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
     if (plan) openReadingAt(todaysReading, plan.scope);
   };
 
+  // S430 — collapsed: one compact line. Date on the left (tappable), a small
+  // chrome-metal "Read in a year ›" button on the right. Nothing else.
+  if (!expanded) {
+    return (
+      <section className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-2 font-sans">
+        <div className="flex items-center justify-between gap-3">
+          <button
+            type="button"
+            onClick={toggleExpanded}
+            aria-expanded={false}
+            aria-controls="yearplan-expanded"
+            className="min-w-0 truncate text-left font-serif text-sm text-[var(--reader-text)] hover:opacity-90"
+          >
+            {dateLabel}
+          </button>
+          <button
+            type="button"
+            onClick={toggleExpanded}
+            aria-expanded={false}
+            aria-controls="yearplan-expanded"
+            aria-label="Show the read-the-Scriptures-in-a-year plan and Torah portions"
+            className="chrome-metal chrome-metal-emerald"
+            style={{ padding: "0.25rem 0.55rem", fontSize: "0.8rem" }}
+          >
+            Read in a year <span aria-hidden="true">&rsaquo;</span>
+          </button>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 font-sans">
-      <div className="text-xs font-medium uppercase tracking-wider text-[var(--reader-muted)]">
-        Today
-      </div>
-      <div className="mt-0.5 font-serif text-lg font-semibold text-[var(--reader-text)]">
-        {dateLabel}
+    <section
+      id="yearplan-expanded"
+      className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 font-sans"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-xs font-medium uppercase tracking-wider text-[var(--reader-muted)]">
+            Today
+          </div>
+          <div className="mt-0.5 font-serif text-lg font-semibold text-[var(--reader-text)]">
+            {dateLabel}
+          </div>
+        </div>
+        {/* S430 — second tap collapses back to the compact line. */}
+        <button
+          type="button"
+          onClick={toggleExpanded}
+          aria-expanded={true}
+          aria-controls="yearplan-expanded"
+          aria-label="Collapse the year-plan strip"
+          className="chrome-metal chrome-metal-emerald shrink-0"
+          style={{ padding: "0.25rem 0.55rem", fontSize: "0.8rem" }}
+        >
+          Read in a year <span aria-hidden="true">&#8963;</span>
+        </button>
       </div>
 
       {plan ? (

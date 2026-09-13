@@ -64,7 +64,10 @@ export default function Landing() {
       Capacitor?: { isNativePlatform?: () => boolean };
     }).Capacitor?.isNativePlatform?.() === true
   ) {
-    window.location.replace("/today");
+    // S430 — scripture-first: the bare `/` now renders the Reader, so the
+    // phone app opens straight into the Scriptures (Landing itself now
+    // lives at /welcome).
+    window.location.replace("/");
     return null;
   }
 

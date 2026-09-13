@@ -411,7 +411,9 @@ export default function App() {
     // a plain `<a href="/read">` (full-page navigation), so by the
     // time the partner is on `/read`, App remounts and this initializer
     // re-runs with pathname=/read — the modal surfaces there.
-    if (window.location.pathname === "/") return false;
+    // S430 — scripture-first: the Landing page now lives at `/welcome`
+    // (bare `/` renders the Reader), so the suppression follows it.
+    if (window.location.pathname === "/welcome") return false;
     // S220 — suppress on /calendar. The Appointed Times is a standalone,
     // auth-free surface (it doubles as the engine's live demo); the
     // sacred-name / sign-in ask is a reader-time decision and would only
@@ -523,12 +525,9 @@ export default function App() {
   );
 
   // Phase 2 offline — the one-time "download for offline" onboarding banner.
-  // Self-gates on its localStorage seen-flag, restricts itself to the home
-  // surfaces (/today, /read, /), and stays hidden while the welcome modal is
-  // up so the partner faces a single ask at a time.
-  const offlinePrompt = (
-    <OfflineDownloadPrompt pathname={pathname} welcomeOpen={welcomeOpen} />
-  );
+  // S430 — scripture-first: now mounted INSIDE <Reader /> only (see
+  // Reader's offlinePromptReady gate), so it never surfaces on /today or
+  // the Landing page and waits for the partner to settle into reading.
 
   if (pathname === "/journal" || pathname.startsWith("/journal")) {
     return <>{welcomeModal}<Journal /></>;
@@ -581,7 +580,7 @@ export default function App() {
   // (Landing) and the post-sign-in flow (AuthCallback) both land here; the
   // Reader stays fully reachable at /read via the prominent "Read" door.
   if (pathname === "/today" || pathname.startsWith("/today")) {
-    return <>{welcomeModal}{offlinePrompt}<Today /></>;
+    return <>{welcomeModal}<Today /></>;
   }
   // S129 — Reader moves from `/` to `/read` so the bare bible
   // subdomain serves the new Landing surface instead of dropping
@@ -596,10 +595,16 @@ export default function App() {
   if (pathname === "/teachings" || pathname.startsWith("/teachings")) {
     return <>{welcomeModal}<Teachings /></>;
   }
-  if (pathname === "/read" || pathname.startsWith("/read")) {
-    return <>{welcomeModal}{offlinePrompt}<Reader /></>;
+  // S430 — scripture-first: the Landing surface moves to /welcome; the
+  // bare `/` now renders the Reader exactly like /read does, so a partner
+  // (and the native shell) opens straight into the Scriptures.
+  if (pathname === "/welcome" || pathname.startsWith("/welcome")) {
+    return <>{welcomeModal}<Landing /></>;
   }
-  return <>{welcomeModal}{offlinePrompt}<Landing /></>;
+  if (pathname === "/read" || pathname.startsWith("/read")) {
+    return <>{welcomeModal}<Reader welcomeOpen={welcomeOpen} /></>;
+  }
+  return <>{welcomeModal}<Reader welcomeOpen={welcomeOpen} /></>;
 }
 
 /**
@@ -640,7 +645,10 @@ function readReaderDeepLink(): { book: string; chapter: number } | null {
   return null;
 }
 
-function Reader() {
+// S430 — scripture-first: Reader now mounts the OfflineDownloadPrompt
+// itself (so it can gate on reader dwell / chapter change); App passes
+// welcomeOpen through so the banner still yields to the welcome modal.
+function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   const [books, setBooks] = useState<BookSummary[]>([]);
   const [booksError, setBooksError] = useState<string | null>(null);
 
@@ -1096,6 +1104,42 @@ function Reader() {
   // #1 = Free tier; the chrome button below renders for every signed-in
   // partner without a tier-locked chip.
   const [bookmarksIndexOpen, setBookmarksIndexOpen] = useState<boolean>(false);
+
+  // S430 — scripture-first: the reader header collapses to a slim
+  // toolbar (brand line + Search / Listen / Menu). Every other chrome
+  // control now lives inside the Menu dropdown; this boolean drives it.
+  // Escape closes it (window-level listener below); activating any
+  // item closes it too (closeChromeMenu passed through onClick).
+  const [chromeMenuOpen, setChromeMenuOpen] = useState<boolean>(false);
+  const closeChromeMenu = () => setChromeMenuOpen(false);
+  useEffect(() => {
+    if (!chromeMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setChromeMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [chromeMenuOpen]);
+
+  // S430 — scripture-first: the one-time offline-download banner only
+  // surfaces once the partner has actually settled into reading —
+  // 60 seconds on the Reader OR one chapter change, whichever first.
+  // The banner's own localStorage seen-flag still rules once dismissed.
+  const [offlinePromptReady, setOfflinePromptReady] = useState<boolean>(false);
+  useEffect(() => {
+    if (offlinePromptReady) return;
+    const t = window.setTimeout(() => setOfflinePromptReady(true), 60_000);
+    return () => window.clearTimeout(t);
+  }, [offlinePromptReady]);
+  const initialChapterKeyRef = useRef<string | null>(null);
+  useEffect(() => {
+    const key = `${selectedBookSlug}:${selectedChapter}`;
+    if (initialChapterKeyRef.current === null) {
+      initialChapterKeyRef.current = key;
+      return;
+    }
+    if (initialChapterKeyRef.current !== key) setOfflinePromptReady(true);
+  }, [selectedBookSlug, selectedChapter]);
 
   // S203 — Session C "My Study" home. Single boolean drives the
   // full-screen MyStudy overlay (the unified personal-apparatus
@@ -2684,72 +2728,29 @@ function Reader() {
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-8">
-      <header className="mb-6 border-b border-[var(--reader-accent)] pb-4">
-        {/* S173 + S174 — chrome layout, always stacked.
-            S173 staged the mobile fix as a flip: stack vertically
-            below sm: (640px), return to side-by-side row above.
-            S173-close partner-walks surfaced the narrow-desktop edge:
-            at 700-900px Safari windows (just above the sm: flip) the
-            row layout returns, the chrome cluster's intrinsic width
-            (~700-750px across the seven metallic buttons) eats the
-            available horizontal space, and the title h1 squeezes into
-            a narrow column or overlaps the Listen button.
-            S174 fix: drop the side-by-side flip entirely. The header
-            stays stacked at all widths — title on top, chrome row
-            below. Tablet and laptop have plenty of vertical room;
-            the trade for a clean wide-screen row read isn't worth
-            the narrow-desktop overlap. The chrome row keeps flex-wrap
-            at all widths so on a wide viewport the cluster fits on a
-            single row at intrinsic width (Listen / Search / Bookmarks
-            / Notes / Theme / Settings / Manage-account-or-Sign-in),
-            and on narrow viewports the buttons pack onto 2-3 rows
-            without scroll.
-            shrink-0 via the arbitrary [&>*] selector keeps each
-            button at its natural width on either layout. */}
-        <div className="flex flex-col gap-4">
-          <div className="min-w-0">
-            {/* S172.13 — brand title rendered as the §5 spectral-blue
-                verse-number accent (--reader-accent, #0084FF). Pulls
-                the brand into the same color family as the verse-number
-                pointers that the partner sees throughout the body —
-                consistent "this is the framework's color" register
-                rather than a separate chrome surface. */}
-            <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-accent)]">
-              The Remnant of Promise Official Study Bible
-            </h1>
-            <p className="mt-1 text-sm text-[var(--reader-muted)]">
-              Restored Names Edition
-            </p>
-          </div>
-          <div className="flex flex-wrap items-start gap-2 [&>*]:shrink-0">
-            {/* S157 — chrome Listen button per DESIGN_LANGUAGE.md §25.
-                Opens the bottom-pinned AudioPlayer starting from the
-                verse currently centered in the viewport (S116
-                IntersectionObserver pattern — same source-of-truth as
-                reading-position). Free at all tiers per §9 + S141
-                launch-scope revision. Same bordered-chrome button
-                family as the other chrome cluster buttons per §1. */}
-            <button
-              type="button"
-              onClick={startPlaybackFromCurrentVerse}
-              aria-label="Listen to chapter"
-              title="Listen to chapter"
-              className="chrome-metal chrome-metal-gold"
-            >
-              <span aria-hidden="true">▶</span>
-              <span>Listen</span>
-            </button>
+      {/* S430 — scripture-first: the reader header is now a slim single-row
+          toolbar. Left: a small muted brand line. Right: three chrome-metal
+          buttons only — Search, Listen, Menu. Every other control that
+          used to sit in the ~10-button chrome grid (Today, The Appointed
+          Times, Teachings, My Study, Notes, Bookmarks, Light/Dark mode,
+          Settings, account row) moved into the Menu dropdown below, with
+          the SAME handlers, hrefs, labels and chrome-metal registers.
+          `relative` on the header anchors the absolute dropdown panel. */}
+      <header className="relative mb-6 border-b border-[var(--reader-accent)] pb-3">
+        <div className="flex items-center justify-between gap-3">
+          <p className="min-w-0 truncate font-sans text-sm text-[var(--reader-muted)]">
+            Remnant of Promise · Study Bible
+          </p>
+          <div className="flex shrink-0 items-center gap-2">
             {/* S125 W6 — chrome Search button. Opens the SearchModal
                 pop-up per DESIGN_LANGUAGE.md §23. Cmd-K/Ctrl-K is the
-                keyboard equivalent (window-level listener above). Per
-                §23 the chrome cluster becomes
-                [Listen][Search][Notes][Theme][Subscription CTA] — same
-                bordered-chrome button family per §1. Search is chrome-
-                scope, not verse-scope, so it sits in the chrome cluster
-                rather than the §20 VerseActionMenu. */}
+                keyboard equivalent (window-level listener above). */}
             <button
               type="button"
-              onClick={openSearchModal}
+              onClick={() => {
+                closeChromeMenu();
+                openSearchModal();
+              }}
               aria-label="Open search"
               aria-keyshortcuts="Meta+K Control+K"
               title="Open search (Cmd-K / Ctrl-K)"
@@ -2758,131 +2759,148 @@ function Reader() {
               <span aria-hidden="true">⌕</span>
               <span>Search</span>
             </button>
-            {/* S166 — §29 chrome Bookmarks button. Opens the
-                BookmarksIndex sheet (global list of every bookmark
-                across the canon, newest-first). Per §29, the chrome
-                cluster becomes [Bookmarks][Notes][Theme][Subscription
-                CTA] — Bookmarks left of Notes by partner-content-
-                surface clustering. Same bordered-chrome button family
-                per §1. ⚑ glyph matches the §22 inline-bookmark glyph
-                for visual continuity. Free-tier; no tier-locked chip. */}
+            {/* S157 — chrome Listen button per DESIGN_LANGUAGE.md §25.
+                Opens the bottom-pinned AudioPlayer starting from the
+                verse currently centered in the viewport. Free at all
+                tiers per §9 + S141 launch-scope revision. */}
             <button
               type="button"
-              onClick={() => setBookmarksIndexOpen(true)}
-              aria-label="Open bookmarks"
-              title="Open bookmarks"
-              className="chrome-metal chrome-metal-argaman"
-            >
-              <span aria-hidden="true">⚑</span>
-              <span>Bookmarks</span>
-            </button>
-            {/* S203 — Session C chrome "My Study" button. Opens the
-                unified personal-apparatus home (notes + bookmarks +
-                highlights: search, collections, color sections,
-                export). Sits left of Notes with the partner-content
-                cluster. Spectral register (S203 — gold was already
-                Listen's, Yoshi's catch): the #0084FF apparatus color
-                in the metallic treatment, matching the Study Notes
-                tier chips inside the surface this button opens. Free
-                tier opens it too (capped home + lever inside). */}
-            <button
-              type="button"
-              onClick={() => setMyStudyOpen(true)}
-              aria-label="Open My Study"
-              title="Open My Study"
-              className="chrome-metal chrome-metal-spectral"
-            >
-              <span aria-hidden="true">❖</span>
-              <span>My Study</span>
-            </button>
-            {/* S124 W5 — chrome Notes button. Opens the NotesPanel
-                without an anchor (free-form path) so partners can
-                read existing notes or add free-form entries without
-                anchoring to a specific verse. Per §22, the chrome
-                cluster becomes [Notes][Theme][Subscription CTA] —
-                same bordered-chrome button family per §1. S166: now
-                sits right of the new §29 Bookmarks button. */}
-            <button
-              type="button"
-              onClick={openNotesPanel}
-              aria-label="Open notes"
-              title="Open notes"
-              className="chrome-metal chrome-metal-scarlet"
-            >
-              <span aria-hidden="true">✎</span>
-              <span>Notes</span>
-            </button>
-            {/* S228 — door back to the Today home hub. The hub is now the
-                app's post-auth landing, so the Reader needs a one-tap way
-                home (peer to The Appointed Times and Settings — same
-                full-page <a href> navigation, not a modal). Gold register
-                (the feast-gold front-door light), ☼ glyph for the new day.
-                Free at all tiers — the hub needs no backend. */}
-            <a
-              href="/today"
-              aria-label="Go to Today — the home hub"
-              title="Today"
+              onClick={() => {
+                closeChromeMenu();
+                startPlaybackFromCurrentVerse();
+              }}
+              aria-label="Listen to chapter"
+              title="Listen to chapter"
               className="chrome-metal chrome-metal-gold"
             >
-              <span aria-hidden="true">☼</span>
-              <span>Today</span>
-            </a>
-            {/* S356 - Teachings entry in the main chrome cluster, so the
-                door sits above the scriptures for readers who never open
-                the Today hub. Peer to Today / The Appointed Times - same
-                full-page <a href> navigation. Gold teaching register (ties
-                to the teaching's own gold section headers). Free at all
-                tiers. */}
-            <a
-              href="/teachings"
-              aria-label="Open Teachings"
-              title="Teachings"
-              className="chrome-metal chrome-metal-argaman"
+              <span aria-hidden="true">▶</span>
+              <span>Listen</span>
+            </button>
+            {/* S430 — Menu toggle. Holds everything else. */}
+            <button
+              type="button"
+              onClick={() => setChromeMenuOpen((v) => !v)}
+              aria-label={chromeMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={chromeMenuOpen}
+              aria-controls="reader-chrome-menu"
+              title="Menu"
+              className="chrome-metal chrome-metal-silver"
             >
-              <span aria-hidden="true">✦</span>
-              <span>Teachings</span>
-            </a>
-            {/* S227 — chrome entry point to The Appointed Times (the
-                biblical-calendar surface at /calendar). The calendar was
-                built as a standalone, auth-free route (it doubles as the
-                engine's live demo), but the app drops authenticated
-                partners straight into the reader and never shows the
-                website Landing page — so before this there was NO in-app
-                door to it. It sits in the main chrome cluster alongside
-                the other feature buttons (a top-level destination, peer
-                to ⚙ Settings — hence the same `<a href>` full-page
-                navigation, not a modal). The calendar's own Header
-                carries a "← Back to reading" link to /read, so the round
-                trip lands the partner back in the reader, not a dead end.
-                Its dedicated `moedim` register (techelet firmament body,
-                gold feast frame) previews the calendar surface and stays
-                distinct from Search (techelet) and Listen (gold). ☾ glyph
-                for the moon-reckoned moedim. Free at all tiers — the
-                calendar needs no backend. */}
-            <a
-              href="/calendar"
-              aria-label="Open The Appointed Times calendar"
-              title="The Appointed Times"
-              className="chrome-metal chrome-metal-moedim"
-            >
-              <span aria-hidden="true">☾</span>
-              <span>The Appointed Times</span>
-            </a>
-            <ThemeToggle />
-            {/* S172 — Settings entry in the top-right chrome cluster.
-                Slots between the Theme toggle (display chrome) and the
-                Account CTA (subscription state). Same bordered-chrome
-                button family per §1 as the other cluster buttons.
-                ⚙ gear glyph + 'Settings' label. Opens /settings. */}
-            <a
-              href="/settings"
-              aria-label="Open settings"
-              title="Open settings"
-              className="chrome-metal chrome-metal-bronze"
-            >
-              <span aria-hidden="true">⚙</span>
-              <span>Settings</span>
-            </a>
+              <span aria-hidden="true">☰</span>
+              <span>Menu</span>
+            </button>
+          </div>
+        </div>
+
+        {chromeMenuOpen && (
+          <div
+            id="reader-chrome-menu"
+            role="region"
+            aria-label="Reader menu"
+            className="absolute right-0 top-full z-40 mt-2 w-full max-w-sm rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-3 shadow-lg"
+          >
+            <div className="flex flex-wrap items-start gap-2 [&>*]:shrink-0">
+              {/* S228 — door back to the Today home hub. Gold register
+                  (the feast-gold front-door light), ☼ glyph for the new
+                  day. Free at all tiers — the hub needs no backend. */}
+              <a
+                href="/today"
+                onClick={closeChromeMenu}
+                aria-label="Go to Today — the home hub"
+                title="Today"
+                className="chrome-metal chrome-metal-gold"
+              >
+                <span aria-hidden="true">☼</span>
+                <span>Today</span>
+              </a>
+              {/* S227 — chrome entry point to The Appointed Times (the
+                  biblical-calendar surface at /calendar). Its dedicated
+                  `moedim` register previews the calendar surface. ☾ glyph
+                  for the moon-reckoned moedim. Free at all tiers. */}
+              <a
+                href="/calendar"
+                onClick={closeChromeMenu}
+                aria-label="Open The Appointed Times calendar"
+                title="The Appointed Times"
+                className="chrome-metal chrome-metal-moedim"
+              >
+                <span aria-hidden="true">☾</span>
+                <span>The Appointed Times</span>
+              </a>
+              {/* S356 - Teachings entry. Peer to Today / The Appointed
+                  Times - same full-page <a href> navigation. Free at all
+                  tiers. */}
+              <a
+                href="/teachings"
+                onClick={closeChromeMenu}
+                aria-label="Open Teachings"
+                title="Teachings"
+                className="chrome-metal chrome-metal-argaman"
+              >
+                <span aria-hidden="true">✦</span>
+                <span>Teachings</span>
+              </a>
+              {/* S203 — Session C chrome "My Study" button. Opens the
+                  unified personal-apparatus home (notes + bookmarks +
+                  highlights). Spectral register. Free tier opens it too. */}
+              <button
+                type="button"
+                onClick={() => {
+                  closeChromeMenu();
+                  setMyStudyOpen(true);
+                }}
+                aria-label="Open My Study"
+                title="Open My Study"
+                className="chrome-metal chrome-metal-spectral"
+              >
+                <span aria-hidden="true">❖</span>
+                <span>My Study</span>
+              </button>
+              {/* S124 W5 — chrome Notes button. Opens the NotesPanel
+                  without an anchor (free-form path). */}
+              <button
+                type="button"
+                onClick={() => {
+                  closeChromeMenu();
+                  openNotesPanel();
+                }}
+                aria-label="Open notes"
+                title="Open notes"
+                className="chrome-metal chrome-metal-scarlet"
+              >
+                <span aria-hidden="true">✎</span>
+                <span>Notes</span>
+              </button>
+              {/* S166 — §29 chrome Bookmarks button. Opens the
+                  BookmarksIndex sheet. ⚑ glyph matches the §22 inline-
+                  bookmark glyph. Free-tier; no tier-locked chip. */}
+              <button
+                type="button"
+                onClick={() => {
+                  closeChromeMenu();
+                  setBookmarksIndexOpen(true);
+                }}
+                aria-label="Open bookmarks"
+                title="Open bookmarks"
+                className="chrome-metal chrome-metal-argaman"
+              >
+                <span aria-hidden="true">⚑</span>
+                <span>Bookmarks</span>
+              </button>
+              <ThemeToggle />
+              {/* S172 — Settings entry. ⚙ gear glyph + 'Settings' label.
+                  Opens /settings. */}
+              <a
+                href="/settings"
+                onClick={closeChromeMenu}
+                aria-label="Open settings"
+                title="Open settings"
+                className="chrome-metal chrome-metal-bronze"
+              >
+                <span aria-hidden="true">⚙</span>
+                <span>Settings</span>
+              </a>
+            </div>
             {/* S172 + S174 — account / partnership chrome in the
                 metallic emerald register. Foundational ongoing
                 relationship per §3 — the same green that marks Tanakh-
@@ -2902,7 +2920,12 @@ function Reader() {
                 Plain "Sign in" copy stands as the auth-doorway label —
                 the framework voice doesn't impose on neutral utility
                 verbs, and the emerald color thread already names this
-                slot as the relationship gateway. */}
+                slot as the relationship gateway.
+                S430 — moved verbatim into the Menu dropdown (the account
+                row sits on its own line under a hairline rule). The
+                conditional below is UNCHANGED — the native reader-app
+                compliance branches are load-bearing. */}
+            <div className="mt-3 flex flex-wrap items-start gap-2 border-t border-[var(--reader-rule)] pt-3 [&>*]:shrink-0">
             {me && (me.status === "active" || me.status === "trialing") ? (
               <a href="/manage" className="chrome-metal chrome-metal-emerald">
                 Manage account
@@ -2948,9 +2971,18 @@ function Reader() {
                 Sign in
               </a>
             ) : null}
+            </div>
           </div>
-        </div>
+        )}
       </header>
+
+      {/* S430 — scripture-first: the one-time offline-download banner,
+          mounted here (Reader-only) and gated on offlinePromptReady. */}
+      <OfflineDownloadPrompt
+        pathname={typeof window !== "undefined" ? window.location.pathname : "/"}
+        welcomeOpen={welcomeOpen}
+        ready={offlinePromptReady}
+      />
 
       {/* S235 — reader date header + the Read-the-Scriptures-in-a-Year doorway
           (roadmap B-2). Sits at the very top of the reader; drives the
