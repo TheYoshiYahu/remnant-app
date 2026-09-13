@@ -27,6 +27,7 @@ import { loadStoredNativeToken } from "../lib/native-auth";
 import {
   shouldShowSigninReminder,
   markSigninReminderShown,
+  REMINDER_DELAY_SECONDS,
 } from "../lib/signin-reminder";
 
 function isAuthSurface(pathname: string): boolean {
@@ -53,6 +54,7 @@ export default function SigninReminderModal({
     if (welcomeOpen || isAuthSurface(pathname)) return;
 
     let cancelled = false;
+    let timer: number | undefined;
     // Resolve the session signal first. On native the token lives in
     // Capacitor Preferences (async); on web this is an immediate no-op and
     // hasJwtCookie() reads the cookie synchronously.
@@ -60,11 +62,16 @@ export default function SigninReminderModal({
       if (cancelled) return;
       if (hasJwtCookie()) return; // signed in → never show
       if (!shouldShowSigninReminder()) return; // cadence says not now
-      markSigninReminderShown();
-      setOpen(true);
+      // S430 — let the partner read first; the ask arrives after a pause.
+      timer = window.setTimeout(() => {
+        if (cancelled) return;
+        markSigninReminderShown();
+        setOpen(true);
+      }, REMINDER_DELAY_SECONDS * 1000);
     });
     return () => {
       cancelled = true;
+      if (timer) window.clearTimeout(timer);
     };
     // Evaluate once per mount; mount happens per launch / full navigation.
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -73,7 +73,7 @@ export default function SacredNameWelcomeModal({
   initialStep?: ModalStep;
 }) {
   const { set: setMask } = useSacredNameMask();
-  const [step, setStep] = useState<ModalStep>(initialStep);
+  const [step] = useState<ModalStep>(initialStep);
 
   // Pre-mount safety: if the mask preference got set between the
   // caller's initial check and our mount (race against another tab on
@@ -87,15 +87,22 @@ export default function SacredNameWelcomeModal({
   // shows on the native iOS/Android shells too, which is exactly where
   // the "downloaded but never created an account" partners are. The
   // CTA's window.location.assign('/sign-in') lands on that native branch.
+  // S430 — scripture-first: the first-run modal asks ONE question (the
+  // sacred-name mask) and closes. The account ask no longer piggybacks
+  // on it; the softened SigninReminderModal (second launch onward, after
+  // 45s of reading, 3-day cooldown) carries that invitation instead.
   useEffect(() => {
     if (step === "mask" && hasStoredSacredNamePreference()) {
-      setStep("signin");
+      markSigninAskSeen();
+      onClose();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   function pickMask(mask: SacredNameMask): void {
     setMask(mask);
-    setStep("signin");
+    markSigninAskSeen();
+    onClose();
   }
 
   function buildSignInUrl(): string {

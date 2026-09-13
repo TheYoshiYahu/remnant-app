@@ -42,7 +42,6 @@ import LockedPartnerPrompt from "./components/LockedPartnerPrompt";
 import Journal from "./routes/Journal";
 import Plans from "./routes/Plans";
 import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
-import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
 import { openGiving } from "./lib/giving.ts";
@@ -425,14 +424,15 @@ export default function App() {
     // surface. The modal surfaces when the partner taps into /read (App
     // remounts there and this initializer re-runs with pathname=/read).
     if (window.location.pathname.startsWith("/today")) return false;
-    return !hasStoredSacredNamePreference() || !hasSeenSigninAsk();
+    // S430 — scripture-first: only the sacred-name question opens the
+    // first-run modal. The sign-in ask moved to SigninReminderModal.
+    return !hasStoredSacredNamePreference();
   });
   // initialStep captured once at mount; the modal manages step state
   // internally after that. Computed via useState initializer (same
   // single-call semantics) so we don't re-evaluate on every render.
-  const [welcomeInitialStep] = useState<"mask" | "signin">(() =>
-    hasStoredSacredNamePreference() ? "signin" : "mask"
-  );
+  // S430 — always the mask step; the sign-in step is retired here.
+  const [welcomeInitialStep] = useState<"mask" | "signin">(() => "mask");
 
   // S127 W7 — preload + img.decode() the share-card brand-mark at app
   // init per DESIGN_LANGUAGE.md §24, so the first Copy/Share tap
@@ -2738,9 +2738,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
           `relative` on the header anchors the absolute dropdown panel. */}
       <header className="relative mb-6 border-b border-[var(--reader-accent)] pb-3">
         <div className="flex items-center justify-between gap-3">
-          <p className="min-w-0 truncate font-sans text-sm text-[var(--reader-muted)]">
+          <p className="hidden min-w-0 truncate font-sans text-sm text-[var(--reader-muted)] sm:block">
             Remnant of Promise · Study Bible
           </p>
+          <span className="sm:hidden" aria-hidden="true" />
           <div className="flex shrink-0 items-center gap-2">
             {/* S125 W6 — chrome Search button. Opens the SearchModal
                 pop-up per DESIGN_LANGUAGE.md §23. Cmd-K/Ctrl-K is the

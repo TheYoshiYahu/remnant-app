@@ -30,12 +30,17 @@
  *   N  → show at most once per N hours, even across app launches.
  * Yoshi: change this single value to soften the cadence.
  */
-export const REMINDER_COOLDOWN_HOURS = 0;
+export const REMINDER_COOLDOWN_HOURS = 72; // S430 — was 0 (every launch); scripture-first pass softens to 3 days
 
 // Per-launch guard (cleared when the tab/app/webview session ends).
 const SESSION_FLAG = "rop_signin_reminder_shown_session";
 // Cross-launch throttle timestamp (epoch ms), used only when cooldown > 0.
 const LAST_SHOWN_KEY = "rop_signin_reminder_last_shown_at";
+// S430 — launch counter so the very first open of the app never shows the
+// reminder: the partner should meet scripture before they meet an ask.
+const LAUNCH_COUNT_KEY = "rop_launch_count";
+/** Seconds of reading before the reminder may appear in a launch (S430). */
+export const REMINDER_DELAY_SECONDS = 45;
 
 function safeSessionGet(key: string): string | null {
   try {
@@ -62,6 +67,17 @@ export function shouldShowSigninReminder(): boolean {
   if (typeof window === "undefined") return false; // SSR
   // Already shown this launch → don't re-fire within the session.
   if (safeSessionGet(SESSION_FLAG) === "1") return false;
+  // S430 — never on the first launch. Count launches per session-start.
+  try {
+    if (safeSessionGet("rop_launch_counted") !== "1") {
+      const n = Number(safeLocalGet(LAUNCH_COUNT_KEY) ?? "0") + 1;
+      window.localStorage.setItem(LAUNCH_COUNT_KEY, String(n));
+      window.sessionStorage.setItem("rop_launch_counted", "1");
+    }
+    if (Number(safeLocalGet(LAUNCH_COUNT_KEY) ?? "0") <= 1) return false;
+  } catch {
+    return false;
+  }
 
   if (REMINDER_COOLDOWN_HOURS > 0) {
     const raw = safeLocalGet(LAST_SHOWN_KEY);
