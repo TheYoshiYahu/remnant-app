@@ -4480,6 +4480,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               bookSlug={chapterDetail.book.slug}
               chapterNumber={chapterDetail.chapter.chapter_number}
               userTier={me?.tier ?? "free"}
+              entitled={hwEntitled}
               onNavigate={jumpToVerseRef}
               hideParentheticals={hideParentheticals}
               sacredNameMask={sacredNameMask}

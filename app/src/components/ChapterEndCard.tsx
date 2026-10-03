@@ -98,6 +98,14 @@ interface ChapterEndCardProps {
    * `"yahuah"`.
    */
   sacredNameMask?: SacredNameMask;
+  /**
+   * S432 — true only when the viewer is in their free week or paying
+   * (subscription status active|trialing). When false, EVERY thread card is
+   * locked (blurred) regardless of its own tier_required — "nothing for free;
+   * the trial is the free access." Per-tier gating still applies on top for
+   * entitled viewers.
+   */
+  entitled?: boolean;
 }
 
 export default function ChapterEndCard({
@@ -107,6 +115,7 @@ export default function ChapterEndCard({
   onNavigate,
   hideParentheticals = false,
   sacredNameMask = "yahuah",
+  entitled = false,
 }: ChapterEndCardProps) {
   const [data, setData] = useState<ChapterEndCardResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -170,6 +179,7 @@ export default function ChapterEndCard({
             bookSlug={bookSlug}
             chapterNumber={chapterNumber}
             userTier={userTier}
+            entitled={entitled}
             onNavigate={onNavigate}
             hideParentheticals={hideParentheticals}
             sacredNameMask={sacredNameMask}
@@ -184,6 +194,8 @@ export default function ChapterEndCard({
               key={t.slug}
               thread={t}
               userTier={userTier}
+              entitled={entitled}
+              bookSlug={bookSlug}
               onNavigate={onNavigate}
               hideParentheticals={hideParentheticals}
               sacredNameMask={sacredNameMask}
@@ -370,6 +382,7 @@ function BaselineList({
   bookSlug,
   chapterNumber,
   userTier,
+  entitled,
   onNavigate,
   hideParentheticals,
   sacredNameMask,
@@ -378,6 +391,7 @@ function BaselineList({
   bookSlug: string;
   chapterNumber: number;
   userTier: ContentTier;
+  entitled: boolean;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
   sacredNameMask: SacredNameMask;
@@ -391,6 +405,7 @@ function BaselineList({
           bookSlug={bookSlug}
           chapterNumber={chapterNumber}
           userTier={userTier}
+          entitled={entitled}
           onNavigate={onNavigate}
           hideParentheticals={hideParentheticals}
           sacredNameMask={sacredNameMask}
@@ -411,6 +426,7 @@ function BaselineEntryBlock({
   bookSlug,
   chapterNumber,
   userTier,
+  entitled,
   onNavigate,
   hideParentheticals,
   sacredNameMask,
@@ -419,6 +435,7 @@ function BaselineEntryBlock({
   bookSlug: string;
   chapterNumber: number;
   userTier: ContentTier;
+  entitled: boolean;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
   sacredNameMask: SacredNameMask;
@@ -481,6 +498,8 @@ function BaselineEntryBlock({
                 key={`${tgt.verse_id}-${tgt.source}`}
                 tgt={tgt}
                 userTier={userTier}
+                entitled={entitled}
+                bookSlug={bookSlug}
                 onNavigate={onNavigate}
                 hideParentheticals={hideParentheticals}
                 sacredNameMask={sacredNameMask}
@@ -492,6 +511,8 @@ function BaselineEntryBlock({
                   key={`${tgt.verse_id}-${tgt.source}`}
                   tgt={tgt}
                   userTier={userTier}
+                  entitled={entitled}
+                  bookSlug={bookSlug}
                   onNavigate={onNavigate}
                   hideParentheticals={hideParentheticals}
                   sacredNameMask={sacredNameMask}
@@ -521,17 +542,27 @@ function BaselineEntryBlock({
 function TargetRow({
   tgt,
   userTier,
+  entitled,
+  bookSlug,
   onNavigate,
   hideParentheticals,
   sacredNameMask,
 }: {
   tgt: ChapterEndCardResponse["baseline"][number]["targets"][number];
   userTier: ContentTier;
+  entitled: boolean;
+  bookSlug: string;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
   sacredNameMask: SacredNameMask;
 }) {
-  const locked = !tierSatisfies(userTier, tgt.tier_required);
+  // S432 — entitled (free week / paying) reads everything. Otherwise the only
+  // free zone is the Gospels; there, per-tier gating still applies (so an
+  // extra-canon ref inside a Gospel chapter still locks). Everywhere else,
+  // every reference is locked for a non-entitled reader.
+  const locked = entitled
+    ? false
+    : !isGospelSlug(bookSlug) || !tierSatisfies(userTier, tgt.tier_required);
   const cls = classifyBookSlug(tgt.book_slug);
   const pillClasses = classNameForSourceClass(cls);
   // show-all-gate-access: the quoted verse text below is ALWAYS readable (the
@@ -656,12 +687,16 @@ function BlurredLock({
 function ThreadCallout({
   thread,
   userTier,
+  entitled,
+  bookSlug,
   onNavigate,
   hideParentheticals,
   sacredNameMask,
 }: {
   thread: ChapterEndCardResponse["threads"][number];
   userTier: ContentTier;
+  entitled: boolean;
+  bookSlug: string;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
   sacredNameMask: SacredNameMask;
@@ -705,7 +740,12 @@ function ThreadCallout({
   const paragraphs = summaryMd.split(/\n{2,}/);
   const firstParagraph = paragraphs[0];
   const rest = paragraphs.slice(1);
-  const locked = !tierSatisfies(userTier, thread.tier_required);
+  // S432 — entitled reads everything; otherwise the only free zone is the
+  // Gospels (per-tier gating still applies there). Every other book's end
+  // cards are locked for a non-entitled reader.
+  const locked = entitled
+    ? false
+    : !isGospelSlug(bookSlug) || !tierSatisfies(userTier, thread.tier_required);
 
   // S140 — Option C rendering for tier-locked threads. The free reader
   // sees the thread title + anchor + a teaser (first ~70 words of the
@@ -1079,6 +1119,14 @@ function prettyTier(tier: ContentTier): string {
  * round-trip. Strict chain — every paid tier inherits everything below
  * it. Anonymous callers map to `free` upstream.
  */
+// S432 — the Gospels are the only free study zone for a non-entitled reader
+// (Yoshi: "the only thing free should be in the gospels"). Acts and the
+// epistles are not Gospels and lock like the rest.
+const GOSPEL_SLUGS = new Set<string>(["matthew", "mark", "luke", "john"]);
+function isGospelSlug(slug?: string): boolean {
+  return !!slug && GOSPEL_SLUGS.has(slug);
+}
+
 function tierSatisfies(userTier: ContentTier, required: ContentTier): boolean {
   const rank: Record<ContentTier, number> = {
     free: 0,
