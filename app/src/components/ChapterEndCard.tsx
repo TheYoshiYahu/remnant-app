@@ -54,7 +54,6 @@ import {
 } from "../lib/applySacredNameMask";
 import { executeStudyShare } from "../lib/study-share-render";
 import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
-import LockedPartnerPrompt from "./LockedPartnerPrompt";
 
 // S172 — sacred-name mask + parens-toggle composition. Every render
 // site that previously called applyParentheticalsToggle(text, hide)
@@ -540,7 +539,9 @@ function TargetRow({
   // locked (extra-canonical / paid-tier) targets. Tapping a locked ref reveals
   // the reusable partner prompt inline — NO /pricing route, no checkout link
   // (consumption-only). Canon targets and partners navigate as before.
-  const [showLockedPrompt, setShowLockedPrompt] = useState(false);
+  const goToPricing = () => {
+    if (typeof window !== "undefined") window.location.href = "/pricing";
+  };
   return (
     <li>
       <div className="flex flex-wrap items-center gap-2">
@@ -548,7 +549,7 @@ function TargetRow({
           type="button"
           onClick={() => {
             if (locked) {
-              setShowLockedPrompt((v) => !v);
+              if (!isNativeShell()) goToPricing();
               return;
             }
             onNavigate?.(tgt.book_slug, tgt.chapter_number, tgt.verse_number);
@@ -576,24 +577,77 @@ function TargetRow({
           </span>
         )}
       </div>
-      <blockquote className="mt-1.5 border-l-2 border-[var(--reader-accent)] pl-3 italic leading-relaxed text-[var(--reader-text)]">
-        {applyTextPrefs(tgt.preview, hideParentheticals, sacredNameMask)}
-      </blockquote>
-      {locked && showLockedPrompt && (
-        <div className="mt-2">
-          <LockedPartnerPrompt
-            tone="inline"
-            message={
-              `Opening ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)} ` +
-              "in full is part of the partner library — the restored library " +
-              "beyond the canon. The verse stays quoted here for everyone. " +
-              "Partnership is managed from your account on the web at " +
-              "remnantofpromise.org."
-            }
-          />
-        </div>
+      {locked ? (
+        // S432 — plug pulled: the verse preview sits BLURRED behind glass with
+        // an unlock CTA over it. Native shell stays consumption-only (no
+        // pricing CTA — just the manage-on-web line).
+        <BlurredLock
+          label={
+            isNativeShell()
+              ? NATIVE_MANAGE_LINE
+              : `Unlock in ${prettyTier(tgt.tier_required)} tier`
+          }
+          onUnlock={isNativeShell() ? undefined : goToPricing}
+        >
+          <blockquote className="border-l-2 border-[var(--reader-accent)] pl-3 italic leading-relaxed text-[var(--reader-text)]">
+            {applyTextPrefs(tgt.preview, hideParentheticals, sacredNameMask)}
+          </blockquote>
+        </BlurredLock>
+      ) : (
+        <blockquote className="mt-1.5 border-l-2 border-[var(--reader-accent)] pl-3 italic leading-relaxed text-[var(--reader-text)]">
+          {applyTextPrefs(tgt.preview, hideParentheticals, sacredNameMask)}
+        </blockquote>
       )}
     </li>
+  );
+}
+
+// S432 — blurred paywall. Locked study content (cross-ref previews, locked
+// thread summaries) renders BLURRED + non-selectable behind glass, with an
+// optional unlock CTA over it. Replaces the S201 "come-and-see / full
+// opacity" rule: with the 7-day account trial delivering free access, locked
+// content past the trial has the plug pulled — the reader sees real substance
+// is there but must start the trial / subscribe (web) to read it. Native
+// shell stays consumption-only: label is the manage-on-web line, not a CTA.
+function BlurredLock({
+  children,
+  label,
+  onUnlock,
+}: {
+  children: ReactNode;
+  /** overlay CTA text; omit to blur with no overlay (teaser-only) */
+  label?: string;
+  onUnlock?: () => void;
+}) {
+  return (
+    <div className="relative mt-1.5">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none select-none blur-[5px] opacity-70"
+      >
+        {children}
+      </div>
+      {label && (
+        <div className="absolute inset-0 flex items-center justify-center p-2">
+          {onUnlock ? (
+            <button
+              type="button"
+              onClick={onUnlock}
+              className="inline-flex items-center gap-1 rounded-md border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-3 py-1.5 font-sans text-xs font-semibold text-[#F5E6FA] shadow hover:opacity-90"
+            >
+              <svg aria-hidden="true" viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="currentColor">
+                <path d="M10 2a4 4 0 00-4 4v2H5a1 1 0 00-1 1v8a1 1 0 001 1h10a1 1 0 001-1V9a1 1 0 00-1-1h-1V6a4 4 0 00-4-4zm-2 6V6a2 2 0 114 0v2H8z" />
+              </svg>
+              {label}
+            </button>
+          ) : (
+            <span className="max-w-[90%] rounded-md border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1.5 text-center font-sans text-xs font-medium text-[var(--reader-text)]">
+              {label}
+            </span>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -747,16 +801,16 @@ function ThreadCallout({
   );
 }
 
-// ---- S201: locked-thread render (no fade, no greyed text) -----------------
+// ---- S432: locked-thread render (blurred paywall) -------------------------
 //
-// Replaces the S140 Option-C teaser+fade. Per Yoshi's S201 hard rule, locked
-// content stays FULLY READABLE — the lock is signaled by the register-colored
-// jewel border + a tier chip + the Unlock pill, never by lowering opacity or
-// fading the text into the surface. The free reader gets the full first
-// paragraph of the framework reading at full opacity; the rest of the summary
-// and the member verse-pairings stay behind the unlock. The card keeps its
-// Share affordance (the paywall doubles as a discovery surface) and the
-// register top border matches the unlocked jewel for visual unity.
+// Supersedes the S201 "fully readable" rule. With the 7-day account trial now
+// delivering free access, locked content past the trial has the plug pulled:
+// the free reader sees the thread title + anchor + tier chip and a BLURRED
+// teaser paragraph behind glass (real substance visible, not readable), a
+// count line of what they're missing, and a single Unlock CTA (web) or the
+// manage-on-web line (native, consumption-only). The card keeps its Share
+// affordance (the paywall doubles as a discovery surface) and the register
+// top border matches the unlocked jewel for visual unity.
 
 function LockedThreadCallout({
   thread,
@@ -828,10 +882,14 @@ function LockedThreadCallout({
         )}
       </header>
 
-      {/* Full first paragraph, full opacity — no fade, no truncation. */}
-      <div className="prose-paragraphs leading-relaxed text-[var(--reader-text)]">
-        {renderMarkdownParagraph(firstParagraph)}
-      </div>
+      {/* S432 — the teaser paragraph renders BLURRED behind glass (plug
+          pulled once the trial ends). The reader sees real substance is
+          there; the count line + Unlock CTA below convert. */}
+      <BlurredLock>
+        <div className="prose-paragraphs leading-relaxed text-[var(--reader-text)]">
+          {renderMarkdownParagraph(firstParagraph)}
+        </div>
+      </BlurredLock>
 
       <div className="mt-3 flex items-center gap-2 font-sans text-xs text-[var(--reader-muted)]">
         <svg

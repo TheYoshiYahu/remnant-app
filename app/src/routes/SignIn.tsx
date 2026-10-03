@@ -207,6 +207,9 @@ function EmailOptInCheckbox({
 function NativeSignInBranch() {
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
   const [password, setPassword] = useState("");
+  // S432 — let the reader see what they typed (requested: an older partner
+  // wants to read her password as she enters it on login).
+  const [showPw, setShowPw] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   // Non-essential email consent (opt-in, unchecked by default). Consumed only
@@ -282,7 +285,7 @@ function NativeSignInBranch() {
           </label>
           <input
             id="ropPasswordField"
-            type="password"
+            type={showPw ? "text" : "password"}
             autoComplete="current-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -290,6 +293,16 @@ function NativeSignInBranch() {
             required
             className="mt-1 block w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-bg)] px-3 py-2 text-base text-[var(--reader-text)] focus:border-[var(--reader-text)] focus:outline-none disabled:opacity-60"
           />
+          <label className="mt-2 flex items-center gap-2 text-sm text-[var(--reader-text)]">
+            <input
+              type="checkbox"
+              checked={showPw}
+              onChange={(e) => setShowPw(e.target.checked)}
+              disabled={submitting}
+              className="h-4 w-4"
+            />
+            Show password
+          </label>
         </div>
 
         {error && (

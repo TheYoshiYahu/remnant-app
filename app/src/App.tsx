@@ -1012,6 +1012,11 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // null until the bundle resolves, so first paint is plain, then marked).
   const [hwSheet, setHwSheet] = useState<string | null>(null);
   const [, setHwIndexReady] = useState(false);
+  // S432 — Hidden Words is a conversion hook: the colored marks + counts show
+  // for everyone (they SEE the feature), but opening the originals table is
+  // gated. Entitled = an account currently in its free week or paying. Anyone
+  // else taps a count and gets the sign-in / upgrade wall instead of the table.
+  const hwEntitled = !!me && (me.status === "active" || me.status === "trialing");
   useEffect(() => {
     let alive = true;
     loadHiddenWordsIndex().then(() => {
@@ -3198,8 +3203,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               className="study-bar-handle"
             >
               <span className="study-bar-handle-label">Display options</span>
-              <span className="study-bar-chevron" aria-hidden="true">
-                {studyBarCollapsed ? "▼" : "▲"}
+              <span className="study-bar-chevron">
+                {studyBarCollapsed ? "Show" : "Hide"}
               </span>
             </button>
             {!studyBarCollapsed && (
@@ -4765,6 +4770,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
           wordKey={hwSheet}
           bookSlug={selectedBookSlug}
           bookName={chapterDetail?.book?.title ?? selectedBookSlug}
+          locked={!hwEntitled}
+          signedIn={!!me}
           onClose={() => setHwSheet(null)}
           onJump={(bookSlug, chapterNumber, verseNumber) => {
             setHwSheet(null);

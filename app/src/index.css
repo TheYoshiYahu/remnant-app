@@ -2860,6 +2860,11 @@ body {
 .study-bar-chevron {
   font-size: 0.7rem;
   line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   color: var(--reader-accent);
   transition: transform 0.15s ease;
 }

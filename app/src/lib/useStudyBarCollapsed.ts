@@ -13,10 +13,11 @@
  * established `rop_X_v1` convention (cf. `rop_strongs_superscripts_v1`,
  * `rop_hide_parentheticals_v1`).
  *
- * Default COLLAPSED (`true`) — the unobtrusive thin handle is the
- * resting state per the "doesn't permanently eat screen space" /
- * "native and unobtrusive" brief; the partner opts INTO the expanded
- * pills and the choice is remembered.
+ * Default EXPANDED (`false`) as of S432 — Yoshi's call: the display
+ * options should be visible on arrival so readers discover the toggles
+ * (the control reads "Hide" / "Show", not a chevron). A reader who
+ * collapses it has that choice remembered; only an explicit stored
+ * "true" keeps it collapsed on the next visit.
  *
  * SSR-safe: every `window`/`localStorage` access is guarded by
  * `typeof window !== "undefined"`. If `localStorage` is unavailable,
@@ -29,12 +30,14 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "rop_study_bar_collapsed_v1";
 
 function readStoredPreference(): boolean {
-  // Default collapsed: only an explicit stored "false" expands it.
-  if (typeof window === "undefined") return true;
+  // S432 — default EXPANDED (collapsed=false): the display options are visible
+  // on arrival so a first-time reader sees the toggles. Only an explicit stored
+  // "true" keeps the bar collapsed for returning readers who chose that.
+  if (typeof window === "undefined") return false;
   try {
-    return window.localStorage.getItem(STORAGE_KEY) !== "false";
+    return window.localStorage.getItem(STORAGE_KEY) === "true";
   } catch {
-    return true;
+    return false;
   }
 }
 

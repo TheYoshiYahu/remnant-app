@@ -10,6 +10,7 @@ import {
   type HiddenTableEntry,
   type HiddenOriginalRow,
 } from "../lib/hidden-words";
+import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
 import "../hidden-words.css";
 
 export interface HiddenWordsSheetProps {
@@ -19,6 +20,11 @@ export interface HiddenWordsSheetProps {
   bookSlug: string;
   /** display name of the book being read, e.g. "Revelation" */
   bookName: string;
+  /** S432 — true when the viewer isn't in their free week / isn't paying:
+   *  the marks still show in the reader, but opening the table is gated. */
+  locked?: boolean;
+  /** S432 — whether an account is signed in (shapes the CTA: upgrade vs join). */
+  signedIn?: boolean;
   onClose: () => void;
   /** jump the reader to a verse in the current book */
   onJump?: (bookSlug: string, chapter: number, verse: number) => void;
@@ -28,18 +34,80 @@ export default function HiddenWordsSheet({
   wordKey,
   bookSlug,
   bookName,
+  locked,
+  signedIn,
   onClose,
   onJump,
 }: HiddenWordsSheetProps) {
   const [table, setTable] = useState<Record<string, HiddenTableEntry> | null>(null);
 
   useEffect(() => {
-    if (wordKey && !table) {
+    // Don't fetch the 4M table for a viewer who can't read it — the gate
+    // renders without it.
+    if (wordKey && !locked && !table) {
       loadHiddenWordsTable().then(setTable);
     }
-  }, [wordKey, table]);
+  }, [wordKey, locked, table]);
 
   if (!wordKey) return null;
+
+  // S432 — gated viewer: show the feature wall, not the table. The colored
+  // marks still render in the reader (they saw the feature); this is the
+  // "boom, no access" moment that drives the free-week signup / upgrade.
+  if (locked) {
+    const goWeb = (path: string) => {
+      if (typeof window !== "undefined") window.location.href = path;
+    };
+    return (
+      <>
+        <div className="hw-sheet-bg" onClick={onClose} />
+        <div className="hw-sheet" role="dialog" aria-label={`${wordKey} — unlock Hidden Words`}>
+          <div className="hw-grab" />
+          <div className="hw-sheet-in">
+            <h3>Hidden Words</h3>
+            <p className="hw-sub">
+              <strong>{wordKey}</strong> is one English word standing in for
+              several different Hebrew or Greek words. Hidden Words opens every
+              one of them — the original word, its meaning, and where it's used.
+            </p>
+            <p className="hw-sub">
+              It's part of the study library. Every new account reads it free
+              for a week.
+            </p>
+            {isNativeShell() ? (
+              <p
+                className="hw-sub"
+                style={{ marginTop: 14, color: "var(--reader-text)" }}
+              >
+                {NATIVE_MANAGE_LINE}
+              </p>
+            ) : (
+              <button
+                className="hw-close"
+                style={{
+                  marginTop: 14,
+                  width: "100%",
+                  border: "1px solid #D4B0E0",
+                  background:
+                    "linear-gradient(90deg,#3D1B5C,#8E4FB3,#B0357F)",
+                  color: "#F5E6FA",
+                  fontWeight: 700,
+                }}
+                onClick={() => goWeb(signedIn ? "/pricing" : "/sign-in")}
+              >
+                {signedIn
+                  ? "Unlock Hidden Words"
+                  : "Start your free week to unlock"}
+              </button>
+            )}
+            <button className="hw-close" style={{ marginTop: 10 }} onClick={onClose}>
+              Not now
+            </button>
+          </div>
+        </div>
+      </>
+    );
+  }
   const entry = table ? table[wordKey] : undefined;
 
   const here: HiddenOriginalRow[] = entry
