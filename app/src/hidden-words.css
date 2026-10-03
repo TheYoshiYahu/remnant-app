@@ -1,0 +1,51 @@
+/* S431 — Hidden Words. Three alternating violet tones (COLOR_PALETTE:
+   argaman / periwinkle / magenta), light + dark, per the approved mockup v2. */
+.hw-c0 { color: #8E4FB3; }
+.hw-c1 { color: #5753C9; }
+.hw-c2 { color: #B0357F; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hw-c0 { color: #B98AD6; }
+  :root:not([data-theme="light"]) .hw-c1 { color: #9F9FE0; }
+  :root:not([data-theme="light"]) .hw-c2 { color: #E060A5; }
+}
+[data-theme="dark"] .hw-c0 { color: #B98AD6; }
+[data-theme="dark"] .hw-c1 { color: #9F9FE0; }
+[data-theme="dark"] .hw-c2 { color: #E060A5; }
+
+/* The small superscript count after a hidden word. Tappable; opens the table. */
+.hw-count {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.62em;
+  font-weight: 700;
+  vertical-align: super;
+  margin-left: 1px;
+  cursor: pointer;
+  padding: 0 1px;
+  border-radius: 4px;
+}
+.hw-count:hover, .hw-count:focus { background: rgba(142, 79, 179, 0.14); outline: none; }
+
+/* Bottom sheet */
+.hw-sheet-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 60; }
+.hw-sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 61;
+  max-height: 78vh; overflow: auto;
+  background: var(--reader-bg, #fff); color: var(--reader-text, #1a1a1a);
+  border-top: 1px solid var(--reader-rule, #e5e5e5);
+  border-radius: 16px 16px 0 0; padding: 10px 16px 28px;
+}
+[data-theme="dark"] .hw-sheet { background: #0f0f0f; color: #fff; border-top-color: #2a2a2a; }
+.hw-grab { width: 40px; height: 4px; border-radius: 2px; background: #cfcfcf; margin: 2px auto 12px; }
+.hw-sheet-in { max-width: 600px; margin: 0 auto; }
+.hw-sheet h3 { margin: 0; font-size: 20px; font-family: Georgia, serif; }
+.hw-sheet .hw-sub { color: #6b6b6b; font-size: 14px; margin: 4px 0 6px; line-height: 1.45; }
+.hw-group { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #8E4FB3; font-weight: 700; margin: 16px 0 6px; }
+.hw-tbl { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.hw-tbl th { text-align: left; font-size: 11.5px; color: #6b6b6b; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 6px 6px 6px 0; border-bottom: 1px solid var(--reader-rule, #e5e5e5); }
+.hw-tbl td { padding: 10px 6px 10px 0; border-bottom: 1px solid var(--reader-rule, #e5e5e5); vertical-align: top; line-height: 1.4; }
+.hw-orig { font-size: 18px; font-family: "SBL Hebrew", "Ezra SIL", "Times New Roman", serif; }
+.hw-xlit { display: block; font-style: italic; color: #6b6b6b; font-size: 13px; }
+.hw-sn { white-space: nowrap; color: #0084ff; font-weight: 600; font-size: 13px; }
+.hw-ref { text-decoration: underline; text-decoration-color: #cfcfcf; text-underline-offset: 2px; cursor: pointer; margin-right: 6px; }
+.hw-more { color: #6b6b6b; font-size: 12px; }
+.hw-close { margin-top: 14px; background: none; border: 1px solid var(--reader-rule, #e5e5e5); color: inherit; border-radius: 8px; padding: 8px 14px; cursor: pointer; }

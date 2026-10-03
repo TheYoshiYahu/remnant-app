@@ -72,6 +72,7 @@ import HighlightPicker, {
 } from "./components/HighlightPicker";
 import { HIGHLIGHT_HEX } from "./lib/api";
 import StrongsLookup from "./components/StrongsLookup";
+import HiddenWordsSheet from "./components/HiddenWordsSheet";
 import LexiconSheet from "./components/LexiconSheet";
 import VincentsSheet from "./components/VincentsSheet";
 import NikkudotSheet from "./components/NikkudotSheet";
@@ -128,6 +129,8 @@ import { useParentheticalsToggle } from "./lib/useParentheticalsToggle";
 import { useSacredNameMask } from "./lib/useSacredNameMask";
 import { bookPillClassName, classifyBookSlug } from "./lib/book-source-class";
 import { useStrongsSuperscriptsToggle } from "./lib/useStrongsSuperscriptsToggle";
+import { useHiddenWordsToggle } from "./lib/useHiddenWordsToggle";
+import { loadHiddenWordsIndex, lookupHiddenWord } from "./lib/hidden-words";
 import { useStudyBarCollapsed } from "./lib/useStudyBarCollapsed";
 import {
   isAtCompanionTier,
@@ -843,6 +846,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     show: showStrongsSuperscripts,
     toggle: toggleShowStrongsSuperscripts,
   } = useStrongsSuperscriptsToggle();
+  // S431 — Hidden Words toggle (default ON, free tier). Colors every KJV
+  // word standing for 2+ Hebrew/Greek originals and shows a tappable count.
+  const { show: showHiddenWords, toggle: toggleShowHiddenWords } =
+    useHiddenWordsToggle();
 
   // S229 — collapsed/expanded state for the pinned study-options bar
   // (Yoshi "Option 2"). The display-toggle pills moved from after the
@@ -999,6 +1006,21 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   const [strongsState, setStrongsState] = useState<
     { strong: string; surface: string; verseId?: number | null } | null
   >(null);
+  // S431 — Hidden Words bottom sheet. Holds the english key of the tapped
+  // count (null = closed). The index is loaded once at mount; hwIndexReady
+  // bumps so verses re-render with marks (lookupHiddenWord is sync + returns
+  // null until the bundle resolves, so first paint is plain, then marked).
+  const [hwSheet, setHwSheet] = useState<string | null>(null);
+  const [, setHwIndexReady] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    loadHiddenWordsIndex().then(() => {
+      if (alive) setHwIndexReady(true);
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   // S173 — Capacitor deep-link entry. App.tsx subscribes to
   // appUrlOpen; the in-app dispatch lands here as a
@@ -3240,6 +3262,23 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                 : "Show Strong's"}
             </button>
             {/*
+              S431 — Hidden Words toggle. Colors every KJV word that stands
+              for 2+ Hebrew/Greek originals and shows a tappable count that
+              opens the originals table. Default ON, free tier, persists via
+              lib/useHiddenWordsToggle (localStorage `rop_hidden_words_v1`).
+              Three-stop argaman→periwinkle→magenta gradient so the pill reads
+              as the Hidden Words register, distinct from the §27 Strong's pill.
+            */}
+            <button
+              type="button"
+              onClick={toggleShowHiddenWords}
+              aria-pressed={showHiddenWords}
+              title="Show or hide the Hidden Words marks: a small count after every English word the King James uses for two or more different Hebrew or Greek words. Tap a count to see the original words, their meanings, and where they appear. Persists across chapters and reloads."
+              className="rounded-md border border-[#D4B0E0] bg-gradient-to-r from-[#8E4FB3] via-[#5753C9] to-[#B0357F] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#F5E6FA] shadow-sm hover:opacity-90"
+            >
+              {showHiddenWords ? "Hide Hidden Words" : "Show Hidden Words"}
+            </button>
+            {/*
               S168 / S169 — §28 Interlinear toggle. S169 repaint per Yoshi
               live-walk redline 1: moved from metallic argaman to the
               **existing metallic-gold register** already in use on the
@@ -3951,11 +3990,23 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                                       }),
                                 }
                               : undefined;
+                          // S431 — Hidden Words lookup for this segment.
+                          // Only tagged words can qualify; degrades to null
+                          // (plain text) when the toggle is off or the index
+                          // hasn't loaded yet.
+                          const hw =
+                            showHiddenWords && seg.strong
+                              ? lookupHiddenWord(seg.surface)
+                              : null;
                           return paintSubverse(
                             segIdx,
                             <span key={seg.key}>
                               <span
-                                className="word-tappable"
+                                className={
+                                  hw
+                                    ? "word-tappable hw-c" + (seg.position % 3)
+                                    : "word-tappable"
+                                }
                                 style={selectableStyle}
                                 onPointerDown={(e) => {
                                   e.stopPropagation();
@@ -3995,6 +4046,28 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                                 partner reads two superscript layers on the
                                 line without confusion.
                               */}
+                              {/*
+                                S431 — Hidden Words count. Renders when the
+                                toggle is ON and this English word stands for
+                                2+ Hebrew/Greek originals. Tapping opens the
+                                table sheet (setHwSheet(key)). Colored to match
+                                the word's own violet tone (position % 3).
+                                Sits before the S160 Strong's sup so a word can
+                                carry both layers without collision.
+                              */}
+                              {hw && (
+                                <sup
+                                  className={"hw-count hw-c" + (seg.position % 3)}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setHwSheet(hw.k);
+                                  }}
+                                  aria-label={`${seg.text} stands for ${hw.n} original words — tap to see them`}
+                                  title={`${hw.n} Hebrew or Greek words lie behind this one English word — tap to see them`}
+                                >
+                                  {hw.n}
+                                </sup>
+                              )}
                               {showStrongsSuperscripts && seg.strong && (
                                 <sup
                                   className="strongs-superscript"
@@ -4678,6 +4751,30 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               : undefined
           }
           onClose={() => setStrongsState(null)}
+        />
+      )}
+
+      {/*
+        S431 — Hidden Words bottom sheet. Opens when a hidden-word count is
+        tapped (hwSheet = english key). Shows the originals behind that word,
+        the reading book first, with tap-to-navigate verses. Guarded: an
+        unknown key yields an empty sheet, never a crash.
+      */}
+      {hwSheet !== null && (
+        <HiddenWordsSheet
+          wordKey={hwSheet}
+          bookSlug={selectedBookSlug}
+          bookName={chapterDetail?.book?.title ?? selectedBookSlug}
+          onClose={() => setHwSheet(null)}
+          onJump={(bookSlug, chapterNumber, verseNumber) => {
+            setHwSheet(null);
+            setSelectedBookSlug(bookSlug);
+            setSelectedChapter(chapterNumber);
+            setCurrentVerse(verseNumber);
+            if (verseNumber > 1) {
+              setInitialScrollVerse(verseNumber);
+            }
+          }}
         />
       )}
 
