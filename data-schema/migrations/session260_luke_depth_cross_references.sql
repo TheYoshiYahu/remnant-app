@@ -771,7 +771,7 @@ WITH input(src_edition, src_slug, src_ch, src_v,
   -- Thread 4: 9:23-27 the cost, and the glory of the Son of Adam
   ('canon','luke',9,26,'canon','daniel',7,13, 'free', E'*...behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days...* (Daniel 7:13). *When he shall come in his own glory* — the kaph preserved; he comes in the likeness, with the clouds, not flattened into the Ancient of days but brought before him.'),
   ('canon','luke',9,26,'canon','daniel',7,14, 'free', E'*And there was given him dominion, and glory, and a kingdom... his dominion is an everlasting dominion, which shall not pass away...* (Daniel 7:14). The glory the Son comes in is glory GIVEN him by the Father — the Formed Son exalted, never self-existent-apart-from-the-Father.'),
-  ('canon','luke',9,26,'canon','zechariah',14,5, 'free', E'*...and Yahuah Elohai (the LORD my God) shall come, and all the saints with thee.* (Zechariah 14:5). *In his own glory, and in his Father''s, and of the holy angels* — the coming with the holy ones Zechariah foresaw.'),
+  ('canon','luke',9,26,'canon','zechariah',14,5, 'free', E'*And ye shall flee to the valley of the mountains; for the valley of the mountains shall reach unto Azal: yea, ye shall flee, like as ye fled from before the earthquake in the days of Uzziah king of Yahudah (Judah): and Yahuah Elohai (the LORD my God) shall come, and all the saints with thee.* (Zechariah 14:5). He comes *in his own glory, and in his Father''s, and of the holy angels* (Luke 9:26); Zechariah sees *all the saints* with him as well — the seed of promise gathered to him and coming with him into the land, not the angels.'),
   ('canon','luke',9,25,'canon','psalms',49,7, 'free', E'*None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him:* (Psalm 49:7). *What is a man advantaged, if he gain the whole world, and lose himself* — no wealth ransoms a soul; only the giving-up of life saves it.'),
   ('canon','luke',9,25,'canon','psalms',49,8, 'free', E'*(For the redemption of their soul is precious, and it ceaseth for ever:)* (Psalm 49:8). The soul''s redemption is beyond price; he who would save his life by gaining the world loses the only thing that cannot be bought back.'),
   -- Thread 5: 9:28-36 the Transfiguration — Moses, Elijah, and the Father''s voice
@@ -1035,7 +1035,7 @@ SELECT t.id, x.id, 2, E'Daniel 7:14 — *there was given him dominion, and glory
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
 INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
-SELECT t.id, x.id, 3, E'Zechariah 14:5 — *Yahuah Elohai (the LORD my God) shall come, and all the saints with thee.* The coming with the holy ones.'
+SELECT t.id, x.id, 3, E'Zechariah 14:5 — *Yahuah Elohai (the LORD my God) shall come, and all the saints with thee.* The saints with him are the seed of promise gathered to him; the holy angels attend him.'
   FROM cross_reference_threads t, cross_references x, _lk09_lookup sv, _lk09_lookup tv
  WHERE t.slug='luke-9-take-up-thy-cross-and-the-glory-of-the-son-of-adam-daniel-7-psalm-49'
    AND sv.edition_slug='canon' AND sv.book_slug='luke' AND sv.chapter_number=9 AND sv.verse_number=26

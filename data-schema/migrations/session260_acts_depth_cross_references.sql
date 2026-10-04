@@ -278,7 +278,7 @@ WITH input(src_edition, src_slug, src_ch, src_v,
   ('canon','acts',9,40,'canon','2-kings',4,34, 'free', E'*And he went up, and lay upon the child... and the flesh of the child waxed warm* (2 Kings 4:34). Elisha, like Elijah before him, raises a dead child through earnest prayer and the power of Yahuah — the pattern Peter walks in at Joppa.'),
   ('canon','acts',9,40,'canon','2-kings',4,35, 'free', E'*And the child sneezed seven times, and the child opened his eyes* (2 Kings 4:35). *And she opened her eyes: and when she saw Peter, she sat up* (Acts 9:40). The very gesture echoes across the centuries — the dead opening their eyes by the resurrection-power of Yahuah.'),
   ('canon','acts',9,40,'canon','ezekiel',37,3, 'free', E'*Son of Adam, can these bones live? And I answered, O Yahuah (Lord) GOD, thou knowest* (Ezekiel 37:3). Only Yahuah knows, and only Yahuah can. Tabitha raised is one woman; the dry bones are the whole house of Yashar''el — the same breath of life promised to a nation.'),
-  ('canon','acts',9,40,'canon','ezekiel',37,5, 'free', E'*Thus saith Adonai Yahuah (the Lord GOD) unto these bones; Behold, I will cause breath to enter into you, and ye shall live* (Ezekiel 37:5). The Father is the giver of breath and life — through Elijah, through Elisha, through Peter in Yahusha''s name, and at the last over all the slain of His people.'),
+  ('canon','acts',9,40,'canon','ezekiel',37,5, 'free', E'*Thus saith Adonai Yahuah (the Lord GOD) unto these bones; Behold, I will cause breath to enter into you, and ye shall live* (Ezekiel 37:5). The Father is the giver of breath and life — through Elijah, through Elisha, through Peter in Yahusha''s name, and at his coming over the righteous of His people, when their graves are opened and they are brought into the land (Ezekiel 37:12).'),
   ('canon','acts',9,42,'apocrypha','the-wisdom-of-solomon',16,13, 'extras', E'*For you have power of life and death: you leadest to the gates of hell, and bringest up again* (Wisdom of Solomon 16:13). Israel''s own wisdom confessed it long before Joppa: life and death belong to Yahuah alone, who *bringest up again*. When *many believed in Yahuah* (Acts 9:42), they believed in the One who has always held that power.')
 )
 INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
@@ -464,7 +464,7 @@ SELECT t.id, x.id, 5, E'Ezekiel 37:3 — *Son of Adam, can these bones live? ...
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
 INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
-SELECT t.id, x.id, 6, E'Ezekiel 37:5 — *I will cause breath to enter into you, and ye shall live* — the Father is the giver of breath and life, through Elijah, Elisha, Peter, and at the last over all His people.'
+SELECT t.id, x.id, 6, E'Ezekiel 37:5 — *I will cause breath to enter into you, and ye shall live* — the Father is the giver of breath and life, through Elijah, Elisha, Peter, and at his coming over the righteous of His people.'
   FROM cross_reference_threads t, cross_references x, _acts09_lookup sv, _acts09_lookup tv
  WHERE t.slug='acts-9-tabitha-arise-the-father-raises-the-dead-through-the-sons-name'
    AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=9 AND sv.verse_number=40
