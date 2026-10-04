@@ -220,7 +220,7 @@ function CommentaryBlock({
               href="/pricing"
               className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
             >
-              Unlock in {prettyTier(entry.tier_required)} tier
+              Unlock in {unlockTierName(entry.tier_required)} tier
             </a>
           )}
         </div>
@@ -426,7 +426,7 @@ function TierBadge({
   tier: ContentTier;
   locked: boolean;
 }) {
-  const label = prettyTier(tier);
+  const label = locked ? unlockTierName(tier) : prettyTier(tier);
   // Locked rows get a "Locked" badge; unlocked but paid rows get the
   // tier name as a quiet badge so partners know what tier the content
   // sits at (and what they'd lose by downgrading).
@@ -497,6 +497,13 @@ function ctaCopyForSurface(
     case "featured":
       return "Featured teaching unit on this chapter.";
   }
+}
+
+// S441 — locked "free"-tier study content is not unlocked by the free
+// reader (S432/S433 gate it after the trial), so the CTA names the
+// cheapest paid tier instead of saying "Unlock in Free tier".
+function unlockTierName(tier: ContentTier): string {
+  return prettyTier(tier === "free" ? "study_notes" : tier);
 }
 
 function prettyTier(tier: ContentTier): string {

@@ -271,6 +271,25 @@ export default function Pricing() {
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-8">
+      {/* S441 — a visitor confirmed signed-out (meError set, not still
+          loading) sees the no-card trial offer first: every new account
+          gets the whole study library free for TRIAL_DAYS (api/auth.py). */}
+      {meError !== null && (
+        <section className="mb-6 rounded-lg border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-5 py-4 text-center">
+          <p className="font-sans text-lg font-semibold text-[#F5E6FA]">
+            Create your account — 7 days free, all access
+          </p>
+          <p className="mt-1 font-sans text-sm text-[#F5E6FA] opacity-90">
+            No credit card required.
+          </p>
+          <a
+            href={"/sign-in?return_to=" + encodeURIComponent(window.location.href)}
+            className="mt-3 inline-block rounded-lg border border-[#F5E6FA] px-5 py-2 font-sans text-sm font-semibold text-[#F5E6FA] hover:opacity-90"
+          >
+            Create your free account
+          </a>
+        </section>
+      )}
       <header className="mb-8 border-b border-[var(--reader-rule)] pb-4">
         <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
           Become a Partner

@@ -587,7 +587,7 @@ function TargetRow({
           }}
           title={
             locked
-              ? `${prettyTier(tgt.tier_required)} — part of the partner library`
+              ? `${unlockTierName(tgt.tier_required, bookSlug)} — part of the partner library`
               : `Go to ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}`
           }
           className={"font-sans text-xs font-semibold " + pillClasses}
@@ -604,7 +604,7 @@ function TargetRow({
             >
               <path d="M10 2a4 4 0 00-4 4v2H5a1 1 0 00-1 1v8a1 1 0 001 1h10a1 1 0 001-1V9a1 1 0 00-1-1h-1V6a4 4 0 00-4-4zm-2 6V6a2 2 0 114 0v2H8z" />
             </svg>
-            {prettyTier(tgt.tier_required)}
+            {unlockTierName(tgt.tier_required, bookSlug)}
           </span>
         )}
       </div>
@@ -616,7 +616,7 @@ function TargetRow({
           label={
             isNativeShell()
               ? NATIVE_MANAGE_LINE
-              : `Unlock in ${prettyTier(tgt.tier_required)} tier`
+              : `Unlock in ${unlockTierName(tgt.tier_required, bookSlug)} tier`
           }
           onUnlock={isNativeShell() ? undefined : goToPricing}
         >
@@ -859,7 +859,7 @@ function LockedThreadCallout({
   thread: ChapterEndCardResponse["threads"][number];
   firstParagraph: string;
 }) {
-  const tierName = prettyTier(thread.tier_required);
+  const tierName = unlockTierName(thread.tier_required, thread.anchor?.book_slug);
   const memberCount = thread.members_in_chapter.length;
   const topBorder = threadTopBorderColor(thread.anchor?.book_slug);
   const goToPricing = () => {
@@ -1093,6 +1093,16 @@ function prettyBookSlug(slug: string): string {
       /^\d+$/.test(part) ? part : part.charAt(0).toUpperCase() + part.slice(1)
     )
     .join(" ");
+}
+
+// S441 — "free"-tier study content is gated after the trial (S432/S433),
+// so its tier tag and unlock CTA name the cheapest paid tier (Study Notes)
+// instead of "Free".
+function unlockTierName(tier: ContentTier, bookSlug?: string): string {
+  // Inside the Gospels free-tier study content really is free (S433), so
+  // the tag stays "Free" there; everywhere else it names Study Notes.
+  if (tier === "free" && isGospelSlug(bookSlug)) return prettyTier(tier);
+  return prettyTier(tier === "free" ? "study_notes" : tier);
 }
 
 function prettyTier(tier: ContentTier): string {
