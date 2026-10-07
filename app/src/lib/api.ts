@@ -34,6 +34,7 @@
  */
 
 import { getCachedNativeToken } from "./native-auth";
+import type { StudyBlock } from "./study-blocks";
 
 const API_BASE: string =
   import.meta.env.VITE_API_BASE ?? "https://api.bible.remnantofpromise.org/v1";
@@ -2081,4 +2082,150 @@ export function fetchNikkudotVerse(
   return fetchTagged<NikkudotVerseResponse>(
     `/nikkudot/${encodeURIComponent(bookSlug)}/${chapter}/${verse}`,
   );
+}
+
+// ----- S442 Year Plan study (YEAR_PLAN_STUDY_SPEC.md) ----------------------
+//
+// Partner endpoints (any paid tier or the trial): plan sync, plan notes, My
+// Teachings. Top tier ("everything"): For Teachers assignments. The server
+// re-checks the tier on every call; the client lock is only presentation.
+// Block shapes live in lib/study-blocks.ts.
+
+
+export interface YearPlanSyncResponse {
+  state: Record<string, unknown> | null;
+  updated_at_ms: number | null;
+}
+
+export function getYearPlanSync(): Promise<YearPlanSyncResponse> {
+  return get<YearPlanSyncResponse>("/me/year-plan", { timeoutMs: 15000 });
+}
+
+export function putYearPlanSync(
+  state: Record<string, unknown>,
+  updated_at_ms: number,
+): Promise<YearPlanSyncResponse> {
+  return put<{ state: Record<string, unknown>; updated_at_ms: number }, YearPlanSyncResponse>(
+    "/me/year-plan",
+    { state, updated_at_ms },
+  );
+}
+
+export interface PlanNote {
+  id: string;
+  plan_day: number | null;
+  day_date: string | null;
+  book_slug: string | null;
+  book_title: string | null;
+  chapter: number | null;
+  verse_start: number | null;
+  verse_end: number | null;
+  body: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface CreatePlanNoteInput {
+  body: string;
+  plan_day?: number | null;
+  day_date?: string | null;
+  book_slug?: string | null;
+  book_title?: string | null;
+  chapter?: number | null;
+  verse_start?: number | null;
+  verse_end?: number | null;
+}
+
+export function listPlanNotes(): Promise<{ notes: PlanNote[] }> {
+  return get<{ notes: PlanNote[] }>("/plan-notes", { timeoutMs: 15000 });
+}
+
+export function createPlanNote(input: CreatePlanNoteInput): Promise<PlanNote> {
+  return post<CreatePlanNoteInput, PlanNote>("/plan-notes", input);
+}
+
+export function updatePlanNote(
+  id: string,
+  input: { body?: string; verse_start?: number | null; verse_end?: number | null; clear_verses?: boolean },
+): Promise<PlanNote> {
+  return patch<typeof input, PlanNote>(`/plan-notes/${encodeURIComponent(id)}`, input);
+}
+
+export function deletePlanNote(id: string): Promise<void> {
+  return del(`/plan-notes/${encodeURIComponent(id)}`);
+}
+
+export interface StudyDocSummary {
+  id: string;
+  title: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface MyTeachingDoc extends StudyDocSummary {
+  blocks: StudyBlock[];
+}
+
+export function listMyTeachings(): Promise<{ teachings: StudyDocSummary[] }> {
+  return get<{ teachings: StudyDocSummary[] }>("/my-teachings", { timeoutMs: 15000 });
+}
+
+export function getMyTeaching(id: string): Promise<MyTeachingDoc> {
+  return get<MyTeachingDoc>(`/my-teachings/${encodeURIComponent(id)}`, { timeoutMs: 15000 });
+}
+
+export function createMyTeaching(input: { title: string; blocks: StudyBlock[] }): Promise<MyTeachingDoc> {
+  return post<typeof input, MyTeachingDoc>("/my-teachings", input);
+}
+
+export function saveMyTeaching(
+  id: string,
+  input: { title: string; blocks: StudyBlock[] },
+): Promise<MyTeachingDoc> {
+  return put<typeof input, MyTeachingDoc>(`/my-teachings/${encodeURIComponent(id)}`, input);
+}
+
+export function deleteMyTeaching(id: string): Promise<void> {
+  return del(`/my-teachings/${encodeURIComponent(id)}`);
+}
+
+export interface AssignmentSummary extends StudyDocSummary {
+  due_date: string | null;
+}
+
+export interface AssignmentDoc extends AssignmentSummary {
+  instructions: string;
+  include_text: boolean;
+  blocks: StudyBlock[];
+}
+
+export interface SaveAssignmentInput {
+  title: string;
+  instructions: string;
+  due_date: string | null;
+  include_text: boolean;
+  blocks: StudyBlock[];
+}
+
+export function listAssignments(): Promise<{ assignments: AssignmentSummary[] }> {
+  return get<{ assignments: AssignmentSummary[] }>("/teacher/assignments", { timeoutMs: 15000 });
+}
+
+export function getAssignment(id: string): Promise<AssignmentDoc> {
+  return get<AssignmentDoc>(`/teacher/assignments/${encodeURIComponent(id)}`, { timeoutMs: 15000 });
+}
+
+export function createAssignment(input: SaveAssignmentInput): Promise<AssignmentDoc> {
+  return post<SaveAssignmentInput, AssignmentDoc>("/teacher/assignments", input);
+}
+
+export function saveAssignment(id: string, input: SaveAssignmentInput): Promise<AssignmentDoc> {
+  return put<SaveAssignmentInput, AssignmentDoc>(
+    `/teacher/assignments/${encodeURIComponent(id)}`,
+    input,
+  );
+}
+
+export function deleteAssignment(id: string): Promise<void> {
+  return del(`/teacher/assignments/${encodeURIComponent(id)}`);
 }

@@ -205,6 +205,7 @@ from models import (
     TeachingBodyResponse,
 )
 from subscriptions import router as subscriptions_router
+from year_plan_study import router as year_plan_study_router
 
 
 # ----- App lifespan -------------------------------------------------------
@@ -250,6 +251,10 @@ app.add_middleware(
 
 # Subscriptions router — Session 37 wheel.
 app.include_router(subscriptions_router, prefix="/v1/subscriptions")
+
+# S442 — Year Plan study: plan sync, plan notes, My Teachings (partner) and
+# For Teachers assignments (top tier). Paths carry their own /v1 prefix.
+app.include_router(year_plan_study_router)
 
 
 # ----- Helpers ------------------------------------------------------------

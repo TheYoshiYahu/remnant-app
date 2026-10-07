@@ -36,6 +36,11 @@ import AuthCallback from "./routes/AuthCallback";
 import Calendar from "./routes/Calendar";
 import Today from "./routes/Today";
 import Teachings from "./routes/Teachings";
+import YearPlan from "./routes/YearPlan";
+import MyTeachings from "./routes/MyTeachings";
+import Teach from "./routes/Teach";
+import { startYearPlanSync } from "./lib/reading-plan/plan-sync";
+import { advanceOnOpen } from "./lib/reading-plan/year-plan";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import SigninReminderModal from "./components/SigninReminderModal";
 import LockedPartnerPrompt from "./components/LockedPartnerPrompt";
@@ -535,6 +540,20 @@ export default function App() {
   if (pathname === "/journal" || pathname.startsWith("/journal")) {
     return <>{welcomeModal}<Journal /></>;
   }
+  // S442 — "See the whole plan": the Read-in-a-Year plan laid out day by day
+  // (partner feature; the page checks entitlement itself). Exact match or a
+  // "/plan/" sub-path only — "/plans" (curated plans) is a different route.
+  if (pathname === "/plan" || pathname.startsWith("/plan/")) {
+    return <>{welcomeModal}<YearPlan /></>;
+  }
+  // S442 — My Teachings (partner) and For Teachers (top tier). Each page
+  // checks entitlement itself; the server enforces it on every endpoint.
+  if (pathname === "/my-teachings" || pathname.startsWith("/my-teachings/")) {
+    return <>{welcomeModal}<MyTeachings /></>;
+  }
+  if (pathname === "/teach" || pathname.startsWith("/teach/")) {
+    return <>{welcomeModal}<Teach /></>;
+  }
   if (pathname === "/plans" || pathname.startsWith("/plans")) {
     return <>{welcomeModal}<Plans /></>;
   }
@@ -1017,6 +1036,17 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // gated. Entitled = an account currently in its free week or paying. Anyone
   // else taps a count and gets the sign-in / upgrade wall instead of the table.
   const hwEntitled = !!me && (me.status === "active" || me.status === "trialing");
+  // S442 — partners: keep the year plan in step across devices, and let
+  // in-order reading move the plan along (opening the chapter after the next
+  // unread one marks the ones before it read). Free readers: unchanged.
+  useEffect(() => {
+    if (hwEntitled) startYearPlanSync();
+  }, [hwEntitled]);
+  useEffect(() => {
+    if (hwEntitled && selectedBookSlug && selectedChapter) {
+      advanceOnOpen(selectedBookSlug, selectedChapter);
+    }
+  }, [hwEntitled, selectedBookSlug, selectedChapter]);
   useEffect(() => {
     let alive = true;
     loadHiddenWordsIndex().then(() => {
@@ -3016,6 +3046,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
           (roadmap B-2). Sits at the very top of the reader; drives the
           ArrangedReading overlay for start/resume. */}
       <YearPlanHeader
+        planEntitled={hwEntitled}
         onOpenArranged={() => setArrangedOpen(true)}
         onNavigate={(slug, ch) => {
           setSelectedBookSlug(slug);

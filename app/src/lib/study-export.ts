@@ -276,11 +276,51 @@ export function downloadMarkdown(markdown: string, filename: string): void {
 
 // ----- print view (PDF via the system dialog) -------------------------------
 
-function esc(s: string): string {
+export function esc(s: string): string {
   return s
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
+}
+
+/** Shared print stylesheet (S203 look). Exported for other print surfaces
+ *  (S442 My Teachings + For Teachers) so every printout looks the same. */
+export const PRINT_STYLES = `
+  @page { margin: 22mm 18mm; }
+  body { font-family: Lora, Georgia, "Iowan Old Style", serif;
+         color: #1a1a1a; line-height: 1.65; font-size: 12.5pt;
+         max-width: 42em; margin: 0 auto; padding: 24px; }
+  h1 { font-size: 22pt; margin: 0 0 2pt; }
+  .meta { font-family: ui-sans-serif, system-ui, sans-serif;
+          color: #6b6b6b; font-size: 9.5pt; margin: 0 0 18pt; }
+  h2 { font-size: 15pt; border-bottom: 1px solid #c9c9c9;
+       padding-bottom: 3pt; margin: 22pt 0 8pt; page-break-after: avoid; }
+  h3 { font-size: 11.5pt; margin: 14pt 0 4pt; page-break-after: avoid; }
+  h3 .when { font-family: ui-sans-serif, system-ui, sans-serif;
+             font-weight: 400; color: #6b6b6b; font-size: 8.5pt; }
+  blockquote { border-left: 2.5px solid #0084ff; margin: 6pt 0;
+               padding: 2pt 0 2pt 10pt; page-break-inside: avoid; }
+  .cite { font-style: normal; color: #6b6b6b; font-size: 9.5pt; }
+  .coll { font-family: ui-sans-serif, system-ui, sans-serif;
+          color: #6b6b6b; font-size: 9pt; }
+  p { margin: 4pt 0 8pt; }
+`;
+
+/** Wrap body HTML in the standalone print document (auto-opens the print
+ *  dialog on load). `extraCss` lets a surface add its own pieces. */
+export function wrapPrintDocument(title: string, bodyHtml: string, extraCss = ""): string {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>${esc(title)}</title>
+<style>${PRINT_STYLES}${extraCss}</style>
+</head>
+<body>
+${bodyHtml}
+<script>window.addEventListener('load', function () { setTimeout(function () { window.print(); }, 150); });</script>
+</body>
+</html>`;
 }
 
 /** Build a standalone print-friendly HTML document: serif substance,
@@ -351,37 +391,7 @@ export function buildStudyPrintHtml(
     }
   }
 
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>My Study</title>
-<style>
-  @page { margin: 22mm 18mm; }
-  body { font-family: Lora, Georgia, "Iowan Old Style", serif;
-         color: #1a1a1a; line-height: 1.65; font-size: 12.5pt;
-         max-width: 42em; margin: 0 auto; padding: 24px; }
-  h1 { font-size: 22pt; margin: 0 0 2pt; }
-  .meta { font-family: ui-sans-serif, system-ui, sans-serif;
-          color: #6b6b6b; font-size: 9.5pt; margin: 0 0 18pt; }
-  h2 { font-size: 15pt; border-bottom: 1px solid #c9c9c9;
-       padding-bottom: 3pt; margin: 22pt 0 8pt; page-break-after: avoid; }
-  h3 { font-size: 11.5pt; margin: 14pt 0 4pt; page-break-after: avoid; }
-  h3 .when { font-family: ui-sans-serif, system-ui, sans-serif;
-             font-weight: 400; color: #6b6b6b; font-size: 8.5pt; }
-  blockquote { border-left: 2.5px solid #0084ff; margin: 6pt 0;
-               padding: 2pt 0 2pt 10pt; page-break-inside: avoid; }
-  .cite { font-style: normal; color: #6b6b6b; font-size: 9.5pt; }
-  .coll { font-family: ui-sans-serif, system-ui, sans-serif;
-          color: #6b6b6b; font-size: 9pt; }
-  p { margin: 4pt 0 8pt; }
-</style>
-</head>
-<body>
-${parts.join("\n")}
-<script>window.addEventListener('load', function () { setTimeout(function () { window.print(); }, 150); });</script>
-</body>
-</html>`;
+  return wrapPrintDocument("My Study", parts.join("\n"));
 }
 
 /** Open the print view in a new tab/window and trigger the system
@@ -391,7 +401,13 @@ export function openStudyPrintView(
   data: StudyIndexResponse,
   opts: ExportOptions = {},
 ): void {
-  const html = buildStudyPrintHtml(data, opts);
+  openPrintHtml(buildStudyPrintHtml(data, opts));
+}
+
+/** Open a print document in a new tab/window and trigger the system print
+ *  dialog (the partner picks "Save as PDF"). Falls back to a same-tab hidden
+ *  iframe when the popup is blocked. */
+export function openPrintHtml(html: string): void {
   const w = window.open("", "_blank");
   if (w) {
     w.document.open();

@@ -65,3 +65,6 @@ export function bookPillClassName(slug: string): string {
       return "book-pill book-pill-argaman";
   }
 }
+
+/** S442 — the 66-book canon in canonical order (Tanakh, then NT), for pickers. */
+export const CANON_BOOK_ORDER: string[] = [...OT_BOOK_SLUGS, ...NT_BOOK_SLUGS];

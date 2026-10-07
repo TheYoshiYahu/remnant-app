@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   buildYearPlan,
   dayNumberFor,
@@ -10,10 +10,19 @@ import {
 import {
   getYearPlanState,
   startYearPlan,
+  todayISO,
   updateYearPlanState,
+  YEAR_PLAN_CHANGED_EVENT,
 } from "../lib/reading-plan/plan-store";
+import { pacedPlanFor, scopeSequence } from "../lib/reading-plan/year-plan";
+import { seqBefore } from "../lib/reading-plan/paced";
+import { NoteComposer } from "./PlanNotes";
+import { usePlanNotes } from "../lib/reading-plan/plan-notes";
 import { getReckoningPref } from "../lib/calendar/reckoning-pref";
 import { getParshaForDate, type ParshaPortion } from "../lib/torah/parsha";
+import LockedPartnerPrompt from "./LockedPartnerPrompt";
+import { isNativeShell } from "../lib/native-shell";
+import { PLAN_LOCK_MESSAGE, PLAN_LOCK_TITLE } from "../lib/reading-plan/plan-lock";
 
 /*
   S235 — Reader date header + the "Read the Scriptures in a Year" doorway
@@ -43,6 +52,12 @@ interface Props {
   onNavigate: (slug: string, chapter: number) => void;
   /** Reveal the ArrangedReading overlay so the plan position is visible. */
   onOpenArranged: () => void;
+  /**
+   * S442 — partner (active/trialing) may open /plan, the whole plan laid out.
+   * Free readers see the same button with a lock; tapping shows the partner
+   * prompt (no purchase link on native).
+   */
+  planEntitled?: boolean;
 }
 
 /**
@@ -96,10 +111,24 @@ function writeExpanded(next: boolean): void {
   }
 }
 
-export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
+export default function YearPlanHeader({
+  onNavigate,
+  onOpenArranged,
+  planEntitled = false,
+}: Props) {
   const [plan, setPlan] = useState(() => getYearPlanState());
   const [pickerOpen, setPickerOpen] = useState(false);
   const [torahOpen, setTorahOpen] = useState(false);
+  const [lockOpen, setLockOpen] = useState(false);
+  const [noteOpen, setNoteOpen] = useState(false);
+  const notesApi = usePlanNotes(false);
+  // S442 — follow plan changes made elsewhere (the /plan page, the reader's
+  // in-order auto-advance, the account sync).
+  useEffect(() => {
+    const on = () => setPlan(getYearPlanState());
+    window.addEventListener(YEAR_PLAN_CHANGED_EVENT, on);
+    return () => window.removeEventListener(YEAR_PLAN_CHANGED_EVENT, on);
+  }, []);
   // S430 — collapsed by default; one tap on the line/button expands.
   const [expanded, setExpanded] = useState<boolean>(() =>
     typeof window === "undefined" ? false : readExpanded(),
@@ -119,9 +148,30 @@ export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
   }).format(today);
 
   // For a running plan: which day is today, and what's the portion.
+  // Free readers: the fixed 365-day grid (unchanged). Partners (S442): their
+  // own pace — today's list from the paced plan, which may also say they're
+  // caught up for today.
   let dayNumber = 0;
   let todaysReading: DayReadingItem[] = [];
-  if (plan) {
+  let pacedNote: string | null = null;
+  let nextItems: DayReadingItem[] = [];
+  if (plan && planEntitled) {
+    const paced = pacedPlanFor(plan);
+    const iso = todayISO(today);
+    dayNumber = Math.max(1, dayNumberFor(startDateLocal(plan.startDateISO), today));
+    const first = paced.days[0];
+    if (first && first.dateISO === iso) todaysReading = first.items;
+    else if (first) {
+      pacedNote = `Caught up for today. Next: ${refList(first.items)}`;
+      nextItems = first.items;
+    }
+    else pacedNote = "The whole plan is read.";
+    if (paced.finishDateISO) {
+      pacedNote = [pacedNote, `finishing ${new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", year: "numeric" }).format(startDateLocal(paced.finishDateISO))}`]
+        .filter(Boolean)
+        .join(" · ");
+    }
+  } else if (plan) {
     const buckets = buildYearPlan(plan.scope);
     dayNumber = dayNumberFor(startDateLocal(plan.startDateISO), today);
     todaysReading = readingForDay(buckets, dayNumber);
@@ -131,7 +181,11 @@ export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
     const first = items[0];
     if (!first) return;
     syncArrangedExtras(scope);
-    updateYearPlanState({ position: first.seq });
+    // S442 — position is the LAST CHAPTER READ: resuming marks everything
+    // before today's first chapter as read (never moves it backwards).
+    const cur = getYearPlanState();
+    const before = seqBefore(scopeSequence(scope), first.seq);
+    if (cur && before > cur.position) updateYearPlanState({ position: before });
     onOpenArranged();
     onNavigate(first.book_id, first.chapter);
   };
@@ -145,7 +199,7 @@ export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
   };
 
   const resume = () => {
-    if (plan) openReadingAt(todaysReading, plan.scope);
+    if (plan) openReadingAt(todaysReading.length ? todaysReading : nextItems, plan.scope);
   };
 
   // S430 — collapsed: one compact line. Date on the left (tappable), a small
@@ -210,7 +264,8 @@ export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
       {plan ? (
         <div className="mt-3">
           <div className="text-sm font-semibold text-[var(--reader-accent)]">
-            Read the Scriptures in a Year &middot; Day {dayNumber} of {DAYS_IN_PLAN}
+            Read the Scriptures in a Year &middot; Day {dayNumber}
+            {planEntitled ? "" : ` of ${DAYS_IN_PLAN}`}
             <span className="font-normal text-[var(--reader-muted)]">
               {" "}
               &middot; {plan.scope === "all" ? "all of Scripture" : "the canon"}
@@ -220,6 +275,9 @@ export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
             <div className="mt-1 text-sm text-[var(--reader-text)]">
               Today&rsquo;s portion: {refList(todaysReading)}
             </div>
+          )}
+          {pacedNote && (
+            <div className="mt-1 text-xs text-[var(--reader-muted)]">{pacedNote}</div>
           )}
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <button
@@ -240,7 +298,30 @@ export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
             >
               {pickerOpen ? "Close" : "Change plan"}
             </button>
+            <WholePlanButton
+              entitled={planEntitled}
+              onLocked={() => setLockOpen((v) => !v)}
+            />
+            {planEntitled && (todaysReading.length > 0 || nextItems.length > 0) && (
+              <button
+                type="button"
+                onClick={() => setNoteOpen((v) => !v)}
+                className={GHOST_BTN}
+              >
+                + Note
+              </button>
+            )}
           </div>
+          {lockOpen && !planEntitled && <WholePlanLock />}
+          {noteOpen && planEntitled && (
+            <NoteComposer
+              dayNumber={dayNumber}
+              dayDateISO={todaysReading.length ? todayISO(today) : null}
+              chapters={todaysReading.length ? todaysReading : nextItems}
+              onSave={notesApi.add}
+              onClose={() => setNoteOpen(false)}
+            />
+          )}
           {pickerOpen && <ScopePicker onChoose={choose} />}
           {torahOpen && <TorahPortionsPanel onNavigate={onNavigate} />}
         </div>
@@ -261,12 +342,60 @@ export default function YearPlanHeader({ onNavigate, onOpenArranged }: Props) {
                 open={torahOpen}
                 onToggle={() => setTorahOpen((v) => !v)}
               />
+              <WholePlanButton
+                entitled={planEntitled}
+                onLocked={() => setLockOpen((v) => !v)}
+              />
             </div>
           )}
+          {lockOpen && !planEntitled && <WholePlanLock />}
           {torahOpen && <TorahPortionsPanel onNavigate={onNavigate} />}
         </div>
       )}
     </section>
+  );
+}
+
+/**
+ * S442 — "See the whole plan". Partners get a plain link to /plan; everyone
+ * else gets the same label with a lock glyph that toggles the partner prompt.
+ */
+function WholePlanButton({
+  entitled,
+  onLocked,
+}: {
+  entitled: boolean;
+  onLocked: () => void;
+}) {
+  if (entitled) {
+    return (
+      <a href="/plan" className={GHOST_BTN}>
+        See the whole plan
+      </a>
+    );
+  }
+  return (
+    <button
+      type="button"
+      onClick={onLocked}
+      className={GHOST_BTN}
+      title="Partner feature"
+    >
+      <span aria-hidden="true">🔒 </span>See the whole plan
+    </button>
+  );
+}
+
+function WholePlanLock() {
+  return (
+    <div>
+      <LockedPartnerPrompt title={PLAN_LOCK_TITLE} message={PLAN_LOCK_MESSAGE} />
+      {!isNativeShell() && (
+        <a href="/pricing" className="chrome-metal chrome-metal-gold mt-2 inline-block">
+          Unlock in Study Notes tier
+        </a>
+      )}
+    </div>
   );
 }
 
