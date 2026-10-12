@@ -196,7 +196,15 @@ export default function Pricing() {
   // disabling their button locked them out. Fix: hasActiveSubscription
   // still flips the banner on; reactivationOpen flips the button to
   // "Reactivate" and re-enables it.
-  const hasActiveSubscription = me?.status === "active" || me?.status === "trialing";
+  // S443 — the 7-day no-card trial reports status "trialing" with no Stripe
+  // row behind it (locked_price_cents is null). It is NOT a partnership:
+  // nothing renews and nothing can be cancelled. Treating it as one disabled
+  // every Subscribe button ("Already a partner") and left trial readers with
+  // no way to pay. A trial reader gets live Subscribe buttons and a banner.
+  const isNoCardTrial =
+    me?.status === "trialing" && me?.locked_price_cents == null;
+  const hasActiveSubscription =
+    (me?.status === "active" || me?.status === "trialing") && !isNoCardTrial;
   const reactivationOpen =
     hasActiveSubscription && me?.cancel_at_period_end === true;
   const buttonDisabled = hasActiveSubscription && !reactivationOpen;
@@ -369,6 +377,16 @@ export default function Pricing() {
           tier ({me?.cadence}).
           {me?.is_founder_pricing && " Founder pricing — forever locked."}
           {me?.is_promo_subscriber && " Promotional partner — bypass the founder cap."}
+        </div>
+      )}
+      {isNoCardTrial && (
+        <div className="mb-6 rounded border border-[#D4B0E0] bg-[var(--reader-surface)] px-4 py-3 text-base text-[var(--reader-text)]">
+          You're on your free 7-day trial with full access
+          {me?.current_period_end
+            ? ` through ${new Date(me.current_period_end).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })}`
+            : ""}
+          . No card is on file and nothing renews on its own. Choose a tier
+          below to become a partner now.
         </div>
       )}
       {reactivationOpen && (

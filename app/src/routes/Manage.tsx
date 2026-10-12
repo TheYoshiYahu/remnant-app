@@ -291,6 +291,48 @@ export default function Manage() {
     );
   }
 
+  // ---- Render: no-card free trial ----------------------------------------
+  // S443 — the 7-day trial has no Stripe row (locked_price_cents is null).
+  // The date is when the TRIAL ENDS, not a renewal, and there is nothing to
+  // cancel. Web readers get a path to choose a tier now; native shells keep
+  // the plain non-clickable account line (reader-app compliance).
+  if (view.sub.status === "trialing" && view.sub.locked_price_cents == null) {
+    const trialEndLabel = formatDate(view.sub.current_period_end);
+    return (
+      <PageShell title="Manage account">
+        <div className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
+          <div className="flex items-baseline justify-between">
+            <h2 className="text-lg font-semibold text-[var(--reader-text)]">
+              Free trial — full access
+            </h2>
+            <span className="text-xs text-[var(--reader-muted)]">in trial</span>
+          </div>
+          <dl className="mt-3 space-y-1.5 text-base">
+            {trialEndLabel && <Row label="Trial ends on" value={trialEndLabel} />}
+            <Row label="Card on file" value="none — nothing renews" />
+          </dl>
+          <p className="mt-3 text-base text-[var(--reader-muted)]">
+            When the trial ends, the study tools lock until you choose a
+            partnership. Your notes, highlights, and bookmarks are kept.
+          </p>
+        </div>
+        {isNativeShell() ? (
+          <p className="mb-4 text-base text-[var(--reader-text)]">
+            <ManageLine />
+          </p>
+        ) : (
+          <a
+            href="/pricing"
+            className="mb-4 inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+          >
+            Become a partner now
+          </a>
+        )}
+        <DeleteAccountSection />
+      </PageShell>
+    );
+  }
+
   // ---- Render: active partnership (the main surface) ---------------------
   const sub = view.sub;
   const tierLabel = sub.tier ? TIER_LABELS[sub.tier] ?? sub.tier : "—";
