@@ -5,6 +5,7 @@ import {
   type PartnerTier,
   type SubscriptionMe,
   createCheckoutSession,
+  changeTier,
   getSubscriptionMe,
 } from "../lib/api";
 import { loadStoredNativeToken } from "../lib/native-auth";
@@ -68,6 +69,14 @@ type TierCard = {
  * request. The Study Notes "every chapter" and Scribe Teaching-Corpus
  * overclaims were corrected in the same pass (S206 honesty check).
  */
+const TIER_RANK: Record<string, number> = {
+  free: 0,
+  study_notes: 1,
+  extras: 2,
+  complete_study: 3,
+  everything: 4,
+};
+
 const TIERS: TierCard[] = [
   {
     tier: "study_notes",
@@ -207,7 +216,57 @@ export default function Pricing() {
     (me?.status === "active" || me?.status === "trialing") && !isNoCardTrial;
   const reactivationOpen =
     hasActiveSubscription && me?.cancel_at_period_end === true;
-  const buttonDisabled = hasActiveSubscription && !reactivationOpen;
+  // S443 — upgrades. A paid Stripe partner (locked_price_cents set) can move
+  // up a tier, or monthly → annual, IN PLACE through /change-tier — never a
+  // second checkout, so nobody is billed twice. A website-managed member
+  // (no Stripe row) changes tiers on the website.
+  const isStripePartner =
+    hasActiveSubscription && me?.locked_price_cents != null;
+  type CardAction =
+    | "subscribe"
+    | "current"
+    | "upgrade"
+    | "keep"
+    | "lower"
+    | "website";
+  function cardAction(tier: string): CardAction {
+    if (!hasActiveSubscription) return "subscribe";
+    if (!isStripePartner) return "website";
+    const cur = TIER_RANK[me?.tier ?? "free"] ?? 0;
+    const next = TIER_RANK[tier] ?? 0;
+    if (tier === me?.tier) {
+      if (cadence === me?.cadence) return reactivationOpen ? "keep" : "current";
+      if (me?.cadence === "monthly" && cadence === "annual") return "upgrade";
+      return "lower";
+    }
+    return next > cur ? "upgrade" : "lower";
+  }
+
+  async function handleUpgrade(
+    tier: Exclude<PartnerTier, "free">,
+    name: string,
+    isFounder: boolean,
+    keep: boolean
+  ) {
+    if (
+      !keep &&
+      !window.confirm(
+        `Upgrade to ${name} (${cadence})? Your card on file is charged the ` +
+          `difference for the rest of this billing period today, and ${name} ` +
+          `unlocks right away.`
+      )
+    ) {
+      return;
+    }
+    setBusy(`${tier}-${cadence}-${isFounder}`);
+    try {
+      await changeTier({ tier, cadence, is_founder: isFounder });
+      window.location.assign("/manage");
+    } catch (e) {
+      setBusy(null);
+      alert(String(e));
+    }
+  }
 
   async function handleCheckout(
     tier: Exclude<PartnerTier, "free">,
@@ -377,6 +436,8 @@ export default function Pricing() {
           tier ({me?.cadence}).
           {me?.is_founder_pricing && " Founder pricing — forever locked."}
           {me?.is_promo_subscriber && " Promotional partner — bypass the founder cap."}
+          {isStripePartner &&
+            " To move up, choose a higher tier below — you're charged only the difference for the rest of this billing period."}
         </div>
       )}
       {isNoCardTrial && (
@@ -392,7 +453,7 @@ export default function Pricing() {
       {reactivationOpen && (
         <div className="mb-6 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-base text-amber-900">
           Your subscription is set to end at the current period.
-          Pick a tier below to reactivate — your access continues
+          Keep your tier or choose a higher one below — your access continues
           uninterrupted, and your locked price is preserved.
         </div>
       )}
@@ -448,26 +509,52 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              {!native && (
-              <button
-                type="button"
-                disabled={busy !== null || buttonDisabled}
-                onClick={() => handleCheckout(t.tier, t.founderBilling)}
-                className={`mt-5 rounded border px-4 py-2 text-sm font-medium ${
-                  buttonDisabled
-                    ? "cursor-not-allowed border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-muted)]"
-                    : "border-[var(--reader-text)] bg-[var(--reader-text)] text-[var(--reader-bg)] hover:opacity-90"
-                } disabled:opacity-60`}
-              >
-                {busy === checkoutKey
-                  ? "Starting checkout…"
-                  : buttonDisabled
-                  ? "Already a partner"
-                  : reactivationOpen
-                  ? "Reactivate"
-                  : "Subscribe"}
-              </button>
-              )}
+              {!native && (() => {
+                const action = cardAction(t.tier);
+                const off =
+                  action === "current" ||
+                  action === "lower" ||
+                  action === "website";
+                const label =
+                  busy === checkoutKey
+                    ? action === "subscribe"
+                      ? "Starting checkout…"
+                      : "Working…"
+                    : action === "current"
+                    ? "Your current tier"
+                    : action === "lower"
+                    ? "Below your tier"
+                    : action === "website"
+                    ? "Managed on the website"
+                    : action === "upgrade"
+                    ? "Upgrade"
+                    : action === "keep"
+                    ? "Keep this tier"
+                    : "Subscribe";
+                return (
+                  <button
+                    type="button"
+                    disabled={busy !== null || off}
+                    onClick={() =>
+                      action === "subscribe"
+                        ? handleCheckout(t.tier, t.founderBilling)
+                        : handleUpgrade(
+                            t.tier,
+                            t.name,
+                            t.founderBilling,
+                            action === "keep"
+                          )
+                    }
+                    className={`mt-5 rounded border px-4 py-2 text-sm font-medium ${
+                      off
+                        ? "cursor-not-allowed border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-muted)]"
+                        : "border-[var(--reader-text)] bg-[var(--reader-text)] text-[var(--reader-bg)] hover:opacity-90"
+                    } disabled:opacity-60`}
+                  >
+                    {label}
+                  </button>
+                );
+              })()}
             </div>
           );
         })}

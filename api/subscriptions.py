@@ -229,6 +229,21 @@ class CancelResponse(BaseModel):
     cancel_at_period_end: bool = True
 
 
+class ChangeTierRequest(BaseModel):
+    """S443 — POST /v1/subscriptions/change-tier.
+
+    Moves an existing paid Stripe subscription to a higher tier (or from
+    monthly to annual on the same tier), or keeps a winding-down
+    subscription on its own tier. Modifies the ONE Stripe subscription in
+    place — never opens a second checkout, so the partner is never billed
+    twice. Stripe charges the prorated difference immediately.
+    """
+
+    tier: PartnerTier
+    cadence: Literal["monthly", "annual"]
+    is_founder: bool = False
+
+
 # ---- Stripe SDK initialisation --------------------------------------------
 
 
@@ -1252,6 +1267,185 @@ async def cancel_subscription(
             if updated["current_period_end"] is not None else None
         ),
         cancel_at_period_end=True,
+    )
+
+
+# ---- POST /change-tier (S443) ---------------------------------------------
+
+_TIER_RANK = {
+    "free": 0,
+    "study_notes": 1,
+    "extras": 2,
+    "complete_study": 3,
+    "everything": 4,
+}
+
+
+@router.post("/change-tier", response_model=SubscriptionMeResponse)
+async def change_tier(
+    body: ChangeTierRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> SubscriptionMeResponse:
+    """Upgrade the partner's existing Stripe subscription in place.
+
+    Allowed: a higher tier (any cadence), the same tier from monthly to
+    annual, or the same tier + cadence when the subscription is set to end
+    (that simply keeps it — clears cancel_at_period_end). Downgrades are
+    refused with a plain message (they go through the ministry by email).
+
+    Stripe: the subscription's single item is swapped to the new Price with
+    proration_behavior="always_invoice" (the difference for the rest of the
+    period is charged now) and payment_behavior="error_if_incomplete" (if
+    the card is declined nothing changes). The local row is updated in
+    place — tier, cadence, locked price — and the tier is synced to WP.
+    """
+    pool = get_pool()
+    wp_user_id = int(current_user.id)
+
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT s.id::text AS sub_uuid, s.stripe_subscription_id, "
+            "       s.status::text AS status, s.tier::text AS tier, "
+            "       s.cadence::text AS cadence, s.is_founder_pricing, "
+            "       s.is_promo_subscriber, s.cancel_at_period_end "
+            "  FROM subscriptions s "
+            "  JOIN users u ON u.id = s.user_id "
+            " WHERE u.wordpress_user_id = $1 "
+            "   AND s.status NOT IN ('canceled', 'unpaid', 'incomplete_expired') "
+            " ORDER BY s.started_at DESC "
+            " LIMIT 1",
+            wp_user_id,
+        )
+        if row is None or not row["stripe_subscription_id"]:
+            raise HTTPException(
+                status_code=404,
+                detail="No paid partnership on this account to change. Choose a tier to subscribe.",
+            )
+        if row["is_promo_subscriber"]:
+            raise HTTPException(
+                status_code=409,
+                detail=(
+                    "This partnership was set up with a partner code. To change "
+                    "tiers, email info@remnantofpromise.org and we'll move it for you."
+                ),
+            )
+
+        cur_rank = _TIER_RANK.get(row["tier"], 0)
+        new_rank = _TIER_RANK.get(body.tier, 0)
+        same_tier = body.tier == row["tier"]
+        keeping = same_tier and body.cadence == row["cadence"]
+        allowed = (
+            new_rank > cur_rank
+            or (same_tier and row["cadence"] == "monthly" and body.cadence == "annual")
+            or (keeping and row["cancel_at_period_end"])
+        )
+        if not allowed:
+            raise HTTPException(
+                status_code=409,
+                detail=(
+                    "That isn't an upgrade from your current tier. To move to a "
+                    "lower tier, email info@remnantofpromise.org."
+                ),
+            )
+
+        # Founder rows: precheck the pool like checkout does; fall back to
+        # standard pricing if the founder pool is closed.
+        is_founder = row["is_founder_pricing"] if keeping else body.is_founder
+        if is_founder and not keeping and await _founder_slots_remaining(conn) <= 0:
+            is_founder = False
+        price_row = await _lookup_tier_price_row(conn, body.tier, body.cadence, is_founder)
+        if price_row is None or not price_row["is_active"]:
+            raise HTTPException(
+                status_code=404,
+                detail=f"No active price for tier={body.tier} cadence={body.cadence}.",
+            )
+
+    sdk = _stripe_client()
+    stripe_subscription_id = row["stripe_subscription_id"]
+    try:
+        if keeping:
+            stripe_sub = sdk.Subscription.modify(
+                stripe_subscription_id, cancel_at_period_end=False,
+            )
+        else:
+            current = sdk.Subscription.retrieve(stripe_subscription_id)
+            item_id = current["items"]["data"][0]["id"]
+            stripe_sub = sdk.Subscription.modify(
+                stripe_subscription_id,
+                items=[{"id": item_id, "price": price_row["stripe_price_id"]}],
+                proration_behavior="always_invoice",
+                payment_behavior="error_if_incomplete",
+                cancel_at_period_end=False,
+                metadata={
+                    "tier": body.tier,
+                    "cadence": body.cadence,
+                    "is_founder_pricing": "true" if is_founder else "false",
+                    "wp_user_id": str(current_user.id),
+                },
+            )
+    except stripe.StripeError as e:
+        logger.error(
+            "[stripe] change-tier failed user=%s sub=%s err=%r",
+            current_user.id, stripe_subscription_id, e,
+        )
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                "The upgrade didn't go through, and nothing was changed: "
+                f"{e.user_message or str(e)}"
+            ),
+        )
+
+    period_end = _extract_period_end(stripe_sub)
+    status = stripe_sub.get("status") or row["status"]
+
+    async with pool.acquire() as conn:
+        async with conn.transaction():
+            if is_founder and not keeping and not row["is_founder_pricing"]:
+                if not await _claim_founder_slot(conn):
+                    logger.warning(
+                        "[change-tier] founder slot raced closed user=%s", current_user.id,
+                    )
+            await conn.execute(
+                "UPDATE subscriptions SET "
+                "  tier = $1::content_tier, "
+                "  locked_at_tier = $1::content_tier, "
+                "  cadence = $2::billing_cadence, "
+                "  locked_price_cents = $3, "
+                "  is_founder_pricing = $4, "
+                "  status = $5::subscription_status, "
+                "  cancel_at_period_end = FALSE, "
+                "  current_period_end = COALESCE(to_timestamp($6), current_period_end) "
+                "WHERE stripe_subscription_id = $7",
+                body.tier, body.cadence, price_row["price_cents"], is_founder,
+                status, period_end, stripe_subscription_id,
+            )
+            updated = await conn.fetchrow(
+                "SELECT status::text AS status, tier::text AS tier, "
+                "       cadence::text AS cadence, is_founder_pricing, "
+                "       is_promo_subscriber, locked_price_cents, "
+                "       current_period_end, cancel_at_period_end "
+                "  FROM subscriptions WHERE stripe_subscription_id = $1",
+                stripe_subscription_id,
+            )
+
+    try:
+        await _sync_partner_tier_to_wp(wp_user_id, body.tier)
+    except Exception as e:  # best-effort, same as checkout
+        logger.warning("[change-tier] WP sync failed user=%s err=%r", wp_user_id, e)
+
+    return SubscriptionMeResponse(
+        status=updated["status"],
+        tier=updated["tier"],
+        cadence=updated["cadence"],
+        is_founder_pricing=updated["is_founder_pricing"],
+        is_promo_subscriber=updated["is_promo_subscriber"],
+        locked_price_cents=updated["locked_price_cents"],
+        current_period_end=(
+            updated["current_period_end"].isoformat()
+            if updated["current_period_end"] is not None else None
+        ),
+        cancel_at_period_end=updated["cancel_at_period_end"],
     )
 
 

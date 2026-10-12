@@ -782,6 +782,20 @@ export function cancelSubscription(): Promise<CancelResponse> {
   );
 }
 
+/**
+ * S443 — move an existing paid subscription to a higher tier (or monthly →
+ * annual, or keep a winding-down one). Modifies the ONE Stripe subscription
+ * in place; Stripe charges the prorated difference now. Returns the updated
+ * subscription. Throws with the API's plain-language detail on refusal.
+ */
+export function changeTier(body: {
+  tier: string;
+  cadence: "monthly" | "annual";
+  is_founder: boolean;
+}): Promise<SubscriptionMe> {
+  return post<typeof body, SubscriptionMe>("/subscriptions/change-tier", body);
+}
+
 export function listBooks(opts?: {
   witnessCategory?: WitnessCategory;
   /** show-all-gate-access: return EVERY built book with a `locked` flag. */

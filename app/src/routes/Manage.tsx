@@ -397,6 +397,22 @@ export default function Manage() {
         </dl>
       </div>
 
+      {/* S443 — upgrade path (web only; native keeps no purchase links). */}
+      {!isTerminal && !isNativeShell() && sub.tier !== "everything" && (
+        <div className="mb-4">
+          <a
+            href="/pricing"
+            className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+          >
+            Upgrade your tier
+          </a>
+          <p className="mt-2 text-sm text-[var(--reader-muted)]">
+            You're charged only the difference for the rest of this billing
+            period, and the new tier unlocks right away.
+          </p>
+        </div>
+      )}
+
       {/* Cancel surface — only when the partner has something to cancel */}
       {!isTerminal && !isAlreadyWindingDown && (
         <div className="mb-4">
