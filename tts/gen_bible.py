@@ -11,8 +11,8 @@ OUT=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","audio",VOICE)
 k=Kokoro(os.path.join(HERE,"kokoro-v1.0.onnx"),os.path.join(HERE,"voices-v1.0.bin"))
 lang="en-gb" if VOICE.startswith("b") else "en-us"
 SR=24000; SPEED=0.95
-chs=json.load(open(sys.argv[3] if len(sys.argv)>3 else os.path.join(HERE,"chapters_live.json")))
-pri=["psalms","john","matthew","mark","luke","genesis","proverbs","acts","romans","isaiah"]
+chs=json.load(open(sys.argv[3] if len(sys.argv)>3 else os.path.join(HERE,"chapters_all.json")))
+pri=["psalms","john","matthew","mark","luke","enoch/1-enoch","jubilees/jubilees","jasher/jasher","genesis","proverbs","acts","romans","isaiah"]
 if ORDER=="priority":
     chs=sorted(chs,key=lambda c:(pri.index(c["book"]) if c["book"] in pri else len(pri)))
 def tts(t):
@@ -24,7 +24,8 @@ for c in chs:
     d=f"{OUT}/{c['book']}"; os.makedirs(d,exist_ok=True)
     mp3=f"{d}/{c['chapter']}.mp3"
     if os.path.exists(mp3) and os.path.exists(mp3[:-4]+".json"): continue
-    head = f"Psalm {c['chapter']}." if c["book"]=="psalms" else f"{c['title']}, chapter {c['chapter']}."
+    title=c['title'].replace("Book of ","")
+    head = f"Psalm {c['chapter']}." if c["book"]=="psalms" else f"{title}, chapter {c['chapter']}."
     parts=[tts(head),pause(0.6)]; pos=sum(len(p) for p in parts)/SR; marks=[]
     for v in c["verses"]:
         txt=v["text"].strip()

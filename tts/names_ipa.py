@@ -3,6 +3,8 @@ from kokoro_onnx import Kokoro
 # Fixed pronunciations as IPA so nothing around a name can bleed into it.
 IPA = {
  "Yahuah":"ˈiːˈɑːˈuːˈɑː", "Yahusha":"ˈiːˈɑːˈuːʃˈɑː",
+ # Yoshi, S444: Enoch = "Ha-noke", Eve = "Hooah" (one smooth word).
+ "Enoch":"hˈɑː nˈoʊk", "Eve":"hˈuːɑː",
 }
 RESPELL = {
  "Ruach HaKodesh":"Roo-ak Hah-koh-desh","El Elyon":"El El-yohn","El Shaddai":"El Shah-dye","El Gibbor":"El Gib-bor","El Olam":"El Oh-lahm",
@@ -14,7 +16,7 @@ RESPELL = {
 }
 _rk=sorted(RESPELL,key=len,reverse=True)
 _rrx=re.compile(r"(?<![\w'-])("+"|".join(map(re.escape,_rk))+r")(?='s\b|[^\w'-]|$)")
-_irx=re.compile(r"(?<![\w'-])(Yahuah|Yahusha)(?=('s)?\b)")
+_irx=re.compile(r"(?<![\w'-])(Yahuah|Yahusha|Enoch|Eve)(?=(['’]s)?\b)")
 # S444 — speech-only fixes for divine names the restoration pipeline missed in
 # the app text (LORD'S, small-caps GOD, JEHOVAH). The text itself still needs
 # fixing in the app; these keep the recordings right meanwhile.
@@ -32,6 +34,7 @@ SPEECH_FIXES=[
  (r"\bGOD\b","Yahuah"),
 ]
 def to_phonemes(k, text, lang):
+    text=text.replace("’","'").replace("‘","'")
     for a,b in SPEECH_FIXES: text=re.sub(a,b,text)
     # Small-caps / all-caps words ("HOLINESS TO", "KING OF KINGS") would be spelled out letter by letter.
     text=re.sub(r"\b[A-Z]{2,}\b",lambda m:m.group(0).lower(),text)

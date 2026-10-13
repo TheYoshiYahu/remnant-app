@@ -54,6 +54,12 @@ export function recordedVoicesEntitled(): boolean {
   return entitled;
 }
 
+/** Canon books sit at <voice>/<book>/; every other edition at <voice>/<edition>/<book>/
+ *  (several editions share book slugs, e.g. 1-esdras). */
+export function audioBookKey(editionSlug: string | null | undefined, bookSlug: string): string {
+  return !editionSlug || editionSlug === "canon" ? bookSlug : `${editionSlug}/${bookSlug}`;
+}
+
 export function recordedVoiceByName(name: string | null | undefined): RecordedVoice | null {
   if (!name) return null;
   return RECORDED_VOICES.find((v) => v.name === name) ?? null;

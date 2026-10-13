@@ -104,7 +104,7 @@ import BookmarksIndex from "./components/BookmarksIndex";
 import MyStudy from "./components/MyStudy";
 import SearchModal from "./components/SearchModal";
 import AudioPlayer from "./components/AudioPlayer";
-import { setRecordedVoicesEntitled } from "./lib/recordedAudio";
+import { setRecordedVoicesEntitled, audioBookKey } from "./lib/recordedAudio";
 import { getTTSEngine, type TTSVoice } from "./lib/tts";
 import {
   prepareVerseForSpeech,
@@ -1598,7 +1598,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
         voiceName,
         rate: ttsPrefs.rate,
         verseId: v.id,
-        ref: { book: selectedBookSlug, chapter: selectedChapter, verse: v.verse_number },
+        ref: { book: audioBookKey(chapterDetail.book.edition_slug, selectedBookSlug), chapter: selectedChapter, verse: v.verse_number },
       });
     }
 
@@ -1734,7 +1734,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
             voiceName,
             rate: newPrefs.rate,
             verseId: v.id,
-            ref: { book: selectedBookSlug, chapter: selectedChapter, verse: v.verse_number },
+            ref: { book: audioBookKey(chapterDetail.book.edition_slug, selectedBookSlug), chapter: selectedChapter, verse: v.verse_number },
           });
         }
       }, 0);
