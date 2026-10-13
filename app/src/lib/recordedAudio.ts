@@ -28,7 +28,7 @@ import type { TTSEngine, TTSEndEvent, TTSError, TTSOptions, TTSVoice } from "./t
 
 export const AUDIO_BASE: string =
   (import.meta.env.VITE_AUDIO_BASE as string | undefined) ??
-  "https://audio.remnantofpromise.org";
+  "https://pub-ea998a76536a4b99b520a192edaa8dc2.r2.dev";
 
 export interface RecordedVoice extends TTSVoice {
   id: string;
