@@ -115,6 +115,8 @@ export default function AudioPlayer({
   }
 
   function handleVoiceChange(voiceName: string) {
+    // S444 — picking a voice applies it and closes the list.
+    setVoicePickerOpen(false);
     onPrefsChange({ ...prefs, voiceName });
     setVoicePickerOpen(false);
   }
@@ -338,7 +340,7 @@ function VoicePickerModal({
         </div>
 
         <div className="border-t border-[var(--reader-rule)] px-4 py-3 text-sm text-[var(--reader-muted)]">
-          Preview reads: <span className="italic">{PREVIEW_PHRASE}</span>
+          Tap a name to choose it. Preview reads: <span className="italic">{PREVIEW_PHRASE}</span>
         </div>
       </div>
     </div>
@@ -365,6 +367,17 @@ function VoiceRow({ voice, selected, onPick, onPreview }: VoiceRowProps) {
         }`}
         aria-pressed={selected}
       >
+        {/* S444 — a visible choose / chosen marker so the row reads as tappable. */}
+        <span
+          aria-hidden="true"
+          className={`mr-3 inline-flex h-5 w-5 items-center justify-center rounded-full border align-middle text-xs ${
+            selected
+              ? "border-[var(--reader-accent)] bg-[var(--reader-accent)] text-[var(--reader-bg)]"
+              : "border-[var(--reader-muted)]"
+          }`}
+        >
+          {selected ? "✓" : ""}
+        </span>
         {voice.name}
         <span className="ml-2 text-xs text-[var(--reader-muted)]">
           {voice.lang}
