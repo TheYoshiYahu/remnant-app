@@ -33,7 +33,7 @@ function put(f) {
     const type = f.key.endsWith(".mp3") ? "audio/mpeg" : "application/json";
     const cp = spawn("npx", ["--yes", "wrangler", "r2", "object", "put", `rop-audio/${f.key}`,
       "--file", f.p, "--remote", "--content-type", type,
-      "--cache-control", "public, max-age=31536000, immutable"], { stdio: "ignore" });
+      "--cache-control", "public, max-age=86400"], { stdio: "ignore" });
     cp.on("close", (code) => {
       if (code === 0) { ok++; fs.appendFileSync(DONE, f.stamp + "\n"); } else fail++;
       process.stdout.write(`\r${ok} uploaded, ${fail} failed, of ${files.length}   `);

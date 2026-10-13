@@ -97,3 +97,5 @@ outputs/*
 # S444 — recorded audio + its source text live outside git (uploaded to R2)
 audio/
 audio-text/
+tts/*.onnx
+tts/*.bin

@@ -1243,6 +1243,9 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // continuous-play-through-witness-category contract; reuses §19
   // navigateNext for the cross-chapter transition).
   const [audioPlayerOpen, setAudioPlayerOpen] = useState<boolean>(false);
+  // S444 — true while the reader has paused narration, so the player shows
+  // "Play" instead of "Pause". Cleared whenever a new run starts or the player closes.
+  const [ttsPaused, setTtsPaused] = useState<boolean>(false);
   const [playingVerseId, setPlayingVerseId] = useState<number | null>(null);
   const [ttsPrefs, setTtsPrefs] = useState<TTSPrefs>(() => loadTTSPrefs());
   const [voices, setVoices] = useState<TTSVoice[]>(() =>
@@ -1632,6 +1635,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     ttsUnsubsRef.current = [unsubEnd, unsubErr];
 
     setPlayingVerseId(verses[startIdx].id);
+    setTtsPaused(false);
     setAudioPlayerOpen(true);
     manualScrollOverrideRef.current = false;
   }
@@ -1663,8 +1667,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       // attempt pause; if pause was already in effect the resume path
       // is harmless (the engine's internal state guards both calls).
       engine.pause();
+      setTtsPaused(true);
     } else {
       engine.resume();
+      setTtsPaused(false);
     }
   }
 
@@ -1762,6 +1768,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     }
     ttsUnsubsRef.current = [];
     setAudioPlayerOpen(false);
+    setTtsPaused(false);
     setPlayingVerseId(null);
     setAutoAdvanceAfterLoad(false);
     manualScrollOverrideRef.current = false;
@@ -5212,7 +5219,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       */}
       {audioPlayerOpen && chapterDetail && (
         <AudioPlayer
-          playing={playingVerseId !== null}
+          playing={playingVerseId !== null && !ttsPaused}
           currentVerseRef={
             playingVerseId !== null
               ? (() => {
