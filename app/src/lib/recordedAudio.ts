@@ -98,6 +98,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
   let paused = false;
   // recorded run state
   let runItems: { verseId?: number; verse: number; start: number }[] = [];
+  let retryItems: Pending[] | null = null; // S447 — chapter queue held back by a dropped connection
   let runIdx = 0;
   let detach: (() => void) | null = null;
 
@@ -116,17 +117,66 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
   fallback.onEnd((e) => { if (mode === "fallback") emitEnd(e.verseId); });
   fallback.onError((e) => { if (mode === "fallback") emitError(e.message, e.verseId); });
 
-  async function loadTiming(voiceId: string, book: string, chapter: number): Promise<Timing | null> {
+  // S447 — "missing" (a 404: no recording in this voice) is different from
+  // "couldn't reach the CDN" (phone locked, radio asleep, no signal). Only a
+  // real miss may hand the chapter to the phone's voice.
+  type TimingResult = { timing: Timing | null; offline: boolean };
+  async function loadTiming(voiceId: string, book: string, chapter: number): Promise<TimingResult> {
     const key = `${voiceId}/${book}/${chapter}`;
-    if (timingCache.has(key)) return timingCache.get(key)!;
-    try {
-      const r = await fetch(`${AUDIO_BASE}/${key}.json`, { cache: "force-cache" });
-      const t = r.ok ? ((await r.json()) as Timing) : null;
-      timingCache.set(key, t);
-      return t;
-    } catch {
-      return null; // offline / blocked: don't cache the miss
+    if (timingCache.has(key)) return { timing: timingCache.get(key)!, offline: false };
+    // A fetch can fail transiently while the phone is locked; retry with
+    // backoff (about 12 s in all) before reporting it as unreachable.
+    for (let attempt = 0; attempt < 6; attempt++) {
+      try {
+        const r = await fetch(`${AUDIO_BASE}/${key}.json`, { cache: "force-cache" });
+        if (r.ok) {
+          const t = (await r.json()) as Timing;
+          timingCache.set(key, t);
+          return { timing: t, offline: false };
+        }
+        if (r.status === 404 || r.status === 403) {
+          timingCache.set(key, null);
+          return { timing: null, offline: false };
+        }
+      } catch {
+        /* network — retry below */
+      }
+      await new Promise((res) => setTimeout(res, 500 * (attempt + 1)));
     }
+    return { timing: null, offline: true }; // don't cache the miss
+  }
+
+  // S447 — the next chapter's MP3 is held in memory as a blob so the chapter
+  // break needs no network at all (the HTTP cache is not reliable for media
+  // range requests while the app is in the background). Two at most.
+  const blobCache = new Map<string, string>();
+  const blobPending = new Set<string>();
+  function rememberBlob(key: string, url: string) {
+    if (blobCache.size >= 2) {
+      const oldest = blobCache.keys().next().value as string | undefined;
+      if (oldest !== undefined) {
+        try { URL.revokeObjectURL(blobCache.get(oldest)!); } catch { /* ignore */ }
+        blobCache.delete(oldest);
+      }
+    }
+    blobCache.set(key, url);
+  }
+
+  /** S446/S447 — warm the next chapter: timing file in memory, MP3 as a blob. */
+  function prefetchChapter(voiceName: string | null, ref: { book: string; chapter: number }): void {
+    const v = entitled ? recordedVoiceByName(voiceName) : null;
+    if (!v) return;
+    void loadTiming(v.id, ref.book, ref.chapter).then(({ timing }) => {
+      if (!timing) return;
+      const key = `${v.id}/${ref.book}/${ref.chapter}`;
+      if (blobCache.has(key) || blobPending.has(key)) return;
+      blobPending.add(key);
+      void fetch(`${AUDIO_BASE}/${key}.mp3`, { cache: "force-cache" })
+        .then((r) => (r.ok ? r.blob() : null))
+        .then((b) => { if (b) rememberBlob(key, URL.createObjectURL(b)); })
+        .catch(() => undefined)
+        .finally(() => blobPending.delete(key));
+    });
   }
 
   function clearAudio() {
@@ -155,17 +205,31 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     const candidates = [picked, ...RECORDED_VOICES.filter((v) => v.id !== picked.id)];
     let chosen: RecordedVoice | null = null;
     let timing: Timing | null = null;
+    const srcFor = (v: RecordedVoice) => {
+      const key = `${v.id}/${ref.book}/${ref.chapter}`;
+      return blobCache.get(key) ?? `${AUDIO_BASE}/${key}.mp3`;
+    };
     audio.muted = true;
-    audio.src = `${AUDIO_BASE}/${picked.id}/${ref.book}/${ref.chapter}.mp3`;
+    audio.src = srcFor(picked);
     void audio.play().catch(() => { /* resolved below */ });
+    let offline = false;
     for (const v of candidates) {
-      timing = await loadTiming(v.id, ref.book, ref.chapter);
+      const r = await loadTiming(v.id, ref.book, ref.chapter);
       if (mySession !== session) return;
-      if (timing) { chosen = v; break; }
+      if (r.timing) { chosen = v; timing = r.timing; break; }
+      if (r.offline) { offline = true; break; } // no point trying other voices
     }
     if (!chosen || !timing) {
       audio.pause();
       audio.muted = false;
+      if (offline) {
+        // S447 — never swap narrators over a dropped connection; wait for
+        // the reader instead.
+        mode = "idle";
+        retryItems = items;
+        emitError("Couldn't reach the recording. Tap play to try again.", first?.opts?.verseId);
+        return;
+      }
       // S446 — say so in the player instead of switching voices silently.
       if (fallback.isAvailable()) {
         emitError("No natural-voice recording for this chapter yet. Using the phone's voice.", first?.opts?.verseId);
@@ -184,11 +248,12 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     runIdx = 0;
     if (runItems.length === 0) { runFallback(items); return; }
 
-    const src = `${AUDIO_BASE}/${chosen.id}/${ref.book}/${ref.chapter}.mp3`;
+    const src = srcFor(chosen);
     if (audio.src !== src) audio.src = src;
     audio.playbackRate = first.opts?.rate ?? 1.0;
     mode = "recorded";
     paused = false;
+    retryItems = null;
 
     const onTime = () => {
       if (mySession !== session) return;
@@ -249,6 +314,8 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
 
     onVoicesChanged: (h) => fallback.onVoicesChanged(h),
 
+    prefetch: prefetchChapter,
+
     speak(text, opts) {
       // Preview call from the voice picker (no verse, no chapter ref).
       if (!opts?.ref && opts?.verseId === undefined) {
@@ -287,12 +354,20 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
         void audio.play().catch(() => {});
         return;
       }
+      if (mode === "idle" && retryItems) {
+        // S447 — the reader tapped play after "Couldn't reach the recording".
+        const items = retryItems;
+        retryItems = null;
+        void startBatch(items, ++session);
+        return;
+      }
       fallback.resume();
     },
 
     stop() {
       session++;
       batch = [];
+      retryItems = null;
       batchScheduled = false;
       clearAudio();
       runItems = [];

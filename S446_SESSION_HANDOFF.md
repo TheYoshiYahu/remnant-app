@@ -22,3 +22,15 @@ Android needs no native change for this (Wake Lock API is in the WebView).
 
 ## To verify on a phone
 Play a Jasher chapter, lock the phone, wait for the chapter to end: the next chapter should start (iOS needs the 1.1.3 build; Android only needs the web push). Play Enoch 9 before the re-upload lands: the bar should read the "No natural-voice recording" notice instead of going quiet.
+
+## Phone tests (Oct 13, 3:30 PM, before the web push)
+- iPhone: audio keeps playing after lock, but STOPS at the chapter break. Confirms the 1.1.3 build (background audio) is needed.
+- Android: at the chapter break with the phone locked, it switches to the phone's robot voice until unlocked and replayed. Likely the timing-JSON fetch (or audio.play) fails while locked, so startBatch falls to the device engine.
+- Both stores: 1.1.2 is published.
+
+## S447 (Oct 13, 3:45 PM) — Android fix, written and deployed with _session447_deploy.sh
+Cause: at the chapter break the chapter text came from the IndexedDB cache, but the timing JSON had to be fetched from R2; with the phone locked that fetch failed and startBatch fell through to the phone's voice.
+- recordedAudio.ts: loadTiming tells a 404 (truly unrecorded → S446 notice + device voice) from a network failure (→ "Couldn't reach the recording. Tap play to try again.", no voice switch; play re-runs the same chapter). Retries ~12 s with backoff.
+- recordedAudio.ts: prefetch now holds the next chapter's MP3 in memory as a blob (two at most) and plays from it, so the break needs no network.
+- App.tsx: queueChapterFromVerse also warms the next chapter's text (and the next book's chapter list across a book boundary) through readThrough.
+- Still to do: Xcode archive + submit 1.1.3 (iOS background audio); upload audio after the Jasher redo. Open question (c) above still unconfirmed.

@@ -115,6 +115,13 @@ export interface TTSEngine {
   isAvailable(): boolean;
 
   /**
+   * S446 — optional: warm the cache for the chapter that will play next
+   * (recorded voices only) so chapter auto-advance doesn't depend on a
+   * network fetch while the phone is locked.
+   */
+  prefetch?(voiceName: string | null, ref: { book: string; chapter: number }): void;
+
+  /**
    * Returns the list of voices the platform exposes. On the web,
    * voices populate asynchronously (Chrome fires speechSynthesis's
    * `voiceschanged` event after init); this method returns the

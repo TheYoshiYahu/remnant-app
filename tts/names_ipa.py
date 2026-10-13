@@ -5,6 +5,9 @@ IPA = {
  "Yahuah":"ˈiːˈɑːˈuːˈɑː", "Yahusha":"ˈiːˈɑːˈuːʃˈɑː",
  # Yoshi, S444: Enoch = "Ha-noke", Eve = "Hooah" (one smooth word).
  "Enoch":"hˈɑː nˈoʊk", "Eve":"hˈuːɑː", "Baruch":"bɑːɹˈuːkx",
+ # S446: "O king, live for ever" was read as "lyve". In scripture "live" is the
+ # verb (rhymes with give) everywhere except "a live coal" (Isaiah 6:6).
+ "live":"lˈɪv", "Live":"lˈɪv",
 }
 RESPELL = {
  "Ruach HaKodesh":"Roo-ak Hah-koh-desh","El Elyon":"El El-yohn","El Shaddai":"El Shah-dye","El Gibbor":"El Gib-bor","El Olam":"El Oh-lahm",
@@ -20,7 +23,7 @@ RESPELL = {
 }
 _rk=sorted(RESPELL,key=len,reverse=True)
 _rrx=re.compile(r"(?<![\w'-])("+"|".join(map(re.escape,_rk))+r")(?='s\b|[^\w'-]|$)")
-_irx=re.compile(r"(?<![\w'-])(Yahuah|Yahusha|Enoch|Eve|Baruch)(?=(['’]s)?\b)")
+_irx=re.compile(r"(?<![\w'-])(Yahuah|Yahusha|Enoch|Eve|Baruch|[Ll]ive(?! coals?\b))(?=(['’]s)?\b)")
 # S444 — speech-only fixes for divine names the restoration pipeline missed in
 # the app text (LORD'S, small-caps GOD, JEHOVAH). The text itself still needs
 # fixing in the app; these keep the recordings right meanwhile.

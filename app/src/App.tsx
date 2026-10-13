@@ -1605,6 +1605,39 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       });
     }
 
+    // S446 — warm the next chapter's recording now, so the chapter break
+    // doesn't depend on a fetch while the phone is locked.
+    if (nextTarget && engine.prefetch) {
+      const nextBook =
+        nextTarget.bookSlug === selectedBookSlug
+          ? chapterDetail.book
+          : books.find((b) => b.slug === nextTarget.bookSlug) ?? null;
+      if (nextBook) {
+        engine.prefetch(voiceName, {
+          book: audioBookKey(nextBook.edition_slug, nextTarget.bookSlug),
+          chapter: nextTarget.chapter === "last" ? 1 : nextTarget.chapter,
+        });
+      }
+    }
+    // S447 — warm the next chapter's text (and, across a book boundary, the
+    // next book's chapter list) into the content cache for the same reason:
+    // the chapter break must not need the network.
+    if (nextTarget) {
+      const nextCh = nextTarget.chapter === "last" ? 1 : nextTarget.chapter;
+      readThrough(
+        { layer: "chapter", book: nextTarget.bookSlug, chapter: nextCh },
+        () => getChapter(nextTarget.bookSlug, nextCh),
+        { onData: () => {} },
+      );
+      if (nextTarget.bookSlug !== selectedBookSlug) {
+        readThrough(
+          { layer: "chapters", book: nextTarget.bookSlug, chapter: 0 },
+          () => listChapters(nextTarget.bookSlug),
+          { onData: () => {} },
+        );
+      }
+    }
+
     // The web engine doesn't surface per-utterance onstart at the
     // engine-interface level (we'd need to attach to each utterance
     // individually) — for V1 the visual cursor is driven from onEnd
