@@ -98,6 +98,7 @@ from typing import List, Optional
 
 from fastapi import Depends, FastAPI, HTTPException, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse
 
 from auth import (
@@ -107,6 +108,7 @@ from auth import (
     user_tier,
 )
 from config import settings
+from response_cache import AnonymousReadCache
 from db import close_pool, get_pool, open_pool, upsert_user
 from models import (
     BaselineEntry,
@@ -240,6 +242,11 @@ app = FastAPI(
 )
 
 
+# S444 — capacity. Middleware added FIRST sits innermost (Starlette wraps in
+# reverse order), so CORS (added after) still stamps its headers on every
+# response, including cache hits. GZip is added last = outermost.
+app.add_middleware(AnonymousReadCache)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origin_list,
@@ -247,6 +254,8 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
+
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 
 # Subscriptions router — Session 37 wheel.

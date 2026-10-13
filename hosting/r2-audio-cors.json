@@ -1,0 +1,8 @@
+[
+  {
+    "AllowedOrigins": ["https://bible.remnantofpromise.org", "https://localhost", "capacitor://localhost", "http://localhost:5173"],
+    "AllowedMethods": ["GET", "HEAD"],
+    "AllowedHeaders": ["*"],
+    "MaxAgeSeconds": 86400
+  }
+]

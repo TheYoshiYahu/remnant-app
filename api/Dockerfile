@@ -129,4 +129,7 @@ EXPOSE 8000
 # uvicorn binds 0.0.0.0 so the container is reachable from outside.
 # Single worker is correct for the launch tier — Render Starter is 0.5 CPU and
 # more workers would just contend. When we move to Standard / Pro, bump --workers.
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT}"]
+# S444 — WEB_CONCURRENCY sets the worker count (default 1, unchanged). When
+# the service moves to Render Standard (1 CPU) set WEB_CONCURRENCY=2 in the
+# dashboard; Pro (2 CPU) → 4. No code change needed.
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT} --workers ${WEB_CONCURRENCY:-1}"]

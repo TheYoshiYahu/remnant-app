@@ -93,3 +93,7 @@ source-texts/parsed/*.pre-*
 outputs/*
 !outputs/Phase_*.html
 .~lock.*#
+
+# S444 — recorded audio + its source text live outside git (uploaded to R2)
+audio/
+audio-text/

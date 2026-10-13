@@ -16,6 +16,8 @@
  * `tone="card"` (default) is a bordered block (for under the book picker).
  */
 
+import { isNativeShell } from "../lib/native-shell";
+
 interface Props {
   /** Optional headline override. */
   title?: string;
@@ -51,6 +53,16 @@ export default function LockedPartnerPrompt({
       <p className="mt-1 text-sm leading-relaxed text-[var(--reader-muted)]">
         {message}
       </p>
+      {/* S444 — on the WEB only, give the reader a way forward. The native
+          builds keep the consumption-only posture above (no link). */}
+      {!isNativeShell() && (
+        <a
+          href="/pricing"
+          className="mt-2 inline-block text-sm font-medium text-[var(--reader-text)] underline"
+        >
+          Start 7 days free, then see the partner tiers →
+        </a>
+      )}
     </div>
   );
 }

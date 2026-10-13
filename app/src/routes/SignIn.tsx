@@ -374,10 +374,10 @@ export default function SignIn() {
     <div className="mx-auto max-w-2xl px-6 py-8">
       <header className="mb-8 border-b border-[var(--reader-rule)] pb-4">
         <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
-          Sign in to continue
+          Create your free account or log in
         </h1>
         <p className="mt-2 text-base text-[var(--reader-muted)]">
-          Log in with your existing account, or create one to subscribe.
+          New accounts get 7 days of full access. No card needed.
         </p>
         <nav className="mt-3 text-sm">
           <a
@@ -392,6 +392,24 @@ export default function SignIn() {
       <AccountBenefits />
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {/* Create Account card */}
+        <div className="flex flex-col rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
+          <h2 className="text-lg font-semibold text-[var(--reader-text)]">
+            Create an account
+          </h2>
+          <p className="mt-2 flex-1 text-base text-[var(--reader-muted)]">
+            New here? Create a free account. You'll come straight back here when it's done.
+          </p>
+          <div className="mt-3">
+            <EmailOptInCheckbox checked={emailOptin} onChange={setEmailOptin} />
+          </div>
+          <a
+            href={registerHref}
+            className="mt-4 inline-flex items-center justify-center rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+          >
+            Create account
+          </a>
+        </div>
         {/* Log In card */}
         <div className="flex flex-col rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
           <h2 className="text-lg font-semibold text-[var(--reader-text)]">
@@ -408,28 +426,15 @@ export default function SignIn() {
           </a>
         </div>
 
-        {/* Create Account card */}
-        <div className="flex flex-col rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
-          <h2 className="text-lg font-semibold text-[var(--reader-text)]">
-            Create an account
-          </h2>
-          <p className="mt-2 flex-1 text-base text-[var(--reader-muted)]">
-            New here? Create a free account, then come back to pick a tier.
-          </p>
-          <div className="mt-3">
-            <EmailOptInCheckbox checked={emailOptin} onChange={setEmailOptin} />
-          </div>
-          <a
-            href={registerHref}
-            className="mt-4 inline-flex items-center justify-center rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
-          >
-            Create account
-          </a>
-        </div>
       </div>
 
       <p className="mt-6 text-center text-sm text-[var(--reader-muted)]">
         Your account works across remnantofpromise.org and the study Bible.
+      </p>
+      <p className="mt-3 text-center text-sm">
+        <a href="/" className="text-[var(--reader-muted)] hover:underline">
+          ← Keep reading without an account
+        </a>
       </p>
     </div>
   );

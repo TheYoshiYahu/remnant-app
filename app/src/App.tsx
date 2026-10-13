@@ -1587,6 +1587,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
         voiceName,
         rate: ttsPrefs.rate,
         verseId: v.id,
+        ref: { book: selectedBookSlug, chapter: selectedChapter, verse: v.verse_number },
       });
     }
 
@@ -1719,6 +1720,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
             voiceName,
             rate: newPrefs.rate,
             verseId: v.id,
+            ref: { book: selectedBookSlug, chapter: selectedChapter, verse: v.verse_number },
           });
         }
       }, 0);
@@ -3066,7 +3068,20 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
           link — informational only (consumption-only model). */}
       {hasLockedBooks && (
         <div className="mb-4">
-          <LockedPartnerPrompt />
+          {/* S444 — this card shows to every free reader, including on
+              Genesis 1. The default title ("Part of the partner library")
+              read as if the chapter on screen were locked. Name what the
+              lock icons in the book list mean instead. */}
+          <LockedPartnerPrompt
+            title="Books marked with a lock are in the partner library"
+            message={
+              "The 66-book canon is free for everyone. The partner library adds " +
+              "the restored library beyond the canon (Apocrypha, 1 Enoch, " +
+              "Jubilees, Jasher, the Apostolic Fathers, Josephus, and more) and " +
+              "the deeper study tools. Partnership is managed from your account " +
+              "on the web at remnantofpromise.org."
+            }
+          />
         </div>
       )}
 

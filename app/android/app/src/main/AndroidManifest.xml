@@ -61,5 +61,12 @@
 
     <!-- Permissions -->
 
+    <!-- S444: Android 11+ must declare that the app looks up the text-to-speech engine. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

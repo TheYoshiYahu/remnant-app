@@ -79,6 +79,8 @@ export interface TTSOptions {
   rate?: number;
   pitch?: number;
   verseId?: number; // consumer-side cursor, opaque to the engine
+  /** S444 — where this verse lives, so the recorded-voice engine can find its file. */
+  ref?: { book: string; chapter: number; verse: number };
 }
 
 /**
@@ -173,6 +175,8 @@ export interface TTSEngine {
    */
   onError(handler: (e: TTSError) => void): () => void;
 }
+
+import { createRecordedEngine } from "./recordedAudio";
 
 // ─────────────────────────────────────────────────────────────────────
 // Web implementation — SpeechSynthesis API
@@ -337,24 +341,179 @@ function createWebTTS(): TTSEngine {
 //   4. Test on a real Capacitor build (Android emulator + real iPhone).
 //   5. Flip the selector in getTTSEngine() back to a platform branch.
 
-// import { TextToSpeech } from "@capacitor-community/text-to-speech";
+// S444 — Android fix. Android's WebView (what the Play Store app runs
+// in) has a window.speechSynthesis object but no voices behind it, so
+// speak() did nothing: Play looked alive and stayed silent. The fix is
+// the native text-to-speech plugin (@capacitor-community/text-to-speech),
+// reached through the Capacitor bridge at runtime — no import, so the
+// web bundle never depends on the package. The app loads its web code
+// live from bible.remnantofpromise.org, so this code is already in the
+// app; it switches on the moment a store build that includes the plugin
+// is installed. Until then, Android hides the Play button instead of
+// showing one that does nothing.
 
-function createNativeTTS(): TTSEngine {
-  // Reserved for V1.1+ native-plugin implementation. Unused at S176 —
-  // the selector below picks createWebTTS() on both web and native.
+interface NativeTTSPlugin {
+  speak(o: {
+    text: string;
+    lang?: string;
+    rate?: number;
+    pitch?: number;
+    volume?: number;
+    voice?: number;
+    category?: string;
+  }): Promise<void>;
+  stop(): Promise<void>;
+  getSupportedVoices(): Promise<{
+    voices: { name: string; lang: string; default?: boolean; localService?: boolean; voiceURI?: string }[];
+  }>;
+}
+
+type CapWindow = Window & {
+  Capacitor?: {
+    isNativePlatform?: () => boolean;
+    isPluginAvailable?: (name: string) => boolean;
+    getPlatform?: () => string;
+    Plugins?: Record<string, unknown>;
+  };
+};
+
+function nativePlugin(): NativeTTSPlugin | null {
+  if (typeof window === "undefined") return null;
+  const cap = (window as CapWindow).Capacitor;
+  if (!cap?.isNativePlatform?.()) return null;
+  if (!cap.isPluginAvailable?.("TextToSpeech")) return null;
+  const p = cap.Plugins?.["TextToSpeech"] as NativeTTSPlugin | undefined;
+  return p ?? null;
+}
+
+/** Android WebView (the Play Store shell): speechSynthesis exists but is silent. */
+function isAndroidWebView(): boolean {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent || "";
+  const cap = (typeof window !== "undefined" ? (window as CapWindow).Capacitor : undefined);
+  const nativeAndroid = cap?.getPlatform?.() === "android";
+  return nativeAndroid || (/Android/i.test(ua) && /; wv\)/.test(ua));
+}
+
+function createNativeTTS(plugin: NativeTTSPlugin): TTSEngine {
+  const endHandlers = new Set<(e: TTSEndEvent) => void>();
+  const errorHandlers = new Set<(e: TTSError) => void>();
+  const voicesChangedHandlers = new Set<() => void>();
+  let voices: TTSVoice[] = [];
+  type Item = { text: string; opts?: TTSOptions };
+  let queue: Item[] = [];
+  let current: Item | null = null;
+  let running = false;
+  let paused = false;
+  let generation = 0; // bumps on stop/pause so a stale speak() resolution is ignored
+
+  plugin
+    .getSupportedVoices()
+    .then((r) => {
+      voices = (r.voices || []).map((v) => ({
+        name: v.name || v.voiceURI || "",
+        lang: v.lang,
+        default: v.default,
+        localService: v.localService,
+      }));
+      for (const h of voicesChangedHandlers) {
+        try { h(); } catch { /* swallow */ }
+      }
+    })
+    .catch(() => { /* voices stay empty; the default voice still speaks */ });
+
+  async function pump(): Promise<void> {
+    if (running) return;
+    running = true;
+    while (!paused && (current || queue.length)) {
+      if (!current) current = queue.shift() ?? null;
+      if (!current) break;
+      const item = current;
+      const gen = generation;
+      const idx = item.opts?.voiceName
+        ? voices.findIndex((v) => v.name === item.opts!.voiceName)
+        : -1;
+      try {
+        await plugin.speak({
+          text: item.text,
+          lang: "en-US",
+          rate: item.opts?.rate ?? 1.0,
+          pitch: item.opts?.pitch ?? 1.0,
+          volume: 1.0,
+          category: "playback",
+          ...(idx >= 0 ? { voice: idx } : {}),
+        });
+      } catch (err) {
+        if (gen !== generation) break; // interrupted by stop/pause
+        for (const h of errorHandlers) {
+          try { h({ message: String(err), verseId: item.opts?.verseId }); } catch { /* swallow */ }
+        }
+      }
+      if (gen !== generation) break;
+      current = null;
+      for (const h of endHandlers) {
+        try { h({ verseId: item.opts?.verseId }); } catch { /* swallow */ }
+      }
+    }
+    running = false;
+  }
+
   return {
-    isAvailable: () => false,
-    getVoices: () => [],
-    onVoicesChanged: () => () => {},
-    speak: () => {},
-    pause: () => {},
-    resume: () => {},
-    stop: () => {},
-    isSpeaking: () => false,
-    onEnd: () => () => {},
-    onError: () => () => {},
+    isAvailable: () => true,
+    getVoices: () => voices,
+    onVoicesChanged(handler) {
+      voicesChangedHandlers.add(handler);
+      return () => voicesChangedHandlers.delete(handler);
+    },
+    speak(text, opts) {
+      queue.push({ text, opts });
+      paused = false;
+      void pump();
+    },
+    pause() {
+      // The plugin has no true pause: stop the current verse and restart
+      // that same verse on resume.
+      if (paused) return;
+      paused = true;
+      generation++;
+      void plugin.stop().catch(() => {});
+    },
+    resume() {
+      if (!paused) return;
+      paused = false;
+      void pump();
+    },
+    stop() {
+      generation++;
+      queue = [];
+      current = null;
+      paused = false;
+      void plugin.stop().catch(() => {});
+    },
+    isSpeaking: () => !paused && (running || current !== null || queue.length > 0),
+    onEnd(handler) {
+      endHandlers.add(handler);
+      return () => endHandlers.delete(handler);
+    },
+    onError(handler) {
+      errorHandlers.add(handler);
+      return () => errorHandlers.delete(handler);
+    },
   };
 }
+
+const UNAVAILABLE_ENGINE: TTSEngine = {
+  isAvailable: () => false,
+  getVoices: () => [],
+  onVoicesChanged: () => () => {},
+  speak: () => {},
+  pause: () => {},
+  resume: () => {},
+  stop: () => {},
+  isSpeaking: () => false,
+  onEnd: () => () => {},
+  onError: () => () => {},
+};
 
 // ─────────────────────────────────────────────────────────────────────
 // Module-level singleton
@@ -397,11 +556,19 @@ export function getTTSEngine(): TTSEngine {
     };
     return _engine;
   }
-  // S176 — single engine across surfaces. See the file-header note
-  // for why createNativeTTS() is no longer selected.
-  // createNativeTTS is preserved (even though unused) so the V1.1+
-  // upgrade path stays one selector flip away.
-  void createNativeTTS;
-  _engine = createWebTTS();
+  // S444 — native plugin when the installed app carries it (Android and
+  // iOS store builds from S444 on); otherwise the browser engine, except
+  // inside the Android app shell, where the browser engine is silent.
+  const plugin = nativePlugin();
+  let device: TTSEngine;
+  if (plugin) {
+    device = createNativeTTS(plugin);
+  } else if (isAndroidWebView()) {
+    device = UNAVAILABLE_ENGINE;
+  } else {
+    device = createWebTTS();
+  }
+  // S444 — recorded natural voices first; the device voice is the fallback.
+  _engine = createRecordedEngine(device);
   return _engine;
 }

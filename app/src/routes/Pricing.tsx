@@ -565,8 +565,7 @@ export default function Pricing() {
         {!native && (
           <p>
             Have a partner code? Enter it on the Stripe checkout page that opens
-            after you click Subscribe — there's a field for it on the right side
-            of the page.
+            after you click Subscribe — tap "Add promotion code" there.
           </p>
         )}
         <p className="mt-2">

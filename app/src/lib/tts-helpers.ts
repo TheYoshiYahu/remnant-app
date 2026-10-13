@@ -57,23 +57,23 @@ import { stripParentheticals } from "./stripParentheticals";
  */
 export const NAME_SUBSTITUTIONS: Record<string, string> = {
   // Compound divine names (longest, fire first) ---------------------------
-  "Yahuah Elohim": "yah-OO-ah el-oh-HEEM",
-  "Yahuah Tseva'ot": "yah-OO-ah tseh-vah-OAT",
-  "Yahuah Tsidkenu": "yah-OO-ah tsid-KEH-noo",
-  "Yahuah Shalom": "yah-OO-ah shah-LOHM",
-  "Yahuah Nissi": "yah-OO-ah NEE-see",
-  "Yahuah Yireh": "yah-OO-ah yir-EH",
-  "Yahuah Rapha": "yah-OO-ah RAH-fah",
-  "Yahuah Ra'ah": "yah-OO-ah RAH-ah",
-  "Yahuah Shammah": "yah-OO-ah SHAH-mah",
-  "Yahuah Elohayka": "yah-OO-ah el-oh-HAI-kah",
-  "Yahuah Elohaychem": "yah-OO-ah el-oh-HAI-khem",
-  "Yahuah Eloheinu": "yah-OO-ah el-oh-HAY-noo",
-  "Yahuah Elohai": "yah-OO-ah el-oh-HAI",
-  "Yahuah Elohav": "yah-OO-ah el-oh-HAHV",
-  "Adonai Yahuah": "ah-doh-NAI yah-OO-ah",
-  "Yahusha HaMashiach": "yah-OO-shah hah-mah-SHEE-akh",
-  "HaMashiach Yahusha": "hah-mah-SHEE-akh yah-OO-shah",
+  "Yahuah Elohim": "EE-ah-OO-ah el-oh-HEEM",
+  "Yahuah Tseva'ot": "EE-ah-OO-ah tseh-vah-OAT",
+  "Yahuah Tsidkenu": "EE-ah-OO-ah tsid-KEH-noo",
+  "Yahuah Shalom": "EE-ah-OO-ah shah-LOHM",
+  "Yahuah Nissi": "EE-ah-OO-ah NEE-see",
+  "Yahuah Yireh": "EE-ah-OO-ah yir-EH",
+  "Yahuah Rapha": "EE-ah-OO-ah RAH-fah",
+  "Yahuah Ra'ah": "EE-ah-OO-ah RAH-ah",
+  "Yahuah Shammah": "EE-ah-OO-ah SHAH-mah",
+  "Yahuah Elohayka": "EE-ah-OO-ah el-oh-HAI-kah",
+  "Yahuah Elohaychem": "EE-ah-OO-ah el-oh-HAI-khem",
+  "Yahuah Eloheinu": "EE-ah-OO-ah el-oh-HAY-noo",
+  "Yahuah Elohai": "EE-ah-OO-ah el-oh-HAI",
+  "Yahuah Elohav": "EE-ah-OO-ah el-oh-HAHV",
+  "Adonai Yahuah": "ah-doh-NAI EE-ah-OO-ah",
+  "Yahusha HaMashiach": "EE-ah-OO-shah hah-mah-SHEE-akh",
+  "HaMashiach Yahusha": "hah-mah-SHEE-akh EE-ah-OO-shah",
   "Ehyeh asher Ehyeh": "eh-YEH ah-SHER eh-YEH",
   "Ruach HaKodesh": "ROO-akh hah-KOH-desh",
   "El Shaddai": "el shah-DIE",
@@ -85,8 +85,8 @@ export const NAME_SUBSTITUTIONS: Record<string, string> = {
   "Melek Tsadiq": "MEH-lek tsah-DEEK",
 
   // Single divine names ---------------------------------------------------
-  Yahuah: "yah-OO-ah",
-  Yahusha: "yah-OO-shah",
+  Yahuah: "EE-ah-OO-ah",
+  Yahusha: "EE-ah-OO-shah",
   HaMashiach: "hah-mah-SHEE-akh",
   Mashiach: "mah-SHEE-akh",
   Elohim: "el-oh-HEEM",
@@ -147,7 +147,7 @@ function buildSubstitutionRegex(table: Record<string, string>): RegExp {
  *
  * Example:
  *   applySubstitutionTable("Yahuah Elohim said unto Mosheh")
- *   → "yah-OO-ah el-oh-HEEM said unto MOH-sheh"
+ *   → "EE-ah-OO-ah el-oh-HEEM said unto MOH-sheh"
  */
 export function applySubstitutionTable(
   text: string,
@@ -241,6 +241,8 @@ export function rankVoices<V extends RankableVoice>(voices: V[]): V[] {
 
 function scoreVoice(v: RankableVoice): number {
   let score = 0;
+  // S444 — the recorded natural voices always lead the picker.
+  if (/· Natural voice/.test(v.name)) score += 300;
   if (v.default) score += 100;
   for (let i = 0; i < PREMIUM_PATTERNS.length; i++) {
     if (PREMIUM_PATTERNS[i].test(v.name)) {
