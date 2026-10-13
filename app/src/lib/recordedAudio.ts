@@ -166,7 +166,12 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     if (!chosen || !timing) {
       audio.pause();
       audio.muted = false;
-      if (fallback.isAvailable()) { runFallback(items); return; }
+      // S446 — say so in the player instead of switching voices silently.
+      if (fallback.isAvailable()) {
+        emitError("No natural-voice recording for this chapter yet. Using the phone's voice.", first?.opts?.verseId);
+        runFallback(items);
+        return;
+      }
       mode = "idle";
       emitError("This chapter has no recording yet, and this device has no built-in voice.", first?.opts?.verseId);
       return;

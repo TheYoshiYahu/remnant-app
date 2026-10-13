@@ -4,7 +4,7 @@ from kokoro_onnx import Kokoro
 IPA = {
  "Yahuah":"ˈiːˈɑːˈuːˈɑː", "Yahusha":"ˈiːˈɑːˈuːʃˈɑː",
  # Yoshi, S444: Enoch = "Ha-noke", Eve = "Hooah" (one smooth word).
- "Enoch":"hˈɑː nˈoʊk", "Eve":"hˈuːɑː",
+ "Enoch":"hˈɑː nˈoʊk", "Eve":"hˈuːɑː", "Baruch":"bɑːɹˈuːkx",
 }
 RESPELL = {
  "Ruach HaKodesh":"Roo-ak Hah-koh-desh","El Elyon":"El El-yohn","El Shaddai":"El Shah-dye","El Gibbor":"El Gib-bor","El Olam":"El Oh-lahm",
@@ -13,10 +13,14 @@ RESPELL = {
  "Ruach":"Roo-ak","HaKodesh":"Hah-koh-desh",
  "Tseva'ot":"Tseh-vah-ote","Shammah":"Shah-mah","Rapha":"Rah-fah","Shalom":"Shah-lohm","Yireh":"Yir-eh",
  "Nissi":"Nee-see","Ra'ah":"Rah-ah","Tsidkenu":"Tsid-keh-noo",
+ # Partner-library names (S444): standard pronunciations where the default voice slips.
+ "Tobit":"Toe-bit","Sirach":"Seer-ak","Maccabeus":"Mack-uh-bee-us","Maccabees":"Mack-uh-beez",
+ "Holofernes":"Hol-uh-fur-neez","Beliar":"Bee-lee-ar","Phanuel":"Fan-yoo-el","Lamech":"Lah-mek","Sammael":"Sam-ay-el",
+ "Uriel":"Yoor-ee-el","Azazel":"Ah-zah-zel","Raphael":"Raf-ay-el","Mattathias":"Mat-uh-thy-us","Esdras":"Ez-druss",
 }
 _rk=sorted(RESPELL,key=len,reverse=True)
 _rrx=re.compile(r"(?<![\w'-])("+"|".join(map(re.escape,_rk))+r")(?='s\b|[^\w'-]|$)")
-_irx=re.compile(r"(?<![\w'-])(Yahuah|Yahusha|Enoch|Eve)(?=(['’]s)?\b)")
+_irx=re.compile(r"(?<![\w'-])(Yahuah|Yahusha|Enoch|Eve|Baruch)(?=(['’]s)?\b)")
 # S444 — speech-only fixes for divine names the restoration pipeline missed in
 # the app text (LORD'S, small-caps GOD, JEHOVAH). The text itself still needs
 # fixing in the app; these keep the recordings right meanwhile.

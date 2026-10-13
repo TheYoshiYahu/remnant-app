@@ -12,7 +12,7 @@ k=Kokoro(os.path.join(HERE,"kokoro-v1.0.onnx"),os.path.join(HERE,"voices-v1.0.bi
 lang="en-gb" if VOICE.startswith("b") else "en-us"
 SR=24000; SPEED=0.95
 chs=json.load(open(sys.argv[3] if len(sys.argv)>3 else os.path.join(HERE,"chapters_all.json")))
-pri=["psalms","john","matthew","mark","luke","enoch/1-enoch","jubilees/jubilees","jasher/jasher","genesis","proverbs","acts","romans","isaiah"]
+pri=["psalms","enoch/1-enoch","jubilees/jubilees","jasher/jasher","john","matthew","mark","luke","genesis","proverbs","acts","romans","isaiah"]
 if ORDER=="priority":
     chs=sorted(chs,key=lambda c:(pri.index(c["book"]) if c["book"] in pri else len(pri)))
 def tts(t):

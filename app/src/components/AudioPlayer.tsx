@@ -63,6 +63,8 @@ interface AudioPlayerProps {
   onClose: () => void;
   /** S444 — true for free readers: natural voices need partnership or the trial. */
   naturalVoicesLocked?: boolean;
+  /** S446 — short message shown in place of the verse reference (e.g. no recording yet). */
+  notice?: string | null;
 }
 
 const PREVIEW_PHRASE =
@@ -80,6 +82,7 @@ export default function AudioPlayer({
   onPreviewVoice,
   onClose,
   naturalVoicesLocked = false,
+  notice = null,
 }: AudioPlayerProps) {
   const [voicePickerOpen, setVoicePickerOpen] = useState(false);
 
@@ -164,7 +167,11 @@ export default function AudioPlayer({
 
           {/* Current verse reference (flex-grow center region). */}
           <div className="min-w-0 flex-1 truncate text-center text-base text-[var(--reader-text)] sm:text-left">
-            {currentVerseRef ?? "—"}
+            {notice ? (
+              <span className="text-sm opacity-80" title={notice}>{notice}</span>
+            ) : (
+              currentVerseRef ?? "—"
+            )}
           </div>
 
           {/* Speed picker. */}

@@ -104,6 +104,7 @@ import BookmarksIndex from "./components/BookmarksIndex";
 import MyStudy from "./components/MyStudy";
 import SearchModal from "./components/SearchModal";
 import AudioPlayer from "./components/AudioPlayer";
+import { keepScreenAwake, allowScreenSleep } from "./lib/wakeLock";
 import { setRecordedVoicesEntitled, audioBookKey } from "./lib/recordedAudio";
 import { getTTSEngine, type TTSVoice } from "./lib/tts";
 import {
@@ -1246,6 +1247,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // S444 — true while the reader has paused narration, so the player shows
   // "Play" instead of "Pause". Cleared whenever a new run starts or the player closes.
   const [ttsPaused, setTtsPaused] = useState<boolean>(false);
+  // S446 — short notice in the player bar (e.g. a chapter with no natural-voice recording yet).
+  const [ttsNotice, setTtsNotice] = useState<string | null>(null);
   const [playingVerseId, setPlayingVerseId] = useState<number | null>(null);
   const [ttsPrefs, setTtsPrefs] = useState<TTSPrefs>(() => loadTTSPrefs());
   const [voices, setVoices] = useState<TTSVoice[]>(() =>
@@ -1624,19 +1627,20 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     });
 
     const unsubErr = engine.onError((err) => {
-      // S157 V1 — error handling is observational only. The engine
-      // already filters out "canceled"/"interrupted" non-errors per
-      // the web implementation; remaining errors are logged for
-      // diagnostic visibility but don't stop playback.
+      // S157 V1 — observational; S446 — also show the message in the
+      // player bar so a missing recording is no longer silent.
       // eslint-disable-next-line no-console
       console.warn("[TTS] error", err);
+      if (err.message) setTtsNotice(err.message);
     });
 
     ttsUnsubsRef.current = [unsubEnd, unsubErr];
 
     setPlayingVerseId(verses[startIdx].id);
     setTtsPaused(false);
+    setTtsNotice(null);
     setAudioPlayerOpen(true);
+    keepScreenAwake();
     manualScrollOverrideRef.current = false;
   }
 
@@ -1769,8 +1773,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     ttsUnsubsRef.current = [];
     setAudioPlayerOpen(false);
     setTtsPaused(false);
+    setTtsNotice(null);
     setPlayingVerseId(null);
     setAutoAdvanceAfterLoad(false);
+    allowScreenSleep();
     manualScrollOverrideRef.current = false;
   }
 
@@ -5234,6 +5240,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
           }
           voices={voices}
           naturalVoicesLocked={!hwEntitled}
+          notice={ttsNotice}
           prefs={ttsPrefs}
           onPlayPause={handlePlayPause}
           onPrev={
