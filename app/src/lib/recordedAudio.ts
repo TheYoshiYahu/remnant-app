@@ -42,6 +42,18 @@ export const RECORDED_VOICES: RecordedVoice[] = [
   { id: "af_heart", name: "Heart · Natural voice (female)", lang: "en-US", localService: false },
 ];
 
+// S444 — natural voices are a partner feature (paid tiers + the 7-day free
+// trial). App.tsx sets this from the reader's subscription status; free
+// readers keep the device voice. (Soft gate: the files themselves are on a
+// public CDN. A Cloudflare Worker checking the rop_jwt cookie can harden it.)
+let entitled = false;
+export function setRecordedVoicesEntitled(v: boolean): void {
+  entitled = v;
+}
+export function recordedVoicesEntitled(): boolean {
+  return entitled;
+}
+
 export function recordedVoiceByName(name: string | null | undefined): RecordedVoice | null {
   if (!name) return null;
   return RECORDED_VOICES.find((v) => v.name === name) ?? null;
@@ -128,7 +140,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
 
   async function startBatch(items: Pending[], mySession: number) {
     const first = items[0];
-    const picked = recordedVoiceByName(first?.opts?.voiceName);
+    const picked = entitled ? recordedVoiceByName(first?.opts?.voiceName) : null;
     const ref = first?.opts?.ref;
     if (!audio || !picked || !ref) { runFallback(items); return; }
 
@@ -218,10 +230,10 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
   }
 
   return {
-    isAvailable: () => !!audio || fallback.isAvailable(),
+    isAvailable: () => (entitled && !!audio) || fallback.isAvailable(),
 
     getVoices(): TTSVoice[] {
-      return [...RECORDED_VOICES, ...fallback.getVoices()];
+      return entitled ? [...RECORDED_VOICES, ...fallback.getVoices()] : fallback.getVoices();
     },
 
     onVoicesChanged: (h) => fallback.onVoicesChanged(h),
@@ -229,7 +241,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     speak(text, opts) {
       // Preview call from the voice picker (no verse, no chapter ref).
       if (!opts?.ref && opts?.verseId === undefined) {
-        const rv = recordedVoiceByName(opts?.voiceName);
+        const rv = entitled ? recordedVoiceByName(opts?.voiceName) : null;
         if (rv) { previewRecorded(rv); return; }
         session++;
         clearAudio();

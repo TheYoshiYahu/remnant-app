@@ -104,6 +104,7 @@ import BookmarksIndex from "./components/BookmarksIndex";
 import MyStudy from "./components/MyStudy";
 import SearchModal from "./components/SearchModal";
 import AudioPlayer from "./components/AudioPlayer";
+import { setRecordedVoicesEntitled } from "./lib/recordedAudio";
 import { getTTSEngine, type TTSVoice } from "./lib/tts";
 import {
   prepareVerseForSpeech,
@@ -1036,6 +1037,13 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // gated. Entitled = an account currently in its free week or paying. Anyone
   // else taps a count and gets the sign-in / upgrade wall instead of the table.
   const hwEntitled = !!me && (me.status === "active" || me.status === "trialing");
+  // S444 — natural recorded voices follow the same entitlement: any paid
+  // tier or the free trial. Re-read the voice list when it flips.
+  useEffect(() => {
+    setRecordedVoicesEntitled(hwEntitled);
+    const engine = getTTSEngine();
+    if (engine.isAvailable()) setVoices(engine.getVoices());
+  }, [hwEntitled]);
   // S442 — partners: keep the year plan in step across devices, and let
   // in-order reading move the plan along (opening the chapter after the next
   // unread one marks the ones before it read). Free readers: unchanged.
@@ -5218,6 +5226,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               : null
           }
           voices={voices}
+          naturalVoicesLocked={!hwEntitled}
           prefs={ttsPrefs}
           onPlayPause={handlePlayPause}
           onPrev={

@@ -38,6 +38,7 @@ import {
   type TTSPrefs,
 } from "../lib/tts-helpers";
 import type { TTSVoice } from "../lib/tts";
+import { isNativeShell } from "../lib/native-shell";
 
 interface AudioPlayerProps {
   /** Whether the audio engine is currently speaking. */
@@ -60,6 +61,8 @@ interface AudioPlayerProps {
   onPreviewVoice: (voiceName: string) => void;
   /** Close the player. Caller stops audio + hides the bar. */
   onClose: () => void;
+  /** S444 — true for free readers: natural voices need partnership or the trial. */
+  naturalVoicesLocked?: boolean;
 }
 
 const PREVIEW_PHRASE =
@@ -76,6 +79,7 @@ export default function AudioPlayer({
   onPrefsChange,
   onPreviewVoice,
   onClose,
+  naturalVoicesLocked = false,
 }: AudioPlayerProps) {
   const [voicePickerOpen, setVoicePickerOpen] = useState(false);
 
@@ -205,6 +209,7 @@ export default function AudioPlayer({
           onPick={handleVoiceChange}
           onPreview={onPreviewVoice}
           onClose={() => setVoicePickerOpen(false)}
+          naturalVoicesLocked={naturalVoicesLocked}
         />
       )}
     </>
@@ -221,6 +226,7 @@ interface VoicePickerModalProps {
   onPick: (voiceName: string) => void;
   onPreview: (voiceName: string) => void;
   onClose: () => void;
+  naturalVoicesLocked?: boolean;
 }
 
 function VoicePickerModal({
@@ -229,6 +235,7 @@ function VoicePickerModal({
   onPick,
   onPreview,
   onClose,
+  naturalVoicesLocked = false,
 }: VoicePickerModalProps) {
   const [showAll, setShowAll] = useState(false);
 
@@ -271,6 +278,20 @@ function VoicePickerModal({
         </div>
 
         <div className="flex-1 overflow-y-auto">
+          {naturalVoicesLocked && (
+            <div className="border-b border-[var(--reader-rule)] px-4 py-3 text-sm text-[var(--reader-muted)]">
+              🔒 Natural voices (Michael, George, Onyx, and Heart) come with
+              partnership and the 7-day free trial.
+              {!isNativeShell() && (
+                <>
+                  {" "}
+                  <a href="/pricing" className="font-medium text-[var(--reader-text)] underline">
+                    Start 7 days free
+                  </a>
+                </>
+              )}
+            </div>
+          )}
           {ranked.length === 0 && (
             <div className="px-4 py-6 text-center text-[var(--reader-muted)]">
               No voices available on this device.
