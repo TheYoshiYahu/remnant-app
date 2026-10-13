@@ -1664,7 +1664,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       // player bar so a missing recording is no longer silent.
       // eslint-disable-next-line no-console
       console.warn("[TTS] error", err);
-      if (err.message) setTtsNotice(err.message);
+      setTtsNotice(err.message || null);
     });
 
     ttsUnsubsRef.current = [unsubEnd, unsubErr];

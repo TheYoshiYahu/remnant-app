@@ -99,6 +99,28 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
   // recorded run state
   let runItems: { verseId?: number; verse: number; start: number }[] = [];
   let retryItems: Pending[] | null = null; // S447 — chapter queue held back by a dropped connection
+  let stalled = false; // S447 — a recorded run whose play() was refused (screen locked)
+
+  /** S447 — start whatever is armed: a refused play(), or a chapter held back offline. */
+  function kick(): boolean {
+    if (mode === "recorded" && audio && stalled && !paused) {
+      stalled = false;
+      void audio.play().then(() => emitError("")).catch(() => { stalled = true; });
+      return true;
+    }
+    if (mode === "idle" && retryItems) {
+      const items = retryItems;
+      retryItems = null;
+      void startBatch(items, ++session);
+      return true;
+    }
+    return false;
+  }
+  if (typeof document !== "undefined") {
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") kick();
+    });
+  }
   let runIdx = 0;
   let detach: (() => void) | null = null;
 
@@ -254,6 +276,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     mode = "recorded";
     paused = false;
     retryItems = null;
+    stalled = false;
 
     const onTime = () => {
       if (mySession !== session) return;
@@ -288,7 +311,13 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
       if (mySession !== session) return;
       try { audio.currentTime = runItems[0].start; } catch { /* ignore */ }
       audio.muted = false;
-      void audio.play().catch(() => emitError("Tap play to start audio."));
+      void audio.play().catch(() => {
+        // S447 — Android refuses to start a new sound while the screen is
+        // locked. Leave the run armed: the visibility handler and resume()
+        // both pick it up.
+        stalled = true;
+        emitError("Waiting for the screen to unlock to start the next chapter.");
+      });
     };
     if (audio.readyState >= 1) seekAndPlay();
     else audio.addEventListener("loadedmetadata", seekAndPlay, { once: true });
@@ -354,11 +383,11 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
         void audio.play().catch(() => {});
         return;
       }
-      if (mode === "idle" && retryItems) {
-        // S447 — the reader tapped play after "Couldn't reach the recording".
-        const items = retryItems;
-        retryItems = null;
-        void startBatch(items, ++session);
+      if (kick()) return;
+      if (mode === "recorded" && audio && audio.paused) {
+        // S447 — the element sits paused for a reason we didn't track
+        // (e.g. the OS paused it); play beats doing nothing.
+        void audio.play().catch(() => {});
         return;
       }
       fallback.resume();
@@ -368,6 +397,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
       session++;
       batch = [];
       retryItems = null;
+      stalled = false;
       batchScheduled = false;
       clearAudio();
       runItems = [];

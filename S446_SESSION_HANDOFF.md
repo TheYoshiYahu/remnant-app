@@ -34,3 +34,9 @@ Cause: at the chapter break the chapter text came from the IndexedDB cache, but 
 - recordedAudio.ts: prefetch now holds the next chapter's MP3 in memory as a blob (two at most) and plays from it, so the break needs no network.
 - App.tsx: queueChapterFromVerse also warms the next chapter's text (and the next book's chapter list across a book boundary) through readThrough.
 - Still to do: Xcode archive + submit 1.1.3 (iOS background audio); upload audio after the Jasher redo. Open question (c) above still unconfirmed.
+
+## S447b (Oct 13, 3:55 PM) — phone test after the first push
+Android, locked: no longer switches voices, but the next chapter does not start at all; after unlock the small play button did nothing, the top play button started it. So the hand-off now reaches the new chapter and Android's WebView refuses audio.play() for a new source while the screen is locked (the old "Tap play to start audio" path, which the small button could not recover from).
+- recordedAudio.ts: a refused play() leaves the run armed ("Waiting for the screen to unlock to start the next chapter."); it auto-starts on visibilitychange→visible, and the small play button (resume) starts it too. resume() also plays a paused element it did not pause itself.
+- App.tsx: an empty engine error clears the player notice.
+- NEXT (needs a Play Store build): true locked-screen chapter advance on Android needs native playback — a foreground media service / MediaSession plugin (e.g. a Capacitor native-audio plugin) driving the MP3 instead of the WebView <audio>. Same build can carry the proxy address and listing overhaul.

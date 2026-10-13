@@ -9,10 +9,10 @@ set -euo pipefail
 cd "$(dirname "$0")"
 rm -f .git/index.lock .git/HEAD.lock
 
-echo "=== 1/2 commit"
+echo "=== 1/2 commit (second push: little play button + auto-start on unlock)"
 git add app/src/App.tsx app/src/lib/recordedAudio.ts app/src/lib/tts.ts \
   tts/names_ipa.py S446_SESSION_HANDOFF.md _session447_deploy.sh
-git commit -m "S447: no network needed at the chapter break; never fall to the phone voice over a dropped connection
+git commit -m "S447b: recover when Android refuses to start the next chapter while locked
 
 While a chapter plays, the next chapter's text, timing file and MP3 (as an
 in-memory blob) are warmed, so auto-advance works with the phone locked.
