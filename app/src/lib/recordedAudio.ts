@@ -38,8 +38,8 @@ export interface RecordedVoice extends TTSVoice {
 export const RECORDED_VOICES: RecordedVoice[] = [
   { id: "am_michael", name: "Michael · Natural voice", lang: "en-US", default: true, localService: false },
   { id: "bm_george", name: "George · Natural voice (British)", lang: "en-GB", localService: false },
-  { id: "am_onyx", name: "Onyx · Natural voice (deep)", lang: "en-US", localService: false },
-  { id: "af_heart", name: "Heart · Natural voice (female)", lang: "en-US", localService: false },
+  { id: "am_onyx", name: "Ivan · Natural voice (deep)", lang: "en-US", localService: false },
+  { id: "af_heart", name: "Olivia · Natural voice (female)", lang: "en-US", localService: false },
 ];
 
 // S444 — natural voices are a partner feature (paid tiers + the 7-day free
@@ -60,9 +60,19 @@ export function audioBookKey(editionSlug: string | null | undefined, bookSlug: s
   return !editionSlug || editionSlug === "canon" ? bookSlug : `${editionSlug}/${bookSlug}`;
 }
 
+// S448 — display names changed (Heart → Olivia, Onyx → Ivan); ids and the
+// R2 paths did not. A saved preference still carries the old name.
+const RENAMED_VOICES: Record<string, string> = {
+  "Heart · Natural voice (female)": "af_heart",
+  "Onyx · Natural voice (deep)": "am_onyx",
+};
+
 export function recordedVoiceByName(name: string | null | undefined): RecordedVoice | null {
   if (!name) return null;
-  return RECORDED_VOICES.find((v) => v.name === name) ?? null;
+  const byName = RECORDED_VOICES.find((v) => v.name === name);
+  if (byName) return byName;
+  const id = RENAMED_VOICES[name];
+  return id ? RECORDED_VOICES.find((v) => v.id === id) ?? null : null;
 }
 
 export function isRecordedVoiceName(name: string | null | undefined): boolean {

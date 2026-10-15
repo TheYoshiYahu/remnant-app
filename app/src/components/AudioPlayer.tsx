@@ -289,7 +289,7 @@ function VoicePickerModal({
         <div className="flex-1 overflow-y-auto">
           {naturalVoicesLocked && (
             <div className="border-b border-[var(--reader-rule)] px-4 py-3 text-sm text-[var(--reader-muted)]">
-              🔒 Natural voices (Michael, George, Onyx, and Heart) come with
+              🔒 Natural voices (Michael, George, Ivan, and Olivia) come with
               partnership and the 7-day free trial.
               {!isNativeShell() && (
                 <>
