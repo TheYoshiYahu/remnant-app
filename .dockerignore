@@ -73,7 +73,16 @@ restoration-pipeline/*
 source-texts/existing-restored-editions/
 source-texts/extras/
 commentary/
-app/
+# S452 — app/ stays out of the API image EXCEPT the reader's paragraph breaks,
+# which api/main.py reads for the first-paragraph teaser (Dockerfile COPY).
+# Docker can't re-include a file under an excluded directory, so exclude
+# app/'s children explicitly and negate the one path we ship.
+app/*
+!app/src/
+app/src/*
+!app/src/data/
+app/src/data/*
+!app/src/data/paragraph_starts.json
 
 # Project tracking / docs (not runtime)
 BIBLE_APP_ROADMAP.md
