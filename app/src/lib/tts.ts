@@ -101,6 +101,8 @@ export interface TTSEndEvent {
 export interface TTSError {
   message: string;
   verseId?: number;
+  /** S451 — playback has stopped on purpose (the free taste ended); the player should show Play. */
+  stopped?: boolean;
 }
 
 export interface TTSEngine {

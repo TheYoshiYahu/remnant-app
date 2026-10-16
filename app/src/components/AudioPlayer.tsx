@@ -61,7 +61,7 @@ interface AudioPlayerProps {
   onPreviewVoice: (voiceName: string) => void;
   /** Close the player. Caller stops audio + hides the bar. */
   onClose: () => void;
-  /** S444 — true for free readers: natural voices need partnership or the trial. */
+  /** S444/S451 — true for free readers: natural voices play a 5-verse taste; every chapter needs partnership or the trial. */
   naturalVoicesLocked?: boolean;
   /** S446 — short message shown in place of the verse reference (e.g. no recording yet). */
   notice?: string | null;
@@ -289,8 +289,9 @@ function VoicePickerModal({
         <div className="flex-1 overflow-y-auto">
           {naturalVoicesLocked && (
             <div className="border-b border-[var(--reader-rule)] px-4 py-3 text-sm text-[var(--reader-muted)]">
-              🔒 Natural voices (Michael, George, Ivan, and Olivia) come with
-              partnership and the 7-day free trial.
+              Natural voices (Michael, George, Ivan, and Olivia): free readers
+              hear the first 5 verses of any chapter. Partnership and the 7-day
+              free trial unlock every chapter.
               {!isNativeShell() && (
                 <>
                   {" "}

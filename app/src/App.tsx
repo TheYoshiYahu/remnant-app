@@ -105,7 +105,7 @@ import MyStudy from "./components/MyStudy";
 import SearchModal from "./components/SearchModal";
 import AudioPlayer from "./components/AudioPlayer";
 import { keepScreenAwake, allowScreenSleep } from "./lib/wakeLock";
-import { setRecordedVoicesEntitled, audioBookKey } from "./lib/recordedAudio";
+import { setRecordedVoicesAccess, audioBookKey } from "./lib/recordedAudio";
 import { getTTSEngine, type TTSVoice } from "./lib/tts";
 import {
   prepareVerseForSpeech,
@@ -1039,9 +1039,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // else taps a count and gets the sign-in / upgrade wall instead of the table.
   const hwEntitled = !!me && (me.status === "active" || me.status === "trialing");
   // S444 — natural recorded voices follow the same entitlement: any paid
-  // tier or the free trial. Re-read the voice list when it flips.
+  // tier or the free trial. S451 — everyone else gets the taste (verses 1–5
+  // of a chapter) instead of the phone's voice. Re-read the voice list when it flips.
   useEffect(() => {
-    setRecordedVoicesEntitled(hwEntitled);
+    setRecordedVoicesAccess(hwEntitled ? "full" : "sample");
     const engine = getTTSEngine();
     if (engine.isAvailable()) setVoices(engine.getVoices());
   }, [hwEntitled]);
@@ -1665,6 +1666,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       // eslint-disable-next-line no-console
       console.warn("[TTS] error", err);
       setTtsNotice(err.message || null);
+      // S451 — the free taste ended: show Play, keep the cursor where it stopped.
+      if (err.stopped) setTtsPaused(true);
     });
 
     ttsUnsubsRef.current = [unsubEnd, unsubErr];

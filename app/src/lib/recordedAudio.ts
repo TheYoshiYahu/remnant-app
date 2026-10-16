@@ -43,15 +43,30 @@ export const RECORDED_VOICES: RecordedVoice[] = [
 ];
 
 // S444 — natural voices are a partner feature (paid tiers + the 7-day free
-// trial). App.tsx sets this from the reader's subscription status; free
-// readers keep the device voice. (Soft gate: the files themselves are on a
+// trial). S451 — free and signed-out readers now get a taste instead of the
+// phone's robot voice: the natural voices sit in their picker (Michael is the
+// default), preview works, and a chapter plays verses 1–5 in the natural
+// voice and then stops with an invite. App.tsx sets the level from the
+// reader's subscription status. (Soft gate: the files themselves are on a
 // public CDN. A Cloudflare Worker checking the rop_jwt cookie can harden it.)
-let entitled = false;
-export function setRecordedVoicesEntitled(v: boolean): void {
-  entitled = v;
+export type RecordedAccess = "full" | "sample";
+export const SAMPLE_VERSES = 5;
+export const SAMPLE_NOTICE =
+  `That was a taste of the natural voice. Free readers hear the first ${SAMPLE_VERSES} verses of any chapter; ` +
+  "partners and the 7-day free trial hear every chapter.";
+export const SAMPLE_START_NOTICE =
+  `Free readers hear verses 1–${SAMPLE_VERSES} of any chapter in the natural voice — start from verse 1. ` +
+  "Partners and the 7-day free trial hear every chapter.";
+let access: RecordedAccess = "sample";
+export function setRecordedVoicesAccess(v: RecordedAccess): void {
+  access = v;
 }
+export function recordedVoicesAccess(): RecordedAccess {
+  return access;
+}
+/** Kept for callers that only need yes/no: full access to every chapter. */
 export function recordedVoicesEntitled(): boolean {
-  return entitled;
+  return access === "full";
 }
 
 /** Canon books sit at <voice>/<book>/; every other edition at <voice>/<edition>/<book>/
@@ -139,11 +154,12 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
       try { h({ verseId }); } catch { /* swallow */ }
     }
   };
-  const emitError = (message: string, verseId?: number) => {
+  const emitError = (message: string, verseId?: number, stopped?: boolean) => {
     for (const h of errorHandlers) {
-      try { h({ message, verseId }); } catch { /* swallow */ }
+      try { h({ message, verseId, stopped }); } catch { /* swallow */ }
     }
   };
+  let sampleDone = false; // S451 — the free taste has played out; play just re-shows the invite
 
   // Rebroadcast the device engine's events while it is the one speaking.
   fallback.onEnd((e) => { if (mode === "fallback") emitEnd(e.verseId); });
@@ -196,7 +212,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
 
   /** S446/S447 — warm the next chapter: timing file in memory, MP3 as a blob. */
   function prefetchChapter(voiceName: string | null, ref: { book: string; chapter: number }): void {
-    const v = entitled ? recordedVoiceByName(voiceName) : null;
+    const v = access === "full" ? recordedVoiceByName(voiceName) : null;
     if (!v) return;
     void loadTiming(v.id, ref.book, ref.chapter).then(({ timing }) => {
       if (!timing) return;
@@ -228,9 +244,20 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
 
   async function startBatch(items: Pending[], mySession: number) {
     const first = items[0];
-    const picked = entitled ? recordedVoiceByName(first?.opts?.voiceName) : null;
+    const picked = recordedVoiceByName(first?.opts?.voiceName);
     const ref = first?.opts?.ref;
     if (!audio || !picked || !ref) { runFallback(items); return; }
+    // S451 — the free taste: verses 1–5 of the chapter in the natural voice.
+    const sample = access !== "full";
+    if (sample) {
+      items = items.filter((it) => (it.opts?.ref?.verse ?? 0) <= SAMPLE_VERSES);
+      if (items.length === 0) {
+        mode = "idle";
+        sampleDone = true;
+        emitError(SAMPLE_START_NOTICE, first?.opts?.verseId, true);
+        return;
+      }
+    }
 
     // Unlock / start the element inside the tap (iOS), muted, while the
     // timing file loads; it is unmuted after the seek below.
@@ -279,6 +306,11 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
       .map((it) => ({ verseId: it.opts?.verseId, verse: it.opts!.ref!.verse, start: starts.get(it.opts!.ref!.verse)! }));
     runIdx = 0;
     if (runItems.length === 0) { runFallback(items); return; }
+    // S451 — where the taste ends: the start of the verse after the last
+    // sampled one (or the end of the file when the chapter is that short).
+    const lastVerse = runItems[runItems.length - 1].verse;
+    const afterLast = timing.verses.find(([n]) => n > lastVerse);
+    const sampleEndAt = sample ? (afterLast ? afterLast[1] : timing.duration) : Infinity;
 
     const src = srcFor(chosen);
     if (audio.src !== src) audio.src = src;
@@ -287,17 +319,27 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     paused = false;
     retryItems = null;
     stalled = false;
+    sampleDone = false;
 
+    const finishSample = () => {
+      mode = "idle";
+      clearAudio();
+      sampleDone = true;
+      emitError(SAMPLE_NOTICE, runItems[runIdx]?.verseId, true);
+    };
     const onTime = () => {
       if (mySession !== session) return;
       while (runIdx + 1 < runItems.length && audio.currentTime >= runItems[runIdx + 1].start - 0.05) {
         emitEnd(runItems[runIdx].verseId);
         runIdx++;
       }
+      if (sample && audio.currentTime >= sampleEndAt - 0.05) finishSample();
     };
     const onEnded = () => {
       if (mySession !== session) return;
       onTime();
+      if (mode !== "recorded") return; // the taste already closed the run
+      if (sample) { finishSample(); return; }
       mode = "idle";
       clearAudio();
       emitEnd(runItems[runIdx]?.verseId);
@@ -345,10 +387,10 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
   }
 
   return {
-    isAvailable: () => (entitled && !!audio) || fallback.isAvailable(),
+    isAvailable: () => !!audio || fallback.isAvailable(),
 
     getVoices(): TTSVoice[] {
-      return entitled ? [...RECORDED_VOICES, ...fallback.getVoices()] : fallback.getVoices();
+      return audio ? [...RECORDED_VOICES, ...fallback.getVoices()] : fallback.getVoices();
     },
 
     onVoicesChanged: (h) => fallback.onVoicesChanged(h),
@@ -358,7 +400,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     speak(text, opts) {
       // Preview call from the voice picker (no verse, no chapter ref).
       if (!opts?.ref && opts?.verseId === undefined) {
-        const rv = entitled ? recordedVoiceByName(opts?.voiceName) : null;
+        const rv = recordedVoiceByName(opts?.voiceName);
         if (rv) { previewRecorded(rv); return; }
         session++;
         clearAudio();
@@ -388,6 +430,11 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     },
 
     resume() {
+      if (sampleDone && mode === "idle") {
+        // S451 — nothing left to play in the taste; remind, don't pretend.
+        emitError(SAMPLE_NOTICE, undefined, true);
+        return;
+      }
       if (mode === "recorded" && audio && paused) {
         paused = false;
         void audio.play().catch(() => {});
@@ -408,6 +455,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
       batch = [];
       retryItems = null;
       stalled = false;
+      sampleDone = false;
       batchScheduled = false;
       clearAudio();
       runItems = [];
