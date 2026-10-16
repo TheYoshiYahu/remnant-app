@@ -104,6 +104,7 @@ import BookmarksIndex from "./components/BookmarksIndex";
 import MyStudy from "./components/MyStudy";
 import SearchModal from "./components/SearchModal";
 import AudioPlayer from "./components/AudioPlayer";
+import type { SleepSetting } from "./lib/sleep-timer";
 import { keepScreenAwake, allowScreenSleep } from "./lib/wakeLock";
 import { setRecordedVoicesAccess, audioBookKey } from "./lib/recordedAudio";
 import { getTTSEngine, type TTSVoice } from "./lib/tts";
@@ -1250,6 +1251,12 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   const [ttsPaused, setTtsPaused] = useState<boolean>(false);
   // S446 — short notice in the player bar (e.g. a chapter with no natural-voice recording yet).
   const [ttsNotice, setTtsNotice] = useState<string | null>(null);
+  // S451 — sleep timer. The ref mirrors state so the engine's onEnd handler
+  // (captured once per run) can read the current setting.
+  const [sleep, setSleep] = useState<SleepSetting>("off");
+  const sleepRef = useRef<SleepSetting>("off");
+  const [sleepEndsAt, setSleepEndsAt] = useState<number | null>(null);
+  const [sleepMinutesLeft, setSleepMinutesLeft] = useState<number | null>(null);
   const [playingVerseId, setPlayingVerseId] = useState<number | null>(null);
   const [ttsPrefs, setTtsPrefs] = useState<TTSPrefs>(() => loadTTSPrefs());
   const [voices, setVoices] = useState<TTSVoice[]>(() =>
@@ -1651,6 +1658,13 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       if (idx + 1 < chapterDetail.verses.length) {
         // Advance visual cursor to the next queued verse.
         setPlayingVerseId(chapterDetail.verses[idx + 1].id);
+      } else if (sleepRef.current === "chapter") {
+        // S451 — sleep timer set to end of chapter: stop here, show Play.
+        engine.stop();
+        setTtsPaused(true);
+        setTtsNotice("Sleep timer: stopped at the end of the chapter.");
+        setSleep("off");
+        sleepRef.current = "off";
       } else {
         // Last verse of chapter just finished — auto-advance through
         // the witness category per §25 + §19. navigateNext returns
@@ -1796,6 +1810,66 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     );
   }
 
+  // S451 — sleep timer: minutes count down from when it is set; "chapter"
+  // is handled in the onEnd handler above.
+  function handleSleepChange(next: SleepSetting) {
+    setSleep(next);
+    sleepRef.current = next;
+    setSleepEndsAt(typeof next === "number" ? Date.now() + next * 60_000 : null);
+    setTtsNotice(null);
+  }
+  useEffect(() => {
+    if (sleepEndsAt === null) { setSleepMinutesLeft(null); return; }
+    const tick = () => {
+      const left = sleepEndsAt - Date.now();
+      if (left <= 0) {
+        const engine = getTTSEngine();
+        engine.pause();
+        setTtsPaused(true);
+        setTtsNotice("Sleep timer: paused. Tap play to keep listening.");
+        setSleep("off");
+        sleepRef.current = "off";
+        setSleepEndsAt(null);
+        return;
+      }
+      setSleepMinutesLeft(Math.ceil(left / 60_000));
+    };
+    tick();
+    const id = window.setInterval(tick, 15_000);
+    return () => window.clearInterval(id);
+  }, [sleepEndsAt]);
+
+  // S451 — lock-screen / notification controls (Media Session API). Title
+  // is the chapter; play/pause and the skip buttons drive the same handlers
+  // as the on-screen player.
+  useEffect(() => {
+    if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
+    const ms = navigator.mediaSession;
+    if (!audioPlayerOpen || !chapterDetail) {
+      ms.playbackState = "none";
+      return;
+    }
+    try {
+      ms.metadata = new MediaMetadata({
+        title: `${chapterDetail.book.title} ${chapterDetail.chapter.chapter_number}`,
+        artist: "Remnant of Promise Study Bible",
+        album: chapterDetail.book.title,
+      });
+    } catch { /* older engines */ }
+    ms.playbackState = playingVerseId !== null && !ttsPaused ? "playing" : "paused";
+    const set = (a: MediaSessionAction, h: (() => void) | null) => {
+      try { ms.setActionHandler(a, h); } catch { /* unsupported action */ }
+    };
+    set("play", () => handlePlayPause());
+    set("pause", () => handlePlayPause());
+    set("nexttrack", () => handleSkipNextVerse());
+    set("previoustrack", () => handleSkipPrevVerse());
+    return () => {
+      set("play", null); set("pause", null); set("nexttrack", null); set("previoustrack", null);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [audioPlayerOpen, chapterDetail, playingVerseId, ttsPaused]);
+
   function handleAudioPlayerClose() {
     const engine = getTTSEngine();
     engine.stop();
@@ -1812,6 +1886,9 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     setTtsNotice(null);
     setPlayingVerseId(null);
     setAutoAdvanceAfterLoad(false);
+    setSleep("off");
+    sleepRef.current = "off";
+    setSleepEndsAt(null);
     allowScreenSleep();
     manualScrollOverrideRef.current = false;
   }
@@ -5277,6 +5354,9 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
           voices={voices}
           naturalVoicesLocked={!hwEntitled}
           notice={ttsNotice}
+          sleep={sleep}
+          sleepMinutesLeft={sleepMinutesLeft}
+          onSleepChange={handleSleepChange}
           prefs={ttsPrefs}
           onPlayPause={handlePlayPause}
           onPrev={

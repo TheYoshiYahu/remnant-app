@@ -14,7 +14,9 @@ rm -f .git/index.lock .git/HEAD.lock .git/stale-index-lock-s451
 
 echo "=== 1/2 commit"
 git add app/src/App.tsx app/src/components/AudioPlayer.tsx app/src/index.css \
-  app/src/lib/recordedAudio.ts app/src/lib/tts.ts _session451_voice_taste_deploy.sh
+  app/src/lib/recordedAudio.ts app/src/lib/tts.ts app/src/lib/sleep-timer.ts \
+  S451_APP_FEATURE_ROADMAP.md S451_SESSION_HANDOFF.md S452_SESSION_OPEN_PROMPT.md \
+  _session451_voice_taste_deploy.sh
 git commit -m "S451: free readers hear a 5-verse taste of the natural voice, not the robot voice
 
 Natural voices are in every reader's picker (Michael default) and preview
@@ -23,6 +25,9 @@ in the natural voice and stops with an invite; Play from here past verse
 5 shows the same invite. Partners and trial readers are unchanged.
 Dark mode: the read-along verse highlight was 8% blue on black (invisible);
 now a visible wash with a thicker blue bar.
+Sleep timer (15/30/60 min, end of chapter) under the player's gear button;
+lock-screen play/pause/skip via the Media Session API. Feature roadmap in
+S451_APP_FEATURE_ROADMAP.md.
 
 Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01PuVk5Go6QXeEXyoYfQmFTw"

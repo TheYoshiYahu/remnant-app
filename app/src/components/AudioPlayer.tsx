@@ -31,6 +31,7 @@
  */
 
 import { useEffect, useState } from "react";
+import { SLEEP_OPTIONS, type SleepSetting } from "../lib/sleep-timer";
 import {
   SPEED_VALUES,
   filterEnglishVoices,
@@ -65,7 +66,12 @@ interface AudioPlayerProps {
   naturalVoicesLocked?: boolean;
   /** S446 — short message shown in place of the verse reference (e.g. no recording yet). */
   notice?: string | null;
+  /** S451 — sleep timer setting and, while counting down, the minutes left. */
+  sleep?: SleepSetting;
+  sleepMinutesLeft?: number | null;
+  onSleepChange?: (s: SleepSetting) => void;
 }
+
 
 const PREVIEW_PHRASE =
   "In the beginning Elohim created the heavens and the earth";
@@ -83,8 +89,13 @@ export default function AudioPlayer({
   onClose,
   naturalVoicesLocked = false,
   notice = null,
+  sleep = "off",
+  sleepMinutesLeft = null,
+  onSleepChange,
 }: AudioPlayerProps) {
   const [voicePickerOpen, setVoicePickerOpen] = useState(false);
+  const sleepBadge =
+    sleep === "off" ? null : sleep === "chapter" ? "☾ end of chapter" : `☾ ${sleepMinutesLeft ?? sleep} min`;
 
   // Spacebar play/pause when player has focus and no other input is
   // focused (per §25 keyboard accessibility).
@@ -170,7 +181,12 @@ export default function AudioPlayer({
             {notice ? (
               <span className="text-sm opacity-80" title={notice}>{notice}</span>
             ) : (
-              currentVerseRef ?? "—"
+              <>
+                {currentVerseRef ?? "—"}
+                {sleepBadge && (
+                  <span className="ml-2 text-xs text-[var(--reader-muted)]">{sleepBadge}</span>
+                )}
+              </>
             )}
           </div>
 
@@ -192,7 +208,7 @@ export default function AudioPlayer({
           <button
             type="button"
             onClick={() => setVoicePickerOpen(true)}
-            aria-label="Choose voice"
+            aria-label="Voice and sleep timer"
             className="flex h-11 w-11 items-center justify-center rounded border border-[var(--reader-rule)] text-[var(--reader-text)]"
           >
             ⚙
@@ -219,6 +235,8 @@ export default function AudioPlayer({
           onPreview={onPreviewVoice}
           onClose={() => setVoicePickerOpen(false)}
           naturalVoicesLocked={naturalVoicesLocked}
+          sleep={sleep}
+          onSleepChange={onSleepChange}
         />
       )}
     </>
@@ -236,6 +254,8 @@ interface VoicePickerModalProps {
   onPreview: (voiceName: string) => void;
   onClose: () => void;
   naturalVoicesLocked?: boolean;
+  sleep?: SleepSetting;
+  onSleepChange?: (s: SleepSetting) => void;
 }
 
 function VoicePickerModal({
@@ -245,6 +265,8 @@ function VoicePickerModal({
   onPreview,
   onClose,
   naturalVoicesLocked = false,
+  sleep = "off",
+  onSleepChange,
 }: VoicePickerModalProps) {
   const [showAll, setShowAll] = useState(false);
 
@@ -287,6 +309,29 @@ function VoicePickerModal({
         </div>
 
         <div className="flex-1 overflow-y-auto">
+          {onSleepChange && (
+            <div className="border-b border-[var(--reader-rule)] px-4 py-3">
+              <div className="mb-2 text-sm text-[var(--reader-muted)]">☾ Sleep timer</div>
+              <div className="flex flex-wrap gap-2">
+                {SLEEP_OPTIONS.map((o) => (
+                  <button
+                    key={String(o.value)}
+                    type="button"
+                    onClick={() => onSleepChange(o.value)}
+                    aria-pressed={sleep === o.value}
+                    className={
+                      "rounded border px-3 py-2 text-sm " +
+                      (sleep === o.value
+                        ? "border-[var(--reader-accent)] bg-[var(--reader-accent)] text-[var(--reader-bg)]"
+                        : "border-[var(--reader-rule)] text-[var(--reader-text)]")
+                    }
+                  >
+                    {o.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
           {naturalVoicesLocked && (
             <div className="border-b border-[var(--reader-rule)] px-4 py-3 text-sm text-[var(--reader-muted)]">
               Natural voices (Michael, George, Ivan, and Olivia): free readers
