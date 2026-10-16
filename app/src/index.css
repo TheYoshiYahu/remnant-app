@@ -309,11 +309,15 @@ body {
    repurposed as the audio-position marker. Auto-clears when the player
    stops or advances to the next verse via the React state change. */
 .verse-interactive.tts-spoken {
-  border-left: 2px solid var(--reader-accent);
+  border-left: 3px solid var(--reader-accent);
   padding-left: 4px;
-  margin-left: -6px;
-  background-color: color-mix(in srgb, var(--reader-accent) 8%, transparent);
+  margin-left: -7px;
+  /* S451 — 8% blue on pure black was invisible; dark mode needs a real wash. */
+  background-color: color-mix(in srgb, var(--reader-accent) 26%, transparent);
   border-radius: 2px;
+}
+[data-theme="light"] .verse-interactive.tts-spoken {
+  background-color: color-mix(in srgb, var(--reader-accent) 10%, transparent);
 }
 
 /* S121 W3 — individual Strong's-tagged word inside a verse. Tappable
