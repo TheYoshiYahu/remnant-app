@@ -10,7 +10,7 @@ session, deploy each as it lands (publish-then-edit). Tick as shipped.
 - [x] Lock-screen / notification controls via Media Session (play, pause, skip verse; chapter as title).
 
 ## Pinned — growth (free)
-- [ ] **Extras on Google**: every Enoch / Jasher / Jubilees (and other extras) chapter as a public, indexable web page on bible.remnantofpromise.org, ending with the taste → trial. Check what is reachable signed-out and whether anything blocks indexing; add sitemap + titles like "Enoch 7 — Restored Names". YOSHI LIKES THIS — do first.
+- [x] **The library on Google** (S452): every chapter of every book is a real page at /library/<book>/<n>/ — canon in full, extras as the FIRST PARAGRAPH only (Yoshi 2026-10-16: never the full extras text, on the web or in the app), then the taste → trial. Sitemap + titles like "Enoch 7 — Restored Names Edition". Sitemap still to be submitted in Search Console (steps in S452_SESSION_HANDOFF.md).
 - [ ] YouTube read-along videos per book from the existing Michael recordings (text on screen, app links in description).
 - [ ] Store listing keywords: Enoch, Jasher, Jubilees, Apocrypha, audio (title/subtitle, not just "Study Bible").
 - [ ] Share cards land on a readable web page (verse + chapter + taste), not a dead image.

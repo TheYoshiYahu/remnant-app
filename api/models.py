@@ -124,12 +124,42 @@ class Verse(BaseModel):
 
 
 class ChapterDetail(BaseModel):
-    """GET /v1/books/{slug}/chapters/{n} — chapter with full verse list."""
+    """GET /v1/books/{slug}/chapters/{n} — chapter with full verse list.
+
+    S452 — when the caller's tier can't open the book, the endpoint no longer
+    404s: it returns the chapter's first paragraph only (the same paragraph
+    breaks the reader draws, capped at TEASER_MAX_VERSES) with ``teaser=True``.
+    ``chapter.verse_count`` stays the full count so the reader can say how
+    much is withheld. Free canon chapters come back whole with ``teaser=False``.
+    """
 
     book: BookSummary
     chapter: ChapterSummary
     chapter_intro: Optional[str] = None
     verses: List[Verse]
+    teaser: bool = False
+
+
+class PublicLibraryChapter(BaseModel):
+    """One chapter in the S452 public export (drives the pre-rendered pages)."""
+
+    chapter_number: int
+    chapter_title: Optional[str] = None
+    chapter_intro: Optional[str] = None
+    verse_count: int
+    teaser: bool
+    verses: List[Verse]
+
+
+class PublicLibraryBook(BaseModel):
+    """GET /v1/public/library/{edition}/{slug} — a whole book for pre-rendering.
+
+    Canon books carry every verse; locked (partner-library) books carry only
+    each chapter's first paragraph, exactly what a free reader sees in the app.
+    """
+
+    book: BookSummary
+    chapters: List[PublicLibraryChapter]
 
 
 class VerseSearchHit(BaseModel):

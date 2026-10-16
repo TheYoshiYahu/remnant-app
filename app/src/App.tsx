@@ -2596,14 +2596,12 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     // a disabled, valueless option with a lock glyph — visible but not
     // selectable. Canon books come back locked=false, so this is a no-op for
     // them. The reusable partner prompt below the picker explains the lock.
+    // S452 (Yoshi): a locked book is selectable — the server sends the
+    // first paragraph of every chapter to a free reader, then the invite.
+    // The lock glyph stays so the reader knows the rest is partner library.
     const bookOption = (b: BookSummary) =>
       b.locked ? (
-        <option
-          key={b.id}
-          value=""
-          disabled
-          className="book-menu-locked"
-        >
+        <option key={b.id} value={b.slug} className="book-menu-locked">
           {`\u{1F512} ${b.title}`}
         </option>
       ) : (
@@ -4615,6 +4613,40 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
             S214 (Yoshi): sits directly under the pills, above the Witness
             card, the commentary, and the cross-reference card.
           */}
+          {/*
+            S452 — first-paragraph teaser of a partner-library book. The
+            server sent only the opening paragraph (ChapterDetail.teaser);
+            say how much is withheld and invite the reader on. Web readers
+            get the trial link; the native shells stay consumption-only
+            (no purchase route) per the LockedPartnerPrompt rule.
+          */}
+          {chapterDetail.teaser && (
+            <div className="mt-6">
+              <LockedPartnerPrompt
+                title={`That is the first paragraph of ${chapterDetail.book.title} ${chapterDetail.chapter.chapter_number}`}
+                message={
+                  `The other ${Math.max(
+                    0,
+                    chapterDetail.chapter.verse_count - chapterDetail.verses.length
+                  )} verses of this chapter, and every chapter of the partner library ` +
+                  "(Apocrypha, 1 Enoch, Jubilees, Jasher, the Apostolic Fathers, Josephus, " +
+                  "and more), open with partnership or the 7-day free trial. " +
+                  "The 66-book canon stays free for everyone."
+                }
+              />
+              {!isNativeShell() && (
+                <p className="mt-3 text-center">
+                  <a
+                    href="/pricing"
+                    className="font-medium text-[var(--reader-text)] underline"
+                  >
+                    Start the 7-day free trial — read the whole chapter
+                  </a>
+                </p>
+              )}
+            </div>
+          )}
+
           {kingdomOn && (
             <KingdomEndCard
               entries={Object.values(kingdomByVerse).sort(

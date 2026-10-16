@@ -145,6 +145,10 @@ export interface ChapterDetail {
   chapter: ChapterSummary;
   chapter_intro: string | null;
   verses: Verse[];
+  /** S452 — true when the caller's tier can't open the book and the server
+   *  sent only the chapter's first paragraph (the free taste of a partner-
+   *  library book). `chapter.verse_count` is still the full count. */
+  teaser?: boolean;
 }
 
 export interface HealthResponse {

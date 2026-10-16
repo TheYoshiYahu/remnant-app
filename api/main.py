@@ -130,6 +130,8 @@ from models import (
     ChapterHighlightsResponse,
     ChapterSummary,
     ContentVersionResponse,
+    PublicLibraryBook,
+    PublicLibraryChapter,
     CreateHighlightRequest,
     CreateNoteRequest,
     CreateOrReplaceBookmarkRequest,
@@ -393,6 +395,54 @@ async def content_version(response: Response) -> ContentVersionResponse:
 # ----- Books --------------------------------------------------------------
 
 
+
+# ----- S452: first-paragraph teaser for locked books -----------------------
+#
+# Yoshi's rule (2026-10-16): the extras are never shown in full to a free
+# reader — on the web or in the app — but every chapter shows its FIRST
+# PARAGRAPH and then the invite. The paragraph breaks are the reader's own
+# (app/src/data/paragraph_starts.json, copied into the image by the
+# Dockerfile), keyed "edition::slug" with a bare-slug fallback, same lookup
+# the reader does. Cap so a long opening paragraph (Jasher 1 runs 18 verses)
+# doesn't give the chapter away; floor so a one-verse paragraph still reads.
+TEASER_MAX_VERSES = 8
+TEASER_MIN_VERSES = 2
+_PARAGRAPH_STARTS_PATH = os.environ.get(
+    "PARAGRAPH_STARTS_PATH",
+    os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "..", "app", "src", "data", "paragraph_starts.json",
+    ),
+)
+_paragraph_starts: Optional[dict] = None
+
+
+def _load_paragraph_starts() -> dict:
+    global _paragraph_starts
+    if _paragraph_starts is None:
+        try:
+            with open(_PARAGRAPH_STARTS_PATH, encoding="utf-8") as fh:
+                _paragraph_starts = json.load(fh)
+        except OSError:
+            _paragraph_starts = {}
+    return _paragraph_starts
+
+
+def teaser_verse_limit(edition_slug: str, book_slug: str, chapter_number: int) -> int:
+    """How many verses of this chapter a free reader may see."""
+    starts = _load_paragraph_starts()
+    book = starts.get(f"{edition_slug}::{book_slug}") or starts.get(book_slug) or {}
+    breaks = sorted(n for n in book.get(str(chapter_number), []) if n > 1)
+    limit = (breaks[0] - 1) if breaks else TEASER_MAX_VERSES
+    return max(TEASER_MIN_VERSES, min(TEASER_MAX_VERSES, limit))
+
+
+def _tier_opens(tier: str, tier_required: str) -> bool:
+    """Python mirror of the schema's tier_satisfies() strict chain."""
+    order = ["free", "study_notes", "extras", "complete_study", "everything"]
+    return order.index(tier) >= order.index(tier_required)
+
+
 @app.get("/v1/books", response_model=List[BookSummary])
 async def list_books(
     response: Response,
@@ -498,7 +548,7 @@ async def get_book(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            "   AND ($3::boolean OR tier_satisfies($2::content_tier, b.tier_required)) "
             # S232 — slugs are unique only per edition (composite UNIQUE on
             # books.(edition_id, slug)), so five apocrypha slugs collide across
             # the KJV `apocrypha` and `apocrypha-charles-vol1` editions. The
@@ -509,6 +559,7 @@ async def get_book(
             " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
+            True,  # S452 — locked books resolve; chapter text is teased.
         )
     if row is None:
         raise HTTPException(status_code=404, detail=f"Book '{book_slug}' not found.")
@@ -539,7 +590,7 @@ async def list_chapters(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            "   AND ($3::boolean OR tier_satisfies($2::content_tier, b.tier_required)) "
             # S232 — slugs are unique only per edition (composite UNIQUE on
             # books.(edition_id, slug)), so five apocrypha slugs collide across
             # the KJV `apocrypha` and `apocrypha-charles-vol1` editions. The
@@ -550,6 +601,7 @@ async def list_chapters(
             " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
+            True,  # S452 — locked books resolve; chapter text is teased.
         )
         if book_row is None:
             raise HTTPException(status_code=404, detail=f"Book '{book_slug}' not found.")
@@ -604,7 +656,7 @@ async def get_chapter(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            "   AND ($3::boolean OR tier_satisfies($2::content_tier, b.tier_required)) "
             # S232 — slugs are unique only per edition (composite UNIQUE on
             # books.(edition_id, slug)), so five apocrypha slugs collide across
             # the KJV `apocrypha` and `apocrypha-charles-vol1` editions. The
@@ -615,6 +667,7 @@ async def get_chapter(
             " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
+            True,  # S452 — locked books resolve; chapter text is teased.
         )
         if book_row is None:
             raise HTTPException(status_code=404, detail=f"Book '{book_slug}' not found.")
@@ -643,6 +696,13 @@ async def get_chapter(
         Verse(id=r["id"], verse_number=r["verse_number"], text=r["text"])
         for r in verse_rows
     ]
+    # S452 — a free reader gets the first paragraph of a locked book, not 404.
+    teaser = not _tier_opens(tier, book_row["tier_required"])
+    if teaser:
+        limit = teaser_verse_limit(
+            book_row["edition_slug"], book_row["slug"], chapter_number
+        )
+        verses = [v for v in verses if v.verse_number <= limit]
     response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return ChapterDetail(
         book=_book_summary_from_row(book_row),
@@ -654,7 +714,80 @@ async def get_chapter(
         ),
         chapter_intro=chapter_row["chapter_intro"],
         verses=verses,
+        teaser=teaser,
     )
+
+
+# ----- S452: public library export (pre-rendered pages) -------------------
+#
+# The static site at bible.remnantofpromise.org pre-renders one HTML page per
+# chapter at build time (app/scripts/prerender-library.mjs) so Google can read
+# the text. This endpoint is the feed: anonymous, no tier — canon books come
+# back whole (they are free anyway), locked books come back as first-paragraph
+# teasers through the same teaser_verse_limit() the reader uses, so the web
+# page and the app never disagree about what a free reader sees.
+
+
+@app.get("/v1/public/library/{edition_slug}/{book_slug}", response_model=PublicLibraryBook)
+async def public_library_book(
+    edition_slug: str, book_slug: str, response: Response
+) -> PublicLibraryBook:
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        book_row = await conn.fetchrow(
+            "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
+            "       b.witness_category::text AS witness_category, "
+            "       b.tier_required::text   AS tier_required, "
+            "       b.abstract, e.slug AS edition_slug "
+            "  FROM books b JOIN editions e ON e.id = b.edition_id "
+            " WHERE b.slug = $1 AND e.slug = $2 "
+            " ORDER BY b.id ASC LIMIT 1",
+            book_slug,
+            edition_slug,
+        )
+        if book_row is None:
+            raise HTTPException(
+                status_code=404, detail=f"Book '{edition_slug}/{book_slug}' not found."
+            )
+        chapter_rows = await conn.fetch(
+            "SELECT c.id, c.chapter_number, c.chapter_title, c.chapter_intro "
+            "  FROM chapters c WHERE c.book_id = $1 ORDER BY c.chapter_number ASC",
+            book_row["id"],
+        )
+        verse_rows = await conn.fetch(
+            "SELECT v.id, v.chapter_id, v.verse_number, v.text "
+            "  FROM verses v JOIN chapters c ON c.id = v.chapter_id "
+            " WHERE c.book_id = $1 ORDER BY c.chapter_number, v.verse_number",
+            book_row["id"],
+        )
+    teaser = not _tier_opens("free", book_row["tier_required"])
+    by_chapter: dict = {}
+    for r in verse_rows:
+        by_chapter.setdefault(r["chapter_id"], []).append(r)
+    chapters: List[PublicLibraryChapter] = []
+    for c in chapter_rows:
+        rows = by_chapter.get(c["id"], [])
+        limit = (
+            teaser_verse_limit(edition_slug, book_slug, c["chapter_number"])
+            if teaser
+            else None
+        )
+        chapters.append(
+            PublicLibraryChapter(
+                chapter_number=c["chapter_number"],
+                chapter_title=c["chapter_title"],
+                chapter_intro=c["chapter_intro"],
+                verse_count=len(rows),
+                teaser=teaser,
+                verses=[
+                    Verse(id=r["id"], verse_number=r["verse_number"], text=r["text"])
+                    for r in rows
+                    if limit is None or r["verse_number"] <= limit
+                ],
+            )
+        )
+    response.headers["Cache-Control"] = "public, max-age=3600"
+    return PublicLibraryBook(book=_book_summary_from_row(book_row), chapters=chapters)
 
 
 # ----- Chapter-end cross-reference card (Session 74 wheel) ---------------

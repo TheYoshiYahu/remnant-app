@@ -47,6 +47,8 @@ COPY api/ /app/
 # `/` (the parent of /app), so these COPY targets must sit at `/data-schema/`
 # and `/source-texts/parsed/` respectively.
 COPY data-schema/ /data-schema/
+# S452 — the reader's paragraph breaks drive the first-paragraph teaser.
+COPY app/src/data/paragraph_starts.json /app/src/data/paragraph_starts.json
 COPY source-texts/parsed/ /source-texts/parsed/
 
 # Session 112 — post-seed loader artifacts. The tiered-commentary loader and
