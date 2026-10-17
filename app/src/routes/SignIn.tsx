@@ -232,7 +232,7 @@ function NativeSignInBranch() {
     } catch (err) {
       const message =
         err instanceof LoginCredentialsError
-          ? err.message
+          ? `${err.message} If you paid with a different email than you registered with, sign in with the registered one.`
           : "Sign-in didn't complete. Try again.";
       setError(message);
       setSubmitting(false);
@@ -274,6 +274,10 @@ function NativeSignInBranch() {
             required
             className="mt-1 block w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-bg)] px-3 py-2 text-base text-[var(--reader-text)] focus:border-[var(--reader-text)] focus:outline-none disabled:opacity-60"
           />
+          <p className="mt-1 text-xs text-[var(--reader-muted)]">
+            Sign in with the email you registered with — not the one on your
+            payment receipt, if they differ.
+          </p>
         </div>
 
         <div>

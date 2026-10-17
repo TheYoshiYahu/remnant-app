@@ -613,6 +613,18 @@ async def create_checkout_session(
         # 3. Upsert user — get the local UUID for client_reference_id.
         user_uuid = await upsert_user(conn, current_user)
 
+        # 3b. The account's email, locked onto the checkout (S453). A partner
+        # once paid under one address and then tried to sign in with it,
+        # but her account was under another — "account doesn't exist".
+        # Stripe shows customer_email read-only, so the receipt always
+        # matches the sign-in email. Token first; older tokens omit the
+        # claim, so fall back to the users row upsert_user keeps.
+        account_email = (getattr(current_user, "email", None) or "").strip() or None
+        if not account_email:
+            account_email = await conn.fetchval(
+                "SELECT email FROM users WHERE id = $1::uuid", user_uuid
+            )
+
     # 4. Stripe Checkout Session creation.
     #
     # client_reference_id carries our user UUID across the checkout so
@@ -626,6 +638,9 @@ async def create_checkout_session(
             success_url=body.success_url,
             cancel_url=body.cancel_url,
             client_reference_id=user_uuid,
+            # S453: prefill + lock the email to the signed-in account (None
+            # is dropped — Stripe rejects an explicit null).
+            **({"customer_email": account_email} if account_email else {}),
             # Session 38: surface the Stripe-hosted "Add promotion code"
             # field. Codes themselves are minted in the Stripe dashboard
             # (REMNANT_GIFT generic 100%-off + any per-recipient codes

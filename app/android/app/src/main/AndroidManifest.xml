@@ -69,4 +69,7 @@
     </queries>
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- S453: background audio via the media-session foreground service (Android 14+ requires the typed permission) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
 </manifest>

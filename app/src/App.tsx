@@ -51,6 +51,7 @@ import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
 import { openGiving } from "./lib/giving.ts";
 import { isNativeShell, NATIVE_MANAGE_LINE } from "./lib/native-shell";
+import { MediaSession, type MediaSessionAction } from "@capgo/capacitor-media-session";
 import OfflineDownloadPrompt from "./components/OfflineDownloadPrompt";
 import { readThrough, setContentCacheScope } from "./lib/contentCache";
 import {
@@ -1842,23 +1843,27 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // S451 — lock-screen / notification controls (Media Session API). Title
   // is the chapter; play/pause and the skip buttons drive the same handlers
   // as the on-screen player.
+  // S453 — routed through @capgo/capacitor-media-session: on the web it is
+  // navigator.mediaSession unchanged; in the Android shell it runs the
+  // foreground media service (background play survives the screen going
+  // off, controls in the notification); in the iOS shell it feeds Now
+  // Playing on the lock screen / Control Center.
   useEffect(() => {
-    if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
-    const ms = navigator.mediaSession;
     if (!audioPlayerOpen || !chapterDetail) {
-      ms.playbackState = "none";
+      void MediaSession.setPlaybackState({ playbackState: "none" }).catch(() => {});
       return;
     }
-    try {
-      ms.metadata = new MediaMetadata({
-        title: `${chapterDetail.book.title} ${chapterDetail.chapter.chapter_number}`,
-        artist: "Remnant of Promise Study Bible",
-        album: chapterDetail.book.title,
-      });
-    } catch { /* older engines */ }
-    ms.playbackState = playingVerseId !== null && !ttsPaused ? "playing" : "paused";
-    const set = (a: MediaSessionAction, h: (() => void) | null) => {
-      try { ms.setActionHandler(a, h); } catch { /* unsupported action */ }
+    void MediaSession.setMetadata({
+      title: `${chapterDetail.book.title} ${chapterDetail.chapter.chapter_number}`,
+      artist: "Remnant of Promise Study Bible",
+      album: chapterDetail.book.title,
+      artwork: [{ src: `${window.location.origin}/icons/icon-512.webp`, sizes: "512x512", type: "image/webp" }],
+    }).catch(() => {});
+    void MediaSession.setPlaybackState({
+      playbackState: playingVerseId !== null && !ttsPaused ? "playing" : "paused",
+    }).catch(() => {});
+    const set = (action: MediaSessionAction, h: (() => void) | null) => {
+      void MediaSession.setActionHandler({ action }, h).catch(() => {});
     };
     set("play", () => handlePlayPause());
     set("pause", () => handlePlayPause());

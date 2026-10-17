@@ -9,6 +9,10 @@ session, deploy each as it lands (publish-then-edit). Tick as shipped.
 - [x] Sleep timer (Off / 15 / 30 / 60 min / End of chapter) under the ⚙ button; badge in the player bar.
 - [x] Lock-screen / notification controls via Media Session (play, pause, skip verse; chapter as title).
 
+## Open from S452 (2026-10-16 evening)
+- [x] Push the site build — 64ddcee is on origin (S453 checked). BUT the /library/ pages come back as the app shell (no verses) on the live site: the Render rewrite problem S452 predicted. Parked with the Google work by Yoshi's word (2026-10-17); fix = the fallback in S452_SESSION_HANDOFF.md.
+- [x] **Stripe checkout email prefilled + locked** to the signed-in account (S453: api/subscriptions.py — token email, else users.email). Sign-in form (native shell) now says to use the registered email, and the failed-sign-in message repeats it.
+
 ## Pinned — growth (free)
 - [x] **The library on Google** (S452): every chapter of every book is a real page at /library/<book>/<n>/ — canon in full, extras as the FIRST PARAGRAPH only (Yoshi 2026-10-16: never the full extras text, on the web or in the app), then the taste → trial. Sitemap + titles like "Enoch 7 — Restored Names Edition". Sitemap still to be submitted in Search Console (steps in S452_SESSION_HANDOFF.md).
 - [ ] YouTube read-along videos per book from the existing Michael recordings (text on screen, app links in description).
@@ -18,7 +22,7 @@ session, deploy each as it lands (publish-then-edit). Tick as shipped.
 
 ## Next — audio
 - [ ] Hear the names: tap a restored name → pronunciation audio (names_ipa.py + Kokoro; rules in memory topics/name-pronunciation).
-- [ ] Verify background play + artwork in both store shells (Media Session landed on web; confirm iOS/Android shells honour it).
+- [x] Background play + lock-screen controls in the shells (S453): @capgo/capacitor-media-session (free, MPL-2.0) — Android foreground media service + notification controls, iOS Now Playing; FOREGROUND_SERVICE(_MEDIA_PLAYBACK) permissions added; versions bumped to 1.1.4 (Android versionCode 14, iOS build 15). Needs the store builds uploaded and a phone check (screen off → audio keeps going; controls on lock screen).
 
 ## Next — library (what nobody else has)
 - [ ] Witness view: canon chapter beside its extras witness (Genesis 6 ↔ Enoch 6 ↔ Jubilees 5; Exodus ↔ Jasher; Jude ↔ Enoch 1). Pairs come from the existing cross-reference threads. Screenshot for the store.

@@ -14,15 +14,16 @@
     "cap:assets": "npx @capacitor/assets generate --iconBackgroundColor '#0a0e1a' --iconBackgroundColorDark '#0a0e1a' --splashBackgroundColor '#0a0e1a' --splashBackgroundColorDark '#0a0e1a'"
   },
   "dependencies": {
+    "@capacitor-community/text-to-speech": "^8.0.2",
     "@capacitor/android": "^8.3.1",
     "@capacitor/app": "^8.0.0",
-    "@capacitor-community/text-to-speech": "^8.0.2",
     "@capacitor/browser": "^8.0.3",
     "@capacitor/core": "^8.3.1",
     "@capacitor/filesystem": "^8.0.0",
     "@capacitor/ios": "^8.3.1",
     "@capacitor/preferences": "^8.0.1",
     "@capacitor/share": "^8.0.0",
+    "@capgo/capacitor-media-session": "^8.1.4",
     "@hebcal/core": "^6.5.3",
     "astronomy-engine": "^2.1.19",
     "html2canvas": "^1.4.1",

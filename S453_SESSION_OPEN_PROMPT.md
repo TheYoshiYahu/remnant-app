@@ -3,7 +3,7 @@
 Load my voice skill and mount my Desktop. Read ~/Desktop/App/S451_APP_FEATURE_ROADMAP.md
 and ~/Desktop/App/S452_SESSION_HANDOFF.md first.
 
-First, verify S452 by content on the live site (signed out) — the three URLs in the
+First: the S452 site build was never pushed — `git push origin main` (commit 64ddcee) starts it. Then verify S452 by content on the live site (signed out) — the three URLs in the
 handoff — and in the app (🔒 Book of Enoch → chapter 7). Fix anything wrong.
 
 Then the next roadmap item: **YouTube read-along videos** per book from the existing
