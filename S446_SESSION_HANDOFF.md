@@ -189,3 +189,9 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
 - Open: canon.modernized.json (June, pre-S182) is a stale third copy of the canon — Yoshi's rule is no multiple versions; decide whether to delete it or regenerate it from the live DB (next session, one question). KDP canon interior (if any) is not affected — this was app-side presentation only.
 - **Next: cross-references** — general map first from XREF_LIBRARY_COVERAGE_ROADMAP.md (what is covered, what is not), then counters/prophecies/detail.
 
+
+### S457 (Oct 17–18, late) — cross-references: live read-back + 1 Enoch fidelity map. Nothing deployed.
+- S456 confirmed pushed (660d7d0 on origin) and read back live (`_s456_check.log`): 117 Psalm titles, Ps 119 ends clean, all 14 epistles end at "Amen.", Rom 15:30, the 7 renderings — all read right. **Canon lane closed.**
+- Live read-back of the cross-reference apparatus and the 1 Enoch card-fidelity map: see XREF_LIBRARY_COVERAGE_ROADMAP.md (2026-10-18 S457 entries) and `source-texts/enoch-charles-1917/enoch-card-fidelity-map.md`. New files: `_s457_xref_readback.py/.log`, `_s457_enoch_dump.py`, `enoch-cards-live.json`, `enoch-card-fidelity-sweep.json`. Not yet committed — commit with the next push.
+- Open for Yoshi's word: (1) retire the three never-applied S181 canon-only baselines (Romans/Galatians/Revelation); (2) S154 Matt 17 file — re-verify then apply, or retire; (3) the Finder " 2.sql"/" 2.json" duplicates (12 files, list in the roadmap entry); (4) canon.modernized.json (June, stale).
+- Next session: Enoch fixes in the map's order (start with the 112 RE_ANCHOR + 100 REWORDED cards — mechanical), then the 512 thread summaries; then Jubilees (jub-card-sort-report.md) and Apocrypha by the same dump → read → map method.

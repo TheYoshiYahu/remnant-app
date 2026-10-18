@@ -148,3 +148,24 @@ means a back-fill can re-run safely over the already-merged canon rows.
     rows vs the clean re-parse (S214 held the JSON swap behind a CCEL gate — S413 later authored Testaments XII
     cards; confirm which parse is live); the John canon render (S214: apply S181+S194 from the Mac).
 
+
+- **2026-10-18 (S457) — LIVE READ-BACK (evidence, `_s457_xref_readback.py` → `_s457_xref_readback.log`):**
+  schema 1.0.0-phase4-session455b; 8,846 threads / 37,067 cards / 35,601 member rows. Of 157 thread-inserting
+  migration files, **153 are applied** (proved by thread slug); 0 live threads are orphans. **The June "pending
+  apply" notes are CLOSED:** S181 John 16/16 (233 members), S194 12/12, S216 John NT↔NT 36/36 incl. the J13–17
+  six — all live; John renders canon targets in every chapter. **Not applied (4):** S181 Romans / Galatians /
+  Revelation canon-only baselines (superseded by the live S219 91 / S223 31 / S224 149 threads → retire on Yoshi's
+  word, nothing lost) and `session154_matt_17_extras_cross_references.sql` (0/5 threads, 21 Enoch-era rows —
+  written in the S153-incident session, used as the Matt 24–28 template, never applied; Matt 17 has one extras
+  card today, from S260; re-verify its quotes against the live Enoch before any apply). Josephus (30 books) and
+  Barnabas carry 0 cards, by rule. 273 duplicate slugs = Finder " 2.sql" copies (S314/315/316/317/417/419/420/
+  427/428, consonantal_skeleton, S424 .json) — housekeeping, Yoshi's word.
+- **2026-10-18 (S457) — 1 ENOCH CARD-FIDELITY MAP, read against the LIVE text** (`_s457_enoch_dump.py` →
+  `source-texts/enoch-charles-1917/enoch-cards-live.json`; map `enoch-card-fidelity-map.md`; per-item verdicts
+  `enoch-card-fidelity-sweep.json`). 1,965 cards: STAND 394 · REWORDED 100 · RE_ANCHOR 112 · NOT_FOUND 106 ·
+  no Enoch quote 1,249 (588 on a *same* verse stand; 641 on a different/reworded/new verse need the gloss read).
+  Members: 188 flagged (187 ride with their card). **Threads: 512 of 729 summaries carry a bad Enoch quote (988
+  bad quotes; 342 are the S250 `1-enoch-N-…` chapter threads never rewritten at S449) — the largest body of work.**
+  Live 1 Enoch = 1,063 real verses + 5 placeholders (11:7, 17:9, 17:21, 24:9, 25:9); no card sits on a placeholder.
+  Nothing changed. Next: fix in the map's order (re-anchor → re-quote → not-found → gloss reads → thread summaries),
+  Yoshi's voice, Come-and-See, Rule 10, scratch-tested, one deploy script; then Jubilees and Apocrypha the same way.
