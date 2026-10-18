@@ -15,7 +15,9 @@ session, deploy each as it lands (publish-then-edit). Tick as shipped.
 
 ## Content audit (S453 order: Jasher ✓ → Jubilees ✓ staged → Apocrypha → canon KJV → other extras; then cross-refs; voices last)
 - [x] Jubilees audited by content (S453): faithful text, 243 merged rows split → 1,307; deploy script staged (S446_SESSION_HANDOFF.md).
-- [ ] Apocrypha (KJV 1611 / Brenton + Charles vol 1) — next session.
+- [x] Apocrypha KJV edition audited by content (S454): faithful; Esther 10 split + 3 small fixes staged (deploy script in S446_SESSION_HANDOFF.md).
+- [x] apocrypha-charles-vol1 retired (S455): 3 Maccabees verified 228/228 vs Brenton 1851 and moved into pseudepigrapha (ids kept, all cards survive); deploy script _session455_deploy.sh waits on Yoshi (S446_SESSION_HANDOFF.md, S455).
+- [ ] canon (KJV) — audited S455 (source-texts/kjv-canon-audit/): faithful, 31,102/31,102; fix for the 5 items (Psalm titles, Ps 119 letters, epistle subscriptions, 7 rewordings, 1 echo) waits on Yoshi's word — S446_SESSION_HANDOFF.md S455b.
 
 ## Pinned — growth (free)
 - [x] **The library on Google** (S452): every chapter of every book is a real page at /library/<book>/<n>/ — canon in full, extras as the FIRST PARAGRAPH only (Yoshi 2026-10-16: never the full extras text, on the web or in the app), then the taste → trial. Sitemap + titles like "Enoch 7 — Restored Names Edition". Sitemap still to be submitted in Search Console (steps in S452_SESSION_HANDOFF.md).

@@ -1,0 +1,394 @@
+{
+ "verse_counts": {
+  "1": 9,
+  "2": 3,
+  "3": 1,
+  "4": 1,
+  "5": 9,
+  "6": 8,
+  "7": 6,
+  "8": 4,
+  "9": 11,
+  "10": 22,
+  "11": 2,
+  "12": 6,
+  "13": 10,
+  "14": 25,
+  "15": 12,
+  "16": 4,
+  "17": 8,
+  "18": 16,
+  "19": 3,
+  "20": 8,
+  "21": 10,
+  "22": 14,
+  "23": 4,
+  "24": 6,
+  "25": 7,
+  "26": 6,
+  "27": 5,
+  "28": 3,
+  "29": 2,
+  "30": 3,
+  "31": 3,
+  "32": 6,
+  "33": 4,
+  "34": 3,
+  "35": 1,
+  "36": 4,
+  "37": 5,
+  "38": 6,
+  "39": 14,
+  "40": 10,
+  "41": 9,
+  "42": 3,
+  "43": 4,
+  "44": 1,
+  "45": 6,
+  "46": 8,
+  "47": 4,
+  "48": 10,
+  "49": 4,
+  "50": 5,
+  "51": 5,
+  "52": 9,
+  "53": 7,
+  "54": 10,
+  "55": 4,
+  "56": 8,
+  "57": 3,
+  "58": 6,
+  "59": 3,
+  "60": 25,
+  "61": 13,
+  "62": 16,
+  "63": 12,
+  "64": 2,
+  "65": 12,
+  "66": 3,
+  "67": 13,
+  "68": 5,
+  "69": 29,
+  "70": 4,
+  "71": 17,
+  "72": 37,
+  "73": 8,
+  "74": 17,
+  "75": 9,
+  "76": 14,
+  "77": 8,
+  "78": 17,
+  "79": 6,
+  "80": 8,
+  "81": 10,
+  "82": 20,
+  "83": 11,
+  "84": 6,
+  "85": 10,
+  "86": 6,
+  "87": 4,
+  "88": 3,
+  "89": 77,
+  "90": 42,
+  "91": 19,
+  "92": 5,
+  "93": 14,
+  "94": 11,
+  "95": 7,
+  "96": 8,
+  "97": 10,
+  "98": 16,
+  "99": 16,
+  "100": 13,
+  "101": 9,
+  "102": 11,
+  "103": 15,
+  "104": 13,
+  "105": 2,
+  "106": 19,
+  "107": 3,
+  "108": 15
+ },
+ "notes": [
+  "ch 5: lettered sub-verses merged for verses [6, 7]",
+  "ch 22: Greek-column duplicates dropped for verses [2, 5, 6, 8, 9, 10, 11, 12, 13, 14]",
+  "ch 27: Greek-column duplicates dropped for verses [3]",
+  "ch 32: Greek-column duplicates dropped for verses [1, 3]",
+  "ch 39: lettered sub-verses merged for verses [6, 7]",
+  "ch 51: lettered sub-verses merged for verses [5]",
+  "ch 60: out-of-order verse marker 25 accepted after verse 6",
+  "ch 89: lettered sub-verses merged for verses [48]",
+  "ch 91: lettered sub-verses merged for verses [14]",
+  "ch 97: lettered sub-verses merged for verses [9]"
+ ],
+ "sections": {
+  "1": [
+   "Section I. Chapters I-XXXVI",
+   "Introduction",
+   "I-V. Parable of Enoch on the Future Lot of the Wicked and the Righteous."
+  ],
+  "6": [
+   "VI-XI. The Fall of the Angels: the Demoralization of Mankind: the Intercession of the Angels on behalf of Mankind: The Dooms pronounced by God on the Angels: the Messianic Kingdom\u2014(a Noah fragment)."
+  ],
+  "12": [
+   "XII-XVI. Dream-Vision of Enoch: his Intercession for Az\u00e2z\u00eal and the fallen Angels: and his Announcement of their first and final Doom."
+  ],
+  "17": [
+   "XVII-XXXVI. Enoch\u2019s Journeys through the Earth and Sheol.",
+   "XVII-XIX. The First Journey."
+  ],
+  "20": [
+   "XX. Names and Functions of the Seven Archangels."
+  ],
+  "21": [
+   "XXI-XXXVI. The Second Journey of Enoch.",
+   "XXI. Preliminary and final Place of Punishment of the fallen Angels (stars)."
+  ],
+  "22": [
+   "XXII. Sheol or the Underworld."
+  ],
+  "23": [
+   "XXIII. The fire that deals with the Luminaries of Heaven."
+  ],
+  "24": [
+   "XXIV-XXV. The Seven Mountains in the North-West and the Tree of Life."
+  ],
+  "26": [
+   "XXVI. Jerusalem and the Mountains, Ravines, and Streams."
+  ],
+  "27": [
+   "XXVII. The Purpose of the Accursed Valley."
+  ],
+  "28": [
+   "XXVIII-XXXIII. Further Journey to the East."
+  ],
+  "34": [
+   "XXXIV-XXXV. Enoch\u2019s Journey to the North."
+  ],
+  "36": [
+   "XXXVI. The Journey to the South."
+  ],
+  "37": [
+   "Section II. Chapters XXXVII-LXXI",
+   "The Parables."
+  ],
+  "38": [
+   "XXXVIII-XLIV. The First Parable.",
+   "XXXVIII. The Coming Judgement of the Wicked."
+  ],
+  "39": [
+   "XXXIX. The Abode of the Righteous and of the Elect One: the Praises of the Blessed."
+  ],
+  "40": [
+   "XL-XLI. 2. The Four Archangels."
+  ],
+  "41": [
+   "XLI. 3-9. Astronomical Secrets."
+  ],
+  "42": [
+   "XLII. The Dwelling-places of Wisdom and of Unrighteousness."
+  ],
+  "43": [
+   "XLIII-XLIV. Astronomical Secrets."
+  ],
+  "45": [
+   "XLV-LVII. The Second Parable.",
+   "XLV. The Lot of the Apostates: the New Heaven and the New Earth."
+  ],
+  "46": [
+   "XLVI. The Head of Days and the Son of Man."
+  ],
+  "47": [
+   "XLVII. The Prayer of the Righteous for Vengeance and their Joy at its coming."
+  ],
+  "48": [
+   "XLVIII. The Fount of Righteousness: the Son of Man\u2014the Stay of the Righteous: Judgement of the Kings and the Mighty."
+  ],
+  "49": [
+   "XLIX. The Power and Wisdom of the Elect One."
+  ],
+  "50": [
+   "L. The Glorification and Victory of the Righteous: the Repentance of the Gentiles."
+  ],
+  "51": [
+   "LI. The Resurrection of the Dead, and the Separation by the Judge of the Righteous and the Wicked."
+  ],
+  "52": [
+   "LII. The Seven Metal Mountains and the Elect One."
+  ],
+  "53": [
+   "LIII\u2014LIV. 6. The Valley of Judgement: the Angels of Punishment: the Communities of the Elect One."
+  ],
+  "54": [
+   "LIV. 7.-LV. 2. Noachic Fragment on the first World Judgement."
+  ],
+  "55": [
+   "LV. 3-LVI. 4. Final Judgement of Azazel, the Watchers and their children."
+  ],
+  "56": [
+   "LVI. 5-8. Last Struggle of the Heathen Powers against Israel."
+  ],
+  "57": [
+   "LVII. The Return from the Dispersion."
+  ],
+  "58": [
+   "LVIII-LXXI. The Third Parable.",
+   "LVIII. The Blessedness of the Saints."
+  ],
+  "59": [
+   "Book of Noah\u2014a Fragment.",
+   "LIX. The Lights and the Thunder."
+  ],
+  "60": [
+   "Book of Noah\u2014a Fragment.",
+   "LX. Quaking of the Heaven: Behemoth and Leviathan: the Elements."
+  ],
+  "61": [
+   "LXI. Angels go off to measure Paradise: the Judgement of the Righteous by the Elect One: the Praise of the Elect One and of God."
+  ],
+  "62": [
+   "LXII. Judgement of the Kings and the Mighty: Blessedness of the Righteous."
+  ],
+  "63": [
+   "LXIII. The unavailing Repentance of the Kings and the Mighty."
+  ],
+  "64": [
+   "LXIV. Vision of the fallen Angels in the Place of Punishment."
+  ],
+  "65": [
+   "LXV. Enoch foretells to Noah the Deluge and his own Preservation."
+  ],
+  "66": [
+   "LXVI. The Angels of the Waters bidden to hold them in Check."
+  ],
+  "67": [
+   "LXVII. God\u2019s Promise to Noah: Places of Punishment of the Angels and of the Kings."
+  ],
+  "68": [
+   "LXVIII. Michael and Raphael astonied at the Severity of the Judgement."
+  ],
+  "69": [
+   "LXIX. The Names and Functions of the (fallen Angels and) Satans: the secret Oath."
+  ],
+  "70": [
+   "LXX. The final Translation of Enoch."
+  ],
+  "71": [
+   "LXXI. Two earlier Visions of Enoch."
+  ],
+  "72": [
+   "Section III. Chapters LXXII-LXXXII.",
+   "The Book of the Heavenly Luminaries.",
+   "LXXII. The Sun."
+  ],
+  "73": [
+   "LXXIII. The Moon and its Phases."
+  ],
+  "74": [
+   "LXXIV. The Lunar Year."
+  ],
+  "76": [
+   "LXXVI. The Twelve Winds and their Portals."
+  ],
+  "77": [
+   "LXXVII. The Four Quarters of the World: the Seven Mountains, the Seven Rivers, &c."
+  ],
+  "78": [
+   "LXXVIII. The Sun and Moon: the Waxing and Waning of the Moon."
+  ],
+  "79": [
+   "LXXIX-LXXX. 1. Recapitulation of several of the Laws."
+  ],
+  "80": [
+   "LXXX. 2-8. Perversion of Nature and the heavenly Bodies owing to the Sin of Men."
+  ],
+  "81": [
+   "LXXXI. The Heavenly Tablets and the Mission of Enoch."
+  ],
+  "82": [
+   "LXXXII. Charge given to Enoch: the four Intercalary Days: the Stars which lead the Seasons and the Months."
+  ],
+  "83": [
+   "Section IV. Chapters LXXXIII-XC.",
+   "The Dream-Visions.",
+   "LXXXIII-LXXXIV. First Dream-Vision on the Deluge."
+  ],
+  "85": [
+   "LXXXV-XC. The Second Dream-Vision of Enoch: the History of the World to the Founding of the Messianic Kingdom."
+  ],
+  "86": [
+   "LXXXVI. The Fall of the Angels and the Demoralization of Mankind."
+  ],
+  "87": [
+   "LXXXVII. The Advent of the Seven Archangels."
+  ],
+  "88": [
+   "LXXXVIII. The Punishment of the Fallen Angels by the Archangels."
+  ],
+  "89": [
+   "LXXXIX. 1-9. The Deluge and the Deliverance of Noah.",
+   "LXXXIX. 10-27. From the Death of Noah to the Exodus.",
+   "LXXXIX. 28-40. Israel in the Desert, the Giving of the Law, the Entrance into Palestine.",
+   "LXXXIX. 41-50. From the Time of the Judges till the Building of the Temple.",
+   "LXXXIX. 51-67. The Two Kingdoms of Israel and Judah to the Destruction of Jerusalem.",
+   "LXXXIX. 68-71. First Period of the Angelic Rulers\u2014from the Destruction of Jerusalem to the Return from the Captivity.",
+   "LXXXIX. 72-77. Second Period\u2014from the Time of Cyrus to that of Alexander the Great."
+  ],
+  "90": [
+   "XC. 1-5. Third Period\u2014from Alexander the Great to the Graeco-Syrian Domination.",
+   "XC. 6-12. Fourth Period\u2014from the Graeco-Syrian Domination to the Maccabean Revolt.",
+   "XC. 13-19. The last Assault of the Gentiles on the Jews (where vv. 13-15 and 16-18 are doublets).",
+   "XC. 20-27. Judgement of the Fallen Angels, the Shepherds, and the Apostates.",
+   "XC. 28-42. The New Jerusalem, the Conversion of the surviving Gentiles, the Resurrection of the Righteous, the Messiah. Enoch awakes and weeps."
+  ],
+  "91": [
+   "Section V. Chapters XCI-CIV (i.e. XCII, XCI. 1-10, 18-19, XCIII. 1-10, XCI. 12-17, XCIV\u2014CIV).",
+   "A Book of Exhortation and Promised Blessing for the Righteous and of Malediction and Woe for the Sinners.",
+   "XCII. 1-10, 18-19. Enoch\u2019s Admonition to his Children."
+  ],
+  "93": [
+   "XCIII, XCI. 12-17. The Apocalypse of Weeks."
+  ],
+  "94": [
+   "XCIV. 1-5. Admonitions to the Righteous.",
+   "XCIV. 6-11. Woes for the Sinners."
+  ],
+  "95": [
+   "XCV. Enoch\u2019s Grief: fresh Woes against the Sinners."
+  ],
+  "96": [
+   "XCVI. Grounds of Hopefulness for the Righteous: Woes for the Wicked."
+  ],
+  "97": [
+   "XCVII. The Evils in Store for Sinners and the Possessors of Unrighteous Wealth."
+  ],
+  "98": [
+   "XCVIII. Self-indulgence of Sinners: Sin originated by Man: all Sin recorded in Heaven: Woes for the Sinners."
+  ],
+  "99": [
+   "XCIX. Woes pronounced on the Godless, the Lawbreakers: evil Plight of Sinners in the Last Days: further Woes."
+  ],
+  "100": [
+   "C. The Sinners destroy each other: Judgement of the Fallen Angels: the Safety of the Righteous: further Woes for the Sinners."
+  ],
+  "101": [
+   "CI. Exhortation to the Fear of God: all Nature fears Him but not the Sinners."
+  ],
+  "102": [
+   "CII. Terrors of the Day of Judgement: the adverse Fortunes of the Righteous on the Earth."
+  ],
+  "103": [
+   "CIII. Different Destinies of the Righteous and the Sinners: fresh Objections of the Sinners."
+  ],
+  "104": [
+   "CIV. Assurances given to the Righteous: Admonitions to Sinners and the Falsifiers of the Words of Uprightness."
+  ],
+  "105": [
+   "CV. God and the Messiah to dwell with Man."
+  ],
+  "106": [
+   "Fragment of the Book of Noah",
+   "Latin Fragment."
+  ]
+ }
+}

@@ -1,0 +1,2772 @@
+{
+ "1": {
+  "charles": 9,
+  "edition": 9,
+  "matched": 9,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "2": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "3": {
+  "charles": 1,
+  "edition": 2,
+  "matched": 1,
+  "changed": 0,
+  "missing": 0,
+  "extra": 1,
+  "extra_from": [
+   "ed2<-4:1"
+  ],
+  "detail": []
+ },
+ "4": {
+  "charles": 1,
+  "edition": 1,
+  "matched": 1,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "5": {
+  "charles": 9,
+  "edition": 8,
+  "matched": 5,
+  "changed": 1,
+  "missing": 3,
+  "extra": 2,
+  "extra_from": [
+   "ed7<-1:8",
+   "ed8<-1:9"
+  ],
+  "detail": [
+   "5:6~ed6 (0.60)",
+   "5:7 MISSING",
+   "5:8 MISSING",
+   "5:9 MISSING"
+  ]
+ },
+ "6": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 7,
+  "changed": 1,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "6:7~ed7 (0.73)"
+  ]
+ },
+ "7": {
+  "charles": 6,
+  "edition": 5,
+  "matched": 4,
+  "changed": 1,
+  "missing": 1,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "7:3 MISSING",
+   "7:4~ed3 (0.82)"
+  ]
+ },
+ "8": {
+  "charles": 4,
+  "edition": 2,
+  "matched": 1,
+  "changed": 1,
+  "missing": 2,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "8:2 MISSING",
+   "8:3~ed2 (0.74)",
+   "8:4 MISSING"
+  ]
+ },
+ "9": {
+  "charles": 11,
+  "edition": 11,
+  "matched": 10,
+  "changed": 1,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "9:2~ed2 (0.76)"
+  ]
+ },
+ "10": {
+  "charles": 22,
+  "edition": 22,
+  "matched": 21,
+  "changed": 0,
+  "missing": 1,
+  "extra": 1,
+  "extra_from": [
+   "ed22<-10:21"
+  ],
+  "detail": [
+   "10:22 MISSING"
+  ]
+ },
+ "11": {
+  "charles": 2,
+  "edition": 13,
+  "matched": 0,
+  "changed": 0,
+  "missing": 2,
+  "extra": 13,
+  "extra_from": [
+   "ed1<-10:11",
+   "ed2<-10:12",
+   "ed3<-10:13",
+   "ed4<-10:14",
+   "ed5<-10:15",
+   "ed6<-10:16",
+   "ed7<-10:17",
+   "ed8<-10:18",
+   "ed9<-10:19",
+   "ed10<-10:20",
+   "ed11<-10:21",
+   "ed12<-10:21",
+   "ed13<-10:21"
+  ],
+  "detail": [
+   "11:1 MISSING",
+   "11:2 MISSING"
+  ]
+ },
+ "12": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 5,
+  "changed": 1,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "12:5~ed5 (0.82)"
+  ]
+ },
+ "13": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 7,
+  "changed": 1,
+  "missing": 2,
+  "extra": 2,
+  "extra_from": [
+   "ed9<-?",
+   "ed10<-?"
+  ],
+  "detail": [
+   "13:4~ed4 (0.79)",
+   "13:9 MISSING",
+   "13:10 MISSING"
+  ]
+ },
+ "14": {
+  "charles": 25,
+  "edition": 21,
+  "matched": 0,
+  "changed": 1,
+  "missing": 24,
+  "extra": 20,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-39:4",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-18:4",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-18:5",
+   "ed13<-18:6",
+   "ed14<-18:7",
+   "ed15<-18:8",
+   "ed16<-?",
+   "ed17<-18:11",
+   "ed18<-18:12",
+   "ed19<-18:14",
+   "ed20<-18:15",
+   "ed21<-18:16"
+  ],
+  "detail": [
+   "14:1~ed1 (0.66)",
+   "14:2 MISSING",
+   "14:3 MISSING",
+   "14:4 MISSING",
+   "14:5 MISSING",
+   "14:6 MISSING",
+   "14:7 MISSING",
+   "14:8 MISSING",
+   "14:9 MISSING",
+   "14:10 MISSING",
+   "14:11 MISSING",
+   "14:12 MISSING",
+   "14:13 MISSING",
+   "14:14 MISSING",
+   "14:15 MISSING",
+   "14:16 MISSING",
+   "14:17 MISSING",
+   "14:18 MISSING",
+   "14:19 MISSING",
+   "14:20 MISSING",
+   "14:21 MISSING",
+   "14:22 MISSING",
+   "14:23 MISSING",
+   "14:24 MISSING",
+   "14:25 MISSING"
+  ]
+ },
+ "15": {
+  "charles": 12,
+  "edition": 11,
+  "matched": 9,
+  "changed": 1,
+  "missing": 2,
+  "extra": 1,
+  "extra_from": [
+   "ed11<-16:1"
+  ],
+  "detail": [
+   "15:5~ed5 (0.85)",
+   "15:6 MISSING",
+   "15:7 MISSING"
+  ]
+ },
+ "16": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 1,
+  "changed": 0,
+  "missing": 3,
+  "extra": 3,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-?",
+   "ed3<-?"
+  ],
+  "detail": [
+   "16:1 MISSING",
+   "16:2 MISSING",
+   "16:3 MISSING"
+  ]
+ },
+ "17": {
+  "charles": 8,
+  "edition": 21,
+  "matched": 7,
+  "changed": 0,
+  "missing": 1,
+  "extra": 14,
+  "extra_from": [
+   "ed8<-?",
+   "ed9<-18:2",
+   "ed10<-18:3",
+   "ed11<-18:4",
+   "ed12<-18:5",
+   "ed13<-18:6",
+   "ed14<-18:7",
+   "ed15<-18:8",
+   "ed16<-?",
+   "ed17<-18:11",
+   "ed18<-18:12",
+   "ed19<-18:14",
+   "ed20<-18:15",
+   "ed21<-18:16"
+  ],
+  "detail": [
+   "17:4 MISSING"
+  ]
+ },
+ "18": {
+  "charles": 16,
+  "edition": 18,
+  "matched": 10,
+  "changed": 3,
+  "missing": 3,
+  "extra": 5,
+  "extra_from": [
+   "ed9<-?",
+   "ed15<-21:7",
+   "ed16<-21:8",
+   "ed17<-21:9",
+   "ed18<-21:10"
+  ],
+  "detail": [
+   "18:1~ed1 (0.65)",
+   "18:6~ed6 (0.83)",
+   "18:9 MISSING",
+   "18:10 MISSING",
+   "18:13~ed12 (0.61)",
+   "18:14 MISSING"
+  ]
+ },
+ "19": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "20": {
+  "charles": 8,
+  "edition": 7,
+  "matched": 7,
+  "changed": 0,
+  "missing": 1,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "20:8 MISSING"
+  ]
+ },
+ "21": {
+  "charles": 10,
+  "edition": 11,
+  "matched": 4,
+  "changed": 1,
+  "missing": 5,
+  "extra": 6,
+  "extra_from": [
+   "ed2<-18:11",
+   "ed3<-18:12",
+   "ed4<-18:13",
+   "ed5<-18:14",
+   "ed6<-18:15",
+   "ed7<-18:16"
+  ],
+  "detail": [
+   "21:2 MISSING",
+   "21:3 MISSING",
+   "21:4 MISSING",
+   "21:5~ed10 (0.63)",
+   "21:6 MISSING",
+   "21:9 MISSING"
+  ]
+ },
+ "22": {
+  "charles": 14,
+  "edition": 20,
+  "matched": 11,
+  "changed": 2,
+  "missing": 1,
+  "extra": 7,
+  "extra_from": [
+   "ed1<-34:1",
+   "ed2<-18:11",
+   "ed3<-18:12",
+   "ed4<-21:3",
+   "ed5<-21:4",
+   "ed6<-21:9",
+   "ed7<-21:10"
+  ],
+  "detail": [
+   "22:5~ed12 (0.62)",
+   "22:6~ed13 (0.58)",
+   "22:14 MISSING"
+  ]
+ },
+ "23": {
+  "charles": 4,
+  "edition": 8,
+  "matched": 2,
+  "changed": 2,
+  "missing": 0,
+  "extra": 4,
+  "extra_from": [
+   "ed5<-?",
+   "ed6<-72:3",
+   "ed7<-?",
+   "ed8<-?"
+  ],
+  "detail": [
+   "23:1~ed1 (0.84)",
+   "23:4~ed4 (0.75)"
+  ]
+ },
+ "24": {
+  "charles": 6,
+  "edition": 12,
+  "matched": 5,
+  "changed": 0,
+  "missing": 1,
+  "extra": 7,
+  "extra_from": [
+   "ed5<-32:5",
+   "ed7<-25:1",
+   "ed8<-25:2",
+   "ed9<-25:3",
+   "ed10<-25:4",
+   "ed11<-25:5",
+   "ed12<-25:6"
+  ],
+  "detail": [
+   "24:5 MISSING"
+  ]
+ },
+ "25": {
+  "charles": 7,
+  "edition": 11,
+  "matched": 0,
+  "changed": 0,
+  "missing": 7,
+  "extra": 11,
+  "extra_from": [
+   "ed1<-15:1",
+   "ed2<-15:2",
+   "ed3<-15:3",
+   "ed4<-15:4",
+   "ed5<-15:5",
+   "ed6<-15:8",
+   "ed7<-15:9",
+   "ed8<-15:10",
+   "ed9<-15:11",
+   "ed10<-15:12",
+   "ed11<-16:1"
+  ],
+  "detail": [
+   "25:1 MISSING",
+   "25:2 MISSING",
+   "25:3 MISSING",
+   "25:4 MISSING",
+   "25:5 MISSING",
+   "25:6 MISSING",
+   "25:7 MISSING"
+  ]
+ },
+ "26": {
+  "charles": 6,
+  "edition": 10,
+  "matched": 0,
+  "changed": 2,
+  "missing": 4,
+  "extra": 8,
+  "extra_from": [
+   "ed3<-30:2",
+   "ed4<-30:3",
+   "ed5<-?",
+   "ed6<-24:6",
+   "ed7<-25:3",
+   "ed8<-25:4",
+   "ed9<-25:5",
+   "ed10<-25:6"
+  ],
+  "detail": [
+   "26:1~ed1 (0.61)",
+   "26:2~ed2 (0.80)",
+   "26:3 MISSING",
+   "26:4 MISSING",
+   "26:5 MISSING",
+   "26:6 MISSING"
+  ]
+ },
+ "27": {
+  "charles": 5,
+  "edition": 9,
+  "matched": 0,
+  "changed": 0,
+  "missing": 5,
+  "extra": 9,
+  "extra_from": [
+   "ed1<-26:1",
+   "ed2<-26:2",
+   "ed3<-30:2",
+   "ed4<-30:3",
+   "ed5<-?",
+   "ed6<-25:3",
+   "ed7<-25:4",
+   "ed8<-25:5",
+   "ed9<-25:6"
+  ],
+  "detail": [
+   "27:1 MISSING",
+   "27:2 MISSING",
+   "27:3 MISSING",
+   "27:4 MISSING",
+   "27:5 MISSING"
+  ]
+ },
+ "28": {
+  "charles": 3,
+  "edition": 13,
+  "matched": 0,
+  "changed": 0,
+  "missing": 3,
+  "extra": 13,
+  "extra_from": [
+   "ed1<-23:1",
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-30:1",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-24:6",
+   "ed8<-25:1",
+   "ed9<-25:2",
+   "ed10<-25:3",
+   "ed11<-25:4",
+   "ed12<-25:5",
+   "ed13<-25:6"
+  ],
+  "detail": [
+   "28:1 MISSING",
+   "28:2 MISSING",
+   "28:3 MISSING"
+  ]
+ },
+ "29": {
+  "charles": 2,
+  "edition": 12,
+  "matched": 0,
+  "changed": 1,
+  "missing": 1,
+  "extra": 11,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-30:1",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-25:1",
+   "ed8<-25:2",
+   "ed9<-25:3",
+   "ed10<-25:4",
+   "ed11<-25:5",
+   "ed12<-25:6"
+  ],
+  "detail": [
+   "29:1~ed1 (0.61)",
+   "29:2 MISSING"
+  ]
+ },
+ "30": {
+  "charles": 3,
+  "edition": 10,
+  "matched": 0,
+  "changed": 0,
+  "missing": 3,
+  "extra": 10,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-31:2",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-32:6",
+   "ed8<-?",
+   "ed9<-25:5",
+   "ed10<-25:6"
+  ],
+  "detail": [
+   "30:1 MISSING",
+   "30:2 MISSING",
+   "30:3 MISSING"
+  ]
+ },
+ "31": {
+  "charles": 3,
+  "edition": 7,
+  "matched": 0,
+  "changed": 0,
+  "missing": 3,
+  "extra": 7,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-32:4",
+   "ed3<-?",
+   "ed4<-32:6",
+   "ed5<-?",
+   "ed6<-25:5",
+   "ed7<-25:6"
+  ],
+  "detail": [
+   "31:1 MISSING",
+   "31:2 MISSING",
+   "31:3 MISSING"
+  ]
+ },
+ "32": {
+  "charles": 6,
+  "edition": 9,
+  "matched": 3,
+  "changed": 2,
+  "missing": 1,
+  "extra": 4,
+  "extra_from": [
+   "ed4<-?",
+   "ed7<-?",
+   "ed8<-25:5",
+   "ed9<-25:6"
+  ],
+  "detail": [
+   "32:3~ed3 (0.65)",
+   "32:4 MISSING",
+   "32:5~ed5 (0.67)"
+  ]
+ },
+ "33": {
+  "charles": 4,
+  "edition": 12,
+  "matched": 1,
+  "changed": 1,
+  "missing": 2,
+  "extra": 10,
+  "extra_from": [
+   "ed3<-72:3",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-18:2",
+   "ed7<-18:4",
+   "ed8<-18:5",
+   "ed9<-18:5",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?"
+  ],
+  "detail": [
+   "33:1~ed1 (0.67)",
+   "33:3 MISSING",
+   "33:4 MISSING"
+  ]
+ },
+ "34": {
+  "charles": 3,
+  "edition": 8,
+  "matched": 0,
+  "changed": 2,
+  "missing": 1,
+  "extra": 6,
+  "extra_from": [
+   "ed2<-34:2",
+   "ed4<-34:2",
+   "ed5<-?",
+   "ed6<-18:2",
+   "ed7<-18:2",
+   "ed8<-18:3"
+  ],
+  "detail": [
+   "34:1~ed1 (0.59)",
+   "34:2~ed3 (0.63)",
+   "34:3 MISSING"
+  ]
+ },
+ "35": {
+  "charles": 1,
+  "edition": 8,
+  "matched": 0,
+  "changed": 1,
+  "missing": 0,
+  "extra": 7,
+  "extra_from": [
+   "ed2<-34:2",
+   "ed3<-34:1",
+   "ed4<-?",
+   "ed5<-18:2",
+   "ed6<-18:2",
+   "ed7<-18:3",
+   "ed8<-34:2"
+  ],
+  "detail": [
+   "35:1~ed1 (0.78)"
+  ]
+ },
+ "36": {
+  "charles": 4,
+  "edition": 9,
+  "matched": 0,
+  "changed": 1,
+  "missing": 3,
+  "extra": 8,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-18:2",
+   "ed4<-18:2",
+   "ed5<-18:3",
+   "ed6<-34:2",
+   "ed7<-?",
+   "ed8<-18:2",
+   "ed9<-?"
+  ],
+  "detail": [
+   "36:1~ed1 (0.73)",
+   "36:2 MISSING",
+   "36:3 MISSING",
+   "36:4 MISSING"
+  ]
+ },
+ "37": {
+  "charles": 5,
+  "edition": 10,
+  "matched": 1,
+  "changed": 1,
+  "missing": 3,
+  "extra": 8,
+  "extra_from": [
+   "ed3<-?",
+   "ed4<-1:2",
+   "ed5<-1:3",
+   "ed6<-1:4",
+   "ed7<-1:5",
+   "ed8<-1:6",
+   "ed9<-1:7",
+   "ed10<-1:8"
+  ],
+  "detail": [
+   "37:2~ed2 (0.77)",
+   "37:3 MISSING",
+   "37:4 MISSING",
+   "37:5 MISSING"
+  ]
+ },
+ "38": {
+  "charles": 6,
+  "edition": 12,
+  "matched": 0,
+  "changed": 1,
+  "missing": 5,
+  "extra": 11,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-69:28",
+   "ed3<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-49:4",
+   "ed11<-?",
+   "ed12<-69:28"
+  ],
+  "detail": [
+   "38:1 MISSING",
+   "38:2 MISSING",
+   "38:3 MISSING",
+   "38:4~ed4 (0.68)",
+   "38:5 MISSING",
+   "38:6 MISSING"
+  ]
+ },
+ "39": {
+  "charles": 14,
+  "edition": 19,
+  "matched": 1,
+  "changed": 1,
+  "missing": 12,
+  "extra": 17,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-?",
+   "ed5<-?",
+   "ed6<-51:5",
+   "ed7<-62:14",
+   "ed8<-51:4",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-40:3",
+   "ed13<-40:4",
+   "ed14<-40:5",
+   "ed15<-40:6",
+   "ed16<-40:7",
+   "ed17<-40:8",
+   "ed18<-40:9",
+   "ed19<-?"
+  ],
+  "detail": [
+   "39:1~ed1 (0.62)",
+   "39:2 MISSING",
+   "39:3 MISSING",
+   "39:4 MISSING",
+   "39:6 MISSING",
+   "39:7 MISSING",
+   "39:8 MISSING",
+   "39:9 MISSING",
+   "39:10 MISSING",
+   "39:11 MISSING",
+   "39:12 MISSING",
+   "39:13 MISSING",
+   "39:14 MISSING"
+  ]
+ },
+ "40": {
+  "charles": 10,
+  "edition": 24,
+  "matched": 8,
+  "changed": 2,
+  "missing": 0,
+  "extra": 14,
+  "extra_from": [
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?",
+   "ed15<-?",
+   "ed16<-?",
+   "ed17<-38:3",
+   "ed18<-38:3",
+   "ed19<-38:3",
+   "ed20<-38:3",
+   "ed21<-?",
+   "ed22<-?",
+   "ed23<-38:3",
+   "ed24<-?"
+  ],
+  "detail": [
+   "40:1~ed1 (0.65)",
+   "40:10~ed10 (0.56)"
+  ]
+ },
+ "41": {
+  "charles": 9,
+  "edition": 10,
+  "matched": 7,
+  "changed": 0,
+  "missing": 2,
+  "extra": 3,
+  "extra_from": [
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?"
+  ],
+  "detail": [
+   "41:6 MISSING",
+   "41:9 MISSING"
+  ]
+ },
+ "42": {
+  "charles": 3,
+  "edition": 11,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 8,
+  "extra_from": [
+   "ed4<-41:2",
+   "ed5<-39:5",
+   "ed6<-?",
+   "ed7<-51:5",
+   "ed8<-62:14",
+   "ed9<-51:4",
+   "ed10<-?",
+   "ed11<-?"
+  ],
+  "detail": []
+ },
+ "43": {
+  "charles": 4,
+  "edition": 13,
+  "matched": 1,
+  "changed": 1,
+  "missing": 2,
+  "extra": 11,
+  "extra_from": [
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-18:2",
+   "ed7<-18:3",
+   "ed8<-18:4",
+   "ed9<-18:5",
+   "ed10<-18:5",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?"
+  ],
+  "detail": [
+   "43:2~ed2 (0.68)",
+   "43:3 MISSING",
+   "43:4 MISSING"
+  ]
+ },
+ "44": {
+  "charles": 1,
+  "edition": 8,
+  "matched": 0,
+  "changed": 0,
+  "missing": 1,
+  "extra": 8,
+  "extra_from": [
+   "ed1<-41:3",
+   "ed2<-41:4",
+   "ed3<-41:5",
+   "ed4<-41:7",
+   "ed5<-41:8",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?"
+  ],
+  "detail": [
+   "44:1 MISSING"
+  ]
+ },
+ "45": {
+  "charles": 6,
+  "edition": 13,
+  "matched": 2,
+  "changed": 1,
+  "missing": 3,
+  "extra": 10,
+  "extra_from": [
+   "ed4<-45:4",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-51:1",
+   "ed12<-51:2",
+   "ed13<-?"
+  ],
+  "detail": [
+   "45:3~ed3 (0.70)",
+   "45:4 MISSING",
+   "45:5 MISSING",
+   "45:6 MISSING"
+  ]
+ },
+ "46": {
+  "charles": 8,
+  "edition": 10,
+  "matched": 7,
+  "changed": 1,
+  "missing": 0,
+  "extra": 2,
+  "extra_from": [
+   "ed6<-?",
+   "ed8<-46:7"
+  ],
+  "detail": [
+   "46:7~ed9 (0.74)"
+  ]
+ },
+ "47": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "48": {
+  "charles": 10,
+  "edition": 8,
+  "matched": 7,
+  "changed": 0,
+  "missing": 3,
+  "extra": 1,
+  "extra_from": [
+   "ed8<-63:1"
+  ],
+  "detail": [
+   "48:8 MISSING",
+   "48:9 MISSING",
+   "48:10 MISSING"
+  ]
+ },
+ "49": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "50": {
+  "charles": 5,
+  "edition": 5,
+  "matched": 5,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "51": {
+  "charles": 5,
+  "edition": 4,
+  "matched": 3,
+  "changed": 1,
+  "missing": 1,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "51:4~ed4 (0.78)",
+   "51:5 MISSING"
+  ]
+ },
+ "52": {
+  "charles": 9,
+  "edition": 9,
+  "matched": 2,
+  "changed": 1,
+  "missing": 6,
+  "extra": 6,
+  "extra_from": [
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-56:4",
+   "ed7<-56:5",
+   "ed8<-56:6",
+   "ed9<-?"
+  ],
+  "detail": [
+   "52:3 MISSING",
+   "52:4 MISSING",
+   "52:5 MISSING",
+   "52:6~ed3 (0.63)",
+   "52:7 MISSING",
+   "52:8 MISSING",
+   "52:9 MISSING"
+  ]
+ },
+ "53": {
+  "charles": 7,
+  "edition": 6,
+  "matched": 3,
+  "changed": 2,
+  "missing": 2,
+  "extra": 1,
+  "extra_from": [
+   "ed2<-?"
+  ],
+  "detail": [
+   "53:1~ed1 (0.71)",
+   "53:5~ed6 (0.79)",
+   "53:6 MISSING",
+   "53:7 MISSING"
+  ]
+ },
+ "54": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "55": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "56": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "57": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "58": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 5,
+  "changed": 1,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "58:6~ed6 (0.56)"
+  ]
+ },
+ "59": {
+  "charles": 3,
+  "edition": 6,
+  "matched": 1,
+  "changed": 0,
+  "missing": 2,
+  "extra": 5,
+  "extra_from": [
+   "ed2<-41:3",
+   "ed3<-41:4",
+   "ed4<-41:5",
+   "ed5<-?",
+   "ed6<-?"
+  ],
+  "detail": [
+   "59:2 MISSING",
+   "59:3 MISSING"
+  ]
+ },
+ "60": {
+  "charles": 24,
+  "edition": 14,
+  "matched": 8,
+  "changed": 3,
+  "missing": 13,
+  "extra": 3,
+  "extra_from": [
+   "ed12<-71:4",
+   "ed13<-41:3",
+   "ed14<-41:4"
+  ],
+  "detail": [
+   "60:6~ed6 (0.66)",
+   "60:9~ed9 (0.73)",
+   "60:11~ed11 (0.61)",
+   "60:12 MISSING",
+   "60:13 MISSING",
+   "60:14 MISSING",
+   "60:15 MISSING",
+   "60:16 MISSING",
+   "60:17 MISSING",
+   "60:18 MISSING",
+   "60:19 MISSING",
+   "60:20 MISSING",
+   "60:21 MISSING",
+   "60:22 MISSING",
+   "60:23 MISSING",
+   "60:24 MISSING"
+  ]
+ },
+ "61": {
+  "charles": 13,
+  "edition": 12,
+  "matched": 9,
+  "changed": 1,
+  "missing": 3,
+  "extra": 2,
+  "extra_from": [
+   "ed7<-?",
+   "ed12<-56:2"
+  ],
+  "detail": [
+   "61:7 MISSING",
+   "61:8~ed8 (0.76)",
+   "61:12 MISSING",
+   "61:13 MISSING"
+  ]
+ },
+ "62": {
+  "charles": 16,
+  "edition": 12,
+  "matched": 0,
+  "changed": 0,
+  "missing": 16,
+  "extra": 12,
+  "extra_from": [
+   "ed1<-61:8",
+   "ed2<-61:9",
+   "ed3<-61:10",
+   "ed4<-61:11",
+   "ed5<-?",
+   "ed6<-49:4",
+   "ed7<-71:14",
+   "ed8<-46:3",
+   "ed9<-46:4",
+   "ed10<-46:5",
+   "ed11<-?",
+   "ed12<-46:6"
+  ],
+  "detail": [
+   "62:1 MISSING",
+   "62:2 MISSING",
+   "62:3 MISSING",
+   "62:4 MISSING",
+   "62:5 MISSING",
+   "62:6 MISSING",
+   "62:7 MISSING",
+   "62:8 MISSING",
+   "62:9 MISSING",
+   "62:10 MISSING",
+   "62:11 MISSING",
+   "62:12 MISSING",
+   "62:13 MISSING",
+   "62:14 MISSING",
+   "62:15 MISSING",
+   "62:16 MISSING"
+  ]
+ },
+ "63": {
+  "charles": 12,
+  "edition": 9,
+  "matched": 0,
+  "changed": 0,
+  "missing": 12,
+  "extra": 9,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-62:2",
+   "ed3<-62:9",
+   "ed4<-62:10",
+   "ed5<-?",
+   "ed6<-69:27",
+   "ed7<-?",
+   "ed8<-62:5",
+   "ed9<-?"
+  ],
+  "detail": [
+   "63:1 MISSING",
+   "63:2 MISSING",
+   "63:3 MISSING",
+   "63:4 MISSING",
+   "63:5 MISSING",
+   "63:6 MISSING",
+   "63:7 MISSING",
+   "63:8 MISSING",
+   "63:9 MISSING",
+   "63:10 MISSING",
+   "63:11 MISSING",
+   "63:12 MISSING"
+  ]
+ },
+ "64": {
+  "charles": 2,
+  "edition": 6,
+  "matched": 0,
+  "changed": 0,
+  "missing": 2,
+  "extra": 6,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-43:3",
+   "ed6<-?"
+  ],
+  "detail": [
+   "64:1 MISSING",
+   "64:2 MISSING"
+  ]
+ },
+ "65": {
+  "charles": 12,
+  "edition": 14,
+  "matched": 4,
+  "changed": 1,
+  "missing": 7,
+  "extra": 9,
+  "extra_from": [
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-15:12",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-10:21",
+   "ed14<-?"
+  ],
+  "detail": [
+   "65:3~ed3 (0.73)",
+   "65:6 MISSING",
+   "65:7 MISSING",
+   "65:8 MISSING",
+   "65:9 MISSING",
+   "65:10 MISSING",
+   "65:11 MISSING",
+   "65:12 MISSING"
+  ]
+ },
+ "66": {
+  "charles": 3,
+  "edition": 9,
+  "matched": 0,
+  "changed": 1,
+  "missing": 2,
+  "extra": 8,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-62:13",
+   "ed9<-?"
+  ],
+  "detail": [
+   "66:1~ed1 (0.68)",
+   "66:2 MISSING",
+   "66:3 MISSING"
+  ]
+ },
+ "67": {
+  "charles": 13,
+  "edition": 7,
+  "matched": 0,
+  "changed": 0,
+  "missing": 13,
+  "extra": 7,
+  "extra_from": [
+   "ed1<-10:13",
+   "ed2<-54:6",
+   "ed3<-51:1",
+   "ed4<-47:3",
+   "ed5<-47:4",
+   "ed6<-?",
+   "ed7<-?"
+  ],
+  "detail": [
+   "67:1 MISSING",
+   "67:2 MISSING",
+   "67:3 MISSING",
+   "67:4 MISSING",
+   "67:5 MISSING",
+   "67:6 MISSING",
+   "67:7 MISSING",
+   "67:8 MISSING",
+   "67:9 MISSING",
+   "67:10 MISSING",
+   "67:11 MISSING",
+   "67:12 MISSING",
+   "67:13 MISSING"
+  ]
+ },
+ "68": {
+  "charles": 5,
+  "edition": 10,
+  "matched": 0,
+  "changed": 0,
+  "missing": 5,
+  "extra": 10,
+  "extra_from": [
+   "ed1<-6:6",
+   "ed2<-6:7",
+   "ed3<-6:8",
+   "ed4<-?",
+   "ed5<-6:7",
+   "ed6<-6:8",
+   "ed7<-8:1",
+   "ed8<-8:2",
+   "ed9<-8:3",
+   "ed10<-8:4"
+  ],
+  "detail": [
+   "68:1 MISSING",
+   "68:2 MISSING",
+   "68:3 MISSING",
+   "68:4 MISSING",
+   "68:5 MISSING"
+  ]
+ },
+ "69": {
+  "charles": 29,
+  "edition": 40,
+  "matched": 29,
+  "changed": 0,
+  "missing": 0,
+  "extra": 11,
+  "extra_from": [
+   "ed4<-6:8",
+   "ed5<-8:1",
+   "ed6<-8:2",
+   "ed7<-8:3",
+   "ed34<-8:4",
+   "ed35<-67:12",
+   "ed36<-?",
+   "ed37<-9:8",
+   "ed38<-9:9",
+   "ed39<-?",
+   "ed40<-15:12"
+  ],
+  "detail": []
+ },
+ "70": {
+  "charles": 4,
+  "edition": 11,
+  "matched": 1,
+  "changed": 0,
+  "missing": 3,
+  "extra": 10,
+  "extra_from": [
+   "ed1<-71:1",
+   "ed2<-71:2",
+   "ed3<-71:3",
+   "ed4<-71:4",
+   "ed5<-71:5",
+   "ed6<-?",
+   "ed8<-60:12",
+   "ed9<-71:5",
+   "ed10<-?",
+   "ed11<-70:4"
+  ],
+  "detail": [
+   "70:1 MISSING",
+   "70:2 MISSING",
+   "70:3 MISSING"
+  ]
+ },
+ "71": {
+  "charles": 17,
+  "edition": 13,
+  "matched": 5,
+  "changed": 0,
+  "missing": 12,
+  "extra": 8,
+  "extra_from": [
+   "ed6<-?",
+   "ed7<-70:4",
+   "ed8<-60:12",
+   "ed9<-71:5",
+   "ed10<-?",
+   "ed11<-70:4",
+   "ed12<-71:5",
+   "ed13<-?"
+  ],
+  "detail": [
+   "71:6 MISSING",
+   "71:7 MISSING",
+   "71:8 MISSING",
+   "71:9 MISSING",
+   "71:10 MISSING",
+   "71:11 MISSING",
+   "71:12 MISSING",
+   "71:13 MISSING",
+   "71:14 MISSING",
+   "71:15 MISSING",
+   "71:16 MISSING",
+   "71:17 MISSING"
+  ]
+ },
+ "72": {
+  "charles": 37,
+  "edition": 11,
+  "matched": 2,
+  "changed": 3,
+  "missing": 32,
+  "extra": 6,
+  "extra_from": [
+   "ed4<-?",
+   "ed6<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-72:11"
+  ],
+  "detail": [
+   "72:3~ed3 (0.82)",
+   "72:4 MISSING",
+   "72:5 MISSING",
+   "72:6 MISSING",
+   "72:7 MISSING",
+   "72:8~ed5 (0.57)",
+   "72:9 MISSING",
+   "72:10 MISSING",
+   "72:11 MISSING",
+   "72:12 MISSING",
+   "72:13 MISSING",
+   "72:14 MISSING",
+   "72:15 MISSING",
+   "72:16 MISSING",
+   "72:17 MISSING",
+   "72:18 MISSING",
+   "72:19 MISSING",
+   "72:20 MISSING",
+   "72:21 MISSING",
+   "72:22 MISSING",
+   "72:23 MISSING",
+   "72:24 MISSING",
+   "72:25 MISSING",
+   "72:26 MISSING",
+   "72:27 MISSING",
+   "72:28 MISSING",
+   "72:29 MISSING",
+   "72:30~ed7 (0.56)",
+   "72:31 MISSING",
+   "72:32 MISSING",
+   "72:33 MISSING",
+   "72:34 MISSING",
+   "72:35 MISSING",
+   "72:36 MISSING",
+   "72:37 MISSING"
+  ]
+ },
+ "73": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 5,
+  "changed": 1,
+  "missing": 2,
+  "extra": 2,
+  "extra_from": [
+   "ed3<-?",
+   "ed4<-?"
+  ],
+  "detail": [
+   "73:2~ed2 (0.78)",
+   "73:3 MISSING",
+   "73:4 MISSING"
+  ]
+ },
+ "74": {
+  "charles": 17,
+  "edition": 13,
+  "matched": 0,
+  "changed": 3,
+  "missing": 14,
+  "extra": 10,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-?",
+   "ed3<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed8<-?",
+   "ed9<-78:9",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?"
+  ],
+  "detail": [
+   "74:1 MISSING",
+   "74:2 MISSING",
+   "74:3 MISSING",
+   "74:4~ed4 (0.61)",
+   "74:5 MISSING",
+   "74:6 MISSING",
+   "74:7 MISSING",
+   "74:8~ed7 (0.55)",
+   "74:9 MISSING",
+   "74:10 MISSING",
+   "74:11 MISSING",
+   "74:12~ed13 (0.58)",
+   "74:13 MISSING",
+   "74:14 MISSING",
+   "74:15 MISSING",
+   "74:16 MISSING",
+   "74:17 MISSING"
+  ]
+ },
+ "75": {
+  "charles": 9,
+  "edition": 15,
+  "matched": 0,
+  "changed": 1,
+  "missing": 8,
+  "extra": 14,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-82:13",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?",
+   "ed15<-?"
+  ],
+  "detail": [
+   "75:1~ed1 (0.61)",
+   "75:2 MISSING",
+   "75:3 MISSING",
+   "75:4 MISSING",
+   "75:5 MISSING",
+   "75:6 MISSING",
+   "75:7 MISSING",
+   "75:8 MISSING",
+   "75:9 MISSING"
+  ]
+ },
+ "76": {
+  "charles": 14,
+  "edition": 14,
+  "matched": 0,
+  "changed": 7,
+  "missing": 7,
+  "extra": 7,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-76:13",
+   "ed4<-?",
+   "ed9<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?"
+  ],
+  "detail": [
+   "76:1~ed1 (0.61)",
+   "76:2 MISSING",
+   "76:3 MISSING",
+   "76:4 MISSING",
+   "76:5~ed8 (0.56)",
+   "76:6 MISSING",
+   "76:7 MISSING",
+   "76:8~ed6 (0.73)",
+   "76:9~ed7 (0.72)",
+   "76:10~ed10 (0.56)",
+   "76:11 MISSING",
+   "76:12~ed5 (0.59)",
+   "76:13 MISSING",
+   "76:14~ed14 (0.80)"
+  ]
+ },
+ "77": {
+  "charles": 8,
+  "edition": 12,
+  "matched": 3,
+  "changed": 1,
+  "missing": 4,
+  "extra": 8,
+  "extra_from": [
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-32:4",
+   "ed9<-18:12",
+   "ed10<-18:14",
+   "ed11<-18:15",
+   "ed12<-18:16"
+  ],
+  "detail": [
+   "77:4~ed4 (0.74)",
+   "77:5 MISSING",
+   "77:6 MISSING",
+   "77:7 MISSING",
+   "77:8 MISSING"
+  ]
+ },
+ "78": {
+  "charles": 17,
+  "edition": 12,
+  "matched": 0,
+  "changed": 2,
+  "missing": 15,
+  "extra": 10,
+  "extra_from": [
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?"
+  ],
+  "detail": [
+   "78:1~ed1 (0.59)",
+   "78:2~ed2 (0.60)",
+   "78:3 MISSING",
+   "78:4 MISSING",
+   "78:5 MISSING",
+   "78:6 MISSING",
+   "78:7 MISSING",
+   "78:8 MISSING",
+   "78:9 MISSING",
+   "78:10 MISSING",
+   "78:11 MISSING",
+   "78:12 MISSING",
+   "78:13 MISSING",
+   "78:14 MISSING",
+   "78:15 MISSING",
+   "78:16 MISSING",
+   "78:17 MISSING"
+  ]
+ },
+ "79": {
+  "charles": 6,
+  "edition": 10,
+  "matched": 0,
+  "changed": 0,
+  "missing": 6,
+  "extra": 10,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?"
+  ],
+  "detail": [
+   "79:1 MISSING",
+   "79:2 MISSING",
+   "79:3 MISSING",
+   "79:4 MISSING",
+   "79:5 MISSING",
+   "79:6 MISSING"
+  ]
+ },
+ "80": {
+  "charles": 8,
+  "edition": 14,
+  "matched": 2,
+  "changed": 0,
+  "missing": 6,
+  "extra": 12,
+  "extra_from": [
+   "ed1<-80:4",
+   "ed2<-80:4",
+   "ed3<-80:4",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?"
+  ],
+  "detail": [
+   "80:1 MISSING",
+   "80:2 MISSING",
+   "80:5 MISSING",
+   "80:6 MISSING",
+   "80:7 MISSING",
+   "80:8 MISSING"
+  ]
+ },
+ "81": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 1,
+  "changed": 1,
+  "missing": 8,
+  "extra": 8,
+  "extra_from": [
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?"
+  ],
+  "detail": [
+   "81:2~ed2 (0.65)",
+   "81:3 MISSING",
+   "81:4 MISSING",
+   "81:5 MISSING",
+   "81:6 MISSING",
+   "81:7 MISSING",
+   "81:8 MISSING",
+   "81:9 MISSING",
+   "81:10 MISSING"
+  ]
+ },
+ "82": {
+  "charles": 20,
+  "edition": 14,
+  "matched": 0,
+  "changed": 1,
+  "missing": 19,
+  "extra": 13,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?"
+  ],
+  "detail": [
+   "82:1 MISSING",
+   "82:2 MISSING",
+   "82:3 MISSING",
+   "82:4 MISSING",
+   "82:5 MISSING",
+   "82:6 MISSING",
+   "82:7 MISSING",
+   "82:8 MISSING",
+   "82:9 MISSING",
+   "82:10 MISSING",
+   "82:11 MISSING",
+   "82:12 MISSING",
+   "82:13~ed10 (0.58)",
+   "82:14 MISSING",
+   "82:15 MISSING",
+   "82:16 MISSING",
+   "82:17 MISSING",
+   "82:18 MISSING",
+   "82:19 MISSING",
+   "82:20 MISSING"
+  ]
+ },
+ "83": {
+  "charles": 11,
+  "edition": 14,
+  "matched": 3,
+  "changed": 1,
+  "missing": 7,
+  "extra": 10,
+  "extra_from": [
+   "ed3<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?"
+  ],
+  "detail": [
+   "83:4~ed5 (0.70)",
+   "83:5 MISSING",
+   "83:6 MISSING",
+   "83:7 MISSING",
+   "83:8 MISSING",
+   "83:9 MISSING",
+   "83:10 MISSING",
+   "83:11 MISSING"
+  ]
+ },
+ "84": {
+  "charles": 6,
+  "edition": 12,
+  "matched": 1,
+  "changed": 0,
+  "missing": 5,
+  "extra": 11,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-9:5",
+   "ed4<-9:6",
+   "ed5<-9:7",
+   "ed6<-9:8",
+   "ed7<-9:9",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?"
+  ],
+  "detail": [
+   "84:2 MISSING",
+   "84:3 MISSING",
+   "84:4 MISSING",
+   "84:5 MISSING",
+   "84:6 MISSING"
+  ]
+ },
+ "85": {
+  "charles": 10,
+  "edition": 8,
+  "matched": 6,
+  "changed": 2,
+  "missing": 2,
+  "extra": 0,
+  "extra_from": [],
+  "detail": [
+   "85:4~ed4 (0.61)",
+   "85:5 MISSING",
+   "85:9~ed8 (0.75)",
+   "85:10 MISSING"
+  ]
+ },
+ "86": {
+  "charles": 6,
+  "edition": 10,
+  "matched": 0,
+  "changed": 0,
+  "missing": 6,
+  "extra": 10,
+  "extra_from": [
+   "ed1<-90:8",
+   "ed2<-?",
+   "ed3<-90:8",
+   "ed4<-90:8",
+   "ed5<-90:8",
+   "ed6<-90:8",
+   "ed7<-90:8",
+   "ed8<-90:8",
+   "ed9<-90:8",
+   "ed10<-90:8"
+  ],
+  "detail": [
+   "86:1 MISSING",
+   "86:2 MISSING",
+   "86:3 MISSING",
+   "86:4 MISSING",
+   "86:5 MISSING",
+   "86:6 MISSING"
+  ]
+ },
+ "87": {
+  "charles": 4,
+  "edition": 10,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 6,
+  "extra_from": [
+   "ed5<-?",
+   "ed6<-90:8",
+   "ed7<-90:8",
+   "ed8<-90:8",
+   "ed9<-90:8",
+   "ed10<-90:8"
+  ],
+  "detail": []
+ },
+ "88": {
+  "charles": 3,
+  "edition": 12,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 9,
+  "extra_from": [
+   "ed4<-89:1",
+   "ed5<-89:2",
+   "ed6<-89:3",
+   "ed7<-89:4",
+   "ed8<-89:5",
+   "ed9<-89:6",
+   "ed10<-89:7",
+   "ed11<-89:8",
+   "ed12<-?"
+  ],
+  "detail": []
+ },
+ "89": {
+  "charles": 77,
+  "edition": 54,
+  "matched": 11,
+  "changed": 8,
+  "missing": 58,
+  "extra": 35,
+  "extra_from": [
+   "ed9<-?",
+   "ed10<-?",
+   "ed16<-?",
+   "ed18<-?",
+   "ed19<-?",
+   "ed20<-?",
+   "ed22<-?",
+   "ed23<-?",
+   "ed24<-?",
+   "ed25<-89:29",
+   "ed27<-?",
+   "ed28<-?",
+   "ed29<-?",
+   "ed30<-?",
+   "ed31<-?",
+   "ed32<-?",
+   "ed33<-?",
+   "ed34<-?",
+   "ed35<-?",
+   "ed36<-?",
+   "ed37<-?",
+   "ed38<-?",
+   "ed39<-?",
+   "ed40<-?",
+   "ed41<-?",
+   "ed43<-?",
+   "ed44<-?",
+   "ed45<-?",
+   "ed46<-?",
+   "ed47<-?",
+   "ed49<-90:37",
+   "ed50<-90:38",
+   "ed52<-90:39",
+   "ed53<-?",
+   "ed54<-?"
+  ],
+  "detail": [
+   "89:4~ed4 (0.84)",
+   "89:9~ed11 (0.73)",
+   "89:14~ed42 (0.57)",
+   "89:15 MISSING",
+   "89:16 MISSING",
+   "89:17 MISSING",
+   "89:18 MISSING",
+   "89:19 MISSING",
+   "89:20~ed17 (0.56)",
+   "89:21 MISSING",
+   "89:22~ed48 (0.56)",
+   "89:23 MISSING",
+   "89:24 MISSING",
+   "89:25 MISSING",
+   "89:26 MISSING",
+   "89:27 MISSING",
+   "89:28 MISSING",
+   "89:29~ed26 (0.58)",
+   "89:30 MISSING",
+   "89:31 MISSING",
+   "89:32 MISSING",
+   "89:33 MISSING",
+   "89:34 MISSING",
+   "89:35 MISSING",
+   "89:36~ed21 (0.81)",
+   "89:37 MISSING",
+   "89:38 MISSING",
+   "89:39 MISSING",
+   "89:40 MISSING",
+   "89:41 MISSING",
+   "89:42 MISSING",
+   "89:43 MISSING",
+   "89:44 MISSING",
+   "89:45 MISSING",
+   "89:46 MISSING",
+   "89:47 MISSING",
+   "89:48 MISSING",
+   "89:49 MISSING",
+   "89:50 MISSING",
+   "89:51 MISSING",
+   "89:52 MISSING",
+   "89:53~ed51 (0.56)",
+   "89:54 MISSING",
+   "89:55 MISSING",
+   "89:56 MISSING",
+   "89:57 MISSING",
+   "89:58 MISSING",
+   "89:59 MISSING",
+   "89:60 MISSING",
+   "89:61 MISSING",
+   "89:62 MISSING",
+   "89:63 MISSING",
+   "89:64 MISSING",
+   "89:65 MISSING",
+   "89:66 MISSING",
+   "89:67 MISSING",
+   "89:68 MISSING",
+   "89:69 MISSING",
+   "89:70 MISSING",
+   "89:71 MISSING",
+   "89:72 MISSING",
+   "89:73 MISSING",
+   "89:74 MISSING",
+   "89:75 MISSING",
+   "89:76 MISSING",
+   "89:77 MISSING"
+  ]
+ },
+ "90": {
+  "charles": 42,
+  "edition": 24,
+  "matched": 2,
+  "changed": 4,
+  "missing": 36,
+  "extra": 18,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed15<-?",
+   "ed16<-?",
+   "ed17<-?",
+   "ed18<-?",
+   "ed22<-?",
+   "ed24<-?"
+  ],
+  "detail": [
+   "90:1 MISSING",
+   "90:2 MISSING",
+   "90:3 MISSING",
+   "90:4 MISSING",
+   "90:5 MISSING",
+   "90:6 MISSING",
+   "90:7 MISSING",
+   "90:8 MISSING",
+   "90:9 MISSING",
+   "90:10~ed14 (0.57)",
+   "90:11 MISSING",
+   "90:12 MISSING",
+   "90:13 MISSING",
+   "90:14 MISSING",
+   "90:15~ed13 (0.55)",
+   "90:16 MISSING",
+   "90:17 MISSING",
+   "90:18 MISSING",
+   "90:19~ed20 (0.57)",
+   "90:20 MISSING",
+   "90:21 MISSING",
+   "90:22 MISSING",
+   "90:23 MISSING",
+   "90:24 MISSING",
+   "90:25 MISSING",
+   "90:26 MISSING",
+   "90:27 MISSING",
+   "90:28 MISSING",
+   "90:29 MISSING",
+   "90:30 MISSING",
+   "90:31 MISSING",
+   "90:32 MISSING",
+   "90:33~ed19 (0.61)",
+   "90:34 MISSING",
+   "90:35 MISSING",
+   "90:36 MISSING",
+   "90:37 MISSING",
+   "90:40 MISSING",
+   "90:41 MISSING",
+   "90:42 MISSING"
+  ]
+ },
+ "91": {
+  "charles": 19,
+  "edition": 19,
+  "matched": 19,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "92": {
+  "charles": 5,
+  "edition": 5,
+  "matched": 5,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "93": {
+  "charles": 14,
+  "edition": 14,
+  "matched": 14,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "94": {
+  "charles": 11,
+  "edition": 23,
+  "matched": 2,
+  "changed": 1,
+  "missing": 8,
+  "extra": 20,
+  "extra_from": [
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-96:5",
+   "ed7<-97:8",
+   "ed8<-97:9",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?",
+   "ed15<-?",
+   "ed16<-?",
+   "ed17<-99:11",
+   "ed18<-96:5",
+   "ed19<-?",
+   "ed20<-96:5",
+   "ed21<-99:11",
+   "ed22<-?",
+   "ed23<-?"
+  ],
+  "detail": [
+   "94:2~ed2 (0.85)",
+   "94:3 MISSING",
+   "94:4 MISSING",
+   "94:5 MISSING",
+   "94:6 MISSING",
+   "94:7 MISSING",
+   "94:9 MISSING",
+   "94:10 MISSING",
+   "94:11 MISSING"
+  ]
+ },
+ "95": {
+  "charles": 7,
+  "edition": 19,
+  "matched": 0,
+  "changed": 0,
+  "missing": 7,
+  "extra": 19,
+  "extra_from": [
+   "ed1<-99:1",
+   "ed2<-?",
+   "ed3<-99:11",
+   "ed4<-99:11",
+   "ed5<-?",
+   "ed6<-96:5",
+   "ed7<-97:8",
+   "ed8<-97:9",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?",
+   "ed15<-?",
+   "ed16<-99:11",
+   "ed17<-?",
+   "ed18<-?",
+   "ed19<-?"
+  ],
+  "detail": [
+   "95:1 MISSING",
+   "95:2 MISSING",
+   "95:3 MISSING",
+   "95:4 MISSING",
+   "95:5 MISSING",
+   "95:6 MISSING",
+   "95:7 MISSING"
+  ]
+ },
+ "96": {
+  "charles": 8,
+  "edition": 17,
+  "matched": 0,
+  "changed": 2,
+  "missing": 6,
+  "extra": 15,
+  "extra_from": [
+   "ed1<-96:5",
+   "ed3<-?",
+   "ed5<-97:8",
+   "ed6<-97:9",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-99:11",
+   "ed15<-?",
+   "ed16<-?",
+   "ed17<-?"
+  ],
+  "detail": [
+   "96:1 MISSING",
+   "96:2 MISSING",
+   "96:3 MISSING",
+   "96:4 MISSING",
+   "96:5~ed4 (0.74)",
+   "96:6 MISSING",
+   "96:7~ed2 (0.57)",
+   "96:8 MISSING"
+  ]
+ },
+ "97": {
+  "charles": 10,
+  "edition": 19,
+  "matched": 1,
+  "changed": 1,
+  "missing": 8,
+  "extra": 17,
+  "extra_from": [
+   "ed1<-99:1",
+   "ed2<-?",
+   "ed3<-99:11",
+   "ed4<-99:11",
+   "ed5<-?",
+   "ed6<-96:5",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?",
+   "ed15<-?",
+   "ed16<-99:11",
+   "ed17<-?",
+   "ed18<-?",
+   "ed19<-?"
+  ],
+  "detail": [
+   "97:1 MISSING",
+   "97:2 MISSING",
+   "97:3 MISSING",
+   "97:4 MISSING",
+   "97:5 MISSING",
+   "97:6 MISSING",
+   "97:7 MISSING",
+   "97:9~ed8 (0.82)",
+   "97:10 MISSING"
+  ]
+ },
+ "98": {
+  "charles": 16,
+  "edition": 16,
+  "matched": 16,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "99": {
+  "charles": 16,
+  "edition": 16,
+  "matched": 16,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "100": {
+  "charles": 13,
+  "edition": 13,
+  "matched": 13,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "101": {
+  "charles": 9,
+  "edition": 100,
+  "matched": 0,
+  "changed": 0,
+  "missing": 9,
+  "extra": 100,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-?",
+   "ed14<-?",
+   "ed15<-?",
+   "ed16<-?",
+   "ed17<-?",
+   "ed18<-?",
+   "ed19<-?",
+   "ed20<-?",
+   "ed21<-?",
+   "ed22<-?",
+   "ed23<-?",
+   "ed24<-?",
+   "ed25<-?",
+   "ed26<-?",
+   "ed27<-?",
+   "ed28<-?",
+   "ed29<-?",
+   "ed30<-?",
+   "ed31<-?",
+   "ed32<-?",
+   "ed33<-?",
+   "ed34<-?",
+   "ed35<-?",
+   "ed36<-?",
+   "ed37<-?",
+   "ed38<-?",
+   "ed39<-?",
+   "ed40<-?",
+   "ed41<-?",
+   "ed42<-?",
+   "ed43<-?",
+   "ed44<-?",
+   "ed45<-?",
+   "ed46<-?",
+   "ed47<-?",
+   "ed48<-?",
+   "ed49<-?",
+   "ed50<-?",
+   "ed51<-?",
+   "ed52<-?",
+   "ed53<-?",
+   "ed54<-?",
+   "ed55<-?",
+   "ed56<-?",
+   "ed57<-?",
+   "ed58<-?",
+   "ed59<-?",
+   "ed60<-?",
+   "ed61<-?",
+   "ed62<-?",
+   "ed63<-?",
+   "ed64<-?",
+   "ed65<-?",
+   "ed66<-?",
+   "ed67<-?",
+   "ed68<-?",
+   "ed69<-?",
+   "ed70<-?",
+   "ed71<-?",
+   "ed72<-?",
+   "ed73<-?",
+   "ed74<-?",
+   "ed75<-?",
+   "ed76<-?",
+   "ed77<-?",
+   "ed78<-?",
+   "ed79<-?",
+   "ed80<-?",
+   "ed81<-?",
+   "ed82<-?",
+   "ed83<-?",
+   "ed84<-?",
+   "ed85<-?",
+   "ed86<-?",
+   "ed87<-?",
+   "ed88<-?",
+   "ed89<-?",
+   "ed90<-?",
+   "ed91<-?",
+   "ed92<-?",
+   "ed93<-?",
+   "ed94<-?",
+   "ed95<-?",
+   "ed96<-?",
+   "ed97<-?",
+   "ed98<-?",
+   "ed99<-?",
+   "ed100<-?"
+  ],
+  "detail": [
+   "101:1 MISSING",
+   "101:2 MISSING",
+   "101:3 MISSING",
+   "101:4 MISSING",
+   "101:5 MISSING",
+   "101:6 MISSING",
+   "101:7 MISSING",
+   "101:8 MISSING",
+   "101:9 MISSING"
+  ]
+ },
+ "102": {
+  "charles": 11,
+  "edition": 23,
+  "matched": 0,
+  "changed": 0,
+  "missing": 11,
+  "extra": 23,
+  "extra_from": [
+   "ed1<-91:18",
+   "ed2<-47:1",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-103:5",
+   "ed9<-?",
+   "ed10<-96:5",
+   "ed11<-?",
+   "ed12<-96:5",
+   "ed13<-97:8",
+   "ed14<-97:9",
+   "ed15<-?",
+   "ed16<-?",
+   "ed17<-?",
+   "ed18<-?",
+   "ed19<-?",
+   "ed20<-?",
+   "ed21<-?",
+   "ed22<-?",
+   "ed23<-?"
+  ],
+  "detail": [
+   "102:1 MISSING",
+   "102:2 MISSING",
+   "102:3 MISSING",
+   "102:4 MISSING",
+   "102:5 MISSING",
+   "102:6 MISSING",
+   "102:7 MISSING",
+   "102:8 MISSING",
+   "102:9 MISSING",
+   "102:10 MISSING",
+   "102:11 MISSING"
+  ]
+ },
+ "103": {
+  "charles": 15,
+  "edition": 25,
+  "matched": 0,
+  "changed": 1,
+  "missing": 14,
+  "extra": 24,
+  "extra_from": [
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-100:8",
+   "ed14<-96:5",
+   "ed15<-97:8",
+   "ed16<-97:9",
+   "ed17<-?",
+   "ed18<-?",
+   "ed19<-?",
+   "ed20<-?",
+   "ed21<-?",
+   "ed22<-?",
+   "ed23<-?",
+   "ed24<-?",
+   "ed25<-?"
+  ],
+  "detail": [
+   "103:1~ed1 (0.57)",
+   "103:2 MISSING",
+   "103:3 MISSING",
+   "103:4 MISSING",
+   "103:5 MISSING",
+   "103:6 MISSING",
+   "103:7 MISSING",
+   "103:8 MISSING",
+   "103:9 MISSING",
+   "103:10 MISSING",
+   "103:11 MISSING",
+   "103:12 MISSING",
+   "103:13 MISSING",
+   "103:14 MISSING",
+   "103:15 MISSING"
+  ]
+ },
+ "104": {
+  "charles": 13,
+  "edition": 25,
+  "matched": 0,
+  "changed": 0,
+  "missing": 13,
+  "extra": 25,
+  "extra_from": [
+   "ed1<-103:1",
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?",
+   "ed11<-?",
+   "ed12<-?",
+   "ed13<-100:8",
+   "ed14<-96:5",
+   "ed15<-97:8",
+   "ed16<-97:9",
+   "ed17<-?",
+   "ed18<-?",
+   "ed19<-?",
+   "ed20<-?",
+   "ed21<-?",
+   "ed22<-?",
+   "ed23<-?",
+   "ed24<-?",
+   "ed25<-?"
+  ],
+  "detail": [
+   "104:1 MISSING",
+   "104:2 MISSING",
+   "104:3 MISSING",
+   "104:4 MISSING",
+   "104:5 MISSING",
+   "104:6 MISSING",
+   "104:7 MISSING",
+   "104:8 MISSING",
+   "104:9 MISSING",
+   "104:10 MISSING",
+   "104:11 MISSING",
+   "104:12 MISSING",
+   "104:13 MISSING"
+  ]
+ },
+ "105": {
+  "charles": 2,
+  "edition": 6,
+  "matched": 0,
+  "changed": 0,
+  "missing": 2,
+  "extra": 6,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-?",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?"
+  ],
+  "detail": [
+   "105:1 MISSING",
+   "105:2 MISSING"
+  ]
+ },
+ "106": {
+  "charles": 19,
+  "edition": 11,
+  "matched": 0,
+  "changed": 0,
+  "missing": 19,
+  "extra": 11,
+  "extra_from": [
+   "ed1<-?",
+   "ed2<-18:2",
+   "ed3<-18:5",
+   "ed4<-18:6",
+   "ed5<-18:7",
+   "ed6<-18:8",
+   "ed7<-18:9",
+   "ed8<-18:12",
+   "ed9<-18:14",
+   "ed10<-18:15",
+   "ed11<-18:16"
+  ],
+  "detail": [
+   "106:1 MISSING",
+   "106:2 MISSING",
+   "106:3 MISSING",
+   "106:4 MISSING",
+   "106:5 MISSING",
+   "106:6 MISSING",
+   "106:7 MISSING",
+   "106:8 MISSING",
+   "106:9 MISSING",
+   "106:10 MISSING",
+   "106:11 MISSING",
+   "106:12 MISSING",
+   "106:13 MISSING",
+   "106:14 MISSING",
+   "106:15 MISSING",
+   "106:16 MISSING",
+   "106:17 MISSING",
+   "106:18 MISSING",
+   "106:19 MISSING"
+  ]
+ },
+ "107": {
+  "charles": 3,
+  "edition": 10,
+  "matched": 0,
+  "changed": 0,
+  "missing": 3,
+  "extra": 10,
+  "extra_from": [
+   "ed1<-106:5",
+   "ed2<-106:6",
+   "ed3<-?",
+   "ed4<-?",
+   "ed5<-?",
+   "ed6<-?",
+   "ed7<-?",
+   "ed8<-?",
+   "ed9<-?",
+   "ed10<-?"
+  ],
+  "detail": [
+   "107:1 MISSING",
+   "107:2 MISSING",
+   "107:3 MISSING"
+  ]
+ },
+ "108": {
+  "charles": 15,
+  "edition": 17,
+  "matched": 1,
+  "changed": 3,
+  "missing": 11,
+  "extra": 13,
+  "extra_from": [
+   "ed5<-100:1",
+   "ed6<-100:2",
+   "ed7<-100:3",
+   "ed8<-100:4",
+   "ed9<-100:5",
+   "ed10<-100:6",
+   "ed11<-100:7",
+   "ed12<-100:8",
+   "ed13<-100:9",
+   "ed14<-100:10",
+   "ed15<-100:11",
+   "ed16<-100:12",
+   "ed17<-100:13"
+  ],
+  "detail": [
+   "108:2~ed2 (0.73)",
+   "108:3~ed3 (0.84)",
+   "108:4 MISSING",
+   "108:5 MISSING",
+   "108:6~ed4 (0.74)",
+   "108:7 MISSING",
+   "108:8 MISSING",
+   "108:9 MISSING",
+   "108:10 MISSING",
+   "108:11 MISSING",
+   "108:12 MISSING",
+   "108:13 MISSING",
+   "108:14 MISSING",
+   "108:15 MISSING"
+  ]
+ }
+}

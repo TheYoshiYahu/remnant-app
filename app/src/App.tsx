@@ -252,7 +252,10 @@ function ThemeToggle() {
 // one giant run-on paragraph.
 const paragraphStarts = paragraphStartsData as Record<string, Record<string, number[]>>;
 
-// S232 — apocrypha de-duplication. Two apocrypha editions are live: the KJV
+// S455 — the `apocrypha-charles-vol1` edition was RETIRED (OCR text) and its one clean
+// book, 3 Maccabees, moved into `pseudepigrapha`; this filter now only matters if the
+// S455 FK scan KEPT a referenced Charles-vol1 book in the DB.
+// S232 — apocrypha de-duplication. Two apocrypha editions were live: the KJV
 // 1611 `apocrypha` edition and the Charles-1913 `apocrypha-charles-vol1`
 // edition. They overlap on every book except 3 Maccabees (Charles-only) and
 // 2 Esdras (KJV-only), so the reader was listing two Tobits / Judiths /

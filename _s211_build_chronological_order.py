@@ -154,7 +154,7 @@ SEGMENTS = [
    ("apocrypha", "the-prayer-of-manasseh", 1, None, None),
    ("apocrypha", "1-maccabees", 1, None, "The Maccabean revolt"),
    ("apocrypha", "2-maccabees", 1, None, None),
-   ("apocrypha-charles-vol1", "3-maccabees", 1, None, None),
+   ("pseudepigrapha", "3-maccabees", 1, None, None),
    ("pseudepigrapha", "4-maccabees", 1, None, None),
    ("apocrypha", "2-esdras", 1, None, "4 Ezra — apocalyptic visions"),
  ]),

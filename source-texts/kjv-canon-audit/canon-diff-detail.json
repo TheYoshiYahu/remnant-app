@@ -1,0 +1,79 @@
+{
+ "psalms": [
+  "81:3 (0.93) - up - in + at + dark",
+  "119:8 (0.93) + ב + beth",
+  "119:16 (0.94) + ג + gimel",
+  "119:24 (0.92) + ד + daleth",
+  "119:32 (0.97) + ה + he",
+  "119:40 (0.96) + ו + vau",
+  "119:48 (0.97) + ז + zain",
+  "119:56 (0.90) + ח + cheth",
+  "119:64 (0.94) + ט + teth",
+  "119:72 (0.96) + י + jod",
+  "119:80 (0.94) + כ + caph",
+  "119:88 (0.95) + ל + lamed",
+  "119:96 (0.96) + מ + mem",
+  "119:104 (0.96) + נ + nun",
+  "119:112 (0.94) + ס + samech",
+  "119:120 (0.96) + ע + ain",
+  "119:128 (0.97) + פ + pe",
+  "119:136 (0.94) + צ + tzaddi",
+  "119:144 (0.96) + ק + koph",
+  "119:152 (0.96) + ר + resh",
+  "119:160 (0.96) + ש + schin",
+  "119:168 (0.96) + ת + tau"
+ ],
+ "amos": [
+  "3:7 (0.86) + does - will - do - but - he - revealeth + without + first + revealing"
+ ],
+ "romans": [
+  "15:30 (0.98) - lord + the",
+  "16:27 (0.57) + written + to + the + romans + from + corinthus + and + sent + by + phebe + servant + of + the + church + at + cenchrea"
+ ],
+ "1-corinthians": [
+  "16:24 (0.43) + the + first + epistle + to + the + corinthians + was + written + from + philippi + by + stephanas + and + fortunatus +"
+ ],
+ "2-corinthians": [
+  "13:14 (0.68) + the + second + epistle + to + the + corinthians + was + written + from + philippi + a + city + of + macedonia + by + t"
+ ],
+ "galatians": [
+  "6:18 (0.79) + unto + the + galatians + written + from + rome"
+ ],
+ "ephesians": [
+  "6:24 (0.75) + written + from + rome + unto + the + ephesians + by + tychicus"
+ ],
+ "philippians": [
+  "4:23 (0.65) + it + was + written + to + the + philippians + from + rome + by + epaphroditus"
+ ],
+ "colossians": [
+  "4:18 (0.72) + written + from + rome + to + the + colossians + by + tychicus + and + onesimus"
+ ],
+ "1-thessalonians": [
+  "5:28 (0.61) + the + first + epistle + unto + the + thessalonians + was + written + from + athens"
+ ],
+ "2-thessalonians": [
+  "3:18 (0.63) + the + second + epistle + to + the + thessalonians + was + written + from + athens"
+ ],
+ "1-timothy": [
+  "6:21 (0.62) + the + first + to + timothy + was + written + from + laodicea + which + is + the + chiefest + city + of + phrygia + pac"
+ ],
+ "2-timothy": [
+  "4:22 (0.42) + the + second + epistle + unto + timotheus + ordained + the + first + bishop + of + the + church + of + the + ephesians"
+ ],
+ "titus": [
+  "3:15 (0.64) + it + was + written + to + titus + ordained + the + first + bishop + of + the + church + of + the + cretians + from + n"
+ ],
+ "philemon": [
+  "1:25 (0.69) + written + from + rome + to + philemon + by + onesimus + a + servant"
+ ],
+ "hebrews": [
+  "13:25 (0.54) + written + to + the + hebrews + from + italy + by + timothy"
+ ],
+ "1-john": [
+  "3:4 (0.64) - whosoever - committeth + everyone + who + goes + on + sinning + is + living - sin + in + lawlessness - transgresseth -",
+  "3:5 (0.77) - ye + you - manifested + revealed - away + away + there + at + all",
+  "3:6 (0.58) - whosoever - abideth + no + one + who + remains - sinneth - not + goes + on + sinning - whosoever + whoever - sinneth -",
+  "3:7 (0.72) + do + not + anyone + lead - no - man - deceive - he - that - doeth + astray + whoever + practices - even + just",
+  "3:8 (0.70) - he - that - committeth - sin - is - of + whoever + goes + on + sinning + belongs + to - sinneth + has + been + sinning"
+ ]
+}

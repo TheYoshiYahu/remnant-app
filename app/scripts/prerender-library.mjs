@@ -42,7 +42,7 @@ const VOICE = "am_michael"; // the default natural voice in the app
 const SAMPLE_VERSES = 5; // mirrors app/src/lib/recordedAudio.ts
 const CONCURRENCY = 6;
 
-// Same display filters as the reader (app/src/App.tsx): the Charles-vol1
+// Same display filters as the reader (app/src/App.tsx): the (retired, S455) Charles-vol1
 // apocrypha duplicates and Barnabas are not shown, so they are not published.
 function isSuppressed(b) {
   if (b.edition_slug === "apocrypha-charles-vol1" && b.slug !== "3-maccabees") return true;

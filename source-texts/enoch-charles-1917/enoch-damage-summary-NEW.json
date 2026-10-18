@@ -1,0 +1,1090 @@
+{
+ "1": {
+  "charles": 9,
+  "edition": 9,
+  "matched": 9,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "2": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "3": {
+  "charles": 1,
+  "edition": 1,
+  "matched": 1,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "4": {
+  "charles": 1,
+  "edition": 1,
+  "matched": 1,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "5": {
+  "charles": 9,
+  "edition": 9,
+  "matched": 9,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "6": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "7": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "8": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "9": {
+  "charles": 11,
+  "edition": 11,
+  "matched": 11,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "10": {
+  "charles": 22,
+  "edition": 22,
+  "matched": 22,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "11": {
+  "charles": 2,
+  "edition": 2,
+  "matched": 2,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "12": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "13": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "14": {
+  "charles": 25,
+  "edition": 25,
+  "matched": 25,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "15": {
+  "charles": 12,
+  "edition": 12,
+  "matched": 12,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "16": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "17": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "18": {
+  "charles": 16,
+  "edition": 16,
+  "matched": 16,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "19": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "20": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "21": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "22": {
+  "charles": 14,
+  "edition": 14,
+  "matched": 14,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "23": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "24": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "25": {
+  "charles": 7,
+  "edition": 7,
+  "matched": 7,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "26": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "27": {
+  "charles": 5,
+  "edition": 5,
+  "matched": 5,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "28": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "29": {
+  "charles": 2,
+  "edition": 2,
+  "matched": 2,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "30": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "31": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "32": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "33": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "34": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "35": {
+  "charles": 1,
+  "edition": 1,
+  "matched": 1,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "36": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "37": {
+  "charles": 5,
+  "edition": 5,
+  "matched": 5,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "38": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "39": {
+  "charles": 14,
+  "edition": 14,
+  "matched": 14,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "40": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "41": {
+  "charles": 9,
+  "edition": 9,
+  "matched": 9,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "42": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "43": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "44": {
+  "charles": 1,
+  "edition": 1,
+  "matched": 1,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "45": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "46": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "47": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "48": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "49": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "50": {
+  "charles": 5,
+  "edition": 5,
+  "matched": 5,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "51": {
+  "charles": 5,
+  "edition": 5,
+  "matched": 5,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "52": {
+  "charles": 9,
+  "edition": 9,
+  "matched": 9,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "53": {
+  "charles": 7,
+  "edition": 7,
+  "matched": 7,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "54": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "55": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "56": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "57": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "58": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "59": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "60": {
+  "charles": 24,
+  "edition": 24,
+  "matched": 24,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "61": {
+  "charles": 13,
+  "edition": 13,
+  "matched": 13,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "62": {
+  "charles": 16,
+  "edition": 16,
+  "matched": 16,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "63": {
+  "charles": 12,
+  "edition": 12,
+  "matched": 12,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "64": {
+  "charles": 2,
+  "edition": 2,
+  "matched": 2,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "65": {
+  "charles": 12,
+  "edition": 12,
+  "matched": 12,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "66": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "67": {
+  "charles": 13,
+  "edition": 13,
+  "matched": 13,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "68": {
+  "charles": 5,
+  "edition": 5,
+  "matched": 5,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "69": {
+  "charles": 29,
+  "edition": 29,
+  "matched": 29,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "70": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "71": {
+  "charles": 17,
+  "edition": 17,
+  "matched": 17,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "72": {
+  "charles": 37,
+  "edition": 37,
+  "matched": 37,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "73": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "74": {
+  "charles": 17,
+  "edition": 17,
+  "matched": 13,
+  "changed": 2,
+  "missing": 2,
+  "extra": 2,
+  "extra_from": [
+   "ed8<-?",
+   "ed11<-74:11"
+  ],
+  "detail": [
+   "74:5 MISSING",
+   "74:8 MISSING",
+   "74:11~ed5 (0.76)",
+   "74:15~ed15 (0.82)"
+  ]
+ },
+ "75": {
+  "charles": 9,
+  "edition": 9,
+  "matched": 9,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "76": {
+  "charles": 14,
+  "edition": 14,
+  "matched": 14,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "77": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "78": {
+  "charles": 17,
+  "edition": 17,
+  "matched": 17,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "79": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "80": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "81": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "82": {
+  "charles": 20,
+  "edition": 20,
+  "matched": 20,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "83": {
+  "charles": 11,
+  "edition": 11,
+  "matched": 11,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "84": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "85": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "86": {
+  "charles": 6,
+  "edition": 6,
+  "matched": 6,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "87": {
+  "charles": 4,
+  "edition": 4,
+  "matched": 4,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "88": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "89": {
+  "charles": 77,
+  "edition": 77,
+  "matched": 77,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "90": {
+  "charles": 42,
+  "edition": 42,
+  "matched": 42,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "91": {
+  "charles": 19,
+  "edition": 19,
+  "matched": 19,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "92": {
+  "charles": 5,
+  "edition": 5,
+  "matched": 5,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "93": {
+  "charles": 14,
+  "edition": 14,
+  "matched": 14,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "94": {
+  "charles": 11,
+  "edition": 11,
+  "matched": 11,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "95": {
+  "charles": 7,
+  "edition": 7,
+  "matched": 7,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "96": {
+  "charles": 8,
+  "edition": 8,
+  "matched": 8,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "97": {
+  "charles": 10,
+  "edition": 10,
+  "matched": 10,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "98": {
+  "charles": 16,
+  "edition": 16,
+  "matched": 16,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "99": {
+  "charles": 16,
+  "edition": 16,
+  "matched": 16,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "100": {
+  "charles": 13,
+  "edition": 13,
+  "matched": 13,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "101": {
+  "charles": 9,
+  "edition": 9,
+  "matched": 9,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "102": {
+  "charles": 11,
+  "edition": 11,
+  "matched": 11,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "103": {
+  "charles": 15,
+  "edition": 15,
+  "matched": 15,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "104": {
+  "charles": 13,
+  "edition": 13,
+  "matched": 13,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "105": {
+  "charles": 2,
+  "edition": 2,
+  "matched": 2,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "106": {
+  "charles": 19,
+  "edition": 19,
+  "matched": 19,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "107": {
+  "charles": 3,
+  "edition": 3,
+  "matched": 3,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ },
+ "108": {
+  "charles": 15,
+  "edition": 15,
+  "matched": 15,
+  "changed": 0,
+  "missing": 0,
+  "extra": 0,
+  "extra_from": [],
+  "detail": []
+ }
+}

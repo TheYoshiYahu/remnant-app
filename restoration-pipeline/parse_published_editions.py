@@ -179,7 +179,7 @@ def split_verses(
 
     # Permissive boundary match. Number preceded by start-of-string or whitespace,
     # followed by `. ` or whitespace. Monotonic filter below picks the real ones.
-    boundary_re = re.compile(r"(?:^|\s)(\d+)(?:\.\s+|\s+)")
+    boundary_re = re.compile(r"(?<!\S)(\d+)(?:\.\s+|\s+)")   # S449: lookbehind, so a number ending the previous verse ('...are 80. 17 And') no longer swallows the next marker's leading space
     matches = list(boundary_re.finditer(flattened))
 
     verses: List[Verse] = []

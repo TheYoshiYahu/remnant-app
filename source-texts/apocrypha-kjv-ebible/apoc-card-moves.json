@@ -1,0 +1,154 @@
+{
+ "moves": [
+  {
+   "te": "canon",
+   "tb": "esther",
+   "tc": 9,
+   "tv": 1,
+   "new_v": 6,
+   "cites": [
+    6
+   ],
+   "how": "note cites The Rest of Esther 10:6"
+  },
+  {
+   "te": "canon",
+   "tb": "genesis",
+   "tc": 50,
+   "tv": 20,
+   "new_v": 5,
+   "cites": [
+    5
+   ],
+   "how": "note cites The Rest of Esther 10:5"
+  },
+  {
+   "te": "canon",
+   "tb": "romans",
+   "tc": 8,
+   "tv": 28,
+   "new_v": 5,
+   "cites": [
+    5
+   ],
+   "how": "note cites The Rest of Esther 10:5"
+  },
+  {
+   "te": "canon",
+   "tb": "exodus",
+   "tc": 17,
+   "tv": 8,
+   "new_v": 7,
+   "cites": [
+    7
+   ],
+   "how": "note cites The Rest of Esther 10:7"
+  },
+  {
+   "te": "canon",
+   "tb": "deuteronomy",
+   "tc": 25,
+   "tv": 17,
+   "new_v": 8,
+   "cites": [
+    8
+   ],
+   "how": "note cites The Rest of Esther 10:8"
+  },
+  {
+   "te": "canon",
+   "tb": "deuteronomy",
+   "tc": 25,
+   "tv": 19,
+   "new_v": 8,
+   "cites": [
+    8
+   ],
+   "how": "note cites The Rest of Esther 10:8"
+  },
+  {
+   "te": "canon",
+   "tb": "psalms",
+   "tc": 124,
+   "tv": 1,
+   "new_v": 9,
+   "cites": [
+    9
+   ],
+   "how": "note cites The Rest of Esther 10:9"
+  },
+  {
+   "te": "canon",
+   "tb": "psalms",
+   "tc": 124,
+   "tv": 3,
+   "new_v": 9,
+   "cites": [
+    9
+   ],
+   "how": "note cites The Rest of Esther 10:9"
+  },
+  {
+   "te": "canon",
+   "tb": "isaiah",
+   "tc": 54,
+   "tv": 17,
+   "new_v": 9,
+   "cites": [
+    9
+   ],
+   "how": "note cites The Rest of Esther 10:9"
+  },
+  {
+   "te": "canon",
+   "tb": "matthew",
+   "tc": 25,
+   "tv": 32,
+   "new_v": 11,
+   "cites": [
+    11
+   ],
+   "how": "note cites The Rest of Esther 10:11"
+  },
+  {
+   "te": "canon",
+   "tb": "leviticus",
+   "tc": 23,
+   "tv": 4,
+   "new_v": 13,
+   "cites": [
+    13
+   ],
+   "how": "note cites The Rest of Esther 10:13"
+  },
+  {
+   "te": "canon",
+   "tb": "esther",
+   "tc": 9,
+   "tv": 22,
+   "new_v": 13,
+   "cites": [
+    13
+   ],
+   "how": "note cites The Rest of Esther 10:13"
+  }
+ ],
+ "anchors": {
+  "rest-of-esther-10-the-dream-interpreted-hidden-hand": [
+   5,
+   6
+  ],
+  "rest-of-esther-10-two-dragons-seed-war-amalek": [
+   7,
+   8
+  ],
+  "rest-of-esther-10-cried-to-yahuah-and-were-saved": [
+   9,
+   9
+  ],
+  "rest-of-esther-10-two-lots-day-of-judgment-feast": [
+   11,
+   13
+  ]
+ }
+}

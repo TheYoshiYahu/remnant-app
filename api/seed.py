@@ -193,7 +193,8 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
     #   3. 2-enoch          (2 Enoch, The Book of the Secrets of Enoch)
     #   4. 2-baruch         (2 Baruch, The Syriac Apocalypse)
     #   5. 3-baruch         (3 Baruch, The Greek Apocalypse)
-    #   6. 4-maccabees      (4 Maccabees)
+    #   6. 3-maccabees      (3 Maccabees — moved here S455 from the retired Charles vol 1 edition)
+    #   7. 4-maccabees      (4 Maccabees)
     #
     # Removed from the original W-3 set by Yoshi decisions S32 / S32-second
     # (authoritative book list: parse_pseudepigrapha_edition.py:BOOKS_IN_ORDER):
@@ -240,46 +241,11 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "sort_offset": 360,
         "pipeline_version": "phase4-v2",
     },
-    # Apocrypha (Charles 1913 vol 1) — W-2 wire-up landed session 27,
-    # 2026-05-11. NEW edition `apocrypha-charles-vol1` per the session-25
-    # Yoshi Decision §1 (clean parallel to vol 2's pattern). 15 labeled
-    # books — 1 Esdras, 1/2/3 Maccabees, Tobit, Judith, Sirach, Wisdom of
-    # Solomon, 1 Baruch, Epistle of Jeremy, Prayer of Manasses, Song of
-    # Three (kept combined per session-26 Yoshi decision), Susanna, Bel
-    # and the Dragon, Additions to Esther. All 15 books overlap with the
-    # existing wired `apocrypha` edition (Brenton 1851 + KJV-1611 base)
-    # EXCEPT 3 Maccabees which is net-new to the pipeline. 4 Ezra is NOT
-    # in vol 1 (Charles transferred it to vol 2 per the preface; the
-    # existing apocrypha edition's 2 Esdras already carries the Bensly
-    # inline-restoration from vol 2's Box translation, session 23).
-    # `apocrypha` witness_category already in schema.sql; no enum
-    # extension needed. sort_offset=220 (was 550 from W-2 wire-up) —
-    # re-sequenced S152 Wheel #2b so this edition lands inside the
-    # apocrypha block, immediately after the KJV-1611 apocrypha
-    # (sort_offset 200, books at 201..214). With the new sort_offset
-    # and seed.py's start=1 enumeration (insert call at line 557),
-    # Charles vol 1's books now land at 221, 222, 223, ... — adjacent
-    # to the KJV-1611 apocrypha. Pre-S152, the 550 placement put
-    # Charles vol 1's books AFTER josephus (sort_offset 400, books
-    # at 401..430), so searches surfaced Sirach from this edition
-    # after Antiquities even though the PWA picker grouped both
-    # apocrypha editions together. The re-sequencing closes the
-    # dropdown-vs-search disagreement S151 caught on
-    # `righteous man fall seven times`. Live-DB re-sequencing
-    # migration: session152_resequence_extras_canonical_order.sql.
-    # Clean-DB rebuilds via seed.py now produce the in-block layout
-    # directly. pipeline_version=phase4-v2 unchanged from the
-    # original wire-up. Slug, granularity, edition title, and 15-book
-    # boundary all locked in _CHARLES_VOL1_BOUNDARIES.md Decisions
-    # §1–§7 (sessions 25–27); only the sort_offset moved in S152.
-    "apocrypha-charles-vol1": {
-        "title": "The Apocrypha (Charles 1913) — Restored Names Edition",
-        "public_domain_base": "Charles 1913 vol 1",
-        "witness_category": "apocrypha",
-        "tier_required": "extras",
-        "sort_offset": 220,
-        "pipeline_version": "phase4-v2",
-    },
+    # `apocrypha-charles-vol1` (Charles 1913 vol 1, tesseract OCR) was RETIRED in S455
+    # (2026-10-17): 37% of verse numbers absent, 36% of rows OCR garbage (S454 audit).
+    # Its one clean book, 3 Maccabees (= Brenton 1851 text, verified by content S455),
+    # now lives in the `pseudepigrapha` edition before 4 Maccabees. Live DB:
+    # data-schema/migrations/session455_retire_charles_vol1.sql (ids unchanged).
     # 2026-05-12. NEW edition `mrjames-apocryphal-nt` — session 29 pilot
     # extraction of Montague Rhodes James, *The Apocryphal New Testament*
     # (Oxford, Clarendon Press, 1924). Pilot scope: 11 books (Gospels /
@@ -465,7 +431,6 @@ JSON_FILE_FOR_EDITION = {
     "jasher": "jasher.json",
     "josephus": "josephus.json",
     "pseudepigrapha": "pseudepigrapha-charles-vol2.json",
-    "apocrypha-charles-vol1": "apocrypha-charles-vol1.json",
     "mrjames-apocryphal-nt": "mrjames-apocryphal-nt.json",
     "lightfoot-apostolic-fathers": "lightfoot-apostolic-fathers.json",
     "ascension-isaiah": "ascension-isaiah.json",

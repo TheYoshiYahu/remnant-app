@@ -1,0 +1,31 @@
+old	new	score	runner-up	target	Jasher half of the note
+7:18	7:19	0.44	(51, 0.22)	canon/genesis 10:25	Jasher 7:18 gives the same Peleg, so named because in his days the earth was divided.
+7:18	7:48	0.1	(46, 0.1)	canon/genesis 10:32	The whole genealogy of Jasher 7 is the dividing of the nations after the flood the canon seals here.
+7:18	7:49	0.12	(45, 0.12)	canon/deuteronomy 32:8	The dividing in Peleg's day was the Most High apportioning the nations their inheritance.
+7:18	7:48	0.08	(46, 0.08)	canon/acts 17:26	Paul preaches the same truth Jasher 7 narrates — one blood, the bounds of the nations' habitation set.
+7:18	7:19	0.4	(51, 0.2)	jubilees/jubilees 8:8	The live Jubilees apparatus names the same Peleg born when the earth was divided.
+7:18	7:49	0.25	(48, 0.25)	canon/genesis 10:8	Jasher 7:18's Nimrod, son of Cush, grown mighty in the earth, is the very figure the canon introduces here.
+7:18	7:44	0.25	(45, 0.17)	canon/genesis 10:10	Jasher 7:18 names Nimrod's city Shinar and his great kingdom — the canon's land of Shinar, the beginning of his rebel rule.
+7:18	7:46	0.4	(45, 0.4)	canon/genesis 11:1	Jasher 7:18's earth of one tongue gathered under Nimrod is the Babel generation of one language.
+7:18	7:45	0.14	(44, 0.14)	canon/micah 5:6	The prophet still calls the kingdom-of-man Nimrod built 'the land of Nimrod' — the rebel power undone in the deliverance.
+7:18	7:45	0.33	(43, 0.25)	jubilees/jubilees 10:19	The live Jubilees apparatus tells the same city and tower at Shinar that Jasher 7:18 narrates under Nimrod.
+7:18	7:23	0.25	(50, 0.12)	canon/genesis 5:24	Jasher 7:18's Enoch 'taken up to Elohim' is the canon's Enoch whom God took.
+7:18	7:25	0.36	(30, 0.18)	canon/hebrews 11:5	The witness names the same translation Jasher 7:18 recalls when Enoch was taken up and passed the garments on.
+7:18	7:51	0.46	(22, 0.23)	canon/genesis 11:26	Jasher 7:18 records the same Terah, seventy years old, begetting Abram — the called seed entering the story.
+7:18	7:51	0.27	(43, 0.13)	canon/joshua 24:2	Abram born to Terah inside Nimrod's idolatrous Shinar is the seed called out from fathers who served other gods.
+9:7	9:7	0.2	(26, 0.1)	canon/joshua 24:2	the canon names Terah the idolater exactly as Jasher does — the first of the idol-servers (Jasher 9:7).
+9:7	9:17	0.27	(19, 0.2)	canon/deuteronomy 4:19	Moses forbids the host-of-heaven worship that Abram reasons his way out of, finding sun and moon are servants, not gods (Jasher 9:7).
+9:7	9:35	0.25	(38, 0.17)	jubilees/jubilees 12:17	Jubilees records the same reasoning — Abram turning from the host of heaven to the One in whose hand they are (Jasher 9:7).
+20:13	20:23	0.25	(14, 0.25)	canon/genesis 20:7	The canon's warning behind the angel of Jasher 20:13 who would slay the king lest he restore the wife.
+20:13	20:23	0.36	(19, 0.36)	canon/genesis 12:17	The Egypt precedent the servants recall within Jasher 20:13's record to urge the king to restore Sarah.
+20:13	20:30	0.25	(25, 0.25)	canon/genesis 12:18	Pharaoh's rebuke, mirrored when Abimelech likewise calls Abraham to account within Jasher 20:13's record.
+20:13	20:28	0.2	(30, 0.1)	canon/genesis 20:17	The healing intercession that closes Jasher 20's record — the prophet's prayer lifts the plague from the land.
+
+threads anchored on a blob verse:
+jasher-7-peleg-the-earth-divided	(7, 18)→(7, 18)	Peleg — the nations divided in their lands and tongues
+jasher-7-nimrod-shinar-kingdom-of-man	(7, 18)→(7, 18)	Nimrod — the mighty hunter, Shinar, the kingdom of man
+jasher-7-garments-enoch-terah-abram	(7, 18)→(7, 18)	Adam's garments, Enoch translated, and the birth of Abram
+jasher-9-the-generation-serves-gods-of-wood-and-stone	(9, 6)→(9, 7)	The generation serves gods of wood and stone
+jasher-9-abram-reasons-from-the-sun-and-moon-to-the-creator	(9, 7)→(9, 7)	Abram reasons from the sun and moon to the Creator
+jasher-20-dream-angel-drawn-sword	(20, 12)→(20, 13)	The dream by night — the angel with the drawn sword
+jasher-20-pharaoh-precedent-and-healing	(20, 13)→(20, 13)	The Pharaoh precedent recalled, and Abraham's prayer heals the land
