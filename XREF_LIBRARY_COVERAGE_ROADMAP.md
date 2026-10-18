@@ -124,3 +124,27 @@ means a back-fill can re-run safely over the already-merged canon rows.
   Mac Terminal** (apply AFTER the S181 + S194 canon baselines, which the reader still needs per
   the S214 diagnosis). This closes the NT-to-NT authoring gap; it does not itself close the
   S181/S194 apply gap (that is the Mac step).
+
+- **2026-10-18 (S456) — GENERAL MAP, from the migration folder (the live DB not read this session):**
+  - *Covered — canon:* every one of the 66 books has at least one cross-reference migration (S110–S156 Matthew;
+    S181–S194 Gospel/Romans/Galatians/Revelation baselines; S216 John NT↔NT; S217–S245 Acts + every epistle +
+    Revelation; S260 depth passes on the four Gospels, Acts, 1 Corinthians; S301–S346 the whole Tanakh, Genesis
+    to Ruth). `_xref_audit.py`: every post-S194 file is FULL-LIBRARY; the 8 FAILs are the early S181/183/184/185/
+    S194 baselines, superseded for extras by S212/S216 (Gospels) and S219/S223/S224 (Romans, Galatians,
+    Revelation) but never retired, so the guard still fails on them.
+  - *Covered — extras as source:* 1 Enoch (S250), Jubilees (S251), Jasher (S252), all 14 KJV Apocrypha books +
+    1 & 2 Adam-Eve + Apocalypse of Abraham + Sonnini + 1 Clement (S253), Ascension of Isaiah (S403), 3 Baruch,
+    2 Enoch, 2 Baruch, Testaments XII, 4 Maccabees, Adam-Eve (S410–S415), 3 Maccabees (S417).
+  - *Not covered, by rule:* Josephus, Lightfoot (beyond 1 Clement), M.R. James — historical witnesses, one-way,
+    deferred from V1 (M.R. James edition deleted S352).
+  - *Not known from files:* which migrations are applied live (June entries say S181/S194/S216 were pending), and
+    the live card totals — a read-back from the Mac is step 1 of the detail work.
+  - *The real job now is not coverage, it is fidelity:* the S449–S455 audits changed the texts the cards quote.
+    1 Enoch: 796 cards quote the old (invented/misplaced) verse + 87 reworded, 138 moved, 278 retired
+    (enoch-citation-sweep.md, enoch-verse-status.json); Jubilees 102 moved / 97 "no evidence"
+    (jub-card-sort-report.md); Apocrypha 12 moved; canon fix changes no verse numbers. Yoshi's order (Oct 14):
+    "recheck all cross references" = read every card's quoted words against the now-faithful text, Enoch first.
+  - *Still open from June:* thematic right-hand/face-east extras targets (S184); S212 John 13–17 Testaments XII
+    rows vs the clean re-parse (S214 held the JSON swap behind a CCEL gate — S413 later authored Testaments XII
+    cards; confirm which parse is live); the John canon render (S214: apply S181+S194 from the Mac).
+

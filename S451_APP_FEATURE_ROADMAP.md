@@ -17,7 +17,8 @@ session, deploy each as it lands (publish-then-edit). Tick as shipped.
 - [x] Jubilees audited by content (S453): faithful text, 243 merged rows split → 1,307; deploy script staged (S446_SESSION_HANDOFF.md).
 - [x] Apocrypha KJV edition audited by content (S454): faithful; Esther 10 split + 3 small fixes staged (deploy script in S446_SESSION_HANDOFF.md).
 - [x] apocrypha-charles-vol1 retired (S455): 3 Maccabees verified 228/228 vs Brenton 1851 and moved into pseudepigrapha (ids kept, all cards survive); deploy script _session455_deploy.sh waits on Yoshi (S446_SESSION_HANDOFF.md, S455).
-- [ ] canon (KJV) — audited S455 (source-texts/kjv-canon-audit/): faithful, 31,102/31,102; fix for the 5 items (Psalm titles, Ps 119 letters, epistle subscriptions, 7 rewordings, 1 echo) waits on Yoshi's word — S446_SESSION_HANDOFF.md S455b.
+- [x] canon (KJV) — audited S455 (source-texts/kjv-canon-audit/): faithful, 31,102/31,102. Fix BUILT S456 (Psalm titles → chapter_title, Ps 119 acrostic, 14 subscriptions → JSON footnote, Rom 15:30; Amos 3:7 / 1 John 3:4–8 / Ps 81:3 kept as Yoshi's renderings, registered); canon.json fixed in place, re-diffed 0 differ; `_session456_deploy.sh` waits on Yoshi (S446_SESSION_HANDOFF.md S456). Audio for 15 chapters queued (voices lane).
+- [ ] Next audits (scorecard row 5): pseudepigrapha (Charles vol 2), adam-eve-conflict, apocalypse-of-abraham, ascension-isaiah, sonnini-acts-29 — after cross-references, by Yoshi's order.
 
 ## Pinned — growth (free)
 - [x] **The library on Google** (S452): every chapter of every book is a real page at /library/<book>/<n>/ — canon in full, extras as the FIRST PARAGRAPH only (Yoshi 2026-10-16: never the full extras text, on the web or in the app), then the taste → trial. Sitemap + titles like "Enoch 7 — Restored Names Edition". Sitemap still to be submitted in Search Console (steps in S452_SESSION_HANDOFF.md).

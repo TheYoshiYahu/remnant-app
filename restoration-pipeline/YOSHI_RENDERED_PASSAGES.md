@@ -148,7 +148,7 @@ In Deuteronomy 32:8, El Elyon (most High) is shown setting the bounds of the nat
 
 ---
 
-### Psalm 81:3 — the dark / concealed moon
+### Psalm 81 (81:3 only) — LANDED 2026-10-17 (S455b canon fix; the dark / concealed moon)
 
 **Reference:** Psalm 81:3 (and downstream feast-calendar passages affected by the same Hebrew word).
 
@@ -158,15 +158,53 @@ In Deuteronomy 32:8, El Elyon (most High) is shown setting the bounds of the nat
 
 This matters for the entire feast calendar. If the new moon is reckoned at the dark moon (concealment), the feast cycle starts ~1-2 days earlier than rabbinic reckoning would have it. Yoshi's framework holds the dark moon as the correct reckoning per the Hebrew root.
 
-**Yoshi rendering (DRAFT):**
+**Yoshi rendering — LANDED (the text that has been live in the app; flagged source_type yoshi-rendering in parsed/canon.json at S456):**
 
-For Psalm 81:3, render something like: *Blow up the trumpet at the new moon, at the moon's concealment, on our solemn feast day.* The doubled phrase (*new moon* and *moon's concealment*) preserves both the standard understanding of *new moon* as a temporal marker and the literal force of *keseh* as the concealment that defines which day the new moon falls on.
+81:3 — Blow the trumpet at the dark new moon, in the time appointed, on our solemn feast day.
+
+Earlier draft wording (superseded): *Blow up the trumpet at the new moon, at the moon's concealment, on our solemn feast day.* The doubled phrase (*new moon* and *moon's concealment*) preserves both the standard understanding of *new moon* as a temporal marker and the literal force of *keseh* as the concealment that defines which day the new moon falls on.
 
 **Footnote (DRAFT):**
 
 > *The Hebrew word here, keseh, shares its root with kasah, "to cover, to conceal." The literal force is "the concealed moon" — the dark moon at astronomical conjunction, when no moon is visible. Translators have rendered this variously as "new moon," "full moon," or "appointed time" based on context-guessing, but the underlying word names the concealment itself. This matters for how the new month is reckoned: at the dark moon (concealment) versus at the first visible sliver. The Hebrew root favors concealment. Other Restored Names Editions have noted the same.*
 
-**Status:** DRAFT — pending Yoshi's review of the specific English wording before it lands in the pipeline.
+**Status:** LANDED 2026-10-17 (Yoshi's word, S455b canon audit, item 4). The rendering above is the live app text; S456 flagged it source_type yoshi-rendering in parsed/canon.json so the content audit lists it as a deliberate rendering, not a drift. The footnote above is still DRAFT wording — nothing in the app renders footnotes yet.
+
+---
+
+### Amos 3 (3:7 only) — LANDED 2026-10-17 (S455b canon fix)
+
+**Reference:** Amos 3:7. Yoshi's rendering covers v.7 only; every other verse in Amos 3 is the standard restored KJV.
+
+**Standard reading.** The KJV reads: *Surely the Lord GOD will do nothing, but he revealeth his secret unto his servants the prophets.*
+
+**Why it is registered.** The S455 content audit of the canon (source-texts/kjv-canon-audit/) found this verse worded differently from the KJV and not registered here. Yoshi (Oct 17, 2026): it is his own rendering — keep it. Registered so the audit's diff reads it as a deliberate rendering, not a drift. The sense is the KJV's, stated positively: the prophets are told first.
+
+**Yoshi rendering — LANDED.**
+
+3:7 — Surely Adonai Yahuah (the Lord GOD) does nothing without first revealing his secret unto his servants the prophets.
+
+**Status:** LANDED 2026-10-17. Live in the app; source_type yoshi-rendering in parsed/canon.json (S456). No footnote yet.
+
+---
+
+### 1 John 3 (3:4–8 only) — LANDED 2026-10-17 (S455b canon fix)
+
+**Reference:** 1 John 3:4, 5, 6, 7, 8. Yoshi's rendering covers these five verses; the rest of 1 John 3 is the standard restored KJV.
+
+**Standard reading.** The KJV reads: *4 Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law. 5 And ye know that he was manifested to take away our sins; and in him is no sin. 6 Whosoever abideth in him sinneth not: whosoever sinneth hath not seen him, neither known him. 7 Little children, let no man deceive you: he that doeth righteousness is righteous, even as he is righteous. 8 He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of God was manifested, that he might destroy the works of the devil.*
+
+**Why it is registered.** Found by the S455 content audit as unregistered rewording. Yoshi (Oct 17, 2026): these are his own renderings — keep them. The audit's note for the record: *goes on sinning* is the continuous-aspect reading of the Greek present; it must be read with 1 John 2:3–4 (the 1234 of truth) and v.4's own definition — *sin is the transgression of the law* — so that it never becomes a license for "occasional" lawlessness. Yoshi is the authority on the rendering; the note only records the question the audit raised.
+
+**Yoshi rendering — LANDED.**
+
+3:4 — Everyone who goes on sinning is living in lawlessness; for sin is the transgression of the law.
+3:5 — And you know that he was revealed to take our sins away — and in him there is no sin at all.
+3:6 — No one who remains in him goes on sinning; whoever keeps on sinning has neither seen him nor come to know him.
+3:7 — Little children, do not let anyone lead you astray: whoever practices righteousness is righteous, just as he is righteous.
+3:8 — Whoever goes on sinning belongs to the devil, for the devil has been sinning from the very beginning. This is why the Son of Elohim (God) was revealed: to undo the works of the devil.
+
+**Status:** LANDED 2026-10-17. Live in the app; source_type yoshi-rendering in parsed/canon.json (S456). No footnote yet.
 
 ---
 
