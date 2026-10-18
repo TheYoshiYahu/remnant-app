@@ -13,6 +13,10 @@ session, deploy each as it lands (publish-then-edit). Tick as shipped.
 - [x] Push the site build — 64ddcee is on origin (S453 checked). BUT the /library/ pages come back as the app shell (no verses) on the live site: the Render rewrite problem S452 predicted. Parked with the Google work by Yoshi's word (2026-10-17); fix = the fallback in S452_SESSION_HANDOFF.md.
 - [x] **Stripe checkout email prefilled + locked** to the signed-in account (S453: api/subscriptions.py — token email, else users.email). Sign-in form (native shell) now says to use the registered email, and the failed-sign-in message repeats it.
 
+## Content audit (S453 order: Jasher ✓ → Jubilees ✓ staged → Apocrypha → canon KJV → other extras; then cross-refs; voices last)
+- [x] Jubilees audited by content (S453): faithful text, 243 merged rows split → 1,307; deploy script staged (S446_SESSION_HANDOFF.md).
+- [ ] Apocrypha (KJV 1611 / Brenton + Charles vol 1) — next session.
+
 ## Pinned — growth (free)
 - [x] **The library on Google** (S452): every chapter of every book is a real page at /library/<book>/<n>/ — canon in full, extras as the FIRST PARAGRAPH only (Yoshi 2026-10-16: never the full extras text, on the web or in the app), then the taste → trial. Sitemap + titles like "Enoch 7 — Restored Names Edition". Sitemap still to be submitted in Search Console (steps in S452_SESSION_HANDOFF.md).
 - [ ] YouTube read-along videos per book from the existing Michael recordings (text on screen, app links in description).

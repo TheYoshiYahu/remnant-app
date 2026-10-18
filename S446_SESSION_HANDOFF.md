@@ -101,7 +101,7 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
 |---|---|---|---|---|---|
 | — | enoch | Charles 1917 | S449 | REBUILT, live | 1,063/1,063 verses equal Charles; 515 invented verses removed |
 | 1 | jasher | Noah 1840 (sacred-texts) | S450 | TEXT FAITHFUL; app parse short 85 verses; fix staged | book 3,910/3,910 matched; app 3,825/3,910 |
-| 2 | jubilees | Charles 1902 | — | next session | |
+| 2 | jubilees | Charles 1917 SPCK (sacred-texts; 1902 OCR as 2nd witness) | S453 | TEXT FAITHFUL; 243 rows held 2–3 verses each; fix staged | base 1,307/1,307 matched (0 missing, 0 extra); app 1,031 rows → 1,307 |
 | 3 | apocrypha (KJV 1611 / Brenton); apocrypha-charles-vol1 | — | — | | |
 | 4 | canon (KJV) | — | — | never content-checked | |
 | 5 | pseudepigrapha (Charles vol 2), adam-eve-conflict, apocalypse-of-abraham, ascension-isaiah, sonnini-acts-29, lightfoot, mrjames, josephus | — | — | | |
@@ -133,3 +133,12 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
 - Oct 15, 2:54 PM: Yoshi stopped the extras recorder (Michael, at apocrypha/2-maccabees 10 — 272 extras chapters done) and ran _s450_jasher_audio_redo.mjs: 15 Jasher chapters swapped in chapters_all.json (586 → 668 verses), 30 old files moved to audio/_redo/am_michael/jasher-s450, 30 .uploaded.txt lines dropped. Next: record_bible.sh am_michael (does the 15 Jasher chapters, then resumes the extras where they stopped), then _s444_upload_audio.mjs.
 
 - **S453 (Oct 17): Michael is FINISHED — tts/chapters_all.json has 2,422 chapters, every one has an mp3 + timing json on disk (incl. the 15 Jasher redo chapters and all extras), and audio/.uploaded.txt shows all 4,845 am_michael files in R2. The "stopped at 2 Maccabees 10" line above is stale. Voices lane is clear until an audit changes a chapter.**
+
+### S453 (Oct 17) — Jubilees audit (source-texts/jubilees-charles-1917/)
+- Clean base: Charles 1917 SPCK via the sacred-texts mirror (77 section pages pulled through the browser pane — curl is 403'd), parsed to 50 ch / 1,307 vv with no gaps; 7 markers the site printed without a period and one header typo repaired by reading (parse1917.py). The 1902 OCR (archive.org bookofjubileesor00char) saved as jub1902_ocr.txt for tie-breaks.
+- Diff (diff_jub.py, jubilees-damage-table.md): app 1,031 rows vs 1,307 — 787 match 1:1, 243 rows each hold 2–3 verses (520 base verses), 0 missing, 0 extra; the one "changed" (10:7) is compound-name rendering only. Verse NUMBERS were already Charles's (row after 1:5 is 1:7), so no renumbering — the merged verses just had no row. Commentaries already cite Charles's numbers (so they now point at the right rows).
+- Fix staged (split_jub.py → jubilees.fixed.json, 519 pieces all ≥0.85 vs Charles, 482 at 1.00; fix_txt.py → Jubilees-Restored-Names-Edition.fixed.txt, markers 2..n in every chapter, word-identical otherwise; clean_strays.py: 24 stray footnote digits inherited from the source removed, 3:23 "32." and 25:10 "19." corrected, 17:2/17:3 split moved to Charles's boundary). Prologue stays folded in 1:1.
+- Cards: 1,695 unique cards touch Jubilees (local SQL copies); card_sort.py read each note's quotation against Charles: 1,530 already right, 102 move (session453b), 97 no evidence (29 of them on a formerly merged row — jub-card-sort-report.md).
+- Both migrations ran on a scratch Postgres seeded with the old JSON + cards: 1,031 → 1,307 rows, 102 moved, idempotent on re-run.
+- Waits on Yoshi: `bash ~/Desktop/App/_session453_jubilees_deploy.sh` (BEFORE 1031 → AFTER 1307, cards moved 102). Audio: all 50 chapters queued via _s453_jubilees_audio_redo.mjs — voices lane, LAST. KDP Jubilees interior carries the same 243 merges + 24 strays — book-revamp pass.
+- Next audit: Apocrypha (KJV 1611 / Brenton; apocrypha-charles-vol1) — same method; jubilees-charles-1917/ scripts are the template (diff_jub.py takes a parsed .json).
