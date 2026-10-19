@@ -169,3 +169,25 @@ means a back-fill can re-run safely over the already-merged canon rows.
   Live 1 Enoch = 1,063 real verses + 5 placeholders (11:7, 17:9, 17:21, 24:9, 25:9); no card sits on a placeholder.
   Nothing changed. Next: fix in the map's order (re-anchor → re-quote → not-found → gloss reads → thread summaries),
   Yoshi's voice, Come-and-See, Rule 10, scratch-tested, one deploy script; then Jubilees and Apocrypha the same way.
+- **2026-10-19 (S459) — 1 ENOCH CARD FIX BUILT + SCRATCH-TESTED, not deployed** (`source-texts/enoch-charles-1917/s459-card-fix/`,
+  `data-schema/migrations/session459_enoch_card_fix.sql`, deploy `_session459_enoch_card_fix_deploy.sh`, read-back `_s459_check.py`).
+  Re-read by content: 364 flagged (REWORDED 123 · RE_ANCHOR 88 · RE_ANCHOR_REWORDED 76 · NOT_FOUND 77); 362 re-quoted from the live
+  verse in full, 201 re-pointed (ids kept), 329 member notes, 2 duplicates retired; 185 notes rewritten in Yoshi's voice (the degraded
+  "wisdom-stream / substance / the framework reads" prose). Scratch: 0 skipped, idempotent, post-run regrade all STAND. **New finding:
+  127 Enoch cards / 107 member notes / 61 thread summaries carry degraded S1xx prose; 59 STAND cards still do → next pass.** Then the 641
+  glosses, then the 512 thread summaries (the book's chapter-end text — Track A waits on these), then Jubilees / Apocrypha the same way.
+- **2026-10-19 (S459, Yoshi) — SCOPE LOCKED: EVERY extra-canonical book gets the same card-fidelity sweep before the app is called
+  sale-ready**, not just the three rebuilt texts. Order after Enoch (cards ✓ built → summaries → glosses): Jubilees → Apocrypha (KJV
+  ebible, incl. 3 Maccabees) → Jasher → the pseudepigrapha editions (2 Enoch, Testaments of the Twelve, Apocalypse of Abraham, 1–2 Adam
+  and Eve, Ascension of Isaiah, Jubilees-adjacent) → Cepher additions → Sonnini. Same chain each time: dump the live cards touching the
+  book (`_s457_enoch_dump.py` pattern) → regrade by the words quoted (`s459-card-fix/regrade.py` pattern) → decide by hand → build →
+  scratch Postgres twice → one deploy script → live read-back. Per-book status table to be kept here as each lands.
+
+  | book | cards (quote-bearing) | sweep | fix built | deployed | summaries | glosses |
+  |---|---|---|---|---|---|---|
+  | 1 Enoch | 729 of 1,965 | ✓ S459 | ✓ S459 (364) | — | — (512 open) | — (641 open) |
+  | Jubilees | — | — | — | — | — | — |
+  | Apocrypha (+3 Macc) | — | — | — | — | — | — |
+  | Jasher | — | — | — | — | — | — |
+  | 2 Enoch / Test. XII / Apoc. Abraham / Adam-Eve / Asc. Isaiah | — | — | — | — | — | — |
+  | Cepher additions / Sonnini | — | — | — | — | — | — |

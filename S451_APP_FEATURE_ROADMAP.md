@@ -35,6 +35,7 @@ session, deploy each as it lands (publish-then-edit). Tick as shipped.
 - [ ] Witness view: canon chapter beside its extras witness (Genesis 6 ↔ Enoch 6 ↔ Jubilees 5; Exodus ↔ Jasher; Jude ↔ Enoch 1). Pairs come from the existing cross-reference threads. Screenshot for the store.
 - [ ] Guided threads: ordered reading trails through the whole library (the gathering of the twelve tribes; the Watchers; the order of the end), verses quoted in full, one tap to the next.
 - [ ] Red letter for the Formed One: words of Yahusha in the Gospels, and the Tanakh appearances where the One who appeared speaks.
+- [ ] **Ask in Yoshi's voice (paid members)** — decided Oct 19 (S459): build the answer bank first with the big model under the voice skill (the few hundred questions people actually ask — Sabbath, Paul and the law, who the Gentiles are, the olive tree, the rapture, the names, Enoch, the cut books, the Trinity, feasts, baptism, hell), Yoshi reviews and redlines each answer like a chapter; serve from the bank with a cheap model that only matches the question and stitches approved answers with the restored verses quoted in full (Come-and-See) — it never reasons about Torah on its own. Unanswered questions get "nothing here yet" and go on Yoshi's list. Cost control: a per-member monthly spend allowance (~$2, shown as a meter, never a dollar figure) rather than a question cap, plus a daily backend ceiling and a rate limit. Sits after cross-references → features in the app order.
 
 ## Next — retention
 - [ ] Daily verse push notification + home-screen widget.

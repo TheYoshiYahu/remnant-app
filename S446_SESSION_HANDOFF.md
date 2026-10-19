@@ -195,3 +195,35 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
 - Live read-back of the cross-reference apparatus and the 1 Enoch card-fidelity map: see XREF_LIBRARY_COVERAGE_ROADMAP.md (2026-10-18 S457 entries) and `source-texts/enoch-charles-1917/enoch-card-fidelity-map.md`. New files: `_s457_xref_readback.py/.log`, `_s457_enoch_dump.py`, `enoch-cards-live.json`, `enoch-card-fidelity-sweep.json`. Not yet committed — commit with the next push.
 - Open for Yoshi's word: (1) retire the three never-applied S181 canon-only baselines (Romans/Galatians/Revelation); (2) S154 Matt 17 file — re-verify then apply, or retire; (3) the Finder " 2.sql"/" 2.json" duplicates (12 files, list in the roadmap entry); (4) canon.modernized.json (June, stale).
 - Next session: Enoch fixes in the map's order (start with the 112 RE_ANCHOR + 100 REWORDED cards — mechanical), then the 512 thread summaries; then Jubilees (jub-card-sort-report.md) and Apocrypha by the same dump → read → map method.
+
+### S459 (Oct 19) — 1 ENOCH CARD FIX BUILT, scratch-tested, NOT deployed (waits on Yoshi's paste). Order note: app cards first, then the books (S458 Track A).
+- The S457 map was re-read by content (every flagged note's lead Enoch quote against the live Charles 1917 text, abridged quotes and
+  multi-verse spans handled; `source-texts/enoch-charles-1917/s459-card-fix/regrade.py`). Stricter than S457: **364 cards flagged**
+  (REWORDED 123 · RE_ANCHOR 88 · RE_ANCHOR_REWORDED 76 · NOT_FOUND 77), all canon→Enoch cards quoting the Enoch target. The S457 map
+  had numbering slips in chs 15/18/22/61–63 (e.g. "62:7" words are 71:14; "62:1" are 61:8; "14:15" are 18:8; "22:11" are 22:4).
+- **Second finding: 127 of the 1,965 Enoch cards (108 Matthew) carry degraded S1xx-era prose** — "wisdom-stream", "the framework reads",
+  "substantial-substance" chains, "Red Line #", "Yoshi's framework" — unreadable and against Come-and-See (no internal references).
+  107 member notes and 61 thread summaries carry the same markers. The 68 that sit on flagged cards were rewritten this session;
+  **59 STAND/no-quote cards with degraded prose remain** (list: `grep -l` the markers in enoch-cards-live.json cards) → next pass.
+- Built (`s459-card-fix/`: decisions.py = address decisions, prose.py = 185 hand-written notes in Yoshi's voice, build_fix.py → fix.json
+  with every old and new note, gen_sql.py): `data-schema/migrations/session459_enoch_card_fix.sql` — 362 cards re-quoted from the live
+  verse in full (stand-alone italics, cited), 201 re-pointed to the verse the words live on (target id changes, card ids kept), 329 member
+  notes (address patched, or replaced by the card note where they quoted the old words), 2 duplicates retired (4396 → covered by 121872;
+  4853 → by 4851). Guards: skips any card not at its S457 address; RAISES if the live verse text differs from the read-back the fix was
+  written against; dup-at-destination skip; 3-pass move order; idempotent. **Scratch Postgres (seeded from enoch-cards-live.json): run 1 =
+  161 in place + 201 moved, 329 members, 2 retired, 0 skipped; run 2 = 0 changed. Post-run regrade: all 362 STAND, 0 stale member notes.**
+  Verification table: `s459-card-fix/enoch-card-fix-report.md`.
+- Deploy (Yoshi's paste): `bash ~/Desktop/App/_session459_enoch_card_fix_deploy.sh` → applies the migration, then `_s459_check.py` reads
+  the live DB back and re-grades (expect "flagged (should be 0): 0", "moved 201/201"). DB only; no Render push, no app rebuild.
+- Decisions taken without asking (Yoshi's standing rule): "holy ones" kept as the pipeline renders (old notes said "set-apart ones");
+  Charles's "(i.e. the angel)" gloss kept verbatim in quotes (verify-by-content against the live verse); 4753/4761/4424 shepherd cards now on
+  89:58 / 90:25; 4386/4426/4685 gathering cards on 90:33 (the dispersed assembled, the Lord of the sheep rejoicing); 13799/14898 "books
+  opened" on 90:20 with 47:3 quoted inline; 4335 Matt 5:19 on 104:10 ("sinners will alter and pervert the words of righteousness... and
+  write books"). Any of these Yoshi can redline in prose.py and re-run build_fix.py → gen_sql.py.
+- NOT done this session (next, in order): (1) the 59 degraded-prose STAND cards; (2) the 641 NO_ENOCH_QUOTE glosses on changed verses;
+  (3) the 512 thread summaries (988 bad quotes; the 342 S250 chapter threads first) — thread summaries are the book's chapter-end text,
+  so Track A (Enoch book rebuild) waits on (3); (4) Jubilees / Apocrypha by the same dump → regrade → decide → build → scratch → deploy chain.
+- Side decision (Yoshi, Oct 19, in conversation): an in-app "ask in Yoshi's voice" Q&A for paying members — build the answer bank with the big
+  model under the voice skill, Yoshi reviews each answer, serve from the bank with a cheap model that only matches and quotes; $2/month
+  per-member spend allowance (not a question cap) with a daily backend ceiling and a rate limit. Written into S451_APP_FEATURE_ROADMAP.md
+  under "Next — library".

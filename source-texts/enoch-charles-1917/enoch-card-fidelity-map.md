@@ -36,3 +36,9 @@ STAND 157 · REWORDED 69 · RE_ANCHOR 106 · NOT_FOUND 337 · no Enoch quote 60.
 5. Thread summaries (512) — rewrite every bad quote from the live verse; the S250 chapter threads first.
 6. Members (188) ride along with their cards.
 Also folds in: `session154_matt_17_extras_cross_references.sql` (never applied; 21 Enoch-era rows) — re-verify its quotes against the live text before it is ever applied.
+
+## Status 2026-10-19 (S459)
+Cards: re-read by content (`s459-card-fix/regrade.py`, stricter than the table above — 364 flagged, not 318; the table's RE_ANCHOR
+addresses had numbering slips in chs 15/18/22/61–63). Fix built and scratch-tested: `session459_enoch_card_fix.sql` (362 updated, 201 moved,
+329 members, 2 retired); deploy waits on Yoshi. Report: `s459-card-fix/enoch-card-fix-report.md`. Steps 4 (641 glosses) and 5 (512 thread
+summaries) and the 59 degraded-prose STAND cards are still open.
