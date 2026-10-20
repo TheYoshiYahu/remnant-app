@@ -1,5 +1,5 @@
 import asyncio, asyncpg, sys, re
-sql = open('session459_enoch_card_fix.sql').read()
+sql = open('/home/claude/sim/App/data-schema/migrations/session459_enoch_card_fix.sql').read()
 sql = '\n'.join(l for l in sql.split('\n') if not l.lstrip().startswith('\\'))
 async def main():
     con = await asyncpg.connect(host='/tmp', port=5499, user='postgres', database='postgres')

@@ -2740,12 +2740,12 @@
    "src": "1-enoch 18:16",
    "tgt": "1-enoch 21:7",
    "old_addr": "21:7",
-   "new_addr": "18:16",
+   "new_addr": "21:6",
    "verses": [
-    "18:16"
+    "21:6"
    ],
    "old_note": "1 Enoch 21:7 — *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* Enoch revisits the same prison of the stars later in the journey, repeating the binding-till-judgement of 1 Enoch 18:16 word for word.",
-   "new_note": "1 Enoch 18:16 — *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.’* Enoch revisits the same prison of the stars later in the journey, repeating the binding-till-judgement of 1 Enoch 18:16 word for word.",
+   "new_note": "1 Enoch 21:6 — *These are of the number of the stars of heaven, which have transgressed the commandment of Yahuah (Lord), and are bound here till ten thousand years, the time entailed by their sins, are consummated.’* Enoch revisits the prison of the stars later in the journey: the same binding until the ten thousand years are consummated that 18:16 first recorded.",
    "flags": [],
    "verdict": "RE_ANCHOR"
   },
@@ -3429,12 +3429,12 @@
    "src": "1-enoch 71:1",
    "tgt": "1-enoch 70:1",
    "old_addr": "70:1",
-   "new_addr": "71:1",
+   "new_addr": "70:1",
    "verses": [
-    "71:1"
+    "70:1"
    ],
    "old_note": "1 Enoch 70:1 — *And it came to pass after this that my spirit was translated And it ascended into the heavens: And I saw the holy sons of Elohim (God). They were stepping on flames of fire: Their garments were white [and their raiment], And their faces shone like snow.* Chapter 71 reopens and re-seals the very ascent of 70:1 — the visionary repetition marking the climax of the Parables.",
-   "new_note": "1 Enoch 71:1 — *And it came to pass after this that my spirit was translated And it ascended into the heavens: And I saw the holy sons of Elohim (God). They were stepping on flames of fire: Their garments were white [and their raiment], And their faces shone like snow.* Chapter 71 reopens and re-seals the very ascent of 70:1 — the visionary repetition marking the climax of the Parables.",
+   "new_note": "1 Enoch 70:1 — *And it came to pass after this that his name during his lifetime was raised aloft to that Son of Adam and to Yahuah (Lord) of Spirits from amongst those who dwell on the earth.* The ascent of the spirit in chapter 71 follows the raising aloft of Enoch's name in 70:1 — two tellings of one taking-up, the climax of the Parables.",
    "flags": [],
    "verdict": "RE_ANCHOR"
   },
@@ -3477,12 +3477,12 @@
    "src": "1-enoch 18:15",
    "tgt": "1-enoch 21:6",
    "old_addr": "21:6",
-   "new_addr": "18:15",
+   "new_addr": "21:6",
    "verses": [
-    "18:15"
+    "21:6"
    ],
    "old_note": "1 Enoch 21:6 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* The Astronomical Book repeats word for word the earlier vision of the prison of the transgressing stars.",
-   "new_note": "1 Enoch 18:15 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (Lord) in the beginning of their rising, because they did not come forth at their appointed times.* The Astronomical Book repeats word for word the earlier vision of the prison of the transgressing stars.",
+   "new_note": "1 Enoch 21:6 — *These are of the number of the stars of heaven, which have transgressed the commandment of Yahuah (Lord), and are bound here till ten thousand years, the time entailed by their sins, are consummated.’* The second journey repeats the first: the stars that transgressed the commandment, bound — the prison of the transgressing stars seen at 18:15, seen again.",
    "flags": [],
    "verdict": "RE_ANCHOR"
   },
@@ -7175,8 +7175,8 @@
    "thread_id": 2847,
    "xref": 16669,
    "old": "1 Enoch 21:7 — *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* Enoch revisits the same prison of the stars later in the journey, repeating the binding-till-judgement of 1 Enoch 17:21 word for word.",
-   "new": "1 Enoch 18:16 — *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* Enoch revisits the same prison of the stars later in the journey, repeating the binding-till-judgement of 1 Enoch 17:21 word for word.",
-   "how": "address patched"
+   "new": "1 Enoch 21:6 — *These are of the number of the stars of heaven, which have transgressed the commandment of Yahuah (Lord), and are bound here till ten thousand years, the time entailed by their sins, are consummated.’* Enoch revisits the prison of the stars later in the journey: the same binding until the ten thousand years are consummated that 18:16 first recorded.",
+   "how": "replaced (stale quote or degraded prose)"
   },
   {
    "thread": "1-enoch-19-spirits-lead-men-astray",
@@ -7511,7 +7511,7 @@
    "thread_id": 4061,
    "xref": 21407,
    "old": "1 Enoch 70:1 — *And it came to pass after this that my spirit was translated And it ascended into the heavens: And I saw the holy sons of Elohim (God). They were stepping on flames of fire: Their garments were white [and their raiment], And their faces shone like snow.* Chapter 71 reopens and re-seals the very ascent of 70:1 — the visionary repetition marking the climax of the Parables.",
-   "new": "1 Enoch 71:1 — *And it came to pass after this that my spirit was translated And it ascended into the heavens: And I saw the holy sons of Elohim (God). They were stepping on flames of fire: Their garments were white [and their raiment], And their faces shone like snow.* Chapter 71 reopens and re-seals the very ascent of 70:1 — the visionary repetition marking the climax of the Parables.",
+   "new": "1 Enoch 70:1 — *And it came to pass after this that his name during his lifetime was raised aloft to that Son of Adam and to Yahuah (Lord) of Spirits from amongst those who dwell on the earth.* The ascent of the spirit in chapter 71 follows the raising aloft of Enoch's name in 70:1 — two tellings of one taking-up, the climax of the Parables.",
    "how": "same-as-card"
   },
   {
@@ -7543,7 +7543,7 @@
    "thread_id": 4368,
    "xref": 22534,
    "old": "1 Enoch 21:6 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* The Astronomical Book repeats word for word the earlier vision of the prison of the transgressing stars.",
-   "new": "1 Enoch 18:15 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (Lord) in the beginning of their rising, because they did not come forth at their appointed times.* The Astronomical Book repeats word for word the earlier vision of the prison of the transgressing stars.",
+   "new": "1 Enoch 21:6 — *These are of the number of the stars of heaven, which have transgressed the commandment of Yahuah (Lord), and are bound here till ten thousand years, the time entailed by their sins, are consummated.’* The second journey repeats the first: the stars that transgressed the commandment, bound — the prison of the transgressing stars seen at 18:15, seen again.",
    "how": "same-as-card"
   },
   {

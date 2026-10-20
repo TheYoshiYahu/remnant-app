@@ -196,7 +196,7 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
 - Open for Yoshi's word: (1) retire the three never-applied S181 canon-only baselines (Romans/Galatians/Revelation); (2) S154 Matt 17 file — re-verify then apply, or retire; (3) the Finder " 2.sql"/" 2.json" duplicates (12 files, list in the roadmap entry); (4) canon.modernized.json (June, stale).
 - Next session: Enoch fixes in the map's order (start with the 112 RE_ANCHOR + 100 REWORDED cards — mechanical), then the 512 thread summaries; then Jubilees (jub-card-sort-report.md) and Apocrypha by the same dump → read → map method.
 
-### S459 (Oct 19) — 1 ENOCH CARD FIX BUILT, scratch-tested, NOT deployed (waits on Yoshi's paste). Order note: app cards first, then the books (S458 Track A).
+### S459 (Oct 19) — 1 ENOCH CARD FIX BUILT, scratch-tested, DEPLOYED 19:03 CDT (second run; live read-back 729 STAND / 0 flagged / 199 moved / 2 retired; enoch-cards-live.json is now the post-fix state). Order note: app cards first, then the books (S458 Track A).
 - The S457 map was re-read by content (every flagged note's lead Enoch quote against the live Charles 1917 text, abridged quotes and
   multi-verse spans handled; `source-texts/enoch-charles-1917/s459-card-fix/regrade.py`). Stricter than S457: **364 cards flagged**
   (REWORDED 123 · RE_ANCHOR 88 · RE_ANCHOR_REWORDED 76 · NOT_FOUND 77), all canon→Enoch cards quoting the Enoch target. The S457 map
@@ -213,6 +213,10 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
   written against; dup-at-destination skip; 3-pass move order; idempotent. **Scratch Postgres (seeded from enoch-cards-live.json): run 1 =
   161 in place + 201 moved, 329 members, 2 retired, 0 skipped; run 2 = 0 changed. Post-run regrade: all 362 STAND, 0 stale member notes.**
   Verification table: `s459-card-fix/enoch-card-fix-report.md`.
+- **First live run (14:21) FAILED and rolled back whole** — `cross_references_check` (source ≠ target) on card 16669: three Enoch→Enoch cards
+  (16669, 21407, 22534) had notes quoting their own source verse and the re-anchor pointed them at it; the scratch DB lacked that constraint.
+  Fixed: those three quote the target's live text, the migration guards the case, the scratch schema now carries the constraint, re-run
+  clean (163 in place + 199 moved, 0 skipped, idempotent, all STAND). Nothing landed from the first run; the git push did land (files only).
 - Deploy (Yoshi's paste): `bash ~/Desktop/App/_session459_enoch_card_fix_deploy.sh` → applies the migration, then `_s459_check.py` reads
   the live DB back and re-grades (expect "flagged (should be 0): 0", "moved 201/201"). DB only; no Render push, no app rebuild.
 - Decisions taken without asking (Yoshi's standing rule): "holy ones" kept as the pipeline renders (old notes said "set-apart ones");

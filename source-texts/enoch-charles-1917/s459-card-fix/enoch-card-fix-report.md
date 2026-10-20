@@ -1,14 +1,16 @@
 # 1 Enoch card fix — S459 (2026-10-19) — verification table, read by content
 
-Every card below was read old-quote-against-live-verse (source-texts/enoch-charles-1917/s459-card-fix/regrade.py), decided by hand
-(decisions.py, prose.py), rebuilt (build_fix.py → fix.json, which holds every old and new note), written as
-data-schema/migrations/session459_enoch_card_fix.sql, run twice against a scratch Postgres seeded from the S457 read-back
-(seed_scratch.py / run_scratch.py: 362 updated, 201 moved, 329 member notes, 2 retired; second run 0 changed), and re-graded
-after the run (verify_scratch.py, regrade on the post-fix dump): all 362 STAND, 0 stale member notes.
+Every card below was read old-quote-against-live-verse (regrade.py), decided by hand (decisions.py, prose.py), rebuilt (build_fix.py → fix.json,
+which holds every old and new note), written as data-schema/migrations/session459_enoch_card_fix.sql, run twice against a scratch Postgres seeded
+from the S457 read-back with the live cross_references_check (source ≠ target) in place (seed_scratch.py / run_scratch.py: 362 updated, 199 moved,
+329 member notes, 2 retired, 0 skipped; second run 0 changed), and re-graded after the run (verify_scratch.py + regrade on the post-fix dump):
+all 362 STAND, 0 stale member notes. The first live run (Oct 19, 14:21) hit cross_references_check on card 16669 (an Enoch→Enoch card whose note
+quoted its own source verse) and rolled back whole — nothing landed; 16669/21407/22534 re-decided, guard added, scratch re-run.
 
-Verdicts (S459 regrade, stricter than the S457 map): REWORDED = right verse, Charles wording differs; RE_ANCHOR = the words
-are verbatim at another verse; RE_ANCHOR_REWORDED = reworded and at another verse; NOT_FOUND = the words are not Charles 1917.
-Totals: 364 cards — Counter({'REWORDED': 123, 'RE_ANCHOR': 87, 'RE_ANCHOR_REWORDED': 76, 'NOT_FOUND': 76}); prose rewritten on 185 (degraded 'wisdom-stream / substance / the framework reads' notes, or a claim the live verse no longer carries).
+Verdicts: REWORDED = right verse, Charles wording differs; RE_ANCHOR = the words are verbatim at another verse; RE_ANCHOR_REWORDED = reworded
+and at another verse; NOT_FOUND = the words are not Charles 1917.
+
+Totals: 364 cards — {'REWORDED': 123, 'RE_ANCHOR_REWORDED': 76, 'RE_ANCHOR': 87, 'NOT_FOUND': 76}; prose rewritten on 188.
 
 | card | source → 1 Enoch | S459 verdict | old → new address | action |
 |---|---|---|---|---|
@@ -25,8 +27,8 @@ Totals: 364 cards — Counter({'REWORDED': 123, 'RE_ANCHOR': 87, 'RE_ANCHOR_REWO
 | 25507 | 1-enoch 104:8 → 1-enoch | REWORDED | 108:3 → 108:3 | re-quoted in place |
 | 25549 | 1-enoch 108:11 → 1-enoch | NOT_FOUND | 104:6 → 103:5 | moved + re-quoted, prose rewritten |
 | 16298 | 1-enoch 13:6 → 1-enoch | NOT_FOUND | 14:1 → 14:1 | re-quoted in place, prose rewritten |
-| 22534 | 1-enoch 18:15 → 1-enoch | RE_ANCHOR | 21:6 → 18:15 | moved + re-quoted |
-| 16669 | 1-enoch 18:16 → 1-enoch | RE_ANCHOR | 21:7 → 18:16 | moved + re-quoted |
+| 22534 | 1-enoch 18:15 → 1-enoch | RE_ANCHOR | 21:6 → 21:6 | re-quoted in place, prose rewritten |
+| 16669 | 1-enoch 18:16 → 1-enoch | RE_ANCHOR | 21:7 → 21:6 | moved + re-quoted, prose rewritten |
 | 16705 | 1-enoch 19:1 → 1-enoch | RE_ANCHOR | 15:10 → 15:12 | moved + re-quoted |
 | 16706 | 1-enoch 19:1 → 1-enoch | RE_ANCHOR | 15:8 → 15:10 | moved + re-quoted |
 | 16701 | 1-enoch 19:2 → 1-enoch | REWORDED | 16:3 → 16:3 | re-quoted in place |
@@ -66,7 +68,7 @@ Totals: 364 cards — Counter({'REWORDED': 123, 'RE_ANCHOR': 87, 'RE_ANCHOR_REWO
 | 21272 | 1-enoch 63:6 → 1-enoch | RE_ANCHOR | 62:9 → 46:4 | moved + re-quoted |
 | 21271 | 1-enoch 63:9 → 1-enoch | RE_ANCHOR | 62:10 → 46:5 | moved + re-quoted |
 | 21304 | 1-enoch 65:12 → 1-enoch | REWORDED | 10:20 → 10:20 | re-quoted in place |
-| 21407 | 1-enoch 71:1 → 1-enoch | RE_ANCHOR | 70:1 → 71:1 | moved + re-quoted |
+| 21407 | 1-enoch 71:1 → 1-enoch | RE_ANCHOR | 70:1 → 70:1 | re-quoted in place, prose rewritten |
 | 21397 | 1-enoch 71:7 → 1-enoch | RE_ANCHOR_REWORDED | 39:6 → 61:4 | moved + re-quoted |
 | 22500 | 1-enoch 74:13 → 1-enoch | NOT_FOUND | 82:5 → 82:4 | moved + re-quoted, prose rewritten |
 | 22503 | 1-enoch 74:13 → 1-enoch | NOT_FOUND | 82:3 → 82:5 | moved + re-quoted, prose rewritten |

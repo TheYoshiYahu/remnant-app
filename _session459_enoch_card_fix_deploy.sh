@@ -18,5 +18,5 @@ cd "$(dirname "$0")"
   echo "=== done $(date)"
 } 2>&1 | tee -a _session459_enoch_card_fix_deploy.log
 echo
-echo "Read the S459 summary line: expect 'cards re-quoted in place 161, moved + re-quoted 201, ... skipped 0, absent 0; member notes updated 329; cards retired 2'."
-echo "Then the read-back: 'flagged (should be 0): 0' and 'moved cards now at their new address: 201/201'."
+echo "Read the S459 summary line: expect 'cards re-quoted in place 163, moved + re-quoted 199, ... skipped 0, absent 0; member notes updated 329; cards retired 2'."
+echo "Then the read-back: 'flagged (should be 0): 0' and 'moved cards now at their new address: 199/199'."

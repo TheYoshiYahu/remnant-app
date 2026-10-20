@@ -196,5 +196,8 @@ PROSE = {
 13836: "*One sat like unto the Son of Adam* (Revelation 14:14) — the comparative preserved: one *like* the Son of Adam, and the Standard he is like is the one Enoch heard named: *This is the Son of Adam who is born unto righteousness.* The crowned cloud-rider is that Son of Adam, who took flesh and remains the Formed.",
 55168: "The sun's gates that 2 Enoch 14:2 counts are the portals Enoch's own Astronomical Book numbers — the great portal, the fourth, where the sun rises in the first month.",
 7906: "*What have I to do with thee, Yahusha (Jesus), thou Son of Elohim (God) most high? I beseech thee, torment me not* (Luke 8:28). The spirits know the day of the consummation is appointed for them; Enoch records that they destroy only until it. The demoniac's cry is the fear of a sentence already written.",
+16669: "Enoch revisits the prison of the stars later in the journey: the same binding until the ten thousand years are consummated that 18:16 first recorded.",
+22534: "The second journey repeats the first: the stars that transgressed the commandment, bound — the prison of the transgressing stars seen at 18:15, seen again.",
+21407: "The ascent of the spirit in chapter 71 follows the raising aloft of Enoch's name in 70:1 — two tellings of one taking-up, the climax of the Parables.",
 }
 PROSE = {k: v for k, v in PROSE.items() if v is not None}

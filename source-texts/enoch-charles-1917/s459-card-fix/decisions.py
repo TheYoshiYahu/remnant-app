@@ -52,6 +52,8 @@ MOVE = {
     7844: '16:4', 4900: '62:2', 135969: '69:27', 7894: '40:4', 12953: '40:4', 66492: '40:4', 15036: '21:6', 15035: '18:11',
     22503: '82:5', 66488: '14:20', 4335: '104:10', 56509: '5:4', 4682: '90:18',
     4736: '46:4', 4847: '46:4', 4901: '46:4',
+    # Enoch→Enoch cards whose note quoted their OWN source verse (live cross_references_check forbids source = target; caught on the first live run)
+    16669: '21:6',
 }
 
 KEEP = {
@@ -59,6 +61,7 @@ KEEP = {
     4330, 7957, 39145, 17258, 16298, 150619, 4329, 7892, 12956, 12979, 69749, 69795, 56571, 4845, 135440,
     4512, 15005, 22549, 22559, 55177, 55179, 17245, 22580, 4366, 4683, 4814, 4396, 7855, 7906, 4557, 7958,
     120469, 7874, 60447, 7956, 7947, 7948, 4680, 7869,
+    21407, 22534,   # quote the target's own live text; the old note quoted the source verse
 }
 
 NVERSES = {
@@ -70,5 +73,7 @@ RETIRE = {
     4396: 'duplicate — card 121872 (Matt 8:29 -> 1 Enoch 16:1) carries the same thought on the true verse',
     4853: 'duplicate — card 4851 (Matt 26:64 -> 1 Enoch 46:4) already quotes this verse',
 }
+
+FORCE_MEMBER = {16669, 22534, 21407}   # member notes that described the old (self-quoting) note — take the card note
 
 from prose import PROSE

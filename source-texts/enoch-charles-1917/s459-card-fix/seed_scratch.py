@@ -1,7 +1,9 @@
 """Seed a scratch Postgres (local, port 5499) with the S457 read-back so session459_enoch_card_fix.sql can be
 tested end-to-end before Yoshi pastes it against the live DB. Mirrors the tables the migration touches."""
 import json, asyncio, asyncpg
-live = json.load(open('enoch-cards-live.json'))
+from pathlib import Path
+UP = Path(__file__).resolve().parent.parent
+live = json.load(open(UP / 'enoch-cards-live.json'))
 SCHEMA = """
 DROP TABLE IF EXISTS cross_reference_thread_members, cross_reference_threads, cross_references, verses, chapters, books, editions, schema_version CASCADE;
 CREATE TABLE editions (id SERIAL PRIMARY KEY, slug TEXT UNIQUE);
@@ -9,7 +11,8 @@ CREATE TABLE books (id SERIAL PRIMARY KEY, edition_id INT REFERENCES editions(id
 CREATE TABLE chapters (id SERIAL PRIMARY KEY, book_id INT REFERENCES books(id), chapter_number INT);
 CREATE TABLE verses (id SERIAL PRIMARY KEY, chapter_id INT REFERENCES chapters(id), verse_number INT, text TEXT);
 CREATE TABLE cross_references (id INT PRIMARY KEY, source_verse_id INT REFERENCES verses(id), target_verse_id INT REFERENCES verses(id),
-   source TEXT DEFAULT 'manual', tier_required TEXT DEFAULT 'free', note TEXT, UNIQUE (source_verse_id, target_verse_id, source));
+   source TEXT DEFAULT 'manual', tier_required TEXT DEFAULT 'free', note TEXT, UNIQUE (source_verse_id, target_verse_id, source),
+   CONSTRAINT cross_references_check CHECK (source_verse_id <> target_verse_id));
 CREATE TABLE cross_reference_threads (id INT PRIMARY KEY, slug TEXT, title TEXT, summary_md TEXT, sort_order INT, tier_required TEXT,
    anchor_verse_id_start INT, anchor_verse_id_end INT);
 CREATE TABLE cross_reference_thread_members (thread_id INT REFERENCES cross_reference_threads(id), cross_reference_id INT REFERENCES cross_references(id),

@@ -110,7 +110,7 @@ for m in live['members']:
         stale = [f.group(1) for f in re.finditer(r"\*([^*]+)\*", new) if len(norm(f.group(1)).split()) >= 4 and norm(f.group(1)) not in livespan and (norm(f.group(1)) in norm(r['quote']) or norm(f.group(1)) in norm(x['old_note']))]
         # a fragment that is a canon-side quote is fine; only Enoch-attributed stale fragments trigger
         stale = [f for f in stale if norm(f) not in norm(cards[x['id']]['s_text'] if r['side']=='T' else cards[x['id']]['t_text'])]
-        if stale or DEGRADED.search(new): new = x['new_note']; how = 'replaced (stale quote or degraded prose)'
+        if stale or DEGRADED.search(new) or x['id'] in getattr(D, 'FORCE_MEMBER', ()): new = x['new_note']; how = 'replaced (stale quote or degraded prose)'
         elif new != old: how = 'address patched'
         else: how = 'unchanged'
     members.append(dict(thread=m['slug'], thread_id=m['thread_id'], xref=m['xref_id'], old=old, new=new, how=how))

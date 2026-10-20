@@ -88,6 +88,10 @@ BEGIN
     IF position(r.live_text IN r.new_note) = 0 THEN
       RAISE EXCEPTION 'S459: new note for card % does not quote the live 1 Enoch %:% verbatim', r.xid, r.nc, r.nv;
     END IF;
+    IF nid = cur.source_verse_id THEN
+      IF pass = 3 THEN n_skipped := n_skipped + 1; RAISE NOTICE 'S459 SKIPPED card % (-> 1 Enoch %:%): that is the card''s own source verse (cross_references_check)', r.xid, r.nc, r.nv; END IF;
+      CONTINUE;
+    END IF;
     SELECT count(*) INTO dup FROM cross_references x WHERE x.source_verse_id = cur.source_verse_id AND x.target_verse_id = nid AND x.id <> r.xid;
     IF dup > 0 THEN
       IF pass = 3 THEN n_skipped := n_skipped + 1; RAISE NOTICE 'S459 SKIPPED card % (-> 1 Enoch %:%): a card already sits on that pair', r.xid, r.nc, r.nv; END IF;

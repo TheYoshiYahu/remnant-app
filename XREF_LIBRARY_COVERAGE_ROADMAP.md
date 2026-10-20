@@ -185,7 +185,7 @@ means a back-fill can re-run safely over the already-merged canon rows.
 
   | book | cards (quote-bearing) | sweep | fix built | deployed | summaries | glosses |
   |---|---|---|---|---|---|---|
-  | 1 Enoch | 729 of 1,965 | ✓ S459 | ✓ S459 (364) | — | — (512 open) | — (641 open) |
+  | 1 Enoch | 729 of 1,963 | ✓ S459 | ✓ S459 (362 + 2 retired) | ✓ S459 19:03 CDT, read-back 0 flagged | — (512 open) | — (641 open) |
   | Jubilees | — | — | — | — | — | — |
   | Apocrypha (+3 Macc) | — | — | — | — | — | — |
   | Jasher | — | — | — | — | — | — |
