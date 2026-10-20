@@ -62,3 +62,8 @@ text and cite verse numbers Charles does not have. Four chapters have no chapter
    longer fits.
 4. STAND (183) — untouched.
 Track A (the Enoch book) forms its chapter-end text from the chapter threads once (1)–(2) land.
+
+## Status 2026-10-19 (S460, later the same evening)
+Fix built on this map: 532 summaries replaced (306 rewritten, 59 adjusted, 166 re-quoted, 1 kept), 168 titles, ids/slugs kept.
+Verification and the title list: `summary-fix-report.md`. Migration `data-schema/migrations/session460_enoch_summary_fix.sql`,
+scratch-tested twice (531 updated / 0 skipped; re-run 0), post-run regrade 0 bad quotes. Deploy waits on Yoshi's paste.

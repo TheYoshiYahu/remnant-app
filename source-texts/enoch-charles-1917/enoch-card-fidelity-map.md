@@ -42,3 +42,8 @@ Cards: re-read by content (`s459-card-fix/regrade.py`, stricter than the table a
 addresses had numbering slips in chs 15/18/22/61–63). Fix built and scratch-tested: `session459_enoch_card_fix.sql` (362 updated, 201 moved,
 329 members, 2 retired); deploy waits on Yoshi. Report: `s459-card-fix/enoch-card-fix-report.md`. Steps 4 (641 glosses) and 5 (512 thread
 summaries) and the 59 degraded-prose STAND cards are still open.
+
+## Status 2026-10-19 (S460)
+Cards deployed 19:03 (729 STAND, 0 flagged). Thread summaries re-graded by the words and fixed: see `s460-summary-fix/summary-fidelity-map.md`
+and `summary-fix-report.md` — 532 summaries rebuilt (migration `session460_enoch_summary_fix.sql`, scratch-tested, deploy pending). Open: the 59
+degraded-prose STAND cards and the 641 NO_ENOCH_QUOTE glosses.

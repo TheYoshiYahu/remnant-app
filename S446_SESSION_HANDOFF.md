@@ -231,3 +231,37 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
   model under the voice skill, Yoshi reviews each answer, serve from the bank with a cheap model that only matches and quotes; $2/month
   per-member spend allowance (not a question cap) with a daily backend ceiling and a rate limit. Written into S451_APP_FEATURE_ROADMAP.md
   under "Next — library".
+
+### S460 (Oct 19, evening) — 1 ENOCH THREAD-SUMMARY FIX BUILT, scratch-tested twice, NOT deployed (waits on Yoshi's paste). S459b post-deploy state committed with this push.
+- Opened on the S460 prompt. Git: 4d22c7a on origin; the 19:03 second deploy run had left 15 tracked files modified after it (post-deploy
+  `enoch-cards-live.json` re-dump, the fixed S459 migration, handoff/roadmap lines) — commit block given, goes with this push.
+- **General map first** (`source-texts/enoch-charles-1917/s460-summary-fix/summary-fidelity-map.md`, per-quote detail `summary-regrade.json`,
+  grader `regrade_summaries.py` = the S459 card norm/span logic applied to `summary_md`): 719 summaries cite 1 Enoch by verse, 1,168
+  Enoch quotes. STAND 183 · RE_QUOTE 207 · REWRITE 300 · CITATION_ONLY 29; 740 bad quotes (267 invented, 342 at another address,
+  131 reworded). The S457 count (512 / 988) was inflated — it graded every italic in a thread as an Enoch quote. The damage clusters
+  by chapter: 1–10, 47–57, 99–100 mostly sound; 17–45, 64–84, 89–97, 102–107 almost all written on the corrupt text. Chapters 86, 91,
+  101, 106 have no chapter thread.
+- **Fix built** (Yoshi: "you should have enough to get it done… forget your AI training in point structure of sentences so it doesn't
+  sound robotic"): 207 RE_QUOTE re-quoted mechanically from the live verse (`requote.py` — reworded quotes land on the best verse
+  window, not the cited address, so 8:2→8:3 and 62:1→62:2 slips are caught); 300 REWRITE + 41 CHECK + 25 READ written by hand in ten
+  parallel batches under the voice skill and a brief (`BRIEF.md` — flowing sentences, no fragment stacks, no not-but tic, no internal
+  references, every verse in full, canon quotes only verbatim from the old summary or the restored-names KJV). Assembled and verified
+  by content (`assemble.py`): every Enoch italic = live text (1,223 full + 73 abridged, 0 bad); every canon italic verbatim from a live
+  source; 94 canon quotes the writers took from the card dump (modernized 'you/has') swapped for `parsed/canon.json` text; 11 leaked
+  editor's notes patched (`patches.py`); degraded markers 0. **532 summaries, 168 new titles, ids/slugs kept.** Report with the title
+  list: `s460-summary-fix/summary-fix-report.md`; every old+new pair: `fix_summaries.json`; writers' per-item notes: `out/batch_*.json`.
+- Migration `data-schema/migrations/session460_enoch_summary_fix.sql` (guards: skip + NOTICE if the live summary isn't the read-back
+  text; RAISE if any of the 599 quoted Enoch verses differs from live; idempotent; stamps schema_version 1.0.0-phase4-session460).
+  **Scratch Postgres (live CHECKs + live schema_version shape): run 1 = 531 updated / 168 titles / 0 skipped / 0 absent; run 2 = 0
+  updated, 531 already in place. Post-run regrade of the scratch dump: 723 cite Enoch, STAND 709, CITATION_ONLY 14, bad quotes 0.**
+- Deploy (Yoshi's paste): `bash ~/Desktop/App/_session460_enoch_summary_fix_deploy.sh` → migration, then `_s460_check.py` re-dumps and
+  re-grades (expect "REWRITE 0, RE_QUOTE 0, bad quotes 0" and "fixed summaries now live as written: 532/532"). DB only.
+- Open for Yoshi's eye, none blocking: (1) the 168 writers' titles (redline in fix_summaries.json → gen_sql.py → scratch.py); (2) register —
+  the live DB verse text is modernized ('you/has') while every summary quotes KJV-register restored names; new summaries keep the summaries'
+  register; 7 Jubilees/Wisdom/2 Esdras quotes are the live modernized text; (3) chapters with 1–3 live verses (42, 44, 92, 105, 107) now carry
+  several threads on the same verses — retire candidates in the writers' notes; (4) the 4 chapters with no chapter thread.
+- Lessons locked: the regrade's citation patterns miss `(1 Enoch 103:15, 24)` and `(108:16)` without the book name and `1 Enoch 90:6 names … — *…*`
+  with words between citation and italic — the assembly verifier checks every italic regardless, so nothing slipped, but the grader should
+  learn those forms before Jubilees; files created from Claude's shell on the Mac are invisible to git — everything here went through the
+  file-commit path (placeholder-then-overwrite for the big JSON).
+- NOT done (next, in order): (2) the 59 degraded-prose STAND cards; (3) the 641 NO_ENOCH_QUOTE glosses; (4) Jubilees by the same chain.

@@ -185,9 +185,15 @@ means a back-fill can re-run safely over the already-merged canon rows.
 
   | book | cards (quote-bearing) | sweep | fix built | deployed | summaries | glosses |
   |---|---|---|---|---|---|---|
-  | 1 Enoch | 729 of 1,963 | ✓ S459 | ✓ S459 (362 + 2 retired) | ✓ S459 19:03 CDT, read-back 0 flagged | — (512 open) | — (641 open) |
+  | 1 Enoch | 729 of 1,963 | ✓ S459 | ✓ S459 (362 + 2 retired) | ✓ S459 19:03 CDT, read-back 0 flagged | ✓ built S460 (532 of 719), deploy pending | — (641 open) |
   | Jubilees | — | — | — | — | — | — |
   | Apocrypha (+3 Macc) | — | — | — | — | — | — |
   | Jasher | — | — | — | — | — | — |
   | 2 Enoch / Test. XII / Apoc. Abraham / Adam-Eve / Asc. Isaiah | — | — | — | — | — | — |
   | Cepher additions / Sonnini | — | — | — | — | — | — |
+- **2026-10-19 (S460) — 1 ENOCH THREAD SUMMARIES: MAP + FIX BUILT, scratch-tested, not deployed** (`source-texts/enoch-charles-1917/
+  s460-summary-fix/`, migration `session460_enoch_summary_fix.sql`, deploy `_session460_enoch_summary_fix_deploy.sh`, read-back
+  `_s460_check.py`). Re-graded by the words: 719 summaries cite 1 Enoch, STAND 183 · RE_QUOTE 207 · REWRITE 300 · CITATION_ONLY 29 (the
+  S457 512/988 was inflated). 532 summaries replaced — 306 rewritten by hand in Yoshi's voice, 59 adjusted, 166 re-quoted; 168 titles;
+  ids/slugs kept; every Enoch and canon italic verified verbatim; scratch run 1 = 531 updated, run 2 = 0; post-run regrade 0 bad quotes.
+  Status table: 1 Enoch summaries column → "✓ built S460 (532), deploy pending". Next: the 59 degraded STAND cards, the 641 glosses, then Jubilees.
