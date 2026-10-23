@@ -1,0 +1,548 @@
+[
+ {
+  "id": 44180,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 13,
+   "cite": "The Rest of Esther 10:13",
+   "text": "Therefore those days shall be to them in the month Adar, the fourteenth and fifteenth day of the same month, with an assembly, and joy, and with gladness before Yahuah (God), according to the generations for ever among his people.",
+   "prev": "So Yahuah (God) remembered his people, and justified his inheritance.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "esther",
+   "ch": 9,
+   "vn": 22,
+   "cite": "Esther 9:22",
+   "text_db": "As the days wherein the Yahudim (Jews) rested from their enemies, and the month which was turned unto them from sorrow to joy, and from mourning into a good day: that they should make them days of feasting and joy, and of sending portions one to another, and gifts to the poor.",
+   "text_canon": "As the days wherein the Yahudim (Jews) rested from their enemies, and the month which was turned unto them from sorrow to joy, and from mourning into a good day: that they should make them days of feasting and joy, and of sending portions one to another, and gifts to the poor."
+  },
+  "old_note": "Esther 9:22 — *As the days wherein the Yahudim (Jews) rested from their enemies, and the month which was turned unto them from sorrow to joy, and from mourning into a good day: that they should make them days of feasting and joy, and of sending portions one to another, and gifts to the poor.* The same days of Adar that The Rest of Esther 10:13 fixes with assembly and gladness, the month turned from sorrow to joy.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10476,
+    "slug": "rest-of-esther-10-two-lots-day-of-judgment-feast",
+    "old": "Esther 9:22 — *As the days wherein the Yahudim (Jews) rested from their enemies, and the month which was turned unto them from sorrow to joy, and from mourning into a good day: that they should make them days of feasting and joy, and of sending portions one to another, and gifts to the poor.* The same days of Adar that The Rest of Esther 10:13 fixes with assembly and gladness, the month turned from sorrow to joy."
+   }
+  ]
+ },
+ {
+  "id": 44181,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 13,
+   "cite": "The Rest of Esther 10:13",
+   "text": "Therefore those days shall be to them in the month Adar, the fourteenth and fifteenth day of the same month, with an assembly, and joy, and with gladness before Yahuah (God), according to the generations for ever among his people.",
+   "prev": "So Yahuah (God) remembered his people, and justified his inheritance.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "leviticus",
+   "ch": 23,
+   "vn": 4,
+   "cite": "Leviticus 23:4",
+   "text_db": "These are the feasts of Yahuah (LORD), even holy convocations, which you shall proclaim in their seasons.",
+   "text_canon": "These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons."
+  },
+  "old_note": "Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The fixed assembly of the fourteenth and fifteenth of Adar before Yahuah (The Rest of Esther 10:13) is feast-keeping in the pattern of the appointed convocations of Torah.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10476,
+    "slug": "rest-of-esther-10-two-lots-day-of-judgment-feast",
+    "old": "Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The fixed assembly of the fourteenth and fifteenth of Adar before Yahuah (The Rest of Esther 10:13) is feast-keeping in the pattern of the appointed convocations of Torah."
+   }
+  ]
+ },
+ {
+  "id": 44182,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 11,
+   "cite": "The Rest of Esther 10:11",
+   "text": "And these two lots came at the hour, and time, and day of judgment, before Yahuah (God) among all nations.",
+   "prev": "Therefore has he made two lots, one for the people of Yahuah (God), and another for all the Gentiles.",
+   "next": "So Yahuah (God) remembered his people, and justified his inheritance."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 25,
+   "vn": 32,
+   "cite": "Matthew 25:32",
+   "text_db": "And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divides his sheep from the goats:",
+   "text_canon": "And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats:"
+  },
+  "old_note": "Matthew 25:32 — *And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats:* The two lots that come at the day of judgment (The Rest of Esther 10:11) set the people of Elohim (God) apart from the nations; the shepherd's dividing goes further, sifting his own flock gathered out of all nations, the sheep from the goats.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10476,
+    "slug": "rest-of-esther-10-two-lots-day-of-judgment-feast",
+    "old": "Matthew 25:32 — *And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats:* The two lots that come at the day of judgment (The Rest of Esther 10:11) set the people of Elohim (God) apart from the nations; the shepherd's dividing goes further, sifting his own flock gathered out of all nations, the sheep from the goats."
+   }
+  ]
+ },
+ {
+  "id": 44183,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 9,
+   "cite": "The Rest of Esther 10:9",
+   "text": "And my nation is this Yashar'el (Israel), which cried to Yahuah (God), and were saved: for Yahuah (God) has saved his people, and Yahuah (God) has delivered us from all those evils, and Yahuah (God) has wrought signs and great wonders, which have not been done among the Gentiles.",
+   "prev": "And the nations were those that were assembled to destroy the name of the Yahudim (Jews):",
+   "next": "Therefore has he made two lots, one for the people of Yahuah (God), and another for all the Gentiles."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 54,
+   "vn": 17,
+   "cite": "Isaiah 54:17",
+   "text_db": "No weapon that is formed against you shall prosper; and every tongue that shall rise against you in judgment you shall condemn. This is the heritage of the servants of Yahuah (LORD), and their righteousness is of me, says Yahuah (LORD).",
+   "text_canon": "No weapon that is formed against thee shall prosper; and every tongue that shall rise against thee in judgment thou shalt condemn. This is the heritage of the servants of Yahuah (LORD), and their righteousness is of me, saith Yahuah (LORD)."
+  },
+  "old_note": "Isaiah 54:17 — *No weapon that is formed against thee shall prosper; and every tongue that shall rise against thee in judgment thou shalt condemn. This is the heritage of the servants of Yahuah (LORD), and their righteousness is of me, saith Yahuah (LORD).* The nation saved when it cried (The Rest of Esther 10:9) is the heritage against which no weapon Haman forged could prosper.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10475,
+    "slug": "rest-of-esther-10-cried-to-yahuah-and-were-saved",
+    "old": "Isaiah 54:17 — *No weapon that is formed against thee shall prosper; and every tongue that shall rise against thee in judgment thou shalt condemn. This is the heritage of the servants of Yahuah (LORD), and their righteousness is of me, saith Yahuah (LORD).* The nation saved when it cried (The Rest of Esther 10:9) is the heritage against which no weapon Haman forged could prosper."
+   }
+  ]
+ },
+ {
+  "id": 44184,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 9,
+   "cite": "The Rest of Esther 10:9",
+   "text": "And my nation is this Yashar'el (Israel), which cried to Yahuah (God), and were saved: for Yahuah (God) has saved his people, and Yahuah (God) has delivered us from all those evils, and Yahuah (God) has wrought signs and great wonders, which have not been done among the Gentiles.",
+   "prev": "And the nations were those that were assembled to destroy the name of the Yahudim (Jews):",
+   "next": "Therefore has he made two lots, one for the people of Yahuah (God), and another for all the Gentiles."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "psalms",
+   "ch": 124,
+   "vn": 3,
+   "cite": "Psalm 124:3",
+   "text_db": "Then they had swallowed us up quick, when their wrath was kindled against us:",
+   "text_canon": "Then they had swallowed us up quick, when their wrath was kindled against us:"
+  },
+  "old_note": "Psalm 124:3 — *Then they had swallowed us up quick, when their wrath was kindled against us:* Without the hand that delivered them from all those evils (The Rest of Esther 10:9), the assembled nations would have swallowed Yashar'el alive.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10475,
+    "slug": "rest-of-esther-10-cried-to-yahuah-and-were-saved",
+    "old": "Psalm 124:3 — *Then they had swallowed us up quick, when their wrath was kindled against us:* Without the hand that delivered them from all those evils (The Rest of Esther 10:9), the assembled nations would have swallowed Yashar'el alive."
+   }
+  ]
+ },
+ {
+  "id": 44185,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 9,
+   "cite": "The Rest of Esther 10:9",
+   "text": "And my nation is this Yashar'el (Israel), which cried to Yahuah (God), and were saved: for Yahuah (God) has saved his people, and Yahuah (God) has delivered us from all those evils, and Yahuah (God) has wrought signs and great wonders, which have not been done among the Gentiles.",
+   "prev": "And the nations were those that were assembled to destroy the name of the Yahudim (Jews):",
+   "next": "Therefore has he made two lots, one for the people of Yahuah (God), and another for all the Gentiles."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "psalms",
+   "ch": 124,
+   "vn": 1,
+   "cite": "Psalm 124:1",
+   "text_db": "If it had not been Yahuah (LORD) who was on our side, now may Yashar'el (Israel) say;",
+   "text_canon": "If it had not been Yahuah (LORD) who was on our side, now may Yashar'el (Israel) say;"
+  },
+  "old_note": "Psalm 124:1 — *If it had not been Yahuah (LORD) who was on our side, now may Yashar'el (Israel) say;* The very confession of The Rest of Esther 10:9, that it was Yahuah and not the sword who saved His people.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10475,
+    "slug": "rest-of-esther-10-cried-to-yahuah-and-were-saved",
+    "old": "Psalm 124:1 — *If it had not been Yahuah (LORD) who was on our side, now may Yashar'el (Israel) say;* The very confession of The Rest of Esther 10:9, that it was Yahuah and not the sword who saved His people."
+   }
+  ]
+ },
+ {
+  "id": 44186,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 8,
+   "cite": "The Rest of Esther 10:8",
+   "text": "And the nations were those that were assembled to destroy the name of the Yahudim (Jews):",
+   "prev": "And the two dragons are I and Aman.",
+   "next": "And my nation is this Yashar'el (Israel), which cried to Yahuah (God), and were saved: for Yahuah (God) has saved his people, and Yahuah (God) has delivered us from all those evils, and Yahuah (God) has wrought signs and great wonders, which have not been done among the Gentiles."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 25,
+   "vn": 19,
+   "cite": "Deuteronomy 25:19",
+   "text_db": "Therefore it shall be, when Yahuah Elohayka (the LORD thy God) has given you rest from all your enemies round about, in the land which Yahuah Elohayka (the LORD thy God) gives you for an inheritance to possess it, that you shall blot out the remembrance of Amalek from under heaven; you shall not forget it.",
+   "text_canon": "Therefore it shall be, when Yahuah Elohayka (the LORD thy God) hath given thee rest from all thine enemies round about, in the land which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance to possess it, that thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it."
+  },
+  "old_note": "Deuteronomy 25:19 — *Therefore it shall be, when Yahuah Elohayka (the LORD thy God) hath given thee rest from all thine enemies round about, in the land which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance to possess it, that thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it.* The fall of Aman and his assembled nations (The Rest of Esther 10:8) is the blotting-out of Amalek the covenant had sworn long before.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10474,
+    "slug": "rest-of-esther-10-two-dragons-seed-war-amalek",
+    "old": "Deuteronomy 25:19 — *Therefore it shall be, when Yahuah Elohayka (the LORD thy God) hath given thee rest from all thine enemies round about, in the land which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance to possess it, that thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it.* The fall of Aman and his assembled nations (The Rest of Esther 10:8) is the blotting-out of Amalek the covenant had sworn long before."
+   }
+  ]
+ },
+ {
+  "id": 44187,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 8,
+   "cite": "The Rest of Esther 10:8",
+   "text": "And the nations were those that were assembled to destroy the name of the Yahudim (Jews):",
+   "prev": "And the two dragons are I and Aman.",
+   "next": "And my nation is this Yashar'el (Israel), which cried to Yahuah (God), and were saved: for Yahuah (God) has saved his people, and Yahuah (God) has delivered us from all those evils, and Yahuah (God) has wrought signs and great wonders, which have not been done among the Gentiles."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 25,
+   "vn": 17,
+   "cite": "Deuteronomy 25:17",
+   "text_db": "Remember what Amalek did unto you by the way, when you were come forth out of Egypt;",
+   "text_canon": "Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt;"
+  },
+  "old_note": "Deuteronomy 25:17 — *Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt;* The nations assembled to destroy the Name of the Yahudim (The Rest of Esther 10:8) are the standing order of Amalek that Torah commands Yashar'el never to forget.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10474,
+    "slug": "rest-of-esther-10-two-dragons-seed-war-amalek",
+    "old": "Deuteronomy 25:17 — *Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt;* The nations assembled to destroy the Name of the Yahudim (The Rest of Esther 10:8) are the standing order of Amalek that Torah commands Yashar'el never to forget."
+   }
+  ]
+ },
+ {
+  "id": 44188,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 7,
+   "cite": "The Rest of Esther 10:7",
+   "text": "And the two dragons are I and Aman.",
+   "prev": "A little fountain became a river, and there was light, and the sun, and much water: this river is Esther, whom the king married, and made queen:",
+   "next": "And the nations were those that were assembled to destroy the name of the Yahudim (Jews):"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 17,
+   "vn": 8,
+   "cite": "Exodus 17:8",
+   "text_db": "Then came Amalek, and fought with Yashar'el (Israel) in Rephidim.",
+   "text_canon": "Then came Amalek, and fought with Yashar'el (Israel) in Rephidim."
+  },
+  "old_note": "Exodus 17:8 — *Then came Amalek, and fought with Yashar'el (Israel) in Rephidim.* Aman the Agagite, the second dragon of The Rest of Esther 10:7, is the seed of the Amalek that first warred against Yashar'el at Rephidim.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10474,
+    "slug": "rest-of-esther-10-two-dragons-seed-war-amalek",
+    "old": "Exodus 17:8 — *Then came Amalek, and fought with Yashar'el (Israel) in Rephidim.* Aman the Agagite, the second dragon of The Rest of Esther 10:7, is the seed of the Amalek that first warred against Yashar'el at Rephidim."
+   }
+  ]
+ },
+ {
+  "id": 44189,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 5,
+   "cite": "The Rest of Esther 10:5",
+   "text": "For I remember a dream which I saw concerning these matters, and nothing thereof has failed.",
+   "prev": "Then Mardocheus said, Yahuah (God) has done these things.",
+   "next": "A little fountain became a river, and there was light, and the sun, and much water: this river is Esther, whom the king married, and made queen:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "romans",
+   "ch": 8,
+   "vn": 28,
+   "cite": "Romans 8:28",
+   "text_db": "And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose.",
+   "text_canon": "And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose."
+  },
+  "old_note": "Romans 8:28 — *And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose.* The dream that failed in nothing (The Rest of Esther 10:5) is the same purpose by which all things work together for His called.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10473,
+    "slug": "rest-of-esther-10-the-dream-interpreted-hidden-hand",
+    "old": "Romans 8:28 — *And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose.* The dream that failed in nothing (The Rest of Esther 10:5) is the same purpose by which all things work together for His called."
+   }
+  ]
+ },
+ {
+  "id": 44190,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 5,
+   "cite": "The Rest of Esther 10:5",
+   "text": "For I remember a dream which I saw concerning these matters, and nothing thereof has failed.",
+   "prev": "Then Mardocheus said, Yahuah (God) has done these things.",
+   "next": "A little fountain became a river, and there was light, and the sun, and much water: this river is Esther, whom the king married, and made queen:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 50,
+   "vn": 20,
+   "cite": "Genesis 50:20",
+   "text_db": "But as for you, you thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.",
+   "text_canon": "But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive."
+  },
+  "old_note": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* Joseph and Mardocheus read the same Author behind the plot, that nothing of His dream had failed (The Rest of Esther 10:5).",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10473,
+    "slug": "rest-of-esther-10-the-dream-interpreted-hidden-hand",
+    "old": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* Joseph and Mardocheus read the same Author behind the plot, that nothing of His dream had failed (The Rest of Esther 10:5)."
+   }
+  ]
+ },
+ {
+  "id": 44191,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 10,
+   "vn": 6,
+   "cite": "The Rest of Esther 10:6",
+   "text": "A little fountain became a river, and there was light, and the sun, and much water: this river is Esther, whom the king married, and made queen:",
+   "prev": "For I remember a dream which I saw concerning these matters, and nothing thereof has failed.",
+   "next": "And the two dragons are I and Aman."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "esther",
+   "ch": 9,
+   "vn": 1,
+   "cite": "Esther 9:1",
+   "text_db": "Now in the twelfth month, that is, the month Adar, on the thirteenth day of the same, when the king’s commandment and his decree drew near to be put in execution, in the day that the enemies of the Yahudim (Jews) hoped to have power over them, (though it was turned to the contrary, that the Yahudim (Jews) had rule over them that hated them;)",
+   "text_canon": "Now in the twelfth month, that is, the month Adar, on the thirteenth day of the same, when the king’s commandment and his decree drew near to be put in execution, in the day that the enemies of the Yahudim (Jews) hoped to have power over them, (though it was turned to the contrary, that the Yahudim (Jews) had rule over them that hated them;)"
+  },
+  "old_note": "Esther 9:1 — *Now in the twelfth month, that is, the month Adar, on the thirteenth day of the same, when the king’s commandment and his decree drew near to be put in execution, in the day that the enemies of the Yahudim (Jews) hoped to have power over them, (though it was turned to the contrary, that the Yahudim (Jews) had rule over them that hated them;)* The river that the little fountain became is the great reversal of Esther 9, the hidden hand of The Rest of Esther 10:6 made visible in history.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10473,
+    "slug": "rest-of-esther-10-the-dream-interpreted-hidden-hand",
+    "old": "Esther 9:1 — *Now in the twelfth month, that is, the month Adar, on the thirteenth day of the same, when the king’s commandment and his decree drew near to be put in execution, in the day that the enemies of the Yahudim (Jews) hoped to have power over them, (though it was turned to the contrary, that the Yahudim (Jews) had rule over them that hated them;)* The river that the little fountain became is the great reversal of Esther 9, the hidden hand of The Rest of Esther 10:6 made visible in history."
+   }
+  ]
+ },
+ {
+  "id": 44230,
+  "kind": "GLOSS454",
+  "side": "S",
+  "apoc": {
+   "book": "the-rest-of-esther",
+   "ch": 13,
+   "vn": 7,
+   "cite": "The Rest of Esther 13:7",
+   "text": "That they, who of old and now also are malicious, may in one day with violence go into the grave, and so ever hereafter cause our affairs to be well settled, and without trouble.",
+   "prev": "Therefore have we commanded, that all they that are signified in writing to you by Aman, who is ordained over the affairs, and is next to us, shall all, with their wives and children, be utterly destroyed by the sword of their enemies, without all mercy and pity, the fourteenth day of the twelfth month Adar of this present year:",
+   "next": "Then Mardocheus thought upon all the works of Yahuah (God), and made his prayer to him,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "psalms",
+   "ch": 83,
+   "vn": 4,
+   "cite": "Psalm 83:4",
+   "text_db": "They have said, Come, and let us cut them off from being a nation; that the name of Yashar'el (Israel) may be no more in remembrance.",
+   "text_canon": "They have said, Come, and let us cut them off from being a nation; that the name of Yashar'el (Israel) may be no more in remembrance."
+  },
+  "old_note": "Psalm 83:4 — *They have said, Come, and let us cut them off from being a nation; that the name of Yashar'el (Israel) may be no more in remembrance.* Haman's plot to send a people \"in one day\" into the grave is one episode of the recurring confederate vow to erase Israel from the earth.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10485,
+    "slug": "rest-of-esther-13-the-decree-against-the-nation",
+    "old": "Psalm 83:4 — *They have said, Come, and let us cut them off from being a nation; that the name of Yashar'el (Israel) may be no more in remembrance.* Haman's plot to send a people \"in one day\" into the grave is one episode of the recurring confederate vow to erase Israel from the earth."
+   }
+  ]
+ }
+]

@@ -1,0 +1,19 @@
+{
+  "summaries": [
+    {
+      "thread_id": 10761,
+      "problem": "FIDELITY/THEOLOGY (soft). The rewrite adds a sentence the old text did not carry and that none of the quoted verses carry: 2 Esdras 2:10-11 as quoted says 'Tell my people... the kingdom of Jerusalem, which I would have given to Yashar'el (Israel)... give these the everlasting tabernacles, which I had prepared for them' — the verse itself sets 'my people' over against Yashar'el, so the bare assertion that the kingdom passes 'to the faithful of the same seed' is a framework conclusion stated without the scripture that carries it. The conclusion is the skill's (no replacement, election precedes confession), so it is not a Red Line breach — but the 'quote, don't cite' posture means the reader should be shown the verse that makes it hold, not told. The writer also marked it 'Author to confirm'.",
+      "quote": "The kingdom passes from the unfaithful generation to the faithful of the same seed — not to another people in Yashar'el's (Israel's) place.",
+      "fix": "Either (a) carry the claim with the verse the 2 Esdras 5:28 thread already uses — e.g. *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* (Romans 11:1) — placed right after the 2 Esdras quote so the reader sees why 'my people' is not another people; or (b) hold the sentence for Yoshi's confirmation as the writer asked. Also smooth the possessive: 'not to another people standing in the place of Yashar'el (Israel)'."
+    }
+  ],
+  "members": [
+    {
+      "thread_id": 10684,
+      "xref_id": 44870,
+      "problem": "FIDELITY (wording, inherited from old but now stated more flatly). The note says the recovered temple 'is the first fulfilment of the abomination of desolation' — the recovery is not the abomination; Antiochus' profanation was. As written, the sentence makes the cleansing the fulfilment of the defilement. The verses (2 Maccabees 10:1; Matthew 24:15) do not say that.",
+      "quote": "The defiled temple recovered is the first fulfilment of *the abomination of desolation, spoken of by Daniel the prophet* that will yet stand in the holy place (Matthew 24:15).",
+      "fix": "The temple Maccabeus recovers is the one Antiochus had defiled — the first standing of *the abomination of desolation, spoken of by Daniel the prophet*, which the Messiah (Christ) warns will yet stand again in the holy place (Matthew 24:15)."
+    }
+  ]
+}

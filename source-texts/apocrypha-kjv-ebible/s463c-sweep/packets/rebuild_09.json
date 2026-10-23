@@ -1,0 +1,1682 @@
+[
+ {
+  "id": 4470,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 15,
+   "cite": "Wisdom of Solomon 2:15",
+   "text": "He is grievous to us even to behold: for his life is not like other men’s, his ways are of another fashion.",
+   "prev": "He was made to reprove our thoughts.",
+   "next": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 19,
+   "cite": "Matthew 11:19",
+   "text_db": "The Son of Adam came eating and drinking, and they say, Behold a man gluttonous, and a winebibber, a friend of publicans and sinners. But wisdom is justified of her children.",
+   "text_canon": "The Son of Adam came eating and drinking, and they say, Behold a man gluttonous, and a winebibber, a friend of publicans and sinners. But wisdom is justified of her children."
+  },
+  "old_note": "*He is grievous to us even to behold: for his life is not like other men's, his ways are of another fashion.* Wisdom of Solomon 2:15 names the wisdom-stream's direct articulation of the system's-aesthetic-rejection of the righteous-one: his-life-is-not-like-other-men's, his-ways-of-another-fashion. The framework reads the verse as the wisdom-stream pre-figuration of the *gluttonous-man, winebibber, friend-of-publicans-and-sinners* slander at Matt 11:19 — the system's moral-character-attack on the King for the table-fellowship-with-sinners (Matt 9:10-13) is the operative-form of the system's-aesthetic-rejection Wisdom 2:15 had named. The system's register-of-rejection changes; the architecture does not.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He is grievous to us even to behold: for his life is not like other men's, his ways are of another fashion.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:15",
+   "ratio": 1.0,
+   "live_proposed": "He is grievous to us even to behold: for his life is not like other men’s, his ways are of another fashion.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 121,
+    "slug": "wise-laying-in-wait-for-the-righteous-in-wisdom-of-solomon-2",
+    "old": "Wisdom of Solomon 2:15 — *his life is not like other men's, his ways are of another fashion.* The aesthetic-rejection of the righteous-one the wisdom-stream named; Matt 11:19's *gluttonous-man, winebibber, friend-of-publicans-and-sinners* slander is the operative-form."
+   }
+  ]
+ },
+ {
+  "id": 4319,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 16,
+   "cite": "Wisdom of Solomon 2:16",
+   "text": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father.",
+   "prev": "He is grievous to us even to behold: for his life is not like other men’s, his ways are of another fashion.",
+   "next": "Let us see if his words be true: and let us prove what shall happen in the end of him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 4,
+   "vn": 6,
+   "cite": "Matthew 4:6",
+   "text_db": "And says unto him, If you be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning you: and in their hands they shall bear you up, lest at any time you dash your foot against a stone.",
+   "text_canon": "And saith unto him, If thou be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone."
+  },
+  "old_note": "*We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and maketh his boast that Elohim (God) is his father.* Wisdom 2:16 names the ungodly's frame: the righteous-one boasts that Elohim is his father, and the ungodly resent the boast. Matt 4:6's *if thou be the Son of Elohim, cast thyself down: for it is written, He shall give his angels charge concerning thee* enacts the same testing-of-the-claimed-Sonship dynamic — demanding visible proof of the Father's protection from the one who has claimed Elohim as his father.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and maketh his boast that Elohim (God) is his father.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:16",
+   "ratio": 0.91,
+   "live_proposed": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 46,
+    "slug": "ungodly-plot-against-the-righteous-son",
+    "old": "Wisdom 2:16 — *he maketh his boast that Elohim (God) is his father.* The ungodly's resentment of the Sonship-boast; Matt 4:6's testing-of-the-claimed-Sonship dynamic walks the same."
+   }
+  ]
+ },
+ {
+  "id": 4607,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 16,
+   "cite": "Wisdom of Solomon 2:16",
+   "text": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father.",
+   "prev": "He is grievous to us even to behold: for his life is not like other men’s, his ways are of another fashion.",
+   "next": "Let us see if his words be true: and let us prove what shall happen in the end of him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 16,
+   "vn": 21,
+   "cite": "Matthew 16:21",
+   "text_db": "From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day.",
+   "text_canon": "From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day."
+  },
+  "old_note": "*We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and maketh his boast that Yahuah (God) is his father.* Wisdom of Solomon 2:16 names the wisdom-stream's articulation of the wicked's-grievance-against-the-righteous-one substance. The framework reads the verse against Matt 16:21's first-passion-prediction. The Pharisaic-and-Sadducean-second-Temple-aristocracy (the elders-and-chief-priests-and-scribes of v.21) reads the King's-very-existence as the indictment-of-their-counterfeit-credentialing the King's-Matt-23-woes will articulate explicitly; the wisdom-stream had named the architecture in the prefiguring-passage. The substance the King names at v.21 — that he MUST suffer at the hands-of-the-elders-and-chief-priests-and-scribes — operates in the architecture Wisdom of Solomon 2 had prefigured at the wisdom-stream-level centuries before.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and maketh his boast that Yahuah (God) is his father.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:16",
+   "ratio": 0.94,
+   "live_proposed": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 226,
+    "slug": "the-righteous-one-condemned-with-a-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:16 — *we are esteemed of him as counterfeits ... he maketh his boast that Yahuah (God) is his father.* The wisdom-stream's articulation of the wicked's-grievance against the righteous-one's-credentialing — the Pharisaic-and-Sadducean-second-Temple-aristocracy reads the King's-very-existence as the indictment-of-their-counterfeit-credentialing, the architecture the wisdom-stream had named."
+   }
+  ]
+ },
+ {
+  "id": 8034,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 16,
+   "cite": "Wisdom of Solomon 2:16",
+   "text": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father.",
+   "prev": "He is grievous to us even to behold: for his life is not like other men’s, his ways are of another fashion.",
+   "next": "Let us see if his words be true: and let us prove what shall happen in the end of him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 18,
+   "vn": 38,
+   "cite": "John 18:38",
+   "text_db": "Pilate says unto him, What is truth? And when he had said this, he went out again unto the Yahudim (Jews), and says unto them, I find in him no fault at all.",
+   "text_canon": "Pilate saith unto him, What is truth? And when he had said this, he went out again unto the Yahudim (Jews), and saith unto them, I find in him no fault at all."
+  },
+  "old_note": "*We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father.* (Wisdom of Solomon 2:16) The righteous one of the wisdom-stream is grievous to the ungodly precisely because his life is of *another fashion* and he *makes his boast that Yahuah (God) is his father.* John 18:38's Pilate finds *no fault at all* in him, yet the chief priests press for his death on exactly the ground the wisdom-stream named — that he claims the Father as his own. The fault the ungodly find is not a crime; it is the righteousness that reproves them.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father.",
+   "labelled": "the-wisdom-of-solomon|2:16",
+   "proposed": "the-wisdom-of-solomon|2:16",
+   "ratio": 1.0,
+   "live_proposed": "We are esteemed of him as counterfeits: he abstaineth from our ways as from filthiness: he pronounceth the end of the just to be blessed, and makes his boast that Yahuah (God) is his father.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 675,
+    "slug": "john-18-the-righteous-son-condemned-with-a-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:16 — *he makes his boast that Yahuah (God) is his father.* The righteous one is grievous to the ungodly because he claims the Father as his own; John 18:38's Pilate finds *no fault at all,* yet the chief priests press for death on exactly this ground."
+   }
+  ]
+ },
+ {
+  "id": 4320,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 18,
+   "cite": "Wisdom of Solomon 2:18",
+   "text": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "prev": "Let us see if his words be true: and let us prove what shall happen in the end of him.",
+   "next": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 4,
+   "vn": 6,
+   "cite": "Matthew 4:6",
+   "text_db": "And says unto him, If you be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning you: and in their hands they shall bear you up, lest at any time you dash your foot against a stone.",
+   "text_canon": "And saith unto him, If thou be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone."
+  },
+  "old_note": "*For if the just man be the Son of Elohim (God), he will help him, and deliver him from the hand of his enemies.* Wisdom 2:18 is the Hebrew library's direct prefiguring of Matt 4:6 — the ungodly's *let-Elohim-save-him-if-he-is-his* testing-pattern. Wisdom names the architecture; Matt 4:6 walks it at the Messianic level; the devil's cut-quote of Psalm 91 is the *let-the-angels-save-him* instance of the Wisdom pattern.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "For if the just man be the Son of Elohim (God), he will help him, and deliver him from the hand of his enemies.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:18",
+   "ratio": 0.92,
+   "live_proposed": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 46,
+    "slug": "ungodly-plot-against-the-righteous-son",
+    "old": "Wisdom 2:18 — *if the just man be the Son of Elohim (God), he will help him, and deliver him from the hand of his enemies.* The direct prefiguring of Matt 4:6 — the *let-Elohim-save-him-if-he-is-his* taunt; the devil's cut-quote of Psalm 91 is the *let-the-angels-save-him* instance of the Wisdom architecture."
+   }
+  ]
+ },
+ {
+  "id": 4388,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 18,
+   "cite": "Wisdom of Solomon 2:18",
+   "text": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "prev": "Let us see if his words be true: and let us prove what shall happen in the end of him.",
+   "next": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 8,
+   "vn": 17,
+   "cite": "Matthew 8:17",
+   "text_db": "That it might be fulfilled which was spoken by Esaias the prophet, saying, Himself took our infirmities, and bare our sicknesses.",
+   "text_canon": "That it might be fulfilled which was spoken by Esaias the prophet, saying, Himself took our infirmities, and bare our sicknesses."
+  },
+  "old_note": "*For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.* Wisdom 2:18 names the just-man-as-son-of-Yahuah architecture in the wisdom-stream's register — the lawless testing the just man by attempting his destruction, predicated on whether the Father will deliver his Son. Matt 8:17's Suffering-Servant credential walks the same architecture: the Servant is the just-man who is the Son of Yahuah (God), and the bearing-of-infirmities is operative across his Messianic ministry, not at the cross alone.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:18",
+   "ratio": 1.0,
+   "live_proposed": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 70,
+    "slug": "the-righteous-one-suffering-in-wisdom-and-the-servant-credential",
+    "old": "Wisdom 2:18 — *if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.* The just-man-as-son-of-Yahuah architecture; Matt 8:17's Servant who bears the people's infirmities walks the same."
+   }
+  ]
+ },
+ {
+  "id": 4523,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 18,
+   "cite": "Wisdom of Solomon 2:18",
+   "text": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "prev": "Let us see if his words be true: and let us prove what shall happen in the end of him.",
+   "next": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 12,
+   "vn": 50,
+   "cite": "Matthew 12:50",
+   "text_db": "For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.",
+   "text_canon": "For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother."
+  },
+  "old_note": "*For if the just man be the son of Elohim (God), he will help him, and deliver him from the hand of his enemies.* Wisdom of Solomon 2:18 names the wisdom-stream's direct articulation of the son-of-Elohim-tested-by-deliverance architecture: the just-man's son-of-Elohim-identity is to be tested by whether Yahuah (God) helps him. The framework reads the verse against Matt 12:50's kingdom-family-recognition-criterion: the doing-the-Father's-will substance is the operative-identity-marker — the system's test (Wisdom 2:18) is whether Yahuah (God) delivers; the King's test (Matt 12:50) is whether the heart walks the will of the Father. The same architecture from both sides: the heart-Torah-walking-life IS the son-of-Elohim-identity-marker at both registers.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "For if the just man be the son of Elohim (God), he will help him, and deliver him from the hand of his enemies.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:18",
+   "ratio": 0.92,
+   "live_proposed": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 193,
+    "slug": "children-of-elohim-by-doing-the-fathers-will-in-wisdom-and-sirach-and-jubilees",
+    "old": "Wisdom of Solomon 2:18 — *if the just man be the son of Elohim (God), he will help him.* The wisdom-stream's son-of-Elohim-tested-by-deliverance architecture; Matt 12:50's kingdom-family is identified by the same heart-Torah-walking life."
+   }
+  ]
+ },
+ {
+  "id": 4601,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 18,
+   "cite": "Wisdom of Solomon 2:18",
+   "text": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "prev": "Let us see if his words be true: and let us prove what shall happen in the end of him.",
+   "next": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 16,
+   "vn": 16,
+   "cite": "Matthew 16:16",
+   "text_db": "And Simon Peter answered and said, You are the Messiah (Christ), the Son of the living Elohim (God).",
+   "text_canon": "And Simon Peter answered and said, Thou art the Messiah (Christ), the Son of the living Elohim (God)."
+  },
+  "old_note": "*For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.* Wisdom of Solomon 2:18 names the wisdom-stream's articulation of the just-man-as-the-son-of-Yahuah substance — the wicked's-mocking-challenge against the righteous-one in the prefiguring-passage Wisdom of Solomon 2:12-20 carries. The framework reads the verse against Matt 16:16's *thou art the Messiah, the Son of the living Elohim (God).* Kefa's (Peter's)-confession articulates at the gospel-pivot the title the wisdom-stream had named in the prefiguring-of-the-righteous-one architecture: the just-man-is-the-son-of-Yahuah; the framework reads the substance against the inherited-Christian-Trinity-doctrine's collapse and against the Trinity-denial's collapse — the Son-of-Yahuah substance is the Formed-Voice's relation-to-the-Formless-Source per the framework's nature-of-God reading; the wisdom-stream had named the architecture in the prefiguring-passage; Kefa's (Peter's)-confession lands the operative-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:18",
+   "ratio": 1.0,
+   "live_proposed": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 224,
+    "slug": "the-son-of-the-living-elohim-named-before-the-foundation-in-1-enoch-and-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:18 — *if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.* The wisdom-stream's articulation of the just-man-as-the-son-of-Yahuah substance in the prefiguring-passage — the title Kefa (Peter) articulates at Matt 16:16 in the operative-form the wisdom-stream had named in the prefiguring."
+   }
+  ]
+ },
+ {
+  "id": 8031,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 18,
+   "cite": "Wisdom of Solomon 2:18",
+   "text": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "prev": "Let us see if his words be true: and let us prove what shall happen in the end of him.",
+   "next": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 19,
+   "vn": 30,
+   "cite": "John 19:30",
+   "text_db": "When Yahusha (Jesus) therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost.",
+   "text_canon": "When Yahusha (Jesus) therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost."
+  },
+  "old_note": "*For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.* (Wisdom of Solomon 2:18) The wisdom-stream put the mocking test in the mouth of the ungodly: if the just man is truly the son of Yahuah (God), let his Father deliver him from his enemies' hand. John 19:30's *it is finished* answers the test not by escape but by completion — the just man who is the Son does not come down from the cross; he finishes the work, and the vindication the ungodly demanded as proof comes in the resurrection the wisdom-stream itself names three verses on, *the souls of the righteous are in the hand of Yahuah (God).*",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "labelled": "the-wisdom-of-solomon|2:18",
+   "proposed": "the-wisdom-of-solomon|2:18",
+   "ratio": 1.0,
+   "live_proposed": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 675,
+    "slug": "john-18-the-righteous-son-condemned-with-a-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:18 — *if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.* The mocking test the cross answers; John 19:30's *it is finished* answers not by escape but by completion, the vindication coming in the resurrection the wisdom-stream names three verses on."
+   }
+  ]
+ },
+ {
+  "id": 4574,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 19,
+   "cite": "Wisdom of Solomon 2:19",
+   "text": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "prev": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "next": "Let us condemn him with a shameful death: for by his own saying he shall be respected."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 14,
+   "vn": 5,
+   "cite": "Matthew 14:5",
+   "text_db": "And when he would have put him to death, he feared the multitude, because they counted him as a prophet.",
+   "text_canon": "And when he would have put him to death, he feared the multitude, because they counted him as a prophet."
+  },
+  "old_note": "*Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.* Wisdom of Solomon 2:19 names the wisdom-stream's direct articulation of the ungodly-determining-to-examine-the-righteous-with-despitefulness-and-torture architecture: examine-him-with-despitefulness-and-torture that-we-may-know-his-meekness. The framework reads the verse against Matt 14:5's Herod's-restraint-from-killing-Yochanan-because-of-the-multitude — the disposition is to-test-and-eventually-kill, restrained-only-by-political-calculation. The wisdom-stream had named the architecture; Matt 14:5 names the operative-restraint-mechanism (the multitude's-fear) the disposition operates-within until the birthday-banquet arrangement removes the restraint. The framework reads the architecture in continuity with the Yeshayahu (Isaiah) 53:7 *as a sheep before her shearers is dumb, so he openeth not his mouth* substance — the meekness-and-patience the ungodly-determine-to-examine-and-prove operates in the same architecture across Yochanan (John)'s-imprisonment, the King's-trial, and the apostolic-band's persecutions in Acts.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:19",
+   "ratio": 1.0,
+   "live_proposed": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 208,
+    "slug": "righteous-witness-lied-in-wait-for-and-condemned-with-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:19 — *let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.* The wisdom-stream's direct articulation of the disposition's testing-pattern; Matt 14:5 names Herod's-political-restraint-from-immediate-killing (fear-of-the-multitude) — the disposition operates until the birthday-banquet-oath removes the restraint."
+   }
+  ]
+ },
+ {
+  "id": 8033,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 19,
+   "cite": "Wisdom of Solomon 2:19",
+   "text": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "prev": "For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies.",
+   "next": "Let us condemn him with a shameful death: for by his own saying he shall be respected."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 19,
+   "vn": 5,
+   "cite": "John 19:5",
+   "text_db": "Then came Yahusha (Jesus) forth, wearing the crown of thorns, and the purple robe. And Pilate says unto them, Behold the man!",
+   "text_canon": "Then came Yahusha (Jesus) forth, wearing the crown of thorns, and the purple robe. And Pilate saith unto them, Behold the man!"
+  },
+  "old_note": "*Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.* (Wisdom of Solomon 2:19) The wisdom-stream names the scourging-and-mockery program the ungodly devise for the righteous one: *examine him with despitefulness and torture, that we may know his meekness, and prove his patience.* John 19:1-5 walks the same — Pilate scourges him, the soldiers crown him with thorns and smite him, and he is brought forth meek and patient under the *despitefulness and torture* the wisdom-stream had already named as the test the ungodly impose on the just.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "labelled": "the-wisdom-of-solomon|2:19",
+   "proposed": "the-wisdom-of-solomon|2:19",
+   "ratio": 1.0,
+   "live_proposed": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 675,
+    "slug": "john-18-the-righteous-son-condemned-with-a-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:19 — *let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.* The scourging-and-mockery program the ungodly devise for the righteous one; John 19:1-5 walks the same despitefulness and torture, the meek one brought forth."
+   }
+  ]
+ },
+ {
+  "id": 4321,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 20,
+   "cite": "Wisdom of Solomon 2:20",
+   "text": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "prev": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "next": "Such things they did imagine, and were deceived: for their own wickedness has blinded them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 4,
+   "vn": 11,
+   "cite": "Matthew 4:11",
+   "text_db": "Then the devil leaveth him, and, behold, angels came and ministered unto him.",
+   "text_canon": "Then the devil leaveth him, and, behold, angels came and ministered unto him."
+  },
+  "old_note": "*Let us condemn him with a shameful death: for by his own saying he shall be respected.* Wisdom 2:20 names the death-sentence-against-the-righteous-one that the ungodly's plot culminates in. Matt 4:11's *Then the devil leaveth him* names the wilderness-end of the first phase of the plot; the Wisdom architecture extends past the wilderness through the gospel's whole arc to the cross. The Hebrew library names the full arc the gospel will walk; the temptation is the opening.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:20",
+   "ratio": 1.0,
+   "live_proposed": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 46,
+    "slug": "ungodly-plot-against-the-righteous-son",
+    "old": "Wisdom 2:20 — *let us condemn him with a shameful death.* The death-sentence the plot culminates in; Matt 4:11 names the wilderness-end of the first phase, the Wisdom arc extends through the gospel to the cross."
+   }
+  ]
+ },
+ {
+  "id": 4471,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 20,
+   "cite": "Wisdom of Solomon 2:20",
+   "text": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "prev": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "next": "Such things they did imagine, and were deceived: for their own wickedness has blinded them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 19,
+   "cite": "Matthew 11:19",
+   "text_db": "The Son of Adam came eating and drinking, and they say, Behold a man gluttonous, and a winebibber, a friend of publicans and sinners. But wisdom is justified of her children.",
+   "text_canon": "The Son of Adam came eating and drinking, and they say, Behold a man gluttonous, and a winebibber, a friend of publicans and sinners. But wisdom is justified of her children."
+  },
+  "old_note": "*Let us condemn him with a shameful death: for by his own saying he shall be respected.* Wisdom of Solomon 2:20 names the wisdom-stream's direct prophecy of the system's-condemnation-of-the-righteous-one to a shameful death — the verbal-anchor for the trajectory the Matt 11:19 slander-escalation points toward (the Matt 12:24 Beelzebul-attribution, the Matt 26-27 cross-trial-and-execution). Matt 11:19's slander is the inaugural-form of the architecture Wisdom 2:20 had named at its full terminus: the system that cannot deny the visible-fact moves through slander, moves through false-attribution, moves toward condemnation to a shameful death. The wisdom-stream had named the full architecture; Matt 11:19 names the early-step.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:20",
+   "ratio": 1.0,
+   "live_proposed": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 121,
+    "slug": "wise-laying-in-wait-for-the-righteous-in-wisdom-of-solomon-2",
+    "old": "Wisdom of Solomon 2:20 — *let us condemn him with a shameful death.* The wisdom-stream's prophecy of the trajectory's terminus; Matt 11:19's slander is the early-step the Matt 12:24 Beelzebul-attribution and the Matt 26-27 cross-trial walk through."
+   }
+  ]
+ },
+ {
+  "id": 4575,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 20,
+   "cite": "Wisdom of Solomon 2:20",
+   "text": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "prev": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "next": "Such things they did imagine, and were deceived: for their own wickedness has blinded them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 14,
+   "vn": 10,
+   "cite": "Matthew 14:10",
+   "text_db": "And he sent, and beheaded John in the prison.",
+   "text_canon": "And he sent, and beheaded John in the prison."
+  },
+  "old_note": "*Let us condemn him with a shameful death: for by his own saying he shall be respected.* Wisdom of Solomon 2:20 names THE direct wisdom-stream verbal-anchor for the ungodly-determining-to-condemn-the-righteous-with-a-shameful-death architecture: condemn-him-with-a-shameful-death. The framework reads the verse against Matt 14:10's *and he sent, and beheaded Yochanan (John) in the prison.* The shameful-death of the wisdom-stream's articulation is the beheading-in-the-prison the operative-form: the death is not the honorable-end of the natural-life-span; it is the execution-at-the-arrangement-of-the-corrupted-court at the birthday-banquet-oath. The framework reads the architecture in continuity with the broader Tanakh-prophet-killing pattern (2 Chronicles 24:20-22; Matt 23:34-37) — the shameful-deaths the ungodly-arrange for the Torah-upbraiding-prophets walk one architecture across the canon, the wisdom-stream, and the gospel-of-the-King's-ministry.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:20",
+   "ratio": 1.0,
+   "live_proposed": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 208,
+    "slug": "righteous-witness-lied-in-wait-for-and-condemned-with-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:20 — *let us condemn him with a shameful death.* THE direct wisdom-stream verbal-anchor for the ungodly-determining-to-condemn-the-righteous-with-a-shameful-death architecture; the beheading-in-the-prison at Matt 14:10 IS the shameful-death the wisdom-stream had named — execution-at-the-corrupted-court's-arrangement at the birthday-banquet-oath, not the honorable-end of the natural-life-span."
+   }
+  ]
+ },
+ {
+  "id": 4608,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 20,
+   "cite": "Wisdom of Solomon 2:20",
+   "text": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "prev": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "next": "Such things they did imagine, and were deceived: for their own wickedness has blinded them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 16,
+   "vn": 21,
+   "cite": "Matthew 16:21",
+   "text_db": "From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day.",
+   "text_canon": "From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day."
+  },
+  "old_note": "*Let us condemn him with a shameful death: for by his own saying he shall be respected.* Wisdom of Solomon 2:20 names THE direct wisdom-stream verbal-anchor for the wicked's-condemnation-of-the-righteous-one-with-a-shameful-death substance. The framework reads the verse against Matt 16:21's *he must ... suffer many things ... and be killed.* The shameful-death the wisdom-stream had named is the cross-death the King will name explicitly at Matt 20:19 (*shall deliver him to the Gentiles to mock, and to scourge, and to crucify him*) and which the Devarim (Deuteronomy) 21:23 *cursed is every one that hangeth on a tree* substance Galatians 3:13 articulates at the apostolic-stream-level. The wisdom-stream-prefiguring at Wisdom of Solomon 2:20 + the Tanakh-suffering-servant of Yeshayahu (Isaiah) 53 + the gospel-passion-prediction at Matt 16:21 + the Devarim (Deuteronomy) 21:23 + Galatians 3:13 substance cohere at the shameful-death architecture the framework reads as the Father's-Tanakh-bearing-substance the King is the operative-fulfillment of.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:20",
+   "ratio": 1.0,
+   "live_proposed": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 226,
+    "slug": "the-righteous-one-condemned-with-a-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:20 — *let us condemn him with a shameful death.* THE direct wisdom-stream verbal-anchor for the shameful-death substance. The cross-death the King will name at Matt 20:19 + Devarim (Deuteronomy) 21:23 + Galatians 3:13 substance is the operative-fulfillment of the shameful-death the wisdom-stream had named in the prefiguring-passage."
+   }
+  ]
+ },
+ {
+  "id": 7953,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 20,
+   "cite": "Wisdom of Solomon 2:20",
+   "text": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "prev": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "next": "Such things they did imagine, and were deceived: for their own wickedness has blinded them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "luke",
+   "ch": 24,
+   "vn": 26,
+   "cite": "Luke 24:26",
+   "text_db": "Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?",
+   "text_canon": "Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?"
+  },
+  "old_note": "*Let us condemn him with a shameful death: for by his own saying he shall be respected.* (Wisdom of Solomon 2:20) The Hebrew library names the righteous-one-condemned-with-a-shameful-death architecture — the just man, who calls himself the child of Yahuah (God), condemned to a shameful death by those who lie in wait for him. *Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* (Luke 24:26): the suffering-half of the King's reading-method to the Emmaus disciples is the shameful-death Wisdom names — the righteous one delivered to condemnation, the very pattern the prophets and the wisdom-stream had been carrying that the slow-of-heart disciples could not read.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "labelled": "the-wisdom-of-solomon|2:20",
+   "proposed": "the-wisdom-of-solomon|2:20",
+   "ratio": 1.0,
+   "live_proposed": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 654,
+    "slug": "luke-24-ought-not-the-messiah-to-have-suffered-then-enter-his-glory-the-righteous-one-condemned-and-vindicated-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:20 — *Let us condemn him with a shameful death: for by his own saying he shall be respected.* The righteous-one-condemned-with-a-shameful-death suffering-half; Luke 24:26's *ought not Messiah (Christ) to have suffered these things* is this shameful-death pattern the slow-of-heart disciples could not read."
+   }
+  ]
+ },
+ {
+  "id": 8032,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 20,
+   "cite": "Wisdom of Solomon 2:20",
+   "text": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "prev": "Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience.",
+   "next": "Such things they did imagine, and were deceived: for their own wickedness has blinded them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 19,
+   "vn": 6,
+   "cite": "John 19:6",
+   "text_db": "When the chief priests therefore and officers saw him, they cried out, saying, Crucify him, crucify him. Pilate says unto them, Take you him, and crucify him: for I find no fault in him.",
+   "text_canon": "When the chief priests therefore and officers saw him, they cried out, saying, Crucify him, crucify him. Pilate saith unto them, Take ye him, and crucify him: for I find no fault in him."
+  },
+  "old_note": "*Let us condemn him with a shameful death: for by his own saying he shall be respected.* (Wisdom of Solomon 2:20) This is the wisdom-stream's framework-bearing sentence for the crucifixion: the ungodly resolve to *condemn him with a shameful death.* John 19:6's *crucify him, crucify him* is that resolve enacted — the shameful death the wisdom-stream named, demanded by the chief priests against the righteous one who called Yahuah (God) his father. The crucifixion is the shameful death the wisdom-stream foretold the ungodly would impose on the just man.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "labelled": "the-wisdom-of-solomon|2:20",
+   "proposed": "the-wisdom-of-solomon|2:20",
+   "ratio": 1.0,
+   "live_proposed": "Let us condemn him with a shameful death: for by his own saying he shall be respected.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 675,
+    "slug": "john-18-the-righteous-son-condemned-with-a-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:20 — *let us condemn him with a shameful death: for by his own saying he shall be respected.* The framework-bearing sentence for the crucifixion; John 19:6's *crucify him, crucify him* enacts the shameful death the wisdom-stream named the ungodly would impose on the just."
+   }
+  ]
+ },
+ {
+  "id": 4769,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 23,
+   "cite": "Wisdom of Solomon 2:23",
+   "text": "For Yahuah (God) created man to be immortal, and made him to be an image of his own eternity.",
+   "prev": "As for the mysteries of Yahuah (God), they knew them not: neither hoped they for the wages of righteousness, nor discerned a reward for blameless souls.",
+   "next": "Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 22,
+   "vn": 20,
+   "cite": "Matthew 22:20",
+   "text_db": "And he says unto them, Whose is this image and superscription?",
+   "text_canon": "And he saith unto them, Whose is this image and superscription?"
+  },
+  "old_note": "*For Yahuah (God) created man to be immortal, and made him to be an image of his own eternity.* Wisdom of Solomon 2:23 names the wisdom-stream's direct verbal-anchor for the image-of-Elohim-as-image-of-his-own-eternity substance. The framework reads the verse against Matt 22:20's *whose is this image and superscription?* The image-architecture the King invokes at the tribute-coin operates at two-registers-at-once: the Caesar-coin bears Caesar's perishable-image; the citizen-of-the-kingdom bears the image-of-Elohim's-own-eternity. The Caesar-coin returns to Caesar; the citizen-stamped-with-the-image-of-his-own-eternity returns to the Father who-stamped-him with the substance Wisdom of Solomon 2:23 names the wisdom-stream-substance for. The framework reads this in continuity with John 1:18's *no man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him* — the citizen-stamped-with-the-image is being-conformed-to-the-image-of-the-Son the apostle Sha'ul (Paul) names at Romans 8:29, the substance walked-out from the Formless-Source through the Formed-Expression into the citizen-of-the-kingdom.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For Yahuah (God) created man to be immortal, and made him to be an image of his own eternity.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:23",
+   "ratio": 1.0,
+   "live_proposed": "For Yahuah (God) created man to be immortal, and made him to be an image of his own eternity.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 392,
+    "slug": "render-unto-caesar-and-the-image-of-elohim-stamped-on-man-in-sirach-and-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 2:23 — *Yahuah (God) created man to be immortal, and made him to be an image of his own eternity.* The wisdom-stream verbal-anchor for the image-of-Elohim-as-image-of-his-own-eternity substance — the citizen-stamped-with-the-image-of-his-own-eternity returns to the Father who-stamped-him; the image-architecture at Matt 22:20 operates at two-registers-at-once (Caesar's perishable-image; the citizen's image-of-the-Father's-eternity)."
+   }
+  ]
+ },
+ {
+  "id": 4556,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 24,
+   "cite": "Wisdom of Solomon 2:24",
+   "text": "Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.",
+   "prev": "For Yahuah (God) created man to be immortal, and made him to be an image of his own eternity.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 13,
+   "vn": 39,
+   "cite": "Matthew 13:39",
+   "text_db": "The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.",
+   "text_canon": "The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels."
+  },
+  "old_note": "*Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.* Wisdom of Solomon 2:24 names THE direct wisdom-stream verbal-anchor for the through-envy-of-the-devil-came-death-into-the-world architecture: the devil's envy is the source-of-death entering-the-world; they-that-hold-of-his-side find-death. The framework reads the verse against Matt 13:39's *the enemy that sowed them is the devil; the harvest is the end of the world.* The wisdom-stream had named the architecture-of-the-devil-as-source-of-death-in-the-world; the King names the operative-form at the wheat-and-tares-interpretation register. The framework reads the architecture in continuity: the devil's envy at Bereshit (Genesis) 3 (the serpent) + the devil's seduction at the watchers (1 Enoch 6-11) + the devil's sowing-of-tares at Matt 13:39 = one architecture of the source-of-death-and-corruption across the canon and the wisdom-stream. The they-that-hold-of-his-side find-death substance is the same architecture the children-of-the-wicked-one carry: paternal-source-determines-destination.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|2:24",
+   "ratio": 1.0,
+   "live_proposed": "Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 203,
+    "slug": "seed-war-from-genesis-3-and-the-devil-as-source-of-death-in-wisdom-and-jubilees-and-1-enoch",
+    "old": "Wisdom of Solomon 2:24 — *through envy of the devil came death into the world: and they that do hold of his side do find it.* THE direct wisdom-stream verbal-anchor for the devil-as-source-of-death architecture; the children-of-the-wicked-one at Matt 13:38-39 are they-that-hold-of-his-side, walking the architecture the wisdom-stream had named."
+   }
+  ]
+ },
+ {
+  "id": 7922,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 2,
+   "vn": 24,
+   "cite": "Wisdom of Solomon 2:24",
+   "text": "Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.",
+   "prev": "For Yahuah (God) created man to be immortal, and made him to be an image of his own eternity.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "luke",
+   "ch": 10,
+   "vn": 18,
+   "cite": "Luke 10:18",
+   "text_db": "And he said unto them, I beheld Satan as lightning fall from heaven.",
+   "text_canon": "And he said unto them, I beheld Satan as lightning fall from heaven."
+  },
+  "old_note": "*Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.* (Wisdom of Solomon 2:24) The wisdom-stream names the devil as the envy-source through which death entered the world — the seed-war origin behind the fallen-power the King names at Luke 10:18. *I beheld Satan as lightning fall from heaven. Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy* (Luke 10:18-19): the enemy whose power the seventy are given authority over is the same devil whose envy Wisdom names as the door death came through; the authority-to-tread is the inaugurated reversal of his administration.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.",
+   "labelled": "the-wisdom-of-solomon|2:24",
+   "proposed": "the-wisdom-of-solomon|2:24",
+   "ratio": 1.0,
+   "live_proposed": "Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 641,
+    "slug": "luke-10-satan-fallen-as-lightning-and-the-watcher-fall-in-1-enoch-and-wisdom",
+    "old": "Wisdom of Solomon 2:24 — *through envy of the devil came death into the world: and they that do hold of his side do find it.* The seed-war substance behind the fallen-power; the enemy whose power the seventy tread on (Luke 10:19) is the same devil whose envy was the door death came through."
+   }
+  ]
+ },
+ {
+  "id": 4326,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 1,
+   "cite": "Wisdom of Solomon 3:1",
+   "text": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "prev": null,
+   "next": "In the sight of the unwise they seemed to die: and their departure is taken for misery,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 5,
+   "vn": 10,
+   "cite": "Matthew 5:10",
+   "text_db": "Blessed are they which are persecuted for righteousness’ sake: for theirs is the kingdom of heaven.",
+   "text_canon": "Blessed are they which are persecuted for righteousness’ sake: for theirs is the kingdom of heaven."
+  },
+  "old_note": "*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom of Solomon 3:1 names the protection-of-the-righteous register the persecuted-for-righteousness Beatitude carries forward. Matt 5:10-12's *blessed are they which are persecuted ... rejoice, and be exceeding glad: for great is your reward in heaven* walks the same architecture: the persecution lands on the body, the soul rests in the Father's hand. The Hebrew library names the substance that Yahusha (Jesus) extends into the Beatitude.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:1",
+   "ratio": 1.0,
+   "live_proposed": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 48,
+    "slug": "beatitudes-as-righteous-elect-blessing-register",
+    "old": "Wisdom of Solomon 3:1 — *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The protection-of-the-righteous register the persecution-Beatitudes carry forward."
+   }
+  ]
+ },
+ {
+  "id": 4445,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 1,
+   "cite": "Wisdom of Solomon 3:1",
+   "text": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "prev": null,
+   "next": "In the sight of the unwise they seemed to die: and their departure is taken for misery,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 28,
+   "cite": "Matthew 10:28",
+   "text_db": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.",
+   "text_canon": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell."
+  },
+  "old_note": "*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom of Solomon 3:1 names the wisdom-stream's direct articulation of the souls-of-the-righteous-in-Yahuah (God)'s-hand architecture: the souls of the righteous are in Yahuah (God)'s hand; no torment touches them. Matt 10:28's *fear not them which kill the body, but are not able to kill the soul* walks the same architecture at the kingdom-citizens level — the persecutors can reach the body but cannot reach the soul, because the soul of the righteous is held in the Father's hand. The wisdom-stream had named the architecture; the King at Matt 10:28 names the operative-fact at the persecution-encounter.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:1",
+   "ratio": 1.0,
+   "live_proposed": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 110,
+    "slug": "souls-of-the-righteous-in-yahuah-hand-in-wisdom-3-and-5",
+    "old": "Wisdom of Solomon 3:1 — *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The wisdom-stream's direct operative-fact for Matt 10:28's *not able to kill the soul* — the persecutors reach the body but cannot reach the soul that is held in the Father's hand."
+   }
+  ]
+ },
+ {
+  "id": 4609,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 1,
+   "cite": "Wisdom of Solomon 3:1",
+   "text": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "prev": null,
+   "next": "In the sight of the unwise they seemed to die: and their departure is taken for misery,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 16,
+   "vn": 21,
+   "cite": "Matthew 16:21",
+   "text_db": "From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day.",
+   "text_canon": "From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day."
+  },
+  "old_note": "*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom of Solomon 3:1 names the wisdom-stream's articulation of the souls-of-the-righteous-preserved-in-the-Father's-hand substance — the post-shameful-death vindication-architecture Wisdom of Solomon 3 unfolds (against the wicked's-mocking-of-the-righteous-one in chapter 2). The framework reads the verse against Matt 16:21's *and be raised again the third day.* The wisdom-stream had named the architecture of the righteous-one's-vindication after the shameful-death; the King's-passion-prediction names both halves explicitly — the suffering-and-killing AND the third-day-raising. The resurrection-credential the sign-of-Yonah pre-announces at v.4 is the operative-fulfillment of the wisdom-stream-prefiguring at Wisdom of Solomon 3:1.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:1",
+   "ratio": 1.0,
+   "live_proposed": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 226,
+    "slug": "the-righteous-one-condemned-with-a-shameful-death-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 3:1 — *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The wisdom-stream's articulation of the souls-of-the-righteous-preserved-in-the-Father's-hand substance — the post-shameful-death vindication-architecture the third-day-raising at Matt 16:21 enacts at the gospel-pivot."
+   }
+  ]
+ },
+ {
+  "id": 4730,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 1,
+   "cite": "Wisdom of Solomon 3:1",
+   "text": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "prev": null,
+   "next": "In the sight of the unwise they seemed to die: and their departure is taken for misery,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 20,
+   "vn": 22,
+   "cite": "Matthew 20:22",
+   "text_db": "But Yahusha (Jesus) answered and said, You know not what you ask. Are you able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.",
+   "text_canon": "But Yahusha (Jesus) answered and said, Ye know not what ye ask. Are ye able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able."
+  },
+  "old_note": "*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom of Solomon 3:1 names the wisdom-stream's articulation of the righteous-in-the-hand-of-Yahuah substance — the substantial-preservation through-the-cup-of-suffering. The framework reads the verse against Matt 20:22's *are ye able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with?* The cup the King is about-to-drink is the Tanakh-cup-of-wrath the prophets carried (Psalm 75:8, Yeshayahu (Isaiah) 51:17, 21-22, Yirmeyahu (Jeremiah) 25:15-16) — substantially-poured-on-the-Son-of-Adam-on-the-cross at the substitutionary-substance-level. The cup the sons of Zavdai (Zebedee) will-drink is the apostolic-mission-cost cup — Ya'aqov (James) killed-with-the-sword by Herodes-Agrippa-I at Acts 12:2, Yochanan (John) walking-the-substance-of-tribulation across the long-apostolic-mission to Patmos (Hitgalut (Revelation) 1:9). Wisdom of Solomon 3:1 names the wisdom-stream's articulation of the substantial-preservation through the apostolic-mission-cost cup — the souls-of-the-righteous in-the-hand-of-Yahuah, no-torment-touching-them at the eternal-substance-level even-while the substantial-suffering passes-through the temporal-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:1",
+   "ratio": 1.0,
+   "live_proposed": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 383,
+    "slug": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+    "old": "Wisdom of Solomon 3:1 — *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The substantial-preservation through the apostolic-mission-cost cup — the sons of Zavdai (Zebedee) at Matt 20:22 will-walk the cup at the apostolic-mission-cost level (Ya'aqov (James) at Acts 12:2; Yochanan (John) at Hitgalut (Revelation) 1:9), preserved-in-the-hand-of-Yahuah at the eternal-substance level."
+   }
+  ]
+ },
+ {
+  "id": 4774,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 1,
+   "cite": "Wisdom of Solomon 3:1",
+   "text": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "prev": null,
+   "next": "In the sight of the unwise they seemed to die: and their departure is taken for misery,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 22,
+   "vn": 32,
+   "cite": "Matthew 22:32",
+   "text_db": "I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob? Elohim (God) is not the Elohim (God) of the dead, but of the living.",
+   "text_canon": "I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob? Elohim (God) is not the Elohim (God) of the dead, but of the living."
+  },
+  "old_note": "*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom of Solomon 3:1 names the wisdom-stream's direct articulation of the souls-of-the-righteous-in-the-hand-of-Yahuah substance — read carefully through the framework, this is the asleep-in-the-Father's-keeping substance, the substance-of-the-Father-holding-the-citizens-He-will-raise, NOT the inherited-Christian immediate-conscious-disembodied-soul-going-to-heaven substance the Wisdom of Solomon 3 surrounding-context (vv.7-8 — *and in the time of their visitation they shall shine ... they shall judge the nations*) makes plain belongs to the resurrection-day-substance not to the immediate-after-death-substance. The framework reads the verse against Matt 22:32's *Elohim (God) is not the Elohim (God) of the dead, but of the living.* The Father-relating-to-the-asleep-as-the-living is the substance Wisdom of Solomon 3:1 names — the souls-of-the-righteous-are-in-the-hand-of-Yahuah because the Father holds-them-for-the-resurrection-day, the substance the citizen-of-the-kingdom can grieve-with-hope (*not as others which have no hope,* the apostle Sha'ul (Paul) at 1 Thessalonians 4:13) but should not grieve with the inherited-Christian collapsed-into-immediate-disembodied-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:1",
+   "ratio": 1.0,
+   "live_proposed": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 393,
+    "slug": "the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream",
+    "old": "Wisdom of Solomon 3:1 — *but the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The wisdom-stream articulation of the souls-of-the-righteous-in-the-hand-of-Yahuah substance — read carefully through the framework, this is the asleep-in-the-Father's-keeping substance (vv.7-8's *in the time of their visitation they shall shine ... they shall judge the nations* makes plain this belongs to the resurrection-day-substance), NOT the inherited-Christian immediate-conscious-disembodied substance the modern-Christian-pulpit had collapsed-the-grief-substance-into."
+   }
+  ]
+ },
+ {
+  "id": 7860,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 1,
+   "cite": "Wisdom of Solomon 3:1",
+   "text": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "prev": null,
+   "next": "In the sight of the unwise they seemed to die: and their departure is taken for misery,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "mark",
+   "ch": 12,
+   "vn": 27,
+   "cite": "Mark 12:27",
+   "text_db": "He is not the Elohim (God) of the dead, but the Elohim (God) of the living: you therefore do greatly err.",
+   "text_canon": "He is not the Elohim (God) of the dead, but the Elohim (God) of the living: ye therefore do greatly err."
+  },
+  "old_note": "*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom of Solomon 3:1 names the souls-of-the-righteous-in-the-Father's-hand architecture the King invokes at Mark 12:27 — *he is not the Elohim (God) of the dead, but the Elohim (God) of the living.* The patriarchs Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob) are alive to the Father because the souls of the righteous are held in his hand against the resurrection; the Sadducees who deny the resurrection know neither the scriptures nor the power of Elohim. The Hebrew library had already named the righteous as living in the Father's hand; the gospel names the same in the bush-revelation.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:1",
+   "ratio": 1.0,
+   "live_proposed": "But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 627,
+    "slug": "mark-12-the-elohim-of-the-living-and-the-souls-of-the-righteous-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 3:1 — *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The souls-of-the-righteous-in-the-Father's-hand; Mark 12:27's *he is not the Elohim (God) of the dead, but the Elohim (God) of the living* names the patriarchs alive to the Father who holds them against the resurrection."
+   }
+  ]
+ },
+ {
+  "id": 7859,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 4,
+   "cite": "Wisdom of Solomon 3:4",
+   "text": "For though they be punished in the sight of men, yet is their hope full of immortality.",
+   "prev": "And their going from us to be utter destruction: but they are in peace.",
+   "next": "And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "mark",
+   "ch": 12,
+   "vn": 26,
+   "cite": "Mark 12:26",
+   "text_db": "And as touching the dead, that they rise: have you not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?",
+   "text_canon": "And as touching the dead, that they rise: have ye not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?"
+  },
+  "old_note": "*For though they be punished in the sight of men, yet is their hope full of immortality.* Wisdom of Solomon 3:4 names the hope-full-of-immortality the resurrection-argument of Mark 12:26 grounds itself in. The King reads the bush-revelation — *I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob* — as the Father's standing relation to the living, not to the perished. The wisdom-stream had already named the righteous as carrying a hope full of immortality though they die in the sight of men; the gospel names the resurrection that hope reaches toward.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For though they be punished in the sight of men, yet is their hope full of immortality.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:4",
+   "ratio": 1.0,
+   "live_proposed": "For though they be punished in the sight of men, yet is their hope full of immortality.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 627,
+    "slug": "mark-12-the-elohim-of-the-living-and-the-souls-of-the-righteous-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 3:4 — *though they be punished in the sight of men, yet is their hope full of immortality.* The hope-full-of-immortality the resurrection reaches toward; Mark 12:26's bush-revelation reads the Father's standing relation to the living, not the perished."
+   }
+  ]
+ },
+ {
+  "id": 4446,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 5,
+   "cite": "Wisdom of Solomon 3:5",
+   "text": "And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself.",
+   "prev": "For though they be punished in the sight of men, yet is their hope full of immortality.",
+   "next": "As gold in the furnace has he tried them, and received them as a burnt offering."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 22,
+   "cite": "Matthew 10:22",
+   "text_db": "And you shall be hated of all men for my name’s sake: but he that endures to the end shall be saved.",
+   "text_canon": "And ye shall be hated of all men for my name’s sake: but he that endureth to the end shall be saved."
+  },
+  "old_note": "*And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself.* Wisdom of Solomon 3:5 names the wisdom-stream's direct architecture of the suffering-as-proving-test: Yahuah (God) proves the righteous through chastisement and finds them worthy. Matt 10:22's endure-to-the-end perseverance-frame walks the same architecture: the persecution-chastisement is the proving-test; the disciple who endures is found worthy at the Father's recognition. The wisdom-stream's suffering-as-proving and the King's endure-to-be-saved name the same diagnostic from two angles.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:5",
+   "ratio": 1.0,
+   "live_proposed": "And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 110,
+    "slug": "souls-of-the-righteous-in-yahuah-hand-in-wisdom-3-and-5",
+    "old": "Wisdom of Solomon 3:5 — *having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy.* The wisdom-stream's suffering-as-proving architecture; Matt 10:22's endure-to-the-end perseverance-frame names the same diagnostic from the kingdom-citizens side."
+   }
+  ]
+ },
+ {
+  "id": 39555,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 6,
+   "cite": "Wisdom of Solomon 3:6",
+   "text": "As gold in the furnace has he tried them, and received them as a burnt offering.",
+   "prev": "And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself.",
+   "next": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble."
+  },
+  "other": {
+   "ed": "apocrypha",
+   "book": "ecclesiasticus",
+   "ch": 2,
+   "vn": 5,
+   "cite": "Ecclesiasticus 2:5",
+   "text_db": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "text_canon": null
+  },
+  "old_note": "Wisdom of Solomon 3:6 — *As gold in the furnace has he tried them, and received them as a burnt offering.* The companion wisdom book self-links the very gold-in-the-furnace proving of the righteous that Sirach 2:5 declares.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "As gold in the furnace has he tried them, and received them as a burnt offering.",
+   "labelled": "the-wisdom-of-solomon|3:6",
+   "proposed": "the-wisdom-of-solomon|3:6",
+   "ratio": 1.0,
+   "live_proposed": "As gold in the furnace has he tried them, and received them as a burnt offering.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9143,
+    "slug": "ecclesiasticus-2-prepare-soul-for-temptation",
+    "old": "Wisdom of Solomon 3:6 — *As gold in the furnace has he tried them, and received them as a burnt offering.* The companion wisdom book self-links the very gold-in-the-furnace proving of the righteous that Sirach 2:5 declares."
+   }
+  ]
+ },
+ {
+  "id": 4543,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 7,
+   "cite": "Wisdom of Solomon 3:7",
+   "text": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "prev": "As gold in the furnace has he tried them, and received them as a burnt offering.",
+   "next": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 13,
+   "vn": 43,
+   "cite": "Matthew 13:43",
+   "text_db": "Then shall the righteous shine forth as the sun in the kingdom of their Father. Who has ears to hear, let him hear.",
+   "text_canon": "Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear."
+  },
+  "old_note": "*And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* Wisdom of Solomon 3:7 names the wisdom-stream's direct articulation of the righteous-shall-shine-at-the-time-of-their-visitation architecture: the souls-of-the-righteous shall-shine and run-like-sparks-among-the-stubble at the time-of-their-visitation. The framework reads the verse against Matt 13:43: the visitation-of-the-righteous at the wisdom-stream register is the same eschatological-vindication the King names at the wheat-and-tares-interpretation register. The sparks-among-the-stubble carries the harvest-and-burning imagery directly — the same harvest the King's parable names, with the righteous-shining-as-sparks-among-the-burning-tares.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:7",
+   "ratio": 1.0,
+   "live_proposed": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 199,
+    "slug": "righteous-shall-shine-as-the-sun-in-1-enoch-and-2-esdras-and-wisdom",
+    "old": "Wisdom of Solomon 3:7 — *in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The wisdom-stream's articulation at the visitation-of-the-righteous register; the sparks-among-the-stubble carries the harvest-and-burning imagery directly — the same harvest the King's parable names."
+   }
+  ]
+ },
+ {
+  "id": 4823,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 7,
+   "cite": "Wisdom of Solomon 3:7",
+   "text": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "prev": "As gold in the furnace has he tried them, and received them as a burnt offering.",
+   "next": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 46,
+   "cite": "Matthew 24:46",
+   "text_db": "Blessed is that servant, whom his lord when he comes shall find so doing.",
+   "text_canon": "Blessed is that servant, whom his lord when he cometh shall find so doing."
+  },
+  "old_note": "*And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* Wisdom of Solomon 3:7 names the wisdom-stream articulation of the time-of-visitation substance — the substantial-day-of-the-substantial-Father's-visiting-of-the-substantial-righteous. The framework reads the verse against Matt 24:46's *blessed is that servant, whom his lord when he cometh shall find so doing.* The substantial *time of their visitation* substance is the substantial-day-of-the-substantial-lord's-coming the King walks at v.42-46; the substantial-faithful-and-wise-servant walking-the-substantial-stewardship-substance at-the-substantial-time-of-the-substantial-visitation walks-into-the-substantial-shining-substance Wisdom of Solomon 3:7 names. The framework reads this in continuity with Daniel 12:3 (*and they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever*) and Matthew 13:43 (*then shall the righteous shine forth as the sun in the kingdom of their Father*) — the substantial-shining-substance is the substantial-substance the substantial-righteous-walked-the-substantial-Way-substance into the substantial-time-of-the-substantial-visitation.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:7",
+   "ratio": 1.0,
+   "live_proposed": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 404,
+    "slug": "the-faithful-and-wise-servant-and-the-day-of-visitation-in-sirach-and-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 3:7 — *in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The time-of-visitation substance — the substantial-faithful-and-wise-servant at Matt 24:46 walks-the-shining-substance-of in continuity with Daniel 12:3 (*they that be wise shall shine as the brightness of the firmament*) and Matthew 13:43 (*then shall the righteous shine forth as the sun in the kingdom of their Father*)."
+   }
+  ]
+ },
+ {
+  "id": 4828,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 7,
+   "cite": "Wisdom of Solomon 3:7",
+   "text": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "prev": "As gold in the furnace has he tried them, and received them as a burnt offering.",
+   "next": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 25,
+   "vn": 31,
+   "cite": "Matthew 25:31",
+   "text_db": "When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:",
+   "text_canon": "When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:"
+  },
+  "old_note": "*And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* Wisdom of Solomon 3:7 names the wisdom-stream articulation of the day-of-visitation when the righteous shine — the same day-of-vindication the sheep-and-goats opening at Matt 25:31 enacts at the historical-pivot. The framework reads the verse against *when the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory.* The day-of-visitation Wisdom of Solomon names at the prefiguring-register is the Son-of-Adam-coming-in-his-glory of Matt 25:31; the righteous shining in the time of their visitation per Wisdom of Solomon 3:7 walks the substantial-substance the apostle-Sha'ul (Paul) walks at 1 Thessalonians 4:13-17 (the gathered-remnant-substance caught-up to-meet-the-Yahusha-in-the-air) + the Tanakh-substance Daniel walked at Daniel 12:3 (*they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever*). The wisdom-stream and the Tanakh and the gospel cohere at the righteous-shining-in-the-day-of-visitation substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:7",
+   "ratio": 1.0,
+   "live_proposed": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 406,
+    "slug": "the-day-of-vindication-of-the-righteous-and-the-judgment-of-the-nations-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 3:7 — *in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The day-of-visitation when the righteous shine — the same architecture the apostle-Sha'ul (Paul) walks at 1 Thessalonians 4:13-17 and the prophet-Daniel walked at Daniel 12:3's *they that be wise shall shine as the brightness of the firmament*; the Son-of-Adam-coming-in-his-glory at Matt 25:31 is the operative-form."
+   }
+  ]
+ },
+ {
+  "id": 4890,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 7,
+   "cite": "Wisdom of Solomon 3:7",
+   "text": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "prev": "As gold in the furnace has he tried them, and received them as a burnt offering.",
+   "next": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 6,
+   "cite": "Matthew 28:6",
+   "text_db": "He is not here: for he is risen, as he said. Come, see the place where the Lord lay.",
+   "text_canon": "He is not here: for he is risen, as he said. Come, see the place where Yahusha (Lord) lay."
+  },
+  "old_note": "*And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* Wisdom of Solomon 3:7 names the wisdom-stream's direct articulation of the time-of-visitation-the-righteous-shall-shine substance — the day-of-vindication-of-the-righteous-revealed-from-the-Father's-hand. The framework reads the verse against Matt 28:6's *He is not here: for he is risen, as he said.* The substantial-Resurrection-substance the heavenly-messenger announces at the empty tomb is the operative-firstfruits-event of the day-of-visitation-the-wisdom-stream had named — the King-of-Yashar'el (Israel) walks the substantial-Wave-Sheaf-firstfruits-substance per Leviticus 23:15-16 + 1 Corinthians 15:20-23 (*Messiah (Christ) the firstfruits; afterward they that are Messiah's (Christ's) at his coming*); the wisdom-stream had articulated the architecture of the shining-of-the-righteous at the time-of-their-visitation centuries before; the King's-third-day-rising fulfills the firstfruits-substance the wisdom-stream had named the prefiguring-architecture for. The framework reads this in continuity with Daniel 12:2-3 (*many of them that sleep in the dust of the earth shall awake ... and they that be wise shall shine as the brightness of the firmament*) — the asleep-awaiting-the-resurrection substance the framework's Red Line #11 architecture names, NOT the inherited-Christian immediate-disembodied-soul substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:7",
+   "ratio": 1.0,
+   "live_proposed": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 421,
+    "slug": "the-resurrection-of-the-righteous-vindicated-and-shining-in-wisdom-of-solomon-3-and-5",
+    "old": "Wisdom of Solomon 3:7 — *and in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The wisdom-stream's articulation of the time-of-visitation-the-righteous-shall-shine substance — the day-of-vindication-of-the-righteous the King-of-Yashar'el (Israel)-as-firstfruits enacts at Matt 28:6's announcement of the empty tomb. In continuity with Daniel 12:2-3's shining-as-the-brightness-of-the-firmament substance."
+   }
+  ]
+ },
+ {
+  "id": 4555,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 8,
+   "cite": "Wisdom of Solomon 3:8",
+   "text": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "prev": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "next": "They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 13,
+   "vn": 49,
+   "cite": "Matthew 13:49",
+   "text_db": "So shall it be at the end of the world: the angels shall come forth, and sever the wicked from among the just,",
+   "text_canon": "So shall it be at the end of the world: the angels shall come forth, and sever the wicked from among the just,"
+  },
+  "old_note": "*They shall judge the nations, and have dominion over the people, and Yahuah (their Lord) shall reign for ever.* Wisdom of Solomon 3:8 names the wisdom-stream's direct articulation of the righteous-shall-judge-the-nations and have-dominion-over-the-people architecture at the eschatological-end-point. The framework reads the verse against Matt 13:49's severing-the-wicked-from-among-the-just: the wisdom-stream had named the architecture-of-the-righteous-judging-the-nations at the eschatological-judgment-and-millennial-reign register; the King's dragnet-parable lands the architecture at the present-chapter's recapitulation register. The framework reads the kingdom-of-priests destination-of-the-gathered-remnant per Red Line #7 in continuity: the righteous judge-and-rule the nations-left-after-the-judgment at the millennial-reign; the wisdom-stream and the gospel walk one architecture.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "They shall judge the nations, and have dominion over the people, and Yahuah (their Lord) shall reign for ever.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:8",
+   "ratio": 0.89,
+   "live_proposed": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 202,
+    "slug": "wheat-from-chaff-and-righteous-from-wicked-at-the-day-of-separation-in-2-esdras-and-1-enoch-and-wisdom",
+    "old": "Wisdom of Solomon 3:8 — *they shall judge the nations, and have dominion over the people.* The wisdom-stream's articulation of the righteous-judge-the-nations at the eschatological-end-point; the kingdom-of-priests destination per Red Line #7 at the millennial-reign."
+   }
+  ]
+ },
+ {
+  "id": 4719,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 8,
+   "cite": "Wisdom of Solomon 3:8",
+   "text": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "prev": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "next": "They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 19,
+   "vn": 28,
+   "cite": "Matthew 19:28",
+   "text_db": "And Yahusha (Jesus) said unto them, Verily I say unto you, That you which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, you also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel).",
+   "text_canon": "And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel)."
+  },
+  "old_note": "*They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.* Wisdom of Solomon 3:8 names the wisdom-stream's direct articulation of the judging-the-nations + dominion-over-the-people substance the souls-of-the-righteous-in-the-hand-of-Yahuah (God) at the consummated-substance walk-in. The framework reads the verse against Matt 19:28's *ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel).* The framework reads the substance carefully — the Wisdom of Solomon-substance names judging-the-nations at the consummated-substance; the King's-Matt-19:28-substance names judging-the-twelve-tribes-of-Yashar'el (Israel) at the consummated-substance. The substances are the consummated-kingdom-architecture viewed-from-the-two-sides: the gathered-twelve-tribes-of-Yashar'el (Israel) sit-under-the-apostolic-thrones in the kingdom-of-priests architecture (Shemot (Exodus) 19:6, Yeshayahu (Isaiah) 61:6, Revelation 1:6, 5:10); the nations-left-alive-after-the-day-of-Yahuah (the LORD) receive priestly-instruction from the gathered-remnant. The framework reads in framework-substance per Red Line #11 — the destination of the gathering is a kingdom-of-priests for the nations-left-alive; the priestly-substance toward-the-nations begins at the consummated-kingdom, not before. The wisdom-stream had named both substances; the King's-substance lands the architecture at the King's-own-mouth. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:8",
+   "ratio": 1.0,
+   "live_proposed": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 380,
+    "slug": "the-gathering-of-the-twelve-tribes-and-the-thrones-of-judgment-in-jubilees-sirach-wisdom-and-testaments-xii",
+    "old": "Wisdom of Solomon 3:8 — *they shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.* The wisdom-stream articulation of the souls-of-the-righteous judging-the-nations + dominion-over-the-people substance — the consummated-kingdom's kingdom-of-priests architecture for the nations-left-alive-after-the-day-of-Yahuah (the LORD) (Shemot (Exodus) 19:6, Yeshayahu (Isaiah) 61:6, Revelation 1:6, 5:10); the gathered-twelve-tribes seated-under-the-apostolic-thrones, the nations-receive priestly-instruction per Red Line #11."
+   }
+  ]
+ },
+ {
+  "id": 4829,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 8,
+   "cite": "Wisdom of Solomon 3:8",
+   "text": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "prev": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "next": "They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 25,
+   "vn": 32,
+   "cite": "Matthew 25:32",
+   "text_db": "And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divides his sheep from the goats:",
+   "text_canon": "And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats:"
+  },
+  "old_note": "*They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.* Wisdom of Solomon 3:8 names THE direct wisdom-stream verbal-anchor for the gathered-remnant judging the nations + having dominion + the kingdom-of-Yahuah-reigning-for-ever substance. The framework reads the verse against Matt 25:32's *and before him shall be gathered all nations: and he shall separate them one from another.* The gathering of Matt 25:32 comes first — the seed brought out of all nations and sifted, the sheep from the goats; then the gathered remnant of the seed of promise (the King's brethren of Matt 25:40), once sifted, judges the nations in the reign, as Wisdom of Solomon 3:8 had named. The Tanakh-parallel at Daniel 7:22 (*judgment was given to the saints of the most High; and the time came that the saints possessed the kingdom*) and Daniel 7:27 (*the kingdom and dominion ... shall be given to the people of the saints of the most High*) carries the same architecture. The framework reads this in continuity with Red Line #11's destination-of-the-gathered-remnant-as-priests-to-the-nations during the millennial-reign + per Revelation 5:10 (*and hast made us unto our Elohim (God) kings and priests: and we shall reign on the earth*).",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:8",
+   "ratio": 1.0,
+   "live_proposed": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 406,
+    "slug": "the-day-of-vindication-of-the-righteous-and-the-judgment-of-the-nations-in-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 3:8 — *They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.* The righteous judge the nations in the reign that follows, as *the time came that the saints possessed the kingdom* (Daniel 7:22). The gathering of Matthew 25:32 comes first: the seed brought out of all nations and sifted, the sheep from the goats."
+   }
+  ]
+ },
+ {
+  "id": 4891,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 8,
+   "cite": "Wisdom of Solomon 3:8",
+   "text": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "prev": "And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.",
+   "next": "They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 6,
+   "cite": "Matthew 28:6",
+   "text_db": "He is not here: for he is risen, as he said. Come, see the place where the Lord lay.",
+   "text_canon": "He is not here: for he is risen, as he said. Come, see the place where Yahusha (Lord) lay."
+  },
+  "old_note": "*They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.* Wisdom of Solomon 3:8 names the wisdom-stream's direct articulation of the resurrected-righteous-shall-judge-the-nations-and-have-dominion substance — the millennial-reign-on-the-earth-substance the King-of-Yashar'el (Israel) will walk-out per Revelation 20:4-6 (*and they lived and reigned with Messiah (Christ) a thousand years*) + Daniel 7:18, 22, 27 (*the saints of the most High shall take the kingdom*). The framework reads the verse against Matt 28:6's announcement of the King's-Resurrection. The King's-resurrection-as-firstfruits is the operative-first-step toward the substance the wisdom-stream had named the architecture for: the resurrected-righteous-saints-of-the-Most-High-shall-judge-the-nations-and-have-dominion-over-the-people in-the-millennial-reign per Red Line #11's post-harvest-sifting + the gathered-remnant-becoming-the-kingdom-of-priests-to-the-nations-left-alive architecture. The substance is NOT the inherited-Christian individual-soul-going-to-heaven-and-the-earth-being-destroyed substance; the substance is the resurrected-citizens-of-the-kingdom reigning-on-the-earth-with-the-King in the millennial-substance the prophets named.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:8",
+   "ratio": 1.0,
+   "live_proposed": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 421,
+    "slug": "the-resurrection-of-the-righteous-vindicated-and-shining-in-wisdom-of-solomon-3-and-5",
+    "old": "Wisdom of Solomon 3:8 — *they shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.* The substantial-resurrected-righteous-shall-judge-the-nations-and-have-dominion substance — the millennial-reign-on-the-earth-substance per Revelation 20:4-6 + Daniel 7:18, 22, 27. The King's-Resurrection at Matt 28:6 is the operative-firstfruits-step toward the substance the wisdom-stream had named the architecture for."
+   }
+  ]
+ },
+ {
+  "id": 4327,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 9,
+   "cite": "Wisdom of Solomon 3:9",
+   "text": "They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect.",
+   "prev": "They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.",
+   "next": "But the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God)."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 5,
+   "vn": 12,
+   "cite": "Matthew 5:12",
+   "text_db": "Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you.",
+   "text_canon": "Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you."
+  },
+  "old_note": "*They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect.* Wisdom 3:9 names the great-is-your-reward register — *grace and mercy is to his saints, and he has care for his elect.* Matt 5:12's *great is your reward in heaven: for so persecuted they the prophets which were before you* walks the same Hebrew library reward-and-care promise on the elect, extended to the disciples joining the prophetic-witness lineage.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:9",
+   "ratio": 1.0,
+   "live_proposed": "They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 48,
+    "slug": "beatitudes-as-righteous-elect-blessing-register",
+    "old": "Wisdom 3:9 — *grace and mercy is to his saints, and he has care for his elect.* The great-is-your-reward register the Hebrew library names; Matt 5:12 extends it to the disciples joining the prophetic-witness lineage."
+   }
+  ]
+ },
+ {
+  "id": 4702,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 3,
+   "vn": 14,
+   "cite": "Wisdom of Solomon 3:14",
+   "text": "And blessed is the eunuch, which with his hands has wrought no iniquity, nor imagined wicked things against Yahuah (God): for to him shall be given the special gift of faith, and an inheritance in the temple of Yahuah (God) more acceptable to his mind.",
+   "prev": "Their offspring is cursed. Wherefore blessed is the barren that is undefiled, which has not known the sinful bed: she shall have fruit in the visitation of souls.",
+   "next": "For glorious is the fruit of good labours: and the root of wisdom shall never fall away."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 19,
+   "vn": 12,
+   "cite": "Matthew 19:12",
+   "text_db": "For there are some eunuchs, which were so born from their mother’s womb: and there are some eunuchs, which were made eunuchs of men: and there be eunuchs, which have made themselves eunuchs for the kingdom of heaven’s sake. He that is able to receive it, let him receive it.",
+   "text_canon": "For there are some eunuchs, which were so born from their mother’s womb: and there are some eunuchs, which were made eunuchs of men: and there be eunuchs, which have made themselves eunuchs for the kingdom of heaven’s sake. He that is able to receive it, let him receive it."
+  },
+  "old_note": "*And blessed is the eunuch, which with his hands has wrought no iniquity, nor imagined wicked things against Yahuah (God): for to him shall be given the special gift of faith, and an inheritance in the temple of Yahuah (the LORD) more acceptable to his mind.* Wisdom of Solomon 3:14 names THE direct wisdom-stream verbal-anchor for the blessed-eunuch-with-an-inheritance substance — the Isaiah 56:3-5 substance the King's eunuchs-for-the-kingdom-of-heaven's-sake saying at Matt 19:12 carries forward at the gospel-register. The framework reads the verse against the King's *there be eunuchs, which have made themselves eunuchs for the kingdom of heaven's sake. He that is able to receive it, let him receive it.* The Isaiah 56:3-5 promise — *a place and a name better than of sons and of daughters* in the Father's-house — and the Wisdom of Solomon 3:14 promise — *the special gift of faith, and an inheritance in the temple of Yahuah (the LORD)* — both name the wisdom-stream-substance the voluntary-celibate-for-the-kingdom-of-heaven walks. The substance is gift, not mandate; the substance is the kingdom-citizen-receiving-the-substance, not the system imposing it. The framework rules out BOTH the Roman-Catholic-mandatory-clerical-celibacy substance the institutional-tradition has imposed AND the Reformation-marriage-mandate-with-no-honored-celibate-substance over-correction. The substance the King-himself walked (1 Corinthians 7:7-8, 32-35's apostle Sha'ul (Paul) walking the same gift-substance) is the substance offered-to-those-to-whom-it-is-given, with the wisdom-stream's-promise-of-inheritance the Isaiah 56 substance carries.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And blessed is the eunuch, which with his hands has wrought no iniquity, nor imagined wicked things against Yahuah (God): for to him shall be given the special gift of faith, and an inheritance in the temple of Yahuah (the LORD) more acceptable to his mind.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|3:14",
+   "ratio": 1.0,
+   "live_proposed": "And blessed is the eunuch, which with his hands has wrought no iniquity, nor imagined wicked things against Yahuah (God): for to him shall be given the special gift of faith, and an inheritance in the temple of Yahuah (God) more acceptable to his mind.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 376,
+    "slug": "creation-ordinance-marriage-and-the-blessed-eunuch-in-jubilees-tobit-and-wisdom-of-solomon",
+    "old": "Wisdom of Solomon 3:14 — *blessed is the eunuch, which with his hands has wrought no iniquity, nor imagined wicked things against Yahuah (God): for to him shall be given the special gift of faith, and an inheritance in the temple of Yahuah (the LORD) more acceptable to his mind.* THE direct verbal-anchor for the blessed-eunuch-with-an-inheritance substance — the Isaiah 56:3-5 promise the King's eunuchs-for-the-kingdom-of-heaven's-sake saying at Matt 19:12 carries forward."
+   }
+  ]
+ },
+ {
+  "id": 4750,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 4,
+   "vn": 4,
+   "cite": "Wisdom of Solomon 4:4",
+   "text": "For though they flourish in branches for a time; yet standing not last, they shall be shaken with the wind, and through the force of winds they shall be rooted out.",
+   "prev": "But the multiplying brood of the ungodly shall not thrive, nor take deep rooting from bastard slips, nor lay any fast foundation.",
+   "next": "The imperfect branches shall be broken off, their fruit unprofitable, not ripe to eat, yes, meet for nothing."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 19,
+   "cite": "Matthew 21:19",
+   "text_db": "And when he saw a fig tree in the way, he came to it, and found nothing thereon, but leaves only, and said unto it, Let no fruit grow on you henceforward for ever. And presently the fig tree withered away.",
+   "text_canon": "And when he saw a fig tree in the way, he came to it, and found nothing thereon, but leaves only, and said unto it, Let no fruit grow on thee henceforward for ever. And presently the fig tree withered away."
+  },
+  "old_note": "*For though they flourish in branches for a time; yet standing not last, they shall be shaken with the wind, and through the force of winds they shall be rooted out.* Wisdom of Solomon 4:4 names the wisdom-stream's direct verbal-anchor for the flourishing-in-branches-for-a-time-but-standing-not-last substance. The framework reads the verse against Matt 21:19's *he saw a fig tree in the way, he came to it, and found nothing thereon, but leaves only.* The wisdom-stream-substance the Wisdom of Solomon 4 passage walks is the substance-of-the-ungodly-substance's-branches that-flourish-for-a-time but-have-no-standing-because-the-root-is-not-there. The substance the King-walks-against at the fig-tree-substance is the same substance the wisdom-stream had-named — the leaves-flourishing-without-the-fruit-substance the leadership-substance walks. The wisdom-stream and the gospel cohere at the substance-of-the-leaves-without-the-fruit-substance — the substance is-not-the-substance-of-the-people-of-Yashar'el (Israel)-categorically per the framework's system-not-people-posture; the substance is the substance of the Pharisaic-Sadducean-leadership-substance the King-walks-against throughout the gospel.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For though they flourish in branches for a time; yet standing not last, they shall be shaken with the wind, and through the force of winds they shall be rooted out.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|4:4",
+   "ratio": 1.0,
+   "live_proposed": "For though they flourish in branches for a time; yet standing not last, they shall be shaken with the wind, and through the force of winds they shall be rooted out.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 388,
+    "slug": "leaves-without-fruit-judged-in-wisdom-of-solomon-sirach-and-1-enoch",
+    "old": "Wisdom of Solomon 4:4 — *for though they flourish in branches for a time; yet standing not last, they shall be shaken with the wind, and through the force of winds they shall be rooted out.* The wisdom-stream's direct verbal-anchor for the flourishing-in-branches-for-a-time-but-standing-not-last substance — the leaves-without-fruit-substance the King walks-against at Matt 21:19's fig-tree."
+   }
+  ]
+ }
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "id": 4881,
+  "problem": "FIDELITY. The quoted 2 Esdras 7:30 compares the old silence to 'the former judgments'; the prose glosses it as the silence 'before anything was made', which the quoted verse does not say.",
+  "quote": "Ezra is told that the Messiah will die, and that the world will then be turned back into the old silence, as it was before anything was made, before the raising up that follows (2 Esdras 7:31–32).",
+  "fix": "Ezra is told that the Messiah will die, and that the world will then be turned back into the old silence, as in the former judgments, before the raising up that follows (2 Esdras 7:31–32)."
+ },
+ {
+  "id": 7871,
+  "problem": "THEOLOGY / FIDELITY. The covenant the martyrs died under was already sealed in blood at Sinai (Exodus 24:8); saying it 'had not yet been sealed in blood' cuts against the card's own point that it is one covenant, and reads the old covenant as bloodless until the cross.",
+  "quote": "The martyrs of 2 Maccabees 7 died trusting a covenant of everlasting life that had not yet been sealed in blood; Mark 14:24 is the sealing.",
+  "fix": "The martyrs of 2 Maccabees 7 died trusting a covenant of everlasting life whose promise had not yet been made good; Mark 14:24 is the King's own blood put to that same covenant."
+ },
+ {
+  "id": 7921,
+  "problem": "FIDELITY. Yahusha (Jesus) pronounces the woe on the Pharisees themselves ('Woe unto you, Pharisees!'); the closing line rewrites the verse so the woe falls on the seat and not the man, which neither verse says and which the old note did not carry. The victims-not-enemies posture governs our tone toward the deceived; it does not soften what the King said to the leadership.",
+  "quote": "The woe is on the seat, not on the man sitting in it.",
+  "fix": "The woe is on the man who loves the seat; the love of the uppermost place is the pride Sirach said sin begins in."
+ },
+ {
+  "id": 7983,
+  "problem": "FIDELITY / INVENTED READING. The two verses say opposite things about thirst (Sirach: 'shall yet be thirsty'; Yahusha: 'shall never thirst'), and the rewrite flattens the contrast into 'not a different drink'. The old note held the contrast honestly: Wisdom leaves the drinker thirsty and sends him back to the well; the Formed one is the well set inside him, not the abolition of that Wisdom. The writer's new reading (Sirach 24's Wisdom is speaking of a growing appetite, 'not of a lack in her') is not in the old note and is not a position the skill holds.",
+  "quote": "Wisdom says that those who eat her are hungry for more and those who drink her thirst again; she is speaking of an appetite that grows the more it is fed, not of a lack in her. The woman at the well heard the same Wisdom, now come in flesh, promise water that would end the going back and forth to the well, because the well itself would be set inside the one who drank. The thirst Sirach names is the thirst that keeps a man returning to the Word; the water Yahusha (Jesus) gives is that same Word become a spring within him. It is not a different drink. It is the same Wisdom, first drawing the thirsty back to her, then dwelling in them.",
+  "fix": "Wisdom tells the truth about herself: the one who drinks of her will be thirsty again, and the student goes back to the well as long as he lives. The woman at the well was told of water that would end that going back, because the well itself would be set inside the one who drank it. Yahusha (Jesus) is not the abolition of the wisdom that left the drinker thirsty; he is what that wisdom was drawing the thirsty toward, the Word the Torah kept sending a man back to, now a spring in him that does not run dry."
+ }
+]

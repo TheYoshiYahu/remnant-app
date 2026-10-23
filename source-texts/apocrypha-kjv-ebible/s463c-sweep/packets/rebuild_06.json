@@ -1,0 +1,1682 @@
+[
+ {
+  "id": 4492,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 24,
+   "vn": 19,
+   "cite": "Ecclesiasticus 24:19",
+   "text": "Come to me, all you that be desirous of me, and fill yourselves with my fruits.",
+   "prev": "I am the mother of fair love, and fear, and knowledge, and holy hope: I therefore, being eternal, am given to all my children which are named of him.",
+   "next": "For my memorial is sweeter than honey, and my inheritance than the honeycomb."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 28,
+   "cite": "Matthew 11:28",
+   "text_db": "Come unto me, all you that labour and are heavy laden, and I will give you rest.",
+   "text_canon": "Come unto me, all ye that labour and are heavy laden, and I will give you rest."
+  },
+  "old_note": "*Come to me, all you that be desirous of me, and fill yourselves with my fruits.* Sirach (Ecclesiasticus) 24:19 names the wisdom-stream's third major *come-unto-me* invitation-passage (after Sirach 6 and 51): the wisdom-figure issues the universal-invitation *come to me, all you that be desirous of me.* Matt 11:28's *come unto me, all ye that labour and are heavy laden* walks the same universal-invitation-architecture at the King's register, with the labour-and-heavy-laden specifying the audience-shape the wisdom-stream's *all you that be desirous* shares. The wisdom-stream wisdom-figure issued the come-unto-me invitation three times in Sirach (chapters 6, 24, 51); the King in Matt 11:28 issues the same invitation as the Word-made-flesh.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Come to me, all you that be desirous of me, and fill yourselves with my fruits.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|24:19",
+   "ratio": 1.0,
+   "live_proposed": "Come to me, all you that be desirous of me, and fill yourselves with my fruits.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 127,
+    "slug": "put-your-neck-under-the-yoke-find-rest-in-sirach-51-and-6-and-24",
+    "old": "Sirach 24:19 — *come to me, all you that be desirous of me, and fill yourselves with my fruits.* The third major wisdom-figure-come-unto-me invitation in Sirach (after chapters 6 and 51); Matt 11:28's *come unto me, all ye that labour* walks the same universal-invitation-architecture."
+   }
+  ]
+ },
+ {
+  "id": 4566,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 24,
+   "vn": 19,
+   "cite": "Ecclesiasticus 24:19",
+   "text": "Come to me, all you that be desirous of me, and fill yourselves with my fruits.",
+   "prev": "I am the mother of fair love, and fear, and knowledge, and holy hope: I therefore, being eternal, am given to all my children which are named of him.",
+   "next": "For my memorial is sweeter than honey, and my inheritance than the honeycomb."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 14,
+   "vn": 20,
+   "cite": "Matthew 14:20",
+   "text_db": "And they did all eat, and were filled: and they took up of the fragments that remained twelve baskets full.",
+   "text_canon": "And they did all eat, and were filled: and they took up of the fragments that remained twelve baskets full."
+  },
+  "old_note": "*Come unto me, all ye that be desirous of me, and fill yourselves with my fruits.* Sirach (Ecclesiasticus) 24:19 names the wisdom-stream's direct articulation of the wisdom-feeding-her-children-with-her-fruits architecture: come-unto-me and fill-yourselves-with-my-fruits. The framework reads the verse against Matt 14:20's *and they did all eat, and were filled.* The wisdom-stream knew the architecture of the wisdom-feeding-and-filling at the come-unto-me register; the King at Matt 14:20 enacts the operative-form at the Galilee-desert-place: the multitudes come; they eat; they are filled. The framework reads the Sirach 24:19 anchor in continuity with Matt 11:28's *come unto me, all ye that labour and are heavy laden, and I will give you rest* — the King's come-unto-me invitation across his ministry is the operative-form of the wisdom-stream's wisdom-inviting substance. The twelve-baskets-leftover of v.20 signal the twelve-tribes-restoration-architecture the wisdom-of-the-most-High had named as the destination-substance: the wisdom's-children gathered-and-fed in the wilderness.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Come unto me, all ye that be desirous of me, and fill yourselves with my fruits.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|24:19",
+   "ratio": 0.82,
+   "live_proposed": "Come to me, all you that be desirous of me, and fill yourselves with my fruits.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 205,
+    "slug": "wilderness-manna-and-bread-as-word-in-wisdom-of-solomon-and-2-esdras-and-sirach",
+    "old": "Sirach (Ecclesiasticus) 24:19 — *come unto me, all ye that be desirous of me, and fill yourselves with my fruits.* The wisdom-stream's direct articulation of the wisdom-feeding-her-children invitation; the King's come-unto-me invitation across his ministry (Matt 11:28) is the operative-form, with the Matt 14:20 *they did all eat, and were filled* enacting the substance at the Galilee-desert-place."
+   }
+  ]
+ },
+ {
+  "id": 71934,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 24,
+   "vn": 19,
+   "cite": "Ecclesiasticus 24:19",
+   "text": "Come to me, all you that be desirous of me, and fill yourselves with my fruits.",
+   "prev": "I am the mother of fair love, and fear, and knowledge, and holy hope: I therefore, being eternal, am given to all my children which are named of him.",
+   "next": "For my memorial is sweeter than honey, and my inheritance than the honeycomb."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 55,
+   "vn": 1,
+   "cite": "Isaiah 55:1",
+   "text_db": "Ho, every one that thirsteth, come you to the waters, and he that has no money; come you, buy, and eat; yea, come, buy wine and milk without money and without price.",
+   "text_canon": "Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price."
+  },
+  "old_note": "*Come to me, all you that be desirous of me, and fill yourselves with my fruits* (Sirach 24:19). Wisdom's invitation parallels the prophet's: *Ho, every one that thirsteth, come ye to the waters... come ye, buy, and eat* (Isaiah 55:1) — the same come-and-be-filled call, all the desirous bidden to come and eat freely of what satisfies.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Come to me, all you that be desirous of me, and fill yourselves with my fruits",
+   "labelled": "ecclesiasticus|24:19",
+   "proposed": "ecclesiasticus|24:19",
+   "ratio": 1.0,
+   "live_proposed": "Come to me, all you that be desirous of me, and fill yourselves with my fruits.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 18046,
+    "slug": "isaiah-55-ho-every-one-that-thirsteth-come-ye-to-the-waters",
+    "old": "★ *Come to me, all you that be desirous of me, and fill yourselves with my fruits* (Sirach 24:19) — Wisdom's invitation parallels *come ye, buy, and eat* (Isaiah 55:1); the same come-and-be-filled call."
+   }
+  ]
+ },
+ {
+  "id": 7983,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 24,
+   "vn": 21,
+   "cite": "Ecclesiasticus 24:21",
+   "text": "They that eat me shall yet be hungry, and they that drink me shall yet be thirsty.",
+   "prev": "For my memorial is sweeter than honey, and my inheritance than the honeycomb.",
+   "next": "He that obeyeth me shall never be confounded, and they that work by me shall not do amiss."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 4,
+   "vn": 14,
+   "cite": "John 4:14",
+   "text_db": "But whosoever drinks of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.",
+   "text_canon": "But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life."
+  },
+  "old_note": "*They that eat me shall yet be hungry, and they that drink me shall yet be thirsty.* (Ecclesiasticus / Sirach 24:21) Wisdom names her own limit in the Hebrew library: the one who drinks of her *shall yet be thirsty* — the study returns one again and again to the well. *Whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14) is the answer to the wisdom-stream's own confession. The Formed one is not the abolition of the wisdom that left the drinker thirsty; He is the well springing up within, the substance the Torah-wisdom drew the thirsty toward.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "They that eat me shall yet be hungry, and they that drink me shall yet be thirsty.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|24:21",
+   "ratio": 1.0,
+   "live_proposed": "They that eat me shall yet be hungry, and they that drink me shall yet be thirsty.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 661,
+    "slug": "john-4-living-water-and-the-wisdom-that-leaves-still-thirsty-in-sirach-24",
+    "old": "Sirach 24:21 — *they that eat me shall yet be hungry, and they that drink me shall yet be thirsty.* Wisdom confesses her own limit; John 4:14's *whosoever drinketh of the water that I shall give him shall never thirst ... a well of water springing up into everlasting life* is the answer the wisdom-stream waited for."
+   }
+  ]
+ },
+ {
+  "id": 8020,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 24,
+   "vn": 23,
+   "cite": "Ecclesiasticus 24:23",
+   "text": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.",
+   "prev": "He that obeyeth me shall never be confounded, and they that work by me shall not do amiss.",
+   "next": "Faint not to be strong in Yahuah (God); that he may confirm you, cleave to him: for Yahuah (God) Almighty is Yahuah (God) alone, and beside him there is no other Saviour."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 15,
+   "vn": 5,
+   "cite": "John 15:5",
+   "text_db": "I am the vine, you are the branches: He that abides in me, and I in him, the same brings forth much fruit: for without me you can do nothing.",
+   "text_canon": "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing."
+  },
+  "old_note": "*All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.* Ecclesiasticus (Sirach) 24:23 names the Wisdom-vine of the hymn as the Torah itself — the book of the covenant, the law Moses commanded as the inheritance of Jacob. John 15:5's *I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing* walks the same architecture: to abide in the true vine is to abide in the Word the Father spoke, the covenant-Torah the wisdom-stream named as the vine — for the branch bears nothing severed from the vine, as the keeper bears nothing severed from the Word.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|24:23",
+   "ratio": 1.0,
+   "live_proposed": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 672,
+    "slug": "john-15-the-true-vine-and-yasharel-as-the-chosen-vine-in-sirach-and-2-esdras",
+    "old": "Ecclesiasticus (Sirach) 24:23 — *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.* The Wisdom-vine named outright as the Torah; John 15:5's *I am the vine, ye are the branches ... without me ye can do nothing* — to abide in the true vine is to abide in the Word the Father spoke."
+   }
+  ]
+ },
+ {
+  "id": 56890,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 24,
+   "vn": 23,
+   "cite": "Ecclesiasticus 24:23",
+   "text": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.",
+   "prev": "He that obeyeth me shall never be confounded, and they that work by me shall not do amiss.",
+   "next": "Faint not to be strong in Yahuah (God); that he may confirm you, cleave to him: for Yahuah (God) Almighty is Yahuah (God) alone, and beside him there is no other Saviour."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "psalms",
+   "ch": 19,
+   "vn": 11,
+   "cite": "Psalm 19:11",
+   "text_db": "Moreover by them is your servant warned: and in keeping of them there is great reward.",
+   "text_canon": "Moreover by them is thy servant warned: and in keeping of them there is great reward."
+  },
+  "old_note": "*All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23). Here the restored witness names plainly what Psalm 19 has been praising: the Wisdom sweeter than honey IS *the law which Moses commanded for an heritage*. The Torah whose keeping holds *great reward* (Psalm 19:11) is *the book of the covenant of the most high Yahuah*, the inheritance of the congregations — Red Line #6 spoken outright: the law is the heritage, never the curse.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob",
+   "labelled": "ecclesiasticus|24:23",
+   "proposed": "ecclesiasticus|24:23",
+   "ratio": 1.0,
+   "live_proposed": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 13792,
+    "slug": "psalm-19-sweeter-than-honey-in-keeping-of-them-great-reward",
+    "old": "*All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage* (Sirach 24:23) — the Wisdom sweeter than honey IS the Torah, the inheritance whose keeping holds *great reward* (19:11). Red Line #6 outright."
+   }
+  ]
+ },
+ {
+  "id": 58679,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 24,
+   "vn": 23,
+   "cite": "Ecclesiasticus 24:23",
+   "text": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.",
+   "prev": "He that obeyeth me shall never be confounded, and they that work by me shall not do amiss.",
+   "next": "Faint not to be strong in Yahuah (God); that he may confirm you, cleave to him: for Yahuah (God) Almighty is Yahuah (God) alone, and beside him there is no other Saviour."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "psalms",
+   "ch": 147,
+   "vn": 19,
+   "cite": "Psalm 147:19",
+   "text_db": "He shows his word unto Jacob, his statutes and his judgments unto Yashar'el (Israel).",
+   "text_canon": "He sheweth his word unto Jacob, his statutes and his judgments unto Yashar'el (Israel)."
+  },
+  "old_note": "*All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23). Wisdom is named outright as the Torah, the heritage of Jacob — the same word *shewed unto Jacob, his statutes and his judgments unto Yashar'el (Israel)* (Psalm 147:19). The law Moses commanded is *an heritage to the congregations of Jacob*: the covenant inheritance no other nation received, Red Line #6 spoken plainly.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob",
+   "labelled": "ecclesiasticus|24:23",
+   "proposed": "ecclesiasticus|24:23",
+   "ratio": 1.0,
+   "live_proposed": "All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 14356,
+    "slug": "psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments",
+    "old": "*the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23) — Wisdom named as the Torah, the heritage of Jacob; the inheritance of 147:19, Red Line #6 plainly."
+   }
+  ]
+ },
+ {
+  "id": 135262,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 1,
+   "cite": "Ecclesiasticus 27:1",
+   "text": "Many have sinned for a small matter; and he that seeks for abundance will turn his eyes away.",
+   "prev": null,
+   "next": "As a nail sticketh fast between the joinings of the stones; so does sin stick close between buying and selling."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hosea",
+   "ch": 12,
+   "vn": 8,
+   "cite": "Hosea 12:8",
+   "text_db": "And Ephraim said, Yet I am become rich, I have found me out substance: in all my labours they shall find none iniquity in me that were sin.",
+   "text_canon": "And Ephraim said, Yet I am become rich, I have found me out substance: in all my labours they shall find none iniquity in me that were sin."
+  },
+  "old_note": "*Many have sinned for a small matter; and he that seeks for abundance will turn his eyes away* (Ecclesiasticus 27:1). Ephraim's boast — *Yet I am become rich, I have found me out substance: in all my labours they shall find none iniquity in me* (Hosea 12:8) — is the very self-blinding Sirach names: *he that seeks for abundance will turn his eyes away*. The pursuit of gain hides the sin from the sinner's own sight.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Many have sinned for a small matter; and he that seeks for abundance will turn his eyes away",
+   "labelled": "ecclesiasticus|27:1",
+   "proposed": "ecclesiasticus|27:1",
+   "ratio": 1.0,
+   "live_proposed": "Many have sinned for a small matter; and he that seeks for abundance will turn his eyes away.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 33848,
+    "slug": "hosea-12-the-balances-of-deceit-are-in-his-hand",
+    "old": "*he that seeks for abundance will turn his eyes away* (Ecclesiasticus 27:1) — the self-blinding of Ephraim's boast. [extras]"
+   }
+  ]
+ },
+ {
+  "id": 4822,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 4,
+   "cite": "Ecclesiasticus 27:4",
+   "text": "As when one sifteth with a sieve, the refuse remains; so the filth of man in his talk.",
+   "prev": "Unless a man hold himself diligently in the fear of Yahuah (God), his house shall soon be overthrown.",
+   "next": "The furnace proves the potter’s vessels; so the trial of man is in his reasoning."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 51,
+   "cite": "Matthew 24:51",
+   "text_db": "And shall cut him asunder, and appoint him his portion with the hypocrites: there shall be weeping and gnashing of teeth.",
+   "text_canon": "And shall cut him asunder, and appoint him his portion with the hypocrites: there shall be weeping and gnashing of teeth."
+  },
+  "old_note": "*As when one sifteth with a sieve, the refuse remains; so the filth of man in his talk.* Sirach (Ecclesiasticus) 27:4 names the wisdom-stream articulation of the sieve-and-the-refuse-remaining substance — the substantial-post-harvest-sifting architecture the substantial-substance the chaff-from-the-wheat substance walks per Matthew 3:12 (*whose fan is in his hand, and he will throughly purge his floor, and gather his wheat into the garner; but he will burn up the chaff with unquenchable fire*). The framework reads the verse against Matt 24:51's *and shall cut him asunder, and appoint him his portion with the hypocrites: there shall be weeping and gnashing of teeth.* The substantial-evil-servant-substance is the substantial-substance had-been-trusted-with-the-substantial-stewardship and walked-into-the-substantial-loss-substance through-the-substantial-presumption — the substantial-substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 18:24 (*but when the righteous turneth away from his righteousness, and committeth iniquity... shall he live? All his righteousness that he hath done shall not be mentioned*). Sirach 27:4 names the substantial-substance the wisdom-stream walks: the substantial-sieve-and-the-refuse-remaining substance is the substantial-post-harvest-sifting that the substantial-presumption-of-the-substantial-stewardship walks-through.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "As when one sifteth with a sieve, the refuse remains; so the filth of man in his talk.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:4",
+   "ratio": 1.0,
+   "live_proposed": "As when one sifteth with a sieve, the refuse remains; so the filth of man in his talk.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 404,
+    "slug": "the-faithful-and-wise-servant-and-the-day-of-visitation-in-sirach-and-wisdom-of-solomon",
+    "old": "Sirach (Ecclesiasticus) 27:4 — *as when one sifteth with a sieve, the refuse remains; so the filth of man in his talk.* The post-harvest-sifting architecture — the substantial-evil-servant at Matt 24:51 walks-the-judgment-substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 18:24 (*when the righteous turneth away from his righteousness... all his righteousness that he hath done shall not be mentioned*); the substantial-presumption-of-the-substantial-stewardship walks-through the sieve."
+   }
+  ]
+ },
+ {
+  "id": 4379,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 6,
+   "cite": "Ecclesiasticus 27:6",
+   "text": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "prev": "The furnace proves the potter’s vessels; so the trial of man is in his reasoning.",
+   "next": "Praise no man before you hear him speak; for this is the trial of men."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 7,
+   "vn": 16,
+   "cite": "Matthew 7:16",
+   "text_db": "You shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?",
+   "text_canon": "Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?"
+  },
+  "old_note": "*The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* Sirach (Ecclesiasticus) 27:6 names the fruit-as-utterance-of-the-heart architecture in the Hebrew library's wisdom-stream — the fruit declares the tree's condition, and the utterance of the heart declares the man. Matt 7:16-20's *by their fruits ye shall know them* walks the same architecture at the false-prophet diagnostic level. The wisdom-stream had been teaching the fruit-test for centuries; the gospel binds it as the kingdom-citizens recognition-of-teachers commandment.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:6",
+   "ratio": 1.0,
+   "live_proposed": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 67,
+    "slug": "by-their-fruits-and-the-utterance-of-the-heart-in-sirach",
+    "old": "Sirach 27:6 — *the fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* The Hebrew library's direct fruit-as-utterance-of-the-heart architecture; Matt 7:16's *by their fruits ye shall know them* walks the same."
+   }
+  ]
+ },
+ {
+  "id": 4514,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 6,
+   "cite": "Ecclesiasticus 27:6",
+   "text": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "prev": "The furnace proves the potter’s vessels; so the trial of man is in his reasoning.",
+   "next": "Praise no man before you hear him speak; for this is the trial of men."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 12,
+   "vn": 34,
+   "cite": "Matthew 12:34",
+   "text_db": "O generation of vipers, how can you, being evil, speak good things? for out of the abundance of the heart the mouth speaks.",
+   "text_canon": "O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh."
+  },
+  "old_note": "*The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* Sirach (Ecclesiasticus) 27:6 names THE strongest wisdom-stream verbal-anchor for Matt 12:33-35's tree-known-by-its-fruit / out-of-the-abundance-of-the-heart-the-mouth-speaketh architecture: the fruit-declares-the-tree's-dressing; the utterance-declares-the-heart's-conceit. The wisdom-stream had named the architecture in precisely the substance the King walks at Matt 12:33-35. *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh* (Matt 12:34) names the same diagnostic Sirach 27:6 had named: words-are-fruit-of-the-heart; bad-fruit-reveals-bad-heart-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:6",
+   "ratio": 1.0,
+   "live_proposed": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 190,
+    "slug": "tongue-as-trial-of-the-heart-words-as-fruit-of-the-tree-in-sirach-27",
+    "old": "Sirach 27:6 — *the fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* THE strongest wisdom-stream verbal-anchor for Matt 12:33-35's tree-by-fruit / out-of-the-abundance-of-the-heart architecture."
+   }
+  ]
+ },
+ {
+  "id": 4583,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 6,
+   "cite": "Ecclesiasticus 27:6",
+   "text": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "prev": "The furnace proves the potter’s vessels; so the trial of man is in his reasoning.",
+   "next": "Praise no man before you hear him speak; for this is the trial of men."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 15,
+   "vn": 18,
+   "cite": "Matthew 15:18",
+   "text_db": "But those things which proceed out of the mouth come forth from the heart; and they defile the man.",
+   "text_canon": "But those things which proceed out of the mouth come forth from the heart; and they defile the man."
+  },
+  "old_note": "*The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* Sirach (Ecclesiasticus) 27:6 names the wisdom-stream's direct articulation of the tree-and-fruit-and-utterance architecture — the heart's-conceit manifests in the utterance-of-the-mouth. The framework reads the verse against Matt 15:18's *those things which proceed out of the mouth come forth from the heart.* The wisdom-stream had named the architecture in the tree-and-fruit-metaphor centuries before; the King's Matt 7:17-20 *every good tree bringeth forth good fruit; but a corrupt tree bringeth forth evil fruit* operates in the same architecture; the King's Matt 15:18 articulation locks the operative-form: the heart's-substance manifests in the mouth's-utterance and the deeds-that-follow. The cause-and-effect-of-hearing diagnostic per Red Line #11 carries through the same architecture — the heart's-substance determines what the mouth-and-deeds reveal.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:6",
+   "ratio": 1.0,
+   "live_proposed": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 220,
+    "slug": "the-heart-the-source-of-evil-not-the-father-in-sirach-and-wisdom-of-solomon",
+    "old": "Sirach (Ecclesiasticus) 27:6 — *the fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* The wisdom-stream's articulation of the tree-and-fruit-and-utterance architecture — the heart's-conceit manifests in the utterance-of-the-mouth, the same architecture the King's Matt 7:17-20 and Matt 15:18 walk."
+   }
+  ]
+ },
+ {
+  "id": 7915,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 6,
+   "cite": "Ecclesiasticus 27:6",
+   "text": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "prev": "The furnace proves the potter’s vessels; so the trial of man is in his reasoning.",
+   "next": "Praise no man before you hear him speak; for this is the trial of men."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "luke",
+   "ch": 6,
+   "vn": 43,
+   "cite": "Luke 6:43",
+   "text_db": "For a good tree brings not forth corrupt fruit; neither does a corrupt tree bring forth good fruit.",
+   "text_canon": "For a good tree bringeth not forth corrupt fruit; neither doth a corrupt tree bring forth good fruit."
+  },
+  "old_note": "*The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* (Sirach 27:6) The Hebrew library names the fruit-declares-the-tree / utterance-declares-the-heart architecture directly. Luke 6:43-45 walks the same: *for a good tree bringeth not forth corrupt fruit; neither doth a corrupt tree bring forth good fruit ... for of the abundance of the heart his mouth speaketh.* The fruit is the tree's utterance; the mouth is the heart's. The wisdom-stream named the diagnostic before the King bound it.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "labelled": "ecclesiasticus|27:6",
+   "proposed": "ecclesiasticus|27:6",
+   "ratio": 1.0,
+   "live_proposed": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 67,
+    "slug": "by-their-fruits-and-the-utterance-of-the-heart-in-sirach",
+    "old": "Luke 6:43 -> Sirach 27:6 — *the fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* The Lukan good-tree / corrupt-tree teaching ties the fruit-diagnostic to the heart-utterance; the wisdom-stream named the same architecture."
+   }
+  ]
+ },
+ {
+  "id": 4380,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 7,
+   "cite": "Ecclesiasticus 27:7",
+   "text": "Praise no man before you hear him speak; for this is the trial of men.",
+   "prev": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "next": "If you followest righteousness, you shall obtain her, and put her on, as a glorious long robe."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 7,
+   "vn": 20,
+   "cite": "Matthew 7:20",
+   "text_db": "Wherefore by their fruits you shall know them.",
+   "text_canon": "Wherefore by their fruits ye shall know them."
+  },
+  "old_note": "*Praise no man before you hear him speak; for this is the trial of men.* Sirach 27:7 names the trial-of-the-man-is-in-his-speaking architecture — the man is tested in what comes out of him. Matt 7:20's *by their fruits ye shall know them* walks the same diagnostic at the leadership-identification level: the false prophet's teaching is the fruit by which he is known, and the teaching that voids the Torah identifies the wolf-in-sheep's-clothing regardless of his supernatural-credential.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Praise no man before you hear him speak; for this is the trial of men.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:7",
+   "ratio": 1.0,
+   "live_proposed": "Praise no man before you hear him speak; for this is the trial of men.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 67,
+    "slug": "by-their-fruits-and-the-utterance-of-the-heart-in-sirach",
+    "old": "Sirach 27:7 — *praise no man before you hear him speak; for this is the trial of men.* The Hebrew library's testing-by-speaking diagnostic; Matt 7:20's *by their fruits ye shall know them* walks the same at the leadership-level."
+   }
+  ]
+ },
+ {
+  "id": 4515,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 7,
+   "cite": "Ecclesiasticus 27:7",
+   "text": "Praise no man before you hear him speak; for this is the trial of men.",
+   "prev": "The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.",
+   "next": "If you followest righteousness, you shall obtain her, and put her on, as a glorious long robe."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 12,
+   "vn": 36,
+   "cite": "Matthew 12:36",
+   "text_db": "But I say unto you, That every idle word that men shall speak, they shall give account thereof in the day of judgment.",
+   "text_canon": "But I say unto you, That every idle word that men shall speak, they shall give account thereof in the day of judgment."
+  },
+  "old_note": "*Praise no man before thou hearest him speak; for this is the trial of men.* Sirach (Ecclesiasticus) 27:7 names the wisdom-stream's direct articulation of speech-as-the-trial-of-men architecture: hear-the-man-speak-first-because-this-is-the-trial. The framework reads the verse against Matt 12:36's *every idle word that men shall speak, they shall give account thereof in the day of judgment* — the day-of-judgment is the cosmic-version of the wisdom-stream's speech-as-trial architecture: the words-spoken are the evidence-of-the-heart-substance the judgment will weigh.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Praise no man before thou hearest him speak; for this is the trial of men.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:7",
+   "ratio": 0.81,
+   "live_proposed": "Praise no man before you hear him speak; for this is the trial of men.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 190,
+    "slug": "tongue-as-trial-of-the-heart-words-as-fruit-of-the-tree-in-sirach-27",
+    "old": "Sirach 27:7 — *praise no man before thou hearest him speak; for this is the trial of men.* The wisdom-stream's speech-as-trial-of-men architecture; the day-of-judgment at Matt 12:36 is the cosmic-version."
+   }
+  ]
+ },
+ {
+  "id": 4795,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 14,
+   "cite": "Ecclesiasticus 27:14",
+   "text": "The talk of him that sweareth much makes the hair stand upright; and their brawls make one stop his ears.",
+   "prev": "The discourse of fools is irksome, and their sport is the wantonness of sin.",
+   "next": "The strife of the proud is bloodshedding, and their revilings are grievous to the ear."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 18,
+   "cite": "Matthew 23:18",
+   "text_db": "And, Whosoever shall swear by the altar, it is nothing; but whosoever swears by the gift that is upon it, he is guilty.",
+   "text_canon": "And, Whosoever shall swear by the altar, it is nothing; but whosoever sweareth by the gift that is upon it, he is guilty."
+  },
+  "old_note": "*The talk of him that sweareth much makes the hair stand upright; and their brawls make one stop his ears.* Sirach (Ecclesiasticus) 27:14 names the wisdom-stream's articulation of the talk-of-him-that-sweareth-much substance — the substance the King-of-Yashar'el (Israel) walks-against at Matt 23:18 (the Pharisaic-distinction-binding-the-oath-on-the-gift-but-not-on-the-altar substance). The framework reads the verse in continuity with the kingdom-substance walking-against the leadership-substance's-casuistic-substance directly. The wisdom-stream had named the brawls-of-the-much-swearers substance; the leadership-substance walks-the-substance still under-the-religious-credential at the first-coming.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The talk of him that sweareth much makes the hair stand upright; and their brawls make one stop his ears.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:14",
+   "ratio": 1.0,
+   "live_proposed": "The talk of him that sweareth much makes the hair stand upright; and their brawls make one stop his ears.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 398,
+    "slug": "swearing-and-the-faithful-yes-and-nay-in-sirach",
+    "old": "Sirach (Ecclesiasticus) 27:14 — *The talk of him that sweareth much makes the hair stand upright; and their brawls make one stop his ears.* The wisdom-stream's articulation of the talk-of-him-that-sweareth-much substance — the brawls-substance the wisdom-stream warns against; the Pharisaic-distinction-binding-the-oath-on-the-gift-but-not-on-the-altar at Matt 23:18 walks the same substance the wisdom-stream names against."
+   }
+  ]
+ },
+ {
+  "id": 4369,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 30,
+   "cite": "Ecclesiasticus 27:30",
+   "text": "Malice and wrath, even these are abominations; and the sinful man shall have them both.",
+   "prev": "They that rejoice at the fall of the righteous shall be taken in the snare; and anguish shall consume them before they die.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 7,
+   "vn": 1,
+   "cite": "Matthew 7:1",
+   "text_db": "Judge not, that you be not judged.",
+   "text_canon": "Judge not, that ye be not judged."
+  },
+  "old_note": "*Malice and wrath, even these are abominations; and the sinful man shall have them both.* Sirach (Ecclesiasticus) 27:30 names the heart-condition that the just-judgment architecture of Matt 7:1-2 requires to be cleared first. The wisdom-stream identifies malice and wrath as abominations the sinful man carries; the kingdom-citizens judge-not-that-ye-be-not-judged teaching presupposes the same diagnostic — the carrier of malice cannot judge the brother rightly, because the *with what judgment ye judge* standard rebounds on the carrier.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Malice and wrath, even these are abominations; and the sinful man shall have them both.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:30",
+   "ratio": 1.0,
+   "live_proposed": "Malice and wrath, even these are abominations; and the sinful man shall have them both.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 63,
+    "slug": "judge-not-and-let-go-anger-in-sirach",
+    "old": "Sirach 27:30 — *malice and wrath, even these are abominations.* The heart-condition Matt 7:1-2's just-judgment teaching presupposes be cleared first; the wisdom-stream names the diagnostic."
+   }
+  ]
+ },
+ {
+  "id": 4691,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 27,
+   "vn": 30,
+   "cite": "Ecclesiasticus 27:30",
+   "text": "Malice and wrath, even these are abominations; and the sinful man shall have them both.",
+   "prev": "They that rejoice at the fall of the righteous shall be taken in the snare; and anguish shall consume them before they die.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 18,
+   "vn": 21,
+   "cite": "Matthew 18:21",
+   "text_db": "Then came Peter to him, and said, Lord, how oft shall my brother sin against me, and I forgive him? till seven times?",
+   "text_canon": "Then came Peter to him, and said, Adonai (Lord), how oft shall my brother sin against me, and I forgive him? till seven times?"
+  },
+  "old_note": "*Malice and wrath, even these are abominations; and the sinful man shall have them both.* Sirach (Ecclesiasticus) 27:30 names the wisdom-stream's articulation of the disposition-the-King-is-forming-against at Kefa (Peter)'s v.21 question. The framework reads the verse against Matt 18:21. The wisdom-stream had named malice and wrath as abominations-before-Yahuah at the wisdom-instruction-register; Kefa's *how oft shall my brother sin against me, and I forgive him? till seven times?* is the disciple-substance still-counting-the-offences, and the King's answer presses-past-the-counting into the disposition-of-no-malice. The framework reads this in continuity with the kingdom-citizens' fruits-of-the-Spirit substance (Galatians 5:22-23's love, joy, peace, longsuffering, gentleness) the new-heart of Yechezk'el (Ezekiel) 36:26-27 forms-the-walker-into. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Malice and wrath, even these are abominations; and the sinful man shall have them both.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|27:30",
+   "ratio": 1.0,
+   "live_proposed": "Malice and wrath, even these are abominations; and the sinful man shall have them both.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 374,
+    "slug": "forgive-and-be-forgiven-the-mercy-met-with-mercy-architecture",
+    "old": "Sirach (Ecclesiasticus) 27:30 — *Malice and wrath, even these are abominations; and the sinful man shall have them both.* The wisdom-stream's articulation of the disposition-the-King-is-forming-against at Kefa (Peter)'s Matt 18:21 question — the disciple still-counting-the-offences (*till seven times?*) is still operating within the substance the wisdom-stream had named as abomination; the King's answer presses-past-the-counting into the disposition-of-no-malice the fruits-of-the-Spirit substance (Galatians 5:22-23) the new-heart of Yechezk'el (Ezekiel) 36:26-27 forms-the-walker-into."
+   }
+  ]
+ },
+ {
+  "id": 4370,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 1,
+   "cite": "Ecclesiasticus 28:1",
+   "text": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.",
+   "prev": null,
+   "next": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 7,
+   "vn": 2,
+   "cite": "Matthew 7:2",
+   "text_db": "For with what judgment you judge, you shall be judged: and with what measure you mete, it shall be measured to you again.",
+   "text_canon": "For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again."
+  },
+  "old_note": "*He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.* Sirach (Ecclesiasticus) 28:1 names the measure-for-measure architecture explicitly in the Hebrew library — the revenger receives vengeance from the Most High, and the Father remembers his sins. Matt 7:2's *with what measure ye mete, it shall be measured to you again* walks the same wisdom-stream architecture at the kingdom-citizens level: the standard the disciple applies to others is the standard the Father applies to the disciple.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:1",
+   "ratio": 1.0,
+   "live_proposed": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 63,
+    "slug": "judge-not-and-let-go-anger-in-sirach",
+    "old": "Sirach 28:1 — *he that revengeth shall find vengeance from Yahuah (God).* The Hebrew library's explicit measure-for-measure architecture; Matt 7:2's *with what measure ye mete* walks the same."
+   }
+  ]
+ },
+ {
+  "id": 147791,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 1,
+   "cite": "Ecclesiasticus 28:1",
+   "text": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.",
+   "prev": null,
+   "next": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "1-samuel",
+   "ch": 25,
+   "vn": 26,
+   "cite": "1 Samuel 25:26",
+   "text_db": "Now therefore, my lord, as Yahuah (LORD) lives, and as your soul lives, seeing Yahuah (LORD) has withholden you from coming to shed blood, and from avenging thyself with your own hand, now let your enemies, and they that seek evil to my lord, be as Nabal.",
+   "text_canon": "Now therefore, my lord, as Yahuah (LORD) liveth, and as thy soul liveth, seeing Yahuah (LORD) hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand, now let thine enemies, and they that seek evil to my lord, be as Nabal."
+  },
+  "old_note": "*He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance* (Ecclesiasticus 28:1). The sage of Sirach echoes Abigail's plea word for word in substance — the one who takes his own vengeance is himself overtaken by it. Abigail spares David from that snare: *Yahuah (LORD) hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand* (1 Samuel 25:26).",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance",
+   "labelled": "ecclesiasticus|28:1",
+   "proposed": "ecclesiasticus|28:1",
+   "ratio": 1.0,
+   "live_proposed": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 36511,
+    "slug": "1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand",
+    "old": "*He that revengeth shall find vengeance from Yahuah (God)* (Ecclesiasticus 28:1) — Sirach's sage warns the avenger is overtaken by his own vengeance; the snare Abigail spares David."
+   }
+  ]
+ },
+ {
+  "id": 4347,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 2,
+   "cite": "Ecclesiasticus 28:2",
+   "text": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "prev": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.",
+   "next": "One man bears hatred against another, and does he seek pardon from Yahuah (God)?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 6,
+   "vn": 12,
+   "cite": "Matthew 6:12",
+   "text_db": "And forgive us our debts, as we forgive our debtors.",
+   "text_canon": "And forgive us our debts, as we forgive our debtors."
+  },
+  "old_note": "*Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.* Sirach (Ecclesiasticus) 28:2 names the conditional-forgiveness architecture explicitly in the wisdom-stream — the receiving of pardon from the Most High presupposes the extending of pardon to the neighbour, named in the same act of praying. This is the direct architectural parallel to Matt 6:12's *forgive us our debts, as we forgive our debtors.* The Hebrew library was already teaching the kingdom-citizens prayer-pattern at the verse-level; the Lord's Prayer walks the same architecture.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:2",
+   "ratio": 1.0,
+   "live_proposed": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 56,
+    "slug": "forgive-thy-neighbour-as-sirach-and-the-lords-prayer",
+    "old": "Sirach 28:2 — *forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.* The Hebrew library's explicit conditional-forgiveness in the wisdom-stream; Matt 6:12's *forgive us our debts, as we forgive our debtors* walks the same architecture in the Lord's Prayer."
+   }
+  ]
+ },
+ {
+  "id": 4692,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 2,
+   "cite": "Ecclesiasticus 28:2",
+   "text": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "prev": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.",
+   "next": "One man bears hatred against another, and does he seek pardon from Yahuah (God)?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 18,
+   "vn": 22,
+   "cite": "Matthew 18:22",
+   "text_db": "Yahusha (Jesus) says unto him, I say not unto you, Until seven times: but, Until seventy times seven.",
+   "text_canon": "Yahusha (Jesus) saith unto him, I say not unto thee, Until seven times: but, Until seventy times seven."
+  },
+  "old_note": "*Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.* Sirach (Ecclesiasticus) 28:2 names THE direct wisdom-stream verbal-anchor for the conditional-forgiveness-architecture the King names at Matt 18:21-22 and parable-extends at vv.23-35. The framework reads the verse against the King's *seventy times seven* answer + the unforgiving-servant parable + the chapter-closing *so likewise shall my heavenly Father do also unto you, if ye from your hearts forgive not* (v.35). The wisdom-stream had named the substance directly: forgive-the-neighbour, and your-sins-shall-also-be-forgiven; the conditional-substance the King's parable extends into full narrative-form was already-articulated at the wisdom-stream-register. The framework reads this in continuity with Matt 6:14-15's Lord's-Prayer conditional-substance — *for if ye forgive men their trespasses, your heavenly Father will also forgive you: But if ye forgive not men their trespasses, neither will your Father forgive your trespasses.* The architecture-of-mercy-met-with-mercy runs the King's-teaching from the Sermon through the assembly-discourse; the wisdom-stream had named the substance the King operationalizes.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:2",
+   "ratio": 1.0,
+   "live_proposed": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 374,
+    "slug": "forgive-and-be-forgiven-the-mercy-met-with-mercy-architecture",
+    "old": "Sirach (Ecclesiasticus) 28:2 — *Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.* THE direct wisdom-stream verbal-anchor for the conditional-forgiveness-architecture the King names at Matt 18:22 and parable-extends at vv.23-35; the same conditional-substance the King had named at Matt 6:14-15 the Lord's-Prayer's forgiveness-petition. The wisdom-stream had named the substance directly; the King institutionalizes it; the architecture is mercy-met-with-mercy at every register the wisdom-stream-and-the-King-and-the-apostles articulate."
+   }
+  ]
+ },
+ {
+  "id": 4777,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 2,
+   "cite": "Ecclesiasticus 28:2",
+   "text": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "prev": "He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance.",
+   "next": "One man bears hatred against another, and does he seek pardon from Yahuah (God)?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 22,
+   "vn": 39,
+   "cite": "Matthew 22:39",
+   "text_db": "And the second is like unto it, You shall love your neighbour as thyself.",
+   "text_canon": "And the second is like unto it, Thou shalt love thy neighbour as thyself."
+  },
+  "old_note": "*Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.* Sirach (Ecclesiasticus) 28:2 names the wisdom-stream's direct articulation of the forgive-your-neighbor substance — the same substance the King will walk at Matthew 6:14-15's *if ye forgive men their trespasses, your heavenly Father will also forgive you* and at the unforgiving-servant parable at Matthew 18:23-35. The framework reads the verse against Matt 22:39's *thou shalt love thy neighbour as thyself.* The love-of-the-neighbor substance walks the substance-of-forgiveness; Sirach 28:2 had articulated the substance the King walks-out at the kingdom-citizen-substance — the forgive-as-you-have-been-forgiven architecture the wisdom-stream had named the prefiguring-substance for, the King brings into-effect at the kingdom-citizen-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:2",
+   "ratio": 1.0,
+   "live_proposed": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 394,
+    "slug": "love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon",
+    "old": "Sirach (Ecclesiasticus) 28:2 — *forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.* The wisdom-stream articulation of the forgive-your-neighbor substance — the same substance the King walks at Matt 6:14-15 and the unforgiving-servant parable at Matt 18:23-35; the love-of-the-neighbor at Matt 22:39 walks the substance-of-forgiveness."
+   }
+  ]
+ },
+ {
+  "id": 4693,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 3,
+   "cite": "Ecclesiasticus 28:3",
+   "text": "One man bears hatred against another, and does he seek pardon from Yahuah (God)?",
+   "prev": "Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest.",
+   "next": "He sheweth no mercy to a man, which is like himself: and does he ask forgiveness of his own sins?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 18,
+   "vn": 33,
+   "cite": "Matthew 18:33",
+   "text_db": "Should not you also have had compassion on your fellowservant, even as I had pity on you?",
+   "text_canon": "Shouldest not thou also have had compassion on thy fellowservant, even as I had pity on thee?"
+  },
+  "old_note": "*One man bears hatred against another, and does he seek pardon from Yahuah (God)?* Sirach (Ecclesiasticus) 28:3 names THE direct wisdom-stream verbal-anchor for the unforgiving-servant's-grotesque-architecture the King names at Matt 18:33. The framework reads the verse against the lord's charge to the first-servant: *O thou wicked servant, I forgave thee all that debt, because thou desiredst me: shouldest not thou also have had compassion on thy fellowservant, even as I had pity on thee?* The wisdom-stream had named the grotesque-substance: one-man-bears-hatred-against-another and yet seeks-pardon-from-Yahuah for himself; the parable shows the same architecture in narrative-form — the first-servant has-been-forgiven and refuses-to-forgive. The lord's-wrath-and-revocation-of-the-forgiveness in the parable is the same architectural-substance Sirach had named the wisdom-instruction-substance-against. The kingdom-citizen's-substance must match the substance-received; the architecture is mercy-met-with-mercy at every register the wisdom-stream-and-the-King-and-the-apostles articulate.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "One man bears hatred against another, and does he seek pardon from Yahuah (God)?",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:3",
+   "ratio": 1.0,
+   "live_proposed": "One man bears hatred against another, and does he seek pardon from Yahuah (God)?",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 374,
+    "slug": "forgive-and-be-forgiven-the-mercy-met-with-mercy-architecture",
+    "old": "Sirach (Ecclesiasticus) 28:3 — *One man bears hatred against another, and does he seek pardon from Yahuah (God)?* THE direct wisdom-stream verbal-anchor for the unforgiving-servant's-grotesque-architecture the King names at Matt 18:33 — *shouldest not thou also have had compassion on thy fellowservant, even as I had pity on thee?* The wisdom-stream had named the grotesque-substance — one-bearing-hatred and yet seeking-pardon — the parable shows in narrative-form; the lord's-wrath-and-revocation-of-the-forgiveness rules out the institutional-Christian-once-saved-always-saved doctrine per Red Line #10."
+   }
+  ]
+ },
+ {
+  "id": 4349,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 4,
+   "cite": "Ecclesiasticus 28:4",
+   "text": "He sheweth no mercy to a man, which is like himself: and does he ask forgiveness of his own sins?",
+   "prev": "One man bears hatred against another, and does he seek pardon from Yahuah (God)?",
+   "next": "If he that is but flesh nourish hatred, who will intreat for pardon of his sins?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 6,
+   "vn": 15,
+   "cite": "Matthew 6:15",
+   "text_db": "But if you forgive not men their trespasses, neither will your Father forgive your trespasses.",
+   "text_canon": "But if ye forgive not men their trespasses, neither will your Father forgive your trespasses."
+  },
+  "old_note": "*He sheweth no mercy to a man, which is like himself: and does he ask forgiveness of his own sins?* Sirach 28:4 lands the diagnostic at the heart-level — the brother-who-is-like-thee is the test of the heart that asks the Father's mercy. Matt 6:15's *if ye forgive not men their trespasses, neither will your Father forgive your trespasses* walks the same Hebrew library architecture: the unforgiving heart cannot rightly ask the forgiveness it withholds. The wisdom-stream had already named the condition the Lord's Prayer formalizes.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He sheweth no mercy to a man, which is like himself: and does he ask forgiveness of his own sins?",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:4",
+   "ratio": 1.0,
+   "live_proposed": "He sheweth no mercy to a man, which is like himself: and does he ask forgiveness of his own sins?",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 56,
+    "slug": "forgive-thy-neighbour-as-sirach-and-the-lords-prayer",
+    "old": "Sirach 28:4 — *he sheweth no mercy to a man, which is like himself: and does he ask forgiveness of his own sins?* The heart-of-mercy diagnostic; Matt 6:15's *if ye forgive not men their trespasses, neither will your Father forgive your trespasses* walks the same."
+   }
+  ]
+ },
+ {
+  "id": 40999,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 4,
+   "cite": "Ecclesiasticus 28:4",
+   "text": "He sheweth no mercy to a man, which is like himself: and does he ask forgiveness of his own sins?",
+   "prev": "One man bears hatred against another, and does he seek pardon from Yahuah (God)?",
+   "next": "If he that is but flesh nourish hatred, who will intreat for pardon of his sins?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 18,
+   "vn": 21,
+   "cite": "Matthew 18:21",
+   "text_db": "Then came Peter to him, and said, Lord, how oft shall my brother sin against me, and I forgive him? till seven times?",
+   "text_canon": "Then came Peter to him, and said, Adonai (Lord), how oft shall my brother sin against me, and I forgive him? till seven times?"
+  },
+  "old_note": "Matthew 18:21 — *Then came Peter to him, and said, Yahuah (Lord), how oft shall my brother sin against me, and I forgive him? till seven times?* Peter's question opens the very mercy-toward-an-equal that Sirach 28:4 demands of him *which is like himself*.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9542,
+    "slug": "ecclesiasticus-28-forgive-thy-neighbour",
+    "old": "Matthew 18:21 — *Then came Peter to him, and said, Yahuah (Lord), how oft shall my brother sin against me, and I forgive him? till seven times?* Peter's question opens the very mercy-toward-an-equal that Sirach 28:4 demands of him *which is like himself*."
+   }
+  ]
+ },
+ {
+  "id": 4371,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 5,
+   "cite": "Ecclesiasticus 28:5",
+   "text": "If he that is but flesh nourish hatred, who will intreat for pardon of his sins?",
+   "prev": "He sheweth no mercy to a man, which is like himself: and does he ask forgiveness of his own sins?",
+   "next": "Remember your end, and let enmity cease; remember corruption and death, and abide in the commandments."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 7,
+   "vn": 5,
+   "cite": "Matthew 7:5",
+   "text_db": "You hypocrite, first cast out the beam out of your own eye; and then shall you see clearly to cast out the mote out of your brother’s eye.",
+   "text_canon": "Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother’s eye."
+  },
+  "old_note": "*If he that is but flesh nourish hatred, who will intreat for pardon of his sins?* Sirach (Ecclesiasticus) 28:5 names the beam-out-first prerequisite for the brother-mote-removal at Matt 7:5. The hatred-nourishing disciple cannot ask the Father's pardon for his own sins — and so cannot rightly help the brother with his. The wisdom-stream had already named the heart-clearing prerequisite the gospel formalizes; Matt 7:5 walks the same architecture into the just-judgment grammar.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "If he that is but flesh nourish hatred, who will intreat for pardon of his sins?",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:5",
+   "ratio": 1.0,
+   "live_proposed": "If he that is but flesh nourish hatred, who will intreat for pardon of his sins?",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 63,
+    "slug": "judge-not-and-let-go-anger-in-sirach",
+    "old": "Sirach 28:5 — *if he that is but flesh nourish hatred, who will intreat for pardon of his sins?* The beam-out-first prerequisite at the heart-level; Matt 7:5's self-examination-before-brother-correction walks the same."
+   }
+  ]
+ },
+ {
+  "id": 4694,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 7,
+   "cite": "Ecclesiasticus 28:7",
+   "text": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "prev": "Remember your end, and let enmity cease; remember corruption and death, and abide in the commandments.",
+   "next": "Abstain from strife, and you shall diminish your sins: for a furious man will kindle strife,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 18,
+   "vn": 35,
+   "cite": "Matthew 18:35",
+   "text_db": "So likewise shall my heavenly Father do also unto you, if you from your hearts forgive not every one his brother their trespasses.",
+   "text_canon": "So likewise shall my heavenly Father do also unto you, if ye from your hearts forgive not every one his brother their trespasses."
+  },
+  "old_note": "*Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.* Sirach (Ecclesiasticus) 28:7 names the wisdom-stream's articulation of the heart-Torah-substance the King's chapter-closing v.35 lands-on. The framework reads the verse against Matt 18:35's *so likewise shall my heavenly Father do also unto you, if ye from your hearts forgive not every one his brother their trespasses.* The wisdom-stream had named the substance directly: remember-the-commandments AND bear-no-malice to your-neighbour; remember-the-covenant-of-the-Most-High AND wink-at-ignorance. The two-substances are NOT in tension; the two-substances are one-substance — the Torah-internalized produces the substance-of-no-malice; the substance-of-no-malice is the operation-of-the-Torah-internalized. The framework reads this in continuity with Yirmeyahu (Jeremiah) 31:33's new-covenant law-in-the-inward-parts and Yechezk'el (Ezekiel) 36:26-27's new-heart-and-Spirit-causing-the-walking — the wisdom-stream had named the substance the new-covenant brings-to-completion. The grace-that-can-be-lost architecture per Red Line #10 operates here: the walker who-walks-the-substance walks-through-the-door-home; the walker-who-bears-malice-against-the-brother has-not-walked-the-substance-the-grace-was-given-to-form.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:7",
+   "ratio": 1.0,
+   "live_proposed": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 374,
+    "slug": "forgive-and-be-forgiven-the-mercy-met-with-mercy-architecture",
+    "old": "Sirach (Ecclesiasticus) 28:7 — *Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.* The wisdom-stream's articulation of the heart-Torah-substance the King's chapter-closing Matt 18:35 lands-on — Torah-internalized AND no-malice as one-substance-not-two; in continuity with Yirmeyahu (Jeremiah) 31:33's new-covenant law-in-the-inward-parts and Yechezk'el (Ezekiel) 36:26-27's new-heart-and-Spirit-causing-the-walking."
+   }
+  ]
+ },
+ {
+  "id": 4778,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 7,
+   "cite": "Ecclesiasticus 28:7",
+   "text": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "prev": "Remember your end, and let enmity cease; remember corruption and death, and abide in the commandments.",
+   "next": "Abstain from strife, and you shall diminish your sins: for a furious man will kindle strife,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 22,
+   "vn": 40,
+   "cite": "Matthew 22:40",
+   "text_db": "On these two commandments hang all the law and the prophets.",
+   "text_canon": "On these two commandments hang all the law and the prophets."
+  },
+  "old_note": "*Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.* Sirach (Ecclesiasticus) 28:7 names the wisdom-stream's direct articulation of the remember-the-commandments-and-the-covenant substance — the substance the King walks at Matt 22:40's *on these two commandments hang all the law and the prophets.* The framework reads the verse as the wisdom-stream's direct corroboration of the substance the King walks at the close of the great-commandment-answer: the two-commandments and the Torah-and-the-prophets are one-substance; the citizen-of-the-kingdom remembers-the-commandments and remembers-the-covenant-of-the-Highest and walks-the-substance-of-the-love-of-the-neighbor. NOT the post-Reformation collapse-of-the-Torah-into-the-two (the substance the wisdom-stream had categorically-walked-against by binding-the-commandments-and-the-covenant together in one substance); the substance is the heart-Torah of Jeremiah 31:31-34 + Ezekiel 36:26-27 walked-out from-the-inside.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|28:7",
+   "ratio": 1.0,
+   "live_proposed": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 394,
+    "slug": "love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon",
+    "old": "Sirach (Ecclesiasticus) 28:7 — *remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.* The wisdom-stream articulation of the remember-the-commandments-and-the-covenant substance — binding-the-commandments-and-the-covenant together in one substance, the same architecture the King walks at Matt 22:40 (the two-commandments and the Torah-and-the-prophets are one-substance)."
+   }
+  ]
+ },
+ {
+  "id": 60259,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 28,
+   "vn": 7,
+   "cite": "Ecclesiasticus 28:7",
+   "text": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "prev": "Remember your end, and let enmity cease; remember corruption and death, and abide in the commandments.",
+   "next": "Abstain from strife, and you shall diminish your sins: for a furious man will kindle strife,"
+  },
+  "other": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "ch": 100,
+   "vn": 7,
+   "cite": "Testaments of the Twelve Patriarchs 100:7",
+   "text_db": "But if he be shameless and persisteth in his wrong-doing, even so forgive him from the heart, and leave to Elohim (God) the avenging.",
+   "text_canon": null
+  },
+  "old_note": "Sirach 28:7 — *Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.* To forgive even the shameless and bear no grudge is Ben Sira's no-malice-to-thy-neighbour, rooted in the commandments.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "labelled": "ecclesiasticus|28:7",
+   "proposed": "ecclesiasticus|28:7",
+   "ratio": 1.0,
+   "live_proposed": "Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 14820,
+    "slug": "testaments-xii-100-forgive-from-the-heart-leave-to-god-the-avenging",
+    "old": "Sirach 28:7 — *Remember the commandments, and bear no malice to your neighbour: remember the covenant of the Highest, and wink at ignorance.* To forgive even the shameless and bear no grudge is Ben Sira's no-malice-to-thy-neighbour, rooted in the commandments."
+   }
+  ]
+ },
+ {
+  "id": 4707,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 29,
+   "vn": 1,
+   "cite": "Ecclesiasticus 29:1",
+   "text": "He that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments.",
+   "prev": null,
+   "next": "Lend to your neighbour in time of his need, and pay you your neighbour again in due season."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 19,
+   "vn": 17,
+   "cite": "Matthew 19:17",
+   "text_db": "And he said unto him, Why callest you me good? there is none good but one, that is, Elohim (God): but if you will enter into life, keep the commandments.",
+   "text_canon": "And he said unto him, Why callest thou me good? there is none good but one, that is, Elohim (God): but if thou wilt enter into life, keep the commandments."
+  },
+  "old_note": "*He that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments.* Sirach (Ecclesiasticus) 29:1 names the wisdom-stream's direct articulation of the love-of-neighbor-substance the King will-test-the-young-man at — the same substance the King ties to the kingdom-entry-criterion at Matt 19:17 (*keep the commandments*) and to the rich-young-ruler's-failure-test at v.21 (*go and sell that thou hast, and give to the poor*). The framework reads the verse against the integrated-substance the King's-test-of-the-young-man walks: the mercy-to-the-neighbor IS the commandment-keeping; the substance is not separable. The wisdom-stream-substance names the architecture directly — *he that is merciful will lend... keepeth the commandments.* The young-man's *all these things have I kept from my youth up* at v.20 names letter-keeping; the diagnostic-test at v.21 reveals the heart-Torah-substance the young-man has-not-walked. The framework reads in continuity with Vayikra (Leviticus) 19:18's *love thy neighbour as thyself* the King-summary-cites at v.19. The wisdom-stream had named the substance integrated; the inherited-institutional-Christian-tradition has often separated mercy-from-Torah; the wisdom-stream-substance and the King's-substance both hold the substances together as one motion.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|29:1",
+   "ratio": 1.0,
+   "live_proposed": "He that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 378,
+    "slug": "keep-the-commandments-as-life-and-lay-up-treasure-in-heaven-in-sirach-tobit-and-testaments-of-levi",
+    "old": "Sirach (Ecclesiasticus) 29:1 — *he that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments.* The wisdom-stream's integrated-substance of mercy-to-the-neighbor AND commandment-keeping — the architecture the King's-test of the rich-young-ruler integrates at the substance of the love-of-neighbor-extending-to-the-poor."
+   }
+  ]
+ },
+ {
+  "id": 41021,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 29,
+   "vn": 2,
+   "cite": "Ecclesiasticus 29:2",
+   "text": "Lend to your neighbour in time of his need, and pay you your neighbour again in due season.",
+   "prev": "He that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments.",
+   "next": "Keep your word, and deal faithfully with him, and you shall always find the thing that is necessary for you."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 5,
+   "vn": 42,
+   "cite": "Matthew 5:42",
+   "text_db": "Give to him that asks you, and from him that would borrow of you turn not you away.",
+   "text_canon": "Give to him that asketh thee, and from him that would borrow of thee turn not thou away."
+  },
+  "old_note": "Matthew 5:42 — *Give to him that asketh thee, and from him that would borrow of thee turn not thou away.* The Messiah's Sermon-on-the-Mount word is Sirach 29:2 made fuller: lend to your neighbour in his need.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9547,
+    "slug": "ecclesiasticus-29-lend-keeps-commandments",
+    "old": "Matthew 5:42 — *Give to him that asketh thee, and from him that would borrow of thee turn not thou away.* The Messiah's Sermon-on-the-Mount word is Sirach 29:2 made fuller: lend to your neighbour in his need."
+   }
+  ]
+ },
+ {
+  "id": 4842,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 29,
+   "vn": 9,
+   "cite": "Ecclesiasticus 29:9",
+   "text": "Help the poor for the commandment’s sake, and turn him not away because of his poverty.",
+   "prev": "Yet have you patience with a man in poor estate, and delay not to shew him mercy.",
+   "next": "Lose your money for your brother and your friend, and let it not rust under a stone to be lost."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 25,
+   "vn": 40,
+   "cite": "Matthew 25:40",
+   "text_db": "And the King shall answer and say unto them, Verily I say unto you, Inasmuch as you have done it unto one of the least of these my brethren, you have done it unto me.",
+   "text_canon": "And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me."
+  },
+  "old_note": "*Help the poor for the commandment's sake, and turn him not away because of his poverty.* Sirach (Ecclesiasticus) 29:9 names the wisdom-stream articulation of the help-the-poor-for-the-commandment's-sake substance — the substantial-substance the King-of-Yashar'el (Israel) walks at the substantial-criterion-of-mercy at Matt 25:40's *Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.* The substantial-substance the wisdom-stream had named at the help-the-poor-for-the-commandment's-sake architecture is the substantial-substance the King-of-Yashar'el (Israel) walks-out at the sheep-and-goats-criterion — the substantial-doing-of-the-mercy-to-the-substantial-least-of-these-my-brethren is the substantial-doing-it-unto-the-King-of-Yashar'el (Israel)-substance the substantial-King-of-Yashar'el (Israel)-identification-with-his-brethren-substance the apostle-Sha'ul (Paul) walks at Acts 9:4-5 (*Sha'ul (Saul), Sha'ul (Saul), why persecutest thou me? ... I am Yahusha (Jesus) whom thou persecutest*). The framework reads this carefully — the substantial *my brethren* (Greek *tōn adelphōn mou*) is the substantial-gathered-remnant-of-the-twelve-tribes-of-Yashar'el (Israel)-substance the King-of-Yashar'el (Israel) walks-as-the-substantial-seed-of-promise per `kinship-redefinition-kingdom-family` thread at Matt 12:46-50, NOT the categorical-poor-and-vulnerable the inherited-Christian-collapse walks.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Help the poor for the commandment's sake, and turn him not away because of his poverty.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|29:9",
+   "ratio": 1.0,
+   "live_proposed": "Help the poor for the commandment’s sake, and turn him not away because of his poverty.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 409,
+    "slug": "the-mercy-toward-the-poor-the-stranger-and-the-needy-as-the-criterion-of-righteousness-in-sirach-and-tobit",
+    "old": "Sirach (Ecclesiasticus) 29:9 — *Help the poor for the commandment's sake, and turn him not away because of his poverty.* The help-the-poor-for-the-commandment's-sake substance — the substantial-doing-of-mercy-as-the-substantial-doing-of-the-commandment, NOT the substantial-categorical-charity-program. The substantial *my brethren* at Matt 25:40 is the gathered-remnant of the twelve-tribes of Yashar'el (Israel) per `kinship-redefinition-kingdom-family` thread at Matt 12:46-50, NOT the categorical-poor-and-vulnerable."
+   }
+  ]
+ },
+ {
+  "id": 4352,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 29,
+   "vn": 11,
+   "cite": "Ecclesiasticus 29:11",
+   "text": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "prev": "Lose your money for your brother and your friend, and let it not rust under a stone to be lost.",
+   "next": "Shut up alms in your storehouses: and it shall deliver you from all affliction."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 6,
+   "vn": 20,
+   "cite": "Matthew 6:20",
+   "text_db": "But lay up for yourselves treasures in heaven, where neither moth nor rust does corrupt, and where thieves do not break through nor steal:",
+   "text_canon": "But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal:"
+  },
+  "old_note": "*Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.* Sirach (Ecclesiasticus) 29:11 names the *lay up your treasure* architecture explicitly with the commandment-keeping the gospel's kingdom-citizens righteousness presupposes. Matt 6:20's *lay up for yourselves treasures in heaven* is the gospel-form of the wisdom-stream's same teaching: the treasure laid up by the open hand of the commandment-keeper is the heavenly-treasure the gospel names.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|29:11",
+   "ratio": 1.0,
+   "live_proposed": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 57,
+    "slug": "treasures-laid-up-by-the-open-hand-in-tobit-and-sirach",
+    "old": "Sirach 29:11 — *lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.* The lay-up-treasure-by-the-commandments architecture; Matt 6:20 walks the same."
+   }
+  ]
+ },
+ {
+  "id": 4708,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 29,
+   "vn": 11,
+   "cite": "Ecclesiasticus 29:11",
+   "text": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "prev": "Lose your money for your brother and your friend, and let it not rust under a stone to be lost.",
+   "next": "Shut up alms in your storehouses: and it shall deliver you from all affliction."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 19,
+   "vn": 21,
+   "cite": "Matthew 19:21",
+   "text_db": "Yahusha (Jesus) said unto him, If you will be perfect, go and sell that you have, and give to the poor, and you shall have treasure in heaven: and come and follow me.",
+   "text_canon": "Yahusha (Jesus) said unto him, If thou wilt be perfect, go and sell that thou hast, and give to the poor, and thou shalt have treasure in heaven: and come and follow me."
+  },
+  "old_note": "*Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.* Sirach (Ecclesiasticus) 29:11 names THE direct wisdom-stream verbal-anchor for the lay-up-treasure-according-to-the-commandments substance — the same substance the King names at Matt 19:21's *go and sell that thou hast, and give to the poor, and thou shalt have treasure in heaven: and come and follow me.* The framework reads the verse as the wisdom-stream's direct verbal-prefiguration of the King's-substance. The King's-test of the young-man is heart-Torah-diagnostic — different-kingdom-citizens face different-substances-of-obstacle; the rich-young-ruler faces the substance-of-substantial-possessions; the test reveals the love-of-neighbor stopped-at-the-substance-of-the-young-man's-own-possessions. The wisdom-stream-substance had named the architecture — laying-up-treasure-according-to-the-commandments-of-the-Most-High is the substance the kingdom-citizens' substance-of-possessions walks toward. The framework rules out the inherited-Christian-substance-misreadings: NOT universal-poverty-mandate for-all-kingdom-citizens; NOT Marxist-redistribution at-the-political-substance-level. The substance is heart-Torah-diagnostic; the substance is laying-up-treasure-according-to-the-commandments, which-includes-the-giving-to-the-poor-the-Torah-has-always-commanded (Devarim (Deuteronomy) 15:7-8, Mishlei (Proverbs) 19:17, Tehillim (Psalm) 41:1, Yeshayahu (Isaiah) 58:6-7).",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|29:11",
+   "ratio": 1.0,
+   "live_proposed": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 378,
+    "slug": "keep-the-commandments-as-life-and-lay-up-treasure-in-heaven-in-sirach-tobit-and-testaments-of-levi",
+    "old": "Sirach (Ecclesiasticus) 29:11 — *lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.* THE direct verbal-anchor for the lay-up-treasure-according-to-the-commandments substance — the wisdom-stream's direct prefiguration of the King's-substance at Matt 19:21's *thou shalt have treasure in heaven*; rules out universal-poverty-mandate and Marxist-redistribution misreadings of the diagnostic-test."
+   }
+  ]
+ },
+ {
+  "id": 7933,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 29,
+   "vn": 11,
+   "cite": "Ecclesiasticus 29:11",
+   "text": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "prev": "Lose your money for your brother and your friend, and let it not rust under a stone to be lost.",
+   "next": "Shut up alms in your storehouses: and it shall deliver you from all affliction."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "luke",
+   "ch": 12,
+   "vn": 33,
+   "cite": "Luke 12:33",
+   "text_db": "Sell that you have, and give alms; provide yourselves bags which wax not old, a treasure in the heavens that fails not, where no thief approacheth, neither moth corrupteth.",
+   "text_canon": "Sell that ye have, and give alms; provide yourselves bags which wax not old, a treasure in the heavens that faileth not, where no thief approacheth, neither moth corrupteth."
+  },
+  "old_note": "*Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.* Sirach (Ecclesiasticus) 29:11 names the lay-up-treasure-by-the-commandments architecture explicitly — the treasure laid up by the commandment-keeper who helps the poor for the commandment's sake (Sirach 29:9). Luke 12:33's *provide yourselves bags which wax not old, a treasure in the heavens that faileth not* is the gospel-form of the wisdom-stream's same teaching: the treasure of the open-handed commandment-keeper outlasts gold because it is laid up where gold cannot reach.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|29:11",
+   "ratio": 1.0,
+   "live_proposed": "Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 644,
+    "slug": "luke-12-treasure-in-the-heavens-laid-up-by-alms-in-tobit-and-sirach",
+    "old": "Sirach 29:11 — *lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold.* The lay-up-treasure-by-the-commandments architecture; Luke 12:33's heaven-bag that faileth not walks the same — the open-handed commandment-keeper's treasure outlasts gold."
+   }
+  ]
+ },
+ {
+  "id": 4359,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 31,
+   "vn": 5,
+   "cite": "Ecclesiasticus 31:5",
+   "text": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "prev": "The poor laboureth in his poor estate; and when he leaveth off, he is still needy.",
+   "next": "Gold has been the ruin of many, and their destruction was present."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 6,
+   "vn": 24,
+   "cite": "Matthew 6:24",
+   "text_db": "No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. You cannot serve Elohim (God) and mammon.",
+   "text_canon": "No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon."
+  },
+  "old_note": "*He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.* Sirach (Ecclesiasticus) 31:5 names the architecture of gold-love-disqualifies-from-justification — the Hebrew library's direct anti-Mammon teaching. Matt 6:24's *ye cannot serve Elohim (God) and mammon* walks the same architecture at the kingdom-citizens level: the gold-lover cannot stand justified before the Father whose service is whole-heart.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|31:5",
+   "ratio": 1.0,
+   "live_proposed": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 59,
+    "slug": "riches-as-snare-and-stumblingblock-in-sirach",
+    "old": "Sirach 31:5 — *he that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.* The Hebrew library's direct gold-love-disqualifies architecture; Matt 6:24's *ye cannot serve Elohim (God) and mammon* walks the same."
+   }
+  ]
+ },
+ {
+  "id": 7866,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 31,
+   "vn": 5,
+   "cite": "Ecclesiasticus 31:5",
+   "text": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "prev": "The poor laboureth in his poor estate; and when he leaveth off, he is still needy.",
+   "next": "Gold has been the ruin of many, and their destruction was present."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "mark",
+   "ch": 10,
+   "vn": 23,
+   "cite": "Mark 10:23",
+   "text_db": "And Yahusha (Jesus) looked round about, and says unto his disciples, How hardly shall they that have riches enter into the kingdom of Elohim (God)!",
+   "text_canon": "And Yahusha (Jesus) looked round about, and saith unto his disciples, How hardly shall they that have riches enter into the kingdom of Elohim (God)!"
+  },
+  "old_note": "*He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.* Sirach (Ecclesiasticus) 31:5 names the gold-love-disqualifies architecture directly. Mark 10:23's *how hardly shall they that have riches enter into the kingdom of Elohim (God)!* walks the same architecture at the kingdom-entry level: the gold-lover the wisdom-stream says shall not be justified is the rich man the gospel says hardly enters the kingdom.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|31:5",
+   "ratio": 1.0,
+   "live_proposed": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 625,
+    "slug": "mark-10-the-rich-young-ruler-and-riches-as-snare-in-sirach",
+    "old": "Sirach 31:5 — *he that loves gold shall not be justified.* The gold-love-disqualifies architecture; Mark 10:23's *how hardly shall they that have riches enter into the kingdom of Elohim (God)!* walks the same at the kingdom-entry level."
+   }
+  ]
+ },
+ {
+  "id": 7951,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 31,
+   "vn": 5,
+   "cite": "Ecclesiasticus 31:5",
+   "text": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "prev": "The poor laboureth in his poor estate; and when he leaveth off, he is still needy.",
+   "next": "Gold has been the ruin of many, and their destruction was present."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "luke",
+   "ch": 16,
+   "vn": 13,
+   "cite": "Luke 16:13",
+   "text_db": "No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. You cannot serve Elohim (God) and mammon.",
+   "text_canon": "No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon."
+  },
+  "old_note": "*He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof* (Sirach / Ecclesiasticus 31:5). The Lukan placement seals the unjust-steward parable with the mammon-verdict: *Ye cannot serve Elohim (God) and mammon* (Luke 16:13). The wisdom-stream had already named the disqualification at the gold-love level — the gold-lover *shall not be justified.* The King names the same architecture as a forced-choice of masters: the divided heart that holds to mammon cannot stand justified before the Father whose service is whole-heart. The Lukan setting is distinct from the Sermon — here the verdict closes a steward-parable about deploying mammon shrewdly before the books are called.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof",
+   "labelled": null,
+   "proposed": "ecclesiasticus|31:5",
+   "ratio": 1.0,
+   "live_proposed": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 647,
+    "slug": "luke-16-cannot-serve-elohim-and-mammon-and-gold-as-snare-in-sirach",
+    "old": "Sirach (Ecclesiasticus) 31:5 — *he that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.* The wisdom-stream's gold-love-disqualifies architecture; Luke 16:13's *Ye cannot serve Elohim (God) and mammon* names the same at the forced-choice-of-masters level."
+   }
+  ]
+ },
+ {
+  "id": 4360,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 31,
+   "vn": 6,
+   "cite": "Ecclesiasticus 31:6",
+   "text": "Gold has been the ruin of many, and their destruction was present.",
+   "prev": "He that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.",
+   "next": "It is a stumblingblock to them that sacrifice to it, and every fool shall be taken with it."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 6,
+   "vn": 24,
+   "cite": "Matthew 6:24",
+   "text_db": "No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. You cannot serve Elohim (God) and mammon.",
+   "text_canon": "No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon."
+  },
+  "old_note": "*Gold has been the ruin of many, and their destruction was present.* Sirach 31:6 names the gold-as-ruin diagnostic the wisdom-stream carried. Matt 6:24's forced-choice between Yahuah (God) and Mammon is the present-age form of the same wisdom: the disciple who chooses Mammon walks toward the same ruin the wisdom-stream had been naming.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Gold has been the ruin of many, and their destruction was present.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|31:6",
+   "ratio": 1.0,
+   "live_proposed": "Gold has been the ruin of many, and their destruction was present.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 59,
+    "slug": "riches-as-snare-and-stumblingblock-in-sirach",
+    "old": "Sirach 31:6 — *gold has been the ruin of many, and their destruction was present.* The gold-as-ruin diagnostic; Matt 6:24's forced-choice walks the same wisdom into the kingdom-citizens grammar."
+   }
+  ]
+ }
+]

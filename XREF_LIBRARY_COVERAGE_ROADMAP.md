@@ -187,7 +187,7 @@ means a back-fill can re-run safely over the already-merged canon rows.
   |---|---|---|---|---|---|---|
   | 1 Enoch | 729 of 1,963 | ✓ S459 | ✓ S459 (362 + 2 retired) | ✓ S459 19:03 CDT, read-back 0 flagged | ✓ S460 (532 of 719), deployed Oct 19 22:31 CDT, read-back 0 (532/532 live) | ✓ S463a (63 STAND rewritten; 631 glosses: 349 moved, 55 re-worded, 22 patched, 61 retired, 4 Q), deployed Oct 23 10:55 CDT, read-back 0 flagged, 490/490; S463a2 4 Q retired 11:07 CDT — CLOSED |
   | Jubilees | 1,741 of 1,754 anchored | ✓ S463b | ✓ built S463b (126 rebuilt, 140 moved, 92 re-cited) | ✓ built S463b | ✓ built S463b (5) | ✓ built S463b (312 read: 179 stay / 131 move / 2 Q) | ✓ deployed Oct 23 12:55 CDT, read-back 347/347, 0 degraded — CLOSED |
-  | Apocrypha (+3 Macc) | — | — | — | — | — | — |
+  | Apocrypha (+3 Macc) | 1,784 stand + 58 off of 4,597 anchored | ✓ S463c | ✓ built S463c (485 rebuilt, 1 moved, 22 re-quoted, 3 re-cited, 63 slug cites) | built S463c — deploy pending Yoshi | ✓ built S463c (55) | ✓ built S463c (13 S454-changed read: all stay) | scratch 573/573, 607/607, 55/55, 4,907 quotations verbatim, 0 degraded |
   | Jasher | — | — | — | — | — | — |
   | 2 Enoch / Test. XII / Apoc. Abraham / Adam-Eve / Asc. Isaiah | — | — | — | — | — | — |
   | Cepher additions / Sonnini | — | — | — | — | — | — |
@@ -216,3 +216,12 @@ means a back-fill can re-run safely over the already-merged canon rows.
 - **2026-10-23 (S463b) — DEPLOYED 12:55 CDT, live read-back 347/347 cards, 256/256 member notes, 5/5 summaries, 1,943 quotations verbatim, 0 degraded. Jubilees closed.**
 - **2026-10-23 (S463a2) — the 4 S463a question cards retired, DEPLOYED 11:07 CDT** (`session463a2_enoch_four.sql`): 25364, 25399, 25466, 25486 stood
   on renumbered verses their notes no longer matched; the pairings survive on 25467 / 25362 / 25504. Read-back retired 4/4, twins live 4/4. **1 Enoch closed.**
+- **2026-10-23 (S463c) — APOCRYPHA + 3 MACCABEES SWEEP BUILT, scratch-tested twice, NOT deployed** (`source-texts/apocrypha-kjv-ebible/s463c-sweep/`,
+  migration `session463c_apocrypha_sweep.sql`, deploy `_session463c_apocrypha_sweep_deploy.sh`, read-back `_s463c_check.py`, report
+  `apocrypha-sweep-report.md`). Dump: 5,720 + 228 live verses, 4,969 cards (4,597 anchored), 4,943 member notes, 1,990 threads. Map: quotes 1,784 stand /
+  58 off / 3 neighbor / 6 not found; degraded prose 411 markers + 139 hyphen-chain-only = 550, 485 anchored (incl. 4556, 4614, 4618); slug citations 66 cards +
+  13 summaries; 13 glosses on S454-changed verses (all stay). Build: 485 notes rebuilt Come-and-See (4507 → Ecclesiasticus 35:14), 22 re-quoted, 3 re-cited as
+  ranges, 63 slug citations → English names, 607 member notes, 55 summaries. Reads: 13 glosses by content; 19 address decisions cold-read by two agents (19/19
+  agree); 485 notes + 112 member notes + 55 summaries voice-read cold by six readers (27 findings applied). Scratch run 1 = 572 in place / 1 moved / 607 / 55 /
+  0 skipped; run 2 = 0 changed, 573 landed; post-run read-back 4,907 Apocrypha quotations verbatim, 0 degraded, 0 chains, 0 slugs, 0 dup pairs; both guards
+  tested. Status table: Apocrypha row → built, deploy pending. Next: deploy + read-back, then Jasher (S463d).

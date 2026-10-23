@@ -1,0 +1,1687 @@
+[
+ {
+  "id": 44383,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "baruch-with-the-letter-of-jeremiah",
+   "ch": 6,
+   "vn": 51,
+   "cite": "Baruch 6:51",
+   "text": "And it shall manifestly appear to all nations and kings that they are no gods, but the works of men’s hands, and that there is no work of Yahuah (God) in them.",
+   "prev": "For seeing they be but of wood, and overlaid with silver and gold, it shall be known hereafter that they are false:",
+   "next": "Who then may not know that they are no gods?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 4,
+   "vn": 28,
+   "cite": "Deuteronomy 4:28",
+   "text_db": "And there you shall serve gods, the work of men’s hands, wood and stone, which neither see, nor hear, nor eat, nor smell.",
+   "text_canon": "And there ye shall serve gods, the work of men’s hands, wood and stone, which neither see, nor hear, nor eat, nor smell."
+  },
+  "old_note": "Deuteronomy 4:28 — *And there ye shall serve gods, the work of men's hands, wood and stone, which neither see, nor hear, nor eat, nor smell.* Moses named the work-of-men's-hands curse of exile that Baruch 6:51 watches play out among the Babylonian gods.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10536,
+    "slug": "baruch-6-work-of-mens-hands",
+    "old": "Deuteronomy 4:28 — *And there ye shall serve gods, the work of men's hands, wood and stone, which neither see, nor hear, nor eat, nor smell.* Moses named the work-of-men's-hands curse of exile that Baruch 6:51 watches play out among the Babylonian gods."
+   }
+  ]
+ },
+ {
+  "id": 39536,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 1,
+   "vn": 26,
+   "cite": "Ecclesiasticus 1:26",
+   "text": "If you desire wisdom, keep the commandments, and Yahuah (God) shall give her to you.",
+   "prev": "The parables of knowledge are in the treasures of wisdom: but godliness is an abomination to a sinner.",
+   "next": "For the fear of Yahuah (God) is wisdom and instruction: and faith and meekness are his delight."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "ecclesiastes",
+   "ch": 12,
+   "vn": 13,
+   "cite": "Ecclesiastes 12:13",
+   "text_db": "Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.",
+   "text_canon": "Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man."
+  },
+  "old_note": "Ecclesiastes 12:13 — *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.* The fear-plus-keep-the-commandments of Sir 1:26 is the whole duty of man.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9141,
+    "slug": "ecclesiasticus-1-keep-the-commandments-for-wisdom",
+    "old": "Ecclesiastes 12:13 — *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.* The fear-plus-keep-the-commandments of Sir 1:26 is the whole duty of man."
+   }
+  ]
+ },
+ {
+  "id": 4755,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 1,
+   "vn": 28,
+   "cite": "Ecclesiasticus 1:28",
+   "text": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "prev": "For the fear of Yahuah (God) is wisdom and instruction: and faith and meekness are his delight.",
+   "next": "Be not an hypocrite in the sight of men, and take good heed what you speak."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 30,
+   "cite": "Matthew 21:30",
+   "text_db": "And he came to the second, and said likewise. And he answered and said, I go, sir: and went not.",
+   "text_canon": "And he came to the second, and said likewise. And he answered and said, I go, sir: and went not."
+  },
+  "old_note": "*Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.* Sirach (Ecclesiasticus) 1:28 names the wisdom-stream's direct verbal-anchor for the *double-heart* substance the second-son-substance walks at the parable. The framework reads the verse against Matt 21:30's *I go, sir: and went not.* The wisdom-stream-substance the Sirach 1:28 passage walks names the substance the Father-substance does-not-receive — the substance-of-coming-to-him-with-a-double-heart, the substance-of-saying-yes-by-the-mouth-but-walking-no-by-the-substance. The second-son-substance at the parable walks the substance the wisdom-stream had-named at the substance-of-the-double-heart — the substance-of-the-mouth-saying-one-thing-and-the-substance-walking-another. The framework reads the substance in continuity with Matt 7:21-23's *not every one that saith unto me, Lord, Lord* substance + James 1:8's *double minded man is unstable in all his ways* substance + 1 John 2:3-4's *he that saith, I know him, and keepeth not his commandments, is a liar* substance — the substance of the doing-of-the-Father's-will against the substance of the saying-yes-without-doing.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|1:28",
+   "ratio": 1.0,
+   "live_proposed": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 389,
+    "slug": "parable-of-the-two-sons-and-the-wisdom-streams-repentance-and-hypocrisy-architecture",
+    "old": "Sirach (Ecclesiasticus) 1:28 — *distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.* THE direct verbal-anchor for the *double-heart* substance the second-son-substance walks at Matt 21:30 (*I go, sir: and went not*) — the substance of saying-yes-by-the-mouth-and-walking-no-by-the-substance the Father does-not-receive; in continuity with James 1:8's *double minded man is unstable in all his ways.*"
+   }
+  ]
+ },
+ {
+  "id": 4796,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 1,
+   "vn": 28,
+   "cite": "Ecclesiasticus 1:28",
+   "text": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "prev": "For the fear of Yahuah (God) is wisdom and instruction: and faith and meekness are his delight.",
+   "next": "Be not an hypocrite in the sight of men, and take good heed what you speak."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 25,
+   "cite": "Matthew 23:25",
+   "text_db": "Woe unto you, scribes and Pharisees, hypocrites! for you make clean the outside of the cup and of the platter, but within they are full of extortion and excess.",
+   "text_canon": "Woe unto you, scribes and Pharisees, hypocrites! for ye make clean the outside of the cup and of the platter, but within they are full of extortion and excess."
+  },
+  "old_note": "*Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.* Sirach (Ecclesiasticus) 1:28 names the wisdom-stream's direct articulation of the come-not-with-a-double-heart substance — the same substance the King-of-Yashar'el (Israel) walks-against at Matt 23:25 (*ye make clean the outside of the cup and of the platter, but within they are full of extortion and excess*). The framework reads the verse as the wisdom-stream's direct prefiguring of the heart-defilement-substance the King walks-from at Matt 15:10-20 and walks-against at Matt 23:25-26. The same Tanakh-substance the prophet-Shemu'el (Samuel) walks at 1 Samuel 16:7 (*Yahuah (the LORD) looketh on the heart*) is the substance Sirach 1:28 names directly — the come-not-with-a-double-heart substance is the substance the wisdom-stream walks-from and the King walks-from.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|1:28",
+   "ratio": 1.0,
+   "live_proposed": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 399,
+    "slug": "the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon",
+    "old": "Sirach (Ecclesiasticus) 1:28 — *Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.* The wisdom-stream's direct articulation of the come-not-with-a-double-heart substance — the same substance the King walks-against at Matt 23:25 (the outside-of-the-cup against the inside-full-of-extortion-and-excess)."
+   }
+  ]
+ },
+ {
+  "id": 4756,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 1,
+   "vn": 29,
+   "cite": "Ecclesiasticus 1:29",
+   "text": "Be not an hypocrite in the sight of men, and take good heed what you speak.",
+   "prev": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "next": "Exalt not thyself, lest you fall, and bring dishonour upon your soul, and so Yahuah (God) discover your secrets, and cast you down in the midst of the congregation, because you camest not in truth to the fear of Yahuah (God), but your heart is full of deceit."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 30,
+   "cite": "Matthew 21:30",
+   "text_db": "And he came to the second, and said likewise. And he answered and said, I go, sir: and went not.",
+   "text_canon": "And he came to the second, and said likewise. And he answered and said, I go, sir: and went not."
+  },
+  "old_note": "*Be not an hypocrite in the sight of men, and take good heed what you speak.* Sirach (Ecclesiasticus) 1:29 names the wisdom-stream's direct articulation of the be-not-a-hypocrite-in-the-sight-of-men substance the second-son-substance walks. The framework reads the verse against Matt 21:30's *I go, sir: and went not* + the chief-priests-and-elders-substance the King-walks-against. The wisdom-stream-substance the Sirach 1:29 passage names the substance-of-the-hypocrite — the Greek *hypokritēs* the King uses against the Pharisees throughout the gospel (Matt 6:2, 6:5, 6:16, 15:7, 22:18, 23:13-29, 24:51). The substance the wisdom-stream had-named at Sirach 1:29 is the substance the King-walks-against at the substance of the chief-priests-and-elders walking-the-second-son's-substance — saying-yes-with-the-mouth at the Pharisaic-righteousness-substance but-walking-no at the substance the Father had-laid at the Yochanan (John)-substance. The substance is-substantial — the wisdom-stream and the gospel cohere at the substance-of-the-hypocrite the Father-does-not-receive.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Be not an hypocrite in the sight of men, and take good heed what you speak.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|1:29",
+   "ratio": 1.0,
+   "live_proposed": "Be not an hypocrite in the sight of men, and take good heed what you speak.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 389,
+    "slug": "parable-of-the-two-sons-and-the-wisdom-streams-repentance-and-hypocrisy-architecture",
+    "old": "Sirach (Ecclesiasticus) 1:29 — *be not an hypocrite in the sight of men, and take good heed what you speak.* The wisdom-stream's direct articulation of the be-not-a-hypocrite substance — the Greek *hypokritēs* the King uses against the Pharisees throughout (Matt 6:2, 6:5, 6:16, 15:7, 22:18, 23:13-29, 24:51); the chief-priests-and-elders walking the second-son's-substance at Matt 21:30 carry the substance the wisdom-stream had-named the architecture-of."
+   }
+  ]
+ },
+ {
+  "id": 4797,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 1,
+   "vn": 29,
+   "cite": "Ecclesiasticus 1:29",
+   "text": "Be not an hypocrite in the sight of men, and take good heed what you speak.",
+   "prev": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "next": "Exalt not thyself, lest you fall, and bring dishonour upon your soul, and so Yahuah (God) discover your secrets, and cast you down in the midst of the congregation, because you camest not in truth to the fear of Yahuah (God), but your heart is full of deceit."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 28,
+   "cite": "Matthew 23:28",
+   "text_db": "Even so you also outwardly appear righteous unto men, but within you are full of hypocrisy and iniquity.",
+   "text_canon": "Even so ye also outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity."
+  },
+  "old_note": "*Be not an hypocrite in the sight of men, and take good heed what you speak.* Sirach (Ecclesiasticus) 1:29 names THE direct wisdom-stream verbal-anchor for the be-not-an-hypocrite-in-the-sight-of-men substance — the same substance the King-of-Yashar'el (Israel) walks-against at Matt 23:28 (*even so ye also outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity*). The framework reads the verse as the wisdom-stream's direct articulation of the hypocrisy-in-the-sight-of-men substance the seven-woes have-walked-out across the chapter. The Greek *hypokritai* (stage-actors who-play-a-part the heart-substance does-not-walk) is the same substance Sirach 1:29 names directly — the wisdom-stream had-named-the-substance centuries before the gospel-pivot.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Be not an hypocrite in the sight of men, and take good heed what you speak.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|1:29",
+   "ratio": 1.0,
+   "live_proposed": "Be not an hypocrite in the sight of men, and take good heed what you speak.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 399,
+    "slug": "the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon",
+    "old": "Sirach (Ecclesiasticus) 1:29 — *Be not an hypocrite in the sight of men, and take good heed what you speak.* THE direct wisdom-stream verbal-anchor for the be-not-an-hypocrite-in-the-sight-of-men substance — the same substance the King walks-against at Matt 23:28 (*outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity*). The wisdom-stream had-named-the-Greek *hypokritai* substance centuries before the gospel-pivot articulated it across the seven-woes."
+   }
+  ]
+ },
+ {
+  "id": 39532,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 1,
+   "vn": 29,
+   "cite": "Ecclesiasticus 1:29",
+   "text": "Be not an hypocrite in the sight of men, and take good heed what you speak.",
+   "prev": "Distrust not the fear of Yahuah (God) when you are poor: and come not to him with a double heart.",
+   "next": "Exalt not thyself, lest you fall, and bring dishonour upon your soul, and so Yahuah (God) discover your secrets, and cast you down in the midst of the congregation, because you camest not in truth to the fear of Yahuah (God), but your heart is full of deceit."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 28,
+   "cite": "Matthew 23:28",
+   "text_db": "Even so you also outwardly appear righteous unto men, but within you are full of hypocrisy and iniquity.",
+   "text_canon": "Even so ye also outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity."
+  },
+  "old_note": "Matthew 23:28 — *Even so ye also outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity.* The Messiah indicts exactly the hypocrite-in-the-sight-of-men of Sir 1:29.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9142,
+    "slug": "ecclesiasticus-1-double-heart-hypocrisy",
+    "old": "Matthew 23:28 — *Even so ye also outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity.* The Messiah indicts exactly the hypocrite-in-the-sight-of-men of Sir 1:29."
+   }
+  ]
+ },
+ {
+  "id": 4442,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 2,
+   "vn": 1,
+   "cite": "Ecclesiasticus 2:1",
+   "text": "My son, if you come to serve Yahuah (God), prepare your soul for temptation.",
+   "prev": null,
+   "next": "Set your heart aright, and constantly endure, and make not haste in time of trouble."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 22,
+   "cite": "Matthew 10:22",
+   "text_db": "And you shall be hated of all men for my name’s sake: but he that endures to the end shall be saved.",
+   "text_canon": "And ye shall be hated of all men for my name’s sake: but he that endureth to the end shall be saved."
+  },
+  "old_note": "*My son, if you come to serve Yahuah (God), prepare your soul for temptation. Set your heart aright, and constantly endure, and make not haste in time of trouble.* Sirach (Ecclesiasticus) 2:1-2 names the wisdom-stream's direct architecture of the disciple-preparing-for-trial: prepare-the-soul, set-the-heart-aright, CONSTANTLY ENDURE. Matt 10:22's *he that endureth to the end shall be saved* walks the same wisdom-stream architecture at the kingdom-citizens level. The endurance is not innovation; the wisdom-stream had been naming the disciple-of-Yahuah (God) as the one-who-constantly-endures-through-trouble for centuries before the King commissions the twelve.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "My son, if you come to serve Yahuah (God), prepare your soul for temptation. Set your heart aright, and constantly endure, and make not haste in time of trouble.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|2:1",
+   "ratio": 1.0,
+   "live_proposed": "My son, if you come to serve Yahuah (God), prepare your soul for temptation.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 109,
+    "slug": "prepare-the-soul-for-temptation-in-sirach-2",
+    "old": "Sirach 2:1 — *if you come to serve Yahuah (God), prepare your soul for temptation. Set your heart aright, and constantly endure.* The wisdom-stream's direct disciple-preparation-for-trial architecture; Matt 10:22's endure-to-the-end walks the same."
+   }
+  ]
+ },
+ {
+  "id": 4867,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 2,
+   "vn": 1,
+   "cite": "Ecclesiasticus 2:1",
+   "text": "My son, if you come to serve Yahuah (God), prepare your soul for temptation.",
+   "prev": null,
+   "next": "Set your heart aright, and constantly endure, and make not haste in time of trouble."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 41,
+   "cite": "Matthew 26:41",
+   "text_db": "Watch and pray, that you enter not into temptation: the spirit indeed is willing, but the flesh is weak.",
+   "text_canon": "Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak."
+  },
+  "old_note": "*My son, if you come to serve Yahuah (God), prepare your soul for temptation.* Sirach (Ecclesiasticus) 2:1 names THE direct wisdom-stream verbal-anchor for the prepare-your-soul-for-temptation substance — the wisdom-stream's opening of the come-to-serve-Yahuah-prepare-for-temptation diagnostic. The framework reads the verse against Matt 26:41's *Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak.* The substantial-King-of-Yashar'el (Israel)-substance's teaching to the disciples at-the-Gethsemane-substance walks-substantively-the-substantial-prepare-the-soul-for-temptation-substance the wisdom-stream had named-substantively. The substantial-disciples-falling-asleep-substance walks the substantial-flesh-weakness-substance the prophet-David walked at Psalm 51:5 + Psalm 103:14 (*for he knoweth our frame; he remembereth that we are dust*) walks-into directly. The framework reads this in continuity with the cause-and-effect-of-the-new-heart per the framework-deep's *Grace, the Way, the New Heart, and the Mercy of Depart* section — the substantial-flesh-weakness-substance is the substantial-substance-of-the-substantial-Adamic-fall-substance the substantial-citizens-of-the-substantial-kingdom-substance walk-substantively against-the-substantial-flesh-weakness-substance through-the-substantial-Ruach HaKodesh (Holy Spirit)-internalizing-the-Torah-on-the-substantial-new-heart-substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 36:26-27 walks-into directly (*and I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them*). The substantial-Sirach 2:1 substance walks-substantively the substantial-pre-Christian-Tanakh-Maccabean-period-wisdom-stream-substance walked-out-substantively the substantial-substance-of-the-substantial-preparation-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "My son, if you come to serve Yahuah (God), prepare your soul for temptation.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|2:1",
+   "ratio": 1.0,
+   "live_proposed": "My son, if you come to serve Yahuah (God), prepare your soul for temptation.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 415,
+    "slug": "the-betrayer-the-double-tongue-and-the-watch-against-temptation-in-sirach",
+    "old": "Sirach (Ecclesiasticus) 2:1 — *my son, if you come to serve Yahuah (God), prepare your soul for temptation.* THE direct verbal-anchor for the prepare-your-soul-for-temptation substance — the King's *watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak* at Matt 26:41 walks-substantively the wisdom-stream-substance the prophet-David walked at Psalm 51:5 + 103:14 walks-into. The cure for the flesh-weakness is the Ruach HaKodesh (Holy Spirit)-internalized-Torah on the new-heart per Ezekiel 36:26-27."
+   }
+  ]
+ },
+ {
+  "id": 4443,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 2,
+   "vn": 5,
+   "cite": "Ecclesiasticus 2:5",
+   "text": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "prev": "Whatsoever is brought upon you take cheerfully, and be patient when you are changed to a low estate.",
+   "next": "Believe in him, and he will help you; order your way aright, and trust in him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 22,
+   "cite": "Matthew 10:22",
+   "text_db": "And you shall be hated of all men for my name’s sake: but he that endures to the end shall be saved.",
+   "text_canon": "And ye shall be hated of all men for my name’s sake: but he that endureth to the end shall be saved."
+  },
+  "old_note": "*For gold is tried in the fire, and acceptable men in the furnace of adversity.* Sirach (Ecclesiasticus) 2:5 names the wisdom-stream's adversity-as-refining-furnace architecture: gold-tried-in-fire is the figure for the testing of the acceptable-disciple in the furnace of adversity. Matt 10:22's endure-to-the-end is the same architecture: the trial is the testing-furnace; the disciple endures and is shown acceptable. The wisdom-stream has been carrying the diagnostic since Sirach's composition; the King at Matt 10:22 names the same diagnostic at the gathering-mission-disciples level.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|2:5",
+   "ratio": 1.0,
+   "live_proposed": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 109,
+    "slug": "prepare-the-soul-for-temptation-in-sirach-2",
+    "old": "Sirach 2:5 — *gold is tried in the fire, and acceptable men in the furnace of adversity.* The wisdom-stream's adversity-as-refining-furnace; the trial-as-proving the King at Matt 10:22 names at the apostolic-mission persecution-encounter."
+   }
+  ]
+ },
+ {
+  "id": 4868,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 2,
+   "vn": 5,
+   "cite": "Ecclesiasticus 2:5",
+   "text": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "prev": "Whatsoever is brought upon you take cheerfully, and be patient when you are changed to a low estate.",
+   "next": "Believe in him, and he will help you; order your way aright, and trust in him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 75,
+   "cite": "Matthew 26:75",
+   "text_db": "And Peter remembered the word of Yahusha (Jesus), which said unto him, Before the cock crow, you shall deny me thrice. And he went out, and wept bitterly.",
+   "text_canon": "And Peter remembered the word of Yahusha (Jesus), which said unto him, Before the cock crow, thou shalt deny me thrice. And he went out, and wept bitterly."
+  },
+  "old_note": "*For gold is tried in the fire, and acceptable men in the furnace of adversity.* Sirach (Ecclesiasticus) 2:5 names the wisdom-stream's direct articulation of the gold-tried-in-the-fire + the acceptable-men-in-the-furnace-of-adversity substance — the wisdom-stream's articulation of the substantial-refining-of-the-substantial-faithful-substance through-the-substantial-trial-and-suffering-substance. The framework reads the verse against Matt 26:75's *And Kefa (Peter) remembered the word of Yahusha (Jesus), which said unto him, Before the cock crow, thou shalt deny me thrice. And he went out, and wept bitterly.* The substantial-Kefa (Peter)-substance walks-substantively-the-substantial-furnace-of-adversity-substance — the substantial-three-fold-denial-substance + the substantial-cock-crowing-substance + the substantial-bitter-weeping-substance walk-substantively-the-substantial-refining-substance the substantial-Kefa (Peter)-substance walks-into-substantively. The substantial-bitter-weeping-substance walks the substantial Psalm 51:17 substance the prophet-David walked at-the-substantial-substance-direct (*the sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise*) + the substantial Joel 2:12-13 substance the prophet-Yo'el (Joel) walked (*rend your heart, and not your garments*) walks-into-substantively. The substantial-Kefa (Peter)-substance walks-the-rend-his-heart-substance, NOT-substantially-the-Sanhedrin-Kaiapha (Caiaphas)-rending-the-garments-superficial-substance at v.65 — the substantial-rending-of-the-heart-substance walks-substantively-the-substantial-repentance-into-the-substantial-restoration-substance the King walks-out at John 21:15-19. The framework reads this carefully — the substantial-Kefa (Peter)-substance walks-the-disciple-falling-into-the-pattern-of-the-faithless-generation-substance per the substantial 2 Esdras (4 Ezra) 7:48 substance the S154 thread 4 anchor-substance walked (*O thou Adam, what hast thou done? for though it was thou that sinned, the fall was not thine alone, but ours also that come of thee*); the substantial *and he went out, and wept bitterly* substance walks the substantial-disciple's-repentance-tear-substance that breaks-the-generational-pattern by the substantial-kingdom-grace-substance the substantial-Ruach HaKodesh (Holy Spirit)-internalized-Torah-and-the-new-heart-substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 36:26-27 walks-into directly. The substantial-direct-rule-out of the categorical-Reformation-eternal-security-substance — the substantial-Kefa (Peter)-substance has-substantively-failed + walks-the-bitter-weeping + walks-the-restoration through-the-substantial-walking-the-repentance-substance, NOT-categorically-once-saved-always-saved.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|2:5",
+   "ratio": 1.0,
+   "live_proposed": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 415,
+    "slug": "the-betrayer-the-double-tongue-and-the-watch-against-temptation-in-sirach",
+    "old": "Sirach (Ecclesiasticus) 2:5 — *for gold is tried in the fire, and acceptable men in the furnace of adversity.* The substantial-gold-tried-in-the-fire + acceptable-men-in-the-furnace-of-adversity substance — the substantial-Kefa (Peter)-three-fold-denial + the cock-crowing + the bitter-weeping at Matt 26:75 walks-substantively-the-furnace-of-adversity-substance + the substantial-rending-of-the-heart-into-restoration the substantial Psalm 51:17 + Joel 2:12-13 walks-into. The substantial-direct-rule-out of the Reformation-eternal-security-substance — Kefa (Peter) walks-the-disciple-falling-into-the-pattern-of-the-faithless-generation per the S154-Matt-17 thread 4 anchor 2 Esdras 7:48, and walks-the-repentance-tear that breaks-the-generational-pattern by the kingdom-grace + new-heart per Ezekiel 36:26-27."
+   }
+  ]
+ },
+ {
+  "id": 39553,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 2,
+   "vn": 5,
+   "cite": "Ecclesiasticus 2:5",
+   "text": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "prev": "Whatsoever is brought upon you take cheerfully, and be patient when you are changed to a low estate.",
+   "next": "Believe in him, and he will help you; order your way aright, and trust in him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "1-peter",
+   "ch": 1,
+   "vn": 7,
+   "cite": "1 Peter 1:7",
+   "text_db": "That the trial of your faith, being much more precious than of gold that perishes, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ):",
+   "text_canon": "That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ):"
+  },
+  "old_note": "1 Peter 1:7 — *That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ):* Peter's gold-tried-with-fire is ben Sira's furnace of adversity verbatim in figure (Sirach 2:5).",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9143,
+    "slug": "ecclesiasticus-2-prepare-soul-for-temptation",
+    "old": "1 Peter 1:7 — *That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ):* Peter's gold-tried-with-fire is ben Sira's furnace of adversity verbatim in figure (Sirach 2:5)."
+   }
+  ]
+ },
+ {
+  "id": 65423,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 2,
+   "vn": 6,
+   "cite": "Ecclesiasticus 2:6",
+   "text": "Believe in him, and he will help you; order your way aright, and trust in him.",
+   "prev": "For gold is tried in the fire, and acceptable men in the furnace of adversity.",
+   "next": "You that fear Yahuah (God), wait for his mercy; and go not aside, lest you fall."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "psalms",
+   "ch": 37,
+   "vn": 3,
+   "cite": "Psalm 37:3",
+   "text_db": "Trust in Yahuah (LORD), and do good; so shall you dwell in the land, and verily you shall be fed.",
+   "text_canon": "Trust in Yahuah (LORD), and do good; so shalt thou dwell in the land, and verily thou shalt be fed."
+  },
+  "old_note": "*Believe in him, and he will help you; order your way aright, and trust in him* (Sirach 2:6). *Trust in Yahuah (LORD), and do good* (Psalm 37:3): the son of Sirach repeats the psalm's counsel — believe, order the way aright, trust — the same trust-and-do-good walk that leans the whole life on Yahuah's help.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Believe in him, and he will help you; order your way aright, and trust in him",
+   "labelled": "ecclesiasticus|2:6",
+   "proposed": "ecclesiasticus|2:6",
+   "ratio": 1.0,
+   "live_proposed": "Believe in him, and he will help you; order your way aright, and trust in him.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 16263,
+    "slug": "psalm-37-trust-in-yahuah-and-do-good-commit-thy-way",
+    "old": "★ *Believe in him, and he will help you; order your way aright, and trust in him* (Sirach 2:6) — the *Trust in Yahuah, and do good* counsel (37:3) in the son of Sirach's wisdom."
+   }
+  ]
+ },
+ {
+  "id": 4444,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 2,
+   "vn": 18,
+   "cite": "Ecclesiasticus 2:18",
+   "text": "Saying, We will fall into the hands of Yahuah (God), and not into the hands of men: for as his majesty is, so is his mercy.",
+   "prev": "They that fear Yahuah (God) will prepare their hearts, and humble their souls in his sight,",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 28,
+   "cite": "Matthew 10:28",
+   "text_db": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.",
+   "text_canon": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell."
+  },
+  "old_note": "*Saying, We will fall into the hands of Yahuah (God), and not into the hands of men: for as his majesty is, so is his mercy.* Sirach (Ecclesiasticus) 2:18 names the wisdom-stream's direct fear-redirect architecture: the disciple who fears Yahuah (God) chooses to fall into HIS hands rather than into the hands of men. Matt 10:28's *fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in gehenna* walks the same architecture at the kingdom-citizens level. The wisdom-stream had named the fear-of-Yahuah-supersedes-fear-of-men disposition; the King at Matt 10:28 names the same disposition with the eschatological-stakes made explicit.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Saying, We will fall into the hands of Yahuah (God), and not into the hands of men: for as his majesty is, so is his mercy.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|2:18",
+   "ratio": 1.0,
+   "live_proposed": "Saying, We will fall into the hands of Yahuah (God), and not into the hands of men: for as his majesty is, so is his mercy.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 109,
+    "slug": "prepare-the-soul-for-temptation-in-sirach-2",
+    "old": "Sirach 2:18 — *we will fall into the hands of Yahuah (God), and not into the hands of men.* The wisdom-stream's fear-redirect: choose to fall into Yahuah's hands rather than men's. Matt 10:28's fear-redirect walks the same architecture with the eschatological-stakes made explicit."
+   }
+  ]
+ },
+ {
+  "id": 4576,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 1,
+   "cite": "Ecclesiasticus 3:1",
+   "text": "Hear me your father, O children, and do thereafter, that you may be safe.",
+   "prev": null,
+   "next": "For Yahuah (God) has given the father honour over the children, and has confirmed the authority of the mother over the sons."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 15,
+   "vn": 4,
+   "cite": "Matthew 15:4",
+   "text_db": "For Elohim (God) commanded, saying, Honour your father and mother: and, He that curses father or mother, let him die the death.",
+   "text_canon": "For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death."
+  },
+  "old_note": "*Hear me your father, O children, and do thereafter, that you may be safe.* Sirach (Ecclesiasticus) 3:1 names the wisdom-stream's direct articulation of the fifth-commandment substance — the parental-honor architecture the Torah commands at Shemot (Exodus) 20:12. The framework reads the verse against Matt 15:4's *honour thy father and mother* citation. The wisdom-stream had named the architecture of the parental-honor-substance as the foundation-of-the-children's-safety; the Pharisaic-Corban-tradition the King exposes at vv.3-6 voids the architecture at the support-of-the-aged-parent level. The wisdom-stream's articulation reinforces the Torah-substance the King defends against the Pharisaic-tradition; the same architecture, the same load-bearing covenant-substance, the same diagnostic of the Pharisaic-system that voids the parental-honor commandment through the Corban-vow-mechanism.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Hear me your father, O children, and do thereafter, that you may be safe.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:1",
+   "ratio": 1.0,
+   "live_proposed": "Hear me your father, O children, and do thereafter, that you may be safe.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 219,
+    "slug": "honor-of-parents-fifth-commandment-the-corban-tradition-voids-in-sirach-and-tobit",
+    "old": "Sirach (Ecclesiasticus) 3:1 — *hear me your father, O children, and do thereafter, that you may be safe.* The wisdom-stream's headline articulation of the parental-honor architecture as the foundation-of-the-children's-safety the Torah's fifth-commandment names at Shemot (Exodus) 20:12; the Pharisaic-Corban-tradition the King exposes at vv.3-6 voids the architecture at the support-of-the-aged-parent level."
+   }
+  ]
+ },
+ {
+  "id": 4704,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 1,
+   "cite": "Ecclesiasticus 3:1",
+   "text": "Hear me your father, O children, and do thereafter, that you may be safe.",
+   "prev": null,
+   "next": "For Yahuah (God) has given the father honour over the children, and has confirmed the authority of the mother over the sons."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 19,
+   "vn": 14,
+   "cite": "Matthew 19:14",
+   "text_db": "But Yahusha (Jesus) said, Suffer little children, and forbid them not, to come unto me: for of such is the kingdom of heaven.",
+   "text_canon": "But Yahusha (Jesus) said, Suffer little children, and forbid them not, to come unto me: for of such is the kingdom of heaven."
+  },
+  "old_note": "*Hear me your father, O children, and do thereafter, that you may be safe.* Sirach (Ecclesiasticus) 3:1 names the wisdom-stream's direct opening of the children-hearing-the-father substance — the kingdom-citizens' child-substance-disposition the King names at Matt 19:14's *suffer little children, and forbid them not, to come unto me: for of such is the kingdom of heaven.* The framework reads the verse against the four-fold-child-substance the King had unpacked at Matthew 18:1-5 — humility, receptiveness, dependence, honesty. The wisdom-stream-substance of children-hearing-the-father is the substance the kingdom-citizen-disposition walks-in: hearing the Father, doing thereafter. The framework reads in continuity with the cause-and-effect-of-hearing per Red Line #11 — *if you hear, you are sons of Avraham (Abraham); you are sons of Adam; you are the seed of promise.* Hearing reveals what was always true. The kingdom-citizens' child-substance is the substance-that-hears the Father's-substance when the Father's-substance speaks. The framework reads this NOT as original-innocence-by-default per the institutional-Christian-tradition (which the Tanakh-and-the-King do not name) BUT as the disposition-substance the four-fold-child-substance carries.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Hear me your father, O children, and do thereafter, that you may be safe.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:1",
+   "ratio": 1.0,
+   "live_proposed": "Hear me your father, O children, and do thereafter, that you may be safe.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 377,
+    "slug": "receiving-the-children-and-parental-instruction-in-sirach-and-tobit",
+    "old": "Sirach (Ecclesiasticus) 3:1 — *hear me your father, O children, and do thereafter, that you may be safe.* The wisdom-stream's opening of the children-hearing-the-father substance — the kingdom-citizens' child-substance-disposition the King names at Matt 19:14 (the four-fold-child-substance: humility, receptiveness, dependence, honesty), in continuity with the cause-and-effect-of-hearing per Red Line #11."
+   }
+  ]
+ },
+ {
+  "id": 7851,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 7,
+   "cite": "Ecclesiasticus 3:7",
+   "text": "He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.",
+   "prev": "He that honoureth his father shall have a long life; and he that is obedient to Yahuah (God) shall be a comfort to his mother.",
+   "next": "Honour your father and mother both in word and deed, that a blessing may come upon you from them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "mark",
+   "ch": 7,
+   "vn": 10,
+   "cite": "Mark 7:10",
+   "text_db": "For Moses said, Honour your father and your mother; and, Whoso curses father or mother, let him die the death:",
+   "text_canon": "For Moses said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death:"
+  },
+  "old_note": "*For Moses said, Honour thy father and thy mother.* The commandment the corban tradition voids is the same the Hebrew library's wisdom-stream binds to the fear of Yahuah: *He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.* (Sirach / Ecclesiasticus 3:7) Sirach makes honour-of-parents the test of the fear of Yahuah; the corban device, which lets a man withhold from his parents what he vows to the altar, is the exact severing of the two the wisdom-stream had joined.",
+  "regrade": {
+   "verdict": "NOT_FOUND",
+   "quote": "For Moses said, Honour thy father and thy mother.",
+   "labelled": null,
+   "proposed": "tobit|10:11",
+   "ratio": 0.5,
+   "live_proposed": "And he blessed them, and sent them away, saying, Yahuah (God) of heaven give you a prosperous journey, my children.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 622,
+    "slug": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+    "old": "Sirach (Ecclesiasticus) 3:7 — *He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.* The wisdom-stream makes honour-of-parents the test of the fear of Yahuah; the corban device (Mark 7:10) severs the two it had joined."
+   }
+  ]
+ },
+ {
+  "id": 4577,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 8,
+   "cite": "Ecclesiasticus 3:8",
+   "text": "Honour your father and mother both in word and deed, that a blessing may come upon you from them.",
+   "prev": "He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.",
+   "next": "For the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 15,
+   "vn": 4,
+   "cite": "Matthew 15:4",
+   "text_db": "For Elohim (God) commanded, saying, Honour your father and mother: and, He that curses father or mother, let him die the death.",
+   "text_canon": "For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death."
+  },
+  "old_note": "*Honour your father and mother both in word and deed, that a blessing may come upon you from them.* Sirach (Ecclesiasticus) 3:8 names the wisdom-stream's direct articulation of the holistic-parental-honor substance — both in word and deed. The framework reads the verse against Matt 15:4-6's King's-charge that the Pharisaic-Corban-tradition voids the parental-honor commandment. The Corban-tradition allowed the son to claim parental-honor-in-word (the formal-religious-vow appeared honorable) while voiding it in deed (the actual support-of-the-aged-parent was blocked by the vow's legal-mechanism). The wisdom-stream had named the architecture: honor must be BOTH word AND deed. The Pharisaic-Corban-tradition split them and called the word-without-the-deed righteous. The King names the split and dismantles it.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Honour your father and mother both in word and deed, that a blessing may come upon you from them.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:8",
+   "ratio": 1.0,
+   "live_proposed": "Honour your father and mother both in word and deed, that a blessing may come upon you from them.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 219,
+    "slug": "honor-of-parents-fifth-commandment-the-corban-tradition-voids-in-sirach-and-tobit",
+    "old": "Sirach (Ecclesiasticus) 3:8 — *honour your father and mother both in word and deed, that a blessing may come upon you from them.* The wisdom-stream's articulation of the holistic-parental-honor substance — both in word and deed. The Pharisaic-Corban-tradition split the architecture, allowing the son to claim parental-honor-in-word while voiding it in deed; the King names the split at vv.5-6 and dismantles it."
+   },
+   {
+    "thread_id": 30909,
+    "slug": "matthew-15-ye-made-the-commandment-of-none-effect-by-tradition-exodus-20-isaiah-29-sirach-3",
+    "old": "Sirach 3:8 — *Honour your father and mother both in word and deed* — the fathers pressed the fifth commandment; Corban is its opposite."
+   }
+  ]
+ },
+ {
+  "id": 7850,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 8,
+   "cite": "Ecclesiasticus 3:8",
+   "text": "Honour your father and mother both in word and deed, that a blessing may come upon you from them.",
+   "prev": "He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.",
+   "next": "For the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "mark",
+   "ch": 7,
+   "vn": 12,
+   "cite": "Mark 7:12",
+   "text_db": "And you suffer him no more to do ought for his father or his mother;",
+   "text_canon": "And ye suffer him no more to do ought for his father or his mother;"
+  },
+  "old_note": "*And ye suffer him no more to do ought for his father or his mother.* The tradition forbids the very service Sirach commands *in word and deed*: *Honour your father and mother both in word and deed, that a blessing may come upon you from them.* (Sirach / Ecclesiasticus 3:8) The corban ruling is honour in word only — a vow-formula that profits the system — while the deed of provision is forbidden; the Hebrew library had already named honour as word AND deed, so the tradition's subtraction is exposed by the wisdom-stream's own standard.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Honour your father and mother both in word and deed, that a blessing may come upon you from them.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:8",
+   "ratio": 1.0,
+   "live_proposed": "Honour your father and mother both in word and deed, that a blessing may come upon you from them.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 622,
+    "slug": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+    "old": "Sirach 3:8 — *Honour your father and mother both in word and deed, that a blessing may come upon you from them.* The word-AND-deed the corban ruling severs (Mark 7:12) — honour in vow-formula while the deed of provision is forbidden."
+   }
+  ]
+ },
+ {
+  "id": 7849,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 9,
+   "cite": "Ecclesiasticus 3:9",
+   "text": "For the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations.",
+   "prev": "Honour your father and mother both in word and deed, that a blessing may come upon you from them.",
+   "next": "Glory not in the dishonour of your father; for your father’s dishonour is no glory to you."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "mark",
+   "ch": 7,
+   "vn": 13,
+   "cite": "Mark 7:13",
+   "text_db": "Making the word of Elohim (God) of none effect through your tradition, which you have delivered: and many such like things do you.",
+   "text_canon": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye."
+  },
+  "old_note": "*Making the word of Elohim (God) of none effect through your tradition, which ye have delivered.* The tradition does not merely fail to bless; it brings the curse the wisdom-stream warns of: *For the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations.* (Sirach / Ecclesiasticus 3:9) The man-made tradition that voids the fifth commandment forfeits the blessing and invites the uprooting; the King names the voiding, and the Hebrew library had already named the cost.",
+  "regrade": {
+   "verdict": "NOT_FOUND",
+   "quote": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered.",
+   "labelled": null,
+   "proposed": "the-wisdom-of-solomon|9:1",
+   "ratio": 0.25,
+   "live_proposed": "O Yahuah (God) of my fathers, and Yahuah (God) of mercy, who have made all things with your word,",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 622,
+    "slug": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+    "old": "Sirach 3:9 — *the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations.* The man-made tradition that voids the commandment (Mark 7:13) forfeits the blessing and invites the uprooting the wisdom-stream had already named."
+   }
+  ]
+ },
+ {
+  "id": 4579,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 16,
+   "cite": "Ecclesiasticus 3:16",
+   "text": "He that forsaketh his father is as a blasphemer; and he that angereth his mother is cursed: of Yahuah (God).",
+   "prev": "In the day of your affliction it shall be remembered; your sins also shall melt away, as the ice in the fair warm weather.",
+   "next": "My son, go on with your business in meekness; so shall you be beloved of him that is approved."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 15,
+   "vn": 6,
+   "cite": "Matthew 15:6",
+   "text_db": "And honour not his father or his mother, he shall be free. Thus have you made the commandment of Elohim (God) of none effect by your tradition.",
+   "text_canon": "And honour not his father or his mother, he shall be free. Thus have ye made the commandment of Elohim (God) of none effect by your tradition."
+  },
+  "old_note": "*He that forsaketh his father is as a blasphemer; and he that angereth his mother is cursed: of Yahuah (God).* Sirach (Ecclesiasticus) 3:16 names the wisdom-stream's direct articulation of the forsaking-the-father-as-blasphemy substance — the framework's reading of the Pharisaic-Corban-tradition at the worst-end of its diagnostic. The framework reads the verse against Matt 15:6's *thus have ye made the commandment of Elohim (God) of none effect by your tradition.* The Pharisaic-Corban-tradition that allows the son to forsake the support-of-the-aged-parent is — at the wisdom-stream's articulation — the disposition of blasphemy and curse. The King's-charge at v.6 lands at the same load-bearing diagnostic the wisdom-stream had named: the disposition that voids the parental-honor commandment is at the architecture of blasphemy-against-the-Torah-the-Father-spoke-from-Sinai. The Pharisaic-system's-righteousness-credentialing was at the architecture the wisdom-stream had named cursed.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "He that forsaketh his father is as a blasphemer; and he that angereth his mother is cursed: of Yahuah (God).",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:16",
+   "ratio": 1.0,
+   "live_proposed": "He that forsaketh his father is as a blasphemer; and he that angereth his mother is cursed: of Yahuah (God).",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 219,
+    "slug": "honor-of-parents-fifth-commandment-the-corban-tradition-voids-in-sirach-and-tobit",
+    "old": "Sirach (Ecclesiasticus) 3:16 — *he that forsaketh his father is as a blasphemer; and he that angereth his mother is cursed: of Yahuah (God).* The wisdom-stream's naming of the worst-end of the diagnostic — the disposition that voids the parental-honor commandment is blasphemy and curse. The King's-charge at v.6 (*made the commandment of Elohim (God) of none effect by your tradition*) lands at the same load-bearing diagnostic the wisdom-stream had named."
+   }
+  ]
+ },
+ {
+  "id": 4485,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 18,
+   "cite": "Ecclesiasticus 3:18",
+   "text": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "prev": "My son, go on with your business in meekness; so shall you be beloved of him that is approved.",
+   "next": "Many are in high place, and of renown: but mysteries are revealed to the meek."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 25,
+   "cite": "Matthew 11:25",
+   "text_db": "At that time Yahusha (Jesus) answered and said, I thank you, O Father, Yahuah (Lord) of heaven and earth, because you have hid these things from the wise and prudent, and have revealed them unto babes.",
+   "text_canon": "At that time Yahusha (Jesus) answered and said, I thank thee, O Father, Yahuah (Lord) of heaven and earth, because thou hast hid these things from the wise and prudent, and hast revealed them unto babes."
+  },
+  "old_note": "*The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* Sirach (Ecclesiasticus) 3:18 names the wisdom-stream's direct articulation of the greatness-through-humility architecture: the greater-one humbles himself; favour comes through the humbling. The framework reads the verse as the wisdom-stream Tanakh-anchor of Matt 11:25's revelation-economy logic: the Father reveals to the babes because the babes hold the disposition the wisdom-stream had named — humility before Yahuah (God). The system's wise-and-prudent operate the inverse — credential-elevation rather than self-humbling — and the revelation-channel does not reach them. The wisdom-stream named the principle; the King at Matt 11:25 names the operative-fact.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:18",
+   "ratio": 1.0,
+   "live_proposed": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 126,
+    "slug": "mysteries-revealed-to-the-meek-in-sirach-3-and-wisdom-of-solomon",
+    "old": "Sirach 3:18 — *the greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* The wisdom-stream's architectural-logic for the revelation-economy; humility-before-Yahuah (God) is the precondition for the favour-channel."
+   }
+  ]
+ },
+ {
+  "id": 4696,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 18,
+   "cite": "Ecclesiasticus 3:18",
+   "text": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "prev": "My son, go on with your business in meekness; so shall you be beloved of him that is approved.",
+   "next": "Many are in high place, and of renown: but mysteries are revealed to the meek."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 18,
+   "vn": 3,
+   "cite": "Matthew 18:3",
+   "text_db": "And said, Verily I say unto you, Except you be converted, and become as little children, you shall not enter into the kingdom of heaven.",
+   "text_canon": "And said, Verily I say unto you, Except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven."
+  },
+  "old_note": "*The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* Sirach (Ecclesiasticus) 3:18 names THE direct wisdom-stream verbal-anchor for the kingdom-inversion-of-greatness substance the King teaches at Matt 18:3-4. The framework reads the verse against *except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven. Whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven.* The wisdom-stream had named the substance directly: the-greater-you-are, the-more-humble-yourself; the substance the King teaches at the assembly-disposition register the wisdom-stream had taught at the wisdom-instruction register. The framework reads this in continuity with the Tanakh-*anawim* (humble-poor) substance pattern (Tehillim (Psalm) 131:1-2; Yeshayahu (Isaiah) 57:15; Yeshayahu (Isaiah) 66:2; Mishlei (Proverbs) 22:4); the apostolic-restatement at 1 Peter 5:5 (citing Mishlei (Proverbs) 3:34) and Yaaqov (James) 4:10. The kingdom-citizen's greatness is measured by the depth of the humility-substance, not by the height of the position-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:18",
+   "ratio": 1.0,
+   "live_proposed": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 375,
+    "slug": "the-greatness-as-humility-and-the-proud-cast-down-in-the-wisdom-stream",
+    "old": "Sirach (Ecclesiasticus) 3:18 — *The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* THE direct wisdom-stream verbal-anchor for the kingdom-inversion-of-greatness substance the King teaches at Matt 18:3-4 — *except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven. Whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven.* The wisdom-stream had named the substance at the wisdom-instruction register; the King teaches it at the assembly-disposition register; the substance is one architecture."
+   }
+  ]
+ },
+ {
+  "id": 4738,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 18,
+   "cite": "Ecclesiasticus 3:18",
+   "text": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "prev": "My son, go on with your business in meekness; so shall you be beloved of him that is approved.",
+   "next": "Many are in high place, and of renown: but mysteries are revealed to the meek."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 20,
+   "vn": 26,
+   "cite": "Matthew 20:26",
+   "text_db": "But it shall not be so among you: but whosoever will be great among you, let him be your minister;",
+   "text_canon": "But it shall not be so among you: but whosoever will be great among you, let him be your minister;"
+  },
+  "old_note": "*The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* Sirach (Ecclesiasticus) 3:18 names the wisdom-stream's direct articulation of the greater-the-more-humble substance — the precise inverse-architecture the King names at Matt 20:26-27's *whosoever will be great among you, let him be your minister (diakonos — table-server); and whosoever will be chief among you, let him be your servant (doulos — bond-servant).* The framework reads the verse against the categorical-inversion the King lays *against* the natural-kingdoms'-domination substance. The wisdom-stream had named the architecture of the greater-the-more-humble at the wisdom-instruction-register; the King names the operative-form at the kingdom-citizens'-substance-level — the substance kingdom-greatness-flows-up-as-service operates as the categorical-inverse of the natural-kingdoms'-greatness-flowing-down-as-domination under-the-watcher-rebellion-administration (Daniel 10:13, 20; Ephesians 6:12; 1 John 5:19). The framework reads this in continuity with the *blessed-are-the-poor-in-spirit* of Matt 5:3, the *whosoever-shall-humble-himself-as-this-little-child* of Matt 18:4, the foot-washing-substance the King models at John 13:15-17, and the apostle Kefa (Peter)'s exhortation to the elders at 1 Peter 5:1-3's *neither as being lords over Elohim (God)'s heritage, but being ensamples to the flock.* The substance is the same-substance through-the-wisdom-stream and-through-the-King and-through-the-apostles.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:18",
+   "ratio": 1.0,
+   "live_proposed": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 384,
+    "slug": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+    "old": "Sirach (Ecclesiasticus) 3:18 — *the greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* The greater-the-more-humble wisdom-instruction — the inverse-architecture the King names at Matt 20:26-27's *whosoever will be great among you, let him be your minister.* The kingdom-citizens'-greatness flows-up-as-service, the categorical-inverse of the natural-kingdoms'-greatness-flowing-down-as-domination under-the-watcher-rebellion-administration (Daniel 10:13, 20; Ephesians 6:12; 1 John 5:19)."
+   }
+  ]
+ },
+ {
+  "id": 4786,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 18,
+   "cite": "Ecclesiasticus 3:18",
+   "text": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "prev": "My son, go on with your business in meekness; so shall you be beloved of him that is approved.",
+   "next": "Many are in high place, and of renown: but mysteries are revealed to the meek."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 11,
+   "cite": "Matthew 23:11",
+   "text_db": "But he that is greatest among you shall be your servant.",
+   "text_canon": "But he that is greatest among you shall be your servant."
+  },
+  "old_note": "*The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* Sirach (Ecclesiasticus) 3:18 names the wisdom-stream's direct articulation of the greater-you-are-more-humble-thyself substance the King-of-Yashar'el (Israel) walks at Matt 23:11 (*but he that is greatest among you shall be your servant*). The framework reads the verse against the inherited-religious-system-substance that walks-the-substance in reverse — the greater the religious-status-claim, the more elevation the leadership-substance walks-toward; Sirach 3:18 walks the kingdom-substance directly. The substance the King walks at Matt 18:1-5 (*except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven*) and 20:25-28 (*whosoever will be great among you, let him be your minister*) is the same substance the wisdom-stream names — the kingdom-substance walks the greater-the-humbler architecture.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:18",
+   "ratio": 1.0,
+   "live_proposed": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 396,
+    "slug": "the-pride-and-religious-status-architecture-in-sirach",
+    "old": "Sirach (Ecclesiasticus) 3:18 — *The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* The wisdom-stream's direct articulation of the greater-you-are-more-humble-thyself substance the King walks at Matt 23:11 (*he that is greatest among you shall be your servant*)."
+   }
+  ]
+ },
+ {
+  "id": 4486,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 3,
+   "vn": 19,
+   "cite": "Ecclesiasticus 3:19",
+   "text": "Many are in high place, and of renown: but mysteries are revealed to the meek.",
+   "prev": "The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).",
+   "next": "For the power of Yahuah (God) is great, and he is honoured of the lowly."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 25,
+   "cite": "Matthew 11:25",
+   "text_db": "At that time Yahusha (Jesus) answered and said, I thank you, O Father, Yahuah (Lord) of heaven and earth, because you have hid these things from the wise and prudent, and have revealed them unto babes.",
+   "text_canon": "At that time Yahusha (Jesus) answered and said, I thank thee, O Father, Yahuah (Lord) of heaven and earth, because thou hast hid these things from the wise and prudent, and hast revealed them unto babes."
+  },
+  "old_note": "*Many are in high place, and of renown: but mysteries are revealed to the meek.* Sirach (Ecclesiasticus) 3:19 names THE direct verbal-anchor for Matt 11:25 at the extras-tier: *mysteries are revealed to the meek* — the precise inverse-pair the King names at Matt 11:25 (*hid from the wise and prudent, revealed unto babes*). The wisdom-stream had named the architecture at one of its strongest direct verbal-formulations; the King at Matt 11:25 prays the same architecture into his disciples' hearing. The *meek* of Sirach 3:19 and the *babes* (*nēpioi*) of Matt 11:25 are the same body: the *poor in spirit* of Matt 5:3, the *anawim*-disposition that has nothing to defend against the Father's-call. The wisdom-stream and the King name one diagnostic at one register.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Many are in high place, and of renown: but mysteries are revealed to the meek.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|3:19",
+   "ratio": 1.0,
+   "live_proposed": "Many are in high place, and of renown: but mysteries are revealed to the meek.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 126,
+    "slug": "mysteries-revealed-to-the-meek-in-sirach-3-and-wisdom-of-solomon",
+    "old": "Sirach 3:19 — *many are in high place, and of renown: but mysteries are revealed to the meek.* THE strongest extras-tier verbal-anchor for Matt 11:25's *hid from the wise and prudent, revealed unto babes* — the precise inverse-pair the King names at Matt 11:25."
+   }
+  ]
+ },
+ {
+  "id": 4505,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 4,
+   "vn": 1,
+   "cite": "Ecclesiasticus 4:1",
+   "text": "My son, defraud not the poor of his living, and make not the needy eyes to wait long.",
+   "prev": null,
+   "next": "Make not an hungry soul sorrowful; neither provoke a man in his distress."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 12,
+   "vn": 20,
+   "cite": "Matthew 12:20",
+   "text_db": "A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory.",
+   "text_canon": "A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory."
+  },
+  "old_note": "*My son, defraud not the poor of his living, and make not the needy eyes to wait long. Make not an hungry soul sorrowful; neither provoke a man in his distress.* Sirach (Ecclesiasticus) 4:1-2 names the wisdom-stream's direct articulation of the bruised-reed-not-broken-and-smoking-flax-not-quenched mercy-substance: the wisdom-stream commands against making-the-needy-wait, against the hungry-soul-sorrowful, against provoking-the-man-in-distress. The framework reads the verse against Matt 12:20: *a bruised reed shall he not break, and smoking flax shall he not quench.* The mercy-substance the prophet names of the King is the same substance the wisdom-stream named as the disposition required of the kingdom-citizens. The Pharisaic-system's pattern of categorical-classification-and-dismissal of the bruised and the smoking inverts both the wisdom-stream-disposition and the King's-disposition; the King restores; the system breaks-and-snuffs.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "My son, defraud not the poor of his living, and make not the needy eyes to wait long. Make not an hungry soul sorrowful; neither provoke a man in his distress.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|4:1",
+   "ratio": 1.0,
+   "live_proposed": "My son, defraud not the poor of his living, and make not the needy eyes to wait long.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 187,
+    "slug": "compassion-on-the-bruised-cry-of-the-widow-and-orphan-in-sirach",
+    "old": "Sirach 4:1 — *defraud not the poor of his living, and make not the needy eyes to wait long.* The wisdom-stream's kingdom-citizens' bruised-reed-mercy disposition; the King at Matt 12:20 walks the same substance in his ministry."
+   }
+  ]
+ },
+ {
+  "id": 4843,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 4,
+   "vn": 1,
+   "cite": "Ecclesiasticus 4:1",
+   "text": "My son, defraud not the poor of his living, and make not the needy eyes to wait long.",
+   "prev": null,
+   "next": "Make not an hungry soul sorrowful; neither provoke a man in his distress."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 25,
+   "vn": 35,
+   "cite": "Matthew 25:35",
+   "text_db": "For I was an hungred, and you gave me meat: I was thirsty, and you gave me drink: I was a stranger, and you took me in:",
+   "text_canon": "For I was an hungred, and ye gave me meat: I was thirsty, and ye gave me drink: I was a stranger, and ye took me in:"
+  },
+  "old_note": "*My son, defraud not the poor of his living, and make not the needy eyes to wait long.* Sirach (Ecclesiasticus) 4:1 names the wisdom-stream articulation of the do-not-defraud-the-poor + do-not-make-the-needy-eyes-to-wait substance. The framework reads the verse against Matt 25:35-36's six-fold-criterion-substance — the substantial-substance the wisdom-stream had named at the substantial-positive-substance the King-of-Yashar'el (Israel) walks-out + the substantial-failure-of-the-non-action the wisdom-stream had named at the reverse-six-fold-criterion (Matt 25:42-44's *I was an hungred, and ye gave me no meat ... ye visited me not*). Sirach 4:1-5 walks the substantial-defrauding-and-non-action substance — *turn not away your eye from the needy, and give him none occasion to curse you* (v.5) — the substantial-substance the substantial-goats walked-out at the sheep-and-goats-judgment. The wisdom-stream and the gospel cohere at the criterion-of-mercy and the warning-against-the-non-action architecture.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "My son, defraud not the poor of his living, and make not the needy eyes to wait long.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|4:1",
+   "ratio": 1.0,
+   "live_proposed": "My son, defraud not the poor of his living, and make not the needy eyes to wait long.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 409,
+    "slug": "the-mercy-toward-the-poor-the-stranger-and-the-needy-as-the-criterion-of-righteousness-in-sirach-and-tobit",
+    "old": "Sirach (Ecclesiasticus) 4:1 — *My son, defraud not the poor of his living, and make not the needy eyes to wait long.* The do-not-defraud-the-poor + do-not-make-the-needy-eyes-to-wait substance — the substantial-substance the reverse-six-fold-failure at Matt 25:42-44 walks-into; Sirach 4:1-5 walks the substantial-defrauding-and-non-action substance (*turn not away your eye from the needy* at v.5) — the substantial-substance the goats walked-out at the judgment."
+   }
+  ]
+ },
+ {
+  "id": 4506,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 4,
+   "vn": 4,
+   "cite": "Ecclesiasticus 4:4",
+   "text": "Reject not the supplication of the afflicted; neither turn away your face from a poor man.",
+   "prev": "Add not more trouble to an heart that is vexed; and defer not to give to him that is in need.",
+   "next": "Turn not away your eye from the needy, and give him none occasion to curse you:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 12,
+   "vn": 20,
+   "cite": "Matthew 12:20",
+   "text_db": "A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory.",
+   "text_canon": "A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory."
+  },
+  "old_note": "*Reject not the supplication of the afflicted; neither turn away thy face from a poor man. Turn not away thine eye from the needy, and give him none occasion to curse thee.* Sirach (Ecclesiasticus) 4:4-5 names the wisdom-stream's direct articulation of the kingdom-citizens' compassion-disposition: do not reject-the-supplication, do not turn-the-face-away, do not turn-the-eye-from-the-needy. The framework reads the verse against Matt 12:20's bruised-reed-mercy substance: the disposition of the King walks the wisdom-stream-disposition the Pharisaic-system had abandoned through the categorical-classification-and-dismissal pattern. The wisdom-stream and the gospel name one disposition at two registers.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Reject not the supplication of the afflicted; neither turn away thy face from a poor man. Turn not away thine eye from the needy, and give him none occasion to curse thee.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|4:4",
+   "ratio": 0.88,
+   "live_proposed": "Reject not the supplication of the afflicted; neither turn away your face from a poor man.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 187,
+    "slug": "compassion-on-the-bruised-cry-of-the-widow-and-orphan-in-sirach",
+    "old": "Sirach 4:4 — *reject not the supplication of the afflicted; neither turn away thy face from a poor man.* The wisdom-stream's compassion-disposition required of the kingdom-citizens; the King's bruised-reed-mercy at Matt 12:20 walks the same disposition."
+   }
+  ]
+ },
+ {
+  "id": 4524,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 4,
+   "vn": 10,
+   "cite": "Ecclesiasticus 4:10",
+   "text": "Be as a father to the fatherless, and instead of an husband to their mother: so shall you be as the son of the Most High, and he shall love you more than your mother does.",
+   "prev": "Deliver him that suffers wrong from the hand of the oppressor; and be not fainthearted when you sittest in judgment.",
+   "next": "Wisdom exalteth her children, and layeth hold of them that seek her."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 12,
+   "vn": 50,
+   "cite": "Matthew 12:50",
+   "text_db": "For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.",
+   "text_canon": "For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother."
+  },
+  "old_note": "*Be as a father unto the fatherless, and instead of an husband unto their mother: so shalt thou be as the son of the most High, and he shall love thee more than thy mother doth.* Sirach (Ecclesiasticus) 4:10 names THE strongest wisdom-stream verbal-anchor for the doing-the-Father's-substance-makes-thee-a-son-of-the-Most-High architecture: the disposition-of-fathering-the-fatherless and being-a-husband-to-their-mother makes the doer the son-of-the-Most-High. The framework reads the verse against Matt 12:50: the kingdom-family-recognition-criterion is the same doing-the-Father's-will substance the wisdom-stream had named as the operative-form of the son-of-the-Most-High identity. The wisdom-stream and the gospel name one architecture across two registers — the kingdom-family is identified by the heart-Torah-walking-disposition the wisdom-stream had named, the kingdom-entry-criterion at Matt 7:21 had named, and the 1 John 2:3-4 master-filter restates.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Be as a father unto the fatherless, and instead of an husband unto their mother: so shalt thou be as the son of the most High, and he shall love thee more than thy mother doth.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|4:10",
+   "ratio": 0.78,
+   "live_proposed": "Be as a father to the fatherless, and instead of an husband to their mother: so shall you be as the son of the Most High, and he shall love you more than your mother does.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 193,
+    "slug": "children-of-elohim-by-doing-the-fathers-will-in-wisdom-and-sirach-and-jubilees",
+    "old": "Sirach 4:10 — *be as a father unto the fatherless ... so shalt thou be as the son of the most High.* THE strongest wisdom-stream verbal-anchor for the doing-the-Father's-substance-makes-thee-a-son architecture; Matt 12:50's kingdom-family is the operative-application."
+   }
+  ]
+ },
+ {
+  "id": 39600,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 4,
+   "vn": 13,
+   "cite": "Ecclesiasticus 4:13",
+   "text": "He that holdeth her fast shall inherit glory; and wherever she entereth, Yahuah (God) will bless.",
+   "prev": "He that loves her loves life; and they that seek to her early shall be filled with joy.",
+   "next": "They that serve her shall minister to the Holy One: and them that love her Elohim (God) does love."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "proverbs",
+   "ch": 8,
+   "vn": 21,
+   "cite": "Proverbs 8:21",
+   "text_db": "That I may cause those that love me to inherit substance; and I will fill their treasures.",
+   "text_canon": "That I may cause those that love me to inherit substance; and I will fill their treasures."
+  },
+  "old_note": "Proverbs 8:21 — *That I may cause those that love me to inherit substance; and I will fill their treasures.* Wisdom's inheritance for those who love her is the glory Sirach 4:13 says he that holdeth her fast shall inherit.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9157,
+    "slug": "ecclesiasticus-4-wisdom-exalteth-her-children",
+    "old": "Proverbs 8:21 — *That I may cause those that love me to inherit substance; and I will fill their treasures.* Wisdom's inheritance for those who love her is the glory Sirach 4:13 says he that holdeth her fast shall inherit."
+   }
+  ]
+ },
+ {
+  "id": 39593,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 4,
+   "vn": 28,
+   "cite": "Ecclesiasticus 4:28",
+   "text": "Strive for the truth to death, and Yahuah (God) shall fight for you.",
+   "prev": "Make not thyself an underling to a foolish man; neither accept the person of the mighty.",
+   "next": "Be not hasty in your tongue, and in your deeds slack and remiss."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 32,
+   "cite": "Matthew 10:32",
+   "text_db": "Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven.",
+   "text_canon": "Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven."
+  },
+  "old_note": "Matthew 10:32 — *Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven.* To strive for the truth to death (Sirach 4:28) with Yahuah fighting for thee is the confessing-unto-the-end the Messiah crowns before the Father.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9158,
+    "slug": "ecclesiasticus-4-strive-for-the-truth-to-death",
+    "old": "Matthew 10:32 — *Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven.* To strive for the truth to death (Sirach 4:28) with Yahuah fighting for thee is the confessing-unto-the-end the Messiah crowns before the Father."
+   }
+  ]
+ },
+ {
+  "id": 4864,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 6,
+   "vn": 1,
+   "cite": "Ecclesiasticus 6:1",
+   "text": "Instead of a friend become not an enemy; for thereby you shall inherit an ill name, shame, and reproach: even so shall a sinner that has a double tongue.",
+   "prev": null,
+   "next": "Extol not thyself in the counsel of your own heart; that your soul be not torn in pieces as a bull straying alone."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 25,
+   "cite": "Matthew 26:25",
+   "text_db": "Then Judas, which betrayed him, answered and said, Master, is it I? He said unto him, You have said.",
+   "text_canon": "Then Judas, which betrayed him, answered and said, Master, is it I? He said unto him, Thou hast said."
+  },
+  "old_note": "*Instead of a friend become not an enemy; for thereby you shall inherit an ill name, shame, and reproach: even so shall a sinner that has a double tongue.* Sirach (Ecclesiasticus) 6:1 names the wisdom-stream's direct articulation of the friend-become-enemy + the sinner-that-has-a-double-tongue substance. The framework reads the verse against Matt 26:25's *Then Yahudah (Judas), which betrayed him, answered and said, Master, is it I? He said unto him, Thou hast said.* The substantial-Yahudah-Iscariot (Judas Iscariot)-substance walks-substantively the substantial-friend-become-enemy + the substantial-double-tongue-substance the wisdom-stream had named-substantively the substance-for. The substantial-Yahudah-Iscariot (Judas Iscariot)-substance asks the substantial-question *Master, is it I?* at-the-substantial-Last-Supper after-having-already-walked-out-the-betrayal-bargain at vv.14-16 (the substantial *thirty pieces of silver* substance the substantial Zechariah 11:12-13 substance the prophet-Zecharyah (Zechariah) walked walks-into) — the substantial-double-tongue-substance the wisdom-stream had named-substantively, the substantial *Master, is it I?* substance is the substantial-question-of-the-double-tongue-substance the Yahudah-Iscariot-substance walks at-the-substantial-substance-of-the-substantial-betrayal-already-walked-out-substantively-secretly. The framework reads this carefully — the substantial-Yahudah-Iscariot (Judas Iscariot)-substance is NOT-substantially-the-categorical-determinism-substance the inherited-Reformation-collapse walks; the substantial-Father's-prophetic-purpose-substance walks-substantively AND the substantial-Yahudah-Iscariot (Judas Iscariot)-substance's individual-choice-substance walks-substantively both-substances-at-the-same-substance per the framework's reading of the apostle-Yochanan (John) at John 13:2 (*the devil having now put into the heart of Yahudah (Judas) Iscariot ... to betray him*) and John 13:27 (*after the sop Satan entered into him*).",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Instead of a friend become not an enemy; for thereby you shall inherit an ill name, shame, and reproach: even so shall a sinner that has a double tongue.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|6:1",
+   "ratio": 1.0,
+   "live_proposed": "Instead of a friend become not an enemy; for thereby you shall inherit an ill name, shame, and reproach: even so shall a sinner that has a double tongue.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 415,
+    "slug": "the-betrayer-the-double-tongue-and-the-watch-against-temptation-in-sirach",
+    "old": "Sirach (Ecclesiasticus) 6:1 — *instead of a friend become not an enemy ... even so shall a sinner that has a double tongue.* The substantial-friend-become-enemy + sinner-with-the-double-tongue substance — the substantial-Yahudah-Iscariot (Judas Iscariot)'s *Master, is it I?* at Matt 26:25 walks-substantively-the-double-tongue-substance the wisdom-stream had named-the-substance-for, having already-walked-out-the-betrayal-bargain at vv.14-16. NOT the categorical-Reformation-determinism — the Father's-purpose AND the individual's-choice walk-substantively-at-the-same-substance."
+   }
+  ]
+ },
+ {
+  "id": 39646,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 6,
+   "vn": 6,
+   "cite": "Ecclesiasticus 6:6",
+   "text": "Be in peace with many: nevertheless have but one counsellor of a thousand.",
+   "prev": "Sweet language will multiply friends: and a fairspeaking tongue will increase kind greetings.",
+   "next": "If you would get a friend, prove him first and be not hasty to credit him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "proverbs",
+   "ch": 18,
+   "vn": 24,
+   "cite": "Proverbs 18:24",
+   "text_db": "A man that has friends must shew himself friendly: and there is a friend that sticketh closer than a brother.",
+   "text_canon": "A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother."
+  },
+  "old_note": "Proverbs 18:24 — *A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother.* The proverb's \"friend that sticketh closer than a brother\" is the rare one-of-a-thousand counsellor Ben Sira tells you to seek in Sirach 6:6.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9166,
+    "slug": "ecclesiasticus-6-prove-a-friend",
+    "old": "Proverbs 18:24 — *A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother.* The proverb's \"friend that sticketh closer than a brother\" is the rare one-of-a-thousand counsellor Ben Sira tells you to seek in Sirach 6:6."
+   }
+  ]
+ },
+ {
+  "id": 4549,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 6,
+   "vn": 14,
+   "cite": "Ecclesiasticus 6:14",
+   "text": "A faithfull friend is a strong defence: and he that has found such an one has found a treasure.",
+   "prev": "Separate thyself from your enemies, and take heed of your friends.",
+   "next": "Nothing does countervail a faithful friend, and his excellency is invaluable."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 13,
+   "vn": 45,
+   "cite": "Matthew 13:45",
+   "text_db": "Again, the kingdom of heaven is like unto a merchant man, seeking goodly pearls:",
+   "text_canon": "Again, the kingdom of heaven is like unto a merchant man, seeking goodly pearls:"
+  },
+  "old_note": "*A faithful friend is a strong defence: and he that hath found such an one hath found a treasure. Nothing doth countervail a faithful friend, and his excellency is invaluable.* Sirach (Ecclesiasticus) 6:14-15 names the wisdom-stream's direct articulation of the finding-a-faithful-friend-is-finding-a-treasure-nothing-countervails architecture: the supreme-worth substance of the faithful-friend is incomparable; nothing equals it. The framework reads the verse against Matt 13:45-46's *the kingdom of heaven is like unto a merchant man, seeking goodly pearls: Who, when he had found one pearl of great price, went and sold all that he had, and bought it.* The wisdom-stream knew the architecture-of-the-finding-of-the-incomparable-worth; the King names the operative-form at the kingdom-of-heaven register. The pearl-of-great-price = the elect (per the framework's preferred Father-Son-buyer reading) AS the supreme-worth substance the buyer pays-all-to-obtain.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "A faithful friend is a strong defence: and he that hath found such an one hath found a treasure. Nothing doth countervail a faithful friend, and his excellency is invaluable.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|6:14",
+   "ratio": 0.84,
+   "live_proposed": "A faithfull friend is a strong defence: and he that has found such an one has found a treasure.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 201,
+    "slug": "kingdom-of-supreme-worth-treasure-and-pearl-in-sirach-and-wisdom-of-solomon",
+    "old": "Sirach (Ecclesiasticus) 6:14 — *a faithful friend is a strong defence: and he that hath found such an one hath found a treasure. Nothing doth countervail a faithful friend.* The wisdom-stream's direct articulation of the supreme-worth-substance the buyer pays-all-to-obtain; Matt 13:45-46 names the operative-form at the pearl-of-great-price register."
+   }
+  ]
+ },
+ {
+  "id": 4491,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 6,
+   "vn": 28,
+   "cite": "Ecclesiasticus 6:28",
+   "text": "For at the last you shall find her rest, and that shall be turned to your joy.",
+   "prev": "Search, and seek, and she shall be made known to you: and when you have got hold of her, let her not go.",
+   "next": "Then shall her fetters be a strong defence for you, and her chains a robe of glory."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 29,
+   "cite": "Matthew 11:29",
+   "text_db": "Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and you shall find rest unto your souls.",
+   "text_canon": "Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls."
+  },
+  "old_note": "*For at the last you shall find her rest, and that shall be turned to your joy.* Sirach (Ecclesiasticus) 6:28 names the wisdom-stream's direct articulation of the wisdom-yoke-leading-to-rest-and-joy architecture in the second Sirach yoke-passage (Sirach 6:24-31): the yoke-of-wisdom looks like fetters and chains initially (vv.24-25), but at-the-last yields rest-turned-to-joy. The framework reads the verse against Matt 11:29's *ye shall find rest unto your souls* — the rest-substance the King promises is the rest-substance the wisdom-stream had named at Sirach 6:28, and the journey from yoke-acceptance to rest-found walks the same shape: acceptance, instruction, the substance at-the-last yielding rest-turned-to-joy. The wisdom-stream had named the architecture twice (Sirach 6:24-31 + 51:23-27); the King at Matt 11:29 walks both witnesses simultaneously.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For at the last you shall find her rest, and that shall be turned to your joy.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|6:28",
+   "ratio": 1.0,
+   "live_proposed": "For at the last you shall find her rest, and that shall be turned to your joy.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 127,
+    "slug": "put-your-neck-under-the-yoke-find-rest-in-sirach-51-and-6-and-24",
+    "old": "Sirach 6:28 — *at the last you shall find her rest, and that shall be turned to your joy.* The second Sirach yoke-passage (Sirach 6:24-31) naming the rest-yielded-by-the-yoke-of-wisdom architecture; the same shape Matt 11:29's *ye shall find rest unto your souls* walks."
+   }
+  ]
+ },
+ {
+  "id": 4787,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 7,
+   "vn": 4,
+   "cite": "Ecclesiasticus 7:4",
+   "text": "Seek not of Yahuah (God) preeminence, neither of the king the seat of honour.",
+   "prev": "My son, sow not upon the furrows of unrighteousness, and you shall not reap them sevenfold.",
+   "next": "justify not thyself before Yahuah (God); and boast not of your wisdom before the king."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 6,
+   "cite": "Matthew 23:6",
+   "text_db": "And love the uppermost rooms at feasts, and the chief seats in the synagogues,",
+   "text_canon": "And love the uppermost rooms at feasts, and the chief seats in the synagogues,"
+  },
+  "old_note": "*Seek not of Yahuah (God) preeminence, neither of the king the seat of honour.* Sirach (Ecclesiasticus) 7:4 names the wisdom-stream's direct articulation of the seek-not-preeminence substance — the same substance the King-of-Yashar'el (Israel) walks-against at Matt 23:6 (*love the uppermost rooms at feasts, and the chief seats in the synagogues*). The framework reads the verse in continuity with the kingdom-inversion-substance the King walks across the gospel — the religious-status-substance the leadership-substance walks-toward is the categorical-inversion of the kingdom-substance. The wisdom-stream had named the substance directly at the wisdom-instruction-register centuries before the gospel-pivot.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Seek not of Yahuah (God) preeminence, neither of the king the seat of honour.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|7:4",
+   "ratio": 1.0,
+   "live_proposed": "Seek not of Yahuah (God) preeminence, neither of the king the seat of honour.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 396,
+    "slug": "the-pride-and-religious-status-architecture-in-sirach",
+    "old": "Sirach (Ecclesiasticus) 7:4 — *Seek not of Yahuah (God) preeminence, neither of the king the seat of honour.* The wisdom-stream's direct articulation of the seek-not-preeminence substance the King walks-against at Matt 23:6 (*love the uppermost rooms at feasts, and the chief seats in the synagogues*)."
+   }
+  ]
+ },
+ {
+  "id": 4703,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 7,
+   "vn": 23,
+   "cite": "Ecclesiasticus 7:23",
+   "text": "Have you children? instruct them, and bow down their neck from their youth.",
+   "prev": "Have you cattle? have an eye to them: and if they be for your profit, keep them with you.",
+   "next": "Have you daughters? have a care of their body, and shew not thyself cheerful toward them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 19,
+   "vn": 13,
+   "cite": "Matthew 19:13",
+   "text_db": "Then were there brought unto him little children, that he should put his hands on them, and pray: and the disciples rebuked them.",
+   "text_canon": "Then were there brought unto him little children, that he should put his hands on them, and pray: and the disciples rebuked them."
+  },
+  "old_note": "*Have you children? instruct them, and bow down their neck from their youth.* Sirach (Ecclesiasticus) 7:23 names the wisdom-stream's direct articulation of the parental-instruction-of-children substance — the substance the parents-bringing-the-little-children-to-the-King at Matt 19:13 enact at the practical-substance level. The framework reads the verse against Matt 19:13's *then were there brought unto him little children, that he should put his hands on them, and pray.* The parents' act is in continuity with the Tanakh-and-wisdom-stream-substance of bringing-children-to-the-Father-for-instruction-and-blessing — the parental-substance of transmitting-the-covenant-to-the-next-generation (Devarim (Deuteronomy) 6:6-7's *and thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house*; Tehillim (Psalm) 78:5-7's substance-of-teaching-the-children). The King-as-the-Father's-substance-in-the-flesh receives-the-children the parents have brought to him; the wisdom-stream had named the substance the parents are walking-in.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Have you children? instruct them, and bow down their neck from their youth.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|7:23",
+   "ratio": 1.0,
+   "live_proposed": "Have you children? instruct them, and bow down their neck from their youth.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 377,
+    "slug": "receiving-the-children-and-parental-instruction-in-sirach-and-tobit",
+    "old": "Sirach (Ecclesiasticus) 7:23 — *have you children? instruct them, and bow down their neck from their youth.* The wisdom-stream's direct articulation of the parental-instruction-of-children substance — the substance the parents-bringing-the-little-children-to-the-King at Matt 19:13 enact at the practical-substance level, in continuity with Devarim (Deuteronomy) 6:6-7 + Tehillim (Psalm) 78:5-7."
+   }
+  ]
+ },
+ {
+  "id": 4578,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 7,
+   "vn": 27,
+   "cite": "Ecclesiasticus 7:27",
+   "text": "Honour your father with your whole heart, and forget not the sorrows of your mother.",
+   "prev": "Have you a wife after your mind? forsake her not: but give not thyself over to a light woman.",
+   "next": "Remember that you were begotten of them; and how can you recompense them the things that they have done for you?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 15,
+   "vn": 4,
+   "cite": "Matthew 15:4",
+   "text_db": "For Elohim (God) commanded, saying, Honour your father and mother: and, He that curses father or mother, let him die the death.",
+   "text_canon": "For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death."
+  },
+  "old_note": "*Honour your father with your whole heart, and forget not the sorrows of your mother.* Sirach (Ecclesiasticus) 7:27 names the wisdom-stream's direct articulation of the whole-heart-parental-honor substance with the specific-remembering-of-the-mother's-sorrows. The framework reads the verse against Matt 15:4's parental-honor commandment and the Pharisaic-Corban-evasion of vv.5-6. The wisdom-stream had named the architecture at the heart-level — honor your father with your WHOLE HEART; the Pharisaic-Corban-tradition violated the architecture by establishing a divided-heart-allowed-by-the-vow-mechanism. The King's-restoration of the heart-substance at vv.18-20 will close the loop on the heart-level the wisdom-stream had named.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Honour your father with your whole heart, and forget not the sorrows of your mother.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|7:27",
+   "ratio": 1.0,
+   "live_proposed": "Honour your father with your whole heart, and forget not the sorrows of your mother.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 219,
+    "slug": "honor-of-parents-fifth-commandment-the-corban-tradition-voids-in-sirach-and-tobit",
+    "old": "Sirach (Ecclesiasticus) 7:27 — *honour your father with your whole heart, and forget not the sorrows of your mother.* The wisdom-stream's articulation at the heart-level — the whole-heart-honor architecture the Pharisaic-Corban-tradition violated by establishing a divided-heart-allowed-by-the-vow-mechanism. The King's-restoration of the heart-substance at vv.18-20 closes the loop on the heart-level the wisdom-stream had named."
+   }
+  ]
+ },
+ {
+  "id": 4775,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 7,
+   "vn": 30,
+   "cite": "Ecclesiasticus 7:30",
+   "text": "Love him that made you with all your strength, and forsake not his ministers.",
+   "prev": "Fear Yahuah (God) with all your soul, and reverence his priests.",
+   "next": "Fear Yahuah (God), and honor the priest; and give him his portion, as it is commanded you; the firstfruits, and the trespass offering, and the gift of the shoulders, and the sacrifice of sanctification, and the firstfruits of the holy things."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 22,
+   "vn": 37,
+   "cite": "Matthew 22:37",
+   "text_db": "Yahusha (Jesus) said unto him, You shall love Yahuah Elohayka (the Lord thy God) with all your heart, and with all your soul, and with all your mind.",
+   "text_canon": "Yahusha (Jesus) said unto him, Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind."
+  },
+  "old_note": "*Love him that made you with all your strength, and forsake not his ministers.* Sirach (Ecclesiasticus) 7:30 names THE direct wisdom-stream verbal-anchor for the love-Yahuah-with-all-thy-strength substance — Sirach 7:30 carries the Shema-substance of Devarim (Deuteronomy) 6:5 forward at the wisdom-stream-register, articulating the love-him-that-made-you-with-all-your-strength substance. The framework reads the verse against Matt 22:37's *thou shalt love Yahuah (the LORD) thy Elohim (God) with all thy heart, and with all thy soul, and with all thy mind.* The King's-citation of the Shema is the substance the wisdom-stream had already-articulated at Sirach 7:30 — the love-Yahuah-with-all-thy-strength substance the Father called-the-citizen-to walk-out twice-daily in the substance-of-the-Shema-recitation. The substance is NOT the post-Reformation collapse-of-the-commandments-into-replacement-of-the-Torah; the substance is the heart-Torah of Jeremiah 31:31-34 + Ezekiel 36:26-27 walked-out from-the-inside through the Spirit-internalized-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Love him that made you with all your strength, and forsake not his ministers.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|7:30",
+   "ratio": 1.0,
+   "live_proposed": "Love him that made you with all your strength, and forsake not his ministers.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 394,
+    "slug": "love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon",
+    "old": "Sirach (Ecclesiasticus) 7:30 — *love him that made you with all your strength, and forsake not his ministers.* THE direct wisdom-stream verbal-anchor for the love-Yahuah-with-all-thy-strength substance — Sirach 7:30 carries the Shema-substance of Devarim (Deuteronomy) 6:5 forward at the wisdom-stream-register; the substance the King cites at Matt 22:37."
+   }
+  ]
+ }
+]

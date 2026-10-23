@@ -1,0 +1,752 @@
+[
+ {
+  "id": 12154,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "tobit",
+   "ch": 1,
+   "vn": 10,
+   "cite": "Tobit 1:10",
+   "text": "And when we were carried away captives to Nineve, all my brothers and those that were of my kindred did eat of the bread of the Gentiles.",
+   "prev": "Furthermore, when I was come to the age of a man, I married Anna of my own kindred, and of her I begat Tobias.",
+   "next": "But I kept myself from eating;"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "romans",
+   "ch": 14,
+   "vn": 2,
+   "cite": "Romans 14:2",
+   "text_db": "For one believes that he may eat all things: another, who is weak, eats herbs.",
+   "text_canon": "For one believeth that he may eat all things: another, who is weak, eateth herbs."
+  },
+  "old_note": "*And when we were carried away captives to Nineve, all my brethren, and those that were of my kindred, did eat of the bread of the Gentiles.* (Tobit 1:10). *For one believeth that he may eat all things: another, who is weak, eateth herbs* (Romans 14:2). The weak brother who *eateth herbs* is doing in Rome what Tobit did in the captivity — refusing the meat of the heathen table, whose slaughter and offering could not be trusted. The abstaining is a conscience guarding itself from defilement by association, not a verdict that the Torah's own clean food had changed.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "And when we were carried away captives to Nineve, all my brethren, and those that were of my kindred, did eat of the bread of the Gentiles.",
+   "labelled": "tobit|1:10",
+   "proposed": "tobit|1:10",
+   "ratio": 0.93,
+   "live_proposed": "And when we were carried away captives to Nineve, all my brothers and those that were of my kindred did eat of the bread of the Gentiles.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 1695,
+    "slug": "romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience",
+    "old": "Tobit 1:10 — *all my brethren … did eat of the bread of the Gentiles* the captive's case behind the weak who eateth herbs: the heathen table refused (Romans 14:2)."
+   }
+  ]
+ },
+ {
+  "id": 13139,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 2,
+   "vn": 45,
+   "cite": "2 Esdras 2:45",
+   "text": "He answered and said to me, These be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of Yahuah (God): now are they crowned, and receive palms.",
+   "prev": "So I asked the angel, and said, Sir, what are these?",
+   "next": "Then said I to the angel, What young person is it that crowneth them, and gives them palms in their hands?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 7,
+   "vn": 14,
+   "cite": "Revelation 7:14",
+   "text_db": "And I said unto him, Sir, you know. And he said to me, These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb.",
+   "text_canon": "And I said unto him, Sir, thou knowest. And he said to me, These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb."
+  },
+  "old_note": "*So he answered and said to me, These be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of Yahuah (God): now are they crowned, and receive palms.* (2 Esdras 2:45). The white-robed palm-bearers of Revelation 7 are named in the restored library: *now are they crowned, and receive palms.* The elder asks *what are these which are arrayed in white robes?* (Revelation 7:13) and answers *these are they which came out of great tribulation, and have washed their robes* (Revelation 7:14). Esdras tells the same: they that *put off the mortal clothing, and put on the immortal,* who *confessed the name of Yahuah (God)* — the same company, robed and palm-bearing, who came through tribulation into glory.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "So he answered and said to me, These be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of Yahuah (God): now are they crowned, and receive palms.",
+   "labelled": null,
+   "proposed": "2-esdras|2:45",
+   "ratio": 0.95,
+   "live_proposed": "He answered and said to me, These be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of Yahuah (God): now are they crowned, and receive palms.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 2002,
+    "slug": "revelation-7-white-robes-and-palms-the-sukkot-ingathering-leviticus-23",
+    "old": "2 Esdras 2:45 — *now are they crowned, and receive palms* the white-robed palm-bearers named: they that confessed the name and came through tribulation (Revelation 7:14)."
+   }
+  ]
+ },
+ {
+  "id": 39194,
+  "kind": "REQUOTE",
+  "side": "S",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 7,
+   "vn": 29,
+   "cite": "Wisdom of Solomon 7:29",
+   "text": "For she is more beautiful than the sun, and above all the order of stars: being compared with the light, she is found before it.",
+   "prev": "For Yahuah (God) loves none but him that dwells with wisdom.",
+   "next": "For after this comes night: but vice shall not prevail against wisdom."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 1,
+   "vn": 5,
+   "cite": "John 1:5",
+   "text_db": "And the light shineth in darkness; and the darkness comprehended it not.",
+   "text_canon": "And the light shineth in darkness; and the darkness comprehended it not."
+  },
+  "old_note": "John 1:5 — *And the light shineth in darkness; and the darkness comprehended it not.* Wisdom *found before* the light, against whom *vice shall not prevail* (Wisdom of Solomon 7:29-30), is John's Light the darkness cannot overcome.",
+  "regrade": {
+   "verdict": "RE_ANCHOR",
+   "quote": "vice shall not prevail",
+   "labelled": "the-wisdom-of-solomon|7:29",
+   "proposed": "the-wisdom-of-solomon|7:30",
+   "ratio": 1.0,
+   "live_proposed": "For after this comes night: but vice shall not prevail against wisdom.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9037,
+    "slug": "wisdom-of-solomon-7-fairer-than-the-sun",
+    "old": "John 1:5 — *And the light shineth in darkness; and the darkness comprehended it not.* Wisdom *found before* the light, against whom *vice shall not prevail* (Wisdom of Solomon 7:29-30), is John's Light the darkness cannot overcome."
+   }
+  ]
+ },
+ {
+  "id": 39384,
+  "kind": "REQUOTE",
+  "side": "S",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 10,
+   "vn": 6,
+   "cite": "Wisdom of Solomon 10:6",
+   "text": "When the ungodly perished, she delivered the righteous man, who fled from the fire which fell down upon the five cities.",
+   "prev": "Moreover, the nations in their wicked conspiracy being confounded, she found out the righteous, and preserved him blameless to Yahuah (God), and kept him strong against his tender compassion toward his son.",
+   "next": "Of whose wickedness even to this day the waste land that smoketh is a testimony, and plants bearing fruit that never come to ripeness: and a standing pillar of salt is a monument of an unbelieving soul."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 16,
+   "vn": 6,
+   "cite": "Jubilees 16:6",
+   "text_db": "And, in like manner, Elohim (God) will execute judgment on the places where they have done according to the uncleanness of the Sodomites, like to the judgment of Sodom.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 16:6–7 — *And, in like manner, Elohim (God) will execute judgment on the places where they have done according to the uncleanness of the Sodomites, like to the judgment of Sodom. But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow.* The now-live Jubilees self-links Wisdom's deliverance of *the righteous man* from the fire (10:6).",
+  "regrade": {
+   "verdict": "NOT_FOUND",
+   "quote": "And, in like manner, Elohim (God) will execute judgment on the places where they have done according to the uncleanness of the Sodomites, like to the judgment of Sodom. But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow.",
+   "labelled": null,
+   "proposed": null,
+   "ratio": 0,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9089,
+    "slug": "wisdom-10-abraham-and-lot-from-the-fire",
+    "old": "Jubilees 16:6 — *And, in like manner, Elohim (God) will execute judgment on the places where they have done according to the uncleanness of the Sodomites, like to the judgment of Sodom. But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow.* The now-live Jubilees self-links Wisdom's deliverance of *the righteous man* from the fire (10:6)."
+   }
+  ]
+ },
+ {
+  "id": 39439,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 13,
+   "vn": 1,
+   "cite": "Wisdom of Solomon 13:1",
+   "text": "Surely vain are all men by nature, who are ignorant of Yahuah (God), and could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster;",
+   "prev": null,
+   "next": "But deemed either fire, or wind, or the swift air, or the circle of the stars, or the violent water, or the lights of heaven, to be the gods which govern the world."
+  },
+  "other": {
+   "ed": "apocrypha",
+   "book": "the-wisdom-of-solomon",
+   "ch": 14,
+   "vn": 27,
+   "cite": "Wisdom of Solomon 14:27",
+   "text_db": "For the worshipping of idols not to be named is the beginning, the cause, and the end, of all evil.",
+   "text_canon": null
+  },
+  "old_note": "Wisdom of Solomon 13:1 — *Surely vain are all men by nature, who are ignorant of God, and could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster;* the thesis that idolatry is 'the beginning, the cause, and the end, of all evil' (Wisdom of Solomon 14:27) completes the polemic begun in 13:1, the Creator unknown though seen — the very pairing Romans 1:20 and 1:25 draw on.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Surely vain are all men by nature, who are ignorant of God, and could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster;",
+   "labelled": "the-wisdom-of-solomon|13:1",
+   "proposed": "the-wisdom-of-solomon|13:1",
+   "ratio": 0.95,
+   "live_proposed": "Surely vain are all men by nature, who are ignorant of Yahuah (God), and could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster;",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9110,
+    "slug": "wisdom-of-solomon-14-romans-1-knowledge-of-god-reprobate-mind",
+    "old": "Wisdom of Solomon 13:1 — *Surely vain are all men by nature, who are ignorant of God, and could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster;* the thesis that idolatry is 'the beginning, the cause, and the end, of all evil' (Wisdom of Solomon 14:27) completes the polemic begun in 13:1, the Creator unknown though seen — the very pairing Romans 1:20 and 1:25 draw on."
+   }
+  ]
+ },
+ {
+  "id": 39960,
+  "kind": "REQUOTE",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 15,
+   "vn": 20,
+   "cite": "Ecclesiasticus 15:20",
+   "text": "He has commanded no man to do wickedly, neither has he given any man licence to sin.",
+   "prev": "And his eyes are upon them that fear him, and he knoweth every work of man.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "james",
+   "ch": 1,
+   "vn": 15,
+   "cite": "James 1:15",
+   "text_db": "Then when lust has conceived, it brings forth sin: and sin, when it is finished, brings forth death.",
+   "text_canon": "Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death."
+  },
+  "old_note": "James 1:15 — *Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.* Yahuah gave *no man licence to sin* (Sirach 15:20); sin is born of a man's own conceived lust, not of any divine warrant.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "no man licence to sin",
+   "labelled": "ecclesiasticus|15:20",
+   "proposed": "ecclesiasticus|15:20",
+   "ratio": 0.8,
+   "live_proposed": "He has commanded no man to do wickedly, neither has he given any man licence to sin.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 9264,
+    "slug": "ecclesiasticus-15-all-seeing-elohim-no-licence-to-sin",
+    "old": "James 1:15 — *Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.* Yahuah gave *no man licence to sin* (Sirach 15:20); sin is born of a man's own conceived lust, not of any divine warrant."
+   }
+  ]
+ },
+ {
+  "id": 42695,
+  "kind": "REQUOTE",
+  "side": "S",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 45,
+   "vn": 7,
+   "cite": "Ecclesiasticus 45:7",
+   "text": "An everlasting covenant he made with him and gave him the priesthood among the people; he beautified him with comely ornaments, and clothed him with a robe of glory.",
+   "prev": "He exalted Aaron, an holy man like to him, even his brother, of the tribe of Levi.",
+   "next": "He put upon him perfect glory; and strengthened him with rich garments, with breeches, with a long robe, and the ephod."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hebrews",
+   "ch": 5,
+   "vn": 4,
+   "cite": "Hebrews 5:4",
+   "text_db": "And no man takes this honour unto himself, but he that is called of Elohim (God), as was Aaron.",
+   "text_canon": "And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron."
+  },
+  "old_note": "Hebrews 5:4 — *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron.* — the *everlasting covenant* of priesthood Yahuah *made with him* (Sirach 45:7) is the honour Hebrews says no man may seize but must be called to, as Aaron was.",
+  "regrade": {
+   "verdict": "RE_ANCHOR",
+   "quote": "made with him",
+   "labelled": "ecclesiasticus|45:7",
+   "proposed": "ecclesiasticus|45:24",
+   "ratio": 1.0,
+   "live_proposed": "Therefore was there a covenant of peace made with him, that he should be the chief of the sanctuary and of his people, and that he and his posterity should have the dignity of the priesthood for ever:",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10014,
+    "slug": "sirach-45-aaron-priesthood",
+    "old": "Hebrews 5:4 — *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron.* — the *everlasting covenant* of priesthood Yahuah *made with him* (Sirach 45:7) is the honour Hebrews says no man may seize but must be called to, as Aaron was."
+   }
+  ]
+ },
+ {
+  "id": 71554,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 9,
+   "vn": 9,
+   "cite": "Wisdom of Solomon 9:9",
+   "text": "And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments.",
+   "prev": "You have commanded me to build a temple upon your holy mount, and an altar in the city in which you dwellest, a resemblance of the holy tabernacle, which you have prepared from the beginning.",
+   "next": "O send her out of your holy heavens, and from the throne of your glory, that being present she may labour with me, that I may know what is pleasing to you."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "proverbs",
+   "ch": 8,
+   "vn": 27,
+   "cite": "Proverbs 8:27",
+   "text_db": "When he prepared the heavens, I was there: when he set a compass upon the face of the depth:",
+   "text_canon": "When he prepared the heavens, I was there: when he set a compass upon the face of the depth:"
+  },
+  "old_note": "*And wisdom was with thee: which knoweth thy works, and was present when thou madest the world, and knew what was acceptable in thy sight, and right in thy commandments* (Wisdom of Solomon 9:9). When Wisdom says *When he prepared the heavens, I was there* (Proverbs 8:27), the restored witness agrees: she *was present when thou madest the world*. The Formed Son was there at the making — present at the founding, the workman who knew the Father's works because he wrought them with him.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "And wisdom was with thee: which knoweth thy works, and was present when thou madest the world, and knew what was acceptable in thy sight, and right in thy commandments",
+   "labelled": "the-wisdom-of-solomon|9:9",
+   "proposed": "the-wisdom-of-solomon|9:9",
+   "ratio": 0.81,
+   "live_proposed": "And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 17942,
+    "slug": "proverbs-8-wisdom-the-formed-son-brought-forth-the-agent-of-creation",
+    "old": "*was present when thou madest the world* (Wisdom of Solomon 9:9) — *When he prepared the heavens, I was there* (8:27): the Formed Son present at the making."
+   }
+  ]
+ },
+ {
+  "id": 103290,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "tobit",
+   "ch": 13,
+   "vn": 14,
+   "cite": "Tobit 13:14",
+   "text": "O blessed are they which love you, for they shall rejoice in your peace: blessed are they which have been sorrowful for all your scourges; for they shall rejoice for you, when they have seen all your glory, and shall be glad for ever.",
+   "prev": "Rejoice and be glad for the children of the just: for they shall be gathered together, and shall bless Yahuah (God) of the just.",
+   "next": "Let my soul bless Yahuah (God) the great King."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "psalms",
+   "ch": 122,
+   "vn": 6,
+   "cite": "Psalm 122:6",
+   "text_db": "Pray for the peace of Jerusalem: they shall prosper that love you.",
+   "text_canon": "Pray for the peace of Jerusalem: they shall prosper that love thee."
+  },
+  "old_note": "*O blessed are they which love thee, for they shall rejoice in thy peace: blessed are they which have been sorrowful for all thy scourges; for they shall rejoice for thee, when they have seen all thy glory, and shall be glad for ever* (Tobit 13:14). *Pray for the peace of Jerusalem: they shall prosper that love thee* (Psalm 122:6): Tobit, praying from captivity, sings the same blessing — they that love Jerusalem rejoice in her peace; the prosperity promised to her lovers in the psalm is the everlasting gladness Tobit foresees when her glory is restored.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "O blessed are they which love thee, for they shall rejoice in thy peace: blessed are they which have been sorrowful for all thy scourges; for they shall rejoice for thee, when they have seen all thy glory, and shall be glad for ever",
+   "labelled": "tobit|13:14",
+   "proposed": "tobit|13:14",
+   "ratio": 0.87,
+   "live_proposed": "O blessed are they which love you, for they shall rejoice in your peace: blessed are they which have been sorrowful for all your scourges; for they shall rejoice for you, when they have seen all your glory, and shall be glad for ever.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 26059,
+    "slug": "psalm-122-pray-for-the-peace-of-jerusalem",
+    "old": "★ *O blessed are they which love thee, for they shall rejoice in thy peace... and shall be glad for ever* (Tobit 13:14) — Tobit, praying from captivity, sings the same blessing on Jerusalem's lovers that 122:6 pronounces."
+   }
+  ]
+ },
+ {
+  "id": 122689,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 16,
+   "vn": 26,
+   "cite": "Wisdom of Solomon 16:26",
+   "text": "That your children, O Yahuah (God), whom you lovest, might know, that it is not the growing of fruits that nourishes man: but that it is your word, which preserves them that put their trust in you.",
+   "prev": "Therefore even then was it altered into all fashions, and was obedient to your grace, that nourishes all things, according to the desire of them that had need:",
+   "next": "For that which was not destroyed of the fire, being warmed with a little sunbeam, soon melted away:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 29,
+   "cite": "Matthew 10:29",
+   "text_db": "Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father.",
+   "text_canon": "Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father."
+  },
+  "old_note": "*That thy children, O Yahuah, whom thou lovest, might know, that it is not the growing of fruits that nourisheth man: but that it is thy word, which preserveth them that put their trust in thee* (Wisdom of Solomon 16:26). *Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father* (Matthew 10:29). The same Father who numbers the hairs and marks the sparrow's fall preserves His own — not the world's provision but His word keeps them.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "That thy children, O Yahuah, whom thou lovest, might know, that it is not the growing of fruits that nourisheth man: but that it is thy word, which preserveth them that put their trust in thee",
+   "labelled": "the-wisdom-of-solomon|16:26",
+   "proposed": "the-wisdom-of-solomon|16:26",
+   "ratio": 0.81,
+   "live_proposed": "That your children, O Yahuah (God), whom you lovest, might know, that it is not the growing of fruits that nourishes man: but that it is your word, which preserves them that put their trust in you.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 30596,
+    "slug": "matthew-10-fear-not-them-which-kill-the-body-sparrows-isaiah-8-psalm-56",
+    "old": "Wisdom of Solomon 16:26 — *it is not the growing of fruits that nourisheth man: but... thy word, which preserveth them that put their trust in thee.* The Father who marks the sparrow preserves His own."
+   }
+  ]
+ },
+ {
+  "id": 122693,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 7,
+   "vn": 27,
+   "cite": "Ecclesiasticus 7:27",
+   "text": "Honour your father with your whole heart, and forget not the sorrows of your mother.",
+   "prev": "Have you a wife after your mind? forsake her not: but give not thyself over to a light woman.",
+   "next": "Remember that you were begotten of them; and how can you recompense them the things that they have done for you?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 37,
+   "cite": "Matthew 10:37",
+   "text_db": "He that loves father or mother more than me is not worthy of me: and he that loves son or daughter more than me is not worthy of me.",
+   "text_canon": "He that loveth father or mother more than me is not worthy of me: and he that loveth son or daughter more than me is not worthy of me."
+  },
+  "old_note": "*Honour thy father with thy whole heart, and forget not the sorrows of thy mother. Remember that thou wast begotten of them; and how canst thou recompense them the things that they have done for thee?* (Sirach 7:27-28). The honour owed to father and mother is never abolished — the Master who says *love me more* in Matthew 10:37 still upholds the commandment in full. It is an ordering of loves, not a cancelling of the fifth word.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Honour thy father with thy whole heart, and forget not the sorrows of thy mother. Remember that thou wast begotten of them; and how canst thou recompense them the things that they have done for thee?",
+   "labelled": "ecclesiasticus|7:27",
+   "proposed": "ecclesiasticus|7:27",
+   "ratio": 0.76,
+   "live_proposed": "Honour your father with your whole heart, and forget not the sorrows of your mother.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 30597,
+    "slug": "matthew-10-not-peace-but-a-sword-a-mans-foes-lose-your-life-micah-7-deuteronomy-33",
+    "old": "Sirach 7:27-28 — *Honour thy father with thy whole heart, and forget not the sorrows of thy mother.* The fifth word is never abolished; *love me more* is an ordering of loves, not a cancelling."
+   }
+  ]
+ },
+ {
+  "id": 137924,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 5,
+   "vn": 8,
+   "cite": "Ecclesiasticus 5:8",
+   "text": "Set not yours heart upon goods unjustly gotten, for they shall not profit you in the day of calamity.",
+   "prev": "Make no tarrying to turn to Yahuah (God), and put not off from day to day: for suddenly shall the wrath of Yahuah (God) come forth, and in your security you shall be destroyed, and perish in the day of vengeance.",
+   "next": "Winnow not with every wind, and go not into every way: for so does the sinner that has a double tongue."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "amos",
+   "ch": 6,
+   "vn": 7,
+   "cite": "Amos 6:7",
+   "text_db": "Therefore now shall they go captive with the first that go captive, and the banquet of them that stretched themselves shall be removed.",
+   "text_canon": "Therefore now shall they go captive with the first that go captive, and the banquet of them that stretched themselves shall be removed."
+  },
+  "old_note": "*Set not your heart upon goods unjustly gotten, for they shall not profit you in the day of calamity* (Sirach 5:8). They who feast and stretch themselves *shall go captive with the first that go captive* (Amos 6:7) — for goods unjustly gotten *profit nothing in the day of calamity*. The banquet is removed when the calamity comes.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Set not your heart upon goods unjustly gotten, for they shall not profit you in the day of calamity",
+   "labelled": "ecclesiasticus|5:8",
+   "proposed": "ecclesiasticus|5:8",
+   "ratio": 0.9,
+   "live_proposed": "Set not yours heart upon goods unjustly gotten, for they shall not profit you in the day of calamity.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 34391,
+    "slug": "amos-6-at-ease-in-zion-not-grieved-for-the-affliction-of-joseph",
+    "old": "★ *Set not your heart upon goods unjustly gotten, for they shall not profit you in the day of calamity* (Sirach 5:8) — the banquet *removed* (Amos 6:7) when the calamity comes."
+   }
+  ]
+ },
+ {
+  "id": 139531,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 34,
+   "vn": 22,
+   "cite": "Ecclesiasticus 34:22",
+   "text": "He that takes away his neighbour’s living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.",
+   "prev": "The bread of the needy is their life: he that defraudeth him thereof is a man of blood.",
+   "next": "When one buildeth, and another pulleth down, what profit have they then but labour?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "micah",
+   "ch": 3,
+   "vn": 10,
+   "cite": "Micah 3:10",
+   "text_db": "They build up Zion with blood, and Jerusalem with iniquity.",
+   "text_canon": "They build up Zion with blood, and Jerusalem with iniquity."
+  },
+  "old_note": "*He that taketh away his neighbour's living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder* (Sirach 34:22). To *build up Zion with blood* (Micah 3:10) is precisely this — the bloodshedder who *defraudeth the labourer of his hire*. The judges who *judge for reward* and priests who *teach for hire* (3:11) build a city whose every stone is another man's stolen life.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "He that taketh away his neighbour's living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder",
+   "labelled": "ecclesiasticus|34:22",
+   "proposed": "ecclesiasticus|34:22",
+   "ratio": 0.91,
+   "live_proposed": "He that takes away his neighbour’s living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 34702,
+    "slug": "micah-3-they-build-up-zion-with-blood-and-lean-upon-yahuah",
+    "old": "★ *he that defraudeth the labourer of his hire is a bloodshedder* (Sirach 34:22) — to *build up Zion with blood* (Micah 3:10) is exactly this; the city raised on judges for reward and priests for hire is built of stolen lives."
+   }
+  ]
+ },
+ {
+  "id": 140754,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 47,
+   "vn": 17,
+   "cite": "Ecclesiasticus 47:17",
+   "text": "The countries marvelled at you for your songs, and proverbs, and parables, and interpretations.",
+   "prev": "Your name went far to the islands; and for your peace you were beloved.",
+   "next": "By the name of Yahuah (God), which is called Yahuah (God) of Yashar'el (Israel), you did gather gold as tin and did multiply silver as lead."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "luke",
+   "ch": 11,
+   "vn": 31,
+   "cite": "Luke 11:31",
+   "text_db": "The queen of the south shall rise up in the judgment with the men of this generation, and condemn them: for she came from the utmost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here.",
+   "text_canon": "The queen of the south shall rise up in the judgment with the men of this generation, and condemn them: for she came from the utmost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here."
+  },
+  "old_note": "*The countries marvelled at thee for thy songs, and proverbs, and parables, and interpretations* (Sirach 47:17). The library remembers how Solomon's wisdom drew the nations from afar — the very fame that brought the queen of the south; yet *a greater than Solomon is here*.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "The countries marvelled at thee for thy songs, and proverbs, and parables, and interpretations",
+   "labelled": "ecclesiasticus|47:17",
+   "proposed": "ecclesiasticus|47:17",
+   "ratio": 0.8,
+   "live_proposed": "The countries marvelled at you for your songs, and proverbs, and parables, and interpretations.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 34943,
+    "slug": "luke-11-the-sign-of-jonah-and-the-queen-of-the-south-jonah-1-1-kings-10",
+    "old": "Sirach 47:17 — *The countries marvelled at thee for thy songs, and proverbs, and parables, and interpretations.* The library remembers the fame that drew the nations to Solomon; yet a greater than Solomon is here."
+   }
+  ]
+ },
+ {
+  "id": 142047,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "the-wisdom-of-solomon",
+   "ch": 18,
+   "vn": 3,
+   "cite": "Wisdom of Solomon 18:3",
+   "text": "Instead of which you gavest them a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun to entertain them honourably.",
+   "prev": "But for that they did not hurt them now, of whom they had been wronged before, they thanked them, and besought them pardon for that they had been enemies.",
+   "next": "For they were worthy to be deprived of light and imprisoned in darkness, who had kept your sons shut up, by whom the uncorrupt light of the law was to be given to the world."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 1,
+   "vn": 33,
+   "cite": "Deuteronomy 1:33",
+   "text_db": "Who went in the way before you, to search you out a place to pitch your tents in, in fire by night, to shew you by what way you should go, and in a cloud by day.",
+   "text_canon": "Who went in the way before you, to search you out a place to pitch your tents in, in fire by night, to shew you by what way ye should go, and in a cloud by day."
+  },
+  "old_note": "*Instead of which thou gavest them a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun to entertain them honourably* (Wisdom of Solomon 18:3). The guiding Moses recalls — Yahuah *went in the way before you, to search you out a place to pitch your tents in, in fire by night, to shew you by what way ye should go, and in a cloud by day* (Deuteronomy 1:33) — is witnessed in the restored book: *a burning pillar of fire... to be a guide of the unknown journey*. The fire by night that led the son through the wilderness.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Instead of which thou gavest them a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun to entertain them honourably",
+   "labelled": "the-wisdom-of-solomon|18:3",
+   "proposed": "the-wisdom-of-solomon|18:3",
+   "ratio": 0.93,
+   "live_proposed": "Instead of which you gavest them a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun to entertain them honourably.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 35198,
+    "slug": "deuteronomy-1-as-a-man-doth-bear-his-son",
+    "old": "★ *thou gavest them a burning pillar of fire, both to be a guide of the unknown journey* (Wisdom of Solomon 18:3) — the restored witness to the *fire by night* that led the son (Deuteronomy 1:33)."
+   }
+  ]
+ },
+ {
+  "id": 146283,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "ecclesiasticus",
+   "ch": 4,
+   "vn": 10,
+   "cite": "Ecclesiasticus 4:10",
+   "text": "Be as a father to the fatherless, and instead of an husband to their mother: so shall you be as the son of the Most High, and he shall love you more than your mother does.",
+   "prev": "Deliver him that suffers wrong from the hand of the oppressor; and be not fainthearted when you sittest in judgment.",
+   "next": "Wisdom exalteth her children, and layeth hold of them that seek her."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "job",
+   "ch": 29,
+   "vn": 16,
+   "cite": "Job 29:16",
+   "text_db": "I was a father to the poor: and the cause which I knew not I searched out.",
+   "text_canon": "I was a father to the poor: and the cause which I knew not I searched out."
+  },
+  "old_note": "*Be as a father to the fatherless, and instead of an husband to their mother: so shalt thou be as the son of the Most High, and he shall love thee more than thy mother doth.* (Ecclesiasticus / Sirach 4:10). The wisdom tradition names exactly Job's deed — *I was a father to the poor* (Job 29:16) — and weighs it as the mark of a son of the Most High: covenant-mercy is the fruit by which the righteous are known.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "Be as a father to the fatherless, and instead of an husband to their mother: so shalt thou be as the son of the Most High, and he shall love thee more than thy mother doth.",
+   "labelled": null,
+   "proposed": "ecclesiasticus|4:10",
+   "ratio": 0.84,
+   "live_proposed": "Be as a father to the fatherless, and instead of an husband to their mother: so shall you be as the son of the Most High, and he shall love you more than your mother does.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 36188,
+    "slug": "job-29-i-delivered-the-poor-the-fatherless-covenant-justice-enacted",
+    "old": "*Be as a father to the fatherless... so shalt thou be as the son of the Most High.* (Sirach 4:10) — the wisdom tradition names Job's deed as the mark of a true son."
+   }
+  ]
+ },
+ {
+  "id": 176192,
+  "kind": "REQUOTE",
+  "side": "T",
+  "apoc": {
+   "book": "the-prayer-of-manasseh",
+   "ch": 1,
+   "vn": 11,
+   "cite": "Prayer of Manasseh 1:11",
+   "text": "Now therefore I bow the knee of my heart, beseeching you of grace.",
+   "prev": "I am bowed down with many iron bands, that I cannot lift up my head, neither have any release: for I have provoked your wrath, and done evil before you: I did not your will, neither kept I your commandments: I have set up abominations, and have multiplied offences.",
+   "next": "I have sinned, O Yahuah (God), I have sinned, and I acknowledge my iniquities:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "2-chronicles",
+   "ch": 33,
+   "vn": 13,
+   "cite": "2 Chronicles 33:13",
+   "text_db": "And prayed unto him: and he was intreated of him, and heard his supplication, and brought him again to Jerusalem into his kingdom. Then Manasseh knew that Yahuah (LORD) he was Elohim (God).",
+   "text_canon": "And prayed unto him: and he was intreated of him, and heard his supplication, and brought him again to Jerusalem into his kingdom. Then Manasseh knew that Yahuah (LORD) he was Elohim (God)."
+  },
+  "old_note": "The restored library preserves the very prayer attributed to him: 'Now therefore I bow the knee of my heart, beseeching you of grace. I have sinned, O Yahuah (God), I have sinned, and I acknowledge my iniquities' (Prayer of Manasseh 1:11-12); 'For you are Yahuah (God), even Yahuah (God) of them that repent... according to your great mercy' (1:13-14). It is the inside of *humbled himself greatly... and was intreated of him* (33:12-13) — the bowed knee of the heart that the worst king found Yahuah would not refuse.",
+  "regrade": {
+   "verdict": "NOT_FOUND",
+   "quote": "humbled himself greatly... and was intreated of him",
+   "labelled": null,
+   "proposed": "2-esdras|9:44",
+   "ratio": 0.44,
+   "live_proposed": "And those thirty years I did nothing else day and night, and every hour, but make my, prayer to the Highest.",
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 42953,
+    "slug": "2-chronicles-33-manasseh-humbled-himself-greatly-and-yahuah-was-intreated",
+    "old": "Prayer of Manasseh 1:11-14 (apocrypha) — the very prayer attributed to him: *I bow the knee of my heart... for you are Yahuah (God) of them that repent*."
+   }
+  ]
+ },
+ {
+  "id": 177475,
+  "kind": "REQUOTE",
+  "side": "S",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 7,
+   "vn": 30,
+   "cite": "2 Esdras 7:30",
+   "text": "And the world shall be turned into the old silence seven days, like as in the former judgments: so that no man shall remain.",
+   "prev": "After these years shall my son Messiah (Christ) die, and all men that have life.",
+   "next": "And after seven days the world, that yet awakes not, shall be raised up, and that shall die that is corrupt"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "jeremiah",
+   "ch": 4,
+   "vn": 23,
+   "cite": "Jeremiah 4:23",
+   "text_db": "I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no light.",
+   "text_canon": "I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no light."
+  },
+  "old_note": "*I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no light. I beheld the mountains, and, lo, they trembled, and all the hills moved lightly. I beheld, and, lo, there was no man, and all the birds of the heavens were fled. I beheld, and, lo, the fruitful place was a wilderness, and all the cities thereof were broken down at the presence of Yahuah (LORD), and by his fierce anger.* (Jeremiah 4:23-26). Esdras is told that *the world shall be turned into the old silence seven days, like as in the former judgments: so that no man shall remain* (2 Esdras 7:30). Jeremiah was shown the like: the earth *without form, and void,* the heavens without light, and *lo, there was no man*. These are the words of the earth before the first day, when *the earth was without form, and void; and darkness was upon the face of the deep* (Genesis 1:2); the old silence is the earth returned to that first stillness, no man remaining, before *the earth shall restore those that are asleep in her* (2 Esdras 7:32).",
+  "regrade": {
+   "verdict": "NOT_FOUND",
+   "quote": "I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no light. I beheld the mountains, and, lo, they trembled, and all the hills moved lightly. I beheld, and, lo, there was no man, and all the birds of the heavens were fled. I beheld, and, lo, the fruitful place was a wilderness, and all the cities thereof were broken down at the presence of Yahuah (LORD), and by his fierce anger.",
+   "labelled": null,
+   "proposed": null,
+   "ratio": 0,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": []
+ }
+]

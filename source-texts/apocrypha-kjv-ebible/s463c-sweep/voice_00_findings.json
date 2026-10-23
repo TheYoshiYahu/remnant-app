@@ -1,0 +1,44 @@
+[
+ {
+  "id": 4287,
+  "problem": "VOICE — a side quotation of Matthew 3:11 is left unrestored in body text; the convention restores Holy Ghost to Ruach HaKodesh with the parenthetical in every scripture quotation inside the prose.",
+  "quote": "*he shall baptize you with the Holy Ghost, and with fire* (Matthew 3:7, 11)",
+  "fix": "*he shall baptize you with the Ruach HaKodesh (Holy Ghost), and with fire* (Matthew 3:7, 11)"
+ },
+ {
+  "id": 4288,
+  "problem": "VOICE — covenant people-name without its restored form; the house of Judah in prose is Yahudah (Judah) at every mention.",
+  "quote": "Not Judah only, the tribes.",
+  "fix": "Not Yahudah (Judah) only, the tribes."
+ },
+ {
+  "id": 4351,
+  "problem": "VOICE — 'the library' is an internal reference the reader cannot see; the note should name the speaker or the book.",
+  "quote": "The library names the deliverance the open hand brings; the gospel names the storehouse the open hand fills, and nothing gets in to spoil it.",
+  "fix": "Tobit names the deliverance the open hand brings; the gospel names the storehouse the open hand fills, and nothing gets in to spoil it."
+ },
+ {
+  "id": 4393,
+  "problem": "THEOLOGY — the verse addresses the Father, and the note puts the one addressed as Father asleep in the boat, collapsing Father and Son into one (modalism). Yahusha (Jesus) is the Formed one through whom the Father's providence governs the sea, not the formless Father himself.",
+  "quote": "On the lake of Galilee the one who governs it was asleep in the stern of a fishing boat while the disciples thought they were dying.",
+  "fix": "The Father governs the sea through his Word, the one who made the way in it, and on the lake of Galilee that one was asleep in the stern of a fishing boat while the disciples thought they were dying."
+ },
+ {
+  "id": 4412,
+  "problem": "VOICE — 'the library' is an internal reference the reader cannot see.",
+  "quote": "Fasting alone was never the discipline; fasting with prayer, alms, and righteousness is what the library taught and what the King restores.",
+  "fix": "Fasting alone was never the discipline; fasting with prayer, alms, and righteousness is what the angel taught Tobit and what the King restores."
+ },
+ {
+  "id": 4473,
+  "problem": "THEOLOGY — invented reading not carried by the old note or the skill: wisdom personified as the one who 'walked among them in flesh,' making Yahusha (Jesus) the feminine Wisdom figure of the wisdom books. The skill holds him as the Formed Word; the children of wisdom are the covenant seed who hear his voice.",
+  "quote": "The children of wisdom in Matthew 11 are the covenant seed Baruch names, the people the knowledge was given to, and when wisdom walked among them in flesh they knew her voice even when the leaders did not.",
+  "fix": "The children of wisdom in Matthew 11 are the covenant seed Baruch names, the people the knowledge was given to, and when the one who gave it stood among them in flesh they knew his voice even when the leaders did not."
+ },
+ {
+  "id": 4474,
+  "problem": "THEOLOGY — invented reading: Yahusha (Jesus) is named as 'Wisdom herself,' a Christ-as-Sophia identification the old note did not carry and the skill does not hold. The point stands without it: the one who gave the law has not set it aside.",
+  "quote": "The law that endureth for ever has not been set aside by the one who is Wisdom herself; her children are known by keeping it.",
+  "fix": "The law that endureth for ever has not been set aside by the one who spoke it at Sinai and walked in Galilee; wisdom's children are known by keeping it."
+ }
+]

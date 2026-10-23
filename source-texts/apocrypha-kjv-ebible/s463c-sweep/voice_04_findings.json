@@ -1,0 +1,14 @@
+[
+ {
+  "id": 12188,
+  "problem": "THEOLOGY/FIDELITY — the prose sets Paul's Gentiles as the scattered seed (correct) and Tobit's 'all nations' as the nations, then calls the collection 'that turning made tangible,' which collapses the scattered seed back into the nations' turning and implies the givers are outside 'the covenant people.' The two groups are run together in the last two sentences.",
+  "quote": "Tobit saw the turning that would follow, nations turning to fear Yahuah (God) truly and burying their idols, and the next line says his people would confess him and be exalted. The collection is that turning made tangible in one generation: those who had lived among the idols sending back to the covenant people what they owed, the idols left behind and the debt of love paid.",
+  "fix": "Tobit saw two things coming: his people gathered home, and the nations turning to fear Yahuah (God) truly and burying their idols, with his own people confessing him and being exalted in the next line. The collection belongs to the first of those. It is the gathering made tangible in one generation: the scattered children of Yashar'el (Israel), who had lived among the idols, sending back to Jerusalem what they owed for the spiritual things that came out of it, the idols left behind and the debt of love paid."
+ },
+ {
+  "id": 43759,
+  "problem": "FIDELITY — 'He does not take the words back' reads as though Tobit spoke the reproach, but the words quoted are Anna's; the sentence misattributes the speaker and leaves the reader unsure what Tobit is not retracting.",
+  "quote": "He does not take the words back.",
+  "fix": "He does not answer her reproach by giving up the practice."
+ }
+]

@@ -1,0 +1,212 @@
+[
+ {
+  "id": 4437,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "tobit",
+   "ch": 13,
+   "vn": 3,
+   "cite": "Tobit 13:3",
+   "text": "Confess him before the Gentiles, you children of Yashar'el (Israel): for he has scattered us among them.",
+   "prev": "For he does scourge, and has mercy: he leadeth down to hell, and brings up again: neither is there any that can avoid his hand.",
+   "next": "There declare his greatness, and extol him before all the living: for he is our Elohim (God), and he is Yahuah (God) our Father for ever."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 32,
+   "cite": "Matthew 10:32",
+   "text_db": "Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven.",
+   "text_canon": "Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven."
+  },
+  "old_note": "*Confess him before the Gentiles, you children of Yashar'el (Israel): for he has scattered us among them. There declare his greatness, and extol him before all the living: for he is our Elohim (God), and he is Yahuah (God) our Father for ever.* Tobit 13:3-4 names the wisdom-stream's direct instruction: the children of Yashar'el (Israel) scattered among the Gentiles are to CONFESS Yahuah (God) BEFORE THE GENTILES — to declare his greatness in the territories of the scattering. Matt 10:32's *whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven* walks the same architecture at the kingdom-citizens level: the scattered seed in the dispersion confess the King before the men of the territories where they are scattered; the King confesses them before the Father.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Confess him before the Gentiles, you children of Yashar'el (Israel): for he has scattered us among them. There declare his greatness, and extol him before all the living: for he is our Elohim (God), and he is Yahuah (God) our Father for ever.",
+   "labelled": null,
+   "proposed": "tobit|13:3",
+   "ratio": 1.0,
+   "live_proposed": "Confess him before the Gentiles, you children of Yashar'el (Israel): for he has scattered us among them.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 107,
+    "slug": "confess-among-the-gentiles-and-gathering-in-tobit-13-14",
+    "old": "Tobit 13:3 — *confess him before the Gentiles, you children of Yashar'el (Israel): for he has scattered us among them.* The wisdom-stream's direct instruction; Matt 10:32's *whosoever therefore shall confess me before men* walks the same architecture at the kingdom-citizens level."
+   }
+  ]
+ },
+ {
+  "id": 4436,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "tobit",
+   "ch": 13,
+   "vn": 5,
+   "cite": "Tobit 13:5",
+   "text": "And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.",
+   "prev": "There declare his greatness, and extol him before all the living: for he is our Elohim (God), and he is Yahuah (God) our Father for ever.",
+   "next": "If you turn to him with your whole heart, and with your whole mind, and deal uprightly before him, then will he turn to you, and will not hide his face from you. Therefore see what he will do with you, and confess him with your whole mouth, and praise Yahuah (God) of might, and extol the everlasting King. In the land of my captivity do I praise him, and declare his might and majesty to a sinful nation. O you sinners, turn and do justice before him: who can tell if he will accept you, and have mercy on you?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 6,
+   "cite": "Matthew 10:6",
+   "text_db": "But go rather to the lost sheep of the house of Yashar'el (Israel).",
+   "text_canon": "But go rather to the lost sheep of the house of Yashar'el (Israel)."
+  },
+  "old_note": "*And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.* Tobit 13:5 names the wisdom-stream's direct articulation of the scourge-and-mercy-and-gathering architecture: Yahuah (God) scatters for iniquity, has mercy again, gathers from all the nations of the scattering. Matt 10:6's mission-scope to the lost sheep of the house of Yashar'el (Israel) is the gathering-mission Tobit had named as Yahuah (God)'s future-tense covenant-action. The mercy-substance at Hosea 6:6 (Matt 9:13) is the same mercy-substance gathering the scattered at Matt 10:6.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.",
+   "labelled": null,
+   "proposed": "tobit|13:5",
+   "ratio": 1.0,
+   "live_proposed": "And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 107,
+    "slug": "confess-among-the-gentiles-and-gathering-in-tobit-13-14",
+    "old": "Tobit 13:5 — *he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations.* The wisdom-stream's scourge-mercy-gathering architecture; the same gathering-mission Matt 10:6 commissions."
+   }
+  ]
+ },
+ {
+  "id": 4589,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "tobit",
+   "ch": 13,
+   "vn": 5,
+   "cite": "Tobit 13:5",
+   "text": "And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.",
+   "prev": "There declare his greatness, and extol him before all the living: for he is our Elohim (God), and he is Yahuah (God) our Father for ever.",
+   "next": "If you turn to him with your whole heart, and with your whole mind, and deal uprightly before him, then will he turn to you, and will not hide his face from you. Therefore see what he will do with you, and confess him with your whole mouth, and praise Yahuah (God) of might, and extol the everlasting King. In the land of my captivity do I praise him, and declare his might and majesty to a sinful nation. O you sinners, turn and do justice before him: who can tell if he will accept you, and have mercy on you?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 15,
+   "vn": 24,
+   "cite": "Matthew 15:24",
+   "text_db": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+   "text_canon": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel)."
+  },
+  "old_note": "*And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.* Tobit 13:5 names the wisdom-stream's direct articulation of the scourge-then-mercy-then-gathering-out-of-all-nations substance. The framework reads the verse against Matt 15:24's lost-sheep-mission-scope. The wisdom-stream had named the architecture of the gathering-out-of-all-nations-among-whom-the-Father-had-scattered-the-people — the exact-architecture the prophets had named (Yechezk'el (Ezekiel) 37:21's *I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side*) and the King's-mission enacts at v.24. The framework reads the Tobit 13:5 substance in continuity with the broader-Tanakh-substance and the King's-mission-scope at Matt 15:24.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.",
+   "labelled": null,
+   "proposed": "tobit|13:5",
+   "ratio": 1.0,
+   "live_proposed": "And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 221,
+    "slug": "gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit",
+    "old": "Tobit 13:5 — *he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.* The wisdom-stream's articulation of the scourge-then-mercy-then-gathering-out-of-all-nations substance — the exact architecture the prophets had named (Yechezk'el (Ezekiel) 37:21) and the King's-mission at v.24 enacts."
+   }
+  ]
+ },
+ {
+  "id": 4438,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "tobit",
+   "ch": 14,
+   "vn": 5,
+   "cite": "Tobit 14:5",
+   "text": "And that again Yahuah (God) will have mercy on them, and bring them again into the land, where they shall build a temple, but not like to the first, until the time of that age be fulfilled; and afterward they shall return from all places of their captivity, and build up Jerusalem gloriously, and the house of Yahuah (God) shall be built in it for ever with a glorious building, as the prophets have spoken thereof.",
+   "prev": "Go into Media my son, for I surely believe those things which Jonas the prophet spoke of Nineve, that it shall be overthrown; and that for a time peace shall rather be in Media; and that our brothers shall lie scattered in the earth from that good land: and Jerusalem shall be desolate, and the house of Yahuah (God) in it shall be burned, and shall be desolate for a time;",
+   "next": "And all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 23,
+   "cite": "Matthew 10:23",
+   "text_db": "But when they persecute you in this city, flee you into another: for verily I say unto you, You shall not have gone over the cities of Yashar'el (Israel), till the Son of Adam be come.",
+   "text_canon": "But when they persecute you in this city, flee ye into another: for verily I say unto you, Ye shall not have gone over the cities of Yashar'el (Israel), till the Son of Adam be come."
+  },
+  "old_note": "*And that again Yahuah (God) will have mercy on them, and bring them again into the land, where they shall build a temple, but not like to the first, until the time of that age be fulfilled; and afterward they shall return from all places of their captivity, and build up Yerushalayim (Jerusalem) gloriously.* Tobit 14:5 names the wisdom-stream's multi-stage gathering-architecture explicitly: a FIRST return-to-the-land for the temple-rebuilding (the post-Babylon return under Zerubavel/Zerubbabel, Ezra, and Nechemyah/Nehemiah), AND THEN a LATTER return *from all places of their captivity* at the fulness-of-the-age. Matt 10:23's *till the Son of Adam be come* opens the gathering-mission's present-age-tense as the standing-work until the Son of Adam returns; Tobit 14:5 names the same multi-stage architecture from the wisdom-stream side. The first stage was the partial Yahudah (Judah)-return; the latter is the still-future gathering-from-all-places-of-the-captivity.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "And that again Yahuah (God) will have mercy on them, and bring them again into the land, where they shall build a temple, but not like to the first, until the time of that age be fulfilled; and afterward they shall return from all places of their captivity, and build up Yerushalayim (Jerusalem) gloriously.",
+   "labelled": null,
+   "proposed": "tobit|14:5",
+   "ratio": 0.96,
+   "live_proposed": "And that again Yahuah (God) will have mercy on them, and bring them again into the land, where they shall build a temple, but not like to the first, until the time of that age be fulfilled; and afterward they shall return from all places of their captivity, and build up Jerusalem gloriously, and the house of Yahuah (God) shall be built in it for ever with a glorious building, as the prophets have spoken thereof.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 107,
+    "slug": "confess-among-the-gentiles-and-gathering-in-tobit-13-14",
+    "old": "Tobit 14:5 — *they shall return from all places of their captivity, and build up Yerushalayim (Jerusalem) gloriously.* The multi-stage gathering-architecture: FIRST post-Babylon return, THEN latter-time return from all places of the captivity. Matt 10:23's standing-mission is the present-age work between the two stages."
+   }
+  ]
+ },
+ {
+  "id": 12188,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "tobit",
+   "ch": 14,
+   "vn": 6,
+   "cite": "Tobit 14:6",
+   "text": "And all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols.",
+   "prev": "And that again Yahuah (God) will have mercy on them, and bring them again into the land, where they shall build a temple, but not like to the first, until the time of that age be fulfilled; and afterward they shall return from all places of their captivity, and build up Jerusalem gloriously, and the house of Yahuah (God) shall be built in it for ever with a glorious building, as the prophets have spoken thereof.",
+   "next": "So shall all nations praise Yahuah (God), and his people shall confess Yahuah (God), and Yahuah (God) shall exalt his people; and all those which love Yahuah (God) in truth and justice shall rejoice, shewing mercy to our brothers."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "romans",
+   "ch": 15,
+   "vn": 27,
+   "cite": "Romans 15:27",
+   "text_db": "It has pleased them verily; and their debtors they are. For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things.",
+   "text_canon": "It hath pleased them verily; and their debtors they are. For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things."
+  },
+  "old_note": "*And all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols.* (Tobit 14:6). The Gentiles who *have been made partakers of their spiritual things* and owe a debt *to minister unto them in carnal things* (Romans 15:27) are the nations Tobit saw turning: *all nations shall turn, and fear Yahuah truly, and shall bury their idols.* The collection Paul carries to the poor saints at Jerusalem is the turning made tangible — those gathered from the nations rendering their substance back to the covenant people from whom the spiritual riches came, the idols buried and the debt of love paid.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols.",
+   "labelled": "tobit|14:6",
+   "proposed": "tobit|14:6",
+   "ratio": 1.0,
+   "live_proposed": "And all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 1707,
+    "slug": "romans-15-the-offering-up-of-the-gentiles-the-priestly-ingathering",
+    "old": "Tobit 14:6 — *all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols* the turning made tangible in the collection: those gathered from the nations rendering back to the saints at Jerusalem (Romans 15:27)."
+   }
+  ]
+ }
+]

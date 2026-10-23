@@ -1,0 +1,1682 @@
+[
+ {
+  "id": 45038,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "1-esdras",
+   "ch": 7,
+   "vn": 14,
+   "cite": "1 Esdras 7:14",
+   "text": "And they kept the feast of unleavened bread seven days, making merry before Yahuah (God),",
+   "prev": "And the children of Yashar'el (Israel) that came out of the captivity did eat, even all they that had separated themselves from the abominations of the people of the land, and sought Yahuah (God).",
+   "next": "For that he had turned the counsel of the king of Assyria toward them, to strengthen their hands in the works of Yahuah (God) of Yashar'el (Israel)."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "1-corinthians",
+   "ch": 5,
+   "vn": 7,
+   "cite": "1 Corinthians 5:7",
+   "text_db": "Purge out therefore the old leaven, that you may be a new lump, as you are unleavened. For even Messiah (Christ) our passover is sacrificed for us:",
+   "text_canon": "Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us:"
+  },
+  "old_note": "1 Corinthians 5:7 — *Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us:* The seven-day unleavened feast the exiles keep before Yahuah in 1 Esdras 7:14 finds its substance in Yahusha, our Passover.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10742,
+    "slug": "1-esdras-7-passover-kept",
+    "old": "1 Corinthians 5:7 — *Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us:* The seven-day unleavened feast the exiles keep before Yahuah in 1 Esdras 7:14 finds its substance in Yahusha, our Passover."
+   }
+  ]
+ },
+ {
+  "id": 45054,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "1-esdras",
+   "ch": 8,
+   "vn": 70,
+   "cite": "1 Esdras 8:70",
+   "text": "For both they and their sons have married with their daughters, and the holy seed is mixed with the strange people of the land; and from the beginning of this matter the rulers and the great men have been partakers of this iniquity.",
+   "prev": "The nation of Yashar'el (Israel), the princes, the priests and Levites, have not put away from them the strange people of the land, nor the pollutions of the Gentiles to wit, of the Canaanites, Hittites, Pheresites, Jebusites, and the Moabites, Egyptians, and Edomites.",
+   "next": "And as soon as I had heard these things, I rent my clothes, and the holy garment, and pulled off the hair from off my head and beard, and sat me down sad and very heavy."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 6,
+   "vn": 13,
+   "cite": "Isaiah 6:13",
+   "text_db": "But yet in it shall be a tenth, and it shall return, and shall be eaten: as a teil tree, and as an oak, whose substance is in them, when they cast their leaves: so the holy seed shall be the substance thereof.",
+   "text_canon": "But yet in it shall be a tenth, and it shall return, and shall be eaten: as a teil tree, and as an oak, whose substance is in them, when they cast their leaves: so the holy seed shall be the substance thereof."
+  },
+  "old_note": "Isaiah 6:13 — *But yet in it shall be a tenth, and it shall return, and shall be eaten: as a teil tree, and as an oak, whose substance is in them, when they cast their leaves: so the holy seed shall be the substance thereof.* Isaiah's holy seed that remains as the substance is the very seed 1 Esdras 8:70 mourns as mingled.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10747,
+    "slug": "1-esdras-8-strange-marriages",
+    "old": "Isaiah 6:13 — *But yet in it shall be a tenth, and it shall return, and shall be eaten: as a teil tree, and as an oak, whose substance is in them, when they cast their leaves: so the holy seed shall be the substance thereof.* Isaiah's holy seed that remains as the substance is the very seed 1 Esdras 8:70 mourns as mingled."
+   }
+  ]
+ },
+ {
+  "id": 45051,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "1-esdras",
+   "ch": 8,
+   "vn": 89,
+   "cite": "1 Esdras 8:89",
+   "text": "O Yahuah (God) of Yashar'el (Israel), you are true: for we are left a root this day.",
+   "prev": "Might not you be angry with us to destroy us, till you had left us neither root, seed, nor name?",
+   "next": "Behold, now are we before you in our iniquities, for we cannot stand any longer by reason of these things before you."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "ezra",
+   "ch": 9,
+   "vn": 15,
+   "cite": "Ezra 9:15",
+   "text_db": "O Yahuah Elohim (LORD God) of Yashar'el (Israel), you are righteous: for we remain yet escaped, as it is this day: behold, we are before you in our trespasses: for we cannot stand before you because of this.",
+   "text_canon": "O Yahuah Elohim (LORD God) of Yashar'el (Israel), thou art righteous: for we remain yet escaped, as it is this day: behold, we are before thee in our trespasses: for we cannot stand before thee because of this."
+  },
+  "old_note": "Ezra 9:15 — *O Yahuah Elohim (LORD God) of Yashar'el (Israel), thou art righteous: for we remain yet escaped, as it is this day: behold, we are before thee in our trespasses: for we cannot stand before thee because of this.* The canon's \"thou art righteous, we remain yet escaped\" is exactly the root-left-this-day confession of 1 Esdras 8:89.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10748,
+    "slug": "1-esdras-8-confession-remnant",
+    "old": "Ezra 9:15 — *O Yahuah Elohim (LORD God) of Yashar'el (Israel), thou art righteous: for we remain yet escaped, as it is this day: behold, we are before thee in our trespasses: for we cannot stand before thee because of this.* The canon's \"thou art righteous, we remain yet escaped\" is exactly the root-left-this-day confession of 1 Esdras 8:89."
+   }
+  ]
+ },
+ {
+  "id": 45078,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "1-esdras",
+   "ch": 9,
+   "vn": 4,
+   "cite": "1 Esdras 9:4",
+   "text": "And that whoever met not there within two or three days according as the elders that bare rule appointed, their cattle should be seized to the use of the temple, and himself cast out from them that were of the captivity.",
+   "prev": "And there was a proclamation in all Jewry and Jerusalem to all them that were of the captivity, that they should be gathered together at Jerusalem:",
+   "next": "And in three days were all they of the tribe of Yahudah (Judah) and Benjamin gathered together at Jerusalem the twentieth day of the ninth month."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "ezra",
+   "ch": 10,
+   "vn": 8,
+   "cite": "Ezra 10:8",
+   "text_db": "And that whosoever would not come within three days, according to the counsel of the princes and the elders, all his substance should be forfeited, and himself separated from the congregation of those that had been carried away.",
+   "text_canon": "And that whosoever would not come within three days, according to the counsel of the princes and the elders, all his substance should be forfeited, and himself separated from the congregation of those that had been carried away."
+  },
+  "old_note": "Ezra 10:8 — *And that whosoever would not come within three days, according to the counsel of the princes and the elders, all his substance should be forfeited, and himself separated from the congregation of those that had been carried away.* The forfeit of goods and casting-out for any who failed to gather is the same decree Esdras proclaims in 1 Esdras 9:4.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10750,
+    "slug": "1-esdras-9-strange-wives-ezra-ten",
+    "old": "Ezra 10:8 — *And that whosoever would not come within three days, according to the counsel of the princes and the elders, all his substance should be forfeited, and himself separated from the congregation of those that had been carried away.* The forfeit of goods and casting-out for any who failed to gather is the same decree Esdras proclaims in 1 Esdras 9:4."
+   }
+  ]
+ },
+ {
+  "id": 4855,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 1,
+   "vn": 63,
+   "cite": "1 Maccabees 1:63",
+   "text": "Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.",
+   "prev": "Howbeit many in Yashar'el (Israel) were fully resolved and confirmed in themselves not to eat any unclean thing.",
+   "next": "And there was very great wrath upon Yashar'el (Israel)."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 28,
+   "cite": "Matthew 26:28",
+   "text_db": "For this is my blood of the new testament, which is shed for many for the remission of sins.",
+   "text_canon": "For this is my blood of the new testament, which is shed for many for the remission of sins."
+  },
+  "old_note": "*Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* 1 Maccabees 1:63 names the wisdom-stream's direct articulation of the faithful-unto-death-for-the-holy-covenant substance — the Maccabean-faithful-servants the Antiochus-Epiphanes-persecution-substance forced-into-the-substantial-choice between-profaning-the-covenant-and-dying-for-it. The framework reads the verse against Matt 26:28's *this is my blood of the new testament, which is shed for many for the remission of sins.* The Maccabean-faithful-died-for-the-covenant-of-their-fathers-substance; the King-of-Yashar'el (Israel) dies-as-the-Pesach-lamb-substance to-inaugurate-the-substantial-new-covenant the substantial Jeremiah 31:31-34 substance the prophet-Yirmeyahu (Jeremiah) walked walks-into-substantively (*I will put my law in their inward parts, and write it in their hearts*) — the substantial-new-covenant-substance is-the-Torah-internalized-substance NOT-the-Torah-replaced-substance the inherited-Christian-collapse walks-from. The Maccabean-prefiguring-substance walks the substantial-faithful-unto-death-for-the-Sinai-covenant-substance the Tanakh-Sinai-substance the prophet-Mosheh (Moses) walked at Exodus 24:8 walks (*behold the blood of the covenant, which Yahuah (the LORD) hath made with you concerning all these words*); the King-of-Yashar'el (Israel) walks-substantively the substantial-blood-of-the-new-covenant-substance walked-forward-into the substantial-Torah-internalized-substance-on-the-new-heart Ezekiel 36:26-27 walks-into directly. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.",
+   "labelled": null,
+   "proposed": "1-maccabees|1:63",
+   "ratio": 1.0,
+   "live_proposed": "Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 412,
+    "slug": "the-blood-of-the-new-covenant-and-the-faithful-unto-death-for-the-covenant-in-1-and-2-maccabees",
+    "old": "1 Maccabees 1:63 — *they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* The substantial-faithful-unto-death-for-the-holy-covenant substance — the Maccabean-prefiguring of the substantial-King-of-Yashar'el (Israel)-as-the-Pesach-lamb-substance walks-substantively the substantial-blood-of-the-new-covenant-substance at Matt 26:28."
+   }
+  ]
+ },
+ {
+  "id": 44509,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 1,
+   "vn": 63,
+   "cite": "1 Maccabees 1:63",
+   "text": "Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.",
+   "prev": "Howbeit many in Yashar'el (Israel) were fully resolved and confirmed in themselves not to eat any unclean thing.",
+   "next": "And there was very great wrath upon Yashar'el (Israel)."
+  },
+  "other": {
+   "ed": "apocrypha",
+   "book": "1-maccabees",
+   "ch": 2,
+   "vn": 37,
+   "cite": "1 Maccabees 2:37",
+   "text_db": "But said, Let us die all in our innocency: heaven and earth will testify for us, that you put us to death wrongfully.",
+   "text_canon": null
+  },
+  "old_note": "1 Maccabees 1:63 — *Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* The same choosing-to-die-rather-than-defile-the-covenant is the resolve of those who say let us die in our innocency in 1 Maccabees 2:37.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.",
+   "labelled": "1-maccabees|1:63",
+   "proposed": "1-maccabees|1:63",
+   "ratio": 1.0,
+   "live_proposed": "Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10572,
+    "slug": "1-maccabees-2-die-rather-than-profane-sabbath",
+    "old": "1 Maccabees 1:63 — *Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* The same choosing-to-die-rather-than-defile-the-covenant is the resolve of those who say let us die in our innocency in 1 Maccabees 2:37."
+   }
+  ]
+ },
+ {
+  "id": 4495,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 2,
+   "vn": 41,
+   "cite": "1 Maccabees 2:41",
+   "text": "At that time therefore they decreed, saying, Whoever shall come to make battle with us on the sabbath day, we will fight against him; neither will we die all, as our brothers that were murdered in the secret places.",
+   "prev": "And one of them said to another, If we all do as our brothers have done, and fight not for our lives and laws against the heathen, they will now quickly root us out of the earth.",
+   "next": "Then came there to him a company of Assideans who were mighty men of Yashar'el (Israel), even all such as were voluntarily devoted to the law."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 12,
+   "vn": 12,
+   "cite": "Matthew 12:12",
+   "text_db": "How much then is a man better than a sheep? Wherefore it is lawful to do well on the sabbath days.",
+   "text_canon": "How much then is a man better than a sheep? Wherefore it is lawful to do well on the sabbath days."
+  },
+  "old_note": "*Then said they every one to his neighbour: If we all do as our brethren have done, and fight not for our lives and laws against the heathen, they will now quickly root us out of the earth. At that time therefore they decreed, saying, Whosoever shall come to make battle with us on the Shabbat day, we will fight against him; neither will we die all, as our brethren that were murdered in the secret places.* 1 Maccabees 2:41 names the Maccabean Shabbat-defense decision — the wisdom-stream's direct documentation that life-saving-overrides-Shabbat-restriction was the operative-principle in the Second-Temple period. The framework reads the verse against Matt 12:11-12: the King's *kal vachomer* argument (sheep-rescue-on-Shabbat is permitted in the Pharisaic tradition; how much more a man?) walks the same architecture the Hasmonean decision had locked under threat of extinction. The wisdom-stream had named the principle; the King at Matt 12:12 names the operative-substance: the Shabbat is FOR life and rest and doing-well, not for the fence-architecture that obstructs the same.",
+  "regrade": {
+   "verdict": "RE_ANCHOR_REWORDED",
+   "quote": "Then said they every one to his neighbour: If we all do as our brethren have done, and fight not for our lives and laws against the heathen, they will now quickly root us out of the earth. At that time therefore they decreed, saying, Whosoever shall come to make battle with us on the Shabbat day, we will fight against him; neither will we die all, as our brethren that were murdered in the secret places.",
+   "labelled": null,
+   "proposed": "1-maccabees|2:40",
+   "ratio": 0.88,
+   "live_proposed": "And one of them said to another, If we all do as our brothers have done, and fight not for our lives and laws against the heathen, they will now quickly root us out of the earth.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 183,
+    "slug": "shabbat-as-covenant-sign-protected-day-and-life-saving-defense",
+    "old": "1 Maccabees 2:41 — the Hasmonean Shabbat-defense decision; life-saving-overrides-Shabbat-restriction as the operative-principle the wisdom-stream itself had locked. Matt 12:11-12's *kal vachomer* sheep-rescue argument walks the same architecture."
+   }
+  ]
+ },
+ {
+  "id": 4856,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 2,
+   "vn": 50,
+   "cite": "1 Maccabees 2:50",
+   "text": "Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.",
+   "prev": "Now when the time drew near that Mattathias should die, he said to his sons, Now has pride and rebuke gotten strength, and the time of destruction, and the wrath of indignation:",
+   "next": "Call to remembrance what acts our fathers did in their time; so shall you receive great honour and an everlasting name."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 28,
+   "cite": "Matthew 26:28",
+   "text_db": "For this is my blood of the new testament, which is shed for many for the remission of sins.",
+   "text_canon": "For this is my blood of the new testament, which is shed for many for the remission of sins."
+  },
+  "old_note": "*Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.* 1 Maccabees 2:50 names the wisdom-stream's direct articulation of the give-your-lives-for-the-covenant-of-your-fathers substance — Mattathias's deathbed-charge to his sons the Maccabean-revolt-substance walks-out-substantively against Antiochus-Epiphanes. The framework reads the verse against Matt 26:28's substantial-blood-of-the-new-covenant substance — the King-of-Yashar'el (Israel) walks-substantively-the-substantial-give-the-life-for-the-covenant-substance the Maccabean-substance walks-the-prefiguring-pattern-for; the substantial-substance the King walks-out is the substantial-Pesach-lamb-substance + the substantial-blood-of-the-new-covenant-substance walked-forward-into the substantial-Torah-internalized-substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 36:26-27 walks-into directly. The substantial-Mattathias-substance's *be you zealous for the law* substance walks the substantial-Torah-zeal-substance walks-into the substantial-new-covenant-substance the King-of-Yashar'el (Israel) inaugurates at-the-Last-Supper — the substantial-Torah-internalized-on-the-new-heart-substance the Ruach HaKodesh (Holy Spirit) gives. The framework reads this carefully — the *zealous for the law* substance the Mattathias-substance walks is NOT-substantially-the-flesh-credential-performance-substance the inherited-Pharisaic-and-Galatian-agitator-and-modern-Christian-Judaizer-substance walks; the substantial-substance is the substantial-Torah-substance the substantial-Father-substance walks-out at-Sinai walking-substantively-internalized-on-the-substantial-new-heart-substance the King-of-Yashar'el (Israel) inaugurates at v.28.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.",
+   "labelled": null,
+   "proposed": "1-maccabees|2:50",
+   "ratio": 1.0,
+   "live_proposed": "Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 412,
+    "slug": "the-blood-of-the-new-covenant-and-the-faithful-unto-death-for-the-covenant-in-1-and-2-maccabees",
+    "old": "1 Maccabees 2:50 — *be you zealous for the law, and give your lives for the covenant of your fathers.* Mattathias's deathbed-charge — the substantial-give-the-life-for-the-covenant-of-the-fathers substance. The substantial-Torah-zeal-substance walks-substantively-into the substantial-new-covenant-substance the King inaugurates at Matt 26:28 — the substantial-Torah-internalized-on-the-new-heart-substance the Ruach HaKodesh (Holy Spirit) gives, NOT the inherited-Pharisaic-flesh-credential-performance-substance."
+   }
+  ]
+ },
+ {
+  "id": 7872,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 2,
+   "vn": 50,
+   "cite": "1 Maccabees 2:50",
+   "text": "Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.",
+   "prev": "Now when the time drew near that Mattathias should die, he said to his sons, Now has pride and rebuke gotten strength, and the time of destruction, and the wrath of indignation:",
+   "next": "Call to remembrance what acts our fathers did in their time; so shall you receive great honour and an everlasting name."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "mark",
+   "ch": 14,
+   "vn": 24,
+   "cite": "Mark 14:24",
+   "text_db": "And he said unto them, This is my blood of the new testament, which is shed for many.",
+   "text_canon": "And he said unto them, This is my blood of the new testament, which is shed for many."
+  },
+  "old_note": "*Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.* 1 Maccabees 2:50 names Mattathias' charge — give your lives for the covenant of your fathers. Mark 14:24's *my blood of the new testament, which is shed for many* is the King giving his own life for the covenant, the substance the Hebrew library named at the martyr-register. The covenant the Maccabean faithful died for is the covenant the King seals in his blood shed for many — the blood-of-the-covenant architecture the wisdom-stream had already carried.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.",
+   "labelled": null,
+   "proposed": "1-maccabees|2:50",
+   "ratio": 1.0,
+   "live_proposed": "Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 630,
+    "slug": "mark-14-the-blood-of-the-covenant-and-the-faithful-unto-death-for-the-covenant-in-maccabees",
+    "old": "1 Maccabees 2:50 — *be you zealous for the law, and give your lives for the covenant of your fathers.* Mattathias' charge to give their lives for the covenant; Mark 14:24's blood shed for many is the King giving his own life for the covenant the faithful died for."
+   }
+  ]
+ },
+ {
+  "id": 4465,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 2,
+   "vn": 58,
+   "cite": "1 Maccabees 2:58",
+   "text": "Elias for being zealous and fervent for the law was taken up into heaven.",
+   "prev": "David for being merciful possessed the throne of an everlasting kingdom.",
+   "next": "Ananias, Azarias, and Misael, by believing were saved out of the flame."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 14,
+   "cite": "Matthew 11:14",
+   "text_db": "And if you will receive it, this is Elias, which was for to come.",
+   "text_canon": "And if ye will receive it, this is Elias, which was for to come."
+  },
+  "old_note": "*Elias for being zealous and fervent for the law was taken up into heaven.* 1 Maccabees 2:58 names the wisdom-stream's witness to the Eliyahu-zealous-for-the-Torah architecture: Eliyahu's zeal for the Torah is what the wisdom-stream remembers as the operative-substance of his mission. Matt 11:14's Eliyahu-pattern-identification of Yochanan (John) walks the same architecture — Yochanan (John) was the wilderness-camel-hair Nazirite-disciplined prophet whose zeal for the Father's-ways called the Pharisees and Sadducees *generation of vipers* (Matt 3:7) and whose imprisonment came from his public-condemnation of Herod Antipas's adultery (Matt 14:3-4). The wisdom-stream had named the Eliyahu-zealous-for-Torah disposition; the inaugural-Eliyahu-fulfillment in Yochanan (John) walks the same disposition at the messenger-before-the-King's-face register.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Elias for being zealous and fervent for the law was taken up into heaven.",
+   "labelled": null,
+   "proposed": "1-maccabees|2:58",
+   "ratio": 1.0,
+   "live_proposed": "Elias for being zealous and fervent for the law was taken up into heaven.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 119,
+    "slug": "eliyahu-to-restore-the-tribes-in-sirach-48-and-1-maccabees-2",
+    "old": "1 Maccabees 2:58 — *Elias for being zealous and fervent for the law was taken up into heaven.* The wisdom-stream's witness to the Eliyahu-zealous-for-the-Torah architecture; Yochanan (John) at Matt 11:14 walks the same disposition at the messenger-before-the-King's-face register."
+   }
+  ]
+ },
+ {
+  "id": 7980,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 4,
+   "vn": 36,
+   "cite": "1 Maccabees 4:36",
+   "text": "Then said Judas and his brothers, Behold, our enemies are discomfited: let us go up to cleanse and dedicate the sanctuary.",
+   "prev": "Now when Lysias saw his army put to flight, and the manliness of Judas’ soldiers, and how they were ready either to live or die valiantly, he went into Antiochia, and gathered together a company of strangers, and having made his army greater than it was, he purposed to come again into Judea.",
+   "next": "Upon this all the host assembled themselves together, and went up into mount Sion."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 2,
+   "vn": 16,
+   "cite": "John 2:16",
+   "text_db": "And said unto them that sold doves, Take these things hence; make not my Father’s house an house of merchandise.",
+   "text_canon": "And said unto them that sold doves, Take these things hence; make not my Father’s house an house of merchandise."
+  },
+  "old_note": "*Then said Judas and his brothers, Behold, our enemies are discomfited: let us go up to cleanse and dedicate the sanctuary.* (1 Maccabees 4:36) The Hebrew library carries the prior cleansing of the defiled house — the Hasmonean *go up to cleanse and dedicate the sanctuary.* *Make not my Father's house an house of merchandise* (John 2:16) is the same purging-of-the-defiled-house motion, now in the hand of the One whose house it is. The Maccabees cleansed the sanctuary the heathen profaned; the Formed one cleanses the court the traders profaned, the Lord of the house returning to purge His own.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Then said Judas and his brothers, Behold, our enemies are discomfited: let us go up to cleanse and dedicate the sanctuary.",
+   "labelled": null,
+   "proposed": "1-maccabees|4:36",
+   "ratio": 1.0,
+   "live_proposed": "Then said Judas and his brothers, Behold, our enemies are discomfited: let us go up to cleanse and dedicate the sanctuary.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 662,
+    "slug": "john-2-the-temple-cleansed-and-the-maccabean-rededication-in-1-and-2-maccabees",
+    "old": "1 Maccabees 4:36 — *let us go up to cleanse and dedicate the sanctuary.* The Hasmonean cleansing of the defiled house; John 2:16's *make not my Father's house an house of merchandise* is the same purging motion, now in the hand of the One whose house it is."
+   }
+  ]
+ },
+ {
+  "id": 4746,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 4,
+   "vn": 43,
+   "cite": "1 Maccabees 4:43",
+   "text": "Who cleansed the sanctuary, and bare out the defiled stones into an unclean place.",
+   "prev": "So he chose priests of blameless conversation, such as had pleasure in the law:",
+   "next": "And when as they consulted what to do with the altar of burnt offerings, which was profaned;"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 12,
+   "cite": "Matthew 21:12",
+   "text_db": "And Yahusha (Jesus) went into the temple of Elohim (God), and cast out all them that sold and bought in the temple, and overthrew the tables of the moneychangers, and the seats of them that sold doves,",
+   "text_canon": "And Yahusha (Jesus) went into the temple of Elohim (God), and cast out all them that sold and bought in the temple, and overthrew the tables of the moneychangers, and the seats of them that sold doves,"
+  },
+  "old_note": "*Who cleansed the sanctuary, and bare out the defiled stones into an unclean place.* 1 Maccabees 4:43 names the wisdom-stream's direct verbal-anchor for the cleansing-of-the-sanctuary substance the King-walks-out at the temple-cleansing-pericope. The framework reads the verse against Matt 21:12's *Yahusha (Jesus) went into the temple of Elohim (God), and cast out all them that sold and bought in the temple, and overthrew the tables of the moneychangers.* The historical-substance Yahudah-Maqqavi (Judas Maccabeus) had-walked at the wisdom-stream-pivot — the cleansing-of-the-sanctuary-after-the-Antiochene-defilement of the abomination-of-desolation — names the architectural-substance the King-walks-out at the Second-Temple-pivot against the Pharisaic-Sadducean monetization-substance that had-displaced the substance of prayer the Court-of-the-goyim was-meant-for. The substance the wisdom-stream names at the *bare out the defiled stones* substance is the same substance the King-walks at the *overthrew the tables of the moneychangers* substance — the system-substance's-substance has-defiled the Father's-house with the substance of the market, and the substance the King-walks-against is the same substance the wisdom-stream-pivot had-walked-against at the prior-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Who cleansed the sanctuary, and bare out the defiled stones into an unclean place.",
+   "labelled": null,
+   "proposed": "1-maccabees|4:43",
+   "ratio": 1.0,
+   "live_proposed": "Who cleansed the sanctuary, and bare out the defiled stones into an unclean place.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 387,
+    "slug": "temple-cleansing-and-the-maccabean-rededication-architecture",
+    "old": "1 Maccabees 4:43 — *who cleansed the sanctuary, and bare out the defiled stones into an unclean place.* The wisdom-stream's direct verbal-anchor for the cleansing-of-the-sanctuary substance the King walks-out at Matt 21:12; the Maccabean-cleansing-against-the-Antiochene-outer-defilement is the architectural-parallel the King's-cleansing-against-the-Pharisaic-Sadducean-inner-corruption walks-the-same-substance of."
+   }
+  ]
+ },
+ {
+  "id": 4749,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 4,
+   "vn": 46,
+   "cite": "1 Maccabees 4:46",
+   "text": "And laid up the stones in the mountain of the temple in a convenient place, until there should come a prophet to shew what should be done with them.",
+   "prev": "They thought it best to pull it down, lest it should be a reproach to them, because the heathen had defiled it: wherefore they pulled it down,",
+   "next": "Then they took whole stones according to the law, and built a new altar according to the former;"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 13,
+   "cite": "Matthew 21:13",
+   "text_db": "And said unto them, It is written, My house shall be called the house of prayer; but you have made it a den of thieves.",
+   "text_canon": "And said unto them, It is written, My house shall be called the house of prayer; but ye have made it a den of thieves."
+  },
+  "old_note": "*And laid up the stones in the mountain of the temple in a convenient place, until there should come a prophet to shew what should be done with them.* 1 Maccabees 4:46 names THE direct wisdom-stream verbal-anchor for the prophet-yet-to-come substance the King-walks-out at the temple-cleansing-pericope. The framework reads the verse against Matt 21:13's King-citing the prophet Yirmeyahu (Jeremiah) 7:11 + the multitude's-confession at Matt 21:11 (*the prophet of Natsareth (Nazareth) of Galil (Galilee)*). The wisdom-stream-substance had-named the prophet-yet-to-come the wisdom-stream-substance did-not-yet-have-the-substance-of; the wisdom-stream-substance left the stones-of-the-defiled-altar laid-up-in-the-temple-mountain *until there should come a prophet to shew what should be done with them.* The substance the wisdom-stream had-named the substance-of-waiting-for is the substance the King walks-into at the temple-cleansing-pericope — the prophet has come; the substance the wisdom-stream-substance had-not-yet-named has-arrived-at the substance-of-the-Father's-house. The substance is-substantial — the wisdom-stream-substance had-laid the substance-of-anticipation for the prophet-to-come; the King-walks the substance-of-the-prophet-arrived.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And laid up the stones in the mountain of the temple in a convenient place, until there should come a prophet to shew what should be done with them.",
+   "labelled": null,
+   "proposed": "1-maccabees|4:46",
+   "ratio": 1.0,
+   "live_proposed": "And laid up the stones in the mountain of the temple in a convenient place, until there should come a prophet to shew what should be done with them.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 387,
+    "slug": "temple-cleansing-and-the-maccabean-rededication-architecture",
+    "old": "1 Maccabees 4:46 — *and laid up the stones in the mountain of the temple in a convenient place, until there should come a prophet to shew what should be done with them.* THE direct verbal-anchor for the prophet-yet-to-come substance the King walks-out at Matt 21:13 — the wisdom-stream-substance had-laid the substance-of-anticipation for the prophet-to-come; the multitude at v.11 names *the prophet of Natsareth (Nazareth) of Galil (Galilee)*; the King walks the substance-of-the-prophet-arrived at the temple-cleansing."
+   }
+  ]
+ },
+ {
+  "id": 44573,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 6,
+   "vn": 54,
+   "cite": "1 Maccabees 6:54",
+   "text": "There were but a few left in the sanctuary, because the famine did so prevail against them, that they were fain to disperse themselves, every man to his own place.",
+   "prev": "Yet at the last, their vessels being without victuals, (for that it was the seventh year, and they in Judea that were delivered from the Gentiles, had eaten up the residue of the store;)",
+   "next": "At that time Lysias heard say, that Philip, whom Antiochus the king, whiles he lived, had appointed to bring up his son Antiochus, that he might be king,"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 23,
+   "vn": 11,
+   "cite": "Exodus 23:11",
+   "text_db": "But the seventh year you shall let it rest and lie still; that the poor of your people may eat: and what they leave the beasts of the field shall eat. In like manner you shall deal with your vineyard, and with your oliveyard.",
+   "text_canon": "But the seventh year thou shalt let it rest and lie still; that the poor of thy people may eat: and what they leave the beasts of the field shall eat. In like manner thou shalt deal with thy vineyard, and with thy oliveyard."
+  },
+  "old_note": "Exodus 23:11 — *But the seventh year thou shalt let it rest and lie still; that the poor of thy people may eat: and what they leave the beasts of the field shall eat. In like manner thou shalt deal with thy vineyard, and with thy oliveyard.* The Torah's repeated sabbath-of-the-land is the law the few left in the sanctuary honoured though the famine scattered them in 1 Maccabees 6:54.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10594,
+    "slug": "1-maccabees-6-sabbath-of-the-land",
+    "old": "Exodus 23:11 — *But the seventh year thou shalt let it rest and lie still; that the poor of thy people may eat: and what they leave the beasts of the field shall eat. In like manner thou shalt deal with thy vineyard, and with thy oliveyard.* The Torah's repeated sabbath-of-the-land is the law the few left in the sanctuary honoured though the famine scattered them in 1 Maccabees 6:54."
+   }
+  ]
+ },
+ {
+  "id": 44607,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 8,
+   "vn": 18,
+   "cite": "1 Maccabees 8:18",
+   "text": "And to intreat them that they would take the yoke from them; for they saw that the kingdom of the Grecians did oppress Yashar'el (Israel) with servitude.",
+   "prev": "In consideration of these things, Judas chose Eupolemus the son of John, the son of Accos, and Jason the son of Eleazar, and sent them to Rome, to make a league of amity and confederacy with them,",
+   "next": "They went therefore to Rome, which was a very great journey, and came into the senate, where they spoke and said."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 31,
+   "vn": 1,
+   "cite": "Isaiah 31:1",
+   "text_db": "Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar'el (Israel), neither seek Yahuah (LORD)!",
+   "text_canon": "Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar'el (Israel), neither seek Yahuah (LORD)!"
+  },
+  "old_note": "Isaiah 31:1 — *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar'el (Israel), neither seek Yahuah (LORD)!* The plea to Rome to take off the yoke in 1 Maccabees 8:18 is the new going-down-to-Egypt for help.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10602,
+    "slug": "1-maccabees-8-arm-of-flesh",
+    "old": "Isaiah 31:1 — *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar'el (Israel), neither seek Yahuah (LORD)!* The plea to Rome to take off the yoke in 1 Maccabees 8:18 is the new going-down-to-Egypt for help."
+   }
+  ]
+ },
+ {
+  "id": 44698,
+  "kind": "REBUILD",
+  "side": "S",
+  "apoc": {
+   "book": "1-maccabees",
+   "ch": 14,
+   "vn": 12,
+   "cite": "1 Maccabees 14:12",
+   "text": "For every man sat under his vine and his fig tree, and there was none to fray them:",
+   "prev": "He made peace in the land, and Yashar'el (Israel) rejoiced with great joy:",
+   "next": "Neither was there any left in the land to fight against them: yes, the kings themselves were overthrown in those days."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "zechariah",
+   "ch": 3,
+   "vn": 10,
+   "cite": "Zechariah 3:10",
+   "text_db": "In that day, says Yahuah Tseva'ot (LORD of hosts), shall you call every man his neighbour under the vine and under the fig tree.",
+   "text_canon": "In that day, saith Yahuah Tseva'ot (LORD of hosts), shall ye call every man his neighbour under the vine and under the fig tree."
+  },
+  "old_note": "Zechariah 3:10 — *In that day, saith Yahuah Tseva'ot (LORD of hosts), shall ye call every man his neighbour under the vine and under the fig tree.* Zechariah binds the vine-and-fig-tree rest to the day of the BRANCH, the same shalom Simon's rule briefly foreshadows in 1 Maccabees 14:12.",
+  "regrade": {
+   "verdict": "NO_APOC_QUOTE",
+   "quote": null,
+   "labelled": null,
+   "proposed": null,
+   "ratio": null,
+   "live_proposed": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 10626,
+    "slug": "1-maccabees-14-vine-and-fig-tree",
+    "old": "Zechariah 3:10 — *In that day, saith Yahuah Tseva'ot (LORD of hosts), shall ye call every man his neighbour under the vine and under the fig tree.* Zechariah binds the vine-and-fig-tree rest to the day of the BRANCH, the same shalom Simon's rule briefly foreshadows in 1 Maccabees 14:12."
+   }
+  ]
+ },
+ {
+  "id": 4563,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 1,
+   "vn": 19,
+   "cite": "2 Esdras 1:19",
+   "text": "Then had I pity upon your mournings, and gave you manna to eat; so you did eat angels’ bread.",
+   "prev": "Saying, Why have you brought us into this wilderness to kill us? it had been better for us to have served the Egyptians, than to die in this wilderness.",
+   "next": "When you were thirsty, did I not cleave the rock, and waters flowed out to your fill? for the heat I covered you with the leaves of the trees."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 14,
+   "vn": 13,
+   "cite": "Matthew 14:13",
+   "text_db": "When Yahusha (Jesus) heard of it, he departed thence by ship into a desert place apart: and when the people had heard thereof, they followed him on foot out of the cities.",
+   "text_canon": "When Yahusha (Jesus) heard of it, he departed thence by ship into a desert place apart: and when the people had heard thereof, they followed him on foot out of the cities."
+  },
+  "old_note": "*I gave you angels' food to eat in your hunger; and when ye thirsted, I clave the rock, and waters flowed out to your fill.* 2 Esdras (4 Ezra) 1:19 names the wisdom-stream's direct articulation of the Father's-wilderness-feeding-of-the-multitude architecture: angels'-food in the hunger; water-from-the-rock in the thirst. The framework reads the verse against Matt 14:13-14's King-withdrawing-into-the-desert-place and the multitudes-following-on-foot. The wisdom-stream had named the architecture of the Father's-wilderness-feeding through the Mosheh (Moses)-mediated-manna; the King at Matt 14:13-21 enacts the same architecture in person at the Galilee-desert-place. The Father's-wilderness-feeding-of-the-multitude operates across the canon and the wisdom-stream as one architecture; the King recapitulates the substance without mediation in the chapter's feeding-pericope.",
+  "regrade": {
+   "verdict": "NOT_FOUND",
+   "quote": "I gave you angels' food to eat in your hunger; and when ye thirsted, I clave the rock, and waters flowed out to your fill.",
+   "labelled": null,
+   "proposed": null,
+   "ratio": 0,
+   "live_proposed": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 205,
+    "slug": "wilderness-manna-and-bread-as-word-in-wisdom-of-solomon-and-2-esdras-and-sirach",
+    "old": "2 Esdras (4 Ezra) 1:19 — *I gave you angels' food to eat in your hunger; and when ye thirsted, I clave the rock, and waters flowed out to your fill.* The wisdom-stream's direct articulation of the Father's-wilderness-feeding-of-the-multitude architecture the King recapitulates at Matt 14:13-21 without mediation."
+   }
+  ]
+ },
+ {
+  "id": 7994,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 1,
+   "vn": 19,
+   "cite": "2 Esdras 1:19",
+   "text": "Then had I pity upon your mournings, and gave you manna to eat; so you did eat angels’ bread.",
+   "prev": "Saying, Why have you brought us into this wilderness to kill us? it had been better for us to have served the Egyptians, than to die in this wilderness.",
+   "next": "When you were thirsty, did I not cleave the rock, and waters flowed out to your fill? for the heat I covered you with the leaves of the trees."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 6,
+   "vn": 33,
+   "cite": "John 6:33",
+   "text_db": "For the bread of Elohim (God) is he which comes down from heaven, and gives life unto the world.",
+   "text_canon": "For the bread of Elohim (God) is he which cometh down from heaven, and giveth life unto the world."
+  },
+  "old_note": "*Then had I pity upon your mournings, and gave you manna to eat; so you did eat angels' bread.* 2 Esdras 1:19 names the wilderness manna as *angels' bread* given out of the Father's pity on the hungry people — the same heaven-sent provision John 6:33 walks: *the bread of Elohim (God) is he which cometh down from heaven, and giveth life unto the world.* The Hebrew library names the bread the fathers ate as angels' bread; the Formed one names himself as the bread of Elohim (God) come down from heaven, the substance the angels' bread of the wilderness was prefiguring.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Then had I pity upon your mournings, and gave you manna to eat; so you did eat angels' bread.",
+   "labelled": null,
+   "proposed": "2-esdras|1:19",
+   "ratio": 1.0,
+   "live_proposed": "Then had I pity upon your mournings, and gave you manna to eat; so you did eat angels’ bread.",
+   "degraded": true,
+   "hyphen_chain": false,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 664,
+    "slug": "john-6-angels-food-and-the-word-that-nourishes-in-wisdom-of-solomon-and-2-esdras",
+    "old": "2 Esdras 1:19 — *then had I pity upon your mournings, and gave you manna to eat; so you did eat angels' bread.* The wilderness manna named angels' bread given out of the Father's pity; John 6:33's *the bread of Elohim (God) is he which cometh down from heaven, and giveth life unto the world* names the Formed one as the substance the angels' bread prefigured."
+   }
+  ]
+ },
+ {
+  "id": 4803,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 1,
+   "vn": 30,
+   "cite": "2 Esdras 1:30",
+   "text": "I gathered you together, as a hen gathers her chickens under her wings: but now, what shall I do to you? I will cast you out from my face.",
+   "prev": "That you would be my people, and I should be your Elohim (God); that you would be my children, and I should be your father?",
+   "next": "When you offer to me, I will turn my face from you: for your solemn feastdays, your new moons, and your circumcisions, have I forsaken."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 37,
+   "cite": "Matthew 23:37",
+   "text_db": "O Jerusalem, Jerusalem, you that killest the prophets, and stonest them which are sent unto you, how often would I have gathered your children together, even as a hen gathers her chickens under her wings, and you would not!",
+   "text_canon": "O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!"
+  },
+  "old_note": "*I gathered you together, as a hen gathers her chickens under her wings: but now, what shall I do to you? I will cast you out from my face.* 2 Esdras (4 Ezra) 1:30 names THE direct wisdom-stream verbal-anchor for the *I gathered you together, as a hen gathers her chickens under her wings* substance the King-of-Yashar'el (Israel) walks at Matt 23:37 (*how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!*). The framework reads the verse as FRAMEWORK-MAJOR — the wisdom-stream had named the Father's-mother-bird-gathering-the-children-of-Yerushalayim (Jerusalem)-substance in the same hen-gathers-her-chickens-under-her-wings figure-of-speech the King walks-from at the lament. The substance the King-speaks-with-the-Father's-own-voice at the lament is the same substance 2 Esdras (4 Ezra) 1:30 names at the wisdom-stream-register. The framework reads the verse in continuity with the Tanakh-substance the prophet-Mosheh (Moses) walked at Devarim (Deuteronomy) 32:11-12 (*as an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings*), the Tehillim (Psalms) across 17:8, 36:7, 57:1, 61:4, 63:7, and 91:4 (*hide me under the shadow of thy wings* and parallels), Ruth 2:12 (*under whose wings thou art come to trust*), and the prophet-Yeshayahu (Isaiah) at Isaiah 31:5 (*as birds flying, so will Yahuah Tseva'ot (LORD of hosts) defend Yerushalayim (Jerusalem)*). The wisdom-stream and the Tanakh and the gospel all walk the same Father-as-mother-bird-gathering-the-children architecture. (FRAMEWORK-MAJOR for the ingathering-substance per Red Line #11)",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "I gathered you together, as a hen gathers her chickens under her wings: but now, what shall I do to you? I will cast you out from my face.",
+   "labelled": null,
+   "proposed": "2-esdras|1:30",
+   "ratio": 1.0,
+   "live_proposed": "I gathered you together, as a hen gathers her chickens under her wings: but now, what shall I do to you? I will cast you out from my face.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 400,
+    "slug": "the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras",
+    "old": "2 Esdras (4 Ezra) 1:30 — *I gathered you together, as a hen gathers her chickens under her wings: but now, what shall I do to you?* THE direct wisdom-stream verbal-anchor for the *I gathered you together, as a hen gathers her chickens under her wings* substance — the SAME hen-gathers-her-chickens-under-her-wings figure-of-speech the King-of-Yashar'el (Israel) speaks-with-the-Father's-own-voice at Matt 23:37. FRAMEWORK-MAJOR for the ingathering-substance per Red Line #11 — the lament-substance walks the gathering-substance EVEN-at-the-moment-of-the-substantial-judgment of the leadership-substance the seven-woes have-walked-out."
+   }
+  ]
+ },
+ {
+  "id": 4759,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 1,
+   "vn": 32,
+   "cite": "2 Esdras 1:32",
+   "text": "I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).",
+   "prev": "When you offer to me, I will turn my face from you: for your solemn feastdays, your new moons, and your circumcisions, have I forsaken.",
+   "next": "Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 35,
+   "cite": "Matthew 21:35",
+   "text_db": "And the husbandmen took his servants, and beat one, and killed another, and stoned another.",
+   "text_canon": "And the husbandmen took his servants, and beat one, and killed another, and stoned another."
+  },
+  "old_note": "*I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).* 2 Esdras 1:32 names THE direct wisdom-stream verbal-anchor for the servants-the-prophets-taken-and-slain substance the parable-of-the-wicked-husbandmen walks-out at vv.34-36. The framework reads the verse against Matt 21:35's *and the husbandmen took his servants, and beat one, and killed another, and stoned another.* The wisdom-stream-substance the 2 Esdras 1:32 passage walks names the same architectural-substance the parable-substance walks-out — the substance of *my servants the prophets* the Father-substance sends + the substance of the leadership-substance taking-and-slaying-and-tearing-the-bodies-in-pieces. The Tanakh-pattern of prophet-killing the King-walks-out at the parable is named at the wisdom-stream-substance at 2 Esdras 1:32 directly. The Father's-substance-of-requiring-the-blood-of-the-prophets is the substance the apostolic-Matt-23:35 substance will-walk-out at the substance-of *the blood of all the prophets, which was shed from the foundation of the world, may be required of this generation.* The wisdom-stream and the gospel cohere at the substance-of-the-leadership's-substance walking-the-substance-of-the-prophet-killing-pattern.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).",
+   "labelled": null,
+   "proposed": "2-esdras|1:32",
+   "ratio": 1.0,
+   "live_proposed": "I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 390,
+    "slug": "wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning",
+    "old": "2 Esdras 1:32 — *I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).* THE direct verbal-anchor for the servants-the-prophets-taken-and-slain substance the parable walks-out at Matt 21:35 — the same architectural-substance the King will name at Matt 23:35's *the blood of all the prophets, which was shed from the foundation of the world, may be required of this generation*; the Tanakh-pattern of prophet-killing the wisdom-stream-substance carries-forward directly."
+   }
+  ]
+ },
+ {
+  "id": 4804,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 1,
+   "vn": 32,
+   "cite": "2 Esdras 1:32",
+   "text": "I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).",
+   "prev": "When you offer to me, I will turn my face from you: for your solemn feastdays, your new moons, and your circumcisions, have I forsaken.",
+   "next": "Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 34,
+   "cite": "Matthew 23:34",
+   "text_db": "Wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them you shall kill and crucify; and some of them shall you scourge in your synagogues, and persecute them from city to city:",
+   "text_canon": "Wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them ye shall kill and crucify; and some of them shall ye scourge in your synagogues, and persecute them from city to city:"
+  },
+  "old_note": "*I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).* 2 Esdras (4 Ezra) 1:32 names THE direct wisdom-stream verbal-anchor for the *I-sent-prophets-whom-you-have-taken-and-slain* substance — the same substance the King-of-Yashar'el (Israel) walks at Matt 23:34 (*wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them ye shall kill and crucify*) and the prophet-killing-pattern at vv.35-36 (*all the righteous blood shed upon the earth, from the blood of righteous Hevel (Abel) unto the blood of Zecharyah (Zechariah)*). The framework reads the verse as the wisdom-stream's direct articulation of the prophet-killing-pattern the Tanakh-substance walks-from — the prophet-Yirmeyahu (Jeremiah) at Jeremiah 7:25-26 and 25:4 and 35:15 (*all my servants the prophets, daily rising up early and sending them*), the prophet-Nechemyah (Nehemiah) at Nehemiah 9:26 (*they slew thy prophets which testified against them*), and the prophet-Yeshayahu (Isaiah) at Isaiah 65:2 (*I have spread out my hands all the day unto a rebellious people*). The wisdom-stream and the Tanakh-prophets and the gospel-pivot all walk the same prophet-killing-pattern architecture; the apostolic-substance carries-the-same-substance-forward at Acts 7:51-53 (the apostle-Stephen at the stoning by the leadership-substance) and 2 Corinthians 11:24-25 (the apostle-Sha'ul (Paul)'s scourgings-in-the-synagogues). The substance the King walks at v.34 is the same substance 2 Esdras (4 Ezra) 1:32 names directly.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).",
+   "labelled": null,
+   "proposed": "2-esdras|1:32",
+   "ratio": 1.0,
+   "live_proposed": "I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 400,
+    "slug": "the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras",
+    "old": "2 Esdras (4 Ezra) 1:32 — *I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).* THE direct wisdom-stream verbal-anchor for the *I sent prophets whom you have taken and slain* substance the King walks at Matt 23:34 and the prophet-killing-pattern at vv.35-36 (*all the righteous blood shed upon the earth, from the blood of righteous Hevel (Abel) unto the blood of Zecharyah (Zechariah)*)."
+   }
+  ]
+ },
+ {
+  "id": 4760,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 1,
+   "vn": 33,
+   "cite": "2 Esdras 1:33",
+   "text": "Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.",
+   "prev": "I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).",
+   "next": "And your children shall not be fruitful; for they have despised my commandment, and done the thing that is an evil before me."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 39,
+   "cite": "Matthew 21:39",
+   "text_db": "And they caught him, and cast him out of the vineyard, and slew him.",
+   "text_canon": "And they caught him, and cast him out of the vineyard, and slew him."
+  },
+  "old_note": "*Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.* 2 Esdras 1:33 names the wisdom-stream's direct verbal-anchor for the house-desolate substance the consequence-of-the-killing-of-the-Son walks-into at the parable. The framework reads the verse against Matt 21:39's *and they caught him, and cast him out of the vineyard, and slew him* + Matt 21:41's *he will miserably destroy those wicked men* + the Olivet-discourse-substance at Matthew 24:1-2 (*there shall not be left here one stone upon another, that shall not be thrown down*). The wisdom-stream-substance the 2 Esdras 1:33 passage walks names the substance the substance-of-the-leadership-substance's-walking-against the Father-substance carries-the-consequence-of — *your house is desolate.* The substance is-substantial — the killing-of-the-son-substance the wicked-husbandmen walk-into at v.39 walks-into the substance the wisdom-stream had-named the architecture-of at *your house is desolate.* The Tanakh-pattern of *I never knew you: depart from me, ye that work iniquity* at Matt 7:23 + the *behold, your house is left unto you desolate* at Matt 23:38 cohere with the wisdom-stream-substance at the substance the leadership-substance's-walking-against the Father carries the consequence of.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.",
+   "labelled": null,
+   "proposed": "2-esdras|1:33",
+   "ratio": 1.0,
+   "live_proposed": "Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 390,
+    "slug": "wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning",
+    "old": "2 Esdras 1:33 — *thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.* THE direct verbal-anchor for the house-desolate substance the consequence-of-the-killing-of-the-Son at Matt 21:39 walks-into — the Olivet-discourse-substance at Matt 24:1-2 will-walk-out at the historical-pivot; the *behold, your house is left unto you desolate* at Matt 23:38 carries the same substance the wisdom-stream had-named."
+   }
+  ]
+ },
+ {
+  "id": 4805,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 1,
+   "vn": 33,
+   "cite": "2 Esdras 1:33",
+   "text": "Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.",
+   "prev": "I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands, says Yahuah (God).",
+   "next": "And your children shall not be fruitful; for they have despised my commandment, and done the thing that is an evil before me."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 38,
+   "cite": "Matthew 23:38",
+   "text_db": "Behold, your house is left unto you desolate.",
+   "text_canon": "Behold, your house is left unto you desolate."
+  },
+  "old_note": "*Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.* 2 Esdras (4 Ezra) 1:33 names THE direct wisdom-stream verbal-anchor for the *Your house is desolate* substance — the same substance the King-of-Yashar'el (Israel) walks at Matt 23:38 (*behold, your house is left unto you desolate*). The framework reads the verse as the wisdom-stream's direct articulation of the house-left-desolate substance the Tanakh-substance walks-from — the prophet-Yirmeyahu (Jeremiah) at Jeremiah 12:7 (*I have forsaken mine house, I have left mine heritage*) and Jeremiah 22:5 (*this house shall become a desolation*) and the departure-of-the-Shekinah-substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 10:18-19 and 11:22-23. The Father's-Shekinah departed-the-First-Temple before the Babylonian-destruction; the Second-Temple the King-of-Yashar'el (Israel) walks-out-of at the close of Matt 23 is the Temple the Father's-Shekinah did-not-fully-return-to in the post-exilic-substance (the prophet-Chaggai (Haggai) names the comparatively-empty substance at Haggai 2:3); and the King's-departure-from-the-Temple at the close of this chapter is the substantial-substance the *house-left-desolate* names. The wisdom-stream and the Tanakh-prophets and the gospel-pivot all walk the same house-left-desolate architecture. (FRAMEWORK-MAJOR — the lament-substance walks the gathering-substance EVEN-at-the-moment-of-the-substantial-judgment of the leadership-substance the seven-woes have-walked-out; the substantial-judgment of the false-shepherds is the substance that-clears-the-way for the True-Shepherd's-gathering per the prophet-Yechezk'el (Ezekiel) at Ezekiel 34:1-31; the substance walks-toward the surviving-third-substance the prophet-Zekharyah (Zechariah) walks at Zechariah 13:8-9 and the look-upon-me-whom-they-have-pierced substance at Zechariah 12:10.)",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.",
+   "labelled": null,
+   "proposed": "2-esdras|1:33",
+   "ratio": 1.0,
+   "live_proposed": "Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 400,
+    "slug": "the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras",
+    "old": "2 Esdras (4 Ezra) 1:33 — *Thus says the Almighty Yahuah (God), Your house is desolate, I will cast you out as the wind does stubble.* THE direct wisdom-stream verbal-anchor for the *Your house is desolate* substance the King names at Matt 23:38. The wisdom-stream had-named the house-left-desolate substance in continuity with Yirmeyahu (Jeremiah) 12:7 + 22:5 and the departure-of-the-Shekinah at Yechezk'el (Ezekiel) 10:18-19 + 11:22-23. FRAMEWORK-MAJOR — the substantial-judgment of the false-shepherds is the substance that-clears-the-way for the True-Shepherd's-gathering per Yechezk'el (Ezekiel) 34:1-31 walking-toward the surviving-third-substance of Zekharyah (Zechariah) 13:8-9."
+   }
+  ]
+ },
+ {
+  "id": 7925,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 2,
+   "vn": 31,
+   "cite": "2 Esdras 2:31",
+   "text": "Remember your children that sleep, for I shall bring them out of the sides of the earth, and shew mercy to them: for I am merciful, says Yahuah (God) Almighty.",
+   "prev": "Be joyful, O you mother, with your children; for I will deliver you, says Yahuah (God).",
+   "next": "Embrace your children until I come and shew mercy to them: for my wells run over, and my grace shall not fail."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "luke",
+   "ch": 15,
+   "vn": 24,
+   "cite": "Luke 15:24",
+   "text_db": "For this my son was dead, and is alive again; he was lost, and is found. And they began to be merry.",
+   "text_canon": "For this my son was dead, and is alive again; he was lost, and is found. And they began to be merry."
+  },
+  "old_note": "*Remember your children that sleep, for I shall bring them out of the sides of the earth, and shew mercy to them: for I am merciful, says Yahuah (God) Almighty.* 2 Esdras 2:31 names the bring-out-the-children-and-show-mercy promise — the Father bringing his scattered children home with mercy. Luke 15:24's *for this my son was dead, and is alive again; he was lost, and is found* walks the same architecture: the son brought out of the far country, the dead made alive, the lost found, the mercy shown. The prodigal's homecoming is the Father's own *I will bring them out... and shew mercy to them* in parable-form — the scattered child of Yashar'el (Israel) gathered home.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Remember your children that sleep, for I shall bring them out of the sides of the earth, and shew mercy to them: for I am merciful, says Yahuah (God) Almighty.",
+   "labelled": null,
+   "proposed": "2-esdras|2:31",
+   "ratio": 1.0,
+   "live_proposed": "Remember your children that sleep, for I shall bring them out of the sides of the earth, and shew mercy to them: for I am merciful, says Yahuah (God) Almighty.",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 646,
+    "slug": "luke-15-the-shepherd-bringing-again-his-flock-and-the-gathering-of-the-lost-in-sirach-and-2-esdras",
+    "old": "2 Esdras 2:31 — *remember your children that sleep, for I shall bring them out of the sides of the earth, and shew mercy to them: for I am merciful, says Yahuah (God) Almighty.* The bring-out-the-children-and-show-mercy promise; Luke 15:24's *this my son was dead, and is alive again; he was lost, and is found* walks the same — the scattered child gathered home with mercy."
+   }
+  ]
+ },
+ {
+  "id": 4763,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 2,
+   "vn": 38,
+   "cite": "2 Esdras 2:38",
+   "text": "Arise up and stand, behold the number of those that be sealed in the feast of Yahuah (God);",
+   "prev": "O receive the gift that is given you, and be glad, giving thanks to him that has led you to the heavenly kingdom.",
+   "next": "Which are departed from the shadow of the world, and have received glorious garments of Yahuah (God)."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 22,
+   "vn": 9,
+   "cite": "Matthew 22:9",
+   "text_db": "Go you therefore into the highways, and as many as you shall find, bid to the marriage.",
+   "text_canon": "Go ye therefore into the highways, and as many as ye shall find, bid to the marriage."
+  },
+  "old_note": "*Arise up and stand, behold the number of those that be sealed in the feast of Yahuah (God).* 2 Esdras 2:38 names the direct wisdom-stream verbal-anchor for the gathered-to-the-feast substance — the *number of those that be sealed in the feast of Yahuah (God)*. The framework reads the verse against Matt 22:9's *go ye therefore into the highways, and as many as ye shall find, bid to the marriage.* The highways-and-hedges-gathering the king-substance sends-the-servants-into is the wisdom-stream's sealed-in-the-feast-of-Yahuah substance — the gathering of the scattered-seed of the twelve-tribes per Red Line #11's ingathering architecture the prophet Hoshea (Hosea) at Hosea 1:9-10, the prophet Yeshayahu (Isaiah) at Isaiah 11:11-12, the prophet Yechezk'el (Ezekiel) at Ezekiel 37:21, and the prophet Zecharyah (Zechariah) at Zechariah 10:8-10 had named. The substance is NOT the categorically-unrelated-nations-grafted-into-the-tree-by-faith-confession substance the inherited-Christian-replacement-theology had collapsed-the-substance-into; the substance is the wisdom-stream's direct articulation of the sealed-citizens-of-the-kingdom gathered-to-the-Father's-feast.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Arise up and stand, behold the number of those that be sealed in the feast of Yahuah (God).",
+   "labelled": null,
+   "proposed": "2-esdras|2:38",
+   "ratio": 1.0,
+   "live_proposed": "Arise up and stand, behold the number of those that be sealed in the feast of Yahuah (God);",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 391,
+    "slug": "the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon",
+    "old": "2 Esdras 2:38 — *arise up and stand, behold the number of those that be sealed in the feast of Yahuah (God).* THE direct wisdom-stream verbal-anchor for the gathered-to-the-feast-of-Yahuah substance the king-substance's-servants walking-into-the-highways-and-hedges at Matt 22:9 brings-into-effect — the sealed-citizens of the kingdom gathered-from-the-scattering per Red Line #11."
+   }
+  ]
+ },
+ {
+  "id": 4764,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 2,
+   "vn": 42,
+   "cite": "2 Esdras 2:42",
+   "text": "I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah (God) with songs.",
+   "prev": "The number of your children, whom you longedst for, is fulfilled: beseech the power of Yahuah (God), that your people, which have been called from the beginning, may be hallowed.",
+   "next": "And in the midst of them there was a young man of a high stature, taller than all the rest, and upon every one of their heads he set crowns, and was more exalted; which I marvelled at greatly."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 22,
+   "vn": 10,
+   "cite": "Matthew 22:10",
+   "text_db": "So those servants went out into the highways, and gathered together all as many as they found, both bad and good: and the wedding was furnished with guests.",
+   "text_canon": "So those servants went out into the highways, and gathered together all as many as they found, both bad and good: and the wedding was furnished with guests."
+  },
+  "old_note": "*I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah (God) with songs.* 2 Esdras 2:42 names the wisdom-stream's vision of the great-people-upon-the-mount-Tsion (Sion) substance — the gathered-multitude at the Father's-feast. The framework reads the verse against Matt 22:10's *and the wedding was furnished with guests.* The wedding-feast filled-with-guests at the king's-table is the wisdom-stream's great-people-upon-the-mount-Tsion-substance — the gathered-citizens of the kingdom the framework reads through the apostle Yochanan (John) at Revelation 7:9-17's *a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues* (the gathered-from-the-scattering substance per Red Line #11, NOT the gathered-from-categorically-unrelated-peoples substance). The wisdom-stream and the apostolic-vision cohere at the gathered-multitude-on-Sion architecture the King's wedding-feast-parable walks-out.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah (God) with songs.",
+   "labelled": null,
+   "proposed": "2-esdras|2:42",
+   "ratio": 1.0,
+   "live_proposed": "I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah (God) with songs.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 391,
+    "slug": "the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon",
+    "old": "2 Esdras 2:42 — *I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah (God) with songs.* The wisdom-stream vision of the great-people-upon-Mount-Tsion — the gathered-multitude at the Father's-feast the wedding-furnished-with-guests at Matt 22:10 walks-out; the framework reads in continuity with Revelation 7:9-17's great-multitude-from-all-nations-and-kindreds-and-tongues (the gathered-from-the-scattering substance, NOT the gathered-from-categorically-unrelated-peoples substance)."
+   }
+  ]
+ },
+ {
+  "id": 4765,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 2,
+   "vn": 43,
+   "cite": "2 Esdras 2:43",
+   "text": "And in the midst of them there was a young man of a high stature, taller than all the rest, and upon every one of their heads he set crowns, and was more exalted; which I marvelled at greatly.",
+   "prev": "I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah (God) with songs.",
+   "next": "So I asked the angel, and said, Sir, what are these?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 22,
+   "vn": 11,
+   "cite": "Matthew 22:11",
+   "text_db": "And when the king came in to see the guests, he saw there a man which had not on a wedding garment:",
+   "text_canon": "And when the king came in to see the guests, he saw there a man which had not on a wedding garment:"
+  },
+  "old_note": "*And in the midst of them there was a young man of a high stature, taller than all the rest, and upon every one of their heads he set crowns, and was more exalted.* 2 Esdras 2:43 names the wisdom-stream's direct vision of the young-man-of-high-stature setting-crowns-upon-the-gathered substance — the Messianic-figure crowning the citizens at the Father's-feast. The framework reads the verse against Matt 22:11's *when the king came in to see the guests, he saw there a man which had not on a wedding garment.* The king-substance walking-among-the-guests at the wedding-feast is the wisdom-stream's young-man-of-high-stature among-the-gathered. 2 Esdras 2:43 articulates the substance the gospel-wedding-feast walks at the historical-pivot — the Messianic-king walks-among the gathered-citizens and the substance-walked-with reveals the substance-walked-without (the man-without-the-garment receives no crown; the citizens-walking-in-the-righteousness-of-saints per Revelation 19:8 receive crowns).",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And in the midst of them there was a young man of a high stature, taller than all the rest, and upon every one of their heads he set crowns, and was more exalted.",
+   "labelled": null,
+   "proposed": "2-esdras|2:43",
+   "ratio": 1.0,
+   "live_proposed": "And in the midst of them there was a young man of a high stature, taller than all the rest, and upon every one of their heads he set crowns, and was more exalted; which I marvelled at greatly.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 391,
+    "slug": "the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon",
+    "old": "2 Esdras 2:43 — *in the midst of them there was a young man of a high stature, taller than all the rest, and upon every one of their heads he set crowns, and was more exalted.* The wisdom-stream vision of the Messianic-figure walking-among-the-gathered setting-crowns — the king-substance walking-among-the-guests at Matt 22:11 walks-out at the historical-pivot; the substance-walked-with reveals the substance-walked-without (the man-without-the-garment receives no crown)."
+   }
+  ]
+ },
+ {
+  "id": 4533,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 3,
+   "vn": 21,
+   "cite": "2 Esdras 3:21",
+   "text": "For the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him.",
+   "prev": "And yet tookest you not away from them a wicked heart, that your law might bring forth fruit in them.",
+   "next": "Thus infirmity was made permanent; and the law (also) in the heart of the people with the malignity of the root; so that the good departed away, and the evil abode still."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 13,
+   "vn": 25,
+   "cite": "Matthew 13:25",
+   "text_db": "But while men slept, his enemy came and sowed tares among the wheat, and went his way.",
+   "text_canon": "But while men slept, his enemy came and sowed tares among the wheat, and went his way."
+  },
+  "old_note": "*For the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him. Thus infirmity was made permanent; and the law also in the heart of the people with the malignity of the root; so that the good departed away, and the evil abode still.* 2 Esdras (4 Ezra) 3:21-22 names the wisdom-stream's direct articulation of the wicked-heart-inherited-from-Adam architecture: the first-Adam bore the wicked-heart; all-who-are-born-of-him inherit the operative-pattern. The framework reads the verse against Matt 13:25's *while men slept, his enemy came and sowed tares.* The wisdom-stream had named the inherited-wicked-heart as the architecture-the-tares-grow-in; the King's parable names the operative-form of the enemy-sowing-while-the-watchful-guard-fails. The framework reads the architecture WITHOUT collapsing into the Augustinian-original-sin doctrine in its Christian-developed form: the framework preserves the actor's-disposition (the watchful-guard-fails; *while men slept*) without erasing the actor's-responsibility; the wisdom-stream knew the inherited-heart-architecture without the Christian-doctrinal-overlay.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "For the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him. Thus infirmity was made permanent; and the law also in the heart of the people with the malignity of the root; so that the good departed away, and the evil abode still.",
+   "labelled": null,
+   "proposed": "2-esdras|3:21",
+   "ratio": 0.96,
+   "live_proposed": "For the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 196,
+    "slug": "seed-of-good-and-evil-sown-in-the-heart-of-adam-in-2-esdras",
+    "old": "2 Esdras (4 Ezra) 3:21 — *the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him.* The wisdom-stream's direct articulation of the wicked-heart-inherited-from-Adam architecture; preserves the actor's-responsibility (while men slept) without erasing it; the framework reads WITHOUT the Augustinian-original-sin-doctrinal-overlay."
+   }
+  ]
+ },
+ {
+  "id": 4532,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 4,
+   "vn": 30,
+   "cite": "2 Esdras 4:30",
+   "text": "For the grain of evil seed has been sown in the heart of Adam from the beginning, and how much ungodliness has it brought up to this time? and how much shall it yet bring forth until the time of threshing come?",
+   "prev": "If therefore that which is sown be not turned upside down, and if the place where the evil is sown pass not away, then cannot it come that is sown with good.",
+   "next": "Ponder now by thyself, how great fruit of wickedness the grain of evil seed has brought forth."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 13,
+   "vn": 24,
+   "cite": "Matthew 13:24",
+   "text_db": "Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field:",
+   "text_canon": "Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field:"
+  },
+  "old_note": "*For the grain of evil seed hath been sown in the heart of Adam from the beginning, and how much ungodliness hath it brought up unto this time? and how much shall it yet bring forth until the time of threshing shall come?* 2 Esdras (4 Ezra) 4:30 names THE direct wisdom-stream parallel to the wheat-and-tares architecture at the heart-of-Adam register: the grain-of-evil-seed has been-sown-in-the-heart-of-Adam-from-the-beginning, AND the ungodliness it has produced continues-to-grow-until-the-time-of-threshing. The framework reads the verse against Matt 13:24-30's *the kingdom of heaven is likened unto a man which sowed good seed in his field: But while men slept, his enemy came and sowed tares among the wheat.* The wisdom-stream had named the architecture-of-evil-seed-sown-from-the-beginning AND the time-of-threshing-when-the-sorting-occurs; the King at Matt 13:24-30 names the operative-parable-form. The framework reads the architecture in continuity: the watchers' incursion at Bereshit (Genesis) 6:1-4 + the dragon's corruption-of-the-line at Bereshit 3 + the seed-of-evil-sown-from-the-beginning at 4 Ezra 4:30 + the King's tares-sown-by-the-enemy at Matt 13:24-30 = one architecture across the canon and the wisdom-stream.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quote": "For the grain of evil seed hath been sown in the heart of Adam from the beginning, and how much ungodliness hath it brought up unto this time? and how much shall it yet bring forth until the time of threshing shall come?",
+   "labelled": null,
+   "proposed": "2-esdras|4:30",
+   "ratio": 0.89,
+   "live_proposed": "For the grain of evil seed has been sown in the heart of Adam from the beginning, and how much ungodliness has it brought up to this time? and how much shall it yet bring forth until the time of threshing come?",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 196,
+    "slug": "seed-of-good-and-evil-sown-in-the-heart-of-adam-in-2-esdras",
+    "old": "2 Esdras (4 Ezra) 4:30 — *the grain of evil seed hath been sown in the heart of Adam from the beginning ... until the time of threshing shall come.* THE direct wisdom-stream parallel to the wheat-and-tares architecture at the heart-of-Adam register; the time-of-threshing is the same harvest the King's parable names."
+   }
+  ]
+ },
+ {
+  "id": 7837,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 4,
+   "vn": 30,
+   "cite": "2 Esdras 4:30",
+   "text": "For the grain of evil seed has been sown in the heart of Adam from the beginning, and how much ungodliness has it brought up to this time? and how much shall it yet bring forth until the time of threshing come?",
+   "prev": "If therefore that which is sown be not turned upside down, and if the place where the evil is sown pass not away, then cannot it come that is sown with good.",
+   "next": "Ponder now by thyself, how great fruit of wickedness the grain of evil seed has brought forth."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "mark",
+   "ch": 4,
+   "vn": 15,
+   "cite": "Mark 4:15",
+   "text_db": "And these are they by the way side, where the word is sown; but when they have heard, Satan comes immediately, and takes away the word that was sown in their hearts.",
+   "text_canon": "And these are they by the way side, where the word is sown; but when they have heard, Satan cometh immediately, and taketh away the word that was sown in their hearts."
+  },
+  "old_note": "*For the grain of evil seed has been sown in the heart of Adam from the beginning, and how much ungodliness has it brought up to this time? and how much shall it yet bring forth until the time of threshing come?* 2 Esdras 4:30-31 names the evil-seed-sown-in-the-heart-of-Adam architecture. The sower's seed by the way-side that *Satan cometh immediately, and taketh away* (Mark 4:15) and the soils that bring forth no fruit are the same diagnostic: the evil seed contests the good seed in the heart until the time of threshing. The Hebrew library names the two-seeds-in-the-heart the parable enacts in the four-soils.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "For the grain of evil seed has been sown in the heart of Adam from the beginning, and how much ungodliness has it brought up to this time? and how much shall it yet bring forth until the time of threshing come?",
+   "labelled": null,
+   "proposed": "2-esdras|4:30",
+   "ratio": 1.0,
+   "live_proposed": "For the grain of evil seed has been sown in the heart of Adam from the beginning, and how much ungodliness has it brought up to this time? and how much shall it yet bring forth until the time of threshing come?",
+   "degraded": false,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 620,
+    "slug": "mark-4-the-seed-sown-and-the-evil-seed-in-the-heart-of-adam-in-2-esdras",
+    "old": "2 Esdras 4:30-31 — *the grain of evil seed has been sown in the heart of Adam from the beginning... until the time of threshing come.* The way-side seed Satan takes away (Mark 4:15) and the barren soils enact the two-seeds-in-the-heart 2 Esdras names."
+   }
+  ]
+ },
+ {
+  "id": 4458,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 4,
+   "vn": 33,
+   "cite": "2 Esdras 4:33",
+   "text": "Then I answered and said, How, and when shall these things come to pass? wherefore are our years few and evil?",
+   "prev": "And when the ears shall be cut down, which are without number, how great a floor shall they fill?",
+   "next": "And he answered me, saying, Do not you hasten above the most Highest: for your haste is in vain to be above him, for you have much exceeded."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 3,
+   "cite": "Matthew 11:3",
+   "text_db": "And said unto him, Are you he that should come, or do we look for another?",
+   "text_canon": "And said unto him, Art thou he that should come, or do we look for another?"
+  },
+  "old_note": "*Then I answered and said, How, and when shall these things come to pass? wherefore are our years few and evil?* 2 Esdras (4 Ezra) 4:33 names the wisdom-stream's direct architecture of the prophet's-question-from-distress about the timing-of-the-end. Matt 11:3's *art thou he that should come, or do we look for another?* walks the same architecture at the prison-of-the-forerunner level. Yochanan (John) had preached the prophetic-compression of the kingdom-at-hand AND the dreadful-day-of-Yahuah (the LORD) as one motion (Matt 3:7-12's axe-at-the-root / unquenchable-fire); the motion has not landed the way he proclaimed it; the question is the gap becoming visible. The wisdom-stream had named the prophet's-question-about-timing pattern; Yochanan (John) at Matt 11:3 walks the same legitimate-clarification-seek under the inaugurated-but-not-yet tension.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Then I answered and said, How, and when shall these things come to pass? wherefore are our years few and evil?",
+   "labelled": null,
+   "proposed": "2-esdras|4:33",
+   "ratio": 1.0,
+   "live_proposed": "Then I answered and said, How, and when shall these things come to pass? wherefore are our years few and evil?",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 117,
+    "slug": "prophets-question-in-the-inaugurated-tension-in-4-ezra-4",
+    "old": "2 Esdras (4 Ezra) 4:33 — *how, and when shall these things come to pass? wherefore are our years few and evil?* The wisdom-stream's prophet-timing-question architecture; Yochanan (John) at Matt 11:3 walks the same legitimate-clarification-seek under the inaugurated-but-not-yet tension."
+   }
+  ]
+ },
+ {
+  "id": 4459,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 4,
+   "vn": 34,
+   "cite": "2 Esdras 4:34",
+   "text": "And he answered me, saying, Do not you hasten above the most Highest: for your haste is in vain to be above him, for you have much exceeded.",
+   "prev": "Then I answered and said, How, and when shall these things come to pass? wherefore are our years few and evil?",
+   "next": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 6,
+   "cite": "Matthew 11:6",
+   "text_db": "And blessed is he, whosoever shall not be offended in me.",
+   "text_canon": "And blessed is he, whosoever shall not be offended in me."
+  },
+  "old_note": "*And he answered me, saying, Do not you hasten above the most Highest: for your haste is in vain to be above him, for you have much exceeded.* 2 Esdras (4 Ezra) 4:34 names the wisdom-stream's direct angelic-answer to the prophet's timing-question: do not hasten above the Most High; the timing is his. Matt 11:6's *blessed is he, whosoever shall not be offended in me* names the same disposition at the kingdom-citizens level — the blessing on the one who holds the credential, trusts the timeline, and does not fall away in the gap between the inaugurated-and-not-yet-consummated. The wisdom-stream had named the disposition the angel commended; the King at Matt 11:6 names it at the apostolic-mission level.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And he answered me, saying, Do not you hasten above the most Highest: for your haste is in vain to be above him, for you have much exceeded.",
+   "labelled": null,
+   "proposed": "2-esdras|4:34",
+   "ratio": 1.0,
+   "live_proposed": "And he answered me, saying, Do not you hasten above the most Highest: for your haste is in vain to be above him, for you have much exceeded.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 117,
+    "slug": "prophets-question-in-the-inaugurated-tension-in-4-ezra-4",
+    "old": "2 Esdras (4 Ezra) 4:34 — *do not you hasten above the most Highest.* The angel commends the trust-the-timeline disposition; Matt 11:6 names the blessing on the one who endures the gap without falling away."
+   }
+  ]
+ },
+ {
+  "id": 4429,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 4,
+   "vn": 35,
+   "cite": "2 Esdras 4:35",
+   "text": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "prev": "And he answered me, saying, Do not you hasten above the most Highest: for your haste is in vain to be above him, for you have much exceeded.",
+   "next": "And to these things Uriel the archangel gave them answer, and said, Even when the number of seeds is filled in you: for he has weighed the world in the balance."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 9,
+   "vn": 37,
+   "cite": "Matthew 9:37",
+   "text_db": "Then says he unto his disciples, The harvest truly is plenteous, but the labourers are few;",
+   "text_canon": "Then saith he unto his disciples, The harvest truly is plenteous, but the labourers are few;"
+  },
+  "old_note": "*Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?* 2 Esdras (4 Ezra) 4:35 names the wisdom-stream's apocalyptic-fruit-of-the-floor (= harvest) question explicitly — the souls of the righteous in their chambers ask how long until the harvest comes. Matt 9:37's *the harvest truly is plenteous* names the answer in present-tense at the King's arrival: the harvest the souls had asked about is now plenteous; the wisdom-stream's anticipation is met in the King's seeing of the multitudes.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "labelled": null,
+   "proposed": "2-esdras|4:35",
+   "ratio": 1.0,
+   "live_proposed": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 104,
+    "slug": "harvest-when-the-number-is-fulfilled-in-4-ezra",
+    "old": "2 Esdras (4 Ezra) 4:35 — *the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?* The wisdom-stream's how-long-until-the-harvest question; Matt 9:37 names the answer in present-tense."
+   }
+  ]
+ },
+ {
+  "id": 4460,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 4,
+   "vn": 35,
+   "cite": "2 Esdras 4:35",
+   "text": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "prev": "And he answered me, saying, Do not you hasten above the most Highest: for your haste is in vain to be above him, for you have much exceeded.",
+   "next": "And to these things Uriel the archangel gave them answer, and said, Even when the number of seeds is filled in you: for he has weighed the world in the balance."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 11,
+   "vn": 6,
+   "cite": "Matthew 11:6",
+   "text_db": "And blessed is he, whosoever shall not be offended in me.",
+   "text_canon": "And blessed is he, whosoever shall not be offended in me."
+  },
+  "old_note": "*Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?* 2 Esdras (4 Ezra) 4:35 names the wisdom-stream's direct architecture of the souls-of-the-righteous-in-their-chambers-asking-how-long. The framework reads the verse against Revelation 6:9-11's *souls under the altar* crying *how long, O Yahuah (Lord)?* — the same pattern at the New Testament restatement. Matt 11:6's blessing on the one who is not offended walks the same architecture: the disposition that endures the timing-gap without falling away is the disposition the wisdom-stream had named, the disposition Revelation 6 names again, and the disposition the King commends at Matt 11:6.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "labelled": null,
+   "proposed": "2-esdras|4:35",
+   "ratio": 1.0,
+   "live_proposed": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 117,
+    "slug": "prophets-question-in-the-inaugurated-tension-in-4-ezra-4",
+    "old": "2 Esdras (4 Ezra) 4:35 — *souls also of the righteous ask question of these things in their chambers, saying, How long?* The souls-of-the-righteous-in-their-chambers-asking-how-long architecture; the same pattern Revelation 6:9-11 names at the souls-under-the-altar restatement; Matt 11:6 names the blessing on the disposition that endures the gap."
+   }
+  ]
+ },
+ {
+  "id": 4614,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 4,
+   "vn": 35,
+   "cite": "2 Esdras 4:35",
+   "text": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "prev": "And he answered me, saying, Do not you hasten above the most Highest: for your haste is in vain to be above him, for you have much exceeded.",
+   "next": "And to these things Uriel the archangel gave them answer, and said, Even when the number of seeds is filled in you: for he has weighed the world in the balance."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 16,
+   "vn": 18,
+   "cite": "Matthew 16:18",
+   "text_db": "And I say also unto you, That you are Peter, and upon this rock I will build my church; and the gates of hell shall not prevail against it.",
+   "text_canon": "And I say also unto thee, That thou art Peter, and upon this rock I will build my church; and the gates of hell shall not prevail against it."
+  },
+  "old_note": "*Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?* 2 Esdras (4 Ezra) 4:35 names the wisdom-stream's articulation of the souls-of-the-righteous-in-their-chambers substance — the waiting-room of the righteous-dead between the first-coming and the resurrection. The framework reads the verse against Matt 16:18's gates-of-hell-shall-not-prevail substance. The chambers-of-the-righteous-souls are not the eternal-conscious-torment-hell of the inherited-Christian-doctrine; the chambers are the waiting-place-for-the-resurrection. The gates-of-Sheol the King names do not hold-the-righteous-souls-finally; the resurrection-architecture per Red Line #11's sequence the framework reads operates: the righteous-souls in-the-chambers await-the-first-resurrection at the King's-coming, when Sheol gives back-that-which-it-has-received (1 Enoch 51:1) and the chambers-deliver-those-souls-that-were-committed-unto-them (2 Esdras 7:32's parallel naming).",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "labelled": null,
+   "proposed": "2-esdras|4:35",
+   "ratio": 1.0,
+   "live_proposed": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 227,
+    "slug": "the-gates-of-sheol-and-the-resurrection-substance-in-wisdom-of-solomon-and-1-enoch",
+    "old": "2 Esdras (4 Ezra) 4:35 — *did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion?* The wisdom-stream's articulation of the souls-of-the-righteous-in-their-chambers substance — the waiting-room of the righteous-dead between the first-coming and the first-resurrection; the gates-of-Sheol do not hold-the-righteous-souls-finally per the resurrection-architecture."
+   }
+  ]
+ },
+ {
+  "id": 4430,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 4,
+   "vn": 36,
+   "cite": "2 Esdras 4:36",
+   "text": "And to these things Uriel the archangel gave them answer, and said, Even when the number of seeds is filled in you: for he has weighed the world in the balance.",
+   "prev": "Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?",
+   "next": "By measure has he measured the times; and by number has he numbered the times; and he does not move nor stir them, until the said measure be fulfilled."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 9,
+   "vn": 38,
+   "cite": "Matthew 9:38",
+   "text_db": "Pray you therefore Yahuah (Lord) of the harvest, that he will send forth labourers into his harvest.",
+   "text_canon": "Pray ye therefore Yahuah (Lord) of the harvest, that he will send forth labourers into his harvest."
+  },
+  "old_note": "*And to these things Uriel the archangel gave them answer, and said, Even when the number of seeds is filled in you: for he has weighed the world in the balance.* 2 Esdras (4 Ezra) 4:36 names the harvest-comes-when-the-number-of-seeds-is-filled architecture — the harvest is timed to the fulness of the seed-count. Matt 9:38's prayer-for-labourers is the kingdom-citizens' participation in the seed-filling: the labourers being sent into the harvest are the means by which the number of seeds is gathered to fulness. The wisdom-stream named the timing-architecture; the King at Matt 9:38 enlists the disciples in its execution.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And to these things Uriel the archangel gave them answer, and said, Even when the number of seeds is filled in you: for he has weighed the world in the balance.",
+   "labelled": null,
+   "proposed": "2-esdras|4:36",
+   "ratio": 1.0,
+   "live_proposed": "And to these things Uriel the archangel gave them answer, and said, Even when the number of seeds is filled in you: for he has weighed the world in the balance.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 104,
+    "slug": "harvest-when-the-number-is-fulfilled-in-4-ezra",
+    "old": "2 Esdras (4 Ezra) 4:36 — *even when the number of seeds is filled in you: for he has weighed the world in the balance.* The harvest is timed to the fulness of the seed-count; Matt 9:38's prayer-for-labourers is the kingdom-citizens' participation in the seed-filling."
+   }
+  ]
+ },
+ {
+  "id": 4815,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 5,
+   "vn": 1,
+   "cite": "2 Esdras 5:1",
+   "text": "Nevertheless as concerning the tokens, behold, the days shall come, that they which dwell upon earth shall be taken in a great number, and the way of truth shall be hidden, and the land shall be barren of faith.",
+   "prev": null,
+   "next": "But iniquity shall be increased above that which now you see, or that you have heard long ago."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 10,
+   "cite": "Matthew 24:10",
+   "text_db": "And then shall many be offended, and shall betray one another, and shall hate one another.",
+   "text_canon": "And then shall many be offended, and shall betray one another, and shall hate one another."
+  },
+  "old_note": "*Nevertheless as concerning the tokens, behold, the days shall come, that they which dwell upon earth shall be taken in a great number, and the way of truth shall be hidden, and the land shall be barren of faith.* 2 Esdras (4 Ezra) 5:1 names THE direct wisdom-stream verbal-anchor for the signs-of-the-end-of-the-age substance the King walks at the substantial Matt 24 discourse. The framework reads the verse against Matt 24:10-12 — *and then shall many be offended, and shall betray one another, and shall hate one another... and because iniquity (Greek anomia, torahlessness) shall abound, the love of many shall wax cold.* The substantial *way of truth shall be hidden* substance is the substantial-substance the substantial-torahlessness-substance walks-the-substantial-period through; the substantial *land shall be barren of faith* substance is the substantial-cause-and-effect of the substantial-torahlessness — the substantial-faith-substance walks-from the substantial-keep-of-the-commandments-substance the apostle-Yochanan (John) walks at 1 John 5:3 (*for this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous*); when the substantial-torahlessness abounds, the substantial-faith-substance fails. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "Nevertheless as concerning the tokens, behold, the days shall come, that they which dwell upon earth shall be taken in a great number, and the way of truth shall be hidden, and the land shall be barren of faith.",
+   "labelled": null,
+   "proposed": "2-esdras|5:1",
+   "ratio": 1.0,
+   "live_proposed": "Nevertheless as concerning the tokens, behold, the days shall come, that they which dwell upon earth shall be taken in a great number, and the way of truth shall be hidden, and the land shall be barren of faith.",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 403,
+    "slug": "the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras",
+    "old": "2 Esdras (4 Ezra) 5:1 — *the days shall come, that they which dwell upon earth shall be taken in a great number, and the way of truth shall be hidden, and the land shall be barren of faith.* THE direct verbal-anchor for the signs-of-the-end-of-the-age substance — the substantial-faith-substance walking-from the substantial-keep-of-the-commandments per 1 John 5:3; when the substantial-torahlessness abounds, the substantial-faith-substance fails (the substantial-direct-cause-and-effect-of-the-substantial-Matt-24:12 *because iniquity (anomia, torahlessness) shall abound, the love of many shall wax cold* substance)."
+   }
+  ]
+ },
+ {
+  "id": 4816,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 5,
+   "vn": 4,
+   "cite": "2 Esdras 5:4",
+   "text": "But if the Most High grant you to live, you shall see after the third trumpet that the sun shall suddenly shine again in the night, and the moon thrice in the day:",
+   "prev": "And the land, that you see now to have root, shall you see wasted suddenly.",
+   "next": "And blood shall drop out of wood, and the stone shall give his voice, and the people shall be troubled:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 29,
+   "cite": "Matthew 24:29",
+   "text_db": "Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:",
+   "text_canon": "Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:"
+  },
+  "old_note": "*But if the Most High grant you to live, you shall see after the third trumpet that the sun shall suddenly shine again in the night, and the moon thrice in the day.* 2 Esdras (4 Ezra) 5:4 names the wisdom-stream articulation of the cosmic-signs substance — the sun-and-moon-and-stars-substance disordered-at-the-day-of-Yahuah (the LORD) substance. The framework reads the verse against Matt 24:29's *immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven.* The substantial-cosmic-signs walk the substantial Tanakh-Day of Yahuah (the LORD) cluster the prophets-Yeshayahu (Isaiah) and Yo'el (Joel) and Yechezk'el (Ezekiel) and Amos and Mikhah (Micah) and Tsefanyah (Zephaniah) walked at Isaiah 13:10 and Joel 2:10 + 2:31 and Ezekiel 32:7-8 and Amos 5:18-20 and Amos 8:9 and Micah 3:6 and Zephaniah 1:14-18; 2 Esdras 5:4 names the wisdom-stream's direct articulation of the substantial-cosmic-disordering at the substantial-end-of-the-age. The substance the King names walks IMMEDIATELY-AFTER the substantial-tribulation, the substantial-direct-rule-out of the substantial-pre-tribulation-rapture-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "But if the Most High grant you to live, you shall see after the third trumpet that the sun shall suddenly shine again in the night, and the moon thrice in the day.",
+   "labelled": null,
+   "proposed": "2-esdras|5:4",
+   "ratio": 1.0,
+   "live_proposed": "But if the Most High grant you to live, you shall see after the third trumpet that the sun shall suddenly shine again in the night, and the moon thrice in the day:",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 403,
+    "slug": "the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras",
+    "old": "2 Esdras (4 Ezra) 5:4 — *you shall see after the third trumpet that the sun shall suddenly shine again in the night, and the moon thrice in the day.* The cosmic-signs substance — the substantial-Tanakh-Day of Yahuah (the LORD) cluster the prophets-Yeshayahu (Isaiah) + Yo'el (Joel) + Yechezk'el (Ezekiel) + Amos + Mikhah (Micah) + Tsefanyah (Zephaniah) walked. The King walks the substantial *immediately after the tribulation of those days* at Matt 24:29 — the substantial-direct-rule-out of the pre-tribulation-rapture-substance."
+   }
+  ]
+ },
+ {
+  "id": 4527,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 5,
+   "vn": 9,
+   "cite": "2 Esdras 5:9",
+   "text": "And salt waters shall be found in the sweet, and all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber,",
+   "prev": "There shall be a confusion also in many places, and the fire shall be oft sent out again, and the wild beasts shall change their places, and menstruous women shall bring forth monsters:",
+   "next": "And shall be sought of many, and yet not be found: then shall unrighteousness and incontinency be multiplied upon earth."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 13,
+   "vn": 11,
+   "cite": "Matthew 13:11",
+   "text_db": "He answered and said unto them, Because it is given unto you to know the mysteries of the kingdom of heaven, but to them it is not given.",
+   "text_canon": "He answered and said unto them, Because it is given unto you to know the mysteries of the kingdom of heaven, but to them it is not given."
+  },
+  "old_note": "*And salt waters shall be found in the sweet, and all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber, And shall be sought of many, and yet not be found: then shall unrighteousness and incontinency be multiplied upon earth.* 2 Esdras (4 Ezra) 5:9-10 names the wisdom-stream's direct articulation of the wisdom-and-understanding-withdrawing-into-the-secret-chamber architecture: in the latter-days the understanding withdraws-itself and shall-be-sought-of-many-and-not-be-found. The framework reads the verse against Matt 13:11-17's cause-and-effect-of-hearing diagnostic: the understanding the multitudes seek-from-the-parables withdraws from the system-rejecting-disposition; the wisdom-stream had named the architecture-of-withdrawal-from-the-disposition-that-rejects. The disciples-receive the mysteries-of-the-kingdom because the disposition-to-receive operates; the system-rejecting-disposition encounters the withdrawn-understanding.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And salt waters shall be found in the sweet, and all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber, And shall be sought of many, and yet not be found: then shall unrighteousness and incontinency be multiplied upon earth.",
+   "labelled": null,
+   "proposed": "2-esdras|5:9",
+   "ratio": 1.0,
+   "live_proposed": "And salt waters shall be found in the sweet, and all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber,",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 194,
+    "slug": "wisdom-hidden-from-the-wicked-revealed-to-the-elect-in-1-enoch-and-2-esdras-and-wisdom",
+    "old": "2 Esdras (4 Ezra) 5:9 — *understanding withdraw itself into his secret chamber, And shall be sought of many, and yet not be found.* The wisdom-stream's direct articulation of the understanding-withdrawing-from-the-rejecting-disposition architecture; the system-rejecting-disposition at Matt 13:13-15 encounters the withdrawn-understanding."
+   }
+  ]
+ },
+ {
+  "id": 4817,
+  "kind": "REBUILD",
+  "side": "T",
+  "apoc": {
+   "book": "2-esdras",
+   "ch": 5,
+   "vn": 9,
+   "cite": "2 Esdras 5:9",
+   "text": "And salt waters shall be found in the sweet, and all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber,",
+   "prev": "There shall be a confusion also in many places, and the fire shall be oft sent out again, and the wild beasts shall change their places, and menstruous women shall bring forth monsters:",
+   "next": "And shall be sought of many, and yet not be found: then shall unrighteousness and incontinency be multiplied upon earth."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 10,
+   "cite": "Matthew 24:10",
+   "text_db": "And then shall many be offended, and shall betray one another, and shall hate one another.",
+   "text_canon": "And then shall many be offended, and shall betray one another, and shall hate one another."
+  },
+  "old_note": "*And salt waters shall be found in the sweet, and all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber.* 2 Esdras (4 Ezra) 5:9 names the wisdom-stream articulation of the all-friends-destroy-one-another substance — the substantial-internal-betrayal-substance the substantial-pressure-of-the-tribulation generates. The framework reads the verse against Matt 24:10's *and then shall many be offended, and shall betray one another, and shall hate one another.* The substantial-substance the apostle-Sha'ul (Paul) walks at 2 Timothy 4:10 (*for Demas hath forsaken me, having loved this present world*) and 2 Timothy 4:16 (*at my first answer no man stood with me, but all men forsook me*) is the substantial-substance the substantial-pressure walks-out into the substantial-community; 2 Esdras 5:9 had named the substantial-architecture at the substantial-wisdom-stream-register.",
+  "regrade": {
+   "verdict": "STAND",
+   "quote": "And salt waters shall be found in the sweet, and all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber.",
+   "labelled": null,
+   "proposed": "2-esdras|5:9",
+   "ratio": 1.0,
+   "live_proposed": "And salt waters shall be found in the sweet, and all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber,",
+   "degraded": true,
+   "hyphen_chain": true,
+   "slug_cite": false
+  },
+  "members": [
+   {
+    "thread_id": 403,
+    "slug": "the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras",
+    "old": "2 Esdras (4 Ezra) 5:9 — *all friends shall destroy one another; then shall wit hide itself, and understanding withdraw itself into his secret chamber.* The substantial-internal-betrayal-substance — the substantial-pressure-of-the-substantial-tribulation generates the substantial *betray one another, and... hate one another* substance the King walks at Matt 24:10."
+   }
+  ]
+ }
+]
