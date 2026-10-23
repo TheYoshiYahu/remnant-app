@@ -185,7 +185,7 @@ means a back-fill can re-run safely over the already-merged canon rows.
 
   | book | cards (quote-bearing) | sweep | fix built | deployed | summaries | glosses |
   |---|---|---|---|---|---|---|
-  | 1 Enoch | 729 of 1,963 | ✓ S459 | ✓ S459 (362 + 2 retired) | ✓ S459 19:03 CDT, read-back 0 flagged | ✓ built S460 (532 of 719), deploy pending | — (641 open) |
+  | 1 Enoch | 729 of 1,963 | ✓ S459 | ✓ S459 (362 + 2 retired) | ✓ S459 19:03 CDT, read-back 0 flagged | ✓ S460 (532 of 719), deployed Oct 19 22:31 CDT, read-back 0 (532/532 live) | ✓ S463a (63 STAND rewritten; 631 glosses: 349 moved, 55 re-worded, 22 patched, 61 retired, 4 Q), deployed Oct 23 10:55 CDT, read-back 0 flagged, 490/490; S463a2 4 Q retired 11:07 CDT — CLOSED |
   | Jubilees | — | — | — | — | — | — |
   | Apocrypha (+3 Macc) | — | — | — | — | — | — |
   | Jasher | — | — | — | — | — | — |
@@ -197,3 +197,15 @@ means a back-fill can re-run safely over the already-merged canon rows.
   S457 512/988 was inflated). 532 summaries replaced — 306 rewritten by hand in Yoshi's voice, 59 adjusted, 166 re-quoted; 168 titles;
   ids/slugs kept; every Enoch and canon italic verified verbatim; scratch run 1 = 531 updated, run 2 = 0; post-run regrade 0 bad quotes.
   Status table: 1 Enoch summaries column → "✓ built S460 (532), deploy pending". Next: the 59 degraded STAND cards, the 641 glosses, then Jubilees.
+- **2026-10-22 (S463a) — 1 ENOCH CLOSE-OUT BUILT, scratch-tested twice, NOT deployed** (`source-texts/enoch-charles-1917/s463a-closeout/`,
+  migration `session463a_enoch_closeout.sql`, deploy `_session463a_enoch_closeout_deploy.sh`, read-back `_s463a_check.py`, report
+  `enoch-closeout-report.md`). Job 1: the 63 degraded-prose STAND cards rewritten (live verse in italics, cited, then prose; 65 member
+  notes). Job 2: the 631 glosses on verses S449 changed — old text traced into the live book, each read by hand: 349 re-pointed (ids kept),
+  55 re-worded, 22 patched, 61 retired as duplicates, 4 questions for Yoshi. Two cold verifier passes corrected 46 wrong moves before
+  commit. Scratch run 1 = 141 in place / 349 moved / 410 member notes / 61 retired / 0 skipped; run 2 = 0 changed, 490 landed; read-back
+  551/551, 0 dup pairs, 0 degraded. Status table: 1 Enoch glosses column → "✓ built S463a, deploy pending". Next: deploy + read-back, then Jubilees (S463b).
+- **2026-10-23 (S463a) — DEPLOYED 10:55 CDT, live read-back 0 flagged, 490/490 landed, 0 retired present, 0 member notes off.** 1 Enoch is closed
+  (2253 live Enoch cards: 729 STAND, 1524 no-Enoch-quote). 9 degraded-marker cards remain that are not Enoch-anchored (notes mention Enoch only):
+  Jubilees 4538, 34532 → S463b; Apocrypha 4556, 4614, 4618; Testaments 4737; canon-canon 6985, 7036, 7053 → their own sweeps. Status table updated.
+- **2026-10-23 (S463a2) — the 4 S463a question cards retired, DEPLOYED 11:07 CDT** (`session463a2_enoch_four.sql`): 25364, 25399, 25466, 25486 stood
+  on renumbered verses their notes no longer matched; the pairings survive on 25467 / 25362 / 25504. Read-back retired 4/4, twins live 4/4. **1 Enoch closed.**
