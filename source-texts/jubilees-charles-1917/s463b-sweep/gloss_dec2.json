@@ -1,0 +1,509 @@
+[
+ {
+  "id": 25975,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'restoration of Sarai and Abram's sending out of Egypt' is 13:15 'Pharaoh gave back Sarai... sent him out of the land of Egypt'; 13:16 is the later burnt sacrifice."
+ },
+ {
+  "id": 25978,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'building the altar and calling on the Name' is 13:8 'built an altar on this mountain, and called on the name of Yahuah'; 13:7 only blesses for the leading out of Ur.",
+  "to": "13:8"
+ },
+ {
+  "id": 25979,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'land-and-seed promise' is 13:3 'To you and to your seed will I give this land'; 13:2 is only Abram seeing the pleasant land.",
+  "to": "13:3"
+ },
+ {
+  "id": 25982,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'festival ordinance Abram renews for ever' is 14:20 'Abram renewed the festival and ordinance for himself for ever'; 14:21 is Sarai not bearing."
+ },
+ {
+  "id": 25987,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'smoking furnace and flame passing between the pieces' is 14:17 'a furnace was smoking, and a flame of fire passed between the pieces'; 14:16 is the fourth-generation return.",
+  "to": "14:17"
+ },
+ {
+  "id": 25989,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'dividing of the pieces with the birds undivided' is 14:11 'divided them in the midst... but the birds divided he not'; 14:12 is driving the birds away."
+ },
+ {
+  "id": 25990,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'to you and to your seed after you', which is 14:7 'Elohim to you and to your seed after you'; 14:6 is faith counted for righteousness.",
+  "to": "14:7"
+ },
+ {
+  "id": 25993,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'self-naming by the deliverance out of Ur' is 14:7 'I am Yahuah that brought you out of Ur of the Chaldees'; 14:6 has no self-naming.",
+  "to": "14:7"
+ },
+ {
+  "id": 25994,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'those of Abram's faith' rests on 14:6 'he believed in Yahuah, and it was counted to him for righteousness'; 14:7 is the land word."
+ },
+ {
+  "id": 25995,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the faith reckoned to Abram' is 14:6 'it was counted to him for righteousness', matching Galatians 3:6 verbatim."
+ },
+ {
+  "id": 25996,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the very verse Jubilees 14:6 retells' is 14:6 'believed... counted to him for righteousness', the verse Romans 4:3 quotes."
+ },
+ {
+  "id": 25997,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'faith-counted-righteousness exactly as Genesis records it' is 14:6 'counted to him for righteousness', matching Genesis 15:6."
+ },
+ {
+  "id": 26009,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'names Isaac and establishes the everlasting covenant in him' is 15:19 'call his name Isaac, and I shall establish My covenant with him, an everlasting covenant'; 15:18 is the plea for Ishmael.",
+  "to": "15:19"
+ },
+ {
+  "id": 26012,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss and Romans quote 'I have made thee a father of many nations', matching 15:7 'For the father of many nations have I made you' word for word; 15:6 'you will be the father of many nations' also fits, but 15:5 is only 'Abram fell on his face'.",
+  "to": "15:7"
+ },
+ {
+  "id": 26014,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'everlasting covenant to Abraham and his seed throughout their generations' is 15:9 'establish My covenant between Me and you, and your seed after you, throughout their generations, for an eternal covenant'; 15:5 is only the introduction.",
+  "to": "15:9"
+ },
+ {
+  "id": 26015,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the renaming word for word — Abram becomes Abraham' is 15:7 'Neither will your name any more be called Abram... shall be Abraham'; 15:5 has no renaming.",
+  "to": "15:7"
+ },
+ {
+  "id": 26017,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the token of an eternal covenant' is 15:13 'My covenant will be in your flesh for an eternal ordinance'; 15:14 is the cutting-off penalty."
+ },
+ {
+  "id": 26020,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss quotes 'for an eternal ordinance' from 15:13 'covenant will be in your flesh for an eternal ordinance' and also 'the uncircumcised soul cut off' from 15:14 'that soul will be cut off'; Genesis 17:13 matches 15:13, so it stays."
+ },
+ {
+  "id": 26026,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the holy seed of Jubilees 16:17' is 16:17 'one should become a holy seed, and should not be reckoned among the nations'; 16:18 is the kingdom-and-priests line."
+ },
+ {
+  "id": 26027,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the portion of the Most High, the kingdom and priests' is 16:18 'the portion of the El Elyon (Most High)... a kingdom and priests and a holy nation'; 16:17 has neither phrase.",
+  "to": "16:18"
+ },
+ {
+  "id": 26028,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'kingdom and priests and holy nation' is 16:18 'a kingdom and priests and a holy nation', matching Exodus 19:6; 16:17 only has 'holy seed'.",
+  "to": "16:18"
+ },
+ {
+  "id": 26032,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the set time of which Yahuah had spoken to Abraham... Isaac's birth' is 16:13 'at the time of which Yahuah had spoken to Abraham... Isaac was born'; 16:12 is the conception.",
+  "to": "16:13"
+ },
+ {
+  "id": 26033,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Yahuah visited Sarah and did to her as He had spoken' is 16:12 'Yahuah visited Sarah and did to her as He had spoken'; 16:13 is the birth."
+ },
+ {
+  "id": 26035,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'Lot is saved because Elohim remembered Abraham' is 16:7 'Lot we saved; for Elohim remembered Abraham, and sent him out from the midst of the overthrow'; 16:6 is judgment on Sodom-like places.",
+  "to": "16:7"
+ },
+ {
+  "id": 26664,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'faith is proven faithful in the doing' fits 17:17 'Abraham was faithful in all his afflictions; for He had tried him' and equally 17:18 'he was found faithful... he was not slow to act'; both carry the point, so it stays."
+ },
+ {
+  "id": 26665,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'the faithfulness Jubilees 17:17 declares... in the same trial' is 17:17 'Abraham was faithful... He had tried him', and 17:18 'wherein He had tried him, he was found faithful' fits as well."
+ },
+ {
+  "id": 26669,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'spares the lad and promises him a nation' is 17:7 'I will make him a great nation, because he is of your seed'; 17:8 is Hagar sent away with bread and water."
+ },
+ {
+  "id": 26670,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'growth into an archer' is 17:13 'the child grew and became an archer, and Elohim was with him'; 17:12 is Hagar at the well.",
+  "to": "17:13"
+ },
+ {
+  "id": 26681,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the offered son... offered the heir' is 18:8 'bound Isaac his son, and placed him on the wood... to slay Isaac his son'; 18:7 is only 'Elohim will provide for himself a sheep'.",
+  "to": "18:8"
+ },
+ {
+  "id": 26683,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the altar-offering' and James's 'offered Isaac his son upon the altar' is 18:8 'he built an altar... bound Isaac his son, and placed him on the wood which was upon the altar'; 18:7 has no altar.",
+  "to": "18:8"
+ },
+ {
+  "id": 26684,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'all-nations blessing in the seed... conditioned on obedience' is 18:16 'in your seed will all nations of the earth be blessed; Because you have obeyed My voice'; 18:17 is the return to Beersheba."
+ },
+ {
+  "id": 26685,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'seed multiplied as the stars and the sand' is 18:15 'multiply your seed As the stars of heaven, And as the sand which is on the seashore'; 18:14 is only the second call from heaven.",
+  "to": "18:15"
+ },
+ {
+  "id": 26686,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the self-sworn oath... because the son was not withheld' is 18:15 'By Myself have I sworn... have not withheld your son'; 18:14 is only the call by name.",
+  "to": "18:15"
+ },
+ {
+  "id": 26687,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'names the same place — Yahuah has seen — and locates it as Mount Sion' is 18:13 'Abraham called that place Yahuah has seen... that is Mount Sion'; 18:12 is the ram.",
+  "to": "18:13"
+ },
+ {
+  "id": 26688,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the ram offered in the son's stead' is 18:12 'took the ram and offered it for a burnt-offering in the stead of his son'; 18:13 is the naming of the place."
+ },
+ {
+  "id": 26690,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the Mastema of Jubilees 18:12 is put to shame' is 18:12 'the prince of the Mastema was put to shame'; 18:13 does not mention him."
+ },
+ {
+  "id": 26692,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Elohim Himself will provide the offering' is 18:7 'Elohim will provide for himself a sheep for a burnt-offering, my son'; 18:8 is the binding."
+ },
+ {
+  "id": 26694,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the beloved son offered on a mountain Elohim will point out' is 18:2 'Take your beloved son... offer him on one of the mountains which I will point out to you'; 18:1 is only 'Abraham, Abraham'.",
+  "to": "18:2"
+ },
+ {
+  "id": 26698,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'seed numberless as the sand' is 19:22 'If a man can number the sand of the earth, His seed also will be numbered', matching Genesis 13:16; 19:19 is Isaac loving Esau more.",
+  "to": "19:22"
+ },
+ {
+  "id": 26702,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'Abraham loved Jacob, Isaac loved Esau' is 19:15 'Abraham loved Jacob, but Isaac loved Esau' verbatim; 19:14 is Jacob learning to write and Esau hunting.",
+  "to": "19:15"
+ },
+ {
+  "id": 26706,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'a third wife Keturah after Hagar had died before Sarah' is 19:11 'took to himself a third wife, and her name was Keturah... for Hagar had died before Sarah'; 19:12 is her six sons."
+ },
+ {
+  "id": 26707,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'Abraham takes a wife for his son Isaac' is 19:10 'he took a wife for his son Isaac and her name was Rebecca'; 19:9 is the burial plot and friend of Elohim.",
+  "to": "19:10"
+ },
+ {
+  "id": 26708,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'Rebecca daughter of Bethuel, son of Nahor, brother of Abraham' is 19:10 'Rebecca the daughter of Bethuel, the son of Nahor, the brother of Abraham'; 19:9 has no lineage.",
+  "to": "19:10"
+ },
+ {
+  "id": 26710,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Abraham the friend' is 19:9 'recorded on the heavenly tables as the friend of Elohim'; 19:10 is the marriage of Isaac."
+ },
+ {
+  "id": 26711,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the very same title on the heavenly tables — Abraham the friend of Elohim' is 19:9 'recorded on the heavenly tables as the friend of Elohim'; 19:10 is the marriage."
+ },
+ {
+  "id": 26713,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'paid in full and bought the double cave outright' is 19:6 'he gave the price of the place, the money in full... buried his dead in the double cave'; 19:7 is Sarah's years."
+ },
+ {
+  "id": 26716,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'one hundred and twenty-seven years of Sarah's life' is 19:7 'the days of the life of Sarah were one hundred and twenty-seven years'; 19:6 is the purchase of the cave.",
+  "to": "19:7"
+ },
+ {
+  "id": 26717,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'sending of Ishmael and Keturah's sons away with gifts, the inheritance reserved to Isaac' is 20:11 'gave to Ishmael... and to the sons of Keturah, gifts, and sent them away from Isaac his son, and he gave everything to Isaac'; 20:10 is the blessing.",
+  "to": "20:11"
+ },
+ {
+  "id": 26718,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the all-nations blessing' is 20:10 'all nations of the earth will desire you, And bless your sons in my name'; 20:11-12 are the sending away and settling."
+ },
+ {
+  "id": 26719,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'his seed will be for a blessing on the earth' is 20:10 'you will be for a blessing on the earth'; 20:11-12 do not carry it."
+ },
+ {
+  "id": 26724,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'fornication and uncleanness judged' is 20:5 'had died on account of their fornication, and uncleanness', while 'set as an example to flee' also fits 20:6 'guard yourselves from all fornication and uncleanness... become accursed like Sodom'; the judgment itself sits in 20:5."
+ },
+ {
+  "id": 26725,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the judgment of the Sodomites Abraham rehearses to his sons as a warning' is 20:5 'he told them of... the judgment of the Sodomites'; 20:6 is the charge that follows."
+ },
+ {
+  "id": 26734,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Abraham's prayer that Isaac's seed be a blessing on all the earth' is 21:25 'may He bless all your seed... That you may be a blessing on all the earth'; 21:26 is Isaac going out rejoicing."
+ },
+ {
+  "id": 26736,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'cover it with dust', which is 21:17 'be on your guard, my son, against blood... cover it with dust'; 21:16 is washing before the altar.",
+  "to": "21:17"
+ },
+ {
+  "id": 26738,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'no gift may ransom murder' is 21:20 'take no present or gift for the blood of man: blood for blood'; 21:21 is the general wickedness of men."
+ },
+ {
+  "id": 26741,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'sweet savour before Yahuah upon the altar', which is 21:7 'on the altar of burnt-offering; it is a sweet savour before Yahuah'; 21:6 is only the ban on eating blood.",
+  "to": "21:7"
+ },
+ {
+  "id": 26745,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the perpetual statute against blood' is 21:6 'eat no blood at all of animals or cattle, or of any bird', matching 'eat neither fat nor blood'; 21:7 is the peace-offering rite."
+ },
+ {
+  "id": 26751,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the idol-worship that condemns the nations' is 22:22 'all the worshippers of idols... will descend into Sheol'; 22:23-26 are the comfort, the house, and the embrace."
+ },
+ {
+  "id": 26752,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Abraham forbids the marriage... to keep the seed from the nations' uncleanness' is 22:20 'Be you ware... of taking a wife from any seed of the daughters of Canaan'; 22:21 is the reason via Ham."
+ },
+ {
+  "id": 26753,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the ban on a wife from the seed of Canaan' is 22:20 'taking a wife from any seed of the daughters of Canaan'; 22:21 is Canaan's doom."
+ },
+ {
+  "id": 26754,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Abraham's warning to Jacob against a Canaanite wife' is 22:20 'Be you ware, my son Jacob, of taking a wife from any seed of the daughters of Canaan'; 22:21 has no warning."
+ },
+ {
+  "id": 26756,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'separate and not touch the unclean works of the nations' is 22:16 'Separate yourself from the nations... their works are unclean'; 22:17 lists their sacrifices to the dead."
+ },
+ {
+  "id": 26757,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'become not their associate', which is 22:16 'And become not their associate'; 22:17 does not carry it."
+ },
+ {
+  "id": 26758,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'charge to separate from the nations' is 22:16 'Separate yourself from the nations'; 22:17 only describes their works."
+ },
+ {
+  "id": 26762,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'Jacob chosen as the chosen nation' matches 22:9 'that they may be to You a chosen nation and an inheritance' and also 22:10 'may He choose you and your seed that you may become a people for His inheritance'; the phrase 'chosen nation' sits in 22:9."
+ },
+ {
+  "id": 26763,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the blessing of Abraham passing to Jacob's seed' and Genesis 28:4's blessing over Jacob is 22:10 'My son Jacob, may the Elohim of all bless you... choose you and your seed'; 22:9 is a prayer over 'the seed of his sons' without naming Jacob, though it fits loosely.",
+  "to": "22:10"
+ },
+ {
+  "id": 26768,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'record on the heavenly tables for a testimony', which is 23:32 'they record (them) on the heavenly tables for a testimony for the generations for ever'; 23:30 is the healing of servants.",
+  "to": "23:32"
+ },
+ {
+  "id": 26769,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss quotes 'rise up' from 23:30 'they will rise up and see great peace' and 'their bones will rest in the earth, And their spirits will have much joy' from 23:31; both verses carry the point, so it stays."
+ },
+ {
+  "id": 26774,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'follow exactly on the Torah's return — the regathering after the return-to-the-way' is 23:26 'the children will begin to study the laws... And to return to the path of righteousness'; 23:25 is the tribulation and grey hair.",
+  "to": "23:26"
+ },
+ {
+  "id": 26775,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'seek the commandments, and return to the path of righteousness', which is 23:26 verbatim; 23:25 is the aged children.",
+  "to": "23:26"
+ },
+ {
+  "id": 26777,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'faithless generation' matches 23:18 'their works are altogether faithless, and they will all perish together'; neither verse has 'the sword' (that line is later in the chapter), but 23:17 'all have done evil' lacks the faithless/perish language, so 23:18 is the closer home.",
+  "to": "23:18"
+ },
+ {
+  "id": 26780,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'after the Flood they began to grow less', which is 23:9 'after the Flood they began to grow less than nineteen jubilees'; 23:8 is Abraham's own 175 years.",
+  "to": "23:9"
+ },
+ {
+  "id": 26781,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'near Sarah his wife', which is 23:7 'buried him in the double cave, near Sarah his wife'; 23:6 is the weeping in the house.",
+  "to": "23:7"
+ },
+ {
+  "id": 26782,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the same two sons, the same cave — double cave' is 23:7 'his sons Isaac and Ishmael buried him in the double cave'; 23:6 is Ishmael weeping.",
+  "to": "23:7"
+ },
+ {
+  "id": 26785,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the heavenly tables... engraved for the day of judgment' is 24:33 'written and engraved concerning him on the heavenly tables, to do to him on the day of judgment'; 24:32 is the captivity curse.",
+  "to": "24:33"
+ },
+ {
+  "id": 26786,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'written and engraved on the heavenly tables', which is 24:33 'thus is it written and engraved concerning him on the heavenly tables'; 24:32 has no tables.",
+  "to": "24:33"
+ },
+ {
+  "id": 26788,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'quotes the Beer-sheba theophany verbatim, adding only its new-moon dating' is 24:22 'Yahuah appeared to him that night, on the new moon of the first month... I am the Elohim of Abraham your father; fear not'; 24:21 is only the journey to the Well of the Oath.",
+  "to": "24:22"
+ },
+ {
+  "id": 26792,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'all the nations of the earth be blessed', which is 24:11 'in your seed will all the nations of the earth be blessed'; 24:12 is dwelling in Gerar."
+ }
+]

@@ -1,0 +1,504 @@
+[
+ {
+  "id": 25564,
+  "decision": "MOVE",
+  "to": "1:26",
+  "fits_both": false,
+  "reason": "Gloss 'pre-written divisions of days' matches 1:26 'in all the divisions of the days'; 1:25 is about being called children of Elohim."
+ },
+ {
+  "id": 25565,
+  "decision": "MOVE",
+  "to": "1:26",
+  "fits_both": false,
+  "reason": "Gloss 'charge to write the first and the last' is 1:26 'write down ... the first and the last'; 1:25 has no writing."
+ },
+ {
+  "id": 25579,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'forsaking the holy place and sanctuary' is 1:10 'forsaken ... My holy place ... My sanctuary'; 1:11 is high places and child sacrifice."
+ },
+ {
+  "id": 25584,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Sabbath Yahuah permits Israel alone to keep' is 2:31 'Yashar'el (Israel) alone: them alone He permitted'; 2:32 only blesses the day."
+ },
+ {
+  "id": 25589,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'created sign by which Israel keeps Sabbath with the angels' is 2:21 'created therein a sign ... keep Sabbath with us'; 2:22 is sweet savour."
+ },
+ {
+  "id": 25591,
+  "decision": "MOVE",
+  "to": "2:17",
+  "fits_both": false,
+  "reason": "Gloss 'blessed, sanctified seventh day as the great sign' is 2:17 'a great sign, the Sabbath day'; 2:16 is finishing the work on the sixth day."
+ },
+ {
+  "id": 25600,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'finishes the six days and gives the Sabbath rest' spans 2:16 'finished all His work on the sixth day' and 2:17 'keep Sabbath on the seventh day'; Genesis 2:2 ended-his-work anchors on 2:16."
+ },
+ {
+  "id": 25609,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Adam's words ... this confession' is 3:6 'This is now bone of my bones and flesh of my flesh'; 3:7 is the one-flesh ordinance."
+ },
+ {
+  "id": 25610,
+  "decision": "MOVE",
+  "to": "3:7",
+  "fits_both": false,
+  "reason": "Gloss quotes 'man and wife be one' and the leave-and-cleave ordinance, which is 3:7 'Therefore shall man and wife be one ... cleave to his wife'; 3:6 is Adam's bone-of-my-bones speech."
+ },
+ {
+  "id": 25613,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'two weeks and sixty-six days' is 3:11 'two weeks of days ... and sixty-six days'; 3:12 is the entry into Eden."
+ },
+ {
+  "id": 25616,
+  "decision": "MOVE",
+  "to": "3:12",
+  "fits_both": false,
+  "reason": "Gloss quotes 'holier than all the earth besides', which is 3:12 'Garden of Eden, for it is holier than all the earth besides'; 3:11 is the purification count."
+ },
+ {
+  "id": 25617,
+  "decision": "MOVE",
+  "to": "3:17",
+  "fits_both": false,
+  "reason": "Gloss 'quotes the serpent's opening question' is 3:17 'Has Elohim (God) commanded you ... not eat of every tree of the garden?'; 3:16 is Adam tilling the garden."
+ },
+ {
+  "id": 25626,
+  "decision": "MOVE",
+  "to": "3:31",
+  "fits_both": false,
+  "reason": "Gloss 'prescribes on the heavenly tables ... not uncover themselves as the nations do' is 3:31 'prescribed on the heavenly tables ... not uncover themselves as the nations'; 3:30 is only the covering given to Adam."
+ },
+ {
+  "id": 25630,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'scribe-of-righteousness office' fits 4:17 'learnt writing ... wrote down the signs of heaven ... in a book' and also 4:18 'first to write a testimony'; the scribe/writing point sits on 4:17."
+ },
+ {
+  "id": 25631,
+  "decision": "MOVE",
+  "to": "4:18",
+  "fits_both": false,
+  "reason": "Gloss 'the first to write a testimony' is 4:18 'he was the first to write a testimony, and he testified'; 4:17 is writing the signs of heaven."
+ },
+ {
+  "id": 25635,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'calling on the Name ... attributes to Enos' is 4:12 'He began to call on the name of Yahuah (God)'; 4:13 is Enos's marriage."
+ },
+ {
+  "id": 25637,
+  "decision": "MOVE",
+  "to": "4:5",
+  "fits_both": false,
+  "reason": "Gloss 'heavenly-tablet curse' is 4:5 'written on the heavenly tables, Cursed is he who smites his neighbour'; 4:4 is the reproof and fugitive sentence without the tablets."
+ },
+ {
+  "id": 25639,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'measure-for-measure law ... ordained on the heavenly tablets' is 4:32 'ordained on the heavenly tables: With the instrument ... in like manner shall they deal with him'; 4:33 is Noah's marriage."
+ },
+ {
+  "id": 25654,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'angels chained' is 5:6 'bind them in the depths of the earth ... they are bound'; 5:7 is the sons smitten with the sword."
+ },
+ {
+  "id": 25655,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'depths of the earth Jubilees 5:6 binds the Watchers in' is 5:6 'bind them in the depths of the earth'; 5:7 is the sons."
+ },
+ {
+  "id": 25661,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'impartial judge ... takes no gifts' is 5:16 'not one who will regard the person ... nor ... receive gifts ... righteous judge'; 5:17 is forgiveness for Israel."
+ },
+ {
+  "id": 25662,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'impartiality Jubilees 5:16 declares' is 5:16 'not one who will regard the person (of any)'; 5:17 is pardon on turning."
+ },
+ {
+  "id": 25665,
+  "decision": "MOVE",
+  "to": "5:17",
+  "fits_both": false,
+  "reason": "Gloss 'promises Israel forgiveness if they turn' is 5:17 'If they turn to Him in righteousness, He will forgive all their transgressions'; 5:16 is the impartial judge."
+ },
+ {
+  "id": 25666,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'sentence of destruction with the command to build the ark' spans 5:20 'He would destroy everything which was upon the earth' and 5:21 'commanded Noah to make him an ark'; Genesis 6:13 is the destruction sentence, anchored on 5:20."
+ },
+ {
+  "id": 25667,
+  "decision": "MOVE",
+  "to": "5:21",
+  "fits_both": false,
+  "reason": "Gloss 'ark Noah is commanded to make' is 5:21 'He commanded Noah to make him an ark'; 5:20 has no ark."
+ },
+ {
+  "id": 25668,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'dates the flood-gates to the second month' uses the date of 5:23 'in the second month ... on the seventeenth' and the flood-gates of 5:24; Genesis 7:11 carries both, the date anchoring on 5:23."
+ },
+ {
+  "id": 25669,
+  "decision": "MOVE",
+  "to": "5:25",
+  "fits_both": false,
+  "reason": "Gloss 'forty days and forty nights' is 5:25 'pour down water from the heaven forty days and forty nights'; 5:23 is the entry into the ark."
+ },
+ {
+  "id": 25670,
+  "decision": "MOVE",
+  "to": "5:27",
+  "fits_both": false,
+  "reason": "Gloss quotes 'five months-one hundred and fifty days', which is 5:27 verbatim; 5:23 is the entry date."
+ },
+ {
+  "id": 25679,
+  "decision": "MOVE",
+  "to": "6:7",
+  "fits_both": false,
+  "reason": "Gloss 'blood prohibition ... gives Noah' is 6:7 'flesh, with the life thereof, with the blood, you shall not eat'; 6:6 is the grant of all things for food."
+ },
+ {
+  "id": 25681,
+  "decision": "MOVE",
+  "to": "6:12",
+  "fits_both": false,
+  "reason": "Gloss 'no-blood law ... with the same cutting-off' is 6:12 'not eat ... any blood ... he and his seed shall be rooted out of the land'; 6:11 is the covenant oath and sprinkling (6:13 named in the gloss is outside the group)."
+ },
+ {
+  "id": 25682,
+  "decision": "MOVE",
+  "to": "6:7",
+  "fits_both": false,
+  "reason": "Gloss quotes 'the life of all flesh is in the blood', which is 6:7 'for the life of all flesh is in the blood'; 6:6 has no blood rationale."
+ },
+ {
+  "id": 25683,
+  "decision": "MOVE",
+  "to": "6:7",
+  "fits_both": false,
+  "reason": "Gloss 'the rationale ... the life of all flesh is the blood' is 6:7 'the life of all flesh is in the blood'; 6:6 is the food grant."
+ },
+ {
+  "id": 25684,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'covenant on the mountain a third-month covenant' is 6:11 'make a covenant ... in this month upon the mountain'; 6:12 is the blood testimony."
+ },
+ {
+  "id": 25685,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'sprinkling of blood on the people because of all the words of the covenant' is 6:11 'sprinkle blood upon them because of all the words of the covenant'; 6:12 is eating blood."
+ },
+ {
+  "id": 25686,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'feast of weeks ... engraved on the heavenly tablets and kept from creation' spans 6:17 'written on the heavenly tables ... feast of weeks' and 6:18 'celebrated in heaven from the day of creation'; the feast-of-weeks ordinance anchors on 6:17."
+ },
+ {
+  "id": 25690,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss '364-day reckoning Jubilees 6:32 commands Israel to observe' is 6:32 'observe the years according to this reckoning-three hundred and sixty-four days'; 6:33 is the neglect."
+ },
+ {
+  "id": 25691,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss '364-day order ... must not disturb its feasts' is 6:32 'three hundred and sixty-four days ... not disturb its time ... nor disturb any feasts'; 6:33 is the consequence of neglect."
+ },
+ {
+  "id": 25692,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'feasts confounded, the unclean day made holy' is 6:37 'confound all the days, the holy with the unclean, and the unclean day with the holy'; 6:38 is the 364-day warning to Moses."
+ },
+ {
+  "id": 25699,
+  "decision": "MOVE",
+  "to": "7:7",
+  "fits_both": false,
+  "reason": "Gloss 'drunken ... uncovered within his tent ... retells almost verbatim' is 7:7 'being drunken he lay down ... and was uncovered in his tent'; 7:6 is only drinking with joy."
+ },
+ {
+  "id": 25703,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Blessed be ... of Shem ... kept verbatim' is 7:11 'Blessed be Yahuah Elohim (the LORD God) of Shem, and Canaan shall be his servant'; 7:12 is Japheth."
+ },
+ {
+  "id": 25707,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Watchers' fornication ... first of the three causes' is 7:21 'owing to the fornication wherein the Watchers ... took themselves wives of all which they chose'; 7:22 is the giants."
+ },
+ {
+  "id": 25708,
+  "decision": "MOVE",
+  "to": "7:22",
+  "fits_both": false,
+  "reason": "Gloss 'the giants ... the Nâphîdîm who devoured one another' is 7:22 'begat sons the Nâphîdîm ... they devoured one another'; 7:21 names no giants."
+ },
+ {
+  "id": 25709,
+  "decision": "MOVE",
+  "to": "7:22",
+  "fits_both": false,
+  "reason": "Gloss 'the giants ... names from the Watchers' matches 7:22 'they begat sons the Nâphîdîm ... the Giants'; 7:21 is the Watchers' fornication without giants."
+ },
+ {
+  "id": 25710,
+  "decision": "MOVE",
+  "to": "7:22",
+  "fits_both": false,
+  "reason": "Gloss 'mutual devouring ... among the Nâphîdîm' is 7:22 'they devoured one another'; 7:21 has no devouring."
+ },
+ {
+  "id": 25712,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'eating the blood of any flesh' is 7:28 'whoso eats the blood of any flesh'; 7:29-30 continue the penalty and covering."
+ },
+ {
+  "id": 25713,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'whoso sheds man's blood... will all be destroyed', which is 7:28 verbatim; 7:29 is the Sheol penalty."
+ },
+ {
+  "id": 25716,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'Noahic charge of Jubilees 7:28 ... blood-law' is 7:28 'whoso eats the blood of any flesh'; 7:29 'any man that eats blood' also fits, but the charge is stated in 7:28."
+ },
+ {
+  "id": 25719,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the dwelling Jubilees 8:18 says Yahuah Himself chooses' is 8:18 'may Yahuah (God) dwell in the dwelling of Shem'; 8:19 is the three holy places."
+ },
+ {
+  "id": 25720,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Noah's Torah blessing, quoted back word-for-word ... the prophecy he remembered' is 8:18 'he remembered ... Blessed be Yahuah Elohim (the LORD God) of Shem'; 8:19 has no blessing."
+ },
+ {
+  "id": 25721,
+  "decision": "MOVE",
+  "to": "8:19",
+  "fits_both": false,
+  "reason": "Gloss 'Zion ... the same centre ... navel of the world' is 8:19 'Mount Zion-the centre of the navel of the earth'; 8:18 is Noah's blessing of Shem."
+ },
+ {
+  "id": 25722,
+  "decision": "MOVE",
+  "to": "8:19",
+  "fits_both": false,
+  "reason": "Gloss 'the navel of the earth' is 8:19 'the centre of the navel of the earth'; 8:18 does not mention the centre."
+ },
+ {
+  "id": 25723,
+  "decision": "MOVE",
+  "to": "8:19",
+  "fits_both": false,
+  "reason": "Gloss 'Jubilees 8:18-19 calls Zion the navel' is 8:19 'Mount Zion-the centre of the navel of the earth'; 8:18 has no Zion."
+ },
+ {
+  "id": 25908,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'the very division Jubilees 9 is narrating by lot' fits both 9:6 'came forth for Lud the fifth portion' and 9:7 'divided the land of his inheritance amongst his sons'; it describes the chapter, not one verse."
+ },
+ {
+  "id": 25914,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'let us go down and confound their language', which is 10:22 'Go to, let us go down and confound their language'; 10:23 is the descent."
+ },
+ {
+  "id": 25915,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'one people, one speech, nothing withheld from them' is 10:22 'they are one people ... nothing will be withholden from them'; 10:23 is the descent."
+ },
+ {
+  "id": 25919,
+  "decision": "MOVE",
+  "to": "10:18",
+  "fits_both": false,
+  "reason": "Gloss 'in Peleg's days — one people, evil in purpose' is 10:18 'Peleg ... the children of men have become evil through the wicked purpose of building ... a city and a tower'; 10:17 is about Enoch's office."
+ },
+ {
+  "id": 25922,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'Mastema's plea ... that a tenth remain' is 10:8 'Mastêmâ, came and said ... let some of them remain before me' with the tenth granted in 10:9 'Let the tenth part of them remain'; the plea anchors on 10:8."
+ },
+ {
+  "id": 25926,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Noah's prayer ... against the wicked spirits' is 10:3 'let not wicked spirits rule over them'; 10:4 is the blessing to multiply."
+ },
+ {
+  "id": 25932,
+  "decision": "MOVE",
+  "to": "11:16",
+  "fits_both": false,
+  "reason": "Gloss 'call out of the idolatrous house ... Abraham already straining toward as a child' is 11:16 'the child began to understand the errors ... separated himself from his father that he might not worship idols'; 11:14 is Terah's marriage."
+ },
+ {
+  "id": 25934,
+  "decision": "MOVE",
+  "to": "11:16",
+  "fits_both": false,
+  "reason": "Gloss 'the boy separating himself from his father's idols' is 11:16 'he separated himself from his father that he might not worship idols with him'; 11:14 is Terah taking a wife."
+ },
+ {
+  "id": 25941,
+  "decision": "MOVE",
+  "to": "11:15",
+  "fits_both": false,
+  "reason": "Gloss 'Abram born to Terah' is 11:15 'she bare him a son, and he called his name Abram'; 11:14 is Terah's marriage to Edna."
+ },
+ {
+  "id": 25943,
+  "decision": "MOVE",
+  "to": "11:7",
+  "fits_both": false,
+  "reason": "Gloss 'Serug dwells in Ur and his wife bears him Nahor' is 11:7 'dwelt in Ur of the Chaldees ... took to himself a wife ... Mêlkâ'; 11:6 is only the naming of Serug."
+ },
+ {
+  "id": 25948,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'the promise Abram receives in Jubilees 12:22' fits 12:22 'I shall make you a great and numerous nation' and continues through 12:23-24; the promise begins in 12:22."
+ },
+ {
+  "id": 25949,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the same call to Abraham' is 12:22 'Get you up from your country, and from your kindred'; 12:23-24 are the blessings."
+ },
+ {
+  "id": 25950,
+  "decision": "MOVE",
+  "to": "12:23",
+  "fits_both": false,
+  "reason": "Gloss 'blessing-and-cursing and all-families promise' is 12:23 'in you will all families of the earth be blessed ... bless them that bless you, And curse them that curse you'; 12:22 is the call."
+ },
+ {
+  "id": 25951,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the call ... Get thee out of thy country ... nearly word for word' is 12:22 'Get you up from your country, and from your kindred and from the house of your father'; 12:23-24 are blessings."
+ },
+ {
+  "id": 25952,
+  "decision": "MOVE",
+  "to": "12:20",
+  "fits_both": false,
+  "reason": "Gloss 'Abram's plea to stablish him and his seed for ever' is 12:20 'stablish You me and my seed for ever'; 12:17 is the stars in Yahuah's hand."
+ },
+ {
+  "id": 25954,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the sun, moon, and stars are in Yahuah's hand' is 12:17 'signs of the stars ... moon and of the sun are all in the hand of Yahuah (God)'; 12:18-21 are rain and the prayer."
+ },
+ {
+  "id": 25955,
+  "decision": "MOVE",
+  "to": "12:15",
+  "fits_both": false,
+  "reason": "Gloss 'family's departure from Ur toward Canaan' is 12:15 'Terah went forth from Ur of the Chaldees ... into the land of Canaan'; 12:14 is Haran's death in the fire."
+ },
+ {
+  "id": 25956,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the idol-fire that killed him in that same Ur' is 12:14 'burnt in the fire, and he died in Ur of the Chaldees before Terah his father'; 12:15 is the departure."
+ },
+ {
+  "id": 25959,
+  "decision": "MOVE",
+  "to": "12:5",
+  "fits_both": false,
+  "reason": "Gloss 'the work of men's hands with no spirit in them' is 12:5 'things that have no spirit in them? For they are the work of (men's) hands'; 12:2 only asks what help the idols give."
+ },
+ {
+  "id": 25965,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Abram arming his household' is 13:24 '(Abram) armed his household servants'; 13:25 is the tithe ordinance."
+ },
+ {
+  "id": 25966,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the escapee bringing word' is 13:24 'one who had escaped came and told Abram'; 13:25 is the tithe."
+ },
+ {
+  "id": 25968,
+  "decision": "MOVE",
+  "to": "13:22",
+  "fits_both": false,
+  "reason": "Gloss 'the same coalition of kings' is 13:22 'Chedorlaomer, king of Elam, and Amraphel, king of Shinar, and Arioch ... and Têrgâl, king of nations'; 13:20 is the land promise."
+ },
+ {
+  "id": 25969,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'the inheritance promised in Jubilees 13:20' is 13:20 'all the land ... I shall give to you and to your seed for ever'; 13:21 'to your seed shall I give it' repeats it."
+ },
+ {
+  "id": 25970,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'the seed-promise renewed' is 13:20 'to your seed for ever ... make your seed as the sand of the sea'; 13:21 'to your seed shall I give it' also fits."
+ },
+ {
+  "id": 25971,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'land-to-the-seed-for-ever ... verbatim' is 13:20 'all the land which you see I shall give to you and to your seed for ever'; 13:21-22 are the walk and the kings."
+ },
+ {
+  "id": 25974,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'returns Abram to that same altar between Ai and Bethel where he again blesses and calls on the Name' spans 13:15 'place of the altar, with Ai on the east, and Bethel on the west, and he blessed' and 13:16 'called on the name of Yahuah (God)'; the altar return anchors on 13:15."
+ }
+]

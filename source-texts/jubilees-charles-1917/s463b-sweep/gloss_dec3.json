@@ -1,0 +1,501 @@
+[
+ {
+  "id": 26794,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Abraham obeyed and kept the charge, commandments, laws, and covenant' is 24:11 'obeyed My voice, and kept My charge and My commandments, and My laws'; 24:12 is only 'dwelt in Gerar'."
+ },
+ {
+  "id": 26798,
+  "decision": "MOVE",
+  "to": "24:7",
+  "fits_both": false,
+  "reason": "Gloss quotes 'Jacob became the elder', which is the text of 24:7, not 24:6 (the pottage trade)."
+ },
+ {
+  "id": 26799,
+  "decision": "MOVE",
+  "to": "24:7",
+  "fits_both": false,
+  "reason": "Gloss quotes 'brought down from his dignity', the words of 24:7; 24:6 has only the pottage and despised birthright."
+ },
+ {
+  "id": 26800,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'trading the covenant for a meal' matches 24:6 'bread and pottage... Esau despised his birthright'."
+ },
+ {
+  "id": 26801,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the same trade and the same verdict — Esau despised his birthright' is 24:6 verbatim."
+ },
+ {
+  "id": 27259,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Jacob's vow of separation' is 25:9 'I will not take me a wife from the daughters of the seed of Canaan'; 25:10 is the general promise to walk uprightly."
+ },
+ {
+  "id": 27261,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the wickedness Jacob refuses in his vow' is 25:9 'I will not act wickedly as my brother has done'."
+ },
+ {
+  "id": 27275,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'two-kids-of-the-goats plan' is 26:6 'fetch me two good kids of the goats'; 26:7 is Jacob's fear of being recognised."
+ },
+ {
+  "id": 27279,
+  "decision": "MOVE",
+  "to": "26:22",
+  "fits_both": false,
+  "reason": "Gloss 'smell-of-the-field that Yahuah has blessed' is 26:22 'the smell of my son is as the smell of a (full) field which Yahuah (God) has blessed'; 26:21 is only the kiss."
+ },
+ {
+  "id": 27280,
+  "decision": "MOVE",
+  "to": "26:23",
+  "fits_both": false,
+  "reason": "Gloss 'dew of heaven and plenty of corn' is 26:23 'give you of the dew of heaven... and plenty of corn and oil'."
+ },
+ {
+  "id": 27281,
+  "decision": "MOVE",
+  "to": "26:23",
+  "fits_both": false,
+  "reason": "Gloss 'nations-serve-you' formula is 26:23 'Let nations serve you, And peoples bow down to you'; 26:21 has no blessing words (the mother's-sons/cursed line is 26:24, outside the group)."
+ },
+ {
+  "id": 27282,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss names the whole span 'Jubilees 26:21-24' as Isaac's blessing; 26:21 'Come near and kiss me' opens the scene and 26:22 'he blessed him' is the act, so it fits both."
+ },
+ {
+  "id": 27287,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'great and bitter cry of Esau pleading to be blessed too' is 26:29 'cried with an exceeding great and bitter cry... Bless me, (even) me also'."
+ },
+ {
+  "id": 27288,
+  "decision": "MOVE",
+  "to": "26:30",
+  "fits_both": false,
+  "reason": "Gloss 'Esau name the two supplantings — birthright then blessing' is 26:30 'supplanted me these two times: he took away my birth-right, and now he has taken away my blessing'."
+ },
+ {
+  "id": 27290,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'lost blessing began with a despised birthright' touches 26:29 (the cry 'Bless me') and 26:30 ('took away my birth-right'); fits both."
+ },
+ {
+  "id": 27292,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'sword-and-yoke word... Esau's seed rooted out' is 26:34 'by your sword will you live... shake his yoke... seed will be rooted out'."
+ },
+ {
+  "id": 27293,
+  "decision": "MOVE",
+  "to": "26:35",
+  "fits_both": false,
+  "reason": "Gloss 'murderous resolve in Esau's heart' is 26:35 'said in his heart: May the days of mourning for my father now come, so that I may slay my brother Jacob'."
+ },
+ {
+  "id": 27294,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'sentence... on Esau's seed — his heritage laid waste' is 26:34 'your seed will be rooted out from under heaven'."
+ },
+ {
+  "id": 27295,
+  "decision": "MOVE",
+  "to": "27:27",
+  "fits_both": false,
+  "reason": "Gloss 'the very tithe Jacob vows to Yahuah at Bethel' is 27:27 'I shall give the tenth to you'; 27:26 is the pillar and oil."
+ },
+ {
+  "id": 27296,
+  "decision": "MOVE",
+  "to": "27:27",
+  "fits_both": false,
+  "reason": "Gloss 'the tenth Jacob vows' is 27:27 'Jacob vowed a vow... I shall give the tenth to you'."
+ },
+ {
+  "id": 27298,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'raising and anointing of the Bethel pillar' is 27:26 'set it up as a pillar... poured oil upon the top of it'."
+ },
+ {
+  "id": 27304,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Jacob's ladder... the open heaven and the angels' is 27:21 'a ladder set up on the earth... angels of Yahuah (God) ascended and descended'."
+ },
+ {
+  "id": 27305,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'voice from atop the ladder... quoting the covenant of the land and the seed' spans 27:21 'Yahuah (God) stood upon it' and 27:22 'I am Yahuah Elohim... the land... to your seed'; fits both."
+ },
+ {
+  "id": 27306,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the ladder and the ascending-descending angels' is 27:21 verbatim."
+ },
+ {
+  "id": 27307,
+  "decision": "MOVE",
+  "to": "27:12",
+  "fits_both": false,
+  "reason": "Gloss 'the sending to Mesopotamia/Padan-aram' is 27:12 'Isaac sent Jacob away, and he went to Mesopotamia'; 27:11 is the El Shaddai blessing."
+ },
+ {
+  "id": 27308,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'blessing of Abraham and the inheritance of the land' is 27:11 'give you the blessings of my father Abraham... inherit the land'."
+ },
+ {
+  "id": 27309,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'El-Shaddai blessing... company of nations' is 27:11 'El Shaddai (God Almighty) bless you... a company of nations'."
+ },
+ {
+  "id": 27314,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'Jacob's possessions multiplied exceedingly', the words of 28:29; 28:30 is Laban's envy."
+ },
+ {
+  "id": 27316,
+  "decision": "MOVE",
+  "to": "28:15",
+  "fits_both": false,
+  "reason": "Gloss 'the kingly tribe born... the tribe of the Messiah' is 28:15 'called his name Yahudah (Judah)'; 28:14 is Levi's birth."
+ },
+ {
+  "id": 27317,
+  "decision": "MOVE",
+  "to": "28:15",
+  "fits_both": false,
+  "reason": "Gloss 'Judah's line, first dated at his birth' is 28:15 'bare him a fourth son... Yahudah (Judah)', not 28:14 (Levi)."
+ },
+ {
+  "id": 27318,
+  "decision": "MOVE",
+  "to": "28:15",
+  "fits_both": false,
+  "reason": "Gloss 'The Yahudah born in Jubilees' is 28:15 'called his name Yahudah (Judah)'."
+ },
+ {
+  "id": 27319,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'The Levi born in Jubilees' is 28:14 'called his name Levi'."
+ },
+ {
+  "id": 27320,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'tribe-names born in Jubilees 28' anchors on 28:11 'called his name Reuben', the first of Exodus 1:2's names; 28:12 names no son."
+ },
+ {
+  "id": 27322,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'Yahuah was gracious to Rachel, and opened her womb', the words of 28:24; 28:25 is Jacob's request to leave."
+ },
+ {
+  "id": 27324,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss quotes 'Yahuah saw that Leah was hated and Rachel loved' (28:12) but also 'as the womb opens for Reuben' (28:11 'opened the womb of Leah'); Genesis 29:31 covers both halves, so it fits both."
+ },
+ {
+  "id": 27325,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'set down... in heaven', which is 28:6 'they set down guilt against him in heaven'."
+ },
+ {
+  "id": 27326,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'heavenly-tablet marriage-law... lays on Israel' spans 28:6 'written in the heavenly tables' and 28:7 'command you the children of Yashar'el (Israel)'; fits both."
+ },
+ {
+  "id": 27327,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'takes this bare custom and writes it into the heavenly tables' is 28:6 'It is not so done in our country... written in the heavenly tables'."
+ },
+ {
+  "id": 27334,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Isaac's return to the tower of Abraham' is 29:17 'Isaac had returned... gone up to the tower of his father Abraham'."
+ },
+ {
+  "id": 27336,
+  "decision": "MOVE",
+  "to": "29:13",
+  "fits_both": false,
+  "reason": "Gloss 'Esau's settling in Seir... his departure' is 29:13 'departed from him to the land of Seir'; 29:11 is the Amorites."
+ },
+ {
+  "id": 27337,
+  "decision": "MOVE",
+  "to": "29:13",
+  "fits_both": false,
+  "reason": "Gloss 'Esau departed to the land of Seir' is the wording of 29:13."
+ },
+ {
+  "id": 27338,
+  "decision": "MOVE",
+  "to": "29:13",
+  "fits_both": false,
+  "reason": "Gloss 'the reconciliation Jubilees names in a phrase' is 29:13 'he was reconciled to him'."
+ },
+ {
+  "id": 27339,
+  "decision": "MOVE",
+  "to": "29:13",
+  "fits_both": false,
+  "reason": "Gloss 'Esau coming to Jacob' is 29:13 'Esau, his brother, came to him'."
+ },
+ {
+  "id": 27340,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'destroying of the towering Amorite... replaced the Rephaim' is 29:11 'Yahuah (God) destroyed them... the Amorites dwelt in their stead'."
+ },
+ {
+  "id": 27343,
+  "decision": "MOVE",
+  "to": "29:7",
+  "fits_both": false,
+  "reason": "Gloss 'the exact non-crossing oath' is 29:7 'neither should cross the mountain of Gilead to the other with evil purpose'; 29:6 only says 'Laban spake to Jacob'."
+ },
+ {
+  "id": 27346,
+  "decision": "MOVE",
+  "to": "29:7",
+  "fits_both": false,
+  "reason": "Gloss 'the covenant-oath... the two men swore' is 29:7 'Jacob sware to Laban that day, and Laban also to Jacob'."
+ },
+ {
+  "id": 27351,
+  "decision": "MOVE",
+  "to": "30:22",
+  "fits_both": false,
+  "reason": "Gloss 'the unfaithful are blotted from' the book of life is 30:22 'destroyed out of the book of life'; 30:21 has only 'recorded as friends'."
+ },
+ {
+  "id": 27353,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'two columns' spans 30:21 'recorded as friends' and 30:22 'destroyed out of the book of life... recorded as adversaries'; fits both."
+ },
+ {
+  "id": 27354,
+  "decision": "MOVE",
+  "to": "30:22",
+  "fits_both": false,
+  "reason": "Gloss 'destruction out of the book of life' is 30:22 'they will be destroyed out of the book of life'."
+ },
+ {
+  "id": 27356,
+  "decision": "MOVE",
+  "to": "30:17",
+  "fits_both": false,
+  "reason": "Gloss 'zeal reckoned for righteousness' is 30:17 'it was (reckoned) to them for righteousness'; 30:16 is about no respect of persons."
+ },
+ {
+  "id": 27362,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'give-not/take-not statute' is 30:11 'not to give their daughters... not to take for their sons'."
+ },
+ {
+  "id": 27366,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'seed-kept-separate law' is 30:11's command not to give or take daughters of the nations."
+ },
+ {
+  "id": 27367,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the seed is kept separate' answers 30:11's command 'not to give their daughters to the nations... abominable before Yahuah (God)'; 30:12 is the Shechem example."
+ },
+ {
+  "id": 27368,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the very command Jubilees puts in Moses' mouth' is 30:11 'do you, Moses, command the children of Yashar'el (Israel)... not to give their daughters'."
+ },
+ {
+  "id": 27377,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'throne of righteousness Judah sits on' is 31:20 'when you sit on the throne of the honour of your righteousness'."
+ },
+ {
+  "id": 27378,
+  "decision": "MOVE",
+  "to": "31:19",
+  "fits_both": false,
+  "reason": "Gloss 'The deliverer found in Judah' is 31:19 'in you be found the salvation of Yashar'el (Israel)'."
+ },
+ {
+  "id": 27379,
+  "decision": "MOVE",
+  "to": "31:19",
+  "fits_both": false,
+  "reason": "Gloss 'The salvation of Israel in Judah' is 31:19 'in you be found the salvation of Yashar'el (Israel)'."
+ },
+ {
+  "id": 27380,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Treading down all that hate him and ruling the sons of Jacob' is 31:18 'tread down all that hate you; A prince shall you be... over the sons of Jacob'."
+ },
+ {
+  "id": 27381,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'prince-over-the-sons-of-Jacob blessing' is 31:18 'A prince shall you be... over the sons of Jacob'."
+ },
+ {
+  "id": 27383,
+  "decision": "MOVE",
+  "to": "31:14",
+  "fits_both": false,
+  "reason": "Gloss 'drawing-near to serve' is 31:14 'cause you and your seed... to approach Him to serve in His sanctuary'; 31:13 is only the opening blessing."
+ },
+ {
+  "id": 27384,
+  "decision": "MOVE",
+  "to": "31:14",
+  "fits_both": false,
+  "reason": "Gloss 'Levi's seed approaching to serve in the sanctuary' is 31:14 'to approach Him to serve in His sanctuary'."
+ },
+ {
+  "id": 27386,
+  "decision": "MOVE",
+  "to": "31:14",
+  "fits_both": false,
+  "reason": "Gloss 'drawing Levi's seed near to serve in the sanctuary' is 31:14 'approach Him to serve in His sanctuary as the angels of the presence and as the holy ones'."
+ },
+ {
+  "id": 27388,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'altar built at the place where he had slept' is 31:3 'built an altar at the place where he had slept'."
+ },
+ {
+  "id": 27393,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'death of Deborah and her burial under the oak of mourning' is 32:30 'Deborah Rebecca's nurse died... The oak of the mourning of Deborah'."
+ },
+ {
+  "id": 27398,
+  "decision": "MOVE",
+  "to": "32:21",
+  "fits_both": false,
+  "reason": "Gloss 'seven tablets that show Jacob all... which would befall him and his sons throughout all the ages' is 32:21; 32:20 is only the ascent into heaven."
+ },
+ {
+  "id": 27402,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'holy to Yahuah... and shall belong to His priests', the words of 32:15."
+ },
+ {
+  "id": 27404,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'second tithe before Yahuah... from this year to the year following', the words of 32:11."
+ },
+ {
+  "id": 28015,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'priestly and royal nation', the words of 33:20; 33:21 is the move to Abraham's house."
+ },
+ {
+  "id": 28016,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'a nation of inheritance... for His own possession', the words of 33:20."
+ },
+ {
+  "id": 28017,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the uncleanness... intolerable in the camp' is 33:20 'no such uncleanness appear in the midst of the holy nation'."
+ },
+ {
+  "id": 28018,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'priestly and royal nation', the words of 33:20."
+ },
+ {
+  "id": 28019,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the very sin of Jubilees 33... the fornication' is 33:20 'no greater sin than the fornication which they commit on earth'."
+ },
+ {
+  "id": 28020,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'everlasting law for everlasting generations' is 33:16 'an everlasting law for the everlasting generations'."
+ },
+ {
+  "id": 28021,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the law written before it was revealed' is 33:16 'there had not been revealed the ordinance and judgment and law'."
+ },
+ {
+  "id": 28022,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'revealed in your days' is 33:16 'in your days (it has been revealed)... an everlasting law'; 33:17 is the no-atonement penalty."
+ },
+ {
+  "id": 28023,
+  "decision": "MOVE",
+  "to": "33:12",
+  "fits_both": false,
+  "reason": "Gloss 'the very second time curse... So be it; so be it' is 33:12 'written a second time: Cursed he be who lies with the wife of his father... So be it; so be it'."
+ },
+ {
+  "id": 28030,
+  "decision": "MOVE",
+  "to": "34:20",
+  "fits_both": false,
+  "reason": "Gloss 'the wife-roster' is 34:20 'the sons of Jacob took to themselves wives. The name of Reuben's wife...'; 34:19 is the day of atonement."
+ },
+ {
+  "id": 28031,
+  "decision": "MOVE",
+  "to": "34:20",
+  "fits_both": false,
+  "reason": "Gloss 'careful naming of which wives were Canaanite and which were of the line of Terah' is 34:20 'a Canaanite... of the seed of the sons of Terah'."
+ }
+]

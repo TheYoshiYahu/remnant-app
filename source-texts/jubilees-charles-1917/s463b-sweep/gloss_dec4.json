@@ -1,0 +1,497 @@
+[
+ {
+  "id": 28032,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'grief and cleansing once a year' is 34:19 'grieve thereon for their sins... cleanse themselves on that day once a year'; 34:20 is the wives list."
+ },
+ {
+  "id": 28036,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'Let me go down to the grave mourning for my son', which is in 34:17; 34:16 is Bilhah and Dinah's burial.",
+  "to": "34:17"
+ },
+ {
+  "id": 28039,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'slaughtered kid and the dipped coat' is 34:12 'slaughtered a kid, and dipped the coat of Joseph in the blood'; 34:11 is the sale.",
+  "to": "34:12"
+ },
+ {
+  "id": 28041,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'envy beneath the treachery... sold' matches 34:11 'dealt treacherously with him... sold him to Ishmaelite merchants'."
+ },
+ {
+  "id": 28042,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'changing their minds, they sold him to Ishmaelite merchants', which is 34:11 verbatim."
+ },
+ {
+  "id": 28043,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'sale to the Ishmaelite merchants' is 34:11 'sold him to Ishmaelite merchants, and they brought him down into Egypt'."
+ },
+ {
+  "id": 28044,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'slew the Amorites in the pastures of Shechem' is 34:7 'he slew them in the pastures of Shechem'; 34:6 only has him going out with six thousand men.",
+  "to": "34:7"
+ },
+ {
+  "id": 28046,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'double cave near Sarah where Esau and Jacob bury Rebekah' is 35:27 'buried her in the double cave near Sarah'; 35:26 is Jacob's vow of love.",
+  "to": "35:27"
+ },
+ {
+  "id": 28048,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Jacob's mutual love... Rebekah begged her sons' sits on 35:26 'first in naught save in love only'; 35:27 is her death and burial."
+ },
+ {
+  "id": 28049,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'first in nothing save love only' quotes 35:26 'first in naught save in love only'."
+ },
+ {
+  "id": 28066,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'promise Isaac repeats' of seed multiplied is 36:6 'increase your seed as the stars of heaven'; 36:7 is the oath."
+ },
+ {
+  "id": 28067,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'stars-of-heaven oath' recalled by Isaac is 36:6 'increase your seed as the stars of heaven in multitude'."
+ },
+ {
+  "id": 28075,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'Isaac binds his sons to fear and worship Yahuah' is 36:7 'make you swear a great oath... that you will fear Him and worship Him'; 36:6 is Isaac's own worship.",
+  "to": "36:7"
+ },
+ {
+  "id": 28080,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'curse Esau speaks over Jacob' is 37:23 'You shall be rooted out... no peace for you'; 37:24 is Jacob seeing his intent."
+ },
+ {
+  "id": 28082,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Esau's rooting-out curse' is 37:23 'You shall be rooted out, And your sons shall be rooted out'."
+ },
+ {
+  "id": 28094,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'kings of Edom before Israel had a king... word for word' is 38:15 'these are the kings that reigned in Edom before there reigned any king'; 38:14 is the yoke.",
+  "to": "38:15"
+ },
+ {
+  "id": 28096,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'yoke Esau never escapes' is 38:14 'have not got quit of the yoke of servitude... until this day'."
+ },
+ {
+  "id": 28097,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'unending yoke' is 38:14 'not got quit of the yoke of servitude... until this day'; 38:15 is the king list."
+ },
+ {
+  "id": 28098,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss's 'hatred-of-Esau election' with Esau's heritage laid waste lands on 38:12 'placed the yoke of servitude upon them... paid tribute'; 38:11 is only the question whether to make peace or slay.",
+  "to": "38:12"
+ },
+ {
+  "id": 28099,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'standing yoke of tribute laid on Esau's sons' is 38:12 'placed the yoke of servitude upon them, so that they paid tribute'; 38:11 is the inquiry to Jacob.",
+  "to": "38:12"
+ },
+ {
+  "id": 28108,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'cost of the imprisonment' is 39:11 'cast Joseph into prison', while its 'Yahuah with the righteous one' also fits 39:12 'Yahuah was with him'."
+ },
+ {
+  "id": 28109,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'all-committed-to-his-hand... perfecting everything Joseph did' is 39:13 'committed all things into his hands... Yahuah perfected it'."
+ },
+ {
+  "id": 28110,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'favour-in-prison... before the chief of the prison guards' is 39:12 'gave Joseph favour in the sight of the chief of the prison guards'; 39:11 is the casting into prison.",
+  "to": "39:12"
+ },
+ {
+  "id": 28112,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'place where the king's prisoners were kept' is 39:11 'the place where the prisoners were kept whom the king imprisoned'."
+ },
+ {
+  "id": 28115,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'punishment of death ordained in the heavens', which is 39:6; 39:7 is the bare refusal."
+ },
+ {
+  "id": 28116,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'ordained in the heavens and read by Jacob from Abraham's words' is 39:6 'words which Jacob... used to read from amongst the words of Abraham... ordained in the heavens'."
+ },
+ {
+  "id": 28117,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'grounds it in the heavenly books' is 39:6 'recorded... in the eternal books', while 'the refusal' also fits 39:7 'refused to lie with her'."
+ },
+ {
+  "id": 28125,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Joseph's exaltation in Jubilees 40' fits 40:10 where the king renames him and gives him a priest's daughter; 40:11 is only his age and 40:12 the years of plenty — a loose fit, nothing in the group names 'save many alive'."
+ },
+ {
+  "id": 28128,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'Joseph the dream-revealer' is 40:12 'as Joseph had said in the interpretation of his two dreams'; 40:10 is the renaming and marriage.",
+  "to": "40:12"
+ },
+ {
+  "id": 28133,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'ring, the byssus garments, and the gold chain' is 40:7 'clothed him with byssus garments... gold chain upon his neck... placed a ring on his hand'; 40:6 is the second chariot.",
+  "to": "40:7"
+ },
+ {
+  "id": 28134,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'made him ruler over all his house... Only on the throne shall I be greater than you', which is 40:7 verbatim.",
+  "to": "40:7"
+ },
+ {
+  "id": 28873,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'seed not rooted out' is 41:27 'his seed was established... and would not be rooted out'; 41:26 is the uncleanness law.",
+  "to": "41:27"
+ },
+ {
+  "id": 28874,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the Perez born in Jubilees 41:21' is 41:21 'she bare two sons, Perez and Zerah'; 41:22 is the years of fruitfulness."
+ },
+ {
+  "id": 28875,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the Pharez of Jubilees 41:21' is 41:21 'she bare two sons, Perez and Zerah'."
+ },
+ {
+  "id": 28876,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Perez and Zerah born' is 41:21 'she bare two sons, Perez and Zerah'."
+ },
+ {
+  "id": 28877,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'birth of Perez' is 41:21 'she bare two sons, Perez and Zerah'."
+ },
+ {
+  "id": 28880,
+  "decision": "STAY",
+  "fits_both": true,
+  "reason": "Gloss 'three-month report' is 41:16 'completed three months... told Yahudah', while 'the sentence of burning' is 41:17 'Bring her forth, and let them burn her'."
+ },
+ {
+  "id": 28881,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Tamar is named Judah's daughter-in-law' is 41:6 'said to Tamar, his daughter-in-law'; 41:7 is Shelah withheld."
+ },
+ {
+  "id": 28882,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'ring, necklace, and staff' is 41:11 'my ring that is on my finger, and my necklace, and my staff'; 41:12 is the handing over."
+ },
+ {
+  "id": 28884,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Judah's word to Tamar... withholding' is 41:6 'Remain in your father's house as a widow till Shelah my son be grown up'."
+ },
+ {
+  "id": 28890,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the feast Joseph spreads' is 42:22 'he made a feast for them'; 42:21 is the greeting of Benjamin.",
+  "to": "42:22"
+ },
+ {
+  "id": 28892,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'gracious word over Benjamin' is 42:21 'Yahuah (God) be gracious to you, my son!'."
+ },
+ {
+  "id": 28897,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'Jacob's refusal... sorrow to death' is 42:11 'My son will not go down with you... bring down my old age with sorrow to death'."
+ },
+ {
+  "id": 28898,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'returned money that makes Jacob fear to send Benjamin' is 42:12 'their money had been returned to every man in his sack, and for this reason he feared to send him'.",
+  "to": "42:12"
+ },
+ {
+  "id": 28901,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'gold put back in the sacks unknown' is 42:7 'put their gold in their sacks, and they did not know'; 42:6 is Simeon detained.",
+  "to": "42:7"
+ },
+ {
+  "id": 28902,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'detained Simeon' is 42:6 'detained Simeon alone'; 42:7 is the gold in the sacks."
+ },
+ {
+  "id": 28920,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'very words... in Joseph's mouth' is 43:16 'it is my mouth that speaks and the eyes of my brother Benjamin see'."
+ },
+ {
+  "id": 28924,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'father's life bound to Benjamin's' is 43:11 'his life also is bound up with the life of this (lad)'; 43:12 is the foreseen death."
+ },
+ {
+  "id": 28927,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'same search order and discovery' is 43:7 'beginning with the eldest and ending with the youngest, it was found in Benjamin's sack'; 43:6 is Joseph's terms.",
+  "to": "43:7"
+ },
+ {
+  "id": 28938,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'these are the names of the sons of Jacob who went into Egypt', which is 44:11; 44:12 begins the list with Reuben."
+ },
+ {
+  "id": 28944,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'bring you up again', which is 44:6 'I shall bring you up (again)'; 44:7 is the wagons."
+ },
+ {
+  "id": 28945,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'I go down with you, I bring you up, Joseph closes your eyes' is 44:6 'I shall go down with you... bring you up... Joseph will put his hands upon your eyes'."
+ },
+ {
+  "id": 28948,
+  "decision": "Q",
+  "fits_both": false,
+  "reason": "Gloss 'seed-multiplying that Jubilees 45 sets in motion' names no multiplying in either verse: 45:13 is Israel's seventeen years and death, 45:14 his deathbed blessing."
+ },
+ {
+  "id": 28949,
+  "decision": "Q",
+  "fits_both": false,
+  "reason": "Gloss 'multiplying seed that Jubilees 45 tracks from Goshen onward' is not in 45:13 (years and death) or 45:14 (blessing and last days)."
+ },
+ {
+  "id": 28951,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'burial in the double cave near Abraham' is 45:15 'buried in the double cave... near Abraham his father'; 45:16 is the books given to Levi."
+ },
+ {
+  "id": 28952,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'double cave near Abraham', which is 45:15."
+ },
+ {
+  "id": 28953,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'made known to his sons what would come upon them in the last days' is 45:14 'made known to them what would come upon them in the last days'; 45:13 is his years and death.",
+  "to": "45:14"
+ },
+ {
+  "id": 28954,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'seventeen years and 147-year total, reckoned as three jubilees' is 45:13 'seventeen years... three jubilees, one hundred and forty-seven years'."
+ },
+ {
+  "id": 28955,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'ordinance for Egypt until this day' is 45:12 'made it an ordinance for the land of Egypt until this day'; 45:11 is only a date.",
+  "to": "45:12"
+ },
+ {
+  "id": 28956,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'fifth-for-the-king, four-parts-for-the-people split' is 45:12 'the fifth part for the king and left four parts for them'; 45:11 is only a date.",
+  "to": "45:12"
+ },
+ {
+  "id": 28958,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'names Goshen and Rameses as the best part of Egypt' is 45:6 'land of Goshen and in Rameses... the best part of the land of Egypt'; 45:7 is the bread."
+ },
+ {
+  "id": 28959,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'places Israel and his sons in Goshen by Joseph's grant' is 45:6 'Joseph had given... the right of dwelling in the land of Goshen'."
+ },
+ {
+  "id": 28974,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'stronger new king' is 46:7 'a new king, had become king of Egypt, and he was stronger than he'; 46:6 is the oath over the bones.",
+  "to": "46:7"
+ },
+ {
+  "id": 28975,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'the swearing... concerning his bones' is 46:6 'he made them swear regarding his bones'; 46:7 is the new king."
+ },
+ {
+  "id": 28981,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'flight from Pharaoh's wrath' is 47:12 'you did fear and flee on account of these words'; 47:11 is Moses' rebuke of the striving brother.",
+  "to": "47:12"
+ },
+ {
+  "id": 28982,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the brother who turns on Moses... deliverer rejected by his own' is 47:12 'Who made you a prince and a judge over us?'; 47:11 is Moses' question 'Why do you smite your brother?'.",
+  "to": "47:12"
+ },
+ {
+  "id": 28983,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss 'the rebuke and the fearful flight... quote Exodus 2:14' is 47:12 'Who made you a prince and a judge over us?... you did fear and flee'; 47:11 lacks both.",
+  "to": "47:12"
+ },
+ {
+  "id": 28992,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'her compassion on the crying babe' is 47:6 'she had compassion on you'; 47:7 is the sister's offer of a nurse."
+ },
+ {
+  "id": 29003,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'device devised by Yahuah our Elohim' that hardened Egypt's heart, which is 48:17 'He hardened their hearts... the device was devised by Yahuah our Elohim'."
+ },
+ {
+  "id": 29006,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'as if it were dry land', which is 48:13 'brought them through the midst of the sea as if it were dry land'; 48:12 is Mastema rousing the pursuit.",
+  "to": "48:13"
+ },
+ {
+  "id": 29007,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'I stood between the Egyptians and Yashar'el', which is 48:13 verbatim; 48:12 is Mastema's cry to pursue.",
+  "to": "48:13"
+ },
+ {
+  "id": 29013,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'ten great and terrible judgments', which is 48:7; 48:8 is the covenant with Abraham."
+ },
+ {
+  "id": 29020,
+  "decision": "MOVE",
+  "fits_both": false,
+  "reason": "Gloss quotes 'unleavened bread seven days', which is 49:22 'eat unleavened bread seven days'; 49:21 is where Passover may be kept.",
+  "to": "49:22"
+ },
+ {
+  "id": 29021,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'in its appointed season', which is 49:16 'celebrate it in its appointed season'; 49:17 is the age and sanctuary rule."
+ },
+ {
+  "id": 29046,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss quotes 'dwells with confidence in all the land', which is 50:5; the Sabbath element comes from Isaiah, not from 50:6's bare mention of Sabbath commandments."
+ },
+ {
+  "id": 29047,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Gloss 'jubilees passing until the land is clean from that time for evermore' quotes 50:5 'the jubilees will pass by... the land will be clean from that time for evermore'."
+ },
+ {
+  "id": 50875,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Note quotes 27:21 'behold a ladder set up on the earth... angels of Yahuah (God) ascended and descended'; 27:22 is the promise of the land."
+ },
+ {
+  "id": 151917,
+  "decision": "STAY",
+  "fits_both": false,
+  "reason": "Note quotes 2:11 'on the fifth day He created great sea monsters... first things of flesh... created by His hands'; 2:12 is the sun and the summary."
+ }
+]

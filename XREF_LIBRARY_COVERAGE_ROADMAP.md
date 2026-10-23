@@ -186,7 +186,7 @@ means a back-fill can re-run safely over the already-merged canon rows.
   | book | cards (quote-bearing) | sweep | fix built | deployed | summaries | glosses |
   |---|---|---|---|---|---|---|
   | 1 Enoch | 729 of 1,963 | ✓ S459 | ✓ S459 (362 + 2 retired) | ✓ S459 19:03 CDT, read-back 0 flagged | ✓ S460 (532 of 719), deployed Oct 19 22:31 CDT, read-back 0 (532/532 live) | ✓ S463a (63 STAND rewritten; 631 glosses: 349 moved, 55 re-worded, 22 patched, 61 retired, 4 Q), deployed Oct 23 10:55 CDT, read-back 0 flagged, 490/490; S463a2 4 Q retired 11:07 CDT — CLOSED |
-  | Jubilees | — | — | — | — | — | — |
+  | Jubilees | 1,741 of 1,754 anchored | ✓ S463b | ✓ built S463b (126 rebuilt, 140 moved, 92 re-cited) | ✓ built S463b | ✓ built S463b (5) | ✓ built S463b (312 read: 179 stay / 131 move / 2 Q) | ✓ deployed Oct 23 12:55 CDT, read-back 347/347, 0 degraded — CLOSED |
   | Apocrypha (+3 Macc) | — | — | — | — | — | — |
   | Jasher | — | — | — | — | — | — |
   | 2 Enoch / Test. XII / Apoc. Abraham / Adam-Eve / Asc. Isaiah | — | — | — | — | — | — |
@@ -207,5 +207,12 @@ means a back-fill can re-run safely over the already-merged canon rows.
 - **2026-10-23 (S463a) — DEPLOYED 10:55 CDT, live read-back 0 flagged, 490/490 landed, 0 retired present, 0 member notes off.** 1 Enoch is closed
   (2253 live Enoch cards: 729 STAND, 1524 no-Enoch-quote). 9 degraded-marker cards remain that are not Enoch-anchored (notes mention Enoch only):
   Jubilees 4538, 34532 → S463b; Apocrypha 4556, 4614, 4618; Testaments 4737; canon-canon 6985, 7036, 7053 → their own sweeps. Status table updated.
+- **2026-10-23 (S463b) — JUBILEES SWEEP BUILT, scratch-tested twice, NOT deployed** (`source-texts/jubilees-charles-1917/s463b-sweep/`, migration
+  `session463b_jubilees_sweep.sql`, deploy `_session463b_jubilees_sweep_deploy.sh`, read-back `_s463b_check.py`, report `jubilees-sweep-report.md`).
+  Whole S459/S460/S463a chain in one migration: 126 notes rebuilt (11 re-pointed), 129 glosses re-pointed, 92 citations widened to the span quoted,
+  256 member notes, 5 summaries. Two cold reads of every move + one voice read of every rebuilt note. Scratch run 1 = 207 in place / 140 moved /
+  0 skipped; run 2 = 0 changed, 347 landed; read-back all 1,943 Jubilees quotations verbatim, 0 degraded. Status table: Jubilees row → built, deploy pending.
+  Next: deploy + read-back, then Apocrypha + 3 Maccabees (S463c).
+- **2026-10-23 (S463b) — DEPLOYED 12:55 CDT, live read-back 347/347 cards, 256/256 member notes, 5/5 summaries, 1,943 quotations verbatim, 0 degraded. Jubilees closed.**
 - **2026-10-23 (S463a2) — the 4 S463a question cards retired, DEPLOYED 11:07 CDT** (`session463a2_enoch_four.sql`): 25364, 25399, 25466, 25486 stood
   on renumbered verses their notes no longer matched; the pairings survive on 25467 / 25362 / 25504. Read-back retired 4/4, twins live 4/4. **1 Enoch closed.**
