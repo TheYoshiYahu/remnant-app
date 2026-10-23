@@ -57,7 +57,7 @@ for s in summaries: out.append(f"- thread {s['thread_id']}: {(s.get('flag') or '
 out.append("\n## Voice cold-read findings (all applied)\n")
 for f in voice: out.append(f"- {f.get('id') or f.get('thread_id')}: {f['problem'][:220]}")
 out.append("\n## For Yoshi (nothing blocked on these)\n")
-out.append("- Pearl / treasure cards 4549, 4550, 4551 (Ecclesiasticus 6:14, Wisdom 7:8, 7:14 → Matthew 13:44–45): the old notes named the buyer as the Father/Son paying all for the elect, citing an internal file; the rebuilt notes leave the buyer unnamed. 4548 keeps it. Say which and the next pass aligns them.\n"
+out.append("- Pearl / treasure cards 4548, 4549, 4550, 4551 (Ecclesiasticus 20:30, 6:14, Wisdom 7:8, 7:14 → Matthew 13:44–46): SETTLED Oct 23 (Yoshi: the seed of promise has always been the few, called treasure, likened to gold of the dust of the earth — that is us, and the land buyer is Yahuah). All four now carry it.\n"
            "- 4705 (Tobit 4:3 / Matthew 19:15) is a thin pairing — a father's blessing and children brought for blessing; consider retiring.\n"
            "- 4547 (2 Esdras 6:26 / Matthew 13:35): the old note leaned on 6:28 (\"the truth, which hath been so long without fruit, shall be declared\"); rebuilt on 6:26 with 6:28 in prose — the card may belong at 6:28.\n"
            "- 12188 (Tobit 14:6 / Romans 15:27): rewritten so Paul's Gentiles are the scattered seed and Tobit's turning of the nations stays what Tobit saw; needs your eye.\n"
