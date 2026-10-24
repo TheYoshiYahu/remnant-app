@@ -185,9 +185,9 @@ export default function Today() {
         {/* A quiet invitation to support the work — above the doors, but small
             and unobtrusive so it frames rather than interrupts. Opens the
             Tithely giving page (system browser on native, new tab on web).
-            Hidden entirely on the native shells (no donate affordance on
-            App Store / Play builds). */}
-        {!isNativeShell() && <SupportBar />}
+            S464 — now shown on the native shells too: giving opens outside the
+            app (system browser), which both stores allow for a nonprofit. */}
+        <SupportBar />
 
         {/* S233 — the doors (Read / Appointed Times / My Study) ride at the very
             top, directly under the title, so the partner meets them without
@@ -548,10 +548,11 @@ function SupportBar() {
         }}
       >
         <span className="today-support-glyph" aria-hidden="true">♥</span>
-        <span>Support this work</span>
+        <span>Support this ministry</span>
       </button>
       <span className="today-support-note">
-        support our non-profit ministry &amp; community outreach
+        Remnant of Promise is a non-profit church. Your gift supports the
+        whole work of the ministry, including this app and our outreach.
       </span>
     </div>
   );

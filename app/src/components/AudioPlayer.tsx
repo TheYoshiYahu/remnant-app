@@ -142,6 +142,25 @@ export default function AudioPlayer({
         role="region"
         aria-label="Audio narration player"
       >
+        {/* S464 — the notice gets its own full-width line, wrapped, so a
+            free reader can read the whole "this is a sample" message on a
+            phone instead of a truncated sliver in the center slot. */}
+        {notice && (
+          <div
+            role="status"
+            className="mx-auto max-w-3xl border-b border-[var(--reader-rule)] px-4 py-2 text-sm leading-snug text-[var(--reader-text)]"
+          >
+            {notice}
+            {naturalVoicesLocked && !isNativeShell() && (
+              <>
+                {" "}
+                <a href="/pricing" className="font-medium underline">
+                  Start 7 days free
+                </a>
+              </>
+            )}
+          </div>
+        )}
         <div className="mx-auto flex max-w-3xl items-center gap-2 px-3 py-2 sm:gap-3 sm:px-4">
           {/* Skip prev verse. */}
           <button
@@ -178,15 +197,9 @@ export default function AudioPlayer({
 
           {/* Current verse reference (flex-grow center region). */}
           <div className="min-w-0 flex-1 truncate text-center text-base text-[var(--reader-text)] sm:text-left">
-            {notice ? (
-              <span className="text-sm opacity-80" title={notice}>{notice}</span>
-            ) : (
-              <>
-                {currentVerseRef ?? "—"}
-                {sleepBadge && (
-                  <span className="ml-2 text-xs text-[var(--reader-muted)]">{sleepBadge}</span>
-                )}
-              </>
+            {currentVerseRef ?? "—"}
+            {sleepBadge && (
+              <span className="ml-2 text-xs text-[var(--reader-muted)]">{sleepBadge}</span>
             )}
           </div>
 

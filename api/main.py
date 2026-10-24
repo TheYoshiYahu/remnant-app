@@ -210,6 +210,7 @@ from models import (
 )
 from subscriptions import router as subscriptions_router
 from year_plan_study import router as year_plan_study_router
+from suggestions import router as suggestions_router
 
 
 # ----- App lifespan -------------------------------------------------------
@@ -266,6 +267,9 @@ app.include_router(subscriptions_router, prefix="/v1/subscriptions")
 # S442 — Year Plan study: plan sync, plan notes, My Teachings (partner) and
 # For Teachers assignments (top tier). Paths carry their own /v1 prefix.
 app.include_router(year_plan_study_router)
+
+# S464 — partner suggestion box (free readers see it locked).
+app.include_router(suggestions_router)
 
 
 # ----- Helpers ------------------------------------------------------------

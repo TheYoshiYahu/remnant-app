@@ -2247,3 +2247,13 @@ export function saveAssignment(id: string, input: SaveAssignmentInput): Promise<
 export function deleteAssignment(id: string): Promise<void> {
   return del(`/teacher/assignments/${encodeURIComponent(id)}`);
 }
+
+// ----- S464 — partner suggestion box ------------------------------------
+export type SuggestionKind = "feature" | "improvement" | "problem";
+export interface SuggestionEligibility { signed_in: boolean; allowed: boolean }
+export function getSuggestionEligibility(): Promise<SuggestionEligibility> {
+  return get<SuggestionEligibility>("/suggestions/eligibility");
+}
+export function sendSuggestion(kind: SuggestionKind, body: string): Promise<{ id: number; ok: boolean }> {
+  return post<{ kind: SuggestionKind; body: string }, { id: number; ok: boolean }>("/suggestions", { kind, body });
+}

@@ -52,8 +52,11 @@ export const RECORDED_VOICES: RecordedVoice[] = [
 export type RecordedAccess = "full" | "sample";
 export const SAMPLE_VERSES = 5;
 export const SAMPLE_NOTICE =
-  `That was a taste of the natural voice. Free readers hear the first ${SAMPLE_VERSES} verses of any chapter; ` +
-  "partners and the 7-day free trial hear every chapter.";
+  `That was the free sample of the natural voice: the first ${SAMPLE_VERSES} verses of any chapter. ` +
+  "It stopped on purpose, not because of an error. Partners and the 7-day free trial hear every chapter in full.";
+export const SAMPLE_PLAYING_NOTICE =
+  `Free sample: you'll hear verses 1–${SAMPLE_VERSES} of this chapter in the natural voice, then it stops. ` +
+  "This isn't an error — partners and the 7-day free trial hear every chapter in full.";
 export const SAMPLE_START_NOTICE =
   `Free readers hear verses 1–${SAMPLE_VERSES} of any chapter in the natural voice — start from verse 1. ` +
   "Partners and the 7-day free trial hear every chapter.";
@@ -320,6 +323,9 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     retryItems = null;
     stalled = false;
     sampleDone = false;
+    // S464 — say up front that this is a sample, so the stop at verse 5
+    // never reads as the player breaking.
+    if (sample) emitError(SAMPLE_PLAYING_NOTICE, first?.opts?.verseId, false);
 
     const finishSample = () => {
       mode = "idle";

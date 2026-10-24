@@ -3100,6 +3100,21 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                 <span aria-hidden="true">⚙</span>
                 <span>Settings</span>
               </a>
+              {/* S464 — Give, always in the top menu (web and phones). Opens
+                  the Tithely giving page outside the app. */}
+              <button
+                type="button"
+                onClick={() => {
+                  closeChromeMenu();
+                  void openGiving();
+                }}
+                aria-label="Support this ministry — opens the giving page"
+                title="Support this ministry"
+                className="chrome-metal chrome-metal-rose"
+              >
+                <span aria-hidden="true">♥</span>
+                <span>Give</span>
+              </button>
             </div>
             {/* S172 + S174 — account / partnership chrome in the
                 metallic emerald register. Foundational ongoing
@@ -4823,7 +4838,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
             chrome button, no color block. Opens the Tithely giving page
             (system browser on native, new tab on web).
           */}
-          {!isNativeShell() && (
+          {(
             <div className="mt-8 text-center font-sans text-xs text-[var(--reader-muted)]">
               <button
                 type="button"
@@ -4833,7 +4848,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                 className="underline-offset-4 transition hover:text-[var(--reader-accent)] hover:underline"
                 aria-label="Support this work — opens the giving page"
               >
-                <span aria-hidden="true">♥</span> Support this work
+                <span aria-hidden="true">♥</span> Support this ministry
               </button>
             </div>
           )}

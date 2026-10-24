@@ -520,6 +520,13 @@ body {
   border-color: #2EFFA1;
   color: #E6FFF2;
 }
+/* S464 — rose: the giving-heart register (Give). Chosen by Yoshi and his
+ * wife from a side-by-side mock; no other chrome button uses it. */
+.chrome-metal-rose {
+  background-image: linear-gradient(to right, #4A1630 0%, #D0507F 50%, #4A1630 100%);
+  border-color: #FFC2D8;
+  color: #FFE8F0;
+}
 .chrome-metal-spectral {
   background-image: linear-gradient(to right, #0E2C50 0%, #2E7BD6 50%, #0E2C50 100%);
   border-color: #9FD0FF;
@@ -2211,15 +2218,20 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.42rem 1rem;
-  font-size: 0.86rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 22rem;
+  padding: 0.85rem 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
   border-radius: 999px;
   cursor: pointer;
 }
 .today-support-glyph { color: var(--today-gold); }
 .today-support-note {
-  font-size: 0.72rem;
+  text-align: center;
+  max-width: 24rem;
+  font-size: 0.85rem;
   font-style: italic;
   color: var(--today-soft);
 }

@@ -4,6 +4,8 @@ import { useTheme } from "../lib/theme";
 import { useParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import { useSacredNameMask } from "../lib/useSacredNameMask";
 import { clearNativeToken } from "../lib/native-auth";
+import SuggestionBox from "../components/SuggestionBox";
+import { openGiving } from "../lib/giving";
 
 /**
  * S172 — Settings → Reader preferences page.
@@ -218,6 +220,24 @@ export default function Settings() {
             so partners know the preferences will land here.
             Interlinear-default + TTS voice land when their respective
             hooks get lifted into Settings. (Font size shipped in S356.) */}
+        {/* S464 — giving. Opens Tithely outside the app (system browser on
+            the phones). General-fund wording on purpose: no designated use. */}
+        <SettingsCard
+          title="Support this ministry"
+          description="Remnant of Promise is a non-profit church. Your gift supports the whole work of the ministry, including this app and our outreach."
+        >
+          <button
+            type="button"
+            onClick={() => { void openGiving(); }}
+            className="rounded border border-[var(--reader-accent)] bg-[var(--reader-accent)] px-4 py-2 font-sans text-sm font-medium text-[var(--reader-bg)]"
+          >
+            ♥ Give
+          </button>
+        </SettingsCard>
+
+        {/* S464 — partner suggestion box (locked for free readers). */}
+        <SuggestionBox />
+
         <SignOutCard />
 
         <SettingsCard
