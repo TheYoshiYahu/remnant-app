@@ -1,0 +1,14 @@
+[
+ {
+  "id": 28104,
+  "where": "new_note",
+  "problem": "The prose puts Esau into the Jasher verse: \"In both books it is Yahudah (Judah) and the bow against the house of Esau\" and \"the fight is with Esau.\" Jasher 56:9 says only \"the battles of their brother who will rule over his enemies\" — it names no enemy. Jubilees 38:1 is the verse that names Esau (\"we shall not slay your brother\"). The war with Esau's house does come later in Jasher 56, at the burial, but the quoted verse does not carry it, so the note claims something the two quoted texts together do not quite say. The connection (Yahudah, the bow, Esau) is real; the sentence just needs to be honest about which book names the enemy.",
+  "fix": "In both books it is Yahudah (Judah) and the bow. Jubilees puts the bow in Jacob's own hand at Yahudah's (Judah's) urging while Jacob still lives, and names the enemy as Esau; Jasher puts the same charge on Jacob's deathbed, Yahudah (Judah) to teach his sons the bow and every weapon of war so that they can fight the battles of the brother who rules over his enemies, and the enemy who comes against that house before the chapter ends is Esau. Two tellings of one memory, that the tribe that reigns is the tribe taught to fight."
+ },
+ {
+  "id": 4281,
+  "where": "new_note",
+  "problem": "The closing sentence misstates the timing on the Jasher side: \"in both cases the child the king was after had already been placed beyond his reach.\" The verse dates Pharaoh's decree to the days of Aaron's conception, and Aaron was born before Moses; at the time this verse describes, Moses was not yet born, let alone hidden. It is true of Herod (Matthew 2:13–14 has the child already carried toward Egypt) but not of Pharaoh here. The parallel the note wants is that both kings failed to reach the child, which the texts do support.",
+  "fix": "Same fear, same answer, and in both cases the king's sword missed the one child it was sharpened for."
+ }
+]

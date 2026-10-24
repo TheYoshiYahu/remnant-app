@@ -1,0 +1,1087 @@
+[
+ {
+  "id": 33414,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 55,
+   "vn": 16,
+   "cite": "Jasher 55:16",
+   "text": "And Jacob said to Joseph, Now I will die cheerfully after I have seen your face, that you are still living and with glory.",
+   "prev": "And behold Jacob ran and hastened to his son Joseph and fell upon his neck and kissed him, and they wept, and Joseph also embraced his father and kissed him, and they wept and all the people of Egypt wept with them.",
+   "next": "And the sons of Jacob and their wives and their children and their servants, and all the household of Jacob wept exceedingly with Joseph, and they kissed him and wept greatly with him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 46,
+   "vn": 30,
+   "cite": "Genesis 46:30",
+   "text_db": "And Yashar'el (Israel) said unto Joseph, Now let me die, since I have seen your face, because you are yet alive.",
+   "text_canon": "And Yashar'el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive."
+  },
+  "old_note": "Genesis 46:30 — *And Yashar'el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive.* Jacob's now-let-me-die in Jasher 55:16 is the same word — the father content having seen his living son.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "now-let-me-die"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7396,
+    "slug": "jasher-55-judah-sent-and-joseph-meets-jacob",
+    "old": "Genesis 46:30 — *And Yashar'el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive.* Jacob's now-let-me-die in Jasher 55:16 is the same word — the father content having seen his living son."
+   }
+  ]
+ },
+ {
+  "id": 33412,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 55,
+   "vn": 22,
+   "cite": "Jasher 55:22",
+   "text": "And Pharaoh said to Joseph, Place your father and brethren in the best part of the land, withhold not from them all that is good, and cause them to eat of the fat of the land.",
+   "prev": "And Joseph spoke to Pharaoh, saying, My brethren and my father’s household and all belonging to them, together with their flocks and cattle have come to me from the land of Canaan, to sojourn in Egypt; for the famine was sore upon them.",
+   "next": "And Joseph answered, saying, Behold I have stationed them in the land of Goshen, for they are shepherds, therefore let them remain in Goshen to feed their flocks apart from the Egyptians."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 47,
+   "vn": 6,
+   "cite": "Genesis 47:6",
+   "text_db": "The land of Egypt is before you; in the best of the land make your father and brethren to dwell; in the land of Goshen let them dwell: and if you know any men of activity among them, then make them rulers over my cattle.",
+   "text_canon": "The land of Egypt is before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell: and if thou knowest any men of activity among them, then make them rulers over my cattle."
+  },
+  "old_note": "Genesis 47:6 — *The land of Egypt is before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell: and if thou knowest any men of activity among them, then make them rulers over my cattle.* Pharaoh's best-of-the-land grant in Jasher 55:22 is the same decree.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "best-of-the-land"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7397,
+    "slug": "jasher-55-before-pharaoh-settled-in-goshen",
+    "old": "Genesis 47:6 — *The land of Egypt is before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell: and if thou knowest any men of activity among them, then make them rulers over my cattle.* Pharaoh's best-of-the-land grant in Jasher 55:22 is the same decree."
+   }
+  ]
+ },
+ {
+  "id": 33422,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 56,
+   "vn": 3,
+   "cite": "Jasher 56:3",
+   "text": "And Jacob said to Joseph and to his sons, Behold I die, and the Elohim (God) of your ancestors will visit you, and bring you back to the land, which Yahuah (the Lord) sware to give to you and to your children after you, now therefore when I am dead, bury me in the cave which is in Machpelah in Hebron in the land of Canaan, near my ancestors.",
+   "prev": "At that time Jacob was attacked with that illness of which he died and he sent and called for his son Joseph from Egypt, and Joseph his son came from Egypt and Joseph came to his father.",
+   "next": "And Jacob made his sons swear to bury him in Machpelah, in Hebron, and his sons swore to him concerning this thing."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 49,
+   "vn": 29,
+   "cite": "Genesis 49:29",
+   "text_db": "And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite,",
+   "text_canon": "And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite,"
+  },
+  "old_note": "Genesis 49:29 — *And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite,* Jacob's charge to bury him at Machpelah in Jasher 56:3 is the Genesis charge verbatim in substance.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 7400,
+    "slug": "jasher-56-jacob-dies-the-visitation",
+    "old": "Genesis 49:29 — *And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite,* Jacob's charge to bury him at Machpelah in Jasher 56:3 is the Genesis charge verbatim in substance."
+   }
+  ]
+ },
+ {
+  "id": 28104,
+  "kind": "REBUILD",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 56,
+   "vn": 9,
+   "cite": "Jasher 56:9",
+   "text": "Only teach your sons the bow and all the weapons of war, in order that they may fight the battles of their brother who will rule over his enemies.",
+   "prev": "And Jacob said to Judah, I know my son that you are a mighty man for your brethren; reign over them, and your sons shall reign over their sons forever.",
+   "next": "And Jacob again commanded his sons on that day, saying, Behold I shall be this day gathered to my people; carry me up from Egypt, and bury me in the cave of Machpelah as I have commanded you."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 38,
+   "vn": 1,
+   "cite": "Jubilees 38:1",
+   "text_db": "And after that Yahudah (Judah) spake to Jacob, his father, and said to him: “Bend your bow, father, and send forth your arrows and cast down the adversary and slay the enemy; and may you have the power, for we shall not slay your brother, for he is such as you, and he is like you: let us give him (this) honour.”",
+   "text_canon": null
+  },
+  "old_note": "Jasher 56:9 — *Only teach your sons the bow and all the weapons of war, in order that they may fight the battles of their brother who will rule over his enemies* — Jasher’s Judah-and-the-bow tradition stands behind Yahudah’s counsel to bend the bow in Jubilees 38:1.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Only teach your sons the bow and all the weapons of war, in order that they may fight the battles of their brother who will rule over his enemies",
+     "labelled": "jasher|56:9",
+     "cited_range": null,
+     "at": "jasher|56:9",
+     "verdict": "STAND",
+     "proposed": "jasher|56:9",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "Only teach your sons the bow and all the weapons of war, in order that they may fight the battles of their brother who will rule over his enemies.",
+     "live_proposed": "Only teach your sons the bow and all the weapons of war, in order that they may fight the battles of their brother who will rule over his enemies."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "Judah-and-the-bow"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 5884,
+    "slug": "jubilees-38-judah-bow-esau-arrow",
+    "old": "Jasher 56:9 — *Only teach your sons the bow and all the weapons of war, in order that they may fight the battles of their brother who will rule over his enemies* — Jasher’s Judah-and-the-bow tradition stands behind Yahudah’s counsel to bend the bow in Jubilees 38:1."
+   }
+  ]
+ },
+ {
+  "id": 33442,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 56,
+   "vn": 21,
+   "cite": "Jasher 56:21",
+   "text": "And it shall come to pass when you shall go after Elohim to serve him and will teach your children after you, and your children’s children, to know Yahuah (the Lord), then will Yahuah (the Lord) raise up to you and your children a servant from amongst your children, and Yahuah (the Lord) will deliver you through his hand from all affliction, and bring you out of Egypt and bring you back to the land of your fathers to inherit it securely.",
+   "prev": "For I know that many and grievous troubles will befall you in the latter days in the land, yea your children and children’s children, only serve Yahuah (the Lord) and he will save you from all trouble.",
+   "next": "And Jacob ceased commanding his sons, and he drew his feet into the bed, he died and was gathered to his people."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hebrews",
+   "ch": 11,
+   "vn": 22,
+   "cite": "Hebrews 11:22",
+   "text_db": "By faith Joseph, when he died, made mention of the departing of the children of Yashar'el (Israel); and gave commandment concerning his bones.",
+   "text_canon": "By faith Joseph, when he died, made mention of the departing of the children of Yashar'el (Israel); and gave commandment concerning his bones."
+  },
+  "old_note": "Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar'el (Israel); and gave commandment concerning his bones.* The bringing-out-of-Egypt Jacob foresees in Jasher 56:21 is the very departing Joseph foretold by faith over his bones.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "bringing-out-of-Egypt"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7404,
+    "slug": "jasher-56-joseph-bones-foretold",
+    "old": "Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar'el (Israel); and gave commandment concerning his bones.* The bringing-out-of-Egypt Jacob foresees in Jasher 56:21 is the very departing Joseph foretold by faith over his bones."
+   }
+  ]
+ },
+ {
+  "id": 34561,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 59,
+   "vn": 19,
+   "cite": "Jasher 59:19",
+   "text": "And all the souls that went forth from the loins of Jacob, were seventy souls; these are they who came with Jacob their father to Egypt to dwell there: and Joseph and all his brethren dwelt securely in Egypt, and they ate of the best of Egypt all the days of the life of Joseph.",
+   "prev": "And the sons of Joseph, that were born to him in Egypt, were Manasseh and Ephraim.",
+   "next": "And Joseph lived in the land of Egypt ninety-three years, and Joseph reigned over all Egypt eighty years."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 1,
+   "vn": 5,
+   "cite": "Exodus 1:5",
+   "text_db": "And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.",
+   "text_canon": "And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already."
+  },
+  "old_note": "Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* Exodus echoes the same seventy-from-the-loins count that closes Jasher's roll in 59:19.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "seventy-from-the-loins"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7722,
+    "slug": "jasher-59-seventy-souls",
+    "old": "Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* Exodus echoes the same seventy-from-the-loins count that closes Jasher's roll in 59:19."
+   }
+  ]
+ },
+ {
+  "id": 34609,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 63,
+   "vn": 7,
+   "cite": "Jasher 63:7",
+   "text": "And this was also from Yahuah (the Lord), for the children of Israel, to benefit them in their latter days, in order that all the children of Israel might know Yahuah their Elohim (the Lord their God).",
+   "prev": "Therefore all Egypt began from that day forth to embitter the lives of the sons of Jacob, and to afflict them with all manner of hard labor, because they had not known their ancestors who had delivered them in the days of the famine.",
+   "next": "And in order to know the signs and mighty wonders which Yahuah (the Lord) would do in Egypt on account of his people Israel, in order that the children of Israel might fear Yahuah Elohim (the Lord God) of their ancestors, and walk in all his ways, they and their seed after them all the days."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 50,
+   "vn": 20,
+   "cite": "Genesis 50:20",
+   "text_db": "But as for you, you thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.",
+   "text_canon": "But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive."
+  },
+  "old_note": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* Joseph's evil-meant-for-good is the same reading Jasher 63:7 gives the bondage itself.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "evil-meant-for-good"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7737,
+    "slug": "jasher-63-yahuah-purposes-the-affliction",
+    "old": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* Joseph's evil-meant-for-good is the same reading Jasher 63:7 gives the bondage itself."
+   }
+  ]
+ },
+ {
+  "id": 4282,
+  "kind": "REBUILD",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 67,
+   "vn": 1,
+   "cite": "Jasher 67:1",
+   "text": "There was a man in the land of Egypt of the seed of Levi, whose name was Amram, the son of Kehath, the son of Levi, the son of Israel.",
+   "prev": null,
+   "next": "And this man went and took a wife, namely Jochebed the daughter of Levi his father’s sister, and she was one hundred and twenty-six years old, and he came to her."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 2,
+   "vn": 13,
+   "cite": "Matthew 2:13",
+   "text_db": "And when they were departed, behold, the angel of Yahuah (Lord) appears to Joseph in a dream, saying, Arise, and take the young child and his mother, and flee into Egypt, and be you there until I bring you word: for Herod will seek the young child to destroy him.",
+   "text_canon": "And when they were departed, behold, the angel of Yahuah (Lord) appeareth to Joseph in a dream, saying, Arise, and take the young child and his mother, and flee into Egypt, and be thou there until I bring thee word: for Herod will seek the young child to destroy him."
+  },
+  "old_note": "*There was a man in the land of Egypt of the seed of Levi, whose name was Amram, the son of Kehath, the son of Levi, the son of Yashar'el (Israel).* The Mosheh-parent narrative — Amram and Yochaved (Jochebed) — the deliverer-preserved-through-the-slaughter prototype. Matthew 2:13's angelic-Yoseph-flee-to-Egypt is the Messianic version of the same preservation pattern.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "There was a man in the land of Egypt of the seed of Levi, whose name was Amram, the son of Kehath, the son of Levi, the son of Yashar'el (Israel).",
+     "labelled": null,
+     "cited_range": null,
+     "at": "jasher|67:1",
+     "verdict": "REWORDED",
+     "proposed": "jasher|67:1",
+     "ratio": 0.94,
+     "k": 1,
+     "live_here": "There was a man in the land of Egypt of the seed of Levi, whose name was Amram, the son of Kehath, the son of Levi, the son of Israel.",
+     "live_proposed": "There was a man in the land of Egypt of the seed of Levi, whose name was Amram, the son of Kehath, the son of Levi, the son of Israel."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "deliverer-preserved-through-the-slaughter",
+    "angelic-Yoseph-flee-to-Egypt"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 35,
+    "slug": "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+    "old": "The Mosheh-parent narrative — Amram and Yochaved (Jochebed) — the deliverer-preserved-through-the-slaughter prototype."
+   }
+  ]
+ },
+ {
+  "id": 4280,
+  "kind": "REBUILD",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 67,
+   "vn": 3,
+   "cite": "Jasher 67:3",
+   "text": "And the woman conceived and bare a daughter, and she called her name Miriam, because in those days the Egyptians had embittered the lives of the children of Israel.",
+   "prev": "And this man went and took a wife, namely Jochebed the daughter of Levi his father’s sister, and she was one hundred and twenty-six years old, and he came to her.",
+   "next": "And she conceived again and bare a son and she called his name Aaron, for in the days of her conception, Pharaoh began to spill the blood of the male children of Israel."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 2,
+   "vn": 16,
+   "cite": "Matthew 2:16",
+   "text_db": "Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.",
+   "text_canon": "Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men."
+  },
+  "old_note": "*And the woman conceived and bare a daughter, and she called her name Miriam, because in those days the Egyptians had embittered the lives of the children of Yashar'el (Israel).* Jasher 67 walks the Pharaoh-Mosheh-infant-slaughter narrative in fuller detail than Exodus 1 — the embittering of the children of Yashar'el, the spilling of male infant blood. The Herod-Yahusha slaughter at Matt 2:16 is the latest beat of the same antichrist-pattern.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "And the woman conceived and bare a daughter, and she called her name Miriam, because in those days the Egyptians had embittered the lives of the children of Yashar'el (Israel).",
+     "labelled": null,
+     "cited_range": null,
+     "at": "jasher|67:3",
+     "verdict": "REWORDED",
+     "proposed": "jasher|67:3",
+     "ratio": 0.93,
+     "k": 1,
+     "live_here": "And the woman conceived and bare a daughter, and she called her name Miriam, because in those days the Egyptians had embittered the lives of the children of Israel.",
+     "live_proposed": "And the woman conceived and bare a daughter, and she called her name Miriam, because in those days the Egyptians had embittered the lives of the children of Israel."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "Pharaoh-Mosheh-infant-slaughter"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 35,
+    "slug": "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+    "old": "Jasher 67 walks the Pharaoh-infant-slaughter narrative — *the Egyptians had embittered the lives of the children of Yashar'el (Israel).*"
+   }
+  ]
+ },
+ {
+  "id": 4281,
+  "kind": "REBUILD",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 67,
+   "vn": 4,
+   "cite": "Jasher 67:4",
+   "text": "And she conceived again and bare a son and she called his name Aaron, for in the days of her conception, Pharaoh began to spill the blood of the male children of Israel.",
+   "prev": "And the woman conceived and bare a daughter, and she called her name Miriam, because in those days the Egyptians had embittered the lives of the children of Israel.",
+   "next": "In those days died Zepho the son of Eliphaz, son of Esau, king of Chittim, and Janeas reigned in his stead."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 2,
+   "vn": 16,
+   "cite": "Matthew 2:16",
+   "text_db": "Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.",
+   "text_canon": "Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men."
+  },
+  "old_note": "*And she conceived again and bare a son and she called his name Aaron, for in the days of her conception, Pharaoh began to spill the blood of the male children of Yashar'el (Israel).* The Pharaoh-blood-of-male-children naming Jasher gives — *Pharaoh began to spill the blood of the male children.* Matthew 2:16's *slew all the children that were in Beth-lehem* is the Herod-version of the same line. Same pattern, two beats.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "And she conceived again and bare a son and she called his name Aaron, for in the days of her conception, Pharaoh began to spill the blood of the male children of Yashar'el (Israel).",
+     "labelled": null,
+     "cited_range": null,
+     "at": "jasher|67:4",
+     "verdict": "REWORDED",
+     "proposed": "jasher|67:4",
+     "ratio": 0.94,
+     "k": 1,
+     "live_here": "And she conceived again and bare a son and she called his name Aaron, for in the days of her conception, Pharaoh began to spill the blood of the male children of Israel.",
+     "live_proposed": "And she conceived again and bare a son and she called his name Aaron, for in the days of her conception, Pharaoh began to spill the blood of the male children of Israel."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "Pharaoh-blood-of-male-children"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 35,
+    "slug": "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+    "old": "*Pharaoh began to spill the blood of the male children of Yashar'el (Israel)* — the same antichrist-pattern Herod walks at Beth-lehem."
+   }
+  ]
+ },
+ {
+  "id": 35908,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 69,
+   "vn": 2,
+   "cite": "Jasher 69:2",
+   "text": "And the children of Esau sent to Pethor, which is upon the river, and they fetched from there a young man of beautiful eyes and comely aspect, whose name was Saul, and they made him king over them in the place of Samlah.",
+   "prev": "And the king of Edom died in those days, in the eighteenth year of his reign, and was buried in his temple which he had built for himself as his royal residence in the land of Edom.",
+   "next": "And Saul reigned over all the children of Esau in the land of Edom for forty years."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 36,
+   "vn": 37,
+   "cite": "Genesis 36:37",
+   "text_db": "And Samlah died, and Saul of Rehoboth by the river reigned in his stead.",
+   "text_canon": "And Samlah died, and Saul of Rehoboth by the river reigned in his stead."
+  },
+  "old_note": "Genesis 36:37 — *And Samlah died, and Saul of Rehoboth by the river reigned in his stead.* The Torah's Edomite king-list names the same Saul-by-the-river succeeding the same Samlah that Jasher 69:2 records.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "Saul-by-the-river"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8101,
+    "slug": "jasher-69-saul-of-edom",
+    "old": "Genesis 36:37 — *And Samlah died, and Saul of Rehoboth by the river reigned in his stead.* The Torah's Edomite king-list names the same Saul-by-the-river succeeding the same Samlah that Jasher 69:2 records."
+   }
+  ]
+ },
+ {
+  "id": 37330,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 76,
+   "vn": 12,
+   "cite": "Jasher 76:12",
+   "text": "So Moses went forth from the land of Cush, and went home and ceased to reign over Cush, and Moses was sixty-six years old when he went out of the land of Cush, for the thing was from Yahuah (the Lord), for the period had arrived which he had appointed in the days of old, to bring forth Israel from the affliction of the children of Ham.",
+   "prev": "But the children of Cush gave many presents to Moses, and sent him from them with great honor.",
+   "next": "So Moses went to Midian, for he was afraid to return to Egypt on account of Pharaoh, and he went and sat at a well of water in Midian."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "acts",
+   "ch": 7,
+   "vn": 29,
+   "cite": "Acts 7:29",
+   "text_db": "Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.",
+   "text_canon": "Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons."
+  },
+  "old_note": "Acts 7:29 — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.* Stephen frames the same long exile-before-the-call that Jasher fills with the Cush years, Moses a stranger far from his brethren until the appointed time.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "exile-before-the-call"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8502,
+    "slug": "jasher-76-out-of-cush",
+    "old": "Acts 7:29 — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.* Stephen frames the same long exile-before-the-call that Jasher fills with the Cush years, Moses a stranger far from his brethren until the appointed time."
+   }
+  ]
+ },
+ {
+  "id": 37358,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 78,
+   "vn": 9,
+   "cite": "Jasher 78:9",
+   "text": "And Zipporah conceived and bare a son and he called his name Gershom, for he said, I was a stranger in a foreign land; but he circumcised not his foreskin, at the command of Reuel his father-in-law.",
+   "prev": "And Zipporah walked in the ways of the daughters of Jacob, she was nothing short of the righteousness of Sarah, Rebecca, Rachel and Leah.",
+   "next": "And she conceived again and bare a son, but circumcised his foreskin, and called his name Eliezer, for Moses said, Because the Elohim (God) of my fathers was my help, and delivered me from the sword of Pharaoh."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 2,
+   "vn": 22,
+   "cite": "Exodus 2:22",
+   "text_db": "And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land.",
+   "text_canon": "And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land."
+  },
+  "old_note": "Exodus 2:22 — *And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land.* The same naming of Gershom that Jasher 78:9 records, the stranger-in-a-foreign-land confession word for word.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "stranger-in-a-foreign-land"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8512,
+    "slug": "jasher-78-zipporah-gershom-eliezer",
+    "old": "Exodus 2:22 — *And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land.* The same naming of Gershom that Jasher 78:9 records, the stranger-in-a-foreign-land confession word for word."
+   }
+  ]
+ },
+ {
+  "id": 37354,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 78,
+   "vn": 10,
+   "cite": "Jasher 78:10",
+   "text": "And she conceived again and bare a son, but circumcised his foreskin, and called his name Eliezer, for Moses said, Because the Elohim (God) of my fathers was my help, and delivered me from the sword of Pharaoh.",
+   "prev": "And Zipporah conceived and bare a son and he called his name Gershom, for he said, I was a stranger in a foreign land; but he circumcised not his foreskin, at the command of Reuel his father-in-law.",
+   "next": "And Pharaoh king of Egypt greatly increased the labor of the children of Israel in those days, and continued to make his yoke heavier upon the children of Israel."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "acts",
+   "ch": 7,
+   "vn": 35,
+   "cite": "Acts 7:35",
+   "text_db": "This Moses whom they refused, saying, Who made you a ruler and a judge? the same did Elohim (God) send to be a ruler and a deliverer by the hand of the angel which appeared to him in the bush.",
+   "text_canon": "This Moses whom they refused, saying, Who made thee a ruler and a judge? the same did Elohim (God) send to be a ruler and a deliverer by the hand of the angel which appeared to him in the bush."
+  },
+  "old_note": "Acts 7:35 — *This Moses whom they refused, saying, Who made thee a ruler and a judge? the same did Elohim (God) send to be a ruler and a deliverer by the hand of the angel which appeared to him in the bush.* The deliverer-from-Pharaoh's-sword that Eliezer's name marks in Jasher 78:10.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "deliverer-from-Pharaoh's-sword"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8513,
+    "slug": "jasher-78-the-elohim-of-thy-fathers-my-help",
+    "old": "Acts 7:35 — *This Moses whom they refused, saying, Who made thee a ruler and a judge? the same did Elohim (God) send to be a ruler and a deliverer by the hand of the angel which appeared to him in the bush.* The deliverer-from-Pharaoh's-sword that Eliezer's name marks in Jasher 78:10."
+   }
+  ]
+ },
+ {
+  "id": 37388,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 80,
+   "vn": 3,
+   "cite": "Jasher 80:3",
+   "text": "And Yahuah (the Lord) sent by the hand of Aaron and turned all the waters of Egypt into blood, with all their streams and rivers.",
+   "prev": "And Moses went and came to the house of Pharaoh, and he spoke to him the words of Yahuah (the Lord) who had sent him, but Pharaoh would not hearken to the voice of Yahuah (the Lord), and Elohim (God) roused his might in Egypt upon Pharaoh and his subjects, and Elohim smote Pharaoh and his people with very great and sore plagues.",
+   "next": "And when an Egyptian came to drink and draw water, he looked into his pitcher, and behold all the water was turned into blood; and when he came to drink from his cup the water in the cup became blood."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 7,
+   "vn": 19,
+   "cite": "Exodus 7:19",
+   "text_db": "And Yahuah (LORD) spake unto Moses, Say unto Aaron, Take your rod, and stretch out your hand upon the waters of Egypt, upon their streams, upon their rivers, and upon their ponds, and upon all their pools of water, that they may become blood; and that there may be blood throughout all the land of Egypt, both in vessels of wood, and in vessels of stone.",
+   "text_canon": "And Yahuah (LORD) spake unto Moses, Say unto Aaron, Take thy rod, and stretch out thine hand upon the waters of Egypt, upon their streams, upon their rivers, and upon their ponds, and upon all their pools of water, that they may become blood; and that there may be blood throughout all the land of Egypt, both in vessels of wood, and in vessels of stone."
+  },
+  "old_note": "Exodus 7:19 — *And Yahuah (LORD) spake unto Moses, Say unto Aaron, Take thy rod, and stretch out thine hand upon the waters of Egypt, upon their streams, upon their rivers, and upon their ponds, and upon all their pools of water, that they may become blood; and that there may be blood throughout all the land of Egypt, both in vessels of wood, and in vessels of stone.* The blood-by-the-hand-of-Aaron of Jasher 80:3 is Exodus' own first plague.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "blood-by-the-hand-of-Aaron"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8523,
+    "slug": "jasher-80-blood-frogs-lice",
+    "old": "Exodus 7:19 — *And Yahuah (LORD) spake unto Moses, Say unto Aaron, Take thy rod, and stretch out thine hand upon the waters of Egypt, upon their streams, upon their rivers, and upon their ponds, and upon all their pools of water, that they may become blood; and that there may be blood throughout all the land of Egypt, both in vessels of wood, and in vessels of stone.* The blood-by-the-hand-of-Aaron of Jasher 80:3 is Exodus' own first plague."
+   }
+  ]
+ },
+ {
+  "id": 37403,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 80,
+   "vn": 44,
+   "cite": "Jasher 80:44",
+   "text": "And Pharaoh rose up in the night, he and all his servants and all the Egyptians, and there was a great cry throughout Egypt in that night, for there was not a house in which there was not a corpse.",
+   "prev": "And it came to pass in the middle of the night, that Yahuah (the Lord) went forth in the midst of Egypt, and smote all the first born of the Egyptians, from the first born of man to the first born of beast.",
+   "next": "Also the likenesses of the first born of Egypt, which were carved in the walls at their houses, were destroyed and fell to the ground."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 12,
+   "vn": 30,
+   "cite": "Exodus 12:30",
+   "text_db": "And Pharaoh rose up in the night, he, and all his servants, and all the Egyptians; and there was a great cry in Egypt; for there was not a house where there was not one dead.",
+   "text_canon": "And Pharaoh rose up in the night, he, and all his servants, and all the Egyptians; and there was a great cry in Egypt; for there was not a house where there was not one dead."
+  },
+  "old_note": "Exodus 12:30 — *And Pharaoh rose up in the night, he, and all his servants, and all the Egyptians; and there was a great cry in Egypt; for there was not a house where there was not one dead.* Pharaoh rising and the houseless-of-the-living of Jasher 80:44 is Exodus' great cry.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "houseless-of-the-living"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8526,
+    "slug": "jasher-80-passover-firstborn",
+    "old": "Exodus 12:30 — *And Pharaoh rose up in the night, he, and all his servants, and all the Egyptians; and there was a great cry in Egypt; for there was not a house where there was not one dead.* Pharaoh rising and the houseless-of-the-living of Jasher 80:44 is Exodus' great cry."
+   }
+  ]
+ },
+ {
+  "id": 38883,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 81,
+   "vn": 2,
+   "cite": "Jasher 81:2",
+   "text": "Also a mixed multitude went up with them, and flocks and herds, even much cattle.",
+   "prev": "And the children of Israel journeyed from Rameses to Succoth, about six hundred thousand men on foot, besides the little ones and their wives.",
+   "next": "And the sojourning of the children of Israel, who dwelt in the land of Egypt in hard labor, was two hundred and ten years."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 12,
+   "vn": 36,
+   "cite": "Exodus 12:36",
+   "text_db": "And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.",
+   "text_canon": "And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians."
+  },
+  "old_note": "Exodus 12:36 — *And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.* The substance carried out with the multitude of Jasher 81:2 is the canon's spoiling of Egypt.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 8940,
+    "slug": "jasher-81-exodus-spoiling",
+    "old": "Exodus 12:36 — *And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.* The substance carried out with the multitude of Jasher 81:2 is the canon's spoiling of Egypt."
+   }
+  ]
+ },
+ {
+  "id": 38877,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 81,
+   "vn": 28,
+   "cite": "Jasher 81:28",
+   "text": "And Moses said to them, Fear not, stand still and see the salvation of Yahuah (the Lord) which He will effect this day for you.",
+   "prev": "The first division was of the children of Reuben, Simeon, and Issachar, and they resolved to cast themselves into the sea, for they were exceedingly afraid of the Egyptians.",
+   "next": "The second division was of the children of Zebulun, Benjamin and Naphtali, and they resolved to go back to Egypt with the Egyptians."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 14,
+   "vn": 13,
+   "cite": "Exodus 14:13",
+   "text_db": "And Moses said unto the people, Fear you not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day: for the Egyptians whom you have seen to day, you shall see them again no more for ever.",
+   "text_canon": "And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever."
+  },
+  "old_note": "Exodus 14:13 — *And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever.* Moses' charge in Jasher 81:28 is the canon's stand-still word verbatim in substance.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 8942,
+    "slug": "jasher-81-red-sea-divided",
+    "old": "Exodus 14:13 — *And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever.* Moses' charge in Jasher 81:28 is the canon's stand-still word verbatim in substance."
+   }
+  ]
+ },
+ {
+  "id": 39001,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 87,
+   "vn": 4,
+   "cite": "Jasher 87:4",
+   "text": "And Moses said to Joshua, Be strong and courageous, for you will make the children of Israel inherit the land, and Yahuah (the Lord) will be with you, he will not leave you nor forsake you, be not afraid nor disheartened.",
+   "prev": "And Yahuah (the Lord) commanded Joshua the son of Nun and said to him, Be strong and courageous, for you shall bring the children of Israel to the land which I swore to give them, and I will be with you.",
+   "next": "And Moses called to all the children of Israel and said to them, You have seen all the good which Yahuah your Elohim (the Lord your God) has done for you in the wilderness."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hebrews",
+   "ch": 13,
+   "vn": 5,
+   "cite": "Hebrews 13:5",
+   "text_db": "Let your conversation be without covetousness; and be content with such things as you have: for he has said, I will never leave you, nor forsake you.",
+   "text_canon": "Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee."
+  },
+  "old_note": "Hebrews 13:5 — *Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.* The New Covenant carries forward the very I-will-not-forsake-thee promise spoken in Jasher 87:4.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "I-will-not-forsake-thee"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8977,
+    "slug": "jasher-87-moses-charges-joshua",
+    "old": "Hebrews 13:5 — *Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.* The New Covenant carries forward the very I-will-not-forsake-thee promise spoken in Jasher 87:4."
+   }
+  ]
+ },
+ {
+  "id": 38999,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 87,
+   "vn": 6,
+   "cite": "Jasher 87:6",
+   "text": "Now therefore observe all the words of this law, and walk in the way of Yahuah your Elohim, turn not from the way which Yahuah (the Lord) has commanded you, either to the right or to the left.",
+   "prev": "And Moses called to all the children of Israel and said to them, You have seen all the good which Yahuah your Elohim (the Lord your God) has done for you in the wilderness.",
+   "next": "And Moses taught the children of Israel statutes and judgments and laws to do in the land as Yahuah (the Lord) had commanded him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 5,
+   "vn": 32,
+   "cite": "Deuteronomy 5:32",
+   "text_db": "You shall observe to do therefore as Yahuah Elohaychem (the LORD your God) has commanded you: you shall not turn aside to the right hand or to the left.",
+   "text_canon": "Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left."
+  },
+  "old_note": "Deuteronomy 5:32 — *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left.* Jasher 87:6 repeats the very turn-not-to-the-right-or-left refrain of Moses' charge to keep the way.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "turn-not-to-the-right-or-left"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8978,
+    "slug": "jasher-87-torah-stands",
+    "old": "Deuteronomy 5:32 — *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left.* Jasher 87:6 repeats the very turn-not-to-the-right-or-left refrain of Moses' charge to keep the way."
+   }
+  ]
+ },
+ {
+  "id": 38995,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 87,
+   "vn": 9,
+   "cite": "Jasher 87:9",
+   "text": "And Moses finished commanding the children of Israel, and Yahuah (the Lord) said to him, saying, Go up to the Mount Abarim and die there, and be gathered to your people as Aaron your brother was gathered.",
+   "prev": "And he taught them the way of Yahuah (the Lord) and his laws; behold they are written upon the book of the law of Elohim (God) which he gave to the children of Israel by the hand of Moses.",
+   "next": "And Moses went up as Yahuah (the Lord) had commanded him, and he died there in the land of Moab by the order of Yahuah (the Lord), in the fortieth year from the Israelites going forth from the land of Egypt."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 32,
+   "vn": 50,
+   "cite": "Deuteronomy 32:50",
+   "text_db": "And die in the mount whither you go up, and be gathered unto your people; as Aaron your brother died in mount Hor, and was gathered unto his people:",
+   "text_canon": "And die in the mount whither thou goest up, and be gathered unto thy people; as Aaron thy brother died in mount Hor, and was gathered unto his people:"
+  },
+  "old_note": "Deuteronomy 32:50 — *And die in the mount whither thou goest up, and be gathered unto thy people; as Aaron thy brother died in mount Hor, and was gathered unto his people.* Jasher 87:9 keeps the very gathered-to-your-people-as-Aaron wording.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "gathered-to-your-people-as-Aaron"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8979,
+    "slug": "jasher-87-death-of-moses",
+    "old": "Deuteronomy 32:50 — *And die in the mount whither thou goest up, and be gathered unto thy people; as Aaron thy brother died in mount Hor, and was gathered unto his people.* Jasher 87:9 keeps the very gathered-to-your-people-as-Aaron wording."
+   }
+  ]
+ },
+ {
+  "id": 39010,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 88,
+   "vn": 2,
+   "cite": "Jasher 88:2",
+   "text": "Rise up and pass the Jordan to the land which I have given to the children of Israel, and you shall make the children of Israel inherit the land.",
+   "prev": "And it was after the death of Moses that Yahuah (the Lord) said to Joshua the son of Nun, saying,",
+   "next": "Every place upon which the sole of your feet shall tread shall belong to you, from the wilderness of Lebanon to the great river the river of Perath shall be your boundary."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "joshua",
+   "ch": 1,
+   "vn": 2,
+   "cite": "Joshua 1:2",
+   "text_db": "Moses my servant is dead; now therefore arise, go over this Jordan, you, and all this people, unto the land which I do give to them, even to the children of Yashar'el (Israel).",
+   "text_canon": "Moses my servant is dead; now therefore arise, go over this Jordan, thou, and all this people, unto the land which I do give to them, even to the children of Yashar'el (Israel)."
+  },
+  "old_note": "Joshua 1:2 — *Moses my servant is dead; now therefore arise, go over this Jordan, thou, and all this people, unto the land which I do give to them, even to the children of Yashar'el (Israel).* The command to rise and pass the Jordan to inherit the land in Jasher 88:2 is Joshua 1:2 verbatim in substance.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 8980,
+    "slug": "jasher-88-joshua-commissioned",
+    "old": "Joshua 1:2 — *Moses my servant is dead; now therefore arise, go over this Jordan, thou, and all this people, unto the land which I do give to them, even to the children of Yashar'el (Israel).* The command to rise and pass the Jordan to inherit the land in Jasher 88:2 is Joshua 1:2 verbatim in substance."
+   }
+  ]
+ },
+ {
+  "id": 39011,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 88,
+   "vn": 3,
+   "cite": "Jasher 88:3",
+   "text": "Every place upon which the sole of your feet shall tread shall belong to you, from the wilderness of Lebanon to the great river the river of Perath shall be your boundary.",
+   "prev": "Rise up and pass the Jordan to the land which I have given to the children of Israel, and you shall make the children of Israel inherit the land.",
+   "next": "No man shall stand up against you all the days of your life; as I was with Moses, so will I be with you, only be strong and of good courage to observe all the law which Moses commanded you, turn not from the way either to the right or to the left, in order that you may prosper in all that you do."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 11,
+   "vn": 24,
+   "cite": "Deuteronomy 11:24",
+   "text_db": "Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be.",
+   "text_canon": "Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be."
+  },
+  "old_note": "Deuteronomy 11:24 — *Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be.* The sole-of-the-foot boundary to Lebanon and the river of Perath in Jasher 88:3 is the inheritance-word Moses already gave.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "sole-of-the-foot"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8980,
+    "slug": "jasher-88-joshua-commissioned",
+    "old": "Deuteronomy 11:24 — *Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be.* The sole-of-the-foot boundary to Lebanon and the river of Perath in Jasher 88:3 is the inheritance-word Moses already gave."
+   }
+  ]
+ },
+ {
+  "id": 39015,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 88,
+   "vn": 10,
+   "cite": "Jasher 88:10",
+   "text": "And the people went up from Jordan on the tenth day of the first month, and they encamped in Gilgal at the eastern corner of Jericho.",
+   "prev": "And it came to pass after that, that Joshua rose up in the morning and all Israel with him, and they journeyed from Shittim, and Joshua and all Israel with him passed the Jordan; and Joshua was eighty-two years old when he passed the Jordan with Israel.",
+   "next": "And the children of Israel kept the Passover in Gilgal, in the plains of Jericho, on the fourteenth day at the month, as it is written in the law of Moses."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "joshua",
+   "ch": 4,
+   "vn": 19,
+   "cite": "Joshua 4:19",
+   "text_db": "And the people came up out of Jordan on the tenth day of the first month, and encamped in Gilgal, in the east border of Jericho.",
+   "text_canon": "And the people came up out of Jordan on the tenth day of the first month, and encamped in Gilgal, in the east border of Jericho."
+  },
+  "old_note": "Joshua 4:19 — *And the people came up out of Jordan on the tenth day of the first month, and encamped in Gilgal, in the east border of Jericho.* The tenth-day-of-the-first-month encampment at Gilgal in Jasher 88:10 matches the canon to the day and the place.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "tenth-day-of-the-first-month"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8981,
+    "slug": "jasher-88-jordan-passover-manna",
+    "old": "Joshua 4:19 — *And the people came up out of Jordan on the tenth day of the first month, and encamped in Gilgal, in the east border of Jericho.* The tenth-day-of-the-first-month encampment at Gilgal in Jasher 88:10 matches the canon to the day and the place."
+   }
+  ]
+ },
+ {
+  "id": 39080,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 90,
+   "vn": 23,
+   "cite": "Jasher 90:23",
+   "text": "These are the inheritances which Elazer the priest and Joshua the son of Nun and the heads of the fathers of the tribes portioned out to the children of Israel by lot in Shiloh, before Yahuah (the Lord), at the door of the tabernacle, and they left off dividing the land.",
+   "prev": "By the word of Yahuah (the Lord) did they give to him the city which he required, Timnath-serach in Mount Ephraim, and he built the city and dwelt in it.",
+   "next": "And Yahuah (the Lord) gave the land to the Israelites, and they possessed it as Yahuah (the Lord) had spoken to them, and as Yahuah (the Lord) had sworn to their ancestors."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "joshua",
+   "ch": 14,
+   "vn": 1,
+   "cite": "Joshua 14:1",
+   "text_db": "And these are the countries which the children of Yashar'el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar'el (Israel), distributed for inheritance to them.",
+   "text_canon": "And these are the countries which the children of Yashar'el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar'el (Israel), distributed for inheritance to them."
+  },
+  "old_note": "Joshua 14:1 — *And these are the countries which the children of Yashar'el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar'el (Israel), distributed for inheritance to them.* The same Eleazar-Joshua-tribal-heads portioning by lot that Jasher 90:23 records at Shiloh.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "Eleazar-Joshua-tribal-heads"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8992,
+    "slug": "jasher-90-land-divided-by-lot",
+    "old": "Joshua 14:1 — *And these are the countries which the children of Yashar'el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar'el (Israel), distributed for inheritance to them.* The same Eleazar-Joshua-tribal-heads portioning by lot that Jasher 90:23 records at Shiloh."
+   }
+  ]
+ },
+ {
+  "id": 39074,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 90,
+   "vn": 24,
+   "cite": "Jasher 90:24",
+   "text": "And Yahuah (the Lord) gave the land to the Israelites, and they possessed it as Yahuah (the Lord) had spoken to them, and as Yahuah (the Lord) had sworn to their ancestors.",
+   "prev": "These are the inheritances which Elazer the priest and Joshua the son of Nun and the heads of the fathers of the tribes portioned out to the children of Israel by lot in Shiloh, before Yahuah (the Lord), at the door of the tabernacle, and they left off dividing the land.",
+   "next": "And Yahuah (the Lord) gave to the Israelites rest from all their enemies around them, and no man stood up against them, and Yahuah (the Lord) delivered all their enemies into their hands, and not one thing failed of all the good which Yahuah (the Lord) had spoken to the children of Israel, yea Yahuah (the Lord) performed every thing."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "joshua",
+   "ch": 21,
+   "vn": 43,
+   "cite": "Joshua 21:43",
+   "text_db": "And Yahuah (LORD) gave unto Yashar'el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.",
+   "text_canon": "And Yahuah (LORD) gave unto Yashar'el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein."
+  },
+  "old_note": "Joshua 21:43 — *And Yahuah (LORD) gave unto Yashar'el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.* The sworn-to-the-fathers land-gift that Jasher 90:24 restates as Yahuah giving and Israel possessing.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "sworn-to-the-fathers"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 8995,
+    "slug": "jasher-90-rest-from-enemies",
+    "old": "Joshua 21:43 — *And Yahuah (LORD) gave unto Yashar'el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.* The sworn-to-the-fathers land-gift that Jasher 90:24 restates as Yahuah giving and Israel possessing."
+   }
+  ]
+ }
+]

@@ -1,0 +1,145 @@
+[
+ {
+  "id": 4265,
+  "kind": "REQUOTE",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 45,
+   "vn": 32,
+   "cite": "Jasher 45:32",
+   "text": "And Judah passed and saw her and took her and he came to her, and she conceived by him, and at the time of being delivered, behold, there were twins in her womb, and he called the name of the first Perez, and the name of the second Zarah.",
+   "prev": "And Tamar rose up and put off the garments of her widowhood, and she put a vail upon her, and she entirely covered herself, and she went and sat in the public thoroughfare, which is upon the road to Timnah.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 1,
+   "vn": 3,
+   "cite": "Matthew 1:3",
+   "text_db": "And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;",
+   "text_canon": "And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;"
+  },
+  "old_note": "*And Yahudah (Judah) passed and saw her and took her and he came to her, and she conceived by him, and at the time of being delivered, behold, there were twins in her womb.* The Jasher narrative of the conception of Peretz and Zerah — the twins through whom the Davidic kingship-line walks. Tamar's case preserved the line; Jasher walks the preservation in extra detail.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "And Yahudah (Judah) passed and saw her and took her and he came to her, and she conceived by him, and at the time of being delivered, behold, there were twins in her womb.",
+     "labelled": null,
+     "cited_range": null,
+     "at": "jasher|45:32",
+     "verdict": "REWORDED",
+     "proposed": "jasher|45:32",
+     "ratio": 0.94,
+     "k": 1,
+     "live_here": "And Judah passed and saw her and took her and he came to her, and she conceived by him, and at the time of being delivered, behold, there were twins in her womb, and he called the name of the first Perez, and the name of the second Zarah.",
+     "live_proposed": "And Judah passed and saw her and took her and he came to her, and she conceived by him, and at the time of being delivered, behold, there were twins in her womb, and he called the name of the first Perez, and the name of the second Zarah."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 29,
+    "slug": "tamar-in-yahudahs-own-voice",
+    "old": "The conception of Peretz (Perez) and Zerah — *behold, there were twins in her womb.* The Davidic kingship-line walks through Peretz; Tamar's case preserved the line."
+   }
+  ],
+  "canon_off": false
+ },
+ {
+  "id": 54994,
+  "kind": "REQUOTE",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 52,
+   "vn": 23,
+   "cite": "Jasher 52:23",
+   "text": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may El Shaddai (the Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you.",
+   "prev": "And Jacob said to his sons, I trust in Yahuah Elohim (the Lord God) that he may deliver you and give you favor in the sight of the king of Egypt, and in the sight of all his men.",
+   "next": "And all the men rose up, and they took their brother Benjamin, and they took in their hands a large present of the best of the land, and they also took a double portion of silver."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 43,
+   "vn": 14,
+   "cite": "Genesis 43:14",
+   "text_db": "And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved.",
+   "text_canon": "And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved."
+  },
+  "old_note": "*Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you* (Jasher 52:23). The extended witness keeps Jacob's blessing word-for-heart with the canon — *may the El Shaddai (Almighty God) give you mercy before him* — echoing *And El Shaddai (God Almighty) give you mercy before the man* (Genesis 43:14); the father gives up the son and casts the outcome upon the mercy of El Shaddai.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you",
+     "labelled": "jasher|52:23",
+     "cited_range": null,
+     "at": "jasher|52:23",
+     "verdict": "REWORDED",
+     "proposed": "jasher|52:23",
+     "ratio": 0.96,
+     "k": 1,
+     "live_here": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may El Shaddai (the Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you.",
+     "live_proposed": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may El Shaddai (the Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 13297,
+    "slug": "genesis-43-if-i-be-bereaved-el-shaddai-give-you-mercy",
+    "old": "*may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon* (Jasher 52:23) — Jacob's blessing of 43:14 kept word-for-heart; the surrender cast on El Shaddai's mercy."
+   }
+  ],
+  "canon_off": false
+ },
+ {
+  "id": 30027,
+  "kind": "REQUOTE",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 23,
+   "vn": 25,
+   "cite": "Jasher 23:25",
+   "text": "And whilst Abraham was proceeding with his son Isaac along the road, Satan came and appeared to Abraham in the figure of a very aged man, humble and of contrite spirit, and he approached Abraham and said to him, Are you silly or brutish, that you go to do this thing this day to your only son?",
+   "prev": "And Eliezer answered Ishmael and said, Surely Abraham did cast you away with your mother, and swear that you should not inherit any thing of all he possesses, and to whom will he give all that he has, with all his treasures, but to me his servant, who has been faithful in his house, who has served him night and day, and has done all that he desired me? to me will he bequeath at his death all that he possesses.",
+   "next": "For Elohim gave you a son in your latter days, in your old age, and will you go and slaughter him this day because he committed no violence, and will you cause the soul of your only son to perish from the earth?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 4,
+   "vn": 10,
+   "cite": "Matthew 4:10",
+   "text_db": "Then says Yahusha (Jesus) unto him, Get you hence, Satan: for it is written, You shall worship Yahuah Elohayka (the Lord thy God), and him only shall you serve.",
+   "text_canon": "Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve."
+  },
+  "old_note": "Matthew 4:10 — *Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah thy Elohim (the Lord thy God), and him only shalt thou serve.* As the adversary tempts Abraham aside from the command in Jasher 23:25, so the Messiah turns the same tempter away with the word — the chosen seed will not be drawn aside.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6424,
+    "slug": "jasher-23-satan-tempts-on-the-road",
+    "old": "Matthew 4:10 — *Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah thy Elohim (the Lord thy God), and him only shalt thou serve.* As the adversary tempts Abraham aside from the command in Jasher 23:25, so the Messiah turns the same tempter away with the word — the chosen seed will not be drawn aside."
+   }
+  ],
+  "canon_off": true
+ }
+]

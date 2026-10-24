@@ -1,0 +1,58 @@
+{
+ "reason": "Jasher quotation re-quoted verbatim from the live text (register / pre-S450 wording / canon.json compound name); prose kept",
+ "cards": {
+  "4265": [
+   [
+    "*And Yahudah (Judah) passed and saw her and took her and he came to her, and she conceived by him, and at the time of being delivered, behold, there were twins in her womb.*",
+    "*And Judah passed and saw her and took her and he came to her, and she conceived by him, and at the time of being delivered, behold, there were twins in her womb, and he called the name of the first Perez, and the name of the second Zarah.* (Jasher 45:32)"
+   ]
+  ],
+  "30027": [
+   [
+    "Thou shalt worship Yahuah thy Elohim (the Lord thy God), and him only shalt thou serve.",
+    "Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve."
+   ]
+  ],
+  "20237": [
+   [
+    "be blessed* (Jasher 13:23).",
+    "be blessed* (Jasher 13:22–23)."
+   ]
+  ]
+ },
+ "members": [
+  {
+   "thread_id": 12101,
+   "xref_id": 49945,
+   "old_sub": "*go to my land and to my birthplace, and take a wife for my son*",
+   "new_sub": "*go to my land and to my birthplace, and take from there a wife for my son*"
+  },
+  {
+   "thread_id": 12315,
+   "xref_id": 50866,
+   "old_sub": "*he fled to the house of Eber the son of Shem... and he there continued to learn the ways of Yahuah (the Lord) and his commandments*",
+   "new_sub": "*fled to the house of Eber the son of Shem... and he there continued to learn the ways of Yahuah (the Lord) and his commandments*"
+  },
+  {
+   "thread_id": 13297,
+   "xref_id": 54994,
+   "old_sub": "*may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon*",
+   "new_sub": "*may El Shaddai (the Almighty God) give you mercy before him that he may send Benjamin and Simeon*"
+  },
+  {
+   "thread_id": 13685,
+   "xref_id": 56478,
+   "old_sub": "*Yahuah will raise up to you and your children a servant... and deliver you... from all affliction*",
+   "new_sub": "*will Yahuah (the Lord) raise up to you and your children a servant... will deliver you through his hand from all affliction*"
+  }
+ ],
+ "summaries": [
+  {
+   "thread_id": 8958,
+   "old_sub": "So the oath falls — Jasher 83:41-42 — *Doubtless",
+   "new_sub": "So the oath falls, as Jasher 83:41–42 also records: *Doubtless",
+   "reason": "the em-dash aside read as if the Numbers quotation were Jasher's text; the read-back graded it as a Jasher quotation"
+  }
+ ],
+ "reason_20237": "quotation begins in 13:22 (Behold, I spoke to you these twenty years back saying,) and runs through 13:23: citation widened to the range, address unchanged"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "thread_id": 7376,
+    "problem": "Awkward sentence after the misprint workaround: \"and they ask *where is Yahuah (the Lord)’s kindness with our fathers* (Jasher 51:50), with Abraham, Isaac, and Jacob. Genesis records...\" The citation now sits mid-sentence and the trailing \", with Abraham, Isaac, and Jacob.\" hangs as a fragment with nothing to attach to. The three names should be carried in prose as an appositive, not as a leftover tail of the quotation.",
+    "fix": {"old_str": "fathers* (Jasher 51:50), with Abraham, Isaac, and Jacob. Genesis records", "new_str": "fathers* (Jasher 51:50) — the fathers Abraham, Isaac, and Jacob. Genesis records"}
+  },
+  {
+    "thread_id": 6199,
+    "problem": "The jargon swap left behind an internal-state remark the reader cannot see: \"told in the book of Jubilees, which now stands beside this, where Noah divides...\". \"Which now stands beside this\" was \"now live beside this\" about the Jubilees apparatus being loaded in the app; with \"apparatus\" gone it has no meaning for a reader and reads as leftover scaffolding (Come-and-See: no internal references). It also makes a double relative clause (\"which now stands... where Noah divides\").",
+    "fix": {"old_str": "told in the book of Jubilees, which now stands beside this, where Noah divides", "new_str": "told in the book of Jubilees, where Noah divides"}
+  },
+  {
+    "thread_id": 8969,
+    "problem": "Not introduced by this edit (the editor flagged it), but it is a false claim standing in `new`: the summary ends \"So ends the book of Jasher.\" on a chapter 85 thread, and Jasher runs to chapter 91 (thread 9003 quotes 91:16–17 as the real close). Leaving it tells the reader the book ends at Baal-peor.",
+    "fix": {"old_str": " So ends the book of Jasher.", "new_str": ""}
+  }
+]

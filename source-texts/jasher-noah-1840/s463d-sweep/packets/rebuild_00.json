@@ -1,0 +1,1126 @@
+[
+ {
+  "id": 29126,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 3,
+   "vn": 31,
+   "cite": "Jasher 3:31",
+   "text": "And all the sons of Adam assembled and came to Enoch that day; and all the kings of the earth with their princes and counsellors remained with him that day; and Enoch then taught the sons of men wisdom and knowledge, and gave them divine instruction; and he bade them serve Yahuah (the Lord) and walk in his ways all the days of their lives, and he continued to make peace amongst them.",
+   "prev": "And Enoch then again ordered a voice to be proclaimed, saying, Where is the man who delights to know the ways of Yahuah his Elohim (the Lord his God), let him come this day to Enoch before he is taken from us.",
+   "next": "And it was after this that he rose up and rode upon the horse; and he went forth and all the sons of men went after him, about eight hundred thousand men; and they went with him one day’s journey."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 4,
+   "vn": 24,
+   "cite": "Jubilees 4:24",
+   "text_db": "And on account of it Elohim (God) brought the waters of the flood upon all the land of Eden; for there he was set as a sign and that he should testify against all the children of men, that he should recount all the deeds of the generations until the day of condemnation.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 4:24 — *he was set as a sign and that he should testify against all the children of men, that he should recount all the deeds of the generations until the day of condemnation.* the witness-to-the-generations role behind Jasher 3:31, where Enoch's last day teaching bids all men serve Yahuah and walk in his ways.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "witness-to-the-generations"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6180,
+    "slug": "jasher-3-enoch-prophesied-judgment",
+    "old": "Jubilees 4:24 — *he was set as a sign and that he should testify against all the children of men, that he should recount all the deeds of the generations until the day of condemnation.* the witness-to-the-generations role behind Jasher 3:31, where Enoch's last day teaching bids all men serve Yahuah and walk in his ways."
+   }
+  ]
+ },
+ {
+  "id": 29159,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 5,
+   "vn": 25,
+   "cite": "Jasher 5:25",
+   "text": "And it was after this that Yahuah (the Lord) said to Noah, The end of all flesh is come before me, on account of their evil deeds, and behold I will destroy the earth.",
+   "prev": "But the sons of men would not hearken, neither would they incline their ears to all their declarations.",
+   "next": "And do you take to you gopher wood, and go to a certain place and make a large ark, and place it in that spot."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 6,
+   "vn": 13,
+   "cite": "Genesis 6:13",
+   "text_db": "And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.",
+   "text_canon": "And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth."
+  },
+  "old_note": "Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* Jasher 5:25 carries the canon's end-of-all-flesh decree nearly word for word.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "end-of-all-flesh"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6190,
+    "slug": "jasher-5-command-build-the-ark",
+    "old": "Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* Jasher 5:25 carries the canon's end-of-all-flesh decree nearly word for word."
+   }
+  ]
+ },
+ {
+  "id": 29178,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 6,
+   "vn": 14,
+   "cite": "Jasher 6:14",
+   "text": "And all the fountains of the deep were broken up, and the windows of heaven were opened, and the rain was upon the earth forty days and forty nights.",
+   "prev": "And at the end of seven days, in the six hundredth year of the life of Noah, the waters of the flood were upon the earth.",
+   "next": "And Noah and his household, and all the living creatures that were with him, came into the ark on account of the waters of the flood, and Yahuah (the Lord) shut him in."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 5,
+   "vn": 24,
+   "cite": "Jubilees 5:24",
+   "text_db": "And Yahuah (God) opened seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 5:24 — *And Yahuah (God) opened seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number.* Jubilees keeps the same fountains-of-the-deep that Jasher 6:14 reports, the patriarchal record self-linked.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "fountains-of-the-deep"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6194,
+    "slug": "jasher-6-fountains-of-the-deep-broken-up",
+    "old": "Jubilees 5:23 — *And Yahuah (God) opened seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number.* Jubilees keeps the same fountains-of-the-deep that Jasher 6:14 reports, the patriarchal record self-linked."
+   }
+  ]
+ },
+ {
+  "id": 18217,
+  "kind": "REBUILD",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 6,
+   "vn": 33,
+   "cite": "Jasher 6:33",
+   "text": "And a wind passed over the earth, and the waters were still and the ark rested.",
+   "prev": "And Yahuah (the Lord) hearkened to the voice of Noah, and Yahuah (the Lord) remembered him.",
+   "next": "And the fountains of the deep and the windows of heaven were stopped, and the rain from heaven was restrained."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 8,
+   "vn": 1,
+   "cite": "Genesis 8:1",
+   "text_db": "And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged;",
+   "text_canon": "And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged;"
+  },
+  "old_note": "*And a wind passed over the earth, and the waters were still and the ark rested* (Jasher 6:33). Almost verbatim with the Torah — *Elohim (God) made a wind to pass over the earth, and the waters asswaged* (Genesis 8:1) — Jasher binds the wind, the stilling of the waters, and the resting of the ark into one moment. The ruach passes over the deep and the chaos subsides, the same Spirit-over-the-waters that ordered the first creation now quieting the flood.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And a wind passed over the earth, and the waters were still and the ark rested",
+     "labelled": "jasher|6:33",
+     "cited_range": null,
+     "at": "jasher|6:33",
+     "verdict": "STAND",
+     "proposed": "jasher|6:33",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And a wind passed over the earth, and the waters were still and the ark rested.",
+     "live_proposed": "And a wind passed over the earth, and the waters were still and the ark rested."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "Spirit-over-the-waters"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 3244,
+    "slug": "genesis-8-elohim-remembered-noah-the-wind-over-the-waters",
+    "old": "*a wind passed over the earth, and the waters were still and the ark rested* (Jasher 6:33) — almost verbatim with Genesis 8:1, the ruach quieting the deep."
+   }
+  ]
+ },
+ {
+  "id": 29191,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 6,
+   "vn": 41,
+   "cite": "Jasher 6:41",
+   "text": "And they went and returned every one to his way and to his place, and Noah and his sons dwelt in the land that Elohim had told them, and they served Yahuah (the Lord) all their days, and Yahuah (the Lord) blessed Noah and his sons on their going out from the ark.",
+   "prev": "And the day came that Yahuah (the Lord) told them to go out, and they all went out from the ark.",
+   "next": "And he said to them, Be fruitful and fill all the earth; become strong and increase abundantly in the earth and multiply in it."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 8,
+   "vn": 21,
+   "cite": "Genesis 8:21",
+   "text_db": "And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man’s sake; for the imagination of man’s heart is evil from his youth; neither will I again smite any more every thing living, as I have done.",
+   "text_canon": "And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man’s sake; for the imagination of man’s heart is evil from his youth; neither will I again smite any more every thing living, as I have done."
+  },
+  "old_note": "Genesis 8:21 — *And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man's sake; for the imagination of man's heart is evil from his youth; neither will I again smite any more every thing living, as I have done.* The mercy that follows Noah's altar in Jasher 6:41, the I-will-not-again of the covenant.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "I-will-not-again"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6198,
+    "slug": "jasher-6-altar-covenant-bow",
+    "old": "Genesis 8:21 — *And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man's sake; for the imagination of man's heart is evil from his youth; neither will I again smite any more every thing living, as I have done.* The mercy that follows Noah's altar in Jasher 6:41, the I-will-not-again of the covenant."
+   }
+  ]
+ },
+ {
+  "id": 29189,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 6,
+   "vn": 42,
+   "cite": "Jasher 6:42",
+   "text": "And he said to them, Be fruitful and fill all the earth; become strong and increase abundantly in the earth and multiply in it.",
+   "prev": "And they went and returned every one to his way and to his place, and Noah and his sons dwelt in the land that Elohim had told them, and they served Yahuah (the Lord) all their days, and Yahuah (the Lord) blessed Noah and his sons on their going out from the ark.",
+   "next": null
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 6,
+   "vn": 5,
+   "cite": "Jubilees 6:5",
+   "text_db": "\"And you, increase you and multiply upon the earth, and become many upon it, and be a blessing upon it. The fear of you and the dread of you I shall inspire in everything that is on earth and in the sea.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 6:5 — *And you, increase you and multiply upon the earth, and become many upon it, and be a blessing upon it.* Jubilees keeps the same multiply-and-be-a-blessing word that Jasher 6:42 carries, the patriarchal record self-linked.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "multiply-and-be-a-blessing"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6197,
+    "slug": "jasher-6-go-forth-blessed-fruitful",
+    "old": "Jubilees 6:5 — *And you, increase you and multiply upon the earth, and become many upon it, and be a blessing upon it.* Jubilees keeps the same multiply-and-be-a-blessing word that Jasher 6:42 carries, the patriarchal record self-linked."
+   }
+  ]
+ },
+ {
+  "id": 29239,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 8,
+   "vn": 2,
+   "cite": "Jasher 8:2",
+   "text": "And when all the wise men and conjurors went out from the house of Terah, they lifted up their eyes toward heaven that night to look at the stars, and they saw, and behold one very large star came from the east and ran in the heavens, and he swallowed up the four stars from the four sides of the heavens.",
+   "prev": "And it was in the night that Abram was born, that all the servants of Terah, and all the wise men of Nimrod, and his conjurors came and ate and drank in the house of Terah, and they rejoiced with him on that night.",
+   "next": "And all the wise men of the king and his conjurors were astonished at the sight, and the sages understood this matter, and they knew its import."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 2,
+   "vn": 1,
+   "cite": "Matthew 2:1",
+   "text_db": "Now when Yahusha (Jesus) was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem,",
+   "text_canon": "Now when Yahusha (Jesus) was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem,"
+  },
+  "old_note": "Matthew 2:1 — *Now when Yahusha (Jesus) was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem.* The wise-men-from-the-east-at-a-royal-birth motif Jasher gives Abram is carried into the Messiah's nativity.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "wise-men-from-the-east-at-a-royal-birth"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6206,
+    "slug": "jasher-8-the-star-and-the-magi",
+    "old": "Matthew 2:1 — *Now when Yahusha (Jesus) was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem.* The wise-men-from-the-east-at-a-royal-birth motif Jasher gives Abram is carried into the Messiah's nativity."
+   }
+  ]
+ },
+ {
+  "id": 29504,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 13,
+   "vn": 1,
+   "cite": "Jasher 13:1",
+   "text": "And Terah took his son Abram and his grandson Lot, the son of Haran, and Sarai his daughter-in-law, the wife of his son Abram, and all the souls of his household and went with them from Ur Casdim to go to the land of Canaan. And when they came as far as the land of Haran they remained there, for it was exceedingly good land for pasture, and of sufficient extent for those who accompanied them.",
+   "prev": null,
+   "next": "And the people of the land of Haran saw that Abram was good and upright with Elohim (God) and men, and that Yahuah his Elohim (the Lord his God) was with him, and some of the people of the land of Haran came and joined Abram, and he taught them the instruction of Yahuah (the Lord) and his ways; and these men remained with Abram in his house and they adhered to him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "acts",
+   "ch": 7,
+   "vn": 4,
+   "cite": "Acts 7:4",
+   "text_db": "Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein you now dwell.",
+   "text_canon": "Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell."
+  },
+  "old_note": "Acts 7:4 — *Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell* — the very Ur-Casdim-to-Haran-to-Canaan route Terah's household travels in Jasher 13:1.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "Ur-Casdim-to-Haran-to-Canaan"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6281,
+    "slug": "jasher-13-out-of-haran",
+    "old": "Acts 7:4 — *Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell* — the very Ur-Casdim-to-Haran-to-Canaan route Terah's household travels in Jasher 13:1."
+   }
+  ]
+ },
+ {
+  "id": 29508,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 13,
+   "vn": 4,
+   "cite": "Jasher 13:4",
+   "text": "And now therefore if you will hearken to my voice and keep my commandments, my statutes and my laws, then will I cause your enemies to fall before you, and I will multiply your seed like the stars of heaven, and I will send my blessing upon all the works of your hands, and you shall lack nothing.",
+   "prev": "And Abram remained in the land three years, and at the expiration of three years Yahuah (the Lord) appeared to Abram and said to him; I am Yahuah (the Lord) who brought you forth from Ur Casdim, and delivered you from the hands of all your enemies.",
+   "next": "Arise now, take your wife and all belonging to you and go to the land of Canaan and remain there, and I will there be to you for a Elohim, and I will bless you. And Abram rose and took his wife and all belonging to him, and he went to the land of Canaan as Yahuah (the Lord) had told him; and Abram was fifty years old when he went from Haran."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 15,
+   "vn": 5,
+   "cite": "Genesis 15:5",
+   "text_db": "And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if you be able to number them: and he said unto him, So shall your seed be.",
+   "text_canon": "And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be."
+  },
+  "old_note": "Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* — the seed-like-the-stars promise Yahuah binds to keeping his commandments in Jasher 13:4.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "seed-like-the-stars"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6282,
+    "slug": "jasher-13-keep-my-commandments",
+    "old": "Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* — the seed-like-the-stars promise Yahuah binds to keeping his commandments in Jasher 13:4."
+   }
+  ]
+ },
+ {
+  "id": 29512,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 13,
+   "vn": 7,
+   "cite": "Jasher 13:7",
+   "text": "And Yahuah (the Lord) appeared to Abram when he came to the land of Canaan, and said to him, This is the land which I gave to you and to your seed after you forever, and I will make your seed like the stars of heaven, and I will give to your seed for an inheritance all the lands which you see.",
+   "prev": "And Abram came to the land of Canaan and dwelt in the midst of the city, and he there pitched his tent amongst the children of Canaan, inhabitants of the land.",
+   "next": "And Abram built an altar in the place where Elohim had spoken to him, and Abram there called upon the name of Yahuah (the Lord)."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 12,
+   "vn": 7,
+   "cite": "Genesis 12:7",
+   "text_db": "And Yahuah (LORD) appeared unto Abram, and said, Unto your seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him.",
+   "text_canon": "And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him."
+  },
+  "old_note": "Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* — the same land-to-your-seed word Yahuah speaks at Abram's entry into Canaan in Jasher 13:7.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "land-to-your-seed"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6283,
+    "slug": "jasher-13-this-land-to-thy-seed",
+    "old": "Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* — the same land-to-your-seed word Yahuah speaks at Abram's entry into Canaan in Jasher 13:7."
+   }
+  ]
+ },
+ {
+  "id": 29513,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 13,
+   "vn": 7,
+   "cite": "Jasher 13:7",
+   "text": "And Yahuah (the Lord) appeared to Abram when he came to the land of Canaan, and said to him, This is the land which I gave to you and to your seed after you forever, and I will make your seed like the stars of heaven, and I will give to your seed for an inheritance all the lands which you see.",
+   "prev": "And Abram came to the land of Canaan and dwelt in the midst of the city, and he there pitched his tent amongst the children of Canaan, inhabitants of the land.",
+   "next": "And Abram built an altar in the place where Elohim had spoken to him, and Abram there called upon the name of Yahuah (the Lord)."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 13,
+   "vn": 15,
+   "cite": "Genesis 13:15",
+   "text_db": "For all the land which you see, to you will I give it, and to your seed for ever.",
+   "text_canon": "For all the land which thou seest, to thee will I give it, and to thy seed for ever."
+  },
+  "old_note": "Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever* — the all-the-lands-which-you-see inheritance forever of Jasher 13:7.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "all-the-lands-which-you-see"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6283,
+    "slug": "jasher-13-this-land-to-thy-seed",
+    "old": "Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever* — the all-the-lands-which-you-see inheritance forever of Jasher 13:7."
+   }
+  ]
+ },
+ {
+  "id": 29522,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 13,
+   "vn": 23,
+   "cite": "Jasher 13:23",
+   "text": "Go forth from your land, from your birth-place and from your father’s house, to the land which I have shown you to give it to you and to your children, for there in that land will I bless you, and make you a great nation, and make your name great, and in you shall the families of the earth be blessed.",
+   "prev": "In those days Yahuah (the Lord) appeared to Abram in Haran, and he said to him, Behold, I spoke to you these twenty years back saying,",
+   "next": "Now therefore arise, go forth from this place, you, your wife, and all belonging to you, also every one born in your house and all the souls you have made in Haran, and bring them out with you from here, and rise to return to the land of Canaan."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 12,
+   "vn": 3,
+   "cite": "Genesis 12:3",
+   "text_db": "And I will bless them that bless you, and curse him that curses you: and in you shall all families of the earth be blessed.",
+   "text_canon": "And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed."
+  },
+  "old_note": "Genesis 12:3 — *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* — the families-of-the-earth blessing Jasher 13:23 carries verbatim.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "families-of-the-earth"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6285,
+    "slug": "jasher-13-go-forth-great-nation",
+    "old": "Genesis 12:3 — *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* — the families-of-the-earth blessing Jasher 13:23 carries verbatim."
+   }
+  ]
+ },
+ {
+  "id": 29569,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 16,
+   "vn": 16,
+   "cite": "Jasher 16:16",
+   "text": "And now therefore behold, here is all belonging to you, take it and go; as Yahuah (the Lord) lives I will not take from you from a living soul down to a shoetie or thread, excepting the expense of the food of those who went out with me to battle, as also the portions of the men who went with me, Anar, Ashcol, and Mamre, they and their men, as well as those also who had remained to watch the baggage, they shall take their portion of the spoil.",
+   "prev": "For Yahuah my Elohim (the Lord my God) in whom I trust said to me, You shall lack nothing, for I will bless you in all the works of your hands.",
+   "next": "And the kings of Sodom gave Abram according to all that he had said, and they pressed him to take of whatever he chose, but he would not."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 13,
+   "vn": 29,
+   "cite": "Jubilees 13:29",
+   "text_db": "And Abram said to him: “I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your, lest you should say I have made Abram rich; save only what the young men have eaten, and the portion of the men who went with me–Aner, Eschol, and Mamre. These will take their portion.”",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 13:29 — *I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your, lest you should say I have made Abram rich; save only what the young men have eaten, and the portion of the men who went with me–Aner, Eschol, and Mamre.* Jubilees renders Abram's refusal in Jasher 16:16 with the same thread-to-shoe-latchet oath.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "thread-to-shoe-latchet"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6299,
+    "slug": "jasher-16-not-a-thread-no-spoil",
+    "old": "Jubilees 13:29 — *I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your, lest you should say I have made Abram rich; save only what the young men have eaten, and the portion of the men who went with me–Aner, Eschol, and Mamre.* Jubilees renders Abram's refusal in Jasher 16:16 with the same thread-to-shoe-latchet oath."
+   }
+  ]
+ },
+ {
+  "id": 29990,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 21,
+   "vn": 4,
+   "cite": "Jasher 21:4",
+   "text": "And the child grew up and he was weaned, and Abraham made a great feast upon the day that Isaac was weaned.",
+   "prev": "And Abraham circumcised his son Isaac at eight days old, as Elohim had commanded Abraham to do to his seed after him; and Abraham was one hundred, and Sarah ninety years old, when Isaac was born to them.",
+   "next": "And Shem and Eber and all the great people of the land, and Abimelech king of the Philistines, and his servants, and Phicol, the captain of his host, came to eat and drink and rejoice at the feast which Abraham made upon the day of his son Isaac’s being weaned."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 21,
+   "vn": 8,
+   "cite": "Genesis 21:8",
+   "text_db": "And the child grew, and was weaned: and Abraham made a great feast the same day that Isaac was weaned.",
+   "text_canon": "And the child grew, and was weaned: and Abraham made a great feast the same day that Isaac was weaned."
+  },
+  "old_note": "Genesis 21:8 — *And the child grew, and was weaned: and Abraham made a great feast the same day that Isaac was weaned.* Jasher 21:4 retells the canon's great weaning feast verbatim in substance.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6415,
+    "slug": "jasher-21-great-feast-weaned",
+    "old": "Genesis 21:8 — *And the child grew, and was weaned: and Abraham made a great feast the same day that Isaac was weaned.* Jasher 21:4 retells the canon's great weaning feast verbatim in substance."
+   }
+  ]
+ },
+ {
+  "id": 30529,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 25,
+   "vn": 2,
+   "cite": "Jasher 25:2",
+   "text": "And she bare to him Zimran, Jokshan, Medan, Midian, Ishbak and Shuach, being six sons. And the children of Zimran were Abihen, Molich and Narim.",
+   "prev": "And it was at that time that Abraham again took a wife in his old age, and her name was Keturah, from the land of Canaan.",
+   "next": "And the sons of Jokshan were Sheba and Dedan, and the sons of Medan were Amida, Joab, Gochi, Elisha and Nothach; and the sons of Midian were Ephah, Epher, Chanoch, Abida and Eldaah."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 19,
+   "vn": 11,
+   "cite": "Jubilees 19:11",
+   "text_db": "And Abraham took to himself a third wife, and her name was Keturah, from among the daughters of his household servants, for Hagar had died before Sarah.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 19:11–12 — *And Abraham took to himself a third wife, and her name was Keturah, from among the daughters of his household servants, for Hagar had died before Sarah. And she bare him six sons, Zimram, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah, in the two weeks of years.* The same Keturah-and-six-sons scene in the parallel patriarchal record beside Jasher 25:2.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "Keturah-and-six-sons"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6566,
+    "slug": "jasher-25-keturah-six-sons",
+    "old": "Jubilees 19:11 — *And Abraham took to himself a third wife, and her name was Keturah, from among the daughters of his household servants, for Hagar had died before Sarah. And she bare him six sons, Zimram, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah, in the two weeks of years.* The same Keturah-and-six-sons scene in the parallel patriarchal record beside Jasher 25:2."
+   }
+  ]
+ },
+ {
+  "id": 52821,
+  "kind": "REBUILD",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 34,
+   "vn": 23,
+   "cite": "Jasher 34:23",
+   "text": "And Simeon and Levi swore and said, As Yahuah (the Lord) lives, the Elohim (God) of the whole earth, by this time tomorrow, there shall not be a remnant left in the whole city.",
+   "prev": "And when Jacob heard these words he was filled with wrath, and he was indignant at them, and his anger was kindled against them.",
+   "next": "And twenty young men had concealed themselves who were not circumcised, and these young men fought against Simeon and Levi, and Simeon and Levi killed eighteen of them, and two fled from them and escaped to some lime pits that were in the city, and Simeon and Levi sought for them, but could not find them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 34,
+   "vn": 25,
+   "cite": "Genesis 34:25",
+   "text_db": "And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.",
+   "text_canon": "And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males."
+  },
+  "old_note": "*And Simeon and Levi swore and said, As Yahuah (the Lord) lives, the Elohim (God) of the whole earth, by this time tomorrow, there shall not be a remnant left in the whole city* (Jasher 34:23). The extended witness gives the oath behind the deed — *there shall not be a remnant left in the whole city* — that is carried out in *two of the sons of Jacob, Simeon and Levi, Dinah's brethren, took each man his sword, and came upon the city boldly, and slew all the males* (Genesis 34:25). The vow is total destruction; the framework records the fierceness that Jacob will curse, never a pattern to follow.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And Simeon and Levi swore and said, As Yahuah (the Lord) lives, the Elohim (God) of the whole earth, by this time tomorrow, there shall not be a remnant left in the whole city",
+     "labelled": "jasher|34:23",
+     "cited_range": null,
+     "at": "jasher|34:23",
+     "verdict": "STAND",
+     "proposed": "jasher|34:23",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And Simeon and Levi swore and said, As Yahuah (the Lord) lives, the Elohim (God) of the whole earth, by this time tomorrow, there shall not be a remnant left in the whole city.",
+     "live_proposed": "And Simeon and Levi swore and said, As Yahuah (the Lord) lives, the Elohim (God) of the whole earth, by this time tomorrow, there shall not be a remnant left in the whole city."
+    }
+   ],
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 12775,
+    "slug": "genesis-34-simeon-and-levi-took-each-man-his-sword",
+    "old": "*there shall not be a remnant left in the whole city* (Jasher 34:23) — the oath of total destruction behind *took each man his sword... and slew all the males* (34:25); the fierceness Jacob will curse."
+   }
+  ]
+ },
+ {
+  "id": 31404,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 38,
+   "vn": 50,
+   "cite": "Jasher 38:50",
+   "text": "And all the inhabitants of the city of Sarton were powerful men, one of them would pursue a thousand, and two of them would not flee from ten thousand of the rest of men.",
+   "prev": "And the sons of Jacob smote all the inhabitants of the city of Sarton, but the women and little ones they left in the city and did not slay them.",
+   "next": "And the sons of Jacob slew all the inhabitants of the city of Sarton with the edge of the sword, that no man stood up against them, and they left the women in the city."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 32,
+   "vn": 30,
+   "cite": "Deuteronomy 32:30",
+   "text_db": "How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?",
+   "text_canon": "How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?"
+  },
+  "old_note": "Deuteronomy 32:30 — *How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?* The Song of Moses names the same one-chasing-a-thousand measure of Jasher 38:50 and ties it to the Rock's hand, not mere strength.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "one-chasing-a-thousand"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6816,
+    "slug": "jasher-38-one-chase-a-thousand",
+    "old": "Deuteronomy 32:30 — *How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?* The Song of Moses names the same one-chasing-a-thousand measure of Jasher 38:50 and ties it to the Rock's hand, not mere strength."
+   }
+  ]
+ },
+ {
+  "id": 31420,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 39,
+   "vn": 34,
+   "cite": "Jasher 39:34",
+   "text": "And Judah took the swords which had fallen from their hands, and Judah fought with them and slew twenty of their men upon the wall.",
+   "prev": "And after this cry he again repeated to shout, and all the men who surrounded Judah on the top of the wall were terrified, and they each threw his sword from his hand at the sound of Judah’s shouting and his tremor, and fled.",
+   "next": "And about eighty men and women still ascended the wall from the city and they all surrounded Judah, and Yahuah (the Lord) impressed the fear of Judah in their hearts, that they were unable to approach him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 49,
+   "vn": 8,
+   "cite": "Genesis 49:8",
+   "text_db": "Yahudah (Judah), you are he whom your brethren shall praise: your hand shall be in the neck of your enemies; your father’s children shall bow down before you.",
+   "text_canon": "Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee."
+  },
+  "old_note": "Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee.* Judah seizing the fallen swords and slaying twenty upon the wall is the hand-on-the-enemies'-neck the blessing foretells.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "hand-on-the-enemies'-neck"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 6821,
+    "slug": "jasher-39-judah-the-lion-on-the-wall",
+    "old": "Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee.* Judah seizing the fallen swords and slaying twenty upon the wall is the hand-on-the-enemies'-neck the blessing foretells."
+   }
+  ]
+ },
+ {
+  "id": 32278,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 44,
+   "vn": 12,
+   "cite": "Jasher 44:12",
+   "text": "And Yahuah (the Lord) was with Joseph and he became a prosperous man, and Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph.",
+   "prev": "And Potiphar took Joseph and brought him to his house that he might serve him, and Joseph found favor in the sight of Potiphar, and he placed confidence in him, and made him overseer over his house, and all that belonged to him he delivered over into his hand.",
+   "next": "And Potiphar left all that he had in the hand of Joseph, and Joseph was one that caused things to come in and go out, and everything was regulated by his wish in the house of Potiphar."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 39,
+   "vn": 5,
+   "cite": "Genesis 39:5",
+   "text_db": "And it came to pass from the time that he had made him overseer in his house, and over all that he had, that Yahuah (LORD) blessed the Egyptian’s house for Joseph’s sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field.",
+   "text_canon": "And it came to pass from the time that he had made him overseer in his house, and over all that he had, that Yahuah (LORD) blessed the Egyptian’s house for Joseph’s sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field."
+  },
+  "old_note": "Genesis 39:5 — *And it came to pass from the time that he had made him overseer in his house, and over all that he had, that Yahuah (LORD) blessed the Egyptian's house for Joseph's sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field.* The blessing-of-Potiphar's-house in Jasher 44:12 is this verse retold.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "blessing-of-Potiphar's-house"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7068,
+    "slug": "jasher-44-yahuah-with-joseph",
+    "old": "Genesis 39:5 — *And it came to pass from the time that he had made him overseer in his house, and over all that he had, that Yahuah (LORD) blessed the Egyptian's house for Joseph's sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field.* The blessing-of-Potiphar's-house in Jasher 44:12 is this verse retold."
+   }
+  ]
+ },
+ {
+  "id": 53756,
+  "kind": "REBUILD",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 44,
+   "vn": 12,
+   "cite": "Jasher 44:12",
+   "text": "And Yahuah (the Lord) was with Joseph and he became a prosperous man, and Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph.",
+   "prev": "And Potiphar took Joseph and brought him to his house that he might serve him, and Joseph found favor in the sight of Potiphar, and he placed confidence in him, and made him overseer over his house, and all that belonged to him he delivered over into his hand.",
+   "next": "And Potiphar left all that he had in the hand of Joseph, and Joseph was one that caused things to come in and go out, and everything was regulated by his wish in the house of Potiphar."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 39,
+   "vn": 5,
+   "cite": "Genesis 39:5",
+   "text_db": "And it came to pass from the time that he had made him overseer in his house, and over all that he had, that Yahuah (LORD) blessed the Egyptian’s house for Joseph’s sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field.",
+   "text_canon": "And it came to pass from the time that he had made him overseer in his house, and over all that he had, that Yahuah (LORD) blessed the Egyptian’s house for Joseph’s sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field."
+  },
+  "old_note": "*And Yahuah (the Lord) was with Joseph and he became a prosperous man, and Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph* (Jasher 44:12). The extended witness keeps the blessing-for-his-sake whole — *Yahuah blessed the house of Potiphar for the sake of Joseph* — matching *Yahuah (LORD) blessed the Egyptian's house for Joseph's sake; and the blessing of Yahuah (LORD) was upon all that he had* (Genesis 39:5). Where the favoured of Yahuah dwells, the blessing overflows onto the house that holds him.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And Yahuah (the Lord) was with Joseph and he became a prosperous man, and Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph",
+     "labelled": "jasher|44:12",
+     "cited_range": null,
+     "at": "jasher|44:12",
+     "verdict": "STAND",
+     "proposed": "jasher|44:12",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And Yahuah (the Lord) was with Joseph and he became a prosperous man, and Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph.",
+     "live_proposed": "And Yahuah (the Lord) was with Joseph and he became a prosperous man, and Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "blessing-for-his-sake"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 12986,
+    "slug": "genesis-39-yahuah-was-with-joseph-the-blessed-presence-in-slavery",
+    "old": "*Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph* (Jasher 44:12) — the blessing-for-his-sake of 39:5 kept whole; where the favoured dwells, the blessing overflows."
+   }
+  ]
+ },
+ {
+  "id": 32271,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 44,
+   "vn": 54,
+   "cite": "Jasher 44:54",
+   "text": "And Joseph was afraid of her at her doing this thing, and he rose up to flee from her, and she seized the front of his garments, and in the terror of his flight the garment which Zelicah seized was torn, and Joseph left the garment in the hand of Zelicah, and he fled and got out, for he was in fear.",
+   "prev": "And she hastened and caught hold of Joseph and his garments, and she said to him, As the king lives if you will not perform my request you shall die this day, and she hastened and stretched forth her other hand and drew a sword from beneath her garments, and she placed it upon Joseph’s neck, and she said, Rise and perform my request, and if not you die this day.",
+   "next": "And when Zelicah saw that Joseph’s garment was torn, and that he had left it in her hand, and had fled, she was afraid of her life, lest the report should spread concerning her, and she rose up and acted with cunning, and put off the garments in which she was dressed, and she put on her other garments."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 39,
+   "vn": 9,
+   "cite": "Jubilees 39:9",
+   "text_db": "But she embraced him and held him fast in the house in order to force him to lie with her, and closed the doors of the house and held him fast; but he left his garment in her hands and broke through the door and fled without from her presence.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 39:9 — *But she embraced him and held him fast in the house in order to force him to lie with her, and closed the doors of the house and held him fast; but he left his garment in her hands and broke through the door and fled without from her presence.* The live Jubilees text holds the same garment-in-her-hands flight as Jasher 44:54.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "garment-in-her-hands"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7070,
+    "slug": "jasher-44-garment-false-witness",
+    "old": "Jubilees 39:9 — *But she embraced him and held him fast in the house in order to force him to lie with her, and closed the doors of the house and held him fast; but he left his garment in her hands and broke through the door and fled without from her presence.* The live Jubilees text holds the same garment-in-her-hands flight as Jasher 44:54."
+   }
+  ]
+ },
+ {
+  "id": 4264,
+  "kind": "REBUILD",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 45,
+   "vn": 23,
+   "cite": "Jasher 45:23",
+   "text": "And in those days Judah went to the house of Shem and took Tamar the daughter of Elam, the son of Shem, for a wife for his first born Er.",
+   "prev": "And Mechalia conceived and bare to Benjamin Bela, Becher, Ashbel, Gera and Naaman, five sons; and Benjamin went afterward and took for a wife Aribath, the daughter of Shomron, the son of Abraham, in addition to his first wife, and he was eighteen years old; and Aribath bare to Benjamin Achi, Vosh, Mupim, Chupim, and Ord; five sons.",
+   "next": "And Er came to his wife Tamar, and she became his wife, and when he came to her he outwardly destroyed his seed, and his work was evil in the sight of Yahuah (the Lord), and Yahuah (the Lord) slew him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 1,
+   "vn": 3,
+   "cite": "Matthew 1:3",
+   "text_db": "And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;",
+   "text_canon": "And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;"
+  },
+  "old_note": "*And in those days Yahudah (Judah) went to the house of Shem and took Tamar the daughter of Elam, the son of Shem, for a wife for his first born Er.* Jasher locates Tamar as a daughter of Shem's line — Yashar'eli (Israelite) by lineage through the Shemitic seed, not a Canaanite as the Christian read assumes. The framework reads the four women as seed-preservation markers; Jasher 45 confirms Tamar's Shemitic lineage.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "And in those days Yahudah (Judah) went to the house of Shem and took Tamar the daughter of Elam, the son of Shem, for a wife for his first born Er.",
+     "labelled": null,
+     "cited_range": null,
+     "at": "jasher|45:23",
+     "verdict": "REWORDED",
+     "proposed": "jasher|45:23",
+     "ratio": 0.94,
+     "k": 1,
+     "live_here": "And in those days Judah went to the house of Shem and took Tamar the daughter of Elam, the son of Shem, for a wife for his first born Er.",
+     "live_proposed": "And in those days Judah went to the house of Shem and took Tamar the daughter of Elam, the son of Shem, for a wife for his first born Er."
+    }
+   ],
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 29,
+    "slug": "tamar-in-yahudahs-own-voice",
+    "old": "Jasher locates Tamar's lineage in Shem's line — *Tamar the daughter of Elam, the son of Shem.* Shemitic by blood; the framework reads the four women as seed-preservation markers within or adjacent to the covenant body."
+   }
+  ]
+ },
+ {
+  "id": 32317,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 46,
+   "vn": 14,
+   "cite": "Jasher 46:14",
+   "text": "And Joseph said to him, The three baskets which you did see are three days, yet within three days Pharaoh will take off your head, and hang you upon a tree, and the birds will eat your flesh from off you, as you saw in your dream.",
+   "prev": "And he said to him, In my dream I saw and behold three white baskets upon my head, and I looked, and behold there were in the upper-most basket all manner of baked meats for Pharaoh, and behold the birds were eating them from off my head.",
+   "next": "In those days the queen was about to be delivered, and upon that day she bare a son to the king of Egypt, and they proclaimed that the king had gotten his first born son and all the people of Egypt together with the officers and servants of Pharaoh rejoiced greatly."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 40,
+   "vn": 19,
+   "cite": "Genesis 40:19",
+   "text_db": "Yet within three days shall Pharaoh lift up your head from off you, and shall hang you on a tree; and the birds shall eat your flesh from off you.",
+   "text_canon": "Yet within three days shall Pharaoh lift up thy head from off thee, and shall hang thee on a tree; and the birds shall eat thy flesh from off thee."
+  },
+  "old_note": "Genesis 40:19 — *Yet within three days shall Pharaoh lift up thy head from off thee, and shall hang thee on a tree; and the birds shall eat thy flesh from off thee.* the hanging-on-a-tree verdict Joseph speaks in Jasher 46:14.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "hanging-on-a-tree"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7082,
+    "slug": "jasher-46-baker-baskets-dream-hanged",
+    "old": "Genesis 40:19 — *Yet within three days shall Pharaoh lift up thy head from off thee, and shall hang thee on a tree; and the birds shall eat thy flesh from off thee.* the hanging-on-a-tree verdict Joseph speaks in Jasher 46:14."
+   }
+  ]
+ },
+ {
+  "id": 32342,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 47,
+   "vn": 7,
+   "cite": "Jasher 47:7",
+   "text": "And Isaac called Jacob and his sons, and they all came and sat before Isaac, and Isaac said to Jacob, Yahuah Elohim (the Lord God) of the whole earth said to me, To your seed will I give this land for an inheritance if your children keep my statutes and my ways, and I will perform to them the oath which I swore to your father Abraham.",
+   "prev": "And Isaac also blessed the sons of Esau, saying, May Elohim cause you to be a dread and a terror to all that will behold you, and to all your enemies.",
+   "next": "Now therefore my son, teach your children and your children’s children to fear Yahuah (the Lord), and to go in the good way which will please Yahuah your Elohim (the Lord your God), for if you keep the ways of Yahuah (the Lord) and his statutes Yahuah (the Lord) will also keep to you his covenant with Abraham, and will do well with you and your seed all the days."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 26,
+   "vn": 3,
+   "cite": "Genesis 26:3",
+   "text_db": "Sojourn in this land, and I will be with you, and will bless you; for unto you, and unto your seed, I will give all these countries, and I will perform the oath which I sware unto Abraham your father;",
+   "text_canon": "Sojourn in this land, and I will be with thee, and will bless thee; for unto thee, and unto thy seed, I will give all these countries, and I will perform the oath which I sware unto Abraham thy father;"
+  },
+  "old_note": "Genesis 26:3 — *Sojourn in this land, and I will be with thee, and will bless thee; for unto thee, and unto thy seed, I will give all these countries, and I will perform the oath which I sware unto Abraham thy father;* The land-for-the-seed oath Isaac repeats in Jasher 47:7 is the word Yahuah first spoke directly to him.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "land-for-the-seed"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7086,
+    "slug": "jasher-47-teach-your-children",
+    "old": "Genesis 26:3 — *Sojourn in this land, and I will be with thee, and will bless thee; for unto thee, and unto thy seed, I will give all these countries, and I will perform the oath which I sware unto Abraham thy father;* The land-for-the-seed oath Isaac repeats in Jasher 47:7 is the word Yahuah first spoke directly to him."
+   }
+  ]
+ },
+ {
+  "id": 33311,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 50,
+   "vn": 37,
+   "cite": "Jasher 50:37",
+   "text": "And Joseph did all these things, and made these statutes, in order that he might know when his brethren should come to Egypt to buy corn; and Joseph’s people caused it daily to be proclaimed in Egypt according to these words and statutes which Joseph had commanded.",
+   "prev": "And Joseph placed officers throughout the land of Egypt, and he commanded them to do all these things.",
+   "next": "And all the inhabitants of the east and west country, and of all the earth, heard of the statutes and regulations which Joseph had enacted in Egypt, and the inhabitants of the extreme parts of the earth came and they bought corn in Egypt day after day, and then went away."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 42,
+   "vn": 6,
+   "cite": "Genesis 42:6",
+   "text_db": "And Joseph was the governor over the land, and he it was that sold to all the people of the land: and Joseph’s brethren came, and bowed down themselves before him with their faces to the earth.",
+   "text_canon": "And Joseph was the governor over the land, and he it was that sold to all the people of the land: and Joseph’s brethren came, and bowed down themselves before him with their faces to the earth."
+  },
+  "old_note": "Genesis 42:6 — *And Joseph was the governor over the land, and he it was that sold to all the people of the land: and Joseph’s brethren came, and bowed down themselves before him with their faces to the earth.* Joseph's whole apparatus of statutes in Jasher 50:37 'that he might know when his brethren should come' culminates in this bowing — the dream fulfilled.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 7370,
+    "slug": "jasher-50-statutes-for-the-brethren",
+    "old": "Genesis 42:6 — *And Joseph was the governor over the land, and he it was that sold to all the people of the land: and Joseph’s brethren came, and bowed down themselves before him with their faces to the earth.* Joseph's whole apparatus of statutes in Jasher 50:37 'that he might know when his brethren should come' culminates in this bowing — the dream fulfilled."
+   }
+  ]
+ },
+ {
+  "id": 33417,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 55,
+   "vn": 5,
+   "cite": "Jasher 55:5",
+   "text": "At that time Jacob commanded his sons and household to go to Egypt according to the word of Yahuah (the Lord) to him, and Jacob rose up with his sons and all his household, and he went out from the land of Canaan from Beersheba, with joy and gladness of heart, and they went to the land of Egypt.",
+   "prev": "And Yahuah (the Lord) said to Jacob, Fear not about Joseph, for he still retains his integrity to serve me, as will seem good in your sight, and Jacob rejoiced exceedingly concerning his son.",
+   "next": "And it came to pass when they came near Egypt, Jacob sent Judah before him to Joseph that he might show him a situation in Egypt, and Judah did according to the word of his father, and he hastened and ran and came to Joseph, and they assigned for them a place in the land of Goshen for all his household, and Judah returned and came along the road to his father."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 45,
+   "vn": 1,
+   "cite": "Jubilees 45:1",
+   "text_db": "And Yashar’el (Israel) went into the country of Egypt, 2172 A M. into the land of Goshen, on the new moon of the fourth month, in the second year of the third week of the forty-fifth jubilee.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 45:1 — *And Yashar'el (Israel) went into the country of Egypt, 2172 A M. into the land of Goshen, on the new moon of the fourth month, in the second year of the third week of the forty-fifth jubilee.* Jubilees dates the same going-out-from-Canaan that Jasher 55:5 narrates from Beersheba into Goshen.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "going-out-from-Canaan"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7395,
+    "slug": "jasher-55-go-down-into-egypt",
+    "old": "Jubilees 45:1 — *And Yashar'el (Israel) went into the country of Egypt, 2172 A M. into the land of Goshen, on the new moon of the fourth month, in the second year of the third week of the forty-fifth jubilee.* Jubilees dates the same going-out-from-Canaan that Jasher 55:5 narrates from Beersheba into Goshen."
+   }
+  ]
+ },
+ {
+  "id": 33415,
+  "kind": "REBUILD",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 55,
+   "vn": 15,
+   "cite": "Jasher 55:15",
+   "text": "And behold Jacob ran and hastened to his son Joseph and fell upon his neck and kissed him, and they wept, and Joseph also embraced his father and kissed him, and they wept and all the people of Egypt wept with them.",
+   "prev": "And Joseph came nigh to his father and he bowed to his father, and all the men of the camp bowed to the ground with him before Jacob.",
+   "next": "And Jacob said to Joseph, Now I will die cheerfully after I have seen your face, that you are still living and with glory."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 46,
+   "vn": 29,
+   "cite": "Genesis 46:29",
+   "text_db": "And Joseph made ready his chariot, and went up to meet Yashar'el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.",
+   "text_canon": "And Joseph made ready his chariot, and went up to meet Yashar'el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while."
+  },
+  "old_note": "Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar'el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* The fall-upon-the-neck embrace of Jasher 55:15 is Genesis verbatim in substance.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "fall-upon-the-neck"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 7396,
+    "slug": "jasher-55-judah-sent-and-joseph-meets-jacob",
+    "old": "Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar'el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* The fall-upon-the-neck embrace of Jasher 55:15 is Genesis verbatim in substance."
+   }
+  ]
+ }
+]

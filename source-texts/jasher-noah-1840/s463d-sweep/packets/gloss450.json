@@ -1,0 +1,1484 @@
+[
+ {
+  "id": 29089,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 2,
+   "vn": 24,
+   "cite": "Jasher 2:24",
+   "text": "And she conceived and bare a son and she called his name Tubal Cain, saying, After I had withered away have I obtained him from El Shaddai (the Almighty God).",
+   "prev": "And in the end of days and years, when Zillah became old, Yahuah (the Lord) opened her womb.",
+   "next": "And she conceived again and bare a daughter, and she called her name Naamah, for she said, After I had withered away have I obtained pleasure and delight."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 4,
+   "vn": 22,
+   "cite": "Genesis 4:22",
+   "text_db": "And Zillah, she also bare Tubal-cain, an instructer of every artificer in brass and iron: and the sister of Tubal-cain was Naamah.",
+   "text_canon": "And Zillah, she also bare Tubal-cain, an instructer of every artificer in brass and iron: and the sister of Tubal-cain was Naamah."
+  },
+  "old_note": "Genesis 4:22 — *And Zillah, she also bare Tubal-cain, an instructer of every artificer in brass and iron: and the sister of Tubal-cain was Naamah.* Jasher 2:24-25 names Zillah's children Tubal Cain and Naamah just as Genesis closes the line of Cain with its smith and his sister.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6172,
+    "slug": "jasher-2-lamech-and-the-line-of-cain",
+    "old": "Genesis 4:22 — *And Zillah, she also bare Tubal-cain, an instructer of every artificer in brass and iron: and the sister of Tubal-cain was Naamah.* Jasher 2:24-25 names Zillah's children Tubal Cain and Naamah just as Genesis closes the line of Cain with its smith and his sister."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 29210,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 19,
+   "cite": "Jasher 7:19",
+   "text": "These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.",
+   "prev": "These are the sons of Shem, according to their families; and their numbers in those days were about three hundred men.",
+   "next": "And the name of the second was Yoktan, meaning that in his day the lives of the sons of men were diminished and lessened."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 10,
+   "vn": 25,
+   "cite": "Genesis 10:25",
+   "text_db": "And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother’s name was Joktan.",
+   "text_canon": "And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother’s name was Joktan."
+  },
+  "old_note": "Genesis 10:25 — *And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother's name was Joktan.* Jasher 7:19 gives the same Peleg, so named because in his days the earth was divided.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6203,
+    "slug": "jasher-7-peleg-the-earth-divided",
+    "old": "Genesis 10:25 — *And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother's name was Joktan.* Jasher 7:18 gives the same Peleg, so named because in his days the earth was divided."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29211,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 19,
+   "cite": "Jasher 7:19",
+   "text": "These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.",
+   "prev": "These are the sons of Shem, according to their families; and their numbers in those days were about three hundred men.",
+   "next": "And the name of the second was Yoktan, meaning that in his day the lives of the sons of men were diminished and lessened."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 10,
+   "vn": 32,
+   "cite": "Genesis 10:32",
+   "text_db": "These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood.",
+   "text_canon": "These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood."
+  },
+  "old_note": "Genesis 10:32 — *These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood.* The whole genealogy of Jasher 7 is the dividing of the nations after the flood the canon seals here.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6203,
+    "slug": "jasher-7-peleg-the-earth-divided",
+    "old": "Genesis 10:32 — *These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood.* The whole genealogy of Jasher 7 is the dividing of the nations after the flood the canon seals here."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29212,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 19,
+   "cite": "Jasher 7:19",
+   "text": "These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.",
+   "prev": "These are the sons of Shem, according to their families; and their numbers in those days were about three hundred men.",
+   "next": "And the name of the second was Yoktan, meaning that in his day the lives of the sons of men were diminished and lessened."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 32,
+   "vn": 8,
+   "cite": "Deuteronomy 32:8",
+   "text_db": "When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel).",
+   "text_canon": "When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel)."
+  },
+  "old_note": "Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel).* The dividing in Peleg's day was the Most High apportioning the nations their inheritance.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6203,
+    "slug": "jasher-7-peleg-the-earth-divided",
+    "old": "Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel).* The dividing in Peleg's day was the Most High apportioning the nations their inheritance."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29213,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 19,
+   "cite": "Jasher 7:19",
+   "text": "These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.",
+   "prev": "These are the sons of Shem, according to their families; and their numbers in those days were about three hundred men.",
+   "next": "And the name of the second was Yoktan, meaning that in his day the lives of the sons of men were diminished and lessened."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "acts",
+   "ch": 17,
+   "vn": 26,
+   "cite": "Acts 17:26",
+   "text_db": "And has made of one blood all nations of men for to dwell on all the face of the earth, and has determined the times before appointed, and the bounds of their habitation;",
+   "text_canon": "And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation;"
+  },
+  "old_note": "Acts 17:26 — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation.* Paul preaches the same truth Jasher 7 narrates — one blood, the bounds of the nations' habitation set.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6203,
+    "slug": "jasher-7-peleg-the-earth-divided",
+    "old": "Acts 17:26 — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation.* Paul preaches the same truth Jasher 7 narrates — one blood, the bounds of the nations' habitation set."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29214,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 19,
+   "cite": "Jasher 7:19",
+   "text": "These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.",
+   "prev": "These are the sons of Shem, according to their families; and their numbers in those days were about three hundred men.",
+   "next": "And the name of the second was Yoktan, meaning that in his day the lives of the sons of men were diminished and lessened."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 8,
+   "vn": 8,
+   "cite": "Jubilees 8:8",
+   "text_db": "And in the sixth year thereof, she bare him a son, and he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg.",
+   "text_canon": null
+  },
+  "old_note": "*And in the sixth year thereof, she bare him a son, and he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg.* (Jubilees 8:8). *These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.* (Jasher 7:19). Both books explain the name the same way: Peleg means division, and he was named for what was happening in his days. Jasher says the sons of men were divided and in the latter days the earth was divided; Jubilees says the children of Noah began to divide the earth amongst themselves when he was born. The name is a date stamp. Eber named his son after a world event, and both books kept the reason.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.",
+     "labelled": "jasher|7:19",
+     "cited_range": null,
+     "at": "jasher|7:19",
+     "verdict": "STAND",
+     "proposed": "jasher|7:19",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.",
+     "live_proposed": "These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6203,
+    "slug": "jasher-7-peleg-the-earth-divided",
+    "old": "Jubilees 8:8 — *for in the days when he was born the children of Noah began to divide the earth amongst themselves.* The same reason for the name that Jasher 7:19 gives."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29215,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 30,
+   "cite": "Jasher 7:30",
+   "text": "And Nimrod became strong when he put on the garments, and Elohim gave him might and strength, and he was a mighty hunter in the earth, yea, he was a mighty hunter in the field, and he hunted the animals and he built altars, and he offered upon them the animals before Yahuah (the Lord).",
+   "prev": "And Cush also concealed them from his sons and brothers, and when Cush had begotten Nimrod, he gave him those garments through his love for him, and Nimrod grew up, and when he was twenty years old he put on those garments.",
+   "next": "And Nimrod strengthened himself, and he rose up from amongst his brethren, and he fought the battles of his brethren against all their enemies round about."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 10,
+   "vn": 8,
+   "cite": "Genesis 10:8",
+   "text_db": "And Cush begat Nimrod: he began to be a mighty one in the earth.",
+   "text_canon": "And Cush begat Nimrod: he began to be a mighty one in the earth."
+  },
+  "old_note": "Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth.* Jasher 7:30's Nimrod, son of Cush, grown mighty in the earth, is the very figure the canon introduces here.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6204,
+    "slug": "jasher-7-nimrod-shinar-kingdom-of-man",
+    "old": "Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth.* Jasher 7:18's Nimrod, son of Cush, grown mighty in the earth, is the very figure the canon introduces here."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29216,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 43,
+   "cite": "Jasher 7:43",
+   "text": "And they found a large valley opposite to the east, and they built him a large and extensive city, and Nimrod called the name of the city that he built Shinar, for Yahuah (the Lord) had vehemently shaken his enemies and destroyed them.",
+   "prev": "And whilst he was reigning according to his heart’s desire, after having conquered all his enemies around, he advised with his counselors to build a city for his palace, and they did so.",
+   "next": "And Nimrod dwelt in Shinar, and he reigned securely, and he fought with his enemies and he subdued them, and he prospered in all his battles, and his kingdom became very great."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 10,
+   "vn": 10,
+   "cite": "Genesis 10:10",
+   "text_db": "And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.",
+   "text_canon": "And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar."
+  },
+  "old_note": "Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.* Jasher 7:43 names Nimrod's city Shinar and his great kingdom — the canon's land of Shinar, the beginning of his rebel rule.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6204,
+    "slug": "jasher-7-nimrod-shinar-kingdom-of-man",
+    "old": "Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.* Jasher 7:18 names Nimrod's city Shinar and his great kingdom — the canon's land of Shinar, the beginning of his rebel rule."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29217,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 46,
+   "cite": "Jasher 7:46",
+   "text": "And all the earth was of one tongue and words of union, but Nimrod did not go in the ways of Yahuah (the Lord), and he was more wicked than all the men that were before him, from the days of the flood until those days.",
+   "prev": "And all nations and tongues heard of his fame, and they gathered themselves to him, and they bowed down to the earth, and they brought him offerings, and he became their Lord and king, and they all dwelt with him in the city at Shinar, and Nimrod reigned in the earth over all the sons of Noah, and they were all under his power and counsel.",
+   "next": "And he made gods of wood and stone, and he bowed down to them, and he rebelled against Yahuah (the Lord), and taught all his subjects and the people of the earth his wicked ways; and Mardon his son was more wicked than his father."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 11,
+   "vn": 1,
+   "cite": "Genesis 11:1",
+   "text_db": "And the whole earth was of one language, and of one speech.",
+   "text_canon": "And the whole earth was of one language, and of one speech."
+  },
+  "old_note": "Genesis 11:1 — *And the whole earth was of one language, and of one speech.* Jasher 7:46's earth of one tongue gathered under Nimrod is the Babel generation of one language.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6204,
+    "slug": "jasher-7-nimrod-shinar-kingdom-of-man",
+    "old": "Genesis 11:1 — *And the whole earth was of one language, and of one speech.* Jasher 7:18's earth of one tongue gathered under Nimrod is the Babel generation of one language."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29218,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 44,
+   "cite": "Jasher 7:44",
+   "text": "And Nimrod dwelt in Shinar, and he reigned securely, and he fought with his enemies and he subdued them, and he prospered in all his battles, and his kingdom became very great.",
+   "prev": "And they found a large valley opposite to the east, and they built him a large and extensive city, and Nimrod called the name of the city that he built Shinar, for Yahuah (the Lord) had vehemently shaken his enemies and destroyed them.",
+   "next": "And all nations and tongues heard of his fame, and they gathered themselves to him, and they bowed down to the earth, and they brought him offerings, and he became their Lord and king, and they all dwelt with him in the city at Shinar, and Nimrod reigned in the earth over all the sons of Noah, and they were all under his power and counsel."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "micah",
+   "ch": 5,
+   "vn": 6,
+   "cite": "Micah 5:6",
+   "text_db": "And they shall waste the land of Assyria with the sword, and the land of Nimrod in the entrances thereof: thus shall he deliver us from the Assyrian, when he comes into our land, and when he treads within our borders.",
+   "text_canon": "And they shall waste the land of Assyria with the sword, and the land of Nimrod in the entrances thereof: thus shall he deliver us from the Assyrian, when he cometh into our land, and when he treadeth within our borders."
+  },
+  "old_note": "Micah 5:6 — *And they shall waste the land of Assyria with the sword, and the land of Nimrod in the entrances thereof: thus shall he deliver us from the Assyrian, when he cometh into our land, and when he treadeth within our borders.* The prophet still calls the kingdom-of-man Nimrod built 'the land of Nimrod' — the rebel power undone in the deliverance.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6204,
+    "slug": "jasher-7-nimrod-shinar-kingdom-of-man",
+    "old": "Micah 5:6 — *And they shall waste the land of Assyria with the sword, and the land of Nimrod in the entrances thereof: thus shall he deliver us from the Assyrian, when he cometh into our land, and when he treadeth within our borders.* The prophet still calls the kingdom-of-man Nimrod built 'the land of Nimrod' — the rebel power undone in the deliverance."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29219,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 42,
+   "cite": "Jasher 7:42",
+   "text": "And whilst he was reigning according to his heart’s desire, after having conquered all his enemies around, he advised with his counselors to build a city for his palace, and they did so.",
+   "prev": "And he placed Terah the son of Nahor the prince of his host, and he dignified him and elevated him above all his princes.",
+   "next": "And they found a large valley opposite to the east, and they built him a large and extensive city, and Nimrod called the name of the city that he built Shinar, for Yahuah (the Lord) had vehemently shaken his enemies and destroyed them."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 10,
+   "vn": 19,
+   "cite": "Jubilees 10:19",
+   "text_db": "For they departed from the land of Ararat eastward to Shinar; for in his days they built the city and the tower, saying, “Go to, let us ascend thereby into heaven.”",
+   "text_canon": null
+  },
+  "old_note": "*For they departed from the land of Ararat eastward to Shinar; for in his days they built the city and the tower, saying, “Go to, let us ascend thereby into heaven.”* (Jubilees 10:19). *And whilst he was reigning according to his heart’s desire, after having conquered all his enemies around, he advised with his counselors to build a city for his palace, and they did so.* (Jasher 7:42). Jasher gives the man: Nimrod, reigning after his heart's desire, advised by his counselors to build a city for his palace. Jubilees gives the place and the boast: they left Ararat eastward to Shinar and built the city and the tower to climb into heaven by it. Put together, the tower was a king's project with a king's ambition, not a village's. \"In his days\" in Jubilees is Nimrod's days, and Jasher tells you who he was.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And whilst he was reigning according to his heart’s desire, after having conquered all his enemies around, he advised with his counselors to build a city for his palace, and they did so.",
+     "labelled": "jasher|7:42",
+     "cited_range": null,
+     "at": "jasher|7:42",
+     "verdict": "STAND",
+     "proposed": "jasher|7:42",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And whilst he was reigning according to his heart’s desire, after having conquered all his enemies around, he advised with his counselors to build a city for his palace, and they did so.",
+     "live_proposed": "And whilst he was reigning according to his heart’s desire, after having conquered all his enemies around, he advised with his counselors to build a city for his palace, and they did so."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6204,
+    "slug": "jasher-7-nimrod-shinar-kingdom-of-man",
+    "old": "Jubilees 10:19 — *in his days they built the city and the tower, saying, “Go to, let us ascend thereby into heaven.”* The city Jasher 7:42 says Nimrod's counselors advised him to build."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29220,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 25,
+   "cite": "Jasher 7:25",
+   "text": "For after the death of Adam and his wife, the garments were given to Enoch, the son of Jared, and when Enoch was taken up to Elohim, he gave them to Methuselah, his son.",
+   "prev": "And the garments of skin which Elohim made for Adam and his wife, when they went out of the garden, were given to Cush.",
+   "next": "And at the death of Methuselah, Noah took them and brought them to the ark, and they were with him until he went out of the ark."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 5,
+   "vn": 24,
+   "cite": "Genesis 5:24",
+   "text_db": "And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.",
+   "text_canon": "And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him."
+  },
+  "old_note": "Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* Jasher 7:25's Enoch 'taken up to Elohim' is the canon's Enoch whom God took.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6205,
+    "slug": "jasher-7-garments-enoch-terah-abram",
+    "old": "Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* Jasher 7:18's Enoch 'taken up to Elohim' is the canon's Enoch whom God took."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29221,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 25,
+   "cite": "Jasher 7:25",
+   "text": "For after the death of Adam and his wife, the garments were given to Enoch, the son of Jared, and when Enoch was taken up to Elohim, he gave them to Methuselah, his son.",
+   "prev": "And the garments of skin which Elohim made for Adam and his wife, when they went out of the garden, were given to Cush.",
+   "next": "And at the death of Methuselah, Noah took them and brought them to the ark, and they were with him until he went out of the ark."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hebrews",
+   "ch": 11,
+   "vn": 5,
+   "cite": "Hebrews 11:5",
+   "text_db": "By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).",
+   "text_canon": "By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God)."
+  },
+  "old_note": "Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* The witness names the same translation Jasher 7:25 recalls when Enoch was taken up and passed the garments on.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6205,
+    "slug": "jasher-7-garments-enoch-terah-abram",
+    "old": "Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* The witness names the same translation Jasher 7:18 recalls when Enoch was taken up and passed the garments on."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29222,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 51,
+   "cite": "Jasher 7:51",
+   "text": "Terah was seventy years old when he begat him, and Terah called the name of his son that was born to him Abram, because the king had raised him in those days, and dignified him above all his princes that were with him.",
+   "prev": "And Terah took a wife and her name was Amthelo the daughter of Cornebo; and the wife of Terah conceived and bare him a son in those days.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 11,
+   "vn": 26,
+   "cite": "Genesis 11:26",
+   "text_db": "And Terah lived seventy years, and begat Abram, Nahor, and Haran.",
+   "text_canon": "And Terah lived seventy years, and begat Abram, Nahor, and Haran."
+  },
+  "old_note": "Genesis 11:26 — *And Terah lived seventy years, and begat Abram, Nahor, and Haran.* Jasher 7:51 records the same Terah, seventy years old, begetting Abram — the called seed entering the story.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6205,
+    "slug": "jasher-7-garments-enoch-terah-abram",
+    "old": "Genesis 11:26 — *And Terah lived seventy years, and begat Abram, Nahor, and Haran.* Jasher 7:18 records the same Terah, seventy years old, begetting Abram — the called seed entering the story."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29223,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 7,
+   "vn": 51,
+   "cite": "Jasher 7:51",
+   "text": "Terah was seventy years old when he begat him, and Terah called the name of his son that was born to him Abram, because the king had raised him in those days, and dignified him above all his princes that were with him.",
+   "prev": "And Terah took a wife and her name was Amthelo the daughter of Cornebo; and the wife of Terah conceived and bare him a son in those days.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "joshua",
+   "ch": 24,
+   "vn": 2,
+   "cite": "Joshua 24:2",
+   "text_db": "And Joshua said unto all the people, Thus says Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.",
+   "text_canon": "And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods."
+  },
+  "old_note": "Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Abram born to Terah inside Nimrod's idolatrous Shinar is the seed called out from fathers who served other gods.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6205,
+    "slug": "jasher-7-garments-enoch-terah-abram",
+    "old": "Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Abram born to Terah inside Nimrod's idolatrous Shinar is the seed called out from fathers who served other gods."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29431,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 9,
+   "vn": 19,
+   "cite": "Jasher 9:19",
+   "text": "And Abram said to himself Surely these are not gods that made the earth and all mankind, but these are the servants of Elohim, and Abram remained in the house of Noah and there knew Yahuah (the Lord) and his ways’ and he served Yahuah (the Lord) all the days of his life, and all that generation forgot Yahuah (the Lord), and served other gods of wood and stone, and rebelled all their days.",
+   "prev": "And in the morning when it was light and the sun shone upon the earth as usual, Abram saw all the things that Yahuah Elohim (the Lord God) had made upon earth.",
+   "next": "And king Nimrod reigned securely, and all the earth was under his control, and all the earth was of one tongue and words of union."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 12,
+   "vn": 17,
+   "cite": "Jubilees 12:17",
+   "text_db": "And a word came into his heart and he said: \"All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God). Why do I search (them) out?",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 12:17 — *All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God). Why do I search (them) out?* Jubilees records the same reasoning — Abram turning from the host of heaven to the One in whose hand they are (Jasher 9:19).",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6263,
+    "slug": "jasher-9-abram-reasons-from-the-sun-and-moon-to-the-creator",
+    "old": "Jubilees 12:17 — *All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God). Why do I search (them) out?* Jubilees records the same reasoning — Abram turning from the host of heaven to the One in whose hand they are (Jasher 9:7)."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29432,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 9,
+   "vn": 19,
+   "cite": "Jasher 9:19",
+   "text": "And Abram said to himself Surely these are not gods that made the earth and all mankind, but these are the servants of Elohim, and Abram remained in the house of Noah and there knew Yahuah (the Lord) and his ways’ and he served Yahuah (the Lord) all the days of his life, and all that generation forgot Yahuah (the Lord), and served other gods of wood and stone, and rebelled all their days.",
+   "prev": "And in the morning when it was light and the sun shone upon the earth as usual, Abram saw all the things that Yahuah Elohim (the Lord God) had made upon earth.",
+   "next": "And king Nimrod reigned securely, and all the earth was under his control, and all the earth was of one tongue and words of union."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 4,
+   "vn": 19,
+   "cite": "Deuteronomy 4:19",
+   "text_db": "And lest you lift up your eyes unto heaven, and when you see the sun, and the moon, and the stars, even all the host of heaven, should be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) has divided unto all nations under the whole heaven.",
+   "text_canon": "And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven."
+  },
+  "old_note": "Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them,* Moses forbids the host-of-heaven worship that Abram reasons his way out of, finding sun and moon are servants, not gods (Jasher 9:19).",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6263,
+    "slug": "jasher-9-abram-reasons-from-the-sun-and-moon-to-the-creator",
+    "old": "Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them,* Moses forbids the host-of-heaven worship that Abram reasons his way out of, finding sun and moon are servants, not gods (Jasher 9:7)."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29435,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 9,
+   "vn": 7,
+   "cite": "Jasher 9:7",
+   "text": "And the king and all his servants, and Terah with all his household were then the first of those that served gods of wood and stone.",
+   "prev": "And Abram was in Noah’s house thirty-nine years, and Abram knew Yahuah (the Lord) from three years old, and he went in the ways of Yahuah (the Lord) until the day of his death, as Noah and his son Shem had taught him; and all the sons of the earth in those days greatly transgressed against Yahuah (the Lord), and they rebelled against him and they served other gods, and they forgot Yahuah (the Lord) who had created them in the earth; and the inhabitants of the earth made to themselves, at that time, every man his god; gods of wood and stone which could neither speak, hear, nor deliver, and the sons of men served them and they became their gods.",
+   "next": "And Terah had twelve gods of large size, made of wood and stone, after the twelve months of the year, and he served each one monthly, and every month Terah would bring his meat offering and drink offering to his gods; thus did Terah all the days."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "joshua",
+   "ch": 24,
+   "vn": 2,
+   "cite": "Joshua 24:2",
+   "text_db": "And Joshua said unto all the people, Thus says Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.",
+   "text_canon": "And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods."
+  },
+  "old_note": "Joshua 24:2 — *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* the canon names Terah the idolater exactly as Jasher does — the first of the idol-servers (Jasher 9:7).",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6262,
+    "slug": "jasher-9-the-generation-serves-gods-of-wood-and-stone",
+    "old": "Joshua 24:2 — *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* the canon names Terah the idolater exactly as Jasher does — the first of the idol-servers (Jasher 9:7)."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 29967,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 20,
+   "vn": 30,
+   "cite": "Jasher 20:30",
+   "text": "And Abraham prayed on account of Abimelech and his subjects, and Yahuah (the Lord) heard the prayer of Abraham, and he healed Abimelech and all his subjects.",
+   "prev": "And Abimelech sent for Abraham, saying, Pray now for your servants to Yahuah your Elohim (the Lord your God), that he may put away this mortality from amongst us.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 20,
+   "vn": 17,
+   "cite": "Genesis 20:17",
+   "text_db": "So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children.",
+   "text_canon": "So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children."
+  },
+  "old_note": "Genesis 20:17 — *So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children.* The healing intercession that closes Jasher 20's record — the prophet's prayer lifts the plague from the land.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6412,
+    "slug": "jasher-20-pharaoh-precedent-and-healing",
+    "old": "Genesis 20:17 — *So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children.* The healing intercession that closes Jasher 20's record — the prophet's prayer lifts the plague from the land."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29968,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 20,
+   "vn": 24,
+   "cite": "Jasher 20:24",
+   "text": "And Abimelech said to them, What is this work you have been doing in saying you are brother and sister, and I took this woman for a wife?",
+   "prev": "Now, therefore, restore this woman to her husband, lest it should befall us as it did to Pharaoh king of Egypt and his subjects, and that we may not die; and Abimelech hastened and called and had Sarah called for, and she came before him, and he had Abraham called for, and he came before him.",
+   "next": "And Abraham said, Because I thought I should suffer death on account of my wife; and Abimelech took flocks and herds, and men servants and maid servants, and a thousand pieces of silver, and he gave them to Abraham, and he returned Sarah to him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 12,
+   "vn": 18,
+   "cite": "Genesis 12:18",
+   "text_db": "And Pharaoh called Abram, and said, What is this that you have done unto me? why did you not tell me that she was your wife?",
+   "text_canon": "And Pharaoh called Abram, and said, What is this that thou hast done unto me? why didst thou not tell me that she was thy wife?"
+  },
+  "old_note": "Genesis 12:18 — *And Pharaoh called Abram, and said, What is this that thou hast done unto me? why didst thou not tell me that she was thy wife?* Pharaoh's rebuke, mirrored when Abimelech likewise calls Abraham to account within Jasher 20:24's record.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6412,
+    "slug": "jasher-20-pharaoh-precedent-and-healing",
+    "old": "Genesis 12:18 — *And Pharaoh called Abram, and said, What is this that thou hast done unto me? why didst thou not tell me that she was thy wife?* Pharaoh's rebuke, mirrored when Abimelech likewise calls Abraham to account within Jasher 20:13's record."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29969,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 20,
+   "vn": 21,
+   "cite": "Jasher 20:21",
+   "text": "And Pharaoh sent and took this woman for a wife and Yahuah (the Lord) brought upon him grievous plagues until he returned the woman to her husband.",
+   "prev": "And he said concerning his wife, She is my sister, for such is his manner of doing when he comes to dwell in the land in which he is a stranger.",
+   "next": "Now therefore, O sovereign king, know what happened yesternight to the whole land, for there was a very great consternation and great pain and lamentation, and we know that it was on account of the woman which you did take."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 12,
+   "vn": 17,
+   "cite": "Genesis 12:17",
+   "text_db": "And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram’s wife.",
+   "text_canon": "And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram’s wife."
+  },
+  "old_note": "Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram’s wife.* The Egypt precedent the servants recall within Jasher 20:21's record to urge the king to restore Sarah.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6412,
+    "slug": "jasher-20-pharaoh-precedent-and-healing",
+    "old": "Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram’s wife.* The Egypt precedent the servants recall within Jasher 20:13's record to urge the king to restore Sarah."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 29970,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 20,
+   "vn": 14,
+   "cite": "Jasher 20:14",
+   "text": "And the angel answered and said to Abimelech, Behold you die on account of the woman which you did yesternight bring to your house, for she is a married woman, the wife of Abraham who came to your house; now therefore return that man his wife, for she is his wife; and should you not return her, know that you will surely die, you and all belonging to you.",
+   "prev": "And he dreamed that an angel of Yahuah (the Lord) came to him with a drawn sword in his hand, and the angel stood over Abimelech, and wished to slay him with the sword, and the king was terrified in his dream, and said to the angel, In what have I sinned against you that you come to slay me with your sword?",
+   "next": "And on that night there was a great outcry in the land of the Philistines, and the inhabitants of the land saw the figure of a man standing with a drawn sword in his hand, and he smote the inhabitants of the land with the sword, yea he continued to smite them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 20,
+   "vn": 7,
+   "cite": "Genesis 20:7",
+   "text_db": "Now therefore restore the man his wife; for he is a prophet, and he shall pray for you, and you shall live: and if you restore her not, know you that you shall surely die, you, and all that are yours.",
+   "text_canon": "Now therefore restore the man his wife; for he is a prophet, and he shall pray for thee, and thou shalt live: and if thou restore her not, know thou that thou shalt surely die, thou, and all that are thine."
+  },
+  "old_note": "Genesis 20:7 — *Now therefore restore the man his wife; for he is a prophet, and he shall pray for thee, and thou shalt live: and if thou restore her not, know thou that thou shalt surely die, thou, and all that are thine.* The canon's warning behind the angel of Jasher 20:14 who would slay the king lest he restore the wife.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6411,
+    "slug": "jasher-20-dream-angel-drawn-sword",
+    "old": "Genesis 20:7 — *Now therefore restore the man his wife; for he is a prophet, and he shall pray for thee, and thou shalt live: and if thou restore her not, know thou that thou shalt surely die, thou, and all that are thine.* The canon's warning behind the angel of Jasher 20:13 who would slay the king lest he restore the wife."
+   }
+  ],
+  "s450": "new"
+ },
+ {
+  "id": 31317,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 34,
+   "vn": 69,
+   "cite": "Jasher 34:69",
+   "text": "And the sons of Jacob and their servants went toward these kings, and they trusted in Yahuah their Elohim, and whilst they were going, Jacob their father also prayed to Yahuah (the Lord) and said, O Yahuah Elohim, powerful and exalted Elohim, who has reigned from days of old, from there till now and forever;",
+   "prev": "And with your strong hand and outstretched arm deliver my sons and their servants from them, for power and might are in your hands to do all this.",
+   "next": "You are He who stirs up wars and causes them to cease, in your hand are power and might to exalt and to bring down; O may my prayer be acceptable before you that you may turn to me with your mercies, to impress the hearts of these kings and their people with the terror of my sons, and terrify them and their camps, and with your great kindness deliver all those that trust in you, for it is you who can bring people under us and reduce nations under our power."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 48,
+   "vn": 22,
+   "cite": "Genesis 48:22",
+   "text_db": "Moreover I have given to you one portion above your brethren, which I took out of the hand of the Amorite with my sword and with my bow.",
+   "text_canon": "Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow."
+  },
+  "old_note": "Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob's deathbed word recalls the very Amorite war of Jasher 34, the portion taken by the sword and bow Judah bids each man gird on (34:60).",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 6795,
+    "slug": "jasher-34-isaac-jacob-prayer-seed-as-stars",
+    "old": "Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob's deathbed word recalls the very Amorite war of Jasher 34, the portion taken by the sword and bow Judah bids each man gird on (34:60)."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 32344,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 47,
+   "vn": 5,
+   "cite": "Jasher 47:5",
+   "text": "And Isaac placed his hands upon all the sons of Jacob, and he took hold of them and embraced them, and kissed them one by one, and Isaac blessed them on that day, and he said to them, May the Elohim (God) of your fathers bless you and increase your seed like the stars of heaven for number.",
+   "prev": "And Isaac said to Jacob, Bring me here your sons and I will bless them; and Jacob brought his eleven children before his father Isaac.",
+   "next": "And Isaac also blessed the sons of Esau, saying, May Elohim cause you to be a dread and a terror to all that will behold you, and to all your enemies."
+  },
+  "other": {
+   "ed": "apocrypha",
+   "book": "ecclesiasticus",
+   "ch": 44,
+   "vn": 22,
+   "cite": "Ecclesiasticus 44:22",
+   "text_db": "With Isaac did he establish likewise for Abraham his father’s sake the blessing of all men, and the covenant,",
+   "text_canon": null
+  },
+  "old_note": "Ecclesiasticus 44:22 — *With Isaac did he establish likewise for Abraham his father’s sake the blessing of all men, and the covenant,* Sirach's praise of the fathers confirms that the blessing Isaac hands on in Jasher 47:5 was first established with him for Abraham's sake.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 7085,
+    "slug": "jasher-47-isaac-blesses-the-sons",
+    "old": "Ecclesiasticus 44:22 — *With Isaac did he establish likewise for Abraham his father’s sake the blessing of all men, and the covenant,* Sirach's praise of the fathers confirms that the blessing Isaac hands on in Jasher 47:5 was first established with him for Abraham's sake."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 32345,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 47,
+   "vn": 5,
+   "cite": "Jasher 47:5",
+   "text": "And Isaac placed his hands upon all the sons of Jacob, and he took hold of them and embraced them, and kissed them one by one, and Isaac blessed them on that day, and he said to them, May the Elohim (God) of your fathers bless you and increase your seed like the stars of heaven for number.",
+   "prev": "And Isaac said to Jacob, Bring me here your sons and I will bless them; and Jacob brought his eleven children before his father Isaac.",
+   "next": "And Isaac also blessed the sons of Esau, saying, May Elohim cause you to be a dread and a terror to all that will behold you, and to all your enemies."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 36,
+   "vn": 6,
+   "cite": "Jubilees 36:6",
+   "text_db": "Remember you, my sons, Yahuah Elohim (the LORD God) of Abraham your father, and how I too worshipped Him and served Him in righteousness and in joy, that He might multiply you and increase your seed as the stars of heaven in multitude, and establish you on the earth as the plant of righteousness which will not be rooted out to all the generations for ever.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 36:6 — *Remember you, my sons, Yahuah Elohim (the LORD God) of Abraham your father, and how I too worshipped Him and served Him in righteousness and in joy, that He might multiply you and increase your seed as the stars of heaven in multitude, and establish you on the earth as the plant of righteousness which will not be rooted out to all the generations for ever.* Jubilees keeps the same deathbed scene of Isaac invoking the star-seed that Jasher 47:5 narrates.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 7085,
+    "slug": "jasher-47-isaac-blesses-the-sons",
+    "old": "Jubilees 36:6 — *Remember you, my sons, Yahuah Elohim (the LORD God) of Abraham your father, and how I too worshipped Him and served Him in righteousness and in joy, that He might multiply you and increase your seed as the stars of heaven in multitude, and establish you on the earth as the plant of righteousness which will not be rooted out to all the generations for ever.* Jubilees keeps the same deathbed scene of Isaac invoking the star-seed that Jasher 47:5 narrates."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 32346,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 47,
+   "vn": 5,
+   "cite": "Jasher 47:5",
+   "text": "And Isaac placed his hands upon all the sons of Jacob, and he took hold of them and embraced them, and kissed them one by one, and Isaac blessed them on that day, and he said to them, May the Elohim (God) of your fathers bless you and increase your seed like the stars of heaven for number.",
+   "prev": "And Isaac said to Jacob, Bring me here your sons and I will bless them; and Jacob brought his eleven children before his father Isaac.",
+   "next": "And Isaac also blessed the sons of Esau, saying, May Elohim cause you to be a dread and a terror to all that will behold you, and to all your enemies."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 26,
+   "vn": 4,
+   "cite": "Genesis 26:4",
+   "text_db": "And I will make your seed to multiply as the stars of heaven, and will give unto your seed all these countries; and in your seed shall all the nations of the earth be blessed;",
+   "text_canon": "And I will make thy seed to multiply as the stars of heaven, and will give unto thy seed all these countries; and in thy seed shall all the nations of the earth be blessed;"
+  },
+  "old_note": "Genesis 26:4 — *And I will make thy seed to multiply as the stars of heaven, and will give unto thy seed all these countries; and in thy seed shall all the nations of the earth be blessed;* The same promise was renewed to Isaac himself, which is why he can pass the star-blessing to his grandsons in Jasher 47:5.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 7085,
+    "slug": "jasher-47-isaac-blesses-the-sons",
+    "old": "Genesis 26:4 — *And I will make thy seed to multiply as the stars of heaven, and will give unto thy seed all these countries; and in thy seed shall all the nations of the earth be blessed;* The same promise was renewed to Isaac himself, which is why he can pass the star-blessing to his grandsons in Jasher 47:5."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 32347,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 47,
+   "vn": 5,
+   "cite": "Jasher 47:5",
+   "text": "And Isaac placed his hands upon all the sons of Jacob, and he took hold of them and embraced them, and kissed them one by one, and Isaac blessed them on that day, and he said to them, May the Elohim (God) of your fathers bless you and increase your seed like the stars of heaven for number.",
+   "prev": "And Isaac said to Jacob, Bring me here your sons and I will bless them; and Jacob brought his eleven children before his father Isaac.",
+   "next": "And Isaac also blessed the sons of Esau, saying, May Elohim cause you to be a dread and a terror to all that will behold you, and to all your enemies."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 22,
+   "vn": 17,
+   "cite": "Genesis 22:17",
+   "text_db": "That in blessing I will bless you, and in multiplying I will multiply your seed as the stars of the heaven, and as the sand which is upon the sea shore; and your seed shall possess the gate of his enemies;",
+   "text_canon": "That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;"
+  },
+  "old_note": "Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;* The star-seed Isaac speaks over Jacob's sons in Jasher 47:5 is the very oath Yahuah swore to Abraham.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 7085,
+    "slug": "jasher-47-isaac-blesses-the-sons",
+    "old": "Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;* The star-seed Isaac speaks over Jacob's sons in Jasher 47:5 is the very oath Yahuah swore to Abraham."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 33354,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 52,
+   "vn": 23,
+   "cite": "Jasher 52:23",
+   "text": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may El Shaddai (the Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you.",
+   "prev": "And Jacob said to his sons, I trust in Yahuah Elohim (the Lord God) that he may deliver you and give you favor in the sight of the king of Egypt, and in the sight of all his men.",
+   "next": "And all the men rose up, and they took their brother Benjamin, and they took in their hands a large present of the best of the land, and they also took a double portion of silver."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 43,
+   "vn": 14,
+   "cite": "Genesis 43:14",
+   "text_db": "And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved.",
+   "text_canon": "And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved."
+  },
+  "old_note": "Genesis 43:14 — *And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved.* Jacob's El Shaddai blessing in Jasher 52:23 is the patriarchal benediction the canon records.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 7380,
+    "slug": "jasher-52-jacob-prayer-covenant",
+    "old": "Genesis 43:14 — *And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved.* Jacob's El Shaddai blessing in Jasher 52:23 is the patriarchal benediction the canon records."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 37355,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 78,
+   "vn": 10,
+   "cite": "Jasher 78:10",
+   "text": "And she conceived again and bare a son, but circumcised his foreskin, and called his name Eliezer, for Moses said, Because the Elohim (God) of my fathers was my help, and delivered me from the sword of Pharaoh.",
+   "prev": "And Zipporah conceived and bare a son and he called his name Gershom, for he said, I was a stranger in a foreign land; but he circumcised not his foreskin, at the command of Reuel his father-in-law.",
+   "next": "And Pharaoh king of Egypt greatly increased the labor of the children of Israel in those days, and continued to make his yoke heavier upon the children of Israel."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "acts",
+   "ch": 7,
+   "vn": 32,
+   "cite": "Acts 7:32",
+   "text_db": "Saying, I am the Elohim (God) of your fathers, the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob. Then Moses trembled, and durst not behold.",
+   "text_canon": "Saying, I am the Elohim (God) of thy fathers, the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob. Then Moses trembled, and durst not behold."
+  },
+  "old_note": "Acts 7:32 — *Saying, I am the Elohim (God) of thy fathers, the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob. Then Moses trembled, and durst not behold.* The Elohim of the fathers whom Jasher 78:10 names Eliezer to honor is the same who speaks from the bush.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 8513,
+    "slug": "jasher-78-the-elohim-of-thy-fathers-my-help",
+    "old": "Acts 7:32 — *Saying, I am the Elohim (God) of thy fathers, the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob. Then Moses trembled, and durst not behold.* The Elohim of the fathers whom Jasher 78:10 names Eliezer to honor is the same who speaks from the bush."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 37409,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 80,
+   "vn": 62,
+   "cite": "Jasher 80:62",
+   "text": "And Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him.",
+   "prev": "And the children of Israel asked of the Egyptians, vessels of silver, and vessels of gold, and garments, and the children of Israel stripped the Egyptians.",
+   "next": "The children of Israel also brought up, each man his father’s coffin with him, and each man the coffins of his tribe."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 13,
+   "vn": 19,
+   "cite": "Exodus 13:19",
+   "text_db": "And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and you shall carry up my bones away hence with you.",
+   "text_canon": "And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you."
+  },
+  "old_note": "Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* Moses bringing up Joseph's coffin in Jasher 80:62 is the keeping of this oath.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 8528,
+    "slug": "jasher-80-exodus-with-josephs-bones",
+    "old": "Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* Moses bringing up Joseph's coffin in Jasher 80:62 is the keeping of this oath."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 37410,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 80,
+   "vn": 62,
+   "cite": "Jasher 80:62",
+   "text": "And Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him.",
+   "prev": "And the children of Israel asked of the Egyptians, vessels of silver, and vessels of gold, and garments, and the children of Israel stripped the Egyptians.",
+   "next": "The children of Israel also brought up, each man his father’s coffin with him, and each man the coffins of his tribe."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 50,
+   "vn": 25,
+   "cite": "Genesis 50:25",
+   "text_db": "And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and you shall carry up my bones from hence.",
+   "text_canon": "And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence."
+  },
+  "old_note": "Genesis 50:25 — *And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The deathbed oath Moses fulfills in Jasher 80:62 was sworn here, generations before.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 8528,
+    "slug": "jasher-80-exodus-with-josephs-bones",
+    "old": "Genesis 50:25 — *And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The deathbed oath Moses fulfills in Jasher 80:62 was sworn here, generations before."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 39083,
+  "kind": "GLOSS450",
+  "side": "S",
+  "jasher": {
+   "book": "jasher",
+   "ch": 91,
+   "vn": 17,
+   "cite": "Jasher 91:17",
+   "text": "Strengthen yourselves, and let the hearts of all you that trust in Yahuah (the Lord) be of good courage.",
+   "prev": "Blessed be Yahuah (the Lord) for ever, amen, and amen.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "joshua",
+   "ch": 1,
+   "vn": 9,
+   "cite": "Joshua 1:9",
+   "text_db": "Have not I commanded you? Be strong and of a good courage; be not afraid, neither be you dismayed: for Yahuah Elohayka (the LORD thy God) is with you whithersoever you go.",
+   "text_canon": "Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest."
+  },
+  "old_note": "Joshua 1:9 — *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* Jasher 91:17's closing charge to be of good courage echoes the very word given Joshua to begin the conquest the book has just finished telling.",
+  "regrade": {
+   "verdict": "NO_JASHER_QUOTE",
+   "quotes": [],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 9003,
+    "slug": "jasher-91-the-end-be-of-good-courage",
+    "old": "Joshua 1:9 — *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* Jasher 91:17's closing charge to be of good courage echoes the very word given Joshua to begin the conquest the book has just finished telling."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 49849,
+  "kind": "GLOSS450",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 20,
+   "vn": 13,
+   "cite": "Jasher 20:13",
+   "text": "And he dreamed that an angel of Yahuah (the Lord) came to him with a drawn sword in his hand, and the angel stood over Abimelech, and wished to slay him with the sword, and the king was terrified in his dream, and said to the angel, In what have I sinned against you that you come to slay me with your sword?",
+   "prev": "As at evening time, before men lie down to rest, the king was sitting upon his throne, and a deep sleep fell upon him, and he lay upon the throne and slept till morning.",
+   "next": "And the angel answered and said to Abimelech, Behold you die on account of the woman which you did yesternight bring to your house, for she is a married woman, the wife of Abraham who came to your house; now therefore return that man his wife, for she is his wife; and should you not return her, know that you will surely die, you and all belonging to you."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 20,
+   "vn": 3,
+   "cite": "Genesis 20:3",
+   "text_db": "But Elohim (God) came to Abimelech in a dream by night, and said to him, Behold, you are but a dead man, for the woman which you have taken; for she is a man’s wife.",
+   "text_canon": "But Elohim (God) came to Abimelech in a dream by night, and said to him, Behold, thou art but a dead man, for the woman which thou hast taken; for she is a man’s wife."
+  },
+  "old_note": "*And he dreamed that an angel of Yahuah (the Lord) came to him with a drawn sword in his hand, and the angel stood over Abimelech, and wished to slay him with the sword* (Jasher 20:13). The restored witness names the One in the dream: where the canon says *Elohim came to Abimelech in a dream by night... thou art but a dead man* (Genesis 20:3), Jasher shows the angel of Yahuah with the drawn sword — the Formed, the visible One who bears the Name, standing over the king to guard the seed of promise.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And he dreamed that an angel of Yahuah (the Lord) came to him with a drawn sword in his hand, and the angel stood over Abimelech, and wished to slay him with the sword",
+     "labelled": "jasher|20:13",
+     "cited_range": null,
+     "at": "jasher|20:13",
+     "verdict": "STAND",
+     "proposed": "jasher|20:13",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And he dreamed that an angel of Yahuah (the Lord) came to him with a drawn sword in his hand, and the angel stood over Abimelech, and wished to slay him with the sword, and the king was terrified in his dream, and said to the angel, In what have I sinned against you that you come to slay me with your sword?",
+     "live_proposed": "And he dreamed that an angel of Yahuah (the Lord) came to him with a drawn sword in his hand, and the angel stood over Abimelech, and wished to slay him with the sword, and the king was terrified in his dream, and said to the angel, In what have I sinned against you that you come to slay me with your sword?"
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 12081,
+    "slug": "genesis-20-thou-art-but-a-dead-man-elohim-warns-the-king-in-a-dream",
+    "old": "*an angel of Yahuah (the Lord) came to him with a drawn sword in his hand, and the angel stood over Abimelech* (Jasher 20:13) — the restored witness names the One in the dream of 20:3: the Formed, the visible One who bears the Name."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 49945,
+  "kind": "GLOSS450",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 24,
+   "vn": 31,
+   "cite": "Jasher 24:31",
+   "text": "But go to my land and to my birthplace, and take from there a wife for my son, and Yahuah Elohim (Lord God) of Heaven and earth who took me from my father’s house and brought me to this place, and said to me, To your seed will I give this land for an inheritance for ever, he will send his angel before you and prosper your way, that you may obtain a wife for my son from my family and from my father’s house.",
+   "prev": "And Abraham said to him, Behold I am old, I do not know the day of my death; for I am advanced in days; now therefore rise up, go forth and do not take a wife for my son from this place and from this land, from the daughters of the Canaanites amongst whom we dwell.",
+   "next": "And the servant answered his master Abraham and said, Behold I go to your birthplace and to your father’s house, and take a wife for your son from there; but if the woman be not willing to follow me to this land, shall I take your son back to the land of your birthplace?"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 24,
+   "vn": 4,
+   "cite": "Genesis 24:4",
+   "text_db": "But you shall go unto my country, and to my kindred, and take a wife unto my son Isaac.",
+   "text_canon": "But thou shalt go unto my country, and to my kindred, and take a wife unto my son Isaac."
+  },
+  "old_note": "*But go to my land and to my birthplace, and take from there a wife for my son, and Yahuah Elohim (Lord God) of Heaven and earth who took me from my father's house... he will send his angel before you and prosper your way, that you may obtain a wife for my son from my family and from my father's house* (Jasher 24:31). The restored witness keeps the second half of the charge — *go to my land and to my birthplace, and take a wife for my son* — the very *go unto my country, and to my kindred, and take a wife unto my son Isaac* (Genesis 24:4), the bride sought from the covenant family alone.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "But go to my land and to my birthplace, and take from there a wife for my son, and Yahuah Elohim (Lord God) of Heaven and earth who took me from my father's house... he will send his angel before you and prosper your way, that you may obtain a wife for my son from my family and from my father's house",
+     "labelled": "jasher|24:31",
+     "cited_range": null,
+     "at": "jasher|24:31",
+     "verdict": "STAND",
+     "proposed": "jasher|24:31",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "But go to my land and to my birthplace, and take from there a wife for my son, and Yahuah Elohim (Lord God) of Heaven and earth who took me from my father’s house and brought me to this place, and said to me, To your seed will I give this land for an inheritance for ever, he will send his angel before you and prosper your way, that you may obtain a wife for my son from my family and from my father’s house.",
+     "live_proposed": "But go to my land and to my birthplace, and take from there a wife for my son, and Yahuah Elohim (Lord God) of Heaven and earth who took me from my father’s house and brought me to this place, and said to me, To your seed will I give this land for an inheritance for ever, he will send his angel before you and prosper your way, that you may obtain a wife for my son from my family and from my father’s house."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 12101,
+    "slug": "genesis-24-thou-shalt-not-take-a-wife-of-the-canaanites",
+    "old": "*go to my land and to my birthplace, and take a wife for my son* (Jasher 24:31) — the second half of the charge of 24:4, the bride sought from the covenant family alone, the angel sent before the way."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 54994,
+  "kind": "GLOSS450",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 52,
+   "vn": 23,
+   "cite": "Jasher 52:23",
+   "text": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may El Shaddai (the Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you.",
+   "prev": "And Jacob said to his sons, I trust in Yahuah Elohim (the Lord God) that he may deliver you and give you favor in the sight of the king of Egypt, and in the sight of all his men.",
+   "next": "And all the men rose up, and they took their brother Benjamin, and they took in their hands a large present of the best of the land, and they also took a double portion of silver."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 43,
+   "vn": 14,
+   "cite": "Genesis 43:14",
+   "text_db": "And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved.",
+   "text_canon": "And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved."
+  },
+  "old_note": "*Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you* (Jasher 52:23). The extended witness keeps Jacob's blessing word-for-heart with the canon — *may the El Shaddai (Almighty God) give you mercy before him* — echoing *And El Shaddai (God Almighty) give you mercy before the man* (Genesis 43:14); the father gives up the son and casts the outcome upon the mercy of El Shaddai.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you",
+     "labelled": "jasher|52:23",
+     "cited_range": null,
+     "at": "jasher|52:23",
+     "verdict": "REWORDED",
+     "proposed": "jasher|52:23",
+     "ratio": 0.96,
+     "k": 1,
+     "live_here": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may El Shaddai (the Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you.",
+     "live_proposed": "Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may El Shaddai (the Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 13297,
+    "slug": "genesis-43-if-i-be-bereaved-el-shaddai-give-you-mercy",
+    "old": "*may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon* (Jasher 52:23) — Jacob's blessing of 43:14 kept word-for-heart; the surrender cast on El Shaddai's mercy."
+   }
+  ],
+  "s450": "changed"
+ },
+ {
+  "id": 94431,
+  "kind": "GLOSS450",
+  "side": "T",
+  "jasher": {
+   "book": "jasher",
+   "ch": 80,
+   "vn": 62,
+   "cite": "Jasher 80:62",
+   "text": "And Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him.",
+   "prev": "And the children of Israel asked of the Egyptians, vessels of silver, and vessels of gold, and garments, and the children of Israel stripped the Egyptians.",
+   "next": "The children of Israel also brought up, each man his father’s coffin with him, and each man the coffins of his tribe."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 13,
+   "vn": 19,
+   "cite": "Exodus 13:19",
+   "text_db": "And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and you shall carry up my bones away hence with you.",
+   "text_canon": "And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you."
+  },
+  "old_note": "*And Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him* (Jasher 80:62). The extended witness keeps the deed of *Moses took the bones of Joseph with him* (Exodus 13:19) — *Moses hastened... and brought up from there the coffin of Joseph and took it with him*. On the very night of the going-out Moses sees to the oath, carrying up the coffin of Joseph that the dying patriarch's word might be kept.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him",
+     "labelled": "jasher|80:62",
+     "cited_range": null,
+     "at": "jasher|80:62",
+     "verdict": "STAND",
+     "proposed": "jasher|80:62",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him.",
+     "live_proposed": "And Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him."
+    }
+   ],
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 23777,
+    "slug": "exodus-13-the-bones-of-joseph-the-two-house-hope-of-return",
+    "old": "*Moses... brought up from there the coffin of Joseph and took it with him* (Jasher 80:62) — the extended witness keeps the deed of 13:19: Moses sees to the oath on the night of the going-out."
+   }
+  ],
+  "s450": "changed"
+ }
+]

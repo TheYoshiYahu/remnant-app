@@ -188,7 +188,7 @@ means a back-fill can re-run safely over the already-merged canon rows.
   | 1 Enoch | 729 of 1,963 | ✓ S459 | ✓ S459 (362 + 2 retired) | ✓ S459 19:03 CDT, read-back 0 flagged | ✓ S460 (532 of 719), deployed Oct 19 22:31 CDT, read-back 0 (532/532 live) | ✓ S463a (63 STAND rewritten; 631 glosses: 349 moved, 55 re-worded, 22 patched, 61 retired, 4 Q), deployed Oct 23 10:55 CDT, read-back 0 flagged, 490/490; S463a2 4 Q retired 11:07 CDT — CLOSED |
   | Jubilees | 1,741 of 1,754 anchored | ✓ S463b | ✓ built S463b (126 rebuilt, 140 moved, 92 re-cited) | ✓ built S463b | ✓ built S463b (5) | ✓ built S463b (312 read: 179 stay / 131 move / 2 Q) | ✓ deployed Oct 23 12:55 CDT, read-back 347/347, 0 degraded — CLOSED |
   | Apocrypha (+3 Macc) | 1,784 stand + 58 off of 4,597 anchored | ✓ S463c | ✓ built S463c (485 rebuilt, 1 moved, 22 re-quoted, 3 re-cited, 63 slug cites) | ✓ deployed Oct 23 14:55 CDT, read-back 573/573, 0 degraded — CLOSED | ✓ built S463c (55) | ✓ built S463c (13 S454-changed read: all stay) | scratch 573/573, 607/607, 55/55, 4,907 quotations verbatim, 0 degraded |
-  | Jasher | — | — | — | — | — | — |
+  | Jasher | 315 stand + 6 off of 1,943 anchored (1,624 canon-first glosses, canon quotes 1,428/1,429 verbatim) | ✓ S463d | ✓ built S463d (53 rebuilt, 1 moved, 3 re-quoted, 2 patched) | ✓ deployed Oct 23 18:59 CDT, read-back 59/59, 0 degraded — CLOSED | ✓ built S463d (65) | ✓ built S463d (36 S450-changed read: all stay; 13 off-address read: 1 moved) | scratch 59/59, 58/58, 65/65, 1,628 quotations verbatim, 0 degraded |
   | 2 Enoch / Test. XII / Apoc. Abraham / Adam-Eve / Asc. Isaiah | — | — | — | — | — | — |
   | Cepher additions / Sonnini | — | — | — | — | — | — |
 - **2026-10-19 (S460) — 1 ENOCH THREAD SUMMARIES: MAP + FIX BUILT, scratch-tested, not deployed** (`source-texts/enoch-charles-1917/
@@ -226,3 +226,12 @@ means a back-fill can re-run safely over the already-merged canon rows.
   0 skipped; run 2 = 0 changed, 573 landed; post-run read-back 4,907 Apocrypha quotations verbatim, 0 degraded, 0 chains, 0 slugs, 0 dup pairs; both guards
   tested. Status table: Apocrypha row → built, deploy pending. Next: deploy + read-back, then Jasher (S463d).
 - **2026-10-23 (S463c) — DEPLOYED 14:55 CDT, live read-back 573/573 cards, 607/607 member notes, 55/55 summaries, 4,907 quotations verbatim, 0 degraded. Apocrypha + 3 Maccabees closed. Next: Jasher (S463d).**
+- **2026-10-23 (S463d) — JASHER SWEEP BUILT, scratch-tested twice, NOT deployed** (`source-texts/jasher-noah-1840/s463d-sweep/`, migration
+  `session463d_jasher_sweep.sql`, deploy `_session463d_jasher_sweep_deploy.sh`, read-back `_s463d_check.py`, report `jasher-sweep-report.md`).
+  Dump 1,943 anchored cards; every quotation graded: 315 stand / 6 off / 0 re-anchor; 53 degraded-prose notes rebuilt Come-and-See; 1 card
+  re-pointed (31322 34:60 → 34:55); 3 re-quoted; 2 patched; 58 member notes; 65 summaries (21 with quotations re-cited off the old 7:18 / 9:7
+  blob text and pre-S450 wording). Two cold readers 27/27 agree on every address decision; three voice readers, 8 findings applied. Scratch run 1 =
+  58 in place / 1 moved / 58 / 65, 0 skipped; run 2 = 0 changed, 59 landed; read-back 1,628 Jasher quotations verbatim, 0 degraded, 0 chains,
+  0 slugs, 0 dup pairs; both guards tested. Status table: Jasher row → built, deploy pending. Next: deploy + read-back, then the pseudepigrapha
+  editions (S463e — confirm which Testaments XII parse is live first).
+- **2026-10-23 (S463d) — DEPLOYED 18:59 CDT, live read-back 59/59 cards, 58/58 member notes, 65/65 summaries, 1,628 quotations verbatim, 0 degraded. Jasher closed. Next: the pseudepigrapha editions (S463e).**

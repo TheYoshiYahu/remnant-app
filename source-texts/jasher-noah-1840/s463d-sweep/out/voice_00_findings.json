@@ -1,0 +1,20 @@
+[
+ {
+  "id": 29239,
+  "where": "new_note",
+  "problem": "Misstates where the event falls in Jasher: \"by the next chapter Nimrod is seeking the child's life.\" Nimrod's demand for the infant comes within Jasher 8 itself (the sages go to the king the next morning and he calls for the child, 8:4 onward), not in chapter 9.",
+  "fix": "On the night Abram is born, Nimrod's wise men look up from Terah's house and see one great star run across the heavens and swallow four others, and they understand its import; before the chapter is out Nimrod is demanding the child's life."
+ },
+ {
+  "id": 29504,
+  "where": "new_note",
+  "problem": "Invents a claim the two verses do not carry: \"Stephen is not inventing a tradition; he is reading the record Jasher preserves.\" Neither Acts 7:4 nor Jasher 13:1 says Stephen read or used Jasher; the note only needs to show that the two witnesses tell the same route.",
+  "fix": "Both witnesses agree that Haran was never the destination, only the pause, and that the call to Canaan was already in motion when Terah's household left Ur. Stephen tells in one sentence the journey Jasher tells step by step, and the two do not differ."
+ },
+ {
+  "id": 29191,
+  "where": "new_note",
+  "problem": "Last sentence misstates what Genesis 8:21 says: \"The household that served him was the household he had already resolved to spare.\" Genesis 8:21 is a resolve made after the flood about never again cursing the ground or smiting all living; it is not a resolve to spare Noah's household, which had already been spared when the ark was shut. The sentence puts a decision in the verse that is not there.",
+  "fix": "The promise never to repeat the flood and the blessing on the family that came out of it are one kindness, spoken over the same ground on the same day the ark was emptied."
+ }
+]
