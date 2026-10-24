@@ -2937,3 +2937,15 @@ body {
   opacity: 1;
   background: rgba(127, 127, 127, 0.12);
 }
+
+/* S465 — red notification dot (New features). */
+.new-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #E0262B;
+  box-shadow: 0 0 0 2px var(--reader-bg, #000);
+}

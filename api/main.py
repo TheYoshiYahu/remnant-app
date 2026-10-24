@@ -211,6 +211,7 @@ from models import (
 from subscriptions import router as subscriptions_router
 from year_plan_study import router as year_plan_study_router
 from suggestions import router as suggestions_router
+from board import router as board_router
 
 
 # ----- App lifespan -------------------------------------------------------
@@ -270,6 +271,8 @@ app.include_router(year_plan_study_router)
 
 # S464 — partner suggestion box (free readers see it locked).
 app.include_router(suggestions_router)
+# S465 — public Suggestion Board (moderated; anonymous votes).
+app.include_router(board_router)
 
 
 # ----- Helpers ------------------------------------------------------------

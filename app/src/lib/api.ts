@@ -2254,6 +2254,76 @@ export interface SuggestionEligibility { signed_in: boolean; allowed: boolean }
 export function getSuggestionEligibility(): Promise<SuggestionEligibility> {
   return get<SuggestionEligibility>("/suggestions/eligibility");
 }
-export function sendSuggestion(kind: SuggestionKind, body: string): Promise<{ id: number; ok: boolean }> {
-  return post<{ kind: SuggestionKind; body: string }, { id: number; ok: boolean }>("/suggestions", { kind, body });
+export function sendSuggestion(
+  kind: SuggestionKind,
+  body: string,
+  showOnBoard = true,
+): Promise<{ id: number; ok: boolean; approval: string }> {
+  return post<
+    { kind: SuggestionKind; body: string; show_on_board: boolean },
+    { id: number; ok: boolean; approval: string }
+  >("/suggestions", { kind, body, show_on_board: showOnBoard });
+}
+
+// ----- S465 — public Suggestion Board -------------------------------------
+export type BoardStatus = "planned" | "built" | "considering";
+export interface BoardComment {
+  id: number;
+  body: string;
+  created_at: string;
+  author: string;
+  is_creator_post: boolean;
+  mine: boolean;
+  show_on_board: boolean | null;
+  approval: "pending" | "approved" | "hidden" | null;
+}
+export interface BoardPost {
+  id: number;
+  kind: SuggestionKind;
+  body: string;
+  created_at: string;
+  author: string;
+  is_creator_post: boolean;
+  mine: boolean;
+  show_on_board: boolean | null;
+  approval: "pending" | "approved" | "hidden" | null;
+  ups: number;
+  downs: number | null;
+  my_vote: -1 | 0 | 1;
+  creator_liked: boolean;
+  creator_note: string | null;
+  status: BoardStatus | null;
+  feature_id: string | null;
+  comments: BoardComment[];
+}
+export interface BoardResponse {
+  signed_in: boolean;
+  can_vote: boolean;
+  can_post: boolean;
+  is_creator: boolean;
+  posts: BoardPost[];
+}
+export function getBoard(): Promise<BoardResponse> {
+  return get<BoardResponse>("/board/suggestions");
+}
+export function voteOnPost(id: number, value: -1 | 0 | 1): Promise<{ ok: boolean; ups: number; my_vote: number }> {
+  return post<{ value: number }, { ok: boolean; ups: number; my_vote: number }>(`/board/suggestions/${id}/vote`, { value });
+}
+export function addBoardComment(id: number, body: string): Promise<{ ok: boolean; id: number; approval: string }> {
+  return post<{ body: string }, { ok: boolean; id: number; approval: string }>(`/board/suggestions/${id}/comments`, { body });
+}
+export function setPostVisibility(id: number, show: boolean): Promise<{ ok: boolean }> {
+  return patch<{ show: boolean }, { ok: boolean }>(`/board/suggestions/${id}/visibility`, { show });
+}
+export function reportPost(id: number, reason: string): Promise<{ ok: boolean }> {
+  return post<{ reason: string }, { ok: boolean }>(`/board/suggestions/${id}/report`, { reason });
+}
+export interface ModerateInput {
+  approval?: "approved" | "hidden" | "pending";
+  status?: BoardStatus | "none";
+  creator_note?: string;
+  feature_id?: string;
+}
+export function moderatePost(id: number, input: ModerateInput): Promise<{ ok: boolean }> {
+  return post<ModerateInput, { ok: boolean }>(`/board/suggestions/${id}/moderate`, input);
 }

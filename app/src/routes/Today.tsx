@@ -52,7 +52,6 @@ import {
 import { getLocationPref } from "../lib/calendar/location-pref.ts";
 import { LocationBar } from "../components/LocationPicker.tsx";
 import { openGiving } from "../lib/giving.ts";
-import { isNativeShell } from "../lib/native-shell";
 import {
   DEVOTIONAL_IS_SEED,
   biblicalDayOrdinal,

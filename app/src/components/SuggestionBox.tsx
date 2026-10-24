@@ -3,6 +3,10 @@
  * missing. Free and signed-out readers SEE the box, locked, with a plain note
  * that partners have a say — same consumption-only posture as
  * LockedPartnerPrompt (no purchase link on the native shells).
+ *
+ * S465 — the sender chooses whether the suggestion shows on the public
+ * Suggestion Board (changeable later from the board). After sending, the
+ * moderation note explains why a post waits for approval.
  */
 import { useEffect, useState } from "react";
 import {
@@ -22,6 +26,7 @@ export default function SuggestionBox() {
   const [state, setState] = useState<"loading" | "allowed" | "locked" | "signed-out">("loading");
   const [kind, setKind] = useState<SuggestionKind>("feature");
   const [body, setBody] = useState("");
+  const [showOnBoard, setShowOnBoard] = useState(true);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -42,9 +47,10 @@ export default function SuggestionBox() {
     setSending(true);
     setError(null);
     try {
-      await sendSuggestion(kind, body.trim());
+      await sendSuggestion(kind, body.trim(), showOnBoard);
       setSent(true);
       setBody("");
+      window.dispatchEvent(new Event("rop-board-refresh"));
     } catch {
       setError("That didn't go through. Please try again in a moment.");
     } finally {
@@ -123,6 +129,18 @@ export default function SuggestionBox() {
             placeholder="What would you like to see?"
             className="w-full rounded border border-[var(--reader-rule)] bg-transparent px-3 py-2 text-sm text-[var(--reader-text)]"
           />
+          <label className="flex items-start gap-2 font-sans text-sm text-[var(--reader-text)]">
+            <input
+              type="checkbox"
+              checked={showOnBoard}
+              onChange={(e) => setShowOnBoard(e.target.checked)}
+              className="mt-1"
+            />
+            <span>
+              Show it on the Suggestion Board so other readers can see it and vote.
+              No name is shown, and you can change this anytime.
+            </span>
+          </label>
           <button
             type="button"
             onClick={submit}
@@ -132,9 +150,17 @@ export default function SuggestionBox() {
             {sending ? "Sending…" : "Send suggestion"}
           </button>
           {sent && (
-            <p className="font-sans text-sm text-[var(--reader-text)]">
-              Thank you — your suggestion was received.
-            </p>
+            <div className="font-sans text-sm text-[var(--reader-text)]">
+              <p className="font-medium">Thank you for your suggestion.</p>
+              <p className="mt-1 text-[var(--reader-muted)]">
+                The App Store and Google Play require every public board to be
+                moderated, so each post is read before it goes up. I only check
+                for obscene or profane words and posts that have nothing to do
+                with app suggestions. Any honest suggestion for the app will be
+                approved, whether I agree with it or not, and you can show or
+                hide it on the board anytime.
+              </p>
+            </div>
           )}
           {error && <p className="font-sans text-sm text-red-500">{error}</p>}
         </div>

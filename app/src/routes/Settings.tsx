@@ -5,6 +5,7 @@ import { useParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import { useSacredNameMask } from "../lib/useSacredNameMask";
 import { clearNativeToken } from "../lib/native-auth";
 import SuggestionBox from "../components/SuggestionBox";
+import SuggestionBoard from "../components/SuggestionBoard";
 import { openGiving } from "../lib/giving";
 
 /**
@@ -237,6 +238,9 @@ export default function Settings() {
 
         {/* S464 — partner suggestion box (locked for free readers). */}
         <SuggestionBox />
+
+        {/* S465 — public Suggestion Board (free readers see it, can't vote). */}
+        <SuggestionBoard />
 
         <SignOutCard />
 

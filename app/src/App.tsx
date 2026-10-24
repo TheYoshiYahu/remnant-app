@@ -31,6 +31,8 @@ import Manage from "./routes/Manage";
 import SignIn from "./routes/SignIn";
 import Landing from "./routes/Landing";
 import Settings from "./routes/Settings";
+import NewFeatures from "./routes/NewFeatures";
+import { hasUnseenFeatures } from "./data/newFeatures";
 import Attributions from "./routes/Attributions";
 import AuthCallback from "./routes/AuthCallback";
 import Calendar from "./routes/Calendar";
@@ -587,6 +589,10 @@ export default function App() {
   // top-right chrome cluster.
   if (pathname === "/settings" || pathname.startsWith("/settings")) {
     return <>{welcomeModal}<Settings /></>;
+  }
+  // S465 — New features list (menu entry carries the red dot).
+  if (pathname === "/new-features" || pathname.startsWith("/new-features")) {
+    return <>{welcomeModal}<NewFeatures /></>;
   }
   // S196 — Attributions / data-credits surface. Top-level route alongside
   // /settings /pricing /manage /sign-in. Credits the public-domain + open-
@@ -1184,6 +1190,13 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // item closes it too (closeChromeMenu passed through onClick).
   const [chromeMenuOpen, setChromeMenuOpen] = useState<boolean>(false);
   const closeChromeMenu = () => setChromeMenuOpen(false);
+  // S465 — red dot while there are features this reader hasn't opened.
+  const [featuresUnseen, setFeaturesUnseen] = useState<boolean>(() => hasUnseenFeatures());
+  useEffect(() => {
+    const h = () => setFeaturesUnseen(hasUnseenFeatures());
+    window.addEventListener("rop-features-seen", h);
+    return () => window.removeEventListener("rop-features-seen", h);
+  }, []);
   useEffect(() => {
     if (!chromeMenuOpen) return;
     const onKey = (e: KeyboardEvent) => {
@@ -2984,10 +2997,11 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               aria-expanded={chromeMenuOpen}
               aria-controls="reader-chrome-menu"
               title="Menu"
-              className="chrome-metal chrome-metal-silver"
+              className="chrome-metal chrome-metal-silver relative"
             >
               <span aria-hidden="true">☰</span>
               <span>Menu</span>
+              {featuresUnseen && <span className="new-dot" aria-label="New features" />}
             </button>
           </div>
         </div>
@@ -3099,6 +3113,18 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               >
                 <span aria-hidden="true">⚙</span>
                 <span>Settings</span>
+              </a>
+              {/* S465 — New features. Red dot until the list is opened. */}
+              <a
+                href="/new-features"
+                onClick={closeChromeMenu}
+                aria-label={featuresUnseen ? "New features — something new" : "New features"}
+                title="New features"
+                className="chrome-metal chrome-metal-gold relative"
+              >
+                <span aria-hidden="true">✦</span>
+                <span>New features</span>
+                {featuresUnseen && <span className="new-dot" aria-hidden="true" />}
               </a>
               {/* S464 — Give, always in the top menu (web and phones). Opens
                   the Tithely giving page outside the app. */}

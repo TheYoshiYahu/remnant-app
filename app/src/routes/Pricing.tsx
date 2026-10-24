@@ -10,6 +10,7 @@ import {
 } from "../lib/api";
 import { loadStoredNativeToken } from "../lib/native-auth";
 import { isNativeShell, NATIVE_MANAGE_LINE } from "../lib/native-shell";
+import PlanQuiz from "../components/PlanQuiz";
 
 /**
  * Session 38 — Pricing surface. Tier-name overhaul S140 — display names
@@ -457,6 +458,9 @@ export default function Pricing() {
           uninterrupted, and your locked price is preserved.
         </div>
       )}
+
+      {/* S465 — plan quiz (web only; native returns earlier). */}
+      {!native && <PlanQuiz />}
 
       {/* Tier cards */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
