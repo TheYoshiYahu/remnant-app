@@ -2959,3 +2959,10 @@ body {
 [data-theme="light"] .feature-new .feature-body { color: var(--reader-text); }
 [data-theme="light"] .feature-seen .feature-title,
 [data-theme="light"] .feature-seen .feature-body { color: #8A857C; }
+
+/* S465 — New features button: red until the reader opens the list. */
+.chrome-metal-alert {
+  background-image: linear-gradient(to right, #5A0A0C 0%, #E0262B 50%, #5A0A0C 100%);
+  border-color: #FFB3B5;
+  color: #FFF1F1;
+}

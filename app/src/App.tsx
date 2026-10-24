@@ -3001,7 +3001,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               onClick={closeChromeMenu}
               aria-label={featuresUnseen ? "New features — something new" : "New features"}
               title="New features"
-              className="chrome-metal chrome-metal-gold relative"
+              className={`chrome-metal ${featuresUnseen ? "chrome-metal-alert" : "chrome-metal-gold"} relative`}
             >
               <span aria-hidden="true">✦</span>
               <span>New</span>
@@ -3148,7 +3148,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                 onClick={closeChromeMenu}
                 aria-label={featuresUnseen ? "New features — something new" : "New features"}
                 title="New features"
-                className="chrome-metal chrome-metal-gold relative"
+                className={`chrome-metal ${featuresUnseen ? "chrome-metal-alert" : "chrome-metal-gold"} relative`}
               >
                 <span aria-hidden="true">✦</span>
                 <span>New features</span>
