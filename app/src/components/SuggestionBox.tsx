@@ -15,6 +15,7 @@ import {
   type SuggestionKind,
 } from "../lib/api";
 import { isNativeShell } from "../lib/native-shell";
+import { loadStoredNativeToken } from "../lib/native-auth";
 
 const KINDS: { value: SuggestionKind; label: string }[] = [
   { value: "feature", label: "Missing feature" },
@@ -33,7 +34,11 @@ export default function SuggestionBox() {
 
   useEffect(() => {
     let alive = true;
-    getSuggestionEligibility()
+    // S465 — the phone apps keep the sign-in in device storage; wait for it,
+    // or the first fetch goes out anonymous and the box shows locked.
+    loadStoredNativeToken()
+      .catch(() => null)
+      .then(() => getSuggestionEligibility())
       .then((e) => {
         if (!alive) return;
         setState(e.allowed ? "allowed" : e.signed_in ? "locked" : "signed-out");

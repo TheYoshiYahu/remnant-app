@@ -30,6 +30,7 @@ import {
   type BoardStatus,
 } from "../lib/api";
 import { isNativeShell } from "../lib/native-shell";
+import { loadStoredNativeToken } from "../lib/native-auth";
 
 const STATUS_LABEL: Record<BoardStatus, string> = {
   planned: "Planned",
@@ -48,7 +49,9 @@ export default function SuggestionBoard() {
   const [failed, setFailed] = useState(false);
 
   const load = useCallback(() => {
-    getBoard()
+    loadStoredNativeToken()
+      .catch(() => null)
+      .then(() => getBoard())
       .then((d) => { setData(d); setFailed(false); })
       .catch(() => setFailed(true));
   }, []);
