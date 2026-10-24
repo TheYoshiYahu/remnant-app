@@ -14,7 +14,7 @@
  *              JWT_AUTH_SECRET_KEY from wp-config.php, reads
  *              rop_partner_tier from user-meta (written by the
  *              Session 37 Stripe webhook → WP-sync push).
- * Version:     1.1.2
+ * Version:     1.1.3
  * Author:      Yoshi
  * License:     GPL-2.0-or-later
  * Text Domain: rop-sso-bridge
@@ -560,14 +560,18 @@ function rop_sso_add_email_to_native_jwt($token, $user) {
     if (!is_array($token)) {
         return $token;
     }
-    $email = '';
+    // S466: also carry login + display_name, so the app shows each reader's
+    // name instead of "account N". Re-read the user by id to be safe.
+    $uid = 0;
     if ($user instanceof WP_User) {
-        $email = (string) $user->user_email;
-    } elseif (is_object($user) && isset($user->data) && isset($user->data->user_email)) {
-        // Some plugin builds pass the raw $user row (->data->user_email).
-        $email = (string) $user->data->user_email;
+        $uid = (int) $user->ID;
+    } elseif (is_object($user) && isset($user->data) && isset($user->data->ID)) {
+        $uid = (int) $user->data->ID;
+    } elseif (isset($token['data']['user']['id'])) {
+        $uid = (int) $token['data']['user']['id'];
     }
-    if ($email === '') {
+    $wpu = $uid ? get_userdata($uid) : false;
+    if (!$wpu) {
         return $token;
     }
     if (!isset($token['data']) || !is_array($token['data'])) {
@@ -576,7 +580,11 @@ function rop_sso_add_email_to_native_jwt($token, $user) {
     if (!isset($token['data']['user']) || !is_array($token['data']['user'])) {
         $token['data']['user'] = [];
     }
-    $token['data']['user']['email'] = $email;
+    $token['data']['user']['login']        = (string) $wpu->user_login;
+    $token['data']['user']['display_name'] = (string) $wpu->display_name;
+    if ((string) $wpu->user_email !== '') {
+        $token['data']['user']['email'] = (string) $wpu->user_email;
+    }
     return $token;
 }
 add_filter('jwt_auth_payload', 'rop_sso_add_email_to_native_jwt', 10, 2);

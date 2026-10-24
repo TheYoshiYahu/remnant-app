@@ -371,16 +371,26 @@ async def list_board(
                 comments=by_parent.get(r["id"], []),
             )
         )
+    # S466: older phone tokens carry only the id; fall back to the name/email
+    # stored for that account before showing "account N".
+    you_label = None
+    if current_user:
+        parts = [current_user.display_name, current_user.login, current_user.email]
+        if not any(parts) and me:
+            async with pool.acquire() as conn2:
+                row = await conn2.fetchrow(
+                    "SELECT display_name, email FROM users WHERE id=$1::uuid", me
+                )
+            if row:
+                parts = [row["display_name"], row["email"]]
+        you_label = " · ".join(x for x in parts if x) or f"account {current_user.id}"
     return BoardResponse(
         signed_in=current_user is not None,
         can_vote=participate,
         can_post=participate,
         is_creator=creator,
         posts=posts,
-        you=(
-            " · ".join(x for x in [current_user.display_name, current_user.login, current_user.email] if x)
-            or f"account {current_user.id}"
-        ) if current_user else None,
+        you=you_label,
     )
 
 
