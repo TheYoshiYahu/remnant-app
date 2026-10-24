@@ -634,6 +634,28 @@ function DoorRow() {
             <span className="today-door-sub">the Word in arranged order</span>
           </span>
         </a>
+        <a href="/suggestions" className="today-door today-door-study">
+          <span className="today-door-glyph" aria-hidden="true">
+            👍
+          </span>
+          <span className="today-door-text">
+            <span className="today-door-title">Suggestion Board</span>
+            <span className="today-door-sub">ideas for the app &amp; your vote</span>
+          </span>
+        </a>
+      </div>
+
+      {/* S465 — New features door. */}
+      <div className="today-doors-row">
+        <a href="/new-features" className="today-door today-door-study">
+          <span className="today-door-glyph" aria-hidden="true">
+            ✧
+          </span>
+          <span className="today-door-text">
+            <span className="today-door-title">New features</span>
+            <span className="today-door-sub">everything that has come into the app</span>
+          </span>
+        </a>
       </div>
     </section>
   );

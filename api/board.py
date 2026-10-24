@@ -132,6 +132,16 @@ CREATOR_SEED = [
         "status": None,
         "note": None,
     },
+    {
+        "kind": "feature",
+        "body": (
+            "Explore the app: a tab that runs a guided tour, click this, do that, "
+            "walking through every feature so nothing in the app stays hidden."
+        ),
+        "liked": False,
+        "status": None,
+        "note": None,
+    },
 ]
 
 
@@ -520,7 +530,7 @@ _PAGE = """<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Suggestion board</title>
 <style>body{{font-family:Georgia,serif;background:#14100c;color:#f3ead8;max-width:32rem;margin:3rem auto;padding:0 1rem}}
 a{{color:#e7c873}}</style></head><body><h1>{title}</h1><p>{msg}</p>
-<p><a href="https://bible.remnantofpromise.org/settings#board">Open the board</a></p></body></html>"""
+<p><a href="https://bible.remnantofpromise.org/suggestions">Open the board</a></p></body></html>"""
 
 
 @router.get("/v1/board/moderate", response_class=HTMLResponse)

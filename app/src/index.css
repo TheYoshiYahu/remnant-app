@@ -2949,3 +2949,13 @@ body {
   background: #E0262B;
   box-shadow: 0 0 0 2px var(--reader-bg, #000);
 }
+
+/* S465 — New features list: unseen entries bright, seen ones greyed. */
+.feature-new .feature-title { color: #FFFFFF; }
+.feature-new .feature-body { color: #F4F1EA; }
+.feature-seen .feature-title,
+.feature-seen .feature-body { color: #9A958C; }
+[data-theme="light"] .feature-new .feature-title,
+[data-theme="light"] .feature-new .feature-body { color: var(--reader-text); }
+[data-theme="light"] .feature-seen .feature-title,
+[data-theme="light"] .feature-seen .feature-body { color: #8A857C; }

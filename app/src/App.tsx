@@ -32,6 +32,7 @@ import SignIn from "./routes/SignIn";
 import Landing from "./routes/Landing";
 import Settings from "./routes/Settings";
 import NewFeatures from "./routes/NewFeatures";
+import Suggestions from "./routes/Suggestions";
 import { hasUnseenFeatures } from "./data/newFeatures";
 import Attributions from "./routes/Attributions";
 import AuthCallback from "./routes/AuthCallback";
@@ -593,6 +594,10 @@ export default function App() {
   // S465 — New features list (menu entry carries the red dot).
   if (pathname === "/new-features" || pathname.startsWith("/new-features")) {
     return <>{welcomeModal}<NewFeatures /></>;
+  }
+  // S465 — Suggestion Board on its own page (menu + Today door).
+  if (pathname === "/suggestions" || pathname.startsWith("/suggestions")) {
+    return <>{welcomeModal}<Suggestions /></>;
   }
   // S196 — Attributions / data-credits surface. Top-level route alongside
   // /settings /pricing /manage /sign-in. Credits the public-domain + open-
@@ -2989,6 +2994,19 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               <span aria-hidden="true">▶</span>
               <span>Listen</span>
             </button>
+            {/* S465 — New features, out on the toolbar so every reader sees
+                it without opening the Menu. Red dot until the list is opened. */}
+            <a
+              href="/new-features"
+              onClick={closeChromeMenu}
+              aria-label={featuresUnseen ? "New features — something new" : "New features"}
+              title="New features"
+              className="chrome-metal chrome-metal-gold relative"
+            >
+              <span aria-hidden="true">✦</span>
+              <span>New</span>
+              {featuresUnseen && <span className="new-dot" aria-hidden="true" />}
+            </a>
             {/* S430 — Menu toggle. Holds everything else. */}
             <button
               type="button"
@@ -2997,11 +3015,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               aria-expanded={chromeMenuOpen}
               aria-controls="reader-chrome-menu"
               title="Menu"
-              className="chrome-metal chrome-metal-silver relative"
+              className="chrome-metal chrome-metal-silver"
             >
               <span aria-hidden="true">☰</span>
               <span>Menu</span>
-              {featuresUnseen && <span className="new-dot" aria-label="New features" />}
             </button>
           </div>
         </div>
@@ -3113,6 +3130,17 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               >
                 <span aria-hidden="true">⚙</span>
                 <span>Settings</span>
+              </a>
+              {/* S465 — Suggestion Board, its own page. */}
+              <a
+                href="/suggestions"
+                onClick={closeChromeMenu}
+                aria-label="Open the Suggestion Board"
+                title="Suggestion Board"
+                className="chrome-metal chrome-metal-emerald"
+              >
+                <span aria-hidden="true">👍</span>
+                <span>Suggestion Board</span>
               </a>
               {/* S465 — New features. Red dot until the list is opened. */}
               <a

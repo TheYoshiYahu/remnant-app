@@ -4,8 +4,6 @@ import { useTheme } from "../lib/theme";
 import { useParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import { useSacredNameMask } from "../lib/useSacredNameMask";
 import { clearNativeToken } from "../lib/native-auth";
-import SuggestionBox from "../components/SuggestionBox";
-import SuggestionBoard from "../components/SuggestionBoard";
 import { openGiving } from "../lib/giving";
 
 /**
@@ -236,11 +234,16 @@ export default function Settings() {
           </button>
         </SettingsCard>
 
-        {/* S464 — partner suggestion box (locked for free readers). */}
-        <SuggestionBox />
-
-        {/* S465 — public Suggestion Board (free readers see it, can't vote). */}
-        <SuggestionBoard />
+        {/* S465 — suggestion box + board moved to their own page. */}
+        <a
+          href="/suggestions"
+          className="block rounded-md border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4"
+        >
+          <span className="text-base font-semibold text-[var(--reader-text)]">Suggestion Board →</span>
+          <span className="mt-1 block font-sans text-sm text-[var(--reader-muted)]">
+            Suggest an improvement, and see and vote on the ideas others have sent.
+          </span>
+        </a>
 
         <SignOutCard />
 

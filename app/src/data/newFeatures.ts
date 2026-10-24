@@ -3,9 +3,9 @@
  *
  * NEWEST FIRST. Every feature that ships gets an entry here in the same
  * session it ships (standing step — see the session close checklist). The
- * red dot shows while the newest id differs from the one the reader last
- * saw (localStorage key below), so adding an entry at the top lights the dot
- * for everyone. `id` is also the anchor a Built suggestion links to:
+ * red dot shows while any id is one the reader hasn't seen (localStorage
+ * key below), so adding an entry lights the dot for everyone; on the page,
+ * unseen entries render white and seen ones grey. `id` is also the anchor a Built suggestion links to:
  * /new-features#<id>.
  *
  * Voice: plain and flowing, describe what the reader can now do, no
@@ -205,23 +205,36 @@ export const NEW_FEATURES: NewFeature[] = [
   },
 ];
 
-export const FEATURES_SEEN_KEY = "rop_new_features_seen_v1";
+export const FEATURES_SEEN_KEY = "rop_new_features_seen_v2";
+/** On a reader's first visit, entries this recent count as new. */
+const FIRST_VISIT_NEW_DAYS = 21;
 
-export function latestFeatureId(): string {
-  return NEW_FEATURES[0]?.id ?? "";
+function readSeen(): Set<string> | null {
+  try {
+    const raw = localStorage.getItem(FEATURES_SEEN_KEY);
+    return raw ? new Set(JSON.parse(raw) as string[]) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Ids this reader hasn't seen yet — drives the dot and the white/grey list. */
+export function unseenFeatureIds(): Set<string> {
+  const seen = readSeen();
+  if (seen) return new Set(NEW_FEATURES.filter((f) => !seen.has(f.id)).map((f) => f.id));
+  const cutoff = Date.now() - FIRST_VISIT_NEW_DAYS * 86400000;
+  return new Set(
+    NEW_FEATURES.filter((f) => new Date(f.date + "T12:00:00").getTime() >= cutoff).map((f) => f.id),
+  );
 }
 
 export function hasUnseenFeatures(): boolean {
-  try {
-    return localStorage.getItem(FEATURES_SEEN_KEY) !== latestFeatureId();
-  } catch {
-    return false;
-  }
+  return unseenFeatureIds().size > 0;
 }
 
 export function markFeaturesSeen(): void {
   try {
-    localStorage.setItem(FEATURES_SEEN_KEY, latestFeatureId());
+    localStorage.setItem(FEATURES_SEEN_KEY, JSON.stringify(NEW_FEATURES.map((f) => f.id)));
   } catch {
     /* storage unavailable — the dot simply stays */
   }
