@@ -150,6 +150,22 @@ CREATOR_SEED = [
         "status": None,
         "note": None,
     },
+    {
+        "kind": "feature",
+        "body": (
+            "A Prayer Wall in the app. Post a prayer request and sign it however you "
+            "want, or leave the name blank to stay anonymous. Choose whether it shows on "
+            "the wall or goes only to the prayer team. Others can tap to let you know "
+            "they prayed for you, and you'll see when the app creator has prayed for you. "
+            "I'll also pray over the requests live on YouTube, and each one will show the "
+            "date and the link to the video. Requests sent to the prayer team only are "
+            "never read aloud; I'll take a moment of silence for those. In time, we'll "
+            "gather volunteer prayer warriors to pray with us."
+        ),
+        "liked": True,
+        "status": "planned",
+        "note": "Coming next.",
+    },
 ]
 
 
