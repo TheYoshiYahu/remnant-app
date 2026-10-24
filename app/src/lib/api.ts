@@ -2302,6 +2302,7 @@ export interface BoardResponse {
   can_post: boolean;
   is_creator: boolean;
   posts: BoardPost[];
+  you?: string | null;
 }
 export function getBoard(): Promise<BoardResponse> {
   return get<BoardResponse>("/board/suggestions");

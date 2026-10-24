@@ -244,6 +244,8 @@ class BoardResponse(BaseModel):
     can_post: bool
     is_creator: bool
     posts: List[BoardPost]
+    # The signed-in reader's OWN account, so they can see which one they're in.
+    you: Optional[str] = None
 
 
 class CommentIn(BaseModel):
@@ -356,6 +358,10 @@ async def list_board(
         can_post=participate,
         is_creator=creator,
         posts=posts,
+        you=(
+            " · ".join(x for x in [current_user.display_name, current_user.login, current_user.email] if x)
+            or f"account {current_user.id}"
+        ) if current_user else None,
     )
 
 

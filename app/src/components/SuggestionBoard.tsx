@@ -106,6 +106,11 @@ export default function SuggestionBoard() {
         Every post is moderated. To raise a concern about anything on the board,
         tap Report on the post or write to info@remnantofpromise.org.
       </p>
+      {data?.you && (
+        <p className="mt-2 font-sans text-xs text-[var(--reader-muted)]">
+          Signed in as {data.you}{data.is_creator ? " (app creator)" : ""}
+        </p>
+      )}
     </section>
   );
 }
