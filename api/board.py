@@ -291,7 +291,7 @@ async def list_board(
               AND ( $2::bool
                     OR (s.user_id IS NOT DISTINCT FROM $1::uuid AND $1::uuid IS NOT NULL)
                     OR (s.approval='approved' AND s.show_on_board) )
-            ORDER BY (s.author_role='creator') DESC, ups DESC, s.created_at DESC
+            ORDER BY ($2::bool AND s.approval='pending') DESC, (s.author_role='creator') DESC, ups DESC, s.created_at DESC
             LIMIT 500
             """,
             me,

@@ -11,7 +11,7 @@ git add api/board.py api/suggestions.py api/main.py \
   app/src/routes/Today.tsx app/src/App.tsx app/src/lib/api.ts app/src/index.css \
   _session465_board_features_quiz_deploy.sh
 
-git commit -m "S465c: toolbar ⋯ More; New features red until opened; board + box wait for the phone sign-in before loading
+git commit -m "S465d: board + box wait for the phone sign-in; pending posts first for the app creator
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_018vqo3xjxGgj8MaeDM9AAar"
