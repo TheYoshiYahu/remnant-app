@@ -65,6 +65,14 @@ _CREATOR_EMAILS = {
     if s.strip()
 }
 
+# WordPress account ids of the app creator. Yoshi's app sign-in shows as
+# "account 1" (WordPress user 1, the site's first account) - S466.
+_CREATOR_WP_IDS = {
+    s.strip()
+    for s in os.environ.get("CREATOR_WP_IDS", "1").split(",")
+    if s.strip()
+}
+
 # Columns added to the S464 table + the two general tables. Idempotent.
 SCHEMA_SQL = [
     """CREATE TABLE IF NOT EXISTS suggestions (
@@ -167,12 +175,23 @@ async def ensure_schema(conn) -> None:
     for stmt in SCHEMA_SQL:
         await conn.execute(stmt)
     await _seed_creator_posts(conn)
+    # S466: posts the creator wrote before he was recognized (his KDP comment)
+    # become creator posts, approved. Idempotent.
+    if _CREATOR_WP_IDS:
+        await conn.execute(
+            "UPDATE suggestions SET author_role='creator', approval='approved', updated_at=now() "
+            "WHERE author_role<>'creator' AND user_id IN "
+            "(SELECT id FROM users WHERE wordpress_user_id::text = ANY($1::text[]))",
+            list(_CREATOR_WP_IDS),
+        )
     _schema_ready = True
 
 
 def is_creator(user: Optional[User]) -> bool:
     if user is None:
         return False
+    if str(user.id).strip() in _CREATOR_WP_IDS:
+        return True
     if (user.login or "").lower() in _CREATOR_LOGINS:
         return True
     return bool(user.email and user.email.lower() in _CREATOR_EMAILS)
