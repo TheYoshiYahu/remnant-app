@@ -3011,14 +3011,14 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
             <button
               type="button"
               onClick={() => setChromeMenuOpen((v) => !v)}
-              aria-label={chromeMenuOpen ? "Close menu" : "Open menu"}
+              aria-label={chromeMenuOpen ? "Close more" : "More"}
               aria-expanded={chromeMenuOpen}
               aria-controls="reader-chrome-menu"
-              title="Menu"
+              title="More"
               className="chrome-metal chrome-metal-silver"
             >
-              <span aria-hidden="true">☰</span>
-              <span>Menu</span>
+              <span aria-hidden="true">⋯</span>
+              <span>More</span>
             </button>
           </div>
         </div>
