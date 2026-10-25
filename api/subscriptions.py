@@ -162,6 +162,14 @@ class CheckoutCreateRequest(BaseModel):
             "tier/cadence combo with is_founder=True returns 404."
         ),
     )
+    offer: Optional[Literal["winback"]] = Field(
+        default=None,
+        description=(
+            "S467: 'winback' applies the win-back coupon for this cadence "
+            "(25% off monthly for 6 months, or 35% off the first year), only "
+            "if the win-back email was sent to this account and it never subscribed."
+        ),
+    )
     success_url: str = Field(
         ...,
         description=(
@@ -557,6 +565,15 @@ router = APIRouter(tags=["subscriptions"])
 # ---- POST /checkout -------------------------------------------------------
 
 
+# S467 win-back coupons. Created in Stripe by `python -m jobs.winback --setup-coupons`.
+WINBACK_OFFER_DAYS = 14  # how long after the email the coupon still applies
+WINBACK_TIER = "complete_study"  # top tier on the pricing page; offer applies to it only
+WINBACK_COUPONS = {
+    "monthly": "ROP_WINBACK_MONTHLY_25_6MO",   # 25% off, 6 months
+    "annual": "ROP_WINBACK_ANNUAL_35_YEAR1",   # 35% off, first year only
+}
+
+
 @router.post("/checkout", response_model=CheckoutCreateResponse)
 async def create_checkout_session(
     body: CheckoutCreateRequest,
@@ -625,6 +642,25 @@ async def create_checkout_session(
                 "SELECT email FROM users WHERE id = $1::uuid", user_uuid
             )
 
+        # 3c. S467 win-back offer — server decides; the client only asks.
+        winback_coupon = None
+        if body.offer == "winback" and not body.is_founder and body.tier == WINBACK_TIER:
+            eligible = await conn.fetchval(
+                "SELECT u.winback_sent_at > now() - make_interval(days => $2) "
+                "   AND NOT EXISTS (SELECT 1 FROM subscriptions s WHERE s.user_id = u.id) "
+                "  FROM users u WHERE u.id = $1::uuid",
+                user_uuid, WINBACK_OFFER_DAYS,
+            )
+            if eligible:
+                winback_coupon = WINBACK_COUPONS[body.cadence]
+
+    # Coupon applied by us, or the open promo-code field — Stripe allows one or the other.
+    discount_kwargs = (
+        {"discounts": [{"coupon": winback_coupon}]}
+        if winback_coupon
+        else {"allow_promotion_codes": True}
+    )
+
     # 4. Stripe Checkout Session creation.
     #
     # client_reference_id carries our user UUID across the checkout so
@@ -648,7 +684,7 @@ async def create_checkout_session(
             # strings. The webhook detects redemption via the
             # total_details.amount_discount / discounts fields on the
             # completed checkout session.
-            allow_promotion_codes=True,
+            **discount_kwargs,
             payment_method_collection="if_required",
             metadata={
                 "tier": body.tier,

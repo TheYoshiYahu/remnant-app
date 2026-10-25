@@ -267,6 +267,9 @@ async def _resolve_tier_from_db(wp_user_id_str: str) -> Optional[PartnerTier]:
             row = await conn.fetchrow(
                 "SELECT "
                 "    (u.created_at > now() - make_interval(days => $2)) AS in_trial, "
+                # S467: win-back 24-hour reopen (set when the email link is tapped).
+                "    (u.winback_reopen_until IS NOT NULL "
+                "     AND u.winback_reopen_until > now()) AS reopened, "
                 "    ( "
                 "      SELECT s.tier::text "
                 "        FROM subscriptions s "
@@ -333,6 +336,11 @@ async def _resolve_tier_from_db(wp_user_id_str: str) -> Optional[PartnerTier]:
     # No active paid subscription. Grant the no-card trial while the
     # account is still inside its window; otherwise the partner is free.
     if TRIAL_DAYS > 0 and row["in_trial"]:
+        return TRIAL_TIER
+
+    # S467: win-back reopen — full access for the 24 hours after the
+    # partner taps the link in the win-back email.
+    if row["reopened"]:
         return TRIAL_TIER
 
     return "free"

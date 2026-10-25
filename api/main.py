@@ -110,6 +110,7 @@ from auth import (
 from config import settings
 from response_cache import AnonymousReadCache
 from db import close_pool, get_pool, open_pool, upsert_user
+from email_prefs import ensure_email_columns, router as email_prefs_router
 from models import (
     BaselineEntry,
     BaselineSourceVerse,
@@ -221,6 +222,8 @@ from board import router as board_router
 async def lifespan(app: FastAPI):
     """Open the asyncpg pool at startup, close it at shutdown."""
     await open_pool()
+    # S467: email opt-out + win-back columns (idempotent).
+    await ensure_email_columns()
     try:
         yield
     finally:
@@ -273,6 +276,8 @@ app.include_router(year_plan_study_router)
 app.include_router(suggestions_router)
 # S465 — public Suggestion Board (moderated; anonymous votes).
 app.include_router(board_router)
+# S467 — email opt-out page + win-back 24-hour reopen link.
+app.include_router(email_prefs_router)
 
 
 # ----- Helpers ------------------------------------------------------------

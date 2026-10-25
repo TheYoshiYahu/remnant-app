@@ -159,6 +159,11 @@ export default function Pricing() {
   // discount can toggle. Annual was the prior default (S38) — flipped
   // after Yoshi's S113-verification feedback.
   const [cadence, setCadence] = useState<BillingCadence>("monthly");
+  // S467: arrived from the win-back email (?offer=winback). The server checks
+  // eligibility and applies the coupon; this only passes the request along.
+  const winbackOffer =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("offer") === "winback";
   const native = isNativePlatform();
   const [busy, setBusy] = useState<string | null>(null); // which card is checking out
   const [me, setMe] = useState<SubscriptionMe | null>(null);
@@ -306,6 +311,7 @@ export default function Pricing() {
         tier,
         cadence,
         is_founder: isFounder,
+        ...(winbackOffer && !isFounder && tier === "complete_study" ? { offer: "winback" as const } : {}),
         success_url: `${window.location.origin}/?subscribed=1`,
         cancel_url: window.location.href,
       };
@@ -394,6 +400,17 @@ export default function Pricing() {
             bible.remnantofpromise.org in your browser, sign in, and choose your
             tier — then return here and everything it carries unlocks
             automatically.
+          </p>
+        </div>
+      )}
+
+      {/* S467: win-back offer note (web only) */}
+      {!native && winbackOffer && (
+        <div className="mb-8 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-base text-[var(--reader-text)]">
+          <p>
+            Welcome back. Your thank-you is on Companion and is applied at
+            checkout: 25% off monthly for your first 6 months, or 35% off your first year if you
+            choose yearly.
           </p>
         </div>
       )}

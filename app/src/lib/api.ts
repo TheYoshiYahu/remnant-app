@@ -498,6 +498,8 @@ export interface CheckoutCreateRequest {
   tier: Exclude<PartnerTier, "free">;
   cadence: BillingCadence;
   is_founder: boolean;
+  /** S467: set when the reader arrived from the win-back email. */
+  offer?: "winback";
   success_url: string;
   cancel_url: string;
 }

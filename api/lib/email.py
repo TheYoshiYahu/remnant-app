@@ -55,6 +55,7 @@ async def send_email(
     subject: str,
     html: str,
     text: str,
+    headers: Optional[dict] = None,
     timeout_seconds: float = 20.0,
 ) -> bool:
     """Send one transactional email via Resend. Returns True iff accepted.
@@ -79,14 +80,16 @@ async def send_email(
         "html": html,
         "text": text,
     }
-    headers = {
+    if headers:  # S467: e.g. List-Unsubscribe on promo/update mail
+        payload["headers"] = headers
+    http_headers = {
         "Authorization": f"Bearer {key}",
         "Content-Type": "application/json",
     }
 
     try:
         async with httpx.AsyncClient(timeout=timeout_seconds) as client:
-            resp = await client.post(RESEND_API_URL, headers=headers, json=payload)
+            resp = await client.post(RESEND_API_URL, headers=http_headers, json=payload)
     except httpx.HTTPError as exc:
         logger.error("Resend request failed for %s: %r", to, exc)
         return False
