@@ -19,6 +19,7 @@ import {
   positionAfterOpening,
   seqBefore,
   weekStartFor,
+  type PacedDay,
   type PacedPlan,
   type PaceSettings,
 } from "./paced";
@@ -78,21 +79,90 @@ export function withAnchors(
   return next;
 }
 
-/** `persist` false for a preview (no plan started yet) so nothing is saved. */
+/**
+ * S468 — the schedule is FIXED. It is laid down once (at the plan's start, or
+ * on the day the reader last changed pace or scope) and never re-spread as
+ * they read more or less. Each date keeps its own chapters; past days stay in
+ * the list; read chapters are only checked off. Days laid down under an
+ * earlier pace come from `history`.
+ *
+ * The returned plan holds EVERY day (past and future). `remaining` counts
+ * chapters still unread; `avgPerDay` is the schedule's own pace.
+ */
 export function pacedPlanFor(
   state: YearPlanState,
   today = todayISO(),
   persist = true,
 ): PacedPlan {
-  const s = withAnchors(state, today, persist);
-  return pacePlan({
-    sequence: scopeSequence(s.scope),
-    startISO: s.startDateISO,
-    todayISO: today,
-    anchorPosition: s.anchor?.position ?? s.position,
-    weekAnchorPosition: s.weekAnchor?.position ?? s.position,
-    pace: effectivePace(s),
+  void today;
+  void persist;
+  const sequence = scopeSequence(state.scope);
+  const from = state.fixedFrom ?? { dateISO: state.startDateISO, position: 0 };
+  const laid = pacePlan({
+    sequence,
+    startISO: state.startDateISO,
+    todayISO: from.dateISO,
+    anchorPosition: from.position,
+    weekAnchorPosition: from.position,
+    pace: effectivePace(state),
   });
+
+  const past: PacedDay[] = [];
+  for (const [dateISO, a, b] of state.history ?? []) {
+    if (diffDaysISO(dateISO, from.dateISO) <= 0) continue;
+    const items = sequence.filter((e) => e.seq >= a && e.seq <= b);
+    if (!items.length) continue;
+    const dayIdx = Math.max(0, diffDaysISO(state.startDateISO, dateISO));
+    past.push({
+      dateISO,
+      dayNumber: dayIdx + 1,
+      weekStartISO: addDaysISO(state.startDateISO, Math.floor(dayIdx / 7) * 7),
+      weekNumber: Math.floor(dayIdx / 7) + 1,
+      items,
+    });
+  }
+
+  const days = [...past, ...laid.days];
+  return {
+    ...laid,
+    days,
+    remaining: sequence.filter((e) => e.seq > state.position).length,
+  };
+}
+
+/**
+ * S468 — lay the schedule down again from today (a pace or scope change).
+ * Days already behind us keep the chapters they were given.
+ */
+export function relayPlan(patch: Partial<YearPlanState>, today = todayISO()): YearPlanState | null {
+  const cur = getYearPlanState();
+  if (!cur) return null;
+  const kept: [string, number, number][] = pacedPlanFor(cur, today)
+    .days.filter((d) => diffDaysISO(d.dateISO, today) > 0)
+    .map((d) => [d.dateISO, d.items[0].seq, d.items[d.items.length - 1].seq]);
+  return save({
+    ...patch,
+    history: kept,
+    fixedFrom: { dateISO: today, position: cur.position },
+  });
+}
+
+/** Today's scheduled day, and the unread scheduled chapters before today. */
+export function todayAndBehind(
+  plan: PacedPlan,
+  position: number,
+  today = todayISO(),
+): { todayDay: PacedDay | null; behind: DayReadingItem[]; nextDay: PacedDay | null } {
+  let todayDay: PacedDay | null = null;
+  let nextDay: PacedDay | null = null;
+  const behind: DayReadingItem[] = [];
+  for (const d of plan.days) {
+    const off = diffDaysISO(today, d.dateISO);
+    if (off < 0) behind.push(...d.items.filter((it) => it.seq > position));
+    else if (off === 0) todayDay = d;
+    else if (!nextDay) nextDay = d;
+  }
+  return { todayDay, behind, nextDay };
 }
 
 /** 1-indexed plan day for today (not capped). */

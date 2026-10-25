@@ -52,6 +52,14 @@ export interface YearPlanState {
   pace?: PaceSettings;
   anchor?: { dateISO: string; position: number };
   weekAnchor?: { weekStartISO: string; position: number };
+  /** S468 — where the current schedule was laid down (the date and the
+   *  position then). The schedule is fixed from here: reading more or less
+   *  never moves it; only a pace or scope change lays it down again. Absent =
+   *  { startDateISO, 0 } (the plan's original schedule). */
+  fixedFrom?: { dateISO: string; position: number };
+  /** S468 — days scheduled before `fixedFrom`, kept so past days stay
+   *  visible after a pace change: [dateISO, firstSeq, lastSeq]. */
+  history?: [string, number, number][];
   /** ms since epoch of the last change. */
   updatedAt?: number;
 }
@@ -129,6 +137,20 @@ export function normalizeYearPlanState(raw: unknown): YearPlanState {
   const w = o.weekAnchor as Record<string, unknown> | undefined;
   if (w && isISODate(w.weekStartISO) && nonNegInt(w.position) != null) {
     state.weekAnchor = { weekStartISO: w.weekStartISO, position: nonNegInt(w.position)! };
+  }
+  const f = o.fixedFrom as Record<string, unknown> | undefined;
+  if (f && isISODate(f.dateISO) && nonNegInt(f.position) != null) {
+    state.fixedFrom = { dateISO: f.dateISO, position: nonNegInt(f.position)! };
+  }
+  if (Array.isArray(o.history)) {
+    const h: [string, number, number][] = [];
+    for (const r of o.history) {
+      if (!Array.isArray(r) || !isISODate(r[0])) continue;
+      const a = nonNegInt(r[1]);
+      const b = nonNegInt(r[2]);
+      if (a != null && b != null && b >= a) h.push([r[0], a, b]);
+    }
+    if (h.length) state.history = h.slice(-800);
   }
   const u = nonNegInt(o.updatedAt);
   if (u != null) state.updatedAt = u;

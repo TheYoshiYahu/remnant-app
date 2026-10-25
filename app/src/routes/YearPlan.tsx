@@ -34,6 +34,7 @@ import {
   markUnreadFrom,
   pacedPlanFor,
   planDayNumber,
+  relayPlan,
   scopeSequence,
   summarizeRanges,
 } from "../lib/reading-plan/year-plan";
@@ -187,7 +188,8 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
   useEffect(() => {
     if (initialised.current || months.length === 0) return;
     initialised.current = true;
-    setOpen(new Set([months[0].key]));
+    const here = months.find((m) => m.hasToday) ?? months[months.length - 1];
+    setOpen(new Set([here.key]));
   }, [months]);
 
   const todayRef = useRef<HTMLLIElement | null>(null);
@@ -210,14 +212,15 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
   const allOpen = months.length > 0 && open.size === months.length;
 
   const goToday = () => {
-    if (months[0]) setOpen((prev) => new Set(prev).add(months[0].key));
+    const here = months.find((m) => m.hasToday) ?? months[0];
+    if (here) setOpen((prev) => new Set(prev).add(here.key));
     window.setTimeout(() => todayRef.current?.scrollIntoView({ block: "center", behavior: "smooth" }), 0);
   };
 
   const changeScope = (next: PlanScope) => {
     if (next === scope) return;
     syncArrangedExtras(next);
-    if (plan) updateYearPlanState({ scope: next });
+    if (plan) relayPlan({ scope: next });
     else setPreviewScope(next);
   };
 
@@ -228,14 +231,20 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
   };
 
   const setPace = (p: PaceSettings) => {
-    if (!plan) startYearPlan(scope);
-    updateYearPlanState({ pace: p });
+    if (!plan) {
+      startYearPlan(scope);
+      updateYearPlanState({ pace: p });
+    } else relayPlan({ pace: p });
   };
 
   const totalChapters = sequence.length;
   const readCount = readItems.length;
   const dayN = plan ? planDayNumber(plan, today) : 1;
-  const nothingToday = plan && paced.days.length > 0 && paced.days[0].dateISO !== today;
+  // S468 — the row the "today" scroll lands on: today's day, else the next
+  // scheduled day, else the last one.
+  const anchorDay =
+    paced.days.find((d) => diffDaysISO(today, d.dateISO) >= 0) ?? paced.days[paced.days.length - 1];
+  const nothingToday = plan && !!anchorDay && anchorDay.dateISO !== today && diffDaysISO(today, anchorDay.dateISO) > 0;
 
   // Notes indexes
   const notesByChapter = useMemo(() => {
@@ -403,7 +412,7 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
 
       {nothingToday && (
         <p className="mt-4 rounded border border-[var(--reader-rule)] px-3 py-2 font-sans text-sm text-[var(--reader-muted)]">
-          Nothing left for today at your pace — you&rsquo;re all caught up. Your next reading is below.
+          Nothing is set for today at your pace. Your next reading is below.
         </p>
       )}
 
@@ -460,7 +469,8 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
                             nextUnreadSeq={nextUnreadSeq}
                             scope={scope}
                             canMark={!!plan}
-                            liRef={d === paced.days[0] ? todayRef : undefined}
+                            isPast={diffDaysISO(d.dateISO, today) > 0}
+                            liRef={d === anchorDay ? todayRef : undefined}
                             notesForDay={dayNotes.get(d.dateISO) ?? []}
                             notesByChapter={notesByChapter}
                             notesApi={notesApi}
@@ -598,7 +608,7 @@ function PaceControls({
       )}
       <p className="mt-2 text-sm font-medium text-[var(--reader-text)]">{consequence}</p>
       <p className="mt-1 text-xs text-[var(--reader-muted)]">
-        Read ahead whenever you like — the days after today simply re-spread what&rsquo;s left. The order never changes.
+        Read ahead or fall behind as you like — each day keeps its own chapters, and past days stay here. Changing your pace sets the days from today on; days behind you stay as they were. The order never changes.
       </p>
     </div>
   );
@@ -709,6 +719,7 @@ function FutureWeekGoals({
 function DayRow({
   day,
   isToday,
+  isPast,
   position,
   nextUnreadSeq,
   scope,
@@ -720,6 +731,7 @@ function DayRow({
 }: {
   day: PacedDay;
   isToday: boolean;
+  isPast: boolean;
   position: number;
   nextUnreadSeq: number | null;
   scope: PlanScope;
@@ -753,6 +765,9 @@ function DayRow({
             </span>
           )}
           {allRead && <span className="ml-2 text-xs font-normal text-[var(--reader-muted)]">✓ read</span>}
+          {!allRead && isPast && (
+            <span className="ml-2 text-xs font-normal text-[var(--reader-muted)]">not yet read</span>
+          )}
         </span>
         <span className="shrink-0 text-xs text-[var(--reader-muted)]">{dayFmt.format(isoToDate(day.dateISO))}</span>
       </div>

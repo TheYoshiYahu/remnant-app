@@ -14,7 +14,7 @@ import {
   updateYearPlanState,
   YEAR_PLAN_CHANGED_EVENT,
 } from "../lib/reading-plan/plan-store";
-import { pacedPlanFor, scopeSequence } from "../lib/reading-plan/year-plan";
+import { pacedPlanFor, scopeSequence, todayAndBehind } from "../lib/reading-plan/year-plan";
 import { seqBefore } from "../lib/reading-plan/paced";
 import { NoteComposer } from "./PlanNotes";
 import { usePlanNotes } from "../lib/reading-plan/plan-notes";
@@ -155,17 +155,24 @@ export default function YearPlanHeader({
   let todaysReading: DayReadingItem[] = [];
   let pacedNote: string | null = null;
   let nextItems: DayReadingItem[] = [];
+  let behindItems: DayReadingItem[] = [];
   if (plan && planEntitled) {
+    // S468 — the fixed schedule: today's own chapters, plus anything from
+    // earlier days not read yet (so a reader behind a week still sees it).
     const paced = pacedPlanFor(plan);
     const iso = todayISO(today);
     dayNumber = Math.max(1, dayNumberFor(startDateLocal(plan.startDateISO), today));
-    const first = paced.days[0];
-    if (first && first.dateISO === iso) todaysReading = first.items;
-    else if (first) {
-      pacedNote = `Caught up for today. Next: ${refList(first.items)}`;
-      nextItems = first.items;
-    }
-    else pacedNote = "The whole plan is read.";
+    const { todayDay, behind, nextDay } = todayAndBehind(paced, plan.position, iso);
+    todaysReading = todayDay?.items ?? [];
+    behindItems = behind;
+    const todayDone = todaysReading.length > 0 && todaysReading.every((it) => it.seq <= plan.position);
+    if (!todaysReading.length && nextDay) {
+      pacedNote = `Nothing set for today. Next: ${refList(nextDay.items)}`;
+      nextItems = nextDay.items;
+    } else if (todayDone && behind.length === 0) {
+      pacedNote = nextDay ? `Today's reading is done. Next: ${refList(nextDay.items)}` : "Today's reading is done.";
+      nextItems = nextDay?.items ?? [];
+    } else if (paced.remaining === 0) pacedNote = "The whole plan is read.";
     if (paced.finishDateISO) {
       pacedNote = [pacedNote, `finishing ${new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", year: "numeric" }).format(startDateLocal(paced.finishDateISO))}`]
         .filter(Boolean)
@@ -183,9 +190,11 @@ export default function YearPlanHeader({
     syncArrangedExtras(scope);
     // S442 — position is the LAST CHAPTER READ: resuming marks everything
     // before today's first chapter as read (never moves it backwards).
+    // S468 — partners keep the fixed schedule: opening never marks chapters
+    // they have not read (behind stays behind until read or marked).
     const cur = getYearPlanState();
     const before = seqBefore(scopeSequence(scope), first.seq);
-    if (cur && before > cur.position) updateYearPlanState({ position: before });
+    if (cur && !planEntitled && before > cur.position) updateYearPlanState({ position: before });
     onOpenArranged();
     onNavigate(first.book_id, first.chapter);
   };
@@ -199,7 +208,13 @@ export default function YearPlanHeader({
   };
 
   const resume = () => {
-    if (plan) openReadingAt(todaysReading.length ? todaysReading : nextItems, plan.scope);
+    if (!plan) return;
+    if (planEntitled) {
+      // The next unread chapter on the schedule — behind first, then today's.
+      const unreadToday = todaysReading.filter((it) => it.seq > plan.position);
+      const target = behindItems.length ? behindItems : unreadToday.length ? unreadToday : nextItems;
+      openReadingAt(target, plan.scope);
+    } else openReadingAt(todaysReading.length ? todaysReading : nextItems, plan.scope);
   };
 
   // S430 — collapsed: one compact line. Date on the left (tappable), a small
@@ -274,6 +289,11 @@ export default function YearPlanHeader({
           {todaysReading.length > 0 && (
             <div className="mt-1 text-sm text-[var(--reader-text)]">
               Today&rsquo;s portion: {refList(todaysReading)}
+            </div>
+          )}
+          {behindItems.length > 0 && (
+            <div className="mt-1 text-sm text-[var(--reader-text)]">
+              Still to read from earlier days: {refList(behindItems)}
             </div>
           )}
           {pacedNote && (
