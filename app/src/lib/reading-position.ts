@@ -47,6 +47,8 @@ export interface SavedPosition {
   bookSlug: string;
   chapter: number;
   verseNumber: number;
+  /** S468 — ms when saved on this device (local copy only). */
+  savedAt?: number;
 }
 
 const STORAGE_KEY = "reading-position";
@@ -93,7 +95,7 @@ export function loadLocalPosition(): SavedPosition | null {
 export function saveLocalPosition(pos: SavedPosition): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(pos));
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...pos, savedAt: pos.savedAt ?? Date.now() }));
   } catch {
     // ignore — best-effort persistence
   }
@@ -116,25 +118,29 @@ export function saveLocalPosition(pos: SavedPosition): void {
  * cost either way and avoids a tri-state on the caller side).
  */
 export async function loadInitialPosition(): Promise<SavedPosition | null> {
-  // Try the API. 401 (anonymous) and 404 (no row) both fall through
-  // to localStorage. Network errors fall through too.
+  // S468 — the NEWER of the server row and this device's copy wins. Before,
+  // the server row always won, so a place the server had refused to save (or
+  // a save cut off when the app closed) sent the reader back to an old spot —
+  // often Genesis 1.
+  const local = loadLocalPosition();
+  let api: SavedPosition | null = null;
+  let apiAt = 0;
   try {
     const apiRow: ReadingPositionResponse = await getReadingPosition();
-    return {
+    api = {
       bookSlug: apiRow.book_slug,
       chapter: apiRow.chapter_number,
       verseNumber: apiRow.verse_number,
     };
+    apiAt = Date.parse(apiRow.updated_at) || 0;
   } catch {
-    // fall through
+    // 401 / 404 / network — fall through to the local copy
   }
-
-  // No API row → check localStorage.
-  const local = loadLocalPosition();
-  if (local !== null) return local;
-
-  // Neither — caller defaults to Genesis 1.
-  return null;
+  if (api && local) {
+    const localAt = local.savedAt ?? 0;
+    return localAt > apiAt ? local : api;
+  }
+  return api ?? local ?? null;
 }
 
 /**
@@ -180,4 +186,30 @@ export function cancelPendingSave(): void {
     clearTimeout(saveDebounceHandle);
     saveDebounceHandle = null;
   }
+}
+
+/**
+ * S468 — send a pending save now (the app is being hidden or closed), so the
+ * server isn't left a step behind.
+ */
+export function flushPendingSave(): void {
+  if (saveDebounceHandle === null) return;
+  clearTimeout(saveDebounceHandle);
+  saveDebounceHandle = null;
+  const pos = loadLocalPosition();
+  if (!pos) return;
+  putReadingPosition({
+    book_slug: pos.bookSlug,
+    chapter_number: pos.chapter,
+    verse_number: pos.verseNumber,
+  }).catch(() => {
+    /* silent — the local copy still holds the place */
+  });
+}
+
+if (typeof document !== "undefined") {
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") flushPendingSave();
+  });
+  window.addEventListener("pagehide", flushPendingSave);
 }

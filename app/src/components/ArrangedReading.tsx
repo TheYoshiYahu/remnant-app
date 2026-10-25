@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import chronologicalPlan from "../data/chronological-reading.json";
+import { getYearPlanState } from "../lib/reading-plan/plan-store";
 
 /*
   S211 — Arranged Reading overlay (the chronological apparatus).
@@ -110,6 +111,13 @@ export default function ArrangedReading({
       /* ignore */
     }
     let idx = seq.findIndex((e) => e.seq === saved);
+    // S468 — nothing saved here (or a scope switch): use the year plan's next
+    // unread chapter rather than dropping the reader at Genesis 1.
+    if (idx < 0) {
+      const plan = getYearPlanState();
+      if (plan) idx = seq.findIndex((e) => e.seq > plan.position);
+    }
+    if (idx < 0) idx = seq.findIndex((e) => e.seq > saved);
     if (idx < 0) idx = 0;
     go(idx);
   };

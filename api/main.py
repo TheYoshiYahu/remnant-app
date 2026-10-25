@@ -1923,8 +1923,7 @@ async def get_reading_position(
             "  JOIN chapters c ON v.chapter_id  = c.id "
             "  JOIN books    b ON c.book_id     = b.id "
             "  JOIN editions e ON b.edition_id  = e.id "
-            " WHERE rp.user_id = $1::uuid "
-            "   AND e.slug = 'canon'",
+            " WHERE rp.user_id = $1::uuid",
             user_uuid,
         )
     if row is None:
@@ -1962,7 +1961,10 @@ async def upsert_reading_position(
             " WHERE b.slug            = $1 "
             "   AND c.chapter_number  = $2 "
             "   AND v.verse_number    = $3 "
-            "   AND e.slug            = 'canon' "
+            # S468 — any edition (the restored books too), canon first if a
+            # slug exists in more than one. Was canon-only, so a place in
+            # Enoch/Jasher/Jubilees/Apocrypha never saved and the old row won.
+            " ORDER BY (e.slug = 'canon') DESC "
             " LIMIT 1",
             body.book_slug,
             body.chapter_number,
