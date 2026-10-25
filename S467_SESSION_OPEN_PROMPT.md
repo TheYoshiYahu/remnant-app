@@ -38,3 +38,7 @@ Read the S466 notes at the bottom of S465_SESSION_OPEN_PROMPT.md first (what's d
 - After deploy, in remnant-app-api Shell: python -m jobs.winback --setup-coupons
   then python -m jobs.winback --dry-run. Real send WAITS for Resend Verified.
 - Step 3 (MATCH feature list) still open.
+- Coupons CREATED in Stripe (both). Dry run found 0: users table had 72 accounts, 43 at 90+ days,
+  31 of those never subscribed, but 0 had an email stored (older sign-ins never carried one).
+  Fix: api/jobs/backfill_emails.py copies missing emails from WordPress (admin REST).
+  Run: python -m jobs.backfill_emails --dry-run, then without --dry-run, then winback --dry-run again.
