@@ -180,6 +180,14 @@ export interface TTSEngine {
   onEnd(handler: (e: TTSEndEvent) => void): () => void;
 
   /**
+   * S468 — subscribe to the start of each verse. The read-along cursor
+   * follows this (end events alone were dropped by some engines, leaving
+   * the highlight stuck or missing). Optional: engines without it fall
+   * back to onEnd.
+   */
+  onStart?(handler: (e: TTSEndEvent) => void): () => void;
+
+  /**
    * Subscribe to error events. Returns an unsubscribe function.
    */
   onError(handler: (e: TTSError) => void): () => void;
@@ -193,6 +201,7 @@ import { createRecordedEngine } from "./recordedAudio";
 
 function createWebTTS(): TTSEngine {
   const endHandlers = new Set<(e: TTSEndEvent) => void>();
+  const startHandlers = new Set<(e: TTSEndEvent) => void>();
   const errorHandlers = new Set<(e: TTSError) => void>();
   const voicesChangedHandlers = new Set<() => void>();
 
@@ -250,6 +259,12 @@ function createWebTTS(): TTSEngine {
       }
       if (opts?.rate !== undefined) utt.rate = opts.rate;
       if (opts?.pitch !== undefined) utt.pitch = opts.pitch;
+
+      utt.addEventListener("start", () => {
+        for (const h of startHandlers) {
+          try { h({ verseId: opts?.verseId }); } catch { /* swallow */ }
+        }
+      });
 
       utt.addEventListener("end", () => {
         for (const h of endHandlers) {
@@ -312,6 +327,11 @@ function createWebTTS(): TTSEngine {
     onEnd(handler: (e: TTSEndEvent) => void): () => void {
       endHandlers.add(handler);
       return () => endHandlers.delete(handler);
+    },
+
+    onStart(handler: (e: TTSEndEvent) => void): () => void {
+      startHandlers.add(handler);
+      return () => startHandlers.delete(handler);
     },
 
     onError(handler: (e: TTSError) => void): () => void {
@@ -406,6 +426,7 @@ function isAndroidWebView(): boolean {
 
 function createNativeTTS(plugin: NativeTTSPlugin): TTSEngine {
   const endHandlers = new Set<(e: TTSEndEvent) => void>();
+  const startHandlers = new Set<(e: TTSEndEvent) => void>();
   const errorHandlers = new Set<(e: TTSError) => void>();
   const voicesChangedHandlers = new Set<() => void>();
   let voices: TTSVoice[] = [];
@@ -442,6 +463,9 @@ function createNativeTTS(plugin: NativeTTSPlugin): TTSEngine {
       const idx = item.opts?.voiceName
         ? voices.findIndex((v) => v.name === item.opts!.voiceName)
         : -1;
+      for (const h of startHandlers) {
+        try { h({ verseId: item.opts?.verseId }); } catch { /* swallow */ }
+      }
       try {
         await plugin.speak({
           text: item.text,
@@ -503,6 +527,10 @@ function createNativeTTS(plugin: NativeTTSPlugin): TTSEngine {
     onEnd(handler) {
       endHandlers.add(handler);
       return () => endHandlers.delete(handler);
+    },
+    onStart(handler) {
+      startHandlers.add(handler);
+      return () => startHandlers.delete(handler);
     },
     onError(handler) {
       errorHandlers.add(handler);

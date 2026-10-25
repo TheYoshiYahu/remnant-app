@@ -1706,7 +1706,15 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       if (err.stopped) setTtsPaused(true);
     });
 
-    ttsUnsubsRef.current = [unsubEnd, unsubErr];
+    // S468 — the cursor follows the START of each verse where the engine
+    // reports it (end events alone were dropped by some engines, so the
+    // highlight stuck or vanished).
+    const unsubStart =
+      engine.onStart?.((e) => {
+        if (e.verseId !== undefined) setPlayingVerseId(e.verseId);
+      }) ?? (() => {});
+
+    ttsUnsubsRef.current = [unsubEnd, unsubErr, unsubStart];
 
     setPlayingVerseId(verses[startIdx].id);
     setTtsPaused(false);
@@ -1714,6 +1722,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     setAudioPlayerOpen(true);
     keepScreenAwake();
     manualScrollOverrideRef.current = false;
+    manualScrollAtRef.current = 0;
   }
 
   function startPlaybackFromCurrentVerse() {
@@ -1917,6 +1926,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     setSleepEndsAt(null);
     allowScreenSleep();
     manualScrollOverrideRef.current = false;
+    manualScrollAtRef.current = 0;
   }
 
   // S157 — voice list arrives asynchronously on Chrome; subscribe to
@@ -1933,47 +1943,52 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   }, []);
 
   // S157 — auto-scroll the currently-spoken verse into view per §25.
-  // Honors prefers-reduced-motion (instant scroll vs smooth) and the
-  // manual-scroll-override flag (suspended for the rest of the session
-  // once the partner manually scrolls during playback).
-  useEffect(() => {
-    if (playingVerseId === null) return;
-    if (manualScrollOverrideRef.current) return;
+  // S468 — the page follows the reading. A manual scroll (finger or wheel)
+  // pauses following for a few seconds, then it picks up again at the next
+  // verse; before, one scroll stopped it for the rest of the session, and
+  // the browser's own smooth-scroll often counted as "manual".
+  const manualScrollAtRef = useRef<number>(0);
+  const playingVerseIdRef = useRef<number | null>(null);
+  const followSpokenVerse = useCallback((smooth: boolean) => {
+    if (playingVerseIdRef.current === null) return;
+    if (Date.now() - manualScrollAtRef.current < 6000) return;
     const el = document.querySelector(
-      `[data-verse-id="${playingVerseId}"]`,
+      `[data-verse-id="${playingVerseIdRef.current}"]`,
     ) as HTMLElement | null;
     if (!el) return;
     const reduceMotion =
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     el.scrollIntoView({
-      behavior: reduceMotion ? "auto" : "smooth",
+      behavior: smooth && !reduceMotion ? "smooth" : "auto",
       block: "center",
     });
-  }, [playingVerseId]);
+  }, []);
+  useEffect(() => {
+    playingVerseIdRef.current = playingVerseId;
+    if (playingVerseId === null) return;
+    // Wait a frame so a just-loaded chapter's verses are in the page.
+    const t = window.setTimeout(() => followSpokenVerse(true), 60);
+    return () => window.clearTimeout(t);
+  }, [playingVerseId, followSpokenVerse]);
 
-  // S157 — detect manual scroll during playback so we can suspend
-  // auto-scroll for the rest of the session per §25. We use a coarse
-  // heuristic: any scroll event that fires while the player is open
-  // AND not within the brief window after the auto-scroll-triggering
-  // playingVerseId change is treated as manual. A 500ms window after
-  // each playingVerseId update absorbs the smooth-scroll's own scroll
-  // events.
   useEffect(() => {
     if (!audioPlayerOpen) return;
-    let lastAutoScrollAt = Date.now();
-    const onPlayingVerseChange = () => {
-      lastAutoScrollAt = Date.now();
+    const onManual = () => {
+      manualScrollAtRef.current = Date.now();
     };
-    onPlayingVerseChange(); // initial reset on player open
-    const onScroll = () => {
-      if (Date.now() - lastAutoScrollAt > 500) {
-        manualScrollOverrideRef.current = true;
-      }
+    const onVisible = () => {
+      if (document.visibilityState === "visible") followSpokenVerse(false);
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [audioPlayerOpen, playingVerseId]);
+    window.addEventListener("touchmove", onManual, { passive: true });
+    window.addEventListener("wheel", onManual, { passive: true });
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.removeEventListener("touchmove", onManual);
+      window.removeEventListener("wheel", onManual);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [audioPlayerOpen, followSpokenVerse]);
 
   // Books load once on mount.
   //

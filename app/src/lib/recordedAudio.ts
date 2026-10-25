@@ -109,6 +109,7 @@ interface Pending {
 
 export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
   const endHandlers = new Set<(e: TTSEndEvent) => void>();
+  const startHandlers = new Set<(e: TTSEndEvent) => void>();
   const errorHandlers = new Set<(e: TTSError) => void>();
   const timingCache = new Map<string, Timing | null>();
 
@@ -157,6 +158,11 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
       try { h({ verseId }); } catch { /* swallow */ }
     }
   };
+  const emitStart = (verseId?: number) => {
+    for (const h of startHandlers) {
+      try { h({ verseId }); } catch { /* swallow */ }
+    }
+  };
   const emitError = (message: string, verseId?: number, stopped?: boolean) => {
     for (const h of errorHandlers) {
       try { h({ message, verseId, stopped }); } catch { /* swallow */ }
@@ -166,6 +172,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
 
   // Rebroadcast the device engine's events while it is the one speaking.
   fallback.onEnd((e) => { if (mode === "fallback") emitEnd(e.verseId); });
+  fallback.onStart?.((e) => { if (mode === "fallback") emitStart(e.verseId); });
   fallback.onError((e) => { if (mode === "fallback") emitError(e.message, e.verseId); });
 
   // S447 — "missing" (a 404: no recording in this voice) is different from
@@ -338,6 +345,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
       while (runIdx + 1 < runItems.length && audio.currentTime >= runItems[runIdx + 1].start - 0.05) {
         emitEnd(runItems[runIdx].verseId);
         runIdx++;
+        emitStart(runItems[runIdx].verseId);
       }
       if (sample && audio.currentTime >= sampleEndAt - 0.05) finishSample();
     };
@@ -368,6 +376,7 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     const seekAndPlay = () => {
       if (mySession !== session) return;
       try { audio.currentTime = runItems[0].start; } catch { /* ignore */ }
+      emitStart(runItems[0].verseId);
       audio.muted = false;
       void audio.play().catch(() => {
         // S447 — Android refuses to start a new sound while the screen is
@@ -478,6 +487,11 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     onEnd(handler) {
       endHandlers.add(handler);
       return () => endHandlers.delete(handler);
+    },
+
+    onStart(handler) {
+      startHandlers.add(handler);
+      return () => startHandlers.delete(handler);
     },
 
     onError(handler) {
