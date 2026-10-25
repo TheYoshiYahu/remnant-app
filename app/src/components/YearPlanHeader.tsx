@@ -293,7 +293,10 @@ export default function YearPlanHeader({
           )}
           {behindItems.length > 0 && (
             <div className="mt-1 text-sm text-[var(--reader-text)]">
-              Still to read from earlier days: {refList(behindItems)}
+              {/* S468 — one line, never the whole list (it ran a page and a half). */}
+              From earlier days: {behindItems.length} chapter{behindItems.length === 1 ? "" : "s"} to
+              read, next {behindItems[0].book_title} {behindItems[0].chapter}.{" "}
+              <a href="/plan" className="underline">See the plan</a>
             </div>
           )}
           {pacedNote && (
