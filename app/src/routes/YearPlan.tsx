@@ -226,7 +226,7 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
 
   const begin = () => {
     syncArrangedExtras(scope);
-    startYearPlan(scope);
+    startYearPlan(scope, startChoice);
     scrolled.current = false;
   };
 
@@ -245,6 +245,25 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
   const anchorDay =
     paced.days.find((d) => diffDaysISO(today, d.dateISO) >= 0) ?? paced.days[paced.days.length - 1];
   const nothingToday = plan && !!anchorDay && anchorDay.dateISO !== today && diffDaysISO(today, anchorDay.dateISO) > 0;
+
+  // S468 — ahead / behind the fixed schedule.
+  let ahead = 0;
+  let behind = 0;
+  if (plan) {
+    let lastDue = 0;
+    for (const d of paced.days) {
+      if (diffDaysISO(d.dateISO, today) < 0) break;
+      lastDue = d.items[d.items.length - 1].seq;
+      if (d.dateISO !== today) behind += d.items.filter((it) => it.seq > state.position).length;
+    }
+    ahead = sequence.filter((e) => e.seq > lastDue && e.seq <= state.position).length;
+  }
+  const load = Math.max(1, Math.round(paced.avgPerDay) || 1);
+  const [catchUpDismissed, setCatchUpDismissed] = useState(false);
+  const planEnd = pace.endDateISO ?? defaultFinishISO(state);
+  const showCatchUp =
+    !!plan && !catchUpDismissed && paced.remaining > 0 && (ahead >= load || behind >= load);
+  const [startChoice, setStartChoice] = useState(today);
 
   // Notes indexes
   const notesByChapter = useMemo(() => {
@@ -295,15 +314,53 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
                 style={{ width: `${totalChapters ? Math.round((readCount / totalChapters) * 100) : 0}%` }}
               />
             </div>
+            <label className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+              <span className="text-[var(--reader-muted)]">Plan began</span>
+              <input
+                type="date"
+                value={plan.startDateISO}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  if (!/^\d{4}-\d{2}-\d{2}$/.test(v) || v === plan.startDateISO) return;
+                  // S468 — a new start date lays the whole schedule fresh
+                  // (what you've read stays read). For lining up with a group.
+                  updateYearPlanState({
+                    startDateISO: v,
+                    fixedFrom: undefined,
+                    history: undefined,
+                    pace: plan.pace ? { ...plan.pace, endDateISO: undefined } : undefined,
+                  });
+                  scrolled.current = false;
+                }}
+                className={INPUT}
+              />
+              <span className="text-[var(--reader-muted)]">— change it to line up with a group</span>
+            </label>
           </>
         ) : (
           <>
             <div className="text-sm text-[var(--reader-text)]">
               No plan running yet. Here is the whole plan as it would run if you began today.
             </div>
-            <button type="button" onClick={begin} className="chrome-metal chrome-metal-gold mt-3">
-              Begin this plan today
-            </button>
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <label className="flex items-center gap-2 text-sm">
+                <span className="text-[var(--reader-muted)]">Start on</span>
+                <input
+                  type="date"
+                  value={startChoice}
+                  onChange={(e) => {
+                    if (/^\d{4}-\d{2}-\d{2}$/.test(e.target.value)) setStartChoice(e.target.value);
+                  }}
+                  className={INPUT}
+                />
+              </label>
+              <button type="button" onClick={begin} className="chrome-metal chrome-metal-gold">
+                {startChoice === today ? "Begin this plan today" : "Begin this plan"}
+              </button>
+            </div>
+            <div className="mt-1 text-xs text-[var(--reader-muted)]">
+              Reading with a group? Pick the day the group began, so everyone has the same chapters each day.
+            </div>
           </>
         )}
 
@@ -350,6 +407,26 @@ function PlanView({ teacher, signedIn }: { teacher: boolean; signedIn: boolean }
           Tap any chapter to open it.
         </div>
       </div>
+
+      {showCatchUp && (
+        <CatchUpChoice
+          ahead={ahead}
+          behind={ahead > 0 ? 0 : behind}
+          remaining={paced.remaining}
+          load={load}
+          endISO={planEnd}
+          today={today}
+          onKeepFinish={() => {
+            relayPlan({ pace: { ...pace, mode: "byDate", endDateISO: planEnd } });
+            setCatchUpDismissed(true);
+          }}
+          onKeepLoad={() => {
+            relayPlan({ pace: { ...pace, mode: "perDay", perDay: load } });
+            setCatchUpDismissed(true);
+          }}
+          onDismiss={() => setCatchUpDismissed(true)}
+        />
+      )}
 
       {/* Pace */}
       <PaceControls
@@ -584,20 +661,13 @@ function PaceControls({
           </label>
         )}
         {pace.mode === "perDay" && (
-          <label className="flex items-center gap-2">
-            <input
-              type="number"
-              min={1}
-              max={50}
-              value={pace.perDay ?? 3}
-              onChange={(e) => {
-                const n = Math.max(1, Math.min(50, Math.floor(Number(e.target.value) || 1)));
-                onChange({ ...pace, perDay: n });
-              }}
-              className={INPUT + " w-20"}
-            />
-            <span className="text-[var(--reader-muted)]">chapters a day</span>
-          </label>
+          <PerDaySlider
+            key={pace.perDay ?? 3}
+            value={pace.perDay ?? 3}
+            remaining={paced.remaining}
+            today={today}
+            onCommit={(n) => onChange({ ...pace, perDay: n })}
+          />
         )}
       </div>
       {pace.mode === "weekly" && (
@@ -610,6 +680,106 @@ function PaceControls({
       <p className="mt-1 text-xs text-[var(--reader-muted)]">
         Read ahead or fall behind as you like — each day keeps its own chapters, and past days stay here. Changing your pace sets the days from today on; days behind you stay as they were. The order never changes.
       </p>
+    </div>
+  );
+}
+
+/**
+ * S468 — chapters a day on a slider. The finish date moves as you slide; the
+ * plan is only re-laid when you let go.
+ */
+function PerDaySlider({
+  value,
+  remaining,
+  today,
+  onCommit,
+}: {
+  value: number;
+  remaining: number;
+  today: string;
+  onCommit: (n: number) => void;
+}) {
+  const [draft, setDraft] = useState(value);
+  const finish = remaining > 0 ? addDaysISO(today, Math.ceil(remaining / draft) - 1) : today;
+  const commit = () => {
+    if (draft !== value) onCommit(draft);
+  };
+  return (
+    <div className="w-full">
+      <div className="flex items-center gap-3">
+        <input
+          type="range"
+          min={1}
+          max={20}
+          step={1}
+          value={draft}
+          aria-label="Chapters a day"
+          onChange={(e) => setDraft(Math.max(1, Math.min(20, Number(e.target.value) || 1)))}
+          onPointerUp={commit}
+          onKeyUp={commit}
+          onBlur={commit}
+          className="flex-1 accent-[var(--reader-accent)]"
+        />
+        <span className="w-28 shrink-0 text-sm text-[var(--reader-text)]">
+          {draft} chapter{draft === 1 ? "" : "s"} a day
+        </span>
+      </div>
+      <div className="mt-1 text-xs text-[var(--reader-muted)]">
+        {remaining > 0 ? <>Finishes {fmtLong(finish)}</> : "Everything is read."}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * S468 — when the reader is ahead or behind the schedule, ask what they
+ * want: keep the finish date (lighter / heavier days) or keep the load
+ * (finish earlier / later).
+ */
+function CatchUpChoice({
+  ahead,
+  behind,
+  remaining,
+  load,
+  endISO,
+  today,
+  onKeepFinish,
+  onKeepLoad,
+  onDismiss,
+}: {
+  ahead: number;
+  behind: number;
+  remaining: number;
+  load: number;
+  endISO: string;
+  today: string;
+  onKeepFinish: () => void;
+  onKeepLoad: () => void;
+  onDismiss: () => void;
+}) {
+  const daysLeft = Math.max(1, diffDaysISO(today, endISO) + 1);
+  const perDayToEnd = remaining / daysLeft;
+  const loadFinish = addDaysISO(today, Math.ceil(remaining / load) - 1);
+  const isAhead = ahead > 0;
+  return (
+    <div className={CARD + " mt-4"}>
+      <div className="text-sm font-semibold text-[var(--reader-text)]">
+        {isAhead
+          ? `You're ${ahead} chapter${ahead === 1 ? "" : "s"} ahead.`
+          : `You're ${behind} chapter${behind === 1 ? "" : "s"} behind.`}
+      </div>
+      <div className="mt-2 flex flex-col gap-2">
+        <button type="button" onClick={onKeepFinish} className={GHOST_BTN + " text-left"}>
+          {isAhead ? "Lighter days" : "Spread the catch-up"} — {aboutPerDay(perDayToEnd)}, still finishing{" "}
+          {fmtLong(endISO)}
+        </button>
+        <button type="button" onClick={onKeepLoad} className={GHOST_BTN + " text-left"}>
+          Same load — {load} a day, finishing {isAhead ? "early" : "later"}, {fmtLong(loadFinish)}
+        </button>
+        <button type="button" onClick={onDismiss} className="self-start text-xs text-[var(--reader-muted)] underline">
+          Leave it as it is
+        </button>
+      </div>
     </div>
   );
 }
