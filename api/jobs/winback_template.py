@@ -8,6 +8,29 @@ canon stays open either way. Every copy carries the unsubscribe link.
 from __future__ import annotations
 
 import html as _html
+from datetime import date
+
+# What's new since the reader's trial ended — taken from the app's New Features
+# page (app/src/data/newFeatures.ts). Each reader only sees items dated after
+# their trial ended. Newest first; keep in step with that page.
+WHATS_NEW = [
+    ("2026-10-24", "The Suggestion Board", "send ideas, vote on others', and watch them move from Planned to Built"),
+    ("2026-10-23", "The 1 Enoch, Jubilees, Apocrypha and Jasher cards rebuilt", "every quotation checked word for word against the text"),
+    ("2026-10-17", "Listen with the screen locked", "audio keeps going chapter to chapter on the phone apps"),
+    ("2026-10-12", "Natural recorded voices", "with the restored names spoken rightly, and a voice picker"),
+    ("2026-10-07", "Year Plan study and My Teachings", "walk the year plan with notes on each day"),
+    ("2026-10-03", "Hidden Words", "see where one English word hides two or more Hebrew or Greek words"),
+    ("2026-09-13", "Scripture first", "the app opens straight to the Scriptures"),
+    ("2026-07-12", "Highlight a single word or phrase", "in thirty-six colors you can name"),
+    ("2026-07-11", "Teachings", "full teachings to read inside the app"),
+    ("2026-07-07", "A stronger search", "exact phrases, AND and OR, and searching within one book"),
+]
+MAX_ITEMS = 6
+
+
+def whats_new_since(since: date | None) -> list:
+    items = [w for w in WHATS_NEW if since is None or date.fromisoformat(w[0]) > since]
+    return items[:MAX_ITEMS]
 
 SUBJECT = "The study tools are open to you again for a day"
 NUDGE_SUBJECT = "Your offer to come back is still open"
@@ -18,7 +41,12 @@ def _greeting(display_name: str | None) -> str:
     return f"Shalom {first}," if first else "Shalom,"
 
 
-def render_text(display_name, open_url, unsubscribe_url, nudge=False) -> str:
+def render_text(display_name, open_url, unsubscribe_url, nudge=False, since=None) -> str:
+    new = whats_new_since(since)
+    new_block = (
+        "\nAdded since you were last in:\n" + "\n".join(f"  - {t} — {d}" for _, t, d in new) + "\n"
+        if new else ""
+    )
     lead = (
         "A little while back we wrote to you about coming back to the study tools. That offer is still open."
         if nudge else
@@ -41,7 +69,7 @@ Open the study tools for 24 hours:
 
 If now is not the time, that is all right. The canon stays open to you
 either way, and everything you saved is still there.
-
+{new_block}
 — Remnant of Promise
 remnantofpromise.org
 
@@ -49,7 +77,8 @@ Don't want emails like this? Choose here: {unsubscribe_url}
 """
 
 
-def render_html(display_name, open_url, unsubscribe_url, nudge=False) -> str:
+def render_html(display_name, open_url, unsubscribe_url, nudge=False, since=None) -> str:
+    new = whats_new_since(since)
     g = _html.escape(_greeting(display_name))
     lead = (
         "A little while back we wrote to you about coming back to the study tools. That offer is still open."
@@ -76,7 +105,22 @@ for your first 6 months</b>, or <b>35% off your first year</b> if you choose yea
 background:#7a5c2e; color:#ffffff; text-decoration:none; border-radius:6px; font-size:16px;">Open the study tools for 24 hours</a></p>
 <p {p}>If now is not the time, that is all right. The canon stays open to you either way, and
 everything you saved is still there.</p>
+{_new_html(new, p)}
 <p {p}>— Remnant of Promise<br><a href="https://remnantofpromise.org" style="color:#7a5c2e;">remnantofpromise.org</a></p>
 <p style="margin:24px 0 0 0; font-size:12px; color:#8a7f72;">Don't want emails like this?
 <a href="{u}" style="color:#8a7f72;">Choose here</a>.</p>
 </td></tr></table></td></tr></table></body></html>"""
+
+
+def _new_html(new: list, p: str) -> str:
+    if not new:
+        return ""
+    rows = "".join(
+        f'<li style="margin:0 0 8px 0;"><b>{_html.escape(t)}</b> — {_html.escape(d)}</li>'
+        for _, t, d in new
+    )
+    return (
+        f'<p {p}><b>Added since you were last in:</b></p>'
+        f'<ul style="margin:0 0 16px 0; padding-left:20px; font-size:15px; line-height:1.5; color:#2b2420;">{rows}</ul>'
+    )
+

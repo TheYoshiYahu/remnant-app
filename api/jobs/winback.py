@@ -38,7 +38,7 @@ logger = logging.getLogger("winback")
 NUDGE_AFTER_DAYS = 7
 
 _FIRST = """
-    SELECT u.wordpress_user_id, u.email, u.display_name
+    SELECT u.wordpress_user_id, u.email, u.display_name, (u.created_at + interval '7 days')::date AS trial_end
       FROM users u
      WHERE u.email IS NOT NULL
        AND u.email_promotions
@@ -50,7 +50,7 @@ _FIRST = """
 """
 
 _NUDGE = """
-    SELECT u.wordpress_user_id, u.email, u.display_name
+    SELECT u.wordpress_user_id, u.email, u.display_name, (u.created_at + interval '7 days')::date AS trial_end
       FROM users u
      WHERE u.email IS NOT NULL
        AND u.email_promotions
@@ -119,8 +119,8 @@ async def _run(nudge: bool, dry_run: bool, min_days: int, limit: int) -> int:
             ok = await send_email(
                 to=email,
                 subject=NUDGE_SUBJECT if nudge else SUBJECT,
-                html=render_html(name, open_url, unsub, nudge=nudge),
-                text=render_text(name, open_url, unsub, nudge=nudge),
+                html=render_html(name, open_url, unsub, nudge=nudge, since=r["trial_end"]),
+                text=render_text(name, open_url, unsub, nudge=nudge, since=r["trial_end"]),
                 headers=list_unsubscribe_headers(uid),
             )
             if not ok:

@@ -75,3 +75,11 @@ Read the S466 notes at the bottom of S465_SESSION_OPEN_PROMPT.md first (what's d
 7. Wants to highlight and copy a single word or sentence (agrees with an existing suggestion).
 - Her group asks which translation the app uses (they guess KJV with the names restored) —
   Yoshi to answer her.
+- RESOLVED (S467, 22:30): WP Engine support let Render's IPs (74.220.48.0/24, 74.220.56.0/24) past
+  the bot challenge. Backfill ran: 70 emails filled, 2 accounts not in WordPress.
+  Win-back dry run: 29 people would get it. Real send WAITS for Resend Verified:
+  python -m jobs.winback   (then later, optional: python -m jobs.winback --nudge)
+- RESEND FIX (22:50): DKIM verified. rsend/send had been entered in Wix as TXT rows; Yoshi deleted them
+  and re-added as CNAME (rsend → rsend.forge.rmta.net, send → send.forge.rmta.net). Waiting for Verified.
+- Win-back email now lists up to 6 features added after each reader's trial ended (from newFeatures.ts).
+- RESEND VERIFIED (23:07). Next: run push 467b, Render Shell test email to info@, then python -m jobs.winback (real send).
