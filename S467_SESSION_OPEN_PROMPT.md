@@ -42,3 +42,36 @@ Read the S466 notes at the bottom of S465_SESSION_OPEN_PROMPT.md first (what's d
   31 of those never subscribed, but 0 had an email stored (older sign-ins never carried one).
   Fix: api/jobs/backfill_emails.py copies missing emails from WordPress (admin REST).
   Run: python -m jobs.backfill_emails --dry-run, then without --dry-run, then winback --dry-run again.
+- ACTIVITY LOG (Yoshi asked, S467): table user_activity_days, one row per person per Central-time
+  day: first/last time, visits (new visit after 30 quiet min), approx active minutes, request count.
+  No reading content stored. Starts counting from deploy (no history before). Report:
+  python -m jobs.activity_report  (or --days 30).
+- BLOCKED: backfill dry run failed=72 — every call to WordPress from Render got HTTP 429 "Just a
+  moment..." (WP Engine's bot challenge in front of the site). Likely also blocks the API's
+  tier sync to WordPress. Fix (Yoshi): get Render outbound IPs (remnant-app-api → Connect →
+  Outbound), ask WP Engine support to let those IPs past the bot challenge for /wp-json.
+  Then re-run python -m jobs.backfill_emails --dry-run in the Render Shell.
+- EARMARK (Yoshi, S467): readers complain they have to log in too often — seems to happen after
+  Render builds. Investigate next session: why a deploy signs people out (token expiry? token
+  stored where a new build clears it? site cache/service worker?) and make sign-ins last.
+- BUILT (S467): rop-sso-bridge 1.1.4 — sign-ins last a year (was 7 days): bridge cookie/token,
+  phone JWT via jwt_auth_expire filter, WP remember-me via auth_cookie_expiration.
+  Yoshi uploads wp-companion/rop-sso-bridge.zip in WordPress → Plugins → Add New → Upload
+  (replace current). People's existing 7-day tokens still expire once; after the next sign-in
+  they last a year.
+
+## Reader feedback — Cheryl Emerson (email 2026-10-24), for a fresh session
+1. Keeps having to sign in though she never signs out → BUILT S467 (sso-bridge 1.1.4, 1-year sign-ins).
+2. Listening: the read-along highlight sometimes shows, sometimes doesn't — she can't find her place
+   to highlight what she heard.
+3. Listening: the page doesn't scroll to follow what's being read (highlighted or not).
+4. Pronunciation: some words off; especially YHWH / Yahuah — TTS spells the letters or doesn't say
+   it as expected ("Yahuah" or "Ya-wha"). Check against /topics name-pronunciation notes.
+5. Reading keeps jumping back to Genesis 1 instead of where she left off; if behind a week, the
+   week's reading no longer shows.
+6. Weekly reading plan shifts if she reads more or less — not a steady 6 chapters; last week's /
+   yesterday's reading can't be seen again (her daughter hit this too). The study group that bought
+   the app has the same complaint.
+7. Wants to highlight and copy a single word or sentence (agrees with an existing suggestion).
+- Her group asks which translation the app uses (they guess KJV with the names restored) —
+  Yoshi to answer her.

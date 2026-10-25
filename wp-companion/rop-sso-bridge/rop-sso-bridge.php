@@ -14,7 +14,7 @@
  *              JWT_AUTH_SECRET_KEY from wp-config.php, reads
  *              rop_partner_tier from user-meta (written by the
  *              Session 37 Stripe webhook → WP-sync push).
- * Version:     1.1.3
+ * Version:     1.1.4
  * Author:      Yoshi
  * License:     GPL-2.0-or-later
  * Text Domain: rop-sso-bridge
@@ -144,11 +144,11 @@ if (!defined('ROP_SSO_COOKIE_DOMAIN')) {
     define('ROP_SSO_COOKIE_DOMAIN', '.remnantofpromise.org');
 }
 if (!defined('ROP_SSO_COOKIE_LIFETIME')) {
-    // Seven days. Matches "remember me" + a small buffer. The
-    // partner re-authenticates against WP once a week to refresh
-    // tier state. Adjustable by re-defining the constant in
-    // wp-config.php BEFORE this plugin loads.
-    define('ROP_SSO_COOKIE_LIFETIME', 7 * 24 * 60 * 60);
+    // S467 (1.1.4): one year, was seven days. Readers were signed out
+    // every week. Tier is read from the API's database on every request,
+    // not from the token, so a long sign-in is safe. Adjustable by
+    // re-defining the constant in wp-config.php BEFORE this plugin loads.
+    define('ROP_SSO_COOKIE_LIFETIME', 365 * 24 * 60 * 60);
 }
 if (!defined('ROP_SSO_NATIVE_CALLBACK_NAMESPACE')) {
     // REST namespace for the native-auth-callback endpoint. Matches
@@ -589,3 +589,25 @@ function rop_sso_add_email_to_native_jwt($token, $user) {
 }
 add_filter('jwt_auth_payload', 'rop_sso_add_email_to_native_jwt', 10, 2);
 add_filter('jwt_auth_token_before_sign', 'rop_sso_add_email_to_native_jwt', 10, 2);
+
+
+/**
+ * S467 (1.1.4) — keep readers signed in for a year.
+ *
+ * 1. Phone sign-in: the JWT plugin's own token (POST /jwt-auth/v1/token)
+ *    defaults to 7 days. Both JWT plugins expose the same 'jwt_auth_expire'
+ *    filter (expire, issued_at); return issued_at + the bridge lifetime.
+ * 2. WordPress's own login: "remember me" lasts 14 days by default; make it
+ *    a year so the WordPress side doesn't ask again either.
+ */
+function rop_sso_long_jwt_expire($expire, $issued_at = null) {
+    $base = is_numeric($issued_at) ? (int) $issued_at : time();
+    return $base + ROP_SSO_COOKIE_LIFETIME;
+}
+add_filter('jwt_auth_expire', 'rop_sso_long_jwt_expire', 10, 2);
+
+function rop_sso_long_auth_cookie($length, $user_id = 0, $remember = false) {
+    return ROP_SSO_COOKIE_LIFETIME;
+}
+add_filter('auth_cookie_expiration', 'rop_sso_long_auth_cookie', 10, 3);
+

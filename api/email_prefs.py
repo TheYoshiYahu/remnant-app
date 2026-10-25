@@ -46,6 +46,10 @@ async def ensure_email_columns() -> None:
         async with pool.acquire() as conn:
             for stmt in EMAIL_COLUMNS_SQL:
                 await conn.execute(stmt)
+            # S467: daily activity log table (see db.py).
+            from db import ACTIVITY_SCHEMA_SQL
+            for stmt in ACTIVITY_SCHEMA_SQL:
+                await conn.execute(stmt)
     except Exception as exc:  # never block startup over this
         logger.error("ensure_email_columns failed: %r", exc)
 
