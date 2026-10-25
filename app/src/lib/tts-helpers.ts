@@ -57,59 +57,67 @@ import { stripParentheticals } from "./stripParentheticals";
  */
 export const NAME_SUBSTITUTIONS: Record<string, string> = {
   // Compound divine names (longest, fire first) ---------------------------
-  "Yahuah Elohim": "EE-ah-OO-ah el-oh-HEEM",
-  "Yahuah Tseva'ot": "EE-ah-OO-ah tseh-vah-OAT",
-  "Yahuah Tsidkenu": "EE-ah-OO-ah tsid-KEH-noo",
-  "Yahuah Shalom": "EE-ah-OO-ah shah-LOHM",
-  "Yahuah Nissi": "EE-ah-OO-ah NEE-see",
-  "Yahuah Yireh": "EE-ah-OO-ah yir-EH",
-  "Yahuah Rapha": "EE-ah-OO-ah RAH-fah",
-  "Yahuah Ra'ah": "EE-ah-OO-ah RAH-ah",
-  "Yahuah Shammah": "EE-ah-OO-ah SHAH-mah",
-  "Yahuah Elohayka": "EE-ah-OO-ah el-oh-HAI-kah",
-  "Yahuah Elohaychem": "EE-ah-OO-ah el-oh-HAI-khem",
-  "Yahuah Eloheinu": "EE-ah-OO-ah el-oh-HAY-noo",
-  "Yahuah Elohai": "EE-ah-OO-ah el-oh-HAI",
-  "Yahuah Elohav": "EE-ah-OO-ah el-oh-HAHV",
-  "Adonai Yahuah": "ah-doh-NAI EE-ah-OO-ah",
-  "Yahusha HaMashiach": "EE-ah-OO-shah hah-mah-SHEE-akh",
-  "HaMashiach Yahusha": "hah-mah-SHEE-akh EE-ah-OO-shah",
-  "Ehyeh asher Ehyeh": "eh-YEH ah-SHER eh-YEH",
-  "Ruach HaKodesh": "ROO-akh hah-KOH-desh",
-  "El Shaddai": "el shah-DIE",
-  "El Elyon": "el el-YOHN",
-  "El Olam": "el oh-LAHM",
-  "El Roi": "el roh-EE",
-  "El Gibbor": "el gih-BOR",
-  "Sar Shalom": "sar shah-LOHM",
-  "Melek Tsadiq": "MEH-lek tsah-DEEK",
+  "Yahuah Elohim": "Ee-ah-oo-ah el-oh-heem",
+  "Yahuah Tseva'ot": "Ee-ah-oo-ah tseh-vah-oat",
+  "Yahuah Tsidkenu": "Ee-ah-oo-ah tsid-keh-noo",
+  "Yahuah Shalom": "Ee-ah-oo-ah shah-lohm",
+  "Yahuah Nissi": "Ee-ah-oo-ah nee-see",
+  "Yahuah Yireh": "Ee-ah-oo-ah yir-eh",
+  "Yahuah Rapha": "Ee-ah-oo-ah rah-fah",
+  "Yahuah Ra'ah": "Ee-ah-oo-ah rah-ah",
+  "Yahuah Shammah": "Ee-ah-oo-ah shah-mah",
+  "Yahuah Elohayka": "Ee-ah-oo-ah el-oh-hai-kah",
+  "Yahuah Elohaychem": "Ee-ah-oo-ah el-oh-hai-khem",
+  "Yahuah Eloheinu": "Ee-ah-oo-ah el-oh-hay-noo",
+  "Yahuah Elohai": "Ee-ah-oo-ah el-oh-hai",
+  "Yahuah Elohav": "Ee-ah-oo-ah el-oh-hahv",
+  "Adonai Yahuah": "Ah-doh-nai ee-ah-oo-ah",
+  "Yahusha HaMashiach": "Ee-ah-oo-shah hah-mah-shee-akh",
+  "HaMashiach Yahusha": "Hah-mah-shee-akh ee-ah-oo-shah",
+  "Ehyeh asher Ehyeh": "Eh-yeh ah-sher eh-yeh",
+  "Ruach HaKodesh": "Roo-akh hah-koh-desh",
+  "El Shaddai": "El shah-die",
+  "El Elyon": "El el-yohn",
+  "El Olam": "El oh-lahm",
+  "El Roi": "El roh-ee",
+  "El Gibbor": "El gih-bor",
+  "Sar Shalom": "Sar shah-lohm",
+  "Melek Tsadiq": "Meh-lek tsah-deek",
 
   // Single divine names ---------------------------------------------------
-  Yahuah: "EE-ah-OO-ah",
-  Yahusha: "EE-ah-OO-shah",
-  HaMashiach: "hah-mah-SHEE-akh",
-  Mashiach: "mah-SHEE-akh",
-  Elohim: "el-oh-HEEM",
-  Adonai: "ah-doh-NAI",
-  Yah: "yah",
-  "Avi-ad": "ah-vee-AHD",
+  Yahuah: "Ee-ah-oo-ah",
+  Yahusha: "Ee-ah-oo-shah",
+  HaMashiach: "Hah-mah-shee-akh",
+  Mashiach: "Mah-shee-akh",
+  Elohim: "El-oh-heem",
+  Adonai: "Ah-doh-nai",
+  Yah: "Yah",
+  "Avi-ad": "Ah-vee-ahd",
 
   // Covenant people-names -------------------------------------------------
-  "Yashar'el": "yih-shrah-EL",
-  Yahudah: "yih-HOO-dah",
-  Yahudim: "yih-hoo-DEEM",
-  Yahudi: "yih-hoo-DEE",
+  "Yashar'el": "Yih-shrah-el",
+  Yahudah: "Yih-hoo-dah",
+  Yahudim: "Yih-hoo-deem",
+  Yahudi: "Yih-hoo-dee",
 
   // Patriarch / prophet / figure names ------------------------------------
-  Avraham: "AHV-rah-hahm",
-  Yitschaq: "YITS-khahk",
-  "Ya'aqov": "yah-ah-KOHV",
-  Mosheh: "MOH-sheh",
-  Yerushalayim: "yeh-roo-shah-LAH-yim",
-  Yochanan: "yoh-khah-NAHN",
-  Kefa: "KEH-fah",
-  "Sha'ul": "shah-OOL",
-  Timotheos: "tee-moh-THEH-os",
+  Avraham: "Ahv-rah-hahm",
+  Yitschaq: "Yits-khahk",
+  "Ya'aqov": "Yah-ah-kohv",
+  Mosheh: "Moh-sheh",
+  Yerushalayim: "Yeh-roo-shah-lah-yim",
+  Yochanan: "Yoh-khah-nahn",
+  Kefa: "Keh-fah",
+  "Sha'ul": "Shah-ool",
+  Timotheos: "Tee-moh-theh-os",
+
+  // S468 — Yoshi's own pronunciations (same as the recorded voices).
+  Enoch: "Ha-noke",
+  Eve: "Hoo-ah",
+  Baruch: "Ba-rook",
+  Azazel: "Ah-zah-zel",
+  Lamech: "Lah-mek",
+  Maccabees: "Mack-uh-beez",
 };
 
 // =========================================================================
@@ -136,7 +144,7 @@ function buildSubstitutionRegex(table: Record<string, string>): RegExp {
   // regex captures the literal name including the apostrophe / hyphen
   // because the table keys carry those characters too.
   const alternation = keys.map(escape).join("|");
-  return new RegExp(`(?<![\\w'-])(?:${alternation})(?![\\w'-])`, "g");
+  return new RegExp(`(?<![\\w'-])(?:${alternation})(?='s\\b|[^\\w'-]|$)`, "g");
 }
 
 /**
@@ -166,13 +174,33 @@ export function applySubstitutionTable(
  * table. Single function the player calls per verse before sending the
  * string to the TTS engine.
  */
+const SPEECH_FIXES: [RegExp, string][] = [
+  [/Yahuah OF LORDS/g, "Lord of lords"],
+  [/\b[Tt]he LORD'S\b/g, "Yahuah's"],
+  [/\bLORD'S\b/g, "Yahuah's"],
+  [/\bTHE Yahuah\b/g, "Yahuah"],
+  [/\bAdonai GOD\b/g, "Adonai Yahuah"],
+  [/\bGOD Adonai\b/g, "Yahuah Adonai"],
+  [/\bTHY GOD\b/g, "thy Elohim"],
+  [/\bUNKNOWN GOD\b/g, "unknown god"],
+  [/\bYahuah JEHOVAH\b/g, "Yah Yahuah"],
+  [/\bJEHOVAH\b/g, "Yahuah"],
+  [/\bGOD\b/g, "Yahuah"],
+];
+
 export function prepareVerseForSpeech(
   verseText: string,
   table: Record<string, string> = NAME_SUBSTITUTIONS,
 ): string {
   if (!verseText) return verseText;
-  const stripped = stripParentheticals(verseText);
-  return applySubstitutionTable(stripped, table);
+  let text = stripParentheticals(verseText).replace(/[’‘]/g, "'");
+  // S468 — names the restoration missed in the text (the recordings already
+  // fix these the same way, tts/names_ipa.py SPEECH_FIXES).
+  for (const [a, b] of SPEECH_FIXES) text = text.replace(a, b);
+  // All-caps words (LORD, JEHOVAH, KING OF KINGS) get spelled out letter by
+  // letter by phone voices — say them as words.
+  text = text.replace(/\b[A-Z]{2,}\b/g, (w) => w.toLowerCase());
+  return applySubstitutionTable(text, table);
 }
 
 // =========================================================================
