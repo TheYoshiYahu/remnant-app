@@ -2966,3 +2966,13 @@ body {
   border-color: #FFB3B5;
   color: #FFF1F1;
 }
+
+/* S468 — Copy words: the one verse being copied from takes the phone's own
+   text selection (press-and-hold, drag the handles, Copy). */
+.verse-interactive.verse-selectable,
+.verse-interactive.verse-selectable .word-tappable {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  user-select: text;
+  cursor: text;
+}

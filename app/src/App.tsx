@@ -1004,7 +1004,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   >(null);
   const [subverseSelect, setSubverseSelect] = useState<{
     verseId: number;
-    mode: "word" | "phrase";
+    /** S468 — "copy": tap the first then the last word to copy them. */
+    mode: "word" | "phrase" | "copy";
     firstPos: number | null;
   } | null>(null);
   const [pickerSubverse, setPickerSubverse] = useState<{
@@ -1329,11 +1330,48 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // the right modal based on the user's choice. Word context is set
   // by the per-word handlers below when a tappable word is the
   // long-press anchor; verse context (no word) is the default.
+  // S468 — copy a word, a sentence, any part of a verse (Cheryl #7). Copy
+  // mode turns the phone's own text selection back on for that one verse;
+  // the reader drags the handles, then taps Copy (or uses the phone's own
+  // Copy). The reference is added.
+  const [copyNotice, setCopyNotice] = useState<string | null>(null);
+  function copySelection(verseId: number) {
+    const sel = window.getSelection();
+    const root = document.querySelector(`[data-verse-id="${verseId}"]`);
+    let text = sel && root && sel.rangeCount && root.contains(sel.anchorNode) ? sel.toString() : "";
+    text = text.replace(/\s+/g, " ").trim();
+    const v = chapterDetail?.verses.find((vv) => vv.id === verseId);
+    if (!text || !v || !chapterDetail) {
+      setCopyNotice("Select some words in the verse first.");
+      return;
+    }
+    const out = `${text} — ${chapterDetail.book.title} ${selectedChapter}:${v.verse_number}`;
+    const done = () => {
+      setCopyNotice("Copied.");
+      setSubverseSelect(null);
+      try { sel?.removeAllRanges(); } catch { /* ignore */ }
+    };
+    const fail = () => setCopyNotice("Couldn't reach the clipboard — use the phone's own Copy.");
+    try {
+      void navigator.clipboard.writeText(out).then(done, fail);
+    } catch {
+      fail();
+    }
+  }
+  useEffect(() => {
+    if (!copyNotice) return;
+    const t = window.setTimeout(() => setCopyNotice(null), 3000);
+    return () => window.clearTimeout(t);
+  }, [copyNotice]);
+
   function handlePointerDown(
     verseId: number,
     word: { strong: string; surface: string } | null = null
   ) {
     longPressFiredRef.current = false;
+    // S468 — copy mode on this verse: the press belongs to the phone's own
+    // text selection, not our menu.
+    if (subverseSelect?.mode === "copy" && subverseSelect.verseId === verseId) return;
     if (longPressTimerRef.current) {
       clearTimeout(longPressTimerRef.current);
     }
@@ -1353,6 +1391,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     e: React.MouseEvent,
     word: { strong: string; surface: string } | null = null
   ) {
+    if (subverseSelect?.mode === "copy" && subverseSelect.verseId === verseId) return;
     e.preventDefault();
     setMenuState({ verseId, word });
   }
@@ -2919,7 +2958,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   } | null>(null);
 
   function onArticlePointerDown(e: React.PointerEvent) {
-    if (e.pointerType !== "touch") {
+    // S468 — while copying words, a sideways drag selects text; never turn the page.
+    if (e.pointerType !== "touch" || subverseSelect?.mode === "copy") {
       swipeStartRef.current = null;
       return;
     }
@@ -3802,17 +3842,30 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                 <span className="text-[var(--reader-accent)]">
                   {subverseSelect.mode === "word"
                     ? "Highlight a word"
-                    : "Highlight a phrase"}
+                    : subverseSelect.mode === "copy"
+                      ? "Copy words"
+                      : "Highlight a phrase"}
                 </span>
                 <span className="text-[var(--reader-muted)]">
                   {" "}—{" "}
-                  {subverseSelect.mode === "word"
-                    ? "tap the word"
-                    : subverseSelect.firstPos == null
-                      ? "tap the first word"
-                      : "tap the last word"}
+                  {subverseSelect.mode === "copy"
+                    ? "press and hold a word, drag to select, then Copy"
+                    : subverseSelect.mode === "word"
+                      ? "tap the word"
+                      : subverseSelect.firstPos == null
+                        ? "tap the first word"
+                        : "tap the last word"}
                 </span>
               </span>
+              {subverseSelect.mode === "copy" && (
+                <button
+                  type="button"
+                  onClick={() => copySelection(subverseSelect.verseId)}
+                  className="rounded border border-[var(--reader-accent)] bg-[var(--reader-surface)] px-3 py-1 font-sans text-xs text-[var(--reader-accent)] hover:bg-[var(--reader-bg)]"
+                >
+                  Copy
+                </button>
+              )}
               <button
                 type="button"
                 onClick={() => setSubverseSelect(null)}
@@ -3821,6 +3874,15 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               >
                 Cancel
               </button>
+            </div>
+          )}
+          {copyNotice && (
+            <div
+              role="status"
+              aria-live="polite"
+              className="fixed bottom-20 left-1/2 z-50 -translate-x-1/2 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-2 font-sans text-sm text-[var(--reader-text)] shadow-lg"
+            >
+              {copyNotice}
             </div>
           )}
           {/*
@@ -4283,6 +4345,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                                     : "word-tappable"
                                 }
                                 style={selectableStyle}
+                                data-word-pos={seg.position}
                                 onPointerDown={(e) => {
                                   e.stopPropagation();
                                   handlePointerDown(v.id, word);
@@ -4496,7 +4559,11 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                         key={v.id}
                         data-verse-number={v.verse_number}
                         data-verse-id={v.id}
-                        className={`verse-interactive${rangeClass}${ttsClass}`}
+                        className={`verse-interactive${rangeClass}${ttsClass}${
+                          subverseSelect?.mode === "copy" && subverseSelect.verseId === v.id
+                            ? " verse-selectable"
+                            : ""
+                        }`}
                         onPointerDown={() => handlePointerDown(v.id)}
                         onPointerUp={handlePointerCancel}
                         onPointerCancel={handlePointerCancel}
@@ -4964,6 +5031,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               // going straight to the whole-verse picker.
               onHighlight: (vid) => setHighlightScopeVerseId(vid),
               onStartRange: (vid) => startRangeFromVerse(vid),
+              onCopyWords: (vid) =>
+                setSubverseSelect({ verseId: vid, mode: "copy", firstPos: null }),
               onBookmark: (vid) => openBookmarkSheet(vid),
               onAddNote: (vid) => openNotesPanelWithAnchor(vid),
               onPlayFromHere: (vid) => startPlaybackFromVerseId(vid),
@@ -5692,6 +5761,8 @@ function buildMenuSections(
     /** S123 W4 — "Start range here" in the new Range section. Anchors the
      *  long-pressed verse as the range start and enters selecting mode. */
     onStartRange: (verseId: number) => void;
+    /** S468 — "Copy words": pick a word or run of words to copy. */
+    onCopyWords?: (verseId: number) => void;
     /** S124 W5 — "Bookmark" in the Marking section. Opens BookmarkSheet
      *  for the targeted verse in create-mode or edit-mode based on
      *  whether a bookmark already exists on the verse. */
@@ -6082,6 +6153,16 @@ function buildMenuSections(
         });
       },
     });
+    if (handlers.onCopyWords) {
+      const onCopyWords = handlers.onCopyWords;
+      share.push({
+        key: "copy-words",
+        label: "Copy words",
+        icon: "✂",
+        hint: "a word or a sentence",
+        onSelect: () => onCopyWords(verse.id),
+      });
+    }
     share.push({
       key: "share-watermark",
       label: "Share with watermark",
