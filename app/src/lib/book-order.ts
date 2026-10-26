@@ -74,8 +74,8 @@ export const STORY_SHELVES: Array<[label: string, books: Ref[]]> = [
     ["apocrypha", "bel-and-the-dragon"],
   ]],
   ["The Years Between", [
-    ["apocrypha", "1-maccabees"], ["apocrypha", "2-maccabees"], ["apocrypha-charles-vol1", "3-maccabees"],
-    ["pseudepigrapha", "4-maccabees"], ["apocrypha", "2-esdras"], ["josephus", "*"],
+    ["apocrypha", "1-maccabees"], ["apocrypha", "2-maccabees"], ["pseudepigrapha", "3-maccabees"],
+    ["pseudepigrapha", "4-maccabees"], ["apocrypha", "2-esdras"],
   ]],
   ["Gospels and Acts", [...["matthew", "mark", "luke", "john", "acts"].map(C), ["sonnini-acts-29", "sonnini-acts-29"]]],
   ["Letters", ["romans", "1-corinthians", "2-corinthians", "galatians", "ephesians", "philippians", "colossians",
@@ -90,6 +90,7 @@ export const STORY_SHELVES: Array<[label: string, books: Ref[]]> = [
     ["lightfoot-apostolic-fathers", "ignatius-smyrnaeans"], ["lightfoot-apostolic-fathers", "ignatius-polycarp"],
     ["lightfoot-apostolic-fathers", "martyrdom-polycarp"], ["lightfoot-apostolic-fathers", "hermas"],
   ]],
+  ["Josephus \u2014 history, not Scripture", [["josephus", "*"]]],   // its own shelf, last
 ];
 
 export function isActs29(b: BookSummary): boolean {

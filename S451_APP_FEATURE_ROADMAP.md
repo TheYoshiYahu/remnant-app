@@ -366,3 +366,4 @@ NEXT (S476): sort the 791 extra-only words into real people / places / ordinary 
   Book menu switches the order: "Canon order" ↔ "Story order" (our own SHELVES, learned from the Cepher.s shape but not its order: canon order kept inside each shelf; extras set on the
   shelf they belong to — book-order.ts STORY_SHELVES; unplaced books land on a last "More" shelf). Saved in
   localStorage rop_book_order_v1. The placement table is a DRAFT for Yoshi to adjust by name.
+- Josephus: off every Scripture shelf; last shelf named "Josephus — history, not Scripture". Yoshi unsure he belongs in the Book menu at all; moving him to a separate "Histories" door under the top menu is a later job (reader/search/audio all key off the one book list).
