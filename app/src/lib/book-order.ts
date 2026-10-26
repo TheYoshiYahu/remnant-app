@@ -66,13 +66,14 @@ export const STORY_SHELVES: Array<[label: string, books: Ref[]]> = [
     ["apocrypha", "the-wisdom-of-solomon"], ["apocrypha", "ecclesiasticus"],
   ]],
   ["Prophets", [
-    ...["isaiah", "jeremiah", "lamentations", "ezekiel", "daniel", "hosea", "joel", "amos", "obadiah", "jonah",
-        "micah", "nahum", "habakkuk", "zephaniah", "haggai", "zechariah", "malachi"].map(C),
+    ...["isaiah", "jeremiah", "lamentations", "ezekiel", "daniel"].map(C),
     ["ascension-isaiah", "ascension-isaiah"], ["apocrypha", "baruch-with-the-letter-of-jeremiah"],
     ["pseudepigrapha", "2-baruch"], ["pseudepigrapha", "3-baruch"],
     ["apocrypha", "the-song-of-the-three-holy-children"], ["apocrypha", "the-history-of-susanna"],
     ["apocrypha", "bel-and-the-dragon"],
   ]],
+  ["Minor Prophets", ["hosea", "joel", "amos", "obadiah", "jonah", "micah", "nahum", "habakkuk", "zephaniah",
+    "haggai", "zechariah", "malachi"].map(C)],
   ["The Years Between", [
     ["apocrypha", "1-maccabees"], ["apocrypha", "2-maccabees"], ["pseudepigrapha", "3-maccabees"],
     ["pseudepigrapha", "4-maccabees"], ["apocrypha", "2-esdras"],
@@ -82,7 +83,7 @@ export const STORY_SHELVES: Array<[label: string, books: Ref[]]> = [
     "1-thessalonians", "2-thessalonians", "1-timothy", "2-timothy", "titus", "philemon", "hebrews", "james",
     "1-peter", "2-peter", "1-john", "2-john", "3-john", "jude"].map(C)],
   ["Revelation", [C("revelation")]],
-  ["The Early Assemblies", [
+  ["Early Church Fathers", [
     ["lightfoot-apostolic-fathers", "didache"], ["lightfoot-apostolic-fathers", "1-clement"],
     ["lightfoot-apostolic-fathers", "2-clement"], ["lightfoot-apostolic-fathers", "ignatius-ephesians"],
     ["lightfoot-apostolic-fathers", "ignatius-magnesians"], ["lightfoot-apostolic-fathers", "ignatius-trallians"],
