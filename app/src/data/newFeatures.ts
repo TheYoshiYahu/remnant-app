@@ -23,6 +23,14 @@ export interface NewFeature {
 
 export const NEW_FEATURES: NewFeature[] = [
   {
+    id: "people-places",
+    date: "2026-10-26",
+    title: "People & places in every verse",
+    body:
+      "Hold a verse and choose People & places to see who and where it names. Each person has a page with the names the text uses for them, the Hebrew or Greek, their parents, husband or wife, brothers and sisters and children, the father line back as far as the text names it, and every verse they appear in, one tap away. Places show on a small map with the places around them. Nothing is filled in from outside: every verse and every family link was checked against this app's own text before it went in.",
+    tier: "Study Notes",
+  },
+  {
     id: "suggestion-board",
     date: "2026-10-24",
     title: "The Suggestion Board — your voice in what gets built",

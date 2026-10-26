@@ -87,7 +87,10 @@ Taken into the vision; order, scope and price still open:
 - End cards stay short; each one opens a full-length teaching behind it. Teachings ship in approved
   batches (the most-asked chapters first) and are the same body of work as the companion per book (item 3).
 - People and places pages: who each one was, their family line, every verse they appear in, and a map
-  pin. Includes family-line trees from Adam through the twelve tribes, with the Watcher line set apart.
+  pin. Includes family-line trees from Adam through the twelve tribes. CORRECTED S471 (Yoshi): NO "Watcher line"
+  in the trees — the tares are sown in with the wheat and exist today even within the seed of promise, so marking a
+  line as Watcher-descended would be a guess and would cross a line. Do the Adam line; other related lines (Cain,
+  Ishmael, Esau, Lot, etc.) may be drawn as scripture gives them, but never label any line "Watcher."
 - Passage guide: one screen per verse with the Hebrew/Greek, cross-references, witness texts, teaching,
   people, places and timeline.
 - Timeline (ties to the chronological Torah and Arranged Reading).
@@ -126,6 +129,11 @@ Stored teaching library and advanced (Hebrew/Greek root) search → Companion.
 SETTLED (Yoshi 2026-10-25): chronological Torah reading option → Study Notes (canon text, Hebrew facing);
 the Jubilees/Jasher dating notes in it show for Library.
 Tier placement is now closed for every S470 piece. Still open: how many approved pieces before each part launches.
+LAUNCH GATE — people & places (Yoshi 2026-10-25): these are checkable facts, not approval batches. Verse
+occurrences, genealogies and place pins are verified against the app's own library text (pins also against an open
+CC BY geocoding set); extra-book people (Enoch, Jasher, Jubilees names) are checked against the text only. Launch a
+book once it is verified. Only the short "who this was" blurbs carry the voice and come to Yoshi, in batches.
+Still open: launch gate for the passage guide and the stored teachings.
 
 
 S471 (2026-10-25, cut short — switching model): Sky preview.mp3 made. Ra'ah locked as rɑˈʔɑ (rah-AH) for all
@@ -133,3 +141,43 @@ voices. REDO batch: Psalm 23 in af_sky, am_michael, bm_george, am_onyx, af_heart
 compound-name verses that drop their meaning in audio (Ps 23:1 says "Yahuah Ra'ah; I shall not want" — no
 "is my shepherd"; check Gen 22:14, Ex 15:26, Ex 17:15, Jer 23:6, Ezek 48:35). Open: say name then meaning?
 Free vs paid: Yoshi believes three tiers already exist — LOOK IT UP in the code/docs before proposing anything.
+
+S472 (2026-10-25) — STORE BILLING, SETTLED (Yoshi): build it together with the offline store release
+(enrollment, bank/tax setup in App Store Connect + Play Console happen then).
+- Two doors on the purchase screen: Apple/Google in-app purchase AND the website (Stripe). Existing tiers only.
+- Account required before upgrading (plain email sign-up; no "Sign in with Apple", so emails stay real).
+  Store purchase carries the account ID (Apple appAccountToken / Google obfuscatedAccountId); server sets the
+  tier from store notifications so it follows the person to the web (RevenueCat or direct — decide at build).
+- Store prices (monthly; assumes 15% cut — enroll in Apple Small Business Program first):
+  Study Notes $1.99 (unchanged), Library $5.49 (+50¢), Companion $8.49 (+$1). Web prices unchanged.
+- Coupons stay Stripe/web. US users (store-region check): coupon line with a working link to the website.
+  Outside the US: no coupon line in the app (anti-steering, wording doesn't matter); coupons go out by email /
+  social / books with the web link. Store offer codes (Apple) / promo codes (Google) possible later.
+- Google: enroll in the US external-links program in Play Console for the US link. Check current fees then
+  (sources disagreed: 0% vs 10% service fee on link-outs).
+- Keep the neutral "manage your account" line in account settings.
+- Why: one-tap store checkout converts better; store sales count toward Top Grossing charts.
+- Cleanup noted: stray app/src/lib/"native-shell 2.ts" duplicate → _to_delete when in the code.
+
+S472 (2026-10-25/26) — PEOPLE & PLACES BUILT (Study Notes), waiting on Yoshi's deploy run + push.
+- Data: STEPBible TIPNR (CC BY 4.0) for who-is-who, family links, Hebrew/Greek forms; OpenBible pins.
+  TIPNR's own descriptions (AI-written, church framing) are NOT used anywhere. blurb column empty until
+  Yoshi approves "who this was" notes in batches.
+- Verified against the live app text (audio-text/canon_live.json, pulled Oct 13): 3,955 people/places ship;
+  24,572 of 29,965 verse occurrences confirmed; 8,427 family links; 474 map pins (TIPNR and OpenBible agree
+  within 30 km). Full held list: people-places/S472_VERIFY_REPORT.md. Rebuild: python3 _s472_people_places_build.py
+- Framework holds built in: Joseph is never drawn as father of Yahusha (Luke 3:23 "as was supposed");
+  Arimathaea not merged into Mizpah; tribe/nation usages ("Levite", "Jews", the people Israel, "children of
+  Israel") kept OFF the pages of Jacob and his sons — their pages show only where the man himself is in view
+  (4,429 such verses held). Family links across verses only count inside genealogy chapters.
+- Restored display names: Yahusha (Jesus), Yashar'el (Israel), Yahudah (Judah), Melek Tsadiq, Messiah (Christ).
+- App: verse menu → "People & places" (Study Notes+; locked stub below). Sheet: who/where the verse names,
+  search, person page (names, Hebrew/Greek, family chips, father line back to Adam where the text confirms,
+  every verse tap-to-go), place page with a small map of nearby confirmed places. New Features entry added.
+- Deploy: bash _session472_people_places_deploy.sh (loads DB, reads back, commits; stages only the S472 lines
+  of App.tsx so the S470 offline work stays uncommitted) → then Yoshi runs git push.
+NEXT for this feature: (1) tribe & nation pages (the twelve tribes, Yashar'el as a people, Yahudah/Yahudim,
+  the nations) — the held 4,429 verses land there; (2) extra-book people (Enoch, Jubilees, Jasher) checked
+  against the text only; (3) blurb batches for Yoshi, most-named people first; (4) the 130 Psalm-title
+  references (the app has no Psalm titles) and 834 name-not-found verses — mostly spelling forms, review list.
+Then the passage guide (one screen per verse, rows by tier).

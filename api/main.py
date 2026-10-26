@@ -213,6 +213,7 @@ from subscriptions import router as subscriptions_router
 from year_plan_study import router as year_plan_study_router
 from suggestions import router as suggestions_router
 from board import router as board_router
+from people_places import router as people_places_router
 
 
 # ----- App lifespan -------------------------------------------------------
@@ -276,6 +277,7 @@ app.include_router(year_plan_study_router)
 app.include_router(suggestions_router)
 # S465 — public Suggestion Board (moderated; anonymous votes).
 app.include_router(board_router)
+app.include_router(people_places_router)  # S472 people & places (Study Notes)
 # S467 — email opt-out page + win-back 24-hour reopen link.
 app.include_router(email_prefs_router)
 

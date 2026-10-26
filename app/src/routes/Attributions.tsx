@@ -40,6 +40,21 @@ const CREDITS: Credit[] = [
       "watercourse shapes are drawn. © OpenStreetMap contributors.",
   },
   {
+    tool: "People & places — who is who, family links, name forms",
+    source: "STEPBible TIPNR (Tyndale House, Cambridge)",
+    url: "https://STEPBible.github.io/STEPBible-Data",
+    license: "CC-BY 4.0",
+    note:
+      "Translators Individualised Proper Names with all References. Changes made by " +
+      "this app: only the structure is used (which person or place each name refers to, " +
+      "family links, Hebrew/Greek forms); TIPNR's descriptions are not used; every verse " +
+      "and family link was kept only where this app's own text confirms it; a few " +
+      "identifications are held back (e.g. Arimathaea is not merged with Mizpah, and " +
+      "Joseph is not drawn as the father of Yahusha); tribe and nation usages are kept " +
+      "off the pages of the men they are named after. Map pins are shown only where " +
+      "TIPNR and OpenBible agree within 30 km.",
+  },
+  {
     tool: "Nave's Topical Bible",
     source: "Orville J. Nave (1897), compiled by Brady Stephenson",
     url: "https://github.com/BradyStephenson/bible-data",

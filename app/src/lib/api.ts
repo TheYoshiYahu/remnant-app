@@ -2330,3 +2330,60 @@ export interface ModerateInput {
 export function moderatePost(id: number, input: ModerateInput): Promise<{ ok: boolean }> {
   return post<ModerateInput, { ok: boolean }>(`/board/suggestions/${id}/moderate`, input);
 }
+
+// ── S472 People & places (Study Notes) ───────────────────────────────────────
+// Confirmed against the app's own text before loading (S472_VERIFY_REPORT.md).
+// Server-gated at Study Notes; 403 → tier-locked card.
+export interface PPEntry {
+  slug: string;
+  kind: "person" | "group" | "place";
+  type: string | null;
+  name: string;
+  uncertain: boolean;
+}
+export interface PPLink {
+  rel: "parent" | "child" | "spouse" | "sibling";
+  flags: string;
+  proof: string | null;
+  other: PPEntry;
+}
+export interface PPRef {
+  book_slug: string;
+  chapter: number;
+  verse: number;
+}
+export interface PPNearby {
+  slug: string;
+  name: string;
+  lat: number;
+  lon: number;
+}
+export interface PPPage {
+  entry: PPEntry;
+  names: string[];
+  original: string | null;
+  blurb: string | null;
+  refs: PPRef[];
+  links: PPLink[];
+  line: PPEntry[];
+  pin: { maps_place_id: string | null; lat: number; lon: number } | null;
+  nearby: PPNearby[];
+}
+
+export function fetchPeopleInVerse(
+  bookSlug: string,
+  chapter: number,
+  verse: number,
+): Promise<ToolFetchResult<{ entries: PPEntry[] }>> {
+  return fetchTagged(
+    `/v1/people/verse/${encodeURIComponent(bookSlug)}/${chapter}/${verse}`,
+  );
+}
+
+export function searchPeople(q: string): Promise<ToolFetchResult<{ entries: PPEntry[] }>> {
+  return fetchTagged(`/v1/people/search?q=${encodeURIComponent(q)}`);
+}
+
+export function fetchPeoplePage(slug: string): Promise<ToolFetchResult<PPPage>> {
+  return fetchTagged(`/v1/people/${encodeURIComponent(slug)}`);
+}

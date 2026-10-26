@@ -88,6 +88,7 @@ import NikkudotSheet from "./components/NikkudotSheet";
 import TskSheet from "./components/TskSheet";
 import NavesSheet from "./components/NavesSheet";
 import MapsSheet from "./components/MapsSheet";
+import PeopleSheet from "./components/PeopleSheet";
 import CompareSheet from "./components/CompareSheet";
 import VerseActionMenu, {
   type MenuItem,
@@ -1131,6 +1132,13 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     null,
   );
   const [mapsOpen, setMapsOpen] = useState<boolean>(false);
+  // S472 — People & places sheet (Study Notes), opened from the verse menu.
+  const [peopleState, setPeopleState] = useState<{
+    bookSlug: string;
+    chapter: number;
+    verse: number;
+    verseLabel: string;
+  } | null>(null);
   // S224 — "Compare to another version" lens. Carries the anchor verse; the
   // sheet itself owns the version picker + verse/chapter scope.
   const [compareState, setCompareState] = useState<
@@ -5080,6 +5088,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                 setMenuState(null);
                 setMapsOpen(true);
               },
+              onPeople: (ref) => {
+                setMenuState(null);
+                setPeopleState(ref);
+              },
               onCompare: (ref) => {
                 setMenuState(null);
                 setCompareState(ref);
@@ -5212,6 +5224,24 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
         />
       )}
       {mapsOpen && <MapsSheet onClose={() => setMapsOpen(false)} />}
+      {peopleState !== null && (
+        <PeopleSheet
+          bookSlug={peopleState.bookSlug}
+          chapter={peopleState.chapter}
+          verse={peopleState.verse}
+          verseLabel={peopleState.verseLabel}
+          onNavigate={(bookSlug, chapterNumber, verseNumber) => {
+            // Same state-reset contract as the Strong's concordance navigate.
+            setSelectedBookSlug(bookSlug);
+            setSelectedChapter(chapterNumber);
+            setCurrentVerse(verseNumber);
+            if (verseNumber > 1) {
+              setInitialScrollVerse(verseNumber);
+            }
+          }}
+          onClose={() => setPeopleState(null)}
+        />
+      )}
       {compareState !== null && chapterDetail && (
         <CompareSheet
           bookSlug={compareState.bookSlug}
@@ -5806,6 +5836,13 @@ function buildMenuSections(
     onNaves?: (initialQuery?: string) => void;
     /** S197 — Maps own-tile dispersion/gathering surface (standalone). */
     onMaps?: () => void;
+    /** S472 — People & places named in this verse (Study Notes). */
+    onPeople?: (ref: {
+      bookSlug: string;
+      chapter: number;
+      verse: number;
+      verseLabel: string;
+    }) => void;
     /** S224 — "Compare to another version" lens for the long-pressed verse. */
     onCompare?: (ref: {
       bookSlug: string;
@@ -6028,6 +6065,25 @@ function buildMenuSections(
   // (grace/law, Jew/Gentile, church-as-Israel, Torah-as-curse pairings)
   // before it comes off stub.
   const referenceTools: MenuItem[] = [];
+  // S472 — People & places: Study Notes and up, on a resolved verse. Every
+  // name and family link it shows was checked against our own text.
+  if (verse && handlers.onPeople && partnerAtOrAboveTier(partnerTier, "notes")) {
+    const v = verse;
+    referenceTools.push({
+      key: "people-places",
+      label: "People & places",
+      icon: "⌂",
+      onSelect: () =>
+        handlers.onPeople!({
+          bookSlug,
+          chapter: chapterNumber,
+          verse: v.verse_number,
+          verseLabel: `${bookTitle} ${chapterNumber}:${v.verse_number}`,
+        }),
+    });
+  } else if (verse) {
+    referenceTools.push(makeTierStub("people-places", "People & places", "notes", partnerTier));
+  }
   // S197 — Treasury (TSK) comes off "coming soon" for Companion+ on a resolved
   // verse: the standalone, opt-in chain foil with the four distortion-class
   // notes (gate passed S196). Subordinate by design — the curated threads are

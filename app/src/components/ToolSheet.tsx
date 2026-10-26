@@ -66,7 +66,11 @@ export function ToolTierLockedCard({ tierRequired }: { tierRequired: string }) {
       ? "Companion"
       : tierRequired === "everything"
         ? "Everything"
-        : tierRequired;
+        : tierRequired === "study_notes"
+          ? "Study Notes"
+          : tierRequired === "extras"
+            ? "Library"
+            : tierRequired;
   return (
     <div className="rounded-md border border-[var(--reader-rule)] bg-[var(--reader-surface-elev)] p-4">
       <p className="text-sm font-semibold text-[var(--reader-text)]">Tier-locked</p>
