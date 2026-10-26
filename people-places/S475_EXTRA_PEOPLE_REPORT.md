@@ -1,0 +1,945 @@
+# S475 — Extra-book people: report
+
+Linked: 6347 verse occurrences across 283 canon people.
+Held: 1163 occurrences of 100 names.
+Names found only in the extra books (candidates, not built): 791.
+
+## Most-linked people
+
+- Jacob (israel-gen-25-26-rev): 1241
+- Abraham (abraham-gen-11-26-1pe): 551
+- Joseph (joseph-gen-30-24-rev): 487
+- Esau (esau-gen-25-25-heb): 281
+- Isaac (isaac-gen-17-19-jas): 272
+- Moses (moses-exo-2-10-rev): 229
+- Yahudah (Judah) (judah-gen-29-35-rev): 160
+- Sarah (sarah-gen-11-29-1pe): 122
+- Noah (noah-gen-5-29-2pe): 112
+- Enoch (enoch-gen-5-18-jud): 106
+- Ishmael (ishmael-gen-16-11-psa): 95
+- Levi (levi-gen-29-34-rev): 83
+- Joshua (joshua-exo-17-9-heb): 83
+- Simeon (simeon-gen-29-33-rev): 81
+- Terah (terah-gen-11-24-luk): 80
+- Laban (laban-gen-24-29): 80
+- Hebrews (hebrews-gen-14-13-heb): 70
+- Rebekah (rebekah-gen-22-23-rom): 69
+- Zepho (zepho-gen-36-11-1ch): 67
+- Adam (adam-gen-2-19-jud): 61
+- Benjamin (benjamin-gen-35-18-rev): 61
+- Nimrod (nimrod-gen-10-8-mic): 55
+- Rachel (rachel-gen-29-6-mat): 54
+- Aaron (aaron-exo-4-14-heb): 52
+- Shem (shem-gen-5-32-luk): 50
+- Amorites (amorites-gen-10-16-amo): 50
+- Abimelech (abimelech-gen-20-2): 49
+- Lot (lot-gen-11-27-2pe): 47
+- Balaam (balaam-num-22-5-rev): 45
+- Haran (haran-gen-11-26): 44
+- Leah (leah-gen-29-16-rut): 41
+- Reuben (reuben-gen-29-32-rev): 38
+- Eliphaz (eliphaz-gen-36-4-1ch): 37
+- Naphtali (naphtali-gen-30-8-rev): 36
+- Methuselah (methuselah-gen-5-21-luk): 35
+- Dinah (dinah-gen-30-21): 34
+- Jashub (jashub-gen-46-13-1ch): 34
+- Cain (cain-gen-4-1-jud): 33
+- Hamor (hamor-gen-33-19-act): 30
+- Canaan (canaan-gen-9-18-1ch): 28
+
+## Held names (why)
+
+- Pharaoh: 230 — 4 people by this name in the era
+- Canaan: 179 — also a place or people name; the verse does not settle it
+- Hebron: 71 — also a place or people name; the verse does not settle it
+- Shechem: 70 — also a place or people name; the verse does not settle it
+- Seir: 59 — also a place or people name; the verse does not settle it
+- Moab: 57 — also a place or people name; the verse does not settle it
+- Cush: 45 — also a place or people name; the verse does not settle it
+- Midian: 36 — also a place or people name; the verse does not settle it
+- Eliezer: 32 — 2 people by this name in the era
+- Aram: 23 — also a place or people name; the verse does not settle it
+- Michael: 22 — no one by this name in the canon era
+- Eden: 20 — no one by this name in the canon era
+- Elam: 18 — also a place or people name; the verse does not settle it
+- Haran: 18 — also a place or people name; the verse does not settle it
+- Uriel: 16 — no one by this name in the canon era
+- Tubal: 16 — also a place or people name; the verse does not settle it
+- Nahor: 13 — 2 people by this name in the era
+- Mamre: 13 — also a place or people name; the verse does not settle it
+- Ham: 10 — also a place or people name; the verse does not settle it
+- Gilead: 10 — no one by this name in the canon era
+- Shiloh: 10 — also a place or people name; the verse does not settle it
+- Hadad: 9 — 3 people by this name in the era
+- Enoch: 7 — 2 people by this name in the era
+- spear: 7 — no one by this name in the canon era
+- Timnah: 7 — also a place or people name; the verse does not settle it
+- Reuel: 7 — 3 people by this name in the era
+- Laban: 6 — also a place or people name; the verse does not settle it
+- Amalek: 6 — also a place or people name; the verse does not settle it
+- Phanuel: 5 — no one by this name in the canon era
+- Jobab: 5 — 2 people by this name in the era
+- Naamah: 5 — also a place or people name; the verse does not settle it
+- Ashur: 5 — no one by this name in the canon era
+- Japhia: 5 — also a place or people name; the verse does not settle it
+- Baal: 5 — no one by this name in the canon era
+- Dan: 4 — no one by this name in the canon era
+- Ephrath: 4 — no one by this name in the canon era
+- Elisha: 4 — no one by this name in the canon era
+- Havilah: 4 — also a place or people name; the verse does not settle it
+- Tarshish: 4 — also a place or people name; the verse does not settle it
+- Shimron: 4 — also a place or people name; the verse does not settle it
+- Asshur: 3 — also a place or people name; the verse does not settle it
+- Sheba: 3 — also a place or people name; the verse does not settle it
+- Dedan: 3 — also a place or people name; the verse does not settle it
+- Bela: 3 — 2 people by this name in the era
+- Abi: 3 — no one by this name in the canon era
+- Ephron: 3 — also a place or people name; the verse does not settle it
+- Elon: 3 — also a place or people name; the verse does not settle it
+- Naaman: 3 — 2 people by this name in the era
+- Arad: 3 — no one by this name in the canon era
+- Hebrew: 3 — no one by this name in the canon era
+- Raguel: 2 — no one by this name in the canon era
+- Adam: 2 — also a place or people name; the verse does not settle it
+- Javan: 2 — also a place or people name; the verse does not settle it
+- Mered: 2 — no one by this name in the canon era
+- Zur: 2 — 2 people by this name in the era
+- Eli: 2 — no one by this name in the canon era
+- Beor: 2 — 2 people by this name in the era
+- Bunah: 2 — no one by this name in the canon era
+- Korah: 2 — 3 people by this name in the era
+- Dishon: 2 — 2 people by this name in the era
+- Eglon: 2 — no one by this name in the canon era
+- Manasseh: 2 — 2 people by this name in the era
+- Parthians: 1 — no one by this name in the canon era
+- Gog: 1 — no one by this name in the canon era
+- Arba: 1 — no one by this name in the canon era
+- Hezron: 1 — also a place or people name; the verse does not settle it
+- Imnah: 1 — no one by this name in the canon era
+- Elimelech: 1 — no one by this name in the canon era
+- Lamech: 1 — 2 people by this name in the era
+- Eliakim: 1 — no one by this name in the canon era
+- Magog: 1 — also a place or people name; the verse does not settle it
+- Meshech: 1 — also a place or people name; the verse does not settle it
+- Phut: 1 — also a place or people name; the verse does not settle it
+- Elishah: 1 — also a place or people name; the verse does not settle it
+- Melech: 1 — no one by this name in the canon era
+- Bered: 1 — no one by this name in the canon era
+- Buz: 1 — also a place or people name; the verse does not settle it
+- Sheva: 1 — no one by this name in the canon era
+- Abdon: 1 — no one by this name in the canon era
+- Joab: 1 — no one by this name in the canon era
+- Bildad: 1 — no one by this name in the canon era
+- Rekem: 1 — also a place or people name; the verse does not settle it
+- Obadiah: 1 — no one by this name in the canon era
+- Obed: 1 — no one by this name in the canon era
+- Azur: 1 — no one by this name in the canon era
+- Tema: 1 — also a place or people name; the verse does not settle it
+- Ebed: 1 — no one by this name in the canon era
+- Allon: 1 — no one by this name in the canon era
+- Heman: 1 — no one by this name in the canon era
+- Teman: 1 — also a place or people name; the verse does not settle it
+- Jekuthiel: 1 — no one by this name in the canon era
+- Socho: 1 — no one by this name in the canon era
+- Shemaiah: 1 — no one by this name in the canon era
+- Jannes: 1 — no one by this name in the canon era
+- Jambres: 1 — no one by this name in the canon era
+- Abel: 1 — also a place or people name; the verse does not settle it
+- Zimri: 1 — also a place or people name; the verse does not settle it
+- Debir: 1 — also a place or people name; the verse does not settle it
+- Zidon: 1 — also a place or people name; the verse does not settle it
+- Shammah: 1 — no one by this name in the canon era
+
+## Extra-only name candidates (by count)
+
+- Angeas: jasher 101
+- Philistines: jubilees 11, jasher 37
+- Africa: jasher 47
+- Rikayon: jasher 26
+- Zelicah: jasher 26
+- Tapnach: jasher 23
+- Kikianus: jasher 23
+- May: jubilees 8, jasher 14
+- Hedad: jasher 22
+- Lucus: jasher 21
+- Bethel: jubilees 10, jasher 10
+- Bethchorin: jasher 19
+- Watchers: 1-enoch 13, jubilees 5
+- Sea: 1-enoch 5, jubilees 8, jasher 4, 2-enoch 1
+- Chazar: jasher 18
+- Sarton: jasher 18
+- Turnus: jasher 18
+- Garden: 1-enoch 2, jubilees 15
+- Give: jasher 17
+- Elect: 1-enoch 16
+- Beersheba: jubilees 3, jasher 13
+- Azdrubal: jasher 16
+- Latinus: jasher 16
+- Thus: 1-enoch 1, jasher 14
+- Take: jasher 15
+- Well: jubilees 14
+- Oath: jubilees 14
+- Horite: jasher 14
+- Raphael: 1-enoch 13
+- King: 1-enoch 11, jubilees 1, jasher 1
+- Creator: 1-enoch 2, jubilees 11
+- Arpachshad: jubilees 5, jasher 8
+- Send: jasher 13
+- Sheol: 1-enoch 8, jubilees 4
+- From: 1-enoch 2, jasher 10
+- Mast: jubilees 12
+- Nor: 1-enoch 8, jubilees 3
+- Niblos: jasher 11
+- Head: 1-enoch 10
+- Days: 1-enoch 10
+- Red: jubilees 5, jasher 5
+- Mitzraim: jasher 10
+- Not: jasher 10
+- Adikam: jasher 10
+- Gabriel: 1-enoch 7, 2-enoch 2
+- Sabbaths: jubilees 9
+- Come: jasher 9
+- She: jasher 9
+- Arbelan: jasher 9
+- Jania: jasher 9
+- Bathia: jasher 9
+- Shall: 1-enoch 4, jubilees 2, jasher 2
+- Shaddai: jubilees 2, jasher 5, 2-enoch 1
+- Have: jasher 7, 2-enoch 1
+- Tell: jasher 8
+- Kireath: jasher 8
+- Canaanitish: jasher 8
+- Chiddekem: jasher 8
+- Anibal: jasher 8
+- Glory: 1-enoch 7
+- Parable: 1-enoch 7
+- Myself: jubilees 7
+- Almighty: jubilees 2, jasher 4, 2-enoch 1
+- Paltith: jasher 7
+- Medanim: jasher 7
+- Bibentu: jasher 7
+- Sardunia: jasher 7
+- Elazer: jasher 7
+- Abianus: jasher 7
+- Mahalalel: 1-enoch 3, jubilees 3
+- Mine: 1-enoch 6
+- Rise: jasher 6
+- Casdim: jasher 6
+- Hasten: jasher 6
+- Bring: jasher 5, 2-enoch 1
+- Nebayoth: jasher 6
+- Janeas: jasher 6
+- Passover: jasher 6
+- Eternal: 1-enoch 5
+- Here: 1-enoch 1, jasher 4
+- Hear: 1-enoch 1, jasher 2, 2-enoch 2
+- Whence: 1-enoch 2, jasher 3
+- Yea: 1-enoch 4, 2-enoch 1
+- Himself: 1-enoch 2, jubilees 3
+- Father: jubilees 3, jasher 2
+- Siddim: jubilees 1, jasher 4
+- Zebulon: jubilees 4, jasher 1
+- Hittite: jubilees 1, jasher 4
+- Mahlallel: jasher 5
+- Kesed: jasher 5
+- Shelach: jasher 5
+- Yoktan: jasher 5
+- Speak: jasher 5
+- Are: jasher 5
+- Anuki: jasher 5
+- Adinah: jasher 5
+- Jabuk: jasher 5
+- Adulam: jasher 5
+- Kehath: jasher 5
+- Chushim: jasher 5
+- Hadurah: jasher 5
+- Serach: jasher 5
+- Manassah: jasher 5
+- Fear: jasher 5
+- Adoniah: jasher 5
+- Bar: 1-enoch 3, jubilees 1
+- Arm: 1-enoch 4
+- Such: 1-enoch 2, jasher 2
+- Whose: 1-enoch 2, jasher 2
+- Phicol: jubilees 1, jasher 3
+- Syrian: jubilees 1, jasher 3
+- Heaven: jasher 3, 2-enoch 1
+- Return: jasher 4
+- Mardon: jasher 4
+- Milca: jasher 4
+- Canopia: jasher 4
+- Dost: jasher 4
+- Adonizedek: jasher 4
+- Serak: jasher 4
+- Arise: jasher 4
+- Moriah: jasher 4
+- Chanoch: jasher 4
+- Ribah: jasher 4
+- Ahlibamah: jasher 4
+- Peradventure: jasher 4
+- Ihuri: jasher 4
+- Aliyath: jasher 4
+- Tachpanches: jasher 4
+- Osnath: jasher 4
+- Magron: jasher 4
+- Jephuneh: jasher 4
+- Chazor: jasher 4
+- Grigori: 2-enoch 4
+- Tsivan: 2-enoch 4
+- With: 1-enoch 3
+- Semj: 1-enoch 3
+- Cherubim: 1-enoch 1, 2-enoch 2
+- Erythraean: 1-enoch 3
+- Parables: 1-enoch 3
+- Righteous: 1-enoch 3
+- Till: 1-enoch 2, jubilees 1
+- Sun: 1-enoch 2, jasher 1
+- Lest: jubilees 2, jasher 1
+- After: jasher 2, 2-enoch 1
+- Anar: jasher 3
+- Ashcol: jasher 3
+- Tibreu: jasher 3
+- Zeboyim: jasher 3
+- Ninevah: jasher 3
+- Make: jasher 3
+- Oswiris: jasher 3
+- Say: jasher 3
+- Keep: jasher 3
+- Sabinah: jasher 3
+- Did: jasher 3
+- Rechob: jasher 3
+- Zochar: jasher 3
+- Bosmath: jasher 3
+- Jehudith: jasher 3
+- Get: jasher 3
+- Heleah: jasher 3
+- Shalem: jasher 3
+- Aridah: jasher 3
+- Shomron: jasher 3
+- Aphlaleth: jasher 3
+- Merimah: jasher 3
+- Uzith: jasher 3
+- Adon: jasher 3
+- Malkiel: jasher 3
+- Mechalia: jasher 3
+- Achi: jasher 3
+- Mupim: jasher 3
+- Chupim: jasher 3
+- Ord: jasher 3
+- Remain: jasher 3
+- Perath: jasher 3
+- Zarach: jasher 3
+- Chusham: jasher 3
+- Uzu: jasher 3
+- Melol: jasher 3
+- Chanan: jasher 3
+- Ushpezena: jasher 3
+- Mathusal: 2-enoch 3
+- Elohim's: 2-enoch 3
+- Phoenixes: 2-enoch 3
+- Pravuil: 2-enoch 3
+- Archas: 2-enoch 3
+- Eva: 2-enoch 3
+- Either: 1-enoch 2
+- Sari: 1-enoch 2
+- Paradise: 1-enoch 1, 2-enoch 1
+- Satans: 1-enoch 2
+- Wisdom: 1-enoch 2
+- Before: 1-enoch 2
+- Anointed: 1-enoch 2
+- Yet: 1-enoch 2
+- Cherubin: 1-enoch 2
+- Seraphin: 1-enoch 2
+- Ophannin: 1-enoch 2
+- Hel: 1-enoch 2
+- According: 1-enoch 1, jasher 1
+- Even: 1-enoch 1, jubilees 1
+- Show: 1-enoch 1, jasher 1
+- Beliar: jubilees 2
+- Write: jubilees 1, jasher 1
+- Edn: jubilees 2
+- Elj: jubilees 2
+- San: jubilees 2
+- Tigris: jubilees 2
+- Worship: jubilees 2
+- Thence: jubilees 2
+- Cursed: jubilees 1, jasher 1
+- Moloch: jubilees 1, jasher 1
+- Ishmaelite: jubilees 1, jasher 1
+- Salman: jubilees 2
+- Heliopolis: jubilees 2
+- Mechuyael: jasher 2
+- Stand: jasher 2
+- Open: jasher 2
+- Rephath: jasher 2
+- Dudonim: jasher 2
+- Raama: jasher 2
+- Anom: jasher 2
+- Hivi: jasher 2
+- Yen: jasher 2
+- Like: jasher 2
+- Wait: jasher 2
+- Franza: jasher 2
+- Parzunac: jasher 2
+- Balgar: jasher 2
+- Shibathmo: jasher 2
+- Italia: jasher 2
+- Elasar: jasher 2
+- Goyim: jasher 2
+- Strengthen: jasher 2
+- Since: jasher 2
+- Truly: jasher 2
+- Sharkad: jasher 2
+- Menon: jasher 2
+- Shakra: jasher 2
+- Benami: jasher 2
+- Pray: jasher 2
+- Chazo: jasher 2
+- Tidlaf: jasher 2
+- Arud: jasher 2
+- Kasdim: jasher 2
+- Abide: jasher 2
+- Mayon: jasher 2
+- Shuach: jasher 2
+- Avi: jasher 2
+- Malchuth: jasher 2
+- Masa: jasher 2
+- Chadad: jasher 2
+- Yetur: jasher 2
+- Kedma: jasher 2
+- Chamad: jasher 2
+- Ebedmelech: jasher 2
+- Yeush: jasher 2
+- Marzith: jasher 2
+- Puith: jasher 2
+- Zebeon: jasher 2
+- Pered: jasher 2
+- Yaalam: jasher 2
+- Parathon: jasher 2
+- Shabir: jasher 2
+- Machnaymah: jasher 2
+- Perhaps: jasher 2
+- Eliuram: jasher 2
+- Chetzron: jasher 2
+- Puvah: jasher 2
+- Moabite: jasher 2
+- Amuram: jasher 2
+- Aribath: jasher 2
+- Potiphera: jasher 2
+- Prepare: jasher 2
+- Place: jasher 2
+- Botzrah: jasher 2
+- Jetzer: jasher 2
+- Puzimna: jasher 2
+- Alphanu: jasher 2
+- Romah: jasher 2
+- Purmah: jasher 2
+- Sosiphtar: jasher 2
+- Uzite: jasher 2
+- Chaldeans: jasher 2
+- Every: jasher 2
+- Cushite: jasher 2
+- Pass: jasher 2
+- Menacrus: jasher 2
+- Aparanith: jasher 2
+- Othri: jasher 2
+- Ahuz: jasher 2
+- Channan: jasher 2
+- Kebroth: jasher 2
+- Hattaavah: jasher 2
+- Beni: jasher 2
+- Jaakon: jasher 2
+- Beth: jasher 2
+- Phineas: jasher 2
+- Achor: jasher 2
+- Adonibezek: jasher 2
+- Regim: 2-enoch 2
+- Gaidad: 2-enoch 2
+- Chalkydri: 2-enoch 2
+- Satanail: 2-enoch 2
+- Ermon: 2-enoch 2
+- Sabaoth: 2-enoch 2
+- Adoil: 2-enoch 2
+- Thevan: 2-enoch 2
+- Methosalam: 2-enoch 2
+- Achuzan: 2-enoch 2
+- Sam: 1-enoch 1
+- Bat: 1-enoch 1
+- Zaq: 1-enoch 1
+- Sams: 1-enoch 1
+- Satar: 1-enoch 1
+- Araqi: 1-enoch 1
+- Shamsi: 1-enoch 1
+- Tartarus: 1-enoch 1
+- Zot: 1-enoch 1
+- Righteousness: 1-enoch 1
+- Carob: 1-enoch 1
+- First: 1-enoch 1
+- Whom: 1-enoch 1
+- Gentiles: 1-enoch 1
+- Medes: 1-enoch 1
+- Leviathan: 1-enoch 1
+- Behemoth: 1-enoch 1
+- Deep: 1-enoch 1
+- Spirit: 1-enoch 1
+- Samj: 1-enoch 1
+- Art: 1-enoch 1
+- Batarj: 1-enoch 1
+- Busas: 1-enoch 1
+- Han: 1-enoch 1
+- Sim: 1-enoch 1
+- Jetr: 1-enoch 1
+- Tum: 1-enoch 1
+- Jeq: 1-enoch 1
+- Asbe: 1-enoch 1
+- Tab: 1-enoch 1
+- Third: 1-enoch 1
+- North: 1-enoch 1
+- West: 1-enoch 1
+- Encircling: 1-enoch 1
+- Moon: 1-enoch 1
+- Orj: 1-enoch 1
+- Ebl: 1-enoch 1
+- Concerning: 1-enoch 1
+- Adn: 1-enoch 1
+- Melkej: 1-enoch 1
+- Tam: 1-enoch 1
+- Berka: 1-enoch 1
+- Asf: 1-enoch 1
+- Edna: 1-enoch 1
+- While: 1-enoch 1
+- Visions: 1-enoch 1
+- Walk: 1-enoch 1
+- Healing: 1-enoch 1
+- Against: 1-enoch 1
+- Until: 1-enoch 1
+- Sinners: 1-enoch 1
+- Whither: 1-enoch 1
+- Will: 1-enoch 1
+- Honoured: 1-enoch 1
+- Unto: 1-enoch 1
+- Eat: jubilees 1
+- Fifteen: jubilees 1
+- Mountains: jubilees 1
+- Giants: jubilees 1
+- Kaft: jubilees 1
+- Sherri: jubilees 1
+- Mebr: jubilees 1
+- Pharn: jubilees 1
+- Kam: jubilees 1
+- Salt: jubilees 1
+- Eschol: jubilees 1
+- Dammasek: jubilees 1
+- Covenant: jubilees 1
+- Zimram: jubilees 1
+- Arabs: jubilees 1
+- Wherewith: jubilees 1
+- Separate: jubilees 1
+- Flood: jubilees 1
+- Vision: jubilees 1
+- Jubilee: jubilees 1
+- Heap: jubilees 1
+- Witness: jubilees 1
+- Karnaim: jubilees 1
+- Bethshan: jubilees 1
+- Law: jubilees 1
+- Feast: jubilees 1
+- Kabr: jubilees 1
+- Magdal: jubilees 1
+- Sar: jubilees 1
+- Tamn: jubilees 1
+- Qafr: jubilees 1
+- Ras: jubilees 1
+- Aramaean: jubilees 1
+- Barad: jubilees 1
+- Mai: jubilees 1
+- Land: jubilees 1
+- Zephathite: jubilees 1
+- Shela: jubilees 1
+- Ishvah: jubilees 1
+- Ishvi: jubilees 1
+- Sal: jubilees 1
+- Tharmuth: jubilees 1
+- Into: jubilees 1
+- Melca: jasher 1
+- Nahmah: jasher 1
+- Godlike: jasher 1
+- Ashmua: jasher 1
+- Elishaa: jasher 1
+- Menachem: jasher 1
+- Askinaz: jasher 1
+- Tegarmah: jasher 1
+- Elichanaf: jasher 1
+- Lubal: jasher 1
+- Achon: jasher 1
+- Zeelo: jasher 1
+- Chazoni: jasher 1
+- Ariphi: jasher 1
+- Taari: jasher 1
+- Dedon: jasher 1
+- Zaron: jasher 1
+- Shebashni: jasher 1
+- Benib: jasher 1
+- Lupirion: jasher 1
+- Gilak: jasher 1
+- Satecha: jasher 1
+- Chasloth: jasher 1
+- Chaphtor: jasher 1
+- Gebul: jasher 1
+- Hadan: jasher 1
+- Benah: jasher 1
+- Adan: jasher 1
+- Amori: jasher 1
+- Gergashi: jasher 1
+- Arkee: jasher 1
+- Seni: jasher 1
+- Zimodi: jasher 1
+- Chamothi: jasher 1
+- Machul: jasher 1
+- Harmon: jasher 1
+- Ashar: jasher 1
+- Mirus: jasher 1
+- Mokil: jasher 1
+- Bizayon: jasher 1
+- Chul: jasher 1
+- Gather: jasher 1
+- Shelaf: jasher 1
+- Chazarmoveth: jasher 1
+- Yerach: jasher 1
+- Hadurom: jasher 1
+- Ozel: jasher 1
+- Amthelo: jasher 1
+- Cornebo: jasher 1
+- Ayon: jasher 1
+- Mored: jasher 1
+- Providence: jasher 1
+- Language: jasher 1
+- Medai: jasher 1
+- Francum: jasher 1
+- Senah: jasher 1
+- Bartonim: jasher 1
+- Bartonia: jasher 1
+- Ledah: jasher 1
+- Tugarma: jasher 1
+- Buzar: jasher 1
+- Elicanum: jasher 1
+- Ragbib: jasher 1
+- Tarki: jasher 1
+- Bid: jasher 1
+- Zebuc: jasher 1
+- Ongal: jasher 1
+- Tilmaz: jasher 1
+- Hithlah: jasher 1
+- Italac: jasher 1
+- Angoli: jasher 1
+- Dubnee: jasher 1
+- Javanim: jasher 1
+- Makdonia: jasher 1
+- Medaiare: jasher 1
+- Orelum: jasher 1
+- Curson: jasher 1
+- Tuskanah: jasher 1
+- Pashiah: jasher 1
+- Shibashni: jasher 1
+- Rushash: jasher 1
+- Cushni: jasher 1
+- Ongolis: jasher 1
+- Jabus: jasher 1
+- Cura: jasher 1
+- Tragan: jasher 1
+- Almanim: jasher 1
+- Lumbardi: jasher 1
+- Romim: jasher 1
+- Bordna: jasher 1
+- Naphtuchim: jasher 1
+- Casluchim: jasher 1
+- Caphturim: jasher 1
+- Casloch: jasher 1
+- Pelishtim: jasher 1
+- Azathim: jasher 1
+- Gerarim: jasher 1
+- Githim: jasher 1
+- Ekronim: jasher 1
+- Calach: jasher 1
+- Rehobother: jasher 1
+- Eched: jasher 1
+- Calnah: jasher 1
+- Had: jasher 1
+- Oni: jasher 1
+- True: jasher 1
+- Bersha: jasher 1
+- Unic: jasher 1
+- Tuscanah: jasher 1
+- Tuscanan: jasher 1
+- Purtu: jasher 1
+- Ariza: jasher 1
+- Comfort: jasher 1
+- Zabnac: jasher 1
+- Shakrura: jasher 1
+- Zebnac: jasher 1
+- Kezobim: jasher 1
+- Matzlodin: jasher 1
+- Escape: jasher 1
+- Ado: jasher 1
+- Cast: jasher 1
+- Turn: jasher 1
+- Zebach: jasher 1
+- Gachash: jasher 1
+- Tachash: jasher 1
+- Maacha: jasher 1
+- Cheref: jasher 1
+- Gadin: jasher 1
+- Melus: jasher 1
+- Berachel: jasher 1
+- Naamath: jasher 1
+- Madonu: jasher 1
+- Anamlech: jasher 1
+- Meshai: jasher 1
+- Benon: jasher 1
+- Yifi: jasher 1
+- Mechi: jasher 1
+- Opher: jasher 1
+- Chamum: jasher 1
+- Mushan: jasher 1
+- Mutzi: jasher 1
+- Sechar: jasher 1
+- Naherayim: jasher 1
+- Pelilah: jasher 1
+- Achlis: jasher 1
+- Merik: jasher 1
+- Bind: jasher 1
+- Lay: jasher 1
+- Only: jasher 1
+- Amigal: jasher 1
+- Abishna: jasher 1
+- Adichorom: jasher 1
+- Ashunach: jasher 1
+- Achiram: jasher 1
+- Gomerite: jasher 1
+- Bakdil: jasher 1
+- Abudish: jasher 1
+- Zidonite: jasher 1
+- Benmalich: jasher 1
+- Kanvil: jasher 1
+- Abihen: jasher 1
+- Molich: jasher 1
+- Narim: jasher 1
+- Amida: jasher 1
+- Gochi: jasher 1
+- Nothach: jasher 1
+- Makiro: jasher 1
+- Beyodua: jasher 1
+- Tator: jasher 1
+- Mamdad: jasher 1
+- Munan: jasher 1
+- Meban: jasher 1
+- Methach: jasher 1
+- Meshar: jasher 1
+- Tzanua: jasher 1
+- Alirun: jasher 1
+- Medin: jasher 1
+- Azi: jasher 1
+- Alyoshub: jasher 1
+- Alad: jasher 1
+- Chur: jasher 1
+- Melud: jasher 1
+- Kerury: jasher 1
+- Molchi: jasher 1
+- Miker: jasher 1
+- Malchiyah: jasher 1
+- Gabol: jasher 1
+- Nishma: jasher 1
+- Mend: jasher 1
+- Alyon: jasher 1
+- Kezem: jasher 1
+- Shamua: jasher 1
+- Zecaryon: jasher 1
+- Kezed: jasher 1
+- Machmad: jasher 1
+- Amed: jasher 1
+- Melon: jasher 1
+- Mula: jasher 1
+- Ebidadon: jasher 1
+- Minzar: jasher 1
+- Sadon: jasher 1
+- Yakol: jasher 1
+- Merith: jasher 1
+- Yaish: jasher 1
+- Alyo: jasher 1
+- Pachoth: jasher 1
+- Abiyasaph: jasher 1
+- Mir: jasher 1
+- Calip: jasher 1
+- Tachti: jasher 1
+- Omir: jasher 1
+- Two: jasher 1
+- Baalim: jasher 1
+- Machlath: jasher 1
+- Alib: jasher 1
+- Chorash: jasher 1
+- Yaalan: jasher 1
+- Azar: jasher 1
+- Abichorof: jasher 1
+- Machnayim: jasher 1
+- Damesek: jasher 1
+- Elianus: jasher 1
+- Her: jasher 1
+- Alone: jasher 1
+- Was: jasher 1
+- Amalex: jasher 1
+- Nachath: jasher 1
+- Zerach: jasher 1
+- Shamah: jasher 1
+- Alah: jasher 1
+- Phinor: jasher 1
+- Eram: jasher 1
+- Yemim: jasher 1
+- Elan: jasher 1
+- Bethchoran: jasher 1
+- Othnay: jasher 1
+- Help: jasher 1
+- Chorin: jasher 1
+- Verily: jasher 1
+- Deliver: jasher 1
+- Four: jasher 1
+- Entice: jasher 1
+- Refrain: jasher 1
+- See: jasher 1
+- Decide: jasher 1
+- Palu: jasher 1
+- Memuel: jasher 1
+- Yamin: jasher 1
+- Chamudan: jasher 1
+- Yachzeel: jasher 1
+- Zephion: jasher 1
+- Chagi: jasher 1
+- Arali: jasher 1
+- Aphlal: jasher 1
+- Yimnah: jasher 1
+- Yishvah: jasher 1
+- Yishvi: jasher 1
+- Merishah: jasher 1
+- Molad: jasher 1
+- Merushah: jasher 1
+- Yachleel: jasher 1
+- Vosh: jasher 1
+- Relate: jasher 1
+- Merod: jasher 1
+- Jehoseph: jasher 1
+- Zaphnath: jasher 1
+- Paaneah: jasher 1
+- Hosts: jasher 1
+- Any: jasher 1
+- Whosoever: jasher 1
+- Far: jasher 1
+- Seize: jasher 1
+- None: jasher 1
+- Said: jasher 1
+- Saying: jasher 1
+- Ashbal: jasher 1
+- Look: jasher 1
+- Strength: jasher 1
+- Serve: jasher 1
+- Call: jasher 1
+- Whoever: jasher 1
+- Chezron: jasher 1
+- Chamul: jasher 1
+- Jachleel: jasher 1
+- Jachzeel: jasher 1
+- Shilam: jasher 1
+- Chaggi: jasher 1
+- Jimnah: jasher 1
+- Jishvah: jasher 1
+- Jishvi: jasher 1
+- Cheber: jasher 1
+- Ashtorash: jasher 1
+- Conjure: jasher 1
+- Cuptizia: jasher 1
+- African: jasher 1
+- Try: jasher 1
+- Smite: jasher 1
+- Mesrekah: jasher 1
+- Shephrah: jasher 1
+- Nabna: jasher 1
+- Interpret: jasher 1
+- Gerarite: jasher 1
+- Pichol: jasher 1
+- Chabar: jasher 1
+- Zanuch: jasher 1
+- Abigdor: jasher 1
+- Nethanel: jasher 1
+- Alparanith: jasher 1
+- Remember: jasher 1
+- Throw: jasher 1
+- Janiah: jasher 1
+- Uzi: jasher 1
+- Morion: jasher 1
+- Acuzi: jasher 1
+- Gedudah: jasher 1
+- Abilot: jasher 1
+- Complete: jasher 1
+- Has: jasher 1
+- Jabbuk: jasher 1
+- Gods: jasher 1
+- Sulanuth: jasher 1
+- Chasel: jasher 1
+- Salom: jasher 1
+- Chargol: jasher 1
+- Chagole: jasher 1
+- Celebrate: jasher 1
+- Although: jasher 1
+- Ethom: jasher 1
+- Ephrathite: jasher 1
+- Chamoth: jasher 1
+- Provoke: jasher 1
+- Fight: jasher 1
+- Abimnas: jasher 1
+- Kemosh: jasher 1
+- Maserath: jasher 1
+- Ije: jasher 1
+- Naaron: jasher 1
+- Herman: jasher 1
+- Curse: jasher 1
+- Cosbi: jasher 1
+- Shout: jasher 1
+- Urim: jasher 1
+- Melosh: jasher 1
+- Deber: jasher 1
+- Horon: jasher 1
+- Through: jasher 1
+- Appoint: jasher 1
+- Azah: jasher 1
+- Jobat: jasher 1
+- Jephal: jasher 1
+- Britannia: jasher 1
+- Kernania: jasher 1
+- Romia: jasher 1
+- Mauda: jasher 1
+- Eshtael: jasher 1
+- Three: jasher 1
+- City: jasher 1
+- Man: 2-enoch 1
+- Northern: 2-enoch 1
+- Ioanit: 2-enoch 1
+- Aravat: 2-enoch 1
+- Woe: 2-enoch 1
+- Muzaloth: 2-enoch 1
+- Kuchavim: 2-enoch 1
+- Aravoth: 2-enoch 1
+- Become: 2-enoch 1
+- Kruno: 2-enoch 1
+- Aphrodit: 2-enoch 1
+- Aris: 2-enoch 1
+- Zoues: 2-enoch 1
+- Ermis: 2-enoch 1
+- Sotona: 2-enoch 1
+- Earth: 2-enoch 1
+- Samuil: 2-enoch 1
+- Raguil: 2-enoch 1
+- Mahaleleel: 2-enoch 1
+- Nay: 2-enoch 1
+- Mathosalam: 2-enoch 1
+- Riman: 2-enoch 1
+- Uchan: 2-enoch 1
+- Chermion: 2-enoch 1
+- Invisible: 2-enoch 1

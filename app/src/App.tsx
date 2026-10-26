@@ -108,7 +108,7 @@ import NotesPanel, { type PendingAnchor } from "./components/NotesPanel";
 import BookmarksIndex from "./components/BookmarksIndex";
 import MyStudy from "./components/MyStudy";
 import SearchModal from "./components/SearchModal";
-import AudioPlayer from "./components/AudioPlayer";
+import AudioPlayer, { VoicePickerModal } from "./components/AudioPlayer";
 import type { SleepSetting } from "./lib/sleep-timer";
 import { keepScreenAwake, allowScreenSleep } from "./lib/wakeLock";
 import { setRecordedVoicesAccess, audioBookKey } from "./lib/recordedAudio";
@@ -1277,6 +1277,14 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // continuous-play-through-witness-category contract; reuses §19
   // navigateNext for the cross-chapter transition).
   const [audioPlayerOpen, setAudioPlayerOpen] = useState<boolean>(false);
+  // S475 (Yoshi) — the first time play is pressed after the app opens, the
+  // voice picker comes up BEFORE anything plays, so a listener knows there is
+  // a choice. The verse to start from waits here until a voice is picked (or
+  // the picker is closed). Once per app open; chapter auto-advance and the
+  // skip buttons never ask.
+  const [voiceAskVerseId, setVoiceAskVerseId] = useState<number | null>(null);
+  const voiceAskedRef = useRef(false);
+  const [voiceAskStart, setVoiceAskStart] = useState<{ vid: number; voice: string | null } | null>(null);
   // S444 — true while the reader has paused narration, so the player shows
   // "Play" instead of "Pause". Cleared whenever a new run starts or the player closes.
   const [ttsPaused, setTtsPaused] = useState<boolean>(false);
@@ -1635,6 +1643,16 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   //   - prepareVerseForSpeech strips parentheticals + applies the §25
   //     substitution table so the engine speaks the restored names
   //     phonetically.
+  // S475 — start playback once the voice picked before the first play is in state.
+  useEffect(() => {
+    if (!voiceAskStart) return;
+    if (voiceAskStart.voice !== null && ttsPrefs.voiceName !== voiceAskStart.voice) return;
+    setVoiceAskStart(null);
+    queueChapterFromVerse(voiceAskStart.vid);
+    // queueChapterFromVerse is a stable closure over current state (see autoAdvance effect).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [voiceAskStart, ttsPrefs]);
+
   function queueChapterFromVerse(startVerseId: number) {
     if (!chapterDetail) return;
     const verses = chapterDetail.verses;
@@ -1666,6 +1684,57 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
         ? englishVoices.find((v) => v.name === ttsPrefs.voiceName)
         : null) ?? pickBestVoice(englishVoices);
     const voiceName = picked?.name ?? null;
+
+    // S475 — listen BEFORE queueing: a chapter that starts at once from the
+    // prefetched recording reported its first verses before anyone was
+    // listening, so the highlight did not carry across the chapter break.
+    // The web engine doesn't surface per-utterance onstart at the
+    // engine-interface level (we'd need to attach to each utterance
+    // individually) — for V1 the visual cursor is driven from onEnd
+    // by advancing to the NEXT verse in the chapter list. When the
+    // last verse's onEnd fires, fire navigateNext to advance chapters.
+    const unsubEnd = engine.onEnd((e) => {
+      if (!chapterDetail || e.verseId === undefined) return;
+      const idx = chapterDetail.verses.findIndex((v) => v.id === e.verseId);
+      if (idx === -1) return;
+      if (idx + 1 < chapterDetail.verses.length) {
+        // Advance visual cursor to the next queued verse.
+        setPlayingVerseId(chapterDetail.verses[idx + 1].id);
+      } else if (sleepRef.current === "chapter") {
+        // S451 — sleep timer set to end of chapter: stop here, show Play.
+        engine.stop();
+        setTtsPaused(true);
+        setTtsNotice("Sleep timer: stopped at the end of the chapter.");
+        setSleep("off");
+        sleepRef.current = "off";
+      } else {
+        // Last verse of chapter just finished — auto-advance through
+        // the witness category per §25 + §19. navigateNext returns
+        // early at the category edge so playback stops cleanly there.
+        setAutoAdvanceAfterLoad(true);
+        void navigateNext();
+      }
+    });
+
+    const unsubErr = engine.onError((err) => {
+      // S157 V1 — observational; S446 — also show the message in the
+      // player bar so a missing recording is no longer silent.
+      // eslint-disable-next-line no-console
+      console.warn("[TTS] error", err);
+      setTtsNotice(err.message || null);
+      // S451 — the free taste ended: show Play, keep the cursor where it stopped.
+      if (err.stopped) setTtsPaused(true);
+    });
+
+    // S468 — the cursor follows the START of each verse where the engine
+    // reports it (end events alone were dropped by some engines, so the
+    // highlight stuck or vanished).
+    const unsubStart =
+      engine.onStart?.((e) => {
+        if (e.verseId !== undefined) setPlayingVerseId(e.verseId);
+      }) ?? (() => {});
+
+    ttsUnsubsRef.current = [unsubEnd, unsubErr, unsubStart];
 
     // Queue every verse from startIdx to end of chapter. The web
     // SpeechSynthesis API auto-queues utterances; onstart fires when
@@ -1715,53 +1784,6 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       }
     }
 
-    // The web engine doesn't surface per-utterance onstart at the
-    // engine-interface level (we'd need to attach to each utterance
-    // individually) — for V1 the visual cursor is driven from onEnd
-    // by advancing to the NEXT verse in the chapter list. When the
-    // last verse's onEnd fires, fire navigateNext to advance chapters.
-    const unsubEnd = engine.onEnd((e) => {
-      if (!chapterDetail || e.verseId === undefined) return;
-      const idx = chapterDetail.verses.findIndex((v) => v.id === e.verseId);
-      if (idx === -1) return;
-      if (idx + 1 < chapterDetail.verses.length) {
-        // Advance visual cursor to the next queued verse.
-        setPlayingVerseId(chapterDetail.verses[idx + 1].id);
-      } else if (sleepRef.current === "chapter") {
-        // S451 — sleep timer set to end of chapter: stop here, show Play.
-        engine.stop();
-        setTtsPaused(true);
-        setTtsNotice("Sleep timer: stopped at the end of the chapter.");
-        setSleep("off");
-        sleepRef.current = "off";
-      } else {
-        // Last verse of chapter just finished — auto-advance through
-        // the witness category per §25 + §19. navigateNext returns
-        // early at the category edge so playback stops cleanly there.
-        setAutoAdvanceAfterLoad(true);
-        void navigateNext();
-      }
-    });
-
-    const unsubErr = engine.onError((err) => {
-      // S157 V1 — observational; S446 — also show the message in the
-      // player bar so a missing recording is no longer silent.
-      // eslint-disable-next-line no-console
-      console.warn("[TTS] error", err);
-      setTtsNotice(err.message || null);
-      // S451 — the free taste ended: show Play, keep the cursor where it stopped.
-      if (err.stopped) setTtsPaused(true);
-    });
-
-    // S468 — the cursor follows the START of each verse where the engine
-    // reports it (end events alone were dropped by some engines, so the
-    // highlight stuck or vanished).
-    const unsubStart =
-      engine.onStart?.((e) => {
-        if (e.verseId !== undefined) setPlayingVerseId(e.verseId);
-      }) ?? (() => {});
-
-    ttsUnsubsRef.current = [unsubEnd, unsubErr, unsubStart];
 
     setPlayingVerseId(verses[startIdx].id);
     setTtsPaused(false);
@@ -1779,11 +1801,38 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       (vv) => vv.verse_number === currentVerse,
     );
     if (!v) return;
-    queueChapterFromVerse(v.id);
+    startPlaybackAsking(v.id);
   }
 
   function startPlaybackFromVerseId(verseId: number) {
+    startPlaybackAsking(verseId);
+  }
+
+  // S475 — user-initiated play (top ▶ and "Play from here") goes through here.
+  function startPlaybackAsking(verseId: number) {
+    if (!voiceAskedRef.current) {
+      setVoiceAskVerseId(verseId);
+      return;
+    }
     queueChapterFromVerse(verseId);
+  }
+
+  function handleVoiceAskPick(voiceName: string) {
+    voiceAskedRef.current = true;
+    const vid = voiceAskVerseId;
+    setVoiceAskVerseId(null);
+    handlePrefsChange({ ...ttsPrefs, voiceName });
+    // queueChapterFromVerse reads ttsPrefs from state, so the start waits
+    // (in the effect below) until the picked voice has landed in state.
+    if (vid !== null) setVoiceAskStart({ vid, voice: voiceName });
+  }
+
+  function handleVoiceAskClose() {
+    // Closed without picking: keep the current voice and play anyway.
+    voiceAskedRef.current = true;
+    const vid = voiceAskVerseId;
+    setVoiceAskVerseId(null);
+    if (vid !== null) setVoiceAskStart({ vid, voice: null });
   }
 
   function handlePlayPause() {
@@ -5559,6 +5608,20 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
         chapter-boundary auto-advance per the §25 continuous-play
         contract. Free at all tiers per §9 + S141 launch-scope revision.
       */}
+      {/* S475 — voice picker before the first play of this app open. */}
+      {voiceAskVerseId !== null && (
+        <VoicePickerModal
+          voices={voices}
+          currentVoiceName={ttsPrefs.voiceName}
+          onPick={handleVoiceAskPick}
+          onPreview={handlePreviewVoice}
+          onClose={handleVoiceAskClose}
+          naturalVoicesLocked={!hwEntitled}
+          sleep={sleep}
+          onSleepChange={handleSleepChange}
+        />
+      )}
+
       {audioPlayerOpen && chapterDetail && (
         <AudioPlayer
           playing={playingVerseId !== null && !ttsPaused}

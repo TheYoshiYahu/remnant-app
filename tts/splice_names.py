@@ -23,7 +23,7 @@ import json, os, re, shutil, subprocess, sys, time
 import numpy as np
 from kokoro_onnx import Kokoro
 import names_ipa
-from names_ipa import to_phonemes, use_voice
+from names_ipa import to_phonemes, use_voice, voice_style, voice_lang
 try:
     import imageio_ffmpeg; FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 except Exception:
@@ -41,10 +41,10 @@ TESTDIR = os.path.join(AUDIO, "_splice_test", VOICE)
 DONE = os.path.join(OUT, ".spliced-s473.txt")
 SKIP = os.path.join(OUT, ".splice-skipped-s473.txt")
 SR = 24000; SPEED = 0.95; GAP = 0.35
-lang = "en-gb" if VOICE.startswith("b") else "en-us"
+lang = voice_lang(VOICE)
 
 # Every name with a settled pronunciation, plus the speech fixes (LORD'S, GOD, Psalm 23:1...).
-keys = set(names_ipa._BASE_IPA) | set(names_ipa.IPA_BY_VOICE.get(VOICE, {})) | set(names_ipa.RESPELL)
+keys = set(names_ipa._BASE_IPA) | set(names_ipa.IPA) | set(names_ipa.RESPELL)
 keys -= {"live", "Live"}  # "live" (the verb) was already fixed before these recordings
 NAME_RX = re.compile(r"(?<![\w'-])(" + "|".join(map(re.escape, sorted(keys, key=len, reverse=True))) + r")(?=(['’]s)?\b)")
 FIX_RX = [re.compile(a) for a, _ in names_ipa.SPEECH_FIXES]
@@ -53,8 +53,9 @@ def carries_name(t):
     return bool(NAME_RX.search(t)) or any(r.search(t) for r in FIX_RX)
 
 k = Kokoro(os.path.join(HERE, "kokoro-v1.0.onnx"), os.path.join(HERE, "voices-v1.0.bin"))
+STYLE = voice_style(k, VOICE)
 def tts(t):
-    s, _ = k.create(to_phonemes(k, t, lang), voice=VOICE, speed=SPEED, lang=lang, is_phonemes=True)
+    s, _ = k.create(to_phonemes(k, t, lang), voice=STYLE, speed=SPEED, lang=lang, is_phonemes=True)
     return s.astype(np.float32)
 
 def decode(mp3):

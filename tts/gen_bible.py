@@ -1,6 +1,6 @@
 import json, os, sys, time, subprocess, numpy as np
 from kokoro_onnx import Kokoro
-from names_ipa import to_phonemes, use_voice
+from names_ipa import to_phonemes, use_voice, voice_style, voice_lang
 try:
     import imageio_ffmpeg; FFMPEG=imageio_ffmpeg.get_ffmpeg_exe()
 except Exception:
@@ -10,7 +10,7 @@ VOICE=sys.argv[1]; ORDER=sys.argv[2] if len(sys.argv)>2 else "priority"
 use_voice(VOICE)
 OUT=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","audio",VOICE)
 k=Kokoro(os.path.join(HERE,"kokoro-v1.0.onnx"),os.path.join(HERE,"voices-v1.0.bin"))
-lang="en-gb" if VOICE.startswith("b") else "en-us"
+lang=voice_lang(VOICE); STYLE=voice_style(k,VOICE)
 SR=24000; SPEED=0.95
 chs=json.load(open(sys.argv[3] if len(sys.argv)>3 else os.path.join(HERE,"chapters_all.json")))
 pri=["psalms","enoch/1-enoch","jubilees/jubilees","jasher/jasher","john","matthew","mark","luke","genesis","proverbs","acts","romans","isaiah"]
@@ -18,7 +18,7 @@ if ORDER=="priority":
     chs=sorted(chs,key=lambda c:(pri.index(c["book"]) if c["book"] in pri else len(pri)))
 def tts(t):
     ph=to_phonemes(k,t,lang)
-    s,_=k.create(ph,voice=VOICE,speed=SPEED,lang=lang,is_phonemes=True); return s.astype(np.float32)
+    s,_=k.create(ph,voice=STYLE,speed=SPEED,lang=lang,is_phonemes=True); return s.astype(np.float32)
 def pause(sec): return np.zeros(int(SR*sec),dtype=np.float32)
 done=0;t0=time.time();aud=0
 for c in chs:

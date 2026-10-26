@@ -27,7 +27,8 @@ git apply --cached people-places/s472_app_tsx_only.patch
 
 git commit -m "S472: People & places pages + family-line trees (Study Notes), verified against our own text
 
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01SqeojqDHzGyFUiJvmRjNxm"
 
 echo
 echo "Committed. Now push it yourself:   git push"

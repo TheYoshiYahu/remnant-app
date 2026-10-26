@@ -243,3 +243,116 @@ Measure speed on one chapter before promising a full-library run (Chatterbox is 
 Yoshi (00:45): Liam+Echo blends liam30-echo70 and liam50-echo50 are "pretty good" — the front-runners. The blend is
 style = w*am_liam + (1-w)*am_echo (kokoro get_voice_style), am_echo's IPA overrides, lang en-us. record_bible.sh /
 gen_bible.py take a voice name only — a blend needs a small change (new voice id, e.g. "liam_echo", mapped to the mix).
+S474 (2026-10-26) — VOICES.
+- S473 push confirmed at session open (origin/main = b356d31).
+- Blends now record: tts/names_ipa.py has BLENDS (liam30_echo70, liam40_echo60, liam50_echo50 — style mix of
+  am_liam + am_echo, Echo's settled names, en-us). gen_bible.py and splice_names.py take a blend id like any voice:
+  bash tts/record_bible.sh liam30_echo70. Tested on Psalm 117. Samples of all three sent (Psalm 1, Ps 23:1, Deut 6:4,
+  John 3:3, names roll) — tts/blend_sample.py remakes them. Yoshi's pick: still open.
+- Olivia splice: --test on Psalm 1 sent (vv. 2 and 6 re-spoken); Yoshi started record_splice.sh af_heart (01:40),
+  stopping the Sky recording to do it — restart Sky after with bash tts/record_bible.sh af_sky (resumable).
+- Noticed: chapters_all.json keeps the English bracket after restored names in 1,713 verses, so the recordings say
+  it aloud ("Yahuah Eloheinu, the LORD our God, is one Yahuah"). Yoshi to decide whether that stays.
+- His own voice: Chatterbox clone built in the cloud from voice-clone/yoshi-normal-take1.m4a (first 13 s as the
+  reference). Names respelled for it (it can't take IPA): Ee-ah-oo-ah, Ee-ah-oo-sha, Yah-shar-el, El-oh-heem...
+  First cut saved: voice-clone/yoshi-clone-psalm1.mp3. Speed: 1 min 48 s of audio took ~20 min on 2 cloud CPUs —
+  far too slow for the whole library on CPU; a full run would need a GPU. Allowlist now has huggingface.co, *.hf.co,
+  download.pytorch.org (Yoshi added 01:39).
+- Yoshi on the clone (02:07): "sounds nothing like me" (not bad, but not him); ordinary words decent; sacred and
+  Hebrew names butchered. Chatterbox reads spelled-out text only, so the names can't be set the way Kokoro's are.
+  Cut B (other reference stretch) stopped. Whether to keep trying his own voice: open, his call.
+- Second route tried (02:10): Kokoro reads (blend liam30_echo70, names as settled), then Chatterbox's voice
+  converter (chatterbox.vc) turns that voice into Yoshi's (reference = first 13 s of his take). Sample:
+  voice-clone/yoshi-voice-from-blend.mp3. Speed: 74 s of audio in ~6 min on 2 cloud CPUs. Waiting on his ear.
+- Yoshi (02:16): the voice-converter route is "much better." He noticed it raised his pitch, so he recorded
+  Desktop/"a deeper version.m4a" (19 s) → voice-clone/yoshi-deeper-from-blend.mp3. KEEP the normal take too —
+  "we may use it as one of my voices." Fun clips (Desktop: just for fun / even funnier / morgan rediculous claude)
+  converted too → voice-clone/*-claude-voice.mp3. Clips that go in are untouched on his Desktop.
+- Note for scripting: the converter keeps the SOURCE reading's rhythm and pitch shape (Kokoro's); the clip gives
+  only the voice. Singing into the clip won't make it sing. To sing scripture, sing the source and convert that.
+- To make each sample: cloud venv with chatterbox-tts (torch 2.6 CPU, setuptools<81 for perth), vc.py
+  <source.wav> <ref.wav> <out.wav>. Load-once multi-ref runs died after the first file — run one at a time.
+- Yoshi (11:16) kept three samples: voice-clone/yoshi-clone-psalm1.mp3, morgan-ridiculous-claude-voice.mp3,
+  yoshi-deeper-from-blend.mp3. Deleted the other samples. All his recordings (.m4a) kept.
+S475 (2026-10-26) — VOICES.
+- Olivia splice (record_splice.sh af_heart) still running at 11:26: 1,311 of ~2,064 chapters done (in Jubilees),
+  ~200 chapters/hour, so about 3.5–4 hours left. After "All done": Yoshi runs node _s444_upload_audio.mjs, then
+  restarts Sky with bash tts/record_bible.sh af_sky.
+- Yoshi's pick for the male voice: liam50_echo50 (50/50 Liam+Echo). Next is tuning the names by ear on that
+  blend, then recording it (bash tts/record_bible.sh liam50_echo50). Don't start it while the splice is running.
+- Yoshi's own voice: BOTH takes, as two voices (the normal take and the deeper take). Still open: the speed of a
+  full run. The converter took ~6 min for 74 s on 2 CPUs, and two voices doubles the work, so a GPU is needed.
+- EXTRA-BOOK PEOPLE, pass 1 (built, NOT in the app or DB yet): _s475_extra_people_build.py →
+  people-places/s475_extra_people.json + S475_EXTRA_PEOPLE_REPORT.md. 1 Enoch, 2 Enoch, Jubilees, Jasher.
+  6,347 verse occurrences linked to 283 canon people; 1,163 held (100 names) with reasons; 791 raw extra-only words.
+  Rule: a name links only when exactly one person by that name stands in the canon era the book covers
+  (Enoch books: Genesis 1–11; Jubilees: Genesis–Exodus; Jasher: Genesis–Judges 2). Shared names settle by family
+  names in the verse → chapter → two chapters either side → (Enoch books only) the book itself, by count.
+  Person/place names (Shechem, Hebron, Adam...) link only when the verse settles it, or when the name is mostly a
+  person in the canon and the verse has no place wording. 1 Enoch's title "that/the Son of Adam" (46–48) is
+  never linked to Adam the man (Red Line 12). Spot-check of 12 links: all right.
+  Held, correctly: Pharaoh (several kings), Canaan/Moab/Seir/Cush/Midian (lands and peoples), Eliezer in Jasher
+  (Abraham's servant has no family on file to settle him), 7 Jubilees "Enoch" verses (44:11 is Reuben's son).
+  Per-verse fix: Jasher 5:1 "Enoch the son of Seth … 905 years" → Enosh. FLAG for Yoshi: check whether Jasher 5:1
+  in his edition should read Enosh (Gen 5:11 gives Enosh 905 years); not changed in the text.
+- Open question for Yoshi: angels (Michael, Gabriel, Uriel, Raphael) — Michael is held because the canon only has
+  him in Daniel/Jude/Revelation, outside the era. Angels likely need their own rule (not era-bound).
+NEXT (S476): sort the 791 extra-only words into real people / places / ordinary words (Jasher's kings and
+  generals — Angeas, Rikayon, Zelicah, Kikianus, Latinus, Turnus, Azdrubal, Niblos; watchers and angels), then
+  the app/DB step for the links, then blurb batches, then the passage guide. Olivia splice upload + Sky restart
+  if not done; tune names on liam50_echo50; GPU plan for Yoshi's two voices.
+- Yoshi (11:56): FREE ONLY for his own voice — no money for paid/rented services (he stressed "free" from the start).
+  He'll record ~30 min if it sounds more like him. Route: train a fast reader on his voice on a free GPU
+  (Kaggle/Colab), then record on his Mac. Chatterbox full-library conversion is dropped as too heavy.
+- REVIEW of S471–S475 (Opus sessions) against the files, S475 on Fable: commits and deploys match the notes (S472
+  people & places, S473 tribes/nations + Michael removed, three S473 commits all pushed); the 35 changed verses in
+  tts/chapters_all.json are the approved S456 canon fix (Ps 119 letters, 14 epistle subscriptions); S474's blend
+  code is sound (uncommitted with the S470 offline work). ONE REAL BUG FOUND: the "bracket" note was a strip-list
+  gap, not a decision — app/src/lib/stripParentheticals.ts lacked "(the Lord)", possessives "(Lord's)" "(God's)",
+  "(most high God)", "(Lord Jesus Christ)" etc., so 835 verses (722 in Jasher) were SPOKEN with the English bracket.
+  Fixed: list extended (typecheck clean; the reader's hide-brackets toggle gains the same forms), chapters_all.json
+  spoken text regenerated. The running Olivia splice loaded the old text (77 Jasher chapters already done), so after
+  "All done" Yoshi runs: bash tts/redo_bracket_chapters.sh af_heart (drops the 270 affected chapters from the
+  done-list and splices them again), then upload. Sky and George need the same redo later. Still uncommitted.
+- S475 (Fable) BUILT, uncommitted: voice picker BEFORE the first play of each app open (Yoshi's idea) — App.tsx
+  startPlaybackAsking / handleVoiceAskPick / voiceAskStart effect; VoicePickerModal exported from AudioPlayer.tsx.
+  Top ▶ and "Play from here" ask once per app open; skips and chapter auto-advance never ask. Typecheck clean.
+- BUG (Yoshi, 2026-10-26): the spoken-verse highlight does not carry into the next chapter on auto-advance; the
+  audio keeps reading. Not found by reading; needs a live test. Look first at (1) queueChapterFromVerse: speak()
+  is called BEFORE the onStart/onEnd handlers are subscribed, so a run that starts synchronously is missed;
+  (2) the recorded engine's prefetched next-chapter run and which handlers are live when it starts.
+- IDEA (Yoshi): a modern version in the app. NIV/ESV/NLT need publisher licenses (not free). The Berean Standard
+  Bible (public domain 2023) and World English Bible (public domain) can take the restored names through the
+  existing pipeline. Claude's verdict: restore the Berean rather than hand-modernize the KJV; needs the S455-style
+  audit of translation choices against the settled principles first, and audio later. Not decided by Yoshi yet.
+- APPROVED (Yoshi, 2026-10-26 14:28): BUILD the Restored-Name Berean as a second canon edition. Berean Standard
+  Bible is public domain (berean.bible/licensing.htm, April 30 2023; derivatives for commercial use allowed).
+  Source: ebible.org engbsb. Yoshi read Ps 23, Matt 5:17–19, Gal 3 side by side and approved.
+  Order of work: (1) marks saved by reference (book/chapter/verse) added BESIDE verse_id — existing rows untouched,
+  run on a DB copy first, counts before/after; whole-verse highlights, bookmarks, notes, reading place cross over;
+  word/phrase highlights carried by matching the words in the other edition, else whole verse + a per-verse note
+  "carried over from the other edition — may need adjusting", plus a one-time message on first edition switch.
+  (2) Edition picker: "Restored King James" / "Restored Berean"; canon books open in the chosen edition.
+  (3) Restore the names on the Berean with the existing pipeline; then the S455-style audit of translation choices
+  against the settled principles. Flags already seen: Matt 5:17 "abolish" (KJV "destroy"); Gal 3:10 "rely on works
+  of the law" ("rely" is not in the Greek); Gal 3:23 "held in custody / locked up". Keep "Gentiles" where it stands.
+  (4) Audio: Berean ships text-first. Until its recordings exist, pressing play in the Berean shows:
+  "Voices are still being recorded for this version. Please switch to the Restored King James edition for the
+  natural voices." (Yoshi's wording, lightly tidied — check with him.) Recordings for the Berean come after.
+  (5) Strong's in the Berean (Yoshi): the Strong's numbers are tied to KJV words, so a Strong's press in the
+  Berean opens a sheet: "There is no Strong's version for this edition" + the same verse in the Restored King
+  James; the reader taps the KJV word they mean and gets the Hebrew/Greek as usual. Later possibility: the
+  Berean's own word-to-Greek/Hebrew tagging (Berean Interlinear, same public-domain family) could tag the Berean
+  directly and retire the sheet. Yoshi: "very useful" — so check the Berean Interlinear's license and format
+  FIRST when the edition is built; the KJV-word sheet is the fallback if it can't be used.
+- S475 BEREAN STEP 1 BUILT (Fable), uncommitted, NOT yet applied to the DB: DESIGN CHANGE — no partner-data
+  migration. verses.canonical_verse_id (NULL = self) points a Berean verse at the King James verse at the same
+  reference; canon_verse_id() helper. Writes: whole-verse highlights, bookmarks and notes store the canonical id;
+  word/phrase highlights stay on the verse whose words they mark. Chapter reads find marks through the canonical
+  verse and return THIS edition's verse_id; a word mark from the other edition comes back whole-verse with
+  carried=true (Highlight model). Chapter text now carries verse.canonical_id (set only in the Berean) for xrefs,
+  commentary, Strong's and people lookups. Files: data-schema/migrations/session475_canonical_verse.sql,
+  data-schema/schema.sql, api/main.py (highlights/bookmarks/notes/chapter), api/models.py.
+  Apply + dry run in one: python3 _session475_canonical_verse_apply.py (keeps nothing unless old and new
+  queries match row for row for every partner). Reading position already resolves by reference (unchanged).
+  NEXT (step 1b): app side — show "carried" marks with the note; use verse.canonical_id for lookups.

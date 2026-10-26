@@ -83,3 +83,17 @@ Read the S466 notes at the bottom of S465_SESSION_OPEN_PROMPT.md first (what's d
   and re-added as CNAME (rsend → rsend.forge.rmta.net, send → send.forge.rmta.net). Waiting for Verified.
 - Win-back email now lists up to 6 features added after each reader's trial ended (from newFeatures.ts).
 - RESEND VERIFIED (23:07). Next: run push 467b, Render Shell test email to info@, then python -m jobs.winback (real send).
+
+## S467 CLOSE (2026-10-24, 23:11)
+DONE: Resend verified (DKIM + rsend/send CNAMEs fixed in Wix). Opt-out page built. Win-back built
+(Companion only; coupons ROP_WINBACK_MONTHLY_25_6MO + ROP_WINBACK_ANNUAL_35_YEAR1 live in Stripe;
+24h reopen on tap; coupon valid 14 days). Emails backfilled from WordPress (70) after WP Engine let
+Render's IPs through. WIN-BACK SENT: 29 sent, 0 failed (Oct 24, 23:11).
+Activity log + report built. Sign-in plugin 1.1.4 built (one-year sign-ins).
+STILL OPEN:
+- Upload rop-sso-bridge.zip (1.1.4) in WordPress if not done; run _session467b push if not done.
+- Trial-reminder path test (DEPLOY_TEST_CHECKLIST_trial_email.md) — not yet confirmed.
+- Optional second nudge: on or after Oct 31 (7+ days, coupon still valid until Nov 7):
+  python -m jobs.winback --nudge --dry-run, then without --dry-run.
+- Step 3 MATCH (trial email features vs store listings / pricing page).
+- Next: S468 (Cheryl's reader fixes, reading plan first). Prayer Wall after.

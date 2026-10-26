@@ -207,6 +207,9 @@ CREATE TABLE verses (
     id              BIGSERIAL PRIMARY KEY,
     chapter_id      INT NOT NULL REFERENCES chapters(id) ON DELETE CASCADE,
     verse_number    INT NOT NULL,
+    -- S475: another canon edition's verse points at the King James verse at the same reference;
+    -- NULL = this verse is its own canonical verse. See migrations/session475_canonical_verse.sql.
+    canonical_verse_id BIGINT NULL REFERENCES verses(id) ON DELETE SET NULL,
     text            TEXT NOT NULL,
     UNIQUE (chapter_id, verse_number)
 );

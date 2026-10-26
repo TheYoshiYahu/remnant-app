@@ -121,6 +121,10 @@ class Verse(BaseModel):
     id: int
     verse_number: int
     text: str
+    # S475 — set only in a second canon edition (the Restored Berean): the
+    # King James verse at the same reference, which cross-references,
+    # commentary, Strong's and people pages are keyed to. Absent = this verse.
+    canonical_id: Optional[int] = None
 
 
 class ChapterDetail(BaseModel):
@@ -480,6 +484,9 @@ class Highlight(BaseModel):
     # client knows which word spans to paint.
     word_start: Optional[int] = None
     word_end: Optional[int] = None
+    # S475 — true when this is a word/phrase mark made in the other canon
+    # edition, shown here as a whole-verse mark; the app says it may need adjusting.
+    carried: bool = False
     created_at: datetime
 
 

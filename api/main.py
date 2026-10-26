@@ -699,7 +699,7 @@ async def get_chapter(
                 detail=f"Chapter {chapter_number} not found in '{book_slug}'.",
             )
         verse_rows = await conn.fetch(
-            "SELECT id, verse_number, text "
+            "SELECT id, verse_number, text, canonical_verse_id "
             "  FROM verses "
             " WHERE chapter_id = $1 "
             " ORDER BY verse_number ASC",
@@ -707,7 +707,8 @@ async def get_chapter(
         )
 
     verses = [
-        Verse(id=r["id"], verse_number=r["verse_number"], text=r["text"])
+        Verse(id=r["id"], verse_number=r["verse_number"], text=r["text"],
+              canonical_id=r["canonical_verse_id"])
         for r in verse_rows
     ]
     # S452 — a free reader gets the first paragraph of a locked book, not 404.
@@ -1630,13 +1631,24 @@ async def list_chapter_highlights(
                 ),
             )
 
+        # S475 — a mark is found through the canonical (King James) verse, so a
+        # highlight made in either canon edition shows in both. The verse_id
+        # returned is THIS chapter's verse. A word/phrase mark belongs to the
+        # wording it was made on: in the other edition it shows as a whole-verse
+        # mark with carried=true (the app says it may need adjusting).
         rows = await conn.fetch(
-            "SELECT vh.id::text AS id, vh.verse_id, vh.color, vh.style, "
-            "       vh.word_start, vh.word_end, vh.created_at "
+            "SELECT vh.id::text AS id, v.id AS verse_id, vh.color, vh.style, "
+            "       CASE WHEN vh.verse_id = v.id THEN vh.word_start END AS word_start, "
+            "       CASE WHEN vh.verse_id = v.id THEN vh.word_end END AS word_end, "
+            "       (vh.verse_id <> v.id AND vh.word_start IS NOT NULL) AS carried, "
+            "       vh.created_at "
             "  FROM verse_highlights vh "
-            "  JOIN verses v ON vh.verse_id = v.id "
+            "  JOIN verses vh_v ON vh_v.id = vh.verse_id "
+            "  JOIN verses v ON v.chapter_id = $2 "
+            "   AND (vh.verse_id = v.id "
+            "        OR (vh.word_start IS NULL AND vh.verse_id = COALESCE(v.canonical_verse_id, v.id)) "
+            "        OR (vh.word_start IS NOT NULL AND COALESCE(vh_v.canonical_verse_id, vh_v.id) = COALESCE(v.canonical_verse_id, v.id))) "
             " WHERE vh.user_id = $1::uuid "
-            "   AND v.chapter_id = $2 "
             " ORDER BY vh.created_at ASC, vh.id ASC",
             user_uuid,
             chapter_row["id"],
@@ -1712,7 +1724,7 @@ async def create_or_replace_highlight(
         user_uuid = await upsert_user(conn, current_user)
 
         verse_row = await conn.fetchrow(
-            "SELECT id FROM verses WHERE id = $1",
+            "SELECT id, COALESCE(canonical_verse_id, id) AS canon_id FROM verses WHERE id = $1",
             body.verse_id,
         )
         if verse_row is None:
@@ -1720,6 +1732,10 @@ async def create_or_replace_highlight(
                 status_code=404,
                 detail=f"Verse id={body.verse_id} not found.",
             )
+        # S475 — a whole-verse mark is stored on the canonical (King James) verse
+        # so it shows in every canon edition; a word/phrase mark stays on the
+        # verse whose words it marks.
+        store_verse_id = body.verse_id if body.word_start is not None else verse_row["canon_id"]
 
         # S424 — for a sub-verse mark, both anchor positions must exist in
         # verse_words for THIS verse. A verse that hasn't been tokenized
@@ -1759,14 +1775,15 @@ async def create_or_replace_highlight(
             "VALUES ($1::uuid, $2, $3, $4, $5, $6) "
             "ON CONFLICT ON CONSTRAINT verse_highlights_user_verse_color_style_word_unique "
             "DO UPDATE SET color = EXCLUDED.color, style = EXCLUDED.style "
-            "RETURNING id::text, verse_id, color, style, "
+            "RETURNING id::text, $7::bigint AS verse_id, color, style, "
             "          word_start, word_end, created_at",
             user_uuid,
-            body.verse_id,
+            store_verse_id,
             body.color,
             body.style,
             body.word_start,
             body.word_end,
+            body.verse_id,
         )
 
     return Highlight(**dict(row))
@@ -2158,10 +2175,12 @@ async def list_chapter_bookmarks(
             )
 
         rows = await conn.fetch(
-            "SELECT bm.id::text AS id, bm.verse_id, bm.short_description, "
+            # S475 — found through the canonical (King James) verse; verse_id
+            # returned is this chapter's verse.
+            "SELECT bm.id::text AS id, v.id AS verse_id, bm.short_description, "
             "       bm.tags, bm.color_tint, bm.created_at, bm.updated_at "
             "  FROM bookmarks bm "
-            "  JOIN verses    v  ON bm.verse_id = v.id "
+            "  JOIN verses    v  ON bm.verse_id = COALESCE(v.canonical_verse_id, v.id) "
             " WHERE bm.user_id = $1::uuid "
             "   AND v.chapter_id = $2 "
             " ORDER BY bm.created_at ASC, bm.id ASC",
@@ -2200,7 +2219,7 @@ async def create_or_replace_bookmark(
         # Resolve the verse_id so we 404 cleanly on stale / drift
         # references rather than letting Postgres raise an FK violation.
         verse_row = await conn.fetchrow(
-            "SELECT id FROM verses WHERE id = $1",
+            "SELECT id, COALESCE(canonical_verse_id, id) AS canon_id FROM verses WHERE id = $1",
             body.verse_id,
         )
         if verse_row is None:
@@ -2208,6 +2227,7 @@ async def create_or_replace_bookmark(
                 status_code=404,
                 detail=f"Verse id={body.verse_id} not found.",
             )
+        store_verse_id = verse_row["canon_id"]  # S475 — stored on the canonical verse
 
         # Create-or-edit on (user_id, verse_id). EXCLUDED.* references
         # the values from the attempted INSERT; the DO UPDATE applies
@@ -2225,13 +2245,14 @@ async def create_or_replace_bookmark(
             "    tags              = EXCLUDED.tags, "
             "    color_tint        = EXCLUDED.color_tint, "
             "    updated_at        = now() "
-            "RETURNING id::text, verse_id, short_description, tags, "
+            "RETURNING id::text, $6::bigint AS verse_id, short_description, tags, "
             "          color_tint, created_at, updated_at",
             user_uuid,
-            body.verse_id,
+            store_verse_id,
             body.short_description,
             body.tags,
             body.color_tint,
+            body.verse_id,
         )
 
     return Bookmark(**dict(row))
@@ -2450,9 +2471,10 @@ async def append_note(
                     ),
                 )
 
+        note_verse_id = body.verse_id
         if body.verse_id is not None:
             verse_row = await conn.fetchrow(
-                "SELECT id FROM verses WHERE id = $1",
+                "SELECT id, COALESCE(canonical_verse_id, id) AS canon_id FROM verses WHERE id = $1",
                 body.verse_id,
             )
             if verse_row is None:
@@ -2460,6 +2482,7 @@ async def append_note(
                     status_code=404,
                     detail=f"Verse id={body.verse_id} not found.",
                 )
+            note_verse_id = verse_row["canon_id"]  # S475 — stored on the canonical verse
 
         # INSERT + immediately resolve verse_ref via a single CTE so
         # the response carries the same shape GET /v1/notes returns.
@@ -2484,7 +2507,7 @@ async def append_note(
             "  LEFT JOIN books    b ON c.book_id = b.id "
             "  LEFT JOIN editions e ON b.edition_id = e.id AND e.slug = 'canon'",
             user_uuid,
-            body.verse_id,
+            note_verse_id,
             body.body,
             body.tags,
         )

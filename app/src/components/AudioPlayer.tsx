@@ -271,7 +271,7 @@ interface VoicePickerModalProps {
   onSleepChange?: (s: SleepSetting) => void;
 }
 
-function VoicePickerModal({
+export function VoicePickerModal({
   voices,
   currentVoiceName,
   onPick,

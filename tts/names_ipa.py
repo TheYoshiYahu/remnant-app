@@ -31,10 +31,26 @@ IPA_BY_VOICE = {
  "af_sky": {"Elohav":"ˈɛlohɑv","Elohaychem":"ɛloˈheɪkɛm","Elohayka":"ɛloˈheɪkɑ",
             "El Elyon":"ɛl, ɛliˈoʊn","Tseva'ot":"tseɪvɑˈoʊt","Yahudi":"jɑː huː diː","Yahudim":"jɑː huː diːm","El Shaddai":"ɛl ʃəˈdaɪ","HaMashiach":"hɑ, mɑʃˈiɑk"},
 }
+# S474: blended voices — a new voice id made by mixing Kokoro style vectors.
+# "mix" is the recipe; "names" says whose settled name list the blend uses.
+BLENDS = {
+ "liam30_echo70": {"mix":[("am_liam",0.30),("am_echo",0.70)], "names":"am_echo"},
+ "liam40_echo60": {"mix":[("am_liam",0.40),("am_echo",0.60)], "names":"am_echo"},
+ "liam50_echo50": {"mix":[("am_liam",0.50),("am_echo",0.50)], "names":"am_echo"},
+}
 _BASE_IPA=dict(IPA)
 def use_voice(voice):
     # S470: reset to the shared list first so one voice's picks never leak into another.
-    IPA.clear(); IPA.update(_BASE_IPA); IPA.update(IPA_BY_VOICE.get(voice,{}))
+    names = BLENDS[voice]["names"] if voice in BLENDS else voice
+    IPA.clear(); IPA.update(_BASE_IPA); IPA.update(IPA_BY_VOICE.get(names,{}))
+    if voice in BLENDS: IPA.update(IPA_BY_VOICE.get(voice,{}))  # a blend can carry its own tuned names too
+def voice_style(k, voice):
+    """What to hand Kokoro as voice=: the plain name, or the mixed style for a blend."""
+    if voice not in BLENDS: return voice
+    return sum(w*k.get_voice_style(v) for v,w in BLENDS[voice]["mix"])
+def voice_lang(voice):
+    base = BLENDS[voice]["mix"][0][0] if voice in BLENDS else voice
+    return "en-gb" if base.startswith("b") else "en-us"
 RESPELL = {
  "El Elyon":"El El-yohn","El Shaddai":"El Shah-dye","El Gibbor":"El Gib-bor","El Olam":"El Oh-lahm",
  "Elohayka":"El-oh-hy-kah","Elohaychem":"El-oh-hy-kem","Eloheinu":"El-oh-hay-noo",  # S470: Eloheinu + Elohai settled by ear (Echo + Sky); others on this line not yet
