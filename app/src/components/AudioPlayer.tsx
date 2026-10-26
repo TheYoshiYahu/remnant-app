@@ -284,8 +284,9 @@ function VoicePickerModal({
   const [showAll, setShowAll] = useState(false);
 
   const ranked = rankVoices(filterEnglishVoices(voices));
-  const top = ranked.slice(0, 5);
-  const rest = ranked.slice(5);
+  // S471 — only recorded voices are listed now, so show them all; no "More voices…".
+  const top = ranked;
+  const rest: typeof ranked = [];
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

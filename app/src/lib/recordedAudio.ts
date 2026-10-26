@@ -407,7 +407,11 @@ export function createRecordedEngine(fallback: TTSEngine): TTSEngine {
     isAvailable: () => !!audio || fallback.isAvailable(),
 
     getVoices(): TTSVoice[] {
-      return audio ? [...RECORDED_VOICES, ...fallback.getVoices()] : fallback.getVoices();
+      // S471 (Yoshi) — the picker lists ONLY the recorded voices. The phone's
+      // voices are no longer offered as options; they still read, unlisted,
+      // a chapter that has no recording yet (see the "Using the phone's voice"
+      // notice above). Devices with no audio element keep the old list.
+      return audio ? [...RECORDED_VOICES] : fallback.getVoices();
     },
 
     onVoicesChanged: (h) => fallback.onVoicesChanged(h),
