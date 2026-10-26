@@ -109,6 +109,7 @@ import BookmarksIndex from "./components/BookmarksIndex";
 import MyStudy from "./components/MyStudy";
 import SearchModal from "./components/SearchModal";
 import AudioPlayer, { VoicePickerModal } from "./components/AudioPlayer";
+import { type BookOrder, BOOK_ORDER_LABEL, isActs29, loadBookOrder, saveBookOrder, storyShelves } from "./lib/book-order";
 import type { SleepSetting } from "./lib/sleep-timer";
 import { keepScreenAwake, allowScreenSleep } from "./lib/wakeLock";
 import { setRecordedVoicesAccess, audioBookKey } from "./lib/recordedAudio";
@@ -759,6 +760,13 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // S204b — the partner-chosen verse treatment ("red pill options and
   // then they choose" — Yoshi). Default "text": the inverted
   // red-letter made literal. Persists per device.
+  // S475 (Yoshi) — book-picker order: canon, or our own story order.
+  const [bookOrder, setBookOrder] = useState<BookOrder>(() => loadBookOrder());
+  const toggleBookOrder = () => {
+    const next: BookOrder = bookOrder === "canon" ? "story" : "canon";
+    setBookOrder(next);
+    saveBookOrder(next);
+  };
   const [witnessStyle, setWitnessStyle] = useState<WitnessStyle>("text");
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -2677,10 +2685,13 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   const booksByCategory = useMemo(() => {
     const groups: Record<string, BookSummary[]> = {};
     for (const b of books) {
-      (groups[b.witness_category] ??= []).push(b);
+      // S475 (Yoshi): Acts 29 sits right after Acts, not at the end of the menu.
+      (groups[isActs29(b) ? "canon" : b.witness_category] ??= []).push(b);
     }
+    const actsOrder = books.find((b) => b.slug === "acts" && b.witness_category === "canon")?.canonical_order ?? 44;
+    const ord = (b: BookSummary) => (isActs29(b) ? actsOrder + 0.5 : b.canonical_order);
     for (const k of Object.keys(groups)) {
-      groups[k].sort((a, b) => a.canonical_order - b.canonical_order);
+      groups[k].sort((a, b) => ord(a) - ord(b));
     }
     return groups;
   }, [books]);
@@ -2748,6 +2759,24 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       );
 
     const nodes: ReactNode[] = [];
+    // S475 — the first row of the menu switches the order (choosing it never changes the book).
+    nodes.push(
+      <option key="order-toggle" value="__order__" className="book-menu-divider book-menu-divider-gold">
+        {`\u21C4  ${BOOK_ORDER_LABEL[bookOrder]} \u2014 switch to ${BOOK_ORDER_LABEL[bookOrder === "canon" ? "story" : "canon"]}`}
+      </option>
+    );
+    if (bookOrder === "story") {
+      const shelves = storyShelves(books);
+      shelves.forEach((shelf, i) => {
+        if (i > 0) nodes.push(divider(`div-shelf-${i}`, i % 2 ? "argaman" : "emerald"));
+        nodes.push(
+          <optgroup key={`shelf-${shelf.label}`} label={shelf.label}>
+            {shelf.books.map((b) => bookOption(b))}
+          </optgroup>
+        );
+      });
+      return nodes;
+    }
     let goldUsed = false;
     for (const cat of order) {
       const list = booksByCategory[cat] ?? [];
@@ -2790,7 +2819,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       );
     }
     return nodes;
-  }, [booksByCategory]);
+  }, [booksByCategory, books, bookOrder]);
 
   // show-all-gate-access: true when the picker is showing at least one locked
   // (paid-tier) book to this caller — drives the partner prompt under the menu.
@@ -3444,6 +3473,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
           <select
             value={selectedBookSlug}
             onChange={(e) => {
+              if (e.target.value === "__order__") {
+                toggleBookOrder();
+                return;
+              }
               setSelectedBookSlug(e.target.value);
               setSelectedChapter(1);
               // S116 — picker change resets verse to 1 so the save

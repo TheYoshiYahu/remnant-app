@@ -362,3 +362,7 @@ NEXT (S476): sort the 791 extra-only words into real people / places / ordinary 
   never both send; 90 sends/day budget, Resend free plan). Manual runs still work: python -m jobs.winback [--dry-run].
 - EDITION PICKER placement (Yoshi): "Restored King James / Restored Berean" must be reachable from the top bar
   menu, or at least in Settings — ideally both. Part of Berean step 2.
+- BOOK MENU (Yoshi 2026-10-26), built: (1) Acts 29 sits right after Acts in canon order. (2) First row of the
+  Book menu switches the order: "Canon order" ↔ "Story order" (our own SHELVES, learned from the Cepher.s shape but not its order: canon order kept inside each shelf; extras set on the
+  shelf they belong to — book-order.ts STORY_SHELVES; unplaced books land on a last "More" shelf). Saved in
+  localStorage rop_book_order_v1. The placement table is a DRAFT for Yoshi to adjust by name.
