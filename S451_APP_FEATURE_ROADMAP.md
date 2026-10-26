@@ -356,3 +356,9 @@ NEXT (S476): sort the 791 extra-only words into real people / places / ordinary 
   Apply + dry run in one: python3 _session475_canonical_verse_apply.py (keeps nothing unless old and new
   queries match row for row for every partner). Reading position already resolves by reference (unchanged).
   NEXT (step 1b): app side — show "carried" marks with the note; use verse.canonical_id for lookups.
+- WIN-BACK, AUTOMATIC (Yoshi 2026-10-26): first offer at 30 days after sign-up (was 90), the same offer again every
+  90 days while they still have no subscription, the 7-day nudge after each send. Runs by itself once a day inside
+  the API (lifespan task in api/main.py → jobs.winback.run_daily; job_runs table claims the day so two instances
+  never both send; 90 sends/day budget, Resend free plan). Manual runs still work: python -m jobs.winback [--dry-run].
+- EDITION PICKER placement (Yoshi): "Restored King James / Restored Berean" must be reachable from the top bar
+  menu, or at least in Settings — ideally both. Part of Berean step 2.

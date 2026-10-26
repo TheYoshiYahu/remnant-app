@@ -89,6 +89,8 @@ Run: uvicorn main:app --reload
 
 from __future__ import annotations
 
+import asyncio
+import logging
 import os
 import json
 import re
@@ -111,6 +113,8 @@ from config import settings
 from response_cache import AnonymousReadCache
 from db import close_pool, get_pool, open_pool, upsert_user
 from email_prefs import ensure_email_columns, router as email_prefs_router
+
+logger = logging.getLogger("api")
 from models import (
     BaselineEntry,
     BaselineSourceVerse,
@@ -225,10 +229,41 @@ async def lifespan(app: FastAPI):
     await open_pool()
     # S467: email opt-out + win-back columns (idempotent).
     await ensure_email_columns()
+    # S475 (Yoshi): the win-back offer runs by itself — first at 30 days, then every 90 days,
+    # with the 7-day nudge after each — once a day, from inside the API (no paid cron job).
+    daily = asyncio.create_task(_daily_jobs_loop())
     try:
         yield
     finally:
+        daily.cancel()
         await close_pool()
+
+
+async def _daily_jobs_loop() -> None:
+    from jobs.winback import run_daily as winback_daily
+    await asyncio.sleep(120)  # let the service settle first
+    while True:
+        try:
+            pool = get_pool()
+            async with pool.acquire() as conn:
+                due = await conn.fetchval(
+                    "SELECT last_run_at IS NULL OR last_run_at < now() - interval '23 hours' "
+                    "  FROM (SELECT (SELECT last_run_at FROM job_runs WHERE job = 'winback') AS last_run_at) t")
+                if due:
+                    # claim the day first, so two instances never both send
+                    claimed = await conn.fetchval(
+                        "INSERT INTO job_runs (job, last_run_at) VALUES ('winback', now()) "
+                        "ON CONFLICT (job) DO UPDATE SET last_run_at = now() "
+                        "  WHERE job_runs.last_run_at < now() - interval '23 hours' "
+                        "RETURNING job")
+                    due = claimed is not None
+            if due:
+                await winback_daily()
+        except asyncio.CancelledError:
+            raise
+        except Exception as exc:  # never let the loop die
+            logger.error("daily jobs loop: %r", exc)
+        await asyncio.sleep(3600)
 
 
 app = FastAPI(

@@ -36,6 +36,8 @@ EMAIL_COLUMNS_SQL = [
     "ALTER TABLE users ADD COLUMN IF NOT EXISTS winback_sent_at TIMESTAMPTZ",
     "ALTER TABLE users ADD COLUMN IF NOT EXISTS winback_nudge_sent_at TIMESTAMPTZ",
     "ALTER TABLE users ADD COLUMN IF NOT EXISTS winback_reopen_until TIMESTAMPTZ",
+    # S475: when each background job last ran (the win-back runs once a day inside the API).
+    "CREATE TABLE IF NOT EXISTS job_runs (job TEXT PRIMARY KEY, last_run_at TIMESTAMPTZ NOT NULL)",
 ]
 
 
