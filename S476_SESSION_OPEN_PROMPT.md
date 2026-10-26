@@ -1,22 +1,27 @@
 # S476 — open prompt
-CHECK THE MODEL PICKER FIRST: this session should run on Claude Fable 5.1, not Opus. S471–S475 ran on Opus by mistake (Yoshi switched to Fable partway through S475).
 
-Load my voice skill and mount my Desktop. Read the bottom of ~/Desktop/App/S451_APP_FEATURE_ROADMAP.md (S475 notes).
-Tiers already exist — look things up before asking.
+CHECK THE MODEL PICKER FIRST: Claude Fable 5.1, not Opus (S471–S475 ran on Opus by mistake).
 
-1. Olivia splice: confirm it finished, then that I ran bash tts/redo_bracket_chapters.sh af_heart (S475 bracket
-   fix: 270 chapters re-spliced), uploaded (node _s444_upload_audio.mjs) and restarted Sky
-   (bash tts/record_bible.sh af_sky). If not, remind me. Sky's and George's existing chapters need the same
-   bracket redo (their recordings said "(the Lord)" etc. aloud too) — plan it.
-2. Male voice is liam50_echo50 — tune names by ear, then record it (not while another recording runs).
-3. My own voice — FREE ONLY (Yoshi has no money for paid services; nothing rented). Plan: Yoshi records ~30 min of
-   clean reading; train a fast voice (Kokoro-like) on it once on a FREE GPU (Kaggle or Colab free tier — check
-   current limits), then it records on his Mac like Olivia. Both takes as two voices if the training allows.
-   Pick the trainable reader, write the reading script (cover the sacred names), give Yoshi plain steps — he runs the
-   notebook; Claude can't sign in. He has a Google account with Google One storage → use free Colab and
-   keep recordings + training checkpoints in his Google Drive so a cut-off session resumes. His Mac is an Intel MacBook Pro (x64), no Apple graphics chip.
-4. Extra-book people pass 2: sort the extra-only names in people-places/S475_EXTRA_PEOPLE_REPORT.md into people /
-   places / ordinary words; settle angels; then the app/DB step. Jasher 5:1 (Enoch or Enosh?) is flagged for me.
-5. NEW, APPROVED: Restored-Name Berean edition (see the S475 APPROVED block in the roadmap). Start with step (1),
-   marks saved by reference, on a DB copy. Don't start until the Olivia splice and upload are done.
-Then: blurb batches → passage guide.
+Load my voice skill and mount my Desktop. This session picks the SWEEP back up where S463d left it.
+Read, in this order:
+1. ~/Desktop/App/S463_ROADMAP_SWEEP_CARDS_CAUTION_BOOKS.md — phase 1 status table and the decision log.
+2. ~/Desktop/App/S463E_SESSION_OPEN_PROMPT.md — the S463e instructions (pseudepigrapha editions: 2 Enoch, Testaments
+   of the XII, Apocalypse of Abraham, Adam-Eve ×3, Ascension of Isaiah) and the MODEL RULE. S463e was never run;
+   S464–S475 went to other work. Run it now by the S463d chain. Confirm which Testaments XII parse is live first.
+3. The S463d entry at the end of ~/Desktop/App/S446_SESSION_HANDOFF.md (open questions still owed).
+Then, in order: S463f (Cepher additions + Sonnini) → Phase 2 (rebuild the cross-references and chapter-end cards
+against api/CHAPTER_END_CARD_CONTRACT.md) → the Caution layer spec → the KDP xref books.
+Every session closes by updating the status table in XREF_LIBRARY_COVERAGE_ROADMAP.md and a dated line in
+S446_SESSION_HANDOFF.md. My shell can't reach Postgres from Claude; give me the pastes and wait for the counts.
+git push is mine — say so before I step away.
+
+S475 CLOSED (2026-10-26, all pushed and deployed): Berean step 1 (canonical verse, migration applied), spoken-text
+bracket fix, voice picker before first play, highlight-across-chapters fix, win-back daily, Book menu shelves
+(story order default, Acts 29 after Acts). Details: bottom of S451_APP_FEATURE_ROADMAP.md.
+
+QUEUED after the sweep (not this session unless I say): Olivia splice — confirm "All done", last upload
+(node _s444_upload_audio.mjs), restart Sky (bash tts/record_bible.sh af_sky); Sky + George need the bracket redo.
+Male voice liam50_echo50: tune names, record. My own voice: FREE ONLY — train on ~30 min of my reading on Kaggle/
+Colab free GPU, Google Drive for checkpoints; Intel Mac, no Apple chip. Berean step 1b/2–5 (see roadmap APPROVED
+block; edition picker in top menu + Settings). Extra-book people pass 2 (sort 791 extra-only names; angels;
+Jasher 5:1 Enoch/Enosh flagged for me). Then blurb batches → passage guide.
