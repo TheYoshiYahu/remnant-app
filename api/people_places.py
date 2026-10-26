@@ -9,6 +9,7 @@ the live app text before it was loaded. No outside descriptions are served; the
 
     GET /v1/people/verse/{book_slug}/{chapter}/{verse}   who and where is named in this verse
     GET /v1/people/search?q=                             name search
+    GET /v1/people/browse                                S473: the tribes, Yashar'el as a people, the nations
     GET /v1/people/{slug}                                one page: names, verses, family, line, pin
 
 Tier: Study Notes and up (trial included). 403 carries the {tier_required, feature}
@@ -32,7 +33,7 @@ MAX_LINE = 120  # generations walked up the father line
 
 class PPEntry(BaseModel):
     slug: str
-    kind: str              # person / group / place
+    kind: str              # person / group / place / tribe (S473)
     type: Optional[str] = None
     name: str
     uncertain: bool = False
@@ -49,6 +50,7 @@ class PPRef(BaseModel):
     book_slug: str
     chapter: int
     verse: int
+    section: Optional[int] = None   # S473: index into PPPage.sections (tribe/nation pages)
 
 
 class PPPin(BaseModel):
@@ -74,6 +76,13 @@ class PPPage(BaseModel):
     line: List[PPEntry] = []   # father line, this person first, back as far as the text confirms
     pin: Optional[PPPin] = None
     nearby: List[PPNearby] = []  # other confirmed pins within ~60 km, for the small map
+    sections: List[str] = []     # S473: tribe/nation pages group their verses by the words the verse uses
+
+
+class PPBrowse(BaseModel):
+    people: List[PPEntry] = []
+    tribes: List[PPEntry] = []
+    nations: List[PPEntry] = []
 
 
 class PPList(BaseModel):
@@ -110,7 +119,8 @@ async def people_in_verse(
             "SELECT e.slug, e.kind, e.type, e.name, e.uncertain "
             "  FROM pp_refs r JOIN pp_entities e ON e.slug = r.slug "
             " WHERE r.book_slug = $1 AND r.chapter = $2 AND r.verse = $3 "
-            " ORDER BY (e.kind = 'place'), e.ref_count DESC, e.name",
+            " ORDER BY CASE e.kind WHEN 'person' THEN 0 WHEN 'tribe' THEN 1 WHEN 'group' THEN 2 ELSE 3 END, "
+            "          e.ref_count DESC, e.name",
             book_slug, chapter, verse,
         )
     response.headers["Cache-Control"] = "private, max-age=3600"
@@ -137,6 +147,24 @@ async def people_search(
     return PPList(entries=[_entry(r) for r in rows])
 
 
+@router.get("/v1/people/browse", response_model=PPBrowse)
+async def people_browse(
+    response: Response,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> PPBrowse:
+    pool = get_pool()
+    async with pool.acquire(timeout=10) as conn:
+        await _require_people_tier(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT slug, kind, type, name, uncertain, browse FROM pp_entities "
+            " WHERE browse IS NOT NULL ORDER BY browse_ord, name")
+    response.headers["Cache-Control"] = "private, max-age=3600"
+    out = PPBrowse()
+    for r in rows:
+        {"people": out.people, "tribe": out.tribes, "nation": out.nations}.get(r["browse"], out.nations).append(_entry(r))
+    return out
+
+
 @router.get("/v1/people/{slug}", response_model=PPPage)
 async def people_page(
     slug: str, response: Response,
@@ -147,17 +175,17 @@ async def people_page(
         await _require_people_tier(conn, current_user)
         e = await conn.fetchrow(
             "SELECT slug, kind, type, name, names, original, uncertain, blurb, "
-            "       maps_place_id, lat, lon FROM pp_entities WHERE slug = $1", slug)
+            "       maps_place_id, lat, lon, sections FROM pp_entities WHERE slug = $1", slug)
         if e is None:
             raise HTTPException(status_code=404, detail="Not found.")
         refs = await conn.fetch(
-            "SELECT book_slug, chapter, verse FROM pp_refs "
+            "SELECT book_slug, chapter, verse, section FROM pp_refs "
             " WHERE slug = $1 ORDER BY ord", slug)
         links = await conn.fetch(
             "SELECT l.rel, l.flags, l.proof, o.slug, o.kind, o.type, o.name, o.uncertain "
             "  FROM pp_links l JOIN pp_entities o ON o.slug = l.other "
             " WHERE l.slug = $1 ORDER BY CASE l.rel WHEN 'parent' THEN 0 WHEN 'spouse' THEN 1 "
-            "       WHEN 'sibling' THEN 2 ELSE 3 END, o.name", slug)
+            "       WHEN 'sibling' THEN 2 ELSE 3 END, o.browse_ord NULLS LAST, o.name", slug)
         # father line: follow the male parent (not a far ancestor) as far as confirmed
         line = [_entry(e)]
         seen = {slug}
@@ -189,9 +217,10 @@ async def people_page(
         names=list(e["names"] or []),
         original=e["original"],
         blurb=e["blurb"],
-        refs=[PPRef(book_slug=r["book_slug"], chapter=r["chapter"], verse=r["verse"]) for r in refs],
+        refs=[PPRef(book_slug=r["book_slug"], chapter=r["chapter"], verse=r["verse"], section=r["section"]) for r in refs],
         links=[PPLink(rel=l["rel"], flags=l["flags"], proof=l["proof"], other=_entry(l)) for l in links],
-        line=line if e["kind"] != "place" else [],
+        line=line if e["kind"] == "person" else [],
         pin=pin,
         nearby=[PPNearby(slug=n["slug"], name=n["name"], lat=n["lat"], lon=n["lon"]) for n in nearby],
+        sections=list(e["sections"] or []),
     )

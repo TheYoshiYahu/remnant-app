@@ -8,16 +8,25 @@
  * each one tap away. Every verse and link was confirmed against the app's own
  * text before it was loaded (S472). No outside descriptions are shown; a "who
  * this was" note appears only once Yoshi has approved one (blurb).
+ *
+ * S473: tribe & nation pages. Yashar'el (Israel) as a people, the tribes, and the
+ * named nations each have a page; their verses are grouped by the words the verse
+ * itself uses ("the children of Yashar'el", "Levites"...). The man's page links to
+ * the tribe named after him, nations link to their land. "Browse tribes & peoples"
+ * on the first screen lists them all.
  */
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
+  fetchPeopleBrowse,
   fetchPeopleInVerse,
   fetchPeoplePage,
   searchPeople,
+  type PPBrowse,
   type PPEntry,
   type PPLink,
   type PPPage,
+  type PPRef,
   type ToolFetchResult,
 } from "../lib/api";
 import ToolSheet, { ToolEmpty, ToolError, ToolLoading, ToolTierLockedCard } from "./ToolSheet";
@@ -43,6 +52,7 @@ export function bookTitleFromSlug(slug: string): string {
 
 function kindLabel(e: PPEntry): string {
   if (e.kind === "place") return "Place";
+  if (e.kind === "tribe") return "Tribe";
   if (e.kind === "group") return "People";
   return e.type === "Female" ? "Woman" : "Man";
 }
@@ -103,17 +113,50 @@ function MiniMap({ page }: { page: PPPage }) {
   );
 }
 
-function PageView({ page, onOpen, onVerse }: { page: PPPage; onOpen: (s: string) => void; onVerse: (b: string, c: number, v: number) => void }) {
-  const byRel = (r: PPLink["rel"]) => page.links.filter((l) => l.rel === r);
+function VerseGroups({ refs, onVerse }: { refs: PPRef[]; onVerse: (b: string, c: number, v: number) => void }) {
   const groups = useMemo(() => {
     const out: { book: string; refs: { c: number; v: number }[] }[] = [];
-    for (const r of page.refs) {
+    for (const r of refs) {
       const last = out[out.length - 1];
       if (last && last.book === r.book_slug) last.refs.push({ c: r.chapter, v: r.verse });
       else out.push({ book: r.book_slug, refs: [{ c: r.chapter, v: r.verse }] });
     }
     return out;
-  }, [page.refs]);
+  }, [refs]);
+  return (
+    <>
+      {groups.map((g) => (
+        <div key={g.book} className="mb-2">
+          <div className="text-sm font-semibold text-[var(--reader-text)]">{bookTitleFromSlug(g.book)}</div>
+          <div className="flex flex-wrap gap-1">
+            {g.refs.map((r) => (
+              <button
+                type="button"
+                key={`${r.c}:${r.v}`}
+                onClick={() => onVerse(g.book, r.c, r.v)}
+                className="rounded px-1.5 py-0.5 text-sm text-[var(--reader-accent)] hover:bg-[var(--reader-surface-elev)]"
+              >
+                {r.c}:{r.v}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </>
+  );
+}
+
+function PageView({ page, onOpen, onVerse }: { page: PPPage; onOpen: (s: string) => void; onVerse: (b: string, c: number, v: number) => void }) {
+  const byRel = (r: PPLink["rel"]) => page.links.filter((l) => l.rel === r);
+  const sections = page.sections ?? [];
+  const bySection = useMemo(() => {
+    if (sections.length === 0) return [];
+    return sections
+      .map((label, i) => ({ label, refs: page.refs.filter((r) => r.section === i) }))
+      .filter((s) => s.refs.length > 0);
+  }, [page.refs, sections]);
+  const isPerson = page.entry.kind === "person";
+  const isPlace = page.entry.kind === "place";
   const line = [...page.line].reverse(); // oldest first, this person last
   const others = page.names.filter((n) => n !== page.entry.name);
 
@@ -144,6 +187,12 @@ function PageView({ page, onOpen, onVerse }: { page: PPPage; onOpen: (s: string)
           <FamilyRow title="Married to" links={byRel("spouse")} onOpen={onOpen} />
           <FamilyRow title="Brothers and sisters" links={byRel("sibling")} onOpen={onOpen} />
           <FamilyRow title="Children" links={byRel("child")} onOpen={onOpen} />
+          <FamilyRow title="Named after" links={byRel("founder")} onOpen={onOpen} />
+          <FamilyRow title={isPerson ? "The people called by his name" : "Tribes"} links={byRel("tribe")} onOpen={onOpen} />
+          <FamilyRow title="One of the tribes of" links={byRel("whole")} onOpen={onOpen} />
+          <FamilyRow title="Also called" links={byRel("also")} onOpen={onOpen} />
+          <FamilyRow title="Their land" links={byRel("land")} onOpen={onOpen} />
+          <FamilyRow title={isPlace ? "The people of this land" : "People"} links={byRel("nation")} onOpen={onOpen} />
         </div>
       ) : null}
 
@@ -172,23 +221,20 @@ function PageView({ page, onOpen, onVerse }: { page: PPPage; onOpen: (s: string)
         <div className="mb-1 text-xs uppercase tracking-wide text-[var(--reader-muted)]">
           Named in {page.refs.length} {page.refs.length === 1 ? "verse" : "verses"}
         </div>
-        {groups.map((g) => (
-          <div key={g.book} className="mb-2">
-            <div className="text-sm font-semibold text-[var(--reader-text)]">{bookTitleFromSlug(g.book)}</div>
-            <div className="flex flex-wrap gap-1">
-              {g.refs.map((r) => (
-                <button
-                  type="button"
-                  key={`${r.c}:${r.v}`}
-                  onClick={() => onVerse(g.book, r.c, r.v)}
-                  className="rounded px-1.5 py-0.5 text-sm text-[var(--reader-accent)] hover:bg-[var(--reader-surface-elev)]"
-                >
-                  {r.c}:{r.v}
-                </button>
-              ))}
-            </div>
-          </div>
-        ))}
+        {bySection.length > 0 ? (
+          bySection.map((s, i) => (
+            <details key={s.label} open={i === 0} className="mb-2 rounded border border-[var(--reader-rule)] px-2 py-1">
+              <summary className="cursor-pointer py-1 text-sm font-semibold text-[var(--reader-text)]">
+                {s.label} <span className="font-normal text-[var(--reader-muted)]">({s.refs.length})</span>
+              </summary>
+              <div className="pt-1">
+                <VerseGroups refs={s.refs} onVerse={onVerse} />
+              </div>
+            </details>
+          ))
+        ) : (
+          <VerseGroups refs={page.refs} onVerse={onVerse} />
+        )}
       </div>
     </div>
   );
@@ -225,6 +271,7 @@ export default function PeopleSheet({ bookSlug, chapter, verse, verseLabel, onNa
   const [page, setPage] = useState<Loadable<PPPage>>(null);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Loadable<{ entries: PPEntry[] }>>(null);
+  const [browse, setBrowse] = useState<Loadable<PPBrowse>>(null);
 
   useEffect(() => {
     fetchPeopleInVerse(bookSlug, chapter, verse).then((r) => {
@@ -264,6 +311,7 @@ export default function PeopleSheet({ bookSlug, chapter, verse, verseLabel, onNa
           e.preventDefault();
           if (query.trim().length < 2) return;
           setStack([]);
+          setBrowse(null);
           setPage(null);
           setResults({ status: "loading" });
           searchPeople(query.trim()).then(setResults);
@@ -288,6 +336,22 @@ export default function PeopleSheet({ bookSlug, chapter, verse, verseLabel, onNa
           </button>
           <Status r={page}>{(d) => <PageView page={d} onOpen={open} onVerse={goVerse} />}</Status>
         </div>
+      ) : browse ? (
+        <div>
+          <button type="button" onClick={() => setBrowse(null)} className="mb-3 text-sm text-[var(--reader-accent)] hover:underline">
+            ← {verseLabel}
+          </button>
+          <Status r={browse}>
+            {(d) => (
+              <div>
+                <div className="mb-1 text-xs uppercase tracking-wide text-[var(--reader-muted)]">Yashar'el (Israel) and the tribes</div>
+                <EntryList entries={[...d.people, ...d.tribes]} onOpen={open} empty="Nothing here yet." />
+                <div className="mb-1 mt-4 text-xs uppercase tracking-wide text-[var(--reader-muted)]">Peoples and nations</div>
+                <EntryList entries={d.nations} onOpen={open} empty="Nothing here yet." />
+              </div>
+            )}
+          </Status>
+        </div>
       ) : results ? (
         <div>
           <button type="button" onClick={() => setResults(null)} className="mb-3 text-sm text-[var(--reader-accent)] hover:underline">
@@ -299,6 +363,16 @@ export default function PeopleSheet({ bookSlug, chapter, verse, verseLabel, onNa
         </div>
       ) : (
         <div>
+          <button
+            type="button"
+            onClick={() => {
+              setBrowse({ status: "loading" });
+              fetchPeopleBrowse().then(setBrowse);
+            }}
+            className="mb-4 w-full rounded border border-[var(--reader-rule)] px-3 py-2 text-left text-sm text-[var(--reader-accent)] hover:border-[var(--reader-accent)]"
+          >
+            Browse the tribes and peoples →
+          </button>
           <div className="mb-2 text-xs uppercase tracking-wide text-[var(--reader-muted)]">Named in {verseLabel}</div>
           <Status r={inVerse}>
             {(d) => <EntryList entries={d.entries} onOpen={open} empty="No people or places are named in this verse." />}

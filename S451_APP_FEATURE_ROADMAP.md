@@ -181,3 +181,33 @@ NEXT for this feature: (1) tribe & nation pages (the twelve tribes, Yashar'el as
   against the text only; (3) blurb batches for Yoshi, most-named people first; (4) the 130 Psalm-title
   references (the app has no Psalm titles) and 834 name-not-found verses — mostly spelling forms, review list.
 Then the passage guide (one screen per verse, rows by tier).
+
+S473 (2026-10-26) — TRIBE & NATION PAGES BUILT (Study Notes), waiting on Yoshi's deploy run + push.
+- S472 confirmed pushed at session open (local main = origin/main at dd258f7).
+- Builder: python3 _s473_tribes_nations_build.py (runs the S472 builder in-process, then adds the pages;
+  this is now THE rebuild for people & places — it writes people_places.json and session473_people_places.sql,
+  a full rebuild that supersedes the S472 migration). Report: people-places/S473_TRIBES_NATIONS_REPORT.md.
+- 36 pages: Yashar'el (Israel) as a people; 14 tribes (Reuben, Simeon, Levi, Yahudah, Dan, Naphtali, Gad,
+  Asher, Issachar, Zebulun, Joseph, Ephraim, Manasseh, Benjamin); 21 named nations (Egyptians, Canaanites,
+  Hittites, Moabites, Ammonites, Edomites, Philistines, Midianites, Amalekites, Ishmaelites, Syrians,
+  Assyrians, Chaldeans, Babylonians, Persians, Medes, Greeks, Romans, Samaritans, Ethiopians, Arabians).
+  The S472 people-groups (Amorites, Jebusites, Hivites...) join the browse list.
+- 4,414 of the 4,427 S472-held verses now have a page (13 left: Bethlehem-judah, Ephrathite, Ashurites,
+  two Psalm titles — listed in the report). Every verse checked: it must carry the tribe's or nation's name.
+- Sections on each page are the words the verse uses (children of / house of / tribe of / Levites /
+  Yahudim (Jews) / kings of / land and cities of / Jacob as the people's name / Jeshurun). Nothing interpreted.
+- Fixes to S472 found on the way: Javan's page carried Paul's "Greeks" and "Gentiles" (TIPNR folds them into
+  the man) — cleared; Greeks go to the Greeks page. Jacob's page got back 36 verses where the man is named
+  ("Abraham, Isaac, and Jacob"; 1 Sam 12:8; Josh 24:4,32; Ps 105:23; Mal 1:2, Rom 9:13 on both).
+  The sons' pages got back "the son of Levi", "the bones of Joseph", family-list verses (69, kept on the
+  tribe page too). 45 verses spelled with æ (Judæa, Cæsarea, Tiberius Cæsar...) S472 had missed — now on.
+  Judea's page was showing as "Galilee" — fixed, and 6 Galilee-only verses taken off it. 794 verses that name
+  a people but not its land ("the Egyptians", "the Philistines") moved from the place page to the people page.
+- App: People & places sheet gets "Browse the tribes and peoples"; tribe/nation pages show verses in
+  collapsible sections; a man's page shows "The people called by his name", nations show "Their land".
+  New Features entry "tribes-nations". Typecheck clean.
+- HELD for Yoshi (not on any page): "Gentiles" / "heathen" / "nations" verses — 6 Gentile verses came off
+  Javan's page and sit nowhere. Open question: does "Gentiles" get a page at all, and if so where.
+- Noticed, not fixed: S472 entry eznites-2sa-23-8 shows as "spear" (TIPNR quirk) — fix in a later pass.
+- Deploy: bash _session473_tribes_nations_deploy.sh → then Yoshi runs git push.
+NEXT for this feature: extra-book people (Enoch, Jubilees, Jasher), then blurb batches, then the passage guide.

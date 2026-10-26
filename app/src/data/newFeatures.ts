@@ -23,6 +23,14 @@ export interface NewFeature {
 
 export const NEW_FEATURES: NewFeature[] = [
   {
+    id: "tribes-nations",
+    date: "2026-10-26",
+    title: "Tribe & nation pages",
+    body:
+      "Yashar'el (Israel) as a people, each of the tribes, and the nations the text names now have pages of their own in People & places. Every verse that names them is there, gathered by the words the verse itself uses, so the children of Yashar'el, the house of Yashar'el, the house of Joseph, the Levites and the Yahudim (Jews) each sit together, one tap from the verse. A man's page now leads to the tribe called by his name, and a nation leads to its land. Choose Browse the tribes and peoples to see them all. Every verse was checked against this app's own text.",
+    tier: "Study Notes",
+  },
+  {
     id: "people-places",
     date: "2026-10-26",
     title: "People & places in every verse",

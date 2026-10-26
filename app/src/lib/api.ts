@@ -2336,13 +2336,14 @@ export function moderatePost(id: number, input: ModerateInput): Promise<{ ok: bo
 // Server-gated at Study Notes; 403 → tier-locked card.
 export interface PPEntry {
   slug: string;
-  kind: "person" | "group" | "place";
+  kind: "person" | "group" | "place" | "tribe";
   type: string | null;
   name: string;
   uncertain: boolean;
 }
 export interface PPLink {
-  rel: "parent" | "child" | "spouse" | "sibling";
+  // S473 adds: founder (named after) / tribe / whole (Yashar'el) / also / land / nation
+  rel: "parent" | "child" | "spouse" | "sibling" | "founder" | "tribe" | "whole" | "also" | "land" | "nation";
   flags: string;
   proof: string | null;
   other: PPEntry;
@@ -2351,6 +2352,7 @@ export interface PPRef {
   book_slug: string;
   chapter: number;
   verse: number;
+  section?: number | null; // S473: index into PPPage.sections
 }
 export interface PPNearby {
   slug: string;
@@ -2368,6 +2370,12 @@ export interface PPPage {
   line: PPEntry[];
   pin: { maps_place_id: string | null; lat: number; lon: number } | null;
   nearby: PPNearby[];
+  sections?: string[]; // S473: tribe & nation pages group verses by the words the verse uses
+}
+export interface PPBrowse {
+  people: PPEntry[];
+  tribes: PPEntry[];
+  nations: PPEntry[];
 }
 
 export function fetchPeopleInVerse(
@@ -2382,6 +2390,10 @@ export function fetchPeopleInVerse(
 
 export function searchPeople(q: string): Promise<ToolFetchResult<{ entries: PPEntry[] }>> {
   return fetchTagged(`/v1/people/search?q=${encodeURIComponent(q)}`);
+}
+
+export function fetchPeopleBrowse(): Promise<ToolFetchResult<PPBrowse>> {
+  return fetchTagged(`/v1/people/browse`);
 }
 
 export function fetchPeoplePage(slug: string): Promise<ToolFetchResult<PPPage>> {
