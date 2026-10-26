@@ -2,18 +2,46 @@ import re
 from kokoro_onnx import Kokoro
 # Fixed pronunciations as IPA so nothing around a name can bleed into it.
 IPA = {
- "Yahuah":"ˈiːˈɑːˈuːˈɑː", "Yahusha":"ˈiːˈɑːˈuːʃˈɑː",
- # Yoshi, S444: Enoch = "Ha-noke", Eve = "Hooah" (one smooth word).
- "Enoch":"hˈɑː nˈoʊk", "Eve":"hˈuːɑː", "Baruch":"bɑːɹˈuːkx",
+ # S469: Yoshi picked version B by ear (one word, weight on the "ah").
+ "Yahuah":"iˈɑuɑ", "Yahusha":"iˈɑuʃɑ",
+ # S469: Yoshi picked Elohim version 4 (EL-oh-him).
+ "Elohim":"ˈɛlohim",
+ # S469: settled by ear — one word, quick vowels, no breaks.
+ "Yashar'el":"jɑʃəˈɹɛl", "Yahudah":"jəˈhudə", "Adonai":"ɑdoˈnaɪ", "Ruach":"ɹɹˈuːɑk",
+ # S469: HaKodesh settled by Yoshi (his #3).
+ "HaKodesh":"hɑkˈoʊdəʃ",
+ # S469: Enoch = "ha-noke", Eve = "who-ah" — fast, no gap (Yoshi picked #2).
+ "Enoch":"həˈnoʊk", "Eve":"huˈɑ", "Baruch":"bəˈɹux",
  # S446: "O king, live for ever" was read as "lyve". In scripture "live" is the
  # verb (rhymes with give) everywhere except "a live coal" (Isaiah 6:6).
  "live":"lˈɪv", "Live":"lˈɪv",
+ # S471: Ra'ah settled by ear on Sky — rah-AH, small catch between (Psalm 23:1).
+ "Ra'ah":"rɑˈʔɑ",
 }
+# S469: per-voice overrides — a voice can land a name another voice misses.
+IPA_BY_VOICE = {
+ "af_heart": {"HaKodesh":"hɑkˈoʊ dɛʃ"},  # Olivia: Yoshi liked her "hako desh" #1
+ # S470: Echo, settled by ear (rounds 2-3).
+ "am_echo": {"El Elyon":"ɛl ɛliˈoʊn","El Shaddai":"ɛl ʃəˈdaɪ","Elohav":"ɛloˈhɑv",
+             "Elohaychem":"ɛloˈheɪkɛm","Elohayka":"ɛloˈhaɪkɑ","HaMashiach":"hɑmɑʃˈiɑx",
+             "Tseva'ot":"səvɑˈoʊt","Yahudi":"jɑː huː diː","Yahudim":"jɑː huː diːm",
+             "Enoch":"hɑnˈoʊk","Ruach":"ɹˈuɑːk","Yahudah":"iɑhˈuːdə",
+             "HaKodesh":"hɑkoˈdɛʃ"},
+ # S470: Sky, settled by ear (rounds 2-3).
+ "af_sky": {"Elohav":"ˈɛlohɑv","Elohaychem":"ɛloˈheɪkɛm","Elohayka":"ɛloˈheɪkɑ",
+            "El Elyon":"ɛl, ɛliˈoʊn","Tseva'ot":"tseɪvɑˈoʊt","Yahudi":"jɑː huː diː","Yahudim":"jɑː huː diːm","El Shaddai":"ɛl ʃəˈdaɪ","HaMashiach":"hɑ, mɑʃˈiɑk"},
+}
+_BASE_IPA=dict(IPA)
+def use_voice(voice):
+    # S470: reset to the shared list first so one voice's picks never leak into another.
+    IPA.clear(); IPA.update(_BASE_IPA); IPA.update(IPA_BY_VOICE.get(voice,{}))
 RESPELL = {
- "Ruach HaKodesh":"Roo-ak Hah-koh-desh","El Elyon":"El El-yohn","El Shaddai":"El Shah-dye","El Gibbor":"El Gib-bor","El Olam":"El Oh-lahm",
- "Elohim":"El-oh-heem","Elohayka":"El-oh-hy-kah","Elohaychem":"El-oh-hy-kem","Eloheinu":"El-oh-hay-noo","Elohav":"El-oh-hahv","Elohai":"El-oh-hy",
- "Adonai":"Ah-doh-nye","HaMashiach":"Hah-mah-shee-ak","Yashar'el":"Yah-shar-el","Yahudah":"Yah-hoo-dah","Yahudim":"Yah-hoo-deem","Yahudi":"Yah-hoo-dee",
- "Ruach":"Roo-ak","HaKodesh":"Hah-koh-desh",
+ "El Elyon":"El El-yohn","El Shaddai":"El Shah-dye","El Gibbor":"El Gib-bor","El Olam":"El Oh-lahm",
+ "Elohayka":"El-oh-hy-kah","Elohaychem":"El-oh-hy-kem","Eloheinu":"El-oh-hay-noo",  # S470: Eloheinu + Elohai settled by ear (Echo + Sky); others on this line not yet
+ "Elohav":"El-oh-hahv","Elohai":"El-oh-hy",  # S470: Eloheinu + Elohai settled by ear (Echo + Sky); others on this line not yet
+
+ "HaMashiach":"Hah-mah-shee-ak","Yahudim":"Yah-hoo-deem","Yahudi":"Yah-hoo-dee",
+ 
  "Tseva'ot":"Tseh-vah-ote","Shammah":"Shah-mah","Rapha":"Rah-fah","Shalom":"Shah-lohm","Yireh":"Yir-eh",
  "Nissi":"Nee-see","Ra'ah":"Rah-ah","Tsidkenu":"Tsid-keh-noo",
  # Partner-library names (S444): standard pronunciations where the default voice slips.
@@ -23,11 +51,14 @@ RESPELL = {
 }
 _rk=sorted(RESPELL,key=len,reverse=True)
 _rrx=re.compile(r"(?<![\w'-])("+"|".join(map(re.escape,_rk))+r")(?='s\b|[^\w'-]|$)")
-_irx=re.compile(r"(?<![\w'-])(Yahuah|Yahusha|Enoch|Eve|Baruch|[Ll]ive(?! coals?\b))(?=(['’]s)?\b)")
+_irx=re.compile(r"(?<![\w'-])(Yahuah|Yahusha|Elohim|Yashar'el|Yahudah|Adonai|Ruach|HaKodesh|Enoch|Eve|Baruch|[Ll]ive(?! coals?\b))(?=(['’]s)?\b)")
 # S444 — speech-only fixes for divine names the restoration pipeline missed in
 # the app text (LORD'S, small-caps GOD, JEHOVAH). The text itself still needs
 # fixing in the app; these keep the recordings right meanwhile.
 SPEECH_FIXES=[
+ # S471 (Yoshi): Psalm 23:1 reads "Yahuah Ra'ah (The LORD is my shepherd)" on the page; the
+ # audio text drops the bracket and with it the whole sentence. Spoken as Yoshi set it:
+ (r"\bYahuah Ra'ah;","Yahuah is my shepherd;"),
  (r"Yahuah OF LORDS","Lord of lords"),
  (r"\b[Tt]he LORD[’']S\b","Yahuah's"),
  (r"\bLORD[’']S\b","Yahuah's"),
@@ -45,9 +76,15 @@ def to_phonemes(k, text, lang):
     for a,b in SPEECH_FIXES: text=re.sub(a,b,text)
     # Small-caps / all-caps words ("HOLINESS TO", "KING OF KINGS") would be spelled out letter by letter.
     text=re.sub(r"\b[A-Z]{2,}\b",lambda m:m.group(0).lower(),text)
-    text=_rrx.sub(lambda m:RESPELL[m.group(1)],text)
+    # S470: names with a set pronunciation (IPA, incl. per-voice) win over respellings,
+    # and the name pattern is built from the current list so per-voice names apply.
+    rk=sorted((x for x in RESPELL if x not in IPA),key=len,reverse=True)
+    rrx=re.compile(r"(?<![\w'-])("+"|".join(map(re.escape,rk))+r")(?='s\b|[^\w'-]|$)")
+    text=rrx.sub(lambda m:RESPELL[m.group(1)],text)
+    ik=sorted((x for x in IPA if x not in ("live","Live")),key=len,reverse=True)
+    irx=re.compile(r"(?<![\w'-])("+"|".join(map(re.escape,ik))+r"|[Ll]ive(?! coals?\b))(?=(['’]s)?\b)")
     out=[];pos=0
-    for m in _irx.finditer(text):
+    for m in irx.finditer(text):
         pre=text[pos:m.start()]
         if pre.strip(): out.append(k.tokenizer.phonemize(pre,lang))
         out.append(IPA[m.group(1)]+("z" if m.group(2) else "")); pos=m.end()+(2 if m.group(2) else 0)

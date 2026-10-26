@@ -1,12 +1,13 @@
 import json, os, sys, time, subprocess, numpy as np
 from kokoro_onnx import Kokoro
-from names_ipa import to_phonemes
+from names_ipa import to_phonemes, use_voice
 try:
     import imageio_ffmpeg; FFMPEG=imageio_ffmpeg.get_ffmpeg_exe()
 except Exception:
     FFMPEG="ffmpeg"
 HERE=os.path.dirname(os.path.abspath(__file__))
 VOICE=sys.argv[1]; ORDER=sys.argv[2] if len(sys.argv)>2 else "priority"
+use_voice(VOICE)
 OUT=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","audio",VOICE)
 k=Kokoro(os.path.join(HERE,"kokoro-v1.0.onnx"),os.path.join(HERE,"voices-v1.0.bin"))
 lang="en-gb" if VOICE.startswith("b") else "en-us"

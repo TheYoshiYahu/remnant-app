@@ -40,6 +40,8 @@ export const RECORDED_VOICES: RecordedVoice[] = [
   { id: "bm_george", name: "George · Natural voice (British)", lang: "en-GB", localService: false },
   { id: "am_onyx", name: "Ivan · Natural voice (deep)", lang: "en-US", localService: false },
   { id: "af_heart", name: "Olivia · Natural voice (female)", lang: "en-US", localService: false },
+  // S471 — Sky is still recording; update the done-list as books finish and are uploaded.
+  { id: "af_sky", name: "Sky · Natural voice (female) — still recording: Psalms, Enoch, Jubilees done", lang: "en-US", localService: false },
 ];
 
 // S444 — natural voices are a partner feature (paid tiers + the 7-day free
