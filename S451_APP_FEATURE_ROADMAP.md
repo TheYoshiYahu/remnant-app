@@ -211,3 +211,32 @@ S473 (2026-10-26) — TRIBE & NATION PAGES BUILT (Study Notes), waiting on Yoshi
 - Noticed, not fixed: S472 entry eznites-2sa-23-8 shows as "spear" (TIPNR quirk) — fix in a later pass.
 - Deploy: bash _session473_tribes_nations_deploy.sh → then Yoshi runs git push.
 NEXT for this feature: extra-book people (Enoch, Jubilees, Jasher), then blurb batches, then the passage guide.
+S473 — VOICES: splice instead of full re-record (Yoshi's idea, 2026-10-26). Michael (am_michael) and Olivia
+(af_heart) were recorded before the names were settled by ear. Instead of re-recording every chapter,
+tts/splice_names.py re-speaks only the verses that carry a name (and the chapter heading if it does) and
+swaps them into the existing chapter mp3 using the verse marks in its .json; marks after are shifted.
+~15,800 of 48,267 verses (a third of the audio); 2,064 of 2,269 chapter files change.
+Tested in the cloud on Psalm 1 and 117 against a fresh full recording: marks agree within 0.01 s, every verse
+matches (0.97–1.00), untouched verses are the original recording. Originals kept in audio/_redo/<voice>/s473-splice.
+Run: bash ~/Desktop/App/tts/record_splice.sh am_michael af_heart  (resumable) → node _s444_upload_audio.mjs
+(upload re-sends any file whose size changed). Listen test first: splice_names.py <voice> --test psalms/1 →
+audio/_splice_test/<voice>/ (before/after). Chapters whose timing file doesn't match the text are skipped and
+listed in audio/<voice>/.splice-skipped-s473.txt.
+S473 — MICHAEL REMOVED (Yoshi 2026-10-26: "I hate Michael's voice"). Gone from the picker (recordedAudio.ts);
+Olivia (af_heart) is now the default and first in the list; record scripts no longer default to am_michael.
+Readers who had Michael saved fall back to the default. Michael's files stay in R2 and audio/ until Yoshi says
+to delete them. A replacement male voice is being picked: samples of am_echo, am_adam, am_eric, am_fenrir,
+am_liam, am_puck, bm_daniel, bm_lewis, bm_fable sent (Psalm 1:1-2, Deut 6:4, John 3:3). Note: George (16
+chapters) and Ivan (2) are barely recorded — Olivia is the only complete voice right now.
+The splice now only matters for Olivia: bash tts/record_splice.sh af_heart.
+IDEA (Yoshi, not started): YouTube audiobook readings from the recorded voices. Rights are fine (Kokoro is
+Apache-2.0, the text is his edition). Ad money is the risk: YouTube's July 2025 "inauthentic content" rule
+demonetizes mass-produced AI-voice uploads; his own human input on each video (spoken intro, on-screen text)
+is what keeps it monetizable.
+S473 — REPLACEMENT VOICE, still open. Yoshi heard 9 male Kokoro voices, then 4 American voices with British
+speech rules (lang en-gb), then Liam+Echo blends (70/30, 50/50, 30/70, 50/50 British) — style vectors mixed in
+kokoro_onnx, names tuned on Echo applied. No pick yet.
+NEW IDEA (Yoshi): his OWN voice. Kokoro can't learn a voice. Chatterbox (Resemble AI, MIT, free, runs locally)
+clones from a recording. Next step: Yoshi records 1–2 minutes (quiet room, phone close) reading Psalm 1 + verses
+with Yahuah / Yahusha / Yashar'el / Elohim, attaches it; Claude builds the same Psalm 1 test passage in his voice.
+Measure speed on one chapter before promising a full-library run (Chatterbox is much heavier than Kokoro).

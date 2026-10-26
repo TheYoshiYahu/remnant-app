@@ -36,18 +36,18 @@ export interface RecordedVoice extends TTSVoice {
 
 /** Display name → recorded voice. Order = picker order; first is the default. */
 export const RECORDED_VOICES: RecordedVoice[] = [
-  { id: "am_michael", name: "Michael · Natural voice", lang: "en-US", default: true, localService: false },
+  // S473 — Michael removed (Yoshi 2026-10-26). Olivia is the default until his replacement is recorded.
+  { id: "af_heart", name: "Olivia · Natural voice (female)", lang: "en-US", default: true, localService: false },
   { id: "bm_george", name: "George · Natural voice (British)", lang: "en-GB", localService: false },
   { id: "am_onyx", name: "Ivan · Natural voice (deep)", lang: "en-US", localService: false },
-  { id: "af_heart", name: "Olivia · Natural voice (female)", lang: "en-US", localService: false },
   // S471 — Sky is still recording; update the done-list as books finish and are uploaded.
   { id: "af_sky", name: "Sky · Natural voice (female) — still recording: Psalms, Enoch, Jubilees done", lang: "en-US", localService: false },
 ];
 
 // S444 — natural voices are a partner feature (paid tiers + the 7-day free
 // trial). S451 — free and signed-out readers now get a taste instead of the
-// phone's robot voice: the natural voices sit in their picker (Michael is the
-// default), preview works, and a chapter plays verses 1–5 in the natural
+// phone's robot voice: the natural voices sit in their picker (Olivia is the
+// default since S473), preview works, and a chapter plays verses 1–5 in the natural
 // voice and then stops with an invite. App.tsx sets the level from the
 // reader's subscription status. (Soft gate: the files themselves are on a
 // public CDN. A Cloudflare Worker checking the rop_jwt cookie can harden it.)

@@ -15,7 +15,7 @@ UV="$(command -v uv 2>/dev/null || echo "$HOME/.local/bin/uv")"
 REL=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
 [ -s kokoro-v1.0.onnx ] || { echo "Downloading the voice model (one time, ~330 MB)..."; curl -L -o kokoro-v1.0.onnx "$REL/kokoro-v1.0.onnx"; }
 [ -s voices-v1.0.bin ] || curl -L -o voices-v1.0.bin "$REL/voices-v1.0.bin"
-for VOICE in ${@:-am_michael bm_george am_onyx af_heart}; do
+for VOICE in ${@:-af_heart bm_george am_onyx}; do
   echo "=== Recording voice: $VOICE ==="
   caffeinate -i "$UV" run --quiet --python 3.12 --with kokoro-onnx --with soundfile --with imageio-ffmpeg \
     python gen_bible.py "$VOICE" priority 2>&1 | grep -v -i warn

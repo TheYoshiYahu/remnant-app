@@ -18,11 +18,14 @@ git add api/people_places.py \
   data-schema/migrations/session473_people_places.sql \
   _s473_tribes_nations_build.py _s473_check.py _session473_tribes_nations_deploy.sh \
   people-places/S473_TRIBES_NATIONS_REPORT.md people-places/people_places.json \
+  tts/splice_names.py tts/record_splice.sh tts/record_bible.sh \
+  app/src/lib/recordedAudio.ts app/src/components/AudioPlayer.tsx \
   S451_APP_FEATURE_ROADMAP.md S474_SESSION_OPEN_PROMPT.md
 
-git commit -m "S473: Tribe & nation pages in People & places (Study Notes), verified against our own text
+git commit -m "S473: Tribe & nation pages in People & places (Study Notes), verified against our own text; Michael voice removed (Olivia default)
 
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_011sFZcwTP25K6JvFCPWgxjU"
 
 echo
 echo "Committed. Now push it yourself:   git push"

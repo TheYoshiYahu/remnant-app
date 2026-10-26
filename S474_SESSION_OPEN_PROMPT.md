@@ -8,6 +8,7 @@ State at close of S473 (2026-10-26):
 - Tribe & nation pages are BUILT but only live once Yoshi runs `bash ~/Desktop/App/_session473_tribes_nations_deploy.sh`
   and then `git push`. First thing: check `git log -3` / `git status -sb`; if not done, remind him.
 - Rebuild people & places with `python3 _s473_tribes_nations_build.py` (it runs the S472 builder inside it).
+- Voices: Michael REMOVED (S473). Olivia gets the splice (tts/record_splice.sh af_heart). Replacement male voice NOT picked yet — samples, British-speech and Liam+Echo blends were sent. Yoshi may record his OWN voice for a Chatterbox clone (MIT, local, free): ask for the 1–2 minute recording and build the Psalm 1 test.
 - Open question held from S473: "Gentiles" / "heathen" / "nations" verses are on no page. Ask Yoshi (one line).
 - S470 offline-shell changes still uncommitted on purpose (App.tsx, DownloadsSettings.tsx, capacitor.config.ts).
 

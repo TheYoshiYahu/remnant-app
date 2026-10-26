@@ -348,7 +348,7 @@ function VoicePickerModal({
           )}
           {naturalVoicesLocked && (
             <div className="border-b border-[var(--reader-rule)] px-4 py-3 text-sm text-[var(--reader-muted)]">
-              Natural voices (Michael, George, Ivan, and Olivia): free readers
+              Natural voices (Olivia, George and Ivan): free readers
               hear the first 5 verses of any chapter. Partnership and the 7-day
               free trial unlock every chapter.
               {!isNativeShell() && (
