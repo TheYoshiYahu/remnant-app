@@ -24,10 +24,11 @@ export const BOOK_ORDER_LABEL: Record<BookOrder, string> = {
 
 export function loadBookOrder(): BookOrder {
   try {
+    // S475 (Yoshi): story order is the standard unless the reader switches.
     const v = window.localStorage.getItem(BOOK_ORDER_KEY);
-    return v === "story" ? "story" : "canon";
+    return v === "canon" ? "canon" : "story";
   } catch {
-    return "canon";
+    return "story";
   }
 }
 export function saveBookOrder(o: BookOrder): void {
