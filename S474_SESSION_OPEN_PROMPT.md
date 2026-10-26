@@ -1,16 +1,11 @@
 # S474 — open prompt
 
-Load my voice skill and mount my Desktop. Read the bottom of ~/Desktop/App/S451_APP_FEATURE_ROADMAP.md
-(S472–S473 notes) before proposing anything. Tiers already exist (Free / Study Notes / Library / Companion) —
-never propose new ones. Look things up in the code before asking me.
+Load my voice skill and mount my Desktop. Read the bottom of ~/Desktop/App/S451_APP_FEATURE_ROADMAP.md (S473 notes).
+Tiers already exist — look things up before asking.
 
-State at close of S473 (2026-10-26):
-- Tribe & nation pages are BUILT but only live once Yoshi runs `bash ~/Desktop/App/_session473_tribes_nations_deploy.sh`
-  and then `git push`. First thing: check `git log -3` / `git status -sb`; if not done, remind him.
-- Rebuild people & places with `python3 _s473_tribes_nations_build.py` (it runs the S472 builder inside it).
-- Voices: Michael REMOVED (S473). Olivia gets the splice (tts/record_splice.sh af_heart). Replacement male voice NOT picked yet — samples, British-speech and Liam+Echo blends were sent. Yoshi may record his OWN voice for a Chatterbox clone (MIT, local, free): ask for the 1–2 minute recording and build the Psalm 1 test.
-- Open question held from S473: "Gentiles" / "heathen" / "nations" verses are on no page. Ask Yoshi (one line).
-- S470 offline-shell changes still uncommitted on purpose (App.tsx, DownloadsSettings.tsx, capacitor.config.ts).
-
-Next on the roadmap, in order: extra-book people (Enoch, Jubilees, Jasher, checked against the text only) →
-blurb batches for Yoshi → passage guide.
+1. Check git log/status: did I run _session473_tribes_nations_deploy.sh and push? If not, remind me.
+2. Replacement male voice: I liked the Liam+Echo blends at liam30-echo70 and liam50-echo50. Help me settle between
+   them (and maybe 40/60), tune the names on the winner by ear, then set it up to record (record_bible.sh can't
+   take a blend yet — build that). My own voice: I recorded App/voice-clone/yoshi-normal-take1.m4a (3:40, normal voice, the S473 script) — build the Chatterbox test from it (Psalm 1, compare with the blends). A whisper take may follow.
+3. Olivia: run the name splice (tts/record_splice.sh af_heart) after a --test listen.
+Then: extra-book people (Enoch, Jubilees, Jasher) → blurb batches → passage guide.

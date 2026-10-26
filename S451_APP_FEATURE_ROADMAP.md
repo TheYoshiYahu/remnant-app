@@ -240,3 +240,6 @@ NEW IDEA (Yoshi): his OWN voice. Kokoro can't learn a voice. Chatterbox (Resembl
 clones from a recording. Next step: Yoshi records 1–2 minutes (quiet room, phone close) reading Psalm 1 + verses
 with Yahuah / Yahusha / Yashar'el / Elohim, attaches it; Claude builds the same Psalm 1 test passage in his voice.
 Measure speed on one chapter before promising a full-library run (Chatterbox is much heavier than Kokoro).
+Yoshi (00:45): Liam+Echo blends liam30-echo70 and liam50-echo50 are "pretty good" — the front-runners. The blend is
+style = w*am_liam + (1-w)*am_echo (kokoro get_voice_style), am_echo's IPA overrides, lang en-us. record_bible.sh /
+gen_bible.py take a voice name only — a blend needs a small change (new voice id, e.g. "liam_echo", mapped to the mix).
