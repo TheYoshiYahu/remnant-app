@@ -1,0 +1,30 @@
+seeded: verses 6396 cards 4120 threads 1286 members 4115
+run 1 done in 130 ms | 
+cards landed as written: 73/73 []
+member notes as written: 71/71
+summaries as written: 58/58
+anchored cards in the 2 swept books: 533 | own-book italic quotations: {'STAND': 13, 'NOT_FOUND': 1}  (63499 'the swine *is unclean…*' is Deuteronomy, a known false positive)
+  prose phrase quotes vs live verse: {'STAND': 62, 'ELSEWHERE': 1, 'REWORDED': 4, 'NOT_FOUND': 2}
+  canon lead quotations vs canon.json: {'none': 58, 'STAND': 475}  (OFF/REWORDED should be 0)
+rebuilt notes carrying the whole live verse verbatim: 12/12
+degraded markers left: 0 | hyphen-chain prose left: 0 | slug citations left: 0 | Hebrew book names left: 0
+old-numbering citations left in prose (cards/members/summaries): 0 []
+duplicate same-direction pairs: 0
+anchored per swept book: {'4-maccabees': 292, 'adam-eve': 241}
+live verses: 4571 | cards touching these editions: 4120 | member notes: 4115 | threads: 1286
+
+run 2 | 
+run 2 changed nothing: true
+cards landed as written: 73/73 []
+member notes as written: 71/71
+summaries as written: 58/58
+anchored cards in the 2 swept books: 533 | own-book italic quotations: {'STAND': 13, 'NOT_FOUND': 1}  (63499 'the swine *is unclean…*' is Deuteronomy, a known false positive)
+  prose phrase quotes vs live verse: {'STAND': 62, 'ELSEWHERE': 1, 'REWORDED': 4, 'NOT_FOUND': 2}
+  canon lead quotations vs canon.json: {'none': 58, 'STAND': 475}  (OFF/REWORDED should be 0)
+rebuilt notes carrying the whole live verse verbatim: 12/12
+degraded markers left: 0 | hyphen-chain prose left: 0 | slug citations left: 0 | Hebrew book names left: 0
+old-numbering citations left in prose (cards/members/summaries): 0 []
+duplicate same-direction pairs: 0
+anchored per swept book: {'4-maccabees': 292, 'adam-eve': 241}
+live verses: 4571 | cards touching these editions: 4120 | member notes: 4115 | threads: 1286
+

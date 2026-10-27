@@ -1,0 +1,85 @@
+cards in dump 4120 | anchored in these editions 4116 | mention-only 4
+
+[adam-eve-conflict|1-adam-eve] cards 1053  held=False
+  card verdict (worst italic extra quote): {'STAND': 20, 'NO_EXTRA_QUOTE': 1033}
+  italic extra quotations graded: {'STAND': 20} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 95, 'ELSEWHERE': 2, 'REWORDED': 2, 'NOT_FOUND': 2}
+  canon lead quote vs canon.json: {'none': 92, 'STAND': 961}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[adam-eve-conflict|2-adam-eve] cards 324  held=False
+  card verdict (worst italic extra quote): {'NO_EXTRA_QUOTE': 322, 'STAND': 2}
+  italic extra quotations graded: {'STAND': 2} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 20, 'ELSEWHERE': 1}
+  canon lead quote vs canon.json: {'none': 50, 'STAND': 274}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[apocalypse-of-abraham|apocalypse-of-abraham] cards 413  held=False
+  card verdict (worst italic extra quote): {'STAND': 15, 'NO_EXTRA_QUOTE': 398}
+  italic extra quotations graded: {'STAND': 15} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 42, 'ELSEWHERE': 3}
+  canon lead quote vs canon.json: {'none': 58, 'STAND': 355}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[ascension-isaiah|ascension-isaiah] cards 219  held=False
+  card verdict (worst italic extra quote): {'STAND': 30, 'NO_EXTRA_QUOTE': 189}
+  italic extra quotations graded: {'STAND': 31} | notes with 2+: 1
+  prose phrase quotes vs live extra verse: {'STAND': 18, 'NOT_FOUND': 1}
+  canon lead quote vs canon.json: {'none': 34, 'STAND': 185}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[pseudepigrapha|2-baruch] cards 470  held=False
+  card verdict (worst italic extra quote): {'STAND': 16, 'NO_EXTRA_QUOTE': 454}
+  italic extra quotations graded: {'STAND': 16} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 17}
+  canon lead quote vs canon.json: {'none': 54, 'STAND': 416}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[pseudepigrapha|2-enoch] cards 334  held=False
+  card verdict (worst italic extra quote): {'NO_EXTRA_QUOTE': 334}
+  italic extra quotations graded: {} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 52, 'NOT_FOUND': 1, 'ELSEWHERE': 1}
+  canon lead quote vs canon.json: {'STAND': 309, 'none': 25}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[pseudepigrapha|3-baruch] cards 117  held=False
+  card verdict (worst italic extra quote): {'NO_EXTRA_QUOTE': 117}
+  italic extra quotations graded: {} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 9}
+  canon lead quote vs canon.json: {'STAND': 109, 'none': 8}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[pseudepigrapha|3-maccabees] cards 86  held=True
+  card verdict (worst italic extra quote): {'NO_EXTRA_QUOTE': 85, 'STAND': 1}
+  italic extra quotations graded: {'STAND': 1} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 5, 'NOT_FOUND': 1}
+  canon lead quote vs canon.json: {'none': 10, 'STAND': 76}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[pseudepigrapha|4-maccabees] cards 292  held=False
+  card verdict (worst italic extra quote): {'STAND': 10, 'RE_ANCHOR': 2, 'NO_EXTRA_QUOTE': 279, 'NOT_FOUND': 1}
+  italic extra quotations graded: {'STAND': 10, 'RE_ANCHOR': 2, 'NOT_FOUND': 1} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 26, 'REWORDED': 2}
+  canon lead quote vs canon.json: {'none': 44, 'STAND': 247, 'REWORDED': 1}
+  degraded-marker notes: 18 | hyphen-chain: 13 | either: 22 | slug cites: 0 | Hebrew book names: 1 | T.XII chapter out of range: 0
+
+[pseudepigrapha|adam-eve] cards 241  held=False
+  card verdict (worst italic extra quote): {'NO_EXTRA_QUOTE': 241}
+  italic extra quotations graded: {} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 34, 'ELSEWHERE': 1, 'NOT_FOUND': 4, 'REWORDED': 2}
+  canon lead quote vs canon.json: {'none': 14, 'STAND': 225, 'REWORDED': 2}
+  degraded-marker notes: 0 | hyphen-chain: 3 | either: 3 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[pseudepigrapha|testaments-xii] cards 567  held=False
+  card verdict (worst italic extra quote): {'STAND': 50, 'NO_EXTRA_QUOTE': 517}
+  italic extra quotations graded: {'STAND': 50} | notes with 2+: 0
+  prose phrase quotes vs live extra verse: {'STAND': 211, 'NOT_FOUND': 1, 'ELSEWHERE': 3, 'REWORDED': 1}
+  canon lead quote vs canon.json: {'none': 74, 'STAND': 493}
+  degraded-marker notes: 0 | hyphen-chain: 0 | either: 0 | slug cites: 0 | Hebrew book names: 0 | T.XII chapter out of range: 0
+
+[ALL (incl. held)] cards 4116  held=False
+  card verdict (worst italic extra quote): {'STAND': 144, 'NO_EXTRA_QUOTE': 3969, 'RE_ANCHOR': 2, 'NOT_FOUND': 1}
+  italic extra quotations graded: {'STAND': 145, 'RE_ANCHOR': 2, 'NOT_FOUND': 1} | notes with 2+: 1
+  prose phrase quotes vs live extra verse: {'STAND': 529, 'ELSEWHERE': 11, 'REWORDED': 7, 'NOT_FOUND': 10}
+  canon lead quote vs canon.json: {'none': 463, 'STAND': 3650, 'REWORDED': 3}
+  degraded-marker notes: 18 | hyphen-chain: 16 | either: 25 | slug cites: 0 | Hebrew book names: 1 | T.XII chapter out of range: 0

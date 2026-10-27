@@ -1,0 +1,803 @@
+[
+ {
+  "id": 63517,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 9,
+   "vn": 13,
+   "cite": "4 Maccabees 9:13",
+   "text": "'O thou most abominable tyrant, thou enemy of the justice of heaven and bloody-minded, thou dost torment me in this fashion not for manslaying nor for impiety but for defending the Law of Elohim (God).'",
+   "prev": "And on it the noble youth was racked till his bones were out of joint. And as joint after joint gave way, he denounced the tyrant in these words:",
+   "next": "And when the guards said to him, 'Consent to eat, that so you may be released from your tortures,' he said to them, 'Your method, O miserable minions, is not strong enough to lead captive my Reason."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 18,
+   "cite": "Matthew 10:18",
+   "text_db": "And you shall be brought before governors and kings for my sake, for a testimony against them and the Gentiles.",
+   "text_canon": "And ye shall be brought before governors and kings for my sake, for a testimony against them and the Gentiles."
+  },
+  "old_note": "Matthew 10:18 — *And ye shall be brought before governors and kings for my sake, for a testimony against them and the Gentiles.* The youth confessing before the tyrant that he suffers for defending the Law of Elohim is the standing-before-kings-as-a-testimony the Messiah foretold.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Matthew 10:18",
+    "verdict": "STAND",
+    "quote": "And ye shall be brought before governors and kings for my sake, for a testimony against them and the Gentiles."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "standing-before-kings-as-a-testimony"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 15736,
+    "slug": "4-maccabees-9-the-first-brother-fear-not-them-that-kill-the-body",
+    "old": "Matthew 10:18 — *And ye shall be brought before governors and kings for my sake, for a testimony against them and the Gentiles.* The youth confessing before the tyrant that he suffers for defending the Law of Elohim is the standing-before-kings-as-a-testimony the Messiah foretold.",
+    "same_as_card": true
+   }
+  ],
+  "why": "hyphen-chain",
+  "flagged": [
+   "standing-before-kings-as-a-testimony"
+  ]
+ },
+ {
+  "id": 63524,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 9,
+   "vn": 2,
+   "cite": "4 Maccabees 9:2",
+   "text": "For we should be putting our ancestors also to shame, if we did not walk in obedience to the Law and take Moses as our counsellor.",
+   "prev": "'Why dost thou delay, O tyrant? We are ready to die rather than transgress the commandments of our fathers.",
+   "next": "O tyrant that counsellest us to transgress the Law, do not, hating us, pity us beyond ourselves."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 30,
+   "vn": 16,
+   "cite": "Deuteronomy 30:16",
+   "text_db": "In that I command you this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that you may live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless you in the land whither you go to possess it.",
+   "text_canon": "In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it."
+  },
+  "old_note": "Deuteronomy 30:16 — *I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply.* Their resolve to walk in obedience to the Law and take Moses as counsellor is the walking-in-his-ways that Moses commanded for life.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Deuteronomy 30:16",
+    "verdict": "STAND",
+    "quote": "I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "walking-in-his-ways"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 15735,
+    "slug": "4-maccabees-9-ready-to-die-rather-than-transgress",
+    "old": "Deuteronomy 30:16 — *I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply.* Their resolve to walk in obedience to the Law and take Moses as counsellor is the walking-in-his-ways that Moses commanded for life.",
+    "same_as_card": true
+   }
+  ],
+  "why": "hyphen-chain",
+  "flagged": [
+   "walking-in-his-ways"
+  ]
+ },
+ {
+  "id": 63552,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 13,
+   "vn": 12,
+   "cite": "4 Maccabees 13:12",
+   "text": "The feeling of brotherly love being thus naturally strong, the seven brethren had their mutual concord made yet stronger. For trained in the same Law, and disciplined in the same virtues, and brought up together in the upright life, they loved one another the more abundantly. Their common zeal for moral beauty and goodness heightened their mutual concord, for in conjunction with their piety it rendered their brotherly love more fervent.",
+   "prev": "You are not ignorant of the love of brethren, whereof the divine and all-wise Providence has given an inheritance to those who are begotten though their fathers, implanting it in them even through the mother's womb; wherein brethren do dwell the like period, and take their form during the same time, and are nourished from the same blood, and are quickened with the same soul, and are brought into the world after the same space, and they draw milk from the same founts, whereby their fraternal souls are nursed together in arms at the breast; and they are knit yet closer through a common and daily companionship and other education, and through our discipline under the Law of Elohim (God).",
+   "next": "But though nature, companionship, and their virtuous disposition increased the ardour of their brotherly love, nevertheless the surviving sons through their religion supported the sight of their brethren, who were on the rack, being tortured to death;"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "1-john",
+   "ch": 3,
+   "vn": 16,
+   "cite": "1 John 3:16",
+   "text_db": "Hereby perceive we the love of Elohim (God), because he laid down his life for us: and we ought to lay down our lives for the brethren.",
+   "text_canon": "Hereby perceive we the love of Elohim (God), because he laid down his life for us: and we ought to lay down our lives for the brethren."
+  },
+  "old_note": "1 John 3:16 — *Hereby perceive we the love of Elohim (God), because he laid down his life for us: and we ought to lay down our lives for the brethren* — the laying-down-of-life for one's brethren the seven enacted to the death, brotherly love bred under the Law.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "1 John 3:16",
+    "verdict": "STAND",
+    "quote": "Hereby perceive we the love of Elohim (God), because he laid down his life for us: and we ought to lay down our lives for the brethren"
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "laying-down-of-life"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 15745,
+    "slug": "4-maccabees-13-brotherly-love-bred-under-the-law",
+    "old": "1 John 3:16 — *Hereby perceive we the love of Elohim (God), because he laid down his life for us: and we ought to lay down our lives for the brethren* — the laying-down-of-life for one's brethren the seven enacted to the death, brotherly love bred under the Law.",
+    "same_as_card": true
+   }
+  ],
+  "why": "hyphen-chain",
+  "flagged": [
+   "laying-down-of-life"
+  ]
+ },
+ {
+  "id": 63655,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 18,
+   "vn": 20,
+   "cite": "4 Maccabees 18:20",
+   "text": "But the sons of Abraham, with their victorious mother, are gathered together unto the place of their ancestors, having received pure and immortal souls from Elohim (God), to whom be glory for ever and ever. Amen.",
+   "prev": "For which cause the judgement of Elohim (God) pursued, and shall pursue, the accursed wretch.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "daniel",
+   "ch": 12,
+   "vn": 2,
+   "cite": "Daniel 12:2",
+   "text_db": "And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.",
+   "text_canon": "And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt."
+  },
+  "old_note": "Daniel 12:2 — *and many of them that sleep in the dust of the earth shall awake, some to everlasting life* — the resurrection-of-the-just, the *pure and immortal souls* the sons of Abraham received from Elohim.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Daniel 12:2",
+    "verdict": "STAND",
+    "quote": "and many of them that sleep in the dust of the earth shall awake, some to everlasting life"
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "resurrection-of-the-just"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 15759,
+    "slug": "4-maccabees-18-gathered-unto-the-place-of-their-ancestors",
+    "old": "Daniel 12:2 — *and many of them that sleep in the dust of the earth shall awake, some to everlasting life* — the resurrection-of-the-just, the *pure and immortal souls* the sons of Abraham received from Elohim.",
+    "same_as_card": true
+   }
+  ],
+  "why": "hyphen-chain",
+  "flagged": [
+   "resurrection-of-the-just"
+  ]
+ },
+ {
+  "id": 69383,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 36,
+   "vn": 1,
+   "cite": "Adam and Eve 36:1",
+   "text": "And Seth telleth his mother, that they are the sun and moon and themselves fall down and pray on behalf of my father Adam. Eve saith to him: 'And where is their light and why have they taken on such a black appearance' And Seth answereth her, 'The light hath not left them, but they cannot shine before the Light of the Universe, the Father of Light; and on this account their light hath been hidden from them.",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 6,
+   "vn": 12,
+   "cite": "Revelation 6:12",
+   "text_db": "And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood;",
+   "text_canon": "And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood;"
+  },
+  "old_note": "Revelation 6:12 — *And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood.* The hidden light of the luminaries is John's sun-black-as-sackcloth and blood-red moon at the great judgment.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Revelation 6:12",
+    "verdict": "STAND",
+    "quote": "And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "sun-black-as-sackcloth"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 17357,
+    "slug": "adam-eve-36-sun-and-moon-cannot-shine",
+    "old": "Revelation 6:12 — *And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood.* The hidden light of the luminaries is John's sun-black-as-sackcloth and blood-red moon at the great judgment.",
+    "same_as_card": true
+   }
+  ],
+  "why": "hyphen-chain",
+  "flagged": [
+   "sun-black-as-sackcloth"
+  ]
+ },
+ {
+  "id": 69405,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 41,
+   "vn": 1,
+   "cite": "Adam and Eve 41:1",
+   "text": "And Elohim (God) called and said, 'Adam, Adam.' And the body answered from the earth and said: 'Here am I, Yahuah (Lord).' And Elohim (God) saith to him: 'I told thee (that) earth thou art and to earth shalt thou return. Again I promise to thee the Resurrection; I will raise thee up in the Resurrection with every man who is of thy seed.'",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "1-corinthians",
+   "ch": 15,
+   "vn": 22,
+   "cite": "1 Corinthians 15:22",
+   "text_db": "For as in Adam all die, even so in Messiah (Christ) shall all be made alive.",
+   "text_canon": "For as in Adam all die, even so in Messiah (Christ) shall all be made alive."
+  },
+  "old_note": "1 Corinthians 15:22 — *For as in Adam all die, even so in Messiah (Christ) shall all be made alive.* Raising Adam with every man of his seed is Paul's all-in-Adam-die, all-in-Messiah-made-alive — the same root and the same harvest.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "1 Corinthians 15:22",
+    "verdict": "STAND",
+    "quote": "For as in Adam all die, even so in Messiah (Christ) shall all be made alive."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "all-in-Adam-die",
+    "all-in-Messiah-made-alive"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 17362,
+    "slug": "adam-eve-41-i-will-raise-thee-up-with-thy-seed",
+    "old": "1 Corinthians 15:22 — *For as in Adam all die, even so in Messiah (Christ) shall all be made alive.* Raising Adam with every man of his seed is Paul's all-in-Adam-die, all-in-Messiah-made-alive — the same root and the same harvest.",
+    "same_as_card": true
+   }
+  ],
+  "why": "hyphen-chain",
+  "flagged": [
+   "all-in-Adam-die",
+   "all-in-Messiah-made-alive"
+  ]
+ },
+ {
+  "id": 69411,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 42,
+   "vn": 2,
+   "cite": "Adam and Eve 42:2",
+   "text": "And Eve also, when the six days were fulfilled, fell asleep. But while she was living, she wept bitterly about Adam's falling on sleep, for she knew not where he was laid. For when Yahuah (Lord) came to paradise to bury Adam she was asleep, and her sons too, except Seth, till He bade Adam be prepared for burial; and no man knew on earth, except her son Seth. And Eve prayed (in the hour of her death) that she might be buried in the place where her husband Adam was. And after she had finished her prayer, she saith: 'Lord, Master, Elohim (God) of all rule, estrange not me thy handmaid from the body of Adam, for from his members didst thou make me. But deem me worthy, even me unworthy that I am and a sinner, to enter into his tabernacle, even as I was with him in paradise, both without separation from each other; just as in our transgression, we were (both) led astray and transgressed thy command, but were not separated. Even so, Yahuah (Lord), do not separate us now.' But after she had prayed, she gazed heavenwards and groaned aloud and smote her breast and said: 'Elohim (God) of All, receive my spirit,' and straightway she delivered up her spirit to Elohim (God).",
+   "prev": "After these words, Elohim (God) made a seal and sealed the tomb, that no one might do anything to him for six days till his rib should return to him. Then Yahuah (Lord) and his angels went to their place.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "ephesians",
+   "ch": 5,
+   "vn": 31,
+   "cite": "Ephesians 5:31",
+   "text_db": "For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.",
+   "text_canon": "For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh."
+  },
+  "old_note": "Ephesians 5:31 — *For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.* Eve's do-not-separate-us is Paul's one-flesh union carried from Genesis.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Ephesians 5:31",
+    "verdict": "STAND",
+    "quote": "For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "do-not-separate-us"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 17363,
+    "slug": "adam-eve-42-from-his-members-didst-thou-make-me",
+    "old": "Ephesians 5:31 — *For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.* Eve's do-not-separate-us is Paul's one-flesh union carried from Genesis.",
+    "same_as_card": true
+   }
+  ],
+  "why": "hyphen-chain",
+  "flagged": [
+   "do-not-separate-us"
+  ]
+ },
+ {
+  "id": 63464,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 6,
+   "vn": 6,
+   "cite": "4 Maccabees 6:6",
+   "text": "So they, seeing him thus triumphant over the tortures and unmoved even by the pity of his executioners, dragged him to the fire. There they cast him on it, burning him with cruelly cunning devices, and they poured broth of evil odour into his nostrils. But when the fire already reached to his bones and he was about to give up the ghost, he lifted up his eyes to Elohim (God) and said, 'Thou, O Elohim (God), knowest that though I might save myself I am dying by fiery torments for thy Law. Be merciful unto thy people, and let our punishment be a satisfaction in their behalf. Make my blood their purification, and take my soul to ransom their souls.'",
+   "prev": "Contrary to Reason, indeed, were it for us, after living unto the truth till old age, and guarding in lawful guise the repute of so living, now to change and become in our own persons a pattern to the young of impiety, to the end that we should encourage them to eat unclean meat. Shame were it if we should live on a little longer, during that little being mocked of all men for cowardice, and while despised by the tyrant as unmanly should fail to defend the Divine Law unto the death. Therefore, O sons of Abraham, do ye die nobly for righteousness' sake; but as for you, O minions of the tyrant, why pause ye in your work?'",
+   "next": "And with these words the holy man nobly yielded up his spirit under the torture, and for the sake of the Law held out by his Reason even against the torments unto death."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hebrews",
+   "ch": 9,
+   "vn": 14,
+   "cite": "Hebrews 9:14",
+   "text_db": "How much more shall the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works to serve the living Elohim (God)?",
+   "text_canon": "How much more shall the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works to serve the living Elohim (God)?"
+  },
+  "old_note": "Hebrews 9:14 — *the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works* — the blood that truly purifies, the substance of which Eleazar's *make my blood their purification* is the shadow.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Hebrews 9:14",
+    "verdict": "STAND",
+    "quote": "the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works"
+   },
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 15727,
+    "slug": "4-maccabees-6-blood-to-ransom-their-souls",
+    "old": "Hebrews 9:14 — *the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works* — the blood that truly purifies, the substance of which Eleazar's *make my blood their purification* is the shadow.",
+    "same_as_card": true
+   }
+  ],
+  "why": "substance",
+  "flagged": [
+   "substance"
+  ]
+ },
+ {
+  "id": 63469,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 6,
+   "vn": 6,
+   "cite": "4 Maccabees 6:6",
+   "text": "So they, seeing him thus triumphant over the tortures and unmoved even by the pity of his executioners, dragged him to the fire. There they cast him on it, burning him with cruelly cunning devices, and they poured broth of evil odour into his nostrils. But when the fire already reached to his bones and he was about to give up the ghost, he lifted up his eyes to Elohim (God) and said, 'Thou, O Elohim (God), knowest that though I might save myself I am dying by fiery torments for thy Law. Be merciful unto thy people, and let our punishment be a satisfaction in their behalf. Make my blood their purification, and take my soul to ransom their souls.'",
+   "prev": "Contrary to Reason, indeed, were it for us, after living unto the truth till old age, and guarding in lawful guise the repute of so living, now to change and become in our own persons a pattern to the young of impiety, to the end that we should encourage them to eat unclean meat. Shame were it if we should live on a little longer, during that little being mocked of all men for cowardice, and while despised by the tyrant as unmanly should fail to defend the Divine Law unto the death. Therefore, O sons of Abraham, do ye die nobly for righteousness' sake; but as for you, O minions of the tyrant, why pause ye in your work?'",
+   "next": "And with these words the holy man nobly yielded up his spirit under the torture, and for the sake of the Law held out by his Reason even against the torments unto death."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 53,
+   "vn": 10,
+   "cite": "Isaiah 53:10",
+   "text_db": "Yet it pleased Yahuah (LORD) to bruise him; he has put him to grief: when you shall make his soul an offering for sin, he shall see his seed, he shall prolong his days, and the pleasure of Yahuah (LORD) shall prosper in his hand.",
+   "text_canon": "Yet it pleased Yahuah (LORD) to bruise him; he hath put him to grief: when thou shalt make his soul an offering for sin, he shall see his seed, he shall prolong his days, and the pleasure of Yahuah (LORD) shall prosper in his hand."
+  },
+  "old_note": "Isaiah 53:10 — *when thou shalt make his soul an offering for sin, he shall see his seed, he shall prolong his days* — the soul given as an offering for sin, the substance of which the martyr's surrendered soul is only a shadow.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Isaiah 53:10",
+    "verdict": "STAND",
+    "quote": "when thou shalt make his soul an offering for sin, he shall see his seed, he shall prolong his days"
+   },
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 15727,
+    "slug": "4-maccabees-6-blood-to-ransom-their-souls",
+    "old": "Isaiah 53:10 — *when thou shalt make his soul an offering for sin, he shall see his seed, he shall prolong his days* — the soul given as an offering for sin, the substance of which the martyr's surrendered soul is only a shadow.",
+    "same_as_card": true
+   }
+  ],
+  "why": "substance",
+  "flagged": [
+   "substance"
+  ]
+ },
+ {
+  "id": 63470,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 6,
+   "vn": 6,
+   "cite": "4 Maccabees 6:6",
+   "text": "So they, seeing him thus triumphant over the tortures and unmoved even by the pity of his executioners, dragged him to the fire. There they cast him on it, burning him with cruelly cunning devices, and they poured broth of evil odour into his nostrils. But when the fire already reached to his bones and he was about to give up the ghost, he lifted up his eyes to Elohim (God) and said, 'Thou, O Elohim (God), knowest that though I might save myself I am dying by fiery torments for thy Law. Be merciful unto thy people, and let our punishment be a satisfaction in their behalf. Make my blood their purification, and take my soul to ransom their souls.'",
+   "prev": "Contrary to Reason, indeed, were it for us, after living unto the truth till old age, and guarding in lawful guise the repute of so living, now to change and become in our own persons a pattern to the young of impiety, to the end that we should encourage them to eat unclean meat. Shame were it if we should live on a little longer, during that little being mocked of all men for cowardice, and while despised by the tyrant as unmanly should fail to defend the Divine Law unto the death. Therefore, O sons of Abraham, do ye die nobly for righteousness' sake; but as for you, O minions of the tyrant, why pause ye in your work?'",
+   "next": "And with these words the holy man nobly yielded up his spirit under the torture, and for the sake of the Law held out by his Reason even against the torments unto death."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 53,
+   "vn": 5,
+   "cite": "Isaiah 53:5",
+   "text_db": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.",
+   "text_canon": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."
+  },
+  "old_note": "Isaiah 53:5 — *he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed* — the Suffering Servant whose pattern Eleazar's blood-plea dimly reflects, the type awaiting its substance.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Isaiah 53:5",
+    "verdict": "STAND",
+    "quote": "he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed"
+   },
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 15727,
+    "slug": "4-maccabees-6-blood-to-ransom-their-souls",
+    "old": "Isaiah 53:5 — *he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed* — the Suffering Servant whose pattern Eleazar's blood-plea dimly reflects, the type awaiting its substance.",
+    "same_as_card": true
+   }
+  ],
+  "why": "substance",
+  "flagged": [
+   "substance"
+  ]
+ },
+ {
+  "id": 63619,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 19,
+   "cite": "4 Maccabees 17:19",
+   "text": "And these men, therefore, having sanctified themselves for Elohim's (God’s) sake, not only have received this honour, but also the honour that through them the enemy had no more power over our people, and the tyrant suffered punishment, and our country was purified, they having as it were become a ransom for our nation’s sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.",
+   "prev": "For Moses says, ‘All also who have sanctified themselves are under thy hands.",
+   "next": "For when the tyrant Antiochus saw the heroism of their virtue, and their endurance under the tortures, he publicly held up their endurance to his soldiers as an example ;"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 53,
+   "vn": 5,
+   "cite": "Isaiah 53:5",
+   "text_db": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.",
+   "text_canon": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."
+  },
+  "old_note": "Isaiah 53:5 — *But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed* — the Suffering Servant whose wounded blood truly delivers, the substance of which the martyrs' death is only the shadow.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Isaiah 53:5",
+    "verdict": "STAND",
+    "quote": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed"
+   },
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 15755,
+    "slug": "4-maccabees-17-a-ransom-for-the-nation-the-type",
+    "old": "Isaiah 53:5 — *But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed* — the Suffering Servant whose wounded blood truly delivers, the substance of which the martyrs' death is only the shadow.",
+    "same_as_card": true
+   }
+  ],
+  "why": "substance",
+  "flagged": [
+   "substance"
+  ]
+ },
+ {
+  "id": 63622,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 19,
+   "cite": "4 Maccabees 17:19",
+   "text": "And these men, therefore, having sanctified themselves for Elohim's (God’s) sake, not only have received this honour, but also the honour that through them the enemy had no more power over our people, and the tyrant suffered punishment, and our country was purified, they having as it were become a ransom for our nation’s sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.",
+   "prev": "For Moses says, ‘All also who have sanctified themselves are under thy hands.",
+   "next": "For when the tyrant Antiochus saw the heroism of their virtue, and their endurance under the tortures, he publicly held up their endurance to his soldiers as an example ;"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 53,
+   "vn": 12,
+   "cite": "Isaiah 53:12",
+   "text_db": "Therefore will I divide him a portion with the great, and he shall divide the spoil with the strong; because he has poured out his soul unto death: and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors.",
+   "text_canon": "Therefore will I divide him a portion with the great, and he shall divide the spoil with the strong; because he hath poured out his soul unto death: and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors."
+  },
+  "old_note": "Isaiah 53:12 — *he hath poured out his soul unto death... and he bare the sin of many, and made intercession for the transgressors* — the One who pours out his soul and bears the nation's sin, the substance the martyrs' blood foreshadows.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Isaiah 53:12",
+    "verdict": "STAND",
+    "quote": "he hath poured out his soul unto death... and he bare the sin of many, and made intercession for the transgressors"
+   },
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 15755,
+    "slug": "4-maccabees-17-a-ransom-for-the-nation-the-type",
+    "old": "Isaiah 53:12 — *he hath poured out his soul unto death... and he bare the sin of many, and made intercession for the transgressors* — the One who pours out his soul and bears the nation's sin, the substance the martyrs' blood foreshadows.",
+    "same_as_card": true
+   }
+  ],
+  "why": "substance",
+  "flagged": [
+   "substance"
+  ]
+ },
+ {
+  "id": 63625,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 19,
+   "cite": "4 Maccabees 17:19",
+   "text": "And these men, therefore, having sanctified themselves for Elohim's (God’s) sake, not only have received this honour, but also the honour that through them the enemy had no more power over our people, and the tyrant suffered punishment, and our country was purified, they having as it were become a ransom for our nation’s sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.",
+   "prev": "For Moses says, ‘All also who have sanctified themselves are under thy hands.",
+   "next": "For when the tyrant Antiochus saw the heroism of their virtue, and their endurance under the tortures, he publicly held up their endurance to his soldiers as an example ;"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hebrews",
+   "ch": 9,
+   "vn": 14,
+   "cite": "Hebrews 9:14",
+   "text_db": "How much more shall the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works to serve the living Elohim (God)?",
+   "text_canon": "How much more shall the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works to serve the living Elohim (God)?"
+  },
+  "old_note": "Hebrews 9:14 — *the blood of Messiah, who through the eternal Spirit offered himself without spot to Elohim, purge your conscience from dead works* — the blood that truly cleanses the people, the substance of which the martyrs' blood is the shadow.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Hebrews 9:14",
+    "verdict": "STAND",
+    "quote": "the blood of Messiah, who through the eternal Spirit offered himself without spot to Elohim, purge your conscience from dead works"
+   },
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 15755,
+    "slug": "4-maccabees-17-a-ransom-for-the-nation-the-type",
+    "old": "Hebrews 9:14 — *the blood of Messiah, who through the eternal Spirit offered himself without spot to Elohim, purge your conscience from dead works* — the blood that truly cleanses the people, the substance of which the martyrs' blood is the shadow.",
+    "same_as_card": true
+   }
+  ],
+  "why": "substance",
+  "flagged": [
+   "substance"
+  ]
+ },
+ {
+  "id": 63407,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 2,
+   "vn": 2,
+   "cite": "4 Maccabees 2:2",
+   "text": "How else can a man, naturally gormandizing and greedy and drunken, be taught to change his nature, if the Reason be not manifestly the master of the passions? Certainly, as soon as a man orders his life according to the Law, if he is miserly he acts contrary to his nature, and lends money to the needy without interest, and at the seventh-year periods cancels the debt. And if he is parsimonious, he is overruled by the Law through the action of Reason, and refrains from gleaning his stubbles or picking the last grapes from his vineyards.",
+   "prev": "And what is there to be surprised at if the natural desire of the soul to enjoy the fruition of beauty is quenched? This, certainly, is why we praise the virtuous Joseph, because by his Reason, with a mental effort, he checked the carnal impulse. For he, a young man at the age when physical desire is strong, by his Reason quenched the impulse of his passions. And Reason is proved to subdue the impulse not only of sexual desire, but of all sorts of covetings. For the Law says, 'Thou shalt not covet thy neighbour's wife, nor anything that is thy neighbour's.' Verily, when the Law orders us not to covet, it should, I think, confirm strongly the argument that the Reason is capable of controlling covetous desires, even as it does the passions that militate against justice.",
+   "next": "And with regard to all the rest we can recognize that Reason is in the position of master over the passions or affections. For the Law ranks above affection for parents, so that a man may not for their sakes surrender his virtue, and it overrides love for a wife, so that if she transgress a man should rebuke her, and it governs love for children, so that if they are naughty a man should punish them, and it controls the claims of friendship, so that a man should reprove his friends if they do evil. And do not think it a paradoxical thing when Reason through the Law is able to overcome even hatred, so that a man refrains from cutting down the enemy's orchards, and protects the property of the enemy from the spoilers, and gathers up their goods that have been scattered."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "leviticus",
+   "ch": 19,
+   "vn": 9,
+   "cite": "Leviticus 19:9",
+   "text_db": "And when you reap the harvest of your land, you shall not wholly reap the corners of your field, neither shall you gather the gleanings of your harvest.",
+   "text_canon": "And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest."
+  },
+  "old_note": "Leviticus 19:9 — *And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest.* To \"refrain from gleaning his stubbles\" is to obey the law of the corners and the gleanings left for the poor.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [
+    {
+     "quote": "refrain from gleaning his stubbles",
+     "verdict": "REWORDED",
+     "ratio": 0.67
+    }
+   ],
+   "canon_lead": {
+    "cite": "Leviticus 19:9",
+    "verdict": "STAND",
+    "quote": "And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 15713,
+    "slug": "4-maccabees-2-the-law-overrules-greed",
+    "old": "Leviticus 19:9 — *And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest.* To \"refrain from gleaning his stubbles\" is to obey the law of the corners and the gleanings left for the poor.",
+    "same_as_card": true
+   }
+  ],
+  "why": "phrase",
+  "flagged": [
+   {
+    "quote": "refrain from gleaning his stubbles",
+    "verdict": "REWORDED",
+    "ratio": 0.67
+   }
+  ]
+ },
+ {
+  "id": 63397,
+  "kind": "PATCH",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 2,
+   "vn": 5,
+   "cite": "4 Maccabees 2:5",
+   "text": "For in the day when Elohim (God) created man, he implanted in him his passions and inclinations, and also, at the very same time, set the mind on a throne amidst the senses to be his sacred guide in all things; and to the mind he gave the Law, by the which if a man order himself, he shall reign over a kingdom that is temperate, and just, and virtuous, and brave.",
+   "prev": "And the rule of Reason is likewise proved to extend through the more aggressive passions or vices, ambition, vanity, ostentation, pride, and backbiting. For the temperate mind repels all these debased passions, even as it does anger, for it conquers even this. Yea, Moses when he was angered against Dathan and Abiram did not give free course to his wrath, but governed his anger by his Reason. For the temperate mind is able, as I said, to win the victory over the passions, modifying some, while crushing others absolutely. Why else did our wise father Jacob blame the houses of Simeon and Levi for their unreasoning slaughter of the tribe of the Shechemites, saying, 'Accursed be their anger!' For had not Reason possessed the power to restrain their anger he would not have spoken thus.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "deuteronomy",
+   "ch": 30,
+   "vn": 19,
+   "cite": "Deuteronomy 30:19",
+   "text_db": "I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both you and your seed may live:",
+   "text_canon": "I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:"
+  },
+  "old_note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* The Law \"given to the mind\" so a man may reign over a temperate and just kingdom is the choice of life Moses sets before Israel.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [
+    {
+     "quote": "given to the mind",
+     "verdict": "REWORDED",
+     "ratio": 0.6
+    }
+   ],
+   "canon_lead": {
+    "cite": "Deuteronomy 30:19",
+    "verdict": "STAND",
+    "quote": "I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 15715,
+    "slug": "4-maccabees-2-passions-and-law-given-at-creation",
+    "old": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* The Law \"given to the mind\" so a man may reign over a temperate and just kingdom is the choice of life Moses sets before Israel.",
+    "same_as_card": true
+   }
+  ],
+  "why": "phrase",
+  "flagged": [
+   {
+    "quote": "given to the mind",
+    "verdict": "REWORDED",
+    "ratio": 0.6
+   }
+  ]
+ }
+]

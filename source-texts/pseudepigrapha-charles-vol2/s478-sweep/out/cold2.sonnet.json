@@ -1,0 +1,65 @@
+[
+ {
+  "id": 69439,
+  "decision": "MOVE",
+  "to": "59:1",
+  "cite_fix": null,
+  "reason": "Current 58:1 holds only the refusal and 'I will set my seat above the stars'; the note's 'expulsion onto the earth' is 59:1: 'expelled from our abodes into this world and hurled on the earth'."
+ },
+ {
+  "id": 69440,
+  "decision": "MOVE",
+  "to": "59:1",
+  "cite_fix": null,
+  "reason": "The note's 'banishing of the adversary and his angels from glory' is 59:1 ('banished me and my angels from our glory'); 58:1 has no banishing, only Michael's warning."
+ },
+ {
+  "id": 69441,
+  "decision": "MOVE",
+  "to": "59:1",
+  "cite_fix": "57:3\u219258:1 (unverified)",
+  "reason": "The 'casting-out the devil confesses' is 59:1 ('banished me... hurled on the earth'); 58:1 is the refusal and boast, not the fall. (Note's 'refusal in 57:3' looks like it should point to 58:1 where the angels refuse, but I cannot verify 57:3 from this packet.)"
+ },
+ {
+  "id": 69452,
+  "decision": "MOVE",
+  "to": "62:1",
+  "cite_fix": null,
+  "reason": "The note's 'distress and pains that overtake Eve at her bearing' are 62:1 ('began to be distressed with pains'); 64:1 is the relief and birth of Cain ('Rise up now, and prepare thee to bear'), not the sorrow."
+ },
+ {
+  "id": 69453,
+  "decision": "MOVE",
+  "to": "67:2",
+  "cite_fix": null,
+  "reason": "'Eight hundred years' and 'sons and daughters' after Seth are 67:2 ('lived eight hundred years and begat thirty sons and thirty daughters'); 66:2 only has Seth's birth and Adam's age of 130. The 5:4 'live_named' hit is a spurious chapter:verse match."
+ },
+ {
+  "id": 69454,
+  "decision": "MOVE",
+  "to": "67:1",
+  "cite_fix": null,
+  "reason": "'Seth is begotten in place of Abel whom Cain slew' is 67:1 verbatim ('in place of Abel, whom Cain slew'); 66:1 is only Cain husbandman and Abel shepherd."
+ },
+ {
+  "id": 69317,
+  "decision": "STAY",
+  "to": null,
+  "cite_fix": null,
+  "reason": "The note's point is waiting for deliverance 'like Seth's day of Judgment', and 12:1 carries that ('until the day of Judgment', the beast held off the image). 'Rule of the beasts' is quoted from 11:1, a neighbouring context phrase, but the hope of release is the 12:1 matter."
+ },
+ {
+  "id": 69319,
+  "decision": "MOVE",
+  "to": "10:1",
+  "cite_fix": null,
+  "reason": "The quoted 'fights with the image of Elohim' is 10:1 ('fearest thou not to fight with the image of Elohim'); 12:1 has the beast standing off, not fighting, so the note's contrast sits in 10:1."
+ },
+ {
+  "id": 69320,
+  "decision": "MOVE",
+  "to": "10:1",
+  "cite_fix": null,
+  "reason": "The quoted 'made subject to the image of Elohim' is 10:1 ('thou wast made subject to the image of Elohim'); 12:1 lacks 'subject'."
+ }
+]

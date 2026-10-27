@@ -1,0 +1,866 @@
+[
+ {
+  "id": 4448,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 10,
+   "vn": 1,
+   "cite": "4 Maccabees 10:1",
+   "text": "And when he had bravely met his glorious death, the third son was brought forward and was earnestly entreated by many to taste and so to save himself. But he answered in a loud voice, ‘Are ye ignorant that the same father begat me and my brothers that are dead, and the same mother gave us birth, and in the same doctrines was I brought up? I do not forswear the noble bond of brotherhood. Therefore if ye have any engine of torment, apply it to this body of mine; for my soul ye cannot reach, not if ye would.’ But they were greatly angered at the bold speech of the man, and they dislocated his hands and his feet with their dislocating engines, and wrenched his limbs out of their sockets, and unstrung them; and they twisted round his fingers, and his arms, and his legs, and his elbow-joints. And in no wise being able to strangle his spirit they stripped off his skin, taking the points of the fingers with it, and tore in Scythian fashion the scalp from his head, and straightway brought him to the wheel. And on this they twisted his spine till he saw his own flesh hanging in strips and great gouts of blood pouring down from his entrails. And at the point of death he said, ‘We, O most abominable tyrant, suffer thus for our upbringing and our virtue that are of Elohim (God); but thou for thy impiety and thy cruelty shalt endure torments without end.’",
+   "prev": null,
+   "next": "And when this man had died worthily of his brothers, they brought up the fourth, and said to him, ‘Be not thou also mad with the same madness as thy brethren, but obey the king and save thyself.’"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 28,
+   "cite": "Matthew 10:28",
+   "text_db": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.",
+   "text_canon": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell."
+  },
+  "old_note": "*Therefore if ye have any engine of torment, apply it to this body of mine; for my soul ye cannot reach, not if ye would.* 4 Maccabees (edition chapter 8, verses 4-5; standard 4 Macc 9:4-5) names the Hebrew library's most direct verbal-anchor for Matt 10:28's *fear not them which kill the body, but are not able to kill the soul.* The third son of the seven, under Antiochus's torture, names the diagnostic explicitly: the body can be reached by the engine of torment; the soul cannot. The framework reads the Matt 10:28 fear-redirect as the King naming the operative-fact the Hebrew library had already named at the martyrdom-witness. The persecutors reach the body; the soul is in another hand entirely.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Therefore if ye have any engine of torment, apply it to this body of mine; for my soul ye cannot reach, not if ye would.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|10:1",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|10:1",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And when he had bravely met his glorious death, the third son was brought forward and was earnestly entreated by many to taste and so to save himself. But he answered in a loud voice, ‘Are ye ignorant that the same father begat me and my brothers that are dead, and the same mother gave us birth, and in the same doctrines was I brought up? I do not forswear the noble bond of brotherhood. Therefore if ye have any engine of torment, apply it to this body of mine; for my soul ye cannot reach, not if ye would.’ But they were greatly angered at the bold speech of the man, and they dislocated his hands and his feet with their dislocating engines, and wrenched his limbs out of their sockets, and unstrung them; and they twisted round his fingers, and his arms, and his legs, and his elbow-joints. And in no wise being able to strangle his spirit they stripped off his skin, taking the points of the fingers with it, and tore in Scythian fashion the scalp from his head, and straightway brought him to the wheel. And on this they twisted his spine till he saw his own flesh hanging in strips and great gouts of blood pouring down from his entrails. And at the point of death he said, ‘We, O most abominable tyrant, suffer thus for our upbringing and our virtue that are of Elohim (God); but thou for thy impiety and thy cruelty shalt endure torments without end.’",
+     "live_proposed": "And when he had bravely met his glorious death, the third son was brought forward and was earnestly entreated by many to taste and so to save himself. But he answered in a loud voice, ‘Are ye ignorant that the same father begat me and my brothers that are dead, and the same mother gave us birth, and in the same doctrines was I brought up? I do not forswear the noble bond of brotherhood. Therefore if ye have any engine of torment, apply it to this body of mine; for my soul ye cannot reach, not if ye would.’ But they were greatly angered at the bold speech of the man, and they dislocated his hands and his feet with their dislocating engines, and wrenched his limbs out of their sockets, and unstrung them; and they twisted round his fingers, and his arms, and his legs, and his elbow-joints. And in no wise being able to strangle his spirit they stripped off his skin, taking the points of the fingers with it, and tore in Scythian fashion the scalp from his head, and straightway brought him to the wheel. And on this they twisted his spine till he saw his own flesh hanging in strips and great gouts of blood pouring down from his entrails. And at the point of death he said, ‘We, O most abominable tyrant, suffer thus for our upbringing and our virtue that are of Elohim (God); but thou for thy impiety and thy cruelty shalt endure torments without end.’"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 111,
+    "slug": "the-mother-and-seven-sons-soul-unreachable-in-4-maccabees",
+    "old": "4 Maccabees (edition ch 8, v.4 = std 4 Macc 9:4) — *apply it to this body of mine; for my soul ye cannot reach, not if ye would.* The Hebrew library's most direct verbal-anchor for Matt 10:28's *not able to kill the soul* — the third son under torture names the diagnostic explicitly at the martyrdom-witness.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "9:4": "For we esteem thy mercy, giving us our life in return for a breach of the Law, a thing harder to bear than death itself.",
+   "9:5": "Thou wouldst terrify us with thy threats of death under torture, as if a little while ago thou hadst learned nothing from Eleazar."
+  }
+ },
+ {
+  "id": 4449,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 15,
+   "vn": 1,
+   "cite": "4 Maccabees 15:1",
+   "text": "O Reason of the sons, lord over the passions! O religion, that wast dearer to the mother than her children! The mother, having two choices before her, religion and the present saving alive of her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God). O how may I express the passionate love of parents for children? We stamp a marvellous likeness of our soul and of our shape on the tender nature of the child, and most of all through the mother's sympathy with her children being deeper than the father's. For women are softer of soul than men, and the more children they bear the more do they abound in love for them.",
+   "prev": null,
+   "next": "But, of all mothers, she of the seven sons abounded in love beyond the rest, seeing that, having in seven child-bearings felt maternal tenderness for the fruit of her womb, and having been constrained because of the many pangs in which she bore each to a close affection, she nevertheless through the fear of Elohim (God) rejected the present safety of her children. Ay, and more than that, through the moral beauty and goodness of her sons and their obedience to the Law, her maternal love for them was made stronger. For they were just, and temperate, and brave, and great-souled, and lovers of each other and of their mother in such manner that they obeyed her in the keeping of the Law even unto death."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 28,
+   "cite": "Matthew 10:28",
+   "text_db": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.",
+   "text_canon": "And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell."
+  },
+  "old_note": "*Her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God).* 4 Maccabees (edition chapter 11, verse 3; standard 4 Macc 15:3) names the wisdom-stream's direct architecture: the seven sons chose religion-which-saveth-unto-eternal-life over the tyrant's present-life-saving-promise. Matt 10:28's fear-redirect to the Father who-is-able-to-destroy-both-soul-and-body is the inverse-naming of the same priority: the kingdom-citizens choose the One who holds the eternal-stakes over the persecutors who hold only the present-life-stakes. The wisdom-stream had named the priority at the martyrdom-witness; the King at Matt 10:28 names it at the commissioning.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God).",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|15:1",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|15:1",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "O Reason of the sons, lord over the passions! O religion, that wast dearer to the mother than her children! The mother, having two choices before her, religion and the present saving alive of her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God). O how may I express the passionate love of parents for children? We stamp a marvellous likeness of our soul and of our shape on the tender nature of the child, and most of all through the mother's sympathy with her children being deeper than the father's. For women are softer of soul than men, and the more children they bear the more do they abound in love for them.",
+     "live_proposed": "O Reason of the sons, lord over the passions! O religion, that wast dearer to the mother than her children! The mother, having two choices before her, religion and the present saving alive of her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God). O how may I express the passionate love of parents for children? We stamp a marvellous likeness of our soul and of our shape on the tender nature of the child, and most of all through the mother's sympathy with her children being deeper than the father's. For women are softer of soul than men, and the more children they bear the more do they abound in love for them."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "religion-which-saveth-unto-eternal-life",
+    "present-life-saving-promise",
+    "who-is-able-to-destroy-both-soul-and-body"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 111,
+    "slug": "the-mother-and-seven-sons-soul-unreachable-in-4-maccabees",
+    "old": "4 Maccabees (edition ch 11, v.3 = std 4 Macc 15:3) — *her seven sons ... loved rather religion, which saveth unto eternal life according to Elohim (God).* The priority of eternal-stakes-religion over the tyrant's present-life-promise; Matt 10:28's fear-redirect names the same priority at the commissioning.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "15:3": "But nevertheless, though she had so many temptations to yield to her maternal instincts, in no single instance did the dreadful variety of tortures have power to alter her Reason;"
+  }
+ },
+ {
+  "id": 4450,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 13,
+   "cite": "4 Maccabees 17:13",
+   "text": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought.",
+   "prev": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.",
+   "next": "The tyrant was their adversary and the world and the life of man were the spectators."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 22,
+   "cite": "Matthew 10:22",
+   "text_db": "And you shall be hated of all men for my name’s sake: but he that endures to the end shall be saved.",
+   "text_canon": "And ye shall be hated of all men for my name’s sake: but he that endureth to the end shall be saved."
+  },
+  "old_note": "*For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.* 4 Maccabees (edition chapter 13, verse 13; standard 4 Macc 17:13) names the wisdom-stream's direct architecture of the endurance-prize: virtue proves the martyrs through endurance, and the prize of victory is incorruption in everlasting life. Matt 10:22's *he that endureth to the end shall be saved* walks the same architecture at the kingdom-citizens level. The endurance is the proving-substance; the prize is the everlasting-life-resurrection at the King's recognition. The wisdom-stream and the King name the same diagnostic.",
+  "regrade": {
+   "verdict": "RE_ANCHOR",
+   "quotes": [
+    {
+     "quote": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|17:13",
+     "verdict": "RE_ANCHOR",
+     "proposed": "pseudepigrapha|4-maccabees|17:12",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought.",
+     "live_proposed": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 112,
+    "slug": "prize-of-endurance-in-everlasting-life-in-4-maccabees-13",
+    "old": "4 Maccabees (edition ch 13, v.13 = std 4 Macc 17:13) — *virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.* The wisdom-stream's endurance-prize architecture; Matt 10:22's endure-to-the-end is the same diagnostic at the kingdom-citizens commissioning.",
+    "same_as_card": false
+   }
+  ],
+  "move_to": "17:12",
+  "extra_new": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 12,
+   "cite": "4 Maccabees 17:12",
+   "text": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.",
+   "prev": "For truly it was a holy war which was fought by them.",
+   "next": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought."
+  },
+  "live_named": {
+   "17:13": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought."
+  }
+ },
+ {
+  "id": 4451,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 17,
+   "cite": "4 Maccabees 17:17",
+   "text": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.",
+   "prev": "Who but wondered at the athletes of the true Law? Who were not amazed at them?",
+   "next": "For Moses says, ‘All also who have sanctified themselves are under thy hands."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 22,
+   "cite": "Matthew 10:22",
+   "text_db": "And you shall be hated of all men for my name’s sake: but he that endures to the end shall be saved.",
+   "text_canon": "And ye shall be hated of all men for my name’s sake: but he that endureth to the end shall be saved."
+  },
+  "old_note": "*The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.* 4 Maccabees (edition chapter 13, verse 18; standard 4 Macc 17:18) names the wisdom-stream's post-martyrdom-architecture explicitly: the endurance of the seven sons led to their standing beside the throne of Yahuah (God) and living the blessed age. The framework reads the verse against the Red Line #11 first-resurrection architecture: the martyrs who endure to the end are among the first-resurrection-firstfruits at the King's coming. Matt 10:22's endure-to-the-end and the Hebrews 11:39-40 *they without us should not be made perfect* and the Revelation 20:4-6 first-resurrection-of-the-beheaded all name the same architecture at different angles; 4 Macc 13:18 names it from the wisdom-stream side at the martyrdom-witness.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|17:17",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|17:17",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.",
+     "live_proposed": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "endure-to-the-end",
+    "first-resurrection-of-the-beheaded"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 112,
+    "slug": "prize-of-endurance-in-everlasting-life-in-4-maccabees-13",
+    "old": "4 Maccabees (edition ch 13, v.18 = std 4 Macc 17:18) — *the endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.* The wisdom-stream's post-martyrdom station; the Red Line #11 first-resurrection-firstfruits architecture at the wisdom-stream witness.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "17:18": "For Moses says, ‘All also who have sanctified themselves are under thy hands."
+  }
+ },
+ {
+  "id": 4452,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 10,
+   "vn": 4,
+   "cite": "4 Maccabees 10:4",
+   "text": "But he said, ‘Even if thou dost remove my organ of speech, Elohim (God) is a hearer also of the speechless.",
+   "prev": "But he said unto them, ‘For me ye have no fire so exceeding hot as to make me a coward. By the blessed death of my brethren, by the eternal doom of the tyrant, and by the glorious life of the righteous, I will not deny my noble brotherhood. Invent tortures, O tyrant, in order that thou mayest learn thereby that I am brother of those who have been already tortured.’ When he heard this the bloodthirsty, murderous, and utterly abominable Antiochus bade them cut out his tongue.",
+   "next": "Lo, I put out my tongue ready: cut it out, for thou shalt not thereby silence my Reason. Gladly do we give our bodily members to be mutilated for the cause of Elohim (God). But Elohim (God) will speedily pursue after thee; for thou cuttest out the tongue that sang songs of praise unto him.’"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 20,
+   "cite": "Matthew 10:20",
+   "text_db": "For it is not you that speak, but the Spirit of your Father which speaks in you.",
+   "text_canon": "For it is not ye that speak, but the Spirit of your Father which speaketh in you."
+  },
+  "old_note": "*Even if thou dost remove my organ of speech, Elohim (God) is a hearer also of the speechless.* 4 Maccabees (edition chapter 8, verse 18; standard 4 Macc 9:18) names the wisdom-stream's direct architecture for Matt 10:20's *Spirit of your Father which speaketh in you.* The third son under torture names the operative-fact: even with his tongue cut out, Yahuah (God) hears the speechless — the Father's direct-hearing of the persecuted-disciple does not depend on the disciple's organ of speech. Matt 10:19-20's *take no thought how or what ye shall speak: for it shall be given you in that same hour what ye shall speak. For it is not ye that speak, but the Spirit of your Father which speaketh in you* walks the same architecture at the kingdom-citizens persecution-encounter level. The Father's direct-presence in the persecution-hour does not depend on the disciple's pre-prepared-words.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Even if thou dost remove my organ of speech, Elohim (God) is a hearer also of the speechless.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|10:4",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|10:4",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "But he said, ‘Even if thou dost remove my organ of speech, Elohim (God) is a hearer also of the speechless.",
+     "live_proposed": "But he said, ‘Even if thou dost remove my organ of speech, Elohim (God) is a hearer also of the speechless."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 113,
+    "slug": "elohim-hears-the-speechless-eleazar-in-4-maccabees",
+    "old": "4 Maccabees (edition ch 8, v.18 = std 4 Macc 9:18) — *even if thou dost remove my organ of speech, Elohim (God) is a hearer also of the speechless.* The wisdom-stream's direct operative-fact for Matt 10:20's *Spirit of your Father which speaketh in you* — the Father's direct-hearing of the persecuted-disciple does not depend on the disciple's organ of speech.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "9:18": "But while all were wondering at his constancy of soul, the guards brought forward the second in age of the sons, and grappling him with sharp-clawed hands of iron they fastened him to the engines and the catapult. But when they heard his noble resolve in answer to their question, ‘Would he eat rather than be tortured?’ these panther-like beasts tore at his sinews with claws of iron, and rent away all the flesh from his cheeks, and tore off the skin from his head. But he steadfastly enduring this agony said, ‘How sweet is every form of death for the sake of the righteousness of our fathers!’ And to the tyrant he said, ‘O most ruthless of tyrants, doth not it seem to thee that at this moment thou thyself sufferest tortures worse than mine in seeing thy tyranny’s arrogant intention overcome by my endurance for righteousness’ sake? For I am supported under pain by the joys that come through virtue, whereas thou art in torment whilst glorying in thy impiety; neither shalt thou escape, O most abominable tyrant, the penalties of the divine wrath.’"
+  }
+ },
+ {
+  "id": 4858,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 9,
+   "vn": 1,
+   "cite": "4 Maccabees 9:1",
+   "text": "'Why dost thou delay, O tyrant? We are ready to die rather than transgress the commandments of our fathers.",
+   "prev": null,
+   "next": "For we should be putting our ancestors also to shame, if we did not walk in obedience to the Law and take Moses as our counsellor."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 39,
+   "cite": "Matthew 26:39",
+   "text_db": "And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as you will.",
+   "text_canon": "And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt."
+  },
+  "old_note": "*Why dost thou delay, O tyrant? We are ready to die rather than transgress the commandments of our fathers.* 4 Maccabees 6:29 names the wisdom-stream's direct articulation of the ready-to-die-rather-than-transgress-the-commandments substance — the Maccabean-seven-brothers' one-voice declaration to Antiochus-Epiphanes. The framework reads the verse against Matt 26:39's *O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.* The Maccabean-faithful-servants walk-the-substantial-ready-to-die-rather-than-transgress-the-commandments-substance against the substantial-tyrant-substance; the King-of-Yashar'el (Israel) walks-substantively-the-substantial-cup-of-suffering-substance the substantial Tanakh-cup-of-Yahuah's-wrath-cluster (Psalm 75:8 + Isaiah 51:17-22 + Jeremiah 25:15-29 + Ezekiel 23:31-34) the King drinks-as-the-substantial-Pesach-lamb-substance for-the-substantial-remission-of-sins-substance. The framework reads this carefully — the Gethsemane-cup-substance is NOT-substantially-the-categorical-physical-suffering-only-substance the modern-Christian-collapse walks-from; the substantial-cup is the substantial-Father's-cup-of-Yahuah's-wrath-substance the King-as-the-Suffering-Servant-substance drinks-substantively the substantial Isaiah 53:10 substance the prophet-Yeshayahu (Isaiah) walked walks-into (*yet it pleased Yahuah (the LORD) to bruise him; he hath put him to grief: when thou shalt make his soul an offering for sin*). The Maccabean-prefiguring-substance walks-the-pattern; the King walks-the-substantial-fulfillment-at-the-categorically-greater-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Why dost thou delay, O tyrant? We are ready to die rather than transgress the commandments of our fathers.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|9:1",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|9:1",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "'Why dost thou delay, O tyrant? We are ready to die rather than transgress the commandments of our fathers.",
+     "live_proposed": "'Why dost thou delay, O tyrant? We are ready to die rather than transgress the commandments of our fathers."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "ready-to-die-rather-than-transgress-the-commandments",
+    "walk-the-substantial-ready-to-die-rather-than-transgress-the-commandments-substance",
+    "walks-substantively-the-substantial-cup-of-suffering-substance",
+    "Tanakh-cup-of-Yahuah's-wrath-cluster",
+    "drinks-as-the-substantial-Pesach-lamb-substance",
+    "for-the-substantial-remission-of-sins-substance",
+    "NOT-substantially-the-categorical-physical-suffering-only-substance",
+    "substantial-Father's-cup-of-Yahuah's-wrath-substance",
+    "King-as-the-Suffering-Servant-substance",
+    "walks-the-substantial-fulfillment-at-the-categorically-greater-substance"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 413,
+    "slug": "the-cup-of-the-faithful-servants-drunk-faithful-unto-death-in-4-maccabees",
+    "old": "4 Maccabees 6:29 — *we are ready to die rather than transgress the commandments of our fathers.* The Maccabean-seven-brothers' one-voice declaration to Antiochus-Epiphanes — the substantial-ready-to-die-rather-than-transgress-the-commandments substance the wisdom-stream walks-the-prefiguring-pattern-for. The King-of-Yashar'el (Israel) at Matt 26:39 walks-substantively-the-substantial-cup-of-suffering-substance the Tanakh-cup-of-Yahuah-wrath-cluster (Psalm 75:8 + Isaiah 51:17-22 + Jeremiah 25:15-29 + Ezekiel 23:31-34) walks-into-substantively.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {}
+ },
+ {
+  "id": 4859,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 13,
+   "cite": "4 Maccabees 17:13",
+   "text": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought.",
+   "prev": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.",
+   "next": "The tyrant was their adversary and the world and the life of man were the spectators."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 42,
+   "cite": "Matthew 26:42",
+   "text_db": "He went away again the second time, and prayed, saying, O my Father, if this cup may not pass away from me, except I drink it, your will be done.",
+   "text_canon": "He went away again the second time, and prayed, saying, O my Father, if this cup may not pass away from me, except I drink it, thy will be done."
+  },
+  "old_note": "*And righteousness won the victory, and gave the crown to her athletes.* 4 Maccabees 13:13 names the wisdom-stream's articulation of the righteousness-won-the-victory + the prize-of-victory-in-incorruption-everlasting-life substance the Maccabean-seven-brothers walked-out-substantively faithful-unto-death. The framework reads the verse against Matt 26:42's second-Gethsemane-prayer (*O my Father, if this cup may not pass away from me, except I drink it, thy will be done*). The Maccabean-faithful-walked-the-endurance-substance-into-the-substantial-prize-of-victory-in-incorruption-everlasting-life; the King-of-Yashar'el (Israel) walks-substantively-the-substantial-drinking-of-the-cup-into-the-substantial-resurrection-of-the-third-day-substance. The substantial *thy will be done* substance walks the substantial-Formless-Source-and-Formed-Expression-substance — the substantial-Father-substance is-the-substantial-Formless-Source-substance, the King-of-Yashar'el (Israel) is-the-substantial-Formed-Expression-substance walking-eternally-submitted-to-the-Formless-Source-substance the apostle-Yochanan (John) walks at John 5:30 and John 8:28-29 walks-substantively. The substantial-substance walks-the-substantial-direct-rule-out of three-inherited-collapses-of-the-substantial-nature-of-Elohim-substance: (a) the Trinitarian-three-co-equal-persons-substance (three-co-equal-persons-substance does-NOT-walk the Gethsemane-substance the Son-submits-to-the-Father); (b) the modalist-collapse-substance (the substantial-distinction-between-the-Father-substance and the King-of-Yashar'el (Israel)-as-the-Son-of-Adam-substance walks-substantively-the-Gethsemane-substance); (c) the Arian-created-being-substance (the substantial-King-of-Yashar'el (Israel)-as-the-Formed-Expression-substance walks-the-substantial-eternal-Word-substance, NOT-a-created-being-substance).",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And righteousness won the victory, and gave the crown to her athletes.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|17:13",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|17:13",
+     "ratio": 1.0,
+     "k": 3,
+     "live_here": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought.",
+     "live_proposed": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "righteousness-won-the-victory",
+    "prize-of-victory-in-incorruption-everlasting-life",
+    "Maccabean-faithful-walked-the-endurance-substance-into-the-substantial-prize-of-victory-in-incorruption-everlasting-life",
+    "walks-substantively-the-substantial-drinking-of-the-cup-into-the-substantial-resurrection-of-the-third-day-substance",
+    "substantial-Formless-Source-and-Formed-Expression-substance",
+    "is-the-substantial-Formless-Source-substance",
+    "is-the-substantial-Formed-Expression-substance",
+    "walking-eternally-submitted-to-the-Formless-Source-substance",
+    "walks-the-substantial-direct-rule-out",
+    "three-inherited-collapses-of-the-substantial-nature-of-Elohim-substance",
+    "Trinitarian-three-co-equal-persons-substance",
+    "three-co-equal-persons-substance",
+    "Son-submits-to-the-Father",
+    "substantial-distinction-between-the-Father-substance",
+    "as-the-Son-of-Adam-substance",
+    "walks-substantively-the-Gethsemane-substance",
+    "Arian-created-being-substance",
+    "substantial-King-of-Yashar'el",
+    "as-the-Formed-Expression-substance",
+    "walks-the-substantial-eternal-Word-substance",
+    "NOT-a-created-being-substance"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 413,
+    "slug": "the-cup-of-the-faithful-servants-drunk-faithful-unto-death-in-4-maccabees",
+    "old": "4 Maccabees 13:13 — *righteousness won the victory, and gave the crown to her athletes.* The substantial-righteousness-won-the-victory + the prize-of-victory-in-incorruption-everlasting-life substance — the Maccabean-faithful walked-substantively-the-endurance into-the-substantial-resurrection. The King at Matt 26:42's second-Gethsemane-prayer (*thy will be done*) walks the substantial-Formless-Source-and-Formed-Expression-substance — direct-rule-out of Trinitarian-three-co-equal-persons + modalist-collapse + Arian-created-being.",
+    "same_as_card": false
+   }
+  ],
+  "move_to": "17:15",
+  "extra_new": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 15,
+   "cite": "4 Maccabees 17:15",
+   "text": "And righteousness won the victory, and gave the crown to her athletes.",
+   "prev": "The tyrant was their adversary and the world and the life of man were the spectators.",
+   "next": "Who but wondered at the athletes of the true Law? Who were not amazed at them?"
+  },
+  "live_named": {
+   "13:13": "But though nature, companionship, and their virtuous disposition increased the ardour of their brotherly love, nevertheless the surviving sons through their religion supported the sight of their brethren, who were on the rack, being tortured to death;"
+  }
+ },
+ {
+  "id": 4860,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 17,
+   "cite": "4 Maccabees 17:17",
+   "text": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.",
+   "prev": "Who but wondered at the athletes of the true Law? Who were not amazed at them?",
+   "next": "For Moses says, ‘All also who have sanctified themselves are under thy hands."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 46,
+   "cite": "Matthew 26:46",
+   "text_db": "Rise, let us be going: behold, he is at hand that does betray me.",
+   "text_canon": "Rise, let us be going: behold, he is at hand that doth betray me."
+  },
+  "old_note": "*They having as it were become a ransom for our nation's sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.* 4 Maccabees 13:18 names THE direct wisdom-stream verbal-anchor for the ransom-for-our-nation's-sin + propitiation-of-their-death-delivered-Yashar'el (Israel) substance — the Maccabean-faithful-servants' faithful-unto-death-as-the-substantial-prefiguring-substance. The framework reads the verse against Matt 26:46's *Rise, let us be going: behold, he is at hand that doth betray me* — the King-of-Yashar'el (Israel) walks-substantively into-the-substantial-arrest + the substantial-passion + the substantial-Cross + the substantial-third-day-resurrection. The substantial-Maccabean-prefiguring-substance walks-the-substantial-ransom-and-propitiation-substance at-the-substantial-Maccabean-faithful-servants-substance; the King-of-Yashar'el (Israel)-as-the-Pesach-lamb-substance walks-the-substantial-fulfillment-substance at-the-substantial-categorically-greater-substance the substantial Matthew 20:28 substance the King had-walked walks-into (*the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many*). The framework reads this carefully — the substantial *ransom* (Greek *lytron* + Greek *antallagma*) substance and the substantial *propitiation* (Greek *hilasterion* + Greek *hilasmos*) substance the King walks-out is NOT-substantially-the-forensic-substitutionary-juridical-transaction-substance the inherited-Anselmian-Reformation-Calvinist-collapse walks-from; the substantial-substance is the substantial-Pesach-lamb-fulfillment-substance the Tanakh-Exodus-12-Pesach-substance + the substantial Yom Kippur (Day of Atonement) substance the prophet-Mosheh (Moses) walked at Leviticus 16 walks-into directly + the substantial-Isaiah-53-Suffering-Servant-bearing-the-iniquities-of-the-many-substance walks-into. The Maccabean-prefiguring-substance walks-the-pattern; the King-of-Yashar'el (Israel) walks-the-substantial-fulfillment-at-the-categorically-greater-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "They having as it were become a ransom for our nation's sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|17:17",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|17:17",
+     "ratio": 1.0,
+     "k": 3,
+     "live_here": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.",
+     "live_proposed": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "ransom-for-our-nation's-sin",
+    "propitiation-of-their-death-delivered-Yashar'el",
+    "faithful-unto-death-as-the-substantial-prefiguring-substance",
+    "into-the-substantial-arrest",
+    "substantial-third-day-resurrection",
+    "substantial-Maccabean-prefiguring-substance",
+    "walks-the-substantial-ransom-and-propitiation-substance",
+    "at-the-substantial-Maccabean-faithful-servants-substance",
+    "as-the-Pesach-lamb-substance",
+    "walks-the-substantial-fulfillment-substance",
+    "at-the-substantial-categorically-greater-substance",
+    "NOT-substantially-the-forensic-substitutionary-juridical-transaction-substance",
+    "inherited-Anselmian-Reformation-Calvinist-collapse",
+    "substantial-Pesach-lamb-fulfillment-substance",
+    "Suffering-Servant-bearing-the-iniquities-of-the-many-substance",
+    "walks-the-substantial-fulfillment-at-the-categorically-greater-substance"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 413,
+    "slug": "the-cup-of-the-faithful-servants-drunk-faithful-unto-death-in-4-maccabees",
+    "old": "4 Maccabees 13:18 — *they having as it were become a ransom for our nation's sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.* THE direct verbal-anchor for the ransom-for-our-nation's-sin + propitiation-of-their-death-delivered-Yashar'el (Israel) substance. The King-of-Yashar'el (Israel)-as-the-Pesach-lamb-substance walks-the-substantial-fulfillment at-Matt-26:46 — NOT-the-forensic-substitutionary-juridical-transaction the inherited-Anselmian-Reformation-collapse walks; the substantial-Pesach-lamb-fulfillment + Yom Kippur (Day of Atonement) substance + Isaiah 53's Suffering-Servant-bearing-the-iniquities-of-the-many substance.",
+    "same_as_card": false
+   }
+  ],
+  "move_to": "17:19",
+  "extra_new": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 19,
+   "cite": "4 Maccabees 17:19",
+   "text": "And these men, therefore, having sanctified themselves for Elohim's (God’s) sake, not only have received this honour, but also the honour that through them the enemy had no more power over our people, and the tyrant suffered punishment, and our country was purified, they having as it were become a ransom for our nation’s sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.",
+   "prev": "For Moses says, ‘All also who have sanctified themselves are under thy hands.",
+   "next": "For when the tyrant Antiochus saw the heroism of their virtue, and their endurance under the tortures, he publicly held up their endurance to his soldiers as an example ;"
+  },
+  "live_named": {}
+ },
+ {
+  "id": 4873,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 15,
+   "vn": 1,
+   "cite": "4 Maccabees 15:1",
+   "text": "O Reason of the sons, lord over the passions! O religion, that wast dearer to the mother than her children! The mother, having two choices before her, religion and the present saving alive of her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God). O how may I express the passionate love of parents for children? We stamp a marvellous likeness of our soul and of our shape on the tender nature of the child, and most of all through the mother's sympathy with her children being deeper than the father's. For women are softer of soul than men, and the more children they bear the more do they abound in love for them.",
+   "prev": null,
+   "next": "But, of all mothers, she of the seven sons abounded in love beyond the rest, seeing that, having in seven child-bearings felt maternal tenderness for the fruit of her womb, and having been constrained because of the many pangs in which she bore each to a close affection, she nevertheless through the fear of Elohim (God) rejected the present safety of her children. Ay, and more than that, through the moral beauty and goodness of her sons and their obedience to the Law, her maternal love for them was made stronger. For they were just, and temperate, and brave, and great-souled, and lovers of each other and of their mother in such manner that they obeyed her in the keeping of the Law even unto death."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 42,
+   "cite": "Matthew 27:42",
+   "text_db": "He saved others; himself he cannot save. If he be the King of Yashar'el (Israel), let him now come down from the cross, and we will believe him.",
+   "text_canon": "He saved others; himself he cannot save. If he be the King of Yashar'el (Israel), let him now come down from the cross, and we will believe him."
+  },
+  "old_note": "*Her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God).* 4 Maccabees (Charles edition seq #11, verse 3; standard 4 Macc 15:3) names THE direct wisdom-stream verbal-anchor for the choosing-the-eternal-life-over-the-present-life-preservation substance. The framework reads the verse against Matt 27:42's mockers' *he saved others; himself he cannot save. If he be the King of Yashar'el (Israel), let him now come down from the cross, and we will believe him* — the mockers' framing-of-the-choice is exactly the choice the seven-sons-and-the-mother had walked-out at the wisdom-stream-register: the King-of-Yashar'el (Israel) chooses-the-eternal-life-architecture (the cross + the resurrection + the gathering-of-the-twelve-tribes-coming-home) over the present-life-preservation (the come-down-from-the-cross) the mockers cannot see. The King COULD save-himself-substantively per Matt 26:53 + John 10:17-18 (*no man taketh it from me, but I lay it down of myself*); he chooses the Pesach (Passover)-lamb-substance per the Father's-purpose-substance. The wisdom-stream had named the priority-architecture at the martyrdom-witness; the King at the cross walks-out the same priority at the universal-substance-of-the-fulfillment.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God).",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|15:1",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|15:1",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "O Reason of the sons, lord over the passions! O religion, that wast dearer to the mother than her children! The mother, having two choices before her, religion and the present saving alive of her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God). O how may I express the passionate love of parents for children? We stamp a marvellous likeness of our soul and of our shape on the tender nature of the child, and most of all through the mother's sympathy with her children being deeper than the father's. For women are softer of soul than men, and the more children they bear the more do they abound in love for them.",
+     "live_proposed": "O Reason of the sons, lord over the passions! O religion, that wast dearer to the mother than her children! The mother, having two choices before her, religion and the present saving alive of her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God). O how may I express the passionate love of parents for children? We stamp a marvellous likeness of our soul and of our shape on the tender nature of the child, and most of all through the mother's sympathy with her children being deeper than the father's. For women are softer of soul than men, and the more children they bear the more do they abound in love for them."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "choosing-the-eternal-life-over-the-present-life-preservation",
+    "framing-of-the-choice",
+    "seven-sons-and-the-mother",
+    "chooses-the-eternal-life-architecture",
+    "gathering-of-the-twelve-tribes-coming-home",
+    "come-down-from-the-cross",
+    "universal-substance-of-the-fulfillment"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 417,
+    "slug": "the-faithful-righteous-suffering-unto-death-and-the-atoning-blood-architecture-in-4-maccabees",
+    "old": "4 Maccabees 15:3 (Charles edition seq #11) — *her seven sons according to the tyrant's promise, loved rather religion, which saveth unto eternal life according to Elohim (God).* The wisdom-stream names the choosing-the-eternal-life-architecture over the present-life-preservation — the King at Matt 27:42 walks-out the same priority at universal-scale: COULD-save-himself per Matt 26:53 + John 10:17-18; chooses the Pesach (Passover)-lamb-substance per the Father's-purpose.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "15:3": "But nevertheless, though she had so many temptations to yield to her maternal instincts, in no single instance did the dreadful variety of tortures have power to alter her Reason;"
+  }
+ },
+ {
+  "id": 4874,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 7,
+   "vn": 12,
+   "cite": "4 Maccabees 7:12",
+   "text": "But as many as with their whole heart make righteousness their first thought, these alone are able to master the weakness of the flesh, believing that unto Elohim (God) they die not, as our patriarchs, Abraham and Isaac and Jacob, died not, but that they live unto Elohim (God).",
+   "prev": "But some perhaps may answer that not all men are masters of the passions because not all men have their Reason enlightened.",
+   "next": "Therefore there is nothing contradictory in certain persons appearing to be slaves to passion in consequence of the weakness of their Reason."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 43,
+   "cite": "Matthew 27:43",
+   "text_db": "He trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God).",
+   "text_canon": "He trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God)."
+  },
+  "old_note": "*But as many as with their whole heart make righteousness their first thought, these alone are able to master the weakness of the flesh, believing that unto Elohim (God) they die not, as our patriarchs, Abraham and Isaac and Jacob, died not, but that they live unto Elohim (God).* 4 Maccabees (Charles edition seq #6, verse 18; standard 4 Macc 7:18-19) names the wisdom-stream's direct articulation of the unto-Elohim-they-die-not substance — the patriarchs Avraham (Abraham), Yitschaq (Isaac), Ya'aqov (Jacob) live-unto-Elohim, sleeping-awaiting-the-first-resurrection (Red Line #11's reading of Romans 11:24's natural-branches-able-to-be-grafted-in-again). The framework reads the verse against Matt 27:43's mockers' *he trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God).* The mockers' challenge is the inverse of the architecture the wisdom-stream named: the live-unto-Elohim substance does NOT require the present-deliverance-from-the-cross-substance the mockers demand; the deliverance-architecture is the resurrection-after-the-third-day per Hosheia (Hosea) 6:2 + the patriarchs-sleeping-awaiting-the-first-resurrection per Hebrews 11:39-40 (*they without us should not be made perfect*). The wisdom-stream had named the architecture; the cross walks-out the King's-own-walking-into-the-patriarchs'-pattern.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "But as many as with their whole heart make righteousness their first thought, these alone are able to master the weakness of the flesh, believing that unto Elohim (God) they die not, as our patriarchs, Abraham and Isaac and Jacob, died not, but that they live unto Elohim (God).",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|7:12",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|7:12",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "But as many as with their whole heart make righteousness their first thought, these alone are able to master the weakness of the flesh, believing that unto Elohim (God) they die not, as our patriarchs, Abraham and Isaac and Jacob, died not, but that they live unto Elohim (God).",
+     "live_proposed": "But as many as with their whole heart make righteousness their first thought, these alone are able to master the weakness of the flesh, believing that unto Elohim (God) they die not, as our patriarchs, Abraham and Isaac and Jacob, died not, but that they live unto Elohim (God)."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "unto-Elohim-they-die-not",
+    "sleeping-awaiting-the-first-resurrection",
+    "natural-branches-able-to-be-grafted-in-again",
+    "present-deliverance-from-the-cross-substance",
+    "resurrection-after-the-third-day",
+    "patriarchs-sleeping-awaiting-the-first-resurrection",
+    "King's-own-walking-into-the-patriarchs'-pattern"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 417,
+    "slug": "the-faithful-righteous-suffering-unto-death-and-the-atoning-blood-architecture-in-4-maccabees",
+    "old": "4 Maccabees 7:18-19 (Charles edition seq #6) — *believing that unto Elohim (God) they die not, as our patriarchs, Abraham and Isaac and Jacob, died not, but that they live unto Elohim (God).* The wisdom-stream names the patriarchs-sleeping-awaiting-the-first-resurrection architecture per Red Line #11 (Romans 11:24's natural-branches-able-to-be-grafted-in-again); the mockers' challenge at Matt 27:43 is the inverse of the architecture — the deliverance is the resurrection on the third day, not the come-down-from-the-cross.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "6:2": "But the great-souled and noble man, an Eleazar in very truth, was no more moved in his mind than if he were being tormented in a dream; yea, the old man keeping his eyes steadfastly raised to heaven suffered his flesh to be torn by the scourges till he was bathed in blood and his sides became a mass of wounds; and even when he fell to the ground because his body could no longer support the pain he still kept his Reason erect and inflexible. With his foot then one of the cruel guards as he fell kicked him savagely in the side to make him get up. But he endured the anguish, and despised the compulsion, and bore up under the torments, and like a brave athlete taking punishment, the old man outwore his tormentors. The sweat stood on his brow, and he drew his breath in hard gasps, till his nobility of soul extorted the admiration of his tormentors themselves. Hereupon, partly in pity for his old age, partly in sympathy for their friend, partly in admiration of his courage, some of the courtiers of the king went up to him and said: 'Why, O Eleazar, dost thou madly destroy thyself in this misery? We will bring to thee of the seethed meats, but do thou feign only to partake of the swine's flesh, and so save thyself.'"
+  }
+ },
+ {
+  "id": 4875,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 13,
+   "cite": "4 Maccabees 17:13",
+   "text": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought.",
+   "prev": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.",
+   "next": "The tyrant was their adversary and the world and the life of man were the spectators."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 50,
+   "cite": "Matthew 27:50",
+   "text_db": "Yahusha (Jesus), when he had cried again with a loud voice, yielded up the ghost.",
+   "text_canon": "Yahusha (Jesus), when he had cried again with a loud voice, yielded up the ghost."
+  },
+  "old_note": "*For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.* 4 Maccabees (Charles edition seq #13, verse 13; standard 4 Macc 17:13) names the wisdom-stream's direct articulation of the endurance-unto-the-prize-of-incorruption-in-everlasting-life substance. The framework reads the verse against Matt 27:50's *Yahusha (Jesus), when he had cried again with a loud voice, yielded up the ghost* — the King's-voluntary-laying-down-of-the-life is the supreme-walking-out of the endurance-architecture the wisdom-stream named at the seven-sons-and-the-mother martyrdom-witness. The Greek *aphēken to pneuma* — *yielded up the spirit* — names the voluntary-substance per John 10:17-18 (*no man taketh it from me, but I lay it down of myself*); the prize-of-victory-in-incorruption is the resurrection-on-the-third-day + the first-resurrection-at-the-King's-coming per Red Line #11. The wisdom-stream had named the prize-architecture; the King walks-into-the-prize at the substance of his own laying-down-of-his-life.",
+  "regrade": {
+   "verdict": "RE_ANCHOR",
+   "quotes": [
+    {
+     "quote": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|17:13",
+     "verdict": "RE_ANCHOR",
+     "proposed": "pseudepigrapha|4-maccabees|17:12",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought.",
+     "live_proposed": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "endurance-unto-the-prize-of-incorruption-in-everlasting-life",
+    "King's-voluntary-laying-down-of-the-life",
+    "seven-sons-and-the-mother",
+    "prize-of-victory-in-incorruption",
+    "resurrection-on-the-third-day",
+    "first-resurrection-at-the-King's-coming",
+    "walks-into-the-prize",
+    "laying-down-of-his-life"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 417,
+    "slug": "the-faithful-righteous-suffering-unto-death-and-the-atoning-blood-architecture-in-4-maccabees",
+    "old": "4 Maccabees 17:13 (Charles edition seq #13) — *for on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.* The wisdom-stream names the endurance-unto-the-prize-of-incorruption architecture — the King's voluntary-yielding-up-of-the-ghost at Matt 27:50 (Greek *aphēken to pneuma*) is the supreme-walking-out per John 10:17-18's *no man taketh it from me, but I lay it down of myself.*",
+    "same_as_card": false
+   }
+  ],
+  "move_to": "17:12",
+  "extra_new": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 12,
+   "cite": "4 Maccabees 17:12",
+   "text": "For on that day virtue, proving them through endurance, set before them the prize of victory in incorruption in everlasting life.",
+   "prev": "For truly it was a holy war which was fought by them.",
+   "next": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought."
+  },
+  "live_named": {
+   "17:13": "But the first in the fight was Eleazar, and the mother of the seven sons played her part, and the brethren fought."
+  }
+ },
+ {
+  "id": 4876,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "4-maccabees",
+   "name": "4 Maccabees",
+   "ch": 17,
+   "vn": 17,
+   "cite": "4 Maccabees 17:17",
+   "text": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.",
+   "prev": "Who but wondered at the athletes of the true Law? Who were not amazed at them?",
+   "next": "For Moses says, ‘All also who have sanctified themselves are under thy hands."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 50,
+   "cite": "Matthew 27:50",
+   "text_db": "Yahusha (Jesus), when he had cried again with a loud voice, yielded up the ghost.",
+   "text_canon": "Yahusha (Jesus), when he had cried again with a loud voice, yielded up the ghost."
+  },
+  "old_note": "*The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age. ... they having as it were become a ransom for our nation's sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.* 4 Maccabees (Charles edition seq #13, verse 18; standard 4 Macc 17:18-22) names THE direct wisdom-stream verbal-anchor for the *ransom for our nation's sin* + *the blood of these righteous men* + *the propitiation of their death* + *the divine Providence delivered Yashar'el (Israel)* substance — the wisdom-stream had named the architecture of the categorically-exempt-righteous-paying-the-atonement-substance-the-categorically-bound-owed at the seven-sons-and-the-mother martyrdom-witness centuries before the cross. The framework reads the verse against Matt 27:50's *yielded up the ghost* as the operative-walking-out at universal-scale of the architecture the wisdom-stream named at the small-Maccabean-scale: the King-of-Yashar'el (Israel) walks-the-blood-of-the-righteous + the propitiation-of-his-death + the Father's-providence-delivering-the-twelve-tribes-substantively at the substance of Hebrews 7:27's *this he did once, when he offered up himself.* Read CAREFULLY against the framework's reading per the *Grace, the Way, the New Heart, and the Mercy of Depart* section of framework-deep.md — the cross is the door-home opening architecturally (grace as the means of return-to-the-Way), NOT the inherited-Reformation-forensic-substitutionary-juridical-transaction collapse that the cross cancels-the-curse-system; the framework reads the categorically-exempt-One-paying-the-atonement-substance-the-categorically-bound-owed in continuity with the Matt-17:24-27 temple-tax pre-figuring (S154's thread already names this architecture in miniature; Matt 27:50 walks-it-out at full-scale). FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age. ... they having as it were become a ransom for our nation's sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|4-maccabees|17:17",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|4-maccabees|17:17",
+     "ratio": 1.0,
+     "k": 3,
+     "live_here": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age.",
+     "live_proposed": "The tyrant himself and his whole council admired their endurance, whereby they now do both stand beside the throne of Elohim (God) and live the blessed age."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "categorically-exempt-righteous-paying-the-atonement-substance-the-categorically-bound-owed",
+    "seven-sons-and-the-mother",
+    "walks-the-blood-of-the-righteous",
+    "propitiation-of-his-death",
+    "Father's-providence-delivering-the-twelve-tribes-substantively",
+    "return-to-the-Way",
+    "inherited-Reformation-forensic-substitutionary-juridical-transaction",
+    "cancels-the-curse-system",
+    "categorically-exempt-One-paying-the-atonement-substance-the-categorically-bound-owed"
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 417,
+    "slug": "the-faithful-righteous-suffering-unto-death-and-the-atoning-blood-architecture-in-4-maccabees",
+    "old": "4 Maccabees 17:18-22 (Charles edition seq #13) — *they having as it were become a ransom for our nation's sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.* THE direct verbal-anchor: the wisdom-stream had named the categorically-exempt-righteous-paying-the-atonement-substance-the-categorically-bound-owed architecture centuries before the cross; the cross walks-it-out at universal-scale per Hebrews 7:27's *this he did once, when he offered up himself.* Read CAREFULLY per the framework's *Grace, the Way, the New Heart, and the Mercy of Depart* exposition — the cross is the door-home opening (grace as the means of return-to-the-Way), NOT the inherited-Reformation-forensic-substitutionary-juridical-transaction collapse.",
+    "same_as_card": false
+   }
+  ],
+  "second_quotation_verse": {
+   "cite": "4 Maccabees 17:19",
+   "text": "And these men, therefore, having sanctified themselves for Elohim's (God’s) sake, not only have received this honour, but also the honour that through them the enemy had no more power over our people, and the tyrant suffered punishment, and our country was purified, they having as it were become a ransom for our nation’s sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated."
+  },
+  "live_named": {
+   "17:18": "For Moses says, ‘All also who have sanctified themselves are under thy hands.",
+   "17:19": "And these men, therefore, having sanctified themselves for Elohim's (God’s) sake, not only have received this honour, but also the honour that through them the enemy had no more power over our people, and the tyrant suffered punishment, and our country was purified, they having as it were become a ransom for our nation’s sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el (Israel) that before was evil entreated.",
+   "17:20": "For when the tyrant Antiochus saw the heroism of their virtue, and their endurance under the tortures, he publicly held up their endurance to his soldiers as an example ;",
+   "17:21": "and he thus inspired his men with a sense of honour and heroism on the field of battle and in the labours of besieging, so that he plundered and overthrew all his enemies."
+  }
+ }
+]

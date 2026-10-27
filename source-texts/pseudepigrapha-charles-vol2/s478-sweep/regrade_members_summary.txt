@@ -1,0 +1,12 @@
+MEMBERS in dump 4115 | on anchored cards 4112 {'NO_EXTRA_QUOTE': 3967, 'STAND': 124, 'OFF': 20, 'REWORDED': 1}
+ italic quotations: {'STAND': 125, 'OFF': 20, 'REWORDED': 1}
+ phrase quotes: {'NOT_FOUND': 43, 'STAND': 541, 'REWORDED': 14}
+ canon lead: {'none': 462, 'STAND': 3647, 'REWORDED': 3}
+ flagged (degraded/chain): 24 | slug cites: 0 | T.XII range bad: 0
+ per book flagged: {'pseudepigrapha|4-maccabees': 21, 'pseudepigrapha|adam-eve': 3}
+THREADS in dump 1280 | anchored in these editions 1243 | not anchored (name a book only) 37
+ with extra quotes 784 | extra quotes off 78 in 51 threads | canon italics off 2 in 2 | slug-cited 0 | flagged 4 | Hebrew book names 0 | T.XII range bad 0
+ per book anchored: {'adam-eve-conflict|1-adam-eve': 304, 'adam-eve-conflict|2-adam-eve': 92, 'apocalypse-of-abraham|apocalypse-of-abraham': 129, 'ascension-isaiah|ascension-isaiah': 58, 'pseudepigrapha|3-baruch': 41, 'pseudepigrapha|2-enoch': 110, 'pseudepigrapha|2-baruch': 181, 'pseudepigrapha|testaments-xii': 183, 'pseudepigrapha|4-maccabees': 51, 'pseudepigrapha|adam-eve': 61, 'pseudepigrapha|3-maccabees': 33}
+ per book flagged: {'pseudepigrapha|4-maccabees': 3, 'pseudepigrapha|adam-eve': 1}
+ per book extra-quote off: {'pseudepigrapha|4-maccabees': 13, 'pseudepigrapha|adam-eve': 38}
+ per book canon off: {'pseudepigrapha|adam-eve': 2}

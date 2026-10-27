@@ -1,0 +1,484 @@
+[
+ {
+  "id": 69439,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 58,
+   "vn": 1,
+   "cite": "Adam and Eve 58:1",
+   "text": "When the angels, who were under me, heard this, they refused to worship him. And Michael saith, 'Worship the image of Elohim (God), but if thou wilt not worship him, Yahuah Elohim (the Lord God) will be wrath with thee.' And I said, 'If He be wrath with me, I will set my seat above the stars of heaven and will be like the Highest.'",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 12,
+   "vn": 9,
+   "cite": "Revelation 12:9",
+   "text_db": "And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.",
+   "text_canon": "And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him."
+  },
+  "old_note": "Revelation 12:9 — *And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.* The expulsion onto the earth that the devil mourns in Adam & Eve 59:1 is the casting-out of the dragon and his angels into the earth that John saw.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Revelation 12:9",
+    "verdict": "STAND",
+    "quote": "And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17371,
+    "slug": "adam-eve-58-i-will-set-my-seat-above-the-stars",
+    "old": "Revelation 12:9 — *And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.* The expulsion onto the earth that the devil mourns in Adam & Eve 59:1 is the casting-out of the dragon and his angels into the earth that John saw.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "59:1",
+  "candidate_text": "And Elohim (God) Yahuah (Lord) was wrath with me and banished me and my angels from our glory; and on thy account were we expelled from our abodes into this world and hurled on the earth. And straightway we were overcome with grief, since we had been spoiled of so great glory. And we were grieved when we saw thee in such joy and luxury. And with guile I cheated thy wife and caused thee to be expelled through her (doing) from thy joy and luxury, as I have been driven out of my glory.",
+  "live_named": {
+   "59:1": "And Elohim (God) Yahuah (Lord) was wrath with me and banished me and my angels from our glory; and on thy account were we expelled from our abodes into this world and hurled on the earth. And straightway we were overcome with grief, since we had been spoiled of so great glory. And we were grieved when we saw thee in such joy and luxury. And with guile I cheated thy wife and caused thee to be expelled through her (doing) from thy joy and luxury, as I have been driven out of my glory."
+  }
+ },
+ {
+  "id": 69440,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 58,
+   "vn": 1,
+   "cite": "Adam and Eve 58:1",
+   "text": "When the angels, who were under me, heard this, they refused to worship him. And Michael saith, 'Worship the image of Elohim (God), but if thou wilt not worship him, Yahuah Elohim (the Lord God) will be wrath with thee.' And I said, 'If He be wrath with me, I will set my seat above the stars of heaven and will be like the Highest.'",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 12,
+   "vn": 7,
+   "cite": "Revelation 12:7",
+   "text_db": "And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels,",
+   "text_canon": "And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels,"
+  },
+  "old_note": "Revelation 12:7 — *And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels.* The banishing of the adversary and his angels from glory in Adam & Eve 59:1 is the war in heaven where Michael and his angels war against the dragon and his.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Revelation 12:7",
+    "verdict": "STAND",
+    "quote": "And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17371,
+    "slug": "adam-eve-58-i-will-set-my-seat-above-the-stars",
+    "old": "Revelation 12:7 — *And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels.* The banishing of the adversary and his angels from glory in Adam & Eve 59:1 is the war in heaven where Michael and his angels war against the dragon and his.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "59:1",
+  "candidate_text": "And Elohim (God) Yahuah (Lord) was wrath with me and banished me and my angels from our glory; and on thy account were we expelled from our abodes into this world and hurled on the earth. And straightway we were overcome with grief, since we had been spoiled of so great glory. And we were grieved when we saw thee in such joy and luxury. And with guile I cheated thy wife and caused thee to be expelled through her (doing) from thy joy and luxury, as I have been driven out of my glory.",
+  "live_named": {
+   "59:1": "And Elohim (God) Yahuah (Lord) was wrath with me and banished me and my angels from our glory; and on thy account were we expelled from our abodes into this world and hurled on the earth. And straightway we were overcome with grief, since we had been spoiled of so great glory. And we were grieved when we saw thee in such joy and luxury. And with guile I cheated thy wife and caused thee to be expelled through her (doing) from thy joy and luxury, as I have been driven out of my glory."
+  }
+ },
+ {
+  "id": 69441,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 58,
+   "vn": 1,
+   "cite": "Adam and Eve 58:1",
+   "text": "When the angels, who were under me, heard this, they refused to worship him. And Michael saith, 'Worship the image of Elohim (God), but if thou wilt not worship him, Yahuah Elohim (the Lord God) will be wrath with thee.' And I said, 'If He be wrath with me, I will set my seat above the stars of heaven and will be like the Highest.'",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "luke",
+   "ch": 10,
+   "vn": 18,
+   "cite": "Luke 10:18",
+   "text_db": "And he said unto them, I beheld Satan as lightning fall from heaven.",
+   "text_canon": "And he said unto them, I beheld Satan as lightning fall from heaven."
+  },
+  "old_note": "Luke 10:18 — *And he said unto them, I beheld Satan as lightning fall from heaven.* The casting-out the devil confesses in Adam & Eve 59:1, that followed his refusal in 57:3, is the lightning-fall the Messiah testifies He beheld.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Luke 10:18",
+    "verdict": "STAND",
+    "quote": "And he said unto them, I beheld Satan as lightning fall from heaven."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17371,
+    "slug": "adam-eve-58-i-will-set-my-seat-above-the-stars",
+    "old": "Luke 10:18 — *And he said unto them, I beheld Satan as lightning fall from heaven.* The casting-out the devil confesses in Adam & Eve 59:1, that followed his refusal in 57:3, is the lightning-fall the Messiah testifies He beheld.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "59:1",
+  "candidate_text": "And Elohim (God) Yahuah (Lord) was wrath with me and banished me and my angels from our glory; and on thy account were we expelled from our abodes into this world and hurled on the earth. And straightway we were overcome with grief, since we had been spoiled of so great glory. And we were grieved when we saw thee in such joy and luxury. And with guile I cheated thy wife and caused thee to be expelled through her (doing) from thy joy and luxury, as I have been driven out of my glory.",
+  "live_named": {
+   "59:1": "And Elohim (God) Yahuah (Lord) was wrath with me and banished me and my angels from our glory; and on thy account were we expelled from our abodes into this world and hurled on the earth. And straightway we were overcome with grief, since we had been spoiled of so great glory. And we were grieved when we saw thee in such joy and luxury. And with guile I cheated thy wife and caused thee to be expelled through her (doing) from thy joy and luxury, as I have been driven out of my glory."
+  }
+ },
+ {
+  "id": 69452,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 64,
+   "vn": 1,
+   "cite": "Adam and Eve 64:1",
+   "text": "And behold, there came twelve angels and two 'virtues', standing on the right and on the left of Eve; and Michael was standing on the right; and he stroked her on the face as far as to the breast and said to Eve: 'Blessed art thou, Eve, for Adam's sake. Since his prayers and intercessions are great, I have been sent that thou mayst receive our help. Rise up now, and prepare thee to bear. And she bore a son and he was shining; and at once the babe rose up and ran and bore a blade of grass in his hands, and gave it to his mother, and his name was called Cain.",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 3,
+   "vn": 16,
+   "cite": "Genesis 3:16",
+   "text_db": "Unto the woman he said, I will greatly multiply your sorrow and your conception; in sorrow you shall bring forth children; and your desire shall be to your husband, and he shall rule over you.",
+   "text_canon": "Unto the woman he said, I will greatly multiply thy sorrow and thy conception; in sorrow thou shalt bring forth children; and thy desire shall be to thy husband, and he shall rule over thee."
+  },
+  "old_note": "Genesis 3:16 — *Unto the woman he said, I will greatly multiply thy sorrow and thy conception; in sorrow thou shalt bring forth children; and thy desire shall be to thy husband, and he shall rule over thee.* The distress and pains that overtake Eve at her bearing in Adam & Eve 62:1 are the sorrow in childbearing Moses pronounced upon the woman.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Genesis 3:16",
+    "verdict": "STAND",
+    "quote": "Unto the woman he said, I will greatly multiply thy sorrow and thy conception; in sorrow thou shalt bring forth children; and thy desire shall be to thy husband, and he shall rule over thee."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17373,
+    "slug": "adam-eve-64-eves-pangs-and-the-birth-of-cain",
+    "old": "Genesis 3:16 — *Unto the woman he said, I will greatly multiply thy sorrow and thy conception; in sorrow thou shalt bring forth children; and thy desire shall be to thy husband, and he shall rule over thee.* The distress and pains that overtake Eve at her bearing in Adam & Eve 62:1 are the sorrow in childbearing Moses pronounced upon the woman.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "62:1",
+  "candidate_text": "And when the time of her bearing approached, she began to be distressed with pains, and she cried aloud to Yahuah (Lord) and said: 'Pity me, O Yahuah (Lord), assist me.' And she was not heard and the mercy of Elohim (God) did not encircle her. And she said to herself: 'Who shall tell my lord Adam I implore you, ye luminaries of heaven, what time ye return to the east, bear a message to my lord Adam.'",
+  "live_named": {
+   "62:1": "And when the time of her bearing approached, she began to be distressed with pains, and she cried aloud to Yahuah (Lord) and said: 'Pity me, O Yahuah (Lord), assist me.' And she was not heard and the mercy of Elohim (God) did not encircle her. And she said to herself: 'Who shall tell my lord Adam I implore you, ye luminaries of heaven, what time ye return to the east, bear a message to my lord Adam.'"
+  }
+ },
+ {
+  "id": 69453,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 66,
+   "vn": 2,
+   "cite": "Adam and Eve 66:2",
+   "text": "And thereafter, Cain slew Abel, but Adam was then one hundred and thirty years old, but Abel was slain when he was one hundred and twenty-two years. And thereafter Adam knew his wife and he begat a son and called his name Seth.",
+   "prev": "And they made Cain an husbandman, (but) Abel they made a shepherd; in order that in this wise they might be mutually separated.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 5,
+   "vn": 4,
+   "cite": "Genesis 5:4",
+   "text_db": "And the days of Adam after he had begotten Seth were eight hundred years: and he begat sons and daughters:",
+   "text_canon": "And the days of Adam after he had begotten Seth were eight hundred years: and he begat sons and daughters:"
+  },
+  "old_note": "Genesis 5:4 — *And the days of Adam after he had begotten Seth were eight hundred years: and he begat sons and daughters.* The eight hundred years and the sons and daughters Adam begets after Seth in Adam & Eve 67:2 are the very span and increase Moses records in the generations of Adam.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Genesis 5:4",
+    "verdict": "STAND",
+    "quote": "And the days of Adam after he had begotten Seth were eight hundred years: and he begat sons and daughters."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17374,
+    "slug": "adam-eve-66-cain-slays-abel-and-seth-is-born",
+    "old": "Genesis 5:4 — *And the days of Adam after he had begotten Seth were eight hundred years: and he begat sons and daughters.* The eight hundred years and the sons and daughters Adam begets after Seth in Adam & Eve 67:2 are the very span and increase Moses records in the generations of Adam.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "67:2",
+  "candidate_text": "And after Adam had begotten Seth, he lived eight hundred years and begat thirty sons and thirty daughters; in all sixty-three children. And they were increased over the face of the earth in their nations.",
+  "live_named": {
+   "5:4": "And he saith, 'MY children, I am crushed by the burden of trouble.' And they say to him, 'What is trouble'",
+   "67:2": "And after Adam had begotten Seth, he lived eight hundred years and begat thirty sons and thirty daughters; in all sixty-three children. And they were increased over the face of the earth in their nations."
+  }
+ },
+ {
+  "id": 69454,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 66,
+   "vn": 1,
+   "cite": "Adam and Eve 66:1",
+   "text": "And they made Cain an husbandman, (but) Abel they made a shepherd; in order that in this wise they might be mutually separated.",
+   "prev": null,
+   "next": "And thereafter, Cain slew Abel, but Adam was then one hundred and thirty years old, but Abel was slain when he was one hundred and twenty-two years. And thereafter Adam knew his wife and he begat a son and called his name Seth."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 4,
+   "vn": 25,
+   "cite": "Genesis 4:25",
+   "text_db": "And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, has appointed me another seed instead of Abel, whom Cain slew.",
+   "text_canon": "And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew."
+  },
+  "old_note": "Genesis 4:25 — *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew.* Adam's word in Adam & Eve 67:1, that Seth is begotten in place of Abel whom Cain slew, is the very reckoning Moses sets at Seth's naming.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Genesis 4:25",
+    "verdict": "STAND",
+    "quote": "And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17374,
+    "slug": "adam-eve-66-cain-slays-abel-and-seth-is-born",
+    "old": "Genesis 4:25 — *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew.* Adam's word in Adam & Eve 67:1, that Seth is begotten in place of Abel whom Cain slew, is the very reckoning Moses sets at Seth's naming.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "67:1",
+  "candidate_text": "And Adam said to Eve, 'Behold, I have begotten a son, in place of Abel, whom Cain slew.'",
+  "live_named": {
+   "67:1": "And Adam said to Eve, 'Behold, I have begotten a son, in place of Abel, whom Cain slew.'"
+  }
+ },
+ {
+  "id": 69317,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 12,
+   "vn": 1,
+   "cite": "Adam and Eve 12:1",
+   "text": "Then Seth speaketh to the beast, 'Close thy mouth and be silent and stand off from the image of Elohim (God) until the day of Judgment.' Then saith the beast to Seth: 'Behold, I stand off from the image of Elohim (God).' And he went to his lair.",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "romans",
+   "ch": 8,
+   "vn": 21,
+   "cite": "Romans 8:21",
+   "text_db": "Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of Elohim (God).",
+   "text_canon": "Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of Elohim (God)."
+  },
+  "old_note": "Romans 8:21 — *Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of Elohim (God).* The risen \"rule of the beasts\" waits, like Seth's day of Judgment, to be delivered.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [
+    {
+     "quote": "rule of the beasts",
+     "verdict": "ELSEWHERE",
+     "found_at": "pseudepigrapha|adam-eve|11:1",
+     "live_found": "'It is not our concern, Eve, thy greed and thy wailing, but thine own; for (it is) from thee that the rule of the beasts hath arisen. How was thy mouth opened to eat of the tree concerning which Elohim (God) enjoined thee not to eat of it On this account, our nature also hath been transformed. Now therefore thou canst not endure it, if I begin to reprove thee.'"
+    }
+   ],
+   "canon_lead": {
+    "cite": "Romans 8:21",
+    "verdict": "STAND",
+    "quote": "Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of Elohim (God)."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17338,
+    "slug": "adam-eve-12-stand-off-from-the-image-of-elohim",
+    "old": "Romans 8:21 — *Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of Elohim (God).* The risen \"rule of the beasts\" waits, like Seth's day of Judgment, to be delivered.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "11:1",
+  "candidate_text": "'It is not our concern, Eve, thy greed and thy wailing, but thine own; for (it is) from thee that the rule of the beasts hath arisen. How was thy mouth opened to eat of the tree concerning which Elohim (God) enjoined thee not to eat of it On this account, our nature also hath been transformed. Now therefore thou canst not endure it, if I begin to reprove thee.'",
+  "live_named": {}
+ },
+ {
+  "id": 69319,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 12,
+   "vn": 1,
+   "cite": "Adam and Eve 12:1",
+   "text": "Then Seth speaketh to the beast, 'Close thy mouth and be silent and stand off from the image of Elohim (God) until the day of Judgment.' Then saith the beast to Seth: 'Behold, I stand off from the image of Elohim (God).' And he went to his lair.",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 9,
+   "vn": 2,
+   "cite": "Genesis 9:2",
+   "text_db": "And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air, upon all that moves upon the earth, and upon all the fishes of the sea; into your hand are they delivered.",
+   "text_canon": "And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air, upon all that moveth upon the earth, and upon all the fishes of the sea; into your hand are they delivered."
+  },
+  "old_note": "Genesis 9:2 — *And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air... into your hand are they delivered.* The subjection of the beasts, fractured in Eden so that the beast now \"fights with the image of Elohim,\" is the dominion renewed to Noah.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [
+    {
+     "quote": "fights with the image of Elohim,",
+     "verdict": "NOT_FOUND",
+     "ratio": 0.57
+    }
+   ],
+   "canon_lead": {
+    "cite": "Genesis 9:2",
+    "verdict": "STAND",
+    "quote": "And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air... into your hand are they delivered."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17338,
+    "slug": "adam-eve-12-stand-off-from-the-image-of-elohim",
+    "old": "Genesis 9:2 — *And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air... into your hand are they delivered.* The subjection of the beasts, fractured in Eden so that the beast now \"fights with the image of Elohim,\" is the dominion renewed to Noah.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "10:1",
+  "candidate_text": "Then Seth and Eve went towards paradise, and Eve saw her son, and a wild beast assailing him, and Eve wept and said: 'Woe is me; if I come to the day of the Resurrection, all those who have sinned will curse me saying: Eve hath not kept the commandment of Elohim (God).' And she spake to the beast: 'Thou wicked beast, fearest thou not to fight with the image of Elohim (God) How was thy mouth opened How were thy teeth made strong How didst thou not call to mind thy subjection For long ago wast thou made subject to the image of Elohim (God).' Then the beast cried out and said:",
+  "live_named": {}
+ },
+ {
+  "id": 69320,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "adam-eve",
+   "name": "Adam and Eve",
+   "ch": 12,
+   "vn": 1,
+   "cite": "Adam and Eve 12:1",
+   "text": "Then Seth speaketh to the beast, 'Close thy mouth and be silent and stand off from the image of Elohim (God) until the day of Judgment.' Then saith the beast to Seth: 'Behold, I stand off from the image of Elohim (God).' And he went to his lair.",
+   "prev": null,
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 1,
+   "vn": 28,
+   "cite": "Genesis 1:28",
+   "text_db": "And Elohim (God) blessed them, and Elohim (God) said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moves upon the earth.",
+   "text_canon": "And Elohim (God) blessed them, and Elohim (God) said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth."
+  },
+  "old_note": "Genesis 1:28 — *And Elohim (God) blessed them... and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.* The plea that the beast \"was made subject to the image of Elohim\" recalls the dominion granted at creation.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [
+    {
+     "quote": "was made subject to the image of Elohim",
+     "verdict": "NOT_FOUND",
+     "ratio": 0.44
+    }
+   ],
+   "canon_lead": {
+    "cite": "Genesis 1:28",
+    "verdict": "STAND",
+    "quote": "And Elohim (God) blessed them... and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth."
+   },
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": []
+  },
+  "members": [
+   {
+    "thread_id": 17338,
+    "slug": "adam-eve-12-stand-off-from-the-image-of-elohim",
+    "old": "Genesis 1:28 — *And Elohim (God) blessed them... and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.* The plea that the beast \"was made subject to the image of Elohim\" recalls the dominion granted at creation.",
+    "same_as_card": true
+   }
+  ],
+  "candidate": "10:1",
+  "candidate_text": "Then Seth and Eve went towards paradise, and Eve saw her son, and a wild beast assailing him, and Eve wept and said: 'Woe is me; if I come to the day of the Resurrection, all those who have sinned will curse me saying: Eve hath not kept the commandment of Elohim (God).' And she spake to the beast: 'Thou wicked beast, fearest thou not to fight with the image of Elohim (God) How was thy mouth opened How were thy teeth made strong How didst thou not call to mind thy subjection For long ago wast thou made subject to the image of Elohim (God).' Then the beast cried out and said:",
+  "live_named": {}
+ }
+]

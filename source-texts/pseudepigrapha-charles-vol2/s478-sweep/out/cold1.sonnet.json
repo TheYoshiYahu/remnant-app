@@ -1,0 +1,65 @@
+[
+ {
+  "id": 69439,
+  "decision": "MOVE",
+  "to": "59:1",
+  "cite_fix": null,
+  "reason": "Note's point is the expulsion 'hurled on the earth' (59:1: 'expelled from our abodes into this world and hurled on the earth'); 58:1 has only the refusal and the boast, no casting-out."
+ },
+ {
+  "id": 69440,
+  "decision": "MOVE",
+  "to": "59:1",
+  "cite_fix": null,
+  "reason": "Note's point is 'banished me and my angels from our glory' (59:1); 58:1 has Michael's warning but no banishment or war."
+ },
+ {
+  "id": 69441,
+  "decision": "MOVE",
+  "to": "59:1",
+  "cite_fix": null,
+  "reason": "The 'casting-out the devil confesses' is 59:1 ('banished me... from our glory'); 58:1 is the boast, not the fall."
+ },
+ {
+  "id": 69452,
+  "decision": "MOVE",
+  "to": "62:1",
+  "cite_fix": null,
+  "reason": "Note's words 'distress and pains' at her bearing are 62:1 ('began to be distressed with pains'); 64:1 is the angelic help and the easy birth of Cain."
+ },
+ {
+  "id": 69453,
+  "decision": "MOVE",
+  "to": "67:2",
+  "cite_fix": null,
+  "reason": "'Eight hundred years' and 'sons and daughters' after Seth are in 67:2 ('lived eight hundred years and begat thirty sons and thirty daughters'); 66:2 only has Seth's begetting."
+ },
+ {
+  "id": 69454,
+  "decision": "MOVE",
+  "to": "67:1",
+  "cite_fix": null,
+  "reason": "'Begotten a son, in place of Abel, whom Cain slew' is 67:1 verbatim; 66:1 is only Cain husbandman/Abel shepherd."
+ },
+ {
+  "id": 69317,
+  "decision": "STAY",
+  "to": null,
+  "cite_fix": null,
+  "reason": "Note joins 'rule of the beasts' (11:1) to 'Seth's day of Judgment' ('until the day of Judgment', carried by 12:1, where the beast is held off); the waiting-to-be-delivered point rests on the current verse, and the note names no wrong citation."
+ },
+ {
+  "id": 69319,
+  "decision": "MOVE",
+  "to": "10:1",
+  "cite_fix": null,
+  "reason": "The quoted 'fights with the image of Elohim' and the 'subjection' are 10:1 ('fearest thou not to fight with the image... thy subjection'); 12:1 only has the beast standing off."
+ },
+ {
+  "id": 69320,
+  "decision": "MOVE",
+  "to": "10:1",
+  "cite_fix": null,
+  "reason": "'Made subject to the image of Elohim' is 10:1 ('wast thou made subject to the image of Elohim'); 12:1 lacks that wording."
+ }
+]

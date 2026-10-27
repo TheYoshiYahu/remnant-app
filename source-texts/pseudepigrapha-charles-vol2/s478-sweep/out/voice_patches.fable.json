@@ -1,0 +1,79 @@
+[
+ {
+  "kind": "card",
+  "id": 69405,
+  "severity": "FIX",
+  "issue": "Patched words name the Messiah without the parenthetical: 'in Messiah all are made alive'. Our own prose must read Messiah (Christ). Everything else surgical and clean.",
+  "fix_text": "1 Corinthians 15:22 — *For as in Adam all die, even so in Messiah (Christ) shall all be made alive.* Raising Adam with every man of his seed is Paul's word that in Adam all die and in Messiah (Christ) all are made alive — the same root and the same harvest."
+ },
+ {
+  "kind": "card",
+  "id": 69383,
+  "severity": "FIX",
+  "issue": "Patched clause reads 'John's sun that turns black as sackcloth, and blood-red moon' — the stray comma and relative clause break the pairing with 'blood-red moon' and the sentence stumbles. Quotation and citation intact.",
+  "fix_text": "Revelation 6:12 — *And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood.* The hidden light of the luminaries is John's sun turned black as sackcloth and blood-red moon at the great judgment."
+ },
+ {
+  "kind": "card",
+  "id": 63397,
+  "severity": "FIX",
+  "issue": "Quote is now verbatim ('to the mind' sits in the live 4 Maccabees 2:5), but the drafter also reworded prose outside the flagged quote: 'a temperate and just kingdom' became 'a kingdom that is temperate and just', with 'that Elohim (God) gave' and a comma inside the quotation marks added. The PATCH rule keeps the rest character for character. Surgical fix: move the quotation marks so only 'to the mind' is quoted and leave every other word of the old note as it stood.",
+  "fix_text": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* The Law given \"to the mind\" so a man may reign over a temperate and just kingdom is the choice of life Moses sets before Israel."
+ },
+ {
+  "kind": "card",
+  "id": 63470,
+  "severity": "NOTE",
+  "issue": "Flagged word was 'substance' but the drafter rewrote the whole closing phrase 'the type awaiting its substance' to 'a pattern that waited for its fulfilment'. The phrase is one jargon unit (type/substance), so the wider touch is defensible and the result is plain; it does read 'whose pattern ... a pattern' twice in one breath. Acceptable as is; if the author wants it smoother: '... Eleazar's blood-plea dimly reflects, waiting for its fulfilment.'"
+ },
+ {
+  "kind": "card",
+  "id": 63407,
+  "severity": "NOTE",
+  "issue": "Clean. 'refrains from gleaning his stubbles' now sits verbatim in the live 4 Maccabees 2:2; 'To be one who ...' is the only change. The old note uses double quotation marks rather than italics for the extra-book phrase; left in the old shape per the PATCH rule."
+ },
+ {
+  "kind": "card",
+  "id": 63464,
+  "severity": "NOTE",
+  "issue": "Clean; matches the brief's model wording exactly. Eleazar's words only pointed toward the blood that purifies; no atonement credited to the martyr."
+ },
+ {
+  "kind": "card",
+  "id": 63619,
+  "severity": "NOTE",
+  "issue": "Clean and theologically right ('which the martyrs' death only pointed toward'). 'wounded blood' is old prose outside the flagged words and left alone."
+ },
+ {
+  "kind": "card",
+  "id": 63622,
+  "severity": "NOTE",
+  "issue": "Clean; 'the one whom the martyrs' blood foreshadows' is the brief's permitted foreshadowing, not atonement. Slight echo 'the One ... the one' is old prose plus the patch; tolerable."
+ },
+ {
+  "kind": "card",
+  "id": 0,
+  "severity": "NOTE",
+  "issue": "Across 63517, 63524, 63552, 63655, 63469, 63625, 69411: surgical (only the flagged chain or 'substance' phrase changed), every italic quotation and citation preserved verbatim, no chains, no jargon, flagged words gone. Out-of-scope observation only: the untouched old prose in 63517 ('Law of Elohim', 'the Messiah'), 63655 ('from Elohim') and 63397 ('before Israel') lacks parentheticals; the PATCH rule forbids touching them here, so they are noted for a later pass, not fixed."
+ },
+ {
+  "kind": "summary",
+  "id": 15727,
+  "severity": "FIX",
+  "issue": "The drafter's 'substance' patch is good ('only a shadow of the blood that truly purifies'), but the summary's own prose still carries 'a TYPE' in capitals (typology jargon, capitalised like an internal label) and 'the Formed Son' (internal vocabulary for the Son; a reader has no parenthetical and no explanation). Both should be patched: say it plainly and name him Messiah (Christ). The thread title also says 'the ransom that is a type' — outside this packet's old text, flagged for the author.",
+  "fix_text": "With the fire reaching his bones, Eleazar lifts his eyes and prays: *Thou, O Elohim, knowest that though I might save myself I am dying by fiery torments for thy Law. Be merciful unto thy people, and let our punishment be a satisfaction in their behalf. Make my blood their purification, and take my soul to ransom their souls.* The righteous sufferer pleads his blood for the nation — yet this is only a shadow of the blood that truly purifies. The martyr's death points beyond itself to the Suffering Servant whose soul was made *an offering for sin,* and to the Messiah (Christ) in whom alone that foreshadowing is fulfilled. It ain't new — *he was wounded for our transgressions... he bare the sin of many,* and *to make reconciliation for iniquity* was foreseen long before; the martyr's plea borrows the pattern that the Messiah's own blood would at last complete."
+ },
+ {
+  "kind": "summary",
+  "id": 15755,
+  "severity": "FIX",
+  "issue": "Same as 15727: 'a TYPE' in capitals and 'the Formed Son' remain in the summary's own prose. 'propitiation' itself can stay — it is the book's own word at 17:19 and scripture's (Romans 3:25; 1 John 2:2), and the sentence rightly assigns it to the Messiah alone, not to the martyrs — but 'the Formed Son' is internal vocabulary and should read Messiah (Christ). Title 'the type the Messiah fulfils' is outside the old text; flagged for the author.",
+  "fix_text": "The book reaches its climax: the martyrs *having as it were become a ransom for our nation's sin; and through the blood of these righteous men and the propitiation of their death, the divine Providence delivered Yashar'el that before was evil entreated.* Here the righteous-sufferer whose blood delivers the people stands forth — yet *as it were,* only a shadow of the blood that truly delivers. The martyrs' death points forward to the Suffering Servant whose soul was made *an offering for sin* and who *bare the sin of many,* the propitiation that the Messiah (Christ) alone supplies. The writer of Hebrews knew this very martyrdom and saw beyond it to *a better resurrection.* It ain't new — *he was wounded for our transgressions... and with his stripes we are healed,* and to *make reconciliation for iniquity* was foreseen of old; the martyrs' blood borrows the pattern the Messiah's own blood at last completes."
+ },
+ {
+  "kind": "summary",
+  "id": 15752,
+  "severity": "NOTE",
+  "issue": "Clean: only 'resurrection-of-the-just' changed to 'resurrection of the just'; quotations intact; no jargon left."
+ }
+]
