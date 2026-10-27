@@ -1,0 +1,1234 @@
+[
+ {
+  "id": 4428,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "2-baruch",
+   "name": "2 Baruch",
+   "ch": 70,
+   "vn": 2,
+   "cite": "2 Baruch 70:2",
+   "text": "Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon the earth and its inhabitants and upon its rulers Perturbation of spirit and stupor of heart.",
+   "prev": "'Hear therefore the interpretation of the last black waters which are to come [after the black]: this is the word.",
+   "next": "And they shall hate one another, And provoke one another to fight, And the mean shall rule over the honourable, And those of low degree shall be extolled above the famous."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 9,
+   "vn": 38,
+   "cite": "Matthew 9:38",
+   "text_db": "Pray you therefore Yahuah (Lord) of the harvest, that he will send forth labourers into his harvest.",
+   "text_canon": "Pray ye therefore Yahuah (Lord) of the harvest, that he will send forth labourers into his harvest."
+  },
+  "old_note": "*Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon them...* 2 Baruch 35:1 — the same eschatological-harvest-of-the-age verse also anchors Matt 9:38's *pray ye therefore the Lord of the harvest, that he will send forth labourers.* The Lord-of-the-harvest is the Mighty One the apocalyptic-stream had named; the labourers being prayed-for are about to be commissioned at Matt 10:1.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon them...",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|2-baruch|70:2",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|2-baruch|70:2",
+     "ratio": 0.94,
+     "k": 1,
+     "live_here": "Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon the earth and its inhabitants and upon its rulers Perturbation of spirit and stupor of heart.",
+     "live_proposed": "Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon the earth and its inhabitants and upon its rulers Perturbation of spirit and stupor of heart."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "eschatological-harvest-of-the-age",
+    "Lord-of-the-harvest"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 103,
+    "slug": "harvest-of-the-age-in-2-baruch",
+    "old": "2 Baruch 35:1 (extended) — the same eschatological-harvest-of-the-age verse also anchors Matt 9:38's *pray ye therefore the Lord of the harvest, that he will send forth labourers.* The Lord-of-the-harvest is the Mighty One the apocalyptic-stream had named; the labourers being prayed-for are about to be commissioned at Matt 10:1.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 58216,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "2-baruch",
+   "name": "2 Baruch",
+   "ch": 74,
+   "vn": 2,
+   "cite": "2 Baruch 74:2",
+   "text": "For that time is the consummation of that which is corruptible, And the beginning of that which is not corruptible.",
+   "prev": "'And it shall come to pass in those days that the reapers shall not grow weary, Nor those that build be toilworn; For the works shall of themselves speedily advance Together with those who do them in much tranquillity.",
+   "next": "Therefore those things which were predicted shall belong to it: Therefore it is far away from evils, and near to those things which die not."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 21,
+   "vn": 4,
+   "cite": "Revelation 21:4",
+   "text_db": "And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.",
+   "text_canon": "And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away."
+  },
+  "old_note": "Rev 21:4 — *there shall be no more death... for the former things are passed away* — the corruptible consummated and the incorruptible begun, Baruch's near-to-things-which-die-not.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Rev 21:4",
+    "verdict": "STAND",
+    "quote": "there shall be no more death... for the former things are passed away"
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "near-to-things-which-die-not"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 14214,
+    "slug": "2-baruch-74-the-passing-of-the-corruptible-into-the-incorruptible",
+    "old": "Rev 21:4 — *there shall be no more death... for the former things are passed away* — the corruptible consummated and the incorruptible begun, Baruch's near-to-things-which-die-not.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 4431,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "2-baruch",
+   "name": "2 Baruch",
+   "ch": 78,
+   "vn": 3,
+   "cite": "2 Baruch 78:3",
+   "text": "And truly I know that behold all we the twelve tribes are bound by one bond, inasmuch as we are born from one father.",
+   "prev": "Thus saith Baruch the son of Neriah to the brethren carried into captivity: 'Mercy and peace. I bear in mind, my brethren, the love of Him who created us, who loved us from of old, and never hated us, but above all educated us.",
+   "next": "Wherefore I have been the more careful to leave you the words of this epistle before I die, that ye may be comforted regarding the evils which have come upon you, and that ye may be grieved also regarding the evil that has befallen your brethren; and again, also, that ye may justify His judgement which He has decreed against you that ye should be carried away captive—for what ye have suffered is disproportioned to what ye have done—in order"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 9,
+   "vn": 36,
+   "cite": "Matthew 9:36",
+   "text_db": "But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd.",
+   "text_canon": "But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd."
+  },
+  "old_note": "*And truly I know that behold all we the twelve tribes are bound by one bond, inasmuch as we are born from one father.* 2 Baruch 38:4 names the twelve-tribes-bound-by-one-bond architecture in the wisdom-stream's apocalyptic register — all the twelve tribes are bound by one bond, born from one father. The framework's gathering-thesis holds the twelve-tribe-restoration as the load-bearing prophetic substance; Matt 9:36's *sheep having no shepherd* multitudes are the same twelve-tribe-bound-by-one-bond body the wisdom-stream had named.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And truly I know that behold all we the twelve tribes are bound by one bond, inasmuch as we are born from one father.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|2-baruch|78:3",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|2-baruch|78:3",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And truly I know that behold all we the twelve tribes are bound by one bond, inasmuch as we are born from one father.",
+     "live_proposed": "And truly I know that behold all we the twelve tribes are bound by one bond, inasmuch as we are born from one father."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "twelve-tribes-bound-by-one-bond",
+    "twelve-tribe-bound-by-one-bond"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 105,
+    "slug": "gathering-the-dispersed-with-much-mercy-in-2-baruch",
+    "old": "2 Baruch 38:4 — *all we the twelve tribes are bound by one bond, inasmuch as we are born from one father.* The apocalyptic-stream's twelve-tribes-bound-by-one-bond architecture; the scattered-shepherdless multitudes Yahusha (Jesus) sees at Matt 9:36 are the same one-father-born twelve-tribe-body the wisdom-stream had named.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4432,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "2-baruch",
+   "name": "2 Baruch",
+   "ch": 78,
+   "vn": 7,
+   "cite": "2 Baruch 78:7",
+   "text": "For if ye so do these things, He will continually remember you, He who always promised on our behalf to those who were more excellent than we, that He will never forget or forsake us, but with much mercy will gather together again those who were dispersed.",
+   "prev": "Therefore, if ye consider that ye have now suffered those things for your good, that ye may not finally be condemned and tormented, then ye will receive eternal hope; if above all ye destroy from your heart vain error, on account of which ye departed hence.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 9,
+   "vn": 36,
+   "cite": "Matthew 9:36",
+   "text_db": "But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd.",
+   "text_canon": "But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd."
+  },
+  "old_note": "*He who always promised on our behalf to those who were more excellent than we, that He will never forget or forsake us, but with much mercy will gather together again those who were dispersed.* 2 Baruch 38:7 (epistle to the nine-and-a-half scattered tribes across the Euphrates) names the wisdom-stream's gathering-of-the-dispersed-with-much-mercy architecture explicitly. The much-mercy register at 2 Baruch 38:7 is the same mercy-substance Hosea 6:6 names at Matt 9:13; the gathering-of-the-dispersed IS the mercy-architecture of the kingdom-at-hand.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "He who always promised on our behalf to those who were more excellent than we, that He will never forget or forsake us, but with much mercy will gather together again those who were dispersed.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|2-baruch|78:7",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|2-baruch|78:7",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "For if ye so do these things, He will continually remember you, He who always promised on our behalf to those who were more excellent than we, that He will never forget or forsake us, but with much mercy will gather together again those who were dispersed.",
+     "live_proposed": "For if ye so do these things, He will continually remember you, He who always promised on our behalf to those who were more excellent than we, that He will never forget or forsake us, but with much mercy will gather together again those who were dispersed."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "nine-and-a-half",
+    "gathering-of-the-dispersed-with-much-mercy",
+    "gathering-of-the-dispersed"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 105,
+    "slug": "gathering-the-dispersed-with-much-mercy-in-2-baruch",
+    "old": "2 Baruch 38:7 — *with much mercy will gather together again those who were dispersed.* The apocalyptic-stream's explicit gathering-of-the-dispersed-with-much-mercy architecture; the same mercy-substance Hosea 6:6 names at Matt 9:13, now operative as the gathering-architecture of Matt 9:36's scattered-shepherdless multitudes.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4870,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 20,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 20:5",
+   "text": "And therefore there have been given to thee counsel and understanding, That thou mightest instruct thy sons concerning this;",
+   "prev": "And there shall be given to thee a blessing, and to all thy seed, Until Yahuah (Lord) shall visit all the Gentiles in His tender mercies for ever.",
+   "next": "Because they that bless Him shall be blessed, And they that curse Him shall perish.",
+   "testament": "Levi 4"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 51,
+   "cite": "Matthew 27:51",
+   "text_db": "And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;",
+   "text_canon": "And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;"
+  },
+  "old_note": "*And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the Most High.* Testaments of the XII Patriarchs / Testament of Levi (Charles edition seq #14, verse 5; standard Test. Levi 3:5—4:2 conjoint at the verse-break) names THE direct wisdom-stream verbal-anchor for the gates-of-heaven-opened-and-the-holy-temple-seen substance the temple-veil-rent at Matt 27:51 enacts at the historical-pivot. The framework reads the verses together: the angel-opening-the-gates-of-heaven at the Test. Levi vision is the wisdom-stream's heavenly-register articulation of the architecture the Father walks-out at the cross — when the King-of-Yashar'el (Israel)'s flesh-veil is torn, the gates-of-heaven that the Test. Levi vision opened in vision-form are opened operative-form. The wisdom-stream and the gospel cohere at the architecture: the gates-of-heaven-opened, the holy-temple-revealed, the way-to-the-Father-opened — the framework reads the substance per Red Line #11's ingathering-of-the-paternal-blood-remnant architecture and Red Line #4's Torah-stands-fulfilled-not-abolished posture.",
+  "regrade": {
+   "verdict": "RE_ANCHOR_REWORDED",
+   "quotes": [
+    {
+     "quote": "And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the Most High.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|20:5",
+     "verdict": "RE_ANCHOR_REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|21:1",
+     "ratio": 0.89,
+     "k": 1,
+     "live_here": "And therefore there have been given to thee counsel and understanding, That thou mightest instruct thy sons concerning this;",
+     "live_proposed": "And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the El Elyon (Most High)."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "gates-of-heaven-opened-and-the-holy-temple-seen",
+    "angel-opening-the-gates-of-heaven",
+    "gates-of-heaven-opened",
+    "way-to-the-Father-opened",
+    "ingathering-of-the-paternal-blood-remnant",
+    "Torah-stands-fulfilled-not-abolished"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 416,
+    "slug": "the-temple-veil-rent-and-the-way-back-into-the-most-holy-place-opened-in-2-baruch-and-testaments-xii",
+    "old": "Testaments of the XII / Levi 3:5 (Charles edition seq #14) — *the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the Most High.* THE direct verbal-anchor: the gates-of-heaven opened-in-vision are opened-in-operative-form at Matt 27:51 when the King's flesh-veil is torn — the way-to-the-Father opens per Hebrews 10:20's *new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh.*",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4871,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 21,
+   "vn": 2,
+   "cite": "Testaments of the Twelve Patriarchs 21:2",
+   "text": "And He said to me: Levi, I have given thee the blessings of the priesthood until I come and sojourn in the midst of Yashar'el (Israel).",
+   "prev": "And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the El Elyon (Most High).",
+   "next": "Then the angel brought me down to the earth, and gave me a shield and a sword, and said to me: Execute vengeance on Shechem because of Dinah, thy sister, and I will be with thee because Yahuah (Lord) hath sent me.",
+   "testament": "Levi 5"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 51,
+   "cite": "Matthew 27:51",
+   "text_db": "And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;",
+   "text_canon": "And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;"
+  },
+  "old_note": "*Upon a throne of glory the Most High. And He said to me: Levi, I have given thee the blessings of the priesthood until I come and sojourn in the midst of Yashar'el (Israel).* Testaments of the XII Patriarchs / Testament of Levi (Charles edition seq #15, verse 2; standard Test. Levi 4:2 at the verse-break) names the wisdom-stream's direct articulation of the *until I come and sojourn in the midst of Yashar'el (Israel)* substance — the priesthood-blessing-architecture is provisional-until the Most-High-Himself-comes-and-sojourns. The framework reads the verse against Matt 27:51's veil-rent: when the King-of-Yashar'el (Israel) walks-the-cross at the historical-pivot, the *I come and sojourn* substance the Test. Levi vision had named is operative-walked; the veil-rent names the architectural-consequence — the provisional-priestly-mediation-architecture is fulfilled-completed in the One whose body is the New-and-Living-Way per Hebrews 10:20. The framework reads this in continuity with John 1:14's *the Word was made flesh, and dwelt (skēnoō — tabernacled) among us* — the *sojourn-in-the-midst* substance the Test. Levi vision had named at the wisdom-stream-register the King walks-out at the incarnation-and-cross substance. The wisdom-stream and the gospel cohere at the temple-fulfillment architecture.",
+  "regrade": {
+   "verdict": "RE_ANCHOR_REWORDED",
+   "quotes": [
+    {
+     "quote": "Upon a throne of glory the Most High. And He said to me: Levi, I have given thee the blessings of the priesthood until I come and sojourn in the midst of Yashar'el (Israel).",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|21:2",
+     "verdict": "RE_ANCHOR_REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|21:1",
+     "ratio": 0.91,
+     "k": 1,
+     "live_here": "And He said to me: Levi, I have given thee the blessings of the priesthood until I come and sojourn in the midst of Yashar'el (Israel).",
+     "live_proposed": "And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the El Elyon (Most High)."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "Most-High-Himself-comes-and-sojourns",
+    "provisional-priestly-mediation-architecture",
+    "New-and-Living-Way"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 416,
+    "slug": "the-temple-veil-rent-and-the-way-back-into-the-most-holy-place-opened-in-2-baruch-and-testaments-xii",
+    "old": "Testaments of the XII / Levi 4:2 (Charles edition seq #15) — *I have given thee the blessings of the priesthood until I come and sojourn in the midst of Yashar'el (Israel).* The wisdom-stream names the provisional-priestly-mediation-architecture as *until I come and sojourn* — the *I come and sojourn* the King walks-out at the incarnation-and-cross per John 1:14's *the Word was made flesh, and dwelt (tabernacled) among us*; the veil-rent at Matt 27:51 names the architectural-consequence of the *until* being fulfilled.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4872,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 24,
+   "vn": 17,
+   "cite": "Testaments of the Twelve Patriarchs 24:17",
+   "text": "And some of them shall be high priests, and judges, and scribes; For by their mouth shall the holy place be guarded.",
+   "prev": "Therefore, every desirable thing in Yashar'el (Israel) shall be for thee and for thy seed, And ye shall eat everything fair to look upon, And the table of Yahuah (Lord) shall thy seed apportion.",
+   "next": "And when I awoke, I understood that this (dream) was like the first dream.",
+   "testament": "Levi 8"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 52,
+   "cite": "Matthew 27:52",
+   "text_db": "And the graves were opened; and many bodies of the saints which slept arose,",
+   "text_canon": "And the graves were opened; and many bodies of the saints which slept arose,"
+  },
+  "old_note": "*And some of them shall be high priests, and judges, and scribes ; For by their mouth shall the holy place be guarded.* Testaments of the XII Patriarchs / Testament of Levi (Charles edition seq #15, verse 17; standard Test. Levi 4:17 at the chapter-conclusion) names the wisdom-stream's direct articulation of the *holy place guarded* substance in continuity with the *I come and sojourn* substance of seq #15 v.2. The framework reads the verse against Matt 27:52's *the graves were opened; and many bodies of the saints which slept arose* — the saints-arising-at-the-cross substance is the architectural-rehearsal-in-foretaste of the broader first-resurrection-of-the-faithful per Red Line #11; the *holy place guarded by their mouth* substance the Test. Levi vision named at the wisdom-stream-register the saints-arising substance carries at the historical-pivot. The wisdom-stream had named the architecture in the prefiguring-passage; the cross opens the door-home for the architecture to walk-out operative.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And some of them shall be high priests, and judges, and scribes ; For by their mouth shall the holy place be guarded.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|24:17",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|24:17",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And some of them shall be high priests, and judges, and scribes; For by their mouth shall the holy place be guarded.",
+     "live_proposed": "And some of them shall be high priests, and judges, and scribes; For by their mouth shall the holy place be guarded."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "saints-arising-at-the-cross",
+    "architectural-rehearsal-in-foretaste",
+    "first-resurrection-of-the-faithful"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 416,
+    "slug": "the-temple-veil-rent-and-the-way-back-into-the-most-holy-place-opened-in-2-baruch-and-testaments-xii",
+    "old": "Testaments of the XII / Levi 4:17 (Charles edition seq #15) — *some of them shall be high priests, and judges, and scribes; for by their mouth shall the holy place be guarded.* The wisdom-stream names the *holy place guarded by their mouth* substance — the saints-arising at Matt 27:52 walk-out at the historical-foretaste-substance per Red Line #11's first-resurrection-foretaste reading: the forefathers-who-walked-the-covenant-faithfully Yahuah is able to graft-in-again at the first-resurrection.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4861,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 26,
+   "vn": 2,
+   "cite": "Testaments of the Twelve Patriarchs 26:2",
+   "text": "And behold, I am clear from your ungodliness and transgression, which ye shall commit in the end of the ages [against the Saviour of the world, Messiah (Christ), acting godlessly], deceiving Yashar'el (Israel), and stirring up against it great evils from Yahuah (Lord).",
+   "prev": "Now, therefore, observe whatsoever I command you, children; for whatsoever things I have heard from my fathers I have declared unto you.",
+   "next": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.",
+   "testament": "Levi 10"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 31,
+   "cite": "Matthew 26:31",
+   "text_db": "Then says Yahusha (Jesus) unto them, All you shall be offended because of me this night: for it is written, I will smite the shepherd, and the sheep of the flock shall be scattered abroad.",
+   "text_canon": "Then saith Yahusha (Jesus) unto them, All ye shall be offended because of me this night: for it is written, I will smite the shepherd, and the sheep of the flock shall be scattered abroad."
+  },
+  "old_note": "*Behold, I am clear from your ungodliness and transgression, which ye shall commit in the end of the ages against the Saviour of the world, Messiah (Christ), acting godlessly, deceiving Yashar'el (Israel), and stirring up against it great evils.* Testament of Levi 17:2 names THE direct wisdom-stream verbal-anchor for the corrupt-high-priesthood-at-the-end-of-the-ages-condemning-the-Saviour-of-the-world-Messiah substance. The framework reads the verse against Matt 26:31's *all ye shall be offended because of me this night: for it is written, I will smite the shepherd, and the sheep of the flock shall be scattered abroad* (the substantial Zechariah 13:7 substance the prophet-Zecharyah (Zechariah) walked at-the-substantial-substance-direct). The substantial-Test.-Levi-substance walks-the-substantial-prefiguring of the corrupt-Sanhedrin-Kaiapha (Caiaphas)-aristocracy-substance the King walks-out-against from-Matthew-21-onward into-the-substantial-Sanhedrin-trial-substance at vv.57-68. The substantial *Saviour of the world, Messiah (Christ)* substance the wisdom-stream had named-substantively at the Test.-Levi-pre-Christian-Tanakh-prefiguring-register (the Charles-Vol2 manuscript-substance may carry-substantial-later-interpolation-substance at-the-substantial-substance, but the substantial-architecture-of-the-corrupt-high-priesthood-condemning-the-faithful-Saviour-of-the-world-Messiah-substance walks the substantial-pre-Christian-Tanakh-substance the substantial-Maccabean-period-substance walked-out-substantively). The framework reads this in continuity with the framework-deep's *Judaizer Error* section — the corrupt-leadership-substance the King walks-out-against is the corrupt-second-Temple-priestly-aristocracy-substance the wisdom-stream had named-the-substance-for at-the-substantial-Test.-Levi-substance, NEVER-against-the-Yahudi (Jewish)-people-substance the King walks-himself-as-a-Yahudi (Jew)-substance-of-the-tribe-of-Yahudah (Judah)-substance. System-not-people posture holds non-negotiable.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Behold, I am clear from your ungodliness and transgression, which ye shall commit in the end of the ages against the Saviour of the world, Messiah (Christ), acting godlessly, deceiving Yashar'el (Israel), and stirring up against it great evils.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|26:2",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|26:2",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And behold, I am clear from your ungodliness and transgression, which ye shall commit in the end of the ages [against the Saviour of the world, Messiah (Christ), acting godlessly], deceiving Yashar'el (Israel), and stirring up against it great evils from Yahuah (Lord).",
+     "live_proposed": "And behold, I am clear from your ungodliness and transgression, which ye shall commit in the end of the ages [against the Saviour of the world, Messiah (Christ), acting godlessly], deceiving Yashar'el (Israel), and stirring up against it great evils from Yahuah (Lord)."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "corrupt-high-priesthood-at-the-end-of-the-ages-condemning-the-Saviour-of-the-world-Messiah",
+    "at-the-substantial-substance-direct",
+    "walks-the-substantial-prefiguring",
+    "into-the-substantial-Sanhedrin-trial-substance",
+    "Levi-pre-Christian-Tanakh-prefiguring-register",
+    "carry-substantial-later-interpolation-substance",
+    "at-the-substantial-substance",
+    "substantial-architecture-of-the-corrupt-high-priesthood-condemning-the-faithful-Saviour-of-the-world-Messiah-substance",
+    "substantial-pre-Christian-Tanakh-substance",
+    "substantial-Maccabean-period-substance",
+    "corrupt-second-Temple-priestly-aristocracy-substance",
+    "named-the-substance-for",
+    "at-the-substantial-Test",
+    "NEVER-against-the-Yahudi",
+    "walks-himself-as-a-Yahudi",
+    "substance-of-the-tribe-of-Yahudah"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 414,
+    "slug": "the-shepherd-smitten-and-the-temple-veil-rent-in-the-testaments-of-the-twelve",
+    "old": "Testament of Levi 17:2 — *behold, I am clear from your ungodliness and transgression, which ye shall commit in the end of the ages against the Saviour of the world, Messiah (Christ).* THE direct verbal-anchor for the corrupt-high-priesthood-at-the-end-of-the-ages-condemning-the-Saviour-of-the-world-Messiah substance — the substantial-prefiguring of the corrupt-Sanhedrin-Kaiapha (Caiaphas)-aristocracy at Matt 26:31's smitten-shepherd architecture + the broader Sanhedrin-trial at vv.57-68. System-not-people posture holds non-negotiable: the substance walks against the corrupt-leadership, NEVER against the Yahudi (Jewish)-people.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4789,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 26,
+   "vn": 3,
+   "cite": "Testaments of the Twelve Patriarchs 26:3",
+   "text": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.",
+   "prev": "And behold, I am clear from your ungodliness and transgression, which ye shall commit in the end of the ages [against the Saviour of the world, Messiah (Christ), acting godlessly], deceiving Yashar'el (Israel), and stirring up against it great evils from Yahuah (Lord).",
+   "next": "And ye shall be scattered as captives among the Gentiles, and shall be for a reproach and for a curse there.",
+   "testament": "Levi 10"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 13,
+   "cite": "Matthew 23:13",
+   "text_db": "But woe unto you, scribes and Pharisees, hypocrites! for you shut up the kingdom of heaven against men: for you neither go in yourselves, neither suffer you them that are entering to go in.",
+   "text_canon": "But woe unto you, scribes and Pharisees, hypocrites! for ye shut up the kingdom of heaven against men: for ye neither go in yourselves, neither suffer ye them that are entering to go in."
+  },
+  "old_note": "*And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.* Testaments XII Levi (file ch 17, canonical Testament of Levi 16) names the wisdom-stream's direct articulation of the corrupted-priesthood-substance walking-lawlessly-with-Yashar'el (Israel) — the substance the King-of-Yashar'el (Israel) walks-against at Matt 23:13 (the first-woe — *ye shut up the kingdom of heaven against men*). The framework reads the verse as the wisdom-stream's prefiguring of the substance the seven-woes walk-out at the Pharisaic-leadership-system at the first-coming. The veil-of-the-temple-rent substance walks-toward the historical-fulfillment at Matt 27:51 (*the veil of the temple was rent in twain from the top to the bottom*) — the same Tanakh-and-wisdom-stream-and-gospel-substance walks-from-prefiguring-to-fulfillment. The framework reads the substance in continuity with the system-not-people posture — the substance the wisdom-stream names is the leadership-substance walking-lawlessly, NOT the people-of-Yashar'el (Israel) categorically. (FRAMEWORK-MAJOR)",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|26:3",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|26:3",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.",
+     "live_proposed": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "walking-lawlessly-with-Yashar'el",
+    "veil-of-the-temple-rent",
+    "Tanakh-and-wisdom-stream-and-gospel-substance",
+    "walks-from-prefiguring-to-fulfillment"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 397,
+    "slug": "the-corrupted-priesthood-and-false-credentialing-in-testaments-of-levi-and-wisdom-stream",
+    "old": "Testaments XII Levi (file ch 17, canonical Testament of Levi 16) v.3 — *And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent.* The wisdom-stream's direct articulation of the corrupted-priesthood-substance walking-lawlessly — the substance the King walks-against at Matt 23:13 (the first-woe — *ye shut up the kingdom of heaven against men*). The veil-of-the-temple-rent substance walks-toward the historical-fulfillment at Matt 27:51.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4862,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 26,
+   "vn": 3,
+   "cite": "Testaments of the Twelve Patriarchs 26:3",
+   "text": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.",
+   "prev": "And behold, I am clear from your ungodliness and transgression, which ye shall commit in the end of the ages [against the Saviour of the world, Messiah (Christ), acting godlessly], deceiving Yashar'el (Israel), and stirring up against it great evils from Yahuah (Lord).",
+   "next": "And ye shall be scattered as captives among the Gentiles, and shall be for a reproach and for a curse there.",
+   "testament": "Levi 10"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 65,
+   "cite": "Matthew 26:65",
+   "text_db": "Then the high priest rent his clothes, saying, He has spoken blasphemy; what further need have we of witnesses? behold, now you have heard his blasphemy.",
+   "text_canon": "Then the high priest rent his clothes, saying, He hath spoken blasphemy; what further need have we of witnesses? behold, now ye have heard his blasphemy."
+  },
+  "old_note": "*And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame. And ye shall be scattered as captives among the Gentiles, and shall be for a reproach.* Testament of Levi 17:3 names THE direct wisdom-stream verbal-anchor for the veil-of-the-temple-shall-be-rent + the corrupt-priesthood-scattered-as-captives substance. The framework reads the verse against Matt 26:65's *Then the high priest rent his clothes, saying, He hath spoken blasphemy.* The high-priest-Kaiapha (Caiaphas)-substance violates the substantial Leviticus 10:6 + 21:10 substance the prophet-Mosheh (Moses) walked at-the-substantial-substance-direct (*let not the hair of your heads, neither rend your clothes* + *the high priest among his brethren, upon whose head the anointing oil was poured, and that is consecrated to put on the garments, shall not uncover his head, nor rend his clothes*) — the substantial-high-priestly-rending-of-the-clothes is-substantially-the-Tanakh-prohibition the substantial-Sanhedrin-Kaiapha (Caiaphas)-substance violates-substantively at-the-substantial-substance-of-the-corrupt-high-priesthood-at-the-end-of-the-ages-substance. The substantial-Test.-Levi-17:3 substance walks-the-substantial-prefiguring-substance — the substantial-veil-of-the-temple-shall-be-rent-substance walks-into-substantively-the substantial Matthew 27:51 substance (*and, behold, the veil of the temple was rent in twain from the top to the bottom*) at-the-Cross-substance the substantial-Father-substance walks-out-substantively the substantial-end-of-the-substantial-Second-Temple-corrupt-priestly-aristocracy-substance + the substantial-direct-access-of-the-substantial-citizens-of-the-substantial-kingdom-to-the-substantial-Father-through-the-substantial-King-of-Yashar'el (Israel)-as-the-substantial-High-Priest-substance the apostle-Sha'ul (Paul) walks at Hebrews 4:14-16 and Hebrews 10:19-22 walks-into directly.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame. And ye shall be scattered as captives among the Gentiles, and shall be for a reproach.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|26:3",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|26:3",
+     "ratio": 1.0,
+     "k": 2,
+     "live_here": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.",
+     "live_proposed": "And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "veil-of-the-temple-shall-be-rent",
+    "corrupt-priesthood-scattered-as-captives",
+    "at-the-substantial-substance-direct",
+    "substantial-high-priestly-rending-of-the-clothes",
+    "is-substantially-the-Tanakh-prohibition",
+    "at-the-substantial-substance-of-the-corrupt-high-priesthood-at-the-end-of-the-ages-substance",
+    "walks-the-substantial-prefiguring-substance",
+    "substantial-veil-of-the-temple-shall-be-rent-substance",
+    "walks-into-substantively-the",
+    "at-the-Cross-substance",
+    "substantial-end-of-the-substantial-Second-Temple-corrupt-priestly-aristocracy-substance",
+    "substantial-direct-access-of-the-substantial-citizens-of-the-substantial-kingdom-to-the-substantial-Father-through-the-substantial-King-of-Yashar'el",
+    "as-the-substantial-High-Priest-substance"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 414,
+    "slug": "the-shepherd-smitten-and-the-temple-veil-rent-in-the-testaments-of-the-twelve",
+    "old": "Testament of Levi 17:3 — *the veil of the temple shall be rent, so as not to cover your shame. And ye shall be scattered as captives among the Gentiles.* THE direct verbal-anchor for the veil-of-the-temple-shall-be-rent substance + the corrupt-priesthood-scattered-as-captives substance. The high-priest-Kaiapha (Caiaphas) at Matt 26:65 violates Leviticus 10:6 + 21:10 (the high-priest is-NOT-to-rend-his-clothes) — the substantial-corrupt-high-priesthood-substance the Test. Levi-substance had named-the-substance-for. The Matthew 27:51 substance walks-into-substantively-the-substantial-end-of-the-Second-Temple-corrupt-priestly-aristocracy-substance + direct-access through the King-as-the-High-Priest (Hebrews 4:14-16, 10:19-22).",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4710,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 29,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 29:5",
+   "text": "Work righteousness, therefore, my children, upon the earth, That ye may have (it) as a treasure in heaven.",
+   "prev": "Yea, many friends shall he gain more than his parents, And many men shall desire to serve him, And to hear the law from his mouth.",
+   "next": "And sow good things in your souls, That ye may find them in your life. But if ye sow evil things, Ye shall reap every trouble and affliction.",
+   "testament": "Levi 13"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 19,
+   "vn": 21,
+   "cite": "Matthew 19:21",
+   "text_db": "Yahusha (Jesus) said unto him, If you will be perfect, go and sell that you have, and give to the poor, and you shall have treasure in heaven: and come and follow me.",
+   "text_canon": "Yahusha (Jesus) said unto him, If thou wilt be perfect, go and sell that thou hast, and give to the poor, and thou shalt have treasure in heaven: and come and follow me."
+  },
+  "old_note": "*Work righteousness, therefore, my children, upon the earth, that ye may have it as a treasure in heaven.* Testaments XII Levi 7 (chapter 18 in the corpus enumeration) verse 5 names THE direct wisdom-stream verbal-anchor for the *treasure in heaven* substance — the exact phrase the King restates at Matt 19:21's *thou shalt have treasure in heaven: and come and follow me.* The framework reads this as the wisdom-stream's most-direct verbal-prefiguration of the King's-substance. The Levi-testament-substance had named the architecture: *work righteousness... that ye may have it as a treasure in heaven.* The kingdom-citizens' substance is righteousness-walked-on-the-earth that-translates-into-treasure-in-heaven; the substance is in continuity with the apostolic-restatement at 1 Timothy 6:18-19's *that they do good, that they be rich in good works, ready to distribute, willing to communicate; laying up in store for themselves a good foundation against the time to come.* The King at Matt 19:21 stands on the wisdom-stream-substance the Test XII Levi 7 had named. The framework reads this in continuity with the FRAMEWORK-MAJOR substance the King ties to the kingdom-entry-criterion at v.17 — *keep the commandments* — and the diagnostic-test at v.21 the heart-Torah-substance lands on. The wisdom-stream, the King, and the apostle all hold the same substance: righteousness-walked + treasure-in-heaven are one architecture.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "Work righteousness, therefore, my children, upon the earth, that ye may have it as a treasure in heaven.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|29:5",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|29:5",
+     "ratio": 0.89,
+     "k": 1,
+     "live_here": "Work righteousness, therefore, my children, upon the earth, That ye may have (it) as a treasure in heaven.",
+     "live_proposed": "Work righteousness, therefore, my children, upon the earth, That ye may have (it) as a treasure in heaven."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "righteousness-walked-on-the-earth",
+    "that-translates-into-treasure-in-heaven"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 378,
+    "slug": "keep-the-commandments-as-life-and-lay-up-treasure-in-heaven-in-sirach-tobit-and-testaments-of-levi",
+    "old": "Testaments XII Levi 7 (chapter 18) verse 5 — *work righteousness, therefore, my children, upon the earth, that ye may have it as a treasure in heaven.* THE most-direct verbal-anchor for the *treasure in heaven* substance — the exact phrase the King restates at Matt 19:21's *thou shalt have treasure in heaven*; the wisdom-stream's direct architectural-corroboration that righteousness-walked-on-the-earth + treasure-in-heaven are one motion of one obedience.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4790,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 33,
+   "vn": 11,
+   "cite": "Testaments of the Twelve Patriarchs 33:11",
+   "text": "And in the seventh week shall come priests, (who are) idolaters, adulterers, lovers of money, proud, lawless, lascivious, abusers of children and beasts.",
+   "prev": "And in the fifth week they shall return to their desolate country, and shall renew the house of Yahuah (Lord).",
+   "next": null,
+   "testament": "Levi 17"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 15,
+   "cite": "Matthew 23:15",
+   "text_db": "Woe unto you, scribes and Pharisees, hypocrites! for you compass sea and land to make one proselyte, and when he is made, you make him twofold more the child of hell than yourselves.",
+   "text_canon": "Woe unto you, scribes and Pharisees, hypocrites! for ye compass sea and land to make one proselyte, and when he is made, ye make him twofold more the child of hell than yourselves."
+  },
+  "old_note": "*And in the seventh week shall become priests, (who are) idolaters, adulterers, lovers of money, proud, lawless, lascivious, abusers of children and beasts.* Testaments XII Levi (file ch 20, canonical Testament of Levi 17) names THE direct wisdom-stream verbal-anchor for the corrupted-priesthood-substance the King-of-Yashar'el (Israel) walks-against at Matt 23:15 (the second-woe — *ye compass sea and land to make one proselyte, and when he is made, ye make him twofold more the child of Gehinnom (Gehenna) than yourselves*). The framework reads the verse as FRAMEWORK-MAJOR — the wisdom-stream had named the substance of the priests-as-idolaters-adulterers-lovers-of-money-proud-lawless centuries before the gospel-pivot articulated the same substance at the seven-woes. The proselyte the Pharisaic-leadership-system makes becomes-twofold-the-child-of-Gehinnom (Gehenna) because the leadership-substance the proselyte is-converted-into is the same idolaters-adulterers-lovers-of-money-proud-lawless substance Testaments XII Levi names. The framework reads the substance in continuity with the contrary-to-Torah-test the apostle-Yochanan (John) names at 1 John 2:3-4 — the leadership-substance fails-the-test categorically. The same diagnostic operates in five costumes by the contrary-to-Torah-test: Pharisaic-rabbinic-system through ADDITION, Galatian-agitators through INVERSION, modern-institutional-Christianity through SUBTRACTION, modern-Hebrew-Roots-false-inclusion through COLLAPSE, Islam through TRANSFER. Same flesh-credential gospel. Same voiding of the Torah-substance. Four costumes on one antichrist architecture. (FRAMEWORK-MAJOR)",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "And in the seventh week shall become priests, (who are) idolaters, adulterers, lovers of money, proud, lawless, lascivious, abusers of children and beasts.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|33:11",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|33:11",
+     "ratio": 0.95,
+     "k": 1,
+     "live_here": "And in the seventh week shall come priests, (who are) idolaters, adulterers, lovers of money, proud, lawless, lascivious, abusers of children and beasts.",
+     "live_proposed": "And in the seventh week shall come priests, (who are) idolaters, adulterers, lovers of money, proud, lawless, lascivious, abusers of children and beasts."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "priests-as-idolaters-adulterers-lovers-of-money-proud-lawless",
+    "becomes-twofold-the-child-of-Gehinnom",
+    "idolaters-adulterers-lovers-of-money-proud-lawless",
+    "contrary-to-Torah-test",
+    "contrary-to-Torah-test",
+    "modern-Hebrew-Roots-false-inclusion"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 397,
+    "slug": "the-corrupted-priesthood-and-false-credentialing-in-testaments-of-levi-and-wisdom-stream",
+    "old": "Testaments XII Levi (file ch 20, canonical Testament of Levi 17) v.11 — *And in the seventh week shall become priests, (who are) idolaters, adulterers, lovers of money, proud, lawless, lascivious, abusers of children and beasts.* THE direct wisdom-stream verbal-anchor for the corrupted-priesthood-substance the King walks-against at Matt 23:15 (the second-woe — the proselyte made-twofold-the-child-of-Gehinnom (Gehenna) — the prototype-substance of the false-inclusion-gospel the five-costumes architecture rests on). FRAMEWORK-MAJOR.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4739,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 58,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 58:5",
+   "text": "Until Yahuah (Lord) visit you, when with perfect heart ye repent and walk in all His commandments, and He bring you up from captivity among the Gentiles.",
+   "prev": "And they shall make some of you eunuchs for their wives.",
+   "next": null,
+   "testament": "Judah 23"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 20,
+   "vn": 30,
+   "cite": "Matthew 20:30",
+   "text_db": "And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.",
+   "text_canon": "And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Adonai (Lord), thou Son of David."
+  },
+  "old_note": "*And after these things shall a star arise to you from Jacob in peace.* Testaments of the Twelve Patriarchs 37:5 (Testament of Levi 18 / Testament of Yahudah (Judah) 24 cluster, depending on the recension-positioning the parsed-text preserves) names the wisdom-stream's direct articulation of the star-from-Ya'aqov (Jacob) substance — the Davidic-Messianic credential the marginalized two-blind-men at Yericho (Jericho) recognize at Matt 20:30's *thou Son of David, have mercy on us.* The framework reads the verse in continuity with Bamidbar (Numbers) 24:17's *there shall come a Star out of Ya'aqov (Jacob), and a Sceptre shall rise out of Yashar'el (Israel)* the prophet Bila'am (Balaam) had carried at the pre-entry-to-the-Land vision. The wisdom-stream and the Tanakh-prophetic-witness cohere — the star-from-Ya'aqov (Jacob) substance is the same Davidic-Messianic credential the marginalized-substance walks-into-recognizing at the gospel-pivot.",
+  "regrade": {
+   "verdict": "RE_ANCHOR",
+   "quotes": [
+    {
+     "quote": "And after these things shall a star arise to you from Jacob in peace.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|58:5",
+     "verdict": "RE_ANCHOR",
+     "proposed": "pseudepigrapha|testaments-xii|59:1",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "Until Yahuah (Lord) visit you, when with perfect heart ye repent and walk in all His commandments, and He bring you up from captivity among the Gentiles.",
+     "live_proposed": "And after these things shall a star arise to you from Jacob in peace, And a man shall arise [from my seed], like the sun of righteousness, Walking with the sons of men in meekness and righteousness; And no sin shall be found in him."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "pre-entry-to-the-Land"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 385,
+    "slug": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+    "old": "Testaments of the Twelve Patriarchs 37:5 — *and after these things shall a star arise to you from Jacob in peace.* The star-from-Ya'aqov (Jacob) Davidic-Messianic credential — the same substance Bamidbar (Numbers) 24:17's *there shall come a Star out of Ya'aqov (Jacob), and a Sceptre shall rise out of Yashar'el (Israel)* the prophet Bila'am (Balaam) carried; the marginalized two-blind-men at Matt 20:30 recognize the same Davidic-Messianic credential the wisdom-stream had-named.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4740,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 59,
+   "vn": 4,
+   "cite": "Testaments of the Twelve Patriarchs 59:4",
+   "text": "[This Branch of Elohim (God) El Elyon (Most High), And this Fountain giving life unto all.]",
+   "prev": "And He shall pour out the spirit of grace upon you; And ye shall be unto Him sons in truth, And ye shall walk in His commandments first and last.",
+   "next": "Then shall the sceptre of my kingdom shine forth; And from your root shall arise a stem;",
+   "testament": "Judah 24"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 20,
+   "vn": 30,
+   "cite": "Matthew 20:30",
+   "text_db": "And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.",
+   "text_canon": "And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Adonai (Lord), thou Son of David."
+  },
+  "old_note": "*This Branch of Elohim (God) Most High, and this Fountain giving life unto all.* Testaments of the Twelve Patriarchs 38:4 names the wisdom-stream's direct articulation of the Branch-of-Elohim-Most-High substance — the same righteous-Branch the prophet Yirmeyahu (Jeremiah) 23:5-6 names (*I will raise unto David a righteous Branch ... this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)*) and the prophet Zekharyah (Zechariah) 6:12 names (*behold the man whose name is The BRANCH*). The framework reads the verse against Matt 20:30's *thou Son of David, have mercy on us.* The Branch the wisdom-stream names is the same Son-of-David the marginalized two-blind-men recognize. The framework reads this in continuity with Yeshayahu (Isaiah) 11:1's *there shall come forth a rod out of the stem of Yishai (Jesse), and a Branch shall grow out of his roots* and Yechezk'el (Ezekiel) 34:23-24's *I will set up one shepherd over them, and he shall feed them, even my servant David.* The substance is the same-substance through-the-wisdom-stream and-through-the-prophets.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "This Branch of Elohim (God) Most High, and this Fountain giving life unto all.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|59:4",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|59:4",
+     "ratio": 0.79,
+     "k": 1,
+     "live_here": "[This Branch of Elohim (God) El Elyon (Most High), And this Fountain giving life unto all.]",
+     "live_proposed": "[This Branch of Elohim (God) El Elyon (Most High), And this Fountain giving life unto all.]"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "Branch-of-Elohim-Most-High",
+    "through-the-wisdom-stream",
+    "and-through-the-prophets"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 385,
+    "slug": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+    "old": "Testaments of the Twelve Patriarchs 38:4 — *this Branch of Elohim (God) Most High, and this Fountain giving life unto all.* The Branch-of-Elohim-Most-High substance — the same righteous-Branch Yirmeyahu (Jeremiah) 23:5-6's *I will raise unto David a righteous Branch ... Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* and Zekharyah (Zechariah) 6:12's *the man whose name is The BRANCH* and Yeshayahu (Isaiah) 11:1's *rod out of the stem of Yishai (Jesse)* the prophets carried; the Son-of-David at Matt 20:30 the marginalized recognize.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4741,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 59,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 59:5",
+   "text": "Then shall the sceptre of my kingdom shine forth; And from your root shall arise a stem;",
+   "prev": "[This Branch of Elohim (God) El Elyon (Most High), And this Fountain giving life unto all.]",
+   "next": "And from it shall grow a rod of righteousness to the Gentiles, To judge and to save all that call upon Yahuah (Lord).",
+   "testament": "Judah 24"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 20,
+   "vn": 31,
+   "cite": "Matthew 20:31",
+   "text_db": "And the multitude rebuked them, because they should hold their peace: but they cried the more, saying, Have mercy on us, O Lord, you Son of David.",
+   "text_canon": "And the multitude rebuked them, because they should hold their peace: but they cried the more, saying, Have mercy on us, O Adonai (Lord), thou Son of David."
+  },
+  "old_note": "*Then shall the sceptre of my kingdom shine forth; and from your root shall arise a stem.* Testaments of the Twelve Patriarchs 38:5 names the wisdom-stream's articulation of the sceptre-of-the-kingdom-shining-forth + root-with-stem-arising substance — the Davidic-Messianic credential extended through the wisdom-stream's prefiguring at the same register as Bamidbar (Numbers) 24:17's star-and-sceptre prophecy. The framework reads the verse against Matt 20:31's persistence-substance — *but they cried the more, saying, Have mercy on us, O Lord, thou Son of David.* The marginalized-substance recognizes-the-sceptre-of-the-kingdom-shining-forth-through-the-King even when-the-surrounding-multitude rebukes-them; the seed-war-hearing-pattern operates at the marginalized-level (John 10:26-27's *my sheep hear my voice*); the wisdom-stream had named the Davidic-Messianic credential at the prefiguring-register; the marginalized recognize-the-substance the surrounding-system cannot-see. The framework reads this in continuity with the Matt 9:27-31 Galilean-two-blind-men, the Matt 15:22 Canaanite-woman, anticipating the Matt 21:9 triumphal-entry *Hoshanna (Hosanna) to the Son of David* substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Then shall the sceptre of my kingdom shine forth; and from your root shall arise a stem.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|59:5",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|59:5",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "Then shall the sceptre of my kingdom shine forth; And from your root shall arise a stem;",
+     "live_proposed": "Then shall the sceptre of my kingdom shine forth; And from your root shall arise a stem;"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "sceptre-of-the-kingdom-shining-forth",
+    "root-with-stem-arising",
+    "recognizes-the-sceptre-of-the-kingdom-shining-forth-through-the-King",
+    "when-the-surrounding-multitude",
+    "seed-war-hearing-pattern",
+    "Galilean-two-blind-men"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 385,
+    "slug": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+    "old": "Testaments of the Twelve Patriarchs 38:5 — *then shall the sceptre of my kingdom shine forth; and from your root shall arise a stem.* The sceptre-of-the-kingdom-shining-forth + root-with-stem-arising Davidic-Messianic credential — the marginalized-substance the two-blind-men walk at Matt 20:31's *they cried the more, saying, Have mercy on us, O Lord, thou Son of David* operates beneath-the-substance-of-physical-sight at the seed-war-hearing-pattern (John 10:26-27's *my sheep hear my voice*) per Red Line #11.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4742,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 59,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 59:5",
+   "text": "Then shall the sceptre of my kingdom shine forth; And from your root shall arise a stem;",
+   "prev": "[This Branch of Elohim (God) El Elyon (Most High), And this Fountain giving life unto all.]",
+   "next": "And from it shall grow a rod of righteousness to the Gentiles, To judge and to save all that call upon Yahuah (Lord).",
+   "testament": "Judah 24"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 5,
+   "cite": "Matthew 21:5",
+   "text_db": "Tell you the daughter of Sion, Behold, your King comes unto you, meek, and sitting upon an ass, and a colt the foal of an ass.",
+   "text_canon": "Tell ye the daughter of Sion, Behold, thy King cometh unto thee, meek, and sitting upon an ass, and a colt the foal of an ass."
+  },
+  "old_note": "*Then shall the sceptre of my kingdom shine forth ; and from your root shall arise a stem.* Testament of Yahudah (Judah) ch 15 v.5 (Charles vol 2's flat-chapter scheme places Test. Yahudah ch 15 at ch 38 of the testaments-xii edition) names THE direct wisdom-stream verbal-anchor for the Davidic-Messianic-King substance the triumphal-entry walks-out at Matt 21:5. The framework reads the verse against Matt 21:5's *behold, thy King cometh unto thee, meek, and sitting upon an ass.* The Tanakh-substance the King-walks-into is the prophet Zecharyah (Zechariah) 9:9 substance the Matthean signature-citation-formula attaches the entry-substance to; the Testaments of the XII Patriarchs' substance at the dying-Yahudah's blessing-of-his-sons names the same Messianic-King substance at the wisdom-stream-register — the sceptre-of-the-kingdom-shining-forth + the stem-arising-from-the-root substance the prophet Yeshayahu (Isaiah) 11:1 had-named at the Tanakh-Netser-Branch-substance. The wisdom-stream and the gospel cohere at the King-of-the-tribe-of-Yahudah substance the entry-substance walks-out at the historical-pivot the prophets and the patriarchs had-named the substance-of for centuries.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Then shall the sceptre of my kingdom shine forth ; and from your root shall arise a stem.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|59:5",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|59:5",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "Then shall the sceptre of my kingdom shine forth; And from your root shall arise a stem;",
+     "live_proposed": "Then shall the sceptre of my kingdom shine forth; And from your root shall arise a stem;"
+    }
+   ],
+   "phrases": [
+    {
+     "quote": "s   The Tanakh-substance the King-walks-into is the prophet Zecharyah (Zechariah) 9:9 substance the Matthean signature-citation-formula attaches the entry-substance to; the Testaments of the XII Patriarchs",
+     "verdict": "NOT_FOUND",
+     "ratio": 0.09
+    }
+   ],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "blessing-of-his-sons",
+    "sceptre-of-the-kingdom-shining-forth",
+    "stem-arising-from-the-root",
+    "Tanakh-Netser-Branch-substance",
+    "King-of-the-tribe-of-Yahudah"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 386,
+    "slug": "davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees",
+    "old": "Testament of Yahudah (Judah) ch 15 v.5 — *then shall the sceptre of my kingdom shine forth ; and from your root shall arise a stem.* THE direct wisdom-stream verbal-anchor for the Davidic-Messianic-King substance the entry walks-out at Matt 21:5 — the sceptre-of-the-kingdom-shining-forth + the stem-arising-from-the-root substance the prophet Yeshayahu (Isaiah) 11:1 had-named at the Tanakh-Netser-Branch-substance; the wisdom-stream and the gospel cohere at the King-of-the-tribe-of-Yahudah substance.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4743,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 59,
+   "vn": 6,
+   "cite": "Testaments of the Twelve Patriarchs 59:6",
+   "text": "And from it shall grow a rod of righteousness to the Gentiles, To judge and to save all that call upon Yahuah (Lord).",
+   "prev": "Then shall the sceptre of my kingdom shine forth; And from your root shall arise a stem;",
+   "next": null,
+   "testament": "Judah 24"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 21,
+   "vn": 5,
+   "cite": "Matthew 21:5",
+   "text_db": "Tell you the daughter of Sion, Behold, your King comes unto you, meek, and sitting upon an ass, and a colt the foal of an ass.",
+   "text_canon": "Tell ye the daughter of Sion, Behold, thy King cometh unto thee, meek, and sitting upon an ass, and a colt the foal of an ass."
+  },
+  "old_note": "*And from it shall grow up the rod of righteousness unto the Gentiles, To judge and to save all that call upon Yahuah (Lord).* Testament of Yahudah (Judah) ch 15 v.6 names the wisdom-stream articulation of the rod-of-righteousness substance the Messianic-King carries-out — the *judge and save all that call upon Yahuah* substance the framework reads carefully. The framework reads the verse against Matt 21:5's King-coming-to-his-city substance. The substance the wisdom-stream names at *all that call upon Yahuah (Lord)* is the substance the King-walks at the marginalized-substance crying *Son of David* (Matt 9:27, 15:22, 20:30-31) now-walked-by-the-multitudes at the entry-substance; the *Gentiles* in the wisdom-stream-language carries the same wisdom-stream-convention as Paul's-letters address — the substance is NOT the categorical-three-categories-nations-as-collective replacing-Yashar'el (Israel) but the substance of the scattered-seed-of-Yashar'el-living-as-Gentiles-among-the-nations per Red Line #7's scattered-seed-coming-home substance + Red Line #11's wild-olive-substance of the descendants-of-the-broken-off-who-hear-when-the-Shepherd-calls. The substance the wisdom-stream had named is the substance the gospel walks-out at the entry.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "And from it shall grow up the rod of righteousness unto the Gentiles, To judge and to save all that call upon Yahuah (Lord).",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|59:6",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|59:6",
+     "ratio": 0.89,
+     "k": 1,
+     "live_here": "And from it shall grow a rod of righteousness to the Gentiles, To judge and to save all that call upon Yahuah (Lord).",
+     "live_proposed": "And from it shall grow a rod of righteousness to the Gentiles, To judge and to save all that call upon Yahuah (Lord)."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "King-coming-to-his-city",
+    "now-walked-by-the-multitudes",
+    "categorical-three-categories-nations-as-collective",
+    "scattered-seed-of-Yashar'el-living-as-Gentiles-among-the-nations",
+    "scattered-seed-coming-home",
+    "descendants-of-the-broken-off-who-hear-when-the-Shepherd-calls"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 386,
+    "slug": "davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees",
+    "old": "Testament of Yahudah (Judah) ch 15 v.6 — *and from it shall grow up the rod of righteousness unto the Gentiles, to judge and to save all that call upon Yahuah (Lord).* The wisdom-stream articulation of the rod-of-righteousness-to-judge-and-save substance — the *Gentiles* in the wisdom-stream-language carries the same convention as the apostolic-Paul-letters: the substance is NOT the categorical-three-categories-nations-as-collective replacing-Yashar'el (Israel) but the substance of the scattered-seed-of-Yashar'el-living-as-Gentiles-among-the-nations per Red Line #7 + Red Line #11.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4824,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 90,
+   "vn": 1,
+   "cite": "Testaments of the Twelve Patriarchs 90:1",
+   "text": "For in the fortieth year of my life, I saw a vision on the Mount of Olives, on the east of Jerusalem, that the sun and the moon were standing still.",
+   "prev": null,
+   "next": "And behold Isaac, the father of my father, said to us: Run and lay hold of them, each one according to his strength; 'and to him that seizeth them will the sun and moon belong'.",
+   "testament": "Naphtali 5"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 3,
+   "cite": "Matthew 24:3",
+   "text_db": "And as he sat upon the mount of Olives, the disciples came unto him privately, saying, Tell us, when shall these things be? and what shall be the sign of your coming, and of the end of the world?",
+   "text_canon": "And as he sat upon the mount of Olives, the disciples came unto him privately, saying, Tell us, when shall these things be? and what shall be the sign of thy coming, and of the end of the world?"
+  },
+  "old_note": "*For in the fortieth year of my life, I saw a vision on the Mount of Olives, on the east of Jerusalem.* Testaments of the XII Patriarchs (Naphtali 4:1) names THE direct wisdom-stream verbal-anchor for the Mount-of-Olives setting the King walks at Matt 24:3 — *and as he sat upon the mount of Olives, the disciples came unto him privately.* The framework reads the verse as the substantial-direct-corroboration that the substantial Mount-of-Olives-substance is the substantial-substance-of-the-substantial-prophetic-vision-substance the substantial-patriarchs-walked the substantial-vision-of-the-substantial-end-of-the-age-substance from. The substantial Mount-of-Olives is the substantial-mountain the Shekinah-substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 11:22-23 had-departed-over at the substantial First-Temple-judgment-substance and the substantial-mountain the prophet-Zecharyah (Zechariah) walked at Zechariah 14:4 as the substantial-mountain the Father's-feet shall-stand-upon at the substantial-second-coming; the substantial-Testaments-of-the-XII walks the substantial-substance at the substantial-patriarchal-vision-register the King walks at the substantial-Olivet-discourse-substance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "For in the fortieth year of my life, I saw a vision on the Mount of Olives, on the east of Jerusalem.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|90:1",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|90:1",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "For in the fortieth year of my life, I saw a vision on the Mount of Olives, on the east of Jerusalem, that the sun and the moon were standing still.",
+     "live_proposed": "For in the fortieth year of my life, I saw a vision on the Mount of Olives, on the east of Jerusalem, that the sun and the moon were standing still."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "Mount-of-Olives-substance",
+    "substantial-substance-of-the-substantial-prophetic-vision-substance",
+    "substantial-vision-of-the-substantial-end-of-the-age-substance",
+    "First-Temple-judgment-substance",
+    "substantial-Testaments-of-the-XII",
+    "substantial-patriarchal-vision-register",
+    "substantial-Olivet-discourse-substance"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 405,
+    "slug": "the-mount-of-olives-vision-and-the-gathering-of-the-tribes-in-testaments-of-naphtali-and-asher",
+    "old": "Testaments of the XII Patriarchs (Naphtali 4:1) — *for in the fortieth year of my life, I saw a vision on the Mount of Olives, on the east of Jerusalem.* THE direct verbal-anchor for the Mount-of-Olives setting the King walks at Matt 24:3 — the substantial-mountain the Shekinah departed-over at the First-Temple judgment per Ezekiel 11:22-23 AND the substantial-mountain the Father's-feet shall-stand-upon at the substantial-second-coming per Zechariah 14:4; the substantial-patriarchal-vision-register the King walks the Olivet-discourse from.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4825,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 93,
+   "vn": 3,
+   "cite": "Testaments of the Twelve Patriarchs 93:3",
+   "text": "For through their tribes shall Elohim (God) appear [dwelling among men] on earth, To save the race of Yashar'el (Israel), And to gather together the righteous from amongst the Gentiles.",
+   "prev": "Do ye also, 'therefore,' charge your children that they be united to Levi and to Yahudah (Judah); For through them shall salvation arise unto Yashar'el (Israel), And in them shall Jacob be blessed.",
+   "next": "If ye work that which is good, my children, 'Both' men and angels shall bless you; And Elohim (God) shall be glorified among the Gentiles through you, And the devil shall flee from you, 'And the wild beasts shall fear you,' And Yahuah (Lord) shall love you, [And the angels shall cleave to you].",
+   "testament": "Naphtali 8"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 14,
+   "cite": "Matthew 24:14",
+   "text_db": "And this gospel of the kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come.",
+   "text_canon": "And this gospel of the kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come."
+  },
+  "old_note": "*For through their tribes shall Elohim (God) appear, To save the race of Yashar'el (Israel), And to gather together the righteous from amongst the Gentiles.* Testaments of the XII Patriarchs (Naphtali 6:3) names the wisdom-stream articulation of the gather-together-the-righteous-from-amongst-the-Gentiles substance. The framework reads the verse against Matt 24:14's *and this gospel of the kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come.* The substantial *gather together the righteous from amongst the Gentiles* substance is the substantial-substance the substantial-paternal-blood-remnant-of-the-twelve-tribes-of-Yashar'el (Israel) walks the substantial-Lo-Ammi-substance the prophet-Hosheia (Hosea) walked at Hosea 1:10-11 — the substantial-scattered-seed-of-the-house-of-Yashar'el (Israel) living-as-Gentiles-among-the-nations the apostle-Sha'ul (Paul) walks at Romans 9:25-26. The substantial-substance is NOT the substantial-Christian-inclusion-gospel that-collapses the substantial-paternal-blood-remnant-of-the-twelve-tribes into-the-substantial-spiritual-category-open-to-anyone-who-confesses; the substantial *righteous from amongst the Gentiles* substance is the substantial-Lo-Ammi-scattered-seed the substantial-Father-substance is-calling-home-from-the-substantial-territories-of-the-substantial-dispersion-substance, the substantial-hearing-substance per John 10:26-27 (*my sheep hear my voice... ye believe not, because ye are not of my sheep*) revealing the substantial-citizens the substantial-Father had-named-from-the-substantial-foundation-of-the-world per Revelation 13:8 and Revelation 17:8. Per Red Line #11.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "For through their tribes shall Elohim (God) appear, To save the race of Yashar'el (Israel), And to gather together the righteous from amongst the Gentiles.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|93:3",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|93:3",
+     "ratio": 0.83,
+     "k": 1,
+     "live_here": "For through their tribes shall Elohim (God) appear [dwelling among men] on earth, To save the race of Yashar'el (Israel), And to gather together the righteous from amongst the Gentiles.",
+     "live_proposed": "For through their tribes shall Elohim (God) appear [dwelling among men] on earth, To save the race of Yashar'el (Israel), And to gather together the righteous from amongst the Gentiles."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "gather-together-the-righteous-from-amongst-the-Gentiles",
+    "substantial-paternal-blood-remnant-of-the-twelve-tribes-of-Yashar'el",
+    "substantial-Lo-Ammi-substance",
+    "substantial-scattered-seed-of-the-house-of-Yashar'el",
+    "living-as-Gentiles-among-the-nations",
+    "substantial-Christian-inclusion-gospel",
+    "substantial-paternal-blood-remnant-of-the-twelve-tribes",
+    "into-the-substantial-spiritual-category-open-to-anyone-who-confesses",
+    "substantial-Lo-Ammi-scattered-seed",
+    "is-calling-home-from-the-substantial-territories-of-the-substantial-dispersion-substance",
+    "had-named-from-the-substantial-foundation-of-the-world"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 405,
+    "slug": "the-mount-of-olives-vision-and-the-gathering-of-the-tribes-in-testaments-of-naphtali-and-asher",
+    "old": "Testaments of the XII Patriarchs (Naphtali 6:3) — *for through their tribes shall Elohim (God) appear, to save the race of Yashar'el (Israel), and to gather together the righteous from amongst the Gentiles.* The gather-together-the-righteous-from-amongst-the-Gentiles substance — the substantial-Lo-Ammi-scattered-seed the prophet-Hosheia (Hosea) walked at Hosea 1:10-11 the apostle-Sha'ul (Paul) quoted at Romans 9:25-26, the scattered-seed-of-the-house-of-Yashar'el (Israel) living-as-Gentiles-among-the-nations the gospel-witness-to-all-nations at Matt 24:14 walks-the-broad-proclamation-substance for. NOT the substantial-Christian-inclusion-gospel-collapse per Red Line #11.",
+    "same_as_card": false
+   }
+  ]
+ }
+]

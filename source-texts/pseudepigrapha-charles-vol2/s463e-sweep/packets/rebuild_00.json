@@ -1,0 +1,952 @@
+[
+ {
+  "id": 45529,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 13,
+   "vn": 3,
+   "cite": "1 Adam and Eve 13:3",
+   "text": "But when he transgressed My commandment, I deprived him of that bright nature, and he became dark.",
+   "prev": "\"O Adam, so long as the good angel was obedient to Me, a bright light rested on him and on his hosts.",
+   "next": "And when he was in the heavens, in the realms of light, he knew nothing of darkness."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 14,
+   "vn": 12,
+   "cite": "Isaiah 14:12",
+   "text_db": "How are you fallen from heaven, O Lucifer, son of the morning! how are you cut down to the ground, which did weaken the nations!",
+   "text_canon": "How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!"
+  },
+  "old_note": "Isaiah 14:12 — *How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!* The prophet's son-of-the-morning is the very bright one whom Elohim says He deprived of his bright nature so that he became dark.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Isaiah 14:12",
+    "verdict": "STAND",
+    "quote": "How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!"
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "son-of-the-morning"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10892,
+    "slug": "1-adam-eve-13-satan-fallen-from-light",
+    "old": "Isaiah 14:12 — *How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!* The prophet's son-of-the-morning is the very bright one whom Elohim says He deprived of his bright nature so that he became dark.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45631,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 23,
+   "vn": 9,
+   "cite": "1 Adam and Eve 23:9",
+   "text": "And Adam began to make more requests of Elohim (God). * ORIGINAL OF THE LORD'S PRAYER SAID TO BE USED ABOUT 150 YEARS BEFORE OUR Yahuah (God): Our Father, Who art in Heaven, be gracious unto us, O Yahuah (Lord) our Elohim (God), hallowed be Your Name, and let the remembrance of Thee be glorified Heaven above and upon earth here below. Let Your kingdom reign over us now and forever. The Holy Men of old said remit and forgive unto all men whatsoever they have done unto me. And lead us not into temptation, but deliver us from the evil thing; for Thine is the kingdom and Thou shalt reign in glory forever and forevermore, AMEN.",
+   "prev": "Yet now look at our blood which is offered on these stones, and accept it at our hands, like the praise we used to sing to you at first, when in the garden.\"",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 6,
+   "vn": 13,
+   "cite": "Matthew 6:13",
+   "text_db": "And lead us not into temptation, but deliver us from evil: For yours is the kingdom, and the power, and the glory, for ever. Amen.",
+   "text_canon": "And lead us not into temptation, but deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever. Amen."
+  },
+  "old_note": "Matthew 6:13 — *And lead us not into temptation, but deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever. Amen.* The deliver-us-from-evil and the kingdom-doxology Adam prays in 1 Adam and Eve 23:9 stand word for word in the Saviour's prayer.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Matthew 6:13",
+    "verdict": "STAND",
+    "quote": "And lead us not into temptation, but deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever. Amen."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "deliver-us-from-evil"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10931,
+    "slug": "1-adam-eve-23-our-father-prayer",
+    "old": "Matthew 6:13 — *And lead us not into temptation, but deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever. Amen.* The deliver-us-from-evil and the kingdom-doxology Adam prays in 1 Adam and Eve 23:9 stand word for word in the Saviour's prayer.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45648,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 24,
+   "vn": 5,
+   "cite": "1 Adam and Eve 24:5",
+   "text": "And as you sued for forgiveness through that blood, so also will I make My blood forgiveness of sins, and erase transgressions in it.",
+   "prev": "Then came the Word of Elohim (God) to Adam, and said to him, \"O Adam, as you have shed your blood, so will I shed My own blood when I become flesh of your descendants; and as you died, O Adam, so also will I die. And as you built an altar, so also will I make for you an altar of the earth; and as you offered your blood on it, so also will I offer My blood on an altar on the earth.",
+   "next": "And now, behold, I have accepted your offering, O Adam, but the days of the covenant in which I have bound you are not fulfilled. When they are fulfilled, then will I bring you back into the garden."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hebrews",
+   "ch": 9,
+   "vn": 22,
+   "cite": "Hebrews 9:22",
+   "text_db": "And almost all things are by the law purged with blood; and without shedding of blood is no remission.",
+   "text_canon": "And almost all things are by the law purged with blood; and without shedding of blood is no remission."
+  },
+  "old_note": "Hebrews 9:22 — *And almost all things are by the law purged with blood; and without shedding of blood is no remission.* That Adam could only sue for forgiveness through blood in 1-adam-eve 24:5 is the law Hebrews states — no remission without shed blood, the necessity that drives the whole apparatus to the cross.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Hebrews 9:22",
+    "verdict": "STAND",
+    "quote": "And almost all things are by the law purged with blood; and without shedding of blood is no remission."
+   },
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10934,
+    "slug": "1-adam-eve-24-altar-of-earth-blood-of-messiah",
+    "old": "Hebrews 9:22 — *And almost all things are by the law purged with blood; and without shedding of blood is no remission.* That Adam could only sue for forgiveness through blood in 1-adam-eve 24:5 is the law Hebrews states — no remission without shed blood, the necessity that drives the whole apparatus to the cross.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45674,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 26,
+   "vn": 11,
+   "cite": "1 Adam and Eve 26:11",
+   "text": "Yes, rather, bear long and calm your soul while you live night and day; until the fulfillment of the days, and the time of My covenant is come.",
+   "prev": "But then you would be deserted and stuck in a perpetual plague, and you would never be saved.",
+   "next": "Then shall I come and save you, O Adam, for I do not wish that you be afflicted."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "hebrews",
+   "ch": 6,
+   "vn": 15,
+   "cite": "Hebrews 6:15",
+   "text_db": "And so, after he had patiently endured, he obtained the promise.",
+   "text_canon": "And so, after he had patiently endured, he obtained the promise."
+  },
+  "old_note": "Hebrews 6:15 — *And so, after he had patiently endured, he obtained the promise.* Adam's calling-of-the-soul to bear long until the covenant (1 Adam & Eve 26:11) is the patient endurance by which the fathers obtained the promise.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Hebrews 6:15",
+    "verdict": "STAND",
+    "quote": "And so, after he had patiently endured, he obtained the promise."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "calling-of-the-soul"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10942,
+    "slug": "1-adam-eve-26-patience-darkness-twelve-hours-joy",
+    "old": "Hebrews 6:15 — *And so, after he had patiently endured, he obtained the promise.* Adam's calling-of-the-soul to bear long until the covenant (1 Adam & Eve 26:11) is the patient endurance by which the fathers obtained the promise.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45776,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 34,
+   "vn": 11,
+   "cite": "1 Adam and Eve 34:11",
+   "text": "And if You had punished me as You said, with death, I should have died that very moment.",
+   "prev": "Then it was in that third hour of Friday, in which You created me, and commanded me concerning the tree, to which I was neither to go near, nor to eat thereof; for You said to me in the garden, 'When you eat of it, of death you shall die.'",
+   "next": "Moreover, when You commanded me regarding the tree, I was neither to approach nor to eat thereof, Eve was not with me; You had not yet created her, neither had You yet taken her out of my side; nor had she yet heard this order from you."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "romans",
+   "ch": 5,
+   "vn": 12,
+   "cite": "Romans 5:12",
+   "text_db": "Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:",
+   "text_canon": "Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:"
+  },
+  "old_note": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:* Adam's wonder that he was not struck dead at once (34:11) is the same death-by-one-man Sha'ul traces from this transgression.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Romans 5:12",
+    "verdict": "STAND",
+    "quote": "Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:"
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "death-by-one-man"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10973,
+    "slug": "1-adam-eve-34-tree-and-death",
+    "old": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:* Adam's wonder that he was not struck dead at once (34:11) is the same death-by-one-man Sha'ul traces from this transgression.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45772,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 34,
+   "vn": 14,
+   "cite": "1 Adam and Eve 34:14",
+   "text": "Then You drew a rib out of my side, and created it after my own likeness and image. Then I awoke; and when I saw her and knew who she was, I said, 'This is bone of my bones, and flesh of my flesh; from now on she shall be called woman.'",
+   "prev": "Then, at the end of the third hour of that Friday, O Yahuah (Lord), You caused a slumber and a sleep to come over me, and I slept, and was overwhelmed in sleep.",
+   "next": "It was of Your good will, O Elohim (God), that You brought a slumber in a sleep over me, and that You immediately brought Eve out of my side, until she was out, so that I did not see how she was made; neither could I witness, O my Lord, how awful and great are Your goodness and glory."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 3,
+   "vn": 5,
+   "cite": "Jubilees 3:5",
+   "text_db": "And Yahuah our Elohim (the LORD our God) caused a deep sleep to fall upon him, and he slept, and He took for the woman one rib from amongst his ribs, and this rib was the origin of the woman from amongst his ribs, and He built up the flesh in its stead, and built the woman.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 3:5 — *And Yahuah our Elohim (the LORD our God) caused a deep sleep to fall upon him, and he slept, and He took for the woman one rib from amongst his ribs, and this rib was the origin of the woman from amongst his ribs, and He built up the flesh in its stead, and built the woman.* The restored Jubilees keeps the same rib-drawn-in-sleep that Adam rehearses in 34:14.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "rib-drawn-in-sleep"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10974,
+    "slug": "1-adam-eve-34-rib-and-woman",
+    "old": "Jubilees 3:5 — *And Yahuah our Elohim (the LORD our God) caused a deep sleep to fall upon him, and he slept, and He took for the woman one rib from amongst his ribs, and this rib was the origin of the woman from amongst his ribs, and He built up the flesh in its stead, and built the woman.* The restored Jubilees keeps the same rib-drawn-in-sleep that Adam rehearses in 34:14.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45823,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 38,
+   "vn": 2,
+   "cite": "1 Adam and Eve 38:2",
+   "text": "\"O Adam, as to the fruit on the Tree of Life that you have asked for, I will not give it to you now, but only when the 5500 years are fulfilled. At that time I will give you fruit from the Tree of Life, and you will eat, and live forever, you, and Eve, and your righteous descendants.",
+   "prev": "After these things the Word of Elohim (God) came to Adam, and said to him:--",
+   "next": "But these forty-three days cannot make amends for the hour in which you transgressed My commandment."
+  },
+  "other": {
+   "ed": "jubilees",
+   "book": "jubilees",
+   "ch": 4,
+   "vn": 30,
+   "cite": "Jubilees 4:30",
+   "text_db": "And he lacked seventy years of one thousand years; for one thousand years are as one day in the testimony of the heavens and therefore was it written concerning the tree of knowledge: “On the day that you eat thereof you will die.” For this reason he did not complete the years of this day; for he died during it.",
+   "text_canon": null
+  },
+  "old_note": "Jubilees 4:30 — *And he lacked seventy years of one thousand years; for one thousand years are as one day in the testimony of the heavens and therefore was it written concerning the tree of knowledge: “On the day that you eat thereof you will die.” For this reason he did not complete the years of this day; for he died during it.* The same day-as-a-thousand-years testimony of the heavens stands behind the 5500-year promise of 1-adam-eve 38:2.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "day-as-a-thousand-years"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10989,
+    "slug": "1-adam-eve-38-five-thousand-five-hundred-years",
+    "old": "Jubilees 4:30 — *And he lacked seventy years of one thousand years; for one thousand years are as one day in the testimony of the heavens and therefore was it written concerning the tree of knowledge: “On the day that you eat thereof you will die.” For this reason he did not complete the years of this day; for he died during it.* The same day-as-a-thousand-years testimony of the heavens stands behind the 5500-year promise of 1-adam-eve 38:2.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45824,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 38,
+   "vn": 2,
+   "cite": "1 Adam and Eve 38:2",
+   "text": "\"O Adam, as to the fruit on the Tree of Life that you have asked for, I will not give it to you now, but only when the 5500 years are fulfilled. At that time I will give you fruit from the Tree of Life, and you will eat, and live forever, you, and Eve, and your righteous descendants.",
+   "prev": "After these things the Word of Elohim (God) came to Adam, and said to him:--",
+   "next": "But these forty-three days cannot make amends for the hour in which you transgressed My commandment."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "2-peter",
+   "ch": 3,
+   "vn": 8,
+   "cite": "2 Peter 3:8",
+   "text_db": "But, beloved, be not ignorant of this one thing, that one day is with Yahuah (Lord) as a thousand years, and a thousand years as one day.",
+   "text_canon": "But, beloved, be not ignorant of this one thing, that one day is with Yahuah (Lord) as a thousand years, and a thousand years as one day."
+  },
+  "old_note": "2 Peter 3:8 — *But, beloved, be not ignorant of this one thing, that one day is with Yahuah (Lord) as a thousand years, and a thousand years as one day.* The 5500-year count of 1-adam-eve 38:2 is reckoned by this day-for-a-thousand-years measure pointing to the Saviour's day.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "2 Peter 3:8",
+    "verdict": "STAND",
+    "quote": "But, beloved, be not ignorant of this one thing, that one day is with Yahuah (Lord) as a thousand years, and a thousand years as one day."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "day-for-a-thousand-years"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10989,
+    "slug": "1-adam-eve-38-five-thousand-five-hundred-years",
+    "old": "2 Peter 3:8 — *But, beloved, be not ignorant of this one thing, that one day is with Yahuah (Lord) as a thousand years, and a thousand years as one day.* The 5500-year count of 1-adam-eve 38:2 is reckoned by this day-for-a-thousand-years measure pointing to the Saviour's day.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45825,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 38,
+   "vn": 2,
+   "cite": "1 Adam and Eve 38:2",
+   "text": "\"O Adam, as to the fruit on the Tree of Life that you have asked for, I will not give it to you now, but only when the 5500 years are fulfilled. At that time I will give you fruit from the Tree of Life, and you will eat, and live forever, you, and Eve, and your righteous descendants.",
+   "prev": "After these things the Word of Elohim (God) came to Adam, and said to him:--",
+   "next": "But these forty-three days cannot make amends for the hour in which you transgressed My commandment."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 22,
+   "vn": 14,
+   "cite": "Revelation 22:14",
+   "text_db": "Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.",
+   "text_canon": "Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city."
+  },
+  "old_note": "Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The eating-and-living-forever pledged to Adam's righteous descendants in 1-adam-eve 38:2 belongs to those who keep the commandments.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Revelation 22:14",
+    "verdict": "STAND",
+    "quote": "Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "eating-and-living-forever"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 10988,
+    "slug": "1-adam-eve-38-tree-of-life-withheld-then-given",
+    "old": "Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The eating-and-living-forever pledged to Adam's righteous descendants in 1-adam-eve 38:2 belongs to those who keep the commandments.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45878,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 42,
+   "vn": 8,
+   "cite": "1 Adam and Eve 42:8",
+   "text": "For My blood shall be the Water of Life to you at that time, and not to just you alone, but to all your descendants who shall believe in Me***; that it be to them for rest forever.\"",
+   "prev": "And, again, in regards to the Water of Life you seek, it will not be granted you this day; but on the day that I shall shed My blood on your head* in the land of Golgotha**.",
+   "next": "Yahuah (Lord) said again to Adam, \"O Adam, when you were in the garden, these trials did not come to you."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 7,
+   "vn": 38,
+   "cite": "John 7:38",
+   "text_db": "He that believes on me, as the scripture has said, out of his belly shall flow rivers of living water.",
+   "text_canon": "He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water."
+  },
+  "old_note": "John 7:38 — *He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.* The blood-as-living-water given to all Adam's seed who believe in 1 Adam & Eve 42:8 is exactly the rivers promised to the believer.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "John 7:38",
+    "verdict": "STAND",
+    "quote": "He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "blood-as-living-water"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11002,
+    "slug": "1-adam-eve-42-water-of-life-golgotha-blood",
+    "old": "John 7:38 — *He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.* The blood-as-living-water given to all Adam's seed who believe in 1 Adam & Eve 42:8 is exactly the rivers promised to the believer.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45948,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 47,
+   "vn": 6,
+   "cite": "1 Adam and Eve 47:6",
+   "text": "And they stood and prayed Elohim (God) to forgive them their sins, and then fell asleep under the summit of the mountain.",
+   "prev": "Adam and Eve then came under the top of hill by the garden to sleep, as they were accustomed.",
+   "next": "But Satan, the hater of all good, thought within himself: \"Whereas Elohim (God) has promised salvation to Adam by covenant, and that He would deliver him out of all the hardships that have befallen him--but has not promised me by covenant, and will not deliver me out of my hardships; no, since He has promised him that He should make him and his descendants live in the kingdom in which I once was--I will kill Adam."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 4,
+   "vn": 26,
+   "cite": "Genesis 4:26",
+   "text_db": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).",
+   "text_canon": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)."
+  },
+  "old_note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* Adam's praying for forgiveness in 1 Adam and Eve 47:6 is the first keeping of this same calling-on-the-Name that runs down the holy seed-line.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Genesis 4:26",
+    "verdict": "STAND",
+    "quote": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "calling-on-the-Name"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11023,
+    "slug": "1-adam-eve-47-prayer-for-forgiveness",
+    "old": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* Adam's praying for forgiveness in 1 Adam and Eve 47:6 is the first keeping of this same calling-on-the-Name that runs down the holy seed-line.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 45968,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 49,
+   "vn": 9,
+   "cite": "1 Adam and Eve 49:9",
+   "text": "But on the third day I shall rise again, and it shall be salvation to you, O Adam, and to your descendants, to believe in Me. But, O Adam, I will not bring you from under this rock until three days and three nights have passed.\"",
+   "prev": "And this sign, O Adam, will happen to Me at My coming on earth: Satan will raise the people of the Yahudim (Jews) to put Me to death; and they will lay Me in a rock, and seal a large stone over Me, and I shall remain within that rock three days and three nights.",
+   "next": "And Elohim (God) withdrew His Word from Adam."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "1-corinthians",
+   "ch": 15,
+   "vn": 4,
+   "cite": "1 Corinthians 15:4",
+   "text_db": "And that he was buried, and that he rose again the third day according to the scriptures:",
+   "text_canon": "And that he was buried, and that he rose again the third day according to the scriptures:"
+  },
+  "old_note": "1 Corinthians 15:4 — *And that he was buried, and that he rose again the third day according to the scriptures:* The buried-and-third-day-risen gospel Paul calls first of all is the very word spoken to Adam under the rock, rising on the third day according to the scriptures written from the beginning.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "1 Corinthians 15:4",
+    "verdict": "STAND",
+    "quote": "And that he was buried, and that he rose again the third day according to the scriptures:"
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "buried-and-third-day-risen"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11031,
+    "slug": "1-adam-eve-49-on-the-third-day-i-shall-rise",
+    "old": "1 Corinthians 15:4 — *And that he was buried, and that he rose again the third day according to the scriptures:* The buried-and-third-day-risen gospel Paul calls first of all is the very word spoken to Adam under the rock, rising on the third day according to the scriptures written from the beginning.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 46287,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 71,
+   "vn": 6,
+   "cite": "1 Adam and Eve 71:6",
+   "text": "Then Adam got up, and spread his hands before Elohim (God), beseeching and entreating Him with tears, to forgive him what he had done. And Adam remained thus standing and praying forty days and forty nights. He neither ate nor drank until he dropped down on the ground from hunger and thirst.",
+   "prev": "Then Adam said to Eve, \"If you saw what I did, don't tell anyone; for I sinned against Elohim (God) in swearing by His great name, and I have placed my hand another time into that of Satan.\" Eve, then, held her peace, as Adam told her.",
+   "next": "Then Elohim (God) sent His Word to Adam, who raised him up from where he lay, and said to him, \"O Adam, why have you sworn by My name, and why have you made agreement with Satan another time?\""
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 34,
+   "vn": 28,
+   "cite": "Exodus 34:28",
+   "text_db": "And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.",
+   "text_canon": "And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments."
+  },
+  "old_note": "Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* Adam's neither-eat-nor-drink forty days mirrors Moses on the mount (1 Adam and Eve 71:6).",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Exodus 34:28",
+    "verdict": "STAND",
+    "quote": "And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "neither-eat-nor-drink"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11114,
+    "slug": "1-adam-eve-71-forty-days-repentance",
+    "old": "Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* Adam's neither-eat-nor-drink forty days mirrors Moses on the mount (1 Adam and Eve 71:6).",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 46320,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "1-adam-eve",
+   "name": "1 Adam and Eve",
+   "ch": 74,
+   "vn": 9,
+   "cite": "1 Adam and Eve 74:9",
+   "text": "Then Adam and Eve waited until Cain and his sister were forty days old, when Adam said to Eve, \"We will make an offering and offer it up in behalf of the children.\"",
+   "prev": "But Luluwa means \"beautiful,\" because she was more beautiful than her mother.",
+   "next": "And Eve said, \"We will make one offering for the first-born son and then later we shall make one for the daughter.\""
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 4,
+   "vn": 26,
+   "cite": "Genesis 4:26",
+   "text_db": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).",
+   "text_canon": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)."
+  },
+  "old_note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* Adam's offering for his newborns at 1-adam-eve 74:9 belongs to the same calling-on-the-Name that marks the covenant line from the first.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Genesis 4:26",
+    "verdict": "STAND",
+    "quote": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "calling-on-the-Name"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11128,
+    "slug": "1-adam-eve-74-offering-for-the-children",
+    "old": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* Adam's offering for his newborns at 1-adam-eve 74:9 belongs to the same calling-on-the-Name that marks the covenant line from the first.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 46464,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "2-adam-eve",
+   "name": "2 Adam and Eve",
+   "ch": 4,
+   "vn": 1,
+   "cite": "2 Adam and Eve 4:1",
+   "text": "THEN Elohim (God) ordered Satan to show himself to Adam plainly, in his own hideous form.",
+   "prev": null,
+   "next": "But when Adam saw him, he feared, and trembled at the sight of him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 8,
+   "vn": 44,
+   "cite": "John 8:44",
+   "text_db": "You are of your father the devil, and the lusts of your father you will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaks a lie, he speaks of his own: for he is a liar, and the father of it.",
+   "text_canon": "Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it."
+  },
+  "old_note": "John 8:44 — *Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it.* Messiah names the same liar-from-the-beginning whom Yahuah here orders to show himself plainly to Adam.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "John 8:44",
+    "verdict": "STAND",
+    "quote": "Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "liar-from-the-beginning"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11163,
+    "slug": "2-adam-eve-4-hideous-form-unmasked",
+    "old": "John 8:44 — *Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it.* Messiah names the same liar-from-the-beginning whom Yahuah here orders to show himself plainly to Adam.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 46606,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "adam-eve-conflict",
+   "book": "2-adam-eve",
+   "name": "2 Adam and Eve",
+   "ch": 14,
+   "vn": 3,
+   "cite": "2 Adam and Eve 14:3",
+   "text": "Then Enos called his son Cainan and said to him, \"See, 0 my son, and set thy heart on thy people, and establish them in righteousness, and in innocence; and stand ministering before the body of our father Adam, all the days of thy life.\"",
+   "prev": "He then prayed over them and blessed them, and adjured them by the blood of Abel the just saying to them, \"Let not one of your children go down from this Holy Mountain, and let them make no fellowship with the children of Cain the murderer.\"",
+   "next": "After this Enos entered into rest, aged nine hundred and eighty - five years; and Cainan wound him up, and laid him in the Cave of Treasures on the left of his father Adam; and made offerings for him, after the custom of his fathers."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "genesis",
+   "ch": 4,
+   "vn": 26,
+   "cite": "Genesis 4:26",
+   "text_db": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).",
+   "text_canon": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)."
+  },
+  "old_note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* The righteousness Enos commands Cainan to establish in 2 Adam and Eve 14:3 is the calling-on-the-Name that began in Enos’s own generation.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Genesis 4:26",
+    "verdict": "STAND",
+    "quote": "And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "calling-on-the-Name"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11207,
+    "slug": "2-adam-eve-14-ministering-righteousness",
+    "old": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* The righteousness Enos commands Cainan to establish in 2 Adam and Eve 14:3 is the calling-on-the-Name that began in Enos’s own generation.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 12949,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "apocalypse-of-abraham",
+   "book": "apocalypse-of-abraham",
+   "name": "Apocalypse of Abraham",
+   "ch": 18,
+   "vn": 4,
+   "cite": "Apocalypse of Abraham 18:4",
+   "text": "And such was the appearance of their countenances, of a lion, of a man, of an ox, of an eagle: four heads were upon their bodies, so that the four creatures had sixteen faces; and each had six wings from their shoulders, and their sides, and their loins.",
+   "prev": "And as the fire raised itself up, ascending into the height, I saw under the fire a throne of fire, and, round about it, all-seeing ones, reciting the song; and under the throne four fiery living creatures singing, and their appearance was one, each one of them with four faces.",
+   "next": "And with the two wings from their shoulders they covered their faces, and with the two wings which sprang from their loins they covered their feet, while the two middle wings they spread out for flying straightforward."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 4,
+   "vn": 8,
+   "cite": "Revelation 4:8",
+   "text_db": "And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come.",
+   "text_canon": "And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come."
+  },
+  "old_note": "*And such was the appearance of their countenances, of a lion, of a man, of an ox, of an eagle: four heads were upon their bodies, so that the four creatures had sixteen faces; and each had six wings from their shoulders, and their sides, and their loins.* (Apocalypse of Abraham 18:4). The Hebrew library names the four faces and the six wings together — *of a lion, of a man, of an ox, of an eagle... and each had six wings.* John beholds exactly this: the four faces *like a lion... like a calf... a face as a man... like a flying eagle* (Revelation 4:7), and *the four beasts had each of them six wings about him; and they were full of eyes within* (Revelation 4:8). The same lion-man-ox-eagle, the same six wings; one throne-vision held across the restored library.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And such was the appearance of their countenances, of a lion, of a man, of an ox, of an eagle: four heads were upon their bodies, so that the four creatures had sixteen faces; and each had six wings from their shoulders, and their sides, and their loins.",
+     "labelled": "apocalypse-of-abraham|apocalypse-of-abraham|18:4",
+     "label_name": "Apocalypse of Abraham",
+     "cited_range": null,
+     "at": "apocalypse-of-abraham|apocalypse-of-abraham|18:4",
+     "verdict": "STAND",
+     "proposed": "apocalypse-of-abraham|apocalypse-of-abraham|18:4",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And such was the appearance of their countenances, of a lion, of a man, of an ox, of an eagle: four heads were upon their bodies, so that the four creatures had sixteen faces; and each had six wings from their shoulders, and their sides, and their loins.",
+     "live_proposed": "And such was the appearance of their countenances, of a lion, of a man, of an ox, of an eagle: four heads were upon their bodies, so that the four creatures had sixteen faces; and each had six wings from their shoulders, and their sides, and their loins."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "lion-man-ox-eagle"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 1952,
+    "slug": "revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1",
+    "old": "Apocalypse of Abraham 18:4 — *of a lion, of a man, of an ox, of an eagle... and each had six wings* the four faces and six wings together, exactly John's six-winged eye-filled beasts (Revelation 4:8).",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 48848,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "apocalypse-of-abraham",
+   "book": "apocalypse-of-abraham",
+   "name": "Apocalypse of Abraham",
+   "ch": 19,
+   "vn": 1,
+   "cite": "Apocalypse of Abraham 19:1",
+   "text": "And a voice came to me out of the midst of the fire, saying: \"Abraham, Abraham!\"",
+   "prev": null,
+   "next": "I said: \"Here am I!\""
+  },
+  "other": {
+   "ed": "canon",
+   "book": "exodus",
+   "ch": 3,
+   "vn": 2,
+   "cite": "Exodus 3:2",
+   "text_db": "And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.",
+   "text_canon": "And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed."
+  },
+  "old_note": "Exodus 3:2 — *And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.* The voice that speaks to Abraham from the midst of the fire is the same fire-that-does-not-consume that called Moses at Horeb (Apocalypse of Abraham 19:1).",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Exodus 3:2",
+    "verdict": "STAND",
+    "quote": "And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "fire-that-does-not-consume"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11819,
+    "slug": "apocalypse-of-abraham-19-here-am-i-out-of-the-fire",
+    "old": "Exodus 3:2 — *And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.* The voice that speaks to Abraham from the midst of the fire is the same fire-that-does-not-consume that called Moses at Horeb (Apocalypse of Abraham 19:1).",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 48843,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "apocalypse-of-abraham",
+   "book": "apocalypse-of-abraham",
+   "name": "Apocalypse of Abraham",
+   "ch": 19,
+   "vn": 6,
+   "cite": "Apocalypse of Abraham 19:6",
+   "text": "And I looked from the mountain in which I stood downwards to the sixth firmament, and saw there a multitude of angels, of pure spirit, without bodies, who carried out the commands of the fiery angels who were upon the eighth firmament, as I was standing suspended over them.",
+   "prev": "And I saw upon the seventh firmament upon which I stood a fire widely extended, and light, and dew, and a multitude of angels, and a power of invisible glory over the living creatures which I saw; but no other being did I see there.",
+   "next": "And behold, upon this firmament there were no other powers of any other form, but only angels of pure spirit, like the power which I saw on the seventh firmament."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "psalms",
+   "ch": 104,
+   "vn": 4,
+   "cite": "Psalms 104:4",
+   "text_db": "Who makes his angels spirits; his ministers a flaming fire:",
+   "text_canon": "Who maketh his angels spirits; his ministers a flaming fire:"
+  },
+  "old_note": "Psalm 104:4 — *Who maketh his angels spirits; his ministers a flaming fire.* Abraham's angels of pure spirit without bodies, serving the fiery angels, are the very spirits-and-flaming-ministers of the Psalm (Apocalypse of Abraham 19:6).",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Psalm 104:4",
+    "verdict": "STAND",
+    "quote": "Who maketh his angels spirits; his ministers a flaming fire."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "spirits-and-flaming-ministers"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11821,
+    "slug": "apocalypse-of-abraham-19-angels-pure-spirit-carry-commands",
+    "old": "Psalm 104:4 — *Who maketh his angels spirits; his ministers a flaming fire.* Abraham's angels of pure spirit without bodies, serving the fiery angels, are the very spirits-and-flaming-ministers of the Psalm (Apocalypse of Abraham 19:6).",
+    "same_as_card": true
+   }
+  ]
+ }
+]

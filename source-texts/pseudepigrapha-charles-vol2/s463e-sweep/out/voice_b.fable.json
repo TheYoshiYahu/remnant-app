@@ -1,0 +1,275 @@
+[
+ {
+  "id": 4888,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4889,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4894,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4895,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4896,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4897,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4908,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4909,
+  "verdict": "FIX",
+  "finding": "Prose says the commandments were 'to be kept until' the salvation is revealed, which a reader will hear as law ending when grace arrives (Red Line 4/6 territory); the closing clause half-guards it but the 'until' is left standing as an end-point. Member note has the same 'until'.",
+  "fix": "*Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Spirit):* (Matthew 28:19). *For all these things they gave us for an inheritance, saying: Keep the commandments of Elohim (God), until Yahuah (Lord) shall reveal His salvation to all Gentiles.* (Testaments of the Twelve Patriarchs 140:5). The fathers left their sons the commandments of Elohim (God) as their inheritance, to be kept while they waited for Yahuah (the Lord) to reveal His salvation to all the Gentiles. The until marks the length of the waiting, not an end to the keeping. When Yahusha (Jesus) says to go and teach all nations, the message goes out broadly because those it is for are scattered among them and are not known by sight. Benjamin's word has the order right: the commandments stay in the hands of the sons, and the salvation goes out to be heard.",
+  "member_fix": "Testaments of the Twelve Patriarchs 140:5 — *Keep the commandments of Elohim (God), until Yahuah (Lord) shall reveal His salvation to all Gentiles.* Benjamin's sons are left the commandments to keep while they wait for the salvation to be revealed to all the Gentiles, and Yahusha (Jesus) sends His own out to every nation."
+ },
+ {
+  "id": 4910,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4911,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 8023,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 12949,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45529,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45631,
+  "verdict": "FIX",
+  "finding": "'the prayer put in his mouth' is the scholar's distancing phrase and treats the restored text as something an editor composed rather than scripture-level witness; also 'those who follow him now' is ambiguous after 'The first man'.",
+  "fix": "*And Adam began to make more requests of Elohim (God). * ORIGINAL OF THE LORD'S PRAYER SAID TO BE USED ABOUT 150 YEARS BEFORE OUR Yahuah (God): Our Father, Who art in Heaven, be gracious unto us, O Yahuah (Lord) our Elohim (God), hallowed be Your Name, and let the remembrance of Thee be glorified Heaven above and upon earth here below. Let Your kingdom reign over us now and forever. The Holy Men of old said remit and forgive unto all men whatsoever they have done unto me. And lead us not into temptation, but deliver us from the evil thing; for Thine is the kingdom and Thou shalt reign in glory forever and forevermore, AMEN.* (1 Adam and Eve 23:9). *And lead us not into temptation, but deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever. Amen.* (Matthew 6:13). Adam keeps asking Elohim (God) for more, and the prayer he prays ends on the same petitions Yahusha (Jesus) gives his disciples: do not lead us into temptation, deliver us from the evil, for the kingdom is Yours. The wording is not identical, since Adam's version says the evil thing and has a longer opening, but the shape is the same: a plea for rescue and a confession that the kingdom belongs to Yahuah (the Lord) alone. The first man prays it after the fall, and Matthew records the same cry for those who follow Yahusha (Jesus) now.",
+  "member_fix": null
+ },
+ {
+  "id": 45648,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45674,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45772,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45776,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45823,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45824,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45825,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45878,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45948,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 45968,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 46287,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 46320,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 46464,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 46606,
+  "verdict": "FIX",
+  "finding": "Closing gloss 'serving and making offerings in honor of their father Adam' goes past what the quoted verse says (stand ministering before the body of Adam) and reads as veneration of the dead; keep to the verse's own words.",
+  "fix": "*Then Enos called his son Cainan and said to him, \"See, 0 my son, and set thy heart on thy people, and establish them in righteousness, and in innocence; and stand ministering before the body of our father Adam, all the days of thy life.\"* (2 Adam and Eve 14:3). *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* (Genesis 4:26). Enos charges his son Cainan to set his heart on his people, to establish them in righteousness and innocence, and to stand ministering before the body of Adam all his days. Genesis says that in the days of Enos, son of Seth, men began to call upon the name of Yahuah (the LORD). The charge to Cainan shows what that calling looked like in Enos's house: a righteous people kept in order, ministering before the body of their father Adam.",
+  "member_fix": null
+ },
+ {
+  "id": 48843,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 48848,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 49262,
+  "verdict": "FIX",
+  "finding": "Equates Jude's ten thousands of saints with the Ascension's 'holy ones from the seventh heaven', which is the souls-come-down reading the author's own prior note ruled out; the framework holds the fathers asleep until the first resurrection, so the note should set the two witnesses beside each other without deciding who the holy ones are (drafter's flag for Yoshi stands).",
+  "fix": "Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints,* Jude's word from Enoch sits beside the Ascension of Isaiah, where Yahuah (the Lord) comes with his angels and with the armies of the holy ones from the seventh heaven. The ten thousands of his saints are the company Enoch saw coming with him — *and all the saints with thee* (Zechariah 14:5) — the coming Enoch foresaw and Isaiah was shown.",
+  "member_fix": null
+ },
+ {
+  "id": 49339,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 49380,
+  "verdict": "FIX",
+  "finding": "Member note: a stray period was added inside the italics after the question mark ('perceived not?.'), a drafter's addition, not source text.",
+  "fix": null,
+  "member_fix": "Ascension of Isaiah 11:26 — *How did our Lord escape us whilst descending, and we perceived not?* The heavens worship the Beloved who passed through unseen, as they cry Worthy is the Lamb in Revelation."
+ },
+ {
+  "id": 57962,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 58216,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 60026,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 60235,
+  "verdict": "FIX",
+  "finding": "The quoted Testament phrase carries unrestored 'God' ('God shall appear, dwelling among men on earth'); sacred-names convention applies inside quoted scripture, and the live Testaments text renders it Elohim (God).",
+  "fix": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* — \"Elohim (God) shall appear, dwelling among men on earth\" is fulfilled when the Word was made flesh and dwelt among us — the only begotten whom the Father sent, the Formed one walking among men.",
+  "member_fix": null
+ },
+ {
+  "id": 60364,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 60366,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ }
+]

@@ -1,0 +1,1187 @@
+[
+ {
+  "id": 4317,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 1,
+   "vn": 3,
+   "cite": "Ascension of Isaiah 1:3",
+   "text": "And of the eternal judgments and torments of Gehenna, and of the prince of this world, and of his angels, and his authorities and his powers.",
+   "prev": "And he called him into the presence of Isaiah the son of Amoz the prophet, and into the presence of Josab the son of Isaiah, in order to deliver unto him the words of righteousness which the king himself had seen:",
+   "next": "And the words of the faith of the Beloved which he himself had seen in the fifteenth year of his reign during his illness."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 4,
+   "vn": 10,
+   "cite": "Matthew 4:10",
+   "text_db": "Then says Yahusha (Jesus) unto him, Get you hence, Satan: for it is written, You shall worship Yahuah Elohayka (the Lord thy God), and him only shall you serve.",
+   "text_canon": "Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve."
+  },
+  "old_note": "*Beliar was wroth with Hizkiyah (Hezekiah) because of his vision, and because of the unmasking with which he had unmasked Sammael, and because by him the going forth of the Beloved from the seventh heaven had been made known.* Ascension 1:3 names Beliar's adversarial pattern toward the prophetic revelation of the Beloved's descent. Matt 4:10's *Get thee hence, Satan* sends the same Beliar-figure away in the same architecture: the Beloved who has descended dismisses the king-of-this-world who opposes the descent.",
+  "regrade": {
+   "verdict": "RE_ANCHOR_REWORDED",
+   "quotes": [
+    {
+     "quote": "Beliar was wroth with Hizkiyah (Hezekiah) because of his vision, and because of the unmasking with which he had unmasked Sammael, and because by him the going forth of the Beloved from the seventh heaven had been made known.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|1:3",
+     "verdict": "RE_ANCHOR_REWORDED",
+     "proposed": "ascension-isaiah|ascension-isaiah|3:13",
+     "ratio": 0.69,
+     "k": 1,
+     "live_here": "And of the eternal judgments and torments of Gehenna, and of the prince of this world, and of his angels, and his authorities and his powers.",
+     "live_proposed": "For Beliar was in great wrath against Isaiah by reason of the vision, and because of the exposure wherewith he had exposed Sammael, and because through him the going forth of the Beloved from the seventh heaven had been made known, and His transformation and His descent and the likeness into which He should be transformed (that is) the likeness of man, and the persecution wherewith he should be persecuted, and the torturers wherewith the children of Yashar'el (Israel) should torture Him, and the coming of His twelve disciples, and the teaching, and that He should before the sabbath be crucified upon the tree, and should be crucified together with wicked men, and that He should be buried in the sepulchre,"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "king-of-this-world"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 45,
+    "slug": "beliar-as-king-of-this-world",
+    "old": "Ascension of Isaiah 1:3 — *Beliar was wroth with Hizkiyah (Hezekiah) because of his vision... by him the going forth of the Beloved from the seventh heaven had been made known.* Beliar's adversarial pattern toward the prophetic revelation of the Beloved's descent; Matt 4:10's *Get thee hence, Satan* dismisses the same figure.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4315,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 4,
+   "vn": 2,
+   "cite": "Ascension of Isaiah 4:2",
+   "text": "After it is consummated, Beliar the great ruler, the king of this world, will descend, who hath ruled it since it came into being; yea, he will descent from his firmament in the likeness of a man, a lawless king, the slayer of his mother: who himself (even) this king.",
+   "prev": "AND now Hezekiah and Josab my son, these are the days of the completion of the world.",
+   "next": "Will persecute the plant which the Twelve Apostles of the Beloved have planted. Of the Twelve one will be delivered into his hands."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 4,
+   "vn": 8,
+   "cite": "Matthew 4:8",
+   "text_db": "Again, the devil takes him up into an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them;",
+   "text_canon": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;"
+  },
+  "old_note": "*And after it is consummated, Beliar will descend, the great angel, the king of this world, which he has ruled ever since it came into being; and he will descend from his firmament in the form of a man, a king of unrighteousness, a slayer of his mother — this is the king of this world.* Ascension of Isaiah 4:2 names Beliar as *the king of this world,* the figure who has ruled it from the beginning. Matt 4:8-9's offer of *all the kingdoms of the world* by the devil is the same king-of-this-world figure offering what he currently administers. The Hebrew library's framework — Beliar / the devil as the temporary king-of-this-world during the present age (under Watcher-rebellion administration) — locks the framework reading that the wilderness-offer was not an empty bluff.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "And after it is consummated, Beliar will descend, the great angel, the king of this world, which he has ruled ever since it came into being; and he will descend from his firmament in the form of a man, a king of unrighteousness, a slayer of his mother — this is the king of this world.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|4:2",
+     "verdict": "REWORDED",
+     "proposed": "ascension-isaiah|ascension-isaiah|4:2",
+     "ratio": 0.64,
+     "k": 1,
+     "live_here": "After it is consummated, Beliar the great ruler, the king of this world, will descend, who hath ruled it since it came into being; yea, he will descent from his firmament in the likeness of a man, a lawless king, the slayer of his mother: who himself (even) this king.",
+     "live_proposed": "After it is consummated, Beliar the great ruler, the king of this world, will descend, who hath ruled it since it came into being; yea, he will descent from his firmament in the likeness of a man, a lawless king, the slayer of his mother: who himself (even) this king."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "king-of-this-world",
+    "king-of-this-world"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 45,
+    "slug": "beliar-as-king-of-this-world",
+    "old": "Ascension of Isaiah 4:2 — *Beliar will descend, the great angel, the king of this world, which he has ruled ever since it came into being.* The Hebrew library names Beliar as the king-of-this-world; Matt 4:8-9's offer of all the kingdoms is the same figure offering what he currently administers.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4457,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 4,
+   "vn": 3,
+   "cite": "Ascension of Isaiah 4:3",
+   "text": "Will persecute the plant which the Twelve Apostles of the Beloved have planted. Of the Twelve one will be delivered into his hands.",
+   "prev": "After it is consummated, Beliar the great ruler, the king of this world, will descend, who hath ruled it since it came into being; yea, he will descent from his firmament in the likeness of a man, a lawless king, the slayer of his mother: who himself (even) this king.",
+   "next": "This ruler in the form of that king will come and there will come and there will come with him all the powers of this world, and they will hearken unto him in all that he desires."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 10,
+   "vn": 4,
+   "cite": "Matthew 10:4",
+   "text_db": "Simon the Canaanite, and Judas Iscariot, who also betrayed him.",
+   "text_canon": "Simon the Canaanite, and Judas Iscariot, who also betrayed him."
+  },
+  "old_note": "*Will persecute the plant which the Twelve Apostles of the Beloved have planted. Of the Twelve one will be delivered into his hands.* The Ascension of Isaiah 4:3 (in the Belial-prediction at the chapter's mid-section) names the wisdom-stream's prophetic-witness to the twelve-apostles-with-one-betrayer architecture explicitly — the plant the Twelve plant will be persecuted; one of the Twelve will be delivered into the hand of the persecutor. Matt 10:4's Yahudah (Judah) Iscariot listed-with-betrayal-note and Matt 10:16-22's persecution-disclosure walk the same architecture at the commissioning-discourse register. The framework reads the Ascension passage as the wisdom-stream's confirmation that the inner-circle-betrayal and the persecution-of-the-plant are not surprise-developments but architecture-elements named in advance.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Will persecute the plant which the Twelve Apostles of the Beloved have planted. Of the Twelve one will be delivered into his hands.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|4:3",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|4:3",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "Will persecute the plant which the Twelve Apostles of the Beloved have planted. Of the Twelve one will be delivered into his hands.",
+     "live_proposed": "Will persecute the plant which the Twelve Apostles of the Beloved have planted. Of the Twelve one will be delivered into his hands."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "twelve-apostles-with-one-betrayer",
+    "listed-with-betrayal-note",
+    "persecution-of-the-plant"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 116,
+    "slug": "the-twelve-apostles-and-the-one-delivered-in-ascension-isaiah",
+    "old": "Ascension of Isaiah 4:3 — *will persecute the plant which the Twelve Apostles of the Beloved have planted. Of the Twelve one will be delivered into his hands.* Two architecture-elements named in advance at the wisdom-stream level: persecution-of-the-plant + inner-circle-betrayal. The Matt 10:4 Yahudah (Judah) Iscariot listing-with-betrayal-note and Matt 10:16-22 persecution-disclosure walk the same architecture at the commissioning-discourse register.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4316,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 4,
+   "vn": 9,
+   "cite": "Ascension of Isaiah 4:9",
+   "text": "And they greater number of those who shall have been associated together in order to receive the Beloved, he will turn aside after him.",
+   "prev": "And they will sacrifice to him and they will serve him saying: \"This is Elohim (God) and beside him there is no other.\"",
+   "next": "And there will be the power of his miracles in every city and region."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 4,
+   "vn": 9,
+   "cite": "Matthew 4:9",
+   "text_db": "And says unto him, All these things will I give you, if you will fall down and worship me.",
+   "text_canon": "And saith unto him, All these things will I give thee, if thou wilt fall down and worship me."
+  },
+  "old_note": "*And much power will be in his hands, and he will make all do what he chooses; and he will speak as the Beloved and will say: I am Elohim (God), and before me there was none. And all the people in the world will believe in him.* Ascension 4:9 names Beliar's standing worship-grab pattern — speaking as the Beloved, claiming the worship due to Elohim. Matt 4:9's *if thou wilt fall down and worship me* is the king-of-this-world enacting the same worship-grab at the Messianic level. The Hebrew library names the architecture; the gospel narrates one instance of it.",
+  "regrade": {
+   "verdict": "RE_ANCHOR_REWORDED",
+   "quotes": [
+    {
+     "quote": "And much power will be in his hands, and he will make all do what he chooses; and he will speak as the Beloved and will say: I am Elohim (God), and before me there was none. And all the people in the world will believe in him.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|4:9",
+     "verdict": "RE_ANCHOR_REWORDED",
+     "proposed": "ascension-isaiah|ascension-isaiah|4:6",
+     "ratio": 0.67,
+     "k": 1,
+     "live_here": "And they greater number of those who shall have been associated together in order to receive the Beloved, he will turn aside after him.",
+     "live_proposed": "And all that he hath desired he will do in the world: he will do and speak like the Beloved and he will say: \"I am Elohim (God) and before me there has been none.\""
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "king-of-this-world"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 45,
+    "slug": "beliar-as-king-of-this-world",
+    "old": "Ascension of Isaiah 4:9 — *he will speak as the Beloved and will say: I am Elohim (God), and before me there was none.* Beliar's standing worship-grab; Matt 4:9's *fall down and worship me* enacts the same.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4885,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 9,
+   "vn": 14,
+   "cite": "Ascension of Isaiah 9:14",
+   "text": "And the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is.",
+   "prev": "Nevertheless they see and know whose will be thrones, and whose the crowns when He has descended and been made in your form, and they will think that He is flesh and is a man.",
+   "next": "And thus His descent, as you will see, will be hidden even from the heavens, so that it will not be known who He is."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 35,
+   "cite": "Matthew 27:35",
+   "text_db": "And they crucified him, and parted his garments, casting lots: that it might be fulfilled which was spoken by the prophet, They parted my garments among them, and upon my vesture did they cast lots.",
+   "text_canon": "And they crucified him, and parted his garments, casting lots: that it might be fulfilled which was spoken by the prophet, They parted my garments among them, and upon my vesture did they cast lots."
+  },
+  "old_note": "*And the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is.* Ascension of Isaiah 9:14 names THE direct external-witness verbal-anchor for the god-of-that-world-stretching-forth-his-hand-against-the-Son-and-they-will-crucify-Him-on-a-tree substance — the wisdom-stream had named the architecture of the world-rulers-and-their-rulers-not-knowing-who-the-Son-is at the heavenly-register. The framework reads the verse against Matt 27:35's *and they crucified him* — the operative-walking-out at the historical-pivot of the architecture Ascension of Isaiah had named centuries before at the wisdom-stream-witness. The framework reads the *not knowing who He is* substance in continuity with 1 Corinthians 2:8's *had they known it, they would not have crucified the Lord of glory.* The framework reads the *crucify Him on a tree* substance in continuity with Devarim (Deuteronomy) 21:22-23 + Galatians 3:13's *cursed is every one that hangeth on a tree* — the King-of-Yashar'el (Israel) walks-the-curse-of-the-Deuteronomy-28-exile-judgment-substance the twelve-tribes-walked-substantively, as the Pesach (Passover)-lamb-substance, walking-out-the-substance the twelve-tribes-can-be-gathered-home-substantively per Red Line #4's reading (the curse is the exile-judgment, NOT the Torah; the King walks-the-curse, not the abolishing-of-the-Torah). Per Yoshi's S32 sourcing-decision (api/seed.py:EDITION_PROFILES[\"ascension-isaiah\"]), AI is the *first witness* aligning with the framework's Formless-Father / Formed-of-the-Formless nature-of-God teaching — pre-Nicene, late-1st / early-2nd CE. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|9:14",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|9:14",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is.",
+     "live_proposed": "And the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "god-of-that-world-stretching-forth-his-hand-against-the-Son-and-they-will-crucify-Him-on-a-tree",
+    "world-rulers-and-their-rulers-not-knowing-who-the-Son-is",
+    "walks-the-curse-of-the-Deuteronomy",
+    "twelve-tribes-walked-substantively",
+    "walking-out-the-substance",
+    "twelve-tribes-can-be-gathered-home-substantively",
+    "abolishing-of-the-Torah",
+    "Formed-of-the-Formless"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 420,
+    "slug": "the-beloved-crucified-on-a-tree-descended-and-risen-and-many-of-the-righteous-ascending-with-him-in-ascension-of-isaiah",
+    "old": "Ascension of Isaiah 9:14 — *the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is.* THE direct external-witness verbal-anchor: the wisdom-stream named the crucify-Him-on-a-tree substance at the prophet-Yeshayahu (Isaiah)-vision-register per Devarim (Deuteronomy) 21:22-23 + Galatians 3:13. The *not knowing who He is* substance in continuity with 1 Corinthians 2:8.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 49339,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 9,
+   "vn": 15,
+   "cite": "Ascension of Isaiah 9:15",
+   "text": "And thus His descent, as you will see, will be hidden even from the heavens, so that it will not be known who He is.",
+   "prev": "And the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is.",
+   "next": "And when He hath plundered the angel of death, He will ascend on the third day, and he will remain in that world five hundred and forty-five days."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "isaiah",
+   "ch": 53,
+   "vn": 2,
+   "cite": "Isaiah 53:2",
+   "text_db": "For he shall grow up before him as a tender plant, and as a root out of a dry ground: he has no form nor comeliness; and when we shall see him, there is no beauty that we should desire him.",
+   "text_canon": "For he shall grow up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness; and when we shall see him, there is no beauty that we should desire him."
+  },
+  "old_note": "Isaiah 53:2 — *For he shall grow up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness; and when we shall see him, there is no beauty that we should desire him.* The descent 'hidden even from the heavens' lands as Isaiah's own no-form-nor-comeliness — the prophet himself foretold the disguised coming.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [
+    {
+     "quote": "hidden even from the heavens",
+     "verdict": "STAND"
+    }
+   ],
+   "canon_lead": {
+    "cite": "Isaiah 53:2",
+    "verdict": "STAND",
+    "quote": "For he shall grow up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness; and when we shall see him, there is no beauty that we should desire him."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "no-form-nor-comeliness"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11972,
+    "slug": "ascension-isaiah-9-descent-hidden-from-the-heavens",
+    "old": "Isaiah 53:2 — *For he shall grow up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness; and when we shall see him, there is no beauty that we should desire him.* The descent 'hidden even from the heavens' lands as Isaiah's own no-form-nor-comeliness — the prophet himself foretold the disguised coming.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 4886,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 9,
+   "vn": 16,
+   "cite": "Ascension of Isaiah 9:16",
+   "text": "And when He hath plundered the angel of death, He will ascend on the third day, and he will remain in that world five hundred and forty-five days.",
+   "prev": "And thus His descent, as you will see, will be hidden even from the heavens, so that it will not be known who He is.",
+   "next": "And then many of the righteous will ascend with Him, whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 50,
+   "cite": "Matthew 27:50",
+   "text_db": "Yahusha (Jesus), when he had cried again with a loud voice, yielded up the ghost.",
+   "text_canon": "Yahusha (Jesus), when he had cried again with a loud voice, yielded up the ghost."
+  },
+  "old_note": "*And when He hath plundered the angel of death, He will ascend on the third day, and he will remain in that world five hundred and forty-five days.* Ascension of Isaiah 9:16 names the wisdom-stream's direct external-witness articulation of the plundered-angel-of-death-and-ascend-on-the-third-day substance — the architecture of the King's descent-into-death-and-resurrection-on-the-third-day at the wisdom-stream-register. The framework reads the verse against Matt 27:50's *Yahusha (Jesus), when he had cried again with a loud voice, yielded up the ghost* — the King's-voluntary-walking-into-death is the substance Ascension of Isaiah names as the descent-to-plunder-the-angel-of-death. The framework reads the verses in continuity with Hosheia (Hosea) 6:2's *after two days will he revive us: in the third day he will raise us up* + Hosheia (Hosea) 13:14's *I will ransom them from the power of the grave* + 1 Peter 3:18-20's *put to death in the flesh, but quickened by the Spirit: by which also he went and preached unto the spirits in prison* + Hebrews 2:14-15's *that through death he might destroy him that had the power of death, that is, the devil; and deliver them who through fear of death were all their lifetime subject to bondage.* The wisdom-stream and the apostolic-stream cohere at the descent-to-plunder-the-angel-of-death architecture per Red Line #11's reading.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And when He hath plundered the angel of death, He will ascend on the third day, and he will remain in that world five hundred and forty-five days.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|9:16",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|9:16",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And when He hath plundered the angel of death, He will ascend on the third day, and he will remain in that world five hundred and forty-five days.",
+     "live_proposed": "And when He hath plundered the angel of death, He will ascend on the third day, and he will remain in that world five hundred and forty-five days."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "plundered-angel-of-death-and-ascend-on-the-third-day",
+    "descent-into-death-and-resurrection-on-the-third-day",
+    "King's-voluntary-walking-into-death",
+    "descent-to-plunder-the-angel-of-death",
+    "descent-to-plunder-the-angel-of-death"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 420,
+    "slug": "the-beloved-crucified-on-a-tree-descended-and-risen-and-many-of-the-righteous-ascending-with-him-in-ascension-of-isaiah",
+    "old": "Ascension of Isaiah 9:16 — *when He hath plundered the angel of death, He will ascend on the third day.* The descent-to-plunder-the-angel-of-death architecture — the King's voluntary-yielding-up-of-the-ghost at Matt 27:50 walks-into-the-descent per Hosheia (Hosea) 6:2 + 13:14 + 1 Peter 3:18-20 + Hebrews 2:14-15's *that through death he might destroy him that had the power of death, that is, the devil.*",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4887,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 9,
+   "vn": 17,
+   "cite": "Ascension of Isaiah 9:17",
+   "text": "And then many of the righteous will ascend with Him, whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him.",
+   "prev": "And when He hath plundered the angel of death, He will ascend on the third day, and he will remain in that world five hundred and forty-five days.",
+   "next": "Then indeed they will receive their garments and thrones and crowns, when He has ascended into the seventh heaven.\""
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 52,
+   "cite": "Matthew 27:52",
+   "text_db": "And the graves were opened; and many bodies of the saints which slept arose,",
+   "text_canon": "And the graves were opened; and many bodies of the saints which slept arose,"
+  },
+  "old_note": "*And then many of the righteous will ascend with Him, whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him.* Ascension of Isaiah 9:17 names THE direct external-witness verbal-anchor for the *many of the righteous will ascend with Him* substance — the wisdom-stream's articulation of the architecture Matt 27:52-53 walks-out at the historical-pivot. The framework reads the verses together: AI 9:17 IS the operative external-witness verbal-anchor for *the graves were opened; and many bodies of the saints which slept arose, and came out of the graves after his resurrection, and went into the holy city, and appeared unto many* (Matt 27:52-53). The substance the gospel walks-out at the historical-cross-pivot is the substance Ascension of Isaiah had named at the wisdom-stream-register. The *whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him* substance reads in continuity with Hebrews 11:39-40's *these all, having obtained a good report through faith, received not the promise: Yahuah (God) having provided some better thing for us, that they without us should not be made perfect* per Red Line #11. The forefathers-who-walked-the-covenant-faithfully Yahuah is able to graft-in-again at the first-resurrection (Romans 11:24); Matt 27:52-53 is the historical-foretaste of the broader-first-resurrection-at-the-King's-coming. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And then many of the righteous will ascend with Him, whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|9:17",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|9:17",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And then many of the righteous will ascend with Him, whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him.",
+     "live_proposed": "And then many of the righteous will ascend with Him, whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "forefathers-who-walked-the-covenant-faithfully",
+    "broader-first-resurrection-at-the-King's-coming"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 420,
+    "slug": "the-beloved-crucified-on-a-tree-descended-and-risen-and-many-of-the-righteous-ascending-with-him-in-ascension-of-isaiah",
+    "old": "Ascension of Isaiah 9:17 — *many of the righteous will ascend with Him, whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him.* THE direct external-witness verbal-anchor: this IS the operative external-witness verbal-anchor for Matt 27:52-53's *the graves were opened; and many bodies of the saints which slept arose, and came out of the graves after his resurrection.* In continuity with Hebrews 11:39-40's *they without us should not be made perfect* per Red Line #11's first-resurrection-foretaste reading.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4889,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 11,
+   "vn": 19,
+   "cite": "Ascension of Isaiah 11:19",
+   "text": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.",
+   "prev": "And when He had grown up he worked great signs and wonders in the land of Yashar'el (Israel) and of Jerusalem.",
+   "next": "In Jerusalem indeed I saw Him being crucified on a tree:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 60,
+   "cite": "Matthew 27:60",
+   "text_db": "And laid it in his own new tomb, which he had hewn out in the rock: and he rolled a great stone to the door of the sepulchre, and departed.",
+   "text_canon": "And laid it in his own new tomb, which he had hewn out in the rock: and he rolled a great stone to the door of the sepulchre, and departed."
+  },
+  "old_note": "*And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.* Ascension of Isaiah 11:19 names the wisdom-stream's direct external-witness articulation of the descended-to-the-angel-of-Sheol substance — the King's-burial-and-descent-into-the-place-of-the-dead architecture. The framework reads the verse against Matt 27:60's *and laid it in his own new tomb, which he had hewn out in the rock: and he rolled a great stone to the door of the sepulchre, and departed* — the burial in Yoseph (Joseph) of Arimathea's rich-man's-tomb walks-out the Yeshayahu (Isaiah) 53:9's *he made his grave with the wicked, and with the rich in his death* substance AND is the historical-pivot of the descent-to-the-angel-of-Sheol architecture AI 11:19 names. The framework reads the substance carefully against Red Line #9 — the *roused the children of Yashar'el (Israel) against Him* substance reads in continuity with the framework's system-not-people posture per the four-costumes-and-their-victims architecture: the adversary-roused-the-leadership-of-the-second-Temple-aristocracy at the historical-pivot, NOT the substantial-Yahudah (Jewish)-people-as-a-whole; the framework rejects the inherited-Christian-replacement-theology weaponization of this verse against the Yahudim (Jews) as a people. The cross + the descent + the resurrection-on-the-third-day are the architecture the wisdom-stream named at the prophet-Yeshayahu-vision-register.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|11:19",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|11:19",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.",
+     "live_proposed": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "descended-to-the-angel-of-Sheol",
+    "King's-burial-and-descent-into-the-place-of-the-dead",
+    "descent-to-the-angel-of-Sheol",
+    "four-costumes-and-their-victims",
+    "adversary-roused-the-leadership-of-the-second-Temple-aristocracy",
+    "people-as-a-whole",
+    "inherited-Christian-replacement-theology",
+    "resurrection-on-the-third-day",
+    "prophet-Yeshayahu-vision-register"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 420,
+    "slug": "the-beloved-crucified-on-a-tree-descended-and-risen-and-many-of-the-righteous-ascending-with-him-in-ascension-of-isaiah",
+    "old": "Ascension of Isaiah 11:19 — *they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.* The burial + descent-into-the-place-of-the-dead architecture — Yoseph (Joseph) of Arimathea's rich-man's-tomb at Matt 27:60 walks-out Yeshayahu (Isaiah) 53:9's *he made his grave with the wicked, and with the rich in his death.* The *roused the children of Yashar'el (Israel) against Him* substance read CAREFULLY against Red Line #9 — the adversary-roused-the-leadership-of-the-second-Temple-aristocracy at the historical-pivot, NOT the Yahudah (Jewish)-people-as-a-whole; the framework rejects the inherited-Christian-replacement-theology weaponization.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4895,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 11,
+   "vn": 19,
+   "cite": "Ascension of Isaiah 11:19",
+   "text": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.",
+   "prev": "And when He had grown up he worked great signs and wonders in the land of Yashar'el (Israel) and of Jerusalem.",
+   "next": "In Jerusalem indeed I saw Him being crucified on a tree:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 11,
+   "cite": "Matthew 28:11",
+   "text_db": "Now when they were going, behold, some of the watch came into the city, and shewed unto the chief priests all the things that were done.",
+   "text_canon": "Now when they were going, behold, some of the watch came into the city, and shewed unto the chief priests all the things that were done."
+  },
+  "old_note": "*And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.* Ascension of Isaiah 11:19 names THE direct external-witness articulation of the adversary-roused-the-children-of-Yashar'el (Israel)-not-knowing-who-He-was substance — the system-not-people-architecture per Red Line #9 named at the wisdom-stream-vision-register. The framework reads the verse against Matt 28:11's Roman-watch reporting to the chief-priests and the bribery-cover-up that follows at vv.12-15. The substantial *they delivered Him to the king* substance names the corrupt-Sanhedrin-leadership-system-substance the apostle-Mattithyahu (Matthew) walks at-Matthew 26-27 — the leadership-system-substance corrupting-the-substance-of-the-people; the *not knowing who He was* substance names the people-as-victims-of-the-leadership's-deception-substance, NOT the categorical-anti-Yahudi (Jewish)-substance the inherited-Christian-collapse misuses. AI 11:19 names the architecture explicitly: the adversary (Sammael Satan per AI 11:41) is the substantial-source; the children-of-Yashar'el (Israel) are roused-against-Him not-knowing-who-He-was — the people-as-victims of-the-substantial-deception-the-leadership-handed-them. The chief-priests' bribery-cover-up at Matt 28:12-15 is the operative-form of the same architecture: the corrupt-leadership-system fabricating the anti-Resurrection-narrative and walking-it-out-into the broader-Yahudim (Jews)-community-substance. The substantial-system-not-people posture holds non-negotiable.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|11:19",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|11:19",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.",
+     "live_proposed": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "adversary-roused-the-children-of-Yashar'el",
+    "not-knowing-who-He-was",
+    "system-not-people-architecture",
+    "wisdom-stream-vision-register",
+    "corrupt-Sanhedrin-leadership-system-substance",
+    "corrupting-the-substance-of-the-people",
+    "people-as-victims-of-the-leadership's-deception-substance",
+    "not-knowing-who-He-was",
+    "of-the-substantial-deception-the-leadership-handed-them",
+    "walking-it-out-into",
+    "substantial-system-not-people"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 422,
+    "slug": "the-king-resurrected-and-ascended-sending-out-the-twelve-witnessed-in-ascension-of-isaiah-11",
+    "old": "Ascension of Isaiah 11:19 — *and after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.* The system-not-people architecture per Red Line #9 named explicitly at the wisdom-stream-vision-register: the adversary (Sammael Satan) is the substantial-source; the people are roused-against-Him not-knowing-who-He-was — victims of the deception. The chief-priests' bribery-cover-up at Matt 28:11-15 is the operative-form: the corrupt-leadership-system fabricating the anti-Resurrection-narrative; the *commonly reported among the Yahudim (Jews) until this day* substance names the success-of-the-leadership's-narrative-among-the-people-still-inside-the-system, NOT categorical-anti-Yahudi (Jewish) substance.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4888,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 11,
+   "vn": 20,
+   "cite": "Ascension of Isaiah 11:20",
+   "text": "In Jerusalem indeed I saw Him being crucified on a tree:",
+   "prev": "And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.",
+   "next": "And likewise after the third day rise again and remain days."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 35,
+   "cite": "Matthew 27:35",
+   "text_db": "And they crucified him, and parted his garments, casting lots: that it might be fulfilled which was spoken by the prophet, They parted my garments among them, and upon my vesture did they cast lots.",
+   "text_canon": "And they crucified him, and parted his garments, casting lots: that it might be fulfilled which was spoken by the prophet, They parted my garments among them, and upon my vesture did they cast lots."
+  },
+  "old_note": "*In Jerusalem indeed I saw Him being crucified on a tree.* Ascension of Isaiah 11:20 names the wisdom-stream's direct external-witness historical-attestation of the crucified-on-a-tree-in-Jerusalem substance — the prophet-Yeshayahu (Isaiah)-saw-in-vision what the King walked at the historical-pivot. The framework reads the verse against Matt 27:35's *and they crucified him* — the wisdom-stream had named the operative-substance at the prophet-Yeshayahu-register; the historical-pivot at the cross is the seeing-what-Yeshayahu-saw substance walking-out. The framework reads this in continuity with John 12:41's *these things said Esaias (Isaiah), when he saw his glory, and spake of him* — the prophet Yeshayahu (Isaiah) saw the King at multiple registers (the holy-holy-holy-vision of Yeshayahu 6, the Suffering-Servant of Yeshayahu 53, the Ascension-of-Isaiah-11-vision of the King's-Bethlehem-birth-and-cross). The cross walks-out the substance the prophet saw-in-vision centuries before.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "In Jerusalem indeed I saw Him being crucified on a tree.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|11:20",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|11:20",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "In Jerusalem indeed I saw Him being crucified on a tree:",
+     "live_proposed": "In Jerusalem indeed I saw Him being crucified on a tree:"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "crucified-on-a-tree-in-Jerusalem",
+    "seeing-what-Yeshayahu-saw",
+    "holy-holy-holy-vision",
+    "King's-Bethlehem-birth-and-cross"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 420,
+    "slug": "the-beloved-crucified-on-a-tree-descended-and-risen-and-many-of-the-righteous-ascending-with-him-in-ascension-of-isaiah",
+    "old": "Ascension of Isaiah 11:20 — *In Jerusalem indeed I saw Him being crucified on a tree.* The prophet-Yeshayahu (Isaiah)-saw-in-vision what the King walks at the historical-pivot per John 12:41's *these things said Esaias (Isaiah), when he saw his glory, and spake of him.* The wisdom-stream and the gospel cohere at the substance.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4894,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 11,
+   "vn": 21,
+   "cite": "Ascension of Isaiah 11:21",
+   "text": "And likewise after the third day rise again and remain days.",
+   "prev": "In Jerusalem indeed I saw Him being crucified on a tree:",
+   "next": "And the angel who conducted me said: \"Understand, Isaiah\": and I saw when He sent out the Twelve Apostles and ascended."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 6,
+   "cite": "Matthew 28:6",
+   "text_db": "He is not here: for he is risen, as he said. Come, see the place where the Lord lay.",
+   "text_canon": "He is not here: for he is risen, as he said. Come, see the place where Yahusha (Lord) lay."
+  },
+  "old_note": "*And likewise after the third day rise again and remain days.* Ascension of Isaiah 11:21 names THE direct external-witness verbal-anchor for the King's-third-day-Resurrection substance — the wisdom-stream-prophetic-substance Yeshayahu (Isaiah) walks-out in vision at the heavenly-substance-register the gospel-substance walks-out at the historical-pivot. The framework reads the verse against Matt 28:6's *He is not here: for he is risen, as he said.* The heavenly-messenger's-announcement at the empty-tomb is the operative-fulfillment of the substance AI 11:21 had named at the wisdom-stream-vision-register centuries before — the third-day-rise-again-substance the prophet-Yeshayahu (Isaiah) had seen-in-vision walks the same architecture Hosea 6:2's *after two days will he revive us: in the third day he will raise us up* names at the Tanakh-register and Jonah 1:17's three-days-and-three-nights names at the pre-figuration-register. Per Yoshi's S32 sourcing-note (api/seed.py:EDITION_PROFILES[\"ascension-isaiah\"]), AI is the *first witness* aligning with the framework's reading at the deepest external-witness level — pre-Nicene, late-1st / early-2nd CE, before the Constantine-era doctrinal-construct hardened. The remain-days-substance ties to the forty-days-between-Resurrection-and-Ascension per Acts 1:3. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And likewise after the third day rise again and remain days.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|11:21",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|11:21",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And likewise after the third day rise again and remain days.",
+     "live_proposed": "And likewise after the third day rise again and remain days."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "King's-third-day-Resurrection",
+    "wisdom-stream-prophetic-substance",
+    "wisdom-stream-vision-register",
+    "third-day-rise-again-substance",
+    "three-days-and-three-nights",
+    "forty-days-between-Resurrection-and-Ascension"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 422,
+    "slug": "the-king-resurrected-and-ascended-sending-out-the-twelve-witnessed-in-ascension-of-isaiah-11",
+    "old": "Ascension of Isaiah 11:21 — *and likewise after the third day rise again and remain days.* THE direct external-witness verbal-anchor for the third-day-Resurrection substance — the wisdom-stream-prophetic-substance at the heavenly-vision-register the heavenly-messenger's-announcement at Matt 28:6 (*He is not here: for he is risen, as he said*) operatively-fulfills. The remain-days-substance ties to the forty-days-between-Resurrection-and-Ascension per Acts 1:3.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4896,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 11,
+   "vn": 22,
+   "cite": "Ascension of Isaiah 11:22",
+   "text": "And the angel who conducted me said: \"Understand, Isaiah\": and I saw when He sent out the Twelve Apostles and ascended.",
+   "prev": "And likewise after the third day rise again and remain days.",
+   "next": "And I saw Him, and He was in the firmament, but He had not changed Himself into their form, and all the angels of the firmament and the Satans saw Him and they worshipped."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 19,
+   "cite": "Matthew 28:19",
+   "text_db": "Go you therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Spirit):",
+   "text_canon": "Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Spirit):"
+  },
+  "old_note": "*And the angel who conducted me said: \"Understand, Isaiah\": and I saw when He sent out the Twelve Apostles and ascended.* Ascension of Isaiah 11:22 names THE direct external-witness verbal-anchor for the Great Commission substance — the King-sending-out-the-Twelve-Apostles + the Ascension named in the same breath at the wisdom-stream-vision-register. The framework reads the verse against Matt 28:19's *Go ye therefore, and teach all nations* — the substantial-Great-Commission walks-OUT-FROM-Galilee-of-the-scattered-seed (per Matt 4:14-16 / Isaiah 9:1-2) INTO-the-territories-of-the-substantial-nations-substance the scattered-seed-of-both-houses is-substantively-among. AI 11:22 names the architecture explicitly: the King-substance sends-out-the-Twelve-Apostles + ascends — the same substance Matt 28:19-20 articulates at the gospel-pivot + Acts 1:8-11 articulates at the apostolic-pivot. The substantial-Twelve-Apostles substance walks the substantial-twelve-tribes-restoration-architecture-substance per Matt 19:28 (*ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel)*) + Revelation 21:14 (the twelve-foundations-of-the-new-Yerushalayim (Jerusalem)) — the wisdom-stream had named the architecture; the gospel-substance names the operative-form. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And the angel who conducted me said: \"Understand, Isaiah\": and I saw when He sent out the Twelve Apostles and ascended.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|11:22",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|11:22",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And the angel who conducted me said: \"Understand, Isaiah\": and I saw when He sent out the Twelve Apostles and ascended.",
+     "live_proposed": "And the angel who conducted me said: \"Understand, Isaiah\": and I saw when He sent out the Twelve Apostles and ascended."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "King-sending-out-the-Twelve-Apostles",
+    "wisdom-stream-vision-register",
+    "walks-OUT-FROM-Galilee-of-the-scattered-seed",
+    "INTO-the-territories-of-the-substantial-nations-substance",
+    "scattered-seed-of-both-houses",
+    "sends-out-the-Twelve-Apostles",
+    "substantial-twelve-tribes-restoration-architecture-substance",
+    "twelve-foundations-of-the-new-Yerushalayim"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 422,
+    "slug": "the-king-resurrected-and-ascended-sending-out-the-twelve-witnessed-in-ascension-of-isaiah-11",
+    "old": "Ascension of Isaiah 11:22 — *and the angel who conducted me said: \"Understand, Isaiah\": and I saw when He sent out the Twelve Apostles and ascended.* THE direct external-witness verbal-anchor for the substantial-Great-Commission + Ascension substance — the King-sending-out-the-Twelve-Apostles + the Ascension named in the same breath. The substantial-Twelve walks the substantial-twelve-tribes-restoration-architecture per Matt 19:28 + Revelation 21:14.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 49380,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 11,
+   "vn": 26,
+   "cite": "Ascension of Isaiah 11:26",
+   "text": "Both worshipped Him and praised Him and said: \"How did our Lord escape us whilst descending, and we perceived not?\"",
+   "prev": "And He ascended into the second heaven, and He did not transform Himself, but all the angels who were on the right and on the left and the throne in the midst.",
+   "next": "And in like manner He ascended into the third heaven, and they praised and said in like manner."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 5,
+   "vn": 12,
+   "cite": "Revelation 5:12",
+   "text_db": "Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing.",
+   "text_canon": "Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing."
+  },
+  "old_note": "Revelation 5:12 — *Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing.* The praise that increased in volume through the heavens is the heavenly worthy-is-the-Lamb of John's throne-room.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Revelation 5:12",
+    "verdict": "STAND",
+    "quote": "Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "worthy-is-the-Lamb"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 11985,
+    "slug": "ascension-isaiah-11-ascent-the-angels-worshipped",
+    "old": "Revelation 5:12 — *Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing.* The praise that increased in volume through the heavens is the heavenly worthy-is-the-Lamb of John's throne-room.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 4897,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 11,
+   "vn": 32,
+   "cite": "Ascension of Isaiah 11:32",
+   "text": "And I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold.",
+   "prev": "But in all the heavens the praise increased in volume.",
+   "next": "And also the angel of the Ruach HaKodesh (Holy Spirit) I saw sitting on the left hand."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 18,
+   "cite": "Matthew 28:18",
+   "text_db": "And Yahusha (Jesus) came and spake unto them, saying, All power is given unto me in heaven and in earth.",
+   "text_canon": "And Yahusha (Jesus) came and spake unto them, saying, All power is given unto me in heaven and in earth."
+  },
+  "old_note": "*And I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold.* Ascension of Isaiah 11:32 names THE direct external-witness verbal-anchor for the King's-Ascension-to-the-right-hand-of-the-Great-Glory substance — the operative-substance of Psalm 110:1's *Yahuah (the LORD) said unto my Adon (Lord), Sit thou at my right hand* the prophet-David walked at the Tanakh-register. The framework reads the verse against Matt 28:18's *All power is given unto me in heaven and in earth.* The substantial-Great-Glory at AI 11:32 is the Father — the Formless-Source per the framework's nature-of-God reading per Red Line #10; the substantial-right-hand-of-the-Great-Glory is the place from-which the King-of-Yashar'el (Israel) walks-the-Daniel-7:13-14 dominion-and-glory-and-a-kingdom-substance. The substantial-substance is the Father-Son-relational-architecture-substance — NOT-categorical-three-co-equal-persons-Trinitarian-substance the inherited-Christian-Nicene-Constantinople-collapse walks. The King's *all power is given unto me* names the Father-giving-the-Son the everlasting-dominion the prophet-Daniel walked at Daniel 7:14; AI 11:32 names the heavenly-vision-substance the gospel-substance enacts at the historical-pivot. The framework reads this in continuity with Philippians 2:9-11 (*Elohim (God) also hath highly exalted him, and given him a name which is above every name*). FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|11:32",
+     "verdict": "STAND",
+     "proposed": "ascension-isaiah|ascension-isaiah|11:32",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold.",
+     "live_proposed": "And I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "King's-Ascension-to-the-right-hand-of-the-Great-Glory",
+    "substantial-right-hand-of-the-Great-Glory",
+    "dominion-and-glory-and-a-kingdom-substance",
+    "Father-Son-relational-architecture-substance",
+    "NOT-categorical-three-co-equal-persons-Trinitarian-substance",
+    "inherited-Christian-Nicene-Constantinople-collapse",
+    "Father-giving-the-Son"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 422,
+    "slug": "the-king-resurrected-and-ascended-sending-out-the-twelve-witnessed-in-ascension-of-isaiah-11",
+    "old": "Ascension of Isaiah 11:32 — *and I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold.* THE direct external-witness verbal-anchor for the King's-Ascension-to-the-right-hand-of-the-Great-Glory substance — the operative-substance of Psalm 110:1 + Daniel 7:13-14 + the substantial *all power is given unto me in heaven and in earth* at Matt 28:18. The Great-Glory is the Father — the Formless-Source per Red Line #10; the right-hand is the position from-which the King walks the everlasting-dominion. NOT the inherited-Christian three-co-equal-persons substance.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4869,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "2-baruch",
+   "name": "2 Baruch",
+   "ch": 6,
+   "vn": 7,
+   "cite": "2 Baruch 6:7",
+   "text": "And I saw him descend into the Holy of Holies, and take from thence the veil, and the holy ark, and the mercy-seat, and the two tables, and the holy raiment of the priests, and the altar of incense, and the forty-eight precious stones, wherewith the priest was adorned and all the holy vessels of the tabernacle.",
+   "prev": "For I am first sent to speak a word to the earth, and to place in it what Yahuah (Lord) the El Elyon (Most High) has commanded me.'",
+   "next": "And he spake to the earth with a loud voice: 'Earth, earth, earth, hear the word of El Gibbor (the mighty God), And receive what I commit to thee, And guard them until the last times, So that, when thou art ordered, thou mayst restore them, So that strangers may not get possession of them."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 51,
+   "cite": "Matthew 27:51",
+   "text_db": "And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;",
+   "text_canon": "And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;"
+  },
+  "old_note": "*And I saw him descend into the Holy of Holies, and take from thence the veil, and the holy ark, and the mercy-seat, and the two tables, and the holy raiment of the priests, and the altar of incense, and the forty-eight precious stones, wherewith the priest was adorned and all the holy vessels of the tabernacle.* 2 Baruch (Charles edition seq #3, verse 7; standard 2 Baruch 6:7) names the wisdom-stream's direct external-witness articulation of the heavenly-angel-descending-into-the-Holy-of-Holies-and-taking-the-veil substance — the wisdom-stream had named the veil-architecture at the heavenly-register (the angel-from-above acting upon the veil), and Matt 27:51's *the veil of the temple was rent in twain from the top to the bottom* names the operative-fulfillment at the earthly-pivot. The framework reads the verses together: the *from the top to the bottom* direction names the Father-from-above tearing-the-veil-from-the-heavenly-side, opening-the-way-back-into-the-Most-Holy-Place per Hebrews 10:19-22's *boldness to enter into the holiest by the blood of Yahusha (Jesus), by a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh.* This is the door-home opening architecturally per the *Grace, the Way, the New Heart, and the Mercy of Depart* exposition in framework-deep.md — grace as the means of return-to-the-Father's-house, NOT the inherited-Christian-replacement-theology reading that the temple-system-is-now-replaced-by-the-church (the framework rejects the abolition-of-the-Father's-house reading; the framework reads the veil-rent as Yahuah-opening-the-Way-back-into-the-Father's-house, not as Yahuah-abolishing-the-Father's-house). FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And I saw him descend into the Holy of Holies, and take from thence the veil, and the holy ark, and the mercy-seat, and the two tables, and the holy raiment of the priests, and the altar of incense, and the forty-eight precious stones, wherewith the priest was adorned and all the holy vessels of the tabernacle.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|2-baruch|6:7",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|2-baruch|6:7",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And I saw him descend into the Holy of Holies, and take from thence the veil, and the holy ark, and the mercy-seat, and the two tables, and the holy raiment of the priests, and the altar of incense, and the forty-eight precious stones, wherewith the priest was adorned and all the holy vessels of the tabernacle.",
+     "live_proposed": "And I saw him descend into the Holy of Holies, and take from thence the veil, and the holy ark, and the mercy-seat, and the two tables, and the holy raiment of the priests, and the altar of incense, and the forty-eight precious stones, wherewith the priest was adorned and all the holy vessels of the tabernacle."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "heavenly-angel-descending-into-the-Holy-of-Holies-and-taking-the-veil",
+    "tearing-the-veil-from-the-heavenly-side",
+    "opening-the-way-back-into-the-Most-Holy-Place",
+    "return-to-the-Father's-house",
+    "inherited-Christian-replacement-theology",
+    "temple-system-is-now-replaced-by-the-church",
+    "abolition-of-the-Father's-house",
+    "Yahuah-opening-the-Way-back-into-the-Father's-house",
+    "Yahuah-abolishing-the-Father's-house"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 416,
+    "slug": "the-temple-veil-rent-and-the-way-back-into-the-most-holy-place-opened-in-2-baruch-and-testaments-xii",
+    "old": "2 Baruch 6:7 (Charles edition seq #3) — *I saw him descend into the Holy of Holies, and take from thence the veil, and the holy ark, and the mercy-seat.* The wisdom-stream's heavenly-register articulation of the angel-from-above acting upon the veil — Matt 27:51's veil-rent-from-the-top-to-the-bottom names the operative-fulfillment of the Father-from-above tearing-the-veil-from-the-heavenly-side per Hebrews 10:19-22.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 57962,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "2-baruch",
+   "name": "2 Baruch",
+   "ch": 29,
+   "vn": 8,
+   "cite": "2 Baruch 29:8",
+   "text": "And it shall come to pass at that self-same time that the treasury of manna shall again descend from on high, and they will eat of it in those years, because these are they who have come to the consummation of time.",
+   "prev": "For winds shall go forth from before Me to bring every morning the fragrance of aromatic fruits, and at the close of the day clouds distilling the dew of health.",
+   "next": null
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 6,
+   "vn": 35,
+   "cite": "John 6:35",
+   "text_db": "And Yahusha (Jesus) said unto them, I am the bread of life: he that comes to me shall never hunger; and he that believes on me shall never thirst.",
+   "text_canon": "And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst."
+  },
+  "old_note": "John 6:35 — *And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.* The descending manna of the Messiah's years finds its substance in the Anointed Himself, the bread of life on whom the saved feed and never hunger.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "John 6:35",
+    "verdict": "STAND",
+    "quote": "And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst."
+   },
+   "degraded": true,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 14123,
+    "slug": "2-baruch-29-the-treasury-of-manna-descends-again",
+    "old": "John 6:35 — *And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.* The descending manna of the Messiah's years finds its substance in the Anointed Himself, the bread of life on whom the saved feed and never hunger.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 4884,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "2-baruch",
+   "name": "2 Baruch",
+   "ch": 51,
+   "vn": 7,
+   "cite": "2 Baruch 51:7",
+   "text": "But those who have been saved by their works, And to whom the law has been now a hope, And understanding an expectation, And wisdom a confidence, Shall wonders appear in their time.",
+   "prev": "For they shall first behold and afterwards depart to be tormented.",
+   "next": "For they shall behold the world which is now invisible to them, And they shall behold the time which is now hidden from them:"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 27,
+   "vn": 52,
+   "cite": "Matthew 27:52",
+   "text_db": "And the graves were opened; and many bodies of the saints which slept arose,",
+   "text_canon": "And the graves were opened; and many bodies of the saints which slept arose,"
+  },
+  "old_note": "*But those who have been saved by their works, And to whom the law has been now a hope, And understanding an expectation, And wisdom a confidence, Shall wonders appear in their time. For they shall behold the world which is now invisible to them, And they shall behold the time which is now hidden from them.* 2 Baruch (Charles edition seq #21, verse 1; standard 2 Baruch 51:1-8) names the wisdom-stream's direct articulation of the saved-by-their-works-shall-behold-the-world-now-invisible substance — the apocalyptic-stream's resurrection-glory architecture. The framework reads the verse against Matt 27:52-53's *and the graves were opened; and many bodies of the saints which slept arose, and came out of the graves after his resurrection, and went into the holy city, and appeared unto many* — the saints-arising-and-appearing-in-the-holy-city substance is the historical-pivot-foretaste of the broader-architecture 2 Baruch 51 names: the faithful-righteous-shall-behold-the-world-now-invisible + shall-be-made-like-unto-the-angels + shall-be-equal-to-the-stars. The framework reads the saved-by-their-works language CAREFULLY — NOT the inherited-Reformation-merit-doctrine collapse; the framework reads works as the fruit-of-the-Spirit-internalized-Torah per Yechezk'el (Ezekiel) 36:26-27 + Yirmeyahu (Jeremiah) 31:31-34 + James 2:14-26's *faith without works is dead*; the works are the Spirit-empowered-walking-in-the-Way the framework's *Grace, the Way, the New Heart, and the Mercy of Depart* exposition unfolds. The wisdom-stream had named the architecture-of-the-resurrection-glory; the saints-arising-at-the-cross substance is the historical-foretaste.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "But those who have been saved by their works, And to whom the law has been now a hope, And understanding an expectation, And wisdom a confidence, Shall wonders appear in their time. For they shall behold the world which is now invisible to them, And they shall behold the time which is now hidden from them.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|2-baruch|51:7",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|2-baruch|51:7",
+     "ratio": 1.0,
+     "k": 2,
+     "live_here": "But those who have been saved by their works, And to whom the law has been now a hope, And understanding an expectation, And wisdom a confidence, Shall wonders appear in their time.",
+     "live_proposed": "But those who have been saved by their works, And to whom the law has been now a hope, And understanding an expectation, And wisdom a confidence, Shall wonders appear in their time."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "saved-by-their-works-shall-behold-the-world-now-invisible",
+    "saints-arising-and-appearing-in-the-holy-city",
+    "faithful-righteous-shall-behold-the-world-now-invisible",
+    "shall-be-made-like-unto-the-angels",
+    "shall-be-equal-to-the-stars",
+    "saved-by-their-works",
+    "inherited-Reformation-merit-doctrine",
+    "fruit-of-the-Spirit-internalized-Torah",
+    "Spirit-empowered-walking-in-the-Way",
+    "architecture-of-the-resurrection-glory",
+    "saints-arising-at-the-cross"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 419,
+    "slug": "the-day-of-the-most-high-cosmic-darkness-and-the-resurrection-of-the-righteous-in-2-esdras-and-2-baruch",
+    "old": "2 Baruch 51:1 (Charles edition seq #21) — *those who have been saved by their works, and to whom the law has been now a hope... shall behold the world which is now invisible to them, and they shall behold the time which is now hidden from them.* The wisdom-stream's resurrection-glory architecture — the saints-arising-and-appearing-in-the-holy-city at Matt 27:53 walks-out the historical-pivot-foretaste. Read the *saved by their works* CAREFULLY — NOT the inherited-Reformation-merit-doctrine collapse; works are the fruit-of-the-Spirit-internalized-Torah per Yechezk'el (Ezekiel) 36:26-27 + Yirmeyahu (Jeremiah) 31:31-34 + James 2:14-26.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4427,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "2-baruch",
+   "name": "2 Baruch",
+   "ch": 70,
+   "vn": 2,
+   "cite": "2 Baruch 70:2",
+   "text": "Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon the earth and its inhabitants and upon its rulers Perturbation of spirit and stupor of heart.",
+   "prev": "'Hear therefore the interpretation of the last black waters which are to come [after the black]: this is the word.",
+   "next": "And they shall hate one another, And provoke one another to fight, And the mean shall rule over the honourable, And those of low degree shall be extolled above the famous."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 9,
+   "vn": 37,
+   "cite": "Matthew 9:37",
+   "text_db": "Then says he unto his disciples, The harvest truly is plenteous, but the labourers are few;",
+   "text_canon": "Then saith he unto his disciples, The harvest truly is plenteous, but the labourers are few;"
+  },
+  "old_note": "*Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon them...* 2 Baruch 35:1 names the wisdom-stream's apocalyptic-harvest architecture explicitly — the harvest comes when the time of the age has ripened; the harvest is of evil-and-good-seeds together. Matt 9:37's *the harvest truly is plenteous, but the labourers are few* walks the same architecture at the King's arrival: the harvest the apocalyptic-stream had named as eschatologically-future is now plenteous and present at the King's seeing of the multitudes.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon them...",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|2-baruch|70:2",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|2-baruch|70:2",
+     "ratio": 0.94,
+     "k": 1,
+     "live_here": "Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon the earth and its inhabitants and upon its rulers Perturbation of spirit and stupor of heart.",
+     "live_proposed": "Behold! the days come, and it shall be when the time of the age has ripened, And the harvest of its evil and good seeds has come, That the Mighty One will bring upon the earth and its inhabitants and upon its rulers Perturbation of spirit and stupor of heart."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "evil-and-good-seeds"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 103,
+    "slug": "harvest-of-the-age-in-2-baruch",
+    "old": "2 Baruch 35:1 — *the days come, and it shall be when the time of the age has ripened, and the harvest of its evil and good seeds has come.* The apocalyptic-stream names the harvest of the age explicitly; Matt 9:37's *the harvest truly is plenteous* names the present-tense fulfillment at the King's arrival.",
+    "same_as_card": false
+   }
+  ]
+ }
+]

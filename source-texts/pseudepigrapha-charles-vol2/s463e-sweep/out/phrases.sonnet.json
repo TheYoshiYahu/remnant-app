@@ -1,0 +1,681 @@
+[
+ {
+  "id": 45453,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "1 Corinthians 13:12 — *For now we see through a glass, darkly; but then face to face: now I know in part; but then shall I know even as also I am known.* Adam who once could \"see things far away\" now sees \"only near at hand\" — the darkened glass of a fallen race awaiting restored sight.",
+  "reason": "Live verse reads \"could you see things far away\"; trimmed the quotation to words that stand verbatim (\"see things far away\")."
+ },
+ {
+  "id": 45540,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "The note names 14:1 for the plea, and 14:2 itself says \"in which there is no darkness\" and \"in the kingdom of heaven\"; the claim holds across the two verses."
+ },
+ {
+  "id": 45609,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"from the beginning\" is the canon verse's wording; the claim about the devil and the first parents is supported by the surrounding Satan-driven episode."
+ },
+ {
+  "id": 45649,
+  "verdict": "MOVE",
+  "move": "adam-eve-conflict|1-adam-eve|24:4",
+  "new_note": "Hebrews 9:12 — *Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.* The Word's pledge \"I will offer My blood\" in 1-adam-eve 24:4 is fulfilled when Messiah enters by His own blood — the once-for-all forgiveness promised to Adam.",
+  "reason": "\"so also will I offer My blood\" is at 24:4 (prev), not 24:5, and the note's pledge-of-blood point is that verse."
+ },
+ {
+  "id": 45663,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The covenant 'that He would save him at the end of the days' (25:7) is kept when the same Word takes flesh.",
+  "reason": "Live reads \"that He would save him at the end of the days determined for him\"."
+ },
+ {
+  "id": 45676,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "James 5:7 — *Be patient therefore, brethren, unto the coming of Yahuah (Lord). Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain.* The \"bear long and calm your soul... and the time of My covenant is come\" of 1 Adam & Eve 26:11 is the same patient waiting for the coming of Yahuah.",
+  "reason": "Live: \"bear long and calm your soul ... until the fulfillment of the days, and the time of My covenant is come\". Also the italic canon quote and \"coming of Yahuah (Lord)\" differ from text_canon (\"Yahusha (Lord)\"), outside this phrase check."
+ },
+ {
+  "id": 45680,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Galatians 4:4 — *But when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law,* The \"When, however, the covenant is fulfilled\" of 1 Adam & Eve 26:15 is the fulness of time when the promised Son of the woman is sent.",
+  "reason": "Live reads \"When, however, the covenant is fulfilled\"."
+ },
+ {
+  "id": 45780,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "The quoted span runs from 34:7 (\"brought to me all beasts\") into 34:8 (\"that I should name them all\"); the note describes the adjacent pair and nothing is misattributed."
+ },
+ {
+  "id": 45908,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "2 Corinthians 11:14 — *And no marvel; for Satan himself is transformed into an angel of light.* The Word's charge that Satan \"once before you deceived My servants\" in 1-adam-eve 44:4 names the disguising deceiver Paul warns of.",
+  "reason": "Live reads \"once before you deceived My servants\"."
+ },
+ {
+  "id": 45917,
+  "verdict": "MOVE",
+  "move": "adam-eve-conflict|1-adam-eve|45:10",
+  "new_note": null,
+  "reason": "\"until My coming\" is at 45:10 (prev) and the note describes that promise."
+ },
+ {
+  "id": 45920,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "The quoted \"who is My Word\" is at 45:11; the other quoted fragment is a parse artifact of the note's own prose (\"who comforts Adam and is sent\"), not a quotation."
+ },
+ {
+  "id": 46119,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"ye shall be as gods\" is the canon verse's wording; \"divinity\" is at 59:6."
+ },
+ {
+  "id": 46132,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Galatians 1:8 — *But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed.* Satan's counterfeit \"restore them to their former state of grace\" is exactly the other gospel from a false angel of heaven that stands accursed.",
+  "reason": "The quoted line was a paraphrase of the counterfeit commission; replaced with the words actually at 60:16."
+ },
+ {
+  "id": 46238,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Hebrews 10:10 — *By the which will we are sanctified through the offering of the body of Yahusha HaMashiach (Jesus Christ) once for all.* The 'for forgiveness and for mercy' through the offered flesh in 1-adam-eve 68:12 is the one sufficient offering of the body of the Messiah.",
+  "reason": "Live reads \"for forgiveness and for mercy\"."
+ },
+ {
+  "id": 46239,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Matthew 26:26 — *And as they were eating, Yahusha (Jesus) took bread, and blessed it, and brake it, and gave it to the disciples, and said, Take, eat; this is my body.* The offering 'make it My flesh' in 1-adam-eve 68:12 is fulfilled when the Messiah breaks bread and names it His body.",
+  "reason": "Live reads \"I shall make it My flesh\"."
+ },
+ {
+  "id": 46246,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"from the beginning\" is the canon verse's wording; war on Adam is at 69:11."
+ },
+ {
+  "id": 46251,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Leviticus 23:16 — *Even unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering unto Yahuah (LORD).* Adam's healing \"which is the end of the seven weeks; and that is the fiftieth day\" is reckoned by the very count that fixes the feast of weeks.",
+  "reason": "Live reads \"which is the end of the seven weeks; and that is the fiftieth day\"."
+ },
+ {
+  "id": 46506,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* Adam's dread that \"the enemy should appear to him another time, and overcome him\" Seth is exactly the serpent striking at the seed of the woman, so guarding that line is guarding the promise of 2 Adam and Eve 7:1.",
+  "reason": "Live reads \"lest the enemy should appear to him another time, and overcome him\"."
+ },
+ {
+  "id": 46650,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"like a lion over his people\" is background from 17:1 about Jared; the note's claim about the beauty at 17:6 is supported."
+ },
+ {
+  "id": 46717,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The children of Seth going down to fall \"into sin with the children of Cain\" (22:10) is Genesis' sons of Elohim taking the daughters of men.",
+  "reason": "Live reads \"fell into sin with the children of Cain\"."
+ },
+ {
+  "id": 48700,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Romans 4:17 — *(As it is written, I have made thee a father of many nations,) before him whom he believed, even Elohim (God), who quickeneth the dead, and calleth those things which be not as though they were.* The ages which 'shall come to pass' shewn Abraham in 9:7 are seen by the same faith that calls the not-yet as though it already were.",
+  "reason": "Live reads \"what shall come to pass in them\"."
+ },
+ {
+  "id": 48702,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The 'ages (to come)' laid before Abraham in 9:6 are the very foretelling joined to the Genesis covenant — what shall come to pass upon the seed.",
+  "reason": "Live reads \"the ages (to come)\"."
+ },
+ {
+  "id": 48708,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "The note cites 9:3-4 and the quote spans \"fear not\" (9:3) and \"I am a shield over thee\" (9:4); both are live."
+ },
+ {
+  "id": 48726,
+  "verdict": "MOVE",
+  "move": "apocalypse-of-abraham|apocalypse-of-abraham|11:3",
+  "new_note": null,
+  "reason": "\"Here am I, thy servant.\" is Abraham's answer at 11:3, which is the verse the note describes."
+ },
+ {
+  "id": 48727,
+  "verdict": "MOVE",
+  "move": "apocalypse-of-abraham|apocalypse-of-abraham|11:5",
+  "new_note": "Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* The same God of glory who called Abraham out of Mesopotamia now sends His Name-bearing angel to say \"Come with me\"",
+  "reason": "The angel's words \"Come with me and I will go with thee\" are at 11:5."
+ },
+ {
+  "id": 48776,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "The note itself places \"the secrets of heaven\" at 14:3; it is live there."
+ },
+ {
+  "id": 48798,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Isaiah 41:10 — *Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God): I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.* The angel's exact words to Abraham in 16:4 — 'I am with thee, strengthening thee' — are the LORD's own covenant promise to Abraham's seed.",
+  "reason": "Only \"I am with thee, strengthening thee\" is at 16:4 (\"fear not\" is at 16:2); quotation trimmed to the live words."
+ },
+ {
+  "id": 48805,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 15:17 — *And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces.* The 'sacrifice which Thou hast prepared Thee through me' is the very covenant cutting of Genesis 15, where the fire passed between the pieces.",
+  "reason": "Live reads \"the sacrifice which Thou hast prepared Thee through me\"."
+ },
+ {
+  "id": 48814,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Psalms 90:2 — *Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art Elohim (God).* The 'Uncreate... Without father, without mother, unbegotten' One is the everlasting-to-everlasting Elohim of Moses.",
+  "reason": "Live reads \"Uncreate, immaculate, immortal, Self-complete, self-illuminating, Without father, without mother, unbegotten\"."
+ },
+ {
+  "id": 48898,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "1 Enoch 10:8 — *And the whole earth has been corrupted through the works that were taught by Azâzêl: to him ascribe all sin.'* Abraham's word that Azazel is 'their beginning on the way to perdition' matches Enoch's verdict that to Azazel is ascribed all the corruption of the earth.",
+  "reason": "Live reads \"their beginning on the way to perdition\"."
+ },
+ {
+  "id": 48921,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"idol of jealousy\" names the statue seen at 25:1 and is not presented as the words of 25:6; the note's claim (\"the statue is mine anger\") is live at 25:6."
+ },
+ {
+  "id": 49199,
+  "verdict": "MOVE",
+  "move": "ascension-isaiah|ascension-isaiah|1:7",
+  "new_note": "2 Timothy 4:6 — *For I am now ready to be offered, and the time of my departure is at hand.* Paul names his death \"departure\" as Isaiah names his — \"I shall depart\" — embracing it as appointed (Ascension of Isaiah 1:7).",
+  "reason": "\"I shall depart\" is at 1:7 and is the word the whole Paul comparison rests on; 1:13 has the calling but not the word."
+ },
+ {
+  "id": 49208,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Ephesians 6:12 — *For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.* Paul names the same \"his angels, and his authorities and his powers\" Isaiah saw under the prince of this world in Ascension of Isaiah 1:3.",
+  "reason": "Live reads \"his angels, and his authorities and his powers\"."
+ },
+ {
+  "id": 49260,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "No quotation; live 4:14 says Yahuah (Lord) will drag Beliar into Gehenna and his armies, matching the note."
+ },
+ {
+  "id": 49261,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "No quotation; live 4:14 matches the note (the Lord drags Beliar into Gehenna)."
+ },
+ {
+  "id": 49262,
+  "verdict": "FLAG",
+  "move": null,
+  "new_note": null,
+  "reason": "The note insists the saints who come with Him are the paternal-blood remnant, \"not angels, and not souls come down from heaven\", but live 4:14 has Him coming \"with His angels and with the armies of the holy ones from the seventh heaven\"; the note's claim about who the holy ones are is not supported by this verse and needs the author's ruling."
+ },
+ {
+  "id": 49263,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "No quotation; live 4:14 has the armies of the holy ones coming from the seventh heaven, matching the note."
+ },
+ {
+  "id": 49331,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"laid up in heaven\" is the canon verse's wording (Colossians 1:5); 9:24 does show garments, thrones and crowns laid up."
+ },
+ {
+  "id": 49334,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* The very Enoch Isaiah sees 'in their garments of the upper world' (9:8) is the Enoch Scripture says was translated for pleasing Elohim — it ain't new.",
+  "reason": "Live reads \"in their garments of the upper world\"."
+ },
+ {
+  "id": 49342,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "John 17:5 — *And now, O Father, glorify thou me with thine own self with the glory which I had with thee before the world was.* The hidden name Isaiah 'canst not hear till thou hast ascended' is the glory the Son had with the Father before the world — the Formed Son asking the Father for what was already His.",
+  "reason": "Live reads \"His name thou canst not hear till thou hast ascended out of thy body\"."
+ },
+ {
+  "id": 55361,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"return them not\" is live; \"say not... I will recompense evil\" is the Proverbs wording."
+ },
+ {
+  "id": 55409,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 9:6 — *Whoso sheddeth man's blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* \"He who works the killing of a man’s soul, kills his own soul\" is the word given Noah — the shedder of man's blood has his own blood shed, for man bears Elohim's image.",
+  "reason": "Live reads \"He who works the killing of a man’s soul, kills his own soul\"."
+ },
+ {
+  "id": 55412,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "The quote is from 61:1 and the note ties the good houses of 61:2 to the inheritance just spoken of; the claim is supported by the pair."
+ },
+ {
+  "id": 55426,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* The Enoch the people bless as one Yahuah \"chose you, rather than all men on earth\" in 2 Enoch 64:5 is the man Moses records as walking with Elohim and being taken — honored, not deified.",
+  "reason": "Live reads \"chose you, rather than all men on earth\"."
+ },
+ {
+  "id": 55434,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Revelation 22:5 — *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever.* The \"nor night, nor darkness, but great light\" of 2 Enoch 65:6 is John's city where there is no night and Yahuah Himself is the light.",
+  "reason": "Live reads \"nor night, nor darkness, but great light\"."
+ },
+ {
+  "id": 55437,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Psalms 139:8 — *If I ascend up into heaven, thou art there: if I make my bed in hell, behold, thou art there.* The \"If you look to heaven, Yahuah Shammah (the Lord is there)... and all the under-earth, Yahuah Shammah (the Lord is there)\" of 2 Enoch 66:5 is David's confession that Yahuah fills heaven and the depth alike.",
+  "reason": "Live reads \"Yahuah Shammah (the Lord is there)\" in both clauses."
+ },
+ {
+  "id": 57889,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Habakkuk 2:3 — *For the vision is yet for an appointed time, but at the end it shall speak, and not lie: though it tarry, wait for it; because it will surely come* — the wrath that 'in its own season shall the (divine) wrath awake' the appointed delay Baruch describes.",
+  "reason": "Live reads \"in its own season shall the (divine) wrath awake\"."
+ },
+ {
+  "id": 57906,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Romans 11:33 — *O the depth of the riches both of the wisdom and knowledge of Elohim (God)! how unsearchable are his judgments, and his ways past finding out!* — Baruch's 'who, O Yahuah (LORD), my Lord, will comprehend Thy judgement' in the apostle's very words.",
+  "reason": "Live reads \"who, O Yahuah (LORD), my Lord, will comprehend Thy judgement\"."
+ },
+ {
+  "id": 59929,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Gen 37:27 — *Come, and let us sell him to the Ishmeelites, and let not our hand be upon him; for he is our brother and our flesh. And his brethren were content.* — Judah's counsel that Simeon recalls, \"Yahudah (Judah) my brother sold him to the Ishmaelites.\"",
+  "reason": "Live reads \"Yahudah (Judah) my brother sold him to the Ishmaelites.\""
+ },
+ {
+  "id": 59935,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Prov 14:27 — *The fear of Yahuah (LORD) is a fountain of life, to depart from the snares of death.* — the very deliverance Simeon found: \"deliverance from envy cometh by the fear of Elohim (God).\"",
+  "reason": "Live reads \"fear of Elohim (God)\"."
+ },
+ {
+  "id": 59936,
+  "verdict": "MOVE",
+  "move": "pseudepigrapha|testaments-xii|10:2",
+  "new_note": "James 3:16 — *For where envying and strife is, there is confusion and every evil work.* — envy's fruit, the same root Simeon names that \"suffereth him 'neither to eat nor to drink', nor to do any good thing.\"",
+  "reason": "The words about envy suffering a man to do no good are at 10:2 (prev), which the note describes."
+ },
+ {
+  "id": 59944,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Zech 6:13 — *and he shall be a priest upon his throne: and the counsel of peace shall be between them both.* — the division \"in Levi and Yahudah (Judah),\" priest and king at peace, that Simeon names.",
+  "reason": "Live reads \"divided in Levi and Yahudah (Judah)\"."
+ },
+ {
+  "id": 59946,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Gen 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* — fornication \"mother of all evils,\" filling the earth with corruption as in Noah's day.",
+  "reason": "Live reads \"fornication is mother of all evils\"."
+ },
+ {
+  "id": 59947,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Gen 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* — the fornication of the Watchers that \"bringing near to Beliar,\" the root Enoch expounds.",
+  "reason": "Live reads \"bringing near to Beliar\"."
+ },
+ {
+  "id": 59952,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Gen 9:26 — *Blessed be Yahuah Elohim (the LORD God) of Shem; and Canaan shall be his servant.* — \"the Mighty One of Yashar'el (Israel) shall glorify Shem\" and Canaan perish, Noah's blessing fulfilled.",
+  "reason": "Live reads \"Mighty One of Yashar'el (Israel) shall glorify Shem\"."
+ },
+ {
+  "id": 59956,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Heb 7:25 — *Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them.* — \"He shall save all [the Gentiles and] the race of Yashar'el (Israel),\" the salvation arising from the two tribes.",
+  "reason": "Live reads \"He shall save all [the Gentiles and] the race of Yashar'el (Israel)\"."
+ },
+ {
+  "id": 59974,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Isaiah 6:3 — *Holy, holy, holy, is Yahuah Tseva'ot (LORD of hosts): the whole earth is full of his glory.* The thrones and dominions that 'always they offer praise to Elohim (God)' echo the seraphim's unceasing cry.",
+  "reason": "Live reads \"always they offer praise to Elohim (God)\"."
+ },
+ {
+  "id": 59977,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Isaiah 9:2 — *The people that walked in darkness have seen a great light.* Levi lighting 'The light of knowledge shalt thou light up in Jacob' and shining 'as the sun shalt thou be to all the seed of Yashar'el (Israel)' is the great light upon the people.",
+  "reason": "Live reads \"The light of knowledge shalt thou light up in Jacob, And as the sun shalt thou be to all the seed of Yashar'el (Israel)\"."
+ },
+ {
+  "id": 59982,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Malachi 3:1 — *Yahuah (Lord), whom ye seek, shall suddenly come to his temple.* 'until I come and sojourn in the midst of Yashar'el (Israel)' is the Lord's promised coming to His temple.",
+  "reason": "Live reads \"until I come and sojourn in the midst of Yashar'el (Israel)\"."
+ },
+ {
+  "id": 59986,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Hebrews 7:12 — *For the priesthood being changed, there is made of necessity a change also of the law.* That Levi's seed is divided 'for a sign of the glory of Yahuah (Lord) who is to come' answers to the changed priesthood Hebrews names.",
+  "reason": "Live reads \"for a sign of the glory of Yahuah (Lord) who is to come\"."
+ },
+ {
+  "id": 60002,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Matthew 6:20 — *But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt.* 'Work righteousness... That ye may have (it) as a treasure in heaven' is the treasure laid up above.",
+  "reason": "Live reads \"That ye may have (it) as a treasure in heaven\"."
+ },
+ {
+  "id": 60003,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Deuteronomy 6:5 — *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* 'Fear Yahuah Elohaychem (the Lord your God) with your whole heart' is the Shema's command of whole-hearted love.",
+  "reason": "Live reads \"Fear Yahuah Elohaychem (the Lord your God) with your whole heart\"."
+ },
+ {
+  "id": 60006,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Malachi 2:7 — *the priest's lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of Yahuah Tseva'ot (LORD of hosts).* The office the priests forsake when 'puffed up because of your priesthood' is the lips that should keep knowledge.",
+  "reason": "Live reads \"puffed up because of your priesthood\"."
+ },
+ {
+  "id": 60017,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 3:24 — *he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* 'he shall open the gates of paradise, And shall remove the threatening sword against Adam' undoes the flaming sword that barred Eden.",
+  "reason": "Live reads \"he shall open the gates of paradise, And shall remove the threatening sword against Adam\"."
+ },
+ {
+  "id": 60026,
+  "verdict": "FLAG",
+  "move": null,
+  "new_note": null,
+  "reason": "The note's quoted words \"to whom there shall none succeed for ever\" appear nowhere in live 34:2 or its neighbors; the verse says Yahuah (Lord) will raise up a new priest to whom all His words are revealed, judging \"for a multitude of days\", with no word about succession or \"for ever\", so the Psalm 110:4 link needs a rewrite on what the verse does say."
+ },
+ {
+  "id": 60027,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you... therefore choose life.* 'Yahuah (Lord) is witness, and His angels are witnesses, and ye are witnesses' is Moses' calling of heaven and earth to record the choice of life.",
+  "reason": "Live reads \"Yahuah (Lord) is witness\"."
+ },
+ {
+  "id": 60028,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* 'choose, therefore, for yourselves either the light or the darkness, either the law of Yahuah (Lord) or the works of Beliar' is the life-and-death Moses set before Israel.",
+  "reason": "Live reads \"choose, therefore, for yourselves ... the law of Yahuah (Lord)\"."
+ },
+ {
+  "id": 60042,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 38:26 — *And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more.* Judah's \"she privily sent my pledges, and put me to shame\" is the same confession Moses sets down.",
+  "reason": "The quoted words are not in live 47:5; replaced with the confession actually there (the pledges sent, Judah put to shame) which still fits Genesis 38:26."
+ },
+ {
+  "id": 60057,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* The kingdom \"from me shall the kingdom be established\" is the scepter Jacob fixed on Judah.",
+  "reason": "Live reads \"from me shall the kingdom be established\"."
+ },
+ {
+  "id": 60075,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Isaiah 45:17 — *But Yashar'el (Israel) shall be saved in Yahuah (LORD) with an everlasting salvation: ye shall not be ashamed nor confounded world without end.* The coming \"salvation of Yashar'el (Israel)\" and rest in peace is Isaiah's everlasting salvation.",
+  "reason": "Live reads \"salvation of Yashar'el (Israel)\"."
+ },
+ {
+  "id": 60076,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* The kingdom held \"Until the salvation of Yashar'el (Israel) shall come\" is the scepter held until Shiloh comes.",
+  "reason": "Live reads \"Until the salvation of Yashar'el (Israel) shall come\"."
+ },
+ {
+  "id": 60085,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Isaiah 11:1 — *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots.* \"This Branch of Elohim (God) El Elyon (Most High)\" is Isaiah's Branch grown from the roots of Jesse.",
+  "reason": "Live reads \"This Branch of Elohim (God) El Elyon (Most High)\"."
+ },
+ {
+  "id": 60091,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Numbers 24:17 — *...there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar'el (Israel), and shall smite the corners of Moab, and destroy all the children of Sheth.* Judah's \"shall a star arise to you from Jacob\" is Balaam's very oracle of the Star and Sceptre.",
+  "reason": "Live reads \"shall a star arise to you from Jacob in peace\"."
+ },
+ {
+  "id": 60113,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* \"to Yahudah (Judah) the kingdom\" is Jacob's own dying word over Judah's sceptre.",
+  "reason": "Live reads \"to Yahudah (Judah) the kingdom\"."
+ },
+ {
+  "id": 60116,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Matthew 22:40 — *On these two commandments hang all the law and the prophets.* Issachar's \"Keep, therefore, my children, the law of Elohim (God)\" reduced to love of God and neighbour is the very hinge the Master names.",
+  "reason": "Live reads \"Keep, therefore, my children, the law of Elohim (God)\"."
+ },
+ {
+  "id": 60132,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"lay not upon me your hands to shed innocent blood\" is live; \"shed no blood... lay no hand upon him\" is the Genesis 37:22 wording."
+ },
+ {
+  "id": 60154,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Matthew 5:7 — *Blessed are the merciful: for they shall obtain mercy.* \"Have, therefore, yourselves also, my children, compassion... that Yahuah (Lord) also may have compassion and mercy upon you\" is the Beatitude almost word for word.",
+  "reason": "Live reads \"Have, therefore, yourselves also, my children, compassion towards every man with mercy, that Yahuah (Lord) also may have compassion and mercy upon you\"."
+ },
+ {
+  "id": 60162,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Ezekiel 37:22 — *And I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all.* Zebulun's \"Ye shall be divided in Yashar'el (Israel), And ye shall follow two kings\" is the very division of the two kingdoms Ezekiel says shall at last be made one.",
+  "reason": "Live reads \"Ye shall be divided in Yashar'el (Israel), And ye shall follow two kings\"."
+ },
+ {
+  "id": 60197,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "The note spans Rachel's prayer at 86:7 and \"Joseph was like unto me in all things\" at 86:8; both are live in the adjacent pair."
+ },
+ {
+  "id": 60202,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 1:31 — *And Elohim (God) saw every thing that he had made, and, behold, it was very good. And the evening and the morning were the sixth day.* — \"Elohim (God) made all things good in their order\" echoes the verdict over the whole creation, that it was very good.",
+  "reason": "Live reads \"Elohim (God) made all things good in their order\"."
+ },
+ {
+  "id": 60205,
+  "verdict": "MOVE",
+  "move": "pseudepigrapha|testaments-xii|87:3",
+  "new_note": null,
+  "reason": "\"by weight, and measure, and rule\" is at 87:3 and the note's point about the body made after the spirit is that verse."
+ },
+ {
+  "id": 60216,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Psalm 19:7 — *The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple.* — \"change not the law of Elohim (God)\" rests on the law that is perfect, the same psalm that begins with the ordered heavens.",
+  "reason": "Live reads \"change not the law of Elohim (God)\"."
+ },
+ {
+  "id": 60219,
+  "verdict": "MOVE",
+  "move": "pseudepigrapha|testaments-xii|89:3",
+  "new_note": null,
+  "reason": "\"after ye have become minished and made few, ye shall return\" is at 89:3, which the note describes."
+ },
+ {
+  "id": 60221,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Deuteronomy 30:3 — *That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee.* — \"ye shall return and acknowledge Yahuah Elohaychem (the Lord your God); and He shall bring you back into your own land, according to His abundant mercy\" is the turning of the captivity and the gathering Moses promised.",
+  "reason": "Live reads \"acknowledge Yahuah Elohaychem (the Lord your God)\"."
+ },
+ {
+  "id": 60233,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Psalm 19:7 — *The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple.* — \"Be ye therefore wise in Elohim (God)... understanding the order of His commandments\" rests on the law that is perfect and makes the simple wise.",
+  "reason": "Live reads \"Be ye therefore wise in Elohim (God), 'my children,' and prudent, understanding the order of His commandments\"."
+ },
+ {
+  "id": 60235,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* — \"shall Elohim (God) appear [dwelling among men] on earth\" is fulfilled when the Word was made flesh and dwelt among us — the Father made manifest in the Son He sent.",
+  "reason": "Live reads \"shall Elohim (God) appear [dwelling among men] on earth\". (The note's closing clause calling the Son \"the Father made manifest\" is outside this check but sits uneasily with the rule that Yahusha is not called the Father.)"
+ },
+ {
+  "id": 60239,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Zechariah 2:10 — *Sing and rejoice, O daughter of Zion: for, lo, I come, and I will dwell in the midst of thee, saith Yahuah (LORD).* — \"shall Elohim (God) appear [dwelling among men] on earth\" is the LORD's own promise to come and dwell in the midst of Zion.",
+  "reason": "Live reads \"shall Elohim (God) appear [dwelling among men] on earth\"."
+ },
+ {
+  "id": 60274,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Psalms 37:1 — *Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity.* Gad's 'do not be vexed... be not envious' when another prospers is David's own counsel against envy.",
+  "reason": "Live reads \"do not be vexed\" and \"be not envious\"."
+ },
+ {
+  "id": 60288,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Leviticus 11:6 — *And the hare, because he cheweth the cud, but divideth not the hoof; he is unclean unto you.* Asher's \"half clean, but in very deed are unclean\" hare is the very creature Moses names: it answers one mark of cleanness and fails the other, like the double-faced man.",
+  "reason": "Live reads \"half clean, but in very deed are unclean\"."
+ },
+ {
+  "id": 60307,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 19:24 — *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven;* Asher's warning, \"Become not, my children, as Sodom, which knew not the angels of Yahuah (Lord), and perished for ever,\" recalls the city that rejected the two angels and was destroyed.",
+  "reason": "Live reads \"Become not, my children, as Sodom\"."
+ },
+ {
+  "id": 60310,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 39:2 — *And Yahuah (LORD) was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian.* The refrain of the whole testament — \"Yahuah (Lord) loved me... the Elohim (God) of my fathers guarded me\" — is Moses' own refrain over Joseph.",
+  "reason": "Live reads \"Yahuah (Lord) loved me ... the Elohim (God) of my fathers guarded me\"."
+ },
+ {
+  "id": 60321,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 39:10 — *And it came to pass, as she spake to Joseph day by day, that he hearkened not unto her, to lie by her, or to be with her.* The woman's repeated threatening \"How often did the Egyptian woman threaten me with death!... and then call me back and threaten me\" is Moses' \"day by day.\"",
+  "reason": "Live reads \"How often did the Egyptian woman threaten me with death! ... and then call me back and threaten me\"."
+ },
+ {
+  "id": 60338,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Genesis 45:1 — *Then Joseph could not refrain himself before all them that stood by him; and he cried, Cause every man to go out from me.* That Joseph here \"desired greatly to weep, but I restrained myself\" is the same overflowing heart Moses records breaking forth before his brethren.",
+  "reason": "Live reads \"I desired greatly to weep, but I restrained myself\"."
+ },
+ {
+  "id": 60339,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Leviticus 19:18 — *Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* \"love one another, and with long-suffering hide 'ye one another's faults'\" is the royal commandment in plain words.",
+  "reason": "Live reads \"love one another, and with long-suffering hide 'ye one another's faults'\"."
+ },
+ {
+  "id": 60369,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "The note ties \"seeth all things rightly\" (133:2) to the shielding by the fear of Elohim at 133:4; both are live in the same address."
+ },
+ {
+  "id": 60416,
+  "verdict": "STAY",
+  "move": null,
+  "new_note": null,
+  "reason": "\"enlightening the Gentiles\" is at 141:2 and the note joins it to the synagogues of 141:3; both live in the adjacent pair."
+ },
+ {
+  "id": 60421,
+  "verdict": "PATCH",
+  "move": null,
+  "new_note": "Deut 30:4 — *from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee.* — the gathering of \"all Yashar'el (Israel) shall be gathered unto Yahuah (Lord)\" Benjamin foresees.",
+  "reason": "Live reads \"all Yashar'el (Israel) shall be gathered unto Yahuah (Lord)\"."
+ }
+]

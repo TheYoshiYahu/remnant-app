@@ -1,0 +1,1134 @@
+[
+ {
+  "id": 4339,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 100,
+   "vn": 2,
+   "cite": "Testaments of the Twelve Patriarchs 100:2",
+   "text": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+   "prev": "And now, my children, 'I exhort you,' love ye each one his brother, and put away hatred from your hearts, love one another in deed, and in word, and in the inclination of the soul.",
+   "next": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him.",
+   "testament": "Gad 6"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 5,
+   "vn": 22,
+   "cite": "Matthew 5:22",
+   "text_db": "But I say unto you, That whosoever is angry with his brother without a cause shall be in danger of the judgment: and whosoever shall say to his brother, Raca, shall be in danger of the council: but whosoever shall say, You fool, shall be in danger of hell fire.",
+   "text_canon": "But I say unto you, That whosoever is angry with his brother without a cause shall be in danger of the judgment: and whosoever shall say to his brother, Raca, shall be in danger of the council: but whosoever shall say, Thou fool, shall be in danger of hell fire."
+  },
+  "old_note": "*Love one another in deed, and in word, and in the inclination of the soul. For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.* Testament of Gad 2:2 (DB ch 62) names the spirit-of-hatred-to-the-act-of-murder architecture in the patriarch's own testimony — the heart-root that the Torah always taught the murder-commandment named. Matt 5:22's *whosoever is angry with his brother without a cause shall be in danger of the judgment* walks the same Hebrew library architecture at the antithesis-restoration level: the oral tradition stopped at the bodily act; the Torah and the testaments and the Beatitudes name the heart-substance the act follows from.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Love one another in deed, and in word, and in the inclination of the soul. For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|100:2",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|100:2",
+     "ratio": 1.0,
+     "k": 2,
+     "live_here": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+     "live_proposed": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "spirit-of-hatred-to-the-act-of-murder"
+   ],
+   "t_range_bad": [
+    {
+     "cite": "Testament of Gad 2:2",
+     "range": "95–102"
+    }
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 53,
+    "slug": "love-replacing-hatred-and-fornication-in-the-testaments",
+    "old": "Testament of Gad 2:2 — *the spirit of hatred darkened my mind, and stirred up my soul to slay him.* The spirit-of-hatred-to-the-act-of-murder architecture from Gad's own confession; Matt 5:22's *whosoever is angry with his brother* restores the heart-root the oral tradition had cut away.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4341,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 100,
+   "vn": 3,
+   "cite": "Testaments of the Twelve Patriarchs 100:3",
+   "text": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him.",
+   "prev": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+   "next": "But if he deny it, do not get into a passion with him, lest catching the poison from thee he take to swearing and so thou sin doubly.",
+   "testament": "Gad 6"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 5,
+   "vn": 44,
+   "cite": "Matthew 5:44",
+   "text_db": "But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;",
+   "text_canon": "But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;"
+  },
+  "old_note": "*Love ye one another from the heart; and if a man sin against thee, cast forth the poison of hate and speak peaceably to him, and in thy soul hold not guile.* Testament of Gad 2:3 (DB ch 62) names the love-replacing-hatred ethic at the heart level — *cast forth the poison of hate and speak peaceably.* Matt 5:44's *love your enemies, bless them that curse you, do good to them that hate you* walks the same Hebrew library ethic at the Sermon level. The antithesis is not a Yahusha (Jesus) innovation against Mosheh (Moses); the love-of-the-personal-enemy ethic was already taught in the patriarch's own testimony to his sons.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "Love ye one another from the heart; and if a man sin against thee, cast forth the poison of hate and speak peaceably to him, and in thy soul hold not guile.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|100:3",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|100:3",
+     "ratio": 0.76,
+     "k": 1,
+     "live_here": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him.",
+     "live_proposed": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "love-of-the-personal-enemy"
+   ],
+   "t_range_bad": [
+    {
+     "cite": "Testament of Gad 2:3",
+     "range": "95–102"
+    }
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 53,
+    "slug": "love-replacing-hatred-and-fornication-in-the-testaments",
+    "old": "Testament of Gad 2:3 — *love ye one another from the heart; and if a man sin against thee, cast forth the poison of hate and speak peaceably to him.* The love-replacing-hatred ethic at the heart level; Matt 5:44's *love your enemies, bless them that curse you* is not Yahusha (Jesus) innovation against Mosheh (Moses) — the patriarch's testimony already taught the ethic to his sons.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4695,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 100,
+   "vn": 3,
+   "cite": "Testaments of the Twelve Patriarchs 100:3",
+   "text": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him.",
+   "prev": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+   "next": "But if he deny it, do not get into a passion with him, lest catching the poison from thee he take to swearing and so thou sin doubly.",
+   "testament": "Gad 6"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 18,
+   "vn": 35,
+   "cite": "Matthew 18:35",
+   "text_db": "So likewise shall my heavenly Father do also unto you, if you from your hearts forgive not every one his brother their trespasses.",
+   "text_canon": "So likewise shall my heavenly Father do also unto you, if ye from your hearts forgive not every one his brother their trespasses."
+  },
+  "old_note": "*Love ye one another from the heart; and if a man sin against thee, speak peaceably to him.* Testament of Gad 62:3 names the wisdom-stream's articulation of the heart-substance + the speak-peaceably-to-the-sinning-brother substance the King's chapter-arc lands-on at v.35 and operationalizes at vv.15-17. The framework reads the verse against the unforgiving-servant parable + the assembly-discipline procedure. The Testament-of-Gad's confessional-instruction — Gad confessing his-own-hatred-of-Joseph and the substance-of-repentance he-came-to — names the heart-substance the King's *from your hearts* (v.35) requires. The framework reads this as the wisdom-stream's direct prefiguring of both ends of the chapter-arc: (a) the v.15 first-step *go and tell him his fault between thee and him alone* operates from the substance Testament of Gad names — *speak peaceably to him*; (b) the v.35 chapter-closing *if ye from your hearts forgive not* operates from the substance Testament of Gad names — *love ye one another from the heart.* The wisdom-stream had carried the heart-substance; the King's assembly-architecture institutionalizes the heart-substance at the kingdom-citizens' corporate-register.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|100:3",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|100:3",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him.",
+     "live_proposed": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "speak-peaceably-to-the-sinning-brother",
+    "his-own-hatred-of-Joseph"
+   ],
+   "t_range_bad": [
+    {
+     "cite": "Testament of Gad 62:3",
+     "range": "95–102"
+    }
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 374,
+    "slug": "forgive-and-be-forgiven-the-mercy-met-with-mercy-architecture",
+    "old": "Testament of Gad 62:3 — *Love ye one another from the heart; and if a man sin against thee, speak peaceably to him.* The wisdom-stream's heart-substance + speak-peaceably-to-the-sinning-brother substance the King's assembly-arc operationalizes at BOTH ends: (a) v.15's first-step *go and tell him his fault between thee and him alone* operates from *speak peaceably to him*; (b) v.35's chapter-closing *if ye from your hearts forgive not* operates from *love ye one another from the heart.* Gad's confessional-instruction (Gad confessing his-own-hatred-of-Joseph and the repentance-substance he came-to) names the heart-substance the new-covenant brings-to-completion.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4798,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 105,
+   "vn": 1,
+   "cite": "Testaments of the Twelve Patriarchs 105:1",
+   "text": "But do not ye, my children, wear two faces like unto them, of goodness and of wickedness; but cleave unto goodness only, for Elohim (God) hath His habitation therein, and men desire it.",
+   "prev": null,
+   "next": "But from wickedness flee away, destroying the (evil) inclination by your good works; for they that are double-faced serve not Elohim (God), but their own lusts, so that they may please Beliar and men like unto themselves.",
+   "testament": "Asher 3"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 28,
+   "cite": "Matthew 23:28",
+   "text_db": "Even so you also outwardly appear righteous unto men, but within you are full of hypocrisy and iniquity.",
+   "text_canon": "Even so ye also outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity."
+  },
+  "old_note": "*But do not ye, my children, wear two faces like unto them, of goodness and of wickedness; but cleave unto goodness only, for Elohim (God) hath his habitation therein.* Testaments XII Asher (file ch 67, canonical Asher 3:1) names THE direct wisdom-stream verbal-anchor for the wear-not-two-faces substance — the same substance the King-of-Yashar'el (Israel) walks-against at Matt 23:28 (the outward-appearance-righteous against the within-full-of-hypocrisy-and-iniquity). The framework reads the verse as the wisdom-stream's direct prefiguring of the whited-sepulchres-substance the King names at Matt 23:27-28. The same architecture the prophet-Yechezk'el (Ezekiel) walks at Ezekiel 13:10-12 (*daubed it with untempered morter*) is the substance Testaments XII Asher names directly — the wear-not-two-faces substance is the substance the wisdom-stream walks-from and the King walks-against. The framework reads this in continuity with the contrary-to-Torah-test the apostle-Yochanan (John) names at 1 John 2:3-4 — the two-faces substance is the substance that-fails the test categorically.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "But do not ye, my children, wear two faces like unto them, of goodness and of wickedness; but cleave unto goodness only, for Elohim (God) hath his habitation therein.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|105:1",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|105:1",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "But do not ye, my children, wear two faces like unto them, of goodness and of wickedness; but cleave unto goodness only, for Elohim (God) hath His habitation therein, and men desire it.",
+     "live_proposed": "But do not ye, my children, wear two faces like unto them, of goodness and of wickedness; but cleave unto goodness only, for Elohim (God) hath His habitation therein, and men desire it."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "wear-not-two-faces",
+    "within-full-of-hypocrisy-and-iniquity",
+    "wear-not-two-faces",
+    "contrary-to-Torah-test"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 399,
+    "slug": "the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon",
+    "old": "Testaments XII Asher (file ch 67, canonical Asher 3:1) v.1 — *But do not ye, my children, wear two faces like unto them, of goodness and of wickedness; but cleave unto goodness only, for Elohim (God) hath his habitation therein.* THE direct wisdom-stream verbal-anchor for the wear-not-two-faces substance — the whited-sepulchres-substance the wisdom-stream had-named centuries before the King names it at Matt 23:28.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4799,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 108,
+   "vn": 2,
+   "cite": "Testaments of the Twelve Patriarchs 108:2",
+   "text": "For they that are double-faced are guilty of a twofold sin; 'for they both do the evil thing and they have pleasure in them that do it', following the example of the spirits of deceit, and striving against mankind.",
+   "prev": "Take heed, therefore, ye also, my children, to the commandments of Yahuah (Lord), following the truth with singleness of face.",
+   "next": "Do ye, 'therefore, my children', keep the law of Yahuah (Lord), and give not heed unto evil as unto good; but look unto the thing that is really good, and keep it in all commandments of Yahuah (Lord), having your conversation therein, and resting therein.",
+   "testament": "Asher 6"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 23,
+   "vn": 27,
+   "cite": "Matthew 23:27",
+   "text_db": "Woe unto you, scribes and Pharisees, hypocrites! for you are like unto whited sepulchres, which indeed appear beautiful outward, but are within full of dead men’s bones, and of all uncleanness.",
+   "text_canon": "Woe unto you, scribes and Pharisees, hypocrites! for ye are like unto whited sepulchres, which indeed appear beautiful outward, but are within full of dead men’s bones, and of all uncleanness."
+  },
+  "old_note": "*For they that are double-faced are guilty of a twofold sin; for they both do the evil thing and they have pleasure in them that do it, following the example of the spirits of deceit.* Testaments XII Asher (file ch 69, canonical Asher 5:2) names the wisdom-stream's articulation of the double-faced-guilty-of-twofold-sin substance — the same substance the King-of-Yashar'el (Israel) walks-against at Matt 23:27 (*ye are like unto whited sepulchres, which indeed appear beautiful outward, but are within full of dead men's bones, and of all uncleanness*). The framework reads the verse as the wisdom-stream's direct articulation of the substance the seven-woes walk-against — the whited-sepulchres-substance the King names is the same double-faced-guilty-of-twofold-sin substance the wisdom-stream had-named.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "For they that are double-faced are guilty of a twofold sin; for they both do the evil thing and they have pleasure in them that do it, following the example of the spirits of deceit.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|108:2",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|108:2",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "For they that are double-faced are guilty of a twofold sin; 'for they both do the evil thing and they have pleasure in them that do it', following the example of the spirits of deceit, and striving against mankind.",
+     "live_proposed": "For they that are double-faced are guilty of a twofold sin; 'for they both do the evil thing and they have pleasure in them that do it', following the example of the spirits of deceit, and striving against mankind."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "double-faced-guilty-of-twofold-sin",
+    "double-faced-guilty-of-twofold-sin"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 399,
+    "slug": "the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon",
+    "old": "Testaments XII Asher (file ch 69, canonical Asher 5:2) v.2 — *For they that are double-faced are guilty of a twofold sin; for they both do the evil thing and they have pleasure in them that do it.* The wisdom-stream's articulation of the double-faced-guilty-of-twofold-sin substance — the same architecture the King walks-against at Matt 23:27 (the whited-sepulchres-substance — beautiful-outward but within-full-of-dead-men's-bones-and-of-all-uncleanness).",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4826,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 109,
+   "vn": 2,
+   "cite": "Testaments of the Twelve Patriarchs 109:2",
+   "text": "For I know that ye shall sin, and be delivered into the hands of your enemies; and your land shall be made desolate, and your holy places destroyed, and ye shall be scattered unto the four corners of the earth. And ye shall be set at nought in the dispersion as useless water,",
+   "prev": "Become not, my children, as Sodom, which knew not the angels of Yahuah (Lord), and perished for ever.",
+   "next": "Until the El Elyon (Most High) shall visit the earth, coming Himself [as man, with men eating and drinking], and breaking the head of the dragon in the water. He shall save Yashar'el (Israel) and all the Gentiles [Elohim (God) speaking in the person of man].",
+   "testament": "Asher 7"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 30,
+   "cite": "Matthew 24:30",
+   "text_db": "And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.",
+   "text_canon": "And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory."
+  },
+  "old_note": "*Until the Most High shall visit the earth, coming Himself as man, with men eating and drinking, and breaking the head of the dragon in the water. He shall save Yashar'el (Israel) and all the Gentiles.* Testaments of the XII Patriarchs (Asher 6:3) names the wisdom-stream articulation of the Most-High-shall-visit-the-earth-coming-Himself substance — the substantial-direct-Father-and-Son architecture per the framework's Formless-Source / Formed-Expression substance. The framework reads the verse against Matt 24:30's *they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* The substantial *Most High shall visit the earth, coming Himself* substance is the substantial-substance the substantial Formed-Expression of the Formless-Source-substance walks-into-the-substantial-incarnation — the substantial-King-of-Yashar'el (Israel) is the substantial-Formed-Expression of the substantial-Formless-Source-substance the Father-substance is, the same Formed-Expression the substantial-Tanakh walked the substantial Adonai Yahuah (the Lord GOD) of the interactions-with-the-substantial-patriarchs-and-prophets. The substantial *with men eating and drinking* substance carries-back-into the substantial-Matt 24:38 *eating and drinking* substance the days-of-Noach (Noah) walked, the substantial-substance the incarnation-substance walks-into in continuity with the substantial-Father's-presence-walking-with-the-substantial-Adamic-substance from the substantial-creation-substance forward.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "Until the Most High shall visit the earth, coming Himself as man, with men eating and drinking, and breaking the head of the dragon in the water. He shall save Yashar'el (Israel) and all the Gentiles.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|109:2",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|109:2",
+     "ratio": 0.86,
+     "k": 1,
+     "live_here": "For I know that ye shall sin, and be delivered into the hands of your enemies; and your land shall be made desolate, and your holy places destroyed, and ye shall be scattered unto the four corners of the earth. And ye shall be set at nought in the dispersion as useless water,",
+     "live_proposed": "For I know that ye shall sin, and be delivered into the hands of your enemies; and your land shall be made desolate, and your holy places destroyed, and ye shall be scattered unto the four corners of the earth. And ye shall be set at nought in the dispersion as useless water,"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "Most-High-shall-visit-the-earth-coming-Himself",
+    "substantial-direct-Father-and-Son",
+    "walks-into-the-substantial-incarnation",
+    "substantial-King-of-Yashar'el",
+    "substantial-Formless-Source-substance",
+    "interactions-with-the-substantial-patriarchs-and-prophets",
+    "substantial-Father's-presence-walking-with-the-substantial-Adamic-substance"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 405,
+    "slug": "the-mount-of-olives-vision-and-the-gathering-of-the-tribes-in-testaments-of-naphtali-and-asher",
+    "old": "Testaments of the XII Patriarchs (Asher 6:3) — *until the Most High shall visit the earth, coming Himself as man, with men eating and drinking, and breaking the head of the dragon in the water.* The Most-High-shall-visit-the-earth-coming-Himself substance — the Father-and-Son architecture per the framework's Formless-Source / Formed-Expression substance; the King-of-Yashar'el (Israel) is the substantial-Formed-Expression of the substantial-Formless-Source the Father is, walking the incarnation-substance the Matt 24:30 Son-of-Adam-coming-in-the-clouds walks-the-public-visible-second-coming substance into AND ties-back to the Matt 24:38 *eating and drinking* days-of-Noach (Noah) substance.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4827,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 109,
+   "vn": 7,
+   "cite": "Testaments of the Twelve Patriarchs 109:7",
+   "text": "But Yahuah (Lord) will gather you together in faith through His tender mercy, 'and' for the sake of Abraham, Isaac, and Jacob.]",
+   "prev": "And therefore shall ye be scattered as Gad and Dan my brethren, and ye shall know not your own lands, tribe, and tongue.",
+   "next": null,
+   "testament": "Asher 7"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 24,
+   "vn": 31,
+   "cite": "Matthew 24:31",
+   "text_db": "And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.",
+   "text_canon": "And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other."
+  },
+  "old_note": "*But Yahuah (Lord) will gather you together in faith through His tender mercy, and for the sake of Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob).* Testaments of the XII Patriarchs (Asher 6:7) names THE direct wisdom-stream verbal-anchor for the Yahuah-will-gather-you-together substance the King walks at Matt 24:31. The framework reads the verse against the substantial-gathering-of-the-elect-from-the-four-winds substance. The substantial *for the sake of Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob)* substance ties-the-substantial-gathering-substance directly-to-the-substantial-paternal-blood-substance the Father had-walked the substantial-covenant-substance with-the-substantial-patriarchs from Genesis 12:1-3 + Genesis 26:3-5 + Genesis 28:13-15. The substantial-gathering-substance walks the substantial-paternal-blood-remnant-of-the-twelve-tribes the substantial-substance the prophets walked the substantial-ingathering-substance for at Deuteronomy 30:1-4 + Isaiah 11:11-12 + Jeremiah 31:8-10 + Ezekiel 37:21 + Hosea 1:10-11 + Zechariah 10:8-10 — NOT the substantial-spiritual-category-substance the substantial-Christian-inclusion-gospel walks. Per Red Line #11 the substantial-elect is the substantial-paternal-blood-remnant the substantial-Father preserves-and-gathers, not the substantial-spiritual-category-open-to-anyone-who-confesses.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "But Yahuah (Lord) will gather you together in faith through His tender mercy, and for the sake of Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob).",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|109:7",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|109:7",
+     "ratio": 0.86,
+     "k": 1,
+     "live_here": "But Yahuah (Lord) will gather you together in faith through His tender mercy, 'and' for the sake of Abraham, Isaac, and Jacob.]",
+     "live_proposed": "But Yahuah (Lord) will gather you together in faith through His tender mercy, 'and' for the sake of Abraham, Isaac, and Jacob.]"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "Yahuah-will-gather-you-together",
+    "substantial-gathering-of-the-elect-from-the-four-winds",
+    "ties-the-substantial-gathering-substance",
+    "directly-to-the-substantial-paternal-blood-substance",
+    "with-the-substantial-patriarchs",
+    "substantial-paternal-blood-remnant-of-the-twelve-tribes",
+    "substantial-spiritual-category-substance",
+    "substantial-Christian-inclusion-gospel",
+    "substantial-paternal-blood-remnant",
+    "substantial-spiritual-category-open-to-anyone-who-confesses"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 405,
+    "slug": "the-mount-of-olives-vision-and-the-gathering-of-the-tribes-in-testaments-of-naphtali-and-asher",
+    "old": "Testaments of the XII Patriarchs (Asher 6:7) — *but Yahuah (Lord) will gather you together in faith through His tender mercy, and for the sake of Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob).* THE direct verbal-anchor for the Yahuah-will-gather-you-together substance the King walks at Matt 24:31 — the *for the sake of Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob)* substance ties the gathering directly to the paternal-blood-substance the Father walked the substantial-covenant with the patriarchs at Genesis 12:1-3 + 26:3-5 + 28:13-15. The substantial-elect is the substantial-paternal-blood-remnant per Red Line #11, NOT the spiritual-category-open-to-anyone-who-confesses.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4720,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 129,
+   "vn": 2,
+   "cite": "Testaments of the Twelve Patriarchs 129:2",
+   "text": "There were twelve harts feeding: and the nine were (first) dispersed over all the earth, and likewise also the three.",
+   "prev": "And hear ye, my children, also the vision which I saw.",
+   "next": "And I saw that the three harts became three lambs, and they cried to Yahuah (Lord), and He brought them forth into a flourishing and well-watered place, yea He brought them out of darkness into light.",
+   "testament": "Joseph 19"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 19,
+   "vn": 28,
+   "cite": "Matthew 19:28",
+   "text_db": "And Yahusha (Jesus) said unto them, Verily I say unto you, That you which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, you also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel).",
+   "text_canon": "And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel)."
+  },
+  "old_note": "*There were twelve harts feeding: and the nine were (first) dispersed over all the earth, and likewise also the three.* Testaments XII Joseph 15 (chapter 86 in the corpus enumeration) verse 2 names the wisdom-stream's direct articulation of the twelve-harts-feeding-then-dispersed substance — the same scattering-and-restoration-of-the-twelve-tribes architecture the King at Matt 19:28's *judging the twelve tribes of Yashar'el (Israel)* presupposes-as-the-completed-gathering-architecture. The framework reads the verse against the King's-statement. The Joseph-testament-substance names the substance directly: twelve-harts (the twelve-tribes) feeding-together-originally, then-dispersed (the nine = the ten-northern-tribes; the three = the southern-house-substance), the substance the prophets had named at Yechezk'el (Ezekiel) 37:15-22's two-sticks-becoming-one. The substance the King-states at Matt 19:28 is the gathering-and-judging-substance the wisdom-stream-Joseph-testament had named the architecture-for. The wisdom-stream, the Tanakh-prophets, and the King's-mouth all hold the same architecture: twelve-tribes-dispersed-and-gathered-and-judged-by-twelve-apostles-at-the-consummated-substance. The framework reads in framework-substance per Red Line #11 — the twelve-tribes are LITERAL twelve-tribes, the paternal-blood remnant the Father-promised-through-the-prophets-and-now-states-at-the-King's-mouth. FRAMEWORK-MAJOR.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "There were twelve harts feeding: and the nine were (first) dispersed over all the earth, and likewise also the three.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|129:2",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|129:2",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "There were twelve harts feeding: and the nine were (first) dispersed over all the earth, and likewise also the three.",
+     "live_proposed": "There were twelve harts feeding: and the nine were (first) dispersed over all the earth, and likewise also the three."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "twelve-harts-feeding-then-dispersed",
+    "scattering-and-restoration-of-the-twelve-tribes",
+    "presupposes-as-the-completed-gathering-architecture",
+    "two-sticks-becoming-one",
+    "gathering-and-judging-substance",
+    "wisdom-stream-Joseph-testament",
+    "twelve-tribes-dispersed-and-gathered-and-judged-by-twelve-apostles-at-the-consummated-substance",
+    "Father-promised-through-the-prophets-and-now-states-at-the-King's-mouth"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 380,
+    "slug": "the-gathering-of-the-twelve-tribes-and-the-thrones-of-judgment-in-jubilees-sirach-wisdom-and-testaments-xii",
+    "old": "Testaments XII Joseph 15 (chapter 86) verse 2 — *there were twelve harts feeding: and the nine were (first) dispersed over all the earth, and likewise also the three.* The wisdom-stream-Joseph-testament vision of the twelve-tribes-dispersed substance — nine = the ten-northern-tribes, three = the southern-house + Levi-priestly-substance; the architecture the Tanakh-prophets had named at Yechezk'el (Ezekiel) 37:15-22's two-sticks substance, the same gathering-and-judging substance the King's-Matt-19:28-statement restates per Red Line #11. The twelve-tribes are LITERAL twelve-tribes, the paternal-blood remnant.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4863,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 133,
+   "vn": 6,
+   "cite": "Testaments of the Twelve Patriarchs 133:6",
+   "text": "For Joseph also besought our father 'that he would pray for his brethren', that 'the Lord' would not impute to them as sin whatever evil they had done unto him.",
+   "prev": "Nor can he be ruled over by the device of men or beasts, for he is helped by Yahuah (Lord) through the love which he hath towards his neighbour.",
+   "next": "And thus Jacob cried out: My good child, thou hast prevailed over the bowels of thy father Jacob. And he embraced him, and kissed him for two hours, saying:",
+   "testament": "Benjamin 3"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 26,
+   "vn": 28,
+   "cite": "Matthew 26:28",
+   "text_db": "For this is my blood of the new testament, which is shed for many for the remission of sins.",
+   "text_canon": "For this is my blood of the new testament, which is shed for many for the remission of sins."
+  },
+  "old_note": "*The blameless one shall be defiled for lawless men, the sinless one shall die for ungodly men, in the blood of the covenant, for the salvation of the Gentiles and of Yashar'el (Israel).* Testament of Benjamin 88:31 names THE direct wisdom-stream verbal-anchor for the blameless-one-defiled-for-lawless-men + the sinless-one-die-for-ungodly-men + the blood-of-the-covenant-for-the-salvation-of-Yashar'el (Israel) substance. The framework reads the verse against Matt 26:28's *this is my blood of the new testament, which is shed for many for the remission of sins.* The substantial-Test.-Benjamin-substance walks-the-direct-prefiguring-substance — the substantial-blood-of-the-covenant-substance + the substantial-shed-for-many-substance + the substantial-remission-of-sins-substance the wisdom-stream had named-substantively at-the-Test.-Benjamin-register-the-substantial-pre-Christian-Maccabean-period-substance walked-out-substantively. The framework reads this carefully — the substantial *salvation of the Gentiles* substance the Test.-Benjamin-substance walks is the substantial-Tanakh-prophetic-substance the prophet-Yeshayahu (Isaiah) walked at Isaiah 49:6 (*it is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar'el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth*) walks-into directly. The substantial *gathering of the twelve tribes from the scattering-substance* + the substantial *light to the Gentiles* substance walk-substantively-at-the-substantial-same-substance per Red Line #7 + Red Line #11 — the wild-olive-branches-the-living-descendants-of-the-broken-off are-the-substantial-scattered-seed-of-the-house-of-Yashar'el (Israel)-substance the substantial-King-of-Yashar'el (Israel)-as-the-Pesach-lamb-substance walks-substantively the substantial-gathering-of-the-substantial-twelve-tribes-substance through-the-substantial-new-covenant-substance the substantial-blood-of-the-covenant-substance inaugurates. NOT-the-categorical-Gentile-grafting-by-faith-confession-substance the inherited-Christian-collapse walks; the substantial-Gentiles-substance the Test.-Benjamin-substance walks is the substantial-nations-among-whom-the-scattered-seed-have-been-scattered-substance, walked-substantively the substantial-citizens-of-the-substantial-kingdom-substance the substantial-Father-substance walks-out-substantively the substantial-broadcast-of-the-gospel-substance the King-of-Yashar'el (Israel) walks-out at Matthew 24:14 + Matthew 28:19 walks-into substantively.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "The blameless one shall be defiled for lawless men, the sinless one shall die for ungodly men, in the blood of the covenant, for the salvation of the Gentiles and of Yashar'el (Israel).",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|133:6",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|133:6",
+     "ratio": 0.82,
+     "k": 1,
+     "live_here": "For Joseph also besought our father 'that he would pray for his brethren', that 'the Lord' would not impute to them as sin whatever evil they had done unto him.",
+     "live_proposed": "For Joseph also besought our father 'that he would pray for his brethren', that 'the Lord' would not impute to them as sin whatever evil they had done unto him."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "blameless-one-defiled-for-lawless-men",
+    "sinless-one-die-for-ungodly-men",
+    "blood-of-the-covenant-for-the-salvation-of-Yashar'el",
+    "walks-the-direct-prefiguring-substance",
+    "substantial-blood-of-the-covenant-substance",
+    "substantial-shed-for-many-substance",
+    "substantial-remission-of-sins-substance",
+    "Benjamin-register-the-substantial-pre-Christian-Maccabean-period-substance",
+    "substantial-Tanakh-prophetic-substance",
+    "walk-substantively-at-the-substantial-same-substance",
+    "wild-olive-branches-the-living-descendants-of-the-broken-off",
+    "are-the-substantial-scattered-seed-of-the-house-of-Yashar'el",
+    "substantial-King-of-Yashar'el",
+    "as-the-Pesach-lamb-substance",
+    "substantial-gathering-of-the-substantial-twelve-tribes-substance",
+    "through-the-substantial-new-covenant-substance",
+    "substantial-blood-of-the-covenant-substance",
+    "NOT-the-categorical-Gentile-grafting-by-faith-confession-substance",
+    "substantial-nations-among-whom-the-scattered-seed-have-been-scattered-substance",
+    "substantial-citizens-of-the-substantial-kingdom-substance",
+    "substantial-broadcast-of-the-gospel-substance"
+   ],
+   "t_range_bad": [
+    {
+     "cite": "Testament of Benjamin 88:31",
+     "range": "131–142"
+    }
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 414,
+    "slug": "the-shepherd-smitten-and-the-temple-veil-rent-in-the-testaments-of-the-twelve",
+    "old": "Testament of Benjamin 88:31 — *the blameless one shall be defiled for lawless men, the sinless one shall die for ungodly men, in the blood of the covenant, for the salvation of the Gentiles and of Yashar'el (Israel).* THE direct verbal-anchor for the blameless-one-defiled-for-lawless-men + the sinless-one-die-for-ungodly-men + the blood-of-the-covenant-for-the-salvation-of-Yashar'el (Israel) substance — the substantial-direct-prefiguring of Matt 26:28's substantial-blood-of-the-new-covenant-shed-for-many-for-the-remission-of-sins-substance. The *salvation of the Gentiles* substance walks Isaiah 49:6's *light to the Gentiles* — the substantial-gathering-of-the-twelve-tribes from the substantial-scattering-among-the-nations per Red Line #7 + #11, NOT the false-inclusion-gospel-by-faith-confession.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 60366,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 133,
+   "vn": 6,
+   "cite": "Testaments of the Twelve Patriarchs 133:6",
+   "text": "For Joseph also besought our father 'that he would pray for his brethren', that 'the Lord' would not impute to them as sin whatever evil they had done unto him.",
+   "prev": "Nor can he be ruled over by the device of men or beasts, for he is helped by Yahuah (Lord) through the love which he hath towards his neighbour.",
+   "next": "And thus Jacob cried out: My good child, thou hast prevailed over the bowels of thy father Jacob. And he embraced him, and kissed him for two hours, saying:",
+   "testament": "Benjamin 3"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 5,
+   "vn": 44,
+   "cite": "Matthew 5:44",
+   "text_db": "But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;",
+   "text_canon": "But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;"
+  },
+  "old_note": "Matt 5:44 — *Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you.* — the praying-for-them-that-wrong-you that Joseph embodied before his brethren.",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [],
+   "canon_lead": {
+    "cite": "Matt 5:44",
+    "verdict": "STAND",
+    "quote": "Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "praying-for-them-that-wrong-you"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 14853,
+    "slug": "testaments-xii-133-joseph-prayed-for-his-brethren",
+    "old": "Matt 5:44 — *Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you.* — the praying-for-them-that-wrong-you that Joseph embodied before his brethren.",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 60364,
+  "kind": "REBUILD",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 133,
+   "vn": 8,
+   "cite": "Testaments of the Twelve Patriarchs 133:8",
+   "text": "In thee shall be fulfilled the prophecy of heaven [concerning the Lamb of Elohim (God), and Saviour of the world], that a blameless one shall be delivered up for lawless men, and a sinless shall die for ungodly men [in the blood of the covenant, for the salvation of the Gentiles and 'of Israel', and shall destroy Beliar and his servants].",
+   "prev": "And thus Jacob cried out: My good child, thou hast prevailed over the bowels of thy father Jacob. And he embraced him, and kissed him for two hours, saying:",
+   "next": null,
+   "testament": "Benjamin 3"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "1-peter",
+   "ch": 3,
+   "vn": 18,
+   "cite": "1 Peter 3:18",
+   "text_db": "For Messiah (Christ) also has once suffered for sins, the just for the unjust, that he might bring us to Elohim (God), being put to death in the flesh, but quickened by the Spirit:",
+   "text_canon": "For Messiah (Christ) also hath once suffered for sins, the just for the unjust, that he might bring us to Elohim (God), being put to death in the flesh, but quickened by the Spirit:"
+  },
+  "old_note": "1 Pet 3:18 — *For Messiah (Christ) also hath once suffered for sins, the just for the unjust, that he might bring us to Elohim (God).* — the just-for-the-unjust the testament foresees, \"a sinless shall die for ungodly men.\"",
+  "regrade": {
+   "verdict": "NO_EXTRA_QUOTE",
+   "quotes": [],
+   "phrases": [
+    {
+     "quote": "a sinless shall die for ungodly men.",
+     "verdict": "STAND"
+    }
+   ],
+   "canon_lead": {
+    "cite": "1 Pet 3:18",
+    "verdict": "STAND",
+    "quote": "For Messiah (Christ) also hath once suffered for sins, the just for the unjust, that he might bring us to Elohim (God)."
+   },
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "just-for-the-unjust"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 14854,
+    "slug": "testaments-xii-133-a-blameless-one-delivered-for-the-lawless",
+    "old": "1 Pet 3:18 — *For Messiah (Christ) also hath once suffered for sins, the just for the unjust, that he might bring us to Elohim (God).* — the just-for-the-unjust the testament foresees, \"a sinless shall die for ungodly men.\"",
+    "same_as_card": true
+   }
+  ]
+ },
+ {
+  "id": 8023,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 134,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 134:5",
+   "text": "And him that hath the grace of a good spirit he loveth as his own soul.",
+   "prev": "If any one is glorified, he envieth him not; if any one is enriched, he is not jealous; if any one is valiant, he praiseth him; the virtuous man he laudeth; 'on the poor man he hath mercy; on the weak he hath compassion; unto Elohim (God) he singeth praises'.",
+   "next": null,
+   "testament": "Benjamin 4"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 15,
+   "vn": 13,
+   "cite": "John 15:13",
+   "text_db": "Greater love has no man than this, that a man lay down his life for his friends.",
+   "text_canon": "Greater love hath no man than this, that a man lay down his life for his friends."
+  },
+  "old_note": "*And him that hath the grace of a good spirit he loveth as his own soul.* The Testament of Benjamin (DB ch 89 v.5) names the love-thy-brother-as-thine-own-soul measure in the patriarch's good-mind teaching — the good man *loveth the righteous as his own soul,* shielding, showing mercy, overcoming evil with good. John 15:13's *Greater love hath no man than this, that a man lay down his life for his friends* lands the same architecture at its furthest reach: the love-as-thine-own-soul of the fathers' testimony brought to the laying-down of the soul itself. The Hebrew library named the measure; the gospel walks it to the cross.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And him that hath the grace of a good spirit he loveth as his own soul.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|134:5",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|134:5",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And him that hath the grace of a good spirit he loveth as his own soul.",
+     "live_proposed": "And him that hath the grace of a good spirit he loveth as his own soul."
+    }
+   ],
+   "phrases": [
+    {
+     "quote": "s   lands the same architecture at its furthest reach: the love-as-thine-own-soul of the fathers",
+     "verdict": "NOT_FOUND",
+     "ratio": 0.24
+    }
+   ],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": true,
+   "chains": [
+    "love-thy-brother-as-thine-own-soul",
+    "love-as-thine-own-soul"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 671,
+    "slug": "john-13-15-the-new-commandment-love-one-another-in-the-testaments-of-gad-and-benjamin",
+    "old": "Testament of Benjamin (DB ch 89 v.5) — *And him that hath the grace of a good spirit he loveth as his own soul.* The love-as-thine-own-soul measure in the good-mind teaching; John 15:13's *Greater love hath no man than this, that a man lay down his life for his friends* lands the same measure at the laying-down of the soul itself.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4737,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 139,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 139:5",
+   "text": "And He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.]",
+   "prev": "And the veil of the temple shall be rent, and the Spirit of Elohim (God) shall pass on to the Gentiles as fire poured forth.",
+   "next": null,
+   "testament": "Benjamin 9"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 20,
+   "vn": 28,
+   "cite": "Matthew 20:28",
+   "text_db": "Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.",
+   "text_canon": "Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many."
+  },
+  "old_note": "*And I know how lowly He shall be upon earth, and how glorious in heaven.* Testaments of the Twelve Patriarchs 94:5 (Testament of Benjamin 9) names THE direct extras-stream verbal-anchor for the lowly-on-earth-and-glorious-in-heaven substance — the precise architecture the King names at Matt 20:28's *the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* The framework reads the verse as the most-direct pseudepigraphal-anchor for the kenotic-incarnational architecture the King articulates at the chapter-pivot. The Tanakh-Suffering-Servant-substance the King draws-from at v.28 (Yeshayahu (Isaiah) 53:3's *despised and rejected of men; a man of sorrows*; 53:5-6's *wounded for our transgressions ... Yahuah (the LORD) hath laid on him the iniquity of us all*; 53:10-12's *make his soul an offering for sin ... bare the sin of many*) is the same lowly-on-earth substance Testaments 94:5 names; the eschatological-glorious-in-heaven substance the wisdom-stream points-forward-to is the same substance 1 Enoch 62's Son-of-Adam-on-the-throne-of-his-glory names. The framework reads this in continuity with Philippians 2:6-11's *made himself of no reputation, and took upon him the form of a servant ... wherefore Elohim (God) also hath highly exalted him* — the apostolic-witness restates the substance the King's-own-mouth named at the gospel-pivot and the wisdom-and-pseudepigraphal-stream named at the prefiguring-register.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And I know how lowly He shall be upon earth, and how glorious in heaven.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|139:5",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|139:5",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.]",
+     "live_proposed": "And He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.]"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "lowly-on-earth-and-glorious-in-heaven",
+    "Tanakh-Suffering-Servant-substance",
+    "eschatological-glorious-in-heaven",
+    "Son-of-Adam-on-the-throne-of-his-glory",
+    "wisdom-and-pseudepigraphal-stream"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 384,
+    "slug": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+    "old": "Testaments of the Twelve Patriarchs 94:5 (Testament of Benjamin) — *I know how lowly He shall be upon earth, and how glorious in heaven.* THE direct extras-stream verbal-anchor for the lowly-on-earth-and-glorious-in-heaven kenotic-incarnational architecture the King names at Matt 20:28; the substance Philippians 2:6-11 carries-forward (*made himself of no reputation, and took upon him the form of a servant ... wherefore Elohim (God) also hath highly exalted him*).",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4908,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 139,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 139:5",
+   "text": "And He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.]",
+   "prev": "And the veil of the temple shall be rent, and the Spirit of Elohim (God) shall pass on to the Gentiles as fire poured forth.",
+   "next": null,
+   "testament": "Benjamin 9"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 18,
+   "cite": "Matthew 28:18",
+   "text_db": "And Yahusha (Jesus) came and spake unto them, saying, All power is given unto me in heaven and in earth.",
+   "text_canon": "And Yahusha (Jesus) came and spake unto them, saying, All power is given unto me in heaven and in earth."
+  },
+  "old_note": "*And He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.* Testament of Benjamin Ch 7:5 (TestXII ch 94:5 in the Charles concatenation, corresponding to traditional Test. Benjamin 9:3-5) names the wisdom-stream's direct articulation of the King's-ascending-from-Hades + passing-from-earth-into-heaven + the-lowly-upon-earth-and-glorious-in-heaven substance. The framework reads the verse against Matt 28:18's *All power is given unto me in heaven and in earth.* The substantial-substance the wisdom-stream names at the kenosis-and-glorification architecture — the lowly-upon-earth (the form-of-the-servant the apostle-Sha'ul (Paul) names at Philippians 2:6-8) and the glorious-in-heaven (the substantial-right-hand-of-the-Great-Glory the AI 11:32 substance walks) — is the substantial-substance the King walks-out from-the-incarnation-at-Matt 1:23 to-the-substantial-Resurrection-and-Ascension-and-all-power-given-substance at-Matt 28:18. The substantial-Tanakh-substance walks the substantial Psalm 16:10 substance (*neither wilt thou suffer thine Holy One to see corruption*) + Psalm 68:18 substance (*Thou hast ascended on high*) + Ephesians 4:8-10 substance. (NOTE: Test. Benjamin 7:5 was previously cited at-S155-Matt-20:28 for the lowly-came-to-give-his-life-a-ransom-for-many substance; Matt 28:18 carries-forward the SAME verbal-anchor to the glorious-in-heaven half of the architecture — the kenosis-and-glorification substance bookended.)",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|139:5",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|139:5",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.]",
+     "live_proposed": "And He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.]"
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "King's-ascending-from-Hades",
+    "passing-from-earth-into-heaven",
+    "the-lowly-upon-earth-and-glorious-in-heaven",
+    "form-of-the-servant",
+    "substantial-right-hand-of-the-Great-Glory",
+    "from-the-incarnation-at-Matt",
+    "to-the-substantial-Resurrection-and-Ascension-and-all-power-given-substance",
+    "lowly-came-to-give-his-life-a-ransom-for-many"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 425,
+    "slug": "the-king-ascending-and-the-tribes-rising-each-over-his-tribe-in-testaments-of-the-twelve",
+    "old": "Testament of Benjamin Ch 7:5 (TestXII 94:5, traditional Test. Benjamin 9:3-5) — *and He shall ascend from Hades and shall pass from earth into heaven. And I know how lowly He shall be upon earth, and how glorious in heaven.* The King's-ascending-from-Hades + passing-from-earth-into-heaven + the lowly-upon-earth-and-glorious-in-heaven kenosis-and-glorification architecture (Philippians 2:6-11). The operative-substance of Matt 28:18's *all power is given unto me in heaven and in earth* — the glorious-in-heaven half of the architecture the King reaches at the substantial-Resurrection-and-Ascension. (Previously cited at S155-Matt 20:28 for the lowly-came-to-give-his-life-a-ransom-for-many half; Matt 28:18 carries-forward to the glorious-in-heaven half — the bookend.)",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4909,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 140,
+   "vn": 5,
+   "cite": "Testaments of the Twelve Patriarchs 140:5",
+   "text": "For all these things they gave us for an inheritance, saying: Keep the commandments of Elohim (God), until Yahuah (Lord) shall reveal His salvation to all Gentiles.",
+   "prev": "For these things do I leave you instead of inheritance. Do ye also, therefore,' give them to your children for an everlasting possession; for so did both Abraham, and Isaac, and Jacob.",
+   "next": "'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness.",
+   "testament": "Benjamin 10"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 19,
+   "cite": "Matthew 28:19",
+   "text_db": "Go you therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Spirit):",
+   "text_canon": "Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Spirit):"
+  },
+  "old_note": "*And shall reveal His salvation to all Gentiles.* Testament of Benjamin Ch 8:6 (TestXII ch 95:6 in the Charles concatenation, corresponding to traditional Test. Benjamin 10:5) names the wisdom-stream's direct articulation of the salvation-revealed-to-all-Gentiles substance — the substantial-going-out-of-the-proclamation-substance the substantial-Great-Commission walks-out. The framework reads the verse against Matt 28:19's *Go ye therefore, and teach all nations.* The substantial-substance is the substantial-revelation-of-the-Father's-salvation-substance the Resurrected-King-substance walks-out through-the-substantial-Twelve-Apostles-substance into-the-substantial-territories-of-the-substantial-nations-where-the-substantial-scattered-seed-of-both-houses-is-substantively-among. The substantial-substance is NOT-the-substantial-categorical-grafting-of-the-substantial-nations-substance into-the-covenant; the substantial-substance is the substantial-revelation-of-the-Father's-salvation-going-BROADLY because the substantial-citizens-of-the-kingdom-substance are-substantively-scattered-among-the-territories-of-the-substantial-nations-substance and-the-substantial-substance-of-the-substantial-Father-knows-his-sheep-by-substance (John 10:27) NOT-by-our-sighting. The substantial-substance the wisdom-stream names walks-the-substantial-Great-Commission's scope-of-proclamation-substance.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "And shall reveal His salvation to all Gentiles.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|140:5",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|testaments-xii|140:5",
+     "ratio": 0.78,
+     "k": 1,
+     "live_here": "For all these things they gave us for an inheritance, saying: Keep the commandments of Elohim (God), until Yahuah (Lord) shall reveal His salvation to all Gentiles.",
+     "live_proposed": "For all these things they gave us for an inheritance, saying: Keep the commandments of Elohim (God), until Yahuah (Lord) shall reveal His salvation to all Gentiles."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "salvation-revealed-to-all-Gentiles",
+    "substantial-going-out-of-the-proclamation-substance",
+    "substantial-revelation-of-the-Father's-salvation-substance",
+    "through-the-substantial-Twelve-Apostles-substance",
+    "into-the-substantial-territories-of-the-substantial-nations-where-the-substantial-scattered-seed-of-both-houses-is-substantively-among",
+    "NOT-the-substantial-categorical-grafting-of-the-substantial-nations-substance",
+    "substantial-revelation-of-the-Father's-salvation-going-BROADLY",
+    "substantial-citizens-of-the-kingdom-substance",
+    "are-substantively-scattered-among-the-territories-of-the-substantial-nations-substance",
+    "and-the-substantial-substance-of-the-substantial-Father-knows-his-sheep-by-substance",
+    "NOT-by-our-sighting",
+    "walks-the-substantial-Great-Commission's",
+    "scope-of-proclamation-substance"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 425,
+    "slug": "the-king-ascending-and-the-tribes-rising-each-over-his-tribe-in-testaments-of-the-twelve",
+    "old": "Testament of Benjamin Ch 8:6 (TestXII 95:6, traditional Test. Benjamin 10:5) — *and shall reveal His salvation to all Gentiles.* The salvation-revealed-to-all-Gentiles substance — the going-out-of-the-proclamation the Great-Commission walks. NOT the categorical-grafting-of-the-nations into the covenant; the substance is broad-proclamation-because-the-sheep-are-scattered-among-the-nations + the Father knowing his sheep by substance (John 10:27) NOT by our sighting. The substantial-nations' place in the covenant-architecture is the priestly-instruction-substance from-the-gathered-remnant at the millennial per Micah 4:1-3 + Isaiah 61:6.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4910,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 140,
+   "vn": 7,
+   "cite": "Testaments of the Twelve Patriarchs 140:7",
+   "text": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, [who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him].",
+   "prev": "'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness.",
+   "next": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+   "testament": "Benjamin 10"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 10,
+   "cite": "Matthew 28:10",
+   "text_db": "Then said Yahusha (Jesus) unto them, Be not afraid: go tell my brethren that they go into Galilee, and there shall they see me.",
+   "text_canon": "Then said Yahusha (Jesus) unto them, Be not afraid: go tell my brethren that they go into Galilee, and there shall they see me."
+  },
+  "old_note": "*Then shall we also rise, each one over our tribe, worshipping the King of heaven, who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him.* Testament of Benjamin Ch 8:7 (TestXII ch 95:7 in the Charles concatenation, corresponding to traditional Test. Benjamin 10:7-8) names THE direct wisdom-stream verbal-anchor for the substantial-twelve-tribes-rising-each-one-over-his-tribe-substance + worshipping-the-King-of-heaven-substance. The framework reads the verse against Matt 28:10's *go tell my brethren that they go into Galilee, and there shall they see me.* The substantial *my brethren* substance the King-of-Yashar'el (Israel) walks-at-v.10 is the substantial-gathered-remnant-of-the-substantial-twelve-tribes-of-Yashar'el (Israel)-substance per Psalm 22:22 (*I will declare thy name unto my brethren*) + Hebrews 2:11-12 + Matt 12:46-50 + Matt 25:40 — the substantial-substance the S87 Matt 25 thread `my-brethren-substance-distinguishing-the-seed-of-promise-from-the-categorical-nations` walks-out. The substantial-substance the wisdom-stream walks at TestXII 95:7 is the substantial-rising-of-the-twelve-tribes-each-one-over-his-tribe — the substantial-twelve-thrones-substance the King walks-at-Matt 19:28 (*ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel)*) + Revelation 7:4-8 (the substantial-twelve-thousand-of-each-of-the-twelve-tribes-substance). The substantial-substance is the substantial-twelve-tribes-restoration-architecture-substance per Red Line #11.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|140:7",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|140:7",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, [who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him].",
+     "live_proposed": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, [who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him]."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "substantial-twelve-tribes-rising-each-one-over-his-tribe-substance",
+    "worshipping-the-King-of-heaven-substance",
+    "substantial-gathered-remnant-of-the-substantial-twelve-tribes-of-Yashar'el",
+    "my-brethren-substance-distinguishing-the-seed-of-promise-from-the-categorical-nations",
+    "substantial-rising-of-the-twelve-tribes-each-one-over-his-tribe",
+    "substantial-twelve-thrones-substance",
+    "substantial-twelve-thousand-of-each-of-the-twelve-tribes-substance",
+    "substantial-twelve-tribes-restoration-architecture-substance"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 425,
+    "slug": "the-king-ascending-and-the-tribes-rising-each-over-his-tribe-in-testaments-of-the-twelve",
+    "old": "Testament of Benjamin Ch 8:7 (TestXII 95:7, traditional Test. Benjamin 10:7-8) — *then shall we also rise, each one over our tribe, worshipping the King of heaven, who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him.* THE direct verbal-anchor for the twelve-tribes-rising-each-one-over-his-tribe substance + worshipping-the-King-of-heaven. The substantial *my brethren* substance at Matt 28:10 walks the twelve-tribes-restoration-architecture per the S87 Matt 25 thread `my-brethren-substance-distinguishing-the-seed-of-promise-from-the-categorical-nations` (FRAMEWORK-MAJOR) + Matt 19:28's twelve-thrones + Revelation 7:4-8's twelve-thousand-of-each-tribe. Per Red Line #11's twelve-tribes-restoration architecture.",
+    "same_as_card": false
+   }
+  ]
+ },
+ {
+  "id": 4911,
+  "kind": "REBUILD",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 140,
+   "vn": 8,
+   "cite": "Testaments of the Twelve Patriarchs 140:8",
+   "text": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+   "prev": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, [who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him].",
+   "next": "And then shall He judge all the Gentiles, [as many as believed Him not when He appeared upon earth].",
+   "testament": "Benjamin 10"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 28,
+   "vn": 18,
+   "cite": "Matthew 28:18",
+   "text_db": "And Yahusha (Jesus) came and spake unto them, saying, All power is given unto me in heaven and in earth.",
+   "text_canon": "And Yahusha (Jesus) came and spake unto them, saying, All power is given unto me in heaven and in earth."
+  },
+  "old_note": "*Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not. And then shall He judge all the Gentiles.* Testament of Benjamin Ch 8:8 (TestXII ch 95:8 in the Charles concatenation, corresponding to traditional Test. Benjamin 10:8-9) names the wisdom-stream's direct articulation of the substantial-all-men-shall-rise-some-unto-glory-and-some-unto-shame substance — the substantial-Daniel-12:2-substance (*many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt*) carried-forward at-the-wisdom-stream-register. The framework reads the verse against Matt 28:18's *All power is given unto me in heaven and in earth.* The substantial-all-power-substance the King receives at v.18 is the operative-substance for the substantial-judging-substance the wisdom-stream names at TestXII 95:8 — the King-of-Yashar'el (Israel) walks-the-substantial-judgment-substance per Acts 17:31 (*because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained*) + the substantial Matt 25:31-46 sheep-and-goats-substance. The substantial *Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness* substance walks the substantial-substance the apostle-Kefa (Peter) walks at 1 Peter 4:17 (*judgment must begin at the house of Elohim (God)*) — the substantial-judgment-of-the-substantial-house-of-Yashar'el (Israel)-first walks the substantial-substance-of-the-substantial-Father's-substance-of-the-substantial-substance-walked.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not. And then shall He judge all the Gentiles.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|140:8",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|140:8",
+     "ratio": 1.0,
+     "k": 2,
+     "live_here": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+     "live_proposed": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not]."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": true,
+   "hyphen_chain": true,
+   "chains": [
+    "substantial-all-men-shall-rise-some-unto-glory-and-some-unto-shame",
+    "at-the-wisdom-stream-register",
+    "substantial-all-power-substance",
+    "walks-the-substantial-judgment-substance",
+    "sheep-and-goats-substance",
+    "substantial-judgment-of-the-substantial-house-of-Yashar'el",
+    "substantial-substance-of-the-substantial-Father's-substance-of-the-substantial-substance-walked"
+   ],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 425,
+    "slug": "the-king-ascending-and-the-tribes-rising-each-over-his-tribe-in-testaments-of-the-twelve",
+    "old": "Testament of Benjamin Ch 8:8 (TestXII 95:8, traditional Test. Benjamin 10:8-9) — *then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness ... and then shall He judge all the Gentiles.* The all-men-shall-rise-some-unto-glory-and-some-unto-shame substance (Daniel 12:2 carried-forward) + the judgment-of-the-house-of-Yashar'el (Israel)-first substance (1 Peter 4:17's *judgment must begin at the house of Elohim (God)*). The substantial-all-power-substance at Matt 28:18 is the operative-substance for the judgment-substance (Acts 17:31's *he will judge the world in righteousness by that man whom he hath ordained*) + Matt 25:31-46's sheep-and-goats.",
+    "same_as_card": false
+   }
+  ]
+ }
+]

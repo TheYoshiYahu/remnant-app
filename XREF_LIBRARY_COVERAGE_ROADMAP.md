@@ -189,7 +189,7 @@ means a back-fill can re-run safely over the already-merged canon rows.
   | Jubilees | 1,741 of 1,754 anchored | ✓ S463b | ✓ built S463b (126 rebuilt, 140 moved, 92 re-cited) | ✓ built S463b | ✓ built S463b (5) | ✓ built S463b (312 read: 179 stay / 131 move / 2 Q) | ✓ deployed Oct 23 12:55 CDT, read-back 347/347, 0 degraded — CLOSED |
   | Apocrypha (+3 Macc) | 1,784 stand + 58 off of 4,597 anchored | ✓ S463c | ✓ built S463c (485 rebuilt, 1 moved, 22 re-quoted, 3 re-cited, 63 slug cites) | ✓ deployed Oct 23 14:55 CDT, read-back 573/573, 0 degraded — CLOSED | ✓ built S463c (55) | ✓ built S463c (13 S454-changed read: all stay) | scratch 573/573, 607/607, 55/55, 4,907 quotations verbatim, 0 degraded |
   | Jasher | 315 stand + 6 off of 1,943 anchored (1,624 canon-first glosses, canon quotes 1,428/1,429 verbatim) | ✓ S463d | ✓ built S463d (53 rebuilt, 1 moved, 3 re-quoted, 2 patched) | ✓ deployed Oct 23 18:59 CDT, read-back 59/59, 0 degraded — CLOSED | ✓ built S463d (65) | ✓ built S463d (36 S450-changed read: all stay; 13 off-address read: 1 moved) | scratch 59/59, 58/58, 65/65, 1,628 quotations verbatim, 0 degraded |
-  | 2 Enoch / Test. XII / Apoc. Abraham / Adam-Eve / Asc. Isaiah | — | — | — | — | — | — |
+  | 2 Enoch / Test. XII / 2–3 Baruch / 1–2 Adam-Eve / Apoc. Abraham / Asc. Isaiah | 134 extra italics (97 stand + 23 off) + 3,102 canon leads of 3,497 anchored (3,388 canon-first glosses) | ✓ S463e (S476) | ✓ built S463e (74 rebuilt, 14 moved, 84 canon re-quotes, 76 patches, 7 address, 227 slug) | ✓ deployed Oct 26 19:05 CDT, read-back 468/468, 0 degraded — CLOSED (Charles adam-eve + 4 Macc held for text lane) | ✓ deployed Oct 26 (154) | ✓ built S463e (97 phrase reads + 4 S440 reads) | scratch 468/468, 467/467, 154/154, 134 quotations verbatim, canon leads off 0, 0 degraded, 0 slug, 0 stale T.XII cites |
   | Cepher additions / Sonnini | — | — | — | — | — | — |
 - **2026-10-19 (S460) — 1 ENOCH THREAD SUMMARIES: MAP + FIX BUILT, scratch-tested, not deployed** (`source-texts/enoch-charles-1917/
   s460-summary-fix/`, migration `session460_enoch_summary_fix.sql`, deploy `_session460_enoch_summary_fix_deploy.sh`, read-back
@@ -235,3 +235,16 @@ means a back-fill can re-run safely over the already-merged canon rows.
   0 slugs, 0 dup pairs; both guards tested. Status table: Jasher row → built, deploy pending. Next: deploy + read-back, then the pseudepigrapha
   editions (S463e — confirm which Testaments XII parse is live first).
 - **2026-10-23 (S463d) — DEPLOYED 18:59 CDT, live read-back 59/59 cards, 58/58 member notes, 65/65 summaries, 1,628 quotations verbatim, 0 degraded. Jasher closed. Next: the pseudepigrapha editions (S463e).**
+- **2026-10-26 (S476 = S463e) — PSEUDEPIGRAPHA EDITIONS SWEEP BUILT, scratch-tested twice, NOT deployed** (`source-texts/pseudepigrapha-charles-vol2/s463e-sweep/`,
+  migrations `session463e_pseudepigrapha_sweep.sql` / `session463e_adam_eve_sweep.sql` / `session463e_apocalypse_abraham_sweep.sql` /
+  `session463e_ascension_isaiah_sweep.sql`, deploy `_session463e_<edition>_deploy.sh` ×4, read-back `_s463e_check.py`, report `pseud-sweep-report.md`).
+  Parse question settled by content: live text = Desktop JSON 4,962/4,962; live Testaments XII is the Track B repair (142 ch / 997 vv, clean), not the
+  S214-measured pypdf parse — no re-parse. Scope: the eight clean books; Charles adam-eve (784) and 4 Maccabees (789) HELD for the text lane (line-end verse
+  breaks in ~half their verses), then swept in one pass. Dump 4,120 cards (4,116 anchored), 4,115 member notes, 1,280 threads. Map: 74 degraded-prose notes,
+  23 extra quotations off, 84 canon leads off canon.json (42 × 1 John 3:8 = Yoshi's rendering; NT-Lord rule), 244 slug cites, 8 stale Testaments cites,
+  97 phrase reads, 78 summaries with canon quotes off. Build: 468 cards (14 re-pointed), 467 member rows, 154 summaries. Reads: 22 address decisions cold
+  by two agents (22/22 agree); 77 notes + 32 summaries + 7 member notes voice-read on Fable (21 findings applied). Scratch run 1 = 468 landed / 0 skipped;
+  run 2 = 0 changed; read-back 134 extra quotations verbatim, canon leads off 0, 0 degraded / chains / slugs / Hebrew names / stale cites, 0 dup pairs;
+  both guards tested. Status table: pseudepigrapha row → built, deploy pending. Next: deploy ×4 + read-back, then the Charles adam-eve / 4 Macc text fix,
+  then S463f (Cepher additions + Sonnini).
+- **2026-10-26 (S476 = S463e) — DEPLOYED 19:05 CDT, live read-back 468/468 cards, 467/467 member notes, 154/154 summaries, 134 quotations verbatim, canon leads off 0, 0 degraded. The eight clean pseudepigrapha books are closed. Next: text lane for Charles adam-eve (784) + 4 Maccabees (789), their sweep, then S463f (Cepher additions + Sonnini).**

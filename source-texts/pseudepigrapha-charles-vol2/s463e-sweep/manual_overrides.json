@@ -1,0 +1,72 @@
+{
+ "reason": "S476 hand fixes after the drafters' flags: three rebuild cards re-pointed to the verse their old note described (non-adjacent, as S463b did), three notes the drafters flagged as unsupported or off the nature-of-God rule, one summary closing line put into paternal-seed wording.",
+ "cards": {
+  "4739": {
+   "move": "pseudepigrapha|testaments-xii|59:1",
+   "new_note": "*And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Adonai (Lord), thou Son of David.* (Matthew 20:30). *And after these things shall a star arise to you from Jacob in peace, And a man shall arise [from my seed], like the sun of righteousness, Walking with the sons of men in meekness and righteousness; And no sin shall be found in him.* (Testaments of the Twelve Patriarchs 59:1). Yahudah (Judah) tells his sons that a star will rise to them out of Jacob, a man from his own seed who walks among the sons of men in meekness and without sin. Two blind men by the Jericho road, who cannot see him, cry out to him by that very title, Son of David, the seed of Yahudah (Judah). The testament named the man; the blind men recognized him by his line before they could see his face.",
+   "member_note": "Testaments of the Twelve Patriarchs 59:1 — *shall a star arise to you from Jacob in peace, And a man shall arise.* The star out of Jacob from Yahudah's (Judah's) seed is the Son of David the blind men call on.",
+   "flag": "Re-pointed from 58:5 to 59:1 — the verse the old note quoted (the star out of Jacob); 58:5 is the captivity verse and carried no star."
+  },
+  "4870": {
+   "move": "pseudepigrapha|testaments-xii|21:1",
+   "new_note": "*And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;* (Matthew 27:51). *And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the El Elyon (Most High).* (Testaments of the Twelve Patriarchs 21:1). Levi is shown the gates of heaven opened and the holy temple with the throne of glory inside it. At the death of Yahusha (Jesus) the veil that closed the earthly holy of holies is torn from the top down, opened from heaven's side and not from ours. What Levi saw opened in vision is opened in fact at the cross, and the way into the holiest is laid bare.",
+   "member_note": "Testaments of the Twelve Patriarchs 21:1 — *the angel opened to me the gates of heaven, and I saw the holy temple.* The gates opened to Levi are the veil torn from the top at the cross.",
+   "flag": "Re-pointed from 20:5 to 21:1 — the verse the old note quoted (the gates of heaven opened); 20:5 is about counsel given to Levi."
+  },
+  "4317": {
+   "move": "ascension-isaiah|ascension-isaiah|3:13",
+   "new_note": "*Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve.* (Matthew 4:10). *For Beliar was in great wrath against Isaiah by reason of the vision, and because of the exposure wherewith he had exposed Sammael, and because through him the going forth of the Beloved from the seventh heaven had been made known, and His transformation and His descent and the likeness into which He should be transformed (that is) the likeness of man, and the persecution wherewith he should be persecuted, and the torturers wherewith the children of Yashar'el (Israel) should torture Him, and the coming of His twelve disciples, and the teaching, and that He should before the sabbath be crucified upon the tree, and should be crucified together with wicked men, and that He should be buried in the sepulchre,* (Ascension of Isaiah 3:13). Beliar's rage against Isaiah is over one thing: the prophet had made known the Beloved's going forth from the seventh heaven and his descent in the likeness of man. In the wilderness the same adversary meets the Beloved now come down in that likeness, and is sent away with the commandment of Torah: worship Yahuah (the Lord) and serve him only. The one Beliar tried to keep hidden dismisses him with the Word.",
+   "member_note": "Ascension of Isaiah 3:13 — *the going forth of the Beloved from the seventh heaven had been made known.* The Beloved whose descent enraged Beliar sends Satan away with the Torah's own word.",
+   "flag": "Re-pointed from 1:3 to 3:13 — the verse the old note quoted (Beliar's wrath at the revealing of the Beloved); 1:3 is the list of judgments and powers. Live 3:13 text is long and is quoted whole, as the rule requires."
+  },
+  "60235": {
+   "move": null,
+   "new_note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* — \"God shall appear, dwelling among men on earth\" is fulfilled when the Word was made flesh and dwelt among us — the only begotten whom the Father sent, the Formed one walking among men.",
+   "member_note": null,
+   "flag": "Closing clause 'the Father made manifest in the Son' replaced — it collapsed the Father into the Son (Checklist 10). Quotation and the rest of the prose untouched."
+  },
+  "60026": {
+   "move": null,
+   "new_note": "Psalm 110:4 — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* The new priest Yahuah (the Lord) raises up, to whom all his words are revealed and who judges the earth for a multitude of days, is the priest Yahuah (the LORD) swore in after the order of Melek Tsadiq (Melchizedek) — a priesthood not from Levi's line and not for a season.",
+   "member_note": null,
+   "flag": "The old prose quoted 'to whom there shall none succeed for ever', words not in the live Testaments of the Twelve Patriarchs 34:2; rewritten to what 34:2 says (a new priest raised up, all the words of Yahuah revealed to him, judging for a multitude of days)."
+  },
+  "49262": {
+   "move": null,
+   "new_note": "Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints,* Jude's word from Enoch sits beside the Ascension of Isaiah, where Yahuah (the Lord) comes with his angels and with the armies of the holy ones from the seventh heaven. The ten thousands of his saints are that company of holy ones who come with him — *and all the saints with thee* (Zechariah 14:5) — the coming Enoch foresaw and Isaiah was shown.",
+   "member_note": null,
+   "flag": "FOR YOSHI: the old prose said the saints who come with him are the seed of promise 'not angels, and not souls come down from heaven'; the live Ascension of Isaiah 4:14 says he comes 'with His angels and with the armies of the holy ones from the seventh heaven'. Rewritten to what the two verses say together, without ruling on who the holy ones are. If the seed-of-promise reading is to stand here it needs its own witness quoted."
+  }
+ },
+ "summaries": {
+  "11212": {
+   "old_sub": "This is election and the kept seed, not race; the covenant line guarded down toward Noah.",
+   "new_sub": "This is the paternal seed of promise kept apart from the line of Cain, the covenant line guarded down toward Noah.",
+   "flag": "'not race' could be read against the bloodline teaching; put into paternal-seed wording."
+  }
+ },
+ "members": [
+  {
+   "thread_id": 673,
+   "xref_id": 8018,
+   "old_sub": "... and filleth the heart with evils and devilish poison.*",
+   "new_sub": "... it filleth the heart with evils and devilish poison.*",
+   "flag": "drafter's re-quote had 'and filleth'; live 99:1 reads 'it filleth'"
+  },
+  {
+   "thread_id": 11076,
+   "xref_id": 46143,
+   "old_sub": "*He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of Elohim (God) was manifested, that he might destroy the works of the devil.*",
+   "new_sub": "*Whoever goes on sinning belongs to the devil, for the devil has been sinning from the very beginning. This is why the Son of Elohim (God) was revealed: to undo the works of the devil.*",
+   "flag": "member note with its own text quoted 1 John 3:8 in the KJV form; re-quoted from canon.json"
+  }
+ ],
+ "member_new": [
+  {
+   "thread_id": 39,
+   "xref_id": 4291,
+   "new": "Testaments of the Twelve Patriarchs 18:6 — *behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.* The heavens open over Levi at his priestly investiture; they open again over Yahusha (Jesus) at the Jordan (Matthew 3:16), the Messiah's own investiture.",
+   "flag": "member note with its own text carried the stale 'Testament of Levi 2:6 (TestXII ch 12:6)' citation (pre-Track-B numbering) and 'the Hebrew library's' internal phrasing; the card (4291) was cite-fixed, the member note is fixed here by hand"
+  }
+ ]
+}

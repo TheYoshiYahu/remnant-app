@@ -1,0 +1,268 @@
+[
+ {
+  "id": 4315,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4316,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4317,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4339,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4341,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4427,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4428,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4431,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4432,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4457,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4695,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4710,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4720,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4737,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4739,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4740,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4741,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4742,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4743,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4789,
+  "verdict": "FIX",
+  "finding": "Last sentence cites Matthew 27:51 without quoting it, sending the reader elsewhere (come-and-see). Reworded as a plain narrative callback with no bare citation.",
+  "fix": "*But woe unto you, scribes and Pharisees, hypocrites! for ye shut up the kingdom of heaven against men: for ye neither go in yourselves, neither suffer ye them that are entering to go in.* (Matthew 23:13) *And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.* (Testaments of the Twelve Patriarchs 26:3) Yahusha (Jesus) charges the scribes and Pharisees with shutting up the kingdom of heaven against men, going in neither themselves nor letting others enter. Levi foresaw leaders of his own line dealing lawlessly with Yashar'el (Israel), and the veil of the temple being rent so that it would no longer cover their shame. In both the failing is a leadership that holds the door and breaks the commandments, and the people kept out are its victims. When the veil of the temple is torn at his death, the lawlessness of the keepers is laid bare.",
+  "member_fix": null
+ },
+ {
+  "id": 4790,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4798,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4799,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4824,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4825,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4826,
+  "verdict": "FIX",
+  "finding": "'the Formed one' is an internal doctrine-word the reader cannot see; unfolded in plain prose. The identification itself (the one who appears among men is Yahusha, not the Father) is right.",
+  "fix": "*And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30). *Until the El Elyon (Most High) shall visit the earth, coming Himself [as man, with men eating and drinking], and breaking the head of the dragon in the water. He shall save Yashar'el (Israel) and all the Gentiles [Elohim (God) speaking in the person of man].* (Testaments of the Twelve Patriarchs 109:3). Asher has just told his sons that they will sin, be handed to their enemies, and be scattered to the four corners of the earth. Then he says the Most High will visit the earth, coming Himself as man, and will save Yashar'el (Israel) and the Gentiles, who stand right beside the scattered of the verse before. Matthew shows the same one at the end of that road, the sign of the Son of Adam in heaven, all the tribes of the earth mourning, and the Son of Adam coming in the clouds with power and great glory. The one who comes in the person of man is Yahusha (Jesus), the one in whom Elohim (God) took form, who walked with Adam's line from the beginning and came in flesh, and the tribes that mourn are the tribes Asher says were scattered.",
+  "member_fix": null
+ },
+ {
+  "id": 4827,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4861,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4862,
+  "verdict": "FIX",
+  "finding": "Leviticus 21:10 is cited in a parenthesis but not quoted (come-and-see); the bare citation is removed and the claim kept in prose — if the live Leviticus text is in the library, quote it in full in italics instead. Also 'Yahuah's (God)' mis-formed; fixed to 'Yahuah's (God's)'.",
+  "fix": "*Then the high priest rent his clothes, saying, He hath spoken blasphemy; what further need have we of witnesses? behold, now ye have heard his blasphemy.* (Matthew 26:65) *And ye shall deal lawlessly together with Yashar'el (Israel), so He shall not bear with Jerusalem because of your wickedness; but the veil of the temple shall be rent, so as not to cover your shame.* (Testaments of the Twelve Patriarchs 26:3) The high priest tears his own clothes and calls the truth blasphemy, though the Torah forbids the high priest to rend his clothes. Levi had said that when the lawlessness of the leaders of his line was full, it would be the veil of the temple that was rent, so as not to cover their shame. One rending is a man's, done in anger to silence a witness; the other is Yahuah's (God's), and it uncovers. The charge is against the office as it was being used, not against the people under it.",
+  "member_fix": null
+ },
+ {
+  "id": 4863,
+  "verdict": "FIX",
+  "finding": "Last sentence reads 'the Gentiles' as the nations themselves, which puts the nations inside the salvation of the covenant blood (Red Line #7, the nations are not the seed); corrected to the scattered seed living among the nations, matching the reading used on the other Gentiles cards (4743, 4825).",
+  "fix": "*For this is my blood of the new testament, which is shed for many for the remission of sins.* (Matthew 26:28). *In thee shall be fulfilled the prophecy of heaven [concerning the Lamb of Elohim (God), and Saviour of the world], that a blameless one shall be delivered up for lawless men, and a sinless shall die for ungodly men [in the blood of the covenant, for the salvation of the Gentiles and 'of Israel', and shall destroy Beliar and his servants].* (Testaments of the Twelve Patriarchs 133:8). Jacob, embracing Joseph, tells him that in him the prophecy of heaven will be fulfilled: a blameless one delivered up for lawless men, a sinless one dying for ungodly men in the blood of the covenant. Yahusha (Jesus) at the table gives that blood its name, shed for many for the remission of sins. The Testament says the salvation is for the Gentiles and for the house of Yashar'el (Israel), and the Gentiles named beside Yashar'el (Israel) are the scattered seed of the house of Yashar'el (Israel) living among the nations, which is why the news goes out broadly: the sheep are scattered everywhere, and the ones who hear are the ones it was always for.",
+  "member_fix": null
+ },
+ {
+  "id": 4869,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4870,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4871,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4872,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4884,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4885,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4886,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ },
+ {
+  "id": 4887,
+  "verdict": "PASS",
+  "finding": "",
+  "fix": null,
+  "member_fix": null
+ }
+]

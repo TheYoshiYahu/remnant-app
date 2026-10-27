@@ -1,0 +1,473 @@
+[
+ {
+  "id": 4278,
+  "kind": "ADDR_REQUOTE",
+  "side": "T",
+  "old_addr": "ascension-isaiah|ascension-isaiah|9:12",
+  "new_addr": "ascension-isaiah|ascension-isaiah|9:12",
+  "old_verse": "And he said unto me: \"Crowns and thrones of glory they do not receive, till the Beloved will descend in the form in which you will see Him descend will descend, I say into the world in the last days Yahuah (Lord), who will be called Messiah (Christ).",
+  "new_verse": "And he said unto me: \"Crowns and thrones of glory they do not receive, till the Beloved will descend in the form in which you will see Him descend will descend, I say into the world in the last days Yahuah (Lord), who will be called Messiah (Christ).",
+  "neighbors": {
+   "9:10": "But they sat not on their thrones, nor were their crowns of glory on them.",
+   "9:11": "And I asked the angel who was with me: \"How is it that they have received the garments, but have not the thrones and the crowns?\"",
+   "9:13": "Nevertheless they see and know whose will be thrones, and whose the crowns when He has descended and been made in your form, and they will think that He is flesh and is a man.",
+   "9:14": "And the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is."
+  },
+  "other": {
+   "cite": "matthew 1:23",
+   "text": "Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us."
+  },
+  "old_note": "*Till the Beloved will descend in the form in which you will see Him descend, I say into the world in the last days.* The pre-incarnation announcement of the Beloved's descent in human form — the prophetic-Christology that lands at Matt 1:23's *Immanuel — Elohim (God) with us.*",
+  "new_note": "*till the Beloved will descend in the form in which you will see Him descend will descend, I say into the world in the last days Yahuah (Lord), who will be called Messiah (Christ).* (Ascension of Isaiah 9:12). The pre-incarnation announcement of the Beloved's descent in human form — the prophetic-Christology that lands at Matt 1:23's *Immanuel — Elohim (God) with us.*",
+  "drafter_reason": "The card sits on 9:12 and the italic is that verse, but the old wording dropped the live repeat 'will descend, I say' and the closing 'Yahuah (Lord), who will be called Messiah (Christ)'; requoted from the live verse verbatim, prose kept."
+ },
+ {
+  "id": 4291,
+  "kind": "ADDR_CITE_FIX",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|18:6",
+  "new_addr": "pseudepigrapha|testaments-xii|18:6",
+  "old_verse": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.",
+  "new_verse": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.",
+  "neighbors": {
+   "18:4": "And I was grieving for the race of the sons of men, and I prayed to Yahuah (Lord) that I might be saved.",
+   "18:5": "Then there fell upon me a sleep, and I beheld a high mountain, and I was upon it.",
+   "18:7": "And I entered from the first heaven, and I saw there a great sea hanging.",
+   "18:8": "And further I saw a second heaven far brighter and more brilliant, for there was a boundless light also therein."
+  },
+  "other": {
+   "cite": "matthew 3:16",
+   "text": "And Yahusha (Jesus), when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of Elohim (God) descending like a dove, and lighting upon him:"
+  },
+  "old_note": "*And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.* Testament of Levi 2:6 (TestXII ch 12:6 in the Charles concatenation) names the heavens-opening at the priestly investiture — the same heavens-opening Matt 3:16 narrates over Yahusha (Jesus) at the Yarden (Jordan). The Hebrew library knew the heavens open at the moment a covenant-bearing figure is invested for service; the gospel's opening of the heavens follows the same architecture.",
+  "new_note": "*And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.* Levi, telling his sons of his vision (Testaments of the Twelve Patriarchs 18:6), names the heavens-opening at the priestly investiture — the same heavens-opening Matt 3:16 narrates over Yahusha (Jesus) at the Yarden (Jordan). The Hebrew library knew the heavens open at the moment a covenant-bearing figure is invested for service; the gospel's opening of the heavens follows the same architecture.",
+  "drafter_reason": "The quotation 'And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.' is word for word at the card's verse 18:6; only the stale 'Levi 2:6 / ch 12:6' label was wrong (live 2:6 and 12:6 are unrelated verses)."
+ },
+ {
+  "id": 4317,
+  "kind": "PROSE_MOVE",
+  "side": "T",
+  "old_addr": "ascension-isaiah|ascension-isaiah|1:3",
+  "new_addr": "ascension-isaiah|ascension-isaiah|3:13",
+  "old_verse": "And of the eternal judgments and torments of Gehenna, and of the prince of this world, and of his angels, and his authorities and his powers.",
+  "new_verse": "For Beliar was in great wrath against Isaiah by reason of the vision, and because of the exposure wherewith he had exposed Sammael, and because through him the going forth of the Beloved from the seventh heaven had been made known, and His transformation and His descent and the likeness into which He should be transformed (that is) the likeness of man, and the persecution wherewith he should be persecuted, and the torturers wherewith the children of Yashar'el (Israel) should torture Him, and the coming of His twelve disciples, and the teaching, and that He should before the sabbath be crucified upon the tree, and should be crucified together with wicked men, and that He should be buried in the sepulchre,",
+  "neighbors": {
+   "3:11": "But Beliar dwelt in the heart of Manasseh and in the heart of the princes of Yahudah (Judah) and Benjamin and of the eunuchs and of the councillors of the king.",
+   "3:12": "And the words of Belchira pleased him exceedingly, and he sent and seized Isaiah.",
+   "3:14": "And the twelve who were with Him should be offended because of Him: and the watch of those who watched the sepulchre:",
+   "3:15": "And the descent of the angel of the assembly (Charles: \"the Christian Church\"), which is in the heavens, whom He will summon in the last days."
+  },
+  "other": {
+   "cite": "matthew 4:10",
+   "text": "Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve."
+  },
+  "old_note": "*Beliar was wroth with Hizkiyah (Hezekiah) because of his vision, and because of the unmasking with which he had unmasked Sammael, and because by him the going forth of the Beloved from the seventh heaven had been made known.* Ascension 1:3 names Beliar's adversarial pattern toward the prophetic revelation of the Beloved's descent. Matt 4:10's *Get thee hence, Satan* sends the same Beliar-figure away in the same architecture: the Beloved who has descended dismisses the king-of-this-world who opposes the descent.",
+  "new_note": "*Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve.* (Matthew 4:10). *For Beliar was in great wrath against Isaiah by reason of the vision, and because of the exposure wherewith he had exposed Sammael, and because through him the going forth of the Beloved from the seventh heaven had been made known, and His transformation and His descent and the likeness into which He should be transformed (that is) the likeness of man, and the persecution wherewith he should be persecuted, and the torturers wherewith the children of Yashar'el (Israel) should torture Him, and the coming of His twelve disciples, and the teaching, and that He should before the sabbath be crucified upon the tree, and should be crucified together with wicked men, and that He should be buried in the sepulchre,* (Ascension of Isaiah 3:13). Beliar's rage against Isaiah is over one thing: the prophet had made known the Beloved's going forth from the seventh heaven and his descent in the likeness of man. In the wilderness the same adversary meets the Beloved now come down in that likeness, and is sent away with the commandment of Torah: worship Yahuah (the Lord) and serve him only. The one Beliar tried to keep hidden dismisses him with the Word.",
+  "drafter_reason": "Re-pointed from 1:3 to 3:13 — the verse the old note quoted (Beliar's wrath at the revealing of the Beloved); 1:3 is the list of judgments and powers. Live 3:13 text is long and is quoted whole, as the rule requires."
+ },
+ {
+  "id": 4739,
+  "kind": "PROSE_MOVE",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|58:5",
+  "new_addr": "pseudepigrapha|testaments-xii|59:1",
+  "old_verse": "Until Yahuah (Lord) visit you, when with perfect heart ye repent and walk in all His commandments, and He bring you up from captivity among the Gentiles.",
+  "new_verse": "And after these things shall a star arise to you from Jacob in peace, And a man shall arise [from my seed], like the sun of righteousness, Walking with the sons of men in meekness and righteousness; And no sin shall be found in him.",
+  "neighbors": {
+   "59:2": "And the heavens shall be opened unto him, To pour out the spirit, (even) the blessing of the Holy Father;",
+   "59:3": "And He shall pour out the spirit of grace upon you; And ye shall be unto Him sons in truth, And ye shall walk in His commandments first and last."
+  },
+  "other": {
+   "cite": "matthew 20:30",
+   "text": "And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Adonai (Lord), thou Son of David."
+  },
+  "old_note": "*And after these things shall a star arise to you from Jacob in peace.* Testaments of the Twelve Patriarchs 37:5 (Testament of Levi 18 / Testament of Yahudah (Judah) 24 cluster, depending on the recension-positioning the parsed-text preserves) names the wisdom-stream's direct articulation of the star-from-Ya'aqov (Jacob) substance — the Davidic-Messianic credential the marginalized two-blind-men at Yericho (Jericho) recognize at Matt 20:30's *thou Son of David, have mercy on us.* The framework reads the verse in continuity with Bamidbar (Numbers) 24:17's *there shall come a Star out of Ya'aqov (Jacob), and a Sceptre shall rise out of Yashar'el (Israel)* the prophet Bila'am (Balaam) had carried at the pre-entry-to-the-Land vision. The wisdom-stream and the Tanakh-prophetic-witness cohere — the star-from-Ya'aqov (Jacob) substance is the same Davidic-Messianic credential the marginalized-substance walks-into-recognizing at the gospel-pivot.",
+  "new_note": "*And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Adonai (Lord), thou Son of David.* (Matthew 20:30). *And after these things shall a star arise to you from Jacob in peace, And a man shall arise [from my seed], like the sun of righteousness, Walking with the sons of men in meekness and righteousness; And no sin shall be found in him.* (Testaments of the Twelve Patriarchs 59:1). Yahudah (Judah) tells his sons that a star will rise to them out of Jacob, a man from his own seed who walks among the sons of men in meekness and without sin. Two blind men by the Jericho road, who cannot see him, cry out to him by that very title, Son of David, the seed of Yahudah (Judah). The testament named the man; the blind men recognized him by his line before they could see his face.",
+  "drafter_reason": "Re-pointed from 58:5 to 59:1 — the verse the old note quoted (the star out of Jacob); 58:5 is the captivity verse and carried no star."
+ },
+ {
+  "id": 4826,
+  "kind": "PROSE_MOVE",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|109:2",
+  "new_addr": "pseudepigrapha|testaments-xii|109:3",
+  "old_verse": "For I know that ye shall sin, and be delivered into the hands of your enemies; and your land shall be made desolate, and your holy places destroyed, and ye shall be scattered unto the four corners of the earth. And ye shall be set at nought in the dispersion as useless water,",
+  "new_verse": "Until the El Elyon (Most High) shall visit the earth, coming Himself [as man, with men eating and drinking], and breaking the head of the dragon in the water. He shall save Yashar'el (Israel) and all the Gentiles [Elohim (God) speaking in the person of man].",
+  "neighbors": {
+   "109:1": "Become not, my children, as Sodom, which knew not the angels of Yahuah (Lord), and perished for ever.",
+   "109:2": "For I know that ye shall sin, and be delivered into the hands of your enemies; and your land shall be made desolate, and your holy places destroyed, and ye shall be scattered unto the four corners of the earth. And ye shall be set at nought in the dispersion as useless water,",
+   "109:4": "[Therefore do 'ye also, my children,' tell these things to your children, that they disobey Him not.",
+   "109:5": "For I have known that ye shall assuredly be disobedient, and assuredly act ungodly, not giving heed to the law of Elohim (God), but to the commandments of men, being corrupted through wickedness."
+  },
+  "other": {
+   "cite": "matthew 24:30",
+   "text": "And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory."
+  },
+  "old_note": "*Until the Most High shall visit the earth, coming Himself as man, with men eating and drinking, and breaking the head of the dragon in the water. He shall save Yashar'el (Israel) and all the Gentiles.* Testaments of the XII Patriarchs (Asher 6:3) names the wisdom-stream articulation of the Most-High-shall-visit-the-earth-coming-Himself substance — the substantial-direct-Father-and-Son architecture per the framework's Formless-Source / Formed-Expression substance. The framework reads the verse against Matt 24:30's *they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* The substantial *Most High shall visit the earth, coming Himself* substance is the substantial-substance the substantial Formed-Expression of the Formless-Source-substance walks-into-the-substantial-incarnation — the substantial-King-of-Yashar'el (Israel) is the substantial-Formed-Expression of the substantial-Formless-Source-substance the Father-substance is, the same Formed-Expression the substantial-Tanakh walked the substantial Adonai Yahuah (the Lord GOD) of the interactions-with-the-substantial-patriarchs-and-prophets. The substantial *with men eating and drinking* substance carries-back-into the substantial-Matt 24:38 *eating and drinking* substance the days-of-Noach (Noah) walked, the substantial-substance the incarnation-substance walks-into in continuity with the substantial-Father's-presence-walking-with-the-substantial-Adamic-substance from the substantial-creation-substance forward.",
+  "new_note": "*And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30). *Until the El Elyon (Most High) shall visit the earth, coming Himself [as man, with men eating and drinking], and breaking the head of the dragon in the water. He shall save Yashar'el (Israel) and all the Gentiles [Elohim (God) speaking in the person of man].* (Testaments of the Twelve Patriarchs 109:3). Asher has just told his sons that they will sin, be handed to their enemies, and be scattered to the four corners of the earth. Then he says the Most High will visit the earth, coming Himself as man, and will save Yashar'el (Israel) and the Gentiles, who stand right beside the scattered of the verse before. Matthew shows the same one at the end of that road, the sign of the Son of Adam in heaven, all the tribes of the earth mourning, and the Son of Adam coming in the clouds with power and great glory. The one who comes in the person of man is Yahusha (Jesus), the Formed one who walked with Adam's line from the beginning and came in flesh, and the tribes that mourn are the tribes Asher says were scattered.",
+  "drafter_reason": "MOVED to the next verse (109:3): the old note quotes 'Until the Most High shall visit the earth, coming Himself...', which is 109:3, not 109:2. Old citation 'Asher 6:3' was stale. I identify the one who comes in the person of man as Yahusha (Jesus), the Formed one, per the standing nature-of-God rule; please look at that sentence. Old note's heavy jargon and its Matthew 24:38 aside were dropped."
+ },
+ {
+  "id": 4863,
+  "kind": "PROSE_MOVE",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|133:6",
+  "new_addr": "pseudepigrapha|testaments-xii|133:8",
+  "old_verse": "For Joseph also besought our father 'that he would pray for his brethren', that 'the Lord' would not impute to them as sin whatever evil they had done unto him.",
+  "new_verse": "In thee shall be fulfilled the prophecy of heaven [concerning the Lamb of Elohim (God), and Saviour of the world], that a blameless one shall be delivered up for lawless men, and a sinless shall die for ungodly men [in the blood of the covenant, for the salvation of the Gentiles and 'of Israel', and shall destroy Beliar and his servants].",
+  "neighbors": {
+   "133:6": "For Joseph also besought our father 'that he would pray for his brethren', that 'the Lord' would not impute to them as sin whatever evil they had done unto him.",
+   "133:7": "And thus Jacob cried out: My good child, thou hast prevailed over the bowels of thy father Jacob. And he embraced him, and kissed him for two hours, saying:"
+  },
+  "other": {
+   "cite": "matthew 26:28",
+   "text": "For this is my blood of the new testament, which is shed for many for the remission of sins."
+  },
+  "old_note": "*The blameless one shall be defiled for lawless men, the sinless one shall die for ungodly men, in the blood of the covenant, for the salvation of the Gentiles and of Yashar'el (Israel).* Testament of Benjamin 88:31 names THE direct wisdom-stream verbal-anchor for the blameless-one-defiled-for-lawless-men + the sinless-one-die-for-ungodly-men + the blood-of-the-covenant-for-the-salvation-of-Yashar'el (Israel) substance. The framework reads the verse against Matt 26:28's *this is my blood of the new testament, which is shed for many for the remission of sins.* The substantial-Test.-Benjamin-substance walks-the-direct-prefiguring-substance — the substantial-blood-of-the-covenant-substance + the substantial-shed-for-many-substance + the substantial-remission-of-sins-substance the wisdom-stream had named-substantively at-the-Test.-Benjamin-register-the-substantial-pre-Christian-Maccabean-period-substance walked-out-substantively. The framework reads this carefully — the substantial *salvation of the Gentiles* substance the Test.-Benjamin-substance walks is the substantial-Tanakh-prophetic-substance the prophet-Yeshayahu (Isaiah) walked at Isaiah 49:6 (*it is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar'el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth*) walks-into directly. The substantial *gathering of the twelve tribes from the scattering-substance* + the substantial *light to the Gentiles* substance walk-substantively-at-the-substantial-same-substance per Red Line #7 + Red Line #11 — the wild-olive-branches-the-living-descendants-of-the-broken-off are-the-substantial-scattered-seed-of-the-house-of-Yashar'el (Israel)-substance the substantial-King-of-Yashar'el (Israel)-as-the-Pesach-lamb-substance walks-substantively the substantial-gathering-of-the-substantial-twelve-tribes-substance through-the-substantial-new-covenant-substance the substantial-blood-of-the-covenant-substance inaugurates. NOT-the-categorical-Gentile-grafting-by-faith-confession-substance the inherited-Christian-collapse walks; the substantial-Gentiles-substance the Test.-Benjamin-substance walks is the substantial-nations-among-whom-the-scattered-seed-have-been-scattered-substance, walked-substantively the substantial-citizens-of-the-substantial-kingdom-substance the substantial-Father-substance walks-out-substantively the substantial-broadcast-of-the-gospel-substance the King-of-Yashar'el (Israel) walks-out at Matthew 24:14 + Matthew 28:19 walks-into substantively.",
+  "new_note": "*For this is my blood of the new testament, which is shed for many for the remission of sins.* (Matthew 26:28). *In thee shall be fulfilled the prophecy of heaven [concerning the Lamb of Elohim (God), and Saviour of the world], that a blameless one shall be delivered up for lawless men, and a sinless shall die for ungodly men [in the blood of the covenant, for the salvation of the Gentiles and 'of Israel', and shall destroy Beliar and his servants].* (Testaments of the Twelve Patriarchs 133:8). Jacob, embracing Joseph, tells him that in him the prophecy of heaven will be fulfilled: a blameless one delivered up for lawless men, a sinless one dying for ungodly men in the blood of the covenant. Yahusha (Jesus) at the table gives that blood its name, shed for many for the remission of sins. The Testament says the salvation is for the Gentiles and for the house of Yashar'el (Israel), and the Gentiles named beside Yashar'el (Israel) are the nations among whom the scattered seed was sent, which is why the news goes out broadly while the sheep who hear are the ones it was always for.",
+  "drafter_reason": "MOVED to 133:8. The old note quotes 'The blameless one shall be defiled for lawless men...', which is 133:8, not the card's current verse (133:6, Joseph asking his father to pray for his brethren). 133:8 is two verses on, not adjacent to 133:6, so it does not fit the prev/next rule; I moved it anyway because the old note plainly describes it and the Matthew 26:28 link only works there. Another card (1 Peter 3:18) already sits on 133:8. If a non-adjacent move is not permitted, this card needs a different Matthew verse for 133:6 (Matthew 5:44 is already used there). Old citation 'Benjamin 88:31' stale. Live text reads 'delivered up', not 'defiled'. Old note's 'Maccabean period' and its Isaiah 49:6 aside were dropped."
+ },
+ {
+  "id": 4870,
+  "kind": "PROSE_MOVE",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|20:5",
+  "new_addr": "pseudepigrapha|testaments-xii|21:1",
+  "old_verse": "And therefore there have been given to thee counsel and understanding, That thou mightest instruct thy sons concerning this;",
+  "new_verse": "And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the El Elyon (Most High).",
+  "neighbors": {
+   "21:2": "And He said to me: Levi, I have given thee the blessings of the priesthood until I come and sojourn in the midst of Yashar'el (Israel).",
+   "21:3": "Then the angel brought me down to the earth, and gave me a shield and a sword, and said to me: Execute vengeance on Shechem because of Dinah, thy sister, and I will be with thee because Yahuah (Lord) hath sent me."
+  },
+  "other": {
+   "cite": "matthew 27:51",
+   "text": "And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;"
+  },
+  "old_note": "*And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the Most High.* Testaments of the XII Patriarchs / Testament of Levi (Charles edition seq #14, verse 5; standard Test. Levi 3:5—4:2 conjoint at the verse-break) names THE direct wisdom-stream verbal-anchor for the gates-of-heaven-opened-and-the-holy-temple-seen substance the temple-veil-rent at Matt 27:51 enacts at the historical-pivot. The framework reads the verses together: the angel-opening-the-gates-of-heaven at the Test. Levi vision is the wisdom-stream's heavenly-register articulation of the architecture the Father walks-out at the cross — when the King-of-Yashar'el (Israel)'s flesh-veil is torn, the gates-of-heaven that the Test. Levi vision opened in vision-form are opened operative-form. The wisdom-stream and the gospel cohere at the architecture: the gates-of-heaven-opened, the holy-temple-revealed, the way-to-the-Father-opened — the framework reads the substance per Red Line #11's ingathering-of-the-paternal-blood-remnant architecture and Red Line #4's Torah-stands-fulfilled-not-abolished posture.",
+  "new_note": "*And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;* (Matthew 27:51). *And thereupon the angel opened to me the gates of heaven, and I saw the holy temple, and upon a throne of glory the El Elyon (Most High).* (Testaments of the Twelve Patriarchs 21:1). Levi is shown the gates of heaven opened and the holy temple with the throne of glory inside it. At the death of Yahusha (Jesus) the veil that closed the earthly holy of holies is torn from the top down, opened from heaven's side and not from ours. What Levi saw opened in vision is opened in fact at the cross, and the way into the holiest is laid bare.",
+  "drafter_reason": "Re-pointed from 20:5 to 21:1 — the verse the old note quoted (the gates of heaven opened); 20:5 is about counsel given to Levi."
+ },
+ {
+  "id": 8025,
+  "kind": "ADDR_MOVE",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|100:2",
+  "new_addr": "pseudepigrapha|testaments-xii|100:1",
+  "old_verse": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+  "new_verse": "And now, my children, 'I exhort you,' love ye each one his brother, and put away hatred from your hearts, love one another in deed, and in word, and in the inclination of the soul.",
+  "neighbors": {
+   "100:2": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+   "100:3": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him."
+  },
+  "other": {
+   "cite": "john 13:34",
+   "text": "A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another."
+  },
+  "old_note": "*love one another in deed, and in word, and in the inclination of the soul.* The Testament of Gad (DB ch 62 v.2) carries the love-one-another command in the patriarch's own testimony to his sons — and Gad names it out of his own repentance for the hatred he bore against Joseph his brother. Yahusha's (Jesus') *a new commandment I give unto you, That ye love one another* (John 13:34) is *new* not because the Hebrew library never named brotherly love, but because he loves *as I have loved you* — the patriarch's heart-command brought to its measure in the Formed one's own laying-down of his life. The wisdom of the fathers already pressed the command on the twelve sons of Yashar'el (Israel); the gospel binds it to the cross.",
+  "new_note": "*love one another in deed, and in word, and in the inclination of the soul.* (Testaments of the Twelve Patriarchs 100:1). Gad carries the love-one-another command in his own testimony to his sons, and he names it out of his own repentance for the hatred he bore against Joseph his brother. Yahusha's (Jesus') *a new commandment I give unto you, That ye love one another* (John 13:34) is *new* not because the Hebrew library never named brotherly love, but because he loves *as I have loved you* — the patriarch's heart-command brought to its measure in the Formed one's own laying-down of his life. The wisdom of the fathers already pressed the command on the twelve sons of Yashar'el (Israel); the gospel binds it to the cross.",
+  "drafter_reason": "The quoted words 'love one another in deed, and in word, and in the inclination of the soul' sit at 100:1 (the card's prev), not at 100:2, which is Gad's 'I spake peaceably to Joseph... the spirit of hatred darkened my mind'; moved to 100:1 and the old 'DB ch 62 v.2' label replaced with the live citation."
+ },
+ {
+  "id": 45649,
+  "kind": "PHRASE_MOVE",
+  "side": "S",
+  "old_addr": "adam-eve-conflict|1-adam-eve|24:5",
+  "new_addr": "adam-eve-conflict|1-adam-eve|24:4",
+  "old_verse": "And as you sued for forgiveness through that blood, so also will I make My blood forgiveness of sins, and erase transgressions in it.",
+  "new_verse": "Then came the Word of Elohim (God) to Adam, and said to him, \"O Adam, as you have shed your blood, so will I shed My own blood when I become flesh of your descendants; and as you died, O Adam, so also will I die. And as you built an altar, so also will I make for you an altar of the earth; and as you offered your blood on it, so also will I offer My blood on an altar on the earth.",
+  "neighbors": {
+   "24:2": "And Elohim (God) sent from His presence a bright fire, that consumed their offering.",
+   "24:3": "He smelled the sweet savor of their offering, and showed them mercy.",
+   "24:5": "And as you sued for forgiveness through that blood, so also will I make My blood forgiveness of sins, and erase transgressions in it.",
+   "24:6": "And now, behold, I have accepted your offering, O Adam, but the days of the covenant in which I have bound you are not fulfilled. When they are fulfilled, then will I bring you back into the garden."
+  },
+  "other": {
+   "cite": "hebrews 9:12",
+   "text": "Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us."
+  },
+  "old_note": "Hebrews 9:12 — *Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.* The Word's pledge \"I will offer My blood\" in 1-adam-eve 24:5 is fulfilled when Messiah enters by His own blood — the once-for-all forgiveness promised to Adam.",
+  "new_note": "Hebrews 9:12 — *Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.* The Word's pledge \"I will offer My blood\" in 1 Adam and Eve 24:4 is fulfilled when Messiah enters by His own blood — the once-for-all forgiveness promised to Adam.",
+  "drafter_reason": "\"so also will I offer My blood\" is at 24:4 (prev), not 24:5, and the note's pledge-of-blood point is that verse."
+ },
+ {
+  "id": 45917,
+  "kind": "PHRASE_MOVE",
+  "side": "S",
+  "old_addr": "adam-eve-conflict|1-adam-eve|45:11",
+  "new_addr": "adam-eve-conflict|1-adam-eve|45:10",
+  "old_verse": "There is no way for you at present to come from this life to rest, not until My Word comes, who is My Word. Then He will make a way for you, and you shall have rest.\" Then Elohim (God) called with His Word to the fire that burned around the cave, that it split itself in half, until Adam had gone through it. Then the fire parted itself by Elohim's (God's) order, and a way was made for Adam*.",
+  "new_verse": "Then you will see the burning of his fire, that will be burning around you and likewise your descendants. You will not be delivered from it until My coming; just like you cannot go into your cave right now because of the great fire around it; not until My Word comes and makes a way for you on the day My covenant is fulfilled.",
+  "neighbors": {
+   "45:8": "But no, Adam, he did not do all that out of love to you; but he wished to make you come out of light into darkness; and from an exalted state to degradation; from glory to abasement; from joy to sorrow; and from rest to fasting and fainting.\"",
+   "45:9": "Elohim (God) also said to Adam, \"See this fire kindled by Satan around your cave; see this wonder that surrounds you; and know that it will encompass about both you and your descendants, when you obey his command; that he will plague you with fire; and that you will go down into hell after you are dead.",
+   "45:11": "There is no way for you at present to come from this life to rest, not until My Word comes, who is My Word. Then He will make a way for you, and you shall have rest.\" Then Elohim (God) called with His Word to the fire that burned around the cave, that it split itself in half, until Adam had gone through it. Then the fire parted itself by Elohim's (God's) order, and a way was made for Adam*.",
+   "45:12": "And Elohim (God) withdrew His Word from Adam. * Reference: Exodus 14:21,22 and Joshua 3:15-17"
+  },
+  "other": {
+   "cite": "1-peter 1:20",
+   "text": "Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,"
+  },
+  "old_note": "1 Peter 1:20 — *Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,* The deliverance promised \"until My coming\" was foreordained before the foundation, manifest in these last times for the children of Adam.",
+  "new_note": "1 Peter 1:20 — *Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,* The deliverance promised \"until My coming\" was foreordained before the foundation, manifest in these last times for the children of Adam.",
+  "drafter_reason": "\"until My coming\" is at 45:10 (prev) and the note describes that promise."
+ },
+ {
+  "id": 48726,
+  "kind": "PHRASE_MOVE",
+  "side": "S",
+  "old_addr": "apocalypse-of-abraham|apocalypse-of-abraham|11:6",
+  "new_addr": "apocalypse-of-abraham|apocalypse-of-abraham|11:3",
+  "old_verse": "Be of good cheer, and come!\"",
+  "new_verse": "And I said: \"Here am I, thy servant.\"",
+  "neighbors": {
+   "11:1": "And I rose up and saw him who had grasped me by my right hand and set me up upon my feet; and the appearance of his body was like sapphire, and the look of his countenance like chrysolite, and the hair of his head like snow, and the turban upon his head like the appearance of the rainbow, and the clothing of his garments like purple; and a golden sceptre was in his right hand.",
+   "11:2": "And he said to me: \"Abraham!\"",
+   "11:4": "And he said: \"Let not my look affright thee, nor my speech, that thy soul be not perturbed.",
+   "11:5": "Come with me and I will go with thee, until the sacrifice, visible; but after the sacrifice, invisible for ever."
+  },
+  "other": {
+   "cite": "joshua 5:14",
+   "text": "And he said, Nay; but as captain of the host of Yahuah (LORD) am I now come. And Joshua fell on his face to the earth, and did worship, and said unto him, What saith my lord unto his servant?"
+  },
+  "old_note": "Joshua 5:14 — *And he said, Nay; but as captain of the host of Yahuah (LORD) am I now come. And Joshua fell on his face to the earth, and did worship, and said unto him, What saith my lord unto his servant?* The captain of Yahuah's host who is worshipped by Joshua is the same Name-bearing angel Abraham follows with \"Here am I, thy servant.\"",
+  "new_note": "Joshua 5:14 — *And he said, Nay; but as captain of the host of Yahuah (LORD) am I now come. And Joshua fell on his face to the earth, and did worship, and said unto him, What saith my lord unto his servant?* The captain of Yahuah's host who is worshipped by Joshua is the same Name-bearing angel Abraham follows with \"Here am I, thy servant.\"",
+  "drafter_reason": "\"Here am I, thy servant.\" is Abraham's answer at 11:3, which is the verse the note describes."
+ },
+ {
+  "id": 48727,
+  "kind": "PHRASE_MOVE",
+  "side": "S",
+  "old_addr": "apocalypse-of-abraham|apocalypse-of-abraham|11:6",
+  "new_addr": "apocalypse-of-abraham|apocalypse-of-abraham|11:5",
+  "old_verse": "Be of good cheer, and come!\"",
+  "new_verse": "Come with me and I will go with thee, until the sacrifice, visible; but after the sacrifice, invisible for ever.",
+  "neighbors": {
+   "11:3": "And I said: \"Here am I, thy servant.\"",
+   "11:4": "And he said: \"Let not my look affright thee, nor my speech, that thy soul be not perturbed.",
+   "11:6": "Be of good cheer, and come!\""
+  },
+  "other": {
+   "cite": "acts 7:2",
+   "text": "And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,"
+  },
+  "old_note": "Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* The same God of glory who called Abraham out of Mesopotamia now sends His Name-bearing angel to say \"come with me.\"",
+  "new_note": "Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* The same God of glory who called Abraham out of Mesopotamia now sends His Name-bearing angel to say \"Come with me\"",
+  "drafter_reason": "The angel's words \"Come with me and I will go with thee\" are at 11:5."
+ },
+ {
+  "id": 49199,
+  "kind": "PHRASE_MOVE",
+  "side": "S",
+  "old_addr": "ascension-isaiah|ascension-isaiah|1:13",
+  "new_addr": "ascension-isaiah|ascension-isaiah|1:7",
+  "old_verse": "And Isaiah said to Hezekiah: `The Beloved hath made of none effect thy design, and the purpose of thy heart will not be accomplished, for with this calling have I been called and I shall inherit the heritage of the Beloved.'",
+  "new_verse": "Isaiah said to Hezekiah the king, but not in the presence of Manasseh only did he say unto him: `As Yahuah (Lord) liveth, and the Spirit which speaketh in me liveth, all these commands and these words will be made of none effect by Manasseh thy son, and through the agency of his hands I shall depart mid the torture of my body.",
+  "neighbors": {
+   "1:5": "And he delivered unto him the written words which Samnas the scribe had written, and also those which Isaiah, the son of Amoz, had given to him, and also to the prophets, that they might write and store up with him what he himself had seen in the king's house regarding the judgment of the angels, and the destruction of this world, and regarding the garments of the saints and their going forth, and regarding their transformation and the persecution and ascension of the Beloved.",
+   "1:6": "In the twentieth year of the reign of Hezekiah, Isaiah had seen the words of this prophecy and had delivered them to Josab his son. And whilst he (Hezekiah) gave commands, Josab the son of Isaiah standing by.",
+   "1:8": "And Sammael Malchira will serve Manasseh, and execute all his desire, and he will become a follower of Beliar rather than of me:",
+   "1:9": "And many in Jerusalem and in Judea he will cause to abandon the true faith, and Beliar will dwell in Manasseh, and by his hands I shall be sawn asunder."
+  },
+  "other": {
+   "cite": "2-timothy 4:6",
+   "text": "For I am now ready to be offered, and the time of my departure is at hand."
+  },
+  "old_note": "2 Timothy 4:6 — *For I am now ready to be offered, and the time of my departure is at hand.* Paul names his death \"departure\" as Isaiah names his — \"I shall depart\" — embracing it as appointed (Ascension of Isaiah 1:13).",
+  "new_note": "2 Timothy 4:6 — *For I am now ready to be offered, and the time of my departure is at hand.* Paul names his death \"departure\" as Isaiah names his — \"I shall depart\" — embracing it as appointed (Ascension of Isaiah 1:7).",
+  "drafter_reason": "\"I shall depart\" is at 1:7 and is the word the whole Paul comparison rests on; 1:13 has the calling but not the word."
+ },
+ {
+  "id": 59936,
+  "kind": "PHRASE_MOVE",
+  "side": "S",
+  "old_addr": "pseudepigrapha|testaments-xii|10:3",
+  "new_addr": "pseudepigrapha|testaments-xii|10:2",
+  "old_verse": "But it ever suggesteth (to him) to destroy him that he envieth; and so long as he that is envied flourisheth, he that envieth fadeth away.",
+  "new_verse": "For envy ruleth over the whole mind of a man, and suffereth him 'neither to eat nor to drink', nor to do any good thing.",
+  "neighbors": {
+   "10:1": "And now, my children, 'hearken unto me and' beware of the spirit of deceit and of envy.",
+   "10:3": "But it ever suggesteth (to him) to destroy him that he envieth; and so long as he that is envied flourisheth, he that envieth fadeth away.",
+   "10:4": "Two years 'therefore' I afflicted my soul with fasting in the fear of Yahuah (Lord), and I learnt that deliverance from envy cometh by the fear of Elohim (God)."
+  },
+  "other": {
+   "cite": "james 3:16",
+   "text": "For where envying and strife is, there is confusion and every evil work."
+  },
+  "old_note": "James 3:16 — *For where envying and strife is, there is confusion and every evil work.* — envy's fruit, the same root Simeon names that \"suffereth him to do no good thing.\"",
+  "new_note": "James 3:16 — *For where envying and strife is, there is confusion and every evil work.* — envy's fruit, the same root Simeon names that \"suffereth him 'neither to eat nor to drink', nor to do any good thing.\"",
+  "drafter_reason": "The words about envy suffering a man to do no good are at 10:2 (prev), which the note describes."
+ },
+ {
+  "id": 59968,
+  "kind": "ADDR_REQUOTE",
+  "side": "S",
+  "old_addr": "pseudepigrapha|testaments-xii|18:7",
+  "new_addr": "pseudepigrapha|testaments-xii|18:7",
+  "old_verse": "And I entered from the first heaven, and I saw there a great sea hanging.",
+  "new_verse": "And I entered from the first heaven, and I saw there a great sea hanging.",
+  "neighbors": {
+   "18:5": "Then there fell upon me a sleep, and I beheld a high mountain, and I was upon it.",
+   "18:6": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.",
+   "18:8": "And further I saw a second heaven far brighter and more brilliant, for there was a boundless light also therein.",
+   "18:9": "And I said to the angel, Why is this so? And the angel said to me, Marvel not at this, for thou shalt see another heaven more brilliant and incomparable."
+  },
+  "other": {
+   "cite": "2-enoch 3:1",
+   "text": "It came to pass, when Enoch had told his sons, that the angels took him on to their wings and bore him up on to the first heaven and placed him on the clouds. And there I looked, and again I looked higher, and saw the ether, and they placed me on the first heaven and showed me a very great Sea, greater than the earthly sea."
+  },
+  "old_note": "2 Enoch 3:1 — *they bore him up on to the first heaven and placed him on the clouds... and saw a very great Sea, greater than the earthly sea.* Enoch's ascent to the first heaven and its great sea is the same first heaven and \"great sea hanging\" Levi enters.",
+  "new_note": "2 Enoch 3:1 — *bore him up on to the first heaven and placed him on the clouds ... and showed me a very great Sea, greater than the earthly sea.* Enoch's ascent to the first heaven and its great sea is the same first heaven and \"great sea hanging\" Levi enters.",
+  "drafter_reason": "The card is on 18:7 ('I entered from the first heaven, and I saw there a great sea hanging') and that end is right; the 2 Enoch 3:1 quote was off, since the live verse reads 'the angels took him on to their wings and bore him up...' and 'they placed me on the first heaven and showed me a very great Sea', not 'they bore him up' or 'and saw'. Requoted verbatim."
+ },
+ {
+  "id": 60042,
+  "kind": "PHRASE_PATCH",
+  "side": "S",
+  "old_addr": "pseudepigrapha|testaments-xii|47:5",
+  "new_addr": "pseudepigrapha|testaments-xii|47:5",
+  "old_verse": "And not knowing what I had done, I wished to slay her; but she privily sent my pledges, and put me to shame.",
+  "new_verse": "And not knowing what I had done, I wished to slay her; but she privily sent my pledges, and put me to shame.",
+  "neighbors": {
+   "47:3": "Therefore being drunk with wine, I did not recognise her; and her beauty deceived me, through the fashion of her adorning.",
+   "47:4": "And I turned aside to her, and said: Let me go in unto thee. And she said: What wilt thou give me? And I gave her my staff, and my girdle, and the diadem of my kingdom 'in pledge'. And I went in unto her, and she conceived.",
+   "47:6": "And when I called her, I heard also the secret words which 'I spoke' when lying with her in my drunkenness; and I could not slay her, because it was from Yahuah (Lord).",
+   "47:7": "For I said, Lest haply she did it in subtlety, having received the pledge from another woman."
+  },
+  "other": {
+   "cite": "genesis 38:26",
+   "text": "And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more."
+  },
+  "old_note": "Genesis 38:26 — *And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more.* Judah's \"I came not again near her while I lived\" is the same confession Moses sets down.",
+  "new_note": "Genesis 38:26 — *And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more.* Judah's \"she privily sent my pledges, and put me to shame\" is the same confession Moses sets down.",
+  "drafter_reason": "The quoted words are not in live 47:5; replaced with the confession actually there (the pledges sent, Judah put to shame) which still fits Genesis 38:26."
+ },
+ {
+  "id": 60205,
+  "kind": "PHRASE_MOVE",
+  "side": "S",
+  "old_addr": "pseudepigrapha|testaments-xii|87:5",
+  "new_addr": "pseudepigrapha|testaments-xii|87:3",
+  "old_verse": "For there is no inclination or thought which Yahuah (Lord) knoweth not, for He created every man after His own image.",
+  "new_verse": "And the one does not fall short of the other by a third part of a hair; for by weight, and measure, and rule was all the creation made.",
+  "neighbors": {
+   "87:1": "And I was swift on my feet like the deer, and my father Jacob appointed me for all messages, and as a deer did he give me his blessing.",
+   "87:2": "For as the potter knoweth the vessel, how much it is to contain, and bringeth clay accordingly, so also doth Yahuah (Lord) make the body after the likeness of the spirit, and according to the capacity of the body doth He implant the spirit.",
+   "87:4": "And as the potter knoweth the use of each vessel, what it is meet for, so also doth Yahuah (Lord) know the body, how far it will persist in goodness, and when it beginneth in evil.",
+   "87:5": "For there is no inclination or thought which Yahuah (Lord) knoweth not, for He created every man after His own image."
+  },
+  "other": {
+   "cite": "psalms 139:14",
+   "text": "I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well."
+  },
+  "old_note": "Psalm 139:14 — *I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.* — that the body is made \"by weight, and measure, and rule\" after the likeness of the spirit is the wonder of being fearfully and wonderfully made.",
+  "new_note": "Psalm 139:14 — *I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.* — that the body is made \"by weight, and measure, and rule\" after the likeness of the spirit is the wonder of being fearfully and wonderfully made.",
+  "drafter_reason": "\"by weight, and measure, and rule\" is at 87:3 and the note's point about the body made after the spirit is that verse."
+ },
+ {
+  "id": 60219,
+  "kind": "PHRASE_MOVE",
+  "side": "S",
+  "old_addr": "pseudepigrapha|testaments-xii|89:5",
+  "new_addr": "pseudepigrapha|testaments-xii|89:3",
+  "old_verse": "And Yahuah (Lord) shall scatter them upon the face of all the earth, until the compassion of Yahuah (Lord) shall come, a man working righteousness and working mercy unto all them that are afar off, and to them that are near.",
+  "new_verse": "And after ye have become minished and made few, ye shall return and acknowledge Yahuah Elohaychem (the Lord your God); and He shall bring you back into your own land, according to His abundant mercy.",
+  "neighbors": {
+   "89:1": "These things I say unto you, my children, for I have read in the writing of Enoch that ye yourselves also shall depart from Yahuah (Lord), walking according to all the lawlessness of the Gentiles, and ye shall do according to all the wickedness of Sodom.",
+   "89:2": "And Yahuah (Lord) shall bring captivity upon you, and 'there' shall ye serve your enemies, and ye shall be bowed down with every affliction and tribulation, until Yahuah (Lord) have consumed you all.",
+   "89:4": "And it shall be, that after that they come into the land of their fathers, they shall again forget Yahuah (Lord) and become ungodly.",
+   "89:5": "And Yahuah (Lord) shall scatter them upon the face of all the earth, until the compassion of Yahuah (Lord) shall come, a man working righteousness and working mercy unto all them that are afar off, and to them that are near."
+  },
+  "other": {
+   "cite": "isaiah 11:11",
+   "text": "And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt, and from Pathros, and from Cush, and from Elam, and from Shinar, and from Hamath, and from the islands of the sea."
+  },
+  "old_note": "Isaiah 11:11 — *And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left...* — \"after ye have become minished and made few, ye shall return\" is the remnant the LORD recovers the second time.",
+  "new_note": "Isaiah 11:11 — *And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left...* — \"after ye have become minished and made few, ye shall return\" is the remnant the LORD recovers the second time.",
+  "drafter_reason": "\"after ye have become minished and made few, ye shall return\" is at 89:3, which the note describes."
+ },
+ {
+  "id": 60288,
+  "kind": "PHRASE_PATCH",
+  "side": "S",
+  "old_addr": "pseudepigrapha|testaments-xii|104:9",
+  "new_addr": "pseudepigrapha|testaments-xii|104:9",
+  "old_verse": "Such men are hares; for they are half clean, but in very deed are unclean.",
+  "new_verse": "Such men are hares; for they are half clean, but in very deed are unclean.",
+  "neighbors": {
+   "104:7": "He 'defileth the soul, and' maketh gay the body; he killeth many, and pitieth a few: this, too, hath a twofold aspect, but the whole is evil.",
+   "104:8": "Another committeth adultery and fornication, and abstaineth from meats, and when he fasteth he doeth evil, and by the power of his wealth overwhelmeth many; and notwithstanding his excessive wickedness he doeth 'the' commandments: this, too, hath a twofold aspect, but the whole is evil.",
+   "104:10": "For Elohim (God) in the tables of the commandments hath thus declared."
+  },
+  "other": {
+   "cite": "leviticus 11:6",
+   "text": "And the hare, because he cheweth the cud, but divideth not the hoof; he is unclean unto you."
+  },
+  "old_note": "Leviticus 11:6 — *And the hare, because he cheweth the cud, but divideth not the hoof; he is unclean unto you.* Asher's \"half clean, but in very deed unclean\" hare is the very creature Moses names: it answers one mark of cleanness and fails the other, like the double-faced man.",
+  "new_note": "Leviticus 11:6 — *And the hare, because he cheweth the cud, but divideth not the hoof; he is unclean unto you.* Asher's \"half clean, but in very deed are unclean\" hare is the very creature Moses names: it answers one mark of cleanness and fails the other, like the double-faced man.",
+  "drafter_reason": "Live reads \"half clean, but in very deed are unclean\"."
+ },
+ {
+  "id": 177476,
+  "kind": "ADDR_CITE_FIX",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|140:8",
+  "new_addr": "pseudepigrapha|testaments-xii|140:8",
+  "old_verse": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+  "new_verse": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+  "neighbors": {
+   "140:6": "'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness.",
+   "140:7": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, [who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him].",
+   "140:9": "And then shall He judge all the Gentiles, [as many as believed Him not when He appeared upon earth].",
+   "140:10": "And He shall convict Yashar'el (Israel) through the chosen ones of the Gentiles, even as he reproved Esau through the Madianites, who deceived their brethren, [so that they fell into fornication, and idolatry; and they were alienated from Elohim (God),] becoming therefore children in the portion of them that fear Yahuah (Lord)."
+  },
+  "other": {
+   "cite": "revelation 20:12",
+   "text": "And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works."
+  },
+  "old_note": "*'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness. Then shall we also rise, each one over our tribe, worshipping the King of heaven... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness... And then shall He judge all the Gentiles...* (Testament of Benjamin 10:6-9). John sees *the dead, small and great, stand before Elohim (God)... and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12). Benjamin's *all men shall rise, some unto glory and some unto shame* is that standing of small and great: the rising first, then the judging.",
+  "new_note": "*'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness. Then shall we also rise, each one over our tribe, worshipping the King of heaven... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness... And then shall He judge all the Gentiles...* (Testaments of the Twelve Patriarchs 140:6–9). John sees *the dead, small and great, stand before Elohim (God)... and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12). Benjamin's *all men shall rise, some unto glory and some unto shame* is that standing of small and great: the rising first, then the judging.",
+  "drafter_reason": "The words 'Then shall we also rise... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first... And then shall He judge all the Gentiles' are verbatim at the card's 140:8 with prev 140:7 and next 140:9; only 'Testament of Benjamin 10:6-9' was stale (Benjamin 10 is live 140). The opening sentence about Enoch, Noah and Shem is taken to sit at 140:6; not shown in the packet."
+ },
+ {
+  "id": 177477,
+  "kind": "ADDR_CITE_FIX",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|140:8",
+  "new_addr": "pseudepigrapha|testaments-xii|140:8",
+  "old_verse": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+  "new_verse": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+  "neighbors": {
+   "140:6": "'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness.",
+   "140:7": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, [who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him].",
+   "140:9": "And then shall He judge all the Gentiles, [as many as believed Him not when He appeared upon earth].",
+   "140:10": "And He shall convict Yashar'el (Israel) through the chosen ones of the Gentiles, even as he reproved Esau through the Madianites, who deceived their brethren, [so that they fell into fornication, and idolatry; and they were alienated from Elohim (God),] becoming therefore children in the portion of them that fear Yahuah (Lord)."
+  },
+  "other": {
+   "cite": "revelation 11:18",
+   "text": "And the nations were angry, and thy wrath is come, and the time of the dead, that they should be judged, and that thou shouldest give reward unto thy servants the prophets, and to the saints, and them that fear thy name, small and great; and shouldest destroy them which destroy the earth."
+  },
+  "old_note": "*'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness. Then shall we also rise, each one over our tribe, worshipping the King of heaven... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness... And then shall He judge all the Gentiles...* (Testament of Benjamin 10:6-9). Benjamin sets the rising in order: the fathers first, then the sons each over his tribe, and last *all men shall rise, some unto glory and some unto shame,* and then the judging. Revelation names that last hour: *the time of the dead, that they should be judged* (Revelation 11:18). The fathers and the tribes rise before; the rising of all men, to glory or to shame, comes at the time of the dead, when the one judgment is set.",
+  "new_note": "*'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness. Then shall we also rise, each one over our tribe, worshipping the King of heaven... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness... And then shall He judge all the Gentiles...* (Testaments of the Twelve Patriarchs 140:6–9). Benjamin sets the rising in order: the fathers first, then the sons each over his tribe, and last *all men shall rise, some unto glory and some unto shame,* and then the judging. Revelation names that last hour: *the time of the dead, that they should be judged* (Revelation 11:18). The fathers and the tribes rise before; the rising of all men, to glory or to shame, comes at the time of the dead, when the one judgment is set.",
+  "drafter_reason": "The words 'Then shall we also rise... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first... And then shall He judge all the Gentiles' are verbatim at the card's 140:8 with prev 140:7 and next 140:9; only 'Testament of Benjamin 10:6-9' was stale (Benjamin 10 is live 140). The opening sentence about Enoch, Noah and Shem is taken to sit at 140:6; not shown in the packet."
+ },
+ {
+  "id": 177478,
+  "kind": "ADDR_CITE_FIX",
+  "side": "T",
+  "old_addr": "pseudepigrapha|testaments-xii|60:1",
+  "new_addr": "pseudepigrapha|testaments-xii|60:1",
+  "old_verse": "And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order.",
+  "new_verse": "And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order.",
+  "neighbors": {
+   "60:2": "And Yahuah (Lord) blessed Levi, and the Angel of the Presence, me; the powers of glory, Simeon; the heaven, Reuben; the earth, Issachar; the sea, Zebulun; the mountains, Joseph; the tabernacle, Benjamin; the luminaries, Dan; Eden, Naphtali; the sun, Gad; the moon, Asher.",
+   "60:3": "And ye shall be the people of Yahuah (Lord), and have one tongue; And there shall be there no spirit of deceit of 'Beliar', For he shall be cast into the fire for ever."
+  },
+  "other": {
+   "cite": "revelation 20:4",
+   "text": "And I saw thrones, and they sat upon them, and judgment was given unto them: and I saw the souls of them that were beheaded for the witness of Yahusha (Jesus), and for the word of Elohim (God), and which had not worshipped the beast, neither his image, neither had received his mark upon their foreheads, or in their hands; and they lived and reigned with Messiah (Christ) a thousand years."
+  },
+  "old_note": "*And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order... And ye shall be the people of Yahuah (Lord), and have one tongue; And there shall be there no spirit of deceit of 'Beliar', For he shall be cast into the fire for ever. And they who have died in grief shall arise 'in joy', 'And they who were poor for Yahuah's (Lord's) sake shall be made rich,' And they who are put to death for Yahuah's (Lord's) sake shall awake 'to life'.* (Testament of Judah 25:1, 3-4). John sees *the souls of them that were beheaded for the witness of Yahusha (Jesus)... and they lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4). Judah's testament holds the same rising: the fathers *arise unto life,* the sons stand as *chiefs of the tribes* *all in order,* and *they who are put to death for Yahuah's (Lord's) sake shall awake 'to life'.* The first resurrection raises the fathers and the faithful slain into an ordered kingdom of the tribes, and the deceiver has no place among them, as John sees him shut in the pit *that he should deceive the nations no more* (Revelation 20:3), until his end in the fire.",
+  "new_note": "*And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order... And ye shall be the people of Yahuah (Lord), and have one tongue; And there shall be there no spirit of deceit of 'Beliar', For he shall be cast into the fire for ever. And they who have died in grief shall arise 'in joy', 'And they who were poor for Yahuah's (Lord's) sake shall be made rich,' And they who are put to death for Yahuah's (Lord's) sake shall awake 'to life'.* (Testaments of the Twelve Patriarchs 60:1, 3–4). John sees *the souls of them that were beheaded for the witness of Yahusha (Jesus)... and they lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4). Judah's testament holds the same rising: the fathers *arise unto life,* the sons stand as *chiefs of the tribes* *all in order,* and *they who are put to death for Yahuah's (Lord's) sake shall awake 'to life'.* The first resurrection raises the fathers and the faithful slain into an ordered kingdom of the tribes, and the deceiver has no place among them, as John sees him shut in the pit *that he should deceive the nations no more* (Revelation 20:3), until his end in the fire.",
+  "drafter_reason": "'And after these things shall Abraham and Isaac and Jacob arise unto life... and so all in order' is verbatim at the card's 60:1; only the stale 'Testament of Judah 25:1, 3-4' changed (Judah 25 is live 60; live 25:1 is an unrelated Levi verse). Verses 3-4 are not in the packet, so they are carried over on the shift of the whole chapter."
+ }
+]

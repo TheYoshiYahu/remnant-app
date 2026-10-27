@@ -1,0 +1,542 @@
+[
+ {
+  "id": 4278,
+  "kind": "ADDRESS",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 9,
+   "vn": 12,
+   "cite": "Ascension of Isaiah 9:12",
+   "text": "And he said unto me: \"Crowns and thrones of glory they do not receive, till the Beloved will descend in the form in which you will see Him descend will descend, I say into the world in the last days Yahuah (Lord), who will be called Messiah (Christ).",
+   "prev": "And I asked the angel who was with me: \"How is it that they have received the garments, but have not the thrones and the crowns?\"",
+   "next": "Nevertheless they see and know whose will be thrones, and whose the crowns when He has descended and been made in your form, and they will think that He is flesh and is a man."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 1,
+   "vn": 23,
+   "cite": "Matthew 1:23",
+   "text_db": "Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us.",
+   "text_canon": "Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us."
+  },
+  "old_note": "*Till the Beloved will descend in the form in which you will see Him descend, I say into the world in the last days.* The pre-incarnation announcement of the Beloved's descent in human form — the prophetic-Christology that lands at Matt 1:23's *Immanuel — Elohim (God) with us.*",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "Till the Beloved will descend in the form in which you will see Him descend, I say into the world in the last days.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "ascension-isaiah|ascension-isaiah|9:12",
+     "verdict": "REWORDED",
+     "proposed": "ascension-isaiah|ascension-isaiah|9:12",
+     "ratio": 0.88,
+     "k": 1,
+     "live_here": "And he said unto me: \"Crowns and thrones of glory they do not receive, till the Beloved will descend in the form in which you will see Him descend will descend, I say into the world in the last days Yahuah (Lord), who will be called Messiah (Christ).",
+     "live_proposed": "And he said unto me: \"Crowns and thrones of glory they do not receive, till the Beloved will descend in the form in which you will see Him descend will descend, I say into the world in the last days Yahuah (Lord), who will be called Messiah (Christ)."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 33,
+    "slug": "incarnation-of-the-beloved",
+    "old": "The pre-incarnation announcement of the Beloved's descent in human form — *in the last days.* The Hebrew library's framing of the incarnation Matt 1:23 announces.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "9:12": "And he said unto me: \"Crowns and thrones of glory they do not receive, till the Beloved will descend in the form in which you will see Him descend will descend, I say into the world in the last days Yahuah (Lord), who will be called Messiah (Christ)."
+  }
+ },
+ {
+  "id": 4291,
+  "kind": "ADDRESS",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 18,
+   "vn": 6,
+   "cite": "Testaments of the Twelve Patriarchs 18:6",
+   "text": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.",
+   "prev": "Then there fell upon me a sleep, and I beheld a high mountain, and I was upon it.",
+   "next": "And I entered from the first heaven, and I saw there a great sea hanging.",
+   "testament": "Levi 2"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "matthew",
+   "ch": 3,
+   "vn": 16,
+   "cite": "Matthew 3:16",
+   "text_db": "And Yahusha (Jesus), when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of Elohim (God) descending like a dove, and lighting upon him:",
+   "text_canon": "And Yahusha (Jesus), when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of Elohim (God) descending like a dove, and lighting upon him:"
+  },
+  "old_note": "*And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.* Testament of Levi 2:6 (TestXII ch 12:6 in the Charles concatenation) names the heavens-opening at the priestly investiture — the same heavens-opening Matt 3:16 narrates over Yahusha (Jesus) at the Yarden (Jordan). The Hebrew library knew the heavens open at the moment a covenant-bearing figure is invested for service; the gospel's opening of the heavens follows the same architecture.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|18:6",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|18:6",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.",
+     "live_proposed": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": [
+    {
+     "cite": "Testament of Levi 2:6",
+     "range": "17–35"
+    }
+   ]
+  },
+  "members": [
+   {
+    "thread_id": 39,
+    "slug": "heavens-opened-at-the-priestly-investiture",
+    "old": "Testament of Levi 2:6 (TestXII ch 12:6) — *behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.* The Hebrew library's heavens-opening at the priestly investiture; Matt 3:16's heavens-opening at the Messianic investiture.",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "18:6": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.",
+   "2:6": "The fifth is the power of speech, with which cometh knowledge.",
+   "12:6": "And they shall be few in number, divided in Levi and Yahudah (Judah), and there shall be none of you for sovereignty, even as also our father prophesied in his blessings."
+  }
+ },
+ {
+  "id": 8025,
+  "kind": "ADDRESS",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 100,
+   "vn": 2,
+   "cite": "Testaments of the Twelve Patriarchs 100:2",
+   "text": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+   "prev": "And now, my children, 'I exhort you,' love ye each one his brother, and put away hatred from your hearts, love one another in deed, and in word, and in the inclination of the soul.",
+   "next": "Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile; and if he repent and confess, forgive him.",
+   "testament": "Gad 6"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 13,
+   "vn": 34,
+   "cite": "John 13:34",
+   "text_db": "A new commandment I give unto you, That you love one another; as I have loved you, that you also love one another.",
+   "text_canon": "A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another."
+  },
+  "old_note": "*love one another in deed, and in word, and in the inclination of the soul.* The Testament of Gad (DB ch 62 v.2) carries the love-one-another command in the patriarch's own testimony to his sons — and Gad names it out of his own repentance for the hatred he bore against Joseph his brother. Yahusha's (Jesus') *a new commandment I give unto you, That ye love one another* (John 13:34) is *new* not because the Hebrew library never named brotherly love, but because he loves *as I have loved you* — the patriarch's heart-command brought to its measure in the Formed one's own laying-down of his life. The wisdom of the fathers already pressed the command on the twelve sons of Yashar'el (Israel); the gospel binds it to the cross.",
+  "regrade": {
+   "verdict": "RE_ANCHOR",
+   "quotes": [
+    {
+     "quote": "love one another in deed, and in word, and in the inclination of the soul.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|100:2",
+     "verdict": "RE_ANCHOR",
+     "proposed": "pseudepigrapha|testaments-xii|100:1",
+     "ratio": 1.0,
+     "k": 1,
+     "live_here": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+     "live_proposed": "And now, my children, 'I exhort you,' love ye each one his brother, and put away hatred from your hearts, love one another in deed, and in word, and in the inclination of the soul."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 671,
+    "slug": "john-13-15-the-new-commandment-love-one-another-in-the-testaments-of-gad-and-benjamin",
+    "old": "Testament of Gad (DB ch 62 v.2) — *love one another in deed, and in word, and in the inclination of the soul.* The patriarch commands brotherly love out of his own repentance for hatred; John 13:34's *a new commandment ... that ye love one another* presses the same, made new by the measure *as I have loved you.*",
+    "same_as_card": false
+   }
+  ],
+  "live_named": {
+   "100:2": "For in the presence of my father I spake peaceably to Joseph; and when I had gone out, the spirit of hatred darkened my mind, and stirred up my soul to slay him.",
+   "100:1": "And now, my children, 'I exhort you,' love ye each one his brother, and put away hatred from your hearts, love one another in deed, and in word, and in the inclination of the soul."
+  }
+ },
+ {
+  "id": 59968,
+  "kind": "ADDRESS",
+  "side": "S",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 18,
+   "vn": 7,
+   "cite": "Testaments of the Twelve Patriarchs 18:7",
+   "text": "And I entered from the first heaven, and I saw there a great sea hanging.",
+   "prev": "And behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter.",
+   "next": "And further I saw a second heaven far brighter and more brilliant, for there was a boundless light also therein.",
+   "testament": "Levi 2"
+  },
+  "other": {
+   "ed": "pseudepigrapha",
+   "book": "2-enoch",
+   "ch": 3,
+   "vn": 1,
+   "cite": "2 Enoch 3:1",
+   "text_db": "It came to pass, when Enoch had told his sons, that the angels took him on to their wings and bore him up on to the first heaven and placed him on the clouds. And there I looked, and again I looked higher, and saw the ether, and they placed me on the first heaven and showed me a very great Sea, greater than the earthly sea.",
+   "text_canon": null
+  },
+  "old_note": "2 Enoch 3:1 — *they bore him up on to the first heaven and placed him on the clouds... and saw a very great Sea, greater than the earthly sea.* Enoch's ascent to the first heaven and its great sea is the same first heaven and \"great sea hanging\" Levi enters.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "they bore him up on to the first heaven and placed him on the clouds... and saw a very great Sea, greater than the earthly sea.",
+     "labelled": "pseudepigrapha|2-enoch|3:1",
+     "label_name": "2 Enoch",
+     "cited_range": null,
+     "at": "pseudepigrapha|2-enoch|3:1",
+     "verdict": "REWORDED",
+     "proposed": "pseudepigrapha|2-enoch|3:1",
+     "ratio": 0.63,
+     "k": 1,
+     "live_here": "It came to pass, when Enoch had told his sons, that the angels took him on to their wings and bore him up on to the first heaven and placed him on the clouds. And there I looked, and again I looked higher, and saw the ether, and they placed me on the first heaven and showed me a very great Sea, greater than the earthly sea.",
+     "live_proposed": "It came to pass, when Enoch had told his sons, that the angels took him on to their wings and bore him up on to the first heaven and placed him on the clouds. And there I looked, and again I looked higher, and saw the ether, and they placed me on the first heaven and showed me a very great Sea, greater than the earthly sea."
+    }
+   ],
+   "phrases": [
+    {
+     "quote": "great sea hanging",
+     "verdict": "STAND"
+    }
+   ],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": []
+  },
+  "members": [
+   {
+    "thread_id": 14710,
+    "slug": "testaments-xii-18-the-heavens-were-opened",
+    "old": "2 Enoch 3:1 — *they bore him up on to the first heaven and placed him on the clouds... and saw a very great Sea, greater than the earthly sea.* Enoch's ascent to the first heaven and its great sea is the same first heaven and \"great sea hanging\" Levi enters.",
+    "same_as_card": true
+   }
+  ],
+  "live_named": {
+   "3:1": "Besides all these there is an eighth spirit of sleep, with which is brought about the trance of nature and the image of death."
+  }
+ },
+ {
+  "id": 177476,
+  "kind": "ADDRESS",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 140,
+   "vn": 8,
+   "cite": "Testaments of the Twelve Patriarchs 140:8",
+   "text": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+   "prev": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, [who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him].",
+   "next": "And then shall He judge all the Gentiles, [as many as believed Him not when He appeared upon earth].",
+   "testament": "Benjamin 10"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 20,
+   "vn": 12,
+   "cite": "Revelation 20:12",
+   "text_db": "And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.",
+   "text_canon": "And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works."
+  },
+  "old_note": "*'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness. Then shall we also rise, each one over our tribe, worshipping the King of heaven... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness... And then shall He judge all the Gentiles...* (Testament of Benjamin 10:6-9). John sees *the dead, small and great, stand before Elohim (God)... and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12). Benjamin's *all men shall rise, some unto glory and some unto shame* is that standing of small and great: the rising first, then the judging.",
+  "regrade": {
+   "verdict": "RE_ANCHOR",
+   "quotes": [
+    {
+     "quote": "'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness. Then shall we also rise, each one over our tribe, worshipping the King of heaven... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness... And then shall He judge all the Gentiles...",
+     "labelled": "pseudepigrapha|testaments-xii|10:6",
+     "label_name": "Testament of Benjamin",
+     "cited_range": "9",
+     "at": "pseudepigrapha|testaments-xii|10:6",
+     "verdict": "RE_ANCHOR",
+     "proposed": "pseudepigrapha|testaments-xii|140:4",
+     "ratio": 1.0,
+     "k": 6,
+     "live_here": "And henceforward he sympathiseth with him whom he envied and agreeth with those who love him, and so ceaseth from his envy.",
+     "live_proposed": "For these things do I leave you instead of inheritance. Do ye also, therefore,' give them to your children for an everlasting possession; for so did both Abraham, and Isaac, and Jacob."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": [
+    {
+     "cite": "Testament of Benjamin 10:6",
+     "range": "131–142"
+    }
+   ]
+  },
+  "members": [],
+  "live_named": {
+   "10:6": "And henceforward he sympathiseth with him whom he envied and agreeth with those who love him, and so ceaseth from his envy.",
+   "140:4": "For these things do I leave you instead of inheritance. Do ye also, therefore,' give them to your children for an everlasting possession; for so did both Abraham, and Isaac, and Jacob."
+  }
+ },
+ {
+  "id": 177477,
+  "kind": "ADDRESS",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 140,
+   "vn": 8,
+   "cite": "Testaments of the Twelve Patriarchs 140:8",
+   "text": "Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness; [for when He appeared as Elohim (God) in the flesh to deliver them they believed Him not].",
+   "prev": "Then shall we also rise, each one over our tribe, worshipping the King of heaven, [who appeared upon earth in the form of a man in humility. And as many as believe on Him on the earth shall rejoice with Him].",
+   "next": "And then shall He judge all the Gentiles, [as many as believed Him not when He appeared upon earth].",
+   "testament": "Benjamin 10"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 11,
+   "vn": 18,
+   "cite": "Revelation 11:18",
+   "text_db": "And the nations were angry, and your wrath is come, and the time of the dead, that they should be judged, and that you should give reward unto your servants the prophets, and to the saints, and them that fear your name, small and great; and should destroy them which destroy the earth.",
+   "text_canon": "And the nations were angry, and thy wrath is come, and the time of the dead, that they should be judged, and that thou shouldest give reward unto thy servants the prophets, and to the saints, and them that fear thy name, small and great; and shouldest destroy them which destroy the earth."
+  },
+  "old_note": "*'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness. Then shall we also rise, each one over our tribe, worshipping the King of heaven... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness... And then shall He judge all the Gentiles...* (Testament of Benjamin 10:6-9). Benjamin sets the rising in order: the fathers first, then the sons each over his tribe, and last *all men shall rise, some unto glory and some unto shame,* and then the judging. Revelation names that last hour: *the time of the dead, that they should be judged* (Revelation 11:18). The fathers and the tribes rise before; the rising of all men, to glory or to shame, comes at the time of the dead, when the one judgment is set.",
+  "regrade": {
+   "verdict": "RE_ANCHOR",
+   "quotes": [
+    {
+     "quote": "'And' then shall ye see Enoch, Noah, and Shem, and Abraham, and Isaac, and Jacob, rising on the right hand in gladness. Then shall we also rise, each one over our tribe, worshipping the King of heaven... Then also all men shall rise, some unto glory and some unto shame. And Yahuah (Lord) shall judge Yashar'el (Israel) first, for their unrighteousness... And then shall He judge all the Gentiles...",
+     "labelled": "pseudepigrapha|testaments-xii|10:6",
+     "label_name": "Testament of Benjamin",
+     "cited_range": "9",
+     "at": "pseudepigrapha|testaments-xii|10:6",
+     "verdict": "RE_ANCHOR",
+     "proposed": "pseudepigrapha|testaments-xii|140:4",
+     "ratio": 1.0,
+     "k": 6,
+     "live_here": "And henceforward he sympathiseth with him whom he envied and agreeth with those who love him, and so ceaseth from his envy.",
+     "live_proposed": "For these things do I leave you instead of inheritance. Do ye also, therefore,' give them to your children for an everlasting possession; for so did both Abraham, and Isaac, and Jacob."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": [
+    {
+     "cite": "Testament of Benjamin 10:6",
+     "range": "131–142"
+    }
+   ]
+  },
+  "members": [],
+  "live_named": {
+   "10:6": "And henceforward he sympathiseth with him whom he envied and agreeth with those who love him, and so ceaseth from his envy.",
+   "140:4": "For these things do I leave you instead of inheritance. Do ye also, therefore,' give them to your children for an everlasting possession; for so did both Abraham, and Isaac, and Jacob."
+  }
+ },
+ {
+  "id": 177478,
+  "kind": "ADDRESS",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 60,
+   "vn": 1,
+   "cite": "Testaments of the Twelve Patriarchs 60:1",
+   "text": "And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order.",
+   "prev": null,
+   "next": "And Yahuah (Lord) blessed Levi, and the Angel of the Presence, me; the powers of glory, Simeon; the heaven, Reuben; the earth, Issachar; the sea, Zebulun; the mountains, Joseph; the tabernacle, Benjamin; the luminaries, Dan; Eden, Naphtali; the sun, Gad; the moon, Asher.",
+   "testament": "Judah 25"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "revelation",
+   "ch": 20,
+   "vn": 4,
+   "cite": "Revelation 20:4",
+   "text_db": "And I saw thrones, and they sat upon them, and judgment was given unto them: and I saw the souls of them that were beheaded for the witness of Yahusha (Jesus), and for the word of Elohim (God), and which had not worshipped the beast, neither his image, neither had received his mark upon their foreheads, or in their hands; and they lived and reigned with Messiah (Christ) a thousand years.",
+   "text_canon": "And I saw thrones, and they sat upon them, and judgment was given unto them: and I saw the souls of them that were beheaded for the witness of Yahusha (Jesus), and for the word of Elohim (God), and which had not worshipped the beast, neither his image, neither had received his mark upon their foreheads, or in their hands; and they lived and reigned with Messiah (Christ) a thousand years."
+  },
+  "old_note": "*And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order... And ye shall be the people of Yahuah (Lord), and have one tongue; And there shall be there no spirit of deceit of 'Beliar', For he shall be cast into the fire for ever. And they who have died in grief shall arise 'in joy', 'And they who were poor for Yahuah's (Lord's) sake shall be made rich,' And they who are put to death for Yahuah's (Lord's) sake shall awake 'to life'.* (Testament of Judah 25:1, 3-4). John sees *the souls of them that were beheaded for the witness of Yahusha (Jesus)... and they lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4). Judah's testament holds the same rising: the fathers *arise unto life,* the sons stand as *chiefs of the tribes* *all in order,* and *they who are put to death for Yahuah's (Lord's) sake shall awake 'to life'.* The first resurrection raises the fathers and the faithful slain into an ordered kingdom of the tribes, and the deceiver has no place among them, as John sees him shut in the pit *that he should deceive the nations no more* (Revelation 20:3), until his end in the fire.",
+  "regrade": {
+   "verdict": "STAND",
+   "quotes": [
+    {
+     "quote": "And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order... And ye shall be the people of Yahuah (Lord), and have one tongue; And there shall be there no spirit of deceit of 'Beliar', For he shall be cast into the fire for ever. And they who have died in grief shall arise 'in joy', 'And they who were poor for Yahuah's (Lord's) sake shall be made rich,' And they who are put to death for Yahuah's (Lord's) sake shall awake 'to life'.",
+     "labelled": null,
+     "label_name": null,
+     "cited_range": null,
+     "at": "pseudepigrapha|testaments-xii|60:1",
+     "verdict": "STAND",
+     "proposed": "pseudepigrapha|testaments-xii|60:1",
+     "ratio": 1.0,
+     "k": 4,
+     "live_here": "And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order.",
+     "live_proposed": "And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order."
+    }
+   ],
+   "phrases": [],
+   "canon_lead": null,
+   "degraded": false,
+   "hyphen_chain": false,
+   "chains": [],
+   "t_range_bad": [
+    {
+     "cite": "Testament of Judah 25:1",
+     "range": "36–61"
+    }
+   ]
+  },
+  "members": [],
+  "live_named": {
+   "60:1": "And after these things shall Abraham and Isaac and Jacob arise unto life, and I and my brethren shall be chiefs of the tribes 'of Israel': Levi first, I the second, Joseph third, Benjamin fourth, Simeon fifth, Issachar sixth, and so all in order.",
+   "25:1": "And after two days I and Yahudah (Judah) went up with our father Jacob to Isaac our father's father.",
+   "20:4": "And there shall be given to thee a blessing, and to all thy seed, Until Yahuah (Lord) shall visit all the Gentiles in His tender mercies for ever.",
+   "20:3": "The light of knowledge shalt thou light up in Jacob, And as the sun shalt thou be to all the seed of Yashar'el (Israel)."
+  }
+ },
+ {
+  "id": 8018,
+  "kind": "MEMBER_ADDRESS",
+  "thread_id": 673,
+  "slug": "john-15-the-worlds-hatred-and-the-hatred-of-the-devil-in-the-testament-of-gad",
+  "side": "T",
+  "extra": {
+   "ed": "pseudepigrapha",
+   "book": "testaments-xii",
+   "name": "Testaments of the Twelve Patriarchs",
+   "ch": 99,
+   "vn": 1,
+   "cite": "Testaments of the Twelve Patriarchs 99:1",
+   "text": "'Hatred, therefore, is evil,' for it constantly mateth with lying, speaking against the truth; and it maketh small things to be great, and causeth the light to be darkness, and calleth the sweet bitter, and teacheth slander, and 'kindleth' wrath, and 'stirreth' up war, and violence and all covetousness; it filleth the heart with evils and devilish poison.",
+   "prev": null,
+   "next": "These things, 'therefore', I say to you from experience, my children, that ye may drive forth hatred, which is of the devil, and cleave to the love of Elohim (God).",
+   "testament": "Gad 5"
+  },
+  "other": {
+   "ed": "canon",
+   "book": "john",
+   "ch": 15,
+   "vn": 18,
+   "cite": "John 15:18",
+   "text_db": "If the world hate you, you know that it hated me before it hated you.",
+   "text_canon": "If the world hate you, ye know that it hated me before it hated you."
+  },
+  "old_note": "Testament of Gad (DB ch 61 v.1) — *Hatred ... mateth with lying, speaking against the truth ... causeth the light to be darkness ... and filleth the heart with evils and devilish poison.* Hatred as the inversion-engine that calls the Light darkness; John 15:18's *If the world hate you, ye know that it hated me before it hated you* names the same poison turned against the Formed one and his own.",
+  "card_note": "*Hatred, therefore, is evil, for it constantly mateth with lying, speaking against the truth; and it maketh small things to be great, and causeth the light to be darkness, and calleth the sweet bitter, and teacheth slander, and kindleth wrath, and stirreth up war, and violence and all covetousness; it filleth the heart with evils and devilish poison.* The Testament of Gad (DB ch 61 v.1) names hatred as the inversion-engine that speaks against the truth, calls light darkness, and fills the heart with devilish poison. John 15:18's *If the world hate you, ye know that it hated me before it hated you* names the same hatred turned against the Formed one and his own: the world's hatred is not reasoned offence but the devil's poison the patriarch warned against, the hatred that calls the Light of the world darkness.",
+  "regrade": {
+   "verdict": "OFF",
+   "quotes": [
+    {
+     "quote": "Hatred ... mateth with lying, speaking against the truth ... causeth the light to be darkness ... and filleth the heart with evils and devilish poison.",
+     "labelled": null,
+     "at": "pseudepigrapha|testaments-xii|99:1",
+     "verdict": "OFF",
+     "ratio": 0.58,
+     "live_here": "'Hatred, therefore, is evil,' for it constantly mateth with lying, speaking against the truth; and it maketh small things to be great, and causeth the light to be darkness, and calleth the sweet bitter, and teacheth slander, and 'kindleth' wrath, and 'stirreth' up war, and violence and all covetousness; it filleth the heart with evils and devilish poison."
+    }
+   ],
+   "t_range_bad": []
+  },
+  "members": [],
+  "live_named": {
+   "99:1": "'Hatred, therefore, is evil,' for it constantly mateth with lying, speaking against the truth; and it maketh small things to be great, and causeth the light to be darkness, and calleth the sweet bitter, and teacheth slander, and 'kindleth' wrath, and 'stirreth' up war, and violence and all covetousness; it filleth the heart with evils and devilish poison."
+  }
+ },
+ {
+  "id": 50079,
+  "kind": "MEMBER_ADDRESS",
+  "thread_id": 12141,
+  "slug": "2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah",
+  "side": "T",
+  "extra": {
+   "ed": "ascension-isaiah",
+   "book": "ascension-isaiah",
+   "name": "Ascension of Isaiah",
+   "ch": 9,
+   "vn": 8,
+   "cite": "Ascension of Isaiah 9:8",
+   "text": "And there I saw Enoch and all who were with him, stript of the garments of the flesh, and I saw them in their garments of the upper world, and they were like angels, standing there in great glory.",
+   "prev": "And there I saw the holy Abel and all the righteous.",
+   "next": "And there I saw Enoch and all who were with him, stript of the garments of the flesh, and I saw them in their garments of the upper world, and they were like angels, standing there in great glory."
+  },
+  "other": {
+   "ed": "canon",
+   "book": "2-corinthians",
+   "ch": 12,
+   "vn": 4,
+   "cite": "2 Corinthians 12:4",
+   "text_db": "How that he was caught up into paradise, and heard unspeakable words, which it is not lawful for a man to utter.",
+   "text_canon": "How that he was caught up into paradise, and heard unspeakable words, which it is not lawful for a man to utter."
+  },
+  "old_note": "Ascension of Isaiah 9:8 — *the righteous... stript of the garments of the flesh... in their garments of the upper world... in great glory* the company paradise gathers; the place Paul *was caught up into... and heard unspeakable words* (2 Corinthians 12:4).",
+  "card_note": "*And there I saw Enoch and all who were with him, stript of the garments of the flesh, and I saw them in their garments of the upper world, and they were like angels, standing there in great glory.* (Ascension of Isaiah 9:8). In the highest heaven the seer beholds the righteous *stript of the garments of the flesh... in their garments of the upper world... in great glory.* This is the company among whom paradise places the redeemed — the place into which Paul *was caught up... and heard unspeakable words, which it is not lawful for a man to utter* (2 Corinthians 12:4). The glory laid up for the righteous is real and bodily-clothed in the garments of the upper world, the hope toward which the whole letter strains.",
+  "regrade": {
+   "verdict": "REWORDED",
+   "quotes": [
+    {
+     "quote": "the righteous... stript of the garments of the flesh... in their garments of the upper world... in great glory",
+     "labelled": "ascension-isaiah|ascension-isaiah|9:8",
+     "at": "ascension-isaiah|ascension-isaiah|9:8",
+     "verdict": "REWORDED",
+     "ratio": 0.7,
+     "live_here": "And there I saw Enoch and all who were with him, stript of the garments of the flesh, and I saw them in their garments of the upper world, and they were like angels, standing there in great glory."
+    }
+   ],
+   "t_range_bad": []
+  },
+  "members": [],
+  "live_named": {
+   "9:8": "And there I saw Enoch and all who were with him, stript of the garments of the flesh, and I saw them in their garments of the upper world, and they were like angels, standing there in great glory."
+  }
+ }
+]

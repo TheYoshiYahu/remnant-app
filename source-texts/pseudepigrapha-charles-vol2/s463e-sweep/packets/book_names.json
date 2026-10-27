@@ -1,0 +1,147 @@
+{
+ "canon": {
+  "genesis": "Genesis",
+  "exodus": "Exodus",
+  "leviticus": "Leviticus",
+  "numbers": "Numbers",
+  "deuteronomy": "Deuteronomy",
+  "joshua": "Joshua",
+  "judges": "Judges",
+  "ruth": "Ruth",
+  "1-samuel": "1 Samuel",
+  "2-samuel": "2 Samuel",
+  "1-kings": "1 Kings",
+  "2-kings": "2 Kings",
+  "1-chronicles": "1 Chronicles",
+  "2-chronicles": "2 Chronicles",
+  "ezra": "Ezra",
+  "nehemiah": "Nehemiah",
+  "esther": "Esther",
+  "job": "Job",
+  "psalms": "Psalms",
+  "proverbs": "Proverbs",
+  "ecclesiastes": "Ecclesiastes",
+  "song-of-solomon": "Song of Solomon",
+  "isaiah": "Isaiah",
+  "jeremiah": "Jeremiah",
+  "lamentations": "Lamentations",
+  "ezekiel": "Ezekiel",
+  "daniel": "Daniel",
+  "hosea": "Hosea",
+  "joel": "Joel",
+  "amos": "Amos",
+  "obadiah": "Obadiah",
+  "jonah": "Jonah",
+  "micah": "Micah",
+  "nahum": "Nahum",
+  "habakkuk": "Habakkuk",
+  "zephaniah": "Zephaniah",
+  "haggai": "Haggai",
+  "zechariah": "Zechariah",
+  "malachi": "Malachi",
+  "matthew": "Matthew",
+  "mark": "Mark",
+  "luke": "Luke",
+  "john": "John",
+  "acts": "Acts",
+  "romans": "Romans",
+  "1-corinthians": "1 Corinthians",
+  "2-corinthians": "2 Corinthians",
+  "galatians": "Galatians",
+  "ephesians": "Ephesians",
+  "philippians": "Philippians",
+  "colossians": "Colossians",
+  "1-thessalonians": "1 Thessalonians",
+  "2-thessalonians": "2 Thessalonians",
+  "1-timothy": "1 Timothy",
+  "2-timothy": "2 Timothy",
+  "titus": "Titus",
+  "philemon": "Philemon",
+  "hebrews": "Hebrews",
+  "james": "James",
+  "1-peter": "1 Peter",
+  "2-peter": "2 Peter",
+  "1-john": "1 John",
+  "2-john": "2 John",
+  "3-john": "3 John",
+  "jude": "Jude",
+  "revelation": "Revelation"
+ },
+ "extras": {
+  "2-enoch": "2 Enoch",
+  "testaments-xii": "Testaments of the Twelve Patriarchs",
+  "2-baruch": "2 Baruch",
+  "3-baruch": "3 Baruch",
+  "4-maccabees": "4 Maccabees",
+  "3-maccabees": "3 Maccabees",
+  "adam-eve": "Books of Adam and Eve",
+  "1-adam-eve": "1 Adam and Eve",
+  "2-adam-eve": "2 Adam and Eve",
+  "apocalypse-of-abraham": "Apocalypse of Abraham",
+  "ascension-isaiah": "Ascension of Isaiah",
+  "jubilees": "Jubilees",
+  "1-enoch": "1 Enoch",
+  "jasher": "Jasher",
+  "the-wisdom-of-solomon": "Wisdom of Solomon",
+  "ecclesiasticus": "Ecclesiasticus",
+  "2-maccabees": "2 Maccabees",
+  "1-maccabees": "1 Maccabees",
+  "tobit": "Tobit",
+  "judith": "Judith",
+  "the-prayer-of-manasseh": "Prayer of Manasseh",
+  "1-esdras": "1 Esdras",
+  "2-esdras": "2 Esdras",
+  "baruch-with-the-letter-of-jeremiah": "Baruch",
+  "the-rest-of-esther": "The Rest of Esther"
+ },
+ "testaments_xii_ranges": {
+  "Reuben": [
+   1,
+   7
+  ],
+  "Simeon": [
+   8,
+   16
+  ],
+  "Levi": [
+   17,
+   35
+  ],
+  "Judah": [
+   36,
+   61
+  ],
+  "Issachar": [
+   62,
+   68
+  ],
+  "Zebulun": [
+   69,
+   78
+  ],
+  "Dan": [
+   79,
+   85
+  ],
+  "Naphtali": [
+   86,
+   94
+  ],
+  "Gad": [
+   95,
+   102
+  ],
+  "Asher": [
+   103,
+   110
+  ],
+  "Joseph": [
+   111,
+   130
+  ],
+  "Benjamin": [
+   131,
+   142
+  ]
+ }
+}
