@@ -10,8 +10,8 @@ IPA = {
  "Yashar'el":"jɑʃəˈɹɛl", "Yahudah":"jəˈhudə", "Adonai":"ɑdoˈnaɪ", "Ruach":"ɹɹˈuːɑk",
  # S469: HaKodesh settled by Yoshi (his #3).
  "HaKodesh":"hɑkˈoʊdəʃ",
- # S469: Enoch = "ha-noke", Eve = "who-ah" — fast, no gap (Yoshi picked #2).
- "Enoch":"həˈnoʊk", "Eve":"huˈɑ", "Baruch":"bəˈɹux",
+ # S477: Enoch is said the English way, EE-nok (Yoshi, Oct 26 — he did not like "ha-noke"); Eve = "who-ah" (S469).
+ "Enoch":"ˈiːnɑk", "Eve":"huˈɑ", "Baruch":"bəˈɹux",
  # S446: "O king, live for ever" was read as "lyve". In scripture "live" is the
  # verb (rhymes with give) everywhere except "a live coal" (Isaiah 6:6).
  "live":"lˈɪv", "Live":"lˈɪv",
@@ -25,7 +25,7 @@ IPA_BY_VOICE = {
  "am_echo": {"El Elyon":"ɛl ɛliˈoʊn","El Shaddai":"ɛl ʃəˈdaɪ","Elohav":"ɛloˈhɑv",
              "Elohaychem":"ɛloˈheɪkɛm","Elohayka":"ɛloˈhaɪkɑ","HaMashiach":"hɑmɑʃˈiɑx",
              "Tseva'ot":"səvɑˈoʊt","Yahudi":"jɑː huː diː","Yahudim":"jɑː huː diːm",
-             "Enoch":"hɑnˈoʊk","Ruach":"ɹˈuɑːk","Yahudah":"iɑhˈuːdə",
+             "Enoch":"ˈiːnɑk","Ruach":"ɹˈuɑːk","Yahudah":"iɑhˈuːdə",
              "HaKodesh":"hɑkoˈdɛʃ"},
  # S470: Sky, settled by ear (rounds 2-3).
  "af_sky": {"Elohav":"ˈɛlohɑv","Elohaychem":"ɛloˈheɪkɛm","Elohayka":"ɛloˈheɪkɑ",
