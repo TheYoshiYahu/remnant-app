@@ -1,0 +1,33 @@
+{
+ "reader": "sonnet cold read 2",
+ "packet": "cold_packet_adam-eve.txt",
+ "verses_read": 141,
+ "cards_read": 241,
+ "anchors_read": 61,
+ "verse_flags": [
+  {
+   "verse": "(14 chapters)",
+   "issue": "Old numbers appear in no new verse (13:4-5, 18:3, 24:2, 27:2/4, 29:2/4, 32:2, 33:4, 37:5, 40:4, 48:2, 51:2, 57:2, 58:2, 78:2) — confirm empty: CONFIRMED, these numbers never existed in the live rows (Track B gaps)."
+  },
+  {
+   "verse": "52:2, 72:3",
+   "issue": "Begin lowercase after a semicolon boundary — allowed by the rule."
+  },
+  {
+   "verse": "92:1",
+   "issue": "Ends with no terminal punctuation (lost period) — known."
+  },
+  {
+   "verse": "40:1, 42:2, 72:3",
+   "issue": "Long verses a standard division would probably split further — the rule keeps Charles's line ends only where a clause ends."
+  }
+ ],
+ "card_flags": [],
+ "anchor_flags": [
+  {
+   "thread": 17386,
+   "issue": "informational: old end 88:3 split by the override; 88:1-88:1 is right."
+  }
+ ],
+ "verdict": "No damaged or duplicated words at joins; hyphen joins read correctly; no card or anchor mismatches; override at 88:1/89:1 agreed; card ids 69291-69531 all present once."
+}

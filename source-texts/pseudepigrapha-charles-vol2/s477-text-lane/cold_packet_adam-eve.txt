@@ -1,0 +1,681 @@
+BOOK adam-eve. Each new verse: [ch:vn] <- the old verse numbers merged into it (same chapter). Verses built from one old line are unchanged and show no text. Then the cards that move onto that verse (old address -> new) and, for cards that quote this book, their note.
+
+
+[1:1] <- old [1, 2, 3]
+This is the story of Adam and Eve after they had gone out of Paradise. And Adam knew his wife Eve and went upwards to the sun-rising and abode there eighteen years and two months. And Eve conceived and bare two sons; Adiaphotos, who is called Cain and Amilabes who is called Abel.
+  card 69291 old 1:3 -> 1:1 (other end jubilees|jubilees|4:1)
+  card 69292 old 1:3 -> 1:1 (other end canon|genesis|4:2)
+  card 69293 old 1:1 -> 1:1 (other end canon|genesis|4:1)
+
+[2:1] <- old [1, 2, 3, 4]
+And after this, Adam and Eve were with one another and while they were sleeping, Eve said to Adam her lord: 'My lord, Adam, behold, I have seen in a dream this night the blood of my son Amilabes who is styled Abel being poured into the mouth of Cain his brother and he went on drinking it without pity. But he begged him to leave him a little of it. Yet he hearkened not to him, but gulped down the whole; nor did it stay in his stomach, but came out of his mouth. And Adam said, 'Let us arise and go and see what has happened to them. (I fear) lest the adversary may be assailing them somewhere.'
+
+[3:1] <- old [1, 2, 3]
+And they both went and found Abel murdered. I by the hand of Cain his brother. And Elohim (God) saith to Michael the archangel: 'Say to Adam: " Reveal not the secret that thou knowest to Cain thy son, for he is a son of wrath. But grieve not, for I will give thee another son in his stead; he shall show (to thee) all that thou shalt do. Do thou tell him nothing."' Thus spake the archangel to Adam. But he kept the word in his heart, and with him also Eve, though they grieved concerning Abel their son.
+  card 69294 old 3:1 -> 3:1 (other end canon|matthew|23:35)
+  card 69295 old 3:1 -> 3:1 (other end canon|1-john|3:12)
+  card 69296 old 3:1 -> 3:1 (other end canon|hebrews|11:4)
+  card 69297 old 3:1 -> 3:1 (other end canon|genesis|4:10)
+  card 69298 old 3:1 -> 3:1 (other end canon|genesis|4:8)
+
+[4:1] <- old [1, 2]
+And after this, Adam knew Eve his wife, and she conceived and bare Seth. And Adam said to Eve: 'See! we have begotten a son in place of Abel, whom Cain slew, let us give glory and sacrifice to Elohim (God).'
+  card 69299 old 4:2 -> 4:1 (other end canon|luke|3:38)
+  card 69300 old 4:2 -> 4:1 (other end canon|genesis|4:26)
+  card 69301 old 4:1 -> 4:1 (other end canon|genesis|5:3)
+  card 69302 old 4:2 -> 4:1 (other end canon|genesis|4:25)
+
+[5:1] <- old [1, 2]
+And Adam begat thirty sons and thirty daughters and Adam lived nine hundred and thirty years; and he fell sick and cried with a loud voice and said, 'Let all my sons come to me that I may see them before I die.'
+  card 69303 old 5:1 -> 5:1 (other end canon|hebrews|9:27)
+  card 69304 old 5:1 -> 5:1 (other end canon|genesis|5:5)
+
+[5:2] = old 3 (unchanged)
+
+[5:3] = old 4 (unchanged)
+
+[5:4] = old 5 (unchanged)
+
+[6:1] <- old [1, 2, 3]
+And Seth answered and said to him: 'Hast thou called to mind, father, the fruit of paradise of which thou usedst to eat, and hast been grieved in yearning for it' 'If this be so, tell me, (and) I will go and bring thee fruit from paradise. For I will set dung upon my head and will weep and pray that Yahuah (Lord) will hearken to me and send his angel (and bring me a plant from paradise), and I will bring it thee that thy trouble may cease from thee.' Adam saith to him: 'Nay, my son Seth, but I have (much) sickness and trouble!' Seth saith to him: 'And how hath this come upon thee'
+
+[7:1] <- old [1, 2]
+And Adam said to him: 'When Elohim (God) made us, me and your mother, through whom also I die, He gave us power to eat of every tree which is in paradise, but, concerning that one only, He charged us not to eat of it, and through this one we are to die. And the hour drew nigh for the angels who were guarding your mother to go up and worship Yahuah (Lord), and I was far from her, and the enemy knew that she was alone and gave to her, and she ate of the tree of which she had been told not to eat.
+  card 69305 old 7:1 -> 7:1 (other end canon|genesis|3:3)
+  card 69306 old 7:1 -> 7:1 (other end canon|genesis|2:17)
+  card 69307 old 7:1 -> 7:1 (other end canon|genesis|2:16)
+
+[7:2] = old 3 (unchanged)
+
+[8:1] = old 1 (unchanged)
+  card 69308 old 8:1 -> 8:1 (other end canon|psalms|139:12)
+  card 69309 old 8:1 -> 8:1 (other end canon|psalms|139:7)
+  card 69310 old 8:1 -> 8:1 (other end canon|genesis|3:9)
+  card 69311 old 8:1 -> 8:1 (other end canon|genesis|3:8)
+
+[9:1] <- old [1, 2, 3]
+As he said this to his sons, Adam groaned sore and said: 'What shall I do I am in great distress.' And Eve wept and said: 'My lord Adam, rise up and give me half of thy trouble and I will endure it; for it is on my account that this hath happened to thee, on my account thou art beset with toils and troubles.' But Adam said to Eve, 'Arise and go with my son Seth near to paradise, and put earth upon your heads and weep and pray Elohim (God) to have mercy upon me and send his angel to paradise, and give me of the tree out of which the oil floweth, and bring it me, and I shall anoint myself and shall have rest from my complaint.'
+  card 69312 old 9:2 -> 9:1 (other end canon|romans|5:12)
+  card 69313 old 9:2 -> 9:1 (other end canon|genesis|3:19)
+  card 69314 old 9:2 -> 9:1 (other end canon|genesis|3:17)
+  card 69315 old 9:2 -> 9:1 (other end canon|genesis|3:16)
+
+[10:1] <- old [1, 2, 3, 4]
+Then Seth and Eve went towards paradise, and Eve saw her son, and a wild beast assailing him, and Eve wept and said: 'Woe is me; if I come to the day of the Resurrection, all those who have sinned will curse me saying: Eve hath not kept the commandment of Elohim (God).' And she spake to the beast: 'Thou wicked beast, fearest thou not to fight with the image of Elohim (God) How was thy mouth opened How were thy teeth made strong How didst thou not call to mind thy subjection For long ago wast thou made subject to the image of Elohim (God).' Then the beast cried out and said:
+
+[11:1] <- old [1, 2, 3]
+'It is not our concern, Eve, thy greed and thy wailing, but thine own; for (it is) from thee that the rule of the beasts hath arisen. How was thy mouth opened to eat of the tree concerning which Elohim (God) enjoined thee not to eat of it On this account, our nature also hath been transformed. Now therefore thou canst not endure it, if I begin to reprove thee.'
+
+[12:1] <- old [1, 2]
+Then Seth speaketh to the beast, 'Close thy mouth and be silent and stand off from the image of Elohim (God) until the day of Judgment.' Then saith the beast to Seth: 'Behold, I stand off from the image of Elohim (God).' And he went to his lair.
+  card 69316 old 12:1 -> 12:1 (other end canon|romans|8:22)
+  card 69317 old 12:1 -> 12:1 (other end canon|romans|8:21)
+  card 69318 old 12:1 -> 12:1 (other end canon|romans|8:20)
+  card 69319 old 12:1 -> 12:1 (other end canon|genesis|9:2)
+  card 69320 old 12:1 -> 12:1 (other end canon|genesis|1:28)
+  card 69321 old 12:1 -> 12:1 (other end canon|genesis|1:27)
+  card 69322 old 12:1 -> 12:1 (other end canon|genesis|1:26)
+
+[13:1] <- old [1, 2]
+And Seth went with Eve near paradise, and I they wept there, and prayed Elohim (God) to send his angel and give them the oil of mercy. And Elohim (God) sent the archangel Michael and he spake to Seth: 'Seth, man of Elohim (God), weary not thyself with prayers and entreaties concerning the tree which floweth with oil to anoint thy father Adam. For it shall not be thine now, but in the end of the times.
+  card 69324 old 13:2 -> 13:1 (other end canon|psalms|45:7)
+  card 69325 old 13:2 -> 13:1 (other end canon|isaiah|61:3)
+  card 69326 old 13:2 -> 13:1 (other end canon|isaiah|61:1)
+
+[13:2] <- old [3, 6]
+Then shall all flesh be raised up from Adam till that great day,-all that shall be of the holy people. Then shall the delights of paradise be given to them and Elohim (God) shall be in their midst. And they shall no longer sin before his face, for the evil heart shall be taken from them and there shall be given them a heart understanding the good and to serve Elohim (God) only. But do thou go back to thy father. For the term of his life hath been fulfilled and he will live three days from to-day and will die. But when his soul is departing, thou shalt behold the awful (scene of) his passing.'
+  card 69323 old 13:3 -> 13:2 (other end canon|revelation|22:2)
+
+[14:1] <- old [1, 2, 3]
+Thus spake the angel and departed from them. And Seth and Eve came to the hut where Adam was laid. And Adam saith to Eve: 'Eve, what hast thou wrought in us Thou hast brought upon us great wrath which is death, [lording it over all our race].' And he saith to her, 'Call all our children and our children's children and tell them the manner of our transgression.'
+  card 69327 old 14:2 -> 14:1 (other end canon|genesis|2:17)
+  card 69328 old 14:2 -> 14:1 (other end canon|romans|5:12)
+
+[15:1] <- old [1, 2, 3]
+Then saith Eve to them: 'Hear all my children and children's children and I will relate to you how the enemy deceived us. It befell that we were guarding paradise, each of us the portion allotted to us from Elohim (God). Now I guarded in my lot, the west and the south. But the devil went to Adam's lot, where the male creatures were. [For Elohim (God) divided the creatures; all the males he gave to your father and all the females he gave to me.]
+
+[16:1] <- old [1, 2]
+And the devil spake to the serpent saying, Rise up, come to me and I will tell thee a word whereby thou mayst have profit." And he arose and came to him. And the devil saith to him:
+
+[16:2] <- old [3, 4, 5]
+"I hear that thou art wiser than all the beasts, and I have come to counsel thee. Why dost thou eat of Adam's tares and not of paradise Rise up and we will cause him to be cast out of paradise, even as we were cast out through him." The serpent saith to him, "I fear lest Yahuah (Lord) be wroth with me." The devil saith to him: "Fear not, only be my vessel and I will speak through thy mouth words to deceive him."
+
+[17:1] <- old [1, 2, 3, 4, 5]
+And instantly he hung himself from the wall of paradise, and when the angels ascended to worship Elohim (God), then Satan appeared in the form of an angel and sang hymns like the angels. And I bent over the wall and saw him, like an angel. But he saith to me: "Art thou Eve" And I said to him, "I am." 'What art thou doing in paradise" And I said to him, "Elohim (God) set us to guard and to eat of it." The devil answered through the mouth of the serpent: 'Ye do well but ye do not eat of every plant." And I said: "Yea, we eat of all. save one only, which is in the midst of paradise, concerning which, Elohim (God) charged us not to eat of it: for, He said to us, on the day on which ye eat of it, ye shall die the death."
+  card 69329 old 17:5 -> 17:1 (other end canon|genesis|2:17)
+  card 69330 old 17:4 -> 17:1 (other end canon|genesis|3:1)
+  card 69331 old 17:2 -> 17:1 (other end canon|2-corinthians|11:14)
+
+[18:1] = old 1 (unchanged)
+
+[18:2] = old 2 (unchanged)
+  card 69333 old 18:2 -> 18:2 (other end canon|genesis|3:5)
+  card 69334 old 18:2 -> 18:2 (other end canon|genesis|3:4)
+
+[18:3] <- old [4, 5]
+But Elohim (God) perceived this that ye would be like Him, so he envied you and said, Ye shall not eat of it. Nay, do thou give heed to the plant and thou wilt see its great glory." Yet I feared to take of the fruit. And he saith to me: "Come hither, and I will give it thee. Follow me."
+  card 69332 old 18:4 -> 18:3 (other end canon|genesis|3:5)
+
+[19:1] <- old [1, 2, 3]
+And I opened to him and he walked a little way, then turned and said to me: "I have changed my mind and I will not give thee to eat until thou swear to me to give also to thy husband." (And) I said. "What sort of oath shall I swear to thee Yet what I know, I say to thee: By the throne of the Master, and by the Cherubim and the Tree of Life! I will give also to my husband to eat." And when he had received the oath from me, he went and poured upon the fruit the poison of his wickedness, which is lust, the root and beginning of every sin, and he bent the branch on the earth and I took of the fruit and I ate.
+  card 69335 old 19:3 -> 19:1 (other end canon|1-john|2:16)
+  card 69336 old 19:3 -> 19:1 (other end canon|james|1:15)
+  card 69337 old 19:3 -> 19:1 (other end canon|james|1:14)
+
+[20:1] <- old [1, 2, 3]
+And in that very hour my eyes were opened, and forthwith I knew that I was bare of the righteousness with which I had been clothed (upon), and I wept and said to him: "Why hast thou done this to me in that thou hast deprived me of the glory with which I was clothed" But I wept also about the oath, which I had sworn. But he descended from the tree and vanished.
+  card 69338 old 20:3 -> 20:1 (other end canon|romans|3:23)
+  card 69339 old 20:1 -> 20:1 (other end canon|genesis|3:7)
+
+[20:2] <- old [4, 5]
+And I began to seek, in my nakedness, in my part for leaves to hide my shame, but I found none, for, as soon as I had eaten, the leaves showered down from all the trees in my part, except the fig tree only. But I took leaves from it and made for myself a girdle and it was from the very same plant of which I had eaten.
+
+[21:1] <- old [1, 2, 3, 4, 5]
+And I cried out in that very hour, 'Adam, Adam, where art thou Rise up, come to me and I will show thee a great secret." But when your father came, I spake to him words of transgression [which have brought us down from our great glory]. For, when he came, I opened my mouth and the devil was speaking, and I began to exhort him and said, "Come hither, my lord Adam, hearken to me and eat of the fruit of the tree of which Elohim (God) told us not to eat of it, and thou shalt be as a Elohim (God)." And your father answered and said, "I fear lest Elohim (God) be wroth with me." And I said to him, "Fear not, for as soon as thou hast eaten thou shalt know good and evil." And speedily I persuaded him, and he ate and straightway his eyes were opened and he too knew his nakedness.
+  card 69340 old 21:5 -> 21:1 (other end canon|genesis|3:4)
+  card 69341 old 21:3 -> 21:1 (other end canon|genesis|3:5)
+
+[21:2] = old 6 (unchanged)
+
+[22:1] <- old [1, 2]
+And in that same hour, we heard the archangel Michael blowing with his trumpet and calling to the angels and saying: "Thus saith Yahuah (Lord), Come with me to Paradise and hear the judgement with which I shall judge Adam."
+  card 69342 old 22:1 -> 22:1 (other end canon|1-thessalonians|4:16)
+  card 69343 old 22:2 -> 22:1 (other end canon|psalms|50:4)
+  card 69344 old 22:2 -> 22:1 (other end canon|psalms|50:3)
+
+[22:2] <- old [3, 4]
+And when Elohim (God) appeared in paradise, mounted on the chariot of his cherubim with the angels proceeding before him and singing hymns of praises, all the plants of paradise, both of your father's lot and mine, broke out into flowers. And the throne of Elohim (God) was fixed where the Tree of Life was.
+  card 69345 old 22:3 -> 22:2 (other end canon|genesis|3:8)
+
+[23:1] <- old [1, 2, 3, 4]
+And Elohim (God) called Adam saying, "Adam, where art thou Can the house be hidden from the presence of its builder "Then your father answered; "It is not because we think not to be found by thee, Yahuah (Lord), that we hide, but I was afraid, because I am naked, and I was ashamed before thy might, (my) Master." Elohim (God) saith to him, "Who showed thee that thou art naked, unless thou hast forsaken my commandment, which I delivered thee to keep (it)." Then Adam called to mind the word which I spake to him, (saying) "I will make thee secure before Elohim (God)"; and he turned and said to me: "Why hast thou done this" And I said, "The serpent deceived me."
+  card 69346 old 23:4 -> 23:1 (other end canon|genesis|3:12)
+  card 69347 old 23:3 -> 23:1 (other end canon|genesis|3:11)
+  card 69348 old 23:2 -> 23:1 (other end canon|genesis|3:10)
+  card 69349 old 23:1 -> 23:1 (other end canon|genesis|3:9)
+
+[24:1] = old 1 (unchanged)
+  card 69350 old 24:1 -> 24:1 (other end canon|genesis|3:19)
+  card 69351 old 24:1 -> 24:1 (other end canon|genesis|3:18)
+  card 69352 old 24:1 -> 24:1 (other end canon|genesis|3:17)
+
+[24:2] = old 3 (unchanged)
+
+[24:3] = old 4 (unchanged)
+
+[25:1] <- old [1, 2, 3, 4]
+And Yahuah (Lord) turned to me and said: "Since thou hast hearkened to the serpent, and turned a deaf ear to my commandment, thou shalt be in throes of travail and intolerable agonies; thou shalt bear children in much trembling and in one hour thou shalt come to the birth, and lose thy life, from thy sore trouble and anguish. But thou shalt confess and say: 'Lord, Yahuah (Lord), save me, and I will turn no more to the sin of the flesh.' And on this account, from thine own words I will judge thee, by reason of the enmity which the enemy has planted in thee."
+  card 69353 old 25:2 -> 25:1 (other end canon|genesis|3:16)
+
+[26:1] = old 1 (unchanged)
+  card 69362 old 26:1 -> 26:1 (other end canon|genesis|3:14)
+
+[26:2] <- old [2, 3, 4]
+Thou shalt be deprived of the victual of which thou didst eat and shalt feed on dust all the days of thy life: on thy breast and thy belly shalt thou walk and be robbed of hands and feet. There shall not be left thee ear nor wing, nor one limb of all that with which thou didst ensnare them in thy malice and causedst them to be cast out of paradise; and I will put enmity between thee and his seed: he shall bruise thy head and thou shalt bruise his heel until the day of Judgement."
+  card 69354 old 26:4 -> 26:2 (other end canon|hebrews|2:14)
+  card 69355 old 26:4 -> 26:2 (other end canon|luke|10:19)
+  card 69356 old 26:4 -> 26:2 (other end canon|luke|10:18)
+  card 69357 old 26:4 -> 26:2 (other end canon|revelation|12:17)
+  card 69358 old 26:4 -> 26:2 (other end canon|revelation|12:9)
+  card 69359 old 26:4 -> 26:2 (other end canon|romans|16:20)
+  card 69360 old 26:4 -> 26:2 (other end canon|genesis|3:15)
+  card 69361 old 26:3 -> 26:2 (other end jubilees|jubilees|3:28)
+
+[27:1] <- old [1, 3, 5]
+Thus he spake and bade the angels have us cast out of paradise: and as we were being driven out amid our loud lamentations, your father Adam besought the angels and said: "Leave me a little (space) that I may entreat Yahuah (Lord) that he have compassion on me and pity me, for I only have sinned." And they left off driving him and Adam cried aloud and wept saying: "Pardon me O Yahuah (Lord), my deed." Then Yahuah (Lord) saith to the angels, "Why have ye ceased from driving Adam from paradise Why do ye not cast him out Is it I who have done wrong Or is my judgement badly judged" Then the angels fell down on the ground and worshipped Yahuah (Lord) saying, "Thou art just, O Yahuah (Lord), and thou judgest righteous judgement."
+
+[28:1] = old 1 (unchanged)
+
+[28:2] <- old [2, 3, 4]
+And Adam answered and said, " Grant me, O Yahuah (Lord), of the Tree of Life that I may eat of it, before I be cast out." Then Yahuah (Lord) spake to Adam, "Thou shalt not take of it now, for I have commanded the cherubim with the flaming sword that turneth (every way) to guard it from thee that thou taste not of it; but thou hast the war which the adversary hath put into thee, yet when thou art gone out of paradise, if thou shouldst keep thyself from all evil, as one about to die, when again the Resurrection hath come to pass, I will raise thee up and then there shall be given to thee the Tree of Life."
+  card 69363 old 28:4 -> 28:2 (other end canon|revelation|22:14)
+  card 69364 old 28:4 -> 28:2 (other end canon|revelation|2:7)
+  card 69365 old 28:3 -> 28:2 (other end canon|genesis|3:24)
+
+[29:1] <- old [1, 3, 5, 6, 7]
+Thus spake Yahuah (Lord) and ordered us to be cast out of paradise. But your father Adam wept before the angels opposite paradise and the angels say to him: "What wouldst thou have us to do, Adam "And your father saith to them, "Behold, ye cast me out. I pray you, allow me to take away fragrant herbs from paradise, so that I may offer an offering to Elohim (God) after I have gone out of paradise that he hear me." And the angels approached Elohim (God) and said: "JA'EL, Eternal King, command, my Lord, that there be given to Adam incense of sweet odour from paradise and seeds for his food." And Elohim (God) bade Adam go in and take sweet spices and fragrant herbs from paradise and seeds for his food. And the angels let him go and he took four kinds: crocus and nard and calamus and cinnamon and the other seeds for his food: and, after taking these, he went out of paradise. And we were on the earth.
+  card 69366 old 29:3 -> 29:1 (other end canon|genesis|8:21)
+  card 69367 old 29:5 -> 29:1 (other end canon|exodus|30:38)
+  card 69368 old 29:6 -> 29:1 (other end canon|exodus|30:34)
+  card 69369 old 29:3 -> 29:1 (other end jubilees|jubilees|3:27)
+
+[30:1] = old 1 (unchanged)
+
+[31:1] <- old [1, 2, 3, 4]
+And when Eve had said this in the midst of her sons, while Adam was lying ill and bound to die after a single day from the sickness which had fastened upon him, she saith to him: 'How is it that thou diest and I live or how long have I to live after thou art dead Tell me.' And Adam saith to her: 'Reck not of this, for thou tarriest not after me, but even both of us are to die together. And she shall lie in my place. But when I die, anoint me and let no man touch me till the angel of Yahuah (Lord) shall speak somewhat concerning me. For Elohim (God) will not forget me, but will seek His own creature; and now arise rather and pray to Elohim (God) till I give up my spirit into His hands who gave it me. For we know not how we are to meet our Maker, whether He be wroth with us, or be merciful and intend to pity and receive us.'
+  card 69370 old 31:4 -> 31:1 (other end canon|genesis|3:19)
+  card 69371 old 31:4 -> 31:1 (other end canon|hebrews|9:27)
+  card 69372 old 31:4 -> 31:1 (other end canon|psalms|31:5)
+
+[32:1] = old 1 (unchanged)
+  card 69373 old 32:1 -> 32:1 (other end canon|daniel|9:5)
+  card 69374 old 32:1 -> 32:1 (other end canon|luke|15:21)
+  card 69375 old 32:1 -> 32:1 (other end canon|luke|15:18)
+  card 69376 old 32:1 -> 32:1 (other end canon|psalms|51:4)
+  card 69377 old 32:1 -> 32:1 (other end canon|psalms|51:1)
+
+[32:2] <- old [3, 4]
+Even thus prayed Eve on her knees; (and) behold, the angel of humanity came to her, and raised her up and said: 'Rise up, Eve, (from thy penitence), for behold, Adam thy husband hath gone out of his body. Rise up and behold his spirit borne aloft to his Maker.'
+
+[33:1] <- old [1, 2, 3, 5]
+And Eve rose up and wiped off her tears with her hand, and the angel saith to her, ' Lift Up thyself from the earth.' And she gazed steadfastly into heaven, and beheld a chariot of light, borne by four bright eagles, (and) it were impossible for any man born of woman to tell the glory of them or behold their face -and angels going before the chariot- and when they came to the place where your father Adam was, the chariot halted and the Seraphim. And I beheld golden censers, between your father and the chariot, and all the angels with censers and frankincense came in haste to the incense-offering and blew upon it and the smoke of the incense veiled the firmaments. And the angels fell down and worshipped Elohim (God), crying aloud and saying, JA'EL, Holy One, have pardon, for he is Thy image, and the work of Thy holy hands.'
+  card 69378 old 33:5 -> 33:1 (other end canon|revelation|8:4)
+  card 69379 old 33:2 -> 33:1 (other end canon|2-kings|2:11)
+  card 69380 old 33:2 -> 33:1 (other end canon|psalms|18:10)
+  card 69381 old 33:2 -> 33:1 (other end canon|ezekiel|1:10)
+  card 69382 old 33:2 -> 33:1 (other end canon|ezekiel|1:4)
+
+[34:1] <- old [1, 2]
+And I Eve beheld two great and fearful wonders standing in the presence of Elohim (God) and I wept for fear, and I cried aloud to my son Seth and said, 'Rise up, Seth, from the body of thy father Adam and come to me, and thou shalt see a spectacle which no man's eye hath yet beheld.'
+
+[35:1] <- old [1, 2, 3, 4]
+Then Seth arose and came to his mother and to her he saith: 'What is thy trouble Why weepest thou' (And) she saith to him: 'Look up and see with thine eyes the seven heavens opened, and see how the soul of thy father lies on its face and all the holy angels are praying on his behalf and saying: 'Pardon him, Father of All, for he is Thine image." 'Pray, my child Seth, what shall this mean And will he one day be delivered into the hands of the Invisible Father, even our Elohim (God) But who are the two negroes who stand by at the prayers for thy father Adam'
+
+[36:1] <- old [1, 2, 3]
+And Seth telleth his mother, that they are the sun and moon and themselves fall down and pray on behalf of my father Adam. Eve saith to him: 'And where is their light and why have they taken on such a black appearance' And Seth answereth her, 'The light hath not left them, but they cannot shine before the Light of the Universe, the Father of Light; and on this account their light hath been hidden from them.
+  card 69383 old 36:2 -> 36:1 (other end canon|revelation|6:12)
+  card 69384 old 36:2 -> 36:1 (other end canon|joel|2:10)
+  card 69385 old 36:3 -> 36:1 (other end canon|job|25:5)
+
+[37:1] <- old [1, 2, 3]
+Now while Seth was saying this to his mother, lo, an angel blew the trumpet, and there stood up all the angels (and they were) lying on their faces, and they cried aloud in an awful voice and said: 'Blessed (be) the glory of Yahuah (Lord) from the works of His making, for He hath pitied Adam the creature of His hands.' But when the angels had said these words, lo, there came one of the seraphim with six wings and snatched up Adam and carried him off to the Acherusian lake, and washed him thrice, in the presence of Elohim (God).
+  card 69389 old 37:2 -> 37:1 (other end canon|hebrews|7:25)
+  card 69390 old 37:1 -> 37:1 (other end canon|revelation|8:3)
+  card 69391 old 37:1 -> 37:1 (other end canon|revelation|8:2)
+
+[37:2] <- old [4, 6]
+And he stayed there three hours, lying down, and thereafter the Father of all, sitting on his holy throne stretched out his hand, and took Adam and handed him over to the archangel Michael saying: 'Lift him up into Paradise unto the third Heaven, and leave him there until that fearful day of my reckoning, which I will make in the world.' Then Michael took Adam and left him where Elohim (God) told him.
+  card 69386 old 37:4 -> 37:2 (other end canon|daniel|12:13)
+  card 69387 old 37:4 -> 37:2 (other end canon|2-corinthians|12:4)
+  card 69388 old 37:4 -> 37:2 (other end canon|2-corinthians|12:2)
+
+[38:1] <- old [1, 2, 3, 4, 5]
+But after all this, the archangel asked concerning the laying out of the remains. And Elohim (God) commanded that all the angels should assemble in His presence, each in his order, and all the angels assembled, some having censers in their hands, and others trumpets. And lo ! the 'Lord of Hosts' came on and four winds drew Him and cherubim mounted on the winds and the angels from heaven escorting Him and they came on the earth, where was the body of Adam. And they came to paradise and all the leaves of paradise were stirred so that all men begotten of Adam slept from the fragrance save Seth alone, because he was born 'according to the appointment of Elohim (God) '. Then Adam's body lay there in paradise on the earth and Seth grieved exceedingly over him.
+
+[39:1] <- old [1, 2, 3]
+And Elohim (God) saith to him: 'Adam, what hast thou done If thou hadst kept my commandment, there would now be no rejoicing among those who are bringing thee down to this place. Yet, I tell thee that I will turn their joy to grief and thy grief will I turn to joy, and I will transform thee to thy former glory and set thee on the throne of thy deceiver. But he shall be cast into this place to see thee sitting above him, then he shall be condemned and they that heard him, and he shall be grieved sore when he seeth thee sitting on his honourable throne.'
+  card 69392 old 39:2 -> 39:1 (other end canon|1-corinthians|15:49)
+  card 69393 old 39:2 -> 39:1 (other end canon|romans|5:17)
+  card 69394 old 39:3 -> 39:1 (other end canon|luke|10:18)
+  card 69395 old 39:2 -> 39:1 (other end canon|revelation|3:21)
+
+[40:1] <- old [1, 2, 3, 5, 6, 7]
+Then Elohim (God) spake to the archangel(s) Michael, (Gabriel, Uriel, and Raphael): 'Go away to Paradise in the third heaven, and strew linen clothes and cover the body of Adam and bring oil of the 'oil of fragrance' and pour it over him. And they acted thus did the three great angels and they prepared him for burial. And Elohim (God) said: 'Let the body of Abel also be brought.' And they brought other linen clothes and prepared his (body) also. For he was unburied since the day when Cain his brother slew him; for wicked Cain took great pains to conceal (him) but could not, for the earth would not receive him for the body sprang up from the earth and a voice went out of the earth saying: 'I will not receive a companion body, till the earth which was taken and fashioned in me cometh to me.' At that time, the angels took it and placed it on a rock, till Adam his father was buried. And both were buried, according to the commandment of Elohim (God), in the spot where Elohim (God) found the dust, and He caused the place to be dug for two. And Elohim (God) sent seven angels to paradise and they brought many fragrant spices and placed them in the earth, and they took the two bodies and placed them in the spot which they had digged and builded.
+  card 69396 old 40:2 -> 40:1 (other end canon|2-corinthians|12:4)
+  card 69397 old 40:6 -> 40:1 (other end canon|revelation|8:2)
+  card 69398 old 40:1 -> 40:1 (other end enoch|1-enoch|20:3)
+  card 69399 old 40:1 -> 40:1 (other end enoch|1-enoch|20:2)
+  card 69400 old 40:1 -> 40:1 (other end enoch|1-enoch|20:7)
+  card 69401 old 40:1 -> 40:1 (other end enoch|1-enoch|20:5)
+
+[41:1] <- old [1, 2]
+And Elohim (God) called and said, 'Adam, Adam.' And the body answered from the earth and said: 'Here am I, Yahuah (Lord).' And Elohim (God) saith to him: 'I told thee (that) earth thou art and to earth shalt thou return. Again I promise to thee the Resurrection; I will raise thee up in the Resurrection with every man who is of thy seed.'
+  card 69402 old 41:2 -> 41:1 (other end canon|job|19:26)
+  card 69403 old 41:2 -> 41:1 (other end canon|job|19:25)
+  card 69404 old 41:2 -> 41:1 (other end canon|john|5:28)
+  card 69405 old 41:2 -> 41:1 (other end canon|1-corinthians|15:22)
+  card 69406 old 41:2 -> 41:1 (other end canon|1-corinthians|15:21)
+  card 69407 old 41:2 -> 41:1 (other end canon|ezekiel|37:12)
+  card 69408 old 41:2 -> 41:1 (other end canon|daniel|12:2)
+
+[42:1] = old 1 (unchanged)
+
+[42:2] <- old [2, 3, 4, 5, 6, 7, 8]
+And Eve also, when the six days were fulfilled, fell asleep. But while she was living, she wept bitterly about Adam's falling on sleep, for she knew not where he was laid. For when Yahuah (Lord) came to paradise to bury Adam she was asleep, and her sons too, except Seth, till He bade Adam be prepared for burial; and no man knew on earth, except her son Seth. And Eve prayed (in the hour of her death) that she might be buried in the place where her husband Adam was. And after she had finished her prayer, she saith: 'Lord, Master, Elohim (God) of all rule, estrange not me thy handmaid from the body of Adam, for from his members didst thou make me. But deem me worthy, even me unworthy that I am and a sinner, to enter into his tabernacle, even as I was with him in paradise, both without separation from each other; just as in our transgression, we were (both) led astray and transgressed thy command, but were not separated. Even so, Yahuah (Lord), do not separate us now.' But after she had prayed, she gazed heavenwards and groaned aloud and smote her breast and said: 'Elohim (God) of All, receive my spirit,' and straightway she delivered up her spirit to Elohim (God).
+  card 69409 old 42:8 -> 42:2 (other end canon|acts|7:59)
+  card 69410 old 42:8 -> 42:2 (other end canon|psalms|31:5)
+  card 69411 old 42:6 -> 42:2 (other end canon|ephesians|5:31)
+  card 69412 old 42:6 -> 42:2 (other end canon|genesis|2:24)
+  card 69413 old 42:5 -> 42:2 (other end canon|genesis|2:23)
+  card 69414 old 42:5 -> 42:2 (other end canon|genesis|2:22)
+
+[43:1] <- old [1, 2, 3, 4, 5]
+And Michael came and taught Seth how to prepare Eve for burial. And there came three angels and they buried her (body) where Adam's body was and Abel's. And thereafter Michael spake to Seth and saith: 'Lay out in this wise every man that dieth till the day of the Resurrection.' And after giving him this rule; he saith to him: 'Mourn not beyond six days, but on the seventh day, rest and rejoice on it, because on that very day, Elohim (God) rejoiceth (yea) and we angels (too) with the righteous soul, who hath passed away from the earth.' Even thus spake the angel, and ascended into heaven, glorifying (God) and saying: 'Allelujah.' [Holy, holy, holy is Yahuah (Lord), in the glory of Elohim (God) the Father, for to Him it is meet to give glory, honour and worship, with the eternal life-giving spirit now and always and for ever. Amen.] [Holy, holy, holy is Yahuah (Lord) of Hosts. To whom be glory and power for ever and for ever Amen.] [Then the archangel Joel glorified Elohim (God); saying, 'Holy, Holy, Holy Yahuah (Lord), heaven and earth are full of thy glory.']
+  card 69415 old 43:3 -> 43:1 (other end canon|genesis|2:3)
+  card 69416 old 43:3 -> 43:1 (other end canon|genesis|2:2)
+  card 69417 old 43:2 -> 43:1 (other end canon|1-thessalonians|4:14)
+  card 69418 old 43:2 -> 43:1 (other end canon|1-thessalonians|4:13)
+
+[44:1] = old 1 (unchanged)
+
+[45:1] <- old [1, 2]
+But after seven days, they began to be hungry and started to look for victual to eat, and they found it not. Then Eve said to Adam: 'My lord, I am hungry. Go, look for (something) for us to eat. Perchance Yahuah Elohim (the Lord God) will look back and pity us and recall us to the place in which we were before.
+
+[46:1] <- old [1, 2]
+And Adam arose and walked seven days over all that land, and found no victual such as they used to have in paradise. And Eve said to Adam: 'Wilt thou slay me that I may die, and perchance Elohim (God) Yahuah (Lord) will bring thee into paradise, for on my account hast thou been driven thence.'
+
+[46:2] = old 3 (unchanged)
+
+[47:1] <- old [1, 2]
+And they walked about and searched for nine days, and they found none such as they were used to have in paradise, but found only animals' food. And Adam said to Eve: 'This hath Yahuah (Lord) provided for animals and brutes to eat;
+  card 69420 old 47:2 -> 47:1 (other end canon|genesis|3:19)
+  card 69421 old 47:2 -> 47:1 (other end canon|genesis|3:18)
+
+[47:2] = old 3 (unchanged)
+  card 69419 old 47:3 -> 47:2 (other end canon|genesis|3:17)
+
+[48:1] <- old [1, 3]
+And Eve said to Adam: 'What is penitence Tell me, what sort of penitence am I to do Let us not put too great a labour on ourselves, which we cannot endure, so that Yahuah (Lord) will not hearken to our prayers: and will turn away His countenance from us, because we have not fulfilled what we promised. My lord, how much penitence hast thou thought (to do) for I have brought trouble and anguish upon thee'
+
+[49:1] = old 1 (unchanged)
+  card 69422 old 49:1 -> 49:1 (other end canon|psalms|51:17)
+  card 69423 old 49:1 -> 49:1 (other end canon|isaiah|6:5)
+  card 69425 old 49:1 -> 49:1 (other end canon|joel|2:12)
+
+[49:2] = old 2 (unchanged)
+  card 69424 old 49:2 -> 49:2 (other end canon|joel|2:13)
+
+[50:1] <- old [1, 2]
+And Eve walked to the river Tigris and did as Adam had told her. Likewise, Adam walked to the river Jordan and stood on a stone up to his neck in water.
+
+[51:1] = old 1 (unchanged)
+  card 69426 old 51:1 -> 51:1 (other end canon|jonah|3:8)
+  card 69427 old 51:1 -> 51:1 (other end canon|jonah|3:7)
+  card 69428 old 51:1 -> 51:1 (other end canon|psalms|69:2)
+  card 69429 old 51:1 -> 51:1 (other end canon|psalms|69:1)
+
+[51:2] = old 3 (unchanged)
+
+[52:1] <- old [1, 2, 3]
+And eighteen days passed by; then Satan was wroth and transformed himself into the brightness of angels, and went away to the river Tigris to Eve, and found her weeping, and the devil himself pretended to grieve with her, and he began to weep and said to her: 'Come out of the river and lament no more. Cease now from sorrow and moans. Why art thou anxious and thy husband Adam Yahuah Elohim (The Lord God) hath heard your groaning and hath accepted your penitence, and all we angels have entreated on your behalf, and made supplication to Yahuah (Lord);
+  card 69430 old 52:1 -> 52:1 (other end canon|genesis|3:13)
+  card 69431 old 52:3 -> 52:1 (other end canon|2-corinthians|11:13)
+  card 69432 old 52:1 -> 52:1 (other end canon|2-corinthians|11:14)
+
+[52:2] <- old [4, 5]
+and he hath sent me to bring you out of the water and give you the nourishment which you had in paradise, and for which you are crying out. Now come out of the water and I will conduct you to the place where your victual hath been made ready.'
+
+[53:1] <- old [1, 2]
+But Eve heard and believed and went out of the water of the river, and her flesh was (trembling) like grass, from the chill of the water. And when she had gone out, she fell on the earth and the devil raised her up and led her to Adam.
+
+[53:2] <- old [3, 4]
+But when Adam had seen her and the devil with her, he wept and cried aloud and said: 'O Eve, Eve, where is the labour of thy penitence How hast thou been again ensnared by our adversary, by whose means we have been estranged from our abode in paradise and spiritual joy'
+
+[54:1] <- old [1, 2, 3]
+And when she heard this, Eve understood that (it was) the devil (who) had persuaded her to go out of the river; and she fell on her face on the earth and her sorrow and groaning and wailing was redoubled. And she cried out and said: 'Woe unto thee, thou devil. Why dost thou attack us for no cause What hast thou to do with us What have we done to thee for thou pursuest us with craft Or why doth thy malice assail us Have we taken away thy glory and caused thee to be without honour Why dost thou harry us, thou enemy (and persecute us) to the death in wickedness and envy'
+
+[55:1] <- old [1, 2, 3]
+And with a heavy sigh, the devil spake: 'O Adam! all my hostility, envy, and sorrow is for thee, since it is for thee that I have been expelled from my glory, which I possessed in the heavens in the midst of the angels and for thee was I cast out in the earth.' Adam answered, 'What dost thou tell me What have I done to thee or what is my fault against thee Seeing that thou hast received no harm or injury from us, why dost thou pursue us'
+
+[56:1] <- old [1, 2]
+The devil replied, 'Adam, what dost thou tell me It is for thy sake that I have been hurled from that place. When thou wast formed. I was hurled out of the presence of Elohim (God) and banished from the company of the angels. When Elohim (God) blew into thee the breath of life and thy face and likeness was made in the image of Elohim (God), Michael also brought thee and made (us) worship thee in the sight of Elohim (God); and Elohim (God) Yahuah (Lord) spake: Here is Adam. I have made thee in our image and likeness.'
+  card 69433 old 56:2 -> 56:1 (other end canon|hebrews|1:6)
+  card 69434 old 56:2 -> 56:1 (other end canon|colossians|1:15)
+  card 69435 old 56:2 -> 56:1 (other end canon|genesis|2:7)
+  card 69436 old 56:2 -> 56:1 (other end canon|genesis|1:27)
+  card 69437 old 56:2 -> 56:1 (other end canon|genesis|1:26)
+
+[57:1] <- old [1, 3]
+And Michael went out and called all the angels saying: 'Worship the image of Elohim (God) as Yahuah Elohim (the Lord God) hath commanded.' And Michael himself worshipped first; then he called me and said: 'Worship the image of Elohim (God) Yahuah (Lord).' And I answered, 'I have no (need) to worship Adam.' And since Michael kept urging me to worship, I said to him, 'Why dost thou urge me I will not worship an inferior and younger being (than I). I am his senior in the Creation, before he was made was I already made. It is his duty to worship me.'
+
+[58:1] <- old [1, 3]
+When the angels, who were under me, heard this, they refused to worship him. And Michael saith, 'Worship the image of Elohim (God), but if thou wilt not worship him, Yahuah Elohim (the Lord God) will be wrath with thee.' And I said, 'If He be wrath with me, I will set my seat above the stars of heaven and will be like the Highest.'
+  card 69438 old 58:3 -> 58:1 (other end enoch|1-enoch|6:2)
+  card 69439 old 58:1 -> 58:1 (other end canon|revelation|12:9)
+  card 69440 old 58:1 -> 58:1 (other end canon|revelation|12:7)
+  card 69441 old 58:3 -> 58:1 (other end canon|luke|10:18)
+  card 69442 old 58:1 -> 58:1 (other end canon|ezekiel|28:17)
+  card 69443 old 58:1 -> 58:1 (other end canon|ezekiel|28:15)
+  card 69444 old 58:3 -> 58:1 (other end canon|isaiah|14:14)
+  card 69445 old 58:3 -> 58:1 (other end canon|isaiah|14:13)
+  card 69446 old 58:3 -> 58:1 (other end canon|isaiah|14:12)
+
+[59:1] <- old [1, 2, 3, 4]
+And Elohim (God) Yahuah (Lord) was wrath with me and banished me and my angels from our glory; and on thy account were we expelled from our abodes into this world and hurled on the earth. And straightway we were overcome with grief, since we had been spoiled of so great glory. And we were grieved when we saw thee in such joy and luxury. And with guile I cheated thy wife and caused thee to be expelled through her (doing) from thy joy and luxury, as I have been driven out of my glory.
+
+[60:1] <- old [1, 2]
+When Adam heard the devil say this, he cried out and wept and spake: 'O Yahuah (Lord) my Elohim (God), my life is in thy hands. Banish this Adversary far from me, who seeketh to destroy my soul, and give me his glory which he himself hath lost.' And at that moment, the devil vanished before him. But Adam endured in his penance, standing for forty days (on end) in the water of Jordan.
+
+[61:1] <- old [1, 2, 3]
+And Eve said to Adam: 'Live thou, my Lord, to thee life is granted, since thou hast committed neither the first nor the second error. But I have erred and been led astray for I have not kept the commandment of Elohim (God); and now banish me from the light of thy life and I will go to the sunsetting, and there will I be, until I die.' And she began to walk towards the western parts and to mourn and to weep bitterly and groan aloud. And she made there a booth, while she had in her womb offspring of three months old.
+  card 69447 old 61:1 -> 61:1 (other end canon|romans|5:14)
+  card 69448 old 61:1 -> 61:1 (other end canon|1-timothy|2:14)
+  card 69449 old 61:1 -> 61:1 (other end canon|1-timothy|2:13)
+  card 69450 old 61:1 -> 61:1 (other end canon|genesis|3:6)
+
+[62:1] <- old [1, 2, 3]
+And when the time of her bearing approached, she began to be distressed with pains, and she cried aloud to Yahuah (Lord) and said: 'Pity me, O Yahuah (Lord), assist me.' And she was not heard and the mercy of Elohim (God) did not encircle her. And she said to herself: 'Who shall tell my lord Adam I implore you, ye luminaries of heaven, what time ye return to the east, bear a message to my lord Adam.'
+
+[63:1] = old 1 (unchanged)
+
+[63:2] <- old [2, 3]
+And he went and found her in great distress. And Eve said: 'From the moment I saw thee, my lord, my grief-laden soul was refreshed. And now entreat Yahuah Elohim (the Lord God) on my behalf to hearken unto thee and look upon me and free me from my awful pains.' And Adam entreated Yahuah (Lord) for Eve.
+
+[64:1] <- old [1, 2, 3]
+And behold, there came twelve angels and two 'virtues', standing on the right and on the left of Eve; and Michael was standing on the right; and he stroked her on the face as far as to the breast and said to Eve: 'Blessed art thou, Eve, for Adam's sake. Since his prayers and intercessions are great, I have been sent that thou mayst receive our help. Rise up now, and prepare thee to bear. And she bore a son and he was shining; and at once the babe rose up and ran and bore a blade of grass in his hands, and gave it to his mother, and his name was called Cain.
+  card 69451 old 64:3 -> 64:1 (other end canon|genesis|4:1)
+  card 69452 old 64:1 -> 64:1 (other end canon|genesis|3:16)
+
+[65:1] <- old [1, 2]
+And Adam carried Eve and the boy and led them to the East. And Yahuah Elohim (the Lord God) sent divers seeds by Michael the archangel and gave to Adam and showed him how to work and till the ground, that they might have fruit by which they and all their generations might live.
+
+[65:2] = old 3 (unchanged)
+
+[65:3] = old 4 (unchanged)
+
+[65:4] = old 5 (unchanged)
+
+[66:1] = old 1 (unchanged)
+  card 69454 old 66:1 -> 66:1 (other end canon|genesis|4:25)
+  card 69457 old 66:1 -> 66:1 (other end canon|genesis|4:2)
+
+[66:2] = old 2 (unchanged)
+  card 69453 old 66:2 -> 66:2 (other end canon|genesis|5:4)
+  card 69455 old 66:2 -> 66:2 (other end canon|1-john|3:12)
+  card 69456 old 66:2 -> 66:2 (other end canon|genesis|4:8)
+
+[67:1] = old 1 (unchanged)
+
+[67:2] = old 2 (unchanged)
+
+[68:1] <- old [1, 2, 3]
+And Adam said to Seth, 'Hear, my son Seth, that I may relate to thee what I heard and saw after your mother and I had been driven out of paradise. When we were at prayer, there came to me Michael the archangel, a messenger of Elohim (God). And I saw a chariot like the wind and its wheels were fiery and I was caught up into the Paradise of righteousness, and I saw Yahuah (Lord) sitting and his face was flaming fire that could not be endured. And many thousands of angels were on the right and the left of that chariot.
+  card 69458 old 68:3 -> 68:1 (other end canon|revelation|4:2)
+  card 69459 old 68:3 -> 68:1 (other end canon|2-kings|2:11)
+  card 69460 old 68:3 -> 68:1 (other end canon|psalms|18:10)
+  card 69461 old 68:3 -> 68:1 (other end canon|ezekiel|1:4)
+  card 69462 old 68:3 -> 68:1 (other end canon|ezekiel|1:26)
+  card 69463 old 68:3 -> 68:1 (other end canon|2-corinthians|12:2)
+  card 69464 old 68:3 -> 68:1 (other end canon|2-corinthians|12:4)
+
+[69:1] <- old [1, 2]
+When I saw this, I was confounded, and terror seized me and I bowed myself down before Elohim (God) with my face to the earth. And Elohim (God) said to me, 'Behold thou diest, since thou hast transgressed the commandment of Elohim (God), for thou didst hearken rather to the voice of thy wife, whom I gave into thy power, that thou mightst hold her to thy will. Yet thou didst listen to her and didst pass by My words.'
+  card 69465 old 69:2 -> 69:1 (other end canon|genesis|3:17)
+  card 69466 old 69:2 -> 69:1 (other end canon|genesis|2:17)
+
+[70:1] <- old [1, 2]
+And when I heard these words of Elohim (God), I fell prone on the earth and worshipped Yahuah (Lord) and said, 'My Lord, All powerful and merciful Elohim (God), Holy and Righteous One, let not the name that is mindful of Thy majesty be blotted out, but convert my soul, for I die and my breath will go out of my mouth. Cast me not out from Thy presence, (me) whom Thou didst form of the clay of the earth. Do not banish from Thy favour him whom Thou didst nourish.'
+
+[70:2] = old 3 (unchanged)
+
+[71:1] = old 1 (unchanged)
+
+[71:2] = old 2 (unchanged)
+
+[71:3] <- old [3, 4]
+After I had worshipped Yahuah (Lord), straightway Michael, Elohim's (God's) archangel, seized my hand and cast me out of the paradise of 'vision' and of Elohim's (God's) command. And Michael held a rod in his hand, and he touched the waters, which were round about paradise, and they froze hard.
+
+[72:1] <- old [1, 2, 3, 4]
+And I went across, and Michael the archangel went across with me, and he led me back to the place whence he had caught me up. Hearken, my son Seth, even to the rest of the secrets [and sacraments] that shall be, which were revealed to me, when I had eaten of the tree of the knowledge, and knew and perceived what will come to pass in this age; [what Elohim (God) intends to do to his creation of the race of men. Yahuah (Lord) will appear in a flame of fire (and) from the mouth of His majesty He will give commandments and statutes [from His mouth will proceed a two-edged sword] and they will sanctify Him in the house of the habitation of His majesty.
+  card 69471 old 72:4 -> 72:1 (other end canon|deuteronomy|4:36)
+
+[72:2] <- old [5, 6]
+And He will show them the marvellous place of His majesty. And then they will build a house to Yahuah (Lord) their Elohim (God) in the land which He shall prepare for them and there they will transgress His statutes and their sanctuary will be burnt up and their land will be deserted and they themselves will be dispersed; because they have kindled the wrath of Elohim (God). And once more He will cause them to come back from their dispersion; and again they will build the house of Elohim (God);
+  card 69470 old 72:6 -> 72:2 (other end canon|deuteronomy|30:3)
+
+[72:3] <- old [7, 8, 9, 10]
+and in the last time the house of Elohim (God) will be exalted greater than of old. And once more iniquity will exceed righteousness. And thereafter Elohim (God) will dwell with men on earth [in visible form]; and then, righteousness will begin to shine. And the house of Elohim (God) will be honoured in the age and their enemies will no more be able to hurt the men, who are believing in Elohim (God); and Elohim (God) will stir up for Himself a faithful people, whom He shall save for eternity, and the impious shall be punished by Elohim (God) their king, the men who refused to love His law. Heaven and earth, nights and days, and all creatures shall obey Him, and not overstep His commandment. Men shall not change their works, but they shall be changed from forsaking the law of Yahuah (Lord). Therefore Yahuah (Lord) shall repel from Himself the wicked, and the just shall shine like the sun, in the sight of Elohim (God). And in that time, shall men be purified by water from their sins. But those who are unwilling to be purified by water shall be condemned. And happy shall the man be, who hath ruled his soul, when the Judgement shall come to pass and the greatness of Elohim (God) be seen among men and their deeds be inquired into by Elohim (God) the just judge.
+  card 69467 old 72:7 -> 72:3 (other end canon|revelation|21:3)
+  card 69468 old 72:7 -> 72:3 (other end canon|zechariah|8:8)
+  card 69469 old 72:7 -> 72:3 (other end canon|haggai|2:9)
+
+[73:1] = old 1 (unchanged)
+  card 69472 old 73:1 -> 73:1 (other end canon|deuteronomy|33:1)
+  card 69473 old 73:1 -> 73:1 (other end canon|genesis|49:1)
+  card 69474 old 73:1 -> 73:1 (other end canon|genesis|5:5)
+
+[73:2] <- old [2, 3, 4]
+And they were assembled in three parts, before his sight, in the house of prayer, where they used to worship Yahuah Elohim (the Lord God). And they asked him (saying): 'What concerns thee, Father, that thou shouldst assemble us, and why dost thou lie on thy bed 'Then Adam answered and said: 'My sons, I am sick and in pain.' And all his sons said to him: 'What does it mean, father, this illness and pain'
+
+[74:1] = old 1 (unchanged)
+
+[74:2] <- old [2, 3]
+Adam answered and said: 'No, my son, I do not long (for this), but I feel weakness and great pain in my body.' Seth answered, 'What is pain, my lord father I am ignorant; but hide it not from us, but tell us (about it).'
+
+[75:1] <- old [1, 2]
+And Adam answered and said: 'Hear me, my sons. When Elohim (God) made us, me and your mother, and placed us in paradise and gave us every tree bearing fruit to eat, he laid a prohibition on us concerning the tree of knowledge of good and evil, which is in the midst of paradise; (saying) 'Do not eat of it.' But Elohim (God) gave a part of paradise to me and (a part) to your mother: the trees of the eastern part and the north, which is over against Aquilo he gave to me, and to your mother he gave the part of the south and the western part.
+
+[76:1] <- old [1, 2, 3]
+(Moreover) Elohim (God) Yahuah (Lord) gave us two angels to guard us. The hour came when the angels had ascended to worship in the sight of Elohim (God); forthwith the adversary [the devil] found an opportunity while the angels were absent and the devil led your mother astray to eat of the unlawful and forbidden tree. And she did eat and gave to me.
+  card 69475 old 76:2 -> 76:1 (other end canon|genesis|2:17)
+  card 69476 old 76:2 -> 76:1 (other end canon|genesis|2:16)
+  card 69477 old 76:1 -> 76:1 (other end canon|psalms|91:11)
+
+[77:1] <- old [1, 2]
+And immediately, Yahuah Elohim (the Lord God) was wrath with us, and Yahuah (Lord) said to me: 'In that thou hast left behind my commandment and hast not kept my word, which I confirmed to thee; behold, I will bring upon thy body, seventy blows; with divers griefs, shalt thou be tormented, beginning at thy head and thine eyes and thine ears down to thy nails on thy toes, and in every separate limb. These hath Elohim (God) appointed for chastisement. All these things hath Yahuah (Lord) sent to me and to all our race.'
+
+[78:1] = old 1 (unchanged)
+
+[78:2] = old 3 (unchanged)
+
+[79:1] <- old [1, 2]
+And Adam said to Eve: 'Rise up and go with my son Seth to the neighbourhood of paradise, and put dust on your heads and throw yourselves on the ground and lament in the sight of Elohim (God). Perchance He will have pity (upon you) and send His angel across to the tree of His mercy, whence floweth the oil of life, and will give you a drop of it, to anoint me with it, that I may have rest from these pains, by which I am being consumed.'
+  card 69478 old 79:2 -> 79:1 (other end canon|revelation|22:2)
+  card 69479 old 79:2 -> 79:1 (other end canon|isaiah|61:3)
+  card 69480 old 79:2 -> 79:1 (other end canon|isaiah|61:1)
+
+[80:1] <- old [1, 2]
+Then Seth and his mother went off towards the gates of paradise. And while they were walking, lo! suddenly there came a beast [a serpent] and attacked and bit Seth. And as soon as Eve saw it, she wept and said: 'Alas, wretched woman that I am. I am accursed since I have not kept the commandment of Elohim (God).'
+  card 69481 old 80:2 -> 80:1 (other end canon|genesis|3:14)
+
+[80:2] = old 3 (unchanged)
+  card 69482 old 80:3 -> 80:2 (other end canon|genesis|3:15)
+  card 69483 old 80:3 -> 80:2 (other end canon|genesis|1:27)
+
+[81:1] <- old [1, 2]
+The beast answered in the language of men: 'Is it not against you, Eve, that our malice (is directed) Are not ye the objects of our rage Tell me, Eve, how was thy mouth opened to eat of the fruit But now if I shall begin to reprove thee thou canst not bear it.'
+
+[82:1] = old 1 (unchanged)
+  card 69484 old 82:1 -> 82:1 (other end canon|mark|16:18)
+  card 69485 old 82:1 -> 82:1 (other end canon|luke|10:19)
+  card 69486 old 82:1 -> 82:1 (other end canon|luke|10:18)
+
+[83:1] <- old [1, 2]
+But Seth and his mother walked to the regions of paradise for the oil of mercy to anoint the sick Adam: and they arrived at the gates of paradise, (and) they took dust from the earth and placed it on their heads, and bowed themselves with their faces to the earth and began to lament and make loud moaning, imploring Yahuah Elohim (the Lord God) to pity Adam in his pains and to send His angel to give them the oil from the 'tree of His mercy'.
+
+[84:1] <- old [1, 2, 3]
+But when they had been praying and imploring for many hours, behold, the angel Michael appeared to them and said: 'I have been sent to you from Yahuah (Lord) -I am set by Elohim (God) over the bodies of men- I tell thee, Seth, (thou) man of Elohim (God), weep not nor pray and entreat on account of the oil of the tree of mercy to anoint thy father Adam for the pains of his body.
+
+[85:1] = old 1 (unchanged)
+
+[85:2] <- old [2, 3, 4, 5]
+[When five thousand five hundred years have been fulfilled, then will come upon earth the most beloved king Messiah (Christ), the son of Elohim (God), to revive the body of Adam and with him to revive the bodies of the dead. He Himself, the Son of Elohim (God), when He comes will be baptized in the river of Jordan, and when He hath come out of the water of Jordan, then He will anoint from the oil of mercy all that believe in Him. And the oil of mercy shall be for generation to generation for those who are ready to be born again of water and the Ruach HaKodesh (Holy Spirit) to life eternal. Then the most beloved Son of Elohim (God), Messiah (Christ), descending on earth shall lead thy father Adam to Paradise to the tree of mercy.]
+  card 69487 old 85:5 -> 85:2 (other end canon|revelation|22:2)
+  card 69488 old 85:4 -> 85:2 (other end canon|isaiah|61:3)
+  card 69489 old 85:3 -> 85:2 (other end canon|isaiah|61:1)
+  card 69490 old 85:5 -> 85:2 (other end canon|john|3:5)
+  card 69491 old 85:2 -> 85:2 (other end canon|john|5:29)
+  card 69492 old 85:2 -> 85:2 (other end canon|john|5:28)
+  card 69493 old 85:2 -> 85:2 (other end canon|1-corinthians|15:22)
+  card 69494 old 85:3 -> 85:2 (other end canon|mark|1:11)
+  card 69495 old 85:3 -> 85:2 (other end canon|mark|1:9)
+  card 69496 old 85:3 -> 85:2 (other end canon|matthew|3:17)
+  card 69497 old 85:3 -> 85:2 (other end canon|matthew|3:16)
+  card 69498 old 85:2 -> 85:2 (other end canon|isaiah|53:11)
+  card 69499 old 85:2 -> 85:2 (other end canon|isaiah|53:5)
+  card 69500 old 85:2 -> 85:2 (other end canon|daniel|9:24)
+  card 69501 old 85:2 -> 85:2 (other end canon|daniel|9:25)
+
+[86:1] <- old [1, 2]
+'But do thou, Seth, go to thy father Adam, since the time of his life is fulfilled. Six days hence, his soul shall go off his body and when it shall have gone out, thou shalt see great marvels in the heaven and in the earth and the luminaries of heaven. With these words, straightway Michael departed from Seth.
+
+[86:2] = old 3 (unchanged)
+
+[87:1] <- old [1, 2, 3, 4, 5]
+And when Seth and his mother had reached Adam, they told him, how the beast [the serpent] bit Seth. And Adam said to Eve: 'What hast thou done A great plague hast thou brought upon us, transgression and sin for all our generations: and this which thou hast done, tell thy children after my death, [for those who arise from us shall toil and fail but they shall be wanting and curse us (and) say, All evils have our parents brought upon us, who were at the beginning].' When Eve heard these words, she began to weep and moan.
+
+[88:1] <- old [1, 2, 3]
+And just as Michael the archangel had foretold, after six days came Adam's death. When Adam perceived that the hour of his death was at hand, he said to all his sons: 'Behold, I am nine hundred and thirty years old, and if I die, bury me towards the sunrising in the field of yonder dwelling.' And it came to pass that when he had finished all his discourse, he gave up the ghost.
+  card 69503 old 88:3 -> 88:1 (other end canon|hebrews|9:27)  OVERRIDE: old 88:3 was split; "gave up the ghost" (what this card reads) stays in 88:1 — the tail "(Then) was the sun darkened and the moon" moved to 89:1
+  card 69504 old 88:3 -> 88:1 (other end canon|genesis|3:19)  OVERRIDE: old 88:3 was split; "gave up the ghost" (what this card reads) stays in 88:1 — the tail "(Then) was the sun darkened and the moon" moved to 89:1
+  card 69505 old 88:2 -> 88:1 (other end canon|genesis|5:5)
+
+[89:1] <- old [1, 2, 3]
+(Then) was the sun darkened and the moon and the stars for seven days, and Seth in his mourning embraced from above the body of his father, and Eve was looking on the ground with hands folded over her head, and all her children wept most bitterly. And behold, there appeared Michael the angel and stood at the head of Adam and said to Seth: 'Rise up from the body of thy father and come to me and see what is the doom of Yahuah Elohim (the Lord God) concerning him. His creature is he, and Elohim (God) hath pitied him.' And all angels blew their trumpets, and cried:
+  card 69502 old 88:3 -> 89:1 (other end canon|joel|2:10)  OVERRIDE: Joel 2:10 card: its words (the sun darkened at Adam's death) moved with the sentence "(Then) was the sun darkened and the moon" from old 88:3 to 89:1 (Vita Adae 46:1)
+
+[90:1] = old 1 (unchanged)
+
+[91:1] <- old [1, 2]
+Then Seth saw the hand of Elohim (God) stretched out holding Adam and he handed him over to Michael, saying: 'Let him be in thy charge till the day of Judgement in punishment, till the last years when I will convert his sorrow into joy.
+  card 69507 old 91:2 -> 91:1 (other end canon|job|14:14)
+  card 69508 old 91:2 -> 91:1 (other end canon|daniel|12:13)
+  card 69509 old 91:2 -> 91:1 (other end canon|2-peter|2:9)
+
+[91:2] = old 3 (unchanged)
+  card 69506 old 91:3 -> 91:2 (other end canon|revelation|3:21)
+
+[91:3] = old 4 (unchanged)
+
+[91:4] <- old [5, 6, 7]
+And all the 'powers' of angels marched before Adam, and the sleep of the dead was consecrated. And the angels Michael and Uriel buried Adam and Abel in the parts of Paradise, before the eyes of Seth and his mother [and no one else], and Michael and Uriel said: 'Just as ye have seen, in like manner, bury your dead.'
+
+[92:1] <- old [1, 2]
+Six days after, Adam died; and Eve perceived that she would die, (so) she assembled all her sons and daughters, Seth with thirty brothers and thirty sisters, and Eve said to all, 'Hear me, my children, and I will tell you what the archangel Michael said to us when I and your father transgressed the command of Elohim (God)
+
+[92:2] = old 3 (unchanged)
+  card 69510 old 92:3 -> 92:2 (other end canon|matthew|24:39)
+  card 69511 old 92:3 -> 92:2 (other end canon|matthew|24:38)
+  card 69512 old 92:3 -> 92:2 (other end canon|matthew|24:37)
+  card 69513 old 92:3 -> 92:2 (other end canon|isaiah|66:16)
+  card 69514 old 92:3 -> 92:2 (other end canon|isaiah|66:15)
+  card 69515 old 92:3 -> 92:2 (other end canon|genesis|6:17)
+  card 69516 old 92:3 -> 92:2 (other end canon|genesis|6:7)
+  card 69517 old 92:3 -> 92:2 (other end canon|2-peter|3:7)
+  card 69518 old 92:3 -> 92:2 (other end canon|2-peter|3:6)
+
+[93:1] <- old [1, 2]
+But hearken unto me, my children. Make ye then tables of stone and others of clay, and write on them, all my life and your father's (all) that ye have heard and seen from us. If by water Yahuah (Lord) judge our race, the tables of clay will be dissolved and the tables of stone will remain; but if by fire, the tables of stone will be broken up and the tables of clay will be baked (hard).'
+  card 69519 old 93:1 -> 93:1 (other end jasher|jasher|1:1)
+  card 69520 old 93:2 -> 93:1 (other end jubilees|jubilees|4:24)
+  card 69521 old 93:1 -> 93:1 (other end jubilees|jubilees|4:17)
+  card 69522 old 93:2 -> 93:1 (other end canon|jude|1:14)
+  card 69523 old 93:1 -> 93:1 (other end canon|exodus|31:18)
+  card 69524 old 93:2 -> 93:1 (other end canon|job|19:24)
+  card 69525 old 93:1 -> 93:1 (other end canon|job|19:23)
+
+[93:2] = old 3 (unchanged)
+
+[94:1] <- old [1, 2]
+When they had been mourning four days, (then) Michael the archangel appeared and said to Seth: 'Man of Elohim (God), mourn not for thy dead more than six days, for on the seventh day is the sign of the resurrection and the rest of the age to come; on the seventh day Yahuah (Lord) rested from all His works.'
+  card 69526 old 94:2 -> 94:1 (other end canon|revelation|14:13)
+  card 69527 old 94:2 -> 94:1 (other end canon|hebrews|4:10)
+  card 69528 old 94:2 -> 94:1 (other end canon|hebrews|4:9)
+  card 69529 old 94:2 -> 94:1 (other end canon|exodus|20:11)
+  card 69530 old 94:2 -> 94:1 (other end canon|genesis|2:3)
+  card 69531 old 94:2 -> 94:1 (other end canon|genesis|2:2)
+
+[94:2] = old 3 (unchanged)
+
+THREAD ANCHORS (old range -> new range)
+  thread 17331 adam-eve-1-cain-and-abel-born: 1:1-1:3 -> 1:1-1:1 | The Life of Adam and Eve opens where Genesis leaves off — outside the garden, the man knowing his wife and the first sons coming forth: *And
+  thread 17332 adam-eve-3-abel-murdered-by-cain: 3:1-3:1 -> 3:1-3:1 | Eve's dream of blood poured into Cain's mouth is no riddle — it is the first murder seen before it is found: *they both went and found Abel 
+  thread 17333 adam-eve-4-seth-in-place-of-abel: 4:1-4:2 -> 4:1-4:1 | Where Abel was cut off, Elohim raises another seed — and Adam answers the loss with worship: *we have begotten a son in place of Abel, whom 
+  thread 17334 adam-eve-5-nine-hundred-and-thirty-years: 5:1-5:2 -> 5:1-5:1 | Adam's long life closes exactly as Moses measured it, and sickness comes upon him at the end: *Adam lived nine hundred and thirty years; and
+  thread 17335 adam-eve-7-the-one-command: 7:1-7:1 -> 7:1-7:1 | Adam tells his sons the root of all his sickness in a single charge broken: *He gave us power to eat of every tree which is in paradise, but
+  thread 17336 adam-eve-8-where-art-thou: 8:1-8:1 -> 8:1-8:1 | Yahuah comes into paradise and calls the hidden man with the question that needs no answer: *Adam, where art thou? And why hidest thou from 
+  thread 17337 adam-eve-9-half-of-thy-trouble: 9:1-9:2 -> 9:1-9:1 | Adam groans in great distress, and Eve, owning her part in the Fall, begs to carry it with him: *rise up and give me half of thy trouble and
+  thread 17338 adam-eve-12-stand-off-from-the-image-of-elohim: 12:1-12:2 -> 12:1-12:1 | When the wild beast assails Seth on the road to paradise, Eve and Seth rebuke it on one ground — that man is the image of Elohim (God) and t
+  thread 17339 adam-eve-13-oil-of-mercy-in-the-end-of-the-times: 13:2-13:3 -> 13:1-13:2 | Seth and Eve weep at the gate of paradise and beg the oil of mercy to anoint dying Adam, and Michael's answer is the hinge of the whole book
+  thread 17340 adam-eve-14-great-wrath-which-is-death: 14:2-14:3 -> 14:1-14:1 | Adam, told his hour is fixed, names what Eve's transgression brought into the race: *Thou hast brought upon us great wrath which is death, [
+  thread 17341 adam-eve-17-satan-in-the-form-of-an-angel: 17:2-17:5 -> 17:1-17:1 | Eve tells how the deceiver came not openly but in counterfeit glory: when the angels went up to worship, *then Satan appeared in the form of
+  thread 17342 adam-eve-18-ye-shall-be-as-elohim: 18:1-18:5 -> 18:1-18:3 | When Eve hesitates for fear of Elohim's word, the serpent presses with the precise lie Moses recorded — first denying the death sentence, th
+  thread 17343 adam-eve-19-poison-which-is-lust: 19:3-19:3 -> 19:1-19:1 | When the serpent had taken Eve's oath he poured upon the fruit *the poison of his wickedness, which is lust, the root and beginning of every
+  thread 17344 adam-eve-20-stripped-of-the-glory: 20:1-20:5 -> 20:1-20:2 | In the same hour Eve's *eyes were opened, and forthwith I knew that I was bare of the righteousness with which I had been clothed* (Adam & E
+  thread 17345 adam-eve-21-ye-shall-be-as-gods: 21:3-21:5 -> 21:1-21:1 | With the devil speaking through her mouth, Eve urges Adam to eat *and thou shalt be as a Elohim (God)* (Adam & Eve 21:3), and when he fears 
+  thread 17346 adam-eve-22-trumpet-and-yahuah-comes-to-judge: 22:1-22:3 -> 22:1-22:2 | Eve hears *the archangel Michael blowing with his trumpet* (Adam & Eve 22:1), and the call goes out, *Come with me to Paradise and hear the 
+  thread 17347 adam-eve-23-adam-where-art-thou: 23:1-23:4 -> 23:1-23:1 | Elohim calls *Adam, where art thou* (Adam & Eve 23:1); Adam answers that he hid *because I am naked, and I was ashamed* (Adam & Eve 23:2); E
+  thread 17348 adam-eve-24-thorns-and-the-sweat: 24:1-24:4 -> 24:1-24:3 | Elohim's sentence on Adam: *Since thou hast disregarded my commandment and hast hearkened to thy wife, cursed is the earth in thy labours...
+  thread 17349 adam-eve-25-throes-of-travail: 25:1-25:2 -> 25:1-25:1 | Yahuah turns to Eve: *Since thou hast hearkened to the serpent, and turned a deaf ear to my commandment, thou shalt be in throes of travail 
+  thread 17350 adam-eve-26-cursed-upon-thy-belly: 26:1-26:3 -> 26:1-26:2 | Elohim turns to the serpent: *accursed art thou among all beasts. Thou shalt be deprived of the victual of which thou didst eat and shalt fe
+  thread 17351 adam-eve-26-bruise-thy-head: 26:4-26:4 -> 26:2-26:2 | The keystone of the whole book: *and I will put enmity between thee and his seed: he shall bruise thy head and thou shalt bruise his heel un
+  thread 17352 adam-eve-28-guarded-from-the-tree-of-life: 28:2-28:4 -> 28:2-28:2 | Cast out, Adam begs to eat of the Tree of Life, and Yahuah answers: *Thou shalt not take of it now, for I have commanded the cherubim with t
+  thread 17353 adam-eve-29-sweet-spices-for-an-offering: 29:3-29:6 -> 29:1-29:1 | Going out of paradise, Adam asks *allow me to take away fragrant herbs from paradise, so that I may offer an offering to Elohim (God)* (Adam
+  thread 17354 adam-eve-31-into-his-hands-who-gave-it: 31:3-31:4 -> 31:1-31:1 | Adam, bound to die, will not loose his soul on his own terms but yields it back to its Giver: *now arise rather and pray to Elohim (God) til
+  thread 17355 adam-eve-32-i-have-sinned-against-thee: 32:1-32:1 -> 32:1-32:1 | Eve falls on the ground and pours out the oldest confession of the race: *I have sinned, O Elohim (God), I have sinned, O Elohim (God) of Al
+  thread 17356 adam-eve-33-chariot-of-light-four-eagles: 33:2-33:3 -> 33:1-33:1 | Eve gazes into the opened heaven and sees the Merkabah descend: *she gazed steadfastly into heaven, and beheld a chariot of light, borne by 
+  thread 17357 adam-eve-36-sun-and-moon-cannot-shine: 36:2-36:3 -> 36:1-36:1 | Eve sees the two luminaries fallen down in prayer and gone dark, and Seth explains why: *they are the sun and moon and themselves fall down 
+  thread 17358 adam-eve-37-angels-pray-for-adams-soul: 37:1-37:2 -> 37:1-37:1 | An angel sounds the trumpet and the whole host falls on its face to intercede: *an angel blew the trumpet, and there stood up all the angels
+  thread 17359 adam-eve-37-bear-him-to-paradise-third-heaven: 37:4-37:4 -> 37:2-37:2 | A seraph washes Adam thrice in the Acherusian lake, and the Father commits him to Michael: *Lift him up into Paradise unto the third Heaven,
+  thread 17360 adam-eve-39-throne-of-thy-deceiver: 39:2-39:3 -> 39:1-39:1 | Elohim promises the fallen man not only forgiveness but the very seat of the one who toppled him: *I will transform thee to thy former glory
+  thread 17361 adam-eve-40-michael-gabriel-uriel-raphael: 40:1-40:2 -> 40:1-40:1 | Elohim sends the four named archangels to bury the first man in the third-heaven Paradise: *Then Elohim (God) spake to the archangel(s) Mich
+  thread 17362 adam-eve-41-i-will-raise-thee-up-with-thy-seed: 41:2-41:2 -> 41:1-41:1 | Over the buried dust Elohim calls the first man's name and binds the sentence of dust to a promise of rising: *I told thee (that) earth thou
+  thread 17363 adam-eve-42-from-his-members-didst-thou-make-me: 42:5-42:7 -> 42:2-42:2 | Eve prays to be buried beside Adam, pleading the bond of her very making: *estrange not me thy handmaid from the body of Adam, for from his 
+  thread 17364 adam-eve-42-receive-my-spirit: 42:8-42:8 -> 42:2-42:2 | Her prayer finished, Eve renders her soul to its Maker: *she gazed heavenwards and groaned aloud and smote her breast and said: 'Elohim (God
+  thread 17365 adam-eve-43-lay-out-every-man-till-the-resurrection: 43:2-43:3 -> 43:1-43:1 | Michael gives Seth the burial rule and the measure of mourning, and grounds it all in hope: *Lay out in this wise every man that dieth till 
+  thread 17366 adam-eve-47-animals-food-not-angels-food: 47:2-47:3 -> 47:1-47:2 | Outside paradise Adam and Eve find no fruit of Eden, "but found only animals' food. And Adam said to Eve: 'This hath Yahuah (Lord) provided 
+  thread 17367 adam-eve-49-fast-in-the-river-unclean-lips: 49:1-49:2 -> 49:1-49:2 | Adam appoints the penance: "I will spend forty days fasting... stand on it in the water up to thy neck... let no speech proceed out of thy m
+  thread 17368 adam-eve-51-jordan-and-its-creatures-mourn: 51:1-51:3 -> 51:1-51:2 | Adam, neck-deep in Jordan, calls the river itself to his penance: "water of Jordan, grieve with me, and assemble to me all swimming (creatur
+  thread 17369 adam-eve-52-transformed-into-brightness-of-angels: 52:1-52:3 -> 52:1-52:1 | While Eve keeps her penance in the Tigris, "Satan was wroth and transformed himself into the brightness of angels" and came feigning to grie
+  thread 17370 adam-eve-56-the-image-of-elohim-the-breath-of-life: 56:1-56:2 -> 56:1-56:1 | The devil confesses the very dignity he could not endure: when Adam was formed, the breath of life was blown into him and his face was made 
+  thread 17371 adam-eve-58-i-will-set-my-seat-above-the-stars: 58:1-58:3 -> 58:1-58:1 | Here the devil names his own ruin in words the prophets already wrote. He would not bow to the younger being, and when warned of wrath he an
+  thread 17372 adam-eve-61-eve-takes-the-blame: 61:1-61:1 -> 61:1-61:1 | Eve owns the transgression and asks that Adam be spared: *Live thou, my Lord, to thee life is granted, since thou hast committed neither the
+  thread 17373 adam-eve-64-eves-pangs-and-the-birth-of-cain: 64:1-64:3 -> 64:1-64:1 | The curse upon the woman is now lived out: Eve travails in sorrow, cries to Yahuah, and at the angels' help brings forth her firstborn. *Ris
+  thread 17374 adam-eve-66-cain-slays-abel-and-seth-is-born: 66:1-66:2 -> 66:1-66:2 | The two callings, the murder, and the appointed seed all stand here as Moses set them: *they made Cain an husbandman, (but) Abel they made a
+  thread 17375 adam-eve-68-caught-up-in-the-fiery-chariot: 68:1-68:3 -> 68:1-68:1 | Before he dies Adam tells Seth the secret of his rapture: *there came to me Michael the archangel... And I saw a chariot like the wind and i
+  thread 17376 adam-eve-69-behold-thou-diest: 69:2-69:2 -> 69:1-69:1 | On the throne of flame the sentence first spoken in Eden is sealed: *Behold thou diest, since thou hast transgressed the commandment of Eloh
+  thread 17377 adam-eve-72-the-house-built-burnt-and-restored: 72:4-72:7 -> 72:1-72:3 | In the secrets shown to Adam he is given the whole course of the people of Elohim: *Yahuah (Lord) will appear in a flame of fire... He will 
+  thread 17378 adam-eve-72-elohim-shall-dwell-with-men: 72:7-72:10 -> 72:3-72:3 | The vision closes on the age to come: *thereafter Elohim (God) will dwell with men on earth... and the just shall shine like the sun, in the
+  thread 17379 adam-eve-73-assemble-my-sons-to-bless-them: 73:1-73:1 -> 73:1-73:1 | The father of all the living dies as the patriarchs after him will: *After Adam was nine hundred and thirty years old, since he knew that hi
+  thread 17380 adam-eve-76-two-angels-given-to-guard-us: 76:1-76:2 -> 76:1-76:1 | Adam tells his sons a detail Genesis leaves unspoken — that guardian angels were set over the first pair: *Elohim (God) Yahuah (Lord) gave u
+  thread 17381 adam-eve-79-oil-of-the-tree-of-mercy: 79:1-79:2 -> 79:1-79:1 | Dying, Adam sends Seth and Eve to the edge of paradise to beg one drop of the oil of mercy: *Perchance He will have pity (upon you) and send
+  thread 17382 adam-eve-80-against-the-image-of-elohim: 80:1-80:3 -> 80:1-80:2 | On the road to paradise the serpent-beast attacks and bites Seth, and Eve cries out against it: *Accursed beast! how (is it that) thou hast 
+  thread 17383 adam-eve-82-avaunt-from-the-image-of-elohim: 82:1-82:1 -> 82:1-82:1 | Seth, man of Elohim, silences the beast and drives it off until the judgement: *Be silent, be dumb, shut thy mouth, accursed enemy of Truth.
+  thread 17384 adam-eve-85-king-messiah-son-of-elohim-baptized: 85:2-85:3 -> 85:2-85:2 | Michael answers that the oil of mercy cannot be had now, but only at the appointed end, in the One the Father will send: *then will come upo
+  thread 17385 adam-eve-85-oil-of-mercy-born-again-of-water-and-the-ruach: 85:3-85:5 -> 85:2-85:2 | Michael unfolds what the oil of mercy is and to whom it comes: *when He hath come out of the water of Jordan, then He will anoint from the o
+  thread 17386 adam-eve-88-nine-hundred-and-thirty-years: 88:2-88:3 -> 88:1-88:1 | Six days after Michael's word, Adam's hour comes: *Behold, I am nine hundred and thirty years old, and if I die, bury me towards the sunrisi
+  thread 17387 adam-eve-91-in-thy-charge-till-the-day-of-judgement: 91:2-91:3 -> 91:1-91:2 | Yahuah hands Adam over to Michael with a promise sealed against the end: *Let him be in thy charge till the day of Judgement in punishment, 
+  thread 17388 adam-eve-92-first-by-water-then-by-fire: 92:2-92:3 -> 92:1-92:2 | Dying Eve hands her children the word Michael gave at the Fall: *On account of your transgression, Our Lord will bring upon your race the an
+  thread 17389 adam-eve-92-as-the-days-of-noah: 92:3-92:3 -> 92:2-92:2 | The judgement Eve receives from Michael — *Our Lord will bring upon your race the anger of his judgement, first by water* (Adam & Eve 92:3) 
+  thread 17390 adam-eve-93-tables-of-stone-and-clay: 93:1-93:2 -> 93:1-93:1 | Eve's last charge is to set the record beyond the reach of either judgement: *Make ye then tables of stone and others of clay, and write on 
+  thread 17391 adam-eve-94-seventh-day-sign-of-the-resurrection: 94:2-94:2 -> 94:1-94:1 | Michael closes the book by reading the seventh day as prophecy: *mourn not for thy dead more than six days, for on the seventh day is the si

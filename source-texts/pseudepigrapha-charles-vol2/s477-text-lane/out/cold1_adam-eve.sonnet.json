@@ -1,0 +1,20 @@
+{
+ "reader": "sonnet cold read 1",
+ "packet": "cold_packet_adam-eve.txt (full merged text, parts, cards, anchors)",
+ "verses_read": 141,
+ "cards_read": 241,
+ "anchors_read": 61,
+ "verse_flags": [
+  {
+   "verse": "92:1",
+   "issue": "Ends 'transgressed the command of Elohim (God)' with no terminal punctuation (OCR dropped it; boundary kept on purpose — Vita 49:2/3)."
+  },
+  {
+   "verse": "6:1",
+   "issue": "Internal \"yearning for it' 'If this be so\" is a dropped question mark before a capitalised clause — inside one old line, not a join."
+  }
+ ],
+ "card_flags": [],
+ "anchor_flags": [],
+ "verdict": "No card or anchor errors; every card's old number is in its new verse's old list; every anchor range contains the merged start and end. Agrees with all four cards at 88:1/89:1. No damaged, duplicated or missing words at joins. Old-number gaps (13, 24, 27, 29, 33, 40, 48, 57, 58) are Track B numbering gaps, not lost lines."
+}

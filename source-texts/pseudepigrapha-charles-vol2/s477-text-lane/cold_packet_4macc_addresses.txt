@@ -1,0 +1,592 @@
+BOOK 4-maccabees. For each new verse: [ch:vn] <- old verse numbers merged into it (same chapter; the old numbers are Track B's and have gaps). Then the cards that move onto that verse (old address -> new) and, at the end, the thread anchors (old range -> new range). No verse text is given: check the ADDRESSES.
+[1:1] <- old [1, 2, 3, 4]
+  card 63390 old 1:4 -> 1:1 (other end canon|proverbs|16:32)
+  card 63394 old 1:3 -> 1:1 (other end canon|romans|7:23)
+  card 63395 old 1:1 -> 1:1 (other end canon|romans|7:22)
+[1:2] <- old [5, 6]
+[1:3] <- old [7, 8, 9, 10, 11, 12]
+[1:4] <- old [13, 14, 15, 16]
+  card 63389 old 1:16 -> 1:4 (other end canon|deuteronomy|30:14)
+  card 63392 old 1:16 -> 1:4 (other end canon|psalms|19:7)
+  card 63396 old 1:16 -> 1:4 (other end canon|romans|7:12)
+[1:5] <- old [17, 18, 19, 20, 21, 22]
+  card 63387 old 1:19 -> 1:5 (other end canon|galatians|5:17)
+  card 63391 old 1:17 -> 1:5 (other end canon|psalms|19:8)
+  card 63393 old 1:18 -> 1:5 (other end canon|romans|7:25)
+[1:6] <- old [23, 24, 25, 26, 27]
+[1:7] <- old [28, 29, 30]
+  card 63384 old 1:30 -> 1:7 (other end canon|proverbs|16:32)
+  card 63388 old 1:30 -> 1:7 (other end canon|galatians|5:16)
+[1:8] <- old [31, 32, 33]
+  card 63378 old 1:33 -> 1:8 (other end canon|daniel|1:8)
+  card 63380 old 1:33 -> 1:8 (other end canon|deuteronomy|14:3)
+  card 63383 old 1:33 -> 1:8 (other end canon|leviticus|11:7)
+  card 63386 old 1:31 -> 1:8 (other end canon|galatians|5:23)
+[1:9] <- old [34]
+  card 63379 old 1:34 -> 1:9 (other end canon|deuteronomy|14:8)
+  card 63381 old 1:34 -> 1:9 (other end canon|leviticus|11:44)
+  card 63382 old 1:34 -> 1:9 (other end canon|leviticus|11:8)
+[1:10] <- old [35]
+  card 63385 old 1:35 -> 1:10 (other end canon|galatians|5:24)
+[2:1] <- old [1, 2, 3, 4, 5, 6]
+  card 63410 old 2:5 -> 2:1 (other end canon|deuteronomy|5:21)
+  card 63411 old 2:5 -> 2:1 (other end canon|exodus|20:17)
+  card 63412 old 2:3 -> 2:1 (other end canon|genesis|39:12)
+  card 63413 old 2:3 -> 2:1 (other end canon|genesis|39:9)
+  card 63414 old 2:2 -> 2:1 (other end canon|genesis|39:7)
+[2:2] <- old [7, 8, 9]
+  card 63405 old 2:9 -> 2:2 (other end canon|deuteronomy|24:19)
+  card 63406 old 2:9 -> 2:2 (other end canon|leviticus|19:10)
+  card 63407 old 2:9 -> 2:2 (other end canon|leviticus|19:9)
+  card 63408 old 2:8 -> 2:2 (other end canon|deuteronomy|15:2)
+  card 63409 old 2:8 -> 2:2 (other end canon|deuteronomy|15:1)
+[2:3] <- old [10, 11, 12, 13, 14]
+[2:4] <- old [15, 16, 17, 18, 19, 20]
+  card 63400 old 2:19 -> 2:4 (other end canon|genesis|34:25)
+  card 63401 old 2:20 -> 2:4 (other end canon|genesis|49:7)
+  card 63402 old 2:19 -> 2:4 (other end canon|genesis|49:5)
+  card 63403 old 2:17 -> 2:4 (other end canon|numbers|16:12)
+  card 63404 old 2:17 -> 2:4 (other end canon|numbers|16:2)
+[2:5] <- old [21, 22, 23]
+  card 63397 old 2:23 -> 2:5 (other end canon|deuteronomy|30:19)
+  card 63398 old 2:22 -> 2:5 (other end canon|genesis|2:8)
+  card 63399 old 2:21 -> 2:5 (other end canon|genesis|2:7)
+[3:1] <- old [1, 2, 3, 4, 5]
+  card 63415 old 3:4 -> 3:1 (other end canon|psalms|19:11)
+  card 63416 old 3:2 -> 3:1 (other end canon|psalms|19:7)
+  card 63417 old 3:5 -> 3:1 (other end canon|proverbs|16:32)
+[3:2] <- old [6]
+[3:3] <- old [7, 8, 9]
+[3:4] <- old [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  card 63418 old 3:15 -> 3:4 (other end canon|1-chronicles|11:19)
+  card 63419 old 3:17 -> 3:4 (other end canon|1-chronicles|11:18)
+  card 63420 old 3:10 -> 3:4 (other end canon|2-samuel|23:15)
+  card 63421 old 3:15 -> 3:4 (other end canon|2-samuel|23:17)
+  card 63422 old 3:12 -> 3:4 (other end canon|2-samuel|23:16)
+[3:5] <- old [20, 21]
+[4:1] <- old [1]
+[4:2] <- old [2, 3]
+  card 63438 old 4:3 -> 4:2 (other end apocrypha|2-maccabees|3:6)
+[4:3] <- old [4]
+  card 63437 old 4:4 -> 4:3 (other end apocrypha|2-maccabees|3:7)
+[4:4] <- old [5, 6, 7, 8, 9, 10]
+  card 63435 old 4:10 -> 4:4 (other end apocrypha|2-maccabees|3:25)
+  card 63436 old 4:9 -> 4:4 (other end apocrypha|2-maccabees|3:15)
+[4:5] <- old [11]
+  card 63434 old 4:11 -> 4:5 (other end apocrypha|2-maccabees|3:29)
+[4:6] <- old [12]
+[4:7] <- old [13]
+  card 63433 old 4:13 -> 4:7 (other end apocrypha|2-maccabees|3:33)
+[4:8] <- old [14]
+[4:9] <- old [15]
+  card 63432 old 4:15 -> 4:9 (other end canon|daniel|11:21)
+[4:10] <- old [16, 17]
+  card 63431 old 4:16 -> 4:10 (other end canon|daniel|11:22)
+[4:11] <- old [18]
+[4:12] <- old [19]
+[4:13] <- old [20]
+  card 63430 old 4:20 -> 4:13 (other end canon|daniel|11:31)
+[4:14] <- old [21]
+[4:15] <- old [22]
+  card 63427 old 4:22 -> 4:15 (other end apocrypha|1-maccabees|1:20)
+[4:16] <- old [23]
+  card 63423 old 4:23 -> 4:16 (other end apocrypha|2-maccabees|5:11)
+  card 63426 old 4:23 -> 4:16 (other end apocrypha|1-maccabees|1:50)
+  card 63428 old 4:23 -> 4:16 (other end canon|daniel|11:33)
+  card 63429 old 4:23 -> 4:16 (other end canon|daniel|11:32)
+[4:17] <- old [24, 25]
+  card 63425 old 4:25 -> 4:17 (other end apocrypha|1-maccabees|1:60)
+[4:18] <- old [26]
+  card 63424 old 4:26 -> 4:18 (other end apocrypha|1-maccabees|1:62)
+[5:1] <- old [1, 2]
+  card 63440 old 5:2 -> 5:1 (other end canon|exodus|20:4)
+  card 63441 old 5:2 -> 5:1 (other end canon|exodus|20:3)
+[5:2] <- old [3, 4]
+  card 63439 old 5:3 -> 5:2 (other end canon|exodus|20:5)
+[5:3] <- old [5]
+[5:4] <- old [6]
+[5:5] <- old [7]
+[5:6] <- old [8]
+[5:7] <- old [9]
+[5:8] <- old [10]
+[5:9] <- old [11, 12]
+[5:10] <- old [13]
+[5:11] <- old [14]
+[5:12] <- old [15]
+[5:13] <- old [16]
+  card 63458 old 5:16 -> 5:13 (other end canon|deuteronomy|30:20)
+  card 63460 old 5:16 -> 5:13 (other end canon|deuteronomy|30:11)
+[5:14] <- old [17]
+  card 63459 old 5:17 -> 5:14 (other end canon|deuteronomy|30:14)
+[5:15] <- old [18]
+[5:16] <- old [19, 20]
+  card 63456 old 5:20 -> 5:16 (other end canon|james|2:10)
+[5:17] <- old [21]
+  card 63457 old 5:21 -> 5:17 (other end canon|psalms|19:7)
+[5:18] <- old [22]
+  card 63452 old 5:22 -> 5:18 (other end canon|romans|7:12)
+[5:19] <- old [23]
+  card 63453 old 5:23 -> 5:19 (other end canon|proverbs|16:32)
+[5:20] <- old [24]
+  card 63454 old 5:24 -> 5:20 (other end canon|exodus|20:3)
+  card 63455 old 5:24 -> 5:20 (other end canon|deuteronomy|10:12)
+[5:21] <- old [25, 26]
+  card 63442 old 5:26 -> 5:21 (other end apocrypha|2-maccabees|6:20)
+  card 63443 old 5:26 -> 5:21 (other end apocrypha|2-maccabees|6:19)
+  card 63444 old 5:25 -> 5:21 (other end apocrypha|2-maccabees|6:18)
+  card 63445 old 5:25 -> 5:21 (other end canon|daniel|1:8)
+  card 63446 old 5:26 -> 5:21 (other end canon|deuteronomy|14:8)
+  card 63447 old 5:26 -> 5:21 (other end canon|deuteronomy|14:3)
+  card 63448 old 5:25 -> 5:21 (other end canon|leviticus|11:45)
+  card 63449 old 5:25 -> 5:21 (other end canon|leviticus|11:44)
+  card 63450 old 5:26 -> 5:21 (other end canon|leviticus|11:8)
+  card 63451 old 5:26 -> 5:21 (other end canon|leviticus|11:7)
+[5:22] <- old [27]
+[5:23] <- old [28, 30, 31, 33]
+[5:24] <- old [36]
+[5:25] <- old [38]
+[6:1] <- old [1, 2, 3, 4]
+[6:2] <- old [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  card 63471 old 6:15 -> 6:2 (other end apocrypha|2-maccabees|7:37)
+  card 63472 old 6:15 -> 6:2 (other end canon|daniel|1:8)
+  card 63476 old 6:15 -> 6:2 (other end canon|leviticus|11:7)
+[6:3] <- old [16]
+[6:4] <- old [17]
+  card 63479 old 6:17 -> 6:4 (other end canon|galatians|3:7)
+  card 63481 old 6:17 -> 6:4 (other end canon|genesis|17:7)
+[6:5] <- old [18, 19, 20, 21, 22, 23]
+  card 63473 old 6:20 -> 6:5 (other end canon|deuteronomy|14:8)
+  card 63474 old 6:18 -> 6:5 (other end canon|leviticus|11:44)
+  card 63475 old 6:20 -> 6:5 (other end canon|leviticus|11:8)
+  card 63477 old 6:23 -> 6:5 (other end canon|romans|9:8)
+  card 63478 old 6:23 -> 6:5 (other end canon|romans|9:7)
+  card 63480 old 6:22 -> 6:5 (other end canon|genesis|17:8)
+[6:6] <- old [24, 25, 26, 27, 28, 29]
+  card 63463 old 6:29 -> 6:6 (other end canon|1-peter|1:19)
+  card 63464 old 6:29 -> 6:6 (other end canon|hebrews|9:14)
+  card 63465 old 6:29 -> 6:6 (other end canon|romans|3:25)
+  card 63466 old 6:29 -> 6:6 (other end apocrypha|2-maccabees|7:38)
+  card 63467 old 6:28 -> 6:6 (other end canon|daniel|9:24)
+  card 63468 old 6:29 -> 6:6 (other end canon|isaiah|53:12)
+  card 63469 old 6:29 -> 6:6 (other end canon|isaiah|53:10)
+  card 63470 old 6:29 -> 6:6 (other end canon|isaiah|53:5)
+[6:7] <- old [30]
+  card 63462 old 6:30 -> 6:7 (other end canon|psalms|19:7)
+[6:8] <- old [31]
+[6:9] <- old [32]
+[6:10] <- old [33]
+  card 63461 old 6:33 -> 6:10 (other end canon|proverbs|16:32)
+[6:11] <- old [34]
+[6:12] <- old [35]
+[7:1] <- old [1, 2, 3]
+[7:2] <- old [4]
+[7:3] <- old [5]
+[7:4] <- old [6, 7]
+  card 63497 old 7:7 -> 7:4 (other end apocrypha|2-maccabees|6:19)
+  card 63498 old 7:6 -> 7:4 (other end canon|daniel|1:8)
+  card 63499 old 7:7 -> 7:4 (other end canon|deuteronomy|14:8)
+  card 63500 old 7:6 -> 7:4 (other end canon|leviticus|11:44)
+  card 63501 old 7:7 -> 7:4 (other end canon|leviticus|11:8)
+  card 63502 old 7:7 -> 7:4 (other end canon|leviticus|11:7)
+[7:5] <- old [8]
+[7:6] <- old [9, 10]
+[7:7] <- old [11, 12]
+  card 63494 old 7:12 -> 7:7 (other end canon|numbers|16:48)
+  card 63495 old 7:11 -> 7:7 (other end canon|numbers|16:47)
+  card 63496 old 7:11 -> 7:7 (other end canon|numbers|16:46)
+[7:8] <- old [13, 14]
+  card 63490 old 7:13 -> 7:8 (other end canon|hebrews|11:19)
+  card 63491 old 7:13 -> 7:8 (other end canon|hebrews|11:17)
+  card 63492 old 7:14 -> 7:8 (other end canon|genesis|22:10)
+  card 63493 old 7:14 -> 7:8 (other end canon|genesis|22:9)
+[7:9] <- old [15]
+[7:10] <- old [16]
+[7:11] <- old [17]
+[7:12] <- old [18, 19]
+  card 4874 old 7:18 -> 7:12 (other end canon|matthew|27:43)
+  card 63482 old 7:18 -> 7:12 (other end apocrypha|2-maccabees|7:23)
+  card 63483 old 7:19 -> 7:12 (other end apocrypha|2-maccabees|7:9)
+  card 63484 old 7:19 -> 7:12 (other end canon|hebrews|11:16)
+  card 63485 old 7:19 -> 7:12 (other end canon|hebrews|11:13)
+  card 63486 old 7:18 -> 7:12 (other end canon|deuteronomy|6:5)
+  card 63487 old 7:19 -> 7:12 (other end canon|luke|20:38)
+  card 63488 old 7:19 -> 7:12 (other end canon|matthew|22:31)
+  card 63489 old 7:19 -> 7:12 (other end canon|matthew|22:32)
+[7:13] <- old [20]
+[7:14] <- old [21, 22]
+[7:15] <- old [23]
+[8:1] <- old [1, 2, 3, 4]
+  card 63507 old 8:3 -> 8:1 (other end apocrypha|2-maccabees|7:1)
+  card 63508 old 8:1 -> 8:1 (other end canon|daniel|1:8)
+  card 63510 old 8:2 -> 8:1 (other end canon|deuteronomy|14:8)
+  card 63511 old 8:1 -> 8:1 (other end canon|leviticus|11:8)
+  card 63512 old 8:2 -> 8:1 (other end canon|leviticus|11:7)
+[8:2] <- old [5, 6, 7, 8, 9, 10, 11]
+  card 63509 old 8:8 -> 8:2 (other end canon|leviticus|11:44)
+[8:3] <- old [12]
+[8:4] <- old [13, 14]
+  card 63506 old 8:14 -> 8:4 (other end canon|matthew|10:28)
+[8:5] <- old [15]
+[8:6] <- old [16]
+[8:7] <- old [17, 18]
+[8:8] <- old [19]
+[8:9] <- old [20]
+[8:10] <- old [21]
+[8:11] <- old [22]
+[8:12] <- old [23]
+[8:13] <- old [24]
+  card 63503 old 8:24 -> 8:13 (other end canon|psalms|119:110)
+[8:14] <- old [25, 26]
+[8:15] <- old [27]
+  card 63505 old 8:27 -> 8:15 (other end canon|deuteronomy|30:19)
+[8:16] <- old [28]
+  card 63504 old 8:28 -> 8:16 (other end canon|psalms|119:109)
+[8:17] <- old [29]
+[9:1] <- old [1]
+  card 4858 old 9:1 -> 9:1 (other end canon|matthew|26:39)
+  card 63521 old 9:1 -> 9:1 (other end canon|deuteronomy|14:8)
+  card 63526 old 9:1 -> 9:1 (other end canon|deuteronomy|30:19)
+[9:2] <- old [2]
+  card 63524 old 9:2 -> 9:2 (other end canon|deuteronomy|30:16)
+[9:3] <- old [3]
+[9:4] <- old [4]
+  card 63519 old 9:4 -> 9:4 (other end canon|psalms|119:110)
+  card 63525 old 9:4 -> 9:4 (other end canon|deuteronomy|30:20)
+[9:5] <- old [5]
+[9:6] <- old [6]
+  card 63522 old 9:6 -> 9:6 (other end canon|leviticus|11:44)
+  card 63523 old 9:6 -> 9:6 (other end canon|leviticus|11:7)
+[9:7] <- old [7]
+  card 63520 old 9:7 -> 9:7 (other end canon|psalms|119:109)
+[9:8] <- old [8]
+[9:9] <- old [9]
+  card 63516 old 9:9 -> 9:9 (other end canon|deuteronomy|32:36)
+[9:10] <- old [10, 11]
+[9:11] <- old [12]
+[9:12] <- old [14]
+[9:13] <- old [15]
+  card 63517 old 9:15 -> 9:13 (other end canon|matthew|10:18)
+[9:14] <- old [16, 17]
+  card 63518 old 9:17 -> 9:14 (other end canon|matthew|10:28)
+[9:15] <- old [18, 19, 20]
+[9:16] <- old [21, 22, 23, 24]
+  card 63514 old 9:21 -> 9:16 (other end canon|daniel|12:2)
+  card 63515 old 9:24 -> 9:16 (other end canon|psalms|79:10)
+[9:17] <- old [25]
+[9:18] <- old [26, 27, 28, 29, 30, 31, 32]
+  card 63513 old 9:32 -> 9:18 (other end canon|daniel|12:2)
+[10:1] <- old [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  card 4448 old 10:4 -> 10:1 (other end canon|matthew|10:28)
+  card 63531 old 10:11 -> 10:1 (other end canon|deuteronomy|32:36)
+  card 63532 old 10:11 -> 10:1 (other end canon|daniel|12:2)
+  card 63533 old 10:11 -> 10:1 (other end apocrypha|2-maccabees|7:9)
+  card 63534 old 10:4 -> 10:1 (other end canon|matthew|10:28)
+  card 63535 old 10:2 -> 10:1 (other end apocrypha|2-maccabees|7:2)
+[10:2] <- old [12, 13]
+[10:3] <- old [15, 16]
+  card 63530 old 10:16 -> 10:3 (other end apocrypha|2-maccabees|7:4)
+[10:4] <- old [18]
+  card 4452 old 10:18 -> 10:4 (other end canon|matthew|10:20)
+  card 63528 old 10:18 -> 10:4 (other end canon|matthew|10:18)
+  card 63529 old 10:18 -> 10:4 (other end canon|matthew|10:20)
+[10:5] <- old [20, 21]
+  card 63527 old 10:21 -> 10:5 (other end canon|psalms|79:10)
+[11:1] <- old [1, 2]
+[11:2] <- old [3]
+  card 63541 old 11:3 -> 11:2 (other end canon|deuteronomy|32:36)
+[11:3] <- old [4]
+[11:4] <- old [5]
+  card 63543 old 11:5 -> 11:4 (other end canon|deuteronomy|32:39)
+[11:5] <- old [6, 7]
+[11:6] <- old [8]
+  card 63542 old 11:8 -> 11:6 (other end apocrypha|2-maccabees|7:17)
+[11:7] <- old [9, 11]
+[11:8] <- old [12]
+[11:9] <- old [13, 14, 15, 16]
+  card 63536 old 11:14 -> 11:9 (other end apocrypha|2-maccabees|7:1)
+  card 63538 old 11:16 -> 11:9 (other end canon|deuteronomy|14:8)
+  card 63540 old 11:16 -> 11:9 (other end canon|leviticus|11:7)
+[11:10] <- old [18, 19, 20]
+[11:11] <- old [21, 22, 23, 24]
+  card 63537 old 11:21 -> 11:11 (other end canon|matthew|10:28)
+[11:12] <- old [25]
+  card 63539 old 11:25 -> 11:12 (other end canon|leviticus|11:8)
+[11:13] <- old [26, 27]
+[12:1] <- old [1]
+[12:2] <- old [2, 3]
+[12:3] <- old [4, 5, 6, 7, 8, 9]
+[12:4] <- old [10, 11, 12]
+  card 63550 old 12:12 -> 12:4 (other end apocrypha|2-maccabees|7:17)
+  card 63551 old 12:12 -> 12:4 (other end canon|daniel|12:2)
+[12:5] <- old [13, 14]
+[12:6] <- old [15, 16]
+  card 63548 old 12:15 -> 12:6 (other end canon|psalms|79:10)
+  card 63549 old 12:15 -> 12:6 (other end canon|deuteronomy|32:36)
+[12:7] <- old [17, 18, 19]
+  card 63544 old 12:18 -> 12:7 (other end canon|deuteronomy|32:36)
+  card 63546 old 12:19 -> 12:7 (other end apocrypha|2-maccabees|7:38)
+  card 63547 old 12:18 -> 12:7 (other end apocrypha|2-maccabees|7:37)
+[12:8] <- old [20]
+  card 63545 old 12:20 -> 12:8 (other end canon|matthew|10:28)
+[13:1] <- old [1]
+[13:2] <- old [2]
+[13:3] <- old [3]
+[13:4] <- old [4]
+[13:5] <- old [5]
+[13:6] <- old [6, 7, 8, 9, 10, 11, 12, 13]
+  card 63559 old 13:12 -> 13:6 (other end canon|hebrews|11:17)
+  card 63560 old 13:12 -> 13:6 (other end canon|genesis|22:10)
+  card 63561 old 13:12 -> 13:6 (other end canon|genesis|22:9)
+  card 63562 old 13:10 -> 13:6 (other end apocrypha|the-song-of-the-three-holy-children|1:1)
+  card 63563 old 13:11 -> 13:6 (other end canon|daniel|3:28)
+  card 63564 old 13:11 -> 13:6 (other end canon|daniel|3:27)
+  card 63565 old 13:10 -> 13:6 (other end canon|daniel|3:18)
+  card 63566 old 13:10 -> 13:6 (other end canon|daniel|3:17)
+  card 63567 old 13:10 -> 13:6 (other end canon|daniel|3:16)
+[13:7] <- old [14, 15]
+  card 63558 old 13:14 -> 13:7 (other end canon|matthew|10:28)
+[13:8] <- old [16]
+[13:9] <- old [17]
+  card 63556 old 13:17 -> 13:9 (other end canon|luke|16:22)
+  card 63557 old 13:17 -> 13:9 (other end canon|matthew|8:11)
+[13:10] <- old [18]
+[13:11] <- old [19, 20, 21, 22]
+[13:12] <- old [23, 24, 25, 26]
+  card 63552 old 13:26 -> 13:12 (other end canon|1-john|3:16)
+  card 63553 old 13:26 -> 13:12 (other end canon|1-john|3:14)
+  card 63554 old 13:25 -> 13:12 (other end canon|romans|12:10)
+  card 63555 old 13:23 -> 13:12 (other end canon|psalms|133:1)
+[13:13] <- old [27] (+ the opening clause of old 14:1, 'brethren, who were on the rack, being tortured to death;', moved here; standard 14:1 begins 'nay more')
+[14:1] <- old [1]
+[14:2] <- old [2, 3]
+[14:3] <- old [4, 5]
+[14:4] <- old [6, 7]
+[14:5] <- old [8]
+[14:6] <- old [9, 10]
+[14:7] <- old [11, 12]
+  card 63570 old 14:12 -> 14:7 (other end canon|hebrews|11:35)
+[14:8] <- old [13, 14, 15, 16, 17, 18, 19, 20]
+  card 63568 old 14:20 -> 14:8 (other end apocrypha|2-maccabees|7:20)
+  card 63569 old 14:20 -> 14:8 (other end canon|hebrews|11:17)
+  card 63571 old 14:20 -> 14:8 (other end canon|genesis|22:12)
+  card 63572 old 14:20 -> 14:8 (other end canon|genesis|22:10)
+[15:1] <- old [1, 2, 3, 4, 5]
+  card 4449 old 15:3 -> 15:1 (other end canon|matthew|10:28)
+  card 4873 old 15:3 -> 15:1 (other end canon|matthew|27:42)
+  card 63579 old 15:2 -> 15:1 (other end canon|matthew|10:39)
+  card 63580 old 15:1 -> 15:1 (other end canon|matthew|10:37)
+  card 63581 old 15:3 -> 15:1 (other end canon|deuteronomy|13:3)
+  card 63583 old 15:3 -> 15:1 (other end canon|deuteronomy|13:6)
+[15:2] <- old [6, 7, 8, 9, 10]
+  card 63582 old 15:8 -> 15:2 (other end canon|deuteronomy|13:8)
+[15:3] <- old [11]
+[15:4] <- old [12]
+[15:5] <- old [13]
+[15:6] <- old [14]
+[15:7] <- old [15]
+[15:8] <- old [16]
+[15:9] <- old [17]
+[15:10] <- old [18, 19, 20, 21, 22, 23]
+[15:11] <- old [24, 25, 26, 27, 28, 29, 30, 31, 32]
+  card 63573 old 15:31 -> 15:11 (other end canon|hebrews|11:7)
+  card 63574 old 15:32 -> 15:11 (other end canon|genesis|7:17)
+  card 63575 old 15:31 -> 15:11 (other end canon|genesis|7:1)
+  card 63576 old 15:25 -> 15:11 (other end canon|hebrews|11:19)
+  card 63577 old 15:28 -> 15:11 (other end canon|genesis|22:18)
+  card 63578 old 15:28 -> 15:11 (other end canon|genesis|22:12)
+[16:1] <- old [1]
+[16:2] <- old [2]
+[16:3] <- old [3]
+  card 63589 old 16:3 -> 16:3 (other end canon|daniel|3:25)
+  card 63591 old 16:3 -> 16:3 (other end canon|daniel|6:23)
+  card 63592 old 16:3 -> 16:3 (other end canon|daniel|6:22)
+[16:4] <- old [4]
+[16:5] <- old [5]
+[16:6] <- old [6]
+[16:7] <- old [7]
+[16:8] <- old [8]
+[16:9] <- old [9]
+[16:10] <- old [10]
+[16:11] <- old [11]
+[16:12] <- old [12]
+[16:13] <- old [13]
+[16:14] <- old [14]
+[16:15] <- old [15]
+[16:16] <- old [16]
+[16:17] <- old [17]
+[16:18] <- old [18]
+  card 63587 old 16:18 -> 16:18 (other end canon|romans|12:1)
+[16:19] <- old [20]
+  card 63594 old 16:20 -> 16:19 (other end canon|james|2:21)
+  card 63595 old 16:20 -> 16:19 (other end canon|hebrews|11:19)
+  card 63596 old 16:20 -> 16:19 (other end canon|hebrews|11:17)
+  card 63597 old 16:20 -> 16:19 (other end canon|genesis|22:12)
+  card 63598 old 16:20 -> 16:19 (other end canon|genesis|22:10)
+  card 63599 old 16:20 -> 16:19 (other end canon|genesis|22:9)
+[16:20] <- old [21]
+  card 63588 old 16:21 -> 16:20 (other end canon|daniel|3:27)
+  card 63590 old 16:21 -> 16:20 (other end canon|daniel|3:21)
+  card 63593 old 16:21 -> 16:20 (other end canon|daniel|6:16)
+[16:21] <- old [23]
+[16:22] <- old [24]
+[16:23] <- old [25]
+  card 63584 old 16:25 -> 16:23 (other end canon|daniel|12:2)
+  card 63585 old 16:25 -> 16:23 (other end canon|luke|20:38)
+  card 63586 old 16:25 -> 16:23 (other end canon|matthew|22:32)
+[17:1] <- old [1]
+[17:2] <- old [2]
+[17:3] <- old [3]
+[17:4] <- old [4]
+[17:5] <- old [5]
+  card 63600 old 17:5 -> 17:5 (other end canon|daniel|12:3)
+  card 63601 old 17:5 -> 17:5 (other end canon|matthew|13:43)
+  card 63602 old 17:5 -> 17:5 (other end canon|philippians|2:15)
+[17:6] <- old [6]
+[17:7] <- old [7]
+[17:8] <- old [8]
+[17:9] <- old [9]
+[17:10] <- old [10]
+[17:11] <- old [11]
+[17:12] <- old [12]
+  card 63603 old 17:12 -> 17:12 (other end canon|1-corinthians|15:53)
+  card 63604 old 17:12 -> 17:12 (other end canon|1-corinthians|15:54)
+  card 63605 old 17:12 -> 17:12 (other end canon|daniel|12:2)
+[17:13] <- old [13]
+  card 4450 old 17:13 -> 17:13 (other end canon|matthew|10:22)
+  card 4859 old 17:13 -> 17:13 (other end canon|matthew|26:42)
+  card 4875 old 17:13 -> 17:13 (other end canon|matthew|27:50)
+[17:14] <- old [14]
+[17:15] <- old [15]
+  card 63606 old 17:15 -> 17:15 (other end canon|2-timothy|4:7)
+  card 63607 old 17:15 -> 17:15 (other end canon|2-timothy|4:8)
+  card 63608 old 17:15 -> 17:15 (other end canon|james|1:12)
+  card 63609 old 17:15 -> 17:15 (other end canon|revelation|2:10)
+[17:16] <- old [16]
+  card 63610 old 17:16 -> 17:16 (other end canon|1-corinthians|9:24)
+  card 63611 old 17:16 -> 17:16 (other end canon|1-corinthians|9:25)
+[17:17] <- old [17, 18]
+  card 4451 old 17:18 -> 17:17 (other end canon|matthew|10:22)
+  card 4860 old 17:18 -> 17:17 (other end canon|matthew|26:46)
+  card 4876 old 17:18 -> 17:17 (other end canon|matthew|27:50)
+  card 63612 old 17:18 -> 17:17 (other end canon|revelation|7:9)
+  card 63613 old 17:18 -> 17:17 (other end canon|revelation|7:14)
+  card 63614 old 17:18 -> 17:17 (other end canon|revelation|7:15)
+  card 63615 old 17:18 -> 17:17 (other end canon|revelation|20:4)
+  card 63616 old 17:18 -> 17:17 (other end canon|daniel|7:9)
+  card 63617 old 17:18 -> 17:17 (other end canon|daniel|7:10)
+[17:18] <- old [19]
+  card 63618 old 17:19 -> 17:18 (other end canon|deuteronomy|33:3)
+[17:19] <- old [20, 21, 22]
+  card 63619 old 17:22 -> 17:19 (other end canon|isaiah|53:5)
+  card 63620 old 17:22 -> 17:19 (other end canon|isaiah|53:10)
+  card 63621 old 17:22 -> 17:19 (other end canon|isaiah|53:11)
+  card 63622 old 17:22 -> 17:19 (other end canon|isaiah|53:12)
+  card 63623 old 17:21 -> 17:19 (other end canon|daniel|9:24)
+  card 63624 old 17:22 -> 17:19 (other end canon|romans|3:25)
+  card 63625 old 17:22 -> 17:19 (other end canon|hebrews|9:14)
+  card 63626 old 17:22 -> 17:19 (other end canon|hebrews|11:35)
+[17:20] <- old [23]
+[17:21] <- old [24]
+[18:1] <- old [1, 2]
+[18:2] <- old [3]
+[18:3] <- old [4]
+[18:4] <- old [5]
+[18:5] <- old [6]
+[18:6] <- old [7]
+  card 63627 old 18:7 -> 18:6 (other end canon|genesis|2:21)
+  card 63628 old 18:7 -> 18:6 (other end canon|genesis|2:22)
+  card 63629 old 18:7 -> 18:6 (other end canon|genesis|2:23)
+[18:7] <- old [8]
+[18:8] <- old [9]
+  card 63630 old 18:9 -> 18:8 (other end canon|genesis|3:1)
+  card 63631 old 18:9 -> 18:8 (other end canon|genesis|3:4)
+  card 63632 old 18:9 -> 18:8 (other end canon|genesis|3:6)
+[18:9] <- old [10]
+[18:10] <- old [11]
+  card 63633 old 18:11 -> 18:10 (other end canon|genesis|4:8)
+  card 63634 old 18:11 -> 18:10 (other end canon|genesis|22:9)
+  card 63635 old 18:11 -> 18:10 (other end canon|genesis|22:13)
+  card 63636 old 18:11 -> 18:10 (other end canon|genesis|39:20)
+[18:11] <- old [12]
+  card 63637 old 18:12 -> 18:11 (other end canon|numbers|25:11)
+  card 63638 old 18:12 -> 18:11 (other end canon|numbers|25:13)
+  card 63639 old 18:12 -> 18:11 (other end canon|daniel|3:25)
+  card 63640 old 18:12 -> 18:11 (other end canon|daniel|3:27)
+  card 63641 old 18:12 -> 18:11 (other end apocrypha|the-song-of-the-three-holy-children|1:66)
+[18:12] <- old [13]
+  card 63642 old 18:13 -> 18:12 (other end canon|daniel|6:22)
+  card 63643 old 18:13 -> 18:12 (other end canon|daniel|6:23)
+[18:13] <- old [14]
+  card 63644 old 18:14 -> 18:13 (other end canon|isaiah|43:2)
+[18:14] <- old [15]
+  card 63645 old 18:15 -> 18:14 (other end canon|psalms|34:19)
+[18:15] <- old [16]
+  card 63646 old 18:16 -> 18:15 (other end canon|proverbs|3:18)
+[18:16] <- old [17]
+  card 63647 old 18:17 -> 18:16 (other end canon|ezekiel|37:3)
+[18:17] <- old [18]
+  card 63648 old 18:18 -> 18:17 (other end canon|deuteronomy|32:39)
+  card 63649 old 18:18 -> 18:17 (other end canon|deuteronomy|30:19)
+  card 63650 old 18:18 -> 18:17 (other end canon|deuteronomy|30:20)
+[18:18] <- old [19]
+[18:19] <- old [20]
+  card 63657 old 18:20 -> 18:19 (other end canon|daniel|12:1)
+[18:20] <- old [21, 24]
+  card 63651 old 18:21 -> 18:20 (other end canon|hebrews|11:35)
+  card 63652 old 18:21 -> 18:20 (other end canon|hebrews|11:39)
+  card 63653 old 18:21 -> 18:20 (other end canon|hebrews|11:40)
+  card 63654 old 18:21 -> 18:20 (other end canon|luke|16:22)
+  card 63655 old 18:21 -> 18:20 (other end canon|daniel|12:2)
+  card 63656 old 18:21 -> 18:20 (other end canon|daniel|12:3)
+THREAD ANCHORS
+  thread 15709 4-maccabees-1-reason-under-the-law: 1:1-1:18 -> 1:1-1:5
+  thread 15710 4-maccabees-1-reason-the-master-gardener: 1:28-1:35 -> 1:7-1:10
+  thread 15711 4-maccabees-1-forbidden-meats-under-the-law: 1:33-1:35 -> 1:8-1:10
+  thread 15712 4-maccabees-2-joseph-and-the-tenth-word: 2:2-2:6 -> 2:1-2:1
+  thread 15713 4-maccabees-2-the-law-overrules-greed: 2:7-2:9 -> 2:2-2:2
+  thread 15714 4-maccabees-2-the-law-governs-anger: 2:16-2:20 -> 2:4-2:4
+  thread 15715 4-maccabees-2-passions-and-law-given-at-creation: 2:21-2:23 -> 2:5-2:5
+  thread 15716 4-maccabees-3-davids-thirst-poured-out: 3:6-3:19 -> 3:2-3:4
+  thread 15717 4-maccabees-3-reason-the-antagonist-of-the-passions: 3:1-3:5 -> 3:1-3:1
+  thread 15718 4-maccabees-4-apollonius-and-the-temple-treasury: 4:1-4:13 -> 4:1-4:7
+  thread 15719 4-maccabees-4-antiochus-the-vile-king: 4:15-4:23 -> 4:9-4:16
+  thread 15720 4-maccabees-4-the-persecution-begins: 4:22-4:26 -> 4:15-4:18
+  thread 15721 4-maccabees-5-the-divine-law-the-law-of-our-country: 5:14-5:21 -> 5:11-5:17
+  thread 15722 4-maccabees-5-the-law-teaches-self-control-justice-righteousness: 5:22-5:24 -> 5:18-5:20
+  thread 15723 4-maccabees-5-the-creator-lawgiver-gave-the-dietary-law: 5:25-5:26 -> 5:21-5:21
+  thread 15724 4-maccabees-5-no-things-offered-to-idols: 5:2-5:3 -> 5:1-5:2
+  thread 15725 4-maccabees-6-sons-of-abraham-die-for-the-law: 6:16-6:23 -> 6:3-6:5
+  thread 15726 4-maccabees-6-unclean-meat-refused-unto-death: 6:15-6:20 -> 6:2-6:5
+  thread 15727 4-maccabees-6-blood-to-ransom-their-souls: 6:27-6:29 -> 6:6-6:6
+  thread 15728 4-maccabees-6-inspired-reason-master-over-passions: 6:30-6:33 -> 6:7-6:10
+  thread 15729 4-maccabees-7-undefiled-teeth-the-dietary-law-stands: 7:6-7:8 -> 7:4-7:5
+  thread 15730 4-maccabees-7-aaron-with-the-censer-against-the-fiery-angel: 7:11-7:12 -> 7:7-7:7
+  thread 15731 4-maccabees-7-with-isaac-like-reason: 7:13-7:14 -> 7:8-7:8
+  thread 15732 4-maccabees-7-the-patriarchs-live-unto-elohim: 7:18-7:19 -> 7:12-7:12
+  thread 15733 4-maccabees-8-seven-brothers-refuse-the-swine: 8:1-8:8 -> 8:1-8:2
+  thread 15734 4-maccabees-8-ready-to-die-rather-than-transgress: 8:14-8:28 -> 8:4-8:16
+  thread 15735 4-maccabees-9-ready-to-die-rather-than-transgress: 9:1-9:9 -> 9:1-9:9
+  thread 15736 4-maccabees-9-the-first-brother-fear-not-them-that-kill-the-body: 9:15-9:32 -> 9:13-9:18
+  thread 15737 4-maccabees-10-the-noble-bond-of-brotherhood: 10:2-10:11 -> 10:1-10:1
+  thread 15738 4-maccabees-10-elohim-hears-the-speechless: 10:16-10:21 -> 10:3-10:5
+  thread 15739 4-maccabees-11-we-worship-the-creator-and-live-by-his-law: 11:2-11:8 -> 11:1-11:6
+  thread 15740 4-maccabees-11-unclean-meat-refused-the-reason-unconquered: 11:14-11:25 -> 11:9-11:12
+  thread 15741 4-maccabees-12-the-divine-justice-delivers-thee-to-eternal-fire: 12:10-12:16 -> 12:4-12:6
+  thread 15742 4-maccabees-12-elohim-of-my-fathers-be-merciful-to-my-nation: 12:17-12:20 -> 12:7-12:8
+  thread 15743 4-maccabees-13-imitate-the-three-children-in-the-furnace: 13:9-13:11 -> 13:6-13:6
+  thread 15744 4-maccabees-13-isaac-yielded-and-the-fathers-receive-us: 13:12-13:17 -> 13:6-13:9
+  thread 15745 4-maccabees-13-brotherly-love-bred-under-the-law: 13:19-13:26 -> 13:11-13:12
+  thread 15746 4-maccabees-14-a-soul-like-abraham: 14:11-14:20 -> 14:7-14:8
+  thread 15747 4-maccabees-15-religion-dearer-than-her-children: 15:1-15:12 -> 15:1-15:4
+  thread 15748 4-maccabees-15-true-daughter-of-abraham: 15:24-15:32 -> 15:11-15:11
+  thread 15749 4-maccabees-16-abraham-hastened-to-sacrifice-isaac: 16:20-16:20 -> 16:19-16:19
+  thread 15750 4-maccabees-16-lions-of-daniel-furnace-of-mishael: 16:3-16:21 -> 16:3-16:20
+  thread 15751 4-maccabees-16-dying-for-elohim-live-unto-elohim: 16:18-16:25 -> 16:18-16:23
+  thread 15752 4-maccabees-17-starlike-sons-shine-in-the-resurrection: 17:5-17:12 -> 17:5-17:12
+  thread 15753 4-maccabees-17-the-crown-given-to-her-athletes: 17:15-17:16 -> 17:15-17:16
+  thread 15754 4-maccabees-17-they-stand-beside-the-throne: 17:18-17:20 -> 17:17-17:19
+  thread 15755 4-maccabees-17-a-ransom-for-the-nation-the-type: 17:21-17:22 -> 17:19-17:19
+  thread 15756 4-maccabees-18-the-mother-kept-the-rib-of-eve: 18:7-18:9 -> 18:6-18:8
+  thread 15757 4-maccabees-18-the-father-taught-the-law-and-the-prophets: 18:11-18:13 -> 18:10-18:12
+  thread 15758 4-maccabees-18-the-prophets-words-of-fire-and-life: 18:14-18:18 -> 18:13-18:17
+  thread 15759 4-maccabees-18-gathered-unto-the-place-of-their-ancestors: 18:20-18:21 -> 18:19-18:20

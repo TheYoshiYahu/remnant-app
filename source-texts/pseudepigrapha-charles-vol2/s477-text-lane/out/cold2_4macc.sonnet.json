@@ -1,0 +1,11 @@
+{
+ "reader": "sonnet cold read 2",
+ "packet": "cold_packet_4macc_addresses.txt",
+ "verses_read": 247,
+ "cards_read": 292,
+ "anchors_read": 51,
+ "verse_flags": [],
+ "card_flags": [],
+ "anchor_flags": [],
+ "verdict": "Read by hand and scripted; all 18 chapters clean; all 292 cards and 51 anchors land as mapped; 13:13/14:1 move agreed (the clause continues 13:27 and the sentence breaks at 'nay more')."
+}

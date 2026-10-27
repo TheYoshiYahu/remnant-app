@@ -1,0 +1,11 @@
+{
+ "reader": "sonnet cold read 1",
+ "packet": "cold_packet_4macc_addresses.txt (addresses only — the narrative text could not be passed through the chat; join quality checked by script, see s477_report.md)",
+ "verses_read": 247,
+ "cards_read": 292,
+ "anchors_read": 51,
+ "verse_flags": [],
+ "card_flags": [],
+ "anchor_flags": [],
+ "verdict": "Clean: old numbers strictly increase in every chapter, none repeated; new numbers 1..n; all 292 cards land on a new verse listing their old number, same chapter; all 51 anchors start/end at the new verses containing their old start/end. 13:13/14:1 move agreed."
+}
