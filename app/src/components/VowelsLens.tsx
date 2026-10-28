@@ -1,5 +1,5 @@
 /**
- * VowelsLens — the "✦ What if we removed the vowels?" consonantal-skeleton lens.
+ * VowelsLens — the "✦ Remove the vowel additions?" lens (reader-facing: "without the vowels" / "same consonants"; the API keeps the skeleton routes).
  *
  * Strips a Hebrew word to its bare consonants and shows every word sharing that
  * skeleton (with gloss + usage), then the single-consonant-swap near matches
@@ -150,22 +150,23 @@ export default function VowelsLens({
         onClick={onToggle}
         className="font-sans text-sm font-medium text-[var(--reader-accent)] hover:underline"
       >
-        ✦ What if we removed the vowels?
+        ✦ Remove the vowel additions?
       </button>
 
       {open && (
         <div className="mt-3 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3">
           <p className="text-sm text-[var(--reader-muted)]">
-            Strip the vowel points and a word falls back to its bare consonants —
-            its skeleton. Other words built on the same skeleton often carry a
-            related thread of meaning.
+            The vowel points were added to the text centuries later. Take them
+            off and only the consonants remain — the word as it was first written.
+            Other words built on the same consonants often carry a related thread
+            of meaning.
           </p>
 
           {/* ── PARTNER: live lens ───────────────────────────────────── */}
           {isPartner && (
             <div className="mt-3">
               <p className="text-base text-[var(--reader-text)]">
-                Skeleton: <Heb>{skeleton}</Heb>
+                Without the vowels: <Heb>{skeleton}</Heb>
               </p>
               {loading && (
                 <p className="mt-2 text-sm text-[var(--reader-muted)]">
@@ -180,7 +181,7 @@ export default function VowelsLens({
               {group && (
                 <div className="mt-2">
                   <p className="font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
-                    Same skeleton
+                    Same consonants
                   </p>
                   <ul className="mt-1 space-y-1 text-sm">
                     {group.entries.map((e) => (
@@ -188,7 +189,7 @@ export default function VowelsLens({
                     ))}
                     {group.entries.length === 0 && (
                       <li className="text-sm text-[var(--reader-muted)]">
-                        No other entries share this skeleton.
+                        No other words share these consonants.
                       </li>
                     )}
                   </ul>
@@ -226,11 +227,11 @@ export default function VowelsLens({
                 Sample
               </p>
               <p className="mt-1 text-base text-[var(--reader-text)]">
-                Skeleton: <Heb>{SAMPLE_SKELETON}</Heb>{" "}
+                Without the vowels: <Heb>{SAMPLE_SKELETON}</Heb>{" "}
                 <span className="text-sm text-[var(--reader-muted)]">(netser)</span>
               </p>
               <p className="mt-2 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
-                Same skeleton
+                Same consonants
               </p>
               <ul className="mt-1 space-y-1 text-sm">
                 {SAMPLE_SAME.map((e) => (
@@ -261,7 +262,7 @@ export default function VowelsLens({
                 <LockedPartnerPrompt
                   tone="inline"
                   message={
-                    "The consonantal-skeleton lens is part of the partner study " +
+                    "This lens is part of the partner study " +
                     "tools. Partnership is managed from your account on the web " +
                     "at remnantofpromise.org."
                   }
