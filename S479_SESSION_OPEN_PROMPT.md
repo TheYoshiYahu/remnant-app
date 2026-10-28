@@ -10,7 +10,14 @@ Load my voice skill and mount my Desktop. Read, in this order:
 S478 state: the adam-eve + 4 Maccabees sweep is DEPLOYED (Oct 27 17:30 CDT, read-back 73/73, 71/71, 58/58, 0 flagged). Phase 1 is done
 except S463f (Cepher additions + Sonnini). Confirm the S478 git push landed (git log). git push is mine.
 
-THIS SESSION — priority (1): "make sure we have all the scriptures, all the cross-references and all the end cards ready to go."
+THIS SESSION — ALEPH-BET first (Yoshi moved it to now, Oct 28 13:26; spec ALEPH_BET_SPEC.md; built so far: alephbet.json, Noto Phoenician +
+Samaritan fonts, LetterCard.tsx, the consonant list in VowelsLens — tsc clean). Finish it: (a) the 22 pictograph SVGs in
+app/public/alephbet/pict/<id>.svg — hand-traced line drawings from the published proto-Sinaitic chart (Gardiner / Albright), one letter at a
+time, shown to Yoshi for review before they ship — NEVER AI-generated glyphs (the S202 Grok 'paleo' divider was invented and pulled); (b) the
+Aleph-bet chart page in the Study tools menu (free tier): 22 rows × forms, tap → LetterCard; (c) the older inscriptional stages as SVG
+(early paleo Gezer/Moab, late paleo Siloam/Lachish, Aramaic Elephantine) into `older.*` — second pass, after (a)–(b) ship; (d) Rashi +
+cursive via an OFL font (Culmus) if one carries them. Build, tsc, push (his). THEN priority (1): "make sure we have all the scriptures,
+all the cross-references and all the end cards ready to go."
 General to specific: (a) one inventory of the whole live library by a dump paste — every edition and book, chapter and verse counts vs
 the Desktop parsed JSON; per chapter: cross-reference cards (count), chapter-end card / thread summaries (present or not), extras
 reached; list every gap (books with no cards, chapters with no end card, editions not yet swept: Cepher additions, Sonnini, 1 Clement /

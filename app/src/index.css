@@ -36,6 +36,24 @@
      transliteration fallback. */
 }
 
+/* ----- S478 — Aleph-bet forms: paleo (Unicode Phoenician block) and Samaritan,
+   Noto Sans Phoenician / Noto Sans Samaritan, SIL Open Font License. ----- */
+@font-face {
+  font-family: 'Noto Sans Phoenician';
+  src: url('/fonts/NotoSansPhoenician.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+10900-1091F;
+}
+@font-face {
+  font-family: 'Noto Sans Samaritan';
+  src: url('/fonts/NotoSansSamaritan.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+0800-083F;
+}
+.heb-paleo { font-family: 'Noto Sans Phoenician', sans-serif; direction: rtl; }
+.heb-samaritan { font-family: 'Noto Sans Samaritan', sans-serif; direction: rtl; }
+.heb-square { font-family: 'SBL Hebrew', 'Ezra SIL', serif; direction: rtl; }
+
 /* Reading-typography baseline. Serif body (Lora — S116 swap from
    Cormorant Garamond after fresh-eyes comparison; Cormorant's display-
    leaning strokes read thin at body sizes even at 500 weight, Lora is

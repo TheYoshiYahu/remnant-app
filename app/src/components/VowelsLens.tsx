@@ -24,6 +24,7 @@ import {
   toConsonantalSkeleton,
 } from "../lib/api";
 import LockedPartnerPrompt from "./LockedPartnerPrompt";
+import LetterCard, { letterFor, type Letter } from "./LetterCard";
 
 const HEBREW_FONT =
   "'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif";
@@ -104,6 +105,38 @@ const SAMPLE_NEAR: { near_skeleton: string; entries: SkeletonEntry[] }[] = [
   },
 ];
 
+
+/** S478 — the consonants of the word, one by one, right to left as written; each opens its LetterCard. */
+function ConsonantList({ word, onPick }: { word: string; onPick: (l: Letter) => void }) {
+  const found = Array.from(word).map((ch) => letterFor(ch)).filter((l): l is Letter => l !== null);
+  if (found.length === 0) return null;
+  return (
+    <div className="mt-2">
+      <p className="font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
+        The letters, as written (right to left)
+      </p>
+      <div className="mt-1 flex flex-row-reverse flex-wrap justify-end gap-2">
+        {found.map((l, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => onPick(l)}
+            title={`${l.name} — every form of this letter`}
+            className="flex flex-col items-center rounded-md border border-[var(--reader-rule)] px-3 py-1 hover:border-[var(--reader-accent)]"
+          >
+            <span className="heb-square text-3xl leading-none text-[var(--reader-text)]">{l.square}</span>
+            <span className="font-sans text-xs text-[var(--reader-text)]">{l.name}</span>
+            <span className="font-sans text-[10px] text-[var(--reader-muted)]">{l.pictograph[0]}</span>
+          </button>
+        ))}
+      </div>
+      <p className="mt-1 text-xs text-[var(--reader-muted)]">
+        What the letters picture, in order: {found.map((l) => l.pictograph[0]).join(" · ")}. Tap a letter to see every form of it.
+      </p>
+    </div>
+  );
+}
+
 export default function VowelsLens({
   lemma,
   isPartner,
@@ -116,6 +149,7 @@ export default function VowelsLens({
   const [error, setError] = useState<string | null>(null);
   const [group, setGroup] = useState<SkeletonGroupResponse | null>(null);
   const [near, setNear] = useState<SkeletonNearResponse | null>(null);
+  const [letter, setLetter] = useState<Letter | null>(null);
 
   const skeleton = toConsonantalSkeleton(lemma);
 
@@ -168,6 +202,7 @@ export default function VowelsLens({
               <p className="text-base text-[var(--reader-text)]">
                 Without the vowels: <Heb>{skeleton}</Heb>
               </p>
+              <ConsonantList word={skeleton} onPick={setLetter} />
               {loading && (
                 <p className="mt-2 text-sm text-[var(--reader-muted)]">
                   Reading the lexicon…
@@ -230,6 +265,7 @@ export default function VowelsLens({
                 Without the vowels: <Heb>{SAMPLE_SKELETON}</Heb>{" "}
                 <span className="text-sm text-[var(--reader-muted)]">(netser)</span>
               </p>
+              <ConsonantList word={SAMPLE_SKELETON} onPick={setLetter} />
               <p className="mt-2 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
                 Same consonants
               </p>
@@ -272,6 +308,7 @@ export default function VowelsLens({
           )}
         </div>
       )}
+    {letter && <LetterCard letter={letter} onClose={() => setLetter(null)} />}
     </div>
   );
 }

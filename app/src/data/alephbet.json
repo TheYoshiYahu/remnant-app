@@ -1,0 +1,633 @@
+[
+ {
+  "id": "aleph",
+  "order": 1,
+  "square": "א",
+  "final": null,
+  "name": "Aleph",
+  "name_hebrew": "אָלֶף",
+  "sound": "silent (a glottal catch); carries the vowel",
+  "value": 1,
+  "pictograph": [
+   "ox head"
+  ],
+  "meaning": "strength, first, leader",
+  "forms": {
+   "pictograph": "/alephbet/pict/aleph.svg",
+   "paleo": "𐤀",
+   "samaritan": "ࠀ",
+   "square": "א",
+   "square_final": null,
+   "rashi": "א",
+   "cursive": "א"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "bet",
+  "order": 2,
+  "square": "ב",
+  "final": null,
+  "name": "Bet",
+  "name_hebrew": "בֵּית",
+  "sound": "b, or v without the dot",
+  "value": 2,
+  "pictograph": [
+   "house",
+   "tent floor-plan"
+  ],
+  "meaning": "house, household, inside",
+  "forms": {
+   "pictograph": "/alephbet/pict/bet.svg",
+   "paleo": "𐤁",
+   "samaritan": "ࠁ",
+   "square": "ב",
+   "square_final": null,
+   "rashi": "ב",
+   "cursive": "ב"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "gimel",
+  "order": 3,
+  "square": "ג",
+  "final": null,
+  "name": "Gimel",
+  "name_hebrew": "גִּימֶל",
+  "sound": "g (as in go)",
+  "value": 3,
+  "pictograph": [
+   "camel",
+   "foot in motion"
+  ],
+  "meaning": "to lift, carry, walk",
+  "forms": {
+   "pictograph": "/alephbet/pict/gimel.svg",
+   "paleo": "𐤂",
+   "samaritan": "ࠂ",
+   "square": "ג",
+   "square_final": null,
+   "rashi": "ג",
+   "cursive": "ג"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "dalet",
+  "order": 4,
+  "square": "ד",
+  "final": null,
+  "name": "Dalet",
+  "name_hebrew": "דָּלֶת",
+  "sound": "d",
+  "value": 4,
+  "pictograph": [
+   "door",
+   "tent door"
+  ],
+  "meaning": "door, path, to hang",
+  "forms": {
+   "pictograph": "/alephbet/pict/dalet.svg",
+   "paleo": "𐤃",
+   "samaritan": "ࠃ",
+   "square": "ד",
+   "square_final": null,
+   "rashi": "ד",
+   "cursive": "ד"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "he",
+  "order": 5,
+  "square": "ה",
+  "final": null,
+  "name": "He",
+  "name_hebrew": "הֵא",
+  "sound": "h",
+  "value": 5,
+  "pictograph": [
+   "man with arms raised",
+   "window"
+  ],
+  "meaning": "behold, look, breath",
+  "forms": {
+   "pictograph": "/alephbet/pict/he.svg",
+   "paleo": "𐤄",
+   "samaritan": "ࠄ",
+   "square": "ה",
+   "square_final": null,
+   "rashi": "ה",
+   "cursive": "ה"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "vav",
+  "order": 6,
+  "square": "ו",
+  "final": null,
+  "name": "Vav",
+  "name_hebrew": "וָו",
+  "sound": "v (older: w); also the vowels o and u",
+  "value": 6,
+  "pictograph": [
+   "tent peg",
+   "nail, hook"
+  ],
+  "meaning": "to join, add, secure — 'and'",
+  "forms": {
+   "pictograph": "/alephbet/pict/vav.svg",
+   "paleo": "𐤅",
+   "samaritan": "ࠅ",
+   "square": "ו",
+   "square_final": null,
+   "rashi": "ו",
+   "cursive": "ו"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "zayin",
+  "order": 7,
+  "square": "ז",
+  "final": null,
+  "name": "Zayin",
+  "name_hebrew": "זַיִן",
+  "sound": "z",
+  "value": 7,
+  "pictograph": [
+   "mattock, plough",
+   "weapon"
+  ],
+  "meaning": "to cut, nourish, weapon",
+  "forms": {
+   "pictograph": "/alephbet/pict/zayin.svg",
+   "paleo": "𐤆",
+   "samaritan": "ࠆ",
+   "square": "ז",
+   "square_final": null,
+   "rashi": "ז",
+   "cursive": "ז"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "chet",
+  "order": 8,
+  "square": "ח",
+  "final": null,
+  "name": "Chet",
+  "name_hebrew": "חֵית",
+  "sound": "kh (back of the throat)",
+  "value": 8,
+  "pictograph": [
+   "fence",
+   "wall"
+  ],
+  "meaning": "to separate, protect, outside",
+  "forms": {
+   "pictograph": "/alephbet/pict/chet.svg",
+   "paleo": "𐤇",
+   "samaritan": "ࠇ",
+   "square": "ח",
+   "square_final": null,
+   "rashi": "ח",
+   "cursive": "ח"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "tet",
+  "order": 9,
+  "square": "ט",
+  "final": null,
+  "name": "Tet",
+  "name_hebrew": "טֵית",
+  "sound": "t",
+  "value": 9,
+  "pictograph": [
+   "basket",
+   "coiled snake"
+  ],
+  "meaning": "to surround, contain; mud, clay",
+  "forms": {
+   "pictograph": "/alephbet/pict/tet.svg",
+   "paleo": "𐤈",
+   "samaritan": "ࠈ",
+   "square": "ט",
+   "square_final": null,
+   "rashi": "ט",
+   "cursive": "ט"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "yod",
+  "order": 10,
+  "square": "י",
+  "final": null,
+  "name": "Yod",
+  "name_hebrew": "יוֹד",
+  "sound": "y; also the vowel i",
+  "value": 10,
+  "pictograph": [
+   "hand",
+   "arm with closed hand"
+  ],
+  "meaning": "to work, make, throw, worship",
+  "forms": {
+   "pictograph": "/alephbet/pict/yod.svg",
+   "paleo": "𐤉",
+   "samaritan": "ࠉ",
+   "square": "י",
+   "square_final": null,
+   "rashi": "י",
+   "cursive": "י"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "kaf",
+  "order": 11,
+  "square": "כ",
+  "final": "ך",
+  "name": "Kaf",
+  "name_hebrew": "כַּף",
+  "sound": "k, or kh without the dot",
+  "value": 20,
+  "pictograph": [
+   "open palm"
+  ],
+  "meaning": "to cover, open, allow, tame",
+  "forms": {
+   "pictograph": "/alephbet/pict/kaf.svg",
+   "paleo": "𐤊",
+   "samaritan": "ࠊ",
+   "square": "כ",
+   "square_final": "ך",
+   "rashi": "כ",
+   "cursive": "כ"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "lamed",
+  "order": 12,
+  "square": "ל",
+  "final": null,
+  "name": "Lamed",
+  "name_hebrew": "לָמֶד",
+  "sound": "l",
+  "value": 30,
+  "pictograph": [
+   "shepherd's staff",
+   "ox goad"
+  ],
+  "meaning": "to lead, teach, yoke, toward",
+  "forms": {
+   "pictograph": "/alephbet/pict/lamed.svg",
+   "paleo": "𐤋",
+   "samaritan": "ࠋ",
+   "square": "ל",
+   "square_final": null,
+   "rashi": "ל",
+   "cursive": "ל"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "mem",
+  "order": 13,
+  "square": "מ",
+  "final": "ם",
+  "name": "Mem",
+  "name_hebrew": "מֵם",
+  "sound": "m",
+  "value": 40,
+  "pictograph": [
+   "water"
+  ],
+  "meaning": "water, chaos, mighty, blood",
+  "forms": {
+   "pictograph": "/alephbet/pict/mem.svg",
+   "paleo": "𐤌",
+   "samaritan": "ࠌ",
+   "square": "מ",
+   "square_final": "ם",
+   "rashi": "מ",
+   "cursive": "מ"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "nun",
+  "order": 14,
+  "square": "נ",
+  "final": "ן",
+  "name": "Nun",
+  "name_hebrew": "נוּן",
+  "sound": "n",
+  "value": 50,
+  "pictograph": [
+   "seed, sprout",
+   "fish"
+  ],
+  "meaning": "to continue, heir, son, life",
+  "forms": {
+   "pictograph": "/alephbet/pict/nun.svg",
+   "paleo": "𐤍",
+   "samaritan": "ࠍ",
+   "square": "נ",
+   "square_final": "ן",
+   "rashi": "נ",
+   "cursive": "נ"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "samekh",
+  "order": 15,
+  "square": "ס",
+  "final": null,
+  "name": "Samekh",
+  "name_hebrew": "סָמֶךְ",
+  "sound": "s",
+  "value": 60,
+  "pictograph": [
+   "prop, support",
+   "thorn"
+  ],
+  "meaning": "to support, protect, grab, hate",
+  "forms": {
+   "pictograph": "/alephbet/pict/samekh.svg",
+   "paleo": "𐤎",
+   "samaritan": "ࠎ",
+   "square": "ס",
+   "square_final": null,
+   "rashi": "ס",
+   "cursive": "ס"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "ayin",
+  "order": 16,
+  "square": "ע",
+  "final": null,
+  "name": "Ayin",
+  "name_hebrew": "עַיִן",
+  "sound": "silent (a deeper guttural than Aleph)",
+  "value": 70,
+  "pictograph": [
+   "eye"
+  ],
+  "meaning": "to see, watch, know, shade",
+  "forms": {
+   "pictograph": "/alephbet/pict/ayin.svg",
+   "paleo": "𐤏",
+   "samaritan": "ࠏ",
+   "square": "ע",
+   "square_final": null,
+   "rashi": "ע",
+   "cursive": "ע"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "pe",
+  "order": 17,
+  "square": "פ",
+  "final": "ף",
+  "name": "Pe",
+  "name_hebrew": "פֵּא",
+  "sound": "p, or f without the dot",
+  "value": 80,
+  "pictograph": [
+   "mouth"
+  ],
+  "meaning": "to speak, open, word, blow",
+  "forms": {
+   "pictograph": "/alephbet/pict/pe.svg",
+   "paleo": "𐤐",
+   "samaritan": "ࠐ",
+   "square": "פ",
+   "square_final": "ף",
+   "rashi": "פ",
+   "cursive": "פ"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "tsade",
+  "order": 18,
+  "square": "צ",
+  "final": "ץ",
+  "name": "Tsade",
+  "name_hebrew": "צָדִי",
+  "sound": "ts",
+  "value": 90,
+  "pictograph": [
+   "fish hook",
+   "trail, path"
+  ],
+  "meaning": "to hunt, catch, need, strong, righteous",
+  "forms": {
+   "pictograph": "/alephbet/pict/tsade.svg",
+   "paleo": "𐤑",
+   "samaritan": "ࠑ",
+   "square": "צ",
+   "square_final": "ץ",
+   "rashi": "צ",
+   "cursive": "צ"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "qof",
+  "order": 19,
+  "square": "ק",
+  "final": null,
+  "name": "Qof",
+  "name_hebrew": "קוֹף",
+  "sound": "q (a k from the back of the throat)",
+  "value": 100,
+  "pictograph": [
+   "sun on the horizon",
+   "back of the head"
+  ],
+  "meaning": "behind, the last, time, condense",
+  "forms": {
+   "pictograph": "/alephbet/pict/qof.svg",
+   "paleo": "𐤒",
+   "samaritan": "ࠒ",
+   "square": "ק",
+   "square_final": null,
+   "rashi": "ק",
+   "cursive": "ק"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "resh",
+  "order": 20,
+  "square": "ר",
+  "final": null,
+  "name": "Resh",
+  "name_hebrew": "רֵישׁ",
+  "sound": "r",
+  "value": 200,
+  "pictograph": [
+   "head of a man"
+  ],
+  "meaning": "head, first, top, chief, beginning",
+  "forms": {
+   "pictograph": "/alephbet/pict/resh.svg",
+   "paleo": "𐤓",
+   "samaritan": "ࠓ",
+   "square": "ר",
+   "square_final": null,
+   "rashi": "ר",
+   "cursive": "ר"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "shin",
+  "order": 21,
+  "square": "ש",
+  "final": null,
+  "name": "Shin",
+  "name_hebrew": "שִׁין",
+  "sound": "sh, or s with the dot on the left",
+  "value": 300,
+  "pictograph": [
+   "two front teeth"
+  ],
+  "meaning": "sharp, press, eat, two, destroy",
+  "forms": {
+   "pictograph": "/alephbet/pict/shin.svg",
+   "paleo": "𐤔",
+   "samaritan": "ࠔ",
+   "square": "ש",
+   "square_final": null,
+   "rashi": "ש",
+   "cursive": "ש"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ },
+ {
+  "id": "tav",
+  "order": 22,
+  "square": "ת",
+  "final": null,
+  "name": "Tav",
+  "name_hebrew": "תָּו",
+  "sound": "t (older: th)",
+  "value": 400,
+  "pictograph": [
+   "crossed sticks",
+   "mark, sign"
+  ],
+  "meaning": "mark, sign, seal, covenant",
+  "forms": {
+   "pictograph": "/alephbet/pict/tav.svg",
+   "paleo": "𐤕",
+   "samaritan": "ࠕ",
+   "square": "ת",
+   "square_final": null,
+   "rashi": "ת",
+   "cursive": "ת"
+  },
+  "older": {
+   "early_paleo": null,
+   "late_paleo": null,
+   "aramaic_elephantine": null
+  }
+ }
+]
