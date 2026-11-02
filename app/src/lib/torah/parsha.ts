@@ -34,6 +34,7 @@ import { compute, DEFAULT_RECKONING } from "../calendar/view-model.ts";
 import { getLocationPref } from "../calendar/location-pref.ts";
 import { JERUSALEM } from "../calendar/types.ts";
 import parshaData from "./parsha-data.json";
+import { getPortionOffsetWeeks } from "./portion-offset.ts";
 
 interface ParshaEntry {
   book: string;
@@ -82,6 +83,8 @@ export interface ParshaPortion {
   reckoning: MonthKind;
   /** True when a holiday displaced the weekly portion and we advanced past it. */
   advancedPastHoliday: boolean;
+  /** The reader's own offset (weeks behind the calendar, + / −) that was applied. */
+  offsetWeeks: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -97,6 +100,8 @@ export interface ParshaDeps {
    * calendar engine and the reader's chosen location.
    */
   cycleAnchorSaturdayFor?: (reckoning: MonthKind, date: Date) => Date | null;
+  /** Override the reader's stored offset (weeks behind the calendar). */
+  offsetWeeks?: number;
 }
 
 const DAY_MS = 86400000;
@@ -146,6 +151,7 @@ function entryToPortion(
     sabbathDate,
     reckoning,
     advancedPastHoliday,
+    offsetWeeks: 0,
   };
 }
 
@@ -168,10 +174,108 @@ export function getParshaForDate(
   reckoning: MonthKind,
   deps: ParshaDeps = {},
 ): ParshaPortion | null {
+  // The reader's own place in the cycle (board suggestion #9): someone who
+  // started N weeks late is reading what the calendar showed N weeks ago.
+  // Resolve for that earlier date, but report the Shabbat they will actually
+  // read it on (the one for the date asked about).
+  const offset = deps.offsetWeeks ?? getPortionOffsetWeeks();
+  const effective = offset === 0 ? date : new Date(date.getTime() - offset * 7 * DAY_MS);
+  const r =
+    reckoning === "rabbinic"
+      ? rabbinicParsha(effective, reckoning)
+      : nonRabbinicParsha(effective, reckoning, deps);
+  if (!r || offset === 0) return r;
+  const shift = weeksBetween(upcomingSaturday(effective), r.sabbathDate); // holiday advance, if any
+  return {
+    ...r,
+    sabbathDate: new Date(upcomingSaturday(date).getTime() + shift * 7 * DAY_MS),
+    offsetWeeks: offset,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// The whole cycle, laid out (board suggestion #9 — browse / search any portion)
+// ---------------------------------------------------------------------------
+
+/** One row of the laid-out annual cycle. */
+export interface CyclePortion extends ParshaPortion {
+  /** 0-based position in the cycle (Bereshit = 0). */
+  index: number;
+}
+
+/** The Saturday strictly after `date`'s own Saturday-or-self, n weeks on. */
+function addWeeks(sat: Date, n: number): Date {
+  return new Date(sat.getTime() + n * 7 * DAY_MS);
+}
+
+/**
+ * Every portion of the annual cycle containing `date`, in reading order, each
+ * with the Shabbat it is read on under the elected reckoning. The reader's
+ * own offset is applied to the dates (a reader two weeks behind reads each
+ * portion two Saturdays later than the calendar), so the row whose Shabbat
+ * matches this week is the same portion `getParshaForDate` reports.
+ *
+ * Rabbinic: walk HebCal's date-keyed lookup from the cycle's Bereshit to the
+ * next; combined weeks ("Matot-Masei") are one row, festival Shabbatot are
+ * skipped. Non-rabbinic: the fixed 54-name order from the reader's own
+ * anchor, one a week, exactly as the weekly lookup walks it.
+ */
+export function listTorahCycle(
+  date: Date,
+  reckoning: MonthKind,
+  deps: ParshaDeps = {},
+): CyclePortion[] {
+  const offset = deps.offsetWeeks ?? getPortionOffsetWeeks();
+  const effective = offset === 0 ? date : new Date(date.getTime() - offset * 7 * DAY_MS);
+  const rows: CyclePortion[] = [];
+  const push = (names: string[], sabbath: Date, advanced: boolean) => {
+    const p = entryToPortion(names, addWeeks(sabbath, offset), reckoning, advanced);
+    if (p) rows.push({ ...p, offsetWeeks: offset, index: rows.length });
+  };
+
   if (reckoning === "rabbinic") {
-    return rabbinicParsha(date, reckoning);
+    // Find this cycle's Bereshit: scan back up to 60 Saturdays.
+    let start: Date | null = null;
+    const sat0 = upcomingSaturday(effective);
+    for (let wk = 0; wk < 60; wk++) {
+      const probe = addWeeks(sat0, -wk);
+      const hd = new HDate(probe);
+      const res = new Sedra(hd.getFullYear(), false).lookup(hd);
+      if (!res.chag && res.parsha.length === 1 && res.parsha[0] === PARSHA_ORDER[0]) {
+        start = probe;
+        break;
+      }
+    }
+    if (!start) return rows;
+    // Walk forward to the next Bereshit (or 60 weeks, whichever first).
+    for (let wk = 0; wk < 60; wk++) {
+      const sat = addWeeks(start, wk);
+      const hd = new HDate(sat);
+      const res = new Sedra(hd.getFullYear(), false).lookup(hd);
+      if (res.chag) {
+        // The last portion is read at Simchat Torah, not on a Shabbat; HebCal
+        // keys that week to Shmini Atzeret. List it on that week so the cycle
+        // shows all 54 names.
+        if (res.parsha[0] === "Shmini Atzeret" && wk > 0) {
+          push([PARSHA_ORDER[PARSHA_ORDER.length - 1]], sat, false);
+        }
+        continue;
+      }
+      if (res.parsha.length === 0) continue;
+      if (wk > 0 && res.parsha[0] === PARSHA_ORDER[0]) break;
+      push(res.parsha, sat, false);
+    }
+    return rows;
   }
-  return nonRabbinicParsha(date, reckoning, deps);
+
+  const resolver = deps.cycleAnchorSaturdayFor ?? defaultCycleAnchorSaturdayFor;
+  const anchor =
+    resolver(reckoning, effective) ?? defaultCycleAnchorSaturdayFor("rabbinic", effective);
+  if (!anchor) return listTorahCycle(date, "rabbinic", deps);
+  for (let i = 0; i < PARSHA_ORDER.length; i++) {
+    push([PARSHA_ORDER[i]], addWeeks(anchor, i), false);
+  }
+  return rows;
 }
 
 /** HebCal date-keyed lookup, advancing past festival Shabbatot if needed. */

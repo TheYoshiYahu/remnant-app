@@ -23,6 +23,13 @@ export interface NewFeature {
 
 export const NEW_FEATURES: NewFeature[] = [
   {
+    id: "torah-portions",
+    date: "2026-11-02",
+    title: "Every Torah portion, and your own week",
+    body:
+      "The whole annual cycle of Torah portions is now laid out on one page, from Bereshit to the last reading, each with the Sabbath it falls on under the calendar you keep, the Torah reading and the Haftarah, and one tap into the reader. Search by the portion's name or by a book and chapter to find any week at any point in the year. If you began the readings later than the calendar, tap \"This is my week\" on the portion you are reading now and the weekly portion will follow your start everywhere in the app, on the reader's header and the calendar alike. Find it on the Today page or from the Torah portions button above your reading.",
+  },
+  {
     id: "tribes-nations",
     date: "2026-10-26",
     title: "Tribe & nation pages",

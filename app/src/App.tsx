@@ -40,6 +40,7 @@ import Calendar from "./routes/Calendar";
 import Today from "./routes/Today";
 import Teachings from "./routes/Teachings";
 import YearPlan from "./routes/YearPlan";
+import TorahPortions from "./routes/TorahPortions";
 import MyTeachings from "./routes/MyTeachings";
 import Teach from "./routes/Teach";
 import { startYearPlanSync } from "./lib/reading-plan/plan-sync";
@@ -592,6 +593,10 @@ export default function App() {
   // top-right chrome cluster.
   if (pathname === "/settings" || pathname.startsWith("/settings")) {
     return <>{welcomeModal}<Settings /></>;
+  }
+  // Board #9 — the whole Torah cycle, searchable, with the reader's own week.
+  if (pathname === "/torah-portions" || pathname.startsWith("/torah-portions")) {
+    return <>{welcomeModal}<TorahPortions /></>;
   }
   // S465 — New features list (menu entry carries the red dot).
   if (pathname === "/new-features" || pathname.startsWith("/new-features")) {

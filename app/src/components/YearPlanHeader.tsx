@@ -20,6 +20,11 @@ import { NoteComposer } from "./PlanNotes";
 import { usePlanNotes } from "../lib/reading-plan/plan-notes";
 import { getReckoningPref } from "../lib/calendar/reckoning-pref";
 import { getParshaForDate, type ParshaPortion } from "../lib/torah/parsha";
+import {
+  describePortionOffset,
+  getPortionOffsetWeeks,
+  PORTION_OFFSET_CHANGED_EVENT,
+} from "../lib/torah/portion-offset";
 import LockedPartnerPrompt from "./LockedPartnerPrompt";
 import { isNativeShell } from "../lib/native-shell";
 import { PLAN_LOCK_MESSAGE, PLAN_LOCK_TITLE } from "../lib/reading-plan/plan-lock";
@@ -495,9 +500,16 @@ function TorahPortionsPanel({
 }: {
   onNavigate: (slug: string, chapter: number) => void;
 }) {
+  // Re-resolve when the reader sets their own week on the Torah portions page.
+  const [offset, setOffset] = useState<number>(() => getPortionOffsetWeeks());
+  useEffect(() => {
+    const onChange = () => setOffset(getPortionOffsetWeeks());
+    window.addEventListener(PORTION_OFFSET_CHANGED_EVENT, onChange);
+    return () => window.removeEventListener(PORTION_OFFSET_CHANGED_EVENT, onChange);
+  }, []);
   const portion = useMemo<ParshaPortion | null>(
-    () => getParshaForDate(new Date(), getReckoningPref()),
-    [],
+    () => getParshaForDate(new Date(), getReckoningPref(), { offsetWeeks: offset }),
+    [offset],
   );
 
   const sabbathLabel = portion
@@ -573,6 +585,10 @@ function TorahPortionsPanel({
         {portion.reckoning === "rabbinic"
           ? "Aligned to the calculated (HebCal) cycle."
           : "Portion order from the annual cycle, set on your elected Sabbath."}
+        {offset !== 0 && <> {describePortionOffset(offset)}</>}{" "}
+        <a href="/torah-portions" className="underline">
+          All portions &amp; your own week &rsaquo;
+        </a>
       </div>
     </div>
   );

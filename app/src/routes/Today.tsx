@@ -656,6 +656,15 @@ function DoorRow() {
             <span className="today-door-sub">everything that has come into the app</span>
           </span>
         </a>
+        <a href="/torah-portions" className="today-door today-door-study">
+          <span className="today-door-glyph" aria-hidden="true">
+            📜
+          </span>
+          <span className="today-door-text">
+            <span className="today-door-title">Torah portions</span>
+            <span className="today-door-sub">the whole cycle &amp; this week's</span>
+          </span>
+        </a>
       </div>
     </section>
   );
