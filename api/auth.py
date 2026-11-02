@@ -369,7 +369,7 @@ async def has_active_paid_subscription(wp_user_id: int) -> bool:
             "  FROM subscriptions s "
             "  JOIN users u ON u.id = s.user_id "
             " WHERE u.wordpress_user_id = $1 "
-            "   AND s.status <> ALL($2::text[]) "
+            "   AND s.status::text <> ALL($2::text[]) "
             " LIMIT 1",
             wp_user_id,
             list(TERMINAL_SUBSCRIPTION_STATUSES),
