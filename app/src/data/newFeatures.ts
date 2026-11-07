@@ -23,6 +23,13 @@ export interface NewFeature {
 
 export const NEW_FEATURES: NewFeature[] = [
   {
+    id: "psalm-119-sheets",
+    date: "2026-11-06",
+    title: "Psalm 119 in Hebrew, two printable sheets",
+    body:
+      "Psalm 119 is an acrostic: twenty-two sections of eight verses, every verse in a section opening with that section's Hebrew letter. At the end of the psalm there are now two sheets you can open and print. One sets the Hebrew beside the English, verse by verse, with the opening letter of every verse in bold so the pattern shows. The other puts a word-for-word English gloss under each Hebrew word, so you can follow the Hebrew one word at a time. Each sheet shows the first letter's verses in the app and downloads as a PDF for the whole psalm.",
+  },
+  {
     id: "copy-how",
     date: "2026-11-06",
     title: "Copy it the way you need it",

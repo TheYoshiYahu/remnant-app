@@ -47,6 +47,7 @@ import { startYearPlanSync } from "./lib/reading-plan/plan-sync";
 import { advanceOnOpen } from "./lib/reading-plan/year-plan";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import CopyFormatPicker from "./components/CopyFormatPicker";
+import Psalm119Sheets from "./components/Psalm119Sheets";
 import { applyCopyFormat, type CopyFormat } from "./lib/copyFormat";
 import SigninReminderModal from "./components/SigninReminderModal";
 import LockedPartnerPrompt from "./components/LockedPartnerPrompt";
@@ -4975,6 +4976,9 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
             → cross-references → commentary. Cross-references sit ABOVE the
             commentary; the commentary is the LAST block before the nav.
           */}
+          {chapterDetail.book.slug === "psalms" && chapterDetail.chapter.chapter_number === 119 && (
+            <Psalm119Sheets applyToEnglish={applyTextPrefs} />
+          )}
           {!hideCommentary && (
             <ChapterEndCard
               bookSlug={chapterDetail.book.slug}
