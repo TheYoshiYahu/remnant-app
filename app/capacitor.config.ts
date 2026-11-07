@@ -78,9 +78,10 @@ const config: CapacitorConfig = {
   // true so that path stays active. The change is that the
   // .remnantofpromise.org SSO cookie may now also be visible to the
   // webview. Verify sign-in on a real device after the first rebuild.
-  server: {
-    url: "https://bible.remnantofpromise.org",
-  },
+  // S470 — server.url REMOVED. The app now serves its own built pages
+  // (dist/) so it opens with no signal and reads downloaded text/audio.
+  // Content (text, commentary, xrefs, audio) still comes live from the API;
+  // app-code changes ship by store release. See S469 note, S470 diagnosis.
 
   plugins: {
     // SplashScreen — short hold while the WebView paints the first

@@ -13,7 +13,7 @@
   ],
   "meaning": "strength, first, leader",
   "forms": {
-   "pictograph": "/alephbet/pict/aleph.svg",
+   "pictograph": "aleph",
    "paleo": "𐤀",
    "samaritan": "ࠀ",
    "square": "א",
@@ -42,7 +42,7 @@
   ],
   "meaning": "house, household, inside",
   "forms": {
-   "pictograph": "/alephbet/pict/bet.svg",
+   "pictograph": "bet",
    "paleo": "𐤁",
    "samaritan": "ࠁ",
    "square": "ב",
@@ -71,7 +71,7 @@
   ],
   "meaning": "to lift, carry, walk",
   "forms": {
-   "pictograph": "/alephbet/pict/gimel.svg",
+   "pictograph": "gimel",
    "paleo": "𐤂",
    "samaritan": "ࠂ",
    "square": "ג",
@@ -100,7 +100,7 @@
   ],
   "meaning": "door, path, to hang",
   "forms": {
-   "pictograph": "/alephbet/pict/dalet.svg",
+   "pictograph": "dalet",
    "paleo": "𐤃",
    "samaritan": "ࠃ",
    "square": "ד",
@@ -129,7 +129,7 @@
   ],
   "meaning": "behold, look, breath",
   "forms": {
-   "pictograph": "/alephbet/pict/he.svg",
+   "pictograph": "he",
    "paleo": "𐤄",
    "samaritan": "ࠄ",
    "square": "ה",
@@ -158,7 +158,7 @@
   ],
   "meaning": "to join, add, secure — 'and'",
   "forms": {
-   "pictograph": "/alephbet/pict/vav.svg",
+   "pictograph": "vav",
    "paleo": "𐤅",
    "samaritan": "ࠅ",
    "square": "ו",
@@ -187,7 +187,7 @@
   ],
   "meaning": "to cut, nourish, weapon",
   "forms": {
-   "pictograph": "/alephbet/pict/zayin.svg",
+   "pictograph": "zayin",
    "paleo": "𐤆",
    "samaritan": "ࠆ",
    "square": "ז",
@@ -216,7 +216,7 @@
   ],
   "meaning": "to separate, protect, outside",
   "forms": {
-   "pictograph": "/alephbet/pict/chet.svg",
+   "pictograph": "chet",
    "paleo": "𐤇",
    "samaritan": "ࠇ",
    "square": "ח",
@@ -245,7 +245,7 @@
   ],
   "meaning": "to surround, contain; mud, clay",
   "forms": {
-   "pictograph": "/alephbet/pict/tet.svg",
+   "pictograph": "tet",
    "paleo": "𐤈",
    "samaritan": "ࠈ",
    "square": "ט",
@@ -274,7 +274,7 @@
   ],
   "meaning": "to work, make, throw, worship",
   "forms": {
-   "pictograph": "/alephbet/pict/yod.svg",
+   "pictograph": "yod",
    "paleo": "𐤉",
    "samaritan": "ࠉ",
    "square": "י",
@@ -302,7 +302,7 @@
   ],
   "meaning": "to cover, open, allow, tame",
   "forms": {
-   "pictograph": "/alephbet/pict/kaf.svg",
+   "pictograph": "kaf",
    "paleo": "𐤊",
    "samaritan": "ࠊ",
    "square": "כ",
@@ -331,7 +331,7 @@
   ],
   "meaning": "to lead, teach, yoke, toward",
   "forms": {
-   "pictograph": "/alephbet/pict/lamed.svg",
+   "pictograph": "lamed",
    "paleo": "𐤋",
    "samaritan": "ࠋ",
    "square": "ל",
@@ -359,7 +359,7 @@
   ],
   "meaning": "water, chaos, mighty, blood",
   "forms": {
-   "pictograph": "/alephbet/pict/mem.svg",
+   "pictograph": "mem",
    "paleo": "𐤌",
    "samaritan": "ࠌ",
    "square": "מ",
@@ -388,7 +388,7 @@
   ],
   "meaning": "to continue, heir, son, life",
   "forms": {
-   "pictograph": "/alephbet/pict/nun.svg",
+   "pictograph": "nun",
    "paleo": "𐤍",
    "samaritan": "ࠍ",
    "square": "נ",
@@ -417,7 +417,7 @@
   ],
   "meaning": "to support, protect, grab, hate",
   "forms": {
-   "pictograph": "/alephbet/pict/samekh.svg",
+   "pictograph": "samekh",
    "paleo": "𐤎",
    "samaritan": "ࠎ",
    "square": "ס",
@@ -445,7 +445,7 @@
   ],
   "meaning": "to see, watch, know, shade",
   "forms": {
-   "pictograph": "/alephbet/pict/ayin.svg",
+   "pictograph": "ayin",
    "paleo": "𐤏",
    "samaritan": "ࠏ",
    "square": "ע",
@@ -473,7 +473,7 @@
   ],
   "meaning": "to speak, open, word, blow",
   "forms": {
-   "pictograph": "/alephbet/pict/pe.svg",
+   "pictograph": "pe",
    "paleo": "𐤐",
    "samaritan": "ࠐ",
    "square": "פ",
@@ -502,7 +502,7 @@
   ],
   "meaning": "to hunt, catch, need, strong, righteous",
   "forms": {
-   "pictograph": "/alephbet/pict/tsade.svg",
+   "pictograph": "tsade",
    "paleo": "𐤑",
    "samaritan": "ࠑ",
    "square": "צ",
@@ -531,7 +531,7 @@
   ],
   "meaning": "behind, the last, time, condense",
   "forms": {
-   "pictograph": "/alephbet/pict/qof.svg",
+   "pictograph": "qof",
    "paleo": "𐤒",
    "samaritan": "ࠒ",
    "square": "ק",
@@ -559,7 +559,7 @@
   ],
   "meaning": "head, first, top, chief, beginning",
   "forms": {
-   "pictograph": "/alephbet/pict/resh.svg",
+   "pictograph": "resh",
    "paleo": "𐤓",
    "samaritan": "ࠓ",
    "square": "ר",
@@ -587,7 +587,7 @@
   ],
   "meaning": "sharp, press, eat, two, destroy",
   "forms": {
-   "pictograph": "/alephbet/pict/shin.svg",
+   "pictograph": "shin",
    "paleo": "𐤔",
    "samaritan": "ࠔ",
    "square": "ש",
@@ -616,7 +616,7 @@
   ],
   "meaning": "mark, sign, seal, covenant",
   "forms": {
-   "pictograph": "/alephbet/pict/tav.svg",
+   "pictograph": "tav",
    "paleo": "𐤕",
    "samaritan": "ࠕ",
    "square": "ת",

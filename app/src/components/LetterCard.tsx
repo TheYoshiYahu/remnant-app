@@ -17,6 +17,12 @@ import { useState } from "react";
 import ToolSheet from "./ToolSheet";
 import letters from "../data/alephbet.json";
 
+// S478 — the 22 pictograph tracings, inlined so they take the reader's text colour (light and dark).
+const PICT = import.meta.glob("../assets/alephbet/*.svg", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+export function pictographSvg(id: string): string | null {
+  return PICT[`../assets/alephbet/${id}.svg`] ?? null;
+}
+
 export interface Letter {
   id: string;
   order: number;
@@ -62,20 +68,24 @@ function Form({
   glyph,
   className,
   src,
+  svg,
 }: {
   label: string;
   period: string;
   glyph?: string | null;
   className?: string;
   src?: string | null;
+  svg?: string | null;
 }) {
-  // S478: a form whose drawing is not on disk yet (the pictograph SVGs land in S479) simply does not show.
+  // A form with no drawing yet (the older inscriptional stages) simply does not show.
   const [missing, setMissing] = useState(false);
-  if (missing) return null;
+  if (missing || (!src && !svg && !glyph)) return null;
   return (
     <div className="flex min-w-[5.5rem] flex-col items-center rounded-md border border-[var(--reader-rule)] px-2 py-2">
       <div className="flex h-16 items-center justify-center">
-        {src ? (
+        {svg ? (
+          <span className="h-14 w-14 text-[var(--reader-text)]" aria-label={label} dangerouslySetInnerHTML={{ __html: svg }} />
+        ) : src ? (
           <img src={src} alt={label} className="h-14 w-14 object-contain" onError={() => setMissing(true)} />
         ) : (
           <span className={`text-5xl leading-none ${className ?? ""}`}>{glyph}</span>
@@ -126,7 +136,7 @@ export default function LetterCard({ letter: l, onClose }: Props) {
         Every form, oldest to newest
       </p>
       <div className="mt-2 flex flex-wrap gap-2">
-        <Form label="Pictograph" period="proto-Sinaitic, before 1500 BC" src={l.forms.pictograph} />
+        <Form label="Pictograph" period="proto-Sinaitic, before 1500 BC" svg={pictographSvg(l.forms.pictograph)} />
         {l.older.early_paleo && <Form label="Early paleo" period="Gezer · Moab, 10th–9th c. BC" src={l.older.early_paleo} />}
         <Form label="Paleo-Hebrew" period="the first Temple's script" glyph={l.forms.paleo} className="heb-paleo" />
         {l.older.late_paleo && <Form label="Late paleo" period="Siloam · Lachish, 8th–6th c. BC" src={l.older.late_paleo} />}
@@ -140,7 +150,7 @@ export default function LetterCard({ letter: l, onClose }: Props) {
         )}
       </div>
       <p className="mt-3 text-xs text-[var(--reader-muted)]">
-        Rashi script and modern cursive are drawn in a later pass; the pictograph is our own tracing of the published sign.
+        Rashi script and modern cursive are drawn in a later pass; the pictograph is our own line tracing of the published sign, in its simplest accepted outline.
       </p>
     </ToolSheet>
   );

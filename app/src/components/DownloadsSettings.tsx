@@ -112,7 +112,11 @@ export default function DownloadsSettings() {
         const me = await getSubscriptionMe();
         resolved = me.tier ?? "free";
       } catch {
-        resolved = "free"; // anonymous / no JWT → free entitlement
+        // S470 — offline: use the last known tier so this screen shows the
+        // partner's real downloads; else anonymous → free.
+        let last: string | null = null;
+        try { last = localStorage.getItem("rop_last_tier"); } catch { /* ignore */ }
+        resolved = (last as PartnerTier | null) ?? "free";
       }
       if (cancelled) return;
       setTier(resolved);

@@ -23,6 +23,13 @@ export interface NewFeature {
 
 export const NEW_FEATURES: NewFeature[] = [
   {
+    id: "copy-how",
+    date: "2026-11-06",
+    title: "Copy it the way you need it",
+    body:
+      "Every time you copy a verse, a run of verses, or a few words, the app now asks how you want it to read before it reaches your clipboard. Choose the plain English names only, so Yahuah (LORD) leaves as LORD and Yashar'el (Israel) as Israel, ready to paste anywhere without a word of explanation; choose the restored names with their English beside them, exactly as the page reads; or choose the restored names alone with the English dropped. The reference and the Study Bible's name still travel with it.",
+  },
+  {
     id: "torah-portions",
     date: "2026-11-02",
     title: "Every Torah portion, and your own week",
