@@ -25,9 +25,9 @@ export const NEW_FEATURES: NewFeature[] = [
   {
     id: "psalm-119-sheets",
     date: "2026-11-06",
-    title: "Psalm 119 in Hebrew, two printable sheets",
+    title: "Psalm 119, the acrostic, verse by verse",
     body:
-      "Psalm 119 is an acrostic: twenty-two sections of eight verses, every verse in a section opening with that section's Hebrew letter. At the end of the psalm there are now two sheets you can open and print. One sets the Hebrew beside the English, verse by verse, with the opening letter of every verse in bold so the pattern shows. The other puts a word-for-word English gloss under each Hebrew word, so you can follow the Hebrew one word at a time. Each sheet shows the first letter's verses in the app and downloads as a PDF for the whole psalm.",
+      "Psalm 119 is written to the Hebrew alphabet: twenty-two sections of eight verses, every verse in a section opening with that section's letter. The English hides it; the Hebrew shows it. At the top of Psalm 119 in the reader you can now show the Hebrew under each verse as you read, with the opening letter in bold, or show the Hebrew with a word-for-word English gloss under each word. Under Teachings the same two views sit on one page for the whole psalm. All of it is free; partners can also download each view as a printable PDF.",
   },
   {
     id: "copy-how",

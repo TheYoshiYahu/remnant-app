@@ -47,7 +47,8 @@ import { startYearPlanSync } from "./lib/reading-plan/plan-sync";
 import { advanceOnOpen } from "./lib/reading-plan/year-plan";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import CopyFormatPicker from "./components/CopyFormatPicker";
-import Psalm119Sheets from "./components/Psalm119Sheets";
+import Psalm119 from "./routes/Psalm119";
+import psalm119Sheets from "./data/psalm119-sheets.json";
 import { applyCopyFormat, type CopyFormat } from "./lib/copyFormat";
 import SigninReminderModal from "./components/SigninReminderModal";
 import LockedPartnerPrompt from "./components/LockedPartnerPrompt";
@@ -643,6 +644,10 @@ export default function App() {
   // S353 — Teachings tab. Free-for-all list + gated detail (title +
   // synopsis for everyone; full body revealed when the reader owns the
   // teaching's tier_required). Standalone route alongside /calendar.
+  // S493 — Psalm 119 acrostic page (reached from Teachings).
+  if (pathname === "/psalm-119" || pathname.startsWith("/psalm-119")) {
+    return <>{welcomeModal}<Psalm119 /></>;
+  }
   if (pathname === "/teachings" || pathname.startsWith("/teachings")) {
     return <>{welcomeModal}<Teachings /></>;
   }
@@ -1376,6 +1381,12 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // (without sacred names / with English / sacred names only). The
   // pending copy is a closure that runs once the reader picks.
   const [copyAsk, setCopyAsk] = useState<{ run: (format: CopyFormat) => void } | null>(null);
+  // S493 — Psalm 119 acrostic in the reader: off, the Hebrew line under each
+  // verse, or the Hebrew with the English under each word. Psalm 119 only.
+  const [acrostic, setAcrostic] = useState<"off" | "line" | "word">("off");
+  const isPsalm119 =
+    chapterDetail?.book.slug === "psalms" && chapterDetail?.chapter.chapter_number === 119;
+  const acrosticVerses = (psalm119Sheets as { verses: { n: number; heb: string; words: { h: string; g: string }[] }[] }).verses;
   const askCopyFormat = (run: (format: CopyFormat) => void) => setCopyAsk({ run });
   function copySelection(verseId: number) {
     const sel = window.getSelection();
@@ -4063,6 +4074,40 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                 {chapterDetail.chapter.chapter_title}
               </p>
             )}
+          {isPsalm119 && (
+            <div className="mb-3 rounded-md border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-2 text-sm">
+              <p className="text-[var(--reader-muted)]">
+                This psalm is an acrostic: twenty-two sections of eight verses, every verse in a
+                section opening with the same Hebrew letter. See it here verse by verse, or on
+                its own page{" "}
+                <a href="/psalm-119" className="text-[var(--reader-accent)] underline">
+                  Hebrew beside English, or English under each word
+                </a>
+                .
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label="Show the acrostic">
+                {([
+                  ["off", "English only"],
+                  ["line", "Hebrew under each verse"],
+                  ["word", "Hebrew with English under each word"],
+                ] as ["off" | "line" | "word", string][]).map(([m, label]) => (
+                  <button
+                    key={m}
+                    type="button"
+                    aria-pressed={acrostic === m}
+                    onClick={() => setAcrostic(m)}
+                    className={`rounded-md border px-2.5 py-1 text-xs ${
+                      acrostic === m
+                        ? "border-[var(--reader-accent)] font-semibold"
+                        : "border-[var(--reader-rule)] text-[var(--reader-muted)]"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
           {/*
             Session 110 round-1 follow-up: render the chapter with proper
             pericope-style paragraph breaks. The break points come from
@@ -4685,8 +4730,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                     const ttsClass =
                       playingVerseId === v.id ? " tts-spoken" : "";
                     return (
+                      <Fragment key={v.id}>
                       <span
-                        key={v.id}
                         data-verse-number={v.verse_number}
                         data-verse-id={v.id}
                         className={`verse-interactive${rangeClass}${ttsClass}${
@@ -4764,6 +4809,40 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
                       >
                         {content}
                       </span>
+                      {isPsalm119 && acrostic !== "off" && (() => {
+                        const hv = acrosticVerses[v.verse_number - 1];
+                        if (!hv) return null;
+                        return acrostic === "line" ? (
+                          <span
+                            dir="rtl"
+                            className="block mb-3 text-right text-lg"
+                            style={{ fontFamily: "'SBL Hebrew', serif" }}
+                          >
+                            <b>{hv.heb.slice(0, 1)}</b>
+                            {hv.heb.slice(1)}
+                          </span>
+                        ) : (
+                          <span dir="rtl" className="mb-3 flex flex-wrap justify-start gap-x-4 gap-y-2">
+                            {hv.words.map((w, i) => (
+                              <span key={i} className="inline-block text-center">
+                                <span
+                                  className={`block text-lg ${i === 0 ? "font-bold" : ""}`}
+                                  style={{ fontFamily: "'SBL Hebrew', serif" }}
+                                >
+                                  {w.h}
+                                </span>
+                                <span
+                                  dir="ltr"
+                                  className="block max-w-[7rem] text-[0.7rem] leading-tight text-[var(--reader-muted)]"
+                                >
+                                  {w.g}
+                                </span>
+                              </span>
+                            ))}
+                          </span>
+                        );
+                      })()}
+                    </Fragment>
                     );
                   })}
                 </p>
@@ -4976,9 +5055,6 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
             → cross-references → commentary. Cross-references sit ABOVE the
             commentary; the commentary is the LAST block before the nav.
           */}
-          {chapterDetail.book.slug === "psalms" && chapterDetail.chapter.chapter_number === 119 && (
-            <Psalm119Sheets applyToEnglish={applyTextPrefs} />
-          )}
           {!hideCommentary && (
             <ChapterEndCard
               bookSlug={chapterDetail.book.slug}

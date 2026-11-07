@@ -95,6 +95,25 @@ function TeachingList() {
       </p>
 
       <div className="mt-6 space-y-4">
+        {/* S493 — Psalm 119 acrostic page: the whole psalm free, PDFs for partners. */}
+        <a
+          href="/psalm-119"
+          className="block rounded-md border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 transition-colors hover:border-[var(--reader-accent)]"
+        >
+          <div className="flex items-baseline justify-between gap-3">
+            <h2 className="font-serif text-base font-semibold text-[var(--reader-text)]">
+              Psalm 119 — the acrostic
+            </h2>
+            <span className="shrink-0 rounded border border-[var(--reader-rule)] px-2 py-0.5 text-[11px] tracking-wide text-[var(--reader-muted)]">
+              Free
+            </span>
+          </div>
+          <p className="mt-1.5 text-sm leading-relaxed text-[var(--reader-muted)]">
+            The whole psalm in Hebrew beside the English, and word by word with the English under
+            each Hebrew word, so the twenty-two letters show. Printable PDFs for partners.
+          </p>
+          <span className="mt-2 inline-block text-xs text-[var(--reader-accent)]">Open →</span>
+        </a>
         {teachings.map((t) => (
           <a
             key={t.slug}
