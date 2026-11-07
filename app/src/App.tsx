@@ -46,6 +46,8 @@ import Teach from "./routes/Teach";
 import { startYearPlanSync } from "./lib/reading-plan/plan-sync";
 import { advanceOnOpen } from "./lib/reading-plan/year-plan";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
+import CopyFormatPicker from "./components/CopyFormatPicker";
+import { applyCopyFormat, type CopyFormat } from "./lib/copyFormat";
 import SigninReminderModal from "./components/SigninReminderModal";
 import LockedPartnerPrompt from "./components/LockedPartnerPrompt";
 import Journal from "./routes/Journal";
@@ -89,6 +91,7 @@ import NikkudotSheet from "./components/NikkudotSheet";
 import TskSheet from "./components/TskSheet";
 import NavesSheet from "./components/NavesSheet";
 import MapsSheet from "./components/MapsSheet";
+import AlephBetSheet from "./components/AlephBetSheet";
 import PeopleSheet from "./components/PeopleSheet";
 import CompareSheet from "./components/CompareSheet";
 import VerseActionMenu, {
@@ -962,6 +965,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // partner never sees a "Sign in" flicker before their real CTA paints.
   const [me, setMe] = useState<SubscriptionMe | null>(null);
   const [meChecked, setMeChecked] = useState<boolean>(false);
+  // S470 — last known tier, used only when /me can't be reached (offline).
+  const offlineTierRef = useRef<string | null>(null);
   // S353 — guards the once-per-load content-version self-heal (the scope
   // effect re-runs on tier changes; the heal must run only once).
   const contentHealedRef = useRef(false);
@@ -1145,6 +1150,8 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     null,
   );
   const [mapsOpen, setMapsOpen] = useState<boolean>(false);
+  // S478 — the aleph-bet chart (free, standalone).
+  const [alephBetOpen, setAlephBetOpen] = useState<boolean>(false);
   // S472 — People & places sheet (Study Notes), opened from the verse menu.
   const [peopleState, setPeopleState] = useState<{
     bookSlug: string;
@@ -1364,6 +1371,11 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // the reader drags the handles, then taps Copy (or uses the phone's own
   // Copy). The reference is added.
   const [copyNotice, setCopyNotice] = useState<string | null>(null);
+  // S493 — every Copy first asks "How would you like this to be copied?"
+  // (without sacred names / with English / sacred names only). The
+  // pending copy is a closure that runs once the reader picks.
+  const [copyAsk, setCopyAsk] = useState<{ run: (format: CopyFormat) => void } | null>(null);
+  const askCopyFormat = (run: (format: CopyFormat) => void) => setCopyAsk({ run });
   function copySelection(verseId: number) {
     const sel = window.getSelection();
     const root = document.querySelector(`[data-verse-id="${verseId}"]`);
@@ -1374,7 +1386,9 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       setCopyNotice("Select some words in the verse first.");
       return;
     }
-    const out = `${text} — ${chapterDetail.book.title} ${selectedChapter}:${v.verse_number}`;
+    const selected = text;
+    askCopyFormat((format) => {
+    const out = `${applyCopyFormat(selected, format)} — ${chapterDetail.book.title} ${selectedChapter}:${v.verse_number}`;
     const done = () => {
       setCopyNotice("Copied.");
       setSubverseSelect(null);
@@ -1386,6 +1400,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
     } catch {
       fail();
     }
+    });
   }
   useEffect(() => {
     if (!copyNotice) return;
@@ -2181,12 +2196,21 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
       getSubscriptionMe()
         .then((m) => {
           if (cancelled) return;
+          // S470 — remember the last known tier so offline launches can
+          // still open the downloads stored under it.
+          try { localStorage.setItem("rop_last_tier", m?.tier ?? "free"); } catch { /* ignore */ }
           setMe(m);
           setMeChecked(true);
         })
         .catch(() => {
           if (cancelled) return;
           setMe(null);
+          // S470 — offline: fall back to the last known tier instead of
+          // "free", or a paid partner's downloads are invisible.
+          try {
+            const last = localStorage.getItem("rop_last_tier");
+            if (last) offlineTierRef.current = last;
+          } catch { /* ignore */ }
           setMeChecked(true);
         });
     });
@@ -2207,7 +2231,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
   // once the entitlement is settled.
   useEffect(() => {
     if (!meChecked) return;
-    const resolvedTier = me?.tier ?? "free";
+    const resolvedTier = (me?.tier ?? offlineTierRef.current ?? "free") as PartnerTier;
     setContentCacheScope(resolvedTier);
     // S353 — hand the resolved tier to the background download manager and
     // resume any download interrupted by a prior reload / background-kill, so
@@ -3971,6 +3995,16 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               </button>
             </div>
           )}
+          {copyAsk && (
+            <CopyFormatPicker
+              onPick={(format) => {
+                const { run } = copyAsk;
+                setCopyAsk(null);
+                run(format);
+              }}
+              onClose={() => setCopyAsk(null)}
+            />
+          )}
           {copyNotice && (
             <div
               role="status"
@@ -5126,6 +5160,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               // going straight to the whole-verse picker.
               onHighlight: (vid) => setHighlightScopeVerseId(vid),
               onStartRange: (vid) => startRangeFromVerse(vid),
+              askCopyFormat,
               onCopyWords: (vid) =>
                 setSubverseSelect({ verseId: vid, mode: "copy", firstPos: null }),
               onBookmark: (vid) => openBookmarkSheet(vid),
@@ -5174,6 +5209,10 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               onMaps: () => {
                 setMenuState(null);
                 setMapsOpen(true);
+              },
+              onAlephBet: () => {
+                setMenuState(null);
+                setAlephBetOpen(true);
               },
               onPeople: (ref) => {
                 setMenuState(null);
@@ -5311,6 +5350,7 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
         />
       )}
       {mapsOpen && <MapsSheet onClose={() => setMapsOpen(false)} />}
+      {alephBetOpen && <AlephBetSheet onClose={() => setAlephBetOpen(false)} />}
       {peopleState !== null && (
         <PeopleSheet
           bookSlug={peopleState.bookSlug}
@@ -5394,7 +5434,12 @@ function Reader({ welcomeOpen }: { welcomeOpen: boolean }) {
               );
               setRangePickerOpen(false);
               cancelRange();
-              void executeCopy({ verses, meta });
+              askCopyFormat((format) =>
+                void executeCopy({
+                  verses: verses.map((v) => ({ ...v, text: applyCopyFormat(v.text, format) })),
+                  meta,
+                })
+              );
             }}
             onShareRange={() => {
               // S127 W7 — Share-range-with-watermark Live.
@@ -5894,6 +5939,8 @@ function buildMenuSections(
     onStartRange: (verseId: number) => void;
     /** S468 — "Copy words": pick a word or run of words to copy. */
     onCopyWords?: (verseId: number) => void;
+    /** S493 — ask "How would you like this to be copied?" before a copy runs. */
+    askCopyFormat?: (run: (format: CopyFormat) => void) => void;
     /** S124 W5 — "Bookmark" in the Marking section. Opens BookmarkSheet
      *  for the targeted verse in create-mode or edit-mode based on
      *  whether a bookmark already exists on the verse. */
@@ -5937,6 +5984,8 @@ function buildMenuSections(
     onNaves?: (initialQuery?: string) => void;
     /** S197 — Maps own-tile dispersion/gathering surface (standalone). */
     onMaps?: () => void;
+    /** S478 — Aleph-bet chart, every form of every letter (free, standalone). */
+    onAlephBet?: () => void;
     /** S472 — People & places named in this verse (Study Notes). */
     onPeople?: (ref: {
       bookSlug: string;
@@ -6234,6 +6283,17 @@ function buildMenuSections(
     );
   }
 
+  // S478 — Aleph-bet: every form of every letter. Free tier, verse-independent;
+  // the one reference every reader of a restored text needs in reach.
+  if (handlers.onAlephBet) {
+    referenceTools.push({
+      key: "aleph-bet",
+      label: "Aleph-bet, every form",
+      icon: "א",
+      onSelect: () => handlers.onAlephBet!(),
+    });
+  }
+
   // ── Compare (verse scope, added S224) ────────────────────────────
   // "Compare to another version" — opens the comparison lens (nine public-
   // domain translations incl. Brenton's LXX) beside the reader's text for
@@ -6304,10 +6364,13 @@ function buildMenuSections(
         // mode (share-sheet abort, clipboard.write rejected, etc.) and
         // returns a TransportResult. We don't block the UI on it; the
         // menu has already closed by the time the pipeline runs.
-        void executeCopy({
-          verses: singleVerseVerses,
-          meta: singleVerseMeta,
-        });
+        const run = (format: CopyFormat) =>
+          void executeCopy({
+            verses: singleVerseVerses.map((v) => ({ ...v, text: applyCopyFormat(v.text, format) })),
+            meta: singleVerseMeta,
+          });
+        if (handlers.askCopyFormat) handlers.askCopyFormat(run);
+        else run("both");
       },
     });
     if (handlers.onCopyWords) {
