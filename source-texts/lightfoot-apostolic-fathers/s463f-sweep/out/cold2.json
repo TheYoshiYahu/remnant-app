@@ -1,0 +1,305 @@
+{
+ "model": "claude-sonnet-5-5",
+ "items": [
+  {
+   "id": 50096,
+   "verdict": "agree_move",
+   "why": "'As ye judge, so shall ye be judged. With what measure ye mete' in ch13"
+  },
+  {
+   "id": 50097,
+   "verdict": "agree_move",
+   "why": "'Have mercy, that ye may receive mercy' appears in ch13, not Rahab ch12"
+  },
+  {
+   "id": 50104,
+   "verdict": "agree_move",
+   "why": "'The heavens are moved by His direction and obey Him in peace' in ch20"
+  },
+  {
+   "id": 50105,
+   "verdict": "agree_move",
+   "why": "'Day and night accomplish the course assigned to them by Him' in ch20"
+  },
+  {
+   "id": 50106,
+   "verdict": "agree_move",
+   "why": "'the dancing stars... circle in harmony' is in ch20"
+  },
+  {
+   "id": 50110,
+   "verdict": "agree_move",
+   "why": "'the rod of Aaron' budding and 'chosen to be priests' in ch43"
+  },
+  {
+   "id": 50111,
+   "verdict": "agree_move",
+   "why": "Aaron's rod and priesthood dissension 'chosen to be priests and ministers' in ch43"
+  },
+  {
+   "id": 51847,
+   "verdict": "agree_move",
+   "why": "'we shall be partakers of the mercy of Yahusha' and 'One that receiveth us' in 1:16"
+  },
+  {
+   "id": 51848,
+   "verdict": "stay",
+   "why": "'let us repent forthwith' already sits on 1:13; proposed is same verse"
+  },
+  {
+   "id": 51853,
+   "verdict": "agree_move",
+   "why": "'this flesh is not judged neither riseth again' is in 1:9"
+  },
+  {
+   "id": 51854,
+   "verdict": "agree_move",
+   "why": "'guard the flesh as a temple' and 'in this flesh receive our reward' in 1:9"
+  },
+  {
+   "id": 51855,
+   "verdict": "agree_move",
+   "why": "'this flesh is not judged neither riseth again' in 1:9"
+  },
+  {
+   "id": 51860,
+   "verdict": "agree_move",
+   "why": "'He saith also in Isaiah, This people honoreth me with their lips' in 1:3"
+  },
+  {
+   "id": 51894,
+   "verdict": "agree_move",
+   "why": "'no longer observing sabbaths' is in 1:9, not 1:8"
+  },
+  {
+   "id": 51895,
+   "verdict": "agree_move",
+   "why": "'no longer observing sabbaths but fashioning their lives after Yahuah's day' in 1:9"
+  },
+  {
+   "id": 51896,
+   "verdict": "agree_move",
+   "why": "'no longer observing sabbaths' is in 1:9"
+  },
+  {
+   "id": 51897,
+   "verdict": "agree_move",
+   "why": "'no longer observing sabbaths' anti-sabbath gloss sits in 1:9"
+  },
+  {
+   "id": 51898,
+   "verdict": "agree_move",
+   "why": "'stamp of Elohim (God) the Father' and 'life and death set before us' in 1:5"
+  },
+  {
+   "id": 51899,
+   "verdict": "agree_move",
+   "why": "'life and death -- are set before us... each man shall go to his own place' in 1:5"
+  },
+  {
+   "id": 51900,
+   "verdict": "agree_move",
+   "why": "'life and death are set before us... of our own free choice' in 1:5"
+  },
+  {
+   "id": 51901,
+   "verdict": "agree_move",
+   "why": "'these two -- life and death -- are set before us together' in 1:5"
+  },
+  {
+   "id": 51909,
+   "verdict": "agree_move",
+   "why": "'the prophets, being His disciples, were expecting Him as their teacher' in 1:9"
+  },
+  {
+   "id": 51910,
+   "verdict": "agree_move",
+   "why": "'the prophets, being His disciples, were expecting Him' in 1:9"
+  },
+  {
+   "id": 51918,
+   "verdict": "agree_move",
+   "why": "'mingle poison with Yahusha... strange herbage, which is heresy' in 1:6"
+  },
+  {
+   "id": 51924,
+   "verdict": "agree_move",
+   "why": "'suffered only in semblance, why am I in bonds... I die in vain' in 1:10"
+  },
+  {
+   "id": 51925,
+   "verdict": "agree_move",
+   "why": "'why do I desire to fight with wild beasts? So I die in vain' in 1:10"
+  },
+  {
+   "id": 51929,
+   "verdict": "agree_move",
+   "why": "'suffered only in semblance' docetism in 1:10; 1:9 asserts true flesh"
+  },
+  {
+   "id": 51954,
+   "verdict": "agree_move",
+   "why": "'the door of the Father, through which Abraham and Isaac and Jacob enter in' in 1:9"
+  },
+  {
+   "id": 51955,
+   "verdict": "agree_move",
+   "why": "'door... through which Abraham and Isaac and Jacob enter in' in 1:9"
+  },
+  {
+   "id": 51956,
+   "verdict": "agree_move",
+   "why": "'He Himself being the door of the Father' is in 1:9"
+  },
+  {
+   "id": 51962,
+   "verdict": "agree_move",
+   "why": "'one eucharist... one cup unto union in His blood... one altar' in 1:4"
+  },
+  {
+   "id": 51963,
+   "verdict": "agree_move",
+   "why": "'one altar, as there is one bishop... one cup unto union' in 1:4"
+  },
+  {
+   "id": 51964,
+   "verdict": "agree_move",
+   "why": "'one eucharist (for there is one flesh... one altar' in 1:4"
+  },
+  {
+   "id": 51965,
+   "verdict": "agree_move",
+   "why": "'one cup unto union in His blood' in 1:4"
+  },
+  {
+   "id": 49009,
+   "verdict": "agree_move",
+   "why": "'at the blood-shedding of Yahuah Yahusha' Pilate washing hands in 29:22"
+  },
+  {
+   "id": 50115,
+   "verdict": "agree_move",
+   "why": "'There are two ways, one of life and one of death' in 1:1"
+  },
+  {
+   "id": 50117,
+   "verdict": "agree_move",
+   "why": "'There are two ways, one of life and one of death' in 1:1"
+  },
+  {
+   "id": 50118,
+   "verdict": "agree_move",
+   "why": "'two ways, one of life and one of death' opens 1:1"
+  },
+  {
+   "id": 50119,
+   "verdict": "agree_move",
+   "why": "Two Ways, life versus death, stated in 1:1"
+  },
+  {
+   "id": 50120,
+   "verdict": "agree_move",
+   "why": "'thou shalt love the Elohim (God) that made thee' in 1:1"
+  },
+  {
+   "id": 50122,
+   "verdict": "agree_move",
+   "why": "'thy neighbour as thyself' is in 1:1"
+  },
+  {
+   "id": 50123,
+   "verdict": "agree_move",
+   "why": "'all things whatsoever thou wouldest not have befal thyself' in 1:1"
+  },
+  {
+   "id": 52006,
+   "verdict": "agree_move",
+   "why": "'How can I blaspheme my King who saved me?' refusal sits in 1:9"
+  },
+  {
+   "id": 52007,
+   "verdict": "stay",
+   "why": "1:8: 'remembering all who at any time had come in his way'; refuses persuaders"
+  },
+  {
+   "id": 52008,
+   "verdict": "agree_move",
+   "why": "'Fourscore and six years have I been His servant' is in 1:9"
+  },
+  {
+   "id": 52009,
+   "verdict": "agree_move",
+   "why": "'How then can I blaspheme my King who saved me?' in 1:9"
+  },
+  {
+   "id": 53798,
+   "verdict": "stay",
+   "why": "1:3 'take courage, and strengthen thy family'; fire/stones absent from neighbours"
+  },
+  {
+   "id": 53799,
+   "verdict": "stay",
+   "why": "1:3 'made level for His elect, that He may fulfill... the promise'"
+  },
+  {
+   "id": 53829,
+   "verdict": "agree_move",
+   "why": "'some of them shall be glad, and others shall weep... shall likewise be glad' in 3:3"
+  },
+  {
+   "id": 53836,
+   "verdict": "agree_move",
+   "why": "'appeared as if it were built of one stone' in 3:2"
+  },
+  {
+   "id": 53851,
+   "verdict": "agree_move",
+   "why": "'this beast is a type of the great tribulation which is to come' in 4:2"
+  },
+  {
+   "id": 53861,
+   "verdict": "agree_move",
+   "why": "'he hath only one (opportunity of) repentance' in 9:3; 5:1 lacks it"
+  },
+  {
+   "id": 53915,
+   "verdict": "agree_move",
+   "why": "'from bitterness wrath, and from wrath anger' catalogue in 10:2"
+  },
+  {
+   "id": 53983,
+   "verdict": "agree_move",
+   "why": "'having armed thyself with the fear of Yahuah (Lord), resist them' in 17:2"
+  },
+  {
+   "id": 53989,
+   "verdict": "agree_move",
+   "why": "'shalt bridle and direct it as thou wilt. For the evil desire is wild' in 17:1"
+  },
+  {
+   "id": 54031,
+   "verdict": "agree_move",
+   "why": "'give it to a widow, or an orphan, or to one in want' in 22:3"
+  },
+  {
+   "id": 54035,
+   "verdict": "agree_move",
+   "why": "'wrestled with the devil... crowned: these are they that suffered for the law' in 25:3"
+  },
+  {
+   "id": 54042,
+   "verdict": "agree_move",
+   "why": "'If any of them shall be able to live, I will rejoice with it' in 25:2"
+  },
+  {
+   "id": 54054,
+   "verdict": "agree_move",
+   "why": "'He Himself then is become their foundation' and tower upon the rock in 26:14"
+  },
+  {
+   "id": 54075,
+   "verdict": "agree_move",
+   "why": "'declare to every man the mighty works of Yahuah' as the angel's charge in 27:4"
+  }
+ ]
+}

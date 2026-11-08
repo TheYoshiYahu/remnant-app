@@ -1,0 +1,719 @@
+{
+ "model": "claude-sonnet-5-5",
+ "items": [
+  {
+   "id": 53957,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53958,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53959,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53960,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53961,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53962,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53963,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53964,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53965,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53966,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53967,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53968,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53969,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53970,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53971,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53972,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53973,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53974,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53975,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53976,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53977,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53978,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53979,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53980,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53981,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53982,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53983,
+   "verdict": "move",
+   "to": "Hermas 17:2",
+   "why": "armed thyself with the fear of Yahuah (Lord), resist them"
+  },
+  {
+   "id": 53984,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53985,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53986,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53987,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53988,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53989,
+   "verdict": "move",
+   "to": "Hermas 17:1",
+   "why": "shalt bridle and direct it as thou wilt. For the evil desire is wild"
+  },
+  {
+   "id": 53990,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53991,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53992,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53993,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53994,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53995,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53996,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53997,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53998,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53999,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54000,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54001,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54002,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54003,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54004,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54005,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54006,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54007,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54008,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54009,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54010,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54011,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54012,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54013,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54014,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54015,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54016,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54017,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54018,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54019,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54020,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54021,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54022,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54023,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54024,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54025,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54026,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54027,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54028,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54029,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54030,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54031,
+   "verdict": "move",
+   "to": "Hermas 22:3",
+   "why": "give it to a widow, or an orphan, or to one in want"
+  },
+  {
+   "id": 54032,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54033,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54034,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54035,
+   "verdict": "move",
+   "to": "Hermas 25:3",
+   "why": "wrestled with the devil... are crowned: these are they that suffered for the law"
+  },
+  {
+   "id": 54036,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54037,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54038,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54039,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54040,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54041,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54042,
+   "verdict": "move",
+   "to": "Hermas 25:2",
+   "why": "If any of them shall be able to live, I will rejoice with it"
+  },
+  {
+   "id": 54043,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54044,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54045,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54046,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54047,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54048,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54049,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54050,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54051,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54052,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54053,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54054,
+   "verdict": "move",
+   "to": "Hermas 26:14",
+   "why": "He Himself then is become their foundation; tower upon the rock and the gate"
+  },
+  {
+   "id": 54055,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54056,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54057,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54058,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54059,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54060,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54061,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54062,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54063,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54064,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54065,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54066,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54067,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54068,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54069,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54070,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54071,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54072,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54073,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54074,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 54075,
+   "verdict": "move",
+   "to": "Hermas 27:4",
+   "why": "declare to every man the mighty works of Yahuah (Lord)"
+  }
+ ]
+}

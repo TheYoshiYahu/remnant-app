@@ -1,0 +1,959 @@
+{
+ "model": "claude-sonnet-5-5",
+ "items": [
+  {
+   "id": 53798,
+   "verdict": "unclear",
+   "to": null,
+   "why": "Family strengthened sits in 1:3 but fire-trial of stones sits in 4:3/3:2"
+  },
+  {
+   "id": 53799,
+   "verdict": "unclear",
+   "to": null,
+   "why": "Promise to elect in 1:3, but refining 'gold tested by the fire' is 4:3"
+  },
+  {
+   "id": 53800,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53801,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53802,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53803,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53804,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53805,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53806,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53807,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53808,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53809,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53810,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53811,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53812,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53813,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53814,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53815,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53816,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53817,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53818,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53819,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53820,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53821,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53822,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53823,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53824,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53825,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53826,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53827,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53828,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53829,
+   "verdict": "move",
+   "to": "Hermas 3:3",
+   "why": "'some of them shall be glad, and others shall weep... if they hear and repent, shall likewise be glad'"
+  },
+  {
+   "id": 53830,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53831,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53832,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53833,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53834,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53835,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53836,
+   "verdict": "move",
+   "to": "Hermas 3:2",
+   "why": "'building of the tower appeared as if it were built of one stone'"
+  },
+  {
+   "id": 53837,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53838,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53839,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53840,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53841,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53842,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53843,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53844,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53845,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53846,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53847,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53848,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53849,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53850,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53851,
+   "verdict": "move",
+   "to": "Hermas 4:2",
+   "why": "'this beast is a type of the great tribulation which is to come'"
+  },
+  {
+   "id": 53852,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53853,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53854,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53855,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53856,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53857,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53858,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53859,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53860,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53861,
+   "verdict": "move",
+   "to": "Hermas 9:3",
+   "why": "'he hath only one (opportunity of) repentance' - second repentance sits in 9:3"
+  },
+  {
+   "id": 53862,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53863,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53864,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53865,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53866,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53867,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53868,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53869,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53870,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53871,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53872,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53873,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53874,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53875,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53876,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53877,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53878,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53879,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53880,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53881,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53882,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53883,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53884,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53885,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53886,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53887,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53888,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53889,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53890,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53891,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53892,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53893,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53894,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53895,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53896,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53897,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53898,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53899,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53900,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53901,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53902,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53903,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53904,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53905,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53906,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53907,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53908,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53909,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53910,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53911,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53912,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53913,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53914,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53915,
+   "verdict": "move",
+   "to": "Hermas 10:2",
+   "why": "'from bitterness wrath, and from wrath anger, and from anger spite' chain"
+  },
+  {
+   "id": 53916,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53917,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53918,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53919,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53920,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53921,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53922,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53923,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53924,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53925,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53926,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53927,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53928,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53929,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53930,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53931,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53932,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53933,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53934,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53935,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53936,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53937,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53938,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53939,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53940,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53941,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53942,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53943,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53944,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53945,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53946,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53947,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53948,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53949,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53950,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53951,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53952,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53953,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53954,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53955,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 53956,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  }
+ ]
+}

@@ -1,0 +1,377 @@
+{
+ "model": "claude-sonnet-5-5",
+ "items": [
+  {
+   "id": 4439,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 4440,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 4441,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49009,
+   "verdict": "move",
+   "to": "Acts 29 29:22",
+   "why": "'blood-shedding of Yahuah Yahusha' and Pilate's answer sit in 29:22"
+  },
+  {
+   "id": 49010,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49011,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49012,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49013,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49014,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49015,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49016,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49017,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49018,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49019,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49020,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49021,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49022,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49023,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49024,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49025,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 49026,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50115,
+   "verdict": "move",
+   "to": "Didache 1:1",
+   "why": "'There are two ways, one of life and one of death' is in chapter 1"
+  },
+  {
+   "id": 50116,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50117,
+   "verdict": "move",
+   "to": "Didache 1:1",
+   "why": "'two ways, one of life and one of death' opens chapter 1"
+  },
+  {
+   "id": 50118,
+   "verdict": "move",
+   "to": "Didache 1:1",
+   "why": "Two Ways introduced at 'There are two ways' in chapter 1"
+  },
+  {
+   "id": 50119,
+   "verdict": "move",
+   "to": "Didache 1:1",
+   "why": "Two Ways (life vs death) stated in opening 'There are two ways'"
+  },
+  {
+   "id": 50120,
+   "verdict": "move",
+   "to": "Didache 1:1",
+   "why": "'thou shalt love the Elohim that made thee' is in chapter 1"
+  },
+  {
+   "id": 50121,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50122,
+   "verdict": "move",
+   "to": "Didache 1:1",
+   "why": "'thy neighbour as thyself' is in chapter 1"
+  },
+  {
+   "id": 50123,
+   "verdict": "move",
+   "to": "Didache 1:1",
+   "why": "'all things whatsoever thou wouldest not have befal thyself' is in chapter 1"
+  },
+  {
+   "id": 50124,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50125,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50126,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50127,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50128,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50129,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50130,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50131,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50132,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50133,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50134,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50135,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50136,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50137,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50138,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 50139,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 51997,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 51998,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 51999,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52000,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52001,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52002,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52003,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52004,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52005,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52006,
+   "verdict": "move",
+   "to": "Martyrdom of Polycarp 1:9",
+   "why": "'How then can I blaspheme my King who saved me?' is in 1:9"
+  },
+  {
+   "id": 52007,
+   "verdict": "unclear",
+   "to": null,
+   "why": "Dying-blessing/accusers constancy is general; confrontation with accusers sits 1:9-1:12, 1:8 only has persuaders"
+  },
+  {
+   "id": 52008,
+   "verdict": "move",
+   "to": "Martyrdom of Polycarp 1:9",
+   "why": "'Fourscore and six years have I been His servant' is in 1:9"
+  },
+  {
+   "id": 52009,
+   "verdict": "move",
+   "to": "Martyrdom of Polycarp 1:9",
+   "why": "'blaspheme my King who saved me' is in 1:9"
+  },
+  {
+   "id": 52010,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52011,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  },
+  {
+   "id": 52012,
+   "verdict": "here",
+   "to": null,
+   "why": ""
+  }
+ ]
+}
