@@ -286,3 +286,4 @@ means a back-fill can re-run safely over the already-merged canon rows.
   files: 38 outside node_modules, 26 tracked; the 12 in data-schema/migrations are byte-identical to their originals — `git rm` on Yoshi's word.
   (e) Doc-ref hits library-wide: 27 real (20 Matthew S1xx cards, 2 Mark `thread:` notes, 5 member notes incl. "queued for S184", 2 summaries
   naming Yoshi/a session) + 6 Matthew threads (ids 7–19) whose summary opens with the slug in bold code — all inside the Matthew rebuild.
+- **2026-11-09 (S495 close, Yoshi's word): CLOSED (c) and (d) above** — `git rm` of session181_{romans,galatians,revelation}_xref_threads.sql + session154_matt_17_extras_cross_references.sql and the 12 identical " 2.*" migration copies, committed 340228b and pushed. `session181_john_xref_threads.sql` stays (applied, 16/16 live); `session181_revelation_xref_threads.sql.pre-s440` left in place. S495 commit fb90f56 also pushed.
