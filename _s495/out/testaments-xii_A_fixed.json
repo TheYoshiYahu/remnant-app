@@ -1,0 +1,800 @@
+{
+ "model": "claude-sonnet-5-5",
+ "edition": "pseudepigrapha",
+ "book": "testaments-xii",
+ "chapters": [
+  {
+   "ch": 2,
+   "cards": [
+    {
+     "src_vn": 4,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 3,
+     "tgt_vn": 6,
+     "note": "Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* *The first is the spirit of life, with which the constitution (of man) is created. The second is the sense of sight, with which ariseth desire.* (Testaments of the Twelve Patriarchs 2:4) Reuben puts desire in the eye, and the oldest telling of it is in the garden, where the woman saw that the tree was pleasant to the eyes, and took. The Testament sorts the human frame into seven spirits and seven senses in a way Moses never does, so that arrangement is held loosely, but the road it describes, from seeing to wanting to taking, is the one Genesis had already walked.",
+     "member_note": "Genesis 3:6 — *it was pleasant to the eyes.* Desire came into the garden through the eye long before Reuben made his list.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 4,
+     "tgt_edition": "canon",
+     "tgt_book": "job",
+     "tgt_ch": 31,
+     "tgt_vn": 1,
+     "note": "Job 31:1 — *I made a covenant with mine eyes; why then should I think upon a maid?* *The first is the spirit of life, with which the constitution (of man) is created. The second is the sense of sight, with which ariseth desire.* (Testaments of the Twelve Patriarchs 2:4) Job answers the same danger with a decision instead of a list of spirits: he made a covenant with his eyes before the question could even rise. Reuben, who is speaking out of his own repentance, is warning his sons in that same direction, toward guarding the gate of the eye.",
+     "member_note": "Job 31:1 — *I made a covenant with mine eyes.* The remedy for a wandering eye is a covenant, not a theory.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 9,
+     "tgt_edition": "canon",
+     "tgt_book": "proverbs",
+     "tgt_ch": 7,
+     "tgt_vn": 22,
+     "note": "Proverbs 7:22 — *He goeth after her straightway, as an ox goeth to the slaughter, or as a fool to the correction of the stocks;* *Wherefore it is the last in order of creation, and the first in that of youth, because it is filled with ignorance, and leadeth the youth as a blind man to a pit, and as a beast to a precipice.* (Testaments of the Twelve Patriarchs 2:9) The Testament says desire leads the young man like a blind man to a pit and like a beast to a precipice. Proverbs paints the same road one street at a time, a young man following straight after her like an ox to the slaughter, and verse 23 adds that he goes on *and knoweth not that it is for his life*.",
+     "member_note": "Proverbs 7:22 — *as an ox goeth to the slaughter.* The young man is led away without seeing where the road ends.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-2-the-eye-desire-and-the-pit",
+    "title": "The eye, desire, and the pit that youth walks into",
+    "summary_md": "It ain't new. When Reuben says the sense of sight is where desire arises, and that the last of the seven spirits leads a young man like a blind man to a pit, he is saying what Genesis showed in the first garden and what Proverbs showed in the street. The Testament sorts the body into spirits and senses in its own way, and that sorting is not what the reader is asked to carry away; the warning is.\n\n*The first is the spirit of life, with which the constitution (of man) is created. The second is the sense of sight, with which ariseth desire.* (Testaments of the Twelve Patriarchs 2:4)\n\nMoses had already told the first of it. The woman looked before she took, and the whole road from the eye to the hand is laid out in one verse.\n\n*And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* (Genesis 3:6)\n\nThen the Testament speaks of what that desire does to the young.\n\n*Wherefore it is the last in order of creation, and the first in that of youth, because it is filled with ignorance, and leadeth the youth as a blind man to a pit, and as a beast to a precipice.* (Testaments of the Twelve Patriarchs 2:9)\n\nSolomon's counsel in Proverbs draws that picture one street at a time, a young man who goes after her straightway and does not know where the road ends until it is upon him.\n\n*He goeth after her straightway, as an ox goeth to the slaughter, or as a fool to the correction of the stocks;* (Proverbs 7:22)\n\nJob gives the answer to both, and it is short: a covenant made with the eyes before the sight ever arrives. Reuben, speaking out of his own repentance, is pointing his sons the same way.\n\n*I made a covenant with mine eyes; why then should I think upon a maid?* (Job 31:1)",
+    "anchor_start_vn": 4,
+    "anchor_end_vn": 9,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 2:3-9 sets the senses out as seven spirits of creation in a Hellenized scheme (life, sight, hearing, smell, speech, taste, procreation); nothing in the notes is built on that scheme, only on the plain warning about the eye and about youth."
+  },
+  {
+   "ch": 7,
+   "cards": [
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 50,
+     "tgt_vn": 26,
+     "note": "Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* *And they placed him in a coffin until they carried him up from Egypt, and buried him in Hebron in the cave where his father was.* (Testaments of the Twelve Patriarchs 7:2) Reuben's sons lay him in a coffin and keep him there until they can carry him up from Egypt, just as Joseph was put in a coffin in Egypt after making the sons of Yashar'el (Israel) swear *ye shall carry up my bones from hence* (Genesis 50:25). The generation that died in Egypt died with its face toward the land.",
+     "member_note": "Genesis 50:26 — *he was put in a coffin in Egypt.* Joseph's coffin is the pattern the other sons followed.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 50,
+     "tgt_vn": 13,
+     "note": "Genesis 50:13 — *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre.* *And they placed him in a coffin until they carried him up from Egypt, and buried him in Hebron in the cave where his father was.* (Testaments of the Twelve Patriarchs 7:2) The Testament says Reuben was buried in Hebron in the cave where his father lay, and Genesis names that cave: the field of Machpelah, which Abraham bought, where Jacob's sons buried their father. What the Testament adds about Reuben's own burial goes beyond what Genesis tells, and nothing here is built on it.",
+     "member_note": "Genesis 50:13 — *buried him in the cave of the field of Machpelah.* The cave where Jacob lies is the one the Testament has in view.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-7-reuben-in-a-coffin-until-carried-up",
+    "title": "Reuben laid in a coffin until he could be carried up",
+    "summary_md": "Reuben dies after giving his commands, and his sons do what the sons of Jacob had done before them: they place him in a coffin in Egypt and wait for the day he can be carried up to the land.\n\n*And they placed him in a coffin until they carried him up from Egypt, and buried him in Hebron in the cave where his father was.* (Testaments of the Twelve Patriarchs 7:2)\n\nGenesis tells how that waiting began, with Joseph, who made the sons of Yashar'el (Israel) swear that his bones would go up with them when Elohim (God) visited them. A coffin in Egypt was never meant to be the end of the story; it was a promise kept in a box until the day of the visiting.\n\n*So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* (Genesis 50:26)\n\nThe Testament says Reuben was laid in the cave where his father was, and Genesis names that cave, the field of Machpelah, bought by Abraham, where Jacob's sons buried their father.\n\n*For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre.* (Genesis 50:13)\n\nGenesis speaks of Jacob there and says nothing of where each of the other sons was buried, so the Testament's report about Reuben is held as its own word and nothing here is built on it. What the scripture does give is the posture: the sons of Yashar'el (Israel) in Egypt buried their dead with their eyes on the land that Yahuah (the LORD) had sworn to Abraham, Isaac, and Jacob.",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 2,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 7:2 has Reuben buried in the cave at Hebron; Joshua 24:32 puts Joseph's bones in Shechem and Acts 7:16 speaks of the fathers laid in Sychem, so the Testament's single burial place is not settled from the canon. Notes rest only on the coffin-in-Egypt posture and the Machpelah cave of Jacob."
+  },
+  {
+   "ch": 8,
+   "cards": [
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 48,
+     "tgt_vn": 2,
+     "note": "Genesis 48:2 — *And one told Jacob, and said, Behold, thy son Joseph cometh unto thee: and Yashar'el (Israel) strengthened himself, and sat upon the bed.* *For when Simeon was sick, his sons came to visit him, and he strengthened himself and sat up and kissed them, and said:—* (Testaments of the Twelve Patriarchs 8:2) Simeon sits up on his sickbed and kisses his sons, and the picture is the one Genesis gives of Jacob when Joseph came to him: he strengthened himself and sat upon the bed. In both the dying man gathers what strength he has left so that his last words can be heard.",
+     "member_note": "Genesis 48:2 — *Yashar'el (Israel) strengthened himself, and sat upon the bed.* A father rising from his sickbed to speak to his sons.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 50,
+     "tgt_vn": 26,
+     "note": "Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* *The copy of the words of Simeon, the things which he spake to his sons before he died, in the hundred and twentieth year of his life, at which time Joseph, his brother, died.* (Testaments of the Twelve Patriarchs 8:1) The Testament dates Simeon's last words to the year Joseph died, and Genesis closes Joseph's life with the same death and the coffin in Egypt. Simeon, who once hated Joseph, speaks his farewell in the year the brother he wronged is laid to rest.",
+     "member_note": "Genesis 50:26 — *So Joseph died, being an hundred and ten years old.* The Testament dates Simeon's last words by this death.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-8-simeon-sits-up-to-speak",
+    "title": "Simeon sits up to speak to his sons",
+    "summary_md": "It ain't new. The sons come to visit a sick father, and the father strengthens himself and sits up to speak, and Genesis had already drawn that deathbed. Simeon's chapter opens in the same room Jacob once lay in.\n\n*For when Simeon was sick, his sons came to visit him, and he strengthened himself and sat up and kissed them, and said:—* (Testaments of the Twelve Patriarchs 8:2)\n\nWhen Joseph came to Jacob in his sickness, the old man gathered what strength he had so that his last words could be heard, and the Testament shows Simeon doing the very thing.\n\n*And one told Jacob, and said, Behold, thy son Joseph cometh unto thee: and Yashar'el (Israel) strengthened himself, and sat upon the bed.* (Genesis 48:2)\n\nSimeon's own ending is dated by another death, the year his brother Joseph died, and Genesis closes Joseph's life with the same grave and the coffin in Egypt.\n\n*The copy of the words of Simeon, the things which he spake to his sons before he died, in the hundred and twentieth year of his life, at which time Joseph, his brother, died.* (Testaments of the Twelve Patriarchs 8:1)\n\n*So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* (Genesis 50:26)\n\nThat is why the words Simeon is about to speak carry the weight they do. He is speaking in the shadow of the brother he once could not bear to have near him, now laid to rest, and he wants his sons to learn from what he did.",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 2,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 16,
+   "cards": [
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "psalms",
+     "tgt_ch": 77,
+     "tgt_vn": 20,
+     "note": "Psalm 77:20 — *Thou leddest thy people like a flock by the hand of Moses and Aaron.* *And they were in Egypt until the day of their departure by the hand of Moses.* (Testaments of the Twelve Patriarchs 16:2) Simeon's sons stay in Egypt until the day of their departure *by the hand of Moses*, and the psalm uses almost the same words when it remembers the exodus as a flock led out by the hand of Moses and Aaron.",
+     "member_note": "Psalm 77:20 — *by the hand of Moses and Aaron.* The exodus remembered as a flock led out by Moses.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "exodus",
+     "tgt_ch": 12,
+     "tgt_vn": 41,
+     "note": "Exodus 12:41 — *And it came to pass at the end of the four hundred and thirty years, even the selfsame day it came to pass, that all the hosts of Yahuah (LORD) went out from the land of Egypt.* *And they were in Egypt until the day of their departure by the hand of Moses.* (Testaments of the Twelve Patriarchs 16:2) The day of departure is the day Exodus fixes, at the end of the four hundred and thirty years, *the selfsame day* that all the hosts of Yahuah (the LORD) went out of Egypt. Simeon's sons are the generations waiting for that day.",
+     "member_note": "Exodus 12:41 — *all the hosts of Yahuah (LORD) went out from the land of Egypt.* The day the waiting in Egypt ended.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-16-in-egypt-until-the-hand-of-moses",
+    "title": "Simeon's sons in Egypt until the hand of Moses",
+    "summary_md": "It ain't new. The Testament of Simeon ends with the sons mourning their father and then waiting in Egypt until the day of departure by the hand of Moses, and that is the exodus as Exodus and the Psalms tell it. The Testament needs only to point, because the reader already knows what the hand of Moses did.\n\n*And they were in Egypt until the day of their departure by the hand of Moses.* (Testaments of the Twelve Patriarchs 16:2)\n\nExodus gives the day the waiting ended. The four hundred and thirty years had a last day, and the hosts of Yahuah (the LORD) went out on it.\n\n*And it came to pass at the end of the four hundred and thirty years, even the selfsame day it came to pass, that all the hosts of Yahuah (LORD) went out from the land of Egypt.* (Exodus 12:41)\n\nThe psalmist remembers the leaving as a shepherd's work, Yahuah (the LORD) leading his people like a flock, and the staff in the shepherd's hand was Moses.\n\n*Thou leddest thy people like a flock by the hand of Moses and Aaron.* (Psalm 77:20)\n\nThe brothers in these Testaments end their lives in Egypt, and their children are still there when the book closes. The promise to carry the bones up, and to bring the people up, was waiting on a day Yahuah (the LORD) had already appointed.",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 2,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 17,
+   "cards": [
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 49,
+     "tgt_vn": 1,
+     "note": "Genesis 49:1 — *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* *The copy of the words of Levi, the things which he ordained unto his sons, according to all that they should do, and what things should befall them until the day of judgment.* (Testaments of the Twelve Patriarchs 17:1) Levi gathers his sons to ordain what they are to do and what will befall them until the day of judgment, in the pattern of Jacob, who called his sons together to tell them what would befall them in the last days. A father's last word is a word about what is coming.",
+     "member_note": "Genesis 49:1 — *that I may tell you that which shall befall you in the last days.* Jacob called his sons together to say what would befall them.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "2-peter",
+     "tgt_ch": 1,
+     "tgt_vn": 14,
+     "note": "2 Peter 1:14 — *Knowing that shortly I must put off this my tabernacle, even as our Lord Yahusha HaMashiach (Lord Jesus Christ) hath shewed me.* *He was sound in health when he called them to him; for it had been revealed to him that he should die. And when they were gathered together he said to them:* (Testaments of the Twelve Patriarchs 17:2) Levi was sound in health when he called his sons, because it had been revealed to him that he should die. Peter says the same of himself: he knew that shortly he must put off his tabernacle, as it had been shewed him, and so he spoke while he could.",
+     "member_note": "2 Peter 1:14 — *shortly I must put off this my tabernacle.* One who knew the hour was near and spoke while he could.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-17-levi-calls-his-sons-before-he-dies",
+    "title": "Levi calls his sons because it was revealed he would die",
+    "summary_md": "It ain't new. Levi calls his sons together, sound in body, because it had been revealed to him that he would die, and he ordains what they are to do and what will befall them until the day of judgment. A father near the end speaks to his sons about what is coming, and Jacob had done it first.\n\n*The copy of the words of Levi, the things which he ordained unto his sons, according to all that they should do, and what things should befall them until the day of judgment.* (Testaments of the Twelve Patriarchs 17:1)\n\nJacob called his sons around him and promised to tell them what would befall them in the last days, and Levi's opening uses the same word for the same kind of telling.\n\n*And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* (Genesis 49:1)\n\nLevi's second verse says why he spoke while he was well: it had been revealed to him that he should die.\n\n*He was sound in health when he called them to him; for it had been revealed to him that he should die. And when they were gathered together he said to them:* (Testaments of the Twelve Patriarchs 17:2)\n\nPeter says almost the same of himself, that he knew his time was short because it had been shown him, and so he spoke. A man who knows the hour does not spend it on small things.\n\n*Knowing that shortly I must put off this my tabernacle, even as our Lord Yahusha HaMashiach (Lord Jesus Christ) hath shewed me.* (2 Peter 1:14)\n\nWhat Levi tells his sons in the chapters that follow is about their own house and the age to come, and the scripture beside it is the same: what is coming is told to the sons so that they can walk in the commandments and not be surprised.",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 2,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 23,
+   "cards": [
+    {
+     "src_vn": 3,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 34,
+     "tgt_vn": 7,
+     "note": "Genesis 34:7 — *And the sons of Jacob came out of the field when they heard it: and the men were grieved, and they were very wroth, because he had wrought folly in Yashar'el (Israel) in lying with Jacob’s daughter; which thing ought not to be done.* *Because also they had wrought folly in Yashar'el (Israel) by defiling my sister. And we departed and came to Bethel.* (Testaments of the Twelve Patriarchs 23:3) Levi calls the defiling of his sister *folly in Yashar'el (Israel)*, and that is Genesis's own phrase, spoken when the sons of Jacob came in from the field and heard what had been done. The words name the wrong done to Dinah as a wrong done to the whole house.",
+     "member_note": "Genesis 34:7 — *he had wrought folly in Yashar'el (Israel).* The same words the brothers used when they heard.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 34,
+     "tgt_vn": 30,
+     "note": "Genesis 34:30 — *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.* *For from this day forward shall Shechem be called a city of imbeciles; for as a man mocketh a fool, so did we mock them,* (Testaments of the Twelve Patriarchs 23:2) Levi tells how they mocked the Shechemites, and leaves it there. Genesis keeps Jacob's answer: he told Simeon and Levi they had troubled him and put his whole house in danger, and at the end of his life he said *Cursed be their anger, for it was fierce* (Genesis 49:7). The two voices stand side by side in scripture and the reader is allowed to hear both.",
+     "member_note": "Genesis 34:30 — *Ye have troubled me to make me to stink among the inhabitants of the land.* Jacob's answer to the brothers' deed, kept in scripture beside Levi's account.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 35,
+     "tgt_vn": 12,
+     "note": "Genesis 35:12 — *And the land which I gave Abraham and Isaac, to thee I will give it, and to thy seed after thee will I give the land.* *And I said to my father Jacob: By thee will Yahuah (Lord) destroy the Canaanites, and will give their land to thee and to thy seed after thee.* (Testaments of the Twelve Patriarchs 23:1) Levi tells his father that Yahuah (the Lord) will give the land to him and to his seed after him, and that is the promise Elohim (God) renewed to Jacob at Beth-el: the land given to Abraham and Isaac, to thee and to thy seed after thee. Levi is speaking as one standing in the line of the promise.",
+     "member_note": "Genesis 35:12 — *to thy seed after thee will I give the land.* The promise Levi tells his father he is trusting.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-23-folly-in-israel-and-jacobs-answer",
+    "title": "Folly in Israel, and what Jacob said to Levi",
+    "summary_md": "Levi's account of Shechem is told from inside the brothers' anger. Genesis tells the same events, and it keeps the voices Levi's chapter only partly carries: the brothers' grief, the father's rebuke, and the promise that outlived them all.\n\n*Because also they had wrought folly in Yashar'el (Israel) by defiling my sister. And we departed and came to Bethel.* (Testaments of the Twelve Patriarchs 23:3)\n\nThe phrase *folly in Yashar'el (Israel)* is Genesis's own, spoken when the sons of Jacob came in from the field and heard what had been done. The wrong was done to Dinah, and it was done to the whole house.\n\n*And the sons of Jacob came out of the field when they heard it: and the men were grieved, and they were very wroth, because he had wrought folly in Yashar'el (Israel) in lying with Jacob’s daughter; which thing ought not to be done.* (Genesis 34:7)\n\nBut the Testament says, a verse earlier, that the brothers mocked the Shechemites, and Genesis does not leave Jacob out of the telling. He told Simeon and Levi they had troubled him, and at the end of his life he spoke of the two sons by name:\n\n*And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.* (Genesis 34:30)\n\n*Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar'el (Israel).* (Genesis 49:7)\n\nLevi's Testament sits under that word, and nothing in the chapter asks us to set it aside. What the chapter does give is the thing Levi trusted in the first place, that the land was promised to the line.\n\n*And the land which I gave Abraham and Isaac, to thee I will give it, and to thy seed after thee will I give the land.* (Genesis 35:12)",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 3,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 23:2-3 retells Shechem as a righteous act; Genesis 34:30 and 49:5-7 record Jacob's rebuke and curse on the anger of Simeon and Levi. The notes set the two beside each other without taking a side beyond what Genesis says."
+  },
+  {
+   "ch": 27,
+   "cards": [
+    {
+     "src_vn": 8,
+     "tgt_edition": "canon",
+     "tgt_book": "numbers",
+     "tgt_ch": 26,
+     "tgt_vn": 59,
+     "note": "Numbers 26:59 — *And the name of Amram’s wife was Jochebed, the daughter of Levi, whom her mother bare to Levi in Egypt: and she bare unto Amram Aaron and Moses, and Miriam their sister.* *And Jochebed was born in Egypt, in my sixty-fourth year, for I was renowned then in the midst of my brethren.* (Testaments of the Twelve Patriarchs 27:8) Levi says Jochebed was born in Egypt in his sixty-fourth year, and Numbers records the same birth in its own words: she was the daughter of Levi, whom her mother bare to Levi in Egypt, and she bare Aaron, Moses, and Miriam. The Testament supplies the year that Numbers leaves unsaid.",
+     "member_note": "Numbers 26:59 — *whom her mother bare to Levi in Egypt.* The birth of the woman who would be the mother of Moses and Aaron.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "exodus",
+     "tgt_ch": 2,
+     "tgt_vn": 22,
+     "note": "Exodus 2:22 — *And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land.* *And she conceived and bare a son, and I called his name Gersam, for we were sojourners in our land.* (Testaments of the Twelve Patriarchs 27:2) Levi gives Gersam his name because they were sojourners, and scripture gives that same reason for the same kind of name when Moses names his own son in Midian. The name Gersam, which the lists of the sons of Levi spell Gershon, is the name of a stranger in a strange land.",
+     "member_note": "Exodus 2:22 — *I have been a stranger in a strange land.* The reason given for naming a son from the house of Levi.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 5,
+     "tgt_edition": "canon",
+     "tgt_book": "numbers",
+     "tgt_ch": 3,
+     "tgt_vn": 31,
+     "note": "Numbers 3:31 — *And their charge shall be the ark, and the table, and the candlestick, and the altars, and the vessels of the sanctuary wherewith they minister, and the hanging, and all the service thereof.* *And I saw in a vision that he was standing on high in the midst of all the congregation.* (Testaments of the Twelve Patriarchs 27:5) Levi sees in a vision Kohath standing on high in the midst of the congregation, and Numbers gives that standing its shape: the charge of the sons of Kohath was the ark, the table, the candlestick, the altars, and the vessels of the sanctuary. The vision and the charge fit together.",
+     "member_note": "Numbers 3:31 — *their charge shall be the ark, and the table, and the candlestick.* What Kohath's house was lifted up to carry.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-27-the-sons-of-levi-and-jochebed-born-in-egypt",
+    "title": "Levi's sons, and Jochebed born in Egypt",
+    "summary_md": "It ain't new. Levi tells over the family that Exodus and Numbers had already counted, and where he adds a year or a vision, scripture is still the ground under it. The births in this chapter are the family history of the priestly line, set down in the order Levi saw them.\n\n*And Jochebed was born in Egypt, in my sixty-fourth year, for I was renowned then in the midst of my brethren.* (Testaments of the Twelve Patriarchs 27:8)\n\nNumbers puts the same birth in a single line and leaves out the year. Jochebed is born in Egypt to Levi, and she is the woman who bears Aaron and Moses and Miriam.\n\n*And the name of Amram’s wife was Jochebed, the daughter of Levi, whom her mother bare to Levi in Egypt: and she bare unto Amram Aaron and Moses, and Miriam their sister.* (Numbers 26:59)\n\nA name carried the reason a child was born into it. Levi calls his first son Gersam because they were sojourners, and the lists of the sons of Levi spell that name Gershon.\n\n*And she conceived and bare a son, and I called his name Gersam, for we were sojourners in our land.* (Testaments of the Twelve Patriarchs 27:2)\n\nMoses gave his own son in Midian a name with the same reason in it, a stranger in a land that was not his.\n\n*And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land.* (Exodus 2:22)\n\nThen Levi looks ahead to Kohath, whom he sees in a vision standing on high in the midst of all the congregation.\n\n*And I saw in a vision that he was standing on high in the midst of all the congregation.* (Testaments of the Twelve Patriarchs 27:5)\n\nNumbers shows what that standing came to. The sons of Kohath were given the ark and the vessels of the sanctuary to carry, and the vision and the charge fit together.\n\n*And their charge shall be the ark, and the table, and the candlestick, and the altars, and the vessels of the sanctuary wherewith they minister, and the hanging, and all the service thereof.* (Numbers 3:31)",
+    "anchor_start_vn": 2,
+    "anchor_end_vn": 8,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 28,
+   "cards": [
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "exodus",
+     "tgt_ch": 6,
+     "tgt_vn": 18,
+     "note": "Exodus 6:18 — *And the sons of Kohath; Amram, and Izhar, and Hebron, and Uzziel: and the years of the life of Kohath were an hundred thirty and three years.* *And the sons of Kohath, Ambram, Issachar, Hebron, and Ozeel.* (Testaments of the Twelve Patriarchs 28:2) Levi lists the four sons of Kohath as Ambram, Issachar, Hebron, and Ozeel, and Exodus lists the same four by the spellings that stand in the canon: Amram, Izhar, Hebron, and Uzziel. The names are spelled a little differently but the family is the same.",
+     "member_note": "Exodus 6:18 — *the sons of Kohath; Amram, and Izhar, and Hebron, and Uzziel.* The same four sons of Kohath in the canon's spelling.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 4,
+     "tgt_edition": "canon",
+     "tgt_book": "exodus",
+     "tgt_ch": 6,
+     "tgt_vn": 20,
+     "note": "Exodus 6:20 — *And Amram took him Jochebed his father’s sister to wife; and she bare him Aaron and Moses: and the years of the life of Amram were an hundred and thirty and seven years.* *And in my ninety-fourth year Ambram took Jochebed my daughter to him to wife, for they were born in one day, he and my daughter.* (Testaments of the Twelve Patriarchs 28:4) Ambram takes Jochebed, Levi's daughter, to wife, and Exodus says that Amram took Jochebed and she bare him Aaron and Moses. The marriage that brought Moses and Aaron into the world was a marriage inside the house of Levi.",
+     "member_note": "Exodus 6:20 — *And Amram took him Jochebed his father’s sister to wife; and she bare him Aaron and Moses.* The marriage inside Levi's house that gave Yashar'el (Israel) Aaron and Moses.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 6,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 15,
+     "tgt_vn": 16,
+     "note": "Genesis 15:16 — *But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.* *And behold, my children, ye are a third generation.* (Testaments of the Twelve Patriarchs 28:6) Levi tells his sons *ye are a third generation*, and a man who keeps his years and the births of his sons this carefully is a man counting down a promise. Genesis had said that in the fourth generation they would come back, because the iniquity of the Amorites was not yet full.",
+     "member_note": "Genesis 15:16 — *in the fourth generation they shall come hither again.* The promise that Levi's careful counting is waiting on.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-28-levis-household-and-the-fourth-generation",
+    "title": "Levi's household, and the generation that returns",
+    "summary_md": "Levi names his grandsons and the marriage of Ambram and Jochebed, then counts his own years and tells his sons that they are a third generation. The counting is not idle, because it follows the line that carries the promise to the day of return.\n\n*And the sons of Kohath, Ambram, Issachar, Hebron, and Ozeel.* (Testaments of the Twelve Patriarchs 28:2)\n\nThese are the sons of Kohath as Exodus gives them, in a slightly different spelling, and the line that comes down from them is the line of Aaron and Moses.\n\n*And the sons of Kohath; Amram, and Izhar, and Hebron, and Uzziel: and the years of the life of Kohath were an hundred thirty and three years.* (Exodus 6:18)\n\nLevi then names the marriage that made that line.\n\n*And in my ninety-fourth year Ambram took Jochebed my daughter to him to wife, for they were born in one day, he and my daughter.* (Testaments of the Twelve Patriarchs 28:4)\n\nOn the thing that matters his account matches Exodus: Amram took Jochebed, and she bare Aaron and Moses. The Testament adds that the two were born in one day, which sits oddly beside Exodus, so this thread rests only on the marriage and its sons.\n\n*And Amram took him Jochebed his father’s sister to wife; and she bare him Aaron and Moses: and the years of the life of Amram were an hundred and thirty and seven years.* (Exodus 6:20)\n\nThen Levi tells his children where they stand in the count.\n\n*And behold, my children, ye are a third generation.* (Testaments of the Twelve Patriarchs 28:6)\n\nGenesis had given the count before any of these children were born. The sojourning would last until the fourth generation came back, and Levi, numbering his years and his sons, is a man standing inside that count.\n\n*But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.* (Genesis 15:16)",
+    "anchor_start_vn": 2,
+    "anchor_end_vn": 7,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 28:4 says Ambram and Jochebed were born in one day, which sits awkwardly beside Exodus 6:20 (Jochebed his father's sister); the notes rest only on the marriage and its sons."
+  },
+  {
+   "ch": 31,
+   "cards": [
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "ezekiel",
+     "tgt_ch": 5,
+     "tgt_vn": 11,
+     "note": "Ezekiel 5:11 — *Wherefore, as I live, saith Adonai Yahuah (the Lord GOD); Surely, because thou hast defiled my sanctuary with all thy detestable things, and with all thine abominations, therefore will I also diminish thee; neither shall mine eye spare, neither will I have any pity.* *Therefore the temple, which Yahuah (Lord) shall choose, shall be laid waste through your uncleanness, and ye shall be captives throughout all nations.* (Testaments of the Twelve Patriarchs 31:1) Levi says the temple will be laid waste through the uncleanness of the sons, and Ezekiel gives Yahuah's (the Lord's) own reason for the same ruin: the sanctuary had been defiled with detestable things. The cause named is the defiling, never the temple and never the law that taught them what was clean.",
+     "member_note": "Ezekiel 5:11 — *thou hast defiled my sanctuary with all thy detestable things.* The cause of the laying waste.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "deuteronomy",
+     "tgt_ch": 28,
+     "tgt_vn": 37,
+     "note": "Deuteronomy 28:37 — *And thou shalt become an astonishment, a proverb, and a byword, among all nations whither Yahuah (LORD) shall lead thee.* *And ye shall be an abomination unto them, and ye shall receive reproach and everlasting shame from the righteous judgment of Elohim (God).* (Testaments of the Twelve Patriarchs 31:2) Levi's word that they will be an abomination among the nations is the warning Moses set down in the curses, that the scattering would make them an astonishment, a proverb, and a byword. That curse is the judgment that follows turning away from the commandments, not the commandments themselves.",
+     "member_note": "Deuteronomy 28:37 — *an astonishment, a proverb, and a byword, among all nations.* The shame of the scattering, foretold.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 4,
+     "tgt_edition": "canon",
+     "tgt_book": "leviticus",
+     "tgt_ch": 26,
+     "tgt_vn": 42,
+     "note": "Leviticus 26:42 — *Then will I remember my covenant with Jacob, and also my covenant with Isaac, and also my covenant with Abraham will I remember; and I will remember the land.* *And if you were not to receive mercy through Abraham, Isaac, and Jacob, our fathers, not one of our seed should be left upon the earth.* (Testaments of the Twelve Patriarchs 31:4) Levi's reason for the mercy, Abraham, Isaac, and Jacob, our fathers, is the reason Yahuah (the LORD) gave in the Torah long before the scattering: even in the land of their enemies he would remember his covenant with Jacob, Isaac, and Abraham, and the land.",
+     "member_note": "Leviticus 26:42 — *Then will I remember my covenant with Jacob, and also my covenant with Isaac.* The fathers' covenant remembered in exile.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 4,
+     "tgt_edition": "canon",
+     "tgt_book": "isaiah",
+     "tgt_ch": 1,
+     "tgt_vn": 9,
+     "note": "Isaiah 1:9 — *Except Yahuah Tseva'ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah.* *And if you were not to receive mercy through Abraham, Isaac, and Jacob, our fathers, not one of our seed should be left upon the earth.* (Testaments of the Twelve Patriarchs 31:4) Levi says that without mercy for the fathers' sake not one of the seed would be left upon the earth, and Isaiah says it as a remnant: except Yahuah Tseva'ot (the LORD of hosts) had left a very small remnant, they would have been as Sodom.",
+     "member_note": "Isaiah 1:9 — *Except Yahuah Tseva'ot (LORD of hosts) had left unto us a very small remnant.* Only mercy leaves a remnant.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-31-laid-waste-yet-remembered-for-the-fathers",
+    "title": "The temple laid waste, and the seed spared for the fathers' sake",
+    "summary_md": "Levi foretells the laying waste of the temple, captivity among all nations, and shame, and then closes on the one reason any of the seed remain at all. All of it was already written in the Torah and the prophets, and none of it puts the blame on the commandments.\n\n*Therefore the temple, which Yahuah (Lord) shall choose, shall be laid waste through your uncleanness, and ye shall be captives throughout all nations.* (Testaments of the Twelve Patriarchs 31:1)\n\nEzekiel gives the cause in Yahuah's (the Lord's) own mouth, and it is the defiling of the sanctuary, not the sanctuary and not the instruction that taught Yashar'el (Israel) what was clean.\n\n*Wherefore, as I live, saith Adonai Yahuah (the Lord GOD); Surely, because thou hast defiled my sanctuary with all thy detestable things, and with all thine abominations, therefore will I also diminish thee; neither shall mine eye spare, neither will I have any pity.* (Ezekiel 5:11)\n\nThe scattering that follows is the exile judgment Moses set out in the curses, a judgment on covenant-breaking, and the Torah that foretold it is the Torah that stands. Then Levi turns, as the prophets always turn, from the judgment to the mercy behind it.\n\n*And if you were not to receive mercy through Abraham, Isaac, and Jacob, our fathers, not one of our seed should be left upon the earth.* (Testaments of the Twelve Patriarchs 31:4)\n\nThat mercy is the fathers'. Before the scattering had begun, Yahuah (the LORD) said that even in the land of their enemies he would remember his covenant.\n\n*Then will I remember my covenant with Jacob, and also my covenant with Isaac, and also my covenant with Abraham will I remember; and I will remember the land.* (Leviticus 26:42)\n\nThe cost was walking off the Way, and the mercy was the fathers' covenant that did not let the seed be swept away.",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 4,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 33,
+   "cards": [
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "daniel",
+     "tgt_ch": 9,
+     "tgt_vn": 24,
+     "note": "Daniel 9:24 — *Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy.* *And whereas ye have heard concerning the seventy weeks, hear also concerning the priesthood.* (Testaments of the Twelve Patriarchs 33:1) Levi speaks of the seventy weeks and goes straight on to the priesthood, as Daniel's seventy weeks are set upon his people and his holy city and end with the anointing of the most Holy. The Testament lays its own scheme of jubilees and priests over the weeks, and Daniel's verse is read here only as Daniel.",
+     "member_note": "Daniel 9:24 — *Seventy weeks are determined upon thy people and upon thy holy city.* The seventy weeks Levi has in mind.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "malachi",
+     "tgt_ch": 2,
+     "tgt_vn": 6,
+     "note": "Malachi 2:6 — *The law of truth was in his mouth, and iniquity was not found in his lips: he walked with me in peace and equity, and did turn many away from iniquity.* *For in each jubilee there shall be a priesthood. And in the first jubilee, the first who is anointed to the priesthood shall be great, and shall speak to Elohim (God) as to a father. And his priesthood shall be perfect with Yahuah (Lord), [and in the day of his gladness shall he arise for the salvation of the world].* (Testaments of the Twelve Patriarchs 33:2) Of the first priest Levi says he speaks to Elohim (God) as to a father and that his priesthood is perfect with Yahuah (the Lord). Malachi describes the true priest in the same way, one in whose mouth was the law of truth, who walked with Yahuah in peace and equity. The bracketed words at the end of Levi's verse are set off in the text as an addition, and this note rests only on what comes before them.",
+     "member_note": "Malachi 2:6 — *The law of truth was in his mouth.* The priest as Malachi remembers him.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 10,
+     "tgt_edition": "canon",
+     "tgt_book": "ezra",
+     "tgt_ch": 1,
+     "tgt_vn": 5,
+     "note": "Ezra 1:5 — *Then rose up the chief of the fathers of Yahudah (Judah) and Benjamin, and the priests, and the Levites, with all them whose spirit Elohim (God) had raised, to go up to build the house of Yahuah (LORD) which is in Jerusalem.* *And in the fifth week they shall return to their desolate country, and shall renew the house of Yahuah (Lord).* (Testaments of the Twelve Patriarchs 33:10) The return in the fifth week to the desolate country, to renew the house of Yahuah (the Lord), is the return Ezra records, when the chief of the fathers of Yahudah (Judah) and Benjamin, with the priests and Levites, rose up to build the house in Jerusalem.",
+     "member_note": "Ezra 1:5 — *to go up to build the house of Yahuah (LORD) which is in Jerusalem.* The return that renewed the house.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 11,
+     "tgt_edition": "canon",
+     "tgt_book": "malachi",
+     "tgt_ch": 2,
+     "tgt_vn": 8,
+     "note": "Malachi 2:8 — *But ye are departed out of the way; ye have caused many to stumble at the law; ye have corrupted the covenant of Levi, saith Yahuah Tseva'ot (LORD of hosts).* *And in the seventh week shall come priests, (who are) idolaters, adulterers, lovers of money, proud, lawless, lascivious, abusers of children and beasts.* (Testaments of the Twelve Patriarchs 33:11) Levi's seventh week brings priests who are idolaters, lovers of money, and lawless. Malachi charged the priests of his own day with the same departure: they had left the way and caused many to stumble at the law. The fault in both is the priests leaving the law, never the law.",
+     "member_note": "Malachi 2:8 — *ye have corrupted the covenant of Levi.* The priesthood corrupted by its own priests.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-33-seventy-weeks-and-the-priesthood-of-levi",
+    "title": "Seventy weeks, and the priesthood of Levi",
+    "summary_md": "Levi pairs the seventy weeks with the priesthood and walks through the priests jubilee by jubilee, the first great, the later ones sorrowful, the seventh full of pollution. Daniel's weeks and the Testament's jubilees are two different things set side by side, and each is read in its own book.\n\n*And whereas ye have heard concerning the seventy weeks, hear also concerning the priesthood.* (Testaments of the Twelve Patriarchs 33:1)\n\nDaniel sets the weeks upon his people and upon their holy city, and Levi turns straight from the weeks to the priests, who were the keepers of that city.\n\n*Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy.* (Daniel 9:24)\n\nThe first priest in Levi's scheme speaks to Elohim (God) as to a father, and Malachi remembers the true priest in the same light, as a man who kept the law of truth and walked with Yahuah in peace.\n\n*The law of truth was in his mouth, and iniquity was not found in his lips: he walked with me in peace and equity, and did turn many away from iniquity.* (Malachi 2:6)\n\nThen the seventh week brings priests who are idolaters, lovers of money, and lawless, and the prophet Malachi had named that same decline in his own day.\n\n*And in the seventh week shall come priests, (who are) idolaters, adulterers, lovers of money, proud, lawless, lascivious, abusers of children and beasts.* (Testaments of the Twelve Patriarchs 33:11)\n\n*But ye are departed out of the way; ye have caused many to stumble at the law; ye have corrupted the covenant of Levi, saith Yahuah Tseva'ot (LORD of hosts).* (Malachi 2:8)\n\nIn both the failure is that the priests left the way and the law, and the law stands as the measure by which the failure is seen. The bracketed words in the second verse are marked in the text as an addition, and the thread leans on none of them.",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 11,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 33:2 ends with a bracketed line about the priest arising for the salvation of the world; it is marked off in the text itself and the notes do not build on it. The jubilee scheme of priests in 33:2-11 is the Testament's own and is not read as an interpretation of Daniel 9."
+  },
+  {
+   "ch": 37,
+   "cards": [
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "psalms",
+     "tgt_ch": 44,
+     "tgt_vn": 3,
+     "note": "Psalm 44:3 — *For they got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them.* *And Yahuah (Lord) showed me favour in all my works both in the field and in the house.* (Testaments of the Twelve Patriarchs 37:1) Yahudah (Judah) says Yahuah (the Lord) showed him favour in all his works, and the psalm says where all such strength comes from: not their own sword, not their own arm, but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them.",
+     "member_note": "Psalm 44:3 — *because thou hadst a favour unto them.* Where the strength of the field really comes from.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 4,
+     "tgt_edition": "canon",
+     "tgt_book": "1-samuel",
+     "tgt_ch": 17,
+     "tgt_vn": 37,
+     "note": "1 Samuel 17:37 — *David said moreover, Yahuah (LORD) that delivered me out of the paw of the lion, and out of the paw of the bear, he will deliver me out of the hand of this Philistine. And Saul said unto David, Go, and Yahuah (LORD) be with thee.* *I slew a lion and plucked a kid out of its mouth. I took a bear by its paw and hurled it down the cliff, and it was crushed.* (Testaments of the Twelve Patriarchs 37:4) Yahudah (Judah) tells of taking a bear by the paw and slaying a lion, and David, facing Goliath, speaks of Yahuah (the LORD) who delivered him out of the paw of the lion and out of the paw of the bear. Both men tell of strength against the beasts, and David puts the credit where Yahudah (Judah) does in the first verse of this chapter, with Yahuah.",
+     "member_note": "1 Samuel 17:37 — *Yahuah (LORD) that delivered me out of the paw of the lion, and out of the paw of the bear.* David names who delivered him.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 4,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 49,
+     "tgt_vn": 9,
+     "note": "Genesis 49:9 — *Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* *I slew a lion and plucked a kid out of its mouth. I took a bear by its paw and hurled it down the cliff, and it was crushed.* (Testaments of the Twelve Patriarchs 37:4) Jacob's blessing calls this son a lion's whelp, the very beast the Testament has him fighting. The boyhood tale and the father's blessing point at the same man.",
+     "member_note": "Genesis 49:9 — *Yahudah (Judah) is a lion’s whelp.* Jacob's word over the son of the lion.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-37-strength-against-the-lion-and-the-bear",
+    "title": "Strength against the lion and the bear, and whose strength it was",
+    "summary_md": "It ain't new. Yahudah (Judah) opens his story of strength by saying Yahuah (the Lord) showed him favour in all his works, and then tells of the hind, the lion, the bear, and the leopard. The feats are his to tell, and the canon had already given the order in which to hear them: the favour first, and the One who gave it.\n\n*And Yahuah (Lord) showed me favour in all my works both in the field and in the house.* (Testaments of the Twelve Patriarchs 37:1)\n\nThe psalmist says it plainly, that no land was won and no deliverance came by their own sword or arm, but by the right hand of Yahuah and the light of his countenance. The strength of the field is a strength given.\n\n*For they got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them.* (Psalm 44:3)\n\nThe tale of the lion and the bear belongs to a long line of such tales, and the best known is David's. When David stood before Saul he spoke of the beasts he had slain and then turned at once to the One who had delivered him out of their paws.\n\n*I slew a lion and plucked a kid out of its mouth. I took a bear by its paw and hurled it down the cliff, and it was crushed.* (Testaments of the Twelve Patriarchs 37:4)\n\n*David said moreover, Yahuah (LORD) that delivered me out of the paw of the lion, and out of the paw of the bear, he will deliver me out of the hand of this Philistine. And Saul said unto David, Go, and Yahuah (LORD) be with thee.* (1 Samuel 17:37)\n\nJacob, many years after, blessed this son and chose for him the picture of the lion. The boyhood tale and the father's blessing point at the same man, and the strength was real because the line it ran in had been promised before the tale was told.\n\n*Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9)",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 7,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 37:2-7 is a boast of Judah's prowess in the field; the notes set the psalmist and David beside it, who give the credit to Yahuah, and do not endorse or deny the feats themselves."
+  },
+  {
+   "ch": 38,
+   "cards": [
+    {
+     "src_vn": 3,
+     "tgt_edition": "jasher",
+     "tgt_book": "jasher",
+     "tgt_ch": 37,
+     "tgt_vn": 32,
+     "note": "Jasher 37:32 — *And Judah took up a large stone from the ground, and its weight was sixty shekels, and Judah ran toward Jashub, and with the stone struck him on his shield, that Jashub was stunned with the blow, and fell off from his horse to the ground.* *Achor the king] a man of giant stature 'I found', hurling javelins before and behind as he sat on horseback, and I took up a stone of sixty pounds weight, and hurled it and smote his horse, and killed it.* (Testaments of the Twelve Patriarchs 38:3) Yahudah (Judah) takes up a stone of sixty pounds weight and smites the giant's horse; Jasher tells the same kind of fight, with a stone of sixty shekels thrown by Judah at a king on horseback. The Testament and Jasher are telling one battle from two sides.",
+     "member_note": "Jasher 37:32 — *Judah took up a large stone from the ground, and its weight was sixty shekels.* The same stone the Testament weighs at sixty.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 7,
+     "tgt_edition": "canon",
+     "tgt_book": "deuteronomy",
+     "tgt_ch": 3,
+     "tgt_vn": 11,
+     "note": "Deuteronomy 3:11 — *For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron; is it not in Rabbath of the children of Ammon? nine cubits was the length thereof, and four cubits the breadth of it, after the cubit of a man.* *And Jacob my father slew 'Beelesath, king' of all the kings, a giant in strength, twelve cubits high.* (Testaments of the Twelve Patriarchs 38:7) The Testament has a giant king twelve cubits high, taller than Og king of Bashan, whose iron bedstead was nine cubits long, and whom the Torah calls the last of the remnant of giants. The size in the Testament is the storyteller's, and the plain scripture is the one that sets the measure.",
+     "member_note": "Deuteronomy 3:11 — *only Og king of Bashan remained of the remnant of giants.* The measure of the giants the Torah remembers.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 10,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 48,
+     "tgt_vn": 16,
+     "note": "Genesis 48:16 — *The Angel which redeemed me from all evil, bless the lads; and let my name be named on them, and the name of my fathers Abraham and Isaac; and let them grow into a multitude in the midst of the earth.* *For he saw in a vision 'concerning me' that an angel of might followed me everywhere, that I should not be overcome.* (Testaments of the Twelve Patriarchs 38:10) Jacob dreams of an angel of might who followed Yahudah (Judah) everywhere so that he could not be overcome, and at the end of his life Jacob speaks of the Angel which redeemed him from all evil. The father who sees an angel following his son is the same who blessed with that Angel's name.",
+     "member_note": "Genesis 48:16 — *The Angel which redeemed me from all evil.* The Angel who followed Jacob and his house.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-38-the-giant-kings-and-the-angel-that-followed-judah",
+    "title": "The giant kings, and the angel that followed Judah",
+    "summary_md": "Yahudah (Judah) tells of two Canaanite kings in armour, a giant who hurled javelins from horseback, and a king twelve cubits high whom his father slew, and he ends by saying an angel of might followed him. The scripture beside it measures the giants and names the Angel.\n\n*Achor the king] a man of giant stature 'I found', hurling javelins before and behind as he sat on horseback, and I took up a stone of sixty pounds weight, and hurled it and smote his horse, and killed it.* (Testaments of the Twelve Patriarchs 38:3)\n\nJasher tells the stone in the same way, a stone of sixty weight thrown by Judah at a king on a horse. The Testament and the book of Jasher are two memories of one day.\n\n*And Judah took up a large stone from the ground, and its weight was sixty shekels, and Judah ran toward Jashub, and with the stone struck him on his shield, that Jashub was stunned with the blow, and fell off from his horse to the ground.* (Jasher 37:32)\n\nThe giants of the Testament are measured against the one giant whose size the Torah gives. Moses said Og alone remained of the remnant of giants, and that his iron bedstead was nine cubits long.\n\n*For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron; is it not in Rabbath of the children of Ammon? nine cubits was the length thereof, and four cubits the breadth of it, after the cubit of a man.* (Deuteronomy 3:11)\n\nThe chapter ends with the quiet reason the brothers lived through it all. Jacob, who in the Testament dreams of the angel, was the man who at the end of his life spoke of the Angel which redeemed him from all evil.\n\n*The Angel which redeemed me from all evil, bless the lads; and let my name be named on them, and the name of my fathers Abraham and Isaac; and let them grow into a multitude in the midst of the earth.* (Genesis 48:16)",
+    "anchor_start_vn": 3,
+    "anchor_end_vn": 10,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 39,
+   "cards": [
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "joshua",
+     "tgt_ch": 23,
+     "tgt_vn": 10,
+     "note": "Joshua 23:10 — *One man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you, as he hath promised you.* *And in the south there came upon us a greater war than that in Shechem; and I joined in battle array with my brethren, and pursued a thousand men, and slew of them two hundred men and four kings.* (Testaments of the Twelve Patriarchs 39:1) Yahudah (Judah) pursues a thousand men, and Joshua tells Yashar'el (Israel) that one man of them shall chase a thousand, and he says why: Yahuah Elohaychem (the LORD your God), he it is that fighteth for you. The thousand put to flight is promised in scripture and is not credited to the man.",
+     "member_note": "Joshua 23:10 — *One man of you shall chase a thousand.* The promise behind a thousand put to flight.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "jasher",
+     "tgt_book": "jasher",
+     "tgt_ch": 38,
+     "tgt_vn": 14,
+     "note": "Jasher 38:14 — *And the sons of Jacob came to the city and saw, and behold there was another wall to the city, and they sought for the gate of the wall and could not find it, and Judah sprang upon the top of the wall, and Simeon and Levi followed him, and they all three descended from the wall into the city.* *And I went up upon the wall, and I slew four mighty men.* (Testaments of the Twelve Patriarchs 39:2) Yahudah (Judah) goes up on the wall and slays four mighty men, and Jasher tells of the same leap: Judah sprang upon the top of the wall, and Simeon and Levi followed him and descended into the city. The wall in the Testament is a wall that Jasher remembers.",
+     "member_note": "Jasher 38:14 — *Judah sprang upon the top of the wall.* The same leap over a wall, remembered in Jasher.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 3,
+     "tgt_edition": "canon",
+     "tgt_book": "joshua",
+     "tgt_ch": 11,
+     "tgt_vn": 10,
+     "note": "Joshua 11:10 — *And Joshua at that time turned back, and took Hazor, and smote the king thereof with the sword: for Hazor beforetime was the head of all those kingdoms.* *And so we captured Hazor, and took all the spoil.* (Testaments of the Twelve Patriarchs 39:3) The Testament says they captured Hazor and took all the spoil, and Joshua says that Hazor beforetime was the head of all those kingdoms, and that Joshua took it and smote its king. The city bears the same name in both, and an age separates the two tellings; nothing here rests on settling them.",
+     "member_note": "Joshua 11:10 — *Hazor beforetime was the head of all those kingdoms.* The greatest of the Canaanite cities.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-39-a-thousand-chased-and-hazor-taken",
+    "title": "A thousand chased, and Hazor taken",
+    "summary_md": "In the south a greater war than the one at Shechem comes upon them, and Yahudah (Judah) tells of pursuing a thousand men, going up on the wall, and taking Hazor. The scripture beside it says who fights for the sons of Yashar'el (Israel).\n\n*And in the south there came upon us a greater war than that in Shechem; and I joined in battle array with my brethren, and pursued a thousand men, and slew of them two hundred men and four kings.* (Testaments of the Twelve Patriarchs 39:1)\n\nThe thousand put to flight is a promise before it is a boast, and Joshua says it to the people in plain words. One man of them should chase a thousand because Yahuah Elohaychem (the LORD your God) was the one fighting for them.\n\n*One man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you, as he hath promised you.* (Joshua 23:10)\n\nJasher tells the wall in its own account, with Judah first on the top and his brothers following him down into the city.\n\n*And the sons of Jacob came to the city and saw, and behold there was another wall to the city, and they sought for the gate of the wall and could not find it, and Judah sprang upon the top of the wall, and Simeon and Levi followed him, and they all three descended from the wall into the city.* (Jasher 38:14)\n\nHazor is a city Joshua knew as the head of the kingdoms of the north. The Testament's Hazor falls in the days of the patriarchs and Joshua's in the days of the conquest, and this thread does not settle which is which; it lets the reader see that the promise of the thousand was Yahuah's own.\n\n*And Joshua at that time turned back, and took Hazor, and smote the king thereof with the sword: for Hazor beforetime was the head of all those kingdoms.* (Joshua 11:10)",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 3,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 40,
+   "cards": [
+    {
+     "src_vn": 3,
+     "tgt_edition": "canon",
+     "tgt_book": "joshua",
+     "tgt_ch": 8,
+     "tgt_vn": 5,
+     "note": "Joshua 8:5 — *And I, and all the people that are with me, will approach unto the city: and it shall come to pass, when they come out against us, as at the first, that we will flee before them,* *And they that were upon the wall, thinking that we were alone, 'were drawn down' against us.* (Testaments of the Twelve Patriarchs 40:3) The men on the wall are drawn down against the brothers, thinking they are alone, while the others climb in behind. At Ai, Joshua told his people to flee before the men of the city until the city was emptied and the ambush could rise: the same plan of drawing the defenders out.",
+     "member_note": "Joshua 8:5 — *when they come out against us, as at the first, that we will flee before them.* The plan of drawing the city out.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 5,
+     "tgt_edition": "canon",
+     "tgt_book": "joshua",
+     "tgt_ch": 8,
+     "tgt_vn": 8,
+     "note": "Joshua 8:8 — *And it shall be, when ye have taken the city, that ye shall set the city on fire: according to the commandment of Yahuah (LORD) shall ye do. See, I have commanded you.* *And we took it with the edge of the sword. And as for those who had taken refuge in the tower, we set fire to the tower and took both it and them.* (Testaments of the Twelve Patriarchs 40:5) The brothers set fire to the tower and take both it and the men in it. In scripture a city set on fire was done at a word from Yahuah (the LORD), and the Testament tells the burning of its tower without claiming one; the reader can see the difference.",
+     "member_note": "Joshua 8:8 — *according to the commandment of Yahuah (LORD) shall ye do.* A burning done at a word.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "jasher",
+     "tgt_book": "jasher",
+     "tgt_ch": 38,
+     "tgt_vn": 30,
+     "note": "Jasher 38:30 — *And the number of the people that were upon the wall was about four hundred men, and when the sons of Jacob saw that the men of the city would not let them open the gates of the city, they sprang and ascended the top of the wall, and Judah went up first to the east part of the city.* *But I and Gad approached on the east side of the city, and Reuben and Levi on the west.* (Testaments of the Twelve Patriarchs 40:2) Yahudah (Judah) tells of dividing the approach, himself and Gad on the east and Reuben and Levi on the west. Jasher tells of the same kind of assault on a walled city, with the brothers going up on different sides and Judah first on the east.",
+     "member_note": "Jasher 38:30 — *Judah went up first to the east part of the city.* Judah first on the east side of a walled city.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 6,
+     "tgt_edition": "jasher",
+     "tgt_book": "jasher",
+     "tgt_ch": 39,
+     "tgt_vn": 2,
+     "note": "Jasher 39:2 — *So all that remained in the city of Tapnach came out to fight with the sons of Jacob, and they thought to retake from them the booty and the spoil which they had captured from Chazar and Sarton.* *And as we were departing the men of Tappuah seized our spoil, and seeing (this) we fought with them.* (Testaments of the Twelve Patriarchs 40:6) The men of Tappuah seize the spoil as the brothers depart, and Jasher tells how all who remained in the city of Tapnach came out to retake the spoil that had been captured from Chazar and Sarton.",
+     "member_note": "Jasher 39:2 — *they thought to retake from them the booty and the spoil.* The men of the city coming out to retake the spoil.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-40-drawn-down-from-the-wall-and-the-tower-burned",
+    "title": "Drawn down from the wall, and the tower burned",
+    "summary_md": "Yahudah (Judah) tells of a walled city that threatened them with death, and of a plan that drew the men off the wall while his brothers climbed in on both sides. The plan is an old one in scripture, and so is the fire that ends it.\n\n*And they that were upon the wall, thinking that we were alone, 'were drawn down' against us.* (Testaments of the Twelve Patriarchs 40:3)\n\nAt Ai, Joshua told the ambush to lie behind the city and the people to flee before the men who came out, until the city was drawn open. The Testament's men on the wall, thinking the brothers alone, are drawn down in the same way.\n\n*And I, and all the people that are with me, will approach unto the city: and it shall come to pass, when they come out against us, as at the first, that we will flee before them,* (Joshua 8:5)\n\nThen the brothers take the city and set fire to the tower with the men in it. In Joshua the fire is the commandment of Yahuah (the LORD), a burning the people were told to do, and the Testament tells its tower as a deed of war with no such word given.\n\n*And it shall be, when ye have taken the city, that ye shall set the city on fire: according to the commandment of Yahuah (LORD) shall ye do. See, I have commanded you.* (Joshua 8:8)\n\nJasher gives the approach in its own telling, with Judah first on the east side of a walled city and his brothers on the other sides, and it tells too of the men of Tapnach coming out to retake the spoil. The fighting does not end with the walls; it goes on over what was carried away.",
+    "anchor_start_vn": 2,
+    "anchor_end_vn": 7,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 41,
+   "cards": [
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 38,
+     "tgt_vn": 5,
+     "note": "Genesis 38:5 — *And she yet again conceived, and bare a son; and called his name Shelah: and he was at Chezib, when she bare him.* *And when I was at the waters of Kozeba, the men of 'Jobel' came against us to battle.* (Testaments of the Twelve Patriarchs 41:1) Yahudah (Judah) fights at the waters of Kozeba, and Genesis says that his son Shelah was born at Chezib, which appears to be the same place by another spelling; the descendants of Shelah are later called *the men of Chozeba* (1 Chronicles 4:22). The place is a Judahite place in both tellings.",
+     "member_note": "Genesis 38:5 — *he was at Chezib, when she bare him.* The place the Testament writes as Kozeba.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 4,
+     "tgt_edition": "canon",
+     "tgt_book": "2-samuel",
+     "tgt_ch": 11,
+     "tgt_vn": 21,
+     "note": "2 Samuel 11:21 — *Who smote Abimelech the son of Jerubbesheth? did not a woman cast a piece of a millstone upon him from the wall, that he died in Thebez? why went ye nigh the wall? then say thou, Thy servant Uriah the Hittite is dead also.* *And when we came to their city their women rolled upon us stones from the brow of the hill on which the city stood.* (Testaments of the Twelve Patriarchs 41:4) The women of the city roll stones down on the brothers from the hill, and scripture knows what a stone from above can do to a man who comes near a wall: a woman cast a piece of a millstone upon Abimelech from the wall at Thebez.",
+     "member_note": "2 Samuel 11:21 — *did not a woman cast a piece of a millstone upon him from the wall.* What a stone from the wall can do.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 4,
+     "tgt_edition": "jasher",
+     "tgt_book": "jasher",
+     "tgt_ch": 39,
+     "tgt_vn": 9,
+     "note": "Jasher 39:9 — *And the sons of Jacob fought with them in the city, and all their women were engaged in slinging against the sons of Jacob, and the combat was very severe amongst them the whole of that day till evening.* *And when we came to their city their women rolled upon us stones from the brow of the hill on which the city stood.* (Testaments of the Twelve Patriarchs 41:4) Jasher tells the same thing of Arbelan, where all their women were engaged in slinging against the sons of Jacob and the fight was severe the whole of that day.",
+     "member_note": "Jasher 39:9 — *all their women were engaged in slinging against the sons of Jacob.* Women defending a city by slinging from above.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-41-women-on-the-wall-and-the-waters-of-kozeba",
+    "title": "Women on the wall, and the waters of Kozeba",
+    "summary_md": "Yahudah (Judah) meets the men of Jobel at the waters of Kozeba, the men of Makir who came to take his spoil, and the women of a city on a hill who rolled stones down upon him. The places and the fights are old, and the canon and Jasher both remember pieces of them.\n\n*And when I was at the waters of Kozeba, the men of 'Jobel' came against us to battle.* (Testaments of the Twelve Patriarchs 41:1)\n\nKozeba seems to be the Chezib where Genesis says Shelah was born, a place that belonged to Yahudah's (Judah's) own house. The later list of Shelah's sons ends with *the men of Chozeba* (1 Chronicles 4:22), and the Testament's battle is fought on the ground of his own family.\n\n*And she yet again conceived, and bare a son; and called his name Shelah: and he was at Chezib, when she bare him.* (Genesis 38:5)\n\nThe stones from the hill have a long memory too. In scripture a woman on a wall was known to end a king's war with one millstone, and the Testament's women on the brow of the hill did the same to men who came too near.\n\n*And when we came to their city their women rolled upon us stones from the brow of the hill on which the city stood.* (Testaments of the Twelve Patriarchs 41:4)\n\n*Who smote Abimelech the son of Jerubbesheth? did not a woman cast a piece of a millstone upon him from the wall, that he died in Thebez? why went ye nigh the wall? then say thou, Thy servant Uriah the Hittite is dead also.* (2 Samuel 11:21)\n\nAnd Jasher tells of a city whose women went out and slung against the sons of Jacob the whole day. The three tellings agree that a city could be defended by women on the wall, and that the brothers did not take it easily.\n\n*And the sons of Jacob fought with them in the city, and all their women were engaged in slinging against the sons of Jacob, and the combat was very severe amongst them the whole of that day till evening.* (Jasher 39:9)",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 5,
+    "tier": "extras"
+   },
+   "flag": ""
+  },
+  {
+   "ch": 42,
+   "cards": [
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "joshua",
+     "tgt_ch": 9,
+     "tgt_vn": 4,
+     "note": "Joshua 9:4 — *They did work wilily, and went and made as if they had been ambassadors, and took old sacks upon their asses, and wine bottles, old, and rent, and bound up;* *I, therefore, and Dan feigned ourselves to be Amorites, and as allies went into their city.* (Testaments of the Twelve Patriarchs 42:2) Yahudah (Judah) and Dan feign themselves to be Amorites and are let in as allies. Scripture tells of a pretending of this kind from the other side: the Gibeonites worked wilily and made as if they had been ambassadors, and it was the men of Yashar'el (Israel) who were taken in. The Testament tells the trick as a victory, and the reader can set it beside the Gibeonite one.",
+     "member_note": "Joshua 9:4 — *They did work wilily, and went and made as if they had been ambassadors.* A stratagem seen from the other side.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 9,
+     "tgt_edition": "jubilees",
+     "tgt_book": "jubilees",
+     "tgt_ch": 34,
+     "tgt_vn": 8,
+     "note": "Jubilees 34:8 — *And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land, and he built Rôbêl and Tamnâtârês* *And I built Thamna, and my father built Rabael.* (Testaments of the Twelve Patriarchs 42:9) Yahudah (Judah) says he built Thamna and his father built Rabael, and Jubilees knows the same two places, Robel and Tamnatares, built at the end of the war with the kings of the Amorites. Jubilees gives the building to Jacob where the Testament shares it between father and son.",
+     "member_note": "Jubilees 34:8 — *and he built Rôbêl and Tamnâtârês* The same two places the Testament names as built after the war.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 11,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 35,
+     "tgt_vn": 5,
+     "note": "Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* *And the Canaanites feared me and my brethren.* (Testaments of the Twelve Patriarchs 42:11) The Canaanites feared Yahudah (Judah) and his brothers, and Genesis says why: the terror of Elohim (God) was upon the cities round about, and they did not pursue after the sons of Jacob. The fear is Elohim's, not the brothers'.",
+     "member_note": "Genesis 35:5 — *the terror of Elohim (God) was upon the cities that were round about them.* Why the cities left them alone.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 1,
+     "tgt_edition": "jasher",
+     "tgt_book": "jasher",
+     "tgt_ch": 39,
+     "tgt_vn": 14,
+     "note": "Jasher 39:14 — *And on the fifth day the sons of Jacob heard that the people of Gaash had gathered against them to battle, because they had slain their king and their captains, for there had been fourteen captains in the city of Gaash, and the sons of Jacob had slain them all in the first battle.* *And the next day it was told us that the king of the city of Gaash with a mighty host was coming against us.* (Testaments of the Twelve Patriarchs 42:1) The king of Gaash comes against them with a mighty host, and Jasher tells that on the fifth day the sons of Jacob heard that the people of Gaash had gathered against them to battle, because they had slain their king and their captains. The Testament and Jasher both begin the day at Gaash.",
+     "member_note": "Jasher 39:14 — *the people of Gaash had gathered against them to battle.* Gaash gathering against the sons of Jacob.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-42-the-gates-opened-by-night-and-thamna-built",
+    "title": "The gates opened by night, and Thamna built",
+    "summary_md": "Yahudah (Judah) tells of Gaash and its mighty host, of how he and Dan pretended to be Amorites and opened the gates to their brethren by night, of the war at Thamna, and of peace and tribute at the end. Jasher, Jubilees, and Genesis each hold a piece of it.\n\n*I, therefore, and Dan feigned ourselves to be Amorites, and as allies went into their city.* (Testaments of the Twelve Patriarchs 42:2)\n\nThe way in is by a pretending. Scripture knew pretending of this kind and records it from the other side, where it was the men of Yashar'el (Israel) who were deceived.\n\n*They did work wilily, and went and made as if they had been ambassadors, and took old sacks upon their asses, and wine bottles, old, and rent, and bound up;* (Joshua 9:4)\n\nAt the end Yahudah (Judah) says he built Thamna and his father built Rabael, and Jubilees remembers the same two places, Robel and Tamnatares, built at the end of the war with the kings of the Amorites.\n\n*And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land, and he built Rôbêl and Tamnâtârês* (Jubilees 34:8)\n\nThe reason the cities left them in peace is the one Genesis gives of the sons of Jacob, that the terror of Elohim (God) was upon the cities round about. The fear was Elohim's work and not the brothers'.\n\n*And the Canaanites feared me and my brethren.* (Testaments of the Twelve Patriarchs 42:11)\n\n*And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* (Genesis 35:5)",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 11,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 42:2-3 praises a stratagem of feigned friendship and a night betrayal; the notes set Joshua 9:4 beside it without endorsing or rebuking it beyond what scripture says."
+  },
+  {
+   "ch": 43,
+   "cards": [
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 38,
+     "tgt_vn": 2,
+     "note": "Genesis 38:2 — *And Yahudah (Judah) saw there a daughter of a certain Canaanite, whose name was Shuah; and he took her, and went in unto her.* *And when I went to him I saw Barsaba, king of Adullam; 'and he spake unto us', and he made us a feast; and when I was heated he gave me his daughter Bathshua to wife.* (Testaments of the Twelve Patriarchs 43:2) The Testament says Barsaba, king of Adullam, made a feast and gave Yahudah (Judah) his daughter Bathshua; Genesis says Yahudah (Judah) saw there a daughter of a certain Canaanite, Shuah, and took her. The two tellings differ on how the match was made, and Genesis is the simpler account.",
+     "member_note": "Genesis 38:2 — *Yahudah (Judah) saw there a daughter of a certain Canaanite, whose name was Shuah.* How Genesis tells the marriage.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 2,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 28,
+     "tgt_vn": 1,
+     "note": "Genesis 28:1 — *And Isaac called Jacob, and blessed him, and charged him, and said unto him, Thou shalt not take a wife of the daughters of Canaan.* *And when I went to him I saw Barsaba, king of Adullam; 'and he spake unto us', and he made us a feast; and when I was heated he gave me his daughter Bathshua to wife.* (Testaments of the Twelve Patriarchs 43:2) Yahudah (Judah) marries a Canaanite's daughter in this verse, and Isaac's charge to Jacob stands beside it in scripture: Thou shalt not take a wife of the daughters of Canaan. The Testament comes back to this matter itself in a later chapter.",
+     "member_note": "Genesis 28:1 — *Thou shalt not take a wife of the daughters of Canaan.* The charge the house of Jacob had been given.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 3,
+     "tgt_edition": "canon",
+     "tgt_book": "1-chronicles",
+     "tgt_ch": 2,
+     "tgt_vn": 3,
+     "note": "1 Chronicles 2:3 — *The sons of Yahudah (Judah); Er, and Onan, and Shelah: which three were born unto him of the daughter of Shua the Canaanitess. And Er, the firstborn of Yahudah (Judah), was evil in the sight of Yahuah (LORD); and he slew him.* *She bare me Er, and Onan, and Shelah; and two of them Yahuah (Lord) smote: for Shelah lived, and his children are ye.* (Testaments of the Twelve Patriarchs 43:3) Bathshua bears Er, Onan, and Shelah, and the Chronicles lists the same three sons, born of the daughter of Shua the Canaanitess, and says Er was evil in the sight of Yahuah (the LORD) and that he slew him. Two of the three were smitten, and Shelah lived.",
+     "member_note": "1 Chronicles 2:3 — *which three were born unto him of the daughter of Shua the Canaanitess.* The three sons of Yahudah's (Judah's) first marriage.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-43-the-adullamite-and-the-daughter-of-shua",
+    "title": "The Adullamite, and the daughter of Shua",
+    "summary_md": "Yahudah (Judah) turns from war to his household and says he had much cattle, that he went to the Adullamite Iram, that the king of Adullam gave him his daughter at a feast, and that she bare him Er, Onan, and Shelah, two of whom Yahuah (the Lord) smote. Genesis tells the same marriage and the same three sons, in fewer words.\n\n*And when I went to him I saw Barsaba, king of Adullam; 'and he spake unto us', and he made us a feast; and when I was heated he gave me his daughter Bathshua to wife.* (Testaments of the Twelve Patriarchs 43:2)\n\nGenesis says Yahudah (Judah) saw the daughter of a certain Canaanite, whose name was Shuah, and took her. The two tellings differ on how the match was made, and the thread rests on the simpler one.\n\n*And Yahudah (Judah) saw there a daughter of a certain Canaanite, whose name was Shuah; and he took her, and went in unto her.* (Genesis 38:2)\n\nIsaac's charge to Jacob stood in the house from the beginning, and it is the plain background to a marriage like this.\n\n*And Isaac called Jacob, and blessed him, and charged him, and said unto him, Thou shalt not take a wife of the daughters of Canaan.* (Genesis 28:1)\n\nThe Testament comes back to this matter itself in a later chapter, where he speaks of the daughters of Canaan.\n\n*She bare me Er, and Onan, and Shelah; and two of them Yahuah (Lord) smote: for Shelah lived, and his children are ye.* (Testaments of the Twelve Patriarchs 43:3)\n\nThe Chronicles list the same three sons and say they were born of the daughter of Shua the Canaanitess, and that Er was evil in the sight of Yahuah (the LORD). Shelah lived, and the line of Shelah is the line the Testament says is Yahudah's (Judah's) children.\n\n*The sons of Yahudah (Judah); Er, and Onan, and Shelah: which three were born unto him of the daughter of Shua the Canaanitess. And Er, the firstborn of Yahudah (Judah), was evil in the sight of Yahuah (LORD); and he slew him.* (1 Chronicles 2:3)",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 3,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 43:2 has the king of Adullam give his daughter at a feast; Genesis 38:2 has Judah see and take her. The two tellings of the marriage differ and the notes rest on Genesis."
+  },
+  {
+   "ch": 44,
+   "cards": [
+    {
+     "src_vn": 1,
+     "tgt_edition": "canon",
+     "tgt_book": "genesis",
+     "tgt_ch": 35,
+     "tgt_vn": 29,
+     "note": "Genesis 35:29 — *And Isaac gave up the ghost, and died, and was gathered unto his people, being old and full of days: and his sons Esau and Jacob buried him.* *And eighteen years my father abode at peace with his brother Esau, and his sons with us, after that we came from Mesopotamia, from Laban.* (Testaments of the Twelve Patriarchs 44:1) The Testament says Jacob abode at peace with Esau for eighteen years, and Genesis shows the two brothers together at the grave of their father: his sons Esau and Jacob buried him. The Testament, like Jubilees, tells what came after that peace broke.",
+     "member_note": "Genesis 35:29 — *his sons Esau and Jacob buried him.* The brothers at their father's burial.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 3,
+     "tgt_edition": "jubilees",
+     "tgt_book": "jubilees",
+     "tgt_ch": 38,
+     "tgt_vn": 2,
+     "note": "Jubilees 38:2 — *Then Jacob bent his bow and sent forth the arrow and struck Esau, his brother, (on his right breast) and slew him.* *And Jacob smote Esau with an arrow, and he was taken up wounded on Mount Seir, and as he went he died at Anoniram.* (Testaments of the Twelve Patriarchs 44:3) Jacob smites Esau with an arrow, and Jubilees tells it in the same way: Jacob bent his bow, sent forth the arrow, and struck Esau his brother, and slew him. The two books remember one war.",
+     "member_note": "Jubilees 38:2 — *Jacob bent his bow and sent forth the arrow and struck Esau, his brother.* The arrow that struck Esau, as Jubilees tells it.",
+     "tier": "extras"
+    },
+    {
+     "src_vn": 7,
+     "tgt_edition": "jubilees",
+     "tgt_book": "jubilees",
+     "tgt_ch": 38,
+     "tgt_vn": 12,
+     "note": "Jubilees 38:12 — *And Jacob sent word to his sons that they should make peace, and they made peace with them, and placed the yoke of servitude upon them, so that they paid tribute to Jacob and to his sons always.* *Then they asked from us terms of peace; and having taken counsel with our father, we received them as tributaries.* (Testaments of the Twelve Patriarchs 44:7) The sons of Esau ask for terms and are received as tributaries; Jubilees says Jacob sent word to his sons that they should make peace, and they placed the yoke of servitude upon them so that they paid tribute to Jacob and to his sons always.",
+     "member_note": "Jubilees 38:12 — *they paid tribute to Jacob and to his sons always.* Peace made, and tribute paid.",
+     "tier": "extras"
+    }
+   ],
+   "thread": {
+    "slug": "testaments-xii-44-esau-and-the-arrow-the-iron-city-and-the-tribute",
+    "title": "Esau and the arrow, the iron city, and the tribute",
+    "summary_md": "Yahudah (Judah) tells of eighteen years of peace between Jacob and Esau, then of Esau coming with a strong people, of the arrow that struck him, of an iron city taken with a ladder, and of peace and tribute until the famine sent them down into Egypt. Genesis and Jubilees hold the shape of the story, and the thread notes where each speaks.\n\n*And eighteen years my father abode at peace with his brother Esau, and his sons with us, after that we came from Mesopotamia, from Laban.* (Testaments of the Twelve Patriarchs 44:1)\n\nGenesis shows the two brothers side by side at the grave of their father, and nothing in the canon tells of a war after it. The Testament, like Jubilees, tells what came when the peace broke.\n\n*And Isaac gave up the ghost, and died, and was gathered unto his people, being old and full of days: and his sons Esau and Jacob buried him.* (Genesis 35:29)\n\nJubilees tells the arrow in the same way, as Jacob bent his bow and struck Esau his brother. Genesis says only that Esau dwelt in mount Seir, and the war stands between the burial and the dwelling.\n\n*And Jacob smote Esau with an arrow, and he was taken up wounded on Mount Seir, and as he went he died at Anoniram.* (Testaments of the Twelve Patriarchs 44:3)\n\n*Then Jacob bent his bow and sent forth the arrow and struck Esau, his brother, (on his right breast) and slew him.* (Jubilees 38:2)\n\nAt the end the brothers receive the sons of Esau as tributaries, and Jubilees says Jacob sent word that they should make peace, and they paid tribute to Jacob and to his sons always.\n\n*Then they asked from us terms of peace; and having taken counsel with our father, we received them as tributaries.* (Testaments of the Twelve Patriarchs 44:7)\n\n*And Jacob sent word to his sons that they should make peace, and they made peace with them, and placed the yoke of servitude upon them, so that they paid tribute to Jacob and to his sons always.* (Jubilees 38:12)",
+    "anchor_start_vn": 1,
+    "anchor_end_vn": 8,
+    "tier": "extras"
+   },
+   "flag": "Testaments of the Twelve Patriarchs 44:3 and Jubilees 38:2 have Jacob slay Esau; Genesis 35:29 shows both brothers burying Isaac and Genesis 36 has Esau in Seir, so the war is not found in the canon."
+  }
+ ],
+ "voice_read": "Claude Fable 5.1 — S495 Nov 8: read in full against the voice skill; the author's opener un-italicised in 6 summaries; cards stand"
+}

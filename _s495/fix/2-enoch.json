@@ -1,0 +1,130 @@
+{
+ "book": "2-enoch",
+ "edition": "pseudepigrapha",
+ "model": "claude-sonnet-5-5",
+ "card_tier": "free",
+ "draft_files": [
+  "/home/claude/s495/out/2-enoch_fixed.json"
+ ],
+ "gap_chapters": [
+  57
+ ],
+ "sort_band": 94000,
+ "cards": [
+  {
+   "src_ch": 57,
+   "src_vn": 1,
+   "tgt_edition": "canon",
+   "tgt_book": "genesis",
+   "tgt_ch": 49,
+   "tgt_vn": 1,
+   "note": "Genesis 49:1 — *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* *My child Methosalam, summon all your brethren and all your household and the elders of the people, that I may talk to them and depart, as is planned for me.* (2 Enoch 57:1) A father who knows his time is short gathers the whole household around him to speak before he goes, just as Jacob called his sons to his bed. Enoch's word is sent down through his son in the same way, so that what he has seen is not left unsaid.",
+   "member_note": "Genesis 49:1 — *Gather yourselves together, that I may tell you that which shall befall you in the last days.* Jacob's deathbed gathering of his sons is the pattern for Enoch's call to his household.",
+   "tier": "free",
+   "src_text": "My child Methosalam, summon all your brethren and all your household and the elders of the people, that I may talk to them and depart, as is planned for me.",
+   "tgt_text": "And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.",
+   "join_slug": null
+  },
+  {
+   "src_ch": 57,
+   "src_vn": 1,
+   "tgt_edition": "canon",
+   "tgt_book": "deuteronomy",
+   "tgt_ch": 31,
+   "tgt_vn": 28,
+   "note": "Deuteronomy 31:28 — *Gather unto me all the elders of your tribes, and your officers, that I may speak these words in their ears, and call heaven and earth to record against them.* *My child Methosalam, summon all your brethren and all your household and the elders of the people, that I may talk to them and depart, as is planned for me.* (2 Enoch 57:1) Moses also has the elders brought to him so that his last words are spoken in their hearing. In both places the elders of the people are summoned because what is about to be said is meant to be carried on after the speaker is gone.",
+   "member_note": "Deuteronomy 31:28 — *Gather unto me all the elders of your tribes, and your officers, that I may speak these words in their ears* Moses summons the elders before his departure, as Enoch has them summoned.",
+   "tier": "free",
+   "src_text": "My child Methosalam, summon all your brethren and all your household and the elders of the people, that I may talk to them and depart, as is planned for me.",
+   "tgt_text": "Gather unto me all the elders of your tribes, and your officers, that I may speak these words in their ears, and call heaven and earth to record against them.",
+   "join_slug": null
+  },
+  {
+   "src_ch": 57,
+   "src_vn": 2,
+   "tgt_edition": "canon",
+   "tgt_book": "deuteronomy",
+   "tgt_ch": 33,
+   "tgt_vn": 1,
+   "note": "Deuteronomy 33:1 — *And this is the blessing, wherewith Moses the man of Elohim (God) blessed the children of Yashar'el (Israel) before his death.* *And Methosalam made haste, and summoned his brethren, Regim, Riman, Uchan, Chermion, Gaidad, and all the elders of the people before the face of his father Enoch; and he blessed them, and said to them:* (2 Enoch 57:2) Once the people are assembled, a blessing is spoken over them before the departing father's farewell words begin. Moses blessed the children of Yashar'el (Israel) in the same way at the end of his life.",
+   "member_note": "Deuteronomy 33:1 — *And this is the blessing, wherewith Moses the man of Elohim (God) blessed the children of Yashar'el (Israel) before his death.* The blessing spoken over the gathered people before a father's death, as Methuselah blesses the elders before Enoch speaks.",
+   "tier": "free",
+   "src_text": "And Methosalam made haste, and summoned his brethren, Regim, Riman, Uchan, Chermion, Gaidad, and all the elders of the people before the face of his father Enoch; and he blessed them, and said to them:",
+   "tgt_text": "And this is the blessing, wherewith Moses the man of Elohim (God) blessed the children of Yashar'el (Israel) before his death.",
+   "join_slug": null
+  },
+  {
+   "src_ch": 57,
+   "src_vn": 1,
+   "tgt_edition": "canon",
+   "tgt_book": "2-peter",
+   "tgt_ch": 1,
+   "tgt_vn": 14,
+   "note": "2 Peter 1:14 — *Knowing that shortly I must put off this my tabernacle, even as our Lord Yahusha HaMashiach (Lord Jesus Christ) hath shewed me.* *My child Methosalam, summon all your brethren and all your household and the elders of the people, that I may talk to them and depart, as is planned for me.* (2 Enoch 57:1) Peter also speaks of his departure as something known beforehand and arranged, and he goes on to say that he will take pains that his hearers can recall these things after his decease. Enoch's words, that he may talk to them and depart as is planned for him, sit in the same line.",
+   "member_note": "2 Peter 1:14 — *Knowing that shortly I must put off this my tabernacle* Peter, like Enoch, knows his departure is near and prepares those he leaves behind.",
+   "tier": "free",
+   "src_text": "My child Methosalam, summon all your brethren and all your household and the elders of the people, that I may talk to them and depart, as is planned for me.",
+   "tgt_text": "Knowing that shortly I must put off this my tabernacle, even as our Lord Yahusha HaMashiach (Lord Jesus Christ) hath shewed me.",
+   "join_slug": null
+  }
+ ],
+ "threads": [
+  {
+   "slug": "2-enoch-57-gather-the-elders-that-i-may-speak-and-depart",
+   "title": "Gather the elders, that I may speak and depart",
+   "summary_md": "Enoch, knowing his time has come, asks his son to bring the people together: *My child Methosalam, summon all your brethren and all your household and the elders of the people, that I may talk to them and depart, as is planned for me.* (2 Enoch 57:1) The son does as he is told: *And Methosalam made haste, and summoned his brethren, Regim, Riman, Uchan, Chermion, Gaidad, and all the elders of the people before the face of his father Enoch; and he blessed them, and said to them:* (2 Enoch 57:2)\n\nIt ain't new. The fathers of Yashar'el (Israel) did exactly this when their days drew to an end. *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* (Genesis 49:1) Moses, for the same purpose, had the elders of the tribes called to him: *Gather unto me all the elders of your tribes, and your officers, that I may speak these words in their ears, and call heaven and earth to record against them.* (Deuteronomy 31:28) When his words were done, the people were blessed: *And this is the blessing, wherewith Moses the man of Elohim (God) blessed the children of Yashar'el (Israel) before his death.* (Deuteronomy 33:1)\n\nThe apostles knew the same custom. Peter, near the end, wrote: *Knowing that shortly I must put off this my tabernacle, even as our Lord Yahusha HaMashiach (Lord Jesus Christ) hath shewed me.* (2 Peter 1:14)\n\nWhat stands out in all of these is one pattern the scriptures keep. The one who is about to go gathers the household and the elders, blesses them, and speaks what must be remembered, so that the word does not die with the man who carried it. Enoch's gathering belongs in that line, and the long farewell that follows is spoken in the hearing of the same assembled elders.",
+   "anchor_start_vn": 1,
+   "anchor_end_vn": 2,
+   "tier": "extras",
+   "sort_order": 94000,
+   "ch": 57
+  }
+ ],
+ "members": [
+  {
+   "thread_slug": "2-enoch-57-gather-the-elders-that-i-may-speak-and-depart",
+   "src_vn": 1,
+   "src_ch": 57,
+   "tgt_edition": "canon",
+   "tgt_book": "genesis",
+   "tgt_ch": 49,
+   "tgt_vn": 1,
+   "member_note": "Genesis 49:1 — *Gather yourselves together, that I may tell you that which shall befall you in the last days.* Jacob's deathbed gathering of his sons is the pattern for Enoch's call to his household.",
+   "sort_order": 1
+  },
+  {
+   "thread_slug": "2-enoch-57-gather-the-elders-that-i-may-speak-and-depart",
+   "src_vn": 1,
+   "src_ch": 57,
+   "tgt_edition": "canon",
+   "tgt_book": "deuteronomy",
+   "tgt_ch": 31,
+   "tgt_vn": 28,
+   "member_note": "Deuteronomy 31:28 — *Gather unto me all the elders of your tribes, and your officers, that I may speak these words in their ears* Moses summons the elders before his departure, as Enoch has them summoned.",
+   "sort_order": 2
+  },
+  {
+   "thread_slug": "2-enoch-57-gather-the-elders-that-i-may-speak-and-depart",
+   "src_vn": 2,
+   "src_ch": 57,
+   "tgt_edition": "canon",
+   "tgt_book": "deuteronomy",
+   "tgt_ch": 33,
+   "tgt_vn": 1,
+   "member_note": "Deuteronomy 33:1 — *And this is the blessing, wherewith Moses the man of Elohim (God) blessed the children of Yashar'el (Israel) before his death.* The blessing spoken over the gathered people before a father's death, as Methuselah blesses the elders before Enoch speaks.",
+   "sort_order": 3
+  },
+  {
+   "thread_slug": "2-enoch-57-gather-the-elders-that-i-may-speak-and-depart",
+   "src_vn": 1,
+   "src_ch": 57,
+   "tgt_edition": "canon",
+   "tgt_book": "2-peter",
+   "tgt_ch": 1,
+   "tgt_vn": 14,
+   "member_note": "2 Peter 1:14 — *Knowing that shortly I must put off this my tabernacle* Peter, like Enoch, knows his departure is near and prepares those he leaves behind.",
+   "sort_order": 4
+  }
+ ],
+ "joins": []
+}

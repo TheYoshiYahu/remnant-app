@@ -1,0 +1,1125 @@
+{
+ "edition": "pseudepigrapha",
+ "book": "2-baruch",
+ "one_way": false,
+ "gap_chapters": [
+  {
+   "ch": 33,
+   "verses": {
+    "1": "'Are these the commands which thy companion, Jeremiah the prophet, commanded thee, and said unto thee: \"Look to this people till I go and make ready the rest of the brethren in Babylon,",
+    "2": "against whom has gone forth the sentence that they should be led into captivity\"?",
+    "3": "And now if thou also forsakest us, it were good for us all to die before thee, and then that thou shouldst withdraw from us.'"
+   }
+  }
+ ],
+ "existing_threads": [
+  {
+   "slug": "2-baruch-1-chastened-not-cast-off",
+   "title": "Chastened, not cast off",
+   "anchor": "1:4",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-2-prayers-a-wall",
+   "title": "The righteous as a wall for the city",
+   "anchor": "2:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-3-name-of-israel-remembered",
+   "title": "Shall the name of Yashar'el be remembered?",
+   "anchor": "3:6",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-3-to-whom-the-law-explained",
+   "title": "To whom shall the law be explained?",
+   "anchor": "3:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-4-graven-on-the-palms",
+   "title": "Graven upon the palms of My hands",
+   "anchor": "4:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-4-paradise-shown-to-adam",
+   "title": "Prepared before Paradise, shown to Adam",
+   "anchor": "4:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-4-pattern-shown-to-moses",
+   "title": "The pattern shown to Moses on Sinai",
+   "anchor": "4:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-5-enemy-ministers-of-the-judge",
+   "title": "The enemy, ministers of the Judge",
+   "anchor": "5:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-5-gathered-to-weep-and-fast",
+   "title": "The elders gathered to weep and fast",
+   "anchor": "5:5",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-6-the-veil-and-the-holy-things",
+   "title": "The veil, the ark, the mercy-seat hidden",
+   "anchor": "6:7",
+   "member_count": 6
+  },
+  {
+   "slug": "2-baruch-6-committed-to-the-earth",
+   "title": "Earth, guard them until the last times",
+   "anchor": "6:8",
+   "member_count": 5
+  },
+  {
+   "slug": "2-baruch-7-lest-the-enemy-boast",
+   "title": "Lest the enemy boast over Zion",
+   "anchor": "7:1",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-8-keeper-has-forsaken-the-house",
+   "title": "He who kept the house has forsaken it",
+   "anchor": "8:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-8-zedekiah-bound-to-babylon",
+   "title": "Zedekiah bound, sent to Babylon",
+   "anchor": "8:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-9-rent-garments-fasted-seven-days",
+   "title": "They rent their garments and fasted seven days",
+   "anchor": "9:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-10-blessed-is-he-who-was-not-born",
+   "title": "Blessed is he who was not born",
+   "anchor": "10:6",
+   "member_count": 5
+  },
+  {
+   "slug": "2-baruch-10-barren-shall-rejoice",
+   "title": "The barren shall above all rejoice",
+   "anchor": "10:13",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-10-priests-cast-the-keys-to-heaven",
+   "title": "Priests, cast the keys of the sanctuary to heaven",
+   "anchor": "10:18",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-11-babylon-prospered-zion-desolate",
+   "title": "Babylon prospered and Zion desolate",
+   "anchor": "11:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-11-blessed-are-the-dead",
+   "title": "Blessed are the dead more than the living",
+   "anchor": "11:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-12-wrath-awaits-in-its-season",
+   "title": "The wrath awaits in its own season, held by reins",
+   "anchor": "12:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-12-prosperity-is-fleeting-shadow",
+   "title": "The noonday does not always burn",
+   "anchor": "12:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-13-drink-the-dregs-no-respect-of-persons",
+   "title": "Drink also of the dregs — the Lofty One who has no respect of persons",
+   "anchor": "13:8",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-13-chastened-that-they-be-sanctified",
+   "title": "He chastened His own sons that they be sanctified",
+   "anchor": "13:9",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-13-used-the-creation-unrighteously",
+   "title": "Ye have used the creation unrighteously",
+   "anchor": "13:11",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-14-who-will-comprehend-thy-judgement",
+   "title": "Who will comprehend Thy judgement?",
+   "anchor": "14:8",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-14-made-like-a-breath",
+   "title": "We have all been made like a breath",
+   "anchor": "14:10",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-14-righteous-have-works-in-treasuries",
+   "title": "The righteous have a store of works in treasuries",
+   "anchor": "14:12",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-14-world-made-on-account-of-man",
+   "title": "The world was made on account of man",
+   "anchor": "14:17",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-15-law-gives-understanding-of-judgement",
+   "title": "Man understands judgement only by the law",
+   "anchor": "15:5",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-15-strife-now-a-crown-with-glory",
+   "title": "This world a strife, that to come a crown of glory",
+   "anchor": "15:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-16-years-few-and-evil",
+   "title": "The years of this time are few and evil",
+   "anchor": "16:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-17-adam-brought-death",
+   "title": "Adam brought death into the world",
+   "anchor": "17:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-17-moses-lighted-a-lamp",
+   "title": "Moses lighted a lamp for the nation",
+   "anchor": "17:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-18-few-walk-in-the-light",
+   "title": "Few imitated the light of the lamp",
+   "anchor": "18:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-19-life-and-death-set-before-them",
+   "title": "Life and death set before them, heaven and earth as witness",
+   "anchor": "19:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-19-the-consummation-not-the-beginning",
+   "title": "The consummation, not the beginning, must be considered",
+   "anchor": "19:5",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-20-zion-taken-that-the-end-may-hasten",
+   "title": "Zion taken that the end may speedily come",
+   "anchor": "20:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-20-seal-it-in-thy-heart",
+   "title": "Hold fast and seal the command in the heart",
+   "anchor": "20:3",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-21-who-calls-the-things-that-are-not",
+   "title": "He who called into being that which did not exist",
+   "anchor": "21:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-21-hosts-that-stand-before-thee",
+   "title": "The countless hosts that stand before the throne",
+   "anchor": "21:6",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-21-who-quickens-the-dead",
+   "title": "Let the treasuries of souls restore the dead",
+   "anchor": "21:23",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-21-they-who-think-thy-longsuffering-weakness",
+   "title": "His longsuffering mistaken for weakness",
+   "anchor": "21:19",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-22-the-measure-must-be-filled",
+   "title": "The work must be completed before its fruit",
+   "anchor": "22:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-23-adam-sinned-and-the-number-was-numbered",
+   "title": "Adam sinned, and the number of souls was numbered",
+   "anchor": "23:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-23-my-redemption-has-drawn-nigh",
+   "title": "My redemption has drawn nigh",
+   "anchor": "23:6",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-24-the-books-shall-be-opened",
+   "title": "The books opened and the treasuries of righteousness",
+   "anchor": "24:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-24-the-longsuffering-of-the-most-high",
+   "title": "The longsuffering of the Most High through all generations",
+   "anchor": "24:2",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-25-when-they-abandon-hope-the-time-awakes",
+   "title": "The sign in the end of days — tribulation, and then the time awakes",
+   "anchor": "25:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-26-how-long-shall-the-tribulation-continue",
+   "title": "How long shall that tribulation continue?",
+   "anchor": "26:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-27-the-twelve-parts-of-the-woes",
+   "title": "The time divided into twelve parts — commotions, the sword, famine, earthquakes",
+   "anchor": "27:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-27-the-sword-and-the-fall-by-death",
+   "title": "The sending of the sword and the fall of many by death",
+   "anchor": "27:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-27-this-is-the-consummation-of-the-times",
+   "title": "The parts mingle so men know not it is the consummation",
+   "anchor": "27:14",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-28-whosoever-understandeth-shall-be-wise",
+   "title": "Whosoever understandeth shall then be wise",
+   "anchor": "28:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-28-whole-earth-or-one-place",
+   "title": "Will the whole earth experience these things?",
+   "anchor": "28:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-29-the-messiah-shall-begin-to-be-revealed",
+   "title": "The Messiah shall then begin to be revealed",
+   "anchor": "29:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-29-behemoth-and-leviathan-given-for-food",
+   "title": "Behemoth and Leviathan given for food at the great feast",
+   "anchor": "29:4",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-29-the-earth-yields-ten-thousandfold",
+   "title": "The earth shall yield ten thousandfold",
+   "anchor": "29:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-29-the-treasury-of-manna-descends-again",
+   "title": "The treasury of manna shall descend again",
+   "anchor": "29:8",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-30-the-messiah-returns-in-glory",
+   "title": "When the advent of the Messiah is fulfilled, He returns in glory",
+   "anchor": "30:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-30-all-who-fallen-asleep-in-hope-shall-rise",
+   "title": "All who have fallen asleep in hope of Him shall rise again",
+   "anchor": "30:2",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-30-the-treasuries-of-souls-opened",
+   "title": "The treasuries of the souls of the righteous are opened",
+   "anchor": "30:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-30-the-souls-of-the-wicked-waste-away",
+   "title": "The souls of the wicked shall waste away the more",
+   "anchor": "30:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-31-forget-not-zion",
+   "title": "Forget not Zion, hold the anguish in remembrance",
+   "anchor": "31:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-31-all-shall-be-as-though-it-had-not-been",
+   "title": "Everything that is shall become the prey of corruption",
+   "anchor": "31:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-32-sow-the-fruits-of-the-law",
+   "title": "Sow in your hearts the fruits of the law",
+   "anchor": "32:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-32-the-building-shaken-and-renewed",
+   "title": "The building shaken, rebuilt, and renewed in glory",
+   "anchor": "32:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-34-into-the-holy-of-holies-to-inquire",
+   "title": "I will go unto the Holy of Holies to inquire",
+   "anchor": "34:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-35-o-that-mine-eyes-were-springs",
+   "title": "O that mine eyes were a fount of tears for Zion",
+   "anchor": "35:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-35-where-the-high-priest-offered",
+   "title": "Where the high priest offered, now dust and sand",
+   "anchor": "35:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-36-the-forest-of-the-kingdoms",
+   "title": "The forest, the mountains, and the fountain that overthrew them",
+   "anchor": "36:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-36-the-vine-and-the-fountain",
+   "title": "The vine and the fountain that rose against the forest",
+   "anchor": "36:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-36-the-last-cedar-cast-down",
+   "title": "The one cedar of wickedness, cast down before the vine",
+   "anchor": "36:7",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-37-the-cedar-burning-the-vine-growing",
+   "title": "The cedar burning, the vine growing, the plain in flower",
+   "anchor": "37:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-38-thy-law-is-life",
+   "title": "Thy law is life, and thy wisdom is right guidance",
+   "anchor": "38:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-38-my-soul-hath-walked-in-thy-law",
+   "title": "My soul hath always walked in thy law",
+   "anchor": "38:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-39-four-kingdoms-rise-and-fall",
+   "title": "Four kingdoms rise and fall",
+   "anchor": "39:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-39-then-my-messiah-will-be-revealed",
+   "title": "Then My Messiah will be revealed",
+   "anchor": "39:7",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-40-the-last-ruler-brought-to-zion-and-slain",
+   "title": "The last ruler brought to Zion and slain",
+   "anchor": "40:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-40-his-principate-will-stand-for-ever",
+   "title": "His principate will stand for ever",
+   "anchor": "40:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-41-some-cast-off-the-yoke-some-took-it-up",
+   "title": "Some cast off the yoke, some took it up",
+   "anchor": "41:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-42-those-who-drew-near-and-those-who-withdrew",
+   "title": "Those who drew near and those who withdrew",
+   "anchor": "42:4",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-42-the-dust-shall-give-back-what-it-kept",
+   "title": "The dust shall give back what it kept",
+   "anchor": "42:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-43-many-eternal-consolations",
+   "title": "Many eternal consolations await thee",
+   "anchor": "43:1",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-44-withdraw-not-from-the-way-of-the-law",
+   "title": "Withdraw not from the way of the law",
+   "anchor": "44:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-44-they-shall-inherit-the-world-to-come",
+   "title": "They shall inherit the world to come",
+   "anchor": "44:13",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-45-teach-them-and-ye-will-quicken-them",
+   "title": "Teach them and ye will quicken them",
+   "anchor": "45:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-46-there-shall-not-be-wanting-a-son-of-the-law",
+   "title": "There shall not be wanting a son of the law",
+   "anchor": "46:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-46-prepare-your-hearts-to-obey-the-law",
+   "title": "Prepare your hearts to obey the law",
+   "anchor": "46:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-47-to-hebron-i-fasted",
+   "title": "To Hebron, and there he fasted seven days",
+   "anchor": "47:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-48-the-times-stand-before-thee",
+   "title": "The advent of the times stands before Thee",
+   "anchor": "48:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-48-thou-knowest-the-number",
+   "title": "Thou knowest, Thou weighest, Thou numberest",
+   "anchor": "48:5",
+   "member_count": 5
+  },
+  {
+   "slug": "2-baruch-48-with-thee-is-the-law-of-life",
+   "title": "Thy law is with us — and we shall not fall",
+   "anchor": "48:22",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-48-for-he-is-nothing",
+   "title": "In a little time are we born — be not wroth with man",
+   "anchor": "48:12",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-48-the-visitation-of-the-times",
+   "title": "The visitation of the times — when they remembered not the law",
+   "anchor": "48:31",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-49-in-what-shape-will-the-dead-rise",
+   "title": "In what shape will those live in Thy day?",
+   "anchor": "49:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-50-the-earth-shall-restore-the-dead",
+   "title": "The earth shall restore the dead as it received them",
+   "anchor": "50:2",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-51-justified-in-my-law-their-splendour-glorified",
+   "title": "Justified in My law — their splendour glorified",
+   "anchor": "51:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-51-transformed-into-the-splendour-of-angels",
+   "title": "Transformed into the splendour of angels",
+   "anchor": "51:5",
+   "member_count": 6
+  },
+  {
+   "slug": "2-baruch-51-the-image-of-the-heavenly",
+   "title": "They shall bear the image of the heavenly",
+   "anchor": "51:8",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-51-the-law-a-hope-wisdom-a-confidence",
+   "title": "To whom the law has been a hope",
+   "anchor": "51:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-52-rejoice-in-the-suffering",
+   "title": "Rejoice in the suffering ye now suffer",
+   "anchor": "52:6",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-53-cloud-of-black-and-bright-waters",
+   "title": "The cloud of black and bright waters — twelve rains over all the earth",
+   "anchor": "53:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-53-the-lightning-that-healed-the-earth",
+   "title": "The lightning at the summit heals the earth and has dominion",
+   "anchor": "53:8",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-54-thou-alone-knowest-the-deep-things",
+   "title": "Thou alone knowest the deep things of the world",
+   "anchor": "54:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-54-revealest-what-is-hidden-to-the-pure",
+   "title": "Thou lightest up what is dark, and revealest what is hidden to the pure",
+   "anchor": "54:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-54-each-the-adam-of-his-own-soul",
+   "title": "Adam first sinned, yet each is the Adam of his own soul",
+   "anchor": "54:15",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-54-vengeance-and-glory-at-the-consummation",
+   "title": "At the consummation, vengeance on the wicked and glory for the faithful",
+   "anchor": "54:21",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-55-ramael-angel-over-true-visions",
+   "title": "Ramael, the angel set over true visions, is sent to interpret",
+   "anchor": "55:3",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-55-the-day-of-the-mighty-one-comes",
+   "title": "What wilt thou be when thou shalt see the day of the Mighty One?",
+   "anchor": "55:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-56-first-black-waters-adams-transgression",
+   "title": "The first black waters — Adam's transgression and untimely death",
+   "anchor": "56:5",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-56-angels-who-mingled-with-the-women",
+   "title": "The angels who descended and mingled with the women",
+   "anchor": "56:12",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-57-bright-waters-the-fount-of-abraham",
+   "title": "The bright waters — the fount of Abraham and the unwritten law",
+   "anchor": "57:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-58-black-waters-the-wickedness-of-egypt",
+   "title": "The black third waters — the sins of the nations and the bondage of Egypt",
+   "anchor": "58:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-59-bright-waters-moses-and-the-lamp-of-the-law",
+   "title": "The bright fourth waters — Moses, and the lamp of the eternal law",
+   "anchor": "59:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-59-the-heavens-shaken-when-moses-taken-up",
+   "title": "The heavens shaken when Moses was taken up to be shown the pattern",
+   "anchor": "59:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-60-black-waters-the-works-of-the-amorites",
+   "title": "The black fifth waters — the works of the Amorites and Israel's defilement in the days of the judges",
+   "anchor": "60:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-61-david-solomon-the-building-of-zion",
+   "title": "David and Solomon, and the building of Zion",
+   "anchor": "61:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-61-the-offerings-and-the-festivals",
+   "title": "The offerings and the holy festivals fulfilled",
+   "anchor": "61:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-61-peace-and-righteous-rule",
+   "title": "Peace, righteous rule, and Zion glorified",
+   "anchor": "61:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-62-jeroboam-and-the-two-calves",
+   "title": "Jeroboam's schism and the two calves of gold",
+   "anchor": "62:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-62-the-idolatry-and-captivity-of-the-nine-tribes",
+   "title": "The idolatry of the kings and the captivity of the nine tribes",
+   "anchor": "62:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-62-the-two-houses-divided",
+   "title": "The two houses divided — the sticks not yet one",
+   "anchor": "62:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-63-hezekiah-trusted-and-prayed",
+   "title": "Hezekiah trusted in his righteousness and prayed",
+   "anchor": "63:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-63-the-angel-destroyed-the-host",
+   "title": "The angel destroyed Sennacherib's host",
+   "anchor": "63:6",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-63-zion-saved-the-name-glorified",
+   "title": "Zion saved and the Name glorified",
+   "anchor": "63:9",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-64-the-wickedness-of-manasseh",
+   "title": "The wickedness of Manasseh, son of Hezekiah",
+   "anchor": "64:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-64-the-idol-and-the-wrath",
+   "title": "The graven image and the wrath that uprooted Zion",
+   "anchor": "64:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-64-manasseh-heard-yet-tormented",
+   "title": "His prayer heard, yet he was not worthy",
+   "anchor": "64:8",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-65-he-thought-the-mighty-one-would-not-inquire",
+   "title": "He thought the Mighty One would not inquire",
+   "anchor": "65:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-66-josiah-submitted-with-all-his-heart",
+   "title": "Josiah, who submitted with all his heart",
+   "anchor": "66:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-66-the-law-found-and-the-land-cleansed",
+   "title": "The law found, the land cleansed of idols",
+   "anchor": "66:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-66-the-passover-kept",
+   "title": "The Passover kept as it was written",
+   "anchor": "66:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-67-the-calamity-befalling-zion",
+   "title": "The calamity now befalling Zion",
+   "anchor": "67:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-67-the-burning-of-the-temple",
+   "title": "Jerusalem laid waste, the smoke of the law extinguished",
+   "anchor": "67:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-67-the-king-of-babylon-shall-fall",
+   "title": "The king of Babylon shall boast, but fall at last",
+   "anchor": "67:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-68-zion-builded-again",
+   "title": "Zion builded again, the offerings restored",
+   "anchor": "68:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-68-not-fully-as-in-the-beginning",
+   "title": "Not fully as in the beginning",
+   "anchor": "68:6",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-69-the-last-waters-darker-than-all",
+   "title": "The last waters, darker than all before them",
+   "anchor": "69:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-69-six-kinds-of-impiety-foreseen",
+   "title": "The impieties foreseen before the consummation",
+   "anchor": "69:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-70-the-harvest-of-the-age",
+   "title": "The harvest of the age",
+   "anchor": "70:2",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-70-thrust-in-the-sickle-for-the-harvest-is-ripe",
+   "title": "Thrust in the sickle, for the harvest is ripe",
+   "anchor": "70:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-70-confusion-and-strife-upon-all-men",
+   "title": "Confusion and strife upon all men",
+   "anchor": "70:3",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-70-delivered-into-the-hands-of-my-servant-messiah",
+   "title": "Delivered into the hands of My servant Messiah",
+   "anchor": "70:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-71-the-holy-land-shall-shelter-its-own",
+   "title": "The holy land shall shelter its own",
+   "anchor": "71:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-72-the-bright-lightning-the-time-of-my-messiah",
+   "title": "The bright lightning: the time of My Messiah",
+   "anchor": "72:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-72-the-nations-spared-or-given-to-the-sword",
+   "title": "The nations spared or given to the sword",
+   "anchor": "72:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-73-joy-and-healing-no-more-untimely-death",
+   "title": "Joy and healing, no more untimely death",
+   "anchor": "73:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-73-the-beasts-shall-serve-and-women-bear-without-pain",
+   "title": "The beasts shall serve and women bear without pain",
+   "anchor": "73:6",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-74-the-passing-of-the-corruptible-into-the-incorruptible",
+   "title": "The passing of the corruptible into the incorruptible",
+   "anchor": "74:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-75-who-can-search-his-compassions",
+   "title": "Who can search His compassions",
+   "anchor": "75:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-75-him-who-brought-us-out-of-egypt",
+   "title": "Him who brought us out of Egypt",
+   "anchor": "75:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-76-instruct-the-people-that-they-may-live",
+   "title": "Instruct the people that they may live",
+   "anchor": "76:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-77-a-law-more-excellent-than-to-all-peoples",
+   "title": "A law more excellent than to all peoples",
+   "anchor": "77:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-77-choose-the-law-and-live",
+   "title": "Choose the law and live",
+   "anchor": "77:6",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-77-the-shepherds-the-lamps-the-fountains-come-from-the-law",
+   "title": "The shepherds, the lamps, the fountains come from the law",
+   "anchor": "77:13",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-77-write-to-our-brethren-the-epistle-of-hope",
+   "title": "Write to our brethren the epistle of hope",
+   "anchor": "77:12",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-78-mercy-and-peace-to-the-captive-tribes",
+   "title": "Mercy and peace — the epistle to the nine and a half tribes",
+   "anchor": "78:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-78-all-twelve-tribes-bound-by-one-bond",
+   "title": "All the twelve tribes bound by one bond",
+   "anchor": "78:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-78-he-will-gather-the-dispersed-with-much-mercy",
+   "title": "He will never forsake — with much mercy will gather the dispersed",
+   "anchor": "78:5",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-79-we-have-sinned-yet-not-chastened-as-we-deserved",
+   "title": "We have sinned, yet not chastened as we deserved",
+   "anchor": "79:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-80-the-angels-overthrew-the-wall-and-hid-the-vessels",
+   "title": "The angels overthrew the wall and hid the holy vessels",
+   "anchor": "80:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-80-your-brethren-led-away-to-babylon",
+   "title": "Your brethren bound and led away to Babylon",
+   "anchor": "80:4",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-81-how-long-the-mystery-of-the-times-revealed",
+   "title": "How long? — the mystery of the times revealed for consolation",
+   "anchor": "81:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-82-the-consummation-is-very-nigh",
+   "title": "The consummation is very nigh — His mercy and judgement come",
+   "anchor": "82:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-82-the-gentiles-pass-as-vapour-and-smoke",
+   "title": "The Gentiles' prosperity passes as vapour, smoke, and a fading cloud",
+   "anchor": "82:6",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-83-the-most-high-will-hasten-his-times-and-judge",
+   "title": "The Most High will hasten His times and judge the secret things",
+   "anchor": "83:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-83-look-not-to-the-present-but-to-what-is-promised",
+   "title": "Look not to the present delights but to what is promised in the end",
+   "anchor": "83:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-83-all-the-glory-of-this-time-turns-to-dust",
+   "title": "All the glory of this time turns to dust and stillness",
+   "anchor": "83:10",
+   "member_count": 1
+  },
+  {
+   "slug": "2-baruch-83-the-consummation-of-all-things-comes-to-truth",
+   "title": "The consummation of all things will come to the truth",
+   "anchor": "83:7",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-84-heaven-and-earth-to-witness",
+   "title": "Moses called heaven and earth to witness — keep it and be kept",
+   "anchor": "84:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-84-remember-the-law-of-moses",
+   "title": "Remember ye the law — the only remaining anchor",
+   "anchor": "84:8",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-84-deliver-the-law-to-your-sons",
+   "title": "Deliver the law to your sons as your fathers delivered it",
+   "anchor": "84:9",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-84-according-to-the-multitude-of-his-mercies",
+   "title": "If He judge not according to His mercies, woe to all born",
+   "anchor": "84:10",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-85-nothing-now-save-the-mighty-one-and-his-law",
+   "title": "We have nothing now save the Mighty One and His law",
+   "anchor": "85:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-baruch-85-no-longer-prophets-nor-place-of-repentance",
+   "title": "No more prophets, no more famine of the word foreseen",
+   "anchor": "85:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-85-prepare-your-soul-for-after-death-the-judgment",
+   "title": "Prepare your souls — judgement exacts its due",
+   "anchor": "85:9",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-85-the-time-is-short-now-is-the-accepted-time",
+   "title": "The age is short — the door of repentance still open now",
+   "anchor": "85:10",
+   "member_count": 2
+  },
+  {
+   "slug": "2-baruch-86-read-it-in-your-congregations",
+   "title": "Read this epistle in your congregations",
+   "anchor": "86:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-baruch-87-sent-by-the-eagle-to-the-tribes",
+   "title": "Bound to the eagle and sent to the tribes",
+   "anchor": "87:1",
+   "member_count": 2
+  },
+  {
+   "slug": "resurrection-keeps-the-form",
+   "title": "The resurrection keeps the form — the change comes at the judgement",
+   "anchor": "50:2",
+   "member_count": 12
+  }
+ ],
+ "sample_cards": [
+  {
+   "src": "25:3",
+   "tgt": "daniel 12:1",
+   "note": "Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Baruch's many tribulations before the time awakes are Daniel's unequalled time of trouble out of which the people are delivered."
+  },
+  {
+   "src": "25:3",
+   "tgt": "matthew 24:6",
+   "note": "Matthew 24:6 — *And ye shall hear of wars and rumours of wars: see that ye be not troubled: for all these things must come to pass, but the end is not yet.* The tribulations that seize the earth before the time awakes are the Messiah's own sign of the age's close — these things must come, but the end is not yet."
+  },
+  {
+   "src": "26:1",
+   "tgt": "revelation 6:10",
+   "note": "Revelation 6:10 — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* Baruch's question whether the tribulation will continue many years is the same \"how long\" the martyred souls cry under the altar."
+  }
+ ],
+ "sample_thread": {
+  "slug": "2-baruch-8-zedekiah-bound-to-babylon",
+  "title": "Zedekiah bound, sent to Babylon",
+  "summary_md": "The narrative closes in the plain words of the histories: the Chaldees *led the people away captive and slew some of them, and bound Zedekiah the king, and sent him to the king of Babylon.* It is the very record of 2 Kings — Zedekiah taken, bound with fetters, carried to Babylon. The apocalypse stands on real history, not legend. It ain't new — Baruch reports the captivity the Prophets and the chronicles already set down."
+ }
+}

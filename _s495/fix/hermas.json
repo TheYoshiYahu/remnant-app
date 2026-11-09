@@ -1,0 +1,191 @@
+{
+ "book": "hermas",
+ "edition": "lightfoot-apostolic-fathers",
+ "model": "claude-sonnet-5-5",
+ "card_tier": "free",
+ "draft_files": [
+  "/home/claude/s495/out/hermas_fixed.json"
+ ],
+ "gap_chapters": [
+  23,
+  24
+ ],
+ "sort_band": 73000,
+ "cards": [
+  {
+   "src_ch": 23,
+   "src_vn": 1,
+   "tgt_edition": "canon",
+   "tgt_book": "deuteronomy",
+   "tgt_ch": 30,
+   "tgt_vn": 16,
+   "note": "Deuteronomy 30:16 — *In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* *Walk then in these my commandments, and ye shall live unto Elohim (God).* (Hermas 23:1) The angel's call to walk in the commandments and live has the shape of the word Moses set before Yashar'el (Israel) at the border of the land: love Yahuah (God), walk in his ways, keep his commandments, and live. The scripture came first; the line in the Shepherd is an echo of it.",
+   "member_note": "Deuteronomy 30:16 — *to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply* Walk in the commandments and live, as it was first set before Yashar'el.",
+   "tier": "free",
+   "src_text": "As I sat in my house, and glorified Yahuah (Lord) for all things that I had seen, and was considering concerning the commandments, how that they were beautiful and powerful and gladsome and glorious and able to save a man's soul, I said within myself; \"Blessed shall I be, if I walk in these commandments; yea, and whosoever shall walk in them shall be blessed.\" As I spake these things within myself, I see him suddenly seated by me, and saying as follows; \"Why art thou of a doubtful mind concerning the commandments, which I commanded thee? They are beautiful. Doubt not at all; but clothe thyself in the faith of Yahuah (Lord), and thou shalt walk in them. For I will strengthen thee in them. These commandments are suitable for those who meditate repentance; for if they walk not in them, their repentance is in vain. Ye then that repent, cast away the evil doings of this world which crush you; and, by putting on every excellence of righteousness, ye shall be able to observe these commandments, and to add no more to your sins. If then ye add no further sin at all, ye will depart from your former sins. Walk then in these my commandments, and ye shall live unto Elohim (God). These things have [all] been told you from me.\" And after he had told these things to me, he saith to me, \"Let us go into the country, and I will show thee the shepherds of the sheep.\" \"Let us go, Sir,\" say I. And we came to a certain plain, and he showeth me a young man, a shepherd, clothed in a light cloak, of saffron color; and he was feeding a great number of sheep, and these sheep were, as it were, well fed and very frisky, and were gladsome as they skipped about hither and thither; and the shepherd himself was all gladsome over his flock; and the very visage of the shepherd was exceedingly gladsome; and he ran about among the sheep.",
+   "tgt_text": "In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.",
+   "join_slug": null
+  },
+  {
+   "src_ch": 23,
+   "src_vn": 2,
+   "tgt_edition": "canon",
+   "tgt_book": "1-timothy",
+   "tgt_ch": 5,
+   "tgt_vn": 6,
+   "note": "1 Timothy 5:6 — *But she that liveth in pleasure is dead while she liveth.* *In these, therefore, there is not repentance unto life. For the Name of Elohim (God) is being blasphemed through them. The life of such persons is death.* (Hermas 23:2) Paul's one line about the widow who lives in pleasure says plainly what the Shepherd's angel says at length: a life given over to its appetites is a death already under way.",
+   "member_note": "1 Timothy 5:6 — *But she that liveth in pleasure is dead while she liveth.* A life given over to pleasure is already death.",
+   "tier": "free",
+   "src_text": "And he saith to me; \"Seest thou this shepherd?\" \"I see him Sir,\" I say. \"This,\" saith he, \"is the angel of self-indulgence and of deceit. He crusheth the souls of the servants of Elohim (God), and perverteth them from the truth, leading them astray with evil desires, wherein they perish. For they forget the commandments of the living Elohim (God), and walk in vain deceits and acts of self-indulgence, and are destroyed by this angel, some of them unto death, and others unto corruption.\" I say to him, \"Sir, I comprehend not what means \"unto death,\" and what \"unto corruption\". \"Listen,\" saith he; \"the sheep which thou sawest gladsome and skipping about, these are they who have been turned asunder from Elohim (God) utterly, and have delivered themselves over to the lusts of this world. In these, therefore, there is not repentance unto life. For the Name of Elohim (God) is being blasphemed through them. The life of such persons is death. But the sheep, which thou sawest not skipping about, but feeding in one place, these are they that have delivered themselves over to acts of self-indulgence and deceit, but have not uttered any blasphemy against Yahuah (Lord). These then have been corrupted from the truth. In these there is hope of repentance, wherein they can live. Corruption then hath hope of a possible renewal, but death hath eternal destruction.\" Again we went forward a little way, and he showeth me a great shepherd like a wild man in appearance, with a white goatskin thrown about him; and he had a kind of wallet on his shoulders, and a staff very hard and with knots in it, and a great whip. And his look was very sour, so that I was afraid of him because of his look. This shepherd then kept receiving from the young man, the shepherd, those sheep that were frisky and well fed, but not skipping about, and putting them in a certain spot, which was precipitous and covered with thorns and briars, so that the sheep could not disentangle themselves from the thorns and briars, but [became entangled among the thorns and briars. And so they] pastured entangled in the thorns and briars, and were in great misery with being beaten by him; and he kept driving them about to and fro, and giving them no rest, and all together those sheep had not a happy time.",
+   "tgt_text": "But she that liveth in pleasure is dead while she liveth.",
+   "join_slug": null
+  },
+  {
+   "src_ch": 23,
+   "src_vn": 3,
+   "tgt_edition": "canon",
+   "tgt_book": "psalms",
+   "tgt_ch": 119,
+   "tgt_vn": 71,
+   "note": "Psalm 119:71 — *It is good for me that I have been afflicted; that I might learn thy statutes.* *When then they are afflicted with every kind of affliction, then they are delivered over to me for good instruction, and are strengthened in the faith of Yahuah (Lord), and serve Yahuah (Lord) with a pure heart the remaining days of their life.* (Hermas 23:3) The psalmist found that affliction taught him the statutes of Yahuah (God), and the Shepherd's angel of punishment is likewise said to deliver men to good instruction so that they return to serve Yahuah (God) with a pure heart. The psalm names what the instruction is for: to learn his statutes.",
+   "member_note": "Psalm 119:71 — *It is good for me that I have been afflicted; that I might learn thy statutes.* Affliction that teaches the statutes of Yahuah.",
+   "tier": "free",
+   "src_text": "When then I saw them so lashed with the whip and vexed, I was sorry for their sakes, because they were so tortured and had no rest at all. I say to the shepherd who was speaking with me; \"Sir, who is this shepherd, who is [so] hard-hearted and severe, and has no compassion at all for these sheep?\" \"This,\" saith he, \"is the angel of punishment, and he is one of the just angels, and presides over punishment. So he receiveth those who wander away from Elohim (God), and walk after the lusts and deceits of this life, and punisheth them, as they deserve, with fearful and various punishments.\" \"I would fain learn, Sir,\" said I, \"of what sort are these various punishments.\" \"Listen,\" saith he; \"the various tortures and punishments are tortures belonging to the present life; for some are punished with losses, and others with want, and others with divers maladies, and others with [every kind] of unsettlement, and others with insults from unworthy persons and with suffering in many other respects. For many, being unsettled in their plans, set their hands to many things, and nothing ever goes forward with them. And then they say that they do not prosper in their doings, and it doth not enter into their hearts that they have done evil deeds, but they blame Yahuah (Lord). When then they are afflicted with every kind of affliction, then they are delivered over to me for good instruction, and are strengthened in the faith of Yahuah (Lord), and serve Yahuah (Lord) with a pure heart the remaining days of their life. But, if they repent, the evil works which they have done rise up in their hearts, and then they glorify Elohim (God), saying that He is a just Judge, and that they suffered justly each according to his doings. And they serve Yahuah (Lord) thenceforward with a pure heart, and are prosperous in all their doings, receiving from Yahuah (Lord) whatsoever things they may ask; and then they glorify Yahuah (Lord) because they were delivered over unto me, and they no longer suffer any evil thing.\"",
+   "tgt_text": "It is good for me that I have been afflicted; that I might learn thy statutes.",
+   "join_slug": null
+  },
+  {
+   "src_ch": 23,
+   "src_vn": 4,
+   "tgt_edition": "canon",
+   "tgt_book": "hebrews",
+   "tgt_ch": 11,
+   "tgt_vn": 25,
+   "note": "Hebrews 11:25 — *Choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season;* *the time of the self-indulgence and deceit is very short, but the time of the punishment and torment is long.* (Hermas 23:4) Moses is spoken of as choosing affliction with the people of Elohim (God) over the pleasures of sin, which last only for a season. Scripture gives no reckoning of hours and years, but it agrees with the Shepherd that the pleasure is brief and that the choice lies between it and the people of Elohim (God).",
+   "member_note": "Hebrews 11:25 — *Choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season* The pleasures of sin last only for a season.",
+   "tier": "free",
+   "src_text": "I say unto him; \"Sir, declare unto me this further matter.\" \"What enquirest thou yet?\" saith he. \"Whether, Sir,\" say I, \"they that live in self-indulgence and are deceived undergo torments during the same length of time as they live in self-indulgence and are deceived.\" He saith to me, \"They undergo torments for the same length of time.\" \"Then, Sir,\" say I, \"they undergo very slight torments; for those who are living thus in self-indulgence and forget Elohim (God) ought to have been tormented seven-fold.\" He saith to me, \"Thou art foolish, and comprehendest not the power of the torment\" \"True,\" say I, \"for if I had comprehended it, I should not have asked thee to declare it to me.\" \"Listen,\" saith he, \"to the power of both, [of the self-indulgence and of the torment]. The time of the self-indulgence and deceit is one hour. But an hour of the torment hath the power of thirty days. If then one live in self indulgence and be deceived for one day, and be tormented for one day, the day of the torment is equivalent to a whole year. For as many days then as a man lives in self-indulgence, for so many years is he tormented. Thou seest then,\" saith he, \"that the time of the self-indulgence and deceit is very short, but the time of the punishment and torment is long.\"",
+   "tgt_text": "Choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season;",
+   "join_slug": null
+  },
+  {
+   "src_ch": 24,
+   "src_vn": 1,
+   "tgt_edition": "canon",
+   "tgt_book": "psalms",
+   "tgt_ch": 51,
+   "tgt_vn": 17,
+   "note": "Psalm 51:17 — *The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise.* *and if he endure the afflictions which come upon him, assuredly He Who created all things and endowed them with power will be moved with compassion and will bestow some remedy. And this (will Elohim (God) do), if in any way He perceive the heart of the penitent pure from every evil thing.* (Hermas 24:1) The Shepherd speaks of the penitent who humbles himself in every action and endures, until Elohim (God) sees a heart pure and is moved with compassion. The psalm names what Elohim (God) will not despise: a broken and a contrite heart.",
+   "member_note": "Psalm 51:17 — *a broken and a contrite heart, O Elohim (God), thou wilt not despise.* Elohim does not despise a broken and contrite heart.",
+   "tier": "free",
+   "src_text": "After a few days I saw him on the same plain, where also I had seen the shepherds, and he saith to me, \"What seekest thou?\" \"I am here, Sir,\" say I, \"that thou mayest bid the shepherd that punisheth go out of my house; for he afflicteth me much.\" \"It is necessary for thee,\" saith he, \"to be afflicted; for so,\" saith he, \"the glorious angel ordered as concerning thee, for he wisheth thee to be proved.\" \"Why, what so evil thing have I done, Sir,\" say I, \"that I should be delivered over to this angel?\" \"Listen,\" saith he. \"Thy sins are many, yet not so many that thou shouldest be delivered over to this angel; but thy house has committed great iniquities and sins, and the glorious angel was embittered at their deeds, and for this cause he bade thee be afflicted for a certain time, that they also might repent and cleanse themselves from every lust of this world. When therefore they shall repent and be cleansed, then shall the angel of punishment depart.\" I say to him; \"Sir, if they perpetrated such deeds that the glorious angel is embittered, what have I done?\" \"They cannot be afflicted otherwise,\" saith he, \"unless thou, the head of the [whole] house, be afflicted; for if thou be afflicted, they also of necessity will be afflicted; but if thou be prosperous, they can suffer no affliction.\" \"But behold, Sir,\" say I, \"they have repented with their whole heart.\" \"I am quite aware myself,\" saith he, \"that they have repented with their whole heart; well, thinkest thou that the sins of those who repent are forgiven forthwith? Certainly not; but the person who repents must torture his own soul, and must be thoroughly humble in his every action, and be afflicted with all the divers kinds of affliction; and if he endure the afflictions which come upon him, assuredly He Who created all things and endowed them with power will be moved with compassion and will bestow some remedy. And this (will Elohim (God) do), if in any way He perceive the heart of the penitent pure from every evil thing. But it is expedient for thee and for thy house that thou shouldest be afflicted now. But why speak I many words to thee? Thou must be afflicted as the angel of Yahuah (Lord) commanded, even he that delivered thee unto me; and for this give thanks to Yahuah (Lord), in that He deemed thee worthy that I should reveal unto thee beforehand the affliction, that foreknowing it thou might endure it with fortitude.\" I say to him; \"Sir, be thou with me, and I shall be able to endure all affliction [easily].\" \"I will be with thee,\" saith he; \"and I will ask the angel that punisheth to afflict thee more lightly; but thou shalt be afflicted for a short time, and thou shalt be restored again to thy house. Only continue to be humble and to minister unto Yahuah (Lord) with a pure heart, thou and thy children and thy house, and walk in my commandments which I command thee, and thus it will be possible for thy repentance to be strong and pure. And if thou keep these commandments with thy household, all affliction shall hold aloof from thee; yea, and affliction,\" saith he, \"shall hold aloof from all whosoever shall walk in these my commandments.\"",
+   "tgt_text": "The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise.",
+   "join_slug": null
+  },
+  {
+   "src_ch": 24,
+   "src_vn": 1,
+   "tgt_edition": "canon",
+   "tgt_book": "leviticus",
+   "tgt_ch": 26,
+   "tgt_vn": 3,
+   "note": "Leviticus 26:3 — *If ye walk in my statutes, and keep my commandments, and do them;* *And if thou keep these commandments with thy household, all affliction shall hold aloof from thee; yea, and affliction,\" saith he, \"shall hold aloof from all whosoever shall walk in these my commandments.* (Hermas 24:1) The Shepherd's promise that affliction will hold aloof from those who walk in his commandments is the old shape of the covenant. The angel speaks of his own list of commands, but the covenant word that first set a blessing before those who walk in the commandments and do them was spoken by Yahuah (God) to Yashar'el (Israel), and this is its opening.",
+   "member_note": "Leviticus 26:3 — *If ye walk in my statutes, and keep my commandments, and do them;* The covenant word on walking in the commandments and doing them, with its blessing to follow.",
+   "tier": "free",
+   "src_text": "After a few days I saw him on the same plain, where also I had seen the shepherds, and he saith to me, \"What seekest thou?\" \"I am here, Sir,\" say I, \"that thou mayest bid the shepherd that punisheth go out of my house; for he afflicteth me much.\" \"It is necessary for thee,\" saith he, \"to be afflicted; for so,\" saith he, \"the glorious angel ordered as concerning thee, for he wisheth thee to be proved.\" \"Why, what so evil thing have I done, Sir,\" say I, \"that I should be delivered over to this angel?\" \"Listen,\" saith he. \"Thy sins are many, yet not so many that thou shouldest be delivered over to this angel; but thy house has committed great iniquities and sins, and the glorious angel was embittered at their deeds, and for this cause he bade thee be afflicted for a certain time, that they also might repent and cleanse themselves from every lust of this world. When therefore they shall repent and be cleansed, then shall the angel of punishment depart.\" I say to him; \"Sir, if they perpetrated such deeds that the glorious angel is embittered, what have I done?\" \"They cannot be afflicted otherwise,\" saith he, \"unless thou, the head of the [whole] house, be afflicted; for if thou be afflicted, they also of necessity will be afflicted; but if thou be prosperous, they can suffer no affliction.\" \"But behold, Sir,\" say I, \"they have repented with their whole heart.\" \"I am quite aware myself,\" saith he, \"that they have repented with their whole heart; well, thinkest thou that the sins of those who repent are forgiven forthwith? Certainly not; but the person who repents must torture his own soul, and must be thoroughly humble in his every action, and be afflicted with all the divers kinds of affliction; and if he endure the afflictions which come upon him, assuredly He Who created all things and endowed them with power will be moved with compassion and will bestow some remedy. And this (will Elohim (God) do), if in any way He perceive the heart of the penitent pure from every evil thing. But it is expedient for thee and for thy house that thou shouldest be afflicted now. But why speak I many words to thee? Thou must be afflicted as the angel of Yahuah (Lord) commanded, even he that delivered thee unto me; and for this give thanks to Yahuah (Lord), in that He deemed thee worthy that I should reveal unto thee beforehand the affliction, that foreknowing it thou might endure it with fortitude.\" I say to him; \"Sir, be thou with me, and I shall be able to endure all affliction [easily].\" \"I will be with thee,\" saith he; \"and I will ask the angel that punisheth to afflict thee more lightly; but thou shalt be afflicted for a short time, and thou shalt be restored again to thy house. Only continue to be humble and to minister unto Yahuah (Lord) with a pure heart, thou and thy children and thy house, and walk in my commandments which I command thee, and thus it will be possible for thy repentance to be strong and pure. And if thou keep these commandments with thy household, all affliction shall hold aloof from thee; yea, and affliction,\" saith he, \"shall hold aloof from all whosoever shall walk in these my commandments.\"",
+   "tgt_text": "If ye walk in my statutes, and keep my commandments, and do them;",
+   "join_slug": null
+  }
+ ],
+ "threads": [
+  {
+   "slug": "hermas-23-the-angel-of-punishment-and-the-pleasure-that-ends-in-death",
+   "title": "The pleasure that ends in death, and the instruction that brings back",
+   "summary_md": "Hermas hears the angel call him to the commandments: *Walk then in these my commandments, and ye shall live unto Elohim (God).* (Hermas 23:1) Then he is shown two shepherds, one who feeds men on their appetites and one who punishes, and told of the first: *The life of such persons is death.* (Hermas 23:2)\n\nIt ain't new. Moses had put the same choice before Yashar'el (Israel): *In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* (Deuteronomy 30:16) And the word that there is a way of living that is already dying is in Paul's line about the widow: *But she that liveth in pleasure is dead while she liveth.* (1 Timothy 5:6)\n\nThe angel says that the afflicted are handed over to instruction: *they are delivered over to me for good instruction, and are strengthened in the faith of Yahuah (Lord)* (Hermas 23:3) The psalmist says the same from the inside of it: *It is good for me that I have been afflicted; that I might learn thy statutes.* (Psalm 119:71) And when the angel says the season of self-indulgence is short beside the torment that follows, *the time of the self-indulgence and deceit is very short, but the time of the punishment and torment is long.* (Hermas 23:4) — the writer to the Hebrews calls it a season too: *Choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season;* (Hebrews 11:25)\n\nThe Shepherd closes the chapter with a warning that those who stay in their pleasures and do not repent bring death upon themselves, *and if they continue in them and repent not, they bring death upon themselves.* (Hermas 23:5) — which is the choice of life and death that Moses set before the people, *therefore choose life, that both thou and thy seed may live.* (Deuteronomy 30:19) ",
+   "anchor_start_vn": 1,
+   "anchor_end_vn": 5,
+   "tier": "extras",
+   "sort_order": 73000,
+   "ch": 23
+  },
+  {
+   "slug": "hermas-24-the-head-of-the-house-afflicted-and-the-household-repents",
+   "title": "The head of the house is afflicted, and the household repents",
+   "summary_md": "The angel tells Hermas that his house must be afflicted for a time, and that repentance is not a single moment: *and if he endure the afflictions which come upon him, assuredly He Who created all things and endowed them with power will be moved with compassion and will bestow some remedy. And this (will Elohim (God) do), if in any way He perceive the heart of the penitent pure from every evil thing.* (Hermas 24:1)\n\nIt ain't new that the way back runs through humility. *The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise.* (Psalm 51:17) Yet scripture also shows mercy and consequence standing together in one place. When David confessed, the answer came at once: *And David said unto Nathan, I have sinned against Yahuah (LORD). And Nathan said unto David, Yahuah (LORD) also hath put away thy sin; thou shalt not die.* (2 Samuel 12:13) And the consequence still followed: *Howbeit, because by this deed thou hast given great occasion to the enemies of Yahuah (LORD) to blaspheme, the child also that is born unto thee shall surely die.* (2 Samuel 12:14) The forgiveness was real, and so was the affliction that the deed had set in motion.\n\nThe angel ends by telling the head of the house that if he keeps the commandments with his household affliction will keep away: *And if thou keep these commandments with thy household, all affliction shall hold aloof from thee; yea, and affliction,\" saith he, \"shall hold aloof from all whosoever shall walk in these my commandments.* (Hermas 24:1) Yahuah (God) had already set that condition before Yashar'el (Israel), with its blessing to follow: *If ye walk in my statutes, and keep my commandments, and do them;* (Leviticus 26:3)\n\nThe household bears what its head bears, and the way home is through a pure heart and a walk in the commandments. Scripture holds both the mercy and the cost in the same hand, and the Shepherd's lines are read beside it.",
+   "anchor_start_vn": 1,
+   "anchor_end_vn": 1,
+   "tier": "extras",
+   "sort_order": 73005,
+   "ch": 24
+  }
+ ],
+ "members": [
+  {
+   "thread_slug": "hermas-23-the-angel-of-punishment-and-the-pleasure-that-ends-in-death",
+   "src_vn": 1,
+   "src_ch": 23,
+   "tgt_edition": "canon",
+   "tgt_book": "deuteronomy",
+   "tgt_ch": 30,
+   "tgt_vn": 16,
+   "member_note": "Deuteronomy 30:16 — *to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply* Walk in the commandments and live, as it was first set before Yashar'el.",
+   "sort_order": 1
+  },
+  {
+   "thread_slug": "hermas-23-the-angel-of-punishment-and-the-pleasure-that-ends-in-death",
+   "src_vn": 2,
+   "src_ch": 23,
+   "tgt_edition": "canon",
+   "tgt_book": "1-timothy",
+   "tgt_ch": 5,
+   "tgt_vn": 6,
+   "member_note": "1 Timothy 5:6 — *But she that liveth in pleasure is dead while she liveth.* A life given over to pleasure is already death.",
+   "sort_order": 2
+  },
+  {
+   "thread_slug": "hermas-23-the-angel-of-punishment-and-the-pleasure-that-ends-in-death",
+   "src_vn": 3,
+   "src_ch": 23,
+   "tgt_edition": "canon",
+   "tgt_book": "psalms",
+   "tgt_ch": 119,
+   "tgt_vn": 71,
+   "member_note": "Psalm 119:71 — *It is good for me that I have been afflicted; that I might learn thy statutes.* Affliction that teaches the statutes of Yahuah.",
+   "sort_order": 3
+  },
+  {
+   "thread_slug": "hermas-23-the-angel-of-punishment-and-the-pleasure-that-ends-in-death",
+   "src_vn": 4,
+   "src_ch": 23,
+   "tgt_edition": "canon",
+   "tgt_book": "hebrews",
+   "tgt_ch": 11,
+   "tgt_vn": 25,
+   "member_note": "Hebrews 11:25 — *Choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season* The pleasures of sin last only for a season.",
+   "sort_order": 4
+  },
+  {
+   "thread_slug": "hermas-24-the-head-of-the-house-afflicted-and-the-household-repents",
+   "src_vn": 1,
+   "src_ch": 24,
+   "tgt_edition": "canon",
+   "tgt_book": "psalms",
+   "tgt_ch": 51,
+   "tgt_vn": 17,
+   "member_note": "Psalm 51:17 — *a broken and a contrite heart, O Elohim (God), thou wilt not despise.* Elohim does not despise a broken and contrite heart.",
+   "sort_order": 1
+  },
+  {
+   "thread_slug": "hermas-24-the-head-of-the-house-afflicted-and-the-household-repents",
+   "src_vn": 1,
+   "src_ch": 24,
+   "tgt_edition": "canon",
+   "tgt_book": "leviticus",
+   "tgt_ch": 26,
+   "tgt_vn": 3,
+   "member_note": "Leviticus 26:3 — *If ye walk in my statutes, and keep my commandments, and do them;* The covenant word on walking in the commandments and doing them, with its blessing to follow.",
+   "sort_order": 2
+  }
+ ],
+ "joins": []
+}

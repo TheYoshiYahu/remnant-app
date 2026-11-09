@@ -1,0 +1,698 @@
+{
+ "edition": "pseudepigrapha",
+ "book": "2-enoch",
+ "one_way": false,
+ "gap_chapters": [
+  {
+   "ch": 57,
+   "verses": {
+    "1": "My child Methosalam, summon all your brethren and all your household and the elders of the people, that I may talk to them and depart, as is planned for me.",
+    "2": "And Methosalam made haste, and summoned his brethren, Regim, Riman, Uchan, Chermion, Gaidad, and all the elders of the people before the face of his father Enoch; and he blessed them, and said to them:"
+   }
+  }
+ ],
+ "existing_threads": [
+  {
+   "slug": "2-enoch-1-enoch-taken-up",
+   "title": "Enoch the wise man taken up — he was not, for Elohim took him",
+   "anchor": "1:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-1-two-shining-men",
+   "title": "The two shining men at the head of the bed",
+   "anchor": "1:6",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-2-turn-not-from-elohim-the-maker",
+   "title": "Turn not to the vain who made not heaven and earth",
+   "anchor": "2:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-3-waters-above-the-firmament",
+   "title": "The great sea on the first heaven — the waters above the firmament",
+   "anchor": "3:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-4-rulers-of-the-stellar-orders",
+   "title": "The elders and rulers of the stellar orders",
+   "anchor": "4:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-5-treasure-houses-of-the-snow",
+   "title": "The treasure-houses of the snow",
+   "anchor": "5:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-6-treasure-house-of-the-dew",
+   "title": "The treasure-house of the dew",
+   "anchor": "6:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-7-apostate-angels-bound-in-darkness",
+   "title": "The apostate angels held in darkness awaiting judgment",
+   "anchor": "7:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-8-third-heaven-is-paradise",
+   "title": "The third heaven is paradise — caught up where Paul was caught up",
+   "anchor": "8:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-8-tree-of-life-in-the-midst",
+   "title": "The tree of life in the midst — from Eden to the New Jerusalem",
+   "anchor": "8:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-8-four-rivers-of-eden",
+   "title": "The springs that part into four — the rivers of Eden",
+   "anchor": "8:4",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-8-angels-keep-the-garden",
+   "title": "The angels that keep the garden and serve continually",
+   "anchor": "8:9",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-9-place-prepared-for-the-righteous",
+   "title": "The place prepared for the righteous — inherit the kingdom",
+   "anchor": "9:1",
+   "member_count": 5
+  },
+  {
+   "slug": "2-enoch-10-place-of-torment-unquenched-fire",
+   "title": "The place of torment — the fire that is not quenched",
+   "anchor": "10:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-10-prepared-for-those-who-dishonour-elohim",
+   "title": "Prepared for those who dishonour Elohim — the lake of fire",
+   "anchor": "10:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-11-courses-of-sun-and-moon",
+   "title": "The fourth heaven — the courses of the sun and moon",
+   "anchor": "11:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-12-the-sun-revolves-and-goes-down",
+   "title": "The sun revolves and goes down — its appointed circuit",
+   "anchor": "12:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-13-suns-gates-and-the-seasons",
+   "title": "The sun's gates — the regulation of the seasons and the year",
+   "anchor": "13:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-14-western-gates-and-the-year",
+   "title": "The western gates — the sun draws away its light, the days of the year",
+   "anchor": "14:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-15-creation-sings-at-the-giver-of-light",
+   "title": "Every bird sings at the giver of light — creation's praise",
+   "anchor": "15:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-15-gates-the-calculation-of-the-year",
+   "title": "The gates — the calculation of the hours of the year",
+   "anchor": "15:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-16-the-courses-of-the-moon",
+   "title": "The courses of the moon — the lesser light for seasons",
+   "anchor": "16:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-16-solar-and-lunar-year",
+   "title": "The solar year and the lunar year — the ordinances of the lights",
+   "anchor": "16:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-17-angelic-hosts-singing-before-yahuah",
+   "title": "The hosts of heaven singing before Yahuah",
+   "anchor": "17:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-18-grigori-descended-to-hermon",
+   "title": "The Grigori descended to Hermon — sons of Elohim took wives",
+   "anchor": "18:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-18-watchers-reserved-for-the-great-judgment",
+   "title": "The Watchers reserved under the earth for the great day",
+   "anchor": "18:4",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-19-ordered-ranks-recording-deeds",
+   "title": "The ordered angelic ranks who record the deeds of men",
+   "anchor": "19:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-20-cherubim-seraphim-thrones-dominions",
+   "title": "Cherubim and seraphim, thrones and dominions before the light",
+   "anchor": "20:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-21-holy-holy-holy-before-the-throne",
+   "title": "Holy, holy, holy — the seraphim about the throne",
+   "anchor": "21:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-21-fell-on-his-face-glorious-one-sent",
+   "title": "Enoch falls on his face; a glorious one is sent to him",
+   "anchor": "21:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-22-appearance-of-the-face-like-fire",
+   "title": "The appearance of the face, like iron glowing in fire",
+   "anchor": "22:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-22-stripped-and-clothed-in-garments-of-glory",
+   "title": "Stripped of earthly garments, clothed in the garments of glory",
+   "anchor": "22:8",
+   "member_count": 6
+  },
+  {
+   "slug": "2-enoch-22-pravuil-bring-out-the-books",
+   "title": "Pravuil brings out the books and the reed of quick-writing",
+   "anchor": "22:10",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-23-sit-and-write-the-souls-of-mankind",
+   "title": "Sit and write — the souls and the books of remembrance",
+   "anchor": "23:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-24-created-from-non-being-visible-from-invisible",
+   "title": "All things created from non-being, the visible from the invisible",
+   "anchor": "24:2",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-25-let-the-visible-come-out-light-from-light",
+   "title": "Let the visible come out — a great light at the word",
+   "anchor": "25:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-26-foundation-for-the-lower-things-from-the-invisible",
+   "title": "A foundation for the lower things, called forth from the invisible",
+   "anchor": "26:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-27-dividing-the-waters-light-from-darkness",
+   "title": "The waters made firm, the light divided from the darkness",
+   "anchor": "27:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-28-dry-land-gathered-the-sea-bounded",
+   "title": "The waters gathered, the dry land called earth, the sea given its bound",
+   "anchor": "28:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-29-the-angelic-orders-created-from-fire",
+   "title": "The hosts of heaven made — all things created by Him",
+   "anchor": "29:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-29-satanail-cast-down",
+   "title": "The rebel who would exalt his throne — cast out from the height",
+   "anchor": "29:3",
+   "member_count": 5
+  },
+  {
+   "slug": "2-enoch-30-the-lights-and-the-living-creatures",
+   "title": "The lights set for seasons, the waters and air filled with life",
+   "anchor": "30:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-30-man-formed-in-the-image-set-to-rule",
+   "title": "Man formed of the earth, image of Elohim, set as ruler over the earth",
+   "anchor": "30:10",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-30-the-two-ways-free-will-and-death",
+   "title": "The two ways set before Adam — made upright, free, and warned of death",
+   "anchor": "30:13",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-30-the-rib-and-the-mother-of-the-living",
+   "title": "The sleep, the rib, and the woman called mother",
+   "anchor": "30:16",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-31-the-garden-in-eden-and-the-command",
+   "title": "A garden in Eden in the east, that he should keep the command",
+   "anchor": "31:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-31-the-devil-seduced-eve",
+   "title": "Satanail the fugitive — the evil spirit who seduced Eve",
+   "anchor": "31:4",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-32-earth-thou-art-and-to-earth-return",
+   "title": "\"Earth you are, and into the earth shalt you go\"",
+   "anchor": "32:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-32-blessed-the-seventh-day-the-sabbath",
+   "title": "The seventh day blessed — the Sabbath of rest",
+   "anchor": "32:4",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-33-the-eighth-day-the-age-to-come",
+   "title": "The eighth day — the endless age of rest after the seven thousand",
+   "anchor": "33:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-33-the-self-eternal-creator-no-other-elohim",
+   "title": "The self-eternal Creator — none other Elohim but Him",
+   "anchor": "33:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-34-rejected-my-commandments-the-deluge",
+   "title": "Worthless seed, rejected commandments, and the deluge",
+   "anchor": "34:1",
+   "member_count": 5
+  },
+  {
+   "slug": "2-enoch-35-a-generation-shall-read-the-books",
+   "title": "A later generation that reads the books and tells the next",
+   "anchor": "35:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-36-no-other-god-teach-your-sons",
+   "title": "No other Elohim but me — teach and keep the commandments",
+   "anchor": "36:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-37-his-face-frozen-so-men-can-behold",
+   "title": "Enoch's face frozen — that men might be able to behold him",
+   "anchor": "37:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-38-gather-the-household-to-hear",
+   "title": "Let all my household come together, that I tell them everything",
+   "anchor": "38:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-39-not-my-lips-but-the-lords",
+   "title": "Not from my lips, but from Yahuah's lips",
+   "anchor": "39:2",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-39-i-have-seen-the-lords-face",
+   "title": "I have seen Yahuah's face — the seer who beheld from afar",
+   "anchor": "39:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-39-fearful-to-come-before-the-ruler-of-heaven",
+   "title": "How fearful to come before the face of the ruler of heaven",
+   "anchor": "39:8",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-40-the-measures-and-foundations-written",
+   "title": "The measures of the stars, sun, and earth — written down",
+   "anchor": "40:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-40-the-prisoners-awaiting-judgment-written",
+   "title": "The prisoners in pain and all that are judged — written down",
+   "anchor": "40:10",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-41-weeping-over-adams-transgression",
+   "title": "Weeping over the ruin of Adam and the forefathers",
+   "anchor": "41:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-41-blessed-is-the-man-who-sins-not",
+   "title": "Blessed is the man who shall not sin before Yahuah's face",
+   "anchor": "41:3",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-42-the-lords-works-are-right",
+   "title": "All Yahuah's works are right; man's works are known",
+   "anchor": "42:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-43-none-better-than-he-who-fears-god",
+   "title": "None better than he who fears Elohim",
+   "anchor": "43:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-44-man-in-the-likeness-of-gods-face",
+   "title": "Man made in the likeness of His face — revile man, despise Yahuah",
+   "anchor": "44:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-44-charity-to-the-needy-and-the-scales",
+   "title": "Charity to the needy, and every measure weighed at judgment",
+   "anchor": "44:3",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-45-pure-hearts-not-sacrifice",
+   "title": "Elohim demands pure hearts, not the abundance of offerings",
+   "anchor": "45:1",
+   "member_count": 6
+  },
+  {
+   "slug": "2-enoch-46-gift-with-evil-in-the-heart",
+   "title": "The gift refused when the heart is treacherous",
+   "anchor": "46:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-46-the-great-light-judges-just-and-unjust",
+   "title": "A great light, and judgment for the just and the unjust",
+   "anchor": "46:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-47-observe-the-handwriting-add-not",
+   "title": "Observe the handwriting and you shall not sin",
+   "anchor": "47:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-47-foundations-in-the-unknown",
+   "title": "He placed the foundations in the unknown",
+   "anchor": "47:5",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-48-the-courses-of-the-sun",
+   "title": "The sun along its heavenly circles, by measure and wisdom",
+   "anchor": "48:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-48-from-the-invisible-he-made-visible",
+   "title": "From the invisible He made all things visible",
+   "anchor": "48:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-48-bear-the-yoke-of-the-books",
+   "title": "Blessed is the man who bears their yoke",
+   "anchor": "48:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-49-swear-not-let-your-word-be-yea-yea",
+   "title": "Swear not — let your word be Yea, yea, and Nay, nay",
+   "anchor": "49:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-49-a-place-prepared-for-every-soul",
+   "title": "A place prepared for the repose of every soul",
+   "anchor": "49:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-50-every-work-in-writing-nothing-hidden",
+   "title": "Every man's work in writing — none can remain hidden",
+   "anchor": "50:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-50-return-not-evil-the-lord-avenges",
+   "title": "Return not evil — Yahuah will be your avenger",
+   "anchor": "50:4",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-50-treasure-in-the-world-to-come",
+   "title": "Ample treasure in the world to come",
+   "anchor": "50:6",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-51-stretch-out-your-hands-to-the-poor",
+   "title": "Stretch out your hands to the poor",
+   "anchor": "51:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-51-morning-midday-evening-into-the-dwelling",
+   "title": "Morning, midday, and evening into Yahuah's dwelling",
+   "anchor": "51:5",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-52-blessing-and-cursing-from-the-same-lips",
+   "title": "Blessing and cursing — the mouth toward Elohim and neighbour",
+   "anchor": "52:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-52-raise-the-fallen-honour-the-creators-works",
+   "title": "Blessed is he who raises the fallen and honours the creation",
+   "anchor": "52:5",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-52-keep-the-foundations-of-the-fathers",
+   "title": "Keep the foundations of the fathers — pervert not their decrees",
+   "anchor": "52:9",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-52-peace-and-the-tongue-that-hides-a-sword",
+   "title": "Peace imparted, and the tongue that hides a sword",
+   "anchor": "52:11",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-52-weighed-in-the-scales-and-the-books",
+   "title": "All laid bare in the weighing-scales and the books",
+   "anchor": "52:15",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-53-no-man-prays-away-anothers-sin",
+   "title": "No man stands to pray away another's sin — each bears his own",
+   "anchor": "53:1",
+   "member_count": 6
+  },
+  {
+   "slug": "2-enoch-53-all-works-written-the-vain-imaginings",
+   "title": "All works written before creation — the vain imaginings of the heart",
+   "anchor": "53:2",
+   "member_count": 1
+  },
+  {
+   "slug": "2-enoch-54-hand-down-the-books-for-an-inheritance",
+   "title": "Hand down the books — an inheritance for the generations",
+   "anchor": "54:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-55-going-up-to-the-uppermost-jerusalem",
+   "title": "Going up to the uppermost Jerusalem — Enoch's eternal inheritance",
+   "anchor": "55:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-56-anointed-with-glory-no-earthly-food",
+   "title": "Anointed with the ointment of glory — no earthly food remains in him",
+   "anchor": "56:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-58-adam-named-the-beasts-set-lord-over-all",
+   "title": "Adam named the beasts and was set lord over all",
+   "anchor": "58:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-58-the-souls-of-beasts-shall-accuse",
+   "title": "The souls of beasts have a place, and shall accuse the man who feeds them ill",
+   "anchor": "58:6",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-59-clean-sacrifice-a-cure-for-the-soul",
+   "title": "Right sacrifice — clean animals bring a cure for the soul",
+   "anchor": "59:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-59-who-defiles-a-beasts-soul-defiles-his-own",
+   "title": "Whoever defiles the soul of a beast defiles his own soul",
+   "anchor": "59:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-60-who-kills-a-mans-soul-kills-his-own",
+   "title": "He who kills a man's soul kills his own soul",
+   "anchor": "60:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-61-do-to-every-soul-as-for-thine-own",
+   "title": "Do to every living soul as a man asks for his own",
+   "anchor": "61:1",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-61-much-inheritance-prepared-the-good-houses",
+   "title": "Much inheritance prepared — the good houses and the bad",
+   "anchor": "61:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-62-pay-the-vow-bring-the-gift",
+   "title": "Bring your gift in faith, and pay what you vow before His face",
+   "anchor": "62:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-63-clothe-the-naked-feed-the-hungry",
+   "title": "Clothe the naked and feed the hungry — the reward from Elohim",
+   "anchor": "63:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-63-the-proud-and-the-false-tongue",
+   "title": "The proud and the false tongue, hateful before the Lord",
+   "anchor": "63:4",
+   "member_count": 2
+  },
+  {
+   "slug": "2-enoch-64-enoch-whom-the-lord-chose",
+   "title": "Enoch, whom the Lord chose — the honored seer, not a god",
+   "anchor": "64:4",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-65-the-one-aeon-and-the-great-light",
+   "title": "When time ends — the one aeon, the great light incorruptible",
+   "anchor": "65:5",
+   "member_count": 5
+  },
+  {
+   "slug": "2-enoch-65-he-divided-time-and-counts-the-works",
+   "title": "He made man and divided time — the works written, none hidden",
+   "anchor": "65:2",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-66-walk-before-his-face-serve-him-alone",
+   "title": "Walk before His face in fear, and serve Him alone",
+   "anchor": "66:2",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-66-just-offerings-not-unjust-he-sees-all",
+   "title": "Just offerings, not the unjust — for He sees all and judges all",
+   "anchor": "66:3",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-67-enoch-taken-up-and-was-no-more-found",
+   "title": "Enoch taken up — he was no more found on the earth",
+   "anchor": "67:1",
+   "member_count": 4
+  },
+  {
+   "slug": "2-enoch-68-methuselah-and-the-line-of-the-fathers",
+   "title": "Methuselah and the sons of Enoch — the line of the fathers",
+   "anchor": "68:1",
+   "member_count": 3
+  },
+  {
+   "slug": "2-enoch-68-the-altar-at-achuzan-and-the-offering",
+   "title": "The altar at Achuzan — the offering before the Lord's face",
+   "anchor": "68:6",
+   "member_count": 2
+  }
+ ],
+ "sample_cards": [
+  {
+   "src": "1:6",
+   "tgt": "genesis 18:2",
+   "note": "Genesis 18:2 — *And he lift up his eyes and looked, and, lo, three men stood by him: and when he saw them, he ran to meet them from the tent door, and bowed himself toward the ground.* The sudden appearing of heavenly men in human form, met with reverence, is the pattern the Torah sets at Abraham's tent."
+  },
+  {
+   "src": "2:1",
+   "tgt": "deuteronomy 4:39",
+   "note": "Deuteronomy 4:39 — *Know therefore this day, and consider it in thine heart, that Yahuah (LORD) he is Elohim (God) in heaven above, and upon the earth beneath: there is none else.* Enoch's charge to turn not from Elohim to the vain is Moses' command to fix in the heart that Yahuah alone is Elohim of heaven and earth."
+  },
+  {
+   "src": "4:1",
+   "tgt": "genesis 1:14",
+   "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* The rulers of the stellar orders, who govern the stars' services to the heavens, attend the very lights the Torah set for signs and seasons."
+  }
+ ],
+ "sample_thread": {
+  "slug": "2-enoch-39-i-have-seen-the-lords-face",
+  "title": "I have seen Yahuah's face — the seer who beheld from afar",
+  "summary_md": "Enoch sets his frail manhood against what he has been shown: *I am one who has seen Yahuah's (Lord's) face, like iron made to glow from fire* (2 Enoch 39:3), *but I have seen Yahuah's (Lord's) eyes, shining like the sun's rays* (2 Enoch 39:4), *but I have seen Yahuah's (Lord's) right hand filling heaven as he helped me* (2 Enoch 39:5). It ain't new — this is the prophets' own witness of beholding the Holy One on His throne: *In the year that king Uzziah died I saw also Yahuah (Lord) sitting upon a throne, high and lifted up, and his train filled the temple* (Isaiah 6:1); and Job, taught at last by sight, *I have heard of thee by the hearing of the ear: but now mine eye seeth thee* (Job 42:5). Yet the boundary holds — *No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him* (John 1:18) — so what the seer beholds is the glory afar, the likeness Paul too was caught up to, *caught up into paradise, and heard unspeakable words, which it is not lawful for a man to utter* (2 Corinthians 12:4). Enoch beholds, and is undone, as every true seer is."
+ }
+}

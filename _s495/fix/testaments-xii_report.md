@@ -1,0 +1,26 @@
+# S495 assemble report — pseudepigrapha/testaments-xii
+
+draft file(s): /home/claude/s495/out/testaments-xii_A_fixed.json, /home/claude/s495/out/testaments-xii_B_fixed.json  (drafter model: claude-sonnet-5-5)
+gap chapters: [2, 7, 8, 16, 17, 23, 27, 28, 31, 33, 37, 38, 39, 40, 41, 42, 43, 44, 62, 63, 81, 85, 92, 94, 110, 115, 117, 122, 123, 124, 126]
+cards 101 (tier 'free') | threads new 29 | joins 2 (1 live threads) | members 101 | sort band 94000 step 5
+result: PASS — 0 failures, 19 warnings
+
+- **WARN** ch 2: drafter flag: Testaments of the Twelve Patriarchs 2:3-9 sets the senses out as seven spirits of creation in a Hellenized scheme (life, sight, hearing, smell, speech, taste, procreation); nothing in the notes is built on that scheme, only on the plain warning about the eye and about youth.
+- **WARN** ch 7: drafter flag: Testaments of the Twelve Patriarchs 7:2 has Reuben buried in the cave at Hebron; Joshua 24:32 puts Joseph's bones in Shechem and Acts 7:16 speaks of the fathers laid in Sychem, so the Testament's single burial place is not settled from the canon. Notes rest only on the coffin-in-Egypt posture and the Machpelah cave of Jacob.
+- **WARN** ch 23: drafter flag: Testaments of the Twelve Patriarchs 23:2-3 retells Shechem as a righteous act; Genesis 34:30 and 49:5-7 record Jacob's rebuke and curse on the anger of Simeon and Levi. The notes set the two beside each other without taking a side beyond what Genesis says.
+- **WARN** ch 28: drafter flag: Testaments of the Twelve Patriarchs 28:4 says Ambram and Jochebed were born in one day, which sits awkwardly beside Exodus 6:20 (Jochebed his father's sister); the notes rest only on the marriage and its sons.
+- **WARN** ch 33: drafter flag: Testaments of the Twelve Patriarchs 33:2 ends with a bracketed line about the priest arising for the salvation of the world; it is marked off in the text itself and the notes do not build on it. The jubilee scheme of priests in 33:2-11 is the Testament's own and is not read as an interpretation of Daniel 9.
+- **WARN** ch 37: drafter flag: Testaments of the Twelve Patriarchs 37:2-7 is a boast of Judah's prowess in the field; the notes set the psalmist and David beside it, who give the credit to Yahuah, and do not endorse or deny the feats themselves.
+- **WARN** ch 42: drafter flag: Testaments of the Twelve Patriarchs 42:2-3 praises a stratagem of feigned friendship and a night betrayal; the notes set Joshua 9:4 beside it without endorsing or rebuking it beyond what scripture says.
+- **WARN** ch 43: drafter flag: Testaments of the Twelve Patriarchs 43:2 has the king of Adullam give his daughter at a feast; Genesis 38:2 has Judah see and take her. The two tellings of the marriage differ and the notes rest on Genesis.
+- **WARN** ch 44: drafter flag: Testaments of the Twelve Patriarchs 44:3 and Jubilees 38:2 have Jacob slay Esau; Genesis 35:29 shows both brothers burying Isaac and Genesis 36 has Esau in Seir, so the war is not found in the canon.
+- **WARN** ch 62: drafter flag: Retelling stays close to Genesis 29 and 30; the added details (apples in Haran, the speeches) are the Testament's own and no doctrine is built on them.
+- **WARN** ch 63: drafter flag: 63:1 (angel to Jacob) and 63:5 (mandrakes offered at the house of Yahuah to the priest of El Elyon) are not in Genesis; the house of Yahuah did not yet exist in Rachel's day. Set beside Genesis 30 and 14 only; nothing built on them.
+- **WARN** ch 85: drafter flag: 85:3 is bracketed by the translator as an interpolation; set beside Deuteronomy and Judges only. The Testament puts Dan's bones near the fathers, while Acts 7:16 speaks of the fathers laid at Sychem; not harmonized here. Summary's last sentence leans on Moses' gathering promise (Deut 30) which is not quoted in the files used; kept as a general statement.
+- **WARN** ch 92: drafter flag: 92:2-3: Jacob believing Joseph lives is not in Genesis, which has him mourning till the wagons come (Gen 45:26-28); the Testament's version is set beside, not harmonized.
+- **WARN** ch 115: drafter flag: Poison threat and gifts (115:1, 115:4) are the Testament's additions to Genesis 39; set beside Torah and Proverbs only.
+- **WARN** ch 117: drafter flag: 117:4 names 'the spirit of Beliar' troubling her; Genesis names no such spirit. Set Genesis and Proverbs beside the chapter; nothing built on the line.
+- **WARN** ch 122: drafter flag: The chariot, the merchant and the woman's own agency in the purchase (122:1-3) are the Testament's elaboration; Genesis 37:28,36 has Midianites/Ishmeelites selling Joseph to Potiphar.
+- **WARN** ch 123: drafter flag: The interrogation scene (merchant, Pentephris, beating) is not in Genesis; set beside Genesis 37, 39 and Psalm 105 only. Genesis 37:28 names Midianites and Ishmeelites together; the Testament names only the Ishmaelites.
+- **WARN** ch 124: drafter flag: The court scene (window, husband's reply, prison pending the owners) differs from Genesis 39, where Joseph is jailed after the false accusation (39:14-20). Summary says so; no attempt to harmonize.
+- **WARN** ch 126: drafter flag: The eunuch/price episode (126:2-6) is the Testament's elaboration; it does not fit Genesis 37:28,36 and 39:1 without harmonizing, which is not attempted. 'Minae' and 'gold' are the Testament's, Genesis has silver.

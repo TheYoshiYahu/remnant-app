@@ -1,0 +1,130 @@
+{
+ "book": "2-baruch",
+ "edition": "pseudepigrapha",
+ "model": "claude-sonnet-5-5",
+ "card_tier": "free",
+ "draft_files": [
+  "/home/claude/s495/out/2-baruch_fixed.json"
+ ],
+ "gap_chapters": [
+  33
+ ],
+ "sort_band": 94000,
+ "cards": [
+  {
+   "src_ch": 33,
+   "src_vn": 1,
+   "tgt_edition": "canon",
+   "tgt_book": "jeremiah",
+   "tgt_ch": 29,
+   "tgt_vn": 1,
+   "note": "Jeremiah 29:1 — *Now these are the words of the letter that Jeremiah the prophet sent from Jerusalem unto the residue of the elders which were carried away captives, and to the priests, and to the prophets, and to all the people whom Nebuchadnezzar had carried away captive from Jerusalem to Babylon;* *'Are these the commands which thy companion, Jeremiah the prophet, commanded thee, and said unto thee: \"Look to this people till I go and make ready the rest of the brethren in Babylon,* (2 Baruch 33:1) The people hold Baruch to the charge his companion Jeremiah gave him. Jeremiah was the prophet whose letter went out from Jerusalem to the elders, priests, prophets and all the people already carried away to Babylon, and those captives are the brethren the people have in mind.",
+   "member_note": "Jeremiah 29:1 — *Now these are the words of the letter that Jeremiah the prophet sent from Jerusalem unto the residue of the elders which were carried away captives* Jeremiah's letter to the captives in Babylon is the charge the people remind Baruch of.",
+   "tier": "free",
+   "src_text": "'Are these the commands which thy companion, Jeremiah the prophet, commanded thee, and said unto thee: \"Look to this people till I go and make ready the rest of the brethren in Babylon,",
+   "tgt_text": "Now these are the words of the letter that Jeremiah the prophet sent from Jerusalem unto the residue of the elders which were carried away captives, and to the priests, and to the prophets, and to all the people whom Nebuchadnezzar had carried away captive from Jerusalem to Babylon;",
+   "join_slug": null
+  },
+  {
+   "src_ch": 33,
+   "src_vn": 2,
+   "tgt_edition": "canon",
+   "tgt_book": "jeremiah",
+   "tgt_ch": 29,
+   "tgt_vn": 4,
+   "note": "Jeremiah 29:4 — *Thus saith Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of Yashar'el (Israel), unto all that are carried away captives, whom I have caused to be carried away from Jerusalem unto Babylon;* *against whom has gone forth the sentence that they should be led into captivity\"?* (2 Baruch 33:2) Both speak of a sentence that has already gone out. In Jeremiah it is Yahuah (God) himself who says he caused them to be carried away from Jerusalem, so the captivity is not an accident of war but a judgment spoken and carried out.",
+   "member_note": "Jeremiah 29:4 — *Thus saith Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of Yashar'el (Israel), unto all that are carried away captives, whom I have caused to be carried away from Jerusalem unto Babylon* The captivity is a sentence Yahuah himself caused, as the people in Baruch's day acknowledge.",
+   "tier": "free",
+   "src_text": "against whom has gone forth the sentence that they should be led into captivity\"?",
+   "tgt_text": "Thus saith Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of Yashar'el (Israel), unto all that are carried away captives, whom I have caused to be carried away from Jerusalem unto Babylon;",
+   "join_slug": null
+  },
+  {
+   "src_ch": 33,
+   "src_vn": 3,
+   "tgt_edition": "canon",
+   "tgt_book": "numbers",
+   "tgt_ch": 27,
+   "tgt_vn": 17,
+   "note": "Numbers 27:17 — *Which may go out before them, and which may go in before them, and which may lead them out, and which may bring them in; that the congregation of Yahuah (LORD) be not as sheep which have no shepherd.* *And now if thou also forsakest us, it were good for us all to die before thee, and then that thou shouldst withdraw from us.'* (2 Baruch 33:3) The people's dread is the very fear Moses laid before Yahuah (God): a congregation left like sheep with no shepherd. Their cry, that it were good for them all to die before Baruch withdraws, is the cry of a flock that has no one else to lead it out and bring it in.",
+   "member_note": "Numbers 27:17 — *that the congregation of Yahuah (LORD) be not as sheep which have no shepherd* A people afraid of being left as sheep without a shepherd.",
+   "tier": "free",
+   "src_text": "And now if thou also forsakest us, it were good for us all to die before thee, and then that thou shouldst withdraw from us.'",
+   "tgt_text": "Which may go out before them, and which may go in before them, and which may lead them out, and which may bring them in; that the congregation of Yahuah (LORD) be not as sheep which have no shepherd.",
+   "join_slug": null
+  },
+  {
+   "src_ch": 33,
+   "src_vn": 3,
+   "tgt_edition": "canon",
+   "tgt_book": "acts",
+   "tgt_ch": 20,
+   "tgt_vn": 38,
+   "note": "Acts 20:38 — *Sorrowing most of all for the words which he spake, that they should see his face no more. And they accompanied him unto the ship.* *And now if thou also forsakest us, it were good for us all to die before thee, and then that thou shouldst withdraw from us.'* (2 Baruch 33:3) The elders at Miletus wept for the same reason, grieving most of all that the man who had led them would not be seen again. A people who weep when their teacher speaks of going away are weeping for the loss of the one who held them together.",
+   "member_note": "Acts 20:38 — *Sorrowing most of all for the words which he spake, that they should see his face no more.* A people in sorrow because the one who led them is leaving.",
+   "tier": "free",
+   "src_text": "And now if thou also forsakest us, it were good for us all to die before thee, and then that thou shouldst withdraw from us.'",
+   "tgt_text": "Sorrowing most of all for the words which he spake, that they should see his face no more. And they accompanied him unto the ship.",
+   "join_slug": null
+  }
+ ],
+ "threads": [
+  {
+   "slug": "2-baruch-33-if-thou-forsakest-us-it-were-good-to-die-before-thee",
+   "title": "The people plead with the prophet not to leave them",
+   "summary_md": "The people answer Baruch with the words of the prophet who had gone before him: *'Are these the commands which thy companion, Jeremiah the prophet, commanded thee, and said unto thee: \"Look to this people till I go and make ready the rest of the brethren in Babylon,* (2 Baruch 33:1) They remind him that the captivity is already decreed: *against whom has gone forth the sentence that they should be led into captivity\"?* (2 Baruch 33:2) And then the cry of a flock that cannot bear to lose its shepherd: *And now if thou also forsakest us, it were good for us all to die before thee, and then that thou shouldst withdraw from us.'* (2 Baruch 33:3)\n\nIt ain't new. Jeremiah's letter had carried this sentence into Babylon in Yahuah's (God's) own words: *Thus saith Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of Yashar'el (Israel), unto all that are carried away captives, whom I have caused to be carried away from Jerusalem unto Babylon;* (Jeremiah 29:4) The fear of a people left without a leader is as old as Moses, who asked Yahuah (God) for a man to go out and come in before the people, so that they should not be left leaderless: *Which may go out before them, and which may go in before them, and which may lead them out, and which may bring them in; that the congregation of Yahuah (LORD) be not as sheep which have no shepherd.* (Numbers 27:17) And the grief of a people who hear that their teacher is about to leave is met again at Miletus: *Sorrowing most of all for the words which he spake, that they should see his face no more. And they accompanied him unto the ship.* (Acts 20:38)\n\nBaruch's people are not being faithless in this plea; they are doing what the scattered have always done when the one who holds them to the commandments speaks of going. Their words show how much hangs on a faithful shepherd, and the next chapter lets Baruch answer them.",
+   "anchor_start_vn": 1,
+   "anchor_end_vn": 3,
+   "tier": "extras",
+   "sort_order": 94000,
+   "ch": 33
+  }
+ ],
+ "members": [
+  {
+   "thread_slug": "2-baruch-33-if-thou-forsakest-us-it-were-good-to-die-before-thee",
+   "src_vn": 1,
+   "src_ch": 33,
+   "tgt_edition": "canon",
+   "tgt_book": "jeremiah",
+   "tgt_ch": 29,
+   "tgt_vn": 1,
+   "member_note": "Jeremiah 29:1 — *Now these are the words of the letter that Jeremiah the prophet sent from Jerusalem unto the residue of the elders which were carried away captives* Jeremiah's letter to the captives in Babylon is the charge the people remind Baruch of.",
+   "sort_order": 1
+  },
+  {
+   "thread_slug": "2-baruch-33-if-thou-forsakest-us-it-were-good-to-die-before-thee",
+   "src_vn": 2,
+   "src_ch": 33,
+   "tgt_edition": "canon",
+   "tgt_book": "jeremiah",
+   "tgt_ch": 29,
+   "tgt_vn": 4,
+   "member_note": "Jeremiah 29:4 — *Thus saith Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of Yashar'el (Israel), unto all that are carried away captives, whom I have caused to be carried away from Jerusalem unto Babylon* The captivity is a sentence Yahuah himself caused, as the people in Baruch's day acknowledge.",
+   "sort_order": 2
+  },
+  {
+   "thread_slug": "2-baruch-33-if-thou-forsakest-us-it-were-good-to-die-before-thee",
+   "src_vn": 3,
+   "src_ch": 33,
+   "tgt_edition": "canon",
+   "tgt_book": "numbers",
+   "tgt_ch": 27,
+   "tgt_vn": 17,
+   "member_note": "Numbers 27:17 — *that the congregation of Yahuah (LORD) be not as sheep which have no shepherd* A people afraid of being left as sheep without a shepherd.",
+   "sort_order": 3
+  },
+  {
+   "thread_slug": "2-baruch-33-if-thou-forsakest-us-it-were-good-to-die-before-thee",
+   "src_vn": 3,
+   "src_ch": 33,
+   "tgt_edition": "canon",
+   "tgt_book": "acts",
+   "tgt_ch": 20,
+   "tgt_vn": 38,
+   "member_note": "Acts 20:38 — *Sorrowing most of all for the words which he spake, that they should see his face no more.* A people in sorrow because the one who led them is leaving.",
+   "sort_order": 4
+  }
+ ],
+ "joins": []
+}

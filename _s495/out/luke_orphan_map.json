@@ -1,0 +1,3055 @@
+{
+ "model": "claude-sonnet-5-5 (Sonnet 5.5)",
+ "session": "S495 Phase 2",
+ "generated": "2026-11-08",
+ "source": "live/canon__luke.json",
+ "summary": {
+  "total": 61,
+  "by_grade": {
+   "FULL": 0,
+   "PARTIAL": 5,
+   "BARE": 44,
+   "DOCREF": 12
+  },
+  "by_grade_ignoring_prefix": {
+   "FULL": 0,
+   "PARTIAL": 17,
+   "BARE": 32,
+   "DOCREF": 12
+  },
+  "prefix_notes": 56,
+  "prefix_slug_exists": 0,
+  "quote_kind": {
+   "none": 40,
+   "phrase": 8,
+   "near-not-verbatim": 10,
+   "whole-not-verbatim": 2,
+   "whole-elided": 1
+  },
+  "bare_reasons": {
+   "prefix": 44,
+   "italics not from target": 22,
+   "quotes source verse only": 5,
+   "no quotation": 4,
+   "label-like": 1
+  },
+  "jargon_tokens": {
+   "substance": 12,
+   "architecture": 9,
+   "register": 8
+  },
+  "hyphen_chain_cards": 39,
+  "docref_tokens": {
+   "the framework": 12,
+   "Red Line": 1,
+   "FRAMEWORK-MAJOR": 1
+  },
+  "docref_cards_narrow": 12,
+  "docref_cards_framework_other_use_only": 0,
+  "FULL_with_shape_gaps": 0,
+  "cards_with_bare_sacred_names": 3,
+  "dup_cards": 4,
+  "dup_cards_same_pair": 0,
+  "dup_cards_reversed_pair": 0,
+  "dup_cards_reversed_cross_book": 4,
+  "dup_pairs_with_an_orphan": 4,
+  "prefix_slug_distinct": 33
+ },
+ "per_chapter": {
+  "1": {
+   "orphans": 6,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 6,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 2,
+    "BARE": 4,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "2": {
+   "orphans": 1,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 1,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 1,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "3": {
+   "orphans": 2,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 2,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 2,
+    "BARE": 0,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "4": {
+   "orphans": 3,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 2,
+   "DOCREF": 1,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 2,
+    "DOCREF": 1
+   },
+   "dup_cards": 0,
+   "docref_ids": [
+    6987
+   ]
+  },
+  "5": {
+   "orphans": 3,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 3,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 1,
+    "BARE": 2,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "6": {
+   "orphans": 3,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 3,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 3,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "7": {
+   "orphans": 7,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 6,
+   "DOCREF": 1,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 2,
+    "BARE": 4,
+    "DOCREF": 1
+   },
+   "dup_cards": 1,
+   "docref_ids": [
+    7006
+   ]
+  },
+  "8": {
+   "orphans": 3,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 2,
+   "DOCREF": 1,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 2,
+    "DOCREF": 1
+   },
+   "dup_cards": 0,
+   "docref_ids": [
+    7017
+   ]
+  },
+  "9": {
+   "orphans": 8,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 7,
+   "DOCREF": 1,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 2,
+    "BARE": 5,
+    "DOCREF": 1
+   },
+   "dup_cards": 1,
+   "docref_ids": [
+    7022
+   ]
+  },
+  "10": {
+   "orphans": 1,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 1,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 1,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "11": {
+   "orphans": 2,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 2,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 1,
+    "BARE": 1,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "12": {
+   "orphans": 3,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 0,
+   "DOCREF": 3,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 0,
+    "DOCREF": 3
+   },
+   "dup_cards": 1,
+   "docref_ids": [
+    7042,
+    7044,
+    7048
+   ]
+  },
+  "13": {
+   "orphans": 1,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 0,
+   "DOCREF": 1,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 0,
+    "DOCREF": 1
+   },
+   "dup_cards": 0,
+   "docref_ids": [
+    7054
+   ]
+  },
+  "14": {
+   "orphans": 3,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 2,
+   "DOCREF": 1,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 1,
+    "BARE": 1,
+    "DOCREF": 1
+   },
+   "dup_cards": 1,
+   "docref_ids": [
+    7055
+   ]
+  },
+  "15": {
+   "orphans": 1,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 1,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 1,
+    "BARE": 0,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "16": {
+   "orphans": 3,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 2,
+   "DOCREF": 1,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 2,
+    "DOCREF": 1
+   },
+   "dup_cards": 0,
+   "docref_ids": [
+    7067
+   ]
+  },
+  "17": {
+   "orphans": 1,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 1,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 1,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "18": {
+   "orphans": 4,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 2,
+   "DOCREF": 2,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 2,
+    "DOCREF": 2
+   },
+   "dup_cards": 0,
+   "docref_ids": [
+    7077,
+    7084
+   ]
+  },
+  "19": {
+   "orphans": 1,
+   "FULL": 0,
+   "PARTIAL": 0,
+   "BARE": 1,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 0,
+    "BARE": 1,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  },
+  "21": {
+   "orphans": 5,
+   "FULL": 0,
+   "PARTIAL": 5,
+   "BARE": 0,
+   "DOCREF": 0,
+   "ignoring_prefix": {
+    "FULL": 0,
+    "PARTIAL": 5,
+    "BARE": 0,
+    "DOCREF": 0
+   },
+   "dup_cards": 0,
+   "docref_ids": []
+  }
+ },
+ "docref": [
+  {
+   "id": 6987,
+   "ref": "4:25 -> matthew 15:24",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…Syrian — the individual-mercy contrast cases the framework holds against the false-inclusion-gospel. Th…"
+   ]
+  },
+  {
+   "id": 7006,
+   "ref": "7:9 -> matthew 8:10",
+   "tokens": [
+    "Red Line",
+    "the framework"
+   ],
+   "context": [
+    "…he framework's individual-mercy carveout per Red Line #7. The Gentile centurion receives mercy wit…",
+    "…n's faith against the seed-of-promise body — the framework's individual-mercy carveout per Red Line #7.…"
+   ]
+  },
+  {
+   "id": 7017,
+   "ref": "8:21 -> matthew 12:50",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…h hear the word of Elohim (God), and do it.* The framework-substance: hearing-and-doing reveals the fam…"
+   ]
+  },
+  {
+   "id": 7022,
+   "ref": "9:5 -> matthew 10:14",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…rom your feet for a testimony against them.* The framework's reading: the pursuit ends where the reject…"
+   ]
+  },
+  {
+   "id": 7042,
+   "ref": "12:1 -> matthew 16:6",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…ies the leaven as hypocrisy in plain words — the framework-substance of the Pharisaic-system-as-ferment…"
+   ]
+  },
+  {
+   "id": 7044,
+   "ref": "12:10 -> matthew 12:31",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…given.* Luke's version preserves the warning the framework reads as the no-place-of-repentance for the …"
+   ]
+  },
+  {
+   "id": 7048,
+   "ref": "12:47 -> matthew 25:14",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…is will, shall be beaten with many stripes.* The framework's post-harvest-sifting substance — names get…"
+   ]
+  },
+  {
+   "id": 7054,
+   "ref": "13:20 -> matthew 13:33",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…ll the whole was leavened* (Luke 13:20-21) — the framework reading of leaven across the gospels is the …"
+   ]
+  },
+  {
+   "id": 7055,
+   "ref": "14:1 -> mark 2:27",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "… — they hold their peace. Same heart-shabbat the framework restores — the day-Yahuah-hallowed is for th…"
+   ]
+  },
+  {
+   "id": 7067,
+   "ref": "16:19 -> matthew 13:24",
+   "tokens": [
+    "the framework",
+    "FRAMEWORK-MAJOR"
+   ],
+   "context": [
+    "…man-and-Lazaros parable. FRAMEWORK-MAJOR for the framework-honest sheol-and-resurrection register. Two …",
+    "…itecture | The rich-man-and-Lazaros parable. FRAMEWORK-MAJOR for the framework-honest sheol-and-resurrect…"
+   ]
+  },
+  {
+   "id": 7077,
+   "ref": "18:9 -> ezekiel 18:21",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…o me a sinner* — the contrite-spirit posture the framework names. Yechezk'el (Ezekiel) 18:21's repentan…"
+   ]
+  },
+  {
+   "id": 7084,
+   "ref": "18:35 -> matthew 9:27",
+   "tokens": [
+    "the framework"
+   ],
+   "context": [
+    "…cry from the marginalized — the same pattern the framework names across the gospels."
+   ]
+  }
+ ],
+ "prefix_slug_groups": [
+  {
+   "slug": "yochanan-as-eliyahu-pattern-prophet",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6956,
+    6973,
+    7008,
+    7009,
+    7010,
+    7011
+   ]
+  },
+  {
+   "slug": "leaven-as-corruption-substance",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6995,
+    7042,
+    7054
+   ]
+  },
+  {
+   "slug": "shabbat-controversy-heart-shabbat-vs-pharisaic-fence",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6996,
+    6997,
+    7055
+   ]
+  },
+  {
+   "slug": "kinship-redefinition-kingdom-family",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7017,
+    7041,
+    7057
+   ]
+  },
+  {
+   "slug": "grace-and-the-opportunity-that-can-be-lost",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7048,
+    7061,
+    7077
+   ]
+  },
+  {
+   "slug": "messianic-line-preservation-by-sovereign-decree",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6959,
+    6960
+   ]
+  },
+  {
+   "slug": "kingdoms-now-under-watcher-rebellion-administration",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6984,
+    7034
+   ]
+  },
+  {
+   "slug": "canaanite-woman-master",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6987,
+    7007
+   ]
+  },
+  {
+   "slug": "lost-sheep-mission-scope",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6989,
+    7087
+   ]
+  },
+  {
+   "slug": "messiah-as-torah-affirming-healer",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6991,
+    7085
+   ]
+  },
+  {
+   "slug": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7014,
+    7015
+   ]
+  },
+  {
+   "slug": "shake-the-dust-off-rejection-response",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7022,
+    7030
+   ]
+  },
+  {
+   "slug": "first-passion-prediction-and-the-must-of-the-passion",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7025,
+    7083
+   ]
+  },
+  {
+   "slug": "take-up-the-cross-discipleship-cost",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7026,
+    7056
+   ]
+  },
+  {
+   "slug": "wheat-and-tares-the-post-harvest-sifting-architecture",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7067,
+    7074
+   ]
+  },
+  {
+   "slug": "the-seed-of-promise-is-singular-paternal",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6958
+   ]
+  },
+  {
+   "slug": "avraham-reckoned-before-circumcision",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6964
+   ]
+  },
+  {
+   "slug": "gospel-promised-afore",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6965
+   ]
+  },
+  {
+   "slug": "trumpets-and-the-day-of-yahuah",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6970
+   ]
+  },
+  {
+   "slug": "another-gospel-as-judaizer-flesh-credential",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6976
+   ]
+  },
+  {
+   "slug": "bridegroom-messianic-identification",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6994
+   ]
+  },
+  {
+   "slug": "twelve-apostles-twelve-tribes-restoration-architecture",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    6998
+   ]
+  },
+  {
+   "slug": "my-brethren-substance-distinguishing-the-seed-of-promise-from-the-categorical-nations",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7006
+   ]
+  },
+  {
+   "slug": "eliyahu-pattern-prophet-martyrdom",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7012
+   ]
+  },
+  {
+   "slug": "wilderness-feeding-as-messianic-banquet-pre-figuration",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7023
+   ]
+  },
+  {
+   "slug": "caesarea-philippi-confession-the-rock-the-keys-the-assembly",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7024
+   ]
+  },
+  {
+   "slug": "the-formless-father-and-the-formed-son-witnessed-in-ascension-of-isaiah",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7027
+   ]
+  },
+  {
+   "slug": "the-son-of-adam-glorified-in-1-enoch-throne-vision-and-parables",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7029
+   ]
+  },
+  {
+   "slug": "sign-of-yonah-resurrection-credential",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7038
+   ]
+  },
+  {
+   "slug": "blasphemy-against-the-ruach-warning",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7044
+   ]
+  },
+  {
+   "slug": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7064
+   ]
+  },
+  {
+   "slug": "scripture-twisting-and-the-harmonization-discipline",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7068
+   ]
+  },
+  {
+   "slug": "son-of-david-messianic-recognition-by-marginalized",
+   "exists_as_live_thread": false,
+   "card_ids": [
+    7084
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "id": 6956,
+   "s": "1:17",
+   "s_ch": 1,
+   "s_vn": 17,
+   "t": "malachi 4:5",
+   "t_book": "malachi",
+   "t_ch": 4,
+   "t_vn": 5,
+   "note_head": "thread:yochanan-as-eliyahu-pattern-prophet | *And he shall go before him in the spirit and",
+   "prefix_slug": "yochanan-as-eliyahu-pattern-prophet",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "spirit-and-power"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 72,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6958,
+   "s": "1:31",
+   "s_ch": 1,
+   "s_vn": 31,
+   "t": "2-samuel 7:12",
+   "t_book": "2-samuel",
+   "t_ch": 7,
+   "t_vn": 12,
+   "note_head": "thread:the-seed-of-promise-is-singular-paternal | *He shall be great, and shall be called ",
+   "prefix_slug": "the-seed-of-promise-is-singular-paternal",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "paternal-seed-singular"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 92,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6959,
+   "s": "1:32",
+   "s_ch": 1,
+   "s_vn": 32,
+   "t": "2-samuel 7:12",
+   "t_book": "2-samuel",
+   "t_ch": 7,
+   "t_vn": 12,
+   "note_head": "thread:messianic-line-preservation-by-sovereign-decree | *He shall be great, and shall be ",
+   "prefix_slug": "messianic-line-preservation-by-sovereign-decree",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "paternal-seed-singular",
+    "scepter-not-departing"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 63,
+   "reasons": [
+    "prefix",
+    "quotes source verse only"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6960,
+   "s": "1:33",
+   "s_ch": 1,
+   "s_vn": 33,
+   "t": "daniel 7:14",
+   "t_book": "daniel",
+   "t_ch": 7,
+   "t_vn": 14,
+   "note_head": "thread:messianic-line-preservation-by-sovereign-decree | *And of his kingdom there shall b",
+   "prefix_slug": "messianic-line-preservation-by-sovereign-decree",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "phrase",
+   "quote_coverage": 0.5,
+   "jargon": [],
+   "hyphen_chains": [
+    "eternal-kingdom-of-the-Son-of-Adam"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 48,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6964,
+   "s": "1:55",
+   "s_ch": 1,
+   "s_vn": 55,
+   "t": "genesis 17:7",
+   "t_book": "genesis",
+   "t_ch": 17,
+   "t_vn": 7,
+   "note_head": "thread:avraham-reckoned-before-circumcision | *As he spake to our fathers, to Avraham (Abr",
+   "prefix_slug": "avraham-reckoned-before-circumcision",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.29,
+   "jargon": [],
+   "hyphen_chains": [
+    "daughter-of-Yashar'el",
+    "paternal-seed-promise"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 73,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "to be a Elohim (God) unto thee, and to thy seed after thee",
+     0.77,
+     0.29
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [
+    "Yashar'el"
+   ],
+   "shape_gaps": [],
+   "quote_diff": [
+    "- => and i will establish my covenant between me and you and your seed after you in their generations for an everlasting covenant",
+    "thee => you",
+    "thy => your",
+    "thee => you"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6965,
+   "s": "1:67",
+   "s_ch": 1,
+   "s_vn": 67,
+   "t": "isaiah 11:1",
+   "t_book": "isaiah",
+   "t_ch": 11,
+   "t_vn": 1,
+   "note_head": "thread:gospel-promised-afore | *Blessed be Yahuah Elohim (the Lord God) of Yashar'el (Isra",
+   "prefix_slug": "gospel-promised-afore",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "gospel-promised-afore",
+    "horn-of-salvation"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 94,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6970,
+   "s": "2:13",
+   "s_ch": 2,
+   "s_vn": 13,
+   "t": "revelation 19:1",
+   "t_book": "revelation",
+   "t_ch": 19,
+   "t_vn": 1,
+   "note_head": "thread:trumpets-and-the-day-of-yahuah | *And suddenly there was with the angel a multitude",
+   "prefix_slug": "trumpets-and-the-day-of-yahuah",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 74,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6973,
+   "s": "3:2",
+   "s_ch": 3,
+   "s_vn": 2,
+   "t": "isaiah 40:3",
+   "t_book": "isaiah",
+   "t_ch": 40,
+   "t_vn": 3,
+   "note_head": "thread:yochanan-as-eliyahu-pattern-prophet | Luke quotes Yeshayahu (Isaiah) 40:3 explicitl",
+   "prefix_slug": "yochanan-as-eliyahu-pattern-prophet",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.52,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 46,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "The voice of one crying in the wilderness, Prepare ye the way of Yahuah (the Lord), make his paths straight.",
+     0.7,
+     0.52
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "one crying => him that cries",
+    "ye => you",
+    "the => -",
+    "his paths => -",
+    "- => in the desert a highway for our elohim god"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6976,
+   "s": "3:8",
+   "s_ch": 3,
+   "s_vn": 8,
+   "t": "matthew 3:9",
+   "t_book": "matthew",
+   "t_ch": 3,
+   "t_vn": 9,
+   "note_head": "thread:another-gospel-as-judaizer-flesh-credential | *And begin not to say within yourselv",
+   "prefix_slug": "another-gospel-as-judaizer-flesh-credential",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "whole-not-verbatim",
+   "quote_coverage": 0.97,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 55,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "And begin not to say within yourselves, We have Avraham (Abraham) to our father: for I say unto you, that Elohim (God) is able of these stones to raise up children unto Avraham (Abraham).",
+     0.91,
+     0.97
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "begin => think",
+    "avraham => -",
+    "avraham => -"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6984,
+   "s": "4:5",
+   "s_ch": 4,
+   "s_vn": 5,
+   "t": "matthew 4:8",
+   "t_book": "matthew",
+   "t_ch": 4,
+   "t_vn": 8,
+   "note_head": "thread:kingdoms-now-under-watcher-rebellion-administration | *And the devil, taking him up",
+   "prefix_slug": "kingdoms-now-under-watcher-rebellion-administration",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "kingdoms-now-under-watcher-rebellion-administration"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 78,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6987,
+   "s": "4:25",
+   "s_ch": 4,
+   "s_vn": 25,
+   "t": "matthew 15:24",
+   "t_book": "matthew",
+   "t_ch": 15,
+   "t_vn": 24,
+   "note_head": "thread:canaanite-woman-master | The King at Natsareth (Nazareth) points to Eliyahu (Elijah",
+   "prefix_slug": "canaanite-woman-master",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "false-inclusion-gospel",
+    "seed-of-promise"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 43,
+   "reasons": [
+    "prefix",
+    "no quotation"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6989,
+   "s": "4:43",
+   "s_ch": 4,
+   "s_vn": 43,
+   "t": "matthew 15:24",
+   "t_book": "matthew",
+   "t_ch": 15,
+   "t_vn": 24,
+   "note_head": "thread:lost-sheep-mission-scope | *I must preach the kingdom of Elohim (God) to other citi",
+   "prefix_slug": "lost-sheep-mission-scope",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 49,
+   "reasons": [
+    "prefix",
+    "quotes source verse only"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6991,
+   "s": "5:14",
+   "s_ch": 5,
+   "s_vn": 14,
+   "t": "matthew 8:4",
+   "t_book": "matthew",
+   "t_ch": 8,
+   "t_vn": 4,
+   "note_head": "thread:messiah-as-torah-affirming-healer | *And he charged him to tell no man: but go, and",
+   "prefix_slug": "messiah-as-torah-affirming-healer",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 54,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6994,
+   "s": "5:34",
+   "s_ch": 5,
+   "s_vn": 34,
+   "t": "matthew 9:15",
+   "t_book": "matthew",
+   "t_ch": 9,
+   "t_vn": 15,
+   "note_head": "thread:bridegroom-messianic-identification | *Can ye make the children of the bridechamber",
+   "prefix_slug": "bridegroom-messianic-identification",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.74,
+   "jargon": [],
+   "hyphen_chains": [
+    "bridegroom-self-identification"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 61,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "Can ye make the children of the bridechamber fast, while the bridegroom is with them? But the days will come, when the bridegroom shall be taken away from them, and then shall they fast in those days.",
+     0.78,
+     0.74
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "- => and yahusha jesus said unto them",
+    "ye make => -",
+    "fast while => mourn as long as",
+    "away => -",
+    "in those days => -"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6995,
+   "s": "5:36",
+   "s_ch": 5,
+   "s_vn": 36,
+   "t": "matthew 9:17",
+   "t_book": "matthew",
+   "t_ch": 9,
+   "t_vn": 17,
+   "note_head": "thread:leaven-as-corruption-substance | *Neither do men put new wine into old bottles; els",
+   "prefix_slug": "leaven-as-corruption-substance",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "new-heart-and-new-spirit",
+    "new-wine-and-old-bottles"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 68,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6996,
+   "s": "6:1",
+   "s_ch": 6,
+   "s_vn": 1,
+   "t": "mark 2:23",
+   "t_book": "mark",
+   "t_ch": 2,
+   "t_vn": 23,
+   "note_head": "thread:shabbat-controversy-heart-shabbat-vs-pharisaic-fence | The grain-plucking Shabbat c",
+   "prefix_slug": "shabbat-controversy-heart-shabbat-vs-pharisaic-fence",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "David-and-the-shewbread"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 27,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6997,
+   "s": "6:6",
+   "s_ch": 6,
+   "s_vn": 6,
+   "t": "mark 3:1",
+   "t_book": "mark",
+   "t_ch": 3,
+   "t_vn": 1,
+   "note_head": "thread:shabbat-controversy-heart-shabbat-vs-pharisaic-fence | The withered-hand healing on",
+   "prefix_slug": "shabbat-controversy-heart-shabbat-vs-pharisaic-fence",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "heart-Shabbat-versus-Pharisaic-fence"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 59,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 6998,
+   "s": "6:12",
+   "s_ch": 6,
+   "s_vn": 12,
+   "t": "matthew 10:1",
+   "t_book": "matthew",
+   "t_ch": 10,
+   "t_vn": 1,
+   "note_head": "thread:twelve-apostles-twelve-tribes-restoration-architecture | *And it came to pass in th",
+   "prefix_slug": "twelve-apostles-twelve-tribes-restoration-architecture",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "architecture"
+   ],
+   "hyphen_chains": [
+    "twelve-tribes-restoration"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 67,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7006,
+   "s": "7:9",
+   "s_ch": 7,
+   "s_vn": 9,
+   "t": "matthew 8:10",
+   "t_book": "matthew",
+   "t_ch": 8,
+   "t_vn": 10,
+   "note_head": "thread:my-brethren-substance-distinguishing-the-seed-of-promise-from-the-categorical-natio",
+   "prefix_slug": "my-brethren-substance-distinguishing-the-seed-of-promise-from-the-categorical-nations",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "phrase",
+   "quote_coverage": 0.4,
+   "jargon": [],
+   "hyphen_chains": [
+    "seed-of-promise"
+   ],
+   "docref": [
+    "Red Line",
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 47,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7007,
+   "s": "7:1",
+   "s_ch": 7,
+   "s_vn": 1,
+   "t": "matthew 8:5",
+   "t_book": "matthew",
+   "t_ch": 8,
+   "t_vn": 5,
+   "note_head": "thread:canaanite-woman-master | The centurion at Capernaum is the parallel individual-merc",
+   "prefix_slug": "canaanite-woman-master",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "canaanite-woman-master",
+    "my-brethren-substance",
+    "seed-of-promise"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 39,
+   "reasons": [
+    "prefix",
+    "no quotation"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": true,
+   "dup_with": [
+    {
+     "id": 3348,
+     "book": "matthew",
+     "kind": "reversed-cross-book",
+     "orphan": true,
+     "threads": []
+    }
+   ]
+  },
+  {
+   "id": 7008,
+   "s": "7:27",
+   "s_ch": 7,
+   "s_vn": 27,
+   "t": "malachi 3:1",
+   "t_book": "malachi",
+   "t_ch": 3,
+   "t_vn": 1,
+   "note_head": "thread:yochanan-as-eliyahu-pattern-prophet | *This is he, of whom it is written, Behold, I",
+   "prefix_slug": "yochanan-as-eliyahu-pattern-prophet",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 38,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7009,
+   "s": "7:28",
+   "s_ch": 7,
+   "s_vn": 28,
+   "t": "matthew 11:11",
+   "t_book": "matthew",
+   "t_ch": 11,
+   "t_vn": 11,
+   "note_head": "thread:yochanan-as-eliyahu-pattern-prophet | *Among those that are born of women there is ",
+   "prefix_slug": "yochanan-as-eliyahu-pattern-prophet",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.72,
+   "jargon": [
+    "architecture"
+   ],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 77,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "Among those that are born of women there is not a greater prophet than Yochanan (John) the Baptist: but he that is least in the kingdom of Elohim (God) is greater than he.",
+     0.79,
+     0.72
+    ],
+    [
+     "least in the kingdom is greater",
+     1.0,
+     0.17
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "- => verily i say unto you",
+    "those => them",
+    "is => has",
+    "- => risen",
+    "prophet => -",
+    "yochanan => -"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7010,
+   "s": "7:29",
+   "s_ch": 7,
+   "s_vn": 29,
+   "t": "john 10:27",
+   "t_book": "john",
+   "t_ch": 10,
+   "t_vn": 27,
+   "note_head": "thread:yochanan-as-eliyahu-pattern-prophet | *And all the people that heard him, and the p",
+   "prefix_slug": "yochanan-as-eliyahu-pattern-prophet",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "phrase",
+   "quote_coverage": 0.38,
+   "jargon": [],
+   "hyphen_chains": [
+    "hearing-and-turning"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 58,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7011,
+   "s": "7:33",
+   "s_ch": 7,
+   "s_vn": 33,
+   "t": "1-kings 19:8",
+   "t_book": "1-kings",
+   "t_ch": 19,
+   "t_vn": 8,
+   "note_head": "thread:yochanan-as-eliyahu-pattern-prophet | *For Yochanan (John) the Baptist came neither",
+   "prefix_slug": "yochanan-as-eliyahu-pattern-prophet",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "register"
+   ],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 30,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7012,
+   "s": "7:24",
+   "s_ch": 7,
+   "s_vn": 24,
+   "t": "1-kings 19:10",
+   "t_book": "1-kings",
+   "t_ch": 19,
+   "t_vn": 10,
+   "note_head": "thread:eliyahu-pattern-prophet-martyrdom | The reed-shaken-with-the-wind verdict the King ",
+   "prefix_slug": "eliyahu-pattern-prophet-martyrdom",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "register"
+   ],
+   "hyphen_chains": [
+    "reed-shaken-with-the-wind"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 26,
+   "reasons": [
+    "prefix",
+    "no quotation"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7014,
+   "s": "8:4",
+   "s_ch": 8,
+   "s_vn": 4,
+   "t": "matthew 13:3",
+   "t_book": "matthew",
+   "t_ch": 13,
+   "t_vn": 3,
+   "note_head": "thread:parables-of-the-kingdom-and-the-cause-and-effect-of-hearing | The parable of the so",
+   "prefix_slug": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "architecture",
+    "register"
+   ],
+   "hyphen_chains": [
+    "cause-and-effect-of-hearing"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 38,
+   "reasons": [
+    "prefix",
+    "no quotation"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7015,
+   "s": "8:10",
+   "s_ch": 8,
+   "s_vn": 10,
+   "t": "matthew 13:11",
+   "t_book": "matthew",
+   "t_ch": 13,
+   "t_vn": 11,
+   "note_head": "thread:parables-of-the-kingdom-and-the-cause-and-effect-of-hearing | *Unto you it is given",
+   "prefix_slug": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "cause-and-effect-of-hearing"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 59,
+   "reasons": [
+    "prefix",
+    "quotes source verse only"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7017,
+   "s": "8:21",
+   "s_ch": 8,
+   "s_vn": 21,
+   "t": "matthew 12:50",
+   "t_book": "matthew",
+   "t_ch": 12,
+   "t_vn": 50,
+   "note_head": "thread:kinship-redefinition-kingdom-family | *My mother and my brethren are these which he",
+   "prefix_slug": "kinship-redefinition-kingdom-family",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "cause-and-effect-of-hearing",
+    "hearing-and-doing"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 29,
+   "reasons": [
+    "prefix",
+    "quotes source verse only"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7022,
+   "s": "9:5",
+   "s_ch": 9,
+   "s_vn": 5,
+   "t": "matthew 10:14",
+   "t_book": "matthew",
+   "t_ch": 10,
+   "t_vn": 14,
+   "note_head": "thread:shake-the-dust-off-rejection-response | *Whosoever will not receive you, when ye go",
+   "prefix_slug": "shake-the-dust-off-rejection-response",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 48,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": true,
+   "dup_with": [
+    {
+     "id": 3398,
+     "book": "matthew",
+     "kind": "reversed-cross-book",
+     "orphan": true,
+     "threads": []
+    }
+   ]
+  },
+  {
+   "id": 7023,
+   "s": "9:10",
+   "s_ch": 9,
+   "s_vn": 10,
+   "t": "matthew 14:13",
+   "t_book": "matthew",
+   "t_ch": 14,
+   "t_vn": 13,
+   "note_head": "thread:wilderness-feeding-as-messianic-banquet-pre-figuration | The feeding of the five th",
+   "prefix_slug": "wilderness-feeding-as-messianic-banquet-pre-figuration",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance",
+    "register"
+   ],
+   "hyphen_chains": [
+    "wilderness-feeding-as-messianic-banquet"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 22,
+   "reasons": [
+    "prefix",
+    "no quotation"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7024,
+   "s": "9:18",
+   "s_ch": 9,
+   "s_vn": 18,
+   "t": "matthew 16:13",
+   "t_book": "matthew",
+   "t_ch": 16,
+   "t_vn": 13,
+   "note_head": "thread:caesarea-philippi-confession-the-rock-the-keys-the-assembly | Luke renders Kefa's (",
+   "prefix_slug": "caesarea-philippi-confession-the-rock-the-keys-the-assembly",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "architecture",
+    "register"
+   ],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 26,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7025,
+   "s": "9:21",
+   "s_ch": 9,
+   "s_vn": 21,
+   "t": "matthew 16:21",
+   "t_book": "matthew",
+   "t_ch": 16,
+   "t_vn": 21,
+   "note_head": "thread:first-passion-prediction-and-the-must-of-the-passion | *The Son of Adam must suffer",
+   "prefix_slug": "first-passion-prediction-and-the-must-of-the-passion",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.2,
+   "jargon": [
+    "architecture",
+    "register"
+   ],
+   "hyphen_chains": [
+    "first-passion-prediction"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 45,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "The Son of Adam must suffer many things... and be slain, and be raised the third day.",
+     0.89,
+     0.2
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "the son of adam => from that time forth began yahusha jesus to shew unto his disciples how that he",
+    "- => go unto jerusalem and",
+    "- => of the elders and chief priests and scribes",
+    "slain => killed",
+    "- => again"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7026,
+   "s": "9:23",
+   "s_ch": 9,
+   "s_vn": 23,
+   "t": "matthew 16:24",
+   "t_book": "matthew",
+   "t_ch": 16,
+   "t_vn": 24,
+   "note_head": "thread:take-up-the-cross-discipleship-cost | *If any man will come after me, let him deny ",
+   "prefix_slug": "take-up-the-cross-discipleship-cost",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.73,
+   "jargon": [],
+   "hyphen_chains": [
+    "one-time-transaction"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 34,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "If any man will come after me, let him deny himself, and take up his cross daily, and follow me.",
+     0.95,
+     0.73
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "- => then said yahusha jesus unto his disciples",
+    "daily => -"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7027,
+   "s": "9:28",
+   "s_ch": 9,
+   "s_vn": 28,
+   "t": "matthew 17:1",
+   "t_book": "matthew",
+   "t_ch": 17,
+   "t_vn": 1,
+   "note_head": "thread:the-formless-father-and-the-formed-son-witnessed-in-ascension-of-isaiah | The Lukan",
+   "prefix_slug": "the-formless-father-and-the-formed-son-witnessed-in-ascension-of-isaiah",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "architecture"
+   ],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 39,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7029,
+   "s": "9:32",
+   "s_ch": 9,
+   "s_vn": 32,
+   "t": "matthew 17:2",
+   "t_book": "matthew",
+   "t_ch": 17,
+   "t_vn": 2,
+   "note_head": "thread:the-son-of-adam-glorified-in-1-enoch-throne-vision-and-parables | *They saw his glo",
+   "prefix_slug": "the-son-of-adam-glorified-in-1-enoch-throne-vision-and-parables",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "Son-of-Adam-in-glorified-form"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 36,
+   "reasons": [
+    "prefix",
+    "quotes source verse only"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7030,
+   "s": "9:54",
+   "s_ch": 9,
+   "s_vn": 54,
+   "t": "matthew 10:14",
+   "t_book": "matthew",
+   "t_ch": 10,
+   "t_vn": 14,
+   "note_head": "thread:shake-the-dust-off-rejection-response | The Samaritan village rejection — the disci",
+   "prefix_slug": "shake-the-dust-off-rejection-response",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "register"
+   ],
+   "hyphen_chains": [
+    "calling-fire-down",
+    "seventy-sent-out",
+    "shaking-the-dust-off"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 71,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7034,
+   "s": "10:18",
+   "s_ch": 10,
+   "s_vn": 18,
+   "t": "daniel 7:25",
+   "t_book": "daniel",
+   "t_ch": 7,
+   "t_vn": 25,
+   "note_head": "thread:kingdoms-now-under-watcher-rebellion-administration | *I beheld ha-satan (Satan) as",
+   "prefix_slug": "kingdoms-now-under-watcher-rebellion-administration",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "kingdoms-under-the-administration",
+    "territory-by-territory"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 32,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7038,
+   "s": "11:29",
+   "s_ch": 11,
+   "s_vn": 29,
+   "t": "matthew 12:39",
+   "t_book": "matthew",
+   "t_ch": 12,
+   "t_vn": 39,
+   "note_head": "thread:sign-of-yonah-resurrection-credential | *No sign shall be given it, but the sign of",
+   "prefix_slug": "sign-of-yonah-resurrection-credential",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.34,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "Yonah-as-resurrection-credential",
+    "preaching-as-the-sign",
+    "three-days-three-nights"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 29,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "No sign shall be given it, but the sign of Yonah (Jonah) the prophet.",
+     0.79,
+     0.34
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "- => but he answered and said unto them an evil and adulterous generation seeks after a sign and there shall",
+    "shall => -",
+    "- => to",
+    "yonah jonah => -",
+    "- => jonas"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7041,
+   "s": "11:27",
+   "s_ch": 11,
+   "s_vn": 27,
+   "t": "matthew 12:50",
+   "t_book": "matthew",
+   "t_ch": 12,
+   "t_vn": 50,
+   "note_head": "thread:kinship-redefinition-kingdom-family | The same hearing-and-doing-reveals-the-family",
+   "prefix_slug": "kinship-redefinition-kingdom-family",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "hearing-and-doing-reveals-the-family"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 14,
+   "reasons": [
+    "prefix",
+    "label-like"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7042,
+   "s": "12:1",
+   "s_ch": 12,
+   "s_vn": 1,
+   "t": "matthew 16:6",
+   "t_book": "matthew",
+   "t_ch": 16,
+   "t_vn": 6,
+   "note_head": "thread:leaven-as-corruption-substance | *Beware ye of the leaven of the Pharisees, which i",
+   "prefix_slug": "leaven-as-corruption-substance",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "Pharisaic-system-as-fermenting-corruption"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 26,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7044,
+   "s": "12:10",
+   "s_ch": 12,
+   "s_vn": 10,
+   "t": "matthew 12:31",
+   "t_book": "matthew",
+   "t_ch": 12,
+   "t_vn": 31,
+   "note_head": "thread:blasphemy-against-the-ruach-warning | *Unto him that blasphemeth against the Ruach ",
+   "prefix_slug": "blasphemy-against-the-ruach-warning",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.35,
+   "jargon": [],
+   "hyphen_chains": [
+    "no-place-of-repentance"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 30,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "Unto him that blasphemeth against the Ruach HaKodesh (Holy Spirit) it shall not be forgiven.",
+     0.73,
+     0.35
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "- => wherefore i say",
+    "him that blasphemeth => you all manner of sin and blasphemy shall be forgiven unto men but the blasphemy",
+    "it => -",
+    "- => unto men"
+   ],
+   "dup": true,
+   "dup_with": [
+    {
+     "id": 2780,
+     "book": "matthew",
+     "kind": "reversed-cross-book",
+     "orphan": true,
+     "threads": []
+    }
+   ]
+  },
+  {
+   "id": 7048,
+   "s": "12:47",
+   "s_ch": 12,
+   "s_vn": 47,
+   "t": "matthew 25:14",
+   "t_book": "matthew",
+   "t_ch": 25,
+   "t_vn": 14,
+   "note_head": "thread:grace-and-the-opportunity-that-can-be-lost | *That servant, which knew his lord's w",
+   "prefix_slug": "grace-and-the-opportunity-that-can-be-lost",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "post-harvest-sifting"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 47,
+   "reasons": [
+    "prefix",
+    "quotes source verse only"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7054,
+   "s": "13:20",
+   "s_ch": 13,
+   "s_vn": 20,
+   "t": "matthew 13:33",
+   "t_book": "matthew",
+   "t_ch": 13,
+   "t_vn": 33,
+   "note_head": "thread:leaven-as-corruption-substance | *It is like leaven, which a woman took and hid in ",
+   "prefix_slug": "leaven-as-corruption-substance",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.63,
+   "jargon": [
+    "substance"
+   ],
+   "hyphen_chains": [
+    "kingdom-growth-substance"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 41,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "It is like leaven, which a woman took and hid in three measures of meal, till the whole was leavened",
+     0.95,
+     0.63
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "it => another parable spake he unto them the kingdom of heaven",
+    "- => unto"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7055,
+   "s": "14:1",
+   "s_ch": 14,
+   "s_vn": 1,
+   "t": "mark 2:27",
+   "t_book": "mark",
+   "t_ch": 2,
+   "t_vn": 27,
+   "note_head": "thread:shabbat-controversy-heart-shabbat-vs-pharisaic-fence | The Shabbat-healing of the m",
+   "prefix_slug": "shabbat-controversy-heart-shabbat-vs-pharisaic-fence",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "day-Yahuah-hallowed"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 45,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [
+    "Yahuah"
+   ],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7056,
+   "s": "14:27",
+   "s_ch": 14,
+   "s_vn": 27,
+   "t": "matthew 16:24",
+   "t_book": "matthew",
+   "t_ch": 16,
+   "t_vn": 24,
+   "note_head": "thread:take-up-the-cross-discipleship-cost | *And whosoever doth not bear his cross, and c",
+   "prefix_slug": "take-up-the-cross-discipleship-cost",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "bearing-the-cross"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 27,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": true,
+   "dup_with": [
+    {
+     "id": 3535,
+     "book": "matthew",
+     "kind": "reversed-cross-book",
+     "orphan": true,
+     "threads": []
+    }
+   ]
+  },
+  {
+   "id": 7057,
+   "s": "14:26",
+   "s_ch": 14,
+   "s_vn": 26,
+   "t": "mark 3:33",
+   "t_book": "mark",
+   "t_ch": 3,
+   "t_vn": 33,
+   "note_head": "thread:kinship-redefinition-kingdom-family | *If any man come to me, and hate not his fath",
+   "prefix_slug": "kinship-redefinition-kingdom-family",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "phrase",
+   "quote_coverage": 0.58,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 58,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7061,
+   "s": "15:18",
+   "s_ch": 15,
+   "s_vn": 18,
+   "t": "ezekiel 18:21",
+   "t_book": "ezekiel",
+   "t_ch": 18,
+   "t_vn": 21,
+   "note_head": "thread:grace-and-the-opportunity-that-can-be-lost | The prodigal's repentance-speech: *Fat",
+   "prefix_slug": "grace-and-the-opportunity-that-can-be-lost",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "phrase",
+   "quote_coverage": 0.29,
+   "jargon": [
+    "architecture"
+   ],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 59,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7064,
+   "s": "16:14",
+   "s_ch": 16,
+   "s_vn": 14,
+   "t": "mark 7:13",
+   "t_book": "mark",
+   "t_ch": 7,
+   "t_vn": 13,
+   "note_head": "thread:pharisaic-traditions-make-the-commandment-of-none-effect | *And the Pharisees also,",
+   "prefix_slug": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 52,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7067,
+   "s": "16:19",
+   "s_ch": 16,
+   "s_vn": 19,
+   "t": "matthew 13:24",
+   "t_book": "matthew",
+   "t_ch": 13,
+   "t_vn": 24,
+   "note_head": "thread:wheat-and-tares-the-post-harvest-sifting-architecture | The rich-man-and-Lazaros pa",
+   "prefix_slug": "wheat-and-tares-the-post-harvest-sifting-architecture",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "register"
+   ],
+   "hyphen_chains": [
+    "rich-man-and-Lazaros",
+    "sheol-and-resurrection"
+   ],
+   "docref": [
+    "the framework",
+    "FRAMEWORK-MAJOR"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 45,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7068,
+   "s": "16:29",
+   "s_ch": 16,
+   "s_vn": 29,
+   "t": "2-peter 3:15",
+   "t_book": "2-peter",
+   "t_ch": 3,
+   "t_vn": 15,
+   "note_head": "thread:scripture-twisting-and-the-harmonization-discipline | *They have Mosheh (Moses) and",
+   "prefix_slug": "scripture-twisting-and-the-harmonization-discipline",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 44,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7074,
+   "s": "17:34",
+   "s_ch": 17,
+   "s_vn": 34,
+   "t": "matthew 13:24",
+   "t_book": "matthew",
+   "t_ch": 13,
+   "t_vn": 24,
+   "note_head": "thread:wheat-and-tares-the-post-harvest-sifting-architecture | *Two shall be in one bed; t",
+   "prefix_slug": "wheat-and-tares-the-post-harvest-sifting-architecture",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "architecture"
+   ],
+   "hyphen_chains": [
+    "day-of-the-Son-of-Adam",
+    "post-harvest-sifting"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 43,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7077,
+   "s": "18:9",
+   "s_ch": 18,
+   "s_vn": 9,
+   "t": "ezekiel 18:21",
+   "t_book": "ezekiel",
+   "t_ch": 18,
+   "t_vn": 21,
+   "note_head": "thread:grace-and-the-opportunity-that-can-be-lost | The Pharisee-and-publican parable. The",
+   "prefix_slug": "grace-and-the-opportunity-that-can-be-lost",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [
+    "substance",
+    "architecture"
+   ],
+   "hyphen_chains": [
+    "Pharisee-and-publican",
+    "repentance-from-sins"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 36,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7083,
+   "s": "18:31",
+   "s_ch": 18,
+   "s_vn": 31,
+   "t": "matthew 16:21",
+   "t_book": "matthew",
+   "t_ch": 16,
+   "t_vn": 21,
+   "note_head": "thread:first-passion-prediction-and-the-must-of-the-passion | The third passion-prediction",
+   "prefix_slug": "first-passion-prediction-and-the-must-of-the-passion",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 48,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7084,
+   "s": "18:35",
+   "s_ch": 18,
+   "s_vn": 35,
+   "t": "matthew 9:27",
+   "t_book": "matthew",
+   "t_ch": 9,
+   "t_vn": 27,
+   "note_head": "thread:son-of-david-messianic-recognition-by-marginalized | The blind man at Yericho (Jeri",
+   "prefix_slug": "son-of-david-messianic-recognition-by-marginalized",
+   "grade": "DOCREF",
+   "grade_ignoring_prefix": "DOCREF",
+   "quote_kind": "near-not-verbatim",
+   "quote_coverage": 0.36,
+   "jargon": [],
+   "hyphen_chains": [
+    "Son-of-David"
+   ],
+   "docref": [
+    "the framework"
+   ],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 35,
+   "reasons": [
+    "prefix"
+   ],
+   "near_quotes": [
+    [
+     "Yahusha (Jesus), thou Son of David, have mercy on me",
+     0.8,
+     0.36
+    ]
+   ],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "quote_diff": [
+    "- => and when",
+    "thou => departed thence two blind men followed him crying and saying you",
+    "me => us"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7085,
+   "s": "18:42",
+   "s_ch": 18,
+   "s_vn": 42,
+   "t": "acts 3:6",
+   "t_book": "acts",
+   "t_ch": 3,
+   "t_vn": 6,
+   "note_head": "thread:messiah-as-torah-affirming-healer | *Receive thy sight: thy faith hath saved thee. ",
+   "prefix_slug": "messiah-as-torah-affirming-healer",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": false,
+   "words": 35,
+   "reasons": [
+    "prefix",
+    "italics not from target"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 7087,
+   "s": "19:10",
+   "s_ch": 19,
+   "s_vn": 10,
+   "t": "matthew 10:6",
+   "t_book": "matthew",
+   "t_ch": 10,
+   "t_vn": 6,
+   "note_head": "thread:lost-sheep-mission-scope | The King's standing programmatic statement at Zakkay's (",
+   "prefix_slug": "lost-sheep-mission-scope",
+   "grade": "BARE",
+   "grade_ignoring_prefix": "BARE",
+   "quote_kind": "none",
+   "quote_coverage": 0.0,
+   "jargon": [],
+   "hyphen_chains": [
+    "gathering-of-the-scattered",
+    "seeking-and-saving"
+   ],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 53,
+   "reasons": [
+    "prefix",
+    "quotes source verse only"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": false,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 177457,
+   "s": "21:24",
+   "s_ch": 21,
+   "s_vn": 24,
+   "t": "ezekiel 9:6",
+   "t_book": "ezekiel",
+   "t_ch": 9,
+   "t_vn": 6,
+   "note_head": "*...but come not near any man upon whom is the mark; and begin at my sanctuary* (Ezekiel 9",
+   "prefix_slug": null,
+   "grade": "PARTIAL",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "phrase",
+   "quote_coverage": 0.4,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 64,
+   "reasons": [
+    "quote:phrase"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": null,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 177458,
+   "s": "21:24",
+   "s_ch": 21,
+   "s_vn": 24,
+   "t": "zechariah 13:8",
+   "t_book": "zechariah",
+   "t_ch": 13,
+   "t_vn": 8,
+   "note_head": "*...two parts therein shall be cut off and die; but the third shall be left therein* (Zech",
+   "prefix_slug": null,
+   "grade": "PARTIAL",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "phrase",
+   "quote_coverage": 0.53,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 62,
+   "reasons": [
+    "quote:phrase"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": null,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 177459,
+   "s": "21:24",
+   "s_ch": 21,
+   "s_vn": 24,
+   "t": "zechariah 14:9",
+   "t_book": "zechariah",
+   "t_ch": 14,
+   "t_vn": 9,
+   "note_head": "*And Yahuah (the LORD) shall be king over all the earth: in that day shall there be one Ya",
+   "prefix_slug": null,
+   "grade": "PARTIAL",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "whole-not-verbatim",
+   "quote_coverage": 1.0,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 69,
+   "reasons": [
+    "quote:whole-not-verbatim"
+   ],
+   "near_quotes": [
+    [
+     "And Yahuah (the LORD) shall be king over all the earth: in that day shall there be one Yahuah (the LORD), and his name one",
+     0.92,
+     1.0
+    ]
+   ],
+   "prefix_slug_exists": null,
+   "bare_sacred_names": [
+    "Yahuah"
+   ],
+   "shape_gaps": [],
+   "quote_diff": [
+    "the => -",
+    "the => -"
+   ],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 177462,
+   "s": "21:24",
+   "s_ch": 21,
+   "s_vn": 24,
+   "t": "ezekiel 33:6",
+   "t_book": "ezekiel",
+   "t_ch": 33,
+   "t_vn": 6,
+   "note_head": "*But if the watchman see the sword come, and blow not the trumpet, and the people be not w",
+   "prefix_slug": null,
+   "grade": "PARTIAL",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "whole-elided",
+   "quote_coverage": 0.4,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 76,
+   "reasons": [
+    "quote:whole-elided"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": null,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  },
+  {
+   "id": 177463,
+   "s": "21:24",
+   "s_ch": 21,
+   "s_vn": 24,
+   "t": "ezekiel 33:28",
+   "t_book": "ezekiel",
+   "t_ch": 33,
+   "t_vn": 28,
+   "note_head": "*For I will lay the land most desolate... because of all their abominations which they hav",
+   "prefix_slug": null,
+   "grade": "PARTIAL",
+   "grade_ignoring_prefix": "PARTIAL",
+   "quote_kind": "phrase",
+   "quote_coverage": 0.27,
+   "jargon": [],
+   "hyphen_chains": [],
+   "docref": [],
+   "name_flags": [],
+   "has_citation": true,
+   "words": 67,
+   "reasons": [
+    "quote:phrase"
+   ],
+   "near_quotes": [],
+   "prefix_slug_exists": null,
+   "bare_sacred_names": [],
+   "shape_gaps": [],
+   "dup": false,
+   "dup_with": []
+  }
+ ]
+}

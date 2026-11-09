@@ -262,3 +262,27 @@ means a back-fill can re-run safely over the already-merged canon rows.
   Philadelphians 7, 2 Clement 5, Trallians 4, Martyrdom 3, Acts 29 1), 8 thread anchors follow. Build: 180 cards, 146 member notes, 65 summaries + 1 title, 8 anchors,
   2 verse typos. Scratch run 1 = 180/180 landed (56/56 moved), run 2 = 0 changed; guards tested (tampered verse → RAISE nothing lands; card moved since read-back → skipped).
   Coverage gaps seen (phase 2): Hermas 23 + 24 (Sim 6–7) carry no card; Barnabas none. Next: Yoshi's deploy paste + read-back → **Phase 1 CLOSED** → phase 2.
+
+- **2026-11-08 (S495) — PHASE 2 GAP FILL DEPLOYED, every chapter in the library now carries a card.** Gap map from the live read-back
+  (`_s495_gapmap_dump.py` → `_s495_gap_map.md`): 78 real gap chapters / 305 verses (1 Enoch 9, Testaments XII 31, Charles adam-eve 34, 2 Enoch 57,
+  2 Baruch 33, Hermas 23–24); the 14 apocrypha "chapter 0" rows are Introduction rows with 0 verses (no card possible); Josephus 369 + Barnabas 1 by rule.
+  Per-book read-back (`_s495_dump.py` → `source-texts/_s495/live/<edition>__<book>.json`, 16 books + `_unanchored_threads.md`). Chain in `_s495/`
+  (tools/assemble495 · gen_sql495 · seed495 · check495 · dump495 · gen_deploy495; BRIEF495_GAPFILL.md): Sonnet drafters per book (model named in
+  every out/*.json) → Fable voice read (out/*_fixed.json carry the read note) → assemble (both verses verbatim — canon from parsed/canon.json by
+  the standing convention, extras from the live text; forbidden-phrase scan; slug/anchor/dup checks) → one INSERT migration per book with guards
+  (source-text RAISE, target missing, non-canon note must carry the live target) → scratch ×2 on Postgres 16 (both tampers) → deploy script with
+  its own read-back proof. DEPLOYED Nov 8 16:59–17:02 CST (logs `_session495_<book>_deploy.log`): 2-enoch 4 cards/1 thread; 2-baruch 4/1;
+  hermas 6/2; 1-enoch 36 cards / 7 new threads + 8 existing anchored threads filled (105, 107 had summaries but 0 members); adam-eve 69/23 new +
+  11 joined; testaments-xii 101/29 new + 1 joined — 220 cards, 63 new threads, 220 member rows, 0 dup pairs, check495 PASS ×6. Card tier = each
+  book's live majority (all `free`), threads `extras`. Migrations `data-schema/migrations/session495_<book>_gap_fill.sql` (×6).
+- **2026-11-08 (S495) — THE REST OF PHASE 2, mapped not built:** (a) ORPHAN CARDS — 1,565 live cards sit in no thread (Matthew 1,308, Mark 169,
+  Luke 61, Joshua 12, Revelation 6, Romans 3, 1 Thess 2, Genesis/Ezekiel/2 Esdras/2 Baruch 1 each); no whole chapter lacks a thread. The Matthew
+  block graded by content (`_s495/out/matthew_orphan_map.{json,md}`, Mark + Luke likewise): FULL 24 · PARTIAL 454 · BARE 776 · DOCREF 54; 451
+  hyphen-chains; 59 reversed-pair dups; 921 fit existing Matthew threads (326 sure / 595 to read), 387 need ~91 new threads. Every Mark note and 56
+  Luke notes begin `thread:<slug> |` with slugs that never became threads (73 slugs). THIS IS A REBUILD (Come-and-See, both verses), the size of the
+  Enoch sweep — chapter batches, 2–3 sessions. (b) 144 threads with no anchor — 140 have Matthew members; proposed anchors in the map. (c) The
+  four never-applied files (S181 Romans 0/16, Galatians 0/12, Revelation 0/17 slugs live; S154 Matt 17 0/5) — superseded live by S219 91/91,
+  S223 31/31, S224 149/149; Matt 17 has 1 extras card (→ Sirach 48:10). Retire = `git rm` on Yoshi's word (not yet given). (d) Duplicate " 2.*"
+  files: 38 outside node_modules, 26 tracked; the 12 in data-schema/migrations are byte-identical to their originals — `git rm` on Yoshi's word.
+  (e) Doc-ref hits library-wide: 27 real (20 Matthew S1xx cards, 2 Mark `thread:` notes, 5 member notes incl. "queued for S184", 2 summaries
+  naming Yoshi/a session) + 6 Matthew threads (ids 7–19) whose summary opens with the slug in bold code — all inside the Matthew rebuild.
