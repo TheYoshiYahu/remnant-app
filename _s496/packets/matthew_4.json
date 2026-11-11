@@ -1,0 +1,914 @@
+{
+ "chapter": 4,
+ "chapter_text_kjv": {
+  "1": "Then was Yahusha (Jesus) led up of the Spirit into the wilderness to be tempted of the devil.",
+  "2": "And when he had fasted forty days and forty nights, he was afterward an hungred.",
+  "3": "And when the tempter came to him, he said, If thou be the Son of Elohim (God), command that these stones be made bread.",
+  "4": "But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of Elohim (God).",
+  "5": "Then the devil taketh him up into the holy city, and setteth him on a pinnacle of the temple,",
+  "6": "And saith unto him, If thou be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone.",
+  "7": "Yahusha (Jesus) said unto him, It is written again, Thou shalt not tempt Yahuah Elohayka (the Lord thy God).",
+  "8": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+  "9": "And saith unto him, All these things will I give thee, if thou wilt fall down and worship me.",
+  "10": "Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve.",
+  "11": "Then the devil leaveth him, and, behold, angels came and ministered unto him.",
+  "12": "Now when Yahusha (Jesus) had heard that John was cast into prison, he departed into Galilee;",
+  "13": "And leaving Nazareth, he came and dwelt in Capernaum, which is upon the sea coast, in the borders of Zabulon and Nephthalim:",
+  "14": "That it might be fulfilled which was spoken by Esaias the prophet, saying,",
+  "15": "The land of Zabulon, and the land of Nephthalim, by the way of the sea, beyond Jordan, Galilee of the Gentiles;",
+  "16": "The people which sat in darkness saw great light; and to them which sat in the region and shadow of death light is sprung up.",
+  "17": "From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
+  "18": "And Yahusha (Jesus), walking by the sea of Galilee, saw two brethren, Simon called Peter, and Andrew his brother, casting a net into the sea: for they were fishers.",
+  "19": "And he saith unto them, Follow me, and I will make you fishers of men.",
+  "20": "And they straightway left their nets, and followed him.",
+  "21": "And going on from thence, he saw other two brethren, James the son of Zebedee, and John his brother, in a ship with Zebedee their father, mending their nets; and he called them.",
+  "22": "And they immediately left the ship and their father, and followed him.",
+  "23": "And Yahusha (Jesus) went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.",
+  "24": "And his fame went throughout all Syria: and they brought unto him all sick people that were taken with divers diseases and torments, and those which were possessed with devils, and those which were lunatick, and those that had the palsy; and he healed them.",
+  "25": "And there followed him great multitudes of people from Galilee, and from Decapolis, and from Jerusalem, and from Judaea, and from beyond Jordan."
+ },
+ "cards": [
+  {
+   "id": 2646,
+   "src": "Matthew 4:5",
+   "src_vn": 5,
+   "src_text_live": "Then the devil takes him up into the holy city, and sets him on a pinnacle of the temple,",
+   "src_text_kjv": "Then the devil taketh him up into the holy city, and setteth him on a pinnacle of the temple,",
+   "tgt": "Psalm 91:11",
+   "tgt_text_kjv": "For he shall give his angels charge over thee, to keep thee in all thy ways.",
+   "tgt_context_kjv": {
+    "9": "Because thou hast made Yahuah (LORD), which is my refuge, even the El Elyon (most High), thy habitation;",
+    "10": "There shall no evil befall thee, neither shall any plague come nigh thy dwelling.",
+    "11": "For he shall give his angels charge over thee, to keep thee in all thy ways.",
+    "12": "They shall bear thee up in their hands, lest thou dash thy foot against a stone.",
+    "13": "Thou shalt tread upon the lion and adder: the young lion and the dragon shalt thou trample under feet.",
+    "14": "Because he hath set his love upon me, therefore will I deliver him: I will set him on high, because he hath known my name."
+   },
+   "old_note": "The verse the devil quoted, with the qualifier *to keep thee in all thy ways* (v.11) omitted in the devil's citation.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+    "temptation-as-mastema-architecture",
+    "ungodly-plot-against-the-righteous-son"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2647,
+   "src": "Matthew 4:5",
+   "src_vn": 5,
+   "src_text_live": "Then the devil takes him up into the holy city, and sets him on a pinnacle of the temple,",
+   "src_text_kjv": "Then the devil taketh him up into the holy city, and setteth him on a pinnacle of the temple,",
+   "tgt": "Deuteronomy 6:16",
+   "tgt_text_kjv": "Ye shall not tempt Yahuah Elohaychem (the LORD your God), as ye tempted him in Massah.",
+   "tgt_context_kjv": {
+    "14": "Ye shall not go after other gods, of the gods of the people which are round about you;",
+    "15": "(For Yahuah Elohayka (the LORD thy God) is a jealous Elohim (God) among you) lest the anger of Yahuah Elohayka (the LORD thy God) be kindled against thee, and destroy thee from off the face of the earth.",
+    "16": "Ye shall not tempt Yahuah Elohaychem (the LORD your God), as ye tempted him in Massah.",
+    "17": "Ye shall diligently keep the commandments of Yahuah Elohaychem (the LORD your God), and his testimonies, and his statutes, which he hath commanded thee.",
+    "18": "And thou shalt do that which is right and good in the sight of Yahuah (LORD): that it may be well with thee, and that thou mayest go in and possess the good land which Yahuah (LORD) sware unto thy fathers,",
+    "19": "To cast out all thine enemies from before thee, as Yahuah (LORD) hath spoken."
+   },
+   "old_note": "The OVERRIDING Torah-word Yahusha (Jesus) brought into the conversation — the canon-harmonized response.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+    "temptation-as-mastema-architecture",
+    "matthew-4-man-shall-not-live-by-bread-alone-it-is-written-deuteronomy-8"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2648,
+   "src": "Matthew 4:5",
+   "src_vn": 5,
+   "src_text_live": "Then the devil takes him up into the holy city, and sets him on a pinnacle of the temple,",
+   "src_text_kjv": "Then the devil taketh him up into the holy city, and setteth him on a pinnacle of the temple,",
+   "tgt": "1 John 2:3",
+   "tgt_text_kjv": "And hereby we do know that we know him, if we keep his commandments.",
+   "tgt_context_kjv": {
+    "1": "My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Yahusha HaMashiach (Jesus Christ) the righteous:",
+    "2": "And he is the propitiation for our sins: and not for ours only, but also for the sins of the whole world.",
+    "3": "And hereby we do know that we know him, if we keep his commandments.",
+    "4": "He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.",
+    "5": "But whoso keepeth his word, in him verily is the love of Elohim (God) perfected: hereby know we that we are in him.",
+    "6": "He that saith he abideth in him ought himself also so to walk, even as he walked."
+   },
+   "old_note": "*He that saith, I know him, and keepeth not his commandments, is a liar* — the 1234-of-Truth filter that rules out any scripture-reading that voids the commandments; the meta-test that disqualifies the devil's Psalm-91 misuse and every parallel misuse.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+    "ungodly-plot-against-the-righteous-son",
+    "temptation-as-mastema-architecture"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2649,
+   "src": "Matthew 4:5",
+   "src_vn": 5,
+   "src_text_live": "Then the devil takes him up into the holy city, and sets him on a pinnacle of the temple,",
+   "src_text_kjv": "Then the devil taketh him up into the holy city, and setteth him on a pinnacle of the temple,",
+   "tgt": "Matthew 22:29",
+   "tgt_text_kjv": "Yahusha (Jesus) answered and said unto them, Ye do err, not knowing the scriptures, nor the power of Elohim (God).",
+   "tgt_context_kjv": {
+    "27": "And last of all the woman died also.",
+    "28": "Therefore in the resurrection whose wife shall she be of the seven? for they all had her.",
+    "29": "Yahusha (Jesus) answered and said unto them, Ye do err, not knowing the scriptures, nor the power of Elohim (God).",
+    "30": "For in the resurrection they neither marry, nor are given in marriage, but are as the angels of Elohim (God) in heaven.",
+    "31": "But as touching the resurrection of the dead, have ye not read that which was spoken unto you by Elohim (God), saying,",
+    "32": "I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob? Elohim (God) is not the Elohim (God) of the dead, but of the living."
+   },
+   "old_note": "*Ye do err, not knowing the scriptures, nor the power of Elohim (God)* — Yahusha (Jesus) naming the Sadducees' selective-scripture reading as the source of their error; the same diagnostic.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+    "temptation-as-mastema-architecture",
+    "beliar-as-king-of-this-world"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2650,
+   "src": "Matthew 4:5",
+   "src_vn": 5,
+   "src_text_live": "Then the devil takes him up into the holy city, and sets him on a pinnacle of the temple,",
+   "src_text_kjv": "Then the devil taketh him up into the holy city, and setteth him on a pinnacle of the temple,",
+   "tgt": "2 Peter 3:16",
+   "tgt_text_kjv": "As also in all his epistles, speaking in them of these things; in which are some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction.",
+   "tgt_context_kjv": {
+    "14": "Wherefore, beloved, seeing that ye look for such things, be diligent that ye may be found of him in peace, without spot, and blameless.",
+    "15": "And account that the longsuffering of our Lord is salvation; even as our beloved brother Paul also according to the wisdom given unto him hath written unto you;",
+    "16": "As also in all his epistles, speaking in them of these things; in which are some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction.",
+    "17": "Ye therefore, beloved, seeing ye know these things before, beware lest ye also, being led away with the error of the wicked, fall from your own stedfastness.",
+    "18": "But grow in grace, and in the knowledge of our Lord and Saviour Yahusha HaMashiach (Jesus Christ). To him be glory both now and for ever. Amen."
+   },
+   "old_note": "*Some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction* — the apostolic naming of the scripture-twisting pattern.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+    "temptation-as-mastema-architecture",
+    "beliar-as-king-of-this-world"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2651,
+   "src": "Matthew 4:8",
+   "src_vn": 8,
+   "src_text_live": "Again, the devil takes him up into an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them;",
+   "src_text_kjv": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+   "tgt": "Daniel 10:13",
+   "tgt_text_kjv": "But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael, one of the chief princes, came to help me; and I remained there with the kings of Persia.",
+   "tgt_context_kjv": {
+    "11": "And he said unto me, O Daniel, a man greatly beloved, understand the words that I speak unto thee, and stand upright: for unto thee am I now sent. And when he had spoken this word unto me, I stood trembling.",
+    "12": "Then said he unto me, Fear not, Daniel: for from the first day that thou didst set thine heart to understand, and to chasten thyself before thy Elohim (God), thy words were heard, and I am come for thy words.",
+    "13": "But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael, one of the chief princes, came to help me; and I remained there with the kings of Persia.",
+    "14": "Now I am come to make thee understand what shall befall thy people in the latter days: for yet the vision is for many days.",
+    "15": "And when he had spoken such words unto me, I set my face toward the ground, and I became dumb.",
+    "16": "And, behold, one like the similitude of the sons of men touched my lips: then I opened my mouth, and spake, and said unto him that stood before me, O my lord, by the vision my sorrows are turned upon me, and I have retained no strength."
+   },
+   "old_note": "The prince of Persia, the prince of Grecia — the principalities administering the world's kingdoms in Daniel's vision.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "temptation-as-mastema-architecture"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2652,
+   "src": "Matthew 4:8",
+   "src_vn": 8,
+   "src_text_live": "Again, the devil takes him up into an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them;",
+   "src_text_kjv": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+   "tgt": "Daniel 10:20",
+   "tgt_text_kjv": "Then said he, Knowest thou wherefore I come unto thee? and now will I return to fight with the prince of Persia: and when I am gone forth, lo, the prince of Grecia shall come.",
+   "tgt_context_kjv": {
+    "18": "Then there came again and touched me one like the appearance of a man, and he strengthened me,",
+    "19": "And said, O man greatly beloved, fear not: peace be unto thee, be strong, yea, be strong. And when he had spoken unto me, I was strengthened, and said, Let my lord speak; for thou hast strengthened me.",
+    "20": "Then said he, Knowest thou wherefore I come unto thee? and now will I return to fight with the prince of Persia: and when I am gone forth, lo, the prince of Grecia shall come.",
+    "21": "But I will shew thee that which is noted in the scripture of truth: and there is none that holdeth with me in these things, but Michael your prince."
+   },
+   "old_note": "The prince of Persia, the prince of Grecia — the principalities administering the world's kingdoms in Daniel's vision.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "temptation-as-mastema-architecture"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2653,
+   "src": "Matthew 4:8",
+   "src_vn": 8,
+   "src_text_live": "Again, the devil takes him up into an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them;",
+   "src_text_kjv": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+   "tgt": "Ephesians 6:12",
+   "tgt_text_kjv": "For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.",
+   "tgt_context_kjv": {
+    "10": "Finally, my brethren, be strong in Yahusha (Lord), and in the power of his might.",
+    "11": "Put on the whole armour of Elohim (God), that ye may be able to stand against the wiles of the devil.",
+    "12": "For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.",
+    "13": "Wherefore take unto you the whole armour of Elohim (God), that ye may be able to withstand in the evil day, and having done all, to stand.",
+    "14": "Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness;",
+    "15": "And your feet shod with the preparation of the gospel of peace;"
+   },
+   "old_note": "*We wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world* — the apostolic naming of the present-age power-structure.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2654,
+   "src": "Matthew 4:8",
+   "src_vn": 8,
+   "src_text_live": "Again, the devil takes him up into an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them;",
+   "src_text_kjv": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+   "tgt": "1 John 5:19",
+   "tgt_text_kjv": "And we know that we are of Elohim (God), and the whole world lieth in wickedness.",
+   "tgt_context_kjv": {
+    "17": "All unrighteousness is sin: and there is a sin not unto death.",
+    "18": "We know that whosoever is born of Elohim (God) sinneth not; but he that is begotten of Elohim (God) keepeth himself, and that wicked one toucheth him not.",
+    "19": "And we know that we are of Elohim (God), and the whole world lieth in wickedness.",
+    "20": "And we know that the Son of Elohim (God) is come, and hath given us an understanding, that we may know him that is true, and we are in him that is true, even in his Son Yahusha HaMashiach (Jesus Christ). This is the true Elohim (God), and eternal life.",
+    "21": "Little children, keep yourselves from idols. Amen."
+   },
+   "old_note": "*The whole world lieth in wickedness* — the present-age administration described.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2655,
+   "src": "Matthew 4:8",
+   "src_vn": 8,
+   "src_text_live": "Again, the devil takes him up into an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them;",
+   "src_text_kjv": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+   "tgt": "Daniel 7:13",
+   "tgt_text_kjv": "I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.",
+   "tgt_context_kjv": {
+    "11": "I beheld then because of the voice of the great words which the horn spake: I beheld even till the beast was slain, and his body destroyed, and given to the burning flame.",
+    "12": "As concerning the rest of the beasts, they had their dominion taken away: yet their lives were prolonged for a season and time.",
+    "13": "I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.",
+    "14": "And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.",
+    "15": "I Daniel was grieved in my spirit in the midst of my body, and the visions of my head troubled me.",
+    "16": "I came near unto one of them that stood by, and asked him the truth of all this. So he told me, and made me know the interpretation of the things."
+   },
+   "old_note": "*One like the Son of Adam came with the clouds of heaven ... and there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him* — the Father's-timing transfer of the everlasting kingdom that Yahusha (Jesus) waits for; the kaph-comparative preserved as incarnation-honoring.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2656,
+   "src": "Matthew 4:8",
+   "src_vn": 8,
+   "src_text_live": "Again, the devil takes him up into an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them;",
+   "src_text_kjv": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+   "tgt": "Revelation 11:15",
+   "tgt_text_kjv": "And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever.",
+   "tgt_context_kjv": {
+    "13": "And the same hour was there a great earthquake, and the tenth part of the city fell, and in the earthquake were slain of men seven thousand: and the remnant were affrighted, and gave glory to the Elohim (God) of heaven.",
+    "14": "The second woe is past; and, behold, the third woe cometh quickly.",
+    "15": "And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever.",
+    "16": "And the four and twenty elders, which sat before Elohim (God) on their seats, fell upon their faces, and worshipped Elohim (God),",
+    "17": "Saying, We give thee thanks, O Yahuah Elohim (Lord God) Almighty, which art, and wast, and art to come; because thou hast taken to thee thy great power, and hast reigned.",
+    "18": "And the nations were angry, and thy wrath is come, and the time of the dead, that they should be judged, and that thou shouldest give reward unto thy servants the prophets, and to the saints, and them that fear thy name, small and great; and shouldest destroy them which destroy the earth."
+   },
+   "old_note": "*The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* — the future consummation of the kingdom-transfer Yahusha (Jesus) refused to short-circuit.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2657,
+   "src": "Matthew 4:8",
+   "src_vn": 8,
+   "src_text_live": "Again, the devil takes him up into an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them;",
+   "src_text_kjv": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+   "tgt": "Genesis 3:15",
+   "tgt_text_kjv": "And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.",
+   "tgt_context_kjv": {
+    "13": "And Yahuah Elohim (the LORD God) said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat.",
+    "14": "And Yahuah Elohim (the LORD God) said unto the serpent, Because thou hast done this, thou art cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all the days of thy life:",
+    "15": "And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.",
+    "16": "Unto the woman he said, I will greatly multiply thy sorrow and thy conception; in sorrow thou shalt bring forth children; and thy desire shall be to thy husband, and he shall rule over thee.",
+    "17": "And unto Adam he said, Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life;",
+    "18": "Thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field;"
+   },
+   "old_note": "The original promise of the seed-of-the-woman bruising the serpent's head — the cross is the bruise; the temptation to take the kingdoms without the cross is the temptation to skip the prophecy.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "temptation-as-mastema-architecture"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3266,
+   "src": "Matthew 4:6",
+   "src_vn": 6,
+   "src_text_live": "And says unto him, If you be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning you: and in their hands they shall bear you up, lest at any time you dash your foot against a stone.",
+   "src_text_kjv": "And saith unto him, If thou be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone.",
+   "tgt": "Psalm 91:14",
+   "tgt_text_kjv": "Because he hath set his love upon me, therefore will I deliver him: I will set him on high, because he hath known my name.",
+   "tgt_context_kjv": {
+    "12": "They shall bear thee up in their hands, lest thou dash thy foot against a stone.",
+    "13": "Thou shalt tread upon the lion and adder: the young lion and the dragon shalt thou trample under feet.",
+    "14": "Because he hath set his love upon me, therefore will I deliver him: I will set him on high, because he hath known my name.",
+    "15": "He shall call upon me, and I will answer him: I will be with him in trouble; I will deliver him, and honour him.",
+    "16": "With long life will I satisfy him, and shew him my salvation."
+   },
+   "old_note": "*Because he hath set his love upon me, therefore will I deliver him* — another qualifier-verse in the Psalm establishing the covenant-faithfulness condition of the promise.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+    "ungodly-plot-against-the-righteous-son",
+    "matthew-4-man-shall-not-live-by-bread-alone-it-is-written-deuteronomy-8"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3267,
+   "src": "Matthew 4:11",
+   "src_vn": 11,
+   "src_text_live": "Then the devil leaveth him, and, behold, angels came and ministered unto him.",
+   "src_text_kjv": "Then the devil leaveth him, and, behold, angels came and ministered unto him.",
+   "tgt": "Hebrews 1:14",
+   "tgt_text_kjv": "Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?",
+   "tgt_context_kjv": {
+    "12": "And as a vesture shalt thou fold them up, and they shall be changed: but thou art the same, and thy years shall not fail.",
+    "13": "But to which of the angels said he at any time, Sit on my right hand, until I make thine enemies thy footstool?",
+    "14": "Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?"
+   },
+   "old_note": "*Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation* — the standing angelic-ministry role; Matt 4:11 is the unforced fulfillment of what the devil had wanted to manipulate as a sign-test at vv.5-7.",
+   "map_grade": "FULL",
+   "map_thread": "matthew-4-the-temptation-in-the-wilderness",
+   "map_thread_exists": false,
+   "map_confidence": null,
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "ungodly-plot-against-the-righteous-son"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3268,
+   "src": "Matthew 4:11",
+   "src_vn": 11,
+   "src_text_live": "Then the devil leaveth him, and, behold, angels came and ministered unto him.",
+   "src_text_kjv": "Then the devil leaveth him, and, behold, angels came and ministered unto him.",
+   "tgt": "1 Kings 19:5",
+   "tgt_text_kjv": "And as he lay and slept under a juniper tree, behold, then an angel touched him, and said unto him, Arise and eat.",
+   "tgt_context_kjv": {
+    "3": "And when he saw that, he arose, and went for his life, and came to Beer-sheba, which belongeth to Yahudah (Judah), and left his servant there.",
+    "4": "But he himself went a day’s journey into the wilderness, and came and sat down under a juniper tree: and he requested for himself that he might die; and said, It is enough; now, O Yahuah (LORD), take away my life; for I am not better than my fathers.",
+    "5": "And as he lay and slept under a juniper tree, behold, then an angel touched him, and said unto him, Arise and eat.",
+    "6": "And he looked, and, behold, there was a cake baken on the coals, and a cruse of water at his head. And he did eat and drink, and laid him down again.",
+    "7": "And the angel of Yahuah (LORD) came again the second time, and touched him, and said, Arise and eat; because the journey is too great for thee.",
+    "8": "And he arose, and did eat and drink, and went in the strength of that meat forty days and forty nights unto Horeb the mount of Elohim (God)."
+   },
+   "old_note": "Eliyahu (Elijah) ministered to by an angel after the contest at Carmel — the Tanakh-pattern of angelic ministry to the prophet after spiritual conflict.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-the-temptation-in-the-wilderness",
+   "map_thread_exists": false,
+   "map_confidence": null,
+   "map_candidates": [
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+    "beliar-as-king-of-this-world",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3269,
+   "src": "Matthew 4:17",
+   "src_vn": 17,
+   "src_text_live": "From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
+   "src_text_kjv": "From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
+   "tgt": "Matthew 3:2",
+   "tgt_text_kjv": "And saying, Repent ye: for the kingdom of heaven is at hand.",
+   "tgt_context_kjv": {
+    "1": "In those days came John the Baptist, preaching in the wilderness of Judaea,",
+    "2": "And saying, Repent ye: for the kingdom of heaven is at hand.",
+    "3": "For this is he that was spoken of by the prophet Esaias, saying, The voice of one crying in the wilderness, Prepare ye the way of Yahuah (Lord), make his paths straight.",
+    "4": "And the same John had his raiment of camel’s hair, and a leathern girdle about his loins; and his meat was locusts and wild honey.",
+    "5": "Then went out to him Jerusalem, and all Judaea, and all the region round about Jordan,"
+   },
+   "old_note": "The verbally-identical preaching-formula of Yochanan (John) the Immerser; the deliberate continuity of message between Yochanan (John) and Yahusha (Jesus).",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18",
+    "scattered-seed-gathering",
+    "animal-apocalypse-gathering-of-the-dispersed-sheep"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3270,
+   "src": "Matthew 4:17",
+   "src_vn": 17,
+   "src_text_live": "From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
+   "src_text_kjv": "From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
+   "tgt": "Daniel 2:44",
+   "tgt_text_kjv": "And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.",
+   "tgt_context_kjv": {
+    "42": "And as the toes of the feet were part of iron, and part of clay, so the kingdom shall be partly strong, and partly broken.",
+    "43": "And whereas thou sawest iron mixed with miry clay, they shall mingle themselves with the seed of men: but they shall not cleave one to another, even as iron is not mixed with clay.",
+    "44": "And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.",
+    "45": "Forasmuch as thou sawest that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold; the great Elohim (God) hath made known to the king what shall come to pass hereafter: and the dream is certain, and the interpretation thereof sure.",
+    "46": "Then the king Nebuchadnezzar fell upon his face, and worshipped Daniel, and commanded that they should offer an oblation and sweet odours unto him.",
+    "47": "The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret."
+   },
+   "old_note": "*In the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed* — the Tanakh-source of the everlasting kingdom Yahusha (Jesus) names as *at hand.*",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18",
+    "scattered-seed-gathering",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3271,
+   "src": "Matthew 4:17",
+   "src_vn": 17,
+   "src_text_live": "From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
+   "src_text_kjv": "From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
+   "tgt": "Daniel 7:13",
+   "tgt_text_kjv": "I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.",
+   "tgt_context_kjv": {
+    "11": "I beheld then because of the voice of the great words which the horn spake: I beheld even till the beast was slain, and his body destroyed, and given to the burning flame.",
+    "12": "As concerning the rest of the beasts, they had their dominion taken away: yet their lives were prolonged for a season and time.",
+    "13": "I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.",
+    "14": "And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.",
+    "15": "I Daniel was grieved in my spirit in the midst of my body, and the visions of my head troubled me.",
+    "16": "I came near unto one of them that stood by, and asked him the truth of all this. So he told me, and made me know the interpretation of the things."
+   },
+   "old_note": "The Son-of-Adam-kingdom-transfer prophecy (kaph-comparative preserved); the kingdom-at-hand is this kingdom.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18",
+    "scattered-seed-gathering",
+    "animal-apocalypse-gathering-of-the-dispersed-sheep"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3272,
+   "src": "Matthew 4:23",
+   "src_vn": 23,
+   "src_text_live": "And Yahusha (Jesus) went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.",
+   "src_text_kjv": "And Yahusha (Jesus) went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.",
+   "tgt": "Isaiah 35:4",
+   "tgt_text_kjv": "Say to them that are of a fearful heart, Be strong, fear not: behold, your Elohim (God) will come with vengeance, even Elohim (God) with a recompence; he will come and save you.",
+   "tgt_context_kjv": {
+    "2": "It shall blossom abundantly, and rejoice even with joy and singing: the glory of Lebanon shall be given unto it, the excellency of Carmel and Sharon, they shall see the glory of Yahuah (LORD), and the excellency of our Elohim (God).",
+    "3": "Strengthen ye the weak hands, and confirm the feeble knees.",
+    "4": "Say to them that are of a fearful heart, Be strong, fear not: behold, your Elohim (God) will come with vengeance, even Elohim (God) with a recompence; he will come and save you.",
+    "5": "Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.",
+    "6": "Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break out, and streams in the desert.",
+    "7": "And the parched ground shall become a pool, and the thirsty land springs of water: in the habitation of dragons, where each lay, shall be grass with reeds and rushes."
+   },
+   "old_note": "*Then the eyes of the blind shall be opened ... the lame man leap as an hart* — the Messianic-credential prophecy authenticated by Yahusha's (Jesus's) healing ministry; Yahusha (Jesus) cites this credential himself at Matt 11:2-5 when Yochanan (John) sends from prison to ask.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-4-healing-all-manner-of-sickness-the-sun-of-righteousness-isaiah-53-malachi-4",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-healing-all-manner-of-sickness-the-sun-of-righteousness-isaiah-53-malachi-4",
+    "scattered-seed-gathering",
+    "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3273,
+   "src": "Matthew 4:23",
+   "src_vn": 23,
+   "src_text_live": "And Yahusha (Jesus) went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.",
+   "src_text_kjv": "And Yahusha (Jesus) went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.",
+   "tgt": "Isaiah 61:1",
+   "tgt_text_kjv": "The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound;",
+   "tgt_context_kjv": {
+    "1": "The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound;",
+    "2": "To proclaim the acceptable year of Yahuah (LORD), and the day of vengeance of our Elohim (God); to comfort all that mourn;",
+    "3": "To appoint unto them that mourn in Zion, to give unto them beauty for ashes, the oil of joy for mourning, the garment of praise for the spirit of heaviness; that they might be called trees of righteousness, the planting of Yahuah (LORD), that he might be glorified.",
+    "4": "And they shall build the old wastes, they shall raise up the former desolations, and they shall repair the waste cities, the desolations of many generations."
+   },
+   "old_note": "*He hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound* — the Messianic-mission summary Yahusha (Jesus) will explicitly quote at Luke 4:18-19 in his Natsareth (Nazareth) synagogue declaration.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-4-healing-all-manner-of-sickness-the-sun-of-righteousness-isaiah-53-malachi-4",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-4-healing-all-manner-of-sickness-the-sun-of-righteousness-isaiah-53-malachi-4",
+    "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "matthew-4-man-shall-not-live-by-bread-alone-it-is-written-deuteronomy-8",
+   "title": "Man shall not live by bread alone — it is written (Deuteronomy 8:3; the forty years recapitulated)",
+   "anchor": "Matthew 4:1-4",
+   "member_count": 2,
+   "summary_md": "The first temptation, and the first answer is Torah. *And when the tempter came to him, he said, If thou be the Son of Elohim (God), command that these stones be made bread* (Matthew 4:3). Yahusha (Jesus), an hungred after forty days, does not turn the stones — he turns to the scroll: *It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of Elohim (God)* (Matthew 4:4). He is quoting Moses verbatim: *man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah (LORD) doth man live* (Deuteronomy 8:3). And the whole scene is set in the frame of Deuteronomy 8:2 — *thou shalt remember all the way which Yahuah Elohayka (the LORD thy God) led thee these forty years in the wilderness, to humble thee, and to prove thee... whether thou wouldest keep his commandments, or no.* Forty years Yashar'el was proved with hunger and manna and murmured; *forty days and forty nights* (Matthew 4:2) the Son is proved with hunger and holds fast. The Formed Son walks Israel's road over again, and where the firstborn nation failed, he keeps the Father's word.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:4",
+     "tgt": "canon/deuteronomy 8:3",
+     "member_note": "Deuteronomy 8:3 — *man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah (LORD) doth man live.* The Son answers the tempter by quoting Moses."
+    },
+    {
+     "src": "4:4",
+     "tgt": "canon/deuteronomy 8:2",
+     "member_note": "Deuteronomy 8:2 — *these forty years in the wilderness, to humble thee, and to prove thee... whether thou wouldest keep his commandments, or no.* The forty-day fast recapitulates Israel's forty years of testing."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-4-thou-shalt-not-tempt-the-lord-pinnacle-deuteronomy-6-psalm-91",
+   "title": "Thou shalt not tempt Yahuah — Scripture twisted, Scripture answered (Deuteronomy 6:16; Psalm 91)",
+   "anchor": "Matthew 4:5-7",
+   "member_count": 3,
+   "summary_md": "Now the devil quotes the Bible. He takes the Son to a pinnacle of the temple and says, *If thou be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone* (Matthew 4:6). That is Psalm 91:11-12 word for word — *For he shall give his angels charge over thee, to keep thee in all thy ways. They shall bear thee up in their hands, lest thou dash thy foot against a stone.* But the promise belongs to the one who *dwelleth in the secret place of the El Elyon (most High)* (Psalm 91:1) — it is shelter for trust, not a script for a stunt. The adversary tears a true word out of its frame to bend it into a dare. And the Son answers, again, with the Torah: *It is written again, Thou shalt not tempt Yahuah Elohayka (the Lord thy God)* (Matthew 4:7) — *Ye shall not tempt Yahuah Elohaychem (the LORD your God), as ye tempted him in Massah* (Deuteronomy 6:16). Scripture is honored by faith, not handled to test the Father.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:7",
+     "tgt": "canon/deuteronomy 6:16",
+     "member_note": "Deuteronomy 6:16 — *Ye shall not tempt Yahuah Elohaychem (the LORD your God), as ye tempted him in Massah.* The Son's answer to the pinnacle dare."
+    },
+    {
+     "src": "4:6",
+     "tgt": "canon/psalms 91:11",
+     "member_note": "Psalm 91:11 — *For he shall give his angels charge over thee, to keep thee in all thy ways.* The promise the devil quotes, torn from its frame of trust."
+    },
+    {
+     "src": "4:6",
+     "tgt": "canon/psalms 91:12",
+     "member_note": "Psalm 91:12 — *They shall bear thee up in their hands, lest thou dash thy foot against a stone.* Quoted verbatim by the tempter; shelter for faith, not a stunt to stage."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "title": "Him only shalt thou serve — the kingdoms refused (Deuteronomy 6:13; Exodus 34:14)",
+   "anchor": "Matthew 4:8-11",
+   "member_count": 2,
+   "summary_md": "The third dare is the boldest: *the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them; and saith unto him, All these things will I give thee, if thou wilt fall down and worship me* (Matthew 4:8-9). The Son does not bargain. He commands: *Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve* (Matthew 4:10) — Moses again: *Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him, and shalt swear by his name* (Deuteronomy 6:13). This is the first commandment, and the Formed Son who delivered it keeps it under fire: *For thou shalt worship no other god: for Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God)* (Exodus 34:14). Three tests, three answers, and every answer is *it is written.* Messiah does not abolish the Torah he gives — he lives it.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:10",
+     "tgt": "canon/deuteronomy 6:13",
+     "member_note": "Deuteronomy 6:13 — *Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him, and shalt swear by his name.* The first commandment, quoted to refuse the kingdoms."
+    },
+    {
+     "src": "4:10",
+     "tgt": "canon/exodus 34:14",
+     "member_note": "Exodus 34:14 — *For thou shalt worship no other god: for Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God).* Worship belongs to Yahuah alone."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-4-galilee-of-the-nations-the-people-in-darkness-saw-light-isaiah-9",
+   "title": "Galilee of the nations — the people in darkness saw great light (Isaiah 9:1-2)",
+   "anchor": "Matthew 4:12-16",
+   "member_count": 2,
+   "summary_md": "Matthew lifts the curtain on his own meaning: *leaving Nazareth, he came and dwelt in Capernaum, which is upon the sea coast, in the borders of Zabulon and Nephthalim: that it might be fulfilled which was spoken by Esaias the prophet* (Matthew 4:13-14). The prophecy is Isaiah's: *when at the first he lightly afflicted the land of Zebulun and the land of Naphtali... and afterward... by the way of the sea, beyond Jordan, in Galilee of the nations* (Isaiah 9:1). These are the northern tribes, the first carried off into Assyrian exile, the lost house of Israel. And it is to them the dawn comes first: *The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined* (Isaiah 9:2), which Matthew echoes — *The people which sat in darkness saw great light; and to them which sat in the region and shadow of death light is sprung up* (Matthew 4:16). The light does not begin in Jerusalem but in scattered Ephraim's country — the gathering of the two houses, begun where they were lost.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:16",
+     "tgt": "canon/isaiah 9:1",
+     "member_note": "Isaiah 9:1 — *the land of Zebulun and the land of Naphtali... in Galilee of the nations.* The prophecy Matthew names; the light comes first to the northern tribes."
+    },
+    {
+     "src": "4:16",
+     "tgt": "canon/isaiah 9:2",
+     "member_note": "Isaiah 9:2 — *The people that walked in darkness have seen a great light.* Matthew 4:16 echoes it almost word for word: the dawn over scattered Ephraim."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-4-fishers-of-men-repent-they-left-their-nets-jeremiah-16-ezekiel-18",
+   "title": "Fishers of men — repent, and they left their nets (Jeremiah 16:16; Ezekiel 18:30; 1 Kings 19)",
+   "anchor": "Matthew 4:17-22",
+   "member_count": 3,
+   "summary_md": "The preaching begins: *From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand* (Matthew 4:17). His first word is the prophets' word — not a feeling but a turning: *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* (Ezekiel 18:30). Then he calls the fishermen: *Follow me, and I will make you fishers of men* (Matthew 4:19). The figure is Jeremiah's, and it is an ingathering of the scattered: *Behold, I will send for many fishers, saith Yahuah (LORD), and they shall fish them* (Jeremiah 16:16) — sent to bring the children of Yashar'el home *from the land of the north* (Jeremiah 16:15). And the answer to the call is total, in the very pattern of Elisha, who *left the oxen, and ran after Elijah... and went after Elijah, and ministered unto him* (1 Kings 19:20-21): *they straightway left their nets, and followed him* (Matthew 4:20). The kingdom is at hand, the fishers are sent, and the called leave all.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:19",
+     "tgt": "canon/jeremiah 16:16",
+     "member_note": "Jeremiah 16:16 — *Behold, I will send for many fishers, saith Yahuah (LORD), and they shall fish them.* The fishers are sent to gather scattered Israel home from the north."
+    },
+    {
+     "src": "4:17",
+     "tgt": "canon/ezekiel 18:30",
+     "member_note": "Ezekiel 18:30 — *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin.* The Son's first word is the prophets' turning, not a feeling."
+    },
+    {
+     "src": "4:20",
+     "tgt": "canon/1-kings 19:20",
+     "member_note": "1 Kings 19:20 — *And he left the oxen, and ran after Elijah.* Elisha leaves his plough to follow; the fishermen leave their nets in the same pattern."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-4-19-fishers-of-men-the-regathering-of-scattered-yashar-el-jeremiah-16",
+   "title": "Fishers of men — the beginning of the regathering of scattered Yashar'el (Israel) (Jeremiah 16, Ezekiel 47, Amos 4, Habakkuk 1)",
+   "anchor": "Matthew 4:19-19",
+   "member_count": 7,
+   "summary_md": "*And he says unto them, Follow me, and I will make you fishers of men* (Matthew 4:19). This is not the launch of generic evangelism; it is the first stroke of the second exodus the prophets foretold — the regathering of scattered Yashar'el (Israel). Jeremiah names a coming day defined not by the first exodus but by the ingathering: *Therefore, behold, the days come, says Yahuah (LORD), that it shall no more be said, Yahuah (LORD) lives, that brought up the children of Yashar'el (Israel) out of the land of Egypt; But, Yahuah (LORD) lives, that brought up the children of Yashar'el (Israel) from the land of the north, and from all the lands whither he had driven them* (Jeremiah 16:14-15). And he names the means: *Behold, I will send for many fishers, says Yahuah (LORD), and they shall fish them; and after will I send for many hunters, and they shall hunt them from every mountain, and from every hill, and out of the holes of the rocks* (Jeremiah 16:16). The apostles are the first of those fishers. The fishing-image runs the length of the prophets: the hooks that dragged Yashar'el OUT in judgment — *he will take you away with hooks, and your posterity with fishhooks* (Amos 4:2) — and the conqueror's net that caught them — *they catch them in their net, and gather them in their drag* (Habakkuk 1:15), men made *as the fishes of the sea* (Habakkuk 1:14) — are reversed by the fishers Yahuah sends to bring them home, standing on the banks of the river of life: *the fishers shall stand upon it from En-gedi even unto En-eglaim; they shall be a place to spread forth nets... as the fish of the great sea, exceeding many* (Ezekiel 47:10), where *every thing shall live whither the river comes* (47:9). The catch is the lost sheep of the house of Yashar'el scattered among the nations (Matthew 10:6; 15:24) — a two-house restoration, NOT the grafting of the nations by faith-confession, and never a casting-off of his people: *Hath Elohim (God) cast away his people? Elohim (God) forbid... Elohim (God) hath not cast away his people which he foreknew* (Romans 11:1-2).",
+   "members_in_this_chapter": [
+    {
+     "src": "4:19",
+     "tgt": "canon/jeremiah 16:13",
+     "member_note": "*Therefore will I cast you out of this land into a land that you know not* (Jeremiah 16:13) — the scattering the fishers of Matthew 4:19 are sent to reverse; the lost sheep among the nations."
+    },
+    {
+     "src": "4:19",
+     "tgt": "canon/jeremiah 16:15",
+     "member_note": "★★★ *Yahuah (LORD) lives, that brought up the children of Yashar'el (Israel) from the land of the north, and from all the lands whither he had driven them* (Jeremiah 16:15) — the second exodus; *I will make you fishers of men* (Matthew 4:19) begins this ingathering of the scattered seed."
+    },
+    {
+     "src": "4:19",
+     "tgt": "canon/ezekiel 47:9",
+     "member_note": "*every thing shall live whither the river comes* (Ezekiel 47:9) — the river of life makes the catch a gathering unto healing, not merely into a net."
+    },
+    {
+     "src": "4:19",
+     "tgt": "canon/ezekiel 47:10",
+     "member_note": "★★ *the fishers shall stand upon it from En-gedi even unto En-eglaim; they shall be a place to spread forth nets... exceeding many* (Ezekiel 47:10) — the apostles on Ezekiel's riverbank, the catch of the regathering."
+    },
+    {
+     "src": "4:19",
+     "tgt": "canon/amos 4:2",
+     "member_note": "*he will take you away with hooks, and your posterity with fishhooks* (Amos 4:2) — the hooks that dragged Yashar'el OUT in judgment; the fishers of Matthew 4:19 reverse them, fishing the scattered home."
+    },
+    {
+     "src": "4:19",
+     "tgt": "canon/habakkuk 1:14",
+     "member_note": "*And make men as the fishes of the sea... that have no ruler over them* (Habakkuk 1:14) — men scattered and masterless; the fishers of men seek out exactly these."
+    },
+    {
+     "src": "4:19",
+     "tgt": "canon/habakkuk 1:15",
+     "member_note": "*they catch them in their net, and gather them in their drag* (Habakkuk 1:15) — the captor's net turned into the net of the ingathering."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-4-healing-all-manner-of-sickness-the-sun-of-righteousness-isaiah-53-malachi-4",
+   "title": "Healing all manner of sickness — the Sun of righteousness with healing in his wings (Isaiah 53:4; Psalm 103:3; Malachi 4:2)",
+   "anchor": "Matthew 4:23-25",
+   "member_count": 3,
+   "summary_md": "And then the healing pours out: *Yahusha (Jesus) went about all Galilee... healing all manner of sickness and all manner of disease among the people* (Matthew 4:23), until *there followed him great multitudes* (Matthew 4:25). This is the Servant of Isaiah at work — *Surely he hath borne our griefs, and carried our sorrows* (Isaiah 53:4) — for he does not heal from a distance but takes the infirmity upon himself. It is the mercy David sang: *Who forgiveth all thine iniquities; who healeth all thy diseases* (Psalm 103:3), pardon and healing arriving together in the Formed Son. And it is the dawn Malachi promised at the close of the prophets: *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:2). In Galilee of the nations, that Sun has risen, and the multitudes feel the warmth of his wings.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:23",
+     "tgt": "canon/isaiah 53:4",
+     "member_note": "Isaiah 53:4 — *Surely he hath borne our griefs, and carried our sorrows.* The suffering Servant takes the infirmities he heals upon himself."
+    },
+    {
+     "src": "4:23",
+     "tgt": "canon/psalms 103:3",
+     "member_note": "Psalm 103:3 — *Who forgiveth all thine iniquities; who healeth all thy diseases.* Pardon and healing arrive together in the Formed Son."
+    },
+    {
+     "src": "4:23",
+     "tgt": "canon/malachi 4:2",
+     "member_note": "Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings.* The dawn the prophets promised has risen over Galilee."
+    }
+   ]
+  },
+  {
+   "slug": "animal-apocalypse-gathering-of-the-dispersed-sheep",
+   "title": "The Animal Apocalypse — the dispersed sheep gathered home",
+   "anchor": null,
+   "member_count": 2,
+   "summary_md": "*And he saith unto them, Follow me, and I will make you fishers of men.* (Matthew 4:19). The men he calls are being sent after sheep, and the Animal Apocalypse had already told the story of those sheep from the scattering to the gathering. First the blindness and the losing of them: *And as touching all this the eyes of those sheep were blinded so that they saw not, and (the eyes of) their shepherds likewise; and they delivered them in large numbers to their shepherds for destruction, and they trampled the sheep with their feet and devoured them. And Yahuah (Lord) of the sheep remained unmoved till all the sheep were dispersed over the field and mingled with them (i.e. the beasts), and they (i.e. the shepherds) did not save them out of the hand of the beasts.* (1 Enoch 89:74-75). Then, late in the age, a generation among them begins to see: *But behold lambs were borne by those white sheep, and they began to open their eyes and to see, and to cry to the sheep.* (1 Enoch 90:6). And at the close, the ones who had been lost come home: *And all that had been destroyed and dispersed, and all the beasts of the field, and all the birds of the heaven, assembled in that house, and Yahuah (Lord) of the sheep rejoiced with great joy because they were all good and had returned to His house.* (1 Enoch 90:33). That is the gathering Ezekiel promised, *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* (Ezekiel 37:21), and it is the work the Shepherd names as his own: *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* (John 10:16). The disciples called by the lake are the first hands put to that gathering. The sheep who were mingled with the beasts open their eyes when the Shepherd's voice reaches them, and the fishers of men are sent to carry it.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:19",
+     "tgt": "enoch/1-enoch 90:6",
+     "member_note": "1 Enoch 90:6 — *lambs were borne by those white sheep, and they began to open their eyes and to see.* The late-age awakening of the lambs; the fishers-of-men commission at Matt 4:19 enters the gathering of the scattered-and-now-awakening sheep."
+    }
+   ]
+  },
+  {
+   "slug": "azazel-bound-in-the-wilderness-as-the-temptation-ground",
+   "title": "Azazel bound in the wilderness as the temptation-ground",
+   "anchor": null,
+   "member_count": 5,
+   "summary_md": "Matt 4:1 — *Then was Yahusha (Jesus) led up of the Ruach (Spirit) into the wilderness to be tempted of the devil* — reads against 1 Enoch's wilderness-binding architecture. 1 Enoch 8:1 names Azazel's teaching of forbidden arts as the leading edge of the Watcher-rebellion. 1 Enoch 10:4-5 names Yahuah's (the LORD's) binding-judgment on Azazel: *Bind Azazel hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dudael, and cast him therein... place upon him rough and jagged rocks, and cover him with darkness... cover his face that he may not see light.* The Watcher-chief is bound in the wilderness. 1 Enoch 10:8 names the Yom Kippur scapegoat-for-Azazel architecture that Leviticus 16:10 carries in shorthand — sin borne away to the wilderness-figure who is its source. Matt 4:1 places Yahusha (Jesus) on the very ground where the bound Watcher is held; the wilderness-temptation is the public confrontation between the Son-of-Adam-in-flesh and the bound Watcher-chief, walked on the Watcher's own territory and passed.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:1",
+     "tgt": "enoch/1-enoch 8:1",
+     "member_note": "1 Enoch 8:1 — *Azazel taught men to make swords, and knives, and shields, and breastplates.* The Watcher who taught forbidden arts; the leading edge of the rebellion that seeded the corruption of the earth."
+    },
+    {
+     "src": "4:1",
+     "tgt": "enoch/1-enoch 10:4",
+     "member_note": "1 Enoch 10:4 — *Bind Azazel hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dudael, and cast him therein.* The Hebrew library locates the Watcher-chief's binding judgment IN THE WILDERNESS — the same ground Matt 4:1 names as the location of Yahusha's (Jesus's) temptation."
+    },
+    {
+     "src": "4:1",
+     "tgt": "enoch/1-enoch 10:5",
+     "member_note": "1 Enoch 10:5 — *cover him with darkness, and let him abide there for ever, and cover his face that he may not see light.* The completion of the wilderness-binding; Yahusha (Jesus) walks the testing-arc on the bound Watcher's ground."
+    },
+    {
+     "src": "4:1",
+     "tgt": "enoch/1-enoch 10:8",
+     "member_note": "1 Enoch 10:8 — *the whole earth has been corrupted through the works that were taught by Azazel: to him ascribe all sin.* The Yom Kippur scapegoat-for-Azazel architecture (Leviticus 16:10 in shorthand); Matt 4:1 places Yahusha (Jesus) in the wilderness in the same register."
+    }
+   ]
+  },
+  {
+   "slug": "beliar-as-king-of-this-world",
+   "title": "Beliar as king of this world",
+   "anchor": null,
+   "member_count": 3,
+   "summary_md": "Matt 4:8-10's third-temptation offer of *all the kingdoms of the world, and the glory of them* by the devil reads against the Ascension of Isaiah's named king-of-this-world architecture. Asc.Is 4:2 names Beliar as *the king of this world, which he has ruled ever since it came into being* — the figure who currently administers the kingdoms he offers Yahusha (Jesus) at Matt 4:8-9. The Hebrew library locks the framework reading that the wilderness-offer was not an empty bluff: the kingdoms ARE temporarily under the dominion of the principalities and powers, and Beliar / the devil is offering what he administers. Asc.Is 4:9 names Beliar's standing worship-grab pattern — speaking as the Beloved, claiming the worship due to Elohim (God) — the same worship-grab Matt 4:9's *if thou wilt fall down and worship me* enacts. Asc.Is 1:3 names Beliar's adversarial pattern toward the prophetic revelation of the Beloved's descent — the architecture Matt 4:10's *Get thee hence, Satan* dismisses.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:8",
+     "tgt": "ascension-isaiah/ascension-isaiah 4:2",
+     "member_note": "Ascension of Isaiah 4:2 — *Beliar the great ruler, the king of this world, will descend, who hath ruled it since it came into being.* The Ascension of Isaiah names the one who has ruled this world from the beginning, and the devil offers Yahusha (Jesus) what he holds."
+    },
+    {
+     "src": "4:9",
+     "tgt": "ascension-isaiah/ascension-isaiah 4:9",
+     "member_note": "Ascension of Isaiah 4:9 — *those who shall have been associated together in order to receive the Beloved, he will turn aside after him.* The ruler who asked the Son for worship turns aside the greater number of those gathered to receive the Beloved."
+    },
+    {
+     "src": "4:10",
+     "tgt": "ascension-isaiah/ascension-isaiah 3:13",
+     "member_note": "Ascension of Isaiah 3:13 — *the going forth of the Beloved from the seventh heaven had been made known.* The Beloved whose descent enraged Beliar sends Satan away with the Torah's own word."
+    }
+   ]
+  },
+  {
+   "slug": "fulfill-as-prophecy-bringing-to-pass",
+   "title": "Fulfill as prophecy bringing to pass",
+   "anchor": null,
+   "member_count": 40,
+   "summary_md": "The Greek *plēroō* (Strong's G4137) at Matthew 5:17 does not mean *to exhaust-and-thereby-end* — the antichrist reading the pulpit installed to retire the Torah. It means *to bring to pass* — to make happen what was prophesied. Yahusha (Jesus) names what his mission accomplishes: the bringing-to-pass of what the Torah and the Prophets prophesied. And what they prophesied is the gathering of the scattered seed of Yashar'el (Israel) home through redemption — the curse-and-return arc the Torah itself wrote (Leviticus 26:33 and 40-42; Deuteronomy 30:1-5), executed by the prophets in the divorce-and-scattering (Hosea 1:9; Jeremiah 16:13), and opened by the Messiah's death and resurrection so the door home is real. This thread surfaces every NT plēroō occurrence used in prophecy-fulfillment context (35 members), each linked to the specific Tanakh prophecy it brings to pass. The pattern is consistent: the Messiah walks out the substance the prophets foretold, and the NT formula *that it might be fulfilled* points the reader back to the Tanakh, not forward into a new dispensation.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:14",
+     "tgt": "canon/isaiah 9:1",
+     "member_note": "Yahusha's (Jesus's) Galilee ministry fulfills Isaiah 9:1-2 — *the people that walked in darkness have seen a great light.* Galilee was the territory of the scattered northern tribes (Zebulun and Naphtali); the gathering-mission begins where the divorce-scattering hit first."
+    }
+   ]
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": null,
+   "member_count": 54,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Osee, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:15",
+     "tgt": "canon/isaiah 9:1",
+     "member_note": "The OT prophetic source — the light dawning on the people of Zevulun (Zebulun) and Naphtali, the scattered-northern-tribe-in-darkness in their tribal territory."
+    },
+    {
+     "src": "4:19",
+     "tgt": "canon/jeremiah 16:14",
+     "member_note": "*Behold, I will send for many fishers, saith Yahuah (the LORD), and they shall fish them* — the prophetic Jeremiah-16 fishers as the agents of the second-Exodus gathering of the scattered seed; Matthew 4:19's *fishers of men* is the explicit identification of the disciples with the Jer 16 fishers."
+    },
+    {
+     "src": "4:25",
+     "tgt": "canon/ezekiel 37:21",
+     "member_note": "*I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* — the early-ministry geographic-scope summary as the beginning of the Ezek 37 gathering."
+    }
+   ]
+  },
+  {
+   "slug": "temptation-as-mastema-architecture",
+   "title": "The temptation as Mastema architecture",
+   "anchor": null,
+   "member_count": 4,
+   "summary_md": "Matt 4:1-7's *tempted of the devil* sits inside the Hebrew library's named Mastema architecture from Jubilees. Jubilees 10:8 names Mastema as the chief-of-evil-spirits with an authorized role to lead astray and judge. Jubilees 11:5 names Mastema's standing disruption-of-the-bread-supply pattern (the ravens sent to eat the sown seed) — the architecture Matt 4:3's stones-to-bread temptation walks at the Messianic level. Jubilees 17:16 names Mastema's role at the Aqedah — the accuser-figure provoking the testing-of-the-righteous-Son to prove the Sonship-claim by visible-sign — the same architecture Matt 4:5-7's temple-pinnacle test walks. Avraham (Abraham) was tested with Yitschaq (Isaac); Yahusha (Jesus) is tested with himself. The Hebrew library names the figure and the testing-architecture the gospel inherits.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:1",
+     "tgt": "jubilees/jubilees 10:8",
+     "member_note": "Jubilees 10:8 — *let some of them remain before me, and let them hearken to my voice.* The devil who tempted Yahusha (Jesus) in the wilderness (Matthew 4:1) works inside a permission he asked for."
+    },
+    {
+     "src": "4:3",
+     "tgt": "jubilees/jubilees 11:11",
+     "member_note": "Jubilees 11:11 — *the prince Mastêmâ sent ravens and birds to devour the seed which was sown in the land.* The enemy who stole the bread from the fields is the tempter who held out bread in the wilderness (Matthew 4:3)."
+    },
+    {
+     "src": "4:5",
+     "tgt": "jubilees/jubilees 17:16",
+     "member_note": "Jubilees 17:16 — *bid him offer him as a burnt-offering on the altar, and You will see if he will do this command.* The accuser who proposed Abraham's trial proposes the Son's on the pinnacle (Matthew 4:5)."
+    }
+   ]
+  },
+  {
+   "slug": "ungodly-plot-against-the-righteous-son",
+   "title": "The ungodly's plot against the righteous Son",
+   "anchor": null,
+   "member_count": 4,
+   "summary_md": "The temptation pericope sits inside the Hebrew library's named architecture of *the ungodly's plot against the righteous Son* — Wisdom of Solomon 2:10-20. Wisdom 2:13 names the trigger: *he professeth to have the knowledge of Yahuah (God): and he calleth himself the child of Yahuah (the Lord).* The ungodly identify the righteous-one by his Sonship-claim. Matt 4:3's and 4:6's *if thou be the Son of Elohim (God)* enact the same testing-by-challenge-of-the-Sonship pattern at the Messianic level. Wisdom 2:16 names the ungodly's frame — *he maketh his boast that Elohim (God) is his father* — the resentment Matt 4:6 walks. Wisdom 2:18 is the direct prefiguring of Matt 4:6 — *if the just man be the Son of Elohim, he will help him, and deliver him from the hand of his enemies* — the *let-Elohim-save-him-if-he-is-his* taunt the devil's cut-quote of Psalm 91 enacts. Wisdom 2:20 names the death-sentence the plot culminates in: *let us condemn him with a shameful death.* The wilderness-temptation is the opening; the Wisdom architecture carries the full arc the gospel will walk to the cross.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:3",
+     "tgt": "apocrypha/the-wisdom-of-solomon 2:13",
+     "member_note": "Wisdom of Solomon 2:13 — *he calls himself the child of Yahuah (God).* The ungodly test the righteous one's claim to be the child of Yahuah (God); the tempter at Matthew 4:3 says if thou be the Son."
+    },
+    {
+     "src": "4:6",
+     "tgt": "apocrypha/the-wisdom-of-solomon 2:16",
+     "member_note": "Wisdom of Solomon 2:16 — *makes his boast that Yahuah (God) is his father.* The boast the ungodly resent is the claim the tempter dares him to prove at Matthew 4:6."
+    },
+    {
+     "src": "4:6",
+     "tgt": "apocrypha/the-wisdom-of-solomon 2:18",
+     "member_note": "Wisdom of Solomon 2:18 — *if the just man be the son of Yahuah (God), he will help him.* The ungodly's test is the devil's dare at Matthew 4:6, down to the cut quotation of Psalm 91."
+    },
+    {
+     "src": "4:11",
+     "tgt": "apocrypha/the-wisdom-of-solomon 2:20",
+     "member_note": "Wisdom of Solomon 2:20 — *Let us condemn him with a shameful death.* The plot's end; Matthew 4:11's *Then the devil leaveth him* is only the end of its first round."
+    }
+   ]
+  }
+ ]
+}

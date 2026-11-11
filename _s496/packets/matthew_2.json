@@ -1,0 +1,1128 @@
+{
+ "chapter": 2,
+ "chapter_text_kjv": {
+  "1": "Now when Yahusha (Jesus) was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem,",
+  "2": "Saying, Where is he that is born King of the Yahudim (Jews)? for we have seen his star in the east, and are come to worship him.",
+  "3": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+  "4": "And when he had gathered all the chief priests and scribes of the people together, he demanded of them where Messiah (Christ) should be born.",
+  "5": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+  "6": "And thou Bethlehem, in the land of Juda, art not the least among the princes of Juda: for out of thee shall come a Governor, that shall rule my people Yashar'el (Israel).",
+  "7": "Then Herod, when he had privily called the wise men, enquired of them diligently what time the star appeared.",
+  "8": "And he sent them to Bethlehem, and said, Go and search diligently for the young child; and when ye have found him, bring me word again, that I may come and worship him also.",
+  "9": "When they had heard the king, they departed; and, lo, the star, which they saw in the east, went before them, till it came and stood over where the young child was.",
+  "10": "When they saw the star, they rejoiced with exceeding great joy.",
+  "11": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh.",
+  "12": "And being warned of Elohim (God) in a dream that they should not return to Herod, they departed into their own country another way.",
+  "13": "And when they were departed, behold, the angel of Yahuah (Lord) appeareth to Joseph in a dream, saying, Arise, and take the young child and his mother, and flee into Egypt, and be thou there until I bring thee word: for Herod will seek the young child to destroy him.",
+  "14": "When he arose, he took the young child and his mother by night, and departed into Egypt:",
+  "15": "And was there until the death of Herod: that it might be fulfilled which was spoken of Yahuah (Lord) by the prophet, saying, Out of Egypt have I called my son.",
+  "16": "Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.",
+  "17": "Then was fulfilled that which was spoken by Jeremy the prophet, saying,",
+  "18": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+  "19": "But when Herod was dead, behold, an angel of Yahuah (Lord) appeareth in a dream to Joseph in Egypt,",
+  "20": "Saying, Arise, and take the young child and his mother, and go into the land of Yashar'el (Israel): for they are dead which sought the young child’s life.",
+  "21": "And he arose, and took the young child and his mother, and came into the land of Yashar'el (Israel).",
+  "22": "But when he heard that Archelaus did reign in Judaea in the room of his father Herod, he was afraid to go thither: notwithstanding, being warned of Elohim (God) in a dream, he turned aside into the parts of Galilee:",
+  "23": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene."
+ },
+ "cards": [
+  {
+   "id": 2601,
+   "src": "Matthew 2:1",
+   "src_vn": 1,
+   "src_text_live": "Now when Yahusha (Jesus) was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem,",
+   "src_text_kjv": "Now when Yahusha (Jesus) was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem,",
+   "tgt": "Daniel 2:48",
+   "tgt_text_kjv": "Then the king made Daniel a great man, and gave him many great gifts, and made him ruler over the whole province of Babylon, and chief of the governors over all the wise men of Babylon.",
+   "tgt_context_kjv": {
+    "46": "Then the king Nebuchadnezzar fell upon his face, and worshipped Daniel, and commanded that they should offer an oblation and sweet odours unto him.",
+    "47": "The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret.",
+    "48": "Then the king made Daniel a great man, and gave him many great gifts, and made him ruler over the whole province of Babylon, and chief of the governors over all the wise men of Babylon.",
+    "49": "Then Daniel requested of the king, and he set Shadrach, Meshach, and Abed-nego, over the affairs of the province of Babylon: but Daniel sat in the gate of the king."
+   },
+   "old_note": "Daniel's promotion to chief of the wise men of Babylon — the institutional source of the Magi's prophetic knowledge.",
+   "map_grade": "BARE",
+   "map_thread": "magi-astronomical-tradition",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "magi-astronomical-tradition",
+    "scattered-seed-gathering",
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2603,
+   "src": "Matthew 2:2",
+   "src_vn": 2,
+   "src_text_live": "Saying, Where is he that is born King of the Yahudim (Jews)? for we have seen his star in the east, and are come to worship him.",
+   "src_text_kjv": "Saying, Where is he that is born King of the Yahudim (Jews)? for we have seen his star in the east, and are come to worship him.",
+   "tgt": "Daniel 9:24",
+   "tgt_text_kjv": "Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy.",
+   "tgt_context_kjv": {
+    "22": "And he informed me, and talked with me, and said, O Daniel, I am now come forth to give thee skill and understanding.",
+    "23": "At the beginning of thy supplications the commandment came forth, and I am come to shew thee; for thou art greatly beloved: therefore understand the matter, and consider the vision.",
+    "24": "Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy.",
+    "25": "Know therefore and understand, that from the going forth of the commandment to restore and to build Jerusalem unto the Messiah the Prince shall be seven weeks, and threescore and two weeks: the street shall be built again, and the wall, even in troublous times.",
+    "26": "And after threescore and two weeks shall Messiah be cut off, but not for himself: and the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof shall be with a flood, and unto the end of the war desolations are determined.",
+    "27": "And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate, even until the consummation, and that determined shall be poured upon the desolate."
+   },
+   "old_note": "The seventy-weeks prophecy giving the timing of *Messiah the Prince* — the Daniel-tradition Magi would have known the timing window from.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "magi-astronomical-tradition",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2604,
+   "src": "Matthew 2:9",
+   "src_vn": 9,
+   "src_text_live": "When they had heard the king, they departed; and, lo, the star, which they saw in the east, went before them, till it came and stood over where the young child was.",
+   "src_text_kjv": "When they had heard the king, they departed; and, lo, the star, which they saw in the east, went before them, till it came and stood over where the young child was.",
+   "tgt": "Exodus 13:21",
+   "tgt_text_kjv": "And Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night:",
+   "tgt_context_kjv": {
+    "19": "And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.",
+    "20": "And they took their journey from Succoth, and encamped in Etham, in the edge of the wilderness.",
+    "21": "And Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night:",
+    "22": "He took not away the pillar of the cloud by day, nor the pillar of fire by night, from before the people."
+   },
+   "old_note": "The pillar of cloud and fire that led Yashar'el (Israel) in the wilderness — the Tanakh-pattern for the shekinah-leading-by-visible-sign that the Matthew-2 star manifests.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2606,
+   "src": "Matthew 2:3",
+   "src_vn": 3,
+   "src_text_live": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "src_text_kjv": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "tgt": "Obadiah 1:10",
+   "tgt_text_kjv": "For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.",
+   "tgt_context_kjv": {
+    "8": "Shall I not in that day, saith Yahuah (LORD), even destroy the wise men out of Edom, and understanding out of the mount of Esau?",
+    "9": "And thy mighty men, O Teman, shall be dismayed, to the end that every one of the mount of Esau may be cut off by slaughter.",
+    "10": "For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.",
+    "11": "In the day that thou stoodest on the other side, in the day that the strangers carried away captive his forces, and foreigners entered into his gates, and cast lots upon Jerusalem, even thou wast as one of them.",
+    "12": "But thou shouldest not have looked on the day of thy brother in the day that he became a stranger; neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction; neither shouldest thou have spoken proudly in the day of distress.",
+    "13": "Thou shouldest not have entered into the gate of my people in the day of their calamity; yea, thou shouldest not have looked on their affliction in the day of their calamity, nor have laid hands on their substance in the day of their calamity;"
+   },
+   "old_note": "*For thy violence against thy brother Ya'aqov (Jacob) shame shall cover thee* — Obadiah's oracle against Edom; Herod's planned violence against the Davidic infant continues the pattern.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-the-wise-men-and-the-star",
+   "map_thread_exists": false,
+   "map_confidence": null,
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2607,
+   "src": "Matthew 2:3",
+   "src_vn": 3,
+   "src_text_live": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "src_text_kjv": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "tgt": "Numbers 20:14",
+   "tgt_text_kjv": "And Moses sent messengers from Kadesh unto the king of Edom, Thus saith thy brother Yashar'el (Israel), Thou knowest all the travail that hath befallen us:",
+   "tgt_context_kjv": {
+    "12": "And Yahuah (LORD) spake unto Moses and Aaron, Because ye believed me not, to sanctify me in the eyes of the children of Yashar'el (Israel), therefore ye shall not bring this congregation into the land which I have given them.",
+    "13": "This is the water of Meribah; because the children of Yashar'el (Israel) strove with Yahuah (LORD), and he was sanctified in them.",
+    "14": "And Moses sent messengers from Kadesh unto the king of Edom, Thus saith thy brother Yashar'el (Israel), Thou knowest all the travail that hath befallen us:",
+    "15": "How our fathers went down into Egypt, and we have dwelt in Egypt a long time; and the Egyptians vexed us, and our fathers:",
+    "16": "And when we cried unto Yahuah (LORD), he heard our voice, and sent an angel, and hath brought us forth out of Egypt: and, behold, we are in Kadesh, a city in the uttermost of thy border:",
+    "17": "Let us pass, I pray thee, through thy country: we will not pass through the fields, or through the vineyards, neither will we drink of the water of the wells: we will go by the king’s high way, we will not turn to the right hand nor to the left, until we have passed thy borders."
+   },
+   "old_note": "Edom refusing passage to Yashar'el (Israel) at the wilderness border — the earliest beat of the Edom-against-Yashar'el pattern.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2608,
+   "src": "Matthew 2:3",
+   "src_vn": 3,
+   "src_text_live": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "src_text_kjv": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "tgt": "Malachi 1:2",
+   "tgt_text_kjv": "I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,",
+   "tgt_context_kjv": {
+    "1": "The burden of the word of Yahuah (LORD) to Yashar'el (Israel) by Malachi.",
+    "2": "I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,",
+    "3": "And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.",
+    "4": "Whereas Edom saith, We are impoverished, but we will return and build the desolate places; thus saith Yahuah Tseva'ot (LORD of hosts), They shall build, but I will throw down; and they shall call them, The border of wickedness, and, The people against whom Yahuah (LORD) hath indignation for ever.",
+    "5": "And your eyes shall see, and ye shall say, Yahuah (LORD) will be magnified from the border of Yashar'el (Israel)."
+   },
+   "old_note": "*Yet I loved Ya'aqov (Jacob), and I hated Esau* — the divine-side reading of the long pattern.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-the-wise-men-and-the-star",
+   "map_thread_exists": false,
+   "map_confidence": null,
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2609,
+   "src": "Matthew 2:3",
+   "src_vn": 3,
+   "src_text_live": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "src_text_kjv": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "tgt": "Ezekiel 35:1",
+   "tgt_text_kjv": "Moreover the word of Yahuah (LORD) came unto me, saying,",
+   "tgt_context_kjv": {
+    "1": "Moreover the word of Yahuah (LORD) came unto me, saying,",
+    "2": "Son of Adam, set thy face against mount Seir, and prophesy against it,",
+    "3": "And say unto it, Thus saith Adonai Yahuah (the Lord GOD); Behold, O mount Seir, I am against thee, and I will stretch out mine hand against thee, and I will make thee most desolate.",
+    "4": "I will lay thy cities waste, and thou shalt be desolate, and thou shalt know that I am Yahuah (LORD)."
+   },
+   "old_note": "The prophecy against Mount Seir for the perpetual hatred.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-the-wise-men-and-the-star",
+   "map_thread_exists": false,
+   "map_confidence": null,
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "magi-astronomical-tradition"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2610,
+   "src": "Matthew 2:3",
+   "src_vn": 3,
+   "src_text_live": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "src_text_kjv": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him.",
+   "tgt": "Psalm 137:7",
+   "tgt_text_kjv": "Remember, O Yahuah (LORD), the children of Edom in the day of Jerusalem; who said, Rase it, rase it, even to the foundation thereof.",
+   "tgt_context_kjv": {
+    "5": "If I forget thee, O Jerusalem, let my right hand forget her cunning.",
+    "6": "If I do not remember thee, let my tongue cleave to the roof of my mouth; if I prefer not Jerusalem above my chief joy.",
+    "7": "Remember, O Yahuah (LORD), the children of Edom in the day of Jerusalem; who said, Rase it, rase it, even to the foundation thereof.",
+    "8": "O daughter of Babylon, who art to be destroyed; happy shall he be, that rewardeth thee as thou hast served us.",
+    "9": "Happy shall he be, that taketh and dasheth thy little ones against the stones."
+   },
+   "old_note": "*Remember, O Yahuah (LORD), the children of Edom in the day of Yerushalayim (Jerusalem)* — the cry against Edom for joining the Babylonian destruction.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-the-wise-men-and-the-star",
+   "map_thread_exists": false,
+   "map_confidence": null,
+   "map_candidates": [
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2611,
+   "src": "Matthew 2:16",
+   "src_vn": 16,
+   "src_text_live": "Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.",
+   "src_text_kjv": "Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.",
+   "tgt": "Genesis 27:41",
+   "tgt_text_kjv": "And Esau hated Jacob because of the blessing wherewith his father blessed him: and Esau said in his heart, The days of mourning for my father are at hand; then will I slay my brother Jacob.",
+   "tgt_context_kjv": {
+    "39": "And Isaac his father answered and said unto him, Behold, thy dwelling shall be the fatness of the earth, and of the dew of heaven from above;",
+    "40": "And by thy sword shalt thou live, and shalt serve thy brother; and it shall come to pass when thou shalt have the dominion, that thou shalt break his yoke from off thy neck.",
+    "41": "And Esau hated Jacob because of the blessing wherewith his father blessed him: and Esau said in his heart, The days of mourning for my father are at hand; then will I slay my brother Jacob.",
+    "42": "And these words of Esau her elder son were told to Rebekah: and she sent and called Jacob her younger son, and said unto him, Behold, thy brother Esau, as touching thee, doth comfort himself, purposing to kill thee.",
+    "43": "Now therefore, my son, obey my voice; and arise, flee thou to Laban my brother to Haran;",
+    "44": "And tarry with him a few days, until thy brother’s fury turn away;"
+   },
+   "old_note": "*And Esau hated Ya'aqov (Jacob) ... the days of mourning for my father are at hand; then will I slay my brother Ya'aqov (Jacob)* — Esau's first attempted-murder of Ya'aqov (Jacob); Herod's slaughter of the infants is the latest beat of the same hatred.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-herod-and-the-slain-infants",
+   "map_thread_exists": false,
+   "map_confidence": null,
+   "map_candidates": [
+    "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+    "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+    "firstborn-son-out-of-egypt-extras"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2613,
+   "src": "Matthew 2:13",
+   "src_vn": 13,
+   "src_text_live": "And when they were departed, behold, the angel of Yahuah (Lord) appears to Joseph in a dream, saying, Arise, and take the young child and his mother, and flee into Egypt, and be you there until I bring you word: for Herod will seek the young child to destroy him.",
+   "src_text_kjv": "And when they were departed, behold, the angel of Yahuah (Lord) appeareth to Joseph in a dream, saying, Arise, and take the young child and his mother, and flee into Egypt, and be thou there until I bring thee word: for Herod will seek the young child to destroy him.",
+   "tgt": "Exodus 1:8",
+   "tgt_text_kjv": "Now there arose up a new king over Egypt, which knew not Joseph.",
+   "tgt_context_kjv": {
+    "6": "And Joseph died, and all his brethren, and all that generation.",
+    "7": "And the children of Yashar'el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.",
+    "8": "Now there arose up a new king over Egypt, which knew not Joseph.",
+    "9": "And he said unto his people, Behold, the people of the children of Yashar'el (Israel) are more and mightier than we:",
+    "10": "Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.",
+    "11": "Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses."
+   },
+   "old_note": "Pharaoh's order to kill the Hebrew male infants — the Tanakh-pattern of slaughter-of-the-infants-to-prevent-the-deliverer that Matthew 2:16 recapitulates with Herod-Yahusha (Jesus) in the lead roles.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+    "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+    "matthean-yoseph-and-the-patriarch-yoseph"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2614,
+   "src": "Matthew 2:13",
+   "src_vn": 13,
+   "src_text_live": "And when they were departed, behold, the angel of Yahuah (Lord) appears to Joseph in a dream, saying, Arise, and take the young child and his mother, and flee into Egypt, and be you there until I bring you word: for Herod will seek the young child to destroy him.",
+   "src_text_kjv": "And when they were departed, behold, the angel of Yahuah (Lord) appeareth to Joseph in a dream, saying, Arise, and take the young child and his mother, and flee into Egypt, and be thou there until I bring thee word: for Herod will seek the young child to destroy him.",
+   "tgt": "Exodus 2:1",
+   "tgt_text_kjv": "And there went a man of the house of Levi, and took to wife a daughter of Levi.",
+   "tgt_context_kjv": {
+    "1": "And there went a man of the house of Levi, and took to wife a daughter of Levi.",
+    "2": "And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.",
+    "3": "And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river’s brink.",
+    "4": "And his sister stood afar off, to wit what would be done to him."
+   },
+   "old_note": "The preservation of the infant Mosheh (Moses) on the Nile while the other Hebrew infants were killed — the Tanakh-pattern of the deliverer preserved through the infant-slaughter.",
+   "map_grade": "BARE",
+   "map_thread": "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+    "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+    "matthean-yoseph-and-the-patriarch-yoseph"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2615,
+   "src": "Matthew 2:14",
+   "src_vn": 14,
+   "src_text_live": "When he arose, he took the young child and his mother by night, and departed into Egypt:",
+   "src_text_kjv": "When he arose, he took the young child and his mother by night, and departed into Egypt:",
+   "tgt": "Genesis 46:1",
+   "tgt_text_kjv": "And Yashar'el (Israel) took his journey with all that he had, and came to Beer-sheba, and offered sacrifices unto the Elohim (God) of his father Isaac.",
+   "tgt_context_kjv": {
+    "1": "And Yashar'el (Israel) took his journey with all that he had, and came to Beer-sheba, and offered sacrifices unto the Elohim (God) of his father Isaac.",
+    "2": "And Elohim (God) spake unto Yashar'el (Israel) in the visions of the night, and said, Jacob, Jacob. And he said, Here am I.",
+    "3": "And he said, I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation:",
+    "4": "I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes."
+   },
+   "old_note": "The patriarch Yoseph (Joseph) bringing Ya'aqov (Jacob) and his sons down to Egypt — the Tanakh-Yoseph initiating the Egypt-sojourn that the Matthew-Yoseph (Joseph) re-walks with the Messianic-Yashar'el (Israel) in his arms.",
+   "map_grade": "BARE",
+   "map_thread": "matthean-yoseph-and-the-patriarch-yoseph",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthean-yoseph-and-the-patriarch-yoseph",
+    "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+    "firstborn-son-out-of-egypt-extras"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2616,
+   "src": "Matthew 2:14",
+   "src_vn": 14,
+   "src_text_live": "When he arose, he took the young child and his mother by night, and departed into Egypt:",
+   "src_text_kjv": "When he arose, he took the young child and his mother by night, and departed into Egypt:",
+   "tgt": "Exodus 12:40",
+   "tgt_text_kjv": "Now the sojourning of the children of Yashar'el (Israel), who dwelt in Egypt, was four hundred and thirty years.",
+   "tgt_context_kjv": {
+    "38": "And a mixed multitude went up also with them; and flocks, and herds, even very much cattle.",
+    "39": "And they baked unleavened cakes of the dough which they brought forth out of Egypt, for it was not leavened; because they were thrust out of Egypt, and could not tarry, neither had they prepared for themselves any victual.",
+    "40": "Now the sojourning of the children of Yashar'el (Israel), who dwelt in Egypt, was four hundred and thirty years.",
+    "41": "And it came to pass at the end of the four hundred and thirty years, even the selfsame day it came to pass, that all the hosts of Yahuah (LORD) went out from the land of Egypt.",
+    "42": "It is a night to be much observed unto Yahuah (LORD) for bringing them out from the land of Egypt: this is that night of Yahuah (LORD) to be observed of all the children of Yashar'el (Israel) in their generations.",
+    "43": "And Yahuah (LORD) said unto Moses and Aaron, This is the ordinance of the passover: There shall no stranger eat thereof:"
+   },
+   "old_note": "The four-hundred-year Egypt-sojourn ended by the Exodus — the duration the Matthew-Egypt-sojourn telescopes into a few years for the Messiah, but recapitulates as the same pattern.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+    "matthean-yoseph-and-the-patriarch-yoseph",
+    "pharaoh-mosheh-herod-yahusha-infant-slaughter"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2617,
+   "src": "Matthew 2:19",
+   "src_vn": 19,
+   "src_text_live": "But when Herod was dead, behold, an angel of Yahuah (Lord) appears in a dream to Joseph in Egypt,",
+   "src_text_kjv": "But when Herod was dead, behold, an angel of Yahuah (Lord) appeareth in a dream to Joseph in Egypt,",
+   "tgt": "Exodus 4:19",
+   "tgt_text_kjv": "And Yahuah (LORD) said unto Moses in Midian, Go, return into Egypt: for all the men are dead which sought thy life.",
+   "tgt_context_kjv": {
+    "17": "And thou shalt take this rod in thine hand, wherewith thou shalt do signs.",
+    "18": "And Moses went and returned to Jethro his father in law, and said unto him, Let me go, I pray thee, and return unto my brethren which are in Egypt, and see whether they be yet alive. And Jethro said to Moses, Go in peace.",
+    "19": "And Yahuah (LORD) said unto Moses in Midian, Go, return into Egypt: for all the men are dead which sought thy life.",
+    "20": "And Moses took his wife and his sons, and set them upon an ass, and he returned to the land of Egypt: and Moses took the rod of Elohim (God) in his hand.",
+    "21": "And Yahuah (LORD) said unto Moses, When thou goest to return into Egypt, see that thou do all those wonders before Pharaoh, which I have put in thine hand: but I will harden his heart, that he shall not let the people go.",
+    "22": "And thou shalt say unto Pharaoh, Thus saith Yahuah (LORD), Yashar'el (Israel) is my son, even my firstborn:"
+   },
+   "old_note": "*Go, return into Egypt: for all the men are dead which sought thy life* — the angelic-instruction to Mosheh (Moses) parallel to Matt 2:20's angelic-instruction to Yoseph (Joseph): *they are dead which sought the young child's life.* The verbal parallel is deliberate.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-the-return-and-the-nazarene",
+   "map_thread_exists": false,
+   "map_confidence": null,
+   "map_candidates": [
+    "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+    "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2620,
+   "src": "Matthew 2:18",
+   "src_vn": 18,
+   "src_text_live": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+   "src_text_kjv": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+   "tgt": "Jeremiah 31:31",
+   "tgt_text_kjv": "Behold, the days come, saith Yahuah (LORD), that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah):",
+   "tgt_context_kjv": {
+    "29": "In those days they shall say no more, The fathers have eaten a sour grape, and the children’s teeth are set on edge.",
+    "30": "But every one shall die for his own iniquity: every man that eateth the sour grape, his teeth shall be set on edge.",
+    "31": "Behold, the days come, saith Yahuah (LORD), that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah):",
+    "32": "Not according to the covenant that I made with their fathers in the day that I took them by the hand to bring them out of the land of Egypt; which my covenant they brake, although I was an husband unto them, saith Yahuah (LORD):",
+    "33": "But this shall be the covenant that I will make with the house of Yashar'el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.",
+    "34": "And they shall teach no more every man his neighbour, and every man his brother, saying, Know Yahuah (LORD): for they shall all know me, from the least of them unto the greatest of them, saith Yahuah (LORD): for I will forgive their iniquity, and I will remember their sin no more."
+   },
+   "old_note": "The new-covenant promise — the deeper answer to the weeping, enacted in the blood of the Messianic child Matthew is protecting in the same chapter.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+    "rachel-buried-at-bethlehem",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2621,
+   "src": "Matthew 2:18",
+   "src_vn": 18,
+   "src_text_live": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+   "src_text_kjv": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+   "tgt": "Genesis 35:16",
+   "tgt_text_kjv": "And they journeyed from Beth-el; and there was but a little way to come to Ephrath: and Rachel travailed, and she had hard labour.",
+   "tgt_context_kjv": {
+    "14": "And Jacob set up a pillar in the place where he talked with him, even a pillar of stone: and he poured a drink offering thereon, and he poured oil thereon.",
+    "15": "And Jacob called the name of the place where Elohim (God) spake with him, Beth-el.",
+    "16": "And they journeyed from Beth-el; and there was but a little way to come to Ephrath: and Rachel travailed, and she had hard labour.",
+    "17": "And it came to pass, when she was in hard labour, that the midwife said unto her, Fear not; thou shalt have this son also.",
+    "18": "And it came to pass, as her soul was in departing, (for she died) that she called his name Ben-oni: but his father called him Benjamin.",
+    "19": "And Rachel died, and was buried in the way to Ephrath, which is Beth-lehem."
+   },
+   "old_note": "Rachel's death in childbirth near Beth-lehem (Ephrata) — the biographical anchor of the Rachel-weeps-for-children motif and the connection to the Beth-lehem geography of Matthew 2.",
+   "map_grade": "BARE",
+   "map_thread": "rachel-buried-at-bethlehem",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "rachel-buried-at-bethlehem",
+    "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+    "pharaoh-mosheh-herod-yahusha-infant-slaughter"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2622,
+   "src": "Matthew 2:18",
+   "src_vn": 18,
+   "src_text_live": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+   "src_text_kjv": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+   "tgt": "Jeremiah 31:9",
+   "tgt_text_kjv": "They shall come with weeping, and with supplications will I lead them: I will cause them to walk by the rivers of waters in a straight way, wherein they shall not stumble: for I am a father to Yashar'el (Israel), and Ephraim is my firstborn.",
+   "tgt_context_kjv": {
+    "7": "For thus saith Yahuah (LORD); Sing with gladness for Jacob, and shout among the chief of the nations: publish ye, praise ye, and say, O Yahuah (LORD), save thy people, the remnant of Yashar'el (Israel).",
+    "8": "Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither.",
+    "9": "They shall come with weeping, and with supplications will I lead them: I will cause them to walk by the rivers of waters in a straight way, wherein they shall not stumble: for I am a father to Yashar'el (Israel), and Ephraim is my firstborn.",
+    "10": "Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.",
+    "11": "For Yahuah (LORD) hath redeemed Jacob, and ransomed him from the hand of him that was stronger than he.",
+    "12": "Therefore they shall come and sing in the height of Zion, and shall flow together to the goodness of Yahuah (LORD), for wheat, and for wine, and for oil, and for the young of the flock and of the herd: and their soul shall be as a watered garden; and they shall not sorrow any more at all."
+   },
+   "old_note": "*I will cause them to walk by the rivers of waters in a straight way, wherein they shall not stumble: for I am a father to Yashar'el (Israel), and Ephraim is my firstborn* — the gathering of the northern house, which Rachel's children (Yoseph (Joseph) and Binyamin (Benjamin)) are most associated with.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+    "rachel-buried-at-bethlehem",
+    "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2623,
+   "src": "Matthew 2:18",
+   "src_vn": 18,
+   "src_text_live": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+   "src_text_kjv": "In Rama was there a voice heard, lamentation, and weeping, and great mourning, Rachel weeping for her children, and would not be comforted, because they are not.",
+   "tgt": "Matthew 26:28",
+   "tgt_text_kjv": "For this is my blood of the new testament, which is shed for many for the remission of sins.",
+   "tgt_context_kjv": {
+    "26": "And as they were eating, Yahusha (Jesus) took bread, and blessed it, and brake it, and gave it to the disciples, and said, Take, eat; this is my body.",
+    "27": "And he took the cup, and gave thanks, and gave it to them, saying, Drink ye all of it;",
+    "28": "For this is my blood of the new testament, which is shed for many for the remission of sins.",
+    "29": "But I say unto you, I will not drink henceforth of this fruit of the vine, until that day when I drink it new with you in my Father’s kingdom.",
+    "30": "And when they had sung an hymn, they went out into the mount of Olives.",
+    "31": "Then saith Yahusha (Jesus) unto them, All ye shall be offended because of me this night: for it is written, I will smite the shepherd, and the sheep of the flock shall be scattered abroad."
+   },
+   "old_note": "*For this is my blood of the new testament, which is shed for many for the remission of sins* — Yahusha (Jesus) enacting the Jer 31:31-34 new covenant in his blood at the Last Supper, twenty-six chapters after the Matt 2 infant-protection.",
+   "map_grade": "FULL",
+   "map_thread": "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+    "rachel-buried-at-bethlehem",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2625,
+   "src": "Matthew 2:23",
+   "src_vn": 23,
+   "src_text_live": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.",
+   "src_text_kjv": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.",
+   "tgt": "Jeremiah 23:5",
+   "tgt_text_kjv": "Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.",
+   "tgt_context_kjv": {
+    "3": "And I will gather the remnant of my flock out of all countries whither I have driven them, and will bring them again to their folds; and they shall be fruitful and increase.",
+    "4": "And I will set up shepherds over them which shall feed them: and they shall fear no more, nor be dismayed, neither shall they be lacking, saith Yahuah (LORD).",
+    "5": "Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.",
+    "6": "In his days Yahudah (Judah) shall be saved, and Yashar'el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS).",
+    "7": "Therefore, behold, the days come, saith Yahuah (LORD), that they shall no more say, Yahuah (LORD) liveth, which brought up the children of Yashar'el (Israel) out of the land of Egypt;",
+    "8": "But, Yahuah (LORD) liveth, which brought up and which led the seed of the house of Yashar'el (Israel) out of the north country, and from all countries whither I had driven them; and they shall dwell in their own land."
+   },
+   "old_note": "*I will raise unto David a righteous Branch* (here *tsemach,* a different Branch-word but the same Messianic theme) — the broader prophetic Branch-tradition Matthew references with *the prophets* (plural).",
+   "map_grade": "PARTIAL",
+   "map_thread": "plant-of-righteousness-and-the-branch",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "plant-of-righteousness-and-the-branch",
+    "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2626,
+   "src": "Matthew 2:23",
+   "src_vn": 23,
+   "src_text_live": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.",
+   "src_text_kjv": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.",
+   "tgt": "Jeremiah 33:15",
+   "tgt_text_kjv": "In those days, and at that time, will I cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land.",
+   "tgt_context_kjv": {
+    "13": "In the cities of the mountains, in the cities of the vale, and in the cities of the south, and in the land of Benjamin, and in the places about Jerusalem, and in the cities of Yahudah (Judah), shall the flocks pass again under the hands of him that telleth them, saith Yahuah (LORD).",
+    "14": "Behold, the days come, saith Yahuah (LORD), that I will perform that good thing which I have promised unto the house of Yashar'el (Israel) and to the house of Yahudah (Judah).",
+    "15": "In those days, and at that time, will I cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land.",
+    "16": "In those days shall Yahudah (Judah) be saved, and Jerusalem shall dwell safely: and this is the name wherewith she shall be called, Yahuah (LORD) our righteousness.",
+    "17": "For thus saith Yahuah (LORD); David shall never want a man to sit upon the throne of the house of Yashar'el (Israel);",
+    "18": "Neither shall the priests the Levites want a man before me to offer burnt offerings, and to kindle meat offerings, and to do sacrifice continually."
+   },
+   "old_note": "*In those days, and at that time, will I cause the Branch of righteousness to grow up unto David* — the parallel Branch-prophecy.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+    "plant-of-righteousness-and-the-branch",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2627,
+   "src": "Matthew 2:23",
+   "src_vn": 23,
+   "src_text_live": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.",
+   "src_text_kjv": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.",
+   "tgt": "Zechariah 3:8",
+   "tgt_text_kjv": "Hear now, O Joshua the high priest, thou, and thy fellows that sit before thee: for they are men wondered at: for, behold, I will bring forth my servant the BRANCH.",
+   "tgt_context_kjv": {
+    "6": "And the angel of Yahuah (LORD) protested unto Joshua, saying,",
+    "7": "Thus saith Yahuah Tseva'ot (LORD of hosts); If thou wilt walk in my ways, and if thou wilt keep my charge, then thou shalt also judge my house, and shalt also keep my courts, and I will give thee places to walk among these that stand by.",
+    "8": "Hear now, O Joshua the high priest, thou, and thy fellows that sit before thee: for they are men wondered at: for, behold, I will bring forth my servant the BRANCH.",
+    "9": "For behold the stone that I have laid before Joshua; upon one stone shall be seven eyes: behold, I will engrave the graving thereof, saith Yahuah Tseva'ot (LORD of hosts), and I will remove the iniquity of that land in one day.",
+    "10": "In that day, saith Yahuah Tseva'ot (LORD of hosts), shall ye call every man his neighbour under the vine and under the fig tree."
+   },
+   "old_note": "*Behold, I will bring forth my servant the BRANCH* — Zechariah's Branch-naming.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+    "plant-of-righteousness-and-the-branch",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 2628,
+   "src": "Matthew 2:23",
+   "src_vn": 23,
+   "src_text_live": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.",
+   "src_text_kjv": "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.",
+   "tgt": "Zechariah 6:12",
+   "tgt_text_kjv": "And speak unto him, saying, Thus speaketh Yahuah Tseva'ot (LORD of hosts), saying, Behold the man whose name is The BRANCH; and he shall grow up out of his place, and he shall build the temple of Yahuah (LORD):",
+   "tgt_context_kjv": {
+    "10": "Take of them of the captivity, even of Heldai, of Tobijah, and of Jedaiah, which are come from Babylon, and come thou the same day, and go into the house of Josiah the son of Zephaniah;",
+    "11": "Then take silver and gold, and make crowns, and set them upon the head of Joshua the son of Josedech, the high priest;",
+    "12": "And speak unto him, saying, Thus speaketh Yahuah Tseva'ot (LORD of hosts), saying, Behold the man whose name is The BRANCH; and he shall grow up out of his place, and he shall build the temple of Yahuah (LORD):",
+    "13": "Even he shall build the temple of Yahuah (LORD); and he shall bear the glory, and shall sit and rule upon his throne; and he shall be a priest upon his throne: and the counsel of peace shall be between them both.",
+    "14": "And the crowns shall be to Helem, and to Tobijah, and to Jedaiah, and to Hen the son of Zephaniah, for a memorial in the temple of Yahuah (LORD).",
+    "15": "And they that are far off shall come and build in the temple of Yahuah (LORD), and ye shall know that Yahuah Tseva'ot (LORD of hosts) hath sent me unto you. And this shall come to pass, if ye will diligently obey the voice of Yahuah Elohaychem (the LORD your God)."
+   },
+   "old_note": "*Behold the man whose name is The BRANCH; and he shall grow up out of his place* — Zechariah's Branch-naming with the grow-up-out-of-his-place language that resonates with Matthew's coming-out-of-Natsareth.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+    "plant-of-righteousness-and-the-branch",
+    "fulfill-as-prophecy-bringing-to-pass"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3250,
+   "src": "Matthew 2:5",
+   "src_vn": 5,
+   "src_text_live": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+   "src_text_kjv": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+   "tgt": "Micah 5:2",
+   "tgt_text_kjv": "But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar'el (Israel); whose goings forth have been from of old, from everlasting.",
+   "tgt_context_kjv": {
+    "1": "Now gather thyself in troops, O daughter of troops: he hath laid siege against us: they shall smite the judge of Yashar'el (Israel) with a rod upon the cheek.",
+    "2": "But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar'el (Israel); whose goings forth have been from of old, from everlasting.",
+    "3": "Therefore will he give them up, until the time that she which travaileth hath brought forth: then the remnant of his brethren shall return unto the children of Yashar'el (Israel).",
+    "4": "And he shall stand and feed in the strength of Yahuah (LORD), in the majesty of the name of Yahuah Elohav (the LORD his God); and they shall abide: for now shall he be great unto the ends of the earth.",
+    "5": "And this man shall be the peace, when the Assyrian shall come into our land: and when he shall tread in our palaces, then shall we raise against him seven shepherds, and eight principal men."
+   },
+   "old_note": "The Old Testament prophetic source — Beth-lehem Ephratah as the birth-locale of the *ruler in Yashar'el (Israel); whose goings forth have been from of old, from everlasting.*",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "scattered-seed-gathering",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3251,
+   "src": "Matthew 2:5",
+   "src_vn": 5,
+   "src_text_live": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+   "src_text_kjv": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+   "tgt": "1 Samuel 16:1",
+   "tgt_text_kjv": "And Yahuah (LORD) said unto Samuel, How long wilt thou mourn for Saul, seeing I have rejected him from reigning over Yashar'el (Israel)? fill thine horn with oil, and go, I will send thee to Jesse the Beth-lehemite: for I have provided me a king among his sons.",
+   "tgt_context_kjv": {
+    "1": "And Yahuah (LORD) said unto Samuel, How long wilt thou mourn for Saul, seeing I have rejected him from reigning over Yashar'el (Israel)? fill thine horn with oil, and go, I will send thee to Jesse the Beth-lehemite: for I have provided me a king among his sons.",
+    "2": "And Samuel said, How can I go? if Saul hear it, he will kill me. And Yahuah (LORD) said, Take an heifer with thee, and say, I am come to sacrifice to Yahuah (LORD).",
+    "3": "And call Jesse to the sacrifice, and I will shew thee what thou shalt do: and thou shalt anoint unto me him whom I name unto thee.",
+    "4": "And Samuel did that which Yahuah (LORD) spake, and came to Beth-lehem. And the elders of the town trembled at his coming, and said, Comest thou peaceably?"
+   },
+   "old_note": "Beth-lehem as David's birthplace and the locale of his anointing — the seed-line geography.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3252,
+   "src": "Matthew 2:5",
+   "src_vn": 5,
+   "src_text_live": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+   "src_text_kjv": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+   "tgt": "1 Samuel 16:4",
+   "tgt_text_kjv": "And Samuel did that which Yahuah (LORD) spake, and came to Beth-lehem. And the elders of the town trembled at his coming, and said, Comest thou peaceably?",
+   "tgt_context_kjv": {
+    "2": "And Samuel said, How can I go? if Saul hear it, he will kill me. And Yahuah (LORD) said, Take an heifer with thee, and say, I am come to sacrifice to Yahuah (LORD).",
+    "3": "And call Jesse to the sacrifice, and I will shew thee what thou shalt do: and thou shalt anoint unto me him whom I name unto thee.",
+    "4": "And Samuel did that which Yahuah (LORD) spake, and came to Beth-lehem. And the elders of the town trembled at his coming, and said, Comest thou peaceably?",
+    "5": "And he said, Peaceably: I am come to sacrifice unto Yahuah (LORD): sanctify yourselves, and come with me to the sacrifice. And he sanctified Jesse and his sons, and called them to the sacrifice.",
+    "6": "And it came to pass, when they were come, that he looked on Eliab, and said, Surely the LORD’S anointed is before him.",
+    "7": "But Yahuah (LORD) said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him: for Yahuah (LORD) seeth not as man seeth; for man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart."
+   },
+   "old_note": "Beth-lehem as David's birthplace and the locale of his anointing — the seed-line geography.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3253,
+   "src": "Matthew 2:5",
+   "src_vn": 5,
+   "src_text_live": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+   "src_text_kjv": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,",
+   "tgt": "Ruth 4:11",
+   "tgt_text_kjv": "And all the people that were in the gate, and the elders, said, We are witnesses. Yahuah (LORD) make the woman that is come into thine house like Rachel and like Leah, which two did build the house of Yashar'el (Israel): and do thou worthily in Ephratah, and be famous in Beth-lehem:",
+   "tgt_context_kjv": {
+    "9": "And Boaz said unto the elders, and unto all the people, Ye are witnesses this day, that I have bought all that was Elimelech’s, and all that was Chilion’s and Mahlon’s, of the hand of Naomi.",
+    "10": "Moreover Ruth the Moabitess, the wife of Mahlon, have I purchased to be my wife, to raise up the name of the dead upon his inheritance, that the name of the dead be not cut off from among his brethren, and from the gate of his place: ye are witnesses this day.",
+    "11": "And all the people that were in the gate, and the elders, said, We are witnesses. Yahuah (LORD) make the woman that is come into thine house like Rachel and like Leah, which two did build the house of Yashar'el (Israel): and do thou worthily in Ephratah, and be famous in Beth-lehem:",
+    "12": "And let thy house be like the house of Pharez, whom Tamar bare unto Yahudah (Judah), of the seed which Yahuah (LORD) shall give thee of this young woman.",
+    "13": "So Boaz took Ruth, and she was his wife: and when he went in unto her, Yahuah (LORD) gave her conception, and she bare a son.",
+    "14": "And the women said unto Naomi, Blessed be Yahuah (LORD), which hath not left thee this day without a kinsman, that his name may be famous in Yashar'el (Israel)."
+   },
+   "old_note": "*Do thou worthily in Ephratah, and be famous in Beth-lehem* — the blessing on Boaz at the kinsman-redeemer marriage that produces the line of David.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3255,
+   "src": "Matthew 2:11",
+   "src_vn": 11,
+   "src_text_live": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh.",
+   "src_text_kjv": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh.",
+   "tgt": "Exodus 30:34",
+   "tgt_text_kjv": "And Yahuah (LORD) said unto Moses, Take unto thee sweet spices, stacte, and onycha, and galbanum; these sweet spices with pure frankincense: of each shall there be a like weight:",
+   "tgt_context_kjv": {
+    "32": "Upon man’s flesh shall it not be poured, neither shall ye make any other like it, after the composition of it: it is holy, and it shall be holy unto you.",
+    "33": "Whosoever compoundeth any like it, or whosoever putteth any of it upon a stranger, shall even be cut off from his people.",
+    "34": "And Yahuah (LORD) said unto Moses, Take unto thee sweet spices, stacte, and onycha, and galbanum; these sweet spices with pure frankincense: of each shall there be a like weight:",
+    "35": "And thou shalt make it a perfume, a confection after the art of the apothecary, tempered together, pure and holy:",
+    "36": "And thou shalt beat some of it very small, and put of it before the testimony in the tabernacle of the congregation, where I will meet with thee: it shall be unto you most holy.",
+    "37": "And as for the perfume which thou shalt make, ye shall not make to yourselves according to the composition thereof: it shall be unto thee holy for Yahuah (LORD)."
+   },
+   "old_note": "The frankincense in the holy incense of the tabernacle — the priestly significance of the second gift.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+    "matthean-yoseph-and-the-patriarch-yoseph"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3256,
+   "src": "Matthew 2:11",
+   "src_vn": 11,
+   "src_text_live": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh.",
+   "src_text_kjv": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh.",
+   "tgt": "Psalm 45:8",
+   "tgt_text_kjv": "All thy garments smell of myrrh, and aloes, and cassia, out of the ivory palaces, whereby they have made thee glad.",
+   "tgt_context_kjv": {
+    "6": "Thy throne, O Elohim (God), is for ever and ever: the sceptre of thy kingdom is a right sceptre.",
+    "7": "Thou lovest righteousness, and hatest wickedness: therefore Elohim (God), thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows.",
+    "8": "All thy garments smell of myrrh, and aloes, and cassia, out of the ivory palaces, whereby they have made thee glad.",
+    "9": "Kings’ daughters were among thy honourable women: upon thy right hand did stand the queen in gold of Ophir.",
+    "10": "Hearken, O daughter, and consider, and incline thine ear; forget also thine own people, and thy father’s house;",
+    "11": "So shall the king greatly desire thy beauty: for he is thy Yahuah (Lord); and worship thou him."
+   },
+   "old_note": "*All thy garments smell of myrrh, and aloes, and cassia* — the Messianic-bridegroom psalm naming myrrh as a Messianic-royal attribute. The myrrh-gift also foreshadows the burial-preparation of Yahusha (Jesus) — myrrh appears at his birth and at his death (John 19:39).",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+    "matthean-yoseph-and-the-patriarch-yoseph",
+    "pharaoh-mosheh-herod-yahusha-infant-slaughter"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3258,
+   "src": "Matthew 2:22",
+   "src_vn": 22,
+   "src_text_live": "But when he heard that Archelaus did reign in Judaea in the room of his father Herod, he was afraid to go thither: notwithstanding, being warned of Elohim (God) in a dream, he turned aside into the parts of Galilee:",
+   "src_text_kjv": "But when he heard that Archelaus did reign in Judaea in the room of his father Herod, he was afraid to go thither: notwithstanding, being warned of Elohim (God) in a dream, he turned aside into the parts of Galilee:",
+   "tgt": "Isaiah 9:1",
+   "tgt_text_kjv": "Nevertheless the dimness shall not be such as was in her vexation, when at the first he lightly afflicted the land of Zebulun and the land of Naphtali, and afterward did more grievously afflict her by the way of the sea, beyond Jordan, in Galilee of the nations.",
+   "tgt_context_kjv": {
+    "1": "Nevertheless the dimness shall not be such as was in her vexation, when at the first he lightly afflicted the land of Zebulun and the land of Naphtali, and afterward did more grievously afflict her by the way of the sea, beyond Jordan, in Galilee of the nations.",
+    "2": "The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.",
+    "3": "Thou hast multiplied the nation, and not increased the joy: they joy before thee according to the joy in harvest, and as men rejoice when they divide the spoil.",
+    "4": "For thou hast broken the yoke of his burden, and the staff of his shoulder, the rod of his oppressor, as in the day of Midian."
+   },
+   "old_note": "*The land of Zevulun (Zebulun), and the land of Naphtali ... the people that walked in darkness have seen a great light* — the Galilee-of-the-Gentiles prophecy that Matthew 4:13-16 will explicitly cite, prepared by Matthew 2:22-23's settling in the Galilee.",
+   "map_grade": "PARTIAL",
+   "map_thread": "fulfill-as-prophecy-bringing-to-pass",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "fulfill-as-prophecy-bringing-to-pass",
+    "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+    "plant-of-righteousness-and-the-branch"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "title": "And thou Bethlehem... out of thee shall come a Governor — the Ruler out of Judah (Micah 5; Numbers 24; 2 Samuel 5)",
+   "anchor": "Matthew 2:1-6",
+   "member_count": 4,
+   "summary_md": "When the wise men ask *Where is he that is born King of the Yahudim (Jews)?* Herod's own scribes answer out of the prophet. **Micah 5:2** names the place and the Person: *But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar'el (Israel); whose goings forth have been from of old, from everlasting.* The little town, the Ruler, the goings-forth from everlasting — this is the scepter-line of Judah come to its head. And the next breath is two-house: **Micah 5:3** — *then the remnant of his brethren shall return unto the children of Yashar'el (Israel)* — the Ruler is born so the scattered remnant comes home, Judah and Ephraim gathered, never one cast off. The star itself was sung long before by a foreign seer: **Numbers 24:17** — *there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar'el (Israel)* — so the magi from the east read Balaam's star-and-scepter word and carried the prophecy back to its King. And the office is David's own: **2 Samuel 5:2** — *Thou shalt feed my people Yashar'el (Israel), and thou shalt be a captain over Yashar'el (Israel)* — the same shepherd-Ruler word Micah folds into Bethlehem (*out of thee shall come a Governor, that shall rule my people Yashar'el*). The Son of David is born to shepherd the whole house.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:6",
+     "tgt": "canon/micah 5:2",
+     "member_note": "Micah 5:2 — *out of thee shall he come forth... that is to be ruler in Yashar'el; whose goings forth have been from of old, from everlasting* — the scribes' own answer to Herod."
+    },
+    {
+     "src": "2:6",
+     "tgt": "canon/micah 5:3",
+     "member_note": "Micah 5:3 — *then the remnant of his brethren shall return unto the children of Yashar'el* — the Bethlehem oracle is two-house homecoming."
+    },
+    {
+     "src": "2:2",
+     "tgt": "canon/numbers 24:17",
+     "member_note": "Numbers 24:17 — *there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar'el* — the star Balaam saw, which the magi followed."
+    },
+    {
+     "src": "2:6",
+     "tgt": "canon/2-samuel 5:2",
+     "member_note": "2 Samuel 5:2 — *Thou shalt feed my people Yashar'el, and thou shalt be a captain over Yashar'el* — the shepherd-Ruler office of David, fulfilled in his greater Son."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+   "title": "Wise men from the east — gold, frankincense and myrrh: the nations come to the King (Isaiah 60; Psalm 72)",
+   "anchor": "Matthew 2:1-11",
+   "member_count": 4,
+   "summary_md": "The magi who *opened their treasures* and *presented unto him gifts; gold, and frankincense, and myrrh* are the first-fruits of a long-promised ingathering of the nations. **Isaiah 60:3** — *And the Gentiles shall come to thy light, and kings to the brightness of thy rising* — the nations drawn to the light risen over Yashar'el, exactly as a star drew the wise men. And Isaiah even named the gifts: **60:6** — *all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD).* Gold and incense from the east, centuries before the wise men brought them. The royal psalm sees the same procession: **Psalm 72:10** — *The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts* — and **72:11** — *Yea, all kings shall fall down before him: all nations shall serve him.* When the magi *fell down, and worshipped him,* the psalm was answered before our eyes. This is not the nations replacing Yashar'el but the nations drawn to her light and her King — the worship of all peoples beginning at a manger.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:11",
+     "tgt": "canon/isaiah 60:3",
+     "member_note": "Isaiah 60:3 — *And the Gentiles shall come to thy light, and kings to the brightness of thy rising* — the nations drawn to the risen light, as the star drew the magi."
+    },
+    {
+     "src": "2:11",
+     "tgt": "canon/isaiah 60:6",
+     "member_note": "Isaiah 60:6 — *they shall bring gold and incense; and they shall shew forth the praises of Yahuah* — the gifts named centuries before the magi brought them."
+    },
+    {
+     "src": "2:11",
+     "tgt": "canon/psalms 72:10",
+     "member_note": "Psalm 72:10 — *The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts* — kings of far countries bringing tribute to the King's Son."
+    },
+    {
+     "src": "2:11",
+     "tgt": "canon/psalms 72:11",
+     "member_note": "Psalm 72:11 — *Yea, all kings shall fall down before him: all nations shall serve him* — answered when the wise men fell down and worshipped him."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+   "title": "Out of Egypt have I called my son — the Child recapitulates Israel the firstborn (Hosea 11; Exodus 4; Wisdom 10; Jasher 81)",
+   "anchor": "Matthew 2:13-15",
+   "member_count": 4,
+   "summary_md": "When the angel sends Joseph to *flee into Egypt,* Matthew says it fulfilled *Out of Egypt have I called my son.* That is **Hosea 11:1** — *When Yashar'el (Israel) was a child, then I loved him, and called my son out of Egypt.* In Hosea the *son* IS the nation; and Yahusha walks the nation's whole road over again — down into Egypt, then called up out of it — gathering the firstborn-people's story into himself. He does not replace Yashar'el; he embodies her. The root of Hosea's *my son* is **Exodus 4:22** — *Thus saith Yahuah (LORD), Yashar'el (Israel) is my son, even my firstborn.* The Formed Son steps into the firstborn-son calling of the whole house. The older witnesses remember the same deliverance: **Wisdom of Solomon 10:15** — *She delivered the righteous people and blameless seed from the nation that oppressed them* — and **Jasher 81:4** — *And at the end of two hundred and ten years, Yahuah (the Lord) brought forth the children of Israel from Egypt with a strong hand.* The Exodus pattern — the firstborn kept safe from a murderous king and brought up out of Egypt — is now drawn up into one Child, called out of Egypt and home again.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:15",
+     "tgt": "canon/hosea 11:1",
+     "member_note": "Hosea 11:1 — *When Yashar'el was a child, then I loved him, and called my son out of Egypt* — the verse Matthew quotes; the son IS the nation, recapitulated in the Child."
+    },
+    {
+     "src": "2:15",
+     "tgt": "canon/exodus 4:22",
+     "member_note": "Exodus 4:22 — *Yashar'el is my son, even my firstborn* — the root of Hosea's *my son*; the Formed Son embodies the firstborn-people."
+    },
+    {
+     "src": "2:15",
+     "tgt": "apocrypha/the-wisdom-of-solomon 10:15",
+     "member_note": "Wisdom of Solomon 10:15 — *She delivered the righteous people and blameless seed from the nation that oppressed them* — the Exodus remembered as deliverance of the righteous people."
+    },
+    {
+     "src": "2:15",
+     "tgt": "jasher/jasher 81:4",
+     "member_note": "Jasher 81:4 — *Yahuah brought forth the children of Israel from Egypt with a strong hand* — the going-up from Egypt, gathered into the Son called out of Egypt."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+   "title": "Rachel weeping for her children — a lament that opens straight onto restoration (Jeremiah 31)",
+   "anchor": "Matthew 2:16-18",
+   "member_count": 4,
+   "summary_md": "Herod's slaughter of Bethlehem's little ones makes Matthew hear an ancient cry: **Jeremiah 31:15** — *A voice was heard in Ramah, lamentation, and bitter weeping; Rahel weeping for her children refused to be comforted for her children, because they were not.* But in Jeremiah this weeping is a doorway, not the end — and we must read on, or we leave the mother in despair Scripture refuses to leave her in. **31:16** — *Refrain thy voice from weeping, and thine eyes from tears: for thy work shall be rewarded, saith Yahuah (LORD); and they shall come again from the land of the enemy.* The very next verse turns the tears: *they shall come again.* **31:17** — *And there is hope in thine end, saith Yahuah (LORD), that thy children shall come again to their own border.* Hope in the end; the children restored to their own border. And the whole chapter rests on the new-covenant promise: **31:33** — *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* — the Torah written on the heart, both houses gathered. The comfort Jeremiah promises is the very gift the Child Herod feared comes to bring. Rachel's lament is real, but it opens onto homecoming, not despair.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:18",
+     "tgt": "canon/jeremiah 31:15",
+     "member_note": "Jeremiah 31:15 — *Rahel weeping for her children refused to be comforted... because they were not* — the cry Matthew hears over Bethlehem; the doorway, not the end."
+    },
+    {
+     "src": "2:18",
+     "tgt": "canon/jeremiah 31:16",
+     "member_note": "Jeremiah 31:16 — *Refrain thy voice from weeping... they shall come again from the land of the enemy* — the very next verse turns the tears to return."
+    },
+    {
+     "src": "2:18",
+     "tgt": "canon/jeremiah 31:17",
+     "member_note": "Jeremiah 31:17 — *there is hope in thine end... thy children shall come again to their own border* — the lament resolved in homecoming."
+    },
+    {
+     "src": "2:18",
+     "tgt": "canon/jeremiah 31:33",
+     "member_note": "Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts* — the new-covenant comfort the same chapter promises, both houses gathered."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "title": "He shall be called a Nazarene — the netzer Branch out of Jesse, the despised One (Isaiah 11; Judges 13; Isaiah 53)",
+   "anchor": "Matthew 2:19-23",
+   "member_count": 4,
+   "summary_md": "Joseph settles in *a city called Nazareth: that it might be fulfilled... He shall be called a Nazarene.* The word hides a prophecy. **Isaiah 11:1** — *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots.* The Hebrew for *Branch* is netzer — the very root inside *Nazareth* and *Nazarene.* The despised little town carries the prophet's name for the Sprout of David growing out of Jesse's cut-down stem. A second chord sounds under the word: **Judges 13:5** — *the child shall be a Nazarite unto Elohim (God) from the womb: and he shall begin to deliver Yashar'el (Israel)* — a son set apart from the womb to deliver his people, the pattern now fulfilled in a greater Son. And the Branch comes lowly, as Isaiah foresaw: **53:2** — *For he shall grow up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness... no beauty that we should desire him* — and **53:3** — *He is despised and rejected of men; a man of sorrows, and acquainted with grief... he was despised, and we esteemed him not.* *Can there any good thing come out of Nazareth?* — the despised town fits the despised Branch perfectly. To be called a Nazarene is already to be the rejected, sorrow-acquainted Servant of Isaiah 53, the netzer that men esteemed not.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:23",
+     "tgt": "canon/isaiah 11:1",
+     "member_note": "Isaiah 11:1 — *a Branch shall grow out of his roots* — netzer, the very root inside Nazareth/Nazarene; the Sprout of Jesse."
+    },
+    {
+     "src": "2:23",
+     "tgt": "canon/judges 13:5",
+     "member_note": "Judges 13:5 — *the child shall be a Nazarite... and he shall begin to deliver Yashar'el* — the deliverer-from-the-womb pattern under the word Nazarene."
+    },
+    {
+     "src": "2:23",
+     "tgt": "canon/isaiah 53:2",
+     "member_note": "Isaiah 53:2 — *he shall grow up... as a root out of a dry ground: he hath no form nor comeliness* — the Branch comes lowly, from despised Nazareth."
+    },
+    {
+     "src": "2:23",
+     "tgt": "canon/isaiah 53:3",
+     "member_note": "Isaiah 53:3 — *He is despised and rejected of men... and we esteemed him not* — to be a Nazarene is to be the rejected Servant; *can any good thing come out of Nazareth?*"
+    }
+   ]
+  },
+  {
+   "slug": "firstborn-son-out-of-egypt-extras",
+   "title": "Yashar'el (Israel) the firstborn — the creation-anchor of the Egypt-call",
+   "anchor": null,
+   "member_count": 1,
+   "summary_md": "Jubilees 2:20 — at the creation register — names the seed of Ya'aqov (Jacob) as Yahuah's firstborn son before any historical event: *I have chosen the seed of Ya'aqov (Jacob) from amongst all that I have seen, and have written him down as My firstborn son, and have sanctified him to Myself for ever and ever.* The Hosea 11:1 / Exodus 4:22 firstborn-identification Matt 2:15 walks rests on this prior creation-anchor in the Hebrew library. Yashar'el is firstborn before the world; the call out of Egypt is the historical actualization of an eternal designation; Yahusha (Jesus) is the firstborn-Yashar'el embodied at every chronological register the Hebrew library carries.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:15",
+     "tgt": "jubilees/jubilees 2:20",
+     "member_note": "Jubilees 2:20 — *have written him down as My firstborn son, and have sanctified him to Myself for ever and ever.* The son called out of Egypt (Matthew 2:15) is the firstborn son written down at creation."
+    }
+   ]
+  },
+  {
+   "slug": "fulfill-as-prophecy-bringing-to-pass",
+   "title": "Fulfill as prophecy bringing to pass",
+   "anchor": null,
+   "member_count": 40,
+   "summary_md": "The Greek *plēroō* (Strong's G4137) at Matthew 5:17 does not mean *to exhaust-and-thereby-end* — the antichrist reading the pulpit installed to retire the Torah. It means *to bring to pass* — to make happen what was prophesied. Yahusha (Jesus) names what his mission accomplishes: the bringing-to-pass of what the Torah and the Prophets prophesied. And what they prophesied is the gathering of the scattered seed of Yashar'el (Israel) home through redemption — the curse-and-return arc the Torah itself wrote (Leviticus 26:33 and 40-42; Deuteronomy 30:1-5), executed by the prophets in the divorce-and-scattering (Hosea 1:9; Jeremiah 16:13), and opened by the Messiah's death and resurrection so the door home is real. This thread surfaces every NT plēroō occurrence used in prophecy-fulfillment context (35 members), each linked to the specific Tanakh prophecy it brings to pass. The pattern is consistent: the Messiah walks out the substance the prophets foretold, and the NT formula *that it might be fulfilled* points the reader back to the Tanakh, not forward into a new dispensation.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:15",
+     "tgt": "canon/hosea 11:1",
+     "member_note": "The flight to Egypt fulfills Hosea 11:1's *out of Egypt have I called my son.* The corporate-Yashar'el (Israel) son-language of the prophet lands on the personal-Yahusha (Jesus) Son — recapitulating the exodus to bring the scattered seed home."
+    },
+    {
+     "src": "2:17",
+     "tgt": "canon/jeremiah 31:15",
+     "member_note": "Rachel weeping for her children that are not — Jeremiah 31:15. Matthew's fulfillment-citation reaches into Jer 31's gathering-prophecy chapter; the same Jer 31 carries the new covenant and the Lo-Ammi reversal. The slaughter at Beth-lehem is grief at the threshold of the gathering."
+    },
+    {
+     "src": "2:23",
+     "tgt": "canon/isaiah 11:1",
+     "member_note": "Yahusha (Jesus) called a Nazarene fulfills the *netser* (branch) prophecy of Isaiah 11:1 — *there shall come forth a rod out of the stem of Yishai (Jesse), and a Branch shall grow out of his roots.* The branch-of-Yishai naming travels the Davidic seed-line to the Messiah."
+    }
+   ]
+  },
+  {
+   "slug": "magi-astronomical-tradition",
+   "title": "The Magi and the Book of Luminaries",
+   "anchor": null,
+   "member_count": 3,
+   "summary_md": "*Now when Yahusha (Jesus) was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem,* (Matthew 2:1) *Saying, Where is he that is born King of the Yahudim (Jews)? for we have seen his star in the east, and are come to worship him.* (Matthew 2:2). Men who read the heavens for a king were not working from nothing. The library carries a whole book on the subject, and it opens by saying where the knowledge came from: *The book of the courses of the luminaries of the heaven, the relations of each, according to their classes, their dominion and their seasons, according to their names and places of origin, and according to their months, which Uriel, the holy angel, who was with me, who is their guide, showed me; and he showed me all their laws exactly as they are, and how it is with regard to all the years of the world and unto eternity, till the new creation is accomplished which dureth till eternity.* (1 Enoch 72:1). That is the Book of Luminaries, 1 Enoch 72–82, the heavens read as law and appointed season rather than as omen. Daniel stood at the head of the wise men of Babylon and Persia, and a learning like Enoch's in the hands of men like Daniel's is where the Magi's watching came from. Enoch's second dream, the vision of the sheep in chapters 89–90, ends with a great horn raised among the flock and a white bull before whom all the beasts bow, and men who held that book knew there was one to look for. The star over Judea and the men who followed it belong inside that tradition, not outside it.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:1",
+     "tgt": "enoch/1-enoch 72:1",
+     "member_note": "The Book of Luminaries opening — *the book of the courses of the luminaries of the heaven, the relations of each, according to their classes, their dominion and their seasons.* The Hebrew prophetic-astronomy the Magi inherited."
+    },
+    {
+     "src": "2:2",
+     "tgt": "enoch/1-enoch 90:37",
+     "member_note": "The Messianic-figure white-bull vision of the Animal Apocalypse — what the Magi who knew the Hebrew prophetic tradition were watching for."
+    },
+    {
+     "src": "2:2",
+     "tgt": "enoch/1-enoch 90:38",
+     "member_note": "The Lamb who is also the great-horned one — *that lamb became a great animal and had great black horns on its head.* The Messianic-Lamb / King doubled identity the Magi recognized in the star."
+    }
+   ]
+  },
+  {
+   "slug": "matthean-yoseph-and-the-patriarch-yoseph",
+   "title": "The Matthean Yoseph and the patriarch Yoseph",
+   "anchor": null,
+   "member_count": 3,
+   "summary_md": "The Yoseph (Joseph) of Matthew 1:18-25 / 2:13-15 / 2:20 carries the role of the patriarchal-Yoseph in Genesis 37-50: the dreamer, the one who carries the seed of promise down into Egypt, the preserver of the covenant line through a hostile king. The Testament of Yoseph (Testaments XII chapters 72-87) — the patriarch's deathbed testament — supplies the extras-tier Hebrew-library framing for the typological pattern. Jubilees 46 walks the Egypt sojourn the Matthean Yoseph's flight telescopes. The Matthean Yoseph is named *son of David* by the angel because he carries both lines into the child he will name — Davidic legal lineage and Yoseph-patriarchal preservation role.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:14",
+     "tgt": "jubilees/jubilees 46:1",
+     "member_note": "Jubilees 46:1 — *the children of Yashar’el (Israel) multiplied in the land of Egypt, and they became a great nation.* Egypt sheltered the nation under one Joseph and the child under another (Matthew 2:14)."
+    },
+    {
+     "src": "2:14",
+     "tgt": "jubilees/jubilees 46:5",
+     "member_note": "The patriarchal-Yoseph willed his bones be carried out of Egypt — the Tanakh-prototype the Messianic-Yashar'el will fulfill in resurrection."
+    }
+   ]
+  },
+  {
+   "slug": "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+   "title": "The infant-slaughter pattern — Pharaoh, Herod, the deliverer preserved",
+   "anchor": null,
+   "member_count": 4,
+   "summary_md": "Jasher 67 walks the Pharaoh-Mosheh infant-slaughter narrative in greater detail than Exodus 1: *the Egyptians had embittered the lives of the children of Yashar'el (Israel)... Pharaoh began to spill the blood of the male children of Yashar'el (Israel).* Matthew 2:16's Herod-slaughter at Beth-lehem is the latest beat of the same antichrist-pattern: a king fearing the prophesied deliverer orders the death of the male infants; the deliverer is preserved through a specific intervention; the rest perish; the pattern is named for what it is. The extras-tier Hebrew-library witness shows the typology has been operative across millennia, with the Messianic version at Matt 2 being the recapitulation, not the first instance.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:16",
+     "tgt": "jasher/jasher 67:3",
+     "member_note": "Jasher 67:3 — *the Egyptians had embittered the lives of the children of Israel.* Miriam named for the bitter days; Herod's Bethlehem is the same hand in a later century."
+    },
+    {
+     "src": "2:16",
+     "tgt": "jasher/jasher 67:4",
+     "member_note": "Jasher 67:4 — *Pharaoh began to spill the blood of the male children of Israel.* The decree dated by Aaron's conception; Herod's decree at Bethlehem is the same move against the promised seed."
+    },
+    {
+     "src": "2:13",
+     "tgt": "jasher/jasher 67:1",
+     "member_note": "Jasher 67:1 — *There was a man in the land of Egypt of the seed of Levi.* The deliverer's story opens with his father in Egypt, as Matthew 2:13 opens with Joseph carrying the child there."
+    }
+   ]
+  },
+  {
+   "slug": "plant-of-righteousness-and-the-branch",
+   "title": "The plant of righteousness and the Branch",
+   "anchor": null,
+   "member_count": 2,
+   "summary_md": "When the Watchers are bound and the earth is cleansed, the first thing commanded to grow in it is a plant: *Destroy all wrong from the face of the earth and let every evil work come to an end: and let the plant of righteousness and truth appear: and it shall prove a blessing; the works of righteousness and truth shall be planted in truth and joy for evermore.* (1 Enoch 10:16). The prophets watch for the same growth and call it the Branch. Isaiah's shoot from the stump of Jesse, the *netser*, becomes in the same chapter the ensign the scattered gather to: *And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.* (Isaiah 11:10). Jeremiah names him outright: *Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* (Jeremiah 23:5). Zechariah calls him *my servant the BRANCH* and says *the man whose name is The BRANCH* shall build the temple of Yahuah (LORD) (Zechariah 3:8; 6:12). Then Matthew brings the child of the promise to live in a town whose name carries the word: *And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.* (Matthew 2:23). No single prophet says those words; Matthew says the prophets, and Natsareth is Branch-town. The plant Enoch saw appearing after the judgment, the shoot and the Branch the prophets kept promising, and the boy from Natsareth are one and the same, and the books that carry the first witness to it are the ones the Reformation cut from the library.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:23",
+     "tgt": "enoch/1-enoch 10:16",
+     "member_note": "*Let the plant of righteousness and truth appear* — 1 Enoch 10:16's extracanonical Branch-Messiah register. The *netser* of Isaiah 11:1 and the *plant of righteousness* of 1 Enoch name the same figure; Matt 2:23 anchors the figure geographically at Natsareth (Nazareth) — *Branch-town.*"
+    }
+   ]
+  },
+  {
+   "slug": "rachel-buried-at-bethlehem",
+   "title": "Rachel buried at Beth-lehem — the geographic anchor of the weeping",
+   "anchor": null,
+   "member_count": 2,
+   "summary_md": "Jubilees 32:33-34 names the death of Rachel in childbirth at Ephrath, *the same is Beth-lehem,* with her tomb on the road above her grave. The Jeremiah 31:15 *Rachel weeping for her children* that Matthew 2:18 quotes is geographically anchored exactly where the Beth-lehem slaughter falls and where the Messianic child is being protected. The matriarchal weeping is not a poetic flourish but a geographic fact: the tomb of the matriarch sits on the road where the children are killed and the deliverer escapes. The extras-tier Hebrew-library witness locks the geography the inherited canon compresses.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:18",
+     "tgt": "jubilees/jubilees 32:33",
+     "member_note": "Rachel's death in childbirth at Beth-lehem — *Rachel bare a son in the night, and called his name Son of my sorrow.*"
+    },
+    {
+     "src": "2:18",
+     "tgt": "jubilees/jubilees 32:34",
+     "member_note": "Jubilees 32:34 — *she was buried in the land of Ephrath, the same is Bethlehem.* Rachel weeps at Matthew 2:18 from a grave on the Bethlehem road."
+    }
+   ]
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": null,
+   "member_count": 54,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Osee, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "2:1",
+     "tgt": "canon/2-kings 17:6",
+     "member_note": "The Magi from the east arrive from territories adjacent to the Assyrian-resettlement zones of the scattered northern tribes — the first beat of the gathering, those near where the scattered seed lived hearing the proclamation that had reached their lands through Daniel's witness."
+    },
+    {
+     "src": "2:6",
+     "tgt": "canon/micah 5:2",
+     "member_note": "*And thou Beth-lehem, in the land of Yahudah (Judah)* — the prophetic localization of the Messianic birth to the seed-line town of David. The gathering centers on the seed-line geography."
+    }
+   ]
+  }
+ ]
+}

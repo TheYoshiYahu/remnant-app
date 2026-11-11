@@ -1,0 +1,932 @@
+{
+ "chapter": 7,
+ "chapter_text_kjv": {
+  "1": "Judge not, that ye be not judged.",
+  "2": "For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again.",
+  "3": "And why beholdest thou the mote that is in thy brother’s eye, but considerest not the beam that is in thine own eye?",
+  "4": "Or how wilt thou say to thy brother, Let me pull out the mote out of thine eye; and, behold, a beam is in thine own eye?",
+  "5": "Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother’s eye.",
+  "6": "Give not that which is holy unto the dogs, neither cast ye your pearls before swine, lest they trample them under their feet, and turn again and rend you.",
+  "7": "Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you:",
+  "8": "For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened.",
+  "9": "Or what man is there of you, whom if his son ask bread, will he give him a stone?",
+  "10": "Or if he ask a fish, will he give him a serpent?",
+  "11": "If ye then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?",
+  "12": "Therefore all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets.",
+  "13": "Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:",
+  "14": "Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.",
+  "15": "Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves.",
+  "16": "Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?",
+  "17": "Even so every good tree bringeth forth good fruit; but a corrupt tree bringeth forth evil fruit.",
+  "18": "A good tree cannot bring forth evil fruit, neither can a corrupt tree bring forth good fruit.",
+  "19": "Every tree that bringeth not forth good fruit is hewn down, and cast into the fire.",
+  "20": "Wherefore by their fruits ye shall know them.",
+  "21": "Not every one that saith unto me, Adonai (Lord), Adonai (Lord), shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.",
+  "22": "Many will say to me in that day, Adonai (Lord), Adonai (Lord), have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works?",
+  "23": "And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.",
+  "24": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:",
+  "25": "And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock.",
+  "26": "And every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand:",
+  "27": "And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell: and great was the fall of it.",
+  "28": "And it came to pass, when Yahusha (Jesus) had ended these sayings, the people were astonished at his doctrine:",
+  "29": "For he taught them as one having authority, and not as the scribes."
+ },
+ "cards": [
+  {
+   "id": 3330,
+   "src": "Matthew 7:1",
+   "src_vn": 1,
+   "src_text_live": "Judge not, that you be not judged.",
+   "src_text_kjv": "Judge not, that ye be not judged.",
+   "tgt": "John 7:24",
+   "tgt_text_kjv": "Judge not according to the appearance, but judge righteous judgment.",
+   "tgt_context_kjv": {
+    "22": "Moses therefore gave unto you circumcision; (not because it is of Moses, but of the fathers;) and ye on the sabbath day circumcise a man.",
+    "23": "If a man on the sabbath day receive circumcision, that the law of Moses should not be broken; are ye angry at me, because I have made a man every whit whole on the sabbath day?",
+    "24": "Judge not according to the appearance, but judge righteous judgment.",
+    "25": "Then said some of them of Jerusalem, Is not this he, whom they seek to kill?",
+    "26": "But, lo, he speaketh boldly, and they say nothing unto him. Do the rulers know indeed that this is the very Messiah (Christ)?",
+    "27": "Howbeit we know this man whence he is: but when Messiah (Christ) cometh, no man knoweth whence he is."
+   },
+   "old_note": "*Judge not according to the appearance, but judge righteous judgment* — Yahusha's (Jesus's) explicit reframing that locks Matt 7:1 as a kind-of-judgment-correction, not abolition of judgment.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-judge-not-the-mote-and-the-beam-leviticus-19-proverbs-24",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-7-judge-not-the-mote-and-the-beam-leviticus-19-proverbs-24",
+    "judge-not-and-let-go-anger-in-sirach"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3332,
+   "src": "Matthew 7:6",
+   "src_vn": 6,
+   "src_text_live": "Give not that which is holy unto the dogs, neither cast you your pearls before swine, lest they trample them under their feet, and turn again and rend you.",
+   "src_text_kjv": "Give not that which is holy unto the dogs, neither cast ye your pearls before swine, lest they trample them under their feet, and turn again and rend you.",
+   "tgt": "Matthew 10:14",
+   "tgt_text_kjv": "And whosoever shall not receive you, nor hear your words, when ye depart out of that house or city, shake off the dust of your feet.",
+   "tgt_context_kjv": {
+    "12": "And when ye come into an house, salute it.",
+    "13": "And if the house be worthy, let your peace come upon it: but if it be not worthy, let your peace return to you.",
+    "14": "And whosoever shall not receive you, nor hear your words, when ye depart out of that house or city, shake off the dust of your feet.",
+    "15": "Verily I say unto you, It shall be more tolerable for the land of Sodom and Gomorrha in the day of judgment, than for that city.",
+    "16": "Behold, I send you forth as sheep in the midst of wolves: be ye therefore wise as serpents, and harmless as doves.",
+    "17": "But beware of men: for they will deliver you up to the councils, and they will scourge you in their synagogues;"
+   },
+   "old_note": "*Whosoever shall not receive you, nor hear your words, when ye depart out of that house or city, shake off the dust of your feet* — Yahusha's (Jesus's) instruction to the disciples on the same discrimination-of-audience pattern.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-give-not-that-which-is-holy-unto-the-dogs-pearls-before-swine-proverbs-9-23",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-7-give-not-that-which-is-holy-unto-the-dogs-pearls-before-swine-proverbs-9-23",
+    "pearls-before-swine-and-wisdom-not-for-fools-in-sirach",
+    "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6"
+   ],
+   "reversed_pair": [
+    {
+     "id": 2741,
+     "book": "matthew",
+     "kind": "reversed",
+     "orphan": true,
+     "threads": []
+    }
+   ]
+  },
+  {
+   "id": 3333,
+   "src": "Matthew 7:11",
+   "src_vn": 11,
+   "src_text_live": "If you then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?",
+   "src_text_kjv": "If ye then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?",
+   "tgt": "Luke 11:13",
+   "tgt_text_kjv": "If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Ruach HaKodesh (Holy Spirit) to them that ask him?",
+   "tgt_context_kjv": {
+    "11": "If a son shall ask bread of any of you that is a father, will he give him a stone? or if he ask a fish, will he for a fish give him a serpent?",
+    "12": "Or if he shall ask an egg, will he offer him a scorpion?",
+    "13": "If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Ruach HaKodesh (Holy Spirit) to them that ask him?",
+    "14": "And he was casting out a devil, and it was dumb. And it came to pass, when the devil was gone out, the dumb spake; and the people wondered.",
+    "15": "But some of them said, He casteth out devils through Beelzebub the chief of the devils.",
+    "16": "And others, tempting him, sought of him a sign from heaven."
+   },
+   "old_note": "*How much more shall your heavenly Father give the Holy Spirit to them that ask him?* — Lukan parallel; specifies *good things* as the Ruach HaKodesh (Holy Spirit).",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6",
+    "ask-seek-knock-and-wisdom-found-by-seekers-in-wisdom",
+    "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3334,
+   "src": "Matthew 7:11",
+   "src_vn": 11,
+   "src_text_live": "If you then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?",
+   "src_text_kjv": "If ye then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?",
+   "tgt": "Jeremiah 31:33",
+   "tgt_text_kjv": "But this shall be the covenant that I will make with the house of Yashar'el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.",
+   "tgt_context_kjv": {
+    "31": "Behold, the days come, saith Yahuah (LORD), that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah):",
+    "32": "Not according to the covenant that I made with their fathers in the day that I took them by the hand to bring them out of the land of Egypt; which my covenant they brake, although I was an husband unto them, saith Yahuah (LORD):",
+    "33": "But this shall be the covenant that I will make with the house of Yashar'el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.",
+    "34": "And they shall teach no more every man his neighbour, and every man his brother, saying, Know Yahuah (LORD): for they shall all know me, from the least of them unto the greatest of them, saith Yahuah (LORD): for I will forgive their iniquity, and I will remember their sin no more.",
+    "35": "Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva'ot (LORD of hosts) is his name:",
+    "36": "If those ordinances depart from before me, saith Yahuah (LORD), then the seed of Yashar'el (Israel) also shall cease from being a nation before me for ever."
+   },
+   "old_note": "*I will put my law in their inward parts, and write it in their hearts* — the new-heart promise the Spirit-gift enables.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6",
+    "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+    "the-two-ways-of-enoch-and-the-narrow-gate"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3335,
+   "src": "Matthew 7:11",
+   "src_vn": 11,
+   "src_text_live": "If you then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?",
+   "src_text_kjv": "If ye then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?",
+   "tgt": "Ezekiel 36:26",
+   "tgt_text_kjv": "A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.",
+   "tgt_context_kjv": {
+    "24": "For I will take you from among the heathen, and gather you out of all countries, and will bring you into your own land.",
+    "25": "Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you.",
+    "26": "A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.",
+    "27": "And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.",
+    "28": "And ye shall dwell in the land that I gave to your fathers; and ye shall be my people, and I will be your Elohim (God).",
+    "29": "I will also save you from all your uncleannesses: and I will call for the corn, and will increase it, and lay no famine upon you."
+   },
+   "old_note": "*A new heart also will I give you ... and cause you to walk in my statutes* — the Spirit-empowered Torah-walking promise the good gift produces.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6",
+    "ask-seek-knock-and-wisdom-found-by-seekers-in-wisdom",
+    "the-two-ways-of-enoch-and-the-narrow-gate"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3336,
+   "src": "Matthew 7:13",
+   "src_vn": 13,
+   "src_text_live": "Enter you in at the strait gate: for wide is the gate, and broad is the way, that leads to destruction, and many there be which go in thereat:",
+   "src_text_kjv": "Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:",
+   "tgt": "Isaiah 10:20",
+   "tgt_text_kjv": "And it shall come to pass in that day, that the remnant of Yashar'el (Israel), and such as are escaped of the house of Jacob, shall no more again stay upon him that smote them; but shall stay upon Yahuah (LORD), the Holy One of Yashar'el (Israel), in truth.",
+   "tgt_context_kjv": {
+    "18": "And shall consume the glory of his forest, and of his fruitful field, both soul and body: and they shall be as when a standardbearer fainteth.",
+    "19": "And the rest of the trees of his forest shall be few, that a child may write them.",
+    "20": "And it shall come to pass in that day, that the remnant of Yashar'el (Israel), and such as are escaped of the house of Jacob, shall no more again stay upon him that smote them; but shall stay upon Yahuah (LORD), the Holy One of Yashar'el (Israel), in truth.",
+    "21": "The remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God).",
+    "22": "For though thy people Yashar'el (Israel) be as the sand of the sea, yet a remnant of them shall return: the consumption decreed shall overflow with righteousness.",
+    "23": "For Adonai Yahuah (the Lord GOD) of hosts shall make a consumption, even determined, in the midst of all the land."
+   },
+   "old_note": "The remnant-of-Yashar'el (Israel) Tanakh-pattern — only a remnant returns.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+    "the-two-ways-of-enoch-and-the-narrow-gate",
+    "matthew-7-beware-of-false-prophets-by-their-fruits-deuteronomy-13-jeremiah-23-isaiah-5"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3337,
+   "src": "Matthew 7:13",
+   "src_vn": 13,
+   "src_text_live": "Enter you in at the strait gate: for wide is the gate, and broad is the way, that leads to destruction, and many there be which go in thereat:",
+   "src_text_kjv": "Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:",
+   "tgt": "Zechariah 13:8",
+   "tgt_text_kjv": "And it shall come to pass, that in all the land, saith Yahuah (LORD), two parts therein shall be cut off and die; but the third shall be left therein.",
+   "tgt_context_kjv": {
+    "6": "And one shall say unto him, What are these wounds in thine hands? Then he shall answer, Those with which I was wounded in the house of my friends.",
+    "7": "Awake, O sword, against my shepherd, and against the man that is my fellow, saith Yahuah Tseva'ot (LORD of hosts): smite the shepherd, and the sheep shall be scattered: and I will turn mine hand upon the little ones.",
+    "8": "And it shall come to pass, that in all the land, saith Yahuah (LORD), two parts therein shall be cut off and die; but the third shall be left therein.",
+    "9": "And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people: and they shall say, Yahuah (LORD) is my Elohim (God)."
+   },
+   "old_note": "*Two parts therein shall be cut off and die; but the third shall be left therein* — the third-part remnant; explicit numerical-minority structure.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+    "the-two-ways-of-enoch-and-the-narrow-gate",
+    "matthew-7-beware-of-false-prophets-by-their-fruits-deuteronomy-13-jeremiah-23-isaiah-5"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3338,
+   "src": "Matthew 7:13",
+   "src_vn": 13,
+   "src_text_live": "Enter you in at the strait gate: for wide is the gate, and broad is the way, that leads to destruction, and many there be which go in thereat:",
+   "src_text_kjv": "Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:",
+   "tgt": "Zephaniah 3:12",
+   "tgt_text_kjv": "I will also leave in the midst of thee an afflicted and poor people, and they shall trust in the name of Yahuah (LORD).",
+   "tgt_context_kjv": {
+    "10": "From beyond the rivers of Ethiopia my suppliants, even the daughter of my dispersed, shall bring mine offering.",
+    "11": "In that day shalt thou not be ashamed for all thy doings, wherein thou hast transgressed against me: for then I will take away out of the midst of thee them that rejoice in thy pride, and thou shalt no more be haughty because of my holy mountain.",
+    "12": "I will also leave in the midst of thee an afflicted and poor people, and they shall trust in the name of Yahuah (LORD).",
+    "13": "The remnant of Yashar'el (Israel) shall not do iniquity, nor speak lies; neither shall a deceitful tongue be found in their mouth: for they shall feed and lie down, and none shall make them afraid.",
+    "14": "Sing, O daughter of Zion; shout, O Yashar'el (Israel); be glad and rejoice with all the heart, O daughter of Jerusalem.",
+    "15": "Yahuah (LORD) hath taken away thy judgments, he hath cast out thine enemy: the king of Yashar'el (Israel), even Yahuah (LORD), is in the midst of thee: thou shalt not see evil any more."
+   },
+   "old_note": "*I will also leave in the midst of thee an afflicted and poor people, and they shall trust in the name of Yahuah (the LORD). The remnant of Yashar'el (Israel) shall not do iniquity* — the remnant defined by Torah-walking.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+    "the-two-ways-of-enoch-and-the-narrow-gate",
+    "matthew-7-beware-of-false-prophets-by-their-fruits-deuteronomy-13-jeremiah-23-isaiah-5"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3339,
+   "src": "Matthew 7:13",
+   "src_vn": 13,
+   "src_text_live": "Enter you in at the strait gate: for wide is the gate, and broad is the way, that leads to destruction, and many there be which go in thereat:",
+   "src_text_kjv": "Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:",
+   "tgt": "Luke 13:23",
+   "tgt_text_kjv": "Then said one unto him, Adonai (Lord), are there few that be saved? And he said unto them,",
+   "tgt_context_kjv": {
+    "21": "It is like leaven, which a woman took and hid in three measures of meal, till the whole was leavened.",
+    "22": "And he went through the cities and villages, teaching, and journeying toward Jerusalem.",
+    "23": "Then said one unto him, Adonai (Lord), are there few that be saved? And he said unto them,",
+    "24": "Strive to enter in at the strait gate: for many, I say unto you, will seek to enter in, and shall not be able.",
+    "25": "When once the master of the house is risen up, and hath shut to the door, and ye begin to stand without, and to knock at the door, saying, Adonai (Lord), Adonai (Lord), open unto us; and he shall answer and say unto you, I know you not whence ye are:",
+    "26": "Then shall ye begin to say, We have eaten and drunk in thy presence, and thou hast taught in our streets."
+   },
+   "old_note": "*Strive to enter in at the strait gate: for many, I say unto you, will seek to enter in, and shall not be able* — Lukan parallel that intensifies the *few* of Matt 7:14.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+    "the-two-ways-of-enoch-and-the-narrow-gate",
+    "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3341,
+   "src": "Matthew 7:15",
+   "src_vn": 15,
+   "src_text_live": "Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves.",
+   "src_text_kjv": "Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves.",
+   "tgt": "Acts 20:29",
+   "tgt_text_kjv": "For I know this, that after my departing shall grievous wolves enter in among you, not sparing the flock.",
+   "tgt_context_kjv": {
+    "27": "For I have not shunned to declare unto you all the counsel of Elohim (God).",
+    "28": "Take heed therefore unto yourselves, and to all the flock, over the which the Ruach HaKodesh (Holy Spirit) hath made you overseers, to feed the church of Elohim (God), which he hath purchased with his own blood.",
+    "29": "For I know this, that after my departing shall grievous wolves enter in among you, not sparing the flock.",
+    "30": "Also of your own selves shall men arise, speaking perverse things, to draw away disciples after them.",
+    "31": "Therefore watch, and remember, that by the space of three years I ceased not to warn every one night and day with tears.",
+    "32": "And now, brethren, I commend you to Elohim (God), and to the word of his grace, which is able to build you up, and to give you an inheritance among all them which are sanctified."
+   },
+   "old_note": "Paul's warning to the Ephesian elders — *grievous wolves enter in among you, not sparing the flock. Also of your own selves shall men arise, speaking perverse things* — the apostolic confirmation of the false-prophets-among-the-gathering pattern.",
+   "map_grade": "BARE",
+   "map_thread": "matthew-7-beware-of-false-prophets-by-their-fruits-deuteronomy-13-jeremiah-23-isaiah-5",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-7-beware-of-false-prophets-by-their-fruits-deuteronomy-13-jeremiah-23-isaiah-5",
+    "by-their-fruits-and-the-utterance-of-the-heart-in-sirach",
+    "matthew-7-the-golden-rule-this-is-the-law-and-the-prophets-leviticus-19-tobit-4"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3342,
+   "src": "Matthew 7:24",
+   "src_vn": 24,
+   "src_text_live": "Therefore whosoever hears these sayings of mine, and does them, I will liken him unto a wise man, which built his house upon a rock:",
+   "src_text_kjv": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:",
+   "tgt": "Exodus 24:7",
+   "tgt_text_kjv": "And he took the book of the covenant, and read in the audience of the people: and they said, All that Yahuah (LORD) hath said will we do, and be obedient.",
+   "tgt_context_kjv": {
+    "5": "And he sent young men of the children of Yashar'el (Israel), which offered burnt offerings, and sacrificed peace offerings of oxen unto Yahuah (LORD).",
+    "6": "And Moses took half of the blood, and put it in basons; and half of the blood he sprinkled on the altar.",
+    "7": "And he took the book of the covenant, and read in the audience of the people: and they said, All that Yahuah (LORD) hath said will we do, and be obedient.",
+    "8": "And Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words.",
+    "9": "Then went up Moses, and Aaron, Nadab, and Abihu, and seventy of the elders of Yashar'el (Israel):",
+    "10": "And they saw the Elohim (God) of Yashar'el (Israel): and there was under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness."
+   },
+   "old_note": "*All that Yahuah (the LORD) hath said will we do, and be obedient (na'aseh v'nishma)* — the do-and-hear Tanakh-pattern Matt 7:24-27 walks.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-the-wise-and-foolish-builders-the-rock-isaiah-28-proverbs-10-ezekiel-13",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "matthew-7-the-wise-and-foolish-builders-the-rock-isaiah-28-proverbs-10-ezekiel-13",
+    "wise-and-foolish-builders-and-the-heart-stablished-in-sirach",
+    "lord-lord-and-torahlessness"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3343,
+   "src": "Matthew 7:24",
+   "src_vn": 24,
+   "src_text_live": "Therefore whosoever hears these sayings of mine, and does them, I will liken him unto a wise man, which built his house upon a rock:",
+   "src_text_kjv": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:",
+   "tgt": "Deuteronomy 32:4",
+   "tgt_text_kjv": "He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he.",
+   "tgt_context_kjv": {
+    "2": "My doctrine shall drop as the rain, my speech shall distil as the dew, as the small rain upon the tender herb, and as the showers upon the grass:",
+    "3": "Because I will publish the name of Yahuah (LORD): ascribe ye greatness unto our Elohim (God).",
+    "4": "He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he.",
+    "5": "They have corrupted themselves, their spot is not the spot of his children: they are a perverse and crooked generation.",
+    "6": "Do ye thus requite Yahuah (LORD), O foolish people and unwise? is not he thy father that hath bought thee? hath he not made thee, and established thee?",
+    "7": "Remember the days of old, consider the years of many generations: ask thy father, and he will shew thee; thy elders, and they will tell thee."
+   },
+   "old_note": "*He is the Rock, his work is perfect* — the Tanakh's foundation-rock identification of Yahuah (the LORD).",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-the-wise-and-foolish-builders-the-rock-isaiah-28-proverbs-10-ezekiel-13",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-7-the-wise-and-foolish-builders-the-rock-isaiah-28-proverbs-10-ezekiel-13",
+    "wise-and-foolish-builders-and-the-heart-stablished-in-sirach",
+    "lord-lord-and-torahlessness"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3344,
+   "src": "Matthew 7:24",
+   "src_vn": 24,
+   "src_text_live": "Therefore whosoever hears these sayings of mine, and does them, I will liken him unto a wise man, which built his house upon a rock:",
+   "src_text_kjv": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:",
+   "tgt": "Psalm 18:2",
+   "tgt_text_kjv": "Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower.",
+   "tgt_context_kjv": {
+    "1": "I will love thee, O Yahuah (LORD), my strength.",
+    "2": "Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower.",
+    "3": "I will call upon Yahuah (LORD), who is worthy to be praised: so shall I be saved from mine enemies.",
+    "4": "The sorrows of death compassed me, and the floods of ungodly men made me afraid.",
+    "5": "The sorrows of hell compassed me about: the snares of death prevented me."
+   },
+   "old_note": "*Yahuah (the LORD) is my rock, and my fortress* — the foundation-rock prayer-substance.",
+   "map_grade": "PARTIAL",
+   "map_thread": "matthew-7-the-wise-and-foolish-builders-the-rock-isaiah-28-proverbs-10-ezekiel-13",
+   "map_thread_exists": true,
+   "map_confidence": "high",
+   "map_candidates": [
+    "matthew-7-the-wise-and-foolish-builders-the-rock-isaiah-28-proverbs-10-ezekiel-13",
+    "wise-and-foolish-builders-and-the-heart-stablished-in-sirach",
+    "matthew-7-not-every-one-that-saith-lord-lord-but-he-that-doeth-the-will-psalm-6-hosea-8"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 3345,
+   "src": "Matthew 7:24",
+   "src_vn": 24,
+   "src_text_live": "Therefore whosoever hears these sayings of mine, and does them, I will liken him unto a wise man, which built his house upon a rock:",
+   "src_text_kjv": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:",
+   "tgt": "James 1:22",
+   "tgt_text_kjv": "But be ye doers of the word, and not hearers only, deceiving your own selves.",
+   "tgt_context_kjv": {
+    "20": "For the wrath of man worketh not the righteousness of Elohim (God).",
+    "21": "Wherefore lay apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, which is able to save your souls.",
+    "22": "But be ye doers of the word, and not hearers only, deceiving your own selves.",
+    "23": "For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass:",
+    "24": "For he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was.",
+    "25": "But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed."
+   },
+   "old_note": "*But be ye doers of the word, and not hearers only ... whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed* — Ya'aqov's (James's) apostolic restatement of the Matt 7:24-27 hearer-AND-doer standard.",
+   "map_grade": "PARTIAL",
+   "map_thread": "wise-and-foolish-builders-and-the-heart-stablished-in-sirach",
+   "map_thread_exists": true,
+   "map_confidence": "medium",
+   "map_candidates": [
+    "wise-and-foolish-builders-and-the-heart-stablished-in-sirach",
+    "matthew-7-the-wise-and-foolish-builders-the-rock-isaiah-28-proverbs-10-ezekiel-13",
+    "lord-lord-and-torahlessness"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "matthew-7-judge-not-the-mote-and-the-beam-leviticus-19-proverbs-24",
+   "title": "Judge not, that ye be not judged — the mote and the beam (Leviticus 19; Proverbs 24; 2 Samuel 12)",
+   "anchor": "Matthew 7:1-5",
+   "member_count": 6,
+   "summary_md": "*Judge not, that ye be not judged* (Matthew 7:1) is no ban on discernment — Yahusha (Jesus) is forbidding the hypocrite's crooked scale, not the righteous eye. The Torah commands judgment: *Ye shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour* (Leviticus 19:15), and the wise echo it — *It is not good to have respect of persons in judgment* (Proverbs 24:23). The measure is a mirror: *With the merciful thou wilt shew thyself merciful; with an upright man thou wilt shew thyself upright* (Psalm 18:25); *With the pure thou wilt shew thyself pure; and with the froward thou wilt shew thyself froward* (Psalm 18:26) — *with what measure ye mete, it shall be measured to you again* (Matthew 7:2). And the great living parable of the beam: David thundered sentence on the rich man, *the man that hath done this thing shall surely die* — and Nathan answered, *Thou art the man* (2 Samuel 12:7). First cast out thine own beam. Even then the brother is not abandoned: *thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him* (Leviticus 19:17). The commandment stands; only the hypocrisy is cast out.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:1",
+     "tgt": "canon/leviticus 19:15",
+     "member_note": "Leviticus 19:15 — *but in righteousness shalt thou judge thy neighbour.* Torah commands righteous judgment."
+    },
+    {
+     "src": "7:1",
+     "tgt": "canon/proverbs 24:23",
+     "member_note": "Proverbs 24:23 — *It is not good to have respect of persons in judgment.*"
+    },
+    {
+     "src": "7:2",
+     "tgt": "canon/psalms 18:25",
+     "member_note": "Psalm 18:25 — *with an upright man thou wilt shew thyself upright* — the measure is a mirror."
+    },
+    {
+     "src": "7:2",
+     "tgt": "canon/psalms 18:26",
+     "member_note": "Psalm 18:26 — *with the froward thou wilt shew thyself froward* — as ye mete, so measured back."
+    },
+    {
+     "src": "7:5",
+     "tgt": "canon/2-samuel 12:7",
+     "member_note": "2 Samuel 12:7 — *Thou art the man.* David judged the parable and the beam was his own."
+    },
+    {
+     "src": "7:1",
+     "tgt": "canon/leviticus 19:17",
+     "member_note": "Leviticus 19:17 — *thou shalt in any wise rebuke thy neighbour* — rebuke commanded once the beam is out."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-7-give-not-that-which-is-holy-unto-the-dogs-pearls-before-swine-proverbs-9-23",
+   "title": "Give not that which is holy unto the dogs — pearls before swine (Proverbs 9; Proverbs 23)",
+   "anchor": "Matthew 7:6-6",
+   "member_count": 3,
+   "summary_md": "*Give not that which is holy unto the dogs, neither cast ye your pearls before swine, lest they trample them under their feet, and turn again and rend you* (Matthew 7:6). This is the wisdom of discernment — the same lesson the Proverbs press hard. *He that reproveth a scorner getteth to himself shame: and he that rebuketh a wicked man getteth himself a blot* (Proverbs 9:7); *Reprove not a scorner, lest he hate thee: rebuke a wise man, and he will love thee* (Proverbs 9:8). Know the hearer before you spend the holy thing on him. And again: *Speak not in the ears of a fool: for he will despise the wisdom of thy words* (Proverbs 23:9). The pearl is precious; do not waste it on the one who will only trample and rend. Yahusha (Jesus) is teaching the same shepherd-prudence the wisdom books taught Yashar'el (Israel) long before.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:6",
+     "tgt": "canon/proverbs 9:7",
+     "member_note": "Proverbs 9:7 — *he that rebuketh a wicked man getteth himself a blot.*"
+    },
+    {
+     "src": "7:6",
+     "tgt": "canon/proverbs 9:8",
+     "member_note": "Proverbs 9:8 — *Reprove not a scorner, lest he hate thee.* Discern the hearer."
+    },
+    {
+     "src": "7:6",
+     "tgt": "canon/proverbs 23:9",
+     "member_note": "Proverbs 23:9 — *Speak not in the ears of a fool: for he will despise the wisdom of thy words.*"
+    }
+   ]
+  },
+  {
+   "slug": "matthew-7-ask-seek-knock-good-gifts-jeremiah-29-isaiah-55-wisdom-6",
+   "title": "Ask, and it shall be given — seek and find, knock and it shall be opened (Jeremiah 29; Isaiah 55; Wisdom 6)",
+   "anchor": "Matthew 7:7-11",
+   "member_count": 7,
+   "summary_md": "*Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you* (Matthew 7:7) — this is not new; it is the ancient promise to a seeking people. To the exiles Yahuah (Yahuah) said, *Then shall ye call upon me, and ye shall go and pray unto me, and I will hearken unto you* (Jeremiah 29:12), *And ye shall seek me, and find me, when ye shall search for me with all your heart* (Jeremiah 29:13). The prophet's open door: *Seek ye Yahuah (LORD) while he may be found, call ye upon him while he is near* (Isaiah 55:6). Wisdom's own pledge: *I love them that love me; and those that seek me early shall find me* (Proverbs 8:17). The Father withholds no good thing from the seeker: *they that seek Yahuah (LORD) shall not want any good thing* (Psalm 34:10) — *how much more shall your Father which is in heaven give good things to them that ask him* (Matthew 7:11). The Wisdom of Solomon sings the same: *she is easily seen of them that love her, and found of such as seek her* (Wisdom of Solomon 6:12); *Whoso seeks her early shall have no great travail: for he shall find her sitting at his doors* (Wisdom of Solomon 6:14) — found waiting at the door for the one who knocks. The Formed Son teaches us to address THE FATHER, who is the giver of every good gift.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:7",
+     "tgt": "canon/jeremiah 29:13",
+     "member_note": "Jeremiah 29:13 — *ye shall seek me, and find me, when ye shall search for me with all your heart.*"
+    },
+    {
+     "src": "7:7",
+     "tgt": "canon/jeremiah 29:12",
+     "member_note": "Jeremiah 29:12 — *ye shall... pray unto me, and I will hearken unto you.* Ask, and it is given."
+    },
+    {
+     "src": "7:7",
+     "tgt": "canon/isaiah 55:6",
+     "member_note": "Isaiah 55:6 — *Seek ye Yahuah (LORD) while he may be found.* The open door."
+    },
+    {
+     "src": "7:7",
+     "tgt": "canon/proverbs 8:17",
+     "member_note": "Proverbs 8:17 — *those that seek me early shall find me.* Wisdom's pledge to the seeker."
+    },
+    {
+     "src": "7:11",
+     "tgt": "canon/psalms 34:10",
+     "member_note": "Psalm 34:10 — *they that seek Yahuah (LORD) shall not want any good thing.* The Father gives good gifts."
+    },
+    {
+     "src": "7:7",
+     "tgt": "apocrypha/the-wisdom-of-solomon 6:12",
+     "member_note": "Wisdom of Solomon 6:12 — *she is easily seen of them that love her, and found of such as seek her.* Seek and ye shall find (Matthew 7:7) is the promise Solomon wrote about wisdom first."
+    },
+    {
+     "src": "7:7",
+     "tgt": "apocrypha/the-wisdom-of-solomon 6:14",
+     "member_note": "Wisdom of Solomon 6:14 — *he shall find her sitting at his doors* — found waiting for the one who knocks."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-7-the-golden-rule-this-is-the-law-and-the-prophets-leviticus-19-tobit-4",
+   "title": "The golden rule — for this is the law and the prophets (Leviticus 19; Tobit 4)",
+   "anchor": "Matthew 7:12-12",
+   "member_count": 3,
+   "summary_md": "*Therefore all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets* (Matthew 7:12). Hear the seal he sets on it — *this IS the law and the prophets.* Yahusha (Jesus) does not abolish the Torah here; he SUMS it. The golden rule is the heart-distillation of the commandment given through Moses: *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18), a love that reaches the grafted-in stranger too — *the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself* (Leviticus 19:34). And the witness of the library reaches back further still: righteous Tobit charged his son, *Do that to no man which you hatest* (Tobit 4:15) — the negative form of the very same rule, generations before the Sermon on the Mount. One law, one love, one library. Messiah is its summing-up, never its end.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:12",
+     "tgt": "canon/leviticus 19:18",
+     "member_note": "Leviticus 19:18 — *thou shalt love thy neighbour as thyself.* The golden rule is Torah summed."
+    },
+    {
+     "src": "7:12",
+     "tgt": "canon/leviticus 19:34",
+     "member_note": "Leviticus 19:34 — *thou shalt love him as thyself* — the same love toward the grafted-in stranger."
+    },
+    {
+     "src": "7:12",
+     "tgt": "apocrypha/tobit 4:15",
+     "member_note": "Tobit 4:15 — *Do that to no man which you hatest.* The golden rule in negative form, generations before *this is the law and the prophets* (Matthew 7:12)."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-7-the-strait-gate-the-two-ways-deuteronomy-30-jeremiah-21-psalm-1",
+   "title": "Enter ye in at the strait gate — the Two Ways (Deuteronomy 30; Jeremiah 21; Psalm 1; Sirach 15)",
+   "anchor": "Matthew 7:13-14",
+   "member_count": 6,
+   "summary_md": "*Enter ye in at the strait gate... strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:13-14). This is the oldest sermon in Yashar'el (Israel) — the Two Ways. Moses set it before the people on the plains of Moab: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15), *I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The prophet says it plain: *Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8). The Psalter opens on it: *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6). And the warning against the broad way that only seems right: *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). Ben Sira sets the same choice before every soul: *Before man is life and death; and whether him liketh shall be given him* (Sirach 15:17). The strait gate is the chosen way of the commandment; the broad way is the way of him who casts it off.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:13",
+     "tgt": "canon/deuteronomy 30:15",
+     "member_note": "Deuteronomy 30:15 — *I have set before thee this day life and good, and death and evil.*"
+    },
+    {
+     "src": "7:13",
+     "tgt": "canon/deuteronomy 30:19",
+     "member_note": "Deuteronomy 30:19 — *therefore choose life* — the strait gate is the chosen way."
+    },
+    {
+     "src": "7:13",
+     "tgt": "canon/jeremiah 21:8",
+     "member_note": "Jeremiah 21:8 — *Behold, I set before you the way of life, and the way of death.*"
+    },
+    {
+     "src": "7:14",
+     "tgt": "canon/psalms 1:6",
+     "member_note": "Psalm 1:6 — *the way of the righteous... the way of the ungodly shall perish.* Two ways, two ends."
+    },
+    {
+     "src": "7:13",
+     "tgt": "canon/proverbs 14:12",
+     "member_note": "Proverbs 14:12 — *a way which seemeth right... but the end thereof are the ways of death.* The broad way."
+    },
+    {
+     "src": "7:13",
+     "tgt": "apocrypha/ecclesiasticus 15:17",
+     "member_note": "Sirach 15:17 — *Before man is life and death.* Ben Sira sets the same choice before every man."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-7-beware-of-false-prophets-by-their-fruits-deuteronomy-13-jeremiah-23-isaiah-5",
+   "title": "Beware of false prophets — by their fruits ye shall know them (Deuteronomy 13 & 18; Jeremiah 23; Ezekiel 22; Isaiah 5)",
+   "anchor": "Matthew 7:15-20",
+   "member_count": 7,
+   "summary_md": "*Beware of false prophets, which come to you in sheep's clothing, but inwardly they are ravening wolves. Ye shall know them by their fruits* (Matthew 7:15-16). The Torah armed Yashar'el (Israel) with this test long ago. The fruit-test of the heart: the lying prophet may even give a sign, *Thou shalt not hearken unto the words of that prophet... for Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem with all your heart* (Deuteronomy 13:3); for *he hath spoken to turn you away from Yahuah Elohaychem (the LORD your God)* (Deuteronomy 13:5) — the wolf draws you off the commandment. And the fruit-test of the word: *if the thing follow not, nor come to pass... the prophet hath spoken it presumptuously* (Deuteronomy 18:22). The prophets named the same wolves: *they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* (Jeremiah 23:16); *Her princes in the midst thereof are like wolves ravening the prey... to get dishonest gain* (Ezekiel 22:27). And the vineyard that bore wild grapes is Yashar'el judged by her fruit: *the vineyard of Yahuah Tseva'ot (LORD of hosts) is the house of Yashar'el (Israel)... and he looked for judgment, but behold oppression* (Isaiah 5:7). Yahusha (Jesus) gathers it all and says it twice over in Luke's plain: *every tree is known by his own fruit. For of thorns men do not gather figs, nor of a bramble bush gather they grapes* (Luke 6:44).",
+   "members_in_this_chapter": [
+    {
+     "src": "7:15",
+     "tgt": "canon/deuteronomy 13:3",
+     "member_note": "Deuteronomy 13:3 — *the LORD your God proveth you, to know whether ye love* him. The heart-test."
+    },
+    {
+     "src": "7:15",
+     "tgt": "canon/deuteronomy 13:5",
+     "member_note": "Deuteronomy 13:5 — *he hath spoken to turn you away* from Yahuah. The wolf draws off the commandment."
+    },
+    {
+     "src": "7:15",
+     "tgt": "canon/deuteronomy 18:22",
+     "member_note": "Deuteronomy 18:22 — *if the thing follow not... the prophet hath spoken it presumptuously.* The fruit-test."
+    },
+    {
+     "src": "7:15",
+     "tgt": "canon/jeremiah 23:16",
+     "member_note": "Jeremiah 23:16 — *they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD).*"
+    },
+    {
+     "src": "7:15",
+     "tgt": "canon/ezekiel 22:27",
+     "member_note": "Ezekiel 22:27 — *Her princes... are like wolves ravening the prey.* The ravening wolves named."
+    },
+    {
+     "src": "7:16",
+     "tgt": "canon/isaiah 5:7",
+     "member_note": "Isaiah 5:7 — the vineyard of Yashar'el (Israel) that brought forth wild grapes, known by its fruit."
+    },
+    {
+     "src": "7:16",
+     "tgt": "canon/luke 6:44",
+     "member_note": "Luke 6:44 — *every tree is known by his own fruit.* The same word in Luke's plain."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-7-not-every-one-that-saith-lord-lord-but-he-that-doeth-the-will-psalm-6-hosea-8",
+   "title": "Not every one that saith Lord, Lord — but he that DOETH the will (Psalm 6; Hosea 8)",
+   "anchor": "Matthew 7:21-23",
+   "member_count": 3,
+   "summary_md": "*Not every one that saith unto me, Yahuah (Lord), Yahuah (Lord), shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven* (Matthew 7:21). Here is the anti-antinomian seal of the whole Sermon: the confession of the lips is not the entrance — DOING the Father's will is, and the Father's will is his commandment. And mark the sentence Yahusha (Jesus) pronounces on the workers of lawlessness, *depart from me, ye that work iniquity* (Matthew 7:23) — it is David's own word, *Depart from me, all ye workers of iniquity; for Yahuah (LORD) hath heard the voice of my weeping* (Psalm 6:8). Hosea showed the same hollow cry centuries before: *Yashar'el (Israel) shall cry unto me, My Elohim (God), we know thee* (Hosea 8:2) — yet *Yashar'el (Israel) hath cast off the thing that is good: the enemy shall pursue him* (Hosea 8:3). To cry \"we know thee\" while casting off the good — the Torah — is to be answered, *I never knew you.* The doing is the knowing.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:23",
+     "tgt": "canon/psalms 6:8",
+     "member_note": "Psalm 6:8 — *Depart from me, all ye workers of iniquity.* The very sentence Yahusha pronounces."
+    },
+    {
+     "src": "7:21",
+     "tgt": "canon/hosea 8:2",
+     "member_note": "Hosea 8:2 — *Yashar'el (Israel) shall cry unto me, My Elohim (God), we know thee.* The hollow confession."
+    },
+    {
+     "src": "7:21",
+     "tgt": "canon/hosea 8:3",
+     "member_note": "Hosea 8:3 — *Yashar'el (Israel) hath cast off the thing that is good* — to cast off the Torah is to be unknown of him."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-7-the-wise-and-foolish-builders-the-rock-isaiah-28-proverbs-10-ezekiel-13",
+   "title": "The wise and foolish builders — built upon a rock (Isaiah 28; Proverbs 10; Ezekiel 13; Luke 6)",
+   "anchor": "Matthew 7:24-27",
+   "member_count": 5,
+   "summary_md": "*Whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24) — and the doer's house *fell not: for it was founded upon a rock* (Matthew 7:25), while the house upon the sand fell, *and great was the fall of it* (Matthew 7:27). The sure foundation was laid in Zion long before: *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). The wisdom root: *As the whirlwind passeth, so is the wicked no more: but the righteous is an everlasting foundation* (Proverbs 10:25). And the house on the sand is Ezekiel's untempered wall — they built and *daubed it with untempered morter*, but *there shall be an overflowing shower... and a stormy wind shall rend it* (Ezekiel 13:11); *So will I break down the wall that ye have daubed... and it shall fall, and ye shall be consumed in the midst thereof* (Ezekiel 13:14). Hearing without doing is daubing with untempered morter; the rock is the heard word DONE. Luke tells the same: *He is like a man which built an house, and digged deep, and laid the foundation on a rock... and could not shake it* (Luke 6:48).",
+   "members_in_this_chapter": [
+    {
+     "src": "7:24",
+     "tgt": "canon/isaiah 28:16",
+     "member_note": "Isaiah 28:16 — *a tried stone, a precious corner stone, a sure foundation.* The rock for the wise builder."
+    },
+    {
+     "src": "7:24",
+     "tgt": "canon/proverbs 10:25",
+     "member_note": "Proverbs 10:25 — *the righteous is an everlasting foundation.* The storm cannot move the founded house."
+    },
+    {
+     "src": "7:26",
+     "tgt": "canon/ezekiel 13:11",
+     "member_note": "Ezekiel 13:11 — the untempered wall: *a stormy wind shall rend it.* The house on the sand."
+    },
+    {
+     "src": "7:26",
+     "tgt": "canon/ezekiel 13:14",
+     "member_note": "Ezekiel 13:14 — *it shall fall, and ye shall be consumed in the midst thereof.* Great was the fall of it."
+    },
+    {
+     "src": "7:24",
+     "tgt": "canon/luke 6:48",
+     "member_note": "Luke 6:48 — *laid the foundation on a rock... could not shake it.* The same parable in Luke."
+    }
+   ]
+  },
+  {
+   "slug": "effort-over-accomplishment",
+   "title": "Effort over accomplishment — the same God says both",
+   "anchor": "proverbs 24:16",
+   "member_count": 77,
+   "summary_md": "The Reformation reader has been shaped to believe two thoughts cannot stand in the same paragraph. The same God who said *not for your righteousness do I do this, but for my own name's sake* — also said *depart from me, ye that work iniquity, I never knew you.* The same God who said *for by grace are ye saved through faith* — also said *whosoever hath sinned against me, him will I blot out of my book.* The same God who said *I will give you a new heart* — also said *ye shall loathe yourselves in your own sight for your iniquities.*\n\nThe Reformation kept the *for my name's sake* half and put a period where there should have been a colon. The rabbinic system kept the *depart from me* half and built a flesh-righteousness gospel. The framework holds both halves because scripture holds both halves. The place where they hold together is the phrase that names the diagnostic: **effort over accomplishment.**\n\n*\"For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.\"* (Proverbs 24:16)\n\nThe just is not the man who never fell. The wicked is not the man who failed to accomplish. What separates them is not the verdict — *none worthy* has already fallen on every flesh — but the heart's response. The just rises. The wicked *stops his ears* (Proverbs 28:9; Zechariah 7:11-12; Acts 7:57). Open ears and a returning heart, even after seven falls, is the sign of life; stopped ears, even after a hundred sermons, is the sign of death.\n\nThe new heart's signature response to grace is not the boast. It is the hanging head — *ye shall loathe yourselves in your own sight for your iniquities* (Ezekiel 36:31; 20:43; Job 42:5-6; Isaiah 6:5; Daniel 9:5). The Reformation gospel produces a head that holds itself up because it is *saved.* The rabbinic gospel produces a head that holds itself up because it is *righteous.* The framework's new heart produces a head that goes lower the more it sees His mercy.\n\n*\"Remember the former things of old: for I am El, and there is none else; I am Elohim (God), and there is none like me, Declaring the end from the beginning, and from ancient times the things that are not yet done, saying, My counsel shall stand, and I will do all my pleasure.\"* (Isaiah 46:9-10)\n\nThe whole architecture is sealed by the end the Father declared from the beginning. The end is the gathering — the twelve tribes home, the new heart given, the kingdom of priests, the Way restored. Every system that denies the gathering denies the end; every system that denies the end calls Him a liar; to call Him a liar is to reject the mercy that hangs on His name. The architecture stands or falls as one piece.\n\nCompanion threads: `grace-from-names-sake` carries the name's-sake-mercy pillar; `new-heart` carries the Torah-internalized pillar; `post-harvest-sifting` carries the wheat-sifting pillar; `grace-and-the-opportunity-that-can-be-lost` carries the standing-can-be-forfeit warning at the Matt 6 anchor. This thread anchors the architecture at the Proverbs 24:16 hinge and adds the stopped-ears discriminator, the hanging-heads sign, and the end-declared seal.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:21",
+     "tgt": "canon/ezekiel 36:27",
+     "member_note": "Doing the will of the Father = walking in the statutes the new heart was given to walk"
+    },
+    {
+     "src": "7:23",
+     "tgt": "canon/ezekiel 18:24",
+     "member_note": "Depart from me ← the righteousness that turned away does not deliver"
+    },
+    {
+     "src": "7:23",
+     "tgt": "canon/revelation 3:5",
+     "member_note": "Depart from me / blot out his name — the post-harvest sifting of wheat"
+    }
+   ]
+  },
+  {
+   "slug": "ask-seek-knock-and-wisdom-found-by-seekers-in-wisdom",
+   "title": "Ask, seek, knock — and wisdom found by those who seek (Wisdom of Solomon 6)",
+   "anchor": null,
+   "member_count": 3,
+   "summary_md": "Matt 7:7-11's ask-seek-knock prayer-confidence walks an architecture the Hebrew library's wisdom-stream had named at the seekers-find-wisdom level. Wisdom of Solomon 6:12 names the architecture directly: *wisdom is glorious, and never fadeth away: yes, she is easily seen of them that love her, and found of such as seek her.* Wisdom 6:13 intensifies: *she preventeth them that desire her, in making herself first known to them.* Wisdom 6:16 carries the Father-RUNS-TO-meet architecture: *she goes about seeking such as are worthy of her, sheweth herself favourably to them in the ways, and meeteth them in every thought.* The wisdom-stream names the Father's active reciprocation of the seeking; the gospel walks the same architecture at the kingdom-citizens prayer-grammar level, with Luke 11:13 specifying that *the good gift* the Father gives most centrally is the Ruach HaKodesh (Holy Spirit). The wisdom-stream had been naming the architecture; the King articulates it as kingdom-citizens prayer-pattern.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:7",
+     "tgt": "apocrypha/the-wisdom-of-solomon 6:12",
+     "member_note": "Wisdom of Solomon 6:12 — *she is easily seen of them that love her, and found of such as seek her.* Seek and ye shall find (Matthew 7:7) is the promise Solomon wrote about wisdom first."
+    },
+    {
+     "src": "7:7",
+     "tgt": "apocrypha/the-wisdom-of-solomon 6:13",
+     "member_note": "Wisdom of Solomon 6:13 — *She preventeth them that desire her, in making herself first known to them.* Wisdom goes before those who desire her; the Father answers ask, seek, knock (Matthew 7:7) because he came out to meet the seeker first."
+    },
+    {
+     "src": "7:8",
+     "tgt": "apocrypha/the-wisdom-of-solomon 6:16",
+     "member_note": "Wisdom 6:16 — *she goes about seeking such as are worthy of her, sheweth herself favourably to them in the ways, and meeteth them in every thought.* The Father's active pursuit of the seeker; Matt 7:8's *every one that asketh receiveth* walks the same."
+    }
+   ]
+  },
+  {
+   "slug": "by-their-fruits-and-the-utterance-of-the-heart-in-sirach",
+   "title": "By their fruits — Sirach 27:6-7 and the false-prophet diagnostic",
+   "anchor": null,
+   "member_count": 5,
+   "summary_md": "Matt 7:15-20's false-prophet diagnostic — *by their fruits ye shall know them* — walks an architecture the Hebrew library's wisdom-stream had named explicitly at the fruit-as-utterance-of-the-heart level. Sirach (Ecclesiasticus) 27:6 names the architecture directly: *the fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* Sirach 27:7 names the testing-by-speaking diagnostic: *praise no man before you hear him speak; for this is the trial of men.* The wisdom-stream had been teaching the fruit-test for centuries — the fruit declares the tree, the utterance declares the heart. Matt 7:15-20 binds the same architecture as the kingdom-citizens recognition-of-teachers commandment at the leadership-level, with the Torah-fidelity test of Deuteronomy 13:1-3 as the canon-anchor: the wolf-in-sheep's-clothing is identified by what his teaching produces (Torah-keeping community = good fruit; Torah-voiding community = bad fruit) regardless of his supernatural-credential. The Hebrew library named the diagnostic; the gospel locks it as the kingdom-citizens master-filter for teachers.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:16",
+     "tgt": "apocrypha/ecclesiasticus 27:6",
+     "member_note": "Ecclesiasticus 27:6 — *The fruit declareth if the tree have been dressed.* The fruit shows the tree, the speech shows the heart; the same test Yahusha (Jesus) gives at Matthew 7:16, *ye shall know them by their fruits*."
+    },
+    {
+     "src": "7:20",
+     "tgt": "apocrypha/ecclesiasticus 27:7",
+     "member_note": "Ecclesiasticus 27:7 — *Praise no man before you hear him speak.* The man is tried in his speaking; *by their fruits ye shall know them* (Matthew 7:20), and a teacher's teaching is his fruit."
+    }
+   ]
+  },
+  {
+   "slug": "judge-not-and-let-go-anger-in-sirach",
+   "title": "Judge not and let go anger — Sirach 27-28 and the just-judgment architecture",
+   "anchor": null,
+   "member_count": 4,
+   "summary_md": "Matt 7:1-5's just-judgment teaching — *with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again* — reads against the Hebrew library's wisdom-stream architecture of the heart-prerequisite for the just judgment. Sirach (Ecclesiasticus) 27:30 names the malice-and-wrath-are-abominations diagnostic: the heart carrying malice cannot judge the brother rightly. Sirach 28:1 names the measure-for-measure architecture explicitly: *he that revengeth shall find vengeance from Yahuah (God).* Sirach 28:5 names the beam-out-first prerequisite: *if he that is but flesh nourish hatred, who will intreat for pardon of his sins?* The wisdom-stream had been naming the heart-clearing prerequisite for the just-judgment for centuries; the Sermon walks the same architecture into the kingdom-citizens grammar at vv.1-5.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:1",
+     "tgt": "apocrypha/ecclesiasticus 27:30",
+     "member_note": "Ecclesiasticus 27:30 — *Malice and wrath, even these are abominations.* The heart condition that has to go before a brother is weighed; *judge not, that ye be not judged* (Matthew 7:1)."
+    },
+    {
+     "src": "7:2",
+     "tgt": "apocrypha/ecclesiasticus 28:1",
+     "member_note": "Ecclesiasticus 28:1 — *He that revengeth shall find vengeance from Yahuah (God).* Measure for measure: *with what measure ye mete, it shall be measured to you again* (Matthew 7:2)."
+    },
+    {
+     "src": "7:5",
+     "tgt": "apocrypha/ecclesiasticus 28:5",
+     "member_note": "Ecclesiasticus 28:5 — *If he that is but flesh nourish hatred, who will intreat for pardon of his sins?.* The beam that comes out first (Matthew 7:5); hatred nursed in the heart leaves no one to plead for the man's own pardon."
+    }
+   ]
+  },
+  {
+   "slug": "lord-lord-and-torahlessness",
+   "title": "Lord Lord And Torahlessness",
+   "anchor": null,
+   "member_count": 11,
+   "summary_md": "Yahusha (Jesus) at Matt 7:21-23 names the institutional-Christian antinomian-gospel community in advance: many at the judgment-day will confess him as Lord twice over, claim active supernatural-ministry under his name (prophesying, casting out demons, doing wonderful works), and hear in return: I NEVER KNEW YOU; depart from me, ye workers of ANOMIA — torahlessness. The Greek anomia is literally without-Torah. The credentials are real-but-insufficient; the verbal-confession is explicit-but-insufficient; the supernatural-acts are evident-but-insufficient. The doing-of-the-Father's-will (= heart-Torah-walking) is what separates the wheat from the unfruitful-wheat at the post-harvest sifting. This is the most-load-bearing NT verse for the contrary-to-Torah test of 1 John 2:3-4 applied to the modern Judaizer movement (institutional Christianity). The thread connects v.21-23 to the Tanakh false-prophet diagnostics (Deut 13, Deut 18), the post-harvest sifting (Ezekiel 20:33-38, Matt 25:31-46, Matt 13:30), the wheat-vs-unfruitful-wheat distinction (the wheat can be sifted into fruitful and unfruitful after the harvest), the grace-that-can-be-lost stream (Hosea 7:13, Ezekiel 18, Ezekiel 33), and the contrary-to-Torah test master-filter (1 John 2:3-4).",
+   "members_in_this_chapter": [
+    {
+     "src": "7:21",
+     "tgt": "canon/1-john 2:3",
+     "member_note": "*Hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar* — the master-filter; Matt 7:21-23 is the King's own articulation of the same diagnostic."
+    },
+    {
+     "src": "7:21",
+     "tgt": "canon/matthew 12:50",
+     "member_note": "*Whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother* — the doing-of-the-Father's-will as the kingdom-family-identification criterion; same standard."
+    },
+    {
+     "src": "7:21",
+     "tgt": "canon/matthew 25:31",
+     "member_note": "The sheep-and-goats judgment scene — separated by what they DID, not what they said; the practical-walking diagnostic Matt 7:21 articulates in proposition."
+    },
+    {
+     "src": "7:22",
+     "tgt": "canon/deuteronomy 13:1",
+     "member_note": "*If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder, And the sign or the wonder come to pass ... thou shalt not hearken unto the words of that prophet* — the Tanakh false-prophet diagnostic; signs-and-wonders are not the proof; the Torah-fidelity is."
+    },
+    {
+     "src": "7:22",
+     "tgt": "canon/deuteronomy 18:20",
+     "member_note": "*That prophet, which shall presume to speak a word in my name, which I have not commanded him to speak ... shall die* — the false-prophet-in-the-Name diagnostic."
+    },
+    {
+     "src": "7:22",
+     "tgt": "canon/2-corinthians 11:13",
+     "member_note": "*Such are false apostles, deceitful workers, transforming themselves into the apostles of HaMashiach (Christ). And no marvel; for Satan himself is transformed into an angel of light* — the apostolic confirmation that supernatural-credentials can attend false ministers."
+    },
+    {
+     "src": "7:23",
+     "tgt": "canon/ezekiel 20:37",
+     "member_note": "*I will purge out from among you the rebels, and them that transgress against me* — the post-harvest sifting language Matt 7:23's *depart from me* echoes; the discrimination of the wheat after the gathering."
+    },
+    {
+     "src": "7:23",
+     "tgt": "canon/psalms 6:8",
+     "member_note": "*Depart from me, all ye workers of iniquity; for Yahuah (the LORD) hath heard the voice of my weeping* — David's psalm-anchor of the *depart from me, workers of iniquity* formula Yahusha (Jesus) quotes verbatim."
+    },
+    {
+     "src": "7:23",
+     "tgt": "canon/2-thessalonians 2:7",
+     "member_note": "*For the mystery of iniquity (anomia, torahlessness) doth already work* — the apostolic naming of the *anomia* — the mystery of TORAHLESSNESS — operating in the present age."
+    },
+    {
+     "src": "7:23",
+     "tgt": "canon/1-john 3:4",
+     "member_note": "*Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law (anomia)* — the apostolic-direct equation of sin with *anomia.*"
+    }
+   ]
+  },
+  {
+   "slug": "pearls-before-swine-and-wisdom-not-for-fools-in-sirach",
+   "title": "Pearls before swine and the wisdom not for fools — Sirach 22:7-8",
+   "anchor": null,
+   "member_count": 2,
+   "summary_md": "Matt 7:6's *give not that which is holy unto the dogs, neither cast ye your pearls before swine* walks an architecture the Hebrew library's wisdom-stream had named at the futility-of-teaching-the-fool level. Sirach (Ecclesiasticus) 22:7 names the don't-teach-the-fool diagnostic: *whoso teaches a fool is as one that glueth a potsherd together, and as he that waketh one from a sound sleep.* Sirach 22:8 carries the same architecture: *he that telleth a tale to a fool speaks to one in a slumber.* The wisdom-stream identifies the discernment-of-audience as a wisdom-practice; the gospel binds it as a kingdom-citizens commandment with the holy-vs-dogs and pearls-vs-swine intensification. The discernment is intensified, not abolished — directly the framework reading at vv.1-6.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:6",
+     "tgt": "apocrypha/ecclesiasticus 22:7",
+     "member_note": "Ecclesiasticus 22:7 — *Whoso teaches a fool is as one that glueth a potsherd together.* The futility of teaching the one who cannot receive; *neither cast ye your pearls before swine* (Matthew 7:6)."
+    },
+    {
+     "src": "7:6",
+     "tgt": "apocrypha/ecclesiasticus 22:8",
+     "member_note": "Ecclesiasticus 22:8 — *He that telleth a tale to a fool speaks to one in a slumber.* Discernment of the hearer, made a kingdom rule in Matthew 7:6."
+    }
+   ]
+  },
+  {
+   "slug": "the-golden-rule-as-restoration-in-tobit",
+   "title": "The Golden Rule as restoration — Tobit 4:15 and the Sermon's close",
+   "anchor": null,
+   "member_count": 1,
+   "summary_md": "Matt 7:12's *all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets* — read against the Hebrew library's explicit prior articulation. Tobit 4:15 carries the Golden Rule in negative form centuries before the Sermon on the Mount: *do that to no man which thou hatest.* The angel Raphael's closing instruction to Tobias names the same teaching the King restores in positive form at v.12; the Pharisaic-tradition's most-prominent rabbi Hillel taught the same negative form a generation before Yahusha (Jesus). The teaching is in the Hebrew library, in the wisdom-stream, and in the rabbinic tradition at its best. Yahusha (Jesus) restores it as the heart-substance of the Torah and the prophets, not as a brand-new ethic replacing the *complicated* Torah. The Christian-supersessionism reading that treats the Golden Rule as a gospel-invented simplification of the Tanakh collapses against Tobit 4:15.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:12",
+     "tgt": "apocrypha/tobit 4:15",
+     "member_note": "Tobit 4:15 — *Do that to no man which you hatest.* The golden rule in negative form, generations before *this is the law and the prophets* (Matthew 7:12)."
+    }
+   ]
+  },
+  {
+   "slug": "the-two-ways-of-enoch-and-the-narrow-gate",
+   "title": "The Two Ways of Enoch and the narrow gate",
+   "anchor": null,
+   "member_count": 2,
+   "summary_md": "*Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat: Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* (Matthew 7:13-14). Two ways and no third one. Moses set them in front of Yashar'el (Israel) at the edge of the land: *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15), *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19). The Psalter opens on the same fork: *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalm 1:6), and Jeremiah set it before a city under siege: *And unto this people thou shalt say, Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death.* (Jeremiah 21:8). Enoch gave it to his sons as his last instruction: *And now I say unto you, my sons, love righteousness and walk therein; For the paths of righteousness are worthy of acceptation, But the paths of unrighteousness shall suddenly be destroyed and vanish.* (1 Enoch 94:1). He also knew that some would see both roads and still walk the wrong one: *And to certain men of a generation shall the paths of violence and of death be revealed, And they shall hold themselves afar from them, And shall not follow them.* (1 Enoch 94:2), *And now I say unto you the righteous: Walk not in the paths of wickedness, nor in the paths of death, And draw not nigh to them, lest ye be destroyed.* (1 Enoch 94:3). The Sermon on the Mount does not invent the two ways; it hands them back to the people they were given to, and binds them to what follows in the chapter, the ones who say Lord, Lord and are told to depart, and the two builders. The narrow way is the way of the commandments Moses set before them, and the few who find it are the ones who walk in it.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:13",
+     "tgt": "enoch/1-enoch 94:1",
+     "member_note": "1 Enoch 94:1 — *paths of righteousness ... paths of unrighteousness shall suddenly be destroyed.* The Two-Ways teaching in the patriarch's wisdom-testimony; Matt 7:13's wide gate to destruction walks the same."
+    },
+    {
+     "src": "7:14",
+     "tgt": "enoch/1-enoch 94:2",
+     "member_note": "1 Enoch 94:2 — *certain men of a generation ... shall not find mercy.* The Hebrew library's asymmetric few-walk-aright architecture; Matt 7:14's *few there be that find it* walks the same."
+    }
+   ]
+  },
+  {
+   "slug": "wise-and-foolish-builders-and-the-heart-stablished-in-sirach",
+   "title": "Wise and foolish builders — Sirach 22:16-18 and the heart stablished",
+   "anchor": null,
+   "member_count": 6,
+   "summary_md": "Matt 7:24-27's wise-and-foolish-builders parable walks an architecture the Hebrew library's wisdom-stream had named at the heart-stablished-by-counsel level. Sirach (Ecclesiasticus) 22:16 names the direct parallel to the rock-foundation of the wise: *as timber girt and bound together in a building cannot be loosed with shaking: so the heart that is stablished by advised counsel shall fear at no time.* Sirach 22:17 names the heart-settled-on-understanding architecture: *a heart settled upon a thought of understanding is as a fair plaistering on the wall of a gallery.* Sirach 22:18 names the inverse — the foolish heart: *pales set on an high place will never stand against the wind: so a fearful heart in the imagination of a fool cannot stand against any fear.* The wisdom-stream had been naming the foundation-architecture and its inverse for centuries; Matt 7:24-27 walks the same architecture at the kingdom-citizens hearer-and-doer level. The wise hearer-and-doer's heart is stablished by the King's sayings; the foolish hearer-without-the-doing's heart cannot stand against the wind. The doing IS the foundation-establishing act, and the wisdom-stream had named the architecture before.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:24",
+     "tgt": "apocrypha/ecclesiasticus 22:16",
+     "member_note": "Ecclesiasticus 22:16 — *so the heart that is stablished by advised counsel shall fear at no time.* The hearer and doer who built on the rock (Matthew 7:24) has the heart Sirach describes."
+    },
+    {
+     "src": "7:24",
+     "tgt": "apocrypha/ecclesiasticus 22:17",
+     "member_note": "Ecclesiasticus 22:17 — *A heart settled upon a thought of understanding.* The settled heart is the hearer and doer of Matthew 7:24."
+    },
+    {
+     "src": "7:25",
+     "tgt": "apocrypha/ecclesiasticus 22:18",
+     "member_note": "Ecclesiasticus 22:18 — *so a fearful heart in the imagination of a fool cannot stand against any fear.* The wind of Matthew 7:25 that cannot move the house on the rock blows the pales flat."
+    }
+   ]
+  }
+ ]
+}

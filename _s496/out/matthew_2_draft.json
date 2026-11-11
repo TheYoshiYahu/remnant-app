@@ -1,0 +1,247 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "chapter": 2,
+ "cards": [
+  {
+   "id": 2601,
+   "prose": "The wise men of Babylon were the ones Daniel was set over, so when wise men come out of the east asking after a newborn King there is a road behind them. The chief of their schools had been a man of Yahuah (the LORD), and it is reasonable to think what he knew of the coming King did not simply vanish from that country.",
+   "member_phrase": "made him ruler over the whole province of Babylon, and chief of the governors over all the wise men of Babylon",
+   "member_sentence": "Daniel is made chief over the wise men of Babylon, which gives the eastern wise men of Matthew a prophet's name behind their watching.",
+   "thread": "magi-astronomical-tradition",
+   "flag": "The link from Daniel to the later wise men is an inference carried over from the old note, written here as a likelihood and not as something the text states."
+  },
+  {
+   "id": 2603,
+   "prose": "Daniel was given the span of time before the most Holy is anointed, and the wise men asking where the King is born came from the country where that prophet had served. They arrive in the season his seventy weeks pointed to, looking for the one he was told would come.",
+   "member_phrase": "to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy",
+   "member_sentence": "Daniel's seventy weeks fix the time of the anointed one, the timing the eastern wise men could have drawn from the prophet who served in their land.",
+   "thread": "magi-astronomical-tradition",
+   "flag": ""
+  },
+  {
+   "id": 2604,
+   "prose": "The star going before them until it stood over the place is the same kind of leading as the pillar of cloud and of fire: Yahuah (the LORD) going before travelers by a sign they could see. The sign does not leave them until they are standing where he meant them to be.",
+   "member_phrase": "went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light",
+   "member_sentence": "Yahuah (the LORD) went before his people by day and by night in a visible sign, as the star goes before the wise men to the child.",
+   "thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "flag": ""
+  },
+  {
+   "id": 2606,
+   "prose": "Herod is troubled at the news of a newborn King of the Yahudim (Jews), and the oracle against Edom shows what lies under his trouble. Herod was an Edomite by descent, and the sin named here is Edom's violence against his brother Jacob, which Herod now turns on the child of David's line.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Obadiah names Edom's violence against his brother Jacob, the old wrong that Herod's fear of the newborn King repeats.",
+   "thread": "matthew-2-herod-and-the-old-hatred-of-esau",
+   "flag": ""
+  },
+  {
+   "id": 2607,
+   "prose": "Moses sent word to the king of Edom and called him brother, and Edom would not let Yashar'el (Israel) through. That is the first time the brother's house stands in the way, and Herod's trouble at a King born in Bethlehem is the same standing in the way many centuries later.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Moses calls Edom's king his brother and asks for passage, the first place in the story where Edom stands against Yashar'el (Israel).",
+   "thread": "matthew-2-herod-and-the-old-hatred-of-esau",
+   "flag": ""
+  },
+  {
+   "id": 2608,
+   "prose": "Against that long grudge stands Yahuah's (the LORD's) own word, *yet I loved Jacob*. Herod may shake the whole city, but the choice was made before he was born, and it is the blessed line he is reaching for when he asks where the King is to be found.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahuah (the LORD) says he loved Jacob and answers the question of Esau and Jacob, the choice that stands under Herod's hatred.",
+   "thread": "matthew-2-herod-and-the-old-hatred-of-esau",
+   "flag": ""
+  },
+  {
+   "id": 2609,
+   "prose": "This is the word of Yahuah (the LORD) that came to Ezekiel against Mount Seir, Esau's mountain, and it begins with him speaking and not with Edom's strength. Herod troubled in Jerusalem is sitting under that same word against a hatred that would not end.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The word of Yahuah (the LORD) comes to Ezekiel against Mount Seir, the answer to Edom's lasting hatred of Yashar'el (Israel).",
+   "thread": "matthew-2-herod-and-the-old-hatred-of-esau",
+   "flag": ""
+  },
+  {
+   "id": 2610,
+   "prose": "The psalmist asks Yahuah (the LORD) to remember what the sons of Edom said on the day Jerusalem fell, *Rase it, rase it*. When Herod is troubled and all Jerusalem with him, the city has heard that cry before and has already asked to have it remembered.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The psalmist asks Yahuah (the LORD) to remember Edom's cry to level Jerusalem, the same hostility now sitting on the throne at Herod's court.",
+   "thread": "matthew-2-herod-and-the-old-hatred-of-esau",
+   "flag": ""
+  },
+  {
+   "id": 2611,
+   "prose": "Esau's hatred of Jacob went as far as murder in his heart because of the blessing, and Herod's order to kill the children in Bethlehem is that same hatred reaching for the line the blessing ran through. The children who died stand where the blessing was meant to pass.",
+   "member_phrase": "And Esau hated Jacob because of the blessing wherewith his father blessed him",
+   "member_sentence": "Esau hates Jacob for the blessing and resolves to kill him, the first murder planned out of that hatred, which Herod acts on at Bethlehem.",
+   "thread": "matthew-2-herod-and-the-old-hatred-of-esau",
+   "flag": ""
+  },
+  {
+   "id": 2613,
+   "prose": "A new king who knew not Joseph is where the sons of Yashar'el (Israel) are first pressed down in Egypt, and Joseph in Matthew is told to carry the child down into that same land because another king means to destroy him. The land that was once a place of oppression becomes a hiding place from Herod.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "A new king arises over Egypt who knew not Joseph, the beginning of the hard rule that falls on the sons of Yashar'el (Israel).",
+   "thread": "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+   "flag": "The old note describes Pharaoh's order to kill the Hebrew boys, which is a few verses later; the prose follows what this verse actually says, the new king who knew not Joseph."
+  },
+  {
+   "id": 2614,
+   "prose": "Moses' parents were both of Levi, and the child they hid and then set on the water lived while the king's order took the others. Joseph taking the young child away by night is the same rescue of the one the king wants dead.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "A man and woman of Levi hide and then save their goodly child, Moses, from the king who is killing the Hebrew boys.",
+   "thread": "pharaoh-mosheh-herod-yahusha-infant-slaughter",
+   "flag": ""
+  },
+  {
+   "id": 2615,
+   "prose": "Jacob went down into Egypt with all that he had, and Elohim (God) spoke to him in the visions of the night about the going. Joseph takes the young child down by night on a warning from the angel of Yahuah (the Lord), so the road down follows the road the fathers walked.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Jacob journeys toward Egypt with all he had and offers at Beer-sheba, the fathers' road down that Joseph and the child walk again.",
+   "thread": "matthean-yoseph-and-the-patriarch-yoseph",
+   "flag": ""
+  },
+  {
+   "id": 2616,
+   "prose": "The sons of Yashar'el (Israel) were in Egypt four hundred and thirty years before they were brought out, and the child's stay there is short beside it. It ends the same way, with a word from Yahuah (the LORD) to come out, so Matthew sets him on the road his people took, down and then up.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The sojourn of the children of Yashar'el (Israel) in Egypt is counted at four hundred and thirty years before the going out.",
+   "thread": "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+   "flag": ""
+  },
+  {
+   "id": 2617,
+   "prose": "Moses is told in Midian to go back to Egypt because the men who sought his life are dead, and Joseph is told almost the same thing in his dream. The words are close enough that the reader hears Moses behind the child, with both men called back because the ones who hunted them are gone.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahuah (the LORD) tells Moses in Midian to return to Egypt because the men who sought his life are dead, the words the angel echoes to Joseph.",
+   "thread": "matthew-2-flight-to-egypt-out-of-egypt-have-i-called-my-son-hosea-11-exodus-4",
+   "flag": ""
+  },
+  {
+   "id": 2620,
+   "prose": "The weeping at Bethlehem is quoted out of the chapter where Yahuah (the LORD) promises *a new covenant* with the house of Yashar'el (Israel) and the house of Yahudah (Judah). Both houses are named, and the comfort for Rachel's lost children is that they are being brought back into his covenant, with his instruction written inward and not set aside.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahuah (the LORD) promises a new covenant with both the house of Yashar'el (Israel) and the house of Yahudah (Judah), the comfort the same chapter gives Rachel.",
+   "thread": "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+   "flag": ""
+  },
+  {
+   "id": 2621,
+   "prose": "Rachel died in childbirth a little way from Ephrath, which is Bethlehem, so the mother whose weeping Matthew hears lies buried beside the very road where the children were killed. The cry is not a figure of speech here; it rises from where she was laid.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Rachel travails and dies a little way from Ephrath, which is Bethlehem, fixing her weeping at the place Herod's soldiers came.",
+   "thread": "rachel-buried-at-bethlehem",
+   "flag": ""
+  },
+  {
+   "id": 2622,
+   "prose": "*They shall come with weeping* says the same chapter that gives Rachel her tears, and the children who were taken are led home by a straight way where they do not stumble. Rachel's sons are the northern house, and the weeping is over their being carried away, not over their being finished, since *Ephraim is my firstborn*.",
+   "member_phrase": "They shall come with weeping, and with supplications will I lead them: I will cause them to walk by the rivers of waters in a straight way",
+   "member_sentence": "Yahuah (the LORD) leads the weeping remnant of Yashar'el (Israel) home by a straight way, with Ephraim, Rachel's grandson, called his firstborn.",
+   "thread": "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+   "flag": ""
+  },
+  {
+   "id": 2623,
+   "prose": "At the table Yahusha (Jesus) speaks of his blood *of the new testament*, and that is the covenant Rachel's chapter promised to both houses. The weeping at Bethlehem opens toward it, because *the remission of sins* is the door by which the children carried away are brought home, and not an end to the commandments.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahusha (Jesus) names his blood as the blood of the new covenant, the covenant of the chapter from which Rachel's weeping is quoted.",
+   "thread": "matthew-2-rachel-weeping-for-her-children-lament-that-opens-onto-restoration-jeremiah-31",
+   "flag": ""
+  },
+  {
+   "id": 2625,
+   "prose": "Matthew says the prophets, plural, called him a Nazarene, and Jeremiah is one of them, naming *a righteous Branch* raised up to David who will reign. The verses just before promise the flock gathered out of every country, so the Branch is the King of a scattered people being brought home.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Jeremiah promises a righteous Branch raised to David, who reigns over the flock gathered back from the countries where it was driven.",
+   "thread": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 2626,
+   "prose": "Again the prophet says the Branch will be made to grow up to David and will *execute judgment and righteousness in the land*. A King who grows up in a small town of Galilee fits that way of speaking, because the prophets describe him as growing up and not as arriving in a palace.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Jeremiah says Yahuah (the LORD) will cause the Branch of righteousness to grow up to David and execute judgment in the land.",
+   "thread": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 2627,
+   "prose": "*My servant the BRANCH* is promised to Joshua the high priest and those who sit before him as a sign of something to be wondered at. Matthew's *a Nazarene* carries the same name, worn by a servant who comes quietly from a small place.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahuah (the LORD) promises to bring forth his servant the Branch, spoken to Joshua the high priest as a sign of what is coming.",
+   "thread": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 2628,
+   "prose": "Here the Branch is named outright, and it is said of him that *he shall grow up out of his place*. That is what Matthew shows in a child who is carried out of danger and settled in a Galilean town, to grow up where he was put, as the prophet said.",
+   "member_phrase": "Behold the man whose name is The BRANCH; and he shall grow up out of his place",
+   "member_sentence": "Zechariah names the man whose name is the Branch, who grows up out of his place and builds the house of Yahuah (the LORD).",
+   "thread": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 3250,
+   "prose": "The scribes answer Herod with *In Bethlehem of Judaea*, and this is the page of the prophet they read it from. The ruler comes out of a town too small to count among the thousands of Yahudah (Judah), yet his *goings forth have been from of old, from everlasting*, so the child born there is older than the town.",
+   "member_phrase": "yet out of thee shall he come forth unto me that is to be ruler in Yashar'el (Israel); whose goings forth have been from of old, from everlasting",
+   "member_sentence": "Micah names Bethlehem Ephratah as the place from which the ruler in Yashar'el (Israel) comes, whose goings forth are from of old.",
+   "thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "flag": ""
+  },
+  {
+   "id": 3251,
+   "prose": "Bethlehem was a town where Yahuah (the LORD) had already gone looking for a king, in the house of Jesse, after he rejected Saul. When the scribes name Bethlehem they are naming David's town, so the King Herod fears is born where the first of that line was found.",
+   "member_phrase": "And Yahuah (LORD) said unto Samuel, How long wilt thou mourn for Saul, seeing I have rejected him from reigning over Yashar'el (Israel)? fill thine horn with oil, and go",
+   "member_sentence": "Yahuah (the LORD) sends Samuel to Jesse the Bethlehemite, because he has provided a king among his sons.",
+   "thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "flag": ""
+  },
+  {
+   "id": 3252,
+   "prose": "When Samuel came to Bethlehem the elders of the town trembled and asked if he came peaceably, because the business of a king was dangerous in that place. Now a king is born there again and it is the ruling house in Jerusalem that is troubled.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Samuel comes to Bethlehem at Yahuah's (the LORD's) word and the elders tremble at his coming, the place where David was found.",
+   "thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "flag": ""
+  },
+  {
+   "id": 3253,
+   "prose": "The elders at the gate asked Yahuah (the LORD) to make Ruth like Rachel and Leah, who built the house of Yashar'el (Israel), and to let Boaz *be famous in Beth-lehem*. Ruth came into the line by marriage to a son of Yahudah (Judah), and from that marriage David came, so the King of Bethlehem has the whole house built into him.",
+   "member_phrase": "Yahuah (LORD) make the woman that is come into thine house like Rachel and like Leah, which two did build the house of Yashar'el (Israel)",
+   "member_sentence": "At the gate in Bethlehem, Ruth is blessed to be like Rachel and Leah, who built the house of Yashar'el (Israel), in the marriage that leads to David.",
+   "thread": "matthew-2-bethlehem-the-star-born-king-the-ruler-out-of-judah-micah-5-numbers-24",
+   "flag": ""
+  },
+  {
+   "id": 3255,
+   "prose": "The frankincense among the spices Moses was given for the holy incense is the second gift laid before the child. It was *pure frankincense* in the worship of Yahuah (the LORD) at the tabernacle, so a priestly thing is set at the feet of a King.",
+   "member_phrase": "Take unto thee sweet spices, stacte, and onycha, and galbanum; these sweet spices with pure frankincense",
+   "member_sentence": "Yahuah (the LORD) tells Moses to compound the holy incense with pure frankincense, the priestly use of the gift the wise men bring.",
+   "thread": "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+   "flag": "The thread's summary describes the wise men as the nations coming in, which I did not follow; I wrote only what the gifts themselves say."
+  },
+  {
+   "id": 3256,
+   "prose": "Myrrh scents the garments of the King in this psalm, so it is a royal gift before it is anything else. The wise men put it in the hands of a child, and myrrh is also what a body is anointed with, so it points ahead to the day he would be given it again.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Myrrh, aloes and cassia scent the King's garments in the psalm, a royal perfume that the wise men lay before the child.",
+   "thread": "matthew-2-wise-men-from-the-east-gold-frankincense-myrrh-nations-to-the-king-isaiah-60-psalm-72",
+   "flag": "The thread's summary describes the wise men as the nations coming in, which I did not follow; I wrote only what the gifts themselves say."
+  },
+  {
+   "id": 3258,
+   "prose": "Joseph turns *aside into the parts of Galilee*, and Isaiah's verse names that country: the land of Zebulun and Naphtali, the northern tribes the Assyrian struck first. It is the old northern ground where the scattered house was carried off, and the light the prophet goes on to promise rises there first.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah names Zebulun and Naphtali, Galilee, as the first land afflicted, the northern country where the light is promised next.",
+   "thread": "matthew-2-he-shall-be-called-a-nazarene-the-netzer-branch-isaiah-11-judges-13-isaiah-53",
+   "flag": "I moved this card from the fulfilling thread to the Nazarene thread because the verse is about the Galilee where Joseph settles."
+  }
+ ],
+ "new_threads": [
+  {
+   "slug": "matthew-2-herod-and-the-old-hatred-of-esau",
+   "title": "Herod and the old hatred of Esau for Jacob (Genesis 27; Numbers 20; Obadiah; Psalm 137; Malachi 1; Ezekiel 35)",
+   "summary_md": "It ain't new. When Herod the king hears that a King of the Yahudim (Jews) is born, the scripture says he is shaken:\n\n*When Herod the king had heard these things, he was troubled, and all Jerusalem with him.* (Matthew 2:3)\n\nThe reader who looks back finds the same hatred in the same family, running from the first brothers to this king. Esau's heart was set on murder because of the blessing:\n\n*And Esau hated Jacob because of the blessing wherewith his father blessed him: and Esau said in his heart, The days of mourning for my father are at hand; then will I slay my brother Jacob.* (Genesis 27:41)\n\nThe prophets name Edom's violence against Jacob, and give it its answer:\n\n*For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* (Obadiah 1:10)\n\nThe psalmist carries the cry that was made over the city on the day it fell:\n\n*Remember, O Yahuah (LORD), the children of Edom in the day of Jerusalem; who said, Rase it, rase it, even to the foundation thereof.* (Psalm 137:7)\n\nOver all of it stands the word of Yahuah (the LORD) that does not move with the kings:\n\n*I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,* (Malachi 1:2)\n\nHerod's order shows where the old hatred lands. He cannot find the child, so he reaches for every child he can find:\n\n*Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* (Matthew 2:16)\n\nThe cards here set Herod beside Edom's first refusal of his brother at the border, the word given to Ezekiel against Mount Seir, and the other places the same hatred shows. What it names is a king and a system, never the people under them, and every one of those verses ends with the blessing standing.",
+   "anchor_start_vn": 3,
+   "anchor_end_vn": 16
+  }
+ ]
+}

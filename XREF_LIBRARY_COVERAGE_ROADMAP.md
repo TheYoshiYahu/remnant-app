@@ -287,3 +287,17 @@ means a back-fill can re-run safely over the already-merged canon rows.
   (e) Doc-ref hits library-wide: 27 real (20 Matthew S1xx cards, 2 Mark `thread:` notes, 5 member notes incl. "queued for S184", 2 summaries
   naming Yoshi/a session) + 6 Matthew threads (ids 7–19) whose summary opens with the slug in bold code — all inside the Matthew rebuild.
 - **2026-11-09 (S495 close, Yoshi's word): CLOSED (c) and (d) above** — `git rm` of session181_{romans,galatians,revelation}_xref_threads.sql + session154_matt_17_extras_cross_references.sql and the 12 identical " 2.*" migration copies, committed 340228b and pushed. `session181_john_xref_threads.sql` stays (applied, 16/16 live); `session181_revelation_xref_threads.sql.pre-s440` left in place. S495 commit fb90f56 also pushed.
+- **2026-11-10 (S496 close) — MATTHEW REBUILD BATCH 1 (Matthew 1–7) DEPLOYED.** 200 orphan cards rewritten in place (ids kept; Come-and-See:
+  target verse whole from parsed/canon.json, Matthew verse whole as it reads live, plain prose), 200 thread members added (49 existing threads
+  filled, 3 new threads), 10 unanchored threads anchored. Chain `_s496/` (assemble496 · gen_sql496 · seed496 · check496 · dump496 · gen_deploy496 —
+  the UPDATE path beside the S495 INSERT chain, same guards): Sonnet 5.5 drafts per chapter packet → Fable voice read (out/*_fixed.json; 15 drafter
+  flags kept as working readings inside the texts) → assemble PASS → migration `data-schema/migrations/session496_matthew_b1_rebuild.sql`
+  (guards: live text moved / live note edited / card already in another thread / thread already anchored elsewhere → RAISE, nothing lands;
+  partial → reported, the rest lands) → scratch ×2 on Postgres 16 seeded from the Nov 9 read-back, plus all five tampers, PASS (re-run Nov 10
+  before deploy, since the Nov 9 scratch proof did not survive the sandbox) → DEPLOYED Nov 10 22:21 CST (`_session496_matthew_b1_deploy.log`):
+  read-back 200/200 notes, 200/200 members, 3/3 threads, 10/10 anchors, 0 dup pairs, chapters 1–7 each 0 orphans, check496 PASS.
+  Matthew orphans left: 1,108 (chapters 8–28); Mark 169, Luke 61, the rest 24 untouched. Live read-back of Matthew after deploy:
+  `_s496/scratch/matthew_b1_live_after.json` — the next batch re-dumps anyway.
+  NEXT (S497): batch b2 = Matthew 8–13 (248 orphans per the map; add `'b2': ('matthew', range(8, 14))` to BATCHES in common496 — the chain is
+  otherwise batch-agnostic); then 14–19 (294), 20–24 (368), 25–28 (198), then Mark + Luke together (230). Each batch: re-dump Matthew first,
+  Sonnet packets → Fable read → assemble → scratch ×2 + tampers → Yoshi's deploy paste → read-back → close.
