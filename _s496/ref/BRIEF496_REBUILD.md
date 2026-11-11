@@ -1,4 +1,4 @@
-# S496 — the Matthew card rebuild, batch 1 (Matthew 1–7) — brief for every drafting agent
+# S496 — the Matthew card rebuild, batch 2 (Matthew 8–13) — brief for every drafting agent
 
 You are REWRITING existing cross-reference cards in a study Bible. Each card already ties one verse of Matthew (the
 SOURCE) to one verse elsewhere in the canon (the TARGET). The pairs stay exactly as they are — you do not add, drop
@@ -40,7 +40,7 @@ retype scripture from memory anywhere.
   `tgt_text_kjv` (the part of the target verse that carries the point). Verses of about 25 words or fewer: `WHOLE`.
 - **`member_sentence`** — one plain sentence (10–30 words) for the thread list, saying what this target verse adds.
 - **`thread`** — the `slug` of the existing thread the card belongs in, chosen by reading the thread's summary and
-  members against the card. Every pericope of Matthew 1–7 already has a thread, so nearly every card joins one.
+  members against the card. Nearly every pericope of Matthew 8–13 already has a thread, so nearly every card joins one.
   A thread that exists gets FILLED, never duplicated. Prefer the thread anchored on the card's own Matthew verse
   whose subject matches; use one of the wide theme threads (no Matthew anchor) only when the card is plainly about
   that theme and not about its own pericope's thread.

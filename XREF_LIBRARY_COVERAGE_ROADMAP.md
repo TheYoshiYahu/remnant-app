@@ -301,3 +301,17 @@ means a back-fill can re-run safely over the already-merged canon rows.
   NEXT (S497): batch b2 = Matthew 8–13 (248 orphans per the map; add `'b2': ('matthew', range(8, 14))` to BATCHES in common496 — the chain is
   otherwise batch-agnostic); then 14–19 (294), 20–24 (368), 25–28 (198), then Mark + Luke together (230). Each batch: re-dump Matthew first,
   Sonnet packets → Fable read → assemble → scratch ×2 + tampers → Yoshi's deploy paste → read-back → close.
+- **2026-11-11 (S497) — MATTHEW REBUILD BATCH 2 (Matthew 8–13) DEPLOYED.** Live Matthew re-dumped first (Nov 10 22:34, orphan 1,108 confirmed).
+  248 orphan cards rewritten in place, 248 members (44 existing threads filled, 5 new: matthew-8-let-the-dead-bury-their-dead; matthew-10-the-twelve-
+  called-and-the-twelve-tribes; matthew-10-heal-the-sick-freely-ye-have-received; matthew-10-shake-off-the-dust-and-sodom; matthew-10-until-the-son-
+  of-adam-be-come), 9 unanchored extras threads anchored on their own summaries' opening verses (10:22; 10:32–33; 13:10–17; 13:24–30 ×2; 13:34–35;
+  13:38–39; 13:43; 13:47–50). Same chain as b1 (`'b2'` added to BATCHES; packet496 takes the batch; precheck496 finds the batch from the chapter).
+  Six Sonnet 5.5 drafters in parallel → Fable read of every card (`_s496/tools/read496_b2.py`: 12 corrections — ch 12 family-of-the-Father cards
+  "made by / not by blood" → "known by"; ch 13 leaven cards de-hedged to the thread's corruption reading; Genesis 18:6 restored to Yahuah at
+  Abraham's tent; the rest grammar) → assemble PASS (38 drafter flags, all working readings inside the texts) → scratch ×2 + five tampers PASS →
+  DEPLOYED Nov 11 00:28 CST (`_session496_matthew_b2_deploy.log`): 248/248 · 248/248 · 5/5 · 9/9 · 0 dups · 8–13 each 0 orphans · check496 PASS.
+  Matthew orphans left: 860 (chapters 14–28). The cards as they read: `_s496/out/matthew_b2_cards.md`.
+  FOR THE SUMMARIES SWEEP (outside this chain): the live centurion thread (matthew-8-many-from-east-and-west…) summary still says "Gentile soldier"
+  and "the believing stranger"; other S1xx thread summaries carry "stranger grafted in" language the cards no longer follow. NOTED: 1 John 3:4 and
+  3:8 in parsed/canon.json read "goes on sinning" (a per-verse rendering, not the KJV wording) — cards quote it as the library carries it.
+  NEXT (S498): batch b3 = Matthew 14–19 (map counts 42, 41, 38, 51, 50, 72 = 294) — add `'b3': ('matthew', range(14, 20))`; re-dump first.

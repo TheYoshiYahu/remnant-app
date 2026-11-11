@@ -1,14 +1,16 @@
-"""S496 — packet496.py: one drafter packet per Matthew chapter (1–7) for the orphan-card REBUILD, from the Nov 9 live read-back,
+"""S496 — packet496.py <batch>: one drafter packet per Matthew chapter of the batch (b1 = 1–7, b2 = 8–13) for the orphan-card REBUILD, from the Nov 9 live read-back,
 the S495 orphan map and parsed/canon.json. Model: Claude Fable 5.1 (claude-fable-5-1)."""
 import json, sys, os
 from pathlib import Path
 os.environ.setdefault('S495_HOME', str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common495 import *
+from common496 import BATCHES
+BATCH = sys.argv[1] if len(sys.argv) > 1 else 'b1'; CHAPTERS = BATCHES[BATCH][1]
 D = json.load(open(W / 'live' / 'canon__matthew.json')); M = json.load(open(W / 'map' / 'matthew_orphan_map.json'))
 MC = {c['id']: c for c in M['cards']}; T = {t['slug']: t for t in D['threads']}
 TITLES = canon_titles(); TITLES['psalms'] = 'Psalm'
-for ch in range(1, 8):
+for ch in CHAPTERS:
     orph = [c for c in D['cards'] if c['orphan'] and c['s_book'] == 'matthew' and c['s_ch'] == ch]
     slugs = {t['slug'] for t in D['threads'] if t['a_book'] == 'matthew' and t['a_ch'] == ch}
     slugs |= {m['slug'] for m in D['members'] if m['s_book'] == 'matthew' and m['s_ch'] == ch}

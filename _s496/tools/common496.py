@@ -12,7 +12,7 @@ for p in (HERE, W6.parent / '_s495' / 'tools'):
 if not os.environ.get('S495_HOME') and (HERE / 'common495.py').exists(): os.environ['S495_HOME'] = str(W6)   # sandbox layout: live/ parsed/ beside tools/
 from common495 import *   # W (the S495 root: live/, parsed/), parsed_text, NAMES, norm, quote_in, has_phrase_of, forbidden_scan, TRAIL_RE, LEAD_RE, ...
 
-BATCHES = {'b1': ('matthew', range(1, 8))}
+BATCHES = {'b1': ('matthew', range(1, 8)), 'b2': ('matthew', range(8, 14))}
 ED = 'canon'
 TITLES = dict(canon_titles()); TITLES['psalms'] = 'Psalm'
 def live_file(book): return W / 'live' / f'canon__{book}.json'

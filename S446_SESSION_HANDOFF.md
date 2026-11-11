@@ -443,3 +443,7 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
 - Build Nov 9: 200 orphan cards in Matthew 1–7 rewritten Come-and-See (Sonnet drafts, Fable read), 3 new threads, 10 anchors, UPDATE chain `_s496/` written beside the S495 chain; migration + deploy script generated. Session ended before the close (no roadmap entry, no commit).
 - Nov 10: scratch ×2 + five tampers re-run on a fresh Postgres 16 (PASS 7/7, tampers 2/2 ×4 + 3/3); Yoshi deployed 22:21 CST — read-back 200/200 · 200/200 · 3/3 · 10/10 · 0 dups · 0 orphans in 1–7 · check496 PASS. Roadmap entry written; S497 open prompt written.
 - NOT done: git push (Yoshi). Four tracked files were already modified before this session (S479_SESSION_OPEN_PROMPT.md, _s460_check.py, two source-texts JSONs) — left out of the S496 commit, unexamined.
+
+### S497 — Nov 10 22:35 – Nov 11 00:30 — Matthew rebuild batch 2 (8–13) DEPLOYED
+- Re-dump (Yoshi's paste; the Mac-side sandbox volume is full, asyncpg can't install there — DB steps stay pastes), six Sonnet drafters in parallel, Fable read every card (12 corrections), 5 new threads, 9 anchors, scratch ×2 + tampers PASS, deployed 00:28 CST, read-back PASS. 860 Matthew orphans left (14–28).
+- NOT done: git push (Yoshi). The four pre-existing modified tracked files still left alone. Open prompt: S498_SESSION_OPEN_PROMPT.md.
