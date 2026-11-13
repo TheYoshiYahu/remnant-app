@@ -50,6 +50,24 @@
   font-display: swap;
   unicode-range: U+0800-083F;
 }
+/* ----- Nov 13 2026 — Lora, the reading face, self-hosted (SIL OFL; variable
+   weight 400–700, upright + italic). Replaces the Google Fonts <link> in
+   index.html so no reader's browser calls Google. ----- */
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-wght.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-Italic-wght.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 .heb-paleo { font-family: 'Noto Sans Phoenician', sans-serif; direction: rtl; }
 .heb-samaritan { font-family: 'Noto Sans Samaritan', sans-serif; direction: rtl; }
 .heb-square { font-family: 'SBL Hebrew', 'Ezra SIL', serif; direction: rtl; }

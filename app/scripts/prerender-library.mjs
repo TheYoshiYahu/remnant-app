@@ -24,6 +24,9 @@
  * deploy with a half-written library. (Render keeps the previous deploy
  * when the build command exits non-zero.)
  *
+ * No fonts from Google's servers (Nov 13 2026 — standing rule: no Big Tech
+ * calls from a reader's browser); the pages use the system serif.
+ *
  * Verify by content after a deploy: open a canon chapter and a teaser
  * chapter and read the verses against the app.
  */
@@ -105,7 +108,7 @@ const CSS = `
 :root{--bg:#0a0e1a;--text:#ffffff;--muted:#b8bcc8;--accent:#0084ff;--card:#131a2b;--rule:#223050}
 @media (prefers-color-scheme:light){:root{--bg:#fafaf7;--text:#1a1a1a;--muted:#555;--card:#f0efe9;--rule:#d8d6cc}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Lora,Georgia,"Times New Roman",serif;line-height:1.65;font-size:18px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.65;font-size:18px}
 main{max-width:680px;margin:0 auto;padding:24px 16px 64px}
 header.site{font-size:14px;color:var(--muted);letter-spacing:.04em}
 header.site a{color:var(--muted);text-decoration:none}
@@ -152,9 +155,6 @@ function shell({ title, description, canonical, body, ogTitle }) {
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:image" content="${SITE}/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>${CSS}</style>
 </head>
 <body>
