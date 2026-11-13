@@ -28,7 +28,8 @@
  * chapter and read the verses against the app.
  */
 
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, readFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -128,6 +129,8 @@ ul.books li{margin:6px 0}
 ul.books a{color:var(--text);text-decoration:none}
 h2.cat{font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:28px 0 8px}
 footer{margin-top:48px;font-size:14px;color:var(--muted)}
+.doors p{color:var(--text)}
+.doors .btn{margin:4px 0}
 footer a{color:var(--muted)}
 `;
 
@@ -242,18 +245,60 @@ ${TASTE_SCRIPT}`;
   return { url, html: shell({ title, description, canonical: url, body, ogTitle: `${name} ${n} — Restored Names Edition` }) };
 }
 
-function bookPage({ book, name, chapters }) {
+// S499 (Nov 2026) — book pages carry Yoshi's own introduction from the
+// published Restored Names editions (app/scripts/library-intros/<slug>.md,
+// extracted verbatim from source-texts/parsed/*.json front_matter; the
+// fourteen Apocrypha books share _apocrypha.md), the opening paragraph of
+// chapter 1, and the two doors: read it here, or get the app. A book with
+// no intro file gets the edition line and the opening paragraph only — the
+// intro is Yoshi's to write, not the build's.
+const INTROS = path.resolve(HERE, "library-intros");
+const APPSTORE = "https://apps.apple.com/app/id6778134531";
+const PLAY = "https://play.google.com/store/apps/details?id=com.remnantofpromise.bible";
+async function loadIntro(book) {
+  const candidates = [path.join(INTROS, `${book.slug}.md`), path.join(INTROS, `_${book.edition_slug}.md`)];
+  for (const f of candidates) {
+    if (!existsSync(f)) continue;
+    const md = await readFile(f, "utf8");
+    return md.replace(/<!--[\s\S]*?-->/g, "").split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  }
+  return null;
+}
+function doors({ book, name, teaser, firstN = 1 }) {
+  return `<section class="card doors">
+<h2>Read ${esc(name)}</h2>
+<p>Two ways in. Read it here on the web, chapter by chapter${teaser ? " — the first paragraph of each chapter is open to everyone, and the whole book opens with the 7-day free trial" : " — free, every chapter"}. Or get the app and read it with the restored names, the audio, the cross-references, and the rest of the library beside it.</p>
+<p><a class="btn" href="/library/${book.slug}/${firstN}/">Read chapter ${firstN} here</a> &nbsp; <a class="btn secondary" href="/read?book=${encodeURIComponent(book.slug)}&amp;chapter=${firstN}">Open in the web app</a></p>
+<p><a class="btn secondary" href="${APPSTORE}">App Store</a> &nbsp; <a class="btn secondary" href="${PLAY}">Google Play</a>${teaser ? ` &nbsp; <a class="btn secondary" href="/pricing">7-day free trial</a>` : ""}</p>
+</section>`;
+}
+async function bookPage({ book, name, chapters }) {
   const url = `${SITE}/library/${book.slug}/`;
   const teaser = chapters[0]?.teaser;
+  const intro = await loadIntro(book);
+  const firstCh = chapters.find((c) => c.verses?.length) ?? chapters[0];
+  const opening = firstCh?.verses ?? [];
+  const firstN = firstCh?.chapter_number ?? 1;
   const title = `${name} — Restored Names Edition | Remnant of Promise Study Bible`;
-  const description = `${book.title}, Restored Names Edition: ${chapters.length} chapters${teaser ? ", the first paragraph of each free to read, the whole book with the 7-day trial" : ", free to read"}.`;
+  const description = intro
+    ? `${intro[0].slice(0, 155)}`
+    : `${book.title}, Restored Names Edition: ${chapters.length} chapters${teaser ? ", the first paragraph of each free to read, the whole book with the 7-day trial" : ", free to read"}.`;
   const list = chapters.map((c) => `<li><a href="/library/${book.slug}/${c.chapter_number}/">${c.chapter_number}</a></li>`).join("");
+  const introHtml = intro
+    ? `<h2>About this book</h2>\n${intro.map((p) => `<p>${esc(p)}</p>`).join("\n")}`
+    : (book.abstract ? `<p class="intro">${esc(book.abstract)}</p>` : "");
+  const openingHtml = opening.length
+    ? `<h2>How it opens</h2>\n${opening.map((v) => `<p class="v"><sup class="n">${v.verse_number}</sup>${esc(v.text)}</p>`).join("\n")}\n<p><a href="/library/${book.slug}/${firstN}/">Keep reading chapter ${firstN} →</a></p>`
+    : "";
   const body = `
 <h1>${esc(book.title)}</h1>
 <p class="edition">Restored Names Edition · ${chapters.length} chapters${teaser ? " · partner library (first paragraph of each chapter free)" : " · free"}</p>
-${book.abstract ? `<p class="intro">${esc(book.abstract)}</p>` : ""}
+${doors({ book, name, teaser, firstN })}
+${introHtml}
+${openingHtml}
+<h2>Chapters</h2>
 <ul class="chapters">${list}</ul>
-<p style="margin-top:24px"><a class="btn secondary" href="/read?book=${encodeURIComponent(book.slug)}&amp;chapter=1">Open in the app</a>${teaser ? ` &nbsp; <a class="btn" href="/pricing">Start the 7-day free trial</a>` : ""}</p>`;
+${doors({ book, name, teaser, firstN })}`;
   return { url, html: shell({ title, description, canonical: url, body }) };
 }
 
@@ -319,7 +364,7 @@ async function main() {
   const lib = libraryPage(books);
   await writePage(lib.url, lib.html); urls.push(lib.url);
   for (let k = 0; k < books.length; k++) {
-    const p = bookPage({ book: books[k], name: displayName(books[k]), chapters: fetched[k].chapters });
+    const p = await bookPage({ book: books[k], name: displayName(books[k]), chapters: fetched[k].chapters });
     await writePage(p.url, p.html); urls.push(p.url);
   }
   let pages = 0, verses = 0;
