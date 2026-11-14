@@ -1,0 +1,464 @@
+{
+ "model": "Claude Sonnet 5.5",
+ "chapter": 20,
+ "cards": [
+  {
+   "id": 3719,
+   "prose": "The householder who *went out early in the morning* to hire labourers walks into a field Isaiah had already sung about, the beloved's vineyard *in a very fruitful hill*. Isaiah calls on *men of Yahudah (Judah), judge, I pray you, betwixt me and my vineyard* (Isaiah 5:3), so the people hearing this parable knew whose vineyard it was: the house of Yashar'el (Israel).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah sings of the beloved's vineyard on a fruitful hill, the same vineyard the householder goes out to hire labourers into.",
+   "thread": "the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3720,
+   "prose": "The householder has to go out and hire because the vineyard has been ruined. Jeremiah names the ruin: *Many pastors have destroyed my vineyard*, and what they trod down was *my pleasant portion*, left a wilderness. The labourers are sent into that same vineyard, the house of Yashar'el (Israel), to work what its own shepherds laid waste.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Jeremiah says the shepherds destroyed the vineyard of Yahuah (the LORD) and made his pleasant portion a wilderness, the field the householder hires into.",
+   "thread": "the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3721,
+   "prose": "The householder answers the murmuring labourer, *Friend, I do thee no wrong*, and two verses later asks *Is thine eye evil, because I am good?* (Matthew 20:15). The eye in Matthew 6:22 is that same eye: when *thine eye be single*, the whole body is full of light, and the evil eye is the one that begrudges what the master chose to give.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "A single eye fills the whole body with light, and the verse after it names the evil eye, the charge the householder lays on the murmurer.",
+   "thread": "the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3722,
+   "prose": "The householder's question about an evil eye was not new. Moses had already named it, *thine eye be evil against thy poor brother*, and counted the withholding as sin. The labourers hired at dawn look at the men hired last, who had stood idle because *no man hath hired us* (Matthew 20:7), and begrudge them the penny the master chose to give.",
+   "member_phrase": "thine eye be evil against thy poor brother, and thou givest him nought",
+   "member_sentence": "Moses calls the eye that begrudges a poor brother evil and counts the withholding as sin before Yahuah (the LORD).",
+   "thread": "the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3723,
+   "prose": "Proverbs counts the evil eye as a grudging heart behind a generous-looking table: *his heart is not with thee* (Proverbs 23:7). The labourer who murmurs at the penny given to the last hired has the same eye, grudging the goodness of the one who hired him, and *an evil eye* is the name the householder gives it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Proverbs treats the evil eye as a grudging heart behind outward generosity, the same eye the householder names in the murmuring labourer.",
+   "thread": "the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3724,
+   "prose": "The men hired first had worked the whole day, and when the penny came out equal they began to measure what the others got against what they had earned. Proverbs names that grasping look: *He that hasteth to be rich hath an evil eye*. The householder's question puts the same name on it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Proverbs says the man grasping after riches has an evil eye, which is the look the householder finds in the first labourers.",
+   "thread": "the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras",
+   "flag": "Loose fit. The proverb's evil eye is greed for wealth; the card carries the shared phrase evil eye and the grasping look."
+  },
+  {
+   "id": 3725,
+   "prose": "The parable closes by saying it again, *the last shall be first, and the first last*, and the saying first came as the answer to the twelve about their seats. Just before it they had been promised thrones *judging the twelve tribes of Yashar'el (Israel)* (Matthew 19:28), so the vineyard is the picture the saying needed.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The same saying first stood at the end of Matthew 19, after the promise of thrones over the twelve tribes of Yashar'el (Israel).",
+   "thread": "many-be-called-but-few-chosen-in-1-enoch-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3726,
+   "prose": "Matthew 22:14 is the same sentence set at the wedding feast, *many are called, but few are chosen*, and there it follows a man who was inside the hall and was asked *how camest thou in hither not having a wedding garment?* (Matthew 22:12). Being called brings a man to the door, and what he is when the master looks at him is another matter.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The sentence returns at the end of the wedding feast, spoken after a guest is found in the hall without a wedding garment.",
+   "thread": "many-be-called-but-few-chosen-in-1-enoch-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3727,
+   "prose": "Isaiah is sent to *this people* with the word *Hear ye indeed, but understand not*, and the parable ends in the same place. The call reaches many ears, and the hearing that takes hold shows who the sheep already were. Hearing does not make a sheep of anyone, which is why many are called and few chosen.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah is sent to a people who hear without understanding, so the call reaching many ears is not the same as many being chosen.",
+   "thread": "many-be-called-but-few-chosen-in-1-enoch-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3728,
+   "prose": "Revelation says of the ones with the Lamb that they are *called, and chosen, and faithful*, three things said together of the same people. Matthew 20:16 says many are called and few chosen, and here the few are found standing with the Lamb when war is made on him and he overcomes.",
+   "member_phrase": "they that are with him are called, and chosen, and faithful",
+   "member_sentence": "Revelation says the ones with the Lamb are called, and chosen, and faithful, so the few chosen of Matthew are found standing with him.",
+   "thread": "many-be-called-but-few-chosen-in-1-enoch-and-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 3729,
+   "prose": "Matthew 16:21 is where Yahusha (Jesus) first began to show his disciples that he *must go unto Jerusalem* and *suffer many things* from the elders, chief priests and scribes. In 20:17 he is on the road at last, *going up to Jerusalem*, and he takes the twelve apart to tell them again.",
+   "member_phrase": "he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes",
+   "member_sentence": "The first telling names Jerusalem and the elders, chief priests and scribes at whose hands he would be killed.",
+   "thread": "matthew-20-the-third-passion-foretelling",
+   "flag": ""
+  },
+  {
+   "id": 3730,
+   "prose": "The second telling came in Galilee, that the Son of Adam *shall be betrayed*, and *they were exceeding sorry* (Matthew 17:23). On the road to Jerusalem he takes the twelve apart a third time, and now the betrayal has a place and names: the chief priests and the scribes.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The second telling in Galilee says the Son of Adam will be betrayed into the hands of men.",
+   "thread": "matthew-20-the-third-passion-foretelling",
+   "flag": ""
+  },
+  {
+   "id": 3731,
+   "prose": "He takes the twelve *apart* to tell them what is coming, and Isaiah had already asked the question that follows: *Who hath believed our report?* The report is of one *despised and rejected of men* (Isaiah 53:3), and what the twelve do with it, the very next scene shows.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah asks who has believed the report of the despised and rejected servant, the report the twelve hear privately on the road.",
+   "thread": "matthew-20-the-third-passion-foretelling",
+   "flag": ""
+  },
+  {
+   "id": 3732,
+   "prose": "The road up to Jerusalem leads to the cry of Psalm 22, *why hast thou forsaken me?* It is a cry to Elohim (God) from one who still calls him *my Elohim (God)*, and the psalm goes on to remember that *Our fathers trusted in thee: they trusted, and thou didst deliver them* (Psalm 22:4).",
+   "member_phrase": "why hast thou forsaken me? why art thou so far from helping me",
+   "member_sentence": "The psalm opens with the cry of one brought low who still calls on his Elohim (God), the cry that waits at the end of this road.",
+   "thread": "matthew-20-the-third-passion-foretelling",
+   "flag": ""
+  },
+  {
+   "id": 3733,
+   "prose": "Daniel says that after *threescore and two weeks* *shall Messiah be cut off, but not for himself*, and that the city and the sanctuary are destroyed after it. Yahusha (Jesus) is on the road to that city, telling the twelve he will be condemned there, so the cutting off Daniel names is the one he is walking toward.",
+   "member_phrase": "shall Messiah be cut off, but not for himself",
+   "member_sentence": "Daniel says that after threescore and two weeks Messiah (Christ) is cut off, but not for himself, and the city and the sanctuary are destroyed.",
+   "thread": "matthew-20-the-third-passion-foretelling",
+   "flag": ""
+  },
+  {
+   "id": 3734,
+   "prose": "Yahuah (the LORD) says through Zechariah that he will pour out *the spirit of grace and of supplications*, and *they shall look upon me whom they have pierced*, and mourn *as one mourneth for his only son*. The one going up to Jerusalem to be handed over and crucified is the one they will look on, and the looking is for the house of David and the people of that city.",
+   "member_phrase": "they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son",
+   "member_sentence": "Zechariah has Yahuah (the LORD) say the house of David will look on him whom they pierced and mourn as for an only son.",
+   "thread": "matthew-20-the-third-passion-foretelling",
+   "flag": ""
+  },
+  {
+   "id": 3735,
+   "prose": "Yahuah (the LORD) calls the sword against *my shepherd, and against the man that is my fellow*, and *the sheep shall be scattered*. Yahusha (Jesus) takes the twelve apart to tell them the shepherd will be struck, and Zechariah goes on to a third brought through the fire until they say *It is my people* (Zechariah 13:9).",
+   "member_phrase": "smite the shepherd, and the sheep shall be scattered",
+   "member_sentence": "Zechariah calls the sword against the shepherd who is Yahuah's (the LORD's) fellow, and the sheep are scattered, with a third left to be refined.",
+   "thread": "matthew-20-the-third-passion-foretelling",
+   "flag": ""
+  },
+  {
+   "id": 3736,
+   "prose": "James and John were mending nets with their father Zebedee when he called them, and they *immediately left the ship and their father* (Matthew 4:22) and followed him. Now their mother comes *with her sons* to ask for places beside him, so the two who left everything are the two for whom the highest seats are asked.",
+   "member_phrase": "he saw other two brethren, James the son of Zebedee, and John his brother",
+   "member_sentence": "Matthew 4:21 shows James and John called from their father's ship, the two whose mother now asks the highest places for them.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3737,
+   "prose": "James and John were among the three Yahusha (Jesus) took *up into an high mountain apart*, where Moses and Elijah talked with him. Their mother's request, *the one on thy right hand, and the other on the left* (Matthew 20:21), asks that the nearness they had on that mountain be kept in his kingdom.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "James and John were two of the three taken up the high mountain, the nearness their mother now asks to have in the kingdom.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3738,
+   "prose": "In Mark the sons speak for themselves, asking that he *do for us whatsoever we shall desire*, where Matthew has their mother bring them. Whoever voices it, the answer is the same in both: *Ye know not what ye ask* (Mark 10:38).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Mark has James and John ask for themselves, wanting whatever they desire, where Matthew has their mother ask for them.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3739,
+   "prose": "He asks the sons whether they can *drink of the cup that I shall drink of*, and in Gethsemane he prays over that same cup, *let this cup pass from me*. He is Elohim (God) and he has a Father: the cup is the Father's, and he takes it, *not as I will, but as thou wilt*.",
+   "member_phrase": "O my Father, if it be possible, let this cup pass from me",
+   "member_sentence": "In Gethsemane he prays about the same cup, asking his Father that it pass from him and then yielding to his Father's will.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3740,
+   "prose": "The second prayer answers the sons' *We are able*: *except I drink it, thy will be done*. The cup is not taken away, and he drinks it because it is the Father's will, which is more than the sons knew they were claiming.",
+   "member_phrase": "if this cup may not pass away from me, except I drink it, thy will be done",
+   "member_sentence": "The second prayer in Gethsemane accepts the cup if it may not pass, putting the Father's will above his own.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3741,
+   "prose": "The cup he asks about is the one in Psalm 75, where *the wine is red*, *full of mixture*. It is the cup of judgment from the hand of Yahuah (the LORD), poured out until the dregs are drunk, and it is the cup he says he will drink and asks the sons whether they can.",
+   "member_phrase": "there is a cup, and the wine is red; it is full of mixture; and he poureth out of the same",
+   "member_sentence": "Psalm 75 puts a cup of red wine in the hand of Yahuah (the LORD), full of mixture, which the wicked of the earth drink to the dregs.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3742,
+   "prose": "Isaiah tells Jerusalem she has drunk *the cup of his fury*, down to *the dregs of the cup of trembling*. The cup Yahusha (Jesus) speaks of is that one, and he names it on the road up to the same city.",
+   "member_phrase": "hast drunk at the hand of Yahuah (LORD) the cup of his fury",
+   "member_sentence": "Isaiah says Jerusalem has drunk the cup of fury from the hand of Yahuah (the LORD) to the dregs, the cup of trembling.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3743,
+   "prose": "Isaiah tells the afflicted that Elohim (God), who pleads the cause of his people, says *I have taken out of thine hand the cup of trembling*, and *thou shalt no more drink it again*. Yahusha (Jesus) says *the cup that I shall drink of* as one who is going to take it up himself, so the people's cup becomes his.",
+   "member_phrase": "I have taken out of thine hand the cup of trembling, even the dregs of the cup of my fury; thou shalt no more drink it again",
+   "member_sentence": "Isaiah has Elohim (God) take the cup of trembling out of his people's hand so that they drink it no more.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3744,
+   "prose": "Jeremiah is told *Take the wine cup of this fury at my hand*, and it goes first to *Jerusalem, and the cities of Yahudah (Judah)* (Jeremiah 25:18) and then to all the nations. That is the kind of cup Yahusha (Jesus) puts before the sons, a cup that is sent and not chosen, and the request for thrones had not counted on it.",
+   "member_phrase": "Take the wine cup of this fury at my hand, and cause all the nations, to whom I send thee, to drink it",
+   "member_sentence": "Jeremiah is handed the wine cup of fury by Yahuah (the LORD), the Elohim (God) of Yashar'el (Israel), to make the nations drink, Jerusalem first.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": ""
+  },
+  {
+   "id": 3745,
+   "prose": "Habakkuk says the cup from the right hand of Yahuah (the LORD) *shall be turned unto thee*, and that shame takes the place of glory for the one it is turned on. Yahusha (Jesus) answers a request for glory with a cup out of that same hand, so the sons are being asked whether they know whose hand it comes from.",
+   "member_phrase": "shall be turned unto thee, and shameful spewing shall be on thy glory",
+   "member_sentence": "Habakkuk says the cup from the right hand of Yahuah (the LORD) is turned on the one who drinks, bringing shame where glory was.",
+   "thread": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "flag": "Habakkuk's cup is turned on a violent oppressor; the card carries only that the cup comes from Yahuah's (the LORD's) right hand. Held loosely."
+  },
+  {
+   "id": 3746,
+   "prose": "Mark places the saying after the ten *began to be much displeased with James and John* (Mark 10:41). Where Matthew has *the princes of the Gentiles exercise dominion*, Mark has those *accounted to rule over the Gentiles exercise lordship over them*, and in both the order among Yahusha's (Jesus's) own is the opposite.",
+   "member_phrase": "Ye know that they which are accounted to rule over the Gentiles exercise lordship over them",
+   "member_sentence": "Mark gives the same saying about the rulers of the Gentiles who exercise lordship, spoken after the ten grow displeased with James and John.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3747,
+   "prose": "Luke has the same quarrel at a later hour, *a strife among them*, and the answer runs the same way: *The kings of the Gentiles exercise lordship over them* (Luke 22:25), but he is among them *as he that serveth* (Luke 22:27).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Luke records a strife among the twelve over who was greatest, answered by the same contrast between the rulers of the Gentiles and the one who serves.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3748,
+   "prose": "Daniel is told of *the prince of the kingdom of Persia*, who *withstood me one and twenty days* until *Michael, one of the chief princes, came to help me*. Those princes over the kingdoms of the nations are the rulers Yahusha (Jesus) sets his twelve apart from when he says *the princes of the Gentiles exercise dominion over them*.",
+   "member_phrase": "the prince of the kingdom of Persia withstood me one and twenty days",
+   "member_sentence": "Daniel is told that the prince of the kingdom of Persia withstood the messenger until Michael, one of the chief princes, came to help.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3749,
+   "prose": "The messenger tells Daniel he will *return to fight with the prince of Persia*, and that *the prince of Grecia shall come* after him. Persia and Greece each have their prince, and these are the rulers over the nations whom Yahusha (Jesus) has in view when he tells the twelve *it shall not be so among you* (Matthew 20:26).",
+   "member_phrase": "now will I return to fight with the prince of Persia: and when I am gone forth, lo, the prince of Grecia shall come",
+   "member_sentence": "Daniel's messenger says he will go back to fight the prince of Persia and that the prince of Grecia will follow.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3750,
+   "prose": "Ephesians says the struggle is *against principalities, against powers*, against *the rulers of the darkness of this world*. Beside Yahusha's (Jesus's) *princes of the Gentiles* it shows that the dominion he warns the twelve about has rulers behind the human ones, and he tells them *it shall not be so among you* (Matthew 20:26).",
+   "member_phrase": "we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world",
+   "member_sentence": "Ephesians names principalities, powers and the rulers of the darkness of this world behind the struggle, which stands beside the princes of the Gentiles.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": "Loose pair. Ephesians 6:12 is Paul's wider word on rulers; the card only sets it beside the princes of the Gentiles."
+  },
+  {
+   "id": 3751,
+   "prose": "The *ransom for many* is the offering Isaiah describes, *make his soul an offering for sin*, after which *he shall see his seed*. The many are his people, for whose transgression *was he stricken* (Isaiah 53:8), the seed of both houses of Yashar'el (Israel).",
+   "member_phrase": "make his soul an offering for sin, he shall see his seed, he shall prolong his days",
+   "member_sentence": "Isaiah says that when his soul is made an offering for sin the servant shall see his seed and prolong his days.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3752,
+   "prose": "Psalm 49 says no man can *redeem his brother*, and the next verse gives the reason: *the redemption of their soul is precious* (Psalm 49:8). The ransom Yahusha (Jesus) gives is the one no brother could give, which is why the Son of Adam has to *give his life*.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Psalm 49 says no man can redeem his brother or pay Elohim (God) a ransom for him, so a ransom for many has to be given by another.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3753,
+   "prose": "The Torah's word for ransom is a price laid on a life that would otherwise be forfeit: *he shall give for the ransom of his life*. When Yahusha (Jesus) says the Son of Adam came *to give his life a ransom for many*, he uses the Torah's own word, and this time the price is the life of the one who gives it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Exodus lets a man whose life is forfeit give a ransom for his life, whatever price is laid on him, the Torah's own picture of a ransom.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3754,
+   "prose": "Yahuah (the LORD) speaks to Moses and sets a ransom on every numbered soul: *then shall they give every man a ransom for his soul unto Yahuah (LORD)* (Exodus 30:12), paid as *half a shekel after the shekel of the sanctuary* (Exodus 30:13). The ransom Yahusha (Jesus) names is no new idea beside the Torah, which had already told Moses that every soul needs one.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahuah (the LORD) begins the instruction for the ransom each numbered soul gives, the half shekel set out in the verses that follow.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": "The target verse 30:11 is only the introduction; the ransom itself is 30:12-16, quoted in the prose."
+  },
+  {
+   "id": 3755,
+   "prose": "Daniel is told that seventy weeks are fixed *upon thy people and upon thy holy city* for the ending of transgression, and for *reconciliation for iniquity, and to bring in everlasting righteousness*. Matthew's ransom is a life given, and Daniel's verse names what such a giving is for: iniquity covered and righteousness brought in for his people.",
+   "member_phrase": "to make reconciliation for iniquity, and to bring in everlasting righteousness",
+   "member_sentence": "Daniel's seventy weeks are fixed upon his people and holy city to end transgression, make reconciliation for iniquity and bring in everlasting righteousness.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3756,
+   "prose": "Paul writes that there is *one mediator between Elohim (God) and men*, and in the next verse that he *gave himself a ransom for all* (1 Timothy 2:6). Matthew's Son of Adam gives his life *a ransom for many*, and Paul sets the man Yahusha (Jesus) as the one who stands between.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Paul says there is one Elohim (God) and one mediator, the man Yahusha (Jesus) the Messiah (Christ), who gave himself a ransom.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": "Paul's all beside Matthew's many; the context has Paul teacher of the Gentiles (1 Timothy 2:7). Read as the many of Isaiah's seed; flagged for the author."
+  },
+  {
+   "id": 3757,
+   "prose": "Peter reminds his readers *ye were not redeemed with corruptible things, as silver and gold*, and the verse after gives the price: *the precious blood of Messiah (Christ)* (1 Peter 1:19). That is the cost of the ransom Matthew names, a life given, which no half shekel of silver could stand for.",
+   "member_phrase": "ye were not redeemed with corruptible things, as silver and gold",
+   "member_sentence": "Peter says the redeemed were bought not with silver and gold but with the precious blood of Messiah (Christ), the price of the ransom.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3758,
+   "prose": "The song to the Lamb says *thou wast slain*, and the redeemed are taken *out of every kindred, and tongue, and people, and nation*. The ransom Matthew names comes back as redeeming by blood, and the many it covers are gathered from where they were scattered.",
+   "member_phrase": "thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation",
+   "member_sentence": "The song to the Lamb says he was slain and redeemed us to Elohim (God) by his blood out of every kindred, tongue, people and nation.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3759,
+   "prose": "Matthew's *to minister* is seen in John 13, where Yahusha (Jesus) *knew that his hour was come* and *loved them unto the end*. Knowing *that the Father had given all things into his hands* (John 13:3), he *took a towel, and girded himself* (John 13:4), the servant's place he had just told the twelve to take.",
+   "member_phrase": "having loved his own which were in the world, he loved them unto the end",
+   "member_sentence": "John shows Yahusha (Jesus) knowing his hour had come and loving his own to the end, the setting for the service he then performs.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3760,
+   "prose": "Paul calls for the mind *which was also in HaMashiach Yahusha (Christ Jesus)*, and says what it looked like: *being in the form of Elohim (God)* (Philippians 2:6), he *took upon him the form of a servant* (Philippians 2:7). That is Matthew's Son of Adam, who *came not to be ministered unto, but to minister*.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Paul sets the mind of Yahusha (Jesus) the Messiah (Christ) before his readers, the one who took the form of a servant.",
+   "thread": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "flag": ""
+  },
+  {
+   "id": 3761,
+   "prose": "Matthew has now told this cry twice. In Galilee two blind men followed him *crying, and saying, Thou Son of David, have mercy on us*, and on the road out of Jericho two more cry it again, louder when the crowd tells them to hold their peace.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Two blind men in Galilee had already followed him crying Thou Son of David, have mercy on us, before the pair at Jericho.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3762,
+   "prose": "The woman of Canaan on the coast of Tyre and Sidon said the same words, *Have mercy on me, O Adonai (Lord), thou Son of David*, and when he told her he was sent *unto the lost sheep of the house of Yashar'el (Israel)* (Matthew 15:24), she came and worshipped him. The blind men at Jericho make the same confession.",
+   "member_phrase": "Have mercy on me, O Adonai (Lord), thou Son of David",
+   "member_sentence": "The woman of Canaan on the Tyre and Sidon coast calls him Son of David too, a lost sheep of Yashar'el (Israel) naming the shepherd.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3763,
+   "prose": "The two men were told to hold their peace for crying *Son of David*, and a few verses later the multitudes going before and following him cry *Hosanna to the Son of David*. The title is the same, and at the entry it comes with *Blessed is he that cometh in the name of Yahuah (Lord)*.",
+   "member_phrase": "Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord)",
+   "member_sentence": "The multitudes at the entry cry Hosanna to the Son of David, the same title the two blind men would not stop crying at Jericho.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3764,
+   "prose": "The title is cried again by children in the temple, *Hosanna to the Son of David*, and the chief priests and scribes *were sore displeased*. The blind men were hushed by a crowd and the children by the rulers, and in both the ones who name him David's Son are the ones told to be quiet.",
+   "member_phrase": "the children crying in the temple, and saying, Hosanna to the Son of David",
+   "member_sentence": "Children cry Hosanna to the Son of David in the temple while the chief priests and scribes are sore displeased.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3765,
+   "prose": "The blind men cry *Son of David* and are right. In the temple he asks the Pharisees *whose son is he?* (Matthew 22:42) and then how David in spirit calls him *Adonai (Lord)* (Matthew 22:43), the one told *Sit thou on my right hand* (Matthew 22:44), so the title is true without being the whole of who he is.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The question about David's Son begins here, with Yahusha (Jesus) asking the gathered Pharisees what they think of the Messiah (Christ).",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": "The target verse 22:41 only sets up the question; the point sits in 22:42-44, quoted in the prose."
+  },
+  {
+   "id": 3766,
+   "prose": "The blind men's *Son of David* rests on the promise to David, *I will set up thy seed after thee*, and the next verse says *I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The title is a claim on that throne, made by two men beside a road.",
+   "member_phrase": "I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom",
+   "member_sentence": "Yahuah (the LORD) promises David a seed whose kingdom he will establish, the promise the title Son of David reaches back to.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3767,
+   "prose": "Isaiah has *a rod out of the stem of Jesse* and a Branch growing from his roots, and the blind men's title names that Branch by its family. The verses after say what he does: *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth* (Isaiah 11:4), and two poor men by the road are asking for him.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah has a rod come from the stem of Jesse and a Branch grow from his roots, the family the title Son of David names.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3768,
+   "prose": "Yahuah (the LORD) says through Jeremiah that he will *raise unto David a righteous Branch*, and the verses around it set that Branch among the gathering of *the remnant of my flock out of all countries* (Jeremiah 23:3), when *Yahudah (Judah) shall be saved, and Yashar'el (Israel) shall dwell safely* (Jeremiah 23:6). The Son of David the blind men call is that Branch.",
+   "member_phrase": "I will raise unto David a righteous Branch",
+   "member_sentence": "Jeremiah has Yahuah (the LORD) promise a righteous Branch for David, who will execute judgment and justice in the earth.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3769,
+   "prose": "Ezekiel hears Yahuah (the LORD) say *I will set up one shepherd over them*, *even my servant David*, for a flock whose strong ones had *pushed all the diseased with your horns, till ye have scattered them abroad* (Ezekiel 34:21). Two blind men shoved aside by a crowd and calling for David's Son are the diseased of that flock, and he stops for them.",
+   "member_phrase": "I will set up one shepherd over them, and he shall feed them, even my servant David",
+   "member_sentence": "Yahuah (the LORD) sets up one shepherd, his servant David, to feed the flock that was pushed about and scattered.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3770,
+   "prose": "Ezekiel's word about David the servant is spoken to the twelve tribes made one, *no more two nations* (Ezekiel 37:22), so the Son of David the blind men cry to is shepherd of the restored twelve tribes, and the flock under him is to *walk in my judgments*.",
+   "member_phrase": "David my servant shall be king over them; and they all shall have one shepherd",
+   "member_sentence": "Ezekiel has David the servant over the two houses made one, all under one shepherd and walking in the judgments and statutes of Yahuah (the LORD).",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3771,
+   "prose": "Isaiah ties *the eyes of the blind shall be opened* to the word that *he will come and save you* (Isaiah 35:4). When Yahusha (Jesus) *touched their eyes* and *immediately their eyes received sight*, the sign Isaiah gave for that coming took place on the road out of Jericho.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah gives the opening of blind eyes as the sign that Elohim (God) is coming to save, and it happens at Jericho.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": "These sight targets (Isaiah 35:5, 42:7, Psalm 146:8) are also members of the Matthew 9 two blind men thread; filed here under this card's own Matthew anchor."
+  },
+  {
+   "id": 3772,
+   "prose": "Isaiah's word about a righteous reign says *the eyes of them that see shall not be dim*, and that the hearing *shall hearken*. The two men at Jericho get their sight and then *followed him*, which is seeing and hearing joined as Isaiah describes it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah says that in a righteous reign the eyes of those who see will not be dim and those who hear will hearken.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3773,
+   "prose": "Isaiah has Yahuah (the LORD) say to his servant *will hold thine hand* (Isaiah 42:6) and send him *To open the blind eyes*. At Jericho Yahusha (Jesus) *had compassion on them, and touched their eyes*, and the servant's commission is done by a hand laid on two men sitting by the road.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah names opening blind eyes as part of the servant's commission, together with bringing prisoners and those in darkness out.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  },
+  {
+   "id": 3774,
+   "prose": "The psalm says *Yahuah (LORD) openeth the eyes of the blind*, so the sight given at Jericho is the work the psalmist assigns to Yahuah (the LORD) himself. Yahusha (Jesus) *had compassion on them, and touched their eyes*, and the same psalm says Yahuah (the LORD) *raiseth them that are bowed down*.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The psalm says Yahuah (the LORD) opens the eyes of the blind and raises the bowed down, the work done at Jericho.",
+   "thread": "the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve",
+   "flag": ""
+  }
+ ],
+ "new_threads": [
+  {
+   "slug": "matthew-20-the-third-passion-foretelling",
+   "title": "The third telling on the road up to Jerusalem",
+   "anchor_start_vn": 17,
+   "anchor_end_vn": 19,
+   "summary_md": "It ain't new. On the road up to Jerusalem Yahusha (Jesus) takes the twelve apart and tells them a third time what waits at the end of it.\n\n*Behold, we go up to Jerusalem; and the Son of Adam shall be betrayed unto the chief priests and unto the scribes, and they shall condemn him to death* (Matthew 20:18)\n\n*And shall deliver him to the Gentiles to mock, and to scourge, and to crucify him: and the third day he shall rise again.* (Matthew 20:19)\n\nThe first telling named the elders, the chief priests and the scribes, and the city.\n\n*From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day.* (Matthew 16:21)\n\nThe second came in Galilee.\n\n*And while they abode in Galilee, Yahusha (Jesus) said unto them, The Son of Adam shall be betrayed into the hands of men* (Matthew 17:22)\n\nBy the third telling he has said where, by whom and how, and the prophets had said the rest before him. Isaiah asked who would believe it.\n\n*Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1)\n\nZechariah heard the sword called against the shepherd, and the sheep scattered after him.\n\n*smite the shepherd, and the sheep shall be scattered: and I will turn mine hand upon the little ones.* (Zechariah 13:7)\n\nThe same prophet heard what the people of that city would one day do.\n\n*they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son* (Zechariah 12:10)\n\nPut together, the three tellings are not a surprise sprung on the twelve. They are the road the prophets had already walked out in words, and the twelve, who are told it privately, are the first to find it hard to hear."
+  }
+ ],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-13: every card read against both verses and the voice standard; 9 correction(s) applied in read496_b4.py; drafted on Claude Sonnet 5.5."
+}

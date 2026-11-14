@@ -1,0 +1,3141 @@
+# Matthew 20–24 rebuild — the 368 cards as they will read (S496 batch 4)
+
+Drafted on Sonnet 5.5, read and corrected on Claude Fable 5.1 (2026-11-13). Each card: the note as the reader sees it, then the thread it joins and its line in that thread.
+
+## card 3719
+
+Isaiah 5:1 — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:* *For the kingdom of heaven is like unto a man that is an householder, which went out early in the morning to hire labourers into his vineyard.* (Matthew 20:1) The householder who *went out early in the morning* to hire labourers walks into a field Isaiah had already sung about, the beloved's vineyard *in a very fruitful hill*. Isaiah calls on *men of Yahudah (Judah), judge, I pray you, betwixt me and my vineyard* (Isaiah 5:3), so the people hearing this parable knew whose vineyard it was: the house of Yashar'el (Israel).
+
+thread: `the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras`
+
+Isaiah 5:1 — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:* Isaiah sings of the beloved's vineyard on a fruitful hill, the same vineyard the householder goes out to hire labourers into.
+
+## card 3720
+
+Jeremiah 12:10 — *Many pastors have destroyed my vineyard, they have trodden my portion under foot, they have made my pleasant portion a desolate wilderness.* *For the kingdom of heaven is like unto a man that is an householder, which went out early in the morning to hire labourers into his vineyard.* (Matthew 20:1) The householder has to go out and hire because the vineyard has been ruined. Jeremiah names the ruin: *Many pastors have destroyed my vineyard*, and what they trod down was *my pleasant portion*, left a wilderness. The labourers are sent into that same vineyard, the house of Yashar'el (Israel), to work what its own shepherds laid waste.
+
+thread: `the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras`
+
+Jeremiah 12:10 — *Many pastors have destroyed my vineyard, they have trodden my portion under foot, they have made my pleasant portion a desolate wilderness.* Jeremiah says the shepherds destroyed the vineyard of Yahuah (the LORD) and made his pleasant portion a wilderness, the field the householder hires into.
+
+## card 3721
+
+Matthew 6:22 — *The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light.* *But he answered one of them, and said, Friend, I do you no wrong: did not you agree with me for a penny?* (Matthew 20:13) The householder answers the murmuring labourer, *Friend, I do thee no wrong*, and two verses later asks *Is thine eye evil, because I am good?* (Matthew 20:15). The eye in Matthew 6:22 is that same eye: when *thine eye be single*, the whole body is full of light, and the evil eye is the one that begrudges what the master chose to give.
+
+thread: `the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras`
+
+Matthew 6:22 — *The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light.* A single eye fills the whole body with light, and the verse after it names the evil eye, the charge the householder lays on the murmurer.
+
+## card 3722
+
+Deuteronomy 15:9 — *Beware that there be not a thought in thy wicked heart, saying, The seventh year, the year of release, is at hand; and thine eye be evil against thy poor brother, and thou givest him nought; and he cry unto Yahuah (LORD) against thee, and it be sin unto thee.* *But he answered one of them, and said, Friend, I do you no wrong: did not you agree with me for a penny?* (Matthew 20:13) The householder's question about an evil eye was not new. Moses had already named it, *thine eye be evil against thy poor brother*, and counted the withholding as sin. The labourers hired at dawn look at the men hired last, who had stood idle because *no man hath hired us* (Matthew 20:7), and begrudge them the penny the master chose to give.
+
+thread: `the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras`
+
+Deuteronomy 15:9 — *thine eye be evil against thy poor brother, and thou givest him nought.* Moses calls the eye that begrudges a poor brother evil and counts the withholding as sin before Yahuah (the LORD).
+
+## card 3723
+
+Proverbs 23:6 — *Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats:* *But he answered one of them, and said, Friend, I do you no wrong: did not you agree with me for a penny?* (Matthew 20:13) Proverbs counts the evil eye as a grudging heart behind a generous-looking table: *his heart is not with thee* (Proverbs 23:7). The labourer who murmurs at the penny given to the last hired has the same eye, grudging the goodness of the one who hired him, and *an evil eye* is the name the householder gives it.
+
+thread: `the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras`
+
+Proverbs 23:6 — *Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats:* Proverbs treats the evil eye as a grudging heart behind outward generosity, the same eye the householder names in the murmuring labourer.
+
+## card 3724
+
+Proverbs 28:22 — *He that hasteth to be rich hath an evil eye, and considereth not that poverty shall come upon him.* *But he answered one of them, and said, Friend, I do you no wrong: did not you agree with me for a penny?* (Matthew 20:13) The men hired first had worked the whole day, and when the penny came out equal they began to measure what the others got against what they had earned. Proverbs names that grasping look: *He that hasteth to be rich hath an evil eye*. The householder's question puts the same name on it.
+
+thread: `the-vineyard-of-yashar-el-and-the-sovereign-grace-of-the-master-in-sirach-and-2-esdras`
+
+Proverbs 28:22 — *He that hasteth to be rich hath an evil eye, and considereth not that poverty shall come upon him.* Proverbs says the man grasping after riches has an evil eye, which is the look the householder finds in the first labourers.
+
+## card 3725
+
+Matthew 19:30 — *But many that are first shall be last; and the last shall be first.* *So the last shall be first, and the first last: for many be called, but few chosen.* (Matthew 20:16) The parable closes by saying it again, *the last shall be first, and the first last*, and the saying first came as the answer to the twelve about their seats. Just before it they had been promised thrones *judging the twelve tribes of Yashar'el (Israel)* (Matthew 19:28), so the vineyard is the picture the saying needed.
+
+thread: `many-be-called-but-few-chosen-in-1-enoch-and-2-esdras`
+
+Matthew 19:30 — *But many that are first shall be last; and the last shall be first.* The same saying first stood at the end of Matthew 19, after the promise of thrones over the twelve tribes of Yashar'el (Israel).
+
+## card 3726
+
+Matthew 22:14 — *For many are called, but few are chosen.* *So the last shall be first, and the first last: for many be called, but few chosen.* (Matthew 20:16) Matthew 22:14 is the same sentence set at the wedding feast, *many are called, but few are chosen*, and there it follows a man who was inside the hall and was asked *how camest thou in hither not having a wedding garment?* (Matthew 22:12). Being called brings a man to the door, and what he is when the master looks at him is another matter.
+
+thread: `many-be-called-but-few-chosen-in-1-enoch-and-2-esdras`
+
+Matthew 22:14 — *For many are called, but few are chosen.* The sentence returns at the end of the wedding feast, spoken after a guest is found in the hall without a wedding garment.
+
+## card 3727
+
+Isaiah 6:9 — *And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.* *So the last shall be first, and the first last: for many be called, but few chosen.* (Matthew 20:16) Isaiah is sent to *this people* with the word *Hear ye indeed, but understand not*, and the parable ends in the same place. The call reaches many ears, and the hearing that takes hold shows who the sheep already were. Hearing does not make a sheep of anyone, which is why many are called and few chosen.
+
+thread: `many-be-called-but-few-chosen-in-1-enoch-and-2-esdras`
+
+Isaiah 6:9 — *And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.* Isaiah is sent to a people who hear without understanding, so the call reaching many ears is not the same as many being chosen.
+
+## card 3728
+
+Revelation 17:14 — *These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful.* *So the last shall be first, and the first last: for many be called, but few chosen.* (Matthew 20:16) Revelation says of the ones with the Lamb that they are *called, and chosen, and faithful*, three things said together of the same people. Matthew 20:16 says many are called and few chosen, and here the few are found standing with the Lamb when war is made on him and he overcomes.
+
+thread: `many-be-called-but-few-chosen-in-1-enoch-and-2-esdras`
+
+Revelation 17:14 — *they that are with him are called, and chosen, and faithful.* Revelation says the ones with the Lamb are called, and chosen, and faithful, so the few chosen of Matthew are found standing with him.
+
+## card 3729
+
+Matthew 16:21 — *From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day.* *And Yahusha (Jesus) going up to Jerusalem took the twelve disciples apart in the way, and said unto them,* (Matthew 20:17) Matthew 16:21 is where Yahusha (Jesus) first began to show his disciples that he *must go unto Jerusalem* and *suffer many things* from the elders, chief priests and scribes. In 20:17 he is on the road at last, *going up to Jerusalem*, and he takes the twelve apart to tell them again.
+
+thread: `matthew-20-the-third-passion-foretelling`
+
+Matthew 16:21 — *he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes.* The first telling names Jerusalem and the elders, chief priests and scribes at whose hands he would be killed.
+
+## card 3730
+
+Matthew 17:22 — *And while they abode in Galilee, Yahusha (Jesus) said unto them, The Son of Adam shall be betrayed into the hands of men:* *And Yahusha (Jesus) going up to Jerusalem took the twelve disciples apart in the way, and said unto them,* (Matthew 20:17) The second telling came in Galilee, that the Son of Adam *shall be betrayed*, and *they were exceeding sorry* (Matthew 17:23). On the road to Jerusalem he takes the twelve apart a third time, and now the betrayal has a place and names: the chief priests and the scribes.
+
+thread: `matthew-20-the-third-passion-foretelling`
+
+Matthew 17:22 — *And while they abode in Galilee, Yahusha (Jesus) said unto them, The Son of Adam shall be betrayed into the hands of men:* The second telling in Galilee says the Son of Adam will be betrayed into the hands of men.
+
+## card 3731
+
+Isaiah 53:1 — *Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* *And Yahusha (Jesus) going up to Jerusalem took the twelve disciples apart in the way, and said unto them,* (Matthew 20:17) He takes the twelve *apart* to tell them what is coming, and Isaiah had already asked the question that follows: *Who hath believed our report?* The report is of one *despised and rejected of men* (Isaiah 53:3), and what the twelve do with it, the very next scene shows.
+
+thread: `matthew-20-the-third-passion-foretelling`
+
+Isaiah 53:1 — *Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* Isaiah asks who has believed the report of the despised and rejected servant, the report the twelve hear privately on the road.
+
+## card 3732
+
+Psalm 22:1 — *My Elohim (God), my Elohim (God), why hast thou forsaken me? why art thou so far from helping me, and from the words of my roaring?* *And Yahusha (Jesus) going up to Jerusalem took the twelve disciples apart in the way, and said unto them,* (Matthew 20:17) The road up to Jerusalem leads to the cry of Psalm 22, *why hast thou forsaken me?* It is a cry to Elohim (God) from one who still calls him *my Elohim (God)*, and the psalm goes on to remember that *Our fathers trusted in thee: they trusted, and thou didst deliver them* (Psalm 22:4).
+
+thread: `matthew-20-the-third-passion-foretelling`
+
+Psalm 22:1 — *why hast thou forsaken me? why art thou so far from helping me.* The psalm opens with the cry of one brought low who still calls on his Elohim (God), the cry that waits at the end of this road.
+
+## card 3733
+
+Daniel 9:26 — *And after threescore and two weeks shall Messiah be cut off, but not for himself: and the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof shall be with a flood, and unto the end of the war desolations are determined.* *And Yahusha (Jesus) going up to Jerusalem took the twelve disciples apart in the way, and said unto them,* (Matthew 20:17) Daniel says that after *threescore and two weeks* *shall Messiah be cut off, but not for himself*, and that the city and the sanctuary are destroyed after it. Yahusha (Jesus) is on the road to that city, telling the twelve he will be condemned there, so the cutting off Daniel names is the one he is walking toward.
+
+thread: `matthew-20-the-third-passion-foretelling`
+
+Daniel 9:26 — *shall Messiah be cut off, but not for himself.* Daniel says that after threescore and two weeks Messiah (Christ) is cut off, but not for himself, and the city and the sanctuary are destroyed.
+
+## card 3734
+
+Zechariah 12:10 — *And I will pour upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of supplications: and they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn.* *And Yahusha (Jesus) going up to Jerusalem took the twelve disciples apart in the way, and said unto them,* (Matthew 20:17) Yahuah (the LORD) says through Zechariah that he will pour out *the spirit of grace and of supplications*, and *they shall look upon me whom they have pierced*, and mourn *as one mourneth for his only son*. The one going up to Jerusalem to be handed over and crucified is the one they will look on, and the looking is for the house of David and the people of that city.
+
+thread: `matthew-20-the-third-passion-foretelling`
+
+Zechariah 12:10 — *they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son.* Zechariah has Yahuah (the LORD) say the house of David will look on him whom they pierced and mourn as for an only son.
+
+## card 3735
+
+Zechariah 13:7 — *Awake, O sword, against my shepherd, and against the man that is my fellow, saith Yahuah Tseva'ot (LORD of hosts): smite the shepherd, and the sheep shall be scattered: and I will turn mine hand upon the little ones.* *And Yahusha (Jesus) going up to Jerusalem took the twelve disciples apart in the way, and said unto them,* (Matthew 20:17) Yahuah (the LORD) calls the sword against *my shepherd, and against the man that is my fellow*, and *the sheep shall be scattered*. Yahusha (Jesus) takes the twelve apart to tell them the shepherd will be struck, and Zechariah goes on to a third brought through the fire until they say *It is my people* (Zechariah 13:9).
+
+thread: `matthew-20-the-third-passion-foretelling`
+
+Zechariah 13:7 — *smite the shepherd, and the sheep shall be scattered.* Zechariah calls the sword against the shepherd who is Yahuah's (the LORD's) fellow, and the sheep are scattered, with a third left to be refined.
+
+## card 3736
+
+Matthew 4:21 — *And going on from thence, he saw other two brethren, James the son of Zebedee, and John his brother, in a ship with Zebedee their father, mending their nets; and he called them.* *Then came to him the mother of Zebedee’s children with her sons, worshipping him, and desiring a certain thing of him.* (Matthew 20:20) James and John were mending nets with their father Zebedee when he called them, and they *immediately left the ship and their father* (Matthew 4:22) and followed him. Now their mother comes *with her sons* to ask for places beside him, so the two who left everything are the two for whom the highest seats are asked.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Matthew 4:21 — *he saw other two brethren, James the son of Zebedee, and John his brother.* Matthew 4:21 shows James and John called from their father's ship, the two whose mother now asks the highest places for them.
+
+## card 3737
+
+Matthew 17:1 — *And after six days Yahusha (Jesus) taketh Peter, James, and John his brother, and bringeth them up into an high mountain apart,* *Then came to him the mother of Zebedee’s children with her sons, worshipping him, and desiring a certain thing of him.* (Matthew 20:20) James and John were among the three Yahusha (Jesus) took *up into an high mountain apart*, where Moses and Elijah talked with him. Their mother's request, *the one on thy right hand, and the other on the left* (Matthew 20:21), asks that the nearness they had on that mountain be kept in his kingdom.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Matthew 17:1 — *And after six days Yahusha (Jesus) taketh Peter, James, and John his brother, and bringeth them up into an high mountain apart,* James and John were two of the three taken up the high mountain, the nearness their mother now asks to have in the kingdom.
+
+## card 3738
+
+Mark 10:35 — *And James and John, the sons of Zebedee, come unto him, saying, Master, we would that thou shouldest do for us whatsoever we shall desire.* *Then came to him the mother of Zebedee’s children with her sons, worshipping him, and desiring a certain thing of him.* (Matthew 20:20) In Mark the sons speak for themselves, asking that he *do for us whatsoever we shall desire*, where Matthew has their mother bring them. Whoever voices it, the answer is the same in both: *Ye know not what ye ask* (Mark 10:38).
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Mark 10:35 — *And James and John, the sons of Zebedee, come unto him, saying, Master, we would that thou shouldest do for us whatsoever we shall desire.* Mark has James and John ask for themselves, wanting whatever they desire, where Matthew has their mother ask for them.
+
+## card 3739
+
+Matthew 26:39 — *And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.* *But Yahusha (Jesus) answered and said, You know not what you ask. Are you able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.* (Matthew 20:22) He asks the sons whether they can *drink of the cup that I shall drink of*, and in Gethsemane he prays over that same cup, *let this cup pass from me*. He is Elohim (God) and he has a Father: the cup is the Father's, and he takes it, *not as I will, but as thou wilt*.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Matthew 26:39 — *O my Father, if it be possible, let this cup pass from me.* In Gethsemane he prays about the same cup, asking his Father that it pass from him and then yielding to his Father's will.
+
+## card 3740
+
+Matthew 26:42 — *He went away again the second time, and prayed, saying, O my Father, if this cup may not pass away from me, except I drink it, thy will be done.* *But Yahusha (Jesus) answered and said, You know not what you ask. Are you able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.* (Matthew 20:22) The second prayer answers the sons' *We are able*: *except I drink it, thy will be done*. The cup is not taken away, and he drinks it because it is the Father's will, which is more than the sons knew they were claiming.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Matthew 26:42 — *if this cup may not pass away from me, except I drink it, thy will be done.* The second prayer in Gethsemane accepts the cup if it may not pass, putting the Father's will above his own.
+
+## card 3741
+
+Psalm 75:8 — *For in the hand of Yahuah (LORD) there is a cup, and the wine is red; it is full of mixture; and he poureth out of the same: but the dregs thereof, all the wicked of the earth shall wring them out, and drink them.* *But Yahusha (Jesus) answered and said, You know not what you ask. Are you able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.* (Matthew 20:22) The cup he asks about is the one in Psalm 75, where *the wine is red*, *full of mixture*. It is the cup of judgment from the hand of Yahuah (the LORD), poured out until the dregs are drunk, and it is the cup he says he will drink and asks the sons whether they can.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Psalm 75:8 — *there is a cup, and the wine is red; it is full of mixture; and he poureth out of the same.* Psalm 75 puts a cup of red wine in the hand of Yahuah (the LORD), full of mixture, which the wicked of the earth drink to the dregs.
+
+## card 3742
+
+Isaiah 51:17 — *Awake, awake, stand up, O Jerusalem, which hast drunk at the hand of Yahuah (LORD) the cup of his fury; thou hast drunken the dregs of the cup of trembling, and wrung them out.* *But Yahusha (Jesus) answered and said, You know not what you ask. Are you able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.* (Matthew 20:22) Isaiah tells Jerusalem she has drunk *the cup of his fury*, down to *the dregs of the cup of trembling*. The cup Yahusha (Jesus) speaks of is that one, and he names it on the road up to the same city.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Isaiah 51:17 — *hast drunk at the hand of Yahuah (LORD) the cup of his fury.* Isaiah says Jerusalem has drunk the cup of fury from the hand of Yahuah (the LORD) to the dregs, the cup of trembling.
+
+## card 3743
+
+Isaiah 51:22 — *Thus saith thy Yahuah (Lord) Yahuah (LORD), and thy Elohim (God) that pleadeth the cause of his people, Behold, I have taken out of thine hand the cup of trembling, even the dregs of the cup of my fury; thou shalt no more drink it again:* *But Yahusha (Jesus) answered and said, You know not what you ask. Are you able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.* (Matthew 20:22) Isaiah tells the afflicted that Elohim (God), who pleads the cause of his people, says *I have taken out of thine hand the cup of trembling*, and *thou shalt no more drink it again*. Yahusha (Jesus) says *the cup that I shall drink of* as one who is going to take it up himself, so the people's cup becomes his.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Isaiah 51:22 — *I have taken out of thine hand the cup of trembling, even the dregs of the cup of my fury; thou shalt no more drink it again.* Isaiah has Elohim (God) take the cup of trembling out of his people's hand so that they drink it no more.
+
+## card 3744
+
+Jeremiah 25:15 — *For thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel) unto me; Take the wine cup of this fury at my hand, and cause all the nations, to whom I send thee, to drink it.* *But Yahusha (Jesus) answered and said, You know not what you ask. Are you able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.* (Matthew 20:22) Jeremiah is told *Take the wine cup of this fury at my hand*, and it goes first to *Jerusalem, and the cities of Yahudah (Judah)* (Jeremiah 25:18) and then to all the nations. That is the kind of cup Yahusha (Jesus) puts before the sons, a cup that is sent and not chosen, and the request for thrones had not counted on it.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Jeremiah 25:15 — *Take the wine cup of this fury at my hand, and cause all the nations, to whom I send thee, to drink it.* Jeremiah is handed the wine cup of fury by Yahuah (the LORD), the Elohim (God) of Yashar'el (Israel), to make the nations drink, Jerusalem first.
+
+## card 3745
+
+Habakkuk 2:16 — *Thou art filled with shame for glory: drink thou also, and let thy foreskin be uncovered: the cup of the LORD’S right hand shall be turned unto thee, and shameful spewing shall be on thy glory.* *But Yahusha (Jesus) answered and said, You know not what you ask. Are you able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.* (Matthew 20:22) Habakkuk says the cup from the right hand of Yahuah (the LORD) *shall be turned unto thee*, and that shame takes the place of glory for the one it is turned on. Yahusha (Jesus) answers a request for glory with a cup out of that same hand, so the sons are being asked whether they know whose hand it comes from.
+
+thread: `the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees`
+
+Habakkuk 2:16 — *shall be turned unto thee, and shameful spewing shall be on thy glory.* Habakkuk says the cup from the right hand of Yahuah (the LORD) is turned on the one who drinks, bringing shame where glory was.
+
+## card 3746
+
+Mark 10:42 — *But Yahusha (Jesus) called them to him, and saith unto them, Ye know that they which are accounted to rule over the Gentiles exercise lordship over them; and their great ones exercise authority upon them.* *But Yahusha (Jesus) called them unto him, and said, You know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them.* (Matthew 20:25) Mark places the saying after the ten *began to be much displeased with James and John* (Mark 10:41). Where Matthew has *the princes of the Gentiles exercise dominion*, Mark has those *accounted to rule over the Gentiles exercise lordship over them*, and in both the order among Yahusha's (Jesus's) own is the opposite.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Mark 10:42 — *Ye know that they which are accounted to rule over the Gentiles exercise lordship over them.* Mark gives the same saying about the rulers of the Gentiles who exercise lordship, spoken after the ten grow displeased with James and John.
+
+## card 3747
+
+Luke 22:24 — *And there was also a strife among them, which of them should be accounted the greatest.* *But Yahusha (Jesus) called them unto him, and said, You know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them.* (Matthew 20:25) Luke has the same quarrel at a later hour, *a strife among them*, and the answer runs the same way: *The kings of the Gentiles exercise lordship over them* (Luke 22:25), but he is among them *as he that serveth* (Luke 22:27).
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Luke 22:24 — *And there was also a strife among them, which of them should be accounted the greatest.* Luke records a strife among the twelve over who was greatest, answered by the same contrast between the rulers of the Gentiles and the one who serves.
+
+## card 3748
+
+Daniel 10:13 — *But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael, one of the chief princes, came to help me; and I remained there with the kings of Persia.* *But Yahusha (Jesus) called them unto him, and said, You know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them.* (Matthew 20:25) Daniel is told of *the prince of the kingdom of Persia*, who *withstood me one and twenty days* until *Michael, one of the chief princes, came to help me*. Those princes over the kingdoms of the nations are the rulers Yahusha (Jesus) sets his twelve apart from when he says *the princes of the Gentiles exercise dominion over them*.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Daniel 10:13 — *the prince of the kingdom of Persia withstood me one and twenty days.* Daniel is told that the prince of the kingdom of Persia withstood the messenger until Michael, one of the chief princes, came to help.
+
+## card 3749
+
+Daniel 10:20 — *Then said he, Knowest thou wherefore I come unto thee? and now will I return to fight with the prince of Persia: and when I am gone forth, lo, the prince of Grecia shall come.* *But Yahusha (Jesus) called them unto him, and said, You know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them.* (Matthew 20:25) The messenger tells Daniel he will *return to fight with the prince of Persia*, and that *the prince of Grecia shall come* after him. Persia and Greece each have their prince, and these are the rulers over the nations whom Yahusha (Jesus) has in view when he tells the twelve *it shall not be so among you* (Matthew 20:26).
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Daniel 10:20 — *now will I return to fight with the prince of Persia: and when I am gone forth, lo, the prince of Grecia shall come.* Daniel's messenger says he will go back to fight the prince of Persia and that the prince of Grecia will follow.
+
+## card 3750
+
+Ephesians 6:12 — *For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.* *But Yahusha (Jesus) called them unto him, and said, You know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them.* (Matthew 20:25) Ephesians says the struggle is *against principalities, against powers*, against *the rulers of the darkness of this world*. Beside Yahusha's (Jesus's) *princes of the Gentiles* it shows that the dominion he warns the twelve about has rulers behind the human ones, and he tells them *it shall not be so among you* (Matthew 20:26).
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Ephesians 6:12 — *we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world.* Ephesians names principalities, powers and the rulers of the darkness of this world behind the struggle, which stands beside the princes of the Gentiles.
+
+## card 3751
+
+Isaiah 53:10 — *Yet it pleased Yahuah (LORD) to bruise him; he hath put him to grief: when thou shalt make his soul an offering for sin, he shall see his seed, he shall prolong his days, and the pleasure of Yahuah (LORD) shall prosper in his hand.* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) The *ransom for many* is the offering Isaiah describes, *make his soul an offering for sin*, after which *he shall see his seed*. The many are his people, for whose transgression *was he stricken* (Isaiah 53:8), the seed of both houses of Yashar'el (Israel).
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Isaiah 53:10 — *make his soul an offering for sin, he shall see his seed, he shall prolong his days.* Isaiah says that when his soul is made an offering for sin the servant shall see his seed and prolong his days.
+
+## card 3752
+
+Psalm 49:7 — *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him:* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) Psalm 49 says no man can *redeem his brother*, and the next verse gives the reason: *the redemption of their soul is precious* (Psalm 49:8). The ransom Yahusha (Jesus) gives is the one no brother could give, which is why the Son of Adam has to *give his life*.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Psalm 49:7 — *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him:* Psalm 49 says no man can redeem his brother or pay Elohim (God) a ransom for him, so a ransom for many has to be given by another.
+
+## card 3753
+
+Exodus 21:30 — *If there be laid on him a sum of money, then he shall give for the ransom of his life whatsoever is laid upon him.* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) The Torah's word for ransom is a price laid on a life that would otherwise be forfeit: *he shall give for the ransom of his life*. When Yahusha (Jesus) says the Son of Adam came *to give his life a ransom for many*, he uses the Torah's own word, and this time the price is the life of the one who gives it.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Exodus 21:30 — *If there be laid on him a sum of money, then he shall give for the ransom of his life whatsoever is laid upon him.* Exodus lets a man whose life is forfeit give a ransom for his life, whatever price is laid on him, the Torah's own picture of a ransom.
+
+## card 3754
+
+Exodus 30:11 — *And Yahuah (LORD) spake unto Moses, saying,* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) Yahuah (the LORD) speaks to Moses and sets a ransom on every numbered soul: *then shall they give every man a ransom for his soul unto Yahuah (LORD)* (Exodus 30:12), paid as *half a shekel after the shekel of the sanctuary* (Exodus 30:13). The ransom Yahusha (Jesus) names is no new idea beside the Torah, which had already told Moses that every soul needs one.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Exodus 30:11 — *And Yahuah (LORD) spake unto Moses, saying,* Yahuah (the LORD) begins the instruction for the ransom each numbered soul gives, the half shekel set out in the verses that follow.
+
+## card 3755
+
+Daniel 9:24 — *Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy.* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) Daniel is told that seventy weeks are fixed *upon thy people and upon thy holy city* for the ending of transgression, and for *reconciliation for iniquity, and to bring in everlasting righteousness*. Matthew's ransom is a life given, and Daniel's verse names what such a giving is for: iniquity covered and righteousness brought in for his people.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Daniel 9:24 — *to make reconciliation for iniquity, and to bring in everlasting righteousness.* Daniel's seventy weeks are fixed upon his people and holy city to end transgression, make reconciliation for iniquity and bring in everlasting righteousness.
+
+## card 3756
+
+1 Timothy 2:5 — *For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus);* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) Paul writes that there is *one mediator between Elohim (God) and men*, and in the next verse that he *gave himself a ransom for all* (1 Timothy 2:6). Matthew's Son of Adam gives his life *a ransom for many*, and Paul sets the man Yahusha (Jesus) as the one who stands between.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+1 Timothy 2:5 — *For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus);* Paul says there is one Elohim (God) and one mediator, the man Yahusha (Jesus) the Messiah (Christ), who gave himself a ransom.
+
+## card 3757
+
+1 Peter 1:18 — *Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) Peter reminds his readers *ye were not redeemed with corruptible things, as silver and gold*, and the verse after gives the price: *the precious blood of Messiah (Christ)* (1 Peter 1:19). That is the cost of the ransom Matthew names, a life given, which no half shekel of silver could stand for.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+1 Peter 1:18 — *ye were not redeemed with corruptible things, as silver and gold.* Peter says the redeemed were bought not with silver and gold but with the precious blood of Messiah (Christ), the price of the ransom.
+
+## card 3758
+
+Revelation 5:9 — *And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation;* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) The song to the Lamb says *thou wast slain*, and the redeemed are taken *out of every kindred, and tongue, and people, and nation*. The ransom Matthew names comes back as redeeming by blood, and the many it covers are gathered from where they were scattered.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Revelation 5:9 — *thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation.* The song to the Lamb says he was slain and redeemed us to Elohim (God) by his blood out of every kindred, tongue, people and nation.
+
+## card 3759
+
+John 13:1 — *Now before the feast of the passover, when Yahusha (Jesus) knew that his hour was come that he should depart out of this world unto the Father, having loved his own which were in the world, he loved them unto the end.* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) Matthew's *to minister* is seen in John 13, where Yahusha (Jesus) *knew that his hour was come* and *loved them unto the end*. Knowing *that the Father had given all things into his hands* (John 13:3), he *took a towel, and girded himself* (John 13:4), the servant's place he had just told the twelve to take.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+John 13:1 — *having loved his own which were in the world, he loved them unto the end.* John shows Yahusha (Jesus) knowing his hour had come and loving his own to the end, the setting for the service he then performs.
+
+## card 3760
+
+Philippians 2:5 — *Let this mind be in you, which was also in HaMashiach Yahusha (Christ Jesus):* *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28) Paul calls for the mind *which was also in HaMashiach Yahusha (Christ Jesus)*, and says what it looked like: *being in the form of Elohim (God)* (Philippians 2:6), he *took upon him the form of a servant* (Philippians 2:7). That is Matthew's Son of Adam, who *came not to be ministered unto, but to minister*.
+
+thread: `the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach`
+
+Philippians 2:5 — *Let this mind be in you, which was also in HaMashiach Yahusha (Christ Jesus):* Paul sets the mind of Yahusha (Jesus) the Messiah (Christ) before his readers, the one who took the form of a servant.
+
+## card 3761
+
+Matthew 9:27 — *And when Yahusha (Jesus) departed thence, two blind men followed him, crying, and saying, Thou Son of David, have mercy on us.* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) Matthew has now told this cry twice. In Galilee two blind men followed him *crying, and saying, Thou Son of David, have mercy on us*, and on the road out of Jericho two more cry it again, louder when the crowd tells them to hold their peace.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Matthew 9:27 — *And when Yahusha (Jesus) departed thence, two blind men followed him, crying, and saying, Thou Son of David, have mercy on us.* Two blind men in Galilee had already followed him crying Thou Son of David, have mercy on us, before the pair at Jericho.
+
+## card 3762
+
+Matthew 15:22 — *And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) The woman of Canaan on the coast of Tyre and Sidon said the same words, *Have mercy on me, O Adonai (Lord), thou Son of David*, and when he told her he was sent *unto the lost sheep of the house of Yashar'el (Israel)* (Matthew 15:24), she came and worshipped him. The blind men at Jericho make the same confession.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Matthew 15:22 — *Have mercy on me, O Adonai (Lord), thou Son of David.* The woman of Canaan on the Tyre and Sidon coast calls him Son of David too, a lost sheep of Yashar'el (Israel) naming the shepherd.
+
+## card 3763
+
+Matthew 21:9 — *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord); Hosanna in the highest.* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) The two men were told to hold their peace for crying *Son of David*, and a few verses later the multitudes going before and following him cry *Hosanna to the Son of David*. The title is the same, and at the entry it comes with *Blessed is he that cometh in the name of Yahuah (Lord)*.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Matthew 21:9 — *Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord).* The multitudes at the entry cry Hosanna to the Son of David, the same title the two blind men would not stop crying at Jericho.
+
+## card 3764
+
+Matthew 21:15 — *And when the chief priests and scribes saw the wonderful things that he did, and the children crying in the temple, and saying, Hosanna to the Son of David; they were sore displeased,* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) The title is cried again by children in the temple, *Hosanna to the Son of David*, and the chief priests and scribes *were sore displeased*. The blind men were hushed by a crowd and the children by the rulers, and in both the ones who name him David's Son are the ones told to be quiet.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Matthew 21:15 — *the children crying in the temple, and saying, Hosanna to the Son of David.* Children cry Hosanna to the Son of David in the temple while the chief priests and scribes are sore displeased.
+
+## card 3765
+
+Matthew 22:41 — *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) The blind men cry *Son of David* and are right. In the temple he asks the Pharisees *whose son is he?* (Matthew 22:42) and then how David in spirit calls him *Adonai (Lord)* (Matthew 22:43), the one told *Sit thou on my right hand* (Matthew 22:44), so the title is true without being the whole of who he is.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Matthew 22:41 — *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* The question about David's Son begins here, with Yahusha (Jesus) asking the gathered Pharisees what they think of the Messiah (Christ).
+
+## card 3766
+
+2 Samuel 7:12 — *And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) The blind men's *Son of David* rests on the promise to David, *I will set up thy seed after thee*, and the next verse says *I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The title is a claim on that throne, made by two men beside a road.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+2 Samuel 7:12 — *I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* Yahuah (the LORD) promises David a seed whose kingdom he will establish, the promise the title Son of David reaches back to.
+
+## card 3767
+
+Isaiah 11:1 — *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) Isaiah has *a rod out of the stem of Jesse* and a Branch growing from his roots, and the blind men's title names that Branch by its family. The verses after say what he does: *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth* (Isaiah 11:4), and two poor men by the road are asking for him.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Isaiah 11:1 — *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:* Isaiah has a rod come from the stem of Jesse and a Branch grow from his roots, the family the title Son of David names.
+
+## card 3768
+
+Jeremiah 23:5 — *Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) Yahuah (the LORD) says through Jeremiah that he will *raise unto David a righteous Branch*, and the verses around it set that Branch among the gathering of *the remnant of my flock out of all countries* (Jeremiah 23:3), when *Yahudah (Judah) shall be saved, and Yashar'el (Israel) shall dwell safely* (Jeremiah 23:6). The Son of David the blind men call is that Branch.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Jeremiah 23:5 — *I will raise unto David a righteous Branch.* Jeremiah has Yahuah (the LORD) promise a righteous Branch for David, who will execute judgment and justice in the earth.
+
+## card 3769
+
+Ezekiel 34:23 — *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) Ezekiel hears Yahuah (the LORD) say *I will set up one shepherd over them*, *even my servant David*, for a flock whose strong ones had *pushed all the diseased with your horns, till ye have scattered them abroad* (Ezekiel 34:21). Two blind men shoved aside by a crowd and calling for David's Son are the diseased of that flock, and he stops for them.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Ezekiel 34:23 — *I will set up one shepherd over them, and he shall feed them, even my servant David.* Yahuah (the LORD) sets up one shepherd, his servant David, to feed the flock that was pushed about and scattered.
+
+## card 3770
+
+Ezekiel 37:24 — *And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them.* *And, behold, two blind men sitting by the way side, when they heard that Yahusha (Jesus) passed by, cried out, saying, Have mercy on us, O Lord, you Son of David.* (Matthew 20:30) Ezekiel's word about David the servant is spoken to the twelve tribes made one, *no more two nations* (Ezekiel 37:22), so the Son of David the blind men cry to is shepherd of the restored twelve tribes, and the flock under him is to *walk in my judgments*.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Ezekiel 37:24 — *David my servant shall be king over them; and they all shall have one shepherd.* Ezekiel has David the servant over the two houses made one, all under one shepherd and walking in the judgments and statutes of Yahuah (the LORD).
+
+## card 3771
+
+Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* *So Yahusha (Jesus) had compassion on them, and touched their eyes: and immediately their eyes received sight, and they followed him.* (Matthew 20:34) Isaiah ties *the eyes of the blind shall be opened* to the word that *he will come and save you* (Isaiah 35:4). When Yahusha (Jesus) *touched their eyes* and *immediately their eyes received sight*, the sign Isaiah gave for that coming took place on the road out of Jericho.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* Isaiah gives the opening of blind eyes as the sign that Elohim (God) is coming to save, and it happens at Jericho.
+
+## card 3772
+
+Isaiah 32:3 — *And the eyes of them that see shall not be dim, and the ears of them that hear shall hearken.* *So Yahusha (Jesus) had compassion on them, and touched their eyes: and immediately their eyes received sight, and they followed him.* (Matthew 20:34) Isaiah's word about a righteous reign says *the eyes of them that see shall not be dim*, and that the hearing *shall hearken*. The two men at Jericho get their sight and then *followed him*, which is seeing and hearing joined as Isaiah describes it.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Isaiah 32:3 — *And the eyes of them that see shall not be dim, and the ears of them that hear shall hearken.* Isaiah says that in a righteous reign the eyes of those who see will not be dim and those who hear will hearken.
+
+## card 3773
+
+Isaiah 42:7 — *To open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness out of the prison house.* *So Yahusha (Jesus) had compassion on them, and touched their eyes: and immediately their eyes received sight, and they followed him.* (Matthew 20:34) Isaiah has Yahuah (the LORD) say to his servant *will hold thine hand* (Isaiah 42:6) and send him *To open the blind eyes*. At Jericho Yahusha (Jesus) *had compassion on them, and touched their eyes*, and the servant's commission is done by a hand laid on two men sitting by the road.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Isaiah 42:7 — *To open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness out of the prison house.* Isaiah names opening blind eyes as part of the servant's commission, together with bringing prisoners and those in darkness out.
+
+## card 3774
+
+Psalm 146:8 — *Yahuah (LORD) openeth the eyes of the blind: Yahuah (LORD) raiseth them that are bowed down: Yahuah (LORD) loveth the righteous:* *So Yahusha (Jesus) had compassion on them, and touched their eyes: and immediately their eyes received sight, and they followed him.* (Matthew 20:34) The psalm says *Yahuah (LORD) openeth the eyes of the blind*, so the sight given at Jericho is the work the psalmist assigns to Yahuah (the LORD) himself. Yahusha (Jesus) *had compassion on them, and touched their eyes*, and the same psalm says Yahuah (the LORD) *raiseth them that are bowed down*.
+
+thread: `the-davidic-messianic-son-recognized-by-the-marginalized-in-testaments-of-the-twelve`
+
+Psalm 146:8 — *Yahuah (LORD) openeth the eyes of the blind: Yahuah (LORD) raiseth them that are bowed down: Yahuah (LORD) loveth the righteous:* The psalm says Yahuah (the LORD) opens the eyes of the blind and raises the bowed down, the work done at Jericho.
+
+## card 3775
+
+Zechariah 14:4 — *And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east, and the mount of Olives shall cleave in the midst thereof toward the east and toward the west, and there shall be a very great valley; and half of the mountain shall remove toward the north, and half of it toward the south.* *And when they drew nigh unto Jerusalem, and were come to Bethphage, unto the mount of Olives, then sent Yahusha (Jesus) two disciples,* (Matthew 21:1) Matthew has the two disciples sent from *the mount of Olives* before anything else happens on this ride. Zechariah says that in the day Yahuah (the LORD) goes out against the nations gathered at Jerusalem, his feet stand on that same mountain. Yahusha (Jesus) begins his entry into the city from the ground the prophet marked for that day.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+Zechariah 14:4 — *his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east.* The feet of Yahuah (the LORD) stand on this mountain in the day he goes out against the nations gathered at Jerusalem.
+
+## card 3776
+
+1 Samuel 9:5 — *And when they were come to the land of Zuph, Saul said to his servant that was with him, Come, and let us return; lest my father leave caring for the asses, and take thought for us.* *And when they drew nigh unto Jerusalem, and were come to Bethphage, unto the mount of Olives, then sent Yahusha (Jesus) two disciples,* (Matthew 21:1) Saul went looking for his father's lost asses and, finding nothing, was told of a man of Elohim (God) in the city who could show them the way. In Matthew the asses are not lost. Yahusha (Jesus) says where they are, and two disciples have only to loose them and bring them to him.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+1 Samuel 9:5 — *lest my father leave caring for the asses, and take thought for us.* Saul's search for his father's lost asses brings him to the land of Zuph, where he is sent to a man of Elohim (God) to learn his way.
+
+## card 3778
+
+Isaiah 62:11 — *Behold, Yahuah (LORD) hath proclaimed unto the end of the world, Say ye to the daughter of Zion, Behold, thy salvation cometh; behold, his reward is with him, and his work before him.* *All this was done, that it might be fulfilled which was spoken by the prophet, saying,* (Matthew 21:4) Matthew says the entry came about *that it might be fulfilled which was spoken by the prophet*. Isaiah has the same message for the same woman: Yahuah (the LORD) has sent word to the end of the world to tell the daughter of Zion that her salvation comes, and that his reward and his work are with him.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+Isaiah 62:11 — *Behold, Yahuah (LORD) hath proclaimed unto the end of the world, Say ye to the daughter of Zion, Behold, thy salvation cometh; behold, his reward is with him, and his work before him.* Yahuah (the LORD) sends word to the end of the world that the daughter of Zion's salvation is coming, with his reward and his work with him.
+
+## card 3779
+
+Zephaniah 3:14 — *Sing, O daughter of Zion; shout, O Yashar'el (Israel); be glad and rejoice with all the heart, O daughter of Jerusalem.* *All this was done, that it might be fulfilled which was spoken by the prophet, saying,* (Matthew 21:4) Zephaniah tells the daughter of Zion to sing and shout, and gives the reason a few lines on: *the king of Yashar'el (Israel), even Yahuah (LORD), is in the midst of thee* (Zephaniah 3:15). In Matthew the word to the daughter of Zion is the same call to be glad, and the cause is the same, someone near who is coming to her.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+Zephaniah 3:14 — *Sing, O daughter of Zion; shout, O Yashar'el (Israel); be glad and rejoice with all the heart, O daughter of Jerusalem.* The daughter of Zion is told to sing and shout, with the reason given in the lines that follow: Yahuah (the LORD) is in her midst.
+
+## card 3780
+
+Psalm 118:25 — *Save now, I beseech thee, O Yahuah (LORD): O Yahuah (LORD), I beseech thee, send now prosperity.* *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that comes in the name of Yahuah (Lord); Hosanna in the highest.* (Matthew 21:9) *Save now* is what the crowd's cry of *Hosanna* means, and it is the psalm's own prayer. The pilgrims sang it at the feast, and here it is sung over a man riding into Jerusalem, with the very next line of the psalm in their mouths too, the blessing on the one who comes in the name of Yahuah (the LORD).
+
+thread: `psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah`
+
+Psalm 118:25 — *Save now, I beseech thee, O Yahuah (LORD): O Yahuah (LORD), I beseech thee, send now prosperity.* Save now is the plea behind the word Hosanna, the prayer the pilgrims sang at the feast.
+
+## card 3781
+
+2 Samuel 7:12 — *And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that comes in the name of Yahuah (Lord); Hosanna in the highest.* (Matthew 21:9) When the crowd cries *Hosanna to the Son of David*, this is the promise behind the name. Yahuah (the LORD) told David that a seed of his would come after him and that he would establish that seed's kingdom. The crowd is not flattering Yahusha (Jesus). It is naming him as the one the promise was made about.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+2 Samuel 7:12 — *I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* Yahuah (the LORD) promises David a seed who will come out of his own body and whose kingdom he will establish.
+
+## card 3782
+
+Isaiah 11:1 — *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:* *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that comes in the name of Yahuah (Lord); Hosanna in the highest.* (Matthew 21:9) Isaiah gives the line the crowd's *Son of David* comes from. David's father was Jesse, and out of the stem of Jesse a rod comes forth with a Branch growing from his roots. The chapter goes on to say how he judges: *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth* (Isaiah 11:4).
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+Isaiah 11:1 — *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:* A rod comes out of the stem of Jesse and a Branch from his roots, the line the crowd names when it says Son of David.
+
+## card 3783
+
+Isaiah 11:10 — *And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.* *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that comes in the name of Yahuah (Lord); Hosanna in the highest.* (Matthew 21:9) *Son of David* also rings with Isaiah's root of Jesse standing as an ensign of the people. The prophet says what the ensign is for in the verses after it: he *shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The crowd is shouting at the one who raises the signal for the scattered to come home.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+Isaiah 11:10 — *there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek.* The root of Jesse stands as an ensign for the people, the signal by which the scattered are called home.
+
+## card 3784
+
+Jeremiah 23:5 — *Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that comes in the name of Yahuah (Lord); Hosanna in the highest.* (Matthew 21:9) Jeremiah's righteous Branch raised to David is the same son of David the crowd names, one who reigns and does judgment and justice. The verses around it say who he is raised for: *I will gather the remnant of my flock out of all countries whither I have driven them* (Jeremiah 23:3), with Yahudah (Judah) saved and Yashar'el (Israel) dwelling safely in his days.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+Jeremiah 23:5 — *I will raise unto David a righteous Branch, and a King shall reign and prosper.* Yahuah (the LORD) promises to raise up a righteous Branch for David, who will reign and execute judgment and justice.
+
+## card 3785
+
+Ezekiel 34:23 — *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that comes in the name of Yahuah (Lord); Hosanna in the highest.* (Matthew 21:9) Ezekiel promises one shepherd over the flock, *my servant David*, and the lines before it say why the flock needs one: the diseased had been pushed with horns *till ye have scattered them abroad* (Ezekiel 34:21). The crowd shouting to David's son is shouting to the shepherd of a scattered flock.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+Ezekiel 34:23 — *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* Yahuah (the LORD) sets one shepherd, his servant David, over the flock that had been scattered.
+
+## card 3786
+
+Ezekiel 37:24 — *And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them.* *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that comes in the name of Yahuah (Lord); Hosanna in the highest.* (Matthew 21:9) Ezekiel's David is king over them, and *they all shall have one shepherd*. The verse says what that people does: they walk in his judgments and keep his statutes. The verses before it say who they are, that *they shall be no more two nations* (Ezekiel 37:22). The Son of David the crowd hails is king over both houses together, and over a people that keeps the commandments.
+
+thread: `davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees`
+
+Ezekiel 37:24 — *they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them.* David is king over the whole restored people, one shepherd for all of them, and they walk in his judgments and keep his statutes.
+
+## card 3787
+
+Malachi 3:1 — *Behold, I will send my messenger, and he shall prepare the way before me: and Yahuah (Lord), whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith Yahuah Tseva'ot (LORD of hosts).* *And Yahusha (Jesus) went into the temple of Elohim (God), and cast out all them that sold and bought in the temple, and overthrew the tables of the moneychangers, and the seats of them that sold doves,* (Matthew 21:12) Matthew shows Yahusha (Jesus) going straight into the temple and driving out the sellers. Malachi says Yahuah (the Lord), whom they seek, will *suddenly come to his temple*, and the lines after it say what he does on arrival: he sits as a refiner and *shall purify the sons of Levi* (Malachi 3:3), so that they may offer an offering in righteousness. The cleansing is the refining begun at the house.
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+Malachi 3:1 — *Yahuah (Lord), whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in.* Yahuah (the Lord), whom they seek, comes suddenly to his temple, and the verses after it say he comes to purify.
+
+## card 3788
+
+Zechariah 14:21 — *Yea, every pot in Jerusalem and in Yahudah (Judah) shall be holiness unto Yahuah Tseva'ot (LORD of hosts): and all they that sacrifice shall come and take of them, and seethe therein: and in that day there shall be no more the Canaanite in the house of Yahuah Tseva'ot (LORD of hosts).* *And Yahusha (Jesus) went into the temple of Elohim (God), and cast out all them that sold and bought in the temple, and overthrew the tables of the moneychangers, and the seats of them that sold doves,* (Matthew 21:12) Zechariah's last verse says that in that day there shall be *no more the Canaanite* in the house, and the word he uses means a trader. Matthew has the house full of those who sold and bought, and Yahusha (Jesus) overturning their tables. What the prophet gave as the sign of the holy day, he begins with his own hands.
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+Zechariah 14:21 — *in that day there shall be no more the Canaanite in the house of Yahuah Tseva'ot (LORD of hosts).* On the day every pot in Jerusalem is holy, no trader stands any more in the house.
+
+## card 3789
+
+Isaiah 56:7 — *Even them will I bring to my holy mountain, and make them joyful in my house of prayer: their burnt offerings and their sacrifices shall be accepted upon mine altar; for mine house shall be called an house of prayer for all people.* *And said unto them, It is written, My house shall be called the house of prayer; but you have made it a den of thieves.* (Matthew 21:13) Yahusha (Jesus) quotes the house of prayer, and Isaiah says in the next breath who it is for: *which gathereth the outcasts of Yashar'el (Israel) saith, Yet will I gather others to him, beside those that are gathered unto him* (Isaiah 56:8). So *all people* there are the gathered, the outcasts brought home and the others gathered beside them, and the house names no one else being added. The sellers had filled it with stalls.
+
+thread: `isaiah-56-mine-house-an-house-of-prayer-for-all-people`
+
+Isaiah 56:7 — *for mine house shall be called an house of prayer for all people.* The house of prayer for all people is the house Yahuah (the LORD) fills with the outcasts he gathers, and the verse after it names them.
+
+## card 3790
+
+Jeremiah 7:11 — *Is this house, which is called by my name, become a den of robbers in your eyes? Behold, even I have seen it, saith Yahuah (LORD).* *And said unto them, It is written, My house shall be called the house of prayer; but you have made it a den of thieves.* (Matthew 21:13) Yahusha (Jesus) quotes the charge, and the chapter it comes from shows what the charge was. The prophet asks if they will steal, murder, commit adultery and swear falsely, and then stand in the house and say *We are delivered to do all these abominations* (Jeremiah 7:10). They kept repeating *The temple of Yahuah (LORD)* (Jeremiah 7:4), and trusted the building while they broke the commandments.
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+Jeremiah 7:11 — *Is this house, which is called by my name, become a den of robbers in your eyes? Behold, even I have seen it, saith Yahuah (LORD).* The house called by his name had become a den of robbers in the eyes of the people who trusted it while breaking the commandments.
+
+## card 3791
+
+Jeremiah 7:1 — *The word that came to Jeremiah from Yahuah (LORD), saying,* *And said unto them, It is written, My house shall be called the house of prayer; but you have made it a den of thieves.* (Matthew 21:13) Yahusha (Jesus) quotes one line out of Jeremiah 7, and this is where the whole word begins. It was spoken standing in the gate of the house to all of Yahudah (Judah) coming in to worship, and it opens with a call to *Amend your ways and your doings, and I will cause you to dwell in this place* (Jeremiah 7:3), and a warning not to trust *The temple of Yahuah (LORD)* (Jeremiah 7:4), said three times over.
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+Jeremiah 7:1 — *The word that came to Jeremiah from Yahuah (LORD), saying,* The whole word against the house begins here, spoken in the gate of the house to everyone of Yahudah (Judah) coming in to worship.
+
+## card 3792
+
+Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* *And the blind and the lame came to him in the temple; and he healed them.* (Matthew 21:14) The blind and the lame come to him in the temple and are healed, and Isaiah lists that among the signs of the day Elohim (God) comes. The chapter says it plainly: *he will come and save you* (Isaiah 35:4), with the eyes of the blind opened and, a few lines on, *the lame man leap as an hart* (Isaiah 35:6).
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* When Elohim (God) comes to save, the eyes of the blind are opened and the ears of the deaf unstopped.
+
+## card 3793
+
+2 Samuel 5:8 — *And David said on that day, Whosoever getteth up to the gutter, and smiteth the Jebusites, and the lame and the blind, that are hated of David’s soul, he shall be chief and captain. Wherefore they said, The blind and the lame shall not come into the house.* *And the blind and the lame came to him in the temple; and he healed them.* (Matthew 21:14) The words *The blind and the lame shall not come into the house* come out of David's taking of Zion, where the Jebusites had boasted *Except thou take away the blind and the lame, thou shalt not come in hither* (2 Samuel 5:6). It was a saying from a siege. Matthew has the blind and the lame coming to Yahusha (Jesus) inside the temple itself, and he heals them there.
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+2 Samuel 5:8 — *The blind and the lame shall not come into the house.* A saying from the siege of Zion that kept the blind and the lame out of the house, which Yahusha's (Jesus's) healing in the temple answers.
+
+## card 3794
+
+Isaiah 56:7 — *Even them will I bring to my holy mountain, and make them joyful in my house of prayer: their burnt offerings and their sacrifices shall be accepted upon mine altar; for mine house shall be called an house of prayer for all people.* *And the blind and the lame came to him in the temple; and he healed them.* (Matthew 21:14) In Isaiah's chapter Yahuah (the LORD) gives those with no standing a share inside his house: *a place and a name better than of sons and of daughters* (Isaiah 56:5). Matthew shows the blind and the lame coming to him in the temple and leaving whole. Isaiah's promise is to make them *joyful in my house of prayer*, and the house is where it happens.
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+Isaiah 56:7 — *make them joyful in my house of prayer: their burnt offerings and their sacrifices shall be accepted upon mine altar.* Yahuah (the LORD) promises to make joyful in his house of prayer those he brings to his holy mountain.
+
+## card 3795
+
+Psalm 8:2 — *Out of the mouth of babes and sucklings hast thou ordained strength because of thine enemies, that thou mightest still the enemy and the avenger.* *And said unto him, Hear you what these say? And Yahusha (Jesus) says unto them, Yea; have you never read, Out of the mouth of babes and sucklings you have perfected praise?* (Matthew 21:16) The officials ask if he hears what the children are saying, and he answers out of the psalm. Matthew has *perfected praise* where the psalm says Yahuah (the LORD) has *ordained strength*, one line read for what it does: a child's praise is strength set against the enemy and the avenger. What was noise to the officials he reads as the psalm's own word.
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+Psalm 8:2 — *Out of the mouth of babes and sucklings hast thou ordained strength because of thine enemies, that thou mightest still the enemy and the avenger.* Out of the mouth of babes and sucklings Yahuah (the LORD) has ordained strength against the enemy and the avenger.
+
+## card 3796
+
+Psalm 8:4 — *What is man, that thou art mindful of him? and the son of Adam, that thou visitest him?* *And said unto him, Hear you what these say? And Yahusha (Jesus) says unto them, Yea; have you never read, Out of the mouth of babes and sucklings you have perfected praise?* (Matthew 21:16) The line he quotes belongs to the psalm that asks about *the son of Adam, that thou visitest him*. The children cry in the house, and the psalm sets beside them the son of Adam whom Elohim (God) visits, of whom the psalm says *crowned him with glory and honour* (Psalm 8:5). Son of Adam is the name Yahusha (Jesus) takes for himself in Matthew.
+
+thread: `temple-cleansing-and-the-maccabean-rededication-architecture`
+
+Psalm 8:4 — *What is man, that thou art mindful of him? and the son of Adam, that thou visitest him?* The psalm that gave him the babes' line goes on to ask why Elohim (God) visits the son of Adam.
+
+## card 3797
+
+Jeremiah 8:13 — *I will surely consume them, saith Yahuah (LORD): there shall be no grapes on the vine, nor figs on the fig tree, and the leaf shall fade; and the things that I have given them shall pass away from them.* *Now in the morning as he returned into the city, he hungered.* (Matthew 21:18) He came to the tree hungry, and Matthew says what he found: *nothing thereon, but leaves only* (Matthew 21:19). Jeremiah had already used leaves without figs for a house about to lose what it was given. The verses before it say why, that the hurt of the daughter of my people had been healed slightly, *Peace, peace; when there is no peace* (Jeremiah 8:11).
+
+thread: `leaves-without-fruit-judged-in-wisdom-of-solomon-sirach-and-1-enoch`
+
+Jeremiah 8:13 — *there shall be no grapes on the vine, nor figs on the fig tree, and the leaf shall fade.* Yahuah (the LORD) speaks of a house with no grapes, no figs, and a fading leaf, and of the things he gave passing away.
+
+## card 3798
+
+Hosea 9:10 — *I found Yashar'el (Israel) like grapes in the wilderness; I saw your fathers as the firstripe in the fig tree at her first time: but they went to Baal-peor, and separated themselves unto that shame; and their abominations were according as they loved.* *Now in the morning as he returned into the city, he hungered.* (Matthew 21:18) Yahuah (the LORD) says he found Yashar'el (Israel) like *the firstripe in the fig tree at her first time*, and what came after was Baal-peor. Yahusha (Jesus) comes to a fig tree hungry for fruit, and the sentence on the tree is the old complaint, that what was firstripe turned to abomination. The judgment is on the fruitlessness, not on the existence of the people.
+
+thread: `leaves-without-fruit-judged-in-wisdom-of-solomon-sirach-and-1-enoch`
+
+Hosea 9:10 — *I saw your fathers as the firstripe in the fig tree at her first time: but they went to Baal-peor.* Yahuah (the LORD) saw the fathers like the firstripe figs, and then they went to Baal-peor.
+
+## card 3799
+
+Micah 7:1 — *Woe is me! for I am as when they have gathered the summer fruits, as the grapegleanings of the vintage: there is no cluster to eat: my soul desired the firstripe fruit.* *Now in the morning as he returned into the city, he hungered.* (Matthew 21:18) Micah speaks as one who comes after the gathering and finds *no cluster to eat*, his soul longing for the firstripe fruit. Matthew's *he hungered* is the same longing, and the tree has only leaves. The verses after it say where the fruit went: *the prince asketh, and the judge asketh for a reward* (Micah 7:3). The hunger is for a people's fruit, and the failure is in those set over them.
+
+thread: `leaves-without-fruit-judged-in-wisdom-of-solomon-sirach-and-1-enoch`
+
+Micah 7:1 — *there is no cluster to eat: my soul desired the firstripe fruit.* Micah comes after the gathering and finds no cluster to eat, though his soul desired the firstripe fruit.
+
+## card 3800
+
+Joel 1:7 — *He hath laid my vine waste, and barked my fig tree: he hath made it clean bare, and cast it away; the branches thereof are made white.* *Now in the morning as he returned into the city, he hungered.* (Matthew 21:18) Joel's fig tree is *barked* and made *clean bare*, and the chapter sets it beside a house that has lost its offering: *The meat offering and the drink offering is cut off from the house of Yahuah (LORD)* (Joel 1:9). Matthew sets a tree with no fruit beside the temple he has just cleared, and the two read together.
+
+thread: `leaves-without-fruit-judged-in-wisdom-of-solomon-sirach-and-1-enoch`
+
+Joel 1:7 — *He hath laid my vine waste, and barked my fig tree: he hath made it clean bare, and cast it away.* A vine laid waste and a fig tree stripped bare, in a land where the offering has been cut off from the house of Yahuah (the LORD).
+
+## card 3801
+
+Isaiah 5:1 — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:* *Now in the morning as he returned into the city, he hungered.* (Matthew 21:18) The owner who goes looking for fruit and finds none is Isaiah's song before it is Matthew's fig tree. The beloved fenced and planted his vineyard, then *looked that it should bring forth grapes, and it brought forth wild grapes* (Isaiah 5:2), and the song says whose vineyard it is: *the vineyard of Yahuah Tseva'ot (LORD of hosts) is the house of Yashar'el (Israel)* (Isaiah 5:7). The tree with leaves and no fruit stands for that house.
+
+thread: `leaves-without-fruit-judged-in-wisdom-of-solomon-sirach-and-1-enoch`
+
+Isaiah 5:1 — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:* Isaiah's song of the beloved's vineyard begins on a very fruitful hill, the vineyard later found to bear wild grapes.
+
+## card 3802
+
+Matthew 17:20 — *And Yahusha (Jesus) said unto them, Because of your unbelief: for verily I say unto you, If ye have faith as a grain of mustard seed, ye shall say unto this mountain, Remove hence to yonder place; and it shall remove; and nothing shall be impossible unto you.* *Yahusha (Jesus) answered and said unto them, Verily I say unto you, If you have faith, and doubt not, you shall not only do this which is done to the fig tree, but also if you shall say unto this mountain, Be you removed, and be you cast into the sea; it shall be done.* (Matthew 21:21) Twice he gives the disciples the mountain: once when they could not cast the devil out of the child, and he named *Because of your unbelief*, and again at the withered fig tree, where he says *doubt not*. It is the same saying both times, and what it asks for is faith without doubt.
+
+thread: `matthew-21-faith-and-the-mountain-removed`
+
+Matthew 17:20 — *If ye have faith as a grain of mustard seed, ye shall say unto this mountain, Remove hence to yonder place.* Faith the size of a grain of mustard seed tells the mountain to move, and nothing is impossible to the one who says it.
+
+## card 3803
+
+Psalm 46:2 — *Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea;* *Yahusha (Jesus) answered and said unto them, Verily I say unto you, If you have faith, and doubt not, you shall not only do this which is done to the fig tree, but also if you shall say unto this mountain, Be you removed, and be you cast into the sea; it shall be done.* (Matthew 21:21) The mountains going into the sea is how the psalm pictures the worst that could happen, and the psalmist says *Therefore will not we fear*. The reason is the verse before it: *Elohim (God) is our refuge and strength, a very present help in trouble* (Psalm 46:1). The mountain Yahusha (Jesus) tells the disciples to cast into the sea is the picture of what can be shaken, and faith that does not doubt rests on what cannot.
+
+thread: `matthew-21-faith-and-the-mountain-removed`
+
+Psalm 46:2 — *Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea;* Even with the mountains carried into the sea the psalmist will not fear, because Elohim (God) is his refuge.
+
+## card 3804
+
+Isaiah 54:10 — *For the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee, neither shall the covenant of my peace be removed, saith Yahuah (LORD) that hath mercy on thee.* *Yahusha (Jesus) answered and said unto them, Verily I say unto you, If you have faith, and doubt not, you shall not only do this which is done to the fig tree, but also if you shall say unto this mountain, Be you removed, and be you cast into the sea; it shall be done.* (Matthew 21:21) Isaiah says the mountains will depart and the hills be removed, and treats that as the movable part: what stays is *my kindness* and *the covenant of my peace*. When Yahusha (Jesus) speaks of a mountain cast into the sea, he speaks of what can move, and the faith he asks for leans on the word of Yahuah (the LORD) that does not.
+
+thread: `matthew-21-faith-and-the-mountain-removed`
+
+Isaiah 54:10 — *the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee.* Mountains and hills may be removed, but the kindness and the covenant of peace of Yahuah (the LORD) do not depart.
+
+## card 3805
+
+John 14:13 — *And whatsoever ye shall ask in my name, that will I do, that the Father may be glorified in the Son.* *Yahusha (Jesus) answered and said unto them, Verily I say unto you, If you have faith, and doubt not, you shall not only do this which is done to the fig tree, but also if you shall say unto this mountain, Be you removed, and be you cast into the sea; it shall be done.* (Matthew 21:21) The promise that asking is answered is given its purpose here: whatever is asked in his name he will do *that the Father may be glorified in the Son*. Two verses later he says *If ye love me, keep my commandments* (John 14:15). So the answered prayer of Matthew is bound to the Father's glory and to the commandments, not to any wish.
+
+thread: `matthew-21-faith-and-the-mountain-removed`
+
+John 14:13 — *And whatsoever ye shall ask in my name, that will I do, that the Father may be glorified in the Son.* What is asked in his name he does, so that the Father is glorified in the Son.
+
+## card 3806
+
+John 5:14 — *Afterward Yahusha (Jesus) findeth him in the temple, and said unto him, Behold, thou art made whole: sin no more, lest a worse thing come unto thee.* *Yahusha (Jesus) answered and said unto them, Verily I say unto you, If you have faith, and doubt not, you shall not only do this which is done to the fig tree, but also if you shall say unto this mountain, Be you removed, and be you cast into the sea; it shall be done.* (Matthew 21:21) In Matthew a word from him withers a tree and moves mountains, and a word of his made a man whole. He finds that man later in the temple and gives a second word, *sin no more, lest a worse thing come unto thee*. What he does by his word comes with a claim on how the man walks afterward.
+
+thread: `matthew-21-faith-and-the-mountain-removed`
+
+John 5:14 — *Behold, thou art made whole: sin no more, lest a worse thing come unto thee.* Yahusha (Jesus) finds the healed man in the temple and tells him to sin no more, lest something worse come.
+
+## card 3807
+
+Matthew 3:1 — *In those days came John the Baptist, preaching in the wilderness of Judaea,* *And when he was come into the temple, the chief priests and the elders of the people came unto him as he was teaching, and said, By what authority do you these things? and who gave you this authority?* (Matthew 21:23) When they ask where his authority comes from, he sends them back to the wilderness of Judaea, where John came preaching. What John preached was *Repent ye: for the kingdom of heaven is at hand* (Matthew 3:2), and Matthew says he was *spoken of by the prophet Isaiah* (Matthew 3:3). The question about authority is answered by who John was.
+
+thread: `matthew-21-by-what-authority`
+
+Matthew 3:1 — *In those days came John the Baptist, preaching in the wilderness of Judaea,* John the Baptist comes preaching in the wilderness of Judaea, the baptism Yahusha (Jesus) asks the priests about.
+
+## card 3808
+
+Matthew 11:9 — *But what went ye out for to see? A prophet? yea, I say unto you, and more than a prophet.* *And when he was come into the temple, the chief priests and the elders of the people came unto him as he was teaching, and said, By what authority do you these things? and who gave you this authority?* (Matthew 21:23) He once told the crowds that John was *more than a prophet*, the messenger of whom he said *Behold, I send my messenger before thy face* (Matthew 11:10). So when the priests cannot say whether John's baptism was from heaven or of men, they stand before a crowd that held John a prophet, and a question Yahusha (Jesus) had already answered in public.
+
+thread: `matthew-21-by-what-authority`
+
+Matthew 11:9 — *But what went ye out for to see? A prophet? yea, I say unto you, and more than a prophet.* Yahusha (Jesus) tells the crowds that John is a prophet and more than a prophet.
+
+## card 3809
+
+Matthew 17:5 — *While he yet spake, behold, a bright cloud overshadowed them: and behold a voice out of the cloud, which said, This is my beloved Son, in whom I am well pleased; hear ye him.* *And when he was come into the temple, the chief priests and the elders of the people came unto him as he was teaching, and said, By what authority do you these things? and who gave you this authority?* (Matthew 21:23) They ask *who gave thee this authority*, and Matthew has already shown who. A voice out of the cloud said *my beloved Son* and told the disciples *hear ye him*. It is the Father who speaks, giving his Son his place before them, and that is a credential no office in the temple could give.
+
+thread: `matthew-21-by-what-authority`
+
+Matthew 17:5 — *a voice out of the cloud, which said, This is my beloved Son, in whom I am well pleased; hear ye him.* A voice out of the cloud names Yahusha (Jesus) the beloved Son and tells the disciples to hear him.
+
+## card 3810
+
+Deuteronomy 18:15 — *Yahuah Elohayka (The LORD thy God) will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken;* *And when he was come into the temple, the chief priests and the elders of the people came unto him as he was teaching, and said, By what authority do you these things? and who gave you this authority?* (Matthew 21:23) The question about authority had its answer in Moses. A Prophet is raised up from among their brethren, like Moses, and *unto him ye shall hearken*. What marks him is not an office but what Yahuah (the LORD) puts in his mouth: *will put my words in his mouth; and he shall speak unto them all that I shall command him* (Deuteronomy 18:18).
+
+thread: `matthew-21-by-what-authority`
+
+Deuteronomy 18:15 — *Yahuah Elohayka (The LORD thy God) will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken;* Moses says Yahuah (the LORD) will raise up a Prophet from among the brethren, like him, and the people are to hearken to him.
+
+## card 3811
+
+Matthew 7:21 — *Not every one that saith unto me, Adonai (Lord), Adonai (Lord), shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.* *But what think you? A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard.* (Matthew 21:28) In the parable the father's word is *go work to day in my vineyard*, and in the Sermon the question is who does *the will of my Father which is in heaven*. The second son says yes and does not go, which is the *Adonai (Lord), Adonai (Lord)* kind of yes that gets no entry. It is the doing that is counted.
+
+thread: `parable-of-the-two-sons-and-the-wisdom-streams-repentance-and-hypocrisy-architecture`
+
+Matthew 7:21 — *he that doeth the will of my Father which is in heaven.* Saying yes to the master is not enough to enter the kingdom; the one who does the will of the Father in heaven enters.
+
+## card 3812
+
+Matthew 12:46 — *While he yet talked to the people, behold, his mother and his brethren stood without, desiring to speak with him.* *But what think you? A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard.* (Matthew 21:28) A son is known by whether he goes to the vineyard, not by being called a son. In Matthew 12 his own mother and brothers stand outside wanting to speak with him, and he stretches his hand toward his disciples and says *Behold my mother and my brethren!* (Matthew 12:49). Kin there is shown by who is with him, not by who stands outside.
+
+thread: `parable-of-the-two-sons-and-the-wisdom-streams-repentance-and-hypocrisy-architecture`
+
+Matthew 12:46 — *While he yet talked to the people, behold, his mother and his brethren stood without, desiring to speak with him.* His mother and brothers stand outside wanting to speak with him, and he points to his disciples as his mother and brothers.
+
+## card 3813
+
+Ezekiel 33:30 — *Also, thou son of Adam, the children of thy people still are talking against thee by the walls and in the doors of the houses, and speak one to another, every one to his brother, saying, Come, I pray you, and hear what is the word that cometh forth from Yahuah (LORD).* *But what think you? A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard.* (Matthew 21:28) The people of Ezekiel's day talked about the prophet at their walls and doors and told each other *Come, I pray you, and hear what is the word*. The lines after it say what that was worth: *they hear thy words, but they will not do them: for with their mouth they shew much love, but their heart goeth after their covetousness* (Ezekiel 33:31). That is the second son, yes in the mouth and no in the going.
+
+thread: `parable-of-the-two-sons-and-the-wisdom-streams-repentance-and-hypocrisy-architecture`
+
+Ezekiel 33:30 — *the children of thy people still are talking against thee by the walls and in the doors of the houses.* The people talk about the prophet at their doors and urge each other to hear the word, and the next lines show they will not do it.
+
+## card 3814
+
+James 1:22 — *But be ye doers of the word, and not hearers only, deceiving your own selves.* *But what think you? A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard.* (Matthew 21:28) The second son heard the order, said yes, and stayed where he was. James calls that man a hearer only, like one who looks in a mirror and goes off and forgets. The cure he gives is to be *doers of the word, and not hearers only*, and he ties it to looking into *the perfect law of liberty, and continueth therein* (James 1:25).
+
+thread: `parable-of-the-two-sons-and-the-wisdom-streams-repentance-and-hypocrisy-architecture`
+
+James 1:22 — *But be ye doers of the word, and not hearers only, deceiving your own selves.* James says to be doers of the word and not hearers only, which is the difference between the two sons.
+
+## card 3815
+
+John 2:3 — *And when they wanted wine, the mother of Yahusha (Jesus) saith unto him, They have no wine.* *But what think you? A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard.* (Matthew 21:28) What counts at Cana, as in the vineyard, is the doing. His mother says only *They have no wine*, and then tells the servants *Whatsoever he saith unto you, do it* (John 2:5). The parable asks which son did what the father said, and the servants at the wedding are handed the same rule.
+
+thread: `parable-of-the-two-sons-and-the-wisdom-streams-repentance-and-hypocrisy-architecture`
+
+John 2:3 — *And when they wanted wine, the mother of Yahusha (Jesus) saith unto him, They have no wine.* At the wedding in Cana the mother of Yahusha (Jesus) brings him the need, then tells the servants to do whatever he says.
+
+## card 3816
+
+Isaiah 5:1 — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:* *Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country:* (Matthew 21:33) The parable begins with Isaiah's song. The householder who planted, hedged and built a tower and winepress is the beloved who fenced and planted in Isaiah, and Isaiah says whose vineyard it is: *the vineyard of Yahuah Tseva'ot (LORD of hosts) is the house of Yashar'el (Israel), and the men of Yahudah (Judah) his pleasant plant* (Isaiah 5:7). The husbandmen are the ones put in charge of it, not the vineyard.
+
+thread: `isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel`
+
+Isaiah 5:1 — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:* Isaiah's song of the beloved's vineyard, whose vineyard is named later as the house of Yashar'el (Israel).
+
+## card 3817
+
+Psalm 80:8 — *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it.* *Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country:* (Matthew 21:33) The vineyard in the parable is the vine the psalm says was brought out of Egypt and planted after the heathen were cast out. The psalm is a prayer for that vine, *Turn us again, O Elohim (God) of hosts, and cause thy face to shine; and we shall be saved* (Psalm 80:7). In both the vine belongs to the one who planted it.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Psalm 80:8 — *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it.* Yahuah (the LORD) brought a vine out of Egypt, cast out the heathen, and planted it, the vine the parable's vineyard recalls.
+
+## card 3818
+
+Jeremiah 2:21 — *Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me?* *Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country:* (Matthew 21:33) The planter in the parable gives the vineyard everything, and Jeremiah has the planter's own voice saying what he planted: *a noble vine, wholly a right seed*. His question is how it became *the degenerate plant of a strange vine*. The charge in both is about what became of good planting.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Jeremiah 2:21 — *Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me?* Yahuah (the LORD) planted a noble vine, wholly a right seed, and asks how it turned into a strange degenerate plant.
+
+## card 3819
+
+Ezekiel 15:1 — *And the word of Yahuah (LORD) came unto me, saying,* *Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country:* (Matthew 21:33) Ezekiel's word of Yahuah (the LORD) about the vine asks what a vine tree is more than any tree of the forest and whether its wood is good for any work (Ezekiel 15:3). The answer is that *it is cast into the fire for fuel* (Ezekiel 15:4). The parable of the husbandmen is about a vineyard looked at for fruit, and a vine that gives none is judged for that, with the owner's care not in question.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Ezekiel 15:1 — *And the word of Yahuah (LORD) came unto me, saying,* Ezekiel's word of Yahuah (the LORD) about the vine tree begins here and ends with the vine cast into the fire.
+
+## card 3820
+
+Ezekiel 19:10 — *Thy mother is like a vine in thy blood, planted by the waters: she was fruitful and full of branches by reason of many waters.* *Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country:* (Matthew 21:33) The mother in Ezekiel's lament is a vine planted by the waters, fruitful and full of branches, with *strong rods for the sceptres of them that bare rule* (Ezekiel 19:11). The same lament ends with *she was plucked up in fury, she was cast down to the ground* (Ezekiel 19:12). The vineyard in the parable begins as well planted as that, and the lament shows what its loss looks like.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Ezekiel 19:10 — *Thy mother is like a vine in thy blood, planted by the waters: she was fruitful and full of branches by reason of many waters.* A mother vine planted by the waters, fruitful and full of branches, the picture of the vineyard before its loss.
+
+## card 3821
+
+Jeremiah 7:25 — *Since the day that your fathers came forth out of the land of Egypt unto this day I have even sent unto you all my servants the prophets, daily rising up early and sending them:* *And the husbandmen took his servants, and beat one, and killed another, and stoned another.* (Matthew 21:35) The householder sends his servants for the fruit, and Yahuah (the LORD) says through Jeremiah that this is how it had been since Egypt: all his servants the prophets sent, *daily rising up early*. The beating and killing in the parable is the answer those servants got, and the answer is not new to this chapter.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Jeremiah 7:25 — *Since the day that your fathers came forth out of the land of Egypt unto this day I have even sent unto you all my servants the prophets.* From the day the fathers left Egypt, Yahuah (the LORD) sent all his servants the prophets, rising early to send them.
+
+## card 3822
+
+Jeremiah 25:4 — *And Yahuah (LORD) hath sent unto you all his servants the prophets, rising early and sending them; but ye have not hearkened, nor inclined your ear to hear.* *And the husbandmen took his servants, and beat one, and killed another, and stoned another.* (Matthew 21:35) Twenty-three years of speaking and rising early, Jeremiah says, and *ye have not hearkened*. What the servants carried was an offer, *Turn ye again now every one from his evil way, and from the evil of your doings* (Jeremiah 25:5), and the husbandmen answer it with a beating, a killing and a stoning.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Jeremiah 25:4 — *Yahuah (LORD) hath sent unto you all his servants the prophets, rising early and sending them; but ye have not hearkened.* Yahuah (the LORD) sent all his servants the prophets, rising early to send them, and the people did not hearken.
+
+## card 3823
+
+2 Chronicles 24:20 — *And the Spirit of Elohim (God) came upon Zechariah the son of Jehoiada the priest, which stood above the people, and said unto them, Thus saith Elohim (God), Why transgress ye the commandments of Yahuah (LORD), that ye cannot prosper? because ye have forsaken Yahuah (LORD), he hath also forsaken you.* *And the husbandmen took his servants, and beat one, and killed another, and stoned another.* (Matthew 21:35) *Stoned another* has a name behind it. Zechariah the son of Jehoiada was a priest on whom the Spirit of Elohim (God) came, and his words to the people were *Why transgress ye the commandments of Yahuah (LORD)*. They *stoned him with stones at the commandment of the king in the court of the house of Yahuah (LORD)* (2 Chronicles 24:21). A servant sent to hold the people to the commandments was killed at the house.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+2 Chronicles 24:20 — *Thus saith Elohim (God), Why transgress ye the commandments of Yahuah (LORD), that ye cannot prosper.* The Spirit of Elohim (God) comes on Zechariah the priest, who asks why the people transgress the commandments of Yahuah (the LORD).
+
+## card 3824
+
+Jeremiah 26:20 — *And there was also a man that prophesied in the name of Yahuah (LORD), Urijah the son of Shemaiah of Kirjath-jearim, who prophesied against this city and against this land according to all the words of Jeremiah:* *And the husbandmen took his servants, and beat one, and killed another, and stoned another.* (Matthew 21:35) Urijah prophesied in the name of Yahuah (the LORD) against the city and the land, as Jeremiah did, and when King Jehoiakim and his princes heard his words the king sought to put him to death. Urijah fled to Egypt and was fetched back, and Jehoiakim *slew him with the sword, and cast his dead body into the graves of the common people* (Jeremiah 26:23). So *killed another* in the parable has a name here.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Jeremiah 26:20 — *a man that prophesied in the name of Yahuah (LORD), Urijah the son of Shemaiah of Kirjath-jearim.* Urijah prophesied in the name of Yahuah (the LORD) against the city and land, and the king later had him killed.
+
+## card 3825
+
+Jeremiah 38:6 — *Then took they Jeremiah, and cast him into the dungeon of Malchiah the son of Hammelech, that was in the court of the prison: and they let down Jeremiah with cords. And in the dungeon there was no water, but mire: so Jeremiah sunk in the mire.* *And the husbandmen took his servants, and beat one, and killed another, and stoned another.* (Matthew 21:35) The servants in the parable are beaten and killed, and Jeremiah's own treatment was to be let down by cords into a dungeon with no water, where he sunk in the mire. The princes had said *We beseech thee, let this man be put to death* (Jeremiah 38:4), for the words he spoke to the people. The prophet was thrown in the pit for the words he was sent with.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Jeremiah 38:6 — *they let down Jeremiah with cords. And in the dungeon there was no water, but mire: so Jeremiah sunk in the mire.* Jeremiah is lowered by cords into a dungeon with no water and sinks in the mire.
+
+## card 3826
+
+Nehemiah 9:26 — *Nevertheless they were disobedient, and rebelled against thee, and cast thy law behind their backs, and slew thy prophets which testified against them to turn them to thee, and they wrought great provocations.* *And the husbandmen took his servants, and beat one, and killed another, and stoned another.* (Matthew 21:35) The prayer in Nehemiah tells it for the whole line: they *cast thy law behind their backs* and *slew thy prophets* who testified against them *to turn them to thee*. The servants in the parable come for fruit, and the prophets in the prayer came to turn the people back to the law, and they were killed for it.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Nehemiah 9:26 — *cast thy law behind their backs, and slew thy prophets which testified against them to turn them to thee.* They cast the law behind their backs and killed the prophets who testified against them to turn them back.
+
+## card 3827
+
+1 Kings 19:10 — *And he said, I have been very jealous for Yahuah Elohim (the LORD God) of hosts: for the children of Yashar'el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword; and I, even I only, am left; and they seek my life, to take it away.* *And the husbandmen took his servants, and beat one, and killed another, and stoned another.* (Matthew 21:35) Elijah says at Horeb that the children of Yashar'el (Israel) have *forsaken thy covenant* and *slain thy prophets with the sword*, and that he alone is left. The husbandmen who kill the servants are the same hands, and Elijah thinks he is the last servant standing. Yahuah (the LORD) had asked him *What doest thou here, Elijah?* (1 Kings 19:9).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+1 Kings 19:10 — *the children of Yashar'el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword.* Elijah says Yashar'el (Israel) has forsaken the covenant, thrown down the altars, and killed the prophets with the sword.
+
+## card 3828
+
+1 Kings 19:14 — *And he said, I have been very jealous for Yahuah Elohim (the LORD God) of hosts: because the children of Yashar'el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword; and I, even I only, am left; and they seek my life, to take it away.* *And the husbandmen took his servants, and beat one, and killed another, and stoned another.* (Matthew 21:35) After the wind, the earthquake and the fire, a still small voice asks Elijah again what he is doing there, and he gives the same answer in the same words. The owner in the parable does not stop either: he goes on sending, as Yahuah (the LORD) answers Elijah's lament by sending him to anoint *Elisha the son of Shaphat of Abel-meholah shalt thou anoint to be prophet in thy room* (1 Kings 19:16).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+1 Kings 19:14 — *because the children of Yashar'el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword.* Elijah gives the same lament a second time, after the still small voice has asked him what he is doing there.
+
+## card 3829
+
+Isaiah 53:1 — *Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* *But when the husbandmen saw the son, they said among themselves, This is the heir; come, let us kill him, and let us seize on his inheritance.* (Matthew 21:38) The husbandmen look at the heir and see only someone in the way. Isaiah's chapter of the servant begins by asking *Who hath believed our report?* and goes on to a servant who was *despised and rejected of men* (Isaiah 53:3), esteemed not. The parable lays that rejection in a vineyard.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Isaiah 53:1 — *Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* Isaiah's servant chapter opens by asking who has believed the report and to whom the arm of Yahuah (the LORD) is revealed.
+
+## card 3830
+
+Psalm 2:1 — *Why do the heathen rage, and the people imagine a vain thing?* *But when the husbandmen saw the son, they said among themselves, This is the heir; come, let us kill him, and let us seize on his inheritance.* (Matthew 21:38) The husbandmen say *among themselves*, *let us kill him*, and the psalm has the same scene: *the rulers take counsel together, against Yahuah (LORD), and against his anointed* (Psalm 2:2). The plan is a *vain thing*, and the psalm does not end with the plot: *He that sitteth in the heavens shall laugh* (Psalm 2:4).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Psalm 2:1 — *Why do the heathen rage, and the people imagine a vain thing?* The heathen rage and the people imagine a vain thing, with rulers taking counsel against Yahuah (the LORD) and his anointed.
+
+## card 3831
+
+Daniel 9:26 — *And after threescore and two weeks shall Messiah be cut off, but not for himself: and the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof shall be with a flood, and unto the end of the war desolations are determined.* *But when the husbandmen saw the son, they said among themselves, This is the heir; come, let us kill him, and let us seize on his inheritance.* (Matthew 21:38) The heir is killed in the parable, and Daniel's verse names the one cut off, Messiah (Christ), in the words *Messiah be cut off, but not for himself*. It then says what follows, that the people of the prince that shall come *shall destroy the city and the sanctuary*. Daniel puts the cutting off first and the ruin of the city after it, and the owner in Matthew comes to the husbandmen after the heir is slain.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Daniel 9:26 — *And after threescore and two weeks shall Messiah be cut off, but not for himself.* Daniel's verse says Messiah (Christ) is cut off, and that the city and the sanctuary are destroyed after it.
+
+## card 3832
+
+Hebrews 13:12 — *Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate.* *But when the husbandmen saw the son, they said among themselves, This is the heir; come, let us kill him, and let us seize on his inheritance.* (Matthew 21:38) The husbandmen take the heir and the plan ends with him cast out. Hebrews says where Yahusha (Jesus) suffered, *without the gate*, and why, *that he might sanctify the people with his own blood*. It sets this beside the sin offering, whose bodies *are burned without the camp* (Hebrews 13:11).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Hebrews 13:12 — *Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate.* Yahusha (Jesus) suffered outside the gate to sanctify the people with his own blood, as the sin offerings were burned outside the camp.
+
+## card 3833
+
+Acts 7:51 — *Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Ruach HaKodesh (Holy Spirit): as your fathers did, so do ye.* *But when the husbandmen saw the son, they said among themselves, This is the heir; come, let us kill him, and let us seize on his inheritance.* (Matthew 21:38) Stephen puts the parable into his own words to the council: *Which of the prophets have not your fathers persecuted?* (Acts 7:52), and they slew those who spoke of the coming of the Just One, of whom the council were now the betrayers and murderers. He names a pattern in the rulers who sat before him, *as your fathers did, so do ye*.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Acts 7:51 — *Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Ruach HaKodesh (Holy Spirit): as your fathers did, so do ye.* Stephen tells the council they always resist the Ruach HaKodesh (Holy Spirit), as their fathers did before them.
+
+## card 3834
+
+Psalm 118:22 — *The stone which the builders refused is become the head stone of the corner.* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) He asks if they never read it, and the line he quotes comes from the psalm that gave the crowd its Hosanna earlier in this chapter. The one psalm holds both the welcome at the gate and the stone the builders refused, and what it says of the stone is that it is *marvellous in our eyes*.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Psalm 118:22 — *The stone which the builders refused is become the head stone of the corner.* The stone the builders refused has become the head stone of the corner, a line from the same psalm the crowd sang at the entry.
+
+## card 3835
+
+Isaiah 28:16 — *Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste.* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) Isaiah's stone is laid in Zion by Adonai Yahuah (the Lord GOD) himself, tried and precious, a sure foundation, and the words just before it are spoken to *ye scornful men, that rule this people which is in Jerusalem* (Isaiah 28:14). That word to the rulers is what the stone is laid against, and it is set in Zion regardless.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Isaiah 28:16 — *I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation.* Yahuah (the LORD) himself lays in Zion a tried stone, a precious corner stone, a sure foundation.
+
+## card 3836
+
+Isaiah 8:14 — *And he shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Yashar'el (Israel), for a gin and for a snare to the inhabitants of Jerusalem.* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) Isaiah says the same stone is a sanctuary to some and *a stone of stumbling* to *both the houses of Yashar'el (Israel)*. The builders who refuse it are not the only ones in view. It is a stone with two sides, a place to shelter and a place to fall.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Isaiah 8:14 — *for a stone of stumbling and for a rock of offence to both the houses of Yashar'el (Israel).* The stone is a sanctuary to some and a stone of stumbling to both houses of Yashar'el (Israel).
+
+## card 3837
+
+Daniel 2:34 — *Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces.* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) Yahusha (Jesus) puts the word *stone* in front of the rulers, and Daniel has a stone too: *a stone was cut out without hands*, struck the image on its feet of iron and clay, and broke them to pieces. In Daniel *the stone that smote the image became a great mountain, and filled the whole earth* (Daniel 2:35), and the stone stands for a kingdom that breaks the kingdoms.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Daniel 2:34 — *a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces.* In Daniel a stone cut out without hands strikes the image on its feet of iron and clay and breaks it to pieces.
+
+## card 3838
+
+Daniel 2:44 — *And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) Daniel says what his stone is for: in the days of those kings the Elohim (God) of heaven sets up a kingdom that is never destroyed, and it breaks in pieces and consumes all the kingdoms. In Matthew the stone becomes *the head of the corner*, and in Daniel the same word becomes a kingdom that outlasts the ones it breaks.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Daniel 2:44 — *it shall break in pieces and consume all these kingdoms, and it shall stand for ever.* The kingdom set up by the Elohim (God) of heaven is never destroyed, breaks in pieces all these kingdoms, and stands for ever.
+
+## card 3839
+
+Acts 4:11 — *This is the stone which was set at nought of you builders, which is become the head of the corner.* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) Peter takes the line Yahusha (Jesus) used and says it to the rulers of his own day: the stone they *set at nought* is the one *whom ye crucified, whom Elohim (God) raised from the dead* (Acts 4:10). What the builders discarded, Elohim (God) raised.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Acts 4:11 — *This is the stone which was set at nought of you builders, which is become the head of the corner.* Peter tells the rulers that the stone they set at nought has become the head of the corner.
+
+## card 3840
+
+Romans 9:33 — *As it is written, Behold, I lay in Zion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed.* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) Paul brings Isaiah's stone to answer why Yashar'el (Israel), *which followed after the law of righteousness* (Romans 9:31), did not reach it. He says they sought it not by faith, and stumbled at the stumblingstone. His complaint is with how they went after it, as if standing were a thing earned, and not with the law they were following.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Romans 9:33 — *As it is written, Behold, I lay in Zion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed.* Paul gives Isaiah's stone as the reason Yashar'el (Israel) stumbled, and says the one who believes on him will not be ashamed.
+
+## card 3841
+
+Ephesians 2:20 — *And are built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone;* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) He says the builders refused the stone, and Paul says what house is being built: one on *the foundation of the apostles and prophets*, with Yahusha (Jesus) as the chief corner stone. The prophets are in the foundation first, so the stone is laid into what the prophets began and not on a new site.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Ephesians 2:20 — *built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone.* The house is built on the foundation of the apostles and prophets, with Yahusha (Jesus) himself the chief corner stone.
+
+## card 3842
+
+1 Peter 2:4 — *To whom coming, as unto a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious,* *Yahusha (Jesus) says unto them, Did you never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah's (Lord’s) doing, and it is marvellous in our eyes?* (Matthew 21:42) Peter puts both halves of the psalm line in his own words. What the builders refused he calls *disallowed indeed of men*, and what became the head of the corner he calls *chosen of Elohim (God), and precious*. A few lines on he says it outright: *the stone which the builders disallowed, the same is made the head of the corner* (1 Peter 2:7).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+1 Peter 2:4 — *as unto a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious.* The living stone is disallowed by men and chosen by Elohim (God), and precious.
+
+## card 3843
+
+Matthew 19:28 — *And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel).* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) He has already said where the kingdom is headed: his followers on twelve thrones, *judging the twelve tribes of Yashar'el (Israel)*. Whatever nation is meant by the one that brings forth fruit, it is not a people outside those tribes, since the tribes are still the twelve he names.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Matthew 19:28 — *ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel).* Those who followed him sit on twelve thrones judging the twelve tribes of Yashar'el (Israel), so the tribes are still twelve.
+
+## card 3844
+
+1 Peter 2:9 — *But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) Peter uses the word the parable uses, *nation*, and says what it is: *an holy nation, a peculiar people*, and in the next lines *which in time past were not a people, but are now the people of Elohim (God)* (1 Peter 2:10). That is Hosea's not-my-people turned into my-people, so the nation that bears the fruit is Yashar'el (Israel) brought back and not another people set in its place.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+1 Peter 2:9 — *ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people.* Peter calls the people a chosen generation, a royal priesthood, an holy nation, and the next verse says they were once not a people.
+
+## card 3845
+
+Hosea 1:9 — *Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God).* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) The nation that is given the kingdom has a history that begins here, with a people told *ye are not my people*. Hosea names the loss, and a few lines on he names the repair: *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10). The keeping passes from husbandmen who failed it to the people who were Lo-ammi and are made Ammi.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Hosea 1:9 — *Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God).* Elohim (God) names the child Lo-ammi, not my people, the name Hosea's next verses promise to turn into sons of the living Elohim (God).
+
+## card 3846
+
+Hosea 2:23 — *And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) This is the reverse of Lo-ammi. The ones who were not his people are told they are, and they answer with their own confession, *Thou art my Elohim (God)*. The nation that brings forth fruit in Matthew is this people, sown back into the earth, with mercy on the one that had not obtained mercy.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Hosea 2:23 — *I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* The ones who were not his people are told You are my people, and they answer You are my Elohim (God).
+
+## card 3847
+
+Isaiah 11:11 — *And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt, and from Pathros, and from Cush, and from Elam, and from Shinar, and from Hamath, and from the islands of the sea.* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) The kingdom handed on to a nation is the second recovery. Yahuah (the Lord) reaches out a second time to bring back what is left of his people from Assyria, Egypt and the far places, and the verses after it say what that does to the old split: *The envy also of Ephraim shall depart, and the adversaries of Yahudah (Judah) shall be cut off* (Isaiah 11:13).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Isaiah 11:11 — *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people.* Yahuah (the Lord) sets his hand a second time to recover the remnant of his people from Assyria, Egypt and the far places.
+
+## card 3848
+
+Jeremiah 31:31 — *Behold, the days come, saith Yahuah (LORD), that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah):* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) The new covenant is made with two houses, *the house of Yashar'el (Israel)* and *the house of Yahudah (Judah)*, not with a third party. What is in it is the Torah: *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33). The kingdom given to a nation goes to the people who receive this covenant, and it puts the law in them, not away from them.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Jeremiah 31:31 — *I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah).* The new covenant is made with the house of Yashar'el (Israel) and the house of Yahudah (Judah), with the law written on their hearts.
+
+## card 3849
+
+Ezekiel 36:26 — *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) A nation bringing forth fruit needs a heart that can, and Ezekiel says where it comes from. Yahuah (the LORD) takes away the stony heart and gives a heart of flesh, and the next verse says what that heart does: *cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The fruit asked of the nation is walking in the Torah, and the new heart is how it is given.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Ezekiel 36:26 — *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh.* Yahuah (the LORD) gives a new heart and a new spirit in place of the stony heart, and the next verse has it walking in his statutes.
+
+## card 3850
+
+Ezekiel 37:15 — *The word of Yahuah (LORD) came again unto me, saying,* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) The word of Yahuah (the LORD) that begins here is the two sticks, one for Yahudah (Judah) and one for Joseph, the stick of Ephraim, joined into one in the prophet's hand. The verses after say what the one stick means: *I will make them one nation in the land upon the mountains of Yashar'el (Israel)* (Ezekiel 37:22). The nation in Matthew's verse is one nation, the two houses brought together, not a new people.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Ezekiel 37:15 — *The word of Yahuah (LORD) came again unto me, saying,* Here the word of Yahuah (the LORD) comes again to Ezekiel, introducing the two sticks that become one.
+
+## card 3851
+
+Ephesians 2:20 — *And are built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone;* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) A nation that bears fruit needs a house to live in, and Paul describes one household of Elohim (God) built on the foundation of the apostles and prophets. The prophets are laid first, so the people he writes to stand on what the prophets spoke before the apostles did.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Ephesians 2:20 — *built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone.* One household of Elohim (God) is built on the foundation of the apostles and prophets, with Yahusha (Jesus) as the chief corner stone.
+
+## card 3852
+
+Revelation 7:4 — *And I heard the number of them which were sealed: and there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar'el (Israel).* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) A nation bringing forth fruit is named here by tribe. The sealed are an hundred and forty and four thousand *of all the tribes of the children of Yashar'el (Israel)*, and the verses that follow give the count tribe by tribe, beginning *Of the tribe of Judah were sealed twelve thousand* (Revelation 7:5). Revelation counts them by the tribes of Yashar'el (Israel), by name.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Revelation 7:4 — *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar'el (Israel).* The sealed number an hundred and forty and four thousand, all of them from the tribes of the children of Yashar'el (Israel).
+
+## card 3853
+
+Revelation 21:12 — *And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar'el (Israel):* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) The city has twelve gates with *the twelve tribes of the children of Yashar'el (Israel)* named on them, and its wall stands on *twelve foundations, and in them the names of the twelve apostles of the Lamb* (Revelation 21:14). The nation the kingdom goes to is still twelve tribes in what Revelation shows, with the apostles in the foundations.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Revelation 21:12 — *had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar'el (Israel).* The city's twelve gates carry the names of the twelve tribes of the children of Yashar'el (Israel).
+
+## card 3854
+
+Matthew 7:15 — *Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves.* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) He asks the husbandmen for the fruits, and in the Sermon fruit is how he says anyone is known: *Ye shall know them by their fruits* (Matthew 7:16). The one who comes *in sheep's clothing* is not read by how he looks, and the nation the kingdom is given to is the one that bears. It is the same test in both places.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Matthew 7:15 — *Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves.* False prophets come in sheep's clothing, and the Sermon says they are known by their fruits.
+
+## card 3855
+
+John 15:1 — *I am the true vine, and my Father is the husbandman.* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) In John he names himself the true vine and says *my Father is the husbandman*, so the keeper of this vine is the Father himself and not the men in Matthew's parable who beat the servants. The Father's keeping is a husbandry of fruit: *Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit* (John 15:2).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+John 15:1 — *I am the true vine, and my Father is the husbandman.* Yahusha (Jesus) calls himself the true vine and says his Father is the husbandman.
+
+## card 3856
+
+James 2:14 — *What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him?* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) James asks what profit there is in saying you have faith while you have no works, and answers a few lines on: *Even so faith, if it hath not works, is dead, being alone* (James 2:17). The nation given the kingdom is the one that brings forth fruit, and James gives that fruit its name, works, which are judged *by the law of liberty* (James 2:12).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+James 2:14 — *What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him?* James asks what it profits to say you have faith and have no works, and whether that faith can save.
+
+## card 3857
+
+Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* *Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* (Matthew 21:43) Revelation closes on the same test: *Blessed are they that do his commandments*. The fruit the kingdom looks for from its nation is doing, and the verse sets the right to the tree of life and the way in through the gates of the city on the ones who do.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life.* Those who do his commandments are blessed and have the right to the tree of life and to enter the city by its gates.
+
+## card 3858
+
+Daniel 2:34 — *Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces.* *And whosoever shall fall on this stone shall be broken: but on whomsoever it shall fall, it will grind him to powder.* (Matthew 21:44) *It will grind him to powder* is where Daniel's stone ends too. It strikes the image on its feet, and the iron, the clay, the brass, the silver and the gold *became like the chaff of the summer threshingfloors* (Daniel 2:35), carried off by the wind. In Daniel the stone falls on kingdoms and breaks them, and in Matthew it falls on whoever stumbles against it.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Daniel 2:34 — *a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces.* Daniel's stone, cut out without hands, strikes the image and breaks it in pieces, so that the kingdoms are ground down.
+
+## card 3859
+
+Isaiah 8:14 — *And he shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Yashar'el (Israel), for a gin and for a snare to the inhabitants of Jerusalem.* *And whosoever shall fall on this stone shall be broken: but on whomsoever it shall fall, it will grind him to powder.* (Matthew 21:44) *Whosoever shall fall on this stone shall be broken* is Isaiah's own order: the stone of stumbling, and then *many among them shall stumble, and fall, and be broken, and be snared, and be taken* (Isaiah 8:15). Isaiah says it is a stone of stumbling to both houses, so those who fall on it are of either house, and it is a sanctuary for the rest.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Isaiah 8:14 — *for a stone of stumbling and for a rock of offence to both the houses of Yashar'el (Israel).* The stone is a stumbling and a snare to both houses of Yashar'el (Israel), and many fall on it and are broken.
+
+## card 3860
+
+Isaiah 60:12 — *For the nation and kingdom that will not serve thee shall perish; yea, those nations shall be utterly wasted.* *And whosoever shall fall on this stone shall be broken: but on whomsoever it shall fall, it will grind him to powder.* (Matthew 21:44) Isaiah's word is plain: *the nation and kingdom that will not serve thee shall perish*. The stone that grinds to powder whoever it falls on has this behind it. The verses around it are spoken to the city whose walls are built and whose gates stand open continually, and the line is the other side of that welcome: whatever will not serve her comes to nothing.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Isaiah 60:12 — *the nation and kingdom that will not serve thee shall perish; yea, those nations shall be utterly wasted.* The nation and kingdom that will not serve Zion perishes and is utterly wasted.
+
+## card 3861
+
+Matthew 26:3 — *Then assembled together the chief priests, and the scribes, and the elders of the people, unto the palace of the high priest, who was called Caiaphas,* *And when the chief priests and Pharisees had heard his parables, they perceived that he spake of them.* (Matthew 21:45) At the end of the chapter *they perceived that he spake of them*, and later in Matthew they assemble at the high priest's palace and *consulted that they might take Yahusha (Jesus) by subtilty, and kill him* (Matthew 26:4). It is what the husbandmen said among themselves in the parable, and it is still said with an eye on the crowd: *Not on the feast day, lest there be an uproar among the people* (Matthew 26:5).
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+Matthew 26:3 — *Then assembled together the chief priests, and the scribes, and the elders of the people, unto the palace of the high priest, who was called Caiaphas,* The chief priests, scribes and elders gather at the palace of Caiaphas the high priest, where the plot against him is made.
+
+## card 3862
+
+John 11:47 — *Then gathered the chief priests and the Pharisees a council, and said, What do we? for this man doeth many miracles.* *And when the chief priests and Pharisees had heard his parables, they perceived that he spake of them.* (Matthew 21:45) Having perceived the parable was about them, the chief priests and Pharisees gather a council because of his miracles, and their talk is of keeping what they hold: *take away both our place and nation* (John 11:48). In the parable the husbandmen said *let us seize on his inheritance* (Matthew 21:38), and here the fear of losing a place is what they reason from.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+John 11:47 — *Then gathered the chief priests and the Pharisees a council, and said, What do we? for this man doeth many miracles.* The chief priests and Pharisees gather a council and ask what they will do, because the man does many miracles.
+
+## card 3863
+
+John 12:42 — *Nevertheless among the chief rulers also many believed on him; but because of the Pharisees they did not confess him, lest they should be put out of the synagogue:* *And when the chief priests and Pharisees had heard his parables, they perceived that he spake of them.* (Matthew 21:45) The chief priests and Pharisees *perceived that he spake of them*, and not every ruler closed the door: John says *among the chief rulers also many believed on him*. They kept quiet for fear of being put out, *For they loved the praise of men more than the praise of Elohim (God)* (John 12:43). The fear was a system's, and the rulers it held were not all of one mind.
+
+thread: `wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning`
+
+John 12:42 — *among the chief rulers also many believed on him; but because of the Pharisees they did not confess him.* Many of the chief rulers believed on him but did not confess him, for fear of being put out of the synagogue.
+
+## card 3864
+
+Isaiah 25:6 — *And in this mountain shall Yahuah Tseva'ot (LORD of hosts) make unto all people a feast of fat things, a feast of wines on the lees, of fat things full of marrow, of wines on the lees well refined.* *And Yahusha (Jesus) answered and spake unto them again by parables, and said,* (Matthew 22:1) The parable he is about to tell is a feast, and Isaiah had already set the table: *a feast of fat things* on the mountain of Yahuah (the LORD). The king's dinner, *my oxen and my fatlings are killed* (Matthew 22:4), is that same table, ready and waiting for whoever comes.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Isaiah 25:6 — *in this mountain shall Yahuah Tseva'ot (LORD of hosts) make unto all people a feast of fat things.* The feast is Yahuah's (the LORD's) own, spread on his mountain, and the king's dinner in the parable is that table made ready.
+
+## card 3865
+
+Isaiah 55:1 — *Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price.* *And Yahusha (Jesus) answered and spake unto them again by parables, and said,* (Matthew 22:1) The parable is an invitation, and Isaiah's cry is the same one: *come ye*, and *buy wine and milk without money and without price*. The table costs the guest nothing, but it still has a host who sent the call, and the parable is about what the bidden did with it.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Isaiah 55:1 — *come ye, buy, and eat; yea, come, buy wine and milk without money and without price.* Isaiah's open call to the thirsty, with no money asked, is the invitation the king's servants carry out in the parable.
+
+## card 3866
+
+Isaiah 61:10 — *I will greatly rejoice in Yahuah (LORD), my soul shall be joyful in my Elohim (God); for he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness, as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels.* *And Yahusha (Jesus) answered and spake unto them again by parables, and said,* (Matthew 22:1) Isaiah has the clothing before the parable does. Yahuah (the LORD) *hath clothed me with the garments of salvation*, and the figure he uses is a bridegroom and a bride dressed for their day. A wedding has its own dress, and the story Yahusha (Jesus) is starting will come back to it.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Isaiah 61:10 — *he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness.* Isaiah's garments of salvation and robe of righteousness, worn by bridegroom and bride, are the wedding dress the parable has in view.
+
+## card 3867
+
+Revelation 19:6 — *And I heard as it were the voice of a great multitude, and as the voice of many waters, and as the voice of mighty thunderings, saying, Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth.* *And Yahusha (Jesus) answered and spake unto them again by parables, and said,* (Matthew 22:1) The parable's wedding is the one Revelation shouts over: *Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth*, and the next verse says *the marriage of the Lamb is come* (Revelation 19:7). The king who made a marriage for his son and the Lamb whose marriage has come are the same feast seen from the far end.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Revelation 19:6 — *saying, Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth.* The multitude shouts that Yahuah (the LORD) reigns, and the next verse names the marriage of the Lamb that the parable's wedding looks toward.
+
+## card 3868
+
+Matthew 23:38 — *Behold, your house is left unto you desolate.* *But when the king heard thereof, he was wroth: and he sent forth his armies, and destroyed those murderers, and burned up their city.* (Matthew 22:7) The king burns the city of the men who slew his servants, and Yahusha (Jesus) says the same in plain words a chapter later: Jerusalem, *thou that killest the prophets* (Matthew 23:37), has its house left *desolate*. It is the house that is emptied, the temple and its rule, and in the same breath he speaks of gathering her children.
+
+thread: `matthew-22-their-city-burned-and-the-house-left-desolate`
+
+Matthew 23:38 — *Behold, your house is left unto you desolate.* The burned city of the parable is said plainly here: the house is left desolate, spoken to the city that kills the prophets.
+
+## card 3869
+
+Matthew 24:1 — *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* *But when the king heard thereof, he was wroth: and he sent forth his armies, and destroyed those murderers, and burned up their city.* (Matthew 22:7) The parable burns a city, and two chapters on Yahusha (Jesus) walks out of the temple while the disciples point him to its buildings. His answer is that *There shall not be left here one stone upon another* (Matthew 24:2), the burned city of the parable said again at the temple's own door.
+
+thread: `matthew-22-their-city-burned-and-the-house-left-desolate`
+
+Matthew 24:1 — *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* He leaves the temple and the disciples show him its buildings, which sets up what he says next about the stones.
+
+## card 3870
+
+Jeremiah 7:1 — *The word that came to Jeremiah from Yahuah (LORD), saying,* *But when the king heard thereof, he was wroth: and he sent forth his armies, and destroyed those murderers, and burned up their city.* (Matthew 22:7) Jeremiah 7 is where this was first spoken. The word came to him at the gate of the house, to a people leaning on the building: *Trust ye not in lying words, saying, The temple of Yahuah (LORD)* (Jeremiah 7:4). The king's burned city is what that word warned of.
+
+thread: `matthew-22-their-city-burned-and-the-house-left-desolate`
+
+Jeremiah 7:1 — *The word that came to Jeremiah from Yahuah (LORD), saying,* The word to Jeremiah at the gate of the house, against trusting the temple, is the older warning behind the burned city.
+
+## card 3871
+
+Isaiah 10:5 — *O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation.* *But when the king heard thereof, he was wroth: and he sent forth his armies, and destroyed those murderers, and burned up their city.* (Matthew 22:7) The king sends *his armies* against those who killed his servants, and Isaiah shows Yahuah (the LORD) doing the same before: *O Assyrian, the rod of mine anger*. The army is his rod, taken up against a people that had earned it, and the one who wields it is the one who was wronged.
+
+thread: `matthew-22-their-city-burned-and-the-house-left-desolate`
+
+Isaiah 10:5 — *O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation.* Yahuah (the LORD) has sent an army as his rod of anger before, and the king's armies in the parable are sent the same way.
+
+## card 3872
+
+Isaiah 61:10 — *I will greatly rejoice in Yahuah (LORD), my soul shall be joyful in my Elohim (God); for he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness, as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels.* *And when the king came in to see the guests, he saw there a man which had not on a wedding garment:* (Matthew 22:11) The king looks for *a wedding garment* and finds a guest without one. Isaiah says what that clothing is: Yahuah (the LORD) *hath clothed me with the garments of salvation*, with *the robe of righteousness*. The guest has come in at the door, and what is missing is what he is wearing.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Isaiah 61:10 — *he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness.* The robe of righteousness that Yahuah (the LORD) puts on his people is what the king looks for on the guest and does not find.
+
+## card 3873
+
+Isaiah 64:6 — *But we are all as an unclean thing, and all our righteousnesses are as filthy rags; and we all do fade as a leaf; and our iniquities, like the wind, have taken us away.* *And when the king came in to see the guests, he saw there a man which had not on a wedding garment:* (Matthew 22:11) Isaiah's people stand in *filthy rags*, their iniquities having *taken us away*, yet the same prayer says Yahuah (the LORD) *meetest him that rejoiceth and worketh righteousness* (Isaiah 64:5). The man at the feast has the rags and not the righteousness the king looks for.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Isaiah 64:6 — *we are all as an unclean thing, and all our righteousnesses are as filthy rags.* Isaiah's confession of filthy rags and of iniquities that carried the people away is what the man at the feast is standing in.
+
+## card 3874
+
+Zechariah 3:3 — *Now Joshua was clothed with filthy garments, and stood before the angel.* *And when the king came in to see the guests, he saw there a man which had not on a wedding garment:* (Matthew 22:11) Joshua the high priest stands before the angel of Yahuah (the LORD) in *filthy garments*, and the word is *I will clothe thee with change of raiment* (Zechariah 3:4). The man at the feast has not had that change, and the king sees it the moment he comes in.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Zechariah 3:3 — *Now Joshua was clothed with filthy garments, and stood before the angel.* Joshua's filthy garments, taken off and exchanged for clean raiment, show the change of clothing that the guest at the feast lacks.
+
+## card 3875
+
+Revelation 19:8 — *And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints.* *And when the king came in to see the guests, he saw there a man which had not on a wedding garment:* (Matthew 22:11) Revelation names the garment: *fine linen, clean and white*, and *the fine linen is the righteousness of saints*. It is granted to the wife at the marriage, so a guest in other clothes stands out the moment the king comes in to look.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Revelation 19:8 — *And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints.* The wedding garment is named here: fine linen, clean and white, which is the righteousness of saints.
+
+## card 3876
+
+Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* *And when the king came in to see the guests, he saw there a man which had not on a wedding garment:* (Matthew 22:11) To Sardis the word is that a few *have not defiled their garments* (Revelation 3:4), and the one who overcomes *shall be clothed in white raiment*. The guest in the parable was called and came in, and what he lacked was this clothing, which comes with the promise that the name of the one who wears it is not blotted out.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life.* White raiment is given to the one who overcomes, and his name is kept in the book of life, which is the clothing the guest lacked.
+
+## card 3877
+
+Matthew 7:21 — *Not every one that saith unto me, Adonai (Lord), Adonai (Lord), shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.* *And when the king came in to see the guests, he saw there a man which had not on a wedding garment:* (Matthew 22:11) The man at the feast was bidden and came through the door, and he is cast out all the same, which is what *Not every one that saith unto me* means. What decides it in both places is the doing, *he that doeth the will of my Father*, and the garment is what that doing looks like when the king comes to see.
+
+thread: `the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon`
+
+Matthew 7:21 — *but he that doeth the will of my Father which is in heaven.* Saying the word is not enough to enter, and the one who does the will of the Father enters, the same test the garment sets at the feast.
+
+## card 3878
+
+Matthew 20:16 — *So the last shall be first, and the first last: for many be called, but few chosen.* *For many are called, but few are chosen.* (Matthew 22:14) Yahusha (Jesus) closes the labourers in the vineyard and the wedding feast with the same sentence. In both the call goes out wide, and in both what he counts at the end is the chosen, not the called. *Many be called, but few chosen* is said twice, over two different tables.
+
+thread: `many-be-called-but-few-chosen-in-1-enoch-and-2-esdras`
+
+Matthew 20:16 — *So the last shall be first, and the first last: for many be called, but few chosen.* The same closing sentence ends the labourers in the vineyard, where the call goes wide and the chosen are the few.
+
+## card 3879
+
+Isaiah 6:9 — *And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.* *For many are called, but few are chosen.* (Matthew 22:14) Isaiah is sent to a people who *Hear ye indeed, but understand not*. The call in the parable goes out as wide as that, and what separates the chosen from the called is not made by the hearing. Those who understand were his before they heard, and the hearing brings that out.
+
+thread: `many-be-called-but-few-chosen-in-1-enoch-and-2-esdras`
+
+Isaiah 6:9 — *And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.* The word to Isaiah, to a people that hear and do not understand, shows why many are called and few are chosen.
+
+## card 3880
+
+Revelation 17:14 — *These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful.* *For many are called, but few are chosen.* (Matthew 22:14) In Revelation the ones with the Lamb when he overcomes are *called, and chosen, and faithful*, three words where Matthew gives two. The few of the parable are the ones counted there, and the guest without the garment shows what it looks like to be called and not faithful.
+
+thread: `many-be-called-but-few-chosen-in-1-enoch-and-2-esdras`
+
+Revelation 17:14 — *they that are with him are called, and chosen, and faithful.* Those with the Lamb when he overcomes are called, and chosen, and faithful, the few that the parable's closing sentence counts.
+
+## card 3881
+
+Genesis 1:26 — *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.* *They say unto him, Cæsar’s. Then says he unto them, Render therefore unto Cæsar the things which are Cæsar’s; and unto Elohim (God) the things that are Elohim's (God’s).* (Matthew 22:21) He asks whose image is on the coin, and it is Caesar's, so the coin goes to Caesar. Genesis has another image in view: *Let us make man in our image, after our likeness*. The one who carries that image belongs to Elohim (God), which is what his answer leaves them to see.
+
+thread: `render-unto-caesar-and-the-image-of-elohim-stamped-on-man-in-sirach-and-wisdom-of-solomon`
+
+Genesis 1:26 — *Let us make man in our image, after our likeness.* Man is made in Elohim's (God's) image, so the one stamped with it is what Yahusha (Jesus) says belongs to Elohim (God).
+
+## card 3882
+
+Romans 13:1 — *Let every soul be subject unto the higher powers. For there is no power but of Elohim (God): the powers that be are ordained of Elohim (God).* *They say unto him, Cæsar’s. Then says he unto them, Render therefore unto Cæsar the things which are Cæsar’s; and unto Elohim (God) the things that are Elohim's (God’s).* (Matthew 22:21) Romans stands on the same ground as the coin: Caesar has real things, and they are his because *the powers that be are ordained of Elohim (God)*. The power is set under the one who ordained it, so what Caesar is owed is measured by whose he is.
+
+thread: `render-unto-caesar-and-the-image-of-elohim-stamped-on-man-in-sirach-and-wisdom-of-solomon`
+
+Romans 13:1 — *For there is no power but of Elohim (God): the powers that be are ordained of Elohim (God).* Rulers hold their power from Elohim (God), so Caesar's things are Caesar's under him and never apart from him.
+
+## card 3883
+
+1 Peter 2:13 — *Submit yourselves to every ordinance of man for Yahusha's (Lord’s) sake: whether it be to the king, as supreme;* *They say unto him, Cæsar’s. Then says he unto them, Render therefore unto Cæsar the things which are Cæsar’s; and unto Elohim (God) the things that are Elohim's (God’s).* (Matthew 22:21) Peter writes to *strangers and pilgrims* (1 Peter 2:11), people living under rulers that are not their own, and he gives them the coin's answer: *every ordinance of man*, even *to the king, as supreme*. The reason he gives is Yahusha's (Jesus's) sake, not the ruler's strength.
+
+thread: `render-unto-caesar-and-the-image-of-elohim-stamped-on-man-in-sirach-and-wisdom-of-solomon`
+
+1 Peter 2:13 — *Submit yourselves to every ordinance of man for Yahusha's (Lord’s) sake: whether it be to the king, as supreme;* Peter tells strangers and pilgrims to honour the ordinances of men, even the king as supreme, which is the coin's answer carried to people under rulers not their own.
+
+## card 3884
+
+Acts 5:29 — *Then Peter and the other apostles answered and said, We ought to obey Elohim (God) rather than men.* *They say unto him, Cæsar’s. Then says he unto them, Render therefore unto Cæsar the things which are Cæsar’s; and unto Elohim (God) the things that are Elohim's (God’s).* (Matthew 22:21) The coin has two owners, and Peter stands where the two claims part. The council has just forbidden the apostles to teach in his name, and his answer is *We ought to obey Elohim (God) rather than men*. A command that reaches past what is Caesar's into what is Elohim's (God's) ends there.
+
+thread: `render-unto-caesar-and-the-image-of-elohim-stamped-on-man-in-sirach-and-wisdom-of-solomon`
+
+Acts 5:29 — *Then Peter and the other apostles answered and said, We ought to obey Elohim (God) rather than men.* Where a command from men reaches past what belongs to them, the apostles answer that Elohim (God) is obeyed first.
+
+## card 3885
+
+Deuteronomy 25:5 — *If brethren dwell together, and one of them die, and have no child, the wife of the dead shall not marry without unto a stranger: her husband’s brother shall go in unto her, and take her to him to wife, and perform the duty of an husband’s brother unto her.* *The same day came to him the Sadducees, which say that there is no resurrection, and asked him,* (Matthew 22:23) The riddle is built on a commandment of Moses: when a brother dies without a child, his brother *shall go in unto her* and carry the dead man's name forward. The law is Moses', and the Sadducees take it and set it against the resurrection, as if a duty to a dead man's line could make the dead rising look absurd.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Deuteronomy 25:5 — *shall go in unto her, and take her to him to wife.* The commandment for a brother to raise up a child for the one who died is the law the Sadducees' seven brothers are built on.
+
+## card 3886
+
+Genesis 38:1 — *And it came to pass at that time, that Yahudah (Judah) went down from his brethren, and turned in to a certain Adullamite, whose name was Hirah.* *The same day came to him the Sadducees, which say that there is no resurrection, and asked him,* (Matthew 22:23) The Sadducees treat the brother's duty as a puzzle, but Genesis 38 opens Yahudah's (Judah's) household, with its sons Er and Onan, and it is there that the duty to a childless widow is first seen at work. The seed was carried forward by the brother, which is what the seven brothers in the riddle are supposed to be doing.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Genesis 38:1 — *Yahudah (Judah) went down from his brethren, and turned in to a certain Adullamite.* Genesis 38 opens Yahudah's (Judah's) household, where a brother's duty to a childless widow was already at work long before Moses.
+
+## card 3887
+
+Ruth 4:1 — *Then went Boaz up to the gate, and sat him down there: and, behold, the kinsman of whom Boaz spake came by; unto whom he said, Ho, such a one! turn aside, sit down here. And he turned aside, and sat down.* *The same day came to him the Sadducees, which say that there is no resurrection, and asked him,* (Matthew 22:23) Boaz goes up to the gate and sits the nearer kinsman down before ten elders to settle Elimelech's land. It is the brother's duty carried out in the open, with a widow's family at stake, and not turned into a riddle to trap someone.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Ruth 4:1 — *went Boaz up to the gate, and sat him down there.* Boaz settles the right of the nearer kinsman at the gate before ten elders, the same family duty the Sadducees turn into a riddle.
+
+## card 3888
+
+Acts 23:8 — *For the Sadducees say that there is no resurrection, neither angel, nor spirit: but the Pharisees confess both.* *The same day came to him the Sadducees, which say that there is no resurrection, and asked him,* (Matthew 22:23) Acts says what the Sadducees hold: *no resurrection, neither angel, nor spirit*. So the question brought to Yahusha (Jesus) is no puzzle they want solved but their own denial dressed as one, and his answer deals with the resurrection and with the angels.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Acts 23:8 — *For the Sadducees say that there is no resurrection, neither angel, nor spirit: but the Pharisees confess both.* Acts states the Sadducees' creed, no resurrection, angel or spirit, which is what their question about the seven brothers is really arguing.
+
+## card 3889
+
+John 5:39 — *Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me.* *Yahusha (Jesus) answered and said unto them, You do err, not knowing the scriptures, nor the power of Elohim (God).* (Matthew 22:29) He tells the Sadducees they err, *not knowing the scriptures*. To others he says *Search the scriptures*, for *they are they which testify of me*. The fault in both rooms is the same: the writings are in their hands and the one they point to is not seen.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+John 5:39 — *Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me.* He sends them to the scriptures, which testify of him, the same writings the Sadducees are told they do not know.
+
+## card 3890
+
+2 Timothy 3:15 — *And that from a child thou hast known the holy scriptures, which are able to make thee wise unto salvation through faith which is in HaMashiach Yahusha (Christ Jesus).* *Yahusha (Jesus) answered and said unto them, You do err, not knowing the scriptures, nor the power of Elohim (God).* (Matthew 22:29) Timothy had *known the holy scriptures* from a child, and when he was a child those were Moses and the prophets. They are the writings Yahusha (Jesus) says the Sadducees do not know, and the ones he reasons from in the next breath.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+2 Timothy 3:15 — *from a child thou hast known the holy scriptures.* The scriptures Timothy knew from a child, Moses and the prophets, are the writings the Sadducees are told they do not know.
+
+## card 3891
+
+Genesis 6:1 — *And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them,* *For in the resurrection they neither marry, nor are given in marriage, but are as the angels of Elohim (God) in heaven.* (Matthew 22:30) The raised neither marry nor are given in marriage, and he sets them beside the angels in heaven. Genesis tells of other sons of Elohim (God) who did the opposite, for *they took them wives of all which they chose* (Genesis 6:2). The ones in heaven keep their place, and the ones in Genesis left it.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Genesis 6:1 — *And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them,* Genesis 6 begins the account of the sons of Elohim (God) who took wives, the other side of the angels who stay in heaven.
+
+## card 3892
+
+Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* *For in the resurrection they neither marry, nor are given in marriage, but are as the angels of Elohim (God) in heaven.* (Matthew 22:30) Jude names angels who *kept not their first estate* and *left their own habitation*, held in chains for the judgment. The angels Yahusha (Jesus) points to are the ones who stayed in heaven, and the Sadducees' puzzle about marriage never touches the difference between the two.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Jude 1:6 — *kept not their first estate, but left their own habitation, he hath reserved in everlasting chains.* Jude's angels left their own habitation and are held for judgment, the contrast to the angels in heaven the raised are likened to.
+
+## card 3893
+
+1 Corinthians 6:3 — *Know ye not that we shall judge angels? how much more things that pertain to this life?* *For in the resurrection they neither marry, nor are given in marriage, but are as the angels of Elohim (God) in heaven.* (Matthew 22:30) Yahusha (Jesus) puts the raised beside the angels of Elohim (God) in heaven, and Paul says of them *we shall judge angels*. The ones who stand beside the faithful angels are also the ones who sit over the angels that left their place.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+1 Corinthians 6:3 — *Know ye not that we shall judge angels? how much more things that pertain to this life?* The raised, likened to the angels in heaven, are also said to judge angels, the ones who left their place.
+
+## card 3894
+
+Exodus 3:6 — *Moreover he said, I am the Elohim (God) of thy father, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob. And Moses hid his face; for he was afraid to look upon Elohim (God).* *But as touching the resurrection of the dead, have you not read that which was spoken unto you by Elohim (God), saying,* (Matthew 22:31) This is the verse he means by *that which was spoken unto you by Elohim (God)*. At the bush, long after the fathers had died, he says 'I am' their Elohim (God), not 'I was'. The resurrection is not written out in those words, and Yahusha (Jesus) reasons it from them, line upon line: if Elohim (God) is still theirs, they are not gone.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Exodus 3:6 — *I am the Elohim (God) of thy father, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob.* Elohim (God) at the bush still calls himself the Elohim (God) of Abraham, Isaac and Jacob, and Yahusha (Jesus) reasons the resurrection out of it.
+
+## card 3895
+
+Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* *But as touching the resurrection of the dead, have you not read that which was spoken unto you by Elohim (God), saying,* (Matthew 22:31) The Sadducees say there is no resurrection, and Daniel wrote it down: *that sleep in the dust of the earth shall awake*. The word is sleeping, not ending. It is the same thing Yahusha (Jesus) draws from the bush, said outright by the prophet.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Daniel says outright that many who sleep in the dust of the earth shall awake, some to life and some to shame.
+
+## card 3896
+
+Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* *But as touching the resurrection of the dead, have you not read that which was spoken unto you by Elohim (God), saying,* (Matthew 22:31) Isaiah says it as a promise about Yahuah's (the LORD's) own dead: *Thy dead men shall live*. Those who *dwell in dust* are told to *Awake and sing*, so the fathers the Sadducees count as finished are spoken of as sleepers who will rise.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise.* Isaiah promises that Yahuah's (the LORD's) dead shall live and those in the dust shall awake and sing.
+
+## card 3897
+
+Hosea 13:14 — *I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction: repentance shall be hid from mine eyes.* *But as touching the resurrection of the dead, have you not read that which was spoken unto you by Elohim (God), saying,* (Matthew 22:31) The one who spoke at the bush says through Hosea what he will do with the dead: *I will ransom them from the power of the grave*. Elohim (God) is the living one who does the ransoming, so the fathers he still calls his own are not out of his reach.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Hosea 13:14 — *I will ransom them from the power of the grave; I will redeem them from death.* Yahuah (the LORD) says he will ransom his own from the power of the grave and redeem them from death.
+
+## card 3898
+
+Job 19:25 — *For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth:* *But as touching the resurrection of the dead, have you not read that which was spoken unto you by Elohim (God), saying,* (Matthew 22:31) Job, looking toward his own end, says *my redeemer liveth*, and that he *shall stand at the latter day upon the earth*. The living one standing over the dust has the last word over the dead, which is the thought the bush carries: Elohim (God) is the Elohim (God) of the living.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Job 19:25 — *For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth:* Job knows that his redeemer lives and will stand upon the earth at the latter day, the living one over the dead.
+
+## card 3899
+
+Ezekiel 37:1 — *The hand of Yahuah (LORD) was upon me, and carried me out in the spirit of Yahuah (LORD), and set me down in the midst of the valley which was full of bones,* *But as touching the resurrection of the dead, have you not read that which was spoken unto you by Elohim (God), saying,* (Matthew 22:31) The Sadducees would have answered the question Ezekiel is asked in the valley, *Son of Adam, can these bones live?* (Ezekiel 37:3), with a no. Ezekiel answers, *thou knowest* (Ezekiel 37:3), and the word of Yahuah (the LORD) then goes out to the bones.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Ezekiel 37:1 — *set me down in the midst of the valley which was full of bones.* Ezekiel is set down in a valley of dry bones and asked whether they can live, the question the Sadducees answered with no.
+
+## card 3900
+
+Psalm 16:9 — *Therefore my heart is glad, and my glory rejoiceth: my flesh also shall rest in hope.* *But as touching the resurrection of the dead, have you not read that which was spoken unto you by Elohim (God), saying,* (Matthew 22:31) David says his flesh *shall rest in hope*, which is the word of one who sleeps, not of one who ends. Two lines on he says what he hopes for, *Thou wilt not leave my soul in hell* (Psalm 16:10), so the one who rests is not forgotten there, and that is the same hope Yahusha (Jesus) finds at the bush.
+
+thread: `the-resurrection-of-the-righteous-witnessed-by-the-mother-and-seven-sons-and-the-wisdom-stream`
+
+Psalm 16:9 — *Therefore my heart is glad, and my glory rejoiceth: my flesh also shall rest in hope.* David's flesh rests in hope, and the next lines say his soul is not left in hell, the sleeper kept and not forgotten.
+
+## card 3901
+
+Deuteronomy 6:4 — *Hear, O Yashar'el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD):* *Yahusha (Jesus) said unto him, You shall love Yahuah Elohayka (the Lord thy God) with all your heart, and with all your soul, and with all your mind.* (Matthew 22:37) He answers the lawyer from the Shema, Moses' own opening to Yashar'el (Israel): *Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)*, and the love he names follows in the next verse. Nothing in the answer is new to the lawyer, since these are the words every father in Yashar'el (Israel) was told to teach his children.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Deuteronomy 6:4 — *Hear, O Yashar'el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD):* The first commandment is the Shema, which begins with who Yahuah (the LORD) is before it says to love him.
+
+## card 3902
+
+Leviticus 19:18 — *Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* *Yahusha (Jesus) said unto him, You shall love Yahuah Elohayka (the Lord thy God) with all your heart, and with all your soul, and with all your mind.* (Matthew 22:37) The second is from Moses too. It closes a verse about grudges and vengeance, *thou shalt love thy neighbour as thyself*, and carries the seal *I am Yahuah (LORD)*. Yahusha (Jesus) puts Deuteronomy and Leviticus side by side as one answer, and both are the law, not a way around it.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Leviticus 19:18 — *but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* The second commandment is Leviticus 19:18, love of the neighbour, set in the same law as the first and sealed with Yahuah's (the LORD's) name.
+
+## card 3903
+
+Leviticus 19:34 — *But the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I am Yahuah Elohaychem (the LORD your God).* *Yahusha (Jesus) said unto him, You shall love Yahuah Elohayka (the Lord thy God) with all your heart, and with all your soul, and with all your mind.* (Matthew 22:37) The neighbour in Leviticus 19 reaches further than the man next door. The stranger dwelling with them *shall be unto you as one born among you*, and the command is *love him as thyself*, with the reason given, *ye were strangers in the land of Egypt*.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Leviticus 19:34 — *the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself.* The same law that says love the neighbour says it again of the stranger dwelling with them, as one born among them.
+
+## card 3904
+
+Deuteronomy 11:1 — *Therefore thou shalt love Yahuah Elohayka (the LORD thy God), and keep his charge, and his statutes, and his judgments, and his commandments, alway.* *Yahusha (Jesus) said unto him, You shall love Yahuah Elohayka (the Lord thy God) with all your heart, and with all your soul, and with all your mind.* (Matthew 22:37) The love Yahusha (Jesus) names as first comes with its hands full: Moses writes *his statutes, and his judgments, and his commandments* in the same verse. Nothing in his answer lets the love stand in for the keeping.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Deuteronomy 11:1 — *Therefore thou shalt love Yahuah Elohayka (the LORD thy God), and keep his charge, and his statutes, and his judgments, and his commandments, alway.* Moses joins love of Yahuah (the LORD) to keeping his charge, statutes, judgments and commandments, in one verse.
+
+## card 3905
+
+Deuteronomy 30:6 — *And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live.* *Yahusha (Jesus) said unto him, You shall love Yahuah Elohayka (the Lord thy God) with all your heart, and with all your soul, and with all your mind.* (Matthew 22:37) The love he commands is something Yahuah (the LORD) promises to do in his people: he will *circumcise thine heart, and the heart of thy seed* to love him. It is said to those he gathers back, *from thence will Yahuah Elohayka (the LORD thy God) gather thee* (Deuteronomy 30:4), so the command and the new heart come from the same hand.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Deuteronomy 30:6 — *will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God).* Yahuah (the LORD) promises to circumcise the heart of his gathered people so that they love him, the command made possible by his own work.
+
+## card 3906
+
+Micah 6:8 — *He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* *Yahusha (Jesus) said unto him, You shall love Yahuah Elohayka (the Lord thy God) with all your heart, and with all your soul, and with all your mind.* (Matthew 22:37) Micah answers the question the lawyer asks, what is good and what is required, in a sentence: *do justly, and to love mercy*, and *walk humbly with thy Elohim (God)*. Loving Yahuah (the LORD) and loving the neighbour is that walk laid out, and the prophets say it as plainly as the law does.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Micah 6:8 — *what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God).* Micah says what Yahuah (the LORD) requires in one sentence, justice, mercy and a humble walk with Elohim (God).
+
+## card 3907
+
+Hosea 6:6 — *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* *Yahusha (Jesus) said unto him, You shall love Yahuah Elohayka (the Lord thy God) with all your heart, and with all your soul, and with all your mind.* (Matthew 22:37) Hosea gives the second commandment its edge: Yahuah (the LORD) says *I desired mercy, and not sacrifice*, and *the knowledge of Elohim (God) more than burnt offerings*. He is turning from sacrifice with no knowing of him behind it, and the knowing shows in how a man deals with his neighbour.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Hosea 6:6 — *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* Yahuah (the LORD) wants mercy and the knowledge of Elohim (God) over sacrifice offered without them.
+
+## card 3908
+
+Matthew 7:12 — *Therefore all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets.* *On these two commandments hang all the law and the prophets.* (Matthew 22:40) He said it at the close of the Sermon on the Mount and he says it again to the lawyer: all that you would have men do to you, do to them, *for this is the law and the prophets*. Twice the law and the prophets are said to rest on how a man treats his neighbour, and neither time are they taken away.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Matthew 7:12 — *for this is the law and the prophets.* The Golden Rule is given as the law and the prophets, the same weight the great commandment carries at the end of the chapter.
+
+## card 3909
+
+Romans 13:8 — *Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.* *On these two commandments hang all the law and the prophets.* (Matthew 22:40) Paul says it too: *he that loveth another hath fulfilled the law*, and the next verse names the commandments love keeps, *Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal* (Romans 13:9). Love does not stand in for the law, and it is how the commandments get done.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Romans 13:8 — *Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.* Paul says loving another fulfils the law and then names the commandments, so love is how they are kept.
+
+## card 3910
+
+Galatians 5:14 — *For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself.* *On these two commandments hang all the law and the prophets.* (Matthew 22:40) Paul writes to the Galatians that *all the law is fulfilled in one word*, and the word is the Leviticus line Yahusha (Jesus) gave as the second commandment. The whole law is still standing there to be fulfilled, and the sentence would say nothing if it were gone.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+Galatians 5:14 — *For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself.* In Galatians the whole law is fulfilled in the one word, love of the neighbour, the second commandment of the chapter.
+
+## card 3911
+
+James 2:8 — *If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well:* *On these two commandments hang all the law and the prophets.* (Matthew 22:40) James calls it *the royal law according to the scripture* and then quotes the Leviticus line. He says those who fulfil it *do well*, and in the next lines he goes on to the commandments against adultery and killing, so the law is still named and still being kept.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+James 2:8 — *If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well:* James calls the neighbour commandment the royal law and treats it as the scripture's own word, still to be fulfilled.
+
+## card 3912
+
+John 4:7 — *There cometh a woman of Samaria to draw water: Yahusha (Jesus) saith unto her, Give me to drink.* *On these two commandments hang all the law and the prophets.* (Matthew 22:40) At Jacob's well, wearied from the road, Yahusha (Jesus) asks a woman of Samaria for a drink, on the ground Jacob gave to his son Joseph. The second commandment is walked out there: he goes to one the Yahudim (Jews) had no dealings with and asks her for something, as a neighbour would.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+John 4:7 — *There cometh a woman of Samaria to draw water: Yahusha (Jesus) saith unto her, Give me to drink.* At the well he asks a woman of Samaria for a drink, the love of neighbour shown to one others kept away from.
+
+## card 3913
+
+John 5:2 — *Now there is at Jerusalem by the sheep market a pool, which is called in the Hebrew tongue Bethesda, having five porches.* *On these two commandments hang all the law and the prophets.* (Matthew 22:40) He goes up to Jerusalem at a feast of the Yahudim (Jews) and walks into the porches of Bethesda, where lay *a great multitude of impotent folk* (John 5:3). The two commandments are in one trip, the feast of Yahuah (the LORD) and the sick at the pool.
+
+thread: `love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon`
+
+John 5:2 — *Now there is at Jerusalem by the sheep market a pool, which is called in the Hebrew tongue Bethesda, having five porches.* He goes up to Jerusalem for the feast and then to Bethesda, where the blind, lame and withered lay waiting.
+
+## card 3914
+
+Psalm 110:1 — *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) He puts one verse of David to the Pharisees, and there are two in it: Yahuah (the LORD) speaks, and David calls the one spoken to *my Lord*. That one is seated at the right hand because he is told, *Sit thou at my right hand*. He is David's son and Elohim (God) with a Father, and the question is left standing.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Psalm 110:1 — *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* Yahuah (the LORD) speaks to the one David bows to and seats him at his right hand, the verse Yahusha (Jesus) puts to the Pharisees.
+
+## card 3915
+
+Psalm 110:4 — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) Three verses on, the same psalm calls the one at the right hand a priest: Yahuah (the LORD) *hath sworn, and will not repent*, *a priest for ever after the order of Melek Tsadiq (Melchizedek)*. The one David bows to is no mere heir to a throne. He is seated, sworn to, and a priest, which is more than the answer the Pharisees gave.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Psalm 110:4 — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* The same psalm swears the one at the right hand a priest for ever after the order of Melek Tsadiq (Melchizedek).
+
+## card 3916
+
+Psalm 2:7 — *I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee.* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) They answer that the Messiah (Christ) is *The Son of David* (Matthew 22:42), and Psalm 2 gives the other half: Yahuah (the LORD) says to the king he has set on Zion, *Thou art my Son*. Both are true of the one he is asking about, a son of David and a Son with a Father.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Psalm 2:7 — *I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee.* Psalm 2 has Yahuah (the LORD) call his king his Son, the half of the answer beside the Son of David.
+
+## card 3917
+
+2 Samuel 7:12 — *And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) The Pharisees gave the right first half: the Messiah (Christ) comes from David, *thy seed after thee, which shall proceed out of thy bowels*. Yahuah (the LORD) promised a son whose kingdom he would establish, and that is what the Pharisees held. The question Yahusha (Jesus) asks is whether that is all of him.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+2 Samuel 7:12 — *I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* Yahuah (the LORD) promises David a son from his own body whose kingdom he will establish, the answer the Pharisees gave.
+
+## card 3918
+
+Isaiah 9:6 — *For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, El Gibbor (The mighty God), Avi-ad (The everlasting Father), Sar Shalom (The Prince of Peace).* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) Isaiah's child is born *unto us*, a son given, and his names include El Gibbor (The mighty God). A son, and named Elohim (God): that is the riddle the Pharisees could not answer, how David's son is also the one David bows to.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Isaiah 9:6 — *unto us a child is born, unto us a son is given: and the government shall be upon his shoulder.* The child born and the son given carries the government and the name El Gibbor (The mighty God), a son named Elohim (God).
+
+## card 3919
+
+Isaiah 11:1 — *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) The Pharisees knew where the answer began, *a rod out of the stem of Jesse*, and *a Branch shall grow out of his roots*. Isaiah goes on to say *the spirit of Yahuah (LORD) shall rest upon him* (Isaiah 11:2), so the line of David has something in it more than David.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Isaiah 11:1 — *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:* Isaiah has the Branch come from the stem of Jesse, David's own line, with the spirit of Yahuah (the LORD) resting on him.
+
+## card 3920
+
+Jeremiah 23:5 — *Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) Yahuah (the LORD) says through Jeremiah that he will *raise unto David a righteous Branch*, and that *a King shall reign and prosper*. It comes right after the promise to gather the remnant of his flock from all countries, so the son of David is the one who gathers as well as the one who reigns.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Jeremiah 23:5 — *I will raise unto David a righteous Branch, and a King shall reign and prosper.* Yahuah (the LORD) will raise up a righteous Branch for David, who reigns and executes judgment and justice in the earth.
+
+## card 3921
+
+Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) The one David bows to sits at the right hand in the psalm, and in Daniel *one like the Son of Adam* comes with the clouds to the Ancient of days and is given a kingdom that *shall not pass away* (Daniel 7:14). Daniel's word is *like*: he saw one who looked like a son of Adam, the one who would take on flesh, brought near before the Father.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Daniel 7:13 — *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days.* Daniel sees one like the Son of Adam come with the clouds to the Ancient of days and receive an everlasting kingdom.
+
+## card 3922
+
+Matthew 26:64 — *Yahusha (Jesus) saith unto him, Thou hast said: nevertheless I say unto you, Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven.* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) Yahusha (Jesus) answers the high priest with the two verses he laid before the Pharisees in the temple: the one *sitting on the right hand of power*, and the Son of Adam *coming in the clouds of heaven*. What he asked them as a riddle, he now says of himself.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Matthew 26:64 — *Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven.* Before the council he joins the right hand of power and the coming in the clouds, naming himself in what he asked the Pharisees.
+
+## card 3923
+
+Acts 2:34 — *For David is not ascended into the heavens: but he saith himself, Yahuah (LORD) said unto my Lord, Sit thou on my right hand,* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) Peter takes up the question Yahusha (Jesus) left hanging in the temple. David *is not ascended into the heavens*, so the one he calls *my Lord* is someone else, and Peter tells all the house of Yashar'el (Israel) who: *that same Yahusha (Jesus), whom ye have crucified* (Acts 2:36).
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Acts 2:34 — *For David is not ascended into the heavens: but he saith himself, Yahuah (LORD) said unto my Lord, Sit thou on my right hand,* Peter says David did not ascend, so the one at Yahuah's (the LORD's) right hand in the psalm is another, Yahusha (Jesus).
+
+## card 3924
+
+Hebrews 1:3 — *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) Hebrews says where the one David bowed to sits: *on the right hand of the Majesty on high*. He is *the brightness of his glory* and *the express image of his person*, the one who can be seen beside the one who cannot, seated after he had done what he came to do.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Hebrews 1:3 — *sat down on the right hand of the Majesty on high.* The Son, the brightness of the glory and the express image of his person, sits down at the right hand of the Majesty on high.
+
+## card 3925
+
+Hebrews 1:13 — *But to which of the angels said he at any time, Sit on my right hand, until I make thine enemies thy footstool?* *While the Pharisees were gathered together, Yahusha (Jesus) asked them,* (Matthew 22:41) The psalm is put to the angels as a question, and the answer is none. Elohim (God) said *Sit on my right hand* to one only, the Son named in the verses just before, so the one David bows to is no angel and no mere son of David, but the one the Father seats.
+
+thread: `the-elect-one-at-the-right-hand-the-davidic-lord-witnessed-in-1-enoch-parables`
+
+Hebrews 1:13 — *But to which of the angels said he at any time, Sit on my right hand, until I make thine enemies thy footstool?* Hebrews asks which angel was ever told to sit at the right hand, so the one David bows to is no angel.
+
+## card 3926
+
+Deuteronomy 17:8 — *If there arise a matter too hard for thee in judgment, between blood and blood, between plea and plea, and between stroke and stroke, being matters of controversy within thy gates: then shalt thou arise, and get thee up into the place which Yahuah Elohayka (the LORD thy God) shall choose;* *Saying, The scribes and the Pharisees sit in Moses’ seat:* (Matthew 23:2) Moses' seat was not invented by the Pharisees. Here a case too hard for the local judges goes up to the priests and the judge, and a verse later the sentence to be done is *according to the sentence of the law which they shall teach thee* (Deuteronomy 17:11). That is why Yahusha (Jesus) can say to observe what they bid: what is read from the seat is Moses, and the fault lies in their works.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Deuteronomy 17:8 — *then shalt thou arise, and get thee up into the place which Yahuah Elohayka (the LORD thy God) shall choose.* A matter too hard for the local court goes up to the priests and the judge at the place Yahuah (the LORD) chooses, and what they teach from the law is done.
+
+## card 3927
+
+Malachi 2:7 — *For the priest’s lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of Yahuah Tseva'ot (LORD of hosts).* *Saying, The scribes and the Pharisees sit in Moses’ seat:* (Matthew 23:2) Malachi says what the seat is for. The priest's lips *should keep knowledge*, and the people *seek the law at his mouth*, since the priest stands as a messenger for Yahuah (the LORD) of hosts. The next verse turns on priests who *caused many to stumble at the law* (Malachi 2:8), the same line Yahusha (Jesus) draws between the law read from the seat and the works of the men sitting in it.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Malachi 2:7 — *For the priest’s lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of Yahuah Tseva'ot (LORD of hosts).* The priest's lips are to keep knowledge so that the people seek the law at his mouth, which is what the seat of Moses is for.
+
+## card 3928
+
+Matthew 11:28 — *Come unto me, all ye that labour and are heavy laden, and I will give you rest.* *For they bind heavy burdens and grievous to be borne, and lay them on men’s shoulders; but they themselves will not move them with one of their fingers.* (Matthew 23:4) The heavy burdens in this verse are the weight men stacked up and would not touch themselves, and here Yahusha (Jesus) calls the ones who are *heavy laden* to come to him for rest. What he lifts is what was laid on top, and a few verses on he says of his own yoke, *my yoke is easy, and my burden is light* (Matthew 11:30).
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Matthew 11:28 — *Come unto me, all ye that labour and are heavy laden, and I will give you rest.* He calls the weary and heavy laden to himself for rest, the opposite of the heavy burdens bound on men's shoulders from the seat.
+
+## card 3929
+
+Acts 15:10 — *Now therefore why tempt ye Elohim (God), to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear?* *For they bind heavy burdens and grievous to be borne, and lay them on men’s shoulders; but they themselves will not move them with one of their fingers.* (Matthew 23:4) Peter's *yoke* is what the seat laid on shoulders, a price at the door: *Except ye be circumcised after the manner of Moses, ye cannot be saved* (Acts 15:1). He does not call the Torah unbearable, since the Torah is what the fathers lived by and what is read from the seat. He means the rule that nobody is in until the rite is done.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Acts 15:10 — *to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear.* Peter says the yoke put on the disciples' necks was one that neither the fathers nor the apostles were able to bear.
+
+## card 3930
+
+Exodus 13:9 — *And it shall be for a sign unto thee upon thine hand, and for a memorial between thine eyes, that the LORD’S law may be in thy mouth: for with a strong hand hath Yahuah (LORD) brought thee out of Egypt.* *But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments,* (Matthew 23:5) The sign on the hand and the memorial between the eyes are commanded, *that the LORD’S law may be in thy mouth*. Yahusha (Jesus) does not say to leave them off. What he marks is that they *make broad their phylacteries* to be seen, which turns something meant to keep the law in the mouth into something to be looked at.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Exodus 13:9 — *And it shall be for a sign unto thee upon thine hand, and for a memorial between thine eyes.* The sign on the hand and the memorial between the eyes are Yahuah's (the LORD's) own commandment, given so that his law is in the mouth.
+
+## card 3931
+
+Exodus 13:16 — *And it shall be for a token upon thine hand, and for frontlets between thine eyes: for by strength of hand Yahuah (LORD) brought us forth out of Egypt.* *But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments,* (Matthew 23:5) Exodus says it twice, here as *a token upon thine hand, and for frontlets between thine eyes*, and each time the reason is the same, that Yahuah (the LORD) brought them out of Egypt. It is a reminder of what he did. When the Pharisees make theirs broad to be noticed, they turn a remembrance into a show, and the show is what Yahusha (Jesus) names.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Exodus 13:16 — *And it shall be for a token upon thine hand, and for frontlets between thine eyes: for by strength of hand Yahuah (LORD) brought us forth out of Egypt.* The token on the hand and the frontlets between the eyes are given to remember that Yahuah (the LORD) brought Yashar'el (Israel) out of Egypt.
+
+## card 3932
+
+Numbers 15:38 — *Speak unto the children of Yashar'el (Israel), and bid them that they make them fringes in the borders of their garments throughout their generations, and that they put upon the fringe of the borders a ribband of blue:* *But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments,* (Matthew 23:5) The border is a commandment too: *make them fringes in the borders of their garments*, throughout their generations, with a ribband of blue. Yahusha (Jesus) wore one himself, so the fault he names is the habit of the Pharisees to *enlarge the borders* to be seen, and not the fringe.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Numbers 15:38 — *that they make them fringes in the borders of their garments throughout their generations.* Yahuah (the LORD) commands fringes in the borders of the garments with a ribband of blue, throughout every generation.
+
+## card 3933
+
+Deuteronomy 22:12 — *Thou shalt make thee fringes upon the four quarters of thy vesture, wherewith thou coverest thyself.* *But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments,* (Matthew 23:5) Moses puts the fringe on the garment a second time, *upon the four quarters of thy vesture*, so it is a plain commandment for everyone who wears a cloak and not a badge for a few. What Yahusha (Jesus) faults is making the border larger for men to admire, not the fringe itself.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Deuteronomy 22:12 — *Thou shalt make thee fringes upon the four quarters of thy vesture, wherewith thou coverest thyself.* Fringes go on the four quarters of the vesture, so the border is the Torah's own commandment and not a Pharisee's invention.
+
+## card 3934
+
+Matthew 9:20 — *And, behold, a woman, which was diseased with an issue of blood twelve years, came behind him, and touched the hem of his garment:* *But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments,* (Matthew 23:5) The woman who *touched the hem of his garment* touched the border where the commanded fringe hung, which shows Yahusha (Jesus) wore it himself. So when he says the Pharisees *enlarge the borders of their garments*, he cannot be faulting the border. The fault is the size of it and the reason for it.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Matthew 9:20 — *And, behold, a woman, which was diseased with an issue of blood twelve years, came behind him, and touched the hem of his garment:* The woman touched the hem of his garment, the border where the commanded fringe hung, which shows he wore it himself.
+
+## card 3935
+
+Matthew 14:36 — *And besought him that they might only touch the hem of his garment: and as many as touched were made perfectly whole.* *But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments,* (Matthew 23:5) Again the hem of his garment, and again people reaching for it: *as many as touched were made perfectly whole*. He wore the border and the sick took hold of it. What he names in the Pharisees is the enlarging for show, which tells you the border itself was never the woe.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Matthew 14:36 — *And besought him that they might only touch the hem of his garment: and as many as touched were made perfectly whole.* Many took hold of the hem of his garment and were made perfectly whole, so the border he wore was never what the woe was against.
+
+## card 3936
+
+Isaiah 63:16 — *Doubtless thou art our father, though Abraham be ignorant of us, and Yashar'el (Israel) acknowledge us not: thou, O Yahuah (LORD), art our father, our redeemer; thy name is from everlasting.* *But be not you called Rabbi: for one is your Master, even Messiah (Christ); and all you are brethren.* (Matthew 23:8) Isaiah's people say it when even the fathers cannot help them: *though Abraham be ignorant of us*, still *thou, O Yahuah (LORD), art our father*. That stands behind what Yahusha (Jesus) says to the crowd, one Master and all of them brothers, and in the very next verse one Father in heaven.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Isaiah 63:16 — *thou, O Yahuah (LORD), art our father, our redeemer.* Even if Abraham does not know them, the people say Yahuah (the LORD) is their father and their redeemer, so the Father alone is Father.
+
+## card 3937
+
+Isaiah 64:8 — *But now, O Yahuah (LORD), thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand.* *But be not you called Rabbi: for one is your Master, even Messiah (Christ); and all you are brethren.* (Matthew 23:8) *We are the clay, and thou our potter*, Isaiah says, and *we all are the work of thy hand*. Everyone made by the one hand stands level, which is why Yahusha (Jesus) can say *all ye are brethren* and leave only one Master over them.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Isaiah 64:8 — *But now, O Yahuah (LORD), thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand.* The people are the clay and Yahuah (the LORD) is the potter, so all are the work of one hand and none stands over the rest as father.
+
+## card 3938
+
+Deuteronomy 32:6 — *Do ye thus requite Yahuah (LORD), O foolish people and unwise? is not he thy father that hath bought thee? hath he not made thee, and established thee?* *But be not you called Rabbi: for one is your Master, even Messiah (Christ); and all you are brethren.* (Matthew 23:8) *Is not he thy father that hath bought thee?* Moses asks a people that had forgotten. The one who made them and established them is called Father there, which is why Yahusha (Jesus) leaves them one Master, calls them all brethren, and names one Father in heaven.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+Deuteronomy 32:6 — *is not he thy father that hath bought thee? hath he not made thee, and established thee.* Moses calls Yahuah (the LORD) the father who bought, made and established the people, so fatherhood in Yashar'el (Israel) belongs to him.
+
+## card 3939
+
+1 Corinthians 4:15 — *For though ye have ten thousand instructers in Messiah (Christ), yet have ye not many fathers: for in HaMashiach Yahusha (Christ Jesus) I have begotten you through the gospel.* *But be not you called Rabbi: for one is your Master, even Messiah (Christ); and all you are brethren.* (Matthew 23:8) Paul takes no title here. They have *ten thousand instructers*, he says, but not many fathers, and the only fatherhood he claims is that *I have begotten you through the gospel*, a bringing to birth he did among them and no rank he wears over them. That is the opposite of men loving to be called Rabbi.
+
+thread: `matthew-23-the-seat-of-moses-and-what-was-laid-on-it`
+
+1 Corinthians 4:15 — *yet have ye not many fathers: for in HaMashiach Yahusha (Christ Jesus) I have begotten you through the gospel.* Paul claims no title, only that he begot them through the gospel, while they have ten thousand instructers and not many fathers.
+
+## card 3940
+
+Matthew 18:1 — *At the same time came the disciples unto Yahusha (Jesus), saying, Who is the greatest in the kingdom of heaven?* *But he that is greatest among you shall be your servant.* (Matthew 23:11) The question the seat answers with chief places is the one the disciples ask themselves here, *Who is the greatest in the kingdom of heaven?* Yahusha (Jesus) sets a little child in the middle: *Whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven* (Matthew 18:4). That is the same low road as *he that is greatest among you shall be your servant*.
+
+thread: `the-pride-and-religious-status-architecture-in-sirach`
+
+Matthew 18:1 — *At the same time came the disciples unto Yahusha (Jesus), saying, Who is the greatest in the kingdom of heaven?* The disciples ask who is greatest in the kingdom, and he sets a little child among them, the same low road as the servant who is greatest.
+
+## card 3941
+
+Matthew 20:25 — *But Yahusha (Jesus) called them unto him, and said, Ye know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them.* *But he that is greatest among you shall be your servant.* (Matthew 23:11) Yahusha (Jesus) sets two ways of ruling side by side. The *princes of the Gentiles exercise dominion*, and then he says *But it shall not be so among you* (Matthew 20:26). The love of chief seats is the way of those princes, and the kingdom runs the other way, where the one who is greatest is the servant.
+
+thread: `the-pride-and-religious-status-architecture-in-sirach`
+
+Matthew 20:25 — *Ye know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them.* He sets the way of the princes of the Gentiles, who exercise dominion, against the way among his own, where the great one is the servant.
+
+## card 3942
+
+James 4:6 — *But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble.* *But he that is greatest among you shall be your servant.* (Matthew 23:11) James gives the reason behind the servant's greatness: *Elohim (God) resisteth the proud, but giveth grace unto the humble*. It is the same turn Yahusha (Jesus) names in the next verse, *whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted* (Matthew 23:12), and James says whose hand does the turning.
+
+thread: `the-pride-and-religious-status-architecture-in-sirach`
+
+James 4:6 — *But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble.* Elohim (God) resists the proud and gives grace to the humble, which names who does the abasing and the exalting.
+
+## card 3943
+
+James 4:10 — *Humble yourselves in the sight of Yahuah (Lord), and he shall lift you up.* *But he that is greatest among you shall be your servant.* (Matthew 23:11) James gives the other half of the servant's greatness. The lifting is not taken but given, *he shall lift you up*, and it is done in the sight of Yahuah (the LORD) and not before men watching the chief seats. The servant stays low and the one who sees him raises him.
+
+thread: `the-pride-and-religious-status-architecture-in-sirach`
+
+James 4:10 — *Humble yourselves in the sight of Yahuah (Lord), and he shall lift you up.* The humble are lifted up by Yahuah (the Lord) in his own sight, so greatness for the servant is given and not seized.
+
+## card 3944
+
+1 Peter 5:5 — *Likewise, ye younger, submit yourselves unto the elder. Yea, all of you be subject one to another, and be clothed with humility: for Elohim (God) resisteth the proud, and giveth grace to the humble.* *But he that is greatest among you shall be your servant.* (Matthew 23:11) Peter shows the servant's rule in a house with elders and younger. The younger submit to the elder, yet *all of you be subject one to another*, and all are to be *clothed with humility*. Greatness there is wearing humility, since Elohim (God) *resisteth the proud*.
+
+thread: `the-pride-and-religious-status-architecture-in-sirach`
+
+1 Peter 5:5 — *Yea, all of you be subject one to another, and be clothed with humility.* Everyone in the house is to be subject to one another and clothed with humility, because Elohim (God) resists the proud.
+
+## card 3945
+
+Luke 11:52 — *Woe unto you, lawyers! for ye have taken away the key of knowledge: ye entered not in yourselves, and them that were entering in ye hindered.* *But woe unto you, scribes and Pharisees, hypocrites! for you shut up the kingdom of heaven against men: for you neither go in yourselves, neither suffer you them that are entering to go in.* (Matthew 23:13) Luke gives this woe to the lawyers: *ye have taken away the key of knowledge*. Matthew's shut door and Luke's missing key are one charge, that the ones who sat over the people neither went in themselves nor let those who were *entering in* through, and it is the people who pay for it.
+
+thread: `woes-against-the-pharisees-and-lawyers-at-the-pharisees-table`
+
+Luke 11:52 — *Woe unto you, lawyers! for ye have taken away the key of knowledge: ye entered not in yourselves, and them that were entering in ye hindered.* Luke tells the same woe as taking away the key of knowledge, so those who sat over the people neither entered nor let others enter.
+
+## card 3946
+
+Galatians 1:6 — *I marvel that ye are so soon removed from him that called you into the grace of Messiah (Christ) unto another gospel:* *Woe unto you, scribes and Pharisees, hypocrites! for you compass sea and land to make one proselyte, and when he is made, you make him twofold more the child of hell than yourselves.* (Matthew 23:15) Paul's *another gospel* is the one the woe describes at work, sea and land crossed to make a proselyte and the proselyte told that joining is what saves him. The agitators carried that to Galatia, and Paul marvels that the people there were so soon moved from *him that called you* to it.
+
+thread: `the-corrupted-priesthood-and-false-credentialing-in-testaments-of-levi-and-wisdom-stream`
+
+Galatians 1:6 — *I marvel that ye are so soon removed from him that called you into the grace of Messiah (Christ) unto another gospel:* Paul marvels that the Galatians were so soon turned from the one who called them to another gospel, the proselyte-maker's gospel.
+
+## card 3947
+
+Galatians 3:1 — *O foolish Galatians, who hath bewitched you, that ye should not obey the truth, before whose eyes Yahusha HaMashiach (Jesus Christ) hath been evidently set forth, crucified among you?* *Woe unto you, scribes and Pharisees, hypocrites! for you compass sea and land to make one proselyte, and when he is made, you make him twofold more the child of hell than yourselves.* (Matthew 23:15) Paul's *who hath bewitched you* is aimed at the pull the woe describes, the claim that a rite and a membership put a person in. The Galatians had already seen Yahusha (Jesus) *evidently set forth, crucified among you*, and what was turning them from *obey the truth* was a gospel that said joining would save them.
+
+thread: `the-corrupted-priesthood-and-false-credentialing-in-testaments-of-levi-and-wisdom-stream`
+
+Galatians 3:1 — *who hath bewitched you, that ye should not obey the truth.* Paul asks who bewitched the Galatians away from obeying the truth, when Yahusha (Jesus) had been set forth crucified before their eyes.
+
+## card 3948
+
+Acts 15:1 — *And certain men which came down from Judæa taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved.* *Woe unto you, scribes and Pharisees, hypocrites! for you compass sea and land to make one proselyte, and when he is made, you make him twofold more the child of hell than yourselves.* (Matthew 23:15) The proselyte's bargain, said flat: *Except ye be circumcised*, *ye cannot be saved*. It is said to brothers already counted in, and it is the same price of entry the woe describes. The man made over to it ends up what Yahusha (Jesus) calls *twofold more the child of hell* than the ones who made him.
+
+thread: `the-corrupted-priesthood-and-false-credentialing-in-testaments-of-levi-and-wisdom-stream`
+
+Acts 15:1 — *taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved.* Men from Judæa teach the brethren that without circumcision they cannot be saved, the same price of entry the proselyte-makers charged.
+
+## card 3949
+
+Acts 15:5 — *But there rose up certain of the sect of the Pharisees which believed, saying, That it was needful to circumcise them, and to command them to keep the law of Moses.* *Woe unto you, scribes and Pharisees, hypocrites! for you compass sea and land to make one proselyte, and when he is made, you make him twofold more the child of hell than yourselves.* (Matthew 23:15) Pharisees who had believed bring the old habit into the assembly: *it was needful to circumcise them*, as if the rite were the door. The law of Moses is not the fault. The fault is the order, the rite first and then you are in, which makes a man what the woe calls *twofold more the child of hell*.
+
+thread: `the-corrupted-priesthood-and-false-credentialing-in-testaments-of-levi-and-wisdom-stream`
+
+Acts 15:5 — *certain of the sect of the Pharisees which believed, saying, That it was needful to circumcise them.* Believing Pharisees insist the brothers must be circumcised, making the rite the door in, the same gospel the proselyte-makers carried.
+
+## card 3950
+
+Acts 15:10 — *Now therefore why tempt ye Elohim (God), to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear?* *Woe unto you, scribes and Pharisees, hypocrites! for you compass sea and land to make one proselyte, and when he is made, you make him twofold more the child of hell than yourselves.* (Matthew 23:15) The *yoke* Peter names is the proselyte's yoke, being made one of them by the rite and counted saved for it. He says *neither our fathers nor we were able to bear* it, and he does not mean the Torah, since the fathers lived by the Torah and the seat reads from it. He means the system made out of it.
+
+thread: `the-corrupted-priesthood-and-false-credentialing-in-testaments-of-levi-and-wisdom-stream`
+
+Acts 15:10 — *to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear.* Peter's yoke is the proselyte's price of entry, which neither the fathers nor the apostles could carry, and it is not the Torah itself.
+
+## card 3951
+
+Matthew 5:33 — *Again, ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths:* *Woe unto you, you blind guides, which say, Whosoever shall swear by the temple, it is nothing; but whosoever shall swear by the gold of the temple, he is a debtor!* (Matthew 23:16) Here the oath is set down first as a commandment: *shalt perform unto Yahuah (Lord) thine oaths*. That is the line the blind guides step around. A man who swears by the gold or the gift and calls the other oath *it is nothing* has found a way out of performing what he swore.
+
+thread: `swearing-and-the-faithful-yes-and-nay-in-sirach`
+
+Matthew 5:33 — *Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths.* The oath is a commandment to perform, so any way of swearing that frees a man from what he swore has already left the commandment.
+
+## card 3952
+
+Leviticus 19:12 — *And ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD).* *Woe unto you, you blind guides, which say, Whosoever shall swear by the temple, it is nothing; but whosoever shall swear by the gold of the temple, he is a debtor!* (Matthew 23:16) The commandment about oaths rests on the name: *ye shall not swear by my name falsely*, and the verse closes with *I am Yahuah (LORD)*. That is why the answer to the gold and the gift traces every oath upward: *whoso shall swear by the temple, sweareth by it, and by him that dwelleth therein* (Matthew 23:21). No oath stops short of the one it is sworn before.
+
+thread: `swearing-and-the-faithful-yes-and-nay-in-sirach`
+
+Leviticus 19:12 — *And ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD).* Oaths rest on the name of Yahuah (the LORD), so swearing by it falsely profanes it and no oath can be sorted into one that is nothing.
+
+## card 3953
+
+Numbers 30:2 — *If a man vow a vow unto Yahuah (LORD), or swear an oath to bind his soul with a bond; he shall not break his word, he shall do according to all that proceedeth out of his mouth.* *Woe unto you, you blind guides, which say, Whosoever shall swear by the temple, it is nothing; but whosoever shall swear by the gold of the temple, he is a debtor!* (Matthew 23:16) Numbers puts it without an exception: *he shall not break his word*, and he is held to *all that proceedeth out of his mouth*. A system that sorts oaths into the ones that bind and the ones where *it is nothing* has made exceptions the commandment never made.
+
+thread: `swearing-and-the-faithful-yes-and-nay-in-sirach`
+
+Numbers 30:2 — *he shall not break his word, he shall do according to all that proceedeth out of his mouth.* A man who vows or swears is bound by all that comes out of his mouth, with no oath sorted out as nothing.
+
+## card 3954
+
+Deuteronomy 23:21 — *When thou shalt vow a vow unto Yahuah Elohayka (the LORD thy God), thou shalt not slack to pay it: for Yahuah Elohayka (the LORD thy God) will surely require it of thee; and it would be sin in thee.* *Woe unto you, you blind guides, which say, Whosoever shall swear by the temple, it is nothing; but whosoever shall swear by the gold of the temple, he is a debtor!* (Matthew 23:16) *Thou shalt not slack to pay it*, Moses says, and an unpaid vow *would be sin in thee*. Calling an oath by the temple *it is nothing* and one by the gold a debt only moves the debt around, because Yahuah (the LORD) *will surely require it of thee*.
+
+thread: `swearing-and-the-faithful-yes-and-nay-in-sirach`
+
+Deuteronomy 23:21 — *thou shalt not slack to pay it: for Yahuah Elohayka (the LORD thy God) will surely require it of thee; and it would be sin in thee.* A vow made to Yahuah (the LORD) must be paid, and he will require it, so no vow is excused by the thing it was sworn on.
+
+## card 3955
+
+James 5:12 — *But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation.* *Woe unto you, you blind guides, which say, Whosoever shall swear by the temple, it is nothing; but whosoever shall swear by the gold of the temple, he is a debtor!* (Matthew 23:16) James lands where the woe ends: *he that shall swear by heaven, sweareth by the throne of Elohim (God), and by him that sitteth thereon* (Matthew 23:22). So James can say *neither by heaven*, and ask only for a plain word, *let your yea be yea; and your nay, nay*. A word that is simply kept leaves no use for graded oaths.
+
+thread: `swearing-and-the-faithful-yes-and-nay-in-sirach`
+
+James 5:12 — *let your yea be yea; and your nay, nay; lest ye fall into condemnation.* James takes away every oath by heaven or earth and asks for a plain yea and nay, the same end the woe reaches.
+
+## card 3956
+
+Micah 6:8 — *He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* *Woe unto you, scribes and Pharisees, hypocrites! for you pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought you to have done, and not to leave the other undone.* (Matthew 23:23) Micah had already said what Yahuah (the LORD) requires, and it is the same list: *to do justly, and to love mercy*. Yahusha (Jesus) names judgment and mercy as the weightier matters, then adds *not to leave the other undone*, so the tithe stays. Micah's *walk humbly with thy Elohim (God)* sits beside the mint, not in place of it.
+
+thread: `the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon`
+
+Micah 6:8 — *to do justly, and to love mercy, and to walk humbly with thy Elohim (God).* Micah says what Yahuah (the LORD) requires, justice, mercy and a humble walk with Elohim (God), the same weightier matters the woe names.
+
+## card 3957
+
+Hosea 6:6 — *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* *Woe unto you, scribes and Pharisees, hypocrites! for you pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought you to have done, and not to leave the other undone.* (Matthew 23:23) Hosea's *I desired mercy, and not sacrifice* weighs the two against each other and does not cancel the altar. Sacrifice was commanded and went on. What Yahuah (the LORD) wanted along with it was mercy and *the knowledge of Elohim (God)*, the same order Yahusha (Jesus) keeps with *these ought ye to have done, and not to leave the other undone*.
+
+thread: `the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon`
+
+Hosea 6:6 — *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* Yahuah (the LORD) desired mercy and the knowledge of Elohim (God) more than burnt offerings, which weighs what the offering stands for.
+
+## card 3958
+
+Isaiah 1:11 — *To what purpose is the multitude of your sacrifices unto me? saith Yahuah (LORD): I am full of the burnt offerings of rams, and the fat of fed beasts; and I delight not in the blood of bullocks, or of lambs, or of he goats.* *Woe unto you, scribes and Pharisees, hypocrites! for you pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought you to have done, and not to leave the other undone.* (Matthew 23:23) Isaiah's Yahuah (the LORD) is *full of the burnt offerings of rams*, and the speech opens *give ear unto the law of our Elohim (God)* (Isaiah 1:10), so the law is not what is refused. What he will not take is the full count of offerings from rulers who have left out what the law weighs more heavily, as the Pharisees *omitted* judgment and mercy.
+
+thread: `the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon`
+
+Isaiah 1:11 — *To what purpose is the multitude of your sacrifices unto me? saith Yahuah (LORD): I am full of the burnt offerings of rams.* Yahuah (the LORD) is full of burnt offerings from rulers who left justice undone, so the count of sacrifices does not answer what he asked.
+
+## card 3959
+
+Amos 5:21 — *I hate, I despise your feast days, and I will not smell in your solemn assemblies.* *Woe unto you, scribes and Pharisees, hypocrites! for you pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought you to have done, and not to leave the other undone.* (Matthew 23:23) Yahuah (the LORD) hates the feast days here because of what stands a few verses later: *let judgment run down as waters, and righteousness as a mighty stream* (Amos 5:24). The feasts are his own appointments, so the complaint is that they were kept while the weightier part was left alone, as the mint was counted and judgment *omitted*.
+
+thread: `the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon`
+
+Amos 5:21 — *I hate, I despise your feast days, and I will not smell in your solemn assemblies.* Yahuah (the LORD) despises feast days kept without judgment and righteousness, the appointed part carried out and the weightier part left.
+
+## card 3960
+
+Zechariah 7:8 — *And the word of Yahuah (LORD) came unto Zechariah, saying,* *Woe unto you, scribes and Pharisees, hypocrites! for you pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought you to have done, and not to leave the other undone.* (Matthew 23:23) The verse itself only says the word of Yahuah (the LORD) came to Zechariah, and the word that follows is the one Yahusha (Jesus) is pointing at: *Execute true judgment, and shew mercy and compassions every man to his brother* (Zechariah 7:9). Judgment and mercy are the weightier matters spoken by the prophets before him, and the mint stays beside them.
+
+thread: `the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon`
+
+Zechariah 7:8 — *And the word of Yahuah (LORD) came unto Zechariah, saying,* The word of Yahuah (the LORD) comes to Zechariah, and what follows in the next verse is judgment and mercy shown every man to his brother.
+
+## card 3961
+
+Deuteronomy 14:22 — *Thou shalt truly tithe all the increase of thy seed, that the field bringeth forth year by year.* *Woe unto you, scribes and Pharisees, hypocrites! for you pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought you to have done, and not to leave the other undone.* (Matthew 23:23) Here is the tithe the Pharisees paid down to the herbs, and it is a commandment: *Thou shalt truly tithe*. Yahusha (Jesus) does not touch it. He says *these ought ye to have done*, and faults them only for leaving the weightier matters undone beside it.
+
+thread: `the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon`
+
+Deuteronomy 14:22 — *Thou shalt truly tithe all the increase of thy seed, that the field bringeth forth year by year.* The tithe of the increase of the field is Torah's own commandment, which the woe leaves standing.
+
+## card 3962
+
+Leviticus 27:30 — *And all the tithe of the land, whether of the seed of the land, or of the fruit of the tree, is the LORD’S: it is holy unto Yahuah (LORD).* *Woe unto you, scribes and Pharisees, hypocrites! for you pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought you to have done, and not to leave the other undone.* (Matthew 23:23) The tithe is called *holy unto Yahuah (LORD)*, so a man who tithes mint and anise and cummin is handling something set apart, and the woe does not ask him to stop. It asks that he not stop there, since the same Yahuah (the LORD) asks for judgment, mercy and faith. *Not to leave the other undone* means both stand together.
+
+thread: `the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon`
+
+Leviticus 27:30 — *is the LORD’S: it is holy unto Yahuah (LORD).* The tithe of the land is holy to Yahuah (the LORD), so tithing mint and cummin is not the fault the woe names.
+
+## card 3963
+
+Matthew 15:10 — *And he called the multitude, and said unto them, Hear, and understand:* *Woe unto you, scribes and Pharisees, hypocrites! for you make clean the outside of the cup and of the platter, but within they are full of extortion and excess.* (Matthew 23:25) He calls the multitude to *Hear, and understand*, and what he teaches is the cup turned inside out: *that which cometh out of the mouth, this defileth a man* (Matthew 15:11). A man can scrub the *outside of the cup and of the platter* all day, and what is *within* is what he is carrying.
+
+thread: `matthew-15-out-of-the-heart-proceed-evil-thoughts-unwashen-hands-genesis-6-jeremiah-17-psalm-51`
+
+Matthew 15:10 — *And he called the multitude, and said unto them, Hear, and understand:* He calls the multitude to hear and understand that what comes out of a man defiles him, which turns the cup's outside to its inside.
+
+## card 3964
+
+Mark 7:1 — *Then came together unto him the Pharisees, and certain of the scribes, which came from Jerusalem.* *Woe unto you, scribes and Pharisees, hypocrites! for you make clean the outside of the cup and of the platter, but within they are full of extortion and excess.* (Matthew 23:25) Mark opens the same fight with Pharisees and scribes who *came from Jerusalem* to find fault over unwashed hands, and a few verses on names *the washing of cups, and pots, brasen vessels* (Mark 7:4). That is the cup and platter of the woe, a tradition of cleaning the outside of vessels while the inside went unwashed.
+
+thread: `matthew-15-out-of-the-heart-proceed-evil-thoughts-unwashen-hands-genesis-6-jeremiah-17-psalm-51`
+
+Mark 7:1 — *Then came together unto him the Pharisees, and certain of the scribes, which came from Jerusalem.* Pharisees and scribes come down from Jerusalem to find fault over washing, the tradition of clean vessels that the cup and platter woe answers.
+
+## card 3965
+
+Numbers 19:11 — *He that toucheth the dead body of any man shall be unclean seven days.* *Woe unto you, scribes and Pharisees, hypocrites! for you are like unto whited sepulchres, which indeed appear beautiful outward, but are within full of dead men’s bones, and of all uncleanness.* (Matthew 23:27) This is the real uncleanness the paint covers: whoever touches the dead body *shall be unclean seven days*. Yahusha (Jesus) says the men in the seat are like whited tombs *full of dead men’s bones, and of all uncleanness*, so what looked beautiful outside is the very thing the law says defiles, and nobody walking past was warned.
+
+thread: `the-double-heart-and-two-faces-in-sirach-testaments-of-asher-and-wisdom-of-solomon`
+
+Numbers 19:11 — *He that toucheth the dead body of any man shall be unclean seven days.* Whoever touches a dead body is unclean seven days, the uncleanness the whited tombs hid under paint.
+
+## card 3966
+
+Ezekiel 13:10 — *Because, even because they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter:* *Woe unto you, scribes and Pharisees, hypocrites! for you are like unto whited sepulchres, which indeed appear beautiful outward, but are within full of dead men’s bones, and of all uncleanness.* (Matthew 23:27) The wall *daubed it with untempered morter* is the same trick as the whited tomb, a coat that makes something look sound over what is not. Ezekiel's prophets cried *Peace; and there was no peace*, and Yahusha (Jesus) says the tombs *appear beautiful outward*. In Ezekiel the daubed wall comes down: *that it shall fall* (Ezekiel 13:11).
+
+thread: `ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall`
+
+Ezekiel 13:10 — *one built up a wall, and, lo, others daubed it with untempered morter.* A wall daubed with untempered morter over false peace is the whitewash on a tomb, a coat that hides what is not sound.
+
+## card 3967
+
+Jeremiah 7:25 — *Since the day that your fathers came forth out of the land of Egypt unto this day I have even sent unto you all my servants the prophets, daily rising up early and sending them:* *Woe unto you, scribes and Pharisees, hypocrites! because you build the tombs of the prophets, and garnish the sepulchres of the righteous,* (Matthew 23:29) In Jeremiah, Yahuah (the LORD) has been sending *all my servants the prophets*, *daily rising up early*, since the day the fathers left Egypt. The woe is the long end of that sending, with men now building the tombs of the prophets who were refused. The sending is the same one, and only the tombs are new.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Jeremiah 7:25 — *I have even sent unto you all my servants the prophets, daily rising up early and sending them.* Yahuah (the LORD) sent all his servants the prophets daily since Egypt, the same sending the tomb-builders now honor after the fact.
+
+## card 3968
+
+Jeremiah 25:4 — *And Yahuah (LORD) hath sent unto you all his servants the prophets, rising early and sending them; but ye have not hearkened, nor inclined your ear to hear.* *Woe unto you, scribes and Pharisees, hypocrites! because you build the tombs of the prophets, and garnish the sepulchres of the righteous,* (Matthew 23:29) *But ye have not hearkened*, Jeremiah says of the prophets Yahuah (the LORD) sent, and Yahusha (Jesus) says the ones who *garnish the sepulchres of the righteous* were not listening either. A decorated tomb honors a prophet who is dead. The question put to Jeremiah's hearers was whether the living one was heard.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Jeremiah 25:4 — *all his servants the prophets, rising early and sending them; but ye have not hearkened, nor inclined your ear to hear.* Yahuah (the LORD) sent all his servants the prophets and they were not heard, so tombs for the dead prophets answer nothing.
+
+## card 3969
+
+Nehemiah 9:26 — *Nevertheless they were disobedient, and rebelled against thee, and cast thy law behind their backs, and slew thy prophets which testified against them to turn them to thee, and they wrought great provocations.* *Woe unto you, scribes and Pharisees, hypocrites! because you build the tombs of the prophets, and garnish the sepulchres of the righteous,* (Matthew 23:29) Nehemiah's confession puts two things side by side, that they *cast thy law behind their backs, and slew thy prophets*. The prophets came *to turn them to thee* and were killed for it, which is the history the builders of the tombs were standing on while saying they would have done differently.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Nehemiah 9:26 — *cast thy law behind their backs, and slew thy prophets which testified against them to turn them to thee.* The people cast the law behind their backs and slew the prophets sent to turn them back, the history the tomb-builders inherit.
+
+## card 3970
+
+Acts 7:51 — *Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Ruach HaKodesh (Holy Spirit): as your fathers did, so do ye.* *Woe unto you, scribes and Pharisees, hypocrites! because you build the tombs of the prophets, and garnish the sepulchres of the righteous,* (Matthew 23:29) Stephen's line to the men in front of him is the woe in short, *as your fathers did, so do ye*. Like the ones decorating the tombs of the prophets, they honor the dead ones and *resist the Ruach HaKodesh (Holy Spirit)* in the living, which makes them heirs of the fathers they say they differ from.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Acts 7:51 — *Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Ruach HaKodesh (Holy Spirit): as your fathers did, so do ye.* Stephen tells the men before him that they resist the Ruach HaKodesh (Holy Spirit) as their fathers did, the pattern Yahusha (Jesus) names.
+
+## card 3971
+
+Genesis 15:16 — *But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.* *Woe unto you, scribes and Pharisees, hypocrites! because you build the tombs of the prophets, and garnish the sepulchres of the righteous,* (Matthew 23:29) Here the Torah shows judgment waiting on a measure: *the iniquity of the Amorites is not yet full*, and for generations it held. The woe runs the same law from the other side, *Fill ye up then the measure of your fathers* (Matthew 23:32), the sins of the fathers carried on by those who build their tombs, until the measure is complete.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Genesis 15:16 — *But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.* Judgment waits for a measure of iniquity to fill, which is the measure Yahusha (Jesus) tells the tomb-builders to fill up.
+
+## card 3972
+
+Deuteronomy 32:34 — *Is not this laid up in store with me, and sealed up among my treasures?* *Woe unto you, scribes and Pharisees, hypocrites! because you build the tombs of the prophets, and garnish the sepulchres of the righteous,* (Matthew 23:29) Moses sings of a judgment that is not forgotten but *laid up in store*, sealed with Yahuah (the LORD), and a verse later says why it waits: *their foot shall slide in due time* (Deuteronomy 32:35). The blood of the prophets in the woe is that kind of stored account, held until the measure is full and then asked of the generation that fills it.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Deuteronomy 32:34 — *Is not this laid up in store with me, and sealed up among my treasures?* Judgment is laid up in store and sealed with Yahuah (the LORD) until its time, as the blood of the prophets is held for the generation that fills the measure.
+
+## card 3973
+
+1 Thessalonians 2:14 — *For ye, brethren, became followers of the churches of Elohim (God) which in Judaea are in HaMashiach Yahusha (Christ Jesus): for ye also have suffered like things of your own countrymen, even as they have of the Yahudim (Jews):* *Woe unto you, scribes and Pharisees, hypocrites! because you build the tombs of the prophets, and garnish the sepulchres of the righteous,* (Matthew 23:29) Paul names the same pattern a generation on. The believers in Judæa suffered from men of their own people, and he says those who killed *their own prophets* (1 Thessalonians 2:15) did it *to fill up their sins alway* (1 Thessalonians 2:16). He is a Yahudi (Jew) writing about the men persecuting, and the assemblies in Judæa were Yahudim (Jews) too, so he describes the killers, not a people.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+1 Thessalonians 2:14 — *for ye also have suffered like things of your own countrymen, even as they have of the Yahudim (Jews).* Paul says the believers in Judæa suffered from their own countrymen, the men who, a verse later, filled up their sins by killing the prophets.
+
+## card 3974
+
+Matthew 3:7 — *But when he saw many of the Pharisees and Sadducees come to his baptism, he said unto them, O generation of vipers, who hath warned you to flee from the wrath to come?* *You serpents, you generation of vipers, how can you escape the damnation of hell?* (Matthew 23:33) John says *generation of vipers* to the *Pharisees and Sadducees* who came to his baptism, and Yahusha (Jesus) says it again to the scribes and Pharisees. Both times it falls on rulers who came with their standing, and both times it is joined to judgment, *the wrath to come* there and *the damnation of hell* here.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Matthew 3:7 — *he said unto them, O generation of vipers, who hath warned you to flee from the wrath to come.* John calls the Pharisees and Sadducees a generation of vipers and warns of the wrath to come, the same name and the same judgment as the woe.
+
+## card 3975
+
+Matthew 12:34 — *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh.* *You serpents, you generation of vipers, how can you escape the damnation of hell?* (Matthew 23:33) He used the name before, with the reason attached: *how can ye, being evil, speak good things?* The words come out of what the heart is full of, and in this chapter he says what these men are full of, *within ye are full of hypocrisy and iniquity* (Matthew 23:28). The vipers are named by what comes out of them.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Matthew 12:34 — *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh.* The vipers are named by their speech, since out of the abundance of the heart the mouth speaks, the same reasoning as the inside of the cup.
+
+## card 3976
+
+Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* *You serpents, you generation of vipers, how can you escape the damnation of hell?* (Matthew 23:33) The serpent here has a seed, and *between thy seed and her seed* is the enmity set from the garden on. When Yahusha (Jesus) calls men on the seat *serpents*, he speaks of that seed surfacing inside the covenant people among the ones in the robes, and not of the people they were devouring, who are the sheep.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Genesis 3:15 — *I will put enmity between thee and the woman, and between thy seed and her seed.* The serpent's seed and the woman's seed are set at enmity from the garden, and the serpents in the woe are that seed surfacing among the rulers.
+
+## card 3977
+
+John 8:44 — *Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it.* *You serpents, you generation of vipers, how can you escape the damnation of hell?* (Matthew 23:33) Yahusha (Jesus) says it to men in front of him, *Ye are of your father the devil*, and then names the works, *a murderer from the beginning*. Matthew's *serpents* and John's children of the devil are one charge, made by what they do, as the woe goes on to say they will kill the prophets he sends. It is said of particular men, not of a people.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+John 8:44 — *Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning.* He names the rulers in front of him as of their father the devil by their works, a murderer from the beginning, and not a whole people.
+
+## card 3978
+
+Genesis 4:8 — *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* *Wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them you shall kill and crucify; and some of them shall you scourge in your synagogues, and persecute them from city to city:* (Matthew 23:34) He names where the count begins, *the blood of righteous Abel* (Matthew 23:35), and here is that blood being shed: Cain *rose up against Abel his brother, and slew him*. The sending of prophets and the killing of them start in the first field, and the woe says the whole count is coming due on the ones who keep it going.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Genesis 4:8 — *Cain rose up against Abel his brother, and slew him.* Cain kills Abel his brother in the field, the first of the righteous blood Yahusha (Jesus) says is coming due on this generation.
+
+## card 3979
+
+2 Chronicles 24:20 — *And the Spirit of Elohim (God) came upon Zechariah the son of Jehoiada the priest, which stood above the people, and said unto them, Thus saith Elohim (God), Why transgress ye the commandments of Yahuah (LORD), that ye cannot prosper? because ye have forsaken Yahuah (LORD), he hath also forsaken you.* *Wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them you shall kill and crucify; and some of them shall you scourge in your synagogues, and persecute them from city to city:* (Matthew 23:34) Matthew's Zechariah stands at the other end of the count, and this is the priest on whom the Spirit of Elohim (God) came, whose message was *Why transgress ye the commandments of Yahuah (LORD)*. The prophets were sent to press the commandments on a people who had left them, and that is what the sending and the killing both turn on.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+2 Chronicles 24:20 — *Thus saith Elohim (God), Why transgress ye the commandments of Yahuah (LORD), that ye cannot prosper?* The Spirit of Elohim (God) comes on Zechariah the priest to ask why they transgress the commandments of Yahuah (the LORD), and he is the slain prophet at the end of the count.
+
+## card 3980
+
+Zechariah 1:1 — *In the eighth month, in the second year of Darius, came the word of Yahuah (LORD) unto Zechariah, the son of Berechiah, the son of Iddo the prophet, saying,* *Wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them you shall kill and crucify; and some of them shall you scourge in your synagogues, and persecute them from city to city:* (Matthew 23:34) Matthew names *Zechariah son of Barachias* (Matthew 23:35), and here the writing prophet opens as *the son of Berechiah*, the same name in its Hebrew shape. Whether Yahusha (Jesus) means this Zechariah or the priest, Jehoiada's son, is left open on the page, and the point stands either way: the count of the slain reaches the temple and the altar.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Zechariah 1:1 — *came the word of Yahuah (LORD) unto Zechariah, the son of Berechiah, the son of Iddo the prophet.* The writing prophet Zechariah is named the son of Berechiah, the Hebrew shape of the name Matthew gives as Barachias.
+
+## card 3981
+
+Luke 11:49 — *Therefore also said the wisdom of Elohim (God), I will send them prophets and apostles, and some of them they shall slay and persecute:* *Wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them you shall kill and crucify; and some of them shall you scourge in your synagogues, and persecute them from city to city:* (Matthew 23:34) Luke gives the saying to *the wisdom of Elohim (God)* where Matthew has Yahusha (Jesus) saying it in the first person, *I send unto you prophets*. The sender is the same voice that sent the prophets from the beginning, and the answer is the same, *some of them they shall slay and persecute*.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Luke 11:49 — *Therefore also said the wisdom of Elohim (God), I will send them prophets and apostles, and some of them they shall slay and persecute:* Luke attributes the sending of prophets and apostles, some to be slain and persecuted, to the wisdom of Elohim (God), the same sender as in Matthew.
+
+## card 3982
+
+Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* *Wherefore, behold, I send unto you prophets, and wise men, and scribes: and some of them you shall kill and crucify; and some of them shall you scourge in your synagogues, and persecute them from city to city:* (Matthew 23:34) Matthew's list of what is done to the sent ones, *kill and crucify*, *scourge*, and *persecute them from city to city*, is the list Hebrews gives: *They were stoned, they were sawn asunder* (Hebrews 11:37). Hebrews also says what became of them, that they refused deliverance *that they might obtain a better resurrection*, so the killing is not the last word on them.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* Those tortured and slain refused deliverance that they might obtain a better resurrection, so the killing of the sent ones is not their end.
+
+## card 3983
+
+Deuteronomy 32:11 — *As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings, taketh them, beareth them on her wings:* *O Jerusalem, Jerusalem, you that killest the prophets, and stonest them which are sent unto you, how often would I have gathered your children together, even as a hen gathers her chickens under her wings, and you would not!* (Matthew 23:37) Moses sings the same picture of Yahuah (the LORD) with an eagle's wings: *spreadeth abroad her wings, taketh them, beareth them on her wings*. Yahusha (Jesus) says he would have gathered the city's children *as a hen gathereth her chickens under her wings*, so he stands where Moses placed Yahuah (the LORD) over the young. It is the one who carried them then who is speaking now.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Deuteronomy 32:11 — *As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings, taketh them, beareth them on her wings:* Yahuah (the LORD) is pictured as an eagle spreading her wings and bearing her young, the picture Yahusha (Jesus) uses over Jerusalem.
+
+## card 3984
+
+Ruth 2:12 — *Yahuah (LORD) recompense thy work, and a full reward be given thee of Yahuah Elohim (the LORD God) of Yashar'el (Israel), under whose wings thou art come to trust.* *O Jerusalem, Jerusalem, you that killest the prophets, and stonest them which are sent unto you, how often would I have gathered your children together, even as a hen gathers her chickens under her wings, and you would not!* (Matthew 23:37) Boaz tells Ruth she has come *under whose wings thou art come to trust*, the wings of Yahuah (the LORD), the Elohim (God) of Yashar'el (Israel). Yahusha (Jesus) offers the same shelter to Jerusalem, gathering them *under her wings*, and says the refusal was theirs: *ye would not*.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Ruth 2:12 — *a full reward be given thee of Yahuah Elohim (the LORD God) of Yashar'el (Israel), under whose wings thou art come to trust.* Ruth comes to trust under the wings of Yahuah (the LORD), the Elohim (God) of Yashar'el (Israel), the shelter Yahusha (Jesus) offers Jerusalem.
+
+## card 3985
+
+Isaiah 31:5 — *As birds flying, so will Yahuah Tseva'ot (LORD of hosts) defend Jerusalem; defending also he will deliver it; and passing over he will preserve it.* *O Jerusalem, Jerusalem, you that killest the prophets, and stonest them which are sent unto you, how often would I have gathered your children together, even as a hen gathers her chickens under her wings, and you would not!* (Matthew 23:37) Isaiah's picture is a bird over its nest, *As birds flying*, and Yahusha (Jesus) uses the same image over the same city, wanting to gather her children under his wings. The one who promised to defend Jerusalem like that is now lamenting *ye would not*, so the desolation in the next verse reads as the defender stepping back.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Isaiah 31:5 — *As birds flying, so will Yahuah Tseva'ot (LORD of hosts) defend Jerusalem; defending also he will deliver it; and passing over he will preserve it.* Yahuah (the LORD) of hosts is pictured as birds flying to defend Jerusalem, the shelter the hen's wings offer in the woe.
+
+## card 3986
+
+Jeremiah 12:7 — *I have forsaken mine house, I have left mine heritage; I have given the dearly beloved of my soul into the hand of her enemies.* *Behold, your house is left unto you desolate.* (Matthew 23:38) Yahuah (the LORD) speaks it in Jeremiah as grief, *I have forsaken mine house*, and while the house is given up, *the dearly beloved of my soul* is still named his own. Yahusha (Jesus) says the same at the temple, *your house is left unto you desolate*, and it is the house that is left, the temple and its rule, not the people he laments.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Jeremiah 12:7 — *I have forsaken mine house, I have left mine heritage; I have given the dearly beloved of my soul into the hand of her enemies.* Yahuah (the LORD) forsakes his house while still calling the people the dearly beloved of his soul, so the house is left and not the people.
+
+## card 3987
+
+Jeremiah 22:5 — *But if ye will not hear these words, I swear by myself, saith Yahuah (LORD), that this house shall become a desolation.* *Behold, your house is left unto you desolate.* (Matthew 23:38) The warning is conditional in Jeremiah: *if ye will not hear these words*, *this house shall become a desolation*. Yahusha (Jesus) says it now because the hearing was refused, and what is left desolate is the house, the building and the rule that sat in it.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Jeremiah 22:5 — *But if ye will not hear these words, I swear by myself, saith Yahuah (LORD), that this house shall become a desolation.* Yahuah (the LORD) swears that if they will not hear, this house shall become a desolation, the sentence on the house.
+
+## card 3988
+
+Matthew 24:1 — *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* *Behold, your house is left unto you desolate.* (Matthew 23:38) After *your house is left unto you desolate* the next thing Matthew tells is that he walks out: *departed from the temple*. The leaving is the saying acted out, and the disciples pointing at the buildings set up his answer, *There shall not be left here one stone upon another* (Matthew 24:2).
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Matthew 24:1 — *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* He departs from the temple right after leaving the house desolate, and the disciples point at the buildings he says will come down.
+
+## card 3989
+
+Matthew 22:7 — *But when the king heard thereof, he was wroth: and he sent forth his armies, and destroyed those murderers, and burned up their city.* *Behold, your house is left unto you desolate.* (Matthew 23:38) The king of the parable answers the murder of his servants by burning *their city*. Yahusha (Jesus) says here that the house is left desolate to the men who kill the prophets he sends. The burned city and the desolate house are one judgment on the same rulers, told once in a story and once in plain speech.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Matthew 22:7 — *But when the king heard thereof, he was wroth: and he sent forth his armies, and destroyed those murderers, and burned up their city.* In the parable the murderers are destroyed and their city burned up, the same judgment the woe pronounces on the house.
+
+## card 3990
+
+Psalm 118:26 — *Blessed be he that cometh in the name of Yahuah (LORD): we have blessed you out of the house of Yahuah (LORD).* *For I say unto you, You shall not see me henceforth, till you shall say, Blessed is he that comes in the name of Yahuah (Lord).* (Matthew 23:39) The parting word is a quotation. The line from the Psalm that the crowds sang at his coming, *Blessed be he that cometh in the name of Yahuah (LORD)*, is the line he says must be said again before he is seen. The leaving is not the end of it, since the same words are to come back from the same city.
+
+thread: `psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah`
+
+Psalm 118:26 — *Blessed be he that cometh in the name of Yahuah (LORD): we have blessed you out of the house of Yahuah (LORD).* The Psalm's blessing on him who comes in the name of Yahuah (the LORD) is what he says must be said before he is seen again.
+
+## card 3991
+
+Matthew 21:9 — *And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord); Hosanna in the highest.* *For I say unto you, You shall not see me henceforth, till you shall say, Blessed is he that comes in the name of Yahuah (Lord).* (Matthew 23:39) Here is the crowd that said it. The multitudes before and behind *cried, saying, Hosanna to the Son of David*, and Yahusha (Jesus) says the city will not see him again until it says the blessing again. The cry was sung over him once at the gate, and the second time is the saying he waits for.
+
+thread: `psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah`
+
+Matthew 21:9 — *Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord); Hosanna in the highest.* The multitudes cried Hosanna and the blessing on him who comes in the name of Yahuah (the Lord), the saying he says must come again.
+
+## card 3992
+
+Matthew 21:15 — *And when the chief priests and scribes saw the wonderful things that he did, and the children crying in the temple, and saying, Hosanna to the Son of David; they were sore displeased,* *For I say unto you, You shall not see me henceforth, till you shall say, Blessed is he that comes in the name of Yahuah (Lord).* (Matthew 23:39) The ones who cried it in the temple were *the children crying in the temple*, and the chief priests and scribes were *sore displeased*. The men who will not say *Blessed is he that cometh* are the kind who objected when the children said it, and Yahusha (Jesus) says it will be said by them yet.
+
+thread: `psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah`
+
+Matthew 21:15 — *the children crying in the temple, and saying, Hosanna to the Son of David; they were sore displeased.* Children cry Hosanna in the temple while the chief priests and scribes are sore displeased, the saying he says must come from them yet.
+
+## card 3993
+
+Zechariah 12:10 — *And I will pour upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of supplications: and they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn.* *For I say unto you, You shall not see me henceforth, till you shall say, Blessed is he that comes in the name of Yahuah (Lord).* (Matthew 23:39) The *till* in this verse has its day here. When Yahuah (the LORD) pours out *the spirit of grace and of supplications* on Jerusalem, *they shall look upon me whom they have pierced*, and mourn as for an only son. That looking is the seeing he says is withheld until they say the blessing.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Zechariah 12:10 — *they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son.* When the spirit of grace and supplications is poured out, they look upon the one they pierced and mourn, the seeing held back until the blessing is said.
+
+## card 3994
+
+Zechariah 13:8 — *And it shall come to pass, that in all the land, saith Yahuah (LORD), two parts therein shall be cut off and die; but the third shall be left therein.* *For I say unto you, You shall not see me henceforth, till you shall say, Blessed is he that comes in the name of Yahuah (Lord).* (Matthew 23:39) The sorting runs ahead of the return. *Two parts therein shall be cut off and die*, and *the third shall be left therein*. The next verse says *I will bring the third part through the fire, and will refine them as silver is refined* (Zechariah 13:9), and that *they shall call on my name, and I will hear them* (Zechariah 13:9). So the saying of the blessing reads as coming from a refined third, not from the whole city.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Zechariah 13:8 — *in all the land, saith Yahuah (LORD), two parts therein shall be cut off and die; but the third shall be left therein.* Two parts of the land are cut off and a third is left, the third that is refined and calls on his name.
+
+## card 3995
+
+Romans 11:25 — *For I would not, brethren, that ye should be ignorant of this mystery, lest ye should be wise in your own conceits; that blindness in part is happened to Yashar'el (Israel), until the fulness of the Gentiles be come in.* *For I say unto you, You shall not see me henceforth, till you shall say, Blessed is he that comes in the name of Yahuah (Lord).* (Matthew 23:39) Both run on an *until*. The not-seeing in the woe lasts *till ye shall say*, and Paul's blindness lasts *until the fulness of the Gentiles be come in*, which is the scattered seed coming home, and then *all Yashar'el (Israel) shall be saved* (Romans 11:26). The house is left desolate for a time, and the end of it is a saving.
+
+thread: `the-blood-of-hevel-crying-and-the-mother-hen-gathering-in-1-enoch-and-2-esdras`
+
+Romans 11:25 — *blindness in part is happened to Yashar'el (Israel), until the fulness of the Gentiles be come in.* Blindness in part has come on Yashar'el (Israel) only until the fulness of the Gentiles comes in, the same until as the woe.
+
+## card 3996
+
+Jeremiah 7:1 — *The word that came to Jeremiah from Yahuah (LORD), saying,* *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* (Matthew 24:1) The disciples show him the buildings, and this verse is where Yahuah (the LORD) sent a prophet to stand in the temple gate with the same news. Jeremiah's sermon says a house cannot shelter a people who trust it and will not amend their ways: *Trust ye not in lying words, saying, The temple of Yahuah (LORD), The temple of Yahuah (LORD), The temple of Yahuah (LORD), are these.* (Jeremiah 7:4)
+
+thread: `matthew-24-the-temple-torn-down-and-the-question`
+
+Jeremiah 7:1 — *The word that came to Jeremiah from Yahuah (LORD), saying,* Where Jeremiah's temple sermon begins, warning a people who trusted the house of Yahuah (the LORD) while they would not amend their ways.
+
+## card 3997
+
+Jeremiah 26:6 — *Then will I make this house like Shiloh, and will make this city a curse to all the nations of the earth.* *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* (Matthew 24:1) Yahusha (Jesus) says no stone will be left on another, and Jeremiah heard the same sentence long before: Yahuah (the LORD) will make the house *like Shiloh*. The reason stands in the verses just ahead of it, *If ye will not hearken to me, to walk in my law, which I have set before you* (Jeremiah 26:4), so the house falls for the law refused, not for the stones.
+
+thread: `matthew-24-the-temple-torn-down-and-the-question`
+
+Jeremiah 26:6 — *Then will I make this house like Shiloh, and will make this city a curse to all the nations of the earth.* The house made like Shiloh, said because the people would not hearken to walk in the law set before them.
+
+## card 3998
+
+Jeremiah 26:18 — *Micah the Morasthite prophesied in the days of Hezekiah king of Yahudah (Judah), and spake to all the people of Yahudah (Judah), saying, Thus saith Yahuah Tseva'ot (LORD of hosts); Zion shall be plowed like a field, and Jerusalem shall become heaps, and the mountain of the house as the high places of a forest.* *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* (Matthew 24:1) When Yahusha (Jesus) says the stones will be thrown down, he is saying what the elders in Jeremiah's day remembered Micah saying about Zion. They also remembered how it was met: *did he not fear Yahuah (LORD), and besought Yahuah (LORD), and Yahuah (LORD) repented him of the evil which he had pronounced against them?* (Jeremiah 26:19) The warning was always a call to turn as much as a sentence.
+
+thread: `matthew-24-the-temple-torn-down-and-the-question`
+
+Jeremiah 26:18 — *Zion shall be plowed like a field, and Jerusalem shall become heaps, and the mountain of the house as the high places of a forest.* Micah's sentence on Zion, remembered by the elders in Jeremiah's day, together with the king's turning that held the evil back.
+
+## card 3999
+
+Micah 3:12 — *Therefore shall Zion for your sake be plowed as a field, and Jerusalem shall become heaps, and the mountain of the house as the high places of the forest.* *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* (Matthew 24:1) Yahusha (Jesus) says the temple will be thrown down, and Micah says what made it ready to fall. The heads judged for reward, the priests taught for hire, the prophets divined for money, and every one of them said *Is not Yahuah (LORD) among us? none evil can come upon us.* (Micah 3:11) Zion is plowed *for your sake*, because of what its rulers made of it.
+
+thread: `matthew-24-the-temple-torn-down-and-the-question`
+
+Micah 3:12 — *Therefore shall Zion for your sake be plowed as a field, and Jerusalem shall become heaps.* The rulers who judged for reward and taught for hire yet trusted the house, so Zion would be plowed as a field.
+
+## card 4000
+
+Matthew 23:38 — *Behold, your house is left unto you desolate.* *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* (Matthew 24:1) He has just come out of the temple, and the sentence he spoke over it in the chapter before is what the disciples are pointing at: *your house is left unto you desolate*. He says *your house*, and what is left desolate is the temple and the rule that sat over it. The verse after gives the way back, for they will see him again when they say, *Blessed is he that cometh in the name of Yahuah (Lord).* (Matthew 23:39)
+
+thread: `matthew-24-the-temple-torn-down-and-the-question`
+
+Matthew 23:38 — *Behold, your house is left unto you desolate.* The sentence he spoke over the temple before walking out of it, with the promise in the next verse that they will see him again.
+
+## card 4001
+
+Luke 19:41 — *And when he was come near, he beheld the city, and wept over it,* *And Yahusha (Jesus) went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple.* (Matthew 24:1) Luke shows the heart behind the sentence. He comes near the city and weeps over it, and the words that follow are the ones the disciples hear as they leave the temple: *And shall lay thee even with the ground, and thy children within thee; and they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation.* (Luke 19:44) He says it weeping.
+
+thread: `matthew-24-the-temple-torn-down-and-the-question`
+
+Luke 19:41 — *And when he was come near, he beheld the city, and wept over it,* He wept over the city before saying that not one stone would be left on another.
+
+## card 4003
+
+Mark 13:3 — *And as he sat upon the mount of Olives over against the temple, Peter and James and John and Andrew asked him privately,* *And as he sat upon the mount of Olives, the disciples came unto him privately, saying, Tell us, when shall these things be? and what shall be the sign of your coming, and of the end of the world?* (Matthew 24:3) Mark sets the scene a little closer. Peter, James, John and Andrew ask him privately, sitting *over against the temple*, with the buildings still in front of them that he said would be thrown down. Matthew says only that *the disciples* came, and Mark names the four who put the question.
+
+thread: `matthew-24-the-temple-torn-down-and-the-question`
+
+Mark 13:3 — *And as he sat upon the mount of Olives over against the temple, Peter and James and John and Andrew asked him privately,* Names the four who asked, sitting on the mount of Olives opposite the temple.
+
+## card 4004
+
+Luke 21:7 — *And they asked him, saying, Master, but when shall these things be? and what sign will there be when these things shall come to pass?* *And as he sat upon the mount of Olives, the disciples came unto him privately, saying, Tell us, when shall these things be? and what shall be the sign of your coming, and of the end of the world?* (Matthew 24:3) In Luke the question comes straight out of the temple talk. He has just said *there shall not be left one stone upon another, that shall not be thrown down* (Luke 21:6), and they ask *when shall these things be?* and what sign there will be. It is the same two asks Matthew's disciples make on the mount, here put to him at the temple itself.
+
+thread: `matthew-24-the-temple-torn-down-and-the-question`
+
+Luke 21:7 — *And they asked him, saying, Master, but when shall these things be? and what sign will there be when these things shall come to pass?* Luke's version of the question, when and what sign, asked straight after he says not one stone will be left.
+
+## card 4002
+
+Zechariah 14:4 — *And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east, and the mount of Olives shall cleave in the midst thereof toward the east and toward the west, and there shall be a very great valley; and half of the mountain shall remove toward the north, and half of it toward the south.* *And as he sat upon the mount of Olives, the disciples came unto him privately, saying, Tell us, when shall these things be? and what shall be the sign of your coming, and of the end of the world?* (Matthew 24:3) The disciples ask for the sign of *thy coming* while he sits on the mount of Olives, and Zechariah had already marked that hill for the day. The verse before has Yahuah (the LORD) to *go forth, and fight against those nations* (Zechariah 14:3), so the question is asked at the very place the prophet named.
+
+thread: `the-mount-of-olives-vision-and-the-gathering-of-the-tribes-in-testaments-of-naphtali-and-asher`
+
+Zechariah 14:4 — *And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east.* The mountain where he sits to answer is the one the prophet named as the place his feet stand on the day.
+
+## card 4005
+
+Isaiah 19:2 — *And I will set the Egyptians against the Egyptians: and they shall fight every one against his brother, and every one against his neighbour; city against city, and kingdom against kingdom.* *For many shall come in my name, saying, I am Messiah (Christ); and shall deceive many.* (Matthew 24:5) After those who come in his name, Yahusha (Jesus) says wars follow, *nation shall rise against nation, and kingdom against kingdom* (Matthew 24:7). Isaiah already had that picture for Egypt and says whose hand it is: *I will set the Egyptians against the Egyptians*, *city against city, and kingdom against kingdom*. What Matthew calls the beginning of sorrows is strife Yahuah (the LORD) can send among a people, not only a sign to watch for.
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+Isaiah 19:2 — *And I will set the Egyptians against the Egyptians: and they shall fight every one against his brother.* Yahuah (the LORD) sets Egyptian against Egyptian, city against city and kingdom against kingdom, the strife Matthew names among the first sorrows.
+
+## card 4006
+
+Zechariah 14:13 — *And it shall come to pass in that day, that a great tumult from Yahuah (LORD) shall be among them; and they shall lay hold every one on the hand of his neighbour, and his hand shall rise up against the hand of his neighbour.* *For many shall come in my name, saying, I am Messiah (Christ); and shall deceive many.* (Matthew 24:5) Yahusha (Jesus) puts wars among the first sorrows, *nation shall rise against nation, and kingdom against kingdom* (Matthew 24:7), and Zechariah shows who stirs that fight when it falls on the nations that came against Jerusalem. *a great tumult from Yahuah (LORD) shall be among them*, and every hand rises against the neighbour's hand.
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+Zechariah 14:13 — *a great tumult from Yahuah (LORD) shall be among them; and they shall lay hold every one on the hand of his neighbour.* A tumult from Yahuah (the LORD) turns the nations against one another, every hand against his neighbour's hand.
+
+## card 4007
+
+Matthew 10:22 — *And ye shall be hated of all men for my name’s sake: but he that endureth to the end shall be saved.* *Then shall they deliver you up to be afflicted, and shall kill you: and you shall be hated of all nations for my name’s sake.* (Matthew 24:9) He said this to the twelve when he first sent them out, and he says it again on the mountain with the circle widened, *all men* becoming *all nations*. The promise rides with it both times: *he that endureth to the end shall be saved*.
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+Matthew 10:22 — *And ye shall be hated of all men for my name’s sake: but he that endureth to the end shall be saved.* The same hatred for his name and the same promise to the one who endures, first spoken to the twelve when he sent them out.
+
+## card 4009
+
+John 2:18 — *Then answered the Yahudim (Jews) and said unto him, What sign shewest thou unto us, seeing that thou doest these things?* *Then shall they deliver you up to be afflicted, and shall kill you: and you shall be hated of all nations for my name’s sake.* (Matthew 24:9) Matthew says his people will be handed over, killed, and hated for his name. In John it begins in the temple, where those who answer him ask what sign he shows for driving out the sellers: *What sign shewest thou unto us*. His answer is his own death and rising, *Destroy this temple, and in three days I will raise it up* (John 2:19), so the killing foretold for them was first spoken of him.
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+John 2:18 — *Then answered the Yahudim (Jews) and said unto him, What sign shewest thou unto us, seeing that thou doest these things?* The first challenge to him, in the temple, which he answers with the sign of his own death and rising.
+
+## card 4010
+
+2 Thessalonians 2:3 — *Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition;* *Then shall they deliver you up to be afflicted, and shall kill you: and you shall be hated of all nations for my name’s sake.* (Matthew 24:9) Yahusha (Jesus) opens this talk with *Take heed that no man deceive you* (Matthew 24:4), and Paul begins the same way, *Let no man deceive you by any means*, before he says what must come first, *a falling away first*, and the son of perdition revealed. Matthew shows how a falling away looks from inside: *shall many be offended, and shall betray one another, and shall hate one another* (Matthew 24:10).
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+2 Thessalonians 2:3 — *for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition.* Paul warns that the day waits on a falling away and the revealing of the son of perdition, opening with the same words as Matthew: let no man deceive you.
+
+## card 4011
+
+2 Thessalonians 2:7 — *For the mystery of iniquity doth already work: only he who now letteth will let, until he be taken out of the way.* *Then shall they deliver you up to be afflicted, and shall kill you: and you shall be hated of all nations for my name’s sake.* (Matthew 24:9) Matthew says *And because iniquity shall abound, the love of many shall wax cold.* (Matthew 24:12) Paul says that iniquity did not wait for the end to begin: *the mystery of iniquity doth already work*. Iniquity there is lawlessness, and it was already at work in his day, held back until the one who holds it back *be taken out of the way*.
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+2 Thessalonians 2:7 — *For the mystery of iniquity doth already work: only he who now letteth will let, until he be taken out of the way.* The lawlessness Matthew says will abound was already working in Paul's day, held back until what restrains it is taken out of the way.
+
+## card 4012
+
+2 Timothy 3:1 — *This know also, that in the last days perilous times shall come.* *Then shall they deliver you up to be afflicted, and shall kill you: and you shall be hated of all nations for my name’s sake.* (Matthew 24:9) Yahusha (Jesus) says the faithful will be hated and that *the love of many shall wax cold* (Matthew 24:12). Paul gives that season its name, the *last days*, and says what makes the times *perilous*: men *lovers of pleasures more than lovers of Elohim (God)* (2 Timothy 3:4). The danger in both is love turned the wrong way.
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+2 Timothy 3:1 — *This know also, that in the last days perilous times shall come.* Paul names the same season the last days and says what makes it perilous, love of self and pleasure in place of love for Elohim (God).
+
+## card 4013
+
+Isaiah 60:1 — *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* *Then shall they deliver you up to be afflicted, and shall kill you: and you shall be hated of all nations for my name’s sake.* (Matthew 24:9) Yahusha (Jesus) says the nations will hate his people for his name, and Isaiah shows what else is true in that same darkness: *the darkness shall cover the earth* (Isaiah 60:2), yet the light has come on Zion. *the Gentiles shall come to thy light* (Isaiah 60:3), and the next verse says who is coming: *thy sons shall come from far* (Isaiah 60:4). The ones who come are the scattered sons and daughters, coming home.
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+Isaiah 60:1 — *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* The light risen on Zion in a dark earth, with the Gentiles and the sons from far coming to it.
+
+## card 4014
+
+Isaiah 66:18 — *For I know their works and their thoughts: it shall come, that I will gather all nations and tongues; and they shall come, and see my glory.* *Then shall they deliver you up to be afflicted, and shall kill you: and you shall be hated of all nations for my name’s sake.* (Matthew 24:9) In Matthew all nations hate his people; in Isaiah all nations and tongues are gathered to see the glory of Yahuah (the LORD), and a sign is set among them. Out of them he sends *those that escape of them unto the nations* (Isaiah 66:19), to the far places that have not heard, and *they shall bring all your brethren for an offering unto Yahuah (LORD) out of all nations* (Isaiah 66:20) to his holy mountain.
+
+thread: `matthew-24-the-beginning-of-sorrows`
+
+Isaiah 66:18 — *I will gather all nations and tongues; and they shall come, and see my glory.* Yahuah (the LORD) gathers all nations and tongues to see his glory, and sends those who escape out to the far places that have not heard.
+
+## card 4008
+
+Matthew 7:23 — *And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.* *Then shall they deliver you up to be afflicted, and shall kill you: and you shall be hated of all nations for my name’s sake.* (Matthew 24:9) Hatred for his name is one thing; carrying his name is another. The ones sent away in the Sermon had prophesied in it, *have we not prophesied in thy name?* (Matthew 7:22), and they are called *ye that work iniquity*. Iniquity there is lawlessness, the Torah set aside, and it is the same word Yahusha (Jesus) uses again in this chapter: *And because iniquity shall abound, the love of many shall wax cold.* (Matthew 24:12)
+
+thread: `lord-lord-and-torahlessness`
+
+Matthew 7:23 — *And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.* The verdict on those who used his name while setting the law aside: he sends away the workers of lawlessness.
+
+## card 4015
+
+Daniel 9:27 — *And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate, even until the consummation, and that determined shall be poured upon the desolate.* *When you therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15) Yahusha (Jesus) sends the reader to Daniel by name, so here is the verse itself. Daniel says the sacrifice and the oblation are made to cease in the midst of the week, and that *for the overspreading of abominations he shall make it desolate*, until the end that is determined is poured out. Matthew's abomination is set to *stand in the holy place*, the place where that sacrifice was kept.
+
+thread: `daniel-9-the-abomination-that-maketh-desolate`
+
+Daniel 9:27 — *and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate.* Daniel's own words for the desolation Matthew names: the sacrifice made to cease and the place made desolate until the end determined.
+
+## card 4016
+
+Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* *When you therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15) A few verses on, Yahusha (Jesus) speaks of a tribulation with no equal, and Daniel gave that trouble its measure first: *a time of trouble*. In Daniel the trouble is not the last word. At that time *thy people shall be delivered*, and the ones named are those *found written in the book*.
+
+thread: `matthew-24-the-abomination-of-desolation`
+
+Daniel 12:1 — *there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* The time of trouble such as never was, with the people delivered, every one found written in the book.
+
+## card 4017
+
+Luke 21:20 — *And when ye shall see Jerusalem compassed with armies, then know that the desolation thereof is nigh.* *When you therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15) Luke names what the desolation looks like when it arrives: *Jerusalem compassed with armies*. Where Matthew sends the reader to Daniel, Luke tells the disciples what they will see and what it means, *the desolation thereof is nigh*, and the same flight follows in both gospels, those in Judaea to the mountains.
+
+thread: `times-of-the-gentiles-and-the-nations-as-territorial-occupier-of-yerushalayim`
+
+Luke 21:20 — *And when ye shall see Jerusalem compassed with armies, then know that the desolation thereof is nigh.* Luke's telling of the same warning: Jerusalem surrounded by armies is the sign that its desolation is near.
+
+## card 4018
+
+2 Thessalonians 2:3 — *Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition;* *When you therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15) Matthew has the abomination standing *in the holy place*, and Paul, one verse on, puts a man in the same kind of place: *so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God).* (2 Thessalonians 2:4) Both give the sign by where it stands, and Paul too begins by warning that none should be deceived before *a falling away* and the son of perdition.
+
+thread: `matthew-24-the-abomination-of-desolation`
+
+2 Thessalonians 2:3 — *except there come a falling away first, and that man of sin be revealed, the son of perdition.* Paul says the day waits on a falling away and the revealing of the son of perdition, who then takes his seat in the temple of Elohim (God).
+
+## card 4019
+
+Revelation 11:1 — *And there was given me a reed like unto a rod: and the angel stood, saying, Rise, and measure the temple of Elohim (God), and the altar, and them that worship therein.* *When you therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15) Matthew has the abomination standing in the holy place. In Revelation the angel puts a reed in John's hand and says to measure the temple, the altar and the worshippers, but to leave the outer court, *for it is given unto the Gentiles: and the holy city shall they tread under foot forty and two months* (Revelation 11:2). Revelation counts that time in months; Matthew gives no count.
+
+thread: `matthew-24-the-abomination-of-desolation`
+
+Revelation 11:1 — *Rise, and measure the temple of Elohim (God), and the altar, and them that worship therein.* A temple measured in Revelation, with the altar and the worshippers counted and the outer court given over.
+
+## card 4020
+
+Revelation 13:5 — *And there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months.* *When you therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15) Matthew gives the sign of the holy place and no number of months. Revelation shows *a mouth speaking great things and blasphemies*, given to the beast the dragon empowered, and *power was given unto him to continue forty and two months*. Revelation counts in months where Matthew counts nothing.
+
+thread: `matthew-24-the-abomination-of-desolation`
+
+Revelation 13:5 — *And there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months.* A beast given a mouth for great blasphemies and a set time of forty and two months, counted as Revelation counts it.
+
+## card 4021
+
+Deuteronomy 13:1 — *If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder,* *Then if any man shall say unto you, Lo, here is Messiah (Christ), or there; believe it not.* (Matthew 24:23) Yahusha (Jesus) warns that false prophets *shall shew great signs and wonders* (Matthew 24:24), and Moses had already given the test for such a sign. Even when *the sign or the wonder come to pass* (Deuteronomy 13:2), the prophet is refused if he leads away from Yahuah (the LORD), because the sign is the way Yahuah (the LORD) proves whether his people love him, and the standard is *keep his commandments, and obey his voice* (Deuteronomy 13:4).
+
+thread: `matthew-24-false-christs-and-the-lightning`
+
+Deuteronomy 13:1 — *If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder,* Opens the Torah's test for a prophet who gives a sign or a wonder: the sign alone proves nothing.
+
+## card 4022
+
+Job 39:30 — *Her young ones also suck up blood: and where the slain are, there is she.* *Then if any man shall say unto you, Lo, here is Messiah (Christ), or there; believe it not.* (Matthew 24:23) Right after the warning against *Lo, here*, Yahusha (Jesus) says *wheresoever the carcase is, there will the eagles be gathered together* (Matthew 24:28). Job shows the bird: she dwells on the rock and *her eyes behold afar off* (Job 39:29), and *where the slain are, there is she*. Judgment needs no one to point to it; it finds the slain wherever they lie.
+
+thread: `matthew-24-false-christs-and-the-lightning`
+
+Job 39:30 — *Her young ones also suck up blood: and where the slain are, there is she.* The eagle of Job finds the slain wherever they lie, the bird behind Matthew's saying about the carcase and the eagles.
+
+## card 4023
+
+Isaiah 56:9 — *All ye beasts of the field, come to devour, yea, all ye beasts in the forest.* *Then if any man shall say unto you, Lo, here is Messiah (Christ), or there; believe it not.* (Matthew 24:23) Isaiah has the beasts called in to devour, and the verses after say why the flock is open: *they are shepherds that cannot understand: they all look to their own way, every one for his gain, from his quarter.* (Isaiah 56:11) Matthew has voices saying *Lo, here* and the eagles gathered to the carcase; Isaiah shows the carcase laid out by shepherds who looked to their own gain.
+
+thread: `matthew-24-false-christs-and-the-lightning`
+
+Isaiah 56:9 — *All ye beasts of the field, come to devour, yea, all ye beasts in the forest.* The call to the beasts to devour comes where the watchmen are blind and the shepherds look only to their own gain.
+
+## card 4024
+
+Hosea 8:1 — *Set the trumpet to thy mouth. He shall come as an eagle against the house of Yahuah (LORD), because they have transgressed my covenant, and trespassed against my law.* *Then if any man shall say unto you, Lo, here is Messiah (Christ), or there; believe it not.* (Matthew 24:23) Hosea has an eagle of his own, coming against the house of Yahuah (the LORD), and the reason is in the same breath: they *transgressed my covenant, and trespassed against my law*. When Yahusha (Jesus) says *wheresoever the carcase is, there will the eagles be gathered together* (Matthew 24:28), the carcase is a house that broke the covenant.
+
+thread: `matthew-24-false-christs-and-the-lightning`
+
+Hosea 8:1 — *He shall come as an eagle against the house of Yahuah (LORD), because they have transgressed my covenant, and trespassed against my law.* An eagle comes against the house of Yahuah (the LORD) because the covenant was broken and the law trespassed against.
+
+## card 4025
+
+Revelation 19:17 — *And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God);* *Then if any man shall say unto you, Lo, here is Messiah (Christ), or there; believe it not.* (Matthew 24:23) Matthew says the eagles gather to the carcase; Revelation shows the call that brings the birds, an angel standing in the sun crying to *all the fowls that fly in the midst of heaven* to the supper of the great Elohim (God). Beside Yahusha's (Jesus's) warning about signs and wonders, the verses after show what was gathered against the rider: *the beast was taken, and with him the false prophet that wrought miracles before him* (Revelation 19:20).
+
+thread: `matthew-24-false-christs-and-the-lightning`
+
+Revelation 19:17 — *Come and gather yourselves together unto the supper of the great Elohim (God).* An angel in the sun summons all the birds of heaven to the supper of the great Elohim (God).
+
+## card 4026
+
+Luke 17:23 — *And they shall say to you, See here; or, see there: go not after them, nor follow them.* *Then if any man shall say unto you, Lo, here is Messiah (Christ), or there; believe it not.* (Matthew 24:23) Luke puts the warning in the same order Matthew does. *See here; or, see there: go not after them* comes first, and then at once the lightning, *as the lightning, that lighteneth out of the one part under heaven, shineth unto the other part under heaven; so shall also the Son of Adam be in his day* (Luke 17:24). A coming that fills the sky cannot be pointed at in a room or a desert.
+
+thread: `matthew-24-false-christs-and-the-lightning`
+
+Luke 17:23 — *And they shall say to you, See here; or, see there: go not after them, nor follow them.* Luke's warning against see here, see there, followed at once by the lightning that fills the whole sky.
+
+## card 4027
+
+Isaiah 13:10 — *For the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Isaiah says the stars *shall not give their light* and the sun is *darkened in his going forth*, and the verse before says whose day it is: *the day of Yahuah (LORD) cometh, cruel both with wrath and fierce anger, to lay the land desolate* (Isaiah 13:9). Yahusha (Jesus) uses the same darkened sun and moon for his coming, so the sky is the sign of the day of Yahuah (the LORD), and that day clears the sinners out of the land.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Isaiah 13:10 — *the sun shall be darkened in his going forth, and the moon shall not cause her light to shine.* The darkened sun, moon and stars as the sign of the day of Yahuah (the LORD), when the sinners are cleared out of the land.
+
+## card 4028
+
+Isaiah 24:23 — *Then the moon shall be confounded, and the sun ashamed, when Yahuah Tseva'ot (LORD of hosts) shall reign in mount Zion, and in Jerusalem, and before his ancients gloriously.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Matthew's moon gives no light and the sun is darkened; Isaiah says why they hide, *the moon shall be confounded, and the sun ashamed*, because Yahuah (the LORD) is reigning *in mount Zion, and in Jerusalem, and before his ancients gloriously*. The sky goes dark before a greater light, and the verse before has the host of the high ones and the kings of the earth shut up in the pit to be visited after many days.
+
+thread: `isaiah-24-the-moon-confounded-the-sun-ashamed-when-yahuah-shall-reign`
+
+Isaiah 24:23 — *Then the moon shall be confounded, and the sun ashamed, when Yahuah Tseva'ot (LORD of hosts) shall reign in mount Zion, and in Jerusalem, and before his ancients gloriously.* The moon confounded and the sun ashamed when Yahuah (the LORD) of hosts reigns in Zion and Jerusalem.
+
+## card 4029
+
+Isaiah 34:4 — *And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the fig tree.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Matthew has the stars falling and the powers of the heavens shaken. Isaiah has the sky itself undone, the heavens *rolled together as a scroll*, and the host dropping *as a falling fig from the fig tree*. Two verses earlier *the indignation of Yahuah (LORD) is upon all nations, and his fury upon all their armies* (Isaiah 34:2), so the falling sky belongs to a judgment on the nations.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Isaiah 34:4 — *all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the fig tree.* The host of heaven dissolved and the heavens rolled up like a scroll, in a day of indignation upon the nations.
+
+## card 4030
+
+Joel 2:10 — *The earth shall quake before them; the heavens shall tremble: the sun and the moon shall be dark, and the stars shall withdraw their shining:* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Joel shows the earth quaking and the heavens trembling, the sun and the moon dark and the stars withdrawing their shining, and then the voice of Yahuah (the LORD) before his army: *the day of Yahuah (LORD) is great and very terrible; and who can abide it?* (Joel 2:11) Inside that same day he says *turn ye even to me with all your heart* (Joel 2:12). The call to turn is spoken in the middle of the darkened sky.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Joel 2:10 — *The earth shall quake before them; the heavens shall tremble: the sun and the moon shall be dark, and the stars shall withdraw their shining:* The earth quaking and the sun, moon and stars dark before the army of Yahuah (the LORD), with a call to turn in the same passage.
+
+## card 4031
+
+Joel 2:31 — *The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Joel says the sun is turned to darkness and the moon to blood *before the great and the terrible day*, so the sky is the herald and not the day itself, which is how Matthew puts it too. The verse after says who is delivered: *whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call.* (Joel 2:32)
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Joel 2:31 — *The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come.* The sun darkened and the moon turned to blood come before the great and terrible day of Yahuah (the LORD).
+
+## card 4032
+
+Joel 3:15 — *The sun and the moon shall be darkened, and the stars shall withdraw their shining.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Joel gives the darkened sun and moon at the turning of the harvest: *Put ye in the sickle, for the harvest is ripe* (Joel 3:13), multitudes in the valley of decision, and then the sky goes dark. After it, *Yahuah (LORD) also shall roar out of Zion, and utter his voice from Jerusalem; and the heavens and the earth shall shake: but Yahuah (LORD) will be the hope of his people* (Joel 3:16).
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Joel 3:15 — *The sun and the moon shall be darkened, and the stars shall withdraw their shining.* Joel's darkened sun and moon fall in the valley of decision, where the harvest is ripe and Yahuah (the LORD) is the hope of his people.
+
+## card 4033
+
+Ezekiel 32:7 — *And when I shall put thee out, I will cover the heaven, and make the stars thereof dark; I will cover the sun with a cloud, and the moon shall not give her light.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Ezekiel's line is almost word for word Matthew's *the moon shall not give her light*, and it is spoken of the fall of Pharaoh, when Yahuah (the LORD) covers the heaven over him: *All the bright lights of heaven will I make dark over thee* (Ezekiel 32:8). The darkened sky is how the prophets speak when a proud power comes down, and Matthew sets it over the whole earth at his coming.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Ezekiel 32:7 — *I will cover the heaven, and make the stars thereof dark; I will cover the sun with a cloud, and the moon shall not give her light.* Almost Matthew's words, said against Pharaoh when Yahuah (the LORD) puts him out: the sky is covered over a proud power's fall.
+
+## card 4034
+
+Amos 8:9 — *And it shall come to pass in that day, saith Adonai Yahuah (the Lord GOD), that I will cause the sun to go down at noon, and I will darken the earth in the clear day:* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Amos has the sun going down at noon and Yahuah (the LORD) darkening the earth *in the clear day*. The verses after say what that day does to a people at ease: *I will turn your feasts into mourning, and all your songs into lamentation* (Amos 8:10), and then a famine, *not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD)* (Amos 8:11). The darkness in the sky has a darkness in hearing to match.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Amos 8:9 — *I will cause the sun to go down at noon, and I will darken the earth in the clear day.* The sun going down at noon on the day of Adonai Yahuah (the Lord GOD), with feasts turned to mourning and a famine of hearing his word to follow.
+
+## card 4035
+
+Micah 3:6 — *Therefore night shall be unto you, that ye shall not have a vision; and it shall be dark unto you, that ye shall not divine; and the sun shall go down over the prophets, and the day shall be dark over them.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Micah turns the picture on the false prophets: night to them, no vision, *the day shall be dark over them*, and in the end *there is no answer of Elohim (God)* (Micah 3:7). The sun going down over them is a judgment on those who spoke for him falsely, and Matthew's darkened sun comes in a chapter that warns again and again of false prophets.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Micah 3:6 — *the sun shall go down over the prophets, and the day shall be dark over them.* The sun goes down over the prophets who make his people err: no vision, no answer, the day dark over them.
+
+## card 4036
+
+Zephaniah 1:14 — *The great day of Yahuah (LORD) is near, it is near, and hasteth greatly, even the voice of the day of Yahuah (LORD): the mighty man shall cry there bitterly.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Zephaniah names the day the darkness belongs to: *The great day of Yahuah (LORD) is near*, and he describes it, *a day of darkness and gloominess, a day of clouds and thick darkness* (Zephaniah 1:15). Matthew puts the sun's darkening and the Son of Adam in the clouds in the same hour, and Zephaniah's day already has darkness and clouds in it.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Zephaniah 1:14 — *The great day of Yahuah (LORD) is near, it is near, and hasteth greatly.* The great day of Yahuah (the LORD) is near and hastening, the day whose darkness and clouds Matthew's sky signs belong to.
+
+## card 4037
+
+Revelation 6:12 — *And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood;* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Revelation opens the sixth seal and shows the same sky: the sun goes black and the moon turns to blood, and then *the stars of heaven fell unto the earth, even as a fig tree casteth her untimely figs* (Revelation 6:13). Matthew's sun, moon and stars are the same three, told in this book's own words, with an earthquake and kings hiding in the rocks.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Revelation 6:12 — *there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood.* At the sixth seal an earthquake, the sun black as sackcloth and the moon as blood, as Revelation tells the darkened sky.
+
+## card 4038
+
+Revelation 8:12 — *And the fourth angel sounded, and the third part of the sun was smitten, and the third part of the moon, and the third part of the stars; so as the third part of them was darkened, and the day shone not for a third part of it, and the night likewise.* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Revelation has the darkening too, but by measure: at the fourth trumpet a third part of the sun, the moon and the stars is smitten, and day and night each lose a third. Matthew gives no fraction, and Revelation keeps its own count of trumpets; the next verse is an angel crying *Woe, woe, woe, to the inhabiters of the earth* (Revelation 8:13) for the trumpets still to sound.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Revelation 8:12 — *the third part of the sun was smitten, and the third part of the moon, and the third part of the stars.* At the fourth trumpet a third of the sun, moon and stars is struck, a darkening Revelation counts by parts.
+
+## card 4039
+
+Acts 2:19 — *And I will shew wonders in heaven above, and signs in the earth beneath; blood, and fire, and vapour of smoke:* *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29) Peter reads Joel to the men of Yashar'el (Israel) and keeps the sky signs in the reading: *The sun shall be turned into darkness, and the moon into blood, before that great and notable day of Yahuah (Lord) come* (Acts 2:20). The darkened sun Matthew sets after the tribulation was already known to the apostles as what comes before the great day, a day still ahead of them.
+
+thread: `the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras`
+
+Acts 2:19 — *And I will shew wonders in heaven above, and signs in the earth beneath; blood, and fire, and vapour of smoke:* Peter's quotation of Joel includes the wonders in heaven and signs on earth that come before the great day of Yahuah (the Lord).
+
+## card 4040
+
+Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30) Matthew has the Son of Adam coming on the clouds, and Daniel is the vision behind it: a figure *like* the Son of Adam, brought near before the Ancient of days. Daniel's word is *like*, for the one who comes took on flesh and looked like a son of Adam, and Daniel says what is given him: *dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him* (Daniel 7:14). Yahusha (Jesus) takes that figure as himself.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Daniel 7:13 — *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days.* The vision behind Matthew's saying: one like the Son of Adam comes with the clouds of heaven to the Ancient of days.
+
+## card 4041
+
+Zechariah 12:10 — *And I will pour upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of supplications: and they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn.* *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30) Matthew has the tribes mourn when they see the Son of Adam coming. Zechariah says why: the house of David look on the one they pierced, and the mourning goes through the families one by one, *the land shall mourn, every family apart* (Zechariah 12:12). The one the tribes see in the clouds is the one they pierced.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Zechariah 12:10 — *they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son.* They look on him they pierced and mourn as for an only son, the mourning Matthew says all the tribes will make.
+
+## card 4042
+
+Revelation 1:7 — *Behold, he cometh with clouds; and every eye shall see him, and they also which pierced him: and all kindreds of the earth shall wail because of him. Even so, Amen.* *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30) Revelation opens with the same sight in the same order: *he cometh with clouds; and every eye shall see him*, and then the mourning, *all kindreds of the earth shall wail because of him*, where Matthew has *all the tribes of the earth mourn*. John also names who is among those who see, *they also which pierced him*, and two verses on the speaker gives his own name: *which is, and which was, and which is to come* (Revelation 1:8).
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Revelation 1:7 — *Behold, he cometh with clouds; and every eye shall see him, and they also which pierced him: and all kindreds of the earth shall wail because of him. Even so, Amen.* John's opening gives the cloud, the sight of every eye including those who pierced him, and the wailing of all kindreds.
+
+## card 4043
+
+Revelation 14:14 — *And I looked, and behold a white cloud, and upon the cloud one sat like unto the Son of Adam, having on his head a golden crown, and in his hand a sharp sickle.* *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30) In Revelation the one on the cloud is seen *like unto the Son of Adam*, a golden crown on his head and *a sharp sickle* in his hand, and an angel comes out of the temple to cry *for the time is come for thee to reap; for the harvest of the earth is ripe* (Revelation 14:15). Matthew's Son of Adam on the clouds sends angels to gather; Revelation's rider holds the sickle himself, and the earth is reaped.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Revelation 14:14 — *upon the cloud one sat like unto the Son of Adam, having on his head a golden crown, and in his hand a sharp sickle.* A white cloud and one seated on it like unto the Son of Adam, with a golden crown and a sharp sickle for the ripe harvest.
+
+## card 4044
+
+Revelation 19:11 — *And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war.* *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30) Revelation shows him coming another way: heaven opened, a white horse, a rider called *Faithful and True* who judges and makes war *in righteousness*, and whose name the next verses give as *The Word of Elohim (God)* (Revelation 19:13). Matthew's coming is in the clouds with a trumpet; this is another book's picture of his coming, a rider where Matthew has a cloud.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Revelation 19:11 — *he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war.* Heaven opened and a rider on a white horse, called Faithful and True, judging and making war in righteousness.
+
+## card 4045
+
+Psalm 104:3 — *Who layeth the beams of his chambers in the waters: who maketh the clouds his chariot: who walketh upon the wings of the wind:* *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30) Matthew has the Son of Adam coming in the clouds, and the psalm says whose road the cloud is. Yahuah (the LORD) my Elohim (God) *maketh the clouds his chariot*, and *walketh upon the wings of the wind*. The one who rides the clouds in scripture is Yahuah (the LORD), and Yahusha (Jesus) puts his own coming there.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Psalm 104:3 — *Who layeth the beams of his chambers in the waters: who maketh the clouds his chariot: who walketh upon the wings of the wind:* The clouds are the chariot of Yahuah (the LORD), who walks upon the wings of the wind.
+
+## card 4046
+
+Isaiah 19:1 — *The burden of Egypt. Behold, Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt: and the idols of Egypt shall be moved at his presence, and the heart of Egypt shall melt in the midst of it.* *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30) Isaiah says Yahuah (the LORD) *rideth upon a swift cloud*, and the idols of Egypt tremble before him. Matthew sets the Son of Adam on the clouds of heaven in the same kind of coming, with the tribes mourning at the sight. The cloud brings him to judge.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Isaiah 19:1 — *Behold, Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt: and the idols of Egypt shall be moved at his presence.* Yahuah (the LORD) rides a swift cloud to come in judgment, and the idols move at his presence.
+
+## card 4047
+
+Nahum 1:3 — *Yahuah (LORD) is slow to anger, and great in power, and will not at all acquit the wicked: Yahuah (LORD) hath his way in the whirlwind and in the storm, and the clouds are the dust of his feet.* *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30) In Nahum the clouds are *the dust of his feet*, so the sky is only the road Yahuah (the LORD) walks. He comes with *his way in the whirlwind and in the storm*, and the same verse says he *will not at all acquit the wicked*. When Yahusha (Jesus) places the Son of Adam on the clouds, he sets his coming on that road.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Nahum 1:3 — *Yahuah (LORD) hath his way in the whirlwind and in the storm, and the clouds are the dust of his feet.* The clouds are the dust of the feet of Yahuah (the LORD), who goes his way in the whirlwind and will not acquit the wicked.
+
+## card 4048
+
+Deuteronomy 30:4 — *If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee:* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Moses told Yashar'el (Israel) that no one is too far to be fetched: even *the outmost parts of heaven* will not keep Yahuah (the LORD) from gathering his own. Matthew's *from one end of heaven to the other* is that reach, and the gathering follows the return, *shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice according to all that I command thee this day* (Deuteronomy 30:2).
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Deuteronomy 30:4 — *If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee:* No one driven to the outmost parts of heaven is out of reach: Yahuah (the LORD) gathers and fetches his own from there.
+
+## card 4049
+
+Isaiah 11:11 — *And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt, and from Pathros, and from Cush, and from Elam, and from Shinar, and from Hamath, and from the islands of the sea.* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Isaiah calls it a recovery *the second time*, and the next verse says who and from where: Yahuah (the LORD) *shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). Matthew's elect from the four winds are those, both houses, brought back.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Isaiah 11:11 — *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left.* The second time Yahuah (the LORD) sets his hand to recover the remnant of his people from Assyria, Egypt and the islands of the sea.
+
+## card 4050
+
+Isaiah 27:13 — *And it shall come to pass in that day, that the great trumpet shall be blown, and they shall come which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt, and shall worship Yahuah (LORD) in the holy mount at Jerusalem.* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Isaiah has the same trumpet, *the great trumpet*, and says who comes at the sound: those *ready to perish in the land of Assyria*, and the outcasts of Egypt. The verse before has them *gathered one by one, O ye children of Yashar'el (Israel)* (Isaiah 27:12). Matthew's great sound of a trumpet is that call, and it brings the outcasts to worship at Jerusalem.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Isaiah 27:13 — *the great trumpet shall be blown, and they shall come which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt.* The great trumpet blown in that day, and the outcasts of Assyria and Egypt coming to worship Yahuah (the LORD) at Jerusalem.
+
+## card 4051
+
+Isaiah 43:5 — *Fear not: for I am with thee: I will bring thy seed from the east, and gather thee from the west;* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Isaiah names the four winds as directions, east and west here and then north and south: *I will say to the north, Give up; and to the south, Keep not back: bring my sons from far, and my daughters from the ends of the earth* (Isaiah 43:6). Those gathered are *thy seed*, sons and daughters, *every one that is called by my name* (Isaiah 43:7).
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Isaiah 43:5 — *Fear not: for I am with thee: I will bring thy seed from the east, and gather thee from the west;* Yahuah (the LORD) brings the seed of Yashar'el (Israel) from the east and gathers them from the west, with the north and south to follow.
+
+## card 4052
+
+Isaiah 56:8 — *Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar'el (Israel) saith, Yet will I gather others to him, beside those that are gathered unto him.* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Isaiah names the one who gathers by what he does: he *gathereth the outcasts of Yashar'el (Israel)*, and then adds *others to him, beside those that are gathered unto him*. It is one gathering, the outcasts first and then more of the scattered brought in beside them, and Matthew's elect from the four winds are those outcasts. The others are not a different people joined to them.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Isaiah 56:8 — *which gathereth the outcasts of Yashar'el (Israel) saith, Yet will I gather others to him, beside those that are gathered unto him.* He who gathers the outcasts of Yashar'el (Israel) will gather others beside those already gathered, still the one scattered people.
+
+## card 4053
+
+Jeremiah 31:8 — *Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither.* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Where Matthew sends angels to the four winds, Jeremiah sends the gathering first to the north country and then to *the coasts of the earth*, and the company that returns is not picked over: *the blind and the lame, the woman with child*, a great company. The next verses give the reason, *for I am a father to Yashar'el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9).
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Jeremiah 31:8 — *I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither.* A great company, even the blind, the lame and women with child, brought back from the north country and the coasts of the earth.
+
+## card 4054
+
+Ezekiel 37:21 — *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Ezekiel's *on every side* is Matthew's four winds: Yahuah (the Lord GOD) takes the children of Yashar'el (Israel) from where they have gone and brings them to their own land. The verses after say what they become, *I will make them one nation in the land upon the mountains of Yashar'el (Israel)* (Ezekiel 37:22), with one shepherd over them, a people who *walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24).
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Ezekiel 37:21 — *I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land.* Yahuah (the Lord GOD) takes the children of Yashar'el (Israel) from where they have gone and gathers them on every side into their own land.
+
+## card 4055
+
+Leviticus 23:23 — *And Yahuah (LORD) spake unto Moses, saying,* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) The trumpet in Matthew has an old home in the appointed times. Yahuah (the LORD) told Moses that the first day of the seventh month is *a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24), a calling together of the assembly by trumpet. The great sound of a trumpet that gathers the elect in Matthew sounds the call the Torah already set for his people.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Leviticus 23:23 — *And Yahuah (LORD) spake unto Moses, saying,* The verse that opens the appointed time of the trumpets, spoken by Yahuah (the LORD) to Moses.
+
+## card 4056
+
+Numbers 29:1 — *And in the seventh month, on the first day of the month, ye shall have an holy convocation; ye shall do no servile work: it is a day of blowing the trumpets unto you.* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Numbers gives the same day in its own words and calls it *a day of blowing the trumpets unto you*, an holy convocation on the first day of the seventh month. A convocation is a calling together, and Matthew's trumpet calls the elect together from every quarter; the day the Torah set aside for trumpets already carried that picture.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Numbers 29:1 — *ye shall have an holy convocation; ye shall do no servile work: it is a day of blowing the trumpets unto you.* The first day of the seventh month is an holy convocation, a day of blowing the trumpets.
+
+## card 4057
+
+1 Thessalonians 4:13 — *But I would not have you to be ignorant, brethren, concerning them which are asleep, that ye sorrow not, even as others which have no hope.* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Paul comforts those grieving *them which are asleep*: the hope is that *the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16) at his coming, at the trump of Elohim (God), the same coming in which Matthew's great trumpet gathers the scattered elect. The catching up he names after it, *Then we which are alive and remain shall be caught up together with them in the clouds* (1 Thessalonians 4:17), is a later thing, afterward, and the gathering of the elect is not it.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+1 Thessalonians 4:13 — *concerning them which are asleep, that ye sorrow not, even as others which have no hope.* Paul's comfort for those grieving the ones who sleep: they are not without hope, because the dead in Messiah (Christ) rise at his coming.
+
+## card 4058
+
+1 Corinthians 15:51 — *Behold, I shew you a mystery; We shall not all sleep, but we shall all be changed,* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Paul calls it a mystery that *we shall not all sleep, but we shall all be changed*, and the verse after says when: *at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed* (1 Corinthians 15:52). Matthew has a great trumpet at his coming; Paul has the dead raised and the living changed at a trumpet.
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+1 Corinthians 15:51 — *Behold, I shew you a mystery; We shall not all sleep, but we shall all be changed,* Paul's mystery that not all will sleep but all will be changed, at the sounding of a trumpet.
+
+## card 4059
+
+Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) Matthew's *four winds* are held in Revelation by four angels at the corners of the earth, and another angel cries that they must wait *till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3). The sealed are counted: *an hundred and forty and four thousand of all the tribes of the children of Yashar'el (Israel)* (Revelation 7:4).
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Revelation 7:1 — *four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* Four angels hold the four winds of the earth until the servants of Elohim (God) are sealed, a hundred forty and four thousand of the tribes.
+
+## card 4060
+
+Revelation 14:1 — *And I looked, and, lo, a Lamb stood on the mount Zion, and with him an hundred forty and four thousand, having his Father’s name written in their foreheads.* *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31) The sealed of the tribes of Yashar'el (Israel) are seen again here with the Lamb on mount Zion, *having his Father's name written in their foreheads*, the seal they were given. Where Matthew's angels gather the elect from the four winds, Revelation shows the company standing together on Zion, *redeemed from among men, being the firstfruits unto Elohim (God) and to the Lamb* (Revelation 14:4).
+
+thread: `the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables`
+
+Revelation 14:1 — *a Lamb stood on the mount Zion, and with him an hundred forty and four thousand, having his Father’s name written in their foreheads.* A hundred forty and four thousand stand with the Lamb on mount Zion, with his Father's name written in their foreheads.
+
+## card 4061
+
+Matthew 5:18 — *For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled.* *Now learn a parable of the fig tree; When his branch is yet tender, and puts forth leaves, you know that summer is nigh:* (Matthew 24:32) The fig tree tells the season, and the verse after it says what outlasts the season: *Heaven and earth shall pass away, but my words shall not pass away.* (Matthew 24:35) He measured his words the same way on the mountain where he taught, heaven and earth going before *one jot or one tittle* goes from the law. The words that will not pass are the law's own, so nothing in the Olivet talk reads as the commandments ending.
+
+thread: `matthew-24-heaven-and-earth-pass-but-my-words-shall-not`
+
+Matthew 5:18 — *For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled.* Heaven and earth pass before one jot or tittle passes from the law, the same measure he gives his words in Matthew 24.
+
+## card 4062
+
+Mark 13:31 — *Heaven and earth shall pass away: but my words shall not pass away.* *Now learn a parable of the fig tree; When his branch is yet tender, and puts forth leaves, you know that summer is nigh:* (Matthew 24:32) Mark gives the fig tree the same close, with his words outlasting heaven and earth, and runs it straight into the hidden hour: *But of that day and that hour knoweth no man* (Mark 13:32). The sign you can read in the leaves and the day nobody can name sit side by side, with his words standing over both.
+
+thread: `matthew-24-heaven-and-earth-pass-but-my-words-shall-not`
+
+Mark 13:31 — *Heaven and earth shall pass away: but my words shall not pass away.* Mark's parallel to the saying that heaven and earth pass but his words do not, set right before the word about the hidden day and hour.
+
+## card 4063
+
+Psalm 102:25 — *Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands.* *Now learn a parable of the fig tree; When his branch is yet tender, and puts forth leaves, you know that summer is nigh:* (Matthew 24:32) The psalm says of the heavens and earth what Matthew says: they are made things and they pass. *They shall perish, but thou shalt endure: yea, all of them shall wax old like a garment* (Psalm 102:26). The one addressed laid the foundation of the earth *of old*, and when Yahusha (Jesus) sets his words against the passing of heaven and earth, he puts them on the side of what endures.
+
+thread: `matthew-24-heaven-and-earth-pass-but-my-words-shall-not`
+
+Psalm 102:25 — *Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands.* The heavens are the work of his hands and they will perish, but he endures, the measure Matthew gives his own words.
+
+## card 4064
+
+Isaiah 40:8 — *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever.* *Now learn a parable of the fig tree; When his branch is yet tender, and puts forth leaves, you know that summer is nigh:* (Matthew 24:32) Matthew's *my words shall not pass away* (Matthew 24:35) is Isaiah's line in the first person: *the word of our Elohim (God) shall stand for ever*. Yahusha (Jesus) calls that word his own. Further down the same chapter the one who comes feeds his flock and gathers the lambs: *He shall feed his flock like a shepherd: he shall gather the lambs with his arm* (Isaiah 40:11).
+
+thread: `matthew-24-heaven-and-earth-pass-but-my-words-shall-not`
+
+Isaiah 40:8 — *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever.* The grass withers and the flower fades but the word of our Elohim (God) stands for ever, the line Matthew's saying echoes.
+
+## card 4065
+
+Isaiah 51:6 — *Lift up your eyes to the heavens, and look upon the earth beneath: for the heavens shall vanish away like smoke, and the earth shall wax old like a garment, and they that dwell therein shall die in like manner: but my salvation shall be for ever, and my righteousness shall not be abolished.* *Now learn a parable of the fig tree; When his branch is yet tender, and puts forth leaves, you know that summer is nigh:* (Matthew 24:32) Isaiah sets the passing of heaven and earth against what does not pass: the heavens *vanish away like smoke*, the earth *wax old like a garment*, but *my righteousness shall not be abolished*. The verse after says who is listening, *the people in whose heart is my law* (Isaiah 51:7), so what is not abolished is tied to the law in the heart.
+
+thread: `matthew-24-heaven-and-earth-pass-but-my-words-shall-not`
+
+Isaiah 51:6 — *Lift up your eyes to the heavens, and look upon the earth beneath: for the heavens shall vanish away like smoke, and the earth shall wax old like a garment, and they that dwell therein shall die in like manner: but my salvation shall be for ever, and my righteousness shall not be abolished.* The heavens vanish like smoke and the earth wears out like a garment, but his salvation and his righteousness are not abolished.
+
+## card 4066
+
+Matthew 20:23 — *And he saith unto them, Ye shall drink indeed of my cup, and be baptized with the baptism that I am baptized with: but to sit on my right hand, and on my left, is not mine to give, but it shall be given to them for whom it is prepared of my Father.* *But of that day and hour knows no man, no, not the angels of heaven, but my Father only.* (Matthew 24:36) Twice in Matthew the one who is Elohim (God) points past himself to the Father. At the cup the seats at his right and left are not his to give but the Father's to prepare, and here the day and hour are known to the Father only. He does not lose what he is by saying so; the Son stands under the Father and says it plainly.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Matthew 20:23 — *to sit on my right hand, and on my left, is not mine to give, but it shall be given to them for whom it is prepared of my Father.* The seats at his right and left are not his to give but the Father's, the same deference he shows about the day and hour.
+
+## card 4067
+
+Mark 13:32 — *But of that day and that hour knoweth no man, no, not the angels which are in heaven, neither the Son, but the Father.* *But of that day and hour knows no man, no, not the angels of heaven, but my Father only.* (Matthew 24:36) Mark names the Son himself among those who do not know the day: not man, not the angels, *neither the Son, but the Father*. Matthew's *but my Father only* says the same from the other side. The Son who is Elohim (God) stands under the Father's timing and says so.
+
+thread: `no-man-knoweth-the-day-not-the-son-but-the-father-formed-submitting-to-the-formless`
+
+Mark 13:32 — *But of that day and that hour knoweth no man, no, not the angels which are in heaven, neither the Son, but the Father.* Mark adds that neither the Son knows the day and hour, but the Father only, the parallel to Matthew 24:36.
+
+## card 4068
+
+Acts 1:6 — *When they therefore were come together, they asked of him, saying, Adonai (Lord), wilt thou at this time restore again the kingdom to Yashar'el (Israel)?* *But of that day and hour knows no man, no, not the angels of heaven, but my Father only.* (Matthew 24:36) After the resurrection the disciples ask the question they asked on the mount in its plainest form: *restore again the kingdom to Yashar'el (Israel)?* He does not say there will be no restoring. He says the times are *which the Father hath put in his own power* (Acts 1:7), and Matthew's *my Father only* is the same answer.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Acts 1:6 — *they asked of him, saying, Adonai (Lord), wilt thou at this time restore again the kingdom to Yashar'el (Israel)?* The disciples ask whether he will now restore the kingdom to Yashar'el (Israel), and the answer is that the time is the Father's.
+
+## card 4069
+
+Psalm 110:1 — *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* *But of that day and hour knows no man, no, not the angels of heaven, but my Father only.* (Matthew 24:36) Matthew shows the Son holding the day back to the Father; the psalm shows the same order in a picture. David's *my Lord* sits at the right hand of Yahuah (the LORD) *until* the Father makes his enemies the footstool, so the one at the right hand waits on the Father for the day.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Psalm 110:1 — *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* The one David calls my Adonai (Lord) sits at the right hand of Yahuah (the LORD) until his enemies are made his footstool.
+
+## card 4070
+
+Genesis 6:1 — *And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them,* *But as the days of Noah were, so shall also the coming of the Son of Adam be.* (Matthew 24:37) Matthew names marrying and giving in marriage as the mark of the days of Noah, and Genesis shows what marriage had become: *the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* (Genesis 6:2) The days Yahusha (Jesus) points to began with that crossing, so the days of Noah are more than eating and drinking.
+
+thread: `the-days-of-noach-and-the-watcher-rebellion-judgment-pattern-in-1-enoch-and-jubilees`
+
+Genesis 6:1 — *And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them,* The days of Noah begin when men multiply and the sons of Elohim (God) take the daughters of men as wives.
+
+## card 4071
+
+Genesis 7:1 — *And Yahuah (LORD) said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation.* *But as the days of Noah were, so shall also the coming of the Son of Adam be.* (Matthew 24:37) Matthew has Noah going into the ark and the rest knowing nothing until the flood took them. Genesis gives Noah's side: Yahuah (the LORD) calls him and his house in because *thee have I seen righteous before me in this generation*. One household was called in while the world went on eating and marrying, and the flood that *took them all away* (Matthew 24:39) was judgment on the rest.
+
+thread: `the-days-of-noach-and-the-watcher-rebellion-judgment-pattern-in-1-enoch-and-jubilees`
+
+Genesis 7:1 — *And Yahuah (LORD) said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation.* Yahuah (the LORD) calls Noah and all his house into the ark because he has seen him righteous in that generation.
+
+## card 4072
+
+2 Peter 2:5 — *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly;* *But as the days of Noah were, so shall also the coming of the Son of Adam be.* (Matthew 24:37) Peter sets Noah beside the angels that sinned: Elohim (God) *spared not the angels that sinned* (2 Peter 2:4) and *spared not the old world*, bringing the flood on the ungodly, and saved Noah as *a preacher of righteousness*. In Matthew the people ate and married and knew nothing, while the preacher was building the ark.
+
+thread: `the-days-of-noach-and-the-watcher-rebellion-judgment-pattern-in-1-enoch-and-jubilees`
+
+2 Peter 2:5 — *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly;* Elohim (God) spared not the old world but saved Noah the eighth person, a preacher of righteousness, when the flood came on the ungodly.
+
+## card 4073
+
+2 Peter 3:3 — *Knowing this first, that there shall come in the last days scoffers, walking after their own lusts,* *But as the days of Noah were, so shall also the coming of the Son of Adam be.* (Matthew 24:37) Matthew says they *knew not until the flood came* (Matthew 24:39), and Peter says the scoffers of the last days walk after their own lusts and ask *Where is the promise of his coming?* (2 Peter 3:4), since all things go on as they were. He answers from the flood: *the world that then was, being overflowed with water, perished* (2 Peter 3:6). Those who say nothing will change are Noah's world over again.
+
+thread: `the-days-of-noach-and-the-watcher-rebellion-judgment-pattern-in-1-enoch-and-jubilees`
+
+2 Peter 3:3 — *Knowing this first, that there shall come in the last days scoffers, walking after their own lusts,* Scoffers in the last days walk after their own lusts and say all things continue, as Noah's world did before the flood.
+
+## card 4074
+
+Luke 17:26 — *And as it was in the days of Noah, so shall it be also in the days of the Son of Adam.* *But as the days of Noah were, so shall also the coming of the Son of Adam be.* (Matthew 24:37) Luke has the same saying and carries the picture further: *They did eat, they drank, they married wives, they were given in marriage, until the day that Noah entered into the ark, and the flood came, and destroyed them all.* (Luke 17:27) Then comes Lot, and *the same day that Lot went out of Sodom it rained fire and brimstone from heaven* (Luke 17:29). Flood and fire both take the unwatching, and in both the household is brought out first.
+
+thread: `the-days-of-noach-and-the-watcher-rebellion-judgment-pattern-in-1-enoch-and-jubilees`
+
+Luke 17:26 — *And as it was in the days of Noah, so shall it be also in the days of the Son of Adam.* Luke's parallel: as it was in the days of Noah, so shall it be in the days of the Son of Adam.
+
+## card 4075
+
+Luke 17:34 — *I tell you, in that night there shall be two men in one bed; the one shall be taken, and the other shall be left.* *Then shall two be in the field; the one shall be taken, and the other left.* (Matthew 24:40) In Luke the disciples ask where, and the answer is not a rescue: *Wheresoever the body is, thither will the eagles be gathered together.* (Luke 17:37) So the ones taken in Luke are taken to where the carcase lies, which agrees with Matthew, where the flood *took them all away* (Matthew 24:39) and then *the one shall be taken, and the other left*.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Luke 17:34 — *in that night there shall be two men in one bed; the one shall be taken, and the other shall be left.* Luke has two in one bed, one taken and one left, and his answer to where they are taken is the carcase and the eagles.
+
+## card 4076
+
+Matthew 13:30 — *Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.* *Then shall two be in the field; the one shall be taken, and the other left.* (Matthew 24:40) The order is the text's: *first the tares*, bound and burned, and then the wheat gathered into the barn. So *the one shall be taken, and the other left* cannot be the righteous lifted away and the wicked left behind. In Noah's day those taken were the ones the flood took away; the tares go first, and the wheat is gathered after.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Matthew 13:30 — *Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.* At the harvest the tares are gathered first and bound to burn, and only then is the wheat gathered into the barn.
+
+## card 4077
+
+Matthew 13:41 — *The Son of Adam shall send forth his angels, and they shall gather out of his kingdom all things that offend, and them which do iniquity;* *Then shall two be in the field; the one shall be taken, and the other left.* (Matthew 24:40) Here the Son of Adam sends his angels, as in Matthew 24, and what they gather first is *all things that offend, and them which do iniquity*. Iniquity is lawlessness again. The ones taken in the field and at the mill are such as these, gathered out by the angels, and the ones left are still in the field when the tares are gone.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Matthew 13:41 — *The Son of Adam shall send forth his angels, and they shall gather out of his kingdom all things that offend, and them which do iniquity;* The Son of Adam's angels gather out of his kingdom all things that offend and them which do iniquity, to be cast into the furnace.
+
+## card 4078
+
+Matthew 13:47 — *Again, the kingdom of heaven is like unto a net, that was cast into the sea, and gathered of every kind:* *Then shall two be in the field; the one shall be taken, and the other left.* (Matthew 24:40) The net is the same lesson: it *gathered of every kind*, and the sorting comes at the shore, where *the angels shall come forth, and sever the wicked from among the just* (Matthew 13:49). The two in the field and the two at the mill are such a sorting, and the wicked are the ones taken out from among the just, not the just lifted out of the world.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Matthew 13:47 — *Again, the kingdom of heaven is like unto a net, that was cast into the sea, and gathered of every kind:* The net gathers every kind and at the end the angels sever the wicked from among the just.
+
+## card 4079
+
+1 Thessalonians 5:1 — *But of the times and the seasons, brethren, ye have no need that I write unto you.* *Watch therefore: for you know not what hour your Lord does come.* (Matthew 24:42) Matthew says *ye know not what hour*; Paul says he does not need to write about *the times and the seasons*, because *yourselves know perfectly that the day of Yahuah (Lord) so cometh as a thief in the night* (1 Thessalonians 5:2). It falls on those who say *Peace and safety* (1 Thessalonians 5:3), but *ye, brethren, are not in darkness, that that day should overtake you as a thief* (1 Thessalonians 5:4).
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+1 Thessalonians 5:1 — *But of the times and the seasons, brethren, ye have no need that I write unto you.* Paul says the times and seasons need no writing, for the day comes as a thief, and the verses after tell who it overtakes.
+
+## card 4080
+
+Revelation 3:3 — *Remember therefore how thou hast received and heard, and hold fast, and repent. If therefore thou shalt not watch, I will come on thee as a thief, and thou shalt not know what hour I will come upon thee.* *Watch therefore: for you know not what hour your Lord does come.* (Matthew 24:42) Revelation puts the thief in his own mouth, to the assembly in Sardis, who had *a name that thou livest, and art dead* (Revelation 3:1). The reason for the watching is given: *hold fast, and repent*, or he comes as a thief and they will not know the hour. Even there he finds *a few names even in Sardis which have not defiled their garments* (Revelation 3:4).
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Revelation 3:3 — *Remember therefore how thou hast received and heard, and hold fast, and repent. If therefore thou shalt not watch, I will come on thee as a thief, and thou shalt not know what hour I will come upon thee.* He warns Sardis to watch or he will come as a thief, and notes a few names there who have not defiled their garments.
+
+## card 4081
+
+Revelation 16:15 — *Behold, I come as a thief. Blessed is he that watcheth, and keepeth his garments, lest he walk naked, and they see his shame.* *Watch therefore: for you know not what hour your Lord does come.* (Matthew 24:42) The thief saying is dropped into the middle of the gathering for battle, *the battle of that great day of El Shaddai (God Almighty)* (Revelation 16:14), and the blessing is on *he that watcheth, and keepeth his garments*. Matthew's household that watches is Revelation's man who keeps his garments, and the one who does not stands naked with his shame seen.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+Revelation 16:15 — *Behold, I come as a thief. Blessed is he that watcheth, and keepeth his garments, lest he walk naked, and they see his shame.* He comes as a thief, and the blessing is on the one who watches and keeps his garments.
+
+## card 4082
+
+2 Peter 3:10 — *But the day of Yahuah (Lord) will come as a thief in the night; in the which the heavens shall pass away with a great noise, and the elements shall melt with fervent heat, the earth also and the works that are therein shall be burned up.* *Watch therefore: for you know not what hour your Lord does come.* (Matthew 24:42) Peter gives the thief the full weight of the day: *as a thief in the night*, and what is in it burns. The verse before explains the delay: *Yahuah (Lord) is not slack concerning his promise, as some men count slackness* (2 Peter 3:9). The master's delay is not neglect, and the evil servant in Matthew who says it will not come is counting wrongly.
+
+thread: `matthew-24-the-day-and-hour-and-the-thief`
+
+2 Peter 3:10 — *But the day of Yahuah (Lord) will come as a thief in the night; in the which the heavens shall pass away with a great noise, and the elements shall melt with fervent heat, the earth also and the works that are therein shall be burned up.* The day of Yahuah (the Lord) comes as a thief in the night, and the earth and its works are burned up in it.
+
+## card 4083
+
+Matthew 25:14 — *For the kingdom of heaven is as a man travelling into a far country, who called his own servants, and delivered unto them his goods.* *Who then is a faithful and wise servant, whom his lord has made ruler over his household, to give them meat in due season?* (Matthew 24:45) The next parable opens the same way as the faithful servant's: a master goes away and puts his goods into his servants' hands. In Matthew 24 the goods are the household's meat in due season; in Matthew 25 they are talents. Both ask what each servant did with what was delivered to him while the master was gone.
+
+thread: `the-faithful-and-wise-servant-and-the-day-of-visitation-in-sirach-and-wisdom-of-solomon`
+
+Matthew 25:14 — *For the kingdom of heaven is as a man travelling into a far country, who called his own servants, and delivered unto them his goods.* The same stewardship in the next scene: a man travels, delivers his goods to his servants, and the question is what each did with them.
+
+## card 4084
+
+Luke 12:42 — *And Yahusha (Lord) said, Who then is that faithful and wise steward, whom his lord shall make ruler over his household, to give them their portion of meat in due season?* *Who then is a faithful and wise servant, whom his lord has made ruler over his household, to give them meat in due season?* (Matthew 24:45) Luke puts the same servant after the thief and the hour *when ye think not* (Luke 12:40), and has Peter ask whether the parable is for the twelve or for all. Yahusha (Jesus) answers with the steward set over a household. Matthew's *faithful and wise servant* is Luke's *faithful and wise steward*, the one given the household's portion in season.
+
+thread: `the-faithful-and-wise-servant-and-the-day-of-visitation-in-sirach-and-wisdom-of-solomon`
+
+Luke 12:42 — *And Yahusha (Lord) said, Who then is that faithful and wise steward, whom his lord shall make ruler over his household, to give them their portion of meat in due season?* Luke's parallel: the faithful and wise steward set over the household to give them their portion of meat in due season.
+
+## card 4085
+
+Matthew 21:33 — *Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country:* *Who then is a faithful and wise servant, whom his lord has made ruler over his household, to give them meat in due season?* (Matthew 24:45) Two household parables of the same shape: a master leaves for a far country and puts others in charge of what is his, then comes to see what was done. In chapter 21 the husbandmen are the rulers of the house, and they killed the servants sent for the fruit; in this chapter the servant over the household is tested the same way, by whether he feeds it or *begin to smite his fellowservants* (Matthew 24:49).
+
+thread: `the-faithful-and-wise-servant-and-the-day-of-visitation-in-sirach-and-wisdom-of-solomon`
+
+Matthew 21:33 — *Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country.* A householder lets his vineyard to husbandmen and goes into a far country, the same leaving and returning that tests the servant.
+
+## card 4086
+
+Ezekiel 34:1 — *And the word of Yahuah (LORD) came unto me, saying,* *Who then is a faithful and wise servant, whom his lord has made ruler over his household, to give them meat in due season?* (Matthew 24:45) The word that comes in Ezekiel 34 is the question of this verse asked of the shepherds of Yashar'el (Israel): *should not the shepherds feed the flocks?* (Ezekiel 34:2) A servant set over the household is to give them meat in due season, and the shepherds in Ezekiel feed themselves and not the flock.
+
+thread: `the-faithful-and-wise-servant-and-the-day-of-visitation-in-sirach-and-wisdom-of-solomon`
+
+Ezekiel 34:1 — *And the word of Yahuah (LORD) came unto me, saying,* The word of Yahuah (the LORD) against the shepherds who feed themselves, the flock unfed.
+
+## card 4087
+
+Jeremiah 23:1 — *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* *Who then is a faithful and wise servant, whom his lord has made ruler over his household, to give them meat in due season?* (Matthew 24:45) The evil servant in Matthew beats his fellow servants; Jeremiah has the pastors who *destroy and scatter the sheep of my pasture*. Yahuah (the LORD) answers that he will *visit upon you the evil of your doings* (Jeremiah 23:2), and will himself *gather the remnant of my flock out of all countries* (Jeremiah 23:3). Bad stewards scatter the flock, and the master gathers it.
+
+thread: `the-faithful-and-wise-servant-and-the-day-of-visitation-in-sirach-and-wisdom-of-solomon`
+
+Jeremiah 23:1 — *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* Woe to the pastors who destroy and scatter the sheep of his pasture.
+
+# New threads
+
+## `matthew-20-the-third-passion-foretelling` — The third telling on the road up to Jerusalem (anchor Matthew 20:17–19)
+
+It ain't new. On the road up to Jerusalem Yahusha (Jesus) takes the twelve apart and tells them a third time what waits at the end of it.
+
+*Behold, we go up to Jerusalem; and the Son of Adam shall be betrayed unto the chief priests and unto the scribes, and they shall condemn him to death* (Matthew 20:18)
+
+*And shall deliver him to the Gentiles to mock, and to scourge, and to crucify him: and the third day he shall rise again.* (Matthew 20:19)
+
+The first telling named the elders, the chief priests and the scribes, and the city.
+
+*From that time forth began Yahusha (Jesus) to shew unto his disciples, how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes, and be killed, and be raised again the third day.* (Matthew 16:21)
+
+The second came in Galilee.
+
+*And while they abode in Galilee, Yahusha (Jesus) said unto them, The Son of Adam shall be betrayed into the hands of men* (Matthew 17:22)
+
+By the third telling he has said where, by whom and how, and the prophets had said the rest before him. Isaiah asked who would believe it.
+
+*Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1)
+
+Zechariah heard the sword called against the shepherd, and the sheep scattered after him.
+
+*smite the shepherd, and the sheep shall be scattered: and I will turn mine hand upon the little ones.* (Zechariah 13:7)
+
+The same prophet heard what the people of that city would one day do.
+
+*they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son* (Zechariah 12:10)
+
+Put together, the three tellings are not a surprise sprung on the twelve. They are the road the prophets had already walked out in words, and the twelve, who are told it privately, are the first to find it hard to hear.
+
+## `matthew-21-faith-and-the-mountain-removed` — Faith that does not doubt, and the mountain cast into the sea (anchor Matthew 21:21–22)
+
+After the fig tree withers the disciples marvel, and he turns the wonder into a saying about faith.
+
+*Verily I say unto you, If ye have faith, and doubt not, ye shall not only do this which is done to the fig tree, but also if ye shall say unto this mountain, Be thou removed, and be thou cast into the sea; it shall be done.* (Matthew 21:21)
+
+He had said the same about a mountain before, when the disciples could not cast the devil out of a child and he named their unbelief.
+
+*If ye have faith as a grain of mustard seed, ye shall say unto this mountain, Remove hence to yonder place; and it shall remove; and nothing shall be impossible unto you.* (Matthew 17:20)
+
+The mountains were already a way of speaking in the psalms and the prophets, and they were never the steady thing. The psalmist says the mountains may go into the sea and he will not fear, because Elohim (God) is his refuge.
+
+*Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea;* (Psalm 46:2)
+
+Isaiah says it from the other side. Mountains go, and what Yahuah (the LORD) has covenanted does not.
+
+*For the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee, neither shall the covenant of my peace be removed, saith Yahuah (LORD) that hath mercy on thee.* (Isaiah 54:10)
+
+So faith that tells a mountain to be removed is leaning on the one who does not move. John gives the same promise a purpose, and a line about the commandments follows close behind it.
+
+*And whatsoever ye shall ask in my name, that will I do, that the Father may be glorified in the Son.* (John 14:13)
+
+*If ye love me, keep my commandments.* (John 14:15)
+
+And when a man made whole is found in the temple, the healing is followed by a charge.
+
+*Behold, thou art made whole: sin no more, lest a worse thing come unto thee.* (John 5:14)
+
+Faith, asking, and what he does with the asking run in one line. The power is the Father's, the asking is in the Son's name, and what is given is given to someone who is then to walk straight.
+
+## `matthew-21-by-what-authority` — By what authority: John's baptism and the voice from the cloud (anchor Matthew 21:23–27)
+
+The chief priests and the elders come to him in the temple while he is teaching and put the question straight.
+
+*By what authority doest thou these things? and who gave thee this authority?* (Matthew 21:23)
+
+He does not dodge it. He asks them one in return, and the whole answer is folded into it.
+
+*The baptism of John, whence was it? from heaven, or of men?* (Matthew 21:25)
+
+They cannot say heaven, because they would be asked why they did not believe him, and they will not say men, because they fear the people, who all hold John as a prophet. So the question about his authority is settled by what John was. Matthew had already told who John was, and Yahusha (Jesus) said he was more than a prophet.
+
+*For this is he that was spoken of by the prophet Isaiah, saying, The voice of one crying in the wilderness, Prepare ye the way of Yahuah (Lord), make his paths straight.* (Matthew 3:3)
+
+Then there is the voice from the cloud, where the Father names his Son and tells the disciples to hear him.
+
+*While he yet spake, behold, a bright cloud overshadowed them: and behold a voice out of the cloud, which said, This is my beloved Son, in whom I am well pleased; hear ye him.* (Matthew 17:5)
+
+None of this was new when it was said. Moses had told the people how a prophet would be known, and where he would come from.
+
+*Yahuah Elohayka (The LORD thy God) will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken;* (Deuteronomy 18:15)
+
+And he gave the credential itself, that Yahuah (the LORD) puts his words in the prophet's mouth.
+
+*I will raise them up a Prophet from among their brethren, like unto thee, and will put my words in his mouth; and he shall speak unto them all that I shall command him.* (Deuteronomy 18:18)
+
+So the credential is not a title from the temple. It is John's baptism, which they would not own, and the Father's voice, and the Prophet Moses said would come from among his brethren. The question was asked by men who held the offices of the house, and the answer was written in the book they read.
+
+## `matthew-22-their-city-burned-and-the-house-left-desolate` — Their city burned and the house left desolate (anchor Matthew 22:6–7)
+
+It ain't new. A king sends servants with an invitation, the bidden seize them and kill them, and the king answers by burning their city. Yahusha (Jesus) tells it in the temple, and every piece of it was laid down before him.
+
+*And the remnant took his servants, and entreated them spitefully, and slew them.* (Matthew 22:6)
+
+*But when the king heard thereof, he was wroth: and he sent forth his armies, and destroyed those murderers, and burned up their city.* (Matthew 22:7)
+
+The ones who slew the servants are the rulers who killed the prophets, and he says so outright in the next chapter.
+
+*O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!* (Matthew 23:37)
+
+*Behold, your house is left unto you desolate.* (Matthew 23:38)
+
+Jeremiah stood at the gate of the house in his own day and told the people what they were leaning on.
+
+*Trust ye not in lying words, saying, The temple of Yahuah (LORD), The temple of Yahuah (LORD), The temple of Yahuah (LORD), are these.* (Jeremiah 7:4)
+
+Isaiah had shown that when Yahuah (the LORD) sends an army against a people, the army is his rod and not his equal.
+
+*O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation.* (Isaiah 10:5)
+
+Two chapters on, the disciples show him the buildings of the temple and he tells them what is coming.
+
+*There shall not be left here one stone upon another, that shall not be thrown down.* (Matthew 24:2)
+
+What is judged in all of these is the house that was trusted for its own sake and the rulers who killed the ones sent to them. In the same sentence that leaves the house empty he speaks of gathering the children.
+
+## `matthew-23-the-seat-of-moses-and-what-was-laid-on-it` — The seat of Moses and what was laid on it (anchor Matthew 23:2–9)
+
+It ain't new. The seat the scribes and the Pharisees sit in was set up by Moses, and Yahusha (Jesus) opens the chapter by telling the crowd to honor what is read from it and to leave the works alone:
+
+*The scribes and the Pharisees sit in Moses’ seat* (Matthew 23:2)
+
+*All therefore whatsoever they bid you observe, that observe and do; but do not ye after their works: for they say, and do not.* (Matthew 23:3)
+
+The seat is in the Torah. A case too hard for the local court goes up to the priests and the judge, and what they teach out of the law is what is done:
+
+*According to the sentence of the law which they shall teach thee, and according to the judgment which they shall tell thee, thou shalt do* (Deuteronomy 17:11)
+
+So the law read from the seat stands. The fault is in the works and in the burdens laid on top of it, loads bound on other men's shoulders by hands that would not touch them. The same goes for the signs that were commanded in the first place. The fringe, the frontlet and the title of Father were all spoken of in Moses and the prophets before the Pharisees ever sat down, so the woe is not against any of them. It is against making them larger to be seen:
+
+*But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments* (Matthew 23:5)
+
+*Speak unto the children of Yashar'el (Israel), and bid them that they make them fringes in the borders of their garments throughout their generations* (Numbers 15:38)
+
+Yahusha (Jesus) wore the border himself, and people reached for the hem of his garment to be healed. On the title, he sends the crowd back to the Father the prophets already named:
+
+*And call no man your father upon the earth: for one is your Father, which is in heaven.* (Matthew 23:9)
+
+*Doubtless thou art our father, though Abraham be ignorant of us* (Isaiah 63:16)
+
+## `matthew-24-the-temple-torn-down-and-the-question` — The temple torn down, and the disciples' question on the mount of Olives (anchor Matthew 24:1–3)
+
+It ain't new. A house that bears the name of Yahuah (the LORD) has been told before that it can be taken down, and the line Yahusha (Jesus) speaks as he leaves the temple is the same one the prophets spoke at its gate: *There shall not be left here one stone upon another, that shall not be thrown down.* (Matthew 24:2)
+
+Jeremiah gave Shiloh as the pattern: *Then will I make this house like Shiloh, and will make this city a curse to all the nations of the earth.* (Jeremiah 26:6) Micah says it of the hill itself: *Therefore shall Zion for your sake be plowed as a field, and Jerusalem shall become heaps, and the mountain of the house as the high places of the forest.* (Micah 3:12) In both places the fall is tied to what the people did, and Yahusha (Jesus) has just said the same: *Behold, your house is left unto you desolate.* (Matthew 23:38)
+
+He does not say it dry-eyed. *And when he was come near, he beheld the city, and wept over it,* (Luke 19:41) and then he goes out and sits on the mount of Olives, the hill Zechariah named long before. There the disciples come to him alone with the question that the rest of the chapter answers: *Tell us, when shall these things be? and what shall be the sign of thy coming, and of the end of the world?* (Matthew 24:3) Mark and Luke carry the same question, so all three Gospels open the talk with a house falling and a hill where he sits.
+
+## `matthew-24-the-beginning-of-sorrows` — The beginning of sorrows: deception, wars, hatred, and the witness to all nations (anchor Matthew 24:4–14)
+
+It ain't new. The first sorrows are the old ones, and the first word is a warning: *Take heed that no man deceive you.* (Matthew 24:4) Isaiah had already heard Yahuah (the LORD) say of Egypt, *And I will set the Egyptians against the Egyptians: and they shall fight every one against his brother, and every one against his neighbour; city against city, and kingdom against kingdom.* (Isaiah 19:2) Yahusha (Jesus) says it of the whole age: *For nation shall rise against nation, and kingdom against kingdom: and there shall be famines, and pestilences, and earthquakes, in divers places.* (Matthew 24:7) He names them a start, not a finish: *All these are the beginning of sorrows.* (Matthew 24:8)
+
+Hatred comes with them, and so does a call to stand: *And ye shall be hated of all men for my name’s sake: but he that endureth to the end shall be saved.* (Matthew 10:22) Inside the house the cost is quieter: *And because iniquity shall abound, the love of many shall wax cold.* (Matthew 24:12) Iniquity is lawlessness, the Torah set aside, and love going cold is what it does to a people.
+
+Paul writes the same watch to the assembly: *Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition;* (2 Thessalonians 2:3) And the sorrows carry a witness with them: *And this gospel of the kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come.* (Matthew 24:14) Isaiah says where that witness is heading: *it shall come, that I will gather all nations and tongues; and they shall come, and see my glory.* (Isaiah 66:18)
+
+## `matthew-24-the-abomination-of-desolation` — The abomination of desolation and the great tribulation (anchor Matthew 24:15–22)
+
+It ain't new. Yahusha (Jesus) sends the reader back to a named book: *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15) The book itself says: *And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate, even until the consummation, and that determined shall be poured upon the desolate.* (Daniel 9:27) The distress he names is Daniel's too: *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* (Daniel 12:1) Matthew says it in his own words: *For then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be.* (Matthew 24:21)
+
+Paul keeps the same watch in his own letter and stays in it: *Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition;* (2 Thessalonians 2:3)
+
+In Revelation John is given a reed and told, *Rise, and measure the temple of Elohim (God), and the altar, and them that worship therein.* (Revelation 11:1) And of the beast, *there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months.* (Revelation 13:5)
+
+## `matthew-24-false-christs-and-the-lightning` — False Christs and false prophets, the lightning, and the eagles (anchor Matthew 24:23–28)
+
+It ain't new. A sign or a wonder is no proof, and Moses said so first: *If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder,* (Deuteronomy 13:1) and the verses that follow ask whether he turns you from the commandments. Yahusha (Jesus) says it again: *For there shall arise false Christs, and false prophets, and shall shew great signs and wonders; insomuch that, if it were possible, they shall deceive the very elect.* (Matthew 24:24) He tells them how not to be led: *And they shall say to you, See here; or, see there: go not after them, nor follow them.* (Luke 17:23)
+
+His own coming needs no pointing out: *For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of Adam be.* (Matthew 24:27)
+
+The eagles follow it: *For wheresoever the carcase is, there will the eagles be gathered together.* (Matthew 24:28) Job's picture is plain, *Her young ones also suck up blood: and where the slain are, there is she.* (Job 39:30) and Hosea puts the eagle on the house that broke covenant: *Set the trumpet to thy mouth. He shall come as an eagle against the house of Yahuah (LORD), because they have transgressed my covenant, and trespassed against my law.* (Hosea 8:1) Revelation has a supper of its own: *Come and gather yourselves together unto the supper of the great Elohim (God);* (Revelation 19:17)
+
+## `matthew-24-heaven-and-earth-pass-but-my-words-shall-not` — Heaven and earth pass, but his words do not (anchor Matthew 24:32–35)
+
+It ain't new. The fig tree gives the season: *Now learn a parable of the fig tree; When his branch is yet tender, and putteth forth leaves, ye know that summer is nigh:* (Matthew 24:32) The verse that closes the thought gives the measure: *Heaven and earth shall pass away, but my words shall not pass away.* (Matthew 24:35)
+
+He used the same measure on the mountain where he taught: *For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled.* (Matthew 5:18) The words that outlast heaven and earth are tied to the law. Mark carries the saying word for word: *Heaven and earth shall pass away: but my words shall not pass away.* (Mark 13:31)
+
+The prophets already set the made things against the word. *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever.* (Isaiah 40:8) *Lift up your eyes to the heavens, and look upon the earth beneath: for the heavens shall vanish away like smoke, and the earth shall wax old like a garment, and they that dwell therein shall die in like manner: but my salvation shall be for ever, and my righteousness shall not be abolished.* (Isaiah 51:6) The psalm says the heavens are made: *Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands.* (Psalm 102:25) What he made passes, and the word he spoke does not.
+
+## `matthew-24-the-day-and-hour-and-the-thief` — The day and hour, the taken and the left, and the thief (anchor Matthew 24:36–44)
+
+It ain't new. The hour is the Father's: *But of that day and hour knoweth no man, no, not the angels of heaven, but my Father only.* (Matthew 24:36) Mark names the Son in it: *But of that day and that hour knoweth no man, no, not the angels which are in heaven, neither the Son, but the Father.* (Mark 13:32) The Son submits to the Father's timing, and the disciples had asked it after the resurrection: *Adonai (Lord), wilt thou at this time restore again the kingdom to Yashar'el (Israel)?* (Acts 1:6) The psalm shows the same order: *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* (Psalm 110:1)
+
+Noah's day sets who is taken: *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be.* (Matthew 24:39) Then, *Then shall two be in the field; the one shall be taken, and the other left.* (Matthew 24:40) The harvest answers the order: *Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.* (Matthew 13:30) The tares go first, and Luke has the same two in one bed: *the one shall be taken, and the other shall be left.* (Luke 17:34)
+
+The watch is the household's: *But know this, that if the goodman of the house had known in what watch the thief would come, he would have watched, and would not have suffered his house to be broken up.* (Matthew 24:43) Paul says, *But of the times and the seasons, brethren, ye have no need that I write unto you.* (1 Thessalonians 5:1) Peter says, *But the day of Yahuah (Lord) will come as a thief in the night.* (2 Peter 3:10) And in Revelation, *Behold, I come as a thief. Blessed is he that watcheth, and keepeth his garments, lest he walk naked, and they see his shame.* (Revelation 16:15)
+
+# Anchors set
+
+- `lord-lord-and-torahlessness` → matthew 7:21–23 (the summary opens on Matthew 7:21-23; all 11 members sit there)

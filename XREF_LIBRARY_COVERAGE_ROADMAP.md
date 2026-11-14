@@ -350,4 +350,33 @@ means a back-fill can re-run safely over the already-merged canon rows.
   which the rebuild chain does not do — reusable for the summaries sweep). Scratch ×2 + four tampers PASS → DEPLOYED Nov 13 20:32 CST
   (`_session499c_canaanite_thread_deploy.log`): 7/7 · 7/7 · thread yes · check_s499c PASS. Summaries-sweep list: the centurion thread
   (matthew-8-many-from-east-and-west…, "Gentile soldier") is the next item, same chain.
-
+- **2026-11-13 (S500) — MATTHEW REBUILD BATCH 4 (Matthew 20–24) DEPLOYED.** Matthew re-dumped first (Nov 13 21:01 CST, orphan 566 confirmed). 368 orphan
+  cards rewritten in place, 368 members (25 existing threads filled, 11 new: matthew-20-the-third-passion-foretelling (20:17–19); matthew-21-faith-and-the-
+  mountain-removed (21:21–22); matthew-21-by-what-authority (21:23–27); matthew-22-their-city-burned-and-the-house-left-desolate (22:6–7); matthew-23-the-seat-
+  of-moses-and-what-was-laid-on-it (23:2–9); matthew-24-the-temple-torn-down-and-the-question (24:1–3); -the-beginning-of-sorrows (24:4–14); -the-abomination-
+  of-desolation (24:15–22); -false-christs-and-the-lightning (24:23–28); -heaven-and-earth-pass-but-my-words-shall-not (24:32–35); -the-day-and-hour-and-the-
+  thief (24:36–44)), 1 unanchored thread anchored (lord-lord-and-torahlessness → Matthew 7:21–23). Same chain (`'b4'` in BATCHES; packets also offered a few
+  threads anchored in Mark/Luke/the Psalms for the parallel-verse cards — 4 cards joined those: 24:15→Daniel 9:27 thread, 24:15→Luke 21:20 thread, 24:36→Mark
+  13:32 thread, 24:29→Isaiah 24:23 thread). Five Sonnet 5.5 drafters in parallel → Fable read of every card (`_s496/tools/read496_b4.py`: 17 corrections —
+  the brief's own instructions leaking into prose ("Keep the *like*", "each book is read in its own words", "says what it says") removed; two drafter-made
+  threads folded back into the live threads whose anchors already hold the scene (evil-eye cards → the 20:1–16 vineyard thread, sons-of-Zebedee cards → the
+  20:22–23 cup thread); the 1 Thessalonians 4:13 card under 24:31 now says plainly that the catching up of 4:17 is a later thing and the gathering of the
+  elect is not it) → assemble PASS (43 drafter flags, all working readings inside the texts) → scratch ×2 + five tampers PASS → DEPLOYED Nov 13 21:34 CST
+  (`_session496_matthew_b4_deploy.log`): 368/368 · 368/368 · 11/11 · 1/1 · 0 dups · 20–24 each 0 orphans · check496 PASS.
+  Matthew orphans left: 198 (chapters 25–28: 69, 67, 37, 25). The cards as they read: `_s496/out/matthew_b4_cards.md`.
+  HELD AS THE BRIEF SET THEM (ch 23–24): Moses' seat reads Moses and the Torah they wore stands (he wore the border himself, 9:20, 14:36); the proselyte's
+  yoke (Acts 15:10) is the rite-first gospel, never the Torah; 21:43's nation is the gathered twelve tribes (Hosea 1:9–10, Ezekiel 37, 1 Peter 2:9–10), never
+  the church; 24:31 is the gathering of the scattered tribes (Deuteronomy 30:4, Isaiah 11:12, 27:13, 43:5, 56:8, Jeremiah 31:8, Ezekiel 37:21), not a rapture;
+  24:40–41 read with 24:39 and 13:30 — the taken are taken by judgment, tares first; 24:36 the Son submits to the Father and remains Elohim (God); Daniel and
+  Revelation each read in their own words (Matthew 24:15 cites Daniel by name, so the Daniel 9:27/12:1 cards stand on Matthew's own citation); no drafter
+  called him "the King" (the b3 lesson held).
+  FOR THE RE-POINT PASS (with 3675): four more cards whose old note meant 1 John but whose target is the gospel of John — 3815 Matthew 21:28→John 2:3 ("the
+  1234 of Truth"), 3912 22:40→John 4:7 and 3913 22:40→John 5:2 (love of Elohim and the brother; keep his commandments), 4009 24:9→John 2:18 (many antichrists).
+  Also 3806 21:21→John 5:14 (meant 1 John 5:14 "according to his will"). All five written honestly to the John verse on the page meanwhile.
+  FOR YOSHI TO SETTLE (flagged, not changed): 3756 Matthew 20:28→1 Timothy 2:5–6 Paul's *ransom for all* beside Matthew's *for many* — the card reads *all* as
+  Isaiah's seed and says nothing more; 3979/3980 which Zechariah Matthew 23:35 means (Jehoiada's son, 2 Chronicles 24, or Berechiah's, Zechariah 1:1) — the
+  cards hold both open; 4058 24:31→1 Corinthians 15:51 — the old note's "last trump = the seventh trumpet after the reign" was left out (Revelation re-map is
+  hypothesis), the card says only the change at the trumpet of his coming.
+  NEXT (S501): batch b5 = Matthew 25–28 (map counts 69, 67, 37, 25 = 198 — the last Matthew batch) — add `'b5': ('matthew', range(25, 29))`; re-dump first.
+  Ch 25 (the virgins, the talents, the sheep and goats — the post-harvest sifting, works judged) and 26–27 (the Sanhedrin trial's Psalm 110 + Daniel 7, "his
+  blood be on us" = system not people, the veil) carry the weight. After b5: Mark and Luke orphans per the S495 maps.
