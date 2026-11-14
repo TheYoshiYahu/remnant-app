@@ -456,3 +456,7 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
 ### S500 — Nov 13 20:58 – 21:40 — Matthew rebuild batch 4 (20–24) DEPLOYED
 - Re-dump (Yoshi's paste, orphan 566 confirmed), five Sonnet drafters in parallel (brief rewritten with batch-4 notes per chapter; packets also offered parallel-verse threads anchored in Mark/Luke/Psalms), Fable read every card (17 corrections — brief-instruction leaks removed, two drafter threads folded into the live threads that already hold the scene, 1 Thess 4:13 card says the catching up is later), 11 new threads, 1 anchor, scratch ×2 + five tampers PASS on a fresh Postgres 16 in the sandbox, deployed 21:34 CST, read-back PASS. 198 Matthew orphans left (25–28). Details in XREF_LIBRARY_COVERAGE_ROADMAP.md.
 - NOT done: git push (Yoshi). Open prompt: S501_SESSION_OPEN_PROMPT.md.
+
+### S501 — Nov 13 22:04 – Nov 14 13:30 — Matthew rebuild batch 5 (25–28) DEPLOYED; Matthew rebuild CLOSED
+- Re-dump (Yoshi's paste, orphan 198 confirmed), brief rewritten with batch-5 notes, four Sonnet drafters in parallel, Fable read every card (4 corrections — brief-instruction leaks), 8 new threads, 14 anchors, scratch ×2 + five tampers PASS on Postgres 16 in the sandbox. First deploy attempt failed at connect (Render IP allowlist — Yoshi's IP had changed; nothing sent); Yoshi updated the allowlist, second run deployed 13:24 CST, read-back PASS, **0 orphans in Matthew**. Totals b1–b5 in XREF_LIBRARY_COVERAGE_ROADMAP.md.
+- NOT done: git push (Yoshi). Open prompt: S502_SESSION_OPEN_PROMPT.md (Mark + Luke orphans).

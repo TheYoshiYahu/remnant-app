@@ -1,0 +1,559 @@
+{
+ "model": "Claude Sonnet 5.5",
+ "chapter": 25,
+ "cards": [
+  {
+   "id": 2939,
+   "prose": "Said to the goats it is *ye did it not to me*, and said to the sheep it is *ye have done it unto me*. The same people stand behind both sentences, the least of these, and the sheep's version names them his *brethren*, so what was withheld on the left was withheld from his own kin.",
+   "member_phrase": "Inasmuch as ye have done it unto one of the least of these my brethren",
+   "member_sentence": "The sentence to the sheep names the least as his brethren, which tells us whose kin the goats passed by.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2940,
+   "prose": "When his mother and his brethren stand outside, he stretches his hand toward his disciples and says *Behold my mother and my brethren!* (Matthew 12:49). The brethren of the throne belong to that same family, those he claims by the Father's will and not a crowd of strangers.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "He points to his disciples as his brethren, which shows who the least of these my brethren are.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2941,
+   "prose": "When he is asked about his brethren he turns to his disciples and says *Behold my mother and my brethren!* (Matthew 12:49). The ones the goats passed by in hunger and prison are counted in that family, and so the neglect is counted as done to him.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "His brethren are the family he points out around him, and the goats neglected one of them.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2942,
+   "prose": "Even after he has risen he still says *my brethren*. The word at the empty tomb is the word at the throne, so the least of these are the same people he sends the women to, and the sheep are found to have fed and clothed them.",
+   "member_phrase": "go tell my brethren that they go into Galilee",
+   "member_sentence": "The risen one calls the frightened disciples his brethren, the same word he uses of the least at the throne.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2943,
+   "prose": "The word is the same at the empty tomb, where he sends the women to *my brethren* with a promise to meet them. Those whom the goats walked past are people he still claims by that name after he has risen.",
+   "member_phrase": "go tell my brethren that they go into Galilee",
+   "member_sentence": "After rising he still calls his people brethren, which shows who stood unnoticed before the goats.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2944,
+   "prose": "Risen, he sends Mary Magdalene to *my brethren* with a message that gives them his own Father: *my Father, and your Father*. The least of these the sheep served are of that household, with one Father between him and them.",
+   "member_phrase": "but go to my brethren, and say unto them, I ascend unto my Father, and your Father",
+   "member_sentence": "He gives his brethren the same Father he has, so they are of his household.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2945,
+   "prose": "To the people the goats ignored, the risen one gives his own Father: *my Father, and your Father*. What was refused to the least of them was refused to a member of that household, and that is why he says it was refused to him.",
+   "member_phrase": "but go to my brethren, and say unto them, I ascend unto my Father, and your Father",
+   "member_sentence": "The brethren share his Father, so refusing the least of them was refusing his own household.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2946,
+   "prose": "The writer says why he calls them brethren: he who sanctifies and those sanctified are *all of one*. At the throne he is not ashamed to name even the least of them as his own, and the sheep are found to have done for them what they would have done for him.",
+   "member_phrase": "for which cause he is not ashamed to call them brethren",
+   "member_sentence": "He is not ashamed to call them brethren, being all of one with them, and so the least are his family.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2947,
+   "prose": "Because he is *not ashamed to call them brethren*, being *all of one* with them, the want of the least of them is his own want. The sentence to the goats is for leaving his family hungry, and nothing about them is said to have been unknown to him.",
+   "member_phrase": "for which cause he is not ashamed to call them brethren",
+   "member_sentence": "He owns the least as his brethren and is all of one with them, so what the goats left undone was left undone for him.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2948,
+   "prose": "The writer says who he took hold of: *he took on him the seed of Abraham*. The brethren of the throne are that seed, his own people by the fathers' blood, and mercy shown to the least of them is mercy shown to his own flesh.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "He took on the seed of Abraham, so the brethren are his people by the fathers' blood.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2949,
+   "prose": "He *took on him the seed of Abraham*, so the least of these are kin to him by the fathers' blood and not strangers. The goats withheld from a brother of that line, and he counts it as withheld from himself.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The least are the seed of Abraham whom he took on, so the goats withheld from his own kin.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2950,
+   "prose": "He is *the firstborn among many brethren*, and the many are those Elohim (God) foreknew. They are the ones the sheep served at the throne, and they were known to the Father long before the throne was set.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "He is the firstborn of many brethren whom the Father foreknew, and those are the ones the sheep served.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2951,
+   "prose": "The *firstborn among many brethren* has brethren who were foreknown, and the least of them are among the many. Passing one of them by is passing by a brother of the firstborn, which is why he says it was done not to him.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The firstborn has many foreknown brethren, so neglecting the least of them is neglecting his own.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2952,
+   "prose": "Moses laid down that the one set over the people must be *one from among thy brethren*, not a stranger. He who sits on the throne is of their blood, so when he says *my brethren* of the least he speaks as a brother and not as a stranger would.",
+   "member_phrase": "one from among thy brethren shalt thou set king over thee",
+   "member_sentence": "The Torah says the one set over the people must come from among his brethren, so he speaks of the least as kin.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2953,
+   "prose": "The Torah requires that the one set over the people be *one from among thy brethren*, never a stranger, and he is a brother to those he names at the throne. The goats failed one of his own family, and that is how the verse counts it.",
+   "member_phrase": "one from among thy brethren shalt thou set king over thee",
+   "member_sentence": "The one set over the people must be a brother, and the goats failed the brethren he is brother to.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2954,
+   "prose": "The psalm has him say *I will declare thy name unto my brethren*, and at the throne he speaks the same word of the least of them. Those the sheep fed and visited are the people he declares the Father's name to.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "He calls the people he declares the Father's name to his brethren, the same word used of the least.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2955,
+   "prose": "He says *I will declare thy name unto my brethren* in the midst of the congregation, and the brethren are his own people. The goats had them before them hungry and thirsty and gave them nothing, and the verse says that was given to him.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The brethren he names in the congregation are the least the goats passed by.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2956,
+   "prose": "*A brother is born for adversity*, and the hungry, the sick and the prisoner are in adversity. The sheep stood as brothers to the least in it, and he who calls them *my brethren* counts it as brotherhood shown to him.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "A brother is born for adversity, and the sheep acted as brothers to those in it.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2957,
+   "prose": "The proverb says what a brother is for: he is *born for adversity*. The goats were there in the hour of hunger and prison and did not come, and the sentence on the left is for a brotherhood not shown to the least of his brethren.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "A brother is made for adversity, and the goats stayed away from the adversity of the least.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2958,
+   "prose": "Saul was dragging men and women out of the way to Jerusalem, and the voice from heaven asks *why persecutest thou me?* He counts what is done to his brethren as done to him, the same weight he gives to the least of these at the throne.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahusha (Jesus) counts what is done to his people as done to him, as he does at the throne.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2959,
+   "prose": "The voice asks *why persecutest thou me?* when Saul had touched only his people, so what is done to them is done to him. Turning away the least of them at the throne is counted the same way: *ye did it not to me*.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "What is done to his people is counted as done to him, whether harm or neglect.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2960,
+   "prose": "Paul is told that the Elohim (God) of our fathers chose him to see *that Just One* and hear his voice. The one who calls the least his brethren is the Just One of the fathers' own line, speaking to a son of those fathers.",
+   "member_phrase": "The Elohim (God) of our fathers hath chosen thee, that thou shouldest know his will",
+   "member_sentence": "The Just One who speaks to Paul was sent by the Elohim (God) of the fathers, which places his brethren in their line.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2961,
+   "prose": "Paul heard the voice of *that Just One*, the one who says the least were his. The people the goats passed by belong to the fathers whose Elohim (God) sent him, and that is what makes the neglect weigh on him.",
+   "member_phrase": "The Elohim (God) of our fathers hath chosen thee, that thou shouldest know his will",
+   "member_sentence": "The Just One is the one the Elohim (God) of the fathers sent, and the goats neglected his people.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2990,
+   "prose": "Against *everlasting punishment* and *life eternal* stands the first word to the right hand, the call to *inherit the kingdom* prepared from the foundation of the world. The inheritance was laid up before any of them lifted a hand, and the two ends bring into the open who kept it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The inheritance was prepared before the world's foundation, and the two ends show who kept it.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": "Reversed pair with 2991; both kept as orphans."
+  },
+  {
+   "id": 2991,
+   "prose": "The kingdom was prepared *from the foundation of the world*, and the last verse says where those who inherit it go: *life eternal*. What the works show was already settled in the Father's preparing, and *everlasting punishment* is the other end of the same sorting.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The end of the sheep, life eternal, is the end of an inheritance prepared from the foundation of the world.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": "Reversed pair with 2990; both kept as orphans."
+  },
+  {
+   "id": 2992,
+   "prose": "Zion is told to rise and shine because *thy light is come*. The sheep who inherit are the gathered seed, sifted from the goats, and the glory of Yahuah (the LORD) rises on them, which is the light the nations are drawn to in the reign.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The glory of Yahuah (the LORD) rises on Zion, the gathered seed who inherit, and the nations come to that light later.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2993,
+   "prose": "The righteous who go into *life eternal* are the people Zion's call is spoken to: *Arise, shine*. They are the sifted seed with the glory of Yahuah (the LORD) risen on them, and the nations see by their light afterward.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The call to arise and shine fits the sifted seed, with the nations coming afterward to their light.",
+   "thread": "the-day-of-vindication-of-the-righteous-and-the-judgment-of-the-nations-in-wisdom-of-solomon",
+   "flag": ""
+  },
+  {
+   "id": 2994,
+   "prose": "Yahuah (the LORD) knows *their works and their thoughts* and gathers all nations and tongues to see his glory. The inheritance of the sheep belongs to the gathered seed, sifted from the goats, while the nations are gathered to see it.",
+   "member_phrase": "it shall come, that I will gather all nations and tongues; and they shall come, and see my glory",
+   "member_sentence": "The nations are gathered to see his glory, which differs from the sheep's inheritance of the kingdom.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2995,
+   "prose": "The nations and tongues come to *see my glory*, and their works and thoughts are known. The life of the righteous belongs to the sifted seed, and the nations come as those who see, not as those who were sorted at the throne.",
+   "member_phrase": "it shall come, that I will gather all nations and tongues; and they shall come, and see my glory",
+   "member_sentence": "The nations come to see his glory, apart from the righteous who go into life.",
+   "thread": "the-day-of-vindication-of-the-righteous-and-the-judgment-of-the-nations-in-wisdom-of-solomon",
+   "flag": ""
+  },
+  {
+   "id": 2996,
+   "prose": "Those left of the nations that came against Jerusalem go up every year to keep *the feast of tabernacles*. They are the nations left alive; the sheep who inherit are the gathered seed who minister to them as priests, not those who come up to bow.",
+   "member_phrase": "every one that is left of all the nations which came against Jerusalem shall even go up from year to year",
+   "member_sentence": "The nations left alive go up yearly to worship, so they are not the sheep who inherit.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2997,
+   "prose": "The nations left alive go up every year to *keep the feast of tabernacles*. The righteous of Matthew's last verse are not those nations but the gathered seed, sifted from the goats, who enter the land as priests to them.",
+   "member_phrase": "every one that is left of all the nations which came against Jerusalem shall even go up from year to year",
+   "member_sentence": "The nations left alive keep the feast yearly, and the righteous are the gathered seed over them.",
+   "thread": "the-day-of-vindication-of-the-righteous-and-the-judgment-of-the-nations-in-wisdom-of-solomon",
+   "flag": ""
+  },
+  {
+   "id": 2998,
+   "prose": "John sees the nations walking *in the light of it* in the new heaven and new earth, after the reign and after the judgment of the dead. The kingdom the sheep inherit comes before that, and John's nations walk by its light and are not the heirs.",
+   "member_phrase": "the nations of them which are saved shall walk in the light of it",
+   "member_sentence": "The nations walk in the light of the city, which comes after the kingdom the sheep inherit.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 2999,
+   "prose": "In the new heaven and new earth the nations *shall walk in the light of it*, with the kings bringing their glory into it. The righteous of Matthew's last verse are the sifted seed, and the nations are the ones who walk by the city's light.",
+   "member_phrase": "the nations of them which are saved shall walk in the light of it",
+   "member_sentence": "The nations walk in the light of the city, apart from the sifted seed who go into life.",
+   "thread": "the-day-of-vindication-of-the-righteous-and-the-judgment-of-the-nations-in-wisdom-of-solomon",
+   "flag": ""
+  },
+  {
+   "id": 3000,
+   "prose": "A river of the water of life runs out of *the throne of Elohim (God) and of the Lamb*, and John adds that *the leaves of the tree were for the healing of the nations* (Revelation 22:2). Matthew's throne is where the sheep are sorted and told to inherit; John's is the throne at the end.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The river of life flows from the throne of Elohim (God) and the Lamb, with leaves for the healing of the nations.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 3001,
+   "prose": "John sees the river of life and the tree beside it, and says *the leaves of the tree were for the healing of the nations* (Revelation 22:2). The life the righteous go into in Matthew's last verse is shown here as a river and a tree, with the nations healed by its leaves.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The life of the righteous is shown as a river and a tree whose leaves heal the nations.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 3002,
+   "prose": "John sees thrones, judgment given to those on them, and a company who *lived and reigned with Messiah (Christ) a thousand years*. The kingdom the sheep are called to inherit is a reign, and John counts it at a thousand years.",
+   "member_phrase": "they lived and reigned with Messiah (Christ) a thousand years",
+   "member_sentence": "The kingdom the sheep inherit is a reign of a thousand years with Messiah (Christ), on thrones with judgment given.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 3003,
+   "prose": "Matthew's last verse names two ends, and John shows the reign of the first: some *lived and reigned with Messiah (Christ) a thousand years*. Matthew names the life of the righteous, and John numbers the reign they live in.",
+   "member_phrase": "they lived and reigned with Messiah (Christ) a thousand years",
+   "member_sentence": "John shows a reign of a thousand years for those who live, set beside Matthew's life eternal.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 3004,
+   "prose": "Joel puts the gathering at the time he *shall bring again the captivity of Yahudah (Judah) and Jerusalem*, and the nations gathered after it are judged in the valley. The sheep's inheritance is another matter: it belongs to the gathered seed, sifted from the goats before the reign.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Joel sets the return of the captives first, and the nations gathered come after, which differs from the sheep's inheritance.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 3005,
+   "prose": "Joel speaks of the time he *shall bring again the captivity of Yahudah (Judah) and Jerusalem*, with nations gathered after it. The parting in Matthew's last verse is among the gathered seed, the goats from the sheep, before the reign.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Joel's return of the captivity stands before the nations are dealt with, and the parting is among the gathered.",
+   "thread": "the-day-of-vindication-of-the-righteous-and-the-judgment-of-the-nations-in-wisdom-of-solomon",
+   "flag": ""
+  },
+  {
+   "id": 3006,
+   "prose": "In the last days the mountain of the house of Yahuah (the LORD) is set above the hills and *people shall flow unto it*. That is the reign's own scene, with peoples coming up to the mountain, while the kingdom prepared for the sheep is the one they come to.",
+   "member_phrase": "the mountain of the house of Yahuah (LORD) shall be established in the top of the mountains",
+   "member_sentence": "Peoples flow to the mountain of the house of Yahuah (the LORD) in the last days, which is the reign's scene.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 3007,
+   "prose": "The mountain of the house of Yahuah (the LORD) is lifted up in the last days and *people shall flow unto it*. The righteous who go into life are the gathered seed, and the peoples come to the mountain in the reign that follows the sorting.",
+   "member_phrase": "the mountain of the house of Yahuah (LORD) shall be established in the top of the mountains",
+   "member_sentence": "Peoples flow to the mountain in the last days, after the sorting of the gathered.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 3008,
+   "prose": "Isaiah says *all nations shall flow unto it*, the mountain of the house of Yahuah (the LORD) lifted up in the last days. The nations come to the mountain; the sheep are told to inherit the kingdom prepared for them, and that is a different place in the story.",
+   "member_phrase": "the mountain of the LORD’S house shall be established in the top of the mountains",
+   "member_sentence": "All nations flow to the mountain of the house of Yahuah (the LORD) in the last days, apart from the sheep's inheritance.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 3009,
+   "prose": "Isaiah sees the mountain of the house of Yahuah (the LORD) exalted, and *all nations shall flow unto it*. The righteous who go into *life eternal* are the sifted seed, and the nations come up to the mountain in the days of the reign.",
+   "member_phrase": "the mountain of the LORD’S house shall be established in the top of the mountains",
+   "member_sentence": "All nations flow to the mountain in the last days, which is later than the sorting of the gathered.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4088,
+   "prose": "Luke gives the same word to the household that waits for its master: *Let your loins be girded about, and your lights burning*. Matthew's ten virgins take lamps and go out to meet the bridegroom, all of them of the house, and the lights are what the five foolish ones let go out.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Luke's burning lights are Matthew's lamps, kept by those who wait for the master to return.",
+   "thread": "parable-of-the-ten-virgins-oil-substance-as-heart-torah-walking-life",
+   "flag": "Map slug matthew-25-the-ten-virgins does not exist live; used the ten-virgins thread. No card in this chapter sits in the talents thread."
+  },
+  {
+   "id": 4089,
+   "prose": "Zechariah says his Elohim (God) shall come with all the saints, and Matthew has the Son of Adam come with *all the holy angels with him*. The one who comes brings his holy ones, and Zechariah says it is Yahuah (the LORD) himself coming.",
+   "member_phrase": "Yahuah Elohai (the LORD my God) shall come, and all the saints with thee",
+   "member_sentence": "Zechariah has Yahuah (the LORD) come with all his saints, the same company that comes with the Son of Adam.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4090,
+   "prose": "*Yahuah (LORD) came from Sinai* with *ten thousands of saints*, and from his right hand went a fiery law. The one who came to the mountain with his holy ones is the one who comes with all the holy angels and sits on the throne of his glory.",
+   "member_phrase": "he came with ten thousands of saints: from his right hand went a fiery law for them",
+   "member_sentence": "The one who came at Sinai with ten thousands of saints is the one who comes with his holy angels.",
+   "thread": "the-judgment-of-the-kings-and-the-mighty-cast-down-in-1-enoch-parables",
+   "flag": ""
+  },
+  {
+   "id": 4091,
+   "prose": "Paul says rest comes to the troubled when Yahusha (Jesus) is *revealed from heaven with his mighty angels*. It is the coming Matthew sets before the throne, with the holy angels about him, and the relief belongs to those who have been troubled.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "He is revealed from heaven with his mighty angels, and the troubled receive rest at that time.",
+   "thread": "the-judgment-of-the-kings-and-the-mighty-cast-down-in-1-enoch-parables",
+   "flag": ""
+  },
+  {
+   "id": 4092,
+   "prose": "John sees heaven opened and one called *Faithful and True*, who judges in righteousness, and Matthew sets the Son of Adam on the throne with his angels. Both show the coming one as judge, and John's verse names him by what he is.",
+   "member_phrase": "he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war",
+   "member_sentence": "The one coming from heaven judges in righteousness and is called Faithful and True.",
+   "thread": "the-judgment-of-the-kings-and-the-mighty-cast-down-in-1-enoch-parables",
+   "flag": ""
+  },
+  {
+   "id": 4093,
+   "prose": "Those on the right hand are called *blessed of my Father*, and when his mother and brethren stand outside he points to his disciples with *Behold my mother and my brethren!* (Matthew 12:49). The Father's blessed are the ones he claims as family.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The blessed of the Father are his family, as when he named his disciples his brethren.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4094,
+   "prose": "The one who says *Come, ye blessed of my Father* is *not ashamed to call them brethren*, for he and they are *all of one*. The inheritance is given to the sheep as family, before any of them did a work.",
+   "member_phrase": "for which cause he is not ashamed to call them brethren",
+   "member_sentence": "He is not ashamed to call them brethren, and the inheritance is given to them as his family.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4095,
+   "prose": "Paul says *whom he did foreknow* are the brethren of the firstborn, and Matthew says the kingdom was *prepared for you from the foundation of the world*. The inheritance was settled before anyone fed anyone, and the works at the throne show who those were.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Those foreknown are the many brethren of the firstborn, which fits the kingdom prepared before the foundation of the world.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4096,
+   "prose": "The fast Yahuah (the LORD) chose is *to loose the bands of wickedness*, to undo burdens and let the oppressed go free. The works named at the throne are mercy the Torah and the prophets already ask for, and not a new standard put in its place.",
+   "member_phrase": "to loose the bands of wickedness, to undo the heavy burdens, and to let the oppressed go free",
+   "member_sentence": "Isaiah names the works Yahuah (the LORD) chose, loosing bands and freeing the oppressed, which the throne counts.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4097,
+   "prose": "The anointed one was sent to *proclaim liberty to the captives*, and the opening of the prison to the bound. At the throne the prisoner who is visited is one of those he came for, and the sheep did what his anointing was for.",
+   "member_phrase": "to proclaim liberty to the captives, and the opening of the prison to them that are bound",
+   "member_sentence": "The anointed one was sent to open the prison to the bound, and the sheep visited those prisoners.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4098,
+   "prose": "Job swears he never *withheld the poor from their desire*, judging himself by the poor and the widow long before the throne. The standard the sheep are found to have kept at the throne is one Job already held himself to, and it is old.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Job measured himself by how he treated the poor and the widow, long before the throne.",
+   "thread": "the-mercy-toward-the-poor-the-stranger-and-the-needy-as-the-criterion-of-righteousness-in-sirach-and-tobit",
+   "flag": ""
+  },
+  {
+   "id": 4099,
+   "prose": "The proverb says pity on the poor *lendeth unto Yahuah (LORD)*, and what he has given will be paid back. Matthew puts the loan and the paying back at the throne, where what was done for the least of them was done for him.",
+   "member_phrase": "He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again",
+   "member_sentence": "Mercy to the poor is a loan to Yahuah (the LORD), repaid at the throne.",
+   "thread": "the-mercy-toward-the-poor-the-stranger-and-the-needy-as-the-criterion-of-righteousness-in-sirach-and-tobit",
+   "flag": ""
+  },
+  {
+   "id": 4100,
+   "prose": "Yahuah (the LORD) himself *loveth the stranger, in giving him food and raiment*, and the sheep gave the stranger a welcome and the naked clothes. The mercy at the throne is the mercy Moses said the Father does.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The Father loves the stranger by giving food and clothing, the works the sheep are found to have done.",
+   "thread": "the-mercy-toward-the-poor-the-stranger-and-the-needy-as-the-criterion-of-righteousness-in-sirach-and-tobit",
+   "flag": ""
+  },
+  {
+   "id": 4101,
+   "prose": "The one who says *Come, ye blessed of my Father* later says *my Father, and your Father*, and sends word to *my brethren*. He calls them his family at the throne and he calls them so again once he has risen.",
+   "member_phrase": "but go to my brethren, and say unto them, I ascend unto my Father, and your Father",
+   "member_sentence": "The risen one calls the same people his brethren, with the same Father, as at the throne.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4102,
+   "prose": "The voice to Saul asks *why persecutest thou me?* so what is done to his people is counted as done to him. The ones on the right are called blessed for what they did to his brethren, and the same reckoning stands.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "What is done to his people is counted as done to him.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4103,
+   "prose": "Matthew says the fire was *prepared for the devil and his angels*, and John sees the devil himself cast into the lake of fire, where the beast and the false prophet already are. The fire was made for him, and those on the left go toward it by the side they stood on.",
+   "member_phrase": "the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are",
+   "member_sentence": "John shows the devil cast into the lake of fire, which Matthew says was prepared for him and his angels.",
+   "thread": "the-judgment-of-the-kings-and-the-mighty-cast-down-in-1-enoch-parables",
+   "flag": ""
+  },
+  {
+   "id": 4104,
+   "prose": "Matthew says everlasting fire, and John calls the lake of fire *the second death*, into which even death and hell are thrown. John says what the fire is, and Matthew says whom it was prepared for.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The lake of fire is the second death, into which death and hell are cast.",
+   "thread": "the-judgment-of-the-kings-and-the-mighty-cast-down-in-1-enoch-parables",
+   "flag": ""
+  },
+  {
+   "id": 4105,
+   "prose": "Peter says Elohim (God) *spared not the angels that sinned*, and cast them down to *chains of darkness, to be reserved unto judgment*. These are the angels in Matthew's *devil and his angels*, the ones the fire was prepared for, and men go there only by taking their side.",
+   "member_phrase": "For if Elohim (God) spared not the angels that sinned, but cast them down to hell",
+   "member_sentence": "The angels that sinned are held for judgment, and the fire was made for them.",
+   "thread": "the-judgment-of-the-kings-and-the-mighty-cast-down-in-1-enoch-parables",
+   "flag": ""
+  },
+  {
+   "id": 4106,
+   "prose": "The angels *which kept not their first estate, but left their own habitation* are held in chains until the great day. The fire was prepared for such as these, the ones who left their place, and men go into it by choosing to be with them.",
+   "member_phrase": "the angels which kept not their first estate, but left their own habitation",
+   "member_sentence": "Jude names the angels who left their own habitation and are held for judgment, the ones the fire was made for.",
+   "thread": "the-judgment-of-the-kings-and-the-mighty-cast-down-in-1-enoch-parables",
+   "flag": ""
+  },
+  {
+   "id": 4107,
+   "prose": "The proverb has the turn the left hand has: the man who stops his ears at *the cry of the poor* cries himself and is not heard. The goats are told to depart, they who gave no meat or drink when the poor cried.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Whoever shuts his ears to the cry of the poor will cry and not be heard.",
+   "thread": "the-mercy-toward-the-poor-the-stranger-and-the-needy-as-the-criterion-of-righteousness-in-sirach-and-tobit",
+   "flag": ""
+  },
+  {
+   "id": 4108,
+   "prose": "No theft or violence is charged to the left hand, only good that was left undone, and James says it is sin for the one *that knoweth to do good, and doeth it not*. The goats are judged for what they knew and did not do.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Knowing the good and leaving it undone is sin, which is the charge laid on the goats.",
+   "thread": "the-mercy-toward-the-poor-the-stranger-and-the-needy-as-the-criterion-of-righteousness-in-sirach-and-tobit",
+   "flag": ""
+  },
+  {
+   "id": 4109,
+   "prose": "In John the Father *so loved the world, that he gave his only begotten Son*, and in Matthew the hand that gives nothing hears *Depart from me*. The Father's giving is set against the goats' withholding, and *perish* is where that road ends.",
+   "member_phrase": "For Elohim (God) so loved the world, that he gave his only begotten Son",
+   "member_sentence": "The Father gave his Son, set against the hand that gave nothing, which hears depart from me.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": "The old note meant 1 John 3:16-18 (not in word, but in deed); written honestly to John 3:16 as the card points there."
+  },
+  {
+   "id": 4110,
+   "prose": "Daniel's two ends, *some to everlasting life, and some to shame and everlasting contempt*, are for the sleepers who awake. Matthew's last verse names two ends of its own, *everlasting punishment* and *life eternal*, and each has the same shape: a life that lasts and a shame that lasts.",
+   "member_phrase": "some to everlasting life, and some to shame and everlasting contempt",
+   "member_sentence": "Daniel names two ends for those who awake, a life that lasts and a shame that lasts.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4111,
+   "prose": "Isaiah says of the men who transgressed that *their worm shall not die, neither shall their fire be quenched*, and they are an abhorring to all flesh. Matthew's *everlasting punishment* is the same kind of lasting end, and Isaiah says it is looked on by those who go forth.",
+   "member_phrase": "their worm shall not die, neither shall their fire be quenched",
+   "member_sentence": "Isaiah's worm that does not die and fire not quenched is a lasting end for the transgressors.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  },
+  {
+   "id": 4112,
+   "prose": "The throne Matthew describes is set at his coming, with the gathered sorted first. John's *great white throne* is seen after the thousand years, with earth and heaven fleeing from the face of the one on it, and the two sittings are not the same.",
+   "member_phrase": "I saw a great white throne, and him that sat on it, from whose face the earth and the heaven fled away",
+   "member_sentence": "The great white throne is seen after the reign, a later sitting than the throne at his coming.",
+   "thread": "the-day-of-vindication-of-the-righteous-and-the-judgment-of-the-nations-in-wisdom-of-solomon",
+   "flag": ""
+  },
+  {
+   "id": 4113,
+   "prose": "John sees *a new heaven and a new earth*, when the first heaven and earth have passed away. Matthew's last verse names the life of the righteous at the throne, and John shows what the first heaven and earth give way to.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "A new heaven and earth appear when the first have passed away, after the sorting.",
+   "thread": "sheep-and-goats-judgment-of-the-nations-at-the-throne-of-his-glory",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

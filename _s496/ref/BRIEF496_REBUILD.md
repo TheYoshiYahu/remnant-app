@@ -1,4 +1,4 @@
-# S496 — the Matthew card rebuild, batch 4 (Matthew 20–24) — brief for every drafting agent
+# S496 — the Matthew card rebuild, batch 5 (Matthew 25–28, the last) — brief for every drafting agent
 
 You are REWRITING existing cross-reference cards in a study Bible. Each card already ties one verse of Matthew (the
 SOURCE) to one verse elsewhere in the canon (the TARGET). The pairs stay exactly as they are — you do not add, drop
@@ -40,7 +40,7 @@ retype scripture from memory anywhere.
   `tgt_text_kjv` (the part of the target verse that carries the point). Verses of about 25 words or fewer: `WHOLE`.
 - **`member_sentence`** — one plain sentence (10–30 words) for the thread list, saying what this target verse adds.
 - **`thread`** — the `slug` of the existing thread the card belongs in, chosen by reading the thread's summary and
-  members against the card. Nearly every passage of Matthew 14–19 already has a thread, so nearly every card joins one.
+  members against the card. Most passages of Matthew 25–28 already have a thread, so nearly every card joins one.
   A thread that exists gets FILLED, never duplicated. Prefer the thread anchored on the card's own Matthew verse
   whose subject matches; use one of the wide theme threads (no Matthew anchor) only when the card is plainly about
   that theme and not about its own pericope's thread.
@@ -57,125 +57,96 @@ Matthew verse(s) and the target verse(s) that carry the point — copied exactly
 walk the reader through the connection. Where the summary shows the older scripture already held what Matthew
 says, the author's own opener is *It ain't new* — those words, never "This is not new". Give the cards that slug.
 
-## Batch 4 notes (Matthew 20–24) — read these before the packet
+## Batch 5 notes (Matthew 25–28) — read these before the packet
 - **Names read in their Old Testament spellings** in the live text and in the packet: Elijah (not Elias), Isaiah (not Esaias), Jonah (not
   Jonas), Noah (not Noe), Zion (not Sion). Use those spellings in your prose; never the Greek-form ones.
-- **Never call Yahusha (Jesus) "the King" in your own prose.** The old notes do it constantly ("the King's cup", "the King walked the
-  Tsitsit") — that is house shorthand, not how the cards speak. Use his name, Yahusha (Jesus), every time. Where a quoted verse says
-  *King* (Zechariah 9:9, Zephaniah 3:15) the verse says it; you do not.
-- **Threads.** `threads[]` now also offers a few threads anchored in another book (`anchored_in_another_book: true`, with a sample of
-  their members) — Mark's and Luke's telling of the same scene, the Psalm or prophet the scene quotes. Order of preference: (1) the
-  thread anchored on this card's own Matthew verses when its subject matches; (2) a new `matthew-<ch>-…` thread when three or more
-  cards of the chapter sit in a scene no Matthew thread covers — this batch has several such scenes, named below; (3) a thread
-  anchored in another book only when the card's target IS that book's parallel verse (Matthew 24:36 → Mark 13:32 joins the Mark 13:32
-  thread) or the card is plainly about exactly that thread's subject; (4) a wide theme thread with no anchor only when the card is
-  about that theme and not about its own scene. A thread that exists gets FILLED, never duplicated.
-- **Cards whose old note plainly meant 1 John** but whose target is the gospel of John (Matthew 21:28 → John 2:3 "the 1234 of
-  Truth"; 22:40 → John 4:7 and John 5:2 "love of Elohim and the brother", "keep his commandments"; 24:9 → John 2:18 "many
-  antichrists"): the pair is what it is. Write the card honestly to the John verse that is actually on the page (Cana, the woman at
-  the well, Bethesda, the temple sign) in a way that still belongs beside the Matthew verse, and say in `flag` that the note meant
-  1 John. Do not re-point.
-- **Chapter 20.** The labourers in the vineyard: the vineyard is the house of Yashar'el (Israel) (Isaiah 5), the hire is the
-  master's to give, *the last shall be first* — do not turn the late-hired into "the Gentiles" or "the church"; both houses are his
-  own hired. *Many be called, but few chosen* (20:16) with Isaiah 6:9: hearing reveals who the sheep already were; it does not make
-  them sheep — never "whoever responds becomes chosen". The third passion foretelling (20:17–19, 7 cards): no Matthew thread covers
-  it — a new thread `matthew-20-…` is right. The cup (20:22–23) is the Father's cup of wrath (Psalm 75:8, Isaiah 51:17, Jeremiah
-  25:15) that he drinks; the sons of Zebedee ask for thrones and are offered the cup. *Not mine to give, but… of my Father* — he is
-  Elohim (God) and he has a Father; say both, collapse neither. The ransom for many (20:28): the many are the seed of promise, both
-  houses (Isaiah 53:10–11); *the princes of this world* beside Daniel 10 — the princes over Persia and Greece are the rulers he
-  contrasts with, say that plainly without a lecture. The blind men's *Son of David* is the covenant confession (2 Samuel 7,
-  Isaiah 11, Jeremiah 23, Ezekiel 34, 37): the shepherd king over the restored twelve tribes.
-- **Chapter 21.** The entry: Zechariah 9:9's king comes lowly to the daughter of Zion; Psalm 118:25–26 is what the crowd sings.
-  The temple: *My house shall be called an house of prayer for all people* (Isaiah 56:7) — Isaiah 56:8 says who: *the outcasts of
-  Yashar'el (Israel)… others… beside those that are gathered*; the house is for the gathered of both houses, never a prooftext for
-  the nations being added. *Den of thieves* is Jeremiah 7:11 against the house that trusted the building while breaking the
-  commandments. The blind and lame healed in the temple (21:14) against 2 Samuel 5:8's exclusion: the ones the rulers kept out, he
-  heals inside. Psalm 8:2 and 8:4: *the son of Adam* (never son of man). The fig tree (21:18–22): the tree with leaves and no fruit is
-  the house as it stood (Jeremiah 8:13, Hosea 9:10, Micah 7:1) — the judgment is on fruitlessness, not on the people's existence.
-  *By what authority* (21:23–27, 4 cards): no thread covers it — new thread `matthew-21-…`; John's baptism and the Father's voice are
-  the credential (Deuteronomy 18:15). The two sons: doing, not saying (Matthew 7:21, Ezekiel 33:31, James 1:22). The wicked
-  husbandmen (21:33–46): the vineyard is Yashar'el (Israel) (Isaiah 5:1–7, Psalm 80), the husbandmen are the rulers, the prophets
-  slain are named in the targets. **21:43, *the kingdom… given to a nation bringing forth the fruits thereof*:** the nation is the
-  gathered twelve tribes under the new covenant — Lo-Ammi made Ammi (Hosea 1:9–10, 2:23), the two sticks one (Ezekiel 37), the new
-  heart (Ezekiel 36:26), *an holy nation* (1 Peter 2:9), the 144,000 of the tribes (Revelation 7:4) — the targets already say so.
-  Never "the kingdom passed from Israel to the church" or "to the Gentiles". The stone (Psalm 118:22, Isaiah 28:16, 8:14): Daniel
-  2:34/44 cards say what Daniel's stone does in Daniel — a kingdom that breaks the kingdoms — and stop there; no Revelation reading
-  of Daniel. Isaiah 60:12 (21:44): the nation that will not serve perishes — say it plainly.
-- **Chapter 22.** The wedding feast: the bidden who would not come and killed the servants are the rulers who killed the prophets
-  (22:6–7 with 23:37, Jeremiah 7); *their city* burned is Jerusalem's judgment; those gathered from the highways, *bad and good*,
-  are the scattered and the poor of the land brought in — not "the Gentiles replacing Israel". The garment is the righteousness
-  the guest must wear (Isaiah 61:10, Zechariah 3:3–4, Revelation 19:8 *the righteousness of saints*) — works are tested at the
-  feast; *many are called, but few are chosen* with Isaiah 6:9 as in chapter 20. Caesar's coin: the image on man is Elohim's
-  (God's) (Genesis 1:26) — render that. The Sadducees: *Elohim (God) is not the Elohim (God) of the dead, but of the living* — he
-  draws the resurrection out of Exodus 3:6 (the method is inference, line upon line; say he reasons it from the text). The angels
-  of 22:30 beside Genesis 6:1 and Jude 6: the resurrected do not marry; the angels who took wives sinned — hold that contrast, do
-  not say angels cannot marry. The great commandment: Deuteronomy 6:4–5 and Leviticus 19:18 — *on these two commandments hang all
-  the law and the prophets* means the Torah hangs on them, not that love replaces the Torah (Romans 13:8–10, Galatians 5:14,
-  James 2:8 say the same). *David's Lord* (Psalm 110:1): the one David calls *my Lord* sits at Yahuah's (the LORD's) right hand —
-  the Formed beside the Formless; he is Elohim (God) and has a Father. Daniel 7:13: *like the Son of Adam* — keep the *like*.
-- **Chapter 23 — carries weight; write every card with care.** *The scribes and the Pharisees sit in Moses' seat: all therefore
-  whatsoever they bid you observe, that observe and do; but do not ye after their works* — what is read from the seat is Moses;
-  the Torah they read stands; their works and the burdens laid on top of it are the fault. Phylacteries and borders (23:5 with
-  Exodus 13:9,16, Numbers 15:38, Deuteronomy 22:12): the commandment stands — he wore the border himself (Matthew 9:20, 14:36);
-  what he strikes is the enlarging to be seen. *Call no man your father… one is your Father* (Isaiah 63:16, 64:8, Deuteronomy
-  32:6) — not an anti-clergy slogan; the Father alone is Father. The proselyte made *twofold more the child of hell* (23:15) beside
-  Galatians 1:6, 3:1, Acts 15:1–10: the same gospel of flesh credentials — be circumcised, be made one of us, and you are in — that
-  the agitators carried to Galatia; the yoke *neither our fathers nor we were able to bear* is that system, never the Torah. Say
-  it as the texts show it; do not write "Judaizer". Swearing (23:16–22): Leviticus 19:12, Numbers 30:2, Deuteronomy 23:21 stand;
-  the oath by gold and gift is the dodge. Tithe of mint (23:23): *these ought ye to have done, and not to leave the other undone*
-  — the tithe stands AND judgment, mercy, faith (Micah 6:8, Hosea 6:6); never "mercy instead of the commandment". Whited
-  sepulchres: Numbers 19:11 is the real uncleanness they hid under paint; Ezekiel 13:10's untempered mortar. *Generation of vipers*,
-  *your father the devil* (23:33 with Genesis 3:15, John 8:44): the seed of the serpent surfacing among the rulers — sons of
-  Belial inside the covenant people — never "the Jews" as a people; the people are the sheep these men devoured. The blood from
-  Abel to Zechariah (Genesis 4:8, 2 Chronicles 24:20): the measure filling (Genesis 15:16, Deuteronomy 32:34, 1 Thessalonians
-  2:14–16). *O Jerusalem… as a hen gathereth her chickens* (Deuteronomy 32:11, Ruth 2:12, Isaiah 31:5): he is the one who spread
-  his wings over them of old. *Your house is left unto you desolate* (Jeremiah 12:7, 22:5): the house — temple and rule — not the
-  people's existence. *Ye shall not see me henceforth, till ye shall say, Blessed is he that cometh in the name of Yahuah (the
-  LORD)* (Psalm 118:26): Yahudah (Judah) sees him again when they say it — Zechariah 12:10 *they shall look upon me whom they have
-  pierced*, the third brought through the fire (Zechariah 13:8–9), *and so all Yashar'el (Israel) shall be saved* (Romans 11:26).
-  The hen thread (anchored 23:29–39) exists: fill it for 23:29–39. The map's `seat-of-moses-*` slugs are one scene (23:1–12): the
-  `the-pride-and-religious-status…` thread is anchored there and thin — fill it, or make ONE new thread for 23:1–12 if you judge
-  the Torah-source cards (tefillin, tsitsit, our Father) need their own; not four.
-- **Chapter 24 — carries the most weight; Fable reads every card.** Rules first: **Daniel and Revelation are separate books.**
-  Matthew 24:15 itself says *spoken of by Daniel the prophet*, so the Daniel 9:27 and 12:1 cards stand on Matthew's own citation —
-  write what Daniel's verse says. The Revelation cards (6:12, 8:12, 1:7, 14:14, 19:11, 7:1, 14:1, 11:1, 13:5, 3:3, 16:15, 19:17):
-  write what the Revelation verse itself says beside the Matthew verse. Never read Daniel's figures through Revelation's or
-  Revelation's through Daniel's; never "Daniel's beast is Revelation's beast"; never place one book's timeline inside the other.
-  **24:31, *gather together his elect from the four winds*:** this is the gathering of the scattered twelve tribes home — the
-  targets say it (Deuteronomy 30:4, Isaiah 11:11–12, 27:13, 43:5, 56:8, Jeremiah 31:8, Ezekiel 37:21), the great trumpet of the
-  feast (Leviticus 23:23–24, Numbers 29:1). It is NOT a rapture, not being taken to heaven. The 1 Thessalonians 4:13 card: write it on
-  the hope for them that sleep and the dead in Messiah (Christ) rising at his coming — do not equate 24:31 with being *caught
-  up*; the 1 Corinthians 15:51 card: *changed* at the last trump — the resurrection at his coming; say that and no more. Revelation
-  7:1 and 14:1: the sealed of the tribes of Yashar'el (Israel), by name. **24:40–41, *one shall be taken, and the other left*:**
-  read it with 24:39 — in Noah's day the flood *took them all away*; the ones taken were taken by judgment. Beside Matthew 13:30
-  and 13:41 the order is the text's: the tares are gathered out and burned FIRST, then the wheat is gathered. Never write it as
-  the righteous taken up and the wicked left. **24:36, *of that day and hour knoweth no man… but my Father only*:** the Son
-  submits to the Father; he is Elohim (God) and has a Father — do not explain it away ("in his humanity"), do not collapse the
-  two. Psalm 110:1 beside it: the one at the right hand waits on the Father. **24:29–30:** the sun darkened, the moon not giving
-  light — Isaiah 13:10, 34:4, Joel 2:10, 2:31, 3:15, Ezekiel 32:7, Amos 8:9, Zephaniah 1:14 all name the day of Yahuah (the LORD);
-  *the Son of Adam coming in the clouds* — Daniel 7:13 *like the Son of Adam* (keep the *like*); Psalm 104:3, Isaiah 19:1, Nahum
-  1:3: the cloud rider is Yahuah (the LORD) himself, and the one coming is he. Zechariah 12:10: they look on him whom they
-  pierced. The signs-of-the-end and the four-winds threads are anchored on 24:10–31 and 24:27–31 — fill them for 24:29–31. **The
-  temple (24:1–2, Jeremiah 7, 26, Micah 3:12, Matthew 23:38, Luke 19:41)** and **the beginning of sorrows (24:4–14)** and **the
-  abomination (24:15–22)** and **false christs, the lightning, the eagles (24:23–28)** and **heaven and earth pass, my words
-  shall not (24:32–35, Isaiah 40:8, 51:6, Psalm 102:25–26, Matthew 5:18)** and **the day and hour, the thief, watch (24:36–44)**
-  have no Matthew thread: new threads `matthew-24-…` are right for these — the map's three `day-and-hour` sub-slugs are ONE
-  thread. 24:9 → Matthew 7:23 *ye that work iniquity*: iniquity there is lawlessness, Torah set aside — the
-  `lord-lord-and-torahlessness` thread exists for exactly that; 24:12 *iniquity shall abound* is the same word. 24:9 → Isaiah
-  60:1–3, 66:18–19: *the Gentiles shall come to thy light* and *those that escape… unto the nations* are the scattered coming home
-  to Zion and the proclamation going out to where they are — keep "Gentiles" where the verse has it; never "the nations converted".
-  24:14 *this gospel of the kingdom shall be preached in all the world*: the kingdom proclaimed broadly, the sheep hear where they
-  are. 24:5, 24:23–26 the false christs: the counterfeit comes in his name; name no modern figure. 24:28 *wheresoever the carcase
-  is, there will the eagles be* with Job 39:30, Hosea 8:1, Isaiah 56:9, Revelation 19:17: judgment gathers the birds to the
-  slain — say what the verses show. Deuteronomy 13:1–3 (24:23–24): the false prophet with signs is tested by whether he draws
-  away from Yahuah's (the LORD's) commandments. 24:32–34 the fig tree: leaves, then summer near — do not date it, do not make it
-  a modern state; *this generation* stays the text's words. 24:37–39 Noah with Genesis 6:1, 7:1, 2 Peter 2:5, 3:3–10: the world
-  that then was, the sons of Elohim (God) who took wives — the Noah thread is anchored 24:37–39; fill it. 24:42–44 the thief:
-  1 Thessalonians 5:1–4, 2 Peter 3:10, Revelation 3:3, 16:15 — watch; the day comes as a thief on those not watching. 24:45–51
-  the faithful and wise servant: the thread exists at 24:45–51; fill it; Matthew 25:14 (the talents) is the next scene's same
-  stewardship.
-- **Chapter 24 is 92 cards.** Take it in two passes if you must (24:1–31, then 24:32–51), but one draft file. Run precheck after
-  each pass.
+- **Never call Yahusha (Jesus) "the King" in your own prose.** The old notes and some old thread titles do it ("the King's look", "the King
+  resurrected") — that is house shorthand. Use his name, Yahusha (Jesus), every time. Where a quoted verse says *King* (Matthew 27:11, 27:37,
+  25:34, 25:40, Zechariah 14:16) the verse says it; you do not. The precheck now flags "the King" in prose.
+- **Peter, Judas, Caiaphas, Pilate, Joseph of Arimathea, Mary Magdalene** in plain English. The old notes write "Kefa" and "Yahudah" for Judas
+  — Yahudah (Judah) is the house and the tribe; Judas is Judas.
+- **Threads.** Same order as before: (1) the thread anchored on this card's own Matthew verses when its subject matches; (2) a new
+  `matthew-<ch>-…` thread when three or more cards of the chapter sit in a scene no Matthew thread covers; (3) a thread anchored in another
+  book only when the card's target IS that book's parallel verse or the card is plainly about exactly that subject; (4) a wide theme thread
+  with no anchor only when the card is about that theme and not its own scene. The map proposes several sub-slugs for one scene
+  (`matthew-25-the-sheep-and-the-goats-other-witnesses / -revelation / -prophets-and-histories`; `matthew-26-the-plot-against-yahusha-
+  torah-witnesses / -gospel-parallels / -other-witnesses / -revelation`): **one scene is ONE thread** — and where a live thread is already
+  anchored on that scene (the sheep-and-goats thread at 25:31–46, the thirty-pieces thread, the blood-of-the-new-covenant thread, the
+  veil thread) it gets FILLED, not given a second thread. A thread that exists gets FILLED, never duplicated.
+- **Chapter 25 — the post-harvest sifting; carries weight.** The three parables and the throne are one scene of judging the household's
+  works. The ten virgins are all virgins of the house with lamps; the five shut out are told *I know you not* (25:12) — that is said to
+  the unfruitful of the household, not to outsiders or to tares, the same word as Matthew 7:23. The talents: the servants are all *his
+  own servants*; the unprofitable one is cast out for bearing nothing — works are judged. The sheep and the goats (25:31–46): the ones
+  gathered *before him* are the gathered of all nations — the elect gathered from the four winds (24:31), brought out of the nations
+  (Ezekiel 37:21) — and the sheep are sorted from the goats by what they did to *the least of these my brethren*. Never "the nations
+  judged by how they treated the Jews", never "the Gentiles judged apart from Israel", never "everyone is saved by good works". The
+  *brethren* of 25:40 are his brethren by the fathers' blood — the targets say so (Hebrews 2:11, 2:16 *the seed of Abraham*, Psalm 22:22,
+  Romans 8:29, Deuteronomy 17:15 *from among thy brethren*, Matthew 12:46–50 *whosoever shall do the will of my Father*, Matthew 28:10 and
+  John 20:17 *my brethren* said by the risen one); Acts 9:4 *why persecutest thou me* — he counts what is done to them as done to him.
+  *Inherit the kingdom prepared for you from the foundation of the world* (25:34): the inheritance was theirs before they did a thing; the
+  works reveal who kept it. Deuteronomy 33:2, Zechariah 14:5, 2 Thessalonians 1:7, Revelation 19:11 beside 25:31: the one who came at
+  Sinai with his holy ones is the one who comes with his angels. Isaiah 2:2, Micah 4:1, Isaiah 60:1, 66:18, Zechariah 14:16, Joel 3:1,
+  Revelation 21:24 beside 25:34 and 25:46: the nations left alive after the day come up to Zion and are taught — that is the reign, when
+  the gathered seed is a kingdom of priests to them; say what each verse shows and no more. Revelation 20:4, 20:10, 20:14, 21:1, 22:1 and
+  Daniel 12:2, Isaiah 66:24: write what each verse itself says beside Matthew's *everlasting punishment* and *life eternal*; Daniel and
+  Revelation never through each other. *Prepared for the devil and his angels* (25:41) beside 2 Peter 2:4 and Jude 6: the fire was made for
+  the angels that sinned — the ones who left their estate before the flood — and men go there only by choosing their side. 25:41 → John
+  3:16: the old note meant 1 John 3:16–18 (*not in word, but in deed*); write honestly to John 3:16 on the page — the Father's giving of
+  the Son against the *depart from me* — and flag that the note meant 1 John. Isaiah 58:6, 61:1, Job 31:16, Proverbs 19:17, 21:13,
+  James 4:17, Deuteronomy 10:18: the works named at the throne are the Torah's own works of mercy — the commandment kept, not a new
+  standard replacing it. Cards 2990 and 2991 are a reversed pair; both are orphans, so both are written and both kept.
+- **Chapter 26 — the Passover, the cup, the trial; carries weight.** *Ye know that after two days is the feast of the passover* and 26:17–19:
+  he kept the feast as Moses gave it; Exodus 12 stands and he is the lamb of it (1 Corinthians 5:7, John 1:29, 1 Peter 1:18–19, Isaiah
+  53:7, Genesis 22:8, Revelation 5:6, 7:14, 12:11, 19:7) — the feast is not done away by his death; it is filled. **The cup, *this is my
+  blood of the new testament, which is shed for many*** (26:28) with Exodus 24:8 and Jeremiah 31:31: the new covenant is the covenant made
+  *with the house of Yashar'el (Israel), and with the house of Yahudah (Judah)* — both houses, the Torah written on the heart (Jeremiah
+  31:33) — never "the church", never a covenant that replaces the commandments; the *many* are the seed of promise (Isaiah 53:10–11). The
+  anointing at Bethany: 1 Samuel 10:1 and 16:13 are the anointing of a king; he says she did it *for my burial* — say both as the texts
+  stand. Deuteronomy 15:11 *the poor shall never cease out of the land* — the commandment to the poor stands; he quotes it. Judas: Zechariah
+  11:12–13 and the thirty pieces, John 13:2, 13:27 Satan entering — Judas chose; name no "Yahudah". **Gethsemane, *O my Father, if it be
+  possible, let this cup pass from me: nevertheless not as I will, but as thou wilt*** (26:39): the cup is the Father's cup of wrath
+  (Psalm 75:8, Isaiah 51:17) and he drinks it; the Son submits to the Father — he is Elohim (God) and he has a Father; say both, collapse
+  neither, do not explain it away ("in his humanity"). The arrest: Zechariah 13:7 *smite the shepherd*, Psalm 55:12 the familiar friend,
+  Proverbs 27:6 the kiss, Genesis 9:6 beside the sword — he refuses it; John 10:17 he lays his life down himself, no man takes it.
+  **The trial before the high priest (26:57–68).** Deuteronomy 19:15: the Torah requires two agreeing witnesses — the court could not find
+  them (26:60) and condemned him anyway; the Torah stood, their court did not keep it. Isaiah 50:6, 53:7: he held his peace. **26:64,
+  *Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven*:** Psalm 110:1 — the one
+  David calls *my Lord* sits at Yahuah's (the LORD's) right hand, the seen one beside the unseen Father; Daniel 7:13 — *one like the Son of
+  Adam* comes with the clouds; **keep Daniel's *like*** and say what Daniel's own verse gives him (Daniel 7:14), nothing from Revelation.
+  The high priest heard blasphemy because he understood the claim: the one before him was saying he is the one at the right hand. Peter's
+  denial (26:69–75) with 26:33, Psalm 51:17, Joel 2:12, John 21:15: Peter fell, wept, and was restored — a sheep that stumbled, never
+  condemned; write him kindly. The Mark, Luke and John parallels (26:47, 26:57, 26:69): say what the other gospel adds to Matthew's telling.
+- **Chapter 27 — carries weight at 27:25.** Judas and the field: Zechariah 11:12–13 the thirty pieces cast to the potter; Jeremiah 19:1–2
+  and 32:6–9 (Matthew names *Jeremy the prophet*, 27:9 — the potter's vessel at the valley and the bought field; write what each Jeremiah
+  verse says); Psalm 109:8 his office to another; Acts 1:16–20; Deuteronomy 23:18 — the price of blood may not come into the house, so they
+  bought a field with it. Pilate: Isaiah 53:7 he answered nothing; Deuteronomy 21:1–9 the hands washed over innocent blood — Pilate borrowed
+  the gesture and not the innocence; Acts 3:13, 4:25–27 (Psalm 2) the rulers gathered against the anointed. **27:25, *His blood be on us,
+  and on our children*:** said by the crowd the chief priests and elders stirred (27:20) — the verdict belongs to the rulers and the system
+  that owned the court, never to "the Jews" as a people under a curse; the people are the sheep those shepherds devoured (Ezekiel 34), and
+  the same house will *look upon me whom they have pierced, and they shall mourn* (Zechariah 12:10). Never write a curse on a people. The
+  mocking (27:27–31): Isaiah 50:6, 53:3, 53:7; Psalm 22:7, 22:16 (write to the verse on the page, not to 22:18's lots); Genesis 3:18 beside
+  the crown of thorns — the thorns of the curse on the ground set on his head — and Genesis 3:15 the seed who bruises the serpent's head:
+  say it as the two texts stand, as a reading line on line, not as a stated fulfilment. The crucifixion (27:39–50): Psalm 22:1 his own
+  cry, Psalm 69:21 the vinegar, Amos 8:9 the darkness at noon is the day of Yahuah's (the LORD's) darkness, John 10:17–18 he gives up his
+  own life, Hebrews 5:7. The veil (27:51 → John 19:31, the veil thread exists — fill it): say what the two verses say; do not write that the
+  temple or its service was abolished by the tearing. The burial: Isaiah 53:9 *with the rich in his death*; Joseph of Arimathea; 28:11 the
+  watch set.
+- **Chapter 28 — *teach them to observe all things*; carries weight.** The empty tomb: Matthew 12:38–40 the sign of Jonah, 26:32 *after I am
+  risen again, I will go before you into Galilee*; Leviticus 23:15 the sheaf waved *on the morrow after the sabbath* — he rose as the
+  firstfruits in the feast's own count (1 Corinthians 15:20); say the count the verse gives and do not build a calendar on it. *Go tell my
+  brethren* (28:10) with John 20:17, Hebrews 2:11, Matthew 25:40: the risen one calls them brethren — the same brethren of 25:40. 28:11–15:
+  the guards paid to lie, Acts 4:1–3 and 5:17 the same rulers suppressing the witness — the system, not the people. 28:16 the mountain in
+  Galilee: Matthew 17:1 and 5:1 are other mountains; do not make them one mountain unless the text does (it does not). Luke 24:36, John
+  20:24–29 the doubting; Acts 1:15–26 the twelve made whole again. **28:18–20.** *All power is given unto me* — Psalm 110:1 and Psalm 8:6
+  *thou hast put all things under his feet* (the son of Adam of Psalm 8:4): given by the Father to the Son; he is Elohim (God) and has a
+  Father. Matthew 1:21 and 1:23 beside 28:18–20: Yahusha (Jesus) — Yahuah (the LORD) saves — and *El (God) with us* open the book, *I am
+  with you alway* closes it. **28:19, *baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Ghost)*:**
+  one name; the Father unseen, the Son who is seen, the Spirit — no "Trinity", no "three persons", and no collapsing them into one either;
+  the live thread for it exists — fill it. **28:20, *Teaching them to observe all things whatsoever I have commanded you*** beside Matthew
+  5:17–19 and 7:21: what he commanded is the Father's commandments kept — the Torah taught to the gathered, not a new law in its place;
+  never "the law ended at the cross", never "the great commission to the Gentiles replacing Israel". *Teach all nations*: the proclamation
+  goes out to where the scattered sheep are (Deuteronomy 30:1–4); the sheep hear where they are. Mark 16:14–15, Luke 24:44–47, John 20:21
+  beside 28:18: the other gospels' sending — Luke's *beginning at Jerusalem*, John's *as my Father hath sent me*.
 
 ## Voice rules (non-negotiable)
 - **Come and See.** The verses are on the page; the prose points at them. Never tell the reader to go look

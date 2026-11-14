@@ -380,3 +380,48 @@ means a back-fill can re-run safely over the already-merged canon rows.
   NEXT (S501): batch b5 = Matthew 25–28 (map counts 69, 67, 37, 25 = 198 — the last Matthew batch) — add `'b5': ('matthew', range(25, 29))`; re-dump first.
   Ch 25 (the virgins, the talents, the sheep and goats — the post-harvest sifting, works judged) and 26–27 (the Sanhedrin trial's Psalm 110 + Daniel 7, "his
   blood be on us" = system not people, the veil) carry the weight. After b5: Mark and Luke orphans per the S495 maps.
+- **2026-11-14 (S501) — MATTHEW REBUILD BATCH 5 (Matthew 25–28) DEPLOYED — THE MATTHEW REBUILD IS CLOSED.** Matthew re-dumped first (Nov 13 22:09 CST,
+  orphan 198 confirmed). 198 orphan cards rewritten in place, 198 members (16 existing threads filled, 8 new: matthew-26-the-plot-and-the-passover-lamb (26:1–5);
+  matthew-26-bethany-the-anointing (26:6–13); matthew-26-the-arrest (26:47–56); matthew-26-peters-denial (26:69–75); matthew-27-judas-and-the-potters-field
+  (27:3–10); matthew-27-pilate-and-barabbas (27:11–26); matthew-27-the-burial (27:57–66); matthew-28-the-watch-and-the-story-they-paid-for (28:11–15)),
+  14 unanchored S1xx threads anchored on the anchors their own summaries name (sheep-and-goats 25:31–46, virgins 25:1–13, last-supper 26:26–29, Sanhedrin-
+  trial 26:64, thirty-pieces 26:14–16, the Psalm 22 cry 27:46, his-blood-be-on-us 27:25, the crucifixion 27:33–50, the veil 27:51, the resurrection 28:1–10,
+  women-first-witnesses 28:1–10, great-commission 28:18–20, teaching-them-to-observe 28:20, the baptism name 28:19; the talents thread 25:14–30, saints-
+  arising 27:51–53 and gethsemane 26:36–46 sit ready in ref/anchors496.json — no card joined them). Same chain (`'b5'` in BATCHES; common496's prose
+  scan now also flags "the King" in a drafter's prose — the b3 lesson made a check). Four Sonnet 5.5 drafters in parallel → Fable read of every card
+  (`_s496/tools/read496_b5.py`: 4 corrections — brief instructions leaking into prose at 26:57→Daniel 7:13 ("Daniel keeps the word like… all Daniel's own
+  page gives"), 27:27→Genesis 3:15 ("so this is a reading line on line"), 28:1→Leviticus 23:15 ("Nothing here fixes a date"); a verse number cited in passing)
+  → assemble PASS (27 drafter flags, all working readings inside the texts) → scratch ×2 + five tampers PASS → first deploy attempt 13:21 CST failed at
+  connect (Render's IP allowlist — Yoshi's IP had changed; nothing sent) → DEPLOYED Nov 14 13:24 CST (`_session496_matthew_b5_deploy.log`): 198/198 ·
+  198/198 · 8/8 · 14/14 · 0 dups · 25–28 each 0 orphans · **orphan cards left in the whole book: 0** · check496 PASS. The cards as they read:
+  `_s496/out/matthew_b5_cards.md`.
+  HELD AS THE BRIEF SET THEM (ch 25–28): the virgins, the talents and the sheep and goats are one judging of the household's works — *I know you not*
+  (25:12) is said to the unfruitful of the house; the gathered *before him* are the elect gathered out of all nations (24:31, Ezekiel 37:21), sorted sheep
+  from goat by what was done to *the least of these my brethren*, and the brethren are kin by the fathers' blood (Hebrews 2:11, 2:16, Psalm 22:22,
+  Deuteronomy 17:15, Matthew 28:10, John 20:17); the nations of Isaiah 2:2, 60:1, 66:18, Micah 4:1, Zechariah 14:16, Joel 3:1, Revelation 21:24 come up to
+  Zion in the reign and are not the heirs; the fire of 25:41 was prepared for the angels that sinned (2 Peter 2:4, Jude 6); Passover kept as Moses gave it
+  and filled, not undone (Exodus 12, 1 Corinthians 5:7–8); the cup of 26:28 is the new covenant with both houses, Torah on the heart (Exodus 24:8, Jeremiah
+  31:31–33); 26:64 Psalm 110:1 + Daniel 7:13 with Daniel's *like* kept and only Daniel 7:14 given him; Deuteronomy 19:15 — the Torah stood, the court did
+  not keep it; Peter fell, wept, was restored, never condemned; 27:25 is on the rulers and the court that owned it, never a curse on a people (Zechariah
+  12:10 the same house mourns); the thorns (Genesis 3:18, 3:15) read line on line, not as a stated fulfilment; the veil torn with the preparation and the
+  Sabbath still kept; 28:16's mountain is not 17:1's or 5:1's; 28:18–20 — all power *given*, the one name of Father, Son and Ruach HaKodesh (no Trinity
+  language, no collapse), *teach them to observe all things* = the Torah taught (5:17–19, 7:21, John 14:15); *all nations* = where the scattered sheep are.
+  No drafter called him "the King".
+  MATTHEW REBUILD TOTALS (b1–b5, S496–S501, Nov 10–14): 1,308 orphan cards rewritten in place → 0 orphans; 1,308 thread members; 30 new Matthew-anchored
+  threads (3 + 5 + 3 + 11 + 8); 37 unanchored S1xx threads anchored (10 + 9 + 3 + 1 + 14); 5 migrations `session496_matthew_b1…b5_rebuild.sql`; Fable
+  corrections ~20 (b1, counted from read496.py) / 12 (b2) / 34 (b3) / 17 (b4) / 4 (b5). The chain (`_s496/tools`) is the reusable UPDATE path for the rest of the orphan block.
+  FOR THE RE-POINT PASS (with 3675, 3815, 3806, 3912, 3913, 4009): 4109 Matthew 25:41 → John 3:16 — the old note meant 1 John 3:16–18 (*not in word, but
+  in deed*); written honestly to John 3:16 meanwhile.
+  FOR THE PIPELINE (not changed, flagged): live Isaiah 2:2 reads *the mountain of the LORD'S house* — the possessive small-caps LORD'S is not restored
+  (quoted as it stands in cards 3008/3009); live Luke 22:61 reads *Yahusha (Lord) turned, and looked upon Peter* and 1 Corinthians 11:23 *received of
+  Yahusha (the Lord)… Yahusha (the Lord Jesus)* — the S182 NT-*Lord* rule (Lord referring to Yahusha stays *Lord*) is not applied there; quoted as they
+  stand in the Peter-denial summary and card 4129.
+  FOR THE SUMMARIES SWEEP: the 14 threads anchored today still carry their S1xx summaries ("the substantial-substance…", "the King", "grid", "FRAMEWORK-
+  MAJOR", slug in bold code) — next after the centurion thread; the `_s499c` chain does title/summary.
+  NEXT (S502): the Mark (169) and Luke (61) orphans, same chain, likely one session. Differences from Matthew: every Mark note and 56 Luke notes carry a
+  `thread:slug |` prefix (no slug resolves to a live thread — strip it, pass it as a map hint); 5 Mark + 12 Luke DOCREF cards; packet496 hard-codes
+  `live/canon__matthew.json` / `map/matthew_orphan_map.json` and must take the book from BATCHES (gen_sql/seed/check are keyed by `{book}_{batch}` already —
+  verify before trusting); re-dump Mark AND Luke first (the Nov 9 dumps are stale); batches `'m1': ('mark', range(1, 17))` and `'l1': ('luke', range(1, 25))`,
+  drafters by block (Mark 1–4 / 5–8 / 9–12 / 13–16; Luke 1–8 / 9–16 / 17–24), 4 reversed-pair dups each against Matthew cards now threaded and sound —
+  retire the Mark/Luke orphan only if its Matthew twin says the same thing. Then the 24 stragglers (Joshua 12, Revelation 6, Romans 3, 1 Thess 2, Genesis/
+  Ezekiel/2 Esdras/2 Baruch 1 each), the re-point pass, the summaries sweep.

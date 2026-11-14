@@ -12,7 +12,7 @@ for p in (HERE, W6.parent / '_s495' / 'tools'):
 if not os.environ.get('S495_HOME') and (HERE / 'common495.py').exists(): os.environ['S495_HOME'] = str(W6)   # sandbox layout: live/ parsed/ beside tools/
 from common495 import *   # W (the S495 root: live/, parsed/), parsed_text, NAMES, norm, quote_in, has_phrase_of, forbidden_scan, TRAIL_RE, LEAD_RE, ...
 
-BATCHES = {'b1': ('matthew', range(1, 8)), 'b2': ('matthew', range(8, 14)), 'b3': ('matthew', range(14, 20)), 'b4': ('matthew', range(20, 25))}
+BATCHES = {'b1': ('matthew', range(1, 8)), 'b2': ('matthew', range(8, 14)), 'b3': ('matthew', range(14, 20)), 'b4': ('matthew', range(20, 25)), 'b5': ('matthew', range(25, 29))}
 ED = 'canon'
 TITLES = dict(canon_titles()); TITLES['psalms'] = 'Psalm'
 def live_file(book): return W / 'live' / f'canon__{book}.json'
@@ -28,6 +28,7 @@ EXTRA = [(re.compile(p, f), label) for p, f, label in [
     (r"\bvv?\.\s?\d", 0, "'v.N' shorthand"),
     (r"\b(?:Tanakh|Old Testament|New Testament|NT|OT|LXX|Septuagint)\b", 0, 'scholar shorthand'),
     (r"→|=>|\+ ", 0, 'arrow / plus shorthand'),
+    (r"\bthe King(?:'s|’s)?\b(?! of)", 0, '"the King" as a name for Yahusha (Jesus) — use his name (b3 lesson)'),
 ]]
 SACRED = r"(?:Ruach HaKodesh|Yahusha HaMashiach|HaMashiach Yahusha|Yahuah Elohim|Yahuah|Yahusha|Elohim|Messiah|Yashar'el|Yashar’el|Yahudah|Yahudim|Yahudi)"
 BARE_SACRED = re.compile(rf"\b{SACRED}(?:'s|’s)?(?!\s*\()(?![A-Za-z'’])")
