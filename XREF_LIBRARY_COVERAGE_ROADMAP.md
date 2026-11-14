@@ -315,3 +315,39 @@ means a back-fill can re-run safely over the already-merged canon rows.
   and "the believing stranger"; other S1xx thread summaries carry "stranger grafted in" language the cards no longer follow. NOTED: 1 John 3:4 and
   3:8 in parsed/canon.json read "goes on sinning" (a per-verse rendering, not the KJV wording) — cards quote it as the library carries it.
   NEXT (S498): batch b3 = Matthew 14–19 (map counts 42, 41, 38, 51, 50, 72 = 294) — add `'b3': ('matthew', range(14, 20))`; re-dump first.
+- **2026-11-13 (S499) — MATTHEW REBUILD BATCH 3 (Matthew 14–19) DEPLOYED.** S499/S499b had gone live first (Noah and the Old Testament spellings of the
+  Greek-form names in live verses, cards, notes and summaries; parsed/canon.json the same), so Matthew was re-dumped (Nov 13 12:45 CST, orphan 860 confirmed)
+  and every quotation this batch writes carries the new spellings. 294 orphan cards rewritten in place, 294 members (28 existing threads filled, 3 new:
+  matthew-14-the-mountain-where-he-goes-apart (14:22–23); matthew-15-plants-the-father-did-not-plant-and-blind-guides (15:13–14); matthew-18-binding-and-
+  loosing-by-two-or-three-witnesses (18:18–20)), 3 unanchored extras threads anchored on their summaries' opening verses (gathering-of-the-scattered-twelve-
+  tribes… 15:24; reward-according-to-works… 16:27; the-gates-of-sheol… 16:18; 12 more ch 14–16 anchors sit ready in ref/anchors496.json for threads no card
+  joined). Same chain (`'b3'` in BATCHES). Six Sonnet 5.5 drafters in parallel → Fable read of every card (`_s496/tools/read496_b3.py`: 34 corrections —
+  ch 19's "the King" as the drafter's name for Yahusha (Jesus), the S1xx shorthand, → Yahusha (Jesus) throughout; 14:23→28:16 no longer one mountain;
+  Genesis 17:1 member "long before Sinai") → assemble PASS (40 drafter flags, all working readings inside the texts) → scratch ×2 + five tampers PASS →
+  DEPLOYED Nov 13 20:11 CST (`_session496_matthew_b3_deploy.log`): 294/294 · 294/294 · 3/3 · 3/3 · 0 dups · 14–19 each 0 orphans · check496 PASS.
+  Matthew orphans left: 566 (chapters 20–28). The cards as they read: `_s496/out/matthew_b3_cards.md`.
+  READ AND SETTLED (Yoshi, Nov 13): the woman of Canaan is seed revealed — a woman from that land who quoted the covenant (*Son of David*, 15:22) and
+  believed, one of the scattered sheep of 15:24; not the marriage door (Ruth, Rahab), which stays a separate mechanism. Cards 2871–2878, 3518–3521,
+  177460 read that way. Counter-text to be ready for: Mark 7:26 *a Greek, a Syrophenician by nation* — answered by Lo-Ammi (Hosea 1:9–10).
+  FOR THE SUMMARIES SWEEP (outside this chain): the live thread matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-
+  psalm-22-1-kings-17 — its title and summary still read her as a stranger joined by faith ("grafted", "gentile woman", Psalm 22:27 as the nations
+  turning); the cards inside it no longer say so. Add to the centurion-thread item from S497.
+  FOR A RE-POINT PASS (not this chain): card 3675 pairs Matthew 19:16 with John 2:3 (no wine at Cana); its old note was "the 1234 of Truth" — 1 John 2:3
+  was meant. The card is written to John 2:3–5 honestly meanwhile.
+  NEXT (S500): batch b4 = Matthew 20–24 (map counts 56, 88, 62, 70, 92 = 368 — the biggest; split 20–22 / 23–24 if the read runs long) — add
+  `'b4': ('matthew', range(20, 25))`; re-dump first.
+  YOSHI'S READING OF MATTHEW 15:21–28 (Nov 13, for the Canaanite-woman thread summary when the sweep rewrites it): v.24 is said to the disciples who
+  said *send her away* — he is telling them who she is: the lost sheep of the house of Yashar'el, his whole errand (10:6). She is called a dog because
+  the divorced house (Jeremiah 3:8) cannot be taken back while the husband lives (Deuteronomy 24:4; Romans 7:2–4) — *let the children first be filled*
+  (Mark 7:27): the undivorced house of Yahudah first, while he lived; the dogs after the death and resurrection, when the scattered are redeemed and
+  the bread is theirs (Hosea 2:23; 1:9–10; 28:19 after 10:5). "Dogs everywhere else in scripture" is what the scattered became — Lo-Ammi. An
+  inference line on line (Matthew 15 does not state the death as the reason); present it as one.
+- **2026-11-13 (S499c) — THE CANAANITE-WOMAN THREAD REWRITTEN AND DEPLOYED on Yoshi's reading above.** Thread 30911 (slug kept): title + summary
+  rewritten (It ain't new; 15:24 said to the disciples; Son of David; Lo-Ammi; Jeremiah 3:8; Deuteronomy 24:4; Romans 7:2,4; Mark 7:27 first;
+  Hosea 2:23; 10:5 → 28:19). Four S1xx cards rebuilt Come-and-See with member notes (124214 Isaiah 56:8, 124215 Isaiah 56:6, 124216 Psalm 22:27,
+  124217 1 Kings 17:9 — "stranger grafted"/"gentile woman" gone); three S499 cards given the reason the bread was withheld (2876, 177460, 3520).
+  Own small chain `_s496/tools/{build,gen_sql,scratch,check}_s499c.py` + `_s496/c15/` (the UPDATE path for thread title/summary and member notes,
+  which the rebuild chain does not do — reusable for the summaries sweep). Scratch ×2 + four tampers PASS → DEPLOYED Nov 13 20:32 CST
+  (`_session499c_canaanite_thread_deploy.log`): 7/7 · 7/7 · thread yes · check_s499c PASS. Summaries-sweep list: the centurion thread
+  (matthew-8-many-from-east-and-west…, "Gentile soldier") is the next item, same chain.
+

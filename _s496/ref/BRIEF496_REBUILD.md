@@ -1,4 +1,4 @@
-# S496 — the Matthew card rebuild, batch 2 (Matthew 8–13) — brief for every drafting agent
+# S496 — the Matthew card rebuild, batch 3 (Matthew 14–19) — brief for every drafting agent
 
 You are REWRITING existing cross-reference cards in a study Bible. Each card already ties one verse of Matthew (the
 SOURCE) to one verse elsewhere in the canon (the TARGET). The pairs stay exactly as they are — you do not add, drop
@@ -6,8 +6,8 @@ or re-point a card. What you write is the short prose the reader sees beside the
 for the thread list, and which thread the card belongs in. These cards were written early, in shorthand full of
 house jargon, and they sit in no thread. Your job is to make each one something a reader can simply read.
 
-**Before writing anything, read `/mnt/skills/plugins/yoshi-voice/SKILL.md` in full, then
-`/mnt/skills/plugins/yoshi-voice/references/framework-deep.md` in full.** They are the author's voice and theological
+**Before writing anything, read `/home/claude/s496/ref/yoshi-voice/SKILL.md` in full, then
+`/home/claude/s496/ref/yoshi-voice/references/framework-deep.md` in full.** They are the author's voice and theological
 standard. The twelve Red Lines are non-negotiable; the author catches violations. Your training's default reading of
 these passages is the reading this work exists to take apart — do not let it surface in a quiet phrase.
 
@@ -40,7 +40,7 @@ retype scripture from memory anywhere.
   `tgt_text_kjv` (the part of the target verse that carries the point). Verses of about 25 words or fewer: `WHOLE`.
 - **`member_sentence`** — one plain sentence (10–30 words) for the thread list, saying what this target verse adds.
 - **`thread`** — the `slug` of the existing thread the card belongs in, chosen by reading the thread's summary and
-  members against the card. Nearly every pericope of Matthew 8–13 already has a thread, so nearly every card joins one.
+  members against the card. Nearly every passage of Matthew 14–19 already has a thread, so nearly every card joins one.
   A thread that exists gets FILLED, never duplicated. Prefer the thread anchored on the card's own Matthew verse
   whose subject matches; use one of the wide theme threads (no Matthew anchor) only when the card is plainly about
   that theme and not about its own pericope's thread.
@@ -56,6 +56,40 @@ flowing sentences that quote, each on its own line in stand-alone italics with i
 Matthew verse(s) and the target verse(s) that carry the point — copied exactly from the packet's KJV texts — and
 walk the reader through the connection. Where the summary shows the older scripture already held what Matthew
 says, the author's own opener is *It ain't new* — those words, never "This is not new". Give the cards that slug.
+
+## Batch 3 notes (Matthew 14–19) — read these before the packet
+- **Names now read in their Old Testament spellings** in the live text and in the packet: Elijah (not Elias), Isaiah (not
+  Esaias), Jonah (not Jonas), Noah (not Noe), Zion (not Sion). Use those spellings in your prose; never the Greek-form ones.
+- **Chapter 15, the woman of Canaan (15:21–28).** She, the centurion (Matthew 8), Naaman (2 Kings 5) and the widow of
+  Zarephath (1 Kings 17) are not "the nations coming in" and not pictures of outsiders added by faith. They are sheep of the
+  scattered house who heard the Shepherd's voice where they were — seed of promise revealed in four places of the scattering.
+  Read Matthew 15:24 as the plain boundary it is (*I am not sent but unto the lost sheep of the house of Yashar'el (Israel)*)
+  and let her answer and his *great is thy faith* show that she was one of those sheep. Ruth (Ruth 1) is a different thing:
+  she came into the line by marriage to Boaz, the two made one — never mix the two.
+- **Chapter 15, the traditions of men (15:1–20).** What Yahusha (Jesus) strikes is the tradition laid on top of the
+  commandment (corban voiding *honour thy father and thy mother*), never the commandment, and never the food laws. *Not that
+  which goeth into the mouth defileth a man* is about eating bread with unwashed hands (15:20 says so) — it does not open
+  Leviticus 11. Where a card pairs 15:11 with Acts 10, say what Peter himself says the vision meant (*Elohim (God) hath shewed me that
+  I should not call any man common or unclean*, Acts 10:28 — only if that text is in your packet; else leave Acts 10 at what
+  its own verse in the packet says). No Acts-10-abolishes-the-food-laws reading, ever.
+- **Chapter 16.** The leaven of the Pharisees and Sadducees is their doctrine (16:12) — teaching that works through the
+  whole lump. The rock is what Peter confessed (*Thou art the Messiah (Christ), the Son of the living Elohim (God)*), not
+  Peter. The keys and binding/loosing are stewardship given, not a church's power over heaven. *The Son of Adam shall come
+  in the glory of his Father* (16:27) and *reward every man according to his works* — works are rewarded; do not soften it.
+- **Chapter 17.** The transfiguration: Moses and Elijah stand with him; *hear ye him* (17:5) sends the hearer to the one who
+  spoke the Torah, not away from it. *Elijah truly shall first come, and restore all things* — John came in that pattern, and
+  the restoring is still ahead; do not collapse it to "John was Elijah, done". The tribute money: the children are free.
+- **Chapter 18.** The lost sheep (18:12) is the same shepherd of Ezekiel 34 seeking his own scattered sheep. Binding and
+  loosing with two or three witnesses is Deuteronomy's own procedure. *Where two or three are gathered* — do not turn it
+  into a church-meeting slogan; keep it on the witnesses of 18:16–19.
+- **Chapter 19.** *What therefore Elohim (God) hath joined together* — the two made one is the creation word; Moses' bill
+  of divorce was *because of the hardness of your hearts*, a concession, not a commandment overturned. *If thou wilt enter
+  into life, keep the commandments* (19:17) — say it plainly; the commandments he lists are the Torah's. The twelve thrones
+  judging the twelve tribes (19:28): the tribes are real tribes, both houses, gathered — never a figure for "the church".
+- **Chapter 14.** John's death in Herod's house follows Elijah and Jezebel (1 Kings 19, 21); Leviticus 18:16 / 20:21 is the
+  commandment Herod broke. The feeding in the wilderness: the shepherd feeds his flock as Elisha and the manna did; twelve
+  baskets. Walking on the sea: *It is I* is the one who treads on the waves of the sea (Job 9:8) — he is the one who was seen
+  by the fathers, come in flesh.
 
 ## Voice rules (non-negotiable)
 - **Come and See.** The verses are on the page; the prose points at them. Never tell the reader to go look

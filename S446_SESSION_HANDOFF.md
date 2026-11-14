@@ -447,3 +447,9 @@ Method = S449's: clean public-domain base, parsed by chapter heading, one verse 
 ### S497 — Nov 10 22:35 – Nov 11 00:30 — Matthew rebuild batch 2 (8–13) DEPLOYED
 - Re-dump (Yoshi's paste; the Mac-side sandbox volume is full, asyncpg can't install there — DB steps stay pastes), six Sonnet drafters in parallel, Fable read every card (12 corrections), 5 new threads, 9 anchors, scratch ×2 + tampers PASS, deployed 00:28 CST, read-back PASS. 860 Matthew orphans left (14–28).
 - NOT done: git push (Yoshi). The four pre-existing modified tracked files still left alone. Open prompt: S498_SESSION_OPEN_PROMPT.md.
+
+### S499 — Nov 13 12:38 – 20:20 — Matthew rebuild batch 3 (14–19) DEPLOYED
+- Re-dump after S499/S499b name spellings (Yoshi's paste), six Sonnet drafters in parallel, Fable read every card (34 corrections, mostly ch 19 "the King" → Yahusha (Jesus)), 3 new threads, 3 anchors, scratch ×2 + tampers PASS, deployed 20:11 CST, read-back PASS. 566 Matthew orphans left (20–28). Settled by Yoshi: the woman of Canaan is seed revealed, not the marriage door. Details in XREF_LIBRARY_COVERAGE_ROADMAP.md.
+- NOT done: git push (Yoshi). Open prompt: S500_SESSION_OPEN_PROMPT.md.
+- S499c (same night, 20:23–20:32): Canaanite-woman thread 30911 title/summary + 7 cards rewritten on Yoshi's divorced-house reading, deployed, read-back PASS. Chain for thread-summary rewrites now exists (`_s499c` tools).
+
