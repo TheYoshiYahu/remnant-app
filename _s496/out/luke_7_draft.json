@@ -1,0 +1,64 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 7,
+ "cards": [
+  {
+   "id": 7006,
+   "prose": "The words are the same in both gospels. Luke adds who stood around the soldier: the elders of the Yahudim (Jews) went first, saying *he loveth our nation, and he hath built us a synagogue* (Luke 7:5), and he sent friends to say *I am not worthy* (Luke 7:6). He knew what a word can do, and Yahusha (Jesus) weighs his faith against the house itself, *no, not in Yashar'el (Israel)*.",
+   "member_phrase": "I have not found so great faith, no, not in Yashar'el (Israel)",
+   "member_sentence": "Matthew gives the same verdict on the centurion's faith, spoken to those who followed, and sets it before many coming from east and west.",
+   "thread": "matthew-8-many-from-east-and-west-sit-with-abraham-isaiah-25-malachi-1",
+   "flag": "Old note's individual-mercy carve-out dropped. The Matthew 8 thread's own summary still says Gentile soldier and believing stranger and needs rewriting."
+  },
+  {
+   "id": 7007,
+   "prose": "Both gospels bring Yahusha (Jesus) into Capernaum and put the centurion before him, but they tell the coming differently. In Matthew the centurion comes *beseeching him*. In Luke the entry follows the end of all his sayings in the hearing of the people, and the soldier sends first the elders of the Yahudim (Jews) and then friends, so that he never stands before him himself.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew has the centurion come to him himself at Capernaum, beseeching him, where Luke has him send the elders of the Yahudim (Jews) and then friends.",
+   "thread": "matthew-8-many-from-east-and-west-sit-with-abraham-isaiah-25-malachi-1",
+   "flag": "Reversed pair, written from Luke's side. The Matthew 8 thread summary still says Gentile soldier and needs rewriting."
+  },
+  {
+   "id": 7008,
+   "prose": "Yahusha (Jesus) says *This is he, of whom it is written*, and the writing is Malachi. *My messenger* is sent to *prepare the way before me*, and the same verse says who comes down that road: Yahuah (the Lord) *whom ye seek*, who *shall suddenly come to his temple*. John is the one sent ahead, and Malachi makes plain that someone greater follows him.",
+   "member_phrase": "Behold, I will send my messenger, and he shall prepare the way before me",
+   "member_sentence": "Malachi's messenger prepares the way before Yahuah (the Lord), and Yahusha (Jesus) names John as that messenger.",
+   "thread": "matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48",
+   "flag": ""
+  },
+  {
+   "id": 7009,
+   "prose": "Both gospels give the same measure of John, the greatest of those born of women, and the same turn after it, that *he that is least in the kingdom* is greater. Luke names the kind of greatness, *a greater prophet*. Matthew's next verses say what that prophet was: *all the prophets and the law prophesied until John* (Matthew 11:13), and *this is Elijah, which was for to come* (Matthew 11:14).",
+   "member_phrase": "there hath not risen a greater than John the Baptist",
+   "member_sentence": "Matthew has the same verdict on John and the same turn to the least in the kingdom, and the verses after it name him as Elijah.",
+   "thread": "matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48",
+   "flag": ""
+  },
+  {
+   "id": 7010,
+   "prose": "Luke says the people and the publicans who heard John *justified Elohim (God)*, and in the next verse the Pharisees and lawyers *rejected the counsel of Elohim (God) against themselves* (Luke 7:30). The same preaching, two answers. *My sheep hear my voice*, Yahusha (Jesus) says, and the hearing shows who they were. It does not make a sheep of what was not one.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The sheep hear his voice and he knows them, and hearing is how they are shown to be his; Luke's publicans hear John in the same way.",
+   "thread": "my-sheep-hear-my-voice-hearing-reveals-not-creates",
+   "flag": ""
+  },
+  {
+   "id": 7011,
+   "prose": "Elijah ate what the angel gave him and *in the strength of that meat forty days and forty nights* he went to Horeb. John comes out of the same kind of wilderness *neither eating bread nor drinking wine*, and the people who watched him said *He hath a devil*. Elijah's road and John's are the same road through the same empty country.",
+   "member_phrase": "went in the strength of that meat forty days and forty nights unto Horeb the mount of Elohim (God)",
+   "member_sentence": "Elijah ate and drank and walked forty days and nights on the strength of that meal to Horeb, the mount of Elohim (God), as John lived in the wilderness.",
+   "thread": "matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48",
+   "flag": "1 Kings 19:8 has Elijah eating and drinking once and going forty days on it, so the pairing rests on the forty days in the wilderness and not on a fast."
+  },
+  {
+   "id": 7012,
+   "prose": "Yahusha (Jesus) asks the crowd what they went out to see, and it was not *a reed shaken with the wind*. It was a prophet, and Elijah had said in his cave what that costs: *thy covenant* forsaken, the altars thrown down, the prophets slain, and *they seek my life*. John stands in that same place in the wilderness, speaking the covenant to a house that had let it go.",
+   "member_phrase": "for the children of Yashar'el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword",
+   "member_sentence": "Elijah tells Yahuah (the LORD) the children of Yashar'el (Israel) have forsaken the covenant and slain the prophets, which is the lot of the prophet John stands in.",
+   "thread": "matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

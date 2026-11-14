@@ -1,0 +1,868 @@
+{
+ "book": "mark",
+ "chapter": 10,
+ "chapter_text_kjv": {
+  "1": "And he arose from thence, and cometh into the coasts of Judæa by the farther side of Jordan: and the people resort unto him again; and, as he was wont, he taught them again.",
+  "2": "And the Pharisees came to him, and asked him, Is it lawful for a man to put away his wife? tempting him.",
+  "3": "And he answered and said unto them, What did Moses command you?",
+  "4": "And they said, Moses suffered to write a bill of divorcement, and to put her away.",
+  "5": "And Yahusha (Jesus) answered and said unto them, For the hardness of your heart he wrote you this precept.",
+  "6": "But from the beginning of the creation Elohim (God) made them male and female.",
+  "7": "For this cause shall a man leave his father and mother, and cleave to his wife;",
+  "8": "And they twain shall be one flesh: so then they are no more twain, but one flesh.",
+  "9": "What therefore Elohim (God) hath joined together, let not man put asunder.",
+  "10": "And in the house his disciples asked him again of the same matter.",
+  "11": "And he saith unto them, Whosoever shall put away his wife, and marry another, committeth adultery against her.",
+  "12": "And if a woman shall put away her husband, and be married to another, she committeth adultery.",
+  "13": "And they brought young children to him, that he should touch them: and his disciples rebuked those that brought them.",
+  "14": "But when Yahusha (Jesus) saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of Elohim (God).",
+  "15": "Verily I say unto you, Whosoever shall not receive the kingdom of Elohim (God) as a little child, he shall not enter therein.",
+  "16": "And he took them up in his arms, put his hands upon them, and blessed them.",
+  "17": "And when he was gone forth into the way, there came one running, and kneeled to him, and asked him, Good Master, what shall I do that I may inherit eternal life?",
+  "18": "And Yahusha (Jesus) said unto him, Why callest thou me good? there is none good but one, that is, Elohim (God).",
+  "19": "Thou knowest the commandments, Do not commit adultery, Do not kill, Do not steal, Do not bear false witness, Defraud not, Honour thy father and mother.",
+  "20": "And he answered and said unto him, Master, all these have I observed from my youth.",
+  "21": "Then Yahusha (Jesus) beholding him loved him, and said unto him, One thing thou lackest: go thy way, sell whatsoever thou hast, and give to the poor, and thou shalt have treasure in heaven: and come, take up the cross, and follow me.",
+  "22": "And he was sad at that saying, and went away grieved: for he had great possessions.",
+  "23": "And Yahusha (Jesus) looked round about, and saith unto his disciples, How hardly shall they that have riches enter into the kingdom of Elohim (God)!",
+  "24": "And the disciples were astonished at his words. But Yahusha (Jesus) answereth again, and saith unto them, Children, how hard is it for them that trust in riches to enter into the kingdom of Elohim (God)!",
+  "25": "It is easier for a camel to go through the eye of a needle, than for a rich man to enter into the kingdom of Elohim (God).",
+  "26": "And they were astonished out of measure, saying among themselves, Who then can be saved?",
+  "27": "And Yahusha (Jesus) looking upon them saith, With men it is impossible, but not with Elohim (God): for with Elohim (God) all things are possible.",
+  "28": "Then Peter began to say unto him, Lo, we have left all, and have followed thee.",
+  "29": "And Yahusha (Jesus) answered and said, Verily I say unto you, There is no man that hath left house, or brethren, or sisters, or father, or mother, or wife, or children, or lands, for my sake, and the gospel’s,",
+  "30": "But he shall receive an hundredfold now in this time, houses, and brethren, and sisters, and mothers, and children, and lands, with persecutions; and in the world to come eternal life.",
+  "31": "But many that are first shall be last; and the last first.",
+  "32": "And they were in the way going up to Jerusalem; and Yahusha (Jesus) went before them: and they were amazed; and as they followed, they were afraid. And he took again the twelve, and began to tell them what things should happen unto him,",
+  "33": "Saying, Behold, we go up to Jerusalem; and the Son of Adam shall be delivered unto the chief priests, and unto the scribes; and they shall condemn him to death, and shall deliver him to the Gentiles:",
+  "34": "And they shall mock him, and shall scourge him, and shall spit upon him, and shall kill him: and the third day he shall rise again.",
+  "35": "And James and John, the sons of Zebedee, come unto him, saying, Master, we would that thou shouldest do for us whatsoever we shall desire.",
+  "36": "And he said unto them, What would ye that I should do for you?",
+  "37": "They said unto him, Grant unto us that we may sit, one on thy right hand, and the other on thy left hand, in thy glory.",
+  "38": "But Yahusha (Jesus) said unto them, Ye know not what ye ask: can ye drink of the cup that I drink of? and be baptized with the baptism that I am baptized with?",
+  "39": "And they said unto him, We can. And Yahusha (Jesus) said unto them, Ye shall indeed drink of the cup that I drink of; and with the baptism that I am baptized withal shall ye be baptized:",
+  "40": "But to sit on my right hand and on my left hand is not mine to give; but it shall be given to them for whom it is prepared.",
+  "41": "And when the ten heard it, they began to be much displeased with James and John.",
+  "42": "But Yahusha (Jesus) called them to him, and saith unto them, Ye know that they which are accounted to rule over the Gentiles exercise lordship over them; and their great ones exercise authority upon them.",
+  "43": "But so shall it not be among you: but whosoever will be great among you, shall be your minister:",
+  "44": "And whosoever of you will be the chiefest, shall be servant of all.",
+  "45": "For even the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.",
+  "46": "And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimæus, the son of Timæus, sat by the highway side begging.",
+  "47": "And when he heard that it was Yahusha (Jesus) of Nazareth, he began to cry out, and say, Yahusha (Jesus), thou Son of David, have mercy on me.",
+  "48": "And many charged him that he should hold his peace: but he cried the more a great deal, Thou Son of David, have mercy on me.",
+  "49": "And Yahusha (Jesus) stood still, and commanded him to be called. And they call the blind man, saying unto him, Be of good comfort, rise; he calleth thee.",
+  "50": "And he, casting away his garment, rose, and came to Yahusha (Jesus).",
+  "51": "And Yahusha (Jesus) answered and said unto him, What wilt thou that I should do unto thee? The blind man said unto him, Adonai (Lord), that I might receive my sight.",
+  "52": "And Yahusha (Jesus) said unto him, Go thy way; thy faith hath made thee whole. And immediately he received his sight, and followed Yahusha (Jesus) in the way."
+ },
+ "cards": [
+  {
+   "id": 5196,
+   "src": "Mark 10:6",
+   "src_vn": 6,
+   "src_text_live": "But from the beginning of the creation Elohim (God) made them male and female.",
+   "src_text_kjv": "But from the beginning of the creation Elohim (God) made them male and female.",
+   "tgt": "Genesis 2:24",
+   "tgt_text_kjv": "Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.",
+   "tgt_context_kjv": {
+    "22": "And the rib, which Yahuah Elohim (the LORD God) had taken from man, made he a woman, and brought her unto the man.",
+    "23": "And Adam said, This is now bone of my bones, and flesh of my flesh: she shall be called Woman, because she was taken out of Man.",
+    "24": "Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.",
+    "25": "And they were both naked, the man and his wife, and were not ashamed."
+   },
+   "old_note": "*They twain shall be one flesh.* The two-become-one of Bereshit (Genesis) 2:24 is the marriage-mechanism the framework reads forward as the seed-of-promise architecture.",
+   "author_thread_hint": "the-seed-of-promise-is-singular-paternal",
+   "map_grade": "DOCREF",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5197,
+   "src": "Mark 10:14",
+   "src_vn": 14,
+   "src_text_live": "But when Yahusha (Jesus) saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of Elohim (God).",
+   "src_text_kjv": "But when Yahusha (Jesus) saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of Elohim (God).",
+   "tgt": "Matthew 18:3",
+   "tgt_text_kjv": "And said, Verily I say unto you, Except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven.",
+   "tgt_context_kjv": {
+    "1": "At the same time came the disciples unto Yahusha (Jesus), saying, Who is the greatest in the kingdom of heaven?",
+    "2": "And Yahusha (Jesus) called a little child unto him, and set him in the midst of them,",
+    "3": "And said, Verily I say unto you, Except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven.",
+    "4": "Whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven.",
+    "5": "And whoso shall receive one such little child in my name receiveth me.",
+    "6": "But whoso shall offend one of these little ones which believe in me, it were better for him that a millstone were hanged about his neck, and that he were drowned in the depth of the sea."
+   },
+   "old_note": "*Of such is the kingdom of Elohim (God).* The kingdom is entered as the gift it is, not as the rank one climbs to (Matthew 18:3-4).",
+   "author_thread_hint": "kinship-redefinition-kingdom-family",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "the-greatness-as-humility-and-the-proud-cast-down-in-the-wisdom-stream"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5198,
+   "src": "Mark 10:14",
+   "src_vn": 14,
+   "src_text_live": "But when Yahusha (Jesus) saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of Elohim (God).",
+   "src_text_kjv": "But when Yahusha (Jesus) saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of Elohim (God).",
+   "tgt": "Psalm 131:1",
+   "tgt_text_kjv": "Yahuah (LORD), my heart is not haughty, nor mine eyes lofty: neither do I exercise myself in great matters, or in things too high for me.",
+   "tgt_context_kjv": {
+    "1": "Yahuah (LORD), my heart is not haughty, nor mine eyes lofty: neither do I exercise myself in great matters, or in things too high for me.",
+    "2": "Surely I have behaved and quieted myself, as a child that is weaned of his mother: my soul is even as a weaned child.",
+    "3": "Let Yashar'el (Israel) hope in Yahuah (LORD) from henceforth and for ever."
+   },
+   "old_note": "*Yahuah (LORD), my heart is not haughty* (Tehillim/Psalm 131:1-2) — the kingdom-posture.",
+   "author_thread_hint": "kinship-redefinition-kingdom-family",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5203,
+   "src": "Mark 10:28",
+   "src_vn": 28,
+   "src_text_live": "Then Peter began to say unto him, Lo, we have left all, and have followed you.",
+   "src_text_kjv": "Then Peter began to say unto him, Lo, we have left all, and have followed thee.",
+   "tgt": "Matthew 12:50",
+   "tgt_text_kjv": "For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.",
+   "tgt_context_kjv": {
+    "48": "But he answered and said unto him that told him, Who is my mother? and who are my brethren?",
+    "49": "And he stretched forth his hand toward his disciples, and said, Behold my mother and my brethren!",
+    "50": "For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother."
+   },
+   "old_note": "*The hundredfold-now — houses, brethren, sisters, mothers, children, lands.* The kingdom-family is gathered around the doing of the Father's will (Matthew 12:50).",
+   "author_thread_hint": "kinship-redefinition-kingdom-family",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "children-of-elohim-by-doing-the-fathers-will-in-wisdom-and-sirach-and-jubilees",
+    "matthew-12-whosoever-shall-do-the-will-of-my-father-the-true-family-deuteronomy-33-psalm-22"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5204,
+   "src": "Mark 10:28",
+   "src_vn": 28,
+   "src_text_live": "Then Peter began to say unto him, Lo, we have left all, and have followed you.",
+   "src_text_kjv": "Then Peter began to say unto him, Lo, we have left all, and have followed thee.",
+   "tgt": "Mark 3:35",
+   "tgt_text_kjv": "For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother.",
+   "tgt_context_kjv": {
+    "33": "And he answered them, saying, Who is my mother, or my brethren?",
+    "34": "And he looked round about on them which sat about him, and said, Behold my mother and my brethren!",
+    "35": "For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother."
+   },
+   "old_note": "The Mark 3:35 architecture repeated here in the hundredfold-now register.",
+   "author_thread_hint": "kinship-redefinition-kingdom-family",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "mark-3-whosoever-shall-do-the-will-of-elohim-the-same-is-my-brother-deuteronomy-33-psalm-22"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5205,
+   "src": "Mark 10:31",
+   "src_vn": 31,
+   "src_text_live": "But many that are first shall be last; and the last first.",
+   "src_text_kjv": "But many that are first shall be last; and the last first.",
+   "tgt": "Matthew 22:14",
+   "tgt_text_kjv": "For many are called, but few are chosen.",
+   "tgt_context_kjv": {
+    "12": "And he saith unto him, Friend, how camest thou in hither not having a wedding garment? And he was speechless.",
+    "13": "Then said the king to the servants, Bind him hand and foot, and take him away, and cast him into outer darkness; there shall be weeping and gnashing of teeth.",
+    "14": "For many are called, but few are chosen.",
+    "15": "Then went the Pharisees, and took counsel how they might entangle him in his talk.",
+    "16": "And they sent out unto him their disciples with the Herodians, saying, Master, we know that thou art true, and teachest the way of Elohim (God) in truth, neither carest thou for any man: for thou regardest not the person of men.",
+    "17": "Tell us therefore, What thinkest thou? Is it lawful to give tribute unto Caesar, or not?"
+   },
+   "old_note": "*Many that are first shall be last; and the last first.* *Many are called, but few are chosen* (Matthew 22:14).",
+   "author_thread_hint": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "many-be-called-but-few-chosen-in-1-enoch-and-2-esdras",
+    "the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5206,
+   "src": "Mark 10:31",
+   "src_vn": 31,
+   "src_text_live": "But many that are first shall be last; and the last first.",
+   "src_text_kjv": "But many that are first shall be last; and the last first.",
+   "tgt": "Matthew 19:30",
+   "tgt_text_kjv": "But many that are first shall be last; and the last shall be first.",
+   "tgt_context_kjv": {
+    "28": "And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel).",
+    "29": "And every one that hath forsaken houses, or brethren, or sisters, or father, or mother, or wife, or children, or lands, for my name’s sake, shall receive an hundredfold, and shall inherit everlasting life.",
+    "30": "But many that are first shall be last; and the last shall be first."
+   },
+   "old_note": "The Matthean parallel.",
+   "author_thread_hint": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "the-gathering-of-the-twelve-tribes-and-the-thrones-of-judgment-in-jubilees-sirach-wisdom-and-testaments-xii"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5207,
+   "src": "Mark 10:31",
+   "src_vn": 31,
+   "src_text_live": "But many that are first shall be last; and the last first.",
+   "src_text_kjv": "But many that are first shall be last; and the last first.",
+   "tgt": "Luke 13:30",
+   "tgt_text_kjv": "And, behold, there are last which shall be first, and there are first which shall be last.",
+   "tgt_context_kjv": {
+    "28": "There shall be weeping and gnashing of teeth, when ye shall see Abraham, and Isaac, and Jacob, and all the prophets, in the kingdom of Elohim (God), and you yourselves thrust out.",
+    "29": "And they shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom of Elohim (God).",
+    "30": "And, behold, there are last which shall be first, and there are first which shall be last.",
+    "31": "The same day there came certain of the Pharisees, saying unto him, Get thee out, and depart hence: for Herod will kill thee.",
+    "32": "And he said unto them, Go ye, and tell that fox, Behold, I cast out devils, and I do cures to day and to morrow, and the third day I shall be perfected.",
+    "33": "Nevertheless I must walk to day, and to morrow, and the day following: for it cannot be that a prophet perish out of Jerusalem."
+   },
+   "old_note": "The Lukan parallel.",
+   "author_thread_hint": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "luke-13-they-shall-come-from-east-and-west-the-gathering-of-the-tribes-in-baruch-and-sirach"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5208,
+   "src": "Mark 10:32",
+   "src_vn": 32,
+   "src_text_live": "And they were in the way going up to Jerusalem; and Yahusha (Jesus) went before them: and they were amazed; and as they followed, they were afraid. And he took again the twelve, and began to tell them what things should happen unto him,",
+   "src_text_kjv": "And they were in the way going up to Jerusalem; and Yahusha (Jesus) went before them: and they were amazed; and as they followed, they were afraid. And he took again the twelve, and began to tell them what things should happen unto him,",
+   "tgt": "Isaiah 53:7",
+   "tgt_text_kjv": "He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.",
+   "tgt_context_kjv": {
+    "5": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.",
+    "6": "All we like sheep have gone astray; we have turned every one to his own way; and Yahuah (LORD) hath laid on him the iniquity of us all.",
+    "7": "He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.",
+    "8": "He was taken from prison and from judgment: and who shall declare his generation? for he was cut off out of the land of the living: for the transgression of my people was he stricken.",
+    "9": "And he made his grave with the wicked, and with the rich in his death; because he had done no violence, neither was any deceit in his mouth.",
+    "10": "Yet it pleased Yahuah (LORD) to bruise him; he hath put him to grief: when thou shalt make his soul an offering for sin, he shall see his seed, he shall prolong his days, and the pleasure of Yahuah (LORD) shall prosper in his hand."
+   },
+   "old_note": "*The third passion prediction is the most explicit.* *He is brought as a lamb to the slaughter* (Yeshayahu/Isaiah 53:7).",
+   "author_thread_hint": "first-passion-prediction-and-the-must-of-the-passion",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5209,
+   "src": "Mark 10:32",
+   "src_vn": 32,
+   "src_text_live": "And they were in the way going up to Jerusalem; and Yahusha (Jesus) went before them: and they were amazed; and as they followed, they were afraid. And he took again the twelve, and began to tell them what things should happen unto him,",
+   "src_text_kjv": "And they were in the way going up to Jerusalem; and Yahusha (Jesus) went before them: and they were amazed; and as they followed, they were afraid. And he took again the twelve, and began to tell them what things should happen unto him,",
+   "tgt": "Psalm 22:6",
+   "tgt_text_kjv": "But I am a worm, and no man; a reproach of men, and despised of the people.",
+   "tgt_context_kjv": {
+    "4": "Our fathers trusted in thee: they trusted, and thou didst deliver them.",
+    "5": "They cried unto thee, and were delivered: they trusted in thee, and were not confounded.",
+    "6": "But I am a worm, and no man; a reproach of men, and despised of the people.",
+    "7": "All they that see me laugh me to scorn: they shoot out the lip, they shake the head, saying,",
+    "8": "He trusted on Yahuah (LORD) that he would deliver him: let him deliver him, seeing he delighted in him.",
+    "9": "But thou art he that took me out of the womb: thou didst make me hope when I was upon my mother’s breasts."
+   },
+   "old_note": "The Yerushalayim-arrival is the destination he has been walking toward since Caesarea Philippi (Tehillim/Psalm 22:6-8).",
+   "author_thread_hint": "first-passion-prediction-and-the-must-of-the-passion",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5214,
+   "src": "Mark 10:46",
+   "src_vn": 46,
+   "src_text_live": "And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimæus, the son of Timæus, sat by the highway side begging.",
+   "src_text_kjv": "And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimæus, the son of Timæus, sat by the highway side begging.",
+   "tgt": "Jeremiah 23:5",
+   "tgt_text_kjv": "Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.",
+   "tgt_context_kjv": {
+    "3": "And I will gather the remnant of my flock out of all countries whither I have driven them, and will bring them again to their folds; and they shall be fruitful and increase.",
+    "4": "And I will set up shepherds over them which shall feed them: and they shall fear no more, nor be dismayed, neither shall they be lacking, saith Yahuah (LORD).",
+    "5": "Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.",
+    "6": "In his days Yahudah (Judah) shall be saved, and Yashar'el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS).",
+    "7": "Therefore, behold, the days come, saith Yahuah (LORD), that they shall no more say, Yahuah (LORD) liveth, which brought up the children of Yashar'el (Israel) out of the land of Egypt;",
+    "8": "But, Yahuah (LORD) liveth, which brought up and which led the seed of the house of Yashar'el (Israel) out of the north country, and from all countries whither I had driven them; and they shall dwell in their own land."
+   },
+   "old_note": "*Thou Son of David, have mercy on me.* *I will raise unto David a righteous Branch* (Yirmeyahu/Jeremiah 23:5). **Q14 NT-Lord flag** at 10:51 queued for S184.",
+   "author_thread_hint": "son-of-david-messianic-recognition-by-marginalized",
+   "map_grade": "DOCREF",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5215,
+   "src": "Mark 10:46",
+   "src_vn": 46,
+   "src_text_live": "And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimæus, the son of Timæus, sat by the highway side begging.",
+   "src_text_kjv": "And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimæus, the son of Timæus, sat by the highway side begging.",
+   "tgt": "2 Samuel 7:12",
+   "tgt_text_kjv": "And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.",
+   "tgt_context_kjv": {
+    "10": "Moreover I will appoint a place for my people Yashar'el (Israel), and will plant them, that they may dwell in a place of their own, and move no more; neither shall the children of wickedness afflict them any more, as beforetime,",
+    "11": "And as since the time that I commanded judges to be over my people Yashar'el (Israel), and have caused thee to rest from all thine enemies. Also Yahuah (LORD) telleth thee that he will make thee an house.",
+    "12": "And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.",
+    "13": "He shall build an house for my name, and I will stablish the throne of his kingdom for ever.",
+    "14": "I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men:",
+    "15": "But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee."
+   },
+   "old_note": "2 Sh'mu'el (Samuel) 7:12-13's Davidic seed-promise.",
+   "author_thread_hint": "son-of-david-messianic-recognition-by-marginalized",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5216,
+   "src": "Mark 10:46",
+   "src_vn": 46,
+   "src_text_live": "And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimæus, the son of Timæus, sat by the highway side begging.",
+   "src_text_kjv": "And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimæus, the son of Timæus, sat by the highway side begging.",
+   "tgt": "Isaiah 11:1",
+   "tgt_text_kjv": "And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:",
+   "tgt_context_kjv": {
+    "1": "And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:",
+    "2": "And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);",
+    "3": "And shall make him of quick understanding in the fear of Yahuah (LORD): and he shall not judge after the sight of his eyes, neither reprove after the hearing of his ears:",
+    "4": "But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked."
+   },
+   "old_note": "*A rod out of the stem of Yishai (Jesse)* (Yeshayahu/Isaiah 11:1).",
+   "author_thread_hint": "son-of-david-messianic-recognition-by-marginalized",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5217,
+   "src": "Mark 10:52",
+   "src_vn": 52,
+   "src_text_live": "And Yahusha (Jesus) said unto him, Go your way; your faith has made you whole. And immediately he received his sight, and followed Yahusha (Jesus) in the way.",
+   "src_text_kjv": "And Yahusha (Jesus) said unto him, Go thy way; thy faith hath made thee whole. And immediately he received his sight, and followed Yahusha (Jesus) in the way.",
+   "tgt": "John 10:27",
+   "tgt_text_kjv": "My sheep hear my voice, and I know them, and they follow me:",
+   "tgt_context_kjv": {
+    "25": "Yahusha (Jesus) answered them, I told you, and ye believed not: the works that I do in my Father’s name, they bear witness of me.",
+    "26": "But ye believe not, because ye are not of my sheep, as I said unto you.",
+    "27": "My sheep hear my voice, and I know them, and they follow me:",
+    "28": "And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.",
+    "29": "My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father’s hand.",
+    "30": "I and my Father are one."
+   },
+   "old_note": "*Thy faith hath made thee whole.* Bartimaeus was a son-of-Adam from before the foundation; his hearing was the revealing, not the creating. *My sheep hear my voice* (Yochanan/John 10:27).",
+   "author_thread_hint": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "john-10-other-sheep-and-the-ten-tribes-gathered-in-2-esdras-13",
+    "john-10-other-sheep-not-of-this-fold-and-the-lost-sheep-of-the-house-of-yasharel-in-matthew-and-1-peter",
+    "my-sheep-hear-my-voice-hearing-reveals-not-creates"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5218,
+   "src": "Mark 10:52",
+   "src_vn": 52,
+   "src_text_live": "And Yahusha (Jesus) said unto him, Go your way; your faith has made you whole. And immediately he received his sight, and followed Yahusha (Jesus) in the way.",
+   "src_text_kjv": "And Yahusha (Jesus) said unto him, Go thy way; thy faith hath made thee whole. And immediately he received his sight, and followed Yahusha (Jesus) in the way.",
+   "tgt": "Revelation 13:8",
+   "tgt_text_kjv": "And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.",
+   "tgt_context_kjv": {
+    "6": "And he opened his mouth in blasphemy against Elohim (God), to blaspheme his name, and his tabernacle, and them that dwell in heaven.",
+    "7": "And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations.",
+    "8": "And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.",
+    "9": "If any man have an ear, let him hear.",
+    "10": "He that leadeth into captivity shall go into captivity: he that killeth with the sword must be killed with the sword. Here is the patience and the faith of the saints.",
+    "11": "And I beheld another beast coming up out of the earth; and he had two horns like a lamb, and he spake as a dragon."
+   },
+   "old_note": "Revelation 13:8's *names written before the foundation* — the hearing reveals the prior election.",
+   "author_thread_hint": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "mark-3-whosoever-shall-do-the-will-of-elohim-the-same-is-my-brother-deuteronomy-33-psalm-22",
+   "title": "Whosoever shall do the will of Elohim, the same is my brother — the family by obedience (Deuteronomy 33; Psalm 22)",
+   "anchor": "Mark 3:31-35",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "When his mother and brethren stand without and call for him, Yahusha (Jesus) looks round on those who sit at his feet and says, *Behold my mother and my brethren! For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother.* (Mark 3:34-35). The family of Elohim (God) is reckoned by the DOING of his will — the anti-antinomian seal of the whole chapter. This is Levi's blessing exactly: *Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren... for they have observed thy word, and kept thy covenant.* (Deuteronomy 33:9) — covenant loyalty set above even kindred. The Messiah of Psalm 22 claims just such a kindred: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee.* (Psalms 22:22) — those who do the Father's will are the congregation he names as brethren. And Matthew makes the Father explicit: *whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.* (Matthew 12:50). The will done is the Father's will, and the Formed Son who does that will perfectly gathers as his own household all who keep it. Not the claiming, but the doing, is the seal of the family — grace never sets the will of Elohim (God) aside; it is the very mark of belonging.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "mark-10-from-the-beginning-male-and-female-divorce-and-the-creation-torah-genesis-1-2-deuteronomy-24-malachi-2",
+   "title": "From the beginning, male and female — divorce and the creation Torah (Genesis 1-2; Deuteronomy 24; Malachi 2)",
+   "anchor": "Mark 10:2-12",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "The Pharisees come tempting: *Is it lawful for a man to put away his wife?* (Mark 10:2). They expect a fight about Moses. Yahusha (Jesus) does not abolish the Torah — he reads it back to its foundation. *And he answered and said unto them, What did Moses command you? And they said, Moses suffered to write a bill of divorcement, and to put her away. And Yahusha (Jesus) answered and said unto them, For the hardness of your heart he wrote you this precept.* (Mark 10:3-5). The bill of divorcement was a concession to brokenness — *When a man hath taken a wife, and married her... then let him write her a bill of divorcement, and give it in her hand, and send her out of his house.* (Deuteronomy 24:1) — and even that statute closes in warning: *Her former husband, which sent her away, may not take her again to be his wife, after that she is defiled; for that is abomination before Yahuah (LORD): and thou shalt not cause the land to sin...* (Deuteronomy 24:4). Moses fenced the hardness in; he never blessed it.\n\nThen Yahusha (Jesus) reaches past Moses all the way to the sixth day: *But from the beginning of the creation Elohim (God) made them male and female.* (Mark 10:6) — *So Elohim (God) created man in his own image, in the image of Elohim (God) created he him; male and female created he them.* (Genesis 1:27). And he quotes the creation ordinance word for word: *For this cause shall a man leave his father and mother, and cleave to his wife; And they twain shall be one flesh...* (Mark 10:7-8) — *Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.* (Genesis 2:24). Marriage is not a Mosaic ordinance to be negotiated; it is the Maker's own design, written into mankind before there was a tablet of stone.\n\nSo the seal: *What therefore Elohim (God) hath joined together, let not man put asunder.* (Mark 10:9). The last of the prophets had already said it plainly: *For Yahuah (LORD), the Elohim (God) of Yashar'el (Israel), saith that he hateth putting away...* (Malachi 2:16). The Father hates the tearing-apart of the one flesh he joined. Far from loosening the Torah, Yahusha (Jesus) tightens it back to its root: the permission was for hardness of heart, but the creation order stands.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:6",
+     "tgt": "canon/genesis 1:27",
+     "member_note": "Genesis 1:27 — *male and female created he them* — the creation design Yahusha (Jesus) appeals back to."
+    },
+    {
+     "src": "10:7",
+     "tgt": "canon/genesis 2:24",
+     "member_note": "Genesis 2:24 — *they shall be one flesh* — quoted word for word; the one-flesh ordinance upheld."
+    },
+    {
+     "src": "10:4",
+     "tgt": "canon/deuteronomy 24:1",
+     "member_note": "Deuteronomy 24:1 — the bill of divorcement, the precept given for hardness of heart."
+    },
+    {
+     "src": "10:5",
+     "tgt": "canon/deuteronomy 24:4",
+     "member_note": "Deuteronomy 24:4 — the statute closes in abomination; Moses fenced the hardness in, never blessed it."
+    },
+    {
+     "src": "10:9",
+     "tgt": "canon/malachi 2:16",
+     "member_note": "Malachi 2:16 — *he hateth putting away* — the prophet says what Yahusha (Jesus) seals."
+    }
+   ]
+  },
+  {
+   "slug": "mark-10-suffer-the-little-children-of-such-is-the-kingdom-psalm-8-deuteronomy-1-joel-2",
+   "title": "Suffer the little children — of such is the kingdom (Psalm 8; Deuteronomy 1; Joel 2)",
+   "anchor": "Mark 10:13-16",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "*And they brought young children to him, that he should touch them: and his disciples rebuked those that brought them.* (Mark 10:13). The disciples count the children as an interruption. The King counts them as the pattern: *But when Yahusha (Jesus) saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of Elohim (God).* (Mark 10:14).\n\nThis is the Father's long habit. *Out of the mouth of babes and sucklings hast thou ordained strength because of thine enemies, that thou mightest still the enemy and the avenger.* (Psalm 8:2) — it is in the smallest and weakest that he lodges his strength and silences the proud. When the unbelieving generation despised their own little ones as a prey lost in the wilderness, the Father answered: *Moreover your little ones... and your children, which in that day had no knowledge between good and evil, they shall go in thither, and unto them will I give it, and they shall possess it.* (Deuteronomy 1:39). The very ones written off inherit the land.\n\nAnd when the prophet calls all Yashar'el (Israel) home, the children are gathered with them — none too small for the assembly: *Gather the people, sanctify the congregation, assemble the elders, gather the children, and those that suck the breasts...* (Joel 2:16). So the Son takes them up: *And he took them up in his arms, put his hands upon them, and blessed them.* (Mark 10:16). *Whosoever shall not receive the kingdom of Elohim (God) as a little child, he shall not enter therein.* (Mark 10:15) — the kingdom is received, not earned; come empty-handed and small, as a child comes.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:14",
+     "tgt": "canon/psalms 8:2",
+     "member_note": "Psalm 8:2 — *out of the mouth of babes... ordained strength* — the Father lodges strength in the small."
+    },
+    {
+     "src": "10:14",
+     "tgt": "canon/deuteronomy 1:39",
+     "member_note": "Deuteronomy 1:39 — the little ones the generation despised inherit the land."
+    },
+    {
+     "src": "10:16",
+     "tgt": "canon/joel 2:16",
+     "member_note": "Joel 2:16 — when Yashar'el (Israel) is gathered home, the nursing children are gathered too."
+    }
+   ]
+  },
+  {
+   "slug": "formed-as-the-only-good-and-the-formless-as-the-source",
+   "title": "*Why callest thou me good* — the Formed pointing to the Formless source",
+   "anchor": "Mark 10:18",
+   "anchored_in_this_book": true,
+   "member_count": 7,
+   "summary_md": "Mark 10:17-22 / Matthew 19:16-22 / Luke 18:18-22's *why callest thou me good? there is none good but one, that is, Elohim (God)* is a Formed-and-Formless disclosure of a kind no inherited reading handles cleanly. Christian commentary collapses it two ways: the Arian collapse (Yahusha disclaims deity) and the Trinitarian collapse (Yahusha is testing whether the questioner means it). The framework reads it as a third reading entirely — Yahusha pointing past the Formed (himself) to the Formless source (the Father) from which the Formed proceeds, the eternal-submission structure visible in the same moment the questioner is being directed toward the commandments.\n\nThe King is not disclaiming his own deity; he is naming his own derivation. *My Father is greater than I* (John 14:28). *The Son can do nothing of himself, but what he seeth the Father do* (John 5:19). *I can of mine own self do nothing... I seek not mine own will, but the will of the Father which hath sent me* (John 5:30). The Formed perpetually points to the Formless source as the one good in the unique-source sense; the Formed is Yahuah but the Formless is the originating source. Distinction without division.\n\n*Then cometh the end, when he shall have delivered up the kingdom to Elohim (God), even the Father... And when all things shall be subdued unto him, then shall the Son also himself be subject unto him that put all things under him, that Elohim (God) may be all in all* (1 Corinthians 15:24, 28). Paul names the same eternal-submission shape Mark 10:18 carries — the Son perpetually deferring to the Father, the Formed perpetually expressing the Formless source. Not a created being (which would be the Arian collapse); not a co-equal-second-person-in-spatial-arrangement (which would be the Trinitarian collapse); the Formed expression of the Formless source, eternally derived, eternally submitting.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:18",
+     "tgt": "canon/matthew 19:17",
+     "member_note": "The Matthean parallel — *why callest thou me good? there is none good but one, that is, Elohim (God): but if thou wilt enter into life, keep the commandments.* The same Formed-pointing-to-Formless disclosure paired with the Torah-keeping commission; the two clauses lock each other against both Arian and antinomian collapses."
+    },
+    {
+     "src": "10:18",
+     "tgt": "canon/luke 18:19",
+     "member_note": "The Lukan parallel — *why callest thou me good? none is good, save one, that is, Elohim (God).* Three-synoptic witness to the same disclosure; the consistent reading rules out the *one-gospel-departs-from-the-other* readings of inherited commentary."
+    },
+    {
+     "src": "10:18",
+     "tgt": "canon/john 5:19",
+     "member_note": "*The Son can do nothing of himself, but what he seeth the Father do.* The Formed acts in derivation from the Formless source; Mark 10:18's Formed-pointing-to-Formless reading is the same eternal-submission structure."
+    },
+    {
+     "src": "10:18",
+     "tgt": "canon/john 5:30",
+     "member_note": "*I can of mine own self do nothing... I seek not mine own will, but the will of the Father which hath sent me.* The same Formed-pointing-to-Formless architecture in Yochanan (John)'s register — the Son deferring to the Father in every action."
+    },
+    {
+     "src": "10:18",
+     "tgt": "canon/john 14:28",
+     "member_note": "*Why callest thou me good? there is none good but one, that is, Elohim (God).* The King is pointing past the Formed (himself) to the Formless source (the Father) from whom all good proceeds — the same eternal-submission structure he names elsewhere: *My Father is greater than I.*"
+    },
+    {
+     "src": "10:18",
+     "tgt": "canon/1-corinthians 15:28",
+     "member_note": "*Then shall the Son also himself be subject unto him that put all things under him, that Elohim (God) may be all in all.* Paul names the eternal-submission shape Mark 10:18 carries — the Son perpetually deferring to the Father, the Formed perpetually expressing the Formless source."
+    }
+   ]
+  },
+  {
+   "slug": "mark-10-the-rich-young-ruler-and-riches-as-snare-in-sirach",
+   "title": "The rich young ruler and riches as snare in Sirach",
+   "anchor": "Mark 10:21-25",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Mark 10:17-25's rich young ruler — who keeps the commandments from his youth yet goes away grieved at the one thing he lacks, *for he had great possessions* — and the King's following word, *how hardly shall they that have riches enter into the kingdom of Elohim (God)! ... it is easier for a camel to go through the eye of a needle, than for a rich man to enter into the kingdom of Elohim (God),* walk an architecture the Hebrew library's wisdom-stream had already named at the gold-as-snare level. Sirach (Ecclesiasticus) 31:8 names the rare blessing of the rich-who-is-not-held: *blessed is the rich that is found without blemish, and has not gone after gold.* Sirach 31:5 names the disqualification: *he that loves gold shall not be justified.* Sirach 31:6 names the ruin: *gold has been the ruin of many, and their destruction was present.* Sirach 31:7 names the worship-trap: *it is a stumblingblock to them that sacrifice to it, and every fool shall be taken with it.* The diagnostic is not riches-as-such but the heart held by gold — the King's clarifying word lands it exactly where the wisdom-stream lands it: *how hard is it for them that trust in riches.* The Hebrew library had already named the blessedness of the rich who is not held and the ruin of the one who is; the gospel names the man held, and names the impossibility-made-possible only with Elohim.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:21",
+     "tgt": "apocrypha/ecclesiasticus 31:8",
+     "member_note": "Ecclesiasticus 31:8 — *Blessed is the rich that is found without blemish, and has not gone after gold..* The rich young ruler of Mark 10:21 was offered that blessing and went away grieved."
+    },
+    {
+     "src": "10:23",
+     "tgt": "apocrypha/ecclesiasticus 31:5",
+     "member_note": "Ecclesiasticus 31:5 — *He that loves gold shall not be justified, and he that followeth corruption.* The one Sirach says will not be justified is the one who *hardly* enters the kingdom at Mark 10:23."
+    },
+    {
+     "src": "10:24",
+     "tgt": "apocrypha/ecclesiasticus 31:6",
+     "member_note": "Ecclesiasticus 31:6 — *Gold has been the ruin of many, and their destruction was present..* The ruin is in the trusting; *how hard is it for them that trust in riches* (Mark 10:24)."
+    },
+    {
+     "src": "10:25",
+     "tgt": "apocrypha/ecclesiasticus 31:7",
+     "member_note": "Ecclesiasticus 31:7 — *every fool shall be taken with it.* The one taken by his gold cannot pass the needle's eye of Mark 10:25."
+    }
+   ]
+  },
+  {
+   "slug": "mark-10-the-cup-and-the-ransom-for-many-the-suffering-servant-isaiah-53-isaiah-51-daniel-7",
+   "title": "The cup and the ransom for many — the suffering servant (Isaiah 53; Isaiah 51; Daniel 7)",
+   "anchor": "Mark 10:32-45",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "On the road up to Jerusalem the Son of Adam tells the twelve plainly what awaits: *Behold, we go up to Jerusalem; and the Son of Adam shall be delivered unto the chief priests, and unto the scribes; and they shall condemn him to death... and the third day he shall rise again.* (Mark 10:33-34). This is Daniel's figure walking toward his cross — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days...* (Daniel 7:13). The *kaph* stands: *one like* the Son of Adam. The same one who receives the everlasting dominion is the one who first goes down into death.\n\nJames and John ask for the thrones at his right and left. He answers with a cup: *can ye drink of the cup that I drink of?* (Mark 10:38). It is the cup of trembling — *Awake, awake, stand up, O Jerusalem, which hast drunk at the hand of Yahuah (LORD) the cup of his fury; thou hast drunken the dregs of the cup of trembling...* (Isaiah 51:17). And the mercy of it: *Behold, I have taken out of thine hand the cup of trembling, even the dregs of the cup of my fury; thou shalt no more drink it again.* (Isaiah 51:22). The Father takes the cup out of his people's hand — and the Son takes it into his own.\n\nSo greatness is turned upside down: *whosoever will be great among you, shall be your minister... For even the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Mark 10:43-45). That ransom is Isaiah's servant breathing: *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities.* (Isaiah 53:11) — *because he hath poured out his soul unto death... and he bare the sin of many, and made intercession for the transgressors.* (Isaiah 53:12). *A ransom for many* is not a new idea; it is the suffering servant of Isaiah 53, the poured-out soul bearing the sin of the many, come at last to drink the cup.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:45",
+     "tgt": "canon/isaiah 53:11",
+     "member_note": "Isaiah 53:11 — *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities.*"
+    },
+    {
+     "src": "10:45",
+     "tgt": "canon/isaiah 53:12",
+     "member_note": "Isaiah 53:12 — *he bare the sin of many* — the ransom-for-many is this servant breathing."
+    },
+    {
+     "src": "10:38",
+     "tgt": "canon/isaiah 51:17",
+     "member_note": "Isaiah 51:17 — the cup of trembling Jerusalem drank; the cup the Son asks if they can share."
+    },
+    {
+     "src": "10:38",
+     "tgt": "canon/isaiah 51:22",
+     "member_note": "Isaiah 51:22 — the Father takes the cup of trembling out of his people's hand; the Son takes it into his own."
+    },
+    {
+     "src": "10:33",
+     "tgt": "canon/daniel 7:13",
+     "member_note": "Daniel 7:13 — *one like the Son of Adam* (kaph preserved) — the dominion-figure walking first toward death."
+    }
+   ]
+  },
+  {
+   "slug": "mark-10-blind-bartimaeus-thou-son-of-david-have-mercy-isaiah-35-psalm-146-2-samuel-7",
+   "title": "Blind Bartimaeus — thou Son of David, have mercy (Isaiah 35; Psalm 146; 2 Samuel 7)",
+   "anchor": "Mark 10:46-52",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "A blind beggar sits by the highway out of Jericho, and when he hears who is passing he will not be hushed: *Thou Son of David, have mercy on me.* (Mark 10:47-48). The crowd charges him to hold his peace; faith cries the louder. He names the One the crowd cannot silence — *Son of David* — the promised seed of the covenant: *I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* (2 Samuel 7:12) — *He shall build an house for my name, and I will stablish the throne of his kingdom for ever.* (2 Samuel 7:13). The everlasting throne promised to David is the very One standing still in the road for a beggar.\n\nAnd the sight he begs for is the sign of the age of restoration breaking in: *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* (Isaiah 35:5). What Isaiah set as the mark of the coming kingdom is done in a moment when the Son passes by. More than that — it is Yahuah's own work, now wrought by the Formed Son: *Yahuah (LORD) openeth the eyes of the blind: Yahuah (LORD) raiseth them that are bowed down: Yahuah (LORD) loveth the righteous.* (Psalm 146:8).\n\nSo the word that heals him: *Go thy way; thy faith hath made thee whole. And immediately he received his sight, and followed Yahusha (Jesus) in the way.* (Mark 10:52). The blind man saw the King before the crowd did — and once his eyes were opened, he followed.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:51",
+     "tgt": "canon/isaiah 35:5",
+     "member_note": "Isaiah 35:5 — *the eyes of the blind shall be opened* — the restoration sign done in the road."
+    },
+    {
+     "src": "10:52",
+     "tgt": "canon/psalms 146:8",
+     "member_note": "Psalm 146:8 — *Yahuah openeth the eyes of the blind* — Yahuah's own work wrought by the Formed Son."
+    },
+    {
+     "src": "10:47",
+     "tgt": "canon/2-samuel 7:12",
+     "member_note": "2 Samuel 7:12 — *I will set up thy seed after thee* — the Son of David Bartimaeus calls upon."
+    },
+    {
+     "src": "10:47",
+     "tgt": "canon/2-samuel 7:13",
+     "member_note": "2 Samuel 7:13 — *the throne of his kingdom for ever* — the everlasting throne of David's seed."
+    }
+   ]
+  },
+  {
+   "slug": "son-of-adam-as-judge-and-ladder",
+   "title": "Son of Adam — the lineage-name as ladder, judgment, and ascent",
+   "anchor": "John 1:51",
+   "anchored_in_this_book": false,
+   "member_count": 25,
+   "summary_md": "John uses the *Son of Adam* title across his gospel in a register the other gospels do not match. He opens with the title at John 1:51 — *ye shall see heaven open, and the angels of Elohim (God) ascending and descending upon the Son of Adam.* He returns to the title at John 5:27 as the judgment-credential: *the Father hath given him authority to execute judgment also, because he is the Son of Adam.* He lands the title in John 6 as the substance the bread-from-heaven discourse rests on (6:53, 6:62), in John 12 as the lifted-up substance (12:23, 12:34), and in John 13 as the glorified one at the hour (13:31). The framework's seed-of-Adam restoration of the title is load-bearing through all of these — the *son of Adam* names the lineage on which the framework's whole architecture rests.\n\n*And he saith unto him, Verily, verily, I say unto you, Hereafter ye shall see heaven open, and the angels of Elohim (God) ascending and descending upon the Son of Adam.* (John 1:51)\n\n*And hath given him authority to execute judgment also, because he is the Son of Adam.* (John 5:27)\n\n*And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of Elohim (God) ascending and descending on it. And, behold, Yahuah (the LORD) stood above it.* (Genesis 28:12-13)\n\nThe ladder of Ya'aqov's (Jacob's) Bethel vision is the architecture John 1:51 names as fulfilled on the Formed one in flesh. The angels ascending and descending on the ladder ascend and descend on the Son of Adam — the body of the Formed one is the connection between heaven and earth that Ya'aqov (Jacob) saw in the dream. The lineage-name carries the substance: the Son of Adam is the seed of Adam through whom the heaven-earth connection is reopened, the ladder Ya'aqov (Jacob) saw is the body of the lineage taking on the office it always pointed toward.\n\nThe judgment-credential at John 5:27 carries the same lineage-weight. *Because he is the Son of Adam* — because he is of the seed, the judgment of the seed's covenant is his to execute. Daniel 7:13's *one like the Son of Adam* receives the everlasting kingdom from the Ancient of Days; the kaph-comparative honors the incarnation truth that the figure resembles mortal-man because he took on flesh, while remaining the Formed cloud-rider. John 5:27 lands the judgment-authority on the same Son of Adam whose body is the ladder, whose flesh is the bread, whose lifting-up is the gathering-ensign.\n\nThe eating-the-flesh discourse of John 6:53-58 names the lineage-name as the food the gathered take in. *Except ye eat the flesh of the Son of Adam, and drink his blood, ye have no life in you* — the seed-of-Adam is the substance the new birth incorporates; the body of the lineage becomes the food of the gathered body. John 6:62 returns to the title in the ascent: *what and if ye shall see the Son of Adam ascend up where he was before?* The pre-existent Formed one who descended is the same Son of Adam who ascends; the lineage-name is preserved through the descent, the incarnation, the death, the resurrection, and the ascent.\n\nJohn 12:23 names the hour: *the hour is come, that the Son of Adam should be glorified.* John 12:34 records the crowd's question — *who is this Son of Adam?* — the title puzzles the hearers because the inherited reading had emptied the title of its lineage-weight; the Formed one carries it back to its Tanakh substance. John 13:31 lands the glorification at the table after Yehuda (Judas) goes out: *now is the Son of Adam glorified, and Elohim (God) is glorified in him.* The lineage-name is the throughline.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:45",
+     "tgt": "canon/isaiah 53:11",
+     "member_note": "*By his knowledge shall my righteous servant justify many; for he shall bear their iniquities.*"
+    },
+    {
+     "src": "10:45",
+     "tgt": "canon/daniel 7:13",
+     "member_note": "The Daniyel (Daniel) 7:13-14 dominion-architecture carried into the ransom-saying."
+    }
+   ]
+  },
+  {
+   "slug": "john-10-other-sheep-and-the-ten-tribes-gathered-in-2-esdras-13",
+   "title": "The other sheep and the ten tribes gathered in 2 Esdras 13",
+   "anchor": "John 10:16-27",
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "The Good Shepherd names sheep beyond the fold standing in front of him: *and other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* The inherited reading hears *other sheep* as the nations brought into the church by confession. The framework hears the Tanakh's own scattered-house language — and the Hebrew library names the scattered house tribe-by-tribe: the ten tribes carried away in the Assyrian captivity, gathered home by the Most High.\n\n*And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* (John 10:16)\n\n*My sheep hear my voice, and I know them, and they follow me.* (John 10:27)\n\n*Those are the ten tribes, which were carried away prisoners out of their own land in the time of Osea the king, whom Salmanasar the king of Assyria led away captive ... The Highest shall stay the springs of the stream again, that they may go through ... And when all the people hear his voice, every man shall in their own land leave the battle they have one against another.* (2 Esdras 13:40, 47, 33)\n\nThe *other sheep* are not the nations grafted in by a new mechanism; they are the scattered house of Yashar'el (Israel) — the ten northern tribes the Assyrian captivity carried over the waters, named explicitly in the Hebrew library's vision of the Son who is declared. The Shepherd says *them also I must bring,* and the vision names the road home: the Most High staying the river so the carried-away may cross back into one fold. And the mechanism is the same in both: *when all the people hear his voice* they turn — the hearing reveals the sheep, exactly as John 10:27 names it. *My sheep hear my voice* is not a creating but a disclosing; the scattered house hears because the scattered house was always the Shepherd's. The gathering of the carried-away ten tribes is the gathering the Good Shepherd discourse walks.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "john-10-other-sheep-not-of-this-fold-and-the-lost-sheep-of-the-house-of-yasharel-in-matthew-and-1-peter",
+   "title": "Other sheep not of this fold — the lost sheep of the house of Yashar'el (Israel) in Matthew and 1 Peter",
+   "anchor": "John 10:16-27",
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "John 10:16 is the most misread verse in the good-shepherd discourse: *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* The inherited reading treats *other sheep not of this fold* as outside-covenant peoples added to Yashar'el (Israel) by faith-confession — Gentiles included in a newly formed church. That reading is the false-inclusion gospel, and the NT witnesses themselves dismantle it. Matthew 15:24 contains Yahusha's (Jesus') own declaration of his entire commission: *I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* The *other sheep not of this fold* are not outside-covenant peoples; they are the other house — the northern kingdom, the house of Yosef and Ephraim, divorced and scattered by the Assyrian captivity and now living as Gentiles among the nations without knowing who they are. The fold of John 10:16 is the fold of Yahudah (Judah); the other sheep are the scattered seed of the northern house. *Them also I must bring* is the must of the prophetic restoration the Tanakh named through Isaiah 11, Jeremiah 31, Ezekiel 37, Hosea 1-2: the two houses gathered into one. *They shall hear my voice* is the mechanism: the hearing reveals what was already true before the foundation of the world. The sheep hear because they are sheep — the hearing does not make them sheep. Matthew 18:12 names the seeking: *if a man have an hundred sheep, and one of them be gone astray, doth he not leave the ninety and nine, and goeth into the mountains, and seeketh that which is gone astray?* — the gone-astray sheep sought in the mountains of the nations, the scattered seed reached in their exile. When the scattered sheep hear and return, 1 Peter 2:25 names where they have arrived: *For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls.* Peter writes to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia (1 Peter 1:1) — he is writing to the scattered house, the sheep who were going astray. They have heard the voice (John 10:27: *my sheep hear my voice, and I know them, and they follow me*) and returned to the Shepherd and Bishop of their souls. The one fold of John 10:16 is not a new creation; it is the restoration of the one covenant people under the one shepherd, the two houses brought together in the one who laid down his life for them.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "my-sheep-hear-my-voice-hearing-reveals-not-creates",
+   "title": "My sheep hear my voice — hearing reveals what was true before the foundation",
+   "anchor": "John 10:25-29",
+   "anchored_in_this_book": false,
+   "member_count": 22,
+   "summary_md": "The good shepherd discourse contains a sentence the inherited reading cannot hold without rewriting it. *Ye believe not, because ye are not of my sheep.* The cause-and-effect is reversed from the gospel the modern pulpit preaches. The pulpit teaches *if you believe, you become a sheep.* The discourse teaches *if you are a sheep, you hear and believe.* The hearing is the revealing; the sheep-status is what is being revealed. The status precedes the response.\n\n*But ye believe not, because ye are not of my sheep, as I said unto you. My sheep hear my voice, and I know them, and they follow me: and I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand. My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father's hand.* (John 10:26-29)\n\n*Yahuah (the LORD) hath appeared of old unto me, saying, Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee.* (Jeremiah 31:3)\n\n*And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* (Revelation 13:8)\n\nThe Father gave them to the Son. The Father gave them before the foundation of the world. Their names were written then. The hearing of the shepherd's voice in time is the revealing of what was already true in the Father's foreknowledge — not the moment in which the sheep-status was created by the act of believing. The gathering of the scattered seed is not the recruitment of volunteers from the categorical nations; it is the homecoming of those whose names were written in the Lamb's book from the foundation.\n\nThis is why the gathering can be proclaimed broadly without the proclamation collapsing into a categorical invitation to all flesh. The proclamation goes out wherever the Father sends. Those who hear are revealed by their hearing to be sheep. Those who reject have the dust shaken off the foot, and the pearls are not cast before swine. The shepherd does not chase what was never his.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "luke-13-they-shall-come-from-east-and-west-the-gathering-of-the-tribes-in-baruch-and-sirach",
+   "title": "They shall come from east and west — the gathering of the tribes in Baruch and Sirach",
+   "anchor": "Luke 13:29-30",
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "Luke 13:29's *they shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom of Elohim (God)* — spoken at the strait gate against those who eat and drink in his presence yet hear *I know you not whence ye are* (Luke 13:25-28) — walks the Hebrew library's prophetic-gathering of the scattered seed home. This is not categorical-Gentile-inclusion; it is the regathering of the dispersed children of Yashar'el (Israel) from the four quarters of their scattering, and the Hebrew library names them as such. Baruch 4:36 turns the face east: *O Jerusalem, look about you toward the east, and behold the joy that comes to you from Yahuah (God).* Baruch 4:37 names who comes: *Lo, your sons come, whom you sentest away, they come gathered together from the east to the west by the word of the Holy One.* Baruch 5:5 names the gathering-from-the-quarters again: *behold your children gathered from the west to the east by the word of the Holy One* — *led away of their enemies* but now *brought to you exalted with glory, as children of the kingdom* (Baruch 5:6). Sirach (Ecclesiasticus) 36:11 prays the gathering: *gather all the tribes of Jacob together, and inherit you them, as from the beginning* — the petition for the regathering of the twelve tribes, the firstborn Yashar'el (Israel) whom Yahuah named (Sirach 36:12). The come-from-east-and-west of the gospel IS this prophetic-gathering of the sent-away sons home as children of the kingdom — the scattered seed, not a substitute people installed in their place.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "heart-torah-not-abolition",
+   "title": "Heart Torah Not Abolition",
+   "anchor": "Matthew 5:17-19",
+   "anchored_in_this_book": false,
+   "member_count": 24,
+   "summary_md": "Yahusha (Jesus) at Matt 5:17-19 preemptively denies the antinomian misreading of his ministry. He has NOT come to destroy the law or the prophets; he has come to FILL them up to their intended substance. Until heaven and earth pass, one jot or one tittle does not pass from the law. The pulpit that teaches the breaking of even the least commandment is named LEAST in the kingdom of heaven. Matthew 5:19 is the New Testament companion of 1 John 2:3-4 — both verses say the same thing in different grammar: keeping the commandments — and teaching others to keep them — is the proof of knowing him. The thread carries the load-bearing anti-antinomian declaration of the Sermon on the Mount, tied back to the Tanakh's continuing-Torah witnesses and forward to every NT passage that reaffirms the Torah's standing.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:5",
+     "tgt": "canon/jeremiah 31:33",
+     "member_note": "*For the hardness of your heart he wrote you this precept.* The heart-Torah Yirmeyahu (Jeremiah) 31:33 promises is the standard internalized."
+    },
+    {
+     "src": "10:5",
+     "tgt": "canon/ezekiel 36:26",
+     "member_note": "*A new heart also will I give you, and a new spirit will I put within you* (Yechezk'el/Ezekiel 36:26-27)."
+    },
+    {
+     "src": "10:19",
+     "tgt": "canon/exodus 20:12",
+     "member_note": "The King's recital of the commandments — Shemot (Exodus) 20:12-16's honour-father-mother, no-killing, no-stealing, no-adultery, no-false-witness — is load-bearing."
+    },
+    {
+     "src": "10:19",
+     "tgt": "canon/deuteronomy 5:16",
+     "member_note": "The Devarim (Deuteronomy) 5:16-20 re-naming of the same commandments the King is reciting."
+    },
+    {
+     "src": "10:19",
+     "tgt": "canon/matthew 19:16",
+     "member_note": "*If thou wilt enter into life, keep the commandments* (Matthew 19:16-17). Torah-keeping is still the answer; the pulpit that reads *not under law* as Torah's abolition has not stood at this Markan moment."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-12-whosoever-shall-do-the-will-of-my-father-the-true-family-deuteronomy-33-psalm-22",
+   "title": "Whosoever shall do the will of my Father — the true family (Proverbs 26; Deuteronomy 33; Psalm 22)",
+   "anchor": "Matthew 12:43-50",
+   "anchored_in_this_book": false,
+   "member_count": 9,
+   "summary_md": "The unclean spirit that left returns to find the house *empty, swept, and garnished* — and brings seven worse. *As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11): a repentance that empties the heart but does not fill it with obedience leaves the door open, and *the last state of that man is worse than the first.* Then the true house is named. When his mother and brethren stand without, Yahusha defines kinship not by blood but by the Father's will — the very loyalty of Levi: *Who said unto his father and to his mother, I have not seen him... for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9). The Messiah gathers an obedient family and calls them brethren: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22). *For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.* This is the seal against every lawless reading — the will of the Father is His commandment, and the true family is the one that does it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "the-greatness-as-humility-and-the-proud-cast-down-in-the-wisdom-stream",
+   "title": "Greatness as humility and the proud cast down — Sirach (Ecclesiasticus) 3 and 10's wisdom-stream witness to Matt 18:1-5's greatness-as-child kingdom-inversion",
+   "anchor": "Matthew 18:1-5",
+   "anchored_in_this_book": false,
+   "member_count": 9,
+   "summary_md": "Matt 18:1-5's opening movement — the disciples' v.1 hierarchy-question (*who is the greatest in the kingdom of heaven?*) + the King's-acted-parable of a little child set in the midst + the *except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven* substance + the *whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven* inversion + the *whoso shall receive one such little child in my name receiveth me* extension — read against the wisdom-stream's direct articulation of the kingdom-inversion-of-greatness substance. Three moves: Sirach (Ecclesiasticus) 10:7 names the wisdom-stream's articulation of the disposition-the-King-is-confronting at the disciples' v.1 hierarchy-question — *pride is hateful before Yahuah (God) and man: and by both does one commit iniquity*; Sirach 3:18 names THE direct verbal-anchor for the kingdom-inversion-of-greatness substance — *the greater you are, the more humble thyself, and you shall find favour before Yahuah (God)* — the wisdom-stream had named the substance the King teaches at the assembly-disposition register; Sirach 10:14 names THE direct verbal-anchor for the kingdom-inversion-of-thrones substance — *Yahuah (God) has cast down the thrones of proud princes, and set up the meek in their stead* — the wisdom-stream's articulation of the same inversion the King names at v.4, with the eschatological-day-of-the-Father pre-figuring at Mary's Magnificat (Luke 1:51-52's *he hath put down the mighty from their seats, and exalted them of low degree*) and the apostolic-restatement at 1 Corinthians 1:26-29 (*Elohim (God) hath chosen the foolish things of the world to confound the wise*). The framework reads the cluster in continuity with the Tanakh-*anawim* (humble-poor) substance pattern (Tehillim (Psalm) 131:1-2's weaned-child; Tehillim (Psalm) 8:2's out-of-the-mouth-of-babes; Yeshayahu (Isaiah) 11:6's little-child-shall-lead-them; Yeshayahu (Isaiah) 57:15's contrite-and-humble-spirit; Yeshayahu (Isaiah) 66:2's poor-and-of-a-contrite-spirit; Mishlei (Proverbs) 22:4's humility-and-the-fear-of-Yahuah). The apostolic-restatement at 1 Peter 5:5 (citing Mishlei (Proverbs) 3:34) and Yaaqov (James) 4:10 lands the substance at the apostolic-kingdom-citizens' disposition-register. The kingdom-citizen's-greatness is measured by the depth of the humility-substance, not by the height of the position-substance. The framework rules out the institutional-Christian-individualistic-power-grasping inversion-fail and the Hebrew-Roots false-inclusion universalization-of-the-child-substance into a generic-everyone-can-be-saved substance.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "creation-ordinance-marriage-and-the-blessed-eunuch-in-jubilees-tobit-and-wisdom-of-solomon",
+   "title": "Creation-ordinance marriage and the blessed eunuch — Jubilees 3 + Tobit 8 + Wisdom of Solomon 3 on Matt 19:3-12",
+   "anchor": "Matthew 19:3-12",
+   "anchored_in_this_book": false,
+   "member_count": 24,
+   "summary_md": "Matt 19:3-12's divorce-controversy + eunuchs-for-the-kingdom saying — the Pharisees-tempting on the Hillel-vs-Shammai-on-Deuteronomy-24:1-grounds-for-divorce trap; the King's-appeal-behind-Mosheh (Moses)-to-Bereshit (Genesis) 1-2's creation-ordinance with the FRAMEWORK-MAJOR *from the beginning it was not so* substance preserving the Torah-as-concession-to-hardness-of-heart architecture per Red Line #4; the *except-it-be-for-fornication* exception-clause preserving the substantial-sexual-impurity substance Deuteronomy 22:13-21 + Leviticus 20:10-21 already name; the eunuchs-for-the-kingdom saying recognizing voluntary-celibacy-in-kingdom-service as gift-substance some-receive — read against the wisdom-stream's direct articulation of the same architectural-substance. Four moves: Jubilees 3:4 names the wisdom-stream's direct articulation of the *it is not good that the man should be alone* substance from Bereshit (Genesis) 2:18 the King appeals behind Mosheh to at Matt 19:4; Jubilees 3:6 names the *bone of my bones and flesh of my flesh* one-flesh-from-the-beginning substance from Bereshit (Genesis) 2:23-24 the King restates at Matt 19:5 — the substance the framework reads per Red Line #11's seed-and-marriage-covenant architecture in framework-deep's *Paternal Seed and the Marriage-Covenant Absorption* section (the woman was-taken-from-the-man-himself); Tobit 8:6 names Tobias's-prayer-at-the-marriage-bed directly invoking *You madest Adam, and gavest him Eve his wife... it is not good that man should be alone* — the wisdom-stream's direct corroboration of the Father-joins-the-one-flesh-substance the King names at Matt 19:6's *what therefore Elohim (God) hath joined together, let not man put asunder*; Wisdom of Solomon 3:14 names THE direct verbal-anchor for the blessed-eunuch-with-an-inheritance substance — *blessed is the eunuch, which with his hands has wrought no iniquity... for to him shall be given the special gift of faith, and an inheritance in the temple of Yahuah (the LORD) more acceptable to his mind* — the substance the Isaiah 56:3-5 promise carries-forward to the King's eunuchs-for-the-kingdom-of-heaven's-sake saying at Matt 19:12. The framework reads the cluster as the wisdom-stream's direct corroboration of the architecture — the Father's-will-from-the-beginning is the substance-of-reference for the marriage-substance; the eunuch-with-an-inheritance is the substance the voluntary-celibate-for-the-kingdom walks. The framework rules out: the Roman-Catholic-no-divorce-no-remarriage-absolute reading (the *porneia* exception-clause stands); the Roman-Catholic-mandatory-clerical-celibacy substance (the celibate-substance is gift, not mandate); the Reformation-marriage-mandate-with-no-honored-celibate-substance over-correction (the substance the King-himself walked and Sha'ul (Paul) walked is honored, not deficient).",
+   "members_in_this_chapter": [
+    {
+     "src": "10:2",
+     "tgt": "canon/genesis 1:27",
+     "member_note": "*From the beginning of the creation Elohim (God) made them male and female.* The King sends them back to Bereshit (Genesis) 1:27, refusing the divorce-question on Bereshit-and-Bereshit-2 ground."
+    },
+    {
+     "src": "10:2",
+     "tgt": "canon/genesis 2:22",
+     "member_note": "*Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh* (Bereshit/Genesis 2:22-24)."
+    }
+   ]
+  },
+  {
+   "slug": "the-gathering-of-the-twelve-tribes-and-the-thrones-of-judgment-in-jubilees-sirach-wisdom-and-testaments-xii",
+   "title": "The gathering of the twelve tribes and the thrones of judgment — Jubilees 1, 31 + Sirach 36 + Wisdom of Solomon 3 + Testaments XII Joseph 15 on Matt 19:27-30 (FRAMEWORK-MAJOR)",
+   "anchor": "Matthew 19:27-30",
+   "anchored_in_this_book": false,
+   "member_count": 34,
+   "summary_md": "Matt 19:27-30's FRAMEWORK-MAJOR moment — Kefa (Peter)'s *we have forsaken all, and followed thee; what shall we have therefore?* + the King's-mouth-most-direct-statement of the consummated-kingdom-architecture *in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel)* + the hundredfold-and-everlasting-life substance + the *many that are first shall be last* bridge to Matt 20 — read against the wisdom-stream's direct articulation of the gathering-of-the-twelve-tribes + the thrones-of-judgment architecture. Five moves: Jubilees 1:15 names THE direct wisdom-stream verbal-anchor for the gathering-from-amongst-all-the-nations substance (*I shall gather them from amongst all the nations*) — the substance the King's-Matt-19:28-statement presupposes-as-the-completed-gathering-architecture, in continuity with Yechezk'el (Ezekiel) 37:21-22's two-sticks-becoming-one + Yeshayahu (Isaiah) 11:11-12's *outcasts of Yashar'el (Israel)... dispersed of Yahudah (Judah) from the four corners of the earth* + Yirmeyahu (Jeremiah) 31:31's new-covenant-with-both-houses; Jubilees 31:15 names the princes-and-judges-of-all-the-seed-of-the-sons-of-Jacob substance (*they will be princes and judges, and chiefs of all the seed of the sons of Jacob; They will speak the word of Yahuah (God) in righteousness, And they will judge all His judgments in righteousness*) — the substance the King's *judging the twelve tribes of Yashar'el (Israel)* at v.28 carries-forward; Sirach (Ecclesiasticus) 36:11 names THE direct verbal-anchor for the gather-all-the-tribes-of-Jacob-together substance (*gather all the tribes of Jacob together, and inherit you them, as from the beginning*) — the wisdom-stream's prayer-for-the-redemption-and-gathering-of-Yashar'el (Israel) the King at Matt 19:28 names as-completed-in-the-regeneration; Wisdom of Solomon 3:8 names the souls-of-the-righteous *they shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever* substance — the consummated-kingdom's kingdom-of-priests architecture for the nations-left-alive-after-the-day-of-Yahuah (the LORD) per Shemot (Exodus) 19:6, Yeshayahu (Isaiah) 61:6, Revelation 1:6, 5:10; Testaments XII Joseph 15 (chapter 86) verse 2 names the twelve-harts-feeding-then-dispersed substance (*there were twelve harts feeding: and the nine were (first) dispersed over all the earth, and likewise also the three*) — the twelve-tribes-dispersed-and-gathered architecture the Tanakh-prophets had named (Yechezk'el (Ezekiel) 37:15-22's two-sticks substance: nine = the ten-northern-tribes; three = the southern-house-substance + Levi-priestly-substance) and the King's-substance restates at the King's-mouth. The framework reads the cluster as FRAMEWORK-MAJOR for Red Line #11 — the twelve-tribes of Yashar'el (Israel) at the regeneration are LITERAL twelve-tribes, the paternal-blood remnant the Father-promised-through-the-prophets-and-the-wisdom-stream-and-now-states-at-the-King's-mouth. The framework rules out: the institutional-Christian replacement-theology substance that-collapses-the-twelve-tribes into the church-as-spiritual-Yashar'el (Israel); the Hebrew-Roots-false-inclusion-gospel that-collapses-the-twelve-tribes into anyone-who-believes-and-Torah-keeps-is-therefore-Yashar'el (Israel) (both branches on the olive-tree are Yashar'el (Israel) — natural-branches the covenant-lineage of the patriarchs and-the-faithful-of-every-generation, wild-olive-branches the descendants-of-the-broken-off coming-home through-the-journey-the-prophets-named); the spiritualization-of-the-twelve-thrones into a-metaphor-of-spiritual-authority (the substance is concrete — twelve thrones in the consummated-kingdom for the twelve-apostles, in continuity with Revelation 4:4's twenty-four-elders-around-the-throne and Revelation 21:12-14's twelve-gates-named-for-the-twelve-tribes-with-twelve-foundations-named-for-the-twelve-apostles-of-the-Lamb).",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "many-be-called-but-few-chosen-in-1-enoch-and-2-esdras",
+   "title": "Many be called, but few chosen — 1 Enoch 48 and 2 Esdras 8 on the broad call and the few",
+   "anchor": "Matthew 20:16",
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "The parable of the laborers closes on a hard line: *So the last shall be first, and the first last: for many be called, but few chosen.* (Matthew 20:16). The call goes out broadly because the sheep are scattered everywhere and no one can tell them by sight, and the chosen are the ones who were his before the call ever reached them. He says it himself in John 10: *ye believe not, because ye are not of my sheep ... my sheep hear my voice.* The hearing does not make a sheep; it shows one. Enoch saw the broad call as a fountain anyone could come to: *And in that place I saw the fountain of righteousness Which was inexhaustible: And around it were many fountains of wisdom: And all the thirsty drank of them, And were filled with wisdom, And their dwellings were with the righteous and holy and elect.* (1 Enoch 48:1). And he saw who the Son of Adam was kept for: *And the wisdom of Yahuah (Lord) of Spirits hath revealed him to the holy and righteous; For he hath preserved the lot of the righteous, Because they have hated and despised this world of unrighteousness, And have hated all its works and ways in the name of Yahuah (Lord) of Spirits: For in his name they are saved, And according to his good pleasure hath it been in regard to their life.* (1 Enoch 48:7). Ezra was told the same count in plainer arithmetic: *there be many created, but few shall be saved* (2 Esdras 8:3). The many are not cheated; the call really went out to them. The few are the ones written from the foundation of the world (Revelation 13:8), who heard because they were his, and who then walked in it, because the warning about being blotted out is spoken to the wheat and never to the tares. The last made first are the scattered ones nobody expected, and the first made last are the ones who stood in the field all day and never bore the fruit.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "the-cup-of-suffering-and-the-vindication-of-the-righteous-in-wisdom-of-solomon-and-2-maccabees",
+   "title": "The cup of suffering and the vindication of the righteous — Wisdom of Solomon 3 + 5 + 2 Maccabees 7's wisdom-stream witness to Matt 20:22-23",
+   "anchor": "Matthew 20:22-23",
+   "anchored_in_this_book": false,
+   "member_count": 15,
+   "summary_md": "Matt 20:22-23's cup-and-baptism dialogue — *are ye able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with?* + the sons' confidence-without-comprehension *we are able* + the King's-confirmation *ye shall drink indeed of my cup, and be baptized with the baptism that I am baptized with* — read against the wisdom-stream's articulation of the cup-of-suffering and the post-suffering vindication-of-the-righteous. The framework reads the substance carefully — the King drinks-the-cup-of-Yahuah's-wrath at the substitutionary-substance-level (the Tanakh-cup-of-wrath the prophets carried — Psalm 75:8, Yeshayahu (Isaiah) 51:17, 21-22, Yirmeyahu (Jeremiah) 25:15-16, Yechezk'el (Ezekiel) 23:32-34, Habakkuk 2:16); the sons-of-Zavdai (Zebedee) will-drink-the-cup at the apostolic-mission-cost-level — Ya'aqov (James) the son of Zavdai (Zebedee) killed-with-the-sword by Herodes-Agrippa-I at Acts 12:2 as the first apostolic-martyr; Yochanan (John) walking-the-substance-of-tribulation across the long-apostolic-mission to Patmos (Hitgalut (Revelation) 1:9); the two substances are categorically-distinct, and the framework rules-out any reading that flattens them into one. The cross opens-the-door-home through the Father's-Way-back-to-the-Father; the cross does NOT cancel-the-curse-system (per the *Grace, the Way, the New Heart, and the Mercy of Depart* section of framework-deep.md). Four moves: Wisdom of Solomon 3:1 names the wisdom-stream articulation of the souls-of-the-righteous-in-the-hand-of-Yahuah substance — the substantial-preservation through the apostolic-mission-cost cup; Wisdom of Solomon 5:1 names the post-suffering vindication-of-the-righteous-man-standing-in-great-boldness-before-the-face-of-such-as-have-afflicted-him substance — the day-of-vindication the wisdom-stream had-named at the prefiguring-register; Wisdom of Solomon 5:15 names the righteous-live-for-evermore + reward-with-Yahuah substance — the eschatological-reward the Father distributes by-the-Father's-will at the substance the substantial-walking-in-the-Way reveals (NOT the Pharisaic-flesh-merit nor the Reformed-no-condition-on-the-believer); 2 Maccabees 7:37 names THE direct extras-stream verbal-anchor for the substantial-martyrdom — the youngest brother offering-up-body-and-life-for-the-laws-of-the-fathers-and-the-mercy-of-the-nation under-the-tyrant-Antiochus (the seven-Maccabean-brothers' resurrection-confession at vv.9, 14, 23, 29 the apostolic-cup-of-mission-cost would-rehearse). The framework reads the cluster as the wisdom-stream's direct corroboration of the architecture the cup-and-baptism dialogue rests upon — the substantial-suffering-walked-through-with-preservation-of-the-soul-in-the-hand-of-Yahuah, the post-suffering-vindication-of-the-righteous, the Father's-distribution-of-the-reward by-the-Father's-will.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:35",
+     "tgt": "canon/isaiah 51:17",
+     "member_note": "*The cup the King drinks is the cup of the Father's wrath the prophets named.* *Awake, awake, stand up, O Yerushalayim... cup of his fury* (Yeshayahu/Isaiah 51:17, 22)."
+    }
+   ]
+  },
+  {
+   "slug": "the-son-of-adam-came-to-give-his-life-a-ransom-for-many-in-1-enoch-testaments-and-sirach",
+   "title": "The Son of Adam came to give his life a ransom for many — the Parables of Enoch, the Testament of Benjamin and Sirach beside Matthew 20:28",
+   "anchor": "Matthew 20:25-28",
+   "anchored_in_this_book": false,
+   "member_count": 21,
+   "summary_md": "*Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* (Matthew 20:28). The sons of Zebedee had asked for the seats on his right and his left, and he answers by turning the whole order of greatness upside down: whoever would be great must serve, and he says it of himself first. The title he uses makes the saying heavier than it sounds. The Son of Adam is the one Enoch saw beside the Head of Days: *And he answered and said unto me: This is the Son of Adam who hath righteousness, With whom dwelleth righteousness, And who revealeth all the treasures of that which is hidden, Because Yahuah (Lord) of Spirits hath chosen him, And whose lot hath the pre-eminence before Yahuah (Lord) of Spirits in uprightness for ever.* (1 Enoch 46:3), named before anything was made: *And at that hour that Son of Adam was named In the presence of Yahuah (Lord) of Spirits, And his name before the Head of Days.* (1 Enoch 48:2). The ransom was settled that early too; John calls him the Lamb slain from the foundation of the world. And the one who gives his life is the one the kings will one day beg mercy of: *And all the kings and the mighty and the exalted and those who rule the earth Shall fall down before him on their faces, And worship and set their hope upon that Son of Adam, And petition him and supplicate for mercy at his hands.* (1 Enoch 62:9). The same figure who serves at the first coming judges at the second. The ransom is the Torah's own word, the price paid for a life, and the *many* are Isaiah's many: *He shall see of the travail of his soul, and shall be satisfied: by his knowledge shall my righteous servant justify many; for he shall bear their iniquities.* (Isaiah 53:11); *Therefore will I divide him a portion with the great, and he shall divide the spoil with the strong; because he hath poured out his soul unto death: and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors.* (Isaiah 53:12). Not everyone without distinction, and not a handful picked at random, but the many whose names the Father wrote. The Testament of Benjamin had said the Most High would be lowly on earth and glorious in heaven, and Sirach that the greater a man is the more he must humble himself. The King took the lowest place in the room on purpose, because that is where the ransom gets paid.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:45",
+     "tgt": "canon/isaiah 53:10",
+     "member_note": "*The Son of Adam came... to give his life a ransom for many.* The Yeshayahu (Isaiah) 53 Suffering Servant — *he shall see of the travail of his soul* (53:10-12). NOT collapsed into strict penal-substitution."
+    }
+   ]
+  },
+  {
+   "slug": "the-wedding-feast-and-the-garments-of-the-righteous-in-2-esdras-and-wisdom-of-solomon",
+   "title": "The wedding feast and the garments of the righteous — 2 Esdras 2 and Wisdom of Solomon 5's wisdom-stream witness to Matt 22:1-14",
+   "anchor": "Matthew 22:1-14",
+   "anchored_in_this_book": false,
+   "member_count": 14,
+   "summary_md": "Matt 22:1-14's parable-of-the-marriage-feast — the kingdom-banquet the King-substance walks-out against the leadership-stewards the prior chapter's husbandmen-parable had named — read against the wisdom-stream's direct articulation of the gathered-to-the-feast / great-people-upon-Mount-Tsion / young-man-of-high-stature-setting-crowns / glorious-kingdom-and-beautiful-crown substance. Four moves: 2 Esdras 2:38 names the wisdom-stream verbal-anchor for the gathered *in the feast of Yahuah (God)* substance the King's servants-walking-into-the-highways-and-hedges at Matt 22:9 brings into-effect; 2 Esdras 2:42 names the great-people-upon-Mount-Tsion the wedding-feast-furnished-with-guests at Matt 22:10 walks-out; 2 Esdras 2:43 names the young-man-of-high-stature setting-crowns-upon-the-gathered the king-substance-walking-among-the-guests at Matt 22:11 walks-out at the historical-pivot; Wisdom of Solomon 5:16 names the glorious-kingdom-and-beautiful-crown the citizen-walking-in-the-wedding-garment receives at Matt 22:12-13 the man-without-the-garment cannot. The framework reads the cluster in continuity with Red Line #11's ingathering-of-the-paternal-blood-remnant-of-the-twelve-tribes architecture (the highways-and-hedges-gathering is the scattered-seed coming-home per Hosea 1:9-10 + Isaiah 11:11-12 + Ezekiel 37:21 + Zechariah 10:8-10, NOT the categorically-unrelated-nations-grafted-by-faith-confession substance the inherited-Christian-replacement-theology had collapsed-the-substance-into) and in continuity with the post-harvest-sifting-architecture (the wedding-garment is the substance-walked-after-the-door-is-passed-through per Revelation 19:8 + 22:14, NOT the imputed-righteousness-without-substance-walked the Reformation-substance had collapsed-the-gospel-into; the man-without-the-garment cast-into-outer-darkness is the wheat-blotted-out-by-walking-without-fruit per Revelation 3:5 + Matthew 7:21-23, NOT a warning-to-tares the tares had-never-been-written). The wisdom-stream and the apostolic-vision cohere at the gathered-multitude-on-Zion architecture the King's wedding-feast-parable walks-out.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "effort-over-accomplishment",
+   "title": "Effort over accomplishment — the same God says both",
+   "anchor": "Proverbs 24:16",
+   "anchored_in_this_book": false,
+   "member_count": 77,
+   "summary_md": "The Reformation reader has been shaped to believe two thoughts cannot stand in the same paragraph. The same God who said *not for your righteousness do I do this, but for my own name's sake* — also said *depart from me, ye that work iniquity, I never knew you.* The same God who said *for by grace are ye saved through faith* — also said *whosoever hath sinned against me, him will I blot out of my book.* The same God who said *I will give you a new heart* — also said *ye shall loathe yourselves in your own sight for your iniquities.*\n\nThe Reformation kept the *for my name's sake* half and put a period where there should have been a colon. The rabbinic system kept the *depart from me* half and built a flesh-righteousness gospel. The framework holds both halves because scripture holds both halves. The place where they hold together is the phrase that names the diagnostic: **effort over accomplishment.**\n\n*\"For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.\"* (Proverbs 24:16)\n\nThe just is not the man who never fell. The wicked is not the man who failed to accomplish. What separates them is not the verdict — *none worthy* has already fallen on every flesh — but the heart's response. The just rises. The wicked *stops his ears* (Proverbs 28:9; Zechariah 7:11-12; Acts 7:57). Open ears and a returning heart, even after seven falls, is the sign of life; stopped ears, even after a hundred sermons, is the sign of death.\n\nThe new heart's signature response to grace is not the boast. It is the hanging head — *ye shall loathe yourselves in your own sight for your iniquities* (Ezekiel 36:31; 20:43; Job 42:5-6; Isaiah 6:5; Daniel 9:5). The Reformation gospel produces a head that holds itself up because it is *saved.* The rabbinic gospel produces a head that holds itself up because it is *righteous.* The framework's new heart produces a head that goes lower the more it sees His mercy.\n\n*\"Remember the former things of old: for I am El, and there is none else; I am Elohim (God), and there is none like me, Declaring the end from the beginning, and from ancient times the things that are not yet done, saying, My counsel shall stand, and I will do all my pleasure.\"* (Isaiah 46:9-10)\n\nThe whole architecture is sealed by the end the Father declared from the beginning. The end is the gathering — the twelve tribes home, the new heart given, the kingdom of priests, the Way restored. Every system that denies the gathering denies the end; every system that denies the end calls Him a liar; to call Him a liar is to reject the mercy that hangs on His name. The architecture stands or falls as one piece.\n\nCompanion threads: `grace-from-names-sake` carries the name's-sake-mercy pillar; `new-heart` carries the Torah-internalized pillar; `post-harvest-sifting` carries the wheat-sifting pillar; `grace-and-the-opportunity-that-can-be-lost` carries the standing-can-be-forfeit warning at the Matt 6 anchor. This thread anchors the architecture at the Proverbs 24:16 hinge and adds the stopped-ears discriminator, the hanging-heads sign, and the end-declared seal.",
+   "members_in_this_chapter": [
+    {
+     "src": "10:21",
+     "tgt": "canon/proverbs 24:16",
+     "member_note": "*One thing thou lackest.* The kingdom is entered not by counting accomplishment but by taking the next step in love. *A just man falleth seven times, and riseth up again* (Mishlei/Proverbs 24:16)."
+    }
+   ]
+  },
+  {
+   "slug": "children-of-elohim-by-doing-the-fathers-will-in-wisdom-and-sirach-and-jubilees",
+   "title": "Children of Elohim by doing the Father's will — the son-of-the-Most-High identity-marker — Wisdom of Solomon 2, Sirach 4, Jubilees 1",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "Matt 12:46-50's kingdom-family-redefinition closing — *whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother* — read against the wisdom-stream's children-of-Elohim-by-doing-the-Father's-will architecture. Four moves: Wisdom of Solomon 2:13-15 names the child-of-Elohim-by-the-righteous-disposition architecture — *he calleth himself the child of Yahuah (the Lord) ... his life is not like other men's, his ways are of another fashion*; Wisdom of Solomon 2:18 names the son-of-Elohim-tested-by-deliverance architecture — *if the just man be the son of Elohim (God), he will help him*; Sirach (Ecclesiasticus) 4:10 names THE strongest wisdom-stream verbal-anchor for the doing-the-Father's-substance-makes-thee-a-son architecture — *be as a father unto the fatherless ... so shalt thou be as the son of the most High*; Jubilees 1:24 names the souls-cleaving-to-Yahuah-and-fulfilling-the-commandments yields the Father-and-children-relation architecture — *they will fulfil My commandments, and I shall be their Father and they will be My children.* The framework reads the cluster against Matt 12:50: the kingdom-family-recognition-criterion is the same doing-the-Father's-will substance the wisdom-stream had named as the operative-form of the son-of-the-Most-High identity. The same criterion is the kingdom-entry-criterion at Matt 7:21 (*not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father*), and the 1 John 2:3-4 master-filter restates it: *if we keep his commandments.* The wisdom-stream and the gospel name one architecture across two registers — the kingdom-family is identified by the heart-Torah-walking-disposition the prophets named, the wisdom-stream named, and the King names operative in the kingdom's inauguration.",
+   "members_in_this_chapter": []
+  }
+ ]
+}

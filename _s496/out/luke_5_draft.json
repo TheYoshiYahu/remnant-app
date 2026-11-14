@@ -1,0 +1,32 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 5,
+ "cards": [
+  {
+   "id": 6991,
+   "prose": "Both gospels send the cleansed man to the priest, and both say it is Moses' commandment and not a new one. Matthew calls it *the gift that Moses commanded*. Luke says what the offering is for: *offer for thy cleansing, according as Moses commanded*. Yahusha (Jesus) touches the leper and then sends him straight back into the Torah's own order for a cleansed leper.",
+   "member_phrase": "shew thyself to the priest, and offer the gift that Moses commanded, for a testimony unto them",
+   "member_sentence": "Matthew's Yahusha (Jesus) sends the healed leper to the priest with the gift Moses commanded, as a testimony to them.",
+   "thread": "luke-5-shew-thyself-to-the-priest-as-moses-commanded-leviticus-13-14-2-kings-5",
+   "flag": ""
+  },
+  {
+   "id": 6994,
+   "prose": "Matthew asks whether the wedding guests can *mourn* while the bridegroom is with them, and Luke asks whether you can make them *fast*. It is the same question put to the ones who asked about fasting. Either way he sits in the bridegroom's place, and Isaiah gives that place to Elohim (God): *as the bridegroom rejoiceth over the bride, so shall thy Elohim (God) rejoice over thee* (Isaiah 62:5).",
+   "member_phrase": "but the days will come, when the bridegroom shall be taken from them, and then shall they fast",
+   "member_sentence": "Matthew asks whether the guests can mourn while the bridegroom is with them, then says the days will come when he is taken and they fast.",
+   "thread": "luke-5-the-bridegroom-and-the-new-wine-joel-2-isaiah-62-jeremiah-31",
+   "flag": ""
+  },
+  {
+   "id": 6995,
+   "prose": "Luke has a piece of new cloth on an old garment, and Matthew's verse has *new wine into old bottles*. It is one saying told with two figures. Put the new into something too worn to hold it and the garment tears and the bottles burst, but *they put new wine into new bottles, and both are preserved*. Both figures are about what a vessel can hold.",
+   "member_phrase": "but they put new wine into new bottles, and both are preserved",
+   "member_sentence": "Matthew's wine and bottles carry the same lesson as Luke's cloth: the new is not put into what cannot hold it, and both are preserved.",
+   "thread": "luke-5-the-bridegroom-and-the-new-wine-joel-2-isaiah-62-jeremiah-31",
+   "flag": "Old note grouped this with leaven and read it as the new heart; Luke 5:36 is the garment and the target is wine and bottles, so I wrote the figure itself."
+  }
+ ],
+ "new_threads": []
+}

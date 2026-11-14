@@ -1,4 +1,4 @@
-"""S496 — shared helpers for the Matthew REBUILD chain (assemble496 / gen_sql496 / seed496 / check496 / dump496 / gen_deploy496).
+"""S496 — shared helpers for the orphan-card REBUILD chain (Matthew b1–b5; S502: Mark m1, Luke l1) (assemble496 / gen_sql496 / seed496 / check496 / dump496 / gen_deploy496).
 The rebuild rewrites existing cards IN PLACE (id kept), adds them to threads, and anchors unanchored threads — the UPDATE path beside
 the S495 INSERT chain. Text lookup, quotation matching and the forbidden-phrase scan come from the S495 chain's common495.py (one copy:
 _s495/tools on the Mac). Nothing here is prose. Model: Claude Fable 5.1 (claude-fable-5-1)."""
@@ -12,7 +12,16 @@ for p in (HERE, W6.parent / '_s495' / 'tools'):
 if not os.environ.get('S495_HOME') and (HERE / 'common495.py').exists(): os.environ['S495_HOME'] = str(W6)   # sandbox layout: live/ parsed/ beside tools/
 from common495 import *   # W (the S495 root: live/, parsed/), parsed_text, NAMES, norm, quote_in, has_phrase_of, forbidden_scan, TRAIL_RE, LEAD_RE, ...
 
-BATCHES = {'b1': ('matthew', range(1, 8)), 'b2': ('matthew', range(8, 14)), 'b3': ('matthew', range(14, 20)), 'b4': ('matthew', range(20, 25)), 'b5': ('matthew', range(25, 29))}
+BATCHES = {'b1': ('matthew', range(1, 8)), 'b2': ('matthew', range(8, 14)), 'b3': ('matthew', range(14, 20)), 'b4': ('matthew', range(20, 25)), 'b5': ('matthew', range(25, 29)),
+           'm1': ('mark', range(1, 17)), 'l1': ('luke', range(1, 25))}          # S502: the chain is two-book — every tool takes the book from here
+def batch_of(book, ch):
+    """the batch a (book, chapter) belongs to — chapter alone is ambiguous now that three books share chapter numbers"""
+    return next(b for b, (bk, chs) in BATCHES.items() if bk == book and ch in chs)
+PREFIX_RE = re.compile(r"^thread:([a-z0-9][a-z0-9-]*)\s*\|\s*")
+def split_prefix(note):
+    """the old notes of Mark and Luke open 'thread:slug | …' — none of those slugs is a live thread; return (slug or None, note without it)"""
+    m = PREFIX_RE.match(note or '')
+    return (m.group(1), (note or '')[m.end():]) if m else (None, note or '')
 ED = 'canon'
 TITLES = dict(canon_titles()); TITLES['psalms'] = 'Psalm'
 def live_file(book): return W / 'live' / f'canon__{book}.json'
@@ -47,9 +56,9 @@ def prose_scan(text):
     if re.search(r"(?:—[^—]{0,60}){3,}", prose): out.append('three or more dashes strung in one run')
     return out
 
-def compose_note(tgt_name, tc, tv, tgt_text, src_text, ch, vn, prose):
-    """the card the reader sees: the target verse whole, the Matthew verse whole, then the plain prose"""
-    return f"{tgt_name} {tc}:{tv} — *{tgt_text}* *{src_text}* (Matthew {ch}:{vn}) {prose.strip()}"
+def compose_note(tgt_name, tc, tv, tgt_text, src_text, ch, vn, prose, src_name='Matthew'):
+    """the card the reader sees: the target verse whole, the source (Matthew / Mark / Luke) verse whole, then the plain prose"""
+    return f"{tgt_name} {tc}:{tv} — *{tgt_text}* *{src_text}* ({src_name} {ch}:{vn}) {prose.strip()}"
 
 def compose_member(tgt_name, tc, tv, tgt_text, phrase, sentence):
     if phrase == 'WHOLE': q = tgt_text                       # the verse exactly as it stands, its own closing mark kept

@@ -1,0 +1,481 @@
+{
+ "book": "luke",
+ "chapter": 21,
+ "chapter_text_kjv": {
+  "1": "And he looked up, and saw the rich men casting their gifts into the treasury.",
+  "2": "And he saw also a certain poor widow casting in thither two mites.",
+  "3": "And he said, Of a truth I say unto you, that this poor widow hath cast in more than they all:",
+  "4": "For all these have of their abundance cast in unto the offerings of Elohim (God): but she of her penury hath cast in all the living that she had.",
+  "5": "And as some spake of the temple, how it was adorned with goodly stones and gifts, he said,",
+  "6": "As for these things which ye behold, the days will come, in the which there shall not be left one stone upon another, that shall not be thrown down.",
+  "7": "And they asked him, saying, Master, but when shall these things be? and what sign will there be when these things shall come to pass?",
+  "8": "And he said, Take heed that ye be not deceived: for many shall come in my name, saying, I am Messiah (Christ); and the time draweth near: go ye not therefore after them.",
+  "9": "But when ye shall hear of wars and commotions, be not terrified: for these things must first come to pass; but the end is not by and by.",
+  "10": "Then said he unto them, Nation shall rise against nation, and kingdom against kingdom:",
+  "11": "And great earthquakes shall be in divers places, and famines, and pestilences; and fearful sights and great signs shall there be from heaven.",
+  "12": "But before all these, they shall lay their hands on you, and persecute you, delivering you up to the synagogues, and into prisons, being brought before kings and rulers for my name’s sake.",
+  "13": "And it shall turn to you for a testimony.",
+  "14": "Settle it therefore in your hearts, not to meditate before what ye shall answer:",
+  "15": "For I will give you a mouth and wisdom, which all your adversaries shall not be able to gainsay nor resist.",
+  "16": "And ye shall be betrayed both by parents, and brethren, and kinsfolks, and friends; and some of you shall they cause to be put to death.",
+  "17": "And ye shall be hated of all men for my name’s sake.",
+  "18": "But there shall not an hair of your head perish.",
+  "19": "In your patience possess ye your souls.",
+  "20": "And when ye shall see Jerusalem compassed with armies, then know that the desolation thereof is nigh.",
+  "21": "Then let them which are in Judæa flee to the mountains; and let them which are in the midst of it depart out; and let not them that are in the countries enter thereinto.",
+  "22": "For these be the days of vengeance, that all things which are written may be fulfilled.",
+  "23": "But woe unto them that are with child, and to them that give suck, in those days! for there shall be great distress in the land, and wrath upon this people.",
+  "24": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+  "25": "And there shall be signs in the sun, and in the moon, and in the stars; and upon the earth distress of nations, with perplexity; the sea and the waves roaring;",
+  "26": "Men’s hearts failing them for fear, and for looking after those things which are coming on the earth: for the powers of heaven shall be shaken.",
+  "27": "And then shall they see the Son of Adam coming in a cloud with power and great glory.",
+  "28": "And when these things begin to come to pass, then look up, and lift up your heads; for your redemption draweth nigh.",
+  "29": "And he spake to them a parable; Behold the fig tree, and all the trees;",
+  "30": "When they now shoot forth, ye see and know of your own selves that summer is now nigh at hand.",
+  "31": "So likewise ye, when ye see these things come to pass, know ye that the kingdom of Elohim (God) is nigh at hand.",
+  "32": "Verily I say unto you, This generation shall not pass away, till all be fulfilled.",
+  "33": "Heaven and earth shall pass away: but my words shall not pass away.",
+  "34": "And take heed to yourselves, lest at any time your hearts be overcharged with surfeiting, and drunkenness, and cares of this life, and so that day come upon you unawares.",
+  "35": "For as a snare shall it come on all them that dwell on the face of the whole earth.",
+  "36": "Watch ye therefore, and pray always, that ye may be accounted worthy to escape all these things that shall come to pass, and to stand before the Son of Adam.",
+  "37": "And in the day time he was teaching in the temple; and at night he went out, and abode in the mount that is called the mount of Olives.",
+  "38": "And all the people came early in the morning to him in the temple, for to hear him."
+ },
+ "cards": [
+  {
+   "id": 177457,
+   "src": "Luke 21:24",
+   "src_vn": 24,
+   "src_text_live": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "src_text_kjv": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "tgt": "Ezekiel 9:6",
+   "tgt_text_kjv": "Slay utterly old and young, both maids, and little children, and women: but come not near any man upon whom is the mark; and begin at my sanctuary. Then they began at the ancient men which were before the house.",
+   "tgt_context_kjv": {
+    "4": "And Yahuah (LORD) said unto him, Go through the midst of the city, through the midst of Jerusalem, and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof.",
+    "5": "And to the others he said in mine hearing, Go ye after him through the city, and smite: let not your eye spare, neither have ye pity:",
+    "6": "Slay utterly old and young, both maids, and little children, and women: but come not near any man upon whom is the mark; and begin at my sanctuary. Then they began at the ancient men which were before the house.",
+    "7": "And he said unto them, Defile the house, and fill the courts with the slain: go ye forth. And they went forth, and slew in the city.",
+    "8": "And it came to pass, while they were slaying them, and I was left, that I fell upon my face, and cried, and said, Ah Yahuah (Lord) GOD! wilt thou destroy all the residue of Yashar'el (Israel) in thy pouring out of thy fury upon Jerusalem?",
+    "9": "Then said he unto me, The iniquity of the house of Yashar'el (Israel) and Yahudah (Judah) is exceeding great, and the land is full of blood, and the city full of perverseness: for they say, Yahuah (LORD) hath forsaken the earth, and Yahuah (LORD) seeth not."
+   },
+   "old_note": "*...but come not near any man upon whom is the mark; and begin at my sanctuary* (Ezekiel 9:6). The treading-down of Luke 21:24 is the same separation Ezekiel saw, and it starts inside the house: the mark divides the sighing remnant from the abominations they grieved, and the dividing begins at the holy place. The counterfeit sown into the assembly is burned out first.",
+   "author_thread_hint": null,
+   "map_grade": "PARTIAL",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 177458,
+   "src": "Luke 21:24",
+   "src_vn": 24,
+   "src_text_live": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "src_text_kjv": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "tgt": "Zechariah 13:8",
+   "tgt_text_kjv": "And it shall come to pass, that in all the land, saith Yahuah (LORD), two parts therein shall be cut off and die; but the third shall be left therein.",
+   "tgt_context_kjv": {
+    "6": "And one shall say unto him, What are these wounds in thine hands? Then he shall answer, Those with which I was wounded in the house of my friends.",
+    "7": "Awake, O sword, against my shepherd, and against the man that is my fellow, saith Yahuah Tseva'ot (LORD of hosts): smite the shepherd, and the sheep shall be scattered: and I will turn mine hand upon the little ones.",
+    "8": "And it shall come to pass, that in all the land, saith Yahuah (LORD), two parts therein shall be cut off and die; but the third shall be left therein.",
+    "9": "And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people: and they shall say, Yahuah (LORD) is my Elohim (God)."
+   },
+   "old_note": "*...two parts therein shall be cut off and die; but the third shall be left therein* (Zechariah 13:8). The desolation Luke names is a sifting, not an erasure: two parts cut off, a third brought through the fire and refined as silver. The treading-down purges the field; the remnant it leaves is the silver Yahuah (the LORD) calls *my people* (Zechariah 13:9).",
+   "author_thread_hint": null,
+   "map_grade": "PARTIAL",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 177459,
+   "src": "Luke 21:24",
+   "src_vn": 24,
+   "src_text_live": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "src_text_kjv": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "tgt": "Zechariah 14:9",
+   "tgt_text_kjv": "And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one.",
+   "tgt_context_kjv": {
+    "7": "But it shall be one day which shall be known to Yahuah (LORD), not day, nor night: but it shall come to pass, that at evening time it shall be light.",
+    "8": "And it shall be in that day, that living waters shall go out from Jerusalem; half of them toward the former sea, and half of them toward the hinder sea: in summer and in winter shall it be.",
+    "9": "And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one.",
+    "10": "All the land shall be turned as a plain from Geba to Rimmon south of Jerusalem: and it shall be lifted up, and inhabited in her place, from Benjamin’s gate unto the place of the first gate, unto the corner gate, and from the tower of Hananeel unto the king’s winepresses.",
+    "11": "And men shall dwell in it, and there shall be no more utter destruction; but Jerusalem shall be safely inhabited.",
+    "12": "And this shall be the plague wherewith Yahuah (LORD) will smite all the people that have fought against Jerusalem; Their flesh shall consume away while they stand upon their feet, and their eyes shall consume away in their holes, and their tongue shall consume away in their mouth."
+   },
+   "old_note": "*And Yahuah (the LORD) shall be king over all the earth: in that day shall there be one Yahuah (the LORD), and his name one* (Zechariah 14:9). Where the times of the Gentiles are fulfilled (Luke 21:24), the day of Yahuah closes: all nations gathered against the city, his feet on the mount of Olives, and the King over all the earth. The desolation runs until the kingdom comes.",
+   "author_thread_hint": null,
+   "map_grade": "PARTIAL",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 177462,
+   "src": "Luke 21:24",
+   "src_vn": 24,
+   "src_text_live": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "src_text_kjv": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "tgt": "Ezekiel 33:6",
+   "tgt_text_kjv": "But if the watchman see the sword come, and blow not the trumpet, and the people be not warned; if the sword come, and take any person from among them, he is taken away in his iniquity; but his blood will I require at the watchman’s hand.",
+   "tgt_context_kjv": {
+    "4": "Then whosoever heareth the sound of the trumpet, and taketh not warning; if the sword come, and take him away, his blood shall be upon his own head.",
+    "5": "He heard the sound of the trumpet, and took not warning; his blood shall be upon him. But he that taketh warning shall deliver his soul.",
+    "6": "But if the watchman see the sword come, and blow not the trumpet, and the people be not warned; if the sword come, and take any person from among them, he is taken away in his iniquity; but his blood will I require at the watchman’s hand.",
+    "7": "So thou, O son of Adam, I have set thee a watchman unto the house of Yashar'el (Israel); therefore thou shalt hear the word at my mouth, and warn them from me.",
+    "8": "When I say unto the wicked, O wicked man, thou shalt surely die; if thou dost not speak to warn the wicked from his way, that wicked man shall die in his iniquity; but his blood will I require at thine hand.",
+    "9": "Nevertheless, if thou warn the wicked of his way to turn from it; if he do not turn from his way, he shall die in his iniquity; but thou hast delivered thy soul."
+   },
+   "old_note": "*But if the watchman see the sword come, and blow not the trumpet, and the people be not warned... his blood will I require at the watchman's hand* (Ezekiel 33:6). When ye see Jerusalem compassed with armies (Luke 21:20), the sword Ezekiel's watchman was set to warn of has come. The treading-down of Luke 21:24 is the desolation the watchman was posted for; the trumpet is the warning the remnant hears before the field is cleared.",
+   "author_thread_hint": null,
+   "map_grade": "PARTIAL",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 177463,
+   "src": "Luke 21:24",
+   "src_vn": 24,
+   "src_text_live": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "src_text_kjv": "And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.",
+   "tgt": "Ezekiel 33:28",
+   "tgt_text_kjv": "For I will lay the land most desolate, and the pomp of her strength shall cease; and the mountains of Yashar'el (Israel) shall be desolate, that none shall pass through.",
+   "tgt_context_kjv": {
+    "26": "Ye stand upon your sword, ye work abomination, and ye defile every one his neighbour’s wife: and shall ye possess the land?",
+    "27": "Say thou thus unto them, Thus saith Adonai Yahuah (the Lord GOD); As I live, surely they that are in the wastes shall fall by the sword, and him that is in the open field will I give to the beasts to be devoured, and they that be in the forts and in the caves shall die of the pestilence.",
+    "28": "For I will lay the land most desolate, and the pomp of her strength shall cease; and the mountains of Yashar'el (Israel) shall be desolate, that none shall pass through.",
+    "29": "Then shall they know that I am Yahuah (LORD), when I have laid the land most desolate because of all their abominations which they have committed.",
+    "30": "Also, thou son of Adam, the children of thy people still are talking against thee by the walls and in the doors of the houses, and speak one to another, every one to his brother, saying, Come, I pray you, and hear what is the word that cometh forth from Yahuah (LORD).",
+    "31": "And they come unto thee as the people cometh, and they sit before thee as my people, and they hear thy words, but they will not do them: for with their mouth they shew much love, but their heart goeth after their covetousness."
+   },
+   "old_note": "*For I will lay the land most desolate... because of all their abominations which they have committed* (Ezekiel 33:28-29). Jerusalem trodden down of the Gentiles (Luke 21:24) is the same desolation Ezekiel named — the land laid most desolate for the abominations done in it. The treading-down is not random ruin; it is the judgment Ezekiel saw, clearing the field before the scattered seed is gathered home.",
+   "author_thread_hint": null,
+   "map_grade": "PARTIAL",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "luke-21-the-poor-widows-two-mites-deuteronomy-15-1-kings-17",
+   "title": "The poor widow hath cast in more than they all (Deuteronomy 15; 1 Kings 17)",
+   "anchor": "Luke 21:1-4",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "Yahusha (Jesus) sits over against the treasury and weighs not the coin but the heart. *And he saw also a certain poor widow casting in thither two mites. And he said, Of a truth I say unto you, that this poor widow hath cast in more than they all: For all these have of their abundance cast in unto the offerings of Elohim (God): but she of her penury hath cast in all the living that she had.* (Luke 21:2-4). The treasury-chest he watches is the one Jehoiada set beside the altar — *the priests that kept the door put therein all the money that was brought into the house of Yahuah (LORD)* (2 Kings 12:9) — and into that long-standing house she casts the smallest coin and is counted to have given the most.\n\nThe measure is the Torah's own. *If there be among you a poor man of one of thy brethren... thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deuteronomy 15:7); *Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy, in thy land* (Deuteronomy 15:11). The rich kept their hand half-closed and gave of their abundance; the widow, who was herself the poor of the land, opened her hand wide and gave all. The commandment of the open hand is fulfilled most fully by the one with least to open.\n\nAnd the widow who gives her last is no stranger to the prophets. *I have not a cake, but an handful of meal in a barrel, and a little oil in a cruse... that we may eat it, and die* (1 Kings 17:12) — yet she made Elijah a little cake first, and *she, and he, and her house, did eat many days* (1 Kings 17:15). The barrel of meal wasted not. The two mites are cast into that same providence: the Father who sees the whole-hearted gift sustains the open hand. *Of a truth I say unto you, that this poor widow hath cast in more than they all.*",
+   "members_in_this_chapter": [
+    {
+     "src": "21:4",
+     "tgt": "canon/deuteronomy 15:11",
+     "member_note": "Deuteronomy 15:11 — *Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy, in thy land.* The Torah's open hand is the measure of the widow's gift."
+    },
+    {
+     "src": "21:4",
+     "tgt": "canon/deuteronomy 15:7",
+     "member_note": "Deuteronomy 15:7 — *thou shalt not harden thine heart, nor shut thine hand from thy poor brother.* The un-shut hand is the commandment the poorest kept most fully."
+    },
+    {
+     "src": "21:4",
+     "tgt": "canon/1-kings 17:12",
+     "member_note": "1 Kings 17:12 — *I have not a cake, but an handful of meal in a barrel... that we may eat it, and die.* The widow of Zarephath gives her last — the whole-hearted self-giving the two mites carry."
+    },
+    {
+     "src": "21:4",
+     "tgt": "canon/1-kings 17:15",
+     "member_note": "1 Kings 17:15 — *she, and he, and her house, did eat many days.* The one who gave her last was sustained; the open hand is cast into the Father's providence."
+    },
+    {
+     "src": "21:2",
+     "tgt": "canon/2-kings 12:9",
+     "member_note": "2 Kings 12:9 — *Jehoiada the priest took a chest, and bored a hole in the lid of it, and set it beside the altar... the priests that kept the door put therein all the money.* The temple treasury-chest Yahusha watches, into which she casts two mites."
+    }
+   ]
+  },
+  {
+   "slug": "times-of-the-gentiles-and-the-nations-as-territorial-occupier-of-yerushalayim",
+   "title": "The times of the Gentiles — the nations as territorial-occupier of Yerushalayim",
+   "anchor": "Luke 21:20-24",
+   "anchored_in_this_book": true,
+   "member_count": 8,
+   "summary_md": "Luke uniquely carries the *times of the Gentiles* line at the close of the desolation-of-Yerushalayim prophecy — *And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Yerushalayim (Jerusalem) shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled.* FRAMEWORK-MAJOR. The *Gentiles* (*ethnē*) here is the nations-as-territorial-occupier register — the Roman administration in 70 AD, and through the long stretch of dispersion the city ground under foot under successive Caliphate and Crusader and Ottoman and modern administrations. The *times of the Gentiles* is the prophetic-window during which the city stands under non-Yashar'el (Israel) administration, with the captives led away into all nations — the same scattering-out-of-Yahudah (Judah) register the Yirmeyahu (Jeremiah) 25 / Daniyel (Daniel) 9 / Daniyel 12 architecture carries. NOT Christianity's spiritual-Gentile-inclusion-age but the literal-nations-occupying-the-land-while-the-seed-is-scattered age, which closes when the gathering-of-the-tribes from the four winds (Yechezk'el/Ezekiel 37, Hoshea/Hosea 1, Zekharyah/Zechariah 10) restores the city to its prophetic occupants. Paul at Romans 11:25's *fulness of the Gentiles* names the corresponding scope: the *plērōma* is the full-number of the scattered seed gathered home from the territories of dispersion — NOT Christian-Gentile-inclusion completion. When that gathering is complete, the *until* lands.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:24",
+     "tgt": "canon/ezekiel 39:23",
+     "member_note": "The Yechezk'el (Ezekiel) 39:23 *the house of Yashar'el (Israel) went into captivity for their iniquity: because they trespassed against me, therefore hid I my face from them, and gave them into the hand of their enemies: so fell they all by the sword* names the captive-and-scattered substance the *led away captive into all nations* carries."
+    },
+    {
+     "src": "21:24",
+     "tgt": "canon/daniel 8:13",
+     "member_note": "The Daniyel (Daniel) 8:13-14 *How long shall be the vision concerning the daily sacrifice, and the transgression of desolation... Unto two thousand and three hundred days; then shall the sanctuary be cleansed* names the trodden-down-with-an-appointed-terminus substance the *until the times of the Gentiles be fulfilled* carries forward."
+    },
+    {
+     "src": "21:24",
+     "tgt": "canon/daniel 12:7",
+     "member_note": "Daniyel (Daniel) 12:7's *when he shall have accomplished to scatter the power of the holy people, all these things shall be finished* names the close-of-the-scattering hinge the *until the times of the Gentiles be fulfilled* substance points toward."
+    },
+    {
+     "src": "21:24",
+     "tgt": "canon/zechariah 12:3",
+     "member_note": "The Zekharyah (Zechariah) 12:3 *And in that day will I make Yerushalayim (Jerusalem) a burdensome stone for all people: all that burden themselves with it shall be cut in pieces, though all the people of the earth be gathered together against it* names the gathered-against-Yerushalayim substance the dreadful-day brings to head."
+    },
+    {
+     "src": "21:24",
+     "tgt": "canon/romans 11:25",
+     "member_note": "Romans 11:25's *blindness in part is happened to Yashar'el (Israel), until the fulness of the Gentiles be come in* names the corresponding *until* of the gathering — Paul reading the same *times of the Gentiles* the King names. NOT Christian-Gentile-inclusion completion; the gathering-of-the-scattered-from-the-nations completion. The *plērōma* is the full-number of the scattered seed gathered home from the territories of dispersion; when that gathering is complete, the *until* lands."
+    },
+    {
+     "src": "21:24",
+     "tgt": "canon/revelation 11:2",
+     "member_note": "Revelation 11:2's *But the court which is without the temple leave out, and measure it not; for it is given unto the Gentiles: and the holy city shall they tread under foot forty and two months* carries the same trodden-down-by-the-Gentiles substance in the cyclical-Revelation register that the Luke 21:24 prophecy carries in the synoptic register."
+    },
+    {
+     "src": "21:20",
+     "tgt": "canon/zechariah 14:2",
+     "member_note": "Zekharyah (Zechariah) 14:1-2 — *Behold, the day of Yahuah (the LORD) cometh, and thy spoil shall be divided in the midst of thee. For I will gather all nations against Yerushalayim (Jerusalem) to battle; and the city shall be taken, and the houses rifled, and the women ravished; and half of the city shall go forth into captivity, and the residue of the people shall not be cut off from the city* — names the day-of-Yahuah Yerushalayim-siege substance Luke 21:20's *And when ye shall see Yerushalayim (Jerusalem) compassed with armies, then know that the desolation thereof is nigh* opens. The framework reads 70 AD as the first witness; the eschatological day-of-Yahuah of Zekharyah 14 as the full witness; the same gathered-against-Yerushalayim pattern Lukan-proximate and Zekharyah-eschatological at once. Zekharyah 14 carries forward into 14:3-5's *Then shall Yahuah go forth, and fight against those nations... his feet shall stand in that day upon the Mount of Olives* (the Lukan ascension return-locus at Luke 24:51 / NEW 34) — one prophetic day-of-Yahuah architecture spanning siege, vindication, and Yahuah's feet on the mountain."
+    }
+   ]
+  },
+  {
+   "slug": "luke-21-jerusalem-trodden-down-and-the-day-of-yahuah-zechariah-14",
+   "title": "Jerusalem trodden down and the day of Yahuah — the two Olivet discourses are one picture (Zechariah 14)",
+   "anchor": "Luke 21:24-28",
+   "anchored_in_this_book": true,
+   "member_count": 9,
+   "summary_md": "On the Mount of Olives, Yahusha (Jesus) opens the day of Yahuah: *And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled* (Luke 21:24); *and then shall they see the Son of Adam coming in a cloud with power and great glory. And when these things begin to come to pass, then look up, and lift up your heads; for your redemption draws nigh* (Luke 21:27-28). Centuries earlier, standing on that same mountain, Zechariah was shown the other side of the one day. The trampling: *Behold, the day of Yahuah (LORD) comes... For I will gather all nations against Jerusalem to battle; and the city shall be taken... and half of the city shall go forth into captivity, and the residue of the people shall not be cut off* (Zechariah 14:1-2). The turning: *Then shall Yahuah (LORD) go forth, and fight against those nations* (14:3). The arrival, on the very summit of the discourse: *And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east* (14:4). The kingship: *And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one* (14:9) — the Formed Son reigning, who is Yahuah and has a Father, *his name one* the Shema's own unity. And the end of the day is not ash but a kept feast: *every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva'ot (LORD of hosts), and to keep the feast of tabernacles* (14:16), with judgment on any nation that *come not up to keep the feast of tabernacles* (14:18-19). Read the two discourses as one: the treading-down has an appointed limit, never a casting-off — *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — and the day closes with the nations summoned to Sukkot, the appointed feast that was never abolished but kept forever in the reign of the King.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:24",
+     "tgt": "canon/zechariah 14:1",
+     "member_note": "*Behold, the day of Yahuah (LORD) comes, and your spoil shall be divided in the midst of you* (Zechariah 14:1) — the *trodden down of the Gentiles* of Luke 21:24 is the threshold of the day of Yahuah Zechariah saw from this same mountain."
+    },
+    {
+     "src": "21:24",
+     "tgt": "canon/zechariah 14:2",
+     "member_note": "★★ *I will gather all nations against Jerusalem to battle; and the city shall be taken... and half of the city shall go forth into captivity, and the residue of the people shall not be cut off* (Zechariah 14:2) — the same captivity of Luke 21:24, with a remnant never cut off (Romans 11:1)."
+    },
+    {
+     "src": "21:24",
+     "tgt": "canon/zechariah 14:3",
+     "member_note": "*Then shall Yahuah (LORD) go forth, and fight against those nations, as when he fought in the day of battle* (Zechariah 14:3) — the treading-down (Luke 21:24) ends when Yahuah goes forth; the trampled city is contended for by her King."
+    },
+    {
+     "src": "21:27",
+     "tgt": "canon/zechariah 14:4",
+     "member_note": "★★★ *And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east* (Zechariah 14:4) — the *Son of Adam coming in a cloud with power and great glory* (Luke 21:27) lands his feet on the very mountain of the discourse."
+    },
+    {
+     "src": "21:27",
+     "tgt": "canon/zechariah 14:9",
+     "member_note": "★★★ *And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one* (Zechariah 14:9) — the *power and great glory* of Luke 21:27 is this kingship; the Formed Son reigning, *his name one* (the Shema, Deuteronomy 6:4), who is Yahuah and has a Father."
+    },
+    {
+     "src": "21:28",
+     "tgt": "canon/zechariah 14:16",
+     "member_note": "★★ *every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva'ot (LORD of hosts), and to keep the feast of tabernacles* (Zechariah 14:16) — when *your redemption draws nigh* (Luke 21:28), the day ends in kept Sukkot, not in abolished feasts."
+    },
+    {
+     "src": "21:28",
+     "tgt": "canon/zechariah 14:17",
+     "member_note": "*whoso will not come up of all the families of the earth unto Jerusalem to worship the King, Yahuah Tseva'ot (LORD of hosts), even upon them shall be no rain* (Zechariah 14:17) — the redemption looked for in Luke 21:28 arrives as a kingdom with the appointed feast at its center."
+    },
+    {
+     "src": "21:28",
+     "tgt": "canon/zechariah 14:18",
+     "member_note": "*there shall be the plague, wherewith Yahuah (LORD) will smite the heathen that come not up to keep the feast of tabernacles* (Zechariah 14:18) — in the reign, Sukkot is the standard set before every family of the earth."
+    },
+    {
+     "src": "21:28",
+     "tgt": "canon/zechariah 14:19",
+     "member_note": "*This shall be the punishment of Egypt, and the punishment of all nations that come not up to keep the feast of tabernacles* (Zechariah 14:19) — the nations' place in the reign is framed, to the end, by the appointed feast; their part begins when his feet stand on the mountain."
+    }
+   ]
+  },
+  {
+   "slug": "luke-21-the-son-of-adam-coming-in-a-cloud-daniel-7-joel-2",
+   "title": "The Son of Adam coming in a cloud with power and great glory (Daniel 7; Joel 2)",
+   "anchor": "Luke 21:25-28",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "*And there shall be signs in the sun, and in the moon, and in the stars; and upon the earth distress of nations, with perplexity; the sea and the waves roaring; Men's hearts failing them for fear... for the powers of heaven shall be shaken.* (Luke 21:25-26). None of this sky is new. The prophets hung it long before. *The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come* (Joel 2:30-31); *For the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine* (Isaiah 13:10). The heavens are doing what Joel and Isaiah said the heavens would do over the day of Yahuah. And *the powers of heaven shall be shaken* is Haggai's shaking: *Yet once, it is a little while, and I will shake the heavens, and the earth, and the sea, and the dry land; And I will shake all nations, and the desire of all nations shall come* (Haggai 2:6-7).\n\nThen the figure comes. *And then shall they see the Son of Adam coming in a cloud with power and great glory.* (Luke 21:27). Read Daniel's night-vision underneath it: *behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13). The *kaph* — Daniel's *one like* — is honoured, not flattened: the Formed Son resembled mortal-man because he took on flesh, while remaining the cloud-rider who rides the clouds of heaven. He is *brought near before* the Ancient of days, the Father; he is the Son who has a Father.\n\nAnd the *power and great glory* is conferred, never seized. *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:14). The Father gives; the Son receives the everlasting kingdom. So the sign that makes the nations' hearts fail is, for the gathered, the dawn of redemption: *when these things begin to come to pass, then look up, and lift up your heads; for your redemption draweth nigh* (Luke 21:28).",
+   "members_in_this_chapter": [
+    {
+     "src": "21:25",
+     "tgt": "canon/joel 2:30",
+     "member_note": "Joel 2:30-31 — *The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come.* The signs in sun, moon and stars are Joel's herald of the day of Yahuah."
+    },
+    {
+     "src": "21:25",
+     "tgt": "canon/isaiah 13:10",
+     "member_note": "Isaiah 13:10 — *the sun shall be darkened in his going forth, and the moon shall not cause her light to shine.* Isaiah's darkened sky over the day of Yahuah is the same sky over the coming of the Son."
+    },
+    {
+     "src": "21:27",
+     "tgt": "canon/daniel 7:13",
+     "member_note": "Daniel 7:13 — *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days.* The kaph (*one like*) honours the incarnation: the Formed Son, brought near before the Father, the cloud-rider in flesh."
+    },
+    {
+     "src": "21:27",
+     "tgt": "canon/daniel 7:14",
+     "member_note": "Daniel 7:14 — *there was given him dominion, and glory, and a kingdom... his dominion is an everlasting dominion, which shall not pass away.* The power and glory of Luke 21:27 is conferred by the Father, not seized; the Son receives the everlasting kingdom."
+    },
+    {
+     "src": "21:26",
+     "tgt": "canon/haggai 2:6",
+     "member_note": "Haggai 2:6-7 — *I will shake the heavens, and the earth... and the desire of all nations shall come.* *The powers of heaven shall be shaken* (Luke 21:26) is Haggai's shaking before the One whom all nations desire comes in glory."
+    }
+   ]
+  },
+  {
+   "slug": "luke-21-heaven-and-earth-shall-pass-but-my-words-shall-not-isaiah-40-psalm-119",
+   "title": "Heaven and earth shall pass away, but my words shall not (Isaiah 40; Psalm 119)",
+   "anchor": "Luke 21:29-36",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Yahusha (Jesus) points to the fig tree and all the trees: *When they now shoot forth, ye see and know of your own selves that summer is now nigh at hand. So likewise ye, when ye see these things come to pass, know ye that the kingdom of Elohim (God) is nigh at hand.* (Luke 21:30-31). The seasons preach the kingdom. Then he sets his own word above the seasons and above the world itself: *Heaven and earth shall pass away: but my words shall not pass away.* (Luke 21:33).\n\nThat is no new claim — it is Isaiah's confession on the lips of the Son. *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever* (Isaiah 40:8). And it is the psalmist's settled word: *For ever, O Yahuah (LORD), thy word is settled in heaven* (Psalm 119:89). The created order fades like the flower; the word of Elohim outlasts the heaven and earth it made. When the Son says *my words shall not pass away,* he is naming himself the speaker of that one abiding word — the Torah, the prophets, and his own teaching are one enduring voice, settled in heaven for ever. This is the same banner he raised in Luke: *it is easier for heaven and earth to pass, than one tittle of the law to fail* (Luke 16:17). The word stands.\n\nAnd because the word stands, the warning is mercy. *Take heed to yourselves, lest at any time your hearts be overcharged with surfeiting, and drunkenness, and cares of this life, and so that day come upon you unawares. For as a snare shall it come on all them that dwell on the face of the whole earth.* (Luke 21:34-35). That snare is Isaiah's: *Fear, and the pit, and the snare, are upon thee, O inhabitant of the earth* (Isaiah 24:17). And the day it springs shut is Malachi's burning oven: *behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble* (Malachi 4:1). The Son warns the careless before the oven, that the watchful may not be caught. *Watch ye therefore, and pray always, that ye may be accounted worthy to escape all these things that shall come to pass, and to stand before the Son of Adam* (Luke 21:36).",
+   "members_in_this_chapter": [
+    {
+     "src": "21:33",
+     "tgt": "canon/isaiah 40:8",
+     "member_note": "Isaiah 40:8 — *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever.* Isaiah's confession on the lips of the Son: the world fades, the word stands."
+    },
+    {
+     "src": "21:33",
+     "tgt": "canon/psalms 119:89",
+     "member_note": "Psalm 119:89 — *For ever, O Yahuah (LORD), thy word is settled in heaven.* The word that shall not pass away is the one settled, abiding word of Yahuah — Torah, prophets, and the Son's teaching, one enduring voice."
+    },
+    {
+     "src": "21:35",
+     "tgt": "canon/isaiah 24:17",
+     "member_note": "Isaiah 24:17 — *Fear, and the pit, and the snare, are upon thee, O inhabitant of the earth.* The snare that overtakes the earth-dwellers unawares (Luke 21:35) is Isaiah's snare."
+    },
+    {
+     "src": "21:34",
+     "tgt": "canon/malachi 4:1",
+     "member_note": "Malachi 4:1 — *the day cometh, that shall burn as an oven; and all the proud... shall be stubble.* The day that comes unawares on the surfeited heart is Malachi's burning day; the warning is mercy before the oven."
+    }
+   ]
+  },
+  {
+   "slug": "abomination-of-desolation-daniel-9-and-12-standing-where-it-ought-not",
+   "title": "The abomination of desolation — Daniel 9 / 11 / 12 standing where it ought not",
+   "anchor": "Mark 13:14",
+   "anchored_in_this_book": false,
+   "member_count": 5,
+   "summary_md": "The King names Daniel by name and points his hearers back to Daniel's *abomination-of-desolation* prophecy. *But when ye shall see the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not, (let him that readeth understand,) then let them that be in Yahudah (Judaea) flee to the mountains* (Mark 13:14). Daniel 9:27, 11:31, and 12:11 carry the line forward; the prophetic chain holds — Daniel saw it, the King names it, the reader who reads Daniel hears the warning. The let-him-that-readeth-understand clause is the King's own pointer to the Daniel-text; the Olivet disciples are sent to the prophet for the framework of what the King has just compressed into one phrase.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:20",
+     "tgt": "canon/mark 13:14",
+     "member_note": "Luke uniquely names the desolation-by-armies-compassing rather than the abomination-of-desolation grammar Matt and Mark carry: *And when ye shall see Yerushalayim (Jerusalem) compassed with armies, then know that the desolation thereof is nigh.* Same prophetic substance (the Daniyel 9 / Daniyel 12 desolation), differently rendered."
+    }
+   ]
+  },
+  {
+   "slug": "fulfill-as-prophecy-bringing-to-pass",
+   "title": "Fulfill as prophecy bringing to pass",
+   "anchor": "Matthew 5:17",
+   "anchored_in_this_book": false,
+   "member_count": 41,
+   "summary_md": "The Greek *plēroō* (Strong's G4137) at Matthew 5:17 does not mean *to exhaust-and-thereby-end* — the antichrist reading the pulpit installed to retire the Torah. It means *to bring to pass* — to make happen what was prophesied. Yahusha (Jesus) names what his mission accomplishes: the bringing-to-pass of what the Torah and the Prophets prophesied. And what they prophesied is the gathering of the scattered seed of Yashar'el (Israel) home through redemption — the curse-and-return arc the Torah itself wrote (Leviticus 26:33 and 40-42; Deuteronomy 30:1-5), executed by the prophets in the divorce-and-scattering (Hosea 1:9; Jeremiah 16:13), and opened by the Messiah's death and resurrection so the door home is real. This thread surfaces every NT plēroō occurrence used in prophecy-fulfillment context (35 members), each linked to the specific Tanakh prophecy it brings to pass. The pattern is consistent: the Messiah walks out the substance the prophets foretold, and the NT formula *that it might be fulfilled* points the reader back to the Tanakh, not forward into a new dispensation.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:22",
+     "tgt": "canon/deuteronomy 28:64",
+     "member_note": "*Days of vengeance, that all things which are written may be fulfilled* — the Jerusalem-judgment of 70 CE as the fulfillment of Deuteronomy 28:64's exile-curse on covenant-breaking. The Torah's curse-system named the consequences; the consequences came."
+    }
+   ]
+  },
+  {
+   "slug": "the-mount-of-olives-vision-and-the-gathering-of-the-tribes-in-testaments-of-naphtali-and-asher",
+   "title": "The Mount of Olives vision and the gathering of the tribes — Testaments of Naphtali 4 + 6 and Testament of Asher 6",
+   "anchor": "Matthew 24:3-31",
+   "anchored_in_this_book": false,
+   "member_count": 6,
+   "summary_md": "Matt 24's framing — the disciples-substance asking the three-fold question on the Mount-of-Olives at v.3, the substantial-gospel-of-the-kingdom-witness-to-all-the-nations at v.14, the substantial-Son-of-Adam coming-in-the-clouds at v.30, and the substantial-gathering-of-the-elect-from-the-four-winds at v.31 — read against the wisdom-stream's direct articulation of the Mount-of-Olives-vision + scattering-and-gathering-of-the-tribes architecture in the Testaments of the XII Patriarchs. Four moves: Testaments-Naphtali 4:1 names THE direct wisdom-stream verbal-anchor for the Mount-of-Olives setting (*for in the fortieth year of my life, I saw a vision on the Mount of Olives, on the east of Jerusalem*) — the substantial-mountain the Shekinah-substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 11:22-23 had-departed-over and the substantial-mountain the prophet-Zecharyah (Zechariah) walked at Zechariah 14:4 as the Father's-feet-stand-upon-substance, the substantial-substance the King walks-the-Olivet-discourse from; Testaments-Naphtali 6:3 names the gather-together-the-righteous-from-amongst-the-Gentiles substance — the substantial-Lo-Ammi-scattered-seed the prophet-Hosheia (Hosea) walked at Hosea 1:10-11 the apostle-Sha'ul (Paul) quoted at Romans 9:25-26, the substantial-scattered-seed-of-the-house-of-Yashar'el (Israel) living-as-Gentiles-among-the-nations the gospel-of-the-kingdom-witness-to-all-the-nations at Matt 24:14 walks-the-broad-proclamation-substance for (NOT the substantial-Christian-inclusion-gospel-collapse — Red Line #11); Testaments-Asher 6:3 names the substantial Most-High-shall-visit-the-earth-coming-Himself-as-man-with-men-eating-and-drinking substance — the substantial Father-and-Son architecture per the framework's Formless-Source / Formed-Expression substance, the substantial-Formed-Expression of the substantial-Formless-Source the King-of-Yashar'el (Israel) is, who walks the substantial-incarnation-substance the substantial-Matt 24:30 Son-of-Adam-coming-in-the-clouds walks-the-public-visible-second-coming-substance into AND ties-back to the substantial-Matt 24:38 *eating and drinking* substance of the days-of-Noach (Noah); Testaments-Asher 6:7 names THE direct wisdom-stream verbal-anchor for the Yahuah-will-gather-you-together substance the King walks at Matt 24:31 (*for the sake of Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob)* tying-the-substantial-gathering-substance directly-to-the-substantial-paternal-blood-substance the Father had-walked the substantial-covenant-substance with-the-substantial-patriarchs at Genesis 12:1-3 + Genesis 26:3-5 + Genesis 28:13-15). The framework reads the cluster as the substantial-direct-wisdom-stream-articulation of the substantial-Mount-of-Olives-Olivet-discourse setting AND the substantial-paternal-blood-remnant-of-the-twelve-tribes ingathering the King walks at the substantial-gospel-witness-to-the-nations + four-winds-gathering substance per Red Line #11.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:5",
+     "tgt": "canon/matthew 24:3",
+     "member_note": "Luke carries the Olivet setup — the temple-stones-not-one-upon-another prophecy and the disciples' twofold question — though Luke compresses *what shall be the sign of thy coming, and of the end of the world* into *when shall these things be? and what sign will there be?*"
+    }
+   ]
+  },
+  {
+   "slug": "the-signs-of-the-end-and-the-ten-tribes-gathered-in-2-esdras",
+   "title": "The signs of the end and the ten tribes gathered — 2 Esdras (4 Ezra) 5 + 13 (FRAMEWORK-MAJOR)",
+   "anchor": "Matthew 24:10-31",
+   "anchored_in_this_book": false,
+   "member_count": 20,
+   "summary_md": "Matt 24:7-31's walk-out of the substantial-signs-of-the-end-and-the-Son-of-Adam-declared substance — the substantial-deception-and-internal-betrayal at vv.9-12, the substantial-iniquity-shall-abound-and-the-love-of-many-shall-wax-cold framework-major direct-diagnostic of the substantial-modern-antinomian-gospel at v.12, the substantial-cosmic-signs *immediately after the tribulation of those days* at v.29, the substantial *sign of the Son of Adam in heaven* and *Son of Adam coming in the clouds of heaven with power and great glory* at v.30, and the substantial-gathering-of-the-elect-from-the-four-winds at v.31 — read against the wisdom-stream's direct articulation in 2 Esdras (4 Ezra) 5 + 13. Five moves: 2 Esdras 5:1 names THE direct verbal-anchor for the signs-of-the-end-of-the-age substance (*the way of truth shall be hidden, and the land shall be barren of faith*) — the substantial-faith-substance walking-from-the-substantial-keep-of-the-commandments per 1 John 5:3, when the substantial-torahlessness abounds the substantial-faith-substance fails; 2 Esdras 5:4 names the cosmic-signs substance (*the sun shall suddenly shine again in the night, and the moon thrice in the day*) the King walks at Matt 24:29 with the substantial-Tanakh-Day of Yahuah (the LORD) cluster the prophets-Yeshayahu (Isaiah) + Yo'el (Joel) + Yechezk'el (Ezekiel) + Amos + Mikhah (Micah) + Tsefanyah (Zephaniah) walked; 2 Esdras 5:9 names the substantial-internal-betrayal-substance (*all friends shall destroy one another*) the King walks at Matt 24:10; 2 Esdras 13:32 names THE direct verbal-anchor for the *then shall my Son be declared* substance the King walks at Matt 24:30 — note at Matt 24:30 the Greek does NOT carry the *hōs* / *homoion* comparative and reads as the title *the Son of Adam* directly (the kaph-comparative narrow-rule preserved only at Daniel 7:13 + Revelation 1:13 + Revelation 14:14 per Red Line #12's harmonized treatment); 2 Esdras 13:39 names the substantial-gathering-of-the-ten-tribes-of-Yashar'el (Israel) substance — the substantial 2 Esdras 13:40-47 unit identifies the substantial-peaceable-multitude as the substantial-ten-tribes-carried-away-by-Salmanasar (Shalmaneser)-king-of-Ashshur (Assyria), walking-through-the-substantial-waters into-the-substantial-further-country and gathered-back at the substantial-end-of-the-age. The substantial-substance is THE most-direct wisdom-stream corroboration of the substantial-paternal-blood-remnant-of-the-twelve-tribes the substantial-prophets walked the substantial-ingathering substance for — Red Line #11's central anchor at the substantial-pseudepigraphic-register. FRAMEWORK-MAJOR. The framework reads the cluster as the substantial-direct-wisdom-stream-articulation of the substantial-signs-and-declaration-and-gathering architecture the King walks at the substantial Olivet-discourse.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:8",
+     "tgt": "canon/matthew 24:10",
+     "member_note": "Luke carries the wars-and-rumours-of-wars, the kingdoms-against-kingdoms, the famines-and-pestilences, and the persecution-and-betrayal-by-family signs with the synoptic substance. Luke uniquely promises *I will give you a mouth and wisdom, which all your adversaries shall not be able to gainsay nor resist* (v.15)."
+    }
+   ]
+  },
+  {
+   "slug": "the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables",
+   "title": "The gathering of the elect from the four winds — 1 Enoch 57, 61 and 90 beside Matthew 24:27-31",
+   "anchor": "Matthew 24:27-31",
+   "anchored_in_this_book": false,
+   "member_count": 30,
+   "summary_md": "*For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of Adam be.* (Matthew 24:27). There is nothing secret about it. He comes in the clouds with power and great glory, and then the trumpet sounds: *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31). Enoch heard that sound from end to end of heaven in the second Parable: *And it came to pass after this that I saw another host of wagons, and men riding thereon, and coming on the winds from the east, and from the west to the south. And the noise of their wagons was heard, and when this turmoil took place the holy ones from heaven remarked it, and the pillars of the earth were moved from their place, and the sound thereof was heard from the one end of heaven to the other, in one day.* (1 Enoch 57:1-2). And he was told that none of the elect will be missed in the gathering, not even the ones the earth had swallowed: *And these measures shall reveal all the secrets of the depths of the earth, And those who have been destroyed by the desert, And those who have been devoured by the beasts, And those who have been devoured by the fish of the sea, That they may return and stay themselves On the day of the Elect One; For none shall be destroyed before Yahuah (Lord) of Spirits, And none can be destroyed.* (1 Enoch 61:5). In the dream of the sheep the same gathering closes the vision: *And all that had been destroyed and dispersed, and all the beasts of the field, and all the birds of the heaven, assembled in that house, and Yahuah (Lord) of the sheep rejoiced with great joy because they were all good and had returned to His house.* (1 Enoch 90:33). The elect gathered from the four winds are the sheep, the house of Yashar'el (Israel) scattered through every nation, the ones the prophets never stopped promising to bring home: *And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* (Isaiah 11:12); *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* (Ezekiel 37:21). Moses, Jeremiah, Hosea, Micah, Zephaniah and Zechariah say the same thing in their own places. The gathering at the trumpet is the gathering of the twelve tribes, the paternal seed of the fathers, and not a spiritual category anyone can elect himself into.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:25",
+     "tgt": "canon/matthew 24:27",
+     "member_note": "Luke carries the *Son of Adam coming in a cloud with power and great glory* (v.27) — kbar-enash cloud-rider architecture from Daniyel (Daniel) 7:13. Luke uniquely adds *And when these things begin to come to pass, then look up, and lift up your heads; for your redemption draweth nigh* (v.28)."
+    }
+   ]
+  },
+  {
+   "slug": "the-faithful-and-wise-servant-and-the-day-of-visitation-in-sirach-and-wisdom-of-solomon",
+   "title": "The faithful and wise servant and the day of visitation — Sirach 11, 16, 27 + Wisdom of Solomon 3",
+   "anchor": "Matthew 24:45-51",
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "Matt 24:45-51's faithful-and-wise-servant vs evil-servant substance — the substantial-stewardship-substance the King walks against the substantial-inherited-Reformation-eternal-security-substance — read against the wisdom-stream's articulation of the reward-according-to-works + post-harvest-sifting + day-of-visitation architecture in Sirach (Ecclesiasticus) and Wisdom of Solomon. Four moves: Sirach 11:26 names the direct verbal-anchor for the reward-according-to-his-ways substance (*for it is an easy thing to Yahuah (God) in the day of death to reward a man according to his ways*) the substantial-faithful-and-wise-servant walks-into at Matt 24:46; Sirach 16:14 names the every-man-shall-find-according-to-his-works substance the substantial-greater-stewardship-substance at Matt 24:47 walks-the-architecture-of (*make him ruler over all his goods*); Sirach 27:4 names the substantial-post-harvest-sifting architecture (*as when one sifteth with a sieve, the refuse remains*) the substantial-evil-servant at Matt 24:51 walks-the-judgment-substance of — the substance the prophet-Yechezk'el (Ezekiel) walked at Ezekiel 18:24 (*when the righteous turneth away from his righteousness... all his righteousness that he hath done shall not be mentioned*) — ties-back to the substantial Matthew 23 seven-woes-against-the-hypocrites the evil-servant walks-the-same-substance-as the substantial-Pharisaic-Sadducean-leadership had-walked; Wisdom of Solomon 3:7 names the time-of-visitation substance (*in the time of their visitation they shall shine, and run to and fro like sparks among the stubble*) the substantial-faithful-and-wise-servant at Matt 24:46 walks-the-shining-substance-of in continuity with Daniel 12:3 + Matthew 13:43. The framework reads the cluster against the substantial-inherited-Reformation-eternal-security-substance — the substantial-substance is not the substantial-one-time-confession-substance but the substantial-walking-out-of-the-substantial-works the substantial-Spirit-internalized-Torah-substance walks per the substantial-new-heart-of-Yechezk'el (Ezekiel) 36:26-27, the substantial-grace as the substantial-door-home opened-by-the-substantial-categorically-exempt-One's-voluntary-walking-into-the-shameful-death the substantial-categorically-bound owed, with the substantial-consequences-of-walking-off-the-substantial-Way still-real because the substantial-Way is-real per *Grace, the Way, the New Heart, and the Mercy of Depart*.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:34",
+     "tgt": "canon/matthew 24:45",
+     "member_note": "Luke's *Watch ye therefore, and pray always, that ye may be accounted worthy to escape all these things that shall come to pass, and to stand before the Son of Adam* (v.36) carries the same watch-and-be-found-faithful register the Matt 24 watching-servant carries."
+    }
+   ]
+  },
+  {
+   "slug": "compassion-on-the-bruised-cry-of-the-widow-and-orphan-in-sirach",
+   "title": "Compassion on the bruised and the cry of the widow and orphan — the bruised-reed mercy-substance — Sirach 4 and 35",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "Matt 12:20's *a bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory* — read against the wisdom-stream's articulation of the compassion-on-the-bruised-and-the-cry-of-the-widow-and-orphan architecture. Three moves: Sirach (Ecclesiasticus) 4:1-2 names the wisdom-stream's direct kingdom-citizens' disposition — do not defraud-the-poor, do not make-the-needy-eyes-wait, do not make-the-hungry-soul-sorrowful, do not provoke-the-man-in-distress; Sirach 4:4-5 names the compassion-disposition — do not reject-the-supplication, do not turn-the-face-away, do not turn-the-eye-from-the-needy; Sirach 35:13-14 names THE strongest wisdom-stream verbal-anchor for the cry-of-the-bruised-heard-by-Yahuah (God) architecture — *he will not despise the supplication of the fatherless; nor the widow, when she poureth out her complaint. Do not the tears run down the widow's cheek? and is not her cry against him that causeth them to fall?* The framework reads the cluster against Matt 12:20: the mercy-substance the Yeshayahu (Isaiah) 42 prophet names of the King is the same substance the wisdom-stream named as the disposition required of the kingdom-citizens. The Pharisaic-system's pattern of categorical-classification-and-dismissal of the bruised-and-the-smoking inverts both the wisdom-stream-disposition and the King's-disposition; the King restores, the system breaks-and-snuffs, and the system's plot at Matt 12:14 is precisely the act-causing-the-tears Sirach 35:14 had named.",
+   "members_in_this_chapter": [
+    {
+     "src": "21:1",
+     "tgt": "canon/matthew 12:20",
+     "member_note": "The widow at the treasury — *of her penury hath cast in all the living that she had* — carries the mercy-on-the-bruised register: the kingdom's reckoning is by the bruised-reed measure, not by the gold-laden-rich measure the temple-administration was built around. The King is reading the offering by the heart, not by the sum."
+    }
+   ]
+  }
+ ]
+}

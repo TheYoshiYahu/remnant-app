@@ -1,0 +1,548 @@
+{
+ "book": "mark",
+ "chapter": 1,
+ "chapter_text_kjv": {
+  "1": "The beginning of the gospel of Yahusha HaMashiach (Jesus Christ), the Son of Elohim (God);",
+  "2": "As it is written in the prophets, Behold, I send my messenger before thy face, which shall prepare thy way before thee.",
+  "3": "The voice of one crying in the wilderness, Prepare ye the way of Yahuah (Lord), make his paths straight.",
+  "4": "John did baptize in the wilderness, and preach the baptism of repentance for the remission of sins.",
+  "5": "And there went out unto him all the land of Judæa, and they of Jerusalem, and were all baptized of him in the river of Jordan, confessing their sins.",
+  "6": "And John was clothed with camel’s hair, and with a girdle of a skin about his loins; and he did eat locusts and wild honey;",
+  "7": "And preached, saying, There cometh one mightier than I after me, the latchet of whose shoes I am not worthy to stoop down and unloose.",
+  "8": "I indeed have baptized you with water: but he shall baptize you with the Ruach HaKodesh (Holy Spirit).",
+  "9": "And it came to pass in those days, that Yahusha (Jesus) came from Nazareth of Galilee, and was baptized of John in Jordan.",
+  "10": "And straightway coming up out of the water, he saw the heavens opened, and the Spirit like a dove descending upon him:",
+  "11": "And there came a voice from heaven, saying, Thou art my beloved Son, in whom I am well pleased.",
+  "12": "And immediately the Spirit driveth him into the wilderness.",
+  "13": "And he was there in the wilderness forty days, tempted of Satan; and was with the wild beasts; and the angels ministered unto him.",
+  "14": "Now after that John was put in prison, Yahusha (Jesus) came into Galilee, preaching the gospel of the kingdom of Elohim (God),",
+  "15": "And saying, The time is fulfilled, and the kingdom of Elohim (God) is at hand: repent ye, and believe the gospel.",
+  "16": "Now as he walked by the sea of Galilee, he saw Simon and Andrew his brother casting a net into the sea: for they were fishers.",
+  "17": "And Yahusha (Jesus) said unto them, Come ye after me, and I will make you to become fishers of men.",
+  "18": "And straightway they forsook their nets, and followed him.",
+  "19": "And when he had gone a little further thence, he saw James the son of Zebedee, and John his brother, who also were in the ship mending their nets.",
+  "20": "And straightway he called them: and they left their father Zebedee in the ship with the hired servants, and went after him.",
+  "21": "And they went into Capernaum; and straightway on the sabbath day he entered into the synagogue, and taught.",
+  "22": "And they were astonished at his doctrine: for he taught them as one that had authority, and not as the scribes.",
+  "23": "And there was in their synagogue a man with an unclean spirit; and he cried out,",
+  "24": "Saying, Let us alone; what have we to do with thee, thou Yahusha (Jesus) of Nazareth? art thou come to destroy us? I know thee who thou art, the Holy One of Elohim (God).",
+  "25": "And Yahusha (Jesus) rebuked him, saying, Hold thy peace, and come out of him.",
+  "26": "And when the unclean spirit had torn him, and cried with a loud voice, he came out of him.",
+  "27": "And they were all amazed, insomuch that they questioned among themselves, saying, What thing is this? what new doctrine is this? for with authority commandeth he even the unclean spirits, and they do obey him.",
+  "28": "And immediately his fame spread abroad throughout all the region round about Galilee.",
+  "29": "And forthwith, when they were come out of the synagogue, they entered into the house of Simon and Andrew, with James and John.",
+  "30": "But Simon’s wife’s mother lay sick of a fever, and anon they tell him of her.",
+  "31": "And he came and took her by the hand, and lifted her up; and immediately the fever left her, and she ministered unto them.",
+  "32": "And at even, when the sun did set, they brought unto him all that were diseased, and them that were possessed with devils.",
+  "33": "And all the city was gathered together at the door.",
+  "34": "And he healed many that were sick of divers diseases, and cast out many devils; and suffered not the devils to speak, because they knew him.",
+  "35": "And in the morning, rising up a great while before day, he went out, and departed into a solitary place, and there prayed.",
+  "36": "And Simon and they that were with him followed after him.",
+  "37": "And when they had found him, they said unto him, All men seek for thee.",
+  "38": "And he said unto them, Let us go into the next towns, that I may preach there also: for therefore came I forth.",
+  "39": "And he preached in their synagogues throughout all Galilee, and cast out devils.",
+  "40": "And there came a leper to him, beseeching him, and kneeling down to him, and saying unto him, If thou wilt, thou canst make me clean.",
+  "41": "And Yahusha (Jesus), moved with compassion, put forth his hand, and touched him, and saith unto him, I will; be thou clean.",
+  "42": "And as soon as he had spoken, immediately the leprosy departed from him, and he was cleansed.",
+  "43": "And he straitly charged him, and forthwith sent him away;",
+  "44": "And saith unto him, See thou say nothing to any man: but go thy way, shew thyself to the priest, and offer for thy cleansing those things which Moses commanded, for a testimony unto them.",
+  "45": "But he went out, and began to publish it much, and to blaze abroad the matter, insomuch that Yahusha (Jesus) could no more openly enter into the city, but was without in desert places: and they came to him from every quarter."
+ },
+ "cards": [
+  {
+   "id": 4990,
+   "src": "Mark 1:1",
+   "src_vn": 1,
+   "src_text_live": "The beginning of the gospel of Yahusha HaMashiach (Jesus Christ), the Son of Elohim (God);",
+   "src_text_kjv": "The beginning of the gospel of Yahusha HaMashiach (Jesus Christ), the Son of Elohim (God);",
+   "tgt": "Romans 1:1",
+   "tgt_text_kjv": "Paul, a servant of Yahusha HaMashiach (Jesus Christ), called to be an apostle, separated unto the gospel of Elohim (God),",
+   "tgt_context_kjv": {
+    "1": "Paul, a servant of Yahusha HaMashiach (Jesus Christ), called to be an apostle, separated unto the gospel of Elohim (God),",
+    "2": "(Which he had promised afore by his prophets in the holy scriptures,)",
+    "3": "Concerning his Son Yahusha HaMashiach (Jesus Christ) our Lord, which was made of the seed of David according to the flesh;",
+    "4": "And declared to be the Son of Elohim (God) with power, according to the spirit of holiness, by the resurrection from the dead:"
+   },
+   "old_note": "Mark opens with *the beginning of the gospel of Yahusha HaMashiach (Jesus Christ), the Son of Elohim (God)* — naming the gospel Paul says was *promised afore by his prophets in the holy scriptures, concerning his Son.* The gospel does not begin at Mark 1:1; Mark 1:1 is the *beginning* of the documented account of a gospel the prophets had been carrying for centuries.",
+   "author_thread_hint": "gospel-promised-afore",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 4993,
+   "src": "Mark 1:3",
+   "src_vn": 3,
+   "src_text_live": "The voice of one crying in the wilderness, Prepare you the way of Yahuah (Lord), make his paths straight.",
+   "src_text_kjv": "The voice of one crying in the wilderness, Prepare ye the way of Yahuah (Lord), make his paths straight.",
+   "tgt": "Malachi 4:5",
+   "tgt_text_kjv": "Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD):",
+   "tgt_context_kjv": {
+    "3": "And ye shall tread down the wicked; for they shall be ashes under the soles of your feet in the day that I shall do this, saith Yahuah Tseva'ot (LORD of hosts).",
+    "4": "Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar'el (Israel), with the statutes and judgments.",
+    "5": "Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD):",
+    "6": "And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse."
+   },
+   "old_note": "*Behold, I will send you Eliyahu (Elijah) the prophet before the coming of the great and dreadful day of Yahuah (the LORD).* The Eliyahu-pattern prophecy lands on Yochanan (John); the King names him explicitly as such at Mark 9:13.",
+   "author_thread_hint": "yochanan-as-eliyahu-pattern-prophet",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5002,
+   "src": "Mark 1:22",
+   "src_vn": 22,
+   "src_text_live": "And they were astonished at his doctrine: for he taught them as one that had authority, and not as the scribes.",
+   "src_text_kjv": "And they were astonished at his doctrine: for he taught them as one that had authority, and not as the scribes.",
+   "tgt": "Mark 7:13",
+   "tgt_text_kjv": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye.",
+   "tgt_context_kjv": {
+    "11": "But ye say, If a man shall say to his father or mother, It is Corban, that is to say, a gift, by whatsoever thou mightest be profited by me; he shall be free.",
+    "12": "And ye suffer him no more to do ought for his father or his mother;",
+    "13": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye.",
+    "14": "And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand:",
+    "15": "There is nothing from without a man, that entering into him can defile him: but the things which come out of him, those are they that defile the man.",
+    "16": "If any man have ears to hear, let him hear."
+   },
+   "old_note": "*He taught them as one that had authority, and not as the scribes.* The scribes taught by appeal to the chain of tradition Mark 7:13 names as the Pharisaic voiding of Torah — *making the word of Yahuah (God) of none effect through your tradition.* The King teaches with the authority of the Word himself.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5003,
+   "src": "Mark 1:38",
+   "src_vn": 38,
+   "src_text_live": "And he said unto them, Let us go into the next towns, that I may preach there also: for therefore came I forth.",
+   "src_text_kjv": "And he said unto them, Let us go into the next towns, that I may preach there also: for therefore came I forth.",
+   "tgt": "Matthew 15:24",
+   "tgt_text_kjv": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+   "tgt_context_kjv": {
+    "22": "And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.",
+    "23": "But he answered her not a word. And his disciples came and besought him, saying, Send her away; for she crieth after us.",
+    "24": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+    "25": "Then came she and worshipped him, saying, Adonai (Lord), help me.",
+    "26": "But he answered and said, It is not meet to take the children’s bread, and to cast it to dogs.",
+    "27": "And she said, Truth, Adonai (Lord): yet the dogs eat of the crumbs which fall from their masters’ table."
+   },
+   "old_note": "*Let us go into the next towns, that I may preach there also: for therefore came I forth.* The *therefore came I forth* statement names the mission-scope as the gathering-of-the-lost-sheep Matthew 15:24 articulates directly — *I am not sent but unto the lost sheep of the house of Yashar'el (Israel).*",
+   "author_thread_hint": "lost-sheep-mission-scope",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit",
+    "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5004,
+   "src": "Mark 1:38",
+   "src_vn": 38,
+   "src_text_live": "And he said unto them, Let us go into the next towns, that I may preach there also: for therefore came I forth.",
+   "src_text_kjv": "And he said unto them, Let us go into the next towns, that I may preach there also: for therefore came I forth.",
+   "tgt": "Ezekiel 34:11",
+   "tgt_text_kjv": "For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out.",
+   "tgt_context_kjv": {
+    "9": "Therefore, O ye shepherds, hear the word of Yahuah (LORD);",
+    "10": "Thus saith Adonai Yahuah (the Lord GOD); Behold, I am against the shepherds; and I will require my flock at their hand, and cause them to cease from feeding the flock; neither shall the shepherds feed themselves any more; for I will deliver my flock from their mouth, that they may not be meat for them.",
+    "11": "For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out.",
+    "12": "As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day.",
+    "13": "And I will bring them out from the people, and gather them from the countries, and will bring them to their own land, and feed them upon the mountains of Yashar'el (Israel) by the rivers, and in all the inhabited places of the country.",
+    "14": "I will feed them in a good pasture, and upon the high mountains of Yashar'el (Israel) shall their fold be: there shall they lie in a good fold, and in a fat pasture shall they feed upon the mountains of Yashar'el (Israel)."
+   },
+   "old_note": "*I myself, even I, will both search my sheep, and seek them out.* The next-towns expansion is going where the sheep are; Yechezk'el (Ezekiel) 34's shepherd-prophecy is the substance the King walks.",
+   "author_thread_hint": "lost-sheep-mission-scope",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5005,
+   "src": "Mark 1:40",
+   "src_vn": 40,
+   "src_text_live": "And there came a leper to him, beseeching him, and kneeling down to him, and saying unto him, If you will, you can make me clean.",
+   "src_text_kjv": "And there came a leper to him, beseeching him, and kneeling down to him, and saying unto him, If thou wilt, thou canst make me clean.",
+   "tgt": "Leviticus 14:2",
+   "tgt_text_kjv": "This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest:",
+   "tgt_context_kjv": {
+    "1": "And Yahuah (LORD) spake unto Moses, saying,",
+    "2": "This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest:",
+    "3": "And the priest shall go forth out of the camp; and the priest shall look, and, behold, if the plague of leprosy be healed in the leper;",
+    "4": "Then shall the priest command to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop:",
+    "5": "And the priest shall command that one of the birds be killed in an earthen vessel over running water:"
+   },
+   "old_note": "The leper's cleansing leads directly to the Torah-affirming closure of Mark 1:44 — *shew thyself to the priest, and offer for thy cleansing those things which Mosheh (Moses) commanded.* The King's healing does not abolish the Vayikra (Leviticus) 14 cleansing-protocol; it sends the healed man into it.",
+   "author_thread_hint": "messiah-as-torah-affirming-healer",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "mark-1-prepare-ye-the-way-of-yahuah-the-forerunner-malachi-3-isaiah-40",
+   "title": "Prepare ye the way of Yahuah — the forerunner who readies the people (Malachi 3; Isaiah 40)",
+   "anchor": "Mark 1:2-8",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Mark opens the gospel not with a birth but with a scroll: *As it is written in the prophets, Behold, I send my messenger before thy face, which shall prepare thy way before thee. The voice of one crying in the wilderness, Prepare ye the way of Yahuah (Lord), make his paths straight* (Mark 1:2-3). Come and see how old this word is. Malachi heard it first: *Behold, I will send my messenger, and he shall prepare the way before me: and Yahuah (Lord), whom ye seek, shall suddenly come to his temple* (Malachi 3:1) — the One who comes after the messenger is Yahuah Himself, and the way is prepared for HIM. Isaiah heard it too: *The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah (LORD), make straight in the desert a highway for our Elohim* (Isaiah 40:3), *and the glory of Yahuah shall be revealed, and all flesh shall see it together* (Isaiah 40:5). The forerunner readies a highway for the coming of Yahuah in the Formed Son — not a second God, but the visible coming of the invisible Father's glory in His Anointed. And who is this forerunner? Malachi names him: *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah* (Malachi 4:5), *and he shall turn the heart of the fathers to the children* (Malachi 4:6). John wears the very sign of it — *clothed with camel's hair, and with a girdle of a skin about his loins* (Mark 1:6), exactly Elijah's garb: *He was an hairy man, and girt with a girdle of leather about his loins. And he said, It is Elijah the Tishbite* (2 Kings 1:8). The library is one: the messenger promised in Malachi, the wilderness voice of Isaiah, the Elijah-to-come — all meet in the man at the Jordan, and the way they prepare is the coming of Yahuah Himself.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:2",
+     "tgt": "canon/malachi 3:1",
+     "member_note": "Malachi 3:1 — *Behold, I will send my messenger, and he shall prepare the way before me: and Yahuah, whom ye seek, shall suddenly come to his temple* — Mark quotes it; the way is prepared for Yahuah Himself."
+    },
+    {
+     "src": "1:3",
+     "tgt": "canon/isaiah 40:3",
+     "member_note": "Isaiah 40:3 — *The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah, make straight in the desert a highway for our Elohim* — the wilderness voice Mark 1:3 lifts verbatim."
+    },
+    {
+     "src": "1:2",
+     "tgt": "canon/malachi 4:5",
+     "member_note": "Malachi 4:5 — *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah* — the Elijah-to-come who is the messenger."
+    },
+    {
+     "src": "1:6",
+     "tgt": "canon/2-kings 1:8",
+     "member_note": "2 Kings 1:8 — *He was an hairy man, and girt with a girdle of leather about his loins... It is Elijah the Tishbite* — John's camel-hair-and-leather is Elijah's very garb (Mark 1:6)."
+    }
+   ]
+  },
+  {
+   "slug": "mark-1-thou-art-my-beloved-son-the-father-declares-and-anoints-psalm-2-isaiah-42",
+   "title": "Thou art my beloved Son — the Father declares and the Spirit anoints (Psalm 2; Isaiah 42)",
+   "anchor": "Mark 1:10-11",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "At the Jordan the heavens tear open: *And straightway coming up out of the water, he saw the heavens opened, and the Spirit like a dove descending upon him: And there came a voice from heaven, saying, Thou art my beloved Son, in whom I am well pleased* (Mark 1:10-11). Come and see — this is not three co-equal persons announcing themselves; it is the **Father** acknowledging the **Son** He sends, and the Father's Spirit resting upon Him. The voice speaks the royal decree of the second Psalm: *I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee* (Psalm 2:7) — the Son is begotten, declared, set as king upon Zion by the Father. The descending Spirit fulfils Isaiah's word over the chosen Servant: *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him* (Isaiah 42:1) — *in whom my soul delighteth* and *in whom I am well pleased* are the same Father's delight in the same Son. The dove over the water recalls the very first page: *And the Spirit of Elohim moved upon the face of the waters* (Genesis 1:2) — the Spirit that brooded over creation now broods over the One in whom all is made new. This is the anointing Isaiah promised for the Branch of Jesse: *And the spirit of Yahuah shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might* (Isaiah 11:2); and the Spirit put within the shepherd of old: *where is he that put his holy Spirit within him?* (Isaiah 63:11). The Formed Son does nothing of Himself; the Father declares Him, the Father's Spirit endues Him, and so He goes forth to do the Father's will.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:11",
+     "tgt": "canon/psalms 2:7",
+     "member_note": "Psalm 2:7 — *Yahuah hath said unto me, Thou art my Son; this day have I begotten thee* — the Father's royal decree, spoken as the heavenly voice in Mark 1:11."
+    },
+    {
+     "src": "1:10",
+     "tgt": "canon/isaiah 42:1",
+     "member_note": "Isaiah 42:1 — *Behold my servant... mine elect, in whom my soul delighteth; I have put my spirit upon him* — the Father's delight and the Spirit put upon the Servant, made visible at Jordan."
+    },
+    {
+     "src": "1:10",
+     "tgt": "canon/genesis 1:2",
+     "member_note": "Genesis 1:2 — *the Spirit of Elohim moved upon the face of the waters* — the same Ruach that brooded over creation descends like a dove on the Son rising from the waters."
+    },
+    {
+     "src": "1:10",
+     "tgt": "canon/isaiah 11:2",
+     "member_note": "Isaiah 11:2 — *And the spirit of Yahuah shall rest upon him, the spirit of wisdom and understanding* — the Branch of Jesse on whom the Spirit rests, the anointing seen at the baptism."
+    },
+    {
+     "src": "1:10",
+     "tgt": "canon/isaiah 63:11",
+     "member_note": "Isaiah 63:11 — *where is he that put his holy Spirit within him?* — the holy Spirit put within the shepherd of old, now put within the greater Shepherd at the Jordan."
+    }
+   ]
+  },
+  {
+   "slug": "mark-1-forty-days-in-the-wilderness-the-kingdom-at-hand-deut-8-daniel-2",
+   "title": "Forty days in the wilderness, the kingdom at hand — the true Yashar'el proved (Deuteronomy 8; Daniel 2)",
+   "anchor": "Mark 1:12-15",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "No sooner is the Son declared than He is driven out to be tested: *And immediately the Spirit driveth him into the wilderness. And he was there in the wilderness forty days, tempted of Satan; and was with the wild beasts; and the angels ministered unto him* (Mark 1:12-13). Come and see the pattern. Yashar'el was forty YEARS in the wilderness and failed the proving: *thou shalt remember all the way which Yahuah Elohayka led thee these forty years in the wilderness, to humble thee, and to prove thee, to know what was in thine heart, whether thou wouldest keep his commandments, or no* (Deuteronomy 8:2) — and the lesson learned there was *man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah doth man live* (Deuteronomy 8:3). The Son is the true Yashar'el, forty days proven and NOT failing. Moses kept the same fast on the mount: *he was there with Yahuah forty days and forty nights; he did neither eat bread, nor drink water* (Exodus 34:28); and Elijah walked it: *he... went in the strength of that meat forty days and forty nights unto Horeb the mount of Elohim* (1 Kings 19:8) — and as an angel fed Elijah, so *the angels ministered* to the Son. Then the proving done, He preaches: *The time is fulfilled, and the kingdom of Elohim is at hand: repent ye, and believe the gospel* (Mark 1:15). This is the kingdom Daniel saw: *in the days of these kings shall the Elohim of heaven set up a kingdom, which shall never be destroyed... and it shall stand for ever* (Daniel 2:44) — the stone cut without hands, now near. And *repent* is no new word: it is Moses' call to *return unto Yahuah Elohayka... with all thine heart, and with all thy soul* (Deuteronomy 30:2), the turning that brings the scattered home. Tested like Israel, victorious where Israel fell, the Son opens the everlasting kingdom with a call to return to the covenant.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:13",
+     "tgt": "canon/deuteronomy 8:2",
+     "member_note": "Deuteronomy 8:2 — *Yahuah Elohayka led thee these forty years in the wilderness, to humble thee, and to prove thee* — Israel's forty-year proving that the Son retraces in forty days and does not fail."
+    },
+    {
+     "src": "1:13",
+     "tgt": "canon/exodus 34:28",
+     "member_note": "Exodus 34:28 — *he was there with Yahuah forty days and forty nights; he did neither eat bread, nor drink water* — Moses' forty-day fast on the mount, a shadow of the Son's wilderness fast."
+    },
+    {
+     "src": "1:13",
+     "tgt": "canon/1-kings 19:8",
+     "member_note": "1 Kings 19:8 — *he... went in the strength of that meat forty days and forty nights unto Horeb the mount of Elohim* — Elijah's forty days, an angel sustaining him as angels ministered to the Son."
+    },
+    {
+     "src": "1:15",
+     "tgt": "canon/daniel 2:44",
+     "member_note": "Daniel 2:44 — *shall the Elohim of heaven set up a kingdom, which shall never be destroyed... and it shall stand for ever* — the everlasting kingdom the Son proclaims at hand."
+    },
+    {
+     "src": "1:15",
+     "tgt": "canon/deuteronomy 30:2",
+     "member_note": "Deuteronomy 30:2 — *And shalt return unto Yahuah Elohayka, and shalt obey his voice... with all thine heart* — the covenant call to return that *repent ye* (Mark 1:15) renews; the turning that gathers the scattered home."
+    }
+   ]
+  },
+  {
+   "slug": "mark-1-17-fishers-of-men-the-regathering-of-scattered-yashar-el-jeremiah-16",
+   "title": "Fishers of men — the beginning of the regathering of scattered Yashar'el (Israel) (Jeremiah 16, Ezekiel 47, Amos 4, Habakkuk 1)",
+   "anchor": "Mark 1:17",
+   "anchored_in_this_book": true,
+   "member_count": 7,
+   "summary_md": "*And Yahusha (Jesus) said unto them, Come you after me, and I will make you to become fishers of men* (Mark 1:17). The call is the first stroke of the second exodus the prophets foretold — the regathering of scattered Yashar'el (Israel), not the launch of generic evangelism. Jeremiah names the coming day by the ingathering itself: *it shall no more be said, Yahuah (LORD) lives, that brought up the children of Yashar'el (Israel) out of the land of Egypt; But, Yahuah (LORD) lives, that brought up the children of Yashar'el (Israel) from the land of the north, and from all the lands whither he had driven them* (Jeremiah 16:14-15) — and the means: *Behold, I will send for many fishers, says Yahuah (LORD), and they shall fish them; and after will I send for many hunters* (Jeremiah 16:16). The apostles are the first of those fishers. The prophets' fishing-image is first judgment — *he will take you away with hooks, and your posterity with fishhooks* (Amos 4:2); men made *as the fishes of the sea* (Habakkuk 1:14), *they catch them in their net, and gather them in their drag* (Habakkuk 1:15) — the hooks and net that dragged Yashar'el OUT into exile. The fishers Yahuah sends reverse them, standing on the river of life: *the fishers shall stand upon it from En-gedi even unto En-eglaim; they shall be a place to spread forth nets... exceeding many* (Ezekiel 47:10), where *every thing shall live whither the river comes* (47:9). The catch is the lost sheep of the house of Yashar'el scattered among the nations (Matthew 10:6; 15:24) — two-house restoration, NOT the nations grafted by faith-confession, and never a casting-off: *Hath Elohim (God) cast away his people? Elohim (God) forbid... Elohim (God) hath not cast away his people which he foreknew* (Romans 11:1-2).",
+   "members_in_this_chapter": [
+    {
+     "src": "1:17",
+     "tgt": "canon/jeremiah 16:13",
+     "member_note": "*Therefore will I cast you out of this land into a land that you know not* (Jeremiah 16:13) — the scattering into which *Come you after me... fishers of men* (Mark 1:17) sends the apostles; the lost sheep among the nations."
+    },
+    {
+     "src": "1:17",
+     "tgt": "canon/jeremiah 16:15",
+     "member_note": "★★★ *Yahuah (LORD) lives, that brought up the children of Yashar'el (Israel) from the land of the north, and from all the lands whither he had driven them* (Jeremiah 16:15) — the second exodus; *I will make you to become fishers of men* (Mark 1:17) inaugurates this ingathering."
+    },
+    {
+     "src": "1:17",
+     "tgt": "canon/ezekiel 47:9",
+     "member_note": "*every thing shall live whither the river comes* (Ezekiel 47:9) — the river of life; the catch is a gathering unto healing."
+    },
+    {
+     "src": "1:17",
+     "tgt": "canon/ezekiel 47:10",
+     "member_note": "★★ *the fishers shall stand upon it from En-gedi even unto En-eglaim; they shall be a place to spread forth nets... exceeding many* (Ezekiel 47:10) — the apostles on Ezekiel's riverbank, the catch of the regathering."
+    },
+    {
+     "src": "1:17",
+     "tgt": "canon/amos 4:2",
+     "member_note": "*he will take you away with hooks, and your posterity with fishhooks* (Amos 4:2) — the hooks that dragged Yashar'el OUT in judgment, reversed by the fishers of Mark 1:17."
+    },
+    {
+     "src": "1:17",
+     "tgt": "canon/habakkuk 1:14",
+     "member_note": "*And make men as the fishes of the sea... that have no ruler over them* (Habakkuk 1:14) — men scattered and masterless; the very catch the fishers of men seek."
+    },
+    {
+     "src": "1:17",
+     "tgt": "canon/habakkuk 1:15",
+     "member_note": "*they catch them in their net, and gather them in their drag* (Habakkuk 1:15) — the captor's net turned into the net of the ingathering of scattered Yashar'el."
+    }
+   ]
+  },
+  {
+   "slug": "mark-1-3-unclean-spirits-as-the-watchers-bound-offspring-in-1-enoch",
+   "title": "The unclean spirits as the watchers' bound offspring who recognize the Holy One — 1 Enoch",
+   "anchor": "Mark 1:24-11",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Twice in Mark 1-3 the unclean spirits cry out and name what the watching crowds cannot yet say — *I know thee who thou art, the Holy One of Elohim (God)* (Mark 1:24), *Thou art the Son of Elohim (God)* (Mark 3:11). The Enochic library names exactly who they are. 1 Enoch 15:8-9 — *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling. Evil spirits have proceeded from their bodies; because they are born from men and from the holy Watchers is their beginning and primal origin; they shall be evil spirits on earth, and evil spirits shall they be called.* These are the watchers' offspring: the spirits gone forth from the slain giants' flesh. 1 Enoch 15:11 names their appointed end — *thus shall they destroy until the day of the consummation, the great judgement* — which is why the demon at Mark 1:24 asks *art thou come to destroy us?* It knows its judgement-day is fixed. 1 Enoch 16:1, 4 names their sentence — *Say to them therefore: \"You have no peace\"* — the no-peace condition speaking in the demon's *Let us alone.* 1 Enoch 19:1 names the standing-place of their judgement — *here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* The unclean spirits recognize the Formed one before the people do because they were there at the rebellion; the recognition is not the sheep's hearing — the demons know and tremble, and the Son of Adam silences them, because the kingdom is not announced through unclean mouths.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:24",
+     "tgt": "enoch/1-enoch 15:8",
+     "member_note": "1 Enoch 15:8-7 — *the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth.* The unclean spirit at Mark 1:24 is one of the watchers' bound offspring; it recognizes the Holy One because it was there at the rebellion."
+    },
+    {
+     "src": "1:24",
+     "tgt": "enoch/1-enoch 16:1",
+     "member_note": "*From the days of the slaughter and destruction and death of the giants, from the souls of whose flesh the spirits, having gone forth, shall destroy without incurring judgement—thus shall they destroy until the day of the consummation, the great judgement in which the age shall be consummated, over the Watchers and the godless, yea, shall be wholly consummated.\"* (1 Enoch 16:1). 1 Enoch 16:1 names the unclean spirit's origin and its appointed end: the spirits gone forth from the giants destroy until the day of the great judgement. The demon's own question at Mark 1:24 — *art thou come to destroy us?* — names that it knows its judgement-day is fixed; the watchers' offspring recognize that the Holy One of Elohim is the one who holds the day of their consummation."
+    },
+    {
+     "src": "1:24",
+     "tgt": "enoch/1-enoch 16:4",
+     "member_note": "1 Enoch 16:4, 4 — *Say to them therefore: \"You have no peace.\"* The demon's *Let us alone* (Mark 1:24) is the no-peace condition speaking; the Holy One's coming is the disturbance of a peace never granted."
+    }
+   ]
+  },
+  {
+   "slug": "unclean-spirits-recognize-the-holy-one-of-elohim",
+   "title": "Unclean spirits recognize the Holy One of Elohim before the people do",
+   "anchor": "Mark 1:24-12",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "Twice in Mark 1-3 the unclean spirits cry out and name what the watching crowds cannot yet say: *And unclean spirits, when they saw him, fell down before him, and cried, saying, Thou art the Son of Elohim (God).* (Mark 3:11); *Saying, Let us alone; what have we to do with thee, thou Yahusha (Jesus) of Nazareth? art thou come to destroy us? I know thee who thou art, the Holy One of Elohim (God).* (Mark 1:24). They know him because of where they came from. Enoch says the evil spirits on the earth are the spirits of the giants, born of the Watchers who left heaven: *Evil spirits have proceeded from their bodies; because they are born from men and from the holy Watchers is their beginning and primal origin; they shall be evil spirits on earth, and evil spirits shall they be called.* (1 Enoch 15:9), and they know the day fixed for them: *From the days of the slaughter and destruction and death of the giants, from the souls of whose flesh the spirits, having gone forth, shall destroy without incurring judgement—thus shall they destroy until the day of the consummation, the great judgement in which the age shall be consummated, over the Watchers and the godless, yea, shall be wholly consummated.\"* (1 Enoch 16:1). Their fathers stood in heaven before the rebellion. They recognize the Formed one when he walks into a synagogue because they have seen him before. James says the devils also believe, and tremble, and that is the whole difference: a demon's recognition is not a sheep's hearing. The Son of Adam silences them, *Hold thy peace,* and charges them not to make him known, because the kingdom is not announced on the testimony of an unclean spirit. It is announced through the prophets, the apostles, and the sheep who hear his voice.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:24",
+     "tgt": "canon/james 2:19",
+     "member_note": "The unclean spirit's cry — *I know thee who thou art, the Holy One of Elohim (God)* — is the recognition James 2:19 names: *the devils also believe, and tremble*. The watchers' bound offspring know the Formed one when he walks in; they recognize him before the people in the synagogue can name what they are watching. The recognition is not the same as the sheep's hearing — the sheep hear and turn; the demons know and do not turn."
+    },
+    {
+     "src": "1:25",
+     "tgt": "canon/mark 3:11",
+     "member_note": "*Hold thy peace, and come out of him.* The Son of Adam silences the demon's testimony because the kingdom is not announced through the unclean spirit's mouth — it is announced through the prophets, the Son, the apostles, and the sheep who hear his voice. The silencing is the same pattern at Mark 1:34 and Mark 3:12."
+    },
+    {
+     "src": "1:34",
+     "tgt": "canon/mark 1:24",
+     "member_note": "*He... suffered not the devils to speak, because they knew him.* The pattern is consistent — the demons' recognition is not the witness through which the kingdom is to be made known."
+    }
+   ]
+  },
+  {
+   "slug": "mark-1-the-leper-cleansed-sent-to-keep-what-moses-commanded-leviticus-13-14",
+   "title": "The leper cleansed — sent to keep what Moses commanded (Leviticus 13-14)",
+   "anchor": "Mark 1:40-44",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "A leper falls at His feet: *If thou wilt, thou canst make me clean. And Yahusha, moved with compassion, put forth his hand, and touched him, and saith unto him, I will; be thou clean* (Mark 1:40-41), *and immediately the leprosy departed from him, and he was cleansed* (Mark 1:42). Come and see what He does next, for here is the whole posture toward the Torah: *go thy way, shew thyself to the priest, and offer for thy cleansing those things which Moses commanded, for a testimony unto them* (Mark 1:44). The Son does not abolish the law of the leper — He SENDS the man to keep it. Moses wrote it: *This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest* (Leviticus 14:2). The man had lived the curse of it: *the leper in whom the plague is, his clothes shall be rent, and his head bare... and shall cry, Unclean, unclean* (Leviticus 13:45), *without the camp shall his habitation be* (Leviticus 13:46) — cut off, dwelling alone. Now restored, he goes to the priest as Moses commanded, the Torah upheld and honoured. The Tanakh had foreshadowed such a cleansing in Naaman: *his flesh came again like unto the flesh of a little child, and he was clean* (2 Kings 5:14) — but Yahusha is greater than Elisha, cleansing with a word and a touch. And where Moses could only cry *Heal her now, O Elohim, I beseech thee* (Numbers 12:13) over leprous Miriam, the Son speaks in His own person, *I will; be thou clean* — the Father's healing mercy exercised in the Formed Son, who then sends the healed man straight back into the keeping of the commandment.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:44",
+     "tgt": "canon/leviticus 14:2",
+     "member_note": "Leviticus 14:2 — *This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest* — the very Torah Yahusha sends the cleansed man to keep (Mark 1:44)."
+    },
+    {
+     "src": "1:44",
+     "tgt": "canon/leviticus 13:45",
+     "member_note": "Leviticus 13:45 — *the leper... his clothes shall be rent... and shall cry, Unclean, unclean* — the curse the man came out of, dwelling alone without the camp (13:46)."
+    },
+    {
+     "src": "1:42",
+     "tgt": "canon/2-kings 5:14",
+     "member_note": "2 Kings 5:14 — *his flesh came again like unto the flesh of a little child, and he was clean* — Naaman's cleansing prefigures the leper's; the Son is greater than Elisha."
+    },
+    {
+     "src": "1:41",
+     "tgt": "canon/numbers 12:13",
+     "member_note": "Numbers 12:13 — *And Moses cried unto Yahuah, saying, Heal her now, O Elohim, I beseech thee* — over leprous Miriam; what Moses could only beseech, the Son does in His own person (Mark 1:41)."
+    }
+   ]
+  },
+  {
+   "slug": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+   "title": "The corban tradition voids the fifth commandment — Sirach",
+   "anchor": "Mark 7:9-13",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "Mark 7:6-13 is the framework's central diagnostic in the King's own mouth: the man-made tradition that voids the commandment of Elohim (God). The corban device is the load-bearing example — *if a man shall say to his father or mother, It is Corban, that is to say, a gift... he shall be free* — and the verdict is *Making the word of Elohim (God) of none effect through your tradition.* The commandment the device voids is the fifth — *Honour thy father and thy mother* — and the Hebrew library's wisdom-stream had already bound that commandment to the fear of Yahuah and named the cost of withholding it. Sirach (Ecclesiasticus) 3:7 makes honour-of-parents the very test of the fear of Yahuah: *He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.* Sirach 3:8 binds honour to deed, not word only: *Honour your father and mother both in word and deed, that a blessing may come upon you from them* — the exact word-AND-deed the corban ruling severs, permitting honour in vow-formula while forbidding the deed of provision. Sirach 3:9 names the cost: *the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations.* The tradition that voids the commandment forfeits the blessing and invites the uprooting. The same flesh-credentialing system that exalts the tradition of the elders over the word of Elohim is the Judaizer architecture the King names here and the apostolic letters confront later; the wisdom-stream had already exposed it by its own standard.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": "Hosea 1:9-10",
+   "anchored_in_this_book": false,
+   "member_count": 67,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Hosea, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:17",
+     "tgt": "canon/jeremiah 16:16",
+     "member_note": "*Come ye after me, and I will make you to become fishers of men.* The fishers-of-men commission picks up Yirmeyahu (Jeremiah) 16:16 directly — *Behold, I will send for many fishers, saith Yahuah (the LORD), and they shall fish them.* The four men by the sea of Galilee are being commissioned into the prophetic gathering-architecture."
+    }
+   ]
+  },
+  {
+   "slug": "gather-together-in-one-the-children-scattered-abroad",
+   "title": "*Gather together in one the children that were scattered abroad*",
+   "anchor": "John 11:51-52",
+   "anchored_in_this_book": false,
+   "member_count": 17,
+   "summary_md": "The high priest Qayafa (Caiaphas) speaks an unwitting prophecy after the raising of Lazar (Lazarus). *It is expedient for us, that one man should die for the people, and that the whole nation perish not.* John adds an apostolic gloss naming the deeper meaning of the words Qayafa (Caiaphas) did not understand: Yahusha (Jesus) would die not for that nation only, but to gather together in one the children of Elohim (God) that were scattered abroad. The gathering-of-the-scattered-children is the twelve-tribe restoration the prophets had named in repeated specificity — the two-stick prophecy of Yechezkel (Ezekiel) 37, the assembly of the outcasts of Yeshayahu (Isaiah) 11, the *children of Yashar'el (Israel) gathered together* of Hoshea (Hosea) 1. The death of the Formed one is named as the means by which the gathering is accomplished.\n\n*And this spake he not of himself: but being high priest that year, he prophesied that Yahusha (Jesus) should die for that nation; And not for that nation only, but that also he should gather together in one the children of Elohim (God) that were scattered abroad.* (John 11:51-52)\n\n*Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land: and I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all.* (Ezekiel 37:21-22)\n\n*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* (Isaiah 11:12)\n\nThe *children of Elohim (God) that were scattered abroad* is not a categorical extension of the covenant to the nations. The phrase is the diaspora-of-the-scattered-seed, the *Lo-Ammi* of Hoshea (Hosea) 1 that the prophet immediately restores with *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* The children of Elohim (God) who are scattered abroad are the seed who lost their identity in the dispersion; the gathering is their homecoming through the death of the Formed one as the agent of the Father's gathering hand.\n\nThe high priest, standing in the office that was supposed to recognize this, speaks the prophecy without knowing what he is saying. The apostle who writes the gospel makes the framework explicit. The death-for-the-nation has its inner architecture: it is the means by which the scattered children are gathered into one. The two-stick prophecy is named in the high priest's mouth.\n\n*And it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10)\n\nThe gathering is the destination of the journey the prophets named. The practice in the present age is broad proclamation, because the citizens of the kingdom are scattered through every nation and we cannot pick them out by sight. *My sheep hear my voice* (John 10:27) — the hearing is the revealing of what was already true. Those who hear and turn are revealed to be sheep, because they were sheep before the foundation of the world. Those who reject, we shake the dust off our feet (Matthew 10:14) and we do not cast our pearls before swine (Matthew 7:6). The pursuit ends where the rejection lands; the shepherd does not chase what was never his. Belief is the response of those given; the response issues in covenant walking; grace returns the gathered to him and to his ways.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:14",
+     "tgt": "canon/joshua 19:10",
+     "member_note": "*Yahusha (Jesus) came into Galilee, preaching the gospel of the kingdom of Elohim (God).* Galilee was the territory of the scattered northern tribes — Naphtali, Zebulun, Asher (Yehoshua/Joshua 19) — and the gospel of the kingdom is announced first to the geography of the scattered seed."
+    }
+   ]
+  },
+  {
+   "slug": "fulfill-as-prophecy-bringing-to-pass",
+   "title": "Fulfill as prophecy bringing to pass",
+   "anchor": "Matthew 5:17",
+   "anchored_in_this_book": false,
+   "member_count": 41,
+   "summary_md": "The Greek *plēroō* (Strong's G4137) at Matthew 5:17 does not mean *to exhaust-and-thereby-end* — the antichrist reading the pulpit installed to retire the Torah. It means *to bring to pass* — to make happen what was prophesied. Yahusha (Jesus) names what his mission accomplishes: the bringing-to-pass of what the Torah and the Prophets prophesied. And what they prophesied is the gathering of the scattered seed of Yashar'el (Israel) home through redemption — the curse-and-return arc the Torah itself wrote (Leviticus 26:33 and 40-42; Deuteronomy 30:1-5), executed by the prophets in the divorce-and-scattering (Hosea 1:9; Jeremiah 16:13), and opened by the Messiah's death and resurrection so the door home is real. This thread surfaces every NT plēroō occurrence used in prophecy-fulfillment context (35 members), each linked to the specific Tanakh prophecy it brings to pass. The pattern is consistent: the Messiah walks out the substance the prophets foretold, and the NT formula *that it might be fulfilled* points the reader back to the Tanakh, not forward into a new dispensation.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:15",
+     "tgt": "canon/daniel 2:44",
+     "member_note": "*The time is fulfilled, and the kingdom of Elohim (God) is at hand* — Daniel 2:44's *Elohim (God) of heaven shall set up a kingdom* is the kingdom Mark names as in-hand. The Messianic-age inauguration is the bringing-to-pass of the prophetic ingathering-kingdom."
+    },
+    {
+     "src": "1:2",
+     "tgt": "canon/malachi 3:1",
+     "member_note": "Mark cites Mal'aki (Malachi) 3:1 — *Behold, I will send my messenger, and he shall prepare the way before me* — applying the messenger-prophecy to Yochanan (John). The Yahuah (Lord) *coming to his temple* of Mal'aki 3:1 is the same one whose paths Yochanan is preparing in Mark 1:3, naming Yahusha (Jesus) as Yahuah-coming-to-the-temple."
+    },
+    {
+     "src": "1:8",
+     "tgt": "canon/ezekiel 36:27",
+     "member_note": "The Ruach-baptism the King brings is the Spirit-causing-Torah-keeping Yechezk'el (Ezekiel) framed — *I will put my spirit within you, and cause you to walk in my statutes.* The water-baptism Yochanan offered points forward to the Ruach-baptism the King brings."
+    },
+    {
+     "src": "1:8",
+     "tgt": "canon/joel 2:28",
+     "member_note": "Yochanan (John) announces *he shall baptize you with the Ruach HaKodesh (Holy Spirit)* — the prophetic gift-of-Spirit Yo'el (Joel) named: *I will pour out my spirit upon all flesh.*"
+    },
+    {
+     "src": "1:15",
+     "tgt": "canon/daniel 9:25",
+     "member_note": "Daniyel (Daniel) 9:25-26's seventy-weeks-from-the-going-forth-of-the-commandment-to-restore reaching its appointed hour; the King is naming the Father's appointed clock as having struck."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17",
+   "title": "The lost sheep first — the woman of Canaan, the divorced house, and the children's bread (Deuteronomy 24; Hosea 2; Mark 7)",
+   "anchor": "Matthew 15:21-28",
+   "anchored_in_this_book": false,
+   "member_count": 15,
+   "summary_md": "It ain't new. A woman cries after him on the coast of Tyre and Sidon, and the disciples want her sent away. His answer is to them, and it tells them who she is:\n\n*But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* (Matthew 15:24)\n\nThat was his whole errand. He had given the twelve the same boundary before he ever met her:\n\n*But go rather to the lost sheep of the house of Yashar'el (Israel).* (Matthew 10:6)\n\nAnd she is not a stranger to the house. Hear what she calls him:\n\n*And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.* (Matthew 15:22)\n\n*Son of David* is the covenant word to David's house in the mouth of a woman on a Canaanite coast. She knew whose house the king came from, and she worshipped him. The sheep hear the voice because they are sheep, and Hosea had already named the place where such sheep would be found:\n\n*Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God).* (Hosea 1:9)\n\n*Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10)\n\nSo why does he call her a dog, and why is the bread withheld? Because the house she belongs to was put away:\n\n*And I saw, when for all the causes whereby backsliding Yashar'el (Israel) committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not, but went and played the harlot also.* (Jeremiah 3:8)\n\nAnd the Torah he gave does not let a husband take back the wife he has put away:\n\n*Her former husband, which sent her away, may not take her again to be his wife, after that she is defiled; for that is abomination before Yahuah (LORD): and thou shalt not cause the land to sin, which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance.* (Deuteronomy 24:4)\n\nA woman is bound to her husband as long as he lives, and only a death frees her to be married again:\n\n*For the woman which hath an husband is bound by the law to her husband so long as he liveth; but if the husband be dead, she is loosed from the law of her husband.* (Romans 7:2)\n\n*Wherefore, my brethren, ye also are become dead to the law by the body of Messiah (Christ); that ye should be married to another, even to him who is raised from the dead, that we should bring forth fruit unto Elohim (God).* (Romans 7:4)\n\nHe has not died yet. The divorced house cannot be seated at his table while he lives as that husband, so the bread is the children's, the undivorced house of Yahudah (Judah), and the scattered are what we became out there, dogs under the table. Mark keeps the word that carries the timing:\n\n*But Yahusha (Jesus) said unto her, Let the children first be filled: for it is not meet to take the children’s bread, and to cast it unto the dogs.* (Mark 7:27)\n\nFirst. Not never. She hears the order and does not argue it. She asks for what falls from the table now, and he calls that faith great. The redeeming of the house that was put away comes on the other side of his death, and Hosea says how it ends:\n\n*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* (Hosea 2:23)\n\nThe order of the sending shows the same two halves. Before the death, *go not into the way of the Gentiles*; after it:\n\n*Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Spirit):* (Matthew 28:19)\n\nNot a new people added to the house, but the same house sought in every place it was scattered to, once the death that frees it had been died. Matthew 15 does not say the death is the reason; Deuteronomy, Romans and Mark's *first* say it, line upon line. The woman of Canaan is a woman from that land and a sheep of the house, revealed by her hearing, given the crumbs before her time and the table after it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit",
+   "title": "The gathering of the scattered twelve tribes — Sirach (Ecclesiasticus) 36, 2 Esdras (4 Ezra) 13, and Tobit 13 (FRAMEWORK-MAJOR)",
+   "anchor": "Matthew 15:24",
+   "anchored_in_this_book": false,
+   "member_count": 9,
+   "summary_md": "Matt 15:24's *I am not sent but unto the lost sheep of the house of Yashar'el (Israel)* — the King's-own-mission-scope statement, paired with the Matt 10:5-6's apostolic-mission-scope, reading as the load-bearing scripture-anchor for the framework's gathering-of-the-scattered-twelve-tribes thesis — read against the wisdom-stream's direct articulation of the gathering-of-the-scattered-tribes prayer-and-prophecy substance. Five moves: Sirach (Ecclesiasticus) 36:1 names the petition — *have mercy upon us, O Yahuah (God) of all, and behold us* (the wisdom-stream's-prayer-for-the-gathering); Sirach 36:11 names THE direct verbal-anchor — *gather all the tribes of Jacob together, and inherit you them, as from the beginning* (the explicit wisdom-stream-articulation of the twelve-tribes-restoration the prophets had named at Yechezk'el (Ezekiel) 37:21; Yirmeyahu (Jeremiah) 31:8-10; Hosea 1:10-11; Zekharyah (Zechariah) 10:6-10); 2 Esdras (4 Ezra) 13:40 names the ten-tribes-carried-away — *those are the ten tribes, which were carried away prisoners out of their own land in the time of Osea the king, whom Salmanasar the king of Assyria led away captive* (the wisdom-stream's-direct-articulation of the Assyrian-exile-architecture the lost-sheep-mission-scope addresses); 2 Esdras 13:48 names the remnant-within-the-borders — *but those that be left behind of your people are they that are found within my borders* (the wisdom-stream's naming of both registers the King's-mission addresses); Tobit 13:5 names the scourge-then-mercy-then-gathering-out-of-all-nations — *he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us* (the operative-architecture the King's-mission enacts). The framework reads the cluster as FRAMEWORK-MAJOR for the lost-sheep-mission-scope's wisdom-stream corroboration. The Pharisaic-system had built credentialing-systems on top of the binary (Yahudah (Judah) and the nations, no scattered-twelve-tribes coming-home); the wisdom-stream had preserved the architecture the prophets had named. The King's-mission at v.24 IS the operative-form of the wisdom-stream's-prayer at Sirach 36:11; the lost-sheep-of-the-house-of-Yashar'el (Israel) the King is sent-to IS the all-the-tribes-of-Ya'aqov (Jacob) the wisdom-stream had prayed for the gathering of. The framework reads the Canaanite-woman's mercy-at-the-crumbs-substance (vv.25-28) within the architecture — as the master's-table-mercy-to-the-categorical-nations-individual that does NOT collapse the seed-distinction (Red Line #7) but operates within it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "father-voice-naming-the-son-of-adam-at-the-investiture",
+   "title": "This is the Son of Adam — the voice that names him at the investiture",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "*And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased.* (Matthew 3:17). A voice from above the water names the one standing in it. Enoch heard the same form of words spoken over the same figure when he was carried up into the heavens: *And he (i.e. the angel) came to me and greeted me with His voice, and said unto me: ‘This is the Son of Adam who is born unto righteousness, And righteousness abides over him, And the righteousness of the Head of Days forsakes him not.’* (1 Enoch 71:14). This is the Son of Adam, this is my beloved Son. The naming at the Jordan is public, and the Parables explain why it had to come as a disclosure and not as common knowledge: *For from the beginning the Son of Adam was hidden, And the El Elyon (Most High) preserved him in the presence of His might, And revealed him to the elect.* (1 Enoch 62:7). The one hidden with the Father from the beginning is revealed to the elect, and at the river the revealing is spoken out loud. The Ascension of Isaiah carries the other end of the arc, the Beloved who came down in the form of a man going back up: *And I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold.* (Ascension of Isaiah 11:32). Descent, naming, ascent. The voice at the Jordan is one point on a line the library had already drawn end to end.",
+   "members_in_this_chapter": [
+    {
+     "src": "1:11",
+     "tgt": "canon/psalms 2:7",
+     "member_note": "The Father's voice at the baptism — *Thou art my beloved Son, in whom I am well pleased* — echoes Tehillim (Psalm) 2:7's enthronement-decree: *Thou art my Son; this day have I begotten thee.* The Formless naming the Formed at the moment of the public ministry's beginning."
+    },
+    {
+     "src": "1:11",
+     "tgt": "canon/isaiah 42:1",
+     "member_note": "*Behold my servant, whom I uphold; mine elect, in whom my soul delighteth.* The Yeshayahu (Isaiah) 42:1 election-of-the-Servant carried into the Father's voice at the Yarden (Jordan)."
+    }
+   ]
+  }
+ ]
+}

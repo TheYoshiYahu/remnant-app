@@ -1,0 +1,16 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "luke",
+ "chapter": 15,
+ "cards": [
+  {
+   "id": 7061,
+   "prose": "The son in the far country says *I will arise and go to my father*, and Ezekiel's verse says what such a turning is worth: the wicked man who turns from all his sins and keeps the statutes *shall surely live*. The father says *this my son was dead, and is alive again* (Luke 15:24). Read line on line, the son is the divorced house of Yashar'el (Israel) coming home from the nations; Luke does not name the houses, so this is a reading.",
+   "member_phrase": "the wicked will turn from all his sins that he hath committed, and keep all my statutes",
+   "member_sentence": "Ezekiel says the wicked man who turns from all his sins and keeps the statutes shall surely live and not die.",
+   "thread": "prodigal-son-and-the-elder-brother-the-two-house-gathering-of-ephraim-and-yahudah",
+   "flag": "The houses reading is the author's line on line; Luke does not state it, so the prose says so."
+  }
+ ],
+ "new_threads": []
+}

@@ -1,0 +1,64 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 1,
+ "cards": [
+  {
+   "id": 6956,
+   "prose": "Gabriel is quoting Malachi into Zacharias's ear. The one who goes before comes *in the spirit and power of Elijah*, and Malachi had promised *Elijah the prophet* before the great and dreadful day of Yahuah (the LORD). Just before he says it, Malachi writes *Remember ye the law of Moses my servant* (Malachi 4:4), so the turning John brings is toward Moses and not away from him.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Malachi promises Elijah the prophet before the great and dreadful day, and Gabriel tells Zacharias that John comes in his spirit and power.",
+   "thread": "gather-together-in-one-the-children-scattered-abroad",
+   "flag": "No Elijah thread exists in Luke 1; joined the thread that already holds Luke 1:17 (the turning of the fathers and the children)."
+  },
+  {
+   "id": 6958,
+   "prose": "Gabriel tells Mary she will bear a son and call his name Yahusha (Jesus), and the word Yahuah (the LORD) gave David stands behind it. David was told *I will set up thy seed after thee*, a seed that would *proceed out of thy bowels*. One seed out of David's own body, and Mary is carrying him.",
+   "member_phrase": "I will set up thy seed after thee, which shall proceed out of thy bowels",
+   "member_sentence": "David is promised a seed out of his own body, one son whose kingdom Yahuah (the LORD) will establish, and Gabriel says Mary will bear him.",
+   "thread": "luke-1-the-throne-of-his-father-david-and-the-kingdom-without-end",
+   "flag": ""
+  },
+  {
+   "id": 6959,
+   "prose": "Gabriel names the throne: Yahuah (the LORD) will give him *the throne of his father David*. That is David's own promise coming due, a kingdom established for the seed after him, and the next verse of it says Yahuah (the LORD) will *stablish the throne of his kingdom for ever* (2 Samuel 7:13). The throne is not new. It is David's.",
+   "member_phrase": "which shall proceed out of thy bowels, and I will establish his kingdom",
+   "member_sentence": "The kingdom Yahuah (the LORD) promised David is the one Gabriel says Mary's son will receive, on his father David's throne.",
+   "thread": "luke-1-the-throne-of-his-father-david-and-the-kingdom-without-end",
+   "flag": ""
+  },
+  {
+   "id": 6960,
+   "prose": "Gabriel's *for ever* and *no end* are what Daniel saw given: *his dominion is an everlasting dominion, which shall not pass away*, and a kingdom *that which shall not be destroyed*. Daniel says every people and language serves him. Gabriel says where the reign stands, over the house of Jacob, all twelve tribes, and not another people in its place.",
+   "member_phrase": "his dominion is an everlasting dominion, which shall not pass away",
+   "member_sentence": "Daniel sees an everlasting dominion that shall not pass away and a kingdom that shall not be destroyed, which is the kingdom Gabriel says has no end.",
+   "thread": "luke-1-the-throne-of-his-father-david-and-the-kingdom-without-end",
+   "flag": ""
+  },
+  {
+   "id": 6964,
+   "prose": "Mary says it was spoken *to Abraham, and to his seed for ever*, and Genesis has the words themselves, *an everlasting covenant*, with Elohim (God) to be *a Elohim (God) unto thee, and to thy seed after thee*. Her son is the keeping of that oath to the fathers, as Zacharias says a few verses on: *The oath which he sware to our father Abraham* (Luke 1:73).",
+   "member_phrase": "for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee",
+   "member_sentence": "The covenant is everlasting and runs to Abraham and to his seed after him, which is the oath Mary says is being kept.",
+   "thread": "luke-1-the-magnificat-gathering-of-the-tribes-of-jacob-in-sirach-36-and-baruch",
+   "flag": ""
+  },
+  {
+   "id": 6965,
+   "prose": "Zacharias is filled with the Ruach HaKodesh (Holy Spirit), and what he prophesies is *he hath visited and redeemed his people, and hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:68-69). Isaiah had the same shoot in another picture, *a rod out of the stem of Jesse*, and Jesse is David's father.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "A rod comes out of the stem of Jesse, David's father, and a Branch from his roots, which is the horn Zacharias names.",
+   "thread": "benedictus-as-priestly-witness-to-the-davidic-horn-and-the-avraham-oath",
+   "flag": ""
+  }
+ ],
+ "new_threads": [
+  {
+   "slug": "luke-1-the-throne-of-his-father-david-and-the-kingdom-without-end",
+   "title": "The throne of his father David and the kingdom without end",
+   "anchor_start_vn": 31,
+   "anchor_end_vn": 33,
+   "summary_md": "It ain't new. Gabriel does not hand Mary a fresh promise. He hands her the oldest one David ever heard and says it was always for a son.\n\n*And, behold, thou shalt conceive in thy womb, and bring forth a son, and shalt call his name Yahusha (JESUS).* (Luke 1:31)\n\nYahuah (the LORD) had told David what would come after him:\n\n*And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* (2 Samuel 7:12)\n\n*He shall build an house for my name, and I will stablish the throne of his kingdom for ever.* (2 Samuel 7:13)\n\nGabriel says the same thing and names the throne:\n\n*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David:* (Luke 1:32)\n\nIt is one seed and one throne, David's, and the son it is given to is Mary's. Then comes the length of it:\n\n*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end.* (Luke 1:33)\n\nDaniel was shown a kingdom given in his own vision, and he says it in his own words:\n\n*And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* (Daniel 7:14)\n\nNothing is turned into something else here. The throne is David's throne, the reign is over the house of Jacob, which is all twelve tribes and not another people standing in their place, and the kingdom does not pass away. Gabriel is keeping the word given to David, one promise standing from David to Mary."
+  }
+ ]
+}

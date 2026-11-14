@@ -1,0 +1,73 @@
+{
+ "model": "claude-sonnet-5-5 (Sonnet 5.5)",
+ "book": "mark",
+ "chapter": 4,
+ "cards": [
+  {
+   "id": 5034,
+   "prose": "A sower goes out and the same seed falls on every kind of ground, and the first thing he says is *Hearken*. John gives the reason some hear and some do not: *ye are not of my sheep*, and the next verse says *My sheep hear my voice* (John 10:27). The hearing shows what the hearer already was; it does not make him that.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahusha (Jesus) says they do not believe because they are not of his sheep, and the next verse says his sheep hear his voice.",
+   "thread": "my-sheep-hear-my-voice-hearing-reveals-not-creates",
+   "flag": ""
+  },
+  {
+   "id": 5036,
+   "prose": "Mark gives the key in five words, *The sower soweth the word.* Matthew sets the same explanation after he has told the disciples their eyes and ears are blessed, and then opens it with *Hear ye therefore*. So the explanation is given to those who hear, and in Matthew what is sown is *the word of the kingdom* (Matthew 13:19), met by four kinds of ground.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew opens the explanation of the sower by telling the disciples to hear, right after calling their eyes and ears blessed.",
+   "thread": "matthew-13-the-sower-why-parables-seeing-they-see-not-isaiah-6-isaiah-55",
+   "flag": ""
+  },
+  {
+   "id": 5037,
+   "prose": "The sower sows the word, and the grounds show what each hearer does with it. Ezekiel hears Adonai Yahuah (the Lord GOD) tell the house he has gathered that they will *pass under the rod* before he brings them into the bond of the covenant, and that he will *purge out from among you the rebels* (Ezekiel 20:38). Laid beside the soils, the rod is the testing of those already gathered, to see what the word they received has borne.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Adonai Yahuah (the Lord GOD) causes the gathered house to pass under the rod before he brings it into the bond of the covenant.",
+   "thread": "mark-4-the-seed-sown-and-the-evil-seed-in-the-heart-of-adam-in-2-esdras",
+   "flag": "Read line on line: Mark does not name the rod. The thread's summary speaks of 2 Esdras and the evil seed, so it will want a line on the sifting of the gathered house when it is filled."
+  },
+  {
+   "id": 5038,
+   "prose": "The rocky ground hears the word and receives it gladly, but it has no root, and when trouble comes for the word's sake it gives way. Hebrews describes people who stood that near: enlightened, tasting the heavenly gift, made partakers of the Ruach HaKodesh (Holy Spirit). Then the writer says that if they fall away it is impossible *to renew them again unto repentance* (Hebrews 6:6). Both texts speak of a real loss.",
+   "member_phrase": "those who were once enlightened, and have tasted of the heavenly gift",
+   "member_sentence": "Hebrews speaks of those once enlightened who tasted the heavenly gift and shared in the Ruach HaKodesh (Holy Spirit), and warns what follows if they fall away.",
+   "thread": "mark-4-the-seed-sown-and-the-evil-seed-in-the-heart-of-adam-in-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 5039,
+   "prose": "The thorns in the parable are worldly cares, the pull of riches and the lusts for other things, and what they choke is the word, so that it becomes unfruitful. Paul tells Timothy what the same ground does to a man: those who will be rich *fall into temptation and a snare* and are drowned in *destruction and perdition*. The word was sown in him and the thorns took it, which is why the warning is given.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Paul warns Timothy that those who will be rich fall into a snare and into lusts that drown men in destruction, as the thorns choke the word.",
+   "thread": "mark-4-the-seed-sown-and-the-evil-seed-in-the-heart-of-adam-in-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 5040,
+   "prose": "Mark sets this saying right after the lamp that is not put under a bushel: what is covered is meant to come out. The Preacher closes his book the same way, saying that Elohim (God) will bring every work into judgment, with *every secret thing*, whether it be good or evil.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The Preacher ends by saying Elohim (God) will bring every work into judgment, with every secret thing, good or evil.",
+   "thread": "mark-4-the-candle-not-under-a-bushel-psalm-119-and-ecclesiastes-12",
+   "flag": ""
+  },
+  {
+   "id": 5042,
+   "prose": "Mark's saying about having and not having is hard to hear alone. Beside it, Revelation says that those who worship the beast are the ones *whose names are not written in the book of life*, and that the book is the Lamb's and was written from the foundation of the world. The book was settled first, and what shows in a man afterward is what the book already held.",
+   "member_phrase": "whose names are not written in the book of life of the Lamb slain from the foundation of the world",
+   "member_sentence": "Those who worship the beast are the ones whose names are not written in the book of life of the Lamb from the foundation of the world.",
+   "thread": "mark-4-the-candle-not-under-a-bushel-psalm-119-and-ecclesiastes-12",
+   "flag": "The last sentence of the prose is the author's reading of having and not having; Revelation 13:8 itself says only that the names are or are not written in the book."
+  },
+  {
+   "id": 5045,
+   "prose": "He tells them to cross over, and when the storm rises he rebukes the wind and says to the sea *Peace, be still* (Mark 4:39). The psalm tells whose work that is: of Yahuah (the LORD) of hosts it says that when the waves arise, *thou stillest them*. The disciples ask what manner of man this is, and he has just done what the psalm gives to Yahuah (the LORD).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The psalm says Yahuah (the LORD) rules the raging sea and stills the waves when they rise, the work Yahusha (Jesus) does from the boat.",
+   "thread": "mark-4-peace-be-still-the-creators-authority-over-the-sea-psalm-107-and-job-38",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on claude-sonnet-5-5 (Sonnet 5.5)."
+}

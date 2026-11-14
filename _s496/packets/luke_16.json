@@ -1,0 +1,351 @@
+{
+ "book": "luke",
+ "chapter": 16,
+ "chapter_text_kjv": {
+  "1": "And he said also unto his disciples, There was a certain rich man, which had a steward; and the same was accused unto him that he had wasted his goods.",
+  "2": "And he called him, and said unto him, How is it that I hear this of thee? give an account of thy stewardship; for thou mayest be no longer steward.",
+  "3": "Then the steward said within himself, What shall I do? for my lord taketh away from me the stewardship: I cannot dig; to beg I am ashamed.",
+  "4": "I am resolved what to do, that, when I am put out of the stewardship, they may receive me into their houses.",
+  "5": "So he called every one of his lord’s debtors unto him, and said unto the first, How much owest thou unto my lord?",
+  "6": "And he said, An hundred measures of oil. And he said unto him, Take thy bill, and sit down quickly, and write fifty.",
+  "7": "Then said he to another, And how much owest thou? And he said, An hundred measures of wheat. And he said unto him, Take thy bill, and write fourscore.",
+  "8": "And the lord commended the unjust steward, because he had done wisely: for the children of this world are in their generation wiser than the children of light.",
+  "9": "And I say unto you, Make to yourselves friends of the mammon of unrighteousness; that, when ye fail, they may receive you into everlasting habitations.",
+  "10": "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
+  "11": "If therefore ye have not been faithful in the unrighteous mammon, who will commit to your trust the true riches?",
+  "12": "And if ye have not been faithful in that which is another man’s, who shall give you that which is your own?",
+  "13": "No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon.",
+  "14": "And the Pharisees also, who were covetous, heard all these things: and they derided him.",
+  "15": "And he said unto them, Ye are they which justify yourselves before men; but Elohim (God) knoweth your hearts: for that which is highly esteemed among men is abomination in the sight of Elohim (God).",
+  "16": "The law and the prophets were until John: since that time the kingdom of Elohim (God) is preached, and every man presseth into it.",
+  "17": "And it is easier for heaven and earth to pass, than one tittle of the law to fail.",
+  "18": "Whosoever putteth away his wife, and marrieth another, committeth adultery: and whosoever marrieth her that is put away from her husband committeth adultery.",
+  "19": "There was a certain rich man, which was clothed in purple and fine linen, and fared sumptuously every day:",
+  "20": "And there was a certain beggar named Lazarus, which was laid at his gate, full of sores,",
+  "21": "And desiring to be fed with the crumbs which fell from the rich man’s table: moreover the dogs came and licked his sores.",
+  "22": "And it came to pass, that the beggar died, and was carried by the angels into Abraham’s bosom: the rich man also died, and was buried;",
+  "23": "And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom.",
+  "24": "And he cried and said, Father Abraham, have mercy on me, and send Lazarus, that he may dip the tip of his finger in water, and cool my tongue; for I am tormented in this flame.",
+  "25": "But Abraham said, Son, remember that thou in thy lifetime receivedst thy good things, and likewise Lazarus evil things: but now he is comforted, and thou art tormented.",
+  "26": "And beside all this, between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence.",
+  "27": "Then he said, I pray thee therefore, father, that thou wouldest send him to my father’s house:",
+  "28": "For I have five brethren; that he may testify unto them, lest they also come into this place of torment.",
+  "29": "Abraham saith unto him, They have Moses and the prophets; let them hear them.",
+  "30": "And he said, Nay, father Abraham: but if one went unto them from the dead, they will repent.",
+  "31": "And he said unto him, If they hear not Moses and the prophets, neither will they be persuaded, though one rose from the dead."
+ },
+ "cards": [
+  {
+   "id": 7064,
+   "src": "Luke 16:14",
+   "src_vn": 14,
+   "src_text_live": "And the Pharisees also, who were covetous, heard all these things: and they derided him.",
+   "src_text_kjv": "And the Pharisees also, who were covetous, heard all these things: and they derided him.",
+   "tgt": "Mark 7:13",
+   "tgt_text_kjv": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye.",
+   "tgt_context_kjv": {
+    "11": "But ye say, If a man shall say to his father or mother, It is Corban, that is to say, a gift, by whatsoever thou mightest be profited by me; he shall be free.",
+    "12": "And ye suffer him no more to do ought for his father or his mother;",
+    "13": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye.",
+    "14": "And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand:",
+    "15": "There is nothing from without a man, that entering into him can defile him: but the things which come out of him, those are they that defile the man.",
+    "16": "If any man have ears to hear, let him hear."
+   },
+   "old_note": "*And the Pharisees also, who were covetous, heard all these things: and they derided him. And he said unto them, Ye are they which justify yourselves before men; but Elohim (God) knoweth your hearts: for that which is highly esteemed among men is abomination in the sight of Elohim (God)* (Luke 16:14-15).",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 7067,
+   "src": "Luke 16:19",
+   "src_vn": 19,
+   "src_text_live": "There was a certain rich man, which was clothed in purple and fine linen, and fared sumptuously every day:",
+   "src_text_kjv": "There was a certain rich man, which was clothed in purple and fine linen, and fared sumptuously every day:",
+   "tgt": "Matthew 13:24",
+   "tgt_text_kjv": "Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field:",
+   "tgt_context_kjv": {
+    "22": "He also that received seed among the thorns is he that heareth the word; and the care of this world, and the deceitfulness of riches, choke the word, and he becometh unfruitful.",
+    "23": "But he that received seed into the good ground is he that heareth the word, and understandeth it; which also beareth fruit, and bringeth forth, some an hundredfold, some sixty, some thirty.",
+    "24": "Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field:",
+    "25": "But while men slept, his enemy came and sowed tares among the wheat, and went his way.",
+    "26": "But when the blade was sprung up, and brought forth fruit, then appeared the tares also.",
+    "27": "So the servants of the householder came and said unto him, Sir, didst not thou sow good seed in thy field? from whence then hath it tares?"
+   },
+   "old_note": "The rich-man-and-Lazaros parable. FRAMEWORK-MAJOR for the framework-honest sheol-and-resurrection register. Two men, two outcomes — Lazaros carried by the angels into Avraham's (Abraham's) bosom; the rich-man lifting up his eyes in torments. *And beside all this, between us and you there is a great gulf fixed.*",
+   "author_thread_hint": "wheat-and-tares-the-post-harvest-sifting-architecture",
+   "map_grade": "DOCREF",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-13-the-tares-the-harvest-is-the-end-of-the-world-daniel-12-malachi-4",
+    "seed-of-good-and-evil-sown-in-the-heart-of-adam-in-2-esdras",
+    "seed-war-from-genesis-3-and-the-devil-as-source-of-death-in-wisdom-and-jubilees-and-1-enoch",
+    "watchers-corruption-as-tares-sown-in-the-wheat-in-1-enoch-and-jubilees"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 7068,
+   "src": "Luke 16:29",
+   "src_vn": 29,
+   "src_text_live": "Abraham says unto him, They have Moses and the prophets; let them hear them.",
+   "src_text_kjv": "Abraham saith unto him, They have Moses and the prophets; let them hear them.",
+   "tgt": "2 Peter 3:15",
+   "tgt_text_kjv": "And account that the longsuffering of our Lord is salvation; even as our beloved brother Paul also according to the wisdom given unto him hath written unto you;",
+   "tgt_context_kjv": {
+    "13": "Nevertheless we, according to his promise, look for new heavens and a new earth, wherein dwelleth righteousness.",
+    "14": "Wherefore, beloved, seeing that ye look for such things, be diligent that ye may be found of him in peace, without spot, and blameless.",
+    "15": "And account that the longsuffering of our Lord is salvation; even as our beloved brother Paul also according to the wisdom given unto him hath written unto you;",
+    "16": "As also in all his epistles, speaking in them of these things; in which are some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction.",
+    "17": "Ye therefore, beloved, seeing ye know these things before, beware lest ye also, being led away with the error of the wicked, fall from your own stedfastness.",
+    "18": "But grow in grace, and in the knowledge of our Lord and Saviour Yahusha HaMashiach (Jesus Christ). To him be glory both now and for ever. Amen."
+   },
+   "old_note": "*They have Mosheh (Moses) and the prophets; let them hear them... If they hear not Mosheh (Moses) and the prophets, neither will they be persuaded, though one rose from the dead* (Luke 16:29, 31). The standing-test the King names: hear Torah and the prophets.",
+   "author_thread_hint": "scripture-twisting-and-the-harmonization-discipline",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "the-unjust-steward-and-the-money-stewardship-discipline-in-an-unrighteous-system",
+   "title": "The unjust steward — money stewardship in the unrighteous-system before the books are called",
+   "anchor": "Luke 16:1-13",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "Lukan-specific. One of the parables the inherited pulpit treats as confusing or shockingly amoral. The framework reading: the King is teaching wisdom-in-the-stewardship-of-mammon, NOT commending dishonesty. The steward is about to be called to account, acts shrewdly to make friends among the debtors, and the lord commends his shrewdness — *the children of this world are in their generation wiser than the children of light* (v.8). The application: use the mammon-of-unrighteousness while you have it to *make to yourselves friends* who receive you into the everlasting habitations. The Sirach 11 / Tobit 4 wisdom-stream witness names the alms-as-laid-up-treasure substance (extras-quoted in summary; not member-rows per canon-edition scope). The Daniel 4:27 *break off thy sins by righteousness, and thine iniquities by shewing mercy to the poor* is the Tanakh-anchor. The verdict — *Ye cannot serve Elohim (God) and mammon* (v.13) — names the standing-test of the divided heart.",
+   "members_in_this_chapter": [
+    {
+     "src": "16:1",
+     "tgt": "canon/proverbs 22:3",
+     "member_note": "*A prudent man foreseeth the evil, and hideth himself: but the simple pass on, and are punished* — the wisdom-stream's foresee-the-evil substance the steward enacts in shrewd-not-righteous form. The King reads the wisdom from a negative-illustration."
+    },
+    {
+     "src": "16:9",
+     "tgt": "canon/daniel 4:27",
+     "member_note": "*Wherefore, O king, let my counsel be acceptable unto thee, and break off thy sins by righteousness, and thine iniquities by shewing mercy to the poor; if it may be a lengthening of thy tranquillity* — Daniel's counsel to Nevukadnetsar (Nebuchadnezzar) carries the same alms-as-temporary-postponement-of-judgment substance the unjust-steward applies."
+    },
+    {
+     "src": "16:9",
+     "tgt": "canon/matthew 6:19",
+     "member_note": "*Lay not up for yourselves treasures upon earth... But lay up for yourselves treasures in heaven* — the same treasure-in-heaven substance the broader catena holds. The mammon-of-unrighteousness wisely deployed becomes friends-in-the-everlasting-habitations."
+    },
+    {
+     "src": "16:10",
+     "tgt": "canon/luke 19:17",
+     "member_note": "*Well, thou good servant: because thou hast been faithful in a very little, have thou authority over ten cities* — the *he that is faithful in that which is least is faithful also in much* substance the King speaks at Luke 19's parable of the pounds. Cross-witness on the faithful-in-little discipline."
+    },
+    {
+     "src": "16:11",
+     "tgt": "canon/matthew 25:21",
+     "member_note": "*Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things* — the parable of the talents pairs the same faithful-in-little-faithful-in-much substance."
+    },
+    {
+     "src": "16:13",
+     "tgt": "canon/matthew 6:24",
+     "member_note": "*No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon* — the same mammon-teaching the Sermon-on-the-Mount carries. Cross-witness."
+    }
+   ]
+  },
+  {
+   "slug": "luke-16-cannot-serve-elohim-and-mammon-and-gold-as-snare-in-sirach",
+   "title": "Ye cannot serve Elohim and mammon — gold as snare in Sirach",
+   "anchor": "Luke 16:13",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "Luke-specific placement. The unjust-steward parable (vv.1-8) closes not with a commendation of dishonesty but with a verdict on masters: *No servant can serve two masters... Ye cannot serve Elohim (God) and mammon* (Luke 16:13). The Hebrew library's wisdom-stream had already named the architecture at the gold-as-snare level. Sirach (Ecclesiasticus) 31:5 names the disqualification: *he that loves gold shall not be justified, and he that followeth corruption shall have enough thereof.* Sirach 31:6 names the ruin: *gold has been the ruin of many, and their destruction was present.* Sirach 31:7 names gold-as-stumblingblock-for-those-who-sacrifice-to-it: *it is a stumblingblock to them that sacrifice to it, and every fool shall be taken with it.* The wisdom-stream identifies wealth as an object of worship that captures its devotees; the King names the same at the forced-choice level — the divided heart cannot stand justified before the Father whose service is whole-heart. The Sermon carries the same Sirach material at Matthew 6:24; the Lukan setting is distinct, sealing a steward-parable about deploying mammon shrewdly before the books are called.",
+   "members_in_this_chapter": [
+    {
+     "src": "16:13",
+     "tgt": "apocrypha/ecclesiasticus 31:5",
+     "member_note": "Ecclesiasticus 31:5 — *he that followeth corruption shall have enough thereof.* Gold-love disqualifies; at Luke 16:13 the King closes the steward parable with *ye cannot serve Elohim (God) and mammon*."
+    },
+    {
+     "src": "16:13",
+     "tgt": "apocrypha/ecclesiasticus 31:6",
+     "member_note": "Ecclesiasticus 31:6 — *Gold has been the ruin of many, and their destruction was present..* The servant of mammon in Luke 16:13 walks into the ruin Sirach names."
+    },
+    {
+     "src": "16:13",
+     "tgt": "apocrypha/ecclesiasticus 31:7",
+     "member_note": "Ecclesiasticus 31:7 — *them that sacrifice to it, and every fool shall be taken with it.* To serve mammon (Luke 16:13) is to sacrifice to the stumblingblock."
+    }
+   ]
+  },
+  {
+   "slug": "luke-16-the-rich-man-and-lazaros-and-the-hollow-places-of-the-dead-in-1-enoch-and-2-esdras",
+   "title": "The rich man and Lazaros — the hollow places of the dead in 1 Enoch and 2 Esdras",
+   "anchor": "Luke 16:19-31",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "The parable assumes a place the pulpit has never been able to describe. Lazaros dies and *was carried by the angels into Abraham’s bosom: the rich man also died, and was buried;* (Luke 16:22). The rich man is awake there: *And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom.* (Luke 16:23). And the two places do not touch: *And beside all this, between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence.* (Luke 16:26). Enoch was shown that very place. *And there was in it four hollow places, deep and wide and very smooth. How smooth are the hollow places and deep and dark to look at.* (1 Enoch 22:2). The angel told him what they are for: *Then Raphael answered, one of the holy angels who was with me, and said unto me: ‘These hollow places have been created for this very purpose, that the spirits of the souls of the dead should assemble therein, yea that all the souls of the children of men should assemble here.* (1 Enoch 22:3), and how long they are for: *And these places have been made to receive them till the day of their judgement and till their appointed period [till the period appointed], till the great judgement (comes) upon them.’* (1 Enoch 22:4). The dead are awake, they are kept apart, and the keeping has an end. The righteous have their own division with the bright spring of water, and the sinners theirs, set apart in pain till the great day (1 Enoch 22:9-11). That is why the parable can speak of torment and of comfort in the same hour without either being the last word. The last word is the resurrection out of those places: *And the earth shall restore those that are asleep in her, and so shall the dust those that dwell in silence, and the secret places shall deliver those souls that were committed to them.* (2 Esdras 7:32). When Abraham says they would not be persuaded though one rose from the dead, he is speaking of a rising out of exactly these chambers.",
+   "members_in_this_chapter": [
+    {
+     "src": "16:22",
+     "tgt": "enoch/1-enoch 22:9",
+     "member_note": "*And he answered me and said unto me: ‘These three have been made that the spirits of the dead might be separated. And such a division has been made for the spirits of the righteous, in which there is the bright spring of water.* (1 Enoch 22:9). Enoch is shown the holding-places of the dead — distinct compartments hewn in the great mountain. Luke 16:22's carrying of Lazaros *by the angels into Avraham's (Abraham's) bosom* while the rich man is *buried* and lifts his eyes in another place walks the same architecture the Hebrew library named: the dead are held in separated compartments pending the judgment, not annihilated into nothing and not dispatched to a final eternal destination."
+    },
+    {
+     "src": "16:23",
+     "tgt": "enoch/1-enoch 22:10",
+     "member_note": "*And such has been made for sinners when they die and are buried in the earth and judgement has not been executed on them in their lifetime.* (1 Enoch 22:10). The conscious-souls-of-the-dead-assembled register against the inherited soul-sleep misread. Luke 16:23's rich man *in hell (hadēs) lift up his eyes, being in torments, and seeth Avraham (Abraham) afar off, and Lazaros in his bosom* assumes exactly this architecture — the spirits of the dead are gathered, aware, and identifiable, held in the hollow places the Hebrew library named."
+    },
+    {
+     "src": "16:26",
+     "tgt": "enoch/1-enoch 22:4",
+     "member_note": "*And these places have been made to receive them till the day of their judgement and till their appointed period [till the period appointed], till the great judgement (comes) upon them.’* (1 Enoch 22:4). *Between us and you there is a great gulf fixed* (Luke 16:26). Enoch saw the fixing: the hollow places made to receive the dead until the day of their judgement, divided one from another. Sheol is real and the dead are aware in it — and it is a holding until the appointed period, not the final destination."
+    },
+    {
+     "src": "16:31",
+     "tgt": "apocrypha/2-esdras 7:32",
+     "member_note": "2 Esdras 7:32 — *the secret places shall deliver those souls that were committed to them.* The one who might rise from the dead at Luke 16:31 would come from that same holding place."
+    }
+   ]
+  },
+  {
+   "slug": "rich-man-and-lazaros-the-framework-honest-sheol-with-two-compartments-and-the-mosheh-and-the-prophets-test",
+   "title": "The rich man and Lazaros — Sheol with its divisions, and *they have Mosheh and the prophets*",
+   "anchor": "Luke 16:19-31",
+   "anchored_in_this_book": true,
+   "member_count": 9,
+   "summary_md": "Lazaros, full of sores and laid at the gate with the dogs licking him, dies and *was carried by the angels into Abraham’s bosom: the rich man also died, and was buried;* (Luke 16:22). *And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom.* (Luke 16:23). The dead in this parable remember, the rich man knows he has five brothers; they see, across a gulf; they are still themselves, Lazaros still Lazaros and the rich man still the rich man. And the two places are divided: *And beside all this, between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence.* (Luke 16:26). Two inherited teachings both stumble here. The one that says the dead sleep without knowing anything has to explain away a conversation. The one that says the torment is the final and eternal state has to ignore that this is Sheol before the resurrection, a holding place and not a verdict. Enoch was shown the holding place and told how it is arranged: *And he answered me and said unto me: ‘These three have been made that the spirits of the dead might be separated. And such a division has been made for the spirits of the righteous, in which there is the bright spring of water.* (1 Enoch 22:9). *And such has been made for sinners when they die and are buried in the earth and judgement has not been executed on them in their lifetime.* (1 Enoch 22:10). *Here their spirits shall be set apart in this great pain till the great day of judgement and punishment and torment of those who curse for ever and retribution for their spirits. There He shall bind them for ever.* (1 Enoch 22:11). Awake, divided, and waiting for the great day: that is what the rich man is doing, and the parable only makes sense if that is where he is. Then the parable turns to the living. The rich man wants a messenger sent to his brothers, and Abraham answers, *they have Mosheh (Moses) and the prophets; let them hear them. If they hear not Mosheh (Moses) and the prophets, neither will they be persuaded, though one rose from the dead* (Luke 16:29, 31). That is the King's standing test against every gospel that sets the Torah aside, and it was proved in the open when another Lazaros was raised at John 11 and the chief priests set about killing him. Five brothers, the leadership of the house of Yahudah (Judah), who would not hear Moses, and so did not believe when one rose.",
+   "members_in_this_chapter": [
+    {
+     "src": "16:22",
+     "tgt": "canon/genesis 25:8",
+     "member_note": "*Then Avraham (Abraham) gave up the ghost, and died in a good old age, an old man, and full of years; and was gathered to his people* — the *gathered to his people* register of the Tanakh names a real conscious-gathering, not annihilation. The bosom-of-Avraham (Abraham) at Luke 16:22 carries the same substance."
+    },
+    {
+     "src": "16:23",
+     "tgt": "canon/1-samuel 28:13",
+     "member_note": "*And the king said unto her, Be not afraid: for what sawest thou? And the woman said unto Sha'ul (Saul), I saw elohim (gods) ascending out of the earth... And Sha'ul (Saul) perceived that it was Shemu'el (Samuel)* — the Tanakh-witness to conscious-existence in sheol. Shemu'el speaks; Sha'ul hears; the rich man and Lazaros walk the same architecture."
+    },
+    {
+     "src": "16:23",
+     "tgt": "canon/ecclesiastes 9:5",
+     "member_note": "*For the living know that they shall die: but the dead know not any thing* — the standing-test the inherited soul-sleep doctrine misreads. Read alongside the rich-man's conscious-witness at Luke 16, the Qohelet (Ecclesiastes) register is *under-the-sun* observation-from-the-living-side, not denial of conscious-sheol from the dead-side. Tension held; both honored."
+    },
+    {
+     "src": "16:23",
+     "tgt": "canon/ezekiel 32:21",
+     "member_note": "*The strong among the mighty shall speak to him out of the midst of hell (sheol) with them that help him* — the conscious-speech-in-sheol register Yechezk'el (Ezekiel) 32:21 carries against the inherited soul-sleep misread. The dead speak; the parable assumes the architecture the Tanakh already named."
+    },
+    {
+     "src": "16:24",
+     "tgt": "canon/revelation 20:14",
+     "member_note": "*And death and hell (hadēs) were cast into the lake of fire* — the sheol-as-temporal-holding-state the rich-man-and-Lazaros parable assumes IS the sheol Revelation names being cast into the lake-of-fire at the second-resurrection-and-judgment. Sheol is not the final destination; sheol is the holding-state pending the resurrection."
+    },
+    {
+     "src": "16:25",
+     "tgt": "canon/psalms 49:14",
+     "member_note": "*Like sheep they are laid in the grave; death shall feed on them; and the upright shall have dominion over them in the morning... But Elohim (God) will redeem my soul from the power of the grave (sheol): for he shall receive me* — the framework-witness to redemption-FROM-sheol for the righteous, the temporal-holding-state Lazaros is in pending the resurrection."
+    },
+    {
+     "src": "16:29",
+     "tgt": "canon/matthew 5:17",
+     "member_note": "*Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil* — *they have Mosheh (Moses) and the prophets; let them hear them* IS the King's own anti-antinomian standing-test in compressed form. The Torah-and-prophets are sufficient; the standing-test is hearing."
+    },
+    {
+     "src": "16:31",
+     "tgt": "canon/john 5:46",
+     "member_note": "*For had ye believed Mosheh (Moses), ye would have believed me: for he wrote of me* — Yochanan (John) 5:46-47 carries the same Mosheh-and-the-prophets standing-test. The standing-test is hearing the Torah; the King is the substance the Torah testified of."
+    },
+    {
+     "src": "16:31",
+     "tgt": "canon/john 11:43",
+     "member_note": "*Lazaros, come forth... Then gathered the chief priests and the Pharisees a council, and said, What do we? for this man doeth many miracles. If we let him thus alone, all men will believe on him* — the literal-Lazaros-raised-from-the-dead at Yochanan (John) 11 is the historical-fulfillment of the Luke 16:31 parable's prediction. The chief-priests sought to kill Lazaros (John 12:10) and did not believe; the test is fulfilled."
+    }
+   ]
+  },
+  {
+   "slug": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+   "title": "The corban tradition voids the fifth commandment — Sirach",
+   "anchor": "Mark 7:9-13",
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "Mark 7:6-13 is the framework's central diagnostic in the King's own mouth: the man-made tradition that voids the commandment of Elohim (God). The corban device is the load-bearing example — *if a man shall say to his father or mother, It is Corban, that is to say, a gift... he shall be free* — and the verdict is *Making the word of Elohim (God) of none effect through your tradition.* The commandment the device voids is the fifth — *Honour thy father and thy mother* — and the Hebrew library's wisdom-stream had already bound that commandment to the fear of Yahuah and named the cost of withholding it. Sirach (Ecclesiasticus) 3:7 makes honour-of-parents the very test of the fear of Yahuah: *He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.* Sirach 3:8 binds honour to deed, not word only: *Honour your father and mother both in word and deed, that a blessing may come upon you from them* — the exact word-AND-deed the corban ruling severs, permitting honour in vow-formula while forbidding the deed of provision. Sirach 3:9 names the cost: *the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations.* The tradition that voids the commandment forfeits the blessing and invites the uprooting. The same flesh-credentialing system that exalts the tradition of the elders over the word of Elohim is the Judaizer architecture the King names here and the apostolic letters confront later; the wisdom-stream had already exposed it by its own standard.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "fulfill-as-prophecy-bringing-to-pass",
+   "title": "Fulfill as prophecy bringing to pass",
+   "anchor": "Matthew 5:17",
+   "anchored_in_this_book": false,
+   "member_count": 41,
+   "summary_md": "The Greek *plēroō* (Strong's G4137) at Matthew 5:17 does not mean *to exhaust-and-thereby-end* — the antichrist reading the pulpit installed to retire the Torah. It means *to bring to pass* — to make happen what was prophesied. Yahusha (Jesus) names what his mission accomplishes: the bringing-to-pass of what the Torah and the Prophets prophesied. And what they prophesied is the gathering of the scattered seed of Yashar'el (Israel) home through redemption — the curse-and-return arc the Torah itself wrote (Leviticus 26:33 and 40-42; Deuteronomy 30:1-5), executed by the prophets in the divorce-and-scattering (Hosea 1:9; Jeremiah 16:13), and opened by the Messiah's death and resurrection so the door home is real. This thread surfaces every NT plēroō occurrence used in prophecy-fulfillment context (35 members), each linked to the specific Tanakh prophecy it brings to pass. The pattern is consistent: the Messiah walks out the substance the prophets foretold, and the NT formula *that it might be fulfilled* points the reader back to the Tanakh, not forward into a new dispensation.",
+   "members_in_this_chapter": [
+    {
+     "src": "16:16",
+     "tgt": "canon/matthew 5:17",
+     "member_note": "*The law and the prophets were until Yochanan (John): since that time the kingdom of Elohim (God) is preached, and every man presseth into it. And it is easier for heaven and earth to pass, than one tittle of the law to fail* (Luke 16:16-17). The Lukan two-verse pair holds Torah-and-prophets-until-Yochanan together with one-tittle-shall-not-fail."
+    }
+   ]
+  },
+  {
+   "slug": "heart-torah-not-abolition",
+   "title": "Heart Torah Not Abolition",
+   "anchor": "Matthew 5:17-19",
+   "anchored_in_this_book": false,
+   "member_count": 24,
+   "summary_md": "Yahusha (Jesus) at Matt 5:17-19 preemptively denies the antinomian misreading of his ministry. He has NOT come to destroy the law or the prophets; he has come to FILL them up to their intended substance. Until heaven and earth pass, one jot or one tittle does not pass from the law. The pulpit that teaches the breaking of even the least commandment is named LEAST in the kingdom of heaven. Matthew 5:19 is the New Testament companion of 1 John 2:3-4 — both verses say the same thing in different grammar: keeping the commandments — and teaching others to keep them — is the proof of knowing him. The thread carries the load-bearing anti-antinomian declaration of the Sermon on the Mount, tied back to the Tanakh's continuing-Torah witnesses and forward to every NT passage that reaffirms the Torah's standing.",
+   "members_in_this_chapter": [
+    {
+     "src": "16:17",
+     "tgt": "canon/matthew 5:17",
+     "member_note": "*And it is easier for heaven and earth to pass, than one tittle of the law to fail* (Luke 16:17). The immediate-corrective to v.16's *The law and the prophets were until Yochanan (John): since that time the kingdom of Elohim (God) is preached, and every man presseth into it.* Verse 16 MUST NOT be read as Torah-abolished — verse 17 is the King's own anti-antinomian guard."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-13-the-tares-the-harvest-is-the-end-of-the-world-daniel-12-malachi-4",
+   "title": "The tares — the harvest is the end of the world (Daniel 12; Malachi 4; Joel 3; 2 Esdras 4)",
+   "anchor": "Matthew 13:24-43",
+   "anchored_in_this_book": false,
+   "member_count": 15,
+   "summary_md": "The wheat and the tares grow *together until the harvest* (13:30), and Yahusha (Jesus) tells us plainly what the harvest is: *the harvest is the end of the world; and the reapers are the angels* (13:39). Every line of this parable is the prophets' own picture of that day. *Then shall the righteous shine forth as the sun in the kingdom of their Father* (13:43) reads straight from Daniel: *they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3). The tares *bound in bundles to burn them* and cast into *a furnace of fire* (13:30, 42) are Malachi's burning oven: *the day cometh, that shall burn as an oven... that it shall leave them neither root nor branch* (Malachi 4:1). And the sorting waits for that day because the discerning belongs to Yahuah — *then shall ye return, and discern between the righteous and the wicked* (Malachi 3:18); men cannot pull the tares without uprooting the wheat (13:29). Whose hand swings the sickle? Joel told us: *Put ye in the sickle, for the harvest is ripe* (Joel 3:13). And what is gathered out? Zephaniah's *stumblingblocks* — *I will consume... the stumblingblocks with the wicked* (Zephaniah 1:3); so *they shall gather out of his kingdom all things that offend* (13:41). The men who first heard this already knew the picture: *the grain of evil seed has been sown in the heart of Adam from the beginning... until the time of threshing come* (2 Esdras 4:30). Yahusha only names the sower — *the enemy... is the devil* (13:39) — and tells them the floor shall be filled.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "seed-of-good-and-evil-sown-in-the-heart-of-adam-in-2-esdras",
+   "title": "The seed of good and evil sown in the heart of Adam — 2 Esdras 4, 2 Esdras 3, and 2 Esdras 8",
+   "anchor": "Matthew 13:24-30",
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "Matt 13:24-30's wheat-and-tares parable — *the kingdom of heaven is likened unto a man which sowed good seed in his field: But while men slept, his enemy came and sowed tares among the wheat, and went his way* — read against the wisdom-stream's direct parallel of the seed-of-good-and-evil sown-in-the-heart-of-Adam architecture. Three moves: 2 Esdras (4 Ezra) 4:30 names THE direct wisdom-stream parallel — *the grain of evil seed hath been sown in the heart of Adam from the beginning, and how much ungodliness hath it brought up unto this time? and how much shall it yet bring forth until the time of threshing shall come?*; 2 Esdras 3:21-22 names the wicked-heart-inherited-from-Adam architecture — *the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him*; 2 Esdras 8:6 names the prayer-for-seed-unto-the-heart and culture-to-the-understanding so-that-fruit-may-come. The framework reads the cluster as the wisdom-stream's direct restatement of the wheat-and-tares architecture at the heart-of-Adam register: the evil-seed was-sown-from-the-beginning AND the time-of-threshing-and-sorting-is-coming AND Yahuah-is-asked-for-seed-unto-the-heart that fruit-may-come. The King at Matt 13:24-30 names the operative-parable-form: the Sower sowing-good-seed in the field; the enemy sowing-tares-while-men-slept; the wheat-and-tares grow-together-until-the-harvest; the harvest-time the tares-burned-and-the-wheat-gathered. The framework reads the architecture WITHOUT collapsing into the Augustinian-original-sin doctrine in its Christian-developed-form: the framework preserves the actor's-responsibility (the watchful-guard-fails per Matt 13:25's *while men slept*) without erasing it; the wisdom-stream knew the inherited-heart-architecture without the Christian-doctrinal-overlay.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "watchers-corruption-as-tares-sown-in-the-wheat-in-1-enoch-and-jubilees",
+   "title": "The Watchers' corruption as tares sown in the wheat — 1 Enoch 6, 10, 15 and Jubilees 5, 7 beside Matthew 13:25-39",
+   "anchor": "Matthew 13:24-30",
+   "anchored_in_this_book": false,
+   "member_count": 8,
+   "summary_md": "*But while men slept, his enemy came and sowed tares among the wheat, and went his way.* (Matthew 13:25). When the disciples ask what it means, Yahusha (Jesus) says the tares are a seed with a father: *The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one; The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.* (Matthew 13:38-39). Enoch records the sowing. *And the angels, the children of the heaven, saw and lusted after them, and said to one another: 'Come, let us choose us wives from among the children of men and beget us children.'* (1 Enoch 6:2). Two hundred of them swore it on Hermon in the days of Jared, and what they begot was a line, not a mood: *And to Gabriel said Yahuah (Lord): 'Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men [and cause them to go forth]: send them one against the other that they may destroy each other in battle: for length of days shall they not have.* (1 Enoch 10:9). Their bodies died in the flood but their spirits stayed: *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling.* (1 Enoch 15:8). Jubilees is the second witness: *And it came to pass when the children of men began to multiply on the face of the earth and daughters were born to them, that the angels of Elohim (God) saw them on a certain year of this jubilee, that they were beautiful to look upon; and they took themselves wives of all whom they chose, and they bare to them sons and they were giants.* (Jubilees 5:1), and Noah tells his sons that the flood came *owing to the fornication wherein the Watchers against the law of their ordinances went a whoring after the daughters of men, and took themselves wives of all which they chose: and they made the beginning of uncleanness.* (Jubilees 7:21). So the children of the wicked one are a seed sown into the world, and the parable is not a figure of speech about bad attitudes. But hold the other half of it just as firmly. The seed runs inside every people, not along the lines of any nation or color, and Eli's own sons were sons of Belial; nobody can sort the field by looking at it. That is why the servants are told to let both grow together. The sorting belongs to the reapers at the harvest, and to no one else.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "seed-war-from-genesis-3-and-the-devil-as-source-of-death-in-wisdom-and-jubilees-and-1-enoch",
+   "title": "The seed war from Genesis 3 forward, with the devil as the source of death — Wisdom of Solomon 2:24, 1 Enoch 22, Jubilees 4",
+   "anchor": "Matthew 13:38-39",
+   "anchored_in_this_book": false,
+   "member_count": 8,
+   "summary_md": "*The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;* (Matthew 13:38). *The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.* (Matthew 13:39). Two seeds in one field, and the devil the one who sowed the second. The library had been saying this since the garden. Solomon names the devil as the source of death itself: *through envy of the devil came death into the world: and they that do hold of his side do find it* (Wisdom of Solomon 2:24). The first fruit of that seed was Cain, and Enoch was shown his brother's spirit still crying out: *I saw the spirits of the children of men who were dead, and their voice went forth to heaven and made suit.* (1 Enoch 22:5). *Then I asked Raphael the angel who was with me, and I said unto him: ‘This spirit—whose is it, whose voice goeth forth and maketh suit?’* (1 Enoch 22:6). *And he answered me saying: ‘This is the spirit which went forth from Abel, whom his brother Cain slew, and he makes his suit against him till his seed is destroyed from the face of the earth, and his seed is annihilated from amongst the seed of men.’* (1 Enoch 22:7). Abel's suit is against a seed, not only a man. Jubilees tells the murder the way Genesis does, *Qayin (Cain) slew Hevel (Abel) because (God) accepted the sacrifice of Hevel (Abel), and did not accept the offering of Qayin (Cain) ... and his blood cried from the ground to heaven* (Jubilees 4:2), and John names which seed Cain was: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous.* (1 John 3:12). So the parable is not a new idea about the world. The serpent in the garden, the envy that brought death in, the Watchers' corruption, the tares in the field, and the harvest where the angels sort them are one story, and Abel's voice has been making suit through all of it until the seed that killed him is gone from among the seed of men.",
+   "members_in_this_chapter": []
+  }
+ ]
+}

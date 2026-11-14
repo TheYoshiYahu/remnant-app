@@ -1,0 +1,33 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 4,
+ "cards": [
+  {
+   "id": 6984,
+   "prose": "Matthew has the mountain *exceeding high* and the devil showing *all the kingdoms of the world, and the glory of them*. Luke has the same sight *in a moment of time*, and lets the devil say why he can offer it: *for that is delivered unto me; and to whomsoever I will I give it* (Luke 4:6). In Luke the devil himself says the kingdoms have been put into his hand.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew's mountain is exceeding high and the devil shows all the kingdoms and their glory, which Luke has him say are delivered to him.",
+   "thread": "beliar-as-king-of-this-world",
+   "flag": ""
+  },
+  {
+   "id": 6987,
+   "prose": "At Nazareth Yahusha (Jesus) says *unto none of them was Elijah sent, save unto Sarepta, a city of Sidon* (Luke 4:26), and that none was cleansed *saving Naaman the Syrian* (Luke 4:27). Beside *the lost sheep of the house of Yashar'el (Israel)*, they are sheep of that house who heard a prophet where it was scattered. The synagogue rose against him for saying the choosing is the Father's.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The errand Matthew states is the one Luke has him name at Nazareth, with the widow of Sidon and Naaman as sheep who heard the prophet.",
+   "thread": "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17",
+   "flag": "Old note's individual-mercy contrast reading dropped; written as the seed revealed in the lands of the scattering. Both Luke 4 Nazareth threads (title and summary) still carry the individual-mercy reading and need rewriting, so I joined the Matthew 15 thread instead."
+  },
+  {
+   "id": 6989,
+   "prose": "Matthew says whom he was sent to: *the lost sheep of the house of Yashar'el (Israel)*. Luke shows what that errand looks like on the road. The town would have kept him, and he says he must preach in *other cities also*, *for therefore am I sent*. The sending moves him from city to city after those sheep.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the boundary of his errand, the lost sheep of the house of Yashar'el (Israel), which is what Luke's therefore am I sent points to.",
+   "thread": "luke-4-i-must-preach-the-kingdom-for-therefore-am-i-sent-isaiah-61-and-52",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on claude-sonnet-5-5."
+}

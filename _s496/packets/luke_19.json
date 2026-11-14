@@ -1,0 +1,390 @@
+{
+ "book": "luke",
+ "chapter": 19,
+ "chapter_text_kjv": {
+  "1": "And Yahusha (Jesus) entered and passed through Jericho.",
+  "2": "And, behold, there was a man named Zacchæus, which was the chief among the publicans, and he was rich.",
+  "3": "And he sought to see Yahusha (Jesus) who he was; and could not for the press, because he was little of stature.",
+  "4": "And he ran before, and climbed up into a sycomore tree to see him: for he was to pass that way.",
+  "5": "And when Yahusha (Jesus) came to the place, he looked up, and saw him, and said unto him, Zacchæus, make haste, and come down; for to day I must abide at thy house.",
+  "6": "And he made haste, and came down, and received him joyfully.",
+  "7": "And when they saw it, they all murmured, saying, That he was gone to be guest with a man that is a sinner.",
+  "8": "And Zacchæus stood, and said unto Yahusha (Lord); Behold, Adonai (Lord), the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore him fourfold.",
+  "9": "And Yahusha (Jesus) said unto him, This day is salvation come to this house, forsomuch as he also is a son of Abraham.",
+  "10": "For the Son of Adam is come to seek and to save that which was lost.",
+  "11": "And as they heard these things, he added and spake a parable, because he was nigh to Jerusalem, and because they thought that the kingdom of Elohim (God) should immediately appear.",
+  "12": "He said therefore, A certain nobleman went into a far country to receive for himself a kingdom, and to return.",
+  "13": "And he called his ten servants, and delivered them ten pounds, and said unto them, Occupy till I come.",
+  "14": "But his citizens hated him, and sent a message after him, saying, We will not have this man to reign over us.",
+  "15": "And it came to pass, that when he was returned, having received the kingdom, then he commanded these servants to be called unto him, to whom he had given the money, that he might know how much every man had gained by trading.",
+  "16": "Then came the first, saying, Lord, thy pound hath gained ten pounds.",
+  "17": "And he said unto him, Well, thou good servant: because thou hast been faithful in a very little, have thou authority over ten cities.",
+  "18": "And the second came, saying, Lord, thy pound hath gained five pounds.",
+  "19": "And he said likewise to him, Be thou also over five cities.",
+  "20": "And another came, saying, Lord, behold, here is thy pound, which I have kept laid up in a napkin:",
+  "21": "For I feared thee, because thou art an austere man: thou takest up that thou layedst not down, and reapest that thou didst not sow.",
+  "22": "And he saith unto him, Out of thine own mouth will I judge thee, thou wicked servant. Thou knewest that I was an austere man, taking up that I laid not down, and reaping that I did not sow:",
+  "23": "Wherefore then gavest not thou my money into the bank, that at my coming I might have required mine own with usury?",
+  "24": "And he said unto them that stood by, Take from him the pound, and give it to him that hath ten pounds.",
+  "25": "(And they said unto him, Lord, he hath ten pounds.)",
+  "26": "For I say unto you, That unto every one which hath shall be given; and from him that hath not, even that he hath shall be taken away from him.",
+  "27": "But those mine enemies, which would not that I should reign over them, bring hither, and slay them before me.",
+  "28": "And when he had thus spoken, he went before, ascending up to Jerusalem.",
+  "29": "And it came to pass, when he was come nigh to Bethphage and Bethany, at the mount called the mount of Olives, he sent two of his disciples,",
+  "30": "Saying, Go ye into the village over against you; in the which at your entering ye shall find a colt tied, whereon yet never man sat: loose him, and bring him hither.",
+  "31": "And if any man ask you, Why do ye loose him? thus shall ye say unto him, Because Yahusha (Lord) hath need of him.",
+  "32": "And they that were sent went their way, and found even as he had said unto them.",
+  "33": "And as they were loosing the colt, the owners thereof said unto them, Why loose ye the colt?",
+  "34": "And they said, Yahusha (Lord) hath need of him.",
+  "35": "And they brought him to Yahusha (Jesus): and they cast their garments upon the colt, and they set Yahusha (Jesus) thereon.",
+  "36": "And as he went, they spread their clothes in the way.",
+  "37": "And when he was come nigh, even now at the descent of the mount of Olives, the whole multitude of the disciples began to rejoice and praise Elohim (God) with a loud voice for all the mighty works that they had seen;",
+  "38": "Saying, Blessed be the King that cometh in the name of Yahuah (Lord): peace in heaven, and glory in the highest.",
+  "39": "And some of the Pharisees from among the multitude said unto him, Master, rebuke thy disciples.",
+  "40": "And he answered and said unto them, I tell you that, if these should hold their peace, the stones would immediately cry out.",
+  "41": "And when he was come near, he beheld the city, and wept over it,",
+  "42": "Saying, If thou hadst known, even thou, at least in this thy day, the things which belong unto thy peace! but now they are hid from thine eyes.",
+  "43": "For the days shall come upon thee, that thine enemies shall cast a trench about thee, and compass thee round, and keep thee in on every side,",
+  "44": "And shall lay thee even with the ground, and thy children within thee; and they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation.",
+  "45": "And he went into the temple, and began to cast out them that sold therein, and them that bought;",
+  "46": "Saying unto them, It is written, My house is the house of prayer: but ye have made it a den of thieves.",
+  "47": "And he taught daily in the temple. But the chief priests and the scribes and the chief of the people sought to destroy him,",
+  "48": "And could not find what they might do: for all the people were very attentive to hear him."
+ },
+ "cards": [
+  {
+   "id": 7087,
+   "src": "Luke 19:10",
+   "src_vn": 10,
+   "src_text_live": "For the Son of Adam is come to seek and to save that which was lost.",
+   "src_text_kjv": "For the Son of Adam is come to seek and to save that which was lost.",
+   "tgt": "Matthew 10:6",
+   "tgt_text_kjv": "But go rather to the lost sheep of the house of Yashar'el (Israel).",
+   "tgt_context_kjv": {
+    "4": "Simon the Canaanite, and Judas Iscariot, who also betrayed him.",
+    "5": "These twelve Yahusha (Jesus) sent forth, and commanded them, saying, Go not into the way of the Gentiles, and into any city of the Samaritans enter ye not:",
+    "6": "But go rather to the lost sheep of the house of Yashar'el (Israel).",
+    "7": "And as ye go, preach, saying, The kingdom of heaven is at hand.",
+    "8": "Heal the sick, cleanse the lepers, raise the dead, cast out devils: freely ye have received, freely give.",
+    "9": "Provide neither gold, nor silver, nor brass in your purses,"
+   },
+   "old_note": "The King's standing programmatic statement at Zakkay's (Zacchaeus's) house — *the Son of Adam is come to seek and to save that which was lost* — names the same mission scope Matt 10:6 and 15:24 carry: the lost sheep of the house of Yashar'el (Israel). The seeking-and-saving is the gathering-of-the-scattered, not categorical-nations inclusion.",
+   "author_thread_hint": "lost-sheep-mission-scope",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "confess-among-the-gentiles-and-gathering-in-tobit-13-14",
+    "matthew-10-the-lost-sheep-of-the-house-of-israel-ezekiel-34-jeremiah-50",
+    "the-gospel-to-the-lost-sheep-far-hence-in-sonnini-acts-29",
+    "the-ten-tribes-beyond-the-river-in-4-ezra-13"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "luke-19-zacchaeus-fourfold-restitution-the-son-of-abraham-restored-exodus-22-leviticus-6",
+   "title": "Zacchæus restores fourfold — repentance that bears Torah-fruit, the son of Abraham sought and saved (Exodus 22; Leviticus 6; Ezekiel 33)",
+   "anchor": "Luke 19:1-9",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "Zacchæus the chief publican climbs the sycomore, and when the Lord calls him down *to day I must abide at thy house* (Luke 19:5), the rich man's repentance pours out as restitution: *Behold, Yahuah (Lord), the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore him fourfold* (Luke 19:8). He invents nothing. He reaches for the Torah's own measure — *he shall restore five oxen for an ox, and four sheep for a sheep* (Exodus 22:1) — fourfold for the stolen sheep. The trespass offering law is the same shape: *he shall even restore it in the principal, and shall add the fifth part more thereto, and give it unto him to whom it appertaineth* (Leviticus 6:5; vv.4-5), and Numbers binds the turning of the heart to the work of the hand: *Then they shall confess their sin which they have done: and he shall recompense his trespass with the principal thereof, and add unto it the fifth part thereof* (Numbers 5:7; vv.6-7). True repentance is not a feeling — it is Torah-fruit. Ezekiel painted the very portrait: *If the wicked restore the pledge, give again that he had robbed, walk in the statutes of life, without committing iniquity; he shall surely live, he shall not die* (Ezekiel 33:15; vv.14-16). And so the verdict: *This day is salvation come to this house, forsomuch as he also is a son of Abraham* (Luke 19:9). Zacchæus is no stranger to the covenant — he is a lost child of it brought home. *Know ye therefore that they which are of faith, the same are the children of Abraham* (Galatians 3:7); *Ye are the children of the prophets, and of the covenant which Elohim (God) made with our fathers, saying unto Abraham, And in thy seed shall all the kindreds of the earth be blessed* (Acts 3:25). The Son of Adam came *to seek and to save that which was lost* (Luke 19:10) — the lost of Israel gathered, the people never cast off (Romans 11:1-2). Grace and the Torah are not at war here; salvation arrives, and it walks the statute out the door.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:8",
+     "tgt": "canon/exodus 22:1",
+     "member_note": "Exodus 22:1 — *he shall restore five oxen for an ox, and four sheep for a sheep* — the Torah's fourfold measure Zacchæus reaches for."
+    },
+    {
+     "src": "19:8",
+     "tgt": "canon/leviticus 6:5",
+     "member_note": "Leviticus 6:5 — *restore it in the principal, and shall add the fifth part more thereto* — the trespass-offering shape of restitution."
+    },
+    {
+     "src": "19:8",
+     "tgt": "canon/numbers 5:7",
+     "member_note": "Numbers 5:7 — *they shall confess their sin... and he shall recompense his trespass with the principal* — confession bound to restitution."
+    },
+    {
+     "src": "19:8",
+     "tgt": "canon/ezekiel 33:15",
+     "member_note": "Ezekiel 33:15 — *If the wicked restore the pledge... he shall surely live* — the prophet's portrait of repentance unto life."
+    },
+    {
+     "src": "19:9",
+     "tgt": "canon/galatians 3:7",
+     "member_note": "Galatians 3:7 — *they which are of faith, the same are the children of Abraham* — the son of Abraham named in faith."
+    },
+    {
+     "src": "19:9",
+     "tgt": "canon/acts 3:25",
+     "member_note": "Acts 3:25 — *Ye are the children... of the covenant which Elohim made with our fathers* — the covenant child restored, Israel not cast off."
+    }
+   ]
+  },
+  {
+   "slug": "luke-19-seek-and-save-the-lost-and-the-gathering-of-the-tribes-of-jacob-in-sirach-and-1-enoch",
+   "title": "The Son of Adam is come to seek and save the lost — the gathering of the tribes of Jacob in Sirach and 1 Enoch",
+   "anchor": "Luke 19:10",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "At the house of Zakkay (Zacchaeus) the King says what he came for: *For the Son of Adam is come to seek and to save that which was lost.* (Luke 19:10). The lost he means are a people, the house of Yashar'el (Israel) scattered and gone from memory, and the library had been praying for their return long before he said it. Sirach asks for it by name: *gather all the tribes of Jacob together, and inherit you them, as from the beginning* (Sirach (Ecclesiasticus) 36:11), all the tribes and not Yahudah (Judah) alone, and names the people he is asking for: *have mercy upon the people that is called by your name, and upon Yashar'el (Israel), whom you have named your firstborn* (Sirach 36:12). Enoch saw the same gathering in his vision of the sheep. When the great horn was raised among the flock, *And it looked at them [and their eyes opened], and it cried to the sheep, and the rams saw it and all ran to it.* (1 Enoch 90:10). And at the end of the vision the whole scattered flock comes home: *And all that had been destroyed and dispersed, and all the beasts of the field, and all the birds of the heaven, assembled in that house, and Yahuah (Lord) of the sheep rejoiced with great joy because they were all good and had returned to His house.* (1 Enoch 90:33). Seeking and saving the lost is shepherd's work, and the sheep he is seeking are the ones that were devoured and scattered through the long periods of the shepherds. Sirach prayed it, Enoch saw it, and at Zakkay's table the Son of Adam says he has come to do it.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:10",
+     "tgt": "apocrypha/ecclesiasticus 36:11",
+     "member_note": "Ecclesiasticus 36:11 — *inherit you them, as from the beginning.* To seek and save the lost (Luke 19:10) is to gather the tribes Sirach prayed for."
+    },
+    {
+     "src": "19:10",
+     "tgt": "apocrypha/ecclesiasticus 36:12",
+     "member_note": "Ecclesiasticus 36:12 — *whom you have named your firstborn.* The lost whom the Son of Adam seeks (Luke 19:10) is the firstborn scattered."
+    },
+    {
+     "src": "19:10",
+     "tgt": "enoch/1-enoch 90:10",
+     "member_note": "*And it looked at them [and their eyes opened], and it cried to the sheep, and the rams saw it and all ran to it.* (1 Enoch 90:10). *For the Son of Adam is come to seek and to save that which was lost* (Luke 19:10). Enoch saw the seeking as a horn crying to the sheep, their eyes opening, and all of them running to it. The lost are the house of Yashar'el (Israel) scattered among the nations; the seeking is the call that brings the sheep running home — not a new flock gathered from the nations."
+    }
+   ]
+  },
+  {
+   "slug": "luke-19-the-pounds-the-nobleman-receives-a-kingdom-and-returns-daniel-7-ezekiel-34",
+   "title": "The pounds — a nobleman receives a kingdom FROM the Father and returns to reckon (Daniel 7; Ezekiel 34)",
+   "anchor": "Luke 19:11-27",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "Because they thought *the kingdom of Elohim (God) should immediately appear* (Luke 19:11), Yahusha tells of *a certain nobleman* who *went into a far country to receive for himself a kingdom, and to return* (Luke 19:12). The shape is Daniel's throne-room: *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13) — the comparative *like* (kaph) kept, the Son brought NEAR to the Father — *and there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion* (Daniel 7:14). The kingdom is GIVEN. The Formed Son does not seize it as a co-equal nor earn it as a creature; he receives it FROM the Father and returns. And when he returns *he commanded these servants to be called unto him... that he might know how much every man had gained* (Luke 19:15) — the Shepherd's reckoning with the stewards of his flock: *Behold, I am against the shepherds; and I will require my flock at their hand* (Ezekiel 34:10). The faithful trade and increase, for *he that gathereth by labour shall increase* (Proverbs 13:11), while the pound *kept laid up in a napkin* gains nothing. To the diligent comes the word the gospels twin in Matthew: *Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things* (Matthew 25:21) — here, *have thou authority over ten cities* (Luke 19:17). And the citizens who said *We will not have this man to reign over us* (Luke 19:14) are answered at the last, when *the kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). Occupy till he comes — the King is given the everlasting dominion, and he WILL return to reign.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:12",
+     "tgt": "canon/daniel 7:13",
+     "member_note": "Daniel 7:13 — *one like the Son of Adam came with the clouds... brought him near before* the Ancient of days — the kaph comparative kept."
+    },
+    {
+     "src": "19:12",
+     "tgt": "canon/daniel 7:14",
+     "member_note": "Daniel 7:14 — *there was given him dominion, and glory, and a kingdom* — the kingdom GIVEN to the Son by the Father."
+    },
+    {
+     "src": "19:15",
+     "tgt": "canon/ezekiel 34:10",
+     "member_note": "Ezekiel 34:10 — *I will require my flock at their hand* — the Shepherd's reckoning with his stewards when he returns."
+    },
+    {
+     "src": "19:16",
+     "tgt": "canon/proverbs 13:11",
+     "member_note": "Proverbs 13:11 — *he that gathereth by labour shall increase* — the wisdom of faithful, diligent stewardship."
+    },
+    {
+     "src": "19:17",
+     "tgt": "canon/matthew 25:21",
+     "member_note": "Matthew 25:21 — *Well done, thou good and faithful servant... I will make thee ruler over many things* — the gospels' twin parable."
+    },
+    {
+     "src": "19:27",
+     "tgt": "canon/revelation 11:15",
+     "member_note": "Revelation 11:15 — *The kingdoms of this world are become the kingdoms of our Lord... and he shall reign for ever* — the everlasting dominion consummated."
+    }
+   ]
+  },
+  {
+   "slug": "luke-19-the-king-comes-lowly-on-the-colt-blessed-is-he-the-stones-would-cry-out-zechariah-9-psalm-118",
+   "title": "The King comes lowly on the colt — Blessed is he that cometh, and the stones would cry out (Zechariah 9; Psalm 118; Habakkuk 2; Genesis 49)",
+   "anchor": "Luke 19:28-40",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "They set Yahusha on *a colt tied, whereon yet never man sat* (Luke 19:30), cast their garments on it, and spread their clothes in the way — and it is no accident, for the prophet had drawn the scene centuries before: *Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass* (Zechariah 9:9). The King of Zion comes not on a war-horse but lowly. The multitude sings the pilgrim psalm: *Blessed be the King that cometh in the name of Yahuah (Lord): peace in heaven, and glory in the highest* (Luke 19:38), the very words of *Blessed be he that cometh in the name of Yahuah (LORD)* (Psalm 118:26) — sung over the Stone the builders refused, become the head of the corner (Psalm 118:22). When the Pharisees demand he rebuke them, he answers, *if these should hold their peace, the stones would immediately cry out* (Luke 19:40), and Habakkuk had already heard them: *For the stone shall cry out of the wall, and the beam out of the timber shall answer it* (Habakkuk 2:11) — creation itself owns the King when men fall silent. And the colt was bound to him from the patriarch's blessing: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be. Binding his foal unto the vine, and his ass's colt unto the choice vine* (Genesis 49:10-11) — the sceptre of Judah, riding his foal into his own city. The gospels sing one song at the gate: *Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord); Hosanna in the highest* (Matthew 21:9). The lowly King, the Son of David, the Shiloh of Judah, enters Yerushalayim exactly as it was written.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:35",
+     "tgt": "canon/zechariah 9:9",
+     "member_note": "Zechariah 9:9 — *thy King cometh... lowly, and riding upon an ass, and upon a colt the foal of an ass* — the foretold entry of the King of Zion."
+    },
+    {
+     "src": "19:38",
+     "tgt": "canon/psalms 118:26",
+     "member_note": "Psalm 118:26 — *Blessed be he that cometh in the name of Yahuah* — the pilgrim cry sung over the head of the corner."
+    },
+    {
+     "src": "19:40",
+     "tgt": "canon/habakkuk 2:11",
+     "member_note": "Habakkuk 2:11 — *the stone shall cry out of the wall* — creation testifies the King when men fall silent."
+    },
+    {
+     "src": "19:35",
+     "tgt": "canon/genesis 49:10",
+     "member_note": "Genesis 49:10-11 — *The sceptre shall not depart from Yahudah... binding his foal unto the vine* — the colt bound to the coming Shiloh."
+    },
+    {
+     "src": "19:38",
+     "tgt": "canon/matthew 21:9",
+     "member_note": "Matthew 21:9 — *Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah* — the gospels' one song at the gate."
+    }
+   ]
+  },
+  {
+   "slug": "lament-over-yerushalayim-the-days-of-visitation-and-the-70-ad-prefiguring",
+   "title": "Lament over Yerushalayim — the days of visitation and the 70 AD prefiguring",
+   "anchor": "Luke 19:41-44",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "Luke uniquely carries the King's lament over Yerushalayim (Jerusalem) at the descent of the Mount of Olives — *And when he was come near, he beheld the city, and wept over it, Saying, If thou hadst known, even thou, at least in this thy day, the things which belong unto thy peace! but now they are hid from thine eyes.* The lament names the days-of-visitation the city did not recognize: *thine enemies shall cast a trench about thee, and compass thee round, and keep thee in on every side, And shall lay thee even with the ground, and thy children within thee; and they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (vv.43-44). FRAMEWORK-MAJOR. The 70 AD Roman destruction is the historical-fulfillment in the first hinge; the still-future *day of Yahuah* gathering-against-Yerushalayim is the substance Zekharyah (Zechariah) 14:2 carries — the city given over again as a stage in the gathering-and-cleansing of the seed. The partial-restoration of Yahudah (Judah) after the Babylonian captivity reached its terminus when the city did not know its day, and the desolation that followed prefigures the still-future dreadful-day judgment.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:41",
+     "tgt": "canon/matthew 23:37",
+     "member_note": "The Lukan lament at the entry and the Matthean lament at the close of the woes carry the same *would have gathered thy children together, even as a hen gathereth her chickens, and ye would not* substance — the visitation-rejected diagnostic."
+    },
+    {
+     "src": "19:43",
+     "tgt": "canon/jeremiah 6:6",
+     "member_note": "The Yirmeyahu (Jeremiah) 6:6 *Cast ye up a bank against Yerushalayim (Jerusalem): this is the city to be visited; she is wholly oppression in the midst of her* is the Tanakh substance Luke's *enemies shall cast a trench about thee* carries forward. Yirmeyahu names the same desolation-pattern at the Babylonian-captivity hinge that the King names at the Roman-siege hinge."
+    },
+    {
+     "src": "19:43",
+     "tgt": "canon/daniel 9:26",
+     "member_note": "The Daniyel (Daniel) 9:26 *the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof shall be with a flood* names the same destruction the King prophesies at Luke 19:43-44 — the 70 AD Roman siege as the first hinge fulfillment of the prophetic clock."
+    },
+    {
+     "src": "19:44",
+     "tgt": "canon/micah 3:12",
+     "member_note": "Mikhah (Micah) 3:12's *Therefore shall Tsion (Zion) for your sake be plowed as a field, and Yerushalayim (Jerusalem) shall become heaps, and the mountain of the house as the high places of the forest* is the Tanakh-prophetic desolation-judgment substance the King's lament carries forward. Mikhah names the pattern; Luke records the King naming the fulfillment in tears."
+    },
+    {
+     "src": "19:44",
+     "tgt": "canon/zechariah 14:2",
+     "member_note": "The Zekharyah (Zechariah) 14:2 *For I will gather all nations against Yerushalayim (Jerusalem) to battle; and the city shall be taken, and the houses rifled, and the women ravished* is the still-future dreadful-day judgment the 70 AD desolation prefigures — the city again given over to the nations as a stage in the gathering-and-cleansing of the seed."
+    }
+   ]
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": "Hosea 1:9-10",
+   "anchored_in_this_book": false,
+   "member_count": 67,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Hosea, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:9",
+     "tgt": "canon/hosea 1:9",
+     "member_note": "Zakkay (Zacchaeus) is *a son of Avraham (Abraham)* whose covenant identity was buried under his publican standing. The King's recognition at v.9 — *This day is salvation come to this house, forsomuch as he also is a son of Avraham (Abraham)* — is the Lo-Ammi-reversal pattern."
+    }
+   ]
+  },
+  {
+   "slug": "other-sheep-and-the-lost-house-of-yashar-el",
+   "title": "Other sheep, one fold — the lost house gathered in",
+   "anchor": "John 10:16",
+   "anchored_in_this_book": false,
+   "member_count": 13,
+   "summary_md": "The good shepherd discourse names *other sheep I have, which are not of this fold* — and the inherited reading flattens this into a categorical extension of the covenant to the nations. The Tanakh's own shepherd-prophecies will not allow the flattening. Yahusha (Jesus) was sent to the lost sheep of the house of Yashar'el (Israel), and the *other sheep* who must be brought are the scattered seed of the northern house that the prophets named as a specific people Yahuah (the LORD) himself will go out and seek.\n\n*And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* (John 10:16)\n\n*For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out. As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day.* (Ezekiel 34:11-12)\n\n*Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land: and I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all.* (Ezekiel 37:21-22)\n\nThe two-stick prophecy of Yechezkel (Ezekiel) 37 is what *one fold, and one shepherd* names. The fold Yahusha (Jesus) is speaking from contains the recognized house of Yahudah (Judah). The other sheep are the scattered seed of the house of Yashar'el (Israel) — the northern tribes carried into the Assyrian dispersion, divorced through the prophets, living among the nations as the *Lo-Ammi* of Hoshea (Hosea) 1. The shepherd's voice will reach them where they are scattered, and they will hear, because they were sheep from the foundation of the world. Hearing reveals what was always true; it does not create what was not.\n\nThe Yahudim (Jews) who heard the discourse understood the geography exactly. The fold they were in was the southern house. The other sheep were a specific other body — not the nations of Bereshit (Genesis) 1, but the northern house whose scattering and gathering the prophets had named in repeated specificity.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:10",
+     "tgt": "canon/john 10:16",
+     "member_note": "The *that which was lost* of Luke 19:10 and the *other sheep* of Yochanan (John) 10:16 carry the same scattered-seed substance. The King is at the publican's table identifying him as a son of Avraham (Abraham) because the seeking-mission is to the seed already covenant, scattered into the toll-collecting margins of the Roman administration."
+    }
+   ]
+  },
+  {
+   "slug": "gather-together-in-one-the-children-scattered-abroad",
+   "title": "*Gather together in one the children that were scattered abroad*",
+   "anchor": "John 11:51-52",
+   "anchored_in_this_book": false,
+   "member_count": 17,
+   "summary_md": "The high priest Qayafa (Caiaphas) speaks an unwitting prophecy after the raising of Lazar (Lazarus). *It is expedient for us, that one man should die for the people, and that the whole nation perish not.* John adds an apostolic gloss naming the deeper meaning of the words Qayafa (Caiaphas) did not understand: Yahusha (Jesus) would die not for that nation only, but to gather together in one the children of Elohim (God) that were scattered abroad. The gathering-of-the-scattered-children is the twelve-tribe restoration the prophets had named in repeated specificity — the two-stick prophecy of Yechezkel (Ezekiel) 37, the assembly of the outcasts of Yeshayahu (Isaiah) 11, the *children of Yashar'el (Israel) gathered together* of Hoshea (Hosea) 1. The death of the Formed one is named as the means by which the gathering is accomplished.\n\n*And this spake he not of himself: but being high priest that year, he prophesied that Yahusha (Jesus) should die for that nation; And not for that nation only, but that also he should gather together in one the children of Elohim (God) that were scattered abroad.* (John 11:51-52)\n\n*Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land: and I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all.* (Ezekiel 37:21-22)\n\n*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* (Isaiah 11:12)\n\nThe *children of Elohim (God) that were scattered abroad* is not a categorical extension of the covenant to the nations. The phrase is the diaspora-of-the-scattered-seed, the *Lo-Ammi* of Hoshea (Hosea) 1 that the prophet immediately restores with *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* The children of Elohim (God) who are scattered abroad are the seed who lost their identity in the dispersion; the gathering is their homecoming through the death of the Formed one as the agent of the Father's gathering hand.\n\nThe high priest, standing in the office that was supposed to recognize this, speaks the prophecy without knowing what he is saying. The apostle who writes the gospel makes the framework explicit. The death-for-the-nation has its inner architecture: it is the means by which the scattered children are gathered into one. The two-stick prophecy is named in the high priest's mouth.\n\n*And it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10)\n\nThe gathering is the destination of the journey the prophets named. The practice in the present age is broad proclamation, because the citizens of the kingdom are scattered through every nation and we cannot pick them out by sight. *My sheep hear my voice* (John 10:27) — the hearing is the revealing of what was already true. Those who hear and turn are revealed to be sheep, because they were sheep before the foundation of the world. Those who reject, we shake the dust off our feet (Matthew 10:14) and we do not cast our pearls before swine (Matthew 7:6). The pursuit ends where the rejection lands; the shepherd does not chase what was never his. Belief is the response of those given; the response issues in covenant walking; grace returns the gathered to him and to his ways.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:46",
+     "tgt": "canon/isaiah 56:7",
+     "member_note": "*My house shall be called the house of prayer.* Yeshayahu (Isaiah) 56:7's *for mine house shall be called an house of prayer for all people* names the gathering-substance: the house-of-prayer is the gathering-point where the scattered come home. The Lukan citation in the temple-cleansing names the temple's purpose as gathering-of-the-children-scattered-abroad — not categorical-Gentile-inclusion, but the scattered-seed-of-Yashar'el gathered to the Father's house."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-10-the-lost-sheep-of-the-house-of-israel-ezekiel-34-jeremiah-50",
+   "title": "But go rather to the lost sheep of the house of Yashar'el — the scattered flock sought out (Ezekiel 34; Jeremiah 50; Isaiah 53)",
+   "anchor": "Matthew 10:5-6",
+   "anchored_in_this_book": false,
+   "member_count": 8,
+   "summary_md": "When Yahusha sends the twelve, He does not send them to strangers but to *the lost sheep of the house of Yashar'el* (Matthew 10:6) — and that phrase is lifted straight out of the prophets. *My people hath been lost sheep: their shepherds have caused them to go astray... they have forgotten their restingplace* (Jeremiah 50:6). The northern house was scattered first by Assyria — *Yashar'el is a scattered sheep; the lions have driven him away: first the king of Assyria hath devoured him* (Jeremiah 50:17) — dispersed among the nations and seemingly lost. But the Shepherd had already sworn to go after them Himself: *I, even I, will both search my sheep, and seek them out... I will seek that which was lost, and bring again that which was driven away* (Ezekiel 34:11,16). The mission of the twelve IS that search. And the gathering is never the casting-off of a people; it ends with BOTH houses brought home — *the children of Yashar'el shall come, they and the children of Yahudah together... they shall ask the way to Zion* (Jeremiah 50:4-5). The Servant who gathers them is the One on whom *Yahuah hath laid on him the iniquity of us all* (Isaiah 53:6). Hold the guard: *Elohim hath not cast away his people* (Romans 11:1-2). The lost sheep are sought, not rejected.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "davidic-messianic-king-meek-on-the-foal-in-testaments-xii-and-2-maccabees",
+   "title": "The Davidic-Messianic-King meek-on-the-foal at the entry — Testaments of the XII Patriarchs (Yahudah ch 15), 2 Maccabees 10:7's branches-and-palms-and-psalms, and Sirach 36:14's glory-filling-Tsion",
+   "anchor": "Matthew 21:1-11",
+   "anchored_in_this_book": false,
+   "member_count": 16,
+   "summary_md": "Matt 21:1-11's triumphal-entry-substance — the King-of-Yashar'el (Israel) coming-to-his-city on the foal-of-an-ass per Zecharyah (Zechariah) 9:9; the multitudes crying *Hoshia-na (Hosanna) to the Son of David: Blessed is he that cometh in the name of Yahuah (the LORD)* from Tehillim (Psalm) 118:25-26's pilgrim-Hallel; the branches-and-garments strewn in the way; the city's *Who is this?* answered by the multitude's *the prophet of Natsareth (Nazareth) of Galil (Galilee)* — read against the wisdom-stream's direct articulation of the Davidic-Messianic-King substance the wisdom-stream-corpus had carried for centuries before the gospel-pivot. Four moves: Test. Yahudah (Judah) ch 15 v.5 (= testaments-xii ch 38 in the Charles vol 2 flat-chapter scheme) names THE direct verbal-anchor for the sceptre-of-the-kingdom-shining-forth + the stem-arising-from-the-root substance (*then shall the sceptre of my kingdom shine forth ; and from your root shall arise a stem*) — the wisdom-stream's articulation of the Tanakh-Netser-Branch-substance per Yeshayahu (Isaiah) 11:1 the King-of-the-tribe-of-Yahudah (Judah) walks-out at the entry; Test. Yahudah ch 15 v.6 names the rod-of-righteousness-substance — *to judge and to save all that call upon Yahuah (Lord)* — the substance the marginalized-substance had-been-crying *Son of David* at and the multitudes now-walk-publicly at the entry-substance; 2 Maccabees 10:7 names THE direct verbal-anchor for the branches-and-palms-and-psalms substance (*they bare branches, and fair boughs, and palms also, and sang psalms*) the Hanukkah-temple-rededication-ceremony walked at the wisdom-stream-pivot — the multitudes at the entry walk the same substance at the historical-pivot the chapter immediately-walks-into the temple-cleansing-substance the Hanukkah-substance had-walked-the-architectural-parallel-of; Sirach (Ecclesiasticus) 36:14 names the wisdom-stream's prayer-for-the-glory-to-fill-Tsion (Zion) substance (*fill Zion with your unspeakable oracles, and your people with your glory*) the King's-arriving-at-the-city walks-out (the Greek *eseisthē* the Matthean account uses for *all the city was moved* at v.10 carries the same root the Matt 27:51 earthquake-substance and the Matt 28:2 resurrection-earthquake-substance carry — the wisdom-stream had-named the Father's-glory-arriving-at-Tsion as the substance-that-fills-Tsion; the gospel walks the same substance at the King-arriving-into-the-shaken-city). The framework reads the substance per Red Line #7 + Red Line #11 — the *all that call upon Yahuah (Lord)* in Test. Yahudah carries the wisdom-stream-convention of *Gentiles* as the scattered-seed-of-Yashar'el (Israel) living-as-Gentiles-among-the-nations per the apostolic-Paul-letters-convention, NOT the categorical-Three-Categories-#3-nations replacing-Yashar'el; the meekness-substance is the Greek *praus* / Hebrew *ani* substance per Matthew 5:5 and Matthew 11:29 the King-of-Yashar'el walks-against the natural-kingdoms'-substance-of-domination per Matthew 20:25.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:28",
+     "tgt": "canon/matthew 21:1",
+     "member_note": "Luke carries the same Zekharyah (Zechariah) 9:9 meek-on-the-colt entry as Matt 21, with the Lukan-specific *Blessed be the King that cometh in the name of Yahuah (the Lord): peace in heaven, and glory in the highest* (v.38) echoing the angelic-host birth-announcement of Luke 2:14. YOSHI #4: v.38 renders *Yahuah (the Lord)* per S182 NT-Lord-in-OT-quotation rule (Tehillim/Psalm 118:26 Hebrew is YHWH)."
+    }
+   ]
+  },
+  {
+   "slug": "temple-cleansing-and-the-maccabean-rededication-architecture",
+   "title": "Temple-cleansing and the Maccabean-rededication architecture — 1 Maccabees 4, 2 Maccabees 10, and Sirach 35:12's do-not-corrupt-with-gifts",
+   "anchor": "Matthew 21:12-17",
+   "anchored_in_this_book": false,
+   "member_count": 15,
+   "summary_md": "Matt 21:12-17's temple-cleansing-substance — the King-of-Yashar'el (Israel) overturning-the-tables-of-the-moneychangers in the Court-of-the-goyim (Gentiles); the King citing Yeshayahu (Isaiah) 56:7 *my house shall be called the house of prayer* (whose context names the outcasts-of-Yashar'el being-gathered-to-the-holy-mountain — the gathering of the scattered-seed-coming-home per Red Line #7) + Yirmeyahu (Jeremiah) 7:11 *den of thieves* (whose context is one of the Tanakh's most-substantial Temple-judgment-passages, walking the same substance against the Second-Temple leadership the prophet had walked at the First-Temple); the healing of the blind-and-the-lame in the Temple reversing the rabbinic-substance reading of 2 Samuel 5:8 as a categorical-exclusion; the children-in-the-Temple crying *Hoshia-na (Hosanna) to the Son of David* with the King citing Tehillim (Psalm) 8:2 *out of the mouth of babes and sucklings* — read against the wisdom-stream's direct articulation of the Maccabean-Hanukkah-temple-cleansing architecture and the wisdom-stream's direct articulation against the substance of corrupt-gifts. Four moves: 1 Maccabees 4:43 names the wisdom-stream's direct verbal-anchor for the cleansing-of-the-sanctuary substance (*who cleansed the sanctuary, and bare out the defiled stones into an unclean place*) — the architectural-substance the King-walks-out at the Second-Temple-pivot, with the architectural-parallel running at-two-different-pivots between the Maccabean-cleansing-against-the-Antiochene-outer-defilement and the King's-cleansing-against-the-Pharisaic-Sadducean-inner-corruption; 2 Maccabees 10:3 names the wisdom-stream's narration of the Hanukkah-cleansing-followed-by-the-restoration-of-the-sacrifice + the incense + the lights + the shewbread (*having cleansed the temple they made another altar*) — the substance the Father's-house was-meant-for; Sirach (Ecclesiasticus) 35:12 names THE direct verbal-anchor against the substance of the monetization-substance the King-overturns-the-tables-of (*do not think to corrupt with gifts; for such he will not receive: and trust not to unrighteous sacrifices; for Yahuah (God) is judge, and with him is no respect of persons*) — the wisdom-stream's direct articulation the King walks-out at the temple-cleansing-substance; 1 Maccabees 4:46 names THE direct verbal-anchor for the prophet-yet-to-come substance (*until there should come a prophet to shew what should be done with them*) — the wisdom-stream-substance had-laid the substance-of-anticipation for the prophet-to-come whom the multitude at v.11 names *the prophet of Natsareth (Nazareth) of Galil (Galilee)* and the King-walks-out at the temple-cleansing-substance carrying-the-substance-of-the-prophet-arrived. The framework reads the substance per the system-not-people-posture — the substance the King-walks-against is the Pharisaic-Sadducean-leadership-substance the wisdom-stream-Sirach-50-substance had-named the Simon-the-high-priest-substance the architectural-parallel-of; the substance is-NOT the people-of-Yashar'el (Israel) categorically.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:45",
+     "tgt": "canon/matthew 21:12",
+     "member_note": "Luke compresses the temple-cleansing to two verses, but the *house of prayer* citation (Yeshayahu/Isaiah 56:7) and the *den of thieves* citation (Yirmeyahu/Jeremiah 7:11) carry the same Maccabean-rededication architecture the existing thread names. The Yeshayahu 56 citation is load-bearing — the *house of prayer for all people* register is gathering-of-the-scattered language, not categorical-Gentile-inclusion."
+    }
+   ]
+  },
+  {
+   "slug": "confess-among-the-gentiles-and-gathering-in-tobit-13-14",
+   "title": "Confess Yahuah (God) before the Gentiles, and the multi-stage gathering — Tobit 13-14",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "Matt 10:6's mission-scope to the lost sheep of the house of Yashar'el (Israel) + Matt 10:23's standing-mission-until-the-Son-of-Adam-be-come + Matt 10:32's confess-me-before-men — read against Tobit 13-14's wisdom-stream architecture. Tobit 13:3 names the explicit instruction: *confess him before the Gentiles, you children of Yashar'el (Israel)* — the scattered seed in the dispersion confessing Yahuah (God) before the men of the territories where they are scattered. Tobit 13:5 names the gathering-from-all-nations-among-whom-he-has-scattered-us future-tense covenant-action. Tobit 14:5 names the multi-stage gathering-architecture: a FIRST return-to-the-land (the post-Babylon partial-return under Zerubavel/Zerubbabel) AND a LATTER return *from all places of their captivity* at the fulness-of-the-age. The framework reads Matt 10's gathering-commission as the present-age STANDING-MISSION between Tobit's two stages, with the latter-stage still future at the Son of Adam's coming. The mercy-substance (Hosea 6:6, Matt 9:13) is the same mercy-substance gathering the scattered at Matt 10:6.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "parable-of-the-talents-stewardship-and-the-unprofitable-servant-cast-into-outer-darkness",
+   "title": "Parable Of The Talents Stewardship And The Unprofitable Servant Cast Into Outer Darkness",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 20,
+   "summary_md": "**`parable-of-the-talents-stewardship-and-the-unprofitable-servant-cast-into-outer-darkness`** — anchor at Matt 25:14-30. The substantial-substance-of-the-substance-of-the-stewardship-substance + the unprofitable-servant-substance walking the `grace-and-the-opportunity-that-can-be-lost` thread (FREE-TIER-CANDIDATE) at the substantial-substance-of-the-most-substantial-substance — the unprofitable-servant has-been-given-the-talent + has-been-named-as-a-servant + has-been-cast-into-outer-darkness for-the-failure-of-stewardship-substance. 14 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "19:11",
+     "tgt": "canon/matthew 25:14",
+     "member_note": "Luke's pounds-parable is a distinct parable from Matt 25's talents, but the trade-the-deposit-and-give-account architecture is the same: the King going to receive a kingdom and returning to reckon what each servant did with what was entrusted."
+    }
+   ]
+  },
+  {
+   "slug": "the-gospel-to-the-lost-sheep-far-hence-in-sonnini-acts-29",
+   "title": "The gospel preached far hence to the lost sheep — Sonnini's Acts of Paul (Acts 29)",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "Matt 10:5-6's lost-sheep mission-scope + Matt 10:23's standing-mission-tense — read against Sonnini's restored *Acts of Paul* (Acts 29) naming the apostolic-extension of the same scope into the territories of the Assyrian-dispersion. Sonnini Acts 29:2 names Paul's motivation for the Spain-and-Britain journey: the scattered children of Yashar'el (Israel) escaped by sea to the isles afar off at the time of the Assyrian captivity (the prophetic-language of Isaiah 49:1, Jeremiah 31:10). Sonnini Acts 29:3 names the commissioning explicitly — *the Yahuah (Lord) commanded the gospel to be preached far hence to the Gentiles, and to the lost sheep of the House of Yashar'el (Israel)* — the identical phrase the King uses at Matt 10:6 and Matt 15:24, now operative in the far-hence territories. Sonnini Acts 29:13 names the apostolic-recognition of the Druid-disclosure of Yashar'el-itish (Israel-itish) descent in the British territories; Paul gives the kiss of peace because the gathering finds the scattered where they have been driven. The Matt 10 commission and the Sonnini Acts 29 commission are one commission across different territorial-reaches of the same dispersion.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "the-ten-tribes-beyond-the-river-in-4-ezra-13",
+   "title": "The ten tribes beyond the river — 2 Esdras (4 Ezra) 13 on the gathering at the latter time",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "Matt 10:5-6's mission-scope to the lost sheep of the house of Yashar'el (Israel) AND Matt 10:23's *till the Son of Adam be come* standing-mission-tense — read against 2 Esdras (4 Ezra) 13:40-47's apocalyptic-register vision of the ten tribes carried away by Salmanasar of Assyria, crossing the waters into Arsareth (the further country), keeping the Torah-statutes they had not kept in the land, and at the latter-time coming back through the parted-stream at the Most High's gathering-arm. Three explicit moves: the identification of the ten tribes as the body the dispersion carried (13:40); the further-country territory where covenant-identity was preserved (13:41-42); the latter-time gathering at the Highest's parting of the stream (13:47). The mission Yahusha (Jesus) commissions at Matt 10 to the lost sheep is the gathering 4 Ezra named as the wisdom-stream apocalyptic future-tense; the present-age STANDING mission of Matt 10:23 walks toward the wisdom-stream's named terminus.",
+   "members_in_this_chapter": []
+  }
+ ]
+}

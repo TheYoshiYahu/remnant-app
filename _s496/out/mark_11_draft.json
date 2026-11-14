@@ -1,0 +1,40 @@
+{
+ "model": "Claude Sonnet 5.5",
+ "book": "mark",
+ "chapter": 11,
+ "cards": [
+  {
+   "id": 5230,
+   "prose": "*When ye stand praying, forgive*, he says, and Leviticus has the same command in the commandment itself: *Thou shalt not avenge, nor bear any grudge*, and *thou shalt love thy neighbour as thyself*. Forgiving at the hour of prayer is that Torah kept, the grudge let go as the man asks to be forgiven.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Leviticus forbids vengeance and grudges against the children of thy people and commands love for the neighbour as thyself.",
+   "thread": "mark-11-the-barren-fig-tree-and-the-forgiveness-that-frees-prayer-jeremiah-8-hosea-9-sirach-28",
+   "flag": ""
+  },
+  {
+   "id": 5231,
+   "prose": "Matthew puts this right beneath the pattern of prayer: *if ye forgive men their trespasses*, the heavenly Father will forgive too. Mark sets it at the end of the word on prayer after the fig tree, as the thing to do *when ye stand praying*, with *if ye have ought against any* spoken to the man already on his feet before the Father.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew says if you forgive men their trespasses your heavenly Father will also forgive you.",
+   "thread": "matthew-6-forgive-men-their-trespasses-as-we-forgive-sirach-28-mark-11",
+   "flag": ""
+  },
+  {
+   "id": 5232,
+   "prose": "At Caesarea Philippi Yahusha (Jesus) asked *Whom do men say that I the Son of Adam am?* and got only what men guessed. In the temple *the chief priests, and the scribes, and the elders* ask by what authority he does these things, and when he asks about John's baptism they will not say whether it was from heaven.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew has Yahusha (Jesus) ask what men say of him, the same ground of who he is and by whose authority he acts.",
+   "thread": "mark-11-by-what-authority-the-sent-one-challenged-as-moses-was-exodus-2-numbers-16-malachi-3",
+   "flag": "The pair is loose: the link is the question of who he is and the guesses men make (John), not a stated parallel."
+  },
+  {
+   "id": 5233,
+   "prose": "Mark names three groups, *the chief priests, and the scribes, and the elders*, where Matthew names *the chief priests and the elders of the people*, and Mark has him *walking in the temple* where Matthew has him teaching. The question is the same, and so is his answer about John's baptism.",
+   "member_phrase": "the chief priests and the elders of the people came unto him as he was teaching",
+   "member_sentence": "Matthew has the chief priests and elders of the people come to him as he teaches in the temple with the same question.",
+   "thread": "matthew-21-by-what-authority",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

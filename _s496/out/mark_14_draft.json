@@ -1,0 +1,96 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "mark",
+ "chapter": 14,
+ "cards": [
+  {
+   "id": 5302,
+   "prose": "Oil poured on a head is how Samuel set David apart: he *anointed him in the midst of his brethren*, and the Spirit of Yahuah (the LORD) came on David from that day. The woman at Bethany pours the ointment *on his head*, and Yahusha (Jesus) says *she is come aforehand to anoint my body to the burying* (Mark 14:8). The anointing of a king and the anointing for the grave are one act.",
+   "member_phrase": "Samuel took the horn of oil, and anointed him in the midst of his brethren",
+   "member_sentence": "Samuel anointed David on the head among his brothers, and the Spirit of Yahuah (the LORD) came on him from that day forward.",
+   "thread": "matthew-26-bethany-the-anointing",
+   "flag": ""
+  },
+  {
+   "id": 5303,
+   "prose": "Both gospels set this in Bethany at the house of Simon the leper. Mark tells more of what the woman did: she *brake the box* of spikenard and poured it on his head, so the whole of it went on him. Matthew gives the same scene without the breaking of the box.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew puts the anointing in the same house of Simon the leper in Bethany, where Mark has the woman break the box.",
+   "thread": "matthew-26-bethany-the-anointing",
+   "flag": ""
+  },
+  {
+   "id": 5304,
+   "prose": "John dates the supper *six days before the passover* and places it in Bethany, where Lazarus was. He also names the woman: *Then took Mary a pound of ointment of spikenard, very costly, and anointed the feet of Yahusha (Jesus)* (John 12:3). Mark leaves her unnamed and has the ointment on his head; John gives her name and puts it on his feet.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "John dates the Bethany supper six days before the passover and, where Lazarus was, tells of Mary anointing the feet of Yahusha (Jesus).",
+   "thread": "john-12-mary-anoints-for-burying-the-poor-ye-have-always-deuteronomy-15",
+   "flag": ""
+  },
+  {
+   "id": 5308,
+   "prose": "The feast the disciples ask about begins in Egypt, with Yahuah (the LORD) speaking to Moses and Aaron, and it is still Moses' feast when they ask where to *prepare that thou mayest eat the passover*. Yahusha (Jesus) does not set it aside; he keeps it as it was given. The lamb the feast turns on, *a lamb for an house* (Exodus 12:3), is the lamb he is about to become.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Passover begins with Yahuah (the LORD) speaking to Moses and Aaron in Egypt, so the feast Yahusha (Jesus) prepares in Mark is Moses' feast.",
+   "thread": "last-supper-this-is-my-body-this-is-my-blood-of-the-new-testament",
+   "flag": "The lamb line (Yahusha is the lamb of the feast) is the old note's point restated from the brief; Mark 14:12 itself only shows him keeping the feast."
+  },
+  {
+   "id": 5313,
+   "prose": "Yahusha (Jesus) says he will not drink the fruit of the vine again until he drinks it new in the kingdom of Elohim (God). Revelation names a table that fits that day: *the marriage supper of the Lamb*, with a blessing on those *called* to it. The cup at the Passover table looks ahead to that supper.",
+   "member_phrase": "Blessed are they which are called unto the marriage supper of the Lamb",
+   "member_sentence": "Revelation says blessed are those called to the marriage supper of the Lamb, a supper that answers the cup he will drink new.",
+   "thread": "last-supper-this-is-my-body-this-is-my-blood-of-the-new-testament",
+   "flag": ""
+  },
+  {
+   "id": 5314,
+   "prose": "Isaiah has Yahuah (the LORD) preparing a feast *in this mountain*, with fat things full of marrow and *wines on the lees well refined*. When Yahusha (Jesus) says he will drink the fruit of the vine new, this is the table the prophet had already described, a feast of wine of the best kind.",
+   "member_phrase": "in this mountain shall Yahuah Tseva'ot (LORD of hosts) make unto all people a feast of fat things",
+   "member_sentence": "Isaiah says Yahuah (the LORD) will make a feast of fat things and refined wines in his mountain, the table the cup looks toward.",
+   "thread": "last-supper-this-is-my-body-this-is-my-blood-of-the-new-testament",
+   "flag": ""
+  },
+  {
+   "id": 5327,
+   "prose": "Daniel saw *one like the Son of Adam* come *with the clouds of heaven* to the Ancient of days, and the verse after says *there was given him dominion, and glory, and a kingdom* (Daniel 7:14). Yahusha (Jesus) answers the high priest with that vision: the Son of Adam they will see *coming in the clouds of heaven* is the one Daniel saw.",
+   "member_phrase": "behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days",
+   "member_sentence": "Daniel saw one like the Son of Adam come with the clouds of heaven to the Ancient of days, and Yahusha (Jesus) says he is that one.",
+   "thread": "sanhedrin-trial-tehillim-110-and-daniel-7-self-identification-at-the-kings-own-mouth",
+   "flag": ""
+  },
+  {
+   "id": 5328,
+   "prose": "Matthew has Yahusha (Jesus) answer *Thou hast said* and then add *Hereafter shall ye see*, where Mark has him say outright *I am*. The words about the Son of Adam at the right hand and in the clouds are the same in both. What Mark adds is the flat, unhedged answer to the high priest's question.",
+   "member_phrase": "Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven",
+   "member_sentence": "Matthew has the same words about the Son of Adam at the right hand and in the clouds, after Yahusha (Jesus) says Thou hast said.",
+   "thread": "sanhedrin-trial-tehillim-110-and-daniel-7-self-identification-at-the-kings-own-mouth",
+   "flag": ""
+  },
+  {
+   "id": 5329,
+   "prose": "John writes the same coming from the other end: *he cometh with clouds*, and *every eye shall see him*, even *they also which pierced him*. Yahusha (Jesus) told the council *ye shall see*; Revelation says who all will see him, and that *all kindreds of the earth shall wail* because of him.",
+   "member_phrase": "every eye shall see him, and they also which pierced him: and all kindreds of the earth shall wail because of him",
+   "member_sentence": "Revelation says he comes with clouds and every eye sees him, those who pierced him included, while the kindreds of the earth wail.",
+   "thread": "sanhedrin-trial-tehillim-110-and-daniel-7-self-identification-at-the-kings-own-mouth",
+   "flag": ""
+  },
+  {
+   "id": 5330,
+   "prose": "The high priest asks whether he is *the Son of the Blessed*, and John shows Yahusha (Jesus) answering the same kind of charge at the feast. He speaks of the one *whom the Father hath sanctified, and sent into the world*, whom they call a blasphemer for saying *I am the Son of Elohim (God)*. The Son they question has a Father who sent him, and they heard the claim well enough to charge him for it.",
+   "member_phrase": "whom the Father hath sanctified, and sent into the world, Thou blasphemest; because I said, I am the Son of Elohim (God)",
+   "member_sentence": "John shows the same charge of blasphemy for saying I am the Son of Elohim (God), spoken of the one the Father sent into the world.",
+   "thread": "sanhedrin-trial-tehillim-110-and-daniel-7-self-identification-at-the-kings-own-mouth",
+   "flag": ""
+  },
+  {
+   "id": 5331,
+   "prose": "The high priest asks about *the Son of the Blessed*, and Hebrews opens with the answer in order: Elohim (God) *spake in time past unto the fathers by the prophets*, and in these last days by a Son, *the express image of his person* (Hebrews 1:3). The Father is not seen; the Son is, and he stood before the council.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Hebrews begins with Elohim (God) speaking by the prophets and then by a Son, who is the express image of the Father's person.",
+   "thread": "sanhedrin-trial-tehillim-110-and-daniel-7-self-identification-at-the-kings-own-mouth",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

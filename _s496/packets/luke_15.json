@@ -1,0 +1,243 @@
+{
+ "book": "luke",
+ "chapter": 15,
+ "chapter_text_kjv": {
+  "1": "Then drew near unto him all the publicans and sinners for to hear him.",
+  "2": "And the Pharisees and scribes murmured, saying, This man receiveth sinners, and eateth with them.",
+  "3": "And he spake this parable unto them, saying,",
+  "4": "What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?",
+  "5": "And when he hath found it, he layeth it on his shoulders, rejoicing.",
+  "6": "And when he cometh home, he calleth together his friends and neighbours, saying unto them, Rejoice with me; for I have found my sheep which was lost.",
+  "7": "I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.",
+  "8": "Either what woman having ten pieces of silver, if she lose one piece, doth not light a candle, and sweep the house, and seek diligently till she find it?",
+  "9": "And when she hath found it, she calleth her friends and her neighbours together, saying, Rejoice with me; for I have found the piece which I had lost.",
+  "10": "Likewise, I say unto you, there is joy in the presence of the angels of Elohim (God) over one sinner that repenteth.",
+  "11": "And he said, A certain man had two sons:",
+  "12": "And the younger of them said to his father, Father, give me the portion of goods that falleth to me. And he divided unto them his living.",
+  "13": "And not many days after the younger son gathered all together, and took his journey into a far country, and there wasted his substance with riotous living.",
+  "14": "And when he had spent all, there arose a mighty famine in that land; and he began to be in want.",
+  "15": "And he went and joined himself to a citizen of that country; and he sent him into his fields to feed swine.",
+  "16": "And he would fain have filled his belly with the husks that the swine did eat: and no man gave unto him.",
+  "17": "And when he came to himself, he said, How many hired servants of my father’s have bread enough and to spare, and I perish with hunger!",
+  "18": "I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before thee,",
+  "19": "And am no more worthy to be called thy son: make me as one of thy hired servants.",
+  "20": "And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.",
+  "21": "And the son said unto him, Father, I have sinned against heaven, and in thy sight, and am no more worthy to be called thy son.",
+  "22": "But the father said to his servants, Bring forth the best robe, and put it on him; and put a ring on his hand, and shoes on his feet:",
+  "23": "And bring hither the fatted calf, and kill it; and let us eat, and be merry:",
+  "24": "For this my son was dead, and is alive again; he was lost, and is found. And they began to be merry.",
+  "25": "Now his elder son was in the field: and as he came and drew nigh to the house, he heard musick and dancing.",
+  "26": "And he called one of the servants, and asked what these things meant.",
+  "27": "And he said unto him, Thy brother is come; and thy father hath killed the fatted calf, because he hath received him safe and sound.",
+  "28": "And he was angry, and would not go in: therefore came his father out, and intreated him.",
+  "29": "And he answering said to his father, Lo, these many years do I serve thee, neither transgressed I at any time thy commandment: and yet thou never gavest me a kid, that I might make merry with my friends:",
+  "30": "But as soon as this thy son was come, which hath devoured thy living with harlots, thou hast killed for him the fatted calf.",
+  "31": "And he said unto him, Son, thou art ever with me, and all that I have is thine.",
+  "32": "It was meet that we should make merry, and be glad: for this thy brother was dead, and is alive again; and was lost, and is found."
+ },
+ "cards": [
+  {
+   "id": 7061,
+   "src": "Luke 15:18",
+   "src_vn": 18,
+   "src_text_live": "I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before you,",
+   "src_text_kjv": "I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before thee,",
+   "tgt": "Ezekiel 18:21",
+   "tgt_text_kjv": "But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die.",
+   "tgt_context_kjv": {
+    "19": "Yet say ye, Why? doth not the son bear the iniquity of the father? When the son hath done that which is lawful and right, and hath kept all my statutes, and hath done them, he shall surely live.",
+    "20": "The soul that sinneth, it shall die. The son shall not bear the iniquity of the father, neither shall the father bear the iniquity of the son: the righteousness of the righteous shall be upon him, and the wickedness of the wicked shall be upon him.",
+    "21": "But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die.",
+    "22": "All his transgressions that he hath committed, they shall not be mentioned unto him: in his righteousness that he hath done he shall live.",
+    "23": "Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?",
+    "24": "But when the righteous turneth away from his righteousness, and committeth iniquity, and doeth according to all the abominations that the wicked man doeth, shall he live? All his righteousness that he hath done shall not be mentioned: in his trespass that he hath trespassed, and in his sin that he hath sinned, in them shall he die."
+   },
+   "old_note": "The prodigal's repentance-speech: *Father, I have sinned against heaven, and before thee, And am no more worthy to be called thy son: make me as one of thy hired servants* (vv.18-19). Read against Yechezk'el (Ezekiel) 18:21 (*But if the wicked will turn from all his sins... he shall surely live*) — the wilderness son returning carries the same architecture.",
+   "author_thread_hint": "grace-and-the-opportunity-that-can-be-lost",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "luke-15-the-shepherd-bringing-again-his-flock-and-the-gathering-of-the-lost-in-sirach-and-2-esdras",
+   "title": "The shepherd bringing again his flock and the gathering of the lost in Sirach and 2 Esdras",
+   "anchor": "Luke 15:4-32",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "Luke 15's three parables — the lost sheep, the lost coin, the prodigal son — are one substance: the recovery of the lost, the gathering of scattered / lost Yashar'el (Israel) home to the Father, against the Pharisees' murmur that *this man receiveth sinners, and eateth with them* (Luke 15:2). The Hebrew library names the architecture directly. Sirach (Ecclesiasticus) 18:13 names the mercy that gathers: *the mercy of Yahuah (God) is upon all flesh: he reproveth, and nurtureth, and teaches and brings again, as a shepherd his flock* — the shepherd-who-brings-again-his-flock the King walks at Luke 15:5 when *he layeth it on his shoulders, rejoicing.* 2 Esdras 13:40 names who is lost: *those are the ten tribes, which were carried away prisoners out of their own land in the time of Osea the king, whom Salmanasar the king of Assyria led away captive* — the scattered northern house, lost in the further country, *now when he shall begin to come* (2 Esdras 13:46). Luke 15:6's *Rejoice with me; for I have found my sheep which was lost* names the joy when this lost is found. 2 Esdras 2:31 names the Father's own promise: *remember your children that sleep, for I shall bring them out of the sides of the earth, and shew mercy to them: for I am merciful, says Yahuah (God) Almighty* — the bring-out-the-children-and-show-mercy promise the prodigal's homecoming walks: *for this my son was dead, and is alive again; he was lost, and is found* (Luke 15:24). The lost found, the dead made alive, the scattered child gathered home with mercy — the wisdom-stream and the apocalyptic-stream both name the gathering the three parables rejoice over.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:5",
+     "tgt": "apocrypha/ecclesiasticus 18:13",
+     "member_note": "Ecclesiasticus 18:13 — *he reproveth, and nurtureth, and teaches and brings again, as a shepherd his flock.* The bringing again is the lost sheep carried home on the shepherd's shoulders (Luke 15:5)."
+    },
+    {
+     "src": "15:6",
+     "tgt": "apocrypha/2-esdras 13:40",
+     "member_note": "2 Esdras 13:40 — *carried away prisoners out of their own land.* The lost sheep whose finding the shepherd rejoices over at Luke 15:6."
+    },
+    {
+     "src": "15:24",
+     "tgt": "apocrypha/2-esdras 2:31",
+     "member_note": "2 Esdras 2:31 — *Remember your children that sleep, for I shall bring them out of the sides of the earth.* The son who was dead and is alive again (Luke 15:24) is that mercy in a parable."
+    }
+   ]
+  },
+  {
+   "slug": "lost-coin-the-recovery-of-what-was-always-the-kings-image-bearing-property",
+   "title": "The lost coin — the recovery of what was always the King's image-bearing property",
+   "anchor": "Luke 15:8-10",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "Lukan-specific middle-parable of the three-lost-parables. The lost coin (drachma) carries a substance the lost-sheep parable does not — the coin is MINTED with the King's image and stamped with his inscription. Its identity is intrinsic; its loss does not change what it IS. The woman's diligent searching (lighting a candle, sweeping the house, seeking diligently till she finds it) IS the King's mission to the scattered. FRAMEWORK-MAJOR. Framework reading: the coin was always covenant-property — image-stamped, name-inscribed, never not-a-coin even when lost. The recovery is recovery of what was always-the-King's, NOT inclusion of what was never-his. The Christian-inclusion-gospel cannot carry this parable cleanly because the coin is not made-a-coin by the finding; the coin only becomes-findable by the seeking. This is the Bereshit (Genesis) 1:26-27 image-of-Elohim substance read into the gathering-architecture: the seed-of-Adam carries the image; the lost-coin carries the image-stamp; the lost-sheep-of-the-house carries the covenant-lineage. Three witnesses to one substance. Aligns with the *my sheep hear my voice, hearing reveals what was true before the foundation* architecture (Yochanan/John 10:27, Revelation 13:8, 17:8). The Hoshea (Hosea) 1:10 *ye are the sons of the living Elohim (God)* Lo-Ammi-reversal IS the substance the recovery announces; Yechezk'el (Ezekiel) 34:11-12 *I, even I, will both search my sheep, and seek them out* is the King's own seeking-of-the-scattered the parable walks.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:8",
+     "tgt": "canon/genesis 1:26",
+     "member_note": "*And Elohim (God) said, Let us make man in our image, after our likeness* — the image-of-Elohim stamp on the seed-of-Adam carries the same identity-by-imprint substance the lost-coin holds. The coin is what it is because of what is stamped on it."
+    },
+    {
+     "src": "15:8",
+     "tgt": "canon/matthew 22:20",
+     "member_note": "*And he saith unto them, Whose is this image and superscription? They say unto him, Caesar's. Then saith he unto them, Render therefore unto Caesar the things which are Caesar's; and unto Elohim (God) the things that are Elohim's* — the render-unto-Caesar substance names the same recognition-by-imprint architecture the lost-coin parable holds."
+    },
+    {
+     "src": "15:8",
+     "tgt": "canon/revelation 13:8",
+     "member_note": "*And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world* — the names-written-from-the-foundation architecture carries the same identity-precedes-finding substance the lost-coin parable holds."
+    },
+    {
+     "src": "15:9",
+     "tgt": "canon/hosea 1:10",
+     "member_note": "*Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* — the recovery-of-what-was-always-covenant the lost-coin parable carries. The Lo-Ammi-reversal of Hoshea (Hosea) 1:10 is the substance of the woman's rejoicing when the coin is found."
+    },
+    {
+     "src": "15:10",
+     "tgt": "canon/ezekiel 34:11",
+     "member_note": "*Behold, I, even I, will both search my sheep, and seek them out. As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep* (Yechezk'el/Ezekiel 34:11-12) — the King's own seeking-of-the-scattered substance, three parables in one passage at Luke 15. The lost-coin's diligent-searching IS this Yechezk'el seeking walked into the woman's house."
+    },
+    {
+     "src": "15:10",
+     "tgt": "canon/john 10:27",
+     "member_note": "*My sheep hear my voice, and I know them, and they follow me* — the same hearing-reveals-not-creates substance: the coin is found because it was always covenant-property; the sheep is found because it was always-a-sheep."
+    }
+   ]
+  },
+  {
+   "slug": "prodigal-son-and-the-elder-brother-the-two-house-gathering-of-ephraim-and-yahudah",
+   "title": "The prodigal son and the elder brother — the two-house gathering of Ephraim and Yahudah",
+   "anchor": "Luke 15:11-32",
+   "anchored_in_this_book": true,
+   "member_count": 8,
+   "summary_md": "Lukan-specific. The third and longest of the three-lost-parables, and the parable that carries the framework-major scattered-seed-architecture in its most complete narrative-form. Two sons, one father, one inheritance. The younger son takes his portion, goes into a far country, wastes his substance among the swine (the unclean-of-the-unclean), comes to himself in the famine, and returns. The father sees him *a great way off* and runs — the Hoshea (Hosea) 11:8 *how shall I give thee up, Ephraim?* compassion-language in flesh. The elder brother in the field, returning from his work, hears music-and-dancing, refuses to come in, complains *neither transgressed I at any time thy commandment*. The father pleads with him: *Son, thou art ever with me, and all that I have is thine. It was meet that we should make merry, and be glad: for this thy brother was dead, and is alive again; and was lost, and is found.* FRAMEWORK-MAJOR. Framework reading: (1) the younger-son is the scattered-house of Ephraim (the divorced-and-lost-among-the-nations) coming home — Hoshea (Hosea) 11:1-11, Yirmeyahu (Jeremiah) 31:9, 31:18-20, Yechezk'el (Ezekiel) 37:16-22; (2) the elder-brother is the house of Yahudah (Judah) who stayed in the father's house, kept the form, and now resents the celebration over the gathered-prodigal-brother; (3) the father's answer holds BOTH houses together as one family — *all that I have is thine* AND *this thy brother.* This is the two-sticks-becoming-one of Yechezk'el (Ezekiel) 37 in compressed parable-form. NOT a Gentile-inclusion parable; a scattered-seed-gathering-and-Yahudah-objection parable. The robe, the ring, the shoes, the fatted calf are the covenant-marks restored. The Hoshea 1:10 *ye are the sons of the living Elohim (God)* Lo-Ammi-reversal IS *this my son was dead, and is alive again; he was lost, and is found.*",
+   "members_in_this_chapter": [
+    {
+     "src": "15:11",
+     "tgt": "canon/1-john 3:1",
+     "member_note": "*Behold, what manner of love the Father hath bestowed upon us, that we should be called the sons of Elohim (God)* — the father-of-the-prodigal substance the apostolic-witness names. The Father runs; the manner of love is the running."
+    },
+    {
+     "src": "15:12",
+     "tgt": "canon/jeremiah 31:18",
+     "member_note": "*I have surely heard Ephraim bemoaning himself thus; Thou hast chastised me, and I was chastised, as a bullock unaccustomed to the yoke: turn thou me, and I shall be turned; for thou art Yahuah (the LORD) my Elohim (God)... Is Ephraim my dear son? is he a pleasant child?* — the Yirmeyahu (Jeremiah) 31:18-20 Ephraim-coming-home substance the prodigal walks. The younger son IS Ephraim taking his portion and going into the far country."
+    },
+    {
+     "src": "15:17",
+     "tgt": "canon/hosea 11:1",
+     "member_note": "*When Yashar'el (Israel) was a child, then I loved him, and called my son out of Egypt... I taught Ephraim also to go, taking them by their arms... I drew them with cords of a man, with bands of love* (Hoshea/Hosea 11:1-4) — the father-running-to-meet-the-returning-son carries the same drawing-with-cords-of-love substance. The Father's pursuit of the scattered house is the architecture under the parable."
+    },
+    {
+     "src": "15:18",
+     "tgt": "canon/leviticus 26:40",
+     "member_note": "*If they shall confess their iniquity, and the iniquity of their fathers... then will I remember my covenant with Ya'aqov (Jacob), and also my covenant with Yitschaq (Isaac), and also my covenant with Avraham (Abraham) will I remember* — the prodigal's repentance-speech IS the Vayikra (Leviticus) 26 covenant-confession architecture. The Father remembers the covenant when the scattered confess."
+    },
+    {
+     "src": "15:20",
+     "tgt": "canon/hosea 11:8",
+     "member_note": "*How shall I give thee up, Ephraim? how shall I deliver thee, Yashar'el (Israel)? how shall I make thee as Admah? how shall I set thee as Tsevoim (Zeboim)? mine heart is turned within me, my repentings are kindled together* — the father's *had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20) is the Hoshea (Hosea) 11:8 compassion-language of the Father over Ephraim in flesh."
+    },
+    {
+     "src": "15:24",
+     "tgt": "canon/hosea 1:10",
+     "member_note": "*And it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* — *this my son was dead, and is alive again; he was lost, and is found* IS the Lo-Ammi-to-Ammi declaration in parable-form. Hoshea (Hosea) cited at Romans 9:25-26 carries the same substance."
+    },
+    {
+     "src": "15:25",
+     "tgt": "canon/ezekiel 37:16",
+     "member_note": "The elder-brother's objection to the welcome-home of the younger is the Yahudah-pattern objection to the gathering of the northern-house. Yechezk'el (Ezekiel) 37:16-22's two-sticks-becoming-one is the framework's answer: one father, one house, two sons-restored."
+    },
+    {
+     "src": "15:32",
+     "tgt": "canon/romans 11:17",
+     "member_note": "*And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree* — Paul's olive-tree picks up the same Ephraim-and-Yahudah-as-one-tree substance the prodigal-and-elder-brother walk; the elder-brother's objection is rebuked the way Paul rebukes Yahudaean-pride at Romans 11:18."
+    }
+   ]
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": "Hosea 1:9-10",
+   "anchored_in_this_book": false,
+   "member_count": 67,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Hosea, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:4",
+     "tgt": "canon/hosea 1:9",
+     "member_note": "The lost-sheep parable, Lukan placement. *What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?* Read in the framework as the scattered-seed-gathering architecture — the lost-sheep IS the scattered-seed-of-the-north coming home."
+    }
+   ]
+  },
+  {
+   "slug": "other-sheep-and-the-lost-house-of-yashar-el",
+   "title": "Other sheep, one fold — the lost house gathered in",
+   "anchor": "John 10:16",
+   "anchored_in_this_book": false,
+   "member_count": 13,
+   "summary_md": "The good shepherd discourse names *other sheep I have, which are not of this fold* — and the inherited reading flattens this into a categorical extension of the covenant to the nations. The Tanakh's own shepherd-prophecies will not allow the flattening. Yahusha (Jesus) was sent to the lost sheep of the house of Yashar'el (Israel), and the *other sheep* who must be brought are the scattered seed of the northern house that the prophets named as a specific people Yahuah (the LORD) himself will go out and seek.\n\n*And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* (John 10:16)\n\n*For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out. As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day.* (Ezekiel 34:11-12)\n\n*Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land: and I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all.* (Ezekiel 37:21-22)\n\nThe two-stick prophecy of Yechezkel (Ezekiel) 37 is what *one fold, and one shepherd* names. The fold Yahusha (Jesus) is speaking from contains the recognized house of Yahudah (Judah). The other sheep are the scattered seed of the house of Yashar'el (Israel) — the northern tribes carried into the Assyrian dispersion, divorced through the prophets, living among the nations as the *Lo-Ammi* of Hoshea (Hosea) 1. The shepherd's voice will reach them where they are scattered, and they will hear, because they were sheep from the foundation of the world. Hearing reveals what was always true; it does not create what was not.\n\nThe Yahudim (Jews) who heard the discourse understood the geography exactly. The fold they were in was the southern house. The other sheep were a specific other body — not the nations of Bereshit (Genesis) 1, but the northern house whose scattering and gathering the prophets had named in repeated specificity.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:4",
+     "tgt": "canon/john 10:16",
+     "member_note": "The lost-sheep parable of Luke 15 is the same lost-sheep the King names at Yochanan (John) 10:16 (*And other sheep I have, which are not of this fold: them also I must bring*) and Matthew 15:24 (*I am not sent but unto the lost sheep of the house of Yashar'el (Israel)*). Three witnesses across the gospels to the one substance."
+    }
+   ]
+  },
+  {
+   "slug": "my-sheep-hear-my-voice-hearing-reveals-not-creates",
+   "title": "My sheep hear my voice — hearing reveals what was true before the foundation",
+   "anchor": "John 10:25-29",
+   "anchored_in_this_book": false,
+   "member_count": 22,
+   "summary_md": "The good shepherd discourse contains a sentence the inherited reading cannot hold without rewriting it. *Ye believe not, because ye are not of my sheep.* The cause-and-effect is reversed from the gospel the modern pulpit preaches. The pulpit teaches *if you believe, you become a sheep.* The discourse teaches *if you are a sheep, you hear and believe.* The hearing is the revealing; the sheep-status is what is being revealed. The status precedes the response.\n\n*But ye believe not, because ye are not of my sheep, as I said unto you. My sheep hear my voice, and I know them, and they follow me: and I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand. My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father's hand.* (John 10:26-29)\n\n*Yahuah (the LORD) hath appeared of old unto me, saying, Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee.* (Jeremiah 31:3)\n\n*And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* (Revelation 13:8)\n\nThe Father gave them to the Son. The Father gave them before the foundation of the world. Their names were written then. The hearing of the shepherd's voice in time is the revealing of what was already true in the Father's foreknowledge — not the moment in which the sheep-status was created by the act of believing. The gathering of the scattered seed is not the recruitment of volunteers from the categorical nations; it is the homecoming of those whose names were written in the Lamb's book from the foundation.\n\nThis is why the gathering can be proclaimed broadly without the proclamation collapsing into a categorical invitation to all flesh. The proclamation goes out wherever the Father sends. Those who hear are revealed by their hearing to be sheep. Those who reject have the dust shaken off the foot, and the pearls are not cast before swine. The shepherd does not chase what was never his.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:4",
+     "tgt": "canon/john 10:27",
+     "member_note": "The lost-sheep parable's shepherd-finds-the-sheep cause-and-effect carries the same hearing-reveals-not-creates architecture the framework names. The sheep does not become-a-sheep by being-found; the sheep was-a-sheep before it wandered, IS-a-sheep when it is lost, and IS-found because the shepherd-knows-his-own."
+    }
+   ]
+  },
+  {
+   "slug": "new-heart",
+   "title": "New heart, new spirit, same Torah — written inside instead of on stone",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "Ezekiel 36:26-27, Ezekiel 11:19, and Jeremiah 31:31-34 are the Tanakh source for the new covenant. The promise was never Torah replaced. The promise was Torah internalized.\n\n*\"A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my Ruach (Spirit) within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.\"* (Ezekiel 36:26-27)\n\n*\"Behold, the days come, saith Yahuah (the LORD), that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah)... I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.\"* (Jeremiah 31:31, 33)\n\nThe new covenant is the same Torah, on a different surface. Stone tablets out; fleshy tables of the heart in. External performance out; Spirit-empowered obedience in. The Torah is not abolished — it is moved from the outside to the inside, and the same Spirit who spoke at Sinai is the one who now writes it.\n\nThe Christian reading inverts this. It hears *new* and reads *replacement.* It hears *letter killeth, spirit giveth life* and reads *Torah killeth, freedom-from-Torah giveth life.* The Tanakh source forbids the inversion. The letter that kills is the externalized-only Torah without the Spirit — the Pharisaical performance that the new covenant promise was given precisely to heal. The Spirit who gives life IS the Spirit who spoke at Sinai, and what he does inside the heart is the same thing he commanded outside: *cause you to walk in my statutes, and ye shall keep my judgments, and do them.* Two heart-surfaces, one Torah, one Spirit.\n\nHebrews 8 quotes Jeremiah 31 verbatim because the author is showing that the new covenant is not a Christian innovation — it is the Tanakh promise breaking into time. The thread surfaces the source so the reader meets the new covenant as the fulfillment of Ezekiel and Jeremiah, not as a replacement of them.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:17",
+     "tgt": "canon/ezekiel 36:26",
+     "member_note": "The prodigal's *he came to himself* (v.17) — the heart-turn that precedes the homecoming. Read against the new-heart promise (Yechezk'el/Ezekiel 36:26-27): *A new heart also will I give you, and a new spirit will I put within you.* The framework reads the prodigal's coming-to-himself as the new-heart turn."
+    }
+   ]
+  }
+ ]
+}

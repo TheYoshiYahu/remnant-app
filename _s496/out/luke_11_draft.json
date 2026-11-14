@@ -1,0 +1,24 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "luke",
+ "chapter": 11,
+ "cards": [
+  {
+   "id": 7038,
+   "prose": "Matthew has the scribes and Pharisees ask for a sign and answers *An evil and adulterous generation seeketh after a sign*; Luke has the answer go out to a crowd *gathered thick together*. Luke goes on at once to say what Jonah was, *a sign unto the Ninevites* (Luke 11:30), and puts the weight on the preaching Nineveh repented at. Matthew's next verse adds the three days and three nights.",
+   "member_phrase": "there shall no sign be given to it, but the sign of the prophet Jonah",
+   "member_sentence": "Matthew gives the same answer to the scribes and Pharisees who asked for a sign, and calls the generation adulterous as well as evil.",
+   "thread": "luke-11-the-sign-of-jonah-and-the-queen-of-the-south-jonah-1-1-kings-10",
+   "flag": ""
+  },
+  {
+   "id": 7041,
+   "prose": "In Luke a woman in the crowd blesses the womb that bore him, and he answers *Yea rather, blessed are they that hear the word of Elohim (God), and keep it* (Luke 11:28). Matthew has his mother and brothers waiting outside and the same turn: the ones he names as *brother, and sister, and mother* are those who do the Father's will. The family is known by the hearing that keeps the word.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the same answer in his own words, naming as his brother and sister and mother whoever does the will of his Father in heaven.",
+   "thread": "matthew-12-whosoever-shall-do-the-will-of-my-father-the-true-family-deuteronomy-33-psalm-22",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

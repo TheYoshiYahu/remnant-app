@@ -1,0 +1,25 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 3,
+ "cards": [
+  {
+   "id": 6973,
+   "prose": "Luke dates the hour by emperors and high priests, and then says *the word of Elohim (God) came unto John* in the wilderness. Isaiah had put a voice in that very place, *him that crieth in the wilderness*, with the call *Prepare ye the way of Yahuah (LORD)*, and Luke goes on to hang Isaiah's words on John. The word arrives where Isaiah said the crying would be.",
+   "member_phrase": "The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah (LORD)",
+   "member_sentence": "Isaiah's voice crying in the wilderness is the place and the work Luke gives John when the word of Elohim (God) comes to him there.",
+   "thread": "luke-3-political-and-priestly-backdrop-as-the-prophetic-clock",
+   "flag": ""
+  },
+  {
+   "id": 6976,
+   "prose": "Luke says John spoke to *the multitude that came forth to be baptized* (Luke 3:7), where Matthew names Pharisees and Sadducees. Either way fruit comes first, and no one hides behind *We have Abraham to our father*. The stones read well beside Hosea: *Ye are the sons of the living Elohim (God)* (Hosea 1:10), said in the place where they were not his people.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "John tells them not to rest on having Abraham as father, because Elohim (God) is able of these stones to raise up children unto Abraham.",
+   "thread": "matthew-3-fruits-meet-for-repentance-stones-to-abraham-isaiah-1-ezekiel-18-romans-11",
+   "flag": "The Matthew 3 thread's summary still reads the stones as the nations grafted in; this card is written as the scattered house called back (Hosea 1:10), per the brief. That summary needs rewriting."
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on claude-sonnet-5-5."
+}

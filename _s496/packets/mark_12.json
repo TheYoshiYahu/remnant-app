@@ -1,0 +1,501 @@
+{
+ "book": "mark",
+ "chapter": 12,
+ "chapter_text_kjv": {
+  "1": "And he began to speak unto them by parables. A certain man planted a vineyard, and set an hedge about it, and digged a place for the winefat, and built a tower, and let it out to husbandmen, and went into a far country.",
+  "2": "And at the season he sent to the husbandmen a servant, that he might receive from the husbandmen of the fruit of the vineyard.",
+  "3": "And they caught him, and beat him, and sent him away empty.",
+  "4": "And again he sent unto them another servant; and at him they cast stones, and wounded him in the head, and sent him away shamefully handled.",
+  "5": "And again he sent another; and him they killed, and many others; beating some, and killing some.",
+  "6": "Having yet therefore one son, his wellbeloved, he sent him also last unto them, saying, They will reverence my son.",
+  "7": "But those husbandmen said among themselves, This is the heir; come, let us kill him, and the inheritance shall be ours.",
+  "8": "And they took him, and killed him, and cast him out of the vineyard.",
+  "9": "What shall therefore the lord of the vineyard do? he will come and destroy the husbandmen, and will give the vineyard unto others.",
+  "10": "And have ye not read this scripture; The stone which the builders rejected is become the head of the corner:",
+  "11": "This was Yahuah's (Lord’s) doing, and it is marvellous in our eyes?",
+  "12": "And they sought to lay hold on him, but feared the people: for they knew that he had spoken the parable against them: and they left him, and went their way.",
+  "13": "And they send unto him certain of the Pharisees and of the Herodians, to catch him in his words.",
+  "14": "And when they were come, they say unto him, Master, we know that thou art true, and carest for no man: for thou regardest not the person of men, but teachest the way of Elohim (God) in truth: Is it lawful to give tribute to Cæsar, or not?",
+  "15": "Shall we give, or shall we not give? But he, knowing their hypocrisy, said unto them, Why tempt ye me? bring me a penny, that I may see it.",
+  "16": "And they brought it. And he saith unto them, Whose is this image and superscription? And they said unto him, Cæsar’s.",
+  "17": "And Yahusha (Jesus) answering said unto them, Render to Cæsar the things that are Cæsar’s, and to Elohim (God) the things that are Elohim's (God’s). And they marvelled at him.",
+  "18": "Then come unto him the Sadducees, which say there is no resurrection; and they asked him, saying,",
+  "19": "Master, Moses wrote unto us, If a man’s brother die, and leave his wife behind him, and leave no children, that his brother should take his wife, and raise up seed unto his brother.",
+  "20": "Now there were seven brethren: and the first took a wife, and dying left no seed.",
+  "21": "And the second took her, and died, neither left he any seed: and the third likewise.",
+  "22": "And the seven had her, and left no seed: last of all the woman died also.",
+  "23": "In the resurrection therefore, when they shall rise, whose wife shall she be of them? for the seven had her to wife.",
+  "24": "And Yahusha (Jesus) answering said unto them, Do ye not therefore err, because ye know not the scriptures, neither the power of Elohim (God)?",
+  "25": "For when they shall rise from the dead, they neither marry, nor are given in marriage; but are as the angels which are in heaven.",
+  "26": "And as touching the dead, that they rise: have ye not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?",
+  "27": "He is not the Elohim (God) of the dead, but the Elohim (God) of the living: ye therefore do greatly err.",
+  "28": "And one of the scribes came, and having heard them reasoning together, and perceiving that he had answered them well, asked him, Which is the first commandment of all?",
+  "29": "And Yahusha (Jesus) answered him, The first of all the commandments is, Hear, O Yashar'el (Israel); Yahuah Eloheinu (The Lord our God) is one Yahuah (Lord):",
+  "30": "And thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment.",
+  "31": "And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these.",
+  "32": "And the scribe said unto him, Well, Master, thou hast said the truth: for there is one Elohim (God); and there is none other but he:",
+  "33": "And to love him with all the heart, and with all the understanding, and with all the soul, and with all the strength, and to love his neighbour as himself, is more than all whole burnt offerings and sacrifices.",
+  "34": "And when Yahusha (Jesus) saw that he answered discreetly, he said unto him, Thou art not far from the kingdom of Elohim (God). And no man after that durst ask him any question.",
+  "35": "And Yahusha (Jesus) answered and said, while he taught in the temple, How say the scribes that Messiah (Christ) is the Son of David?",
+  "36": "For David himself said by the Ruach HaKodesh (Holy Spirit), Yahuah (LORD) said to my Lord, Sit thou on my right hand, till I make thine enemies thy footstool.",
+  "37": "David therefore himself calleth him Adonai (Lord); and whence is he then his son? And the common people heard him gladly.",
+  "38": "And he said unto them in his doctrine, Beware of the scribes, which love to go in long clothing, and love salutations in the marketplaces,",
+  "39": "And the chief seats in the synagogues, and the uppermost rooms at feasts:",
+  "40": "Which devour widows’ houses, and for a pretence make long prayers: these shall receive greater damnation.",
+  "41": "And Yahusha (Jesus) sat over against the treasury, and beheld how the people cast money into the treasury: and many that were rich cast in much.",
+  "42": "And there came a certain poor widow, and she threw in two mites, which make a farthing.",
+  "43": "And he called unto him his disciples, and saith unto them, Verily I say unto you, That this poor widow hath cast more in, than all they which have cast into the treasury:",
+  "44": "For all they did cast in of their abundance; but she of her want did cast in all that she had, even all her living."
+ },
+ "cards": [
+  {
+   "id": 5236,
+   "src": "Mark 12:1",
+   "src_vn": 1,
+   "src_text_live": "And he began to speak unto them by parables. A certain man planted a vineyard, and set an hedge about it, and digged a place for the winefat, and built a tower, and let it out to husbandmen, and went into a far country.",
+   "src_text_kjv": "And he began to speak unto them by parables. A certain man planted a vineyard, and set an hedge about it, and digged a place for the winefat, and built a tower, and let it out to husbandmen, and went into a far country.",
+   "tgt": "Romans 11:5",
+   "tgt_text_kjv": "Even so then at this present time also there is a remnant according to the election of grace.",
+   "tgt_context_kjv": {
+    "3": "Yahuah (Lord), they have killed thy prophets, and digged down thine altars; and I am left alone, and they seek my life.",
+    "4": "But what saith the answer of Elohim (God) unto him? I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal.",
+    "5": "Even so then at this present time also there is a remnant according to the election of grace.",
+    "6": "And if by grace, then is it no more of works: otherwise grace is no more grace. But if it be of works, then is it no more grace: otherwise work is no more work.",
+    "7": "What then? Yashar'el (Israel) hath not obtained that which he seeketh for; but the election hath obtained it, and the rest were blinded",
+    "8": "(According as it is written, Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear;) unto this day."
+   },
+   "old_note": "*Yashar'el (Israel) hath not obtained that which he seeketh for; but the election hath obtained it* (Romans 11:5-7). The seed of Yashar'el is not displaced by the nations; the unfruitful husbandmen are sifted out, and the priestly remnant inherits.",
+   "author_thread_hint": "sovereign-election-and-the-remnant-of-yashar-el",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5237,
+   "src": "Mark 12:1",
+   "src_vn": 1,
+   "src_text_live": "And he began to speak unto them by parables. A certain man planted a vineyard, and set an hedge about it, and digged a place for the winefat, and built a tower, and let it out to husbandmen, and went into a far country.",
+   "src_text_kjv": "And he began to speak unto them by parables. A certain man planted a vineyard, and set an hedge about it, and digged a place for the winefat, and built a tower, and let it out to husbandmen, and went into a far country.",
+   "tgt": "Isaiah 10:21",
+   "tgt_text_kjv": "The remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God).",
+   "tgt_context_kjv": {
+    "19": "And the rest of the trees of his forest shall be few, that a child may write them.",
+    "20": "And it shall come to pass in that day, that the remnant of Yashar'el (Israel), and such as are escaped of the house of Jacob, shall no more again stay upon him that smote them; but shall stay upon Yahuah (LORD), the Holy One of Yashar'el (Israel), in truth.",
+    "21": "The remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God).",
+    "22": "For though thy people Yashar'el (Israel) be as the sand of the sea, yet a remnant of them shall return: the consumption decreed shall overflow with righteousness.",
+    "23": "For Adonai Yahuah (the Lord GOD) of hosts shall make a consumption, even determined, in the midst of all the land.",
+    "24": "Therefore thus saith Adonai Yahuah (the Lord GOD) of hosts, O my people that dwellest in Zion, be not afraid of the Assyrian: he shall smite thee with a rod, and shall lift up his staff against thee, after the manner of Egypt."
+   },
+   "old_note": "*The remnant shall return, even the remnant of Ya'aqov (Jacob)* (Yeshayahu/Isaiah 10:21-22).",
+   "author_thread_hint": "sovereign-election-and-the-remnant-of-yashar-el",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5244,
+   "src": "Mark 12:26",
+   "src_vn": 26,
+   "src_text_live": "And as touching the dead, that they rise: have you not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?",
+   "src_text_kjv": "And as touching the dead, that they rise: have ye not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?",
+   "tgt": "Exodus 3:6",
+   "tgt_text_kjv": "Moreover he said, I am the Elohim (God) of thy father, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob. And Moses hid his face; for he was afraid to look upon Elohim (God).",
+   "tgt_context_kjv": {
+    "4": "And when Yahuah (LORD) saw that he turned aside to see, Elohim (God) called unto him out of the midst of the bush, and said, Moses, Moses. And he said, Here am I.",
+    "5": "And he said, Draw not nigh hither: put off thy shoes from off thy feet, for the place whereon thou standest is holy ground.",
+    "6": "Moreover he said, I am the Elohim (God) of thy father, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob. And Moses hid his face; for he was afraid to look upon Elohim (God).",
+    "7": "And Yahuah (LORD) said, I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows;",
+    "8": "And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey; unto the place of the Canaanites, and the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites.",
+    "9": "Now therefore, behold, the cry of the children of Yashar'el (Israel) is come unto me: and I have also seen the oppression wherewith the Egyptians oppress them."
+   },
+   "old_note": "*I am the Elohim (God) of Avraham (Abraham), and the Elohim (God) of Yitschaq (Isaac), and the Elohim (God) of Ya'aqov (Jacob).* The patriarchs are not annihilated but asleep, awaiting the resurrection.",
+   "author_thread_hint": "natural-branches-asleep-grafted-again",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5245,
+   "src": "Mark 12:26",
+   "src_vn": 26,
+   "src_text_live": "And as touching the dead, that they rise: have you not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?",
+   "src_text_kjv": "And as touching the dead, that they rise: have ye not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?",
+   "tgt": "Daniel 12:2",
+   "tgt_text_kjv": "And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.",
+   "tgt_context_kjv": {
+    "1": "And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.",
+    "2": "And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.",
+    "3": "And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.",
+    "4": "But thou, O Daniel, shut up the words, and seal the book, even to the time of the end: many shall run to and fro, and knowledge shall be increased.",
+    "5": "Then I Daniel looked, and, behold, there stood other two, the one on this side of the bank of the river, and the other on that side of the bank of the river."
+   },
+   "old_note": "*And many of them that sleep in the dust of the earth shall awake* (Daniyel/Daniel 12:2).",
+   "author_thread_hint": "natural-branches-asleep-grafted-again",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5246,
+   "src": "Mark 12:26",
+   "src_vn": 26,
+   "src_text_live": "And as touching the dead, that they rise: have you not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?",
+   "src_text_kjv": "And as touching the dead, that they rise: have ye not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob?",
+   "tgt": "Hebrews 11:13",
+   "tgt_text_kjv": "These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth.",
+   "tgt_context_kjv": {
+    "11": "Through faith also Sarah herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised.",
+    "12": "Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable.",
+    "13": "These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth.",
+    "14": "For they that say such things declare plainly that they seek a country.",
+    "15": "And truly, if they had been mindful of that country from whence they came out, they might have had opportunity to have returned.",
+    "16": "But now they desire a better country, that is, an heavenly: wherefore Elohim (God) is not ashamed to be called their Elohim (God): for he hath prepared for them a city."
+   },
+   "old_note": "Hebrews 11:13-16, 39-40's witness that the patriarchs *all died in faith, not having received the promises*.",
+   "author_thread_hint": "natural-branches-asleep-grafted-again",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5252,
+   "src": "Mark 12:32",
+   "src_vn": 32,
+   "src_text_live": "And the scribe said unto him, Well, Master, you have said the truth: for there is one Elohim (God); and there is none other but he:",
+   "src_text_kjv": "And the scribe said unto him, Well, Master, thou hast said the truth: for there is one Elohim (God); and there is none other but he:",
+   "tgt": "Hosea 6:6",
+   "tgt_text_kjv": "For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.",
+   "tgt_context_kjv": {
+    "4": "O Ephraim, what shall I do unto thee? O Yahudah (Judah), what shall I do unto thee? for your goodness is as a morning cloud, and as the early dew it goeth away.",
+    "5": "Therefore have I hewed them by the prophets; I have slain them by the words of my mouth: and thy judgments are as the light that goeth forth.",
+    "6": "For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.",
+    "7": "But they like men have transgressed the covenant: there have they dealt treacherously against me.",
+    "8": "Gilead is a city of them that work iniquity, and is polluted with blood.",
+    "9": "And as troops of robbers wait for a man, so the company of priests murder in the way by consent: for they commit lewdness."
+   },
+   "old_note": "*To love him with all the heart... is more than all whole burnt offerings and sacrifices.* The scribe's recognition walks Hoshea (Hosea) 6:6.",
+   "author_thread_hint": "mercy-not-sacrifice-hosea-6-6-citation",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5253,
+   "src": "Mark 12:32",
+   "src_vn": 32,
+   "src_text_live": "And the scribe said unto him, Well, Master, you have said the truth: for there is one Elohim (God); and there is none other but he:",
+   "src_text_kjv": "And the scribe said unto him, Well, Master, thou hast said the truth: for there is one Elohim (God); and there is none other but he:",
+   "tgt": "1 Samuel 15:22",
+   "tgt_text_kjv": "And Samuel said, Hath Yahuah (LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams.",
+   "tgt_context_kjv": {
+    "20": "And Saul said unto Samuel, Yea, I have obeyed the voice of Yahuah (LORD), and have gone the way which Yahuah (LORD) sent me, and have brought Agag the king of Amalek, and have utterly destroyed the Amalekites.",
+    "21": "But the people took of the spoil, sheep and oxen, the chief of the things which should have been utterly destroyed, to sacrifice unto Yahuah Elohayka (the LORD thy God) in Gilgal.",
+    "22": "And Samuel said, Hath Yahuah (LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams.",
+    "23": "For rebellion is as the sin of witchcraft, and stubbornness is as iniquity and idolatry. Because thou hast rejected the word of Yahuah (LORD), he hath also rejected thee from being king.",
+    "24": "And Saul said unto Samuel, I have sinned: for I have transgressed the commandment of Yahuah (LORD), and thy words: because I feared the people, and obeyed their voice.",
+    "25": "Now therefore, I pray thee, pardon my sin, and turn again with me, that I may worship Yahuah (LORD)."
+   },
+   "old_note": "*To obey is better than sacrifice, and to hearken than the fat of rams* (1 Sh'mu'el/Samuel 15:22).",
+   "author_thread_hint": "mercy-not-sacrifice-hosea-6-6-citation",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5254,
+   "src": "Mark 12:32",
+   "src_vn": 32,
+   "src_text_live": "And the scribe said unto him, Well, Master, you have said the truth: for there is one Elohim (God); and there is none other but he:",
+   "src_text_kjv": "And the scribe said unto him, Well, Master, thou hast said the truth: for there is one Elohim (God); and there is none other but he:",
+   "tgt": "Micah 6:6",
+   "tgt_text_kjv": "Wherewith shall I come before Yahuah (LORD), and bow myself before the high Elohim (God)? shall I come before him with burnt offerings, with calves of a year old?",
+   "tgt_context_kjv": {
+    "4": "For I brought thee up out of the land of Egypt, and redeemed thee out of the house of servants; and I sent before thee Moses, Aaron, and Miriam.",
+    "5": "O my people, remember now what Balak king of Moab consulted, and what Balaam the son of Beor answered him from Shittim unto Gilgal; that ye may know the righteousness of Yahuah (LORD).",
+    "6": "Wherewith shall I come before Yahuah (LORD), and bow myself before the high Elohim (God)? shall I come before him with burnt offerings, with calves of a year old?",
+    "7": "Will Yahuah (LORD) be pleased with thousands of rams, or with ten thousands of rivers of oil? shall I give my firstborn for my transgression, the fruit of my body for the sin of my soul?",
+    "8": "He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?",
+    "9": "The LORD’S voice crieth unto the city, and the man of wisdom shall see thy name: hear ye the rod, and who hath appointed it."
+   },
+   "old_note": "Mikhah (Micah) 6:6-8's *what doth Yahuah (the LORD) require of thee, but to do justly, and to love mercy.*",
+   "author_thread_hint": "mercy-not-sacrifice-hosea-6-6-citation",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "mark-12-the-wicked-husbandmen-and-the-one-chosen-vine-in-2-esdras",
+   "title": "The wicked husbandmen and the one chosen vine in 2 Esdras",
+   "anchor": "Mark 12:1-11",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "Mark 12:1-11's parable of the wicked husbandmen — the vineyard *planted ... and set an hedge about it, and digged a place for the winefat, and built a tower, and let it out to husbandmen,* whose keepers beat the servants, kill the heir, and seize the inheritance until the lord *will come and destroy the husbandmen, and will give the vineyard unto others* — turns on the election of the vineyard the wisdom-stream had already named. 2 Esdras 5:23 names the one chosen vine: *of every wood of the earth, and of all the trees thereof, you have chosen you one only vine.* 2 Esdras 5:27 names the one chosen people given the law: *among all the multitudes of people you have gotten you one people: and to this people, whom you lovedst, you gavest a law that is approved of all.* 2 Esdras 5:29 laments the covenant trodden down: *they which did gainsay your promises, and believed not your covenants, have trodden them down.* The vineyard is Yashar'el (Israel), the one-only-vine chosen out of all the trees and the one people given the Torah; the wicked husbandmen are the keepers who gainsay the promises and tread the covenant down, slaying the servants and the heir. The lord's coming to destroy them and give the vineyard to others answers the 2 Esdras lament: the vineyard belongs to the lord who chose it, and the stewardship passes from the keepers who failed it — not the inheritance taken from the vine, but the keeping taken from the faithless keepers. The rejected stone become the head of the corner (Mark 12:10-11) is Yahuah's own doing over the same chosen vine.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:1",
+     "tgt": "apocrypha/2-esdras 5:23",
+     "member_note": "2 Esdras 5:23 — *you have chosen you one only vine.* The vineyard let out to husbandmen at Mark 12:1 was the owner's choice, never the keepers'."
+    },
+    {
+     "src": "12:9",
+     "tgt": "apocrypha/2-esdras 5:27",
+     "member_note": "2 Esdras 5:27 — *among all the multitudes of people you have gotten you one people.* The lord of the vineyard at Mark 12:9 takes back the keeping of a people that was always his."
+    },
+    {
+     "src": "12:9",
+     "tgt": "apocrypha/2-esdras 5:29",
+     "member_note": "2 Esdras 5:29 — *they which did gainsay your promises, and believed not your covenants, have trodden them down.* The husbandmen of Mark 12:9 carry the same unbelief inside the hedge, and meet the same owner."
+    }
+   ]
+  },
+  {
+   "slug": "mark-12-the-elohim-of-the-living-and-the-souls-of-the-righteous-in-wisdom-of-solomon",
+   "title": "The Elohim of the living and the souls of the righteous in Wisdom of Solomon",
+   "anchor": "Mark 12:26-27",
+   "anchored_in_this_book": true,
+   "member_count": 2,
+   "summary_md": "Mark 12:18-27's resurrection-argument against the Sadducees — who say there is no resurrection — turns on the bush-revelation: *have ye not read in the book of Moses, how in the bush Elohim (God) spake unto him, saying, I am the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob? He is not the Elohim (God) of the dead, but the Elohim (God) of the living.* The Hebrew library's Wisdom of Solomon had already named the architecture the King reads. Wisdom 3:1 names the souls-of-the-righteous-in-the-Father's-hand: *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom 3:4 names the hope-full-of-immortality the resurrection reaches toward: *though they be punished in the sight of men, yet is their hope full of immortality.* The patriarchs are alive to the Father because the souls of the righteous are held in his hand against the resurrection; the Sadducees err because they know neither the scriptures nor the power of Elohim. The wisdom-stream had already named the righteous as living in the Father's hand and carrying a hope full of immortality; the gospel names the same in the bush-revelation, and names the resurrection that hope reaches toward.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:27",
+     "tgt": "apocrypha/the-wisdom-of-solomon 3:1",
+     "member_note": "Wisdom of Solomon 3:1 — *the souls of the righteous are in the hand of Yahuah (God).* Why the fathers are living to the Father — *He is not the Elohim (God) of the dead, but the Elohim (God) of the living* (Mark 12:27)."
+    },
+    {
+     "src": "12:26",
+     "tgt": "apocrypha/the-wisdom-of-solomon 3:4",
+     "member_note": "Wisdom of Solomon 3:4 — *though they be punished in the sight of men, yet is their hope full of immortality.* The hope the bush bears witness to at Mark 12:26 — the Elohim (God) of Abraham, Isaac and Jacob, long after their burial."
+    }
+   ]
+  },
+  {
+   "slug": "tehillim-110-1-davids-lord-formed-at-the-right-hand",
+   "title": "Psalm 110:1 — David's Lord, the Formed at the right hand of the Formless",
+   "anchor": "Mark 12:35-37",
+   "anchored_in_this_book": true,
+   "member_count": 13,
+   "summary_md": "*David himself said by the Ruach HaKodesh (Holy Spirit), Yahuah (the LORD) said to my Lord, Sit thou on my right hand* (Mark 12:36). Yahusha (Jesus) puts the question to the temple crowd and lets it hang: David called the Messiah his Lord, so the son of David is more than David's son. The psalm itself says it plainly: *Yahuah (the LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* (Psalm 110:1). The first Lord is Yahuah speaking; the second is the one David bows to as his own sovereign. One speaks, the other sits at his right hand. That is the Father, who has no form, speaking to the Son, who is his form made visible, and it is Yahusha's own mouth that hands the people the verse in the days before the cross. Peter preaches the same verse at Pentecost (*Yahuah (the LORD) said unto my Lord,* Acts 2:34), Hebrews opens with it (*sit on my right hand, until I make thine enemies thy footstool,* Hebrews 1:13), and Paul carries the footstool forward to the end of the reign (*for he must reign, till he hath put all enemies under his feet,* 1 Corinthians 15:25).\n\nEnoch saw the same throne and the same two figures. The one who sits was named before anything was made: *And at that hour that Son of Adam was named In the presence of Yahuah (Lord) of Spirits, And his name before the Head of Days.* (1 Enoch 48:2). And the Head of Days speaks of him as his own: *On that day Mine Elect One shall sit on the throne of glory And shall try their works, And their places of rest shall be innumerable. And their souls shall grow strong within them when they see Mine elect ones, And those who have called upon My glorious name:* (1 Enoch 45:3). The seat at the right hand is not two gods and it is not one person in two poses. It is the Father and the Son he brought forth, in the relation they have always had, written into the one verse of the Psalms the apostles quote more than any other.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:36",
+     "tgt": "canon/psalms 110:1",
+     "member_note": "*Yahuah (the LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* The Tanakh-anchor: YHWH speaks to David's Lord; David addresses the second one as Lord (Adonai). The Markan citation puts the Father speaking to the Son at his right hand in David's own mouth."
+    },
+    {
+     "src": "12:36",
+     "tgt": "canon/matthew 22:44",
+     "member_note": "The Matthean parallel to the Markan Davidic-Lord challenge — *Yahuah (the LORD) said unto my Lord, Sit thou on my right hand, till I make thine enemies thy footstool* — same Tehillim (Psalm) 110:1 citation, same Father-Son architecture in the temple-courts."
+    },
+    {
+     "src": "12:36",
+     "tgt": "canon/luke 20:42",
+     "member_note": "The Lukan parallel — *David himself saith in the book of Tehillim (Psalms), Yahuah (the LORD) said unto my Lord, Sit thou on my right hand* — the three-synoptic witness to the King's own disclosure of the Tehillim (Psalm) 110:1 architecture."
+    },
+    {
+     "src": "12:36",
+     "tgt": "canon/acts 2:34",
+     "member_note": "Peter at Pentecost: *Yahuah (the LORD) said unto my Lord, Sit thou on my right hand, until I make thy foes thy footstool.* The apostolic preaching opens with the same Tehillim (Psalm) 110:1 quotation; the resurrection and ascension are read as the Father seating the Son at his right hand."
+    },
+    {
+     "src": "12:36",
+     "tgt": "canon/1-corinthians 15:25",
+     "member_note": "*For he must reign, till he hath put all enemies under his feet.* Paul walks the same footstool-imagery; the reign-until-enemies-are-footstool is the Tehillim (Psalm) 110:1 architecture in Pauline form."
+    },
+    {
+     "src": "12:36",
+     "tgt": "canon/hebrews 1:13",
+     "member_note": "*Sit on my right hand, until I make thine enemies thy footstool.* The Hebrews-author carries the same Tehillim (Psalm) 110:1 quotation as the Father's word to the Son — never spoken to any angel, only to the Son."
+    }
+   ]
+  },
+  {
+   "slug": "i-am-statements-as-formed-cloud-rider-self-identification",
+   "title": "The *I am* statements as Formed cloud-rider self-identification",
+   "anchor": "John 8:58",
+   "anchored_in_this_book": false,
+   "member_count": 29,
+   "summary_md": "The gospel of John strings seven *I am* statements through its body — the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way, the vine — and one anchoring *before Avraham (Abraham) was, I am* that ties the whole sequence to a single self-disclosure at Sinai. The inherited reading treats these as metaphor or as the Hellenistic philosophical *I am.* They are neither. They are the Formed one's repeated self-identification as the same *I am* who spoke from the burning bush, the same Formed cloud-rider who appeared to the patriarchs, the same one Yeshayahu (Isaiah) heard say *I, even I, am he* through the gathering prophecies of chapters 41 through 46.\n\n*And Elohim (God) said unto Mosheh (Moses), I AM THAT I AM: and he said, Thus shalt thou say unto the children of Yashar'el (Israel), I AM hath sent me unto you.* (Exodus 3:14)\n\n*Yahusha (Jesus) said unto them, Verily, verily, I say unto you, Before Avraham (Abraham) was, I am.* (John 8:58)\n\n*Ye are my witnesses, saith Yahuah (the LORD), and my servant whom I have chosen: that ye may know and believe me, and understand that I am he: before me there was no El (God) formed, neither shall there be after me. I, even I, am Yahuah (the LORD); and beside me there is no saviour.* (Isaiah 43:10-11)\n\nThe *I am* of John 8:58 is not a philosophical claim about timeless existence. It is the Formed one naming himself as the same Formed one who appeared in the bush, walked in the garden in the cool of the day, wrestled with Ya'aqov (Jacob) at the Yabbok, sat upon the throne high and lifted up in Yeshayahu's (Isaiah's) vision, and rode the cloud across the Tanakh's theophanies. The Formless source — the Father — is not seen and not named in this register. The Formed Word is what the *I am* names. The men who picked up stones at the end of John 8 understood exactly what was being claimed; that is why they reached for the stones.\n\nThe seven thematic *I am* statements all carry the same weight. Each names a covenant function the Tanakh assigned to Yahuah (the LORD) himself, and each lands it on Yahusha (Jesus) as the Formed cloud-rider in flesh. The shepherd, the bread, the light, the door, the resurrection — these are Yahuah's (the LORD's) functions in the prophets, restored to the body that took them on at the incarnation.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:10",
+     "tgt": "canon/psalms 118:22",
+     "member_note": "*The stone which the builders refused is become the head stone of the corner. This is Yahuah's (the LORD's) doing* (Tehillim/Psalm 118:22-23). Formed-cloud-rider self-identification by Tanakh-citation. **Q15 OT-quotation KEEP flag** queued for S184."
+    },
+    {
+     "src": "12:10",
+     "tgt": "canon/isaiah 28:16",
+     "member_note": "*Behold, I lay in Tsion (Zion) for a foundation a stone* (Yeshayahu/Isaiah 28:16)."
+    },
+    {
+     "src": "12:10",
+     "tgt": "canon/daniel 2:34",
+     "member_note": "*Thou sawest till that a stone was cut out without hands* (Daniyel/Daniel 2:34-35)."
+    },
+    {
+     "src": "12:35",
+     "tgt": "canon/psalms 110:1",
+     "member_note": "*Yahuah (the LORD) said unto my Lord, Sit thou at my right hand* (Tehillim/Psalm 110:1). The Markan Davidic-Lord challenge is a Formed-cloud-rider self-identification by Tanakh-citation. **Q15 OT-quotation KEEP flag** queued for S184."
+    }
+   ]
+  },
+  {
+   "slug": "heart-torah-not-abolition",
+   "title": "Heart Torah Not Abolition",
+   "anchor": "Matthew 5:17-19",
+   "anchored_in_this_book": false,
+   "member_count": 24,
+   "summary_md": "Yahusha (Jesus) at Matt 5:17-19 preemptively denies the antinomian misreading of his ministry. He has NOT come to destroy the law or the prophets; he has come to FILL them up to their intended substance. Until heaven and earth pass, one jot or one tittle does not pass from the law. The pulpit that teaches the breaking of even the least commandment is named LEAST in the kingdom of heaven. Matthew 5:19 is the New Testament companion of 1 John 2:3-4 — both verses say the same thing in different grammar: keeping the commandments — and teaching others to keep them — is the proof of knowing him. The thread carries the load-bearing anti-antinomian declaration of the Sermon on the Mount, tied back to the Tanakh's continuing-Torah witnesses and forward to every NT passage that reaffirms the Torah's standing.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:28",
+     "tgt": "canon/jeremiah 31:33",
+     "member_note": "*I will put my law in their inward parts, and write it in their hearts* (Yirmeyahu/Jeremiah 31:33)."
+    }
+   ]
+  },
+  {
+   "slug": "wicked-husbandmen-prophets-slain-house-desolate-and-the-tribes-gathered-as-from-the-beginning",
+   "title": "The wicked husbandmen — prophets slain, house desolate, corrupt shepherds judged, and the tribes of Ya'aqov (Jacob) gathered as from the beginning",
+   "anchor": "Matthew 21:33-46",
+   "anchored_in_this_book": false,
+   "member_count": 58,
+   "summary_md": "The vineyard is Isaiah's, the vineyard of Yahuah Tseva'ot (LORD of hosts) which is the house of Yashar'el (Israel), and the husbandmen who beat and kill the owner's servants are the men entrusted with it, the leadership, not the people of the vineyard. The servants are the prophets, and the killing is the pattern the whole Tanakh records. Ezra heard the Father name it: *I sent to you my servants the prophets, whom you have taken and slain, and torn their bodies in pieces, whose blood I will require of your hands* (2 Esdras 1:32), and name its consequence: *your house is desolate, I will cast you out as the wind does stubble* (2 Esdras 1:33), which is what Yahusha (Jesus) says to the city at the end of chapter 23 and shows the disciples at the start of chapter 24. Last of all the owner sends his son, and the crowd itself pronounces the sentence: *They say unto him, He will miserably destroy those wicked men, and will let out his vineyard unto other husbandmen, which shall render him the fruits in their seasons.* (Matthew 21:41). Enoch watched that sentence carried out in the dream of the sheep. The Lord of the sheep handed his flock to seventy shepherds with a count of how many might be destroyed, *And I saw till those shepherds pastured in their season, and they began to slay and to destroy more than they were bidden, and they delivered those sheep into the hand of the lions.* (1 Enoch 89:65), and in the end *And those seventy shepherds were judged and found guilty, and they were cast into that fiery abyss.* (1 Enoch 90:25). Then comes the verse the pulpit turned into replacement: *the kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof.* A nation, one, singular in the Greek. Not the Gentile church in place of Yashar'el (Israel); the stewardship taken from the men who held it and given to the fruit-bearing remnant of both houses, gathered as the prophets said. Sirach prayed for exactly that: *gather all the tribes of Ya'aqov (Jacob) together, and inherit you them, as from the beginning* (Ecclesiasticus 36:11). The stone the builders rejected becomes the head of the corner, and the vineyard goes to the tribes brought home.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:1",
+     "tgt": "canon/isaiah 5:1",
+     "member_note": "*The vineyard-parable is the King's deliberate walking of Yeshayahu (Isaiah) 5's vineyard-of-Yahuah-Tseva'ot into the courts of the second temple.* *The vineyard given to others* is the rod-sifting that purges the rebels from among the gathered tribes — not the pagan-replacement the inherited reading hears. *For the vineyard of Yahuah Tseva'ot (the LORD of hosts) is the house of Yashar'el (Israel)* (Yeshayahu/Isaiah 5:7)."
+    },
+    {
+     "src": "12:1",
+     "tgt": "canon/ezekiel 20:37",
+     "member_note": "*I will cause you to pass under the rod, and I will bring you into the bond of the covenant* (Yechezk'el/Ezekiel 20:37-38) — the rod-sifting."
+    }
+   ]
+  },
+  {
+   "slug": "render-unto-caesar-and-the-image-of-elohim-stamped-on-man-in-sirach-and-wisdom-of-solomon",
+   "title": "Render unto Caesar — Sirach 17 and Wisdom of Solomon's witness to the image-of-Elohim stamped on man at Matt 22:15-22",
+   "anchor": "Matthew 22:15-22",
+   "anchored_in_this_book": false,
+   "member_count": 10,
+   "summary_md": "Matt 22:15-22's tribute-to-Caesar pericope — the Pharisees-and-Herodians united-against-the-King at a forced-binary-trap, the Roman-denarius bearing Tiberius Caesar's image-and-superscription, the King's-question *whose is this image and superscription?*, and the King's-answer *render therefore unto Caesar the things which are Caesar's; and unto Elohim (God) the things that are Elohim's (God's)* — read against the wisdom-stream's direct articulation of the image-of-Elohim-stamped-on-man and the law-of-life-for-an-heritage substance. Four moves: Sirach (Ecclesiasticus) 17:3 names the wisdom-stream verbal-anchor for *he made them according to his image* — Sirach 17 carries the Bereshit (Genesis) 1:26-27 creation-substance forward; Sirach 17:11 names the *law of life for an heritage* substance — the Torah given to the citizen-stamped-with-the-Father's-image as the inheritance (Sirach 24:23 names the architecture explicitly as *the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Ya'aqov (Jacob)*); Wisdom of Solomon 2:23 names the *image of his own eternity* substance — the citizen-stamped-with-the-image-of-Elohim's-own-eternity; Wisdom of Solomon 9:1 names the *made all things with thy word* substance — the same Word the apostle Yochanan (John) walks at John 1:1-3 through-whom-all-things-were-made. The framework reads the cluster carefully. The Greek *eikōn* the King uses at v.20 is the same Septuagint-Greek the Genesis 1:26-27 creation-substance carries; the citizen bears the image of the Father the same way the coin bears the image of Caesar — what is stamped with the Father's-image belongs to the Father. Per Red Line #4: Torah is NOT the curse but the law-of-life-for-an-heritage Sirach 17:11 names the wisdom-stream-substance for. Per the framework's reading of the natural-administration: the King's-answer is NOT the post-Constantinian collapse-of-two-co-equal-spheres; the natural-administration operates under the principalities-and-powers-of-the-darkness (Ephesians 6:12) the Father permits-for-an-age, with the categorical-precedence the apostle Kefa (Peter) walked-out at Acts 5:29 when the natural-administration-walks-against-the-Father (the Tanakh-pattern of Shadrakh (Shadrach) + Meishakh (Meshach) + Aved-Nego (Abed-nego) at Daniel 3, Daniel at Daniel 6, the prophet Eliyahu (Elijah) at 1 Kings 18, the apostle Yochanan (John)'s apocalyptic-vision at Revelation 13's beast-and-mark substance). The wisdom-stream had named the image-architecture; the King brings the substance into-the-Pharisaic-and-Herodian-system's-face at the tribute-coin.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:13",
+     "tgt": "canon/genesis 1:27",
+     "member_note": "*Render to Caesar the things that are Caesar's, and to Elohim (God) the things that are Elohim's.* The Caesar's-image-on-the-coin pays the Caesar; the Elohim-image-on-the-man (Bereshit/Genesis 1:27) owes the whole man to the Father. NOT antinomian state-loyalty teaching."
+    }
+   ]
+  },
+  {
+   "slug": "love-of-yahuah-and-love-of-neighbor-as-the-shema-walked-out-in-sirach-and-wisdom-of-solomon",
+   "title": "Love of Yahuah and love of neighbor as the Shema walked out — Sirach 7, 17, 28 and Wisdom of Solomon 6's wisdom-stream witness to Matt 22:34-40",
+   "anchor": "Matthew 22:34-40",
+   "anchored_in_this_book": false,
+   "member_count": 20,
+   "summary_md": "Matt 22:34-40's great-commandment question — the Pharisaic-lawyer-substance (*nomikos* — the Torah-specialist) tempting the King with the rabbinic-ranking-game over the 613 mitzvot; the King's Shema-citation of Devarim (Deuteronomy) 6:4-5 plus the Vayikra (Leviticus) 19:18 love-thy-neighbor substance; and the closing *on these two commandments hang all the law and the prophets* (Greek *krematai* — suspension-from-a-load-bearing-point, NOT the substance-of-replacement-of-the-Torah-by-the-two) — read against the wisdom-stream's direct articulation of the love-Yahuah-with-all-thy-strength + commandment-concerning-the-neighbor + forgive-and-remember-the-covenant + love-is-the-keeping-of-her-laws substance. Five moves: Sirach (Ecclesiasticus) 7:30 names THE direct verbal-anchor for *love him that made you with all your strength* — the Shema-substance of Devarim (Deuteronomy) 6:5 carried-forward at the wisdom-stream-register; Sirach 17:14 names THE direct verbal-anchor for *every man commandment concerning his neighbour* — the Leviticus 19:18 substance carried-forward and named-explicitly as the Father giving-every-man-commandment-concerning-his-neighbor from-the-beginning; Sirach 28:2 names the forgive-your-neighbor substance the King will-walk at Matt 6:14-15 and the unforgiving-servant parable at Matt 18:23-35; Sirach 28:7 names the remember-the-commandments-and-the-covenant substance — binding-the-commandments-and-the-covenant together in one substance, the same architecture the King walks at Matt 22:40 (the two-commandments and the Torah-and-the-prophets are one-substance); Wisdom of Solomon 6:18 names *love is the keeping of her laws* — the same substance the apostle Yochanan (John) names explicitly at 1 John 5:2-3 (*this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous*). The framework reads the cluster in continuity with the heart-Torah-architecture of Jeremiah 31:31-34 + Ezekiel 36:26-27 + Devarim (Deuteronomy) 30:6 + Devarim 11:1 + Micah 6:8 + Hosea 6:6 — the love-of-the-Father and the keeping-of-the-commandments are one-substance walked-out from-the-inside through the new-heart-and-new-spirit. Per Red Line #4: Torah is NOT the curse; per Red Line #5: love-of-Father is NOT pitted against Torah; per Red Line #6: the Spirit is NOT separated from Torah. The wisdom-stream had walked the substance centuries before the King brings it into-the-Pharisaic-system's-face in the Temple-court; the apostolic-restatement at Romans 13:8-10 (*love is the fulfilling of the law*) + Galatians 5:14 + James 2:8 + 1 John 4:20-21 + 1 John 5:2-3 carries the substance forward. The substance is NOT the post-Reformation collapse-of-the-Torah-into-the-two; the substance is the Torah-and-the-prophets as the detailed-walking-out of love-of-Father and love-of-neighbor in the substantive life of the citizen-of-the-kingdom.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:28",
+     "tgt": "canon/leviticus 19:18",
+     "member_note": "*Thou shalt love thy neighbour as thyself* (Vayikra/Leviticus 19:18)."
+    },
+    {
+     "src": "12:28",
+     "tgt": "canon/deuteronomy 6:4",
+     "member_note": "*Hear, O Yashar'el (Israel): Yahuah Eloheinu (the LORD our God) is one Yahuah (LORD)* (Devarim/Deuteronomy 6:4-5). The Greatest-Commandment answer quotes the Shema. **Q15 OT-quotation KEEP flag** queued for S184."
+    }
+   ]
+  },
+  {
+   "slug": "the-pride-and-religious-status-architecture-in-sirach",
+   "title": "The pride-and-religious-status architecture — Sirach's wisdom-stream witness to the kingdom-inversion the King walks-against at Matt 23:1-12",
+   "anchor": "Matthew 23:1-12",
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "Matt 23:1-12's introduction — *the scribes and the Pharisees sit in Mosheh's (Moses's) seat* + *they say, and do not* + the heavy-burdens-the-leadership-substance-binds-on-others-while-not-moving-them-with-one-finger + the for-to-be-seen-of-men display of broadened-Tefillin and enlarged-Tsitsit (the *making-broad* and *enlarging* of the Torah-substance for the display, NOT the Tefillin or Tsitsit themselves — the King-of-Yashar'el (Israel) walked-the-Tsitsit himself per Matt 9:20 and 14:36) + the love-of-uppermost-rooms-at-feasts-and-chief-seats-in-the-synagogues + the categorical-rejection-of-religious-paternity-titles (NOT against the Hebrew-teaching-relationship the apostles still walked or the natural-father-honor the King walked at the cross at John 19:26-27, but against the substance-of-religious-status the leadership-substance loved) + the kingdom-inversion-substance (*he that is greatest among you shall be your servant*) — read against the wisdom-stream's direct articulation of the pride-and-religious-status architecture in Sirach (Ecclesiasticus). Four moves: Sirach 10:14 names the Yahuah-casting-down-thrones-of-proud-princes substance the kingdom-inversion at Matt 23:12 walks-from; Sirach 3:18 names the greater-you-are-more-humble-thyself substance the King names at Matt 23:11; Sirach 7:4 names the seek-not-preeminence substance the King walks-against at Matt 23:6; Sirach 32:1 names THE direct verbal-anchor for the master-of-the-feast-lift-not-thyself-up substance the King walks-against at Matt 23:6's *uppermost rooms at feasts*. The framework reads the cluster against the inherited-Christian-pulpit's collapse of the wisdom-stream into mere-piety-literature — Sirach carries the same Father's-voice the Tanakh-prophets and the King walk-from, and the kingdom-inversion-substance is the same substance the prophet-Mishlei (Proverbs) walks at Proverbs 16:18 and 29:23, the apostle-Ya'aqov (James) walks at James 4:6, 10, the apostle-Kefa (Peter) walks at 1 Peter 5:5-6, and the King walks at the foot-washing-substance of John 13:13-14. The system-not-people posture holds throughout — the substance the King walks-against is the leadership-substance-of-religious-status, NOT the people the leadership-substance victimizes.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:38",
+     "tgt": "canon/matthew 23:5",
+     "member_note": "*Beware of the scribes* — long-clothing, marketplace-salutations, chief-seats. The Matthean parallel of the same indictment."
+    }
+   ]
+  },
+  {
+   "slug": "effort-over-accomplishment",
+   "title": "Effort over accomplishment — the same God says both",
+   "anchor": "Proverbs 24:16",
+   "anchored_in_this_book": false,
+   "member_count": 77,
+   "summary_md": "The Reformation reader has been shaped to believe two thoughts cannot stand in the same paragraph. The same God who said *not for your righteousness do I do this, but for my own name's sake* — also said *depart from me, ye that work iniquity, I never knew you.* The same God who said *for by grace are ye saved through faith* — also said *whosoever hath sinned against me, him will I blot out of my book.* The same God who said *I will give you a new heart* — also said *ye shall loathe yourselves in your own sight for your iniquities.*\n\nThe Reformation kept the *for my name's sake* half and put a period where there should have been a colon. The rabbinic system kept the *depart from me* half and built a flesh-righteousness gospel. The framework holds both halves because scripture holds both halves. The place where they hold together is the phrase that names the diagnostic: **effort over accomplishment.**\n\n*\"For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.\"* (Proverbs 24:16)\n\nThe just is not the man who never fell. The wicked is not the man who failed to accomplish. What separates them is not the verdict — *none worthy* has already fallen on every flesh — but the heart's response. The just rises. The wicked *stops his ears* (Proverbs 28:9; Zechariah 7:11-12; Acts 7:57). Open ears and a returning heart, even after seven falls, is the sign of life; stopped ears, even after a hundred sermons, is the sign of death.\n\nThe new heart's signature response to grace is not the boast. It is the hanging head — *ye shall loathe yourselves in your own sight for your iniquities* (Ezekiel 36:31; 20:43; Job 42:5-6; Isaiah 6:5; Daniel 9:5). The Reformation gospel produces a head that holds itself up because it is *saved.* The rabbinic gospel produces a head that holds itself up because it is *righteous.* The framework's new heart produces a head that goes lower the more it sees His mercy.\n\n*\"Remember the former things of old: for I am El, and there is none else; I am Elohim (God), and there is none like me, Declaring the end from the beginning, and from ancient times the things that are not yet done, saying, My counsel shall stand, and I will do all my pleasure.\"* (Isaiah 46:9-10)\n\nThe whole architecture is sealed by the end the Father declared from the beginning. The end is the gathering — the twelve tribes home, the new heart given, the kingdom of priests, the Way restored. Every system that denies the gathering denies the end; every system that denies the end calls Him a liar; to call Him a liar is to reject the mercy that hangs on His name. The architecture stands or falls as one piece.\n\nCompanion threads: `grace-from-names-sake` carries the name's-sake-mercy pillar; `new-heart` carries the Torah-internalized pillar; `post-harvest-sifting` carries the wheat-sifting pillar; `grace-and-the-opportunity-that-can-be-lost` carries the standing-can-be-forfeit warning at the Matt 6 anchor. This thread anchors the architecture at the Proverbs 24:16 hinge and adds the stopped-ears discriminator, the hanging-heads sign, and the end-declared seal.",
+   "members_in_this_chapter": [
+    {
+     "src": "12:41",
+     "tgt": "canon/1-samuel 16:7",
+     "member_note": "*Man looketh on the outward appearance, but Yahuah (the LORD) looketh on the heart* (1 Sh'mu'el/Samuel 16:7)."
+    },
+    {
+     "src": "12:41",
+     "tgt": "canon/proverbs 24:16",
+     "member_note": "*The widow's two mites and the rich-man's much give the same Elohim (God) the more and the less by the same standard.* The widow's effort is what is *more*."
+    }
+   ]
+  },
+  {
+   "slug": "false-inclusion-rebuttal",
+   "title": "The olive tree is Yashar'el — both branches, all the way through",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 5,
+   "summary_md": "Romans 11:17-24 is the verse the inclusion gospel hangs on. The inherited reading hears *wild olive grafted in* and pictures non-Yashar'eli (non-Israelite) outsiders being added to the covenant tree by faith-confession. The Tanakh source forbids that reading. Both branches on the olive tree are Yashar'el (Israel).\n\n*\"Yahuah (the LORD) called thy name, A green olive tree, fair, and of goodly fruit\"* (Jeremiah 11:16). The olive IS Yashar'el (Israel). The tree is the covenant lineage planted in Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob), carried through the twelve tribes.\n\nThe natural branches are not a living group today. They are the covenant lineage of Yashar'el (Israel) — the line of Adam carried forward through the patriarchs into the twelve tribes — broken off when both houses fell into unbelief and were scattered. The forefathers who walked the covenant faithfully in their lifetimes (Avraham (Abraham), Yitschaq (Isaac), Ya'aqov (Jacob), Mosheh (Moses), David, the prophets, the faithful unnamed of every generation back) are asleep, awaiting the first resurrection. *\"Elohim (God) is able to graft them in again\"* (Romans 11:23) — into their own root, at the resurrection. Even Paul did not presume on attaining it.\n\nThe wild olive branches are us — the living descendants of the broken-off. Both modern Yahudah (Judah) and the modern scattered seed of Yashar'el (Israel) are children of the broken-off. The wild olive does not partake of the root by mere faith-confession in this age. The wild olive comes home through the journey the prophets named: *gathered out of the nations* (Ezekiel 37:21) -> *brought under the rod* (Ezekiel 20:37) where the rod sifts and *purges out the rebels* (Ezekiel 20:38) -> *brought into the bond of the new covenant* (Jeremiah 31:31) -> and then *grafted into the natural root of the fathers* (Romans 11:24). The grafting is the destination of the journey. Not the doorway.\n\nThe cause-and-effect reversal that distinguishes the truth from the inclusion gospel: *if you hear, you are sons of Avraham (Abraham). You are sons of Adam. You are the seed of promise. You are heirs of the covenant.* You did not choose to hear and *become* these things. You heard because you *are* these things. *\"My sheep hear my voice... ye believe not, because ye are not of my sheep\"* (John 10:27, 26). Hearing reveals what was always true. The church says *if you hear and confess, you become a child of Yahuah (the LORD).* Scripture says *if you are a child of Yahuah (the LORD), you will hear when he calls.*\n\nNo name is added after the foundation of the world. Names can only be blotted out, and the warning to be blotted out is given to the wheat, not to the tares. The harvest separates wheat from tares; the tares are bound and burned at the harvest because they were never wheat. The gathered wheat then passes through the post-harvest sifting in the wilderness of the peoples — the thread anchored at Ezekiel 20:33-44 — where the rod purges out the rebels from among the gathered.\n\n*\"And so all Yashar'el (Israel) shall be saved: as it is written, There shall come out of Zion the Deliverer, and shall turn away ungodliness from Ya'aqov (Jacob).\"* (Romans 11:26)",
+   "members_in_this_chapter": [
+    {
+     "src": "12:1",
+     "tgt": "canon/jeremiah 11:16",
+     "member_note": "*Yahuah (the LORD) called thy name, A green olive tree, fair, and of goodly fruit* (Yirmeyahu/Jeremiah 11:16-17)."
+    },
+    {
+     "src": "12:1",
+     "tgt": "canon/romans 11:17",
+     "member_note": "*The framework reading refuses the inherited pulpit's vineyard-taken-from-the-Yahudim-and-given-to-the-Gentile-church collapse.* The vineyard is Yashar'el; the rod-sifting purges out the corrupt-shepherds; the nations are not the new husbandmen. *And so all Yashar'el shall be saved* (Romans 11:26)."
+    }
+   ]
+  }
+ ]
+}

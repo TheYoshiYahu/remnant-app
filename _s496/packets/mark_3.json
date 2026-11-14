@@ -1,0 +1,544 @@
+{
+ "book": "mark",
+ "chapter": 3,
+ "chapter_text_kjv": {
+  "1": "And he entered again into the synagogue; and there was a man there which had a withered hand.",
+  "2": "And they watched him, whether he would heal him on the sabbath day; that they might accuse him.",
+  "3": "And he saith unto the man which had the withered hand, Stand forth.",
+  "4": "And he saith unto them, Is it lawful to do good on the sabbath days, or to do evil? to save life, or to kill? But they held their peace.",
+  "5": "And when he had looked round about on them with anger, being grieved for the hardness of their hearts, he saith unto the man, Stretch forth thine hand. And he stretched it out: and his hand was restored whole as the other.",
+  "6": "And the Pharisees went forth, and straightway took counsel with the Herodians against him, how they might destroy him.",
+  "7": "But Yahusha (Jesus) withdrew himself with his disciples to the sea: and a great multitude from Galilee followed him, and from Judæa,",
+  "8": "And from Jerusalem, and from Idumaea, and from beyond Jordan; and they about Tyre and Sidon, a great multitude, when they had heard what great things he did, came unto him.",
+  "9": "And he spake to his disciples, that a small ship should wait on him because of the multitude, lest they should throng him.",
+  "10": "For he had healed many; insomuch that they pressed upon him for to touch him, as many as had plagues.",
+  "11": "And unclean spirits, when they saw him, fell down before him, and cried, saying, Thou art the Son of Elohim (God).",
+  "12": "And he straitly charged them that they should not make him known.",
+  "13": "And he goeth up into a mountain, and calleth unto him whom he would: and they came unto him.",
+  "14": "And he ordained twelve, that they should be with him, and that he might send them forth to preach,",
+  "15": "And to have power to heal sicknesses, and to cast out devils:",
+  "16": "And Simon he surnamed Peter;",
+  "17": "And James the son of Zebedee, and John the brother of James; and he surnamed them Boanerges, which is, The sons of thunder:",
+  "18": "And Andrew, and Philip, and Bartholomew, and Matthew, and Thomas, and James the son of Alphaeus, and Thaddaeus, and Simon the Canaanite,",
+  "19": "And Judas Iscariot, which also betrayed him: and they went into an house.",
+  "20": "And the multitude cometh together again, so that they could not so much as eat bread.",
+  "21": "And when his friends heard of it, they went out to lay hold on him: for they said, He is beside himself.",
+  "22": "And the scribes which came down from Jerusalem said, He hath Beelzebub, and by the prince of the devils casteth he out devils.",
+  "23": "And he called them unto him, and said unto them in parables, How can Satan cast out Satan?",
+  "24": "And if a kingdom be divided against itself, that kingdom cannot stand.",
+  "25": "And if a house be divided against itself, that house cannot stand.",
+  "26": "And if Satan rise up against himself, and be divided, he cannot stand, but hath an end.",
+  "27": "No man can enter into a strong man’s house, and spoil his goods, except he will first bind the strong man; and then he will spoil his house.",
+  "28": "Verily I say unto you, All sins shall be forgiven unto the sons of men, and blasphemies wherewith soever they shall blaspheme:",
+  "29": "But he that shall blaspheme against the Ruach HaKodesh (Holy Spirit) hath never forgiveness, but is in danger of eternal damnation:",
+  "30": "Because they said, He hath an unclean spirit.",
+  "31": "There came then his brethren and his mother, and, standing without, sent unto him, calling him.",
+  "32": "And the multitude sat about him, and they said unto him, Behold, thy mother and thy brethren without seek for thee.",
+  "33": "And he answered them, saying, Who is my mother, or my brethren?",
+  "34": "And he looked round about on them which sat about him, and said, Behold my mother and my brethren!",
+  "35": "For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother."
+ },
+ "cards": [
+  {
+   "id": 5022,
+   "src": "Mark 3:1",
+   "src_vn": 1,
+   "src_text_live": "And he entered again into the synagogue; and there was a man there which had a withered hand.",
+   "src_text_kjv": "And he entered again into the synagogue; and there was a man there which had a withered hand.",
+   "tgt": "Exodus 20:8",
+   "tgt_text_kjv": "Remember the sabbath day, to keep it holy.",
+   "tgt_context_kjv": {
+    "6": "And shewing mercy unto thousands of them that love me, and keep my commandments.",
+    "7": "Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain.",
+    "8": "Remember the sabbath day, to keep it holy.",
+    "9": "Six days shalt thou labour, and do all thy work:",
+    "10": "But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates:",
+    "11": "For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it."
+   },
+   "old_note": "The withered-hand healing on the Sabbath asks *Is it lawful to do good on the sabbath days, or to do evil? to save life, or to kill?* and exposes the Pharisaic fence that called healing-on-the-Sabbath unlawful while leaving the man broken. The Torah's Sabbath-command protects life and rest; the fence inverted the command into the prohibition of mercy.",
+   "author_thread_hint": "shabbat-controversy-heart-shabbat-vs-pharisaic-fence",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5023,
+   "src": "Mark 3:1",
+   "src_vn": 1,
+   "src_text_live": "And he entered again into the synagogue; and there was a man there which had a withered hand.",
+   "src_text_kjv": "And he entered again into the synagogue; and there was a man there which had a withered hand.",
+   "tgt": "Deuteronomy 5:12",
+   "tgt_text_kjv": "Keep the sabbath day to sanctify it, as Yahuah Elohayka (the LORD thy God) hath commanded thee.",
+   "tgt_context_kjv": {
+    "10": "And shewing mercy unto thousands of them that love me and keep my commandments.",
+    "11": "Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain: for Yahuah (LORD) will not hold him guiltless that taketh his name in vain.",
+    "12": "Keep the sabbath day to sanctify it, as Yahuah Elohayka (the LORD thy God) hath commanded thee.",
+    "13": "Six days thou shalt labour, and do all thy work:",
+    "14": "But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, nor thy manservant, nor thy maidservant, nor thine ox, nor thine ass, nor any of thy cattle, nor thy stranger that is within thy gates; that thy manservant and thy maidservant may rest as well as thou.",
+    "15": "And remember that thou wast a servant in the land of Egypt, and that Yahuah Elohayka (the LORD thy God) brought thee out thence through a mighty hand and by a stretched out arm: therefore Yahuah Elohayka (the LORD thy God) commanded thee to keep the sabbath day."
+   },
+   "old_note": "*Keep the sabbath day to sanctify it.* The Devarim (Deuteronomy) re-naming of the Sabbath-commandment carries the same heart-of-Torah substance the King recovers against the Pharisaic fence.",
+   "author_thread_hint": "shabbat-controversy-heart-shabbat-vs-pharisaic-fence",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5024,
+   "src": "Mark 3:6",
+   "src_vn": 6,
+   "src_text_live": "And the Pharisees went forth, and straightway took counsel with the Herodians against him, how they might destroy him.",
+   "src_text_kjv": "And the Pharisees went forth, and straightway took counsel with the Herodians against him, how they might destroy him.",
+   "tgt": "John 11:47",
+   "tgt_text_kjv": "Then gathered the chief priests and the Pharisees a council, and said, What do we? for this man doeth many miracles.",
+   "tgt_context_kjv": {
+    "45": "Then many of the Yahudim (Jews) which came to Mary, and had seen the things which Yahusha (Jesus) did, believed on him.",
+    "46": "But some of them went their ways to the Pharisees, and told them what things Yahusha (Jesus) had done.",
+    "47": "Then gathered the chief priests and the Pharisees a council, and said, What do we? for this man doeth many miracles.",
+    "48": "If we let him thus alone, all men will believe on him: and the Romans shall come and take away both our place and nation.",
+    "49": "And one of them, named Caiaphas, being the high priest that same year, said unto them, Ye know nothing at all,",
+    "50": "Nor consider that it is expedient for us, that one man should die for the people, and that the whole nation perish not."
+   },
+   "old_note": "*The Pharisees went forth, and straightway took counsel with the Herodians against him.* The Pharisee-Herodian alliance foreshadows the same flesh-credential-system-plus-political-power architecture the Galatian agitators and modern institutional Christianity both rest on.",
+   "author_thread_hint": "pharisaic-sadducean-system-as-judaizer-predecessor",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5027,
+   "src": "Mark 3:14",
+   "src_vn": 14,
+   "src_text_live": "And he ordained twelve, that they should be with him, and that he might send them forth to preach,",
+   "src_text_kjv": "And he ordained twelve, that they should be with him, and that he might send them forth to preach,",
+   "tgt": "Ezekiel 37:15",
+   "tgt_text_kjv": "The word of Yahuah (LORD) came again unto me, saying,",
+   "tgt_context_kjv": {
+    "13": "And ye shall know that I am Yahuah (LORD), when I have opened your graves, O my people, and brought you up out of your graves,",
+    "14": "And shall put my spirit in you, and ye shall live, and I shall place you in your own land: then shall ye know that I Yahuah (LORD) have spoken it, and performed it, saith Yahuah (LORD).",
+    "15": "The word of Yahuah (LORD) came again unto me, saying,",
+    "16": "Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar'el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar'el (Israel) his companions:",
+    "17": "And join them one to another into one stick; and they shall become one in thine hand.",
+    "18": "And when the children of thy people shall speak unto thee, saying, Wilt thou not shew us what thou meanest by these?"
+   },
+   "old_note": "*He ordained twelve, that they should be with him.* The number twelve is not coincidence; the twelve apostles correspond to the twelve tribes of the prophesied restoration (Yechezk'el (Ezekiel) 37:15-22's two-sticks-becoming-one).",
+   "author_thread_hint": "twelve-apostles-twelve-tribes-restoration-architecture",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5028,
+   "src": "Mark 3:14",
+   "src_vn": 14,
+   "src_text_live": "And he ordained twelve, that they should be with him, and that he might send them forth to preach,",
+   "src_text_kjv": "And he ordained twelve, that they should be with him, and that he might send them forth to preach,",
+   "tgt": "Revelation 21:12",
+   "tgt_text_kjv": "And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar'el (Israel):",
+   "tgt_context_kjv": {
+    "10": "And he carried me away in the spirit to a great and high mountain, and shewed me that great city, the holy Jerusalem, descending out of heaven from Elohim (God),",
+    "11": "Having the glory of Elohim (God): and her light was like unto a stone most precious, even like a jasper stone, clear as crystal;",
+    "12": "And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar'el (Israel):",
+    "13": "On the east three gates; on the north three gates; on the south three gates; and on the west three gates.",
+    "14": "And the wall of the city had twelve foundations, and in them the names of the twelve apostles of the Lamb.",
+    "15": "And he that talked with me had a golden reed to measure the city, and the gates thereof, and the wall thereof."
+   },
+   "old_note": "*The wall of the city had twelve foundations, and in them the names of the twelve apostles of the Lamb.* The Revelation 21 New-Yerushalayim architecture names twelve foundations for the twelve apostles, twelve gates for the twelve tribes — the same architecture Mark 3:14 inaugurates.",
+   "author_thread_hint": "twelve-apostles-twelve-tribes-restoration-architecture",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5029,
+   "src": "Mark 3:22",
+   "src_vn": 22,
+   "src_text_live": "And the scribes which came down from Jerusalem said, He has Beelzebub, and by the prince of the devils casts he out devils.",
+   "src_text_kjv": "And the scribes which came down from Jerusalem said, He hath Beelzebub, and by the prince of the devils casteth he out devils.",
+   "tgt": "Mark 7:13",
+   "tgt_text_kjv": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye.",
+   "tgt_context_kjv": {
+    "11": "But ye say, If a man shall say to his father or mother, It is Corban, that is to say, a gift, by whatsoever thou mightest be profited by me; he shall be free.",
+    "12": "And ye suffer him no more to do ought for his father or his mother;",
+    "13": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye.",
+    "14": "And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand:",
+    "15": "There is nothing from without a man, that entering into him can defile him: but the things which come out of him, those are they that defile the man.",
+    "16": "If any man have ears to hear, let him hear."
+   },
+   "old_note": "*The scribes which came down from Yerushalayim (Jerusalem) said, He hath Beelzebub.* The same Pharisaic system that voided Torah by tradition (Mark 7:13) now ascribes the Spirit-work to the unclean spirit.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5030,
+   "src": "Mark 3:28",
+   "src_vn": 28,
+   "src_text_live": "Verily I say unto you, All sins shall be forgiven unto the sons of men, and blasphemies wherewith soever they shall blaspheme:",
+   "src_text_kjv": "Verily I say unto you, All sins shall be forgiven unto the sons of men, and blasphemies wherewith soever they shall blaspheme:",
+   "tgt": "1 John 5:16",
+   "tgt_text_kjv": "If any man see his brother sin a sin which is not unto death, he shall ask, and he shall give him life for them that sin not unto death. There is a sin unto death: I do not say that he shall pray for it.",
+   "tgt_context_kjv": {
+    "14": "And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:",
+    "15": "And if we know that he hear us, whatsoever we ask, we know that we have the petitions that we desired of him.",
+    "16": "If any man see his brother sin a sin which is not unto death, he shall ask, and he shall give him life for them that sin not unto death. There is a sin unto death: I do not say that he shall pray for it.",
+    "17": "All unrighteousness is sin: and there is a sin not unto death.",
+    "18": "We know that whosoever is born of Elohim (God) sinneth not; but he that is begotten of Elohim (God) keepeth himself, and that wicked one toucheth him not.",
+    "19": "And we know that we are of Elohim (God), and the whole world lieth in wickedness."
+   },
+   "old_note": "*He that shall blaspheme against the Ruach HaKodesh (Holy Spirit) hath never forgiveness.* The warning fits 1 Yochanan (John) 5:16-17's *there is a sin unto death* — the hardened disposition that calls the Spirit-work unclean. The mercy is wide; the deliberate calling-of-the-Spirit-unclean is the door closing from the inside.",
+   "author_thread_hint": "blasphemy-against-the-ruach-warning",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5031,
+   "src": "Mark 3:33",
+   "src_vn": 33,
+   "src_text_live": "And he answered them, saying, Who is my mother, or my brethren?",
+   "src_text_kjv": "And he answered them, saying, Who is my mother, or my brethren?",
+   "tgt": "Hosea 1:10",
+   "tgt_text_kjv": "Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).",
+   "tgt_context_kjv": {
+    "8": "Now when she had weaned Lo-ruhamah, she conceived, and bare a son.",
+    "9": "Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God).",
+    "10": "Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).",
+    "11": "Then shall the children of Yahudah (Judah) and the children of Yashar'el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel."
+   },
+   "old_note": "*Whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother.* The kingdom-family is defined by doing-the-Father's-will, not by paternal blood claim alone. The kinship-redefinition is the post-Lo-Ammi naming Hoshea (Hosea) 1:10 promised — *ye are the sons of the living Elohim (God).*",
+   "author_thread_hint": "kinship-redefinition-kingdom-family",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5032,
+   "src": "Mark 3:35",
+   "src_vn": 35,
+   "src_text_live": "For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother.",
+   "src_text_kjv": "For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother.",
+   "tgt": "Matthew 7:21",
+   "tgt_text_kjv": "Not every one that saith unto me, Adonai (Lord), Adonai (Lord), shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.",
+   "tgt_context_kjv": {
+    "19": "Every tree that bringeth not forth good fruit is hewn down, and cast into the fire.",
+    "20": "Wherefore by their fruits ye shall know them.",
+    "21": "Not every one that saith unto me, Adonai (Lord), Adonai (Lord), shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.",
+    "22": "Many will say to me in that day, Adonai (Lord), Adonai (Lord), have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works?",
+    "23": "And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.",
+    "24": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:"
+   },
+   "old_note": "*Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father.* The Matthean parallel of the doing-the-will-as-kingdom-membership architecture; same heart-Torah substance.",
+   "author_thread_hint": "kinship-redefinition-kingdom-family",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "effort-over-accomplishment",
+    "lord-lord-and-torahlessness",
+    "matthew-7-not-every-one-that-saith-lord-lord-but-he-that-doeth-the-will-psalm-6-hosea-8"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "mark-1-3-unclean-spirits-as-the-watchers-bound-offspring-in-1-enoch",
+   "title": "The unclean spirits as the watchers' bound offspring who recognize the Holy One — 1 Enoch",
+   "anchor": "Mark 1:24-11",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Twice in Mark 1-3 the unclean spirits cry out and name what the watching crowds cannot yet say — *I know thee who thou art, the Holy One of Elohim (God)* (Mark 1:24), *Thou art the Son of Elohim (God)* (Mark 3:11). The Enochic library names exactly who they are. 1 Enoch 15:8-9 — *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling. Evil spirits have proceeded from their bodies; because they are born from men and from the holy Watchers is their beginning and primal origin; they shall be evil spirits on earth, and evil spirits shall they be called.* These are the watchers' offspring: the spirits gone forth from the slain giants' flesh. 1 Enoch 15:11 names their appointed end — *thus shall they destroy until the day of the consummation, the great judgement* — which is why the demon at Mark 1:24 asks *art thou come to destroy us?* It knows its judgement-day is fixed. 1 Enoch 16:1, 4 names their sentence — *Say to them therefore: \"You have no peace\"* — the no-peace condition speaking in the demon's *Let us alone.* 1 Enoch 19:1 names the standing-place of their judgement — *here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* The unclean spirits recognize the Formed one before the people do because they were there at the rebellion; the recognition is not the sheep's hearing — the demons know and tremble, and the Son of Adam silences them, because the kingdom is not announced through unclean mouths.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:11",
+     "tgt": "enoch/1-enoch 19:1",
+     "member_note": "*And Uriel said to me: ‘Here shall stand the angels who have connected themselves with women, and their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods, (here shall they stand,) till the day of the great judgement in which they shall be judged till they are made an end of.* (1 Enoch 19:1). 1 Enoch 19:1 names the watcher-spirits and their appointed standing-place of judgement. At Mark 3:11 the unclean spirits *fell down before him, and cried, saying, Thou art the Son of Elohim (God)* — the watcher-administration recognizing the Judge before whom it must one day stand, falling down before the Formed one whose great-judgement-day is named in the Enochic library."
+    }
+   ]
+  },
+  {
+   "slug": "unclean-spirits-recognize-the-holy-one-of-elohim",
+   "title": "Unclean spirits recognize the Holy One of Elohim before the people do",
+   "anchor": "Mark 1:24-12",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "Twice in Mark 1-3 the unclean spirits cry out and name what the watching crowds cannot yet say: *And unclean spirits, when they saw him, fell down before him, and cried, saying, Thou art the Son of Elohim (God).* (Mark 3:11); *Saying, Let us alone; what have we to do with thee, thou Yahusha (Jesus) of Nazareth? art thou come to destroy us? I know thee who thou art, the Holy One of Elohim (God).* (Mark 1:24). They know him because of where they came from. Enoch says the evil spirits on the earth are the spirits of the giants, born of the Watchers who left heaven: *Evil spirits have proceeded from their bodies; because they are born from men and from the holy Watchers is their beginning and primal origin; they shall be evil spirits on earth, and evil spirits shall they be called.* (1 Enoch 15:9), and they know the day fixed for them: *From the days of the slaughter and destruction and death of the giants, from the souls of whose flesh the spirits, having gone forth, shall destroy without incurring judgement—thus shall they destroy until the day of the consummation, the great judgement in which the age shall be consummated, over the Watchers and the godless, yea, shall be wholly consummated.\"* (1 Enoch 16:1). Their fathers stood in heaven before the rebellion. They recognize the Formed one when he walks into a synagogue because they have seen him before. James says the devils also believe, and tremble, and that is the whole difference: a demon's recognition is not a sheep's hearing. The Son of Adam silences them, *Hold thy peace,* and charges them not to make him known, because the kingdom is not announced on the testimony of an unclean spirit. It is announced through the prophets, the apostles, and the sheep who hear his voice.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:11",
+     "tgt": "canon/mark 1:24",
+     "member_note": "*Unclean spirits, when they saw him, fell down before him, and cried, saying, Thou art the Son of Elohim (God).* The pattern set at Mark 1:24 continues — the demons recognize and are silenced, because the kingdom is not announced through unclean mouths. The *they should not make him known* of Mark 3:12 is the same restraint."
+    }
+   ]
+  },
+  {
+   "slug": "mark-3-is-it-lawful-to-do-good-on-the-sabbath-the-withered-hand-deuteronomy-22-isaiah-58",
+   "title": "Is it lawful to do good on the sabbath — the withered hand restored (Deuteronomy 22; Isaiah 58)",
+   "anchor": "Mark 3:1-6",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Yahusha (Jesus) enters the synagogue and finds a man with a withered hand, and the rulers watching to see *whether he would heal him on the sabbath day; that they might accuse him* (Mark 3:2). He sets the question plainly: *Is it lawful to do good on the sabbath days, or to do evil? to save life, or to kill?* (Mark 3:4). The Torah has already answered. *Thou shalt not see thy brother's ass or his ox fall down by the way, and hide thyself from them: thou shalt surely help him to lift them up again.* (Deuteronomy 22:4) — the sabbath does not suspend mercy; to lift up what is fallen is commanded. *Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* (Leviticus 19:18) — and saving life is love of neighbour, the heart of the Torah itself. *A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel.* (Proverbs 12:10) — if the righteous spare a beast, how much more a man; the hardness that would rather see him crippled is the cruelty of the wicked, not the holiness of the day. And Isaiah names what the day is FOR: *If thou turn away thy foot from the sabbath... and call the sabbath a delight, the holy of Yahuah (LORD), honourable; and shalt honour him, not doing thine own ways, nor finding thine own pleasure...* (Isaiah 58:13). Healing makes the sabbath the delight it was given to be. It is the rulers — going forth to *take counsel with the Herodians against him, how they might destroy him* (Mark 3:6) — who do their own deadly pleasure on the holy day. The Son of man is Lord of the sabbath (Mark 2:28); he does not break it, he keeps it as it was meant to be kept and shows the rulers their hardness profaning it.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:4",
+     "tgt": "canon/deuteronomy 22:4",
+     "member_note": "Deuteronomy 22:4 — *Thou shalt not see thy brother's ass or his ox fall down by the way, and hide thyself from them: thou shalt surely help him to lift them up again.* The Torah commands the sabbath-mercy Yahusha (Jesus) practices."
+    },
+    {
+     "src": "3:4",
+     "tgt": "canon/leviticus 19:18",
+     "member_note": "Leviticus 19:18 — *thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* To save life is love of neighbour, the heart of the Torah."
+    },
+    {
+     "src": "3:4",
+     "tgt": "canon/proverbs 12:10",
+     "member_note": "Proverbs 12:10 — *A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel.* If the righteous spare a beast, how much more a man; the rulers' hardness is the cruelty of the wicked."
+    },
+    {
+     "src": "3:4",
+     "tgt": "canon/isaiah 58:13",
+     "member_note": "Isaiah 58:13 — *call the sabbath a delight, the holy of Yahuah (LORD), honourable.* Healing makes the sabbath the delight it was given to be; the rulers do their own deadly pleasure on the holy day."
+    }
+   ]
+  },
+  {
+   "slug": "mark-3-he-ordained-twelve-the-tribes-re-gathered-exodus-24-genesis-49",
+   "title": "He ordained twelve — the tribes re-gathered (Exodus 24; Genesis 49)",
+   "anchor": "Mark 3:13-19",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "On the mountain *he ordained twelve, that they should be with him, and that he might send them forth to preach* (Mark 3:14). The number is not incidental — it is covenant. At Sinai, *Moses wrote all the words of Yahuah (LORD), and rose up early in the morning, and builded an altar under the hill, and twelve pillars, according to the twelve tribes of Yashar'el (Israel).* (Exodus 24:4) — twelve pillars for twelve tribes, the whole house standing at the covenant. *All these are the twelve tribes of Yashar'el (Israel): and this is it that their father spake unto them, and blessed them; every one according to his blessing he blessed them.* (Genesis 49:28) — Jacob blessed twelve sons, and from them twelve tribes, Judah and the scattered seed together. *These were the renowned of the congregation, princes of the tribes of their fathers, heads of thousands in Yashar'el (Israel).* (Numbers 1:16) — one head per tribe stood for the congregation in the wilderness. Now twelve are chosen and sent: the house of Yashar'el (Israel) re-gathered around the Son who calls them, the firstfruits of the ingathering the prophets promised — not a new people replacing the old, but the twelve tribes named again in twelve men.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:14",
+     "tgt": "canon/exodus 24:4",
+     "member_note": "Exodus 24:4 — *twelve pillars, according to the twelve tribes of Yashar'el (Israel).* Twelve pillars at Sinai for twelve tribes; now twelve ordained on the mountain."
+    },
+    {
+     "src": "3:14",
+     "tgt": "canon/genesis 49:28",
+     "member_note": "Genesis 49:28 — *All these are the twelve tribes of Yashar'el (Israel)... every one according to his blessing he blessed them.* The twelve Jacob blessed are the pattern the twelve apostles answer to."
+    },
+    {
+     "src": "3:14",
+     "tgt": "canon/numbers 1:16",
+     "member_note": "Numbers 1:16 — *princes of the tribes of their fathers, heads of thousands in Yashar'el (Israel).* One head per tribe stood for the congregation in the wilderness; twelve heads now stand to be sent forth."
+    }
+   ]
+  },
+  {
+   "slug": "mark-3-blasphemy-against-the-ruach-hakodesh-the-presumptuous-sin-isaiah-49-numbers-15",
+   "title": "Blasphemy against the Ruach HaKodesh — the presumptuous sin that hath never forgiveness (Isaiah 49; Numbers 15)",
+   "anchor": "Mark 3:22-30",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "The scribes from Jerusalem say *He hath Beelzebub, and by the prince of the devils casteth he out devils* (Mark 3:22), and Yahusha (Jesus) answers with the parable of the strong man — none can spoil the strong man's house *except he will first bind the strong man* (Mark 3:27). Isaiah had already asked it: *Shall the prey be taken from the mighty, or the lawful captive delivered?* (Isaiah 49:24) — and answered, *Even the captives of the mighty shall be taken away, and the prey of the terrible shall be delivered: for I will contend with him that contendeth with thee, and I will save thy children.* (Isaiah 49:25). The deliverance is Yahuah's (LORD's) own contending, worked through the Formed Son. To call that work the devil's is the unforgivable thing: *he that shall blaspheme against the Ruach HaKodesh (Holy Spirit) hath never forgiveness* (Mark 3:29). The Torah marks this sin precisely. *If one man sin against another, the judge shall judge him: but if a man sin against Yahuah (LORD), who shall intreat for him?* (1 Samuel 2:25) — when the sin is against Yahuah (LORD) himself, there is none to intreat. *But the soul that doeth ought presumptuously... the same reproacheth Yahuah (LORD); and that soul shall be cut off from among his people.* (Numbers 15:30) — the unforgivable sin is the high-handed one, eyes open. *Because he hath despised the word of Yahuah (LORD), and hath broken his commandment, that soul shall utterly be cut off; his iniquity shall be upon him.* (Numbers 15:31). And Matthew draws the same line in the Son's own words: *whosoever speaketh a word against the Son of Adam, it shall be forgiven him: but whosoever speaketh against the Ruach HaKodesh (Holy Spirit), it shall not be forgiven him, neither in this world, neither in the world to come.* (Matthew 12:32). The line is not a moment of weakness but a settled hardening — looking on the manifest holiness of the Ruach HaKodesh (Holy Spirit) and naming it unclean.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:27",
+     "tgt": "canon/isaiah 49:24",
+     "member_note": "Isaiah 49:24 — *Shall the prey be taken from the mighty, or the lawful captive delivered?* The question the strong-man parable answers."
+    },
+    {
+     "src": "3:27",
+     "tgt": "canon/isaiah 49:25",
+     "member_note": "Isaiah 49:25 — *the captives of the mighty shall be taken away... I will contend with him that contendeth with thee, and I will save thy children.* The deliverance is Yahuah's (LORD's) own contending, worked through the Formed Son."
+    },
+    {
+     "src": "3:29",
+     "tgt": "canon/1-samuel 2:25",
+     "member_note": "1 Samuel 2:25 — *if a man sin against Yahuah (LORD), who shall intreat for him?* When sin is against Yahuah (LORD) himself there is none to intreat."
+    },
+    {
+     "src": "3:29",
+     "tgt": "canon/numbers 15:30",
+     "member_note": "Numbers 15:30 — *the soul that doeth ought presumptuously... the same reproacheth Yahuah (LORD); and that soul shall be cut off.* The unforgivable sin is the high-handed one, eyes open."
+    },
+    {
+     "src": "3:29",
+     "tgt": "canon/numbers 15:31",
+     "member_note": "Numbers 15:31 — *Because he hath despised the word of Yahuah (LORD)... that soul shall utterly be cut off; his iniquity shall be upon him.* To despise the word leaves the iniquity standing on the one who hardened himself."
+    },
+    {
+     "src": "3:29",
+     "tgt": "canon/matthew 12:32",
+     "member_note": "Matthew 12:32 — *whosoever speaketh a word against the Son of Adam, it shall be forgiven him: but whosoever speaketh against the Ruach HaKodesh (Holy Spirit), it shall not be forgiven him.* Matthew draws the same line in the Son's own words."
+    }
+   ]
+  },
+  {
+   "slug": "mark-3-binding-the-strong-man-as-the-binding-of-azazel-and-the-spirits-in-1-enoch-and-jubilees",
+   "title": "Binding the strong man — the binding of Azazel and the watcher-spirits in 1 Enoch and Jubilees",
+   "anchor": "Mark 3:27",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "*No man can enter into a strong man's house, and spoil his goods, except he will first bind the strong man; and then he will spoil his house* (Mark 3:27). The binding-then-spoiling architecture the King names is the architecture the Enochic and Jubilees libraries already recorded. 1 Enoch 10:4-6 names the binding of Azazel — *Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert... and on the day of the great judgement he shall be cast into the fire.* 1 Enoch 10:11-12 names the binding of Semjaza and his associates — *bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation.* Jubilees 5:6 carries the same — *He bade us to bind them in the depths of the earth, and behold they are bound in the midst of them, and are (kept) separate.* Jubilees 10:7-8 names the Mastema-negotiation — the chief of the spirits asking that a remnant be left to him *to execute the power of my will on the sons of men* — and Jubilees 10:11 names the verdict — *all the malignant evil ones we bound in the place of condemnation, and a tenth part of them we left that they might be subject before Satan on the earth.* The strong-man whose house the King enters and spoils is the bound watcher-administration and the tenth-part remnant under Satan; the Beelzebub-accusation of Mark 3:22 mistakes the King's spoiling of that remnant for collusion with the prince of the devils. The King's ministry is the incursion that binds the strong-man so the captives can be released — the typological anchor supplied by the libraries that name the binding.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:27",
+     "tgt": "enoch/1-enoch 10:4",
+     "member_note": "1 Enoch 10:4-6 — *Bind Azâzêl hand and foot, and cast him into the darkness... and on the day of the great judgement he shall be cast into the fire.* The binding of Azazel is the typological anchor for Mark 3:27's binding of the strong-man before his house is spoiled."
+    },
+    {
+     "src": "3:27",
+     "tgt": "enoch/1-enoch 10:11",
+     "member_note": "1 Enoch 10:11-12 — *bind them fast for seventy generations in the valleys of the earth, till the day of their judgement.* The binding of Semjaza and the watchers is the same strong-man-bound architecture the King names at Mark 3:27."
+    },
+    {
+     "src": "3:27",
+     "tgt": "jubilees/jubilees 5:6",
+     "member_note": "Jubilees 5:6 — *He bade us to bind them in the depths of the earth, and behold they are bound in the midst of them, and are (kept) separate.* Jubilees carries the same binding-of-the-watchers the strong-man-parable presupposes."
+    },
+    {
+     "src": "3:27",
+     "tgt": "jubilees/jubilees 10:7",
+     "member_note": "Jubilees 10:7-8 — Mastema asks *let some of them remain before me... for if some of them are not left to me, I shall not be able to execute the power of my will on the sons of men.* The Beelzebub-accusation (Mark 3:22) mistakes the King's spoiling of Mastema's remnant for collusion with the prince of the devils."
+    },
+    {
+     "src": "3:27",
+     "tgt": "jubilees/jubilees 10:11",
+     "member_note": "Jubilees 10:11 — *all the malignant evil ones we bound in the place of condemnation, and a tenth part of them we left that they might be subject before Satan on the earth.* The strong-man's remaining household is the tenth-part remnant; Mark 3:27's binding-then-spoiling is the King's incursion against it."
+    }
+   ]
+  },
+  {
+   "slug": "mark-3-whosoever-shall-do-the-will-of-elohim-the-same-is-my-brother-deuteronomy-33-psalm-22",
+   "title": "Whosoever shall do the will of Elohim, the same is my brother — the family by obedience (Deuteronomy 33; Psalm 22)",
+   "anchor": "Mark 3:31-35",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "When his mother and brethren stand without and call for him, Yahusha (Jesus) looks round on those who sit at his feet and says, *Behold my mother and my brethren! For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother.* (Mark 3:34-35). The family of Elohim (God) is reckoned by the DOING of his will — the anti-antinomian seal of the whole chapter. This is Levi's blessing exactly: *Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren... for they have observed thy word, and kept thy covenant.* (Deuteronomy 33:9) — covenant loyalty set above even kindred. The Messiah of Psalm 22 claims just such a kindred: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee.* (Psalms 22:22) — those who do the Father's will are the congregation he names as brethren. And Matthew makes the Father explicit: *whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.* (Matthew 12:50). The will done is the Father's will, and the Formed Son who does that will perfectly gathers as his own household all who keep it. Not the claiming, but the doing, is the seal of the family — grace never sets the will of Elohim (God) aside; it is the very mark of belonging.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:35",
+     "tgt": "canon/deuteronomy 33:9",
+     "member_note": "Deuteronomy 33:9 — *for they have observed thy word, and kept thy covenant.* Levi's blessing: covenant loyalty set above even father, mother, and brethren — the order Yahusha (Jesus) names."
+    },
+    {
+     "src": "3:35",
+     "tgt": "canon/psalms 22:22",
+     "member_note": "Psalms 22:22 — *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee.* The Messiah of Psalm 22 claims a congregation as his brethren."
+    },
+    {
+     "src": "3:35",
+     "tgt": "canon/matthew 12:50",
+     "member_note": "Matthew 12:50 — *whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.* Matthew makes the Father explicit: the will done is the Father's will."
+    }
+   ]
+  },
+  {
+   "slug": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+   "title": "The corban tradition voids the fifth commandment — Sirach",
+   "anchor": "Mark 7:9-13",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "Mark 7:6-13 is the framework's central diagnostic in the King's own mouth: the man-made tradition that voids the commandment of Elohim (God). The corban device is the load-bearing example — *if a man shall say to his father or mother, It is Corban, that is to say, a gift... he shall be free* — and the verdict is *Making the word of Elohim (God) of none effect through your tradition.* The commandment the device voids is the fifth — *Honour thy father and thy mother* — and the Hebrew library's wisdom-stream had already bound that commandment to the fear of Yahuah and named the cost of withholding it. Sirach (Ecclesiasticus) 3:7 makes honour-of-parents the very test of the fear of Yahuah: *He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.* Sirach 3:8 binds honour to deed, not word only: *Honour your father and mother both in word and deed, that a blessing may come upon you from them* — the exact word-AND-deed the corban ruling severs, permitting honour in vow-formula while forbidding the deed of provision. Sirach 3:9 names the cost: *the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations.* The tradition that voids the commandment forfeits the blessing and invites the uprooting. The same flesh-credentialing system that exalts the tradition of the elders over the word of Elohim is the Judaizer architecture the King names here and the apostolic letters confront later; the wisdom-stream had already exposed it by its own standard.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": "Hosea 1:9-10",
+   "anchored_in_this_book": false,
+   "member_count": 67,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Hosea, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:7",
+     "tgt": "canon/ezekiel 34:13",
+     "member_note": "The geography of Mark 3:7-8 is the gathering-map laid bare — *Galilee... Yahudah (Judaea)... Yerushalayim (Jerusalem)... Idumaea... beyond Yarden (Jordan)... Tyre and Sidon.* The Yechezk'el (Ezekiel) 34:13 *I will bring them out from the people, and gather them from the countries* is being shown in Mark 3."
+    },
+    {
+     "src": "3:8",
+     "tgt": "canon/isaiah 11:11",
+     "member_note": "*He shall set up an ensign for the nations, and shall assemble the outcasts of Yashar'el (Israel).* Yeshayahu (Isaiah) 11:11-12's gathering of the outcasts walks into the geography of Mark 3:7-8."
+    }
+   ]
+  },
+  {
+   "slug": "lord-lord-and-torahlessness",
+   "title": "Lord Lord And Torahlessness",
+   "anchor": "Matthew 7:21-23",
+   "anchored_in_this_book": false,
+   "member_count": 12,
+   "summary_md": "Yahusha (Jesus) at Matt 7:21-23 names the institutional-Christian antinomian-gospel community in advance: many at the judgment-day will confess him as Lord twice over, claim active supernatural-ministry under his name (prophesying, casting out demons, doing wonderful works), and hear in return: I NEVER KNEW YOU; depart from me, ye workers of ANOMIA — torahlessness. The Greek anomia is literally without-Torah. The credentials are real-but-insufficient; the verbal-confession is explicit-but-insufficient; the supernatural-acts are evident-but-insufficient. The doing-of-the-Father's-will (= heart-Torah-walking) is what separates the wheat from the unfruitful-wheat at the post-harvest sifting. This is the most-load-bearing NT verse for the contrary-to-Torah test of 1 John 2:3-4 applied to the modern Judaizer movement (institutional Christianity). The thread connects v.21-23 to the Tanakh false-prophet diagnostics (Deut 13, Deut 18), the post-harvest sifting (Ezekiel 20:33-38, Matt 25:31-46, Matt 13:30), the wheat-vs-unfruitful-wheat distinction (the wheat can be sifted into fruitful and unfruitful after the harvest), the grace-that-can-be-lost stream (Hosea 7:13, Ezekiel 18, Ezekiel 33), and the contrary-to-Torah test master-filter (1 John 2:3-4).",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "matthew-7-not-every-one-that-saith-lord-lord-but-he-that-doeth-the-will-psalm-6-hosea-8",
+   "title": "Not every one that saith Lord, Lord — but he that DOETH the will (Psalm 6; Hosea 8)",
+   "anchor": "Matthew 7:21-23",
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "*Not every one that saith unto me, Yahuah (Lord), Yahuah (Lord), shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven* (Matthew 7:21). Here is the anti-antinomian seal of the whole Sermon: the confession of the lips is not the entrance — DOING the Father's will is, and the Father's will is his commandment. And mark the sentence Yahusha (Jesus) pronounces on the workers of lawlessness, *depart from me, ye that work iniquity* (Matthew 7:23) — it is David's own word, *Depart from me, all ye workers of iniquity; for Yahuah (LORD) hath heard the voice of my weeping* (Psalm 6:8). Hosea showed the same hollow cry centuries before: *Yashar'el (Israel) shall cry unto me, My Elohim (God), we know thee* (Hosea 8:2) — yet *Yashar'el (Israel) hath cast off the thing that is good: the enemy shall pursue him* (Hosea 8:3). To cry \"we know thee\" while casting off the good — the Torah — is to be answered, *I never knew you.* The doing is the knowing.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "effort-over-accomplishment",
+   "title": "Effort over accomplishment — the same God says both",
+   "anchor": "Proverbs 24:16",
+   "anchored_in_this_book": false,
+   "member_count": 77,
+   "summary_md": "The Reformation reader has been shaped to believe two thoughts cannot stand in the same paragraph. The same God who said *not for your righteousness do I do this, but for my own name's sake* — also said *depart from me, ye that work iniquity, I never knew you.* The same God who said *for by grace are ye saved through faith* — also said *whosoever hath sinned against me, him will I blot out of my book.* The same God who said *I will give you a new heart* — also said *ye shall loathe yourselves in your own sight for your iniquities.*\n\nThe Reformation kept the *for my name's sake* half and put a period where there should have been a colon. The rabbinic system kept the *depart from me* half and built a flesh-righteousness gospel. The framework holds both halves because scripture holds both halves. The place where they hold together is the phrase that names the diagnostic: **effort over accomplishment.**\n\n*\"For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.\"* (Proverbs 24:16)\n\nThe just is not the man who never fell. The wicked is not the man who failed to accomplish. What separates them is not the verdict — *none worthy* has already fallen on every flesh — but the heart's response. The just rises. The wicked *stops his ears* (Proverbs 28:9; Zechariah 7:11-12; Acts 7:57). Open ears and a returning heart, even after seven falls, is the sign of life; stopped ears, even after a hundred sermons, is the sign of death.\n\nThe new heart's signature response to grace is not the boast. It is the hanging head — *ye shall loathe yourselves in your own sight for your iniquities* (Ezekiel 36:31; 20:43; Job 42:5-6; Isaiah 6:5; Daniel 9:5). The Reformation gospel produces a head that holds itself up because it is *saved.* The rabbinic gospel produces a head that holds itself up because it is *righteous.* The framework's new heart produces a head that goes lower the more it sees His mercy.\n\n*\"Remember the former things of old: for I am El, and there is none else; I am Elohim (God), and there is none like me, Declaring the end from the beginning, and from ancient times the things that are not yet done, saying, My counsel shall stand, and I will do all my pleasure.\"* (Isaiah 46:9-10)\n\nThe whole architecture is sealed by the end the Father declared from the beginning. The end is the gathering — the twelve tribes home, the new heart given, the kingdom of priests, the Way restored. Every system that denies the gathering denies the end; every system that denies the end calls Him a liar; to call Him a liar is to reject the mercy that hangs on His name. The architecture stands or falls as one piece.\n\nCompanion threads: `grace-from-names-sake` carries the name's-sake-mercy pillar; `new-heart` carries the Torah-internalized pillar; `post-harvest-sifting` carries the wheat-sifting pillar; `grace-and-the-opportunity-that-can-be-lost` carries the standing-can-be-forfeit warning at the Matt 6 anchor. This thread anchors the architecture at the Proverbs 24:16 hinge and adds the stopped-ears discriminator, the hanging-heads sign, and the end-declared seal.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "binding-of-the-watchers-typological-anchor-for-binding-the-strong-man",
+   "title": "The binding of the Watchers — Azazel bound hand and foot, and the strong man bound",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 9,
+   "summary_md": "*But if I cast out devils by the Spirit of Elohim (God), then the kingdom of Elohim (God) is come unto you. Or else how can one enter into a strong man’s house, and spoil his goods, except he first bind the strong man? and then he will spoil his house.* (Matthew 12:28-29). The picture of a strong one bound so that his house can be plundered was not drawn fresh for the Pharisees. It is how the Watchers were dealt with, and the library had told it in detail: *And again Yahuah (Lord) said to Raphael: ‘Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein. And place upon him rough and jagged rocks, and cover him with darkness, and let him abide there for ever, and cover his face that he may not see light. And on the day of the great judgement he shall be cast into the fire.* (1 Enoch 10:4-6). The chains were not for him alone: *And he said unto me: ‘These are being prepared for the hosts of Azâzêl, so that they may take them and cast them into the abyss of complete condemnation, and they shall cover their jaws with rough stones as Yahuah (Lord) of Spirits commanded.* (1 Enoch 54:5). Jubilees tells why there are still spirits to cast out at all: *And we did according to all His words: all the malignant evil ones we bound in the place of condemnation, and a tenth part of them we left that they might be subject before Satan on the earth.* (Jubilees 10:11). The devils Yahusha (Jesus) drives out are that tenth, the loose remainder of a host already mostly in chains, and the one they serve is the strong man whose binding is still ahead: *And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years, And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* (Revelation 20:2-3). When the King empties a man of a devil by the Spirit, the house is being spoiled by the one who has the authority to bind its master. That is why he could say the kingdom had come upon them.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:23",
+     "tgt": "canon/matthew 12:26",
+     "member_note": "*How can Satan cast out Satan?... If Satan rise up against himself, and be divided, he cannot stand, but hath an end* (Mark 3:23-26). The divided-house diagnostic refuses the Beelzebub-accusation by exposing its incoherence; the Markan parallel to Matthew 12:26 walks the same logic before the binding-of-the-strong-man verdict."
+    },
+    {
+     "src": "3:27",
+     "tgt": "canon/matthew 12:29",
+     "member_note": "*No man can enter into a strong man's house, and spoil his goods, except he will first bind the strong man; and then he will spoil his house.* The Markan parallel to Matthew 12:29's binding-of-the-strong-man — the same architecture, 1 Enoch 10's chaining of Azazel hand-and-foot and Jubilees 10's binding of nine-tenths of the malignant spirits underlying both gospel-witnesses. The King's ministry is the incursion that binds the strong-man so the captives can be released."
+    }
+   ]
+  }
+ ]
+}

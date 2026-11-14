@@ -1,11 +1,11 @@
-"""S496 — seed496.py <batch> [--tamper text|note|threaded|anchor|partial]  — scratch rehearsal of sql/session496_matthew_<batch>_rebuild.sql
+"""S496 — seed496.py <batch> [--tamper text|note|threaded|anchor|partial]  — scratch rehearsal of sql/session496_<book>_<batch>_rebuild.sql
 on the LOCAL Postgres 16. Drops and recreates database s496_<batch> (role s496/s496), loads ref/schema.sql (minus CREATE EXTENSION /
 gin_trgm_ops), seeds it from the live read-back of the book (every verse, every card with its id and both ends, every thread with its id
 and anchor, every member row) plus stub verses for the anchors the fix sets. Runs the migration TWICE through ref/apply_migration.py (the
 deploy path, wrapped so NOTICE lines show), dumps after run 1 in the read-back shape, runs check496.py on the dump, and after run 2
 asserts the full snapshot is unchanged and the summary reports 0 everywhere. Also asserts NOTHING outside the fix changed (every other
 card note, every other member row, every thread summary byte-identical to the seed).
-Tampers (each: expect RAISE and nothing landed, except partial): text = a Matthew verse's live text changed; note = a card's live note
+Tampers (each: expect RAISE and nothing landed, except partial): text = a source verse's live text changed; note = a card's live note
 edited since the dump; threaded = a card already put in some other thread; anchor = a thread to anchor already anchored elsewhere;
 partial = one card already rewritten and threaded by hand → reported as already there, the rest landed.
 Model: Claude Fable 5.1 (claude-fable-5-1)."""
@@ -129,7 +129,8 @@ async def main(batch, tamper):
             await con.execute("INSERT INTO cross_reference_thread_members (thread_id,cross_reference_id,sort_order,member_note) VALUES ($1,$2,999,'x')", other, c0['id']); want = 'already sits in a thread'
         else:
             if not fx['anchors']: print('no anchors in the fix — tamper anchor skipped'); await con.close(); return 0
-            await con.execute("UPDATE cross_reference_threads SET anchor_verse_id_start = $1, anchor_verse_id_end = $1 WHERE slug = $2", vs[f'canon|{book}|28:20'], fx['anchors'][0]['slug']); want = 'already carries a different anchor'
+            last = max((k for k in vs if k.startswith(f'canon|{book}|')), key=lambda k: tuple(map(int, k.split('|')[2].split(':'))))   # the book's last verse (Matthew 28:20, Mark 16:20, Luke 24:53)
+            await con.execute("UPDATE cross_reference_threads SET anchor_verse_id_start = $1, anchor_verse_id_end = $1 WHERE slug = $2", vs[last], fx['anchors'][0]['slug']); want = 'already carries a different anchor'
         before = await snapshot(); rc, out = run_mig()
         report(f'tamper {tamper}: migration RAISED', rc != 0 and want in out, f"rc {rc}; " + s496line(out))
         report(f'tamper {tamper}: nothing landed', await snapshot() == before)

@@ -1,0 +1,32 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "luke",
+ "chapter": 14,
+ "cards": [
+  {
+   "id": 7055,
+   "prose": "Luke has him at table in a chief Pharisee's house on the Sabbath, and *they watched him* while a man with dropsy stood before him. He asks *Is it lawful to heal on the sabbath day?* (Luke 14:3), and *they held their peace* (Luke 14:4). Mark's answer to the same watching is *The sabbath was made for man*: the day was given for the people who keep it, and he keeps it by healing the man before him.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Mark gives the saying itself, that the sabbath was made for man and not man for the sabbath, which Luke's scene acts out at the table.",
+   "thread": "mark-2-the-sabbath-was-made-for-man-the-son-of-adam-lord-of-the-sabbath-genesis-2-exodus-20-jubilees-2",
+   "flag": ""
+  },
+  {
+   "id": 7056,
+   "prose": "Matthew gives the saying as an invitation, *If any man will come after me*; Luke gives the same cross as a warning, that whoever does not bear it and come after him *cannot be my disciple*. He says it when *there went great multitudes with him* (Luke 14:25), turning to tell the crowd what following costs.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the saying as an invitation to his disciples: deny himself, take up his cross, and follow.",
+   "thread": "matthew-16-take-up-the-cross-the-son-of-man-shall-come-in-glory-rewarding-psalm-49-daniel-7",
+   "flag": ""
+  },
+  {
+   "id": 7057,
+   "prose": "Mark has him look at those sitting round him and ask *Who is my mother, or my brethren?* Luke gives the other half, telling the crowds that whoever comes and does not hate father and mother, wife and children, cannot be his disciple. Hate here is the old way of saying love the one less, and Mark's answer says who stands first: *whosoever shall do the will of Elohim (God), the same is my brother* (Mark 3:35).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Mark gives the question about his mother and brethren, whose answer names the household Luke's saying sets above father and mother.",
+   "thread": "count-the-cost-tower-builder-king-going-to-war-and-the-disciple-who-forsakes-not-all-he-hath",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

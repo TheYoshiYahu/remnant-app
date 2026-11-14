@@ -1,0 +1,376 @@
+{
+ "book": "luke",
+ "chapter": 5,
+ "chapter_text_kjv": {
+  "1": "And it came to pass, that, as the people pressed upon him to hear the word of Elohim (God), he stood by the lake of Gennesaret,",
+  "2": "And saw two ships standing by the lake: but the fishermen were gone out of them, and were washing their nets.",
+  "3": "And he entered into one of the ships, which was Simon’s, and prayed him that he would thrust out a little from the land. And he sat down, and taught the people out of the ship.",
+  "4": "Now when he had left speaking, he said unto Simon, Launch out into the deep, and let down your nets for a draught.",
+  "5": "And Simon answering said unto him, Master, we have toiled all the night, and have taken nothing: nevertheless at thy word I will let down the net.",
+  "6": "And when they had this done, they inclosed a great multitude of fishes: and their net brake.",
+  "7": "And they beckoned unto their partners, which were in the other ship, that they should come and help them. And they came, and filled both the ships, so that they began to sink.",
+  "8": "When Simon Peter saw it, he fell down at Yahusha's (Jesus’) knees, saying, Depart from me; for I am a sinful man, O Adonai (Lord).",
+  "9": "For he was astonished, and all that were with him, at the draught of the fishes which they had taken:",
+  "10": "And so was also James, and John, the sons of Zebedee, which were partners with Simon. And Yahusha (Jesus) said unto Simon, Fear not; from henceforth thou shalt catch men.",
+  "11": "And when they had brought their ships to land, they forsook all, and followed him.",
+  "12": "And it came to pass, when he was in a certain city, behold a man full of leprosy: who seeing Yahusha (Jesus) fell on his face, and besought him, saying, Adonai (Lord), if thou wilt, thou canst make me clean.",
+  "13": "And he put forth his hand, and touched him, saying, I will: be thou clean. And immediately the leprosy departed from him.",
+  "14": "And he charged him to tell no man: but go, and shew thyself to the priest, and offer for thy cleansing, according as Moses commanded, for a testimony unto them.",
+  "15": "But so much the more went there a fame abroad of him: and great multitudes came together to hear, and to be healed by him of their infirmities.",
+  "16": "And he withdrew himself into the wilderness, and prayed.",
+  "17": "And it came to pass on a certain day, as he was teaching, that there were Pharisees and doctors of the law sitting by, which were come out of every town of Galilee, and Judæa, and Jerusalem: and the power of Yahuah (Lord) was present to heal them.",
+  "18": "And, behold, men brought in a bed a man which was taken with a palsy: and they sought means to bring him in, and to lay him before him.",
+  "19": "And when they could not find by what way they might bring him in because of the multitude, they went upon the housetop, and let him down through the tiling with his couch into the midst before Yahusha (Jesus).",
+  "20": "And when he saw their faith, he said unto him, Man, thy sins are forgiven thee.",
+  "21": "And the scribes and the Pharisees began to reason, saying, Who is this which speaketh blasphemies? Who can forgive sins, but Elohim (God) alone?",
+  "22": "But when Yahusha (Jesus) perceived their thoughts, he answering said unto them, What reason ye in your hearts?",
+  "23": "Whether is easier, to say, Thy sins be forgiven thee; or to say, Rise up and walk?",
+  "24": "But that ye may know that the Son of Adam hath power upon earth to forgive sins, (he said unto the sick of the palsy,) I say unto thee, Arise, and take up thy couch, and go into thine house.",
+  "25": "And immediately he rose up before them, and took up that whereon he lay, and departed to his own house, glorifying Elohim (God).",
+  "26": "And they were all amazed, and they glorified Elohim (God), and were filled with fear, saying, We have seen strange things to day.",
+  "27": "And after these things he went forth, and saw a publican, named Levi, sitting at the receipt of custom: and he said unto him, Follow me.",
+  "28": "And he left all, rose up, and followed him.",
+  "29": "And Levi made him a great feast in his own house: and there was a great company of publicans and of others that sat down with them.",
+  "30": "But their scribes and Pharisees murmured against his disciples, saying, Why do ye eat and drink with publicans and sinners?",
+  "31": "And Yahusha (Jesus) answering said unto them, They that are whole need not a physician; but they that are sick.",
+  "32": "I came not to call the righteous, but sinners to repentance.",
+  "33": "And they said unto him, Why do the disciples of John fast often, and make prayers, and likewise the disciples of the Pharisees; but thine eat and drink?",
+  "34": "And he said unto them, Can ye make the children of the bridechamber fast, while the bridegroom is with them?",
+  "35": "But the days will come, when the bridegroom shall be taken away from them, and then shall they fast in those days.",
+  "36": "And he spake also a parable unto them; No man putteth a piece of a new garment upon an old; if otherwise, then both the new maketh a rent, and the piece that was taken out of the new agreeth not with the old.",
+  "37": "And no man putteth new wine into old bottles; else the new wine will burst the bottles, and be spilled, and the bottles shall perish.",
+  "38": "But new wine must be put into new bottles; and both are preserved.",
+  "39": "No man also having drunk old wine straightway desireth new: for he saith, The old is better."
+ },
+ "cards": [
+  {
+   "id": 6991,
+   "src": "Luke 5:14",
+   "src_vn": 14,
+   "src_text_live": "And he charged him to tell no man: but go, and shew thyself to the priest, and offer for your cleansing, according as Moses commanded, for a testimony unto them.",
+   "src_text_kjv": "And he charged him to tell no man: but go, and shew thyself to the priest, and offer for thy cleansing, according as Moses commanded, for a testimony unto them.",
+   "tgt": "Matthew 8:4",
+   "tgt_text_kjv": "And Yahusha (Jesus) saith unto him, See thou tell no man; but go thy way, shew thyself to the priest, and offer the gift that Moses commanded, for a testimony unto them.",
+   "tgt_context_kjv": {
+    "2": "And, behold, there came a leper and worshipped him, saying, Adonai (Lord), if thou wilt, thou canst make me clean.",
+    "3": "And Yahusha (Jesus) put forth his hand, and touched him, saying, I will; be thou clean. And immediately his leprosy was cleansed.",
+    "4": "And Yahusha (Jesus) saith unto him, See thou tell no man; but go thy way, shew thyself to the priest, and offer the gift that Moses commanded, for a testimony unto them.",
+    "5": "And when Yahusha (Jesus) was entered into Capernaum, there came unto him a centurion, beseeching him,",
+    "6": "And saying, Adonai (Lord), my servant lieth at home sick of the palsy, grievously tormented.",
+    "7": "And Yahusha (Jesus) saith unto him, I will come and heal him."
+   },
+   "old_note": "*And he charged him to tell no man: but go, and shew thyself to the priest, and offer for thy cleansing, according as Mosheh (Moses) commanded, for a testimony unto them.* The King sends the cleansed leper to the priest with the Vayikra (Leviticus) 14 offering — the same Torah-affirming move Matthew 8:4 carries.",
+   "author_thread_hint": "messiah-as-torah-affirming-healer",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-8-the-leper-offer-the-gift-moses-commanded-leviticus-14-2-kings-5"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 6994,
+   "src": "Luke 5:34",
+   "src_vn": 34,
+   "src_text_live": "And he said unto them, Can you make the children of the bridechamber fast, while the bridegroom is with them?",
+   "src_text_kjv": "And he said unto them, Can ye make the children of the bridechamber fast, while the bridegroom is with them?",
+   "tgt": "Matthew 9:15",
+   "tgt_text_kjv": "And Yahusha (Jesus) said unto them, Can the children of the bridechamber mourn, as long as the bridegroom is with them? but the days will come, when the bridegroom shall be taken from them, and then shall they fast.",
+   "tgt_context_kjv": {
+    "13": "But go ye and learn what that meaneth, I will have mercy, and not sacrifice: for I am not come to call the righteous, but sinners to repentance.",
+    "14": "Then came to him the disciples of John, saying, Why do we and the Pharisees fast oft, but thy disciples fast not?",
+    "15": "And Yahusha (Jesus) said unto them, Can the children of the bridechamber mourn, as long as the bridegroom is with them? but the days will come, when the bridegroom shall be taken from them, and then shall they fast.",
+    "16": "No man putteth a piece of new cloth unto an old garment, for that which is put in to fill it up taketh from the garment, and the rent is made worse.",
+    "17": "Neither do men put new wine into old bottles: else the bottles break, and the wine runneth out, and the bottles perish: but they put new wine into new bottles, and both are preserved.",
+    "18": "While he spake these things unto them, behold, there came a certain ruler, and worshipped him, saying, My daughter is even now dead: but come and lay thy hand upon her, and she shall live."
+   },
+   "old_note": "*Can ye make the children of the bridechamber fast, while the bridegroom is with them? But the days will come, when the bridegroom shall be taken away from them, and then shall they fast in those days.* The King's bridegroom-self-identification names what Yeshayahu (Isaiah) 62:5 and Hoshea (Hosea) 2:19 already named — Yahuah (the LORD) is the bridegroom of his people.",
+   "author_thread_hint": "bridegroom-messianic-identification",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "fasting-with-mercy-not-without-in-tobit-and-sirach",
+    "matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 6995,
+   "src": "Luke 5:36",
+   "src_vn": 36,
+   "src_text_live": "And he spake also a parable unto them; No man puts a piece of a new garment upon an old; if otherwise, then both the new makes a rent, and the piece that was taken out of the new agreeth not with the old.",
+   "src_text_kjv": "And he spake also a parable unto them; No man putteth a piece of a new garment upon an old; if otherwise, then both the new maketh a rent, and the piece that was taken out of the new agreeth not with the old.",
+   "tgt": "Matthew 9:17",
+   "tgt_text_kjv": "Neither do men put new wine into old bottles: else the bottles break, and the wine runneth out, and the bottles perish: but they put new wine into new bottles, and both are preserved.",
+   "tgt_context_kjv": {
+    "15": "And Yahusha (Jesus) said unto them, Can the children of the bridechamber mourn, as long as the bridegroom is with them? but the days will come, when the bridegroom shall be taken from them, and then shall they fast.",
+    "16": "No man putteth a piece of new cloth unto an old garment, for that which is put in to fill it up taketh from the garment, and the rent is made worse.",
+    "17": "Neither do men put new wine into old bottles: else the bottles break, and the wine runneth out, and the bottles perish: but they put new wine into new bottles, and both are preserved.",
+    "18": "While he spake these things unto them, behold, there came a certain ruler, and worshipped him, saying, My daughter is even now dead: but come and lay thy hand upon her, and she shall live.",
+    "19": "And Yahusha (Jesus) arose, and followed him, and so did his disciples.",
+    "20": "And, behold, a woman, which was diseased with an issue of blood twelve years, came behind him, and touched the hem of his garment:"
+   },
+   "old_note": "*Neither do men put new wine into old bottles; else the new wine will burst the bottles, and be spilled, and the bottles shall perish. But new wine must be put into new bottles; and both are preserved.* The new-wine-and-old-bottles substance is the new-heart-and-new-spirit Yechezk'el (Ezekiel) 36:26-27 substance. The King's *new wine* is not new Torah; it is the new heart that holds the same Torah without bursting.",
+   "author_thread_hint": "leaven-as-corruption-substance",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant",
+    "new-wine-and-the-old-friend-inverse-in-sirach"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "luke-5-launch-out-into-the-deep-the-great-draught-of-fishes-isaiah-6-jeremiah-16-ezekiel-47",
+   "title": "Launch out into the deep — the great draught of fishes (Isaiah 6; Jeremiah 16; Ezekiel 47)",
+   "anchor": "Luke 5:1-11",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "At Yahusha's (Jesus') word the empty nets fill: *they inclosed a great multitude of fishes: and their net brake* (Luke 5:6). Simon Peter falls down and cries *Depart from me; for I am a sinful man, O Yahuah (Lord)* (Luke 5:8) — the same undoing Isaiah knew before the throne: *Woe is me! for I am undone; because I am a man of unclean lips... for mine eyes have seen the King, Yahuah Tseva'ot (LORD of hosts)* (Isaiah 6:5). The unworthy man who sees the King is not cast off but sent. *Fear not; from henceforth thou shalt catch men* (Luke 5:10) — these are the fishers Yahuah had long promised: *Behold, I will send for many fishers, saith Yahuah (LORD), and they shall fish them* (Jeremiah 16:16), gatherers of the scattered seed of Yashar'el out of every land. And the teeming net answers the sanctuary vision: *there shall be a very great multitude of fish, because these waters shall come thither: for they shall be healed; and every thing shall live whither the river cometh* (Ezekiel 47:9), where *the fishers shall stand... they shall be a place to spread forth nets* (Ezekiel 47:10). The catch is the gathering of men; the fishers are the sent.",
+   "members_in_this_chapter": [
+    {
+     "src": "5:8",
+     "tgt": "canon/isaiah 6:5",
+     "member_note": "Isaiah 6:5 — *Woe is me! for I am undone; because I am a man of unclean lips... for mine eyes have seen the King, Yahuah Tseva'ot (LORD of hosts).* Peter's *I am a sinful man* (Luke 5:8) is Isaiah's undoing before the throne — the unworthy man sent."
+    },
+    {
+     "src": "5:10",
+     "tgt": "canon/jeremiah 16:16",
+     "member_note": "Jeremiah 16:16 — *Behold, I will send for many fishers, saith Yahuah (LORD), and they shall fish them.* *From henceforth thou shalt catch men* (Luke 5:10) — the promised fishers, sent to gather scattered Yashar'el home."
+    },
+    {
+     "src": "5:6",
+     "tgt": "canon/ezekiel 47:9",
+     "member_note": "Ezekiel 47:9 — *there shall be a very great multitude of fish, because these waters shall come thither: for they shall be healed; and every thing shall live whither the river cometh.* The net's *great multitude of fishes* (Luke 5:6) images the living waters of the sanctuary."
+    },
+    {
+     "src": "5:10",
+     "tgt": "canon/ezekiel 47:10",
+     "member_note": "Ezekiel 47:10 — *the fishers shall stand upon it... they shall be a place to spread forth nets.* The fishers stand at the healed waters — and *thou shalt catch men* (Luke 5:10) sets these fishers to that work."
+    }
+   ]
+  },
+  {
+   "slug": "luke-5-shew-thyself-to-the-priest-as-moses-commanded-leviticus-13-14-2-kings-5",
+   "title": "Shew thyself to the priest — as Moses commanded (Leviticus 13-14; 2 Kings 5)",
+   "anchor": "Luke 5:12-16",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "*A man full of leprosy* (Luke 5:12) is the outcast Torah named — *his clothes shall be rent, and his head bare... and shall cry, Unclean, unclean* (Leviticus 13:45), who *shall dwell alone; without the camp shall his habitation be* (Leviticus 13:46). Into that exile the Word reaches: *I will: be thou clean. And immediately the leprosy departed from him* (Luke 5:13) — as Naaman's flesh *came again like unto the flesh of a little child, and he was clean* (2 Kings 5:14) at the prophet's word, so now at the Word himself. Then mark what Yahusha does NOT do: he does not declare the law obsolete. He SENDS the man to keep it. *Go, and shew thyself to the priest, and offer for thy cleansing, according as Moses commanded, for a testimony unto them* (Luke 5:14) — *This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest* (Leviticus 14:2), who *command[s] to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop* (Leviticus 14:4). The Healer upholds the very Torah he gave. Grace is no license; the commandment stands, kept for a testimony.",
+   "members_in_this_chapter": [
+    {
+     "src": "5:12",
+     "tgt": "canon/leviticus 13:45",
+     "member_note": "Leviticus 13:45 — *the leper... his clothes shall be rent, and his head bare... and shall cry, Unclean, unclean.* The *man full of leprosy* (Luke 5:12) is the outcast Torah named."
+    },
+    {
+     "src": "5:12",
+     "tgt": "canon/leviticus 13:46",
+     "member_note": "Leviticus 13:46 — *he shall dwell alone; without the camp shall his habitation be.* The Word reaches into that exile: *I will: be thou clean* (Luke 5:13)."
+    },
+    {
+     "src": "5:14",
+     "tgt": "canon/leviticus 14:2",
+     "member_note": "Leviticus 14:2 — *This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest.* Yahusha SENDS the cleansed man to keep it — *according as Moses commanded* (Luke 5:14). The Torah upheld, not abolished."
+    },
+    {
+     "src": "5:14",
+     "tgt": "canon/leviticus 14:4",
+     "member_note": "Leviticus 14:4 — *Then shall the priest command to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop.* The offering *as Moses commanded* (Luke 5:14) is this very rite, *for a testimony unto them.*"
+    },
+    {
+     "src": "5:13",
+     "tgt": "canon/2-kings 5:14",
+     "member_note": "2 Kings 5:14 — *his flesh came again like unto the flesh of a little child, and he was clean.* Naaman cleansed at the prophet's word foreshadows the leper cleansed by the Word himself: *immediately the leprosy departed from him* (Luke 5:13)."
+    }
+   ]
+  },
+  {
+   "slug": "luke-5-the-son-of-adam-hath-power-to-forgive-sins-isaiah-43-psalm-103-daniel-7",
+   "title": "The Son of Adam hath power to forgive sins (Isaiah 43; Psalm 103; Micah 7; Daniel 7)",
+   "anchor": "Luke 5:17-26",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "The palsied man is let down through the tiling, and Yahusha says *Man, thy sins are forgiven thee* (Luke 5:20). The scribes reason rightly from the Torah: *Who can forgive sins, but Elohim (God) alone?* (Luke 5:21) — for Yahuah said *I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins* (Isaiah 43:25), and *Who is a Elohim (God) like unto thee, that pardoneth iniquity... because he delighteth in mercy* (Micah 7:18). Forgiving and healing are one hand's work: *Who forgiveth all thine iniquities; who healeth all thy diseases* (Psalm 103:3) — so *thy sins are forgiven thee* and *Arise, and take up thy couch* are spoken as one. And the title Yahusha takes is the prophet's: *that ye may know that the Son of Adam hath power upon earth to forgive sins* (Luke 5:24). Daniel saw him — *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13). The Formed Son, brought near before the Father, wields on earth the Father's own prerogative to pardon. He does not seize it; it is given him from the Ancient of days.",
+   "members_in_this_chapter": [
+    {
+     "src": "5:21",
+     "tgt": "canon/isaiah 43:25",
+     "member_note": "Isaiah 43:25 — *I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins.* The scribes ask *Who can forgive sins, but Elohim alone?* (Luke 5:21) — and Yahuah's own prerogative is now exercised in the Formed Son."
+    },
+    {
+     "src": "5:20",
+     "tgt": "canon/psalms 103:3",
+     "member_note": "Psalm 103:3 — *Who forgiveth all thine iniquities; who healeth all thy diseases.* Forgiving and healing are one hand's work — *thy sins are forgiven* joined to *Arise, and take up thy couch* (Luke 5:20,24)."
+    },
+    {
+     "src": "5:21",
+     "tgt": "canon/micah 7:18",
+     "member_note": "Micah 7:18 — *Who is a Elohim (God) like unto thee, that pardoneth iniquity... because he delighteth in mercy.* The pardoning that belongs to Elohim alone (Luke 5:21) is done before their eyes."
+    },
+    {
+     "src": "5:24",
+     "tgt": "canon/daniel 7:13",
+     "member_note": "Daniel 7:13 — *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* *The Son of Adam hath power upon earth to forgive sins* (Luke 5:24) — the Formed Son, brought near before the Father, wields the authority given him from the Ancient of days."
+    }
+   ]
+  },
+  {
+   "slug": "luke-5-i-came-not-to-call-the-righteous-but-sinners-hosea-6-ezekiel-34-psalm-51",
+   "title": "I came not to call the righteous, but sinners to repentance (Hosea 6; Ezekiel 34; Psalm 51; Sirach)",
+   "anchor": "Luke 5:27-32",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "Levi the publican rises from the receipt of custom at one word — *Follow me* (Luke 5:27) — and the scribes murmur, *Why do ye eat and drink with publicans and sinners?* (Luke 5:30). Yahusha answers: *They that are whole need not a physician; but they that are sick. I came not to call the righteous, but sinners to repentance* (Luke 5:31-32). This is the weightier matter of Torah that Yahuah named through Hosea: *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6). He is the Shepherd of the prophets: *I will seek that which was lost, and bring again that which was driven away, and will bind up that which was broken, and will strengthen that which was sick* (Ezekiel 34:16). The repentance he calls for is the offering Yahuah never despises: *The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise* (Psalm 51:17). Even the wisdom-voice of the library knew this One: *Yahuah (God) is full of compassion and mercy, longsuffering, and very pitiful, and forgiveth sins, and saves in time of affliction* (Sirach 2:11); and it had taught the sick where to turn — *in your sickness be not negligent: but pray to Yahuah (God), and he will make you whole* (Sirach 38:9). The physician comes for the sick. That is mercy, and mercy is what Yahuah desired.",
+   "members_in_this_chapter": [
+    {
+     "src": "5:32",
+     "tgt": "canon/hosea 6:6",
+     "member_note": "Hosea 6:6 — *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* *I came not to call the righteous, but sinners to repentance* (Luke 5:32) — mercy, the weightier matter, is what Yahuah desired all along."
+    },
+    {
+     "src": "5:31",
+     "tgt": "canon/ezekiel 34:16",
+     "member_note": "Ezekiel 34:16 — *I will seek that which was lost... and will strengthen that which was sick.* The Shepherd who seeks the lost is the physician who comes for *they that are sick* (Luke 5:31)."
+    },
+    {
+     "src": "5:32",
+     "tgt": "canon/psalms 51:17",
+     "member_note": "Psalm 51:17 — *The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise.* The repentance Yahusha calls for (Luke 5:32) is this offering Yahuah will not despise."
+    },
+    {
+     "src": "5:32",
+     "tgt": "apocrypha/ecclesiasticus 2:11",
+     "member_note": "Sirach 2:11 — *Yahuah (God) is full of compassion and mercy, longsuffering, and very pitiful, and forgiveth sins, and saves in time of affliction.* The library's wisdom-voice knows the One who forgives sins and calls sinners to repentance (Luke 5:32)."
+    },
+    {
+     "src": "5:31",
+     "tgt": "apocrypha/ecclesiasticus 38:9",
+     "member_note": "Sirach 38:9 — *My son, in your sickness be not negligent: but pray to Yahuah (God), and he will make you whole.* *They that are sick* (Luke 5:31) need the physician — the wisdom-voice taught the sick to turn to Yahuah, who makes whole."
+    }
+   ]
+  },
+  {
+   "slug": "luke-5-the-bridegroom-and-the-new-wine-joel-2-isaiah-62-jeremiah-31",
+   "title": "The bridegroom and the new wine — renewal, not replacement (Joel 2; Isaiah 62; Jeremiah 31)",
+   "anchor": "Luke 5:33-39",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Asked why his disciples do not fast, Yahusha answers: *Can ye make the children of the bridechamber fast, while the bridegroom is with them?* (Luke 5:34). The bridegroom is no new figure — the prophets long awaited him: *let the bridegroom go forth of his chamber, and the bride out of her closet* (Joel 2:16), for *as the bridegroom rejoiceth over the bride, so shall thy Elohim (God) rejoice over thee* (Isaiah 62:5). His presence is the day of joy. Then the parable: *no man putteth new wine into old bottles... But new wine must be put into new bottles; and both are preserved* (Luke 5:37-38). This is not the discarding of the old covenant — it is its renewal: *Behold, the days come, saith Yahuah (LORD), that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah)* (Jeremiah 31:31), and that covenant is the SAME Torah brought inside — *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The new wine is the old covenant's heart restored, both houses gathered as one. Renewal, never replacement; the law is not abolished but written within.",
+   "members_in_this_chapter": [
+    {
+     "src": "5:34",
+     "tgt": "canon/joel 2:16",
+     "member_note": "Joel 2:16 — *let the bridegroom go forth of his chamber, and the bride out of her closet.* *Can ye make the children of the bridechamber fast, while the bridegroom is with them?* (Luke 5:34) — the bridegroom has gone forth; this is the day of joy."
+    },
+    {
+     "src": "5:34",
+     "tgt": "canon/isaiah 62:5",
+     "member_note": "Isaiah 62:5 — *as the bridegroom rejoiceth over the bride, so shall thy Elohim (God) rejoice over thee.* The bridegroom is no stranger to the prophets — and he is present (Luke 5:34)."
+    },
+    {
+     "src": "5:37",
+     "tgt": "canon/jeremiah 31:31",
+     "member_note": "Jeremiah 31:31 — *I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah).* The *new wine* in *new bottles* (Luke 5:37-38) is the renewed covenant promised to both houses, gathered as one."
+    },
+    {
+     "src": "5:38",
+     "tgt": "canon/jeremiah 31:33",
+     "member_note": "Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts.* The renewed covenant is the SAME Torah brought inside. The new wine is the old covenant's heart restored — renewal, never replacement of the law."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-8-the-leper-offer-the-gift-moses-commanded-leviticus-14-2-kings-5",
+   "title": "The leper cleansed — go, offer the gift that Moses commanded (Leviticus 13–14; 2 Kings 5)",
+   "anchor": "Matthew 8:1-4",
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "When the leper worships and pleads *if thou wilt, thou canst make me clean*, Yahusha (Jesus) reaches out, touches the untouchable, and heals him — and then look where He sends him. *See thou tell no man; but go thy way, shew thyself to the priest, and offer the gift that Moses commanded, for a testimony unto them.* The Torah had put this man outside the camp: *And the leper in whom the plague is, his clothes shall be rent, and his head bare, and he shall put a covering upon his upper lip, and shall cry, Unclean, unclean* (Leviticus 13:45). And the Torah was the only road back: *This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest* (Leviticus 14:2), who would *take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop* (Leviticus 14:4). Yahusha (Jesus) sends the healed man straight into that chapter — He upholds the Torah, He does not abolish it. The same pattern stands in *Then went he down, and dipped himself seven times in Jordan... and his flesh came again like unto the flesh of a little child, and he was clean* (2 Kings 5:14): Naaman the leper made whole by humble obedience. Come and see — the One who heals is the One who keeps Moses' word.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant",
+   "title": "New wine into new bottles — the Bridegroom and the renewed covenant (Joel 2; Isaiah 62; Jeremiah 31)",
+   "anchor": "Matthew 9:14-17",
+   "anchored_in_this_book": false,
+   "member_count": 14,
+   "summary_md": "John's disciples ask why Yahusha's disciples do not fast, and He answers as a wedding: *Can the children of the bridechamber mourn, as long as the bridegroom is with them?* The Bridegroom is no new figure — *let the bridegroom go forth of his chamber, and the bride out of her closet* (Joel 2:16); *as the bridegroom rejoiceth over the bride, so shall thy Elohim (God) rejoice over thee* (Isaiah 62:5). There is *a season, and a time to every purpose under the heaven* (Ecclesiastes 3:1) — His presence sets the season, and the days will come when they fast again. Then the two parables of newness, the new cloth and the new wine: *they put new wine into new bottles, and both are preserved*. This is NOT a different law poured out against the old. It is the very covenant Jeremiah foretold: *Behold, the days come... that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah)* (Jeremiah 31:31) — both houses — *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33). The new wine is the SAME Torah, no longer on tablets of stone but in the heart. Renewal, not replacement.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "sanhedrin-trial-tehillim-110-and-daniel-7-self-identification-at-the-kings-own-mouth",
+   "title": "Sanhedrin Trial Tehillim 110 And Daniel 7 Self Identification At The Kings Own Mouth",
+   "anchor": "Matthew 26:64",
+   "anchored_in_this_book": false,
+   "member_count": 32,
+   "summary_md": "**`sanhedrin-trial-tehillim-110-and-daniel-7-self-identification-at-the-kings-own-mouth`** — **FRAMEWORK-MAJOR anchor at Matt 26:64.** The substantial-confluence at-the-King's-own-mouth-substance of the substantial-Tehillim (Psalm) 110:1 substance + the substantial-Daniel 7:13-14 substance per Red Line #12 + the substantial-direct-Messianic-self-identification-substance at-the-substantial-Sanhedrin-substance. The framework reads the substance as title-naming-at-the-King's-own-mouth (NOT-the-substantial-kaph-comparative-substance the framework's-Daniel 7:13 / Hitgalut 1:13 / Hitgalut 14:14-substance preserves-substance). 20 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "5:24",
+     "tgt": "canon/mark 2:10",
+     "member_note": "*But that ye may know that the Son of Adam hath power upon earth to forgive sins, (he said unto the sick of the palsy,) I say unto thee, Arise, and take up thy couch, and go into thine house.* The Son-of-Adam self-identification at the paralytic-healing — *power upon earth to forgive sins* — is the same Daniyel (Daniel) 7 *Son-of-Adam* substance the King will name openly at the Sanhedrin trial."
+    }
+   ]
+  },
+  {
+   "slug": "animal-apocalypse-gathering-of-the-dispersed-sheep",
+   "title": "The Animal Apocalypse — the dispersed sheep gathered home",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 2,
+   "summary_md": "*And he saith unto them, Follow me, and I will make you fishers of men.* (Matthew 4:19). The men he calls are being sent after sheep, and the Animal Apocalypse had already told the story of those sheep from the scattering to the gathering. First the blindness and the losing of them: *And as touching all this the eyes of those sheep were blinded so that they saw not, and (the eyes of) their shepherds likewise; and they delivered them in large numbers to their shepherds for destruction, and they trampled the sheep with their feet and devoured them. And Yahuah (Lord) of the sheep remained unmoved till all the sheep were dispersed over the field and mingled with them (i.e. the beasts), and they (i.e. the shepherds) did not save them out of the hand of the beasts.* (1 Enoch 89:74-75). Then, late in the age, a generation among them begins to see: *But behold lambs were borne by those white sheep, and they began to open their eyes and to see, and to cry to the sheep.* (1 Enoch 90:6). And at the close, the ones who had been lost come home: *And all that had been destroyed and dispersed, and all the beasts of the field, and all the birds of the heaven, assembled in that house, and Yahuah (Lord) of the sheep rejoiced with great joy because they were all good and had returned to His house.* (1 Enoch 90:33). That is the gathering Ezekiel promised, *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* (Ezekiel 37:21), and it is the work the Shepherd names as his own: *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* (John 10:16). The disciples called by the lake are the first hands put to that gathering. The sheep who were mingled with the beasts open their eyes when the Shepherd's voice reaches them, and the fishers of men are sent to carry it.",
+   "members_in_this_chapter": [
+    {
+     "src": "5:10",
+     "tgt": "canon/matthew 4:19",
+     "member_note": "*And Yahusha (Jesus) said unto Shimon (Simon), Fear not; from henceforth thou shalt catch men.* The Lukan call of Kefa (Peter) carries the same fishers-of-men-as-gatherers-of-the-dispersed-sheep substance Matthew 4:19 anchors. The miraculous catch (Luke 5:6-7 — nets breaking, two ships filled) is the prophetic sign-act of the great-multitude gathering."
+    }
+   ]
+  },
+  {
+   "slug": "fasting-with-mercy-not-without-in-tobit-and-sirach",
+   "title": "Fasting with the mercy-triad, not fasting as credential — Tobit 12 and Sirach 34",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 2,
+   "summary_md": "Matt 9:14-15's fasting-question and bridegroom-reframe — read against the wisdom-stream's naming of fasting as one part of a triad-discipline that requires the mercy-substance to be operative. Tobit 12:8 (the angel Raphael's instruction) names the prayer-fasting-alms-righteousness triad as the godly-discipline; fasting alone is not the discipline — fasting WITH prayer, alms, and righteousness is. Sirach 34:26 names the fasting-without-repentance-is-vain diagnostic explicitly — *the man that fasteth for his sins, and goes again, and doeth the same: who will hear his prayer?* The Pharisaic-counterfeit form at Matt 9:14 is fasting-as-credential while the categorical-exclusion-of-sinners continues; the wisdom-stream had named the diagnostic centuries before. Yahusha (Jesus) does not abolish fasting (he affirms it at v.15b *then shall they fast*) but reframes it in the bridegroom-architecture and presupposes the mercy-triad operating beneath it. The post-ascension assembly fasts; the framework reads the discipline in the Tobit-Sirach register.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "new-wine-and-the-old-friend-inverse-in-sirach",
+   "title": "New wine and the old friend — Sirach 9:10 as inverse to the Matt 9:17 reframing",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 1,
+   "summary_md": "Matt 9:17's *neither do men put new wine into old bottles ... but they put new wine into new bottles, and both are preserved* — read against the Hebrew library's wisdom-stream old-vs-new wine register. Sirach (Ecclesiasticus) 9:10 holds the old-vs-new wine architecture in inverse register: *forsake not an old friend; for the new is not comparable to him: a new friend is as new wine; when it is old, you shall drink it with pleasure.* The wisdom-stream holds the old as more trustworthy than the new — and the Pharisaic-rabbinic-system's self-justification rests on precisely that wisdom-stream loyalty: the old-tradition-fences cannot be ruptured by the new heart-Torah-walking; the inherited rabbinic-system is the trustworthy-old-friend. The framework angle is that the wisdom-stream RECOGNIZES the new-vs-old containment question as a real question, and the gospel REFRAMES it by naming the heart-Torah-substance the new-heart container holds and the Pharisaic-old-bottle cannot. The Torah itself is NEITHER the wine NOR the wineskin (per the matthew-9.md §3 framework reading); the Pharisaic-rabbinic-system's wisdom-stream-old-friend-loyalty is the old wineskin that bursts when the heart-Torah-life enters.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "publicans-and-sinners-and-sirach-12-inverse",
+   "title": "The Sirach 12 give-not-to-the-sinner stance the King reverses at Mattityahu's table",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "Matt 9:10-13's table-fellowship with publicans-and-sinners — read against the wisdom-stream's explicit categorical-exclusion teaching in Sirach (Ecclesiasticus) 12. Sirach 12:4 instructs *give to the godly man, and help not a sinner.* Sirach 12:5 instructs *hold back your bread, and give it not* to the ungodly. Sirach 12:7 reiterates *give to the good, and help not the sinner.* This is the wisdom-stream's wrong-stance the Pharisaic-counterfeit-righteousness inherited and weaponized into the categorical-exclusion architecture Yahusha (Jesus) dismantles at the table with Mattityahu (Matthew). The framework reads the King's response as direct-reversal of the Sirach 12 stance: *I am not come to call the righteous, but sinners to repentance* (v.13b) inverts the Sirach 12 mandate explicitly. Not every wisdom-stream teaching is operative in the kingdom-at-hand; the King's direct-mercy supersedes the wisdom-stream's categorical-exclusion. The Hosea 6:6 mercy-substance is BROADER than the wisdom-stream's godly-righteous register; it extends to the sinners-to-be-called.",
+   "members_in_this_chapter": [
+    {
+     "src": "5:29",
+     "tgt": "canon/matthew 9:10",
+     "member_note": "*And Levi made him a great feast in his own house: and there was a great company of publicans and of others that sat down with them. But their scribes and Pharisees murmured against his disciples, saying, Why do ye eat and drink with publicans and sinners?* The Lukan call of Levi and the table-fellowship that follows is the same Sirach-12-inverse the Matthew 9:10 catch names."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,312 @@
+{
+ "book": "luke",
+ "chapter": 3,
+ "chapter_text_kjv": {
+  "1": "Now in the fifteenth year of the reign of Tiberius Cæsar, Pontius Pilate being governor of Judæa, and Herod being tetrarch of Galilee, and his brother Philip tetrarch of Ituraea and of the region of Trachonitis, and Lysanias the tetrarch of Abilene,",
+  "2": "Annas and Caiaphas being the high priests, the word of Elohim (God) came unto John the son of Zacharias in the wilderness.",
+  "3": "And he came into all the country about Jordan, preaching the baptism of repentance for the remission of sins;",
+  "4": "As it is written in the book of the words of Isaiah the prophet, saying, The voice of one crying in the wilderness, Prepare ye the way of Yahuah (Lord), make his paths straight.",
+  "5": "Every valley shall be filled, and every mountain and hill shall be brought low; and the crooked shall be made straight, and the rough ways shall be made smooth;",
+  "6": "And all flesh shall see the salvation of Elohim (God).",
+  "7": "Then said he to the multitude that came forth to be baptized of him, O generation of vipers, who hath warned you to flee from the wrath to come?",
+  "8": "Bring forth therefore fruits worthy of repentance, and begin not to say within yourselves, We have Abraham to our father: for I say unto you, That Elohim (God) is able of these stones to raise up children unto Abraham.",
+  "9": "And now also the axe is laid unto the root of the trees: every tree therefore which bringeth not forth good fruit is hewn down, and cast into the fire.",
+  "10": "And the people asked him, saying, What shall we do then?",
+  "11": "He answereth and saith unto them, He that hath two coats, let him impart to him that hath none; and he that hath meat, let him do likewise.",
+  "12": "Then came also publicans to be baptized, and said unto him, Master, what shall we do?",
+  "13": "And he said unto them, Exact no more than that which is appointed you.",
+  "14": "And the soldiers likewise demanded of him, saying, And what shall we do? And he said unto them, Do violence to no man, neither accuse any falsely; and be content with your wages.",
+  "15": "And as the people were in expectation, and all men mused in their hearts of John, whether he were the Messiah (Christ), or not;",
+  "16": "John answered, saying unto them all, I indeed baptize you with water; but one mightier than I cometh, the latchet of whose shoes I am not worthy to unloose: he shall baptize you with the Ruach HaKodesh (Holy Spirit) and with fire:",
+  "17": "Whose fan is in his hand, and he will throughly purge his floor, and will gather the wheat into his garner; but the chaff he will burn with fire unquenchable.",
+  "18": "And many other things in his exhortation preached he unto the people.",
+  "19": "But Herod the tetrarch, being reproved by him for Herodias his brother Philip’s wife, and for all the evils which Herod had done,",
+  "20": "Added yet this above all, that he shut up John in prison.",
+  "21": "Now when all the people were baptized, it came to pass, that Yahusha (Jesus) also being baptized, and praying, the heaven was opened,",
+  "22": "And the Ruach HaKodesh (Holy Spirit) descended in a bodily shape like a dove upon him, and a voice came from heaven, which said, Thou art my beloved Son; in thee I am well pleased.",
+  "23": "And Yahusha (Jesus) himself began to be about thirty years of age, being (as was supposed) the son of Joseph, which was the son of Heli,",
+  "24": "Which was the son of Matthat, which was the son of Levi, which was the son of Melchi, which was the son of Janna, which was the son of Joseph,",
+  "25": "Which was the son of Mattathias, which was the son of Amos, which was the son of Naum, which was the son of Esli, which was the son of Nagge,",
+  "26": "Which was the son of Maath, which was the son of Mattathias, which was the son of Semei, which was the son of Joseph, which was the son of Judah,",
+  "27": "Which was the son of Joanna, which was the son of Rhesa, which was the son of Zerubbabel, which was the son of Shealtiel, which was the son of Neri,",
+  "28": "Which was the son of Melchi, which was the son of Addi, which was the son of Cosam, which was the son of Elmodam, which was the son of Er,",
+  "29": "Which was the son of Jose, which was the son of Eliezer, which was the son of Jorim, which was the son of Matthat, which was the son of Levi,",
+  "30": "Which was the son of Simeon, which was the son of Judah, which was the son of Joseph, which was the son of Jonan, which was the son of Eliakim,",
+  "31": "Which was the son of Melea, which was the son of Menan, which was the son of Mattatha, which was the son of Nathan, which was the son of David,",
+  "32": "Which was the son of Jesse, which was the son of Obed, which was the son of Boaz, which was the son of Salmon, which was the son of Nahshon,",
+  "33": "Which was the son of Amminadab, which was the son of Aram, which was the son of Hezron, which was the son of Pharez, which was the son of Judah,",
+  "34": "Which was the son of Jacob, which was the son of Isaac, which was the son of Abraham, which was the son of Terah, which was the son of Nahor,",
+  "35": "Which was the son of Serug, which was the son of Reu, which was the son of Peleg, which was the son of Eber, which was the son of Salah,",
+  "36": "Which was the son of Cainan, which was the son of Arphaxad, which was the son of Shem, which was the son of Noah, which was the son of Lamech,",
+  "37": "Which was the son of Methuselah, which was the son of Enoch, which was the son of Jared, which was the son of Mahalaleel, which was the son of Cainan,",
+  "38": "Which was the son of Enos, which was the son of Seth, which was the son of Adam, which was the son of Elohim (God)."
+ },
+ "cards": [
+  {
+   "id": 6973,
+   "src": "Luke 3:2",
+   "src_vn": 2,
+   "src_text_live": "Annas and Caiaphas being the high priests, the word of Elohim (God) came unto John the son of Zacharias in the wilderness.",
+   "src_text_kjv": "Annas and Caiaphas being the high priests, the word of Elohim (God) came unto John the son of Zacharias in the wilderness.",
+   "tgt": "Isaiah 40:3",
+   "tgt_text_kjv": "The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah (LORD), make straight in the desert a highway for our Elohim (God).",
+   "tgt_context_kjv": {
+    "1": "Comfort ye, comfort ye my people, saith your Elohim (God).",
+    "2": "Speak ye comfortably to Jerusalem, and cry unto her, that her warfare is accomplished, that her iniquity is pardoned: for she hath received of the LORD’S hand double for all her sins.",
+    "3": "The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah (LORD), make straight in the desert a highway for our Elohim (God).",
+    "4": "Every valley shall be exalted, and every mountain and hill shall be made low: and the crooked shall be made straight, and the rough places plain:",
+    "5": "And the glory of Yahuah (LORD) shall be revealed, and all flesh shall see it together: for the mouth of Yahuah (LORD) hath spoken it.",
+    "6": "The voice said, Cry. And he said, What shall I cry? All flesh is grass, and all the goodliness thereof is as the flower of the field:"
+   },
+   "old_note": "Luke quotes Yeshayahu (Isaiah) 40:3 explicitly — *The voice of one crying in the wilderness, Prepare ye the way of Yahuah (the Lord), make his paths straight.* Yochanan's (John's) Eliyahu-pattern (Elijah-pattern) prophet ministry begins where the Tanakh said it would. Same scripture, same wilderness, same voice.",
+   "author_thread_hint": "yochanan-as-eliyahu-pattern-prophet",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 6976,
+   "src": "Luke 3:8",
+   "src_vn": 8,
+   "src_text_live": "Bring forth therefore fruits worthy of repentance, and begin not to say within yourselves, We have Abraham to our father: for I say unto you, That Elohim (God) is able of these stones to raise up children unto Abraham.",
+   "src_text_kjv": "Bring forth therefore fruits worthy of repentance, and begin not to say within yourselves, We have Abraham to our father: for I say unto you, That Elohim (God) is able of these stones to raise up children unto Abraham.",
+   "tgt": "Matthew 3:9",
+   "tgt_text_kjv": "And think not to say within yourselves, We have Abraham to our father: for I say unto you, that Elohim (God) is able of these stones to raise up children unto Abraham.",
+   "tgt_context_kjv": {
+    "7": "But when he saw many of the Pharisees and Sadducees come to his baptism, he said unto them, O generation of vipers, who hath warned you to flee from the wrath to come?",
+    "8": "Bring forth therefore fruits meet for repentance:",
+    "9": "And think not to say within yourselves, We have Abraham to our father: for I say unto you, that Elohim (God) is able of these stones to raise up children unto Abraham.",
+    "10": "And now also the axe is laid unto the root of the trees: therefore every tree which bringeth not forth good fruit is hewn down, and cast into the fire.",
+    "11": "I indeed baptize you with water unto repentance: but he that cometh after me is mightier than I, whose shoes I am not worthy to bear: he shall baptize you with the Ruach HaKodesh (Holy Spirit), and with fire:",
+    "12": "Whose fan is in his hand, and he will throughly purge his floor, and gather his wheat into the garner; but he will burn up the chaff with unquenchable fire."
+   },
+   "old_note": "*And begin not to say within yourselves, We have Avraham (Abraham) to our father: for I say unto you, that Elohim (God) is able of these stones to raise up children unto Avraham (Abraham).* Yochanan (John) rebukes the Pharisaic flesh-credential gospel — being born a Yahudi (Jew) saves no one whose heart is not refined.",
+   "author_thread_hint": "another-gospel-as-judaizer-flesh-credential",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-3-fruits-meet-for-repentance-stones-to-abraham-isaiah-1-ezekiel-18-romans-11",
+    "scattered-seed-gathering"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "luke-3-political-and-priestly-backdrop-as-the-prophetic-clock",
+   "title": "The political backdrop of the day — Luke's imperial-and-priestly names as the prophetic clock",
+   "anchor": "Luke 3:1-2",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "Luke uniquely opens Yochanan (John)'s investiture with a precise political-and-priestly dating: *Now in the fifteenth year of the reign of Tiberius Caesar, Pontius Pilate being governor of Yahudah (Judea), and Herod being tetrarch of Galiyl (Galilee), and his brother Philip tetrarch of Iturea and of the region of Trachonitis, and Lysanias the tetrarch of Abilene, Annas and Caiaphas being the high priests, the word of Elohim (God) came unto Yochanan (John) the son of Zecharyah (Zacharias) in the wilderness.* The naming is not decorative. It anchors the moment in real political time — the Daniyel (Daniel) 9 weeks of years are running on this clock; the fourth beast (Daniyel 7) is in the throne; the priesthood is corrupt (two high priests at once, which Torah does not allow); the territorial divisions are imperial-imposed. The Father moves the Word into the wilderness at exactly this hour — the prophetic clock is being kept, and Luke names the keeping. The Herod here is Herod Antipas, son of the infant-slaughter Herod of Matthew 2 — the herod-as-edomite-usurper pattern persists.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:1",
+     "tgt": "canon/numbers 24:17",
+     "member_note": "*And Herod being tetrarch of Galiyl (Galilee).* Herod Antipas, son of the infant-slaughter Herod of Matthew 2, sits in Galiyl as the herod-as-edomite-usurper. Bamidbar (Numbers) 24:17 — *there shall come a Star out of Ya'aqov (Jacob), and a Sceptre shall rise out of Yashar'el (Israel)... and shall smite the corners of Moav (Moab), and destroy all the children of Sheth* — the legitimate sceptre-from-Yashar'el is the substance the Edomite-usurper-pattern stands against."
+    },
+    {
+     "src": "3:1",
+     "tgt": "canon/daniel 7:23",
+     "member_note": "*Pontius Pilate being governor of Yahudah (Judea).* The Roman governorship is the fourth-beast-administration of Daniyel (Daniel) 7:23 — *the fourth beast shall be the fourth kingdom upon earth.* Pilate sits in the procuratorial seat as the local face of the iron-and-clay beast."
+    },
+    {
+     "src": "3:1",
+     "tgt": "canon/daniel 9:25",
+     "member_note": "*Now in the fifteenth year of the reign of Tiberius Caesar.* Daniyel (Daniel) 9:25's *threescore and two weeks* clock is running on real political time. Luke's *fifteenth year of Tiberius* is the historian-anchor that lets the reader date the moment the Word came to Yochanan (John) in real years. The Daniyel 9 clock is being kept."
+    },
+    {
+     "src": "3:2",
+     "tgt": "canon/leviticus 21:10",
+     "member_note": "*Annas and Caiaphas being the high priests.* Vayikra (Leviticus) 21:10 — *And he that is the high priest among his brethren* — is the priesthood-architecture (one high priest, not two). Luke's naming of *Annas and Caiaphas* as high priests-plural names the corruption of the priesthood at the hinge-moment. The system that will demand the King's blood is already showing its irregularity."
+    },
+    {
+     "src": "3:2",
+     "tgt": "canon/jeremiah 1:1",
+     "member_note": "*The word of Elohim (God) came unto Yochanan (John) the son of Zecharyah (Zacharias) in the wilderness.* Yirmeyahu (Jeremiah) 1:1-2 — *The words of Yirmeyahu (Jeremiah) the son of Chilqiyahu (Hilkiah), of the priests... To whom the word of Yahuah (the LORD) came in the days of Yoshiyahu (Josiah)* — is the same priest's-son-prophet-call pattern. The word coming to Yochanan the priest's son in the wilderness echoes the word coming to Yirmeyahu the priest's son in the days of the king."
+    },
+    {
+     "src": "3:2",
+     "tgt": "canon/ezekiel 1:1",
+     "member_note": "*The word of Elohim (God) came unto Yochanan (John) the son of Zecharyah (Zacharias) in the wilderness.* Yechezk'el (Ezekiel) 1:1-3's word-of-Yahuah-coming-to-the-priest-by-the-river-Khebar is the same pattern. The priestly-prophet receives the word in the place-of-exile-or-wilderness, not in the temple. When the priesthood is corrupted (Luke 3:2 carries this), the prophet's word comes outside the temple."
+    }
+   ]
+  },
+  {
+   "slug": "luke-3-every-valley-filled-the-gathering-highway-in-baruch-and-1-enoch",
+   "title": "Every valley filled — the gathering-highway of the scattered seed in Baruch and 1 Enoch",
+   "anchor": "Luke 3:5-6",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "Yochanan (John) preaches the Yeshayahu (Isaiah) 40 highway: *every valley shall be filled, and every mountain and hill shall be brought low; and the crooked shall be made straight, and the rough ways shall be made smooth; and all flesh shall see the salvation of Elohim (God)* (Luke 3:5-6). The Hebrew library reads that same leveled-highway explicitly as the gathering-road of the scattered seed. Baruch 5:7 names it: *Yahuah (God) has appointed that every high hill, and banks of long continuance, should be cast down, and valleys filled up, to make even the ground, that Yashar'el (Israel) may go safely in the glory of Yahuah (God).* Baruch 5:9 names where the road arrives: *Yahuah (God) shall lead Yashar'el (Israel) with joy in the light of his glory.* 1 Enoch 1:6 carries the same hills-made-low at the coming of the Holy Great One: *the high mountains shall be shaken, And the high hills shall be made low.* The valleys-filled and the hills-brought-low are not landscaping for a parade — they are the making-even of the ground so the scattered seed may go safely home in the glory of Yahuah. Yochanan opens the gathering-road; the Hebrew library had already named where it leads and who walks it home.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:5",
+     "tgt": "apocrypha/baruch-with-the-letter-of-jeremiah 5:7",
+     "member_note": "Baruch 5:7 — *every high hill, and banks of long continuance, should be cast down, and valleys filled up.* The leveled road is for Yashar'el (Israel) to walk home; John opened it (Luke 3:5)."
+    },
+    {
+     "src": "3:6",
+     "tgt": "apocrypha/baruch-with-the-letter-of-jeremiah 5:9",
+     "member_note": "Baruch 5:9 — *Yahuah (God) shall lead Yashar'el (Israel) with joy in the light of his glory.* Where the road ends; all flesh sees the salvation of Elohim (God) (Luke 3:6)."
+    },
+    {
+     "src": "3:5",
+     "tgt": "enoch/1-enoch 1:6",
+     "member_note": "1 Enoch 1:6 — *the high mountains shall be shaken, And the high hills shall be made low, And shall melt like wax before the flame.* The hills-made-low at the coming of the Holy Great One; Luke 3:5's *every mountain and hill shall be brought low* names the same leveling before the way of Yahuah."
+    }
+   ]
+  },
+  {
+   "slug": "luke-3-the-genealogy-back-to-adam-son-of-elohim-in-jubilees-and-1-enoch",
+   "title": "The genealogy back to Adam, the son of Elohim — the seed of Adam in Jubilees and 1 Enoch",
+   "anchor": "Luke 3:37-38",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Luke runs his genealogy backward until it can go no further: *Which was the son of Enos, which was the son of Seth, which was the son of Adam, which was the son of Elohim (God).* (Luke 3:38). That line, father to son back to the man Elohim (God) formed, is the thread the whole promise hangs on, and the library watched it being kept. Jubilees tells how it was carried past the first murder: *And Adam and his wife mourned for Abel four weeks of years, and in the fourth year of the fifth week they became joyful, and Adam knew his wife again, and she bare him a son, and he called his name Seth; for he said “Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him.”* (Jubilees 4:7). Enoch saw the same line in his first dream, as cattle. *Before I took thy mother Edna, I saw in a vision on my bed, and behold a bull came forth from the earth, and that bull was white; and after it came forth a heifer, and along with this (latter) came forth two bulls, one of them black and the other red.* (1 Enoch 85:3). The black bull gores the red one, and then the second seed comes: *And after that she bore another white bull, and after him she bore many bulls and black cows.* (1 Enoch 85:8). *And I saw in my sleep that white bull likewise grow and become a great white bull, and from him proceeded many white bulls, and they resembled him.* (1 Enoch 85:9). White bull following white bull, each resembling the one before, is Seth's line going down the generations, and Luke's list is that same line read upward. Enoch counts himself in it from the same head: Adam is *the seventh from Adam, the first man whom Yahuah (Lord) of Spirits created* (1 Enoch 60:8), and Jude counts the same way: *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints,* (Jude 1:14). Luke, Jubilees, Enoch, and Jude are all counting the same fathers, and the count ends where Luke ends it, at the son of Elohim (God).",
+   "members_in_this_chapter": [
+    {
+     "src": "3:38",
+     "tgt": "jubilees/jubilees 4:7",
+     "member_note": "Jubilees 4:7 — *she bare him a son, and he called his name Seth; for he said \"Elohim (God) has raised up a second seed to us on the earth instead of Abel.\"* Shet (Seth) named as the second seed raised up to Adam; Luke 3:38's *son of Seth, son of Adam, son of Elohim (God)* runs the genealogy back through that very seed-line. FRAMEWORK-CENTRAL."
+    },
+    {
+     "src": "3:38",
+     "tgt": "enoch/1-enoch 85:3",
+     "member_note": "*Before I took thy mother Edna, I saw in a vision on my bed, and behold a bull came forth from the earth, and that bull was white; and after it came forth a heifer, and along with this (latter) came forth two bulls, one of them black and the other red.* (1 Enoch 85:3). 1 Enoch 85:3 opens the Animal Apocalypse with the white bull (Adam) coming forth from the earth, the heifer (Chavah/Eve), and the two young bulls — the black (Cain) and the red (Hevel/Abel). This is the Adamic toledot in vision-form, the same opening of the seed-line Luke 3:38 closes its backward genealogy on: *the son of Adam, which was the son of Elohim (God).* The Hebrew library sees the first man as the white bull from the earth whom Yahuah created; the gospel names the same Adam as the son of Elohim at the head of the seed-line."
+    },
+    {
+     "src": "3:38",
+     "tgt": "enoch/1-enoch 85:9",
+     "member_note": "1 Enoch 85:9 — *another white bull... from Him proceeded many white bulls, and they resembled him... one following the other.* The Sethite seed-line as the white bulls one-following-another; Luke 3:36-38 traces that same line backward to Adam."
+    },
+    {
+     "src": "3:37",
+     "tgt": "enoch/1-enoch 60:8",
+     "member_note": "1 Enoch 60:8 — *the seventh from Adam, the first man whom Yahuah (God) of Spirits created.* Adam named the first-created man, Enoch the seventh from him; Luke 3:37 runs the genealogy through Enoch in the same seventh-from-Adam count Jude 1:14 carries, landing on Adam the son of Elohim."
+    }
+   ]
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": "Hosea 1:9-10",
+   "anchored_in_this_book": false,
+   "member_count": 67,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Hosea, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:6",
+     "tgt": "canon/isaiah 40:5",
+     "member_note": "*And all flesh shall see the salvation of Elohim (God).* Luke's extension of the Yeshayahu (Isaiah) 40 citation through to v.5 is unique among the synoptics — Mark and Matthew stop at v.3. The *all flesh shall see* is the global-scope-because-the-sheep-are-scattered-through-every-nation reading, not the categorical-universal-Gentile-inclusion reading."
+    }
+   ]
+  },
+  {
+   "slug": "son-of-adam-as-judge-and-ladder",
+   "title": "Son of Adam — the lineage-name as ladder, judgment, and ascent",
+   "anchor": "John 1:51",
+   "anchored_in_this_book": false,
+   "member_count": 25,
+   "summary_md": "John uses the *Son of Adam* title across his gospel in a register the other gospels do not match. He opens with the title at John 1:51 — *ye shall see heaven open, and the angels of Elohim (God) ascending and descending upon the Son of Adam.* He returns to the title at John 5:27 as the judgment-credential: *the Father hath given him authority to execute judgment also, because he is the Son of Adam.* He lands the title in John 6 as the substance the bread-from-heaven discourse rests on (6:53, 6:62), in John 12 as the lifted-up substance (12:23, 12:34), and in John 13 as the glorified one at the hour (13:31). The framework's seed-of-Adam restoration of the title is load-bearing through all of these — the *son of Adam* names the lineage on which the framework's whole architecture rests.\n\n*And he saith unto him, Verily, verily, I say unto you, Hereafter ye shall see heaven open, and the angels of Elohim (God) ascending and descending upon the Son of Adam.* (John 1:51)\n\n*And hath given him authority to execute judgment also, because he is the Son of Adam.* (John 5:27)\n\n*And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of Elohim (God) ascending and descending on it. And, behold, Yahuah (the LORD) stood above it.* (Genesis 28:12-13)\n\nThe ladder of Ya'aqov's (Jacob's) Bethel vision is the architecture John 1:51 names as fulfilled on the Formed one in flesh. The angels ascending and descending on the ladder ascend and descend on the Son of Adam — the body of the Formed one is the connection between heaven and earth that Ya'aqov (Jacob) saw in the dream. The lineage-name carries the substance: the Son of Adam is the seed of Adam through whom the heaven-earth connection is reopened, the ladder Ya'aqov (Jacob) saw is the body of the lineage taking on the office it always pointed toward.\n\nThe judgment-credential at John 5:27 carries the same lineage-weight. *Because he is the Son of Adam* — because he is of the seed, the judgment of the seed's covenant is his to execute. Daniel 7:13's *one like the Son of Adam* receives the everlasting kingdom from the Ancient of Days; the kaph-comparative honors the incarnation truth that the figure resembles mortal-man because he took on flesh, while remaining the Formed cloud-rider. John 5:27 lands the judgment-authority on the same Son of Adam whose body is the ladder, whose flesh is the bread, whose lifting-up is the gathering-ensign.\n\nThe eating-the-flesh discourse of John 6:53-58 names the lineage-name as the food the gathered take in. *Except ye eat the flesh of the Son of Adam, and drink his blood, ye have no life in you* — the seed-of-Adam is the substance the new birth incorporates; the body of the lineage becomes the food of the gathered body. John 6:62 returns to the title in the ascent: *what and if ye shall see the Son of Adam ascend up where he was before?* The pre-existent Formed one who descended is the same Son of Adam who ascends; the lineage-name is preserved through the descent, the incarnation, the death, the resurrection, and the ascent.\n\nJohn 12:23 names the hour: *the hour is come, that the Son of Adam should be glorified.* John 12:34 records the crowd's question — *who is this Son of Adam?* — the title puzzles the hearers because the inherited reading had emptied the title of its lineage-weight; the Formed one carries it back to its Tanakh substance. John 13:31 lands the glorification at the table after Yehuda (Judas) goes out: *now is the Son of Adam glorified, and Elohim (God) is glorified in him.* The lineage-name is the throughline.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:38",
+     "tgt": "canon/genesis 5:1",
+     "member_note": "*Which was the son of Adam, which was the son of Elohim (God).* Luke's genealogy lands at the same Bereshit (Genesis) 5:1 toledot of Adam that names Adam as made in the likeness of Elohim. The Son-of-Adam-as-ladder substance is anchored here."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-3-fruits-meet-for-repentance-stones-to-abraham-isaiah-1-ezekiel-18-romans-11",
+   "title": "Bring forth fruits meet for repentance — stones raised to Abraham (Isaiah 1; Ezekiel 18; Romans 11)",
+   "anchor": "Matthew 3:7-10",
+   "anchored_in_this_book": false,
+   "member_count": 13,
+   "summary_md": "**Come and see** — John's thunder against *O generation of vipers* is not new severity; it is the prophets' own demand. *Bring forth therefore fruits meet for repentance* (Matthew 3:8). Repentance is never a feeling — it is a TURNING into obedience, and the Tanakh has said so all along. ¶ **Isaiah 1:16** — *Wash you, make you clean; put away the evil of your doings from before mine eyes; cease to do evil* — and **1:17** turns it outward: *Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow.* That is the fruit. **Jeremiah 4:3** demands the broken heart that bears it: *Break up your fallow ground, and sow not among thorns.* ¶ And to those who hide behind *We have Abraham to our father*, **Ezekiel 18:30** answers: *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* — for what Elohim wants is **18:31**: *make you a new heart and a new spirit: for why will ye die, O house of Yashar'el (Israel)?* A new heart, not a bloodline. The axe laid to the root is Isaiah's own picture — **Isaiah 10:33** — *shall lop the bough with terror... and the haughty shall be humbled.* ¶ But hear the guard carefully. *Elohim is able of these stones to raise up children unto Abraham* does NOT mean Israel cast off. **Romans 11:1** — *Hath Elohim (God) cast away his people? Elohim (God) forbid.* The stones become Abraham's children by **Romans 11:17** — *thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root* — the nations grafted INTO the same root, brought home alongside Israel, never in place of her.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "watcher-rebellion-as-source-of-the-vipers",
+   "title": "The Watcher rebellion as the source of the vipers",
+   "anchor": "Matthew 3:7",
+   "anchored_in_this_book": false,
+   "member_count": 9,
+   "summary_md": "Yochanan's (John's) *generation of vipers* — Greek *gennēmata echidnōn,* offspring of vipers — at Matt 3:7 names the Pharisaic-Sadducean leadership in the seed-war register the Hebrew library opens at 1 Enoch 6-16 and Jubilees 5 / 10. 1 Enoch 6:1-2 narrates the fallen-Watchers' descent and their breeding of the Nephilim — the tares woven in by the fallen Watchers (Matt 13:24-30, 36-43). 1 Enoch 10:9 names the judgment against *the children of the Watchers* explicitly. Jubilees 5:1 carries the same narrative; Jubilees 10:1 narrates the persistence of the Watcher-spirits as unclean demons after the Flood. The seed-war pattern Yochanan (John) names at Matt 3:7 — and Yahusha (Jesus) re-names at Matt 23:33 and John 8:44 — has this 1 Enoch 6 / Jubilees 5 origin in the Hebrew library's witness. The system is the contemporary face of the persistent seed-war; the people inside are victims of the deception their inherited tradition handed them.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:7",
+     "tgt": "canon/matthew 3:7",
+     "member_note": "*O generation of vipers, who hath warned you to flee from the wrath to come?* Yochanan (John)'s rebuke of the Pharisees and Sadducees fires the same diagnostic Matthew 3:7 names — the *generation of vipers* identification points to the watcher-rebellion-tare-architecture that Bereshit (Genesis) 3:15 named at the gate of Eden."
+    }
+   ]
+  },
+  {
+   "slug": "father-voice-naming-the-son-of-adam-at-the-investiture",
+   "title": "This is the Son of Adam — the voice that names him at the investiture",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "*And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased.* (Matthew 3:17). A voice from above the water names the one standing in it. Enoch heard the same form of words spoken over the same figure when he was carried up into the heavens: *And he (i.e. the angel) came to me and greeted me with His voice, and said unto me: ‘This is the Son of Adam who is born unto righteousness, And righteousness abides over him, And the righteousness of the Head of Days forsakes him not.’* (1 Enoch 71:14). This is the Son of Adam, this is my beloved Son. The naming at the Jordan is public, and the Parables explain why it had to come as a disclosure and not as common knowledge: *For from the beginning the Son of Adam was hidden, And the El Elyon (Most High) preserved him in the presence of His might, And revealed him to the elect.* (1 Enoch 62:7). The one hidden with the Father from the beginning is revealed to the elect, and at the river the revealing is spoken out loud. The Ascension of Isaiah carries the other end of the arc, the Beloved who came down in the form of a man going back up: *And I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold.* (Ascension of Isaiah 11:32). Descent, naming, ascent. The voice at the Jordan is one point on a line the library had already drawn end to end.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:21",
+     "tgt": "canon/matthew 3:17",
+     "member_note": "*And it came to pass, that Yahusha (Jesus) also being baptized, and praying, the heaven was opened, and the Ruach HaKodesh (Holy Spirit) descended in a bodily shape like a dove upon him, and a voice came from heaven, which said, Thou art my beloved Son; in thee I am well pleased.* The Formless-Father's voice names the Formed-Son in audible fashion at the moment of investiture. Luke adds *and praying,* placing the investiture inside the Son's own prayer to the Father."
+    }
+   ]
+  },
+  {
+   "slug": "genealogy-as-adamic-toledot",
+   "title": "The genealogy as Adamic toledot",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 6,
+   "summary_md": "Matthew's opening phrase *biblos genéseōs* echoes the Septuagint of Genesis 5:1 — the same toledot the Hebrew library walks at greater chronological depth in Jubilees 4 and at celebratory length in Ecclesiasticus 44 (*Let us now praise famous men, and our fathers that begat us*). The Apocalypse of Abraham 20:6 carries the same seed-promise the genealogy traces. 1 Adam-Eve 1:1 opens at the Genesis-garden register the toledot descends from. The framework reads Matt 1:1 as standing in the Hebrew library's own genealogical-celebration tradition — not first-century pedigree records, but the canon-opening toledot register the prophets and the Hebrew library always walked.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:23",
+     "tgt": "canon/matthew 1:1",
+     "member_note": "Luke runs his genealogy backward from Yoseph (Joseph) through David, Avraham (Abraham), Noach (Noah), Shet (Seth), to *Adam, which was the son of Elohim (God)* (Luke 3:38). The Adamic toledot frame Matthew 1 opens with forward-running, Luke closes with backward-running."
+    }
+   ]
+  },
+  {
+   "slug": "heavens-opened-at-the-priestly-investiture",
+   "title": "The heavens opened at the investiture — the open door of the throne-room",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "*And Yahusha (Jesus), when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of Elohim (God) descending like a dove, and lighting upon him:* (Matthew 3:16). Heaven opens over a man at the moment he is set apart for service. Levi was shown it at his own calling to the priesthood: *behold the heavens were opened, and an angel of Elohim (God) said to me, Levi, enter* (Testament of Levi 2:6). Enoch was shown what the open heaven opens onto. First the door itself: *And I beheld a vision, And lo! there was a second house, greater than the former, and the entire portal stood open before me, and it was built of flames of fire.* (1 Enoch 14:15). Then, in the Parables, the ascent into that house where the Son of Adam is named: *And it came to pass after this that my spirit was translated And it ascended into the heavens: And I saw the holy sons of Elohim (God). They were stepping on flames of fire: Their garments were white [and their raiment], And their faces shone like snow.* (1 Enoch 71:1). The portal that stood open before Enoch is the heaven that opened over the Jordan. What came down through it onto the Son was the Spirit, and what was spoken through it was the Father's voice. The priesthood Levi entered through an open heaven and the office the Son is sealed into at the water are reached through the same door.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:21",
+     "tgt": "canon/matthew 3:16",
+     "member_note": "Luke uniquely says *the heaven was opened* (rather than Matthew's *heavens were opened to him*) — the opening of heaven at the investiture is the same priestly-installation pattern 1 Enoch carries. The Son is installed in the priestly office by the Father's voice from the open heaven."
+    }
+   ]
+  },
+  {
+   "slug": "post-harvest-sifting",
+   "title": "Post-harvest sifting",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 13,
+   "summary_md": "The wilderness of the peoples — Ezekiel 20:33–44 — is the Tanakh source for the sheep-and-goats separation, 'depart from me, I never knew you,' and the weeping-and-gnashing-of-teeth passages.\n\nYahuah (the LORD) gathers the scattered house out of all nations, brings them face to face in the wilderness, causes them to pass under the rod, and purges out the rebels from among them. The 'depart from me, ye cursed' of Matthew 25:41 is the 'they shall not enter into the land of Yashar'el (Israel)' of Ezekiel 20:38. The weeping and gnashing of teeth is the loathing of self in Ezekiel 20:43 — 'ye shall lothe yourselves in your own sight for all your evils that ye have committed.'\n\nThe gospel passages are not eternal-hell prooftexts spoken to unbelievers. They are the post-harvest sifting of the gathered wheat. The sheep are the fruitful within the covenant body; the goats are the unfruitful within the covenant body. 'I never knew you' is spoken to those who prophesied in his name, cast out devils in his name, did many wonderful works in his name (Matthew 7:22) — not to tares. Names get blotted out in this sifting; no name is added.\n\nAnd the same chapter that names the sifting names the mercy: 'I have wrought with you for my name's sake, not according to your wicked ways' (Ezekiel 20:44). The hang-the-head and the name's-sake grace are the same verse pair.",
+   "members_in_this_chapter": [
+    {
+     "src": "3:17",
+     "tgt": "canon/matthew 3:12",
+     "member_note": "*Whose fan is in his hand, and he will throughly purge his floor, and will gather the wheat into his garner; but the chaff he will burn with fire unquenchable.* The post-harvest sifting Yochanan (John) names is the wheat-from-chaff separation Yechezk'el (Ezekiel) 20:33-38 anchors. The wheat goes into the garner; the chaff is burned."
+    }
+   ]
+  }
+ ]
+}

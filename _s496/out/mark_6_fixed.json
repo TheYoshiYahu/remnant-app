@@ -1,0 +1,185 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "mark",
+ "chapter": 6,
+ "cards": [
+  {
+   "id": 5063,
+   "prose": "Yahusha (Jesus) says a prophet has no honour *in his own country*, and Elijah's cry on Horeb shows how far that goes. He tells Yahuah (the LORD) that the children of Yashar'el (Israel) have *slain thy prophets with the sword* and are now after his own life. Nazareth's offence is the mild end of a long record.",
+   "member_phrase": "the children of Yashar'el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword",
+   "member_sentence": "Elijah tells Yahuah (the LORD) that Yashar'el (Israel) has slain his prophets and now seeks his own life, the long record Yahusha's (Jesus's) saying draws on.",
+   "thread": "mark-6-a-prophet-not-without-honour-rejected-by-his-own-1-samuel-8-jeremiah-11-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 5064,
+   "prose": "Mark has one more circle than Matthew. Matthew gives *his own country, and in his own house*, and Mark adds *among his own kin*, so the refusal reaches past the town to the relatives. Both tell it right after the offence, with Matthew's *they were offended in him* leading straight into the saying.",
+   "member_phrase": "A prophet is not without honour, save in his own country, and in his own house",
+   "member_sentence": "Matthew gives the same saying right after the people of Nazareth are offended in him, naming his country and his house but not his kin.",
+   "thread": "matthew-13-the-scribe-brings-things-new-and-old-a-prophet-without-honour-jeremiah-6",
+   "flag": ""
+  },
+  {
+   "id": 5065,
+   "prose": "Luke has *accepted* where Mark has honour, and he lets the saying open an argument. Straight after it come the widow at Sarepta and Naaman the Syrian, the two people Elijah and Elisha were sent to when many in Yashar'el (Israel) were passed over, so Luke makes the saying about whom a prophet is sent to.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Luke says no prophet is accepted in his own country and goes straight on to Elijah and Elisha, so the saying becomes an argument about whom the prophet was sent to.",
+   "thread": "nazareth-scroll-the-acceptable-year-stopped-mid-verse-and-the-individual-mercy-contrast-cases",
+   "flag": ""
+  },
+  {
+   "id": 5067,
+   "prose": "Matthew spells out the power the twelve carried, *to heal all manner of sickness and all manner of disease*, as well as over unclean spirits. Mark has the power over unclean spirits and one detail Matthew leaves out here, that he sent them *by two and two*, so that none of them went alone.",
+   "member_phrase": "he gave them power against unclean spirits, to cast them out, and to heal all manner of sickness and all manner of disease",
+   "member_sentence": "Matthew counts the twelve he called and adds that their power reached to every sickness and every disease, not only to unclean spirits.",
+   "thread": "matthew-10-the-twelve-called-and-the-twelve-tribes",
+   "flag": ""
+  },
+  {
+   "id": 5068,
+   "prose": "Twelve men are called and sent out, and the city in Revelation has *twelve gates* with the names of *the twelve tribes of the children of Yashar'el (Israel)* written on them. The gates carry the tribes, and the number Mark opens with is the number of the tribes.",
+   "member_phrase": "names written thereon, which are the names of the twelve tribes of the children of Yashar'el (Israel)",
+   "member_sentence": "Revelation gives the city twelve gates with an angel at each and the names of the twelve tribes of Yashar'el (Israel) written on them.",
+   "thread": "matthew-10-the-twelve-called-and-the-twelve-tribes",
+   "flag": ""
+  },
+  {
+   "id": 5069,
+   "prose": "Mark gives the dust a purpose that Matthew's verse leaves out here, *for a testimony against them*, so the shaking is first of all a witness. He also puts the saying about Sodom and Gomorrah in the same breath as the departure, where Matthew sets it one verse later.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew has the twelve shake the dust from their feet when a house or city will not receive them or hear their words.",
+   "thread": "matthew-10-shake-off-the-dust-and-sodom",
+   "flag": "Reversed pair; written from Mark's side and joined to the thread the Matthew twin sits in."
+  },
+  {
+   "id": 5070,
+   "prose": "Paul and Barnabas do what Mark describes, and Luke writes it as a plain act: they *shook off the dust of their feet against them* and went on to Iconium. The testimony is given and the road goes on, and the next verse has the disciples filled with joy and with the Ruach HaKodesh (Holy Spirit).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Paul and Barnabas shake the dust from their feet against the city that drove them out and move on to Iconium.",
+   "thread": "matthew-10-shake-off-the-dust-and-sodom",
+   "flag": ""
+  },
+  {
+   "id": 5071,
+   "prose": "Mark's *nor hear you* is the case where the word was not heard, and John gives the other side. *My sheep hear my voice*, so the hearing shows who they already were. The twelve go out broadly and leave the dust behind where nothing is heard, and nobody is chased.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahusha (Jesus) says his sheep hear his voice, which is how the ones he already knows are shown when the word is sent out.",
+   "thread": "my-sheep-hear-my-voice-hearing-reveals-not-creates",
+   "flag": ""
+  },
+  {
+   "id": 5072,
+   "prose": "Matthew has the warning that what is holy is not handed to those who will *trample them under their feet*, and Mark's dust is what the twelve do with their own feet when a town will not hear. They do not stay and offer it again. They leave a testimony behind and go.",
+   "member_phrase": "neither cast ye your pearls before swine, lest they trample them under their feet",
+   "member_sentence": "Matthew warns against giving what is holy to dogs or casting pearls before swine, who trample them and turn on the giver.",
+   "thread": "matthew-7-give-not-that-which-is-holy-unto-the-dogs-pearls-before-swine-proverbs-9-23",
+   "flag": ""
+  },
+  {
+   "id": 5075,
+   "prose": "Herod hears of Yahusha (Jesus) and says John has risen from the dead, and a guilty king's fear shows in it. When Ahab took Naboth's vineyard, *the word of Yahuah (LORD) came to Elijah the Tishbite*, and the prophet went down and met him there.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The word of Yahuah (the LORD) comes to Elijah to send him to Ahab, in the vineyard of Naboth whom Ahab had killed for it.",
+   "thread": "mark-6-john-beheaded-the-forerunner-slain-leviticus-18-1-kings-19-sirach-9",
+   "flag": ""
+  },
+  {
+   "id": 5076,
+   "prose": "Herod thinks John has come back from the dead. Later, coming down from the mountain, Yahusha (Jesus) says *Elijah is indeed come* and that they did to him *whatsoever they listed*. Herod is one of those who did it, so what he fears in Yahusha (Jesus) is the man he had beheaded.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahusha (Jesus) says Elijah has come and was treated as men pleased, which names John and what was done to him.",
+   "thread": "mark-9-elias-must-first-come-and-restore-all-things-restore-the-tribes-of-jacob-malachi-4-sirach-48",
+   "flag": ""
+  },
+  {
+   "id": 5077,
+   "prose": "John told Herod he had no right to his brother's wife, and *the word of Yahuah (LORD) came to Elijah the Tishbite* to send him to Ahab with a reproof just as plain. Each man spoke the commandment to a king's face, and in each story a queen stood behind the king.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "The word of Yahuah (the LORD) sends Elijah to Ahab with a reproof, and behind Ahab stands Jezebel, who arranged the taking of the vineyard.",
+   "thread": "mark-6-john-beheaded-the-forerunner-slain-leviticus-18-1-kings-19-sirach-9",
+   "flag": ""
+  },
+  {
+   "id": 5078,
+   "prose": "Zechariah son of Jehoiada stood up and asked the people why they transgress *the commandments of Yahuah (LORD)*, and for that the king had him stoned in the court of the house. John held the commandment up to a king in the same way, and it cost him his life.",
+   "member_phrase": "Why transgress ye the commandments of Yahuah (LORD), that ye cannot prosper",
+   "member_sentence": "Zechariah speaks the commandments of Yahuah (the LORD) to the people and the king, and is stoned for it.",
+   "thread": "mark-6-john-beheaded-the-forerunner-slain-leviticus-18-1-kings-19-sirach-9",
+   "flag": ""
+  },
+  {
+   "id": 5079,
+   "prose": "Moses asked for a man to go out before the congregation and come in before them, so they would not be *as sheep which have no shepherd*. Mark has the apostles gathered to Yahusha (Jesus) after their errand, and a few verses on he looks at a crowd and sees that very thing. The one they report to is the shepherd Moses asked for.",
+   "member_phrase": "that the congregation of Yahuah (LORD) be not as sheep which have no shepherd",
+   "member_sentence": "Moses asks Yahuah (the LORD) for a leader who will go out and come in before the people so they are not like sheep without a shepherd.",
+   "thread": "mark-6-feeding-the-five-thousand-sheep-without-a-shepherd-numbers-27-ezekiel-34-2-kings-4",
+   "flag": ""
+  },
+  {
+   "id": 5080,
+   "prose": "Ezekiel says the flock *scattered, because there is no shepherd*, and he blames the shepherds who fed themselves and not the flock. Mark has the apostles come back to the one shepherd after being sent out, and in the verses after he looks at a crowd like that flock and begins to teach them many things.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Ezekiel says the flock was scattered and became prey because there was no shepherd, and the failed shepherds are the cause.",
+   "thread": "mark-6-feeding-the-five-thousand-sheep-without-a-shepherd-numbers-27-ezekiel-34-2-kings-4",
+   "flag": ""
+  },
+  {
+   "id": 5081,
+   "prose": "Micaiah saw all Yashar'el (Israel) *scattered upon the hills, as sheep that have not a shepherd*, and the word was that they should go back each to his house in peace. Mark's crowd, which ran out of every town to meet him, is that flock seen again, and this time a shepherd stands among them.",
+   "member_phrase": "I saw all Yashar'el (Israel) scattered upon the hills, as sheep that have not a shepherd",
+   "member_sentence": "Micaiah sees all Yashar'el (Israel) scattered like sheep with no shepherd, and the word of Yahuah (the LORD) is that they go home in peace.",
+   "thread": "mark-6-feeding-the-five-thousand-sheep-without-a-shepherd-numbers-27-ezekiel-34-2-kings-4",
+   "flag": ""
+  },
+  {
+   "id": 5087,
+   "prose": "Elisha is handed twenty loaves and says *Give unto the people, that they may eat*, and Yahusha (Jesus) says *Give ye them to eat* to men who can only ask about buying bread. In both places the helper counts what he has against the crowd and finds it short, and in both the word is to give it anyway.",
+   "member_phrase": "brought the man of Elohim (God) bread of the firstfruits, twenty loaves of barley",
+   "member_sentence": "Elisha is brought twenty loaves of barley and tells his servant to give them to the people to eat, with some left over.",
+   "thread": "mark-6-feeding-the-five-thousand-sheep-without-a-shepherd-numbers-27-ezekiel-34-2-kings-4",
+   "flag": ""
+  },
+  {
+   "id": 5088,
+   "prose": "The disciples ask where two hundred pennyworth of bread would come from, and Ezekiel says whose work this is: *I will feed them in a good pasture*, on the mountains of Yashar'el (Israel). Yahuah (the LORD) says he will feed his own scattered flock himself, and the one saying *Give ye them to eat* is the one who does it.",
+   "member_phrase": "I will feed them in a good pasture, and upon the high mountains of Yashar'el (Israel) shall their fold be",
+   "member_sentence": "Yahuah (the LORD) promises to feed the gathered flock in a good pasture on the mountains of Yashar'el (Israel).",
+   "thread": "mark-6-feeding-the-five-thousand-sheep-without-a-shepherd-numbers-27-ezekiel-34-2-kings-4",
+   "flag": ""
+  },
+  {
+   "id": 5089,
+   "prose": "In Mark the disciples are told to feed the crowd and have only a shopping question to offer. The feeding is done by the shepherd Ezekiel promises, *one shepherd over them*, who *shall feed them, even my servant David*, and the bread goes out through the twelve's own hands.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Ezekiel says Yahuah (the LORD) will set up one shepherd, his servant David, who will feed the flock and be their shepherd.",
+   "thread": "mark-6-feeding-the-five-thousand-sheep-without-a-shepherd-numbers-27-ezekiel-34-2-kings-4",
+   "flag": ""
+  },
+  {
+   "id": 5092,
+   "prose": "Moses asked to see the glory and was told that Yahuah's (the LORD's) goodness would *pass before thee* while he stood in the rock. In Mark Yahusha (Jesus) comes over the water and *would have passed by them*, in the same words of passing. He is the one the fathers saw go by.",
+   "member_phrase": "I will make all my goodness pass before thee, and I will proclaim the name of Yahuah (LORD) before thee",
+   "member_sentence": "Yahuah (the LORD) tells Moses he will make his goodness pass before him and proclaim his name, which is the passing Mark's words recall.",
+   "thread": "mark-6-walking-upon-the-sea-it-is-i-the-i-am-job-9-exodus-3-psalm-77",
+   "flag": ""
+  },
+  {
+   "id": 5093,
+   "prose": "Elijah stood on the mountain as *Yahuah (LORD) passed by*, with wind and earthquake and fire coming before the still small voice. The wind in Mark is *contrary unto them*, and in the fourth watch the one who passed by Elijah comes walking through it to men rowing in a boat.",
+   "member_phrase": "And, behold, Yahuah (LORD) passed by, and a great and strong wind rent the mountains, and brake in pieces the rocks before Yahuah (LORD)",
+   "member_sentence": "Yahuah (the LORD) passes by Elijah on the mountain with a great wind, an earthquake and a fire before the still small voice.",
+   "thread": "mark-6-walking-upon-the-sea-it-is-i-the-i-am-job-9-exodus-3-psalm-77",
+   "flag": ""
+  },
+  {
+   "id": 5098,
+   "prose": "Isaiah was sent to tell a people *Hear ye indeed, but understand not*. Mark says the like of the twelve themselves, men who had just handed out the loaves and gathered the baskets and still *considered not the miracle of the loaves*. The words that fit the people of Isaiah's day fit the men nearest to Yahusha (Jesus).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah is told to say that the people hear and do not understand and see and do not perceive.",
+   "thread": "mark-6-walking-upon-the-sea-it-is-i-the-i-am-job-9-exodus-3-psalm-77",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 1 correction(s) applied in read496_m1l1.py; drafted on claude-sonnet-5-5."
+}

@@ -1,0 +1,296 @@
+{
+ "book": "luke",
+ "chapter": 14,
+ "chapter_text_kjv": {
+  "1": "And it came to pass, as he went into the house of one of the chief Pharisees to eat bread on the sabbath day, that they watched him.",
+  "2": "And, behold, there was a certain man before him which had the dropsy.",
+  "3": "And Yahusha (Jesus) answering spake unto the lawyers and Pharisees, saying, Is it lawful to heal on the sabbath day?",
+  "4": "And they held their peace. And he took him, and healed him, and let him go;",
+  "5": "And answered them, saying, Which of you shall have an ass or an ox fallen into a pit, and will not straightway pull him out on the sabbath day?",
+  "6": "And they could not answer him again to these things.",
+  "7": "And he put forth a parable to those which were bidden, when he marked how they chose out the chief rooms; saying unto them,",
+  "8": "When thou art bidden of any man to a wedding, sit not down in the highest room; lest a more honourable man than thou be bidden of him;",
+  "9": "And he that bade thee and him come and say to thee, Give this man place; and thou begin with shame to take the lowest room.",
+  "10": "But when thou art bidden, go and sit down in the lowest room; that when he that bade thee cometh, he may say unto thee, Friend, go up higher: then shalt thou have worship in the presence of them that sit at meat with thee.",
+  "11": "For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted.",
+  "12": "Then said he also to him that bade him, When thou makest a dinner or a supper, call not thy friends, nor thy brethren, neither thy kinsmen, nor thy rich neighbours; lest they also bid thee again, and a recompence be made thee.",
+  "13": "But when thou makest a feast, call the poor, the maimed, the lame, the blind:",
+  "14": "And thou shalt be blessed; for they cannot recompense thee: for thou shalt be recompensed at the resurrection of the just.",
+  "15": "And when one of them that sat at meat with him heard these things, he said unto him, Blessed is he that shall eat bread in the kingdom of Elohim (God).",
+  "16": "Then said he unto him, A certain man made a great supper, and bade many:",
+  "17": "And sent his servant at supper time to say to them that were bidden, Come; for all things are now ready.",
+  "18": "And they all with one consent began to make excuse. The first said unto him, I have bought a piece of ground, and I must needs go and see it: I pray thee have me excused.",
+  "19": "And another said, I have bought five yoke of oxen, and I go to prove them: I pray thee have me excused.",
+  "20": "And another said, I have married a wife, and therefore I cannot come.",
+  "21": "So that servant came, and shewed his lord these things. Then the master of the house being angry said to his servant, Go out quickly into the streets and lanes of the city, and bring in hither the poor, and the maimed, and the halt, and the blind.",
+  "22": "And the servant said, Lord, it is done as thou hast commanded, and yet there is room.",
+  "23": "And the lord said unto the servant, Go out into the highways and hedges, and compel them to come in, that my house may be filled.",
+  "24": "For I say unto you, That none of those men which were bidden shall taste of my supper.",
+  "25": "And there went great multitudes with him: and he turned, and said unto them,",
+  "26": "If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple.",
+  "27": "And whosoever doth not bear his cross, and come after me, cannot be my disciple.",
+  "28": "For which of you, intending to build a tower, sitteth not down first, and counteth the cost, whether he have sufficient to finish it?",
+  "29": "Lest haply, after he hath laid the foundation, and is not able to finish it, all that behold it begin to mock him,",
+  "30": "Saying, This man began to build, and was not able to finish.",
+  "31": "Or what king, going to make war against another king, sitteth not down first, and consulteth whether he be able with ten thousand to meet him that cometh against him with twenty thousand?",
+  "32": "Or else, while the other is yet a great way off, he sendeth an ambassage, and desireth conditions of peace.",
+  "33": "So likewise, whosoever he be of you that forsaketh not all that he hath, he cannot be my disciple.",
+  "34": "Salt is good: but if the salt have lost his savour, wherewith shall it be seasoned?",
+  "35": "It is neither fit for the land, nor yet for the dunghill; but men cast it out. He that hath ears to hear, let him hear."
+ },
+ "cards": [
+  {
+   "id": 7055,
+   "src": "Luke 14:1",
+   "src_vn": 1,
+   "src_text_live": "And it came to pass, as he went into the house of one of the chief Pharisees to eat bread on the sabbath day, that they watched him.",
+   "src_text_kjv": "And it came to pass, as he went into the house of one of the chief Pharisees to eat bread on the sabbath day, that they watched him.",
+   "tgt": "Mark 2:27",
+   "tgt_text_kjv": "And he said unto them, The sabbath was made for man, and not man for the sabbath:",
+   "tgt_context_kjv": {
+    "25": "And he said unto them, Have ye never read what David did, when he had need, and was an hungred, he, and they that were with him?",
+    "26": "How he went into the house of Elohim (God) in the days of Abiathar the high priest, and did eat the shewbread, which is not lawful to eat but for the priests, and gave also to them which were with him?",
+    "27": "And he said unto them, The sabbath was made for man, and not man for the sabbath:",
+    "28": "Therefore the Son of Adam is Adonai (Lord) also of the sabbath."
+   },
+   "old_note": "The Shabbat-healing of the man with dropsy at the Pharisee-ruler's house. The King asks *Is it lawful to heal on the sabbath day?* (v.3) — they hold their peace. Same heart-shabbat the framework restores — the day-Yahuah-hallowed is for the people, not against the people.",
+   "author_thread_hint": "shabbat-controversy-heart-shabbat-vs-pharisaic-fence",
+   "map_grade": "DOCREF",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "heart-torah-not-abolition",
+    "mark-2-the-sabbath-was-made-for-man-the-son-of-adam-lord-of-the-sabbath-genesis-2-exodus-20-jubilees-2"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 7056,
+   "src": "Luke 14:27",
+   "src_vn": 27,
+   "src_text_live": "And whosoever does not bear his cross, and come after me, cannot be my disciple.",
+   "src_text_kjv": "And whosoever doth not bear his cross, and come after me, cannot be my disciple.",
+   "tgt": "Matthew 16:24",
+   "tgt_text_kjv": "Then said Yahusha (Jesus) unto his disciples, If any man will come after me, let him deny himself, and take up his cross, and follow me.",
+   "tgt_context_kjv": {
+    "22": "Then Peter took him, and began to rebuke him, saying, Be it far from thee, Adonai (Lord): this shall not be unto thee.",
+    "23": "But he turned, and said unto Peter, Get thee behind me, Satan: thou art an offence unto me: for thou savourest not the things that be of Elohim (God), but those that be of men.",
+    "24": "Then said Yahusha (Jesus) unto his disciples, If any man will come after me, let him deny himself, and take up his cross, and follow me.",
+    "25": "For whosoever will save his life shall lose it: and whosoever will lose his life for my sake shall find it.",
+    "26": "For what is a man profited, if he shall gain the whole world, and lose his own soul? or what shall a man give in exchange for his soul?",
+    "27": "For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works."
+   },
+   "old_note": "*And whosoever doth not bear his cross, and come after me, cannot be my disciple* (Luke 14:27) — the bearing-the-cross discipleship-cost the King teaches across the gospels.",
+   "author_thread_hint": "take-up-the-cross-discipleship-cost",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-16-take-up-the-cross-the-son-of-man-shall-come-in-glory-rewarding-psalm-49-daniel-7"
+   ],
+   "reversed_pair": [
+    {
+     "id": 3535,
+     "book": "matthew",
+     "kind": "reversed-cross-book",
+     "orphan": true,
+     "threads": []
+    }
+   ]
+  },
+  {
+   "id": 7057,
+   "src": "Luke 14:26",
+   "src_vn": 26,
+   "src_text_live": "If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple.",
+   "src_text_kjv": "If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple.",
+   "tgt": "Mark 3:33",
+   "tgt_text_kjv": "And he answered them, saying, Who is my mother, or my brethren?",
+   "tgt_context_kjv": {
+    "31": "There came then his brethren and his mother, and, standing without, sent unto him, calling him.",
+    "32": "And the multitude sat about him, and they said unto him, Behold, thy mother and thy brethren without seek for thee.",
+    "33": "And he answered them, saying, Who is my mother, or my brethren?",
+    "34": "And he looked round about on them which sat about him, and said, Behold my mother and my brethren!",
+    "35": "For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother."
+   },
+   "old_note": "*If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple* (Luke 14:26) — the same kinship-redefinition Yahusha (Jesus) walks at Mark 3:33's *Who is my mother, or my brethren?* The Hebrew idiom for relative-preference, not literal-hatred.",
+   "author_thread_hint": "kinship-redefinition-kingdom-family",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "mark-3-whosoever-shall-do-the-will-of-elohim-the-same-is-my-brother-deuteronomy-33-psalm-22"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "lowest-seat-and-the-recompense-at-the-resurrection-of-the-just",
+   "title": "The lowest seat at the wedding and the recompense at the resurrection of the just",
+   "anchor": "Luke 14:7-14",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "Lukan-specific. Two paired teachings at the Pharisee-ruler's table — (a) the lowest-seat parable for the invited guests, (b) the invite-the-poor teaching for the host. The architecture is the kingdom-inversion the framework holds — the humble are exalted, the proud are abased; the recompense is at the resurrection-of-the-just, not in this age. Verse 14 names the resurrection-of-the-just explicitly — the first resurrection (Revelation 20:6) Paul confirms at 1 Thessalonians 4:16 (*the dead in Mashiach shall rise first*). Tanakh-anchor at Mishlei (Proverbs) 25:6-7 — *Put not forth thyself in the presence of the king, and stand not in the place of great men: For better it is that it be said unto thee, Come up hither.* The King is teaching from the wisdom-stream the table-guests should already know.",
+   "members_in_this_chapter": [
+    {
+     "src": "14:7",
+     "tgt": "canon/proverbs 25:6",
+     "member_note": "*Put not forth thyself in the presence of the king, and stand not in the place of great men: For better it is that it be said unto thee, Come up hither; than that thou shouldest be put lower in the presence of the prince* — the direct Tanakh-source of the lowest-seat parable, in proverb-form. The King is teaching from the wisdom-stream the table-guests should already know."
+    },
+    {
+     "src": "14:11",
+     "tgt": "canon/matthew 23:12",
+     "member_note": "*And whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted* — the same kingdom-inversion the King teaches in the woes against the scribes-and-Pharisees. Same substance, different setting."
+    },
+    {
+     "src": "14:11",
+     "tgt": "canon/james 4:10",
+     "member_note": "*Humble yourselves in the sight of Yahuah (the Lord), and he shall lift you up* — the same kingdom-inversion the framework names across the apostolic witness."
+    },
+    {
+     "src": "14:13",
+     "tgt": "canon/deuteronomy 14:29",
+     "member_note": "*And the Levite, (because he hath no part nor inheritance with thee,) and the stranger, and the fatherless, and the widow, which are within thy gates, shall come, and shall eat and be satisfied; that Yahuah (the LORD) thy Elohim (God) may bless thee in all the work of thine hand which thou doest* — the Devarim (Deuteronomy) 14:29 invite-the-poor substance the King walks into the supper-host teaching."
+    },
+    {
+     "src": "14:14",
+     "tgt": "canon/1-thessalonians 4:16",
+     "member_note": "*And the dead in Mashiach (Christ) shall rise first* — Paul's witness to the first-resurrection register the King names at Luke 14:14."
+    },
+    {
+     "src": "14:14",
+     "tgt": "canon/revelation 20:6",
+     "member_note": "*Blessed and holy is he that hath part in the first resurrection: on such the second death hath no power* — the resurrection-of-the-just register the King names is the first-resurrection of Revelation 20:6."
+    }
+   ]
+  },
+  {
+   "slug": "the-great-supper-and-the-bidden-who-refuse-and-the-gathering-from-highways-and-hedges",
+   "title": "The great supper and the bidden who refuse — the gathering from highways and hedges as the scattered-seed homecoming",
+   "anchor": "Luke 14:15-24",
+   "anchored_in_this_book": true,
+   "member_count": 7,
+   "summary_md": "Lukan-version of the wedding-banquet substance (compare Matthew 22:1-14, different parable, similar architecture). Three movements: (1) the bidden-who-make-excuse — the bought-a-field, bought-five-yoke-of-oxen, married-a-wife refusers, (2) the streets-and-lanes-of-the-city gathering of the poor-maimed-halt-blind, (3) the highways-and-hedges compelling-in to fill the house. FRAMEWORK-MAJOR. Framework reading: the bidden-who-refuse are the leadership-of-the-house-of-Yahudah (Judah) who heard the call FIRST and refused — *He came unto his own, and his own received him not* (Yochanan/John 1:11). The streets-and-lanes gathering is the marginalized-within-the-covenant-territory. The highways-and-hedges compelling-in is the wide-proclamation across the territories of the scattered-seed-of-Ephraim — the lost-sheep of the house of Yashar'el (Israel) being gathered from the nations of their dispersion. Yechezk'el (Ezekiel) 37:21 *Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side.* This is NOT the inherited Gentile-inclusion-by-confession parable; this is the prophetic-gathering of the scattered house. The *that my house may be filled* (v.23) is the same fullness-of-the-gathered-elect substance Romans 11:25 carries — *until the fulness of the Gentiles (the scattered-seed) be come in*.",
+   "members_in_this_chapter": [
+    {
+     "src": "14:16",
+     "tgt": "canon/john 1:11",
+     "member_note": "*He came unto his own, and his own received him not* — the bidden-who-refuse-the-supper IS the leadership-of-his-own who heard the call first and refused. Same substance."
+    },
+    {
+     "src": "14:21",
+     "tgt": "canon/isaiah 35:5",
+     "member_note": "*Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped. Then shall the lame man leap as an hart* — the poor-maimed-halt-blind of the streets-and-lanes is the same messianic-age catalog the King fulfills throughout the gospel. The supper is the messianic-feast."
+    },
+    {
+     "src": "14:21",
+     "tgt": "canon/matthew 22:9",
+     "member_note": "*Go ye therefore into the highways, and as many as ye shall find, bid to the marriage* — the parallel wedding-banquet parable carries the same gathering-from-the-edges substance. Two parables, one architecture."
+    },
+    {
+     "src": "14:21",
+     "tgt": "canon/luke 4:18",
+     "member_note": "*He hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind* — the Natsareth-sermon credentials map onto the streets-and-lanes guests. The supper-host's gathering IS the King's mission scope walked out."
+    },
+    {
+     "src": "14:23",
+     "tgt": "canon/ezekiel 37:21",
+     "member_note": "*Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* — the highways-and-hedges gathering at Luke 14:23 is the prophetic-gathering of the scattered seed from the territories of dispersion. Same substance."
+    },
+    {
+     "src": "14:23",
+     "tgt": "canon/romans 11:25",
+     "member_note": "*That blindness in part is happened to Yashar'el (Israel), until the fulness of the Gentiles be come in* — *the fulness* (plērōma) is the same *that my house may be filled* substance. Paul reading the gathering forward — NOT the categorical-Gentile-inclusion completion the inherited reading collapses it into. The fulness is the full-number of the scattered seed gathered home from the territories of dispersion; when that gathering is complete, the *until* lands."
+    },
+    {
+     "src": "14:24",
+     "tgt": "canon/matthew 22:8",
+     "member_note": "*Then saith he to his servants, The wedding is ready, but they which were bidden were not worthy* — the bidden-not-worthy declaration carries through both parables. Cross-witness."
+    }
+   ]
+  },
+  {
+   "slug": "count-the-cost-tower-builder-king-going-to-war-and-the-disciple-who-forsakes-not-all-he-hath",
+   "title": "Count the cost — the tower-builder, the king going to war, and the disciple who forsakes not all he hath",
+   "anchor": "Luke 14:25-33",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "Lukan-specific paired-parables on the cost of discipleship. Two illustrations — the tower-builder who sits down first to count the cost and the king going to war who consults whether he can meet ten thousand with twenty thousand — bracketing the *whosoever he be of you that forsaketh not all that he hath, he cannot be my disciple* (v.33). Framework reading: the cost-of-discipleship is NOT the cost-of-entering-the-kingdom (the kingdom is given by the Father's decree, not earned) — the cost is the cost-of-walking-the-disciple-life. The hating-father-and-mother register (v.26) is the Hebrew idiom for relative-preference, the kinship-redefinition the King walks across the gospels. Mishlei (Proverbs) 24:27 — *Prepare thy work without, and make it fit for thyself in the field; and afterwards build thine house* — is the wisdom-stream's count-the-cost-before-building substance the King teaches from.",
+   "members_in_this_chapter": [
+    {
+     "src": "14:26",
+     "tgt": "canon/deuteronomy 33:9",
+     "member_note": "*Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren* — the Devarim (Deuteronomy) 33:9 Levitical-preference language is the Hebrew idiom the King's *hate not his father and mother* picks up. Not literal-hatred; relative-preference: the King above the kin."
+    },
+    {
+     "src": "14:26",
+     "tgt": "canon/matthew 19:29",
+     "member_note": "*And every one that hath forsaken houses, or brethren, or sisters, or father, or mother, or wife, or children, or lands, for my name's sake, shall receive an hundredfold* — the discipleship-cost-and-the-hundredfold-recompense the framework holds. The cost is real; the recompense is realer."
+    },
+    {
+     "src": "14:27",
+     "tgt": "canon/matthew 10:38",
+     "member_note": "*And he that taketh not his cross, and followeth after me, is not worthy of me* — the bearing-the-cross discipleship-cost the King teaches across the gospels. Cross-witness."
+    },
+    {
+     "src": "14:28",
+     "tgt": "canon/proverbs 24:27",
+     "member_note": "*Prepare thy work without, and make it fit for thyself in the field; and afterwards build thine house* — the wisdom-stream's count-the-cost-before-building substance. The King is teaching from the proverb-discipline."
+    },
+    {
+     "src": "14:33",
+     "tgt": "canon/luke 18:22",
+     "member_note": "*Sell all that thou hast, and distribute unto the poor, and thou shalt have treasure in heaven: and come, follow me* — the same forsake-all substance the King speaks to the rich-young-ruler at Luke 18:22."
+    },
+    {
+     "src": "14:33",
+     "tgt": "canon/philippians 3:8",
+     "member_note": "*Yea doubtless, and I count all things but loss for the excellency of the knowledge of HaMashiach Yahusha (Christ Jesus) my Lord: for whom I have suffered the loss of all things* — Paul's own walking of the *forsake all that he hath* discipleship-cost the King names."
+    }
+   ]
+  },
+  {
+   "slug": "mark-2-the-sabbath-was-made-for-man-the-son-of-adam-lord-of-the-sabbath-genesis-2-exodus-20-jubilees-2",
+   "title": "The sabbath was made for man — the Son of Adam Lord of the sabbath (Genesis 2; Exodus 20; Jubilees 2)",
+   "anchor": "Mark 2:27-28",
+   "anchored_in_this_book": false,
+   "member_count": 8,
+   "summary_md": "This is the banner of the chapter, and it does NOT say what the pulpit claims. The disciples pluck the ears of corn on the Sabbath, the Pharisees charge them — and the Lord of the Sabbath answers first from the Torah's own word, for the plucking was lawful: *When thou comest into the standing corn of thy neighbour, then thou mayest pluck the ears with thine hand; but thou shalt not move a sickle unto thy neighbour's standing corn.* (Deuteronomy 23:25). Then he reminds them of David: *So the priest gave him hallowed bread: for there was no bread there but the shewbread, that was taken from before Yahuah (LORD)...* (1 Samuel 21:6) — the very Sabbath bread of the everlasting covenant: *Every sabbath he shall set it in order before Yahuah (LORD) continually, being taken from the children of Yashar'el (Israel) by an everlasting covenant.* (Leviticus 24:8). Mercy and need are read INTO the Torah, not against it. Then comes the word men twist to abolish the day: *The sabbath was made for man, and not man for the sabbath: Therefore the Son of Adam is Yahuah (Lord) also of the sabbath.* (Mark 2:27-28). \"Made for man\" reaches back to creation, before ever there was a Sinai: *And Elohim (God) blessed the seventh day, and sanctified it: because that in it he had rested from all his work which Elohim (God) created and made.* (Genesis 2:3). The fourth word grounds it there: *For in six days Yahuah (LORD) made heaven and earth... and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it.* (Exodus 20:11). And the commandment itself names it a mercy and a rest FOR man: *But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God)... that thy manservant and thy maidservant may rest as well as thou.* (Deuteronomy 5:14). The library knew it too: *...I will separate to Myself a people from among all the peoples, and these will keep the Sabbath day, and I will sanctify them to Myself as My people...* (Jubilees 2:19); *...and I will teach them the Sabbath day, that they may keep Sabbath thereon from all work.* (Jubilees 2:20). \"Made for man\" is the Sabbath UPHELD — the Maker's gift to Adam's race — and the Son of Adam is its right Lord and Interpreter, the One who keeps it rightly with mercy, NOT the One who breaks or abolishes it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "mark-3-whosoever-shall-do-the-will-of-elohim-the-same-is-my-brother-deuteronomy-33-psalm-22",
+   "title": "Whosoever shall do the will of Elohim, the same is my brother — the family by obedience (Deuteronomy 33; Psalm 22)",
+   "anchor": "Mark 3:31-35",
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "When his mother and brethren stand without and call for him, Yahusha (Jesus) looks round on those who sit at his feet and says, *Behold my mother and my brethren! For whosoever shall do the will of Elohim (God), the same is my brother, and my sister, and mother.* (Mark 3:34-35). The family of Elohim (God) is reckoned by the DOING of his will — the anti-antinomian seal of the whole chapter. This is Levi's blessing exactly: *Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren... for they have observed thy word, and kept thy covenant.* (Deuteronomy 33:9) — covenant loyalty set above even kindred. The Messiah of Psalm 22 claims just such a kindred: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee.* (Psalms 22:22) — those who do the Father's will are the congregation he names as brethren. And Matthew makes the Father explicit: *whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.* (Matthew 12:50). The will done is the Father's will, and the Formed Son who does that will perfectly gathers as his own household all who keep it. Not the claiming, but the doing, is the seal of the family — grace never sets the will of Elohim (God) aside; it is the very mark of belonging.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "heart-torah-not-abolition",
+   "title": "Heart Torah Not Abolition",
+   "anchor": "Matthew 5:17-19",
+   "anchored_in_this_book": false,
+   "member_count": 24,
+   "summary_md": "Yahusha (Jesus) at Matt 5:17-19 preemptively denies the antinomian misreading of his ministry. He has NOT come to destroy the law or the prophets; he has come to FILL them up to their intended substance. Until heaven and earth pass, one jot or one tittle does not pass from the law. The pulpit that teaches the breaking of even the least commandment is named LEAST in the kingdom of heaven. Matthew 5:19 is the New Testament companion of 1 John 2:3-4 — both verses say the same thing in different grammar: keeping the commandments — and teaching others to keep them — is the proof of knowing him. The thread carries the load-bearing anti-antinomian declaration of the Sermon on the Mount, tied back to the Tanakh's continuing-Torah witnesses and forward to every NT passage that reaffirms the Torah's standing.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "matthew-16-take-up-the-cross-the-son-of-man-shall-come-in-glory-rewarding-psalm-49-daniel-7",
+   "title": "Take up the cross — the Son of Adam comes in glory and rewards every man (Psalm 49:7-8; Proverbs 24:12; Daniel 7:13-14)",
+   "anchor": "Matthew 16:24-28",
+   "anchored_in_this_book": false,
+   "member_count": 16,
+   "summary_md": "*If any man will come after me, let him deny himself, and take up his cross, and follow me* (16:24) — *whosoever will lose his life for my sake shall find it* (16:25). The same call stands in Luke with the whole walk in view: *let him deny himself, and take up his cross daily, and follow me* (Luke 9:23). And *what shall a man give in exchange for his soul?* (16:26) — the psalm long ago answered that no gain of the world can buy a soul back: *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7), *(For the redemption of their soul is precious, and it ceaseth for ever:)* (Psalm 49:8). Then comes the day of reckoning: *the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works* (16:27). That rendering is the Father's own settled measure — *he that pondereth the heart consider it?... and shall not he render to every man according to his works?* (Proverbs 24:12). And the glory-coming is Daniel's very vision — *behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days* (Daniel 7:13): one LIKE the Son of Adam, in the likeness, the comparative kept, the figure not flattened — *and there was given him dominion, and glory, and a kingdom... his dominion is an everlasting dominion* (Daniel 7:14): a kingdom GIVEN him by the Ancient of days, the glory of his Father received from the Father's hand. The library's own seer saw him seated to judge — *And he (i.e. the angel) came to me and greeted me with His voice, and said unto me: ‘This is the Son of Adam who is born unto righteousness, And righteousness abides over him, And the righteousness of the Head of Days forsakes him not.’* (1 Enoch 71:14). And he comes not alone: *Yahuah Elohai (the LORD my God) shall come, and all the saints with thee* (Zechariah 14:5) — *with his angels* (16:27), and with the saints, the seed of promise gathered to him; the Son of Adam *coming in his kingdom* (16:28).",
+   "members_in_this_chapter": []
+  }
+ ]
+}

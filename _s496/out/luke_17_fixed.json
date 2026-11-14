@@ -1,0 +1,17 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 17,
+ "cards": [
+  {
+   "id": 7074,
+   "prose": "Luke's night has two men in one bed, and *the one shall be taken, and the other shall be left*, set right after the flood and the fire that carried the careless away. Matthew's field shows who the two are: good seed sown by the man, and tares sown among the wheat by his enemy, growing in the one field.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew's field holds two seeds, good seed and tares, growing in one place, which is the picture behind two in one bed and only one taken.",
+   "thread": "matthew-13-the-tares-the-harvest-is-the-end-of-the-world-daniel-12-malachi-4",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on claude-sonnet-5-5."
+}

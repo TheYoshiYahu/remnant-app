@@ -1,6 +1,6 @@
 """S496 — check496.py <batch> <dump.json>  — read-back check after the rebuild migration (scratch dump or the live dump from dump496.py).
 Per card of the fix: still on its verse pair, the live note equal to the fix note and carrying the whole target verse (parsed canon
-wording) in italics and the whole Matthew verse as it reads live; a member row in its thread with the member note, ordered after the
+wording) in italics and the whole source (Matthew / Mark / Luke) verse as it reads live; a member row in its thread with the member note, ordered after the
 thread's earlier members; every new thread live with summary + anchor; every anchored thread carrying its anchor; no forbidden phrase
 in any rewritten note; 0 duplicate pairs in the book; and the chapters of the batch left with NO orphan card. Status table per chapter
 and a final PASS/FAIL line; exit 1 on FAIL. Model: Claude Fable 5.1 (claude-fable-5-1)."""
@@ -27,7 +27,7 @@ def main(batch, dump_path):
         good = True
         if lc['note'] != c['note']: probs.append(f"{w}: live note differs from the fix"); good = False
         if f"*{parsed_text('canon', c['tgt_book'], c['tgt_ch'], c['tgt_vn'])}*" not in (lc['note'] or ''): probs.append(f"{w}: note lacks the whole target verse in italics (parsed canon wording)"); good = False
-        if f"*{lc['s_text']}* (Matthew {c['src_ch']}:{c['src_vn']})" not in (lc['note'] or ''): probs.append(f"{w}: note lacks the whole Matthew verse as it reads live"); good = False
+        if f"*{lc['s_text']}* ({TITLES[book]} {c['src_ch']}:{c['src_vn']})" not in (lc['note'] or ''): probs.append(f"{w}: note lacks the whole {TITLES[book]} verse as it reads live"); good = False
         if lc['tier'] != c['tier']: probs.append(f"{w}: tier changed {c['tier']} -> {lc['tier']}"); good = False
         for p in prose_scan(c['prose']) if lc['note'] == c['note'] else []: probs.append(f"{w}: forbidden {p}"); good = False
         ok_n += good

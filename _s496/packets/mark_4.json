@@ -1,0 +1,573 @@
+{
+ "book": "mark",
+ "chapter": 4,
+ "chapter_text_kjv": {
+  "1": "And he began again to teach by the sea side: and there was gathered unto him a great multitude, so that he entered into a ship, and sat in the sea; and the whole multitude was by the sea on the land.",
+  "2": "And he taught them many things by parables, and said unto them in his doctrine,",
+  "3": "Hearken; Behold, there went out a sower to sow:",
+  "4": "And it came to pass, as he sowed, some fell by the way side, and the fowls of the air came and devoured it up.",
+  "5": "And some fell on stony ground, where it had not much earth; and immediately it sprang up, because it had no depth of earth:",
+  "6": "But when the sun was up, it was scorched; and because it had no root, it withered away.",
+  "7": "And some fell among thorns, and the thorns grew up, and choked it, and it yielded no fruit.",
+  "8": "And other fell on good ground, and did yield fruit that sprang up and increased; and brought forth, some thirty, and some sixty, and some an hundred.",
+  "9": "And he said unto them, He that hath ears to hear, let him hear.",
+  "10": "And when he was alone, they that were about him with the twelve asked of him the parable.",
+  "11": "And he said unto them, Unto you it is given to know the mystery of the kingdom of Elohim (God): but unto them that are without, all these things are done in parables:",
+  "12": "That seeing they may see, and not perceive; and hearing they may hear, and not understand; lest at any time they should be converted, and their sins should be forgiven them.",
+  "13": "And he said unto them, Know ye not this parable? and how then will ye know all parables?",
+  "14": "The sower soweth the word.",
+  "15": "And these are they by the way side, where the word is sown; but when they have heard, Satan cometh immediately, and taketh away the word that was sown in their hearts.",
+  "16": "And these are they likewise which are sown on stony ground; who, when they have heard the word, immediately receive it with gladness;",
+  "17": "And have no root in themselves, and so endure but for a time: afterward, when affliction or persecution ariseth for the word’s sake, immediately they are offended.",
+  "18": "And these are they which are sown among thorns; such as hear the word,",
+  "19": "And the cares of this world, and the deceitfulness of riches, and the lusts of other things entering in, choke the word, and it becometh unfruitful.",
+  "20": "And these are they which are sown on good ground; such as hear the word, and receive it, and bring forth fruit, some thirtyfold, some sixty, and some an hundred.",
+  "21": "And he said unto them, Is a candle brought to be put under a bushel, or under a bed? and not to be set on a candlestick?",
+  "22": "For there is nothing hid, which shall not be manifested; neither was any thing kept secret, but that it should come abroad.",
+  "23": "If any man have ears to hear, let him hear.",
+  "24": "And he said unto them, Take heed what ye hear: with what measure ye mete, it shall be measured to you: and unto you that hear shall more be given.",
+  "25": "For he that hath, to him shall be given: and he that hath not, from him shall be taken even that which he hath.",
+  "26": "And he said, So is the kingdom of Elohim (God), as if a man should cast seed into the ground;",
+  "27": "And should sleep, and rise night and day, and the seed should spring and grow up, he knoweth not how.",
+  "28": "For the earth bringeth forth fruit of herself; first the blade, then the ear, after that the full corn in the ear.",
+  "29": "But when the fruit is brought forth, immediately he putteth in the sickle, because the harvest is come.",
+  "30": "And he said, Whereunto shall we liken the kingdom of Elohim (God)? or with what comparison shall we compare it?",
+  "31": "It is like a grain of mustard seed, which, when it is sown in the earth, is less than all the seeds that be in the earth:",
+  "32": "But when it is sown, it groweth up, and becometh greater than all herbs, and shooteth out great branches; so that the fowls of the air may lodge under the shadow of it.",
+  "33": "And with many such parables spake he the word unto them, as they were able to hear it.",
+  "34": "But without a parable spake he not unto them: and when they were alone, he expounded all things to his disciples.",
+  "35": "And the same day, when the even was come, he saith unto them, Let us pass over unto the other side.",
+  "36": "And when they had sent away the multitude, they took him even as he was in the ship. And there were also with him other little ships.",
+  "37": "And there arose a great storm of wind, and the waves beat into the ship, so that it was now full.",
+  "38": "And he was in the hinder part of the ship, asleep on a pillow: and they awake him, and say unto him, Master, carest thou not that we perish?",
+  "39": "And he arose, and rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a great calm.",
+  "40": "And he said unto them, Why are ye so fearful? how is it that ye have no faith?",
+  "41": "And they feared exceedingly, and said one to another, What manner of man is this, that even the wind and the sea obey him?"
+ },
+ "cards": [
+  {
+   "id": 5034,
+   "src": "Mark 4:3",
+   "src_vn": 3,
+   "src_text_live": "Hearken; Behold, there went out a sower to sow:",
+   "src_text_kjv": "Hearken; Behold, there went out a sower to sow:",
+   "tgt": "John 10:26",
+   "tgt_text_kjv": "But ye believe not, because ye are not of my sheep, as I said unto you.",
+   "tgt_context_kjv": {
+    "24": "Then came the Yahudim (Jews) round about him, and said unto him, How long dost thou make us to doubt? If thou be the Messiah (Christ), tell us plainly.",
+    "25": "Yahusha (Jesus) answered them, I told you, and ye believed not: the works that I do in my Father’s name, they bear witness of me.",
+    "26": "But ye believe not, because ye are not of my sheep, as I said unto you.",
+    "27": "My sheep hear my voice, and I know them, and they follow me:",
+    "28": "And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.",
+    "29": "My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father’s hand."
+   },
+   "old_note": "The sower's seed falling on four ground-types is the cause-and-effect-of-hearing architecture — the seed is the same in every case (the Word); the difference is the ground. Yochanan (John) 10:26-27's *they believe not, because they are not of my sheep... my sheep hear my voice* names the same diagnostic the parable enacts.",
+   "author_thread_hint": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "john-10-other-sheep-and-the-ten-tribes-gathered-in-2-esdras-13",
+    "john-10-other-sheep-not-of-this-fold-and-the-lost-sheep-of-the-house-of-yasharel-in-matthew-and-1-peter",
+    "my-sheep-hear-my-voice-hearing-reveals-not-creates"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5036,
+   "src": "Mark 4:14",
+   "src_vn": 14,
+   "src_text_live": "The sower sows the word.",
+   "src_text_kjv": "The sower soweth the word.",
+   "tgt": "Matthew 13:18",
+   "tgt_text_kjv": "Hear ye therefore the parable of the sower.",
+   "tgt_context_kjv": {
+    "16": "But blessed are your eyes, for they see: and your ears, for they hear.",
+    "17": "For verily I say unto you, That many prophets and righteous men have desired to see those things which ye see, and have not seen them; and to hear those things which ye hear, and have not heard them.",
+    "18": "Hear ye therefore the parable of the sower.",
+    "19": "When any one heareth the word of the kingdom, and understandeth it not, then cometh the wicked one, and catcheth away that which was sown in his heart. This is he which received seed by the way side.",
+    "20": "But he that received the seed into stony places, the same is he that heareth the word, and anon with joy receiveth it;",
+    "21": "Yet hath he not root in himself, but dureth for a while: for when tribulation or persecution ariseth because of the word, by and by he is offended."
+   },
+   "old_note": "The four soils are not four salvation-stages but four reveal-patterns. The good ground bringing forth fruit names the wheat that survives both the harvest-separation (Matthew 13:30) and the post-harvest sifting.",
+   "author_thread_hint": "wheat-and-tares-the-post-harvest-sifting-architecture",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-13-the-sower-why-parables-seeing-they-see-not-isaiah-6-isaiah-55"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5037,
+   "src": "Mark 4:14",
+   "src_vn": 14,
+   "src_text_live": "The sower sows the word.",
+   "src_text_kjv": "The sower soweth the word.",
+   "tgt": "Ezekiel 20:37",
+   "tgt_text_kjv": "And I will cause you to pass under the rod, and I will bring you into the bond of the covenant:",
+   "tgt_context_kjv": {
+    "35": "And I will bring you into the wilderness of the people, and there will I plead with you face to face.",
+    "36": "Like as I pleaded with your fathers in the wilderness of the land of Egypt, so will I plead with you, saith Adonai Yahuah (the Lord GOD).",
+    "37": "And I will cause you to pass under the rod, and I will bring you into the bond of the covenant:",
+    "38": "And I will purge out from among you the rebels, and them that transgress against me: I will bring them forth out of the country where they sojourn, and they shall not enter into the land of Yashar'el (Israel): and ye shall know that I am Yahuah (LORD).",
+    "39": "As for you, O house of Yashar'el (Israel), thus saith Adonai Yahuah (the Lord GOD); Go ye, serve ye every one his idols, and hereafter also, if ye will not hearken unto me: but pollute ye my holy name no more with your gifts, and with your idols.",
+    "40": "For in mine holy mountain, in the mountain of the height of Yashar'el (Israel), saith Adonai Yahuah (the Lord GOD), there shall all the house of Yashar'el (Israel), all of them in the land, serve me: there will I accept them, and there will I require your offerings, and the firstfruits of your oblations, with all your holy things."
+   },
+   "old_note": "*I will cause you to pass under the rod, and I will bring you into the bond of the covenant: and I will purge out from among you the rebels.* The post-harvest sifting Yechezk'el (Ezekiel) names is the architecture the soils-parable enacts.",
+   "author_thread_hint": "wheat-and-tares-the-post-harvest-sifting-architecture",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5038,
+   "src": "Mark 4:17",
+   "src_vn": 17,
+   "src_text_live": "And have no root in themselves, and so endure but for a time: afterward, when affliction or persecution arises for the word’s sake, immediately they are offended.",
+   "src_text_kjv": "And have no root in themselves, and so endure but for a time: afterward, when affliction or persecution ariseth for the word’s sake, immediately they are offended.",
+   "tgt": "Hebrews 6:4",
+   "tgt_text_kjv": "For it is impossible for those who were once enlightened, and have tasted of the heavenly gift, and were made partakers of the Ruach HaKodesh (Holy Spirit),",
+   "tgt_context_kjv": {
+    "2": "Of the doctrine of baptisms, and of laying on of hands, and of resurrection of the dead, and of eternal judgment.",
+    "3": "And this will we do, if Elohim (God) permit.",
+    "4": "For it is impossible for those who were once enlightened, and have tasted of the heavenly gift, and were made partakers of the Ruach HaKodesh (Holy Spirit),",
+    "5": "And have tasted the good word of Elohim (God), and the powers of the world to come,",
+    "6": "If they shall fall away, to renew them again unto repentance; seeing they crucify to themselves the Son of Elohim (God) afresh, and put him to an open shame.",
+    "7": "For the earth which drinketh in the rain that cometh oft upon it, and bringeth forth herbs meet for them by whom it is dressed, receiveth blessing from Elohim (God):"
+   },
+   "old_note": "*They have no root in themselves, and so endure but for a time.* The stony-ground hearer received the Word with gladness and did not endure — naming the same warning Hebrews 6:4-6 carries. The gift was real; the persistence was not. The opportunity that can be lost is the post-Reformation truncation's missing clause.",
+   "author_thread_hint": "grace-and-the-opportunity-that-can-be-lost",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5039,
+   "src": "Mark 4:19",
+   "src_vn": 19,
+   "src_text_live": "And the cares of this world, and the deceitfulness of riches, and the lusts of other things entering in, choke the word, and it becomes unfruitful.",
+   "src_text_kjv": "And the cares of this world, and the deceitfulness of riches, and the lusts of other things entering in, choke the word, and it becometh unfruitful.",
+   "tgt": "1 Timothy 6:9",
+   "tgt_text_kjv": "But they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition.",
+   "tgt_context_kjv": {
+    "7": "For we brought nothing into this world, and it is certain we can carry nothing out.",
+    "8": "And having food and raiment let us be therewith content.",
+    "9": "But they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition.",
+    "10": "For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows.",
+    "11": "But thou, O man of Elohim (God), flee these things; and follow after righteousness, godliness, faith, love, patience, meekness.",
+    "12": "Fight the good fight of faith, lay hold on eternal life, where unto thou art also called, and hast professed a good profession before many witnesses."
+   },
+   "old_note": "*The cares of this world, and the deceitfulness of riches... choke the word.* The thorny-ground hearer's loss matches 1 Timothy 6:9-10's *they that will be rich fall into temptation and a snare.*",
+   "author_thread_hint": "grace-and-the-opportunity-that-can-be-lost",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5040,
+   "src": "Mark 4:22",
+   "src_vn": 22,
+   "src_text_live": "For there is nothing hid, which shall not be manifested; neither was any thing kept secret, but that it should come abroad.",
+   "src_text_kjv": "For there is nothing hid, which shall not be manifested; neither was any thing kept secret, but that it should come abroad.",
+   "tgt": "Ecclesiastes 12:14",
+   "tgt_text_kjv": "For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil.",
+   "tgt_context_kjv": {
+    "12": "And further, by these, my son, be admonished: of making many books there is no end; and much study is a weariness of the flesh.",
+    "13": "Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.",
+    "14": "For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil."
+   },
+   "old_note": "*There is nothing hid, which shall not be manifested.* The manifestation-at-the-end pattern names what Ecclesiastes 12:14 names — *for Elohim (God) shall bring every work into judgment, with every secret thing.*",
+   "author_thread_hint": "i-know-thy-works-and-names-blotted-out",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5042,
+   "src": "Mark 4:25",
+   "src_vn": 25,
+   "src_text_live": "For he that has, to him shall be given: and he that has not, from him shall be taken even that which he has.",
+   "src_text_kjv": "For he that hath, to him shall be given: and he that hath not, from him shall be taken even that which he hath.",
+   "tgt": "Revelation 13:8",
+   "tgt_text_kjv": "And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.",
+   "tgt_context_kjv": {
+    "6": "And he opened his mouth in blasphemy against Elohim (God), to blaspheme his name, and his tabernacle, and them that dwell in heaven.",
+    "7": "And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations.",
+    "8": "And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.",
+    "9": "If any man have an ear, let him hear.",
+    "10": "He that leadeth into captivity shall go into captivity: he that killeth with the sword must be killed with the sword. Here is the patience and the faith of the saints.",
+    "11": "And I beheld another beast coming up out of the earth; and he had two horns like a lamb, and he spake as a dragon."
+   },
+   "old_note": "*He that hath, to him shall be given.* Names get blotted out from the wheat; the tares never had names to begin with (Revelation 13:8 / 17:8 — *whose names are not written in the book of life of the Lamb slain from the foundation of the world*).",
+   "author_thread_hint": "parables-of-the-kingdom-and-the-cause-and-effect-of-hearing",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5045,
+   "src": "Mark 4:35",
+   "src_vn": 35,
+   "src_text_live": "And the same day, when the even was come, he says unto them, Let us pass over unto the other side.",
+   "src_text_kjv": "And the same day, when the even was come, he saith unto them, Let us pass over unto the other side.",
+   "tgt": "Psalm 89:9",
+   "tgt_text_kjv": "Thou rulest the raging of the sea: when the waves thereof arise, thou stillest them.",
+   "tgt_context_kjv": {
+    "7": "Elohim (God) is greatly to be feared in the assembly of the saints, and to be had in reverence of all them that are about him.",
+    "8": "O Yahuah Elohim (LORD God) of hosts, who is a strong Yahuah (LORD) like unto thee? or to thy faithfulness round about thee?",
+    "9": "Thou rulest the raging of the sea: when the waves thereof arise, thou stillest them.",
+    "10": "Thou hast broken Rahab in pieces, as one that is slain; thou hast scattered thine enemies with thy strong arm.",
+    "11": "The heavens are thine, the earth also is thine: as for the world and the fulness thereof, thou hast founded them.",
+    "12": "The north and the south thou hast created them: Tabor and Hermon shall rejoice in thy name."
+   },
+   "old_note": "The wind-and-sea-stilling of Mark 4:35-41 is the Yahuah-prerogative Tehillim (Psalm) 89:9 names — *Thou rulest the raging of the sea: when the waves thereof arise, thou stillest them.*",
+   "author_thread_hint": "walking-on-the-sea-formed-cloud-rider",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "mark-4-the-sower-and-seeing-they-see-not-isaiah-6-and-55",
+   "title": "The sower went forth — seeing they see not (Isaiah 6; Isaiah 55)",
+   "anchor": "Mark 4:11-12",
+   "anchored_in_this_book": true,
+   "member_count": 7,
+   "summary_md": "When Yahusha (Jesus) tells the twelve why he speaks in parables — *That seeing they may see, and not perceive; and hearing they may hear, and not understand; lest at any time they should be converted, and their sins should be forgiven them* (Mark 4:12) — he is not inventing a riddle. He is quoting Isaiah's commission word for word. *And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9); *Make the heart of this people fat, and make their ears heavy, and shut their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and convert, and be healed* (Isaiah 6:10). The veil is the same veil. And the seed itself is Isaiah's figure too: *For as the rain cometh down, and the snow from heaven, and returneth not thither, but watereth the earth, and maketh it bring forth and bud, that it may give seed to the sower, and bread to the eater* (Isaiah 55:10) — *So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it* (Isaiah 55:11). The word does not fail; the soil receives or refuses. The thorny ground was named long before: *Break up your fallow ground, and sow not among thorns* (Jeremiah 4:3). And the library reads itself with one voice — John quotes the same Isaiah over the same rejection: *He hath blinded their eyes, and hardened their heart; that they should not see with their eyes, nor understand with their heart, and be converted, and I should heal them* (John 12:40); and Matthew names it outright: *For this people's heart is waxed gross, and their ears are dull of hearing, and their eyes they have closed; lest at any time they should see with their eyes, and hear with their ears, and should understand with their heart, and should be converted, and I should heal them* (Matthew 13:15). The sheep hear the Shepherd's voice and turn; the word reveals what the heart already was.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:11",
+     "tgt": "canon/isaiah 6:9",
+     "member_note": "Isaiah 6:9 — *Hear ye indeed, but understand not; and see ye indeed, but perceive not* — the commission Yahusha (Jesus) quotes."
+    },
+    {
+     "src": "4:11",
+     "tgt": "canon/isaiah 6:10",
+     "member_note": "Isaiah 6:10 — *lest they see... and convert, and be healed* — Mark 4:12's closing clause restored."
+    },
+    {
+     "src": "4:11",
+     "tgt": "canon/isaiah 55:10",
+     "member_note": "Isaiah 55:10 — the rain gives *seed to the sower* — the word IS the seed."
+    },
+    {
+     "src": "4:11",
+     "tgt": "canon/isaiah 55:11",
+     "member_note": "Isaiah 55:11 — *my word... shall not return unto me void* — the word does not fail; the soil refuses."
+    },
+    {
+     "src": "4:11",
+     "tgt": "canon/jeremiah 4:3",
+     "member_note": "Jeremiah 4:3 — *sow not among thorns* — the thorny ground named long before the parable."
+    },
+    {
+     "src": "4:11",
+     "tgt": "canon/john 12:40",
+     "member_note": "John 12:40 — John quotes the same Isaiah 6 over the same rejection."
+    },
+    {
+     "src": "4:11",
+     "tgt": "canon/matthew 13:15",
+     "member_note": "Matthew 13:15 — *in them is fulfilled the prophecy of Isaiah* — named outright."
+    }
+   ]
+  },
+  {
+   "slug": "mark-4-the-seed-sown-and-the-evil-seed-in-the-heart-of-adam-in-2-esdras",
+   "title": "The seed sown and the evil seed in the heart of Adam — 2 Esdras and the secret of the kingdom",
+   "anchor": "Mark 4:14-29",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "Mark 4's sower-and-soils and seed-growing-of-itself parables walk an architecture the Hebrew library's 2 Esdras had already named at the verse-level. 2 Esdras 4:30-31 names the evil-seed-sown-in-the-heart-of-Adam — *for the grain of evil seed has been sown in the heart of Adam from the beginning, and how much ungodliness has it brought up to this time? and how much shall it yet bring forth until the time of threshing come?* The seed by the way-side that *Satan cometh immediately, and taketh away* (Mark 4:15) and the soils that bring forth no fruit enact the two-seeds-in-the-heart 2 Esdras names. 2 Esdras 4:28, 32 names the appointed harvest-floor — *the evil is sown, but the destruction thereof is not yet come... when the ears shall be cut down, which are without number, how great a floor shall they fill?* — the same appointed threshing Mark 4:29's *immediately he putteth in the sickle, because the harvest is come* names: the seed grows of itself by the Father's clock until the cutting-down of the ears. 2 Esdras 9:31-33 names the law-sown-bringing-fruit and the fathers who perished *because they kept not the thing that was sown in them* — the same hearing-and-keeping diagnostic Mark 4:20's good ground enacts, *such as hear the word, and receive it, and bring forth fruit.* The Hebrew library names the seed-sown architecture the secret of the kingdom walks; the difference is never the seed (the Word is the same in every soil) but the ground that keeps it.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:15",
+     "tgt": "apocrypha/2-esdras 4:30",
+     "member_note": "2 Esdras 4:30 — *how much ungodliness has it brought up to this time?.* The same heart is the ground where Satan takes away the word that was sown (Mark 4:15)."
+    },
+    {
+     "src": "4:29",
+     "tgt": "apocrypha/2-esdras 4:28",
+     "member_note": "2 Esdras 4:28, 32 — *the evil is sown, but the destruction thereof is not yet come... when the ears shall be cut down... how great a floor shall they fill?* Mark 4:29's *immediately he putteth in the sickle, because the harvest is come* names the same appointed threshing-floor of the age."
+    },
+    {
+     "src": "4:20",
+     "tgt": "apocrypha/2-esdras 9:31",
+     "member_note": "2 Esdras 9:31 — *I sow my law in you, and it shall bring fruit in you.* The good ground of Mark 4:20 brings forth the fruit the sown law was given to bring."
+    }
+   ]
+  },
+  {
+   "slug": "mark-4-the-candle-not-under-a-bushel-psalm-119-and-ecclesiastes-12",
+   "title": "Is a candle brought to be put under a bushel? (Psalm 119; Ecclesiastes 12)",
+   "anchor": "Mark 4:21-25",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "*Is a candle brought to be put under a bushel, or under a bed? and not to be set on a candlestick?* (Mark 4:21). The candle is the word, and the word was always a lamp: *Thy word is a lamp unto my feet, and a light unto my path* (Psalm 119:105). It is set on the candlestick to grow, not to be smothered — *But the path of the just is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18). And nothing stays hidden: *For there is nothing hid, which shall not be manifested; neither was any thing kept secret, but that it should come abroad* (Mark 4:22) is the Preacher's own verdict carried forward — *For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil* (Ecclesiastes 12:14). The same lamp-saying opens the Sermon on the Mount: *Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house* (Matthew 5:15); and Luke carries it together with the measure: *For nothing is secret, that shall not be made manifest; neither any thing hid, that shall not be known and come abroad* (Luke 8:17). The light kindled in the heart that hears is not given to be hidden but to shine.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:21",
+     "tgt": "canon/psalms 119:105",
+     "member_note": "Psalm 119:105 — *Thy word is a lamp unto my feet* — the candle is the word."
+    },
+    {
+     "src": "4:21",
+     "tgt": "canon/proverbs 4:18",
+     "member_note": "Proverbs 4:18 — the just path *shineth more and more* — set up to grow, not be hidden."
+    },
+    {
+     "src": "4:21",
+     "tgt": "canon/ecclesiastes 12:14",
+     "member_note": "Ecclesiastes 12:14 — *every secret thing* brought into judgment — Mark 4:22's nothing-hid."
+    },
+    {
+     "src": "4:21",
+     "tgt": "canon/matthew 5:15",
+     "member_note": "Matthew 5:15 — the same lamp-saying opening the Sermon on the Mount."
+    },
+    {
+     "src": "4:21",
+     "tgt": "canon/luke 8:17",
+     "member_note": "Luke 8:17 — Luke carries the candle-and-measure word together as Mark does."
+    }
+   ]
+  },
+  {
+   "slug": "sleeping-and-rising-as-the-seed-grows-of-itself",
+   "title": "The seed growing of itself — the husbandman sleeps and rises while the kingdom comes",
+   "anchor": "Mark 4:26-29",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Mark alone carries this parable. *So is the kingdom of Elohim (God), as if a man should cast seed into the ground; and should sleep, and rise night and day, and the seed should spring and grow up, he knoweth not how* (Mark 4:26-27). The seed-of-promise architecture from Bereshit (Genesis) 1:11-12 is the bedrock — the earth bringing forth seed *after his kind* by the word that was spoken at creation. The parable refuses the inherited Christian frame of human-effort-builds-the-kingdom: the kingdom comes by the Father's appointed unfolding, on its own clock, until the harvest. *When the fruit is brought forth, immediately he putteth in the sickle, because the harvest is come* (Mark 4:29) is the same harvest the Father names through Yo'el (Joel) 3:13 — *put ye in the sickle, for the harvest is ripe* — and through Revelation 14:15.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:26",
+     "tgt": "canon/genesis 1:11",
+     "member_note": "*So is the kingdom of Elohim (God), as if a man should cast seed into the ground; and should sleep, and rise night and day, and the seed should spring and grow up, he knoweth not how.* The seed-of-promise architecture from Bereshit (Genesis) 1:11-12 — the earth bringing forth seed *after his kind* — is the bedrock. The parable refuses the human-effort-builds-the-kingdom frame: the kingdom comes by the Father's appointed unfolding, until the harvest."
+    },
+    {
+     "src": "4:26",
+     "tgt": "canon/genesis 1:12",
+     "member_note": "*And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and Elohim (God) saw that it was good.* The creation-pattern of seed-after-his-kind running by the Father's word is the substance the Markan parable walks into the kingdom register."
+    },
+    {
+     "src": "4:29",
+     "tgt": "canon/joel 3:13",
+     "member_note": "*When the fruit is brought forth, immediately he putteth in the sickle, because the harvest is come.* The sickle-and-the-harvest names the same harvest Yo'el (Joel) 3:13 announces — *put ye in the sickle, for the harvest is ripe* — the appointed-hour-of-reaping the Father has set."
+    },
+    {
+     "src": "4:29",
+     "tgt": "canon/revelation 14:15",
+     "member_note": "*Thrust in thy sickle, and reap: for the time is come for thee to reap.* The Markan husbandman with the sickle in hand is the same Son of Adam at Revelation 14:14-16, the harvest-hour fulfilled at the appointed clock."
+    }
+   ]
+  },
+  {
+   "slug": "mark-4-the-grain-of-mustard-seed-the-fowls-lodge-ezekiel-17-and-daniel-4",
+   "title": "The grain of mustard seed — the fowls lodge in its shadow (Ezekiel 17; Daniel 4)",
+   "anchor": "Mark 4:30-32",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "*It is like a grain of mustard seed, which, when it is sown in the earth, is less than all the seeds that be in the earth: But when it is sown, it groweth up, and becometh greater than all herbs, and shooteth out great branches; so that the fowls of the air may lodge under the shadow of it* (Mark 4:31-32). The least seed becoming the greatest tree where the birds shelter is a prophetic picture already drawn. Yahuah (LORD) plants a tender twig that becomes a great tree: *In the mountain of the height of Yashar'el (Israel) will I plant it: and it shall bring forth boughs, and bear fruit, and be a goodly cedar: and under it shall dwell all fowl of every wing; in the shadow of the branches thereof shall they dwell* (Ezekiel 17:23). Daniel saw the same: *The leaves thereof were fair, and the fruit thereof much, and in it was meat for all: the beasts of the field had shadow under it, and the fowls of the heaven dwelt in the boughs thereof, and all flesh was fed of it* (Daniel 4:12). It is a creation-song too: *By them shall the fowls of the heaven have their habitation, which sing among the branches* (Psalm 104:12). Matthew makes the lodging explicit: *Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becometh a tree, so that the birds of the air come and lodge in the branches thereof* (Matthew 13:32). The kingdom of Elohim (God) starts hidden and small and grows into the tree that shelters the gathering.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:30",
+     "tgt": "canon/ezekiel 17:23",
+     "member_note": "Ezekiel 17:23 — the tender twig becomes a goodly cedar where *all fowl of every wing* dwell."
+    },
+    {
+     "src": "4:30",
+     "tgt": "canon/daniel 4:12",
+     "member_note": "Daniel 4:12 — the great tree, *the fowls of the heaven dwelt in the boughs thereof.*"
+    },
+    {
+     "src": "4:30",
+     "tgt": "canon/psalms 104:12",
+     "member_note": "Psalm 104:12 — the birds *sing among the branches* — the creation-song the parable gathers."
+    },
+    {
+     "src": "4:30",
+     "tgt": "canon/matthew 13:32",
+     "member_note": "Matthew 13:32 — Matthew makes the lodging explicit: *the birds of the air come and lodge.*"
+    }
+   ]
+  },
+  {
+   "slug": "mark-4-peace-be-still-the-creators-authority-over-the-sea-psalm-107-and-job-38",
+   "title": "Peace, be still — the Creator's authority over the sea (Psalm 107; Job 38)",
+   "anchor": "Mark 4:35-41",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "*And he arose, and rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a great calm* (Mark 4:39). The disciples ask *What manner of man is this, that even the wind and the sea obey him?* (Mark 4:41) — and the Tanakh answers. Stilling the sea is Yahuah's (LORD's) own work: *Then they cry unto Yahuah (LORD) in their trouble, and he bringeth them out of their distresses* (Psalm 107:28); *He maketh the storm a calm, so that the waves thereof are still* (Psalm 107:29). It is his prerogative alone: *Thou rulest the raging of the sea: when the waves thereof arise, thou stillest them* (Psalm 89:9). The One who set the sea its bound at creation speaks again from the hinder part of the ship: *And said, Hitherto shalt thou come, but no further: and here shall thy proud waves be stayed?* (Job 38:11). And *Peace, be still* is the Creator's own word: *Be still, and know that I am Elohim (God): I will be exalted among the heathen, I will be exalted in the earth* (Psalm 46:10). Where Jonah slept in the storm and the sea raged until a man went over the side — *So they took up Jonah, and cast him forth into the sea: and the sea ceased from her raging* (Jonah 1:15) — here the One asleep on the pillow needs only to wake and rebuke it. The Formed Son does what only Yahuah (LORD) does, because the One who walked the deep at creation is the One in the boat.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:39",
+     "tgt": "canon/psalms 107:29",
+     "member_note": "Psalm 107:29 — *He maketh the storm a calm* — what Yahusha (Jesus) does with a word."
+    },
+    {
+     "src": "4:39",
+     "tgt": "canon/psalms 107:28",
+     "member_note": "Psalm 107:28 — the storm-tossed cry to their Deliverer — the disciples' cry."
+    },
+    {
+     "src": "4:39",
+     "tgt": "canon/psalms 89:9",
+     "member_note": "Psalm 89:9 — *Thou rulest the raging of the sea* — Yahuah's (LORD's) own prerogative."
+    },
+    {
+     "src": "4:39",
+     "tgt": "canon/job 38:11",
+     "member_note": "Job 38:11 — *Hitherto shalt thou come, but no further* — the One who set the sea its bound."
+    },
+    {
+     "src": "4:39",
+     "tgt": "canon/psalms 46:10",
+     "member_note": "Psalm 46:10 — *Be still, and know that I am Elohim (God)* — the Creator's own word."
+    },
+    {
+     "src": "4:39",
+     "tgt": "canon/jonah 1:15",
+     "member_note": "Jonah 1:15 — Jonah cast over and *the sea ceased from her raging* — here the sleeper wakes and rebukes it."
+    }
+   ]
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": "Hosea 1:9-10",
+   "anchored_in_this_book": false,
+   "member_count": 67,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Hosea, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:1",
+     "tgt": "canon/ezekiel 34:13",
+     "member_note": "*There was gathered unto him a great multitude.* The gathering-by-the-sea is the in-time enactment of Yechezk'el (Ezekiel) 34:13's *I will bring them out from the people, and gather them from the countries.*"
+    }
+   ]
+  },
+  {
+   "slug": "i-am-statements-as-formed-cloud-rider-self-identification",
+   "title": "The *I am* statements as Formed cloud-rider self-identification",
+   "anchor": "John 8:58",
+   "anchored_in_this_book": false,
+   "member_count": 29,
+   "summary_md": "The gospel of John strings seven *I am* statements through its body — the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way, the vine — and one anchoring *before Avraham (Abraham) was, I am* that ties the whole sequence to a single self-disclosure at Sinai. The inherited reading treats these as metaphor or as the Hellenistic philosophical *I am.* They are neither. They are the Formed one's repeated self-identification as the same *I am* who spoke from the burning bush, the same Formed cloud-rider who appeared to the patriarchs, the same one Yeshayahu (Isaiah) heard say *I, even I, am he* through the gathering prophecies of chapters 41 through 46.\n\n*And Elohim (God) said unto Mosheh (Moses), I AM THAT I AM: and he said, Thus shalt thou say unto the children of Yashar'el (Israel), I AM hath sent me unto you.* (Exodus 3:14)\n\n*Yahusha (Jesus) said unto them, Verily, verily, I say unto you, Before Avraham (Abraham) was, I am.* (John 8:58)\n\n*Ye are my witnesses, saith Yahuah (the LORD), and my servant whom I have chosen: that ye may know and believe me, and understand that I am he: before me there was no El (God) formed, neither shall there be after me. I, even I, am Yahuah (the LORD); and beside me there is no saviour.* (Isaiah 43:10-11)\n\nThe *I am* of John 8:58 is not a philosophical claim about timeless existence. It is the Formed one naming himself as the same Formed one who appeared in the bush, walked in the garden in the cool of the day, wrestled with Ya'aqov (Jacob) at the Yabbok, sat upon the throne high and lifted up in Yeshayahu's (Isaiah's) vision, and rode the cloud across the Tanakh's theophanies. The Formless source — the Father — is not seen and not named in this register. The Formed Word is what the *I am* names. The men who picked up stones at the end of John 8 understood exactly what was being claimed; that is why they reached for the stones.\n\nThe seven thematic *I am* statements all carry the same weight. Each names a covenant function the Tanakh assigned to Yahuah (the LORD) himself, and each lands it on Yahusha (Jesus) as the Formed cloud-rider in flesh. The shepherd, the bread, the light, the door, the resurrection — these are Yahuah's (the LORD's) functions in the prophets, restored to the body that took them on at the incarnation.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:39",
+     "tgt": "canon/job 38:8",
+     "member_note": "*Peace, be still.* The rebuking-the-sea move is the Yahuah-self-identification — Iyov (Job) 38:8-11's *Who shut up the sea with doors... and said, Hitherto shalt thou come, but no further.* The same voice that gave the sea its bounds at creation now gives it the same word on the deck."
+    },
+    {
+     "src": "4:41",
+     "tgt": "canon/habakkuk 3:8",
+     "member_note": "*What manner of man is this, that even the wind and the sea obey him?* The disciples' question rehearses the framework's central identification: the one in the boat is the one Habaqquq (Habakkuk) 3:8 named — *thou didst ride upon thine horses and thy chariots of salvation.*"
+    }
+   ]
+  },
+  {
+   "slug": "john-10-other-sheep-and-the-ten-tribes-gathered-in-2-esdras-13",
+   "title": "The other sheep and the ten tribes gathered in 2 Esdras 13",
+   "anchor": "John 10:16-27",
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "The Good Shepherd names sheep beyond the fold standing in front of him: *and other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* The inherited reading hears *other sheep* as the nations brought into the church by confession. The framework hears the Tanakh's own scattered-house language — and the Hebrew library names the scattered house tribe-by-tribe: the ten tribes carried away in the Assyrian captivity, gathered home by the Most High.\n\n*And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* (John 10:16)\n\n*My sheep hear my voice, and I know them, and they follow me.* (John 10:27)\n\n*Those are the ten tribes, which were carried away prisoners out of their own land in the time of Osea the king, whom Salmanasar the king of Assyria led away captive ... The Highest shall stay the springs of the stream again, that they may go through ... And when all the people hear his voice, every man shall in their own land leave the battle they have one against another.* (2 Esdras 13:40, 47, 33)\n\nThe *other sheep* are not the nations grafted in by a new mechanism; they are the scattered house of Yashar'el (Israel) — the ten northern tribes the Assyrian captivity carried over the waters, named explicitly in the Hebrew library's vision of the Son who is declared. The Shepherd says *them also I must bring,* and the vision names the road home: the Most High staying the river so the carried-away may cross back into one fold. And the mechanism is the same in both: *when all the people hear his voice* they turn — the hearing reveals the sheep, exactly as John 10:27 names it. *My sheep hear my voice* is not a creating but a disclosing; the scattered house hears because the scattered house was always the Shepherd's. The gathering of the carried-away ten tribes is the gathering the Good Shepherd discourse walks.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "john-10-other-sheep-not-of-this-fold-and-the-lost-sheep-of-the-house-of-yasharel-in-matthew-and-1-peter",
+   "title": "Other sheep not of this fold — the lost sheep of the house of Yashar'el (Israel) in Matthew and 1 Peter",
+   "anchor": "John 10:16-27",
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "John 10:16 is the most misread verse in the good-shepherd discourse: *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* The inherited reading treats *other sheep not of this fold* as outside-covenant peoples added to Yashar'el (Israel) by faith-confession — Gentiles included in a newly formed church. That reading is the false-inclusion gospel, and the NT witnesses themselves dismantle it. Matthew 15:24 contains Yahusha's (Jesus') own declaration of his entire commission: *I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* The *other sheep not of this fold* are not outside-covenant peoples; they are the other house — the northern kingdom, the house of Yosef and Ephraim, divorced and scattered by the Assyrian captivity and now living as Gentiles among the nations without knowing who they are. The fold of John 10:16 is the fold of Yahudah (Judah); the other sheep are the scattered seed of the northern house. *Them also I must bring* is the must of the prophetic restoration the Tanakh named through Isaiah 11, Jeremiah 31, Ezekiel 37, Hosea 1-2: the two houses gathered into one. *They shall hear my voice* is the mechanism: the hearing reveals what was already true before the foundation of the world. The sheep hear because they are sheep — the hearing does not make them sheep. Matthew 18:12 names the seeking: *if a man have an hundred sheep, and one of them be gone astray, doth he not leave the ninety and nine, and goeth into the mountains, and seeketh that which is gone astray?* — the gone-astray sheep sought in the mountains of the nations, the scattered seed reached in their exile. When the scattered sheep hear and return, 1 Peter 2:25 names where they have arrived: *For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls.* Peter writes to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia (1 Peter 1:1) — he is writing to the scattered house, the sheep who were going astray. They have heard the voice (John 10:27: *my sheep hear my voice, and I know them, and they follow me*) and returned to the Shepherd and Bishop of their souls. The one fold of John 10:16 is not a new creation; it is the restoration of the one covenant people under the one shepherd, the two houses brought together in the one who laid down his life for them.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "my-sheep-hear-my-voice-hearing-reveals-not-creates",
+   "title": "My sheep hear my voice — hearing reveals what was true before the foundation",
+   "anchor": "John 10:25-29",
+   "anchored_in_this_book": false,
+   "member_count": 22,
+   "summary_md": "The good shepherd discourse contains a sentence the inherited reading cannot hold without rewriting it. *Ye believe not, because ye are not of my sheep.* The cause-and-effect is reversed from the gospel the modern pulpit preaches. The pulpit teaches *if you believe, you become a sheep.* The discourse teaches *if you are a sheep, you hear and believe.* The hearing is the revealing; the sheep-status is what is being revealed. The status precedes the response.\n\n*But ye believe not, because ye are not of my sheep, as I said unto you. My sheep hear my voice, and I know them, and they follow me: and I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand. My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father's hand.* (John 10:26-29)\n\n*Yahuah (the LORD) hath appeared of old unto me, saying, Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee.* (Jeremiah 31:3)\n\n*And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* (Revelation 13:8)\n\nThe Father gave them to the Son. The Father gave them before the foundation of the world. Their names were written then. The hearing of the shepherd's voice in time is the revealing of what was already true in the Father's foreknowledge — not the moment in which the sheep-status was created by the act of believing. The gathering of the scattered seed is not the recruitment of volunteers from the categorical nations; it is the homecoming of those whose names were written in the Lamb's book from the foundation.\n\nThis is why the gathering can be proclaimed broadly without the proclamation collapsing into a categorical invitation to all flesh. The proclamation goes out wherever the Father sends. Those who hear are revealed by their hearing to be sheep. Those who reject have the dust shaken off the foot, and the pearls are not cast before swine. The shepherd does not chase what was never his.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "gather-together-in-one-the-children-scattered-abroad",
+   "title": "*Gather together in one the children that were scattered abroad*",
+   "anchor": "John 11:51-52",
+   "anchored_in_this_book": false,
+   "member_count": 17,
+   "summary_md": "The high priest Qayafa (Caiaphas) speaks an unwitting prophecy after the raising of Lazar (Lazarus). *It is expedient for us, that one man should die for the people, and that the whole nation perish not.* John adds an apostolic gloss naming the deeper meaning of the words Qayafa (Caiaphas) did not understand: Yahusha (Jesus) would die not for that nation only, but to gather together in one the children of Elohim (God) that were scattered abroad. The gathering-of-the-scattered-children is the twelve-tribe restoration the prophets had named in repeated specificity — the two-stick prophecy of Yechezkel (Ezekiel) 37, the assembly of the outcasts of Yeshayahu (Isaiah) 11, the *children of Yashar'el (Israel) gathered together* of Hoshea (Hosea) 1. The death of the Formed one is named as the means by which the gathering is accomplished.\n\n*And this spake he not of himself: but being high priest that year, he prophesied that Yahusha (Jesus) should die for that nation; And not for that nation only, but that also he should gather together in one the children of Elohim (God) that were scattered abroad.* (John 11:51-52)\n\n*Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land: and I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all.* (Ezekiel 37:21-22)\n\n*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* (Isaiah 11:12)\n\nThe *children of Elohim (God) that were scattered abroad* is not a categorical extension of the covenant to the nations. The phrase is the diaspora-of-the-scattered-seed, the *Lo-Ammi* of Hoshea (Hosea) 1 that the prophet immediately restores with *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* The children of Elohim (God) who are scattered abroad are the seed who lost their identity in the dispersion; the gathering is their homecoming through the death of the Formed one as the agent of the Father's gathering hand.\n\nThe high priest, standing in the office that was supposed to recognize this, speaks the prophecy without knowing what he is saying. The apostle who writes the gospel makes the framework explicit. The death-for-the-nation has its inner architecture: it is the means by which the scattered children are gathered into one. The two-stick prophecy is named in the high priest's mouth.\n\n*And it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10)\n\nThe gathering is the destination of the journey the prophets named. The practice in the present age is broad proclamation, because the citizens of the kingdom are scattered through every nation and we cannot pick them out by sight. *My sheep hear my voice* (John 10:27) — the hearing is the revealing of what was already true. Those who hear and turn are revealed to be sheep, because they were sheep before the foundation of the world. Those who reject, we shake the dust off our feet (Matthew 10:14) and we do not cast our pearls before swine (Matthew 7:6). The pursuit ends where the rejection lands; the shepherd does not chase what was never his. Belief is the response of those given; the response issues in covenant walking; grace returns the gathered to him and to his ways.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:30",
+     "tgt": "canon/ezekiel 17:22",
+     "member_note": "*The fowls of the air may lodge under the shadow of it.* The mustard-seed parable picks up Yechezk'el (Ezekiel) 17:22-23, where the great tree shelters the birds-of-every-wing. The kingdom-tree gathers in the scattered."
+    },
+    {
+     "src": "4:32",
+     "tgt": "canon/daniel 4:10",
+     "member_note": "*The fowls of the air may lodge under the shadow of it.* The Daniyel (Daniel) 4:10-12 great-tree imagery that shelters the birds is the same architecture the mustard-seed parable walks — the small beginning becomes the sheltering canopy."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-13-the-sower-why-parables-seeing-they-see-not-isaiah-6-isaiah-55",
+   "title": "The sower — by hearing ye shall hear and shall not understand (Isaiah 6; Isaiah 55; Ezekiel 12)",
+   "anchor": "Matthew 13:3-23",
+   "anchored_in_this_book": false,
+   "member_count": 18,
+   "summary_md": "When the disciples ask *Why speakest thou unto them in parables?* (13:10), Yahusha (Jesus) answers not with a new mystery but with an old wound. *And in them is fulfilled the prophecy of Isaiah, which saith, By hearing ye shall hear, and shall not understand; and seeing ye shall see, and shall not perceive* (13:14) — the very commissioning Yahuah gave Isaiah: *Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9), *Make the heart of this people fat, and make their ears heavy, and shut their eyes; lest they... should understand with their heart, and convert, and be healed* (Isaiah 6:10). The parable is a mirror that shows each heart what it already is. Ezekiel heard the same diagnosis: *which have eyes to see, and see not; they have ears to hear, and hear not* (Ezekiel 12:2). Yet the seed itself is never barren. The sower of 13:3 sows the word that comes down like rain — *it shall not return unto me void, but it shall accomplish that which I please* (Isaiah 55:11); only the soil refuses, the thorny ground that Jeremiah commanded be broken: *Break up your fallow ground, and sow not among thorns* (Jeremiah 4:3). The same Isaiah 6 word frames the whole proclamation: Yochanan quotes it (John 12:40), and Sha'ul (Paul) closes Acts with it (Acts 28:26). The good ground is simply the heart that lets the word in.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "effort-over-accomplishment",
+   "title": "Effort over accomplishment — the same God says both",
+   "anchor": "Proverbs 24:16",
+   "anchored_in_this_book": false,
+   "member_count": 77,
+   "summary_md": "The Reformation reader has been shaped to believe two thoughts cannot stand in the same paragraph. The same God who said *not for your righteousness do I do this, but for my own name's sake* — also said *depart from me, ye that work iniquity, I never knew you.* The same God who said *for by grace are ye saved through faith* — also said *whosoever hath sinned against me, him will I blot out of my book.* The same God who said *I will give you a new heart* — also said *ye shall loathe yourselves in your own sight for your iniquities.*\n\nThe Reformation kept the *for my name's sake* half and put a period where there should have been a colon. The rabbinic system kept the *depart from me* half and built a flesh-righteousness gospel. The framework holds both halves because scripture holds both halves. The place where they hold together is the phrase that names the diagnostic: **effort over accomplishment.**\n\n*\"For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.\"* (Proverbs 24:16)\n\nThe just is not the man who never fell. The wicked is not the man who failed to accomplish. What separates them is not the verdict — *none worthy* has already fallen on every flesh — but the heart's response. The just rises. The wicked *stops his ears* (Proverbs 28:9; Zechariah 7:11-12; Acts 7:57). Open ears and a returning heart, even after seven falls, is the sign of life; stopped ears, even after a hundred sermons, is the sign of death.\n\nThe new heart's signature response to grace is not the boast. It is the hanging head — *ye shall loathe yourselves in your own sight for your iniquities* (Ezekiel 36:31; 20:43; Job 42:5-6; Isaiah 6:5; Daniel 9:5). The Reformation gospel produces a head that holds itself up because it is *saved.* The rabbinic gospel produces a head that holds itself up because it is *righteous.* The framework's new heart produces a head that goes lower the more it sees His mercy.\n\n*\"Remember the former things of old: for I am El, and there is none else; I am Elohim (God), and there is none like me, Declaring the end from the beginning, and from ancient times the things that are not yet done, saying, My counsel shall stand, and I will do all my pleasure.\"* (Isaiah 46:9-10)\n\nThe whole architecture is sealed by the end the Father declared from the beginning. The end is the gathering — the twelve tribes home, the new heart given, the kingdom of priests, the Way restored. Every system that denies the gathering denies the end; every system that denies the end calls Him a liar; to call Him a liar is to reject the mercy that hangs on His name. The architecture stands or falls as one piece.\n\nCompanion threads: `grace-from-names-sake` carries the name's-sake-mercy pillar; `new-heart` carries the Torah-internalized pillar; `post-harvest-sifting` carries the wheat-sifting pillar; `grace-and-the-opportunity-that-can-be-lost` carries the standing-can-be-forfeit warning at the Matt 6 anchor. This thread anchors the architecture at the Proverbs 24:16 hinge and adds the stopped-ears discriminator, the hanging-heads sign, and the end-declared seal.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:24",
+     "tgt": "canon/proverbs 24:16",
+     "member_note": "*With what measure ye mete, it shall be measured to you: and unto you that hear shall more be given.* The hearing-leads-to-more-hearing pattern is the effort-over-accomplishment substance — *a just man falleth seven times, and riseth up again* (Mishlei/Proverbs 24:16)."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "luke",
+ "chapter": 16,
+ "cards": [
+  {
+   "id": 7064,
+   "prose": "In Mark the elders' tradition lets a man call what he owes his father and mother a gift and do nothing more for them, and so the commandment is made *of none effect*. Luke says what lay under that kind of teaching: the Pharisees were *covetous*, and they *derided him*. He answers *Ye are they which justify yourselves before men; but Elohim (God) knoweth your hearts* (Luke 16:15).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Mark gives the verdict that the tradition makes the word of Elohim (God) of none effect, and says many such things were done.",
+   "thread": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+   "flag": ""
+  },
+  {
+   "id": 7067,
+   "prose": "Matthew's field has the good seed and the enemy's tares growing side by side until the harvest. Luke sets two men together in much the same way, a rich man *clothed in purple and fine linen* and a beggar at his gate, and it is after both have died that they are parted: the beggar *carried by the angels into Abraham’s bosom* (Luke 16:22), the rich man in torments, and *a great gulf fixed* (Luke 16:26) between.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew shows a man sowing good seed in his field, the ground where wheat and tares will grow together until the harvest.",
+   "thread": "rich-man-and-lazaros-the-framework-honest-sheol-with-two-compartments-and-the-mosheh-and-the-prophets-test",
+   "flag": ""
+  },
+  {
+   "id": 7068,
+   "prose": "Abraham says the brothers already have what they need, *Moses and the prophets; let them hear them*, and that no one risen from the dead would do more. Peter says of Paul's letters *some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures* (2 Peter 3:16). In both the writings are enough, and the harm comes from twisting them, not from lacking more.",
+   "member_phrase": "even as our beloved brother Paul also according to the wisdom given unto him hath written unto you",
+   "member_sentence": "Peter points his readers to Paul's letters and in the next verse warns that the unstable twist what is hard in them as they do the other scriptures.",
+   "thread": "rich-man-and-lazaros-the-framework-honest-sheol-with-two-compartments-and-the-mosheh-and-the-prophets-test",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on Claude Sonnet 5.5 (claude-sonnet-5-5)."
+}

@@ -1,0 +1,168 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "mark",
+ "chapter": 8,
+ "cards": [
+  {
+   "id": 5121,
+   "prose": "Matthew has scribes as well as Pharisees, and they come politely, calling him *Master* and saying *we would see a sign*. Mark strips off the courtesy: they *began to question with him*, and he says what the asking was, *tempting him*. Mark names the test at the start where Matthew lets it be heard in the answer.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew's scribes and Pharisees ask politely, calling him Master, for a sign, where Mark says they came tempting him.",
+   "thread": "matthew-12-the-sign-of-the-prophet-jonah-greater-than-solomon-jonah-1-jonah-3-1-kings-10",
+   "flag": ""
+  },
+  {
+   "id": 5122,
+   "prose": "Matthew adds the Sadducees to the Pharisees, so two parties join in one test, and he too says they came *tempting*. Mark leaves the Sadducees out and keeps the Pharisees, but the thing asked for is the same, *a sign from heaven*, and in both gospels it is asked as a trap.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew names the Sadducees beside the Pharisees as the ones who came tempting him and asked for a sign from heaven.",
+   "thread": "matthew-16-no-sign-but-the-prophet-jonah-the-signs-of-the-times-jonah-1",
+   "flag": ""
+  },
+  {
+   "id": 5123,
+   "prose": "Mark gives only the refusal: *There shall no sign be given unto this generation.* (Mark 8:12) Jonah's three days and three nights in the fish are the one thing the scripture holds out to sign-seekers, a man out of sight for three days and then alive. Mark's own words that the Son of Adam must be killed, *and after three days rise again* (Mark 8:31) put the two together.",
+   "member_phrase": "And Jonah was in the belly of the fish three days and three nights",
+   "member_sentence": "Jonah was three days and three nights in the belly of the fish, the one sign the sign-seekers are left with.",
+   "thread": "matthew-16-no-sign-but-the-prophet-jonah-the-signs-of-the-times-jonah-1",
+   "flag": ""
+  },
+  {
+   "id": 5124,
+   "prose": "Moses commanded that leaven be put out of the house at Passover, and the soul that ate it was *cut off from Yashar'el (Israel)*. Yahusha (Jesus) uses that picture for the teaching of the Pharisees and of Herod, something small that gets into the whole loaf and has to be cleared out. Mark alone puts Herod in the warning, the king's house beside the Pharisees'.",
+   "member_phrase": "the first day ye shall put away leaven out of your houses",
+   "member_sentence": "Moses commands that leaven be put out of the houses at Passover, the picture Yahusha (Jesus) borrows for teaching that spreads.",
+   "thread": "mark-8-leaven-of-the-pharisees-and-of-herod-as-conjoined-political-religious-corruption",
+   "flag": ""
+  },
+  {
+   "id": 5127,
+   "prose": "Yahusha (Jesus) asks the twelve what Isaiah's verse said of the people, *see ye indeed, but perceive not*. He says it to his own disciples, in a boat, over a shortage of bread: *perceive ye not yet, neither understand?* Isaiah's words were sent against a people, and here they land on the men closest to him.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah is told to say to the people, hear indeed but understand not, the words Yahusha (Jesus) turns on the twelve.",
+   "thread": "mark-8-leaven-of-the-pharisees-and-of-herod-as-conjoined-political-religious-corruption",
+   "flag": ""
+  },
+  {
+   "id": 5128,
+   "prose": "The next verse of Mark is Jeremiah's sentence turned into a question: *Having eyes, see ye not? and having ears, hear ye not?* (Mark 8:18) Jeremiah spoke it to a *foolish people, and without understanding*. Yahusha (Jesus) says it to men who have just watched two feedings, which is why the hardened heart he names is theirs.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Jeremiah calls a foolish people without understanding who have eyes and see not and ears and hear not, the words Yahusha (Jesus) puts to the twelve.",
+   "thread": "mark-8-leaven-of-the-pharisees-and-of-herod-as-conjoined-political-religious-corruption",
+   "flag": ""
+  },
+  {
+   "id": 5129,
+   "prose": "Ezekiel was set down in the midst of *a rebellious house* that had eyes to see and did not use them. Yahusha (Jesus) is in a boat with twelve men of that same house, and what he asks them, *have ye your heart yet hardened?*, is Ezekiel's complaint brought inside his own circle. It is said of the disciples, not only of the crowds.",
+   "member_phrase": "which have eyes to see, and see not; they have ears to hear, and hear not",
+   "member_sentence": "Ezekiel is told the rebellious house has eyes and ears and does not use them, the complaint Yahusha (Jesus) brings to his own disciples.",
+   "thread": "mark-8-leaven-of-the-pharisees-and-of-herod-as-conjoined-political-religious-corruption",
+   "flag": ""
+  },
+  {
+   "id": 5131,
+   "prose": "Isaiah says what the one Yahuah (the LORD) sends is for: *To open the blind eyes*. Bethsaida is that work done in front of the disciples who have just been asked whether they see. The man needs two touches before he *saw every man clearly* (Mark 8:25), and the pages around him show the twelve being brought slowly to see too.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Isaiah names opening the blind eyes and bringing prisoners out of darkness as the work of the one sent, and Bethsaida shows it done.",
+   "thread": "mark-8-the-blind-man-of-bethsaida-healed-in-stages-isaiah-35-isaiah-42",
+   "flag": ""
+  },
+  {
+   "id": 5132,
+   "prose": "Matthew has him ask it with the title in his mouth, *that I the Son of Adam am*, while Mark's question says only *that I am*. Either way he is asking who men say he is, and Son of Adam is the name he already uses of himself. Mark goes from Peter's confession straight on to the suffering. The rock and the keys are Matthew's and are not here.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew's question has Yahusha (Jesus) calling himself the Son of Adam as he asks whom men say he is.",
+   "thread": "matthew-16-thou-art-the-messiah-the-rock-and-the-keys-psalm-2-isaiah-22-isaiah-28",
+   "flag": ""
+  },
+  {
+   "id": 5133,
+   "prose": "Luke sets the same question somewhere else. Mark has it *by the way* in the towns of Caesarea Philippi, and Luke has a man *alone praying*, with the disciples near him, and the question comes out of the prayer: *Whom say the people that I am?*",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Luke sets the question while Yahusha (Jesus) is alone praying with his disciples near, and asks what the people say of him.",
+   "thread": "luke-9-the-messiah-of-elohim-confessed-and-the-suffering-foretold-psalm-2-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 5134,
+   "prose": "Mark gives Peter's answer short: *Thou art the Messiah (Christ).* (Mark 8:29) John has Peter speaking for the others, *we believe and are sure*, and he says more, *the Son of the living Elohim (God)*. It is the same confession in a different place, with the Father's Son named in it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "John's Peter speaks for the group, we believe and are sure, and names Yahusha (Jesus) the Messiah (Christ), the Son of the living Elohim (God).",
+   "thread": "mark-8-thou-art-the-messiah-peters-confession-psalm-2-daniel-7-1-enoch-46-48",
+   "flag": ""
+  },
+  {
+   "id": 5136,
+   "prose": "Yahusha (Jesus) says the Son of Adam will suffer much and be *rejected of the elders, and of the chief priests, and scribes*. The psalm speaks of the same shame in the first person: *a reproach of men, and despised of the people*. The rejection Mark lays out has something written behind it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Psalm 22 has the sufferer say he is despised of the people and a reproach of men, the shame Yahusha (Jesus) says awaits the Son of Adam.",
+   "thread": "mark-8-the-son-of-adam-must-suffer-then-come-in-glory-isaiah-53-psalm-49-daniel-7-zechariah-14",
+   "flag": ""
+  },
+  {
+   "id": 5137,
+   "prose": "Mark's sentence ends with the Son of Adam killed and risen. Zechariah has a sentence about the people who did it. Yahuah (the LORD) says he will pour out *the spirit of grace and of supplications*, and then *they shall look upon me whom they have pierced*, mourning *as one mourneth for his only son*. The killing is not where the telling stops.",
+   "member_phrase": "they shall look upon me whom they have pierced, and they shall mourn for him",
+   "member_sentence": "Zechariah has the house of David and Jerusalem look on the one they pierced and mourn for him as for an only son.",
+   "thread": "mark-8-the-son-of-adam-must-suffer-then-come-in-glory-isaiah-53-psalm-49-daniel-7-zechariah-14",
+   "flag": ""
+  },
+  {
+   "id": 5138,
+   "prose": "Matthew marks it with *From that time forth*, says where it ends, *Jerusalem*, and that he would be raised *the third day*. Mark says only that he *began to teach them*, puts the rising *after three days*, and adds that he said it plainly:\n\n*And he spake that saying openly.* (Mark 8:32)",
+   "member_phrase": "he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes",
+   "member_sentence": "Matthew names Jerusalem as where Yahusha (Jesus) must go to suffer and be killed, and says he would be raised the third day.",
+   "thread": "matthew-16-get-thee-behind-me-satan-he-must-suffer-many-things-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 5142,
+   "prose": "Yahusha (Jesus) charged the Pharisees with laying aside *the commandment of Elohim (God)* for the tradition of men. To Peter he says he savours *the things that be of men* and not the things of Elohim (God). It is the same fault, a mind set on what men say instead of what the Father has said, found in the man at his own side.",
+   "member_phrase": "ye hold the tradition of men, as the washing of pots and cups",
+   "member_sentence": "Earlier Yahusha (Jesus) told the Pharisees they laid aside the commandment of Elohim (God) to hold the tradition of men, the fault he now names in Peter.",
+   "thread": "mark-8-the-son-of-adam-must-suffer-then-come-in-glory-isaiah-53-psalm-49-daniel-7-zechariah-14",
+   "flag": ""
+  },
+  {
+   "id": 5143,
+   "prose": "Matthew keeps the same words and adds one of his own, *thou art an offence unto me*. Mark has Yahusha (Jesus) turn first and look *on his disciples* before he speaks, so the rebuke is given where all of them can see it. Matthew says what Peter had become to him in that moment, something to trip over on the road he had just named.",
+   "member_phrase": "thou art an offence unto me: for thou savourest not the things that be of Elohim (God)",
+   "member_sentence": "Matthew adds that Yahusha (Jesus) told Peter he was an offence unto him, as well as one who savoured the things of men.",
+   "thread": "matthew-16-get-thee-behind-me-satan-he-must-suffer-many-things-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 5144,
+   "prose": "Matthew puts it as a measure, *is not worthy of me*. Mark puts it as a call, *Whosoever will come after me*, and says who was standing there: he *called the people unto him with his disciples also*. The cross is said to the crowd as well as to the twelve, and the words are meant for all of them.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives it as a measure: the man who does not take his cross and follow Yahusha (Jesus) is not worthy of him.",
+   "thread": "matthew-10-not-peace-but-a-sword-a-mans-foes-lose-your-life-micah-7-deuteronomy-33",
+   "flag": ""
+  },
+  {
+   "id": 5145,
+   "prose": "The words are nearly the same, but the audience is not. Matthew says Yahusha (Jesus) spoke *unto his disciples*. Mark says he first *called the people unto him with his disciples also*, so the crowd stood there while the cost was named. What Mark adds to Matthew is the crowd.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew has the same call to deny himself, take up his cross and follow, spoken to his disciples.",
+   "thread": "matthew-16-take-up-the-cross-the-son-of-man-shall-come-in-glory-rewarding-psalm-49-daniel-7",
+   "flag": ""
+  },
+  {
+   "id": 5146,
+   "prose": "Luke adds a phrase and a word. He says Yahusha (Jesus) spoke *to them all*, which is Mark's crowd along with the disciples, and he puts *daily* after *take up his cross*. In Mark the cross is taken up and followed. In Luke it is carried every day.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Luke says Yahusha (Jesus) spoke to them all and that the cross is taken up daily.",
+   "thread": "luke-9-take-up-thy-cross-and-the-glory-of-the-son-of-adam-daniel-7-psalm-49",
+   "flag": ""
+  },
+  {
+   "id": 5147,
+   "prose": "Luke puts the cross on the other side of the line. Where Mark gives the call, *Whosoever will come after me*, Luke gives the loss, *cannot be my disciple*, and says *bear his cross* where Mark says *take up his cross*. A man who will not carry it is not following.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Luke turns the call around: whoever does not bear his cross and come after Yahusha (Jesus) cannot be his disciple.",
+   "thread": "count-the-cost-tower-builder-king-going-to-war-and-the-disciple-who-forsakes-not-all-he-hath",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

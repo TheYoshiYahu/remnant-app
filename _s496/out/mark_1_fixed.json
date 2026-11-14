@@ -1,0 +1,57 @@
+{
+ "model": "claude-sonnet-5-5 (Sonnet 5.5)",
+ "book": "mark",
+ "chapter": 1,
+ "cards": [
+  {
+   "id": 4990,
+   "prose": "Mark calls what he is writing *the beginning of the gospel*, and Paul opens his letter by saying he was set apart for that same gospel. Paul goes on to say where it came from: *Which he had promised afore by his prophets in the holy scriptures* (Romans 1:2). So Mark is not starting something new; he is writing down the opening of what the prophets had already promised.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Paul says he was separated unto the gospel of Elohim (God), the one his next lines say the prophets had promised beforehand.",
+   "thread": "mark-1-prepare-ye-the-way-of-yahuah-the-forerunner-malachi-3-isaiah-40",
+   "flag": "Mark 1:1 stands just before the forerunner scene, so it joins that thread as the nearest fit."
+  },
+  {
+   "id": 4993,
+   "prose": "Mark hears Isaiah's *voice of one crying in the wilderness* and sets it at the Jordan, and Malachi says whose voice it is. Yahuah (the LORD) will send *Elijah the prophet* ahead of *the great and dreadful day*, and John comes out of the wilderness as that forerunner, as Mark himself goes on to say.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahuah (the LORD) promises to send Elijah the prophet before his great and dreadful day, the forerunner whose voice Mark hears in the wilderness.",
+   "thread": "mark-1-prepare-ye-the-way-of-yahuah-the-forerunner-malachi-3-isaiah-40",
+   "flag": ""
+  },
+  {
+   "id": 5002,
+   "prose": "The synagogue heard the difference at once: he taught *as one that had authority, and not as the scribes*. Behind the scribes stood a tradition handed down from the elders, and here Yahusha (Jesus) says what that tradition had done, that it made the word of Elohim (God) of none effect. He spoke the commandment itself, and they had been speaking around it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Yahusha (Jesus) names what the scribes' handed-down tradition does to the commandment, which is why his own teaching sounded so different from theirs.",
+   "thread": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+   "flag": "The summary of this thread still carries house shorthand (it calls Yahusha (Jesus) the King and speaks of a diagnostic); it will want a plain rewrite when it is filled."
+  },
+  {
+   "id": 5003,
+   "prose": "Mark gives what he was sent for in four words, *therefore came I forth*, and Matthew says in plain words who he was sent to. When Yahusha (Jesus) leaves the crowd that was looking for him and goes on to the next towns, he is going to the lost sheep of Yashar'el's (Israel's) scattered house, wherever they are found.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the same errand in Yahusha's (Jesus's) own words to his disciples: he is sent only to the lost sheep of the house of Yashar'el (Israel).",
+   "thread": "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17",
+   "flag": ""
+  },
+  {
+   "id": 5004,
+   "prose": "Ezekiel hears Adonai Yahuah (the Lord GOD) say *I, even I,* will search for his sheep, when the shepherds had fed themselves and left them. Here Yahusha (Jesus) will not stay where he is wanted and says *therefore came I forth*; he goes out to do the seeking Ezekiel heard promised.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Adonai Yahuah (the Lord GOD) says he himself will search for his sheep and seek them out, the errand Yahusha (Jesus) names at the next towns.",
+   "thread": "scattered-seed-gathering",
+   "flag": ""
+  },
+  {
+   "id": 5005,
+   "prose": "The leper asks to be made clean, and Yahusha (Jesus) makes him clean and then sends him on: *shew thyself to the priest, and offer for thy cleansing those things which Moses commanded* (Mark 1:44). Leviticus is where Moses wrote that law, with the priest at its door. He does not set it aside; he sends the man into it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Moses' law of the leper brings the cleansed man to the priest, the very order Yahusha (Jesus) sends him to keep.",
+   "thread": "mark-1-the-leper-cleansed-sent-to-keep-what-moses-commanded-leviticus-13-14",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on claude-sonnet-5-5 (Sonnet 5.5)."
+}

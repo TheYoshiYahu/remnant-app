@@ -1,0 +1,17 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "luke",
+ "chapter": 13,
+ "cards": [
+  {
+   "id": 7054,
+   "prose": "Luke asks *Whereunto shall I liken the kingdom of Elohim (God)?* and answers with a woman who hid leaven in meal *till the whole was leavened*, the same picture Matthew gives. Earlier Luke names what leaven is, *which is hypocrisy* (Luke 12:1): small, hidden, and spreading through the whole lump until nothing in it is left clean.",
+   "member_phrase": "like unto leaven, which a woman took, and hid in three measures of meal, till the whole was leavened",
+   "member_sentence": "Matthew gives the same picture, the woman, the three measures of meal, and the leaven working until the whole was leavened.",
+   "thread": "matthew-13-the-mustard-seed-the-leaven-the-birds-lodge-ezekiel-17-daniel-4",
+   "flag": "The source verse is only the question; the leaven is Luke 13:21. This thread's summary reads the leaven as the kingdom's growth, while I wrote leaven as corruption through the whole as elsewhere in these gospels; the thread summary may need a second look."
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on Claude Sonnet 5.5 (claude-sonnet-5-5)."
+}

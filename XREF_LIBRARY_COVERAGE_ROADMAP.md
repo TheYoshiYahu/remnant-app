@@ -425,3 +425,58 @@ means a back-fill can re-run safely over the already-merged canon rows.
   drafters by block (Mark 1–4 / 5–8 / 9–12 / 13–16; Luke 1–8 / 9–16 / 17–24), 4 reversed-pair dups each against Matthew cards now threaded and sound —
   retire the Mark/Luke orphan only if its Matthew twin says the same thing. Then the 24 stragglers (Joshua 12, Revelation 6, Romans 3, 1 Thess 2, Genesis/
   Ezekiel/2 Esdras/2 Baruch 1 each), the re-point pass, the summaries sweep.
+- **2026-11-14 (S502) — MARK (169) AND LUKE (61) ORPHAN REBUILDS DEPLOYED — THE GOSPEL ORPHAN BLOCK IS CLOSED (Matthew 0, Mark 0, Luke 0).** Both
+  books re-dumped first (Yoshi's paste, Nov 14 13:32–13:33 CST; orphan 169 / 61 confirmed, map ids = live orphan ids). The chain made two-book:
+  `'m1': ('mark', range(1, 17))`, `'l1': ('luke', range(1, 25))` in BATCHES; `batch_of(book, ch)` + `split_prefix()` in common496; packet496 rewritten
+  (book from BATCHES, `thread:slug |` stripped into `author_thread_hint`, `threads_on_the_target_verse` = the live thread whose anchor covers a
+  parallel-verse target plus threads the other gospel's latest read-back shows a member on — `live/matthew_members.json` = matthew_b5_live_after);
+  Matthew was also hard-coded where the prompt did not say: `compose_note` ("(Matthew N:V)" in the card itself — now the source book's title),
+  check496 line 30, assemble496's file names, seed496's anchor tamper (`28:20` → the book's last verse), SQL/deploy comments; precheck496 takes
+  `<ch> <book>`; assemble496 skips a chapter with no orphan cards (Mark 16, Luke 20, 22–24). Proven end to end in scratch on a 3-card Mark 15 test
+  batch BEFORE drafting (Fable drafted those three). Brief: header + packet shape two-book; "Batch notes" rewritten for Mark and Luke (Mark 7 Lo-Ammi /
+  *let the children first be filled* as an inference; Mark 7:19 the belly not the beasts; Mark 13:26 Daniel's *like* kept, 13:27 the gathering not a
+  rapture; Mark 14:62 twin in the Sanhedrin thread; Luke 1 horn of salvation / covenant with Abraham; Luke 4 the widow and Naaman as seed revealed;
+  Luke 7 the centurion the same; Luke 15 the prodigal = the divorced house, as a reading; Luke 17:34 taken by judgment; Luke 21:24 keep *Gentiles*,
+  settle nothing). 17 anchors pre-seeded in ref/anchors496.json for unanchored wide threads the packets offered (1 used: beliar → Matthew 4:8–10).
+  Eight Sonnet 5.5 drafters in parallel (Mark 1–4 / 5–6 / 7–8 / 9–12 / 13–14; Luke 1–8 / 9–16 / 17–21 — Mark 5–8 split so ch 7 had a drafter to
+  itself) → Fable read of every card (`_s496/tools/read496_m1l1.py`: 10 corrections — brief phrases leaking into reader prose ("in its own words" ×3
+  incl. two new-thread summaries, "line on line" at 7061), 5116 Mark 7:24 firmed from "looks like one of those sheep" to "is", 5253 a Mark 12:33
+  callback in straight quotes made an italic citation, 7006 Luke 7:9 the centurion said as a sheep who heard out where the house was scattered, 5050
+  El Elyon "Abram's own" → "goes back to Abram's day") → assemble PASS ×2 (20 drafter flags, working readings inside the texts) → scratch ×2 + five
+  tampers PASS for both (the anchor tamper exercised on Luke) → DEPLOYED Nov 14 14:15 CST Mark, 14:16 CST Luke (`_session496_mark_m1_deploy.log`,
+  `_session496_luke_l1_deploy.log`): Mark 169/169 · 169/169 · 4/4 · 0/0 · 0 dups · **0 orphans in the book** · PASS; Luke 61/61 · 61/61 · 1/1 · 1/1 ·
+  0 dups · **0 orphans in the book** · PASS. Mark: 68 existing threads filled (37 Mark-anchored, 23 Matthew-anchored for the parallel-verse cards,
+  8 wide), 4 new (mark-9-the-son-of-adam-must-suffer-and-be-killed-isaiah-53-zechariah-13 9:9–32; mark-12-more-than-all-whole-burnt-offerings-the-
+  scribe-says-what-the-prophets-said 12:28–34; mark-13-signs-and-wonders-do-not-vouch-for-the-prophet 13:22; mark-13-the-son-of-adam-coming-in-the-
+  clouds 13:26 — takes the Matthew 24:30 card too, one scene one thread). Luke: 45 existing filled (24 Luke-anchored, 16 Matthew-anchored, 5 wide),
+  1 new (luke-1-the-throne-of-his-father-david-and-the-kingdom-without-end 1:31–33). The cards as they read: `_s496/out/mark_m1_cards.md`,
+  `_s496/out/luke_l1_cards.md`.
+  REVERSED-PAIR DUPS (4 Mark: 5069, 5144, 5231, 5328; 4 Luke: 7007, 7022, 7044, 7056): ALL KEPT — the Matthew twin is the card on Matthew's page;
+  retiring the Mark/Luke orphan would strip the link from the Mark/Luke chapter-end, and the chain deletes nothing. Each written from Mark's/Luke's side
+  (what this gospel adds) and joined to the twin's thread. Two twins are themselves still shorthand — 3013 Matthew 26:64→Mark 14:62 ("The Markan-
+  parallel.") and 120012 Matthew 6:14→Mark 11:25 (no prose) — for the re-point/sweep list.
+  HELD AS THE BRIEF SET THEM: the Sabbath scenes clear the fence and keep the day; Mark 7:19 is the belly and the draught, Leviticus 11 stood for
+  Peter (Acts 10:14); the Syrophenician is one of the lost sheep (Matthew 15:24 said to the disciples), the children first, no "Gentile woman"; the
+  twelve are the tribes; Mark 12:26 the fathers asleep awaiting the rising; Mark 13:26/14:62 Daniel's *like* kept, Revelation 1:7 and Zechariah 12:10
+  each in their own words, never through each other; 13:27 the gathering of the scattered out of all nations (Deuteronomy 30:4, Ezekiel 37:21), tares
+  out first (Matthew 13:41); the new covenant cup with both houses; Luke 3:8 the stones = the scattered house (Hosea 1:10), not nations by faith; Luke
+  4:25–27 and 7:9 seed revealed, never "individual mercy"; Luke 12:47 the household's servants judged; Luke 17:34 taken by judgment; Luke 21:24
+  *Gentiles* kept as the verse has it, who they are not settled. No drafter called him "the King"; all Greek-form names in OT spellings; the old
+  notes' Kefa/Yochanan/Eliyahu/Zakkay → Peter/John/Elijah/Zacchaeus.
+  FOR THE SUMMARIES SWEEP (drafters flagged, cards do not follow them): matthew-8-many-from-east-and-west… ("Gentile soldier", "believing stranger" —
+  already listed); matthew-3-fruits-meet-for-repentance-stones-to-abraham… (reads the stones as nations grafted in); matthew-13-the-mustard-seed-the-
+  leaven… (reads leaven as the kingdom's growth; the cards read corruption); both Luke 4 Nazareth threads (nazareth-scroll-…-individual-mercy-contrast-
+  cases and its sibling — "individual mercy" in title and summary); mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach ("the King",
+  "diagnostic"); gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit (old shorthand); rich-man-and-lazaros-the-framework-honest-
+  sheol… (slug and summary say "framework"). The `_s499c` chain does title/summary.
+  FOR THE RE-POINT PASS: 3013 and 120012 above (shorthand twins on Matthew's page). FLAGGED, NOT CHANGED: 5177/9:13→Matthew 23:35 holds Jehoiada and
+  Barachias open (as b4); 5232 Mark 11:27→Matthew 16:13 is a loose pair (who he is / by what authority), written honestly; 7011 Luke 7:33→1 Kings 19:8
+  rests on the forty days, not a fast; 5172 (9:9→Isaiah 53:3) sits in the new Mark 9 passion thread whose anchor 9:9–32 overlaps the Elijah thread's
+  9:9–13 — move it if Yoshi prefers.
+  GOSPEL ORPHAN BLOCK TOTALS (S496–S502, Nov 10–14): Matthew 1,308 + Mark 169 + Luke 61 = 1,538 orphan cards rewritten in place → 0 in all three;
+  1,538 members; 35 new threads (30 + 4 + 1); 38 anchors (37 + 1); 7 migrations. Left of the Phase 2 orphan block: the 24 stragglers (Joshua 12,
+  Revelation 6, Romans 3, 1 Thessalonians 2, Genesis / Ezekiel / 2 Esdras / 2 Baruch 1 each) — a different shape (no gospel threads to lean on; the
+  extras need the edition in the chain's `t_ed` guard, which is canon-only: see assemble496 `if c['t_ed'] != ED`).
+  NEXT (S503): the 24 stragglers (extend the chain for non-canon targets or do them by hand in one small migration), then the re-point pass (3675,
+  3815, 3806, 3912, 3913, 4009, 4109 + 3013, 120012), then the summaries sweep (centurion thread first, the 14 S1xx threads anchored in S501, the list
+  above) on the `_s499c` chain.

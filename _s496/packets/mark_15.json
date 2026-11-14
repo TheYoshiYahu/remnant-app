@@ -1,0 +1,578 @@
+{
+ "book": "mark",
+ "chapter": 15,
+ "chapter_text_kjv": {
+  "1": "And straightway in the morning the chief priests held a consultation with the elders and scribes and the whole council, and bound Yahusha (Jesus), and carried him away, and delivered him to Pilate.",
+  "2": "And Pilate asked him, Art thou the King of the Yahudim (Jews)? And he answering said unto him, Thou sayest it.",
+  "3": "And the chief priests accused him of many things: but he answered nothing.",
+  "4": "And Pilate asked him again, saying, Answerest thou nothing? behold how many things they witness against thee.",
+  "5": "But Yahusha (Jesus) yet answered nothing; so that Pilate marvelled.",
+  "6": "Now at that feast he released unto them one prisoner, whomsoever they desired.",
+  "7": "And there was one named Barabbas, which lay bound with them that had made insurrection with him, who had committed murder in the insurrection.",
+  "8": "And the multitude crying aloud began to desire him to do as he had ever done unto them.",
+  "9": "But Pilate answered them, saying, Will ye that I release unto you the King of the Yahudim (Jews)?",
+  "10": "For he knew that the chief priests had delivered him for envy.",
+  "11": "But the chief priests moved the people, that he should rather release Barabbas unto them.",
+  "12": "And Pilate answered and said again unto them, What will ye then that I shall do unto him whom ye call the King of the Yahudim (Jews)?",
+  "13": "And they cried out again, Crucify him.",
+  "14": "Then Pilate said unto them, Why, what evil hath he done? And they cried out the more exceedingly, Crucify him.",
+  "15": "And so Pilate, willing to content the people, released Barabbas unto them, and delivered Yahusha (Jesus), when he had scourged him, to be crucified.",
+  "16": "And the soldiers led him away into the hall, called Prætorium; and they call together the whole band.",
+  "17": "And they clothed him with purple, and platted a crown of thorns, and put it about his head,",
+  "18": "And began to salute him, Hail, King of the Yahudim (Jews)!",
+  "19": "And they smote him on the head with a reed, and did spit upon him, and bowing their knees worshipped him.",
+  "20": "And when they had mocked him, they took off the purple from him, and put his own clothes on him, and led him out to crucify him.",
+  "21": "And they compel one Simon a Cyrenian, who passed by, coming out of the country, the father of Alexander and Rufus, to bear his cross.",
+  "22": "And they bring him unto the place Golgotha, which is, being interpreted, The place of a skull.",
+  "23": "And they gave him to drink wine mingled with myrrh: but he received it not.",
+  "24": "And when they had crucified him, they parted his garments, casting lots upon them, what every man should take.",
+  "25": "And it was the third hour, and they crucified him.",
+  "26": "And the superscription of his accusation was written over, THE KING OF THE JEWS.",
+  "27": "And with him they crucify two thieves; the one on his right hand, and the other on his left.",
+  "28": "And the scripture was fulfilled, which saith, And he was numbered with the transgressors.",
+  "29": "And they that passed by railed on him, wagging their heads, and saying, Ah, thou that destroyest the temple, and buildest it in three days,",
+  "30": "Save thyself, and come down from the cross.",
+  "31": "Likewise also the chief priests mocking said among themselves with the scribes, He saved others; himself he cannot save.",
+  "32": "Let Messiah (Christ) the King of Yashar'el (Israel) descend now from the cross, that we may see and believe. And they that were crucified with him reviled him.",
+  "33": "And when the sixth hour was come, there was darkness over the whole land until the ninth hour.",
+  "34": "And at the ninth hour Yahusha (Jesus) cried with a loud voice, saying, Eloi, Eloi, lama sabachthani? which is, being interpreted, My Elohim (God), my Elohim (God), why hast thou forsaken me?",
+  "35": "And some of them that stood by, when they heard it, said, Behold, he calleth Elijah.",
+  "36": "And one ran and filled a spunge full of vinegar, and put it on a reed, and gave him to drink, saying, Let alone; let us see whether Elijah will come to take him down.",
+  "37": "And Yahusha (Jesus) cried with a loud voice, and gave up the ghost.",
+  "38": "And the veil of the temple was rent in twain from the top to the bottom.",
+  "39": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of Elohim (God).",
+  "40": "There were also women looking on afar off: among whom was Mary Magdalene, and Mary the mother of James the less and of Joses, and Salome;",
+  "41": "(Who also, when he was in Galilee, followed him, and ministered unto him;) and many other women which came up with him unto Jerusalem.",
+  "42": "And now when the even was come, because it was the preparation, that is, the day before the sabbath,",
+  "43": "Joseph of Arimathaea, an honourable counsellor, which also waited for the kingdom of Elohim (God), came, and went in boldly unto Pilate, and craved the body of Yahusha (Jesus).",
+  "44": "And Pilate marvelled if he were already dead: and calling unto him the centurion, he asked him whether he had been any while dead.",
+  "45": "And when he knew it of the centurion, he gave the body to Joseph.",
+  "46": "And he bought fine linen, and took him down, and wrapped him in the linen, and laid him in a sepulchre which was hewn out of a rock, and rolled a stone unto the door of the sepulchre.",
+  "47": "And Mary Magdalene and Mary the mother of Joses beheld where he was laid."
+ },
+ "cards": [
+  {
+   "id": 5355,
+   "src": "Mark 15:39",
+   "src_vn": 39,
+   "src_text_live": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of Elohim (God).",
+   "src_text_kjv": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of Elohim (God).",
+   "tgt": "Matthew 27:54",
+   "tgt_text_kjv": "Now when the centurion, and they that were with him, watching Yahusha (Jesus), saw the earthquake, and those things that were done, they feared greatly, saying, Truly this was the Son of Elohim (God).",
+   "tgt_context_kjv": {
+    "52": "And the graves were opened; and many bodies of the saints which slept arose,",
+    "53": "And came out of the graves after his resurrection, and went into the holy city, and appeared unto many.",
+    "54": "Now when the centurion, and they that were with him, watching Yahusha (Jesus), saw the earthquake, and those things that were done, they feared greatly, saying, Truly this was the Son of Elohim (God).",
+    "55": "And many women were there beholding afar off, which followed Yahusha (Jesus) from Galilee, ministering unto him:",
+    "56": "Among which was Mary Magdalene, and Mary the mother of James and Joses, and the mother of Zebedee’s children.",
+    "57": "When the even was come, there came a rich man of Arimathæa, named Joseph, who also himself was Yahusha's (Jesus’) disciple:"
+   },
+   "old_note": "*Truly this man was the Son of Elohim.* The centurion's confession — the Father drew this one; the centurion heard, even at the cross. The Matthean parallel.",
+   "author_thread_hint": "nature-of-god-formed-in-flesh",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "the-beloved-crucified-on-a-tree-descended-and-risen-and-many-of-the-righteous-ascending-with-him-in-ascension-of-isaiah"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5356,
+   "src": "Mark 15:39",
+   "src_vn": 39,
+   "src_text_live": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of Elohim (God).",
+   "src_text_kjv": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of Elohim (God).",
+   "tgt": "Luke 23:47",
+   "tgt_text_kjv": "Now when the centurion saw what was done, he glorified Elohim (God), saying, Certainly this was a righteous man.",
+   "tgt_context_kjv": {
+    "45": "And the sun was darkened, and the veil of the temple was rent in the midst.",
+    "46": "And when Yahusha (Jesus) had cried with a loud voice, he said, Father, into thy hands I commend my spirit: and having said thus, he gave up the ghost.",
+    "47": "Now when the centurion saw what was done, he glorified Elohim (God), saying, Certainly this was a righteous man.",
+    "48": "And all the people that came together to that sight, beholding the things which were done, smote their breasts, and returned.",
+    "49": "And all his acquaintance, and the women that followed him from Galilee, stood afar off, beholding these things.",
+    "50": "And, behold, there was a man named Joseph, a counsellor; and he was a good man, and a just:"
+   },
+   "old_note": "The Lukan parallel of the centurion's confession.",
+   "author_thread_hint": "nature-of-god-formed-in-flesh",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5357,
+   "src": "Mark 15:39",
+   "src_vn": 39,
+   "src_text_live": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of Elohim (God).",
+   "src_text_kjv": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of Elohim (God).",
+   "tgt": "John 19:35",
+   "tgt_text_kjv": "And he that saw it bare record, and his record is true: and he knoweth that he saith true, that ye might believe.",
+   "tgt_context_kjv": {
+    "33": "But when they came to Yahusha (Jesus), and saw that he was dead already, they brake not his legs:",
+    "34": "But one of the soldiers with a spear pierced his side, and forthwith came there out blood and water.",
+    "35": "And he that saw it bare record, and his record is true: and he knoweth that he saith true, that ye might believe.",
+    "36": "For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken.",
+    "37": "And again another scripture saith, They shall look on him whom they pierced.",
+    "38": "And after this Joseph of Arimathaea, being a disciple of Yahusha (Jesus), but secretly for fear of the Yahudim (Jews), besought Pilate that he might take away the body of Yahusha (Jesus): and Pilate gave him leave. He came therefore, and took the body of Yahusha (Jesus)."
+   },
+   "old_note": "Yochanan (John) 19:35-37's witness to the substantial cross-event.",
+   "author_thread_hint": "nature-of-god-formed-in-flesh",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "john-19-blood-and-water-from-the-pierced-side-and-the-triple-witness-in-1-john-5",
+    "yahusha-as-passover-lamb-bone-not-broken"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "barabbas-as-the-substituted-prisoner-and-the-prefiguring-of-the-substitutionary-lamb",
+   "title": "Bar-abba released — the substituted prisoner and the prefiguring of the substitutionary Lamb",
+   "anchor": "Mark 15:6-15",
+   "anchored_in_this_book": true,
+   "member_count": 7,
+   "summary_md": "The Barabbas-substitution episode is in all four gospels and carries a substantial typology — *bar-abba* (son-of-the-father), the insurrectionist-murderer, released; the true Son of the Father bound and delivered to be crucified. *But the chief priests moved the people, that he should rather release Barabbas unto them. And Pilate answered and said again unto them, What will ye then that I shall do unto him whom ye call the King of the Yahudim (Jews)? And they cried out again, Crucify him* (Mark 15:11-13).\n\nThe substitutionary typology runs through the whole episode — the guilty released, the innocent bound, the system choosing the false son over the true one. *He is despised and rejected of men; a man of sorrows, and acquainted with grief... he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed* (Isaiah 53:3, 5). The Yom-Kippur blood-substance (Leviticus 16) carries the two-goats architecture — one goat for Yahuah, one goat for Azazel into the wilderness; Barabbas is the unworthy partner the worthy Son substitutes for, the prefiguring of the substantial Lamb in the Pesach (Passover) architecture.\n\nThe name itself preserves the irony: *bar-abba* means *son of the father.* The crowd, given the choice between two sons-of-the-father, releases the murderer and crucifies the true Son. The system that has been wearing the Father's name throughout the prophets' lifetimes finally exposes itself by choosing the wrong son when both are placed in front of it. Same architecture every Yom Kippur: one goat lives, one goat dies; one carries the sins out, one bears the blood. The Markan witness preserves the substitution in its starkest form.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:7",
+     "tgt": "canon/matthew 27:16",
+     "member_note": "*And they had then a notable prisoner, called Barabbas.* The Matthean witness names the notable-prisoner status of the man chosen for release; both gospels carry the same substitution architecture."
+    },
+    {
+     "src": "15:11",
+     "tgt": "canon/leviticus 16:21",
+     "member_note": "*And Aharon (Aaron) shall lay both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Yashar'el (Israel)... putting them upon the head of the goat, and shall send him away.* The Yom-Kippur two-goats architecture — one goat for Yahuah, one goat for Azazel — the prefiguring of the Barabbas-substitution at the cross."
+    },
+    {
+     "src": "15:11",
+     "tgt": "canon/isaiah 53:5",
+     "member_note": "*But the chief priests moved the people, that he should rather release Barabbas unto them.* The guilty released, the innocent bound — Yeshayahu (Isaiah) 53's *he was wounded for our transgressions, he was bruised for our iniquities* walked out in real time as the system makes the substitution explicit."
+    },
+    {
+     "src": "15:11",
+     "tgt": "canon/isaiah 53:6",
+     "member_note": "*All we like sheep have gone astray; we have turned every one to his own way; and Yahuah (the LORD) hath laid on him the iniquity of us all.* The substitution principle Yeshayahu (Isaiah) named is the substitution episode the crowd enacts — the iniquity of Barabbas (and the iniquity of the crowd) laid on the Son of the Father."
+    },
+    {
+     "src": "15:13",
+     "tgt": "canon/luke 23:18",
+     "member_note": "*Away with this man, and release unto us Barabbas.* The Lukan parallel to the Markan crowd-cry; the four-gospel witness to the substitution preserves the architecture across all four accounts."
+    },
+    {
+     "src": "15:15",
+     "tgt": "canon/john 18:40",
+     "member_note": "*Then cried they all again, saying, Not this man, but Barabbas. Now Barabbas was a robber.* The Yochanan (John) witness names Barabbas as a robber; the Markan witness names him as one *who had committed murder in the insurrection* (15:7). All four gospels preserve the substitution and its irony."
+    }
+   ]
+  },
+  {
+   "slug": "mark-15-crown-of-thorns-and-the-spitting-the-smitten-servant-isaiah-50-psalm-22",
+   "title": "The crown of thorns and the spitting — the smitten servant (Isaiah 50; Psalm 22; Genesis 3)",
+   "anchor": "Mark 15:16-20",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "They clothed him with purple, platted a crown of thorns, smote him on the head with a reed, and did spit upon him. *And they clothed him with purple, and platted a crown of thorns, and put it about his head, ... And they smote him on the head with a reed, and did spit upon him, and bowing their knees worshipped him.* (Mark 15:17-19). Read this beside the servant of Yahuah (LORD): *I gave my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my face from shame and spitting.* (Isaiah 50:6). The smiting, the shame, the spitting — Isaiah wrote the scene centuries before the soldiers acted it. And he is the One *despised and rejected of men; a man of sorrows, and acquainted with grief... he was despised, and we esteemed him not.* (Isaiah 53:3). The psalm of the cross had already put the words in the mockers' mouths: *But I am a worm, and no man; a reproach of men, and despised of the people. All they that see me laugh me to scorn: they shoot out the lip, they shake the head* (Psalm 22:6-7). And the very crown is a sermon: *Thorns also and thistles shall it bring forth to thee* (Genesis 3:18) — the thorn is the sign of the curse that came on the ground for Adam's sake, and the Formed Son, the Son of Adam, wears the curse of the sons of Adam pressed down upon his own head. The library is one, and it ain't new: the suffering servant mocked, the curse borne, all written long before.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:17",
+     "tgt": "canon/isaiah 50:6",
+     "member_note": "Isaiah 50:6 — *I gave my back to the smiters... I hid not my face from shame and spitting* — the servant's scene, written before it happened."
+    },
+    {
+     "src": "15:17",
+     "tgt": "canon/isaiah 53:3",
+     "member_note": "Isaiah 53:3 — *despised and rejected of men; a man of sorrows* — the despising in the Praetorium."
+    },
+    {
+     "src": "15:17",
+     "tgt": "canon/psalms 22:6",
+     "member_note": "Psalm 22:6-7 — *a reproach of men... they shoot out the lip, they shake the head* — the mock-coronation foretold."
+    },
+    {
+     "src": "15:17",
+     "tgt": "canon/genesis 3:18",
+     "member_note": "Genesis 3:18 — *Thorns also and thistles shall it bring forth* — the curse of the ground worn on the head of the Son of Adam."
+    }
+   ]
+  },
+  {
+   "slug": "mark-15-they-parted-his-garments-and-cast-lots-psalm-22-enacted-at-the-cross",
+   "title": "They parted his garments, casting lots — Psalm 22 enacted at the cross (Psalm 22; Isaiah 53; Lamentations 1)",
+   "anchor": "Mark 15:21-32",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "*And when they had crucified him, they parted his garments, casting lots upon them, what every man should take.* (Mark 15:24). The soldiers gambling at the foot of the cross have no idea they are reading aloud from a thousand-year-old psalm: *They part my garments among them, and cast lots upon my vesture.* (Psalm 22:18). The lot falls exactly where David wrote it would. The same psalm scripts the taunt of the rulers — *He saved others; himself he cannot save* — for David had already written it: *All they that see me laugh me to scorn: they shoot out the lip, they shake the head, saying, He trusted on Yahuah (LORD) that he would deliver him: let him deliver him, seeing he delighted in him.* (Psalm 22:7-8). Crucified between two thieves, he is reckoned among the lawless, as Isaiah said of the servant: *he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors.* (Isaiah 53:12). And the mourning cry of the desolate city is gathered up into the sorrow of the One they that passed by railed on, wagging their heads: *Is it nothing to you, all ye that pass by? behold, and see if there be any sorrow like unto my sorrow* (Lamentations 1:12). Psalm 22 is not predicting a far-off thing; it is being lived out, verse by verse, at Golgotha.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:24",
+     "tgt": "canon/psalms 22:18",
+     "member_note": "Psalm 22:18 — *They part my garments among them, and cast lots upon my vesture* — the lot falls where David wrote it."
+    },
+    {
+     "src": "15:24",
+     "tgt": "canon/psalms 22:7",
+     "member_note": "Psalm 22:7-8 — *let him deliver him, seeing he delighted in him* — the rulers' taunt quoted from the psalm."
+    },
+    {
+     "src": "15:24",
+     "tgt": "canon/isaiah 53:12",
+     "member_note": "Isaiah 53:12 — *he was numbered with the transgressors* — crucified between two thieves."
+    },
+    {
+     "src": "15:24",
+     "tgt": "canon/lamentations 1:12",
+     "member_note": "Lamentations 1:12 — *Is it nothing to you, all ye that pass by?* — the city's sorrow gathered into the One's suffering."
+    }
+   ]
+  },
+  {
+   "slug": "mark-15-darkness-at-noon-the-veil-rent-and-the-centurions-confession-amos-8-exodus-26",
+   "title": "Darkness at noon, the veil rent, and the centurion's confession (Amos 8; Exodus 26; Hebrews 10; Psalm 22)",
+   "anchor": "Mark 15:33-39",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "*And when the sixth hour was come, there was darkness over the whole land until the ninth hour.* ... *And the veil of the temple was rent in twain from the top to the bottom.* (Mark 15:33,38). The noonday darkness is the judgment-day Amos saw: *And it shall come to pass in that day, saith Adonai Yahuah (the Lord GOD), that I will cause the sun to go down at noon, and I will darken the earth in the clear day* (Amos 8:9). The veil that tore was no ordinary curtain — it was the one the Torah set to *divide unto you between the holy place and the most holy*: *And thou shalt hang up the vail under the taches, that thou mayest bring in thither within the vail the ark of the testimony: and the vail shall divide unto you between the holy place and the most holy.* (Exodus 26:33). Its rending opens the new and living way: *By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh* (Hebrews 10:20) — the veil is his flesh, torn so the way into the holiest stands open. And in the darkness he cries the opening words of the psalm of the cross, *My Elohim (God), my Elohim (God), why hast thou forsaken me?* (Psalm 22:1); hearing him so cry out and give up the ghost, a Roman centurion — a stranger of the nations — confessed, *Truly this man was the Son of Elohim (God)* (Mark 15:39). This is the Formed Son owned at the cross: not a co-equal second person of a trinity, but the begotten Son who reveals the invisible Father and does his will, declared to be the Father's own by the mouth of a Gentile soldier the moment the veil came down.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:38",
+     "tgt": "canon/amos 8:9",
+     "member_note": "Amos 8:9 — *I will cause the sun to go down at noon* — the noonday darkness of the judgment-day."
+    },
+    {
+     "src": "15:38",
+     "tgt": "canon/exodus 26:33",
+     "member_note": "Exodus 26:33 — *the vail shall divide unto you between the holy place and the most holy* — the very veil that was rent."
+    },
+    {
+     "src": "15:38",
+     "tgt": "canon/hebrews 10:20",
+     "member_note": "Hebrews 10:20 — *through the veil, that is to say, his flesh* — the rent veil opens the new and living way."
+    },
+    {
+     "src": "15:38",
+     "tgt": "canon/psalms 22:1",
+     "member_note": "Psalm 22:1 — *My Elohim (God), my Elohim (God), why hast thou forsaken me?* — the cry in the darkness, and the centurion confesses the Formed Son."
+    }
+   ]
+  },
+  {
+   "slug": "eloi-eloi-and-the-elijah-misidentification-pattern",
+   "title": "*Eloi, Eloi* misheard as *Elias* — the crowd's deafness to the Tehillim 22 citation at the cross",
+   "anchor": "Mark 15:35-36",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "The bystanders mishearing *Eloi* as *Elijah* — the Markan and Matthean witnesses to the misidentification at the cross, the crowd's deafness to the Tehillim 22 citation. *And some of them that stood by, when they heard it, said, Behold, he calleth Elijah. And one ran and filled a spunge full of vinegar, and put it on a reed, and gave him to drink, saying, Let alone; let us see whether Elijah will come to take him down* (Mark 15:35-36).\n\nThe very figure they expect to come and rescue (the Eliyahu (Elijah)-pattern precursor) had already come in Yochanan (John), and the King had already named him as such — *Eliyahu (Elijah) is indeed come, and they have done unto him whatsoever they listed* (Mark 9:13). The crowd is asking whether the prophet who already came (and was beheaded by the very Herod-system that delivered the King over) will return to rescue. The cosmic irony lands at every layer: they cannot hear the Tehillim (Psalm) 22 citation the King is speaking, they cannot recognize that the Eliyahu they wait for has already walked through the wilderness in front of the Lamb, they cannot read the appointed-hour they are inside of. Malachi 4:5-6's *I will send you Eliyahu (Elijah) the prophet before the coming of the great and dreadful day of Yahuah (the LORD)* runs through the moment: the great and dreadful day has come, and the Eliyahu has already done his work, and the crowd at the foot of the cross is still waiting for him.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:35",
+     "tgt": "canon/matthew 27:47",
+     "member_note": "*Some of them that stood there, when they heard that, said, This man calleth for Elijah.* The Matthean parallel to the Markan misidentification — the synoptic witness preserves the crowd's deafness at the cross."
+    },
+    {
+     "src": "15:35",
+     "tgt": "canon/mark 9:13",
+     "member_note": "*Behold, he calleth Elijah.* The very figure they expect to come and rescue had already come in Yochanan (John), and the King had already named him as such: *Eliyahu (Elijah) is indeed come, and they have done unto him whatsoever they listed.* The cosmic irony lands at the cross — the Eliyahu they wait for has already walked through."
+    },
+    {
+     "src": "15:36",
+     "tgt": "canon/malachi 4:5",
+     "member_note": "*Let alone; let us see whether Elijah will come to take him down.* Malachi's *I will send you Eliyahu (Elijah) the prophet before the coming of the great and dreadful day of Yahuah (the LORD)* runs through the moment: the great and dreadful day has come, and the Eliyahu has already done his work."
+    },
+    {
+     "src": "15:36",
+     "tgt": "canon/malachi 4:6",
+     "member_note": "*And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* The Eliyahu the crowd waits for had already turned hearts in Yochanan (John); the crowd that expects rescue cannot read what has already happened."
+    }
+   ]
+  },
+  {
+   "slug": "mark-15-the-honourable-burial-with-the-rich-in-his-death-isaiah-53-deuteronomy-21",
+   "title": "The honourable burial — with the rich in his death (Isaiah 53; Deuteronomy 21; Psalm 22)",
+   "anchor": "Mark 15:42-47",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "*And he bought fine linen, and took him down, and wrapped him in the linen, and laid him in a sepulchre which was hewn out of a rock, and rolled a stone unto the door of the sepulchre.* (Mark 15:46). Joseph of Arimathaea, *an honourable counsellor, which also waited for the kingdom of Elohim (God)*, begs the body and lays it in his own new tomb — and Isaiah had already named both the wicked of his death and the rich of his grave: *And he made his grave with the wicked, and with the rich in his death; because he had done no violence, neither was any deceit in his mouth.* (Isaiah 53:9). The Torah itself required the burial that same day: *His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);) that thy land be not defiled* (Deuteronomy 21:23) — and that very accursedness names the curse the sinless One bore in his people's place. The psalm of the cross follows him all the way down: *thou hast brought me into the dust of death* (Psalm 22:15). He is laid honourably in the rock, the prophets satisfied to the last detail — the library is one, and the grave is not the end of the song, for the same psalm rises to *All the ends of the world shall remember and turn unto Yahuah (LORD)* (Psalm 22:27).",
+   "members_in_this_chapter": [
+    {
+     "src": "15:46",
+     "tgt": "canon/isaiah 53:9",
+     "member_note": "Isaiah 53:9 — *with the rich in his death* — the honourable tomb of Joseph foretold."
+    },
+    {
+     "src": "15:46",
+     "tgt": "canon/deuteronomy 21:23",
+     "member_note": "Deuteronomy 21:23 — *thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God))* — the Torah burial-law, and the curse he bore."
+    },
+    {
+     "src": "15:46",
+     "tgt": "canon/psalms 22:15",
+     "member_note": "Psalm 22:15 — *thou hast brought me into the dust of death* — the psalm follows him into the rock-hewn sepulchre."
+    }
+   ]
+  },
+  {
+   "slug": "yahusha-as-passover-lamb-bone-not-broken",
+   "title": "Yahusha (Jesus) as the Passover lamb — bone not broken",
+   "anchor": "John 19:14-36",
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "John alone among the gospel-writers locks the timing of the crucifixion to the preparation of the Pesach (Passover) — Yahusha (Jesus) is delivered to be crucified at the hour the Pesach lambs are being slaughtered in the temple courts. The cross-detail John adds — that the soldiers did not break his legs because he was already dead — is named explicitly as the fulfillment of the Pesach-lamb commandment of Shemot (Exodus) 12. The whole architecture of the death is the Pesach architecture, and the Formed one is named as the lamb the Tanakh feast was always pointing toward.\n\n*And it was the preparation of the Pesach (Passover), and about the sixth hour: and he saith unto the Yahudim (Jews), Behold your King!* (John 19:14)\n\n*Then came the soldiers, and brake the legs of the first, and of the other which was crucified with him. But when they came to Yahusha (Jesus), and saw that he was dead already, they brake not his legs ... For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken.* (John 19:32-33, 36)\n\n*In one house shall it be eaten; thou shalt not carry forth ought of the flesh abroad out of the house; neither shall ye break a bone thereof.* (Exodus 12:46)\n\n*He keepeth all his bones: not one of them is broken.* (Psalm 34:20)\n\nThe Pesach lamb was selected on the tenth of Aviv, kept four days, and slaughtered at the appointed hour on the fourteenth. Its blood was struck on the lintel and the two side-posts; the destroying angel passed over the houses marked by the blood. Yahusha (Jesus) enters Yerushalayim (Jerusalem) on the tenth of Aviv, is tested in the temple courts the four days, and is delivered to be crucified at the hour the lambs are being slaughtered. The bone-not-broken commandment of Shemot (Exodus) 12:46 is preserved on his body even though every other body crucified that day had its legs broken to hasten death. The Tanakh sign is fulfilled on the body of the Formed one.\n\nThe Pesach is not abolished by this. It is filled with its substance. The same Tanakh-feast that taught the seed of Yashar'el (Israel) for fifteen centuries the architecture of redemption now lands on the body of the Messiah, whose blood marks the houses of the gathered against the dreadful day. The keeping of the Pesach by the seed who walk in the new covenant is the keeping of the memorial of what the lamb's body accomplished on the cross — not the keeping of a thing abolished, but the keeping of a thing fulfilled, in the prophetic sense of being filled-full of the substance the sign always carried.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:24",
+     "tgt": "canon/exodus 12:46",
+     "member_note": "*The substantial Passover lamb dying at the hour the typological lamb was sacrificed; the bone not broken* (Shemot/Exodus 12:46)."
+    },
+    {
+     "src": "15:24",
+     "tgt": "canon/psalms 34:20",
+     "member_note": "*He keepeth all his bones: not one of them is broken* (Tehillim/Psalm 34:20)."
+    }
+   ]
+  },
+  {
+   "slug": "john-19-blood-and-water-from-the-pierced-side-and-the-triple-witness-in-1-john-5",
+   "title": "Blood and water from the pierced side — John 19:34 and the triple witness in 1 John 5:6-8",
+   "anchor": "John 19:34-35",
+   "anchored_in_this_book": false,
+   "member_count": 2,
+   "summary_md": "When the soldier drove the spear into the side of the already-dead Formed one, what came out was blood and water together — not one, but both. John names himself as the eyewitness: *he that saw it bare record, and his record is true.* (John 19:35). The same Yochanan (John) who watched the blood and water flow from the pierced side wrote, decades later, a letter that returns to the same two fluids and names them as witnesses.\n\n*But one of the soldiers with a spear pierced his side, and forthwith came there out blood and water. And he that saw it bare record, and his record is true: and he knoweth that he saith true, that ye might believe.* (John 19:34-35)\n\n*This is he that came by water and blood, even Yahusha HaMashiach (Jesus Christ); not by water only, but by water and blood. And it is the Spirit that beareth witness, because the Spirit is truth. For there are three that bear record in heaven, the Father, the Word, and the Ruach HaKodesh (Holy Spirit): and these three are one. And there are three that bear witness in earth, the Spirit, and the water, and the blood: and these three agree in one.* (1 John 5:6-8)\n\nThe Formed one *came by water and blood — not by water only, but by water and blood.* The emphasis is on the blood: those who taught that Yahusha (Jesus) was the Formed-one only in his spirit-presence — coming at the water of immersion and departing before the blood of the cross — are ruled out by the apostle's own eyewitness testimony. He was there when the spear went in. He saw what came out. The Formed one came to the cross in body. The blood is real. The water is real. The two are inseparable.\n\nThe three earthly witnesses the apostle names — the Spirit, the water, and the blood — are the same three that converge in the account of the immersion (John 1:32-34: the Ruach HaKodesh descending, the water of immersion, the blood-line of the Lamb of Elohim) and the cross (John 19:34: the blood and water from the side, the Spirit given up in John 19:30). The Spirit, the water, and the blood agree in one testimony: the Formed one came in flesh, was immersed in water, and gave his blood. The eyewitness of the cross is the same hand that wrote the letter. The record is true.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "fulfill-as-prophecy-bringing-to-pass",
+   "title": "Fulfill as prophecy bringing to pass",
+   "anchor": "Matthew 5:17",
+   "anchored_in_this_book": false,
+   "member_count": 41,
+   "summary_md": "The Greek *plēroō* (Strong's G4137) at Matthew 5:17 does not mean *to exhaust-and-thereby-end* — the antichrist reading the pulpit installed to retire the Torah. It means *to bring to pass* — to make happen what was prophesied. Yahusha (Jesus) names what his mission accomplishes: the bringing-to-pass of what the Torah and the Prophets prophesied. And what they prophesied is the gathering of the scattered seed of Yashar'el (Israel) home through redemption — the curse-and-return arc the Torah itself wrote (Leviticus 26:33 and 40-42; Deuteronomy 30:1-5), executed by the prophets in the divorce-and-scattering (Hosea 1:9; Jeremiah 16:13), and opened by the Messiah's death and resurrection so the door home is real. This thread surfaces every NT plēroō occurrence used in prophecy-fulfillment context (35 members), each linked to the specific Tanakh prophecy it brings to pass. The pattern is consistent: the Messiah walks out the substance the prophets foretold, and the NT formula *that it might be fulfilled* points the reader back to the Tanakh, not forward into a new dispensation.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:28",
+     "tgt": "canon/isaiah 53:12",
+     "member_note": "*Numbered with the transgressors* fulfills Isaiah 53:12 — *he was numbered with the transgressors.* Crucified between two thieves; the suffering-servant ledger maintained at the cross."
+    }
+   ]
+  },
+  {
+   "slug": "his-blood-be-on-us-and-on-our-children-system-not-people-and-the-yom-kippur-blood-substance",
+   "title": "His Blood Be On Us And On Our Children System Not People And The Yom Kippur Blood Substance",
+   "anchor": "Matthew 27:25",
+   "anchored_in_this_book": false,
+   "member_count": 17,
+   "summary_md": "**`his-blood-be-on-us-and-on-our-children-system-not-people-and-the-yom-kippur-blood-substance`** — anchor at Matt 27:25. The substantial-Yerushalayim-crowd-at-the-substantial-Sanhedrin-leadership-moment-substance the substantial-substance walked-out + the substantial-substance the framework's-system-not-people-posture per `_COMMENTARY_SUMMATION.md` §VII + Red Line #9's-Jew-hate-never-justifiable-substance + the substantial-Yom Kippur-blood-substance walking-substantially-into-the-substantial-Cross-blood-substance per Zekharyah 12:10's-look-on-him-whom-they-pierced-substance + the substantial-substance-of-the-surviving-third per `_COMMENTARY_SUMMATION.md` §V. 14 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:15",
+     "tgt": "canon/leviticus 16:21",
+     "member_note": "*Pilate willing to content the people.* The Yom-Kippur blood-substance (Vayikra/Leviticus 16:21-22) reads through Mark's compressed account."
+    },
+    {
+     "src": "15:15",
+     "tgt": "canon/isaiah 53:5",
+     "member_note": "*He was wounded for our transgressions* (Yeshayahu/Isaiah 53:5)."
+    }
+   ]
+  },
+  {
+   "slug": "the-beloved-crucified-on-a-tree-descended-and-risen-and-many-of-the-righteous-ascending-with-him-in-ascension-of-isaiah",
+   "title": "The Beloved crucified on a tree, descended, risen, and many of the righteous ascending with Him — Ascension of Isaiah 9 and 11's external witness to the cross-and-the-saints-arising (FRAMEWORK-MAJOR)",
+   "anchor": "Matthew 27:32-60",
+   "anchored_in_this_book": false,
+   "member_count": 5,
+   "summary_md": "Matt 27:32-60's crucifixion-and-death-and-burial — Shim'on (Simon) of Cyrene bearing the cross + Gulgolta (Golgotha) + *they crucified him* + the temple-veil-rent + the earthquake + the saints-arising + the burial in Yoseph (Joseph) of Arimathea's rich-man's-tomb — read against the direct external-witness articulation in Ascension of Isaiah 9 and 11. Five moves: AI 9:14 names THE direct verbal-anchor for the *the god of that world will stretch forth his hand against the Son, and they will crucify Him on a tree, and will slay Him not knowing who He is* substance — the wisdom-stream's articulation of the world-rulers-not-knowing-who-the-Son-is at the crucify-Him-on-a-tree substance per Devarim (Deuteronomy) 21:22-23 + Galatians 3:13 + 1 Corinthians 2:8's *had they known it, they would not have crucified the Lord of glory*; AI 9:16 names the *plundered the angel of death, He will ascend on the third day* substance — the descent-to-plunder-the-angel-of-death architecture per Hosheia (Hosea) 6:2 + 13:14 + 1 Peter 3:18-20 + Hebrews 2:14-15; AI 9:17 names THE direct verbal-anchor for the *many of the righteous will ascend with Him, whose spirits do not receive their garments till Yahuah (Lord) Messiah (Christ) ascend and they ascend with Him* substance — the wisdom-stream's articulation of the architecture Matt 27:52-53 walks-out at the historical-pivot (this IS the operative external-witness verbal-anchor for *the graves were opened; and many bodies of the saints which slept arose, and came out of the graves after his resurrection, and went into the holy city, and appeared unto many*); AI 11:20 names the *In Jerusalem indeed I saw Him being crucified on a tree* substance — the prophet-Yeshayahu (Isaiah) saw-in-vision what the King walked at the historical-pivot per John 12:41; AI 11:19 names the *delivered Him to the king, and crucified Him, and He descended to the angel of Sheol* substance — the burial + descent-into-the-place-of-the-dead architecture the rich-man's-tomb-at-Matt-27:60 walks-out per Yeshayahu (Isaiah) 53:9's *he made his grave with the wicked, and with the rich in his death.* Per Yoshi's S32 sourcing-decision (api/seed.py:EDITION_PROFILES[\"ascension-isaiah\"]), AI is the *first witness* aligning with the framework's Formless-Father / Formed-of-the-Formless nature-of-God teaching — pre-Nicene, late-1st / early-2nd CE, before the Constantine-era Trinity-construct hardened. The framework reads the *roused the children of Yashar'el (Israel) against Him* substance at AI 11:19 CAREFULLY against Red Line #9 — the framework rejects the inherited-Christian-replacement-theology weaponization against the Yahudim (Jews) as a people; the adversary-roused-the-leadership-of-the-second-Temple-aristocracy at the historical-pivot, NOT the substantial-Yahudah (Jewish)-people-as-a-whole; the framework's system-not-people posture per the four-costumes-and-their-victims architecture holds. The wisdom-stream and the gospel cohere at the substance the Father's-purpose-walks-out at the cross + the resurrection + the saints-arising. FRAMEWORK-MAJOR.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "substantial-crucifixion-tanakh-substances-tehillim-22-and-yeshayahu-53-and-zekharyah-12-10",
+   "title": "Substantial Crucifixion Tanakh Substances Tehillim 22 And Yeshayahu 53 And Zekharyah 12 10",
+   "anchor": "Matthew 27:33-50",
+   "anchored_in_this_book": false,
+   "member_count": 51,
+   "summary_md": "**`substantial-crucifixion-tanakh-substances-tehillim-22-and-yeshayahu-53-and-zekharyah-12-10`** — **FRAMEWORK-MAJOR anchor at Matt 27:33-50.** The substantial-Tanakh-Cross-substance — the substantial-Tehillim (Psalm) 22 substance + the substantial-Yeshayahu (Isaiah) 53 substance + the substantial-Zekharyah (Zechariah) 12:10 substance the substantial-Cross-substance walks-out. The substantial-substance-of-the-Tehillim 22-as-a-whole walks-from-suffering-into-vindication; the substantial-Yeshayahu 53 substance walks-the-substantial-Suffering-Servant; the substantial-Zekharyah 12:10 substance walks-the-substantial-look-on-him-whom-they-pierced + the surviving-third-substance per `_COMMENTARY_SUMMATION.md` §V. 26 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:1",
+     "tgt": "canon/isaiah 53:7",
+     "member_note": "*The King silent before Pilate — Yeshayahu (Isaiah) 53:7 walked out, the lamb dumb before her shearers.*"
+    },
+    {
+     "src": "15:16",
+     "tgt": "canon/psalms 22:7",
+     "member_note": "*All they that see me laugh me to scorn: they shoot out the lip, they shake the head* (Tehillim/Psalm 22:7)."
+    },
+    {
+     "src": "15:16",
+     "tgt": "canon/isaiah 50:6",
+     "member_note": "*I gave my back to the smiters, and my cheeks to them that plucked off the hair* (Yeshayahu/Isaiah 50:6)."
+    },
+    {
+     "src": "15:22",
+     "tgt": "canon/psalms 22:18",
+     "member_note": "*They parted his garments, casting lots upon them.* *They part my garments among them, and cast lots upon my vesture* (Tehillim/Psalm 22:18)."
+    },
+    {
+     "src": "15:27",
+     "tgt": "canon/isaiah 53:12",
+     "member_note": "*He was numbered with the transgressors* — Yeshayahu (Isaiah) 53:12 walked out in the two thieves crucified beside him."
+    },
+    {
+     "src": "15:29",
+     "tgt": "canon/psalms 22:6",
+     "member_note": "*They that passed by railed on him, wagging their heads* — Tehillim (Psalm) 22:7-8 fulfilled in real time."
+    },
+    {
+     "src": "15:29",
+     "tgt": "canon/lamentations 2:15",
+     "member_note": "*All that pass by clap their hands at thee* (Eikha/Lamentations 2:15)."
+    },
+    {
+     "src": "15:36",
+     "tgt": "canon/psalms 69:21",
+     "member_note": "*The vinegar offered on a reed — Tehillim (Psalm) 69:21 fulfilled in real time.*"
+    }
+   ]
+  },
+  {
+   "slug": "the-day-of-the-most-high-cosmic-darkness-and-the-resurrection-of-the-righteous-in-2-esdras-and-2-baruch",
+   "title": "The day of the Most-High, cosmic darkness, and the resurrection of the righteous — 2 Esdras 7 and 2 Baruch 51 witness to the cross-and-the-saints-arising architecture",
+   "anchor": "Matthew 27:45-53",
+   "anchored_in_this_book": false,
+   "member_count": 6,
+   "summary_md": "Matt 27:45-53's *from the sixth hour there was darkness over all the land unto the ninth hour* + the temple-veil-rent + the earthquake + the rocks-rent + *the graves were opened; and many bodies of the saints which slept arose, and came out of the graves after his resurrection* — read against the wisdom-stream's direct articulation of the cosmic-darkness-at-the-Messiah's-death AND the resurrection-of-the-righteous architecture in 2 Esdras (4 Ezra) 7 and 2 Baruch 51. Four moves: 2 Esdras 7:30 names THE direct verbal-anchor for the *world shall be turned into the old silence seven days, like as in the former judgments* substance — the apocalyptic-stream had named the architecture of the cosmic-darkness-and-silence at the Messiah's-death centuries before the cross (2 Esdras 7:28-29 names directly: *my son the Messiah shall be revealed... after these years shall my son Messiah (Christ) die, and all men that have life. And the world shall be turned into the old silence seven days*); the three-hours-of-darkness at Matt 27:45 is the historical-pivot-foretaste of the broader-cosmic-darkness per Amos 8:9's *I will cause the sun to go down at noon*; 2 Esdras 7:33 names the *Most High shall appear upon the seat of judgment* substance — the cosmic-signs at the cross are the historical-pivot-foretaste of the broader-day-of-the-Most-High per Haggai 2:6-7 + Hebrews 12:26-27; 2 Esdras 7:32 names THE direct verbal-anchor for the *earth shall restore those that are asleep in her* substance — the saints-arising at Matt 27:52 is the historical-pivot-foretaste of the broader-first-resurrection per Red Line #11; 2 Baruch 51:1 names the *saved by their works... shall behold the world which is now invisible to them* substance — the resurrection-glory architecture the saints-arising-and-appearing-in-the-holy-city at Matt 27:53 walks-out at the historical-pivot-foretaste. The framework reads the cluster carefully per Red Line #11's first-resurrection-foretaste reading: the forefathers-who-walked-the-covenant-faithfully Yahuah is able to graft-in-again at the first-resurrection (Romans 11:24 + Hebrews 11:39-40); the Matt 27:52-53 saints-arising substance is the historical-foretaste-of-the-fuller-first-resurrection-at-the-King's-coming. The framework reads the 2 Baruch 51:1 *saved by their works* substance CAREFULLY — NOT the inherited-Reformation-merit-doctrine collapse; the framework reads works as the fruit-of-the-Spirit-internalized-Torah per Yechezk'el (Ezekiel) 36:26-27 + Yirmeyahu (Jeremiah) 31:31-34's new-covenant + James 2:14-26's *faith without works is dead.* The wisdom-stream had named the architecture; the cross walks-out the historical-pivot-foretaste.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:33",
+     "tgt": "canon/amos 8:9",
+     "member_note": "*Darkness over the whole land from the sixth hour unto the ninth.* *I will cause the sun to go down at noon, and I will darken the earth in the clear day* (Amos 8:9)."
+    }
+   ]
+  },
+  {
+   "slug": "eli-eli-lama-sabachthani-the-tehillim-22-citation-and-the-tehillim-22-as-a-whole-substance",
+   "title": "Eli Eli Lama Sabachthani The Tehillim 22 Citation And The Tehillim 22 As A Whole Substance",
+   "anchor": "Matthew 27:46",
+   "anchored_in_this_book": false,
+   "member_count": 19,
+   "summary_md": "**`eli-eli-lama-sabachthani-the-tehillim-22-citation-and-the-tehillim-22-as-a-whole-substance`** — **FRAMEWORK-MAJOR anchor at Matt 27:46.** The substantial-King-substance cites-the-opening-verse-of-Tehillim (Psalm) 22 substance at-the-substantial-substance-of-the-Cross-substance + the substantial-Tehillim 22-as-a-whole walks-from-suffering-into-vindication-substance. Framework reads — substance is-NOT-the-substantial-substance-of-the-categorical-substance-of-the-Father-substantially-forsaking-the-Son-substance the inherited-Christian-collapse walks; the substance is the substantial-rabbinic-citation-of-the-opening-verse-substance summoning-the-whole-Psalm-substance + the substantial-substance-of-the-Cross-substance walks-the-Tehillim 22 substance comprehensively. 15 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:34",
+     "tgt": "canon/psalms 22:1",
+     "member_note": "*Eloi, Eloi, lama sabachthani* — Tehillim (Psalm) 22:1 cited as the opening of the whole psalm. The cry is not despair; it is the citation of the psalm whose ending is the vindication."
+    },
+    {
+     "src": "15:34",
+     "tgt": "canon/psalms 22:24",
+     "member_note": "Tehillim (Psalm) 22:24 — the vindication-arc the citation invokes."
+    },
+    {
+     "src": "15:34",
+     "tgt": "canon/psalms 22:27",
+     "member_note": "*All the ends of the world shall remember and turn unto Yahuah (the LORD)* (Tehillim/Psalm 22:27)."
+    },
+    {
+     "src": "15:34",
+     "tgt": "canon/psalms 22:31",
+     "member_note": "*They shall come, and shall declare his righteousness unto a people that shall be born* (Tehillim/Psalm 22:31)."
+    }
+   ]
+  },
+  {
+   "slug": "veil-of-the-temple-rent-and-the-substantial-access-to-the-father-through-the-cross",
+   "title": "Veil Of The Temple Rent And The Substantial Access To The Father Through The Cross",
+   "anchor": "Matthew 27:51",
+   "anchored_in_this_book": false,
+   "member_count": 14,
+   "summary_md": "**`veil-of-the-temple-rent-and-the-substantial-access-to-the-father-through-the-cross`** — anchor at Matt 27:51. The substantial-veil-rent-substance walks the substantial-substance-of-the-Father's-act-substance + the substantial-access-to-the-Father-substance through-the-substantial-Cross-substance per Hebrews 10:19-22. Framework reads carefully — NOT-the-substantial-substance-of-the-categorical-abrogation-of-the-Torah-substance the inherited-Christian-collapse walks; the substantial-substance is the substantial-Yom Kippur-substance walking-substantially-into-the-substantial-Cross-fulfillment-substance. 11 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:38",
+     "tgt": "canon/exodus 26:31",
+     "member_note": "The Shemot (Exodus) 26:31-33 tabernacle-veil architecture."
+    },
+    {
+     "src": "15:38",
+     "tgt": "canon/hebrews 10:19",
+     "member_note": "*The veil of the temple was rent in twain from the top to the bottom.* The substantial access the typological Day of Atonement was always pointing to (Hebrews 10:19-22)."
+    }
+   ]
+  },
+  {
+   "slug": "the-resurrection-substance-tehillim-16-and-tehillim-22-vindication-substance",
+   "title": "The Resurrection Substance Tehillim 16 And Tehillim 22 Vindication Substance",
+   "anchor": "Matthew 28:1-10",
+   "anchored_in_this_book": false,
+   "member_count": 18,
+   "summary_md": "**`the-resurrection-substance-tehillim-16-and-tehillim-22-vindication-substance`** — anchor at Matt 28:1-10. The substantial-Resurrection-substance walks the substantial-Tehillim (Psalm) 16:10 substance (*thou wilt not leave my soul in sheol; neither wilt thou suffer thine Holy One to see corruption*) + Tehillim 22:22-31's-substantial-vindication-substance + Hosheia (Hosea) 6:2 substance + the substantial-firstfruits-substance per 1 Corinthians 15:20-23. 12 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:42",
+     "tgt": "canon/psalms 16:10",
+     "member_note": "*Thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption* (Tehillim/Psalm 16:10)."
+    },
+    {
+     "src": "15:42",
+     "tgt": "canon/isaiah 53:9",
+     "member_note": "*Yoseph (Joseph) of Arimathaea craving the body — the burial in the rich man's tomb that fulfills Yeshayahu (Isaiah) 53:9.* *He made his grave with the wicked, and with the rich in his death.*"
+    }
+   ]
+  },
+  {
+   "slug": "women-as-the-first-witnesses-of-the-resurrection-and-the-faithful-witness-substance",
+   "title": "Women As The First Witnesses Of The Resurrection And The Faithful Witness Substance",
+   "anchor": "Matthew 28:1-10",
+   "anchored_in_this_book": false,
+   "member_count": 19,
+   "summary_md": "**`women-as-the-first-witnesses-of-the-resurrection-and-the-faithful-witness-substance`** — anchor at Matt 28:1-10. The substantial-women-substance walks the substantial-substance-of-the-substantial-first-witnesses-of-the-Resurrection-substance from-the-substantial-Cross + burial + Resurrection. 9 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:40",
+     "tgt": "canon/matthew 27:55",
+     "member_note": "*Mary Magdalene, and Mary the mother of James the less and of Joses, and Salome.* The women at the cross — named here as witnesses of the crucifixion the same way they will be named as the first witnesses of the resurrection."
+    },
+    {
+     "src": "15:40",
+     "tgt": "canon/luke 23:49",
+     "member_note": "The Lukan parallel of the women at the cross."
+    },
+    {
+     "src": "15:40",
+     "tgt": "canon/john 19:25",
+     "member_note": "The Johannine parallel of the women at the cross."
+    }
+   ]
+  },
+  {
+   "slug": "gethsemane-cup-of-suffering-and-the-sons-substantial-submission-to-the-father",
+   "title": "Gethsemane Cup Of Suffering And The Sons Substantial Submission To The Father",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 27,
+   "summary_md": "**`gethsemane-cup-of-suffering-and-the-sons-substantial-submission-to-the-father`** — anchor at Matt 26:36-46. The substantial-Gethsemane substance + the substantial-cup-of-suffering substance per `cup-of-suffering-tanakh-substance` thread (PROPOSED at Matt 20 from S85) + the substantial-Son's-submission-to-the-Father per the Formless-Formed grid per `nature-of-god-formed-in-flesh` thread. Framework rules out Trinitarian-three-co-equal-persons + modalist-collapse + Arian-created-being; the substantial-Son's-eternal-submission preserved in incarnation. 16 members.",
+   "members_in_this_chapter": [
+    {
+     "src": "15:37",
+     "tgt": "canon/luke 23:46",
+     "member_note": "*Father, into thy hands I commend my spirit* (Luke 23:46)."
+    },
+    {
+     "src": "15:37",
+     "tgt": "canon/john 10:18",
+     "member_note": "*Yahusha cried with a loud voice, and gave up the ghost.* *No man taketh it from me, but I lay it down of myself* (Yochanan/John 10:18)."
+    }
+   ]
+  }
+ ]
+}

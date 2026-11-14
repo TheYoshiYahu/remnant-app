@@ -1,0 +1,611 @@
+{
+ "book": "mark",
+ "chapter": 7,
+ "chapter_text_kjv": {
+  "1": "Then came together unto him the Pharisees, and certain of the scribes, which came from Jerusalem.",
+  "2": "And when they saw some of his disciples eat bread with defiled, that is to say, with unwashen, hands, they found fault.",
+  "3": "For the Pharisees, and all the Yahudim (Jews), except they wash their hands oft, eat not, holding the tradition of the elders.",
+  "4": "And when they come from the market, except they wash, they eat not. And many other things there be, which they have received to hold, as the washing of cups, and pots, brasen vessels, and of tables.",
+  "5": "Then the Pharisees and scribes asked him, Why walk not thy disciples according to the tradition of the elders, but eat bread with unwashen hands?",
+  "6": "He answered and said unto them, Well hath Isaiah prophesied of you hypocrites, as it is written, This people honoureth me with their lips, but their heart is far from me.",
+  "7": "Howbeit in vain do they worship me, teaching for doctrines the commandments of men.",
+  "8": "For laying aside the commandment of Elohim (God), ye hold the tradition of men, as the washing of pots and cups: and many other such like things ye do.",
+  "9": "And he said unto them, Full well ye reject the commandment of Elohim (God), that ye may keep your own tradition.",
+  "10": "For Moses said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death:",
+  "11": "But ye say, If a man shall say to his father or mother, It is Corban, that is to say, a gift, by whatsoever thou mightest be profited by me; he shall be free.",
+  "12": "And ye suffer him no more to do ought for his father or his mother;",
+  "13": "Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye.",
+  "14": "And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand:",
+  "15": "There is nothing from without a man, that entering into him can defile him: but the things which come out of him, those are they that defile the man.",
+  "16": "If any man have ears to hear, let him hear.",
+  "17": "And when he was entered into the house from the people, his disciples asked him concerning the parable.",
+  "18": "And he saith unto them, Are ye so without understanding also? Do ye not perceive, that whatsoever thing from without entereth into the man, it cannot defile him;",
+  "19": "Because it entereth not into his heart, but into the belly, and goeth out into the draught, purging all meats?",
+  "20": "And he said, That which cometh out of the man, that defileth the man.",
+  "21": "For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders,",
+  "22": "Thefts, covetousness, wickedness, deceit, lasciviousness, an evil eye, blasphemy, pride, foolishness:",
+  "23": "All these evil things come from within, and defile the man.",
+  "24": "And from thence he arose, and went into the borders of Tyre and Sidon, and entered into an house, and would have no man know it: but he could not be hid.",
+  "25": "For a certain woman, whose young daughter had an unclean spirit, heard of him, and came and fell at his feet:",
+  "26": "The woman was a Greek, a Syrophenician by nation; and she besought him that he would cast forth the devil out of her daughter.",
+  "27": "But Yahusha (Jesus) said unto her, Let the children first be filled: for it is not meet to take the children’s bread, and to cast it unto the dogs.",
+  "28": "And she answered and said unto him, Yes, Adonai (Lord): yet the dogs under the table eat of the children’s crumbs.",
+  "29": "And he said unto her, For this saying go thy way; the devil is gone out of thy daughter.",
+  "30": "And when she was come to her house, she found the devil gone out, and her daughter laid upon the bed.",
+  "31": "And again, departing from the coasts of Tyre and Sidon, he came unto the sea of Galilee, through the midst of the coasts of Decapolis.",
+  "32": "And they bring unto him one that was deaf, and had an impediment in his speech; and they beseech him to put his hand upon him.",
+  "33": "And he took him aside from the multitude, and put his fingers into his ears, and he spit, and touched his tongue;",
+  "34": "And looking up to heaven, he sighed, and saith unto him, Ephphatha, that is, Be opened.",
+  "35": "And straightway his ears were opened, and the string of his tongue was loosed, and he spake plain.",
+  "36": "And he charged them that they should tell no man: but the more he charged them, so much the more a great deal they published it;",
+  "37": "And were beyond measure astonished, saying, He hath done all things well: he maketh both the deaf to hear, and the dumb to speak."
+ },
+ "cards": [
+  {
+   "id": 5099,
+   "src": "Mark 7:3",
+   "src_vn": 3,
+   "src_text_live": "For the Pharisees, and all the Yahudim (Jews), except they wash their hands oft, eat not, holding the tradition of the elders.",
+   "src_text_kjv": "For the Pharisees, and all the Yahudim (Jews), except they wash their hands oft, eat not, holding the tradition of the elders.",
+   "tgt": "Leviticus 22:1",
+   "tgt_text_kjv": "And Yahuah (LORD) spake unto Moses, saying,",
+   "tgt_context_kjv": {
+    "1": "And Yahuah (LORD) spake unto Moses, saying,",
+    "2": "Speak unto Aaron and to his sons, that they separate themselves from the holy things of the children of Yashar'el (Israel), and that they profane not my holy name in those things which they hallow unto me: I am Yahuah (LORD).",
+    "3": "Say unto them, Whosoever he be of all your seed among your generations, that goeth unto the holy things, which the children of Yashar'el (Israel) hallow unto Yahuah (LORD), having his uncleanness upon him, that soul shall be cut off from my presence: I am Yahuah (LORD).",
+    "4": "What man soever of the seed of Aaron is a leper, or hath a running issue; he shall not eat of the holy things, until he be clean. And whoso toucheth any thing that is unclean by the dead, or a man whose seed goeth from him;"
+   },
+   "old_note": "*Except they wash their hands oft, eat not, holding the tradition of the elders.* The hand-washing rules are nowhere in the Torah; they are Pharisaic fence-building around the priestly-purity requirements of Vayikra (Leviticus) 22 extended to all the people.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5100,
+   "src": "Mark 7:6",
+   "src_vn": 6,
+   "src_text_live": "He answered and said unto them, Well has Isaiah prophesied of you hypocrites, as it is written, This people honoureth me with their lips, but their heart is far from me.",
+   "src_text_kjv": "He answered and said unto them, Well hath Isaiah prophesied of you hypocrites, as it is written, This people honoureth me with their lips, but their heart is far from me.",
+   "tgt": "Isaiah 29:13",
+   "tgt_text_kjv": "Wherefore Yahuah (Lord) said, Forasmuch as this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me, and their fear toward me is taught by the precept of men:",
+   "tgt_context_kjv": {
+    "11": "And the vision of all is become unto you as the words of a book that is sealed, which men deliver to one that is learned, saying, Read this, I pray thee: and he saith, I cannot; for it is sealed:",
+    "12": "And the book is delivered to him that is not learned, saying, Read this, I pray thee: and he saith, I am not learned.",
+    "13": "Wherefore Yahuah (Lord) said, Forasmuch as this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me, and their fear toward me is taught by the precept of men:",
+    "14": "Therefore, behold, I will proceed to do a marvellous work among this people, even a marvellous work and a wonder: for the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid.",
+    "15": "Woe unto them that seek deep to hide their counsel from Yahuah (LORD), and their works are in the dark, and they say, Who seeth us? and who knoweth us?",
+    "16": "Surely your turning of things upside down shall be esteemed as the potter’s clay: for shall the work say of him that made it, He made me not? or shall the thing framed say of him that framed it, He had no understanding?"
+   },
+   "old_note": "*This people honoureth me with their lips, but their heart is far from me.* The King quotes Yeshayahu (Isaiah) 29:13 against the tradition-keepers. **Q15 OT-quotation KEEP flag** queued for S184.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "DOCREF",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5101,
+   "src": "Mark 7:8",
+   "src_vn": 8,
+   "src_text_live": "For laying aside the commandment of Elohim (God), you hold the tradition of men, as the washing of pots and cups: and many other such like things you do.",
+   "src_text_kjv": "For laying aside the commandment of Elohim (God), ye hold the tradition of men, as the washing of pots and cups: and many other such like things ye do.",
+   "tgt": "Deuteronomy 4:2",
+   "tgt_text_kjv": "Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.",
+   "tgt_context_kjv": {
+    "1": "Now therefore hearken, O Yashar'el (Israel), unto the statutes and unto the judgments, which I teach you, for to do them, that ye may live, and go in and possess the land which Yahuah Elohim (the LORD God) of your fathers giveth you.",
+    "2": "Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.",
+    "3": "Your eyes have seen what Yahuah (LORD) did because of Baal-peor: for all the men that followed Baal-peor, Yahuah Elohayka (the LORD thy God) hath destroyed them from among you.",
+    "4": "But ye that did cleave unto Yahuah Elohaychem (the LORD your God) are alive every one of you this day.",
+    "5": "Behold, I have taught you statutes and judgments, even as Yahuah Elohai (the LORD my God) commanded me, that ye should do so in the land whither ye go to possess it."
+   },
+   "old_note": "*Ye shall not add unto the word which I command you, neither shall ye diminish ought from it.* The first blade of the Judaizer-architecture. The Torah's own anti-adding clause stands behind the King's rebuke.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5102,
+   "src": "Mark 7:8",
+   "src_vn": 8,
+   "src_text_live": "For laying aside the commandment of Elohim (God), you hold the tradition of men, as the washing of pots and cups: and many other such like things you do.",
+   "src_text_kjv": "For laying aside the commandment of Elohim (God), ye hold the tradition of men, as the washing of pots and cups: and many other such like things ye do.",
+   "tgt": "Deuteronomy 12:32",
+   "tgt_text_kjv": "What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it.",
+   "tgt_context_kjv": {
+    "30": "Take heed to thyself that thou be not snared by following them, after that they be destroyed from before thee; and that thou enquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise.",
+    "31": "Thou shalt not do so unto Yahuah Elohayka (the LORD thy God): for every abomination to Yahuah (LORD), which he hateth, have they done unto their gods; for even their sons and their daughters they have burnt in the fire to their gods.",
+    "32": "What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it."
+   },
+   "old_note": "*What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it* — the parallel anti-adding clause from Devarim (Deuteronomy) 12:32.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5103,
+   "src": "Mark 7:9",
+   "src_vn": 9,
+   "src_text_live": "And he said unto them, Full well you reject the commandment of Elohim (God), that you may keep your own tradition.",
+   "src_text_kjv": "And he said unto them, Full well ye reject the commandment of Elohim (God), that ye may keep your own tradition.",
+   "tgt": "Exodus 20:12",
+   "tgt_text_kjv": "Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee.",
+   "tgt_context_kjv": {
+    "10": "But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates:",
+    "11": "For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it.",
+    "12": "Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee.",
+    "13": "Thou shalt not kill.",
+    "14": "Thou shalt not commit adultery.",
+    "15": "Thou shalt not steal."
+   },
+   "old_note": "*Making the word of Elohim (God) of none effect through your tradition.* The load-bearing example: Corban releases sons from honoring parents — voiding the fifth commandment (Shemot/Exodus 20:12) by tradition.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5104,
+   "src": "Mark 7:9",
+   "src_vn": 9,
+   "src_text_live": "And he said unto them, Full well you reject the commandment of Elohim (God), that you may keep your own tradition.",
+   "src_text_kjv": "And he said unto them, Full well ye reject the commandment of Elohim (God), that ye may keep your own tradition.",
+   "tgt": "Deuteronomy 5:16",
+   "tgt_text_kjv": "Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee; that thy days may be prolonged, and that it may go well with thee, in the land which Yahuah Elohayka (the LORD thy God) giveth thee.",
+   "tgt_context_kjv": {
+    "14": "But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, nor thy manservant, nor thy maidservant, nor thine ox, nor thine ass, nor any of thy cattle, nor thy stranger that is within thy gates; that thy manservant and thy maidservant may rest as well as thou.",
+    "15": "And remember that thou wast a servant in the land of Egypt, and that Yahuah Elohayka (the LORD thy God) brought thee out thence through a mighty hand and by a stretched out arm: therefore Yahuah Elohayka (the LORD thy God) commanded thee to keep the sabbath day.",
+    "16": "Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee; that thy days may be prolonged, and that it may go well with thee, in the land which Yahuah Elohayka (the LORD thy God) giveth thee.",
+    "17": "Thou shalt not kill.",
+    "18": "Neither shalt thou commit adultery.",
+    "19": "Neither shalt thou steal."
+   },
+   "old_note": "*Honour thy father and thy mother* — the Devarim (Deuteronomy) 5:16 re-naming of the fifth commandment the Corban tradition voided.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5105,
+   "src": "Mark 7:9",
+   "src_vn": 9,
+   "src_text_live": "And he said unto them, Full well you reject the commandment of Elohim (God), that you may keep your own tradition.",
+   "src_text_kjv": "And he said unto them, Full well ye reject the commandment of Elohim (God), that ye may keep your own tradition.",
+   "tgt": "1 John 2:3",
+   "tgt_text_kjv": "And hereby we do know that we know him, if we keep his commandments.",
+   "tgt_context_kjv": {
+    "1": "My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Yahusha HaMashiach (Jesus Christ) the righteous:",
+    "2": "And he is the propitiation for our sins: and not for ours only, but also for the sins of the whole world.",
+    "3": "And hereby we do know that we know him, if we keep his commandments.",
+    "4": "He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.",
+    "5": "But whoso keepeth his word, in him verily is the love of Elohim (God) perfected: hereby know we that we are in him.",
+    "6": "He that saith he abideth in him ought himself also so to walk, even as he walked."
+   },
+   "old_note": "*Hereby we do know that we know him, if we keep his commandments* — the 1 Yochanan (John) 2:3-4 contrary-to-Torah test; the diagnostic the Pharisaic tradition fails.",
+   "author_thread_hint": "pharisaic-traditions-make-the-commandment-of-none-effect",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5108,
+   "src": "Mark 7:14",
+   "src_vn": 14,
+   "src_text_live": "And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand:",
+   "src_text_kjv": "And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand:",
+   "tgt": "Jeremiah 17:9",
+   "tgt_text_kjv": "The heart is deceitful above all things, and desperately wicked: who can know it?",
+   "tgt_context_kjv": {
+    "7": "Blessed is the man that trusteth in Yahuah (LORD), and whose hope Yahuah (LORD) is.",
+    "8": "For he shall be as a tree planted by the waters, and that spreadeth out her roots by the river, and shall not see when heat cometh, but her leaf shall be green; and shall not be careful in the year of drought, neither shall cease from yielding fruit.",
+    "9": "The heart is deceitful above all things, and desperately wicked: who can know it?",
+    "10": "I Yahuah (LORD) search the heart, I try the reins, even to give every man according to his ways, and according to the fruit of his doings.",
+    "11": "As the partridge sitteth on eggs, and hatcheth them not; so he that getteth riches, and not by right, shall leave them in the midst of his days, and at his end shall be a fool.",
+    "12": "A glorious high throne from the beginning is the place of our sanctuary."
+   },
+   "old_note": "*There is nothing from without a man, that entering into him can defile him.* The defilement at issue is heart-defilement; the diagnostic is Yirmeyahu (Jeremiah) 17:9's *the heart is deceitful above all things.* NOT the abolition of Torah's clean / unclean instruction.",
+   "author_thread_hint": "heart-defilement-and-the-mouth-substance",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5109,
+   "src": "Mark 7:14",
+   "src_vn": 14,
+   "src_text_live": "And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand:",
+   "src_text_kjv": "And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand:",
+   "tgt": "Deuteronomy 30:6",
+   "tgt_text_kjv": "And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live.",
+   "tgt_context_kjv": {
+    "4": "If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee:",
+    "5": "And Yahuah Elohayka (the LORD thy God) will bring thee into the land which thy fathers possessed, and thou shalt possess it; and he will do thee good, and multiply thee above thy fathers.",
+    "6": "And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live.",
+    "7": "And Yahuah Elohayka (the LORD thy God) will put all these curses upon thine enemies, and on them that hate thee, which persecuted thee.",
+    "8": "And thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments which I command thee this day.",
+    "9": "And Yahuah Elohayka (the LORD thy God) will make thee plenteous in every work of thine hand, in the fruit of thy body, and in the fruit of thy cattle, and in the fruit of thy land, for good: for Yahuah (LORD) will again rejoice over thee for good, as he rejoiced over thy fathers:"
+   },
+   "old_note": "*Yahuah Elohayka (the LORD thy God) will circumcise thine heart* (Devarim/Deuteronomy 30:6) — the heart-circumcision the Torah itself prophesied as the answer to defilement.",
+   "author_thread_hint": "heart-defilement-and-the-mouth-substance",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5110,
+   "src": "Mark 7:19",
+   "src_vn": 19,
+   "src_text_live": "Because it enters not into his heart, but into the belly, and goes out into the draught, purging all meats?",
+   "src_text_kjv": "Because it entereth not into his heart, but into the belly, and goeth out into the draught, purging all meats?",
+   "tgt": "Leviticus 11:1",
+   "tgt_text_kjv": "And Yahuah (LORD) spake unto Moses and to Aaron, saying unto them,",
+   "tgt_context_kjv": {
+    "1": "And Yahuah (LORD) spake unto Moses and to Aaron, saying unto them,",
+    "2": "Speak unto the children of Yashar'el (Israel), saying, These are the beasts which ye shall eat among all the beasts that are on the earth.",
+    "3": "Whatsoever parteth the hoof, and is clovenfooted, and cheweth the cud, among the beasts, that shall ye eat.",
+    "4": "Nevertheless these shall ye not eat of them that chew the cud, or of them that divide the hoof: as the camel, because he cheweth the cud, but divideth not the hoof; he is unclean unto you."
+   },
+   "old_note": "*Purging all meats.* The parenthetical is grammatically the digestive system purging the foods that have already passed through it, not the King declaring unclean animals clean. The Vayikra (Leviticus) 11 categories stand untouched.",
+   "author_thread_hint": "oral-tradition-correction-not-torah-supersession",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5111,
+   "src": "Mark 7:19",
+   "src_vn": 19,
+   "src_text_live": "Because it enters not into his heart, but into the belly, and goes out into the draught, purging all meats?",
+   "src_text_kjv": "Because it entereth not into his heart, but into the belly, and goeth out into the draught, purging all meats?",
+   "tgt": "Acts 10:14",
+   "tgt_text_kjv": "But Peter said, Not so, Yahuah (Lord); for I have never eaten any thing that is common or unclean.",
+   "tgt_context_kjv": {
+    "12": "Wherein were all manner of fourfooted beasts of the earth, and wild beasts, and creeping things, and fowls of the air.",
+    "13": "And there came a voice to him, Rise, Peter; kill, and eat.",
+    "14": "But Peter said, Not so, Yahuah (Lord); for I have never eaten any thing that is common or unclean.",
+    "15": "And the voice spake unto him again the second time, What Elohim (God) hath cleansed, that call not thou common.",
+    "16": "This was done thrice: and the vessel was received up again into heaven.",
+    "17": "Now while Peter doubted in himself what this vision which he had seen should mean, behold, the men which were sent from Cornelius had made enquiry for Simon’s house, and stood before the gate,"
+   },
+   "old_note": "Peter's *Not so, Lord; for I have never eaten any thing that is common or unclean* (Acts 10:14) — confirms the Torah's clean/unclean categories were still operative for the apostolic walk after the resurrection.",
+   "author_thread_hint": "oral-tradition-correction-not-torah-supersession",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5112,
+   "src": "Mark 7:21",
+   "src_vn": 21,
+   "src_text_live": "For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders,",
+   "src_text_kjv": "For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders,",
+   "tgt": "Exodus 20:13",
+   "tgt_text_kjv": "Thou shalt not kill.",
+   "tgt_context_kjv": {
+    "11": "For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it.",
+    "12": "Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee.",
+    "13": "Thou shalt not kill.",
+    "14": "Thou shalt not commit adultery.",
+    "15": "Thou shalt not steal.",
+    "16": "Thou shalt not bear false witness against thy neighbour."
+   },
+   "old_note": "*Out of the heart of men, proceed evil thoughts, adulteries, fornications, murders, thefts, covetousness.* The catalog runs through the second tablet of the Torah (Shemot/Exodus 20:13-17).",
+   "author_thread_hint": "heart-defilement-and-the-mouth-substance",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5113,
+   "src": "Mark 7:21",
+   "src_vn": 21,
+   "src_text_live": "For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders,",
+   "src_text_kjv": "For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders,",
+   "tgt": "Jeremiah 17:9",
+   "tgt_text_kjv": "The heart is deceitful above all things, and desperately wicked: who can know it?",
+   "tgt_context_kjv": {
+    "7": "Blessed is the man that trusteth in Yahuah (LORD), and whose hope Yahuah (LORD) is.",
+    "8": "For he shall be as a tree planted by the waters, and that spreadeth out her roots by the river, and shall not see when heat cometh, but her leaf shall be green; and shall not be careful in the year of drought, neither shall cease from yielding fruit.",
+    "9": "The heart is deceitful above all things, and desperately wicked: who can know it?",
+    "10": "I Yahuah (LORD) search the heart, I try the reins, even to give every man according to his ways, and according to the fruit of his doings.",
+    "11": "As the partridge sitteth on eggs, and hatcheth them not; so he that getteth riches, and not by right, shall leave them in the midst of his days, and at his end shall be a fool.",
+    "12": "A glorious high throne from the beginning is the place of our sanctuary."
+   },
+   "old_note": "*The heart is deceitful above all things, and desperately wicked* — the Yirmeyahu (Jeremiah) 17:9 diagnostic.",
+   "author_thread_hint": "heart-defilement-and-the-mouth-substance",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5114,
+   "src": "Mark 7:21",
+   "src_vn": 21,
+   "src_text_live": "For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders,",
+   "src_text_kjv": "For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders,",
+   "tgt": "Ezekiel 36:26",
+   "tgt_text_kjv": "A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.",
+   "tgt_context_kjv": {
+    "24": "For I will take you from among the heathen, and gather you out of all countries, and will bring you into your own land.",
+    "25": "Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you.",
+    "26": "A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.",
+    "27": "And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.",
+    "28": "And ye shall dwell in the land that I gave to your fathers; and ye shall be my people, and I will be your Elohim (God).",
+    "29": "I will also save you from all your uncleannesses: and I will call for the corn, and will increase it, and lay no famine upon you."
+   },
+   "old_note": "The answer is the new heart of Yechezk'el (Ezekiel) 36:26 — *a new heart also will I give you.*",
+   "author_thread_hint": "heart-defilement-and-the-mouth-substance",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [],
+   "reversed_pair": []
+  },
+  {
+   "id": 5115,
+   "src": "Mark 7:24",
+   "src_vn": 24,
+   "src_text_live": "And from thence he arose, and went into the borders of Tyre and Sidon, and entered into an house, and would have no man know it: but he could not be hid.",
+   "src_text_kjv": "And from thence he arose, and went into the borders of Tyre and Sidon, and entered into an house, and would have no man know it: but he could not be hid.",
+   "tgt": "Matthew 15:21",
+   "tgt_text_kjv": "Then Yahusha (Jesus) went thence, and departed into the coasts of Tyre and Sidon.",
+   "tgt_context_kjv": {
+    "19": "For out of the heart proceed evil thoughts, murders, adulteries, fornications, thefts, false witness, blasphemies:",
+    "20": "These are the things which defile a man: but to eat with unwashen hands defileth not a man.",
+    "21": "Then Yahusha (Jesus) went thence, and departed into the coasts of Tyre and Sidon.",
+    "22": "And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.",
+    "23": "But he answered her not a word. And his disciples came and besought him, saying, Send her away; for she crieth after us.",
+    "24": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel)."
+   },
+   "old_note": "The Markan parallel to the Matthean Canaanite-woman of Matthew 15:21-28. **Red Line #7 individual-mercy contrast case:** mercy granted, daughter healed; absorption into the seed-line not in view here.",
+   "author_thread_hint": "canaanite-woman-master",
+   "map_grade": "DOCREF",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5116,
+   "src": "Mark 7:24",
+   "src_vn": 24,
+   "src_text_live": "And from thence he arose, and went into the borders of Tyre and Sidon, and entered into an house, and would have no man know it: but he could not be hid.",
+   "src_text_kjv": "And from thence he arose, and went into the borders of Tyre and Sidon, and entered into an house, and would have no man know it: but he could not be hid.",
+   "tgt": "Matthew 15:24",
+   "tgt_text_kjv": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+   "tgt_context_kjv": {
+    "22": "And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.",
+    "23": "But he answered her not a word. And his disciples came and besought him, saying, Send her away; for she crieth after us.",
+    "24": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+    "25": "Then came she and worshipped him, saying, Adonai (Lord), help me.",
+    "26": "But he answered and said, It is not meet to take the children’s bread, and to cast it to dogs.",
+    "27": "And she said, Truth, Adonai (Lord): yet the dogs eat of the crumbs which fall from their masters’ table."
+   },
+   "old_note": "*I am not sent but unto the lost sheep of the house of Yashar'el (Israel)* (Matthew 15:24) — the King's stated mission; the bread is for the children of the seed-of-promise, the daughter-of-the-nations receives mercy without being absorbed.",
+   "author_thread_hint": "canaanite-woman-master",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit",
+    "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 5117,
+   "src": "Mark 7:28",
+   "src_vn": 28,
+   "src_text_live": "And she answered and said unto him, Yes, Lord: yet the dogs under the table eat of the children’s crumbs.",
+   "src_text_kjv": "And she answered and said unto him, Yes, Adonai (Lord): yet the dogs under the table eat of the children’s crumbs.",
+   "tgt": "Matthew 15:27",
+   "tgt_text_kjv": "And she said, Truth, Adonai (Lord): yet the dogs eat of the crumbs which fall from their masters’ table.",
+   "tgt_context_kjv": {
+    "25": "Then came she and worshipped him, saying, Adonai (Lord), help me.",
+    "26": "But he answered and said, It is not meet to take the children’s bread, and to cast it to dogs.",
+    "27": "And she said, Truth, Adonai (Lord): yet the dogs eat of the crumbs which fall from their masters’ table.",
+    "28": "Then Yahusha (Jesus) answered and said unto her, O woman, great is thy faith: be it unto thee even as thou wilt. And her daughter was made whole from that very hour.",
+    "29": "And Yahusha (Jesus) departed from thence, and came nigh unto the sea of Galilee; and went up into a mountain, and sat down there.",
+    "30": "And great multitudes came unto him, having with them those that were lame, blind, dumb, maimed, and many others, and cast them down at Yahusha's (Jesus’) feet; and he healed them:"
+   },
+   "old_note": "*Yet the dogs under the table eat of the children's crumbs.* The woman accepts the children-and-dogs framework the King handed her. Her wisdom is in receiving the framework, not arguing it away. **Q14 NT-Lord vocative flag** queued for S184: render as *Lord* (preserve).",
+   "author_thread_hint": "canaanite-woman-master",
+   "map_grade": "DOCREF",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "mark-7-the-corban-tradition-voids-the-fifth-commandment-in-sirach",
+   "title": "The corban tradition voids the fifth commandment — Sirach",
+   "anchor": "Mark 7:9-13",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "Mark 7:6-13 is the framework's central diagnostic in the King's own mouth: the man-made tradition that voids the commandment of Elohim (God). The corban device is the load-bearing example — *if a man shall say to his father or mother, It is Corban, that is to say, a gift... he shall be free* — and the verdict is *Making the word of Elohim (God) of none effect through your tradition.* The commandment the device voids is the fifth — *Honour thy father and thy mother* — and the Hebrew library's wisdom-stream had already bound that commandment to the fear of Yahuah and named the cost of withholding it. Sirach (Ecclesiasticus) 3:7 makes honour-of-parents the very test of the fear of Yahuah: *He that fears Yahuah (God) will honour his father, and will do service to his parents, as to his masters.* Sirach 3:8 binds honour to deed, not word only: *Honour your father and mother both in word and deed, that a blessing may come upon you from them* — the exact word-AND-deed the corban ruling severs, permitting honour in vow-formula while forbidding the deed of provision. Sirach 3:9 names the cost: *the blessing of the father establishes the houses of children; but the curse of the mother rooteth out foundations.* The tradition that voids the commandment forfeits the blessing and invites the uprooting. The same flesh-credentialing system that exalts the tradition of the elders over the word of Elohim is the Judaizer architecture the King names here and the apostolic letters confront later; the wisdom-stream had already exposed it by its own standard.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:10",
+     "tgt": "apocrypha/ecclesiasticus 3:7",
+     "member_note": "Ecclesiasticus 3:7 — *He that fears Yahuah (God) will honour his father.* The commandment the corban tradition severs from the fear of Yahuah (God) at Mark 7:10."
+    },
+    {
+     "src": "7:12",
+     "tgt": "apocrypha/ecclesiasticus 3:8",
+     "member_note": "Ecclesiasticus 3:8 — *both in word and deed, that a blessing may come upon you from them.* The deed the tradition forbids at Mark 7:12."
+    },
+    {
+     "src": "7:13",
+     "tgt": "apocrypha/ecclesiasticus 3:9",
+     "member_note": "Ecclesiasticus 3:9 — *the blessing of the father establishes the houses of children.* The foundation the tradition of Mark 7:13 roots out."
+    }
+   ]
+  },
+  {
+   "slug": "mark-7-defilement-from-within-the-heart-the-source-of-evil-in-sirach",
+   "title": "Defilement from within — the heart the source of evil in Sirach",
+   "anchor": "Mark 7:15-23",
+   "anchored_in_this_book": true,
+   "member_count": 2,
+   "summary_md": "Mark 7:14-23 turns the washing-of-hands dispute into the King's teaching on the true seat of defilement: *There is nothing from without a man, that entering into him can defile him: but the things which come out of him, those are they that defile the man... For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders.* The Hebrew library's wisdom-stream had already located the source of evil in the man's own heart, never in what enters from without, and never in Elohim (God). Sirach (Ecclesiasticus) 15:11-12 forbids blaming the Most High: *Say not you, It is through Yahuah (God) that I fell away... Say not you, He has caused me to err: for he has no need of the sinful man.* Sirach 15:14 names why the source is the man's own: *He himself made man from the beginning, and left him in the hand of his counsel* — the free agent answerable for what proceeds from his own heart. Sirach 27:6 makes the outward utterance the disclosure of the inward heart: *The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* The King's catalogue of what proceeds from within is the same diagnostic the wisdom-stream carried — the heart, not the unwashen hand, is where defilement begins, and what comes out declares the heart that bore it.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:20",
+     "tgt": "apocrypha/ecclesiasticus 15:14",
+     "member_note": "Sirach (Ecclesiasticus) 15:14 — *He himself made man from the beginning, and left him in the hand of his counsel.* The Hebrew library locates the source of evil in the man's own choosing; Mark 7:20's *that which cometh out of the man, that defileth the man* names the same."
+    },
+    {
+     "src": "7:21",
+     "tgt": "apocrypha/ecclesiasticus 27:6",
+     "member_note": "Sirach 27:6 — *The fruit declareth if the tree have been dressed; so is the utterance of a conceit in the heart of man.* The outward utterance discloses the inward heart; Mark 7:21's *from within, out of the heart of men, proceed evil thoughts* is the same diagnostic — the fruit declares the tree."
+    }
+   ]
+  },
+  {
+   "slug": "ephphatha-be-opened-the-deaf-hearing-and-the-dumb-speaking-as-messianic-credential",
+   "title": "*Ephphatha* — the deaf hearing and the dumb speaking as the messianic-age credential of Yeshayahu (Isaiah) 35",
+   "anchor": "Mark 7:34-37",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "*And straightway his ears were opened, and the string of his tongue was loosed, and he spake plain* (Mark 7:35). The crowd's verdict — *he hath done all things well: he maketh both the deaf to hear, and the dumb to speak* (Mark 7:37) — is a direct echo of the messianic-age catalog Yeshayahu (Isaiah) gave: *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped. Then shall the lame man leap as an hart, and the tongue of the dumb sing* (Isaiah 35:5-6). The opening of the ear is the credential the King handed Yochanan's (John's) disciples a chapter earlier in Matthew 11:5 as the answer to *art thou he that should come?* — the answer the prophets had already written down for them to recognize.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:34",
+     "tgt": "canon/mark 5:41",
+     "member_note": "*And looking up to heaven, he sighed, and saith unto him, Ephphatha, that is, Be opened.* The second Aramaic word Mark preserves on the page — the King's own voice spoken over a deaf man, the original word kept so the reader hears what the witnesses heard, the translation given immediately so the meaning is not lost. The same pattern as *Talitha cumi* at 5:41."
+    },
+    {
+     "src": "7:35",
+     "tgt": "canon/isaiah 35:5",
+     "member_note": "*Ephphatha, that is, Be opened. And straightway his ears were opened, and the string of his tongue was loosed, and he spake plain.* The ear-opening and tongue-loosing are the messianic-age credentials Yeshayahu (Isaiah) 35:5-6 catalogued: *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.*"
+    },
+    {
+     "src": "7:35",
+     "tgt": "canon/isaiah 35:6",
+     "member_note": "*And the tongue of the dumb sing.* The King fulfills the catalog the prophet wrote; the dumb-speaking is the second half of the Yeshayahu (Isaiah) 35 messianic-age credential."
+    },
+    {
+     "src": "7:35",
+     "tgt": "canon/matthew 11:5",
+     "member_note": "*The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up, and the poor have the gospel preached to them.* The King handed Yochanan's (John's) disciples the Yeshayahu (Isaiah) 35 catalog as the answer to *art thou he that should come?* — the Mark 7 ear-opening is the catalog walked into a single moment."
+    },
+    {
+     "src": "7:37",
+     "tgt": "canon/genesis 1:31",
+     "member_note": "*And were beyond measure astonished, saying, He hath done all things well: he maketh both the deaf to hear, and the dumb to speak.* The crowd's verdict is also a creation-echo: *and Elohim (God) saw every thing that he had made, and, behold, it was very good.* The King's healing is creation-restoration; the works of his hands undo the curse on the body the way the original works of his hands made the body."
+    },
+    {
+     "src": "7:37",
+     "tgt": "canon/isaiah 35:5",
+     "member_note": "*He maketh both the deaf to hear, and the dumb to speak* — the crowd's framework-honoring verdict echoes the Yeshayahu (Isaiah) 35:5-6 messianic-age catalog without naming the prophet; the witnesses recognize the substance."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17",
+   "title": "The lost sheep first — the woman of Canaan, the divorced house, and the children's bread (Deuteronomy 24; Hosea 2; Mark 7)",
+   "anchor": "Matthew 15:21-28",
+   "anchored_in_this_book": false,
+   "member_count": 15,
+   "summary_md": "It ain't new. A woman cries after him on the coast of Tyre and Sidon, and the disciples want her sent away. His answer is to them, and it tells them who she is:\n\n*But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* (Matthew 15:24)\n\nThat was his whole errand. He had given the twelve the same boundary before he ever met her:\n\n*But go rather to the lost sheep of the house of Yashar'el (Israel).* (Matthew 10:6)\n\nAnd she is not a stranger to the house. Hear what she calls him:\n\n*And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.* (Matthew 15:22)\n\n*Son of David* is the covenant word to David's house in the mouth of a woman on a Canaanite coast. She knew whose house the king came from, and she worshipped him. The sheep hear the voice because they are sheep, and Hosea had already named the place where such sheep would be found:\n\n*Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God).* (Hosea 1:9)\n\n*Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10)\n\nSo why does he call her a dog, and why is the bread withheld? Because the house she belongs to was put away:\n\n*And I saw, when for all the causes whereby backsliding Yashar'el (Israel) committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not, but went and played the harlot also.* (Jeremiah 3:8)\n\nAnd the Torah he gave does not let a husband take back the wife he has put away:\n\n*Her former husband, which sent her away, may not take her again to be his wife, after that she is defiled; for that is abomination before Yahuah (LORD): and thou shalt not cause the land to sin, which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance.* (Deuteronomy 24:4)\n\nA woman is bound to her husband as long as he lives, and only a death frees her to be married again:\n\n*For the woman which hath an husband is bound by the law to her husband so long as he liveth; but if the husband be dead, she is loosed from the law of her husband.* (Romans 7:2)\n\n*Wherefore, my brethren, ye also are become dead to the law by the body of Messiah (Christ); that ye should be married to another, even to him who is raised from the dead, that we should bring forth fruit unto Elohim (God).* (Romans 7:4)\n\nHe has not died yet. The divorced house cannot be seated at his table while he lives as that husband, so the bread is the children's, the undivorced house of Yahudah (Judah), and the scattered are what we became out there, dogs under the table. Mark keeps the word that carries the timing:\n\n*But Yahusha (Jesus) said unto her, Let the children first be filled: for it is not meet to take the children’s bread, and to cast it unto the dogs.* (Mark 7:27)\n\nFirst. Not never. She hears the order and does not argue it. She asks for what falls from the table now, and he calls that faith great. The redeeming of the house that was put away comes on the other side of his death, and Hosea says how it ends:\n\n*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* (Hosea 2:23)\n\nThe order of the sending shows the same two halves. Before the death, *go not into the way of the Gentiles*; after it:\n\n*Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Spirit):* (Matthew 28:19)\n\nNot a new people added to the house, but the same house sought in every place it was scattered to, once the death that frees it had been died. Matthew 15 does not say the death is the reason; Deuteronomy, Romans and Mark's *first* say it, line upon line. The woman of Canaan is a woman from that land and a sheep of the house, revealed by her hearing, given the crumbs before her time and the table after it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit",
+   "title": "The gathering of the scattered twelve tribes — Sirach (Ecclesiasticus) 36, 2 Esdras (4 Ezra) 13, and Tobit 13 (FRAMEWORK-MAJOR)",
+   "anchor": "Matthew 15:24",
+   "anchored_in_this_book": false,
+   "member_count": 9,
+   "summary_md": "Matt 15:24's *I am not sent but unto the lost sheep of the house of Yashar'el (Israel)* — the King's-own-mission-scope statement, paired with the Matt 10:5-6's apostolic-mission-scope, reading as the load-bearing scripture-anchor for the framework's gathering-of-the-scattered-twelve-tribes thesis — read against the wisdom-stream's direct articulation of the gathering-of-the-scattered-tribes prayer-and-prophecy substance. Five moves: Sirach (Ecclesiasticus) 36:1 names the petition — *have mercy upon us, O Yahuah (God) of all, and behold us* (the wisdom-stream's-prayer-for-the-gathering); Sirach 36:11 names THE direct verbal-anchor — *gather all the tribes of Jacob together, and inherit you them, as from the beginning* (the explicit wisdom-stream-articulation of the twelve-tribes-restoration the prophets had named at Yechezk'el (Ezekiel) 37:21; Yirmeyahu (Jeremiah) 31:8-10; Hosea 1:10-11; Zekharyah (Zechariah) 10:6-10); 2 Esdras (4 Ezra) 13:40 names the ten-tribes-carried-away — *those are the ten tribes, which were carried away prisoners out of their own land in the time of Osea the king, whom Salmanasar the king of Assyria led away captive* (the wisdom-stream's-direct-articulation of the Assyrian-exile-architecture the lost-sheep-mission-scope addresses); 2 Esdras 13:48 names the remnant-within-the-borders — *but those that be left behind of your people are they that are found within my borders* (the wisdom-stream's naming of both registers the King's-mission addresses); Tobit 13:5 names the scourge-then-mercy-then-gathering-out-of-all-nations — *he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us* (the operative-architecture the King's-mission enacts). The framework reads the cluster as FRAMEWORK-MAJOR for the lost-sheep-mission-scope's wisdom-stream corroboration. The Pharisaic-system had built credentialing-systems on top of the binary (Yahudah (Judah) and the nations, no scattered-twelve-tribes coming-home); the wisdom-stream had preserved the architecture the prophets had named. The King's-mission at v.24 IS the operative-form of the wisdom-stream's-prayer at Sirach 36:11; the lost-sheep-of-the-house-of-Yashar'el (Israel) the King is sent-to IS the all-the-tribes-of-Ya'aqov (Jacob) the wisdom-stream had prayed for the gathering of. The framework reads the Canaanite-woman's mercy-at-the-crumbs-substance (vv.25-28) within the architecture — as the master's-table-mercy-to-the-categorical-nations-individual that does NOT collapse the seed-distinction (Red Line #7) but operates within it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "honor-of-parents-fifth-commandment-the-corban-tradition-voids-in-sirach-and-tobit",
+   "title": "The honor of parents — the fifth-commandment substance the Pharisaic Corban-tradition voids — Sirach (Ecclesiasticus) 3 and 7, and Tobit 4",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 7,
+   "summary_md": "Matt 15:3-6's Pharisaic-Corban-tradition exposé — *Why do ye also transgress the commandment of Elohim (God) by your tradition? For Elohim (God) commanded, saying, Honour thy father and mother ... But ye say, Whosoever shall say to his father or his mother, It is a gift, by whatsoever thou mightest be profited by me; And honour not his father or his mother, he shall be free. Thus have ye made the commandment of Elohim (God) of none effect by your tradition* — read against the wisdom-stream's direct articulation of the fifth-commandment substance the Pharisaic-Corban-tradition voids. Five moves: Sirach (Ecclesiasticus) 3:1 names *hear me your father, O children, and do thereafter, that you may be safe* (the wisdom-stream's headline articulation of the parental-honor architecture as the foundation-of-the-children's-safety); Sirach 3:8 names the holistic-honor — *honour your father and mother both in word and deed, that a blessing may come upon you from them* (the architecture the Pharisaic-Corban-tradition split, allowing word-without-deed); Sirach 7:27 names the whole-heart-honor — *honour your father with your whole heart, and forget not the sorrows of your mother* (the heart-level architecture the King will close the loop on at vv.18-20); Sirach 3:16 names the worst-end — *he that forsaketh his father is as a blasphemer; and he that angereth his mother is cursed: of Yahuah (God)* (the disposition of the Pharisaic-Corban-tradition at its most-honest naming — blasphemy and curse); Tobit 4:3 names the deathbed-instruction — *my son, when I am dead, bury me; and despise not your mother, but honour her all the days of your life* (the second-Temple Yashar'el (Israel)-household's articulation of the all-the-days-of-her-life parental-honor extension). The framework reads the cluster as the wisdom-stream's direct corroboration of the Torah-substance the King defends against the Pharisaic-Corban-tradition. The Pharisaic-system had built the Corban-vow-mechanism to override the parental-honor commandment while preserving its righteousness-credentialing; the wisdom-stream had named the substance the tradition was voiding centuries before. The King's-charge at vv.3-6 lands at the same load-bearing diagnostic the wisdom-stream had named: the disposition that voids the parental-honor commandment is at the architecture of blasphemy-against-the-Torah-the-Father-spoke-from-Sinai.",
+   "members_in_this_chapter": [
+    {
+     "src": "7:10",
+     "tgt": "canon/exodus 20:12",
+     "member_note": "*For Moses said, Honour thy father and thy mother.* The King quotes the positive command (Shemot/Exodus 20:12) the Pharisaic Corban tradition voids."
+    },
+    {
+     "src": "7:10",
+     "tgt": "canon/exodus 21:17",
+     "member_note": "*Whoso curseth father or mother, let him die the death* — Shemot (Exodus) 21:17's penalty-register the King quotes against the Corban-voiding."
+    }
+   ]
+  }
+ ]
+}

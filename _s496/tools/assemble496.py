@@ -1,5 +1,5 @@
-"""S496 — assemble496.py <batch>  →  fix/matthew_<batch>.json (+ _report.md)        (batch b1 = Matthew 1–7)
-Reads out/matthew_<N>_fixed.json (else _draft.json) for each chapter of the batch and builds the REBUILD fix file: for every orphan
+"""S496 — assemble496.py <batch>  →  fix/<book>_<batch>.json (+ _report.md)        (b1–b5 Matthew; m1 Mark 1–16; l1 Luke 1–24)
+Reads out/<book>_<N>_fixed.json (else _draft.json) for each chapter of the batch and builds the REBUILD fix file: for every orphan
 card of those chapters (same id, same verse pair) a new note composed BY SCRIPT — target verse whole from parsed/canon.json, Matthew
 verse whole from the live read-back, then the drafter's prose — a member note, and the thread it joins (existing, or a new one).
 Hard rules: every orphan card of the chapter covered exactly once and still an orphan in the read-back; prose 12–90 words with no
@@ -12,9 +12,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common496 import *
 
-def pick(ch):
+def pick(book, ch):
     for suf in ('_fixed.json', '_draft.json'):
-        p = W6 / 'out' / f'matthew_{ch}{suf}'
+        p = W6 / 'out' / f'{book}_{ch}{suf}'
         if p.exists(): return p
     return None
 
@@ -31,8 +31,10 @@ def main(batch, only=None):
     cards, members, threads, models, files = [], [], [], set(), []
     new_slugs = {}
     for ch in chapters:
-        p = pick(ch)
-        if p is None: fail(f'ch {ch}', 'no draft file in out/'); continue
+        p = pick(book, ch)
+        if p is None:
+            if not any(c['s_book'] == book and c['s_ch'] == ch and c['s_ed'] == ED and not member_of[c['id']] for c in D['cards']): warn(f'ch {ch}', 'no orphan cards in the read-back — nothing to draft, skipped'); continue
+            fail(f'ch {ch}', 'no draft file in out/'); continue
         dr = json.load(open(p)); files.append(str(p)); models.add(dr.get('model', '?'))
         orph = {c['id']: c for c in D['cards'] if c['s_book'] == book and c['s_ch'] == ch and c['s_ed'] == ED and not member_of[c['id']]}
         seen = set()
@@ -87,7 +89,7 @@ def main(batch, only=None):
             slug = cd.get('thread') or ''
             if slug in new_slugs: new_slugs[slug]['n'] += 1
             elif slug not in T: fail(w, f"thread '{slug}' is neither live nor a new thread of the draft"); continue
-            note = compose_note(name, c['t_ch'], c['t_vn'], tgt, src, ch, c['s_vn'], prose)
+            note = compose_note(name, c['t_ch'], c['t_vn'], tgt, src, ch, c['s_vn'], prose, TITLES[book])
             mnote = compose_member(name, c['t_ch'], c['t_vn'], tgt, ph, sent) if ph else ''
             if note == c['note']: warn(w, 'new note equals the live note')
             cards.append(dict(id=cid, src_ch=ch, src_vn=c['s_vn'], src_text=src, tgt_book=c['t_book'], tgt_ch=c['t_ch'], tgt_vn=c['t_vn'], tgt_text=tgt, tier=c['tier'],
@@ -98,7 +100,7 @@ def main(batch, only=None):
     for s, nt in new_slugs.items():
         if nt['n'] == 0: fail(f"new thread '{s}'", 'no card joins it')
         elif nt['n'] < 3: warn(f"new thread '{s}'", f"only {nt['n']} card(s)")
-    # new threads take the slot right after the live thread anchored at/just before them (live Matthew threads step by 3)
+    # new threads take the slot right after the live thread of this book anchored at/just before them (live Matthew threads step by 3)
     used = {t['sort_order'] for t in D['threads']}
     for s, nt in sorted(new_slugs.items(), key=lambda kv: (kv[1]['ch'], kv[1]['anchor_start_vn'])):
         prev = [t for t in D['threads'] if t['a_book'] == book and t['a_ch'] is not None and (t['a_ch'], t['a_vn']) <= (nt['ch'], nt['anchor_start_vn'])]
@@ -116,7 +118,7 @@ def main(batch, only=None):
         anchors.append(dict(slug=s, book=a['book'], ch=a['ch'], a_vn=a['a_vn'], z_vn=a['z_vn'], basis=a.get('basis', '')))
     fails = [r for r in report if r[0] == 'FAIL']; warns = [r for r in report if r[0] == 'WARN']
     per = collections.Counter(m['thread_slug'] for m in members)
-    lines = [f"# S496 assemble report — Matthew rebuild {batch}" + (f" (chapter {only} only)" if only else ''), '', f"draft files: {', '.join(files)}  (drafter model(s): {', '.join(sorted(models))})",
+    lines = [f"# S496 assemble report — {TITLES[book]} rebuild {batch}" + (f" (chapter {only} only)" if only else ''), '', f"draft files: {', '.join(files)}  (drafter model(s): {', '.join(sorted(models))})",
              f"cards rewritten {len(cards)} | threads joined {len([s for s in per if s in T])} | new threads {len(threads)} | anchors to set {len(anchors)} | members {len(members)}",
              f"result: {'PASS' if not fails else 'FAIL'} — {len(fails)} failures, {len(warns)} warnings", ''] + [f"- **{l}** {w}: {m}" for l, w, m in report]
     print('\n'.join(lines))

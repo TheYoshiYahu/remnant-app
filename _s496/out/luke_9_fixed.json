@@ -1,0 +1,73 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "luke",
+ "chapter": 9,
+ "cards": [
+  {
+   "id": 7022,
+   "prose": "Luke tells what the dust is for. Matthew has the town that will not *receive you, nor hear your words*, and Luke's *for a testimony against them* says the shaking is a witness left standing at the door. The twelve are not sent after the town to argue it round; the word has been spoken, and they go out of the city.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew names the refusal as not receiving the twelve and not hearing their words, and has them shake off the dust as they leave.",
+   "thread": "matthew-10-shake-off-the-dust-and-sodom",
+   "flag": ""
+  },
+  {
+   "id": 7023,
+   "prose": "Luke has the apostles just back and telling him *all that they had done*, and he takes them aside to a desert place by Bethsaida. Matthew says what sent him there, the news of John's death, and that the people *followed him on foot out of the cities*. So the lonely place is already filling with a crowd, and the twelve he has just taken aside will soon be the ones asked to feed it.",
+   "member_phrase": "and when the people had heard thereof, they followed him on foot out of the cities",
+   "member_sentence": "Matthew says why he withdrew, having heard of John, and that the crowds came after him on foot out of the cities.",
+   "thread": "luke-9-feeding-the-five-thousand-the-shepherd-feeds-the-flock-2-kings-4-exodus-16",
+   "flag": ""
+  },
+  {
+   "id": 7024,
+   "prose": "Luke has him praying alone with the disciples near, and he asks *Whom say the people that I am?* with no place named. Matthew puts the same question at Caesarea Philippi and has him ask it with the title already in his mouth, *the Son of Adam*. What Luke gives next is Peter's answer, *The Messiah (Christ) of Elohim (God)* (Luke 9:20), and nothing is said of a rock or keys.",
+   "member_phrase": "he asked his disciples, saying, Whom do men say that I the Son of Adam am?",
+   "member_sentence": "Matthew sets the question at Caesarea Philippi and has Yahusha (Jesus) name himself in it as the Son of Adam.",
+   "thread": "luke-9-the-messiah-of-elohim-confessed-and-the-suffering-foretold-psalm-2-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 7025,
+   "prose": "Luke gives no gap. The order to *tell no man that thing* is followed at once by what the Son of Adam must go through, *and be slain, and be raised the third day* (Luke 9:22), where Matthew marks the turn with *From that time forth* and names Jerusalem as the place. The one just named Messiah (Christ) is told in the same hour what he must suffer.",
+   "member_phrase": "how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes",
+   "member_sentence": "Matthew marks the turn at that time and says he must go to Jerusalem and suffer many things from the elders, chief priests and scribes.",
+   "thread": "luke-9-the-messiah-of-elohim-confessed-and-the-suffering-foretold-psalm-2-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 7026,
+   "prose": "Luke has him say it *to them all*, where Matthew has him speak *unto his disciples*, so the saying is open to the whole company that was listening. And Luke alone adds *daily*. The cross is taken up for the length of the walk, not once.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the saying to his disciples without the word daily: deny himself, take up his cross, and follow.",
+   "thread": "luke-9-take-up-thy-cross-and-the-glory-of-the-son-of-adam-daniel-7-psalm-49",
+   "flag": ""
+  },
+  {
+   "id": 7027,
+   "prose": "Luke counts *about an eight days* after the sayings where Matthew says *after six days*, and Luke says why he went up: *to pray*. In Luke the glory comes as he prays, and then the Father's voice speaks over him, *This is my beloved Son: hear him* (Luke 9:35), the voice of the unseen Father over the Son the three men can see.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew counts six days and takes Peter, James and John his brother up an high mountain apart, without saying they went to pray.",
+   "thread": "luke-9-the-transfiguration-moses-and-elijah-hear-him-deuteronomy-18-exodus-34-malachi-4",
+   "flag": ""
+  },
+  {
+   "id": 7029,
+   "prose": "Matthew tells what the glory looked like, that *his face did shine as the sun* and his clothes were white as the light. Luke tells who saw it and in what state: Peter and the two with him were *heavy with sleep*, and *when they were awake, they saw his glory*, and the two men standing with him. They were not dreaming it; they woke into it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew says what the transfiguration looked like: his face shining as the sun and his clothing white as the light.",
+   "thread": "luke-9-the-transfiguration-moses-and-elijah-hear-him-deuteronomy-18-exodus-34-malachi-4",
+   "flag": ""
+  },
+  {
+   "id": 7030,
+   "prose": "A village will not take him in, and James and John ask for fire *as Elijah did*. Matthew has already said what a refused house is owed, to shake off the dust and go. Luke has him turn and rebuke them, saying *the Son of Adam is not come to destroy men’s lives, but to save them* (Luke 9:56), and they go to another village.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the answer to a place that will not receive the twelve: they shake off the dust of their feet and leave.",
+   "thread": "luke-9-he-set-his-face-to-go-to-jerusalem-the-undivided-call-isaiah-50-2-kings-1-1-kings-19",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on Claude Sonnet 5.5 (claude-sonnet-5-5)."
+}

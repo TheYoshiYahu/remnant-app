@@ -1,0 +1,442 @@
+{
+ "book": "luke",
+ "chapter": 4,
+ "chapter_text_kjv": {
+  "1": "And Yahusha (Jesus) being full of the Ruach HaKodesh (Holy Spirit) returned from Jordan, and was led by the Spirit into the wilderness,",
+  "2": "Being forty days tempted of the devil. And in those days he did eat nothing: and when they were ended, he afterward hungered.",
+  "3": "And the devil said unto him, If thou be the Son of Elohim (God), command this stone that it be made bread.",
+  "4": "And Yahusha (Jesus) answered him, saying, It is written, That man shall not live by bread alone, but by every word of Elohim (God).",
+  "5": "And the devil, taking him up into an high mountain, shewed unto him all the kingdoms of the world in a moment of time.",
+  "6": "And the devil said unto him, All this power will I give thee, and the glory of them: for that is delivered unto me; and to whomsoever I will I give it.",
+  "7": "If thou therefore wilt worship me, all shall be thine.",
+  "8": "And Yahusha (Jesus) answered and said unto him, Get thee behind me, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve.",
+  "9": "And he brought him to Jerusalem, and set him on a pinnacle of the temple, and said unto him, If thou be the Son of Elohim (God), cast thyself down from hence:",
+  "10": "For it is written, He shall give his angels charge over thee, to keep thee:",
+  "11": "And in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone.",
+  "12": "And Yahusha (Jesus) answering said unto him, It is said, Thou shalt not tempt Yahuah Elohayka (the Lord thy God).",
+  "13": "And when the devil had ended all the temptation, he departed from him for a season.",
+  "14": "And Yahusha (Jesus) returned in the power of the Spirit into Galilee: and there went out a fame of him through all the region round about.",
+  "15": "And he taught in their synagogues, being glorified of all.",
+  "16": "And he came to Nazareth, where he had been brought up: and, as his custom was, he went into the synagogue on the sabbath day, and stood up for to read.",
+  "17": "And there was delivered unto him the book of the prophet Isaiah. And when he had opened the book, he found the place where it was written,",
+  "18": "The Spirit of Yahuah (Lord) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised,",
+  "19": "To preach the acceptable year of Yahuah (Lord).",
+  "20": "And he closed the book, and he gave it again to the minister, and sat down. And the eyes of all them that were in the synagogue were fastened on him.",
+  "21": "And he began to say unto them, This day is this scripture fulfilled in your ears.",
+  "22": "And all bare him witness, and wondered at the gracious words which proceeded out of his mouth. And they said, Is not this Joseph’s son?",
+  "23": "And he said unto them, Ye will surely say unto me this proverb, Physician, heal thyself: whatsoever we have heard done in Capernaum, do also here in thy country.",
+  "24": "And he said, Verily I say unto you, No prophet is accepted in his own country.",
+  "25": "But I tell you of a truth, many widows were in Yashar'el (Israel) in the days of Elijah, when the heaven was shut up three years and six months, when great famine was throughout all the land;",
+  "26": "But unto none of them was Elijah sent, save unto Sarepta, a city of Sidon, unto a woman that was a widow.",
+  "27": "And many lepers were in Yashar'el (Israel) in the time of Elisha the prophet; and none of them was cleansed, saving Naaman the Syrian.",
+  "28": "And all they in the synagogue, when they heard these things, were filled with wrath,",
+  "29": "And rose up, and thrust him out of the city, and led him unto the brow of the hill whereon their city was built, that they might cast him down headlong.",
+  "30": "But he passing through the midst of them went his way,",
+  "31": "And came down to Capernaum, a city of Galilee, and taught them on the sabbath days.",
+  "32": "And they were astonished at his doctrine: for his word was with power.",
+  "33": "And in the synagogue there was a man, which had a spirit of an unclean devil, and cried out with a loud voice,",
+  "34": "Saying, Let us alone; what have we to do with thee, thou Yahusha (Jesus) of Nazareth? art thou come to destroy us? I know thee who thou art; the Holy One of Elohim (God).",
+  "35": "And Yahusha (Jesus) rebuked him, saying, Hold thy peace, and come out of him. And when the devil had thrown him in the midst, he came out of him, and hurt him not.",
+  "36": "And they were all amazed, and spake among themselves, saying, What a word is this! for with authority and power he commandeth the unclean spirits, and they come out.",
+  "37": "And the fame of him went out into every place of the country round about.",
+  "38": "And he arose out of the synagogue, and entered into Simon’s house. And Simon’s wife’s mother was taken with a great fever; and they besought him for her.",
+  "39": "And he stood over her, and rebuked the fever; and it left her: and immediately she arose and ministered unto them.",
+  "40": "Now when the sun was setting, all they that had any sick with divers diseases brought them unto him; and he laid his hands on every one of them, and healed them.",
+  "41": "And devils also came out of many, crying out, and saying, Thou art Messiah (Christ) the Son of Elohim (God). And he rebuking them suffered them not to speak: for they knew that he was Messiah (Christ).",
+  "42": "And when it was day, he departed and went into a desert place: and the people sought him, and came unto him, and stayed him, that he should not depart from them.",
+  "43": "And he said unto them, I must preach the kingdom of Elohim (God) to other cities also: for therefore am I sent.",
+  "44": "And he preached in the synagogues of Galilee."
+ },
+ "cards": [
+  {
+   "id": 6984,
+   "src": "Luke 4:5",
+   "src_vn": 5,
+   "src_text_live": "And the devil, taking him up into an high mountain, shewed unto him all the kingdoms of the world in a moment of time.",
+   "src_text_kjv": "And the devil, taking him up into an high mountain, shewed unto him all the kingdoms of the world in a moment of time.",
+   "tgt": "Matthew 4:8",
+   "tgt_text_kjv": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+   "tgt_context_kjv": {
+    "6": "And saith unto him, If thou be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone.",
+    "7": "Yahusha (Jesus) said unto him, It is written again, Thou shalt not tempt Yahuah Elohayka (the Lord thy God).",
+    "8": "Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them;",
+    "9": "And saith unto him, All these things will I give thee, if thou wilt fall down and worship me.",
+    "10": "Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve.",
+    "11": "Then the devil leaveth him, and, behold, angels came and ministered unto him."
+   },
+   "old_note": "*And the devil, taking him up into an high mountain, shewed unto him all the kingdoms of the world in a moment of time. And the devil said unto him, All this power will I give thee, and the glory of them: for that is delivered unto me; and to whomsoever I will I give it.* Luke uniquely records the satan saying *that is delivered unto me* — the kingdoms-now-under-watcher-rebellion-administration substance is named by the satan's own mouth.",
+   "author_thread_hint": "kingdoms-now-under-watcher-rebellion-administration",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "beliar-as-king-of-this-world",
+    "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 6987,
+   "src": "Luke 4:25",
+   "src_vn": 25,
+   "src_text_live": "But I tell you of a truth, many widows were in Yashar'el (Israel) in the days of Elijah, when the heaven was shut up three years and six months, when great famine was throughout all the land;",
+   "src_text_kjv": "But I tell you of a truth, many widows were in Yashar'el (Israel) in the days of Elijah, when the heaven was shut up three years and six months, when great famine was throughout all the land;",
+   "tgt": "Matthew 15:24",
+   "tgt_text_kjv": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+   "tgt_context_kjv": {
+    "22": "And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.",
+    "23": "But he answered her not a word. And his disciples came and besought him, saying, Send her away; for she crieth after us.",
+    "24": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+    "25": "Then came she and worshipped him, saying, Adonai (Lord), help me.",
+    "26": "But he answered and said, It is not meet to take the children’s bread, and to cast it to dogs.",
+    "27": "And she said, Truth, Adonai (Lord): yet the dogs eat of the crumbs which fall from their masters’ table."
+   },
+   "old_note": "The King at Natsareth (Nazareth) points to Eliyahu (Elijah) and the widow of Tsarephath (Zarephath), and Elisha and Naaman the Syrian — the individual-mercy contrast cases the framework holds against the false-inclusion-gospel. These are foreign-origin individuals receiving mercy without absorption into the seed-of-promise.",
+   "author_thread_hint": "canaanite-woman-master",
+   "map_grade": "DOCREF",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit",
+    "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17"
+   ],
+   "reversed_pair": []
+  },
+  {
+   "id": 6989,
+   "src": "Luke 4:43",
+   "src_vn": 43,
+   "src_text_live": "And he said unto them, I must preach the kingdom of Elohim (God) to other cities also: for therefore am I sent.",
+   "src_text_kjv": "And he said unto them, I must preach the kingdom of Elohim (God) to other cities also: for therefore am I sent.",
+   "tgt": "Matthew 15:24",
+   "tgt_text_kjv": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+   "tgt_context_kjv": {
+    "22": "And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.",
+    "23": "But he answered her not a word. And his disciples came and besought him, saying, Send her away; for she crieth after us.",
+    "24": "But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).",
+    "25": "Then came she and worshipped him, saying, Adonai (Lord), help me.",
+    "26": "But he answered and said, It is not meet to take the children’s bread, and to cast it to dogs.",
+    "27": "And she said, Truth, Adonai (Lord): yet the dogs eat of the crumbs which fall from their masters’ table."
+   },
+   "old_note": "*I must preach the kingdom of Elohim (God) to other cities also: for therefore am I sent.* The King's *therefore am I sent* names the mission scope — to the lost sheep of the house of Yashar'el (Israel), city by city, through the Galilean territory where the scattered live.",
+   "author_thread_hint": "lost-sheep-mission-scope",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit",
+    "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "luke-4-the-temptation-answered-with-the-torah-deuteronomy-8-and-6",
+   "title": "It is written: the temptation answered with the Torah (Deuteronomy 8; 6)",
+   "anchor": "Luke 4:1-13",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Led by the Ruach into the wilderness, *forty days tempted of the devil* (Luke 4:2), the Formed Son walks the path Yashar'el walked — forty days as they had forty years, hungered and proven — and where the old Israel fell, the faithful Son stands. His one weapon, drawn three times, is the **Torah**: *it is written.*\n\nTo the bread-test: *It is written, That man shall not live by bread alone, but by every word of Elohim* (Luke 4:4) — straight from *that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah (LORD) doth man live* (Deuteronomy 8:3). The Word is his bread.\n\nTo the kingdoms-and-worship test: *it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve* (Luke 4:8) — *Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him* (Deuteronomy 6:13). He will receive the kingdoms FROM the Father, never by bending to another.\n\nTo the pinnacle test the devil himself quotes scripture — *He shall give his angels charge over thee, to keep thee* (Psalm 91:11, with v.12) — twisting a promise that guards *all thy ways*, the way of obedience, into a dare to leap. The Son answers with the word that ends the matter: *It is said, Thou shalt not tempt Yahuah Elohayka* (Luke 4:12) — *Ye shall not tempt Yahuah Elohaychem... as ye tempted him in Massah* (Deuteronomy 6:16).\n\nThree temptations, three words from Deuteronomy. The Son who HAS a Father does not abolish the Torah; he wields it, and lives by it, and overcomes by it — the Torah upheld, the tempter put to flight *for a season.*",
+   "members_in_this_chapter": [
+    {
+     "src": "4:4",
+     "tgt": "canon/deuteronomy 8:3",
+     "member_note": "Deuteronomy 8:3 — *man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah... doth man live.* The Son's first answer; the Word is his bread."
+    },
+    {
+     "src": "4:8",
+     "tgt": "canon/deuteronomy 6:13",
+     "member_note": "Deuteronomy 6:13 — *Thou shalt fear Yahuah Elohayka... and serve him.* Worship belongs to Yahuah alone; the kingdoms come from the Father, not the tempter."
+    },
+    {
+     "src": "4:12",
+     "tgt": "canon/deuteronomy 6:16",
+     "member_note": "Deuteronomy 6:16 — *Ye shall not tempt Yahuah... as ye tempted him in Massah.* The faithful Son trusts the Father; he will not provoke him."
+    },
+    {
+     "src": "4:10",
+     "tgt": "canon/psalms 91:11",
+     "member_note": "Psalm 91:11 — *he shall give his angels charge over thee, to keep thee* (with v.12). The devil's own misquote: a promise guarding *all thy ways* twisted into a dare to leap. Scripture rightly read vs. scripture wrenched."
+    }
+   ]
+  },
+  {
+   "slug": "nazareth-scroll-the-acceptable-year-stopped-mid-verse-and-the-individual-mercy-contrast-cases",
+   "title": "The Nazareth scroll — the acceptable year stopped mid-verse, and the individual-mercy contrast cases",
+   "anchor": "Luke 4:16-30",
+   "anchored_in_this_book": true,
+   "member_count": 7,
+   "summary_md": "At the Natsareth (Nazareth) synagogue, the King reads Yeshayahu (Isaiah) 61:1-2a and stops — *the acceptable year of Yahuah (the LORD)* is fulfilled today; *the day of vengeance of our Elohim (God)* is left unread because it is not yet today. The cutting is theological. The first coming is the acceptable year of liberty-to-the-captives — the scattered-seed-gathering language being inaugurated. The day of vengeance is the dreadful day still future. Then the King points to Eliyahu (Elijah) and the widow of Tsarephath (Zarephath), and Elisha and Naaman the Syrian — the individual-mercy contrast cases the framework holds against the false-inclusion-gospel. Foreign-origin individuals receive mercy without absorption into the seed-of-promise; absorption requires the marriage covenant Rachav (Rahab) and Ruth walked through. The crowd's murder-rage (vv.28-29 — they try to throw him off the cliff) is the read: they hear the contrast cases as a threat to the flesh-credential gospel and they want him dead for it. FRAMEWORK-MAJOR: the Spirit-anointed-Elect-One self-identification, the eschatological cut at *the acceptable year,* and the contrast-cases-as-the-tell.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:18",
+     "tgt": "canon/isaiah 61:1",
+     "member_note": "*The Spirit of Yahuah (the Lord) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised.* Yeshayahu (Isaiah) 61:1 — *The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (the LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound* — is the Spirit-anointed-Elect-One self-identification directly. The *liberty to the captives* is the scattered-seed gathering-language; the captives are the captives-of-the-exile-judgment that the new-Exodus will bring home."
+    },
+    {
+     "src": "4:19",
+     "tgt": "canon/isaiah 61:2",
+     "member_note": "*To preach the acceptable year of Yahuah (the Lord).* Yeshayahu (Isaiah) 61:2's first clause — *to proclaim the acceptable year of Yahuah (the LORD)* — is the line the King reads. The next clause — *and the day of vengeance of our Elohim (God)* — is what he does NOT read. The eschatological cut is the King's own act; the first coming is the acceptable year, the second coming is the day of vengeance."
+    },
+    {
+     "src": "4:24",
+     "tgt": "canon/jeremiah 11:21",
+     "member_note": "*No prophet is accepted in his own country.* Yirmeyahu (Jeremiah) 11:21 — *Thus saith Yahuah (the LORD) of the men of Anatot (Anathoth), that seek thy life, saying, Prophesy not in the name of Yahuah (the LORD), that thou die not by our hand* — is the prophet-rejected-in-his-own-country pattern. The Eliyahu-pattern (Elijah-pattern) prophet-rejection is the substance Yahusha names over himself at Natsareth (Nazareth)."
+    },
+    {
+     "src": "4:25",
+     "tgt": "canon/1-kings 17:9",
+     "member_note": "*But unto none of them was Eliyahu (Elijah) sent, save unto Tsarephath (Zarephath), a city of Tsidon (Sidon), unto a woman that was a widow.* 1 Melakhim (Kings) 17:9 — *Arise, get thee to Tsarephath (Zarephath), which belongeth to Tsidon (Sidon), and dwell there: behold, I have commanded a widow woman there to sustain thee* — is the individual-mercy case the King names. The Tsidonian widow receives mercy without absorption into the seed-of-promise. The mercy is individual; the gathering is collective."
+    },
+    {
+     "src": "4:27",
+     "tgt": "canon/2-kings 5:14",
+     "member_note": "*And many lepers were in Yashar'el (Israel) in the time of Elisha (Elisha) the prophet; and none of them was cleansed, saving Naaman the Syrian.* 2 Melakhim (Kings) 5:14 — *Then went he down, and dipped himself seven times in Yarden (Jordan), according to the saying of the man of Elohim (God): and his flesh came again like unto the flesh of a little child, and he was clean* — is the individual-mercy case for the Syrian commander. Naaman receives healing without absorption; the contrast case proves the directional non-symmetry of the seed-mechanism."
+    },
+    {
+     "src": "4:28",
+     "tgt": "canon/numbers 15:35",
+     "member_note": "*And all they in the synagogue, when they heard these things, were filled with wrath, and rose up, and thrust him out of the city, and led him unto the brow of the hill whereon their city was built, that they might cast him down headlong.* The murder-rage at the contrast cases is the read — they hear the contrast cases as a threat to the flesh-credential gospel of *we have Avraham (Abraham) to our father.* The casting-off-the-cliff is the same kind of stoning-the-prophet move Bamidbar (Numbers) 15:35 codifies as the death-penalty execution-format. The framework's diagnostic: the system tries to kill what threatens it."
+    },
+    {
+     "src": "4:30",
+     "tgt": "canon/john 8:59",
+     "member_note": "*But he passing through the midst of them went his way.* The Yochanan (John) 8:59 parallel — *Then took they up stones to cast at him: but Yahusha (Jesus) hid himself, and went out of the temple, going through the midst of them, and so passed by* — is the same hour-not-yet pattern. The Father preserves the Son's life until the appointed cup is drunk; not the cliff at Natsareth, not the stones at the temple — the cross at the appointed hour."
+    }
+   ]
+  },
+  {
+   "slug": "luke-4-the-individual-mercy-contrast-cases-elijah-elisha-and-the-famine-in-sirach-48",
+   "title": "The individual-mercy contrast cases — Elias, Eliseus, and the famine in Sirach 48",
+   "anchor": "Luke 4:25-27",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "At Natsareth (Nazareth) the King names the two contrast cases that turn the synagogue to murder-rage: *many widows were in Yashar'el (Israel) in the days of Elijah... but unto none of them was Elijah sent, save unto Sarepta, a city of Sidon, unto a woman that was a widow. And many lepers were in Yashar'el (Israel) in the time of Elisha the prophet; and none of them was cleansed, saving Naaman the Syrian* (Luke 4:25-27). These are the INDIVIDUAL-MERCY-WITHOUT-ABSORPTION cases the framework holds against the false-inclusion gospel: foreign-origin individuals — the Tsidonian (Sidonian) widow, the Syrian commander — receive mercy without being thereby made covenant-seed. Absorption into the seed-of-promise runs through the marriage-covenant alone (Rachav/Rahab, Ruth); the contrast cases prove the directional non-symmetry. The Hebrew library carries the prophets behind both cases. Sirach (Ecclesiasticus) 48:1-3 names Eliyahu (Elijah) the fire-prophet who *by the word of Yahuah (God)... shut up the heaven* — the very famine the King names. Sirach 48:12 names *Elisha* (Elisha) *filled with his spirit* — the prophet who cleansed the Syrian. The crowd hears the contrast cases as a threat to the flesh-credential gospel of *we have Avraham (Abraham) to our father* and wants the King dead for it. The Hebrew library names the prophets; the King reads their individual-mercy cases as the tell that exposes the flesh-credential lie.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:25",
+     "tgt": "apocrypha/ecclesiasticus 48:1",
+     "member_note": "Sirach (Ecclesiasticus) 48:1 — *Then stood up Elijah the prophet as fire, and his word burned like a lamp.* The fire-prophet behind the first contrast case; Luke 4:25-26 names Elijah sent not to the many widows of Yashar'el but to the one Tsidonian (Sidonian) widow — individual mercy without absorption."
+    },
+    {
+     "src": "4:25",
+     "tgt": "apocrypha/ecclesiasticus 48:3",
+     "member_note": "Sirach (Ecclesiasticus) 48:3 — *By the word of Yahuah (God) he shut up the heaven, and also three times brought down fire.* The heaven-shut famine; Luke 4:25's *when the heaven was shut up three years and six months, when great famine was throughout all the land* names the same famine as the frame for the individual-mercy contrast."
+    },
+    {
+     "src": "4:27",
+     "tgt": "apocrypha/ecclesiasticus 48:12",
+     "member_note": "Sirach (Ecclesiasticus) 48:12 — *Elisha was filled with his spirit.* Elisha (Elisha) filled with the double-portion spirit — the prophet behind the second contrast case; Luke 4:27 names none of the many lepers in Yashar'el cleansed *saving Naaman the Syrian* — individual mercy to the foreign-origin man without absorption into the seed-of-promise. The contrast case proves the directional non-symmetry the framework holds against the false-inclusion gospel."
+    }
+   ]
+  },
+  {
+   "slug": "luke-4-the-unclean-devil-and-the-holy-one-of-elohim-1-enoch-15",
+   "title": "The unclean devil cries out: the Holy One of Elohim (Zechariah 13; 1 Enoch 15)",
+   "anchor": "Luke 4:33-37",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "In the Capernaum synagogue *there was a man, which had a spirit of an unclean devil* (Luke 4:33), and the spirit shrieks the truth the worshippers withhold: *I know thee who thou art; the Holy One of Elohim* (Luke 4:34). The very title the psalms lay on Yahuah's anointed King — *Yahuah (LORD) is our defence; and the Holy One of Yashar'el (Israel) is our king* (Psalm 89:18) — is torn from a demon's mouth in dread.\n\nWhat IS this unclean devil? Enoch tells us its origin: the disembodied spirits of the giants, the offspring of the fallen Watchers, loosed upon the earth — *[As for the spirits of heaven, in heaven shall be their dwelling, but as for the spirits of the earth which were born upon the earth, on the earth shall be their dwelling.]* (1 Enoch 15:10), and *And the spirits of the giants afflict, oppress, destroy, attack, do battle, and work destruction on the earth, and cause trouble: they take no food, but nevertheless hunger and thirst, and cause offences.* (1 Enoch 15:11). These are the afflicting spirits — and they know their Judge.\n\nIsaiah had promised that when Elohim came, he would come to SAVE: *behold, your Elohim (God) will come with vengeance... he will come and save you* (Isaiah 35:4) — and so he does, with authority over the unclean. And Zechariah foretold the very purging now begun: *I will cause the prophets and the unclean spirit to pass out of the land* (Zechariah 13:2). With one word the Formed Son commands, *Hold thy peace, and come out of him*, and the bound spawn of the Watchers must obey: *with authority and power he commandeth the unclean spirits, and they come out* (Luke 4:36). The sentence already gone forth against them stands; the Holy One subdues them.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:34",
+     "tgt": "canon/psalms 89:18",
+     "member_note": "Psalm 89:18 — *the Holy One of Yashar'el (Israel) is our king.* The demon shrieks the King's own title — *the Holy One of Elohim* — that the synagogue withholds."
+    },
+    {
+     "src": "4:35",
+     "tgt": "canon/isaiah 35:4",
+     "member_note": "Isaiah 35:4 — *your Elohim will come... he will come and save you.* When Elohim comes he comes to SAVE, with authority over the unclean."
+    },
+    {
+     "src": "4:36",
+     "tgt": "canon/zechariah 13:2",
+     "member_note": "Zechariah 13:2 — *I will cause... the unclean spirit to pass out of the land.* The foretold purging begins with a word."
+    },
+    {
+     "src": "4:34",
+     "tgt": "enoch/1-enoch 15:10",
+     "member_note": "1 Enoch 15:10 — the spirits of the earth dwell on the earth. The origin of the *unclean devil*: the disembodied spirits of the giants, offspring of the fallen Watchers."
+    },
+    {
+     "src": "4:35",
+     "tgt": "enoch/1-enoch 15:11",
+     "member_note": "1 Enoch 15:11 — *the spirits of the giants afflict, oppress, destroy...* The afflicting spirit Enoch named; it knows its Judge and must obey the Holy One."
+    }
+   ]
+  },
+  {
+   "slug": "luke-4-the-healer-of-yisrael-exodus-15-and-isaiah-53",
+   "title": "The Healer of Israel: who healeth all thy diseases (Exodus 15; Isaiah 53)",
+   "anchor": "Luke 4:38-41",
+   "anchored_in_this_book": true,
+   "member_count": 3,
+   "summary_md": "He leaves the synagogue for Simon's house, where the wife's mother lies *taken with a great fever* — *and he stood over her, and rebuked the fever; and it left her: and immediately she arose and ministered unto them* (Luke 4:39). As the sun sets the whole town brings its sick, and *he laid his hands on every one of them, and healed them* (Luke 4:40).\n\nThis is no new thing under the sun. The psalm joins forgiving and healing in one mercy of Yahuah: *Who forgiveth all thine iniquities; who healeth all thy diseases* (Psalm 103:3). And at the bitter waters Yahuah named himself Israel's Physician — *If thou wilt diligently hearken to the voice of Yahuah Elohayka... I will put none of these diseases upon thee... for I am Yahuah Rapha (the LORD that healeth thee)* (Exodus 15:26). The Healer of Israel is here, doing the Father's own work in the Formed Son.\n\nAnd how does he heal? By bearing: *Surely he hath borne our griefs, and carried our sorrows* (Isaiah 53:4) — the Servant lifts away what he himself takes up. Meanwhile *devils also came out of many, crying out... Thou art Messiah (Christ) the Son of Elohim* (Luke 4:41) — confessing aloud what the men of Nazareth refused; but he *suffered them not to speak*, for the witness to the kingdom is not the demons' to bear.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:39",
+     "tgt": "canon/psalms 103:3",
+     "member_note": "Psalm 103:3 — *Who forgiveth all thine iniquities; who healeth all thy diseases.* Forgiving and healing, one mercy of Yahuah, made present in the Son."
+    },
+    {
+     "src": "4:40",
+     "tgt": "canon/exodus 15:26",
+     "member_note": "Exodus 15:26 — *I am Yahuah Rapha (the LORD that healeth thee).* At the bitter waters Yahuah named himself Israel's Physician; the Healer is now near."
+    },
+    {
+     "src": "4:41",
+     "tgt": "canon/isaiah 53:4",
+     "member_note": "Isaiah 53:4 — *Surely he hath borne our griefs, and carried our sorrows.* The Servant heals by bearing; the devils confess *the Son of Elohim* but are silenced."
+    }
+   ]
+  },
+  {
+   "slug": "luke-4-i-must-preach-the-kingdom-for-therefore-am-i-sent-isaiah-61-and-52",
+   "title": "I must preach the kingdom: for therefore am I sent (Isaiah 61; 52)",
+   "anchor": "Luke 4:42-44",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "When the people of Capernaum would have kept him, he answers with the heart of his whole calling: *I must preach the kingdom of Elohim (God) to other cities also: for therefore am I sent* (Luke 4:43). The scroll he had opened in Nazareth now becomes the shape of his every step: *The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives* (Isaiah 61:1). The Anointed One does the anointed work — to PREACH.\n\nAnd the tidings are a King's reign announced: *How beautiful upon the mountains are the feet of him that bringeth good tidings... that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7). City after city, the herald's cry goes out.\n\nThe psalm gives the same charge twice over — first inward, then outward: *Sing unto Yahuah (LORD), bless his name; shew forth his salvation from day to day* (Psalm 96:2), and *Declare his glory among the heathen, his wonders among all people* (Psalm 96:3). The salvation is not to be penned in one town; it is to be carried abroad. So the sent Son preaches *in the synagogues of Galilee* — the kingdom-tidings reaching out, the gathering begun.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:43",
+     "tgt": "canon/isaiah 61:1",
+     "member_note": "Isaiah 61:1 — *the Spirit of Adonai Yahuah is upon me; because Yahuah hath anointed me to preach good tidings.* The Nazareth scroll becomes the shape of his whole mission."
+    },
+    {
+     "src": "4:43",
+     "tgt": "canon/isaiah 52:7",
+     "member_note": "Isaiah 52:7 — *that saith unto Zion, Thy Elohim reigneth!* The kingdom-tidings are a King's reign announced, city after city."
+    },
+    {
+     "src": "4:44",
+     "tgt": "canon/psalms 96:2",
+     "member_note": "Psalm 96:2 — *shew forth his salvation from day to day.* To preach in synagogue after synagogue is to do exactly this — the Name blessed in every place."
+    },
+    {
+     "src": "4:44",
+     "tgt": "canon/psalms 96:3",
+     "member_note": "Psalm 96:3 — *Declare his glory among the heathen.* The salvation is carried abroad, not penned in one town; the gathering reaches out."
+    }
+   ]
+  },
+  {
+   "slug": "unclean-spirits-recognize-the-holy-one-of-elohim",
+   "title": "Unclean spirits recognize the Holy One of Elohim before the people do",
+   "anchor": "Mark 1:24-12",
+   "anchored_in_this_book": false,
+   "member_count": 5,
+   "summary_md": "Twice in Mark 1-3 the unclean spirits cry out and name what the watching crowds cannot yet say: *And unclean spirits, when they saw him, fell down before him, and cried, saying, Thou art the Son of Elohim (God).* (Mark 3:11); *Saying, Let us alone; what have we to do with thee, thou Yahusha (Jesus) of Nazareth? art thou come to destroy us? I know thee who thou art, the Holy One of Elohim (God).* (Mark 1:24). They know him because of where they came from. Enoch says the evil spirits on the earth are the spirits of the giants, born of the Watchers who left heaven: *Evil spirits have proceeded from their bodies; because they are born from men and from the holy Watchers is their beginning and primal origin; they shall be evil spirits on earth, and evil spirits shall they be called.* (1 Enoch 15:9), and they know the day fixed for them: *From the days of the slaughter and destruction and death of the giants, from the souls of whose flesh the spirits, having gone forth, shall destroy without incurring judgement—thus shall they destroy until the day of the consummation, the great judgement in which the age shall be consummated, over the Watchers and the godless, yea, shall be wholly consummated.\"* (1 Enoch 16:1). Their fathers stood in heaven before the rebellion. They recognize the Formed one when he walks into a synagogue because they have seen him before. James says the devils also believe, and tremble, and that is the whole difference: a demon's recognition is not a sheep's hearing. The Son of Adam silences them, *Hold thy peace,* and charges them not to make him known, because the kingdom is not announced on the testimony of an unclean spirit. It is announced through the prophets, the apostles, and the sheep who hear his voice.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:33",
+     "tgt": "canon/mark 1:24",
+     "member_note": "*Saying, Let us alone; what have we to do with thee, thou Yahusha (Jesus) of Natsareth (Nazareth)? art thou come to destroy us? I know thee who thou art; the Holy One of Elohim (God).* The Capernaum-synagogue unclean spirit names the King with the exact phrase the Mark 1:24 unclean spirit names. The watchers' offspring recognize the Formed-one when he walks in."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-4-him-only-shalt-thou-serve-all-the-kingdoms-deuteronomy-6-exodus-34",
+   "title": "Him only shalt thou serve — the kingdoms refused (Deuteronomy 6:13; Exodus 34:14)",
+   "anchor": "Matthew 4:8-11",
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "The third dare is the boldest: *the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them; and saith unto him, All these things will I give thee, if thou wilt fall down and worship me* (Matthew 4:8-9). The Son does not bargain. He commands: *Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve* (Matthew 4:10) — Moses again: *Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him, and shalt swear by his name* (Deuteronomy 6:13). This is the first commandment, and the Formed Son who delivered it keeps it under fire: *For thou shalt worship no other god: for Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God)* (Exodus 34:14). Three tests, three answers, and every answer is *it is written.* Messiah does not abolish the Torah he gives — he lives it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "fulfill-as-prophecy-bringing-to-pass",
+   "title": "Fulfill as prophecy bringing to pass",
+   "anchor": "Matthew 5:17",
+   "anchored_in_this_book": false,
+   "member_count": 41,
+   "summary_md": "The Greek *plēroō* (Strong's G4137) at Matthew 5:17 does not mean *to exhaust-and-thereby-end* — the antichrist reading the pulpit installed to retire the Torah. It means *to bring to pass* — to make happen what was prophesied. Yahusha (Jesus) names what his mission accomplishes: the bringing-to-pass of what the Torah and the Prophets prophesied. And what they prophesied is the gathering of the scattered seed of Yashar'el (Israel) home through redemption — the curse-and-return arc the Torah itself wrote (Leviticus 26:33 and 40-42; Deuteronomy 30:1-5), executed by the prophets in the divorce-and-scattering (Hosea 1:9; Jeremiah 16:13), and opened by the Messiah's death and resurrection so the door home is real. This thread surfaces every NT plēroō occurrence used in prophecy-fulfillment context (35 members), each linked to the specific Tanakh prophecy it brings to pass. The pattern is consistent: the Messiah walks out the substance the prophets foretold, and the NT formula *that it might be fulfilled* points the reader back to the Tanakh, not forward into a new dispensation.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:21",
+     "tgt": "canon/isaiah 61:1",
+     "member_note": "*This day is this scripture fulfilled in your ears* — Yahusha (Jesus) at the Nazareth synagogue claiming Isaiah 61:1-2. He closes the scroll BEFORE the *day of vengeance of our Elohim (God)* clause — first coming preaches good tidings; the dreadful day is reserved."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-15-the-canaanite-woman-the-lost-sheep-first-the-stranger-grafted-isaiah-56-psalm-22-1-kings-17",
+   "title": "The lost sheep first — the woman of Canaan, the divorced house, and the children's bread (Deuteronomy 24; Hosea 2; Mark 7)",
+   "anchor": "Matthew 15:21-28",
+   "anchored_in_this_book": false,
+   "member_count": 15,
+   "summary_md": "It ain't new. A woman cries after him on the coast of Tyre and Sidon, and the disciples want her sent away. His answer is to them, and it tells them who she is:\n\n*But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* (Matthew 15:24)\n\nThat was his whole errand. He had given the twelve the same boundary before he ever met her:\n\n*But go rather to the lost sheep of the house of Yashar'el (Israel).* (Matthew 10:6)\n\nAnd she is not a stranger to the house. Hear what she calls him:\n\n*And, behold, a woman of Canaan came out of the same coasts, and cried unto him, saying, Have mercy on me, O Adonai (Lord), thou Son of David; my daughter is grievously vexed with a devil.* (Matthew 15:22)\n\n*Son of David* is the covenant word to David's house in the mouth of a woman on a Canaanite coast. She knew whose house the king came from, and she worshipped him. The sheep hear the voice because they are sheep, and Hosea had already named the place where such sheep would be found:\n\n*Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God).* (Hosea 1:9)\n\n*Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10)\n\nSo why does he call her a dog, and why is the bread withheld? Because the house she belongs to was put away:\n\n*And I saw, when for all the causes whereby backsliding Yashar'el (Israel) committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not, but went and played the harlot also.* (Jeremiah 3:8)\n\nAnd the Torah he gave does not let a husband take back the wife he has put away:\n\n*Her former husband, which sent her away, may not take her again to be his wife, after that she is defiled; for that is abomination before Yahuah (LORD): and thou shalt not cause the land to sin, which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance.* (Deuteronomy 24:4)\n\nA woman is bound to her husband as long as he lives, and only a death frees her to be married again:\n\n*For the woman which hath an husband is bound by the law to her husband so long as he liveth; but if the husband be dead, she is loosed from the law of her husband.* (Romans 7:2)\n\n*Wherefore, my brethren, ye also are become dead to the law by the body of Messiah (Christ); that ye should be married to another, even to him who is raised from the dead, that we should bring forth fruit unto Elohim (God).* (Romans 7:4)\n\nHe has not died yet. The divorced house cannot be seated at his table while he lives as that husband, so the bread is the children's, the undivorced house of Yahudah (Judah), and the scattered are what we became out there, dogs under the table. Mark keeps the word that carries the timing:\n\n*But Yahusha (Jesus) said unto her, Let the children first be filled: for it is not meet to take the children’s bread, and to cast it unto the dogs.* (Mark 7:27)\n\nFirst. Not never. She hears the order and does not argue it. She asks for what falls from the table now, and he calls that faith great. The redeeming of the house that was put away comes on the other side of his death, and Hosea says how it ends:\n\n*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* (Hosea 2:23)\n\nThe order of the sending shows the same two halves. Before the death, *go not into the way of the Gentiles*; after it:\n\n*Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Spirit):* (Matthew 28:19)\n\nNot a new people added to the house, but the same house sought in every place it was scattered to, once the death that frees it had been died. Matthew 15 does not say the death is the reason; Deuteronomy, Romans and Mark's *first* say it, line upon line. The woman of Canaan is a woman from that land and a sheep of the house, revealed by her hearing, given the crumbs before her time and the table after it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "gathering-of-the-scattered-twelve-tribes-in-sirach-and-2-esdras-and-tobit",
+   "title": "The gathering of the scattered twelve tribes — Sirach (Ecclesiasticus) 36, 2 Esdras (4 Ezra) 13, and Tobit 13 (FRAMEWORK-MAJOR)",
+   "anchor": "Matthew 15:24",
+   "anchored_in_this_book": false,
+   "member_count": 9,
+   "summary_md": "Matt 15:24's *I am not sent but unto the lost sheep of the house of Yashar'el (Israel)* — the King's-own-mission-scope statement, paired with the Matt 10:5-6's apostolic-mission-scope, reading as the load-bearing scripture-anchor for the framework's gathering-of-the-scattered-twelve-tribes thesis — read against the wisdom-stream's direct articulation of the gathering-of-the-scattered-tribes prayer-and-prophecy substance. Five moves: Sirach (Ecclesiasticus) 36:1 names the petition — *have mercy upon us, O Yahuah (God) of all, and behold us* (the wisdom-stream's-prayer-for-the-gathering); Sirach 36:11 names THE direct verbal-anchor — *gather all the tribes of Jacob together, and inherit you them, as from the beginning* (the explicit wisdom-stream-articulation of the twelve-tribes-restoration the prophets had named at Yechezk'el (Ezekiel) 37:21; Yirmeyahu (Jeremiah) 31:8-10; Hosea 1:10-11; Zekharyah (Zechariah) 10:6-10); 2 Esdras (4 Ezra) 13:40 names the ten-tribes-carried-away — *those are the ten tribes, which were carried away prisoners out of their own land in the time of Osea the king, whom Salmanasar the king of Assyria led away captive* (the wisdom-stream's-direct-articulation of the Assyrian-exile-architecture the lost-sheep-mission-scope addresses); 2 Esdras 13:48 names the remnant-within-the-borders — *but those that be left behind of your people are they that are found within my borders* (the wisdom-stream's naming of both registers the King's-mission addresses); Tobit 13:5 names the scourge-then-mercy-then-gathering-out-of-all-nations — *he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us* (the operative-architecture the King's-mission enacts). The framework reads the cluster as FRAMEWORK-MAJOR for the lost-sheep-mission-scope's wisdom-stream corroboration. The Pharisaic-system had built credentialing-systems on top of the binary (Yahudah (Judah) and the nations, no scattered-twelve-tribes coming-home); the wisdom-stream had preserved the architecture the prophets had named. The King's-mission at v.24 IS the operative-form of the wisdom-stream's-prayer at Sirach 36:11; the lost-sheep-of-the-house-of-Yashar'el (Israel) the King is sent-to IS the all-the-tribes-of-Ya'aqov (Jacob) the wisdom-stream had prayed for the gathering of. The framework reads the Canaanite-woman's mercy-at-the-crumbs-substance (vv.25-28) within the architecture — as the master's-table-mercy-to-the-categorical-nations-individual that does NOT collapse the seed-distinction (Red Line #7) but operates within it.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "azazel-bound-in-the-wilderness-as-the-temptation-ground",
+   "title": "Azazel bound in the wilderness as the temptation-ground",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 5,
+   "summary_md": "Matt 4:1 — *Then was Yahusha (Jesus) led up of the Ruach (Spirit) into the wilderness to be tempted of the devil* — reads against 1 Enoch's wilderness-binding architecture. 1 Enoch 8:1 names Azazel's teaching of forbidden arts as the leading edge of the Watcher-rebellion. 1 Enoch 10:4-5 names Yahuah's (the LORD's) binding-judgment on Azazel: *Bind Azazel hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dudael, and cast him therein... place upon him rough and jagged rocks, and cover him with darkness... cover his face that he may not see light.* The Watcher-chief is bound in the wilderness. 1 Enoch 10:8 names the Yom Kippur scapegoat-for-Azazel architecture that Leviticus 16:10 carries in shorthand — sin borne away to the wilderness-figure who is its source. Matt 4:1 places Yahusha (Jesus) on the very ground where the bound Watcher is held; the wilderness-temptation is the public confrontation between the Son-of-Adam-in-flesh and the bound Watcher-chief, walked on the Watcher's own territory and passed.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:1",
+     "tgt": "canon/matthew 4:1",
+     "member_note": "*And Yahusha (Jesus) being full of the Ruach HaKodesh (Holy Spirit) returned from Yarden (Jordan), and was led by the Spirit into the wilderness, being forty days tempted of the devil.* Luke's wilderness is the same wilderness Matthew 4:1 names — the Azazel-bound-territory where the watcher-rebellion's chief is restrained but still operating."
+    }
+   ]
+  },
+  {
+   "slug": "beliar-as-king-of-this-world",
+   "title": "Beliar as king of this world",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 3,
+   "summary_md": "Matt 4:8-10's third-temptation offer of *all the kingdoms of the world, and the glory of them* by the devil reads against the Ascension of Isaiah's named king-of-this-world architecture. Asc.Is 4:2 names Beliar as *the king of this world, which he has ruled ever since it came into being* — the figure who currently administers the kingdoms he offers Yahusha (Jesus) at Matt 4:8-9. The Hebrew library locks the framework reading that the wilderness-offer was not an empty bluff: the kingdoms ARE temporarily under the dominion of the principalities and powers, and Beliar / the devil is offering what he administers. Asc.Is 4:9 names Beliar's standing worship-grab pattern — speaking as the Beloved, claiming the worship due to Elohim (God) — the same worship-grab Matt 4:9's *if thou wilt fall down and worship me* enacts. Asc.Is 1:3 names Beliar's adversarial pattern toward the prophetic revelation of the Beloved's descent — the architecture Matt 4:10's *Get thee hence, Satan* dismisses.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "spirit-anointed-elect-one-the-spirit-of-wisdom-on-the-son-in-1-enoch",
+   "title": "The Spirit-anointed Elect One — the spirit of wisdom and the spirit of righteousness poured out on the Son in 1 Enoch 49 and 62",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "Matthew explains the King's quiet ministry by quoting Isaiah: *Behold my servant, whom I have chosen; my beloved, in whom my soul is well pleased: I will put my spirit upon him, and he shall shew judgment to the Gentiles.* (Matthew 12:18). The prophet's own words are these: *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles.* (Isaiah 42:1). Isaiah had already said what that Spirit would be: *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);* (Isaiah 11:2). Enoch saw the same Spirit on the same chosen one and calls him by Isaiah's word, the Elect One. *For wisdom is poured out like water, And glory faileth not before him for evermore.* (1 Enoch 49:1). *And in him dwells the spirit of wisdom, And the spirit which gives insight, And the spirit of understanding and of might, And the spirit of those who have fallen asleep in righteousness.* (1 Enoch 49:3). And when he is seated to judge: *And Yahuah (Lord) of Spirits seated him on the throne of His glory, And the spirit of righteousness was poured out upon him, And the word of his mouth slays all the sinners, And all the unrighteous are destroyed from before his face.* (1 Enoch 62:2). Isaiah's servant, Enoch's Elect One, and the man the Spirit came down on at the Jordan are one. In this age the anointing shows itself in the way Matthew goes on to describe, a bruised reed he will not break and no voice raised in the streets. At the throne of glory it shows itself as the word of his mouth bringing judgment to victory, which is where Matthew's quotation ends and where Enoch's Parable sits.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:18",
+     "tgt": "canon/matthew 12:18",
+     "member_note": "*The Spirit of Yahuah (the Lord) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised, to preach the acceptable year of Yahuah (the Lord).* Luke 4:18-19 IS the Spirit-anointed-Elect-One-self-identification — the same 1 Enoch 49 / 62 register Matthew 12:18 carries, here read by the Son from the scroll at the Natsareth (Nazareth) synagogue and applied to himself in real time. FRAMEWORK-MAJOR."
+    }
+   ]
+  },
+  {
+   "slug": "temptation-as-mastema-architecture",
+   "title": "The temptation as Mastema architecture",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "Matt 4:1-7's *tempted of the devil* sits inside the Hebrew library's named Mastema architecture from Jubilees. Jubilees 10:8 names Mastema as the chief-of-evil-spirits with an authorized role to lead astray and judge. Jubilees 11:5 names Mastema's standing disruption-of-the-bread-supply pattern (the ravens sent to eat the sown seed) — the architecture Matt 4:3's stones-to-bread temptation walks at the Messianic level. Jubilees 17:16 names Mastema's role at the Aqedah — the accuser-figure provoking the testing-of-the-righteous-Son to prove the Sonship-claim by visible-sign — the same architecture Matt 4:5-7's temple-pinnacle test walks. Avraham (Abraham) was tested with Yitschaq (Isaac); Yahusha (Jesus) is tested with himself. The Hebrew library names the figure and the testing-architecture the gospel inherits.",
+   "members_in_this_chapter": [
+    {
+     "src": "4:3",
+     "tgt": "canon/matthew 4:3",
+     "member_note": "*If thou be the Son of Elohim (God), command this stone that it be made bread.* The Lukan first-temptation is the Mastema-architecture-test — the satan questioning the Father's word over the Son, the same *did Elohim (God) really say?* the serpent put in the garden."
+    }
+   ]
+  }
+ ]
+}

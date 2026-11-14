@@ -1,11 +1,11 @@
-"""S496 — gen_sql496.py <batch>  →  sql/session496_matthew_<batch>_rebuild.sql
-ONE idempotent migration for the batch from fix/matthew_<batch>.json — the UPDATE path: each card's note rewritten IN PLACE (id kept,
+"""S496 — gen_sql496.py <batch>  →  sql/session496_<book>_<batch>_rebuild.sql
+ONE idempotent migration for the batch from fix/<book>_<batch>.json — the UPDATE path: each card's note rewritten IN PLACE (id kept,
 verse pair untouched), new threads inserted, unanchored threads anchored, every card added to its thread. Guards run before anything is
 written and RAISE (nothing lands) if: a card id is missing or no longer sits on the verse pair this was written for; the live text of
-its Matthew verse differs from the read-back; its live note is neither the note this was written against nor the new note (someone
+its source verse differs from the read-back; its live note is neither the note this was written against nor the new note (someone
 edited it since the dump); a card has meanwhile been put in a thread this migration does not know; a thread to join is missing; a thread
 to anchor already carries a different anchor; an anchor verse is missing. Member sort_order continues after each thread's live maximum,
-in Matthew verse order. A re-run reports 0 everywhere. Model: Claude Fable 5.1 (claude-fable-5-1)."""
+in source verse order. A re-run reports 0 everywhere. Model: Claude Fable 5.1 (claude-fable-5-1)."""
 import json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -20,7 +20,7 @@ def lit(s):
     return "'" + s + "'"
 
 def main(batch):
-    book, chapters = BATCHES[batch]; stem = f'{book}_{batch}'; tag = tag_of6(batch)
+    book, chapters = BATCHES[batch]; stem = f'{book}_{batch}'; tag = tag_of6(batch); BK = TITLES[book]
     fx = json.load(open(W6 / 'fix' / f'{stem}.json'))
     fname = f'session496_{stem}_rebuild.sql'
     crow = [f"({c['id']},{c['src_ch']},{c['src_vn']},{q(c['src_text'])},{lit(c['tgt_book'])},{c['tgt_ch']},{c['tgt_vn']},{q(c['old_note'] or '')},{q(c['note'])})" for c in fx['cards']]
@@ -30,17 +30,17 @@ def main(batch):
     def ins(table, rows): return (f"INSERT INTO {table} VALUES\n" + ',\n'.join(rows) + ';\n') if rows else f"-- (no rows for {table})\n"
     chs = f"{min(fx['chapters'])}–{max(fx['chapters'])}"
     sql = f"""-- =====================================================================
--- Session 496 migration — 2026-11-09 — canon / Matthew {chs} — Phase 2 REBUILD, batch {batch}: the orphan cards rewritten Come-and-See and threaded.
+-- Session 496 migration — canon / {BK} {chs} — Phase 2 REBUILD, batch {batch}: the orphan cards rewritten Come-and-See and threaded.
 -- {len(fx['cards'])} cards rewritten in place (ids and verse pairs kept), {len(fx['threads'])} new thread(s), {len(fx['anchors'])} unanchored thread(s) anchored, {len(fx['members'])} thread members added.
 -- Drafted on: {', '.join(fx['models'])}; read and corrected on Claude Fable 5.1; every note composed by script (assemble496.py): target verse whole
--- from parsed/canon.json (restored-names KJV, the canon convention), Matthew verse whole from the live text of the Nov 9 read-back, then the prose.
--- Safety (DO block, before any write): RAISES if a card id is gone or sits on another verse pair, if a Matthew verse's live text differs from the
+-- from parsed/canon.json (restored-names KJV, the canon convention), {BK} verse whole from the live text of the read-back, then the prose.
+-- Safety (DO block, before any write): RAISES if a card id is gone or sits on another verse pair, if a {BK} verse's live text differs from the
 -- read-back, if a card's live note is neither the note this was written against nor the new one, if a card is already in a thread this file does
 -- not put it in, if a thread to join / an anchor verse is missing, or if a thread to anchor already has a different anchor.
 -- Idempotent: a re-run reports 0 rewritten / 0 inserted / 0 anchored.  Nothing is deleted.
 -- Run: python3 api/apply_migration.py data-schema/migrations/{fname}
 -- =====================================================================
-\\echo 'session496 — Matthew {chs} rebuild starting...'
+\\echo 'session496 — {BK} {chs} rebuild starting...'
 BEGIN;
 CREATE TEMP TABLE _{tag}_c (id BIGINT, src_ch INT, src_v INT, src_text TEXT, tgt_slug TEXT, tgt_ch INT, tgt_v INT, old_note TEXT, new_note TEXT) ON COMMIT DROP;
 {ins('_' + tag + '_c', crow)}CREATE TEMP TABLE _{tag}_t (slug TEXT, title TEXT, summary_md TEXT, ch INT, a_vn INT, z_vn INT, tier TEXT, sort_order INT) ON COMMIT DROP;
@@ -115,7 +115,7 @@ BEGIN
    WHERE th.slug = a.slug AND th.anchor_verse_id_start IS NULL;
   GET DIAGNOSTICS n_anc = ROW_COUNT; n_anc_same := n_total - n_anc;
 
-  -- ---- members: each card into its thread, after the thread's live maximum, in Matthew verse order ----
+  -- ---- members: each card into its thread, after the thread's live maximum, in source verse order ----
   SELECT count(*) INTO n_total FROM _{tag}_m;
   INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
   SELECT th.id, m.card_id,
@@ -136,11 +136,11 @@ BEGIN
   SELECT count(*) INTO n FROM _{tag}_a a JOIN cross_reference_threads th ON th.slug = a.slug WHERE th.anchor_verse_id_start IS NULL;
   IF n > 0 THEN RAISE EXCEPTION 'S496: % thread(s) still unanchored', n; END IF;
 
-  RAISE NOTICE 'S496 (matthew {batch}) summary: notes rewritten % / already there %; threads inserted % / already there %; anchors set % / already there %; members inserted % / already there %',
+  RAISE NOTICE 'S496 ({book} {batch}) summary: notes rewritten % / already there %; threads inserted % / already there %; anchors set % / already there %; members inserted % / already there %',
     n_note, n_note_same, n_thr, n_thr_same, n_anc, n_anc_same, n_mem, n_mem_same;
 END $s496$;
 COMMIT;
-\\echo 'session496 — Matthew {chs} rebuild done.'
+\\echo 'session496 — {BK} {chs} rebuild done.'
 """
     SQL = W6 / 'sql'; SQL.mkdir(exist_ok=True); (SQL / fname).write_text(sql)
     print(f"{stem}: cards {len(crow)} | new threads {len(trow)} | anchors {len(arow)} | members {len(mrow)} | bytes {len(sql)} -> {SQL / fname}")

@@ -1,0 +1,404 @@
+{
+ "book": "luke",
+ "chapter": 17,
+ "chapter_text_kjv": {
+  "1": "Then said he unto the disciples, It is impossible but that offences will come: but woe unto him, through whom they come!",
+  "2": "It were better for him that a millstone were hanged about his neck, and he cast into the sea, than that he should offend one of these little ones.",
+  "3": "Take heed to yourselves: If thy brother trespass against thee, rebuke him; and if he repent, forgive him.",
+  "4": "And if he trespass against thee seven times in a day, and seven times in a day turn again to thee, saying, I repent; thou shalt forgive him.",
+  "5": "And the apostles said unto the Lord, Increase our faith.",
+  "6": "And Yahusha (Lord) said, If ye had faith as a grain of mustard seed, ye might say unto this sycamine tree, Be thou plucked up by the root, and be thou planted in the sea; and it should obey you.",
+  "7": "But which of you, having a servant plowing or feeding cattle, will say unto him by and by, when he is come from the field, Go and sit down to meat?",
+  "8": "And will not rather say unto him, Make ready wherewith I may sup, and gird thyself, and serve me, till I have eaten and drunken; and afterward thou shalt eat and drink?",
+  "9": "Doth he thank that servant because he did the things that were commanded him? I trow not.",
+  "10": "So likewise ye, when ye shall have done all those things which are commanded you, say, We are unprofitable servants: we have done that which was our duty to do.",
+  "11": "And it came to pass, as he went to Jerusalem, that he passed through the midst of Samaria and Galilee.",
+  "12": "And as he entered into a certain village, there met him ten men that were lepers, which stood afar off:",
+  "13": "And they lifted up their voices, and said, Yahusha (Jesus), Master, have mercy on us.",
+  "14": "And when he saw them, he said unto them, Go shew yourselves unto the priests. And it came to pass, that, as they went, they were cleansed.",
+  "15": "And one of them, when he saw that he was healed, turned back, and with a loud voice glorified Elohim (God),",
+  "16": "And fell down on his face at his feet, giving him thanks: and he was a Samaritan.",
+  "17": "And Yahusha (Jesus) answering said, Were there not ten cleansed? but where are the nine?",
+  "18": "There are not found that returned to give glory to Elohim (God), save this stranger.",
+  "19": "And he said unto him, Arise, go thy way: thy faith hath made thee whole.",
+  "20": "And when he was demanded of the Pharisees, when the kingdom of Elohim (God) should come, he answered them and said, The kingdom of Elohim (God) cometh not with observation:",
+  "21": "Neither shall they say, Lo here! or, lo there! for, behold, the kingdom of Elohim (God) is within you.",
+  "22": "And he said unto the disciples, The days will come, when ye shall desire to see one of the days of the Son of Adam, and ye shall not see it.",
+  "23": "And they shall say to you, See here; or, see there: go not after them, nor follow them.",
+  "24": "For as the lightning, that lighteneth out of the one part under heaven, shineth unto the other part under heaven; so shall also the Son of Adam be in his day.",
+  "25": "But first must he suffer many things, and be rejected of this generation.",
+  "26": "And as it was in the days of Noah, so shall it be also in the days of the Son of Adam.",
+  "27": "They did eat, they drank, they married wives, they were given in marriage, until the day that Noah entered into the ark, and the flood came, and destroyed them all.",
+  "28": "Likewise also as it was in the days of Lot; they did eat, they drank, they bought, they sold, they planted, they builded;",
+  "29": "But the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all.",
+  "30": "Even thus shall it be in the day when the Son of Adam is revealed.",
+  "31": "In that day, he which shall be upon the housetop, and his stuff in the house, let him not come down to take it away: and he that is in the field, let him likewise not return back.",
+  "32": "Remember Lot’s wife.",
+  "33": "Whosoever shall seek to save his life shall lose it; and whosoever shall lose his life shall preserve it.",
+  "34": "I tell you, in that night there shall be two men in one bed; the one shall be taken, and the other shall be left.",
+  "35": "Two women shall be grinding together; the one shall be taken, and the other left.",
+  "36": "Two men shall be in the field; the one shall be taken, and the other left.",
+  "37": "And they answered and said unto him, Where, Adonai (Lord)? And he said unto them, Wheresoever the body is, thither will the eagles be gathered together."
+ },
+ "cards": [
+  {
+   "id": 7074,
+   "src": "Luke 17:34",
+   "src_vn": 34,
+   "src_text_live": "I tell you, in that night there shall be two men in one bed; the one shall be taken, and the other shall be left.",
+   "src_text_kjv": "I tell you, in that night there shall be two men in one bed; the one shall be taken, and the other shall be left.",
+   "tgt": "Matthew 13:24",
+   "tgt_text_kjv": "Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field:",
+   "tgt_context_kjv": {
+    "22": "He also that received seed among the thorns is he that heareth the word; and the care of this world, and the deceitfulness of riches, choke the word, and he becometh unfruitful.",
+    "23": "But he that received seed into the good ground is he that heareth the word, and understandeth it; which also beareth fruit, and bringeth forth, some an hundredfold, some sixty, some thirty.",
+    "24": "Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field:",
+    "25": "But while men slept, his enemy came and sowed tares among the wheat, and went his way.",
+    "26": "But when the blade was sprung up, and brought forth fruit, then appeared the tares also.",
+    "27": "So the servants of the householder came and said unto him, Sir, didst not thou sow good seed in thy field? from whence then hath it tares?"
+   },
+   "old_note": "*Two shall be in one bed; the one shall be taken, and the other shall be left.* The Lukan day-of-the-Son-of-Adam (son of man) teaching — the same post-harvest-sifting architecture: at the appointed hour, the wheat and the tares are separated where they stand.",
+   "author_thread_hint": "wheat-and-tares-the-post-harvest-sifting-architecture",
+   "map_grade": "BARE",
+   "map_thread": null,
+   "map_thread_exists": null,
+   "map_confidence": null,
+   "map_candidates": [],
+   "threads_on_the_target_verse": [
+    "matthew-13-the-tares-the-harvest-is-the-end-of-the-world-daniel-12-malachi-4",
+    "seed-of-good-and-evil-sown-in-the-heart-of-adam-in-2-esdras",
+    "seed-war-from-genesis-3-and-the-devil-as-source-of-death-in-wisdom-and-jubilees-and-1-enoch",
+    "watchers-corruption-as-tares-sown-in-the-wheat-in-1-enoch-and-jubilees"
+   ],
+   "reversed_pair": []
+  }
+ ],
+ "threads": [
+  {
+   "slug": "luke-17-offences-the-millstone-and-the-torah-of-rebuke-and-forgive-leviticus-19",
+   "title": "It is impossible but that offences will come — the millstone and the Torah of rebuke-and-forgive (Leviticus 19; Ezekiel 14)",
+   "anchor": "Luke 17:1-4",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "Yahusha turns to the disciples with a sober word: *It is impossible but that offences will come: but woe unto him, through whom they come!* (Luke 17:1). To set a snare before a *little one* is so grave that *it were better for him that a millstone were hanged about his neck, and he cast into the sea, than that he should offend one of these little ones* (17:2). This is not new severity — it is the Torah's own seriousness about leading the people astray. *And if the prophet be deceived when he hath spoken a thing, I Yahuah (LORD) have deceived that prophet, and I will stretch out my hand upon him, and will destroy him from the midst of my people Yashar'el (Israel)* (Ezekiel 14:9), and all *that the house of Yashar'el (Israel) may go no more astray from me... but that they may be my people* (Ezekiel 14:11). The Father moves against the stumbling-block for the sake of restoration. And the answer to offence among brothers is the answer Moses already gave: *Thou shalt not hate thy brother in thine heart: thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him* (Leviticus 19:17). So Yahusha commands, *If thy brother trespass against thee, rebuke him; and if he repent, forgive him* (17:3) — *and if he trespass against thee seven times in a day, and seven times in a day turn again to thee, saying, I repent; thou shalt forgive him* (17:4). The rebuke is love refusing to *suffer sin* upon a brother; the forgiveness is the mercy Proverbs promises — *whoso confesseth and forsaketh them shall have mercy* (Proverbs 28:13) — poured out as often as the returning sinner says *I repent.* The Torah of brotherly love stands whole: rebuke that does not hate, and forgiveness that does not weary.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:2",
+     "tgt": "canon/leviticus 19:17",
+     "member_note": "Leviticus 19:17 — *thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him* — the Torah of love behind *rebuke him; and if he repent, forgive him.*"
+    },
+    {
+     "src": "17:2",
+     "tgt": "canon/ezekiel 14:9",
+     "member_note": "Ezekiel 14:9 — Yahuah stretches out His hand against the prophet who leads His people astray; the millstone is the gentler fate."
+    },
+    {
+     "src": "17:2",
+     "tgt": "canon/ezekiel 14:11",
+     "member_note": "Ezekiel 14:11 — the Father removes the stumbling-block so *the house of Yashar'el may go no more astray... that they may be my people.*"
+    },
+    {
+     "src": "17:4",
+     "tgt": "canon/proverbs 28:13",
+     "member_note": "Proverbs 28:13 — *whoso confesseth and forsaketh them shall have mercy* — the mercy met out to the brother who returns seven times saying *I repent.*"
+    }
+   ]
+  },
+  {
+   "slug": "luke-17-we-are-unprofitable-servants-faith-that-does-its-owed-duty-habakkuk-2-deuteronomy-10-sirach-35",
+   "title": "We are unprofitable servants — faith that DOES its owed covenant duty (Habakkuk 2; Deuteronomy 10; Sirach 35)",
+   "anchor": "Luke 17:5-10",
+   "anchored_in_this_book": true,
+   "member_count": 5,
+   "summary_md": "When the apostles plead *Increase our faith* (Luke 17:5), Yahusha answers that faith the size of *a grain of mustard seed* can uproot the sycamine and plant it in the sea (17:6) — for *the just shall live by his faith* (Habakkuk 2:4), the trusting that takes Yahuah at His word. But then He guards that faith from ever becoming a boast. He paints the servant who comes in from *plowing or feeding cattle* and is not thanked merely for *the things that were commanded him* (17:7-9), and He drives it home: *So likewise ye, when ye shall have done all those things which are commanded you, say, We are unprofitable servants: we have done that which was our duty to do* (17:10). ★ Here faith and faithful doing are held together. Obedience does not put Elohim in our debt — it renders only what the covenant already owes: *what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him, and to serve Yahuah Elohayka (the LORD thy God) with all thy heart and with all thy soul* (Deuteronomy 10:12), *to keep the commandments of Yahuah (LORD), and his statutes, which I command thee this day for thy good* (Deuteronomy 10:13). The keeping is *for thy good* — so the unprofitable servant is no grudging hireling but a freed son, who says with the Psalmist, *O Yahuah (LORD), truly I am thy servant; I am thy servant, and the son of thine handmaid: thou hast loosed my bonds* (Psalm 116:16). The second-Temple wisdom said the same: *He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* (Sirach 35:1). This is the anti-antinomian and anti-merit seal at once — faith that works its owed service, never to earn, always because it trusts and because the duty is itself the gift.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:5",
+     "tgt": "canon/habakkuk 2:4",
+     "member_note": "Habakkuk 2:4 — *the just shall live by his faith* — the trusting answer to *Increase our faith,* the same faith that then does its duty."
+    },
+    {
+     "src": "17:10",
+     "tgt": "canon/deuteronomy 10:12",
+     "member_note": "Deuteronomy 10:12 — what Yahuah requires: fear, walk, love, serve — done duty, not merit earned over Elohim."
+    },
+    {
+     "src": "17:10",
+     "tgt": "canon/deuteronomy 10:13",
+     "member_note": "Deuteronomy 10:13 — keep the commandments *for thy good* — the servant's duty is itself the blessing."
+    },
+    {
+     "src": "17:10",
+     "tgt": "canon/psalms 116:16",
+     "member_note": "Psalm 116:16 — *truly I am thy servant... thou hast loosed my bonds* — the unprofitable servant's glad self-naming, no wage claimed."
+    },
+    {
+     "src": "17:10",
+     "tgt": "apocrypha/ecclesiasticus 35:1",
+     "member_note": "Sirach 35:1 — *He that keepeth the law brings offerings enough* — second-Temple wisdom fusing faith and faithful doing; obedience is the acceptable service."
+    }
+   ]
+  },
+  {
+   "slug": "luke-17-ten-lepers-shewn-to-the-priests-and-the-stranger-who-returned-leviticus-14-2-kings-5",
+   "title": "Ten lepers shewn unto the priests, and the stranger who returned to give glory (Leviticus 13-14; 2 Kings 5; Psalm 103)",
+   "anchor": "Luke 17:11-19",
+   "anchored_in_this_book": true,
+   "member_count": 8,
+   "summary_md": "Ten men *that were lepers... stood afar off* (Luke 17:12) — afar off because the Torah had set them there: *the leper... shall cry, Unclean, unclean* (Leviticus 13:45), and *he shall dwell alone; without the camp shall his habitation be* (Leviticus 13:46). They lift their cry, *Yahusha (Jesus), Master, have mercy on us* (17:13), and His answer sends them straight back into the Torah: *Go shew yourselves unto the priests* (17:14). ★ For that is the statute exactly — *This shall be the law of the leper in the day of his cleansing: He shall be brought unto the priest* (Leviticus 14:2), and *the priest shall look, and, behold, if the plague of leprosy be healed in the leper* (Leviticus 14:3). Yahusha does not abolish the law of the leper; He commands it, and *as they went, they were cleansed* (17:14) — healed in the very act of obedience, faith walking into the Torah and made whole on the road. Then the turn that breaks the heart open: *one of them, when he saw that he was healed, turned back, and with a loud voice glorified Elohim, and fell down on his face at his feet, giving him thanks: and he was a Samaritan* (17:15-16). The lone returner is the northern stranger, and Yahusha marks it: *There are not found that returned to give glory to Elohim, save this stranger* (17:18). It is an old pattern — Naaman the Syrian, *his flesh came again like unto the flesh of a little child, and he was clean* (2 Kings 5:14), then *returned to the man of Elohim (God)... Behold, now I know that there is no Elohim (God) in all the earth, but in Yashar'el (Israel)* (2 Kings 5:15). The foreigner cleansed, the foreigner returning to give glory: this is two-house grace — the outsider grafted in, for *Elohim hath not cast away his people* (Romans 11:1-2). The nine *forgot all his benefits*; the one *forget not all his benefits* (Psalm 103:2), blessing *who forgiveth all thine iniquities; who healeth all thy diseases* (Psalm 103:3) — and to him alone Yahusha said, *Arise, go thy way: thy faith hath made thee whole* (17:19).",
+   "members_in_this_chapter": [
+    {
+     "src": "17:14",
+     "tgt": "canon/leviticus 13:45",
+     "member_note": "Leviticus 13:45 — *Unclean, unclean* — why the ten *stood afar off.*"
+    },
+    {
+     "src": "17:14",
+     "tgt": "canon/leviticus 13:46",
+     "member_note": "Leviticus 13:46 — *without the camp shall his habitation be* — the separation the cleansing must reverse."
+    },
+    {
+     "src": "17:14",
+     "tgt": "canon/leviticus 14:2",
+     "member_note": "Leviticus 14:2 — ★ *He shall be brought unto the priest* — the exact statute Yahusha commands in *Go shew yourselves unto the priests.* Torah upheld."
+    },
+    {
+     "src": "17:14",
+     "tgt": "canon/leviticus 14:3",
+     "member_note": "Leviticus 14:3 — the priest *shall look... if the plague... be healed* — they were cleansed *as they went,* healed in obeying."
+    },
+    {
+     "src": "17:16",
+     "tgt": "canon/2-kings 5:14",
+     "member_note": "2 Kings 5:14 — Naaman the foreigner cleansed of leprosy when he stoops to obey — the pattern of the one who returns."
+    },
+    {
+     "src": "17:16",
+     "tgt": "canon/2-kings 5:15",
+     "member_note": "2 Kings 5:15 — ★ Naaman *returned... to give glory* — two-house grace: the stranger grafted in, *Elohim hath not cast away his people* (Rom 11:1-2)."
+    },
+    {
+     "src": "17:15",
+     "tgt": "canon/psalms 103:2",
+     "member_note": "Psalm 103:2 — *forget not all his benefits* — the soul of the one who turned back to glorify Elohim; the nine forgot."
+    },
+    {
+     "src": "17:15",
+     "tgt": "canon/psalms 103:3",
+     "member_note": "Psalm 103:3 — *who forgiveth all thine iniquities; who healeth all thy diseases* — the deeper healing in *thy faith hath made thee whole.*"
+    }
+   ]
+  },
+  {
+   "slug": "the-kingdom-of-elohim-is-within-you-the-in-your-midst-sense-and-the-king-standing-among-them",
+   "title": "The kingdom of Elohim is within you — the in-your-midst sense and the King standing among them",
+   "anchor": "Luke 17:20-21",
+   "anchored_in_this_book": true,
+   "member_count": 6,
+   "summary_md": "Lukan-specific. The Pharisees demand of Yahusha (Jesus) when the kingdom of Elohim (God) cometh; the King answers *The kingdom of Elohim (God) cometh not with observation: Neither shall they say, Lo here! or, lo there! for, behold, the kingdom of Elohim (God) is within you* (Luke 17:20-21). The Greek *entos hymōn* — within / in-your-midst / among-you. FRAMEWORK-MAJOR. The in-your-midst sense: the King is standing in front of the Pharisees asking him the question; the kingdom IS among them, in the person of the King they refuse to recognize. NOT the inherited individualist-internalized-kingdom reading (which the framework rejects — Red Line on individualized-spiritualization). The Daniel 2:44 *in the days of these kings shall Elohim (God) of heaven set up a kingdom* is the prophetic-substance: the kingdom-stone has been cut out without hands and is standing in the temple-court.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:20",
+     "tgt": "canon/daniel 2:44",
+     "member_note": "*And in the days of these kings shall Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people* — the kingdom-stone cut-out-without-hands. The Pharisees demand a sign-with-observation; the kingdom-stone is standing in front of them."
+    },
+    {
+     "src": "17:21",
+     "tgt": "canon/matthew 12:28",
+     "member_note": "*But if I cast out devils by the Spirit of Elohim (God), then the kingdom of Elohim (God) is come unto you* — the kingdom-come-among-you substance the King names elsewhere. The casting-out-of-devils IS the kingdom-in-the-midst."
+    },
+    {
+     "src": "17:21",
+     "tgt": "canon/mark 1:15",
+     "member_note": "*The time is fulfilled, and the kingdom of Elohim (God) is at hand: repent ye, and believe the gospel* — the kingdom-at-hand register the King has been carrying from Mark 1; the in-your-midst sense matures it at Luke 17:21."
+    },
+    {
+     "src": "17:21",
+     "tgt": "canon/luke 11:20",
+     "member_note": "*But if I with the finger of Elohim (God) cast out devils, no doubt the kingdom of Elohim (God) is come upon you* — the Lukan parallel to Matthew 12:28. Cross-witness within the gospel itself."
+    },
+    {
+     "src": "17:21",
+     "tgt": "canon/john 1:26",
+     "member_note": "*Yochanan (John) answered them, saying, I baptize with water: but there standeth one among you, whom ye know not* — the standing-among-them-but-not-recognized substance the Baptizer names. Same in-your-midst sense."
+    },
+    {
+     "src": "17:22",
+     "tgt": "canon/matthew 24:27",
+     "member_note": "*For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of Adam (son of man) be* — the day-of-the-Son-of-Adam coming-with-observation, the not-yet register that follows the in-your-midst-now declaration. The framework holds both as one motion: kingdom-now-among-you in the King's present-tense person, kingdom-then-with-observation at the day-of-the-Son-of-Adam's coming."
+    }
+   ]
+  },
+  {
+   "slug": "luke-17-as-it-was-in-the-days-of-noach-and-lot-the-flood-judgment-in-1-enoch-and-jubilees",
+   "title": "As it was in the days of Noach — the flood judgment in 1 Enoch and Jubilees",
+   "anchor": "Luke 17:26-27",
+   "anchored_in_this_book": true,
+   "member_count": 4,
+   "summary_md": "When Yahusha (Jesus) wants to tell his disciples what his own day will look like, he reaches for the flood. *And as it was in the days of Noah, so shall it be also in the days of the Son of Adam.* (Luke 17:26). *They did eat, they drank, they married wives, they were given in marriage, until the day that Noah entered into the ark, and the flood came, and destroyed them all.* (Luke 17:27). The flood he points to is the one Enoch describes, and Enoch gives it a cause and a purpose that Genesis compresses. The warning went to Noah by the hand of an angel: *’Go to Noah and tell him in my name “Hide thyself!” and reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* (1 Enoch 10:2). The purpose was a seed carried through: *And now instruct him that he may escape and his seed may be preserved for all the generations of the world.’* (1 Enoch 10:3). Jubilees names what had filled the earth by then: *lawlessness increased on the earth and all flesh corrupted its way* (Jubilees 5:2), and the decree that answered it: *I shall destroy man and all flesh upon the face of the earth which I have created* (Jubilees 5:4). So the eating and drinking and marrying of Luke 17:27 are not innocence; they are a world going about its business on the eve of a judgment it had been warned of, while one household was told to hide itself and was kept. The days of the Son of Adam run the same way, a corrupted order judged and a seed preserved through it, and the ones who are busy with the ordinary things are the ones the day overtakes.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:26",
+     "tgt": "enoch/1-enoch 10:2",
+     "member_note": "1 Enoch 10:2 — *reveal to him the end that is approaching: that the whole earth will be destroyed.* The days of Noah (Luke 17:26): a warning carried to one man over a corrupted earth."
+    },
+    {
+     "src": "17:27",
+     "tgt": "enoch/1-enoch 10:3",
+     "member_note": "1 Enoch 10:3 — *that he may escape and his seed may be preserved for all the generations of the world.* Two outcomes at the flood, two in the days of the Son of Adam (Luke 17:27)."
+    },
+    {
+     "src": "17:27",
+     "tgt": "jubilees/jubilees 5:2",
+     "member_note": "Jubilees 5:2 — *every imagination of the thoughts of all men (was) thus evil continually.* What lay under the eating and drinking of Noah's days (Luke 17:27)."
+    },
+    {
+     "src": "17:27",
+     "tgt": "jubilees/jubilees 5:4",
+     "member_note": "Jubilees 5:4 — *I shall destroy man and all flesh upon the face of the earth which I have created.* The flood-decree of total judgment; Luke 17:27's *the flood came, and destroyed them all* walks the same decree the Hebrew library carried in full."
+    }
+   ]
+  },
+  {
+   "slug": "scattered-seed-gathering",
+   "title": "Lo-Ammi to sons-of-the-living-Elohim — the scattered house coming home",
+   "anchor": "Hosea 1:9-10",
+   "anchored_in_this_book": false,
+   "member_count": 67,
+   "summary_md": "Hosea 1:9-10 names the divorce and names the restoration in two consecutive verses. *\"Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God). Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).\"*\n\nThe *not my people* of Hosea 1:9 is the divorced northern kingdom — the ten tribes scattered through the Assyrian captivity, dispersed among the nations until they became indistinguishable from the nations. The *ye are the sons of the living Elohim (God)* of Hosea 1:10 is the same people, restored. The two verses are one prophecy: Yahuah (the LORD) names the divorce and names the homecoming in the same breath.\n\nPaul quotes both verses in Romans 9:25-26. He is not announcing a new doctrine. He is reading Hosea. *\"As he saith also in Hosea, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).\"* The *Gentiles* of Romans 9:24 in Paul's context are the scattered seed living as Gentiles among the nations — the Lo-Ammi house coming home. The binary Jew-and-Gentile reading collapses this. The Tanakh source insists on it: the gathering is the gathering of the seed Yahuah (the LORD) himself scattered, and the prophets named them specifically — Ephraim, Yosef, Yashar'el (Israel), the house of the north.\n\nJeremiah 31:10 says the same thing in different words: *\"Hear the word of Yahuah (the LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.\"* The scatterer is the gatherer. The same one who sent them out brings them home.\n\n1 Peter 2:9-10 carries the same arc: *\"a chosen generation, a royal priesthood, an holy nation, a peculiar people... which in time past were not a people, but are now the people of Elohim (God).\"* The Tanakh source for that whole sentence is Exodus 19:6 (*\"unto me a kingdom of priests, and an holy nation\"*) and Hosea 1:9-10 (*\"not a people... the people of Elohim (God)\"*). Peter is writing to the scattered seed coming home, not to a new spiritual category.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:11",
+     "tgt": "canon/hosea 1:9",
+     "member_note": "The ten-lepers, of whom only the Samaritan returns to glorify Elohim (God). *Were there not ten cleansed? but where are the nine? There are not found that returned to give glory to Elohim (God), save this stranger* (Luke 17:17-18). Framework reading: the Samaritan is the scattered-seed-of-the-north remembering the covenant — the lost-house-of-Yashar'el thanksgiving in compressed form."
+    }
+   ]
+  },
+  {
+   "slug": "my-sheep-hear-my-voice-hearing-reveals-not-creates",
+   "title": "My sheep hear my voice — hearing reveals what was true before the foundation",
+   "anchor": "John 10:25-29",
+   "anchored_in_this_book": false,
+   "member_count": 22,
+   "summary_md": "The good shepherd discourse contains a sentence the inherited reading cannot hold without rewriting it. *Ye believe not, because ye are not of my sheep.* The cause-and-effect is reversed from the gospel the modern pulpit preaches. The pulpit teaches *if you believe, you become a sheep.* The discourse teaches *if you are a sheep, you hear and believe.* The hearing is the revealing; the sheep-status is what is being revealed. The status precedes the response.\n\n*But ye believe not, because ye are not of my sheep, as I said unto you. My sheep hear my voice, and I know them, and they follow me: and I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand. My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father's hand.* (John 10:26-29)\n\n*Yahuah (the LORD) hath appeared of old unto me, saying, Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee.* (Jeremiah 31:3)\n\n*And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* (Revelation 13:8)\n\nThe Father gave them to the Son. The Father gave them before the foundation of the world. Their names were written then. The hearing of the shepherd's voice in time is the revealing of what was already true in the Father's foreknowledge — not the moment in which the sheep-status was created by the act of believing. The gathering of the scattered seed is not the recruitment of volunteers from the categorical nations; it is the homecoming of those whose names were written in the Lamb's book from the foundation.\n\nThis is why the gathering can be proclaimed broadly without the proclamation collapsing into a categorical invitation to all flesh. The proclamation goes out wherever the Father sends. Those who hear are revealed by their hearing to be sheep. Those who reject have the dust shaken off the foot, and the pearls are not cast before swine. The shepherd does not chase what was never his.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:19",
+     "tgt": "canon/john 10:27",
+     "member_note": "*Arise, go thy way: thy faith hath made thee whole.* The third of four Lukan *thy faith hath saved/made-thee-whole* verdicts. The Samaritan returning to thank — the response of the sheep who hears the shepherd's voice."
+    }
+   ]
+  },
+  {
+   "slug": "matthew-13-the-tares-the-harvest-is-the-end-of-the-world-daniel-12-malachi-4",
+   "title": "The tares — the harvest is the end of the world (Daniel 12; Malachi 4; Joel 3; 2 Esdras 4)",
+   "anchor": "Matthew 13:24-43",
+   "anchored_in_this_book": false,
+   "member_count": 15,
+   "summary_md": "The wheat and the tares grow *together until the harvest* (13:30), and Yahusha (Jesus) tells us plainly what the harvest is: *the harvest is the end of the world; and the reapers are the angels* (13:39). Every line of this parable is the prophets' own picture of that day. *Then shall the righteous shine forth as the sun in the kingdom of their Father* (13:43) reads straight from Daniel: *they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3). The tares *bound in bundles to burn them* and cast into *a furnace of fire* (13:30, 42) are Malachi's burning oven: *the day cometh, that shall burn as an oven... that it shall leave them neither root nor branch* (Malachi 4:1). And the sorting waits for that day because the discerning belongs to Yahuah — *then shall ye return, and discern between the righteous and the wicked* (Malachi 3:18); men cannot pull the tares without uprooting the wheat (13:29). Whose hand swings the sickle? Joel told us: *Put ye in the sickle, for the harvest is ripe* (Joel 3:13). And what is gathered out? Zephaniah's *stumblingblocks* — *I will consume... the stumblingblocks with the wicked* (Zephaniah 1:3); so *they shall gather out of his kingdom all things that offend* (13:41). The men who first heard this already knew the picture: *the grain of evil seed has been sown in the heart of Adam from the beginning... until the time of threshing come* (2 Esdras 4:30). Yahusha only names the sower — *the enemy... is the devil* (13:39) — and tells them the floor shall be filled.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "seed-of-good-and-evil-sown-in-the-heart-of-adam-in-2-esdras",
+   "title": "The seed of good and evil sown in the heart of Adam — 2 Esdras 4, 2 Esdras 3, and 2 Esdras 8",
+   "anchor": "Matthew 13:24-30",
+   "anchored_in_this_book": false,
+   "member_count": 4,
+   "summary_md": "Matt 13:24-30's wheat-and-tares parable — *the kingdom of heaven is likened unto a man which sowed good seed in his field: But while men slept, his enemy came and sowed tares among the wheat, and went his way* — read against the wisdom-stream's direct parallel of the seed-of-good-and-evil sown-in-the-heart-of-Adam architecture. Three moves: 2 Esdras (4 Ezra) 4:30 names THE direct wisdom-stream parallel — *the grain of evil seed hath been sown in the heart of Adam from the beginning, and how much ungodliness hath it brought up unto this time? and how much shall it yet bring forth until the time of threshing shall come?*; 2 Esdras 3:21-22 names the wicked-heart-inherited-from-Adam architecture — *the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him*; 2 Esdras 8:6 names the prayer-for-seed-unto-the-heart and culture-to-the-understanding so-that-fruit-may-come. The framework reads the cluster as the wisdom-stream's direct restatement of the wheat-and-tares architecture at the heart-of-Adam register: the evil-seed was-sown-from-the-beginning AND the time-of-threshing-and-sorting-is-coming AND Yahuah-is-asked-for-seed-unto-the-heart that fruit-may-come. The King at Matt 13:24-30 names the operative-parable-form: the Sower sowing-good-seed in the field; the enemy sowing-tares-while-men-slept; the wheat-and-tares grow-together-until-the-harvest; the harvest-time the tares-burned-and-the-wheat-gathered. The framework reads the architecture WITHOUT collapsing into the Augustinian-original-sin doctrine in its Christian-developed-form: the framework preserves the actor's-responsibility (the watchful-guard-fails per Matt 13:25's *while men slept*) without erasing it; the wisdom-stream knew the inherited-heart-architecture without the Christian-doctrinal-overlay.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "watchers-corruption-as-tares-sown-in-the-wheat-in-1-enoch-and-jubilees",
+   "title": "The Watchers' corruption as tares sown in the wheat — 1 Enoch 6, 10, 15 and Jubilees 5, 7 beside Matthew 13:25-39",
+   "anchor": "Matthew 13:24-30",
+   "anchored_in_this_book": false,
+   "member_count": 8,
+   "summary_md": "*But while men slept, his enemy came and sowed tares among the wheat, and went his way.* (Matthew 13:25). When the disciples ask what it means, Yahusha (Jesus) says the tares are a seed with a father: *The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one; The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.* (Matthew 13:38-39). Enoch records the sowing. *And the angels, the children of the heaven, saw and lusted after them, and said to one another: 'Come, let us choose us wives from among the children of men and beget us children.'* (1 Enoch 6:2). Two hundred of them swore it on Hermon in the days of Jared, and what they begot was a line, not a mood: *And to Gabriel said Yahuah (Lord): 'Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men [and cause them to go forth]: send them one against the other that they may destroy each other in battle: for length of days shall they not have.* (1 Enoch 10:9). Their bodies died in the flood but their spirits stayed: *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling.* (1 Enoch 15:8). Jubilees is the second witness: *And it came to pass when the children of men began to multiply on the face of the earth and daughters were born to them, that the angels of Elohim (God) saw them on a certain year of this jubilee, that they were beautiful to look upon; and they took themselves wives of all whom they chose, and they bare to them sons and they were giants.* (Jubilees 5:1), and Noah tells his sons that the flood came *owing to the fornication wherein the Watchers against the law of their ordinances went a whoring after the daughters of men, and took themselves wives of all which they chose: and they made the beginning of uncleanness.* (Jubilees 7:21). So the children of the wicked one are a seed sown into the world, and the parable is not a figure of speech about bad attitudes. But hold the other half of it just as firmly. The seed runs inside every people, not along the lines of any nation or color, and Eli's own sons were sons of Belial; nobody can sort the field by looking at it. That is why the servants are told to let both grow together. The sorting belongs to the reapers at the harvest, and to no one else.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "seed-war-from-genesis-3-and-the-devil-as-source-of-death-in-wisdom-and-jubilees-and-1-enoch",
+   "title": "The seed war from Genesis 3 forward, with the devil as the source of death — Wisdom of Solomon 2:24, 1 Enoch 22, Jubilees 4",
+   "anchor": "Matthew 13:38-39",
+   "anchored_in_this_book": false,
+   "member_count": 8,
+   "summary_md": "*The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;* (Matthew 13:38). *The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.* (Matthew 13:39). Two seeds in one field, and the devil the one who sowed the second. The library had been saying this since the garden. Solomon names the devil as the source of death itself: *through envy of the devil came death into the world: and they that do hold of his side do find it* (Wisdom of Solomon 2:24). The first fruit of that seed was Cain, and Enoch was shown his brother's spirit still crying out: *I saw the spirits of the children of men who were dead, and their voice went forth to heaven and made suit.* (1 Enoch 22:5). *Then I asked Raphael the angel who was with me, and I said unto him: ‘This spirit—whose is it, whose voice goeth forth and maketh suit?’* (1 Enoch 22:6). *And he answered me saying: ‘This is the spirit which went forth from Abel, whom his brother Cain slew, and he makes his suit against him till his seed is destroyed from the face of the earth, and his seed is annihilated from amongst the seed of men.’* (1 Enoch 22:7). Abel's suit is against a seed, not only a man. Jubilees tells the murder the way Genesis does, *Qayin (Cain) slew Hevel (Abel) because (God) accepted the sacrifice of Hevel (Abel), and did not accept the offering of Qayin (Cain) ... and his blood cried from the ground to heaven* (Jubilees 4:2), and John names which seed Cain was: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous.* (1 John 3:12). So the parable is not a new idea about the world. The serpent in the garden, the envy that brought death in, the Watchers' corruption, the tares in the field, and the harvest where the angels sort them are one story, and Abel's voice has been making suit through all of it until the seed that killed him is gone from among the seed of men.",
+   "members_in_this_chapter": []
+  },
+  {
+   "slug": "the-watcher-rebellion-as-the-stumbling-block-architecture-in-1-enoch",
+   "title": "The Watchers' rebellion and the first stumbling-blocks — 1 Enoch 8, 10, 19, 22 and 27 beside Matthew 18:6-9",
+   "anchor": "Matthew 18:6-9",
+   "anchored_in_this_book": false,
+   "member_count": 12,
+   "summary_md": "*But whoso shall offend one of these little ones which believe in me, it were better for him that a millstone were hanged about his neck, and that he were drowned in the depth of the sea. Woe unto the world because of offences! for it must needs be that offences come; but woe to that man by whom the offence cometh!* (Matthew 18:6-7). The word is a stumbling-block, something laid in the road to trip a walker, and Yahusha (Jesus) says they are bound to come. Enoch tells where the first ones were laid. *And Azâzêl taught men to make swords, and knives, and shields, and breastplates, and made known to them the metals of the earth and the art of working them, and bracelets, and ornaments, and the use of antimony, and the beautifying of the eyelids, and all kinds of costly stones, and all colouring tinctures.* (1 Enoch 8:1). Weapons for the hand and paint for the eye, taught by a fallen angel, and the whole world tripped over them: *And the whole earth has been corrupted through the works that were taught by Azâzêl: to him ascribe all sin.'* (1 Enoch 10:8). The spirits that came out of that rebellion are still laying stones in the road: *And Uriel said to me: 'Here shall stand the angels who have connected themselves with women, and their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods, (here shall they stand,) till the day of the great judgement in which they shall be judged till they are made an end of.* (1 Enoch 19:1). Many different forms. Every system that teaches men against the commandments of their Maker, in whatever robe, is one of those forms, and the woe lands on the men who run it, not on the little ones tripped by it. The judgement that makes the millstone look like mercy is the one Enoch saw: *Here their spirits shall be set apart in this great pain till the great day of judgement and punishment and torment of those who curse for ever and retribution for their spirits. There He shall bind them for ever.* (1 Enoch 22:11). And the valley Yahusha names, Gehenna, the valley of Hinnom on the south side of Jerusalem, Enoch had already been shown in the middle of the holy mountain: *Then Uriel, one of the holy angels who was with me, answered and said: 'This accursed valley is for those who are accursed for ever: Here shall all the accursed be gathered together who utter with their lips against Yahuah (Lord) unseemly words and of His glory speak hard things. Here shall they be gathered together, and here shall be their place of judgement.* (1 Enoch 27:2). That is what the hell fire of Matthew 18:9 is, the accursed valley of judgement the prophets and Enoch knew, and not the endless furnace the pulpit read back into the word. Better to lose a hand than to walk into that valley with both.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:1",
+     "tgt": "canon/matthew 18:6",
+     "member_note": "The Lukan stumblingblock-warning sits in the same Watcher-rebellion-as-stumbling-block architecture the Matthean parallel carries. The little-ones are the gathered-seed; the stumbling-architecture is the corruption-from-without-and-from-within."
+    }
+   ]
+  },
+  {
+   "slug": "the-gathering-of-the-elect-from-the-four-winds-in-1-enochs-animal-apocalypse-and-parables",
+   "title": "The gathering of the elect from the four winds — 1 Enoch 57, 61 and 90 beside Matthew 24:27-31",
+   "anchor": "Matthew 24:27-31",
+   "anchored_in_this_book": false,
+   "member_count": 30,
+   "summary_md": "*For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of Adam be.* (Matthew 24:27). There is nothing secret about it. He comes in the clouds with power and great glory, and then the trumpet sounds: *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31). Enoch heard that sound from end to end of heaven in the second Parable: *And it came to pass after this that I saw another host of wagons, and men riding thereon, and coming on the winds from the east, and from the west to the south. And the noise of their wagons was heard, and when this turmoil took place the holy ones from heaven remarked it, and the pillars of the earth were moved from their place, and the sound thereof was heard from the one end of heaven to the other, in one day.* (1 Enoch 57:1-2). And he was told that none of the elect will be missed in the gathering, not even the ones the earth had swallowed: *And these measures shall reveal all the secrets of the depths of the earth, And those who have been destroyed by the desert, And those who have been devoured by the beasts, And those who have been devoured by the fish of the sea, That they may return and stay themselves On the day of the Elect One; For none shall be destroyed before Yahuah (Lord) of Spirits, And none can be destroyed.* (1 Enoch 61:5). In the dream of the sheep the same gathering closes the vision: *And all that had been destroyed and dispersed, and all the beasts of the field, and all the birds of the heaven, assembled in that house, and Yahuah (Lord) of the sheep rejoiced with great joy because they were all good and had returned to His house.* (1 Enoch 90:33). The elect gathered from the four winds are the sheep, the house of Yashar'el (Israel) scattered through every nation, the ones the prophets never stopped promising to bring home: *And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* (Isaiah 11:12); *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* (Ezekiel 37:21). Moses, Jeremiah, Hosea, Micah, Zephaniah and Zechariah say the same thing in their own places. The gathering at the trumpet is the gathering of the twelve tribes, the paternal seed of the fathers, and not a spiritual category anyone can elect himself into.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:24",
+     "tgt": "canon/matthew 24:27",
+     "member_note": "*For as the lightning, that lighteneth out of the one part under heaven, shineth unto the other part under heaven; so shall also the Son of Adam (son of man) be in his day* (Luke 17:24). The lightning-from-east-to-west visibility-of-the-coming substance."
+    }
+   ]
+  },
+  {
+   "slug": "the-days-of-noach-and-the-watcher-rebellion-judgment-pattern-in-1-enoch-and-jubilees",
+   "title": "The days of Noach (Noah) and the judgement that took them all away — 1 Enoch 10, 65, 67 and Jubilees 5 beside Matthew 24:37-39",
+   "anchor": "Matthew 24:37-39",
+   "anchored_in_this_book": false,
+   "member_count": 11,
+   "summary_md": "*But as the days of Noah were, so shall also the coming of the Son of Adam be. For as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noah entered into the ark, And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be.* (Matthew 24:37-39). Yahusha (Jesus) does not pick the flood at random. The days of Noah are the days the Watchers had corrupted the earth, and the whole book of Enoch is the record of how that judgement was decided and carried out. The warning to Noah comes first: *'Go to Noah and tell him in my name \"Hide thyself!\" and reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* (1 Enoch 10:2). The reason is spelled out to him later by his grandfather: *And He said unto me: \"Because of their unrighteousness their judgement has been determined upon and shall not be withheld by Me for ever. Because of the sorceries which they have searched out and learnt, the earth and those who dwell upon it shall be destroyed.\"* (1 Enoch 65:10), and the ones who taught the sorceries are given their own sentence: *And He will imprison those angels, who have shown unrighteousness, in that burning valley which my grandfather Enoch had formerly shown to me in the west among the mountains of gold and silver and iron and soft metal and tin.* (1 Enoch 67:4). Jubilees describes the same earth: *And lawlessness increased on the earth and all flesh corrupted its way, alike men and cattle and beasts and birds and everything that walks on the earth-all of them corrupted their ways and their orders, and they began to devour each other, and lawlessness increased on the earth and every imagination of the thoughts of all men (was) thus evil continually.* (Jubilees 5:2). Lawlessness abounding is the very sign Yahusha gives for the end of the age a few verses earlier, when the love of many grows cold. So read the taking in the flood's own terms. The flood took away the ones who were not ready; it did not lift them out of trouble. When the Son of Adam comes, the one taken from the field and the one taken from the mill are taken the way the flood took the world of Noah's day, and Luke's disciples ask where, and are told where the body is, there the eagles gather. Noah and his seed were the ones preserved, kept through the judgement and not carried off by it, and Enoch hears the promise over them: *And I will make fast thy seed before me for ever and ever, and I will spread abroad those who dwell with thee: it shall not be unfruitful on the face of the earth, but it shall be blessed and multiply on the earth in the name of Yahuah (Lord).'* (1 Enoch 67:3). Jude says the whole thing in one line, quoting Enoch himself: *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints,* (Jude 1:14).",
+   "members_in_this_chapter": [
+    {
+     "src": "17:26",
+     "tgt": "canon/matthew 24:37",
+     "member_note": "*And as it was in the days of Noach (Noah), so shall it be also in the days of the Son of Adam (son of man)... Likewise also as it was in the days of Lot* (Luke 17:26, 28). The Lukan version of the Noach-comparison adds the Lot-comparison."
+    }
+   ]
+  },
+  {
+   "slug": "effort-over-accomplishment",
+   "title": "Effort over accomplishment — the same God says both",
+   "anchor": "Proverbs 24:16",
+   "anchored_in_this_book": false,
+   "member_count": 77,
+   "summary_md": "The Reformation reader has been shaped to believe two thoughts cannot stand in the same paragraph. The same God who said *not for your righteousness do I do this, but for my own name's sake* — also said *depart from me, ye that work iniquity, I never knew you.* The same God who said *for by grace are ye saved through faith* — also said *whosoever hath sinned against me, him will I blot out of my book.* The same God who said *I will give you a new heart* — also said *ye shall loathe yourselves in your own sight for your iniquities.*\n\nThe Reformation kept the *for my name's sake* half and put a period where there should have been a colon. The rabbinic system kept the *depart from me* half and built a flesh-righteousness gospel. The framework holds both halves because scripture holds both halves. The place where they hold together is the phrase that names the diagnostic: **effort over accomplishment.**\n\n*\"For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief.\"* (Proverbs 24:16)\n\nThe just is not the man who never fell. The wicked is not the man who failed to accomplish. What separates them is not the verdict — *none worthy* has already fallen on every flesh — but the heart's response. The just rises. The wicked *stops his ears* (Proverbs 28:9; Zechariah 7:11-12; Acts 7:57). Open ears and a returning heart, even after seven falls, is the sign of life; stopped ears, even after a hundred sermons, is the sign of death.\n\nThe new heart's signature response to grace is not the boast. It is the hanging head — *ye shall loathe yourselves in your own sight for your iniquities* (Ezekiel 36:31; 20:43; Job 42:5-6; Isaiah 6:5; Daniel 9:5). The Reformation gospel produces a head that holds itself up because it is *saved.* The rabbinic gospel produces a head that holds itself up because it is *righteous.* The framework's new heart produces a head that goes lower the more it sees His mercy.\n\n*\"Remember the former things of old: for I am El, and there is none else; I am Elohim (God), and there is none like me, Declaring the end from the beginning, and from ancient times the things that are not yet done, saying, My counsel shall stand, and I will do all my pleasure.\"* (Isaiah 46:9-10)\n\nThe whole architecture is sealed by the end the Father declared from the beginning. The end is the gathering — the twelve tribes home, the new heart given, the kingdom of priests, the Way restored. Every system that denies the gathering denies the end; every system that denies the end calls Him a liar; to call Him a liar is to reject the mercy that hangs on His name. The architecture stands or falls as one piece.\n\nCompanion threads: `grace-from-names-sake` carries the name's-sake-mercy pillar; `new-heart` carries the Torah-internalized pillar; `post-harvest-sifting` carries the wheat-sifting pillar; `grace-and-the-opportunity-that-can-be-lost` carries the standing-can-be-forfeit warning at the Matt 6 anchor. This thread anchors the architecture at the Proverbs 24:16 hinge and adds the stopped-ears discriminator, the hanging-heads sign, and the end-declared seal.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:3",
+     "tgt": "canon/proverbs 24:16",
+     "member_note": "*And if he trespass against thee seven times in a day, and seven times in a day turn again to thee, saying, I repent; thou shalt forgive him* (Luke 17:4). The same Elohim who says the just man falleth seven times and riseth again (Mishlei/Proverbs 24:16) also says forgive seven times in a day."
+    }
+   ]
+  },
+  {
+   "slug": "post-harvest-sifting",
+   "title": "Post-harvest sifting",
+   "anchor": null,
+   "anchored_in_this_book": false,
+   "member_count": 13,
+   "summary_md": "The wilderness of the peoples — Ezekiel 20:33–44 — is the Tanakh source for the sheep-and-goats separation, 'depart from me, I never knew you,' and the weeping-and-gnashing-of-teeth passages.\n\nYahuah (the LORD) gathers the scattered house out of all nations, brings them face to face in the wilderness, causes them to pass under the rod, and purges out the rebels from among them. The 'depart from me, ye cursed' of Matthew 25:41 is the 'they shall not enter into the land of Yashar'el (Israel)' of Ezekiel 20:38. The weeping and gnashing of teeth is the loathing of self in Ezekiel 20:43 — 'ye shall lothe yourselves in your own sight for all your evils that ye have committed.'\n\nThe gospel passages are not eternal-hell prooftexts spoken to unbelievers. They are the post-harvest sifting of the gathered wheat. The sheep are the fruitful within the covenant body; the goats are the unfruitful within the covenant body. 'I never knew you' is spoken to those who prophesied in his name, cast out devils in his name, did many wonderful works in his name (Matthew 7:22) — not to tares. Names get blotted out in this sifting; no name is added.\n\nAnd the same chapter that names the sifting names the mercy: 'I have wrought with you for my name's sake, not according to your wicked ways' (Ezekiel 20:44). The hang-the-head and the name's-sake grace are the same verse pair.",
+   "members_in_this_chapter": [
+    {
+     "src": "17:1",
+     "tgt": "canon/ezekiel 20:33",
+     "member_note": "*It is impossible but that offences will come: but woe unto him, through whom they come! It were better for him that a millstone were hanged about his neck, and he cast into the sea, than that he should offend one of these little ones* (Luke 17:1-2). The offences-warning carries the post-harvest-sifting register."
+    }
+   ]
+  }
+ ]
+}

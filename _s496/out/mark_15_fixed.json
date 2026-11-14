@@ -1,0 +1,33 @@
+{
+ "model": "claude-fable-5-1 (Fable 5.1)",
+ "chapter": 15,
+ "book": "mark",
+ "cards": [
+  {
+   "id": 5355,
+   "prose": "Mark gives the centurion one man's death to look at: he saw how Yahusha (Jesus) cried out and gave up the ghost, and said what he said. Matthew gives the same soldier and the men with him the earthquake and all that was done, and they feared greatly. Two tellings, one confession from the man set over the cross: this was the Son of Elohim (God).",
+   "member_phrase": "Truly this was the Son of Elohim (God).",
+   "member_sentence": "Matthew's centurion and his men say the same words after the earthquake, and they feared greatly.",
+   "thread": "mark-15-darkness-at-noon-the-veil-rent-and-the-centurions-confession-amos-8-exodus-26",
+   "flag": ""
+  },
+  {
+   "id": 5356,
+   "prose": "Luke keeps the centurion but hears a different sentence from him: he glorified Elohim (God) and called the dead man a righteous man. Mark heard *the Son of Elohim (God)*. The two are not at odds. The righteous one of Isaiah's servant song and the Son are one man on one cross, and the soldier who watched him die says both things across the two gospels.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Luke's centurion glorifies Elohim (God) and calls the crucified a righteous man.",
+   "thread": "mark-15-darkness-at-noon-the-veil-rent-and-the-centurions-confession-amos-8-exodus-26",
+   "flag": ""
+  },
+  {
+   "id": 5357,
+   "prose": "Mark's witness at the cross is a Roman centurion; John's is the disciple who stood there and bare record, and who says plainly why he wrote it down: *that ye might believe*. A soldier and a disciple, both there, both telling what they saw of that death. John's record of the pierced side and the blood and water sits right after Mark's soldier.",
+   "member_phrase": "and his record is true: and he knoweth that he saith true, that ye might believe.",
+   "member_sentence": "John's eyewitness record of the death stands beside the centurion's as a second witness at the cross.",
+   "thread": "mark-15-darkness-at-noon-the-veil-rent-and-the-centurions-confession-amos-8-exodus-26",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on claude-fable-5-1 (Fable 5.1)."
+}

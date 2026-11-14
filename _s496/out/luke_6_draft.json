@@ -1,0 +1,32 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 6,
+ "cards": [
+  {
+   "id": 6996,
+   "prose": "Mark has them going *through the corn fields on the sabbath day*. Luke dates it, *the second sabbath after the first*, and says they rubbed the ears in their hands and ate. That is a hungry man's meal, and Moses left it open: *thou mayest pluck the ears with thine hand* (Deuteronomy 23:25). The day stands in both tellings, and the charge is about a fence laid over it.",
+   "member_phrase": "he went through the corn fields on the sabbath day",
+   "member_sentence": "Mark says it was the sabbath day and that the disciples began to pluck the ears as they went, which Luke sets on the second sabbath after the first.",
+   "thread": "luke-6-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21",
+   "flag": ""
+  },
+  {
+   "id": 6997,
+   "prose": "Mark says he *entered again into the synagogue*, and Luke tells which day and what he was doing: *another sabbath*, and he *taught*. Luke also says the man's *right hand was withered*. The day is kept in both, in the synagogue with the withered hand in front of him, and Luke closes the scene with the watchers *filled with madness* (Luke 6:11).",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Mark puts him again in the synagogue with a man whose hand was withered, and the question of the sabbath follows.",
+   "thread": "luke-6-is-it-lawful-to-do-good-on-the-sabbath-deuteronomy-22-isaiah-58",
+   "flag": ""
+  },
+  {
+   "id": 6998,
+   "prose": "Matthew has the twelve already called and given power. Luke shows what came first: a night on a mountain, *all night in prayer to Elohim (God)*, and at day he chose twelve. He tells these same men what the number is for, *sit on thrones judging the twelve tribes of Yashar'el (Israel)* (Luke 22:30), so the choosing began in prayer and the number points at the tribes.",
+   "member_phrase": "he gave them power against unclean spirits, to cast them out",
+   "member_sentence": "Matthew has the twelve called and given power to cast out unclean spirits and heal, and Luke shows the night of prayer before the choosing.",
+   "thread": "luke-6-he-chose-twelve-the-tribes-regathered-genesis-49-exodus-24",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

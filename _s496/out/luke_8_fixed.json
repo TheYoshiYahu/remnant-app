@@ -1,0 +1,33 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 8,
+ "cards": [
+  {
+   "id": 7014,
+   "prose": "Matthew has him *spake many things unto them in parables* and begins with the sower. Luke says who was there to hear: *much people* gathered *out of every city*. The seed goes out to everyone alike, a whole country of hearers, and the parable that follows is about what the ground shows of each one when the same word lands on it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the same sower going forth to sow, spoken among many parables, where Luke names the crowd from every city.",
+   "thread": "luke-8-the-word-sown-and-the-law-bringing-fruit-in-2-esdras",
+   "flag": ""
+  },
+  {
+   "id": 7015,
+   "prose": "Both gospels say it *is given* to the disciples to know the mysteries, and not to the others. Matthew has them ask why he speaks in parables, and Luke has them ask what this parable might be. The giving is named first and the hearing follows it, and Luke keeps Yahusha's (Jesus's) own words that the others are left *seeing they might not see*.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew says plainly that it is given to them to know the mysteries of the kingdom and to the others it is not given.",
+   "thread": "matthew-13-the-sower-why-parables-seeing-they-see-not-isaiah-6-isaiah-55",
+   "flag": ""
+  },
+  {
+   "id": 7017,
+   "prose": "Matthew says it by the Father's will, *the will of my Father which is in heaven*, and Luke says it by the Father's word: *these which hear the word of Elohim (God), and do it*. Same household, and what shows it is the doing. His mother and brothers were outside and could not get near him for the crowd, and he points to those who hear the word and keep it.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew says whoever does the will of his Father in heaven is his brother, sister and mother, the same household Luke names by hearing and doing.",
+   "thread": "matthew-12-whosoever-shall-do-the-will-of-my-father-the-true-family-deuteronomy-33-psalm-22",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on claude-sonnet-5-5."
+}

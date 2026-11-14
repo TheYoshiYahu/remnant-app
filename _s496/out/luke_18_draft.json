@@ -1,0 +1,40 @@
+{
+ "model": "claude-sonnet-5-5",
+ "book": "luke",
+ "chapter": 18,
+ "cards": [
+  {
+   "id": 7077,
+   "prose": "Luke aims the parable at men who *trusted in themselves that they were righteous*, men with nothing in their own eyes to turn from. Ezekiel's verse speaks to the other kind, the wicked man who turns from all his sins, keeps the statutes, and does what is lawful and right, and *he shall surely live*. The publican who smote his breast is that man turning.",
+   "member_phrase": "turn from all his sins that he hath committed, and keep all my statutes",
+   "member_sentence": "Ezekiel says the wicked man who turns from all his sins and keeps the statutes shall surely live, which is the turning the publican does.",
+   "thread": "pharisee-and-publican-the-flesh-credential-vs-mercy-contrast-and-the-judaizer-architecture-in-parable-form",
+   "flag": ""
+  },
+  {
+   "id": 7083,
+   "prose": "Matthew has Yahusha (Jesus) telling his disciples that he must go to Jerusalem and suffer, and has Peter turn it aside. Luke adds that he *took unto him the twelve* on the road and told them that *all things that are written by the prophets* about the Son of Adam would be accomplished, so the suffering was already written. Luke says plainly that they understood none of it.",
+   "member_phrase": "how that he must go unto Jerusalem, and suffer many things of the elders and chief priests and scribes",
+   "member_sentence": "Matthew names who does the suffering to him, the elders and chief priests and scribes, and that he will be raised again the third day.",
+   "thread": "matthew-16-get-thee-behind-me-satan-he-must-suffer-many-things-isaiah-53",
+   "flag": ""
+  },
+  {
+   "id": 7084,
+   "prose": "Matthew has two blind men following him and crying *Thou Son of David, have mercy on us*. Luke gives the one at Jericho, who *sat by the way side begging*, heard the crowd pass, and learned it was Yahusha (Jesus) of Nazareth. He cries out the same title, and the crowd that told him to hold his peace had not called Yahusha (Jesus) that.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Two blind men follow him crying Thou Son of David, have mercy on us, the same title Luke's beggar cries out at Jericho.",
+   "thread": "matthew-9-two-blind-men-thou-son-of-david-isaiah-35-psalm-146-2-samuel-7",
+   "flag": ""
+  },
+  {
+   "id": 7085,
+   "prose": "A beggar sits by the road in Luke and a lame man sits at the temple gate in Acts, and both are given the body they lacked. Yahusha (Jesus) says *thy faith hath saved thee* to the blind man, who follows him praising Elohim (God). Peter speaks in the same name, and the lame man walks into the temple praising Elohim (God).",
+   "member_phrase": "In the name of Yahusha HaMashiach (Jesus Christ) of Nazareth rise up and walk",
+   "member_sentence": "Peter heals the lame man at the gate in the name of Yahusha (Jesus), and the man walks into the temple praising Elohim (God).",
+   "thread": "luke-18-all-that-the-prophets-wrote-fulfilled-and-the-son-of-david-isaiah-53-2-samuel-7",
+   "flag": ""
+  }
+ ],
+ "new_threads": []
+}

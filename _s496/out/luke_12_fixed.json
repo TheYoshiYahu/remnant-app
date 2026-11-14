@@ -1,0 +1,33 @@
+{
+ "model": "Claude Sonnet 5.5 (claude-sonnet-5-5)",
+ "book": "luke",
+ "chapter": 12,
+ "cards": [
+  {
+   "id": 7042,
+   "prose": "Matthew has to stop and say he did not mean bread but *the doctrine of the Pharisees and of the Sadducees* (Matthew 16:12). Luke names it before anyone can mistake it, *which is hypocrisy*, and says it to his disciples first while a crowd presses so close they tread on one another. Leaven works unseen through the whole lump, and here it is a teaching that looks like one thing and is another.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the warning against the leaven of the Pharisees and Sadducees, which the disciples first take for talk about bread.",
+   "thread": "matthew-16-beware-the-leaven-of-the-pharisees-and-sadducees-exodus-12-1-corinthians-5",
+   "flag": ""
+  },
+  {
+   "id": 7044,
+   "prose": "Matthew sets the saying where the Pharisees have just called his work the work of Beelzebub. Luke sets it among his disciples, after *he that denieth me before men shall be denied before the angels of Elohim (God)* (Luke 12:9) and before the promise that the Ruach HaKodesh (Holy Spirit) will teach them what to say. In both, a word against the Son of Adam is forgiven and the blasphemy against the Ruach HaKodesh (Holy Spirit) is not.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew gives the saying that every sin and blasphemy shall be forgiven men except blasphemy against the Ruach HaKodesh (Holy Spirit).",
+   "thread": "matthew-12-binding-the-strong-man-blasphemy-against-the-spirit-isaiah-49-1-enoch-15",
+   "flag": ""
+  },
+  {
+   "id": 7048,
+   "prose": "Matthew's lord *called his own servants, and delivered unto them his goods*. Luke's servant is one of that kind, one who *knew his lord’s will* and did not make ready or do it, and he *shall be beaten with many stripes*. Luke adds the measure, *unto whomsoever much is given, of him shall be much required* (Luke 12:48). These are servants of the house, judged by what they did with what they were given.",
+   "member_phrase": "WHOLE",
+   "member_sentence": "Matthew shows the lord going into a far country and putting his goods into the hands of his own servants.",
+   "thread": "the-diligent-stewardship-versus-the-slothful-servant-in-sirach",
+   "flag": ""
+  }
+ ],
+ "new_threads": [],
+ "read": "Read on Claude Fable 5.1 (claude-fable-5-1), 2026-11-14 (S502): every card read against both verses and the voice standard; 0 correction(s) applied in read496_m1l1.py; drafted on Claude Sonnet 5.5 (claude-sonnet-5-5)."
+}
