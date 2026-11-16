@@ -582,3 +582,33 @@ means a back-fill can re-run safely over the already-merged canon rows.
   takes named member cards per thread; it needs a packet step (packet503 → Sonnet first drafts, Fable reads) and the census JSON as its worklist.
   2 Baruch's 162 and Testaments XII's 105 are a different fix (abbreviated book names in otherwise clean notes — a mechanical expansion, one
   migration, no redraft).
+
+- **2026-11-16 — S505 (Claude Fable 5.1) — visit counter CODED (pushed; PWA + API deploys needed two follow-up pushes); S502 sweep list BUILT (7 threads, not yet deployed); abbreviation expansion BUILT (264 cards, not yet deployed).**
+  Mac shell volume still 100% full → every DB step a paste; scratch proofs ran on a real Postgres 16 in the cloud sandbox and died with it.
+  (a) THE VISIT COUNTER — exactly the S504 design: `data-schema/migrations/session504_visit_events.sql` (table + 3 indexes + view `visit_days`;
+  signed-in APP visits are read from `user_activity_days`, everything else from `visit_events`), `api/visits.py` (POST /v1/visit, 204 always — even a
+  bad body; sha256(ANON_SALT + anon_id); no salt → anonymous rows are simply not written; query string never stored, only ?book/?chapter/?edition;
+  30-min dedupe per reader per surface), `upsert_user` wraps the S467 upsert in a CTE that reports whether it OPENED a visit and then writes one
+  `visit_events` row (deduped against a beacon row), `app/src/lib/visit.ts` + `recordVisit()` in main.tsx (UUID in localStorage `rop_visit_id`,
+  no cookie), six lines in walk/build.mjs's page script, `ANON_SALT` (sync: false) in render.yaml, 400-day prune first thing in
+  jobs/trial_reminders.py, `_s503/tools/visits_report504.py` (baseline on top). `api/apply_migration.py` now prints RAISE NOTICE lines.
+  Sibling `session504_housekeeping.sql` per the settled rule (prints six rows, RAISES if the data does not fit; Goshen24: refuses if the FREE
+  account was seen more recently than the paying one). Scratch: 1st request opens a visit, 2nd does not, beacon dedupes, 40-min gap opens one,
+  view = activity table. DEPLOY: Yoshi pushed 6ec9b88; PWA build failed on a TS narrowing in visit.ts (fixed, 2nd push); API failed to START
+  because the push took api/main.py (imports walk) without the untracked WALK 1 files — 3rd push adds api/walk.py, walk/data, Dockerfile line,
+  .gitignore, walk/photos.mjs, walk/public. LESSON: a `git add` list must include every untracked file the listed files import. Migrations
+  (visit_events, housekeeping) and ANON_SALT are Yoshi's pastes/clicks — see S506 prompt for the state check. Privacy sentence handed to Yoshi.
+  (b) THE S502 SWEEP LIST — 7 thread summaries rewritten (slug kept, 0 cards): 30413 matthew-3 stones (Joshua 4 tribe-stones in the Jordan; Hosea
+  1:10, Ezekiel 37 — the scattered house, not nations grafted); 30901 matthew-13 mustard/leaven (leaven = corruption: Exodus 12, Leviticus 2,
+  Matthew 16, Luke 12, Galatians 5; mustard = herb grown past its kind, Daniel 4 / Ezekiel 31 trees, Ezekiel 17 cedar still to come — FLAGGED
+  to Yoshi, he only ruled on the leaven); 221 gathering (jargon gone; 2 Esdras 13:40/48, Tobit 13:5, Sirach 36:1/11, Ezekiel 37:21, Deuteronomy
+  30:3; Canaanite woman = seed revealed by hearing); 554 Nazareth scroll (stopped at the comma; widow + Naaman = seed revealed, John 10:16/27);
+  636 Luke 4 / Sirach 48 (48:12 now quoted as the live text reads — old summary mis-quoted it); 622 mark-7 corban (no "the King"/"diagnostic");
+  571 rich man (Luke's words: bosom, torments, gulf; Enoch 22 dropped from the summary; John 11–12 proof). build503c PASS ×7, scratch twice PASS
+  (controls byte-identical). Read file `_s503/out/sweep7_s505_read.md`. Deploy pastes: `_s503/deploy/_session503_sweep7a_deploy.sh` (Matthew
+  3) and `_session503_sweep7b_deploy.sh` (Luke/Mark 4; re-dumps luke + mark — gen_deploy503bc now re-dumps every anchor book). Luke/Mark
+  built on the Nov 14 dumps; guards cover it.
+  (c) PHASE 3 — the cheap one done first: `_s503/tools/gen_sql505_abbrev.py` → `session505_abbrev_book_names.sql` (264 cards: 2 Baruch 161,
+  Testaments XII 103; opening `Prov 6:23` → `Proverbs 6:23`, `1 Jn` → `1 John`; each abbreviation checked against the card's own target before
+  generation; note + member note; nothing else touched); scratch twice PASS; `check505_abbrev.py`; paste `_s503/deploy/_session505_abbrev_deploy.sh`.
+  NOT STARTED: the packet step on build503c and batch 1 (the 13 S1xx threads' ~230 member cards) — S506's first item after the deploy checks.
