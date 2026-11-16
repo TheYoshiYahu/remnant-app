@@ -51,6 +51,10 @@ COPY data-schema/ /data-schema/
 COPY app/src/data/paragraph_starts.json /app/src/data/paragraph_starts.json
 COPY source-texts/parsed/ /source-texts/parsed/
 
+# WALK 1 — walk.remnantofpromise.org plant data, read by api/walk.py for the
+# member fields (part eaten, preparation) of the greyed entries.
+COPY walk/data/ /walk/data/
+
 # Session 112 — post-seed loader artifacts. The tiered-commentary loader and
 # its source .md files ship in the image so they can be run from Render Shell
 # (internal-network DB connection — sidesteps the external-Postgres SSL/IP

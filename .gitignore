@@ -99,3 +99,6 @@ audio/
 audio-text/
 tts/*.onnx
 tts/*.bin
+
+# WALK 1 — built output of walk/build.mjs; Render builds it
+walk/dist/

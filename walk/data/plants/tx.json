@@ -1,0 +1,2348 @@
+{
+  "state": "TX",
+  "state_name": "Texas",
+  "updated": "2026-11-12",
+  "sources_note": "Edibility and preparation drawn from public-domain references: U.S. Army FM 21-76 Survival (1992) Appendix B (Edible and Medicinal Plants) and Appendix C (Poisonous Plants); E. Lewis Sturtevant, Sturtevant's Notes on Edible Plants (1919); USDA Farmers' Bulletins. Presence in Texas confirmed against the USDA NRCS PLANTS Database state checklist (public domain). Look-alike notes are written plainly from those references and from the plants' own botanical marks. None of this replaces a knowledgeable person standing beside you.",
+  "rule": "Never eat a plant you have not identified with certainty by more than one mark. When a page says 'cook it,' raw is not an option. If a look-alike on this page is deadly, treat every doubtful plant as the deadly one.",
+  "entries": [
+    {
+      "slug": "prickly-pear",
+      "common": "Prickly pear (cactus apple, nopal)",
+      "scientific": "Opuntia engelmannii",
+      "usda": "OPEN3",
+      "family": "Cactaceae",
+      "free": true,
+      "season": [
+        "spring",
+        "summer",
+        "fall"
+      ],
+      "months": "Pads (nopales) spring; fruit (tunas) July–October",
+      "where": "Nearly every part of Texas on dry ground — pastures, roadsides, limestone hills, brush country, fencerows.",
+      "part": "Young pads; ripe red-purple fruit.",
+      "prepare": "Hold the pad with tongs and scrape or singe off every spine and the fine hair-like glochids, then peel and cut; cook like a green bean (boil, grill, or fry). Fruit: singe or scrub off the glochids, peel, and eat raw or cook down for syrup and jelly; the seeds are hard and are usually strained out.",
+      "lookalikes": [
+        {
+          "name": "Other Opuntia pads",
+          "how": "All the flat-padded prickly pears in Texas are edible the same way. The danger is not a poison twin but the glochids — the tiny barbed hairs at each spine cluster — which lodge in lips, tongue, and throat if a pad or fruit is not cleaned.",
+          "danger": "Injury, not poison."
+        },
+        {
+          "name": "Christmas cactus / tasajillo",
+          "scientific": "Cylindropuntia leptocaulis",
+          "how": "Pencil-thin round stems, not flat pads; small red fruits. Not a food plant — the fruit is mostly glochids.",
+          "danger": "Not poisonous; not worth the injury."
+        }
+      ],
+      "caution": "Clean every glochid off before anything goes in your mouth.",
+      "photo": {
+        "file": "prickly-pear.jpg",
+        "title": "File:013 opunt engel.jpg",
+        "author": "Dick Culbert",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:013_opunt_engel.jpg"
+      }
+    },
+    {
+      "slug": "dewberry",
+      "common": "Southern dewberry",
+      "scientific": "Rubus trivialis",
+      "usda": "RUTR",
+      "family": "Rosaceae",
+      "free": true,
+      "season": [
+        "spring"
+      ],
+      "months": "April–May",
+      "where": "Trailing along the ground in pastures, ditches, fence lines, and field edges across the eastern two-thirds of Texas.",
+      "part": "Ripe black fruit; young leaves for tea.",
+      "prepare": "Eat ripe (fully black, pulls free easily) fruit raw, or cook for jam, cobbler, and syrup. Dry the young leaves for tea.",
+      "lookalikes": [
+        {
+          "name": "Blackberries and other Rubus",
+          "scientific": "Rubus argutus, R. flagellaris",
+          "how": "Any aggregate berry on a thorny cane in Texas (dewberry, blackberry) is a Rubus and is edible. Dewberry trails on the ground; blackberry canes arch upward.",
+          "danger": "None."
+        }
+      ],
+      "caution": "The thorny canes are the only hazard. Do not confuse with single, smooth berries on thornless plants — those are not Rubus and need their own identification.",
+      "photo": {
+        "file": "dewberry.jpg",
+        "title": "File:Flickr - ggallice - Southern Dewberry - Rubus trivialis.jpg",
+        "author": "Geoff Gallice from Gainesville, FL, USA",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_ggallice_-_Southern_Dewberry_-_Rubus_trivialis.jpg"
+      }
+    },
+    {
+      "slug": "mustang-grape",
+      "common": "Mustang grape",
+      "scientific": "Vitis mustangensis",
+      "usda": "VIMU2",
+      "family": "Vitaceae",
+      "free": true,
+      "season": [
+        "summer"
+      ],
+      "months": "July–August",
+      "where": "Climbing high in trees and over fences along creeks, bottomlands, and roadsides through Central and East Texas.",
+      "part": "Ripe purple-black fruit.",
+      "prepare": "The raw grape is harsh and the skin burns the lips and hands — most people wear gloves and cook the fruit down for juice, jelly, and wine, straining out skins and seeds. The leaf underside is white-woolly, which is the mark of this grape.",
+      "lookalikes": [
+        {
+          "name": "Common moonseed",
+          "scientific": "Menispermum canadense",
+          "how": "A vine with grape-like black fruit. The seed inside is a single flat crescent (a 'moon'); grape seeds are round and there are two to four of them. Moonseed has no tendrils and its leaf stem attaches inside the leaf edge rather than at the margin. Moonseed is recorded in Texas.",
+          "danger": "DEADLY. Cut a fruit open: a crescent seed means do not eat."
+        },
+        {
+          "name": "Carolina snailseed",
+          "scientific": "Cocculus carolinus",
+          "how": "A vine with bright red (never purple) berries in clusters, each holding a snail-shaped seed; no tendrils.",
+          "danger": "Poisonous."
+        },
+        {
+          "name": "Peppervine",
+          "scientific": "Ampelopsis arborea",
+          "how": "Has tendrils like a grape, but the leaves are divided into many small leaflets; berries go through pink and purple to black at the same time on one cluster.",
+          "danger": "Not deadly, but unpleasant and reported to irritate; not a food plant."
+        },
+        {
+          "name": "Virginia creeper",
+          "how": "Five leaflets like a hand; blue-black berries on red stems.",
+          "danger": "Poisonous berries.",
+          "scientific": "Parthenocissus quinquefolia"
+        }
+      ],
+      "caution": "Only a vine with tendrils, simple (undivided) leaves, and round seeds in the fruit is a grape. Check the seed before eating any grape-looking fruit.",
+      "photo": {
+        "file": "mustang-grape.jpg",
+        "title": "File:Vitis mustangensis.jpg",
+        "author": "Ddal",
+        "license": "CC BY-SA 3.0",
+        "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:Vitis_mustangensis.jpg"
+      }
+    },
+    {
+      "slug": "muscadine",
+      "common": "Muscadine grape",
+      "scientific": "Vitis rotundifolia",
+      "usda": "VIRO3",
+      "family": "Vitaceae",
+      "free": false,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "August–October",
+      "where": "East Texas piney woods and bottomlands, climbing trees and fences.",
+      "part": "Ripe fruit (bronze, purple, or black, large with thick skin).",
+      "prepare": "Eat raw — squeeze the pulp out of the thick skin — or cook for juice and jelly. Unlike mustang grape, the skin does not burn.",
+      "lookalikes": [
+        {
+          "name": "Common moonseed",
+          "scientific": "Menispermum canadense",
+          "how": "Crescent seed, no tendrils. See the mustang grape entry.",
+          "danger": "DEADLY."
+        },
+        {
+          "name": "Carolina snailseed",
+          "scientific": "Cocculus carolinus",
+          "how": "Red berries, snail-shaped seed, no tendrils.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "Same rule as every grape: tendrils, simple leaves, round seeds.",
+      "photo": {
+        "file": "muscadine.jpg",
+        "title": "File:Muscadines.Scuppernongs.jpg",
+        "author": "Dcoetzee at en.wikipedia",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Muscadines.Scuppernongs.jpg"
+      }
+    },
+    {
+      "slug": "pecan",
+      "common": "Pecan",
+      "scientific": "Carya illinoinensis",
+      "usda": "CAIL2",
+      "family": "Juglandaceae",
+      "free": true,
+      "season": [
+        "fall"
+      ],
+      "months": "October–December",
+      "where": "Native along rivers and creek bottoms across most of Texas; planted everywhere else. The state tree.",
+      "part": "Nut.",
+      "prepare": "Gather nuts after the green husk splits in four and drops them; crack and eat raw or roasted. Store in the shell, cool and dry.",
+      "lookalikes": [
+        {
+          "name": "Hickories",
+          "scientific": "Carya texana, Carya ovata",
+          "how": "Same family, also edible; the nuts are rounder and thicker-shelled, some bitter. See the hickory entry.",
+          "danger": "None."
+        },
+        {
+          "name": "Buckeye",
+          "scientific": "Aesculus spp.",
+          "how": "A smooth, shiny brown seed with a pale 'eye' inside a leathery capsule, on a tree with leaves spread like fingers from one point. Pecan has a thin oblong shell inside a four-part husk and feather-like compound leaves.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "A shiny round seed with a pale eye is a buckeye, not a nut.",
+      "photo": {
+        "file": "pecan.jpg",
+        "title": "File:Carya illinoinensis (pecan tree) 1 (24790682337).jpg",
+        "author": "James St. John",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Carya_illinoinensis_(pecan_tree)_1_(24790682337).jpg"
+      }
+    },
+    {
+      "slug": "hickory",
+      "common": "Hickory (black hickory, shagbark)",
+      "scientific": "Carya texana; Carya ovata",
+      "usda": "CATE9; CAOV2",
+      "family": "Juglandaceae",
+      "free": false,
+      "season": [
+        "fall"
+      ],
+      "months": "September–November",
+      "where": "East and Central Texas woods and uplands.",
+      "part": "Nut.",
+      "prepare": "Crack and eat the sweet kinds raw or roasted; bitter ones can be boiled and the fat skimmed as 'hickory milk' the old way. Shagbark (loose plated bark) is the sweetest.",
+      "lookalikes": [
+        {
+          "name": "Buckeye",
+          "scientific": "Aesculus spp.",
+          "how": "Shiny seed with a pale eye, leaves spread like fingers.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "Some hickories are too bitter to be worth it; bitterness is not poison in a true hickory, but a shiny seed with an 'eye' is a buckeye.",
+      "photo": {
+        "file": "hickory.jpg",
+        "title": "File:Black hickory in Bastrop County, Texas (cropped).jpg",
+        "author": "Kathy McAleese",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Black_hickory_in_Bastrop_County,_Texas_(cropped).jpg"
+      }
+    },
+    {
+      "slug": "black-walnut",
+      "common": "Black walnut",
+      "scientific": "Juglans nigra",
+      "usda": "JUNI",
+      "family": "Juglandaceae",
+      "free": false,
+      "season": [
+        "fall"
+      ],
+      "months": "September–October",
+      "where": "River bottoms and rich soil in East and Central Texas.",
+      "part": "Nut.",
+      "prepare": "Remove the green-to-black husk (it stains everything), dry the nuts for several weeks, then crack with a hammer. Eat raw or baked.",
+      "lookalikes": [
+        {
+          "name": "Buckeye",
+          "scientific": "Aesculus spp.",
+          "how": "See pecan.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "The husk stains skin for weeks; wear gloves.",
+      "photo": {
+        "file": "black-walnut.jpg",
+        "title": "File:Black Walnut (Juglans nigra) - Guelph, Ontario 2020-07-29.jpg",
+        "author": "Ryan Hodnett",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Black_Walnut_(Juglans_nigra)_-_Guelph,_Ontario_2020-07-29.jpg"
+      }
+    },
+    {
+      "slug": "mesquite",
+      "common": "Honey mesquite",
+      "scientific": "Prosopis glandulosa",
+      "usda": "PRGL2",
+      "family": "Fabaceae",
+      "free": true,
+      "season": [
+        "summer"
+      ],
+      "months": "June–September",
+      "where": "Brush country, pastures, and dry plains over most of Texas west of the piney woods.",
+      "part": "Ripe pods (tan to straw-colored, dry, sweet to chew).",
+      "prepare": "Chew a ripe pod for the sweet pulp, or dry the pods and grind pods and all into flour, sifting out the hard seeds; the flour sweetens bread and drinks. Boil pods for a syrup.",
+      "lookalikes": [
+        {
+          "name": "Texas mountain laurel (mescal bean)",
+          "scientific": "Sophora secundiflora",
+          "how": "A shrub-tree with glossy evergreen leaves, purple spring flowers that smell like grape soda, and a hard woody pod holding bright red-orange seeds. Mesquite has feathery leaves, thorns, yellow-green catkin flowers, and a thin flat bean pod with brown seeds.",
+          "danger": "DEADLY — the red seeds."
+        },
+        {
+          "name": "Other bean pods",
+          "how": "Many legumes in Texas have pods. Only identify mesquite by the whole tree: thorns, twice-divided feathery leaves, and the long sweet bean pod.",
+          "danger": "Varies; several are poisonous."
+        }
+      ],
+      "caution": "Mesquite pods are sweet and brown-seeded. Any pod with bright red seeds goes on the ground, not in a mouth.",
+      "photo": {
+        "file": "mesquite.jpg",
+        "title": "File:Honey Mesquite - Flickr - treegrow.jpg",
+        "author": "Katja Schulz from Washington, D. C., USA",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Honey_Mesquite_-_Flickr_-_treegrow.jpg"
+      }
+    },
+    {
+      "slug": "texas-persimmon",
+      "common": "Texas persimmon",
+      "scientific": "Diospyros texana",
+      "usda": "DITE3",
+      "family": "Ebenaceae",
+      "free": true,
+      "season": [
+        "summer"
+      ],
+      "months": "July–September",
+      "where": "Hill Country, South and West Texas on limestone and dry hills; smooth gray peeling bark like a crape myrtle.",
+      "part": "Ripe black fruit only.",
+      "prepare": "Eat fully black, soft fruit raw (it stains purple), or cook into jam and pudding. Green or firm fruit is so astringent it is inedible.",
+      "lookalikes": [
+        {
+          "name": "Common persimmon",
+          "scientific": "Diospyros virginiana",
+          "how": "Larger orange fruit, East Texas; also edible when soft-ripe. See its entry.",
+          "danger": "None."
+        },
+        {
+          "name": "Black nightshade berries",
+          "scientific": "Solanum americanum",
+          "how": "Small shiny black berries in little clusters on a soft weedy herb, not on a tree with hard gray bark.",
+          "danger": "Treat as poisonous."
+        }
+      ],
+      "caution": "Tree, gray smooth bark, fruit with a four-part leafy cap on top — that is a persimmon. A small black berry on a weed is not.",
+      "photo": {
+        "file": "texas-persimmon.jpg",
+        "title": "File:Texas persimmon (38137694922).jpg",
+        "author": "smallcurio from Austin, TX",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Texas_persimmon_(38137694922).jpg"
+      }
+    },
+    {
+      "slug": "common-persimmon",
+      "common": "Common persimmon",
+      "scientific": "Diospyros virginiana",
+      "usda": "DIVI5",
+      "family": "Ebenaceae",
+      "free": false,
+      "season": [
+        "fall"
+      ],
+      "months": "October–December, after frost softens it",
+      "where": "East Texas woods, old fields, and fencerows.",
+      "part": "Soft-ripe orange fruit.",
+      "prepare": "Eat only when wrinkled-soft and sweet; unripe fruit puckers the mouth shut. Cook into pudding, bread, or dry the pulp.",
+      "lookalikes": [
+        {
+          "name": "Chinaberry",
+          "scientific": "Melia azedarach",
+          "how": "Yellow marble-sized fruit hanging in clusters on a tree with lacy twice-divided leaves; persimmon has simple oval leaves and a leafy four-part cap on the fruit. Chinaberry is common across Texas.",
+          "danger": "POISONOUS — the fruit."
+        }
+      ],
+      "caution": "Yellow fruit in hanging clusters on a lacy-leaved tree is chinaberry, not persimmon.",
+      "photo": {
+        "file": "common-persimmon.jpg",
+        "title": "File:Common persimmon (40146979460).jpg",
+        "author": "Dan Keck from Ohio",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Common_persimmon_(40146979460).jpg"
+      }
+    },
+    {
+      "slug": "mexican-plum",
+      "common": "Mexican plum (and chickasaw, hog plum)",
+      "scientific": "Prunus mexicana; P. angustifolia; P. umbellata",
+      "usda": "PRME; PRAN3; PRUM",
+      "family": "Rosaceae",
+      "free": true,
+      "season": [
+        "summer"
+      ],
+      "months": "June–August",
+      "where": "Thickets, fencerows, creek edges across East and Central Texas; white blossoms early spring before the leaves.",
+      "part": "Ripe fruit.",
+      "prepare": "Eat ripe fruit raw, or cook for jam and jelly. Spit out the pit.",
+      "lookalikes": [
+        {
+          "name": "Plum pits and all stone-fruit seeds",
+          "how": "The kernel inside the pit of every wild plum and cherry carries cyanide compounds.",
+          "danger": "Do not crack and eat the pits."
+        },
+        {
+          "name": "Chinaberry",
+          "scientific": "Melia azedarach",
+          "how": "Yellow fruit in clusters on a lacy-leaved tree; plums are on a thorny-twigged shrub-tree with simple toothed leaves.",
+          "danger": "POISONOUS."
+        }
+      ],
+      "caution": "Fruit, yes; pits, never.",
+      "photo": {
+        "file": "mexican-plum.jpg",
+        "title": "File:Mexican Plum Palmetto State Park Texas 2023.jpg",
+        "author": "Larry D. Moore",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Mexican_Plum_Palmetto_State_Park_Texas_2023.jpg"
+      }
+    },
+    {
+      "slug": "agarita",
+      "common": "Agarita (algerita)",
+      "scientific": "Mahonia trifoliolata",
+      "usda": "MATR3",
+      "family": "Berberidaceae",
+      "free": true,
+      "season": [
+        "spring"
+      ],
+      "months": "April–June",
+      "where": "Hill Country, Edwards Plateau, West and South Texas on rocky ground; a stiff gray-green holly-like shrub with three-part spiny leaves and yellow spring flowers.",
+      "part": "Ripe red berries.",
+      "prepare": "Spread a sheet under the bush and beat the branches; the tart berries make jelly, syrup, and wine. Eat a few raw.",
+      "lookalikes": [
+        {
+          "name": "Nothing poisonous shares its leaf",
+          "how": "The three-leaflet, holly-spined, blue-gray leaf and bright yellow inner wood are unmistakable.",
+          "danger": "—"
+        }
+      ],
+      "caution": "The leaves draw blood; gloves.",
+      "photo": {
+        "file": "agarita.jpg",
+        "title": "File:Berberis trifoliolata fruit.jpg",
+        "author": "Stan Shebs",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Berberis_trifoliolata_fruit.jpg"
+      }
+    },
+    {
+      "slug": "purslane",
+      "common": "Purslane",
+      "scientific": "Portulaca oleracea",
+      "usda": "POOL",
+      "family": "Portulacaceae",
+      "free": true,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "May–October",
+      "where": "Gardens, sidewalks, bare ground, and fields across all of Texas; a mat of thick reddish stems and fat paddle-shaped leaves.",
+      "part": "Leaves and stems.",
+      "prepare": "Eat raw in salad (lemony, crisp) or cook like spinach; it thickens soups.",
+      "lookalikes": [
+        {
+          "name": "Spotted spurge / prostrate spurge",
+          "scientific": "Euphorbia maculata and kin",
+          "how": "Grows in the same flat mat on the same bare ground. Break a stem: spurge bleeds a milky white sap; purslane's sap is clear. Spurge leaves are thin and often have a dark spot; purslane leaves are thick and succulent.",
+          "danger": "Poisonous and a skin irritant."
+        }
+      ],
+      "caution": "Milky sap means spurge. Clear sap and fat leaves means purslane.",
+      "photo": {
+        "file": "purslane.jpg",
+        "title": "File:20150606Portulaca oleracea1.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20150606Portulaca_oleracea1.jpg"
+      }
+    },
+    {
+      "slug": "lambs-quarters",
+      "common": "Lamb's quarters (goosefoot)",
+      "scientific": "Chenopodium album",
+      "usda": "CHAL7",
+      "family": "Amaranthaceae",
+      "free": true,
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "months": "April–September",
+      "where": "Disturbed ground, gardens, field edges statewide; the young leaves have a white mealy coating underneath that beads water.",
+      "part": "Young leaves and tips; seeds.",
+      "prepare": "Cook like spinach (it is a wild spinach); the seeds can be winnowed and cooked as grain.",
+      "lookalikes": [
+        {
+          "name": "Black nightshade",
+          "scientific": "Solanum americanum",
+          "how": "Also a weedy herb of the same places, but with small white star flowers and shiny black berries; lamb's quarters has tiny green flower clusters, no berries, and the mealy white underside.",
+          "danger": "Treat as poisonous."
+        }
+      ],
+      "caution": "Mealy white underside and no berries. Take only young plants; old ones concentrate nitrates from fertilized ground.",
+      "photo": {
+        "file": "lambs-quarters.jpg",
+        "title": "File:'Jhilimili Xaak' or White goosefoot or chenopodium album.jpg",
+        "author": "AditiB08",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:%27Jhilimili_Xaak%27_or_White_goosefoot_or_chenopodium_album.jpg"
+      }
+    },
+    {
+      "slug": "amaranth",
+      "common": "Amaranth (pigweed, carelessweed)",
+      "scientific": "Amaranthus retroflexus; A. palmeri",
+      "usda": "AMRE; AMPA",
+      "family": "Amaranthaceae",
+      "free": false,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "May–October",
+      "where": "Fields, pastures, roadsides, and farm edges statewide.",
+      "part": "Young leaves; seeds.",
+      "prepare": "Cook young leaves as greens. Strip the dry seed heads, winnow, and cook the seed as porridge or pop it.",
+      "lookalikes": [
+        {
+          "name": "Black nightshade",
+          "scientific": "Solanum americanum",
+          "how": "Berries and white star flowers; amaranth has dense green or reddish bristly seed spikes.",
+          "danger": "Treat as poisonous."
+        }
+      ],
+      "caution": "Young leaves only, and not from heavily fertilized or feedlot ground — the plant stores nitrates.",
+      "photo": {
+        "file": "amaranth.jpg",
+        "title": "File:Amaranthus retroflexus bgiu.jpg",
+        "author": "No machine-readable author provided. Bogdan assumed (based on copyright claims).",
+        "license": "CC BY-SA 3.0",
+        "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:Amaranthus_retroflexus_bgiu.jpg"
+      }
+    },
+    {
+      "slug": "dandelion",
+      "common": "Dandelion",
+      "scientific": "Taraxacum officinale",
+      "usda": "TAOF",
+      "family": "Asteraceae",
+      "free": true,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "February–May, again in fall",
+      "where": "Lawns, pastures, roadsides statewide.",
+      "part": "Leaves, flowers, root.",
+      "prepare": "Young leaves raw or cooked (bitter; boil in a change of water); flowers for fritters and wine; roasted ground root for a coffee-like drink.",
+      "lookalikes": [
+        {
+          "name": "Cat's ear, Texas dandelion",
+          "scientific": "Hypochaeris radicata; Pyrrhopappus carolinianus",
+          "how": "Branched or hairy flower stems instead of the dandelion's single hollow smooth stalk. Both are edible the same way.",
+          "danger": "None."
+        }
+      ],
+      "caution": "Nothing poisonous looks like a dandelion in Texas. The only hazard is lawn chemicals — pick from ground nobody sprays.",
+      "photo": {
+        "file": "dandelion.jpg",
+        "title": "File:2014-12-25 16 35 32 Dandelion blossom along Terrace Boulevard in Ewing, New Jersey.JPG",
+        "author": "Famartin",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2014-12-25_16_35_32_Dandelion_blossom_along_Terrace_Boulevard_in_Ewing,_New_Jersey.JPG"
+      }
+    },
+    {
+      "slug": "wood-sorrel",
+      "common": "Wood sorrel (sour clover)",
+      "scientific": "Oxalis stricta; O. dillenii",
+      "usda": "OXST; OXDI2",
+      "family": "Oxalidaceae",
+      "free": true,
+      "season": [
+        "spring",
+        "summer",
+        "fall"
+      ],
+      "months": "March–November",
+      "where": "Lawns, shade, woods edges statewide; heart-shaped three-part leaves and small yellow flowers.",
+      "part": "Leaves, flowers, green seed pods.",
+      "prepare": "Eat raw as a sour nibble or in salad; steep for a lemonade-like drink.",
+      "lookalikes": [
+        {
+          "name": "Clover",
+          "scientific": "Trifolium spp.",
+          "how": "Clover leaflets are oval, wood sorrel's are heart-shaped and fold at night. Clover is harmless.",
+          "danger": "None."
+        }
+      ],
+      "caution": "Oxalic acid — a seasoning, not a meal, especially for anyone with kidney stones.",
+      "photo": {
+        "file": "wood-sorrel.jpg",
+        "title": "File:2016-04-20 12 11 57 Common wood sorrel blooming along Tranquility Court in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+        "author": "Famartin",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2016-04-20_12_11_57_Common_wood_sorrel_blooming_along_Tranquility_Court_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg"
+      }
+    },
+    {
+      "slug": "cattail",
+      "common": "Cattail",
+      "scientific": "Typha domingensis; T. latifolia",
+      "usda": "TYDO; TYLA",
+      "family": "Typhaceae",
+      "free": true,
+      "season": [
+        "spring",
+        "summer",
+        "fall",
+        "winter"
+      ],
+      "months": "Shoots spring; pollen June; green flower spikes early summer; roots fall–winter",
+      "where": "Ditches, stock tanks, pond and creek edges across all of Texas.",
+      "part": "Young shoots, green flower spike, pollen, root starch.",
+      "prepare": "Pull spring shoots and eat the white core raw or cooked; boil the green (not yet brown) flower spike and eat like corn on the cob; shake pollen into a bag for flour; crush and wash the root for starch. Only harvest from water you would not mind drinking.",
+      "lookalikes": [
+        {
+          "name": "Yellow flag iris",
+          "scientific": "Iris pseudacorus",
+          "how": "Grows in the same wet ground with similar sword leaves. Iris leaves grow in a flat fan from the base and are flattened; cattail leaves are rounded on the back, spongy, and the plant carries the brown sausage spike in season. Harvest shoots only from a stand where you can see last year's cattail heads.",
+          "danger": "POISONOUS."
+        },
+        {
+          "name": "Water hemlock (same wet ground)",
+          "scientific": "Cicuta maculata",
+          "how": "Not a look-alike of the cattail itself, but it grows beside it. Hollow purple-streaked stems, fern-like divided leaves, white umbrella flowers. See the elderberry entry.",
+          "danger": "DEADLY. Do not pull unknown roots from the mud near cattails."
+        }
+      ],
+      "caution": "Only take shoots from a stand with old cattail heads visible, and pull from the plant you can trace to the stalk.",
+      "photo": {
+        "file": "cattail.jpg",
+        "title": "File:Southern cattail, Typha domingensis (15657392893).jpg",
+        "author": "Jim Morefield from Nevada, USA",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Southern_cattail,_Typha_domingensis_(15657392893).jpg"
+      }
+    },
+    {
+      "slug": "hackberry",
+      "common": "Sugar hackberry (sugarberry)",
+      "scientific": "Celtis laevigata",
+      "usda": "CELA",
+      "family": "Cannabaceae",
+      "free": true,
+      "season": [
+        "fall",
+        "winter"
+      ],
+      "months": "September–January, hanging on through winter",
+      "where": "One of the commonest trees in Texas — creek bottoms, fencerows, city lots; warty gray bark.",
+      "part": "Small orange-red to purple berries (thin sweet skin over a large seed).",
+      "prepare": "Eat raw straight from the tree, seed and all, or crush berries and seeds together into a paste and dry it into cakes the old way.",
+      "lookalikes": [
+        {
+          "name": "Nothing dangerous shares its warty bark",
+          "how": "The corky warts and ridges on the gray trunk mark it.",
+          "danger": "—"
+        }
+      ],
+      "caution": "The seed is hard; chew carefully or crush.",
+      "photo": {
+        "file": "hackberry.jpg",
+        "title": "File:Celtis laevigata fruit.jpg",
+        "author": "Brucewinter",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Celtis_laevigata_fruit.jpg"
+      }
+    },
+    {
+      "slug": "mulberry",
+      "common": "Red mulberry",
+      "scientific": "Morus rubra",
+      "usda": "MORU2",
+      "family": "Moraceae",
+      "free": true,
+      "season": [
+        "spring"
+      ],
+      "months": "April–June",
+      "where": "Bottomlands, fencerows, and yards across East and Central Texas.",
+      "part": "Fully ripe dark fruit.",
+      "prepare": "Eat ripe (dark purple-black, soft) fruit raw or cook into pie and jam. Spread a sheet and shake the tree.",
+      "lookalikes": [
+        {
+          "name": "Unripe mulberry and the milky sap",
+          "how": "White or red unripe fruit, leaves, and sap of the mulberry itself can upset the stomach.",
+          "danger": "Mild; eat only ripe fruit."
+        }
+      ],
+      "caution": "Ripe only.",
+      "photo": {
+        "file": "mulberry.jpg",
+        "title": "File:MorusRubra10.jpg",
+        "author": "Douglas Goldman",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:MorusRubra10.jpg"
+      }
+    },
+    {
+      "slug": "elderberry",
+      "common": "American elderberry",
+      "scientific": "Sambucus nigra ssp. canadensis",
+      "usda": "SANIC4",
+      "family": "Adoxaceae",
+      "free": true,
+      "season": [
+        "summer"
+      ],
+      "months": "Flowers May–June; berries July–August",
+      "where": "Ditches, creek banks, fencerows, and wet ground across East and Central Texas; a woody shrub with pithy stems and flat-topped white flower heads.",
+      "part": "Flowers; ripe purple-black berries, COOKED.",
+      "prepare": "Strip ripe berries from the stems and cook them — juice, jelly, syrup, wine. Dip the flower heads in batter for fritters or dry for tea. Raw berries, and all stems, leaves, and unripe berries, cause sickness.",
+      "lookalikes": [
+        {
+          "name": "Spotted water hemlock",
+          "scientific": "Cicuta maculata",
+          "how": "Also wet ground, also white flower umbrellas at the same time. Water hemlock is a soft green herb with purple-streaked hollow stems and leaves divided like a fern, and its roots are chambered inside; elderberry is a woody shrub with bark, opposite compound leaves of 5–11 toothed leaflets, and white pith in the twigs. Never gather a white-flowered plant by its flowers alone.",
+          "danger": "DEADLY — the most poisonous plant in Texas. A mouthful of root can kill."
+        },
+        {
+          "name": "Poison hemlock",
+          "scientific": "Conium maculatum",
+          "how": "Tall herb with purple-blotched smooth stems, fern leaves, musty smell.",
+          "danger": "DEADLY."
+        },
+        {
+          "name": "Pokeweed berries",
+          "scientific": "Phytolacca americana",
+          "how": "Purple-black berries in a hanging column on a smooth reddish stalk, not a flat cluster on a woody shrub.",
+          "danger": "POISONOUS."
+        }
+      ],
+      "caution": "Woody shrub with bark and pith — elder. Soft herb with hollow streaked stems — hemlock. Berries cooked, never raw.",
+      "photo": {
+        "file": "elderberry.jpg",
+        "title": "File:American elderberry (Sambucus canadensis) (37257156270).jpg",
+        "author": "Rison Thumboor from Thrissur, India",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:American_elderberry_(Sambucus_canadensis)_(37257156270).jpg"
+      }
+    },
+    {
+      "slug": "chile-pequin",
+      "common": "Chile pequín (chiltepín, bird pepper)",
+      "scientific": "Capsicum annuum var. glabriusculum",
+      "usda": "CAANG",
+      "family": "Solanaceae",
+      "free": true,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "August–November",
+      "where": "Under trees and along fencelines in South and Central Texas; a small shrub with tiny oval red peppers pointing up.",
+      "part": "Ripe red peppers.",
+      "prepare": "Use fresh, dried, or pickled as a very hot pepper — the state's native chile.",
+      "lookalikes": [
+        {
+          "name": "Nightshade berries",
+          "scientific": "Solanum spp.",
+          "how": "Other members of the same family carry small red or black berries. A pequín is hollow inside with flat pale seeds and burns the tongue immediately; a nightshade berry is pulpy with no heat. Do not test unknown red berries by tasting.",
+          "danger": "Several nightshades are poisonous."
+        }
+      ],
+      "caution": "Identify by the plant — a Capsicum pepper flower is a white star with a pepper-shaped fruit that is hollow inside.",
+      "photo": {
+        "file": "chile-pequin.jpg",
+        "title": "File:20171014 - Capsicum annuum var. glabriusculum - 1.jpg",
+        "author": "Zinnmann",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:20171014_-_Capsicum_annuum_var._glabriusculum_-_1.jpg"
+      }
+    },
+    {
+      "slug": "wild-onion",
+      "common": "Wild onion and wild garlic",
+      "scientific": "Allium canadense; A. drummondii",
+      "usda": "ALCA3; ALDR",
+      "family": "Amaryllidaceae",
+      "free": true,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "February–May",
+      "where": "Lawns, pastures, roadsides, prairies statewide.",
+      "part": "Bulb, leaves, flowers.",
+      "prepare": "Use like green onion or garlic, raw or cooked. The plant must smell strongly of onion when crushed.",
+      "lookalikes": [
+        {
+          "name": "Crow poison (false garlic)",
+          "scientific": "Nothoscordum bivalve",
+          "how": "Same size, same grassy leaves, same white starry flowers, same places, same time of year — and no onion smell at all. Common across Texas.",
+          "danger": "POISONOUS."
+        },
+        {
+          "name": "Nuttall's death camas",
+          "scientific": "Toxicoscordion (Zigadenus) nuttallii",
+          "how": "A grass-leaved bulb plant with a spike of cream flowers, no onion smell. Prairies of North and Central Texas.",
+          "danger": "DEADLY."
+        },
+        {
+          "name": "Rain lily and other bulbs",
+          "how": "Any bulb with no onion smell.",
+          "danger": "Treat as poisonous."
+        }
+      ],
+      "caution": "No onion smell, no eating. Crush and smell every single plant, not just one in the patch.",
+      "photo": {
+        "file": "wild-onion.jpg",
+        "title": "File:2022-05-28 18 04 32 Meadow Garlic and Virginia Creeper in a back yard along Terrace Boulevard in the Parkway Village section of Ewing Township, Mercer County, New Jersey.jpg",
+        "author": "Famartin",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2022-05-28_18_04_32_Meadow_Garlic_and_Virginia_Creeper_in_a_back_yard_along_Terrace_Boulevard_in_the_Parkway_Village_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg"
+      }
+    },
+    {
+      "slug": "chickweed",
+      "common": "Chickweed",
+      "scientific": "Stellaria media",
+      "usda": "STME2",
+      "family": "Caryophyllaceae",
+      "free": true,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "December–April",
+      "where": "Lawns, gardens, shady damp ground across East and Central Texas; a tangled low mat with tiny white flowers that look like ten petals (five, each split).",
+      "part": "Whole tender tops.",
+      "prepare": "Raw in salad or cooked briefly; mild, like lettuce.",
+      "lookalikes": [
+        {
+          "name": "Scarlet pimpernel",
+          "scientific": "Anagallis (Lysimachia) arvensis",
+          "how": "Same mat habit and paired leaves. Pimpernel has a square stem and orange-red (sometimes blue) flowers; chickweed has a round stem with a single line of hairs running up one side, and white flowers.",
+          "danger": "Poisonous."
+        },
+        {
+          "name": "Spurges",
+          "scientific": "Euphorbia spp.",
+          "how": "Milky sap; chickweed has none.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "Round stem with one line of hairs, white flowers, no milky sap.",
+      "photo": {
+        "file": "chickweed.jpg",
+        "title": "File:20130105Vogelmiere Altlussheim1.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20130105Vogelmiere_Altlussheim1.jpg"
+      }
+    },
+    {
+      "slug": "henbit",
+      "common": "Henbit",
+      "scientific": "Lamium amplexicaule",
+      "usda": "LAAM",
+      "family": "Lamiaceae",
+      "free": false,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "January–April",
+      "where": "Lawns, fields, and bare ground statewide; the purple haze over winter fields.",
+      "part": "Leaves, stems, flowers.",
+      "prepare": "Raw or cooked; mild, slightly sweet. A mint-family plant with a square stem and scalloped leaves clasping the stem.",
+      "lookalikes": [
+        {
+          "name": "Purple dead-nettle and ground ivy",
+          "how": "Same family, also edible.",
+          "danger": "None."
+        }
+      ],
+      "caution": "No poisonous twin in Texas; square stem and clasping scalloped leaves.",
+      "photo": {
+        "file": "henbit.jpg",
+        "title": "File:20190225Lamium amplexicaule1.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20190225Lamium_amplexicaule1.jpg"
+      }
+    },
+    {
+      "slug": "cleavers",
+      "common": "Cleavers (bedstraw, sticky-willy)",
+      "scientific": "Galium aparine",
+      "usda": "GAAP2",
+      "family": "Rubiaceae",
+      "free": false,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "February–May",
+      "where": "Shady fencerows, woods edges, and gardens across East and Central Texas; clings to clothes with tiny hooks.",
+      "part": "Young shoots; seeds.",
+      "prepare": "Cook young shoots as a green (too bristly raw); the dried roasted seeds are a coffee substitute.",
+      "lookalikes": [
+        {
+          "name": "Other bedstraws",
+          "how": "Also edible.",
+          "danger": "None."
+        }
+      ],
+      "caution": "None beyond the bristles.",
+      "photo": {
+        "file": "cleavers.jpg",
+        "title": "File:20180216Galium aparine2.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20180216Galium_aparine2.jpg"
+      }
+    },
+    {
+      "slug": "sow-thistle",
+      "common": "Sow thistle",
+      "scientific": "Sonchus oleraceus; S. asper",
+      "usda": "SOOL; SOAS",
+      "family": "Asteraceae",
+      "free": false,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "January–May",
+      "where": "Gardens, roadsides, and waste ground statewide; dandelion-like yellow flowers on a tall hollow stalk with milky sap.",
+      "part": "Young leaves.",
+      "prepare": "Trim off the prickly edges and cook as greens, or use very young leaves raw.",
+      "lookalikes": [
+        {
+          "name": "Prickly lettuce, wild lettuce",
+          "scientific": "Lactuca serriola; L. canadensis",
+          "how": "Same family, same milky sap; edible when young, bitter when old.",
+          "danger": "None."
+        }
+      ],
+      "caution": "This is the one milky-sap plant family on this page that is safe — the lettuce tribe. Still: identify by the dandelion-type flower and the lettuce leaf, not by sap alone.",
+      "photo": {
+        "file": "sow-thistle.jpg",
+        "title": "File:20190608Sonchus oleraceus1.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20190608Sonchus_oleraceus1.jpg"
+      }
+    },
+    {
+      "slug": "plantain",
+      "common": "Plantain (broadleaf and buckhorn)",
+      "scientific": "Plantago major; P. lanceolata",
+      "usda": "PLMA2; PLLA",
+      "family": "Plantaginaceae",
+      "free": false,
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "months": "March–August",
+      "where": "Lawns, paths, packed ground statewide; a flat rosette with parallel-veined leaves and a thin seed spike.",
+      "part": "Young leaves; seeds.",
+      "prepare": "Young leaves cooked (stringy raw); seeds parched and eaten or ground. The crushed leaf is the old field dressing for stings.",
+      "lookalikes": [
+        {
+          "name": "None poisonous in Texas",
+          "how": "The parallel veins that pull out like strings when the leaf is torn mark it.",
+          "danger": "—"
+        }
+      ],
+      "caution": "Not the banana-like cooking plantain; this is the lawn weed.",
+      "photo": {
+        "file": "plantain.jpg",
+        "title": "File:20170513Plantago major1.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20170513Plantago_major1.jpg"
+      }
+    },
+    {
+      "slug": "yaupon",
+      "common": "Yaupon holly",
+      "scientific": "Ilex vomitoria",
+      "usda": "ILVO",
+      "family": "Aquifoliaceae",
+      "free": true,
+      "season": [
+        "spring",
+        "summer",
+        "fall",
+        "winter"
+      ],
+      "months": "Leaves year-round",
+      "where": "East and coastal Texas woods and thickets; small oval leaves with rounded teeth, red berries in winter.",
+      "part": "LEAVES ONLY, dried and roasted, for tea. The only native caffeine plant in North America.",
+      "prepare": "Dry or lightly roast the leaves and steep like tea. The berries are not food.",
+      "lookalikes": [
+        {
+          "name": "Other hollies",
+          "scientific": "Ilex spp.",
+          "how": "Several hollies in Texas have red berries. The berries of every holly, yaupon included, cause vomiting; none of the other hollies make the tea.",
+          "danger": "Berries poisonous; leaves of other hollies useless."
+        },
+        {
+          "name": "Privet",
+          "scientific": "Ligustrum spp.",
+          "how": "Opposite leaves (yaupon's are alternate), black berries.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "Leaves for tea; never the berries.",
+      "photo": {
+        "file": "yaupon.jpg",
+        "title": "File:Ilex vomitoria (2020).jpg",
+        "author": "sonnia hill",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ilex_vomitoria_(2020).jpg"
+      }
+    },
+    {
+      "slug": "sumac",
+      "common": "Sumac (smooth, flameleaf, prairie)",
+      "scientific": "Rhus glabra; R. copallinum; R. lanceolata",
+      "usda": "RHGL; RHCO; RHLA3",
+      "family": "Anacardiaceae",
+      "free": true,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "August–October",
+      "where": "Fencerows, roadsides, and woods edges statewide; upright RED fuzzy berry cones on a shrub that turns scarlet in fall.",
+      "part": "Ripe red berry clusters.",
+      "prepare": "Soak the red clusters in cold water, strain through cloth, and sweeten — 'sumac-ade.' Do not boil (it turns bitter).",
+      "lookalikes": [
+        {
+          "name": "Poison sumac",
+          "scientific": "Toxicodendron vernix",
+          "how": "Drooping clusters of WHITE or gray-green berries, smooth-edged leaflets with red leaf stems, growing only in East Texas swamps and bogs. Edible sumacs have upright RED fuzzy berry cones and grow on dry ground.",
+          "danger": "Severe rash on contact; poisonous."
+        },
+        {
+          "name": "Poison ivy and poison oak",
+          "scientific": "Toxicodendron spp.",
+          "how": "Three leaflets, white berries.",
+          "danger": "Rash."
+        }
+      ],
+      "caution": "Red berries up, safe. White berries hanging down, poison. Anyone allergic to cashew or mango should go carefully with sumac — same family.",
+      "photo": {
+        "file": "sumac.jpg",
+        "title": "File:Smooth Sumac (2996302655).jpg",
+        "author": "Homer Edward Price",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Smooth_Sumac_(2996302655).jpg"
+      }
+    },
+    {
+      "slug": "mayhaw",
+      "common": "Mayhaw (riverflat hawthorn)",
+      "scientific": "Crataegus opaca",
+      "usda": "CROP",
+      "family": "Rosaceae",
+      "free": false,
+      "season": [
+        "spring"
+      ],
+      "months": "April–May",
+      "where": "East Texas river bottoms, sloughs, and wet woods; a thorny small tree with red apple-like fruit the size of a cranberry.",
+      "part": "Ripe fruit.",
+      "prepare": "The famous jelly; too tart raw for most. Cook, strain, and sweeten.",
+      "lookalikes": [
+        {
+          "name": "Other hawthorns",
+          "scientific": "Crataegus spp.",
+          "how": "All hawthorn fruit is edible, with varying flavor; seeds, like apple seeds, should not be chewed in quantity.",
+          "danger": "Seeds only."
+        }
+      ],
+      "caution": "Spit the seeds.",
+      "photo": {
+        "file": "mayhaw.jpg",
+        "title": "File:Crataegus aestivalis NRCS-1.jpg",
+        "author": "Robert H. Mohlenbrock. USDA SCS. 1991. Southern wetland flora: Field office guide to plant species. South National Technical Center, Fort Worth. Courtesy of USDA NRCS Wetland Science Institute.",
+        "license": "Public domain",
+        "license_url": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Crataegus_aestivalis_NRCS-1.jpg"
+      }
+    },
+    {
+      "slug": "maypop",
+      "common": "Maypop (purple passionflower)",
+      "scientific": "Passiflora incarnata",
+      "usda": "PAIN6",
+      "family": "Passifloraceae",
+      "free": false,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "August–October",
+      "where": "Fencerows, pastures, and roadsides across East and Central Texas; a vine with a wild purple fringed flower and egg-sized green-yellow fruit.",
+      "part": "Ripe (yellow, wrinkling) fruit.",
+      "prepare": "Eat the sweet-sour pulp around the seeds raw, or strain for juice and jelly.",
+      "lookalikes": [
+        {
+          "name": "Green unripe maypop",
+          "how": "Hard green fruit is not ready.",
+          "danger": "Unpleasant, not dangerous."
+        }
+      ],
+      "caution": "The flower is unmistakable; find the fruit on a vine you have seen flower.",
+      "photo": {
+        "file": "maypop.jpg",
+        "title": "File:Flickr - ggallice - Purple Passionflower.jpg",
+        "author": "Geoff Gallice from Gainesville, FL, USA",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_ggallice_-_Purple_Passionflower.jpg"
+      }
+    },
+    {
+      "slug": "redbud",
+      "common": "Eastern redbud",
+      "scientific": "Cercis canadensis",
+      "usda": "CECA4",
+      "family": "Fabaceae",
+      "free": false,
+      "season": [
+        "spring"
+      ],
+      "months": "Flowers March; young pods April–May",
+      "where": "Woods edges and yards across East and Central Texas; pink-purple flowers on bare branches, heart-shaped leaves.",
+      "part": "Flowers; young tender pods.",
+      "prepare": "Flowers raw in salad or in fritters; young flat pods cooked like snow peas while still tender.",
+      "lookalikes": [
+        {
+          "name": "Texas mountain laurel",
+          "scientific": "Sophora secundiflora",
+          "how": "Also purple spring flowers, but evergreen glossy compound leaves and woody pods with red seeds. Redbud drops its heart-shaped simple leaves in winter and flowers on bare wood.",
+          "danger": "DEADLY seeds."
+        }
+      ],
+      "caution": "Heart-shaped leaves and thin flat pods — redbud. Woody pod, red seeds — leave it.",
+      "photo": {
+        "file": "redbud.jpg",
+        "title": "File:Eastern redbud (25139673094).jpg",
+        "author": "Melissa McMasters from Memphis, TN, United States",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Eastern_redbud_(25139673094).jpg"
+      }
+    },
+    {
+      "slug": "acorns",
+      "common": "Acorns (live oak, post oak, bur oak)",
+      "scientific": "Quercus virginiana; Q. stellata; Q. macrocarpa",
+      "usda": "QUVI; QUMA13; QUMA2",
+      "family": "Fagaceae",
+      "free": true,
+      "season": [
+        "fall"
+      ],
+      "months": "September–November",
+      "where": "Every part of Texas has oaks.",
+      "part": "Nut, after leaching.",
+      "prepare": "Shell, grind, and soak or boil the meal in changes of water until the bitterness (tannin) is gone — white oaks (live, post, bur) need less, red oaks need more. Dry the meal and use as flour. Raw acorns will not poison you but will make you sick in quantity.",
+      "lookalikes": [
+        {
+          "name": "Buckeye",
+          "scientific": "Aesculus spp.",
+          "how": "A shiny brown seed with a pale eye in a leathery husk; an acorn sits in a scaly cup.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "Leach until a chewed pinch of the meal has no pucker.",
+      "photo": {
+        "file": "acorns.jpg",
+        "title": "File:Post Oak (30361656693).jpg",
+        "author": "Katja Schulz from Washington, D. C., USA",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Post_Oak_(30361656693).jpg"
+      }
+    },
+    {
+      "slug": "ground-cherry",
+      "common": "Ground cherry",
+      "scientific": "Physalis cinerascens and other Physalis",
+      "usda": "PHCI4",
+      "family": "Solanaceae",
+      "free": false,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "July–October",
+      "where": "Fields, roadsides, and sandy ground statewide; a low plant whose fruit hangs inside a papery lantern husk.",
+      "part": "Fully ripe fruit only (yellow-orange, husk dry and papery, fruit dropped or drops at a touch).",
+      "prepare": "Raw, or cooked into jam and pie.",
+      "lookalikes": [
+        {
+          "name": "Green ground cherry and the plant itself",
+          "how": "Unripe green fruit, leaves, and husks are poisonous like the rest of the nightshade family.",
+          "danger": "Poisonous until ripe."
+        },
+        {
+          "name": "Nightshade berries without a husk",
+          "scientific": "Solanum spp.",
+          "how": "No papery lantern — not a ground cherry.",
+          "danger": "Treat as poisonous."
+        },
+        {
+          "name": "Sacred datura (jimsonweed)",
+          "scientific": "Datura wrightii",
+          "how": "Spiny round seed capsule, huge white trumpet flowers.",
+          "danger": "DEADLY."
+        }
+      ],
+      "caution": "Lantern husk, dry and papery; fruit ripe and sweet. Nothing green.",
+      "photo": {
+        "file": "ground-cherry.jpg",
+        "title": "File:Physalis heterophylla - 49926031248.jpg",
+        "author": "sonnia hill",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Physalis_heterophylla_-_49926031248.jpg"
+      }
+    },
+    {
+      "slug": "sunflower",
+      "common": "Common sunflower",
+      "scientific": "Helianthus annuus",
+      "usda": "HEAN3",
+      "family": "Asteraceae",
+      "free": false,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "August–October",
+      "where": "Roadsides and fields statewide.",
+      "part": "Seeds.",
+      "prepare": "Cut heads when the backs turn yellow-brown, dry, rub out seeds, roast. Small but plentiful.",
+      "lookalikes": [
+        {
+          "name": "Other yellow daisies",
+          "how": "None are poisonous; most are not worth it.",
+          "danger": "None."
+        }
+      ],
+      "caution": "None.",
+      "photo": {
+        "file": "sunflower.jpg",
+        "title": "File:2010 sonnenblume (Helianthus annuus).JPG",
+        "author": "Michael Hoelzl",
+        "license": "Public domain",
+        "license_url": "",
+        "source": "https://commons.wikimedia.org/wiki/File:2010_sonnenblume_(Helianthus_annuus).JPG"
+      }
+    },
+    {
+      "slug": "jerusalem-artichoke",
+      "common": "Jerusalem artichoke (sunchoke)",
+      "scientific": "Helianthus tuberosus",
+      "usda": "HETU",
+      "family": "Asteraceae",
+      "free": false,
+      "season": [
+        "fall",
+        "winter"
+      ],
+      "months": "October–February, after the tops die",
+      "where": "Moist ground, creek banks, and old homesteads in East and North Texas; a tall sunflower with small blooms.",
+      "part": "Tuber.",
+      "prepare": "Dig, scrub, and eat raw (crisp, like water chestnut), roasted, or boiled.",
+      "lookalikes": [
+        {
+          "name": "Other sunflowers",
+          "how": "No tuber; harmless.",
+          "danger": "None."
+        }
+      ],
+      "caution": "Mark the plant in bloom; dig when it dies back. Causes gas in quantity.",
+      "photo": {
+        "file": "jerusalem-artichoke.jpg",
+        "title": "File:20130827Helianthus tuberosus3.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20130827Helianthus_tuberosus3.jpg"
+      }
+    },
+    {
+      "slug": "groundnut",
+      "common": "Groundnut (Indian potato)",
+      "scientific": "Apios americana",
+      "usda": "APAM",
+      "family": "Fabaceae",
+      "free": false,
+      "season": [
+        "fall",
+        "winter"
+      ],
+      "months": "September–February",
+      "where": "East Texas bottomlands and stream banks; a twining vine with 5–7 leaflets and brownish-maroon pea flowers.",
+      "part": "Tubers strung along the root like beads.",
+      "prepare": "Boil, roast, or fry; always cooked. A little floury, high in protein.",
+      "lookalikes": [
+        {
+          "name": "Other vines with compound leaves",
+          "how": "Identify by the maroon pea-flower cluster and the chain of tubers.",
+          "danger": "Varies."
+        }
+      ],
+      "caution": "Cooked only.",
+      "photo": {
+        "file": "groundnut.jpg",
+        "title": "File:305.Groundnut Seapoint Beach.jpg",
+        "author": "InAweofGod'sCreation",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:305.Groundnut_Seapoint_Beach.jpg"
+      }
+    },
+    {
+      "slug": "nettle",
+      "common": "Stinging nettle (heartleaf nettle)",
+      "scientific": "Urtica chamaedryoides",
+      "usda": "URCH3",
+      "family": "Urticaceae",
+      "free": false,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "January–April",
+      "where": "Shady, rich, damp ground under trees and along creeks across East and Central Texas.",
+      "part": "Young tops.",
+      "prepare": "Gather with gloves; boiling or drying kills the sting. Cook as a green or make tea.",
+      "lookalikes": [
+        {
+          "name": "Texas bull nettle",
+          "scientific": "Cnidoscolus texanus",
+          "how": "A much larger, coarse plant of sandy ground with big white flowers and a far worse sting; its seeds are eaten but the plant is not a green.",
+          "danger": "Severe sting."
+        }
+      ],
+      "caution": "Cook it; never raw.",
+      "photo": {
+        "file": "nettle.jpg",
+        "title": "File:Urtica chamaedryoides.jpg",
+        "author": "Mason Brock (Masebrock)",
+        "license": "Public domain",
+        "license_url": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_chamaedryoides.jpg"
+      }
+    },
+    {
+      "slug": "pepperweed",
+      "common": "Virginia pepperweed (peppergrass)",
+      "scientific": "Lepidium virginicum",
+      "usda": "LEVI3",
+      "family": "Brassicaceae",
+      "free": false,
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "months": "March–July",
+      "where": "Roadsides, lawns, bare ground statewide; a branched plant with tiny white flowers and flat round seed pods up the stem, peppery to taste.",
+      "part": "Young leaves; seed pods; seeds.",
+      "prepare": "Raw as a peppery salad green; pods as a seasoning; seeds like mustard.",
+      "lookalikes": [
+        {
+          "name": "Other mustards",
+          "how": "The mustard family (four petals in a cross) is edible as a rule, though some are bitter.",
+          "danger": "None serious."
+        }
+      ],
+      "caution": "None beyond the heat.",
+      "photo": {
+        "file": "pepperweed.jpg",
+        "title": "File:20150104Lepidium virginicum1.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20150104Lepidium_virginicum1.jpg"
+      }
+    },
+    {
+      "slug": "evening-primrose",
+      "common": "Evening primrose (pink and yellow)",
+      "scientific": "Oenothera speciosa; O. biennis",
+      "usda": "OESP2; OEBI",
+      "family": "Onagraceae",
+      "free": false,
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "months": "March–July",
+      "where": "Roadsides and fields statewide; the pink buttercup carpets of spring.",
+      "part": "Young leaves, flowers, roots (yellow species).",
+      "prepare": "Leaves and flowers raw or cooked; first-year roots of the yellow species boiled in two waters.",
+      "lookalikes": [
+        {
+          "name": "None poisonous",
+          "how": "Four petals, cup-shaped flower.",
+          "danger": "—"
+        }
+      ],
+      "caution": "Mildly peppery; some people get a scratchy throat from the leaves.",
+      "photo": {
+        "file": "evening-primrose.jpg",
+        "title": "File:Buttercups or Pink primrose -- Oenothera speciosa.jpg",
+        "author": "Jim Evans",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Buttercups_or_Pink_primrose_--_Oenothera_speciosa.jpg"
+      }
+    },
+    {
+      "slug": "mallow",
+      "common": "Common mallow (cheeseweed)",
+      "scientific": "Malva neglecta",
+      "usda": "MANE",
+      "family": "Malvaceae",
+      "free": false,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "January–May",
+      "where": "Yards, barn lots, and waste ground statewide; round scalloped leaves and small round 'cheese wheel' fruits.",
+      "part": "Leaves; green fruits.",
+      "prepare": "Leaves raw or cooked (mucilaginous, thickens soup); green fruits nibbled raw.",
+      "lookalikes": [
+        {
+          "name": "None poisonous",
+          "how": "The cheese-wheel fruit marks it.",
+          "danger": "—"
+        }
+      ],
+      "caution": "None.",
+      "photo": {
+        "file": "mallow.jpg",
+        "title": "File:(MAD) M.neglecta-1.jpg",
+        "author": "Philmarin",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:(MAD)_M.neglecta-1.jpg"
+      }
+    },
+    {
+      "slug": "turks-cap",
+      "common": "Turk's cap",
+      "scientific": "Malvaviscus arboreus var. drummondii",
+      "usda": "MAARD",
+      "family": "Malvaceae",
+      "free": false,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "Flowers May–November; fruit August–November",
+      "where": "Shady creek banks and woods across Central, South, and East Texas; red turban-shaped flowers that never open.",
+      "part": "Flowers; red fruit; young leaves.",
+      "prepare": "Flowers raw or for tea; the mealy red fruit raw or cooked (tastes like apple); young leaves cooked.",
+      "lookalikes": [
+        {
+          "name": "None poisonous",
+          "how": "The red closed turban flower is its own.",
+          "danger": "—"
+        }
+      ],
+      "caution": "None.",
+      "photo": {
+        "file": "turks-cap.jpg",
+        "title": "File:Malvaviscus arboreus var. drummondii (331692361).jpg",
+        "author": "Dinesh Valke from Thane, India",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Malvaviscus_arboreus_var._drummondii_(331692361).jpg"
+      }
+    },
+    {
+      "slug": "sotol",
+      "common": "Texas sotol",
+      "scientific": "Dasylirion texanum",
+      "usda": "DATE3",
+      "family": "Asparagaceae",
+      "free": false,
+      "season": [
+        "spring",
+        "summer",
+        "fall",
+        "winter"
+      ],
+      "months": "Year-round",
+      "where": "Rocky slopes of the Edwards Plateau and West Texas; a rosette of long strap leaves with hooked teeth along the edges.",
+      "part": "The heart (central crown) and young flower stalk.",
+      "prepare": "The old desert way: cut the plant off at the ground, trim the leaves, and roast the heart in a pit for a day or more until sweet. The young flower stalk can be roasted like asparagus. Heavy work for the return.",
+      "lookalikes": [
+        {
+          "name": "Lechuguilla",
+          "scientific": "Agave lechuguilla",
+          "how": "A small agave with thick, stiff, dagger-tipped leaves (not thin straps with hooked teeth); it grows in the same country.",
+          "danger": "Toxic to livestock and not a food plant; the leaf tips injure."
+        },
+        {
+          "name": "Yucca",
+          "scientific": "Yucca spp.",
+          "how": "Smooth-edged leaves with thread fibers; flowers edible (see yucca).",
+          "danger": "None."
+        }
+      ],
+      "caution": "Hooked teeth along a thin leaf — sotol. Thick dagger leaf — lechuguilla; leave it.",
+      "photo": {
+        "file": "sotol.jpg",
+        "title": "File:Dasylirion texanum TX Ft Stockton fh - Kopie.jpg",
+        "author": "Rebou at German Wikipedia",
+        "license": "Public domain",
+        "license_url": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Dasylirion_texanum_TX_Ft_Stockton_fh_-_Kopie.jpg"
+      }
+    },
+    {
+      "slug": "yucca",
+      "common": "Yucca (Spanish dagger, Torrey's yucca)",
+      "scientific": "Yucca treculeana; Y. torreyi",
+      "usda": "YUTR; YUTO",
+      "family": "Asparagaceae",
+      "free": false,
+      "season": [
+        "spring"
+      ],
+      "months": "March–May",
+      "where": "South, West, and Central Texas brush and desert.",
+      "part": "Flower petals; young flower stalk; fruit of the fleshy-fruited kinds.",
+      "prepare": "Petals raw or cooked (the green center of the flower is bitter — remove it); the young stalk peeled and roasted; the fleshy fruits of Torrey's yucca baked.",
+      "lookalikes": [
+        {
+          "name": "Lechuguilla",
+          "scientific": "Agave lechuguilla",
+          "how": "Thick toothed leaves, not thin smooth-edged yucca leaves.",
+          "danger": "Not a food plant."
+        }
+      ],
+      "caution": "Petals only from the flower; the roots are soap, not food.",
+      "photo": {
+        "file": "yucca.jpg",
+        "title": "File:Spanish Dagger San Antonio.jpg",
+        "author": "NCBioTeacher",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Spanish_Dagger_San_Antonio.jpg"
+      }
+    },
+    {
+      "slug": "pawpaw",
+      "common": "Pawpaw",
+      "scientific": "Asimina triloba",
+      "usda": "ASTR",
+      "family": "Annonaceae",
+      "free": false,
+      "season": [
+        "fall"
+      ],
+      "months": "September–October",
+      "where": "Deep East Texas bottomland shade; a small tree with big drooping leaves and green banana-shaped fruit.",
+      "part": "Ripe fruit.",
+      "prepare": "Eat the custard-like pulp raw when soft and yellowing; remove the large seeds and the skin.",
+      "lookalikes": [
+        {
+          "name": "Pawpaw seeds and skin",
+          "how": "Both cause nausea.",
+          "danger": "Do not eat the seeds or skin."
+        }
+      ],
+      "caution": "A few people react to pawpaw; try a little first.",
+      "photo": {
+        "file": "pawpaw.jpg",
+        "title": "File:03173 Pawpaw (9041079195).jpg",
+        "author": "rockerBOO",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:03173_Pawpaw_(9041079195).jpg"
+      }
+    },
+    {
+      "slug": "wild-strawberry",
+      "common": "Wild strawberry",
+      "scientific": "Fragaria virginiana",
+      "usda": "FRVI",
+      "family": "Rosaceae",
+      "free": false,
+      "season": [
+        "spring"
+      ],
+      "months": "April–May",
+      "where": "Open woods and meadows of East and North Texas.",
+      "part": "Fruit; leaves for tea.",
+      "prepare": "Raw; small and intense.",
+      "lookalikes": [
+        {
+          "name": "Mock strawberry (Indian strawberry)",
+          "scientific": "Potentilla (Duchesnea) indica",
+          "how": "Yellow flowers (true strawberry's are white), fruit held upright and tasteless.",
+          "danger": "Not poisonous; not worth eating."
+        }
+      ],
+      "caution": "White flower, drooping fruit — the real one.",
+      "photo": {
+        "file": "wild-strawberry.jpg",
+        "title": "File:2009 Sun Peaks Summer - Wild Strawberry (Fragaria virginiana) - (28632114042).jpg",
+        "author": "Murray Foubister",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2009_Sun_Peaks_Summer_-_Wild_Strawberry_(Fragaria_virginiana)_-_(28632114042).jpg"
+      }
+    },
+    {
+      "slug": "watercress",
+      "common": "Watercress",
+      "scientific": "Nasturtium officinale",
+      "usda": "NAOF",
+      "family": "Brassicaceae",
+      "free": false,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "November–April",
+      "where": "Spring-fed clear streams of the Hill Country and West Texas; floating mats of small round leaflets.",
+      "part": "Leaves and stems.",
+      "prepare": "Raw (peppery) or cooked. Only from clean flowing water; wash well. Streams below livestock can carry liver fluke and bacteria — when in doubt, cook it.",
+      "lookalikes": [
+        {
+          "name": "Spotted water hemlock",
+          "scientific": "Cicuta maculata",
+          "how": "Grows in the same water and its young leaves have fooled people. Watercress has round-tipped leaflets, a mild peppery smell, and small white four-petaled flowers; water hemlock has sharply toothed pointed leaflets with veins ending in the notches, hollow purple-streaked stems, and flat white umbrella flowers. Never pull the roots.",
+          "danger": "DEADLY."
+        }
+      ],
+      "caution": "Four petals, round leaflets, pepper taste — and even then, only from clean water.",
+      "photo": {
+        "file": "watercress.jpg",
+        "title": "File:20190525Nasturtium officinale1.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20190525Nasturtium_officinale1.jpg"
+      }
+    },
+    {
+      "slug": "spring-beauty",
+      "common": "Spring beauty",
+      "scientific": "Claytonia virginica",
+      "usda": "CLVI3",
+      "family": "Montiaceae",
+      "free": false,
+      "season": [
+        "winter",
+        "spring"
+      ],
+      "months": "February–April",
+      "where": "Lawns and open woods of East and North Texas; small pink-striped white flowers.",
+      "part": "Corm (small underground bulb); leaves.",
+      "prepare": "Boil the corms like tiny potatoes; leaves in salad.",
+      "lookalikes": [
+        {
+          "name": "Any bulb you did not trace to the flowering plant",
+          "how": "Dig only from a plant in bloom that you can follow to the corm.",
+          "danger": "Several Texas bulbs (crow poison, death camas) are poisonous."
+        }
+      ],
+      "caution": "Dig from the flowering plant only.",
+      "photo": {
+        "file": "spring-beauty.jpg",
+        "title": "File:2019-04-10 12 40 50 Virginia Springbeauty along a walking path in the Franklin Glen section of Chantilly, Fairfax County, Virginia.jpg",
+        "author": "Famartin",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2019-04-10_12_40_50_Virginia_Springbeauty_along_a_walking_path_in_the_Franklin_Glen_section_of_Chantilly,_Fairfax_County,_Virginia.jpg"
+      }
+    },
+    {
+      "slug": "lotus",
+      "common": "American lotus (yonkapin)",
+      "scientific": "Nelumbo lutea",
+      "usda": "NELU",
+      "family": "Nelumbonaceae",
+      "free": false,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "Seeds August–October; tubers fall",
+      "where": "Lakes, oxbows, and slow bayous of East Texas; huge round leaves standing above the water, yellow flowers, showerhead seed pods.",
+      "part": "Seeds; tubers; young leaves.",
+      "prepare": "Shell the hard seeds and roast or boil; dig tubers from the mud in fall and bake; young unrolled leaves cooked.",
+      "lookalikes": [
+        {
+          "name": "Water lilies",
+          "scientific": "Nymphaea spp.",
+          "how": "Leaves float flat with a notch; lotus leaves stand up on stems, round with no notch.",
+          "danger": "Not poisonous."
+        }
+      ],
+      "caution": "Only from water you would not mind swimming in.",
+      "photo": {
+        "file": "lotus.jpg",
+        "title": "File:2020-08-16 16 50 12 View across a large patch of American Lotus in Swartswood Lake within Stillwater Township, Sussex County, New Jersey.jpg",
+        "author": "Famartin",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2020-08-16_16_50_12_View_across_a_large_patch_of_American_Lotus_in_Swartswood_Lake_within_Stillwater_Township,_Sussex_County,_New_Jersey.jpg"
+      }
+    },
+    {
+      "slug": "arrowhead",
+      "common": "Arrowhead (duck potato, wapato)",
+      "scientific": "Sagittaria latifolia",
+      "usda": "SALA2",
+      "family": "Alismataceae",
+      "free": false,
+      "season": [
+        "fall"
+      ],
+      "months": "September–November",
+      "where": "Shallow pond and creek edges across East and Central Texas; arrow-shaped leaves, white three-petaled flowers.",
+      "part": "Tubers on the end of the roots.",
+      "prepare": "Work them loose from the mud with your feet or a rake, then boil or roast like potato. Never raw.",
+      "lookalikes": [
+        {
+          "name": "Arrow arum",
+          "scientific": "Peltandra virginica",
+          "how": "Similar arrow leaf in the same water; its leaf veins branch from a central midrib, while arrowhead's veins all fan from the base. Arrow arum's flower is a green hood, not three white petals.",
+          "danger": "Poisonous raw (burns the mouth)."
+        },
+        {
+          "name": "Water hemlock (same water)",
+          "scientific": "Cicuta maculata",
+          "how": "Never dig an unknown root from wet ground.",
+          "danger": "DEADLY."
+        }
+      ],
+      "caution": "Three white petals and veins fanning from the leaf base — arrowhead. Cook the tubers.",
+      "photo": {
+        "file": "arrowhead.jpg",
+        "title": "File:Sagittaria latifolia Willd. (7796868286).jpg",
+        "author": "Udo Schmidt from Deutschland",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sagittaria_latifolia_Willd._(7796868286).jpg"
+      }
+    },
+    {
+      "slug": "greenbrier",
+      "common": "Greenbrier (saw greenbrier)",
+      "scientific": "Smilax bona-nox",
+      "usda": "SMBO2",
+      "family": "Smilacaceae",
+      "free": false,
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "months": "March–June",
+      "where": "Thickets and woods edges statewide; a thorny green vine with heart- or fiddle-shaped leaves and tendrils.",
+      "part": "Tender growing tips; young leaves.",
+      "prepare": "Snap the tips where they break cleanly and eat raw like asparagus or cook.",
+      "lookalikes": [
+        {
+          "name": "None poisonous",
+          "how": "Thorns plus tendrils plus a green vine — Smilax.",
+          "danger": "—"
+        }
+      ],
+      "caution": "The old thorns will cut you; take only the tender tip.",
+      "photo": {
+        "file": "greenbrier.jpg",
+        "title": "File:Smilax bona-nox (2020).jpg",
+        "author": "sonnia hill",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Smilax_bona-nox_(2020).jpg"
+      }
+    },
+    {
+      "slug": "beebalm",
+      "common": "Lemon beebalm, wild bergamot (horsemint)",
+      "scientific": "Monarda citriodora; M. fistulosa",
+      "usda": "MOCI; MOFI",
+      "family": "Lamiaceae",
+      "free": false,
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "months": "May–August",
+      "where": "Prairies and roadsides statewide; square stems, whorled pink-purple flowers, strong lemon or oregano smell.",
+      "part": "Leaves and flowers.",
+      "prepare": "Tea, seasoning (like oregano), flowers in salad.",
+      "lookalikes": [
+        {
+          "name": "None poisonous in the mint family with that smell",
+          "how": "Square stem and the smell.",
+          "danger": "—"
+        }
+      ],
+      "caution": "None.",
+      "photo": {
+        "file": "beebalm.jpg",
+        "title": "File:Monarda citriodora 02.jpg",
+        "author": "Michael Wolf",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Monarda_citriodora_02.jpg"
+      }
+    },
+    {
+      "slug": "golden-currant",
+      "common": "Golden currant",
+      "scientific": "Ribes aureum",
+      "usda": "RIAU",
+      "family": "Grossulariaceae",
+      "free": false,
+      "season": [
+        "summer"
+      ],
+      "months": "June–July",
+      "where": "Canyons and creeks of the Panhandle and West Texas; yellow clove-scented spring flowers, three-lobed leaves.",
+      "part": "Ripe berries (yellow to black).",
+      "prepare": "Raw or cooked.",
+      "lookalikes": [
+        {
+          "name": "None poisonous",
+          "how": "The maple-shaped leaf and the dried flower remnant on the berry tip.",
+          "danger": "—"
+        }
+      ],
+      "caution": "None.",
+      "photo": {
+        "file": "golden-currant.jpg",
+        "title": "File:2016.04.04 15.02.31 DSC03163 - Flickr - andrey zharkikh.jpg",
+        "author": "Andrey Zharkikh from Salt Lake City, USA",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2016.04.04_15.02.31_DSC03163_-_Flickr_-_andrey_zharkikh.jpg"
+      }
+    },
+    {
+      "slug": "farkleberry",
+      "common": "Farkleberry (sparkleberry) and wild blueberry",
+      "scientific": "Vaccinium arboreum; V. corymbosum",
+      "usda": "VAAR; VACO",
+      "family": "Ericaceae",
+      "free": false,
+      "season": [
+        "summer",
+        "fall"
+      ],
+      "months": "Blueberry June–July; farkleberry September–November",
+      "where": "East Texas sandy woods and bogs.",
+      "part": "Ripe black-blue berries.",
+      "prepare": "Blueberry raw or cooked; farkleberry is dry and mealy, best cooked down.",
+      "lookalikes": [
+        {
+          "name": "Privet and other dark berries on shrubs",
+          "scientific": "Ligustrum spp.",
+          "how": "A Vaccinium berry has a star-shaped crown on its blossom end; privet does not.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "Look for the five-pointed crown on the berry.",
+      "photo": {
+        "file": "farkleberry.jpg",
+        "title": "File:Sparkleberry (Vaccinium arboreum) (39069727701).jpg",
+        "author": "gailhampshire from Cradley, Malvern, U.K",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sparkleberry_(Vaccinium_arboreum)_(39069727701).jpg"
+      }
+    },
+    {
+      "slug": "chinquapin",
+      "common": "Chinquapin",
+      "scientific": "Castanea pumila",
+      "usda": "CAPU9",
+      "family": "Fagaceae",
+      "free": false,
+      "season": [
+        "fall"
+      ],
+      "months": "September–October",
+      "where": "Sandy uplands of East Texas; a shrubby chestnut with spiny burs holding a single sweet nut.",
+      "part": "Nut.",
+      "prepare": "Raw or roasted; sweet.",
+      "lookalikes": [
+        {
+          "name": "Buckeye",
+          "scientific": "Aesculus spp.",
+          "how": "Leathery husk, shiny eyed seed; chinquapin has a spiny bur.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "None.",
+      "photo": {
+        "file": "chinquapin.jpg",
+        "title": "File:AlleghenyChinquapin-IMG 2802.JPG",
+        "author": "Bonnie Dalzell(bdalzell@qis.net)",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:AlleghenyChinquapin-IMG_2802.JPG"
+      }
+    },
+    {
+      "slug": "serviceberry",
+      "common": "Serviceberry (juneberry)",
+      "scientific": "Amelanchier arborea",
+      "usda": "AMAR3",
+      "family": "Rosaceae",
+      "free": false,
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "months": "May–June",
+      "where": "East Texas woods; white early-spring flowers, dark purple berries with a crown.",
+      "part": "Ripe berries.",
+      "prepare": "Raw or cooked like blueberries.",
+      "lookalikes": [
+        {
+          "name": "Privet",
+          "scientific": "Ligustrum spp.",
+          "how": "No crown on the berry, opposite leaves.",
+          "danger": "Poisonous."
+        }
+      ],
+      "caution": "Crown on the berry, alternate leaves.",
+      "photo": {
+        "file": "serviceberry.jpg",
+        "title": "File:Amelanchier arborea - Downy Serviceberry.jpg",
+        "author": "Fritzflohrreynolds",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Amelanchier_arborea_-_Downy_Serviceberry.jpg"
+      }
+    },
+    {
+      "slug": "boxelder",
+      "common": "Boxelder maple",
+      "scientific": "Acer negundo",
+      "usda": "ACNE2",
+      "family": "Sapindaceae",
+      "free": false,
+      "season": [
+        "winter"
+      ],
+      "months": "January–February, freezing nights and warm days",
+      "where": "Creek banks and bottomlands across East and Central Texas.",
+      "part": "Sap.",
+      "prepare": "Tap like a sugar maple and boil the sap down to syrup; it takes a great deal of sap for a little syrup.",
+      "lookalikes": [
+        {
+          "name": "Poison ivy (young boxelder has three leaflets too)",
+          "scientific": "Toxicodendron radicans",
+          "how": "Boxelder leaves are opposite on the twig; poison ivy's are alternate. You are tapping a trunk, not touching leaves, but know the difference.",
+          "danger": "Rash."
+        }
+      ],
+      "caution": "Opposite leaves — boxelder.",
+      "photo": {
+        "file": "boxelder.jpg",
+        "title": "File:Acer negundo - boxelder - 52356389001.jpg",
+        "author": "Matt Lavin",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Acer_negundo_-_boxelder_-_52356389001.jpg"
+      }
+    },
+    {
+      "slug": "spiderwort",
+      "common": "Spiderwort",
+      "scientific": "Tradescantia occidentalis and kin",
+      "usda": "TROC",
+      "family": "Commelinaceae",
+      "free": false,
+      "season": [
+        "spring"
+      ],
+      "months": "March–June",
+      "where": "Prairies, roadsides, and woods edges statewide; grassy leaves and three-petaled blue-purple flowers that open in the morning.",
+      "part": "Young stems and leaves; flowers.",
+      "prepare": "Raw in salad or cooked; mucilaginous. Flowers for garnish.",
+      "lookalikes": [
+        {
+          "name": "Grass-leaved bulbs before bloom",
+          "how": "Before the flower, the leaves look like many things; take it only in bloom.",
+          "danger": "Crow poison and death camas have grassy leaves."
+        }
+      ],
+      "caution": "Only in flower.",
+      "photo": {
+        "file": "spiderwort.jpg",
+        "title": "File:Tradescantia occidentalis 001 — Matt Lavin.jpg",
+        "author": "Matt Lavin",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tradescantia_occidentalis_001_%E2%80%94_Matt_Lavin.jpg"
+      }
+    }
+  ],
+  "lookalike_photos": {
+    "Cylindropuntia leptocaulis": {
+      "file": "cylindropuntia-leptocaulis.jpg",
+      "title": "File:2016.04.23 07.27.07 DSC03633 - Flickr - andrey zharkikh.jpg",
+      "author": "Andrey Zharkikh from Salt Lake City, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2016.04.23_07.27.07_DSC03633_-_Flickr_-_andrey_zharkikh.jpg"
+    },
+    "Rubus argutus, R. flagellaris": {
+      "file": "rubus-argutus.jpg",
+      "title": "File:Rubus argutus backlit flowering canes.JPG",
+      "author": "Dcrjsr",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Rubus_argutus_backlit_flowering_canes.JPG"
+    },
+    "Menispermum canadense": {
+      "file": "menispermum-canadense.jpg",
+      "title": "File:Actaea simplex 'White Pearl'.jpg",
+      "author": "Cephas",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Actaea_simplex_%27White_Pearl%27.jpg"
+    },
+    "Ampelopsis arborea": {
+      "file": "ampelopsis-arborea.jpg",
+      "title": "File:2020-10-22 12 11 28 Pepper vine leaves in autumn along a walking path in the Franklin Glen section of Chantilly, Fairfax County, Virginia.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2020-10-22_12_11_28_Pepper_vine_leaves_in_autumn_along_a_walking_path_in_the_Franklin_Glen_section_of_Chantilly,_Fairfax_County,_Virginia.jpg"
+    },
+    "Parthenocissus quinquefolia": {
+      "file": "parthenocissus-quinquefolia.jpg",
+      "title": "File:1. Heura de Virgínia.jpg",
+      "author": "Carolina Latorre Canet",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:1._Heura_de_Virg%C3%ADnia.jpg"
+    },
+    "Carya texana, Carya ovata": {
+      "file": "carya-texana.jpg",
+      "title": "File:Black hickory in Bastrop County, Texas (cropped).jpg",
+      "author": "Kathy McAleese",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Black_hickory_in_Bastrop_County,_Texas_(cropped).jpg"
+    },
+    "Aesculus spp.": {
+      "file": "aesculus-pavia.jpg",
+      "title": "File:Aesculus pavia 2.jpg",
+      "author": "Eric Hunt",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Aesculus_pavia_2.jpg"
+    },
+    "Sophora secundiflora": {
+      "file": "dermatophyllum-secundiflorum.jpg",
+      "title": "File:Texas mtn. laurel pod with 5 mescalbeans.jpg",
+      "author": "VPaleontologist",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Texas_mtn._laurel_pod_with_5_mescalbeans.jpg"
+    },
+    "Diospyros virginiana": {
+      "file": "diospyros-virginiana.jpg",
+      "title": "File:Common persimmon (40146979460).jpg",
+      "author": "Dan Keck from Ohio",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Common_persimmon_(40146979460).jpg"
+    },
+    "Solanum americanum": {
+      "file": "solanum-americanum.jpg",
+      "title": "File:American black nightshade - Plant.jpg",
+      "author": "Kumargowri1505",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:American_black_nightshade_-_Plant.jpg"
+    },
+    "Melia azedarach": {
+      "file": "melia-azedarach.jpg",
+      "title": "File:Melia azedarach - Chinaberrytree 01.jpg",
+      "author": "Zeynel Cebeci",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Melia_azedarach_-_Chinaberrytree_01.jpg"
+    },
+    "Euphorbia maculata and kin": {
+      "file": "euphorbia-maculata.jpg",
+      "title": "File:Chamaesyce maculata - 51996807199.jpg",
+      "author": "aspidoscelis",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Chamaesyce_maculata_-_51996807199.jpg"
+    },
+    "Hypochaeris radicata; Pyrrhopappus carolinianus": {
+      "file": "pyrrhopappus-carolinianus.jpg",
+      "title": "File:False Dandelion (Pyrrhopappus carolinianus) (25132928188).jpg",
+      "author": "gailhampshire from Cradley, Malvern, U.K",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:False_Dandelion_(Pyrrhopappus_carolinianus)_(25132928188).jpg"
+    },
+    "Trifolium spp.": {
+      "file": "trifolium-repens.jpg",
+      "title": "File:20170503Trifolium repens1.jpg",
+      "author": "AnRo0002",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:20170503Trifolium_repens1.jpg"
+    },
+    "Iris pseudacorus": {
+      "file": "iris-pseudacorus.jpg",
+      "title": "File:Iris pseudacorus Yellow flag iris in Hatfield Broad Oak Essex England 04.jpg",
+      "author": "Acabashi",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Iris_pseudacorus_Yellow_flag_iris_in_Hatfield_Broad_Oak_Essex_England_04.jpg"
+    },
+    "Conium maculatum": {
+      "file": "conium-maculatum.jpg",
+      "title": "File:2023-05-31 18 54 28 Poison Hemlock growing on the banks of the Delaware and Raritan Feeder Canal in the Mountainview section of Ewing Township, Mercer County, New Jersey.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2023-05-31_18_54_28_Poison_Hemlock_growing_on_the_banks_of_the_Delaware_and_Raritan_Feeder_Canal_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg"
+    },
+    "Phytolacca americana": {
+      "file": "phytolacca-americana.jpg",
+      "title": "File:(MHNT) Phytolacca americana - immature inflorescence.jpg",
+      "author": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:(MHNT)_Phytolacca_americana_-_immature_inflorescence.jpg"
+    },
+    "Solanum spp.": {
+      "file": "solanum-americanum.jpg",
+      "title": "File:American black nightshade - Plant.jpg",
+      "author": "Kumargowri1505",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:American_black_nightshade_-_Plant.jpg"
+    },
+    "Nothoscordum bivalve": {
+      "file": "nothoscordum-bivalve.jpg",
+      "title": "File:Nothoscordum bivalve (Amaryllidaceae).jpg",
+      "author": "Juan Carlos Fonseca Mata",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Nothoscordum_bivalve_(Amaryllidaceae).jpg"
+    },
+    "Toxicoscordion (Zigadenus) nuttallii": {
+      "file": "toxicoscordion-nuttallii.jpg",
+      "title": "File:Toxicoscordion nuttallii (1).jpg",
+      "author": "Eric Hunt",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Toxicoscordion_nuttallii_(1).jpg"
+    },
+    "Euphorbia spp.": {
+      "file": "euphorbia-maculata.jpg",
+      "title": "File:Chamaesyce maculata - 51996807199.jpg",
+      "author": "aspidoscelis",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Chamaesyce_maculata_-_51996807199.jpg"
+    },
+    "Lactuca serriola; L. canadensis": {
+      "file": "lactuca-serriola.jpg",
+      "title": "File:20150603Lactuca serriola1.jpg",
+      "author": "AnRo0002",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:20150603Lactuca_serriola1.jpg"
+    },
+    "Ilex spp.": {
+      "file": "ilex-decidua.jpg",
+      "title": "File:Ilex decidua (2020) 2.jpg",
+      "author": "sonnia hill",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ilex_decidua_(2020)_2.jpg"
+    },
+    "Ligustrum spp.": {
+      "file": "ligustrum-sinense.jpg",
+      "title": "File:Chinese privet 1.jpg",
+      "author": "No machine-readable author provided. Lorenzarius assumed (based on copyright claims).",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Chinese_privet_1.jpg"
+    },
+    "Toxicodendron vernix": {
+      "file": "toxicodendron-vernix.jpg",
+      "title": "File:2025-07-16 10 52 09 Poison sumac leaves within Tannersville Cranberry Bog in Pocono Township, Monroe County, Pennsylvania.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2025-07-16_10_52_09_Poison_sumac_leaves_within_Tannersville_Cranberry_Bog_in_Pocono_Township,_Monroe_County,_Pennsylvania.jpg"
+    },
+    "Toxicodendron spp.": {
+      "file": "toxicodendron-radicans.jpg",
+      "title": "File:Toxicodendron radicans, leaves.jpg",
+      "author": "D. Gordon E. Robertson",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Toxicodendron_radicans,_leaves.jpg"
+    },
+    "Crataegus spp.": {
+      "file": "crataegus-crus-galli.jpg",
+      "title": "File:Crataegus crus-galli flowers 1.jpg",
+      "author": "Nadiatalent",
+      "license": "Public domain",
+      "license_url": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Crataegus_crus-galli_flowers_1.jpg"
+    },
+    "Datura wrightii": {
+      "file": "datura-wrightii.jpg",
+      "title": "File:Datura wrightii 22232954.jpg",
+      "author": "Alex Abair",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Datura_wrightii_22232954.jpg"
+    },
+    "Cnidoscolus texanus": {
+      "file": "cnidoscolus-texanus.jpg",
+      "title": "File:Bull-nettle (A), Attwater Prairie Chicken NWR, TX; 15 May 2013.jpg",
+      "author": "William L. Farr",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bull-nettle_(A),_Attwater_Prairie_Chicken_NWR,_TX;_15_May_2013.jpg"
+    },
+    "Potentilla (Duchesnea) indica": {
+      "file": "potentilla-indica.jpg",
+      "title": "File:2015-05-20 17 04 18 Mock strawberries along Terrace Boulevard in Ewing, New Jersey.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2015-05-20_17_04_18_Mock_strawberries_along_Terrace_Boulevard_in_Ewing,_New_Jersey.jpg"
+    },
+    "Nymphaea spp.": {
+      "file": "nymphaea-odorata.jpg",
+      "title": "File:Flower Daingerfield State Park Texas 2023.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Flower_Daingerfield_State_Park_Texas_2023.jpg"
+    },
+    "Peltandra virginica": {
+      "file": "peltandra-virginica.jpg",
+      "title": "File:2025-07-16 11 59 02 Green Arrow Arum within Tannersville Cranberry Bog in Pocono Township, Monroe County, Pennsylvania.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2025-07-16_11_59_02_Green_Arrow_Arum_within_Tannersville_Cranberry_Bog_in_Pocono_Township,_Monroe_County,_Pennsylvania.jpg"
+    },
+    "Toxicodendron radicans": {
+      "file": "toxicodendron-radicans.jpg",
+      "title": "File:Toxicodendron radicans, leaves.jpg",
+      "author": "D. Gordon E. Robertson",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Toxicodendron_radicans,_leaves.jpg"
+    },
+    "Cicuta maculata": {
+      "file": "cicuta-maculata.jpg",
+      "title": "File:Cicuta maculata - Water Hemlock.jpg",
+      "author": "Fritzflohrreynolds",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cicuta_maculata_-_Water_Hemlock.jpg"
+    },
+    "Anagallis (Lysimachia) arvensis": {
+      "file": "anagallis-arvensis.jpg",
+      "title": "File:Anagallis arvensis (Flower).jpg",
+      "author": "Ixitixel",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Anagallis_arvensis_(Flower).jpg"
+    },
+    "Agave lechuguilla": {
+      "file": "agave-lechuguilla.jpg",
+      "title": "File:Agave lechuguilla (5703206931).jpg",
+      "author": "Amante Darmanin from Malta",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Agave_lechuguilla_(5703206931).jpg"
+    },
+    "Yucca spp.": {
+      "file": "yucca-treculeana.jpg",
+      "title": "File:Spanish Dagger San Antonio.jpg",
+      "author": "NCBioTeacher",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Spanish_Dagger_San_Antonio.jpg"
+    },
+    "Cocculus carolinus": {
+      "file": "cocculus-carolinus.jpg",
+      "title": "File:Cocculus carolinus Arkansas.jpg",
+      "author": "Mason Brock (Masebrock)",
+      "license": "Public domain",
+      "license_url": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Cocculus_carolinus_Arkansas.jpg"
+    }
+  }
+}
