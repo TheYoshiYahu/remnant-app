@@ -11,9 +11,8 @@ Load my voice skill and mount my Desktop. Read, in this order:
 3. ~/Desktop/App/api/db.py (users.last_seen_at is written in the upsert there), api/auth.py, data-schema/schema.sql §6 users / §7 subscriptions,
    hosting/render.yaml, api/walk.py — for the counter.
 
-STATE: Phase 2's orphan block is CLOSED (0 orphan cards in the whole library). Everything S503 deployed is in data-schema/migrations/session503*.sql
-(17 files), all untracked — S503 is NOT committed: `git status` first; the commit and push are Yoshi's (there are also older uncommitted edits to
-api/main.py, api/Dockerfile, hosting/render.yaml, .gitignore — ask before sweeping them into the S503 commit).
+STATE: Phase 2's orphan block is CLOSED (0 orphan cards in the whole library). S503 committed and pushed Nov 15 23:40 CST. Older uncommitted edits
+remain in api/main.py, api/Dockerfile, hosting/render.yaml, .gitignore — ask before touching them.
 
 THIS SESSION, in order:
 (a) THE VISIT COUNTER — Yoshi asked for it Nov 15: "how many different people log in daily, and how many times each." Today the database holds one

@@ -543,3 +543,42 @@ means a back-fill can re-run safely over the already-merged canon rows.
   people, how many times each, per day" becomes one query; today the DB has only users.last_seen_at. Baseline Nov 15: 78 accounts, 22 seen in 30
   days, 8 in 7 days, 2 today, 17 on a paid tier incl. trials/comps, 7 paying (`_s503/out/users_baseline_2026-11-15.txt`). Housekeeping with it:
   duplicate active subscription rows (assemblyofrop ×2 everything, Jeni ×2 complete_study) and a duplicate account (Goshen24 ×2).
+
+- **2026-11-15/16 — S504 (Claude Fable 5.1) — visit counter DESIGNED (not coded); re-point ×3 BUILT (not deployed); Phase 3 census RUN.**
+  NO LIVE DATABASE THIS SESSION: the Mac-side shell's volume was full (9.8 GB at 100%, not our folder) so asyncpg would not install; every DB touch
+  became a paste for Yoshi. Deploy state at close: S503 pushed Nov 15 23:40; nothing of S504 deployed.
+  (a) THE VISIT COUNTER — `S504_VISIT_COUNTER_DESIGN.md` (one page, Yoshi reads before code). FINDING: half of it already exists — S467b built
+  `user_activity_days` (one row per signed-in person per Central day: first/last, visits with a 30-quiet-minute rule, active_seconds, hits), written in
+  `upsert_user` on every authenticated request, table created at API startup (email_prefs.ensure_email_columns), report
+  `python -m jobs.activity_report --days 30`. So daily distinct sign-ins and visits-per-person have been counted since S467b deployed; what is missing is
+  the ANONYMOUS reader (free canon in the PWA, the whole walk site), the surface, a raw log, and one report. Design: `visit_events` (ts, user_id null,
+  anon_id = sha256(ANON_SALT+browser UUID) — localStorage, NOT a cookie, no IP ever; surface app|walk; path; edition/book/chapter) — one row per VISIT,
+  written in upsert_user only when the S467 upsert opened a new visit (so the two tables agree), and by `POST /v1/visit` beacon (204, 30-min dedupe)
+  from app/src and walk/build.mjs's page script; view `visit_days` unions both; report `_s503/tools/visits_report504.py` (same shape as
+  users_baseline503); raw kept 400 days, pruned by the daily trial-reminders cron; migration `session504_visit_events.sql` first, then Yoshi's push
+  (Render auto-deploys api/pwa/walk), one env var ANON_SALT. Housekeeping as a sibling migration needs Yoshi's word: assemblyofrop ×2 everything/active,
+  Jeni ×2 complete_study/active (proposal: keep the Stripe-backed row, status=canceled + ended_at on the other, nothing deleted); Goshen24 ×2 accounts
+  (keep the paying one; show both rows + the WP id first). Paste to see what S467 has counted: `cd ~/Desktop/App/api && python3 -m jobs.activity_report --days 30`.
+  (b) THE THREE RE-POINTS — 3206 Matthew 28:20 → 1 John 2:3, 3207 28:20 → 1 John 5:2 (thread 20 teaching-them-to-observe…), 3634 18:19 → 1 John
+  5:14 (thread 43283 binding-and-loosing; its S501 note had forced sense onto the gospel verse — moved, as Yoshi's standing answer says). Fable drafted,
+  added to out/draft503b.json (ids 10–12), build503b PASS (S503B_IDS=3206,3207,3634 — fix/repoint503.json now holds these 3; the deployed 9 are in
+  `_session503_repoint_deploy.log`), `data-schema/migrations/session503b2_matthew_repoint3.sql` (same guards: old pair + old note or already new;
+  live text unmoved; member row carries old or new note; no card holds the new pair). Built against the post-deploy Matthew dump (Nov 16 05:01 UTC =
+  23:01 CST, nothing touched Matthew since) — the re-dump could not run; the guards cover it. DEPLOY PASTE (Yoshi, from Terminal):
+  `bash ~/Desktop/App/_s503/deploy/_session503_repoint3_deploy.sh` (applies, re-dumps Matthew, check503b must end PASS). Then `git push` — his.
+  (c) THE S502 SWEEP LIST — NOT STARTED (Luke/Mark dumps on disk are Nov 14; re-dump first: `python3 _s503/tools/dump503.py canon luke` and `canon mark`).
+  (d) PHASE 3 CENSUS — `_s503/tools/shorthand_census.py` written and run on the 16 dumps → `_s503/out/shorthand_census_2026-11-16.md/.json`.
+  **1,781 threaded cards need a rewrite** of 11,031 threaded (230 orphans on the Nov 14 Luke/Mark dumps — those were closed by S502/S503 deploys; the
+  dumps predate them): `thread:` prefix 745 · forbidden/EXTRA scan 1,503 · stub < 60 chars 206; a further 2,134 only miss a sacred-name parenthetical.
+  By book: Matthew 484 (177 stubs, 115 "the King", 99 hyphen-chains, 88 "substance"), Luke 383 (340 prefix), Mark 335 (304 prefix), 2 Baruch 162 (all
+  abbreviated book names), Testaments XII 105 (abbreviations), Genesis 86, Ezekiel 76, Revelation 46, 1 Enoch 30, Romans 23, Joshua 20, the rest ≤ 10.
+  623 threads carry shorthand members. Worst: scattered-seed-gathering (id 4) 41 of 67; effort-over-accomplishment (229) 40/40 across 8 books;
+  the-east-as-the-direction… (444) 33/33 Ezekiel; the-face-of-yahuah… (443) 31/31 Genesis; crucifixion (19) 30/51; great-commission (8) 28/37;
+  gethsemane (7) 26/27; sanhedrin (17) 23/32; last-supper (11) 21/26; heart-torah-not-abolition (9) 20/24; talents (13) 20/20.
+  PROPOSED FIRST BATCH (S505): the 13 S1xx threads whose SUMMARIES S503 already rewrote — their ~230 member cards (crucifixion 30, great-commission 28,
+  gethsemane 26, sanhedrin 23, last-supper 21, talents 20, sheep-and-goats 19, women-witnesses 18, baptism-in-the-name 17, eli-eli 14, resurrection 14,
+  his-blood 13, veil 12, ten-virgins 12, thirty-pieces 11) — the summaries are clean, so the member notes can be written to them; then Luke's 340
+  prefixes thread by thread (effort-over-accomplishment 40, son-of-adam-as-judge 16, my-sheep-hear 12, the-seventy 11). Mechanics: build503c already
+  takes named member cards per thread; it needs a packet step (packet503 → Sonnet first drafts, Fable reads) and the census JSON as its worklist.
+  2 Baruch's 162 and Testaments XII's 105 are a different fix (abbreviated book names in otherwise clean notes — a mechanical expansion, one
+  migration, no redraft).
