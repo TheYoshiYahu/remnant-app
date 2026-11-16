@@ -1,0 +1,105 @@
+{
+ "model": "Claude Fable 5.1 (claude-fable-5-1)",
+ "cards": [
+  {
+   "id": 3675,
+   "new_target": [
+    "1-john",
+    2,
+    3
+   ],
+   "member_phrase": "WHOLE",
+   "prose": "The young man asks what good thing he must do to have eternal life, and the answer he gets is *if thou wilt enter into life, keep the commandments* (Matthew 19:17). John says the same thing from the other side: keeping the commandments is how a man knows that he knows him. The question and the test are one. Life is in the knowing, and the knowing shows itself in the keeping.",
+   "member_sentence": "Keeping his commandments is how we know that we know him: the young man's question answered from John's side.",
+   "flag": ""
+  },
+  {
+   "id": 3815,
+   "new_target": [
+    "1-john",
+    2,
+    3
+   ],
+   "member_phrase": "WHOLE",
+   "prose": "The father says *go work to day in my vineyard*, and the parable turns on which son went. John gives the same measure for the whole house: we know that we know him *if we keep his commandments*. A yes with no going is not the knowing; a refusal followed by going is. The vineyard and John's test ask one thing, who did what the father said.",
+   "member_sentence": "We know that we know him if we keep his commandments: the measure the two sons are judged by.",
+   "flag": ""
+  },
+  {
+   "id": 3806,
+   "new_target": [
+    "1-john",
+    5,
+    14
+   ],
+   "member_phrase": "WHOLE",
+   "prose": "He tells the disciples that faith without doubting moves a mountain into the sea, and goes straight on, *whatsoever ye shall ask in prayer, believing, ye shall receive* (Matthew 21:22). John gives the asking its ground: the thing asked is *according to his will*, and *he heareth us*. The confidence that moves mountains is not in the asker's nerve but in the one who hears, and in asking what he wills.",
+   "member_sentence": "Confidence in asking rests on asking according to his will and on the one who hears: the ground under the mountain-moving faith.",
+   "flag": ""
+  },
+  {
+   "id": 3912,
+   "new_target": [
+    "1-john",
+    4,
+    7
+   ],
+   "member_phrase": "WHOLE",
+   "prose": "All the law and the prophets hang on two commandments, love of Yahuah (the LORD) and love of neighbour. John shows the two are one cord: whoever loves *is born of Elohim (God)*, and the one so born *knoweth Elohim (God)*. Loving the brother is not a second thing added to knowing the Father; it is where the knowing shows. The two commandments hang together because love is of Elohim (God).",
+   "member_sentence": "Every one that loveth is born of Elohim (God) and knoweth him: the two commandments shown as one cord.",
+   "flag": ""
+  },
+  {
+   "id": 3913,
+   "new_target": [
+    "1-john",
+    5,
+    2
+   ],
+   "member_phrase": "WHOLE",
+   "prose": "The two commandments that carry the law and the prophets stand in one sentence of John's: we know we love the children of Elohim (God) *when we love Elohim (God), and keep his commandments*. Love of the brother is proved by love of the Father, and love of the Father is proved by keeping what he said. John hangs the one on the other exactly as Yahusha (Jesus) hangs the law and the prophets on the two.",
+   "member_sentence": "Love of the children of Elohim (God) known by loving him and keeping his commandments: both commandments in one verse.",
+   "flag": ""
+  },
+  {
+   "id": 4009,
+   "new_target": [
+    "1-john",
+    2,
+    18
+   ],
+   "member_phrase": "even now are there many antichrists; whereby we know that it is the last time",
+   "prose": "Yahusha (Jesus) tells the disciples they will be delivered up, killed and hated of all nations for his name. John, writing when it had begun, names the hour and the enemy: *it is the last time*, and *even now are there many antichrists*. The hatred for his name does not wait for one man at the end of the age; John says the many were already there, and that is how the time is known.",
+   "member_sentence": "Many antichrists already, and by them the last time is known: the hatred for his name begun in John's own day.",
+   "flag": ""
+  },
+  {
+   "id": 4109,
+   "new_target": [
+    "1-john",
+    3,
+    16
+   ],
+   "member_phrase": "WHOLE",
+   "prose": "The ones on the left hear *Depart from me*, and the reason follows them: they fed no one, clothed no one, visited no one. John names what they lacked. Love is known because he *laid down his life for us*, and so *we ought to lay down our lives for the brethren*. The goats never laid down anything for the least of his brethren, and that is the whole charge against them.",
+   "member_sentence": "Love known in his laying down his life, and owed to the brethren: what the goats on the left never did.",
+   "flag": ""
+  },
+  {
+   "id": 3013,
+   "new_target": null,
+   "member_phrase": "WHOLE",
+   "prose": "Matthew hears him answer *Thou hast said*; Mark hears *I am*. Both then give the same two scriptures from his own mouth, the seat at *the right hand of power* and the coming *in the clouds of heaven*: *Sit thou at my right hand* (Psalm 110:1) and Daniel's *one like the Son of Adam came with the clouds of heaven* (Daniel 7:13). Mark's plain *I am* is why the high priest tore his clothes. The claim was understood.",
+   "member_sentence": "Mark's plain I am, with the same right hand and the same clouds in his mouth, at the same question.",
+   "flag": ""
+  },
+  {
+   "id": 120012,
+   "new_target": null,
+   "member_phrase": "when ye stand praying, forgive, if ye have ought against any",
+   "prose": "Matthew sets the rule beside the prayer he has just taught; Mark sets it inside the act of praying, *when ye stand praying, forgive*. The condition is the same in both, your Father's forgiveness bound to yours, and Mark adds the moment it applies: not after prayer and not as a separate duty, but standing there with the request on your lips. The forgiving comes with the asking.",
+   "member_sentence": "Mark sets the same rule in the act of praying: forgive as you stand there asking to be forgiven.",
+   "flag": ""
+  }
+ ]
+}

@@ -480,3 +480,66 @@ means a back-fill can re-run safely over the already-merged canon rows.
   NEXT (S503): the 24 stragglers (extend the chain for non-canon targets or do them by hand in one small migration), then the re-point pass (3675,
   3815, 3806, 3912, 3913, 4009, 4109 + 3013, 120012), then the summaries sweep (centurion thread first, the 14 S1xx threads anchored in S501, the list
   above) on the `_s499c` chain.
+- **2026-11-15 (S503) — THE 27 STRAGGLERS DEPLOYED (0 orphans in the whole library); THE RE-POINT PASS DEPLOYED; 14 THREAD SUMMARIES REWRITTEN.**
+  THE STRAGGLERS (a). The eight books re-dumped first (Yoshi's paste, Nov 15 20:00 CST; the open prompt's "24" was a miscount — 12 Joshua 12 + 6
+  Revelation 1/11/20 + 3 Romans 11 + 2 1 Thessalonians 4 + Genesis 35, Ezekiel 17, 2 Esdras 7, 2 Baruch 50 one each = 27). A small EDITION-AWARE
+  chain `_s503/tools` beside `_s496` (common503 / dump503 <edition> <book> / packet503 / build503 / gen_sql503 / check503 / seed503 / gen_deploy503):
+  the lookup view carries `e.slug`, so 2 Esdras and 2 Baruch sources and Testaments XII (140:8 ×2, 60:1) and Ascension of Isaiah (9:9, 4:17) targets
+  resolve; canon targets from parsed/canon.json, extras targets from the live text (the S495 target_text convention). Fable drafted and read all 27
+  (no fan-out at this size); every card joined a thread already anchored on its own verses — 16 threads, 0 new, 0 anchors. Scratch ×2 + four tampers
+  PASS on the Nov 9 read-backs, then again on the fresh ones. DEPLOYED 20:13 CST (`_session503_stragglers_deploy.log`): 27/27 · 27/27 · 0 dups ·
+  **orphans left 0 in all eight books** · PASS. With the gospel block (S496–S502) that is **0 orphan cards in the whole library**: Phase 2's orphan
+  block is CLOSED (1,538 + 27 = 1,565 cards). Thread choices to know: 177479 Revelation 20:7 → Isaiah 24:22 joined the dragon-bound thread
+  (20:1–3, which carries Isaiah 24:22 and the loosing), not Gog-and-Magog (20:7–8); 133755 2 Baruch 50:3 → John 20:25 joined resurrection-keeps-the-form.
+  THE RE-POINT PASS (b) — Yoshi: "move them". 3675 Matthew 19:16, 3815 21:28 → 1 John 2:3; 3806 21:21 → 1 John 5:14; 3912 22:40 → 1 John 4:7; 3913
+  22:40 → 1 John 5:2; 4009 24:9 → 1 John 2:18; 4109 25:41 → 1 John 3:16 — a `target_verse_id` UPDATE each (id, source, thread kept; note and member note
+  rewritten Come-and-See to the 1 John pair), guard: the card must still read as written to the John verse (or already as the new card), and no live
+  card may already hold the new pair. Plus 3013 (26:64 → Mark 14:62, "The Markan-parallel.") and 120012 (6:14 → Mark 11:25) rewritten in place.
+  `session503b_matthew_repoint.sql`; DEPLOYED ~20:38 CST with the centurion thread, check503b PASS. **Three more of the same slip found afterward,
+  not in the list, FOR S504: 3206 Matthew 28:20 → John 2:3 and 3207 28:20 → John 5:2 (the "teaching them to observe" thread; the notes mean 1 John
+  2:3 and 5:2) and 3634 Matthew 18:19 → John 5:14 (1 John 5:14, asking according to his will).** Yoshi's standing answer on the pattern is "move them".
+  THE SUMMARIES SWEEP (c) — `_s503/tools/build503c <slug>` / gen_sql503c / check503c / seed503x (the S499c chain made general: title + summary + any
+  named member cards). Yoshi read every summary before deploy. (1) The centurion thread 30423 (matthew-8-many-from-east-and-west…): title + summary
+  + 7 of 9 member cards (121850, 2547, 121852, 121853, 121854, 121855, 5513 — "the stranger grafted in" / "the centurion is the firstfruit" gone; the
+  centurion a sheep who heard out where the house was scattered, Luke 7:5; the many from east and west = Isaiah 11:12 / Psalm 107:3 / Isaiah 49:12,
+  the outcasts and the dispersed; 8:12 = the sifting of the house, Luke 13:28, Romans 11:1; "Gentiles" kept where Malachi 1:11 has it). (2) The 14
+  S1xx threads anchored in S501: 13 rewritten (sheep-and-goats already clean) — sanhedrin-trial (Psalm 110 + Daniel 7 at his own mouth, Daniel's
+  *like* kept, title-naming at the trial, Revelation 1:7 and Matthew 24:30 each in its own words); eli-eli (Psalm 22 whole, Hebrews 2:11–12 *all of
+  one*, Psalm 31:5); the crucifixion (Psalm 22 / Isaiah 53 / Zechariah 12:10 + 13:7 / Amos 8:9 / Psalm 69:21, Genesis 3:18 line on line not stated,
+  Deuteronomy 21:23 the Torah kept at the cross); the veil (Exodus 26:33, Leviticus 16:2, Hebrews 10:19–20, Isaiah 25:7, Luke 23:56 — the Sabbath
+  still kept, nothing abolished); his-blood-be-on-us (Deuteronomy 21:8, Jeremiah 26:15, Acts 5:28 *upon us* = the court, Matthew 23:35–37, Zechariah
+  12:10 + 13:8 the same house mourns — never a curse on a people; the "Yom Kippur blood" angle dropped, no verse carried it); last-supper (Passover
+  kept and filled, Exodus 12:14, 1 Corinthians 5:7–8, Exodus 24:8, Jeremiah 31:31–33 both houses, Leviticus 17:11, Isaiah 25:6 + Revelation 19:9);
+  thirty-pieces (Zechariah 11:12–13, Exodus 21:32 the gored servant's price, Psalm 41:9 + John 13:18); ten-virgins (oil = Ezekiel 36:26–27 +
+  Jeremiah 31:33, Zechariah 4; the five outside are of the house, Matthew 7:21–23 + Luke 13:25, Genesis 7:16 — the sifting at the door); the
+  resurrection (Psalm 16:10 via Acts 2:31 / 13:35, Hosea 6:2, Jonah 1:17 + Matthew 12:40, Leviticus 23:10–11 the firstfruits sheaf + 1 Corinthians
+  15:20–23, Romans 1:4); women-witnesses (Luke 8:2–3, 27:55–56, 27:61, 28:1–10, Mark 16:9, John 20:17–18, Deuteronomy 19:15 two witnesses,
+  Proverbs 31:10); great-commission (*all nations* = where the sheep are, not who they are; Daniel 7:14 power *given*; 10:5–6 / 15:24 the fence that
+  came down; Hosea 1:10, Isaiah 11:11–12, Ezekiel 37:21, Romans 9:26, James 1:1, 1 Peter 1:1; Micah 4:2 the nations' later hour); teaching-to-observe
+  (5:17–19, 7:21, John 14:15/21, 1 John 2:3 + 5:2, Romans 3:31, James 2:14, Ezekiel 36:27, Revelation 14:12 + 22:14); baptism-in-the-name
+  (**Yoshi's correction: the one all-encompassing name is Yah, as in HalleluYah** — Psalm 68:4's JAH, in Yahuah and in Yahusha, the Spirit sent in it,
+  Revelation 19:1 Alleluia; Acts 2:38 / 8:16 / 19:5 one name; he is Elohim and has a Father, no Trinity words, no collapse). Each summary opens
+  *It ain't new* where the older scripture held it; every quote stand-alone italic with citation from parsed/canon.json. Scratch (seed503x) 6/6 ×13;
+  DEPLOYED 23:01 CST (`_session503_sweep13_deploy.log`): 13 × check503c PASS. Migrations: `session503_stragglers_rebuild.sql`,
+  `session503b_matthew_repoint.sql`, `session503c_<thread>.sql` ×14 (centurion + 13).
+  FOR THE PIPELINE (not changed, flagged): parsed/canon.json John 20:25 *We have seen Yahusha (Lord)* where live reads *the Lord* (S182 rule — the
+  parsed file is behind the live text here, the reverse of Luke 22:61); Psalm 68:4 still reads **JAH** (rule: → Yah); Isaiah 12:2 and 26:4 read
+  *Yahuah (LORD) JEHOVAH* (the KJV doubled name, unrestored); Matthew 22:45 / 25:11 / 7:21 render *Adonai (Lord)* for the vocative to Yahusha.
+  THE NEXT BLOCK — PHASE 3, THE THREADED SHORTHAND (found tonight while sweeping): the Phase 2 rebuild only reached ORPHAN cards. Cards that were
+  already in a thread kept their S1xx notes. Counted on tonight's read-backs (16 books): **1,504 threaded cards still trip the jargon/forbidden scan**
+  (Matthew 396, Luke 350, Mark 243, 2 Baruch 162, Testaments XII 105, Genesis 66, Ezekiel 49, Revelation 36, 1 Enoch 29, Joshua 20, Romans 19…);
+  **746 carry a reader-visible `thread:slug |` prefix in the live note** (Luke 340, Mark 304, Ezekiel 41, Genesis 31, Revelation 15); **180 Matthew
+  stubs under 60 characters** ("The Markan-parallel.", "The substantial-…"); a further 2,147 only miss sacred-name parentheticals. The 14 S1xx threads
+  rewritten tonight alone hold ~230 such member cards (sanhedrin 20, crucifixion 26, great-commission 26, sheep-and-goats 24…). Same shape as the
+  orphan rebuild (packets → Sonnet drafters → Fable read → UPDATE in place), but the guard is "member of thread X with member note Y", not "orphan" —
+  build503c already does single cards; it needs a packet step and batching by thread or chapter. Counting script: the one-off in this session; make it
+  `_s503/tools/shorthand_census.py` first thing.
+  NEXT (S504): (1) the three re-points 3206, 3207, 3634 (one small migration on the S503b chain); (2) the rest of the S502 sweep list — matthew-3
+  stones ("nations grafted in"), matthew-13 mustard-seed/leaven ("growth"), both Luke 4 Nazareth threads ("individual mercy"), mark-7 corban ("the
+  King", "diagnostic"), gathering-of-the-scattered-twelve-tribes-in-sirach…, rich-man-and-lazaros… ("framework" in slug — keep slug, rewrite summary) —
+  the sweep chain is ready, Yoshi reads each; (3) the Phase 3 census and its first batch (Luke's 340 `thread:` prefixes are the ugliest reader-facing
+  thing and the most mechanical fix). SEPARATE, Yoshi asked tonight: the app VISIT COUNTER (a visit_events table — time, user if signed in, anonymous
+  id if not, app or walk site — written on sign-in and page load; a migration + API line + PWA beacon + Render deploy, his push) so "how many different
+  people, how many times each, per day" becomes one query; today the DB has only users.last_seen_at. Baseline Nov 15: 78 accounts, 22 seen in 30
+  days, 8 in 7 days, 2 today, 17 on a paid tier incl. trials/comps, 7 paying (`_s503/out/users_baseline_2026-11-15.txt`). Housekeeping with it:
+  duplicate active subscription rows (assemblyofrop ×2 everything, Jeni ×2 complete_study) and a duplicate account (Goshen24 ×2).
