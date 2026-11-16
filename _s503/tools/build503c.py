@@ -4,12 +4,12 @@ notes (ids and verse pairs untouched; thread membership untouched). Checks (the 
 every italic+citation verbatim against the parsed library; summary ≥ 120 words; prose 12–90 words, neither verse repeated, uncited italics from the
 two verses; member phrase a verbatim run (≥6 words) of the target; every rewritten card a member of this thread. Read-back: the dump of the book the
 thread is anchored in (default _s495/live/canon__<anchor book>.json). Model: Claude Fable 5.1 (claude-fable-5-1)."""
-import json, sys, collections
+import json, sys, collections, os
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common503 import *
 def main(slug, rb=None):
-    dr = json.load(open(W3 / 'out' / 'sweep' / f'{slug}.json'))
+    dr = json.load(open(W3 / 'out' / os.environ.get('S503_OUT', 'sweep') / f'{slug}.json'))
     rb = Path(rb) if rb else live503('canon', dr['anchor_book']); D = json.load(open(rb)); C = {c['id']: c for c in D['cards']}
     T = {t['slug']: t for t in D['threads']}; t = T.get(slug)
     report = []; fail = lambda w, m: report.append(('FAIL', w, m)); warn = lambda w, m: report.append(('WARN', w, m))
@@ -55,7 +55,7 @@ def main(slug, rb=None):
     fails = [r for r in report if r[0] == 'FAIL']
     lines = [f"# S503c build report — thread `{slug}` (id {t['id']}; read-back {rb.name}: {D['schema_note']})", '', f"title + summary rewritten; cards rewritten {len(out)} of {t['member_count']} members",
              f"result: {'PASS' if not fails else 'FAIL'} — {len(fails)} failures, {len(report) - len(fails)} warnings", ''] + [f"- **{l}** {w}: {m}" for l, w, m in report]
-    print('\n'.join(lines)); FIX = W3 / 'fix' / 'sweep'; FIX.mkdir(parents=True, exist_ok=True); (FIX / f'{slug}_report.md').write_text('\n'.join(lines) + '\n'); o = FIX / f'{slug}.json'
+    print('\n'.join(lines)); FIX = W3 / 'fix' / os.environ.get('S503_FIX', 'sweep'); FIX.mkdir(parents=True, exist_ok=True); (FIX / f'{slug}_report.md').write_text('\n'.join(lines) + '\n'); o = FIX / f'{slug}.json'
     if fails:
         if o.exists(): o.unlink()
         print('build503c FAIL'); return 1

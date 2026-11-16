@@ -3,7 +3,7 @@ summary rewritten (slug kept); the named member cards' notes rewritten in place 
 RAISE and nothing lands if a card is gone or off its verse pair, its source text moved, its live note is neither old nor new, its member row in this
 thread is missing or carries neither member note, or the thread's title/summary are neither old nor new. Re-run reports 0 everywhere. The S499c
 migration made general (any source book, edition-aware). Model: Claude Fable 5.1 (claude-fable-5-1)."""
-import json, sys
+import json, sys, os
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common503 import *
@@ -12,7 +12,7 @@ def q(s, tag='n'):
 def lit(s): assert "'" not in s; return "'" + s + "'"
 def short(slug): return '-'.join(slug.split('-')[:4])
 def main(slug):
-    fx = json.load(open(W3 / 'fix' / 'sweep' / f'{slug}.json')); t = fx['thread']; sh = short(slug); fname = f'session503c_{sh}.sql'
+    fx = json.load(open(W3 / 'fix' / os.environ.get('S503_FIX', 'sweep') / f'{slug}.json')); t = fx['thread']; sh = short(slug); fname = f"session{os.environ.get('S503_TAG', '503c')}_{sh}.sql"
     rows = ',\n'.join(f"({c['id']},{lit(c['s_ed'])},{lit(c['s_book'])},{c['src_ch']},{c['src_vn']},{q(c['src_text'])},{lit(c['t_ed'])},{lit(c['tgt_book'])},{c['tgt_ch']},{c['tgt_vn']},{q(c['old_note'] or '')},{q(c['note'])},{c['thread_id']},{q(c['old_member_note'] or '')},{q(c['member_note'])})" for c in fx['cards'])
     cards_sql = (f"INSERT INTO s503c_cards VALUES\n{rows};") if fx['cards'] else "-- (no card rows)"
     sql = f"""-- =====================================================================
@@ -60,7 +60,7 @@ BEGIN
   GET DIAGNOSTICS n_notes = ROW_COUNT;
   UPDATE cross_reference_thread_members m SET member_note = c.new_mnote FROM s503c_cards c WHERE m.cross_reference_id = c.id AND m.thread_id = c.thread_id AND m.member_note IS NOT DISTINCT FROM c.old_mnote AND c.old_mnote IS DISTINCT FROM c.new_mnote;
   GET DIAGNOSTICS n_m = ROW_COUNT;
-  UPDATE cross_reference_threads t SET title = s.new_title, summary_md = s.new_summary FROM s503c_thread s WHERE t.id = s.id AND t.title = s.old_title AND t.summary_md = s.old_summary;
+  UPDATE cross_reference_threads t SET title = s.new_title, summary_md = s.new_summary FROM s503c_thread s WHERE t.id = s.id AND t.title = s.old_title AND t.summary_md = s.old_summary AND (s.old_title <> s.new_title OR s.old_summary <> s.new_summary);
   GET DIAGNOSTICS n_t = ROW_COUNT;
   RAISE NOTICE 'S503c ({sh}) summary: notes rewritten % / already there %; member notes rewritten % / already there %; thread rewritten % / already there %', n_notes, n_c - n_notes, n_m, n_c - n_m, n_t, 1 - n_t;
 END $s503c2$;

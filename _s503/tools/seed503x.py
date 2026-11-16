@@ -88,17 +88,20 @@ async def main(a):
         ok &= after[3] == seed[3]; return bool(ok)
     rc, out = run_mig(); sm1 = summary(out)
     report('run 1: migration committed', rc == 0, f"rc {rc}" + ('' if rc == 0 else '; ' + out[-900:]))
-    report('run 1: summary', bool(sm1) and 'already there 0' in sm1 and not re.search(r"rewritten 0 /", sm1), sm1)
+    tchg = 'thread' in fx and (fx['thread'].get('old_title') != fx['thread'].get('title') or fx['thread'].get('old_summary') != fx['thread'].get('summary'))
+    want = (f"notes rewritten {len(ids)} / already there 0; member notes rewritten {len(ids)} / already there 0; " if ids else '') + (f"thread rewritten {1 if tchg else 0} / already there {0 if tchg else 1}" if tids else '')
+    report('run 1: summary', bool(sm1) and want in sm1, sm1 + ('' if want in sm1 else f'  (wanted: {want})'))
     s1 = await snapshot(); report('run 1: only what the fix names changed', only_fix_changed(s1))
     LD = SCR / 'live_x'; LD.mkdir(exist_ok=True)
-    for e, b in books:
+    redump = [tuple(b.split('/')) for b in a.redump.split(',')] if a.redump else books
+    for e, b in redump:
         d = await dump_book(con, e, b, note='S503x scratch dump'); json.dump(d, open(LD / f'{e}__{b}.json', 'w'), ensure_ascii=False, default=str)
     if a.check:
-        chk = subprocess.run(a.check + f" {LD / (books[0][0] + '__' + books[0][1] + '.json')}", shell=True, capture_output=True, text=True, env=os.environ); print(chk.stdout + chk.stderr); report('run 1: check on the dump', chk.returncode == 0)
+        chk = subprocess.run(a.check + (f" {LD}" if a.redump else f" {LD / (books[0][0] + '__' + books[0][1] + '.json')}"), shell=True, capture_output=True, text=True, env=os.environ); print(chk.stdout + chk.stderr); report('run 1: check on the dump', chk.returncode == 0)
     rc, out = run_mig(); sm2 = summary(out)
     report('run 2: committed and 0 everywhere', rc == 0 and bool(sm2) and not re.search(r"(?<!\d)[1-9]\d* / already there", sm2), sm2)
     report('run 2: snapshot identical to post-run-1', await snapshot() == s1)
     await con.close(); ok = all(results); print(f"seed503x {Path(a.mig).name}: {'PASS' if ok else 'FAIL'} ({sum(results)}/{len(results)})"); return 0 if ok else 1
 if __name__ == '__main__':
-    p = argparse.ArgumentParser(); p.add_argument('--mig', required=True); p.add_argument('--books', required=True); p.add_argument('--fix', required=True); p.add_argument('--check', default='')
+    p = argparse.ArgumentParser(); p.add_argument('--mig', required=True); p.add_argument('--books', required=True); p.add_argument('--fix', required=True); p.add_argument('--check', default=''); p.add_argument('--redump', default='', help='S506: real book slugs to re-dump after run 1 (comma list); the fixture under --books seeds them. --check then gets the dump DIR appended')
     sys.exit(asyncio.run(main(p.parse_args())))

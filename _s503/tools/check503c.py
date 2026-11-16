@@ -1,11 +1,11 @@
 """S503c — check503c.py <slug> [read-back.json]: after the sweep migration, on a fresh dump of the anchor book — the thread's title/summary, each
 rewritten card's note and member note equal fix/sweep/<slug>.json; no card moved. Exit 1 on FAIL. Model: Claude Fable 5.1 (claude-fable-5-1)."""
-import json, sys
+import json, sys, os
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common503 import *
-slug = sys.argv[1]; fx = json.load(open(W3 / 'fix' / 'sweep' / f'{slug}.json')); book = json.load(open(W3 / 'out' / 'sweep' / f'{slug}.json'))['anchor_book']
-D = json.load(open(sys.argv[2])) if len(sys.argv) > 2 else load503('canon', book)
+slug = sys.argv[1]; fx = json.load(open(W3 / 'fix' / os.environ.get('S503_FIX', 'sweep') / f'{slug}.json'))
+D = json.load(open(sys.argv[2])) if len(sys.argv) > 2 else load503('canon', json.load(open(W3 / 'out' / os.environ.get('S503_OUT', 'sweep') / f'{slug}.json'))['anchor_book'])
 C = {c['id']: c for c in D['cards']}; T = {t['id']: t for t in D['threads']}; M = {(m['thread_id'], m['xref_id']): m for m in D['members']}
 p = []; n = m = 0
 for c in fx['cards']:
