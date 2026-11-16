@@ -1,4 +1,4 @@
-# S507 — open prompt — FIRST the g4 deploy state (crucifixion, 30 cards); then gethsemane + talents (summary rewrite + member cards, one paste); then Luke's 340 `thread:` prefixes
+# S507 — open prompt — Phase 3 continues: gethsemane + talents (summary rewrite + member cards, one paste); then Luke's 340 `thread:` prefixes
 
 CHECK THE MODEL PICKER FIRST: Claude Fable 5.1 (judgment work; Sonnet only for first drafts, model named in every output file).
 
@@ -7,7 +7,7 @@ Load my voice skill and mount my Desktop. Read, in this order:
 2. ~/Desktop/App/_s503/tools/ — packet506.py (merged read-backs), prep506.py, check506.py, run506_group.sh, gen_deploy506.py; the S503 chain they wrap (build503c / gen_sql503c / check503c take S503_OUT / S503_FIX / S503_TAG env; seed503x takes --redump).
 3. ~/Desktop/App/_s503/out/shorthand_census_2026-11-16.json — the Phase 3 worklist (re-run shorthand_census.py on fresh dumps first; see below).
 
-STATE AT S506 CLOSE (Nov 16 ~12:15 CST): groups 1–3 DEPLOYED (202 cards, logs `_session506_g1/g2/g3_deploy.log`, every check PASS). Group 4 (crucifixion, 30 cards) was HANDED as a paste — if `_session506_g4_deploy.log` exists, read it (the NOTICE must say notes rewritten 30, the check line PASS); if it does not exist, ask Yoshi in one line whether he pasted `_s503/deploy/_session506_g4_deploy.sh`. Mac shell volume still 100% full and no DNS to the DB host → every DB step is a paste (`df -h $HOME`). Scratch proofs run on Postgres 16 in the cloud sandbox: unpack `_s503/scratch/_s506_sandbox_kit.tgz`, `service postgresql start`, role s496/s496, then the per-thread seed503x --redump + check506 + one note-tamper (the S506 roadmap entry has the exact commands; `scratch506.sh` pattern).
+STATE AT S506 CLOSE (Nov 16 12:10 CST): Phase 3 batch 1 CLOSED — all four groups DEPLOYED (232 cards, 13 threads; logs `_session506_g1..g4_deploy.log`, every NOTICE as written, every check PASS, no guard RAISE). Nothing is pending on the database side. Mac shell volume still 100% full and no DNS to the DB host → every DB step is a paste (`df -h $HOME`). Scratch proofs run on Postgres 16 in the cloud sandbox: unpack `_s503/scratch/_s506_sandbox_kit.tgz`, `service postgresql start`, role s496/s496, then the per-thread seed503x --redump + check506 + one note-tamper (the S506 roadmap entry has the exact commands; `scratch506.sh` pattern).
 
 THIS SESSION, in order:
 (a) Re-dump paste first: `for b in matthew mark luke; do python3 _s503/tools/dump503.py canon $b; done` (read-only), then `python3 _s503/tools/shorthand_census.py` for the fresh count (expect ~1,549 left of 1,781).
