@@ -21,8 +21,9 @@ def merged_readback(slug, live_dir=None):
         for m in D['members']:
             if m['slug'] != slug or m['xref_id'] in members or m['xref_id'] not in C: continue
             members[m['xref_id']] = m; cards[m['xref_id']] = C[m['xref_id']]; hit += 1
+        live.update(D['live'])                                                        # S507: every dump that carries the thread feeds the verse map, even when its member cards were already merged from another dump (a verse that is a parsed-text target in one card and a live-text source in another must be present as it reads live)
+        notes.append(f"{f.stem} ({hit})")                                           # S507: zero-hit dumps listed too, so gen_deploy506 / check506 re-dump every book that carries the thread (a stale dump otherwise keeps showing the old notes)
         if hit:
-            live.update(D['live']); notes.append(f"{f.stem} ({hit})")
             books.update({(b['ed'], b['slug']): b for b in D['books']}); eds.update({(e['slug'] if isinstance(e, dict) else e): e for e in D.get('editions', [])})
     if thread is None: sys.exit(f'{slug}: no such thread in the read-backs')
     return dict(schema_note=f"merged read-back S506 for `{slug}` from {', '.join(notes)}", editions=list(eds.values()), books=list(books.values()), parse_match={}, live=live, cards=list(cards.values()), members=list(members.values()), threads=[thread])

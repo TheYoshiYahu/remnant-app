@@ -25,7 +25,12 @@ TAG = 's503'
 # English titles for the extras books that appear as source or target (canon titles come from TITLES)
 XTITLES = {'2-esdras': '2 Esdras', '2-baruch': '2 Baruch', 'testaments-xii': 'Testaments of the Twelve Patriarchs', 'ascension-isaiah': 'Ascension of Isaiah',
            '1-enoch': '1 Enoch', 'jubilees': 'Jubilees', 'jasher': 'Jasher', 'ecclesiasticus': 'Sirach', 'tobit': 'Tobit', 'the-wisdom-of-solomon': 'Wisdom of Solomon',
-           'adam-eve': 'Adam and Eve', '2-enoch': '2 Enoch', 'apocalypse-of-abraham': 'Apocalypse of Abraham'}
+           'adam-eve': 'Adam and Eve', '2-enoch': '2 Enoch', 'apocalypse-of-abraham': 'Apocalypse of Abraham',
+           # S507: the rest of the apocrypha slugs — without these a card whose SOURCE is one of them carried the slug into the reader's note ("(the-prayer-of-manasseh 1:11)")
+           'the-prayer-of-manasseh': 'Prayer of Manasseh', 'baruch-with-the-letter-of-jeremiah': 'Baruch', 'judith': 'Judith', '1-maccabees': '1 Maccabees', '2-maccabees': '2 Maccabees',
+           '3-maccabees': '3 Maccabees', '4-maccabees': '4 Maccabees', '1-esdras': '1 Esdras', 'the-rest-of-esther': 'Rest of Esther', 'the-song-of-the-three-holy-children': 'Song of the Three Holy Children',
+           'the-history-of-susanna': 'Susanna', 'bel-and-the-dragon': 'Bel and the Dragon', '3-baruch': '3 Baruch', 'hermas': 'Hermas', '1-clement': '1 Clement', '2-clement': '2 Clement', 'didache': 'Didache',
+           'martyrdom-polycarp': 'Martyrdom of Polycarp', 'sonnini-acts-29': 'Acts 29'}
 def title_of(ed, book): return TITLES[book] if ed == 'canon' and book in TITLES else XTITLES.get(book, book)
 def live503(ed, book): return W / 'live' / f'{ed}__{book}.json'
 def load503(ed, book): return json.load(open(live503(ed, book)))

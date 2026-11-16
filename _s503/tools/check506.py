@@ -7,4 +7,4 @@ from packet506 import merged_readback
 slug, live = sys.argv[1], sys.argv[2]
 D = merged_readback(slug, live); tmp = Path(tempfile.mkdtemp()) / f'{slug}_merged.json'; json.dump(D, open(tmp, 'w'), ensure_ascii=False, default=str)
 print(f"check506 {slug}: {D['schema_note']}")
-sys.exit(subprocess.run([sys.executable, str(Path(__file__).resolve().parent / 'check503c.py'), slug, str(tmp)], env=dict(os.environ, S503_FIX='sweep506')).returncode)
+sys.exit(subprocess.run([sys.executable, str(Path(__file__).resolve().parent / 'check503c.py'), slug, str(tmp)], env=dict(os.environ, S503_FIX=os.environ.get('S503_FIX', 'sweep506'))).returncode)
