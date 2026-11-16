@@ -25,10 +25,11 @@ function anonId(): string | null {
   try {
     let id = localStorage.getItem(KEY);
     if (!id) {
+      const c: Crypto = globalThis.crypto;
       id =
-        typeof crypto !== "undefined" && "randomUUID" in crypto
-          ? crypto.randomUUID()
-          : Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) =>
+        typeof c.randomUUID === "function"
+          ? c.randomUUID()
+          : Array.from(c.getRandomValues(new Uint8Array(16)), (b: number) =>
               b.toString(16).padStart(2, "0"),
             ).join("");
       localStorage.setItem(KEY, id);
