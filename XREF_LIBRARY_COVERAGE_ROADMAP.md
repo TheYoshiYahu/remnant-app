@@ -544,7 +544,7 @@ means a back-fill can re-run safely over the already-merged canon rows.
   days, 8 in 7 days, 2 today, 17 on a paid tier incl. trials/comps, 7 paying (`_s503/out/users_baseline_2026-11-15.txt`). Housekeeping with it:
   duplicate active subscription rows (assemblyofrop ×2 everything, Jeni ×2 complete_study) and a duplicate account (Goshen24 ×2).
 
-- **2026-11-15/16 — S504 (Claude Fable 5.1) — visit counter DESIGNED (not coded); re-point ×3 BUILT (not deployed); Phase 3 census RUN.**
+- **2026-11-15/16 — S504 (Claude Fable 5.1) — visit counter DESIGNED (not coded); re-point ×3 BUILT and DEPLOYED (23:52 CST, check503b PASS); Phase 3 census RUN.**
   NO LIVE DATABASE THIS SESSION: the Mac-side shell's volume was full (9.8 GB at 100%, not our folder) so asyncpg would not install; every DB touch
   became a paste for Yoshi. Deploy state at close: S503 pushed Nov 15 23:40; nothing of S504 deployed.
   (a) THE VISIT COUNTER — `S504_VISIT_COUNTER_DESIGN.md` (one page, Yoshi reads before code). FINDING: half of it already exists — S467b built
@@ -556,7 +556,7 @@ means a back-fill can re-run safely over the already-merged canon rows.
   written in upsert_user only when the S467 upsert opened a new visit (so the two tables agree), and by `POST /v1/visit` beacon (204, 30-min dedupe)
   from app/src and walk/build.mjs's page script; view `visit_days` unions both; report `_s503/tools/visits_report504.py` (same shape as
   users_baseline503); raw kept 400 days, pruned by the daily trial-reminders cron; migration `session504_visit_events.sql` first, then Yoshi's push
-  (Render auto-deploys api/pwa/walk), one env var ANON_SALT. Housekeeping as a sibling migration needs Yoshi's word: assemblyofrop ×2 everything/active,
+  (Render auto-deploys api/pwa/walk), one env var ANON_SALT. Housekeeping SETTLED Nov 15 23:54 (Yoshi: he has no way of knowing which stays, so the data decides — keep the Stripe-billed row / the account with the paid subscription; the other marked ended, nothing deleted) — sibling migration in S505: assemblyofrop ×2 everything/active,
   Jeni ×2 complete_study/active (proposal: keep the Stripe-backed row, status=canceled + ended_at on the other, nothing deleted); Goshen24 ×2 accounts
   (keep the paying one; show both rows + the WP id first). Paste to see what S467 has counted: `cd ~/Desktop/App/api && python3 -m jobs.activity_report --days 30`.
   (b) THE THREE RE-POINTS — 3206 Matthew 28:20 → 1 John 2:3, 3207 28:20 → 1 John 5:2 (thread 20 teaching-them-to-observe…), 3634 18:19 → 1 John

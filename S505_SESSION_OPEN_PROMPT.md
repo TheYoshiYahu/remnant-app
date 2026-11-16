@@ -1,20 +1,23 @@
-# S505 — open prompt — the VISIT COUNTER code (after Yoshi's read of the design); then the S502 sweep list; then Phase 3 batch 1
+# S505 — open prompt — the VISIT COUNTER code; then the S502 sweep list; then Phase 3 batch 1
 
 CHECK THE MODEL PICKER FIRST: Claude Fable 5.1 (judgment work; Sonnet only for first drafts and scripted steps, model named in every output file).
 
 Load my voice skill and mount my Desktop. Read, in this order:
 1. ~/Desktop/App/XREF_LIBRARY_COVERAGE_ROADMAP.md — the S504 entry at the end (the counter finding: S467's user_activity_days already counts
    signed-in days; the three re-points built; the census numbers and the proposed first batch).
-2. ~/Desktop/App/S504_VISIT_COUNTER_DESIGN.md — the design Yoshi read. His answers to its three housekeeping questions (assemblyofrop, Jeni, Goshen24)
-   decide the sibling migration; if he has not answered, ask them first, one line each.
+2. ~/Desktop/App/S504_VISIT_COUNTER_DESIGN.md — the design. Yoshi does not read design pages — give him the gist in chat. The three housekeeping
+   duplicates are SETTLED (Nov 15 23:54, his word: "I have no way of knowing which one stays" — so the data decides, not him): for assemblyofrop and
+   Jeni keep the subscription row Stripe is billing (has stripe_subscription_id and the later current_period_end), mark the other status='canceled',
+   ended_at=now(); for Goshen24 keep the account holding the paid subscription, retire the free duplicate (clear its wordpress_user_id/email so the
+   UNIQUE constraints free up; the row itself stays). The migration prints all six rows BEFORE it writes and nothing is deleted. Do not ask him again.
 3. ~/Desktop/App/_s503/tools/ — the chain (common503, dump503 <edition> <book>, build503c / gen_sql503c / check503c / seed503x for the sweep,
    build503b / gen_sql503b / check503b for re-points, gen_deploy503bc, users_baseline503.py, shorthand_census.py) and _s503/out/shorthand_census_2026-11-16.md.
 4. api/db.py (upsert_user + ACTIVITY_SCHEMA_SQL), api/email_prefs.py (ensure at startup), api/auth.py, api/walk.py, walk/build.mjs (the page script),
    app/src/main.tsx + app/src/lib/api.ts, hosting/render.yaml, api/apply_migration.py — for the counter code.
 
-STATE: S503 pushed Nov 15 23:40 CST. S504 built but NOT deployed: `session503b2_matthew_repoint3.sql` (3 re-points) — if Yoshi has not run
-`bash ~/Desktop/App/_s503/deploy/_session503_repoint3_deploy.sh`, ask for it first (check503b must end PASS). Older uncommitted edits remain in
-api/main.py, api/Dockerfile, hosting/render.yaml, .gitignore and the untracked walk/ + api/walk.py (WALK 1) — ask before touching them.
+STATE: S504 committed and pushed Nov 15 23:5x CST (15f508f). The 3 re-points are DEPLOYED (`_session503_repoint3_deploy.log`: 3/3, check503b PASS,
+23:52 CST) — Matthew has 0 orphans and no John-for-1-John slips left that we know of. Older uncommitted edits remain in api/main.py, api/Dockerfile,
+hosting/render.yaml, .gitignore and the untracked walk/ + api/walk.py (WALK 1) — ask before touching them.
 FIRST CHECK the Mac-side shell: `df -h $HOME` — in S504 the volume was full and asyncpg would not install, so no dump and no DB query ran; if it is
 still full, every DB step is a paste for Yoshi (the deploy scripts already re-dump). Run `python3 -m jobs.activity_report --days 30` (api/) as a paste
 to see what S467 has counted — it is the baseline the counter extends.
@@ -25,7 +28,7 @@ THIS SESSION, in order:
     upsert_user (one visit_events row when the S467 upsert opened a new visit — detect with RETURNING on an xmax/insert test or by reading last_at first),
     `app/src/lib/visit.ts` + one call in main.tsx (random UUID in localStorage, no cookie), six lines in walk/build.mjs's page script, ANON_SALT in
     render.yaml (sync: false — Yoshi sets it in the dashboard BEFORE the push), the prune line in jobs/trial_reminders.py (400 days),
-    `_s503/tools/visits_report504.py` (read-only; prints the Nov 15 baseline on top). Sibling `session504_housekeeping.sql` only with Yoshi's answers;
+    `_s503/tools/visits_report504.py` (read-only; prints the Nov 15 baseline on top). Sibling `session504_housekeeping.sql` per the settled rule in item 2;
     nothing deleted. Privacy sentence for the WordPress policy page, one line, handed to Yoshi to paste. Order: migration (paste) → his push → Render
     deploys → the report paste shows the first rows.
 (b) THE S502 SWEEP LIST on build503c (Yoshi reads each before deploy, three or four at a time): re-dump Luke and Mark first (dump503 canon luke /
