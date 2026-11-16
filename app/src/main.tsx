@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import DownloadStatusIndicator from './components/DownloadStatusIndicator.tsx'
 import { bootstrapBackgroundDownloads } from './lib/downloadManager.ts'
+import { recordVisit } from './lib/visit.ts'
 
 // S355 — resume an interrupted offline download IMMEDIATELY on page load,
 // before React mounts and without waiting for the /me round-trip. Every in-app
@@ -11,6 +12,9 @@ import { bootstrapBackgroundDownloads } from './lib/downloadManager.ts'
 // download; this restarts it in the first frame so the partner never has to tap
 // "Resume" and the background download keeps making progress across navigation.
 bootstrapBackgroundDownloads()
+
+// S504 — count this page load (one visit per 30 quiet minutes; no cookie, no IP).
+recordVisit()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

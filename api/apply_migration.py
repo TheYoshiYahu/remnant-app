@@ -125,6 +125,9 @@ async def main() -> int:
         timeout=30,
     )
 
+    # S504 — surface RAISE NOTICE lines (migrations print the rows they are about to touch).
+    conn.add_log_listener(lambda _c, msg: print(f"  [{msg.severity}] {msg.message}"))
+
     try:
         await conn.execute(sql_clean)
         print("=== Migration committed. Verifying schema_version ===")

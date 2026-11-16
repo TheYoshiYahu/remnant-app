@@ -79,8 +79,25 @@ _MARK_SENT = """
 """
 
 
+async def _prune_visit_events() -> None:
+    """S504 — the visit counter's raw log is kept 400 days (the daily rollup
+    view needs nothing older). Runs first on every daily cron; never raises."""
+    try:
+        await open_pool()
+        async with get_pool().acquire() as conn:
+            n = await conn.execute(
+                "DELETE FROM visit_events WHERE ts < now() - interval '400 days'"
+            )
+        logger.info("visit_events prune: %s", n)
+    except Exception as exc:
+        logger.warning("visit_events prune skipped: %r", exc)
+    finally:
+        await close_pool()
+
+
 async def _run(dry_run: bool) -> int:
     """Returns process exit code (0 ok). Sends reminders; logs a summary."""
+    await _prune_visit_events()  # S504
     if TRIAL_DAYS <= 0:
         logger.info("TRIAL_DAYS=%s — trial disabled; nothing to do.", TRIAL_DAYS)
         return 0

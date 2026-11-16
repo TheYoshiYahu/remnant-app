@@ -88,8 +88,14 @@ async def upsert_user(
         current_user.display_name,
     )
     # S467: daily activity log. Never allowed to break the request.
+    # S504: when that upsert OPENS a new visit (first row of the day, or the
+    # last request was over 30 quiet minutes ago) one visit_events row is
+    # written too — same rule, so the two tables agree by construction. The
+    # beacon (visits.py) may already have written it; then the INSERT is a no-op.
     try:
-        await conn.execute(_ACTIVITY_UPSERT, user_uuid)
+        new_visit = await conn.fetchval(_ACTIVITY_UPSERT_NEW_VISIT, user_uuid)
+        if new_visit:
+            await conn.execute(_VISIT_EVENT_FROM_ACTIVITY, user_uuid)
     except Exception:
         pass
     return user_uuid
@@ -122,4 +128,27 @@ _ACTIVITY_UPSERT = (
     "         THEN extract(epoch FROM now() - user_activity_days.last_at)::int ELSE 0 END, "
     "  last_at = now(), "
     "  hits = user_activity_days.hits + 1"
+)
+
+
+# S504 — the S467 upsert wrapped so it also REPORTS whether it opened a new visit.
+# The CTE `prev` sees the row as it stood before this statement (CTE snapshot), so
+# "new visit" = no row yet today, or last_at more than 30 minutes ago. The upsert
+# text itself is _ACTIVITY_UPSERT unchanged.
+_ACTIVITY_UPSERT_NEW_VISIT = (
+    "WITH prev AS ("
+    "  SELECT last_at FROM user_activity_days "
+    "   WHERE user_id = $1::uuid AND day = (now() AT TIME ZONE 'America/Chicago')::date), "
+    "ins AS (" + _ACTIVITY_UPSERT + " RETURNING 1) "
+    "SELECT coalesce((SELECT now() - last_at > interval '30 minutes' FROM prev), true)"
+)
+
+# One raw row for that new visit — surface 'app' (upsert_user runs under the PWA's
+# API calls; walk visits arrive through the beacon), path unknown here (NULL).
+# Deduplicated against a beacon row from the same reader in the last 30 minutes.
+_VISIT_EVENT_FROM_ACTIVITY = (
+    "INSERT INTO visit_events (user_id, surface) "
+    "SELECT $1::uuid, 'app' "
+    " WHERE NOT EXISTS (SELECT 1 FROM visit_events v WHERE v.user_id = $1::uuid "
+    "   AND v.surface = 'app' AND v.ts > now() - interval '30 minutes')"
 )

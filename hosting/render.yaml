@@ -94,7 +94,7 @@ services:
         # violation and the reader fails with "Error loading books"
         # for anonymous users. Adding the origin is purely additive —
         # zero impact on existing browser / PWA partners.
-        value: https://bible.remnantofpromise.org,https://remnantofpromise.org,http://localhost:5173,https://localhost
+        value: https://bible.remnantofpromise.org,https://remnantofpromise.org,https://walk.remnantofpromise.org,http://localhost:5173,https://localhost
       - key: JWT_SECRET
         # Shared secret with WordPress's JWT_AUTH_SECRET_KEY in wp-config.php.
         # Set manually in the Render dashboard (Web Service → Environment).
@@ -157,6 +157,13 @@ services:
       # wp-config.php. sync: false — set in the Render dashboard, never
       # in git.
       - key: WP_COMPANION_SECRET
+        sync: false
+      # S504 visit counter. Anonymous readers are stored as sha256(ANON_SALT +
+      # browser id) so the database never holds the id itself. Any long random
+      # string (e.g. `openssl rand -hex 32`). sync: false — set in the Render
+      # dashboard BEFORE the push that deploys api/visits.py; never in git.
+      # Without it anonymous visits are not counted (signed-in still are).
+      - key: ANON_SALT
         sync: false
       - key: PYTHONUNBUFFERED
         value: "1"
@@ -313,3 +320,26 @@ services:
       - path: /*
         name: Cache-Control
         value: public, max-age=0, must-revalidate
+
+  # ---- WALK 1 (Nov 2026): walk.remnantofpromise.org — "Living in His Ways" -
+  # Static site beside the PWA. walk/build.mjs writes walk/dist from
+  # walk/data (wild edibles by state, more sections to come) and the
+  # restored canon in source-texts/parsed. No framework, no trackers, no
+  # fonts from anyone's servers. Member fields come from the API's
+  # /v1/walk route after load; see api/walk.py.
+  # Custom domain to add in the dashboard after the first deploy:
+  #   remnant-walk → walk.remnantofpromise.org
+  - type: web
+    name: remnant-walk
+    runtime: static
+    rootDir: .
+    buildCommand: cd walk && node build.mjs
+    staticPublishPath: walk/dist
+    autoDeploy: true
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin

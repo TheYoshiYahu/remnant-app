@@ -218,6 +218,8 @@ from year_plan_study import router as year_plan_study_router
 from suggestions import router as suggestions_router
 from board import router as board_router
 from people_places import router as people_places_router
+from walk import router as walk_router  # WALK 1 — walk.remnantofpromise.org member fields
+from visits import router as visits_router  # S504 — POST /v1/visit (the visit counter's beacon)
 
 
 # ----- App lifespan -------------------------------------------------------
@@ -313,6 +315,8 @@ app.include_router(suggestions_router)
 # S465 — public Suggestion Board (moderated; anonymous votes).
 app.include_router(board_router)
 app.include_router(people_places_router)  # S472 people & places (Study Notes)
+app.include_router(walk_router)  # WALK 1 — /v1/walk/plants/{state}
+app.include_router(visits_router)  # S504 — /v1/visit, always 204
 # S467 — email opt-out page + win-back 24-hour reopen link.
 app.include_router(email_prefs_router)
 
