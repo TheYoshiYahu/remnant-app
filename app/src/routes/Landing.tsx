@@ -253,6 +253,16 @@ export default function Landing() {
           >
             the Assembly of the Remnant of Promise
           </a>
+          .{" "}
+          {/* S517 — a plain crawlable link to the pre-rendered library
+              pages (/library/ is static HTML outside the router). */}
+          <a
+            href="/library/"
+            className="underline-offset-2 hover:underline"
+            style={{ color: ARGAMAN }}
+          >
+            Every book, chapter by chapter
+          </a>
           .
         </footer>
       </main>

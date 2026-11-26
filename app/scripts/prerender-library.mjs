@@ -78,6 +78,24 @@ function displayName(b) {
   return t.replace(/^(the\s+)?book\s+of\s+/i, "").trim();
 }
 
+// S517 (Nov 26 2026) — titles written the way people search.
+// Canon: "Genesis 1". Every other book: its full title + "Chapter N"
+// ("Book of Enoch Chapter 6"). A chapter title that only repeats
+// "Chapter N" is dropped; one too long for a search title stays in the
+// page heading but is left out of <title>.
+function chapterLabels(book, name, ch) {
+  const n = ch.chapter_number;
+  const raw = (ch.chapter_title || "").trim();
+  const ct = /^chapter\s+\d+$/i.test(raw) ? "" : raw;
+  const canon = book.edition_slug === "canon";
+  const lead = canon ? `${name} ${n}` : `${book.title} Chapter ${n}`;
+  const heading = lead + (ct ? ` — ${ct}` : "");
+  const title = canon
+    ? `${lead} — Restored Names Bible | Remnant of Promise Study Bible`
+    : `${lead}${ct && ct.length <= 48 ? ` — ${ct}` : ""} | Restored Names Edition`;
+  return { lead, ct, heading, title };
+}
+
 function audioKey(b) {
   return b.edition_slug === "canon" ? b.slug : `${b.edition_slug}/${b.slug}`;
 }
@@ -196,11 +214,11 @@ const TASTE_SCRIPT = `
 function chapterPage({ book, name, ch, prev, next, totalChapters }) {
   const n = ch.chapter_number;
   const url = `${SITE}/library/${book.slug}/${n}/`;
-  const title = `${name} ${n} — Restored Names Edition | Remnant of Promise Study Bible`;
+  const { lead, ct, heading, title } = chapterLabels(book, name, ch);
   const first = ch.verses[0]?.text ?? "";
   const description = (ch.teaser
-    ? `${name} ${n}, Restored Names Edition — the first paragraph free, the whole chapter with the 7-day trial. `
-    : `${name} ${n} in the Restored Names Edition. `) + first.slice(0, 150);
+    ? `${lead}${ct && ct.length <= 48 ? `, ${ct}` : ""} — Restored Names Edition. The opening is free to read; the whole chapter opens with the 7-day free trial. `
+    : `${lead} with the restored names, free to read. `) + first.slice(0, 150);
   const withheld = Math.max(0, ch.verse_count - ch.verses.length);
   const key = audioKey(book);
 
@@ -231,7 +249,7 @@ ${next ? `<a href="/library/${next.book.slug}/${next.n}/" rel="next">${esc(next.
 </nav>`;
 
   const body = `
-<h1>${esc(name)} ${n}${ch.chapter_title ? ` — ${esc(ch.chapter_title)}` : ""}</h1>
+<h1>${esc(heading)}</h1>
 <p class="edition">${esc(book.title)} · Restored Names Edition${ch.teaser ? " · first paragraph" : ""}</p>
 ${nav}
 <article>
@@ -242,7 +260,7 @@ ${tasteCard}
 ${nav}
 ${TASTE_SCRIPT}`;
 
-  return { url, html: shell({ title, description, canonical: url, body, ogTitle: `${name} ${n} — Restored Names Edition` }) };
+  return { url, html: shell({ title, description, canonical: url, body, ogTitle: heading }) };
 }
 
 // S499 (Nov 2026) — book pages carry Yoshi's own introduction from the
@@ -279,7 +297,7 @@ async function bookPage({ book, name, chapters }) {
   const firstCh = chapters.find((c) => c.verses?.length) ?? chapters[0];
   const opening = firstCh?.verses ?? [];
   const firstN = firstCh?.chapter_number ?? 1;
-  const title = `${name} — Restored Names Edition | Remnant of Promise Study Bible`;
+  const title = `${book.title} (${chapters.length} chapter${chapters.length === 1 ? "" : "s"}) — Restored Names Edition | Remnant of Promise Study Bible`;
   const description = intro
     ? `${intro[0].slice(0, 155)}`
     : `${book.title}, Restored Names Edition: ${chapters.length} chapters${teaser ? ", the first paragraph of each free to read, the whole book with the 7-day trial" : ", free to read"}.`;
