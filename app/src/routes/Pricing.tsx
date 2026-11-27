@@ -127,7 +127,7 @@ const TIERS: TierCard[] = [
       "Everything in Study Notes",
       "Everything in Library",
       "Framework commentary on the restored library (not just the canon)",
-      "Framework thread callouts — the hidden detail expand on every chapter-end card, synthesizing the cross-references across canon and restored library",
+      "Framework thread callouts — the commentary that opens under every chapter's cross-references, synthesizing them across canon and restored library",
       "Deeper-dive Statement of Faith sections surfaced inline",
     ],
     highlight: true,
